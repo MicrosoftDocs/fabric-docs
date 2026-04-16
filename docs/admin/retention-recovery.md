@@ -51,9 +51,6 @@ Fabric supports soft-delete and recovery for individual items within workspaces.
 
 By default, item recovery is turned off. You can turn on item recovery and set up the retention period (from 7 to 90 days) by using the **Fabric Item Recovery** tenant setting in the admin portal.
 
-> [!NOTE]
-> After you permanently delete an item, Microsoft OneLake retains the item's data for an additional seven days before permanent removal. However, restoration isn't possible after permanent deletion. 
-
 For step-by-step instructions on setting up item recovery and restoring or permanently deleting items, see [Recover or permanently delete items](item-recovery.md).
 
 ## Supported item types
