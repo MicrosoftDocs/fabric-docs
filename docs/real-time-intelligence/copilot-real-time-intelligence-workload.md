@@ -16,7 +16,7 @@ ms.collection:
 
 -->
 
-# What is Microsoft Copilot in/for [Product/Service]?
+# What is Microsoft Copilot in Fabric for Real-Time Intelligence?
 
 <!-- Required: Introductory paragraphs (no heading)
 
@@ -34,7 +34,7 @@ This article provides an overview of Copilot in <Product/Service>, including its
 
 -->
 
-## How Copilot works in [Product/Service]
+## How Copilot works in Real-Time Intelligence
 
 <!-- Optional: Feature sections - H2
 
@@ -44,7 +44,19 @@ Describe How Copilot works in a product or service
 
 -->
 
-## Features of Copilot in [Product/Service]
+## Features of Copilot in Real-Time Intelligence
+
+Copilot in Real-Time Dashboards
+- generate dashboards
+- explore data
+
+links
+
+Copilot in Querysets
+- tbd
+- tbd
+
+links
 
 <!-- Required: Feature sections - H2
 
@@ -68,7 +80,7 @@ If there is an include file for these steps, as in Microsoft Fabric, use that in
 
 -->
 
-## Best practices for using Copilot in [Product/Service]
+## Best practices for using Copilot in Real-Time Intelligence
 
 <!-- Optional: Feature sections - H2
 
