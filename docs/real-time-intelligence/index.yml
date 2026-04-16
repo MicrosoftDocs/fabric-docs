@@ -223,7 +223,7 @@ landingContent:
         - linkListType: reference
           links:
             - text: Automative and mobile
-              url: architectures/connected-fleet.mdconnected-fleet.md
+              url: architectures/connected-fleet.md
             - text: Energy and resources
               url: architectures/wind-farm-maintenance.md
             - text: Industrials and manufacturing
