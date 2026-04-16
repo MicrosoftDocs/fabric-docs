@@ -104,6 +104,14 @@ InfoBridge connects and integrates data across systems, ensuring planning data s
 
 Plan extends Microsoft Fabric beyond analytics into enterprise decision intelligence. By embedding planning directly into Fabric, organizations can unify data, analytics, and planning in a single platform, reducing manual effort, improving alignment, and enabling proactive, AI-assisted decision-making.
 
+## Enable required tenant setting
+
+This setting is **required** to create plan (preview) items: *Users can create Plan (preview) items*.
+
+:::image type="content" source="media/overview/prerequisite-plan.png" alt-text="Screenshot of enabling plan in the admin portal." lightbox="media/overview/prerequisite-plan.png":::
+
+If you don't enable this setting, you get errors when creating a new plan item.
+
 ## Next steps
 
 Explore the components of plan in more detail:
