@@ -218,7 +218,7 @@ landingContent:
             url: mcp-remote-eventhouse.md
 
  # Card
-  - title: RTI industry architectures
+  - title: Reference architectures
     linkLists:
         - linkListType: reference
           links:
