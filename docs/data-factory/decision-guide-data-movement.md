@@ -23,7 +23,6 @@ Use the medallion architecture as your guide:
 
 - **Complex orchestration** - Use **Copy activities in Pipelines**. When you need full control over data ingestion with custom queries, multi-step workflows, and integration with broader pipeline orchestration, Copy activities give you maximum flexibility.
 
-- **Silver data (transformations and enrichment)** - If you need to transform data as it moves through your medallion layers, see the [data integration decision guide](decision-guide-data-integration.md) for guidance on choosing between Dataflow Gen2, Notebooks, and other transformation strategies.
 
 For a full side-by-side breakdown of capabilities and supported features, see the [detailed feature comparison](#detailed-feature-comparison).
 
