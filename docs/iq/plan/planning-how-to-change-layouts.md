@@ -24,7 +24,7 @@ Before you configure layout options, ensure that you have the following:
 1. Go to **Layout options**.
 1. Select the required **Layout**. Various types of [table](#types-of-table-layouts) and [measure layouts](#types-of-measure-layouts) are listed in the following screenshot.
 
-   :::image type="content" source="media/planning-sheet-how-to-change-layouts/layout-option.png" alt-text="Screenshot showing the steps to open layouts." lightbox="media/planning-sheet-how-to-change-layouts/layout-option.png":::
+   :::image type="content" source="media/planning-how-to-change-layouts/layout-option.png" alt-text="Screenshot showing the steps to open layouts." lightbox="media/planning-how-to-change-layouts/layout-option.png":::
 
 ## Types of table layouts
 
@@ -34,13 +34,13 @@ Table layouts determine how row categories are presented in the report.
 
 Hierarchy view displays data in a hierarchical format with expand and collapse functionality. This is the default layout.
 
-:::image type="content" source="media/planning-sheet-how-to-change-layouts/hierarchy-layout.png" alt-text="Screenshot showing the hierarchy layouts." lightbox="media/planning-sheet-how-to-change-layouts/hierarchy-layout.png":::
+:::image type="content" source="media/planning-how-to-change-layouts/hierarchy-layout.png" alt-text="Screenshot showing the hierarchy layouts." lightbox="media/planning-how-to-change-layouts/hierarchy-layout.png":::
 
 ### Table
 
 Table view displays data in a tabular format without hierarchical expansion for rows. Column hierarchies can still support expand and collapse.
 
-:::image type="content" source="media/planning-sheet-how-to-change-layouts/table-layout.png" alt-text="Screenshot showing the table layouts." lightbox="media/planning-sheet-how-to-change-layouts/table-layout.png":::
+:::image type="content" source="media/planning-how-to-change-layouts/table-layout.png" alt-text="Screenshot showing the table layouts." lightbox="media/planning-how-to-change-layouts/table-layout.png":::
 
 ### Tree layout
 
@@ -49,11 +49,11 @@ Use the tree layout to customize the structure and display of your data. The tre
 1. Go to **Home > Layout > Tree**.
 2. In the **Configure Tree View** dialog, select the **Baseline** and **Comparison** measures and **Save**.
 
-  :::image type="content" source="media/planning-sheet-how-to-change-layouts/tree-layout-configuration.png" alt-text="Screenshot showing the tree layouts configuration." lightbox="media/planning-sheet-how-to-change-layouts/tree-layout-configuration.png":::
+  :::image type="content" source="media/planning-how-to-change-layouts/tree-layout-configuration.png" alt-text="Screenshot showing the tree layouts configuration." lightbox="media/planning-how-to-change-layouts/tree-layout-configuration.png":::
 
 After saving, the **Tree View** option is added to the toolbar. You can use these options to further customize the tree layout.
 
-:::image type="content" source="media/planning-sheet-how-to-change-layouts/tree-layout.png" alt-text="Screenshot showing the tree layouts with tree view options." lightbox="media/planning-sheet-how-to-change-layouts/tree-layout.png":::
+:::image type="content" source="media/planning-how-to-change-layouts/tree-layout.png" alt-text="Screenshot showing the tree layouts with tree view options." lightbox="media/planning-how-to-change-layouts/tree-layout.png":::
 
 #### Tree view options
 
@@ -70,7 +70,7 @@ The **Tree View** provides the following options:
   * **Level configuration:** Customize node style settings at the dimension level.
   * **Appearance:** Configure font color, primary color, background color, and conditional formatting.
 
-    :::image type="content" source="media/planning-sheet-how-to-change-layouts/display-settings.png" alt-text="Screenshot showing the display settings of tree layout." lightbox="media/planning-sheet-how-to-change-layouts/display-settings.png":::
+    :::image type="content" source="media/planning-how-to-change-layouts/display-settings.png" alt-text="Screenshot showing the display settings of tree layout." lightbox="media/planning-how-to-change-layouts/display-settings.png":::
 
 #### Node actions
 
@@ -88,7 +88,7 @@ The node action menu appears. The following actions are available:
 * **Add comment**: Add comments to the node for collaboration.
 * **Simulation lock**: Lock the node to prevent changes during simulation when you create a scenario.
 
-:::image type="content" source="media/planning-sheet-how-to-change-layouts/node-settings.png" alt-text="Screenshot showing the node settings of tree layout." lightbox="media/planning-sheet-how-to-change-layouts/node-settings.png":::
+:::image type="content" source="media/planning-how-to-change-layouts/node-settings.png" alt-text="Screenshot showing the node settings of tree layout." lightbox="media/planning-how-to-change-layouts/node-settings.png":::
 
 ##### Edit a node
 
@@ -115,7 +115,7 @@ Under **Formatting**, you can configure how values are displayed:
 * Select **Apply** to save changes.
 * Select **Cancel** to discard changes.
 
-:::image type="content" source="media/planning-sheet-how-to-change-layouts/node-formatting.png" alt-text="Screenshot showing the node formatting of tree layout." lightbox="media/planning-sheet-how-to-change-layouts/node-formatting.png":::
+:::image type="content" source="media/planning-how-to-change-layouts/node-formatting.png" alt-text="Screenshot showing the node formatting of tree layout." lightbox="media/planning-how-to-change-layouts/node-formatting.png":::
 
 Select a node to view additional information, such as **Trends**, **Details**, **Variance**, and **Dependents**, and to analyze performance over time and compare values against a baseline.
 
@@ -129,7 +129,7 @@ You can also select between these view options:
 * Select **Graph** to display a visual chart of trends.
 * Select **Table** to view the same data in tabular format.
 
-:::image type="content" source="media/planning-sheet-how-to-change-layouts/additional-information.png" alt-text="Screenshot showing the additional information of tree layout." lightbox="media/planning-sheet-how-to-change-layouts/additional-information.png":::
+:::image type="content" source="media/planning-how-to-change-layouts/additional-information.png" alt-text="Screenshot showing the additional information of tree layout." lightbox="media/planning-how-to-change-layouts/additional-information.png":::
 
 ## Types of measure layouts
 
@@ -139,13 +139,13 @@ Measure layouts determine how values (measures) are displayed in the report.
 
 This option displays measures as rows instead of columns. You can reorder measures by dragging rows or using the **Manage rows** option.
 
-:::image type="content" source="media/planning-sheet-how-to-change-layouts/measure-rows.png" alt-text="Screenshot showing measures in rows." lightbox="media/planning-sheet-how-to-change-layouts/measure-rows.png":::
+:::image type="content" source="media/planning-how-to-change-layouts/measure-rows.png" alt-text="Screenshot showing measures in rows." lightbox="media/planning-how-to-change-layouts/measure-rows.png":::
 
 ### Measures in columns
 
 This option displays measures across columns above the column hierarchy categories.
 
-:::image type="content" source="media/planning-sheet-how-to-change-layouts/measure-columns.png" alt-text="Screenshot showing measures in columns." lightbox="media/planning-sheet-how-to-change-layouts/measure-columns.png":::
+:::image type="content" source="media/planning-how-to-change-layouts/measure-columns.png" alt-text="Screenshot showing measures in columns." lightbox="media/planning-how-to-change-layouts/measure-columns.png":::
 
 ### Ragged hierarchy
 
@@ -161,7 +161,7 @@ When ragged hierarchy is turned on, only available levels are displayed, and emp
 1. Select **Ragged Hierarchy**.
 1. Turn on **Ragged Hierarchy**.
 
-  :::image type="content" source="media/planning-sheet-how-to-change-layouts/ragged-on.png" alt-text="Screenshot showing the ragged hierarchy enabled." lightbox="media/planning-sheet-how-to-change-layouts/ragged-on.png":::
+  :::image type="content" source="media/planning-how-to-change-layouts/ragged-on.png" alt-text="Screenshot showing the ragged hierarchy enabled." lightbox="media/planning-how-to-change-layouts/ragged-on.png":::
 
 When ragged hierarchy is turned on:
 
@@ -173,4 +173,4 @@ When ragged hierarchy is turned off:
 
 * All levels are displayed, even if values or categories are missing.
 
-  :::image type="content" source="media/planning-sheet-how-to-change-layouts/ragged-off.png" alt-text="Screenshot showing the ragged hierarchy disabled." lightbox="media/planning-sheet-how-to-change-layouts/ragged-off.png":::
+  :::image type="content" source="media/planning-how-to-change-layouts/ragged-off.png" alt-text="Screenshot showing the ragged hierarchy disabled." lightbox="media/planning-how-to-change-layouts/ragged-off.png":::
