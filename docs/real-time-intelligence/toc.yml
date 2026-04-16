@@ -758,6 +758,10 @@ items:
         href: data-activator/activator-alert-queryset.md
       - name: Add query visualization to a dashboard
         href: add-query-visualization.md
+  - name: Copilot
+    item:
+      - name: Copilot in Fabric Real-Time Intelligence
+        href: copilot-real-time-intelligence-workload.md
   - name: Real-Time Dashboard
     items:
       - name: Real-Time Dashboard overview
