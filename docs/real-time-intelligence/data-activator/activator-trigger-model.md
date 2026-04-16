@@ -18,7 +18,7 @@ All triggers in Activator begin with one or more *events*. These events represen
 
 You can see information about the event entity on the Event page. It includes a real-time view of events as they arrive and a count of events over time.
 
-:::image type="content" source="media/activator-trigger-modelling/event-page.png" alt-text="Screenshot showing the Event Entity page with a live feed of incoming events. Red box shows the Event Entity selected in the explorer tree.":::
+:::image type="content" source="media/activator-trigger-model/event-page.png" alt-text="Screenshot showing the Event Entity page with a live feed of incoming events. Red box shows the Event Entity selected in the explorer tree.":::
 
 The event has two kinds of fields: system fields (added by Activator as data is ingested) and data fields (the actual data on the event that's being sent to Activator).
 
@@ -29,7 +29,7 @@ The system fields are:
 | `Time` | The logical *event time*. How that is calculated varies from source-to-source. See [Ingestion overview](ingestion/ingestion-overview.md) for a description of how this field is calculated by Activator. |
 | `___id` | The unique ID of the event |
 | `___source` | An internal ID that identifies the source in the Activator system |
-| `___type` | The kind of source (for example, Power BI, EventStream) that the event is from |
+| `___type` | The kind of source (for example, Power BI, eventstream) that the event is from |
 | `System.IngestionTime` | This is the actual time that the event was ingested into in Activator (in UTC). See [Latency in Activator](activator-latency.md) for a detailed discussion on how it differs from the `Time` field and how this relates to your triggers. |
 | `System.LastUpdateTime` | This is the last time the event definition was updated. |
 
@@ -56,7 +56,7 @@ After bringing your data into Activator in the form of an [event entity](#the-ev
 
 The simplest kind of rule you can create in Activator is an *event rule*. This kind of rule acts directly on one [event entity](#the-event-entity), and presents a simpler set of conditions than split-event rules and property rules. Use it when you want to alert on a global property of a stream, and don't want to differentiate between different objects. For example, if you want to alert when global sales are more than $100,000, use an event rule. However, if you want to instead monitor the sales of individual countries, use a [split-event](#the-split-event-rule-entity) or [property rule](#the-property-rule-entity).
 
-:::image type="content" source="media/activator-trigger-modelling/event-rule-definition.png" alt-text="Screenshot showing an Event Rule with condition and action steps. Red box shows the Event Rule selected in the explorer tree.":::
+:::image type="content" source="media/activator-trigger-model/event-rule-definition.png" alt-text="Screenshot showing an Event Rule with condition and action steps. Red box shows the Event Rule selected in the explorer tree.":::
 
 ### Monitor step
 
@@ -76,9 +76,9 @@ Objects are a way of logically splitting your incoming event entities into separ
 
 ### Objects
 
-An object is based on one or more event entities. To turn an event into an object, select a column from the event to be the object-id key:
+An object is based on one or more event entities. To turn an event into an object, select a column from the event to be the object-ID key:
 
-:::image type="content" source="media/activator-trigger-modelling/build-object-dialog.png" alt-text="Screenshot showing the Build object dialog with the object name, unique identifier, and properties. Red box highlights the Build object pane.":::
+:::image type="content" source="media/activator-trigger-model/build-object-dialog.png" alt-text="Screenshot showing the Build object dialog with the object name, unique identifier, and properties. Red box highlights the Build object pane.":::
 
 This column's values must uniquely identify each object—it's how Activator decides which object an incoming event belongs to. Multiple events can share the same value when they belong to the same object. For example, you can use VehicleId for monitoring a vehicle fleet, or PackageId for monitoring a set of packages.
 
@@ -86,28 +86,28 @@ An object can also consist of multiple event entities. For example, you can have
 
 ### Split-event entities
 
-Every event entity you add to the object creates a corresponding split-event entity, which is a view on the original event entity, but split by the object-id key. You can create a [split-event rule](#the-split-event-rule-entity) from a split-event.
+Every event entity you add to the object creates a corresponding split-event entity, which is a view on the original event entity, but split by the object-ID key. You can create a [split-event rule](#the-split-event-rule-entity) from a split-event.
 
-:::image type="content" source="media/activator-trigger-modelling/split-event-entity.png" alt-text="Screenshot showing a Split-Event Entity with events grouped by PackageId. Red box shows the Split-Event Entity selected in the explorer tree.":::
+:::image type="content" source="media/activator-trigger-model/split-event-entity.png" alt-text="Screenshot showing a Split-Event Entity with events grouped by PackageId. Red box shows the Split-Event Entity selected in the explorer tree.":::
 
 ### Property entities
 
 You can add fields from the events as *properties* of the object. Property entities allow further computations on the field, and can be reused by one-or-more [property rule](#the-property-rule-entity) entities:
 
-:::image type="content" source="media/activator-trigger-modelling/property-entity.png" alt-text="Screenshot showing a Property Entity for Temperature with per-object charts. Red box shows the Property Entity selected in the explorer tree.":::
+:::image type="content" source="media/activator-trigger-model/property-entity.png" alt-text="Screenshot showing a Property Entity for Temperature with per-object charts. Red box shows the Property Entity selected in the explorer tree.":::
 
 Properties allow simple aggregations (average, max, min, and count). The aggregations look at data across an entire window width and calculate the result every window hop size. If you need more complex transformations on an event field, consider using the capabilities of the system that sends the data to Activator.
 
 > [!NOTE]
-> Properties are indicated with a single label icon while the object-id is labeled with a double label icon. The object-id isn't a property, and so can't be used as the basis for property rules.
+> Properties are indicated with a single label icon while the object-ID is labeled with a double label icon. The object-ID isn't a property, and so can't be used as the basis for property rules.
 
-:::image type="content" source="media/activator-trigger-modelling/explorer-icons.png" alt-text="Screenshot showing the explorer tree with a property icon (highlighted in blue) and object-id icon (highlighted in red).":::
+:::image type="content" source="media/activator-trigger-model/explorer-icons.png" alt-text="Screenshot showing the explorer tree with a property icon highlighted in blue and object-ID icon highlighted in red.":::
 
 ## The split-event rule entity
 
-Split-event rules are a simple way to create rules that can differentiate across different logical objects. For example, if you want to create a rule that alerts when any given store's sales are more than $10,000, use a split-event rule. The object-id (for example, the store name) is automatically added to the activation produced by a split-event rule. Otherwise, they function in a very similar way to [event rules](#the-event-rule-entity). Split-event rules share the same condition and action steps as event rules.
+Split-event rules are a simple way to create rules that can differentiate across different logical objects. For example, if you want to create a rule that alerts when any given store's sales are more than $10,000, use a split-event rule. The object-ID (for example, the store name) is automatically added to the activation produced by a split-event rule. Otherwise, they function in a very similar way to [event rules](#the-event-rule-entity). Split-event rules share the same condition and action steps as event rules.
 
-:::image type="content" source="media/activator-trigger-modelling/split-event-rule.png" alt-text="Screenshot showing a Split-Event Rule Definition with Monitor, Condition, and Action. Red box shows the Split-Event Rule selected in the explorer tree.":::
+:::image type="content" source="media/activator-trigger-model/split-event-rule.png" alt-text="Screenshot showing a Split-Event Rule Definition with Monitor, Condition, and Action. Red box shows the Split-Event Rule selected in the explorer tree.":::
 
 ## The property rule entity
 
@@ -123,7 +123,7 @@ There are four steps to a property rule:
 
 1. Action step
 
-:::image type="content" source="media/activator-trigger-modelling/property-rule.png" alt-text="Screenshot showing a Property Rule with Monitor, Condition, and Property Filter steps. Red box shows the Property Rule selected in the explorer tree.":::
+:::image type="content" source="media/activator-trigger-model/property-rule.png" alt-text="Screenshot showing a Property Rule with Monitor, Condition, and Property Filter steps. Red box shows the Property Rule selected in the explorer tree.":::
 
 ### Monitor step
 

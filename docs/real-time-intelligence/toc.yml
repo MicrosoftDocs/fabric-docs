@@ -791,6 +791,8 @@ items:
             href: data-activator/activator-tutorial.md
       - name: Concepts
         items:
+          - name: Trigger modeling
+            href: data-activator/activator-trigger-model.md
           - name: Activator rules
             href: data-activator/activator-rules-overview.md
           - name: Detection conditions for Activator
