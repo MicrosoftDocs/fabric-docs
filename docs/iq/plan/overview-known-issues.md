@@ -2,11 +2,11 @@
 title: Plan (preview) known issues and limitations
 description: This article lists known issues and limitations present in plan (preview).
 ms.topic: concept-article
-ms.date: 04/09/2026
+ms.date: 04/15/2026
 #customer intent: As a user, I want to know the limitation present in plan.
 ---
 
-# Known issues and limitations in plan (preview)
+# Known limitations in plan (preview)
 
 Review the following known issues and limitations before you begin working with plan (preview).
 

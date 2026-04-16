@@ -92,9 +92,13 @@ items:
         - name: Write back data
           href: plan/planning-how-to-write-back-data.md
         - name: Change layouts
-          href: plan/planning-sheet-how-to-change-layouts.md
+          href: plan/planning-how-to-change-layouts.md
         - name: Create a cube
           href: plan/planning-how-to-create-cube.md
+        - name: Add comments
+          href: plan/planning-how-to-add-comments.md
+        - name: Add notes
+          href: plan/planning-how-to-add-notes.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
