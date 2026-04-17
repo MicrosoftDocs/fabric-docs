@@ -20,7 +20,7 @@ Publishing a partner workload in Fabric involves different steps. Before all Fab
 
    * **Publisher tenant:** This Fabric tenant is used to publish and manage the lifecycle of workloads in the future. Make sure to use a production tenant that users that need to manage the lifecycle for the workload have access to.  
 
-   * **Workload ID**: The workload ID consists of two components combined by a dot `[Publisher].[Workload]`. For the `[Publisher]` make sure to use a meaningful name. Ideally use your company name or abbreviation. For the `[Workload]`, it would be best to align with your product name or offering. The Workload ID must be unique in the system. 
+   * **Workload ID:** The workload ID consists of two components combined by a dot `[Publisher].[Workload]`. For the `[Publisher]` make sure to use a meaningful name. Ideally use your company name or abbreviation. For the `[Workload]`, it would be best to align with your product name or offering. The Workload ID must be unique in the system. 
 1. Prepare your manifest package - See [Workload Manifest](./backend-manifest.md) for detailed instructions. Make sure the `WorkloadName` field uses the `[Publisher].[Workload]` format.
 1. Upload your `.nupkg` file through the Fabric Admin Portal. For detailed upload steps, see [Upload a workload](tutorial-publish-workload.md#upload-a-workload). On the first upload, a **Confirm workload Name** dialog appears. The Workload Name is taken from your manifest and can't be changed in this dialog. Confirm the Workload Name to begin registration and select **Confirm**. 
 
