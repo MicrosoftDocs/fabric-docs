@@ -72,8 +72,6 @@ This means:
 
 By default, Activator runs your KQL query every 5 minutes. You can change the query frequency in the data source settings, as described in [Query frequency for query data sources](../activator-query-frequency.md).
 
-> [!IMPORTANT]
-> If you change the query frequency, update the time window in your KQL query to match. For example, if you set the query frequency to 10 minutes, change `ago(5m)` to `ago(10m)` in your query. The time window should always match the query frequency to avoid missed events or duplicate alerts.
 
 > [!TIP]
 > KQL queries against Eventhouse are fast, but be mindful of query cost and cluster load when setting a high query frequency. Choose a frequency that reflects how quickly the underlying data changes and how quickly you need to detect changes.
