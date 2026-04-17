@@ -21,7 +21,7 @@ Use the medallion architecture as your guide:
 
 - **Real-time streaming data** - Use **Eventstreams**. For low-latency, event-driven ingestion and processing, Eventstreams provides real-time pipelines with no-code transformations and routing to multiple destinations.
 
-- **Complex orchestration** -  Pipelines will give you the orchestration flexibility you need, and **copy activities in pipelines** offer data object parameterization, and metadata driven data ingestion. Otherwise, choose **copy job activity** for sources and destinations where it's available, and **copy activity** for all others.
+- **Complex orchestration** -  Pipelines will give you the orchestration flexibility you need, and **copy activities in pipelines** offer data object parameterization, and metadata driven data ingestion. Otherwise, copy job activity and copy activity are equitable in a pipeline.
 
 
 For a full side-by-side breakdown of capabilities and supported features, see the [detailed feature comparison](#detailed-feature-comparison).
