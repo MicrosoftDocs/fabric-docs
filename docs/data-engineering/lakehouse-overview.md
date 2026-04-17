@@ -58,8 +58,11 @@ For a full comparison of ingestion options, see [Options to get data into the Fa
 When you create a lakehouse, Fabric automatically generates a [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md). This endpoint lets you:
 
 - **Query Delta tables with T-SQL** — Use familiar SQL syntax without setting up a separate warehouse.
-- **Connect Power BI directly** — A default semantic model is included, so you can build reports without extra configuration.
+- **Connect Power BI directly** — Create a [Power BI semantic model](../data-warehouse/semantic-models.md) to build reports on your lakehouse data.
 - **Share read-only access** — Analysts and report builders can query the data without affecting Spark workloads.
+
+> [!NOTE]
+> Since September 5, 2025, default semantic models are no longer created automatically when you create a lakehouse. Existing default semantic models were decoupled from their parent items by November 30, 2025 and became independent semantic models. For more information, see [Power BI semantic models in Microsoft Fabric](../data-warehouse/semantic-models.md).
 
 The SQL analytics endpoint is read-only and doesn't support the full T-SQL surface of a [data warehouse](../data-warehouse/data-warehousing.md). Use it for exploration, reporting, and ad-hoc queries.
 
