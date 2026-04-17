@@ -160,7 +160,7 @@ Before you configure your Fabric workspace with a customer-managed key, consider
 
 * CMK is supported on all [F SKUs](../enterprise/licenses.md). Trial capacities can't be used for encryption using CMK.
 
-* You can turn on CMK for workspaces hosted in BYOK capacities. The same or separate keys can be used to protect both items in a CMK‑enabled workspace and semantic models residing on the BYOK capacity. 
+* You can turn on CMK for workspaces hosted in BYOK capacities. The same or separate keys can be used to protect both items in a CMK‑enabled workspace and semantic models residing on the BYOK capacity. (preview)
 
 * CMK can be enabled using the Fabric portal and doesn't have API support.
 
