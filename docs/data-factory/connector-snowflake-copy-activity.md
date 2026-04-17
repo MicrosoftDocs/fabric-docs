@@ -102,7 +102,7 @@ When your destination data store or format isn't natively compatible with the Sn
 
   - When you specify **Storage integration** in the source, complete the following steps:
 
-    1. [Create a Snowflake cloud storage integration](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-1-configuring-a-snowflake-storage-integration), and set one of the following OneLake URLs as STORAGE_ALLOWED_LOCATIONS: `azure://onelake.blob.fabric.microsoft.com/<Workspace ID>/<Pipeline/Copy job ID>/Staging` or `azure://onelake.blob.fabric.microsoft.com/<Workspace ID>`.
+    1. [Create a Snowflake cloud storage integration](https://docs.snowflake.com/en/user-guide/data-load-azure-config#step-1-create-a-cloud-storage-integration-in-snowflake), and set one of the following OneLake URLs as STORAGE_ALLOWED_LOCATIONS: `azure://onelake.blob.fabric.microsoft.com/<Workspace ID>/<Pipeline/Copy job ID>/Staging` or `azure://onelake.blob.fabric.microsoft.com/<Workspace ID>`.
     2. Follow the first 3 steps in [Grant Snowflake Access to the Storage Locations](https://docs.snowflake.com/en/user-guide/data-load-azure-config#step-2-grant-snowflake-access-to-the-storage-locations) to get a Snowflake service principal, then grant at least **Contributor** permission to it in your workspace.
 
   - When you don't specify **Storage integration** in the source, you can directly use the built-in staging storage within Fabric.
@@ -200,7 +200,7 @@ When your source data store or format isn't natively compatible with the Snowfla
 
   - When you specify **Storage integration** in the destination, complete the following steps:
  
-    1. [Create a Snowflake cloud storage integration](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-1-configuring-a-snowflake-storage-integration), and set one of the following OneLake URLs as STORAGE_ALLOWED_LOCATIONS: `azure://onelake.blob.fabric.microsoft.com/<Workspace ID>/<Pipeline/Copy job ID>/Staging` or `azure://onelake.blob.fabric.microsoft.com/<Workspace ID>`.
+    1. [Create a Snowflake cloud storage integration](https://docs.snowflake.com/en/user-guide/data-load-azure-config#step-1-create-a-cloud-storage-integration-in-snowflake), and set one of the following OneLake URLs as STORAGE_ALLOWED_LOCATIONS: `azure://onelake.blob.fabric.microsoft.com/<Workspace ID>/<Pipeline/Copy job ID>/Staging` or `azure://onelake.blob.fabric.microsoft.com/<Workspace ID>`.
     2. Follow the first 3 steps in [Grant Snowflake Access to the Storage Locations](https://docs.snowflake.com/en/user-guide/data-load-azure-config#step-2-grant-snowflake-access-to-the-storage-locations) to get a Snowflake service principal, then grant at least **Contributor** permission to it in your workspace.
 
   - When you don't specify **Storage integration** in the destination, you can directly use the built-in staging storage within Fabric.
