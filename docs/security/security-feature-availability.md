@@ -51,7 +51,7 @@ The following table shows the support status for each Fabric item. A check mark 
 | **Developer Experience** | API for GraphQL | - | ✓ | - |
 |  | Deployment Pipeline |  | - | ✓ |
 |  | Git Integration | ✓ | - | ✓ |
-|  | Variable Library | ✓ | - | - |
+|  | Variable Library | ✓ | - | ✓ |
 | **Governance and Security** | Sensitivity Label | - | - | - |
 |  | Share item | - | - | - |
 | **Graph** | Graph model  | - | - | - |
@@ -72,10 +72,10 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Mirrored Azure Database for PostgreSQL | - | - | Preview |
 |  | Mirrored Google Bigquery | - | - | Preview |
 |  | Mirrored Oracle |  | - | Preview |
-| **Native Databases** | Sql DB in Fabric | ✓ | ✓ | - |
+| **Fabric Databases** | SQL database in Fabric |  | ✓ | - |
 |  | Cosmos DB |  |  | - |
 |  | Snowflake database | - | - | - |
-| **OneLake** | Shortcut | ✓ | - | - |
+| **OneLake** | Shortcut | ✓ | - | Preview |
 | **Power BI** | Power BI Report | - | - | - |
 |  | Dashboard | - | - | - |
 |  | Scorecard | - | - | - |

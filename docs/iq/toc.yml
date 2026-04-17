@@ -65,12 +65,16 @@ items:
       href: plan/overview.md
     - name: Region availability
       href: plan/overview-regions.md
-    - name: Known issues
-      href: plan/overview-known-issues.md   
+    - name: Known limitations
+      href: plan/overview-limitations.md   
   - name: Planning sheets
     items:
     - name: Planning sheets overview
       href: plan/planning-overview.md
+    - name: Concepts
+      items:
+        - name: Cubes
+          href: plan/planning-concept-cube.md
     - name: How-tos
       items:
         - name: Create a database connection
@@ -88,7 +92,13 @@ items:
         - name: Write back data
           href: plan/planning-how-to-write-back-data.md
         - name: Change layouts
-          href: plan/planning-sheet-how-to-change-layouts.md  
+          href: plan/planning-how-to-change-layouts.md
+        - name: Create a cube
+          href: plan/planning-how-to-create-cube.md
+        - name: Add comments
+          href: plan/planning-how-to-add-comments.md
+        - name: Add notes
+          href: plan/planning-how-to-add-notes.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
