@@ -35,7 +35,7 @@ In this query, the `where Temperature > 0` clause defines the **alert condition*
 This pattern — embedding your alert logic and time windowing in the KQL query — is the simplest approach for using KQL Querysets with Activator.
 
 > [!NOTE]
-> With this method, Activator alerts you every time the query runs and returns matching rows. Using the example, if the temperature stays above zero for an extended period, you receive an alert every 5 minutes for the duration. Depending on your scenario, this might create an undesirable number of alerts.
+> With this method, Activator alerts you every time the query runs and returns matching rows. Using the example, if the temperature stays above zero for an extended period, you receive an alert every 5 minutes for the duration. Depending on your scenario, this method might create an undesirable number of alerts.
 
 ### Method 2: Stateful alerting with object grouping
 
@@ -43,18 +43,18 @@ If you want to be alerted only when a condition changes state — for example, a
 
 To set up stateful alerting:
 
-1. Create an alert from the KQL Queryset using **Set alert** as usual. This creates a rule in an Activator item. Your KQL query should not include the alert condition in this case, because Activator handles the condition evaluation. You still need the time window clause. For the sensor example, the query would be:
+1. Create an alert from the KQL Queryset using **Set alert** as usual. Your KQL query should not include the alert condition in this case, because Activator handles the condition evaluation. You still need the time window clause. For the sensor example, the query would be:
 
    ```kql
    CurrentSensorTemperatures
    | project SensorID, Temperature
    ```
 
-1. Open the Activator item that contains the rule, and delete the rule. You do not need it any more.
+1. Open the Activator item that contains the rule that you created in the previous step. Delete the rule. You do not need it any more.
 1. [Assign the data to an object](../activator-assign-data-objects.md). Using the sensor example, create a **Sensor** object and key it by **SensorID**.
 1. Create a rule on the object using a **Numeric Change** condition — for example, *Temperature increases above 0*. A **Numeric Change** condition activates only when the value transitions from not meeting the condition to meeting it. For more information, see [Detection conditions](../activator-detection-conditions.md).
 
-With this approach, Activator tracks the state of each object instance (each sensor, in this example) and alerts you only once when the temperature first rises above zero, instead of alerting continuously while the temperature is greater than zero.
+With this approach, Activator tracks the state of each object instance and alerts you only when the condition is first met. In this example, each sensor is an object instance. Activator sends an alert only when the temperature of a sensor first rises above zero. 
 
 ### Activator queries the Eventhouse directly
 
