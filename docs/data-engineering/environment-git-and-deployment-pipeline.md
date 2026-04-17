@@ -59,8 +59,6 @@ The **Spark compute** section is also transformed into the YAML representation. 
 
 ## Set up a deployment pipeline for an environment
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
-
 Fabric deployment pipelines simplify the process of delivering modified content across different phases, such as moving from development to test. The automatic pipeline can include the environment items to streamline the recreation process.
 
 You can set up a deployment pipeline by assigning the workspaces with different phases. For more information, see [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md).
