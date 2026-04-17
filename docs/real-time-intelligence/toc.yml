@@ -991,6 +991,12 @@ items:
             href: map/sharing-maps.md
           - name: Permissions in Fabric Maps
             href: map/about-map-permissions.md
+          - name: Automation with REST APIs
+            items:
+              - name: Automating Fabric Maps with the REST API
+                href: map/about-rest-api.md
+              - name: Handle Errors in Fabric Maps Automation
+                href: map/rest-api-error-handling-best-practices.md
       - name: How-to guides
         items:
         - name: Create a map
@@ -1025,6 +1031,8 @@ items:
               href: map/share-map-org-apps.md
         - name: Manage Map permissions
           href: map/manage-map-permissions.md
+        - name: Create and Configure a Fabric Map with REST APIs
+          href: map/create-configure-map-using-rest-api.md
   - name: AI agents and MCP servers
     displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
     items:
