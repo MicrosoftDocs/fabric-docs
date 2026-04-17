@@ -72,7 +72,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Mirrored Azure Database for PostgreSQL | - | - | Preview |
 |  | Mirrored Google Bigquery | - | - | Preview |
 |  | Mirrored Oracle |  | - | Preview |
-| **Native Databases** | Sql DB in Fabric | ✓ | ✓ | - |
+| **Fabric Databases** | SQL database in Fabric |  | ✓ | - |
 |  | Cosmos DB |  |  | - |
 |  | Snowflake database | - | - | - |
 | **OneLake** | Shortcut | ✓ | - | Preview |
