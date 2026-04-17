@@ -59,7 +59,7 @@ To create a new table in the database and enter the data manually, follow these 
 
     :::image type="content" source="media/powertable-how-to-enter-table-data-manually/save-table.png" alt-text="Screenshot of saving the new table." lightbox="media/powertable-how-to-enter-table-data-manually/save-table.png":::
 
-## Related Content
+## Related content
 
 * [Create a table app with PowerTable by importing an Excel or a CSV file](powertable-how-to-create-table-app.md)
 * [Connect PowerTable sheet to a semantic model](powertable-how-to-connect-semantic-model.md)
