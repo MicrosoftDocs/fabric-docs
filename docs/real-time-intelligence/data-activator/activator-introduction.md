@@ -5,6 +5,7 @@ ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Introduction
 ms.date: 04/17/2026
+ai-usage: ai-assisted
 #customer intent: As a business analyst, I want to understand what Fabric Activator is and its core capabilities so that I can determine if it meets my organization's real-time event detection needs.
 ---
 

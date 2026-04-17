@@ -5,6 +5,7 @@ description: Learn how to create a Fabric Activator alert from the results of a 
 ms.reviewer: guregini
 ms.topic: how-to
 ms.date: 04/17/2026
+ai-usage: ai-assisted
 ms.search.form: Activator KQL Queryset Onramp
 # CustomerIntent: As a customer, I want to learn how to create Activator alerts from a KQL Queryset so that I can trigger notifications when conditions are met on data in the query result.
 ---

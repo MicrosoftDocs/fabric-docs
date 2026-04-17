@@ -5,6 +5,7 @@ ms.reviewer: jtmsft
 ms.topic: tutorial
 ms.custom: FY25Q1-Linter, sfi-image-nochange
 ms.date: 04/17/2026
+ai-usage: ai-assisted
 ms.search.form: Data Activator Sample Tutorial
 #customer intent: As a Fabric user I want to learn more about Activator using a tutorial and sample data.
 ---

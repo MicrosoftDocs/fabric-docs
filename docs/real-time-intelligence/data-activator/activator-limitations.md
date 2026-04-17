@@ -5,6 +5,7 @@ ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: product-reflex
 ms.date: 04/17/2026
+ai-usage: ai-assisted
 #customer intent: As a Fabric user I want to learn about Activator limitations so that I can know when I can use it appropriately.
 ---
 

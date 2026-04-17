@@ -5,6 +5,7 @@ ms.topic: how-to
 ms.reviewer: guregini
 ms.custom: FY25Q1-Linter
 ms.date: 04/17/2026
+ai-usage: ai-assisted
 ms.search.form: Real-Time Dashboard
 #Customer intent: As a customer, I want to learn how to create Activator alerts from a Real-Time Dashboard so that I can trigger notifications when conditions are met on data in the dashboard.
 ---
