@@ -2,10 +2,7 @@
 title: Use Python experience on Notebook
 description: Learn how to work with pure Python notebooks for data exploration, visualization, and machine learning.
 ms.reviewer: jingzh
-ms.author: jingzh
-author: JeneZhang
 ms.topic: how-to
-ms.custom:
 ms.search.form: Create and use notebooks
 ms.date: 03/31/2025
 ---
@@ -53,9 +50,13 @@ Python notebook supports multiple job execution ways:
 - **Schedule run**: You can use the light-weighted scheduler experience on the notebook settings page to run Python notebook as a batch job.
 - **Pipeline run**: You can orchestrate Python notebooks as notebook activities in [Pipeline](../data-factory/notebook-activity.md). Snapshot will be generated after the job execution.
 - **Reference run**: You can use `notebookutils.notebook.run()` or `notebookutils.notebook.runMultiple()` to reference run Python notebooks in another Python notebook as batch job. Snapshot will be generated after the reference run finished.
-- **Public API run**: You can schedule your python notebook run with the [notebook run public API](notebook-public-api.md#run-a-notebook-on-demand), make sure the language and kernel properties in notebook metadata of the public API payload are set properly.
+- **%run**: You can use `%run` to reference and execute other notebooks within the same execution context, allowing you to directly call functions and reuse variables defined in those notebooks. For more details, see the documentation on how to [reference run a notebook](./author-execute-notebook.md#reference-run-a-notebook).
+- **Public API run**: You can schedule your python notebook run with the [notebook run public API](/rest/api/fabric/core/job-scheduler/run-on-demand-item-job), make sure the language and kernel properties in notebook metadata of the public API payload are set properly.
 
 You can monitor the Python notebook job run details on the ribbon tab **Run** -> **View all runs**.
+
+> [!NOTE]
+> Currently, `%run` only supports referencing notebook items on Python notebook, not code modules (such as .py files) from the notebook resources folder.
 
 ## Data interaction
 
@@ -297,17 +298,21 @@ Visit [Data Science documentations in Microsoft Fabric](/fabric/data-science/) t
 
    Autologging extends MLflow Tracking capabilities. Autologging can capture various metrics, including accuracy, loss, F1 score, and custom metrics you define. By using autologging, developers and data scientists can easily track and compare the performance of different models and experiments without manual tracking.
 
-- **Copilot**: Copilot for Data Science and Data Engineering notebooks is an AI assistant that helps you analyze and visualize data. It works with lakehouse tables, Power BI Datasets, and pandas/spark dataframes, providing answers and code snippets directly in the notebook. You can use the Copilot chat panel and Char-magics in notebook, and the AI provides responses or code to copy into your notebook.
+- **Copilot**: Copilot for Data Engineering and Data Science notebooks is an AI assistant that helps you analyze and visualize data. Copilot is immediately context-aware without requiring you to start a session. It understands the workspace, attached Lakehouse schemas, tables, and files, notebook structure, and runtime state, and can operate across the entire notebook workflow.
 
-## Public preview known limitations
+   Copilot supports notebook-wide, multi-step capabilities: it can generate, refactor, summarize, and validate code across multiple cells and steps in Python notebooks. You can use the Copilot chat panel and chat commands such as `/fix` in the notebook.
+
+   When a cell fails, **Fix with Copilot** surfaces an error summary, root-cause analysis, and recommended fixes, with an option to auto-apply code changes after showing an approval diff. You can also use the `/fix` command in Copilot chat for targeted diagnostics on a specific cell or the entire notebook.
+
+## Known limitations
 
 - Live pool experience is not guaranteed for every python notebook run. The session start time may take up to 3 minutes if the notebook run does not hit the live pool. As Python notebook usage grows, our intelligent pooling methods gradually increase the live pool allocation to meet the demand.
 
-- Environment integration is not available on Python notebook by public preview.
+- Environment integration is not available on Python notebook.
 
 - Set session timeout is not available for now.
 
-- Copilot may generate Spark statement, which may not executable in Python notebook.
+- Copilot has improved context-awareness and assistance for Python notebooks, but it might occasionally suggest Spark code that isn't directly executable in a Python notebook. The Fix with Copilot experience applies to failed Python cells; Spark job diagnostics are out of scope for pure Python runs.
 
 - Currently, Copilot on Python notebook is not fully supported in several regions. The deployment process is still ongoing stay tuned as we continue to roll out support in more regions.
 

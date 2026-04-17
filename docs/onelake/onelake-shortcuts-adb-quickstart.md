@@ -1,11 +1,10 @@
 ---
 title: Connect to ADLS and transform data with Azure Databricks
 description: Create a Delta table in your ADLS Gen2 account using Azure Databricks, create a shortcut to that table, and then build a Power BI report.
-ms.reviewer: eloldag
-ms.author: harmeetgill
-author: gillharmeet
+ms.reviewer: eloldag, harmeetgill # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
-ms.custom:
 ms.date: 09/27/2023
 #customer intent: As a data analyst, I want to learn how to connect to Azure Data Lake Storage (ADLS) with a shortcut to a Delta table so that I can transform ADLS data using an Azure Databricks notebook and build Power BI reports for data analysis.
 ---
@@ -94,3 +93,4 @@ Before you start, you must have:
 ## Related content
 
 - [Ingest data into OneLake and analyze with Azure Databricks](onelake-open-access-quickstart.md)
+

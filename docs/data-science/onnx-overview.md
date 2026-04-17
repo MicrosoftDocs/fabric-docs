@@ -2,11 +2,10 @@
 title: ONNX - Inference on Spark
 description: Use SynapseML to build a LightGBM model, convert it to ONNX format, then perform inference.
 ms.topic: how-to
-ms.custom: 
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: jessiwang
-reviewer: JessicaXYWang
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.date: 04/08/2025
 ---
 

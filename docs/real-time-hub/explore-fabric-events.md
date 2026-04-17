@@ -1,10 +1,8 @@
 ---
 title: Explore Fabric events in Fabric Real-Time hub
 description: This article shows how to explore Fabric events in Fabric Real-Time hub. It provides details on the Fabric events page in the Real-Time hub user interface.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: how-to
-ms.custom:
 ms.date: 12/11/2025
 ---
 
@@ -14,7 +12,7 @@ This article describes columns on the **Fabric events** page and actions availab
 
 :::image type="content" source="./media/explore-fabric-events/fabric-events.png" alt-text="Screenshot that shows the Real-Time hub Fabric events page." lightbox="./media/explore-fabric-events/fabric-events.png":::
 
-[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+[!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
 
 ## Columns
 
@@ -42,3 +40,4 @@ Here are the actions available on each event type group. When you move the mouse
 - [Explore Fabric workspace item events](explore-fabric-workspace-item-events.md)
 - [Explore Fabric OneLake events](explore-fabric-onelake-events.md)
 - [Explore Fabric Job events](explore-fabric-job-events.md)
+

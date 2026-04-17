@@ -1,8 +1,6 @@
 ---
 title: Secure Your Data Factory in Microsoft Fabric Deployment
 description: Learn how to secure Data Factory in Microsoft Fabric, with best practices for protecting your deployment.
-author: whhender
-ms.author: whhender
 ms.topic: concept-article
 ms.custom: horz-security
 ms.date: 08/12/2025
@@ -51,7 +49,7 @@ Protecting data throughout its lifecycle in Data Factory is crucial for maintain
 
 - **Configure data loss prevention**: Implement data loss prevention policies to identify, monitor, and protect sensitive data in your Data Factory pipelines. This helps prevent inadvertent sharing or exfiltration of sensitive information. See [Data loss prevention](/purview/dlp-powerbi-get-started).
 
-- **Secure credentials in Azure Key Vault**: Store data source credentials in Azure Key Vault instead of embedding them directly in connection strings or pipeline configurations. This centralizes and secures sensitive connection information. See [Azure Key Vault reference](azure-key-vault-reference-overview.md).
+- **Secure credentials in Azure Key Vault**: Store data source credentials in Azure Key Vault instead of embedding them directly in connection strings or pipeline configurations. This centralizes and secures sensitive connection information. See [Azure Key Vault reference](azure-key-vault-reference-configure.md).
 
 ## Logging and monitoring
 
@@ -84,6 +82,10 @@ Implementing robust backup and recovery procedures ensures business continuity a
 - **Verify data resilience**: Understand Microsoft Fabric's data resilience capabilities to ensure your data remains available during service disruptions. See [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric).
 
 - **Plan for disaster recovery**: Develop and test disaster recovery procedures specific to your Data Factory deployment to minimize downtime and data loss if there's a significant outage. See [Security in Microsoft Fabric](/fabric/security/experience-specific-guidance#data-factory).
+
+## Workspace role assignment
+
+Separate different workloads between workspaces and use roles like **Member** and **Viewer** to control access. For example, create a workspace for data engineering that prepares data, and a separate workspace for reporting or AI training. With the Viewer role, consumers can access data from the data engineering workspace without the ability to modify it. For more details on workspace roles, see [Roles in workspaces](../fundamentals/roles-workspaces.md).
 
 ## Learn more
 

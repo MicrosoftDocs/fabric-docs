@@ -2,19 +2,15 @@
 title: Explore Data Science in Microsoft Fabric
 description: Learn how to build end-to-end data science workflows in Microsoft Fabric, from data cleaning to predictive insights. Explore tutorials and resources now.
 #customer intent: As a data scientist, I want to understand the data science capabilities in Microsoft Fabric so that I can build end-to-end workflows.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: negust
 ms.topic: overview
-ms.custom: 
 ms.date: 12/03/2025
 ms.search.form: Data Science Overview
-reviewer: s-polly
 ---
 
 # What is Data Science in Microsoft Fabric?
 
-For data enrichment and business insights, [!INCLUDE [product-name](../includes/product-name.md)] offers Data Science experiences that empower users to build end-to-end data science workflows. To get started, see the [Data Science end-to-end tutorial](tutorial-data-science-introduction.md).
+For data enrichment and business insights, [!INCLUDE [product-name](../includes/product-name.md)] offers Data Science experiences that empower users to build end-to-end data science workflows. Data science workloads operate directly on governed enterprise data in OneLake, so you can access curated datasets, shared data, and predictions without moving data between systems. To get started, see the [Data Science end-to-end tutorial](tutorial-data-science-introduction.md).
 
 You can complete a wide range of activities across the entire data science process:
 
@@ -44,11 +40,13 @@ This article describes the [!INCLUDE [product-name](../includes/product-name.md)
 
 ## Problem formulation and ideation
 
-Data Science users in [!INCLUDE [product-name](../includes/product-name.md)] work on the same platform as business users and analysts. Data sharing and collaboration becomes more seamless across different roles as a result. Analysts can easily share Power BI reports and datasets with data science practitioners. The ease of collaboration across roles in [!INCLUDE [product-name](../includes/product-name.md)] makes hand-offs during the problem formulation phase easier.
+Data Science users in [!INCLUDE [product-name](../includes/product-name.md)] work on the same platform as business users and analysts. Data sharing and collaboration becomes more seamless across different roles as a result. Analysts can easily share Power BI reports and datasets with data science practitioners. The ease of collaboration across roles in [!INCLUDE [product-name](../includes/product-name.md)] makes hand-offs during the problem formulation phase easier. Cross-tenant data sharing in OneLake further enables multi-organization collaboration, allowing data science teams to access governed datasets shared by external partners or subsidiaries.
 
 ## Data discovery and preprocessing
 
 [!INCLUDE [product-name](../includes/product-name.md)] users can interact with data in OneLake by using the Lakehouse resource. To browse and interact with data, Lakehouse easily attaches to a notebook. Users can easily read data from a Lakehouse directly into a Pandas dataframe. For exploration, seamless data reads from OneLake then become possible.
+
+OneLake shortcuts extend this capability by providing no-copy access to data stored in external systems or shared from other Fabric workspaces and tenants. You can attach a shortcut to a lakehouse and read the referenced data in notebooks without duplication or ETL.
 
 A powerful set of tools is available for data ingestion and data orchestration pipelines with data integration pipelines - a natively integrated part of [!INCLUDE [product-name](../includes/product-name.md)]. Easy-to-build pipelines can access and transform the data into a format that machine learning can consume.
 
@@ -74,7 +72,7 @@ MLflow experiments and runs can track ML model training. To log experiments and 
 
 ### SynapseML
 
-Microsoft owns and operates the SynapseML (formerly known as MMLSpark) open-source library. It simplifies the creation of massively scalable machine learning pipelines. As a tool ecosystem, it expands the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks and new Microsoft algorithms into a single, scalable API. The open-source SynapseML library includes a rich ecosystem of ML tools for predictive model development, and it uses pretrained AI models from Azure AI services. For more information, visit the [SynapseML](https://aka.ms/spark) resource.
+Microsoft owns and operates the SynapseML (formerly known as MMLSpark) open-source library. It simplifies the creation of massively scalable machine learning pipelines. As a tool ecosystem, it expands the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks and new Microsoft algorithms into a single, scalable API. The open-source SynapseML library includes a rich ecosystem of ML tools for predictive model development, and it uses pretrained AI models from Foundry Tools. For more information, visit the [SynapseML](https://aka.ms/spark) resource.
 
 ## Enrich and operationalize
 
@@ -82,7 +80,7 @@ Notebooks can handle machine learning model batch scoring with open-source libra
 
 ### Gain insights
 
-In [!INCLUDE [product-name](../includes/product-name.md)], you can easily write predicted values to OneLake. From there, Power BI reports can seamlessly consume them with the Power BI Direct Lake mode. Data science practitioners can then easily share the results of their work with stakeholders - and it simplifies operationalization.
+In [!INCLUDE [product-name](../includes/product-name.md)], you can easily write predicted values to OneLake. From there, Power BI reports can seamlessly consume them with the Power BI Direct Lake mode, which reads data directly from OneLake without copying it into the semantic model. This no-copy access pattern keeps predictions up to date and eliminates redundant data movement. Data science practitioners can then easily share the results of their work with stakeholders, and it simplifies operationalization.
 
 You can use notebook scheduling features to schedule runs of notebooks that contain batch scoring. You can also schedule batch scoring as part of pipeline activities or Spark jobs. With the Direct lake mode in [!INCLUDE [product-name](../includes/product-name.md)], Power BI automatically gets the latest predictions without need for data loads or refreshes.
 

@@ -1,8 +1,6 @@
 ---
 title: Azure Files connector overview
 description: This article provides an overview of the supported capabilities of the Azure Files connector.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
 ms.date: 12/04/2025
 ms.custom:

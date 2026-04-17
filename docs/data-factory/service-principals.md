@@ -1,9 +1,7 @@
 ---
 title: Service principal support in Data Factory
 description: Learn about how to use the service principal authentication type to access your data sources.
-author: whhender
-ms.author: whhender
-ms.reviewer: whhender
+ms.reviewer: makromer
 ms.topic: concept-article
 ms.date: 07/28/2025
 ms.custom: configuration, sfi-image-nochange
@@ -14,7 +12,7 @@ ai-usage: ai-assisted
 
 Azure service principal (SPN) is a security identity that's based on applications. Service principals help you connect to data safely, without using a user identity. To learn more about service principals in general, go to [Application and service principal objects in Microsoft Entra ID](/entra/identity-platform/app-objects-and-service-principals).
 
-In Microsoft Fabric, service principal authentication works with datasets, dataflows (both Dataflow Gen1 and Dataflow Gen2), and datamarts. You can also use SPNs to authenticate your on-premises and virtual network data gateway connections. This example article shows you how to use service principal to connect to Azure Data Lake Storage Gen2 through Dataflow Gen2.  
+In Microsoft Fabric, service principal authentication works with datasets and dataflows (both Dataflow Gen1 and Dataflow Gen2). You can also use SPNs to authenticate your on-premises and virtual network data gateway connections. This example article shows you how to use service principal to connect to Azure Data Lake Storage Gen2 through Dataflow Gen2.  
 
 ## Supported data sources
 

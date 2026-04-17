@@ -1,9 +1,7 @@
 ---
 title: Slowly changing dimension type 2
 description: A tutorial and pattern on how to accomplish a Slowly Changing Dimension Type 2 solution using Data Factory and Dataflow Gen2 inside of Microsoft Fabric.
-author: ptyx507x
-ms.author: miescobar
-ms.reviewer: whhender
+ms.reviewer: miescobar
 ms.topic: tutorial
 ms.date: 07/23/2025
 ms.custom: dataflows
@@ -277,4 +275,4 @@ You can read more about how to set a data destination for your query and load th
 :::image type="content" source="../data-factory/media/slowly-changing-dimension-type-two/final-diagram-view.png" alt-text="Diagram view that shows the final solution with the data destination logic incorporated into it." lightbox="../data-factory/media/slowly-changing-dimension-type-two/final-diagram-view.png":::
 
 >[!NOTE]
->In Dataflow Gen2 you can leverage a staging mechanism at the query level. Read more about the [staging mechanism in Dataflow Gen2](../data-factory/data-in-staging-artifacts.md).
+>In Dataflow Gen2 you can leverage a staging mechanism at the query level. Read more about the [staging mechanism in Dataflow Gen2](../data-factory/data-in-staging-items.md).

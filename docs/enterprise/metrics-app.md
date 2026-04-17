@@ -1,10 +1,9 @@
 ---
 title: What is the Microsoft Fabric Capacity Metrics app?
 description: Learn how to evaluate your Microsoft Fabric capacity's health, by reading the metrics app.
-author: julcsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.topic: concept-article
-ms.custom:
 ms.date: 01/14/2026
 ---
 
@@ -12,15 +11,12 @@ ms.date: 01/14/2026
 
 Fabric resides on a capacity, which is a pool of resources allocated to your platform. Each capacity has its own number of [Capacity Units (CUs)](licenses.md). You use CUs to measure the compute power available for your capacity.
 
-The Microsoft Fabric Capacity Metrics app provides monitoring capabilities for Microsoft Fabric capacities. Use the app to monitor your capacity consumption and make informed decisions on how to use your capacity resources. For example, the app can help identify when to scale up your capacity or when to turn on autoscale.
+The Microsoft Fabric Capacity Metrics app provides monitoring capabilities for Microsoft Fabric capacities. Use the app to monitor your capacity consumption and make informed decisions on how to use your capacity resources. For example, the app can help identify when to scale up your capacity or when to turn on autoscale. For more information about autoscale, see [Autoscale your Fabric capacity](/power-bi/enterprise/service-premium-auto-scale).
 
 The app is updated often with new features and functionalities. It provides the most in-depth information into how your capacities are performing.
 
 > [!NOTE]
->
-> - Autoscale is available for Fabric F SKUs and Power BI Premium P SKUs. For more information about autoscale, see [Autoscale your Fabric capacity](/power-bi/enterprise/service-premium-auto-scale). Autoscale for Power BI Embedded A SKUs is deprecated and no longer available for most customers.
->
-> - The Microsoft Fabric Capacity Metrics app supports both EM/A and P SKUs.
+> The Microsoft Fabric Capacity Metrics app supports both EM/A and P SKUs.
 
 ## Install the app
 
@@ -32,17 +28,17 @@ To install the app, follow the instructions in [Install the Microsoft Fabric Cap
 
 The Microsoft Fabric Capacity Metrics app provides various features and functionalities to help you monitor and manage your capacities effectively. The app includes the following pages:
 
-- **Health** page (preview): Get a high-level overview for all capacities you're admin of, and identify those capacities consuming the most compute or experiencing issues like throttling or query rejections. For more information, see [Understand the metrics app Health page](metrics-app-health-page.md).
+- **Health** page: Get a high-level overview for all capacities you're admin of, and identify those capacities consuming the most compute or experiencing issues like throttling or query rejections. For more information, see [Understand the metrics app Health page](metrics-app-health-page.md).
 
-- **Compute** page: Get a 14-day view of your capacity’s compute performance. Visuals include ribbon charts, utilization trends, and a matrix of operations, helping you analyze usage patterns, peak loads, and throttling events. For more information, see [Understand the metrics app compute page](metrics-app-compute-page.md).
+- **Compute** page: Get a 14-day view of your capacity’s compute performance. Visuals include ribbon charts, utilization trends, and a matrix of operations, helping you analyze usage patterns, peak loads, and throttling events. AI Functions appears as a distinct operation category in ribbon charts, utilization trends, and the matrix of operations, tracked separately from Spark and Dataflows Gen2. For more information, see [Understand the metrics app compute page](metrics-app-compute-page.md).
 
 - **Storage** page: Monitor storage usage over the past 30 days. View current and billable storage by workspace, track soft-deleted data, and explore trends through column charts and detailed tables. For more information, see [Understand the metrics app storage page](metrics-app-storage-page.md).
 
-- **Timepoint** page: Drill into a specific 30-second timepoint to see which operations - interactive or background - consumed the most compute. Use this page to diagnose overloads and understand autoscale or throttling behavior. For more information, see [Understand the metrics app timepoint page](metrics-app-timepoint-page.md).
+- **Timepoint** page: Drill into a specific 30-second timepoint to see which operations (interactive or background) consumed the most compute. The operation breakdown includes a dedicated AI Functions operation group, so you can see AI Functions usage at a given 30-second interval. Use this page to diagnose overloads and understand autoscale or throttling behavior. For more information, see [Understand the metrics app timepoint page](metrics-app-timepoint-page.md).
 
-- **Timepoint summary** page (preview): Summarizes operation types (not individual operations) that contributed to capacity usage during a selected timepoint. Ideal for identifying high-impact workloads and understanding autoscale thresholds. For more information, see [Understand the metrics app timepoint summary page](metrics-app-timepoint-summary-page.md).
+- **Timepoint summary** page: Summarizes operation types (not individual operations) that contributed to capacity usage during a selected timepoint. Summary visuals include AI Functions as an operation type, helping identify when AI Functions contributes materially to capacity usage and autoscale thresholds. For more information, see [Understand the metrics app timepoint summary page](metrics-app-timepoint-summary-page.md).
 
-- **Timepoint item detail** page (preview): Provides granular detail on operations within a specific item at a timepoint. Includes filters for operation ID, user, and CU thresholds that are useful for root-cause analysis and performance tuning. For more information, see [Understand the metrics app timepoint item detail page](metrics-app-timepoint-item-detail-page.md).
+- **Timepoint item detail** page: Provides granular detail on operations within a specific item at a timepoint. Includes filters for operation ID, user, and CU thresholds that are useful for root-cause analysis and performance tuning. For more information, see [Understand the metrics app timepoint item detail page](metrics-app-timepoint-item-detail-page.md).
 
 - **Autoscale compute for Spark** page: This page provides insights into the autoscaling behavior of Spark workloads, helping you optimize performance and resource allocation. For more information, see [Understand the metrics app Autoscale compute for Spark page](metrics-app-feature-autoscale-page.md).
 
@@ -52,7 +48,7 @@ The Microsoft Fabric Capacity Metrics app provides various features and function
 
 - **Monitor paused capacity**: Track when a capacity was paused or resumed, and understand why utilization spikes may appear during pauses. Includes guidance on interpreting `carryforward` operations. To learn more, see [Monitor a paused capacity](monitor-paused-capacity.md).
 
-- **Calculations**: Understand how the app computes key metrics like CU usage, throttling, and autoscale impact. Useful for interpreting visuals and validating internal reporting. For more information, see [Metrics app calculations](metrics-app-calculations.md).
+- **Calculations**: Understand how the app computes key metrics like CU usage, throttling, and autoscale impact. The operation taxonomy and CU calculations include AI Functions as a separate operation type, with its CU usage attributed independently from Spark and Dataflows Gen2 in all visuals. Useful for interpreting visuals and validating internal reporting. For more information, see [Metrics app calculations](metrics-app-calculations.md).
 
 ## Data latency
 
@@ -103,7 +99,7 @@ When using the Microsoft Fabric Capacity Metrics app, consider the following con
 
 - The *CU (s)* column of the [matrix by item and operation](metrics-app-compute-page.md#matrix-by-item-and-operation) table displays the cumulative consumption of CU seconds for a specific item over the past 14 days. If you move the item from another workspace to the current workspace in the last 14 days, the *CU (s)* column includes the cumulative consumption of CU seconds for the item in the previous workspace.
 
-- The Microsoft Fabric Capacity Metrics app doesn't support environments that use [private links](../security/security-private-links-overview.md).
+- The Fabric Capacity Metrics app supports environments that use [tenant-level private links](../security/security-private-links-overview.md), but workspace‑level private links aren’t supported on workspaces where the app is installed.
 
 - The threshold values on throttling visuals don't reflect applied surge protection settings. To view the actual [surge protection](surge-protection.md) thresholds, refer to the Admin Portal in the Power BI service.
 

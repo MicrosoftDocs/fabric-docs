@@ -1,8 +1,6 @@
 ---
 title: MongoDB Atlas SQL (Beta) connector overview
 description: This article provides an overview of the supported capabilities of the MongoDB Atlas SQL connector.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
@@ -15,10 +13,12 @@ ms.custom:
 The MongoDB Atlas SQL connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-For information on how to connect to a MongoDB Atlas SQL database in Dataflow Gen2, go to [Set up your MongoDB Atlas SQL (Beta) connection](connector-mongodb-atlas-sql.md).
+| Supported capabilities | Gateway | Authentication |
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-) | None | Basic |
 
-## Support in pipelines
+## Related content
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support a MongoDB Atlas SQL database in pipelines.
+For information on how to connect to a MongoDB Atlas SQL database, go to [Set up your MongoDB Atlas SQL (Beta) connection](connector-mongodb-atlas-sql.md).

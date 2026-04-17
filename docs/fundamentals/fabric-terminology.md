@@ -1,29 +1,27 @@
 ---
 title: Microsoft Fabric terminology
 description: Learn the definitions of terms used in Microsoft Fabric, including terms specific to Fabric Data Warehouse, Fabric Data Engineering, and Fabric Data Science.
-ms.reviewer: sngun
-ms.author: sngun
 author: SnehaGunda
+ms.author: sngun
 ms.topic: glossary
-ms.custom:
 ms.search.form: product-trident
-ms.date: 01/08/2026
-# customer intent: As a Microsoft Fabric user I want to learn about Fabric terms, including terms specific to Fabric Data Warehouse, Fabric Data Engineering, and Fabric Data Science.
+ms.date: 02/04/2026
+#customer intent: As a Microsoft Fabric user I want to learn about Fabric terms, including terms specific to Fabric Data Warehouse, Fabric Data Engineering, and Fabric Data Science.
 ---
 
 # Microsoft Fabric terminology
 
-Learn the definitions of terms used in Microsoft Fabric, including terms specific to Fabric Data Engineering, Data Factory, Fabric Data Science, Fabric Data Warehouse, IQ, Real-Time Intelligence, and Power BI.
+Learn the definitions of terms used in Microsoft Fabric, including terms specific to Fabric Data Engineering, Data Factory, Fabric Data Science, Fabric Data Warehouse, Fabric IQ, Real-Time Intelligence, and Power BI.
 
 ## General terms
 
 - **Capacity:** Capacity is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different items consume different capacity at a certain time. Fabric offers capacity through the Fabric SKU and Trials. For more information, see [What is capacity?](../enterprise/licenses.md#capacity)
 
-- **Experience:** A collection of capabilities targeted to a specific functionality. The Fabric experiences include Fabric Data Warehouse, Fabric Data Engineering, Fabric Data Science, Real-Time Intelligence, Data Factory, and Power BI.
-
-- **Item:** An item is a set of capabilities within an experience. Users can create, edit, and delete them. Each item type provides different capabilities. For example, the Data Engineering experience includes the lakehouse, notebook, and Spark job definition items.
+- **Item:** An item is a set of capabilities within a workload. Users can create, edit, and delete them. Each item type provides different capabilities. For example, the Data Engineering workload includes the lakehouse, notebook, and Spark job definition items.
 
 - **Tenant:** A tenant is a single instance of Fabric for an organization and is aligned with a Microsoft Entra ID.
+
+- **Workload/experience:** A collection of capabilities targeted to a specific functionality. The Fabric workloads include Fabric Data Engineering, Data Factory, Fabric Data Science, Fabric Data Warehouse, Databases, Industry Solutions, Real-Time Intelligence, Fabric IQ, and Power BI. Fabric workloads are sometimes referred to as *Fabric experiences*.
 
 - **Workspace:** A workspace is a collection of items that brings together different functionality in a single environment designed for collaboration. It acts as a container that uses capacity for the work that is executed, and provides controls for who can access the items in it. For example, in a workspace, users create reports, notebooks, semantic models, etc. For more information, see [Workspaces](workspaces.md) article.
 
@@ -73,9 +71,10 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Fabric Data Warehouse:** The Fabric Data Warehouse functions as a traditional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. For more information, see [Fabric Data Warehouse](../data-warehouse/data-warehousing.md#fabric-data-warehouse).
 
-## IQ
+## Fabric IQ
 
-- **Ontology**: Ontology (preview) is an item where you can define entity types, relationships, properties, and other constraints to organize data according to your business vocabulary. For more information, see [What is ontology (preview)?](../iq/ontology/overview.md).
+- **Ontology**: Ontology (preview) is an item where you can define entity types, relationships, properties, and other constraints to organize data according to your business vocabulary. For more information, see [What is ontology (preview)?](../iq/ontology/overview.md)
+- **Plan**: Plan (preview) is a unified no-code platform for collaborative planning, reporting, analytics, data integration, and management. For more information, see [What is plan (preview)?](../iq/plan/overview.md)
 
 ## Real-Time Intelligence
 
@@ -97,9 +96,15 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 ## OneLake
 
-- **Shortcut:** Shortcuts are embedded references within OneLake that point to other file store locations. They provide a way to connect to existing data without having to directly copy it. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
+- **OneLake:** OneLake is Fabric's unified, multi-cloud data lake that provides a single logical data layer for all Fabric items, governance, and storage. OneLake is built on Azure Data Lake Storage Gen2 and includes features such as shortcuts for zero-copy data access and cross-tenant data sharing for governed collaboration across organizational boundaries. For more information, see [What is OneLake?](../onelake/onelake-overview.md)
+
+- **Shortcut:** Shortcuts are embedded references within OneLake that point to other file store locations. They enable access to external operational data sources without copying data or building ETL pipelines. You can combine shortcuts with OneLake data sharing for cross-tenant governed access to shared datasets. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
+
+- **Data sharing (cross-tenant):** OneLake data sharing lets you share live, governed datasets across Microsoft Entra tenants without copying data. External recipients access shared data in place, and all governance policies remain enforced at the source. For more information, see [external data sharing](../governance/external-data-sharing-overview.md).
 
 ## Related content
 
 - [Navigate to your items from Microsoft Fabric Home page](fabric-home.md)
 - [End-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md)
+
+

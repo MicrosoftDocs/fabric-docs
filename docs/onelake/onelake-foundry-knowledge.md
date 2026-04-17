@@ -1,11 +1,10 @@
 ---
 title: OneLake for Microsoft Foundry
 description: Use OneLake data as a knowledge base for AI agents in Microsoft Foundry
-ms.reviewer: mideboer
-ms.author: kgremban
-author: kgremban
+ms.reviewer: mideboer # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article
-ms.custom:
 ms.date: 11/17/2025
 #customer intent: As a data engineer, I want to make my enterprise data available for AI agents while still maintaining permissions and governance control over it.
 ---

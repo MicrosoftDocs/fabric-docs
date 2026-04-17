@@ -1,11 +1,11 @@
 ---
 title: Integrate Microsoft Entra with AWS S3 using Service Principal Authentication (SPN)
 description: Learn how to integrate Microsoft Entra with AWS S3 using Service Principal authentication for secure access to S3 buckets with unified identity management and OIDC-based authentication.
-author: SnehaGunda
 ms.topic: how-to
 ms.date: 07/10/2025
-ms.author: sngun
-ms.reviewer: sngun
+ms.reviewer: # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ---
 
 # Integrate Microsoft Entra with AWS S3 shortcuts using service principal authentication
@@ -173,3 +173,5 @@ Use Microsoft OneLake's shortcut creation interface to create the shortcut as de
 * [Create an S3 shortcut](create-s3-shortcut.md)
 * [Create an Amazon S3 compatible shortcut](create-s3-compatible-shortcut.md)
 * [Create shortcuts to on-premises data](create-on-premises-shortcut.md)
+
+

@@ -1,8 +1,7 @@
 ---
 title: Azure SQL Database connector overview
 description: This article explains the overview of using Azure SQL Database.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 07/09/2025
 ms.custom:

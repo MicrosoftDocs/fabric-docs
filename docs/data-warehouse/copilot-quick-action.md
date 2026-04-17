@@ -73,3 +73,4 @@ To get Copilot's help with fixing an error in your query, follow these steps:
 - [How to use Copilot code completion in Fabric in Data Warehouse](copilot-code-completion.md)
 - [How to use the Copilot chat pane in Fabric in Data Warehouse](copilot-chat-pane.md)
 - [Privacy, security, and responsible use of Copilot in Fabric in Data Warehouse](../fundamentals/copilot-data-warehouse-privacy-security.md)
+

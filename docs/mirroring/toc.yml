@@ -11,7 +11,7 @@ items:
   - name: Mirrored database logs
     href: monitor-logs.md
   - name: Share and manage permissions
-    href: share-and-manage-permissions.md
+    href: share-and-manage-permissions.md 
 - name: Explore mirrored data
   items:
   - name: Explore your mirrored database
@@ -22,6 +22,12 @@ items:
   - name: Explore with notebooks
     displayName: Explore mirrored data with notebooks
     href: explore-onelake-shortcut.md
+- name: Extended capabilities
+  items:
+  - name: Extended capabilities
+    href: extended-capabilities.md
+  - name: Pricing for extended capabilities
+    href: extended-capabilities-billing.md
 - name: Mirroring Azure SQL Database
   items:
     - name: Mirrored database from Azure SQL Database
@@ -66,13 +72,15 @@ items:
         href: azure-sql-managed-instance-troubleshoot.md
       - name: Automatic reseed
         href: azure-sql-managed-instance-automatic-reseed.md
-
 - name: Mirroring Azure Cosmos DB
   items: 
     - name: Mirrored databases from Azure Cosmos DB
       href: azure-cosmos-db.md        
     - name: Azure Cosmos DB tutorial
       href: azure-cosmos-db-tutorial.md
+    - name: Migrate from Azure Synapse Link
+      displayName: Migrate from Azure Synapse Link to Cosmos DB mirroring
+      href: azure-cosmos-db-migrate-synapse-link.md
     - name: FAQ about mirrored Azure Cosmos DB 
       displayName: Frequently asked questions about mirrored Azure Cosmos DB
       href: azure-cosmos-db-faq.yml
@@ -100,6 +108,9 @@ items:
     - name: Tutorial
       displayName: Mirroring Azure Databricks tutorial
       href: azure-databricks-tutorial.md
+    - name: Private endpoint
+      displayName: Mirroring Azure Databricks with private endpoint
+      href: azure-databricks-private-endpoint.md
     - name: Secure data
       displayName: Mirroring Azure Databricks security
       href: azure-databricks-security.md
@@ -151,6 +162,21 @@ items:
     - name: Troubleshoot
       displayName: Troubleshoot mirrored PostgreSQL
       href: azure-database-postgresql-troubleshoot.md
+- name: Mirroring MySQL
+  items: 
+    - name: Mirrored databases from MySQL
+      href: azure-database-mysql.md
+    - name: MySQL tutorial
+      href: azure-database-mysql-tutorial.md
+    - name: FAQ
+      displayName: Frequently asked questions about mirrored MySQL
+      href: azure-database-mysql-mirroring-faq.yml
+    - name: Limitations
+      displayName: Limitations in mirrored MySQL
+      href: azure-database-mysql-limitations.md
+    - name: Troubleshoot
+      displayName: Troubleshoot mirrored MySQL
+      href: azure-database-mysql-troubleshoot.md
 - name: Mirroring SAP
   items:
     - name: Mirrored databases from SAP
@@ -159,6 +185,12 @@ items:
       href: sap-datasphere-tutorial.md
     - name: Limitations in mirrored SAP
       href: sap-limitations.md
+- name: Mirroring SharePoint List
+  items:
+    - name: Mirrored SharePoint List
+      href: sharepoint-list.md
+    - name: SharePoint List tutorial
+      href: sharepoint-list-tutorial.md
 - name: Mirroring Snowflake
   items: 
     - name: Mirrored warehouses from Snowflake

@@ -1,9 +1,7 @@
 ---
 title: Detailed Tutorial for PowerShell-based Migration of Azure Data Factory Pipelines to Fabric
 description: Use the Microsoft.FabricPipelineUpgrade PowerShell module to upgrade Azure Data Factory pipelines to Fabric pipelines.
-author: ssindhub
-ms.author: ssrinivasara
-ms.reviewer: whhender
+ms.reviewer: ssrinivasara
 ms.topic: tutorial
 ms.custom: pipelines
 ms.date: 09/17/2025
@@ -11,6 +9,9 @@ ai-usage: ai-assisted
 ---
 
 # Tutorial: Upgrade your Azure Data Factory pipelines to Fabric pipelines using PowerShell
+
+> [!TIP]
+> For most migrations, we recommend the [built-in upgrade experience](/azure/data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory), which provides a guided, no-code migration path directly in the Azure Data Factory UX. Use the PowerShell approach in this tutorial for scripted, bulk, or CI/CD-driven scenarios.
 
 You can migrate your Azure Data Factory (ADF) pipelines to Microsoft Fabric using the Microsoft.FabricPipelineUpgrade PowerShell module. This tutorial provides an example of all the steps to perform the migration with specific instructions, screenshots, and troubleshooting steps. For a more general, concise guide, see [the overview](migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md).
 
@@ -78,7 +79,7 @@ This command loads the pipeline and associated artifacts from your Azure Data Fa
   "result": {
     "importedResources": {
       "type": "AdfSupportFile",
-      "adfName": "testdatafactory,
+      "adfName": "testdatafactory",
       "pipelines": {
         "pipeline1": {
           "name": "pipeline1",
@@ -94,7 +95,6 @@ This command loads the pipeline and associated artifacts from your Azure Data Fa
                   "waitTimeInSeconds": 1
                 }
               }
-            ],
             ],
             "policy": {
               "elapsedTimeMetric": {}
@@ -359,9 +359,11 @@ The Fabric Upgrader can’t create Fabric connections on its own. You need to he
 
     ```json
     [
+      {
         "type": "LinkedServiceToConnectionId",
         "key": "BlobStore1",
         "value": "<Fabric Connection ID>"
+      }
     ]
     ```
 

@@ -62,7 +62,7 @@ items:
     href: service-admin-portal-organizational-visuals.md
   - name: Manage Power BI visuals admin settings
     href: organizational-visuals.md 
-  - name: Manage Premium Per User
+  - name: Manage Power BI Premium Per-User
     href: service-admin-portal-premium-per-user.md
   - name: Manage users
     href: service-admin-portal-users.md
@@ -80,6 +80,12 @@ items:
     href: portal-workspace.md
   - name: Capacity reassignment restrictions
     href: portal-workspace-capacity-reassignment.md
+  - name: Retention and recovery
+    href: retention-recovery.md
+  - name: Set up workspace retention
+    href: workspace-retention.md
+  - name: Recover or delete items
+    href: item-recovery.md
 - name: Feature set up
   items:
   - name: Enable item certification
@@ -91,6 +97,7 @@ items:
   - name: Set up metadata scanning
     href: metadata-scanning-setup.md
   - name: Enable service principal authentication
+    displayName: API, REST, Power BI, read-only
     href: enable-service-principal-admin-apis.md
   - name: Configure Multi-Geo support
     href: service-admin-premium-multi-geo.md
@@ -129,6 +136,8 @@ items:
       href: ../data-science/data-agent-tenant-settings.md
     - name: Copilot settings
       href: service-admin-portal-copilot.md
+    - name: Additional workloads
+      href: service-admin-portal-additional-workloads.md
     - name: Integration settings
       href: service-admin-portal-integration.md
     - name: Power BI visuals
@@ -151,13 +160,15 @@ items:
       href: service-admin-portal-template-app.md
     - name: Q&A settings
       href: service-admin-portal-qa.md
+    - name: Explore settings (preview)
+      href: service-admin-portal-explore.md
     - name: Semantic model security
       href: service-admin-portal-dataset-security.md
     - name: Advanced networking 
       href: service-admin-portal-advanced-networking.md
     - name: Encryption 
       href: service-admin-portal-encryption.md
-    - name: Metrics settings
+    - name: Scorecards settings
       href: service-admin-portal-goals-settings.md
     - name: User experience experiments
       href: service-admin-portal-user-experience-experiments.md
@@ -169,8 +180,6 @@ items:
       href: service-admin-portal-datamart.md
     - name: Semantic model settings
       href: service-admin-portal-data-model.md
-    - name: Quick measure suggestions settings
-      href: service-admin-portal-quick-measure-suggestions-settings.md
     - name: Scale-out settings
       href: service-admin-portal-scale-out.md
     - name: OneLake settings

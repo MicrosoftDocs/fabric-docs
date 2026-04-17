@@ -1,9 +1,7 @@
 ---
 title: How to Use Azure Data Factory item (Mount) in Microsoft Fabric
 description: The Azure Data Factory item in Microsoft Fabric allows you to bring in your ADF items to Fabric instantly.
-author: ssindhub
-ms.author: ssrinivasara
-ms.reviewer: whhender
+ms.reviewer: ssrinivasara
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 07/01/2025
@@ -20,7 +18,7 @@ To get started, you must complete the following prerequisites:
 
 - A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - Permissions: You’ll need contributor access to the ADF and member/admin rights in the Fabric workspace.
-- Same Tenant: Your ADF and Fabric workspace must be in the same Azure AD tenant.
+- Same Tenant: Your ADF and Fabric workspace must be in the same Microsoft Entra ID tenant.
 - Same Region (Recommended): For best performance, keep your Fabric workspace in the same region as your ADF.
 
 ## What’s new?
@@ -65,7 +63,7 @@ That’s it! Within no time, you’ll see your ADF pipelines inside Fabric.
 
 :::image type="content" source="media/migrate-planning-azure-data-factory/view-mounted-azure-data-factory.png" alt-text="Screenshot showing the Azure Data Factory mounted successfully in Fabric.":::
 
-5.  Select the "View Azure Data Factory" to view, edit, validate and trigger your pipeline from Fabric. 
+4.  Select the "View Azure Data Factory" to view, edit, validate and trigger your pipeline from Fabric. 
 Not sure yet? You can safely unmount your factory from Fabric at any time. Just select Unmount.
 
 :::image type="content" source="media/migrate-planning-azure-data-factory/unmount-from-fabric.png" alt-text="Screenshot showing unmount Azure Data Factory Item in Fabric.":::

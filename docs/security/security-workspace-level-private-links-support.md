@@ -5,7 +5,6 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: overview
-ms.custom:
 ms.date: 10/22/2025
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
@@ -99,13 +98,23 @@ Create and manage Lakehouses in workspaces enabled with private links by using t
 * [Background Jobs - REST API (Lakehouse)](/rest/api/fabric/lakehouse/background-jobs)
 ---
 
+### Materialized lake views support (Preview)
+ 
+Use Fabric portal or REST APIs in workspaces enabled with private links to refresh materialized lake views in Lakehouse. This feature is in preview.
+ 
+#### [Fabric portal](#tab/fabric-portal-2)
+* [Schedule lineage](/fabric/data-engineering/materialized-lake-views/schedule-lineage-run)
+#### [REST API](#tab/rest-apis-2)
+* [Manage materialized lake views using REST API](/fabric/data-engineering/materialized-lake-views/materialized-lake-views-public-api)
+---
+
 ### Warehouse support
 
 Create and manage warehouses in workspaces enabled with private links by using the Fabric portal or REST APIs.
 
-#### [Fabric portal](#tab/fabric-portal-2)
+#### [Fabric portal](#tab/fabric-portal-15)
 * [Create a Warehouse](/fabric/data-warehouse/create-warehouse)
-#### [REST API](#tab/rest-apis-2)
+#### [REST API](#tab/rest-apis-15)
 * [Warehouse REST API](/rest/api/fabric/warehouse/items)
 * [Items - REST API (WarehouseSnapshot)](/rest/api/fabric/warehousesnapshot/items)
 * To get the workspace private link service connection string for a warehouse:
@@ -216,9 +225,9 @@ Manage pipelines, copy jobs, and mounted data factories in workspaces enabled wi
 
 The following scenarios are unsupported:
 
-* Copy to warehouse isn't supported.
+* Workspace staging is not supported for Fabric Data Warehouse, Snowflake, or Teradata connectors in Copy activity and Copy job. Use external staging as an alternative.
 * Copy to Eventhouse isn't supported.
-* OneLake staging isn't currently supported.
+
 
 ### Eventstream support
 
@@ -296,6 +305,18 @@ You can manage mirrored databases in workspaces enabled with private links by us
 > * Currently, workspace-level private link is supported for [open mirroring](/fabric/mirroring/open-mirroring), [Azure Cosmos DB mirroring](/fabric/mirroring/azure-cosmos-db), [Azure SQL Managed Instance mirroring](/fabric/mirroring/azure-sql-managed-instance) and [SQL Server 2025 mirroring](/fabric/mirroring/sql-server). For other types of database mirroring, if your workspace is configured to deny inbound public access, active mirrored databases enter a paused state, and mirroring can't be started.
 > * For open mirroring, when your workspace is configured to deny inbound public access, ensure the publisher writes data into the OneLake landing zone via a private link with workspace FQDN.
 
+### Azure and Fabric Events support
+
+When workspace-level private links are configured on a workspace to block public access, event consumers (such as Activator alerts or eventstreams) in other workspaces can't subscribe to or consume events from items in that workspace unless a private link is established from the consumer's network to the source workspace (the workspace where the events originate).
+
+This applies to all Fabric event types. For example, if you create an Activator alert in Workspace A to monitor OneLake events from a lakehouse in Workspace B, Workspace B is the source workspace. If Workspace B blocks public network access, this configuration fails unless a private link is established from Workspace A's network to Workspace B.
+
+Azure events (such as Azure Blob Storage events) are also affected. When you configure a consumer to receive Azure events, an eventstream item is created in a Fabric workspace to represent the Azure source. If the workspace that contains this eventstream item blocks public network access, consumers in other workspaces can't consume those events unless a private link is established. Additionally, Azure events are affected by tenant-level private link configuration — when the **Block Public Internet Access** tenant setting is enabled, Azure event sources outside the tenant are blocked from delivering events into Fabric entirely, regardless of workspace-level settings.
+
+Event consumption within the same workspace is always allowed, regardless of private link settings. If workspace-level private link settings change after a consumer is already configured, the system detects the change and pauses the configuration. While paused, events are retained for up to 7 days. For details on paused configurations, see [Paused event configurations in Real-Time hub](/fabric/real-time-hub/fabric-events-paused-state).
+
+For more information, see [Private links for Azure and Fabric Events](/fabric/real-time-hub/private-links-real-time-events).
+
 ## Supported and unsupported management tools
 
 - You can use either the Fabric portal or REST API to manage all [supported item types](#supported-item-types-for-workspace-level-private-link) in workspaces with workspace private links enabled. When a workspace allows public access, the Fabric portal continues to function using public connectivity. If a workspace is configured to deny inbound public access, you can access it in the Fabric portal only when the request originates from the workspace's associated private endpoint. If access is attempted from public connectivity or from a different private endpoint, the Fabric portal displays an "Access Restricted" message. 
@@ -320,7 +341,7 @@ You can manage mirrored databases in workspaces enabled with private links by us
 - Current limitations for Private Link with an eventhouse:
    - Copilot features: Machine learning workloads might experience limited functionality due to a known regression.
    - Eventstream pull: Eventstream workloads don't currently support full polling functionality.
-   - Fabric doesn't currently support Event Hub integration.
+   - Fabric doesn't currently support Azure Event Hubs integration.
    - Queued ingestion via OneLake isn't currently available.
 * The **OneLake Catalog - Govern** tab isn't available when Private Link is activated.
 * **OneLake Security** isn't currently supported when a workspace-level private link is enabled for a workspace.

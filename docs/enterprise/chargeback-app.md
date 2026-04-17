@@ -1,16 +1,14 @@
 ---
-title: What is Microsoft Fabric Chargeback app (preview)?
+title: What is Microsoft Fabric Chargeback app?
 description: Learn how to use the Microsoft Fabric Chargeback app.
-author: kishanpujara-ms
-ms.author: kishanpujara
-ms.reviewer: juliacawthra
-ms.topic: conceptual
+author: dknappettmsft
+ms.author: daknappe
+ms.reviewer: kishanpujara
+ms.topic: concept-article
 ms.date: 07/02/2025
 ---
 
-# Microsoft Fabric Chargeback app (preview)
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+# Microsoft Fabric Chargeback app
 
 The Microsoft Fabric Chargeback app helps you understand which teams, users, and workloads are driving capacity usage, enabling you to build chargeback processes that fairly allocate costs based on actual consumption. As a capacity admin, you can view key parameters such as metric types, dates, and operation names, and share the report with others in your organization to support transparent and informed cost management.
 
@@ -63,3 +61,4 @@ When using the Microsoft Fabric Chargeback app, be aware of the following consid
 - [Install the Microsoft Fabric Chargeback app](chargeback-app-install.md)
 - [Chargeback Azure Reservation costs](/azure/cost-management-billing/reservations/charge-back-usage)
 - [View amortized benefit costs](/azure/cost-management-billing/reservations/view-amortized-costs)
+

@@ -3,10 +3,9 @@ title: Train models with PyTorch in Microsoft Fabric
 description: Learn how to train models with the PyTorch framework in Microsoft Fabric for applications like computer vision and natural language processing.
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: negust
-reviewer: nelgson
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: how-to
-ms.custom:
 ms.date: 09/30/2025
 ms.search.form: Train models with PyTorch
 

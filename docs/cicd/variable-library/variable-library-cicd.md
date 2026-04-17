@@ -1,13 +1,8 @@
 ---
 title: Lifecycle Management of the Microsoft Fabric Variable library
 description: Understand how to use variable libraries in the context of lifecycle management and CI/CD.
-author: billmath
-ms.author: billmath
 ms.reviewer: Lee
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: concept-article
-ms.custom:
 ms.date: 12/15/2025
 ms.search.form: CICD and variable library
 #customer intent: As a developer, I want to learn how to use a Microsoft Fabric variable library to manage my content lifecycle.
@@ -63,7 +58,7 @@ The schema for the variable library item is a JSON object that contains four par
 
 The variable library folder contains a subfolder called `valueSets`. This folder contains a JSON file for each value set. This JSON file contains only the variable values for *non-default* values in that value set.
 
-For more information about the value set file, see the [value set example](/rest/api/fabric/articles/item-management/definitions/variable-library-definition#valueset).
+For more information about the value set file, see [value sets](value-sets.md) and the [value set example](/rest/api/fabric/articles/item-management/definitions/variable-library-definition#valueset).
 
 Values for variables not in this file are taken from the default value set.
 
@@ -71,7 +66,7 @@ Values for variables not in this file are taken from the default value set.
 
 The `settings.json` file contains settings for the variable library.
 
-For more information, see the [settings.json example](/rest/api/fabric/articles/item-management/definitions/variable-library-definition#settingsjson-example-).
+For more information, see [variables](variable-types.md) and the [settings.json example](/rest/api/fabric/articles/item-management/definitions/variable-library-definition#settingsjson-example-).
 
 ### Variables
 

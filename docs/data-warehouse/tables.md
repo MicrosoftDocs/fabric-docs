@@ -1,10 +1,8 @@
 ---
-title: Tables
+title: Tables in Fabric Data Warehouse
 description: Learn how to design and use tables in Microsoft Fabric Data Warehouse, including temporary tables.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: xiaoyul, randolphwest
-ms.date: 09/24/2025
+ms.date: 04/03/2026
 ms.topic: how-to
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
@@ -15,8 +13,6 @@ ms.search.form: Warehouse design and development # This article's title should n
 This article details key concepts for designing tables in [!INCLUDE [product-name](../includes/product-name.md)].
 
 In tables, data is logically organized in a row-and-column format. Each row represents a unique record, and each column represents a field in the record.
-
-- In [!INCLUDE [fabricdw](includes/fabric-dw.md)], tables are database objects that contain all the transactional data.
 
 ## Determine table category
 
@@ -77,7 +73,7 @@ CREATE SCHEMA wwi;
 
 ## Collation
 
-Fabric warehouses are configured based on the workspace's collation setting, which by default are the case-sensitive (CS) collation `Latin1_General_100_BIN2_UTF8`. When creating a [new warehouse](create-warehouse.md), the collation of the workspace will be used. For more information, see [Data Warehouse collation](collation.md).
+Fabric warehouses are configured based on the workspace's collation setting, which by default is the case-sensitive (CS) collation `Latin1_General_100_BIN2_UTF8`. When creating a [new warehouse](create-warehouse.md), the collation of the workspace will be used. For more information, see [Data Warehouse collation](collation.md).
 
 Supported warehouse collations are:
 
@@ -111,7 +107,7 @@ Session-scoped temporary (`#temp`) tables can be created in Fabric Data Warehous
 
 These tables exist only within the session in which they are created and last for the duration of that session. They are not visible to other users or sessions and are automatically dropped from the system once the session ends or the #temp table is dropped. These tables are accessible to all users without requiring specific item-level permission.
 
-Two types of #temp tables can be created based on specific use cases, non-distributed and distributed.
+Two types of #temp tables can be created based on specific use cases: non-distributed and distributed.
 
 - A non-distributed #temp table (mdf-backed) is the default type. The syntax for creating and using non-distributed #temp tables in Fabric Data Warehouse is similar to user tables, but you need to prefix the temp table name with `#`.
 
@@ -133,9 +129,13 @@ Two types of #temp tables can be created based on specific use cases, non-distri
 
 In the previous script, `data_type1` and `data_type2` are placeholders for supported [Data types in Fabric Data Warehouse](data-types.md).
 
-Distributed #temp tables are recommended, as they align with normal user tables; they have unlimited storage, data type support, and T-SQL operations. The syntax for data manipulation and definition is identical to user tables in Fabric Data Warehouse, with prefix `#` added to the table name.
+Distributed #temp tables are recommended, as they align with normal user tables; they have unlimited storage, data type support, and T-SQL operations. 
 
-In Fabric Data Warehouse, temp tables are not affected by [time travel](time-travel.md) query hints and always return the latest data in the table.
+Other notes about temp tables in Fabric Data Warehouse:
+
+- The syntax for data manipulation and definition is identical to user tables in Fabric Data Warehouse, with prefix `#` added to the table name.
+- Temp tables are not affected by [time travel](time-travel.md) query hints and always return the latest data in the table.
+- You can alter distributed temp tables with `ALTER TABLE`, but not MDF-backed temp tables.
 
 ## Align source data with the data warehouse
 
@@ -170,7 +170,7 @@ The following list shows some of the table features that aren't currently suppor
 
 ## Related content
 
-- [What is Data warehousing in Microsoft Fabric?](data-warehousing.md)
+- [What is Fabric Data Warehouse?](data-warehousing.md)
 - [What is Data engineering in Microsoft Fabric?](../data-engineering/data-engineering-overview.md)
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
 - [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)

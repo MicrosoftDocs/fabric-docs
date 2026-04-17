@@ -1,14 +1,14 @@
 ---
 title: Set up your Azure Blob Storage connection
 description: This article provides information about how to create an Azure Blob Storage connection.
-author: lrtoyou1223
-ms.author: lle
+ms.reviewer: lle
 ms.topic: how-to
-ms.date: 12/26/2025
+ms.date: 03/13/2026
 ms.custom:
 - template-how-to
 - connectors
 - sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # Set up your Azure Blob Storage connection
@@ -28,12 +28,38 @@ The Azure Blob Storage connector supports the following authentication types for
 | [Service principal](#service-principal-authentication) | √ | √ |
 
 ## Set up your connection for Dataflow Gen2
-
 You can connect Dataflow Gen2 to Azure Blobs using Power Query connectors. Follow these steps to create your connection:
 
-1. [Get data in Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
-1. Check [known issues and limitations](/power-query/connectors/azure-blob-storage#limitations) to make sure your scenario is supported.
-1. [Connect to Azure Blob Storage from Power Query Online](/power-query/connectors/azure-blob-storage#connect-to-azure-blob-storage-from-power-query-online).
+1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
+1. [Complete prerequisites for Azure Blob Storage](#prerequisites).
+1. [Get data in Fabric](#get-data).
+1. [Copy your account key for Azure Blob Storage](#copy-your-account-key-for-azure-blob-storage).
+1. [Connect to Azure Blob Storage](#connect-to-azure-blob-storage).
+
+### Capabilities
+
+[!INCLUDE [azure-blob-storage-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/azure-blob-storage-capabilities-supported.md)]
+
+### Prerequisites
+
+[!INCLUDE [azure-blob-storage-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/azure-blob-storage-prerequisites.md)]
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Copy your account key for Azure Blob Storage
+
+[!INCLUDE [azure-blob-storage-copy-account-key](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/azure-blob-storage-copy-account-key.md)]
+
+### Connect to Azure Blob Storage
+
+[!INCLUDE [azure-blob-storage-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/azure-blob-storage-connect-to-power-query-online.md)]
+
+### Limitations and considerations
+
+[!INCLUDE [azure-blob-storage-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/azure-blob-storage-limitations-and-considerations.md)]
+
 
 ## Set up your connection for a pipeline
 
@@ -145,6 +171,8 @@ To use service principal authentication, follow these steps:
    * **As source**, in **Access control (IAM)**, grant at least the **Storage Blob Data Reader** role.
    * **As destination**, in **Access control (IAM)**, grant at least the **Storage Blob Data Contributor** role.
 
+
 ## Related content
 
+- [For more information about this connector, see the Azure Blob Storage connector documentation.](/power-query/connectors/azure-blob-storage)
 [Configure Azure Blob Storage for pipeline copy activity](connector-azure-blob-storage-copy-activity.md)

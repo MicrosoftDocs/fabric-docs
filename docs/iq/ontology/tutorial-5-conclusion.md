@@ -1,16 +1,15 @@
 ---
-title: "Tutorial: Conclude and clean up resources"
-description: Finish the tutorial and clean up resources.
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
+title: "Tutorial part 5: Conclude and clean up resources"
+description: Finish the tutorial and clean up resources. Part 5 of the ontology (preview) tutorial.
 ms.date: 12/03/2025
 ms.topic: tutorial
 ---
 
 # Ontology (preview) tutorial part 5: Conclude and clean up resources
 
-In this tutorial, you created and explored an ontology (preview) item for the Lakeshore Retail ice cream business. You generated entity types such as *Store*, *Products*, and *SaleEvent*. You bound static data from lakehouse tables and time series data, like freezer temperature, from Eventhouse. You explored the data through entity instances, relationship graphs, and natural-language queries. 
+In this tutorial, you created and explored an ontology (preview) item for the Lakeshore Retail ice cream business. You generated entity types such as *Store*, *Products*, and *SaleEvent*. You bound static data (like ID values) from lakehouse tables, and time series data (like freezer temperatures) from Eventhouse. You explored the data through entity instances, relationship graphs, and natural-language queries. 
+
+Next, delete the resources you created during the tutorial.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -27,3 +26,4 @@ When you finish the tutorial, use the steps in this section to delete all the re
 ## Next steps
 
 Use the table of contents to explore the ontology (preview) documentation and learn more about its features and capabilities.
+

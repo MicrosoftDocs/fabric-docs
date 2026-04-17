@@ -1,18 +1,16 @@
 ---
 title: "Mirroring Oracle limitations in Microsoft Fabric"
 description: Learn about the limitations when mirroring Oracle databases in Microsoft Fabric.
-author: shaween18
-ms.author: sbahadur
-ms.reviewer: whhender
-ms.date: 08/22/2025
-ms.topic: conceptual
+ms.reviewer: sbahadur
+ms.date: 02/26/2026
+ms.topic: limits-and-quotas
 ms.custom: references_regions
 ai-usage: ai-assisted
 ---
 
 # Mirroring Oracle limitations in Microsoft Fabric
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+
 
 This article outlines the current limits when mirroring [Oracle databases in Microsoft Fabric](overview.md). These limits could change as we continue to improve the service.
 
@@ -23,24 +21,21 @@ This article outlines the current limits when mirroring [Oracle databases in Mic
 
 Here's what you can expect for database scale:
 
-* Currently, mirrored database supports up to **500 tables**
-* In each workspace, you can have:
-  * One Oracle server
-  * One On-Premises Data Gateway (OPDG) instance
-  * One Oracle mirror artifact
+* Currently, mirrored database supports up to **1000 tables**
 
 ## Supported Environments
 
 We support these Oracle Server environments:
 
-* Oracle versions 11 and above with LogMiner enabled
+* Oracle versions 10 and above with LogMiner enabled
 * Oracle on-premises (VM, Azure VM)
 * Oracle Cloud Infrastructure (OCI)
+* Oracle Database@Azure
 * Oracle Exadata
+* Oracle Autonomous Database
 
 >[!NOTE]
 >* LogMiner needs to be enabled on your Oracle server. This tool helps track changes in your Oracle database for real-time mirroring.
->* Oracle Autonomous Database isn't supported in this preview.
 
 ## Mirroring prerequisites
 
@@ -78,9 +73,11 @@ For schema (DDL) changes, we currently support:
 > [!NOTE]
 > Column data type updates aren't supported
 
-Currently, tables that do not have a Primary Key (PK) are not supported.
+We also support mirroring tables that have a partitioning - if your source tables are partitioned, then we can mirror those tables over.
 
-We cannot support table names that have a length greater than or equal to 30.
+Tables that don't have a Primary Key (PK) are supported - if you have a unique index in your tables, then we can support mirroring those tables. If your tables don't have a Primary Key (PK) or a unique index, we won't support mirroring those tables over.
+
+We can't support table names that have a length greater than or equal to 30.
 
 ## Required Permissions
 
@@ -129,6 +126,8 @@ If your Oracle user doesn't have direct ALTER DATABASE and ALTER TABLE permissio
 Currently, we only support connecting to Oracle using an On-Premises Data Gateway (OPDG). You need to install and configure the gateway on a machine that can connect to your Oracle server.
 
 For machine requirements and setup instructions to install and register your gateway, see the [On-premises Data Gateway installation guide](/data-integration/gateway/service-gateway-install#download-and-install-a-standard-gateway).
+>[!NOTE]
+>* To ensure that you have the latest performance enhancements and updates, make sure that you have the upgraded to the latest version of the [On-Premises Data Gateway](oracle-tutorial.md#install-the-on-premises-data-gateway). To review recent updates, refer to the [Currently supported monthly updates](/data-integration/gateway/service-gateway-monthly-updates).
 
 ## Related Content
 

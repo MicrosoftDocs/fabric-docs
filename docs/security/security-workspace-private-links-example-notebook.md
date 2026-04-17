@@ -5,7 +5,6 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: how-to
-ms.custom:
 ms.date: 10/13/2025
 
 #customer intent: As a workspace admin, I want to understand how to securely access a lakehouse in a workspace with public access restriction from an open workspace without public access restriction, including setup steps and best practices.
@@ -47,7 +46,7 @@ POST https://{workspaceFQDN}/v1/workspaces/{workspaceID}/managedPrivateEndpoints
 
 In that code, `{workspaceFQDN}` is `{workspaceID}.z{xy}.w.api.fabric.microsoft.com`.
 
-For example: `POST https://aaaaaaaa000011112222bbbbbbbbbbbb.zaa.w.api.fabric.microsoft.com/v1/workspaces/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb/managedPrivateEndpoints`.
+For example: `POST https://aaaaaaaa000011112222bbbbbbbbbbbb.zaa.w.api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/managedPrivateEndpoints`.
 
 The `targetPrivateLinkResourceId` parameter is the resource ID of the Azure Private Link service in the restricted workspace. To create a managed private endpoint to the target workspace, you need this resource ID.
 
@@ -69,7 +68,7 @@ Create a lakehouse in the target (restricted) workspace by using the following C
 
    In that code, `{workspaceFQDN}` is `{workspaceID}.z{xy}.w.api.fabric.microsoft.com`.
 
-   For example: `POST https://aaaaaaaa000011112222bbbbbbbbbbbb.zaa.w.api.fabric.microsoft.com/v1/workspaces/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb/lakehouses`.
+   For example: `POST https://aaaaaaaa000011112222bbbbbbbbbbbb.zaa.w.api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/lakehouses`.
 
    :::image type="content" source="media/security-workspace-private-links-example-notebook/create-in-target-workspace.png" alt-text="Screenshot that shows creating a lakehouse in a target workspace." lightbox="media/security-workspace-private-links-example-notebook/create-in-target-workspace.png":::
 
@@ -87,7 +86,7 @@ Use Azure Storage Explorer to upload the folder for your Delta Lake table into t
 
     In that code, `{workspaceFQDN}` is `{workspaceID}.z{xy}.onelake.fabric.microsoft.com`.
 
-   For example: `POST https://aaaaaaaa000011112222bbbbbbbbbbbb.zaa.w.api.fabric.microsoft.com/v1/workspaces/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb/bbbbbbbb-1111-2222-3333-cccccccccccc`.
+   For example: `POST https://aaaaaaaa000011112222bbbbbbbbbbbb.zaa.w.api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/bbbbbbbb-1111-2222-3333-cccccccccccc`.
 
    :::image type="content" source="media/security-workspace-private-links-example-notebook/enter-connection-info.png" alt-text="Screenshot that shows entering connection information." lightbox="media/security-workspace-private-links-example-notebook/enter-connection-info.png":::
 

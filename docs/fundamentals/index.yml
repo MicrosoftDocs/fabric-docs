@@ -1,12 +1,11 @@
 ### YamlMime:Landing
 
-title: Microsoft Fabric fundamentals documentation # < 60 chars
-summary: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the Fabric shared and platform documentation from this page. # < 160 chars
+title: Fabric fundamentals documentation
+summary: Get started with Fabric, a unified platform for your organization's data and analytics needs.
 
 metadata:
-  title: Microsoft Fabric fundamentals documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the Fabric shared and platform documentation from this page. # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: fabric  #Required; use either service or product per approved list. 
+  title: Fabric fundamentals documentation
+  description: Get started with Fabric, a unified platform for your organization's data and analytics needs.
   ms.subservice: get-started
   ms.topic: landing-page # Required
   author: SnehaGunda #Required; your GitHub user alias, with correct capitalization.
@@ -19,7 +18,7 @@ landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card 
-  - title: About Microsoft Fabric
+  - title: About Fabric
     linkLists:
       - linkListType: overview
         links:
@@ -27,9 +26,9 @@ landingContent:
             url: microsoft-fabric-overview.md 
           - text: Fabric terminology
             url: fabric-terminology.md
-          - text: What's New
+          - text: What's new in Fabric
             url: whats-new.md
-          - text: Migration to Microsoft Fabric
+          - text: Migrate to Fabric
             url: migration.md
       - linkListType: get-started
         links:
@@ -49,29 +48,31 @@ landingContent:
         links:
           - text: Get started with a task flow
             url: task-flow-overview.md 
-          - text: Find items in OneLake data hub
+          - text: Find items in OneLake catalog
             url: ../governance/onelake-catalog-overview.md 
           - text: Promote and certify items
             url: endorsement-promote-certify.md 
       - linkListType: how-to-guide
         links:
+          - text: Manage multiple task flow canvases
+            url: task-flow-multiple-canvases.md
           - text: Apply sensitivity labels
             url: apply-sensitivity-labels.md 
 
   # Card 
-  - title: Copilot
+  - title: Copilot in Fabric
     linkLists:
       - linkListType: concept
         links:
-          - text: Copilot overview
+          - text: Overview of Copilot in Fabric
             url: copilot-fabric-overview.md
           - text: Copilot in Fabric FAQ
             url: copilot-faq-fabric.yml
-          - text: Privacy, security, and responsible use for Copilot
+          - text: Privacy, security, and responsible use for Copilot in Fabric
             url: copilot-privacy-security.md
       - linkListType: how-to-guide
         links:
-          - text: Enable Copilot
+          - text: Enable Copilot in Fabric
             url: copilot-enable-fabric.md
 
   # Card 

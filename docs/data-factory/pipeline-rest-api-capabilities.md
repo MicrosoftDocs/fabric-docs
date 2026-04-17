@@ -1,8 +1,7 @@
 ---
 title: REST API capabilities for Fabric Data Factory
 description: This article describes the available REST APIs for pipelines in Microsoft Fabric Data Factory.
-author: conxu-ms
-ms.author: conxu
+ms.reviewer: conxu
 ms.topic: reference
 ms.custom: pipelines
 ms.date: 08/28/2025
@@ -10,7 +9,7 @@ ms.date: 08/28/2025
 
 # REST API capabilities for pipelines in Fabric Data Factory
 
-Fabric Data Factory offers a powerful set of APIs that make it easy to automate and manage your pipelines. You can connect to different data sources and services, and build, update, or monitor your workflows with just a few lines of code. The APIs cover everything from creating and editing pipelines to scheduling and tracking them — so you can keep your data flowing smoothly without the hassle.
+Fabric Data Factory offers a powerful set of APIs that make it easy to automate and manage your pipelines. You can connect to different data sources and services, and build, update, or monitor your workflows with just a few lines of code. The APIs cover everything from creating and editing pipelines to scheduling and tracking them, so you can keep your data flowing smoothly without the hassle.
 
 ## API use cases for pipelines
 
@@ -112,6 +111,29 @@ Create a pipeline in a specified workspace.
 ## Create a pipeline with definition
 
 Create a pipeline with a base64 definition in a specified workspace.
+
+For the payload, the definition content should be a base64 encoded JSON that defines the pipeline. The JSON structure should follow the pipeline definition schema expected by Fabric Data Factory.
+
+Here's an example of what the JSON pipeline description might look like before encoding:
+
+```json
+{
+  "name": "SamplePipeline",
+  "properties": {
+    "activities": [
+      {
+        "name": "Wait10Seconds",
+        "type": "Wait",
+        "typeProperties": {
+          "waitTimeInSeconds": 10
+        }
+      }
+    ]
+  }
+}
+```
+
+After you've built your JSON, use your favorite base64 encoding tool, script, or library to encode this JSON content, and include it in the payload where shown below.
 
 **Sample request**:
 
@@ -393,7 +415,7 @@ Gets singular pipeline’s job instance.
 
 ## Schedule a pipeline
 
-You can also create schedules programatically with the API. Scheduler API supports the following operations:  
+You can also create schedules programmatically with the API. Scheduler API supports the following operations:  
 
 - Cancel Pipeline Job Instance  
 - Create Pipeline Schedule  
@@ -424,7 +446,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/items/<pipelin
 
 |Name|In|Required|Type|Description|Example|
 |---|---|---|---|---|---|
-|pipelineID|Path|True|String(guid)|The pipeline id|aaaa0000-bb11-2222-33cc-444444dddddd|
+|pipelineID|Path|True|String(guid)|The pipeline ID|aaaa0000-bb11-2222-33cc-444444dddddd|
 |jobType|Path|True|String|The job type|DefaultJob|
 |workspaceId|Path|True|String|The workspace ID|aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb|
 
@@ -544,7 +566,7 @@ For more detailed information on how to set up and use SPNs in Fabric Data Facto
 
 ## Current limitations
 
-- JOB Limitation: Run APIs are invokable, but the actual run never succeeds (just like run/refresh from UI).
+- JOB Limitation: Run APIs can be invoked, but the actual run never succeeds (just like run/refresh from UI).
 - Non-Power BI Fabric Items: The workspace must be on a support Fabric capacity.
 - Creating an item: use either creationPayload or definition, but don't use both at the same time.
 

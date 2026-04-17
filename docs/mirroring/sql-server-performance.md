@@ -1,8 +1,6 @@
 ---
 title: "Optimize Performance of Mirrored Databases from SQL Server"
 description: Learn how to optimize performance of the source database and mirrored database from SQL Server in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.reviewer: ajayj, anagha-todalbagi
 ms.date: 08/19/2025
 ms.topic: troubleshooting

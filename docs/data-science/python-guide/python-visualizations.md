@@ -1,12 +1,9 @@
-﻿---
+---
 title: Analyze data with Apache Spark and Python
 description: In this article, learn how to create rich data visualizations by using Apache Spark and Python in Microsoft Fabric.
 ms.author: lagayhar
-author: lgayhardt
-ms.reviewer: pimorano
-reviewer: pimorano
+ms.reviewer: ruxu
 ms.topic: how-to
-ms.custom: 
 ms.date: 07/22/2025
 ms.search.form: Python Language
 #customer intent: As a data analyst, I want to learn to perform data analysis by using Azure Open Datasets and Apache Spark to create useful visualizations.
@@ -178,3 +175,4 @@ In addition to the built-in notebook charting options, you can use popular open-
 
 - [Pandas API on Apache Spark](https://spark.apache.org/docs/latest/api/python/getting_started/quickstart_ps.html)
 - [Python in-line installation](../../data-engineering/library-management.md#python-in-line-installation)
+

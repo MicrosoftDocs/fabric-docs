@@ -1,10 +1,8 @@
 ---
 title: Azure Databricks connector overview
 description: This article provides an overview of the supported capabilities of the Azure Databricks connector.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
-ms.date: 04/07/2025
+ms.date: 01/19/2026
 ms.custom:
   - template-how-to
   - connectors
@@ -19,7 +17,7 @@ The Azure Databricks connector is supported in Data Factory for [!INCLUDE [produ
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
 | **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Databricks Client Credentials<br> Personal Access Token<br> Azure Active Directory |
-| **Pipeline**<br>- [Copy activity](connector-azure-databricks-copy-activity.md) (source/destination)      |None<br> On-premises<br> Virtual network |Personal Access Token |
+| **Pipeline**<br>- [Copy activity](connector-azure-databricks-copy-activity.md) (source/destination) <br>- Lookup activity     |None<br> On-premises<br> Virtual network |Personal Access Token |
 
 ## Related content
 

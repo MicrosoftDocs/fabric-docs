@@ -1,13 +1,11 @@
 ﻿---
 title: Sensitivity label change enforcement 
 description: Learn how Power BI controls who can change or remove sensitivity labels on Power BI content.
-author: JulCsc
-ms.author: juliacawthra
-manager: kfollis
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-eim
-ms.topic: conceptual
-ms.custom:
+ms.topic: concept-article
 ms.date: 08/29/2022
 LocalizationGroup: Data from files
 ---

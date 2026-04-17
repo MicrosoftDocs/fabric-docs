@@ -1,8 +1,6 @@
 ---
 title: Folder connector overview
 description: This article provides an overview of the supported capabilities of the Folder connector.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
 ms.date: 12/04/2025
 ms.custom:
@@ -19,9 +17,11 @@ The Folder connector is supported in Data Factory for [!INCLUDE [product-name](.
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Dataflow Gen2** (source/-)                                                 | On-premises                    | Windows          |
-| **Pipeline** <br>- Copy activity (source/destination)<br>- Lookup activity<br>- Get Metadata activity <br>- Delete activity | On-premises                    | Windows          |
+| **Pipeline** <br>- [Copy activity](connector-folder-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity <br>- Delete activity | On-premises                    | Windows          |
 | **Copy job** (source/destination) <br>- Full load<br>- Append <br>- Override|On-premises |Windows   |
 
 ## Related content
 
 To learn about how to connect to Folder, go to [Set up your Folder connection](connector-folder.md).
+
+To learn about the copy activity configuration for Folder in a pipeline, go to [Configure Folder in a copy activity](connector-folder-copy-activity.md)

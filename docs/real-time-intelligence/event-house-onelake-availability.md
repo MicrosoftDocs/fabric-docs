@@ -2,11 +2,8 @@
 title: Eventhouse OneLake Availability
 description: Learn how to turn on KQL database data availability in OneLake.
 ms.reviewer: tzgitlin
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
 ms.subservice: rti-eventhouse
-ms.custom:
 ms.date: 03/11/2025
 ---
 
@@ -25,7 +22,7 @@ You can turn on **OneLake availability** at the database or table level. When en
 While **OneLake availability** is turned on, you can't do the following tasks:
 
 * Rename tables
-* Alter table schemas
+* Alter column type (adding or deleting a column is supported)
 * Apply Row Level Security to tables
 * Data can't be deleted, truncated, or purged
 

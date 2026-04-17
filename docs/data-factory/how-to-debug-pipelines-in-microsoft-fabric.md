@@ -1,8 +1,6 @@
 ---
 title: Debug Pipelines in Microsoft Fabric
 description: Learn how to debug pipelines in Microsoft Fabric Data Factory by deactivating activities, isolating logic, and validating behavior step by step.
-author: whhender
-ms.author: whhender
 ms.reviewer: ssindhub
 ms.date: 12/16/2025
 ms.topic: how-to
@@ -11,7 +9,7 @@ ai-usage: ai-assisted
 
 # Debug pipelines in Microsoft Fabric 
 
-This article shows you how to debug pipelines in Fabric. You can save and run pipelines incrementally, using the Active and Inactive activity states to isolate logic while you troubleshoot issues. Learn more about [deactivating activities](/fabric/data-factory/deactivate-activity).
+This article shows you how to debug pipelines in Fabric. You can save and run pipelines incrementally, using the Active and Inactive activity states to isolate logic while you troubleshoot issues. Learn more about [deactivating activities](activity-overview.md#deactivate-an-activity).
 
 Unlike Azure Data Factory, Microsoft Fabric Data Factory doesn't have a separate Debug mode. Debugging is straightforward: you disable specific activities and run the pipeline to validate behavior step by step. This approach gives you full control over which parts of your pipeline execute during testing.
 
@@ -65,3 +63,10 @@ Keep these points in mind when you debug pipelines:
 - The system records all pipeline runs, including those with inactive activities.
 - You must save the pipeline for activity state changes to take effect.
 - Remember to reactivate all required activities before you schedule the pipeline for production use.
+
+## Debugging via Git Branches
+
+If you are coming to Fabric Data Factory from Azure Data Factory (ADF), you are likely familiar with the ADF approach of running a pipeline test via "debug mode". In Fabric, we simplified this workflow such that choosing between debug and live run is no longer required. If you wish to work completely isolated from your main or primary workspace or Git branch, then use the Fabric workspace Git branching technique. With this technique, you can create a "dev workspace" with your own Git branch to fully test without effecting any other developers. These 2 links provide the details on how to attach your own dev branches to workspaces:
+
+- [Fabric Git](/fabric/cicd/git-integration/git-get-started)
+- [Git branches](/fabric/cicd/git-integration/manage-branches)

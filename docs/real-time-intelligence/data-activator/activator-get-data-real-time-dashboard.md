@@ -1,14 +1,12 @@
 ---
 title: Create Activator alerts from a Real-Time Dashboard
 description: Learn how to create an Activator alert from a Real-Time Dashboard and receive real-time notifications when conditions are met.
-author: spelluru
-ms.author: spelluru
 ms.topic: how-to
 ms.reviewer: guregini
 ms.custom: FY25Q1-Linter
 ms.date: 12/03/2025
 ms.search.form: Real-Time Dashboard
-#Customer intent: As a customer, I want to learn how to create Activator alerts from a Real-Time Dashboard so that I can trigger notifications when conditions are met on daa in the dashboard.
+#Customer intent: As a customer, I want to learn how to create Activator alerts from a Real-Time Dashboard so that I can trigger notifications when conditions are met on data in the dashboard.
 ---
 # Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts for a Real-Time Dashboard
 
@@ -61,7 +59,7 @@ Define your rule conditions as follows:
 
 1. In the **When** dropdown, select the value to be evaluated.
 1. In the **Condition** dropdown, select the condition to be met. For more information, see [Conditions](activator-detection-conditions.md#conditions).
-1. In the **Occurence** dropdown, set the number of times the condition must be met to trigger the alert.
+1. In the **Occurrence** dropdown, set the number of times the condition must be met to trigger the alert.
 
 :::image type="content" source="media/activator-get-data/condition.png" alt-text="Screenshot of create an alert window in Activator, save condition highlighted." lightbox="media/activator-get-data/condition.png":::
 
@@ -82,7 +80,7 @@ In the **Action** section, select one of the following actions to take when the 
     :::image type="content" source="media/activator-get-data/action-email.png" alt-text="Screenshot of the Send email notification section in the Add Rule side pane.":::
 
 * **Send Microsoft Teams notification**:
-    1. For **Select action**, select **Teams** --> **Message to indviduals** or **Group chat message**, or **Channel post**.
+    1. For **Select action**, select **Teams** --> **Message to individuals** or **Group chat message**, or **Channel post**.
     1. Follow one of these steps depending on your selection:
         * If you selected the **Message to individuals** option, enter **email addresses** of receivers or use the drop-down list to select a property whose value is an email address. When the condition is met, an email is sent to specified individuals.
         * If you selected the **Group chat message** option, select a **group chat** from the drop-down list. When the condition is met, a message is posted to the group chat.

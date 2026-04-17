@@ -2,8 +2,6 @@
 title: Expressions and functions
 description: This article provides information about expressions and functions that you can use in creating pipeline entities for Data Factory in Microsoft Fabric.
 ms.reviewer: xupzhou
-ms.author: whhender
-author: whhender
 ms.topic: reference
 ms.custom: pipelines
 ms.date: 12/18/2024
@@ -3364,6 +3362,107 @@ And returns this result: `"Paris"`
 > [!NOTE]
 > One can add comments to data flow expressions, but not in pipeline expressions.
 
+## Evaluate your pipeline expressions before you run them
+
+You can use the Evaluate expression feature in Microsoft Fabric Data Factory to test and debug your pipeline expressions. You can check expression outputs, review individual components, and validate your logic without running the entire pipeline.
+
+Here's what you can do with the evaluate expression feature:
+
+- Check the final output
+- Review each part of your expression (parameters, variables, functions, system variables)
+- Enter sample values for items that only exist when the pipeline runs
+
+This way, you can confirm your logic and formatting work correctly before you schedule or run your pipeline.
+
+:::image type="content" source="media/evaluate-pipeline-expression/evaluate-dynamic-content.png" alt-text="Screenshot of the Evaluate expression feature showing dynamic content evaluation." lightbox="media/evaluate-pipeline-expression/evaluate-dynamic-content.png":::
+
+### When to use the Evaluate expression feature
+
+Here are some ways the Evaluate expression feature can help you:
+
+- Confirm the final string or value your expression returns (like a dated folder path or formatted file name)
+- Check that parameters and variables work correctly in your expression
+- Test function combinations (string, date/time, math) and see results immediately
+- Provide sample inputs for items that only exist during an actual pipeline run (like trigger values or activity outputs)
+
+### How to use the Evaluate expression feature
+
+1. Open the **expression builder** in your pipeline.
+
+   :::image type="content" source="media/evaluate-pipeline-expression/view-in-expression-builder.png" alt-text="Screenshot of an Outlook activity with an option to view in expression builder.":::
+
+1. Type or paste your expression.
+
+   :::image type="content" source="media/evaluate-pipeline-expression/pipeline-expression-builder.png" alt-text="Screenshot of the pipeline expression builder with expression content.":::
+
+1. Select **Evaluate expression**.
+
+   :::image type="content" source="media/evaluate-pipeline-expression/evaluate-expression.png" alt-text="Screenshot of the Evaluate expression button inside the Pipeline expression builder.":::
+
+1. Review the **Value** section in the table that shows each part of your expression (parameters, variables, system variables, functions).
+
+   :::image type="content" source="media/evaluate-pipeline-expression/value.png" alt-text="Screenshot of the evaluate dynamic content value input field.":::
+
+1. If any part needs a sample value (like a trigger time or an activity's output), type it in the **Value** field.
+
+1. Select **Evaluate** again to see the updated result.
+
+   :::image type="content" source="media/evaluate-pipeline-expression/evaluate-preview-content.png" alt-text="Screenshot of the evaluate dynamic content and previewing the expression.":::
+
+   > [!TIP]
+   > The panel often fills in defaults for parameters and variables. You can overwrite them to test different scenarios.
+
+### Current limitations for expression evaluation
+
+Currently, evaluation happens before the pipeline runs. The evaluator doesn't know anything that occurs at runtime or afterward. It doesn't pull a run ID, trigger instance ID, activity outputs, or any values that only exist during a run. So, you'll have to manually provide these values.
+
+**What to do instead:** In the **Value** column, type sample values to mirror the data you expect at runtime (like paste a mock JSON for `activity('LookupCustomers').output`). This lets you validate your expression's structure and formatting even though the pipeline isn't running.
+
+## Build pipeline expressions with Copilot
+
+The pipeline expression builder now comes with Copilot built in. You can chat with Copilot directly in the expression builder, similar to how you interact with it in other Data Factory features. This means you can get help creating and understanding expressions without leaving your workspace.
+
+Currently, Copilot helps you:
+
+- Write pipeline expressions without manual coding
+- Avoid errors
+- Work faster
+- Build robust pipelines with confidence
+
+To open the pipeline expression builder:
+
+1. Add an activity that supports dynamic content or expressions.
+1. Inside the activity, select **View in expression builder** or **Add dynamic content** where you want to add your expression.
+
+    :::image type="content" source="media/copilot-pipeline-expression-builder/view-in-expression-builder.png" alt-text="Screenshot of the view in expression builder option." lightbox="media/copilot-pipeline-expression-builder/view-in-expression-builder.png":::
+
+    :::image type="content" source="media/copilot-pipeline-expression-builder/add-dynamic-content.png" alt-text="Screenshot of the add dynamic content option." lightbox="media/copilot-pipeline-expression-builder/add-dynamic-content.png":::
+
+1. You see to the pipeline expression builder, where you'll find the in line Copilot experience.
+
+    :::image type="content" source="media/copilot-pipeline-expression-builder/pipeline-expression-copilot.png" alt-text="Screenshot of the pipeline expression builder with Copilot experience." lightbox="media/copilot-pipeline-expression-builder/pipeline-expression-copilot.png":::
+
+### Generate expressions with natural language
+
+Type what you want in the Copilot chat. Copilot turns your request into a pipeline expression.
+
+For example, you might enter:
+
+```Get the current date and time in UTC. Convert the current UTC time to Central Standard Time (CST). Format the converted CST time into a string like 2025/07/10. Finally, concatenate the string "ContosoSales\\" with the formatted date.```
+
+You can choose to either **Accept**, **Discard**, or **Refresh** to retry your expression.
+
+### Explain expressions in plain language
+
+Copilot gives you clear explanations of what your pipeline expressions do.
+
+You can select **Explain this expression** or ask Copilot in the chat to explain it.
+
+Here's an example summary Copilot might provide:
+
+:::image type="content" source="media/copilot-pipeline-expression-builder/example-expression-explanation.png" alt-text="Screenshot of an example summary provided by Copilot." lightbox="media/copilot-pipeline-expression-builder/example-expression-explanation.png":::
+
 ## Related content
 
-For instructions on general parameter usage, refer to [Parameters for Data Factory in Fabric](parameters.md)
+- [Parameters for Data Factory in Fabric](parameters.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

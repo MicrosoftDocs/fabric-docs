@@ -1,15 +1,15 @@
 ---
 title: Migrate Libraries and Properties to a Default Environment
 description: Learn how to migrate your existing workspace libraries and Apache Spark properties to a default Fabric environment.
-ms.author: eur
 ms.reviewer: shuaijunye
-author: eric-urban
 ms.topic: how-to
-ms.custom:
 ms.date: 11/15/2023
 ---
 
 # Migrate workspace libraries and Spark properties to a default environment
+
+> [!IMPORTANT]
+> This article applies to a legacy workspace library feature that was removed in 2024. If you haven't migrated your existing workspace libraries and Spark properties to an environment by now, we recommend completing the migration as soon as possible. New workspaces use environment items directly and don't require this migration.
 
 Microsoft Fabric environments provide flexible configurations for running your Spark jobs. In an environment, you can select different Spark runtimes, configure your compute resources, and install libraries from public repositories or upload local custom-built libraries. You can easily attach environments to your notebooks and Spark job definitions.
 

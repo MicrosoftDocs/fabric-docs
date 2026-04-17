@@ -1,10 +1,8 @@
 ---
 title: Create Reports
 description: Learn about creating Power BI reports on Power BI semantic models in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: salilkanade, pvenkat
-ms.date: 07/15/2025
+ms.date: 03/03/2026
 ms.topic: concept-article
 ms.search.form: Reporting # This article's title should not change. If so, contact engineering.
 ---
@@ -43,12 +41,17 @@ If you're browsing for a specific [[!INCLUDE [fabric-se](includes/fabric-se.md)]
 
 Alternatively, if you have the SQL connection string of your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#fabric-data-warehouse) and would like more advanced options, such as writing a SQL statement to filter out specific data, connect to a warehouse in Power BI Desktop:
 
-1. In the Fabric portal, right-click on the Warehouse or SQL analytics endpoint in your workspace and select **Copy SQL connection string**. Or, navigate to the Warehouse **Settings** in your workspace. Copy the SQL connection string.
+1. Find the server name of your warehouse or SQL analytics endpoint. 
+    - In the Fabric portal, right-click on the warehouse or SQL analytics endpoint in your workspace and select **Copy SQL connection string**. 
+    - Or, navigate to the warehouse **Settings** in your workspace. Select **SQL endpoint**. Copy the SQL connection string. This is the server name.
 1. Open Power BI Desktop and select **SQL Server** in the ribbon.
 1. Paste the SQL connection string under **Server**.
 1. In the **Navigator** dialog, select the databases and tables you would like to load.
 1. If prompted for authentication, select **Organizational account**.
 1. Authenticate using Microsoft Entra ID (formerly Azure Active Directory) multifactor authentication (MFA). For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
+
+> [!TIP] 
+> To find the server name of your warehouse, see [Connect to Fabric Data Warehouse: Find the warehouse server name](how-to-connect.md#find-the-warehouse-connection-string).
 
 ## Related content
 

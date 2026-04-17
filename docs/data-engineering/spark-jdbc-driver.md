@@ -1,8 +1,6 @@
 ---
 title: Microsoft JDBC Driver for Microsoft Fabric Data Engineering
 description: Learn how to connect, query, and manage Spark workloads in Microsoft Fabric using the Microsoft JDBC Driver for Microsoft Fabric Data Engineering.
-author: ms-arali
-ms.author: arali
 ms.reviewer: arali
 ms.topic: how-to
 ms.date: 12/05/2025
@@ -10,8 +8,7 @@ ms.date: 12/05/2025
 
 # Microsoft JDBC driver for Microsoft Fabric Data Engineering (preview)
 
->[!NOTE]
-> This feature is in preview. 
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 JDBC (Java Database Connectivity) is a widely adopted standard that enables client applications to connect to and work with data from databases and big data platforms.
 
@@ -67,7 +64,7 @@ public class QuickStartExample {
         String url = "jdbc:fabricspark://api.fabric.microsoft.com;" +
                      "FabricWorkspaceID=<workspace-id>;" +
                      "FabricLakehouseID=<lakehouse-id>;" +
-                     "AuthFlow=2;" +  // Interactive browser authentication
+                     "AuthFlow=2;" +  // Azure CLI based authentication
                      "LogLevel=INFO";
         
         try (Connection conn = DriverManager.getConnection(url)) {
@@ -107,9 +104,9 @@ jdbc:fabricspark://<hostname>[:<port>][;<parameter1>=<value1>;<parameter2>=<valu
 
 ### Example Connection Strings
 
-#### Basic Connection (Interactive Authentication)
+#### Basic Connection (Interactive Browser Based Authentication)
 ```
-jdbc:fabricspark://api.fabric.microsoft.com;FabricWorkspaceID=<workspace-id>;FabricLakehouseID=<lakehouse-id>;AuthFlow=2
+jdbc:fabricspark://api.fabric.microsoft.com;FabricWorkspaceID=<workspace-id>;FabricLakehouseID=<lakehouse-id>;AuthFlow=1
 ```
 
 #### With Spark Resource Configuration
@@ -132,12 +129,11 @@ The Microsoft JDBC Driver for Microsoft Fabric Data Engineering supports multipl
 
 | AuthFlow | Authentication Method | Use Case |
 |----------|----------------------|----------|
-| **0** | Azure CLI Credential | Development using Azure CLI |
-| **1** | Client Credentials (Service Principal) | Automated/service-to-service authentication |
-| **2** | Interactive Browser | Interactive user authentication (default) |
-| **3** | SPN  | Service Principal authentication |
-| **4** | Certificate-Based | Certificate-based service principal authentication |
-| **5** | Access Token | Pre-acquired access token |
+| **1** | Interactive Browser | Interactive user authentication using OAuth 2.0|
+| **2** | Azure CLI | Development using Azure CLI |
+| **3** | Client Secret Credentials (Service Principal) | Automated/service-to-service authentication |
+| **4** | Client Certificate Credential | Certificate-based service principal authentication |
+| **5** | Access Token | Pre-acquired bearer access token |
 
 ### Interactive Browser Authentication
 
@@ -147,7 +143,7 @@ Best for: **Development and interactive applications**
 String url = "jdbc:fabricspark://api.fabric.microsoft.com;" +
              "FabricWorkspaceID=<workspace-id>;" +
              "FabricLakehouseID=<lakehouse-id>;" +
-             "AuthFlow=2;" +  // Interactive browser authentication
+             "AuthFlow=1;" +  
              "AuthTenantID=<tenant-id>;" +  // Optional
              "LogLevel=INFO";
 
@@ -155,7 +151,7 @@ Connection conn = DriverManager.getConnection(url);
 ```
 
 **Parameters:**
-- `AuthFlow=2`: Specifies interactive browser authentication
+- `AuthFlow=1`: Specifies interactive browser authentication
 - `AuthTenantID` (optional): Azure tenant ID
 - `AuthClientID` (optional): Application (client) ID
 
@@ -164,7 +160,7 @@ Connection conn = DriverManager.getConnection(url);
 - Credentials are cached for subsequent connections until it's expired
 - Suitable for single-user applications
 
-### Client Credentials Authentication
+### Client Credentials or Service Principal Authentication
 
 Best for: **Automated services and background jobs**
 
@@ -172,7 +168,7 @@ Best for: **Automated services and background jobs**
 String url = "jdbc:fabricspark://api.fabric.microsoft.com;" +
              "FabricWorkspaceID=<workspace-id>;" +
              "FabricLakehouseID=<lakehouse-id>;" +
-             "AuthFlow=1;" +  // Client credentials authentication
+             "AuthFlow=3;" +  
              "AuthClientID=<client-id>;" +
              "AuthClientSecret=<client-secret>;" +
              "AuthTenantID=<tenant-id>;" +
@@ -182,7 +178,7 @@ Connection conn = DriverManager.getConnection(url);
 ```
 
 **Required Parameters:**
-- `AuthFlow=1`: Specifies client credentials authentication
+- `AuthFlow=3`: Specifies client credentials authentication
 - `AuthClientID`: Application (client) ID from Microsoft Entra ID
 - `AuthClientSecret`: Client secret from Microsoft Entra ID
 - `AuthTenantID`: Azure tenant ID
@@ -200,7 +196,7 @@ Best for: **Enterprise applications requiring certificate-based authentication**
 String url = "jdbc:fabricspark://api.fabric.microsoft.com;" +
              "FabricWorkspaceID=<workspace-id>;" +
              "FabricLakehouseID=<lakehouse-id>;" +
-             "AuthFlow=4;" +  // Certificate-based authentication
+             "AuthFlow=4;" +  
              "AuthClientID=<client-id>;" +
              "AuthCertificatePath=/path/to/certificate.pfx;" +
              "AuthCertificatePassword=<certificate-password>;" +
@@ -216,27 +212,6 @@ Connection conn = DriverManager.getConnection(url);
 - `AuthCertificatePath`: Path to PFX/PKCS12 certificate file
 - `AuthCertificatePassword`: Certificate password
 - `AuthTenantID`: Azure tenant ID
-
-### Service Principal Authentication
-
-Best for: **Headless environments and remote sessions**
-
-```java
-String url = "jdbc:fabricspark://api.fabric.microsoft.com;" +
-             "FabricWorkspaceID=<workspace-id>;" +
-             "FabricLakehouseID=<lakehouse-id>;" +
-             "AuthFlow=3;" +  // Device code authentication
-             "AuthClientID=<client-id>;" +
-             "AuthTenantID=<tenant-id>;" +
-             "LogLevel=INFO";
-
-Connection conn = DriverManager.getConnection(url);
-```
-
-**Behavior:**
-- Displays a device code and URL in the console
-- User visits the URL and enters the code
-- Authentication completes after user verification
 
 ### Access Token Authentication
 
@@ -283,7 +258,7 @@ These parameters must be present in every connection string:
 |-----------|------|-------------|---------|
 | `FabricWorkspaceID` | UUID | Microsoft Fabric workspace identifier | `<workspace-id>` |
 | `FabricLakehouseID` | UUID | Microsoft Fabric lakehouse identifier | `<lakehouse-id>` |
-| `AuthFlow` | Integer | Authentication flow type (0-5) | `2` |
+| `AuthFlow` | Integer | Authentication flow type (1-5) | `2` |
 
 ### Optional Parameters
 
@@ -662,3 +637,4 @@ The driver maps Spark SQL data types to JDBC SQL types and Java types:
 * [Apache Spark Runtimes in Fabric](./runtime.md)
 * [Fabric Runtime 1.3](./runtime-1-3.md)
 * [What is the Livy API for Data Engineering](./api-livy-overview.md)
+

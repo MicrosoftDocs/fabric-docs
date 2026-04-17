@@ -3,11 +3,10 @@ title: Fabric region availability
 description: Learn about Microsoft Fabric region availability, including details about the workloads and features supported in each region and how home region impacts access.
 author: msmimart
 ms.author: mimart
-ms.reviewer: mimart
 ms.custom:
   - references_regions
 ms.topic: overview
-ms.date: 01/16/2026
+ms.date: 03/05/2026
 ---
 
 # Fabric region availability
@@ -30,30 +29,29 @@ This table lists regions where all Fabric workloads are available.
 
 | Americas                           | Europe                       | Middle East | Africa             | Asia Pacific                  | 
 |:-----------------------------------|:-----------------------------|:------------|:-------------------|:------------------------------|
-| Brazil South                          | North Europe <sup>4</sup>    | UAE North   | South Africa North | Australia East                |
+| Brazil South                          | North Europe <sup>3</sup>    | UAE North   | South Africa North | Australia East <sup>5</sup>               |
 | Canada Central                        | West Europe                  |             |                    | Australia Southeast           |
-| Canada East <sup>3</sup>              | France Central               |             |                    | Central India                 | 
+| Canada East                           | France Central               |             |                    | Central India                 | 
 | Central US                            | Germany West Central         |             |                    | East Asia                     |
-| East US <sup>5</sup>                  | Italy North                  |             |                    | Indonesia Central <sup>6</sup>|
-| East US 2                             | Norway East                  |             |                    | Israel Central <sup>4, 6</sup>|
-| Mexico Central <sup>6</sup>           | Poland Central               |             |                    | Japan East                    |
-| North Central US                      | Spain Central <sup>6</sup>   |             |                    | Japan West <sup>4, 6</sup>    |
-| South Central US <sup>2, 4, 5, 6</sup>| Sweden Central               |             |                    | Korea Central                 |
-| West US                               | Switzerland North            |             |                    | Malaysia West                 |
-| West US 2                             | Switzerland West             |             |                    | New Zealand North <sup>6</sup>|
+| East US <sup>4, 5</sup>                  | Italy North                  |             |                    | Indonesia Central <sup>1</sup>|
+| East US 2 <sup>5</sup>                            | Norway East                  |             |                    | Israel Central <sup>1, 3</sup>|
+| Mexico Central <sup>1</sup>           | Poland Central               |             |                    | Japan East                    |
+| North Central US                      | Spain Central <sup>1</sup>   |             |                    | Japan West <sup>1, 3, 5</sup>    |
+| South Central US <sup>1, 2, 3, 4, 5</sup>| Sweden Central               |             |                    | Korea Central                 |
+| West US                               | Switzerland North            |             |                    | Malaysia West <sup>1</sup>                |
+| West US 2                             | Switzerland West             |             |                    | New Zealand North <sup>1</sup>|
 | West US 3                             | UK South                     |             |                    | Southeast Asia                |
-|                                       | UK West <sup>1</sup>         |             |                    | South India                   |
-|                                       |                              |             |                    | Taiwan North                  |
-|                                       |                              |             |                    | Taiwan Northwest              |
+|                                       | UK West                      |             |                    | South India                   |
+|                                       |                              |             |                    | Taiwan North <sup>1</sup>                  |
+|                                       |                              |             |                    | Taiwan Northwest <sup>1</sup>              |
 
 
-  <sup>1</sup> [Fabric SQL database](../database/sql/overview.md) isn't  available in this region.
+  <sup>1</sup> [Ontology (preview)](../iq/ontology/overview.md) isn't available in these regions.
   <sup>2</sup> [Healthcare Solutions](/industry/healthcare/healthcare-data-solutions/overview) isn't available in this region. 
-  <sup>3</sup> [Fabric User Data Functions](../data-engineering/user-data-functions/user-data-functions-overview.md) isn't available in these regions.
-  <sup>4</sup> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) isn't available in these regions.
-  <sup>5</sup> [Operations agent (preview)](../real-time-intelligence/operations-agent.md) isn't available in these regions.
-  <sup>6</sup> [Ontology (preview)](../iq/ontology/overview.md) isn't available in these regions.
-
+  <sup>3</sup> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) isn't available in these regions.
+  <sup>4</sup> [Operations agent (preview)](../real-time-intelligence/operations-agent.md) isn't available in these regions.
+  <sup>5</sup> [Plan (preview)](../iq/plan/overview.md) isn't available in these regions.
+  
 ### Power BI
 
 This table lists regions where the only available Fabric workload is Power BI.
@@ -69,3 +67,5 @@ This table lists regions where the only available Fabric workload is Power BI.
 
 * [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md)
 * [Find your Fabric home region](./find-fabric-home-region.md)
+
+

@@ -1,8 +1,7 @@
 ---
 title: Explore Job events in Fabric Real-Time hub
 description: This article shows how to explore Job events in Fabric Real-Time hub.
-author: robece
-ms.author: robece
+ms.reviewer: robece
 ms.topic: how-to
 ms.date: 12/11/2025
 ---
@@ -13,7 +12,7 @@ Real-Time hub allows you to discover and subscribe to changes produced when Fabr
 
 Job events allow you to monitor job results in time and set up alerts using Activator alerting capabilities. For example, when the scheduler triggers a new job, or a job fails, you can receive an email alert. This way, even if you aren't in front of the computer, you can still get the information you care about. 
 
-[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+[!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
 
 ## View Job events detail page
 
@@ -125,3 +124,4 @@ For more information, see [subscribe permission for Fabric events](fabric-events
 ## Related content
 
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md)
+

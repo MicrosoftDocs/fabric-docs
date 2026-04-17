@@ -174,19 +174,19 @@ This section lists the report's considerations and limitations.
 
 * *Info Not Available* represents data that isn't available. Data might not be available when an audit event doesn't have complete information, or when that information isn't applicable for the event.
 
-* The report retains information for 28 days, including the activities and metadata of deleted capacities, workspaces, and other items.
+* The report reflects your tenant's audit activity on a rolling 30 day basis, along with the latest snapshot of your tenant's inventory.
 
-* Deleted workspaces with extended retention don't appear in the report after 28 days. They can be seen in the admin portal until they're permanently deleted.
+* Deleted inventory (including workspaces with extended retention) doesn't appear in the report after 28 days post deletion. They can be seen in the admin portal until they're permanently deleted.
 
 * Items created and deleted within a 24 hour period could have incomplete information.
   
-### Pro and Premium Per User (PPU)
+### Power BI Pro and Power BI Premium Per-User (PPU)
 
-Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on internal logical capacities. The usage of these capacities can be seen in this report.
+Semantic models in *Power BI Pro* and *Power BI Premium Per-User* (PPU) workspaces are hosted on internal logical capacities. The usage of these capacities can be seen in this report.
 
   * **Pro** - Appear as *Reserved Capacity for Pro Workspaces* with the capacity SKU value *Pro*.
 
-  * **PPU** - Appear as *Reserved Capacity for Premium Per User Workspaces* with the capacity SKU value *PPU*.
+  * **PPU** - Appear as *Reserved Capacity for Power BI Premium Per-User (PPU) Workspaces* with the capacity SKU value *PPU*.
 
 ### Counting logic
 

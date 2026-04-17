@@ -1,35 +1,81 @@
 ---
 title: Create, Configure, and Use an Environment in Fabric
 description: Learn how to create, configure, and use a Microsoft Fabric environment in your notebooks and Spark job definitions.
-ms.author: eur
 ms.reviewer: shuaijunye
-author: eric-urban
 ms.topic: how-to
-ms.date: 03/31/2025
+ms.date: 03/25/2026
 ms.search.form: Create and use Environment
+ai-usage: ai-assisted
 ---
 
 # Create, configure, and use an environment in Fabric
 
-A Microsoft Fabric environment is a consolidated item for all your hardware and software settings. In an environment, you can select different Spark runtimes, configure your compute resources, install libraries from public repositories or a local directory, and set other settings.
+A Microsoft Fabric environment is a workspace item that defines Spark session configuration for notebooks and Spark job definitions. Use an environment to choose a Spark runtime, configure compute settings, manage libraries, and manage small resource files that notebooks can access.
 
 This article presents an overview of how to create, configure, and use an environment.
 
-## Create an environment
+## Why use an environment item
 
-You can create new environments from multiple entry points:
+You can run notebooks and Spark job definitions by using **Workspace default** without attaching an environment item. In that case, you use workspace-level Spark settings.
 
-**Standard entry point:**
+Use an environment item when you need reusable, governed defaults for teams:
 
-1. In Fabric, navigate to the desired workspace.
+- Define Spark compute and libraries once, and apply them consistently across notebooks and Spark job definitions.
+- Set an environment as workspace default so users inherit shared configuration through **Workspace default**.
+- Version and operate environment settings as a single artifact.
 
-1. Select **New item** and locate **Environment**.
+## Workspace-level environments
 
-    :::image type="content" source="media\environment-introduction\new-item-environment.png" alt-text="Screenshot showing how to create a new environment in the Fabric portal." lightbox="media\environment-introduction\new-item-environment.png":::
+Use this workflow when you want to set workspace-wide defaults for notebooks and Spark job definitions.
+
+An environment item is created in a specific workspace and is associated with that workspace. You can also use that environment in other workspaces where you have access, if sharing and workspace compatibility requirements are met.
+
+### Create an environment from a workspace
+
+1. In your browser, go to your Fabric workspace in the [Fabric portal](https://app.fabric.microsoft.com/).
+
+1. Select **+New item**.
+1. Search for "environment" in the search bar and select the **Environment** tile.
+
+    :::image type="content" source="media\environment-introduction\new-item-environment.png" alt-text="Screenshot showing how to select the Environment tile from a workspace in the Fabric portal." lightbox="media\environment-introduction\new-item-environment.png":::
 
 1. Name your environment and select **Create**.
 
-**Create during selection:**
+### Attach an environment as a workspace default
+
+> [!IMPORTANT]
+> After an environment is selected as a workspace default, only workspace admins can update the contents of the default environment.
+
+Workspace admins can define the default workload for entire workspaces. The values configured here are effective for notebooks and Spark job definitions that attach to **Workspace settings**.
+
+:::image type="content" source="media\environment-introduction\env-workspace-setting-in-code-artifact.png" alt-text="Screenshot that shows the workspace configuration effective range." lightbox="media\environment-introduction\env-workspace-setting-in-code-artifact.png":::
+
+The **Set default environment** toggle controls whether **Workspace default** is backed by an environment item.
+
+1. In your browser, go to your Fabric workspace in the [Fabric portal](https://app.fabric.microsoft.com/).
+
+1. Select **Workspace settings**.
+
+1. Select **Data Engineering/Science**, and then select **Spark settings**.
+
+1. Select the **Environment** tab.
+
+    :::image type="content" source="media\environment-introduction\env-workspace-setting-default.png" alt-text="Screenshot that shows Workspace settings with Spark settings open and the Environment tab selected." lightbox="media\environment-introduction\env-workspace-setting-default.png":::
+
+1. To use an environment-backed workspace default, turn **Set default environment** to **On**, select the environment item that you want to use, and then save your changes.
+
+    - When this toggle is **Off** (default), users still see **Workspace default** in notebooks and Spark job definitions. In this state, **Workspace default** uses workspace-level Spark settings.
+    - When this toggle is **On**, you select an environment item as the workspace default. Notebooks and Spark job definitions that use **Workspace default** then inherit that environment's Spark compute and library configurations.
+    
+    :::image type="content" source="media\environment-introduction\env-workspace-toggle-on.png" alt-text="Screenshot that shows default environment selection." lightbox="media\environment-introduction\env-workspace-toggle-on.png":::
+
+## Notebook and Spark job definition-level environments
+
+Use this workflow when you want to create, select, or change environments directly from a notebook or Spark job definition.
+
+### Create or change an environment from a notebook or Spark job definition
+
+1. In your browser, go to your Fabric workspace in the [Fabric portal](https://app.fabric.microsoft.com/).
 
 1. Open a notebook or Spark job definition.
 
@@ -37,11 +83,23 @@ You can create new environments from multiple entry points:
 
     :::image type="content" source="media\environment-introduction\env-create-during-selection.png" alt-text="Screenshot that shows how to create a new environment during environment selection in a notebook." lightbox="media\environment-introduction\env-create-during-selection.png":::
 
+    > [!NOTE]
+    > Alternatively, if you want to change the environment without creating a new one, you can select **Change environment** from the dropdown menu. You can select an existing environment and then select **Confirm** to attach it to the notebook or Spark job definition.
+
 1. Name your environment and select **Create**.
 
-Once the environment is created, select the runtime version. Choose **Runtime 1.3 (Spark 3.5, Delta 3.2)** from the dropdown menu.
+### Attach an environment to a notebook or a Spark job definition
 
-:::image type="content" source="media\environment-introduction\select-runtime.png" alt-text="Screenshot showing how to select the runtime version for the environment." lightbox="media\environment-introduction\select-runtime.png":::
+The environment is available on both the **Notebook** and **Spark Job Definition** tabs. When notebooks and Spark job definitions are attached to an environment, they can access its libraries, compute configurations, and resources. The Explorer lists all available environments that are shared with you, are from the current workspace, and are from other workspaces to which you have access.
+
+:::image type="content" source="media\environment-introduction\env-notebook-selection.png" alt-text="Screenshot that shows where to attach an environment in a notebook." lightbox="media\environment-introduction\env-notebook-selection.png":::
+
+If you switch to a different environment during an active session, the newly selected environment doesn't take effect until the next session.
+
+When you attach an environment from another workspace, both workspaces must have the *same capacity and network security settings*. Although you can select environments from workspaces with different capacities or network security settings, the session fails to start.
+
+When you attach an environment from another workspace, the compute configuration in that environment is ignored. Instead, the pool and compute configurations default to the settings of your current workspace.
+
 
 ## Configure an environment
 
@@ -55,45 +113,61 @@ The Spark compute and library configurations are required for publishing to be e
 
 ### Configure Spark compute
 
-For an environment, you can choose from various [Spark runtimes](runtime.md) with their own default settings and preinstalled packages. To view the available runtimes, go to the **Home** tab of the environment and select **Runtime**. Select the runtime that best suits your needs.
+Configure Spark compute in an environment by selecting a runtime and setting session-level compute properties.
 
-:::image type="content" source="media\environment-introduction\env-runtime-dropdown.png" alt-text="Screenshot that shows choosing a runtime in an environment." lightbox="media\environment-introduction\env-runtime-dropdown.png":::
+For detailed steps, including runtime selection and compute customization, see [Spark compute configuration settings in Fabric environments](environment-manage-compute.md).
 
-> [!IMPORTANT]
->
-> - If you're updating the runtime of an environment with existing configurations or libraries, you must republish the contents based on the updated runtime version.
-> - If the existing configurations or libraries aren't compatible with the newly updated runtime version, the publishing fails. You must remove the incompatible configurations or libraries and publish the environment again.
-
-[Fabric Spark compute](spark-compute.md) provides unparalleled speed and efficiency running on Spark and requirement-tailored experiences. In your environment, you can choose from various pools created by workspace admins and capacity admins. You can further adjust the configurations and manage Spark properties to be effective in Spark sessions. For more information, see [Spark compute configuration settings in Fabric environments](environment-manage-compute.md).
+If you change runtime or compute settings, save and publish the environment for those changes to take effect. For more information, see [Save and publish changes](#save-and-publish-changes).
 
 ### Manage libraries
 
 Each Spark runtime provides built-in libraries. With the Fabric environment, you can also install libraries from public sources or upload custom libraries that you or your organization built. After you successfully install the libraries, they're available in your Spark sessions. For more information, see [Library management in Fabric environments](environment-manage-library.md). For the best practices for managing libraries in Fabric, see [Manage Apache Spark libraries in Fabric](library-management.md).
 
+When you add libraries to an environment, you choose a publishing mode:
+
+- **Quick mode** publishes in about 5 seconds. Libraries install when a notebook session starts. Use Quick mode for rapid iteration during development.
+- **Full mode** creates a stable, reproducible library snapshot. Publishing typically takes 3 to 6 minutes, and session startup adds 1 to 3 minutes for dependency deployment. Use Full mode for pipelines, scheduled runs, and shared workloads. To achieve approximately 5-second session starts with Full mode, configure a [custom live pool](custom-live-pools-overview.md) that attaches to the environment.
+
+For details on each mode, see [Select publish mode for libraries](environment-manage-library.md#select-publish-mode-for-libraries).
+
 ### Use resources
 
 The **Resources** section in an environment facilitates the ability to manage small resources during the development phase. Files uploaded to the environment are accessible across notebooks when they're attached. For more information, see [Manage the resources in a Fabric environment](environment-manage-resources.md).
 
-### Save and publish changes
+> [!NOTE]
+> Files in the Resources section aren't affected by environment publishing. Resource changes are real time and available immediately without a publish step.
 
-On the **Home** tab, you can easily find **Save** and **Publish**. They're activated when there are unsaved or unpublished pending changes in the **Libraries** and **Spark compute** sections.
+## Save and publish changes
+
+Use **Save** and **Publish** to control when environment configuration changes take effect.
+
+- **Save** stores your pending changes.
+- **Publish** applies pending changes to **Libraries** and **Spark compute**.
+- Changes in **Resources** are real time and don't require publishing.
+
+When you publish, the time depends on the library publishing mode you selected. Quick mode publishes in about 5 seconds, while Full mode typically takes 3 to 6 minutes to resolve dependencies and create a stable snapshot. For details, see [Select publish mode for libraries](environment-manage-library.md#select-publish-mode-for-libraries).
+
+On the **Home** tab, **Save** and **Publish** are enabled when there are pending changes in **Libraries** or **Spark compute**.
 
 :::image type="content" source="media\environment-introduction\env-save-and-publish.png" alt-text="Screenshot that shows where to select Save and Publish." lightbox="media\environment-introduction\env-save-and-publish.png":::
 
 > [!IMPORTANT]
->
-> - If Private Link is enabled, the first Spark job in the workspace needs to trigger VNet provisioning, which can take approximately 10–15 minutes. Since environment publishing also runs as a Spark job, it may experience an additional delay if it happens to be the first Spark job executed after Private Link is enabled.
+> If Private Link is enabled, the first Spark job in the workspace needs to trigger VNet provisioning, which can take approximately 10–15 minutes. Since environment publishing also runs as a Spark job, it may experience an additional delay if it happens to be the first Spark job executed after Private Link is enabled.
 
-When pending changes are in the **Libraries** and **Spark compute** sections, you also see a banner that prompts you with **Save** and **Publish**. The functionalities are the same as for the buttons:
+When pending changes exist, a banner also provides **Save** and **Publish** actions.
 
-- The unsaved changes are lost if you refresh or leave the browser open. Select **Save** to make sure that your changes are recorded before you leave. Saving doesn't apply the configuration but caches the changes in the system.
-- To apply the changes to **Libraries** and **Spark compute**, select **Publish**. The **Pending changes** page appears for final review before publishing. Next, select **Publish all** to initiate configuration in the Fabric environment. This process might take some time, especially if library changes are involved.
+Use this workflow:
+
+1. Make changes in **Libraries** or **Spark compute**.
+1. Select **Save** to keep your edits. Saved changes are staged and not yet effective.
+1. Select **Publish** and then **Publish all** to make the staged changes effective.
+
+During publish:
+
 - To cancel a publishing process, select **View progress** in the banner and cancel the operation.
 - A notification appears upon publishing completion. An error notification occurs if there are any issues during the process.
 
 An environment accepts only one **Publish** action at a time. You can't make changes to the **Libraries** or **Spark compute** sections during an ongoing **Publish** action.
-
-Publishing doesn't affect adding, deleting, or editing the files and folders in the **Resources** section. The actions to manage resources are in real time. The **Publish** action doesn't block changes in the **Resources** section.
 
 ## Share an existing environment
 
@@ -104,39 +178,6 @@ Fabric supports sharing an item with different levels of permissions.
 When you share an environment item, recipients automatically receive Read permission. With this permission, they can explore the environment's configurations and attach it to notebooks or Spark jobs. For smooth code execution, make sure to grant Read permissions for attached environments when you share notebooks and Spark job definitions.
 
 You can also share the environment with Share and Edit permissions. Users with Share permission can continue sharing the environment with others. Meanwhile, recipients with Edit permission can update the environment's content.
-
-## Attach an environment
-
-You can attach a Fabric environment to your **Data Engineering/Science** workspaces or your notebooks and Spark job definitions.
-
-### Attach an environment as a workspace default
-
-> [!IMPORTANT]
-> After an environment is selected as a workspace default, only workspace admins can update the contents of the default environment.
-
-Select **Workspace settings** > **Data Engineering/Science** > **Spark settings** to see the **Environment** tab.
-
-:::image type="content" source="media\environment-introduction\env-workspace-setting-default.png" alt-text="Screenshot that shows the Workspace settings Set default environment pane." lightbox="media\environment-introduction\env-workspace-setting-default.png":::
-
-Workspace admins can define the default workload for entire workspaces. The values configured here are effective for notebooks and Spark job definitions that attach to **Workspace settings**.
-
-:::image type="content" source="media\environment-introduction\env-workspace-setting-in-code-artifact.png" alt-text="Screenshot that shows the workspace configuration effective range." lightbox="media\environment-introduction\env-workspace-setting-in-code-artifact.png":::
-
-The **Set default environment** toggle can enhance the user experience. By default, this toggle is set to **Off**. If there's no default Spark property or library required as the workspace default, you can define the Spark runtime in this circumstance. If you want to prepare a default Spark compute and libraries for the workspace, you can switch the toggle to **On** and easily attach an environment as the workspace default. This option makes all configurations in the environment effective as the **Workspace settings**.
-
-:::image type="content" source="media\environment-introduction\env-workspace-toggle-on.png" alt-text="Screenshot that shows default environment selection." lightbox="media\environment-introduction\env-workspace-toggle-on.png":::
-
-### Attach an environment to a notebook or a Spark job definition
-
-The environment is available on both the **Notebook** and **Spark Job Definition** tabs. When notebooks and Spark job definitions are attached to an environment, they can access its libraries, compute configurations, and resources. The Explorer lists all available environments that are shared with you, are from the current workspace, and are from other workspaces to which you have access.
-
-:::image type="content" source="media\environment-introduction\env-notebook-selection.png" alt-text="Screenshot that shows where to attach an environment in a notebook." lightbox="media\environment-introduction\env-notebook-selection.png":::
-
-If you switch to a different environment during an active session, the newly selected environment doesn't take effect until the next session.
-
-When you attach an environment from another workspace, both workspaces must have the *same capacity and network security settings*. Although you can select environments from workspaces with different capacities or network security settings, the session fails to start.
-
-When you attach an environment from another workspace, the compute configuration in that environment is ignored. Instead, the pool and compute configurations default to the settings of your current workspace.
 
 ## Delete an environment
 

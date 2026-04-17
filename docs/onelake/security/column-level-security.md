@@ -1,18 +1,17 @@
 ---
 title: Column-level security
 description: Learn how to use OneLake security (preview) to enforce access permissions at the column level in OneLake.
-ms.reviewer: aamerril
-ms.author: kgremban
-author: kgremban
+ms.reviewer: aamerril # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
-ms.custom:
 ms.date: 09/05/2025
 #customer intent: As a [], I want to learn how to [] so that I can [].
 ---
 
 # Column-level security in OneLake (preview)
 
-Column-level security (CLS) is a feature of [OneLake security (preview)](get-started-security.md?#onelake-security-preview) that allows you to have access to selected columns in a table instead of full access to the table. CLS lets you specify a subset of tables that users can access. Any columns that are removed from the list aren't visible to users.
+Column-level security (CLS) is a feature of [OneLake security (preview)](./get-started-onelake-security.md) that allows you to have access to selected columns in a table instead of full access to the table. CLS lets you specify a subset of tables that users can access. Any columns that are removed from the list aren't visible to users.
 
 ## Prerequisites
 
@@ -26,7 +25,7 @@ Column-level security (CLS) is a feature of [OneLake security (preview)](get-sta
 OneLake security CLS gets enforced in one of the following two ways:
 
 * **Filtered tables in Fabric engines:** Queries to the Fabric engines, like Spark notebooks, result in the user seeing only the columns they're allowed to see per the CLS rules.
-* **Blocked access to tables:** Tables with CLS rules applied to them can't be read outside of supported Fabric engines.
+* **Blocked access to tables:** Tables with CLS rules applied to them can't be read outside of supported Fabric engines or [authorized third-party engines](./onelake-security-integrations-overview.md) that enforce OneLake security. Access is blocked for non-authorized engines.
 
 For filtered tables, the following behaviors apply:
 
@@ -39,6 +38,12 @@ For filtered tables, the following behaviors apply:
   * Spark notebooks: The query succeeds and only shows the allowed columns.
   * SQL analytics Endpoint: Column access is blocked for the columns the user can't access.
   * Semantic models: Column access is blocked for the columns the user can't access. 
+
+### Authorized third-party engine enforcement
+
+Authorized third-party engines can retrieve effective column access for a user from OneLake by using the [authorized engine APIs](./onelake-security-integrations-overview.md) and enforce CLS at query time. OneLake remains the single source of truth, and CLS definitions authored in OneLake are applied consistently across Fabric engines and authorized external engines.
+
+For more information, see [Integrate a third-party engine with OneLake security](./onelake-security-integrations-external-engines.md).
 
 ## Define column-level security rules
 

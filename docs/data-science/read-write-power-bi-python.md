@@ -4,10 +4,9 @@ description: Learn how to read data, metadata, and evaluate measures from semant
 #customer intent: As a data scientist, I want to read data from semantic models using Python so that I can analyze and manipulate the data programmatically.
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: marcozo
-reviewer: eisber
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: how-to
-ms.custom:
 ms.date: 09/25/2025
 ms.search.form: Read write powerbi
 ---

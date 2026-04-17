@@ -1,10 +1,8 @@
-﻿---
+---
 title: Serve real-time predictions with ML model endpoints (Preview)
 description: Learn how to serve real-time predictions seamlessly from ML models with secure, scalable, and fully managed online endpoints.
 ms.author: lagayhar
-author: lgayhardt
-ms.reviewer: erenorbey
-reviewer: orbey
+ms.reviewer: ruxu 
 ms.topic: how-to
 ms.date: 07/16/2025
 ms.search.form: ML model endpoints
@@ -22,12 +20,15 @@ You can activate, configure, and query model endpoints with a [public-facing RES
 
 ## Prerequisites
 
-- To serve real-time predictions, your administrator needs to enable [the tenant switch for ML model endpoints](../admin/service-admin-portal-microsoft-fabric-tenant-settings.md) in the Fabric admin portal.
+- Machine learning model endpoints are enabled by default in your tenant. If your administrator wants to disable this feature, they can turn off [the tenant switch for ML model endpoints](../admin/service-admin-portal-microsoft-fabric-tenant-settings.md) in the Fabric admin portal.
 
 ## Limitations
 
 - Endpoints are currently available for a limited set of ML model flavors, including Keras, LightGBM, Sklearn, and XGBoost.
 - Endpoints currently **aren't** available for models with tensor-based schemas or no schemas.
+
+> [!NOTE]
+> As of January 2026, machine learning endpoints now support AutoML trained models. This previous limitation has been removed.
 
 ## Get started with model endpoints
 
@@ -45,7 +46,7 @@ Model endpoints have the following properties:
 
 ## Activate model endpoints
 
-You can activate model endpoints directly from the Fabric interface. Navigate to the version that you’d like to serve real-time predictions and select "Activate version endpoint" from the ribbon.
+You can activate model endpoints directly from the Fabric interface. Navigate to the version that you'd like to serve real-time predictions and select "Activate version endpoint" from the ribbon.
 
 :::image type="content" source="media/model-endpoints/activate.jpg" alt-text="Screenshot showing how to activate an ML model endpoint from the Fabric interface." lightbox="media/model-endpoints/activate.jpg":::
 
@@ -53,11 +54,11 @@ A toast message shows that Fabric is getting your endpoint ready to serve predic
 
 :::image type="content" source="media/model-endpoints/activating.jpg" alt-text="Screenshot showing an ML model endpoint that is now activating." lightbox="media/model-endpoints/activating.jpg":::
 
-Every endpoint has a status indicating whether it’s ready to serve real-time predictions:
+Every endpoint has a status indicating whether it's ready to serve real-time predictions:
 
 | **Status** | **Description** |
 |---|---|
-| `Inactive` | The endpoint isn't activated to serve real-time predictions, and it’s not consuming Fabric capacity. |
+| `Inactive` | The endpoint isn't activated to serve real-time predictions, and it's not consuming Fabric capacity. |
 | `Activating` | The endpoint is being configured to serve real-time predictions. Behind the scenes, Fabric sets up the underlying container infrastructure to host the model. Within a few minutes, the endpoint is active. |
 | `Active` | The endpoint is ready to serve real-time predictions. Behind the scenes, Fabric manages the underlying infrastructure, scaling up resource usage based on incoming traffic. Higher traffic results in higher Fabric capacity usage. |
 | `Deactivating` | The endpoint is being deactivated, so that it no longer serves real-time predictions or consumes Fabric capacity. Behind the scenes, Fabric dismantles the underlying container infrastructure. |
@@ -76,7 +77,7 @@ For an overview of your model's active endpoints, select "Manage endpoints" from
 >
 > Be sure to set the default property to an active version if you plan to use it. If the default property isn't set, or is set to an inactive version, then calls to the default endpoint fail. 
 
-All versions with active endpoints are listed under the model’s endpoint settings. You can modify the auto sleep property of each endpoint by toggling the switcher to be "On" or "Off."
+All versions with active endpoints are listed under the model's endpoint settings. You can modify the auto sleep property of each endpoint by toggling the switcher to be "On" or "Off."
 
 :::image type="content" source="media/model-endpoints/auto-sleep.jpg" alt-text="Screenshot showing how to change the auto sleep property on ML model endpoints." lightbox="media/model-endpoints/auto-sleep.jpg":::
 
@@ -86,7 +87,7 @@ All versions with active endpoints are listed under the model’s endpoint setti
 
 ## Query model endpoints for real-time predictions
 
-Model endpoints are available for instant testing with a low-code experience in Fabric. Navigate to a version with an active endpoint and select "Preview predictions" from the ribbon in the interface. You can send sample requests to the endpoint—and get sample predictions in real-time—using form fields that match the model’s input signature.
+Model endpoints are available for instant testing with a low-code experience in Fabric. Navigate to a version with an active endpoint and select "Preview predictions" from the ribbon in the interface. You can send sample requests to the endpoint—and get sample predictions in real-time—using form fields that match the model's input signature.
 
 :::image type="content" source="media/model-endpoints/preview.jpg" alt-text="Screenshot showing the built-in preview experience for getting sample predictions from an active ML model endpoint." lightbox="media/model-endpoints/preview.jpg":::
 
@@ -108,7 +109,7 @@ A toast message shows that Fabric is dismantling your active deployment, and the
 
 :::image type="content" source="media/model-endpoints/deactivating.jpg" alt-text="Screenshot showing an ML model endpoint that is now deactivating." lightbox="media/model-endpoints/deactivating.jpg":::
 
-You can deactivate endpoints for multiple versions at once from the model’s settings pane. Select "Manage endpoints" from the ribbon in the interface and choose one or more active endpoints to deactivate.
+You can deactivate endpoints for multiple versions at once from the model's settings pane. Select "Manage endpoints" from the ribbon in the interface and choose one or more active endpoints to deactivate.
 
 :::image type="content" source="media/model-endpoints/deactivate-multiple.jpg" alt-text="Screenshot showing how to deactivate multiple ML model endpoints at once from the Fabric interface." lightbox="media/model-endpoints/deactivate-multiple.jpg":::
 
@@ -140,6 +141,8 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 ## Related content
 
 - Manage and query endpoints programmatically with the [ML model endpoint REST API](https://aka.ms/fabric/model-endpoint-api).
+- Call model endpoints from [Dataflow Gen2](../data-factory/dataflow-gen2-machine-learning-model-endpoints.md) for real-time data enrichment.
 - Generate batch predictions with the [`PREDICT` function](./model-scoring-predict.md) in Fabric notebooks.
 - Learn more about [model training and experimentation](./model-training-overview.md) in Fabric.
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
+

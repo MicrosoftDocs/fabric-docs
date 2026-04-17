@@ -1,12 +1,11 @@
 ﻿---
 title: Sensitivity label audit schema
 description: Learn how changes to sensitivity labels are recorded and logged so that you can track them in the unified audit log or Power BI activity log. 
-author: JulCsc
-ms.author: juliacawthra
-manager: kfollis
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-eim
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 07/03/2021
 LocalizationGroup: Data from files
 ---

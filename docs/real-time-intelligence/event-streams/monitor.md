@@ -1,12 +1,9 @@
 ---
 title: Monitor the Status and Performance of an Eventstream
 description: Learn how to monitor the status and performance of an eventstream.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: how-to
-ms.custom:
-ms.date: 11/25/2024
+ms.date: 03/19/2026
 ms.search.form: Data Preview and Insights
 ---
 
@@ -19,7 +16,7 @@ An eventstream has two types of monitoring experiences: **Data insights** and **
 ## Prerequisites
 
 - Access to a workspace with Viewer or higher permissions where your eventstream item is located.
-- An Azure event hub source or lakehouse destination added to your eventstream.
+- An Azure Event Hubs source or lakehouse destination added to your eventstream.
 
 ## Data insights
 
@@ -29,7 +26,7 @@ When you select a node on the main editor canvas, the metrics for that specific 
 
 ### Data insights for an eventstream node
 
-The following metrics appear for an eventstream node on the **Data insights** tab:
+The **Data insights** tab shows the following metrics for an eventstream node:
 
 | Metric | Unit | Description |
 |--|--|--|
@@ -52,7 +49,7 @@ To view data insights for an eventstream:
 
 ### Data insights for Azure Event Hubs, Azure IoT Hub, lakehouse, eventhouse, derived stream, and Fabric Activator nodes
 
-The following metrics are available on the **Data insights** tab for Azure Event Hubs, Azure IoT Hub, lakehouse, eventhouse (**Event processing before ingestion** mode), derived stream, and Fabric Activator nodes:
+The **Data insights** tab provides the following metrics for Azure Event Hubs, Azure IoT Hub, lakehouse, eventhouse (**Event processing before ingestion** mode), derived stream, and Fabric Activator nodes:
 
 | Metric | Unit | Description |
 |--|--|--|
@@ -61,11 +58,11 @@ The following metrics are available on the **Data insights** tab for Azure Event
 | **Output events** | Count | Number of event data items that the eventstream engine sends to a lakehouse or eventhouse (in a lakehouse, eventhouse, derived stream, or Fabric Activator destination) or from an event source (in an Azure Event Hubs or Azure IoT Hub source). |
 | **Backlogged input events** | Count | Number of input events that are backlogged in the eventstream engine. |
 | **Runtime errors** | Count | Total number of errors related to event processing. |
-| **Data conversion errors** | Count | Number of output events that couldn't be converted to the expected output schema. |
-| **Deserialization errors** | Count | Number of input events that couldn't be deserialized inside the eventstream engine. |
+| **Data conversion errors** | Count | Number of output events that can't be converted to the expected output schema. |
+| **Deserialization errors** | Count | Number of input events that can't be deserialized inside the eventstream engine. |
 | **Watermark delay** | Second | Maximum watermark delay across all partitions of all outputs for this source or destination. It's computed as the wall clock time minus the largest watermark. |
 
-To view the data insights for an Azure event hub, Azure IoT hub, lakehouse, eventhouse (**Event processing before ingestion** mode), derived stream, or Fabric activator:
+To view the data insights for an Azure event hub, Azure IoT hub, lakehouse, eventhouse, derived stream, or Fabric activator:
 
 1. On the main editor canvas, select the Azure Event Hubs, Azure IoT Hub, lakehouse, eventhouse, derived stream, or Fabric Activator node.
 
@@ -106,7 +103,7 @@ The following metrics are available on the **Data insights** tab for streaming c
 |-------------------------------|-------|----------------------------------------------------------------------------------|
 | **Source Outgoing Events**        | Count | Number of records sent from the transformations (if any) and written to an eventstream for the task that belongs to the named source connector in the worker (since the task was last restarted). |
 | **Source Incoming Events**        | Count | Number of records produced or polled by the task that belongs to the named source connector in the worker (since the task was last restarted), before transformations are applied. |
-| **Connector Errors Logged**       | Count | Number of errors that were logged for these connector tasks.                |
+| **Connector Errors Logged**       | Count | Number of errors that the connector tasks logged.                |
 | **Connector Processing Errors**   | Count | Number of record processing errors in these connector tasks.                |
 | **Connector Processing Failures** | Count | Number of record processing failures in these connector tasks, including retry failures. |
 | **Connector Events Skipped**      | Count | Number of records skipped due to errors within these connector tasks.       |
@@ -146,3 +143,5 @@ To view the runtime logs for an Azure event hub, Azure IoT hub, streaming connec
 ## Related content
 
 - [Preview data in an eventstream item](./preview-data.md)
+
+

@@ -2,8 +2,6 @@
 title: Analyze Spark Jobs with Job Insight Library (Preview)
 description: Job insight is a Java-based diagnostic library that helps you interactively analyze completed Spark applications in Microsoft Fabric.
 ms.reviewer: jejiang
-ms.author: eur
-author: eric-urban
 ms.topic: concept-article
 ms.date: 08/23/2025
 ms.search.form: Job insight
@@ -15,8 +13,9 @@ Job insight is a Java-based diagnostic library designed to help you interactivel
 
 Whether you're troubleshooting performance issues or conducting custom diagnostics, Job insight library lets you work with Spark telemetry as native Spark Datasets, making it easier to troubleshoot performance issues and explore execution insights.
 
-> [!NOTE]
+>[!NOTE]
 > Accessing the Job insight library using PySpark isn't supported yet.
+
 
 ## Prerequisites
 
@@ -25,6 +24,12 @@ Whether you're troubleshooting performance issues or conducting custom diagnosti
 - Requires Fabric Runtime 1.3 or later (with Spark 3.5+).
 
 - PySpark does not support access to the Job Insight library.
+
+>[!Note]
+>
+> When using the JobInsight library to analyze another Spark job, the notebook that runs JobInsight must be in the **same Fabric capacity** as the target Spark job.
+>
+> Cross-capacity scenarios are not supported at this time.
 
 ## Key capabilities
 

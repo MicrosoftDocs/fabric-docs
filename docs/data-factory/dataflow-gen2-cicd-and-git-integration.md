@@ -1,11 +1,9 @@
 ---
 title: Dataflow Gen2 with CI/CD and Git integration
 description: Learn how to use Dataflow Gen2 with CI/CD and Git integration in Fabric Data Factory.
-ms.reviewer: whhender
-ms.author: jeluitwi
-author: luitwieler
+ms.reviewer: jeluitwi
 ms.topic: how-to
-ms.date: 08/29/2025
+ms.date: 02/25/2026
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
@@ -34,15 +32,15 @@ Before you start, make sure you:
 
 ## Create a Dataflow Gen2 with CI/CD and Git integration
 
-Creating a Dataflow Gen2 with CI/CD and Git integration allows you to manage your dataflows efficiently within a connected Git repository. Follow these steps to get started:
+All new Dataflow Gen2 items are created with CI/CD and Git integration support by default. Follow these steps to get started:
 
 1. In the Fabric workspace, select **Create new item**, then select **Dataflow Gen2**.
 
    :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/new-dataflow-gen2-item.png" alt-text="Screenshot of the New item window with the Dataflow Gen2 item emphasized.":::
 
-1. Name your dataflow, enable Git integration, and select **Create**.
+1. Name your dataflow and select **Create**. Git integration is enabled by default for all new Dataflow Gen2 items.
 
-   :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/new-dataflow-gen2-item-set-name.png" alt-text="Screenshot of the New Dataflow Gen2 window with the dataflow name set and Git integration emphasized and selected.":::
+   :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/new-dataflow-gen2-item-set-name.png" alt-text="Screenshot of the New Dataflow Gen2 (CI/CD) dialog with the Name field and Create button.":::
 
    The dataflow opens in the authoring canvas, where you can start creating your dataflow.
 
@@ -127,8 +125,6 @@ APIs are also available to refresh a dataflow without publishing or to manually 
 While Dataflow Gen2 with CI/CD and Git integration is powerful, there are some limitations and known issues to be aware of. Here's what you need to know.
 
 - When you delete the last Dataflow Gen2 with CI/CD and Git support, the staging items become visible in the workspace and are safe to be deleted by the user.
-- Workspace view doesn't show the following: Ongoing refresh indication, last refresh, next refresh, and refresh failure indication.
-- When your dataflow fails to refresh we do not support automatically sending you a failure notification. As a workaround you can leverage the orchestration capabilities of pipelines.
 - When branching out to another workspace, a Dataflow Gen2 refresh might fail with the message that the staging lakehouse couldn't be found. When this happens, create a new Dataflow Gen2 with CI/CD and Git support in the workspace to trigger the creation of the staging lakehouse. After this, all other dataflows in the workspace should start to function again.
 - When you sync changes from GIT into the workspace or use deployment pipelines, you need to open the new or updated dataflow and save changes manually with the editor. This triggers a publish action in the background to allow the changes to be used during refresh of your dataflow. You can also use the [on-demand Dataflow publish job API call](/fabric/data-factory/dataflow-gen2-public-apis#run-on-demand-dataflow-publish-job) to automate the publish operation.
 - Power Automate connector for dataflows isn't working with the new Dataflow Gen2 with CI/CD and Git support.

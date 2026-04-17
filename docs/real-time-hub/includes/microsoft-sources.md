@@ -1,10 +1,7 @@
 ---
 title: Microsoft Sources Supported by Fabric Real-Time Hub  
 description: Discover the Microsoft sources you can integrate with Fabric Real-Time Hub for seamless data streaming.
-author: spelluru
-ms.author: spelluru
 ms.topic: include
-ms.custom:
 ms.date: 11/18/2024
 ---
 

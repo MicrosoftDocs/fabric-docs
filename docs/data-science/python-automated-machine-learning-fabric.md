@@ -1,20 +1,17 @@
-﻿---
+---
 title: Use AutoML (Python)
-description: Use AutoML APIs in Fabric to automate the ML workflow (preview)
+description: Use AutoML APIs in Fabric to automate the ML workflow
 ms.topic: overview
-ms.custom: 
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: pimorano
-reviewer: pimorano
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.date: 07/22/2025
 ---
 
-# Code-first AutoML in Fabric (preview)
+# Code-first AutoML in Fabric
 
 AutoML (Automated Machine Learning) is a collection of methods and tools that automate machine learning model training and optimization with little human involvement. The aim of AutoML is to simplify and speed up the process of choosing the best machine learning model and hyperparameters for a given dataset, which usually demands much skill and computing power.
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 In Fabric, data scientists can use `flaml.AutoML` to automate their machine learning tasks.
 

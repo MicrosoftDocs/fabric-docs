@@ -2,11 +2,8 @@
 title: Unify data sources with OneLake shortcuts
 description: OneLake shortcuts provide a way to connect to existing data without having to directly copy it. Learn how to use them.
 ms.reviewer: eloldag
-ms.author: kgremban
-author: kgremban
 ms.search.form: Shortcuts
 ms.topic: concept-article
-ms.custom:
 ms.date: 01/08/2026
 #customer intent: As a data engineer, I want to learn how to use OneLake shortcuts so that I can unify data sources and have OneLake manage the permissions.
 ---
@@ -134,7 +131,7 @@ For detailed instructions to create a specific shortcut type, select an article 
 * [Dataverse shortcuts](./create-dataverse-shortcut.md)
 * [Google Cloud Storage shortcuts](./create-gcs-shortcut.md)
 * [Iceberg shortcuts](./onelake-iceberg-tables.md)
-* [OneDrive and SharePoint shortcuts](./create-onedrive-sharepoint-shortcut.md)
+* [OneDrive and SharePoint shortcuts](./shortcuts/create-onedrive-sharepoint-shortcut.md)
 
 ## Caching
 
@@ -142,6 +139,8 @@ Shortcut caching can reduce egress costs associated with cross-cloud data access
 
 > [!NOTE]
 > Shortcut caching currently supports Google Cloud Storage (GCS), S3, S3 compatible, and on-premises data gateway shortcuts.
+>
+> Caching is also supported for on-premises Amazon S3 shortcuts that use Microsoft Entra service principal authentication.
 
 To enable caching for shortcuts, open the **Workspace settings** panel. Choose the **OneLake** tab. Toggle the cache setting to **On** and select the **Retention Period**.
 

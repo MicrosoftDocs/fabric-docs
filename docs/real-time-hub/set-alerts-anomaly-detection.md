@@ -1,11 +1,8 @@
 ---
 title: Set alerts on anomaly detection events in Real-Time hub
 description: This article describes how to set alerts on anomaly detection events in Real-Time hub.
-author: hzargari-ms
-ms.author: v-hzargari
-ms.reviewer: tessahurr
+ms.reviewer: v-hzargari, tessahurr
 ms.topic: how-to
-ms.custom:
 ms.date: 10/14/2025
 ms.search.form: Anomaly Detection Set Alerts On Anomaly Detection Events
 ---
@@ -85,3 +82,4 @@ In the **Add rule** side panel, configure the following settings:
 
 - [Set alerts on Azure blob storage events](set-alerts-azure-blob-storage-events.md)
 - [Set alerts on Fabric workspace item events](set-alerts-fabric-workspace-item-events.md)
+

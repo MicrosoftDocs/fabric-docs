@@ -1,10 +1,7 @@
 ---
 title: Localize Your Workload
 description: Learn how you can localize your workload and support various languages in Microsoft Fabric.
-author: KesemSharabi
-ms.author: kesharab
-ms.topic: conceptual
-ms.custom:
+ms.topic: concept-article
 ms.date: 08/14/2024
 ---
 
@@ -198,3 +195,4 @@ export async function callLanguageGet(workloadClient: WorkloadClientAPI): Promis
 ```
 
 With the provided `currentLanguageLocale` code, you can proceed to localize your workload by using any framework that you want. For example, the sample workload repo uses the library [i18next](https://www.i18next.com/) to translate the contents of a message bar that notifies the user of the current language.
+

@@ -2,12 +2,10 @@
 title: Get data from Azure Storage
 description: Learn how to get data from Azure Storage in a KQL database in Real-Time Intelligence.
 ms.reviewer: aksdi
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.subservice: rti-eventhouse
-ms.date: 11/25/2025
+ms.date: 04/16/2026
 ms.search.form: Get data in a KQL Database
 ---
 
@@ -25,10 +23,6 @@ In this article, you learn how to get data from Azure Storage (ADLS Gen2 contain
     >
     > * A continuous ingestion stream can affect your billing. For more information, see [Eventhouse and KQL Database consumption](real-time-intelligence-consumption.md).
 
-> [!WARNING]
->
-> Ingestion from an Azure Storage account (continous and one-time) using a [private link](/azure/private-link/private-link-overview) is not supported.
-
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
@@ -45,7 +39,7 @@ In Azure:
 * Assign [Storage Blob Data Reader](/azure/role-based-access-control/built-in-roles) role permissions to the workspace identity.
 * Assign permissions to the user configuring the continuous ingestion, or to an AD group with the user who is configuring the continuous ingestion:
     * [Storage Account Contributor](/azure/role-based-access-control/built-in-roles/storage?branch=main#storage-account-contributor).
-    * [EventGrid Contributor permission](/azure/role-based-access-control/built-in-roles/integration#eventgrid-contributor).
+    * [Event Grid Contributor permission](/azure/role-based-access-control/built-in-roles/integration#eventgrid-contributor).
 * [Create](#create-a-container-with-data-file) a [blob container](/azure/storage/blobs/blob-containers-portal) to hold the data files.
     * Upload a data file. The data file structure is used to define the table schema. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md).
 
@@ -86,13 +80,13 @@ In Azure:
 
 Set the source to get data.
 
-1. From your Workspace, open the EventHouse, and select the database.
+1. From your Workspace, open the eventhouse, and select the database.
 
 1. On the KQL database ribbon, select **Get Data**.
 
 1. Select the data source from the available list. In this example, you're ingesting data from **Azure storage**.
 
-    [!INCLUDE [get-data-kql](includes/get-data-kql.md)]
+    :::image type="content" source="media/get-data-azure-storage/get-data-azure-storage-tile.png" alt-text="Screenshot of the get data tiles with the Azure storage option highlighted.":::
 
 ## Configure
 
@@ -121,10 +115,6 @@ Set the source to get data.
         | Blob storage account | Storage account name. |
         | Container | The storage container containing the file you want to ingest. |
 
-        > [!NOTE] 
-        >
-        > Using a [private link](/azure/private-link/private-link-overview) is not supported.
-
     1. In the **Connection** field, open the dropdown and select **+ New connection**, then **Save** > **Close**. The connection settings are prepopulated.
 
     > [!NOTE]
@@ -142,7 +132,7 @@ Set the source to get data.
 
         | **Setting** | **Field description** |
         |--|--|
-        | RTAStorageAccount | An event stream connected to your storage account from Fabric. |
+        | RTAStorageAccount | An eventstream connected to your storage account from Fabric. |
         | Container | The storage container containing the file you want to ingest. |
         | Connection | This is prepopulated with the connection string |
 

@@ -1,11 +1,10 @@
 ---
 title: Table and folder security in OneLake
 description: Learn how to use OneLake security (preview) to enforce access permissions at the table and folder level in OneLake.
-ms.reviewer: aamerril
-ms.author: kgremban
-author: kgremban
+ms.reviewer: aamerril # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
-ms.custom:
 ms.date: 09/05/2025
 #customer intent: As a [], I want to learn how to [] so that I can [].
 ---

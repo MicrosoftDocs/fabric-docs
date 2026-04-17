@@ -1,31 +1,30 @@
 ---
-title:  Compare Graph and Relational Databases
-description: Compare graph databases and relational databases, highlighting key differences, use cases, and advantages in analytics.
+title: Graph and Relational Database Comparison
+description: Compare graph databases and relational databases, highlighting key differences, data model comparisons, use cases, and advantages in analytics.
+#customer intent: As a data professional, I want to understand the differences between graph databases and relational databases so that I can choose the right approach for my data workload.
 ms.topic: concept-article
-ms.date: 11/18/2025
-author: lorihollasch
-ms.author: loriwhip
+ms.date: 03/31/2026
 ms.reviewer: wangwilliam
 ---
 
-#  Compare graph and relational databases
+# Graph and relational database comparison
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-In this article, we compare graph databases and relational databases, highlighting key differences, use cases, and advantages in analytics. You can evaluate whether to use [Graph for Microsoft Fabric](overview.md) or a relational database based on your specific needs.
+A [**graph database**](graph-database.md) stores and queries data as a network of nodes (entities) and edges (relationships). This approach differs from the tables-and-rows format of relational databases. Graph databases excel at modeling and analyzing highly connected data, such as social networks, knowledge graphs, recommendation systems, and fraud detection.
 
-A [**graph database**](graph-database.md) stores and queries data as a network of nodes (entities) and edges (relationships), making it fundamentally different from the tables-and-rows format of relational databases. Graph databases excel at modeling and analyzing highly connected data, such as social networks, knowledge graphs, recommendation systems, and fraud detection.
+This article compares graph databases and relational databases. It highlights key differences, use cases, and advantages in analytics. Use this information to decide whether to use [graph in Microsoft Fabric](overview.md) or a relational database for your specific needs.
 
-## Core Differences
+## Core differences between graph and relational databases
 
 - **Graph databases:** Organize data as nodes and edges, storing relationships explicitly. Traversing connections is efficient and often independent of total dataset size.
-- **Relational databases:** Organize data in tables with rows and columns. Relationships are inferred at query time using JOIN operations, which can become complex and slow for highly connected data.
+- **Relational databases:** Organize data in tables with rows and columns. Use JOIN operations to infer relationships at query time. For highly connected data, these operations can become complex and slow.
 
 ## Querying relationships: Joins versus traversals
 
-**Relational database queries:** Data in different tables is linked through foreign keys. To retrieve related data, relational databases use JOIN operations to combine rows from multiple tables. This works well for simple relationships but can become expensive and complex for deep or variable-length connections.
+**Relational database queries:** Foreign keys link data in different tables. To retrieve related data, relational databases use JOIN operations to combine rows from multiple tables. For simple relationships, JOINs work fine. But for deep or variable-length connections, they can get expensive and complex.
 
-**Graph database queries:** Relationships are stored as edges, allowing direct traversal from one node to another. Graph queries can efficiently navigate multiple hops and complex patterns. Graph query languages like GQL make it easy to express traversals and pattern matching.
+**Graph database queries:** Store relationships as edges, so you can directly traverse from one node to another. Graph queries can efficiently navigate multiple hops and complex patterns. Graph query languages like Graph Query Language (GQL) make it easy to express traversals and pattern matching.
 
 **Example:**
 
@@ -50,35 +49,37 @@ WHERE p.name = 'Alice';
 ```
 
 > [!NOTE]
-> GQL is an ISO-standardized query language for graph databases, designed for efficient querying and manipulation of graph-structured data. The same international working group that oversees SQL is developing it.
+> GQL is an ISO-standardized query language for graph databases. It's designed for efficient querying and manipulation of graph-structured data. The same international working group that oversees SQL is developing it.
 
-## Performance Implications
+## Performance implications for graph and relational databases
 
-Graph databases can outperform relational systems for queries involving many edges or unknown depths, especially for deep-link analytics or recursive queries. Relational databases excel at set-oriented operations and aggregations due to decades of optimization.
+Graph databases can outperform relational databases for queries that involve many edges or unknown depths, especially for deep-link analytics or recursive queries. Relational databases excel at set-oriented operations and aggregations because of decades of optimization. In graph in Microsoft Fabric, the query engine is optimized for traversal and pattern matching across large-scale graphs stored in OneLake.
 
-## Scaling Considerations
+## Scaling considerations for graph and relational databases
 
-- **Relational databases:** Typically scale vertically (bigger machines) and can scale horizontally via sharding and replication. Sharding highly connected schemas is complex and can incur cross-network overhead.
+- **Relational databases:** Typically scale vertically (bigger machines) and can scale horizontally through sharding and replication. Sharding highly connected schemas is complex and can cause cross-network overhead.
 - **Graph databases:** Scale vertically and horizontally. Distributed graph databases partition graphs across machines, aiming to keep related nodes together for efficient traversals.
 
-## When to Use Each
+## When to use a graph database or a relational database
 
-**Use a Graph Database if:**
-- Your data is highly connected and relationship-heavy (social networks, knowledge graphs, recommendations).
+Use a graph database if:
+
+- Your data is highly connected and relationship-heavy (social networks, knowledge graphs, and recommendations).
 - You need to traverse an unknown or variable number of hops.
 - The schema is evolving or semi-structured.
 - You want intuitive modeling for domains where relationships are central.
 
-**Use a Relational Database if:**
+Use a relational database if:
+
 - Your data is mostly tabular or fits a well-defined structure.
 - Your queries involve heavy aggregations or large set operations.
 - You have existing tooling or expertise aligned with SQL.
 
-## Hybrid Approaches
+## Hybrid approaches with graph and relational databases
 
-Many projects use both: a relational database for core transactional data, and a graph database for specialized analytics or network analysis features.
+Many projects use both types of databases: a relational database for core transactional data and a graph database for specialized analytics or network analysis features. In Microsoft Fabric, you can combine graph with other data stores in the same workspace, giving you both relational and graph capabilities without moving data between separate systems.
 
 ## Related content
 
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
-- [End-to-end tutorials in Microsoft Fabric](/fabric/fundamentals/end-to-end-tutorials)
+- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)
+- [End-to-end tutorials in Microsoft Fabric](../fundamentals/end-to-end-tutorials.md)

@@ -1,17 +1,14 @@
 ---
-title: Understand the metrics app timepoint item detail page (preview)
+title: Understand the metrics app timepoint item detail page
 description: Learn how to read the Microsoft Fabric Capacity Metrics app's Timepoint Item Detail page.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.topic: how-to
-ms.custom:
 ms.date: 06/06/2025
 no-loc: [Copilot]
 ---
 
-# Understand the metrics app timepoint item detail page (preview)
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+# Understand the metrics app timepoint item detail page
 
 This page provides a detailed analysis of the operation type within a specific item used to drill through to this view. If the selected workspace, item, and operation type contain more than 100,000 records for **Interactive** or **Background** operations within the timepoint window, sampling occurs. To improve data accuracy, use the **Bucket Start** and **End Time** filters to narrow the smoothing time range, or aggregate low-usage records by selecting a **CU threshold** in the filter pane.
 

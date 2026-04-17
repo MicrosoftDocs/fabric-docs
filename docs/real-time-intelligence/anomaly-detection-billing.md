@@ -1,13 +1,11 @@
 ---
 title: Anomaly Detector Capacity Usage and Billing in Real-Time Intelligence
 description: Learn about capacity usage and billing for Anomaly Detector in Real-Time Intelligence.
-ms.reviewer: tessarhurr
-ms.author: v-hzargari
-author: hzargari-ms
-ms.topic: article
-ms.custom: 
+ms.reviewer: tessarhurr, v-hzargari
+ms.topic: concept-article
 ms.date: 12/10/2025
 ms.search.form: Anomaly detector billing
+ai-usage: ai-assisted
 ---
 
 # Anomaly detector capacity usage and billing in Real-Time Intelligence
@@ -26,10 +24,10 @@ Anomaly Detector operations include:
 
 - **Interactive Analysis**
     - When you initiate anomaly detection from the Real-Time hub or Eventhouse table, the system runs queries to analyze historical data and recommend models.
-    - Each analysis session consumes CUs based on query complexity and data size. 
+    - Each analysis session accrues CUs per query execution.
 - **Continuous Monitoring**
     - After deploying a model for monitoring, the system routinely queries Eventhouse to detect anomalies in the incoming data.
-    - Each monitoring cycle incurs CU consumption based on the check frequency and data volume, which determines the associated billing.
+    - CU accrual is per monitoring query execution, with check frequency influencing the number of executions and thus cost.
     > [!IMPORTANT]
     > Billing is tied to query execution and not to the volume of data processed.
 
@@ -38,7 +36,7 @@ Anomaly Detector operations include:
 Anomaly Detector uses one dedicated billing meter:
 
 - Meter Name: Anomaly Detector Queries Capacity Usage CU
-- Operation Name: Anomaly Detector Run Queries
+- Operation Name: Anomaly Detection Run Queries
 
 This single meter tracks all CU consumption for both interactive analysis and continuous monitoring. You can find the detailed usage reports in the Microsoft Fabric Capacity Metrics app or through the Azure billing system.
 

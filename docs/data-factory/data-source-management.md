@@ -1,9 +1,7 @@
 ---
 title: Data source management
 description: Learn how to add and remove data sources, and how to manage users.
-ms.reviewer: whhender
-ms.author: abnarain
-author: abnarain
+ms.reviewer: abnarain
 ms.topic: how-to
 ms.date: 08/21/2025
 ms.custom: connectors
@@ -15,7 +13,7 @@ ai-usage: ai-assisted
 [!INCLUDE [product-name](../includes/product-name.md)] works with many data sources, both on-premises and in the cloud. Each data source has specific setup requirements. This article shows you how to add an Azure SQL Server as a cloud data source as an example - and the process is similar for other sources. If you need help with on-premises data sources, see [Add or remove a gateway data source](/power-bi/connect-data/service-gateway-data-sources).
 
 > [!NOTE]
-> Right now, cloud connections work with pipelines and Kusto. For datasets, datamarts, and dataflows, you need to use Power Query Online's "get data" experience to create personal cloud connections.
+> Right now, cloud connections work with pipelines and Kusto. For datasets and dataflows, you need to use Power Query Online's "get data" experience to create personal cloud connections.
 
 ## Add a data source
 
@@ -161,6 +159,38 @@ resp.raise_for_status()
 for conn in resp.json().get("value", []):
    print(f"{conn['displayName']}: {conn['id']}")
 ```
+
+## Connection recency (Preview)
+
+Microsoft Fabric provides usage-based properties to help you better understand how connections are configured and used over time. These properties improve audit visibility and support safer connection lifecycle management.
+
+Over time, connections may be reused, replaced, or left idle. Without clear usage signals, it can be difficult to determine whether a connection is still active or safe to modify, rotate credentials for, or remove. The Last Used Time capability introduces additional metadata to help you make more informed decisions.
+
+:::image type="content" source="media/data-source-management/connection-recency.png" alt-text="Screenshot showing the recency of connection." lightbox="media/data-source-management/connection-recency.png":::
+
+Two new properties are available in connection metadata:
+
+### Last linked to items
+
+- Shows the most recent time the connection was linked to a Fabric item.
+
+- Reflects configuration activity (for example, when the connection was associated with a pipeline or other artifact).
+
+- Helps identify recently created or newly reused connections.
+
+This property indicates when a connection was last configured or associated with an item.
+
+### Last credentials used
+
+- Shows the most recent time the connection’s credentials were used at runtime.
+
+- Reflects actual execution usage, not just configuration.
+
+- Helps distinguish between defined connections and actively used connections.
+
+This property indicates when a connection was last used to execute a workload.
+
+Together, these properties provide both configuration signals and runtime usage signals for better operational insight.
 
 ## Manage users
 

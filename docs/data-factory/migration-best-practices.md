@@ -2,9 +2,7 @@
 title: Migration Best Practices for Azure Data Factory to Fabric Data Factory
 description: Discover best practices for ADF-to-Fabric migrations, including inventorying assets, assessing feature parity, and choosing the right migration path.
 #customer intent: As an Azure Data Factory customer I want to explore best practices for migrating to Fabric Data Factory, so I can improve my data integration strategy and ensure a smooth and efficient transition.
-author: kromerm
-ms.author: makromer
-ms.reviewer: whhender
+ms.reviewer: makromer
 ms.date: 09/22/2025
 ms.topic: concept-article
 ai-usage: ai-assisted
@@ -105,7 +103,7 @@ For migration scenarios, see [Migrate from Dataflow Gen1 to Dataflow Gen2](dataf
 
 ## Global parameters in Azure Data Factory
 
-Fabric uses workspace-level **Variable Libraries** to define constants Fabric items. When migrating to Microsoft Fabric Data Factory, these you’ll need to convert your Azure Data Factory global parameters to variable libraries.
+Fabric uses workspace-level **Variable Libraries** to define constants across Fabric items. When migrating to Microsoft Fabric Data Factory, you'll need to convert your Azure Data Factory global parameters to variable libraries.
 
 For full conversion guidance, see [Convert ADF Global Parameters to Fabric Variable Libraries](convert-global-parameters-to-variable-libraries.md).
 
@@ -149,7 +147,8 @@ For more information, see [Use Copilot in Data Factory](copilot-fabric-data-fact
 Migration paths depend on your ADF assets and their feature parity. Options include:
 
 - [Mounting ADF items in Fabric for continuity.](migrate-pipelines-azure-data-factory-item.md)
-- [Using the PowerShell conversion tool for pipelines with high parity.](migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md)
+- [Use the built-in upgrade experience to assess, migrate, and validate pipelines incrementally.](/azure/data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory) - Assess pipeline readiness directly in Azure Data Factory, review compatibility results, and migrate supported pipelines to a Fabric workspace using a guided UX.
+- [Using the PowerShell conversion tool for scripted or bulk migrations.](migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md) - An alternative for automated, script-driven scenarios.
 - Replatforming to adopt native Fabric patterns.
 
 ## Related content

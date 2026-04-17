@@ -2,11 +2,9 @@
 title: Apache Spark runtime in Fabric
 description: Learn about the Apache Spark-based runtimes available in Fabric, including Fabric optimizations and support.
 ms.reviewer: arali
-ms.author: eur
-author: eric-urban
 ms.topic: overview
 ms.custom: sfi-image-nochange
-ms.date: 12/11/2025
+ms.date: 03/18/2026
 ---
 
 # Apache Spark Runtimes in Fabric
@@ -19,7 +17,7 @@ Major components of Fabric Runtime:
 
 - **Delta Lake** - an open-source storage layer that brings ACID transactions and other data reliability features to Apache Spark. Integrated within Fabric Runtime, Delta Lake enhances data processing capabilities and ensures data consistency across multiple concurrent operations.
 
-- **[The Native Execution Engine](./native-execution-engine-overview.md)** - is a transformative enhancement for Apache Spark workloads, offering significant performance gains by directly executing Spark queries on lakehouse infrastructure. Integrated seamlessly, it requires no code changes and avoids vendor lock-in, supporting both Parquet and Delta formats across Apache Spark APIs in Runtime 1.3 (Spark 3.5). This engine boosts query speeds up to four times faster than traditional OSS Spark, as shown by the TPC-DS 1TB benchmark, reducing operational costs and improving efficiency across various data tasks—including data ingestion, ETL, analytics, and interactive queries. Built on Meta's Velox and Intel's Apache Gluten, it optimizes resource use while handling diverse data processing scenarios.
+- **[The Native Execution Engine](./native-execution-engine-overview.md)** - is a transformative enhancement for Apache Spark workloads, offering significant performance gains by directly executing Spark queries on lakehouse infrastructure. Integrated seamlessly, it requires no code changes and avoids vendor lock-in, supporting both Parquet and Delta formats across Apache Spark APIs in Runtime 1.3 (Spark 3.5). This engine boosts query speeds up to four times faster than traditional OSS Spark, as shown by the TPC-DS 1TB benchmark, reducing operational costs and improving efficiency across various data tasks—including data ingestion, ETL, analytics, and interactive queries. The Native Execution Engine is based on two key OSS components: [Velox](https://github.com/facebookincubator/velox), a C++ database acceleration library introduced by Meta, and [Apache Gluten (incubating)](https://github.com/apache/incubator-gluten), a middle layer responsible for offloading JVM-based SQL engines’ execution to native engines introduced by Intel.
 
 - **Default-level packages for Java/Scala, Python, and R** - packages that support diverse programming languages and environments. These packages are automatically installed and configured, allowing developers to apply their preferred programming languages for data processing tasks.
 
@@ -32,7 +30,7 @@ Below, you find a comprehensive comparison of key components, including Apache S
 
 | Component | [Runtime 1.2](./runtime-1-2.md) | [Runtime 1.3](./runtime-1-3.md) | [Runtime 2.0](./runtime-2-0.md) |
 |--|--|--|--|
-| **Release Stage** | EOSA | GA | Experimental (Preview) |
+| **Release Stage** | EOSA | GA | Public Preview |
 | **Apache Spark version** | 3.4.1 | 3.5.5 | 4.0.0 |
 | **Operating System** | Mariner 2.0 | Mariner 2.0 | Mariner 3.0 |
 | **Java version** | 11 | 11 | 21 |

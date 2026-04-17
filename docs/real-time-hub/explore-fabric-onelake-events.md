@@ -1,8 +1,7 @@
 ---
 title: Explore OneLake events in Fabric Real-Time hub
 description: This article shows how to explore OneLake events in Fabric Real-Time hub.
-author: robece
-ms.author: robece
+ms.reviewer: robece
 ms.topic: how-to
 ms.date: 12/11/2025
 ---
@@ -13,7 +12,7 @@ OneLake events inform you about changes in your data lake, such as the creation,
 
 Real-Time Hub enables you to discover and subscribe to these changes within OneLake, allowing you to react instantly. For instance, you can monitor changes in Lakehouse files and folders and utilize Activator's alerting capabilities to set up alerts based on specific conditions and define actions to take when those conditions are met. This article guides you on how to explore OneLake events using the Real-Time Hub
 
-[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+[!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
 
 ## View OneLake events detail page
 
@@ -100,3 +99,4 @@ For more information, see [subscribe permission for Fabric events](fabric-events
 ## Related content
 
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md)
+

@@ -1,13 +1,13 @@
 ---
 title: Delta Lake table format interoperability
 description: Learn about Delta Lake table format interoperability in Microsoft Fabric.
-ms.reviewer: snehagunda
-ms.author: dacoelho
-author: DaniBunny
-ms.topic: article
-ms.custom:
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: dacoelho
+ms.topic: concept-article
 ms.date: 4/25/2025
 ms.search.form: delta lake interoperability
+ai-usage: ai-assisted
 ---
 
 # Delta Lake table format interoperability
@@ -31,6 +31,7 @@ The following matrix shows key Delta Lake features and its availability on each 
 |Data warehouse Delta Lake export|Name: Yes<br/>ID: No|Yes|Yes|Yes|Read: N/A (not applicable)<br/>Write: No|No|No|Reader: 3<br/>Writer: 7<br/>Deletion Vectors,<br/>Column Mappings (name)|
 |SQL analytics endpoint|Name: Yes<br/>ID: No|Yes|N/A (not applicable)|N/A (not applicable)|Read: Yes<br/>Write: N/A (not applicable)|Yes|No|N/A (not applicable)|
 |Lakehouse explorer and preview|Name: Yes<br/>ID: No|Yes|N/A (not applicable)|Yes|Read: Yes<br/>Write: N/A (not applicable)|Yes|Yes|N/A (not applicable)|
+|Fabric Spark Runtime 2.0 (Preview)|Name: Yes<br/>ID: Yes|Yes|Yes|Yes|Read: Yes<br/>Write: Yes|Yes|Yes|Reader: 3<br/>Writer: 7<br/>Deletion Vectors|
 |Fabric Spark Runtime 1.3|Name: Yes<br/>ID: Yes|Yes|Yes|Yes|Read: Yes<br/>Write: Yes|Yes|Yes|Reader: 1<br/>Writer: 2|
 |Fabric Spark Runtime 1.2|Name: Yes<br/>ID: Yes|Yes|Yes|Yes|Read: Yes<br/>Write: Yes|Yes, read only|Yes|Reader: 1<br/>Writer: 2|
 |Fabric Spark Runtime 1.1|Name: Yes<br/>ID: Yes|No|Yes|Yes|Read: Yes<br/>Write: Yes|Yes, read only|No|Reader: 1<br/>Writer: 2|
@@ -47,6 +48,7 @@ Eventstreams|Name: No<br/>ID: No|No|No|No|Read: N/A (not applicable)<br/>Write: 
 >
 > * Fabric doesn't write column mappings by default, except where noted. The default Fabric experience generates tables that are compatible across the service. Delta Lake tables produced by third-party services may have incompatible table features.
 > * Some Fabric experiences don't offer table optimization and maintenance capabilities, such as bin-compaction, V-order, deletion vector merge (PURGE), and clean up of old unreferenced files (VACUUM). To keep Delta Lake tables optimal for analytics, follow the techniques in [Use table maintenance feature to manage delta tables in Fabric](../data-engineering/lakehouse-table-maintenance.md) for tables ingested using those experiences.
+> * For comprehensive cross-workload guidance on table maintenance strategies for different consumption scenarios, see [Cross-workload table maintenance and optimization](table-maintenance-optimization.md).
 
 ## Current limitations
 
@@ -56,7 +58,7 @@ Currently, Fabric doesn't support these Delta Lake features:
 * Delta Lake 3.x Uniform. This feature is supported only in the Data Engineering Spark-compute (Notebooks, Spark Jobs).
 * Identity columns writing (Azure Databricks feature)
 * Lakeflow Spark Declarative Pipelines (Azure Databricks feature)
-* Delta Lake 4.x features: Type widening, collations, variant type, coordinated commits.
+* Delta Lake 4.x features outside of Lakehouse and Spark Notebooks and Jobs: Type widening, collations, variant type, coordinated commits, etc.
 
 ## Special characters on table names
 
@@ -66,7 +68,9 @@ The following special characters are either reserved or not compatible with at l
 
 ## Related content
 
+* [Cross-workload table maintenance and optimization](table-maintenance-optimization.md)
 * [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
 * Learn more about [Delta Lake tables](../data-engineering/lakehouse-and-delta-tables.md) in Fabric Lakehouse and Synapse Spark.
 * [Learn about Direct Lake in Power BI and Microsoft Fabric](../fundamentals/direct-lake-overview.md).
 * Learn more about [querying tables from the Warehouse through its published Delta Lake Logs](../data-warehouse/query-delta-lake-logs.md).
+

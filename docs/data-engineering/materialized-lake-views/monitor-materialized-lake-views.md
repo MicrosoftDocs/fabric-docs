@@ -1,12 +1,10 @@
 ---
 title: "Monitoring Fabric Materialized Lake Views"
 description: Learn how to monitor Fabric materialized lake views.
-author: eric-urban
-ms.author: eur
 ms.reviewer: sairamyeturi
 ms.topic: how-to
 ms.date: 06/06/2025
-# customer intent: As a data engineer, I want to monitor materialized lake views in Microsoft Fabric so that I can track their status and manage their runs.
+#customer intent: As a data engineer, I want to monitor materialized lake views in Microsoft Fabric so that I can track their status and manage their runs.
 ---
 
 # Monitor materialized lake views
@@ -19,9 +17,9 @@ You can access the Monitor hub to view various MLV runs in your workspace by sel
   
 ## Sort, search, filter and column options
 
-For better usability and discoverability, you can sort the MLV runs by selecting different columns in the UI. You can also filter the using the Job Type, Location, Job Instance ID and search for specific runs. You can also adjust the display and sort order of the columns independently through the column options.
+For better usability and discoverability, you can sort the MLV runs by selecting different columns in the UI. You can also filter them using the Job Type, Location, Job Instance ID and search for specific runs. You can also adjust the display and sort order of the columns independently through the column options.
 
-The Job Type for MLV runs is MaterializedLakeViews
+The Job Type for MLV runs is RefreshMaterializedLakeViews
 
 :::image type="content" source="./media/monitor-materialized-lake-views/sort-filter-column-options.png" alt-text="Screenshot showing job type for materialized lake view." border="true" lightbox="./media/monitor-materialized-lake-views/sort-filter-column-options.png":::
 
@@ -61,9 +59,9 @@ If you need to cancel an in-progress MLV run, hover over its row and click the `
 
 ## Navigate to a materialized lake view run
 
-If you need more information about MLV runs and the MLV statistics, access Apache Spark logs for individual MLVs, or check input and output data. You can click on the name of any MLV run to navigate to its corresponding scheduled run, and individual MLVs in the lineage will direct you to the detailed log view.
+You can find more information about MLV runs and the MLV statistics by accessing Apache Spark logs for individual MLVs or checking input and output data. You can click on the name of any MLV run to navigate to its corresponding scheduled run, and individual MLVs in the lineage will direct you to the detailed log view.
 
 ## Related articles
 
-* [Create materialized lake views in a lakehouse](./create-materialized-lake-view.md)
+* [Spark SQL reference for materialized lake views](./create-materialized-lake-view.md)
 * [Manage materialized lake views lineage](./view-lineage.md)

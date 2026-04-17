@@ -3,9 +3,8 @@ title: Enable workspace outbound access protection
 description: "Learn how to enable the workspace outbound access protection on Microsoft Fabric workspaces."
 author: msmimart
 ms.author: mimart
-ms.service: fabric
 ms.topic: how-to
-ms.date: 11/10/2025
+ms.date: 12/01/2025
 
 #customer intent: As a data platform administrator, I want to set up outbound access protection for my workspace so that I can control and secure how my workspace resources connect to external networks.
 
@@ -21,7 +20,7 @@ This article explains how to configure outbound access protection for your Fabri
 
 * Make sure you have an admin role in the workspace.
 
-* Make sure the workspace where you want to set up outbound access protection resides on a Fabric capacity (F SKUs). No other capacity types are supported. You can check assignment by going to the workspace settings and selecting **License info**.
+* Make sure the workspace where you want to set up outbound access protection resides on a Fabric capacity (F SKUs). No other capacity types are supported. You can check assignment by going to the workspace settings and selecting **Workspace type**.
 
 * The tenant setting **Configure workspace-level outbound network rules** must be enabled by a Fabric tenant administrator. See [Manage admin access to outbound access protection settings](workspace-outbound-access-protection-tenant-setting.md).
 
@@ -72,6 +71,9 @@ In the request body, set `outbound` to `Deny`. Also specify the `inbound` value 
 }
 ```
 
+> [!TIP]
+> Fabric administrators can use the [List Networking Communication Policies](/rest/api/fabric/admin/workspaces/list-networking-communication-policies) admin API to retrieve and audit the network policies configured across all workspaces in the tenant.
+
 ---
 
 After outbound public access is blocked, you can create an allow list of approved connections to external resources using either data connection rules or managed private endpoints.
@@ -79,3 +81,4 @@ After outbound public access is blocked, you can create an allow list of approve
 ## Next steps
 
 - [Create an allow list with managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md)
+- [Create an allow list with data connection rules](./workspace-outbound-access-protection-allow-list-connector.md)

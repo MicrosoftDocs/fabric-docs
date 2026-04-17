@@ -3,11 +3,10 @@ title: Audit and usage admin settings
 description: Learn how to configure Fabric audit and usage admin settings.
 author: msmimart
 ms.author: mimart
-ms.service: fabric
 ms.custom:
   - tenant-setting
-ms.topic: how-to
-ms.date: 05/01/2025
+ms.topic: concept-article
+ms.date: 04/08/2026
 ---
 
 # Audit and usage tenant settings
@@ -36,23 +35,24 @@ Power BI integration with [Azure Log Analytics](/power-bi/transform-model/log-an
 
 When the setting is enabled, administrators and Premium workspace owners can [configure **Azure Log Analytics for Power BI**](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure).
 
-## Workspace admins can turn on monitoring for their workspaces
+<a name='workspace-admins-can-turn-on-monitoring-for-their-workspaces'></a>
+
+## Workspace admins can turn on monitoring for their workspaces (preview)
 
 When this setting is enabled, workspace admins can turn on monitoring for their workspaces. When a workspace admin turns on monitoring, a read-only Eventhouse that includes a KQL database is created. After the Eventhouse and KQL database are added to the workspace, logging is turned on and data is sent to the database.
 Enable [workspace monitoring](../fundamentals/workspace-monitoring-overview.md), a feature that allows workspace admins to monitor their workspace.
 
-## Microsoft can store query text to aid in support investigation
+## Microsoft can store query text to aid in support investigations
 
-When this setting is enabled, Microsoft can store the query text generated when users use Fabric items such as reports and dashboards. This data is sometimes necessary for debugging and resolving complex issues related to the performance and functionality of Fabric Items such as semantic models. The setting is enabled by default.
+When this setting is enabled, Microsoft can store the query text generated when users use Fabric items such as reports and dashboards. This data is sometimes necessary for debugging and resolving complex issues related to the performance and functionality of Fabric items such as semantic models. The setting is enabled by default.
 
 Storing and retaining query text data can have implications for data security and privacy. While it is recommended to leave the setting on to facilitate support, if there are organizational requirements that don't permit storing query text, or if you wish to opt out of this feature for any other reason, you can turn off the feature as follows:
 
-1. [Go to the tenant settings tab in the admin portal](./about-tenant-settings.md#how-to-get-to-the-tenant-settings).
-1. Find the setting **Microsoft can store query text to aid in support investigation**. It is in the Audit and usage section. You can use the search box on the tenant settings tab to help find it.
-1. Set the toggle to **Disabled**.
+Go to the [tenant settings tab in the admin portal](./about-tenant-settings.md#how-to-get-to-the-tenant-settings), find **Microsoft can store query text to aid in support investigations** in the **Audit and usage** section, and set the toggle to **Disabled**.
 
 For more information about the diagnostic query text storage feature, see [Diagnostic query text storage](./query-text-storage.md).
 
 ## Related content
 
 * [About tenant settings](tenant-settings-index.md)
+* [Diagnostic query text storage](./query-text-storage.md)

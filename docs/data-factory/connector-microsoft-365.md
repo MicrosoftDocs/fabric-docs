@@ -1,14 +1,14 @@
 ---
 title: How to create a Microsoft 365 connection
 description: This article provides information about how to do create Microsoft 365 connection in [!INCLUDE [product-name](../includes/product-name.md)].
-author: pennyzhou-msft
-ms.author: xupzhou
+ms.reviewer: xupzhou
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 03/13/2026
 ms.custom:
 - template-how-to
 - connectors
 - sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # How to create a Microsoft 365 connection
@@ -23,8 +23,7 @@ This Microsoft 365 connector supports the following authentication types for cop
 |:---|:---|:---|
 |Service principal| √| n/a|
 
-## Set up your connection in Dataflow Gen2
-
+## Set up your connection for Dataflow Gen2
 The Microsoft 365 connector isn't currently supported in Dataflow Gen2.
 
 ## Set up your connection in a pipeline
@@ -100,6 +99,7 @@ The following table contains the supported authentication type properties.
 |- Tenant ID|Your service principal tenant ID. Specify the tenant information under which your Microsoft Entra web application resides.|Yes |||
 |- Service Principal ID|Specify the application's client ID.|Yes |||
 |- Service Principal key|Specify the application's key.|Yes |||
+
 
 ## Related content
 

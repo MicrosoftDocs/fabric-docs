@@ -5,7 +5,6 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: concept-article
-ms.custom:
 ms.date: 10/20/2025
 
 #customer intent: As a workspace admin, I want to understand how to securely enable and configure cross-workspace communication so I can allow data and resource access between workspaces while maintaining security controls.

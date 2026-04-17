@@ -1,30 +1,30 @@
 ---
 title: "Tutorial: Configure Microsoft Fabric Mirroring from SQL Server"
 description: Learn how to configure a mirrored database from SQL Server in Microsoft Fabric.
-author: whhender
-ms.author: whhender
-ms.reviewer: ajayj, rajpo, twright, wiassaf
-ms.date: 01/12/2026
+ms.reviewer: ajayj, rajpo, twright
+ms.date: 04/03/2026
 ms.topic: tutorial
-ms.custom:
 ---
 
 # Tutorial: Configure Microsoft Fabric Mirroring from SQL Server
 
 [Mirroring in Fabric](../mirroring/overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. In this section, you learn how to create a mirrored SQL Server database, which creates a read-only, continuously replicated copy of your SQL Server data in OneLake.
 
+Use this tutorial to configure Fabric Mirorring for a database in a SQL Server instances or in an Azure SQL Managed Instance with the [SQL Server 2022 update policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true).
+
 ## Prerequisites
 
 - Install or use an existing SQL Server instance, on-premises or in the cloud.
     - As a tutorial, we recommend using a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. 
-- Install a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
+- Install a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 - You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../fundamentals/fabric-trial.md).
     - The Fabric capacity needs to be active and running. A paused or deleted capacity prevents Fabric Mirroring and no data is replicated.
 - Fabric tenant settings are required. Ensure the following two [Fabric Tenant settings](../admin/about-tenant-settings.md) are enabled:
     - [Service principals can use Fabric APIs](../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
     - [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings)
 - Review the [Platform limitations in Microsoft Fabric mirrored databases From SQL Server](sql-server-limitations.md#platform-limitations).
-- An [on-premises data gateway](/data-integration/gateway/service-gateway-install) or [a virtual network data gateway](/data-integration/vnet/create-data-gateways) in your SQL Server instance's network. The data gateway's network must connect to the SQL Server instance via a private endpoint or be allowed by the firewall rule.
+- If your instance is not publicly accessible, or if you are using the [Azure SQL Managed Instance SQL Server 2022 update policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true), you need a data gateway.
+    - An [on-premises data gateway](/data-integration/gateway/service-gateway-install) or [a virtual network data gateway](/data-integration/vnet/create-data-gateways) in your SQL Server instance's network. The data gateway's network must connect to the SQL Server instance via a private endpoint or be allowed by the firewall rule.
 
 ### Database principal for Fabric
 
@@ -50,7 +50,7 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
          - VIEW DATABASE PERFORMANCE STATE
          - VIEW DATABASE SECURITY STATE
     
-1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
+1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
 
    > [!IMPORTANT] 
@@ -98,7 +98,7 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
 
 For SQL Server versions 2016-2022, an admin must be a member of the `sysadmin` server role to set up CDC. The `sysadmin` server role is also required for any future CDC maintenance. Mirroring uses CDC if it's already enabled for the database and tables to mirror. The following steps create the `fabric_login` login and add it to the sysadmin server role to configure CDC. If CDC already exists, you don't need to temporarily add the `fabric_login` principal to the `sysadmin` server role. Once CDC is set up, enabling Mirroring only requires CONNECT at the server level, and SELECT and CONNECT permissions at the database level to replicate the data.
 
-1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
+1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. In this step, you'll create a server login and assign the appropriate permissions.
 
    If CDC is already enabled for the database and tables to mirror, the `fabric_login` does not need to be a member of the sysadmin server role. If CDC is not already enabled, the `fabric_login` needs to be a member of the sysadmin server role to configure CDC.
@@ -412,3 +412,4 @@ Now that mirroring is up and running, learn how to [optimize performance of the 
 
 - [Mirroring SQL Server](../mirroring/sql-server.md)
 - [What is Mirroring in Fabric?](../mirroring/overview.md)
+

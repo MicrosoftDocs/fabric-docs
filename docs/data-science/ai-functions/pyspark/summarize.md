@@ -1,10 +1,7 @@
 ---
 title: Use ai.summarize with PySpark
 description: Learn how to to produce summaries of input text by using the ai.summarize function with PySpark.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: vimeland
-reviewer: virginiaroman
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions
@@ -115,6 +112,35 @@ This example code cell provides the following output:
 
 ---
 
+## Multimodal input
+
+The `ai.summarize` function supports file-based multimodal input. You can summarize the content of images, PDFs, and text files by setting `input_col_type="path"` for single-column mode, or `col_types` for DataFrame-level mode. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+# Summarize file content from a single column
+results = custom_df.ai.summarize(
+    instructions="Talk like a pirate! You only have one minute",
+    input_col="file_path",
+    input_col_type="path",
+    output_col="summary",
+)
+display(results)
+```
+
+You can also summarize values across all columns in a DataFrame by omitting the input column and using `col_types`:
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+results = custom_df.ai.summarize(
+    col_types={"file_path": "path"},
+    output_col="summary",
+)
+display(results)
+```
+
 ## Related content
 
 - Use [ai.summarize with pandas](../pandas/summarize.md).
@@ -128,5 +154,6 @@ This example code cell provides the following output:
 - Translate text with [ai.translate](./translate.md).
 
 - Learn more about the [full set of AI functions](../overview.md).
+- Use [multimodal input with AI functions](../multimodal-overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

@@ -1,10 +1,8 @@
 ---
 title: Use the Starter-Kit to get up and running
 description: How you can get started fast with the Starter-Kit repository.
-author: gsaurer
-ms.author: billmath
-ms.topic: article
-ms.custom:
+ms.reviewer: gesaur
+ms.topic: quickstart
 ms.date: 12/15/2025
 ---
 
@@ -84,4 +82,4 @@ Change the HelloWorld item or create a new one:
 ## Related links
 
 - [Starter-Kit](https://aka.ms/fabric-extensibility-starter-kit)
-- Toolkit docs: [Build your workload](build-your-workload.md), [Workload manifest](manifest-workload.md), [Publish your workload](publish-workload-flow.md)
+- Toolkit docs: [Build your workload](build-your-workload.md), [Workload manifest](manifest-workload.md), [Publish your workload](publishing-overview.md)

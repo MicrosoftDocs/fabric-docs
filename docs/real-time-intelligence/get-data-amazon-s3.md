@@ -2,8 +2,6 @@
 title: Get data from Amazon S3
 description: Learn how to get data from Amazon S3 in a KQL database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 02/27/2025
@@ -30,7 +28,7 @@ For more information on Amazon S3, see [What is Amazon S3?](https://docs.aws.ama
 
 1. Select the data source from the available list. In this example, you're ingesting data from **Amazon S3**.
 
-    [!INCLUDE [get-data-kql](includes/get-data-kql.md)]
+    :::image type="content" source="media/get-data-amazon-s3/get-data-as3-tile.png" alt-text="Screenshot of the get data tiles with the Amazon S3 option highlighted.":::
 
 ## Configure
 

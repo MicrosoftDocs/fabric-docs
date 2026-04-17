@@ -2,11 +2,9 @@
 title: Lookup activity
 description: Learn how to add a lookup activity to a pipeline and use it to look up data from a data source.
 ms.reviewer: xupxhou
-ms.author: whhender
-author: whhender
 ms.topic: how-to
 ms.custom: pipelines
-ms.date: 12/18/2024
+ms.date: 01/20/2026
 ---
 
 # Use the Lookup activity to look up data from a data source
@@ -19,8 +17,7 @@ Lookup activity reads and returns the content of a configuration file or table. 
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 ## Add a lookup activity to a pipeline with UI
 
@@ -43,9 +40,35 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 Select the **Settings** tab, select an existing connection from the **Connection** dropdown, or create a new connection, and specify its configuration details.
 
-:::image type="content" source="media/lookup-activity/choose-lookup-source-and-configure.png" alt-text="Screenshot showing the Lookup activity settings tab highlighting the tab, and where to choose a new connection.":::
+:::image type="content" source="media/lookup-activity/lookup-activity-settings.png" alt-text="Screenshot showing the Lookup activity settings tab highlighting the tab, and where to choose a new connection.":::
 
-The example in the previous image shows a blob storage connection, but each connection type has its own configuration details specific to the data source selected.
+The example in the previous image shows a Lakehouse connection, but each connection type has its own configuration details specific to the data source selected.
+
+
+ The **Preview data** button in the Lookup activity settings to view a sample of the data returned by your query.
+
+:::image type="content" source="media/lookup-activity/lookup-activity-preview-data.png" alt-text="Screenshot showing the Lookup activity preview of selected data.":::
+
+Preview data helps you:
+- Validate that your Lakehouse table or query returns the expected columns and values  
+- Confirm whether the result is a **single row** or **multiple rows**  
+- Understand the output shape (`firstRow` vs `value`) before referencing it in [expressions](expression-language.md)  
+
+## Use the Lookup activity output
+
+After the Lookup activity runs, it returns the results of your query in the **Output** tab (which should be the same data in the Preview data view). You can reference this output in downstream activities to drive dynamic, metadata‑driven pipelines.
+
+:::image type="content" source="media/lookup-activity/lookup-activity-output.png" alt-text="Screenshot showing the Lookup activity output after running.":::
+
+You'll be able to use the output of the Lookup activity via the [expression](expression-language.md) builder in subsequent activities.
+
+The Lookup output is commonly used to:
+- Control branching logic (for example, **If Condition** or **Switch**)  
+- Loop over rows using a **ForEach** activity
+
+:::image type="content" source="media/lookup-activity/lookup-activity-output-expression.png" alt-text="Screenshot showing how to use the output of the Lookup activity.":::
+
+This example showcases an If Condition activity using the Lookup activity's output.
 
 ## Supported capabilities
 
@@ -56,13 +79,13 @@ The example in the previous image shows a blob storage connection, but each conn
 > [!NOTE]
 > When you use query or stored procedure to look up data, make sure to return one and exact one result set. Otherwise, Lookup activity fails.
 
-Fabric supports the data stores listed in the [Connector overview](connector-overview.md) article. Data from any source can be used.
+The following data sources are supported for Lookup activity.
+
+[!INCLUDE [data-factory-v2-supported-data-stores](includes/supported-data-stores-for-lookup-activity.md)]
 
 ## Save and run or schedule the pipeline
 
-Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline.  Select **Run** to run it directly, or **Schedule** to schedule it.  You can also view the run history here or configure other settings.
-
-:::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
 ## Related content
 

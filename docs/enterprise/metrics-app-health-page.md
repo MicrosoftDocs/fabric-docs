@@ -1,16 +1,13 @@
 ---
-title: Understand the metrics app health page (preview)
+title: Understand the metrics app health page
 description: Learn how to read the Microsoft Fabric Capacity metrics app's health page.
-author: JulCsc
-ms.author: juliacawthra
-ms.topic: how-to
-ms.custom:
-ms.date: 08/05/2025
+author: dknappettmsft
+ms.author: daknappe
+ms.topic: concept-article
+ms.date: 01/26/2026
 ---
 
-# Understand the metrics app Health page (preview)
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+# Understand the metrics app Health page
 
 The **Health** page in the Microsoft Fabric Capacity Metrics app offers a high-level overview of all capacities that a user is admin of. This page is designed to help capacity administrators quickly identify capacities that are consuming the most compute resources or are experiencing issues such as throttling or query rejections.
 
@@ -73,7 +70,7 @@ The matrix includes the following fields:
 | **SKU**                       | Latest SKU of the capacity|
 | **State**                     | A state of the capacity (Active/Suspended/Deleting/Updating SKU)|
 | **Region**                    | Region of capacity|
-| **Health** | Shows different states according to its usage behavior:<br><ul><li><strong>Suspended</strong> – Capacity is suspended.</li><li><strong>Healthy</strong> – Capacity hasn't experienced any throttling or rejections.</li><li><strong>1 - At Risk of Throttling</strong> – Capacities that have at least one 30 sec. window where interactive delay % was above 90%.</li><li><strong>2 - Throttling</strong> – Capacities that have at least one 30 sec. window where interactive delay % was above 100% and thus might have operations that were throttled.</li><li><strong>3 - At Risk of Interactive Rejection</strong> – Capacities that have at least one 30 sec. window where interactive rejection % was above 90%.</li><li><strong>4 - Interactive Rejection</strong> – Capacities that have at least one 30 sec. window where interactive rejection % was above 100%.</li><li><strong>5 - At Risk of Background Rejection</strong> – Capacities that have at least one 30 sec. window where background rejection % was above 90%.</li><li><strong>6 - Background Rejection</strong> – Capacities that have at least one 30 sec. window where background rejection % was above 100%.</li></ul> |
+| **Health** | Shows different states according to its usage behavior:<br><ul><li><strong>Healthy</strong> – Capacity isn't experiencing any throttling.</li><li><strong>Suspended</strong> – Capacity is suspended.</li><li><strong>At Risk of Throttling</strong> – Capacities that have at least one 30 second window where a 10 min interactive percentage was above 90% and capacity overage isn't enabled.</li><li><strong>At Risk of Overage Billing</strong> – Capacities that have at least one 30 second window where a 10 minute interactive percentage was above 90% and capacity overage is enabled.</li><li><strong>Overage Billing Active</strong> – Capacities that have at least one 30 second window where a 10 minute interactive percentage was above 100% and capacity overage is enabled.</li><li><strong>Throttling</strong> – Capacities that have at least one 30 second window where a 10 minute interactive percentage was above 100% and might have operations that were throttled.</li><li><strong>At Risk of Interactive Rejection</strong> – Capacities that have at least one 30 second window where a 60 minute interactive percentage was above 90%.</li><li><strong>Interactive Rejection</strong> – Capacities that have at least one 30 second window where a 60 minute interactive percentage was above 100%.</li><li><strong>At Risk of Background Rejection</strong> – Capacities that have at least one 30 second window where a 24 hour background percentage was above 90%.</li><li><strong>Background Rejection</strong> – Capacities that have at least one 30 second window where a 24 hour background percentage was above 100%.</li></ul> |
 | **User**| Number of users|
 | **Avg. utilization %**| Average utilization during selected time period|
 | **Cumulative debt**| Sparkline of cumulative carry forward spread across selected time period|
@@ -84,21 +81,25 @@ The matrix includes the following fields:
 | **P95 background rejection**  | The 95th percentile value of the Background rejection. A higher value indicates a longer background rejections duration.|
 | **Usage variance**            | A larger value for this field indicates a capacity having wide variance in the amount of utilization, whereas low variance is indicative of a steady state utilization rate.|
 | **Optional columns**          | Count of operations having these statuses: Rejected, Failure, Canceled, Successful, Invalid, InProgress|
+| **Blocked workspaces**         | The number of blocked workspaces due to Workspace level Surge Protection within the time period (last 24 hours or 1 hour). |
+
 
 > [!NOTE]
 > For health status calculations, the actual values of interactive delay, interactive rejection, and background rejection are used, rather than their P95 (95th percentile) values.
+>
+> If a workspace is blocked but hasn't been blocked in the last 24 hours or last 1 hour, the blocked workspaces count doesn't count it on the Health page.
 
-## Navigate to Compute or Storage pages
+## Navigate to Compute, Storage or Workspace blocked detail pages
 
-Choose a specific capacity from the capacity breakdown table to navigate to **Compute** and **Storage** pages. This selection allows for a detailed examination and understanding of the compute and storage resources usage of the capacity. 
+Choose a specific capacity from the capacity breakdown table to navigate to **Compute**, **Storage** or **Workspace blocked details** pages. This selection allows for a detailed examination and understanding of the compute, storage resources usage of the capacity and details for blocked workspaces and affected users or requests.
 
 There are two ways to navigate to these pages: drilling through and direct navigation.
 
 - Drill through from the **Health** page:
-  - **Option 1**: Right-click a capacity row and choose **Drill through > Compute** or **Storage**.
+  - **Option 1**: Right-click a capacity row and choose **Drill through > Compute**, **Storage** or **Workspace blocked details**.
   - **Option 2**: Select a capacity from the **Capacity Breakdown** visual, then select the **Explore** button.
   
-  In both cases, the selected capacity is automatically passed as a filter.
+  In all cases, the selected capacity is automatically passed as a filter.
 
 - Direct navigation: Use the **Navigation** pane at the top of the page to go to the **Compute** or **Storage** page. Once there, manually select a capacity using the **Capacity name** slicer.
 

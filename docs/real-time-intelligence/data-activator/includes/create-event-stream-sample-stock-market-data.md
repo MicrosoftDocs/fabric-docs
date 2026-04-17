@@ -1,11 +1,8 @@
 ---
 title: Create Eventstream With Sample Stock Market Data
 description: Learn how to create an eventstream with real-time stock market data. This include is used by files in the data-activator root folder.
-author: spelluru
-ms.author: spelluru
 ms.date: 01/16/2026
 ms.topic: include
-ms.service: fabric
 ms.subservice: rti-activator
 ---
 

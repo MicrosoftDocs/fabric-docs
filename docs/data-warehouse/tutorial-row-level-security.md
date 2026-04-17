@@ -1,8 +1,6 @@
 ---
 title: Implement Row-Level Security in Fabric Data Warehouse
 description: A guide to use row-level security in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: dhsundar
 ms.date: 01/16/2025
 ms.topic: how-to

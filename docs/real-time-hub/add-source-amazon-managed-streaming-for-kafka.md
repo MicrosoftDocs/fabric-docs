@@ -1,10 +1,8 @@
 ---
 title: Add Amazon Managed Streaming for Apache Kafka as source in Real-Time hub
 description: This article describes how to add Amazon Managed Streaming for Apache Kafka (MSK) as an event source in Fabric Real-Time hub.
-author: ahartoon
-ms.author: anboisve
+ms.reviewer: anboisve
 ms.topic: how-to
-ms.custom:
 ms.date: 12/22/2025
 ---
 
@@ -13,19 +11,22 @@ This article describes how to add Amazon Streaming for Apache Kafka (MSK) as an 
 
 Amazon MSK Kafka is a fully managed Kafka service that simplifies the setup, scaling, and management. By integrating Amazon MSK Kafka as a source within your eventstream, you can seamlessly bring the real-time events from your MSK Kafka and process it before routing them to multiple destinations within Fabric.  
 
-## Prerequisites 
+[!INCLUDE [amazon-managed-streaming-for-kafka-connector-prerequisites](../real-time-intelligence/event-streams/includes/connectors/amazon-managed-streaming-for-kafka-source-connector-prerequisites.md)]
 
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
-- An Amazon MSK Kafka cluster in active status. 
-- Your Amazon MSK Kafka cluster must be publicly accessible and not be behind a firewall or secured in a virtual network.
 
 ## Data sources page
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-## Add Amazon Managed Streaming for Apache Kafka as a source
+## Select Amazon MSK Kafka as data source type
 
-[!INCLUDE [amazon-managed-streaming-for-kafka-connector](../real-time-intelligence/event-streams/includes/amazon-managed-streaming-for-kafka-source-connector.md)]
+On the **Data sources** page, search for **Amazon MSK Kafka**, and select **Connect** on the **Amazon MSK Kafka** tile. 
+
+:::image type="content" border="true" source="media/add-source-amazon-kafka/add-amazon-kafka.png" alt-text="A screenshot of selecting Amazon MSK Kafka.":::
+
+## Configure Amazon Managed Streaming for Apache Kafka source
+
+[!INCLUDE [amazon-managed-streaming-for-kafka-connector](../real-time-intelligence/event-streams/includes/connectors/amazon-managed-streaming-for-kafka-source-connector-configuration.md)]
 
 ## View data stream details
 
@@ -38,3 +39,4 @@ To learn about consuming data streams, see the following articles:
 - [Process data streams](process-data-streams-using-transformations.md)
 - [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
 - [Set alerts on data streams](set-alerts-data-streams.md)
+

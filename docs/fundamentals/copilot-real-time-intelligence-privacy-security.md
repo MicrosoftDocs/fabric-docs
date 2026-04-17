@@ -4,8 +4,7 @@ description: Learn about privacy, security, and responsible use of Copilot for R
 author: spelluru
 ms.author: spelluru
 ms.reviewer: mibar
-ms.topic: conceptual
-ms.custom:
+ms.topic: concept-article
 ms.date: 11/19/2024
 ms.update-cycle: 180-days
 no-loc: [Copilot]

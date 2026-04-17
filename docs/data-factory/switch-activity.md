@@ -1,33 +1,35 @@
 ---
 title: Switch activity
 description: Learn how to add a switch activity to a pipeline and use it to evaluate a set of activities corresponding to a case that matches the condition evaluation.
-author: kromerm
-ms.author: makromer
-ms.reviewer: whhender
+ms.reviewer: makromer
 ms.topic: how-to
 ms.custom: pipelines
-ms.date: 11/15/2023
+ms.date: 03/24/2026
+ai-usage: ai-assisted
 ---
 
 # Use the switch activity to conditionally branch execution in a pipeline
 
-The switch activity in Microsoft Fabric provides the same functionality that a switch statement provides in programming languages. It evaluates a set of activities corresponding to a case that matches the condition evaluation.
+The switch activity in Microsoft Fabric works like a switch statement in a programming language. It evaluates an expression, matches the result to a case, and runs the activities in that case.
 
 ## Prerequisites
 
-To get started, you must complete the following prerequisites:
+Before you begin, complete these prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
-## Add a switch activity to a pipeline with UI
+## Add a switch activity to a pipeline in the UI
 
-To use a switch activity in a pipeline, complete the following steps:
+To add a switch activity, complete these steps:
 
-### Creating the activity
+1. [Create the switch activity](#create-the-switch-activity)
+1. [Set the evaluation expression and cases for the switch activity](#set-the-evaluation-expression-and-cases-for-the-switch-activity)
+1. [Configure the case activities](#configure-the-case-activities)
+
+### Create the switch activity
 
 1. Create a new pipeline in your workspace.
-1. Search for the switch activity in the pipeline **Activities** toolbar, and select it to add it to the pipeline canvas. You may need to expand the list of activities using the **+** button since there are more activities available than will typically fit in the space for the toolbar.
+1. In the pipeline **Activities** toolbar, search for **Switch**, and then select it to add it to the canvas. If you don't see it, select **+** to expand the activities list.
 
    :::image type="content" source="media/switch-activity/add-switch-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and switch activity highlighted.":::
 
@@ -35,31 +37,57 @@ To use a switch activity in a pipeline, complete the following steps:
 
    :::image type="content" source="media/switch-activity/switch-activity-general-settings.png" alt-text="Screenshot showing the General settings tab of the switch activity.":::
 
-Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
+For details on the **General** tab, see [**General** settings](activity-overview.md#general-settings).
 
-### Activities settings
+### Set the evaluation expression and cases for the switch activity
 
-Select the **Activities** tab, and you will see the **Default** case already added to the list of cases. 
+Select the **Activities** tab. The **Default** case is already in the cases list.
 
-The **Expression** clause is where you provide an expression to be evaluated and compared to the **Case** options, and supports dynamic content that allows you to use parameters, system variables, functions, and local variables from your project to compare against the various cases. 
+In **Expression**, enter the value that the switch activity should evaluate. You can use dynamic content such as parameters, system variables, functions, and local variables.
 
-You can use the pencil icon to the right of each case on the **Activities** tab to configure the activities that will execute when that case matches the **Expression**. You can use the **+ Add case** button to add new cases besides the default that executes if no other case matches the **Expression** result. You can also add cases and activities directly on the switch activity interface on the pipeline canvas itself by selecting the **+** button to add a case, or the pencil icon beside the listed cases to configure activities for each case.
+For information about our expression language and supported functions, see [the expression language overview](expression-language.md).
+
+To configure what each case runs:
+
+1. On the **Activities** tab, select the pencil icon next to a case.
+1. Add the activities that should run when that case matches **Expression**.
+1. To add more cases, select **+ Add case**.
+
+You can also add cases and configure activities from the switch activity card on the pipeline canvas by selecting **+** or the pencil icon next to each case.
 
 :::image type="content" source="media/switch-activity/configure-activities-cases.png" alt-text="Screenshot showing the switch activity settings tab highlighting the tab, and where to choose a new connection.":::
 
-### Configuring case activities
+### Configure the case activities
 
-When you edit the activities for a case by selecting the pencil icon beside it, either in the **Activities** settings pane, or directly on the switch activity interface on the pipeline canvas, you will see the case's activities editor. This is similar to the pipeline editor, but specific to the selected case. You can add any number of activities, just like with a pipeline, and these will be executed when the selected case matches the **Expression** for the switch activity. In this example, a Copy activity was added to the default case, and will execute whenever none of the other cases match the **Expression** defined in the switch activity.
+When you select the pencil icon for a case, Fabric opens the case activities editor. This editor looks like the pipeline editor, but it only applies to the selected case.
+
+Add the activities you want to run for that case. In this example, the **Default** case contains a Copy activity. Fabric runs that Copy activity when no other case matches the **Expression** result.
 
 :::image type="content" source="media/switch-activity/case-activities-editor.png" alt-text="Screenshot showing the case activities editor pane for the default case with a sample Copy activity added to it.":::
 
-Notice the pipeline and case in the top left corner of the activities editor for the case. When you finish configuring the case's activities, you can select the pipeline name link there to navigate back to the main pipeline editor again.
+In the top-left corner of the case activities editor, you can see the current pipeline and case. When you're done, select the pipeline name to return to the main pipeline editor.
 
 ## Save and run or schedule the pipeline
 
-Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline.  Select **Run** to run it directly, or **Schedule** to schedule it.  You can also view the run history here or configure other settings.
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
-:::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+## Basic example
+
+This example routes data processing based on a pipeline parameter named `v_string_input`.
+
+Our switch activity `ROYGBIV switch` evaluates the value of `v_string_input` and runs the activities in the case that matches that value. If there's no match, it runs no activity, as the **Default** case is empty.
+
+There are seven cases in this example, one for each color (red, orange, yellow, green, blue, indigo, violet). Each case contains a single **Set variable activity** that sets the value of `v_output` to the name of the color in that case. The **Expression** is a simple intake of the input parameter `v_string_input`, in this instance `@pipeline().parameters.v_string_input`, but it could be any expression that evaluates to a value.
+
+:::image type="content" source="media/switch-activity/set-variable-activities.jpg" alt-text="Screenshot showing sample Set variable activities used to prepare values before switch evaluation.":::
+
+When we run the pipeline, we input a value for the `v_string_input`. If we input "blue", the switch activity evaluates that expression, matches it to the "Blue" case, and runs the activity in that case, which sets `v_output` to "Blue". If we input "lime", there's no matching case, so the switch activity runs the **Default** case, which does nothing.
+
+:::image type="content" source="media/switch-activity/run-pipeline-input.jpg" alt-text="Screenshot showing pipeline run input with parameter values used by the switch expression. The input is 'blue' in this example.":::
+
+After a successful run of the pipeline with "blue" as the input, we can see in the output of the **Set variable activity** in the "Blue" case that `v_output` was set to "Blue", confirming that the switch activity evaluated the expression and ran the correct case.
+
+:::image type="content" source="media/switch-activity/pipeline-run-example.png" lightbox="media/switch-activity/pipeline-run-example.png" alt-text="Screenshot showing a successful pipeline run example after switch case evaluation, showing that the correct (blue) activity was run after an input of blue.":::
 
 ## Related content
 

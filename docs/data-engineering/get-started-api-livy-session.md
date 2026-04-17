@@ -2,11 +2,9 @@
 title: Submit Spark session jobs using the Livy API
 description: Learn how to submit Spark session jobs using the Livy API.
 ms.reviewer: avinandac
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
 ms.search.form: Get started with Session jobs with the Livy API for Data Engineering
-ms.date: 11/05/2025
+ms.date: 04/10/2026
 ms.custom: sfi-image-nochange
 ---
 
@@ -127,6 +125,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     
     # Get the access token
     token = get_access_token(client_id, audience, authority, certificate_path, private_key_path, certificate_thumbprint)
+    ```
 
 1. Run the notebook cell. You should see the Microsoft Entra token returned.
 
@@ -145,18 +144,19 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     tenant_id = "Entra_TenantID"  # Microsoft Entra tenant ID
     client_id = "Entra_ClientID"  # Application ID (can be the same as above or different)
     
-    # Required scopes for Microsoft Fabric API access
+    # Required scopes for Livy API access
     scopes = [
-        "https://api.fabric.microsoft.com/Lakehouse.Execute.All",      # Execute operations in lakehouses
-        "https://api.fabric.microsoft.com/Lakehouse.Read.All",        # Read lakehouse metadata
-        "https://api.fabric.microsoft.com/Item.ReadWrite.All",        # Read/write fabric items
-        "https://api.fabric.microsoft.com/Workspace.ReadWrite.All",   # Access workspace operations
-        "https://api.fabric.microsoft.com/Code.AccessStorage.All",    # Access storage from code
-        "https://api.fabric.microsoft.com/Code.AccessAzureKeyvault.All",     # Access Azure Key Vault
-        "https://api.fabric.microsoft.com/Code.AccessAzureDataExplorer.All", # Access Azure Data Explorer
-        "https://api.fabric.microsoft.com/Code.AccessAzureDataLake.All",     # Access Azure Data Lake
-        "https://api.fabric.microsoft.com/Code.AccessFabric.All"             # General Fabric access
+        "https://api.fabric.microsoft.com/Lakehouse.Execute.All",      # Required — execute operations in lakehouses
+        "https://api.fabric.microsoft.com/Lakehouse.Read.All",         # Required — read lakehouse metadata
+        "https://api.fabric.microsoft.com/Code.AccessFabric.All",      # Required — general Fabric API access from Spark Runtime
+        "https://api.fabric.microsoft.com/Code.AccessStorage.All",     # Required — access OneLake and Azure storage from Spark Runtime
     ]
+    
+    # Optional scopes — add these only if your Spark jobs need access to the corresponding services:
+    #    "https://api.fabric.microsoft.com/Code.AccessAzureKeyvault.All"     # Optional — access Azure Key Vault from Spark Runtime
+    #    "https://api.fabric.microsoft.com/Code.AccessAzureDataLake.All"     # Optional — access Azure Data Lake Storage Gen1 from Spark Runtime
+    #    "https://api.fabric.microsoft.com/Code.AccessAzureDataExplorer.All" # Optional — access Azure Data Explorer from Spark Runtime
+    #    "https://api.fabric.microsoft.com/Code.AccessSQL.All"               # Optional — access Azure SQL audience tokens from Spark Runtime
     
     def get_access_token(tenant_id, client_id, scopes):
         """
@@ -196,7 +196,36 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media/livy-api/livy-session-entra-token.png" alt-text="Screenshot showing the Microsoft Entra user token returned after running cell." lightbox= "media/livy-api/Livy-session-entra-token.png":::
 
+## Understanding Code.* scopes for the Livy API
+
+When your Spark jobs run via the Livy API, the `Code.*` scopes control what external services the Spark Runtime
+can access on behalf of the authenticated user. Two are required; the rest are optional depending on your workload.
+
+### Required Code.* scopes
+
+| Scope | Description |
+|-------|-------------|
+| `Code.AccessFabric.All` | Allows getting access tokens to Microsoft Fabric. Required for all Livy API operations. |
+| `Code.AccessStorage.All` | Allows getting access tokens to OneLake and Azure storage. Required for reading and writing data in lakehouses. |
+
+### Optional Code.* scopes
+
+Add these scopes only if your Spark jobs need to access the corresponding Azure services at runtime.
+
+| Scope | Description | When to use |
+|-------|-------------|-------------|
+| `Code.AccessAzureKeyvault.All` | Allows getting access tokens to Azure Key Vault. | Your Spark code retrieves secrets, keys, or certificates from Azure Key Vault. |
+| `Code.AccessAzureDataLake.All` | Allows getting access tokens to Azure Data Lake Storage Gen1. | Your Spark code reads from or writes to Azure Data Lake Storage Gen1 accounts. |
+| `Code.AccessAzureDataExplorer.All` | Allows getting access tokens to Azure Data Explorer (Kusto). | Your Spark code queries or ingests data to/from Azure Data Explorer clusters. |
+| `Code.AccessSQL.All` | Allows getting access tokens to Azure SQL. | Your Spark code needs to connect to Azure SQL databases. |
+
+> [!NOTE]
+> The `Lakehouse.Execute.All` and `Lakehouse.Read.All` scopes are also required but aren't part of the `Code.*` family. They grant permission to execute operations in and read metadata from Fabric lakehouses respectively.
+
 ## Create a Livy API Spark session
+
+> [!TIP]
+> If your workload requires executing multiple Spark statements concurrently, consider using [high concurrency sessions](high-concurrency-livy.md) instead. HC sessions provide independent execution contexts that run in parallel while the system manages reuse of underlying Livy sessions.
 
 1. Add another notebook cell and insert this code.
 
@@ -226,7 +255,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         create_livy_session = requests.post(livy_api_session_url, headers=headers, json={})
         
         # Check if the request was successful
-        if create_livy_session.status_code == 200:
+        if create_livy_session.status_code == 202:
             session_info = create_livy_session.json()
             print('Livy session creation request submitted successfully')
             print(f'Session Info: {json.dumps(session_info, indent=2)}')
@@ -457,6 +486,8 @@ create_livy_session = requests.post(livy_base_url, headers = headers, json = {
         print(f"Error during session cleanup: {e}")
     ```
 
+
+
 ## View your jobs in the Monitoring hub
 
 You can access the Monitoring hub to view various Apache Spark activities by selecting Monitor in the left-side navigation links.
@@ -481,3 +512,4 @@ To recap the whole process, you need a remote client such as [Visual Studio Code
 * [Submit Spark batch jobs using the Livy API](get-started-api-livy-batch.md)
 * [Apache Spark monitoring overview](spark-monitoring-overview.md)
 * [Apache Spark application detail](spark-detail-monitoring.md)
+* [High concurrency support in the Fabric Livy API](high-concurrency-livy.md).

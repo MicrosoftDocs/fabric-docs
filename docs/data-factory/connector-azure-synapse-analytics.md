@@ -1,13 +1,12 @@
 ---
 title: Set up your Azure Synapse Analytics connection
 description: This article provides information about how to create an Azure Synapse Analytics connection in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
-ms.date: 12/29/2025
+ms.date: 03/13/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your Azure Synapse Analytics connection
@@ -24,17 +23,36 @@ The Azure Synapse Analytics connector supports the following authentication type
 |Organizational account| √ | √ |
 |Service principal | √ | √ |
 
-## Set up your connection in Dataflow Gen2
-
+## Set up your connection for Dataflow Gen2
 You can connect Dataflow Gen2 to Azure Synapse Analytics in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
 
-1. [Get data in Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
+1. Check [capabilities](#capabilities) to make sure your scenario is supported.
+1. [Complete prerequisites for Azure Synapse Analytics](#prerequisites).
+1. [Get data in Fabric](#get-data).
+1. [Connect to Azure Synapse Analytics](#connect-to-azure-synapse-analytics).
 
-1. Check that the capabilities you need are supported on the [Azure Synapse Analytics connector page](/power-query/connectors/azure-sql-data-warehouse#prerequisites).
+### Capabilities
 
-1. [Connect to Azure Synapse Analytics (from Power Query online)](/power-query/connectors/azure-sql-data-warehouse#connect-to-azure-synapse-analytics-sql-dw-from-power-query-online).
+[!INCLUDE [synapse-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/synapse/synapse-capabilities-supported.md)]
+
+### Prerequisites
+
+[!INCLUDE [synapse-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/synapse/synapse-prerequisites.md)]
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Connect to Azure Synapse Analytics
+
+[!INCLUDE [azure-sql-data-warehouse-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-sql-data-warehouse/azure-sql-data-warehouse-connect-to-power-query-online.md)]
+
 
 ## More information
 
 - [Connect using advanced options](/power-query/connectors/azure-sql-data-warehouse#connect-using-advanced-options)
 - [Troubleshooting](/power-query/connectors/azure-sql-data-warehouse#troubleshooting)
+
+## Related content
+
+- [For more information about this connector, see the Azure Synapse Analytics connector documentation.](/power-query/connectors/azure-sql-data-warehouse)

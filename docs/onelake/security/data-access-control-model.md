@@ -1,9 +1,9 @@
 ---
 title: OneLake security access control model (preview)
 description: Learn the details of how OneLake secures data with role-based access control and the interaction with Fabric permissions.
-ms.reviewer: eloldag
-ms.author: aamerril
-author: aamerril
+ms.reviewer: aamerril # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article
 ms.custom:
 - onelake-data-access-public-preview-april-2024
@@ -39,6 +39,7 @@ OneLake security enables users to define data access roles for the following Fab
 | ---- | --- | --- |
 | Lakehouse | Public Preview | Read, ReadWrite |
 | Azure Databricks Mirrored Catalog | Public Preview | Read |
+| Mirrored Databases | Public Preview | Read |
 
 ## OneLake security and workspace permissions
 
@@ -87,12 +88,18 @@ Learn more in [Get started with data access roles](../security/get-started-onela
 
 Data access to OneLake occurs in one of two ways: 
 
-* Through a Fabric query engine or
-* Through user access (Queries from non-Fabric engines are considered user access)
+* Through a query engine, including Fabric engines and [authorized third-party engines](./onelake-security-integrations-overview.md)
+* Through user access (queries from non-authorized external engines are considered user access)
 
 OneLake security ensures that data is always kept secure. Because certain OneLake security features like row and column level security aren't supported by storage level operations, not all types of access to row or column level secured data can be permitted. This guarantees that users can't see rows or columns they aren't permitted to. Microsoft Fabric engines are enabled to apply row and column level security filtering to data queries. This means when a user queries data in a lakehouse or other item with OneLake security RLS or CLS on it, the results the user sees have the hidden rows and columns removed. For user access to data in OneLake with RLS or CLS on it, the query is blocked if the user requesting access isn't permitted to see all the rows or columns in that table.
 
-The table below outlines which Microsoft Fabric engines support RLS and CLS filtering.
+### Authorized third-party engines
+
+OneLake security supports enforcement by authorized third-party engines through the [authorized engine model](./onelake-security-integrations-overview.md). External engines can register as authorized engines and retrieve security definitions and precomputed effective access through OneLake APIs. These engines enforce table permissions, RLS, and CLS at query time in their own compute layer. OneLake remains the single source of truth for access control, while engines retain full control over query optimization and execution.
+
+For more information on integrating an engine with OneLake security, see [OneLake security integrations overview](./onelake-security-integrations-overview.md).
+
+The table below outlines which engines support RLS and CLS filtering.
 
 | **Engine** | **RLS/CLS filtering** | **Status** |
 |---|---|---|---|---|
@@ -102,6 +109,7 @@ The table below outlines which Microsoft Fabric engines support RLS and CLS filt
 | Semantic models using DirectLake on OneLake mode | Yes | Public preview |
 | Eventhouse | No | Planned |
 | Data warehouse external tables | No | Planned |
+| Authorized third-party engines (via OneLake authorized engine APIs) | Yes (when implemented by the engine) | Public preview |
 
 ## OneLake security access control model details
 
@@ -119,10 +127,7 @@ Any tables that do not meet those criteria will have access denied if table leve
 
 ### Metadata security
 
-OneLake security's Read access to data grants full access to the data and metadata in a table. For users with no access to a table, the data is never exposed and generally the metadata isn't visible. This also applies to column level security and a user's ability to see or not see a column in that table. However, OneLake security doesn't guarantee that the **metadata** for a table won't be accessible, specifically in the following cases:
-
-- SQL Endpoint queries: SQL Analytics Endpoint uses the same metadata security behavior as SQL Server. This means that if a user doesn't have access to a table or column, the error message for that query will explicitly state the table or column names the user doesn't have access to.
-- Semantic models: Giving a user Build permission on a semantic model allows them access to see the table names included in the model, regardless of whether the user has access to them or not. In addition, report visuals that contain hidden columns show the column name in the error message.
+OneLake security's Read access to data grants full access to the data and metadata in a table. For users with no access to a table, the data is never exposed. This also applies to column level security and a user's ability to see or not see a column in that table. However, OneLake security doesn't guarantee that the **metadata** for a table won't be accessible.
 
 ### Permission inheritance
 
@@ -372,12 +377,15 @@ Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehous
 
   | Scenario | Limit |
   | ---- | ---- |
-  | Maximum number of OneLake security roles per Fabric Item | 250 roles per lakehouse |
+  | Maximum number of OneLake security roles per Fabric Item | 250 roles per item<sup>1</sup> |
   | Maximum number of members per OneLake security role | 500 users or user groups per role |
   | Maximum number of permissions per OneLake security role | 500 permissions per role |
+
+<sup>1</sup> You can request an increase in roles per item to 1000. To request an increase, contact (Azure Support.)[https://azure.microsoft.com/support/faq/]
 
 ## Latencies in OneLake security
 
 * Changes to role definitions take about 5 minutes to apply.
 * Changes to a user group in a OneLake security role take about an hour for OneLake to apply the role's permissions on the updated user group.
   * Some Fabric engines have their own caching layer, so might require an extra hour to update access in all systems.
+

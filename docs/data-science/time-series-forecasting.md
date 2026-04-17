@@ -2,17 +2,15 @@
 title: Train and evaluate a time series forecasting model
 description: This is an AI sample for training and evaluating a time series forecasting model; we develop a program to forecast time series data that has seasonal cycles.
 ms.author: lagayhar
-author: lgayhardt
-ms.reviewer: amjafari
-reviewer: amhjf
+ms.reviewer: ruxu
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
-ms.date: 01/14/2025
+ms.date: 02/28/2026
 ---
 
 # Train and evaluate a time series forecasting model
 
-In this notebook, we build a program to forecast time series data that has seasonal cycles. We use the [NYC Property Sales dataset](https://www1.nyc.gov/site/finance/about/open-portal.page) with dates ranging from 2003 to 2015 published by NYC Department of Finance on the [NYC Open Data Portal](https://opendata.cityofnewyork.us/).
+In this notebook, you build a program to forecast time series data that has seasonal cycles. Use the [NYC Property Sales dataset](https://www1.nyc.gov/site/finance/about/open-portal.page) with dates ranging from 2003 to 2015 published by NYC Department of Finance on the [NYC Open Data Portal](https://opendata.cityofnewyork.us/).
 
 ## Prerequisites
 
@@ -45,9 +43,9 @@ The sample **Time series** notebook accompanies this tutorial.
 ## Step 1: Install custom libraries
 
 
-When you develop a machine learning model, or you handle ad-hoc data analysis, you may need to quickly install a custom library (for example, `prophet` in this notebook) for the Apache Spark session. To do this, you have two choices. 
+When you develop a machine learning model or handle ad-hoc data analysis, you might need to quickly install a custom library (for example, `prophet` in this notebook) for the Apache Spark session. To do this task, you have two choices. 
 
-1. You can use the in-line installation capabilities (for example, `%pip`, `%conda`, etc.) to quickly get started with new libraries. This would only install the custom libraries in the current notebook, not in the workspace.
+1. Use the in-line installation capabilities (for example, `%pip`, `%conda`, and so on) to quickly get started with new libraries. This method installs the custom libraries only in the current notebook, not in the workspace.
 
 ```python
 # Use pip to install libraries
@@ -57,9 +55,9 @@ When you develop a machine learning model, or you handle ad-hoc data analysis, y
 %conda install <library name>
 ```
 
-2. Alternatively, you can create a Fabric environment, install libraries from public sources or upload custom libraries to it, and then your workspace admin can attach the environment as the default for the workspace. All the libraries in the environment will then become available for use in any notebooks and Spark job definitions in the workspace. For more information on environments, see [create, configure, and use an environment in Microsoft Fabric](../data-engineering/create-and-use-environment.md).
+1. Alternatively, create a Fabric environment, install libraries from public sources, or upload custom libraries to it. Your workspace admin can attach the environment as the default for the workspace. All the libraries in the environment become available for use in any notebooks and Spark job definitions in the workspace. For more information on environments, see [create, configure, and use an environment in Microsoft Fabric](../data-engineering/create-and-use-environment.md).
 
-For this notebook, you use `%pip install` to install the `prophet` library. The PySpark kernel will restart after `%pip install`. This means that you must install the library before you run any other cells.
+For this notebook, use `%pip install` to install the `prophet` library. The PySpark kernel restarts after `%pip install`. This action means that you must install the library before you run any other cells.
 
 
 ```python
@@ -97,7 +95,7 @@ The data source consists of 15 `.csv` files. These files contain property sales 
 
 
 > [!TIP]
-> With the parameters shown in this code cell, you can easily apply this notebook to different datasets.
+> By using the parameters shown in this code cell, you can easily apply this notebook to different datasets.
 
 
 
@@ -114,7 +112,7 @@ EXPERIMENT_NAME = "aisample-timeseries" # MLflow experiment name
 This code downloads a publicly available version of the dataset, and then stores that dataset in a Fabric Lakehouse.
 
 > [!IMPORTANT]
-> **Make sure you [add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before running it. Failure to do so will result in an error.**
+> **Make sure you [add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before running it. If you don't, an error occurs.**
 
 
 ```python
@@ -148,7 +146,7 @@ ts = time.time()
 
 ### Set up the MLflow experiment tracking
 
-To extend the MLflow logging capabilities, autologging automatically captures the values of input parameters and output metrics of a machine learning model during its training. This information is then logged to the workspace, where the MLflow APIs or the corresponding experiment in the workspace can access and visualize it. Visit [this resource](./mlflow-autologging.md) for more information about autologging.
+To extend the MLflow logging capabilities, autologging automatically captures the values of input parameters and output metrics of a machine learning model during its training. This information is then logged to the workspace, where the MLflow APIs or the corresponding experiment in the workspace can access and visualize it. For more information about autologging, see [Autologging in Microsoft Fabric](./mlflow-autologging.md).
 
 
 ```python
@@ -160,7 +158,7 @@ mlflow.autolog(disable=True)  # Disable MLflow autologging
 ```
 
 > [!NOTE]
-> If you want to disable Microsoft Fabric autologging in a notebook session, call `mlflow.autolog()` and set `disable=True`.
+> To disable Microsoft Fabric autologging in a notebook session, call `mlflow.autolog()` and set `disable=True`.
 
 #### Read raw date data from the lakehouse
 
@@ -175,7 +173,7 @@ df = (
 
 ## Step 3: Begin exploratory data analysis
 
-To review the dataset, you could manually examine a subset of data to gain a better understanding of it. You can use the `display` function to print the DataFrame. You can also show the Chart views, to easily visualize subsets of the dataset.
+To review the dataset, manually examine a subset of data to gain a better understanding of it. Use the `display` function to print the DataFrame. You can also show the Chart views, to easily visualize subsets of the dataset.
 
 
 ```python
@@ -184,15 +182,15 @@ display(df)
 
 A manual review of the dataset leads to some early observations:
 
-* Instances of $0.00 sales prices. According to the [Glossary of Terms](https://www.nyc.gov/assets/finance/downloads/pdf/07pdf/glossary_rsf071607.pdf), this implies a transfer of ownership with no cash consideration. In other words, no cash flowed in the transaction. You should remove sales with $0.00 `sales_price` values from the dataset.
+* Instances of $0.00 sales prices. According to the [Glossary of Terms](https://www.nyc.gov/assets/finance/downloads/pdf/07pdf/glossary_rsf071607.pdf), this value implies a transfer of ownership with no cash consideration. In other words, no cash flowed in the transaction. Remove sales with $0.00 `sales_price` values from the dataset.
 
-* The dataset covers different building classes. However, this notebook will focus on residential buildings which, according to the [Glossary of Terms](https://www.nyc.gov/assets/finance/downloads/pdf/07pdf/glossary_rsf071607.pdf), are marked as type "A". You should filter the dataset to include only residential buildings. To do this, include either the `building_class_at_time_of_sale` or the `building_class_at_present` columns. You must only include the `building_class_at_time_of_sale` data.
+* The dataset covers different building classes. However, this notebook will focus on residential buildings which, according to the [Glossary of Terms](https://www.nyc.gov/assets/finance/downloads/pdf/07pdf/glossary_rsf071607.pdf), are marked as type "A". Filter the dataset to include only residential buildings. To do this, include either the `building_class_at_time_of_sale` or the `building_class_at_present` columns. Only include the `building_class_at_time_of_sale` data.
 
-* The dataset includes instances where `total_units` values equal 0, or `gross_square_feet` values equal 0. You should remove all the instances where `total_units` or `gross_square_units` values equal 0.
+* The dataset includes instances where `total_units` values equal 0, or `gross_square_feet` values equal 0. Remove all the instances where `total_units` or `gross_square_units` values equal 0.
 
-* Some columns - for example, `apartment_number`, `tax_class`, `build_class_at_present`, etc. - have missing or NULL values. Assume that the missing data involves clerical errors, or nonexistent data. The analysis doesn't depend on these missing values, so you can ignore them.
+* Some columns - for example, `apartment_number`, `tax_class`, `build_class_at_present`, and others - have missing or NULL values. Assume that the missing data involves clerical errors, or nonexistent data. The analysis doesn't depend on these missing values, so you can ignore them.
 
-* The `sale_price` column is stored as a string, with a prepended "$" character. To proceed with the analysis, represent this column as a number. You should cast the `sale_price` column as integer.
+* The `sale_price` column is stored as a string, with a prepended "$" character. To proceed with the analysis, represent this column as a number. Cast the `sale_price` column as integer.
 
 #### Type conversion and filtering
 To resolve some of the identified issues, import the required libraries.
@@ -210,10 +208,10 @@ Use regular expressions to separate the numeric portion of the string from the d
 
 **Next, filter the data to only include instances that meet all of these conditions:**
 
-1. The `sales_price` is greater than 0
-2. The `total_units` is greater than 0
-3. The `gross_square_feet` is greater than 0
-4. The `building_class_at_time_of_sale` is of type A
+1. The `sales_price` is greater than 0.
+1. The `total_units` is greater than 0.
+1. The `gross_square_feet` is greater than 0.
+1. The `building_class_at_time_of_sale` is of type A.
 
 
 ```python
@@ -229,9 +227,9 @@ df = df.select("*").where(
 
 The data resource tracks property sales on a daily basis, but this approach is too granular for this notebook. Instead, aggregate the data on a monthly basis.
 
-First, change the date values to show only month and year data. The date values would still include the year data. You could still distinguish between, for example, December 2005 and December 2006.
+First, change the date values to show only month and year data. The date values still include the year data. You can still distinguish between, for example, December 2005 and December 2006.
 
-Additionally, only keep the columns relevant to the analysis. These include `sales_price`, `total_units`, `gross_square_feet` and `sales_date`. You must also rename `sales_date` to `month`.
+Additionally, only keep the columns relevant to the analysis. These columns include `sales_price`, `total_units`, `gross_square_feet`, and `sales_date`. You must also rename `sales_date` to `month`.
 
 
 ```python
@@ -244,7 +242,7 @@ monthly_sale_df = df.select(
 display(monthly_sale_df)
 ```
 
-Aggregate the `sale_price`, `total_units` and `gross_square_feet` values by month. Then, group the data by `month`, and sum all the values within each group. 
+Aggregate the `sale_price`, `total_units`, and `gross_square_feet` values by month. Then, group the data by `month`, and sum all the values within each group. 
 
 
 ```python
@@ -263,7 +261,7 @@ display(summary_df)
 
 #### Pyspark to Pandas conversion
 
-Pyspark DataFrames handle large datasets well. However, due to data aggregation, the DataFrame size is smaller. This suggests that you can now use pandas DataFrames.
+Pyspark DataFrames handle large datasets well. However, due to data aggregation, the DataFrame size is smaller. This change suggests that you can now use pandas DataFrames.
 
 This code casts the dataset from a pyspark DataFrame to a pandas DataFrame.
 
@@ -277,7 +275,7 @@ display(df_pandas)
 
 #### Visualization
 
-You can examine the property trade trend of New York City to better understand the data. This leads to insights into potential patterns and seasonality trends. Learn more about Microsoft Fabric data visualization at [this](../data-engineering/notebook-visualization.md) resource.
+You can examine the property trade trend of New York City to better understand the data. This examination leads to insights into potential patterns and seasonality trends. For more information about Microsoft Fabric data visualization, see [Notebook visualization](../data-engineering/notebook-visualization.md) resource.
 
 
 ```python
@@ -306,9 +304,9 @@ plt.show()
 
 #### Summary of observations from the exploratory data analysis
 
-* The data shows a clear recurring pattern on a yearly cadence; this means the data has a **yearly seasonality**
-* The summer months seem to have higher sales volumes compared to winter months
-* In a comparison of years with high sales and years with low sales, the revenue difference between high sales months and low sales months in high sales years exceeds - in absolute terms - the revenue difference between high sales months and low sales months in low sale years. 
+* The data shows a clear recurring pattern on a yearly cadence, which means the data has a **yearly seasonality**.
+* The summer months seem to have higher sales volumes compared to winter months.
+* When you compare years with high sales and years with low sales, you see that the revenue difference between high sales months and low sales months in high sales years exceeds - in absolute terms - the revenue difference between high sales months and low sales months in low sale years. 
 
 For example, in 2004, the revenue difference between the highest sales month and the lowest sales month is about:
 
@@ -318,15 +316,15 @@ For 2011, that revenue difference calculation is about:
 
 `$400,000,000 - $300,000,000 = $100,000,000`
 
-This becomes important later, when you must decide between **multiplicative** and **additive** seasonality effects.
+This observation becomes important later, when you must decide between **multiplicative** and **additive** seasonality effects.
 
 ## Step 4: Model training and tracking
 
 ### Model fitting
 
-[Prophet](https://facebook.github.io/prophet/) input is always a two-column DataFrame. One input column is a time column named `ds`, and one input column is a value column named `y`. The time column should have a date, time, or datetime data format (for example, `YYYY_MM`). The dataset here meets that condition. The value column must be a numerical data format.
+[Prophet](https://facebook.github.io/prophet/) always takes a two-column DataFrame as input. One input column is a time column named `ds`, and the other input column is a value column named `y`. The time column should have a date, time, or datetime data format (for example, `YYYY_MM`). The dataset here meets that condition. The value column must be a numerical data format.
 
-For the model fitting, you must only rename the time column to `ds` and value column to `y`, and pass the data to Prophet. Read the [Prophet Python API documentation](https://facebook.github.io/prophet/docs/quick_start.html#python-api) for more information.
+For model fitting, rename the time column to `ds` and the value column to `y`. Then, pass the data to Prophet. For more information, see the [Prophet Python API documentation](https://facebook.github.io/prophet/docs/quick_start.html#python-api).
 
 
 ```python
@@ -336,13 +334,13 @@ df_pandas["y"] = df_pandas["total_sales"]
 
 Prophet follows the [scikit-learn](https://scikit-learn.org/) convention. First, create a new instance of Prophet, set certain parameters (for example,`seasonality_mode`), and then fit that instance to the dataset.
 
-* Although a constant additive factor is the default seasonality effect for Prophet, you should use the **'multiplicative' seasonality** for the seasonality effect parameter. The analysis in the previous section showed that because of changes in seasonality amplitude, a simple additive seasonality won't fit the data well at all.
+* Although a constant additive factor is the default seasonality effect for Prophet, use the **'multiplicative' seasonality** for the seasonality effect parameter. The analysis in the previous section showed that because of changes in seasonality amplitude, a simple additive seasonality doesn't fit the data well at all.
 
-* Set the **weekly_seasonality** parameter to **off**, because the data was aggregated by month. As a result, weekly data isn't available.
+* Set the **weekly_seasonality** parameter to **off**, because the data is aggregated by month. As a result, weekly data isn't available.
 
-* Use **Markov Chain Monte Carlo (MCMC)** methods to capture the seasonality uncertainty estimates. By default, Prophet can provide uncertainty estimates on the trend and observation noise, but not for the seasonality. MCMC require more processing time, but they allow the algorithm to provide uncertainty estimates on the seasonality, and the trend and observation noise. Read the [Prophet Uncertainty Intervals documentation](https://facebook.github.io/prophet/docs/uncertainty_intervals.html) for more information.
+* Use **Markov Chain Monte Carlo (MCMC)** methods to capture the seasonality uncertainty estimates. By default, Prophet can provide uncertainty estimates on the trend and observation noise, but not for the seasonality. MCMC require more processing time, but they allow the algorithm to provide uncertainty estimates on the seasonality, and the trend and observation noise. For more information, see the [Prophet Uncertainty Intervals documentation](https://facebook.github.io/prophet/docs/uncertainty_intervals.html).
 
-* Tune the automatic change point detection sensitivity through the **changepoint_prior_scale** parameter. The Prophet algorithm automatically tries to find instances in the data where the trajectories abruptly change. It can become difficult to find the correct value. To resolve this, you can try different values and then select the model with the best performance. Read the [Prophet Trend Changepoints documentation](https://facebook.github.io/prophet/docs/trend_changepoints.html) for more information.
+* Tune the automatic change point detection sensitivity through the **changepoint_prior_scale** parameter. The Prophet algorithm automatically tries to find instances in the data where the trajectories abruptly change. It can become difficult to find the correct value. To resolve this problem, try different values and then select the model with the best performance. For more information, see the [Prophet Trend Changepoints documentation](https://facebook.github.io/prophet/docs/trend_changepoints.html).
 
 
 ```python
@@ -361,13 +359,13 @@ def fit_model(dataframe, seasonality_mode, weekly_seasonality, chpt_prior, mcmc_
 
 ### Cross validation
 
-Prophet has a built-in cross-validation tool. This tool can estimate the forecasting error, and find the model with the best performance.
+Prophet has a built-in cross-validation tool. This tool can estimate the forecasting error and find the model with the best performance.
 
-The cross-validation technique can validate model efficiency. This technique trains the model on a subset of the dataset, and runs tests on a previously-unseen subset of the dataset. This technique can check how well a statistical model generalizes to an independent dataset.
+The cross-validation technique can validate model efficiency. This technique trains the model on a subset of the dataset and runs tests on a previously unseen subset of the dataset. This technique can check how well a statistical model generalizes to an independent dataset.
 
-For cross-validation, reserve a particular sample of the dataset, which wasn't part of the training dataset. Then, test the trained model on that sample, prior to deployment. However, this approach doesn't work for time-series data, because if the model has seen data from the months of January 2005 and March 2005, and you try to predict for the month February 2005, the model can essentially *cheat*, because it could see where the data trend leads. In real applications, the aim is to forecast for the **_future_**, as the unseen regions.
+For cross-validation, reserve a particular sample of the dataset that wasn't part of the training dataset. Then, test the trained model on that sample, prior to deployment. However, this approach doesn't work for time-series data. If the model sees data from the months of January 2005 and March 2005, and you try to predict for the month February 2005, the model can essentially *cheat* because it sees where the data trend leads. In real applications, the aim is to forecast for the **_future_**, as the unseen regions.
 
-To handle this, and make the test reliable, split the dataset based on the dates. Use the dataset up to a certain date (for example, the first 11 years of data) for training, and then use the remaining unseen data for prediction.
+To handle this problem and make the test reliable, split the dataset based on the dates. Use the dataset up to a certain date (for example, the first 11 years of data) for training, and then use the remaining unseen data for prediction.
 
 In this scenario, start with 11 years of training data, and then make monthly predictions using a one-year horizon. Specifically, the training data contains everything from 2003 through 2013. Then, the first run handles predictions for January 2014 through January 2015. The next run handles predictions for February 2014 through February 2015, and so on.
 
@@ -388,7 +386,7 @@ def evaluation(m):
 
 ### Log model with MLflow
 
-Log the models, to keep track of their parameters, and save the models for later use. All relevant model information is logged in the workspace, under the experiment name. The model, parameters, and metrics, along with MLflow autologging items, is saved in one MLflow run.
+Log the models to keep track of their parameters and save the models for later use. All relevant model information is logged in the workspace, under the experiment name. The model, parameters, and metrics, along with MLflow autologging items, are saved in one MLflow run.
 
 
 ```python
@@ -398,7 +396,7 @@ from mlflow.models.signature import infer_signature
 
 ### Conduct experiments
 
-A machine learning experiment serves as the primary unit of organization and control, for all related machine learning runs. A run corresponds to a single execution of model code. Machine learning experiment tracking refers to the management of all the different experiments and their components. This includes parameters, metrics, models and other artifacts, and it helps organize the required components of a specific machine learning experiment. Machine learning experiment tracking also allows for the easy duplication of past results with saved experiments. Learn more about [machine learning experiments in Microsoft Fabric](https://aka.ms/synapse-experiment). Once you determine the steps you intend to include (for example, fitting and evaluating the Prophet model in this notebook), you can run the experiment.
+A machine learning experiment serves as the primary unit of organization and control for all related machine learning runs. A run corresponds to a single execution of model code. Machine learning experiment tracking refers to the management of all the different experiments and their components. This management includes parameters, metrics, models, and other artifacts. It helps organize the required components of a specific machine learning experiment. Machine learning experiment tracking also allows for the easy duplication of past results with saved experiments. For more information, see [machine learning experiments in Microsoft Fabric](https://aka.ms/synapse-experiment). Once you determine the steps you intend to include (for example, fitting and evaluating the Prophet model in this notebook), you can run the experiment.
 
 
 ```python
@@ -445,9 +443,9 @@ for chpt_prior in changepoint_priors:
 
 ### Visualize a model with Prophet
 
-Prophet has built-in visualization functions, which can show the model fitting results. 
+Prophet has built-in visualization functions that show the model fitting results. 
 
-The black dots denote the data points that are used to train the model. The blue line is the prediction, and the light blue area shows the uncertainty intervals. You have built three models with different `changepoint_prior_scale` values. The predictions of these three models are shown in the results of this code block.
+The black dots represent the data points that train the model. The blue line is the prediction, and the light blue area shows the uncertainty intervals. You built three models with different `changepoint_prior_scale` values. The predictions of these three models appear in the results of this code block.
 
 
 ```python
@@ -457,7 +455,7 @@ for idx, pack in enumerate(zip(models, forecasts)):
     fig.suptitle(f"changepoint = {changepoint_priors[idx]}")
 ```
 
-The smallest `changepoint_prior_scale` value in the first graph leads to an underfitting of trend changes. The largest `changepoint_prior_scale` in the third graph could result in overfitting. So, the second graph seems to be the optimal choice. This implies that the second model is the most suitable.
+The smallest `changepoint_prior_scale` value in the first graph causes underfitting of trend changes. The largest `changepoint_prior_scale` in the third graph can cause overfitting. So, the second graph is the best choice. This result means the second model is the most suitable.
 
 ### Visualize trends and seasonality with Prophet
 
@@ -482,23 +480,23 @@ Evaluate the performance of the models using various metrics, for example:
 * median absolute percent error (MDAPE)
 * symmetric mean absolute percentage error (SMAPE)
 
-Evaluate the coverage using the `yhat_lower` and `yhat_upper` estimates. Note the varying horizons where you predict one year in the future, 12 times.
+Evaluate the coverage by using the `yhat_lower` and `yhat_upper` estimates. Note the varying horizons where you predict one year in the future, 12 times.
 
 
 ```python
 display(df_metrics[BEST_MODEL_INDEX])
 ```
 
-With the MAPE metric, for this forecasting model, predictions that extend one month into the future typically involve errors of roughly 8%. However, for predictions one year into the future, the error increases to roughly 10%.
+By using the MAPE metric for this forecasting model, predictions that extend one month into the future typically involve errors of roughly 8%. However, for predictions one year into the future, the error increases to roughly 10%.
 
 ## Step 5: Score the model and save prediction results
 
-Now score the model, and save the prediction results.
+Score the model and save the prediction results.
 
 
 #### Make predictions with Predict Transformer
 
-Now, you can load the model and use it to make predictions. Users can operationalize machine learning models with **PREDICT**, a scalable Microsoft Fabric function that supports batch scoring in any compute engine. Learn more about ```PREDICT```, and how to use it within Microsoft Fabric, at [this resource](https://aka.ms/fabric-predict).
+Load the model and use it to make predictions. To operationalize machine learning models, use **PREDICT**, a scalable Microsoft Fabric function that supports batch scoring in any compute engine. For more information about ```PREDICT``` and how to use it within Microsoft Fabric, see [this resource](https://aka.ms/fabric-predict).
 
 
 ```python
@@ -541,3 +539,4 @@ print(f"Full run cost {int(time.time() - ts)} seconds.")
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
 - [Train machine learning models](model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
+

@@ -1,14 +1,14 @@
 ---
 title: How to create a REST connection
 description: This article provides information about how to do create a REST connection in Microsoft Fabric.
-author: pennyzhou-msft
-ms.author: xupzhou
+ms.reviewer: xupzhou
 ms.topic: how-to
-ms.date: 07/01/2025
+ms.date: 03/13/2026
 ms.custom:
 - template-how-to
 - connectors
 - sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # How to create REST connection
@@ -27,7 +27,7 @@ This REST connector supports the following authentication types for copy and Dat
 |Service principal| √| |
 |Windows| | √|
 
-## Set up your connection in Dataflow Gen2
+## Set up your connection for Dataflow Gen2
 
 The Microsoft 365 connector isn't currently supported in Dataflow Gen2. To connect to REST data in Dataflow Gen2, use the [Web API](/power-query/connectors/web/web) connector.
 
@@ -103,6 +103,8 @@ The following the following table contains the properties for supported authenti
 |:---|:---|:---|:---|:---|
 |**Anonymous**||||✓|
 
+
 ## Related content
 
+- [For more information about this connector, see the How to create a REST connector documentation.](/power-query/connectors/web/web)
 - [How to configure REST in copy activity](connector-rest-copy-activity.md)

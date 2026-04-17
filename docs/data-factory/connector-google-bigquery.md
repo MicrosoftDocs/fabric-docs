@@ -1,13 +1,12 @@
 ---
 title: Set up your Google BigQuery connection
 description: This article provides information about how to create a Google BigQuery connection in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
-ms.date: 09/24/2025
+ms.date: 03/13/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your Google BigQuery connection
@@ -24,12 +23,34 @@ The Google BigQuery connector supports the following authentication types for co
 |Service Account Login| √ | √ |
 |Organizational account| n/a | √ |
 
-## Set up your connection in Dataflow Gen2
+## Set up your connection for Dataflow Gen2
+You can connect Dataflow Gen2 in Microsoft Fabric to Google BigQuery using Power Query connectors. Follow these steps to create your connection:
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Google BigQuery data. The following links provide the specific Power Query connector information you need to connect to Google BigQuery data in Dataflow Gen2:
+1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
+1. [Complete prerequisites for Google BigQuery](#prerequisites).
+1. [Get data in Fabric](#get-data).
+1. [Connect to Google BigQuery data](#connect-to-google-bigquery-data).
 
-- To get started using the Google BigQuery connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [Google BigQuery prerequisites](/power-query/connectors/google-bigquery#prerequisites) before connecting to the Google BigQuery connector.
-- To connect to the Google BigQuery connector from Power Query, go to [Connect to Google BigQuery data from Power Query Online](/power-query/connectors/google-bigquery#connect-to-google-bigquery-data-from-power-query-online).
+### Capabilities
 
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+[!INCLUDE [google-bigquery-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/google-bigquery/google-bigquery-capabilities-supported.md)]
+
+### Prerequisites
+
+[!INCLUDE [google-bigquery-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/google-bigquery/google-bigquery-prerequisites.md)]
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Connect to Google BigQuery data
+
+[!INCLUDE [google-bigquery-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/google-bigquery/google-bigquery-connect-to-power-query-online.md)]
+
+### Limitations and considerations
+
+[!INCLUDE [google-bigquery-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/google-bigquery/google-bigquery-limitations-and-considerations-include.md)]
+
+## Related content
+
+- [For more information about this connector, see the Google BigQuery connector documentation.](/power-query/connectors/google-bigquery)

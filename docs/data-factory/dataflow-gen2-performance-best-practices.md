@@ -1,9 +1,7 @@
 ---
 title: "Best practices for getting the best performance with Dataflow Gen2 in Fabric Data Factory"
 description: "This article provides best practices for optimizing the performance of Dataflow Gen2 in Fabric Data Factory. By following these guidelines, you can enhance the efficiency and speed of your data integration processes."
-author: luitwieler
-ms.author: jeluitwi
-ms.reviewer: dougklo
+ms.reviewer: dougklo, jeluitwi
 ms.topic: concept-article
 ms.date: 07/29/2025
 ms.custom: dataflow
@@ -145,6 +143,37 @@ In this case, consider splitting your dataflow into two separate dataflows: one 
 In this scenario, you're using dataflow connectors to consume data from your dataflow, and you want to optimize your data integration processes. Dataflow connectors can provide a convenient way to access and consume data.
 
 In this case, consider using data destinations instead of dataflow connectors for consuming data from your dataflow. Data destinations, such as Lakehouses and Warehouses, are designed to efficiently store and serve data, allowing you to apply their capabilities for downstream consumption. A major benefit of using data destinations is that they often serve more generic ways of connecting to data, such as the SQL endpoint or use the Direct Lake capabilities, which can significantly improve performance and reduce resource consumption.
+
+### Consideration 9: Enable the Modern Evaluator for improved query execution performance
+
+In this scenario, you want to improve the overall performance of your dataflow, particularly for complex transformations or when working with connectors that don't support query folding.
+
+In this case, consider enabling the Modern Query Evaluation Engine (Modern Evaluator) for your Dataflow Gen2 with CI/CD. The Modern Evaluator is a new query execution engine running on .NET Core 8 that can significantly improve the performance of dataflow runs. It's recommended to always enable this feature for supported scenarios, as it provides several key benefits:
+
+- **Faster dataflow execution**: The modern engine can substantially reduce query evaluation time. Many dataflows run noticeably faster, enabling you to refresh data more frequently or meet tight refresh windows.
+- **More efficient processing**: The engine is optimized for efficiency, using improved algorithms and a modern runtime. This means it can handle complex transformations with less overhead, which helps maintain performance as your data volume grows.
+- **Scalability and reliability**: By speeding up execution and reducing bottlenecks, the Modern Evaluator helps dataflows scale to larger volumes with greater stability. You can expect more consistent refresh durations and fewer timeout issues on large dataflows.
+
+The Modern Evaluator is particularly beneficial when:
+
+- You're working with non-foldable or partially foldable connectors
+- You're applying filters, column derivations, or data cleansing operations
+- You're dealing with large data volumes or complex transformations
+- Your dataflows run multiple times a day and you need to accumulate time savings
+
+To enable the Modern Evaluator:
+
+1. Open your dataflow in the Power Query editor.
+1. Select **Options** from the menu.
+1. Navigate to the **Scale** tab.
+1. Turn on the **Modern query evaluation engine** option.
+1. Save and run your dataflow.
+
+:::image type="content" source="media/dataflow-gen2-modern-evaluator/modern-evaluator-option.png" alt-text="Screenshot of the options dialog displaying the modern query evaluator setting." lightbox="media/dataflow-gen2-modern-evaluator/modern-evaluator-option.png":::
+
+The Modern Evaluator supports a growing list of connectors. For the full list of supported connectors and current feature status, see [Modern Evaluator for Dataflow Gen2 with CI/CD](dataflow-gen2-modern-evaluator.md#supported-connectors). If your dataflow uses connectors not in the supported list, those queries continue to run with the standard engine.
+
+To learn more about the Modern Evaluator, see [Modern Evaluator for Dataflow Gen2 with CI/CD](dataflow-gen2-modern-evaluator.md).
 
 ## Conclusion
 

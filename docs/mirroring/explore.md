@@ -1,11 +1,9 @@
 ---
 title: "Explore Data in Your Mirrored Database Using Microsoft Fabric"
 description: Learn how to explore data in your mirrored databases using Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo, anithaa
 ms.date: 11/19/2024
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 # Explore data in your mirrored database using Microsoft Fabric
 

@@ -1,9 +1,7 @@
 ---
 title: "Limits and Quotas in Microsoft Fabric Mirrored Databases From Azure Cosmos DB"
 description: This article includes a list of limitations and quotas for Microsoft Fabric mirrored databases from Azure Cosmos DB.
-author: markjbrown
-ms.author: mjbrown
-ms.reviewer: jmaldonado
+ms.reviewer: mjbrown, jmaldonado
 ms.date: 12/03/2025
 ms.topic: limits-and-quotas
 ms.custom:
@@ -104,3 +102,4 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 - [Mirroring Azure Cosmos DB](../mirroring/azure-cosmos-db.md)
 - [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-faq.yml)
 - [Troubleshooting: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-troubleshooting.yml)
+

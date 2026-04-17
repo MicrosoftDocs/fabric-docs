@@ -1,11 +1,8 @@
 ---
 title: Apache Spark runtime lifecycle in Fabric
 description: Lifecycle for Apache Spark runtime in Fabric
-ms.reviewer: sngun
-ms.author: arali
-author: ms-arali
+ms.reviewer: arali
 ms.topic: overview
-ms.custom:
 ms.date: 11/11/2025
 ---
 
@@ -26,9 +23,11 @@ The following table lists the runtime name, and release dates for supported Azur
 
 | Runtime name                                              | Release stage | End of Support date |
 |-----------------------------------------------------------|---------------|---------------------|
-| [Runtime 2.0 based on Apache Spark 4.0](./runtime-2-0.md) | Experimental  | Not Applicable      |
-| [Runtime 1.3 based on Apache Spark 3.5](./runtime-1-3.md) | GA            | September 30, 2026  |
+| [Runtime 2.0 based on Apache Spark 4.0](./runtime-2-0.md) | Public Preview | Not Applicable      |
+| [Runtime 1.3 based on Apache Spark 3.5](./runtime-1-3.md) | GA            | September 30, 2026**  |
 | [Runtime 1.2 based on Apache Spark 3.4](./runtime-1-2.md) | EOSA          | March 31, 2026      |
+
+** Runtime 1.3 will enter Long Term Support (LTS) on October 1, 2026, for a period of six months, extending support through March 2027.
 
 
 :::image type="content" source="media\runtime\lifecycle-runtimes.png" alt-text="Diagram showing lifecycle of a runtime in Fabric." lightbox="media\runtime\lifecycle-runtimes.png":::
@@ -60,4 +59,3 @@ runtime major version corresponds to the Apache Spark major version. Therefore, 
 - [Runtime 2.0 (Spark 4.0, Java 21, Python 3.12, Delta Lake 4.0)](./runtime-2-0.md)
 - [Runtime 1.3 (Spark 3.5, Java 11, Python 3.11, Delta Lake 3.2)](./runtime-1-3.md)
 - [Runtime 1.2 (Spark 3.4, Java 11, Python 3.10, Delta Lake 2.4)](./runtime-1-2.md)
-

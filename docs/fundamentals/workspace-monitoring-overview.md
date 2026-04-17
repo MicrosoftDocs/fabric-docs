@@ -4,7 +4,6 @@ description: Understand what is workspace monitoring in Microsoft Fabric and how
 author: SnehaGunda
 ms.author: sngun
 ms.topic: overview
-ms.custom:
 ms.date: 12/09/2025
 #customer intent: As a workspace admin I want to monitor my workspace to gain insights into the usage and performance of my workspace so that I can optimize my workspace and improve the user experience.
 ---
@@ -68,10 +67,12 @@ You can create and explore workspace monitoring using Power BI reports and Real-
 
 * User data operation logs aren't available even though the table is available in the monitoring database.
 
+* If any table listed above is missing from the monitoring Eventhouse, it might be because the Eventhouse was created before the table became available. To resolve this issue, go to the **Monitoring** tab in the workspace settings pane, turn off the **Log workspace activity** setting, and then turn it on again.
+
 * Workspace monitoring is billed based on the capacity consumed by the monitoring items. For more details, see [Eventhouse and KQL Database consumption](../real-time-intelligence/real-time-intelligence-consumption.md) and [Microsoft Fabric event streams capacity consumption](../real-time-intelligence/event-streams/monitor-capacity-consumption.md).
 
 * [Throttling](../enterprise/throttling.md)
-    * Monitoring Eventstream and Eventhouse operations arn't impacted by the state of the capacity. When the capacity is throttled, the queries on the monitoring Eventhouse and the Eventstream ingestion operations continue to function normally. There's also no impact to real-time dashboards built on top of the monitoring database.
+    * Monitoring Eventstream and Eventhouse operations aren't impacted by the state of the capacity. When the capacity is throttled, the queries on the monitoring Eventhouse and the Eventstream ingestion operations continue to function normally. There's also no impact to real-time dashboards built on top of the monitoring database.
     * Power BI reports or Activator alerts, built on top of the monitoring database respect the capacity state and get throttled.
 
 * Currently private links are not supported for workspace monitoring.

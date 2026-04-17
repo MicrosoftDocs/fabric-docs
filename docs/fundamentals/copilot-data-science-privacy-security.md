@@ -3,7 +3,7 @@ title: "Privacy, security, and responsible use of Copilot for Data Science"
 description: Learn about privacy, security, and responsible use of Copilot for Data Science in Microsoft Fabric.
 author: snehagunda
 ms.author: sngun
-ms.reviewer: 'guptamaya'
+ms.reviewer: guptamaya
 ms.topic: concept-article
 ms.date: 05/11/2025
 ms.update-cycle: 180-days
@@ -51,7 +51,7 @@ In order to use fully conversational agentic AI experiences, the agent needs to 
 
 With Copilot in notebooks for Data Science and Data engineering in Microsoft Fabric, we offer an AI assistant to help transform, explore, and build solutions in the context of the notebook.
 
-For considerations and limitations, see [Limitations](../data-engineering/copilot-notebooks-overview.md#limitations).
+For considerations and limitations, see [Limitations](../data-engineering/copilot-notebooks-overview.md#known-limitations).
 
 ### How did we evaluate Copilot in notebooks for data science and data engineering?
 
@@ -81,6 +81,8 @@ Fabric data agent enables natural language interactions with structured data, al
 - The Fabric data agent isn't intended for use cases where deterministic and 100% accurate results are required, because of current LLM limitations.
 
 - The Fabric data agent isn't intended for uses cases that require deep analytics or causal analytics. For example, "why did the sales numbers drop last month?" is out of current scope.
+- The Fabric data agent isn't intended to provide advice on physical or psychological injury. For example, scenarios that diagnose patients or prescribe medications.
+- The Fabric data agent isn't intended to provide advice on life opportunities or legal status. Examples include scenarios where the AI system could affect an individual's legal status, legal rights, or their access to credit, finances, education, employment, healthcare, housing, insurance, social welfare benefits, services, opportunities, or the terms on which they're provided.
 
 ### How was The Fabric data agent evaluated? What metrics are used to measure performance?
 
@@ -107,6 +109,6 @@ The product team tested the data agent on various public and private benchmarks,
 ## Related content
 
 - [Privacy, security, and responsible use of Copilot for Data Factory (preview)](copilot-data-factory-privacy-security.md)
-- [Overview of Copilot for Data Science and Data Engineering (preview)](../data-engineering/copilot-notebooks-overview.md)
+- [Overview of Copilot for Data Engineering and Data Science (preview)](../data-engineering/copilot-notebooks-overview.md)
 - [Copilot for Data Factory overview](copilot-fabric-data-factory.md)
 - [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)
