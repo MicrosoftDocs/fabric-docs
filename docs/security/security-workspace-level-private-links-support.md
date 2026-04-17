@@ -54,7 +54,7 @@ When working with unsupported item types, be aware of the following consideratio
 * **Deployment pipelines:** When a workspace is assigned to a deployment pipeline, it can't be configured to block public access, as deployment pipelines don't currently support workspace-level private links.
 
 > [!NOTE]
-> Previously, default semantic models also blocked workspace-level private links for workspaces containing lakehouses, warehouses, or mirrored databases. Default semantic models were sunsetted — they are no longer created automatically since September 5, 2025, and existing default semantic models were decoupled from their parent items by November 30, 2025. This limitation no longer applies. For more information, see [Power BI semantic models in Microsoft Fabric](../data-warehouse/semantic-models.md).
+> Default semantic models used to block workspace-level private links for workspaces with lakehouses, warehouses, or mirrored databases. This is no longer an issue. Default semantic models stopped being created automatically on September 5, 2025, and existing ones were decoupled from their parent items by November 30, 2025. For more information, see [Power BI semantic models in Microsoft Fabric](../data-warehouse/semantic-models.md).
 
 ## Management options for supported item types
 
