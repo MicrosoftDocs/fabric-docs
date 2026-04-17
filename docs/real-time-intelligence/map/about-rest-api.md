@@ -32,7 +32,7 @@ All Fabric Maps REST API requests must be authenticated using Microsoft Entra ID
 
 Clients obtain an OAuth 2.0 access token from Microsoft Entra ID and include it in each request:
 
-> Authorization: Bearer <access-token>
+> `Authorization: Bearer <access-token>`
 
 The access token represents the calling identity and its permissions in Fabric.
 
@@ -182,7 +182,7 @@ Review the Fabric Maps REST API reference.
 Learn how to create and configure a Fabric Map using Python.
 
 > [!div class="nextstepaction"]
-> [Create and configure a Fabric Map using Python](create-map-rest-api.md)
+> [Create and configure a Fabric Map using Python](create-configure-map-using-rest-api.md)
 
 Tutorial that creates a map using GeoJSON as a data layer using REST API.
 
