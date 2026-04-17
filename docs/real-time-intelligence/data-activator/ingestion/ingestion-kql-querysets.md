@@ -50,7 +50,7 @@ To set up stateful alerting:
    | project SensorID, Temperature
    ```
 
-1. Open the Activator item that contains the rule that you created in the previous step. Delete the rule. You do not need it any more.
+1. Open the Activator item that contains the rule that you created in the previous step. Delete the rule. You do not need it anymore.
 1. [Assign the data to an object](../activator-assign-data-objects.md). Using the sensor example, create a **Sensor** object and key it by **SensorID**.
 1. Create a rule on the object using a **Numeric Change** condition — for example, *Temperature increases above 0*. A **Numeric Change** condition activates only when the value transitions from not meeting the condition to meeting it. For more information, see [Detection conditions](../activator-detection-conditions.md).
 
