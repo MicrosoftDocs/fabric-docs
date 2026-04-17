@@ -101,7 +101,9 @@ When you connect to Pipeline via private link, you can use the pipeline to load 
 ### Data agent
 Data agents can connect to lakehouse, warehouse, and SQL data sources within a workspace that has workspace-level private links enabled (public access disabled). Cross-workspace access is supported when network connectivity is explicitly established (for example, using a managed private endpoint) and subject to region and token constraints.
 
-Current limitations: Kusto, semantic models, and mirrored data sources aren't supported for private link scenarios. Cross-region private-link access for SQL sources isn't supported.
+Current limitations: Kusto, semantic models, and mirrored data sources are not supported in private link scenarios. These limitations are inherent to the artifact types themselves, and not a limitation of Data Agents.
+Cross-region private-link access for SQL sources is also not supported.
+
 ### Power BI
 
 * If internet access is disabled, and if the Power BI semantic model, Datamart, or Dataflow Gen1 connects to a Power BI semantic model or Dataflow as a data source, the connection fails.
