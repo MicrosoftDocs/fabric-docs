@@ -99,7 +99,7 @@ You can use Dataflow gen2 to get data, transform data, and publish dataflow via 
 When you connect to Pipeline via private link, you can use the pipeline to load data from any data source with public endpoints into a private-link-enabled Microsoft Fabric lakehouse. Customers can also author and operationalize pipelines with activities, including Notebook and Dataflow activities, using the private link. However, copying data from and into a Data Warehouse isn't currently possible when Fabric's private link is enabled.
 
 ### Data agent
-Data Agents can connect to Lakehouse, Warehouse, and SQL data sources within a workspace that has Workspace-Level Private Links enabled (public access disabled). Cross-workspace access is supported when network connectivity is explicitly established (for example, using a Managed Private Endpoint) and subject to region and token constraints.
+Data agents can connect to lakehouse, warehouse, and SQL data sources within a workspace that has workspace-level private links enabled (public access disabled). Cross-workspace access is supported when network connectivity is explicitly established (for example, using a managed private endpoint) and subject to region and token constraints.
 
 What’s not supported (current limitations): Kusto, Semantic Models, and Mirrored data sources are not supported for Private links scenarios at this time. Cross-region private-link access for SQL sources is not supported.
 ### Power BI
