@@ -4,12 +4,12 @@ description: Learn how to create a Fabric Activator alert from the results of a 
 #customer intent: As a data analyst, I want to create Activator alerts from a KQL Queryset so that I can receive notifications when specific conditions are met in query results.
 ms.reviewer: guregini
 ms.topic: how-to
-ms.date: 12/07/2025
+ms.date: 04/17/2026
 ms.search.form: Activator KQL Queryset Onramp
 # CustomerIntent: As a customer, I want to learn how to create Activator alerts from a KQL Queryset so that I can trigger notifications when conditions are met on data in the query result.
 ---
 
-# Create Activator alerts from a KQL Queryset 
+# Create Activator alerts from a KQL Queryset
 
 This article explains how to create Fabric Activator alerts from a KQL queryset. Fabric Activator in Microsoft Fabric allows you to take actions when patterns or conditions are detected in data streams. For more information, see [What is Activator](activator-introduction.md).
 
@@ -28,15 +28,16 @@ Here are some examples of how you can use Activator alerts with KQL queries:
 
 - **Track available bicycles in neighborhoods**: Imagine you have streaming data for available bicycles in different neighborhoods. You create a KQL query to render a pie chart showing the number of available bicycles per neighborhood. You can set up an alert to notify you when the number of available bicycles in any neighborhood falls below a specified threshold.
 
-
 ## Prerequisites
 
-* A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-* A [KQL database](../../real-time-intelligence/create-database.md) with data.
-* A [KQL Queryset](../../real-time-intelligence/create-query-set.md) connected to the KQL database. For more information, see [Query data in a KQL queryset](../../real-time-intelligence/kusto-query-set.md).
+- A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
+- A [KQL database](../../real-time-intelligence/create-database.md) with data.
+- A [KQL Queryset](../../real-time-intelligence/create-query-set.md) connected to the KQL database. For more information, see [Query data in a KQL queryset](../../real-time-intelligence/kusto-query-set.md).
 
 > [!IMPORTANT]
-> - Only queries against KQL databases within an Eventhouse are supported. If your KQL queryset is connected to an [external Azure Data Explorer cluster](../kusto-query-set.md#select-a-data-source), creating an alert isn't supported. 
+>
+> - Only queries against KQL databases within an Eventhouse are supported. If your KQL queryset is connected to an [external Azure Data Explorer cluster](../kusto-query-set.md#select-a-data-source), creating an alert isn't supported.
+>
 > - The impact of an alert rule on Eventhouse depends on the query’s complexity. Simple queries and aggregations are lightweight, while joins, transformations, and sorts are more resource-intensive. If a query runs every 1 or 5 minutes, it effectively keeps Eventhouse in an **always-on** state. Without queries or ingestion for more than 5 minutes, Eventhouse can go idle, which reduces costs. For more information, see [Eventhouse Uptime](../real-time-intelligence-consumption.md#eventhouse-uptime).
 
 The following steps show you how to create an alert on a query that creates a visualization, or on a query that doesn't create a visualization.
@@ -59,26 +60,26 @@ Choose the tab that corresponds to your desired workflow.
 
 ## Define alert conditions
 
-In the **Add Rule** side pane that appears, follow these steps to define your alert conditions:
+In the **Add Rule** side pane, follow these steps to define your alert conditions:
 
-1. In the **Details** section, provide a name for your Activator alert rule.
+1. In the **Details** section, enter a name for your Activator alert rule.
 
     :::image type="content" source="media/activator-alert-queryset/details.png" alt-text="Screenshot of the Details section in the Add Rule side pane.":::
 
-1. In the **Monitor** section, set a time frequency for how often the query is run. The default is 5 minutes.
+1. In the **Monitor** section, set a time frequency for how often the query runs. The default value is 5 minutes.
 
     :::image type="content" source="media/activator-alert-queryset/monitor.png" alt-text="Screenshot of the Monitor section in the Add Rule side pane.":::
 
-1. In **Condition** section, specify your alert conditions as follows:
+1. In the **Condition** section, specify your alert conditions as follows:
 
     :::image type="content" source="media/activator-alert-queryset/condition.png" alt-text="Screenshot of the Condition section in the Add Rule side pane.":::
 
-    * If your visualization has no dimensions, you can select the **On each event when** condition to monitor changes in the data stream by choosing a specific field to monitor.
-    * In the **When** dropdown, set the value to be evaluated.
-    * In the **Condition** dropdown, set the condition to be evaluated. For more information, see [Conditions](activator-detection-conditions.md#conditions).
-    * In the **Occurrence** field, set the number of times the condition must be met before an alert is triggered.
-1. In **Action** section, select one of the following actions:
-    * **Send email notification**:
+    - If your visualization has no dimensions, select the **On each event when** condition to monitor changes in the data stream by choosing a specific field to monitor.
+    - In the **When** dropdown, set the value to evaluate.
+    - In the **Condition** dropdown, set the condition to evaluate. For more information, see [Conditions](activator-detection-conditions.md#conditions).
+    - In the **Occurrence** field, set the number of times the condition must be met before an alert triggers.
+1. In the **Action** section, select one of the following actions:
+    - **Send email notification**:
         1. For **Select action**, select **Send email**.
         1. For **To**, enter the email address of the receiver or use the drop-down list to select a property whose value is an email address. By default, your email address is populated here.
         1. For **Subject**, enter the subject of the email notification.
@@ -90,12 +91,12 @@ In the **Add Rule** side pane that appears, follow these steps to define your al
 
         :::image type="content" source="media/activator-alert-queryset/action-email.png" alt-text="Screenshot of the Send email notification section in the Add Rule side pane.":::
 
-    * **Send Microsoft Teams notification**: Sends a Microsoft Teams message to yourself. You can customize the title and message content.
-        1. For **Select action**, select **Teams** --> **Message to individuals** or **Group chat message**, or **Channel post**.
+    - **Send Microsoft Teams notification**: Sends a Microsoft Teams notification to individuals, a group chat, or a channel. You can customize the title and message content.
+        1. For **Select action**, select **Teams** --> **Message to individuals**, **Group chat message**, or **Channel post**.
         1. Follow one of these steps depending on your selection:
-            * If you selected the **Message to individuals** option, enter **email addresses** of receivers or use the drop-down list to select a property whose value is an email address. When the condition is met, an email is sent to specified individuals.
-            * If you selected the **Group chat message** option, select a **group chat** from the drop-down list. When the condition is met, a message is posted to the group chat.
-            * If you selected the **Channel post** option, select a **team** and **channel** from the drop-down lists. When the condition is met, a message is posted to the selected channel.
+            - If you select the **Message to individuals** option, enter **email addresses** of receivers or use the drop-down list to select a property whose value is an email address. When the condition is met, a Teams message is sent to the specified individuals.
+            - If you select the **Group chat message** option, select a **group chat** from the drop-down list. When the condition is met, a message is posted to the group chat.
+            - If you select the **Channel post** option, select a **team** and **channel** from the drop-down lists. When the condition is met, a message is posted to the selected channel.
         1. For **Headline**, enter the headline of the Teams notification.
         1. For **Notes**, enter notes for the Teams notification.
             >[!NOTE]
@@ -104,20 +105,20 @@ In the **Add Rule** side pane that appears, follow these steps to define your al
 
         :::image type="content" source="media/activator-alert-queryset/action-teams.png" alt-text="Screenshot of the Send Microsoft Teams notification section in the Add Rule side pane.":::
 
-    * **Run Fabric activities**:
-        To configure the alert to launch a Fabric pipeline, Dataflow (preview), Spark job, or notebook when the condition is met, follow these steps:
-        1. For **Select action**, select the appropriate Fabric item type within the "Run Fabric Activities" section
-        1. On Select Fabric item to run, select the Fabric item from the list.
-        1. Select Add parameter and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter.
+    - **Run Fabric activities**:
+        To configure the alert to launch a Fabric pipeline, Dataflow, Spark job, notebook, or User Data Function when the condition is met, follow these steps:
+        1. For **Select action**, select the appropriate Fabric item type within the **Run Fabric Activities** section.
+        1. On **Select Fabric item to run**, select the Fabric item from the list.
+        1. Select **Add parameter** and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter.
         You can pass parameters from the alert data by typing `@` or by selecting the button next to the text box. For example, `@BikepointID`.
             :::image type="content" source="media/activator-alert-queryset/fabric-activities.png" alt-text="Screenshot of the Run Fabric activities section in the Add Rule side pane.":::
-    * **Custom actions**:
+    - **Custom actions**:
         To configure the alert to call a custom action when the condition is met, follow these steps:
         1. For **Select action**, select **Create custom action**.
 
             :::image type="content" source="media/activator-alert-queryset/custom-action.png" alt-text="Screenshot of the Create custom action section in the Add Rule side pane.":::
 
-        1. As mentioned in the Action section, create the rule first, and then complete the custom action setup by following steps from [Trigger custom actions (Power Automate flows)](activator-trigger-power-automate-flows.md).
+        1. As mentioned in the **Action** section, create the rule first. Then, complete the custom action setup by following the steps from [Trigger custom actions (Power Automate flows)](activator-trigger-power-automate-flows.md).
         1. After you create the custom action, in the **Definition** pane of the rule, select the custom action you created from the **Action** drop-down list.
 
 1. In **Save location**, specify where to save your Activator alert. Choose an existing workspace, and save either in an existing activator or a new one.
@@ -149,7 +150,7 @@ SampleTable
 
 ### Example 2 - Create a single result with an array of several values
 
-In the following example, the query returns an alert if the number of bicycles in any neighborhood is above the given threshold. In order to get a single alert for all neighborhoods for which the number is above the threshold, the query is built to return a single record (meaning, a single alert), which is done using the [make_list() operator](/kusto/query/make-list-aggregation-function?view=microsoft-fabric&preserve-view=true). To edit the alert to contain the list of the neighborhoods that reached the threshold, see [Optional: Edit your rule in Activator](#optional-edit-your-rule-in-activator).
+In the following example, the query returns an alert if the number of bicycles in any neighborhood is above the given threshold. To get a single alert for all neighborhoods where the number is above the threshold, the query returns a single record (meaning, a single alert) by using the [make_list() operator](/kusto/query/make-list-aggregation-function?view=microsoft-fabric&preserve-view=true). To edit the alert to contain the list of the neighborhoods that reached the threshold, see [Optional: Edit your rule in Activator](#optional-edit-your-rule-in-activator).
 
 ```kusto
 TableForReflex
@@ -161,26 +162,26 @@ TableForReflex
 
 ## Define alert conditions
 
-In the **Add Rule** side pane that appears, follow these steps to define your alert conditions:
+In the **Add Rule** side pane, follow these steps to define your alert conditions:
 
-1. In the **Details** section, provide a name for your Activator alert rule.
+1. In the **Details** section, enter a name for your Activator alert rule.
 
     :::image type="content" source="media/activator-alert-queryset/details.png" alt-text="Screenshot of the Details section in the Add Rule side pane.":::
 
-1. In the **Monitor** section, set a time frequency for how often the query is run. The default is 5 minutes.
+1. In the **Monitor** section, set a time frequency for how often the query runs. The default value is 5 minutes.
 
     :::image type="content" source="media/activator-alert-queryset/monitor.png" alt-text="Screenshot of the Monitor section in the Add Rule side pane.":::
 
-1. In **Condition** section, specify your alert conditions as follows:
+1. In the **Condition** section, specify your alert conditions as follows:
 
     :::image type="content" source="media/activator-alert-queryset/condition.png" alt-text="Screenshot of the Condition section in the Add Rule side pane.":::
 
-    * If your visualization has no dimensions, you can select the **On each event when** condition to monitor changes in the data stream by choosing a specific field to monitor.
-    * In the **When** dropdown, set the value to be evaluated.
-    * In the **Condition** dropdown, set the condition to be evaluated. For more information, see [Conditions](activator-detection-conditions.md#conditions).
-    * In the **Occurrence** field, set the number of times the condition must be met before an alert is triggered.
-1. In **Action** section, select one of the following actions:
-    * **Send email notification**:
+    - If your visualization has no dimensions, select the **On each event when** condition to monitor changes in the data stream by choosing a specific field to monitor.
+    - In the **When** dropdown, set the value to evaluate.
+    - In the **Condition** dropdown, set the condition to evaluate. For more information, see [Conditions](activator-detection-conditions.md#conditions).
+    - In the **Occurrence** field, set the number of times the condition must be met before an alert triggers.
+1. In the **Action** section, select one of the following actions:
+    - **Send email notification**:
         1. For **Select action**, select **Send email**.
         1. For **To**, enter the email address of the receiver or use the drop-down list to select a property whose value is an email address. By default, your email address is populated here.
         1. For **Subject**, enter the subject of the email notification.
@@ -192,12 +193,12 @@ In the **Add Rule** side pane that appears, follow these steps to define your al
 
         :::image type="content" source="media/activator-alert-queryset/action-email.png" alt-text="Screenshot of the Send email notification section in the Add Rule side pane.":::
 
-    * **Send Microsoft Teams notification**: Sends a Microsoft Teams message to yourself. You can customize the title and message content.
-        1. For **Select action**, select **Teams** --> **Message to individuals** or **Group chat message**, or **Channel post**.
+    - **Send Microsoft Teams notification**: Sends a Microsoft Teams notification to individuals, a group chat, or a channel. You can customize the title and message content.
+        1. For **Select action**, select **Teams** --> **Message to individuals**, **Group chat message**, or **Channel post**.
         1. Follow one of these steps depending on your selection:
-            * If you selected the **Message to individuals** option, enter **email addresses** of receivers or use the drop-down list to select a property whose value is an email address. When the condition is met, an email is sent to specified individuals.
-            * If you selected the **Group chat message** option, select a **group chat** from the drop-down list. When the condition is met, a message is posted to the group chat.
-            * If you selected the **Channel post** option, select a **team** and **channel** from the drop-down lists. When the condition is met, a message is posted to the selected channel.
+            - If you select the **Message to individuals** option, enter **email addresses** of receivers or use the drop-down list to select a property whose value is an email address. When the condition is met, a Teams message is sent to the specified individuals.
+            - If you select the **Group chat message** option, select a **group chat** from the drop-down list. When the condition is met, a message is posted to the group chat.
+            - If you select the **Channel post** option, select a **team** and **channel** from the drop-down lists. When the condition is met, a message is posted to the selected channel.
         1. For **Headline**, enter the headline of the Teams notification.
         1. For **Notes**, enter notes for the Teams notification.
             >[!NOTE]
@@ -206,20 +207,20 @@ In the **Add Rule** side pane that appears, follow these steps to define your al
 
         :::image type="content" source="media/activator-alert-queryset/action-teams.png" alt-text="Screenshot of the Send Microsoft Teams notification section in the Add Rule side pane.":::
 
-    * **Run Fabric activities**:
-        To configure the alert to launch a Fabric pipeline, Dataflow (preview), Spark job, or notebook when the condition is met, follow these steps:
-        1. For **Select action**, select the appropriate Fabric item type within the "Run Fabric Activities" section
-        1. On Select Fabric item to run, select the Fabric item from the list.
-        1. Select Add parameter and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter.
+    - **Run Fabric activities**:
+        To configure the alert to launch a Fabric pipeline, Dataflow, Spark job, notebook, or User Data Function (preview) when the condition is met, follow these steps:
+        1. For **Select action**, select the appropriate Fabric item type within the **Run Fabric Activities** section.
+        1. On **Select Fabric item to run**, select the Fabric item from the list.
+        1. Select **Add parameter** and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter.
         You can pass parameters from the alert data by typing `@` or by selecting the button next to the text box. For example, `@BikepointID`.
             :::image type="content" source="media/activator-alert-queryset/fabric-activities.png" alt-text="Screenshot of the Run Fabric activities section in the Add Rule side pane.":::
-    * **Custom actions**:
+    - **Custom actions**:
         To configure the alert to call a custom action when the condition is met, follow these steps:
         1. For **Select action**, select **Create custom action**.
 
             :::image type="content" source="media/activator-alert-queryset/custom-action.png" alt-text="Screenshot of the Create custom action section in the Add Rule side pane.":::
 
-        1. As mentioned in the Action section, create the rule first, and then complete the custom action setup by following steps from [Trigger custom actions (Power Automate flows)](activator-trigger-power-automate-flows.md).
+        1. As mentioned in the **Action** section, create the rule first. Then, complete the custom action setup by following the steps from [Trigger custom actions (Power Automate flows)](activator-trigger-power-automate-flows.md).
         1. After you create the custom action, in the **Definition** pane of the rule, select the custom action you created from the **Action** drop-down list.
 
 1. In **Save location**, specify where to save your Activator alert. Choose an existing workspace, and save either in an existing activator or a new one.
@@ -232,11 +233,11 @@ In the **Add Rule** side pane that appears, follow these steps to define your al
 
 ## Optional: Edit your rule in Activator
 
-When your activator is saved, the side pane displays a link to your item. Select the link to further edit in Activator. This step can be useful if you want to do one of the following actions:
+When you save your activator, the side pane displays a link to your item. Select the link to further edit in Activator. This step can be useful if you want to do one of the following actions:
 
-* Add other recipients to your alert.
-* Change the content of the alert to reflect the specific data that triggered the alert.
-* Define a more complex alert condition than is possible in the Set alert pane.
+- Add other recipients to your alert.
+- Change the content of the alert to reflect the specific data that triggered the alert.
+- Define a more complex alert condition than is possible in the Set alert pane.
 
 For information on how to edit rules in Activator, see [Create Activator rules](activator-create-activators.md).
 
@@ -258,6 +259,6 @@ TableForReflex
 
 ## Related content
 
-* [Query data in a KQL queryset](../../real-time-intelligence/kusto-query-set.md)
-* [KQL quick reference guide](/kusto/query/kql-quick-reference)
-* [Tutorial: Create and Activate a Fabric Activator Rule](activator-tutorial.md)
+- [Query data in a KQL queryset](../../real-time-intelligence/kusto-query-set.md)
+- [KQL quick reference guide](/kusto/query/kql-quick-reference)
+- [Tutorial: Create and Activate a Fabric Activator Rule](activator-tutorial.md)
