@@ -129,8 +129,8 @@ To configure Azure Key Vault for storing the workspace key:
 
 - <EMITTER_NAME>: The name for the emmiter.
 - <CERTIFICATE_NAME>: The certificate name that you generated in the key vault.
-- <KEY_VAULT_URL>: The Azure Key vault uri (e.g., "https://<keyvaultname>.vault.azure.net/").
-- <STORAGE_URI>: The Blob Storage target path (e.g., https://<account>.blob.core.windows.net/<container>).
+- <KEY_VAULT_URL>: The Azure Key vault uri (e.g., `https://{keyvault-name}.vault.azure.net/`).
+- <STORAGE_URI>: The Blob Storage target path (e.g., `https://{account-name}.blob.core.windows.net/{container-name}`).
 - <SERVICE_PRINCIPAL_TENANT_ID>: The service principal tenant ID, you can find it in App registrations -> your app name -> Overview -> Directory (tenant) ID
 - <SERVICE_PRINCIPAL_CLIENT_ID>: The service principal client ID, you can find it in registrations -> your app name -> Overview -> Application(client) ID
 

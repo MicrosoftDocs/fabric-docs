@@ -124,7 +124,7 @@ To configure Azure Key Vault for storing the workspace key:
 
 - `<EMITTER_NAME>`: The name for the emitter.
 - `<CERTIFICATE_NAME>`: The certificate name that you generated in the key vault.
-- `<KEY_VAULT_URL>`: The Azure Key Vault uri (e.g., `https://<keyvaultname>.vault.azure.net/`).
+- `<KEY_VAULT_URL>`: The Azure Key Vault uri (e.g., `https://{keyvault-name}.vault.azure.net/`).
 - `<EVENT_HUB_HOST_NAME>`: The fully qualified domain name of the Event Hubs namespace (e.g., `<namespace>.servicebus.windows.net`).
 - `<EVENT_HUB_NAME>`: The name of the Event Hub instance to send diagnostic data to.
 - `<SERVICE_PRINCIPAL_TENANT_ID>`: The service principal tenant ID, you can find it in App registrations -> your app name -> Overview -> Directory (tenant) ID.
