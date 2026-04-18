@@ -122,13 +122,13 @@ To configure Azure Key Vault for storing the workspace key:
 
 6. Create a Fabric Environment Artifact in Fabric, and add the following **Spark properties** with the appropriate values to the environment artifact.
 
-- `<EMITTER_NAME>`: The name for the emitter.
-- `<CERTIFICATE_NAME>`: The certificate name that you generated in the key vault.
-- `<KEY_VAULT_URL>`: The Azure Key Vault uri (e.g., `https://{keyvault-name}.vault.azure.net/`).
-- `<EVENT_HUB_HOST_NAME>`: The fully qualified domain name of the Event Hubs namespace (e.g., `<namespace>.servicebus.windows.net`).
-- `<EVENT_HUB_NAME>`: The name of the Event Hub instance to send diagnostic data to.
-- `<SERVICE_PRINCIPAL_TENANT_ID>`: The service principal tenant ID, you can find it in App registrations -> your app name -> Overview -> Directory (tenant) ID.
-- `<SERVICE_PRINCIPAL_CLIENT_ID>`: The service principal client ID, you can find it in App registrations -> your app name -> Overview -> Application (client) ID.
+   - `<EMITTER_NAME>`: The name for the emitter.
+   - `<CERTIFICATE_NAME>`: The certificate name that you generated in the key vault.
+   - `<KEY_VAULT_URL>`: The Azure Key Vault uri (e.g., `https://{keyvault-name}.vault.azure.net/`).
+   - `<EVENT_HUB_HOST_NAME>`: The fully qualified domain name of the Event Hubs namespace (e.g., `<namespace>.servicebus.windows.net`).
+   - `<EVENT_HUB_NAME>`: The name of the Event Hub instance to send diagnostic data to.
+   - `<SERVICE_PRINCIPAL_TENANT_ID>`: The service principal tenant ID, you can find it in App registrations > your app name > Overview -> Directory (tenant) ID.
+   - `<SERVICE_PRINCIPAL_CLIENT_ID>`: The service principal client ID, you can find it in App registrations > your app name > Overview > Application (client) ID.
 
    ```Parameters
    "spark.synapse.diagnostic.emitters": "<EMITTER_NAME>",
@@ -149,49 +149,49 @@ To configure Azure Key Vault for storing the workspace key:
    > * Only workspace admins can designate an environment as the default for a workspace.
    > * Once set, it becomes the default environment for all notebooks and Spark job definitions within the workspace. For more information, see [Fabric Workspace Settings](../fundamentals/workspaces.md).
 
-**To attach the environment to Notebooks or Spark job definitions**:
+   **To attach the environment to Notebooks or Spark job definitions**:
 
-1. Navigate to the specific notebook or Spark job definition in Fabric.
-1. Select the **Environment** menu on the Home tab and select the environment with the configured diagnostics Spark properties.
-1. The configuration is applied when you start a **Spark session**.
+   1. Navigate to the specific notebook or Spark job definition in Fabric.
+   1. Select the **Environment** menu on the Home tab and select the environment with the configured diagnostics Spark properties.
+   1. The configuration is applied when you start a **Spark session**.
 
-**To set the environment as the workspace default**:
+   **To set the environment as the workspace default**:
 
-1. Navigate to Workspace Settings in Fabric.
-1. Find **Spark settings** in workspace settings (**Workspace setting** > **Data Engineering/Science** > **Spark settings**).
-1. Select **Environment** tab and choose the environment with diagnostics spark properties configured, and select **Save**.
+   1. Navigate to Workspace Settings in Fabric.
+   1. Find **Spark settings** in workspace settings (**Workspace setting** > **Data Engineering/Science** > **Spark settings**).
+   1. Select **Environment** tab and choose the environment with diagnostics spark properties configured, and select **Save**.
 
 ### Step 4. Submit an Apache Spark application and view the logs and metrics
 	
-You can use the Apache Log4j library to write custom logs.
+   You can use the Apache Log4j library to write custom logs.
 	
-Example for Scala:
+   Example for Scala:
 	
-```scala
-	%%spark
-	val logger = org.apache.log4j.LogManager.getLogger("com.contoso.LoggerExample")
-	logger.info("info message")
-	logger.warn("warn message")
-	logger.error("error message")
-	//log exception
-	try {
+   ```scala
+	   %%spark
+	   val logger = org.apache.log4j.LogManager.getLogger("com.contoso.LoggerExample")
+	   logger.info("info message")
+	   logger.warn("warn message")
+	   logger.error("error message")
+	   //log exception
+	   try {
 	      1/0
-	 } catch {
+	   } catch {
 	      case e:Exception =>logger.warn("Exception", e)
-	}
-	// run job for task level metrics
-	val data = sc.parallelize(Seq(1,2,3,4)).toDF().count()
+	   }
+	   // run job for task level metrics
+	   val data = sc.parallelize(Seq(1,2,3,4)).toDF().count()
    ```
 	
-Example for PySpark:
+   Example for PySpark:
 	
-```python
-	%%pyspark
-	logger = sc._jvm.org.apache.log4j.LogManager.getLogger("com.contoso.PythonLoggerExample")
-	logger.info("info message")
-	logger.warn("warn message")
-	logger.error("error message")
-```
+   ```python
+	   %%pyspark
+	   logger = sc._jvm.org.apache.log4j.LogManager.getLogger("com.contoso.PythonLoggerExample")
+	   logger.info("info message")
+	   logger.warn("warn message")
+	   logger.error("error message")
+   ```
 
 ## Available configurations
 
