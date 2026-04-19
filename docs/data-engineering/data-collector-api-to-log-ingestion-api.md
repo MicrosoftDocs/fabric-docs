@@ -317,6 +317,10 @@ SparkMetadataTest_CL
 | limit 100
 ```
 
+## Fabric workspaces with managed virtual network
+
+Fabric support enabling data exfiltration protection for workspaces. With exfiltration protection, the logs and metrics cannot be sent out to the destination endpoints directly. You can create corresponding [managed private endpoints](../security/security-managed-private-endpoints-create.md) for different destination endpoints in this scenario. 
+
 ## Available Apache Spark configurations
 
 The following table lists Spark configurations for sending logs and metrics to Azure Log Analytics by using Log Ingestion API.
