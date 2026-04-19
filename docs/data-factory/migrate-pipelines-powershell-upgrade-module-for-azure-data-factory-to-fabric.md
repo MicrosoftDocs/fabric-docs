@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 # Upgrade Azure Data Factory and Synapse pipelines to Microsoft Fabric using PowerShell
 
 > [!TIP]
-> New to migration options? Start with the **Microsoft Fabric migration overview** for the full landscape and ADF‑to‑Fabric migration guidance. [Fabric migration guidance](../fundamentals/migration.md)
+> For most migrations, we recommend the [built-in upgrade experience](/azure/data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory), which lets you assess pipeline readiness, review compatibility, and migrate supported pipelines to Fabric directly from the Azure Data Factory UX — without scripts or custom tooling. Use the PowerShell module described in this article for scripted, bulk, or CI/CD-driven migration scenarios.
 
 You can migrate your Azure Data Factory (ADF) and Synapse pipelines to Microsoft Fabric using the **Microsoft.FabricPipelineUpgrade** PowerShell module. This guide outlines all the steps to perform the migration. For a detailed tutorial with screenshots, examples, and troubleshooting see [the PowerShell migration tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md).
 
@@ -164,7 +164,7 @@ Run these commands to get access tokens for ARM, Synapse, and Fabric:
 ```PowerShell
 $ArmToken = (Get-AzAccessToken -ResourceUrl "https://management.azure.com/").Token
 $synapseSecureToken = (Get-AzAccessToken -ResourceUrl "https://dev.azuresynapse.net").Token
-$fabricSecureToken = (Get-AzAccessToken -ResourceUrl "https://analysis.windows.net/powerbi/api").Token<img width="586" height="91" alt="image" src="https://github.com/user-attachments/assets/aaaabbbb-0000-cccc-1111-dddd2222eeee" />
+$fabricSecureToken = (Get-AzAccessToken -ResourceUrl "https://analysis.windows.net/powerbi/api").Token
 
 ```
 ## PowerShell command to upgrade your Synapse pipelines

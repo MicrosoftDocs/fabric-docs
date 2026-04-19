@@ -10,8 +10,6 @@ ms.date: 07/02/2025
 
 # Install the Microsoft Fabric Chargeback app
 
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
-
 The Microsoft Fabric Chargeback app, also known as the chargeback app. It provides turnkey insights that help organizations implement effective chargeback policies - enabling a fair distribution of costs based on actual usage patterns across your Fabric environment. Use this guide to install the app.
 
 ## Prerequisites
@@ -102,7 +100,7 @@ After installing the app, if it's not showing data or can't refresh, follow thes
 
 ## Related content
 
-- [What is Fabric Chargeback app (preview)?](chargeback-app.md) 
+- [What is Fabric Chargeback app?](chargeback-app.md) 
 - [Chargeback Azure Reservation costs](/azure/cost-management-billing/reservations/charge-back-usage)
 - [View amortized benefit costs](/azure/cost-management-billing/reservations/view-amortized-costs)
 

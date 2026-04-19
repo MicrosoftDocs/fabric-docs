@@ -44,6 +44,17 @@ Ingest change data from SQL Server on VM databases with automatic table schema r
       - `Precise`: Represents values using exact decimal types (for example, Java `BigDecimal`) to ensure full precision and accuracy in data representation.
       - `Double`: Converts values to double-precision floating-point numbers. This setting improves usability and performance but can result in a loss of precision.
       - `String`: Encodes values as formatted strings. This setting makes them easy to consume in downstream systems but loses semantic information about the original numeric type.
+
+### Stream or source details
+
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
+
+### Review and connect
+
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
+
+### Schema handling page
+
 1. In the **Schema handling** step, choose one of the following options:
 
     - **Analytics-ready events & auto-updated schema (DeltaFlow Preview)**: The connector transforms raw CDC events into analytics-ready streams that mirror your source table structure. DeltaFlow enriches events with metadata such as change type (insert, update, or delete) and timestamps, and automatically manages destination tables and schema evolution.
@@ -58,7 +69,7 @@ Ingest change data from SQL Server on VM databases with automatic table schema r
 1. For **Workspace**, select a Fabric workspace for the schema set.
 1. For **Schema set**, **+ Create** is selected by default, which creates a new schema set. You can change it to select an existing event schema set.
 1. If you selected the **+ Create** option in the previous step, enter a name for the schema set.
-1. On the **Review + create** screen, review the summary, and then select **Connect**.
+1. On the **Review + create** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
     :::image type="content" source="media/sql-server-on-virtual-machine-cdc-source-connector/review-add.png" alt-text="Screenshot that shows the selection of the Add button." lightbox="media/sql-server-on-virtual-machine-cdc-source-connector/review-add.png"::: 
 

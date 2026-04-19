@@ -28,7 +28,7 @@ To install the app, follow the instructions in [Install the Microsoft Fabric Cap
 
 The Microsoft Fabric Capacity Metrics app provides various features and functionalities to help you monitor and manage your capacities effectively. The app includes the following pages:
 
-- **Health** page (preview): Get a high-level overview for all capacities you're admin of, and identify those capacities consuming the most compute or experiencing issues like throttling or query rejections. For more information, see [Understand the metrics app Health page](metrics-app-health-page.md).
+- **Health** page: Get a high-level overview for all capacities you're admin of, and identify those capacities consuming the most compute or experiencing issues like throttling or query rejections. For more information, see [Understand the metrics app Health page](metrics-app-health-page.md).
 
 - **Compute** page: Get a 14-day view of your capacity’s compute performance. Visuals include ribbon charts, utilization trends, and a matrix of operations, helping you analyze usage patterns, peak loads, and throttling events. AI Functions appears as a distinct operation category in ribbon charts, utilization trends, and the matrix of operations, tracked separately from Spark and Dataflows Gen2. For more information, see [Understand the metrics app compute page](metrics-app-compute-page.md).
 
@@ -36,9 +36,9 @@ The Microsoft Fabric Capacity Metrics app provides various features and function
 
 - **Timepoint** page: Drill into a specific 30-second timepoint to see which operations (interactive or background) consumed the most compute. The operation breakdown includes a dedicated AI Functions operation group, so you can see AI Functions usage at a given 30-second interval. Use this page to diagnose overloads and understand autoscale or throttling behavior. For more information, see [Understand the metrics app timepoint page](metrics-app-timepoint-page.md).
 
-- **Timepoint summary** page (preview): Summarizes operation types (not individual operations) that contributed to capacity usage during a selected timepoint. Summary visuals include AI Functions as an operation type, helping identify when AI Functions contributes materially to capacity usage and autoscale thresholds. For more information, see [Understand the metrics app timepoint summary page](metrics-app-timepoint-summary-page.md).
+- **Timepoint summary** page: Summarizes operation types (not individual operations) that contributed to capacity usage during a selected timepoint. Summary visuals include AI Functions as an operation type, helping identify when AI Functions contributes materially to capacity usage and autoscale thresholds. For more information, see [Understand the metrics app timepoint summary page](metrics-app-timepoint-summary-page.md).
 
-- **Timepoint item detail** page (preview): Provides granular detail on operations within a specific item at a timepoint. Includes filters for operation ID, user, and CU thresholds that are useful for root-cause analysis and performance tuning. For more information, see [Understand the metrics app timepoint item detail page](metrics-app-timepoint-item-detail-page.md).
+- **Timepoint item detail** page: Provides granular detail on operations within a specific item at a timepoint. Includes filters for operation ID, user, and CU thresholds that are useful for root-cause analysis and performance tuning. For more information, see [Understand the metrics app timepoint item detail page](metrics-app-timepoint-item-detail-page.md).
 
 - **Autoscale compute for Spark** page: This page provides insights into the autoscaling behavior of Spark workloads, helping you optimize performance and resource allocation. For more information, see [Understand the metrics app Autoscale compute for Spark page](metrics-app-feature-autoscale-page.md).
 

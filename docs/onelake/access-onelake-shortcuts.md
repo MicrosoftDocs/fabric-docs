@@ -1,7 +1,9 @@
 ---
 title: Access OneLake shortcuts in an Apache Spark notebook
 description: Learn how to access Microsoft OneLake shortcuts as folders and as tables in an Apache Spark notebook.
-ms.reviewer: eloldag
+ms.reviewer: eloldag # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.date: 11/15/2023

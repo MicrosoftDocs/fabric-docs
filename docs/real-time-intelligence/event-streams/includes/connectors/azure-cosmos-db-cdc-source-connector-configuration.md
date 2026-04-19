@@ -18,17 +18,18 @@ ms.date: 04/03/2026
    :::image type="content" border="true" source="media/azure-cosmos-db-cdc-source-connector/connect.png" alt-text="A screenshot of the Connection settings for the Azure Cosmos DB CDC source.":::
 1. Select **Connect**.
 
-1. Provide the following information for your Azure Cosmos DB resources, and then select **Next**.
+1. Provide the following information for your Azure Cosmos DB resources.
 
    - **Container ID:** Enter the name of the Azure Cosmos DB container or table you want to connect to.
    - **Database:** Enter the name of your Azure Cosmos DB database.
    - **Offset policy:** Select whether to start reading **Earliest** or **Latest** offsets if there's no commit.
 
-        You can also change the **Source name** in the **Stream details** section on the right by selecting the **Pencil** button.
+### Stream or source details
 
-        :::image type="content" source="media/azure-cosmos-db-cdc-source-connector/details.png" alt-text="A screenshot of the connection details for the Azure Cosmos DB CDC source." lightbox="media/azure-cosmos-db-cdc-source-connector/details.png":::
-    
-1. On the **Review + connect** page, review the summary, and then select **Add**.
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
 
-    :::image type="content" source="media/azure-cosmos-db-cdc-source-connector/review-connect.png" alt-text="Screenshot that shows the Review + connect page for the Azure Cosmos DB CDC source." lightbox="media/azure-cosmos-db-cdc-source-connector/review-connect.png":::
+### Review and connect
+
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
+
 

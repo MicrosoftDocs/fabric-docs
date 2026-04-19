@@ -38,26 +38,26 @@ Before you create or edit forecasts, make sure you have the following prerequisi
 1. Select the **Forecast Period**.
 1. Generate forecast values within the **Closed Period**, using either **Measure** or **Formula**.
 
-    :::image type="content" source="media/planning-sheet-how-to-build-forecasts/closed-period.png" alt-text="Screenshot of the closed period options as described.":::
+    :::image type="content" source="media/planning-how-to-build-forecasts/closed-period.png" alt-text="Screenshot of the closed period options as described.":::
 
 1. Generate forecast values for the **Open Period** using **Measure**, **Formula**, or **Data Input**.
 
-    :::image type="content" source="media/planning-sheet-how-to-build-forecasts/open-period.png" alt-text="Screenshot of the open period options as described.":::
+    :::image type="content" source="media/planning-how-to-build-forecasts/open-period.png" alt-text="Screenshot of the open period options as described.":::
 
 1. Add the forecast measure by selecting **Create**.
 
-    :::image type="content" source="media/planning-sheet-how-to-build-forecasts/add-forecast-measure.png" alt-text="Screenshot of creating the forecast with values for the fields described in this section.":::
+    :::image type="content" source="media/planning-how-to-build-forecasts/add-forecast-measure.png" alt-text="Screenshot of creating the forecast with values for the fields described in this section.":::
 
 1. In the **Period Setup**, you can split the forecast period into smaller periods and initialize each period individually by adding ranges within the **Target Period**.
 
-    :::image type="content" source="media/planning-sheet-how-to-build-forecasts/period-setup-1.png" alt-text="Screenshot of the option to set the period range.":::
+    :::image type="content" source="media/planning-how-to-build-forecasts/period-setup-1.png" alt-text="Screenshot of the option to set the period range.":::
 
 1. Initialize the forecast values using an existing measure in the report for each period range. Select the measure from the **Copy Source** menu.
 
 1. Select *Average of Period Range* and set the **Source Periods** to *Q1 2026 - Q2 2026*. The average of the net revenues will be used to initialize the Q1 2027-Q2 2027 forecast.
 
-    :::image type="content" source="media/planning-sheet-how-to-build-forecasts/period-setup-2.png" alt-text="Screenshot of the setting the average of the period range to the values described.":::
+    :::image type="content" source="media/planning-how-to-build-forecasts/period-setup-2.png" alt-text="Screenshot of the setting the average of the period range to the values described.":::
 
 1. The forecast measure is created.
 
-    :::image type="content" source="media/planning-sheet-how-to-build-forecasts/forecast-complete.png" alt-text="Screenshot of the completed forecast and its values." lightbox="media/planning-sheet-how-to-build-forecasts/forecast-complete.png":::
+    :::image type="content" source="media/planning-how-to-build-forecasts/forecast-complete.png" alt-text="Screenshot of the completed forecast and its values." lightbox="media/planning-how-to-build-forecasts/forecast-complete.png":::

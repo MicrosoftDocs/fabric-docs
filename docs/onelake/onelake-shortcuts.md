@@ -131,7 +131,7 @@ For detailed instructions to create a specific shortcut type, select an article 
 * [Dataverse shortcuts](./create-dataverse-shortcut.md)
 * [Google Cloud Storage shortcuts](./create-gcs-shortcut.md)
 * [Iceberg shortcuts](./onelake-iceberg-tables.md)
-* [OneDrive and SharePoint shortcuts](./create-onedrive-sharepoint-shortcut.md)
+* [OneDrive and SharePoint shortcuts](./shortcuts/create-onedrive-sharepoint-shortcut.md)
 
 ## Caching
 
