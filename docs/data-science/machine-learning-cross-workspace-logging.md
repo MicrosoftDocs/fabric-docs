@@ -57,6 +57,8 @@ In any environment outside Fabric, such as a local machine (Visual Studio Code, 
 pip install -U "synapseml-mlflow" "mlflow-skinny<=2.22.2"
 ```
 
+---
+
 After installation, restart the kernel before running the remaining code.
 
 ## Log MLflow objects to another Fabric workspace
