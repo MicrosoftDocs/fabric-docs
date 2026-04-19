@@ -1,6 +1,6 @@
 ---
 title: Use predictions for statistical forecasts.
-description: Learn how to generate statistical forecasts using Predict by analyzing historical data and configuring confidence intervals, seasonality, growth factors, and allocation approaches.
+description: Learn how to generate statistical forecasts using Predict by analyzing historical data. Configure confidence intervals, seasonality, and growth factors.
 ms.date: 04/26/2026
 ms.topic: how-to
 #customer intent: As a user, I want to understand and use data input effectively.
@@ -13,24 +13,24 @@ Statistical forecasting applies historical trends and seasonality to generate fo
 ## Prerequisites
 
 * A forecast measure with blank initial values.
-* The planning sheet must contain at least 2 years of historical data.
+* The planning sheet must contain at least two years of historical data.
 
 >[!TIP]
 >The forecast configuration can be saved to a profile. Select the profile to reuse a predefined configuration.
 
 1. Select the cell for which to create a forecast.
-1. Go to **Model** > **Predict**.
-1. Select More options (…) and then select **Create New Profile** and enter the profile name. If a profile already exists, select the profile.
+2. Go to **Model** > **Predict**.
+3. Select More options (…) and then select **Create New Profile** and enter the profile name. If a profile already exists, select the profile.
 
-    :::image type="content" source="media/planning-create-statistical-forecasts/create-profile.png" alt-text="Screenshot of the creating staistical profiles.":::
+    :::image type="content" source="media/planning-create-statistical-forecasts/create-profile.png" alt-text="Screenshot of the creating statistical profiles.":::
 
-1. Select the historical date range based on which predictions will be generated.
-1. Select the forecast date range.
+4. Select the historical date range based on which predictions will be generated.
+5. Select the forecast date range.
 
 >[!TIP]
->The forecast range can extend beyond the open period. Extending the range is useful when the open forecast period is short (for example, Q1 only), but predicted values are needed over a longer period to assess accuracy and get a better perspective.
+>The forecast range can extend beyond the open period. Range extension is useful when the open forecast period is short (for example, Q1 only). Predicted values are needed over a longer period to assess accuracy and get a better perspective.
 
-1. Your data may show repeating patterns over time, known as seasonality. Select the seasonality type:
+1. Your data might show repeating patterns over time, known as seasonality. Select the seasonality type:
 
 * If your data repeats at one regular interval, choose **Single Seasonality**.
   For example, sales that repeat every month.
@@ -66,6 +66,6 @@ Statistical forecasting applies historical trends and seasonality to generate fo
 
 When the **Predict** panel opens, the selected cell can still be changed by selecting a different visible cell on the canvas. The updated row and column selection is reflected in the Predict panel.
 
-When the selection is locked, selecting other cells does not change the row or column used for prediction.
+When the selection is locked, selecting other cells doesn't change the row or column used for prediction.
 
     :::image type="content" source="media/planning-create-statistical-forecasts/lock-dimension-measure.png" alt-text="Screenshot of locking selections.":::
