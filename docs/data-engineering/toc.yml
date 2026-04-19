@@ -220,6 +220,8 @@ items:
     href: workspace-roles-lakehouse.md
   - name: Sharing and permissions management
     href: lakehouse-sharing.md
+  - name: Spark support for OneLake security (RLS and CLS)
+    href: spark-onelake-security-rls-cls.md
 - name: Spark compute
   items:
     - name: Overview and planning
