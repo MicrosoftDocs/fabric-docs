@@ -236,20 +236,20 @@ Use this method for non-interactive scenarios such as automated pipelines, conti
 1. Note the **Tenant ID**, **Client ID**, and create a **Client Secret**.
 1. Grant write permission to the service principal on the target Fabric workspace.
 
-```python
-from fabric.analytics.environment.credentials import SetFabricAnalyticsDefaultTokenCredentialsGlobally
-from azure.identity import ClientSecretCredential
+   ```python
+   from fabric.analytics.environment.credentials import SetFabricAnalyticsDefaultTokenCredentialsGlobally
+   from azure.identity import ClientSecretCredential
 
-spn_credential = ClientSecretCredential(
-    tenant_id="<your-tenant-id>",
-    client_id="<your-client-id>",
-    client_secret="<your-client-secret>"
-)
+   spn_credential = ClientSecretCredential(
+       tenant_id="<your-tenant-id>",
+       client_id="<your-client-id>",
+       client_secret="<your-client-secret>"
+   )
 
-SetFabricAnalyticsDefaultTokenCredentialsGlobally(
-    credential=spn_credential
-)
-```
+   SetFabricAnalyticsDefaultTokenCredentialsGlobally(
+       credential=spn_credential
+   )
+   ```
 
 ---
 
