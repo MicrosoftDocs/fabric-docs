@@ -124,8 +124,8 @@ After a forecast is created, its initial values can be modified at any time. If 
 2. Define the period range to update the open forecast.
 3. Select the measure and method to populate the forecast.
 
-    :::image type="content" source="../media/planning-how-to-build-forecasts/reforecast-config.png" alt-text="Screenshot of reforecasting configuration":::
+    :::image type="content" source="../media/planning-how-to-build-forecasts/re-forecast-configuration.png" alt-text="Screenshot of reforecasting configuration":::
 
     The new configuration is applied to the July forecast.
 
-    :::image type="content" source="../media/planning-how-to-build-forecasts/reforecasting.png" alt-text="Screenshot of reforecasted data.":::
+    :::image type="content" source="../media/planning-how-to-build-forecasts/re-forecasting.png" alt-text="Screenshot of reforecasted data.":::
