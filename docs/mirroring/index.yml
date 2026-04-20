@@ -1,14 +1,12 @@
 ### YamlMime:Landing
 
-title: Mirroring documentation in Microsoft Fabric  # < 60 chars
-summary: Learn more about Mirroring in Microsoft Fabric # < 160 chars
+title: Mirroring in Fabric documentation
+summary: Learn about mirroring in Fabric for near real-time replication of external databases.
 
 metadata:
-  title: Mirroring # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: Mirroring in Microsoft Fabric  # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: fabric  #Required; use either service or product per approved list.
+  title: Mirroring in Fabric documentation
+  description: Learn about mirroring in Fabric for near real-time replication of external databases.
   ms.subservice:
-  ms.custom:
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
   ms.date: 08/20/2025
@@ -139,27 +137,27 @@ landingContent:
             url: sql-server-security.md
 
   # Card 
-  - title: Open Mirroring
+  - title: Open mirroring
     linkLists:
       - linkListType: overview
         links:
-          - text: Open Mirroring overview
+          - text: Open mirroring overview
             url: open-mirroring.md
       - linkListType: tutorial
         links:
-          - text: Open Mirroring tutorial
+          - text: Open mirroring tutorial
             url: open-mirroring-tutorial.md
       - linkListType: how-to-guide
         links:
-          - text: Open Mirroring partners
+          - text: Open mirroring partners
             url: open-mirroring-partners-ecosystem.md
 
   # Card 
-  - title: Troubleshoot Mirroring
+  - title: Troubleshoot mirroring
     linkLists:
       - linkListType: overview
         links:
-          - text: Troubleshoot Mirroring
+          - text: Troubleshoot mirroring
             url: troubleshooting.md
       - linkListType: how-to-guide
         links:

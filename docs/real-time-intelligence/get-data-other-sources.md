@@ -2,10 +2,7 @@
 title: Get data from other sources located in the Real-Time hub 
 description: Learn how to get data from other sources into in a KQL database in Real-time Intelligence.
 ms.reviewer: guyr
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
-ms.custom:
 ms.date: 01/25/2026
 ms.subservice: rti-eventhouse
 ms.search.form: Get data in a KQL Database

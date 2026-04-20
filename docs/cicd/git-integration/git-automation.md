@@ -1,11 +1,7 @@
 ---
 title: Automate Git integration by using APIs
 description: Learn how to automate Git integration in the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs and Azure DevOps or GitHub.
-author: billmath
-ms.author: billmath
 ms.reviewer: Pierre, NimrodShalit
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: concept-article
 ms.date: 12/15/2025
 ms.search.form: Git integration automation, Git integration APIs, Azure DevOps integration, GitHub integration
@@ -563,6 +559,7 @@ Copy the ID of the connection you want and use it in the [Git - Connect](/rest/a
 
 * Git integration using APIs is subject to the same [limitations](./git-integration-process.md#considerations-and-limitations) as the Git integration user interface.
 * Refreshing a semantic model using the [Enhanced refresh API](/power-bi/connect-data/asynchronous-refresh) causes a Git *diff* after each refresh.
+* Error: 'Items with conflicting logical IDs detected' - users which execute **InitializeGitConnection** API, may encounter situation where a conflict is detected between logical IDs in the workspace and the git repository, to learn more about this situation follow [Logical ID Conflicts in Microsoft Fabric](./logical-id-conflict-resolution.md). To resolve this issue user can either rename the conflicting item name or change the logical id on the remote Git to match the one in the workspace based on the information given in the error response.
 
 ## Related content
 * [Git integration - get started](git-get-started.md)

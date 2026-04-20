@@ -5,7 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: pvenkat
 ms.topic: include
-ms.custom:
 ms.date: 11/07/2025
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: Real-Time Dashboard specific visuals
 description: Learn about Real-Time Dashboard-specific visuals.
-ms.author: spelluru
-author: spelluru
 ms.reviewer: gabil
 ms.topic: how-to
 ms.subservice: rti-dashboard
-ms.custom:
 ms.date: 11/19/2024
 ---
 # Real-Time Dashboard-specific visuals

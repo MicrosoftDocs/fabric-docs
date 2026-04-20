@@ -4,7 +4,6 @@ description: This article provides an overview of the admin Microsoft Fabric adm
 author: msmimart
 ms.author: mimart
 ms.topic: concept-article
-ms.custom:
 ms.date: 10/30/2025
 ---
 

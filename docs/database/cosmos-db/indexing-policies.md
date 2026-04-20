@@ -1,8 +1,7 @@
 ---
 title: Indexing policies in Cosmos DB Database
 description: Use custom indexing policies to fine tune the performance of Cosmos DB in Microsoft Fabric to better match your application workloads.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: concept-article
 ms.date: 10/30/2025
 ---
@@ -82,7 +81,7 @@ These paths are defined with the following additions:
 
 - the `/*` wildcard can be used to match any elements below the node
 
-A baseline indexing policy fo the example item could include these optimizations:
+A baseline indexing policy for the example item could include these optimizations:
 
 - the `headquarters`'s `employees` path is `/headquarters/employees/?`
 

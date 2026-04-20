@@ -1,10 +1,7 @@
 ---
 title: Overview of the backend manifest of a workload for the Fabric Workload Development Kit
 description: This article describes the overview and key concepts for the backend manifest definition.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: concept-article
-ms.custom:
 ms.date: 07/14/2024
 #customer intent: As a developer, I want to understand how to create a backend manifest for a customized Fabric workload so that I can create customized user experiences.
 ---
@@ -90,7 +87,7 @@ Represent the configuration of a specific logical endpoint, for example, the bac
 - `api.eastus.fe.contoso.com` (invalid because `eastus.fe.contoso.com` isn't a verified domain)
 - `contoso-dev.com` (invalid because `contoso-dev.com` isn't a verified domain, and also doesn't match the main domain of the resource ID)
 
-* For more information about using the workload-client API for endpoint resolution, see [Endpoint Resolution](/rest/api/fabric/workload/workloadapi/endpoint-resolution).
+* For more information about using the workload-client API for endpoint resolution, see [Endpoint Resolution](/rest/api/fabric/workload/fabricextensibilitytoolkit/endpoint-resolution).
 
 > [!NOTE]
 > Endpoint resolution for Frontend is not supported.
@@ -134,3 +131,4 @@ See [monitoring hub guide](monitoring-hub.md) for more information on jobs and r
 
 In summary, the Workload and Item Manifests serve as foundational documents for adding custom workloads to Fabric.
 The authentication process triggers a straightforward sequence of actions: upload, parsing, and registration, guaranteeing proper configuration and efficient workload management within the Azure ecosystem.
+

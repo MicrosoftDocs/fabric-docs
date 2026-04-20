@@ -1,11 +1,9 @@
 ---
 title: End-to-end tutorials in Microsoft Fabric
 description: This article lists the end-to-end tutorials in Microsoft Fabric. They walk you through a scenario, starting from data acquisition to data consumption and help you with a foundational understanding of Fabric.
-ms.reviewer: sngun
-ms.author: sngun
 author: SnehaGunda
+ms.author: sngun
 ms.topic: overview
-ms.custom:
 ms.search.form: product-trident
 ms.date: 02/09/2026
 ---
@@ -46,3 +44,5 @@ The following tutorials walk you through scenarios within specific Fabric experi
 
 * [Create a workspace](../fundamentals/create-workspaces.md)
 * Discover data items in the [OneLake data hub](../governance/onelake-catalog-overview.md)
+
+

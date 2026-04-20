@@ -1,8 +1,8 @@
 ---
 title: 'Microsoft Fabric Capacity Planning Guide: Scale for Decentralized Analytics'
 description: Learn Microsoft Fabric capacity planning for decentralized self-service analytics. Discover strategies to budget, scale, and optimize your solution.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.reviewer: cnovak
 ms.topic: troubleshooting
 ms.date: 09/04/2025

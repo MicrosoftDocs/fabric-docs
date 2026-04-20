@@ -1,14 +1,14 @@
 ---
 title: 'Microsoft Fabric Capacity Planning Guide: Scale for Centralized Analytics'
 description: Learn how to plan and manage Microsoft Fabric capacity for centrally managed enterprise and managed self-service solutions. Get strategies for tiered capacity planning, workload criticality, and governance.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.reviewer: cnovak
 ms.topic: troubleshooting
 ms.custom:
-   - ai-gen-docs-bap
-   - ai-gen-title
-   - ai-seo-date:08/26/2025
+  - ai-gen-docs-bap
+  - ai-gen-title
+  - ai-seo-date:08/26/2025
 ms.date: 09/04/2025
 ai-usage: ai-assisted
 ---

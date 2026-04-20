@@ -3,11 +3,10 @@ title: Workspace admin settings
 description: Learn how to configure workspace tenant settings as a Fabric admin.
 author: msmimart
 ms.author: mimart
-ms.reviewer: ''
 ms.custom:
   - tenant-setting
-ms.topic: how-to
-ms.date: 05/31/2025
+ms.topic: concept-article
+ms.date: 04/08/2026
 LocalizationGroup: Administration
 ---
 
@@ -31,8 +30,6 @@ In the admin portal, you also control which users have permissions to distribute
 
 Admins can control which users in the organization can use semantic models across workspaces. When this setting is enabled, users still need the required Build permission for a specific semantic model.
 
-:::image type="content" source="media/portal-workspace/power-bi-admin-datasets-workspaces.png" alt-text="Use semantic models across workspaces.":::
-
 For more information, see [Intro to semantic models across workspaces](/power-bi/connect-data/service-datasets-across-workspaces).
 
 ## Identify your workspace ID
@@ -45,15 +42,24 @@ Personal workspaces are the My workspaces that every user has for their personal
 
 To prevent such a scenario, the [!INCLUDE [product-name](../includes/product-name.md)] admin can turn on the **Block users from reassigning personal workspaces (My Workspace)** tenant setting. When this setting is on, My workspace owners can't change the capacity assignment of their My workspace.
 
-To turn on the setting:
-1. Go to the [!INCLUDE [product-name](../includes/product-name.md)] Admin portal and select **Tenant settings**.
-1. In the tenant settings, scroll down to the **Workspace settings** section.
-1. Find the setting called **Block users from reassigning personal workspaces (My Workspace)**.
+To turn on the setting, go to the [!INCLUDE [product-name](../includes/product-name.md)] Admin portal, select **Tenant settings**, scroll to the **Workspace settings** section, and find **Block users from reassigning personal workspaces (My Workspace)**.
 
 For more information, see [Prevent My workspace owners from reassigning their My workspaces to a different capacity](./portal-workspaces.md#prevent-my-workspace-owners-from-reassigning-their-my-workspaces-to-a-different-capacity).
+
+## Automatically convert and store reports using Power BI enhanced metadata format (PBIR) (preview)
+
+Turn on this setting to automatically convert reports to Power BI enhanced metadata format (PBIR) after they are edited and save them in the workspace.
+
+When this setting is enabled, new reports are also created in PBIR format. PBIR provides a source-control-friendly file structure that can improve co-development workflows and report lifecycle management.
+
+This setting is on by default, but it doesn't take effect before early 2026. If you opt out before then, use of PBIR in the service remains off until general availability.
+
+For more information, see [Power BI enhanced report format (PBIR)](https://go.microsoft.com/fwlink/?linkid=2263123).
 
 ## Related content
 
 * [About tenant settings](tenant-settings-index.md)
 
 * [CI/CD workflow options in Fabric](../cicd/manage-deployment.md)
+* [Set up and manage workspace retention](workspace-retention.md)
+

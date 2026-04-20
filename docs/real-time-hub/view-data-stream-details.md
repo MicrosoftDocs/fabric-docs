@@ -1,10 +1,8 @@
 ---
 title: View details of streams in Fabric Real-Time hub
 description: This article shows how to view details of for streams in Fabric Real-Time hub in either detail view or a table view.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: how-to
-ms.custom:
 ms.date: 12/11/2025
 ---
 
@@ -125,3 +123,4 @@ This section shows two relationships of the table: Upstream, Parent.
 - [Endorse data streams](endorse-data-streams.md)
 - [Explore fabric events](explore-fabric-events.md)
 - [Explore KQL table data with Copilot](explore-data-tables-copilot.md)
+

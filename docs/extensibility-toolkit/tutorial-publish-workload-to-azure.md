@@ -1,10 +1,8 @@
 ---
 title: How to publish your workload to Azure
 description: Learn how to deploy your Microsoft Fabric Extensibility Toolkit workload to Azure using Front Door, static websites, and Azure services.
-author: tasdevani21
-ms.author: tadevani
+ms.reviewer: tadevani
 ms.topic: how-to
-ms.custom:
 ms.date: 11/18/2025
 ---
 
@@ -189,7 +187,7 @@ Publish-AzWebApp -ResourceGroupName <resource_group_name> -Name <web_app_name> -
 
 Parameter | Description | Example
 ----------|-------------|----------
-`<subscription_id>` | Your Azure subscription ID | `12345678-1234-1234-1234-123456789012`
+`<subscription_id>` | Your Azure subscription ID | `aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e`
 `<resource_group_name>` | Resource group containing your web app | `fabric-workload-rg`
 `<web_app_name>` | Name of your Azure web app | `my-fabric-workload`
 `<zip_file_path>` | Full path to your deployment zip file | `C:\path\to\deployment.zip`

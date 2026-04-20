@@ -1,8 +1,6 @@
 ---
 title: Migrate to IDENTITY Columns in Fabric Data Warehouse
 description: Learn how to migrate from legacy systems to IDENTITY columns to Fabric Data Warehouse
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: procha
 ms.date: 11/04/2025
 ms.topic: how-to

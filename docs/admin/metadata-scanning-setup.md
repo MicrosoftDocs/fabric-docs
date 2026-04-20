@@ -4,7 +4,6 @@ description: Learn how to set up and enable metadata scanning in your organizati
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.custom:
 ms.date: 11/02/2023
 ---
 

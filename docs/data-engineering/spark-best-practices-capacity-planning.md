@@ -1,8 +1,6 @@
 ---
 title: Fabric Spark Capacity and Cluster Planning
 description: Learn how to size, choose pools, and select billing models for Spark workloads in Microsoft Fabric.
-author: eric-urban
-ms.author: eur
 ms.reviewer: anuve
 ms.topic: concept-article
 ms.custom:

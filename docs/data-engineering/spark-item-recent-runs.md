@@ -2,8 +2,6 @@
 title: View browse item's recent runs
 description: In Fabric, use Apache Spark to run notebooks, Spark job definitions, jobs, and other types of applications. Learn how to view recent runs.
 ms.reviewer: jejiang
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 05/23/2023

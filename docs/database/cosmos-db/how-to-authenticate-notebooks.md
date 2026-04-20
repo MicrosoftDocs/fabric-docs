@@ -1,8 +1,7 @@
 ---
 title: Authenticate to Cosmos DB Database From Fabric Notebooks
 description: How to authenticate to Cosmos DB from a notebook in Microsoft Fabric.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: how-to
 ms.date: 10/30/2025
 ms.search.form: Get Started with Cosmos DB
@@ -120,3 +119,4 @@ async with CosmosClient(endpoint, credential=FabricTokenCredential()) as client:
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Manage authorization in Cosmos DB in Microsoft Fabric](authorization.md)
+

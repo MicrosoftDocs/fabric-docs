@@ -1,17 +1,16 @@
 ---
 title: User data functions with Cosmos DB Database in Fabric
 description: How to build user data functions for Cosmos DB in Microsoft Fabric.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: how-to
-ms.date: 10/31/2025
+ms.date: 02/20/2026
 ---
 
 # How to create user data functions for Cosmos DB in Microsoft Fabric
 
 Fabric User data functions provides a platform to host your custom logic and reference from different types of Fabric items and data sources. You can use this service to write your business logic, internal algorithms, and libraries. You can also integrate it into your Fabric architectures to customize the behavior of your solutions.
 
-In this guide, we will create a new User Data Functions item and write a new function in it. Each User Data Functions item contains code that defines one or many functions that you can run individually.
+In this guide, we create a new User Data Functions item and write a new function in it. Each User Data Functions item contains code that defines one or many functions that you can run individually.
 
 > [!TIP]
 > For complete samples of User Data Functions with Cosmos DB in Fabric, see [Fabric User Data Functions for Cosmos DB on GitHub](https://github.com/AzureCosmosDB/cosmos-fabric-samples/blob/main/user-data-functions/README.md). These samples are also available within User Data Functions portal in Fabric.
@@ -28,7 +27,7 @@ In this guide, we will create a new User Data Functions item and write a new fun
 
 [!INCLUDE[Prerequisites - Existing database](includes/prerequisite-existing-container.md)]
 
-- You will use the SampleData container in later step\[s\].
+- Use the SampleData container in later step\[s\].
 
 ## Retrieve Cosmos DB endpoint
 
@@ -71,7 +70,7 @@ After saving the Cosmos database and container name, get the endpoint for the Co
 
 ### Add a new function for Cosmos DB
 
-Next we will create a new function. In this example we will modify the `hello_fabric` function and rename it `query_products`. Follow the steps to add this sample function:
+Next create a new function. In this example, modify the `hello_fabric` function and rename it `query_products`. Follow the steps to add this sample function:
 
 1. Make sure you are in **Develop mode**. Select **Library management** to add the libraries that your function requires.
 
@@ -80,11 +79,11 @@ Next we will create a new function. In this example we will modify the `hello_fa
    >[!NOTE]
    > `fabric_user_data_functions` library is added by default and can't be removed. This library is required for the functionality of User data functions. You need to update the version of this library for any future releases of this SDK.
 
-1. Select **azure-cosmos** library and select the latest version. Once the library is added, it's automatically saved in your User Data Functions item. Then close the Library management dialog.
+1. Select **azure-cosmos** library and select the latest version. Once the library is added, it's saved in your User Data Functions item. Then close the Library management dialog.
 
    :::image type="content" source="./media/how-to-user-data-functions/add-cosmos-library.png" alt-text="Screenshot showing how to add azure-cosmos library." lightbox="./media/how-to-user-data-functions/add-cosmos-library.png":::
 
-1. Select the code below then insert it into the body of your new function.
+1. Select the code below then insert it into the body of your new function then update the COSMOS_DB_URI and the DB_NAME with the values you captured earlier.
 
     ```python
     import fabric.functions as fn
@@ -92,19 +91,19 @@ Next we will create a new function. In this example we will modify the `hello_fa
 
     import logging
     from typing import Any
-    from fabric.functions.cosmosdb import get_cosmos_client
+    from azure.cosmos import CosmosClient
     from azure.cosmos import exceptions
 
-    @udf.generic_connection(argName="cosmosDb", audienceType="CosmosDB")
-    @udf.function()
-    def query_products(cosmosDb: fn.FabricItem, categoryName: str) -> list[dict[str, Any]]:
+    COSMOS_URI = "{my-cosmos-artifact-uri}"
+    DB_NAME = "{my-cosmos-artifact-name}"
+    CONTAINER_NAME = "SampleData"
 
-        COSMOS_DB_URI = "{my-cosmos-artifact-uri}"
-        DB_NAME = "{my-cosmos-artifact-name}" 
-        CONTAINER_NAME = "SampleData"
+    @udf.connection(argName="cosmosClient", audienceType="CosmosDB", cosmos_endpoint=COSMOS_URI)
+    @udf.function()
+    def query_products(cosmosClient: CosmosClient, categoryName: str) -> list[dict[str, Any]]:
 
         try:
-            cosmosClient = get_cosmos_client(cosmosDb, COSMOS_DB_URI)
+            # Get the database and container clients
             database = cosmosClient.get_database_client(DB_NAME)
             container = database.get_container_client(CONTAINER_NAME)
 
@@ -146,10 +145,6 @@ Next we will create a new function. In this example we will modify the `hello_fa
             logging.error(f"Unexpected error in query_products: {e}")
             raise
     ```
-
-1. Once the code is inserted into the editor, update the COSMOS_DB_URI and the DB_NAME with the values you captured earlier.
-
-    :::image type="content" source="./media/how-to-user-data-functions/update-endpoint-and-database.png" alt-text="Screenshot showing how to update the endpoint and database name." lightbox="./media/how-to-user-data-functions/update-endpoint-and-database.png":::
 
 1. Now you can test it by using the [Test capability](/fabric/data-engineering/user-data-functions/test-user-data-functions) in Develop mode.
 

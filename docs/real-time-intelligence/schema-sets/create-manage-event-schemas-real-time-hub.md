@@ -1,11 +1,7 @@
 ---
 title: Create and Manage Event Schemas in Fabric Real-Time Hub
-ms.service: fabric
-ms.reviewer: spelluru
 description: Learn how to create and manage event schemas in Fabric Real-Time Hub with step-by-step guidance for registration, schema building, and organization.
 #customer intent: As a user, I want to learn how to add a schema to a schema set.
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
 ms.custom:
   - ai-gen-docs-bap
@@ -131,3 +127,5 @@ If you select **Endorse**, you see a window that lets you set the endorsement le
 ## Related content
 
 To learn how to use schemas in Fabric eventstreams, see [Use schemas in eventstreams](use-event-schemas.md).
+
+

@@ -1,10 +1,8 @@
 ---
 title: How to monetize your workload
 description: Learn how to implement monetization for your Fabric workload using Azure Marketplace SaaS offers or external monetization solutions.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: how-to
-ms.custom:
 ms.date: 12/15/2025
 ---
 

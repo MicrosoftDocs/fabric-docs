@@ -1,10 +1,8 @@
 ---
 title: General Publishing Requirements
 description: Learn about the general requirements for publishing Fabric Extensibility Toolkit workloads, including infrastructure, hosting, and authentication setup.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: how-to
-ms.custom:
 ms.date: 12/15/2025
 ---
 

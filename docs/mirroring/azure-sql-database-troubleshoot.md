@@ -113,3 +113,4 @@ Fabric Mirroring from Azure SQL Database can automatically reseed under certain 
 
 - [Limitations of Microsoft Fabric Data Warehouse](../data-warehouse/limitations.md)
 - [FAQs for Mirroring Azure SQL Database in Microsoft Fabric](../mirroring/azure-sql-database-mirroring-faq.yml)
+

@@ -1,8 +1,6 @@
 ---
 title: Connect digital twin builder (preview) data to Real-Time Dashboard
 description: Learn how to prepare your digital twin builder (preview) data to be accessible from a Real-Time Dashboard.
-author: baanders
-ms.author: baanders
 ms.date: 05/02/2025
 ms.topic: how-to
 ---

@@ -1,10 +1,7 @@
 ---
 title: Bind data
 description: Learn about the data binding process in ontology (preview).
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
-ms.date: 11/12/2025
+ms.date: 03/30/2026
 ms.topic: how-to
 ---
 
@@ -119,6 +116,8 @@ Next to the data binding name, select **...** to open its options. From there, y
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
 
+[!INCLUDE [supported property types](includes/supported-property-types.md)]
+
 ## Limitations and troubleshooting
 
 Data binding has the following limitations:
@@ -134,3 +133,5 @@ Data binding has the following limitations:
 ### Troubleshooting
 
 For troubleshooting tips related to data binding, see [Troubleshoot ontology (preview)](resources-troubleshooting.md#troubleshoot-data-binding).
+
+

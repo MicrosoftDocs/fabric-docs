@@ -1,21 +1,19 @@
-﻿---
+---
 title: Create AutoML trials in Fabric
-description: Learn how to use AutoML to easily fit models to  your data (preview)
+description: Learn how to use AutoML to easily fit models to  your data
 ms.topic: how-to
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: midesa
-reviewer: midesa
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.date: 07/21/2025
 ---
 
-# Create models with Automated ML (preview)
+# Create models with Automated ML
 
 Automated Machine Learning (AutoML) encompasses a set of techniques and tools designed to streamline the process of training and optimizing machine learning models with minimal human intervention. The primary objective of AutoML is to simplify and accelerate the selection of the most suitable machine learning model and hyperparameters for a given dataset, a task that typically demands considerable expertise and computational resources. Within the Fabric framework, data scientists can use the ```flaml.AutoML``` module to automate various aspects of their machine learning workflows.
 
 In this article, we delve into the process of generating AutoML trials directly from code using a Spark dataset. Additionally, we explore methods for converting this data into a Pandas dataframe and discuss techniques for parallelizing your experimentation trials.
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 

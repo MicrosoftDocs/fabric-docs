@@ -2,8 +2,6 @@
 title: Migrate Azure Data Explorer Workloads to Fabric
 description: Migrate Azure Data Explorer workloads to Fabric and unlock advanced analytics features. Learn key steps and best practices for a smooth transition.
 #customer intent: As a data engineer, I want to migrate my Azure Data Explorer workloads to Fabric so that I can use advanced analytics features.
-author: spelluru
-ms.author: spelluru
 ms.reviewer: sharmaanshul
 ms.topic: how-to
 ms.date: 08/17/2025

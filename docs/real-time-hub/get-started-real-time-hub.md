@@ -2,8 +2,7 @@
 title: Get Started With Fabric Real-Time Hub
 description: This article shows how to get started with Fabric Real-Time hub and provides a high-level overview of all the features.
 #customer intent: As a new Fabric user, I want to find and open the Real-Time hub so that I can start streaming and monitoring data.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: quickstart
 ms.custom: null
 ms.date: 02/03/2026
@@ -21,11 +20,11 @@ This article provides guidance on getting started with Fabric Real-Time hub.
 
 ## Real-Time hub page
 
-The Real-Time hub page layout changes based on whether you have streams or tables. Details are provided in the following sections.
+The Real-Time hub page layout changes based on whether you have streams or tables. The following sections provide details.
 
 ### Hub page when you have no streams or no tables
 
-If you don't have any streams or tables, the **Real-Time hub** has three sections.
+If you don't have any streams or tables, the **Real-Time hub** shows three sections.
 
 :::image type="content" source="./media/get-started-real-time-hub/home-page-empty.png" alt-text="Screenshot that shows the Real-Time hub page when you don't have any streams or tables." lightbox="./media/get-started-real-time-hub/home-page-empty.png":::
 
@@ -56,9 +55,9 @@ The **third section** has link to learning resources including the following:
 
 When you have access to at least one eventstream or a Kusto Query Language (KQL) table, the **Real-Time hub** page has two sections.
 
-In the **first section** at the top, you see **cards or tiles** that provide a quick way to performing the tasks:
+In the **first section** at the top, you see **cards or tiles** that provide a quick way to perform the tasks:
 
-:::image type="content" source="./media/get-started-real-time-hub/cards.png" alt-text="Screenshot that shows cards at the top of the Real-Time hub page." lightbox="./media/get-started-real-time-hub/cards.png":::
+:::image type="content" source="./media/get-started-real-time-hub/real-time-hub-task-cards.png" alt-text="Screenshot that shows cards at the top of the Real-Time hub page." lightbox="./media/get-started-real-time-hub/real-time-hub-task-cards.png":::
 
 - **Subscribe to OneLake events** - Provides a shortcut to create streams based on Fabric OneLake events. For details, see [Subscribe to OneLake events](create-streams-fabric-onelake-events.md#configure-and-create-an-eventstream).
 - **Act on Job events** - Provides a shortcut to create alerts on Fabric events. For more information, [Set alerts for Job events](set-alerts-fabric-job-events.md).
@@ -106,13 +105,13 @@ Here are the **actions** available on streams from eventstreams from the **All d
 | Open eventstream | Open parent eventstream of the stream. After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. |
 | Endorse | Endorse parent eventstream of the stream. For more information, see [Endorse data streams](endorse-data-streams.md). |
 
-:::image type="content" source="./media/get-started-real-time-hub/actions.png" alt-text="Screenshot that shows the actions available on a stream." lightbox="./media/get-started-real-time-hub/actions.png":::
+:::image type="content" source="./media/get-started-real-time-hub/real-time-stream-actions.png" alt-text="Screenshot that shows the actions available on a stream." lightbox="./media/get-started-real-time-hub/real-time-stream-actions.png":::
 
 Here are the actions available on a KQL table from the **All data streams** page.
 
 | Action | Description |
 | ------ | ----------- |
-| Explore data | Explore the KQL table data in a Real-Time dashboard, using Copilot. For more information, see [Explore All data streams in Fabric Real-Time hub](explore-data-tables-copilot.md) |
+| Explore data | Explore the KQL table data in a Real-Time dashboard, using Copilot. For more information, see [Explore All data streams in Fabric Real-Time hub](explore-data-tables-copilot.md). |
 | Open KQL Database | Open parent KQL Database of the KQL table. |
 | Endorse | Endorse parent KQL Database of the KQL table. For more information, see [Endorse data streams](endorse-data-streams.md). |
 | Detect anomalies (Preview) | Detect anomalies in data stored in the KQL table. Follow steps from [How to set up anomaly detection](../real-time-intelligence/anomaly-detection.md#how-to-set-up-anomaly-detection).|
@@ -122,18 +121,18 @@ Here are the actions available on a KQL table from the **All data streams** page
 
 ## Data sources page
 
-You can connect to data from both inside and outside of Fabric in a mere few steps within Fabric Real-Time hub. Whether data is coming from new or existing sources, streams, or available events, the Add data experience allows you to connect to a wide range of event sources directly from Real-Time hub.
+You can connect to data from both inside and outside of Fabric in just a few steps within Fabric Real-Time hub. Whether data is coming from new or existing sources, streams, or available events, the **Add data** experience allows you to connect to a wide range of event sources directly from Real-Time hub.
 
 It allows for easy connectivity to external data streams including Kafka connectors powered by Kafka Connect and Debezium connectors for fetching Change Data Capture (CDC) streams, which track and stream changes made to your databases in real time. Connectivity to notification sources and discrete events is also included, which enables access to notification events from Azure and other cloud solutions including Amazon Web Services and Google Cloud Platform.  
 
-There are two ways you can get to the **Data sources** page:
+You can reach the **Data sources** page in two ways:
 
-- By selecting **Add data** button on the **Streaming Data** page.
+- Select the **Add data** button on the **Streaming Data** page.
 
     :::image type="content" source="media/get-started-real-time-hub/connect-to-data-source-button.png" alt-text="Screenshot that shows the Add data button." lightbox="./media/get-started-real-time-hub/connect-to-data-source-button.png":::
-- By selecting **Add data** on the left navigation menu.
+- Select **Add data** on the left navigation menu.
 
-    :::image type="content" source="media/get-started-real-time-hub/add-data.png" alt-text="Screenshot that shows the Data sources page." lightbox="./media/get-started-real-time-hub/add-data.png":::
+    :::image type="content" source="media/get-started-real-time-hub/real-time-hub-add-data.png" alt-text="Screenshot that shows the Data sources page." lightbox="./media/get-started-real-time-hub/real-time-hub-add-data.png":::
 
 Then, follow the prompts to complete the flow. Here's a full list of built-in sources.
 
@@ -143,7 +142,7 @@ You can connect to these services and create eventstreams that show up on **My d
 
 ## Azure sources page
 
-**Azure sources** page in the **Connect to** section shows you all the Azure data sources you can access. They include sources of the following types.
+The **Azure sources** page in the **Connect to** section shows all the Azure data sources you can access. They include sources of the following types.
 
 [!INCLUDE [microsoft-sources](./includes/microsoft-sources.md)]
 
@@ -151,9 +150,25 @@ You can connect to these resources and create eventstreams that show up on **My 
 
 :::image type="content" source="./media/get-started-real-time-hub/microsoft-sources-menu.png" alt-text="Screenshot that shows the Microsoft sources page in Real-Time hub." lightbox="./media/get-started-real-time-hub/microsoft-sources-menu.png":::
 
+## Business events page
+
+The **Business events page** lets you define, discover, and consume business events generated from your applications and analytics in Microsoft Fabric. You can create business events from sources such as user data functions and notebooks, and use them to trigger alerts, automate workflows, run analytics, or provide real time context to Artificial Intelligence (AI). From this experience, you can configure downstream actions like email or Teams notifications through Activator, execute custom logic, or route events to analytical workflows.
+
+:::image type="content" source="./media/get-started-real-time-hub/business-events-page.png" alt-text="Screenshot that shows the Business events page in Real-Time hub." lightbox="./media/get-started-real-time-hub/business-events-page.png":::
+
+> [!IMPORTANT]
+> This feature is in [preview](../fundamentals/preview.md).
+
+For more information, see the following articles:
+
+- [Business events overview](business-events/business-events-overview.md)
+- [Concepts and terminology for business events](business-events/business-events-concepts.md)
+- [Publish business events using Notebook and react using Activator](business-events/tutorial-business-events-notebook-user-data-function-activator.md)
+- [Publish business events using User Data Function and react using Activator](business-events/tutorial-business-events-user-data-function-activation-email.md)
+
 ## Fabric events page
 
-The **Fabric events page** shows you the list of system events generated in **Fabric** that you can access. You can **create eventstreams** for events from your Fabric workspaces. You can also set up an alert to send notifications via email, Teams, etc. when an event occurs. Use links from the list to navigate to articles that show you how to create eventstreams for Fabric workspace item events.
+The **Fabric events page** shows you the list of system events generated in **Fabric** that you can access. You can **create eventstreams** for events from your Fabric workspaces. You can also set up an alert to send notifications via email, Teams, and more when an event occurs. Use links from the list to navigate to articles that show you how to create eventstreams for Fabric workspace item events.
 
 - [Fabric Workspace Item](create-streams-fabric-workspace-item-events.md)
 - [Explore Fabric events in Real-Time hub](explore-fabric-events.md)
@@ -162,12 +177,13 @@ The **Fabric events page** shows you the list of system events generated in **Fa
 :::image type="content" source="./media/get-started-real-time-hub/fabric-events-page.png" alt-text="Screenshot that shows the Fabric events page in Real-Time hub." lightbox="./media/get-started-real-time-hub/fabric-events-page.png":::
 
 ## Azure events page
-The **Azure events page** shows you the list of system events generated in **Azure** that you can access. You can **create eventstreams** for events from your Azure blob storage. You can also set up an alert to send notifications via email, Teams, etc. when an event occurs. Use links from the list to navigate to articles that show you how to create eventstreams for Azure Blob Storage events.
+The **Azure events page** shows you the list of system events generated in **Azure** that you can access. You can **create eventstreams** for events from your Azure blob storage. You can also set up an alert to send notifications via email, Teams, and more when an event occurs. Use links from the list to navigate to articles that show you how to create eventstreams for Azure Blob Storage events.
 
 See following articles to learn how to **set up alerts** on Fabric events:
 
 - [Azure Blob Storage events](get-azure-blob-storage-events.md)
-- [Explore Azure blob storage events](explore-azure-blob-storage-events.md).
+- [Explore Azure blob storage events](explore-azure-blob-storage-events.md)
 - [Set alerts on Azure Blob Storage events](set-alerts-azure-blob-storage-events.md)
 
 :::image type="content" source="./media/get-started-real-time-hub/azure-events-page.png" alt-text="Screenshot that shows the Azure events page in Real-Time hub." lightbox="./media/get-started-real-time-hub/azure-events-page.png":::
+

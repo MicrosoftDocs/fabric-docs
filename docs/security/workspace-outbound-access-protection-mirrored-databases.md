@@ -4,7 +4,6 @@ description: Learn how to configure Workspace Outbound Access Protection (OAP) t
 #customer intent: As a workspace admin, I want to enable outbound access protection for my workspace so that I can secure data connections from mirrored databases to only approved destinations.
 author: msmimart
 ms.author: mimart
-ms.reviewer: mimart
 ms.date: 12/01/2025
 ms.topic: how-to
 ---
@@ -38,6 +37,8 @@ Outbound access protection applies to the following Microsoft Fabric mirrored da
 - SQL Server
 - Oracle
 - Google Big Query
+- SAP
+- Azure Database for MySQL
 
 > [!NOTE]
 > Mirrored databases follow data connection rules for mirroring. Only allowed sources can be mirrored. Connections to other sources for mirroring are blocked.
@@ -51,3 +52,4 @@ Outbound access protection applies to the following Microsoft Fabric mirrored da
 
 - [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md)
 - [What is Mirroring in Fabric?](../database/mirrored-database/overview.md)
+

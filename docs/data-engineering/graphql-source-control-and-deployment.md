@@ -1,15 +1,13 @@
 ---
-title: Source control and deployment pipelines in API for GraphQL (preview)
+title: Source control and deployment pipelines in API for GraphQL
 description: Learn how Git integration and deployment pipelines work with API for GraphQL. 
-author: eric-urban
-ms.author: eur
 ms.reviewer: edlima
 ms.topic: how-to
 ms.custom: freshness-kr
-ms.date: 01/21/2026
+ms.date: 03/1/2026
 ---
 
-# Source control and deployment pipelines in API for GraphQL (preview)
+# Source control and deployment pipelines in API for GraphQL
 
 Learn how Git integration and deployment pipelines work with API for GraphQL in Microsoft Fabric. This article helps you to understand how to set up a connection to your repository, manage your API for GraphQL, and deploy them across different environments.
 
@@ -22,9 +20,6 @@ Git integration and deployment pipelines are essential for:
 - **Platform teams** requiring governance, tracking, and rollback capabilities for Fabric API changes
 
 Use source control and deployment pipelines when you need to manage GraphQL APIs as part of a structured development lifecycle with multiple environments.
-
-> [!NOTE]
-> API for GraphQL source control and deployment is currently in **preview**.
 
 ## Prerequisites
 
@@ -206,10 +201,10 @@ When deploying APIs for GraphQL through deployment pipelines, [autobinding](..\c
 
 - **Child items**: Autobinding doesn't work when the API connects to a SQL Analytics Endpoint that's a child of a parent data source (such as a Lakehouse). The deployed API remains connected to the source workspace's endpoint.
 
-- **Saved Credentials**: APIs using the Saved Credentials authentication method don't support autobinding. The API remains connected to the source workspace's data source after deployment.
+- **Saved Credentials**: APIs using the Saved Credentials authentication method don't support autobinding. The API remains connected to the source workspace's data source after deployment. For detailed information about authentication methods and their autobinding behavior, see [Data source authentication methods](#data-source-authentication-methods).
 
-For detailed information about authentication methods and their autobinding behavior, see [Data source authentication methods](#data-source-authentication-methods).
-
+- **GraphQL API and Underlying Data Source Schema Changes**: GraphQL APIs in Fabric do not automatically detect schema changes in their underlying data sources. If a table or view changes its structure (for example, columns are added, renamed, or removed), the API continues to use the schema captured when it was created or last refreshed, so new fields or updated types will not appear automatically. To reflect schema updates, a manual refresh of the API’s metadata is required — for example, by opening the GraphQL API item and updating its schema (adding or removing columns), or by removing and re-adding the table. In some situations, it may be necessary to delete and reattach the entire data source to fully capture all schema changes.
+ 
 ## Related content
 
 - [What is Microsoft Fabric API for GraphQL?](api-graphql-overview.md)

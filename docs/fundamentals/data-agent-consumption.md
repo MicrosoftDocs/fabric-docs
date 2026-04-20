@@ -1,8 +1,9 @@
 ---
 title: Data agent consumption
 description: Information on how Fabric Data agent usage affects your CU consumption.
-ms.author: midesa
-author: midesa
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: midesa
 ms.topic: how-to
 ms.date: 03/20/2025
 ---
@@ -46,3 +47,4 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 
 - [Overview of the Data agent in Fabric](../data-science/concept-data-agent.md)
 - [Background jobs in Fabric](../enterprise/fabric-operations.md)
+

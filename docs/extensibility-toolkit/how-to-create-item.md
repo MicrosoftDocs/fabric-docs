@@ -1,10 +1,8 @@
 ---
 title: HowTo - Define Item Creation
 description: Learn how to Define your item creation experience in Fabric
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: how-to
-ms.custom:
 ms.date: 12/15/2025
 ---
 

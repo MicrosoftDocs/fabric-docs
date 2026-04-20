@@ -1,8 +1,6 @@
 ---
 title: Overview of Fabric workload authentication JavaScript API
 description: Learn how to use JavaScript APIs to authenticate a customized Fabric workload.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 05/21/2024
@@ -84,3 +82,4 @@ Refer to [AuthenticationService](https://github.com/microsoft/Microsoft-Fabric-w
 ### promptFullConsent
 When passed as true, a full consent of the static dependencies will pop for the user regardless whether it provided a consent previously or not.
 An example usage for this parameter is to add a button to the UX where the user can use it to grant full consent to the workload.
+

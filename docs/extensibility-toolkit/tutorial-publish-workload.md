@@ -1,9 +1,7 @@
 ---
 title: How to publish and manage a workload
 description: Learn how to deploy and manage a workload solution in Microsoft Fabric.
-author: KesemSharabi
-ms.author: kesharab
-ms.service: fabric
+ms.reviewer: kesharab
 ms.topic: how-to
 ms.date: 11/18/2025
 
@@ -12,7 +10,12 @@ ms.date: 11/18/2025
 
 # How to publish and manage your workload
 
-This article describes how to upload and manage a workload to Microsoft Fabric. Workloads enhance the usability of your service within a familiar workspace, eliminating the need to leave the Fabric environment. Fabric workloads increase user engagement and improve your application's discoverability in the Fabric marketplace. The Fabric workspace includes various components, known as Fabric items, which handle storage, analysis, and presentation of your data.
+This article describes how to upload and manage a workload in Microsoft Fabric. The **Workloads** page in the Admin Portal has two tabs:
+
+- **Manage my tenant** - Browse and add published workloads to your tenant.
+- **Publish** - Upload and manage your own workload packages.
+
+Workloads enhance the usability of your service within a familiar workspace, eliminating the need to leave the Fabric environment. Fabric workloads increase user engagement and improve your application's discoverability in the Fabric marketplace. The Fabric workspace includes various components, known as Fabric items, which handle storage, analysis, and presentation of your data.
 
 ## Prerequisites
 
@@ -24,9 +27,17 @@ To deploy a workload, you must have the following prerequisites:
 > [!NOTE]
 > When DevGateway is connected to the Fabric backend, the developer workload takes precedence over the workload that's activated in the tenant. If you try to create an item in a workspace that's registered in the DevGateway configuration,, the Fabric backend calls your local workload instead of the activated workload.
 
+## Manage my tenant
+
+The **Manage my tenant** tab lists all workloads that have been published and are available for your tenant. From this tab, admins can:
+
+- **Browse available workloads** - View all workloads published to the Workload Hub, including their publisher and status.
+- **Add workloads** - Select a workload to view its details, including an overview, documentation links, and licensing information. Select **Add Workload** to add it to your tenant directly from the Admin Portal.
+- **Consent on behalf of the organization** - If you have sufficient Microsoft Entra permissions, select **Consent** to grant organization-wide consent for the workload's required permissions. This eliminates the need for individual users to consent when they first use the workload.
+
 ## Upload a workload
 
-To upload a workload to Microsoft Fabric:
+Use the **Publish** tab to upload your own workload packages. To upload a workload to Microsoft Fabric:
 
 1. Sign in to [Fabric](https://powerbi.com) with an admin account.
 
@@ -42,6 +53,9 @@ To upload a workload to Microsoft Fabric:
 
 1. Go to the NuGet package you want to upload and select **Open**.
 
+   > [!IMPORTANT]
+   > Each uploaded NuGet package must have a unique version number. If you try to upload a package with a version that already exists, you get a **This package has already been uploaded** error. To resolve this issue, increment the minor version in your NuGet package (for example, change `1.0.0` to `1.1.0`) and upload it again.
+   
    :::image type="content" source="./media/tutorial-publish-workload/browse-nuget-package.png" alt-text="Screenshot showing how to browse to the NuGet package.":::
 
 1. Select the workload.
@@ -101,3 +115,4 @@ To deactivate a workload:
 ## Related content
 
 * [Setup guide](./setup-guide.md)
+

@@ -1,11 +1,12 @@
 ---
-title: Add MQTT source to an eventstream
+title: MQTT Source in Fabric Eventstream
 description: Learn how to add a Message Queuing Telemetry Transport (MQTT) source to an eventstream. This feature is currently in preview.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+#customer intent: As a data engineer, I want to add an MQTT source to an eventstream so that I can ingest IoT device data into Fabric Real-Time Intelligence for processing and routing.
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.date: 01/26/2026
+ms.date: 04/02/2026
+author: spelluru
+ms.author: spelluru
 ms.search.form: Source and Destination
 ms.custom: reference_regions
 ---
@@ -14,7 +15,7 @@ ms.custom: reference_regions
 
 This article shows you how to add a Message Queuing Telemetry Transport (MQTT) source to an eventstream in Fabric Real-Time Intelligence.
 
-[!INCLUDE [mqtt-source-description-prerequisites](./includes/mqtt-source-description-prerequisites.md)]
+[!INCLUDE [mqtt-source-description-prerequisites](./includes/connectors/mqtt-source-description-prerequisites.md)]
 
 ## Add MQTT connector
 
@@ -39,7 +40,7 @@ Connect to an MQTT source from **Real-Time hub** and create a data stream. This 
     :::image type="content" source="./media/add-source-mqtt/add-from-rth.png" alt-text="Screenshot that shows the Add source option on the Real-time hub." lightbox="./media/add-source-mqtt/add-from-rth.png":::
 
 ## Configure MQTT connector
-[!INCLUDE [mqtt-source-connector](./includes/mqtt-source-connector.md)]
+[!INCLUDE [mqtt-source-connector-configuration](./includes/connectors/mqtt-source-connector-configuration.md)]
 
 ## View updated eventstream
 
@@ -52,3 +53,5 @@ Connect to an MQTT source from **Real-Time hub** and create a data stream. This 
 
 ## Related content
 For a list of all supported sources, see [Add and manage an event source](add-manage-eventstream-sources.md).
+
+

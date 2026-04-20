@@ -4,7 +4,6 @@ description: Learn how to enable Copilot in Fabric and Power BI, which brings a 
 author: snehagunda
 ms.author: sngun
 ms.reviewer: shlindsay
-ms.custom:
 ms.topic: how-to
 ms.date: 04/02/2025
 ms.update-cycle: 180-days
@@ -52,6 +51,6 @@ See the article [Overview of Copilot in Fabric](copilot-fabric-overview.md) for 
 
 - [What is Microsoft Fabric?](../fundamentals/microsoft-fabric-overview.md)
 - [Copilot in Fabric: FAQ](../fundamentals/copilot-faq-fabric.yml)
-- [AI services in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)
+- [Foundry Tools in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)
 - [Copilot tenant settings](../admin/service-admin-portal-copilot.md)
 - [Copilot in Power BI](/power-bi/create-reports/copilot-introduction)

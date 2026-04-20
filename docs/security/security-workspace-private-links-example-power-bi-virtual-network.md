@@ -5,7 +5,6 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: how-to
-ms.custom:
 ms.date: 08/13/2025
 
 #customer intent: As a workspace admin, I want to learn how to set up and use a virtual network gateway to securely access a lakehouse from a Power BI semantic model.
@@ -63,7 +62,7 @@ Create a lakehouse in the target workspace and upload a Delta Lake table to it b
 
    In that code, `{workspaceFQDN}` is `{workspaceID}.z{xy}.w.api.fabric.microsoft.com`.
 
-   For example: `POST https://aaaaaaaa000011112222bbbbbbbbbbbb.zaa.w.api.fabric.microsoft.com/v1/workspaces/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb/lakehouses`.
+   For example: `POST https://aaaaaaaa000011112222bbbbbbbbbbbb.zaa.w.api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/lakehouses`.
 
 1. Add data to the lakehouse by using Azure Storage Explorer to upload the folder for your Delta Lake table into the lakehouse. In Storage Explorer, select **ADLS Gen2 container or directory**.
 
@@ -75,7 +74,7 @@ Create a lakehouse in the target workspace and upload a Delta Lake table to it b
 
     In that URL, `{workspaceFQDN}` is `{workspaceID}.z{xy}.onelake.fabric.microsoft.com`.
 
-   For example: `POST https://aaaaaaaa000011112222bbbbbbbbbbbb.zaa.w.api.fabric.microsoft.com/v1/workspaces/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb/bbbbbbbb-1111-2222-3333-cccccccccccc`.
+   For example: `POST https://aaaaaaaa000011112222bbbbbbbbbbbb.zaa.w.api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/bbbbbbbb-1111-2222-3333-cccccccccccc`.
 
 1. Select **Connect**. The storage now appears in the explorer view.
 

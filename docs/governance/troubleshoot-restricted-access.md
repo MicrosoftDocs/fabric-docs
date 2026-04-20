@@ -3,7 +3,6 @@ title: Troubleshoot issues with restricted access
 description: Learn how to troubleshoot issues with restricted access.
 author: msmimart
 ms.author: mimart
-ms.reviewer: mimart
 ms.date: 12/19/2025
 ms.topic: concept-article
 ---
@@ -79,15 +78,15 @@ When a user reports losing access to an item, the workspace admin can investigat
 To investigate the issue:
 
 1. Open the item's **Manage Permissions** page and check the user's **Permissions** setting.
-1. If the user's setting is **No access**, it indicates that the user's access was revoked by an organizational security policy.
+1. If the user's setting is **User is blocked**, it indicates that the user's access was revoked by an organizational security policy.
 
-   :::image type="content" source="media/troubleshoot-restricted-access/manage-permissions-no-access.png" alt-text="Screenshot showing a user with permissions set to No access." lightbox="media/troubleshoot-restricted-access/manage-permissions-no-access.png":::
+   :::image type="content" source="media/troubleshoot-restricted-access/manage-permissions-no-access.png" alt-text="Screenshot showing a user with permissions set to User is blocked." lightbox="media/troubleshoot-restricted-access/manage-permissions-no-access.png":::
 
 1. Identify the policy type:
    - Recent label changes likely mean an issue with a Microsoft Purview protection policy.
    - Recent item updates or sensitive data likely mean an issue with a Microsoft Purview DLP restriction.
 
-1. If the user's **Permissions** setting doesn't show **No access**, investigate other causes such as manual access removal or workspace permission changes.
+1. If the user's **Permissions** setting doesn't show **User is blocked**, investigate other causes such as manual access removal or workspace permission changes.
 
 ## How to resolve policy-related issues
 
@@ -127,3 +126,5 @@ The workspace admin can assess how DLP policies affect different user types to d
 - [Microsoft Fabric permission model](/fabric/security/permission-model)
 - [Microsoft Purview protection policies](/fabric/governance/protection-policies-overview)
 - [Data Loss Prevention (DLP) in Microsoft Purview](/purview/dlp-powerbi-get-started)
+
+

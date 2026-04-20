@@ -1,18 +1,18 @@
 ---
-title: Use custom actions to trigger Power Automate flows
+title: Use Custom Actions to Trigger Power Automate Flows
 description: Understand how to use custom actions to trigger Power Automate flows with Activator and achieve seamless integration between systems.
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter, sfi-image-nochange
 ms.search.form: Data Activator Custom Actions
-ms.date: 12/12/2024
+ms.date: 03/19/2026
 #customer intent: As a Fabric user I want to learn to use custom actions to trigger Power Automate flows.
 ---
 
 # Trigger custom actions (Power Automate flows)
 
-You can activate external systems with a [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule by defining custom actions with Power Automate. Custom actions can be useful for:
+You can activate external systems with a [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule by defining custom actions with Power Automate. Custom actions are useful for:
 
-* Sending notifications using systems other than Teams and email.
+* Sending notifications by using systems other than Teams and email.
 * Creating action items in ticketing systems.
 * Calling line-of-business apps.
 
@@ -28,7 +28,7 @@ A custom action defines how to call a specific external system from a rule using
 
 Open Activator and select a rule to display the **Definition** pane. Scroll down to **Action** > **Type**, and select **New custom action**. 
 
-Then, give your action a name such as *Add a To Do task*. Define the input fields that you'd like to use later when creating a flow in Power Automate. You can pass [dynamic](#pass-an-input-field-to-your-flow) or hardcoded values to the Power Automate action with these input fields, such as *task name*, *assignee*, etc.
+Then, give your action a name such as *Add a To Do task*. Define the input fields that you'd like to use later when creating a flow in Power Automate. You can pass [dynamic](#pass-an-input-field-to-your-flow) or hardcoded values to the Power Automate action by using these input fields, such as *task name*, *assignee*, and so on.
 
 :::image type="content" source="media/activator-trigger-power-automate-flows/activator-new-custom-actions.png" alt-text="Screenshot of creating an Activator new custom action.":::
 
@@ -88,13 +88,13 @@ After you save your flow, return to [!INCLUDE [fabric-activator](../includes/fab
 
 ## Call your custom action from a rule
 
-Once you create a custom action, it's available for use by all rules and users who have access to the activator item you defined in the custom action. To call your custom action, from a rule, select the rule and choose **Action** > **Type** from the **Definition** pane, and select your custom action from the list. 
+When you create a custom action, all rules and users who have access to the activator item you defined in the custom action can use it. To call your custom action from a rule, select the rule, choose **Action** > **Type** from the **Definition** pane, and select your custom action from the list. 
 
 :::image type="content" source="media/activator-trigger-power-automate-flows/activator-type-list.png" alt-text="Screenshot of the Type dropdown showing the newly created action.":::
 
 Select **Edit action** to see the entry fields for your rule. Fill them out as appropriate for your rule definition:
 
-When your rule activates, it calls your flow, sending it the values of the input fields that you defined. Since we asked our flow to update a To Do list, open Microsoft To Do to see the new task. 
+When your rule activates, it calls your flow and sends the values of the input fields that you defined. Since you asked your flow to update a To Do list, open Microsoft To Do to see the new task. 
 
 :::image type="content" source="media/activator-trigger-power-automate-flows/activator-to-do-pane.png" alt-text="Screenshot of the Microsoft To Do screen showing the new tasks.":::
 
@@ -103,7 +103,7 @@ When your rule activates, it calls your flow, sending it the values of the input
 * [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules in design mode](activator-create-activators.md)
 * [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
 
-You can also learn more about Microsoft Fabric:
+Learn more about Microsoft Fabric:
 
 * [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
 

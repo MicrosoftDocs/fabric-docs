@@ -1,10 +1,8 @@
 ---
 title: Set alerts on streams in Real-Time hub
 description: This article describes how to set alerts on streams in Real-Time hub.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: how-to
-ms.custom:
 ms.date: 12/14/2025
 ms.search.form: Data Activator Eventstream Onramp
 ---
@@ -55,3 +53,4 @@ For **Condition**, select one of the following options:
 
 - [Set alerts for Azure blob storage events](set-alerts-azure-blob-storage-events.md)
 - [Set alerts for Fabric workspace item events](set-alerts-fabric-workspace-item-events.md)
+

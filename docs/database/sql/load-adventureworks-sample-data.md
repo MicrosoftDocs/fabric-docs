@@ -1,8 +1,6 @@
 ---
 title: "Load AdventureWorks sample data in your SQL database"
 description: Learn how to load the AdventureWorks sample database in your Fabric SQL database with the Fabric portal.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 10/07/2024
 ms.topic: how-to

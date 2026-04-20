@@ -1,9 +1,6 @@
 ---
 title: "Tutorial part 4: Create data agent"
 description: Create a data agent that queries the ontology (preview) in natural language. Part 4 of the ontology (preview) tutorial.
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
 ms.date: 02/04/2026
 ms.topic: tutorial
 ---
@@ -70,3 +67,4 @@ Continue exploring the data agent by trying out some prompts of your own.
 In this step, you explored your ontology by using natural language queries and answered business-level questions.
 
 Next, continue to the [tutorial conclusion](tutorial-5-conclusion.md).
+

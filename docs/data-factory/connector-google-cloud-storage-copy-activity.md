@@ -4,7 +4,7 @@ description: This article explains how to copy data using Google Cloud Storage i
 ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 01/24/2024
-ms.custom: 
+ms.custom:
   - pipelines
   - template-how-to
   - connectors

@@ -1,10 +1,6 @@
 ---
 title: Automate deployment pipeline by using Fabric APIs
 description: Learn how to automate your deployment pipeline, the Microsoft Fabric Application lifecycle management (ALM) tool, by using Fabric APIs.
-author: billmath
-ms.author: billmath
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: concept-article
 ms.date: 12/15/2025
 #customer intent: As a developer, I want to automate my deployment pipeline using Fabric APIs so that I can streamline the release process.

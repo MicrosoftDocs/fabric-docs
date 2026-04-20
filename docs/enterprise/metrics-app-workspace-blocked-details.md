@@ -1,8 +1,9 @@
 ---
 title: Understand the metrics app workspace blocked details page (preview)
 description: Learn how to read the Microsoft Fabric Capacity metrics app's workspace blocked details page.
+author: dknappettmsft
+ms.author: daknappe
 ms.topic: concept-article
-ms.custom:
 ms.date: 01/26/2026
 ---
 

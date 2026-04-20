@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: lazartimotic, jingwang, nzagorac, ajayj
-ms.date: 02/09/2026
+ms.date: 04/03/2026
 ms.topic: concept-article
 ms.custom:
   - references_regions
@@ -24,13 +24,13 @@ For troubleshooting, see:
 ## Database level limitations
 
 - Mirroring on Azure SQL Managed Instance is available for instances that have their [Update Policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true) set to **Always up to date** or **SQL Server 2025**.
-   - SQL managed instances with the **SQL Server 2022** update policy can use Fabric Mirroring for SQL Server 2016-2022, which uses CDC instead of the change feed. For more information, see [Tutorial: Configure Microsoft Fabric Mirroring from SQL Server](sql-server-tutorial.md?tabs=sql201622).
+   - SQL managed instances with the **SQL Server 2022** update policy should use Fabric Mirroring for SQL Server 2016-2022, which uses CDC instead of the change feed. For more information, see [Tutorial: Configure Microsoft Fabric Mirroring from SQL Server](sql-server-tutorial.md?tabs=sql201622).
 - Geo Disaster Recovery setup isn't supported by Mirroring.
 - Fabric Mirroring for Azure SQL Managed Instance is only supported on a **writable primary** database.
 - An Azure SQL Managed Instance database can't be mirrored if the database has: enabled Change Data Capture (CDC), transactional replication, or the database is already mirrored in another Fabric workspace.
-- The maximum number of tables that can be mirrored into Fabric is 500 tables. Any tables above the 500 limit currently can't be replicated.
-  - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list aren't mirrored over.
-  - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 500 tables.
+- The maximum number of tables that can be mirrored into Fabric is 1000 tables. Any tables above the 1000 limit currently can't be replicated.
+  - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 1000 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list aren't mirrored over.
+  - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 1000 tables.
 - The database copy/move feature isn't supported on databases that are mirrored. If you move or copy a database with mirroring enabled, the copy will report a mirroring error state.
 - If your SQL managed instance database is set up to use [Azure SQL Managed Instance Link feature](/azure/azure-sql/managed-instance/managed-instance-link-feature-overview?view=azuresql-mi&preserve-view=true), the readable replica isn't supported to be a source for Fabric mirroring.
 - If your database is configured for mirroring and then renamed, the **Monitor Mirroring** functionality will stop working. Renaming the database to the name it had when mirroring was set up will resolve the issue.
@@ -46,7 +46,8 @@ For troubleshooting, see:
 
 ## Network and connectivity security
 
-- If your Azure SQL Managed Instance is not publicly accessible, [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. Make sure the Azure Virtual Network or gateway server's network can connect to the Azure SQL Managed Instance via [a private endpoint](/azure/azure-sql/managed-instance/private-endpoint-overview?view=azuresql-mi&preserve-view=true).
+- If your Azure SQL Managed Instance is not publicly accessible, or if you are using the [SQL Server 2022 update policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true) of Azure SQL Managed Instance, you need a data gateway.
+   - You can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [on-premises data gateway](/data-integration/gateway/service-gateway-onprem). Make sure the Azure Virtual Network or gateway server's network can connect to the Azure SQL Managed Instance via [a private endpoint](/azure/azure-sql/managed-instance/private-endpoint-overview?view=azuresql-mi&preserve-view=true).
 - The System Assigned Managed Identity (SAMI) of the Azure SQL Managed Instance needs to be enabled and must be the primary identity.
 - The Azure SQL Managed Instance service principal name (SPN) contributor permissions shouldn't be removed from the Fabric mirrored database item.
 - User Assigned Managed Identity (UAMI) isn't supported.
@@ -69,7 +70,8 @@ For troubleshooting, see:
   - Graph  
   - External tables  
 - The following table-level data definition language (DDL) operations aren't allowed on source tables when enabled for SQL Managed Instance mirroring to Microsoft Fabric.
-  - Switch/Split/Merge partition
+  - Switch partition
+    
   - Alter primary key  
 - When there's DDL change, a complete data snapshot is restarted for the changed table, and entire table data is reseeded into Fabric OneLake.
 - Currently, a table cannot be mirrored if it has the **json** <!-- or **vector** --> data type.
@@ -105,7 +107,7 @@ For troubleshooting, see:
   - User Defined Types (UDT)
   - **geometry**
   - **geography**
-- Mirroring supports replicating columns containing spaces or special characters in names (such as  `,` `;` `{` `}` `(` `)` `\n` `\t` `=`). For tables under replication before this feature enabled, you need to update the mirrored database settings or restart mirroring to include those columns. Learn more from [Delta column mapping support](troubleshooting.md#delta-column-mapping-support).
+- Mirroring supports replicating columns containing spaces or special characters in names (such as  `,` `;` `{` `}` `(` `)` `\n` `\t` `=`). For tables under replication before this feature enabled, you need to update the mirrored database settings or restart mirroring to include those columns. For more information, see [Delta column mapping support](troubleshooting.md#delta-column-mapping-support).
 - The following column level data definition language (DDL) operations aren't supported on source tables when they're enabled for SQL Managed Instance mirroring to Microsoft Fabric:
   - Alter column
   - Rename column (`sp_rename`)
@@ -120,7 +122,7 @@ For troubleshooting, see:
 ## SQL analytics endpoint limitations
 
 - The SQL analytics endpoint is the same as [the Lakehouse SQL analytics endpoint](../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It's the same read-only experience. See [SQL analytics endpoint limitations](../data-warehouse/limitations.md#limitations-of-the-sql-analytics-endpoint).
-- Source schema hierarchy is replicated to the mirrored database. For mirrored databases created before this feature enabled, the source schema is flattened, and schema name is encoded into the table name. If you want to reorganize tables with schemas, recreate your mirrored database. Learn more from [Replicate source schema hierarchy](troubleshooting.md#replicate-source-schema-hierarchy).
+- Source schema hierarchy is replicated to the mirrored database. For mirrored databases created before this feature enabled, the source schema is flattened, and schema name is encoded into the table name. If you want to reorganize tables with schemas, recreate your mirrored database. For more information, see [Replicate source schema hierarchy](troubleshooting.md#replicate-source-schema-hierarchy).
 
 ## Supported regions
 

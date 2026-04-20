@@ -1,8 +1,6 @@
 ---
 title: Integrating with machine learning (ML)
 description: Learn about integrating ontology data from digital twin builder (preview) into machine learning (ML) models.
-author: baanders
-ms.author: baanders
 ms.date: 04/17/2025
 ms.topic: concept-article
 ---

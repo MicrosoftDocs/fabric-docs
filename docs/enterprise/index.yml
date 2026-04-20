@@ -1,15 +1,14 @@
 ### YamlMime:Landing
 
-title: Microsoft Fabric enterprise documentation
-summary: Learn about Microsoft Fabric licenses, and how to monitor and control the way Microsoft Fabric is used in your organization.
+title: Fabric enterprise documentation
+summary: Learn about Fabric licenses, and how to monitor and control how Fabric is used in your organization.
 
 metadata:
-  title: Microsoft Fabric enterprise documentation
-  description: Brose the Microsoft Fabric enterprise documentation.
-  ms.service: fabric  #Required; use either service or product per approved list. 
+  title: Fabric enterprise documentation
+  description: Learn about Fabric licenses, monitoring, and enterprise management.
+  author: dknappettmsft
+  ms.author: daknappe
   ms.topic: landing-page
-  author: JulCsc
-  ms.author: juliacawthra
   ms.date: 07/18/2025
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -20,11 +19,11 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: Microsoft Fabric licenses
+          - text: Fabric licenses
             url: licenses.md
       - linkListType: how-to-guide
         links:
-          - text: Buy a Microsoft Fabric subscription
+          - text: Buy a Fabric subscription
             url: buy-subscription.md
 
   - title: Capacity operation
@@ -46,22 +45,22 @@ landingContent:
           - text: Throttling policy
             url: throttling.md   
 
-  - title: Microsoft Fabric Capacity Metrics app
+  - title: Fabric Capacity Metrics app
     linkLists:
       - linkListType: overview
         links:
-          - text: What is the Microsoft Fabric Capacity Metrics app?
+          - text: What is the Fabric Capacity Metrics app?
             url: metrics-app.md
       - linkListType: how-to-guide
         links:
-          - text: Install the Microsoft Fabric Capacity Metrics app
+          - text: Install the Fabric Capacity Metrics app
             url: metrics-app-install.md
-          - text: Understand the Microsoft Fabric Capacity Metrics app compute page
+          - text: Understand the Fabric Capacity Metrics app compute page
             url: metrics-app-compute-page.md
-          - text: Understand the Microsoft Fabric Capacity Metrics app timepoint page
+          - text: Understand the Fabric Capacity Metrics app timepoint page
             url: metrics-app-timepoint-page.md
 
-  - title: Microsoft Fabric SKU Estimator (preview)
+  - title: Fabric SKU Estimator (preview)
     linkLists:
       - linkListType: overview
         links:
@@ -123,7 +122,7 @@ landingContent:
       - linkListType: concept
         links:            
           - text: Power BI Desktop privacy levels
-            url: powerbi/desktop-privacy-levels.md                      
+            url: /power-query/privacy-levels                     
       - linkListType: how-to-guide
         links:                    
           - text: Use service tags

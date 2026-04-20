@@ -19,3 +19,7 @@ The SAP Table Message Server connector is supported in Data Factory for [!INCLUD
 |----------------------------------------------------------------------------------------|--------------------------------|----------------------------------------------------------------------------------------------------------------|
 | **Pipeline** <br>- Copy activity (source/-)<br>- Lookup activity | None<br> On-premises | Basic |
 | **Copy job** (source/-)<br>- Full load|None<br> On-premises  |Basic|
+
+## Related content
+
+- [Connector overview](connector-overview.md)

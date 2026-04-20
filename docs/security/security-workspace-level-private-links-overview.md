@@ -5,7 +5,6 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: overview
-ms.custom:
 ms.date: 09/29/2025
 
 #customer intent: As a workspace admin, I want to configure Private Link on my workspace to prevent access to the workspace from the public internet.

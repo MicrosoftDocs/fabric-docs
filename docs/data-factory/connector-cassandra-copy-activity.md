@@ -4,7 +4,7 @@ description: This article explains how to copy data using Cassandra.
 ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 07/31/2025
-ms.custom: 
+ms.custom:
   - pipelines
   - template-how-to
   - connectors

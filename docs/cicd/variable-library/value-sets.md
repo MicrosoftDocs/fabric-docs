@@ -1,13 +1,8 @@
 ---
 title: Microsoft Fabric Variable Library Value Sets
 description: Understand how to use variable libraries value sets and what variable types are allowed.
-author: billmath
-ms.author: billmath
-ms.reviewer: Lee
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: concept-article
-ms.custom:
+ms.reviewer: Lee
 ms.date: 08/15/2024
 ms.search.form: Introduction to variable libraries, variable library types, variable types
 #customer intent: As a developer, I want to learn how to use variable libraries and which variable types exist, so that I can manage my content lifecycle.
@@ -42,7 +37,7 @@ This clear separation means you can track changes to each environment’s config
 Importantly, the active value set selection isn't part of these definition files – it's stored as item state (a workspace-level setting) so that deploying or importing the item doesn’t overwrite which value set is currently active in a given workspace. (More on active value sets below.)
 
 ### Schema and Data Types
-Value sets don’t introduce new data types; they hold values of the same types defined by each [variable](variable-types.md). The item definition records each variable’s name, type, default value, and optional note. Complex variable types like [Item reference](item-reference-variable-type.md) have structured schemas (storing IDs), but those values to are represented in each value set using a consistent JSON structure (For example, an item reference stores workspace ID + item ID for that stage’s item). All value set files follow the same schema structure as the default: essentially a mapping of variable names to that set’s values (only including those that diverge from default).
+Value sets don’t introduce new data types; they hold values of the same types defined by each [variable](variable-types.md). The item definition records each variable’s name, type, default value, and optional note. Complex variable types like [Item reference](item-reference-variable-type.md) and [Connection reference](connection-reference-variable-type.md) have structured schemas (storing IDs), but those values to are represented in each value set using a consistent JSON structure (For example, an item reference stores workspace ID + item ID for that stage’s item). All value set files follow the same schema structure as the default: essentially a mapping of variable names to that set’s values (only including those that diverge from default).
 
 
 

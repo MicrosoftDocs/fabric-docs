@@ -4,7 +4,6 @@ description: Learn about using sensitivity labels from Microsoft Purview Informa
 author: msmimart
 ms.author: mimart
 ms.topic: concept-article
-ms.custom:
 ms.date: 05/18/2024
 LocalizationGroup: Data from files
 ---

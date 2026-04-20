@@ -1,20 +1,15 @@
 ﻿---
-title: Fabric data agent sharing and permission management (preview)
+title: Fabric data agent sharing and permission management
 description: Learn how to share a Fabric data agent, and manage Fabric data agent permissions.
-author: jonburchel
-ms.author: jburchel
-ms.reviewer: amjafari
+ms.reviewer: amjafari, scottpolly
 ms.topic: concept-article
 ms.date: 09/17/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
-reviewer: s-polly
 ai-usage: ai-assisted
 ---
 
-# Fabric data agent sharing and permission management (preview)
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+# Fabric data agent sharing and permission management
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
@@ -55,7 +50,7 @@ The **Fabric data agent sharing** feature allows you to share your Fabric data a
 
 :::image type="content" source="./media/data-agent-sharing/sharing-main.png" alt-text="Screenshot showing how to share a Fabric data agent link." lightbox="./media/data-agent-sharing/sharing-main.png":::
 
-You have complete control over access to your Fabric data agent, and complete control of its use. Additionally, when you share the Fabric data agent, you must also share access to the underlying data it uses. The Fabric data agent honors all user permissions to the data, including Row-Level Security (RLS) and Column-Level Security (CLS).
+You have complete control over access to your Fabric data agent, and complete control of its use. Additionally, when you share the Fabric data agent, you must also share access to the underlying data it uses. The Fabric data agent honors all user permissions to the data, including Row-Level Security (RLS) and Column-Level Security (CLS). For Power BI semantic models accessed through a Fabric data agent, users only need Read permission on the model; workspace access isn't required. RLS and CLS continue to apply.
 
 ### Underlying data source permissions
 
@@ -63,7 +58,7 @@ For a user to successfully query through a Fabric data agent, they need the mini
 
 | Data source type | Minimum permission to query via data agent | Notes |
 | ---------------- | ------------------------------------------- | ----- |
-| Power BI semantic model | Build (includes Read) | Read alone is not sufficient because the agent generates model queries that require Build. |
+| Power BI semantic model | Read | Read is sufficient to query a semantic model via a Fabric data agent. Build/Write is only required to modify the model or use capabilities such as Prep for AI. Workspace access isn't required for interaction via a data agent. |
 | Lakehouse | Read on the lakehouse item (and table access if enforced) | Write not required unless modifying data. |
 | Warehouse | Read (SELECT on relevant tables) | Higher permissions only for DML/DDL operations. |
 | KQL database | Reader role on the database | Higher roles only for management commands. |
@@ -71,9 +66,12 @@ For a user to successfully query through a Fabric data agent, they need the mini
 | Other supported sources | Query/read-level access | Must allow metadata + data retrieval. |
 
 > [!IMPORTANT]
-> If a user only has Read permission on a semantic model (no Build), the Fabric data agent can't run its generated queries. Grant Build to enable interactive querying.
+> Read permission on the semantic model is sufficient for queries initiated via a Fabric data agent. Build or workspace roles aren't required for these agent interactions. Build/Write is still required for model modifications or features that change the model (for example, Prep for AI).
 
-Follow least privilege: grant only the data source permissions required (for semantic models this typically means Build without assigning broader workspace roles unless needed).
+Follow least privilege: grant only the data source permissions required. For semantic models, grant Read when users only need to query through a data agent. Grant Build or broader workspace roles only when users must modify the model or use features such as Prep for AI.
+
+> [!NOTE]
+> This permissions change applies only to interactions through Fabric data agents. Other entry points (for example, Analyze in Excel or direct report authorship) may still require Build permission.
 
 If a user can open the Fabric data agent but lacks the minimum permission on one or more underlying sources, queries that touch those sources fail with an authorization error or return empty results, depending on the source’s security model.
 

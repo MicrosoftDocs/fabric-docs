@@ -1,10 +1,8 @@
 ---
 title: Introduction to Microsoft Fabric Real-Time hub
 description: This article describes what Real-Time hub in Microsoft Fabric is and how it can be used in near-realtime scenarios.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: overview
-ms.custom:
 ms.date: 02/03/2026
 ---
 
@@ -61,3 +59,4 @@ Real-Time hub allows you to create streams for the supported sources. After you 
 ## Related content
 
 See [Get started with Real-Time hub.](get-started-real-time-hub.md)
+

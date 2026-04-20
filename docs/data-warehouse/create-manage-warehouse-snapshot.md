@@ -1,11 +1,8 @@
 ---
 title: Create and Manage a Warehouse Snapshot
 description: Learn how to create, use, and manage warehouse snapshots in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: twcyril
-ms.date: 11/10/2025
-ms.service: fabric
+ms.date: 03/03/2026
 ms.topic: how-to
 ms.search.form: Manage warehouse snapshots
 ---
@@ -79,7 +76,9 @@ Once created, warehouse snapshots appear as child items in the workspace.
 
 :::image type="content" source="media/create-manage-warehouse-snapshot/workspace.png" alt-text="Screenshot from the Fabric portal showing the warehouse snapshot in the item list." lightbox="media/create-manage-warehouse-snapshot/workspace.png":::
 
-Connect to the snapshot just like a warehouse. In the settings of your warehouse snapshot, visit **SQL endpoint** to view and copy the **SQL connection string**. The connection string looks like this: `<server-name>.datawarehouse.fabric.microsoft.com`. Users with appropriate permissions (Admin, Member, Contributor, or Viewer) can query a snapshot just like a warehouse. For more information, see [Warehouse connectivity in Microsoft Fabric](connectivity.md).
+Connect to the snapshot just like a warehouse. In the settings of your warehouse snapshot, select the **SQL endpoint** page to view and copy the **SQL connection string**. This is the server name for your warehouse snapshot, and it looks like: `<server-name>.datawarehouse.fabric.microsoft.com`.  
+
+Users with appropriate permissions (Admin, Member, Contributor, or Viewer) can query a snapshot just like a warehouse. For more information, see [Warehouse connectivity in Microsoft Fabric](connectivity.md).
 
 ## View the snapshot timestamp
 

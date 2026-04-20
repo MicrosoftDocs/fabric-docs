@@ -1,14 +1,11 @@
-﻿---
+---
 title: Use SparkR
 description: How to use SparkR, a light-weight frontend to use Apache Spark from R.
-ms.reviewer: None
 ms.author: lagayhar
-author: lgayhardt
+ms.reviewer: ruxu
 ms.topic: how-to
-ms.custom: 
 ms.date: 06/30/2025
 ms.search.form: R Language
-reviewer: sdgilley
 ---
 
 # Use SparkR
@@ -37,7 +34,7 @@ R support is only available in Spark3.1 or above.  R in Spark 2.4 is not support
 The simplest way to create a DataFrame is to convert a local R data.frame into a Spark DataFrame. 
 
 ```R
-# load SparkR pacakge
+# load SparkR package
 library(SparkR)
 
 # read a SparkR DataFrame from a local R data.frame
@@ -98,7 +95,7 @@ head(faithfulDF_API)
 You can also read a SparkR Dataframe on your Lakehouse using SparkSQL queries.
 
 ```R
-# Regsiter ealier df as temp view
+# Register earlier df as temp view
 createOrReplaceTempView(df, "eruptions")
 
 # Create a df using a SparkSQL query
@@ -195,7 +192,7 @@ head(ldf, 3)
 
 #### `gapply`
 
-Apply a function to each group of a `SparkDataFrame`. The function is to be applied to each group of the `SparkDataFrame` and should have only two parameters: grouping key and R `data.frame` corresponding to that key. The groups are chosen from `SparkDataFrames` column(s). The output of the function should be a `data.frame`. Schema specifies the row format of the resulting `SparkDataFrame`. It must represent R function’s output schema from Spark [data types](https://spark.apache.org/docs/latest/sparkr.html#data-type-mapping-between-r-and-spark). The column names of the returned `data.frame` are set by user.
+Apply a function to each group of a `SparkDataFrame`. The function is to be applied to each group of the `SparkDataFrame` and should have only two parameters: grouping key and R `data.frame` corresponding to that key. The groups are chosen from `SparkDataFrames` column(s). The output of the function should be a `data.frame`. Schema specifies the row format of the resulting `SparkDataFrame`. It must represent R function's output schema from Spark [data types](https://spark.apache.org/docs/latest/sparkr.html#data-type-mapping-between-r-and-spark). The column names of the returned `data.frame` are set by user.
 
 ```R
 # determine six waiting times with the largest eruption time in minutes.

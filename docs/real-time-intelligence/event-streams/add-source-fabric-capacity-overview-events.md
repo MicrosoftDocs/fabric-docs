@@ -1,12 +1,11 @@
 ---
-title: Add Fabric capacity overview event source to an eventstream
-description: Learn how to add Fabric capacity overview event source to an eventstream. This feature is currently in preview.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+title: Fabric Capacity Overview Source in Fabric Eventstream
+description: Fabric capacity overview events can be added as a source to your eventstream in Microsoft Fabric. Follow these steps to configure, connect, and publish your eventstream.
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
-ms.date: 03/18/2025
+ms.date: 04/02/2026
+author: spelluru
+ms.author: spelluru
 ms.search.form: Source and Destination
 ---
 
@@ -14,25 +13,7 @@ ms.search.form: Source and Destination
 
 This article shows you how to add Fabric capacity overview event source to an eventstream.
 
-[!INCLUDE [consume-fabric-events-regions](../../real-time-hub/includes/consume-fabric-events-regions.md)]
-
-Fabric Capacity Overview Events provide summary level information related to your capacity. These events can be used to create alerts related to your capacity health via Data Activator or can be stored in an Eventhouse for granular or historical analysis.
-
-With Fabric event streams, you can capture these Fabric capacity overview events, transform them, and route them to various destinations in Fabric for further analysis. This seamless integration of Fabric capacity overview events within Fabric event streams gives you greater flexibility for monitoring and analyzing activities in your Fabric workspace.
-
-Fabric event streams support the following Fabric capacity overview events:
-
-| Event type name | Description |
-| --------------- | ----------- |
-| Microsoft.Fabric.Capacity.Summary | Emitted every 30 seconds to summarize the capacity usage across all operations during that interval. |
-| Microsoft.Fabric.Capacity.State | Emitted when a capacity’s state changes. For example, when a capacity is paused or resumed. |
-
-
-## Prerequisites
-
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
-
+[!INCLUDE [fabric-capacity-overview-connector-prerequisites](./includes/connectors/fabric-capacity-overview-connector-prerequisites.md)]
 
 ## Add Fabric capacity overview events as source
 
@@ -44,7 +25,8 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 
 ## Configure and connect to Fabric capacity overview events
-[!INCLUDE [fabric-capacity-overview-connector](includes/fabric-capacity-overview-connector.md)]
+
+[!INCLUDE [fabric-capacity-overview-connector-configuration](./includes/connectors/fabric-capacity-overview-connector-configuration.md)]
 
 
 ## View updated eventstream
@@ -65,3 +47,5 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Create eventstreams for discrete events](create-eventstreams-discrete-events.md)
+
+

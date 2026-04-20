@@ -3,8 +3,6 @@ title: R and Python visuals admin settings
 description: Learn how to configure R and Python visuals admin settings in Fabric.
 author: msmimart
 ms.author: mimart
-ms.reviewer: ''
-
 ms.custom:
   - tenant-setting
 ms.topic: how-to

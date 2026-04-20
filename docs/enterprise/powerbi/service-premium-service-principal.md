@@ -1,8 +1,8 @@
 ﻿---
 title: Automate Power BI Premium workspace and semantic model tasks with service principals
 description: Learn how to use service principals for automating Power BI Premium workspace and semantic model management tasks.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.reviewer: kayu
 ms.service: powerbi
 ms.subservice: powerbi-premium

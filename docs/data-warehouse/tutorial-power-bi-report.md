@@ -1,8 +1,6 @@
 ---
 title: "Data Warehouse Tutorial: Create a Direct Lake Semantic Model and Power BI Report"
 description: "In this tutorial, learn how to create a Direct Lake semantic model and a Power BI report."
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: scbradl
 ms.date: 07/15/2025
 ms.topic: tutorial

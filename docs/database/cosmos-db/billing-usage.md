@@ -1,8 +1,7 @@
 ---
 title: Billing and Utilization Data For Cosmos DB Database
 description: Learn about billing concepts for compute and storage and how to monitor usage for Cosmos DB in Microsoft Fabric.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: concept-article
 ms.date: 10/28/2025
 show_latex: true
@@ -76,3 +75,4 @@ The app has the ability to filter usage to Cosmos DB databases in Fabric. Once a
 ## Related content
 
 * [Monitor Cosmos DB in Microsoft Fabric](how-to-monitor.md)
+

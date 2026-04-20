@@ -1,10 +1,7 @@
 ---
 title: Microsoft Fabric Workload Development Kit overview
 description: Learn about building a Fabric workload.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: overview
-ms.custom:
 ms.date: 05/21/2024
 ---
 
@@ -62,3 +59,4 @@ Any use of third-party trademarks or logos are subject to those third-party's po
 * [Publish a Fabric workload to Workload Hub](publish-workload-flow.md)
 * [Monetize your workload](monetization.md)
 * [Quick start: Run a workload sample](quickstart-sample.md)
+

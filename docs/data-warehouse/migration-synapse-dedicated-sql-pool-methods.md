@@ -1,8 +1,6 @@
 ---
 title: Migration Methods for ​​Azure Synapse Dedicated SQL Pools to Fabric Migration​
 description: This article details the methods of migration of data warehousing in Azure Synapse dedicated SQL pools to Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: arturv, johoang
 ms.date: 02/04/2026
 ms.topic: concept-article
@@ -100,7 +98,7 @@ For fact tables, we recommended using Data Factory with partitioning option to i
 
 However, the increased parallelized reads require dedicated SQL pool to scale to higher DWU to allow the extract queries to be executed. Leveraging partitioning, the rate is improved ten times over a no partition option. You could increase the DWU to get additional throughput via compute resources, but the dedicated SQL pool has a maximum 128 active queries allow.
 
-For more information on Synapse DWU to Fabric mapping, see [Blog: Mapping ​​Azure Synapse dedicated SQL pools to Fabric data warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/).
+For more information on Synapse DWU to Fabric mapping, see [Blog: Mapping ​​Azure Synapse dedicated SQL pools to Fabric Data Warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/).
 
 ### Option 3. DDL migration - Copy Wizard ForEach Copy Activity
 
@@ -306,5 +304,5 @@ Several factors to note so that you can design your process for maximum performa
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
 - [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)
 - [Security for data warehousing in Microsoft Fabric](security.md)
-- [Blog: Mapping ​​Azure Synapse dedicated SQL pools to Fabric data warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/)
+- [Blog: Mapping ​​Azure Synapse dedicated SQL pools to Fabric Data Warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/)
 - [Microsoft Fabric Migration Overview](../fundamentals/migration.md)

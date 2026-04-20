@@ -4,7 +4,7 @@ description: This article explains how to copy data using ServiceNow.
 ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 11/19/2024
-ms.custom: 
+ms.custom:
   - pipelines
   - template-how-to
   - connectors

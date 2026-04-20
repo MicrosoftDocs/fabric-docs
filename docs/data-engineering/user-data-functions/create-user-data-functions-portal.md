@@ -1,9 +1,7 @@
 ---
 title: Quickstart - Create a Fabric User data functions item
 description: Learn how to create a Fabric User data functions item in the portal.
-ms.author: eur
 ms.reviewer: sumuth
-author: eric-urban
 ms.topic: quickstart
 ms.custom: freshness-kr
 ms.date: 01/21/2026

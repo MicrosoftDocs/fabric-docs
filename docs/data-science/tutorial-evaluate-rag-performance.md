@@ -1,13 +1,9 @@
 ---
 title: "Tutorial: Assessing RAG System Performance"
 description: Learn how to evaluate RAG performance using Azure OpenAI and Azure AI Search with this step-by-step tutorial. Includes metrics, visualization, and benchmarking.
-author: jonburchel
-ms.author: jburchel
 ms.reviewer: alsavelv
 ms.date: 08/27/2025
 ms.topic: tutorial
-ms.service: fabric
-ms.subservice: data-science
 ai.usage: ai-assisted
 ---
 # Evaluation of RAG performance basics

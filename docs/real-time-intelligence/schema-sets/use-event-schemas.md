@@ -1,11 +1,7 @@
 ---
 title: Use Schemas in Eventstreams - Fabric Real-Time Intelligence
-ms.service: fabric
-ms.reviewer: spelluru
 description: Discover how to enable and manage schemas in eventstreams. Step-by-step guidance for custom endpoints, Azure SQL CDC, and schema-validated destinations.
 #customer intent: As a user, I want to learn how to use event schemas in eventstreams in Real-Time Intelligence.
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
 ms.custom:
   - ai-gen-docs-bap
@@ -36,4 +32,6 @@ Currently, schema-validated events can only be sent to:
 - [Eventhouse (push mode)](../event-streams/add-source-azure-event-hubs.md?pivots=extended-features#configure-schemas-for-an-eventhouse-destination)
 - [Custom app or endpoint](../event-streams/add-source-azure-event-hubs.md?pivots=extended-features#configure-schema-for-a-custom-endpoint-destination)
 - Another stream (derived stream)
+
+
 

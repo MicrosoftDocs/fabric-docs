@@ -73,8 +73,6 @@
                 "data-warehouse/**/*.yml": "WilliamDAssafMSFT",
                 "database/**/*.md": "WilliamDAssafMSFT",
                 "database/**/*.yml": "WilliamDAssafMSFT",
-                "database/sql/**/*.md": "WilliamDAssafMSFT",
-                "database/sql/**/*.yml": "WilliamDAssafMSFT",
                 "database/cosmos-db/**/*.md": "seesharprun",
                 "database/cosmos-db/**/*.yml": "seesharprun",
                 "enterprise/**/*.md": "dknappettmsft",
@@ -121,8 +119,6 @@
                 "data-warehouse/**/*.yml": "wiassaf",
                 "database/**/*.md": "wiassaf",
                 "database/**/*.yml": "wiassaf",
-                "database/sql/**/*.md": "wiassaf",
-                "database/sql/**/*.yml": "wiassaf",
                 "database/cosmos-db/**/*.md": "sidandrews",
                 "database/cosmos-db/**/*.yml": "sidandrews",
                 "enterprise/**/*.md": "daknappe",
@@ -174,7 +170,7 @@
                 "database/cosmos-db/**/*.yml": "database-cosmos-db",
                 "database/cosmos-db/**/*.md": "database-cosmos-db",
                 "database/sql/**/*.yml": "database-sql",
-                "database/sql/**/*.md": "database-sql",                  
+                "database/sql/**/*.md": "database-sql",
                 "get-started/**/*.yml": "get-started",
                 "get-started/**/*.md": "get-started",
                 "fundamentals/**/*.yml": "get-started",
@@ -187,6 +183,8 @@
                 "iq/**/*.yml": "iq",
                 "iq/ontology/**/*.md": "iq-ontology",
                 "iq/ontology/**/*.yml": "iq-ontology",
+                "iq/plan/**/*.md": "iq-plan",
+                "iq/plan/**/*.yml": "iq-plan",
                 "onelake/**/*.md": "onelake",
                 "onelake/**/*.yml": "onelake",
                 "real-time-hub/**/*.md": "rti-hub",
@@ -325,9 +323,29 @@
         "template": [],
         "dest": "fabric-docs",
         "rules": {
+            "sensitive-language-ma": {
+                "exclude": [
+                    "docs/mirroring/mysql/**/*.md",
+                    "docs/mirroring/postgresql/**/*.md"
+                ]
+            },
             "sensitive-language-sl": {
                 "exclude": [
+                    "docs/mirroring/mysql/**/*.md",
+                    "docs/mirroring/postgresql/**/*.md",
                     "real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md"
+                ]
+            },
+            "sensitive-language-bl": {
+                "exclude": [
+                    "docs/mirroring/mysql/**/*.md",
+                    "docs/mirroring/postgresql/**/*.md"
+                ]
+            },
+            "sensitive-language-wl": {
+                "exclude": [
+                    "docs/mirroring/mysql/**/*.md",
+                    "docs/mirroring/postgresql/**/*.md"
                 ]
             }
         }

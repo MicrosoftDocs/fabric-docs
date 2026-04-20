@@ -4,7 +4,6 @@ description: Learn how to view the lineage of Fabric items.
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.custom:
 ms.date: 11/06/2023
 ---
 
@@ -77,6 +76,12 @@ Lineage view is an interactive canvas. You can use the mouse and touchpad to nav
 * To have more room for the graph itself, use the full screen option at the bottom-right corner.
 
     :::image type="content" source="./media/lineage/lineage-zoom.png" alt-text="Screenshot of zoom in or out, or full screen options." border="false":::
+
+## Accessibility 
+
+Lineage supports keyboard navigation and screen readers.
+
+Tab navigation follows a depth‑first search (DFS) traversal of the graph, which may differ from the visual layout. Screen readers announce node relationships to help understand lineage dependencies.
 
 ## Considerations and limitations
 

@@ -1,8 +1,6 @@
 ---
 title: Search and visualize your modeled data
 description: Learn about ways to explore your data in digital twin builder (preview).
-author: baanders
-ms.author: baanders
 ms.date: 07/01/2025
 ms.topic: how-to
 ---

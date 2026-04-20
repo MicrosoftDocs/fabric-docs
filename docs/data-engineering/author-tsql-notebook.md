@@ -1,13 +1,11 @@
 ---
 title: "Author and run T-SQL notebooks in Microsoft Fabric"
 description: Learn how to author and run T-SQL code in a notebook within the data engineering workload. Also learn how to run cross warehouse queries.
-author: eric-urban
-ms.author: eur
 ms.reviewer: qixwang
 ms.topic: how-to
 ms.date: 06/03/2025
 ms.custom: FY25Q1-Linter, sfi-image-nochange
-# Customer Intent: As a data engineer, I want to run T-SQL code Fabric notebooks, manage queries, and perform cross datawarehouse queries.
+#customer intent: As a data engineer, I want to run T-SQL code Fabric notebooks, manage queries, and perform cross datawarehouse queries.
 ---
 
 # T-SQL support in Microsoft Fabric notebooks
@@ -156,6 +154,7 @@ Historical queries can take up to 15 minutes to appear in list depending on the 
 - Parameter cell isn't yet supported in T-SQL notebook. The parameter passed from pipeline or scheduler won't be able to be used in T-SQL notebook.
 - The monitor URL inside the pipeline execution isn't yet supported in the T-SQL notebook.
 - The snapshot feature isn't yet supported in the T-SQL notebook.
+- Currently, Service principals authentication is not supported in T-SQL notebooks.
 
 
 ## Related content

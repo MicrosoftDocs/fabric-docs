@@ -1,9 +1,7 @@
 ---
 title: ArcGIS GeoAnalytics for Microsoft Fabric (Generally Available)
 description: Learn how to use the ArcGIS GeoAnalytics library in Microsoft Fabric, including data import, enrichment, visualization, and support resources.
-ms.reviewer: sngun
-ms.author: arali
-author: ms-arali
+ms.reviewer: arali
 ms.topic: concept-article
 ms.date: 10/31/2025
 #customer intent: As a data scientist or Spark developer, I want to use ArcGIS GeoAnalytics in Microsoft Fabric to perform spatial data transformation and analysis.
@@ -150,3 +148,4 @@ Support for ArcGIS GeoAnalytics can be found through the [Esri Community](https:
 * [ArcGIS GeoAnalytics for Microsoft Fabric](https://go.esri.com/geoanalytics-in-ms-fabric-overview)
 * [Developer documentation for ArcGIS GeoAnalytics for Microsoft Fabric](https://developers.arcgis.com/geoanalytics-fabric)
 * [ArcGIS GeoAnalytics for Microsoft Fabric Community](https://community.esri.com/t5/arcgis-geoanalytics-for-microsoft-fabric/ct-p/arcgis-geoanalytics-for-microsoft-fabric)
+

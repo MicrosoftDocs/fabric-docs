@@ -1,8 +1,6 @@
 ---
 title: View Data in the Data Preview
 description: Learn about using the Data preview in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: jacindaeng
 ms.date: 04/06/2025
 ms.topic: how-to

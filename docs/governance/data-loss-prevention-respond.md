@@ -3,10 +3,7 @@ title: "Respond to a Microsoft Purview Data Loss Prevention (DLP) policy violati
 description: "Learn how to respond to a DLP policy violation in Fabric and Power BI."
 author: msmimart
 ms.author: mimart
-ms.service: fabric
-ms.subservice: governance
-ms.custom:
-ms.topic: how-to #Don't change
+ms.topic: how-to
 ms.date: 11/07/2024
 #customer intent: As an owner of a Fabric lakehouse or Power BI semantic model, I want to understand how to deal with DLP policy violations on those items.
 ---
@@ -17,7 +14,7 @@ When a [supported item type](/purview/dlp-powerbi-get-started#supported-item-typ
 
 * From a semantic model details page, select the **View all** button on the policy tip.
 
-* In a lakehouse's edit mode, select the policy violation notice in the header and then select **View all** in the policy violation section of the flyout that appears.
+* In a Fabric item's edit mode, select the policy violation notice in the header and then select **View all** in the policy violation section of the flyout that appears.
 
 This article describes the information you see on the side pane and the actions you can take regarding the violations.
 

@@ -1,8 +1,6 @@
 ---
 title: "Create GraphQL API in your SQL database"
 description: Learn how to create GraphQL API in your SQL database in the Fabric portal.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: antho, sukkaur
 ms.date: 10/07/2024
 ms.topic: how-to

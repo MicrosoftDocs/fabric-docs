@@ -1,12 +1,10 @@
 ---
 title: Add Azure Blob Storage event source to an eventstream
 description: Learn how to add Azure Blob Storage event source to an eventstream. This feature is currently in preview.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 2/05/2024
+ms.date: 03/31/2026
 ms.search.form: Source and Destination
 ---
 
@@ -16,46 +14,7 @@ This article shows you how to add an Azure Blob Storage event source to an event
 
 When you add Azure Blob Storage events as an eventstream source, it automatically creates system events to your Blob Storage account and links them to Fabric events in Real-Time hub. You can then convert these events into continuous data streams and transform them before routing them to various destinations in Fabric.
 
-Fabric event streams support the following Blob Storage event types:
-
-|Event name|Description|
-|-------|------------|
-|Microsoft.Storage.BlobCreated|Triggered when a blob is created or replaced.|
-|Microsoft.Storage.BlobDeleted                    |Triggered when a blob is deleted.|
-|Microsoft.Storage.BlobRenamed                    |Triggered when a blob is renamed.|
-|Microsoft.Storage.BlobTierChanged                |Triggered when the blob access tier is changed.|
-|Microsoft.Storage.DirectoryCreated               |Triggered when a directory is created.|
-|Microsoft.Storage.DirectoryRenamed               |Triggered when a directory is renamed.|
-|Microsoft.Storage.AsyncOperationInitiated        |Triggered when an operation involving moving or copying data from the archive to hot or cool tiers is initiated.|
-|Microsoft.Storage.DirectoryDeleted               |Triggered when a directory is deleted.|
-|Microsoft.Storage.BlobInventoryPolicyCompleted   |Triggered when the inventory run completes for a rule that defines an inventory policy.|
-|Microsoft.Storage.LifecyclePolicyCompleted       |Triggered when the actions defined by a lifecycle management policy are done.|
-
-For more information about available event types, see [Azure Blob Storage as Event Grid source](/azure/event-grid/event-schema-blob-storage).
-
-> [!NOTE]
-> Azure Blob Storage events connector is **not supported** in the following workspace capacity regions: Central US, Germany West Central, South-Central US, West US2, West US3, West India.
-
-## Unstreamed vs. streamed events
-
-Azure Blob Storage events are discrete events with clear start and end points. Fabric Real-Time hubs can capture these events in two formats:
-
-- **Unstreamed events.** These events are represented in their raw format as discrete events. If Azure Blob Storage events aren't streamed in an eventstream, they're not directly connected to the eventstream, and the default stream isn't created.
-
-  This status indicates that the events are linked to Fabric events in the Real-Time hub and awaiting further action. Actions include creating alerts with Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] that execute Fabric job items like Pipeline or Notebook in the **Fabric events** tab in Real-Time hub.
-
-  :::image type="content" border="true" source="media/add-source-azure-blob-storage/unstreamed.png" lightbox="media/add-source-azure-blob-storage/unstreamed.png" alt-text="A screenshot showing unstreamed Azure Blob Storage events with the button to Stream events.":::
-
-- **Streamed events.** These events are converted to continuous events, enabling real-time transformation and routing to various destinations in Fabric for further analysis. In an eventstream, selecting the **Stream events** button on an unstreamed Azure Blob Storage source converts the events into continuous events. The eventstream is then assigned a default stream, letting you add operations and route it to other destinations in Fabric.
-
-  :::image type="content" border="true" source="media/add-source-azure-blob-storage/streamed.png" alt-text="A screenshot showing streamed Azure Blob Storage events in an eventstream.":::
-
-## Prerequisites
-
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-- Access to an Azure Blob Storage **StorageV2 (general purpose v2)**, **BlockBlobStorage**, or **BlobStorage** account. The **Storage (general purpose v1)** storage type doesn't support integration with Fabric event streams.
-- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
-
+[!INCLUDE [azure-blob-storage-source-connector-prerequisites](./includes/connectors/azure-blob-storage-source-connector-prerequisites.md)]
 
 ## Add Azure Blob Storage events as source
 
@@ -68,7 +27,7 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 ## Configure and connect to Azure Blob Storage events
 
-[!INCLUDE [azure-blob-storage-connector](includes/azure-blob-storage-source-connector.md)]
+[!INCLUDE [azure-blob-storage-connector](./includes/connectors/azure-blob-storage-source-connector-configuration.md)]
 
 ## View updated eventstream
 
@@ -77,7 +36,7 @@ On the **Select a data source** page, search for and select **Connect** on the *
     :::image type="content" source="media/add-source-azure-blob-storage/edit.png" alt-text="A screenshot of the Azure Blob Storage events source added to the eventstream." lightbox="media/add-source-azure-blob-storage/edit.png":::
 
     > [!NOTE]
-    > The Eventstream node in the editor doesn't have a default stream created. This is because the Blob Storage events are still in the form of discrete events and aren't yet converted to a stream or connected to the eventstream.
+    > The Eventstream node in the editor doesn't have a default stream created. It's because the Blob Storage events are still in the form of discrete events and aren't yet converted to a stream or connected to the eventstream.
 1. If you want to transform the Fabric workspace events, open your eventstream and select **Edit** to enter **Edit mode**. Then you can add operations to transform the Fabric workspace events or route them to a destination such as Lakehouse.
 
     :::image type="content" source="media/add-source-azure-blob-storage/live.png" alt-text="A screenshot that shows the eventstream in live mode." lightbox="media/add-source-azure-blob-storage/live.png":::
@@ -120,3 +79,5 @@ After you link Azure Blob Storage events to Fabric events in Real-Time hub, you 
 
 - [Add Fabric workspace item events to an eventstream](add-source-fabric-workspace.md)
 - [Create eventstreams for discrete events](create-eventstreams-discrete-events.md)
+
+

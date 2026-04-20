@@ -1,8 +1,6 @@
 ---
 title: Hybrid Search in Cosmos DB Database
 description: Combine vector search with full text search in Cosmos DB in Fabric.
-author: seesharprun
-ms.author: sidandrews
 ms.topic: concept-article
 ms.date: 07/14/2025
 ---

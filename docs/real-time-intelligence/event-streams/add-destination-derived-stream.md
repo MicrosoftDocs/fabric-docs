@@ -1,11 +1,8 @@
 ---
 title: Add a derived stream destination to an eventstream
 description: Learn how to add a derived stream destination to an eventstream.
-ms.reviewer: spelluru
-ms.author: anboisve
-author: ahartoon
+ms.reviewer: anboisve
 ms.topic: how-to
-ms.custom:
 ms.date: 11/10/2025
 ms.search.form: Source and Destination
 ---
@@ -70,3 +67,5 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Lakehouse](add-destination-lakehouse.md)
 - [Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
+
+

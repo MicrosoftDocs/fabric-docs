@@ -3,7 +3,7 @@ title: Functions activity
 description: Learn how to add a functions activity to a pipeline and use it to run Fabric user data functions or Azure Functions.
 ms.reviewer: shaween18, abnarain
 ms.topic: how-to
-ms.custom: 
+ms.custom:
   - pipelines
   - Build-2025
 ms.date: 12/08/2025
@@ -112,6 +112,11 @@ For guidance on creating and configuring your OPDG, see [How to create on-premis
 Once you successfully created and configured your gateway, it appears under the **Data Gateway** dropdown in the Azure Function connection dialog.
 
 :::image type="content" source="media/functions-activity/create-new-connection-with-data-gateway-azure-function.png" alt-text="Screenshot showing the data gateway connection dialog for the Azure Function activity.":::
+
+## Authentication requirements
+**Fabric user data functions** run using Fabric‑managed identity and workspace permissions.
+
+**Azure Functions** require an authenticated Azure Function connection and any function‑specific headers or keys, with optional gateway support for private or network‑restricted endpoints.
 
 ## Save and run or schedule the pipeline
 

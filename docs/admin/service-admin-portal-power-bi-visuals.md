@@ -3,12 +3,10 @@ title: Power BI visuals admin settings
 description: Learn how to configure Power BI visuals admin settings in Fabric.
 author: msmimart
 ms.author: mimart
-ms.reviewer: ''
-
 ms.custom:
   - tenant-setting
-ms.topic: how-to
-ms.date: 12/20/2023
+ms.topic: concept-article
+ms.date: 04/08/2026
 LocalizationGroup: Administration
 ---
 
@@ -17,11 +15,6 @@ LocalizationGroup: Administration
 These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 All the Power BI visuals admin settings, including Power BI visuals tenant settings, are described in [Manage Power BI visuals admin settings](organizational-visuals.md).
-
-* [Allow visuals created using the Power BI SDK](#allow-visuals-created-using-the-power-bi-sdk)
-* [Add and use certified visuals only (block uncertified)](#add-and-use-certified-visuals-only-block-uncertified)
-* [Allow downloads from custom visuals](#allow-downloads-from-custom-visuals)
-* [Allow custom visuals to get user Microsoft Entra ID access tokens](#allow-custom-visuals-to-get-user-microsoft-entra-id-access-tokens)
 
 ## Allow visuals created using the Power BI SDK
 
@@ -41,12 +34,21 @@ Enabling this setting lets [custom visuals](/power-bi/developer/visuals/power-bi
 
 To learn more, see [Export data to file](organizational-visuals.md#export-data-to-file).
 
-## Allow custom visuals to get user Microsoft Entra ID access tokens
+## AppSource Custom Visuals SSO
 
-Enabling this setting lets [custom visuals](/power-bi/developer/visuals/power-bi-custom-visuals) obtain Microsoft Entra ID (formerly known as Azure AD) access tokens for signed-in users, facilitating single sign-on authentication.
+Enable this setting to allow AppSource custom visuals to use single sign-on. This feature allows custom visuals from AppSource to get Microsoft Entra ID access tokens for signed-in users through the Authentication API.
 
-To learn more, see [Obtain Microsoft Entra access token](organizational-visuals.md#appsource-custom-visuals-sso).
+Microsoft Entra ID access tokens include personal information, including users' names and email addresses, and might be sent across regions and compliance boundaries.
+
+To learn more, see [AppSource custom visuals SSO](organizational-visuals.md#appsource-custom-visuals-sso).
+
+## Allow access to the browser's local storage
+
+When this setting is on, custom visuals can store information in the user's browser local storage.
+
+To learn more, see [AppSource custom visuals SSO](organizational-visuals.md#appsource-custom-visuals-sso).
 
 ## Related content
 
 * [About tenant settings](tenant-settings-index.md)
+* [Manage Power BI visuals admin settings](organizational-visuals.md)

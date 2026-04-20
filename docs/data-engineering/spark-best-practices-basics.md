@@ -1,8 +1,6 @@
 ---
 title: Spark Basics
 description: Understand core Spark concepts including partitions, skew, memory model, formats, UDF trade-offs, and baseline best practices.
-author: eric-urban
-ms.author: eur
 ms.reviewer: anuve
 ms.topic: concept-article
 ms.custom:

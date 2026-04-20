@@ -1,12 +1,8 @@
 ---
 title: Manage Objects in Your Fabric Data Warehouse
 description: Learn about the object explorer in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: pvenkat, fresantos
 ms.date: 09/24/2025
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: how-to
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
 ---

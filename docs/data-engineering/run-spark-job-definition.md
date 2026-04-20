@@ -2,8 +2,6 @@
 title: Run an Apache Spark job definition
 description: Learn how to run or schedule a Spark job definition, and where to find the job definition status and details.
 ms.reviewer: qixwang
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 10/20/2023

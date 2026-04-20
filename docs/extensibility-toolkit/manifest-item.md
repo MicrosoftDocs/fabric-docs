@@ -1,11 +1,10 @@
 ---
 title: Item Manifest
 description: What is the item manifest and how does it work.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: concept-article
-ms.custom:
 ms.date: 12/15/2025
+ai-usage: ai-assisted
 ---
 
 # Item manifest
@@ -34,6 +33,17 @@ Use the JSON file to describe front-end behavior and presentation, such as:
 > Item names must be unique within a single workload. Choose distinct names to avoid collisions across your item manifests.
 
 In the [Starter-Kit](https://aka.ms/fabric-extensibility-starter-kit), PowerShell scripts read values from the environment file and populate placeholders in newly created item XML files and during manifest builds. This keeps item identifiers and metadata consistent across XML/JSON and the workload/product manifests.
+
+### Item filename constraints
+
+Item filenames must meet the following requirements:
+
+- Filenames must be unique within the workload. Duplicate filenames result in an upload error.
+- Filenames must contain alphanumeric (English) characters or hyphens only.
+- Filenames cannot exceed a length of 32 characters.
+- Using other characters or exceeding the length limit result in an upload error.
+
+See [Manifest overview](manifest-overview.md#package-limits) for complete package limits.
 
 ## How item manifests fit with other manifests
 

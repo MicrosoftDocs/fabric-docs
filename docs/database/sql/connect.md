@@ -1,10 +1,8 @@
 ---
 title: "Connect to Your SQL Database"
 description: Learn about options to connect to your SQL database in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: yoleichen, antho, sukkaurk, imotiwala, maghan
-ms.date: 11/05/2025
+ms.date: 03/03/2026
 ms.topic: how-to
 ms.search.form: product-databases, Connect to SQL database
 ---
@@ -34,24 +32,25 @@ A new SQL database in Fabric automatically opens into the web editor and an exis
 
 In [!INCLUDE [product-name](../../includes/product-name.md)], the SQL analytics endpoint and SQL database are accessible through a Tabular Data Stream, or TDS endpoint, familiar to all modern web applications that interact with [a SQL Server TDS endpoint](/sql/relational-databases/security/networking/tds-8). This is referred to as the SQL connection string within the [!INCLUDE [product-name](../../includes/product-name.md)] user interface.
 
-The connection string of the SQL database is similar to the connection string of Azure SQL Database, `<server-unique-identifer>.database.windows.net`. The SQL analytics endpoint connection string looks like `<server-unique-identifier>.<tenant>.fabric.microsoft.com`.
+- The server name of the SQL database is similar to the server name of Azure SQL Database, `<server-unique-identifier>.database.windows.net`. 
+- The SQL analytics endpoint server name is similar to the server name of a warehouse, `<server-unique-identifier>.<tenant>.fabric.microsoft.com`.
 
-To find the SQL connection string for your **Fabric SQL database**:
+To find the server name for your **Fabric SQL database**:
 
 - Go to the settings of your SQL database item.
 - Or, in the item list, select the `...` menu. Select **Settings** then **Connection strings**. Fabric provides complete connection strings for providers including ADO.NET, JDBC, ODBC, PHP, and Go.
 - Or, select the **Open in** button and select **SQL Server Management Studio** or **Visual Studio Code**. The server name and database name are displayed.
 
-To find the SQL connection string for the **SQL analytics endpoint** of your Fabric SQL database:
+To find the server name of the **SQL analytics endpoint** of your SQL database:
 
 - Go to the settings of your SQL database item, then select **Connection strings**.
-- Or, select the `...` menu, then select **SQL endpoint**, then copy the **SQL connection string**.
+- Or, select the `...` menu, then select **SQL endpoint**, then copy the **SQL connection string**. This is the server name.
 
 ## Open in button to connect
 
-You can easy connect to your SQL database with the **Open in** button in the Fabric portal [query editor](query-editor.md). Choose [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true).
+You can easy connect to your SQL database with the **Open in** button in the Fabric portal [query editor](query-editor.md). Choose [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) or [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true).
 
-:::image type="content" source="media/connect/open-in-sql-tools.png" alt-text="Screenshot from the Fabric portal query editor showing the Open in button for easy connections with SSMS or the mssql extension in VS Code." lightbox="media/connect/open-in-sql-tools.png":::
+:::image type="content" source="media/connect/open-in-sql-tools.png" alt-text="Screenshot from the Fabric portal query editor showing the Open in button for easy connections with SSMS or the MSSQL extension in VS Code." lightbox="media/connect/open-in-sql-tools.png":::
 
 ## Connect with SQL Server Management Studio manually
 
@@ -135,3 +134,4 @@ For more possibilities to query your data with T-SQL inside Python Notebooks, se
 - [Authentication in SQL database in Microsoft Fabric](authentication.md)
 - [Authorization in SQL database in Microsoft Fabric](authorization.md)
 - [Quickstart: Connect to a SQL database in Fabric with the Microsoft Python Driver for SQL Server](connect-python.md)
+

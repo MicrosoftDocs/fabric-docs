@@ -3,8 +3,6 @@ title: Microsoft Copilot in Fabric in the Data Factory Workload Overview
 description: Learn how Microsoft Copilot in Fabric
 ms.reviewer: maghan, sngun
 ms.date: 09/02/2025
-ms.service: fabric
-ms.subservice: data-factory
 ms.topic: overview
 ms.collection:
   - ce-skilling-ai-copilot
@@ -98,5 +96,6 @@ Here are the current limitations of Copilot in the Data Factory workload:
 ## Related content
 
 - [Get started with Copilot in Fabric in the Data Factory workload](copilot-fabric-data-factory-get-started.md)
-- [Copilot pipeline expressions builder](copilot-pipeline-expression-builder.md)
+- [Copilot pipeline expressions builder](expression-language.md#build-pipeline-expressions-with-copilot)
 - [Privacy, security, and responsible use of Copilot in Fabric in the Data Factory workload](../fundamentals/copilot-data-factory-privacy-security.md)
+

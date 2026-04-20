@@ -1,18 +1,15 @@
 ---
 title: Add an Azure Data Explorer Database as a Source
 description: Learn how to add an Azure Data Explorer database as a source to a Microsoft Fabric eventstream.
-author: spelluru
-ms.author: spelluru
 ms.topic: how-to
-ms.custom:
-ms.date: 03/19/2025
+ms.date: 04/01/2026
 ---
 
 # Add an Azure Data Explorer database source to an eventstream (preview)
 
 This article shows you how to add an Azure Data Explorer database (DB) source to a Microsoft Fabric eventstream.  
 
-[!INCLUDE [azure-data-explorer-description-prerequisites](./includes/azure-data-explorer-description-prerequisites.md)]
+[!INCLUDE [azure-data-explorer-description-prerequisites](./includes/connectors/azure-data-explorer-description-prerequisites.md)]
 
 ## Add an Azure Data Explorer DB as a source
 
@@ -24,7 +21,7 @@ On the **Select a data source** page, search for **Azure Data Explorer DB**. On 
 
 ## Configure and connect to an Azure Data Explorer DB
 
-[!INCLUDE [azure-data-explorer-connector](./includes/azure-data-explorer-connector.md)]
+[!INCLUDE [azure-data-explorer-connector](./includes/connectors/azure-data-explorer-connector-configuration.md)]
 
 ## View an updated eventstream
 

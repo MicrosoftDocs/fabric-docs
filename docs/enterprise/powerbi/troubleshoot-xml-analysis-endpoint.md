@@ -1,9 +1,8 @@
-﻿---
+---
 title: Troubleshoot XMLA endpoint connectivity in Power BI
 description: Describes how to troubleshoot connectivity through the XMLA endpoint.
-author: JulCsc
-ms.author: juliacawthra
-ms.reviewer: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.topic: troubleshooting
@@ -322,4 +321,6 @@ If memory errors persist or occur frequently, this indicates that your capacity 
 - [Automate Premium workspace and semantic model tasks with service principals](service-premium-service-principal.md)  
 - [Troubleshooting Analyze in Excel](/power-bi/collaborate-share/desktop-troubleshooting-analyze-in-excel)  
 - [Tabular model solution deployment](/analysis-services/deployment/tabular-model-solution-deployment?view=power-bi-premium-current&preserve-view=true)
+
+
 

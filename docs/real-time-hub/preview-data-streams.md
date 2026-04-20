@@ -1,10 +1,8 @@
 ---
 title: Preview streams in Fabric Real-Time hub
 description: This article shows how to preview streams in Fabric Real-Time hub.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: how-to
-ms.custom:
 ms.date: 12/11/2025
 ---
 
@@ -40,3 +38,4 @@ When you select **Preview data** from one of the options described earlier, you 
 - [View data stream details](view-data-stream-details.md)
 - [Endorse data streams](endorse-data-streams.md)
 - [Explore fabric events](explore-fabric-events.md)
+

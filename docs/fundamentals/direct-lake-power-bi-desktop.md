@@ -1,8 +1,9 @@
 ---
 title: "Learn About Editing Semantic Models in Direct Lake in Power BI Desktop"
 description: Describes using Power BI Desktop to edit semantic models in Power BI Desktop.
-author: DataZoeMS
-ms.author: zoedouglas
+author: kgremban
+ms.author: kgremban
+ms.reviewer: zoedouglas
 ms.date: 08/01/2025
 ms.service: powerbi
 ms.subservice: powerbi-premium
@@ -107,11 +108,11 @@ If two or more users are live editing the same semantic model and a conflict occ
 
 Selecting the Refresh button when live editing a semantic model with Direct Lake tables performs a schema refresh and reframe the Direct Lake tables. 
 
-The schema refresh checks the tables definitions in the model and compares it to the same named table in the data source for any changes to columns. Changes detected from the data source, in this case a Fabric artifact, are made to the semantic model. For example, a column was added to a table. Changing the table or column name in the semantic model in Power BI Desktop persist after a refresh. 
+The schema refresh checks the tables definitions in the model and compares it to the same named table in the data source for any changes to columns. Changes detected from the data source, in this case a Fabric item such as a lakehouse or warehouse, are made to the semantic model. For example, a column was added to a table. Changing the table or column name in the semantic model in Power BI Desktop persist after a refresh.
 
 Changing a table or column name at the data source removes the table or column on the next schema refresh. You can use [TMDL view](/power-bi/transform-model/desktop-tmdl-view) to see the SourceLineageTag property and update it to the new name to avoid the semantic model removing it on schema refresh.
 
-Another way to perform a schema refresh is to return to [Edit tables](direct-lake-edit-tables.md) and select **OK**. Go to **Transform data** dropdown list then **Data source settings** and select **Edit tables**.
+Another way to perform a schema refresh is to go to the **Transform data** dropdown list, then **Data source settings**, and select **Edit tables**.
 
 Scheduled refresh in the Fabric workspace only reframe the Direct Lake tables without a schema refresh. Learn more about [refresh in Power BI](/power-bi/connect-data/refresh-data).
 
@@ -178,3 +179,4 @@ Now the semantic model is using Direct Lake on OneLake. If there are issues, you
 
 - [Direct Lake overview](direct-lake-overview.md)
 - [Power BI Project files](/power-bi/developer/projects/projects-overview)
+

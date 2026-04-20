@@ -2,12 +2,9 @@
 title: KQL Queryset - Git integration
 description: Learn about the Git integration for KQL Queryset.
 ms.reviewer: bwatts
-ms.author: spelluru
-author: spelluru
 ms.topic: concept-article
-ms.custom:
 ms.date: 05/29/2025
-# customer intent: I want to understand the integration of Eventhouse and KQL database with Microsoft Fabric's deployment pipelines and git, and how to configure and manage them in the ALM system.
+#customer intent: I want to understand the integration of Eventhouse and KQL database with Microsoft Fabric's deployment pipelines and git, and how to configure and manage them in the ALM system.
 ---
 
 # KQL queryset integration

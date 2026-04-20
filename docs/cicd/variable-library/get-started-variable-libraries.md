@@ -1,11 +1,7 @@
 ---
 title: Get Started with Variable Libraries
 description: Learn how to manage Microsoft Fabric variable libraries to customize and share item configurations in a workspace.
-author: billmath
-ms.author: billmath
 ms.reviewer: NimrodShalit
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: quickstart
 ms.date: 12/15/2025
 ms.search.form: Create and use variable library

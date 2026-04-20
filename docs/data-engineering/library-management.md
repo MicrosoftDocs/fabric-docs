@@ -1,18 +1,15 @@
 ---
 title: Manage Apache Spark libraries
-description: Learn how to manage and use libraries following best practices. A library is a collection of prewritten code that can provide extra functionality.
+description: Learn how to manage and use Python, R, and Java libraries in Microsoft Fabric, including best practices for environments and inline installation.
 ms.reviewer: shuaijunye
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
-ms.custom:
-ms.date: 04/16/2024
+ms.date: 03/25/2026
 #customer intent: As a user, I want to learn about the mechanisms that Microsoft Fabric offers to manage libraries in order to make use of prewritten code.
 ---
 
 # Manage Apache Spark libraries in Microsoft Fabric
 
-A library is a collection of prewritten code that developers can import to provide functionality. By using libraries, you can save time and effort by not having to write code from scratch to do common tasks. Instead, import the library and use its functions and classes to achieve the desired functionality. Microsoft Fabric provides multiple mechanisms to help you manage and use libraries.
+A library is a reusable package of code — such as a Python package from PyPI, an R package from CRAN, or a Java JAR — that you can import into your notebooks and Spark job definitions to add functionality without writing it from scratch. Microsoft Fabric provides multiple mechanisms to help you manage and use libraries.
 
 - **Built-in libraries**: Each Fabric Spark runtime provides a rich set of popular preinstalled libraries. You can find the full built-in library list in [Fabric Spark Runtime](runtime.md).
 - **Public libraries**: Public libraries are sourced from repositories such as PyPI and Conda, which are currently supported.
@@ -22,31 +19,45 @@ A library is a collection of prewritten code that developers can import to provi
 
 The following scenarios describe best practices when using libraries in Microsoft Fabric.
 
+### Environment publishing modes (Quick vs Full)
+
+When you install libraries in a Fabric environment, you choose a publishing mode that controls how libraries are delivered to your Spark sessions.
+
+- **Quick mode** publishes in about 5 seconds. Libraries install when a notebook session starts rather than during publish. If a Quick mode package has the same name as a Full mode package, the Quick mode version overrides the Full mode version for that session only. Use Quick mode for rapid, iterative notebook development and early-stage experimentation.
+- **Full mode** creates a stable, reproducible library snapshot. Publishing typically takes 3 to 6 minutes because the system resolves dependencies and validates compatibility. Session startup adds 1 to 3 minutes for dependency deployment, depending on dependency size. Use Full mode for pipelines, scheduled runs, and shared workloads that require consistent, reproducible environments.
+
+#### Full mode with a custom live pool
+
+To combine the stability of Full mode with fast session starts, configure a [custom live pool](custom-live-pools-overview.md) that attaches to a Full mode environment. The live pool hydrates clusters with the Full mode library snapshot in advance, enabling approximately 5-second session start times while preserving the reproducible snapshot.
+
+For details on each mode, see [Manage libraries in Fabric environments](environment-manage-library.md#select-publish-mode-for-libraries).
+
 ### Scenario 1: Admin sets default libraries for the workspace
 
 To set default libraries, you have to be the administrator of the workspace. As admin, you can perform these tasks:
 
-1. [Create a new environment](create-and-use-environment.md#create-an-environment)
-2. [Install the required libraries in the environment](environment-manage-library.md)
-3. [Attach this environment as the workspace default](create-and-use-environment.md#attach-an-environment-as-a-workspace-default)
+1. [Create a new environment](create-and-use-environment.md#create-an-environment-from-a-workspace)
+1. [Install the required libraries in the environment](environment-manage-library.md)
+1. [Attach this environment as the workspace default](create-and-use-environment.md#attach-an-environment-as-a-workspace-default)
 
 When your notebooks and Spark job definitions are attached to the **Workspace settings**, they start sessions with the libraries installed in the workspace's default environment.
 
 ### Scenario 2: Persist library specifications for one or multiple code items
 
-If you have common libraries for different code items and don't require frequent update, [install the libraries in an environment](environment-manage-library.md) and [attach it to the code items](create-and-use-environment.md#attach-an-environment-to-a-notebook-or-a-spark-job-definition) is a good choice.
+If you have common libraries for different code items and don't need to update them frequently, [install the libraries in an environment](environment-manage-library.md) and [attach it to the code items](create-and-use-environment.md#attach-an-environment-to-a-notebook-or-a-spark-job-definition).
 
-It will take some time to make the libraries in environments become effective when publishing. It normally takes 5-15 minutes, depending on the complexity of the libraries. During this process, the system will help to resolve the potential conflicts and download required dependencies.
+Publishing time depends on the mode you choose. Quick mode publishes in about 5 seconds and installs libraries at session start. Full mode resolves dependencies and creates a stable snapshot; it typically takes 3 to 6 minutes to publish, and session startup adds 1 to 3 minutes for dependency deployment.
 
-One benefit of this approach is that the successfully installed libraries are guaranteed to be available when the Spark session is started with environment attached. It saves effort of maintaining common libraries for your projects.
-
-It's highly recommended for pipeline scenarios with its stability.
+The benefit of this approach is that successfully installed libraries are guaranteed to be available when a Spark session starts with the environment attached. It saves the effort of maintaining common libraries for your projects and is recommended for pipeline scenarios because of its stability.
 
 ### Scenario 3: Inline installation in interactive run
 
-If you are using the notebooks to write code interactively, using [inline installation](#inline-installation) to add extra new PyPI/conda libraries or validate your custom libraries for one-time use is the best practice. Inline commands in Fabric allow you to have the library effective in the current notebook Spark session. It allows the quick installation but the installed library doesn't persist across different sessions.
+If you're writing code interactively in a notebook, [inline installation](#inline-installation) is the best approach for adding PyPI or conda libraries or validating custom libraries for one-time use. Inline commands make a library available in the current notebook Spark session only — they allow quick installation, but the installed library doesn't persist across sessions.
 
-Since `%pip install` generating different dependency trees from time to time, which might lead to library conflicts, inline commands are turned off by default in the pipeline runs and NOT recommended to be used in your pipelines.
+Because `%pip install` can generate different dependency trees from run to run, which might lead to library conflicts, inline commands are turned off by default in pipeline runs and aren't recommended for pipelines.
+
+> [!NOTE]
+> Libraries installed through inline commands (such as `%pip install` or `%conda install`) and libraries added from a notebook or environment Resources folder are scoped to the current session or notebook. They aren't affected by environment publishing in either Quick mode or Full mode.
 
 ## Summary of supported library types
 
@@ -61,41 +72,41 @@ Since `%pip install` generating different dependency trees from time to time, wh
 <a id="in-line-installation"></a>
 ## Inline installation
 
-Inline commands support managing libraries in each notebook sessions.
+Inline commands let you manage libraries within individual notebook sessions.
 
 <a id="python-in-line-installation"></a>
 ### Python inline installation
 
-The system restarts the Python interpreter to apply the change of libraries. Any variables defined before you run the command cell are lost. We strongly recommend that you put all the commands for adding, deleting, or updating Python packages **at the beginning of your notebook**.
+The system restarts the Python interpreter to apply library changes. Any variables defined before you run the command cell are lost. Put all commands for adding, deleting, or updating Python packages **at the beginning of your notebook**.
 
-The inline commands for managing Python libraries are disabled in notebook pipeline run by default. If you want to enable `%pip install` for pipeline, add "_inlineInstallationEnabled" as bool parameter equals True in the notebook activity parameters.
+Inline commands for managing Python libraries are disabled in notebook pipeline runs by default. To enable `%pip install` for a pipeline, add `_inlineInstallationEnabled` as a boolean parameter set to `True` in the notebook activity parameters.
 
-:::image type="content" source="media\environment-lm\library-management-enable-pip-in-pipeline.png" alt-text="Screenshot showing the the configuration of enabling pip install for notebook pipeline run." lightbox="media/environment-lm/library-management-enable-pip-in-pipeline.png":::
+:::image type="content" source="media\environment-library-management\library-management-enable-pip-in-pipeline.png" alt-text="Screenshot showing the configuration of enabling pip install for notebook pipeline run." lightbox="media/environment-library-management/library-management-enable-pip-in-pipeline.png":::
 
 > [!NOTE]
 >
-> The `%pip install` may lead to inconsistent results from time to time. It's recommended to install library in an environment and use it in the pipeline.
-> The `%pip install` command is currently not supported in High Concurrency mode.
-> In notebook reference runs, inline commands for managing Python libraries are not supported. To ensure the correctness of execution, it is recommended to remove these inline commands from the referenced notebook.
+> The `%pip install` command can produce inconsistent results from run to run. Install libraries in an environment and use the environment in a pipeline instead.
+> The `%pip install` command isn't supported in High Concurrency mode.
+> In notebook reference runs, inline commands for managing Python libraries aren't supported. Remove these inline commands from the referenced notebook to ensure correct execution.
 
-We recommend `%pip` instead of `!pip`. `!pip` is an IPython built-in shell command, which has the following limitations:
+Use `%pip` instead of `!pip`. The `!pip` command is an IPython built-in shell command with the following limitations:
 
-- `!pip` only installs a package on the driver node, not executor nodes.
-- Packages that install through `!pip` don't affect conflicts with built-in packages or whether packages are already imported in a notebook.
+- `!pip` installs a package only on the driver node, not on executor nodes.
+- Packages installed through `!pip` don't account for conflicts with built-in packages or packages already imported in a notebook.
 
-However, `%pip` handles these scenarios. Libraries installed through `%pip` are available on both driver and executor nodes and are still effective even the library is already imported.
+`%pip` handles these scenarios. Libraries installed through `%pip` are available on both driver and executor nodes and take effect even if the library is already imported.
 
 > [!TIP]
 >
 > The `%conda install` command usually takes longer than the `%pip install` command to install new Python libraries. It checks the full dependencies and resolves conflicts.
 >
-> You might want to use `%conda install` for more reliability and stability. You can use `%pip install` if you are sure that the library you want to install doesn't conflict with the preinstalled libraries in the runtime environment.
+> Use `%conda install` for more reliability and stability. Use `%pip install` if you're sure that the library you want to install doesn't conflict with the preinstalled libraries in the runtime environment.
 
 For all available Python inline commands and clarifications, see [%pip commands](https://pip.pypa.io/en/stable/cli/) and [%conda commands](https://docs.conda.io/projects/conda/en/latest/commands.html).
 
 #### Manage Python public libraries through inline installation
 
-In this example, see how to use inline commands to manage libraries. Suppose you want to use *altair*, a powerful visualization library for Python, for a one-time data exploration. Suppose the library isn't installed in your workspace. The following example uses conda commands to illustrate the steps.
+This example shows how to use inline commands to manage libraries. Suppose you want to use *altair*, a powerful visualization library for Python, for a one-time data exploration, and the library isn't installed in your workspace. The following example uses conda commands to illustrate the steps.
 
 You can use inline commands to enable *altair* on your notebook session without affecting other sessions of the notebook or other items.
 
@@ -129,13 +140,16 @@ You can use inline commands to enable *altair* on your notebook session without 
 
 #### Manage Python custom libraries through inline installation
 
-You can upload your Python custom libraries to the resources folder of your notebook or the attached environment. The resources folders are the built-in file system provided by each notebook and environments. See [Notebook resources](./how-to-use-notebook.md#notebook-resources) for more details.
-After your upload, you can drag-and-drop the custom library to a code cell, the inline command to install the library is automatically generated. Or you can use the following command to install.
+You can upload your Python custom libraries to the resources folder of your notebook or the attached environment. The resources folder is a built-in file system provided by each notebook and environment. See [Notebook resources](./how-to-use-notebook.md#notebook-resources) for more details.
+After you upload a library, you can drag and drop it into a code cell to automatically generate the install command. Or you can run the following command:
 
 ```python
 # install the .whl through pip command from the notebook built-in folder
 %pip install "builtin/wheel_file_name.whl"             
 ```
+
+> [!NOTE]
+> Custom libraries installed from the Resources folder through inline commands are per-session and per-notebook. They aren't affected by environment publishing.
 
 ### R inline installation
 
@@ -170,7 +184,7 @@ To install an R feed library:
 
 ### Manage Jar libraries through inline installation
 
-The *.jar* files are support at notebook sessions with following command.
+You can add *.jar* files to notebook sessions with the following command.
 
 ```Scala
 %%configure -f
@@ -181,8 +195,8 @@ The *.jar* files are support at notebook sessions with following command.
 }        
 ```
 
-The code cell is using Lakehouse's storage as an example. At the notebook explorer, you can copy the full file ABFS path and replace in the code.
-:::image type="content" source="media\environment-lm\library-management-get-ABFS-path.png" alt-text="Screenshot of the menu commands to get the ABFS path." lightbox="media\environment-lm\library-management-get-ABFS-path.png":::
+The preceding code cell uses lakehouse storage as an example. In the notebook explorer, you can copy the full ABFS path of the file and replace it in the code.
+:::image type="content" source="media\environment-library-management\library-management-get-path-abfs.png" alt-text="Screenshot of the menu commands to get the ABFS path." lightbox="media\environment-library-management\library-management-get-path-abfs.png":::
 
 ## Related content
 

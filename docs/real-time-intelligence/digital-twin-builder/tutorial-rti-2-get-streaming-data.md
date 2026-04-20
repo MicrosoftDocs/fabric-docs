@@ -1,8 +1,6 @@
 ---
 title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial  part 2: Get and process streaming data'
 description: Prepare your environment for the tutorial scenario by processing the real-time streaming data sample and getting it into a lakehouse.
-author: baanders
-ms.author: baanders
 ms.date: 12/12/2025
 ms.topic: tutorial
 ---

@@ -1,10 +1,8 @@
 ---
 title: Secure Your Fabric Data Warehouse
 description: Learn more about securing your warehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: chweb, fresantos
-ms.date: 10/15/2025
+ms.reviewer: fresantos
+ms.date: 03/13/2026
 ms.topic: concept-article
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
@@ -27,6 +25,7 @@ This article provides guidance on how to best secure your warehouse in [!INCLUDE
 - [!INCLUDE [product-name](../includes/product-name.md)] item permissions enable the ability to provide a user with SQL permissions, without needing to grant those permissions within SQL.
 - [!INCLUDE [product-name](../includes/product-name.md)] workspace roles provide [!INCLUDE [product-name](../includes/product-name.md)] permissions for all warehouses within a workspace.
 - Granular user permissions can be further managed via T-SQL.
+- Users with administrator, member, or contributor [workspace role](workspace-roles.md) membership can use [service principals](service-principals.md) to manage warehouses via Fabric [REST APIs](/rest/api/fabric/warehouse/items).
 
 ### Workspace roles
 
@@ -89,10 +88,10 @@ For details on dynamic data masking, see [Dynamic data masking in Fabric data wa
 
 ## User audit logs
 
-To track user activity in warehouse and SQL analytics endpoint for meeting regulatory compliance and records managements requirements, a set of audit activities are accessible via Microsoft Purview and PowerShell. 
+To track user activity in a warehouse or SQL analytics endpoint for meeting regulatory compliance and records requirements, a set of audit activities are accessible via Microsoft Purview and PowerShell.
 
 - You can use user audit logs to identify who is taking what action on your Fabric items. 
-- To get started, learn [how to configure SQL audit logs in Fabric Data Warehouse (Preview)](configure-sql-audit-logs.md). 
+- To get started, learn [how to configure SQL audit logs in Fabric Data Warehouse](configure-sql-audit-logs.md). 
 - You can [track user activities across Microsoft Fabric](../admin/track-user-activities.md). For more information, see the [Operation list](../admin/operation-list.md).
 
 ## SQL analytics endpoint security

@@ -1,12 +1,11 @@
 ### YamlMime:Landing
 
-title: Microsoft Fabric documentation for admins
-summary: Learn about the Microsoft Fabric admin settings, options, and tools.
+title: Fabric administration documentation
+summary: Learn about the Fabric admin settings, options, and tools.
 
 metadata:
-  title: Microsoft Fabric documentation for admins
-  description: A landing page for the Microsoft Fabric admin documentation.
-  ms.service: fabric
+  title: Fabric administration documentation
+  description: Learn about the Fabric admin settings, options, and tools.
   ms.subservice: admin
   ms.topic: landing-page
   author: msmimart
@@ -21,7 +20,7 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: What is Microsoft Fabric admin?
+          - text: What is administration in Fabric?
             url: microsoft-fabric-admin.md       
           - text: What is the admin portal?
             url: admin-center.md                

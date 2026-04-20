@@ -4,7 +4,6 @@ description: Learn how to manually apply sensitivity labels to Fabric items.
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.custom:
 ms.date: 05/23/2023
 ---
 

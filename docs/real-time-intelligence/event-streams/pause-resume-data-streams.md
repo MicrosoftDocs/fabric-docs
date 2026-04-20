@@ -1,11 +1,8 @@
 ---
 title: Pause and resume data streams
 description: Learn how to pause and resume data streams.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: wenyang
+ms.reviewer: xujiang1
 ms.topic: how-to
-ms.custom:
 ms.date: 07/24/2025
 ms.search.form: Pause and Resume
 ---
@@ -66,11 +63,11 @@ Here's a detailed table of the nodes that support pause and resume functionality
 |-----------------------------------------------------------|---------------|---------------------------|---------------------------------------------|
 | Azure Data Explorer Database (preview)                    | Source        | YES                       | - When streaming was last stopped           |
 | Azure Event Hubs                                          | Source        | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
-| Azure Event Grid Namespace (preview)                      | Source        | NO                        |                                             |
+| Azure Event Grid Namespace                       | Source        | NO                        |                                             |
 | Azure Service Bus (preview)                               | Source        | YES                       | - When streaming was last stopped           |
 | Azure IoT Hub                                             | Source        | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
 | Sample Data                                               | Source        | YES                       | - Now                                       |
-| Real-time weather (preview)                               | Source        | YES                       | - When streaming was last stopped           |
+| Real-time weather                                | Source        | YES                       | - When streaming was last stopped           |
 | Azure SQL Database CDC                                    | Source        | YES                       | - When streaming was last stopped           |
 | PostgreSQL Database CDC                                   | Source        | YES                       | - When streaming was last stopped           |
 | MongoDB CDC (preview)                                     | Source        | YES                       | - When streaming was last stopped           |
@@ -99,4 +96,6 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Eventhouse (Direct Ingestion)                             | Destination   | NO                        |                                             |
 | Fabric Activator (preview)                                | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time                                          |
 | Derived stream                                            | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time                                              |
+
+
 

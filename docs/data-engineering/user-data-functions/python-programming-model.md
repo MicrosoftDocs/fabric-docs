@@ -1,9 +1,7 @@
 ---
 title: Python programming model for Fabric User data functions
 description: Overview of the Fabric User data functions programming model for Python.
-ms.author: eur
 ms.reviewer: sumuth
-author: eric-urban
 ms.topic: overview
 ms.custom: freshness-kr
 ms.date: 01/21/2026
@@ -138,14 +136,15 @@ When writing User Data Functions, you must follow specific syntax rules to ensur
 
 #### Parameter requirements
 
-- **No default values**: Default parameter values aren't supported. All parameters are required when invoking a function. For example, the following function throws a syntax error:
-    ```python
-    # The default value for the argument called 'name' is not supported and treated like a syntax error.
-    @udf.function()
-    def goodbye_fabric(name: str = "N/A") -> str:
-        return f"Goodbye, {name}."
-    ```
 - **Type annotations required**: All parameters must include type annotations (for example, `name: str`).
+- **Default values**: Default parameter values are supported. You can define default arguments in Fabric user data functions to make your code easier to call and maintain. Default values support common JSON-serializable types, including strings, boolean, numbers (int, float), arrays (lists), and objects (dictionaries).
+**Syntax**
+    ```python
+        @udf.function()
+        def function_name(param1: type = value1, param2: type = value2, listparam: list | None = None, ...) -> output_type:
+            # function body
+    ```
+  Note that the default value must be JSON serializable. For example, nested lists such as [1, 2, [3]] are permitted, whereas nested sets or tuples are not supported.  For list or dictionary defaults, prefer using None in the signature and assigning the real default inside the function. 
 
 #### Function requirements
 
@@ -398,7 +397,7 @@ The `executing_user` object contains the following information:
 
 | Property Name| Data Type| Description|
 |----------------| ----------------|-----------------------------------------|
-| Oid | string (GUID) | The user's object ID, which is an immutable identifier for the requestor. This is the verified identity of the user or service principal used to invoke this function across applications. |
+| Oid | string (GUID) | The user's object ID, which is an immutable identifier for the requester. This is the verified identity of the user or service principal used to invoke this function across applications. |
 | TenantId | string (GUID) | The ID of the tenant that the user is signed into. |
 | PreferredUsername | string | The preferred username of the invoking user, as set by the user. This value is mutable. |
 

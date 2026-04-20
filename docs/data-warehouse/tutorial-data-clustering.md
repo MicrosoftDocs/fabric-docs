@@ -1,15 +1,15 @@
 ---
 title: "Tutorial: Use Data Clustering in Fabric Data Warehouse"
 description: This tutorial explains how to use data clustering for better query performance in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: procha
 ms.date: 11/11/2025
 ms.topic: tutorial
 ---
-# Use data clustering in Fabric Data Warehouse
+# Use data clustering in Fabric Data Warehouse (Preview)
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 Data clustering in Fabric Data Warehouse organizes data for faster query performance and reduced compute usage. This tutorial walks through the steps to create tables with data clustering, from creating clustered tables to checking their effectiveness.
 

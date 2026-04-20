@@ -1,12 +1,9 @@
 ---
 title: Share your SQL database and manage permissions
 description: Learn how to share a SQL database item in Fabric with others and manage item permissions.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: sukkaur, jaszymas, mesrivas  # Microsoft alias
+ms.reviewer: sukkaur, jaszymas, mesrivas
 ms.date: 04/06/2025
 ms.topic: how-to
-ms.custom:
 ---
 # Share your SQL database and manage permissions
 

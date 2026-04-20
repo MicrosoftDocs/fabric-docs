@@ -130,3 +130,4 @@ Once mirroring is configured, you're directed to the **Mirroring Status** page. 
 - [Troubleshoot Fabric mirrored databases from Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql-troubleshoot.md)
 - [Mirroring Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql.md)
 - [What is Mirroring in Fabric?](../mirroring/overview.md)
+

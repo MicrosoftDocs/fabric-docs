@@ -1,8 +1,6 @@
 ---
 title: "Create a table in SQL database"
 description: Learn how to create a table in SQL database in Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 11/01/2024
 ms.topic: how-to

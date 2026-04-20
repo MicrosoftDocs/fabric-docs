@@ -1,10 +1,7 @@
 ---
 title: Create entity types
 description: Learn about entity types in ontology (preview) and how to manage them.
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
-ms.date: 10/30/2025
+ms.date: 03/30/2026
 ms.topic: how-to
 ---
 
@@ -102,3 +99,5 @@ To edit or delete a property,
     :::image type="content" source="media/how-to-create-entity-types/edit-delete-property.png" alt-text="Screenshot of editing or deleting a property.":::
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
+
+[!INCLUDE [supported property types](includes/supported-property-types.md)]

@@ -1,12 +1,8 @@
 ---
 title: Query Using the SQL Query Editor
 description: Learn how to use the SQL query editor.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: prlangad, jacindaeng, pradeepsrikakolapu
 ms.date: 01/08/2026
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: how-to
 ms.custom:
   - sfi-image-nochange
@@ -205,7 +201,7 @@ Keyboard shortcuts provide a quick way to navigate and work more efficiently in 
 
 - T-SQL statements that use the T-SQL `OPTION` syntax aren't currently supported in the **Explore this data** or **Visualize results** options with DirectQuery mode. The workaround is to create visualizations in Power BI Desktop using **Import** mode.
 
-- The following table summarizes the expected behavior that doesn't match with [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true):
+- The following table summarizes the expected behavior that doesn't match with [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) or [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true):
 
    | **Scenario** | **Supported in SSMS/ADS** | **Supported in SQL query editor in Fabric portal** |
    |---|---|---|

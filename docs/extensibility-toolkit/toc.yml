@@ -52,6 +52,8 @@ items:
     href: how-to-create-item.md
   - name: Store Item Definition
     href: how-to-store-item-definition.md
+  - name: Use Variables in Custom Workloads
+    href: how-to-use-variables.md
   - name: Store Data in OneLake
     href: how-to-store-data-in-onelake.md
   - name: Create Shortcuts
@@ -65,9 +67,15 @@ items:
   - name: Add Jobs-to-be-Done
     href: how-to-add-jobs-to-be-done.md
   - name: Define Jobs for Your Workload
-    href: how-to-define-jobs.md
+    href: how-to-enable-remote-jobs.md
+  - name: Enable Remote Endpoints
+    href: how-to-enable-remote-endpoint.md
+  - name: Use Endpoint Resolution Service
+    href: how-to-enable-remote-endpoint-resolution.md
+  - name: Authenticate Remote Endpoints
+    href: authentication-remote.md
   - name: Enable Item Lifecycle Notifications
-    href: how-to-enable-item-lifecycle-notifications.md
+    href: how-to-enable-remote-item-lifecycle.md
   - name: Access Fabric APIs
     href: how-to-access-fabric-apis.md
   - name: Acquire Microsoft Entra Token

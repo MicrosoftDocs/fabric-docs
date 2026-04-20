@@ -65,7 +65,7 @@ Here are some migration patterns you might use when converting global parameters
 
 Currently, there are a few limitations to be aware of:
 
-- The [Azure Data Factory-to-Microsoft Fabric PowerShell migration tool](migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md) doesn't automatically migrate global parameters.
+- Neither the [built-in upgrade experience](/azure/data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory) nor the [PowerShell migration tool](migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md) automatically migrates global parameters.
 - Expressions inside linked services or pipelines that reference `@globalParameters()` aren't automatically rewritten.
 - Fabric connections (the replacement for Azure Data Factory linked services) don't support parameter expressions in the same way. You need to manually re-author any dynamic parameters used in connection definitions.
 

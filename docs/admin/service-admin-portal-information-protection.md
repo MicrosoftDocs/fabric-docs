@@ -3,12 +3,10 @@ title: Information protection tenant settings
 description: Learn how to configure information protection tenant settings in Fabric.
 author: msmimart
 ms.author: mimart
-ms.reviewer: ''
-
 ms.custom:
   - tenant-setting
-ms.topic: how-to
-ms.date: 02/15/2024
+ms.topic: concept-article
+ms.date: 04/08/2026
 LocalizationGroup: Administration
 ---
 
@@ -26,7 +24,7 @@ Sensitivity label settings, such as encryption and content marking for files and
 
 To learn more, see [Sensitivity labels in Power BI](/power-bi/enterprise/service-security-sensitivity-label-overview).
 
-To view sensitivity label settings for your organization, visit the [Microsoft Purview compliance portal](https://protection.officeppe.com/sensitivity?flight=EnableMIPLabels).
+To view sensitivity label settings for your organization, visit the [Microsoft Purview portal](https://protection.officeppe.com/sensitivity?flight=EnableMIPLabels).
 
 ## Apply sensitivity labels from data sources to their data in Power BI
 
@@ -59,41 +57,23 @@ Sensitivity labels with protection settings include encryption or content markin
 
 To learn more about protection settings for sensitivity labels, see [Restrict access to content by using sensitivity labels to apply encryption](/microsoft-365/compliance/encryption-sensitivity-labels).
 
-## Increase the number of users who can edit and republish encrypted PBIX files (preview)
+## Domain admins can set default sensitivity labels for their domains (preview)
 
-When enabled, users with [restrictive sensitivity permissions](#restrictive-sensitivity-permissions) on an encrypted sensitivity label can open, edit, publish, and republish PBIX files protected by that label, with [restrictions](#restrictions) (provided that the appropriate [preview feature switch](#desktop-preview-feature-switch-for-editing-by-users-with-restrictive-sensitivity-permissions) in Power BI Desktop is on).
+Domain admins can set a default sensitivity label for their domains. The label they set overrides your organization's default labels in Microsoft Purview as long as it has a higher priority than the existing default labels set for your tenant.
 
-### Restrictive sensitivity permissions
+A domain's default label automatically applies to new Fabric items created within the domain. Reports, semantic models, dataflows, dashboards, scorecards, and some additional item types aren't currently supported.
 
-Restrictive sensitivity permissions in this context means that the user must have all of the following usage rights:
+For more information, see [Domain default sensitivity labels](../governance/domain-default-sensitivity-label.md).
 
-  * View Content (VIEW)
-  * Edit Content (DOCEDIT)
-  * Save (EDIT)
-  * Copy and extract content (EXTRACT)
-  * Allow Macros (OBJMODEL)
+## Allow Microsoft Purview to secure AI interactions
 
-   > [!NOTE]
-   > Usage rights are granted to users by compliance admins in the Microsoft Purview compliance portal as part of sensitivity label definition.
+Turn on this setting to allow Microsoft Purview to access, process, and store prompts and responses, including metadata, for data security and compliance scenarios such as sensitive info type classification, reporting in Microsoft Purview Data Security Posture Management for AI, Audit, Insider Risk Management, Communication Compliance, and eDiscovery.
 
-### Restrictions
+This capability is part of Microsoft Purview and isn't included in Copilot in Fabric pricing.
 
-The following are the restrictions that apply to users with restrictive sensitivity permissions:
-
-* Users with restrictive sensitivity permissions can't export to formats that don't support sensitivity labels, such as CSV files.
-* Users with restrictive sensitivity permissions can't change the label on the PBIX file.
-* Users with restrictive sensitivity permissions can republish the PBIX file only to the original workspace they downloaded it from.
-
-These restrictions ensure that protection is preserved and control of protection settings remains with users that have higher permission levels.
-
-If a user tries to perform one of the restricted actions, they will see a warning informing them that they do not have the required permissions. If the **Increase the number of users who can edit and republish encrypted PBIX files (preview)** feature switch is enabled on the tenant, the user should check to see that the **[Less elevated user support](#desktop-preview-feature-switch-for-editing-by-users-with-restrictive-sensitivity-permissions)** preview feature switch in their Power BI Desktop app is on.
-
-For more information, see [Protected sensitivity labels in Fabric and Power BI](../governance/protected-sensitivity-labels.md).
-
-### Desktop preview feature switch for editing by users with restrictive sensitivity permissions
-
-The **Less elevated user support** feature switch in Power BI Desktop must be selected in order for a user with restrictive sensitivity permissions to be able to open, edit, and publish/republish a PBIX file protected by an encrypted sensitivity label. Desktop users can select/unselect the switch by opening Power BI Desktop and navigating to **File** > **Options and settings** > **Options** > **Preview features**, finding the **Less elevated user support** preview feature, and selecting or unselecting the feature as desired.
+For more information, see [Microsoft Purview for AI interactions](https://go.microsoft.com/fwlink/?linkid=2296824).
 
 ## Related content
 
 * [About tenant settings](tenant-settings-index.md)
+* [Protected sensitivity labels in Fabric and Power BI](../governance/protected-sensitivity-labels.md)

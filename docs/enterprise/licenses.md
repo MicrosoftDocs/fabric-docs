@@ -1,11 +1,10 @@
 ---
 title: Understand Microsoft Fabric Licenses
 description: Explore Microsoft Fabric licenses, tenants, capacities, and SKUs to plan deployment and collaboration. Learn key scenarios and choose the right option.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.topic: concept-article
-ms.custom:
-ms.date: 01/30/2026
+ms.date: 02/23/2026
 ai-usage: ai-assisted
 ---
 
@@ -22,6 +21,31 @@ The following diagram illustrates two common ways organizations can structure th
 ## Core building blocks
 
 This section describes tenants, capacities, and workspaces, which are helpful in understanding a Fabric deployment.
+
+Throughout this article, the terms *Power BI items* and *non-Power BI Fabric items* distinguish between item types that different licenses. Here's what each term means:
+
+**Power BI items** include:
+
+- Reports
+- Semantic models
+- Dashboards
+- Paginated reports
+- Scorecards
+- Metric sets
+- Dataflows
+- Datamarts
+- Org apps
+- Explorations
+
+**Non-Power BI Fabric items** include everything else, such as:
+
+- Lakehouses
+- Warehouses
+- Notebooks
+- Pipelines
+- Eventhouses
+- KQL databases
+- Other Fabric workload items
 
 ### Tenant
 
@@ -44,6 +68,8 @@ Your capacity lets you:
 Capacities use stock-keeping units (SKUs). Each SKU provides Fabric resources for your organization. Your organization can have as many capacities as needed.
 
 The table lists the Microsoft Fabric SKUs. Capacity units (CUs) measure the compute power for each SKU. For customers familiar with Power BI, the table also lists Power BI Premium per capacity *P* SKUs and virtual cores (v-cores). Power BI Premium *P* SKUs support Microsoft Fabric. *A* and *EM* SKUs only support Power BI items. This table is provided as a reference for comparing compute capacity and should not be interpreted as functional or licensing equivalence.
+
+[!INCLUDE [powerbi-premium-notification](~/../powerbi-repo/powerbi-docs/guidance/includes/powerbi-premium-notification.md)]
 
 | SKU | Capacity Units (CUs) | Power BI SKU | Power BI v-cores |
 |--|--|--|--|

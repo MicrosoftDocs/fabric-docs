@@ -1,8 +1,6 @@
 ---
 title: IDENTITY Columns in Fabric Data Warehouse
 description: Learn more about IDENTITY columns in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: procha
 ms.date: 11/04/2025
 ms.topic: concept-article

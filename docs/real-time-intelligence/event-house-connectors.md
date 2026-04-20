@@ -2,8 +2,6 @@
 title: Overview of data connectors
 description: Learn about the available data integrations.
 ms.reviewer: aksdi
-ms.author: spelluru
-author: spelluru
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
 ms.date: 01/01/2026

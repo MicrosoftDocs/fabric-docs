@@ -10,20 +10,17 @@ ms.date: 2/23/2026
 ms.search.form: 
 ---
 
-# What is Fabric Maps? (preview)
+# What is Fabric Maps?
 
 Microsoft Fabric Maps let you visualize real-time and historical location data in Microsoft Fabric, helping you monitor live events, analyze spatial patterns, and understand geographic context alongside time-based insights.
 
 Maps are built to work with data in space and time. You can visualize real‑time event data queried from [Eventhouses](../eventhouse.md) using [Kusto Query Language (KQL)](/kusto/query/?view=microsoft-fabric), and historical or static spatial data stored in a [Lakehouse](/fabric/data-engineering/lakehouse-overview). This combination makes it possible to view live operational activity in geographic context while maintaining access to historical reference data.
 
-> [!IMPORTANT]
-> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
-
 ## How maps fit into Real-Time Intelligence
 
 In a Real-Time Intelligence solution, data is ingested from streaming sources, processed and stored in Eventhouses, and a visual endpoint in this workflow by rendering query results as spatial layers that refresh as new data arrives. Each map is a first‑class Fabric item that belongs to a workspace and participates in Fabric's permission, sharing, and lifecycle management model.
 
-Fabric Maps display data through layers, where each layer represents a specific dataset or query result. Layers can visualize points, lines, or polygons, allowing you to emphasize different spatial aspects of the data—such as density, movement, or geographic boundaries—within a single map view. For more information on data layers, see [Add data to a map](create-map.md#add-data-to-a-map---geojson).
+Fabric Maps display data through layers, where each layer represents a specific dataset or query result. Layers can visualize points, lines, or polygons, allowing you to emphasize different spatial aspects of the data—such as density, movement, or geographic boundaries—within a single map view. For more information on data layers, see [Fabric Maps layers](about-layers.md).
 
 ## Working with real-time and historical spatial data
 
@@ -33,7 +30,7 @@ This combination is especially useful in scenarios where incoming events need to
 
 ### Imagery data sources
 
-In addition to vector data layers, Fabric Maps support imagery data sources that provide raster basemap and custom imagery layers. These imagery layers, powered by Azure Maps or stored in OneLake, add geographic context beneath vector and real-time data, helping users interpret spatial patterns and operational activity within their physical environment. For more information, see [Add data to a map - Cloud Optimized GeoTIFF (COG)](create-map.md#add-data-to-a-map---cloud-optimized-geotiff-cog).
+In addition to vector data layers, Fabric Maps support imagery data sources that provide raster basemap and custom imagery layers. These imagery layers, powered by Azure Maps or stored in OneLake, add geographic context beneath vector and real-time data, helping users interpret spatial patterns and operational activity within their physical environment. For more information, see [Cloud Optimized GeoTIFF (COG)](about-lakehouse-layers.md#raster-data).
 
 ## Using Azure Maps services with Fabric Maps
 
@@ -51,6 +48,21 @@ Maps in Real-Time Intelligence are suited for a range of location‑based scenar
 - Combining historical and real-time spatial data in a single view
 
 By integrating real-time analytics with geographic context, Maps help transform streaming data into actionable, location‑aware insights.
+
+## Pricing and capacity units
+
+Fabric Maps uses the same capacity units (CUs) as other Microsoft Fabric workloads. You don't need to purchase a separate map‑specific license or SKU.
+
+All Fabric Maps operations consume your organization's Fabric capacity. This includes activities such as rendering base map tiles, interacting with map layers, and generating tilesets. Capacity consumption varies based on the type and volume of map operations and is shared with other workloads running in the same Fabric capacity.
+
+| Meter Name   | Operation Name  | Description    | Unit of Measure  | Fabric Consumption Rate (CU Hours)  |
+|--------------|-----------------|----------------|------------------|-------------------------------------|
+| Map processing CU | MapProcessing | Tileset generation jobs | Hour | 11                                  |
+| Map services CU | MapServices | Map services usage in item | Transaction | 0.025                         |
+
+You can monitor your graph workload's resource consumption and performance in the [Fabric Capacity Metrics app](../../enterprise/metrics-app.md).  
+
+For more information on pricing and capacity units, see [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 
 ## Next steps
 

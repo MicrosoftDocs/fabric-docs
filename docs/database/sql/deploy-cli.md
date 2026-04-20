@@ -1,10 +1,8 @@
 ---
-title: Create a SQL database with the Fabric CLI"
+title: Create a SQL database with the Fabric CLI
 description: Learn how to deploy a new SQL database in Microsoft Fabric using Fabric CLI.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: sukkaur
-ms.date: 07/02/2025
+ms.reviewer: sukkaur, imotiwala
+ms.date: 02/19/2025
 ms.topic: how-to
 ms.search.form: Develop and run queries in SQL editor
 ---
@@ -55,6 +53,23 @@ Before you begin:
    ```
 
    The `fab ls` command displays a list of all items in the workspace, including your new SQL database.
+
+
+## Database collation
+
+By default, the database is created with the case-insensitive collation `SQL_Latin1_General_CP1_CI_AS`. 
+
+Database collation can't be modified after creation, though collations on individual columns are supported.
+
+When you create the database with the Fabric CLI, you can call the Fabric API directly with the [fab api](https://microsoft.github.io/fabric-cli/commands/api/) set of commands. Specify the desired workspace, new database name and description, and desired collation in the parameters.
+
+Currently, the `fab cli` command is necessary to create a database with a non-default collation. The syntax is similar, for example:
+
+```cli
+fab api workspaces/<workspace unique ID>/sqldatabases -X post -H "Content-Type=application/json" -i "{\"displayName\": \"<new database name>\", \"description\": \"<new database description>\", \"creationPayload\":{\"collation\": \"Latin1_General_100_BIN2_UTF8\",\"creationMode\": \"new\"}}"
+```
+
+This example creates a new database in the workspace with the unique ID `workspace unique ID`, with a name `<new database name>`, description `<new database description>`, and the collation `Latin1_General_100_BIN2_UTF8`.
 
 ## Related content
 

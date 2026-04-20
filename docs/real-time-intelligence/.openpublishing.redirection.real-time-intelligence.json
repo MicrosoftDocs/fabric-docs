@@ -1,6 +1,16 @@
 {
   "redirections": [    
     {
+      "source_path_from_root": "/docs/real-time-intelligence/event-streams/add-destination-business-events.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/overview",
+      "redirect_document_id": false
+    },          
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/mcp-eventhouse.md",
+      "redirect_url": "/fabric/real-time-intelligence/mcp-remote-eventhouse",
+      "redirect_document_id": false
+    },       
+    {
       "source_path_from_root": "/docs/real-time-intelligence/data-activator/reduce-cost-rules.md",
       "redirect_url": "/docs/real-time-intelligence/data-activator/reduce-cost-rules-apply-summarizations",
       "redirect_document_id": false
@@ -753,6 +763,11 @@
     {
       "source_path_from_root": "/docs/real-time-intelligence/dashboard-copy-from-data-explorer.md",
       "redirect_url": "/fabric/real-time-intelligence/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/event-streams/connect-connecots-in-virtual-network-on-premises.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/choose-the-right-network-security-feature",
       "redirect_document_id": false
     },
     {

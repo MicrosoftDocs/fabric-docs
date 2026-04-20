@@ -1,10 +1,7 @@
 ---
 title: Set Actions for Rules in Fabric Activator
-ms.reviewer: spelluru
 description: Learn how to configure actions for rules in Fabric activators. An action can send an email, Teams message, run a Fabric pipeline, dataflow, notebook, Spark job, or custom function.
 #customer intent: As an IT admin, I want to configure email alerts for specific conditions so that I can notify relevant stakeholders automatically.
-author: spelluru
-ms.author: spelluru
 ms.topic: include
 ms.date: 11/11/2025
 ---
@@ -81,3 +78,4 @@ To configure the alert to call a custom action when the condition is met, follow
 1. After you create the custom action, in the **Definition** pane of the rule, select the custom action from the **Action** drop-down list. 
 
     :::image type="content" source="./media/set-details-conditions-actions-rule/select-custom-action.png" alt-text="Screenshot of the custom action selected in the Select action drop-down list." lightbox="./media/set-details-conditions-actions-rule/select-custom-action.png":::
+

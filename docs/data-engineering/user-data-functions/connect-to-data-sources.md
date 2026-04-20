@@ -1,9 +1,7 @@
 ---
 title: Connect to data sources - Fabric User data functions
 description: Learn how to connect your Fabric User data function items to data sources.
-ms.author: eur
 ms.reviewer: luisbosquez
-author: eric-urban
 ms.topic: overview
 ms.custom: freshness-kr
 ms.date: 01/21/2026

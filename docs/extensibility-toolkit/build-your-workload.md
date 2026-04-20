@@ -1,10 +1,8 @@
 ---
 title: Build Your Workload
 description: Learn how to build your workload.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: how-to
-ms.custom:
 ms.date: 12/15/2025
 ---
 
@@ -22,7 +20,7 @@ You run the [Starter-Kit](https://aka.ms/fabric-extensibility-starter-kit) insid
 - Access to a Fabric tenant and a workspace where you can create items
 - A GitHub account (required for Codespaces)
 - If developing locally: a recent Node.js LTS and a package manager (see the README for exact tooling)
-- Access to create an [Microsoft Entra Application](https://entra.microsoft.com/)
+- Access to create a [Microsoft Entra Application](https://entra.microsoft.com/)
 - Optional: an Azure subscription if you plan to host your web app in Azure
 
 > [!TIP]
@@ -61,4 +59,4 @@ To get started quickly, pick one of the following options:
 - Follow the [implementation guide](implementation-guide.md) to build your own workload
 - Read the [Manifest Overview](manifest-overview.md) for schema and best practices
 - Develop with the [DevGateway](tools-register-local-workload.md)
-- [Publish your workload](publish-workload-flow.md) when you’re ready to share it broadly
+- [Publish your workload](publishing-overview.md) when you're ready to share it broadly

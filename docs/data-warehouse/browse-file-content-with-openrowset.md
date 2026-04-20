@@ -1,8 +1,6 @@
 ---
 title: "Browse File Content Before Ingestion with the OPENROWSET function"
 description: Learn how to browse the contents of files and discover their schema using the OPENROWSET function before ingesting them into a Warehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: jovanpop
 ms.date: 09/08/2025
 ms.topic: how-to
@@ -73,7 +71,7 @@ You don't need to specify the `FORMAT` option explicitly. The `OPENROWSET` will 
 
 ## Read files in Fabric OneLake
 
-The `OPENROWSET(BULK)` function enables you to read the files stored in Fabric OneLake. If your file is stored in the Files section of a lakehouse, you can read this file using the fillowing syntax:
+The `OPENROWSET(BULK)` function enables you to read the files stored in Fabric OneLake. If your file is stored in the Files section of a lakehouse, you can read this file using the following syntax:
 
 ```sql
 SELECT TOP 10 * 
@@ -81,9 +79,6 @@ FROM OPENROWSET(BULK 'https://onelake.dfs.fabric.microsoft.com/<workspaceId>/<la
 ```
 
 Replace `<workspaceId>` and `<lakehouseId>` with the workspace and lakehouse GUIDs that you can find in the Fabric workspace URI. Make sure that you are referencing the files in the `/Files` section of a lakehouse.
-
-> [!IMPORTANT]
-> Reading files from Fabric OneLake storage using the OPENROWSET function is currently in [preview](/fabric/fundamentals/preview). See the [limitations](/sql/t-sql/statements/copy-into-transact-sql#limitations-for-onelake-as-source) that are applicable both to `COPY INTO` and `OPENROWSET(BULK)`.
 
 <a id="reading-custom-text-files"></a>
 

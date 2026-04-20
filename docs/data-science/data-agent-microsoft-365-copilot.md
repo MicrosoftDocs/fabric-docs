@@ -1,13 +1,8 @@
 ---
 title: Consume a data agent from Microsoft 365 Copilot (preview)
 description: Learn how to consume a data agent from Microsoft 365 Copilot.
-author: jonburchel
-ms.author: jburchel
 ms.reviewer: amjafari
-reviewer: amjafari
-ms.service: fabric
-ms.subservice: data-science
-ms.topic: how-to #Don't change
+ms.topic: how-to
 ms.date: 10/11/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot

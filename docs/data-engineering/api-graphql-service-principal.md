@@ -2,9 +2,6 @@
 title: Use Service Principals with Fabric API for GraphQL
 description: Learn how to use Service Principals to authenticate to the API for GraphQL.
 #customer intent: As a developer, I want to authenticate to the Fabric API for GraphQL using a service principal so that I can securely access and manage data programmatically.
-ms.reviewer: sngun
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
 ms.custom: freshness-kr
 ms.search.form: Connecting applications to GraphQL
@@ -271,3 +268,4 @@ node callGraphQL.js
 - [Create a Microsoft Entra app in Azure](/rest/api/fabric/articles/get-started/create-entra-app)
 - Learn how to [create an API for GraphQL in Fabric and add data](get-started-api-graphql.md).
 - Discover how to [query multiple data sources in Fabric API for GraphQL](multiple-data-sources-graphql.md).
+

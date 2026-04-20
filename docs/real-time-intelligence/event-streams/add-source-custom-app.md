@@ -1,9 +1,7 @@
 ---
 title: Add a Custom Endpoint or Custom App Source to an Eventstream
 description: Learn how to add a custom endpoint or custom app source to an eventstream for sending real-time events with multiple protocols, like the Apache Kafka protocol.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 04/11/2025
@@ -194,3 +192,5 @@ For a clear guide on using the custom endpoint with the Kafka protocol, refer to
 ## Related content
 
 - For a list of supported sources, see [Add and manage an event source in an eventstream](add-manage-eventstream-sources.md).
+
+

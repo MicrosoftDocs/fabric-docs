@@ -1,9 +1,7 @@
 ---
 title: Using the portal editor - User Data Functions
 description: Learn how to use the portal editor in User Data Functions
-ms.author: eur
 ms.reviewer: luisbosquez
-author: eric-urban
 ms.topic: overview
 ms.custom: freshness-kr
 ms.date: 01/21/2026

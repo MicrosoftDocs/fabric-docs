@@ -1,8 +1,6 @@
 ---
 title: SQL Granular Permissions
 description: Learn about providing granular permissions via SQL in the warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: cynotebo, dhsundar
 ms.date: 04/24/2024
 ms.topic: concept-article

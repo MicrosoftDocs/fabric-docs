@@ -1,8 +1,6 @@
 ---
 title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial part 3: Build the ontology'
 description: Build an ontology in digital twin builder (preview) by creating entity types, mapping data, and creating relationship types.
-author: baanders
-ms.author: baanders
 ms.date: 12/12/2025
 ms.topic: tutorial
 ---

@@ -1,8 +1,6 @@
 ---
 title: Create Reports in Power BI
 description: Follow steps to create reports in the Power BI Desktop and Power BI service in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: salilkanadey
 ms.date: 07/15/2025
 ms.topic: how-to

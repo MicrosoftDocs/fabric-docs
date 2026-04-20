@@ -1,9 +1,7 @@
 ---
 title: Add a Spark Notebook destination to an eventstream
 description: Learn how to add a Spark Notebook destination to an eventstream.
-ms.reviewer: spelluru
-ms.author: arindamc
-author: arindamc
+ms.reviewer: arindamc
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 12/21/2025
@@ -72,3 +70,4 @@ Follow these steps to configure a Spark notebook as a destination for your Event
 
 - [Apache Spark in Microsoft Fabric](../../data-engineering/spark-compute.md)
 - [How to use Microsoft Fabric Notebooks](../../data-engineering/how-to-use-notebook.md)
+

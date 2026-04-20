@@ -1,9 +1,6 @@
 ---
 title: "Tutorial part 3: Preview the ontology"
 description: Preview the ontology by observing its entity instances and relationship graphs. Part 3 of the ontology (preview) tutorial.
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
 ms.date: 12/03/2025
 ms.topic: tutorial
 ---
@@ -89,7 +86,7 @@ Next, craft this query: *Show all stores that have made a sale with a revenue gr
 
     :::image type="content" source="media/tutorial-3-preview-ontology/add-node.png" alt-text="Screenshot of adding nodes to a new query.":::
 
-1. In the **Components** pane, check the boxes next to **Nodes > Store** and **Edges > has** to add them to the graph.
+1. In the **Components** pane, check the boxes next to **Nodes > Store** and **Edges > from** to add them to the graph.
 1. From the query builder ribbon, select **Add filter > SaleEvent > RevenueUSD**. Set the filter for `RevenueUSD > 150`.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/add-filter-sale.png" alt-text="Screenshot of filtering by sale revenue.":::
@@ -105,3 +102,5 @@ This process allows you to inspect the paths that connect operational issues (li
 In this step, you previewed the instances connected to your ontology and explored the data they contain. Next, create a data agent to explore the data further by using natural language queries. 
 
 Continue to [Create data agent](tutorial-4-create-data-agent.md).
+
+

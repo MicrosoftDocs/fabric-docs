@@ -4,7 +4,6 @@ description: Learn about information protection in Fabric.
 author: msmimart
 ms.author: mimart
 ms.topic: concept-article
-ms.custom:
 ms.date: 01/23/2025
 ---
 

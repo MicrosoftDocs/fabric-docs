@@ -102,7 +102,7 @@ This section explains how to create a Copy job to replicate data from SAP via SA
 
 - SAP Datasphere replication flow setup requirements:
 
-  - Ensure you configure the target storage settings propertly: set **Group Delta** to **None** and set **File Type** to **Parquet**.
+  - Ensure you configure the target storage settings properly: set **Group Delta** to **None** and set **File Type** to **Parquet**.
   - Currently, SAP mirroring supports replication flow load type as **Initial and Delta**.
 
 - Once the Copy job is configured, you can monitor the current state of replication from cloud storage to supported destinations. If you observe a delay in the appearance of mirrored data, also check the SAP Datasphere replication flow status and if the data is replicated into the storage.

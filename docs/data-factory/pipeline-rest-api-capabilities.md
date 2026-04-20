@@ -112,6 +112,29 @@ Create a pipeline in a specified workspace.
 
 Create a pipeline with a base64 definition in a specified workspace.
 
+For the payload, the definition content should be a base64 encoded JSON that defines the pipeline. The JSON structure should follow the pipeline definition schema expected by Fabric Data Factory.
+
+Here's an example of what the JSON pipeline description might look like before encoding:
+
+```json
+{
+  "name": "SamplePipeline",
+  "properties": {
+    "activities": [
+      {
+        "name": "Wait10Seconds",
+        "type": "Wait",
+        "typeProperties": {
+          "waitTimeInSeconds": 10
+        }
+      }
+    ]
+  }
+}
+```
+
+After you've built your JSON, use your favorite base64 encoding tool, script, or library to encode this JSON content, and include it in the payload where shown below.
+
 **Sample request**:
 
 **URI**: ```POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items```
@@ -392,7 +415,7 @@ Gets singular pipeline’s job instance.
 
 ## Schedule a pipeline
 
-You can also create schedules programatically with the API. Scheduler API supports the following operations:  
+You can also create schedules programmatically with the API. Scheduler API supports the following operations:  
 
 - Cancel Pipeline Job Instance  
 - Create Pipeline Schedule  
@@ -543,7 +566,7 @@ For more detailed information on how to set up and use SPNs in Fabric Data Facto
 
 ## Current limitations
 
-- JOB Limitation: Run APIs are invokable, but the actual run never succeeds (just like run/refresh from UI).
+- JOB Limitation: Run APIs can be invoked, but the actual run never succeeds (just like run/refresh from UI).
 - Non-Power BI Fabric Items: The workspace must be on a support Fabric capacity.
 - Creating an item: use either creationPayload or definition, but don't use both at the same time.
 

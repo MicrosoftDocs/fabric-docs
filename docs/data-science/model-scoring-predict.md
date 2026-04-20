@@ -1,18 +1,16 @@
-﻿---
+---
 title: Model scoring with PREDICT
 description: Learn how to operationalize machine learning models in Fabric with a scalable function called PREDICT.
 ms.author: lagayhar
-author: lgayhardt
-ms.reviewer: erenorbey
-reviewer: orbey
+ms.reviewer: ruxu
 ms.topic: how-to
-ms.date: 11/19/2024
+ms.date: 02/28/2026
 ms.search.form: Predict
 ---
 
 # Machine learning model scoring with PREDICT in Microsoft Fabric
 
-[!INCLUDE [product-name](../includes/product-name.md)] allows users to operationalize machine learning models with the scalable PREDICT function. This function supports batch scoring in any compute engine. Users can generate batch predictions directly from a [!INCLUDE [product-name](../includes/product-name.md)] notebook or from the item page of a given ML model.
+[!INCLUDE [product-name](../includes/product-name.md)] enables you to operationalize machine learning models by using the scalable PREDICT function. This function supports batch scoring in any compute engine. You can generate batch predictions directly from a [!INCLUDE [product-name](../includes/product-name.md)] notebook or from the item page of a given ML model.
 
 In this article, you learn how to apply PREDICT by writing code yourself or through use of a guided UI experience that handles batch scoring for you.
 
@@ -22,7 +20,7 @@ In this article, you learn how to apply PREDICT by writing code yourself or thro
 
 ## Limitations
 
-- The PREDICT function is currently supported for this limited set of ML model flavors:
+- The PREDICT function currently supports only the following ML model flavors:
     - CatBoost
     - Keras
     - LightGBM
@@ -34,14 +32,14 @@ In this article, you learn how to apply PREDICT by writing code yourself or thro
     - Statsmodels
     - TensorFlow
     - XGBoost
-- PREDICT ***requires*** that you save ML models in the MLflow format, with their signatures populated
-- PREDICT ***does not*** support ML models with multi-tensor inputs or outputs
+- PREDICT ***requires*** that you save ML models in the MLflow format, with their signatures populated.
+- PREDICT ***does not*** support ML models with multi-tensor inputs or outputs.
 
 ## Call PREDICT from a notebook
 
-PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] registry. If an already trained and registered ML model exists in your workspace, you can skip to step 2. If not, step 1 provides sample code to guide you through training a sample logistic regression model. You can use this model to generate batch predictions at the end of the procedure.
+PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] registry. If an already trained and registered ML model exists in your workspace, you can skip to step 2. If not, step 1 provides sample code to guide you through training a sample logistic regression model. Use this model to generate batch predictions at the end of the procedure.
 
-1. **Train an ML model and register it with MLflow**. The next code sample uses the MLflow API to create a machine learning experiment, and then start an MLflow run for a scikit-learn logistic regression model. The model version is then stored and registered in the [!INCLUDE [product-name](../includes/product-name.md)] registry. Visit the [how to train ML models with scikit-learn](train-models-scikit-learn.md) resource for more information about training models and tracking your own experiments.
+1. **Train an ML model and register it with MLflow**. The next code sample uses the MLflow API to create a machine learning experiment, and then starts an MLflow run for a scikit-learn logistic regression model. The model version is then stored and registered in the [!INCLUDE [product-name](../includes/product-name.md)] registry. For more information about training models and tracking your own experiments, see [how to train ML models with scikit-learn](train-models-scikit-learn.md).
 
     ```Python
     import mlflow
@@ -72,10 +70,10 @@ PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../inclu
     test = spark.createDataFrame(data.frame.drop(['target'], axis=1))
     ```
 
-1. **Create an `MLFlowTransformer` object to load the ML model for inferencing.** To create an `MLFlowTransformer` object to generate batch predictions, you must perform these actions:
-    - specify the `test` DataFrame columns you need as model inputs (in this case, all of them)
-    - choose a name for the new output column (in this case, `predictions`)
-    - provide the correct model name and model version for generation of those predictions.
+1. **Create an `MLFlowTransformer` object to load the ML model for inferencing.** To create an `MLFlowTransformer` object to generate batch predictions, perform these actions:
+    - Specify the `test` DataFrame columns you need as model inputs (in this case, all of them).
+    - Choose a name for the new output column (in this case, `predictions`).
+    - Provide the correct model name and model version for generation of those predictions.
   
     If you use your own ML model, substitute the values for the input columns, output column name, model name, and model version.
 
@@ -106,10 +104,10 @@ model.transform(test).show()
 
 ### PREDICT with the Spark SQL API
 
-This code invokes the PREDICT function with the Spark SQL API. If you use your own ML model, substitute the values for `model_name`, `model_version`, and `features` with your model name, model version, and feature columns.
+This code calls the PREDICT function by using the Spark SQL API. If you use your own ML model, replace the values for `model_name`, `model_version`, and `features` with your model name, model version, and feature columns.
 
 > [!NOTE]
-> Use of the Spark SQL API for prediction generation still requires creation of an `MLFlowTransformer` object (as shown in step 3).
+> When you use the Spark SQL API to generate predictions, you still need to create an `MLFlowTransformer` object, as shown in step 3.
 
 ```Python
 from pyspark.ml.feature import SQLTransformer 
@@ -129,7 +127,7 @@ sqlt.transform(test).show()
 
 ### PREDICT with a user-defined function
 
-This code invokes the PREDICT function with a PySpark UDF. If you use your own ML model, substitute the values for the model and features.
+This code calls the PREDICT function by using a PySpark UDF. If you use your own ML model, replace the values for the model and features.
 
 ```Python
 from pyspark.sql.functions import col, pandas_udf, udf, lit
@@ -143,18 +141,18 @@ test.withColumn("PREDICT", my_udf(*[col(f) for f in features])).show()
 
 ## Generate PREDICT code from an ML model's item page
 
-From the item page of any ML model, you can choose one of these options to start batch prediction generation for a specific model version, with the PREDICT function:
-- Copy a code template into a notebook, and customize the parameters yourself
-- Use a guided UI experience to generate PREDICT code
+From the item page of any ML model, you can choose one of these options to start batch prediction generation for a specific model version, by using the PREDICT function:
+- Copy a code template into a notebook, and customize the parameters yourself.
+- Use a guided UI experience to generate PREDICT code.
 
 ### Use a guided UI experience
 
 The guided UI experience walks you through these steps:
 
-- Select the source data for scoring
-- Map the data correctly to your ML model inputs
-- Specify the destination for your model outputs
-- Create a notebook that uses PREDICT to generate and store prediction results
+1. Select the source data for scoring.
+1. Map the data correctly to your ML model inputs.
+1. Specify the destination for your model outputs.
+1. Create a notebook that uses PREDICT to generate and store prediction results.
 
 To use the guided experience,
 1. Navigate to the item page for a given ML model version.
@@ -201,16 +199,16 @@ To use the guided experience,
 To use a code template for generating batch predictions:
 
 1. Go to the item page for a given ML model version.
-1. Select **Copy code to apply** from the **Apply this version** dropdown. The selection allows you to copy a customizable code template.
+1. Select **Copy code to apply** from the **Apply this version** dropdown. The selection copies a customizable code template.
 
-You can paste this code template into a notebook to generate batch predictions with your ML model. To successfully run the code template, you must manually replace the following values:
+You can paste this code template into a notebook to generate batch predictions with your ML model. To successfully run the code template, manually replace the following values:
 
-- `<INPUT_TABLE>`: The file path for the table that provides inputs to the ML model
-- `<INPUT_COLS>`: An array of column names from the input table to feed to the ML model
-- `<OUTPUT_COLS>`: A name for a new column in the output table that stores predictions
-- `<MODEL_NAME>`: The name of the ML model to use for generating predictions
-- `<MODEL_VERSION>`: The version of the ML model to use for generating predictions
-- `<OUTPUT_TABLE>`: The file path for the table that stores the predictions
+- `<INPUT_TABLE>`: The file path for the table that provides inputs to the ML model.
+- `<INPUT_COLS>`: An array of column names from the input table to feed to the ML model.
+- `<OUTPUT_COLS>`: A name for a new column in the output table that stores predictions.
+- `<MODEL_NAME>`: The name of the ML model to use for generating predictions.
+- `<MODEL_VERSION>`: The version of the ML model to use for generating predictions.
+- `<OUTPUT_TABLE>`: The file path for the table that stores the predictions.
 
 :::image type="content" source="media/model-scoring-predict/copy-code.png" alt-text="Screenshot showing the copy-code template for ML model predictions." lightbox="media/model-scoring-predict/copy-code.png":::
 
@@ -239,3 +237,4 @@ df.write.format('delta').mode("overwrite").save(
 
 - [End-to-end prediction example using a fraud detection model](fraud-detection.md)
 - [How to train ML models with scikit-learn in Microsoft Fabric](train-models-scikit-learn.md)
+

@@ -1,12 +1,11 @@
 ---
 title: Create a Dataverse shortcut
 description: Learn how to create a OneLake shortcut for Dataverse inside a Microsoft Fabric lakehouse.
-ms.reviewer: eloldag
-ms.author: kgremban
-author: kgremban
+ms.reviewer: eloldag # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.search.form: Shortcuts
 ms.topic: how-to
-ms.custom:
 ms.date: 11/20/2025
 #customer intent: As a data engineer, I want to learn how to create a shortcut for Dataverse inside a Microsoft Fabric lakehouse so that I can easily access and manage my data within the lakehouse environment.
 ---

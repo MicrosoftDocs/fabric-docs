@@ -6,7 +6,6 @@ ms.author: sngun
 ms.reviewer: yicw
 ms.topic: how-to
 ms.date: 01/30/2026
-ms.custom:
 #customer intent: As a report creator, I want use workspaces so that I can create collections of artifacts that are related.
 ---
 # Create a workspace

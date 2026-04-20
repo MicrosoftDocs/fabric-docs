@@ -4,7 +4,7 @@ description: This article explains how to copy data using Presto.
 ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 08/26/2025
-ms.custom: 
+ms.custom:
   - pipelines
   - template-how-to
   - connectors

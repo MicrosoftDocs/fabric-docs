@@ -1,11 +1,8 @@
 ---
 title: Get Data from an Eventstream in Multiple Fabric Items
 description: This article describes how to get data from an eventstream inside other Fabric items.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: how-to
-ms.custom:
 ms.date: 11/15/2023
 ms.search.form: Eventstreams with Other Fabric Items
 ---
@@ -62,3 +59,5 @@ To get data from an eventstream and add it to a KQL table inside a KQL database,
 ## Related content
 
 - [Add and manage a destination in an eventstream](./add-manage-eventstream-destinations.md)
+
+

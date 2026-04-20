@@ -1,8 +1,6 @@
 ---
 title: Extend the Microsoft Fabric frontend
 description: Learn how to edit files in the developer sample repository to build the frontend of a customized Microsoft Fabric workload. Learn about the Microsoft Fabric Workload Development Kit and how to use it by following a detailed example.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 05/21/2024
@@ -421,3 +419,4 @@ For more information, see [@ms-fabric/workload-client package](https://go.micros
 
 * [Workload Development Kit overview](development-kit-overview.md)
 * [Backend configuration guide](extensibility-back-end.md)
+

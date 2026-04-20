@@ -1,11 +1,10 @@
 ---
 title:  Fabric decision guide - copy activity, dataflow, Eventstream, or Spark
 description: Review a reference table and some quick scenarios to help in choosing whether to use copy activity, dataflow, Eventstream, or Spark to work with your data in Fabric.
-ms.reviewer: sngun
-ms.author: chschmidt
-author: christophermschmidt
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: chschmidt
 ms.topic: quickstart
-ms.custom:
 ms.date: 06/04/2025
 ---
 
@@ -78,3 +77,5 @@ The Copy job provides a low-friction and scalable data movement experience, meet
 - [Quickstart: Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md)
 - [How to create an Apache Spark job definition in Fabric](../data-engineering/create-spark-job-definition.md)
 - [How to create an Eventstream in Fabric](../real-time-intelligence/event-streams/create-manage-an-eventstream.md)
+
+

@@ -1,8 +1,6 @@
 ---
 title: Create Tables in the Warehouse
 description: Learn how to create tables in your warehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: jovanpop, procha, salilkanade
 ms.date: 01/06/2026
 ms.topic: how-to

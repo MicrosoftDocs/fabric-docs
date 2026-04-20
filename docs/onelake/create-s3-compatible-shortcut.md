@@ -1,12 +1,11 @@
 ---
 title: Create an Amazon S3 compatible shortcut
 description: Learn how to create a OneLake shortcut that's Amazon S3 compatible for easy data access in a Fabric lakehouse.
-ms.reviewer: eloldag
-ms.author: mahi
-author: Matt1883
+ms.reviewer: eloldag, mahi # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.search.form: Shortcuts
 ms.topic: how-to
-ms.custom:
 ms.date: 07/24/2025
 #customer intent: As a data engineer, I want to learn how to create an Amazon S3 compatible shortcut so that I can easily access data in my S3 bucket.
 ---
@@ -74,3 +73,4 @@ The following limitations apply to S3 compatible shortcuts:
 
 - [Create a OneLake shortcut](create-onelake-shortcut.md)
 - [Create an Azure Data Lake Storage Gen2 shortcut](create-adls-shortcut.md)
+

@@ -3,12 +3,14 @@ title: Export and sharing tenant settings
 description: Learn how to configure export and sharing settings in Fabric.
 author: msmimart
 ms.author: mimart
-ms.topic: how-to
-ms.date: 05/26/2025
+ms.custom:
+  - tenant-setting
+ms.topic: concept-article
+ms.date: 04/08/2026
 LocalizationGroup: Administration
 ---
 
-# Export and sharing tenant settings
+# Export and sharing settings
 
 The export and sharing settings allow the Fabric administrator the flexibility to determine and allow Power BI content to export to formats within their organization's security and compliance guidelines. These settings also allow you to keep unauthorized export formats from being exported by users.
 
@@ -20,32 +22,15 @@ When you turn on this setting, the users you specify will be able to share read-
 
 External data sharing has important [security considerations](../governance/external-data-sharing-overview.md#security-considerations). For more information about external data sharing, see [External data sharing](../governance/external-data-sharing-overview.md).
 
-To turn on external data sharing:
-
-1. Go to the [admin portal](./admin-center.md#how-to-get-to-the-admin-portal) and open the **Tenant settings** tab.
-
-1. Under the **Export and sharing settings** section, find and expand the **External data sharing (preview)** setting.
-
-1. Set the toggle to **Enabled**.
-
-1. Specify which users you want to be able to create external data shares.
+To turn on external data sharing, open the **Admin portal**, go to **Tenant settings**, expand **External data sharing** under **Export and sharing settings**, set the toggle to **Enabled**, and then specify which users can create external data shares.
 
 ## Users can accept external data shares
 
 When you turn on this setting, the users you specify will be able to accept read-only links to data from another organization’s Fabric tenant. Users who accept an external share link can view, build on, and share this data, both inside and outside of your organization. For more information about external data sharing and its security considerations, see [External data sharing](../governance/external-data-sharing-overview.md).
 
-To allow users to accept external data shares:
+To allow users to accept external data shares, open the **Admin portal**, go to **Tenant settings**, expand **Users can accept external data shares** under **Export and sharing settings**, set the toggle to **Enabled**, and then specify which users can accept external data shares.
 
-1. Go to the [admin portal](./admin-center.md#how-to-get-to-the-admin-portal) and open the **Tenant settings** tab.
-
-1. Under the **Export and sharing settings** section, find and expand the **Users can accept external data shares (preview)** setting.
-
-1. Set the toggle to **Enabled**.
-
-1. Specify which users you want to be able to accept external data shares.
-
-> [!NOTE]
-> This setting is unrelated to the setting **Allow specific users to turn on external data sharing**, which refers to sharing Power BI semantic models via Entra B2B.
+This setting is unrelated to **Allow specific users to turn on external data sharing**, which refers to sharing Power BI semantic models via Entra B2B.
 
 ## Guest users can access Microsoft Fabric
 
@@ -75,7 +60,7 @@ To learn more about sending Fabric content to Microsoft Entra B2B guest users, r
 This setting helps organizations limit visibility of external users in sharing experiences. When disabled, Microsoft Entra guest users aren't shown in people picker suggested users lists. This helps prevent accidental sharing to external users and seeing which external users have been added to your organization through Power BI sharing UIs.
 
 > [!IMPORTANT]
-> When the setting is set to disabled, you can still give permission to a guest user by providing their full email address in people pickers.
+> When the setting is disabled, you can still give permission to a guest user by providing their full email address in people pickers.
   
 ## Publish to web
 
@@ -113,12 +98,7 @@ To learn more, see [Export the data that was used to create a visualization](/po
 
 Users in the organization can export data from a tile, visualization, or paginated report to a *.csv* file.
 
-To turn this setting on or off:
-
-1. Still in the **Export and sharing settings** section of the **Tenant Settings**, find the setting called **Export to .csv**.
-1. Turn the switch on or off.
-1. Under **Apply to**, select the scope of users that the setting will affect.
-1. Select **Apply** to save your changes.
+To change this setting, go to **Tenant settings**, find **Export to .csv** under **Export and sharing settings**, choose whether the setting is on or off, select the user scope under **Apply to**, and then select **Apply**.
 
 ## Download reports
 
@@ -126,7 +106,7 @@ Users in the organization can download .pbix files and paginated reports.
 
 To learn more, see [Download a report from the Power BI service to Power BI Desktop](/power-bi/create-reports/service-export-to-pbix).
 
-## Users can work with Power BI semantic models in Excel using a live connection
+## Users can work with semantic models in Excel using a live connection
 
 Turn this setting on to allow users to export data to Microsoft Excel from a Power BI visual or semantic model, or export a semantic model to an Excel workbook with Analyze in Excel, both options with a live connection to the XMLA endpoint.
 
@@ -136,8 +116,7 @@ To learn more, see [Create Excel workbooks with refreshable Power BI data](/powe
 
 This setting lets users export reports as PowerPoint presentations or PDF documents.
 
-- Learn how to [export PowerPoint presentations](/power-bi/collaborate-share/end-user-powerpoint).
-- Learn how to [export PDF documents](/power-bi/collaborate-share/end-user-pdf).
+To learn more, see [export PowerPoint presentations](/power-bi/collaborate-share/end-user-powerpoint) and [export PDF documents](/power-bi/collaborate-share/end-user-pdf).
 
 ## Export reports as MHTML documents
 
@@ -176,6 +155,14 @@ Choose whether people in your organization or specific security groups can certi
 
 Read [Enable content certification](/power-bi/admin/service-admin-setup-certification) for more details.
 
+## Endorse master data
+
+Choose whether people in your organization or specific security groups can endorse items such as lakehouses, warehouses, or datamarts as one of the core sources for your organization's data records.
+
+When someone endorses an item as master data, their name and email are shown with the endorsement badge.
+
+For more information, see [Enable master data endorsement](endorsement-master-data-enable.md).
+
 ## Users can set up email subscriptions
 
 This setting lets users create email subscriptions to reports and dashboards. Read [Email subscriptions for reports and dashboards in the Power BI service](/power-bi/collaborate-share/end-user-subscribe) to learn more.
@@ -186,12 +173,11 @@ There may be instances that admin may want B2B guest users to receive email subs
 
 If this setting is off, only users in your organization can create and receive email subscriptions.
 
-> [!IMPORTANT]
-> The **Allow email subscriptions to be sent to external users** switch will be automatically turned off if the **B2B guest users can set up and be subscribed to email subscriptions** switch is turned off. This is because B2B users are external users that have been granted elevated permissions to get content. Since B2B guest users have higher permissions than other external users, if they can't get the email subscription neither can the other external users.
+The **Users can send email subscriptions to external users** switch is automatically turned off if the **B2B guest users can set up and be subscribed to email subscriptions** switch is turned off. This is because B2B users are external users that have been granted elevated permissions to get content. Since B2B guest users have higher permissions than other external users, if they can't get the email subscription neither can the other external users.
 
-## Users can send email subscriptions to guest users
+## Users can send email subscriptions to external users
 
-Users can send email subscriptions to guest users. With this setting off, users in your organization can't subscribe guest users to subscription emails.
+External users are users who haven't been added to your Microsoft Entra ID. Turn this setting off to prevent users from subscribing external users to email subscriptions.
 
 ## Featured content
 
@@ -205,8 +191,7 @@ You can also manage featured content on the **Featured content** page in the Adm
 
 This setting lets Fabric admins control who in the organization can use featured tables in the Excel Data Types Gallery. Read more about [Power BI featured tables in Excel](/power-bi/collaborate-share/service-excel-featured-tables).
 
-> [!NOTE]
-> Connections to featured tables are also disabled if the **Allow live connections** setting is set to Disabled.
+Connections to featured tables are also disabled if the **Allow live connections** setting is set to Disabled.
 
 ## Allow shareable links to grant access to everyone in your organization
 
@@ -249,8 +234,7 @@ When this setting is on (default), entry points for opening a new PowerPoint pre
 
 This integration requires that your organization's Microsoft Office admin has enabled support for add-ins.
 
->[!NOTE]
-> If you turn this setting off, that doesn't prevent people from using the add-in starting from PowerPoint. To completely block adding live Power BI report pages to PowerPoint slides using the add-in, the add-in must be turned off in both Power BI and PowerPoint.
+If you turn this setting off, that doesn't prevent people from using the add-in starting from PowerPoint. To completely block adding live Power BI report pages to PowerPoint slides using the add-in, the add-in must be turned off in both Power BI and PowerPoint.
 
 ## Allow DirectQuery connections to Power BI semantic models
 
@@ -278,11 +262,13 @@ As a Fabric admin, you can specify which users or user groups in your organizati
 Disabling this setting prevents any user from sharing semantic models externally by blocking the ability of users to turn on external sharing for semantic models they own or manage.
 
 > [!NOTE]
-> This setting relates to sharing Power BI semantic models via Entra B2B capabilities. It is unrelated to the **External data sharing (preview)** and **Users can accept external data shares (preview)** tenant settings, which control the [external data sharing feature](../governance/external-data-sharing-overview.md). The external data sharigin feature enables sharing data from an organization's OneLake storage locations to external Fabric tenants, and uses secure Fabric-to-Fabric communication channels rather than Entra B2B.
+> This setting relates to sharing Power BI semantic models via Entra B2B capabilities. It is unrelated to the **External data sharing (preview)** and **Users can accept external data shares (preview)** tenant settings, which control the [external data sharing feature](../governance/external-data-sharing-overview.md). The external data sharing feature enables sharing data from an organization's OneLake storage locations to external Fabric tenants, and uses secure Fabric-to-Fabric communication channels rather than Entra B2B.
 
-## Users can deliver reports to OneDrive and SharePoint in Power BI
+## Users with read or write permission can download data from notebooks
 
-Users can deliver reports to OneDrive or SharePoint. If the **Users can set up subscriptions** setting is also turned on, users can use subscriptions to schedule delivery of these reports to OneDrive or SharePoint.
+With this setting on, users with read or write permission can download or export data from tables in notebook outputs.
+
+For more information, see [Download data from notebook outputs](https://go.microsoft.com/fwlink/?linkid=2299416).
 
 ## Related content
 

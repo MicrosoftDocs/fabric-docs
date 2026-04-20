@@ -1,16 +1,15 @@
 ---
 title: Migration Assistant for Fabric Data Warehouse
 description: This article explains the Migration Assistant experience for Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: anphil, prlangad, chweb
-ms.date: 08/19/2025
+ms.reviewer: anphil, prlangad
+ms.date: 03/13/2026
 ms.topic: concept-article
 ms.search.form: Migration Assistant
+ai-usage: ai-assisted
 ---
 # Fabric Migration Assistant for Data Warehouse
 
-**Applies to:** [!INCLUDE [fabric-dw](../data-warehouse/includes/applies-to-version/fabric-dw.md)]
+**Applies to**: [!INCLUDE [fabric-dw](../data-warehouse/includes/applies-to-version/fabric-dw.md)]
 
 The Fabric Migration Assistant is a migration experience built natively into Fabric, providing a guided migration experience to Microsoft Fabric. 
 
@@ -19,39 +18,43 @@ The Migration Assistant copies metadata and data from the source database, autom
 You can use the Fabric Migration Assistant for Data Warehouse to copy dedicated SQL pools in Azure Synapse Analytics, as well as terabyte or larger scale OLAP data in SQL Server and other SQL database platforms.
 
 > [!TIP]
-> For a step-by-step guide to migrate with the Migration Assistant, see [Migrate with the Fabric Migration Assistant for Data Warehouse](migrate-with-migration-assistant.md).
+> For step-by-step migration guides with the Migration Assistant, see [Migrate by uploading a file](migrate-using-upload-file.md) and [Migrate by connecting to the source system](migrate-using-connection-to-source-system.md).
 >
 > For more information on strategy and planning your migration, see [Migration​ planning: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-warehouse.md).
 
 ## Migration steps
 
+The Migration Assistant helps users migrate to Fabric Data Warehouse. You can upload a DACPAC file or create a direct connection to the source system (this is a preview feature). 
+
 Migration with the Fabric Migration Assistant involves these steps at a high level:
 
-1. Migrate the schema of objects (such as the definition for a table) from your source into a new Fabric warehouse using a DACPAC file.
+1. Migrate the schema of objects (such as the definition for a table) from your source into a new Fabric warehouse using a DACPAC file or connecting to your source system.
 1. Use the Migration Assistant to fix problems by updating T-SQL types and definitions for the objects that couldn't automatically migrate.
 1. Copy data using copy job in Fabric Data Factory.
 1. Testing and parallel comparison of the old warehouse and new warehouse. Finally, reroute connections from applications that access the source warehouse to use the new warehouse.
 
 ## Migrated objects
 
-The Migration Assistant helps users migrate to Fabric Data Warehouse using DACPAC files. The database object metadata captured within the DACPAC are:
+The database object metadata captured are:
 
--   Tables
--   Views
--   Functions
--   Stored procedures
--   Security objects such as roles, permissions, dynamic data masking
+- Tables
+- Views
+- Functions
+- Stored procedures
+- Security objects such as roles, permissions, dynamic data masking
 
 ## Fix problems with Migration Assistant
 
-Some T-SQL scripts fail to migrate if the metadata couldn't be migrated into those that are supported in Fabric warehouse, or if the code failed to apply to T-SQL. The **Fix problems** step of the migration assistant helps you fix these failed scripts.
+Some T-SQL scripts fail to migrate if the metadata couldn't be migrated into those that are supported in Fabric warehouse, or if the code failed to apply to T-SQL. The **Fix problems** step of the Migration Assistant helps you fix these failed scripts.
+
+For more information, see our step-by-step tutorials: [Migrate by uploading a file](migrate-using-upload-file.md) or [Migrate by connecting to the source system](migrate-using-connection-to-source-system.md).
 
 ### Primary and dependent objects
 
 The failed scripts are split into sets:
 
--   Primary objects are ones that aren't dependent on another object.
--   Dependent objects are ones that are dependent on one or more objects either directly or indirectly.
+- Primary objects are ones that aren't dependent on another object.
+- Dependent objects are ones that are dependent on one or more objects either directly or indirectly.
 
 Dependent objects won't be migrated until their primary objects are fixed, so you're guided to fix the primary objects first.
 
@@ -90,9 +93,9 @@ The workarounds for some of the common unsupported features:
 | Column-level encryption | Use alternative ways to protect your data such as implementing encryption at the application layer and [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md) for obfuscating sensitive data. |
 | Scalar functions | Scalar user-defined functions (UDFs) are not currently migrated by the Migration Assistant. Scalar UDFs are supported in Fabric Data Warehouse, but only when inlineable (currently in preview). For more information, see [CREATE FUNCTION](/sql/t-sql/statements/create-function-sql-data-warehouse?view=fabric&preserve-view=true) and [Scalar UDF inlining](/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=fabric&preserve-view=true). |
 | Identity columns | IDENTITY columns in Fabric Data Warehouse behave differently than they do in other platforms, such as SQL Server. For more details, refer to [Understanding IDENTITY columns in Fabric Data Warehouse](identity.md).|
-| Temp tables | Use regular tables. |
+| Stuck on the **Set the source** screen | When migrating by connecting directly to the source, Migration Assistant uses Power Query to establish a connection to your source system. To troubleshoot, see [Power Query connection authentication](/power-query/connection-authentication-pqo).|
 
-The following unsupported features are no longer needed in Microsoft Fabric Data Warehouse:
+The following unsupported features are no longer needed in Fabric Data Warehouse:
 
 - Indexes
 - Transparent data encryption (TDE): Not needed in Fabric because Fabric already encrypts data through more advanced means. For more information, see [Data Encryption in Fabric Data Warehouse](encryption.md).
@@ -105,9 +108,11 @@ Other currently unsupported features you might see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Migrate Data with the Fabric Migration Assistant for Data Warehouse](migrate-with-migration-assistant.md)
+> [Migrate by uploading a file](migrate-using-upload-file.md) or [Migrate by connecting to the source system](migrate-using-connection-to-source-system.md)
 
 ## Related content
 
-- [Migrate with the Fabric Migration Assistant for Data Warehouse](migrate-with-migration-assistant.md)
+- [Migrate by uploading a file with source metadata](migrate-using-upload-file.md)
+- [Migrate by connecting to the source system](migrate-using-connection-to-source-system.md)
 - [Migration​ planning: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-warehouse.md)
+- [Upgrade your Azure Data Factory pipelines to Fabric](/azure/data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory)

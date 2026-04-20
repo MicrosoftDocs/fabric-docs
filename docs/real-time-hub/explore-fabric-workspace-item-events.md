@@ -1,10 +1,8 @@
 ---
 title: Explore Fabric workspace item events in Fabric Real-Time hub
 description: This article shows how to explore Fabric workspace item events in Fabric Real-Time hub.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: how-to
-ms.custom:
 ms.date: 12/11/2025
 ---
 
@@ -12,9 +10,9 @@ ms.date: 12/11/2025
 
 Fabric workspace item events allow you to receive notification when certain actions occur on your workspace items. For instance, when a new artifact is created or an existing artifact is deleted. These events can be used to alert on other actions or workflows in Fabric, such as running a pipeline or sending an email notification using Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] alerting capabilities. This article explains how to explore Fabric workspace item events in Real-Time hub.
 
-[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+[!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
 
-[!INCLUDE [deprecated-fabric-workspace-events](./includes/deprecated-fabric-workspace-events.md)]
+[!INCLUDE [deprecated-fabric-workspace-events](../real-time-intelligence/event-streams/includes/connectors/deprecated-fabric-workspace-events.md)]
 
 ## View Fabric workspace item events detail page
 
@@ -80,6 +78,7 @@ An event has the following top-level data:
 | `dataschemaversion` | String | The version of the data schema. | `1.0` |
 | `capacityId` | string | Unique identifier for the capacity. | `00000000-0000-0000-0000-000000000000` |
 | `domainId` | string | Unique identifier for the domain. | `00000000-0000-0000-0000-000000000000` |
+| `datacontenttype` | string | Content type of data value. | `application/json` |
 
 The `data` object has the following properties: 
 
@@ -93,7 +92,7 @@ The `data` object has the following properties:
 | `principalId` | guid | Unique identifier for the user. | `00000000-0000-0000-0000-000000000000` |
 | `executingPrincipalType` | string | The kind of user. | `User` |
 
-[!INCLUDE [unsupported-itemtypes-in-workspaceevents](./includes/unsupported-itemtypes-in-workspaceevents.md)]
+[!INCLUDE [unsupported-itemtypes-in-workspaceevents](../real-time-intelligence/event-streams/includes/connectors/unsupported-itemtypes-in-workspaceevents.md)]
 
 ## Subscribe permission
 For more information, see [subscribe permission for Fabric events](fabric-events-subscribe-permission.md).
@@ -101,3 +100,4 @@ For more information, see [subscribe permission for Fabric events](fabric-events
 ## Related content
 
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md)
+

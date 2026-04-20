@@ -1,10 +1,8 @@
 ---
 title: Set alerts on Azure Blob Storage events in Real-Time hub
 description: This article describes how to set alerts on Azure Blob Storage events in Real-Time hub.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: how-to
-ms.custom:
 ms.date: 12/14/2025
 ---
 
@@ -12,7 +10,7 @@ ms.date: 12/14/2025
 
 This article describes how to set alerts on Azure Blob Storage events in Real-Time hub.
 
-[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+[!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
 
 ## Navigate to Real-Time hub
 
@@ -104,3 +102,4 @@ Do steps from one of the following sections, which opens a side panel where you 
 
 - [Set alerts on Fabric workspace item events](set-alerts-fabric-workspace-item-events.md)
 - [Set alerts on data streams](set-alerts-data-streams.md)
+

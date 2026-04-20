@@ -1,9 +1,7 @@
 ---
 title: Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse
 description: Learn how to use eventstreams to ingest, filter, and transform data from Azure Event Hubs, and stream it into a lakehouse.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 ms.date: 11/15/2023
@@ -194,3 +192,5 @@ In this tutorial, you learned how to ingest, filter, and transform real-time eve
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)
 - [Process event data with event processor editor](./process-events-using-event-processor-editor.md)
+
+

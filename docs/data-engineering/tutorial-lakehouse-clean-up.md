@@ -1,27 +1,36 @@
 ---
 title: Lakehouse tutorial - clean up resources
-description: As a final step in the tutorial, clean up your resources. Learn how to delete individual reports, pipelines, warehouses, or remove the entire workspace.
+description: As a final step in the tutorial, clean up your resources by deleting individual items like the lakehouse or semantic model, or removing the entire workspace.
 ms.reviewer: arali
-ms.author: eur
-author: eric-urban
 ms.topic: tutorial
-ms.custom:
-ms.date: 07/19/2024
+ms.date: 02/21/2026
+ai-usage: ai-assisted
 ---
 
 # Lakehouse tutorial: Clean up Fabric resources
 
-As a final step in the tutorial, clean up your resources. This article shows how to delete the workspace.
+In this tutorial, you delete the resources you created in the previous tutorials to avoid unnecessary consumption of capacity. You can delete individual items or remove the entire workspace.
 
-## Prerequisites
+## Delete individual items
 
-* [Create the Power BI data model and a report](tutorial-lakehouse-build-report.md)
+To clean up specific items without removing the entire workspace, go to your workspace and delete the items you no longer need.
 
-## Clean up resources
+1. Select your workspace from the navigation menu to open the workspace item view.
 
-You can delete individual reports, pipelines, warehouses, and other items or remove the entire workspace. Use the following steps to delete the workspace you created for this tutorial:
+1. Select the **...** (ellipsis) menu next to the item you want to delete, and then select **Delete**.
 
-1. Select your workspace, the **Fabric Lakehouse Tutorial**, from the navigation menu to open the workspace item view.  
+You can delete any of the items you created in this tutorial, including:
+
+- The **wwilakehouse** lakehouse (and its associated SQL analytics endpoint)
+- The semantic model you created for reporting
+- Any notebooks you used for data preparation and transformation
+- The data pipeline you created for data ingestion
+
+## Delete the workspace
+
+If you created a workspace specifically for this tutorial, you can delete the entire workspace and all its contents at once.
+
+1. Select your workspace from the navigation menu to open the workspace item view.
 
    :::image type="content" source="media\tutorial-lakehouse-clean-up\select-workspace-item.png" alt-text="Screenshot of the left navigation menu, showing where to select your workspace." lightbox="media/tutorial-lakehouse-clean-up/select-workspace-item.png":::
 
@@ -33,7 +42,7 @@ You can delete individual reports, pipelines, warehouses, and other items or rem
 
    :::image type="content" source="media\tutorial-lakehouse-clean-up\remove-this-workspace-inline.png" alt-text="Screenshot of the Workspace settings pane, showing where to select Other and Remove this workspace." lightbox="media\tutorial-lakehouse-clean-up\remove-this-workspace.png":::
 
-1. When the warning pops up, select **Delete**.
+1. When the warning appears, select **Delete**.
 
 ## Related content
 

@@ -3,7 +3,7 @@ title: Configure Lakehouse in a copy activity
 description: This article explains how to copy data using Lakehouse.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 02/02/2026
+ms.date: 02/25/2026
 ms.custom:
   - pipelines
   - template-how-to
@@ -83,6 +83,9 @@ The following properties are **required**:
         - **T-SQL Query (Preview)**: Specify the custom SQL query to read data through the [Lakehouse SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md). For example: `SELECT * FROM MyTable`. Note that Lakehouse table query mode does not support workspace-level private links.
 
           :::image type="content" source="./media/connector-lakehouse/use-query-t-sql-query.png" alt-text="Screenshot showing Use query - T-SQL Query." :::
+
+          > [!NOTE]
+          > T-SQL Query (Preview) is supported only when read the Lakehouse via the connection set up in Manage connections and gateways.
 
         - Under **Advanced**, you can specify the following fields:
           - **Query timeout (minutes)**: Specify the timeout for query command execution, default is 120 minutes.
@@ -324,6 +327,8 @@ when you apply reader version 3 with `deletionVectors` in `readerFeatures` in yo
 [Deletion vectors](https://docs.delta.io/latest/delta-deletion-vectors.html) is supported.
 
 [Change Data Feed](https://docs.delta.io/delta-change-data-feed/) is supported.
+
+[Liquid clustering](https://docs.delta.io/delta-clustering/) is supported.
 
 ## Table summary
 

@@ -1,63 +1,86 @@
 ---
 title: "Implement medallion architecture with materialized lake views"
-description: This tutorial outlines the steps and considerations for implementing a medallion architecture for a sales analytics pipeline materialized lake views.
-ms.author: eur
-author: eric-urban
+description: This tutorial outlines the steps and considerations for implementing a medallion architecture for a sales analytics pipeline using materialized lake views.
 ms.reviewer: rkottackal
 ms.topic: tutorial
-ms.date: 06/06/2025
-# customer intent: As a data engineer, I want to implement a medallion architecture using materialized lake views in Microsoft Fabric so that I can automate data transformation workflows and gain actionable insights into sales analytics.
+ms.date: 03/18/2026
+#customer intent: As a data engineer, I want to implement a medallion architecture using materialized lake views in Microsoft Fabric so that I can automate data transformation workflows and gain actionable insights into sales analytics.
 ---
 
 # Implement medallion architecture with materialized lake views
 
-This tutorial outlines the steps and considerations for implementing a medallion architecture using materialized lake views. By the end of this tutorial, you learn the key features and capabilities of materialized lake views and be able to create an automated data transformation workflow. This tutorial isn't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
+This tutorial walks you through implementing a medallion architecture by using materialized lake views in a Fabric lakehouse. By the end, you create an automated data transformation flow from bronze to silver to gold layers. This tutorial isn't a reference architecture, an exhaustive feature guide, or a prescriptive best-practices recommendation.
 
 ## Prerequisites
 
-As prerequisites to this tutorial, complete the following steps:
+Before you begin, complete these prerequisites:
 
-1. [Sign into your Power BI](https://powerbi.com/) account, or if you don't have an account yet, sign up for a free trial.
-1. [Enable Microsoft Fabric](../../admin/fabric-switch.md) in your tenant. Select the default Power BI icon at the bottom left of the screen and select Fabric.
-1. [Create a Microsoft Fabric enabled Workspace](../../fundamentals/create-workspaces.md).
-1. Select a workspace from the Workspaces tab, then select **+ New** item, and choose **Pipeline**. Provide a name for your pipeline and select **Create**.
-1. [Create a Lakehouse with schemas](../lakehouse-schemas.md#create-a-lakehouse-schema) enabled. Name it **SalesLakehouse** and load sample data files into the Lakehouse. For more information, see [Lakehouse tutorial](/fabric/data-engineering/tutorial-build-lakehouse).
+1. [Sign in to your Power BI account](https://powerbi.com/), or sign up for a trial if you don't have one.
+1. [Enable Microsoft Fabric](../../admin/fabric-switch.md) in your tenant.
+1. [Create a Fabric-enabled workspace](../../fundamentals/create-workspaces.md).
+1. [Create a Lakehouse with schemas](../lakehouse-schemas.md#create-a-lakehouse-schema) enabled, and name it **SalesLakehouse**.
+
+These prerequisites are used throughout this tutorial: the workspace and **SalesLakehouse** are required in the bronze, silver, and gold layer steps, and in scheduling and monitoring.
 
 ## Scenario overview
 
-In this tutorial, you'are going to take an example of a fictional retail organization, Contoso, which uses a medallion architecture for data analytics to gain actionable insights into its retail sales operations. It aims to streamline the analysis process and generate deeper insights into business performance by organizing their data into three layers—bronze (raw data), silver (cleaned and enriched data), and gold (aggregated and analyzed data).
+This tutorial uses a fictional retail organization, Contoso, as the example scenario. Contoso organizes sales data in a medallion architecture to improve analytics outcomes by separating data into bronze (raw), silver (cleaned and enriched), and gold (aggregated and analyzed) layers.
 
 The following diagram represents different entities in each layer of medallion architecture in SalesLakehouse:
 
 :::image type="content" source="./media/tutorial/sales-lakehouse.png" alt-text="Screenshot showing medallion architecture." border="true" lightbox="./media/tutorial/sales-lakehouse.png":::
 
-**Entities**
+### Key entities in the scenario
 
-1. **Orders**: This entity includes details about each customer order, such as order date, shipment details, product category, and subcategory. Insights can be drawn to optimize shipping strategies, identify popular product categories, and improve order management.
+The following entities correspond to the entities shown in the medallion architecture diagram in the previous section.
 
-1. **Sales**: By analyzing sales data, Contoso can assess key metrics like total revenue, profit margins, order priorities, and discounts. Correlations between these factors provide a clearer understanding of customer purchasing behaviors and the efficiency of discount strategies.
+- **Orders**: This entity includes details about each customer order, such as order date, shipment details, product category, and subcategory. Insights can be drawn to optimize shipping strategies, identify popular product categories, and improve order management.
 
-1. **Location**: This captures the geographical dimension of sales and orders, including cities, states, regions, and customer segments. It helps Contoso identify high-performing regions, address low-performing areas, and personalize strategies for specific customer segments.
+- **Sales**: By analyzing sales data, Contoso can assess key metrics like total revenue, profit margins, order priorities, and discounts. Correlations between these factors provide a clearer understanding of customer purchasing behaviors and the efficiency of discount strategies.
 
-1. **Agent performance**: With details on agents managing transactions, their commissions, and sales data, Contoso can evaluate individual agent performance, incentivize top performers, and design effective commission structures.
+- **Location**: This captures the geographical dimension of sales and orders, including cities, states, regions, and customer segments. It helps Contoso identify high-performing regions, address low-performing areas, and personalize strategies for specific customer segments.
 
-1. **Agent commissions**: Incorporating commission data ensures transparency and enables better cost management. Understanding the correlation between commission rates and agent performance helps refine incentive systems.
+- **Agent**: With details on agents managing transactions, their commissions, and sales data, Contoso can evaluate individual agent performance, incentivize top performers, and design effective commission structures.
 
-**Sample dataset**
+- **Agent commissions**: Incorporating commission data ensures transparency and enables better cost management. Understanding the correlation between commission rates and agent performance helps refine incentive systems.
 
-Contoso maintains its retail operations raw data in CSV format within ADLS Gen2. We utilize this data to create the bronze layer, and then use the bronze layer to create the materialized lake views which form the silver and gold layers of the medallion architecture. First download the sample CSV files from the [Fabric samples repo](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/MaterializedLakeViews/tutorial).
+### Sample data and notebooks
 
-## Create the pipeline
+This tutorial uses a sample dataset from the [Fabric samples repo](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/MaterializedLakeViews/tutorial). Download the full `tutorial` folder before you continue.
+
+You use these assets to build the bronze layer first, and then create the silver and gold materialized lake views.
+
+The downloaded `tutorial` folder contains:
+
+- CSV folders: `agent`, `agent_commissions`, `location`, `orders`, and `sales`.
+- Notebook file: `Notebook`.
+
+## Create the medallion data flow
+
+In this section, you create the bronze, silver, and gold layers for the medallion architecture in **SalesLakehouse**. These layers define the lineage-based data flow for your materialized lake views.
 
 The high-level steps are as follows:
 
-1. **Bronze Layer**: Ingest raw data in the form of CSV files into the lakehouse.
-1. **Silver Layer**: Cleanse data using materialized lake views.
-1. **Gold Layer**: Curate data for analytics and reporting using materialized lake views.
+1. **Bronze Layer**: Ingest raw data in the form of CSV files into the lakehouse. See [Create bronze layer of sales analytics medallion architecture](#create-bronze-layer-of-sales-analytics-medallion-architecture).
+1. **Silver and Gold Layers**: Cleanse data and curate data for analytics and reporting using materialized lake views. See [Create silver and gold layers of medallion architecture](#create-silver-and-gold-layers-of-medallion-architecture).
+
+Later in this tutorial, you schedule refresh for this lineage so the flow runs automatically.
 
 ### Create bronze layer of sales analytics medallion architecture
 
-1. Load the CSV files corresponding to different entities from the downloaded data into the Lakehouse. To do so, navigate to your lakehouse and upload the downloaded data into the **Files** section of the lakehouse. It creates a folder named **tutorial**.
+In this section, you create the bronze layer by uploading the contents of the downloaded `tutorial` folder into **SalesLakehouse**. These files correspond to the entities described earlier in this tutorial.
+
+1. In your workspace, open **SalesLakehouse** and go to the **Files** section.
+
+1. Upload the contents of the downloaded `tutorial` folder, preserving the folder structure:
+
+   - `agent`
+   - `agent_commissions`
+   - `location`
+   - `orders`
+   - `sales`
+
+   After upload, a folder named **tutorial** is created under **Files**, and it contains these subfolders.
 
 1. Next create a shortcut to it from the *Tables* section. Select **...** next to the *Tables* section, and select **New schema shortcut** and then **Microsoft OneLake**. Choose the *SalesLakehouse* from the data source types. Expand the **Files** section and choose the **tutorial** folder and select **Create**. You can also use other alternate [options to get data into the Lakehouse](/fabric/data-engineering/load-data-lakehouse).
 
@@ -65,54 +88,61 @@ The high-level steps are as follows:
 
 1. From the *Tables* section, rename the **tutorial** folder as **bronze**.
 
-   :::image type="content" source="./media/tutorial/create-bronze-layer.png" alt-text="Screenshot showing creating bronze layer." border="true" lightbox="./media/tutorial/create-bronze-layer.png":::
-
 ### Create silver and gold layers of medallion architecture
 
-1. Upload the downloaded the notebook file to your workspace.
+1. From the downloaded `tutorial` folder, upload the `Notebook` file to your workspace.
 
    :::image type="content" source="./media/tutorial/create-silver-layer.png" alt-text="Screenshot showing silver materialized lake view creation." border="true" lightbox="./media/tutorial/create-silver-layer.png":::
 
-1. Open the Notebook from the Lakehouse. For more information, see [Explore the lakehouse data with a notebook](/fabric/data-engineering/lakehouse-notebook-explore).
+1. Open the uploaded notebook from **SalesLakehouse**. For more information, see [Explore the lakehouse data with a notebook](/fabric/data-engineering/lakehouse-notebook-explore).
 
-1. Run all cells of the notebook using Spark SQL to create materialized lake views with data quality constraints. Once all cells are successfully executed, **Refresh** the SalesLakehouse source to view the newly created materialized lake views for **silver** and **gold** schema.
+1. Run all notebook cells by using Spark SQL to create the materialized lake views with data quality constraints.
+
+1. After all cells run successfully, refresh **SalesLakehouse** to view the new materialized lake views under the **silver** and **gold** schemas.
 
    :::image type="content" source="./media/tutorial/run-notebook.png" alt-text="Screenshot showing run notebook." border="true" lightbox="./media/tutorial/run-notebook.png":::
 
-## Schedule the pipeline
+## Schedule refresh
 
-1. Once the materialized lake views for silver and gold layers are created, navigate to the lakehouse and select **Managed materialized lake view** to see the lineage view. It's autogenerated based on dependencies, each dependent materialized lake view forms the nodes of the lineage.
+1. In **SalesLakehouse**, open the **Materialized lake views** tab and select **Manage** to open lineage.
 
-   :::image type="content" source="./media/tutorial/manage-materialized-lake-view-1.png" alt-text="Screenshot showing materialized lake view." border="true" lightbox="./media/tutorial/manage-materialized-lake-view-1.png":::
+   The lineage view shows the autogenerated dependency graph, where each dependent materialized lake view appears as a node.
 
    :::image type="content" source="./media/tutorial/manage-materialized-lake-view-2.png" alt-text="Screenshot showing creation of lineage." border="true" lightbox="./media/tutorial/manage-materialized-lake-view-2.png":::
 
-1. Select **Schedule** from the navigation ribbon. Turn **On** the refresh and configure schedule.
+1. Select **Schedule** on the ribbon, and then select **New schedule** in the schedules pane.
 
-   :::image type="content" source="./media/tutorial/run-lineage.png" alt-text="Screenshot showing scheduling run the materialized lake views." border="true" lightbox="./media/tutorial/run-lineage.png":::
+1. Turn on the schedule, provide a name, and select the materialized lake views to refresh.
+
+1. Set the schedule frequency, and then select **Apply**.
+
+1. To run the schedule immediately, select **Run** on the created schedule.
+   
+   :::image type="content" source="./media/tutorial/create-schedule.png" alt-text="Screenshot showing schedule creation." border="true" lightbox="./media/tutorial/create-schedule.png":::
 
 ## Monitoring and troubleshooting
 
-1. The dropdown menu lists the current and historical runs. 
+1. In the **Recent run(s)** tab, review run statuses.
 
-   :::image type="content" source="./media/tutorial/dropdown-menu.png" alt-text="Screenshot showing scheduling execution." border="true" lightbox="./media/tutorial/dropdown-menu.png":::
+1. Select a **Run ID** to open details for that run.
 
-1. By selecting any of the runs, you can find the materialized lake view details on right side panel. The bottom activity panel provides a high-level overview of node execution status.
+   :::image type="content" source="./media/tutorial/recent-runs.png" alt-text="Screenshot showing recent runs." border="true" lightbox="./media/tutorial/recent-runs.png":::
 
-   :::image type="content" source="./media/tutorial/execution details.png" alt-text="Screenshot showing execution details." border="true" lightbox="./media/tutorial/execution details.png":::
+1. In the run details tab, review the right-side details panel and the bottom activity panel for execution status.
 
-1. Select any node in the lineage to see the node execution details and link to detailed logs. If the node status is *Failed*, then an error message will also be displayed.
+1. Select a materialized lake view node in lineage to see execution details, its ABFS path, and a link to detailed logs.
 
-   :::image type="content" source="./media/tutorial/execution-detail-logs.png" alt-text="Screenshot showing execution detail logs." border="true" lightbox="./media/tutorial/execution-detail-logs.png":::
+1. If a node status is *Failed*, review the displayed error message.
 
-1. Selecting the **Detailed logs** link will redirect you to the *Monitor Hub* from where you can access Spark error logs for further troubleshooting.
+   :::image type="content" source="./media/tutorial/failed-runs.png" alt-text="Screenshot showing run details." border="true" lightbox="./media/tutorial/failed-runs.png":::
+
+1. Select **Detailed logs** to open *Monitor Hub* and review Spark error logs.
 
    :::image type="content" source="./media/tutorial/spark-logs.png" alt-text="Screenshot showing spark logs." border="true" lightbox="./media/tutorial/spark-logs.png":::
 
-1. Select the **Data quality report** button on the ribbon of materialized lake views page, to create or view an autogenerated data quality report.
+1. Select the **Data quality report** tab of Materialized lake views to create or view an autogenerated data quality report.
 
-## Related articles
+## Related content
 
 * [Microsoft Fabric materialized lake views overview](overview-materialized-lake-view.md)
-* [Microsoft Fabric materialized lake views tutorial](tutorial.md)
-* [Create materialized lake views](./create-materialized-lake-view.md)
+* [Spark SQL reference for materialized lake views](./create-materialized-lake-view.md)

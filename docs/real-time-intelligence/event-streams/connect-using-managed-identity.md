@@ -1,9 +1,7 @@
 ---
 title: Connect Azure Logic Apps to Fabric Eventstream using Managed Identity
 description: Learn how to send data from Azure Logic Apps to Eventstream using Managed Identity authentication.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.date: 4/08/2025
 ms.search.form: Eventstreams authentication
@@ -73,3 +71,5 @@ With **Managed Identity** authentication, you can securely connect Azure Log
 - [Authenticate with Microsoft Entra ID authentication](./custom-endpoint-entra-id-auth.md)
 - [Add Custom Endpoint source to Eventstream](./add-source-custom-app.md)
 - [Add Custom Endpoint destination to Eventstream](./add-destination-custom-app.md)
+
+

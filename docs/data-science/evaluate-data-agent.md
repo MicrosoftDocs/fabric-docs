@@ -1,12 +1,8 @@
 ﻿---
 title: Evaluate your data agent
 description: Learn how to use the Python data agent SDK to evaluate your data agent.
-ms.author: jburchel
-author: jonburchel
 ms.topic: how-to
-ms.custom: 
 ms.date: 05/06/2025
-reviewer: midesa
 ms.reviewer: midesa
 ---
 

@@ -1,11 +1,9 @@
 ---
 title: Set Up a Microsoft Fabric Workload Back End by Using the OpenAPI Specification
 description: Learn how to generate and run a Fabric workload back end based on the Swagger file included in our sample.
-author: natali0r
-ms.author: natalior
+ms.reviewer: natalior
 ms.date: 06/10/2025
 ms.topic: how-to
-ms.service: fabric
 ---
 # Set up a Microsoft Fabric workload back end by using the OpenAPI Specification (Swagger)
 
@@ -642,3 +640,4 @@ A complete integration with Microsoft Fabric requires implementing proper authen
 - [FastAPI documentation](https://fastapi.tiangolo.com/)
 - [OpenAPI Generator documentation](https://openapi-generator.tech/)
 - [Python asyncio documentation](https://docs.python.org/3/library/asyncio.html)
+

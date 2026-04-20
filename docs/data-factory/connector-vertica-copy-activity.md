@@ -4,7 +4,7 @@ description: This article explains how to copy data using Vertica.
 ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 09/06/2024
-ms.custom: 
+ms.custom:
   - pipelines
   - template-how-to
   - connectors

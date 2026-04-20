@@ -1,8 +1,6 @@
 ---
 title: Delta Lake Logs in Warehouse
 description: Learn how Warehouse in Microsoft Fabric publishes Delta Lake logs
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: kecona
 ms.date: 04/06/2025
 ms.topic: how-to
