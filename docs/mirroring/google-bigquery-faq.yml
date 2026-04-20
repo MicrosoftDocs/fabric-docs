@@ -101,7 +101,7 @@ sections:
       - question: |
           Can mirroring for Google BigQuery be accessed through the Power BI Gateway or behind a firewall? 
         answer: 
-          Currently, access through OPDG and VNET are supported.
+          Currently, access through OPDG and VNET is supported.
       - question: |
           What does stopping/starting the mirroring do?
         answer: 
