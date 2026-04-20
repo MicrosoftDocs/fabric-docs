@@ -61,9 +61,11 @@ The dbt job doesn't contain dbt code. It acts as a container that points to your
 
 1. Select **Connect to a GitHub project**.
 
-   :::image type="content" source="media/dbt-run-github/connect-github-project.png" alt-text="Screenshot of the Connect to a GitHub project option in Microsoft Fabric.":::
+   :::image type="content" source="media/dbt-run-github/select-github-project.png" alt-text="Screenshot of the menu to Connect to a GitHub project option in Microsoft Fabric.":::
 
 1. From the list of available sources, select **GitHub - Source Control** under the **New Sources** category.
+
+   :::image type="content" source="media/dbt-run-github/connect-github-project.png" alt-text="Screenshot of the Connect to a GitHub project in Microsoft Fabric.":::
 
    :::image type="content" source="media/dbt-run-github/github-source-control.png" alt-text="Screenshot of the GitHub source control option in Microsoft Fabric.":::
 
