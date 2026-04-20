@@ -67,7 +67,7 @@
             href: tutorial-end-to-end-introduction.md
           - name: Module 1 - Create a pipeline
             href: tutorial-end-to-end-pipeline.md
-          - name: Module 2 -  data with a dataflow
+          - name: Module 2 - Transform data with a dataflow
             href: tutorial-end-to-end-dataflow.md
           - name: Module 3 - Automate and send notification
             href: tutorial-end-to-end-integration.md
@@ -1064,6 +1064,8 @@
           href: dbt-job-how-to.md
         - name: Configure a dbt job
           href: dbt-job-configure.md
+        - name: dbt job activity in a pipeline
+          href: dbt-job-activity.md
         - name: dbt job pricing
           href: dbt-job-pricing.md
   - name: Create, manage, & schedule pipelines

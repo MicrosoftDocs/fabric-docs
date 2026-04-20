@@ -229,6 +229,8 @@ items:
         items:
           - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
             href: event-streams/stream-consume-events-use-kafka-endpoint.md
+          - name: Stream SQL Change Events to Eventstream for Real-Time Processing
+            href: event-streams/stream-sql-change-events-to-eventstream.md
           - name: Replicate SAP Datasphere Data to Eventstream Kafka Endpoint with SAP Replication Flow
             href: event-streams/replicate-data-with-replication-flow.md
           - name: Stream Oracle CDC data to Eventstream Kafka endpoint with GoldenGate
@@ -661,6 +663,10 @@ items:
                 href: /azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rti&pivots=fabric
               - name: Telegraf
                 href: get-data-telegraf.md
+      - name: Security
+        items:
+          - name: Eventhouse CMK
+            href: eventhouse-encryption.md
       - name: KQL Database
         items:
           - name: Create a KQL database
@@ -791,6 +797,8 @@ items:
             href: data-activator/activator-tutorial.md
       - name: Concepts
         items:
+          - name: Trigger modeling
+            href: data-activator/activator-trigger-model.md
           - name: Activator rules
             href: data-activator/activator-rules-overview.md
           - name: Detection conditions for Activator
@@ -1026,13 +1034,15 @@ items:
         href: operations-agent-tocs/toc.yml
       - name: MCP servers
         items:
-          - name: Fabric RTI MCP local server
+          - name: Overview
             href: mcp-overview.md
-          - name: Remote MCP Integrations
+          - name: Local RTI MCP server
+            href: mcp-local-server.md
+          - name: Remote MCP servers
             items:
-              - name: Get started with Eventhouse MCP remote Server
+              - name: Remote MCP for Eventhouse
                 href: mcp-remote-eventhouse.md
-              - name: Get started with Activator MCP remote Server
+              - name: Remote MCP for Activator
                 href: mcp-remote-activator.md
   - name: Git integration and deployment pipelines
     displayName: alm, application lifecycle management, cicd, devops

@@ -2,7 +2,7 @@
 title: "Tutorial: Load Sample Data for graph in Microsoft Fabric"
 description: Learn how to load the Adventure Works sample data into a lakehouse for use with graph in Microsoft Fabric, including uploading CSV files and verifying data.
 ms.topic: tutorial
-ms.date: 03/24/2026
+ms.date: 04/14/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Load sample data
 ai-usage: ai-assisted
@@ -50,7 +50,9 @@ For more detailed instructions, see [Create a lakehouse with OneLake](../onelake
    > [!NOTE]
    > You can't upload a folder by using **Upload files**.
 
-1. In the **Upload folder** dialog, browse to where you extracted the folder and select it. Then select **Upload**. A pop-up window might appear asking you to confirm the upload: select **Upload** again, and then select **Upload** in the **Upload folder** dialog.
+   :::image type="content" source="./media/tutorial/upload-lakehouse-data.png" alt-text="Screenshot showing Lakehouse Explorer interface with Upload->Upload folder selected after hovering over File's triple ellipsis (not shown after Upload is selected)." lightbox="./media/tutorial/upload-lakehouse-data.png":::
+
+1. In the **Upload folder** dialog, browse to where you extracted the folder and select it. Then select **Upload**. A pop-up window might appear asking you to confirm the number of files to upload: select **Upload** in that pop-up, and then select **Upload** in the **Upload folder** dialog.
 
    Your lakehouse should now contain the uploaded *AdventureWorks_Data* folder with the data files.
 
@@ -58,7 +60,7 @@ For more detailed instructions, see [Create a lakehouse with OneLake](../onelake
 
 ## Load the data into tables
 
-After you upload the files, load them into tables. Tables are the source data from a lakehouse that you use to create nodes and edges in your graph model.
+After you upload the files, load them into tables. Tables are the source data from a lakehouse that you use to create node types and edge types in your graph model.
 
 For each subfolder in the uploaded *AdventureWorks_Data* folder, follow these steps to load the data into tables:
 

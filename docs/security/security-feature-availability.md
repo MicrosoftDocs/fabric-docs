@@ -42,16 +42,16 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | On-premises data gateway: Dataflow Gen2 | -| - | Preview|
 |  | Data Workflow | - | - | - |
 |  | Data Build Tool job | - | - | - |
-| **Data Science** | ML Model | ✓ | ✓ |  |
-|  | Experiment | ✓ | ✓ |  |
-|  | Data Agent | ✓ | - |  |
+| **Data Science** | ML Model | ✓ | ✓ | ✓ |
+|  | Experiment | ✓ | ✓ | ✓ |
+|  | Data Agent | ✓ | - | Preview |
 | **Data Warehouse** | SQL Endpoint | ✓ | ✓ | ✓ |
 |  | Warehouse | ✓ | ✓ | ✓ |
 |  | Warehouse with EDPE | - | - | - |
 | **Developer Experience** | API for GraphQL | - | ✓ | - |
 |  | Deployment Pipeline |  | - | ✓ |
 |  | Git Integration | ✓ | - | ✓ |
-|  | Variable Library | ✓ | - | - |
+|  | Variable Library | ✓ | - | ✓ |
 | **Governance and Security** | Sensitivity Label | - | - | - |
 |  | Share item | - | - | - |
 | **Graph** | Graph model  | - | - | - |
@@ -61,25 +61,25 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Retail Solution | - | ✓ | - |
 | **Mirroring** | Mirrored Azure SQL Database | - | - | Preview|
 |  | Mirrored Azure SQL Managed Instance | ✓ | - | Preview |
-|  | Open Mirroring | ✓ | - | - |
+|  | Open Mirroring | ✓ | - | Preview |
 |  | Mirrored Azure Databricks Catalog | - | - | - |
 |  | Mirrored Snowflake | - | - | Preview|
 |  | Mirrored SQL Server 2025 (Windows/Linux on-premises) | ✓ | - | Preview |
 |  | Mirrored SQL Server 2016-2022 | - | - | - |
 |  | Mirrored Dataverse | - | - | - |
-|  | Mirrored SAP | - | - | - |
+|  | Mirrored SAP | - | - | Preview |
 |  | Mirrored Azure Cosmos DB | ✓ | - | Preview |
 |  | Mirrored Azure Database for PostgreSQL | - | - | Preview |
 |  | Mirrored Google Bigquery | - | - | Preview |
 |  | Mirrored Oracle |  | - | Preview |
-| **Native Databases** | Sql DB in Fabric | ✓ | ✓ | - |
+| **Fabric Databases** | SQL database in Fabric |  | ✓ | - |
 |  | Cosmos DB |  |  | - |
 |  | Snowflake database | - | - | - |
-| **OneLake** | Shortcut | ✓ | - | - |
-| **Power BI** | Power BI Report | - | - | Preview |
+| **OneLake** | Shortcut | ✓ | - | Preview |
+| **Power BI** | Power BI Report | - | - | - |
 |  | Dashboard | - | - | - |
 |  | Scorecard | - | - | - |
-|  | Semantic Model | - | - | Preview |
+|  | Semantic Model | - | - | - |
 |  | Streaming dataflow | - | - | - |
 |  | Streaming dataset | - | - | - |
 |  | Paginated Report | - | - | - |
@@ -87,10 +87,10 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Exploration | - | - | - |
 |  | Org App | - | - | - |
 |  | Metric Set | - | - | - |
-| **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | Preview |
+| **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | - |
 |  | Activator | ✓ | - | - |
-|  | Eventhouse/KQL DB | ✓ | Preview | Preview |
-|  | Eventstream | ✓ |  | - |
+|  | Eventhouse/KQL DB | ✓ | Preview | - |
+|  | Eventstream | ✓ |  | Preview |
 |  | Real-Time Dashboard | ✓ | Preview | - |
 |  | Anomaly detector  | - | - | - |
 |  | Digital Twin Builder | - | - | - | 

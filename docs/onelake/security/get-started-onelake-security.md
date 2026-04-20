@@ -1,7 +1,9 @@
 ---
 title: Get started with OneLake security (preview)
 description: Learn about OneLake security and how you can get started using it to secure your data in OneLake.
-ms.reviewer: eloldag, aamerril
+ms.reviewer: aamerril # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.date: 01/12/2026
 #customer intent: As a Fabric user, I want to learn how to create and manage OneLake security so that I can control access to specific folders in my lakehouse and ensure data security.

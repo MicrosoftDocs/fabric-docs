@@ -1,7 +1,9 @@
 ---
 title: Manage OneLake with PowerShell
 description: Microsoft OneLake integrates with the Azure PowerShell module for data reading, writing, and management.
-ms.reviewer: eloldag, mabasile
+ms.reviewer: eloldag, mabasile # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.date: 09/27/2023
 #customer intent: As a data engineer, I want to learn how OneLake integrates with Azure PowerShell so I can read, write, and manage data in OneLake with the Azure PowerShell module.

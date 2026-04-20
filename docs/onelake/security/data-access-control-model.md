@@ -1,7 +1,9 @@
 ---
 title: OneLake security access control model (preview)
 description: Learn the details of how OneLake secures data with role-based access control and the interaction with Fabric permissions.
-ms.reviewer: aamerril
+ms.reviewer: aamerril # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article
 ms.custom:
 - onelake-data-access-public-preview-april-2024
