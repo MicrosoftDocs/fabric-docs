@@ -206,14 +206,23 @@ landingContent:
               url: monitor-logs-query.md
   
   # Card
-  - title: Build AI agents
+  - title: Build and use AI agents
     linkLists:
         - linkListType: overview
           links:
-            - text: Real-Time Intelligence MCP Server (preview)
-              url: mcp-overview.md 
+            - text: RTI operations agents
+              url: operations-agent.md
+            - text: RTI Model Context Protocol (MCP) servers
+              url: mcp-overview.md
+           
         - linkListType: how-to-guide
           links:
-          - text: Use MCP with Eventhouse
-            url:  mcp-remote-eventhouse.md
+          - text: Get started with operation agents
+            url: operations-agent.md
+          - text: Implement the local RTI MCP server
+            url: mcp-local-server.md
+          - text: Use a remote MCP server to interact with Eventhouse
+            url: mcp-remote-eventhouse.md
+          - text: Use a remote MCP server to interact with Activator
+            url: mcp-remote-activator.md
               
