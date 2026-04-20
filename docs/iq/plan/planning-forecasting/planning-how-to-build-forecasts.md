@@ -26,11 +26,11 @@ The first step in configuring a forecast is to set the time frame for which the 
 1. Set the start and end date of the forecast period.
 1. Choose how to fill closed forecasts. Set **Closed Period** to **Formula** and enter the formula. When creating a formula, you can reference other measures in the planning sheet.
 
-    :::image type="content" source="../media/planning-how-to-build-forecasts/closed-period-formula.png" alt-text="Screenshot of configuring closed forecasts.":::
+    :::image type="content" source="../media/planning-how-to-build-forecasts/closed-period-formula.png" alt-text="Screenshot of configuring closed forecasts." lightbox="media/planning-how-to-build-forecasts/closed-period-formula.png":::
 
     Closed forecasts are populated using the specified formula.
 
-    :::image type="content" source="../media/planning-how-to-build-forecasts/closed-forecast.png" alt-text="Screenshot of closed forecasts.":::
+    :::image type="content" source="../media/planning-how-to-build-forecasts/closed-forecast.png" alt-text="Screenshot of closed forecasts." lightbox="planning-how-to-build-forecasts/closed-forecast.png":::
 
 ## Initialize a forecast using historical or current data
 
@@ -43,7 +43,7 @@ Prepopulate future forecast periods using existing historical or current data. T
 
 1. Select **Create**.
 
-    :::image type="content" source="../media/planning-how-to-build-forecasts/open-forecast-default-value.png" alt-text="Screenshot of default values for forecasts.":::
+    :::image type="content" source="../media/planning-how-to-build-forecasts/open-forecast-default-value.png" alt-text="Screenshot of default values for forecasts." lightbox="open-forecast-default-value.png":::
 
 1. In **Period Setup**, From **Copy Source**, select the measure to use to prepopulate the forecast.
 1. **Apply Operation** is set to **Period Range,** and **Source Periods** are automatically populated. The Revenue measure from January–December 2025 is used to initialize the forecast for January–December 2026.
@@ -51,25 +51,25 @@ Prepopulate future forecast periods using existing historical or current data. T
     >[!NOTE]
     The period range duration should match the target period duration. For example, if the target period is six months, then you must select a period range spanning six months.
 
-    :::image type="content" source="../media/planning-how-to-build-forecasts/period-range-forecast.png" alt-text="Screenshot of period range for forecasts.":::
+    :::image type="content" source="../media/planning-how-to-build-forecasts/period-range-forecast.png" alt-text="Screenshot of period range for forecasts." lightbox="period-range-forecast.png":::
 
     The forecast is initialized using revenue from the corresponding month in the previous year.
 
-    :::image type="content" source="../media/planning-how-to-build-forecasts/open-forecast-period-range.png" alt-text="Screenshot of open forecast with period range.":::
+    :::image type="content" source="../media/planning-how-to-build-forecasts/open-forecast-period-range.png" alt-text="Screenshot of open forecast with period range." lightbox="open-forecast-period-range.png":::
 
 * To initialize forecasts with the average measure value over a specified period range, set **Apply Operation** to **Average of Period Range** and select the timeframe from **Source Periods**.
 
-    :::image type="content" source="../media/planning-how-to-build-forecasts/average-period-range-config.png" alt-text="Screenshot of configuring an open forecast with average of period range.":::
+    :::image type="content" source="../media/planning-how-to-build-forecasts/average-period-range-config.png" alt-text="Screenshot of configuring an open forecast with average of period range." lightbox="average-period-range-config.png":::
 
     The average revenue from Q4 2025 is used to initialize each month in the 2026 forecast.
 
-    :::image type="content" source="../media/planning-how-to-build-forecasts/average-period-range-forecast.png" alt-text="Screenshot of an open forecast with period range.":::
+    :::image type="content" source="../media/planning-how-to-build-forecasts/average-period-range-forecast.png" alt-text="Screenshot of an open forecast with period range." lightbox="average-period-range-forecast.png" :::
 
 * In the same way, to initialize forecasts with measure values from a single period, set **Apply Operation** to **Single Period** and select the period.
 
     The revenue from December 2025 is used to initialize each month in the 2026 forecast.
 
-    :::image type="content" source="../media/planning-how-to-build-forecasts/single-period-forecast.png" alt-text="Screenshot of an open forecast with a single period range.":::
+    :::image type="content" source="../media/planning-how-to-build-forecasts/single-period-forecast.png" alt-text="Screenshot of an open forecast with a single period range." lightbox="single-period-forecast.png":::
 
 ## Initialize forecast ranges using different methods
 
@@ -78,7 +78,7 @@ Split a forecast period into multiple ranges and initialize each range using a d
 1. Configure the initial forecast settings, then go to **Period Setup.**
 1. Set the **Target Period** to January-March 2026, **Copy Source** to the Revenue measure, **Apply Operation** to **Single Period**, and **Source Periods** to December 2025.
 
-    :::image type="content" source="../media/planning-how-to-build-forecasts/split-forecast-single-period-config.png" alt-text="Screenshot of configuration for splitting a forecast with a single period.":::
+    :::image type="content" source="../media/planning-how-to-build-forecasts/split-forecast-single-period-config.png" alt-text="Screenshot of configuration for splitting a forecast with a single period." lightbox="split-forecast-single-period-config.png":::
 
 1. Select **Add Range**.
 1. Set the **Target Period** to April-June 2026, **Copy Source** to the Revenue measure, **Apply Operation** to **Average of Period Range**, and **Source Periods** to January-December 2025.
@@ -88,7 +88,7 @@ Split a forecast period into multiple ranges and initialize each range using a d
 1. Select Add Range.
 1. Set the **Target Period** to July-August 2026, **Copy Source** to the Revenue measure, **Apply Operation** to **Period Range**, and **Source Periods** to November-December 2025.
 
-    :::image type="content" source="../media/planning-how-to-build-forecasts/split-forecast-period-range-config.png" alt-text="Screenshot of configuration for splitting a forecast with period range.":::
+    :::image type="content" source="../media/planning-how-to-build-forecasts/split-forecast-period-range-config.png" alt-text="Screenshot of configuration for splitting a forecast with period range." lightbox="split-forecast-period-range-config.png":::
 
 The 2026 forecast is split into multiple ranges based on the period setup configurations:
 
@@ -98,11 +98,11 @@ The 2026 forecast is split into multiple ranges based on the period setup config
 
 * The forecast for April-June(Q2) 2026 is created from the average revenue from 2025.
 
-    :::image type="content" source="../media/planning-how-to-build-forecasts/split-forecast-average-period.png" alt-text="Screenshot of splitting a forecast with average period.":::
+    :::image type="content" source="../media/planning-how-to-build-forecasts/split-forecast-average-period.png" alt-text="Screenshot of splitting a forecast with average period." lightbox="split-forecast-average-period.png":::
 
 * The forecast for July-August 2026 is based on the revenue from November-December 2025.
 
-:::image type="content" source="../media/planning-how-to-build-forecasts/split-forecast-period-range.png" alt-text="Screenshot of splitting a forecast with period range.":::
+:::image type="content" source="../media/planning-how-to-build-forecasts/split-forecast-period-range.png" alt-text="Screenshot of splitting a forecast with period range." lightbox="split-forecast-period-range.png":::
 
 * The forecast values for September through December 2026 are blank because no initial value is configured in the Period Setup.
 
@@ -114,7 +114,7 @@ To initialize the open forecast from a measure in the planning sheet, set **Open
 
 To set forecast values based on a formula, set **Open Period** to **Formula** and enter the formula.
 
-:::image type="content" source="../media/planning-how-to-build-forecasts/open-forecast-measure-formula.png" alt-text="Screenshot of configuring an open forecast from a measure.":::
+:::image type="content" source="../media/planning-how-to-build-forecasts/open-forecast-measure-formula.png" alt-text="Screenshot of configuring an open forecast from a measure." lightbox="open-forecast-measure-formula.png":::
 
 ## Update open forecasts
 
@@ -124,8 +124,8 @@ After a forecast is created, its initial values can be modified at any time. If 
 2. Define the period range to update the open forecast.
 3. Select the measure and method to populate the forecast.
 
-    :::image type="content" source="../media/planning-how-to-build-forecasts/re-forecast-configuration.png" alt-text="Screenshot of reforecasting configuration":::
+    :::image type="content" source="../media/planning-how-to-build-forecasts/re-forecast-configuration.png" alt-text="Screenshot of reforecasting configuration" lightbox="re-forecast-configuration.png":::
 
     The new configuration is applied to the July forecast.
 
-    :::image type="content" source="../media/planning-how-to-build-forecasts/re-forecasting.png" alt-text="Screenshot of reforecasted data.":::
+    :::image type="content" source="../media/planning-how-to-build-forecasts/re-forecasting.png" alt-text="Screenshot of reforecasted data." lightbox="re-forecasting.png":::
