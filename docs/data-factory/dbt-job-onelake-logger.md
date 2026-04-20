@@ -29,8 +29,12 @@ To retrieve untruncated logs for a dbt job run, follow these steps:
 ### Create a dbt job item
 
 1. Open your Fabric workspace.
-1. Select **New**.
+1. Select **+ New item**.
 1. Select **dbt job**.
+
+   :::image type="content" source="media/dbt-run-github/create-dbt-job.png" alt-text="Screenshot of the new item menu in Microsoft Fabric with the dbt job option.":::
+
+   :::image type="content" source="media/dbt-run-github/name-dbt-job.png" alt-text="Screenshot of the dbt job naming dialog in Microsoft Fabric.":::
 
 ### Run a dbt command
 

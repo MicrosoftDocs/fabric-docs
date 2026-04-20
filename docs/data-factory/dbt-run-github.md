@@ -48,7 +48,7 @@ To run a dbt project from GitHub in Fabric, follow these steps:
 ### Create a dbt job
 
 1. Open your Fabric workspace.
-1. Select **New**.
+1. Select **+ New item**.
 1. Select **dbt job**.
 
    :::image type="content" source="media/dbt-run-github/create-dbt-job.png" alt-text="Screenshot of the new item menu in Microsoft Fabric with the dbt job option.":::
