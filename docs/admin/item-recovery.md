@@ -132,7 +132,6 @@ curl --request DELETE \
   --header 'Authorization: Bearer {token}'
 ```
 
-> [!WARNING]
 > [!CAUTION]
 > After you confirm permanent deletion, the item and its contents are no longer recoverable.
 >
