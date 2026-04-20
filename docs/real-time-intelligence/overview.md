@@ -4,7 +4,7 @@ description: Discover how Real-Time Intelligence in Microsoft Fabric empowers or
 #customer intent: As a data analyst, I want to understand how to use Real-Time Intelligence so that I can extract insights from streaming data.
 ms.reviewer: tzgitlin
 ms.topic: overview
-ms.date: 04/17/2026
+ms.date: 04/20/2026
 ms.subservice: rti-core
 ms.search.form: Overview
 ai-usage: ai-assisted
@@ -39,12 +39,7 @@ data from IoT systems, system logs, free text, semi structured data, or
 contribute data for consumption by others in your organization,
 Real-Time Intelligence provides a versatile solution.
 
-Even though it's called "real-time," your data doesn't have to be
-flowing at high rates and volumes. Real-Time Intelligence gives you
-event-driven, rather than schedule-driven solutions. The Real-Time
-Intelligence components are built on trusted, core Microsoft services,
-and together they extend the overall Fabric capabilities to provide
-event-driven solutions.
+Even though it's called "real-time", your data doesn't have to flow at high rates and volumes. Real-Time Intelligence gives you solutions that react to events as they happen, rather than solutions that run on a schedule. The Real-Time Intelligence components are built on trusted, core Microsoft services, and together they extend the overall Fabric capabilities to provide solutions that respond to data changes instantly.
 
 Real-Time Intelligence applications span a wide variety of business
 scenarios, such as automotive, manufacturing, IoT, fraud detection,
