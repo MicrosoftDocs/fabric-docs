@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 # Copilot-assisted real-time data exploration (preview)
 
-Real-time dashboards show key metrics, help you spot anomalies, and let you make fast, informed decisions. By using Copilot, you can use natural language to explore the live data behind your real-time dashboard, each tile, or in KQL tables. Ask questions, refine visuals, and uncover and share insights without needing to use KQL query language.
+Real-time dashboards show key metrics, help you spot anomalies, and let you make fast, informed decisions. By using Copilot, you can use natural language to explore the live data behind your entire dashboard, specific tiles, or in KQL tables. Ask questions, refine visuals, and uncover and share insights without needing to use KQL query language.
 
 After exploring data by using Copilot, save insights to the dashboard for quick access, view streaming or near real-time updates, and [share them with your team](#share-copilot-exploration-insights).
 
@@ -28,11 +28,13 @@ After exploring data by using Copilot, save insights to the dashboard for quick 
 
 ## Explore dashboards with Copilot
 
-Use Copilot to explore data in the context of the entire dashboard or of a specific tile. Ask questions about the overall data, request summaries, or seek insights that span multiple tiles. For example, you can change the time frame, filter by a column or value, calculate an average or total, or group by a column. Each time you explore the data with Copilot, you can view the data updates in Copilot, and when ready you can save the insights as a new tile in the dashboard or [share them with others](#share-copilot-exploration-insights).
+Use Copilot to explore data in the context of the entire dashboard or of a specific tile. Ask questions about the overall data, request summaries, or seek insights that span multiple tiles.
+For example, you can change the time frame, filter by a column or value, calculate an average or total, or group by a column. 
+Each time you explore the data with Copilot, you can view the data updates in Copilot, and when ready you can save the insights as a new tile in the dashboard or [share them with others](#share-copilot-exploration-insights).
 
-1. In your Fabric workspace, select a real-time dashboard, or [create](dashboard-real-time-create.md) a new dashboard.
+1. In your Fabric workspace, select a real-time dashboard, or [create](dashboard-real-time-create.md) a new dashboard, and ensure you are in **Viewing** mode.
 
-    By default, the Copilot pane opens in the context of the entire dashboard. Ensure that you are in **Viewing** mode.
+    By default, the Copilot pane opens in the context of the entire dashboard. You can ask questions and explore insights based on the entire dashboard data. You can also explore data in the [context of a specific tile](#contextual-copilot-data-exploration).
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-explore-copilot.png" alt-text="Screenshot of a real-time dashboard showing the Explore Data Copilot icon highlighted." lightbox="media/dashboard-explore-copilot/dashboard-explore-copilot.png":::
 
@@ -56,7 +58,7 @@ In addition to exploring data in the context of the entire dashboard, you can al
 
 ## Share Copilot exploration insights
 
-After you explore data and find insights by using Copilot, share those insights with others by sharing a link to the Copilot pane. When others open the link, they see the same Copilot pane with the question and results you have. You can optionally include the visual in the shared insights.
+After you explore data and find insights by using Copilot, share those insights with others by sharing a link to the results pane. When others open the link, they see the query and results you have. You can optionally include the visual in the shared insights.
 
 1. Select the **share** icon in the Copilot pane or in the expanded view.
 

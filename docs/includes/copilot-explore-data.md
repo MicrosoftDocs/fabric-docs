@@ -7,7 +7,7 @@ ms.date: 04/15/2026
 
 1. Ask a question about the data. For example, "What are the top 5 event types?" or "Which state had the most events?".
 
-1. Continue exploring and drill through the data by asking follow-up questions or making more requests.
+1. Continue exploring and drilling through the data by asking follow-up questions or making more requests.
 
 1. The filtered data appears in the Copilot pane. Select the expand icon to see the results reflected in the **Visual**, **Table**, and **Query** tabs.
 
@@ -33,6 +33,6 @@ ms.date: 04/15/2026
 
 1. Continue exploring and drilling through the data by asking more questions or modifying the visual manually using the **Visual Options** pane. For more information on customizing the visual, see [Customize Real-Time Dashboard visuals](../real-time-intelligence/dashboard-visuals-customize.md).
 
-1. When you're ready to save your insights to the dashboard, select **Save to dashboard**. This action saves the current view and query as a new tile on the dashboard.Optionally, you can save the tile to a different existing dashboard or create a new dashboard for the tile. Each saved tile stays connected to your live data, so as the data updates, your visual does too.
+1. When you're ready to save your insights to the dashboard, select **Save to dashboard**. This action saves the current view and query as a new tile on the dashboard. Optionally, you can save the tile to a different existing dashboard or create a new dashboard for the tile. Each saved tile stays connected to your live data, so as the data updates, your visual does too.
 
     :::image type="content" source="media/copilot-data-explore/copilot-save-to-dashboard.png" alt-text="Screenshot of the expanded Copilot pane showing the save to dashboard options.":::
