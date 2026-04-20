@@ -22,7 +22,7 @@ A lakehouse or KQL database in OneLake. If you don't have one of these, create a
 
 ## Create a shortcut
 
-1. Open your lakehouse, warehouse, or KQL database.
+1. Open your lakehouse or KQL database.
 
 1. Right-click on a directory within the **Explorer** pane.
 
