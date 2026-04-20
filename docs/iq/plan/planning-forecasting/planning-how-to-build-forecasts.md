@@ -11,6 +11,8 @@ Forecasting capabilities in the Planning sheet enable organizations to move beyo
 
 Create dynamic forecasts directly on semantic models and update them as new actuals become available. Forecasts can be generated using multiple approaches, such as copying historical values, applying averages, or manually adjusting projections.
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Prerequisite
 
 * The column dimension is a standard date hierarchy (for example, year > quarter > month).

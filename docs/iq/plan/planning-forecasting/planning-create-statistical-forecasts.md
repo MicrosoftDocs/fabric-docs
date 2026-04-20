@@ -10,6 +10,8 @@ ms.topic: how-to
 
 Statistical forecasting applies historical trends and seasonality to generate forecasts without manual input. The prediction feature enables forward‑looking analysis by deriving future values from historical patterns. It supports the configuration of confidence interval, seasonality, and growth factor, and allows top-down or bottom-up approaches to apply forecasts across hierarchies. Results can be explored visually or in tabular form.
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Prerequisites
 
 * A forecast measure with blank initial values.
@@ -22,7 +24,7 @@ Statistical forecasting applies historical trends and seasonality to generate fo
 2. Go to **Model** > **Predict**.
 3. Select More options (…) and then select **Create New Profile** and enter the profile name. If a profile already exists, select the profile.
 
-    :::image type="content" source="../media/planning-create-statistical-forecasts/create-profile.png" alt-text="Screenshot of the creating statistical profiles.":::
+    :::image type="content" source="../media/planning-create-statistical-forecasts/create-profile.png" alt-text="Screenshot of the creating statistical profiles." lightbox="../media/planning-create-statistical-forecasts/create-profile.png":::
 
 4. Select the historical date range based on which predictions will be generated.
 5. Select the forecast date range.
@@ -48,19 +50,19 @@ Statistical forecasting applies historical trends and seasonality to generate fo
     * Predicted data points are plotted in green.
     * The green reference band indicates the confidence interval.
 
-    :::image type="content" source="../media/planning-create-statistical-forecasts/run-prediction.png" alt-text="Screenshot of running a prediction.":::
+    :::image type="content" source="../media/planning-create-statistical-forecasts/run-prediction.png" alt-text="Screenshot of running a prediction." lightbox="../media/planning-create-statistical-forecasts/run-prediction.png":::
 
 1. Select **Table** to review the actual predicted values in tabular format.
 
-    :::image type="content" source="../media/planning-create-statistical-forecasts/tabular-view-predictions.png" alt-text="Screenshot of tabular view.":::
+    :::image type="content" source="../media/planning-create-statistical-forecasts/tabular-view-predictions.png" alt-text="Screenshot of tabular view." lightbox="../media/planning-create-statistical-forecasts/tabular-view-predictions.png":::
 
 1. Select **Save Forecast** after parameters are adjusted to create an accurate prediction.
 
-    :::image type="content" source="../media/planning-create-statistical-forecasts/apply-prediction.png" alt-text="Screenshot of applying predictions.":::
+    :::image type="content" source="../media/planning-create-statistical-forecasts/apply-prediction.png" alt-text="Screenshot of applying predictions." lightbox="../media/planning-create-statistical-forecasts/apply-prediction.png":::
 
 1. Predictions are generated for the selected measure and row category. As the Bottom-Up approach is used, values are automatically aggregated to the parent levels.
 
-    :::image type="content" source="../media/planning-create-statistical-forecasts/forecast-with-prediction.png" alt-text="Screenshot of forecast with prediction.":::
+    :::image type="content" source="../media/planning-create-statistical-forecasts/forecast-with-prediction.png" alt-text="Screenshot of forecast with prediction." lightbox="../media/planning-create-statistical-forecasts/forecast-with-prediction.png":::
 
 ## Locking selections
 
@@ -68,4 +70,4 @@ When the **Predict** panel opens, the selected cell can still be changed by sele
 
 When the selection is locked, selecting other cells doesn't change the row or column used for prediction.
 
-:::image type="content" source="../media/planning-create-statistical-forecasts/lock-dimension-measure.png" alt-text="Screenshot of locking selections.":::
+:::image type="content" source="../media/planning-create-statistical-forecasts/lock-dimension-measure.png" alt-text="Screenshot of locking selections." lightbox="../media/planning-create-statistical-forecasts/lock-dimension-measure.png":::
