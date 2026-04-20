@@ -25,8 +25,7 @@ Create bookmarks to save the current state of your Planning sheet after you appl
 1. Select **Public** or **Private** and **Add New** to create a new bookmark.
 
 > [!NOTE]
-> Public bookmarks are visible to all users who have access to the sheet.
-> Private bookmarks are visible only to the user who created them.
+> Public bookmarks are visible to all users who have access to the sheet. Private bookmarks are only visible to the user who created them.
 
 A new bookmark called **Bookmark 1** is created.
 
@@ -47,8 +46,8 @@ The following actions are available:
 
 ### Common scenarios for bookmarks
 
-1. **Save filtered and sorted views -** Bookmarks retain filters, sorting, and selected measures.
-1. **Switch between layouts -** Bookmarks help to switch between layouts to tailor the sheet for different audiences.
-1. **Navigate hierarchies -** Bookmarks preserve hierarchy states and formatting for reuse.
-1. **Highlight ranked data -** Bookmarks help to analyze key contributors.
-1. **Save number formatting** - Bookmarks retain formatting preferences such as scaling and precision.
+* **Save filtered and sorted views**: Bookmarks retain filters, sorting, and selected measures.
+* **Switch between layouts**: Bookmarks help to switch between layouts to tailor the sheet for different audiences.
+* **Navigate hierarchies**: Bookmarks preserve hierarchy states and formatting for reuse.
+* **Highlight ranked data**: Bookmarks help to analyze key contributors.
+* **Save number formatting**: Bookmarks retain formatting preferences such as scaling and precision.
