@@ -18,7 +18,7 @@ This article outlines how to use the copy activity in a pipeline to copy data fr
 
 This connector supports Lakehouse in the workspace with a private link enabled. For more information on configuration, see [Set up and use private links](../security/security-workspace-level-private-links-set-up.md).
 
-To support workspace-level private link in the on-premises data gateway (version 3000.286.12 or above), you need to add `*.dfs.fabric.microsoft.com` to the allowlist to ensure Lakehouse connector can access Onelake APIs through the network.
+To support workspace-level private link in the on-premises data gateway (version 3000.286.12 or above), you need to add `*.dfs.fabric.microsoft.com` to the allow list to ensure Lakehouse connector can access Onelake APIs through the network.
 
 ## Supported format
 
