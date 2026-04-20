@@ -74,7 +74,6 @@ You can use an existing workspace (not My Workspace) or create a new workspace.
 1. Now that your data is up and running, there are various analytics scenarios available across all of Fabric.
 
 > [!IMPORTANT]
-> * Mirroring for Google BigQuery has a ~15-minute delay in change reflection. This is a limitation from Google BigQuery's Change History capabilities.
 > * Any granular security established in the source database must be reconfigured in the mirrored database in Microsoft Fabric.
 
 ## Monitor Fabric mirroring

@@ -38,10 +38,6 @@ sections:
       answer: 
         For BigQuery, we don't use a landing zone. Instead, we utilize a direct read, which eliminates the need for staging and/or a landing zone.
     - question: |
-       How long does it take to replicate inserts/updates/deletes?
-      answer: 
-       Replication delay is roughly 15-minutes, due to limitations from Google BigQuery.
-    - question: |
        Is backoff logic per table?
       answer: 
        Yes, it is per table.
@@ -92,10 +88,6 @@ sections:
       answer:
         It depends on the size of the data that is being brought in. 
     - question: |
-        How long does it take to replicate inserts/updates/deletes?
-      answer:
-        Around 15 minutes due to limitations from Google BigQuery.
-    - question: |
         Will the Power BI reports use direct lake mode?
       answer: 
         Yes, tables are all v-ordered delta tables.
@@ -109,7 +101,7 @@ sections:
       - question: |
           Can mirroring for Google BigQuery be accessed through the Power BI Gateway or behind a firewall? 
         answer: 
-          Currently, access through OPDG and VNET are supported.
+          Currently, access through OPDG and VNET is supported.
       - question: |
           What does stopping/starting the mirroring do?
         answer: 
