@@ -172,7 +172,7 @@ The following properties are **required**:
     
           It supports [Delta Lake time travel](https://docs.delta.io/latest/delta-batch.html#-deltatimetravel). The overwritten table has delta logs for the previous versions, which you can access in your Lakehouse. You can also copy the previous version table from Lakehouse, by specifying **Version** in the copy activity source.
 
-        - **Upsert (Preview)**: Insert new values to existing table and update existing values. 
+        - **Upsert**: Insert new values to existing table and update existing values. 
             - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. A drop-down listing all destination columns. You can select one or more columns to be treated as key columns while writing into Lakehouse Table.  
             
             Under **Advanced**, you can enable partition on your target table: 
