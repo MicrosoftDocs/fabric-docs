@@ -104,7 +104,7 @@ items:
               - name: Manage rolling forecasts
                 href: plan/planning-forecasting/planning-how-to-manage-rolling-forecasts.md
               - name: Create statistical forecasts
-                href: plan/planning-forecasting/planning-create-statistical-forecasts.md
+                href: plan/planning-forecasting/planning-how-to-create-statistical-forecasts.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview

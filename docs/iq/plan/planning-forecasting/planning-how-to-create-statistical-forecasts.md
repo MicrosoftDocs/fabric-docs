@@ -17,27 +17,29 @@ Statistical forecasting applies historical trends and seasonality to generate fo
 * A forecast measure with blank initial values.
 * The planning sheet must contain at least two years of historical data.
 
->[!TIP]
->The forecast configuration can be saved to a profile. Select the profile to reuse a predefined configuration.
+## Generate forecast
 
 1. Select the cell for which to create a forecast.
-2. Go to **Model** > **Predict**.
-3. Select More options (…) and then select **Create New Profile** and enter the profile name. If a profile already exists, select the profile.
+1. Go to **Model** > **Predict**.
+1. Select More options (…) and then select **Create New Profile** and enter the profile name. If a profile already exists, select the profile.
+
+    >[!TIP]
+    >The forecast configuration can be saved to a profile. Select the profile to reuse a predefined configuration.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-create-statistical-forecasts/create-profile.png" alt-text="Screenshot of the creating statistical profiles." lightbox="../media/planning-forecasting/planning-how-to-create-statistical-forecasts/create-profile.png":::
 
-4. Select the historical date range based on which predictions will be generated.
-5. Select the forecast date range.
+1. Select the historical date range based on which predictions will be generated.
+1. Select the forecast date range.
 
->[!TIP]
->The forecast range can extend beyond the open period. Range extension is useful when the open forecast period is short (for example, Q1 only). Predicted values are needed over a longer period to assess accuracy and get a better perspective.
+    >[!TIP]
+    >The forecast range can extend beyond the open period. Range extension is useful when the open forecast period is short (for example, Q1 only). Predicted values are needed over a longer period to assess accuracy and get a better perspective.
 
 1. Your data might show repeating patterns over time, known as seasonality. Select the seasonality type:
 
-* If your data repeats at one regular interval, choose **Single Seasonality**.
-  For example, sales that repeat every month.
-* If your data repeats at more than one time level, choose **Multi‑Seasonality**.
-  This applies when the data shows patterns at multiple intervals, such as a quarterly trend (Q1, Q2, Q3, Q4), and a monthly pattern within each quarter.
+    * If your data repeats at one regular interval, choose **Single Seasonality**.
+      For example, sales that repeat every month.
+    * If your data repeats at more than one time level, choose **Multi‑Seasonality**.
+      This applies when the data shows patterns at multiple intervals, such as a quarterly trend (Q1, Q2, Q3, Q4), and a monthly pattern within each quarter.
 
 1. Set the **Confidence (%)** to indicate the level of certainty that the actual value will fall within the predicted range.
 1. Set the **Growth Factor (%)** that defines the expected rate at which the predicted values increase or decrease over time.

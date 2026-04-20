@@ -26,7 +26,7 @@ Forecasts should be closed as actuals become available. Once a forecast is close
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-manage-rolling-forecasts/close-forecast-period.png" alt-text="Screenshot of closing forecasts." lightbox="../media/planning-forecasting/planning-how-to-manage-rolling-forecasts/close-forecast-period.png":::
 
-1. Select **Preview.** The open and closed periods are displayed. Select **Save**.
+1. Select **Preview**. The open and closed periods are displayed. Select **Save**.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-manage-rolling-forecasts/preview-open-closed-periods.png" alt-text="Screenshot of forecast period preview." lightbox="../media/planning-forecasting/planning-how-to-manage-rolling-forecasts/preview-open-closed-periods.png":::
 
@@ -46,7 +46,7 @@ As forecast periods are closed, new future periods are added to maintain a rolli
 
 1. Review the closed and open periods. Select **Save**.
 
-    :::image type="content" source="../media/planning-forecasting/planning-how-to-manage-rolling-forecasts/review-forecast-periods.png" alt-text="Screenshot of open and closed forecasts." lightbox="../media/planning-forecasting/planning-how-to-manage-rolling-forecasts/review-forecast-periods.png":::
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-manage-rolling-forecasts/review-forecast-periods.png" alt-text="Screenshot of open and closed forecasts.":::
 
     As the open forecast for April 2026 is closed, a rolling forecast is created by simultaneously extending the forecast into 2027.
 
