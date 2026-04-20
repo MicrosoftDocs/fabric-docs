@@ -65,19 +65,19 @@ How you configure Resource Instance Rules depends on your tenant's inbound netwo
 
 1. Go to the workspace that you want to protect, and then select **Workspace settings** > **Inbound networking**.
 
-	:::image type="content" source="media/onelake-manage-inbound-access-trusted-resources/Workspace_inbound_setting_for_selected.jpg" alt-text="Screenshot showing the workspace inbound networking setting for selected networks and private links." lightbox="media/onelake-manage-inbound-access-trusted-resources/Workspace_inbound_setting_for_selected.jpg":::
+	:::image type="content" source="media/onelake-manage-inbound-access-trusted-resources/workspace-inbound-setting-for-selected.jpg" alt-text="Screenshot showing the workspace inbound networking setting for selected networks and private links." lightbox="media/onelake-manage-inbound-access-trusted-resources/workspace-inbound-setting-for-selected.jpg":::
 
 1. In the workspace inbound settings, select the option that restricts access to selected networks and approved resources.
 
-	:::image type="content" source="media/onelake-manage-inbound-access-trusted-resources/Workspace_inbound_setting_for_selected_resources.jpg" alt-text="Screenshot showing the workspace inbound networking setting for selected resources." lightbox="media/onelake-manage-inbound-access-trusted-resources/Workspace_inbound_setting_for_selected_resources.jpg":::
+	:::image type="content" source="media/onelake-manage-inbound-access-trusted-resources/workspace-inbound-setting-for-selected-resources.jpg" alt-text="Screenshot showing the workspace inbound networking setting for selected resources." lightbox="media/onelake-manage-inbound-access-trusted-resources/workspace-inbound-setting-for-selected-resources.jpg":::
 
 1. Add the Azure resource instances that should be allowed to access OneLake. When you add a resource, specify the full Azure Resource Manager (ARM) resource ID for that Azure resource instance.
 
-	:::image type="content" source="media/onelake-manage-inbound-access-trusted-resources/Workspace_inbound_add_resources_1.jpg" alt-text="Screenshot showing the first step of adding Azure resource instances to the inbound access list." lightbox="media/onelake-manage-inbound-access-trusted-resources/Workspace_inbound_add_resources_1.jpg":::
+	:::image type="content" source="media/onelake-manage-inbound-access-trusted-resources/workspace-inbound-add-resources-1.jpg" alt-text="Screenshot showing the first step of adding Azure resource instances to the inbound access list." lightbox="media/onelake-manage-inbound-access-trusted-resources/workspace-inbound-add-resources-1.jpg":::
 
 1. Review the selected resource details, and then save the configuration.
 
-	:::image type="content" source="media/onelake-manage-inbound-access-trusted-resources/Workspace_inbound_add_resources_2.jpg" alt-text="Screenshot showing the second step of adding Azure resource instances and saving the inbound access configuration." lightbox="media/onelake-manage-inbound-access-trusted-resources/Workspace_inbound_add_resources_2.jpg":::
+	:::image type="content" source="media/onelake-manage-inbound-access-trusted-resources/workspace-inbound-add-resources-2.jpg" alt-text="Screenshot showing the second step of adding Azure resource instances and saving the inbound access configuration." lightbox="media/onelake-manage-inbound-access-trusted-resources/workspace-inbound-add-resources-2.jpg":::
 
 ### [API](#tab/api-1)
 
