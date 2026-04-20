@@ -3,6 +3,7 @@ title: Migrate Hive Metastore metadata and data paths to Fabric
 description: Migrate Hive Metastore objects and align data access with OneLake shortcuts and data movement options for Synapse to Fabric migration.
 ms.topic: how-to
 ms.date: 04/20/2026
+ms.reviewer: jejiang
 ai-usage: ai-assisted
 ---
 
@@ -10,16 +11,14 @@ ai-usage: ai-assisted
 
 This article is part 5 of 6 in the Azure Synapse Spark to Microsoft Fabric migration best practices series.
 
-Use this article to migrate catalog metadata and align physical data access patterns. It combines Hive Metastore migration and data path decisions because these activities are operationally coupled during execution.
+Use this article when you're ready to migrate your Hive Metastore catalog and plan data access in Fabric. This article focuses on two decisions: how to migrate your table metadata and whether to use OneLake shortcuts (zero-copy) or move data to accessible storage.
 
 In this article, you learn how to:
 
-- Distinguish managed and external tables for migration planning.
-- Export and import Hive Metastore metadata using notebook-based workflows.
-- Create and validate OneLake shortcuts for zero-copy data access.
-- Choose between shortcuts, copy pipelines, and bulk transfer tools when data movement is required.
-
-- Choose between shortcuts, copy pipelines, and bulk transfer tools when data movement is required.
+- Assess managed vs. external tables to determine your migration approach.
+- Export and import Hive Metastore metadata using notebook workflows.
+- Create OneLake shortcuts for zero-copy access to existing data sources.
+- Choose between shortcuts, copy pipelines, and bulk transfer tools for data movement.
 
 > [!TIP]
 > Create your target Lakehouse with schemas enabled. Lakehouse schemas allow you to organize tables into named collections (for example, sales, marketing, hr). The Spark Migration Assistant maps the default Synapse database to the `dbo` schema and additional databases to additional schemas in the same Lakehouse. Schemas are enabled by default when creating a new Lakehouse in the Fabric portal.
@@ -97,9 +96,9 @@ You have data in ADLS Gen2 linked to your Synapse workspace that you need to mak
 
 ## Related content
 
-- [Plan your Synapse Spark migration to Fabric](synapse-migration-strategy-planning.md)
-- [Migrate Synapse Spark workloads with Migration Assistant](synapse-migration-spark-assistant.md)
-- [Refactor Synapse Spark code for Fabric](synapse-migration-code-refactoring.md)
-- [Migrate Spark pools, environments, and libraries from Synapse to Fabric](synapse-migration-pools-environments-libraries.md)
-- [Migrate Hive Metastore metadata and data paths to Fabric](synapse-migration-hms-data.md)
-- [Complete Synapse to Fabric migration with security, validation, and cutover](synapse-migration-security-validation-cutover.md)
+- [Step 1: Plan your Synapse Spark migration to Fabric](synapse-migration-strategy-planning.md)
+- [Step 2: Migrate Synapse Spark workloads with Migration Assistant](synapse-migration-spark-assistant.md)
+- [Step 3: Refactor Synapse Spark code for Fabric](synapse-migration-code-refactoring.md)
+- [Step 4: Migrate Spark pools, environments, and libraries from Synapse to Fabric](synapse-migration-pools-environments-libraries.md)
+- [Step 5: Migrate Hive Metastore metadata and data paths to Fabric](synapse-migration-hms-data.md)
+- [Step 6: Complete Synapse to Fabric migration with security, validation, and cutover](synapse-migration-security-validation-cutover.md)

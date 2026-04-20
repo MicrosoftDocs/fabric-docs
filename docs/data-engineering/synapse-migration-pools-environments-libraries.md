@@ -3,6 +3,7 @@ title: Migrate Spark pools, environments, and libraries from Synapse to Fabric
 description: Move Spark pool settings, environment configuration, Spark job definition runtime dependencies, and library strategy from Synapse to Fabric.
 ms.topic: how-to
 ms.date: 04/20/2026
+ms.reviewer: jejiang
 ai-usage: ai-assisted
 ---
 
@@ -10,16 +11,14 @@ ai-usage: ai-assisted
 
 This article is part 4 of 6 in the Azure Synapse Spark to Microsoft Fabric migration best practices series.
 
-Use this article to migrate runtime configuration and dependency management. It covers when to use Starter Pools, when to create custom pools and Environments, how to move Spark properties, and how to handle library compatibility gaps.
+Use this article after your notebooks and Spark Job Definitions are migrated, when you need to decide on pool and environment strategy. This article explains when you can use Fabric Starter Pools (instead of migrating), when to create custom Environments, and how to identify and resolve library compatibility gaps.
 
 In this article, you learn how to:
 
-- Decide between Fabric Starter Pools and custom pool plus Environment configurations.
-- Migrate Spark job definition runtime assumptions.
-- Import Spark properties and custom libraries into Fabric Environments.
-- Identify and mitigate Synapse-to-Fabric Python, Java/Scala, and R library gaps.
-
-- Identify and mitigate Synapse-to-Fabric Python, Java/Scala, and R library gaps.
+- Decide whether to migrate Synapse Spark pools or use Fabric Starter Pools instead.
+- Create custom Environments when you have Spark properties or library requirements.
+- Identify Python, Java/Scala, and R library compatibility gaps between Synapse and Fabric.
+- Plan library gap mitigation strategies.
 
 ## Spark pool migration
 
@@ -113,9 +112,9 @@ Only one difference: Synapse includes the `lightgbm` R package (v4.6.0) which is
 
 ## Related content
 
-- [Plan your Synapse Spark migration to Fabric](synapse-migration-strategy-planning.md)
-- [Migrate Synapse Spark workloads with Migration Assistant](synapse-migration-spark-assistant.md)
-- [Refactor Synapse Spark code for Fabric](synapse-migration-code-refactoring.md)
-- [Migrate Spark pools, environments, and libraries from Synapse to Fabric](synapse-migration-pools-environments-libraries.md)
-- [Migrate Hive Metastore metadata and data paths to Fabric](synapse-migration-hms-data.md)
-- [Complete Synapse to Fabric migration with security, validation, and cutover](synapse-migration-security-validation-cutover.md)
+- [Step 1: Plan your Synapse Spark migration to Fabric](synapse-migration-strategy-planning.md)
+- [Step 2: Migrate Synapse Spark workloads with Migration Assistant](synapse-migration-spark-assistant.md)
+- [Step 3: Refactor Synapse Spark code for Fabric](synapse-migration-code-refactoring.md)
+- [Step 4: Migrate Spark pools, environments, and libraries from Synapse to Fabric](synapse-migration-pools-environments-libraries.md)
+- [Step 5: Migrate Hive Metastore metadata and data paths to Fabric](synapse-migration-hms-data.md)
+- [Step 6: Complete Synapse to Fabric migration with security, validation, and cutover](synapse-migration-security-validation-cutover.md)

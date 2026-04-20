@@ -3,6 +3,7 @@ title: Refactor Synapse Spark code for Fabric
 description: Update notebooks and Spark job code by replacing Synapse-specific APIs, linked service patterns, and unsupported catalog methods for Fabric.
 ms.topic: how-to
 ms.date: 04/20/2026
+ms.reviewer: jejiang
 ai-usage: ai-assisted
 ---
 
@@ -10,19 +11,15 @@ ai-usage: ai-assisted
 
 This article is part 3 of 6 in the Azure Synapse Spark to Microsoft Fabric migration best practices series.
 
-Use this article to convert Synapse-specific code patterns into Fabric-compatible implementations. It focuses on code-level changes such as path updates, catalog API replacements, NotebookUtils updates, connector authentication changes, and removal of linked service token patterns.
+Use this article after your notebooks and Spark Job Definitions are migrated, when you need to fix code patterns that the Migration Assistant can't convert automatically. This article guides you through replacing Synapse-specific APIs, updating file paths, and changing credential patterns to work with Fabric.
 
 In this article, you learn how to:
 
-- Run a pre-refactoring audit across notebooks and Spark job code.
-- Replace Synapse file path and storage assumptions with OneLake-compatible paths.
-- Replace unsupported Spark catalog APIs with Spark SQL equivalents.
-- Replace MSSparkUtils and TokenLibrary credential patterns with NotebookUtils and direct authentication.
-- Refactor Azure Data Explorer and Cosmos DB connector authentication patterns.
-
-- Refactor Azure Data Explorer and Cosmos DB connector authentication patterns.
-
-After migrating notebooks (via the Migration Assistant or manually), you must refactor code that uses Synapse-specific APIs, linked services, or file paths. For the full NotebookUtils API reference, see [NotebookUtils for Fabric](notebook-utilities.md).
+- Audit your code for Synapse-specific patterns before refactoring.
+- Replace mssparkutils references with notebookutils equivalents.
+- Update file paths and storage references for OneLake.
+- Refactor linked service authentication to direct authentication or Key Vault.
+- Adapt Spark catalog APIs and data connector patterns for Fabric.
 
 ## Pre-refactoring audit
 
@@ -181,9 +178,9 @@ The same code refactoring patterns in this article apply to SJD main files. Chan
 
 ## Related content
 
-- [Plan your Synapse Spark migration to Fabric](synapse-migration-strategy-planning.md)
-- [Migrate Synapse Spark workloads with Migration Assistant](synapse-migration-spark-assistant.md)
-- [Refactor Synapse Spark code for Fabric](synapse-migration-code-refactoring.md)
-- [Migrate Spark pools, environments, and libraries from Synapse to Fabric](synapse-migration-pools-environments-libraries.md)
-- [Migrate Hive Metastore metadata and data paths to Fabric](synapse-migration-hms-data.md)
-- [Complete Synapse to Fabric migration with security, validation, and cutover](synapse-migration-security-validation-cutover.md)
+- [Step 1: Plan your Synapse Spark migration to Fabric](synapse-migration-strategy-planning.md)
+- [Step 2: Migrate Synapse Spark workloads with Migration Assistant](synapse-migration-spark-assistant.md)
+- [Step 3: Refactor Synapse Spark code for Fabric](synapse-migration-code-refactoring.md)
+- [Step 4: Migrate Spark pools, environments, and libraries from Synapse to Fabric](synapse-migration-pools-environments-libraries.md)
+- [Step 5: Migrate Hive Metastore metadata and data paths to Fabric](synapse-migration-hms-data.md)
+- [Step 6: Complete Synapse to Fabric migration with security, validation, and cutover](synapse-migration-security-validation-cutover.md)

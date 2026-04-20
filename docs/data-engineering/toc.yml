@@ -476,21 +476,19 @@ items:
     items:
     - name: Overview
       href: migrate-synapse-overview.md
-    - name: Migration best practices temp source
-      href: synapse-migration.md
     - name: Spark migration best practices
       items:
-      - name: Plan your Synapse Spark migration
+      - name: "Step 1: Plan your Synapse Spark migration"
         href: synapse-migration-strategy-planning.md
-      - name: Migrate Spark workloads with Migration Assistant
+      - name: "Step 2: Migrate Spark workloads with Migration Assistant"
         href: synapse-migration-spark-assistant.md
-      - name: Refactor Synapse Spark code for Fabric
+      - name: "Step 3: Refactor Synapse Spark code for Fabric"
         href: synapse-migration-code-refactoring.md
-      - name: Migrate Spark pools, environments, and libraries
+      - name: "Step 4: Migrate Spark pools, environments, and libraries"
         href: synapse-migration-pools-environments-libraries.md
-      - name: Migrate Hive Metastore metadata and data paths
+      - name: "Step 5: Migrate Hive Metastore metadata and data paths"
         href: synapse-migration-hms-data.md
-      - name: Complete migration with security, validation, and cutover
+      - name: "Step 6: Complete migration with security, validation, and cutover"
         href: synapse-migration-security-validation-cutover.md
     - name: Migrate Spark pools
       href: migrate-synapse-spark-pools.md
