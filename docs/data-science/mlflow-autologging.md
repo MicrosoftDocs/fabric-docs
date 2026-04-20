@@ -29,7 +29,7 @@ Autologging supports a wide range of machine learning frameworks, including Tens
 
 Autologging works during training to automatically capture the values of a machine learning model's input parameters, output metrics, and output items. This information is logged to your [!INCLUDE [product-name](../includes/product-name.md)] workspace, where you can access and visualize it by using the MLflow APIs or the corresponding experiment and model items in your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
 
-When you launch a [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] notebook, [!INCLUDE [product-name](../includes/product-name.md)] calls [`mlflow.autolog()`](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html#mlflow.autolog) to instantly enable tracking and load the corresponding dependencies. As you train models in your notebook, MLflow automatically tracks model information.
+When you open a [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] notebook, [!INCLUDE [product-name](../includes/product-name.md)] calls [`mlflow.autolog()`](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html#mlflow.autolog) to instantly enable tracking and load the corresponding dependencies. As you train models in your notebook, MLflow automatically tracks model information.
 
 The configuration happens automatically when you run `import mlflow`. The default configuration for the notebook [mlflow.autolog()](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html#mlflow.autolog) hook is:
 

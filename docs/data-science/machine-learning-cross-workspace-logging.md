@@ -1,6 +1,6 @@
 ---
 title: Manage MLflow models across workspaces and platforms
-description: Learn how to build machine learning operations workflows across Fabric workspaces and bring existing machine learning models into Fabric by using cross-workspace logging.
+description: Learn how to build MLOps workflows across Fabric workspaces and bring existing machine learning models into Fabric by using cross-workspace logging.
 author: ruixinxu
 ms.author: ruxu
 ms.reviewer: mopeez
@@ -14,9 +14,9 @@ ai-usage: ai-assisted
 
 Production machine learning requires more than training a good model. You need reliable workflows to move models from development through validation into production. Cross-workspace logging in Microsoft Fabric enables two key scenarios:
 
-- **Build end-to-end machine learning operations workflows**: Train and experiment in a development workspace, validate in a test workspace, and deploy to a production-serving workspace by using standard MLflow APIs. This separation of environments helps teams enforce quality gates and maintain clear audit trails from experimentation to production.
+- **Build end-to-end MLOps workflows**. Train and experiment in a development workspace, validate in a test workspace, and deploy to a production-serving workspace by using standard MLflow APIs. This separation of environments helps teams enforce quality gates and maintain clear audit trails from experimentation to production.
 
-- **Bring existing machine learning assets into Fabric**: If you already trained models in Azure Databricks, Azure Machine Learning, a local environment, or any other platform that supports MLflow, you can log those experiments and models directly into a Fabric workspace. You can easily consolidate your machine learning artifacts in one place without rebuilding your training pipelines.
+- **Bring existing machine learning assets into Fabric**. If you already trained models in Azure Databricks, Azure Machine Learning, a local environment, or any other platform that supports MLflow, you can log those experiments and models directly into a Fabric workspace. You can easily consolidate your machine learning artifacts in one place without rebuilding your training pipelines.
 
 Cross-workspace logging works through the `synapseml-mlflow` package, which provides a Fabric-compatible MLflow tracking plugin. You authenticate with your target workspace, set the tracking URI, and use standard MLflow commands.
 
@@ -39,7 +39,7 @@ For Fabric notebook scenarios, create a new notebook and attach a lakehouse befo
 The `synapseml-mlflow` package enables cross-workspace logging by providing the Fabric MLflow tracking plugin. Choose the install command based on your environment.
 
 > [!IMPORTANT]
-> MLflow 3 isn't yet supported. You must pin `mlflow-skinny` to version 2.22.2 or earlier.
+> MLflow 3 isn't currently supported. You must pin `mlflow-skinny` to version 2.22.2 or earlier.
 
 ### [Fabric notebook](#tab/fabric-notebook)
 
@@ -184,10 +184,10 @@ with mlflow.start_run() as run:
 
 You can log MLflow experiments and models to a Fabric workspace from any environment where you build your models, including:
 
-- **Local machines**: VS Code, Jupyter notebooks, or any local Python environment.
-- **Azure Databricks**: Azure Databricks notebooks and jobs.
-- **Azure Machine Learning**: Azure Machine Learning compute instances and pipelines.
-- **Any other platform**: Any environment that supports Python and MLflow.
+- **Local machines**. VS Code, Jupyter notebooks, or any local Python environment.
+- **Azure Databricks**. Azure Databricks notebooks and jobs.
+- **Azure Machine Learning**. Azure Machine Learning compute instances and pipelines.
+- **Any other platform**. Any environment that supports Python and MLflow.
 
 ### Step 1: Install the package
 
@@ -216,7 +216,7 @@ SetFabricAnalyticsDefaultTokenCredentialsGlobally(
 
 #### [Device code](#tab/auth-device-code)
 
-Use this method for environments without a browser, such as Azure Databricks notebooks or remote servers. Follow the onscreen instructions to complete authentication.
+Use this method for environments without a browser, such as Azure Databricks notebooks or remote servers. Follow the on-screen instructions to complete authentication.
 
 ```python
 from fabric.analytics.environment.credentials import SetFabricAnalyticsDefaultTokenCredentialsGlobally
@@ -233,7 +233,7 @@ SetFabricAnalyticsDefaultTokenCredentialsGlobally(
 Use this method for non-interactive scenarios such as automated pipelines, continuous integration and continuous delivery (CI/CD), or production workloads.
 
 1. In Microsoft Entra ID, [create an app registration](/entra/identity-platform/quickstart-register-app).
-1. Note the **Tenant ID**, **Client ID**, and create a **Client Secret**.
+1. Note the values for **Tenant ID** and **Client ID**. Create a **Client Secret**.
 1. Grant write permission to the service principal on the target Fabric workspace.
 
    ```python
@@ -330,11 +330,11 @@ The standard `%pip install` command requires outbound internet access, which is 
 
 ## Known limitations
 
-- **Write permission is required**: You must have write permission on the target workspace.
-- **Cross-workspace lineage isn't supported**: You can't view relationships between notebooks, experiments, and models when these objects are logged from different workspaces.
-- **The source notebook isn't visible in the target workspace**: The source notebook doesn't appear in the target workspace. On artifact details and list pages, the link to the source notebook is empty.
-- **Item snapshots aren't supported**: machine learning experiments or models that are logged to another workspace don't appear in the snapshot of the source-run notebook item.
-- **Large language models aren't supported**: Cross-workspace logging doesn't support large language models (LLMs).
+- **Write permission is required**. You must have write permission on the target workspace.
+- **Cross-workspace lineage isn't supported**. You can't view relationships between notebooks, experiments, and models when these objects are logged from different workspaces.
+- **The source notebook isn't visible in the target workspace**. The source notebook doesn't appear in the target workspace. On artifact details and list pages, the link to the source notebook is empty.
+- **Item snapshots aren't supported**. Machine learning experiments or models that are logged to another workspace don't appear in the snapshot of the source-run notebook item.
+- **Large language models aren't supported**. Cross-workspace logging doesn't support large language models (LLMs).
 
 ## Related content
 
