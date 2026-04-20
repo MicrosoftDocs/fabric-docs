@@ -192,3 +192,4 @@ When you create shortcuts between multiple Fabric items within a workspace, you 
 
 - [Create a OneLake shortcut](create-onelake-shortcut.md)
 - [Use OneLake shortcuts REST APIs](/rest/api/fabric/core/onelake-shortcuts)
+- [Comparison of Fabric Shortcuts with ADLS Mounts](https://algoscale.com/go/blog/fabric-shortcuts-vs-adls-mounts/)
