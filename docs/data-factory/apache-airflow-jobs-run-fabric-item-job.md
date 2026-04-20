@@ -3,7 +3,7 @@ title: Run a Fabric item using Apache Airflow DAG.
 description: Learn to run Microsoft Fabric items using Apache Airflow DAGs.
 ms.reviewer: noelleli
 ms.topic: tutorial
-ms.date: 03/02/2026
+ms.date: 03/31/2026
 ms.custom: Airflows, sfi-image-nochange
 ---
 
@@ -14,9 +14,11 @@ ms.custom: Airflows, sfi-image-nochange
 In this tutorial, you build a directed acyclic graph (DAG) to run a Microsoft Fabric item including:
 
 - Notebooks
+- dbt Jobs
+- Copy Jobs
 - Spark job definitions
 - Pipelines
-- Semantic Models
+- Semantic Model Refresh
 - User data functions
 
 ## Prerequisites
@@ -45,6 +47,8 @@ To get started, you must complete the following prerequisites:
     1. Select **Delegated permissions**.  
     1. Add **Item.Read.All** and **Item.Execute.All**. (Alternatively you can also add the read and execute permissions based on the item type, like Notebook.Read.All and Notebook.Execute.All.)
     1. Finally, [add the service principal as a contributor in the workspace](/fabric/fundamentals/give-access-workspaces) where the item you'll use Airflow to run is located.
+
+> [!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=a32354a9-4a7b-4c2a-81ad-901cc5f2a63f]
 
 ## Set up Apache Airflow connection
 
@@ -167,30 +171,6 @@ with DAG(
   )
 
   run_fabric_item
-```
-
-## Create a plugin file for the custom operator
-
-If you want to include an external monitoring link for Microsoft Fabric item runs, create a plugin file as follows:
-
-Create a new file in the `plugins` folder with the following code:
-
-```python
-   from airflow.plugins_manager import AirflowPlugin
-
-   from apache_airflow_microsoft_fabric_plugin.hooks.fabric import FabricHook
-   from apache_airflow_microsoft_fabric_plugin.operators.fabric import FabricRunItemLink
-
-   class AirflowFabricPlugin(AirflowPlugin):
-      """
-      Microsoft Fabric plugin.
-      """
-
-      name = "fabric_plugin"
-      operator_extra_links = [FabricRunItemLink()]
-      hooks = [
-          FabricHook,
-      ]
 ```
 
 ## Monitor your DAG

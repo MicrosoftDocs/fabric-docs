@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: lazartimotic, jingwang, nzagorac, ajayj
-ms.date: 02/26/2026
+ms.date: 04/03/2026
 ms.topic: concept-article
 ms.custom:
   - references_regions
@@ -46,7 +46,8 @@ For troubleshooting, see:
 
 ## Network and connectivity security
 
-- If your Azure SQL Managed Instance is not publicly accessible, [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. Make sure the Azure Virtual Network or gateway server's network can connect to the Azure SQL Managed Instance via [a private endpoint](/azure/azure-sql/managed-instance/private-endpoint-overview?view=azuresql-mi&preserve-view=true).
+- If your Azure SQL Managed Instance is not publicly accessible, or if you are using the [SQL Server 2022 update policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true) of Azure SQL Managed Instance, you need a data gateway.
+   - You can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [on-premises data gateway](/data-integration/gateway/service-gateway-onprem). Make sure the Azure Virtual Network or gateway server's network can connect to the Azure SQL Managed Instance via [a private endpoint](/azure/azure-sql/managed-instance/private-endpoint-overview?view=azuresql-mi&preserve-view=true).
 - The System Assigned Managed Identity (SAMI) of the Azure SQL Managed Instance needs to be enabled and must be the primary identity.
 - The Azure SQL Managed Instance service principal name (SPN) contributor permissions shouldn't be removed from the Fabric mirrored database item.
 - User Assigned Managed Identity (UAMI) isn't supported.
@@ -106,7 +107,7 @@ For troubleshooting, see:
   - User Defined Types (UDT)
   - **geometry**
   - **geography**
-- Mirroring supports replicating columns containing spaces or special characters in names (such as  `,` `;` `{` `}` `(` `)` `\n` `\t` `=`). For tables under replication before this feature enabled, you need to update the mirrored database settings or restart mirroring to include those columns. Learn more from [Delta column mapping support](troubleshooting.md#delta-column-mapping-support).
+- Mirroring supports replicating columns containing spaces or special characters in names (such as  `,` `;` `{` `}` `(` `)` `\n` `\t` `=`). For tables under replication before this feature enabled, you need to update the mirrored database settings or restart mirroring to include those columns. For more information, see [Delta column mapping support](troubleshooting.md#delta-column-mapping-support).
 - The following column level data definition language (DDL) operations aren't supported on source tables when they're enabled for SQL Managed Instance mirroring to Microsoft Fabric:
   - Alter column
   - Rename column (`sp_rename`)
@@ -121,7 +122,7 @@ For troubleshooting, see:
 ## SQL analytics endpoint limitations
 
 - The SQL analytics endpoint is the same as [the Lakehouse SQL analytics endpoint](../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It's the same read-only experience. See [SQL analytics endpoint limitations](../data-warehouse/limitations.md#limitations-of-the-sql-analytics-endpoint).
-- Source schema hierarchy is replicated to the mirrored database. For mirrored databases created before this feature enabled, the source schema is flattened, and schema name is encoded into the table name. If you want to reorganize tables with schemas, recreate your mirrored database. Learn more from [Replicate source schema hierarchy](troubleshooting.md#replicate-source-schema-hierarchy).
+- Source schema hierarchy is replicated to the mirrored database. For mirrored databases created before this feature enabled, the source schema is flattened, and schema name is encoded into the table name. If you want to reorganize tables with schemas, recreate your mirrored database. For more information, see [Replicate source schema hierarchy](troubleshooting.md#replicate-source-schema-hierarchy).
 
 ## Supported regions
 

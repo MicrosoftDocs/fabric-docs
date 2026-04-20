@@ -41,6 +41,8 @@ items:
       href: ontology/how-to-use-preview-experience.md
     - name: Add rules
       href: ontology/how-to-use-rules.md
+    - name: Use resource links
+      href: ontology/how-to-use-resource-links.md
   - name: Resources
     items:
     - name: Troubleshooting
@@ -63,13 +65,23 @@ items:
       href: plan/overview.md
     - name: Region availability
       href: plan/overview-regions.md
+    - name: Known limitations
+      href: plan/overview-limitations.md   
   - name: Planning sheets
     items:
     - name: Planning sheets overview
       href: plan/planning-overview.md
+    - name: Concepts
+      items:
+        - name: Cubes
+          href: plan/planning-concept-cube.md
     - name: How-tos
       items:
-        - name: Get started with planning sheets
+        - name: Create a database connection
+          href: plan/planning-how-to-create-database-connection.md
+        - name: Create a semantic model connection
+          href: plan/planning-how-to-create-semantic-model-connection.md
+        - name: Create a Planning sheet
           href: plan/planning-how-to-get-started.md
         - name: Build forecasts
           href: plan/planning-how-to-build-forecasts.md
@@ -79,6 +91,14 @@ items:
           href: plan/planning-how-to-set-up-scenarios.md
         - name: Write back data
           href: plan/planning-how-to-write-back-data.md
+        - name: Change layouts
+          href: plan/planning-how-to-change-layouts.md
+        - name: Create a cube
+          href: plan/planning-how-to-create-cube.md
+        - name: Add comments
+          href: plan/planning-how-to-add-comments.md
+        - name: Add notes
+          href: plan/planning-how-to-add-notes.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
@@ -117,9 +137,9 @@ items:
           href: plan/intelligence-how-to-visualize-planning-data.md
         - name: Plan projects with Gantt charts
           href: plan/intelligence-how-to-create-gantt-chart.md
-  - name: Infobridge
+  - name: InfoBridge
     items:
-    - name: Infobridge overview
+    - name: InfoBridge overview
       href: plan/infobridge-overview.md
     - name: How-tos
       items:

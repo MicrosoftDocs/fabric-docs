@@ -59,4 +59,4 @@ To get started quickly, pick one of the following options:
 - Follow the [implementation guide](implementation-guide.md) to build your own workload
 - Read the [Manifest Overview](manifest-overview.md) for schema and best practices
 - Develop with the [DevGateway](tools-register-local-workload.md)
-- [Publish your workload](publish-workload-flow.md) when you’re ready to share it broadly
+- [Publish your workload](publishing-overview.md) when you're ready to share it broadly

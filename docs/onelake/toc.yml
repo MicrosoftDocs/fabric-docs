@@ -32,7 +32,7 @@ items:
     - name: Dataverse shortcut
       href: create-dataverse-shortcut.md
     - name: OneDrive or SharePoint shortcut
-      href: create-onedrive-sharepoint-shortcut.md
+      href: ./shortcuts/create-onedrive-sharepoint-shortcut.md
     - name: Amazon S3 shortcut
       href: create-s3-shortcut.md
     - name: Amazon S3 compatible shortcut
@@ -60,9 +60,9 @@ items:
   - name: Shortcut transformations
     items: 
     - name: Transform structured data
-      href: ./shortcuts-file-transformations/transformations.md
+      href: ./shortcuts/transformations.md
     - name: Transform unstructured data with AI
-      href: ./shortcuts-ai-transformations/ai-transformations.md
+      href: ./shortcuts/transformations-ai.md
 - name: Open access
   items:
   - name: How do I connect to OneLake?
@@ -97,6 +97,8 @@ items:
     href: onelake-powershell.md
   - name: AzCopy
     href: onelake-azcopy.md
+  - name: AI agents (MCP)
+    href: onelake-local-mcp.md
 - name: OneLake table APIs
   items:
   - name: OneLake table APIs overview

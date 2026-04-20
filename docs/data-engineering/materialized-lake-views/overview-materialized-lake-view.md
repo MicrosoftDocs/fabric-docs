@@ -3,13 +3,13 @@ title: Overview of Materialized Lake Views
 description: Learn about the features, availability, and limitations of materialized lake views in Microsoft Fabric.
 ms.reviewer: nijelsf
 ms.topic: overview
-ms.date: 03/18/2026
+ms.date: 04/14/2026
 # customer intent: As a data engineer, I want to understand what materialized lake views are in Microsoft Fabric so that I can use them for building a medallion architecture.
 ---
 
 # What are materialized lake views in Microsoft Fabric?
 
-Materialized lake views turn complex lakehouse transformations into fast, reusable, query‑ready assets that accelerate analytics and reduce compute. Results are persisted as Delta files in OneLake and refreshed automatically via schedules or event triggers, delivering dependable, up‑to‑date data. Major advantages include declarative pipelines for predictable deployments, optimal refresh for performance and cost, built‑in data quality, and intuitive monitoring for visibility and trust.
+Materialized lake views turn complex lakehouse transformations into fast, reusable, query‑ready assets that accelerate analytics and reduce compute usage. Results are persisted as Delta files in OneLake and refreshed automatically via schedules or event triggers, delivering dependable, up‑to‑date data. Major advantages include declarative pipelines for predictable deployments, optimal refresh for performance and cost, built‑in data quality, and intuitive monitoring for visibility and trust.
 
 ## When to use materialized lake views
 
@@ -30,6 +30,9 @@ Materialized lake views aren't the right choice for every scenario. Consider alt
 - **Non-SQL logic** such as ML inference, API calls, or complex Python processing — use Spark notebooks instead
 - **High-frequency streaming data** that requires sub-second updates — consider [Real-Time Intelligence](../../real-time-intelligence/overview.md) instead
 
+> [!NOTE]
+> This feature is currently not available in South Central US region.
+
 ## Get started with materialized lake views
 
 To create your first materialized lake view in Microsoft Fabric, see [Get started with materialized lake views](get-started-with-materialized-lake-views.md). For a complete walkthrough that builds a medallion architecture, see [Tutorial: Build a medallion architecture with materialized lake views](tutorial.md).
@@ -42,7 +45,7 @@ The lifecycle of a materialized lake view follows four stages:
 
 - **Create**: Write a SQL query that defines your transformation. Fabric stores the definition and materializes the results as a Delta table.
 - **Refresh**: When source data changes, Fabric determines the optimal refresh strategy — incremental (process only new or changed data), full (rebuild entirely), or skip (no changes detected).
-- **Query**: Applications and reports query the materialized view like any other Delta table, with no awareness of the underlying transformation logic.
+- **Query**: Applications and reports query the materialized lake view like any other Delta table, with no awareness of the underlying transformation logic.
 - **Monitor**: Track refresh history, execution status, data quality metrics, and dependency lineage through built-in Fabric tools.
 
 ## Key capabilities
@@ -102,7 +105,7 @@ GROUP BY DATE(order_date), region;
 
 ### Data quality validation
 
-Clean and normalize customer records while enforcing data quality rules. The `ON MISMATCH DROP` constraint automatically drops rows where the email is null, so downstream consumers only see valid data.
+Clean and normalize customer records while enforcing data quality rules. The `ON MISMATCH DROP` clause in the constraint automatically drops rows where the email is null, so downstream consumers only see valid data.
 
 ```sql
 -- Clean customer data with quality rules
@@ -139,7 +142,7 @@ You can use private links to connect to materialized lake views (preview).  Read
 
 ## Current limitations
 
-The following features are currently not available for materialized lake views in Microsoft Fabric:
+The following feature is currently not available for materialized lake views in Microsoft Fabric:
 
 * Cross-lakehouse lineage and execution features.
 

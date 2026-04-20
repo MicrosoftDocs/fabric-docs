@@ -21,9 +21,9 @@ The following table defines how many capacity units (CU) are consumed when an on
 
 | Meter name | Operation name | Description | Unit of measure | Fabric consumption rate |
 | --- | --- | --- | --- | --- |
-| Ontology Modeling | Ontology Modeling | Measures the usage of ontology definitions (including entity types, relationships, properties, data bindings, and rules). | Per ontology definition usage <br><br>*Usage is defined by intervals of at minimum 30 minutes, each time the API is triggered by CRUD operations to entity types, properties, relationship types, or bindings.* | 0.0039 CU per hour |
-| Ontology Logic and Operations​ | Ontology Logic and Operations​ | Measures the usage for ontology operations, including visualizations, logic, graph creation, ontology exploration, and querying and analyzing with query endpoints (including API and SQL endpoints) | Per min | 0.666667 CU per min <br><br>*This meter is not currently in effect. Ontology users are only billed for logic and operations according to their underlying [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) usage.* |
-| Ontology AI | Ontology AI Operations | Measures the usage of AI for context driven reasoning and query over ontology | (Input) Per 1,000 Tokens <br><br>(Output) Per 1,000 Tokens | (Input) 400 CU seconds <br><br>(Output) 1,600 CU seconds <br><br>*This meter is visible in preview, but not billed. Ontology users are only billed for AI operations according to their underlying [Copilot in Fabric](../../fundamentals/copilot-fabric-consumption.md) usage.* |
+| Ontology Modeling | Ontology Modeling | Measures the usage of ontology definitions (including entity types, relationships, properties, and data bindings). | Per ontology definition usage <br><br>*Usage is defined by intervals of at minimum 30 minutes, each time the API is triggered by Create/Update/Delete (CUD) operations to entity types, properties, relationship types, or bindings.* | 0.0039 CU per hour |
+| Ontology Logic and Operations​ | Ontology Logic and Operations​ | Measures the usage for ontology operations, including visualizations, logic, graph creation, ontology exploration, and querying and analyzing with query endpoints (including API and SQL endpoints) | Per min | 0.666667 CU per min <br><br>*This meter is not currently in effect.* |
+| Ontology AI | Ontology AI Operations | Measures the usage of AI for context driven reasoning and query over ontology | (Input) Per 1,000 Tokens <br><br>(Output) Per 1,000 Tokens | (Input) 400 CU seconds <br><br>(Output) 1,600 CU seconds |
 | OneLake Cache | Graph cache storage | Use of graph incurs [graph cache storage](../../graph/overview.md#pricing-and-capacity-units), which is billed at the same rate as [OneLake Cache](https://azure.microsoft.com/pricing/details/microsoft-fabric/). | [OneLake Cache usage per month](https://azure.microsoft.com/pricing/details/microsoft-fabric/) | *n/a* |
 
 ## Capacity usage examples
@@ -32,7 +32,7 @@ This section contains more details about capacity usage calculations for each on
 
 ### Ontology Modeling
 
-When a CRUD operation triggers the ontology API, it initiates a usage window of 30 minutes. Billing starts when the first CRUD operation is triggered, and the time will continue for 30 minutes after the last operation is triggered.
+When a Create/Update/Delete (CUD) operation triggers the ontology API, it initiates a usage window of 30 minutes. Billing starts when the first CUD operation is triggered, and the time will continue for 30 minutes after the last operation is triggered.
 
 For example, say you have 1,000 ontology definitions comprised of a combination of entity types, properties, and relationship types. When you edit a property, the consumption is 1,000 definitions * 0.5 hours (unit of measurement for ontology definition usage; 30 minutes represented in hours) * 0.0039 CU/hr (Fabric consumption rate of this operation) = 1.95 CU hours.
 
@@ -56,8 +56,6 @@ For example, assume each ontology request has 2,000 input tokens and 500 output
 
 Since ontology is a background job and usage is averaged over a 24-hour period, this example request that takes 26.67 CU minutes consumes, on average, one CU minute of each hour of a capacity. On an F64 capacity with 64 * 24 = 1,536 CU Hours in a day, if each ontology job consumes 26.67 CU mins = 0.44 CU Hours, you could run over 3,456 of these requests each day before exhausting the capacity.
 
-*This meter is visible in preview, but not billed. Ontology users are only billed for AI operations according to their underlying [Copilot in Fabric](../../fundamentals/copilot-fabric-consumption.md) usage.*
-
 ## Monitor usage
 
 The [Microsoft Fabric Capacity Metrics](../../enterprise/metrics-app.md) app provides visibility into capacity usage for all Fabric workloads in one place. Administrators can use the app to monitor capacity, the performance of workloads, and their usage compared to purchased capacity. The Microsoft Fabric Capacity Metric app shows operations for ontology (preview).
@@ -76,7 +74,7 @@ Microsoft Fabric allows administrators to [pause and resume](../../enterprise/pa
 
 Consider the following factors that could potentially affect cost:
 
-* **Model uptime:** Charges for the time your ontology model is running. This factor is dependent on the number of definitions, model complexity, size, and usage time.
+* **Modeling:** Charges for the time your ontology model is running. This factor is dependent on the number of definitions, model complexity, size, and usage time.
 * **Ontology logic and operations:** Charges for running queries and associated compute. Operations like indexing, refresh rates, and idle time can affect CU usage.
 * **AI reasoning and query:** Charges for advanced reasoning and natural language queries powered by AI, based on the number of tokens used.
 * **Associated Fabric items:** Charges from associated Fabric items that are being used through ontology, like [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) and [Fabric Activator](../../real-time-intelligence/data-activator/activator-capacity-usage.md).

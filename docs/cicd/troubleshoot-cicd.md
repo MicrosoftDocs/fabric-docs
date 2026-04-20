@@ -33,7 +33,6 @@ To understand the considerations and limitations of various lifecycle management
 * [Deployment pipelines](#deployment-pipelines)  
   * [Paginated reports](#paginated-reports)  
   * [Dataflows](#dataflows)  
-  * [Datamarts](#datamarts)  
   * [Permissions](#permissions)  
   * [Rules](#rules)
 
@@ -442,17 +441,6 @@ When you deploy a paginated report that's connected to a Fabric semantic model, 
 
 **Solution**: This behavior doesn't affect deployment pipelines.
 
-### Datamarts
-
-#### Deployment problem: I can't deploy a datamart in the pipeline
-
-**Solution**: To deploy a datamart, you must be the owner of the datamart.
-
-#### Deployment problem: My datamart deployment failed because of a circular dependency
-
-:::image type="content" source="./media/troubleshoot-cicd/circular-dependency.png" alt-text="Screenshot of error message about circular or self dependencies.":::
-
-**Solution**: There's either an item that references itself, or more than one item involved in a circular chain of references (for example, item A references item B and item B references item A). To deploy the datamart, remove the circular dependency and redeploy.
 
 ### Permissions
 

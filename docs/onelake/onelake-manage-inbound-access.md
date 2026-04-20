@@ -1,7 +1,9 @@
 ---
 title: Manage inbound access from OneLake with workspace private links
 description: Inbound access protection in Fabric secures your data by limiting inbound requests. 
-ms.reviewer: eloldag, mabasile
+ms.reviewer: eloldag, mabasile # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article
 ms.date: 08/20/2025
 #customer intent: As a data admin, I want to learn how to protect my data by limiting inbound requests. As a data engineer, I want to learn how to work with my data, even when private links are turned on. 

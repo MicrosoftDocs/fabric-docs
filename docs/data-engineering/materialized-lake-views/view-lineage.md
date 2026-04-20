@@ -26,7 +26,7 @@ Notebook code defines the lineage (MLV flow), and Fabric creates it when you cre
 
 > [!Important]
 > The lineage view treats all shortcuts as source entities.
-> The lineage view treats all tables or materialized lake views under a shortcut schema as source entities.
+> The lineage view treats all tables or materialized lake views in a shortcut schema as source entities.
 
 :::image type="content" source="./media/view-lineage/job-graph.png" alt-text="Screenshot showing a job graph in lineage." border="true" lightbox="./media/view-lineage/job-graph.png":::
 
