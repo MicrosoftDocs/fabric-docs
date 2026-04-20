@@ -3,7 +3,7 @@ title: Vector Database
 description: Learn about what vector databases are and how you can use Eventhouse to store and query vector data in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
 ms.topic: concept-article
-ms.date: 03/19/2026
+ms.date: 04/20/2026
 ms.subservice: rti-eventhouse
 ms.search.form: Eventhouse
 ---
@@ -12,7 +12,8 @@ ms.search.form: Eventhouse
 
 A vector database stores and manages data in the form of vectors, which are numerical arrays of data points.
 
-The use of vectors allows for complex queries and analyses, because you can compare and analyze vectors by using advanced techniques such as vector similarity search, quantization, and clustering.
+The use of vectors allows for complex queries and analyses, because you can compare and analyze vectors by using advanced techniques techniques for finding similar items and organizing data into groups including clustering, quantization, and vector similarity search.
+
 Traditional databases aren't well-suited for handling the high-dimensional data that's becoming increasingly common in data analytics. However, vector databases are designed to handle high-dimensional data, such as text, images, and audio, by representing them as vectors. Vector databases are useful for tasks such as machine learning, natural language processing, and image recognition, where the goal is to identify patterns or similarities in large datasets.
 
 This article gives some background about vector databases and explains conceptually how you can use an [Eventhouse](eventhouse.md) as a vector database in Real-Time Intelligence in Microsoft Fabric. For a practical example, see [Tutorial: Use an Eventhouse as a vector database](vector-database-eventhouse.md).
@@ -58,7 +59,7 @@ To maximize performance and the resulting search times, follow these steps:
 
 1. Set the encoding of the embeddings column to Vector16, the 16-bit encoding of the vectors coefficients (instead of the default 64-bit).
 1. Store the embedding vectors table on all cluster nodes with at least one shard per processor. To do this goal, follow these steps:
-    1. Limit the number of embedding vectors per shard by altering the *ShardEngineMaxRowCount* of the [sharding policy](/kusto/management/sharding-policy?view=microsoft-fabric&preserve-view=true). The sharding policy balances data on all nodes with multiple extents per node so the search can use all available processors.
+    1. Limit the number of embedding vectors per shard by altering the *ShardEngineMaxRowCount* of the [sharding policy](/kusto/management/sharding-policy?view=microsoft-fabric&preserve-view=true). This setting spreads your data across all available computing resources for faster searches.
     1. Change the *RowCountUpperBoundForMerge* of the [merging policy](/kusto/management/merge-policy?view=microsoft-fabric&preserve-view=true). The merge policy is needed to suppress merging extents after ingestion.
 
 ### Example optimization steps

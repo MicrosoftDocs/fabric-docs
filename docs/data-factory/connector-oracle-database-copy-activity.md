@@ -3,7 +3,7 @@ title: Configure Oracle database in a copy activity
 description: This article explains how to copy data using Oracle database.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 01/30/2026
+ms.date: 04/01/2026
 ms.custom: 
   - pipelines
   - template-how-to
@@ -112,6 +112,11 @@ The following properties are **required**:
 - **Connection:** Select an Oracle database connection from the connection list. If the connection doesn't exist, then create a new Oracle database connection by selecting **More** at the bottom of the connection list.
 - **Table**: Select the table in your database from the drop-down list, or select **Enter manually** to enter the schema and table name. If the destination table doesn't exist, it is automatically created based on the source data. For more details on mapping rules for auto-created tables, go to [Default data type mapping for Oracle auto-created table](#default-data-type-mapping-for-oracle-auto-created-table).
 
+- **Write behavior**: Describes how to write data to Oracle database. Allowed values are Insert (default) and Upsert.
+    - **Insert**: Choose this option if your source data has inserts.
+    - **Upsert**: Insert new values to existing table and update existing values.
+        - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. You can specify one or more columns to be treated as key columns. If the key column is not specified, the primary key of the destination table is used as the key column.            
+    
 Under **Advanced**, you can specify the following fields:
 
 - **Pre-copy script**: Specify a SQL query for the copy activity to execute before you write data into Oracle database in each run. You can use this property to clean up the preloaded data.
@@ -294,6 +299,8 @@ The following table contains more information about the copy activity in Oracle 
 | **Table** |Your destination data table.| \<name of your destination table\> |Yes |/|
 | **schema name** | Name of the schema. |< your schema name >  | Yes | schema |
 | **table name** | Name of the table. | < your table name > | Yes |table |
+| **Write behavior** |Describes how to write data to Oracle database.| • insert (default)<br>• upsert |No |writeBehavior|
+| **Key columns** |The column is used to determine if a row from the source matches a row from the destination. You can specify one or more columns to be treated as key columns. If the key column isn't specified, the primary key of the destination table is used as the key column.|< key columns > |No |keys (under *`upsertSettings`*)|
 | **Pre-copy script** | A SQL query for the copy activity to execute before you write data into Oracle database in each run. You can use this property to clean up the preloaded data. | < your pre-copy script > | No | preCopyScript |
 | **Write batch timeout** | The wait time for the batch insert operation to complete before it times out. | timespan | No | writeBatchTimeout |
 | **Write batch size** | The number of rows to insert into the SQL table per batch. | integer<br>(the default is 10,000) | No | writeBatchSize |

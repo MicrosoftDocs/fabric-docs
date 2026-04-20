@@ -3,7 +3,7 @@ title: What is MCP in Real-Time Intelligence?
 description: Learn about Model Context Protocol (MCP) in Real-Time Intelligence. MCP enables AI agents to interact with RTI components like Eventhouse and Activator using natural language.
 ms.reviewer: sharmaanshul
 ms.topic: overview 
-ms.date: 03/30/2026
+ms.date: 04/20/2026
 ms.search.form: MCP, RTI, AI
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
@@ -41,14 +41,16 @@ Remote MCP servers are hosted by Microsoft and are available as HTTP endpoints. 
 | **Eventhouse MCP server** | Enables AI agents to query Eventhouse using natural language | Schema discovery, KQL query generation, data sampling, natural language to KQL translation |
 | **Activator MCP server** | Enables AI agents to interact with Fabric Activator | Create monitoring rules, manage alerts, trigger actions |
 
-For setup instructions, see:
+* **MCP Host**: The environment where the AI model (like GPT-4, Claude, or Gemini) runs.
+* **MCP Client**: An intermediary service forwards the AI model's requests to MCP servers, like GitHub Copilot, Cline, or Claude Desktop.
+* **MCP Server**: Small applications that make specific features accessible to AI models, such as running database queries. For example, Fabric RTI MCP server can execute KQL queries for real-time data retrieval from KQL databases.
 
 - [Get started with the remote MCP server for Eventhouse](mcp-remote-eventhouse.md)
 - [Get started with the remote MCP server for Activator](mcp-remote-activator.md)
 
 ## When to use local vs. remote servers
 
-Choose the MCP server type based on your requirements:
+**Natural Language Interfaces**: Ask questions in plain English or other languages, and the system turns them into optimized queries (NL2KQL- Natural Language to Kusto Query Language).
 
 | Scenario | Recommended option |
 |----------|-------------------|
@@ -63,10 +65,13 @@ Choose the MCP server type based on your requirements:
 
 Both local and remote MCP servers work with popular AI clients:
 
-- GitHub Copilot (VS Code and CLI)
-- Cline
-- Claude Desktop
-- Other MCP-compatible clients
+## Supported RTI components
+
+**Eventhouse** - Run KQL queries against the KQL databases in your [Eventhouse](eventhouse.md) backend. This unified interface lets AI agents search your real-time data, analyze patterns, and take actions based on what they find.
+
+> [!NOTE]
+>
+> You can also use the Fabric RTI MCP Server to run KQL queries against the clusters in your [Azure Data Explorer](/azure/data-explorer/) backend.
 
 ## Related content
 
