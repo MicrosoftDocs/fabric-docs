@@ -226,7 +226,7 @@ First, create entity types. Entity types represent types of objects in a busines
 
 1. Select **Add data binding > Lakehouse table**.
 
-    :::image type="content" source="media/tutorial-1-create-ontology/onelake/store-bind-data-2.png" alt-text="Screenshot of the data binding page.":::
+    :::image type="content" source="media/tutorial-1-create-ontology/onelake/store-bind-data-2.png" alt-text="Screenshot of the data binding page and data source selection.":::
 
 1. Choose your data source. 
     1. Select the *OntologyDataLH* lakehouse and select **Next**. 
@@ -310,6 +310,9 @@ Next, create relationship types between the entity types to represent contextual
     1. **Matched Store: StoreId**: Select `StoreId`. This setting specifies the column in the relationship source data table (*factsales >* `StoreId`) whose values match the key property defined on the *Store* entity (*dimstore >* `StoreId`). In the tutorial data, the column name is the same (`StoreId`) in both tables.
 
     :::image type="content" source="media/tutorial-1-create-ontology/onelake/relationship-type-4.png" alt-text="Screenshot of the completed relationship type configuration." lightbox="media/tutorial-1-create-ontology/onelake/relationship-type-4.png":::
+
+    >[!IMPORTANT]
+    >Make sure to select the correct source columns that match the entity type key properties.
 
 1. **Save** the relationship type. Confirm that the relationship type updated successfully, then select **Cancel** to close the configuration options.
 
