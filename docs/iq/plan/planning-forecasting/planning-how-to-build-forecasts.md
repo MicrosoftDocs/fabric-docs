@@ -125,8 +125,8 @@ To set forecast values based on a formula, set **Open Period** to **Formula** an
 After a forecast is created, its initial values can be modified at any time. If the open forecast is into multiple periods, you can update the values for a specific period without affecting the configured values for the other periods.
 
 1. Select **Reforecast** > **Reforecast Column**.
-2. Define the period range to update the open forecast.
-3. Select the measure and method to populate the forecast.
+1. Define the period range to update the open forecast.
+1. Select the measure and method to populate the forecast.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/re-forecast-configuration.png" alt-text="Screenshot of reforecasting configuration" lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/re-forecast-configuration.png":::
 
