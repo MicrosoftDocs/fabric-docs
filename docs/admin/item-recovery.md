@@ -133,7 +133,10 @@ curl --request DELETE \
 ```
 
 > [!WARNING]
-> You can't undo a permanent deletion.
+> [!CAUTION]
+> After you confirm permanent deletion, the item and its contents are no longer recoverable.
+>
+> After you permanently delete an item, Microsoft OneLake retains the data for an additional seven days. You can't restore data during this period. The deletion is final and can't be reversed.
 
 ## Related content
 
