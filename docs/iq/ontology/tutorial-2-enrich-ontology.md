@@ -52,7 +52,7 @@ Follow these steps to create the *Freezer* entity type and add properties to it.
 
 The properties are added to the **Configure** page, labeled as unbound to any data source.
 
-    :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-properties-2.png" alt-text="Screenshot of the new unbound properties on the Freezer entity type." lightbox="media/tutorial-2-enrich-ontology/freezer-properties-2.png":::
+:::image type="content" source="media/tutorial-2-enrich-ontology/freezer-properties-3.png" alt-text="Screenshot of the new unbound properties on the Freezer entity type." lightbox="media/tutorial-2-enrich-ontology/freezer-properties-3.png":::
 
 ## Bind static data to properties
 
@@ -162,7 +162,9 @@ Finally, create a new relationship type to represent the connection between a st
 
 1. **Save** the relationship type. Confirm that the relationship type updated successfully, then select **Cancel** to close the configuration options.
 
-1. You see the **Configure** page for the entity, where the updated relationship is still visible in the **Relationships** section.
+1. You see the **Configure** page for the entity, where the updated relationship remains visible in the **Relationships** section.
+
+    :::image type="content" source="media/tutorial-2-enrich-ontology/relationship-type-5.png" alt-text="Screenshot of the relationship type on the configuration page." lightbox="media/tutorial-2-enrich-ontology/relationship-type-5.png":::
 
 ## Next steps
 

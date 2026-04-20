@@ -30,7 +30,7 @@ The example scenario for this tutorial is a fictional company called Lakeshore R
     * *Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance*
     * *Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance*
 
-    :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal.":::
+    :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal." lightbox="media/tutorial-0-introduction/prerequisite-ontology.png":::
 
     For more information about these prerequisites, see [Ontology (preview) required tenant settings](overview-tenant-settings.md).
 ::: zone-end
@@ -44,7 +44,7 @@ The example scenario for this tutorial is a fictional company called Lakeshore R
     * *Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance*
     * *Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance*
 
-    :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal.":::
+    :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal." lightbox="media/tutorial-0-introduction/prerequisite-ontology.png":::
 
     For more information about these prerequisites, see [Ontology (preview) required tenant settings](overview-tenant-settings.md).
 ::: zone-end

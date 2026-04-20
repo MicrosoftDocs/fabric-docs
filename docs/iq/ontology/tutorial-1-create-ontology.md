@@ -36,7 +36,7 @@ In this tutorial step, you generate an ontology from the sample semantic model t
 
 1. Select your **Workspace** and enter *RetailSalesOntology* for the **Name**. Select **Create**.
 
-    :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/generate-ontology-2.png" alt-text="Screenshot of Generate ontology details.":::
+    :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/generate-ontology-2.png" alt-text="Screenshot of Generate ontology details." lightbox="media/tutorial-1-create-ontology/semantic-model/generate-ontology-2.png":::
 
     >[!TIP]
     >Ontology names can include numbers, letters, and underscores. Don't use spaces or dashes.

@@ -80,7 +80,7 @@ First, craft this query: *Show all freezers that are operated in the Paris store
 
     :::image type="content" source="media/tutorial-3-preview-ontology/add-filter-store.png" alt-text="Screenshot of filtering by Store ID." lightbox="media/tutorial-3-preview-ontology/add-filter-store.png":::
 
-1. In the **Components** pane, uncheck *SaleEvent* so that the only checked fields are **Nodes > Store**, **Nodes > Freezer**, and **Edges > operates**.
+1. In the **Components** panel, uncheck *SaleEvent* so that the only checked fields are **Nodes > Store**, **Nodes > Freezer**, and **Edges > operates**.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/components.png" alt-text="Screenshot of filtering the components." lightbox="media/tutorial-3-preview-ontology/components.png":::
 
@@ -93,12 +93,12 @@ First, craft this query: *Show all freezers that are operated in the Paris store
 Next, craft this query: *Show all stores that have made a sale with a revenue greater than 150.*
 1. Select **Add a node** and add a node for *SaleEvent*.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/add-node.png" alt-text="Screenshot of adding nodes to a new query.":::
+    :::image type="content" source="media/tutorial-3-preview-ontology/add-node.png" alt-text="Screenshot of adding nodes to a new query." lightbox="media/tutorial-3-preview-ontology/add-node.png":::
 
-1. In the **Components** pane, check the boxes next to **Nodes > Store** and **Edges > from** to add them to the graph.
+1. In the **Components** panel, check the boxes next to **Nodes > Store** and **Edges > from** to add them to the graph.
 1. From the query builder ribbon, select **Add filter > SaleEvent > RevenueUSD**. Set the filter for `RevenueUSD > 150`.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/add-filter-sale.png" alt-text="Screenshot of filtering by sale revenue.":::
+    :::image type="content" source="media/tutorial-3-preview-ontology/add-filter-sale.png" alt-text="Screenshot of filtering by sale revenue." lightbox="media/tutorial-3-preview-ontology/add-filter-sale.png":::
 
 1. Select **Run query** and verify that the instance graph shows two stores that meet the filter for their connected sale events. You can also select the nodes in the graph to get details of the specific sale events.
 
