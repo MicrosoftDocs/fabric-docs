@@ -3,7 +3,7 @@ title: What is the Fabric Real-Time Intelligence Model Context Protocol (MCP) lo
 description: Model Context Protocol (MCP) local server for RTI is a fully open-source implementation for Microsoft Fabric Real-Time Intelligence (RTI). It enables AI agents to interact with RTI components like Eventhouse.
 ms.reviewer: sharmaanshul
 ms.topic: overview 
-ms.date: 03/10/2026
+ms.date: 04/20/2026
 ms.search.form: MCP, RTI, AI
 ms.collection: ce-skilling-ai-copilot
 
@@ -36,13 +36,13 @@ This architecture lets you build modular, scalable, and secure intelligent appli
 
 * **MCP Host**: The environment where the AI model (like GPT-4, Claude, or Gemini) runs.
 * **MCP Client**: An intermediary service forwards the AI model's requests to MCP servers, like GitHub Copilot, Cline, or Claude Desktop.
-* **MCP Server**: Lightweight applications exposing specific capabilities by natural language APIs, databases. For example, Fabric RTI MCP server can execute KQL queries for real-time data retrieval from KQL databases.
+* **MCP Server**: Small applications that make specific features accessible to AI models, such as running database queries. For example, Fabric RTI MCP server can execute KQL queries for real-time data retrieval from KQL databases.
 
 ## Key features
 
 **Real-Time Data Access**: Retrieve data from KQL databases in seconds.
 
-**Natural Language Interfaces**: Ask questions in plain English or other languages, and the system turns them into optimized queries (NL2KQL).
+**Natural Language Interfaces**: Ask questions in plain English or other languages, and the system turns them into optimized queries (NL2KQL- Natural Language to Kusto Query Language).
 
 **Schema Discovery**: Discover schema and metadata, so you can learn data structures dynamically.
 
@@ -52,7 +52,7 @@ This architecture lets you build modular, scalable, and secure intelligent appli
 
 ## Supported RTI components
 
-**Eventhouse** - Run KQL queries against the KQL databases in your [Eventhouse](eventhouse.md) backend. This unified interface lets AI agents query, reason, and act on real-time data.
+**Eventhouse** - Run KQL queries against the KQL databases in your [Eventhouse](eventhouse.md) backend. This unified interface lets AI agents search your real-time data, analyze patterns, and take actions based on what they find.
 
 > [!NOTE]
 >
