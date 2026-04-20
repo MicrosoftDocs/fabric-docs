@@ -19,7 +19,7 @@ items:
       href: ontology/tutorial-1-create-ontology.md
     - name: 2- Enrich the ontology
       href: ontology/tutorial-2-enrich-ontology.md
-    - name: 3- Preview the ontology
+    - name: 3- View the ontology
       href: ontology/tutorial-3-preview-ontology.md
     - name: 4- Create data agent
       href: ontology/tutorial-4-create-data-agent.md

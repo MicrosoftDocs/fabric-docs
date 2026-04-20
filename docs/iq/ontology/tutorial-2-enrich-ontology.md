@@ -168,5 +168,5 @@ Finally, create a new relationship type to represent the connection between a st
 
 Now your ontology includes a *Freezer* entity type that is bound to both static and time series data, and is connected in the ontology with a relationship.
 
-Next, continue to [Preview the ontology](tutorial-3-preview-ontology.md).
+Next, continue to [View the ontology](tutorial-3-preview-ontology.md).
 
