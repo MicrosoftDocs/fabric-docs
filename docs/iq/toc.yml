@@ -99,6 +99,8 @@ items:
           href: plan/planning-how-to-add-comments.md
         - name: Add notes
           href: plan/planning-how-to-add-notes.md
+        - name: Add bookmarks
+          href: plan/planning-how-to-add-bookmark.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
