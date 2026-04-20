@@ -213,12 +213,17 @@ landingContent:
             - text: RTI operations agents
               url: operations-agent.md
             - text: RTI Model Context Protocol (MCP) servers
-              url: mcp-overview.md
-           
+              url: mcp-overview.md  
         - linkListType: how-to-guide
           links:
-          - text: Use MCP with Eventhouse
+          - text: Get started with operation agents
+            url: operations-agent.md
+          - text: Implement the local RTI MCP server
+            url: mcp-local-server.md
+          - text: Use a remote MCP server to interact with Eventhouse
             url: mcp-remote-eventhouse.md
+          - text: Use a remote MCP server to interact with Activator
+            url: mcp-remote-activator.md
 
  # Card
   - title: Reference architectures
@@ -239,13 +244,4 @@ landingContent:
               url: architectures/fraud-detection.md
             - text: Telecommunications and media
               url: architectures/internet-service-provider-analytics.md
-                  
-          - text: Get started with operation agents
-            url: operations-agent.md
-          - text: Implement the local RTI MCP server
-            url: mcp-local-server.md
-          - text: Use a remote MCP server to interact with Eventhouse
-            url: mcp-remote-eventhouse.md
-          - text: Use a remote MCP server to interact with Activator
-            url: mcp-remote-activator.md
-              
+                             
