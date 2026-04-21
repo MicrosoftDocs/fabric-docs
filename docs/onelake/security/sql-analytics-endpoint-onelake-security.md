@@ -2,7 +2,7 @@
 title: "OneLake Security for SQL analytics endpoints"
 description: Learn how Microsoft Fabric's OneLake security enhances data access control with centralized governance or granular SQL-based permissions.
 ms.reviewer: aamerril
-ms.date: 04/020/2026
+ms.date: 04/20/2026
 ms.topic: concept-article
 ---
 

@@ -20,7 +20,7 @@ For help with common problems, see [Troubleshooting graph](troubleshooting-and-f
 
 - OneLake parquet and CSV files are the only data sources currently supported.
 - Support for Power BI semantic models as data sources is under development.
-- Support for column- and row-level [OneLake security](../onelake/security/get-started-security.md#onelake-security-preview) is under development.
+- Support for column- and row-level [OneLake security](../onelake/security/get-started-security.md#onelake-security) is under development.
 - Support for [Lakehouse with schema](../data-engineering/lakehouse-schemas.md) is under development.
 
 ### Data types

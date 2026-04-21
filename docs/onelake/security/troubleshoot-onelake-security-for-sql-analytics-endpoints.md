@@ -27,8 +27,8 @@ The one-to-one identity mapping requirement means the user must have explicit Re
 
 - Open the lakehouse, select **Manage permissions** , and verify the user appears with at least Read permission.
 - If the user is missing, add them directly or share the item with Read permission.
-![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_1.png)
-![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_2.png)
+![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image-1.png)
+![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image-2.png)
 
 **Step 2:** Confirm the user's Object ID matches exactly at producer and consumer.
 
@@ -56,7 +56,7 @@ Recent changes to OneLake security roles can take up to 5 minutes to propagate t
 - **Verify the sync is working:** In **Object Explorer** , expand **Security** → **Roles** → **Database Roles** . Confirm that custom roles prefixed with OLS\_ are present. Each OLS\_ role corresponds to a OneLake security role that security sync has translated and applied to the SQL analytics endpoint.
 - **If no OLS\_ roles appear after 5 minutes:** Security sync hasn't processed the OneLake roles yet. Continue to Step 5 to check for broken references, or see [Security sync appears stuck](#4-security-sync-appears-stuck) for deeper diagnostics.
 - **If OLS\_ roles are present but the user still cannot query:** The sync is working, and the issue is likely in the user's role membership or identity match. Re-verify Steps 1 and 2.
-![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_3.png)
+![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image-3.png)
 
 **Step 5:** Validate that the role references aren't broken.
 
@@ -73,7 +73,7 @@ Use this procedure when the same data returns different results between engines.
 
 Open the SQL analytics endpoint and check the **Security** tab for the current OneLake access mode.
 
-![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_4.png)
+![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image-4.png)
 
 **Step 2:** If the endpoint is in delegated identity mode, expect divergence.
 
@@ -86,7 +86,7 @@ Delegated mode doesn't honor OneLake security roles. Security rules defined in O
 
 First, confirm the OneLake security roles have synced to the SQL analytics endpoint. In **Object Explorer** , expand **Security** → **Roles** → **Database Roles** and check that the expected OLS\_-prefixed roles are present. If they're missing, see [Security sync appears stuck](#4-security-sync-appears-stuck) .
 
-![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_5.png)
+![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image-5.png)
 
 To verify which roles the user is a member of, run the following T-SQL against the SQL analytics endpoint:
 
@@ -137,7 +137,7 @@ If the source table has no OneLake security rules but the query still fails, ver
 - Check the owner of the Lakehouse or SQL analytics endpoint.
 - Confirm the owner has Fabric Read permission on both the source and destination artifacts.
 - The owner can't be a service principal—if it is, reassign ownership to a user or group account.
-![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_6.png)
+![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image-6.png)
 
 ### 4. Security sync appears stuck
 
@@ -149,7 +149,7 @@ A policy referencing a deleted or renamed column, table, or invalid CLS allow li
 
 - Review recent schema changes (column renames, table renames, dropped columns) against existing OneLake security roles.
 - Open the OneLake security panel of the source lakehouse and fix or remove any affected rules.
-![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_7.png)
+![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image-7.png)
 
 **Step 2:** Check for role complexity issues.
 
@@ -169,7 +169,7 @@ Security sync has a retry backoff that may temporarily pause automatic attempts 
 
 After triggering a retry, verify the result in **Object Explorer** under **Security** → **Roles** → **Database Roles** . If the expected OLS\_-prefixed roles now appear, security sync has successfully translated the OneLake security roles.
 
-![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_8.png)
+![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image-8.png)
 
 **Step 4:** If sync still fails, contact Microsoft Support.
 

@@ -101,7 +101,7 @@ Graph models read data from tables in a lakehouse. The following considerations 
 
 - Users within the workspace who have access to the underlying data in the lakehouse can model and query the graph.
 - All users need read access to the underlying graph model item to run queries against it from a QuerySet. If you share a QuerySet, also share the graph model or add the recipient to a workspace role.
-- Support for column-level and row-level [OneLake security](../onelake/security/get-started-security.md#onelake-security-preview) is under development.
+- Support for column-level and row-level [OneLake security](../onelake/security/get-started-security.md#onelake-security) is under development.
 
 ## Limitations
 
