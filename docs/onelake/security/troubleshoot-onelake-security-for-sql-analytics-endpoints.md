@@ -58,12 +58,12 @@ Recent changes to OneLake security roles can take up to 5 minutes to propagate t
 - **If OLS\_ roles are present but the user still cannot query:** The sync is working, and the issue is likely in the user's role membership or identity match. Re-verify Steps 1 and 2.
 ![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_3.png)
 
-**Step 5:** Validate that the role references are not broken.
+**Step 5:** Validate that the role references aren't broken.
 
-A role that references a deleted or renamed column or table will put the database into an error state in user identity mode.
+A role that references a deleted or renamed column or table puts the database into an error state in user identity mode.
 
 - Compare the column and table names referenced in the OneLake security role to the current schema.
-- If a column or table was renamed or dropped, either restore it or update the role in the OneLake security panel of the lakehouse where the role was created.
+- If a column or table was renamed or dropped, update the role in the OneLake security panel of the lakehouse where the role was created.
 
 ### 2. Query works in Spark but returns different rows in SQL analytics endpoint
 
@@ -77,14 +77,14 @@ Open the SQL analytics endpoint and check the **Security** tab for the current O
 
 **Step 2:** If the endpoint is in delegated identity mode, expect divergence.
 
-Delegated mode does not honor OneLake security roles. Security rules defined in OneLake (which Spark enforces) do not apply when the same data is queried through the SQL analytics endpoint in delegated mode.
+Delegated mode doesn't honor OneLake security roles. Security rules defined in OneLake (which Spark enforces) don't apply when the same data is queried through the SQL analytics endpoint in delegated mode.
 
 - To align SQL results with Spark, replicate the filtering using SQL constructs (RLS, CLS, DDM, GRANT/REVOKE) at the SQL engine layer.
 - Alternatively, switch the endpoint to **user identity mode** so the end user's identity is passed through to OneLake and OneLake security rules are evaluated.
 
 **Step 3:** If the endpoint is in user identity mode, verify role propagation.
 
-First, confirm the OneLake security roles have been synced to the SQL analytics endpoint. In **Object Explorer** , expand **Security** → **Roles** → **Database Roles** and check that the expected OLS\_-prefixed roles are present. If they are missing, see [Security sync appears stuck](#4-security-sync-appears-stuck) .
+First, confirm the OneLake security roles have synced to the SQL analytics endpoint. In **Object Explorer** , expand **Security** → **Roles** → **Database Roles** and check that the expected OLS\_-prefixed roles are present. If they're missing, see [Security sync appears stuck](#4-security-sync-appears-stuck) .
 
 ![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_5.png)
 
@@ -123,7 +123,7 @@ Use this procedure when a query against a shortcut-backed table fails in delegat
 In delegated mode, shortcuts are blocked when the source table has any Row-Level Security (RLS), Column-Level Security (CLS), or Object-Level Security (OLS) defined in OneLake security. This is by design, to prevent the item owner from surfacing filtered data to unauthorized end users.
 
 - Open the producer lakehouse and review its OneLake security roles.
-- If data-level rules exist on the source, the shortcut cannot be used in delegated mode.
+- If data-level rules exist on the source, the shortcut can't be used in delegated mode.
 
 **Step 2:** Choose a resolution path.
 
@@ -136,16 +136,16 @@ If the source table has no OneLake security rules but the query still fails, ver
 
 - Check the owner of the Lakehouse or SQL analytics endpoint.
 - Confirm the owner has Fabric Read permission on both the source and destination artifacts.
-- The owner cannot be a service principal—if it is, reassign ownership to a user or group account.
+- The owner can't be a service principal—if it is, reassign ownership to a user or group account.
 ![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_6.png)
 
 ### 4. Security sync appears stuck
 
-Use this procedure when role changes made in OneLake security are not reflected in the SQL analytics endpoint after more than 5 minutes.
+Use this procedure when role changes made in OneLake security aren't reflected in the SQL analytics endpoint after more than 5 minutes.
 
 **Step 1:** Check for broken policy references.
 
-A policy referencing a deleted or renamed column, table, or invalid CLS allowlist blocks metadata sync until corrected. An invalid CLS rule will deny all access to the affected resource until the column name is restored or the rule is updated — see [My CLS policy shows "column does not exist" errors](#rls-and-cls-constraints) for how to identify and resolve this.
+A policy referencing a deleted or renamed column, table, or invalid CLS allow list blocks metadata sync until corrected. An invalid CLS rule denies all access to the affected resource until the column name is restored or the rule is updated—see [My CLS policy shows "column doesn't exist" errors](#rls-and-cls-constraints) for how to identify and resolve this.
 
 - Review recent schema changes (column renames, table renames, dropped columns) against existing OneLake security roles.
 - Open the OneLake security panel of the source lakehouse and fix or remove any affected rules.
@@ -153,7 +153,7 @@ A policy referencing a deleted or renamed column, table, or invalid CLS allowlis
 
 **Step 2:** Check for role complexity issues.
 
-Highly complex roles—particularly those with many intersections and union semantics using RLS—can cause security sync to fail.
+Highly complex roles—particularly with many intersections and union semantics using RLS—can cause security sync to fail.
 
 - Simplify the role by splitting it into multiple smaller roles.
 - Reduce the number of nested or overlapping expressions.
@@ -175,18 +175,18 @@ After triggering a retry, verify the result in **Object Explorer** under **Secur
 
 Collect the following before opening a ticket: workspace ID, lakehouse/SQL analytics endpoint item ID, the OneLake security role names involved, the approximate time of the last successful sync, and any SQL error messages surfaced in the client.
 
-### 5. Access changes in delegated mode are not taking effect
+### 5. Access changes in delegated mode aren't taking effect
 
-Use this procedure when permission or security changes affecting the item owner (or the producer of a shortcut source) do not appear to propagate at the consumer in delegated mode.
+Use this procedure when permission or security changes affecting the item owner (or the producer of a shortcut source) don't appear to propagate at the consumer in delegated mode.
 
-This scenario is common when a shortcut-backed table at the consumer previously had full access, and the producer then introduces a new OneLake security role, filter, or restriction that narrows what the item owner can read at the source. Because delegated mode accesses OneLake using the item owner's cached storage access token, end users at the consumer may continue to see the previously-visible data until the token refreshes.
+This scenario is common when a shortcut-backed table at the consumer previously had full access, and the producer then introduces a new OneLake security role, filter, or restriction that narrows what the item owner can read at the source. Because delegated mode accesses OneLake using the item owner's cached storage access token, end users at the consumer may continue to see the previously visible data until the token refreshes.
 
 ***Step 1:** Determine which permission layer changed.*
 
 - SQL GRANT/REVOKE or a SQL-defined security policy at the consumer: Changes apply on the next query execution. No cache delay.
-- **Item owner's OneLake permissions at the producer (for shortcut-backed tables):** The item owner's storage access token is cached at the consumer. Previously-issued tokens may remain valid until they expire, so users can continue to see restricted data for up to **30–60 minutes** .
+- **Item owner's OneLake permissions at the producer (for shortcut-backed tables):** The item owner's storage access token is cached at the consumer. Previously issued tokens may remain valid until they expire, so users can continue to see restricted data for up to **30–60 minutes** .
 - **New OneLake security role or filter created at the producer (affecting a shortcut source):** The restriction is evaluated against the item owner's identity when the storage access token is refreshed. Until the token refreshes, end users at the consumer may continue to see the full dataset—even though the producer now restricts the owner's access.
-- **OneLake security membership changes (users added to or removed from existing roles at the producer):** These changes affect the enforcement path directly and are not delayed by the consumer's storage token cache.
+- **OneLake security membership changes (users added to or removed from existing roles at the producer):** These changes affect the enforcement path directly and aren't delayed by the consumer's storage token cache.
 
 ***Step 2:** Wait for token expiration.*
 
@@ -194,7 +194,7 @@ For owner-permission or producer-side policy changes on shortcut-backed tables, 
 
 ***Step 3:** Force token refresh if the wait is unacceptable.*
 
-If you cannot wait for the token to expire, you can trigger a faster refresh by:
+If you can't wait for the token to expire, you can trigger a faster refresh by:
 
 - **Pausing and resuming the Fabric capacity** that hosts the artifact. This clears backend caches and is the safest forced-refresh option.
 - **Switching the consumer endpoint to user identity mode and back to delegated mode.** This invalidates cached tokens
@@ -210,23 +210,23 @@ If you cannot wait for the token to expire, you can trigger a faster refresh by:
 
 **Q: A user is in a OneLake security role but gets "no permission on the artifact" errors. Why?**
 
-The user must have Fabric Read permission on the consumer artifact using the **same Object ID** that is referenced in the OneLake security role. Add the user (or group) directly to the lakehouse permissions. Nested group membership does not count.
+The user must have Fabric Read permission on the consumer artifact using the **same Object ID** that is referenced in the OneLake security role. Add the user (or group) directly to the lakehouse permissions. Nested group membership doesn't count.
 
 **Q: I added a user to a group that already has access. Why can't they query?**
 
-The consumer does not resolve nested or effective group membership. The identity granted at the producer must be recognized at the consumer as the same literal principal. Either grant Fabric Read to the user directly at the consumer, or ensure the group itself (not its members) is granted Fabric Read at the consumer.
+The consumer doesn't resolve nested or effective group membership. The identity granted at the producer must be recognized at the consumer as the same literal principal. Either grant Fabric Read to the user directly at the consumer, or ensure the group itself (not its members) is granted Fabric Read at the consumer.
 
 **Q: Can I use a mail-enabled security group or distribution list?**
 
-No. These identity types are not supported. Use a standard security group or grant access to users directly.
+No. These identity types aren't supported. Use a standard security group or grant access to users directly.
 
 **Q: Can the lakehouse owner be a service principal?**
 
-No. Security sync does not work when the lakehouse owner is a service principal. Reassign ownership to a user or security group account.
+No. Security sync doesn't work when the lakehouse owner is a service principal. Reassign ownership to a user or security group account.
 
 **Q: Does the lakehouse owner need a specific workspace role?**
 
-Yes. The owner must be a member of the Admin, Member, or Contributor workspace roles. Otherwise, security is not applied to the SQL analytics endpoint.
+Yes. The owner must be a member of the Admin, Member, or Contributor workspace roles. Otherwise, security isn't applied to the SQL analytics endpoint.
 
 #### Access modes and enforcement
 
@@ -236,21 +236,21 @@ OneLake security policies (RLS, CLS, OLS) are designed to filter data for users 
 
 Important exceptions where filtering can still apply to AMC users:
 
-- **Shortcut-backed tables** : Enforcement is evaluated at the producer (source). An AMC user at the consumer does not gain elevated access at the source—if their identity is not granted at the producer, the shortcut can still deny or filter them.
+- **Shortcut-backed tables** : Enforcement is evaluated at the producer (source). An AMC user at the consumer doesn't gain elevated access at the source—if their identity isn't granted at the producer, the shortcut can still deny or filter them.
 - **RLS in user identity mode** : RLS rules configured in user identity mode are enforced for all users, including AMC roles. This is intentional.
 - **Security sync failure cases** : If sync fails to apply roles correctly, AMC users who are members of affected roles may experience restricted access until the sync is resolved.
 
 **Q: An Admin user sees unfiltered data on a local table but filtered data on a shortcut. Is that correct?**
 
-Yes. Local tables grant AMC users broad visibility by design through their workspace role. Shortcut-backed tables are evaluated against the producer's OneLake security rules, and the consumer's AMC role does not grant them elevated access at the source. If the AMC user's identity isn't granted at the producer, the shortcut filters or denies them.
+Yes. Local tables grant AMC users broad visibility by design through their workspace role. Shortcut-backed tables are evaluated against the producer's OneLake security rules, and the consumer's AMC role doesn't grant them elevated access at the source. If the AMC user's identity isn't granted at the producer, the shortcut filters or denies them.
 
 **Q: Why does the same user see different data in Spark versus SQL analytics endpoint?**
 
-If the endpoint is in **delegated identity mode** , OneLake security roles are not honored—only SQL permissions apply. To get consistent filtering across engines, either switch the endpoint to user identity mode, or replicate the OneLake rules as SQL RLS/CLS/DDM.
+If the endpoint is in **delegated identity mode** , OneLake security roles aren't honored—only SQL permissions apply. To get consistent filtering across engines, either switch the endpoint to user identity mode, or replicate the OneLake rules as SQL RLS/CLS/DDM.
 
 **Q: I have two OneLake security roles on the same table. One applies RLS; the other grants full access. RLS isn't working. Why?**
 
-When a user is a member of multiple OneLake security roles on the same source, the **most permissive role wins** —the broader role overrides the RLS restriction. Keep restrictive and permissive roles mutually exclusive if you need RLS to apply.
+When a user is a member of multiple OneLake security roles on the same source, the **most permissive role wins—the broader role overrides the RLS restriction. Keep restrictive and permissive roles mutually exclusive if you need RLS to apply.
 
 **Q: Can I use T-SQL GRANT/REVOKE to control table access in user identity mode?**
 
@@ -258,13 +258,13 @@ No. In user identity mode, table access is governed entirely by OneLake security
 
 **Q: Can I write data through the SQL analytics endpoint in user identity mode?**
 
-No. Write operations are not supported at the SQL analytics endpoint in user identity mode. All writes must go through the Lakehouse page in the Fabric portal and are governed by workspace roles.
+No. Write operations aren't supported at the SQL analytics endpoint in user identity mode. All writes must go through the Lakehouse page in the Fabric portal and are governed by workspace roles.
 
 #### Shortcuts
 
 **Q: My shortcut worked in user identity mode but fails after switching to delegated mode. Why?**
 
-In delegated mode, shortcuts are blocked if the source table has RLS, CLS, or OLS defined in OneLake security. The endpoint connects as the item owner and cannot evaluate per-user filtering at the source, so it fails closed to prevent unauthorized data exposure.
+In delegated mode, shortcuts are blocked if the source table has RLS, CLS, or OLS defined in OneLake security. The endpoint connects as the item owner and can't evaluate per-user filtering at the source, so it fails closed to prevent unauthorized data exposure.
 
 *Workaround:* Keep the consumer endpoint in user identity mode when sources have OneLake data-level security. Alternatively, remove the OneLake rules at the source and implement equivalent filtering in SQL at the consumer.
 
@@ -274,13 +274,13 @@ When a shortcut target changes (rename, URL update), the database briefly enters
 
 *Workaround:* Wait for validation to complete. Avoid making shortcut target changes during peak query periods.
 
-**Q: My query was cancelled unexpectedly during a shortcut change. Why?**
+**Q: My query was canceled unexpectedly during a shortcut change. Why?**
 
-Active queries may be automatically cancelled if a shortcut configuration changes during execution. This protects data integrity and security. Retry the query after the shortcut change completes.
+Active queries may be automatically canceled if a shortcut configuration changes during execution. This protects data integrity and security. Retry the query after the shortcut change completes.
 
 **Q: Data from a Warehouse accessed through a OneLake shortcut ignores my SQL RLS/CLS policies. Why?**
 
-Warehouse SQL security constructs (RLS, CLS, OLS) are only enforced in the SQL execution context of the warehouse (TDS endpoint). When data is accessed through a OneLake shortcut, these SQL semantics are not translated into OneLake security policies, so users accessing through the shortcut may see the full dataset.
+Warehouse SQL security constructs (RLS, CLS, OLS) are only enforced in the SQL execution context of the warehouse (TDS endpoint). When data is accessed through a OneLake shortcut, these SQL semantics aren't translated into OneLake security policies, so users accessing through the shortcut may see the full dataset.
 
 *Workaround:* Apply equivalent OneLake security rules at the source lakehouse, or restrict access to the shortcut consumer.
 
@@ -290,19 +290,19 @@ Warehouse SQL security constructs (RLS, CLS, OLS) are only enforced in the SQL e
 
 Typically seconds, but up to 5 minutes. To speed this up, select the **Metadata sync** button in the SQL analytics endpoint toolbar or refresh the page—either triggers an immediate sync.
 
-To verify the sync succeeded, open **Object Explorer** and expand **Security** → **Roles** → **Database Roles** . The expected OLS\_-prefixed roles should be visible. If the change has not applied after 5 minutes and OLS\_ roles are missing or stale, check for broken policy references or role complexity issues.
+To verify the sync succeeded, open **Object Explorer** and expand **Security** → **Roles** → **Database Roles** . The expected OLS\_-prefixed roles should be visible. If the change hasn't applied after 5 minutes and OLS\_ roles are missing or stale, check for broken policy references or role complexity issues.
 
 **Q: I see roles prefixed with OLS\_ in the SQL analytics endpoint. Can I modify them?**
 
-No. OLS\_ roles are managed by the security sync process. Manual changes are not supported and are overwritten on the next sync cycle. If there are no changes to sync, your manual changes may temporarily persist, but this behavior is not reliable—do not depend on it.
+No. OLS\_ roles are managed by the security sync process. Manual changes aren't supported and are overwritten on the next sync cycle. If there are no changes to sync, your manual changes may temporarily persist, but this behavior isn't reliable—don't depend on it.
 
 **Q: My OneLake security role name is longer than 124 characters and fails to sync. What do I do?**
 
-Rename the role to fit within the 124-character limit. There is no workaround for this limit at the SQL analytics endpoint.
+Rename the role to fit within the 124-character limit. There's no workaround for this limit at the SQL analytics endpoint.
 
 **Q: I renamed a table and now my security policies don't apply to it. What happened?**
 
-OneLake security roles are tied to the table name. Renaming a table breaks the association, and policies do not migrate automatically. Reapply the security policies to the renamed table to restore coverage.
+OneLake security roles are tied to the table name. Renaming a table breaks the association, and policies don't migrate automatically. Reapply the security policies to the renamed table to restore coverage.
 
 *Workaround:* Before renaming a table, export or document the existing OneLake security rules. After renaming, recreate them against the new table name.
 
@@ -330,11 +330,11 @@ Only single-expression tables are supported. If you need Dynamic RLS or Multi-Ta
 
 **Q: Can I use Dynamic Data Masking (DDM) in user identity mode?**
 
-No. DDM is not supported in OneLake security. Use delegated mode and define DDM using SQL ALTER TABLE with the MASKED option.
+No. DDM isn't supported in OneLake security. Use delegated mode and define DDM using SQL ALTER TABLE with the MASKED option.
 
 **Q: My CLS policy shows "column does not exist" errors. How do I fix it?**
 
-CLS maintains a strict allowlist of columns. If an allowed column is renamed or removed, the rule is invalidated and denies all access until the column naming is restored or the rule is updated.
+CLS maintains a strict allow list of columns. If an allowed column is renamed or removed, the rule is invalidated and denies all access until the column naming is restored or the rule is updated.
 
 *Resolution:* Either restore the original column name, or update the CLS rule in the OneLake security panel of the source lakehouse.
 
@@ -354,17 +354,17 @@ The SQL analytics endpoint caches the storage access token used on behalf of the
 
 **Q: I switched from user identity mode to delegated mode. Why are old query results still being returned?**
 
-When switching between security modes, cached queries may continue returning results based on the previous security state for up to 1 hour. Wait for the cache to invalidate, or issue new queries that were not previously cached.
+When switching between security modes, cached queries may continue returning results based on the previous security state for up to 1 hour. Wait for the cache to invalidate, or issue new queries that weren't previously cached.
 
 **Q: Does switching between security modes preserve my inline metadata objects?**
 
-No. Switching between user identity and delegated modes (in either direction) currently removes inline metadata objects, including table-valued functions (TVFs) and scalar-valued functions. Underlying data in OneLake is not affected.
+No. Switching between user identity and delegated modes (in either direction) currently removes inline metadata objects, including table-valued functions (TVFs) and scalar-valued functions. Underlying data in OneLake isn't affected.
 
 *Workaround:* Before switching modes, script out your inline metadata objects. After switching, recreate them.
 
 **Q: Switching modes deleted my existing SQL roles. Can I recover them?**
 
-No. When switching to user identity mode, existing SQL roles are deleted and cannot be recovered.
+No. When switching to user identity mode, existing SQL roles are deleted and can't be recovered.
 
 *Workaround:* Script out your SQL role definitions before switching modes so you can recreate them if you switch back to delegated mode.
 
