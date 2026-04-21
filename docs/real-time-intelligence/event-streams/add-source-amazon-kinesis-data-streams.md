@@ -21,17 +21,11 @@ This article shows you how to add an Amazon Kinesis Data Streams source to an ev
 
 ## Add Amazon Kinesis Data Streams as a source
 
-1. Select **Eventstream** to create a new eventstream.
+[!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
-   :::image type="content" border="true" source="media/external-sources/new-eventstream.png" alt-text="A screenshot of creating a new eventstream.":::
+On **Select a data source**, select **Kinesis Data Streams**.
 
-1. On the next screen, select **Add external source**.
-
-   :::image type="content" border="true" source="media/external-sources/add-external-source.png" alt-text="A screenshot of selecting Add external source.":::
-
-1. On **Select a data source**, select **Kinesis Data Streams**.
-
-   :::image type="content" border="true" source="media/add-source-amazon-kinesis-data-streams/select-external-source.png" alt-text="A screenshot of selecting Kinesis Data Streams.":::
+:::image type="content" border="true" source="media/add-source-amazon-kinesis-data-streams/select-external-source.png" alt-text="A screenshot of selecting Kinesis Data Streams.":::
 
 ## Configure and connect to Amazon Kinesis Data Streams
 

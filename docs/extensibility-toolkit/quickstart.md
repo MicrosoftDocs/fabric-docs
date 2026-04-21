@@ -82,4 +82,4 @@ Change the HelloWorld item or create a new one:
 ## Related links
 
 - [Starter-Kit](https://aka.ms/fabric-extensibility-starter-kit)
-- Toolkit docs: [Build your workload](build-your-workload.md), [Workload manifest](manifest-workload.md), [Publish your workload](publish-workload-flow.md)
+- Toolkit docs: [Build your workload](build-your-workload.md), [Workload manifest](manifest-workload.md), [Publish your workload](publishing-overview.md)

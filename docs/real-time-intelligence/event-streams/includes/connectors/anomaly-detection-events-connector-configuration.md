@@ -25,9 +25,12 @@ ms.date: 03/31/2026
     1. Select one or more values to match. 
  
         :::image type="content" source="./media/anomaly-detection-events/set-filters.png" alt-text="Screenshot that shows the addition of a filter." lightbox="./media/anomaly-detection-events/set-filters.png":::       
-1. Then, select **Next** at the bottom of the page.
 
-    :::image type="content" source="./media/anomaly-detection-events/next-button.png" alt-text="Screenshot that shows the selection of the Next button." lightbox="./media/anomaly-detection-events/next-button.png":::
-1. On the **Review + connect** page, review settings, and select **Add**.
+### Stream or source details
 
-    :::image type="content" source="./media/anomaly-detection-events/review-create-page.png" alt-text="Screenshot that shows the Review and create page." lightbox="./media/anomaly-detection-events/review-create-page.png":::
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
+
+### Review and connect
+
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
+

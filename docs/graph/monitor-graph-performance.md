@@ -3,7 +3,7 @@ title: Monitor Graph Performance
 description: Monitor graph performance in Microsoft Fabric. Learn what factors affect refresh and query speed, how to identify bottlenecks, and what actions to take.
 #customer intent: As a Fabric user, I want to understand graph performance characteristics so that I can identify bottlenecks and keep my graph workloads running efficiently.
 ms.topic: how-to
-ms.date: 03/31/2026
+ms.date: 04/14/2026
 ms.reviewer: wangwilliam
 ai-usage: ai-assisted
 ---
@@ -36,7 +36,7 @@ Several interconnected factors affect graph performance. Diagnose slow refreshes
 ### Source data characteristics
 
 - Graph reads directly from lakehouse tables in OneLake. Large source tables with many columns take longer to ingest.
-- If your source tables include columns you don't need in the graph, remove those properties during graph modeling. Each property adds to the data read during refresh and the memory footprint of the queryable graph.
+- If your source tables include columns you don't need in the graph, remove those node type properties during graph modeling. Each property adds to the data read during refresh and the memory footprint of the queryable graph. Edge type properties are added manually, so only add the ones you need.
 
 ### Query patterns
 
@@ -83,9 +83,9 @@ When you run a GQL query in the **Code Editor**, observe:
 - **Result size**: Large result sets (approaching the 64-MB truncation limit) indicate that the query needs tighter bounds or filtering. If results are truncated, add `LIMIT`, `FILTER`, or `WHERE` clauses to narrow the output.
 - **Empty results after a successful refresh**: This situation usually means the graph model configuration doesn't match the underlying data. Verify that your node type mappings point to the correct source tables and columns.
 
-### Common query performance issues and actions
+### Common query performance problems and solutions
 
-| Symptom | Likely cause | Action |
+| Symptom | Likely cause | Solution |
 | --- | --- | --- |
 | Query takes more than a few seconds | Deep traversal (high hop count) or missing filters | Add pattern-level `WHERE` clauses, reduce hop range, and apply `LIMIT`. |
 | Query returns no results | Node or edge type misconfiguration, or empty source tables | Verify model mappings and confirm source data exists. |
@@ -107,7 +107,7 @@ For more information, see [Install the Microsoft Fabric Capacity Metrics app](..
 
 ## Performance best practices summary
 
-- **Right-size your model**: Remove node types, edge types, and properties you don't need. Smaller models refresh faster and consume less memory.
+- **Right-size your model**: Remove node types, edge types, and properties you don't need. Smaller models refresh faster and use less memory.
 - **Filter early, project narrowly**: Use pattern-level `WHERE` clauses and return only the properties you need. Avoid `RETURN *`.
 - **Bound your results**: Apply `LIMIT` to high-cardinality queries. Keep results well under the 64-MB truncation threshold.
 - **Keep traversals shallow**: Use the tightest hop range your scenario allows. Use `TRAIL` to prevent redundant paths in dense graphs.

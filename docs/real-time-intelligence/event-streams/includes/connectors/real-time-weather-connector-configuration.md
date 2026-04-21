@@ -14,9 +14,14 @@ ms.date: 12/11/2025
 
     :::image type="content" source="./media/real-time-weather-connector/enter-location-name.png" alt-text="Screenshot that shows entering an optional location name." lightbox="./media/real-time-weather-connector/enter-location-name.png":::
 
-1. Select **Next** and review the configuration summary. 
+### Stream or source details
 
-    :::image type="content" source="./media/real-time-weather-connector/review-connect.png" alt-text="Screenshot that shows the Review + connect page for the real-time weather source." lightbox="./media/real-time-weather-connector/review-connect.png":::
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
+
+### Review and connect
+
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
+
 
 > [!IMPORTANT]
 > By using this connector, you acknowledge and agree that:

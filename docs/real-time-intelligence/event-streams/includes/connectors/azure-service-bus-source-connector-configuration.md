@@ -52,13 +52,12 @@ ms.date: 04/01/2026
 
        If you selected **Queue**, enter the name of the queue.
 
-1. In the **Stream details** section to the right, use the pencil button to change the source name. You might want to change this name to the name of the Service Bus namespace or the topic.
+### Stream or source details
 
-    :::image type="content" source="./media/azure-service-bus-source-connector/stream-details.png" alt-text="Screenshot that shows the section for stream details in the wizard for connecting a data source." lightbox="./media/azure-service-bus-source-connector/stream-details.png":::
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
 
-1. At the bottom of the wizard, select **Next**.
+### Review and connect
 
-1. On the **Review + connect** page, review your settings, and then select **Add** or **Connect**.
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
-    :::image type="content" source="./media/azure-service-bus-source-connector/review-connect.png" alt-text="Screenshot that shows the page for reviewing settings and adding or connecting to an Azure Service Bus data source." lightbox="./media/azure-service-bus-source-connector/stream-details.png":::
 

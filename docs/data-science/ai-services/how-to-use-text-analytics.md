@@ -1,7 +1,8 @@
 ---
 title: Use prebuilt Text Analytics with REST API
 description: How to use prebuilt text analytics in Fabric with REST API
-ms.reviewer: lagayhar, ruxu
+ms.author: lagayhar
+ms.reviewer: ruxu
 ms.topic: how-to
 ms.date: 08/20/2025
 ms.update-cycle: 180-days

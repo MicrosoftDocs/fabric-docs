@@ -1,7 +1,9 @@
 ---
 title: Moving data with OneLake and AzCopy
 description: AzCopy makes it easy to quickly move data into, out of, and around OneLake.
-ms.reviewer: eloldag, mabasile
+ms.reviewer: eloldag, mabasile # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.date: 08/12/2025
 #customer intent: As a data engineer, I want to understand how I can use AzCopy to copy data in or out of OneLake easily and with the best performance, from a variety of sources.

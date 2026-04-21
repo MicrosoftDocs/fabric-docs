@@ -2,7 +2,7 @@
 title: Tables in Fabric Data Warehouse
 description: Learn how to design and use tables in Microsoft Fabric Data Warehouse, including temporary tables.
 ms.reviewer: xiaoyul, randolphwest
-ms.date: 09/24/2025
+ms.date: 04/03/2026
 ms.topic: how-to
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
@@ -107,7 +107,7 @@ Session-scoped temporary (`#temp`) tables can be created in Fabric Data Warehous
 
 These tables exist only within the session in which they are created and last for the duration of that session. They are not visible to other users or sessions and are automatically dropped from the system once the session ends or the #temp table is dropped. These tables are accessible to all users without requiring specific item-level permission.
 
-Two types of #temp tables can be created based on specific use cases, non-distributed and distributed.
+Two types of #temp tables can be created based on specific use cases: non-distributed and distributed.
 
 - A non-distributed #temp table (mdf-backed) is the default type. The syntax for creating and using non-distributed #temp tables in Fabric Data Warehouse is similar to user tables, but you need to prefix the temp table name with `#`.
 
@@ -129,9 +129,13 @@ Two types of #temp tables can be created based on specific use cases, non-distri
 
 In the previous script, `data_type1` and `data_type2` are placeholders for supported [Data types in Fabric Data Warehouse](data-types.md).
 
-Distributed #temp tables are recommended, as they align with normal user tables; they have unlimited storage, data type support, and T-SQL operations. The syntax for data manipulation and definition is identical to user tables in Fabric Data Warehouse, with prefix `#` added to the table name.
+Distributed #temp tables are recommended, as they align with normal user tables; they have unlimited storage, data type support, and T-SQL operations. 
 
-In Fabric Data Warehouse, temp tables are not affected by [time travel](time-travel.md) query hints and always return the latest data in the table.
+Other notes about temp tables in Fabric Data Warehouse:
+
+- The syntax for data manipulation and definition is identical to user tables in Fabric Data Warehouse, with prefix `#` added to the table name.
+- Temp tables are not affected by [time travel](time-travel.md) query hints and always return the latest data in the table.
+- You can alter distributed temp tables with `ALTER TABLE`, but not MDF-backed temp tables.
 
 ## Align source data with the data warehouse
 

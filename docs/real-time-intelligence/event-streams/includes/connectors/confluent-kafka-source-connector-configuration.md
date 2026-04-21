@@ -57,9 +57,16 @@ ms.date: 04/02/2026
 
         :::image type="content" source="./media/confluent-kafka-source-connector/configure-additional-settings.png" alt-text="Screenshot that shows the additional settings of Confluent TLS/mTLS settings."::: 
 
-1. Depending on whether your data is encoded using Confluent Schema Registry:
-   - If not encoded, select **Next**. On the **Review and create** screen, review the summary, and then select **Add** to complete the setup.
-   - If encoded, proceed to the next step: [Connect to Confluent schema registry to decode data (preview)](#connect-to-confluent-schema-registry-to-decode-data-preview)
+### Stream or source details
+
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
+
+### Review and connect
+
+Depending on whether your data is encoded using Confluent Schema Registry:
+
+- If not encoded, select **Next**. On the **Review and create** screen, review the summary, and then select **Add** to complete the setup.
+- If encoded, proceed to the next step: [Connect to Confluent schema registry to decode data (preview)](#connect-to-confluent-schema-registry-to-decode-data-preview)
 
 ### Connect to Confluent schema registry to decode data (preview)
 Eventstream's Confluent Cloud for Apache Kafka streaming connector is capable of decoding data produced with Confluent serializer and its Schema Registry from Confluent Cloud. Data encoded with this serializer of Confluent schema registry require schema retrieval from the Confluent Schema Registry for decoding. Without access to the schema, Eventstream can't preview, process, or route the incoming data. 
@@ -76,7 +83,7 @@ You may expand **Advanced settings** to configure Confluent Schema Registry conn
 1. **JSON output decimal format**: Specifies the JSON serialization format for Decimal logical type values in the data from the source.
     - **NUMERIC**: Serialize as numbers.
     - **BASE64**: Serialize as base64 encoded data.
-1. Select **Next**. On the **Review and create** screen, review the summary, and then select **Add** to complete the setup.
+1. Select **Next**. On the **Review and create** screen, review the summary, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
     :::image type="content" source="./media/confluent-kafka-source-connector/confluent-schema-registry.png" alt-text="Screenshot that shows advanced settings of the Confluent schema registry settings.":::  
     

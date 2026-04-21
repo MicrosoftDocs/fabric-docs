@@ -1,7 +1,9 @@
 ---
 title:       Shortcut transformations (AI-powered)
 description: Use AI-powered shortcut transformations to convert unstructured text files into queryable Delta tables.
-ms.reviewer: preshah
+ms.reviewer: preshah # Product team ms alias(es)
+# author:    Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic:    how-to
 ms.date:     03/25/2026
 ai-usage:    ai-assisted
@@ -14,7 +16,7 @@ Use AI-powered shortcut transformations to extract insights from unstructured te
 For structured files like CSV, Parquet, or JSON, see [Shortcut transformations (file)](./transformations.md).
 
 > [!IMPORTANT]
-> Shortcut transformations are currently in **public preview**. Features and behavior might change before general availability.
+> AI-powered shortcut transformations are currently in **public preview**. Features and behavior might change before general availability.
 
 ## Why use AI-powered shortcut transformations?
 

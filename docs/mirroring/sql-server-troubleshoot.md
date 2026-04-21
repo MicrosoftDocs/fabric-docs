@@ -4,7 +4,7 @@ description: Troubleshooting mirrored databases From SQL Server in Microsoft Fab
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajayj, anagha-todalbagi
-ms.date: 11/14/2025
+ms.date: 04/06/2026
 ms.topic: troubleshooting
 ---
 
@@ -105,11 +105,8 @@ When creating a new mirrored database SQL Server, the creation might fail with t
 
 To resolve this:
 
-1. In Fabric portal, cancel the dialog and delete the mirrored database artifact in the workspace.
-1. In Azure portal, open the URL: https://portal.azure.com/?feature.canmodifystamps=true&Microsoft_Azure_HybridData_Platform=entraMIAppId
-
-    >[!IMPORTANT]
-    >You need to use that specific URL and not the default.
+1. In Fabric portal, cancel the dialog and delete the mirrored database item in the workspace.
+1. Open the [Azure portal](https://portal.azure.com/).
 
     1. Navigate to Azure Arc (classic) and SQL servers. Then select your **Arc-enabled SQL Server instance** and select **Microsoft Entra ID** tab.
     1. Uncheck the **Use a primary managed identity** box and select **Save**.
@@ -120,7 +117,7 @@ To resolve this:
     SELECT * FROM sys.dm_server_managed_identities
     ```
 
-1. Return to the portal using the URL https://portal.azure.com/?feature.canmodifystamps=true&Microsoft_Azure_HybridData_Platform=entraMIAppId go to your **Arc-enabled SQL Server instance**, and select the **Microsoft Entra ID** tab.
+1. Return to the [Azure portal](https://portal.azure.com/). Go to your **Arc-enabled SQL Server instance**, and select the **Microsoft Entra ID** tab.
 1. Check **Use primary managed identity** and select **Save**.
 
     :::image type="content" source="media/troubleshoot/use-a-primary-managed-identity.png" alt-text="Screenshot of the Use a primary managed identity option in the SQL server instance.":::

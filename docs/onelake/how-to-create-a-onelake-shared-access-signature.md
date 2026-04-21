@@ -1,7 +1,9 @@
 ---
 title: Create a OneLake Shared Access Signature (SAS)
 description: Learn how to create a OneLake shared access signature to provide short-term, delegated access to OneLake.
-ms.reviewer: mabasile
+ms.reviewer: mabasile # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article
 ms.date: 04/10/2025
 ai-usage: ai-assisted

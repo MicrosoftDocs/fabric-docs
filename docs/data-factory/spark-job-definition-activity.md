@@ -44,6 +44,8 @@ Select the **Settings** tab in the activity properties pane, then select the Fab
 
 Here you can configure your connection, workspace, and Spark job definition. If no Spark job definition exists yet, you can create a new Spark job definition from your pipeline editor by selecting the **+New** button next to **Spark job definition**.
 
+You can choose either a Service Principal (SPN) or Workspace Identity (WI) connection. The selected connection determines how the Notebook or Spark job is authenticated during pipeline runs.
+
 :::image type="content" source="media/spark-job-definition-activity/create-new-spark-job-from-activity.png" lightbox="media/spark-job-definition-activity/create-new-spark-job-from-activity.png" alt-text="Screenshot showing the +New button next to the Spark job definition selection box in the Settings tab of the Spark Job definition properties pages in the pipeline editor window.":::
 
 After you set a name and select create, you will be taken to your Spark job definition to set your configurations. 

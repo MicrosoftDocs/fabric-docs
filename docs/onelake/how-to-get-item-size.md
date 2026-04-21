@@ -1,7 +1,9 @@
 ---
 title: Get the size of OneLake items
 description: Use Azure Storage PowerShell cmdlets to retrieve the size of an item, folder, or table in OneLake.
-ms.reviewer: eloldag
+ms.reviewer: eloldag # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.date: 05/08/2025
 
