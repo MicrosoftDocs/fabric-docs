@@ -20,7 +20,7 @@ Schema Registry in Fabric Real-Time Intelligence is currently in preview. This a
 
 ## Limitations
 
-- During preview, Schema Registry and the ability to create Event Schemasets is available in a limited set of regions. For the list of supported regions, see [Schema Registry region availability](region-availability.md).
+- During preview, Schema Registry and the ability to create Event Schemasets is available in a limited set of regions. For the list of supported regions, see [Schema Registry region availability](schema-registry-region-availability.md).
 
 - You can't enable schema mode on existing eventstreams Schema support must be enabled when the Eventstream is created and can't be unset after creation. You can't retroactively add schema registration to an existing eventstream. To use registered schemas, you need to create a new Eventstream. You can't combine schema-enabled sources with nonschema sources in the same Eventstream
 - You can't combine schema-enabled sources with nonschema sources in the same Eventstream
@@ -44,6 +44,4 @@ Schema Registry in Fabric Real-Time Intelligence is currently in preview. This a
 
 [Schema Registry (preview)](schema-registry-overview.md)
 
-[Schema Registry region availability](region-availability.md)
-
-
+[Schema Registry region availability](schema-registry-region-availability.md)
