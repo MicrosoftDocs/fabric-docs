@@ -1,7 +1,7 @@
 ---
 title: Add relationship types
 description: Learn about relationship types in ontology (preview) and how to manage them.
-ms.date: 10/30/2025
+ms.date: 04/21/2026
 ms.topic: how-to
 ---
 
@@ -40,43 +40,46 @@ For example, suppose you want to define a relationship between the entity types 
 
 Follow these steps to create a relationship type and bind data to it:
 
-1. Select **Add relationship** in the menu ribbon. Or, highlight an entity type in the **Entity Types** pane and select **...**, then **Add relationship**.
+1. In the Home configuration canvas, there are multiple ways to create a relationship type. Select **Add relationship** from the top ribbon, select **... > Add relationship** next to the name of an entity type in the **Explorer**, or select **... > Add relationship type** on an entity type card in the main canvas.
 
-    :::image type="content" source="media/how-to-create-relationship-types/add-relationship-1.png" alt-text="Screenshot of the Add relationship button in the ribbon.":::
+    :::image type="content" source="media/how-to-create-relationship-types/add-relationship-1.png" alt-text="Screenshot of the Add relationship buttons.":::
 
-    :::image type="content" source="media/how-to-create-relationship-types/add-relationship-1-entity.png" alt-text="Screenshot of the Add relationship type option for an entity.":::
+1. The **Add new relationship** window appears. Enter the **Relationship type name**, the **Origin entity type**, and the **Target entity type**. Select **Create**.
 
-1. In the **Add relationship type to ontology** window, 
-    1. Enter a **Relationship type name**.    
-    1. Select the **Source entity type** and **Target entity type** for your relationship. The source and target entity types must be distinct from one another.
+    :::image type="content" source="media/how-to-create-relationship-types/add-relationship-2.png" alt-text="Screenshot of the Add new relationship options.":::
 
-    :::image type="content" source="media/how-to-create-relationship-types/add-relationship-2.png" alt-text="Screenshot of the Add relationship type options.":::
+1. The relationship type is created and appears in the configuration canvas. Select it on the canvas to open the relationship details configuration.
 
-    Select **Add relationship type**.
+    :::image type="content" source="media/how-to-create-relationship-types/add-relationship-3.png" alt-text="Screenshot of the created relationship on the canvas.":::
 
-1. The **Relationship configuration** pane opens. In this pane, you define the columns from the source data that connect instances of these entity types.
+1. Observe the sections of the configuration page:
 
-1. Under **Source data**, select your workspace, lakehouse, and table that contains the keys for both your target and source entity type.
+    * **Origin entity type**: Lists details of the origin entity.
+    * **Relationship type**: Sets details of the relationship type.
+    * **Target entity type**: Lists details of the target entity.
 
-1. For each entity type, select a **Source column** from the linking source data that identifies instances of that entity type. The source column selections must match the entity type keys.
+     :::image type="content" source="media/how-to-create-relationship-types/add-relationship-4.png" alt-text="Screenshot of the relationship type configuration." lightbox="media/how-to-create-relationship-types/add-relationship-4.png":::
 
-    :::image type="content" source="media/how-to-create-relationship-types/add-relationship-3.png" alt-text="Screenshot of the relationship configuration after filling the described fields." lightbox="media/how-to-create-relationship-types/add-relationship-3.png":::
+1. In the middle panel, enter the relationship type details.
+    1. **Mapping table**: Expand **Browse available sources** and choose the table in the source data that can link the two entity types together. This table should contain identifying information for both entity types within each row (such as columns for a store ID and a freezer ID).
+    1. **Matched ...** (origin entity type): This setting specifies the column in the relationship source data table whose values match the key property defined on the origin entity type. The name may match or it may be different.
+    1. **Matched ...** (target entity type): This setting specifies the column in the relationship source data table whose values match the key property defined on the target entity type. The name may match or it may be different.
 
-    >[!TIP]
-    >If you don't see any keys for an entity type, make sure your source and target entity types have keys defined. 
+1. **Save** the relationship type. Confirm that the relationship type updated successfully, then select **Cancel** to close the configuration options.
 
-1. Select **Create**.
-1. Verify the new relationship type is visible on the configuration canvas.
+1. You see the **Configure** page for the entity, where the updated relationship remains visible in the **Relationships** section.
+
+    :::image type="content" source="media/how-to-create-relationship-types/add-relationship-5.png" alt-text="Screenshot of the relationship type on the configuration page." lightbox="media/how-to-create-relationship-types/add-relationship-5.png":::
 
 ## Edit or delete relationship type
 
-You can edit or delete relationship types that exist in your ontology (preview) items in the **Relationship configuration** pane.
+To edit or delete a relationship type, reopen its configuration page. This can be done from the Home configuration canvas or the **Relationships** section of the **Configure** page by selecting the relationship type in the canvas view. On the **Configure** page, you can also select **Manage relationships > {relationship type name}**.
 
-* To **edit** a relationship type, select it in the configuration canvas. Then, update any of the fields in the **Relationship configuration** pane.
+:::image type="content" source="media/how-to-create-relationship-types/reopen-relationship.png" alt-text="Screenshot of reopening the relationship configuration.":::
 
-* To **delete** a relationship type, select it in the configuration canvas. Then, select the **Delete relationship type** button in the **Relationship configuration** pane.
+From this page, you can edit the relationship type configuration or delete the relationship type.
 
-    :::image type="content" source="media/how-to-create-relationship-types/delete-relationship.png" alt-text="Screenshot of editing relationship details in the relationship configuration." lightbox="media/how-to-create-relationship-types/delete-relationship.png":::
+:::image type="content" source="media/how-to-create-relationship-types/delete-relationship.png" alt-text="Screenshot of editing/deleting a relationship type." lightbox="media/how-to-create-relationship-types/delete-relationship.png":::
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
 
