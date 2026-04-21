@@ -46,7 +46,7 @@ Use this checklist to track progress through your Spark migration. Each phase bu
 
 For planning guidance, migration patterns, and feature comparison, see [Step 1: Plan your Synapse Spark migration to Fabric](synapse-migration-strategy-planning.md).
 
-- **1.1** Complete Spark asset inventory: Spark pools, notebooks, Spark Job Definitions, lake databases, HMS databases, and linked services used in notebooks.
+- **1.1** Complete Spark asset inventory: Spark pools, notebooks, Spark job definitions, lake databases, Hive Metastore (HMS) databases, and linked services used in notebooks.
 - **1.2** Review Synapse vs. Fabric feature differences. Flag blockers: GPU workloads, unsupported catalog APIs, linked service dependencies.
 - **1.3** Run the pre-refactoring audit: search all notebooks for Synapse-specific patterns (`spark.synapse.linkedService`, `getSecretWithLS`, `TokenLibrary`, `synapsesql`). Count affected notebooks.
 - **1.4** Check library compatibility: run `pip freeze` on Synapse pools, compare against Fabric Runtime 1.3 built-in libraries. List libraries that need to be pre-installed.
@@ -57,7 +57,7 @@ For planning guidance, migration patterns, and feature comparison, see [Step 1: 
 
 For linked service replacement and authentication guidance, see [Step 3: Refactor Synapse Spark code for Fabric](synapse-migration-code-refactoring.md) and [Step 6: Complete Synapse to Fabric migration with security, validation, and cutover](synapse-migration-security-validation-cutover.md).
 
-- **2.1** Inventory all Synapse linked services used by notebooks, Spark Job Definitions, and Lakehouse data access.
+- **2.1** Inventory all Synapse linked services used by notebooks, Spark job definitions, and Lakehouse data access.
 - **2.2** Create Fabric Connections for external data sources (ADLS Gen2, Cosmos DB, Azure SQL, and others) via **Workspace Settings** > **Manage connections and gateways**.
 - **2.3** Set up Azure Key Vault with secrets for data sources that require key-based auth (Cosmos DB keys, storage account keys, Kusto tokens). Configure access policies for your Fabric workspace identity.
 - **2.4** Configure service principal credentials for ADLS Gen2 OAuth access: register app in Entra ID, grant Storage Blob Data Contributor role, note client ID/secret/tenant.
@@ -77,7 +77,7 @@ For lake metadata and data-access migration guidance, see [Step 5: Migrate Hive 
 
 For item migration, code refactoring, and environment setup guidance, see [Step 2: Migrate Synapse Spark workloads with Migration Assistant](synapse-migration-spark-assistant.md), [Step 3: Refactor Synapse Spark code for Fabric](synapse-migration-code-refactoring.md), and [Step 4: Migrate Spark pools, environments, and libraries from Synapse to Fabric](synapse-migration-pools-environments-libraries.md).
 
-- **4.1** Run Spark Migration Assistant for notebooks, Spark Job Definitions, Spark pools, and lake databases. Review the migration report for errors and warnings.
+- **4.1** Run Spark Migration Assistant for notebooks, Spark job definitions, Spark pools, and lake databases. Review the migration report for errors and warnings.
 - **4.2** Create Fabric Environments with target Spark runtime, pool configuration, and custom libraries. Pre-install missing libraries identified in Phase 1.
 - **4.3** Refactor notebook and SJD code: replace `mssparkutils` with `notebookutils`, update file paths to OneLake `abfss://` paths, replace linked service references with Key Vault or Fabric Connections, and replace unsupported `spark.catalog` methods with Spark SQL equivalents.
 - **4.4** Refactor connectors: Kusto/ADX — replace linked service with `accessToken` via `getToken()`. Cosmos DB — replace `getSecretWithLS` with `getSecret(akvName, secret)`.
@@ -115,7 +115,7 @@ For final validation, downstream rerouting, and cutover guidance, see [Step 6: C
 - **7.4** Decommission Synapse Spark pools, notebooks, and related resources.
 
 > [!NOTE]
-> After migration, consider setting up Fabric Git integration for your migrated notebooks and Spark Job Definitions. Fabric supports Azure DevOps Git integration for source control, branching, and deployment pipelines. Unlike Synapse (which uses ARM templates for CI/CD), Fabric uses a workspace-based model where you connect a workspace to a Git branch and sync items directly. Notebooks, Environments, and SJDs all support Git integration. Set up deployment pipelines (Dev → Test → Prod) to manage promotion across environments.
+> After migration, consider setting up Fabric Git integration for your migrated notebooks and Spark job definitions. Fabric supports Azure DevOps Git integration for source control, branching, and deployment pipelines. Unlike Synapse (which uses ARM templates for CI/CD), Fabric uses a workspace-based model where you connect a workspace to a Git branch and sync items directly. Notebooks, Environments, and SJDs all support Git integration. Set up deployment pipelines (Dev → Test → Prod) to manage promotion across environments.
 
 ## Related content
 

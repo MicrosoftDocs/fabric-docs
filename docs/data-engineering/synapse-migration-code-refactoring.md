@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 This article is part 3 of 6 in the Azure Synapse Spark to Microsoft Fabric migration best practices series.
 
-Use this article after your notebooks and Spark Job Definitions are migrated, when you need to fix code patterns that the Migration Assistant can't convert automatically. This article guides you through replacing Synapse-specific APIs, updating file paths, and changing credential patterns to work with Fabric.
+Use this article after migrating your notebooks and Spark job definitions when you need to fix code patterns that the Migration Assistant can't convert automatically. This article guides you through replacing Synapse-specific APIs, updating file paths, and changing credential patterns to work with Fabric.
 
 In this article, you learn how to:
 
@@ -50,7 +50,7 @@ Before addressing individual refactoring patterns, run a codebase-wide search ac
 
 ## File path usage
 
-Synapse notebooks that use relative paths or Synapse-managed storage paths must be updated to use direct `abfss://` paths or OneLake paths in Fabric.
+Update Synapse notebooks that use relative paths or Synapse-managed storage paths to use direct `abfss://` paths or OneLake paths in Fabric.
 
 | **Before (Synapse)** | **After (Fabric)** |
 |----|----|
@@ -62,7 +62,7 @@ Synapse notebooks that use relative paths or Synapse-managed storage paths must 
 
 ## Spark Catalog API
 
-Several `spark.catalog` methods aren't supported in Fabric. Replace them with Spark SQL equivalents.
+Fabric doesn't support several `spark.catalog` methods. Replace them with Spark SQL equivalents.
 
 | **Before (Synapse)** | **After (Fabric)** |
 |----|----|
@@ -78,17 +78,17 @@ Several `spark.catalog` methods aren't supported in Fabric. Replace them with Sp
 
 ## MSSparkUtils and NotebookUtils
 
-Replace `mssparkutils` calls with the Fabric `notebookutils` equivalents. The most common credential-related changes:
+Replace `mssparkutils` calls with the Fabric `notebookutils` equivalents. The most common credential-related changes are:
 
 | **Before (Synapse)** | **After (Fabric)** |
 |----|----|
 | `mssparkutils.credentials.getSecretWithLS("sampleLS", secretKey)` | `notebookutils.credentials.getSecret("https://<vault>.vault.azure.net/", secretKey)` |
 | `TokenLibrary.getSecret("foo", "bar")` | `notebookutils.credentials.getSecret("https://foo.vault.azure.net/", "bar")` |
 
-In Fabric, linked service-based secret retrieval (`getSecretWithLS`) isn't supported. Instead, reference the Key Vault URL directly using `notebookutils.credentials.getSecret(vaultUrl, secretName)`. The same pattern applies to `TokenLibrary.getSecret()` calls.
+In Fabric, linked service-based secret retrieval (`getSecretWithLS`) isn't supported. Instead, reference the Key Vault URL directly by using `notebookutils.credentials.getSecret(vaultUrl, secretName)`. The same pattern applies to `TokenLibrary.getSecret()` calls.
 
 > [!NOTE]
-> Most `mssparkutils.fs` methods (for example, `ls`, `cp`, `mv`, `rm`, `mkdirs`, `head`) work identically as `notebookutils.fs` in Fabric. The primary changes are credential/secret methods and `notebook.run()` path references.
+> Most `mssparkutils.fs` methods (for example, `ls`, `cp`, `mv`, `rm`, `mkdirs`, `head`) work identically as `notebookutils.fs` in Fabric. The primary changes are credential and secret methods, and `notebook.run()` path references.
 
 ## Azure Data Explorer (Kusto) connector
 
@@ -103,18 +103,18 @@ Replace the linked service option with an `accessToken` option. Use `notebookuti
 
 ## Cosmos DB connector
 
-Cosmos DB connections in Synapse that use linked services or `getSecretWithLS` must be updated.
+Update Cosmos DB connections in Synapse that use linked services or `getSecretWithLS`.
 
 | **Before (Synapse)** | **After (Fabric)** |
 |----|----|
 | `.option("spark.synapse.linkedService", "CosmosDbLS")` | Remove linked service reference |
 | `mssparkutils.credentials.getSecretWithLS("cosmosKeyLS", "cosmosKey")` | `notebookutils.credentials.getSecret("https://<vault>.vault.azure.net/", "cosmosKey")` |
 
-Replace the linked service reference with direct Cosmos DB endpoint configuration. Store the Cosmos DB account key in Azure Key Vault and retrieve it using `notebookutils.credentials.getSecret(vaultUrl, secretName)` instead of `getSecretWithLS()`.
+Replace the linked service reference with direct Cosmos DB endpoint configuration. Store the Cosmos DB account key in Azure Key Vault and retrieve it by using `notebookutils.credentials.getSecret(vaultUrl, secretName)` instead of `getSecretWithLS()`.
 
 ## Linked service references
 
-All Synapse linked service references must be replaced in Fabric.
+Replace all Synapse linked service references in Fabric.
 
 | **Before (Synapse)** | **After (Fabric)** |
 |----|----|
@@ -122,11 +122,11 @@ All Synapse linked service references must be replaced in Fabric.
 | `spark.conf.set("fs.azure.account.oauth.provider.type", "com.microsoft.azure.synapse.tokenlibrary.LinkedServiceBasedTokenProvider")` | `spark.conf.set("fs.azure.account.oauth.provider.type", "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")` |
 | `TokenLibrary.getPropertiesAsMap(linked_service_cfg)` | Remove — use direct connection string or service principal config |
 
-In Fabric, there are no linked services. Replace the Synapse token provider with standard OAuth client credentials (service principal). Configure `fs.azure.account.auth.type`, `oauth.provider.type`, `client.id`, `client.secret`, and `client.endpoint` directly using `spark.conf.set()`.
+In Fabric, there are no linked services. Replace the Synapse token provider with standard OAuth client credentials (service principal). Configure `fs.azure.account.auth.type`, `oauth.provider.type`, `client.id`, `client.secret`, and `client.endpoint` directly by using `spark.conf.set()`.
 
-## Token Library
+## Token library
 
-Synapse's `TokenLibrary` for obtaining tokens and reading linked service properties isn't available in Fabric. Replace with equivalent patterns.
+Synapse's `TokenLibrary` for getting tokens and reading linked service properties isn't available in Fabric. Replace it with equivalent patterns.
 
 | **Before (Synapse)** | **After (Fabric)** |
 |----|----|
@@ -134,41 +134,41 @@ Synapse's `TokenLibrary` for obtaining tokens and reading linked service propert
 | `val my_account = conexion("Endpoint").toString.substring(8)` | `val my_account = "<storage_account_name>" // Hardcode or retrieve via notebookutils` |
 | `mssparkutils.fs.head(internalPath, Int.MaxValue)` | `notebookutils.fs.head(internalPath, Int.MaxValue)` |
 
-For OAuth-based ADLS Gen2 access, configure the service principal credentials directly via `spark.conf.set()` using the storage account-specific keys (for example, `fs.azure.account.auth.type.<account>.dfs.core.windows.net`) instead of relying on linked service token providers.
+For OAuth-based ADLS Gen2 access, configure the service principal credentials directly by using `spark.conf.set()` with the storage account-specific keys (for example, `fs.azure.account.auth.type.<account>.dfs.core.windows.net`) instead of relying on linked service token providers.
 
 > [!IMPORTANT]
-> Review all notebooks for linked service references before cutover. Any remaining `spark.synapse.linkedService`, `TokenLibrary`, or `getSecretWithLS` calls will fail at runtime in Fabric.
+> Review all notebooks for linked service references before cutover. Any remaining `spark.synapse.linkedService`, `TokenLibrary`, or `getSecretWithLS` calls fail at runtime in Fabric.
 
 ## Spark job definition migration
 
-Spark Job Definitions (SJDs) are batch job configurations that reference a main executable file (`.py`, `.jar`, or `.R`), optional reference libraries, command-line arguments, and a lakehouse context. While the Spark Migration Assistant handles SJD migration automatically, there are important differences between Synapse and Fabric SJDs that require attention.
+Spark job definitions (SJDs) are batch job configurations that reference a main executable file (`.py`, `.jar`, or `.R`), optional reference libraries, command-line arguments, and a lakehouse context. While the Spark Migration Assistant handles SJD migration automatically, important differences between Synapse and Fabric SJDs require attention.
 
 ### Key differences between Synapse and Fabric SJDs
 
-- **Lakehouse context required.** In Fabric, every SJD must have at least one lakehouse associated with it. This lakehouse serves as the default file system for Spark runtime. Any code using relative paths reads/writes from the default lakehouse. In Synapse, SJDs use the workspace default storage (ADLS Gen2) as the default file system.
+- **Lakehouse context required.** In Fabric, every SJD must have at least one lakehouse associated with it. This lakehouse serves as the default file system for Spark runtime. Any code that uses relative paths reads and writes from the default lakehouse. In Synapse, SJDs use the workspace default storage (ADLS Gen2) as the default file system.
 
-- **Supported languages.** Fabric supports PySpark (Python), Spark (Scala/Java), and SparkR. .NET for Spark (C#/F#) isn't supported in Fabric — these workloads must be rewritten in Python or Scala before migration.
+- **Supported languages.** Fabric supports PySpark (Python), Spark (Scala/Java), and SparkR. .NET for Spark (C#/F#) isn't supported in Fabric. You must rewrite these workloads in Python or Scala before migration.
 
-- **Retry policies.** Fabric SJDs support built-in retry policies (max retries, retry interval), which is useful for Spark Structured Streaming jobs that need to run indefinitely.
+- **Retry policies.** Fabric SJDs support built-in retry policies, such as max retries and retry interval. This feature is useful for Spark Structured Streaming jobs that need to run indefinitely.
 
-- **Environment binding.** In Synapse, SJDs are bound to a Spark pool. In Fabric, SJDs are bound to an Environment (which contains pool config, libraries, and Spark properties). The Migration Assistant maps Synapse pool references to Fabric Environments automatically.
+- **Environment binding.** In Synapse, SJDs bind to a Spark pool. In Fabric, SJDs bind to an Environment, which contains pool configuration, libraries, and Spark properties. The Migration Assistant automatically maps Synapse pool references to Fabric Environments.
 
 - **Scheduling.** Fabric SJDs have built-in scheduling (**Settings** > **Schedule**) without requiring a separate pipeline. In Synapse, SJD scheduling requires a pipeline with a Spark Job activity. If you have Synapse pipelines that only trigger SJDs, consider using Fabric's built-in SJD scheduling instead of migrating the pipeline.
 
-- **Import/export.** Synapse supports UI-based JSON import/export for SJDs. Fabric doesn't support UI import/export — use the Spark Migration Assistant or the Fabric REST API to create/update SJDs programmatically.
+- **Import/export.** Synapse supports UI-based JSON import and export for SJDs. Fabric doesn't support UI import or export. Use the Spark Migration Assistant or the Fabric REST API to create or update SJDs programmatically.
 
 ### Refactor SJD code
 
 The same code refactoring patterns in this article apply to SJD main files. Changes fall into two categories.
 
-**Source code changes (inside the `.py` / `.jar` / `.R` main file):**
+Source code changes (inside the `.py`, `.jar`, or `.R` main file):
 
 - Replace `mssparkutils` with `notebookutils` for credential and file system operations.
 - Update hardcoded file paths in code to OneLake `abfss://` paths or shortcut paths, when needed. SJDs that use only relative paths against the default lakehouse might not require changes.
 - Replace linked service references in code with Key Vault secrets or Fabric Connections.
 
 > [!NOTE]
-> DMTS Connections aren't yet supported in Fabric Spark Job Definitions (supported in notebooks only). If your SJD code uses DMTS, refactor to use direct endpoint authentication.
+> DMTS Connections aren't yet supported in Fabric hddSpark job definitions (supported in notebooks only). If your SJD code uses DMTS, refactor to use direct endpoint authentication.
 
 **SJD configuration changes (in the Fabric SJD item settings):**
 

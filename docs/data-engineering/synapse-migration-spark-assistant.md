@@ -26,7 +26,7 @@ The assistant migrates the following items:
 
 - Spark pools are migrated to Fabric Pools and corresponding Environment artifacts.
 - Notebooks and their associated environments are migrated.
-- Spark Job Definitions are migrated with associated environments.
+- Spark job definitions are migrated with associated environments.
 - Lake databases are mapped to Fabric schemas; managed Delta tables are migrated via OneLake catalog shortcuts.
 
 > [!IMPORTANT]
@@ -66,5 +66,5 @@ For workspaces where notebooks and SJDs are stored in an Azure DevOps or GitHub 
 - [Step 5: Migrate Hive Metastore metadata and data paths to Fabric](synapse-migration-hms-data.md)
 - [Step 6: Complete Synapse to Fabric migration with security, validation, and cutover](synapse-migration-security-validation-cutover.md)
 - [Migrate Azure Synapse notebooks to Fabric](migrate-synapse-notebooks.md)
-- [Migrate Spark Job Definitions from Azure Synapse to Fabric](migrate-synapse-spark-job-definition.md)
+- [Migrate Spark job definitions from Azure Synapse to Fabric](migrate-synapse-spark-job-definition.md)
 - [Migrate Spark Pools from Azure Synapse to Fabric](migrate-synapse-spark-pools.md)

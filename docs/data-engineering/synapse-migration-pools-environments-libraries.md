@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 This article is part 4 of 6 in the Azure Synapse Spark to Microsoft Fabric migration best practices series.
 
-Use this article after your notebooks and Spark Job Definitions are migrated, when you need to decide on pool and environment strategy. This article explains when you can use Fabric Starter Pools (instead of migrating), when to create custom Environments, and how to identify and resolve library compatibility gaps.
+Use this article after your notebooks and Spark job definitions are migrated, when you need to decide on pool and environment strategy. This article explains when you can use Fabric Starter Pools (instead of migrating), when to create custom environments, and how to identify and resolve library compatibility gaps.
 
 In this article, you learn how to:
 
@@ -24,14 +24,14 @@ In this article, you learn how to:
 
 ### Fabric Starter Pools
 
-Fabric Starter Pools provide seconds-level Spark session startup — a significant improvement over Synapse Spark pools, which require minutes-long cold starts to provision clusters. Starter Pools are pre-provisioned by the platform and require no configuration.
+Fabric Starter Pools provide seconds-level Spark session startup — a significant improvement over Synapse Spark pools, which require minutes-long cold starts to start clusters. Starter Pools are ready to use from the platform and require no configuration.
 
 > [!TIP]
-> If your Synapse Spark pool has no custom configurations, no custom libraries, and no specific node size requirements beyond Medium — don't migrate the pool. Instead, let your notebooks and Spark Job Definitions use the Fabric workspace default Starter Pool settings. This gives you the fastest startup times and zero pool management overhead. Only create a Custom Pool or Environment when you have a specific need.
+> If your Synapse Spark pool has no custom configurations, no custom libraries, and no specific node size requirements beyond Medium—don't migrate the pool. Instead, let your notebooks and Spark job definitions use the Fabric workspace default Starter Pool settings. This approach gives you the fastest startup times and zero pool management overhead. Only create a Custom Pool or Environment when you have a specific need.
 
-### When to create a custom pool or Environment
+### When to create a custom pool or environment
 
-Create a Fabric Custom Pool and/or Environment only when your workload requires:
+Create a Fabric custom pool and/or environment only when your workload requires:
 
 - A specific node size (Small, Large, XLarge, XXLarge) different from the default Medium.
 - Custom libraries (pip packages, conda packages, JARs, wheels) that aren't in the Fabric built-in runtime.
@@ -52,7 +52,7 @@ For detailed steps on migrating libraries to Fabric Environments, see [Migrate S
 1. **Migrate libraries.** For pool-level libraries, upload packages (wheels, JARs, tars) to the Environment's library section. For PyPI/Conda packages, add them to the Environment's public library configuration.
 
 > [!IMPORTANT]
-> Workspace-level library settings in Fabric are deprecated. Migrate all libraries to Environment artifacts. The migration permanently removes existing workspace-level configurations — download all settings before enabling Environments.
+> Workspace-level library settings in Fabric are deprecated. Migrate all libraries to Environment artifacts. The migration permanently removes existing workspace-level configurations—download all settings before enabling Environments.
 
 ## Library compatibility: Synapse vs. Fabric
 
@@ -63,18 +63,18 @@ To identify which libraries your notebooks actually use, run these checks before
 - **Python notebooks:** Search for `import` and `from ... import` statements across all `.py` / `.ipynb` files.
 - **Java/Scala notebooks and SJDs:** Search for `import` statements and Maven coordinates; look for packages like `com.azure.cosmos.spark` or `com.microsoft.kusto.spark`.
 - **Export full dependency list:** Run `pip freeze` in a Synapse notebook, compare against the Fabric Runtime 1.3 manifest. Only libraries that appear in both your `pip freeze` output and the gap tables below need action.
-- **Pool-level and workspace-level custom libraries:** In Synapse Studio, go to **Manage** > **Apache Spark Pools** > select pool > **Packages** to see custom libraries that need to be re-uploaded to a Fabric Environment.
+- **Pool-level and workspace-level custom libraries:** In Synapse Studio, go to **Manage** > **Apache Spark Pools** > select pool > **Packages** to see custom libraries that need to be reuploaded to a Fabric Environment.
 
 ### Python libraries missing from Fabric
 
 | **Category** | **Libraries** | **Action** |
 |----|----|----|
-| **CUDA / GPU (9 libs)** | libcublas, libcufft, libcufile, libcurand, libcusolver, libcusparse, libnpp, libnvfatbin, libnvjitlink, libnvjpeg | Not available — Fabric doesn't support GPU pools. Refactor GPU workloads to use CPU-based alternatives or keep on Synapse. |
+| **CUDA / GPU (9 libs)** | libcublas, libcufft, libcufile, libcurand, libcusolver, libcusparse, libnpp, libnvfatbin, libnvjitlink, libnvjpeg | Not available—Fabric doesn't support GPU pools. Refactor GPU workloads to use CPU-based alternatives or keep on Synapse. |
 | **HTTP / API clients** | httpx, httpcore, h11, google-auth, jmespath | Install via Environment: `pip install httpx google-auth jmespath` |
 | **ML / Interpretability** | interpret, interpret-core | Install via Environment: `pip install interpret` |
 | **Data serialization** | marshmallow, jsonpickle, frozendict, fixedint | Install via Environment if needed: `pip install marshmallow jsonpickle` |
-| **Logging / Telemetry** | fluent-logger, humanfriendly, library-metadata-cooker, impulse-python-handler | fluent-logger: install if used. Others are Synapse-internal — likely not needed. |
-| **Jupyter internals** | jupyter-client, jupyter-core, jupyter-ui-poll, jupyterlab-widgets, ipython-pygments-lexers | Fabric manages Jupyter infrastructure internally. These are generally not needed in user code. |
+| **Logging / Telemetry** | fluent-logger, humanfriendly, library-metadata-cooker, impulse-python-handler | fluent-logger: install if used. Others are Synapse-internal—likely not needed. |
+| **Jupyter internals** | jupyter-client, jupyter-core, jupyter-ui-poll, jupyterlab-widgets, ipython-pygments-lexers | Fabric manages Jupyter infrastructure internally. These libraries are usually not needed in user code. |
 | **System / C libraries** | libgcc, libstdcxx, libgrpc, libabseil, libexpat, libnsl, libzlib | Low-level system libs. Usually not imported directly. Only install if you have C extensions that depend on them. |
 | **File / concurrency** | filelock, fsspec, knack | Install via Environment if used: `pip install filelock fsspec` |
 
