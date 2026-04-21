@@ -36,3 +36,4 @@ To open the OneLake catalog, select the OneLake icon in the Fabric navigation pa
 * [Fabric domains](./domains.md)
 * [Lineage in Fabric](./lineage.md)
 * [Monitor hub](../admin/monitoring-hub.md)
+* [Enable OneLake catalog federation in Azure Databricks](/azure/databricks/query-federation/onelake).
