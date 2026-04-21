@@ -5,7 +5,7 @@ description: Discover how Microsoft Fabric integrates Power BI, Real-Time Intell
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: fabragaMS
-ms.date: 02/24/2026
+ms.date: 04/21/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 ---
@@ -41,6 +41,8 @@ The following diagram shows how Power BI reports and translytical taskflows comb
 
 ## Monitor and analyze real-time data
 
+Real-Time Intelligence with Eventhouse provides a unified analytics surface spanning KQL and SQL (via the SQL Endpoint) and notebooks, enabling end-to-end real-time to historical analysis without data movement.
+
 The Real-Time Intelligence workload in Microsoft Fabric enables you to ingest, process, analyze, and act on streaming data with minimal latency. It combines capabilities from the following services:
 
 ### Ingest streaming data with Eventstream
@@ -53,6 +55,10 @@ Eventstream supports routing and schema alignment, timestamp normalization, part
 
 [Eventhouse](../real-time-intelligence/eventhouse.md) is optimized for high-volume event and time-series analytics. It automatically indexes and partitions data and uses Kusto Query Language for fast filtering, aggregation, joins, and anomaly investigation. Use Eventhouse when you need scalable analysis of telemetry, operational metrics, or log data.
 
+Eventhouse also provides a managed SQL Endpoint, a discoverable SQL analytics surface aligned with the Eventhouse data model and Fabric governance. The SQL Endpoint enables familiar SQL access (for example, T-SQL queries and BI tool connectivity) on Eventhouse data without data movement.
+
+In addition, Eventhouse supports notebooks for KQL, SQL, Python, and Spark to explore, transform, and build machine learning workflows on the same Eventhouse data, avoiding copies and keeping work within Fabric.
+
 [Integration with Activator](../real-time-intelligence/data-activator/activator-alert-queryset.md) happens through KQL querysets, which let you define reusable queries that continuously evaluate conditions on Eventhouse data. Activator can subscribe to these query outputs and apply rules based on the query results. When a KQL query detects a condition (for example, CPU usage exceeds 90% or a trend indicates failure risk), Activator triggers automated actions like sending alerts, launching Power Automate flows, or executing Fabric pipelines. This combination of KQL's analytical power with Activator's orchestration enables real-time, data-driven automation across business scenarios.
 
 ### Visualize live metrics with real-time dashboards
@@ -63,7 +69,7 @@ Real-time dashboards differ from regular Power BI reports primarily in their abi
 
 ### Anomaly detection
 
-The [anomaly detector](../real-time-intelligence/anomaly-detection.md) automatically identifies unusual patterns or outliers in streaming or time-series data. It works by analyzing data ingested into Eventhouse (KQL databases) and [applying statistical models or machine learning techniques](../real-time-intelligence/anomaly-detection-models.md) to detect deviations from expected behavior. These anomalies could represent system failures, fraud, performance degradation, or other critical events that require attention. Unlike static threshold-based alerts, the anomaly detector adapts to the data's historical trends and seasonality, making it more effective at identifying subtle or context-sensitive issues. 
+The [anomaly detector](../real-time-intelligence/anomaly-detection.md) automatically identifies unusual patterns or outliers in streaming or time-series data. It works by analyzing data ingested into Eventhouse (KQL databases) and [applying statistical models or machine learning techniques](../real-time-intelligence/anomaly-detection-models.md) to detect deviations from expected behavior. Anomaly detection runs natively against Eventhouse live tables and streaming data without copying or exporting data, supporting both real-time detection and evaluations over historical windows. These anomalies could represent system failures, fraud, performance degradation, or other critical events that require attention. Unlike static threshold-based alerts, the anomaly detector adapts to the data's historical trends and seasonality, making it more effective at identifying subtle or context-sensitive issues. 
 
 When an anomaly is detected, it can [trigger downstream actions through Activator](../real-time-hub/set-alerts-anomaly-detection.md), such as sending alerts, updating dashboards, or launching automated workflows. This capability supports operational scenarios where early detection of anomalies can prevent downtime, financial loss, or customer dissatisfaction. It enables you to move from reactive monitoring to proactive intervention across business processes.
 
@@ -91,7 +97,7 @@ The following diagram shows how Real-Time Intelligence in Fabric ingests streami
 
 When you define an ontology element (such as an entity "Flight" with properties like Status or Delay), you [map it to the table and fields](../iq/ontology/how-to-bind-data.md) in an Eventhouse, Lakehouse, or Warehouse that contain that information, without copying or moving the data. After the data lands in OneLake, it becomes part of the live ontology.
 
-Beyond business entities and relationships, ontologies can also define actionable rules, such as "If inventory < threshold, trigger replenishment." [Operations Agents](../real-time-intelligence/operations-agent.md) use these rules to trigger workflows in Activator. When an Operations Agent invokes [Activator to run a Power Automate flow](../real-time-intelligence/data-activator/activator-trigger-power-automate-flows.md), it passes parameters derived from ontology properties, such as CustomerID and OrderStatus. This approach ensures that automation flows operate with full business context, not just raw IDs.
+Beyond business entities and relationships, ontologies can also define actionable rules, such as "If inventory < threshold, trigger replenishment." [Operations Agents](../real-time-intelligence/operations-agent.md) use these rules to trigger workflows in Activator. Operations Agents can reason over and act on both live streaming and historical data in Eventhouse mapped via the ontology, and can invoke Activator with context derived from Eventhouse-backed entities. When an Operations Agent invokes [Activator to run a Power Automate flow](../real-time-intelligence/data-activator/activator-trigger-power-automate-flows.md), it passes parameters derived from ontology properties, such as CustomerID and OrderStatus. This approach ensures that automation flows operate with full business context, not just raw IDs.
 
 This semantic layer enables consistent analytics, AI reasoning, and automation.
 

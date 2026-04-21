@@ -4,7 +4,7 @@ description: Discover how Real-Time Intelligence in Microsoft Fabric empowers or
 #customer intent: As a data analyst, I want to understand how to use Real-Time Intelligence so that I can extract insights from streaming data.
 ms.reviewer: tzgitlin
 ms.topic: overview
-ms.date: 04/20/2026
+ms.date: 04/21/2026
 ms.subservice: rti-core
 ms.search.form: Overview
 ai-usage: ai-assisted
@@ -70,6 +70,8 @@ motion using visual tools, Natural Language, and Copilot.
 
 - These insights can be turned into actions with Fabric [!INCLUDE [fabric-activator](includes/fabric-activator.md)], as you set up alerts from various parts of Fabric to react to data patterns or conditions in real-time.
 
+- Real-Time Intelligence also integrates data agents that can reason over live and historical Eventhouse data to automate actions and workflows, complementing alert-driven automations with Activator.
+
 ## How do I interact with the components of Real-Time Intelligence?
 
 ### Discover streaming data
@@ -108,10 +110,12 @@ aggregations that can be shared to consumers in Real-Time hub.
 
 Eventhouses are the ideal analytics engine to process data in motion. They're tailored to time-based, streaming events with structured, semi structured, and unstructured data. Your data is automatically organized based on when it arrived, so you can run fast, detailed queries even on large amounts of data. Data stored in eventhouses can be made available in OneLake for consumption by other Fabric experiences.
 
-The indexed, partitioned data stored in eventhouses is ready for lightning-fast query using various code, low-code, or no-code options in Fabric. Data can be queried in native KQL (Kusto Query Language) or using T-SQL in the KQL queryset. The Kusto copilot, along with the no-code query exploration experience, streamlines the process
+The indexed, partitioned data stored in eventhouses is ready for lightning-fast query using various code, low-code, or no-code options in Fabric. Data can be queried in native KQL (Kusto Query Language) or through a managed SQL Endpoint for T-SQL analytics. The SQL Endpoint is a managed, discoverable, and governed SQL surface within Fabric, aligned with the Eventhouse data model. Users can connect BI and analytics tools to Eventhouse using this first-class SQL surface. T-SQL is also available in the KQL queryset. The Kusto copilot, along with the no-code query exploration experience, streamlines the process
 of analyzing data for both experienced KQL users and citizen data scientists. KQL is a simple, yet powerful language to query structured, semi-structured, and unstructured data. The language is expressive, easy to read and understand the query intent, and optimized for authoring experiences.
 
 For AI and agentic application scenarios, low-latency KQL queries over safety and telemetry events enable near-real-time dashboards and anomaly detection in agent conversations. The time-series organization of eventhouse data is well suited for correlating content safety signals with session metadata, so you can rapidly triage issues and identify trends across your generative AI workloads.
+
+Eventhouse also includes native anomaly detection that runs directly on live, time-series and event datasets. This capability enables faster identification and investigation of issues without data movement, complementing dashboards and KQL analytics.
 
 ### Model data
 
@@ -152,7 +156,7 @@ advantages. Activator also integrates with the Power BI service to notify users 
   - [Data from OneLake can be loaded into Real-Time Intelligence](get-data-onelake.md)
   - [Data loaded into Real-Time Intelligence is reflected in OneLake as one logical copy](one-logical-copy.md)
 - [Use the data loaded into Real-Time Intelligence as the underlying data for visualization in a Power BI report](create-powerbi-report.md)
-- [Use the data loaded into Real-Time Intelligence for analysis in Fabric Notebooks in Data Engineering](notebooks.md)
+- [Use the data loaded into Real-Time Intelligence for analysis in Fabric Notebooks in Data Engineering](notebooks.md). Notebooks can work directly over Eventhouse data without movement, supporting KQL, SQL, Python, and Spark in a unified experience for exploration, transformations, and machine learning.
 
 ## Related content
 

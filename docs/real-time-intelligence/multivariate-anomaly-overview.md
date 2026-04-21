@@ -4,7 +4,8 @@ description: Learn about multivariate anomaly detection in Real-Time Intelligenc
 ms.reviewer: adieldar
 ms.topic: concept-article
 ms.subservice: rti-anomaly-detector
-ms.date: 04/20/2026
+ms.date: 04/21/2026
+ai-usage: ai-assisted
 ---
 
 # Multivariate anomaly detection in Microsoft Fabric - overview
@@ -18,6 +19,13 @@ For example, consider a system that monitors the performance of a fleet of vehic
 
 Multivariate anomaly detection in Fabric takes advantage of the powerful Spark and Eventhouse engines on top of a shared persistent storage layer. The initial data can be ingested into an Eventhouse, and exposed in the OneLake. The anomaly detection model can then be trained using the Spark engine, and the predictions of anomalies on new streaming data can be done in real time using the Eventhouse engine. The interconnection of these engines that can process the same data in the shared storage allows for a seamless flow of data from ingestion, via model training, to prediction of anomalies. This workflow is simple and powerful for real-time monitoring and detecting of anomalies in complex systems.
 
+There are two primary paths for detecting multivariate anomalies:
+
+1. **Native Eventhouse anomaly detection on live data**: Run anomaly detection directly against streaming and historical data in Eventhouse without training a custom model. This approach is suitable when you need quick, out-of-the-box detection on live datasets with minimal setup.
+1. **Custom multivariate detection using the Python GAT-based package**: Train a custom model in Fabric notebooks using the [time-series-anomaly-detector](https://pypi.org/project/time-series-anomaly-detector/) package, then apply it for real-time scoring via Eventhouse and KQL. This approach is best for specialized scenarios that require bespoke algorithms or fine-tuned correlation analysis.
+
+Choose the simplest viable option first. Use native Eventhouse anomaly detection when standard detection capabilities meet your needs. Use the custom model approach when you require specialized algorithms or need to capture complex correlations that native detection doesn't address.
+
 ## Solution components
 
 This solution relies on the following components:
@@ -25,8 +33,10 @@ This solution relies on the following components:
 * [Eventhouse](eventhouse.md): The data is initially ingested into an Eventhouse, which is a real-time data processing engine that can handle high-throughput data streams.
 * [OneLake](../onelake/onelake-overview.md): Data from the Eventhouse is exposed in the OneLake, which is a shared persistent storage layer that provides a unified view of the data.
 * Multivariate anomaly detection package: the solution uses the [time-series-anomaly-detector](https://pypi.org/project/time-series-anomaly-detector/) python package, implementing an advanced algorithm based on a graph attention network (GAT) that captures the correlations between different time series and detects anomalies in real-time. The GAT model is trained on historical data to learn the relationships between different time series. The trained model can be applied to predict anomalies to new streaming data. Note that this algorithm is the one that is used in the [AI Anomaly Detector service](/azure/ai-services/anomaly-detector/overview) which is being retired. For more information on the algorithm, see the [blog](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/introducing-multivariate-anomaly-detection/ba-p/2260679) and [paper](https://arxiv.org/pdf/2009.02040).
-* [Spark Notebook](../data-engineering/how-to-use-notebook.md): used for offline training the anomaly detection model on historical data and store the trained model in Fabric's MLflow models registry
+* [Fabric notebooks](../data-engineering/how-to-use-notebook.md): Used for offline training of the anomaly detection model on historical data and storing the trained model in Fabric's MLflow models registry. Fabric notebooks support KQL, SQL, Python, and Spark within the same workspace, enabling unified exploration, transformations, training, and validation of anomalies on the same Eventhouse-backed data.
 * [KQL queryset](kusto-query-set.md): used for real time prediction of anomalies on incoming data.
+* **SQL Endpoint**: Eventhouse exposes a managed SQL analytics surface aligned with the Eventhouse data model. Detected anomalies and metrics can be queried via SQL for downstream analytics and integration with BI and reporting tools under Fabric governance.
+* **Data agents**: Anomalies detected in Eventhouse can be consumed by Fabric data agents to reason over live and historical signals and trigger automated actions or workflows, enabling end-to-end monitoring and response without data movement.
 
 ## Next step
 

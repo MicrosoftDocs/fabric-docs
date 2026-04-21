@@ -4,8 +4,9 @@ description: Learn how to set up and configure anomaly detection for your real-t
 ms.reviewer: tessarhurr, v-hzargari
 ms.topic: how-to
 ms.subservice: rti-anomaly-detector
-ms.date: 03/05/2026
+ms.date: 04/21/2026
 ms.search.form: Anomaly Detection How To
+ai-usage: ai-assisted
 ---
 
 # Anomaly detection in Real-Time Intelligence (Preview)
@@ -18,6 +19,8 @@ Key capabilities include:
 - **Interactive anomaly exploration**: Visualize detected anomalies and adjust model sensitivity.
 - **Continuous monitoring**: Set up real-time anomaly detection with automated notifications.
 - **Reanalysis with new data**: Update your models as new data arrives to improve accuracy.
+
+Anomaly detection runs natively on Eventhouse tables without copying data, operating directly over live datasets for real-time analysis. Analysis and continuous monitoring execute in place within Eventhouse, minimizing data movement.
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
@@ -145,11 +148,11 @@ After the analysis finishes, review the results and explore the detected anomali
     - Options include low, medium, and high confidence levels.
     - Experiment with these settings to balance between detecting more anomalies and reducing false positives.
 
-1. Interact with the visuals and tables to gain deeper insights into the detected anomalies and understand the patterns in your data.
+1. Interact with the visuals and tables to gain deeper insights into the detected anomalies and understand the patterns in your data. You can also open the anomaly analysis context in a Fabric notebook to further explore data and detected anomalies using KQL, SQL, Python, or Spark, enabling advanced transformations and machine learning on the same data foundation.
 
 1. **Save** the anomaly detector to preserve your configuration and revisit it later.
 
-1. **Publish** the detected anomalies to the Real-Time Hub to enable continuous monitoring of incoming data. You can also configure downstream actions, such as sending alerts to Activator.
+1. **Publish** the detected anomalies to the Real-Time Hub to enable continuous monitoring of incoming data. Once published, monitoring operates continuously on live incoming data under Fabric governance and doesn't require duplicating the dataset. You can also configure downstream actions, such as sending alerts to Activator.
 
 By reviewing and fine-tuning the results, you can ensure that your anomaly detection setup is optimized for your specific use case.
 
@@ -169,6 +172,13 @@ Follow these steps to reanalyze the model with new data:
 ### Explore anomaly detection events and set alerts
 
 After publishing your anomaly detection results, you can explore the detected anomalies in the Real-Time Hub and set up alerts to notify you of future anomalies.
+
+Anomaly events can also be connected to Fabric data agents to enable automated reasoning and actions across both live and historical event data. Agents can consume anomaly events and orchestrate downstream workflows, complementing Activator-based alerts.
+
+### Query anomaly results with SQL Endpoint
+
+Eventhouse provides a managed SQL Endpoint aligned with the Eventhouse data model and Fabric governance. You can query anomaly detector outputs and related tables or views via SQL for downstream analytics and integrations. To find the SQL Endpoint connection details, navigate to your Eventhouse item in the Fabric workspace.
+
 For more information, see:
 
 - [Explore anomaly detection events](../real-time-hub/explore-anomaly-detection.md)
