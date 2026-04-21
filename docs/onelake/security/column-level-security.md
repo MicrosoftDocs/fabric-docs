@@ -1,20 +1,19 @@
 ---
 title: Column-level security
-description: Learn how to use OneLake security (preview) to enforce access permissions at the column level in OneLake.
+description: Learn how to use OneLake security to enforce access permissions at the column level in OneLake.
 ms.reviewer: aamerril
 ms.topic: how-to
 ms.date: 09/05/2025
 #customer intent: As a [], I want to learn how to [] so that I can [].
 ---
 
-# Column-level security in OneLake (preview)
+# Column-level security in OneLake
 
-Column-level security (CLS) is a feature of [OneLake security (preview)](./get-started-onelake-security.md) that allows you to have access to selected columns in a table instead of full access to the table. CLS lets you specify a subset of tables that users can access. Any columns that are removed from the list aren't visible to users.
+Column-level security (CLS) is a feature of [OneLake security ](./get-started-onelake-security.md) that allows you to have access to selected columns in a table instead of full access to the table. CLS lets you specify a subset of tables that users can access. Data in columns that are removed from the list isn't visible to users.
 
 ## Prerequisites
 
-* An item in OneLake with OneLake security turned on. For more information, see [Get started with OneLake data access roles](get-started-onelake-security.md).
-* Switch the SQL analytics endpoint on the lakehouse to **User's identity** mode through the **Security** tab.
+* An OneLake security supported item type, see [Get started with OneLake data access roles](get-started-onelake-security.md).
 * For creating semantic models, use the steps to create a [DirectLake model](../../fundamentals/direct-lake-power-bi-desktop.md).
 * For a full list of limitations, see the [known limitations section.](./data-access-control-model.md#onelake-security-limitations)
 
@@ -29,13 +28,14 @@ For filtered tables, the following behaviors apply:
 
 * CLS rules don't restrict access to users with the Admin, Member, and Contributor roles.
 * If the CLS rule has a mismatch with the table it's defined on, the query fails and no columns are returned. For example, if CLS is defined for a column that isn't part of the table.
-* Queries of CLS tables fail with an error if a user is part of two different roles and one of the roles has row-level security (RLS). 
-* CLS rules can only be enforced for Delta parquet table objects. 
-  * CLS rules that are applied to non-Delta table objects block access to the entire table for members of the role. 
+* Queries of CLS tables fail with an error if a user is part of two different roles and one of the roles has row-level security (RLS).
+* CLS rules can only be enforced for Delta parquet table objects.
+  * CLS rules that are applied to non-Delta table objects block access to the entire table for members of the role.
 * If a user runs a `select *` query on a table where they only have access to some of the columns, CLS rules behave differently depending on the Fabric engine.
   * Spark notebooks: The query succeeds and only shows the allowed columns.
   * SQL analytics Endpoint: Column access is blocked for the columns the user can't access.
-  * Semantic models: Column access is blocked for the columns the user can't access. 
+  * Semantic models: Column access is blocked for the columns the user can't access.
+* The name of a secured column may be visible in certain experiences, however the data values are never shown.
 
 ### Authorized third-party engine enforcement
 
@@ -52,11 +52,11 @@ You can define column-level security as part of a OneLake security role for any 
 
 Use the following steps to define column-level security:
 
-1. Navigate to your data item and select **Manage OneLake security (preview)**.
+1. Navigate to your data item and select **Manage OneLake security**.
 
 1. Select an existing role that you want to define table or folder security for, or select **New** to create a new role.
 
-1. On the role details page, select more options (**...**) next to the table you want to define CLS for, then select **Column security (preview)**. 
+1. On the role details page, select more options (**...**) next to the table you want to define CLS for, then select **Column security**. 
 
    :::image type="content" source="./media/column-level-security/select-column-security.png" alt-text="Screenshot that shows selecting 'column security' to edit permissions on a table.":::
 

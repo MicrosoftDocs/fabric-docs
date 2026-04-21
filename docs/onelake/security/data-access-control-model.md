@@ -1,5 +1,5 @@
 ---
-title: OneLake security access control model (preview)
+title: OneLake security access control model
 description: Learn the details of how OneLake secures data with role-based access control and the interaction with Fabric permissions.
 ms.reviewer: aamerril
 ms.topic: concept-article
@@ -10,7 +10,7 @@ ms.date: 09/05/2025
 #customer intent: As a OneLake user, I want to understand how OneLake secures data with role-based access control and the interaction with Fabric permissions so that I can protect data stored and accessed in OneLake.
 ---
 
-# OneLake security access control model (preview)
+# OneLake security access control model
 
 This document provides a detailed guide to how the OneLake security access control model works. It contains details on how the roles are structured, how they apply to data, and what the integration is with other structures within Microsoft Fabric.
 
@@ -33,11 +33,7 @@ OneLake security roles support the following permission:
 
 OneLake security enables users to define data access roles for the following Fabric items only.
 
-| Fabric item | Status | Supported permissions |
-| ---- | --- | --- |
-| Lakehouse | Public Preview | Read, ReadWrite |
-| Azure Databricks Mirrored Catalog | Public Preview | Read |
-| Mirrored Databases | Public Preview | Read |
+[!INCLUDE [onelake-security-supported-items](../../includes/onelake-security-supported-items.md)]
 
 ## OneLake security and workspace permissions
 
@@ -48,7 +44,7 @@ Fabric workspace roles give permissions that apply to all items in the workspace
 | **Permission** | **Admin** | **Member** | **Contributor** | **Viewer** |
 |---|---|---|---|---|
 | View files in OneLake | Always* Yes | Always* Yes | Always* Yes | No by default. Use OneLake security to grant the access. |
-| Write files in OneLake | Always* Yes | Always* Yes | Always* Yes | No |
+| Write files in OneLake | Always* Yes | Always* Yes | Always* Yes | No by default. Use OneLake security to grant the access. |
 | Can edit OneLake security roles | Always* Yes | Always* Yes | No | No |
 
 *Since Workspace Admin, Member and Contributor roles automatically grant Write permissions to OneLake, they override any OneLake security Read permissions.
@@ -59,13 +55,15 @@ Workspace roles manage the control plane data access, meaning interactions with 
 | ---- | --- | --- | ---- | ---- |
 | Lakehouse | `DefaultReader` | Read | All folders under `Tables/` and `Files/` | All users with ReadAll permission |
 | Lakehouse | `DefaultReadWriter` | Read | All folders | All users with Write permission |
+| Azure Databricks Mirrored Catalog | `DefaultReader` | Read | All folders under `Tables/` and `Files/` | All users with Read permission |
+| Mirrored Database | `DefaultReader` | Read | All folders under `Tables/` and `Files/` | All users with ReadAll permission |
 
 > [!NOTE]
 > To restrict the access to specific users or specific folders, either modify the default role or remove it and create a new custom role.
 
 ## OneLake security and item permissions
 
-Within a workspace, Fabric items can have permissions configured separately from the workspace roles. You can configure permissions either through sharing an item or by managing the permissions of an item. The following permissions determine a user's ability to perform actions on data in OneLake. For more information on item sharing, see [How Lakehouse sharing works](../../data-engineering/lakehouse-sharing.md)
+Within a workspace, Fabric items can have permissions configured separately from the workspace roles. You can configure permissions either through sharing an item or by managing the permissions of an item. The following permissions determine a user's ability to perform actions on an item in Fabric. For more information on item sharing, see [How Lakehouse sharing works](../../data-engineering/lakehouse-sharing.md)
 
 | **Permission** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can read data through SQL analytics endpoint?** |
 |----------|----------|----------|--------------|
@@ -78,7 +76,7 @@ Within a workspace, Fabric items can have permissions configured separately from
 
 ## Create roles
 
-You can define and manage OneLake security roles through your lakehouse data access settings.
+You can define and manage OneLake security roles through your item's OneLake security role management UX.
 
 Learn more in [Get started with data access roles](../security/get-started-onelake-security.md).
 
@@ -101,11 +99,11 @@ The table below outlines which engines support RLS and CLS filtering.
 
 | **Engine** | **RLS/CLS filtering** | **Status** |
 |---|---|---|---|---|
-| Lakehouse | Yes | Public preview |
-| Spark notebooks | Yes | Public preview |
-| SQL Analytics Endpoint in "user's identity mode" | Yes | Public preview |
-| Semantic models using DirectLake on OneLake mode | Yes | Public preview |
-| Eventhouse | No | Planned |
+| Lakehouse | Yes | GA |
+| Spark notebooks | Yes | GA |
+| SQL Analytics Endpoint in "user's identity mode" | Yes | GA |
+| Semantic models using DirectLake on OneLake mode | Yes | GA |
+| Eventhouse | RLS | Public preview |
 | Data warehouse external tables | No | Planned |
 | Authorized third-party engines (via OneLake authorized engine APIs) | Yes (when implemented by the engine) | Public preview |
 
@@ -117,7 +115,7 @@ This section provides details on how OneLake security roles grant access to spec
 
 All OneLake tables are represented by folders in the lake, but not all folders in the lake are tables from the perspective of OneLake security and query engines in Fabric. To be considered a valid table, the following conditions must be met:
 
-- The folder exists in the Tables/ directory of an item.
+- The folder exists in the Tables/ directory of an item. For schema-enabled items, the folder must also be in a valid schema folder.
 - The folder contains a _delta_log folder with corresponding JSON files for the table metadata.
 - The folder does not contain any child shortcuts.
 
@@ -125,7 +123,7 @@ Any tables that do not meet those criteria will have access denied if table leve
 
 ### Metadata security
 
-OneLake security's Read access to data grants full access to the data and metadata in a table. For users with no access to a table, the data is never exposed. This also applies to column level security and a user's ability to see or not see a column in that table. However, OneLake security doesn't guarantee that the **metadata** for a table won't be accessible.
+OneLake security's Read permission grants full access to the data and metadata in a table. For users with no access to a table, the data is never exposed. This also applies to column level security and a user's ability to see or not see a column in that table. However, OneLake security doesn't guarantee that the **metadata** for a table won't be accessible, and certain error messages and experiences may show column names.
 
 ### Permission inheritance
 
@@ -266,9 +264,9 @@ When using row level security, ensure that the RLS statements are clean and easy
 
 ### Column level security
 
-OneLake security supports limiting access to columns by removing (hiding) a user's access to a column. A hidden column is treated as having no permissions assigned to it, resulting in the default policy of no access. Hidden columns won't be visible to users, and queries on data containing hidden columns return no data for that column. As noted in [metadata security](#metadata-security) there are certain case where the metadata of a column might still be visible in some error messages.
+OneLake security supports limiting access to columns by removing (hiding) a user's access to a column. A hidden column is treated as having no permissions assigned to it, resulting in the default policy of no access. Hidden columns won't be visible to users, and queries on data containing hidden columns return no data for that column. As noted in [metadata security](#metadata-security) there are certain case where the metadata of a column might still be visible.
 
-Column level security also follows a more strict behavior in SQL Endpoint by operating through a deny semantic. Deny on a column in SQL Endpoint ensures that all access to the column is blocked, even if multiple roles would combine to give access to it. As a result, CLS in SQL Endpoint operates using an intersection between all roles a user is part of instead of the union behavior in place for all other permission types. See the Evaluating multiple OneLake security roles section for more information on how roles combine.
+Column level security also follows a more strict behavior in SQL Endpoint by operating through a deny semantic. Deny on a column in SQL Endpoint ensures that all access to the column is blocked, even if multiple roles would combine to give access to it. As a result, CLS in SQL Endpoint operates using an intersection between all roles a user is part of instead of the union behavior in place for all other permission types. See the [Evaluating multiple OneLake security roles section](#evaluating-multiple-onelake-security-roles) for more information on how roles combine.
 
 ## ReadWrite permission
 
@@ -304,12 +302,12 @@ In addition, OneLake security permissions are evaluated when creating any shortc
 
 ### OneLake security in passthrough shortcuts
 
-Security set on a OneLake folder always flows across any [internal shortcuts](../onelake-shortcuts.md) to restrict access to the shortcut source path. When a user accesses data through a shortcut to another OneLake location, the identity of the calling user is used to authorize access to the data in the target path of the shortcut. As a result, this user must have OneLake security permissions in the target location to read the data.
+Security set on a OneLake folder always flows across any [internal shortcuts](../onelake-shortcuts.md) to restrict access to the shortcut target path. When a user accesses data through a shortcut to another OneLake location, the identity of the calling user is used to authorize access to the data in the target path of the shortcut. As a result, this user must have OneLake security permissions in the target location to read the data.
 
 > [!IMPORTANT]
 > When accessing shortcuts through **Power BI semantic models using DirectLake over SQL** or **T-SQL engines in Delegated identity mode**, the calling user's identity isn't passed through to the shortcut target. The calling item owner's identity is passed instead, delegating access to the calling user. To resolve this, use **Power BI semantic models in DirectLake over OneLake mode** or **T-SQL in User's identity mode**.
 
-Defining OneLake security permissions for the internal shortcut isn't allowed and must be defined on the target folder located in the target item. The target item must be an item type that supports OneLake security roles. If the target item doesn't support OneLake security, the user's access is evaluated based on whether they have the Fabric ReadAll permission on the target item. Users don't need Fabric Read permission on an item in order to access it through a shortcut.
+Defining OneLake security permissions for the internal shortcut isn't allowed and security must be defined on the target folder located in the target item. The target item must be an item type that supports OneLake security roles. If the target item doesn't support OneLake security, the user's access is evaluated based on whether they have the Fabric ReadAll permission on the target item. Users don't need Fabric Read permission on an item in order to access it through a shortcut.
 
 ### OneLake security in delegated shortcuts
 
@@ -349,25 +347,15 @@ Lastly, each shortcut in a lakehouse generates a set of inferred roles that are 
 Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehouse roles.
 
 > [!IMPORTANT]
-> If two roles combine such that the columns and rows aren't aligned across the queries, access is blocked to ensure that no data is leaked to the end user. 
+> If two roles combine such that the columns and rows aren't aligned across the queries, access is blocked to ensure that no data is leaked to the end user.
 
 ## OneLake security limitations
 
 * If you assign a OneLake security role to a B2B guest user, you must [configure your external collaboration settings for B2B in Microsoft Entra External ID](/entra/external-id/external-collaboration-settings-configure). The **Guest user access** setting must be set to **Guest users have the same access as members (most inclusive)**.
 
-* OneLake security doesn't support cross-region shortcuts. Any attempts to access shortcut to data across different capacity regions result in 404 errors.
-
 * If you add a distribution list to a role in OneLake security, the SQL endpoint can't resolve the members of the list to enforce access. The result is that users appear not to be members of the role when they access the SQL endpoint. DirectLake on SQL semantic models are subject to this limitation too.
 
-* To query data from a Spark notebook using Spark SQL, the user must have at least Viewer access in the workspace they're querying.
-
-* Mixed-mode queries are not supported. Single queries that access both OneLake security enabled and non-OneLake security enabled data will fail with query errors.
-
 * Spark notebooks require that the environment be 3.5 or higher and using Fabric runtime 1.3.
-
-* OneLake security doesn't work with [private link protection](../../security/security-private-links-overview.md).
-
-* The [external data sharing preview](../../governance/external-data-sharing-overview.md) feature isn't compatible with the data access roles preview. When you enable the data access roles preview on a lakehouse, any existing external data shares might stop working.
 
 * OneLake security does not work with Azure Data Share or Purview Data Share. For more information, see [Azure Data Share](/azure/data-share/overview).
 

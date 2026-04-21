@@ -21,11 +21,7 @@ For specific item types, ReadWrite access can also be configured. This permissio
 
 The following data items support OneLake security:
 
-| Fabric item | Status | Supported permissions |
-| ---- | --- | --- |
-| Lakehouse | GA | Read, ReadWrite |
-| Azure Databricks Mirrored Catalog | GA | Read |
-| Mirrored Database | GA | Read |
+[!INCLUDE [onelake-security-supported-items](../../includes/onelake-security-supported-items.md)]
 
 ### Default settings
 
