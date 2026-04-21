@@ -3,7 +3,7 @@ title: How graph in Microsoft Fabric works
 description: Learn how data flows through graph in Microsoft Fabric, from data ingestion and storage in OneLake to graph modeling, querying, and returning results.
 #customer intent: As a data analyst or engineer, I want to understand how graph in Microsoft Fabric processes and queries data so that I can evaluate whether it fits my analytical needs.
 ms.topic: concept-article
-ms.date: 04/10/2026
+ms.date: 04/20/2026
 ms.reviewer: wangwilliam
 ai-usage: ai-assisted
 ---
@@ -30,7 +30,7 @@ Data originates from external systems such as Azure services, other cloud platfo
 
 ## Storage in OneLake
 
-You store ingested data in [OneLake](../onelake/onelake-overview.md) as tabular source tables in a lakehouse. Graph reads directly from your lakehouse tables, so you don't need to duplicate or move data into a separate database.
+You store ingested data in [OneLake](../onelake/onelake-overview.md) as tabular source tables in a lakehouse. Graph ingests data from your lakehouse tables when you save the model, so you don't need to set up a separate ETL pipeline or move data to an external database.
 
 ## Graph modeling
 
@@ -63,8 +63,11 @@ Both options target the same underlying graph. Choose the authoring experience t
 You run queries through a common execution layer that supports:
 
 - **GQL:** Queries the graph by using the [international standard for graph query language (ISO/IEC 39075)](gql-language-guide.md).
-- **Natural Language to GQL (NL2GQL):** Converts natural language questions into GQL queries. [Sign up for the NL2GQL preview](https://forms.office.com/r/97QkVDBeuM).
+- **Natural Language to GQL (NL2GQL) (preview):** Translates natural language questions into GQL queries. Add graph in Microsoft Fabric as a data source in [Fabric Data Agent](../data-science/concept-data-agent.md) to enable graph-powered AI reasoning. For details on how NL2GQL works, see the [Graph-powered AI reasoning announcement](https://blog.fabric.microsoft.com/en-US/blog/graph-powered-ai-reasoning-preview/).
 - **REST-based execution:** Runs queries programmatically by using the [GQL query API](gql-query-api.md).
+
+> [!TIP]
+> **Choose your query path:** Use GQL or REST for direct, programmatic access to graph data with full control over query structure. Use NL2GQL (preview) through Fabric Data Agent when you need natural language access — ideal for conversational AI and knowledge assistant scenarios.
 
 This layer runs the query logic against the queryable graph and returns results.
 
