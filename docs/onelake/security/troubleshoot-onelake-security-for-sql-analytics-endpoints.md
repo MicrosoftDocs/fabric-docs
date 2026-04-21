@@ -8,16 +8,16 @@ ms.topic: concept-article
 
 # Troubleshoot OneLake security for SQL analytics endpoints
 
-This article provides step-by-step troubleshooting procedures and answers to common questions about OneLake security in the SQL analytics endpoint. Use this guide when you encounter unexpected access behavior, synchronization delays, or errors described in the [OneLake security for SQL analytics endpoints](https://claude.ai/chat/onelake-security-sql-endpoint.md) article.
+This article provides step-by-step troubleshooting procedures and answers to common questions about OneLake security in the SQL analytics endpoint. Use this guide when you encounter unexpected access behavior, synchronization delays, or errors described in the [OneLake security for SQL analytics endpoints](./sql-analytics-endpoint-onelake-security.md) article.
 
 The guide is organized in two sections:
 
-- [**Troubleshooting guides**](https://claude.ai/chat/98589586-2b68-4b94-bc86-a080d45d6dfd) — multi-step diagnostic procedures for complex issues that require systematic validation.
-- [**Frequently asked questions**](https://claude.ai/chat/98589586-2b68-4b94-bc86-a080d45d6dfd) — quick answers, validation checks, and workarounds for specific limitations.
+- [**Troubleshooting guide**](#troubleshoot-onelake-security-for-sql-analytics-endpoints) — multi-step diagnostic procedures for complex issues that require systematic validation.
+- [**Frequently asked questions**](#frequently-asked-questions) — quick answers, validation checks, and workarounds for specific limitations.
 
-## Troubleshooting guides
+## Troubleshooting guide
 
-### 1. User cannot query a table in user identity mode
+### 1. User can't query a table in user identity mode
 
 Use this procedure when an end user receives an access error or empty result set when querying a table that they should be able to read.
 
@@ -27,15 +27,15 @@ The one-to-one identity mapping requirement means the user must have explicit Re
 
 - Open the lakehouse, select **Manage permissions** , and verify the user appears with at least Read permission.
 - If the user is missing, add them directly or share the item with Read permission.
-![spec-image](Images/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_1.png)
-![spec-image](Images/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_2.png)
+![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_1.png)
+![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_2.png)
 
 **Step 2:** Confirm the user's Object ID matches exactly at producer and consumer.
 
-Nested or effective group membership is not resolved across the producer → consumer boundary.
+Nested or effective group membership isn't resolved across the producer → consumer boundary.
 
 - If the OneLake security role references a **user** (for example, user@contoso.com), that same user must be directly granted Fabric Read on the consumer lakehouse.
-- If the OneLake security role references a **group** , that same group must be directly granted Fabric Read on the consumer lakehouse. Granting the permission to an individual member of the group does not satisfy the match.
+- If the OneLake security role references a **group** , that same group must be directly granted Fabric Read on the consumer lakehouse. Granting the permission to an individual member of the group doesn't satisfy the match.
 
 **Step 3:** Verify the user's workspace role and whether the table is a shortcut.
 
@@ -44,8 +44,8 @@ OneLake security filtering is designed for users accessing data as **Viewers** o
 Check the user's workspace role and whether the table being queried is a shortcut:
 
 - **If the user is a Viewer (or has read-only sharing):** OneLake security filtering should apply. Continue to Step 4 to check sync status.
-- **If the user has an AMC role and the table is** ***not*** **a shortcut:** Their elevated workspace access typically grants them broader visibility to the data than OneLake security rules would enforce on a Viewer. This is expected behavior, not a misconfiguration. If you need OneLake security to govern this user's access, either grant them access through Viewer-level or read-only sharing instead of AMC, or accept that data-level rules will not apply consistently to AMC users.
-- **If the user has an AMC role and the table** ***is*** **a shortcut-backed table:** Enforcement may still apply, because shortcut access is evaluated against the source's OneLake security rules. The user's elevated role on the consumer workspace does not grant them elevated access at the producer. Verify the user has the required access at the source artifact, using the same Object ID match described in Step 2.
+- **If the user has an AMC role and the table is** ***not*** **a shortcut:** Their elevated workspace access typically grants them broader visibility to the data than OneLake security rules would enforce on a Viewer. This behavior is expected, not a misconfiguration. If you need OneLake security to govern this user's access, either grant them access through Viewer-level or read-only sharing instead of AMC, or accept that data-level rules won't apply consistently to AMC users.
+- **If the user has an AMC role and the table** ***is*** **a shortcut-backed table:** Enforcement may still apply, because shortcut access is evaluated against the source's OneLake security rules. The user's elevated role on the consumer workspace doesn't grant them elevated access at the producer. Verify the user has the required access at the source artifact, using the same Object ID match described in Step 2.
 - **Other cases where AMC users may be filtered:** If security sync failed to apply roles correctly, AMC users who are members of affected roles can experience restricted access. Also, RLS configured in user identity mode is enforced for all users including AMC.
 
 **Step 4:** Check security sync status.
@@ -54,9 +54,9 @@ Recent changes to OneLake security roles can take up to 5 minutes to propagate t
 
 - **Speed up propagation:** Select the **Metadata sync** button in the SQL analytics endpoint toolbar, or refresh the page. Either action triggers an immediate sync instead of waiting for the periodic cycle.
 - **Verify the sync is working:** In **Object Explorer** , expand **Security** → **Roles** → **Database Roles** . Confirm that custom roles prefixed with OLS\_ are present. Each OLS\_ role corresponds to a OneLake security role that security sync has translated and applied to the SQL analytics endpoint.
-- **If no OLS\_ roles appear after 5 minutes:** Security sync has not processed the OneLake roles yet. Continue to Step 5 to check for broken references, or see [Security sync appears stuck](https://claude.ai/chat/98589586-2b68-4b94-bc86-a080d45d6dfd) for deeper diagnostics.
+- **If no OLS\_ roles appear after 5 minutes:** Security sync hasn't processed the OneLake roles yet. Continue to Step 5 to check for broken references, or see [Security sync appears stuck](#4-security-sync-appears-stuck) for deeper diagnostics.
 - **If OLS\_ roles are present but the user still cannot query:** The sync is working, and the issue is likely in the user's role membership or identity match. Re-verify Steps 1 and 2.
-![spec-image](Images/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_3.png)
+![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_3.png)
 
 **Step 5:** Validate that the role references are not broken.
 
@@ -73,7 +73,7 @@ Use this procedure when the same data returns different results between engines.
 
 Open the SQL analytics endpoint and check the **Security** tab for the current OneLake access mode.
 
-![spec-image](Images/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_4.png)
+![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_4.png)
 
 **Step 2:** If the endpoint is in delegated identity mode, expect divergence.
 
@@ -84,9 +84,9 @@ Delegated mode does not honor OneLake security roles. Security rules defined in 
 
 **Step 3:** If the endpoint is in user identity mode, verify role propagation.
 
-First, confirm the OneLake security roles have been synced to the SQL analytics endpoint. In **Object Explorer** , expand **Security** → **Roles** → **Database Roles** and check that the expected OLS\_-prefixed roles are present. If they are missing, see [Security sync appears stuck](https://claude.ai/chat/98589586-2b68-4b94-bc86-a080d45d6dfd) .
+First, confirm the OneLake security roles have been synced to the SQL analytics endpoint. In **Object Explorer** , expand **Security** → **Roles** → **Database Roles** and check that the expected OLS\_-prefixed roles are present. If they are missing, see [Security sync appears stuck](#4-security-sync-appears-stuck) .
 
-![spec-image](Images/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_5.png)
+![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_5.png)
 
 To verify which roles the user is a member of, run the following T-SQL against the SQL analytics endpoint:
 
@@ -137,7 +137,7 @@ If the source table has no OneLake security rules but the query still fails, ver
 - Check the owner of the Lakehouse or SQL analytics endpoint.
 - Confirm the owner has Fabric Read permission on both the source and destination artifacts.
 - The owner cannot be a service principal—if it is, reassign ownership to a user or group account.
-![spec-image](Images/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_6.png)
+![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_6.png)
 
 ### 4. Security sync appears stuck
 
@@ -145,11 +145,11 @@ Use this procedure when role changes made in OneLake security are not reflected 
 
 **Step 1:** Check for broken policy references.
 
-A policy referencing a deleted or renamed column, table, or invalid CLS allowlist blocks metadata sync until corrected. An invalid CLS rule will deny all access to the affected resource until the column name is restored or the rule is updated — see [My CLS policy shows "column does not exist" errors](https://claude.ai/chat/98589586-2b68-4b94-bc86-a080d45d6dfd) for how to identify and resolve this.
+A policy referencing a deleted or renamed column, table, or invalid CLS allowlist blocks metadata sync until corrected. An invalid CLS rule will deny all access to the affected resource until the column name is restored or the rule is updated — see [My CLS policy shows "column does not exist" errors](#rls-and-cls-constraints) for how to identify and resolve this.
 
 - Review recent schema changes (column renames, table renames, dropped columns) against existing OneLake security roles.
 - Open the OneLake security panel of the source lakehouse and fix or remove any affected rules.
-![spec-image](Images/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_7.png)
+![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_7.png)
 
 **Step 2:** Check for role complexity issues.
 
@@ -169,7 +169,7 @@ Security sync has a retry backoff that may temporarily pause automatic attempts 
 
 After triggering a retry, verify the result in **Object Explorer** under **Security** → **Roles** → **Database Roles** . If the expected OLS\_-prefixed roles now appear, security sync has successfully translated the OneLake security roles.
 
-![spec-image](Images/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_8.png)
+![spec-image](./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/image_8.png)
 
 **Step 4:** If sync still fails, contact Microsoft Support.
 
@@ -370,6 +370,6 @@ No. When switching to user identity mode, existing SQL roles are deleted and can
 
 **Related content**
 
-- [OneLake security for SQL analytics endpoints (Preview)](https://claude.ai/chat/onelake-security-sql-endpoint.md)
-- [Best practices to secure data in OneLake](https://claude.ai/chat/best-practices-secure-data-in-onelake.md)
-- [OneLake security access control model](https://claude.ai/chat/data-access-control-model.md)
+- [OneLake security for SQL analytics endpoints (Preview)](./sql-analytics-endpoint-onelake-security.md)
+- [Best practices to secure data in OneLake](./best-practices-secure-data-in-onelake.md)
+- [OneLake security access control model](./data-access-control-model.md)
