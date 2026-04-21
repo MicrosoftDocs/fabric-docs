@@ -76,7 +76,7 @@ Next, bind static data to the properties you created on the *Freezer* entity typ
     * **Entity type key**: Identifies the field (or fields) that can be used to uniquely identify each record of ingested data.
     * **Binding selection**: Identifies the source table that holds the data for the binding.
     * **Entity type key mapping**: Identifies the column(s) in the source data table that maps to the entity type key property. You can select string and integer columns from your source data as the entity type key. Together, the columns you select uniquely identify a record.
-    * **Properties**: Lists the columns from the source data and corresponding properties on the Freezer entity type. The **Source column** side populates automatically with the columns from the *freezer* table, and the **Property name** side lists their corresponding property names on the *Freezer* entity type within ontology. Don't change the default property names, which match the source column names.
+    * **Properties**: Lists the columns from the source data and corresponding properties on the *Freezer* entity type. The **Source column** side populates automatically with the columns from the *freezer* table, and the **Property name** side lists their corresponding property names on the *Freezer* entity type within ontology. Don't change the default property names, which match the source column names.
 
     :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-4.png" alt-text="Screenshot of the configuration." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-4.png":::
 
@@ -99,7 +99,7 @@ Next, add time series data on the *Freezer* entity, by creating new properties a
 1. In the **Configure** page, expand **Manage property bindings** and select **Add binding and properties** again to reopen the binding configuration.
 
     >[!TIP]
-    >Though this tutorial shows adding static and time series data as separate steps, you could also bind all the data at once in a single visit to this configuration page.
+    >Though this tutorial shows adding static and time series data in separate visits to the configuration page, you could also bind all the data in the first visit to this configuration page, as long as you complete the static binding before the time series one.
 
 1. Under **Binding selection**, expand **Add data binding** and select **Eventhouse table or materialized view**.
 
@@ -150,8 +150,8 @@ Finally, create a new relationship type to represent the connection between a st
 
      :::image type="content" source="media/tutorial-2-enrich-ontology/relationship-type-3.png" alt-text="Screenshot of the relationship type configuration." lightbox="media/tutorial-2-enrich-ontology/relationship-type-3.png":::
 
-1. In the middle panel, enter the following details.
-    1. **Mapping table**: Select where *dimstore* has autopopulated, and change it to the *freezer* table. This table in the source data can link *Store* and *Freezer* entities together, because it contains identifying information for both entity types. Each row in this table references a store and a freezer by ID.
+1. In the middle section, enter the following details.
+    1. **Mapping table**: Expand **Browse available sources** and choose the *freezer* table. This table in the source data can link *Store* and *Freezer* entities together, because it contains identifying information for both entity types. Each row in this table references a store and a freezer by ID.
     1. **Matched Store: StoreId**: Select `StoreId`. This setting specifies the column in the relationship source data table (*freezer >* `StoreId`) whose values match the key property defined on the *Store* entity (*dimstore >* `StoreId`). In the tutorial data, the column name is the same (`StoreId`) in both tables.
     1. **Matched Store: StoreId**: This field populates automatically with `FreezerId`. This setting specifies the column in the relationship source data table whose values match the key property defined on the *Freezer* entity. In this case, the relationship data source and the entity data source both use the *freezer* table, so you're selecting the same column (`FreezerId`).
 

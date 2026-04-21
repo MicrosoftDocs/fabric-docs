@@ -97,7 +97,7 @@ When you finish renaming all the entity types, they look like this (they might b
 Follow these steps to verify that each entity type has the correct properties and source data bindings.
 
 1. Select the entity type. From the top ribbon, select **View Entity Type details**.
-1. On the **Configure** page, look at the **Properties** panel.
+1. On the **Configure** page, look at the **Properties** section.
 
     :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/verify-properties.png" alt-text="Screenshot of the Products entity type and its properties." lightbox="media/tutorial-1-create-ontology/semantic-model/verify-properties.png":::
 
@@ -150,7 +150,7 @@ Follow these steps to configure the details of each relationship type.
 
      :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/relationship-configuration.png" alt-text="Screenshot of entering relationship type details." lightbox="media/tutorial-1-create-ontology/semantic-model/relationship-configuration.png":::
 
-1. In the middle panel, update the relationship type details to match those in the following table.
+1. In the middle section, update the relationship type details to match those in the following table.
 
     | Original name | New name | Mapping table | MatchedSaleEvent: SaleId | Matched ... (target entity) | 
     | --- | --- | --- | --- | --- |
@@ -304,7 +304,7 @@ Next, create relationship types between the entity types to represent contextual
 
      :::image type="content" source="media/tutorial-1-create-ontology/onelake/relationship-type-3.png" alt-text="Screenshot of the relationship type configuration." lightbox="media/tutorial-1-create-ontology/onelake/relationship-type-3.png":::
 
-1. In the middle panel, enter the following details.
+1. In the middle section, enter the following details.
     1. **Mapping table**: **Browse available sources** and select the *factsales* table. This table in the source data can link *Store* and *SaleEvent* entities together, because it contains identifying information for both entity types. Each row in this table references a store and a sale event by ID.
     1. **Matched SaleEvent: SaleId**: This field populates automatically with `SaleId`. This setting specifies the column in the relationship source data table whose values match the key property defined on the *SaleEvent* entity. In this case, the relationship data source and the entity data source both use the *factsales* table, so you're selecting the same column (`SaleId`).
     1. **Matched Store: StoreId**: Select `StoreId`. This setting specifies the column in the relationship source data table (*factsales >* `StoreId`) whose values match the key property defined on the *Store* entity (*dimstore >* `StoreId`). In the tutorial data, the column name is the same (`StoreId`) in both tables.
