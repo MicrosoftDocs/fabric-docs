@@ -46,11 +46,11 @@ First, bind static data to entity types in your ontology (preview) item. This no
 
 1. From the Home configuration canvas, select the entity type name in the **Explorer** and select **View entity type details** from the top ribbon.
 
-    :::image type="content" source="media/how-to-bind-data/view-entity-type-details.png" alt-text="Screenshot of the View Entity Type details button.":::
+    :::image type="content" source="media/how-to-bind-data/view-entity-type-details.png" alt-text="Screenshot of the View Entity Type details button." lightbox="media/how-to-bind-data/view-entity-type-details.png":::
 
 1. The **Configure** page opens. This page surfaces important information about the entity type, including its properties and data bindings. Add a new binding by selecting **Manage property bindings > Add binding and properties**, or **Add properties from data** in the **Properties** pane if the entity type has no properties yet.
 
-    :::image type="content" source="media/how-to-bind-data/bind-data-1.png" alt-text="Screenshot of adding a new data binding to the entity type.":::
+    :::image type="content" source="media/how-to-bind-data/bind-data-1.png" alt-text="Screenshot of adding a new data binding to the entity type." lightbox="media/how-to-bind-data/bind-data-1.png":::
 
 1. On the binding page, select **Add data binding** and choose the type of OneLake data source that contains the data for the entity.
 
@@ -115,7 +115,7 @@ Next, bind time series data to entity types in your ontology (preview) item.
 
 To edit or delete data bindings, start in the **Configure** page. Select **Manage property bindings > Manage bindings**.
 
-:::image type="content" source="media/how-to-bind-data/manage-bindings.png" alt-text="Screenshot of the manage bindings options.":::
+:::image type="content" source="media/how-to-bind-data/manage-bindings.png" alt-text="Screenshot of the manage bindings options." lightbox="media/how-to-bind-data/manage-bindings.png":::
 
 The configuration page reopens, where you can edit binding details or delete binding data sources.
 
