@@ -342,6 +342,8 @@ items:
       href: spark-admin-settings-faq.yml 
   - name: Spark monitoring and diagnostics
     items:
+      - name: Spark monitoring and performance optimization best practices
+        href: spark-monitoring-best-practices.md
       - name: Spark monitoring and diagnostics features
         items: 
          - name: Apache Spark monitoring overview
