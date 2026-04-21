@@ -4,7 +4,8 @@ description: Get a quick introduction to building a machine learning model with 
 ms.topic: how-to
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: jessiwang
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.date: 09/29/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot

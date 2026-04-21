@@ -1,8 +1,8 @@
 ---
 title: "Develop Direct Lake semantic models"
 description: "Learn about how to develop Direct Lake semantic models."
-author: JulCsc
-ms.author: juliacawthra
+author: kgremban
+ms.author: kgremban
 ms.date: 04/23/2025
 ms.topic: concept-article
 ms.custom: fabric-cat

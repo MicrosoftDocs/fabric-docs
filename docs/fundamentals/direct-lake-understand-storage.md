@@ -3,7 +3,7 @@ title: "Understand Direct Lake query performance"
 description: "Learn how Direct Lake query performance depends on Delta table health and efficient data updates. Understand the importance of V-Order optimization, row groups, and Delta log management for optimal query execution."
 author: kgremban
 ms.author: kgremban
-ms.reviewer: phseamar, Kay.Unkroth
+ms.reviewer: phseamar, kayu
 ms.date: 06/03/2025
 ms.topic: concept-article
 ms.custom: fabric-cat

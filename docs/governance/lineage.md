@@ -77,6 +77,12 @@ Lineage view is an interactive canvas. You can use the mouse and touchpad to nav
 
     :::image type="content" source="./media/lineage/lineage-zoom.png" alt-text="Screenshot of zoom in or out, or full screen options." border="false":::
 
+## Accessibility 
+
+Lineage supports keyboard navigation and screen readers.
+
+Tab navigation follows a depth‑first search (DFS) traversal of the graph, which may differ from the visual layout. Screen readers announce node relationships to help understand lineage dependencies.
+
 ## Considerations and limitations
 
 * Lineage view isn't available in Internet Explorer. For more information, see [Supported browsers for Power BI](/power-bi/fundamentals/power-bi-browsers).

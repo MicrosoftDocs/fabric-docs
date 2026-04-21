@@ -116,7 +116,7 @@ Using item reference variables involves two layers of permissions:
 For more information on permissions and permission validation, see [Variable library permissions](variable-library-permissions.md#item-reference-variable-type-preview)
 
 ### Limitations
-Currently, you can only reference fabric items and semantic models. Other Power BI items, like Datamarts, Dataflow Gen1 are currently not supported.
+Currently, you can only reference fabric items and semantic models. Other Power BI items, like Dataflow Gen1 are currently not supported.
 
 ## Additional information
 The Variable Library enables CI/CD for Fabric content across environments (Dev, Test, Prod) using Item Reference variables for stage-specific configurations. Keep in mind the following:

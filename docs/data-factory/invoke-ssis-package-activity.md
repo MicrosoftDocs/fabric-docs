@@ -67,6 +67,8 @@ If your package requires runtime values—for example, connection strings, crede
 
 Use this tab to override connection-manager properties at execution time. For each connection manager, provide the **Scope**, **Name**, **Property**, and **Value**. This is especially important when the package protection level is set to **DontSaveSensitive**, because passwords and credentials aren't persisted in the package and must be supplied at runtime.
 
+:::image type="content" source="media/invoke-ssis-package-activity/activity-configuration-manager.png" alt-text="Screenshot showing the activity configuration manager.":::
+
 ### Property Overrides tab
 
 Use this tab to override any package property by entering its property path and the desired value. For example, to override a user variable:
@@ -100,6 +102,8 @@ After you trigger a run, monitor its progress in the pipeline **Output** tab or 
 :::image type="content" source="media/invoke-ssis-package-activity/monitor-execution.png" alt-text="Screenshot showing the monitoring view with the Invoke SSIS Package activity status and logging path.":::
 
 To view logs, navigate to the logging path in OneLake and review the log files for detailed execution information and error messages.
+
+:::image type="content" source="media/invoke-ssis-package-activity/one-lake-log.png" alt-text="Screenshot showing the OneLake log files for the Invoke SSIS Package activity.":::
 
 ## Scenarios: Connect SSIS packages to Fabric services
 

@@ -19,7 +19,6 @@ ms.date: 03/31/2026
     1. Enter the credentials you use to access your Kinesis Data Stream for **API Key** and **API Secret**. Go to the Amazon Identity and Access Management (IAM) console and select **Security credentials**. Copy an **Access Key ID** from the **Access keys** screen and paste it into **API Key** and **API Secret**.
 
     :::image type="content" source="./media/amazon-kinesis-data-streams-connector-configuration/credentials.png" alt-text="A screenshot of how to access the Amazon Web Services (AWS) Kinesis security credentials.":::
-
 1. Select **Connect**. 
 
     :::image type="content" source="./media/amazon-kinesis-data-streams-connector-configuration/connect.png" alt-text="A screenshot of the Connect screen.":::
@@ -29,7 +28,12 @@ ms.date: 03/31/2026
 
     :::image type="content" source="./media/amazon-kinesis-data-streams-connector-configuration/source-name-region.png" alt-text="A screenshot of the Region field for Configure Amazon Kinesis data source.":::
 
-1. Select **Next**.
-1. On **Review and create**, review the summary, and then select **Add** or **Connect**.
+### Stream or source details
+
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
+
+### Review and connect
+
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
 

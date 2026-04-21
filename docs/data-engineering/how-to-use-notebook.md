@@ -5,7 +5,7 @@ ms.reviewer: jingzh
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Create and use notebooks
-ms.date: 10/14/2025
+ms.date: 04/06/2026
 ---
 
 # How to use Microsoft Fabric notebooks
@@ -298,14 +298,24 @@ Version history allows you to easily version your live notebook changes. It supp
 
 ## Notebook mode switcher
 
-Fabric notebooks support four modes that you can easily switch: **Develop** mode，**Run only** mode, **Edit** mode, and **View** mode. Each mode maps to a specific permission combination. When sharing the notebook to other team members, you can grant proper permissions to the recipients. They can see the best available notebook mode according to their permission, and they are able to switch between the mode they have permission to.
+Fabric notebooks support four modes that you can switch between: **Develop**, **Run only**, **Edit**, and **View**. Each mode aligns with a set of permissions.
+
+When you share a notebook, you assign permissions to users. Based on those permissions, users can access and switch between the modes available to them.
 
 :::image type="content" source="media\how-to-use-notebook\switch-mode.png" alt-text="Screenshot showing where to switch modes." lightbox="media\how-to-use-notebook\switch-mode.png":::
 
-- **Develop mode**: Read, execute, write permission needed.
-- **Run only mode**: Read, execute permission needed.
-- **Edit mode**: Read, write permission needed.
-- **View mode**: Read permission needed.
+- **Develop mode**: Requires read, execute, and write permissions.
+- **Run only mode**: Requires read and execute permissions.
+- **Edit mode**: Requires read and write permissions (cannot run).
+- **View mode**: Requires read permissions.
+
+### Permissions and access
+
+Permissions can be set at the workspace or notebook level in Microsoft Fabric. They determine which modes a user can access:
+
+- Permissions limit the set of available modes.
+- They don't automatically select a mode for the user.
+- Modes can't grant capabilities beyond what permissions allow.
 
 ## Related content
 

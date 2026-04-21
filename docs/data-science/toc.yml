@@ -221,6 +221,8 @@ items:
     href: mlflow-upgrade.md
   - name: Fabric autologging
     href: mlflow-autologging.md
+  - name: Cross-workspace logging
+    href: machine-learning-cross-workspace-logging.md
 - name: Model scoring
   items:
     - name: Score models with PREDICT

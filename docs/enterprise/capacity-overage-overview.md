@@ -58,7 +58,7 @@ Microsoft Fabric provides several methods to track when capacity overage activat
 | **Trigger point** | Activates when interactive delay threshold percentage exceeds 100% (i.e, when your smoothed usage for the next 10 minutes exceeds 100% capacity.). |
 | **What gets billed** | Any cumulative carry forward at the point interactive delay threshold percentage exceeds 100%. |
 | **No performance boost** | Does not increase SKU size or available resources; it only prevents throttling. Size the SKU for sustained load. |
-| **Spending limit** | Set a 24‑hour CU hours limit. Once the limit is reached, capacity overage stops and throttling resumes until usage rolls out of the window or you increase the limit. This limit is checked every 5 minutes, so it is possible to slightly exceed your limit; consider this check when setting a reasonable limit. |
+| **Spending limit** | Set a 24‑hour CU hours limit. Once the limit is reached, capacity overage stops and throttling resumes until usage rolls out of the window or you increase the limit. This limit is checked every 5 minutes, so it is possible to exceed your limit; consider this check when setting a reasonable limit. |
 | **Surge protection interaction** | Capacity overage doesn't override surge protection; both features work together to manage load. |
 | **Self-managing behavior** | Fully automated, starts when threshold is reached and stops when usage drops below threshold. |
 

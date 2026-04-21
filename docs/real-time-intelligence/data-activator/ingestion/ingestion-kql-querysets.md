@@ -11,24 +11,50 @@ This article explains how Activator ingests data from KQL Querysets. Understandi
 
 ## How it works
 
-KQL Querysets are a **query data source** for Activator. Activator runs a KQL query that you define against an Eventhouse KQL database on a schedule. Each time the query returns results, Activator fires an alert for every row returned. This is known as the **on each event** alert type, and it's the only alert type supported for the KQL Queryset integration.
+KQL Querysets are a **query data source** for Activator. Activator runs a KQL query that you define against an Eventhouse KQL database on a schedule. Each time the query returns results, Activator ingests an event for each row in the query.
 
-Unlike Power BI or Real-Time Dashboard data sources, where Activator derives its query from an existing visual or dashboard tile, with a KQL Queryset you write the query yourself. Because Activator doesn't support setting conditions or grouping on the query results, you should build your alert logic directly into the KQL query.
+> [!NOTE]
+> Activator's integration with KQL Querysets does not currently support using a timestamp column from your queries as the event timestamp. Activator uses the time at which it runs the query as the event timestamp. The implication is that you must write your queries to return the **current state** of a set of objects. For example, given a query that returns the temperature of some sensors, the query should return two columns: Sensor ID and Temperature, showing the current temperature of each sensor.
+
+When you select **Set alert** in a KQL Queryset, a side pane opens where you configure your alert. Within this side pane, the only supported alert type is **on each event**. When you use this alert type, Activator alerts you for every row the query returns on every scheduled run. If you wish to build alerts with grouping logic, you can edit the alert within the Activator item after creating it. The following sections describe these two methods.
+
+### Method 1: On each event (default)
+
+With this method, you build your alert condition and time window into the KQL query itself. Activator fires an alert for every row returned on every scheduled run.
 
 For example, consider the following query that alerts whenever a sensor reading has a temperature greater than zero:
 
 ```kql
-SensorReadings
+CurrentSensorTemperatures
 | where Temperature > 0
-| where Timestamp > ago(5m)
+| project SensorID, Temperature
 ```
 
-In this query:
+In this query, the `where Temperature > 0` clause defines the **alert condition**. Because Activator fires an alert for every row returned, filtering in the query ensures you only get alerted for the events you care about.
 
-- The `where Temperature > 0` clause defines the **alert condition**. Because Activator fires an alert for every row returned, filtering in the query ensures you only get alerted for the events you care about.
-- The `where Timestamp > ago(5m)` clause limits results to the **last 5 minutes**. Because Activator runs the query on a schedule (every 5 minutes by default), this time window prevents duplicate alerts for events that were already processed in a previous run.
+This pattern — embedding your alert logic and time windowing in the KQL query — is the simplest approach for using KQL Querysets with Activator.
 
-This pattern — embedding your alert logic and time windowing in the KQL query — is the recommended approach for using KQL Querysets with Activator.
+> [!NOTE]
+> With this method, Activator alerts you every time the query runs and returns matching rows. Using the example, if the temperature stays above zero for an extended period, you receive an alert every 5 minutes for the duration. Depending on your scenario, this method might create an undesirable number of alerts.
+
+### Method 2: Stateful alerting with object grouping
+
+If you want to be alerted only when a condition changes state — for example, alerted once when the temperature rises above zero rather than continuously while it remains above zero — you can use stateful trigger logic by opening the Activator item directly.
+
+To set up stateful alerting:
+
+1. Create an alert from the KQL Queryset using **Set alert** as usual. Your KQL query should not include the alert condition in this case, because Activator handles the condition evaluation. You still need the time window clause. For the sensor example, the query would be:
+
+   ```kql
+   CurrentSensorTemperatures
+   | project SensorID, Temperature
+   ```
+
+1. Open the Activator item that contains the rule that you created in the previous step. Delete the rule. You do not need it anymore.
+1. [Assign the data to an object](../activator-assign-data-objects.md). Using the sensor example, create a **Sensor** object and key it by **SensorID**.
+1. Create a rule on the object using a **Numeric Change** condition — for example, *Temperature increases above 0*. A **Numeric Change** condition activates only when the value transitions from not meeting the condition to meeting it. For more information, see [Detection conditions](../activator-detection-conditions.md).
+
+With this approach, Activator tracks the state of each object instance and alerts you only when the condition is first met. In this example, each sensor is an object instance. Activator sends an alert only when the temperature of a sensor first rises above zero. 
 
 ### Activator queries the Eventhouse directly
 
@@ -46,8 +72,6 @@ This means:
 
 By default, Activator runs your KQL query every 5 minutes. You can change the query frequency in the data source settings, as described in [Query frequency for query data sources](../activator-query-frequency.md).
 
-> [!IMPORTANT]
-> If you change the query frequency, update the time window in your KQL query to match. For example, if you set the query frequency to 10 minutes, change `ago(5m)` to `ago(10m)` in your query. The time window should always match the query frequency to avoid missed events or duplicate alerts.
 
 > [!TIP]
 > KQL queries against Eventhouse are fast, but be mindful of query cost and cluster load when setting a high query frequency. Choose a frequency that reflects how quickly the underlying data changes and how quickly you need to detect changes.

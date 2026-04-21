@@ -1,7 +1,9 @@
 ---
 title: OneLake Disaster Recovery and Data Protection
 description: Get information on how to plan for disaster recovery and ensure OneLake data protection in Microsoft Fabric.
-ms.reviewer: eloldag
+ms.reviewer: eloldag # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.date: 3/11/2026
 #customer intent: As a OneLake user, I want to understand disaster recovery and data protection options so that I can help ensure the safety and availability of my data.
@@ -26,7 +28,7 @@ You can enable or disable disaster recovery (DR) for a specific capacity through
 If a disaster makes the primary region unrecoverable, OneLake might initiate a regional failover. After the failover finishes, you can use the OneLake APIs through the [global endpoint](onelake-access-api.md) to read and write data in the secondary region. Data replication to the secondary region is asynchronous, so any data not copied during the disaster is lost. After a failover, the new primary datacenter has local redundancy only.
 
 > [!NOTE]
-> Keep in mind that this approach applies only when the secondary region supports Fabric.
+> This recovery guidance applies only when the primary region has an Azure‑paired secondary region and Fabric is supported in the paired region.
 
 For a comprehensive understanding of the end-to-end experience, see [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric).
 

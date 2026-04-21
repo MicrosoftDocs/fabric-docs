@@ -13,10 +13,12 @@ ms.custom:
 The Microsoft Exchange Online connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-For information on how to connect to Microsoft Exchange Online in Dataflow Gen2, go to [Set up your Microsoft Exchange Online connection](connector-microsoft-exchange-online.md).
+| Supported capabilities | Gateway | Authentication |
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-) | None | Organizational account |
 
-## Support in pipelines
+## Related content
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Microsoft Exchange Online in pipelines.
+For information on how to connect to Microsoft Exchange Online, go to [Set up your Microsoft Exchange Online connection](connector-microsoft-exchange-online.md).

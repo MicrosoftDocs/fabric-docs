@@ -1,7 +1,9 @@
 ---
 title: Transform data with Apache Spark and query with SQL
 description: Learn how to load data with OneLake file explorer, and use a Fabric notebook to transform the data and then query with SQL.
-ms.reviewer: eloldag
+ms.reviewer: eloldag # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.date: 03/07/2025
 #customer intent: As a data engineer, I want to learn how to transform data with Apache Spark and query it with SQL using OneLake and Fabric notebooks so that I can efficiently analyze and manipulate data in my lakehouse workspace.
