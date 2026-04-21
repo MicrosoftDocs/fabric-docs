@@ -42,8 +42,8 @@ Together, these tables let you answer questions like:
 
 ## Related content
 
-- [What is workspace monitoring?](/fabric/admin/workspace-monitoring-overview) — Learn about Fabric workspace monitoring and the monitoring Eventhouse.
-- [Enable workspace monitoring](/fabric/admin/workspace-monitoring-enable) — Step-by-step guide to enable monitoring in your workspace.
+- [What is workspace monitoring?](/fabric/fundamentals/workspace-monitoring-overview) — Learn about Fabric workspace monitoring and the monitoring Eventhouse.
+- [Enable workspace monitoring](/fabric/fundamentals/enable-workspace-monitoring) — Step-by-step guide to enable monitoring in your workspace.
 - [Overview of Fabric Eventstreams](/fabric/real-time-intelligence/event-streams/overview) — Learn about Eventstreams and how to bring real-time events into Fabric.
 - [Create and manage an Eventstream](/fabric/real-time-intelligence/event-streams/create-manage-an-eventstream) — Learn how to create, configure, and publish an Eventstream.
 - [Kusto Query Language (KQL) overview](/kusto/query/) — Learn KQL syntax for querying your monitoring data.

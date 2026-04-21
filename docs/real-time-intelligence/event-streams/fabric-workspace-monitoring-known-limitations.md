@@ -36,8 +36,8 @@ If you rename an Eventstream or move it to a different workspace, the **Artifact
 
 ## Metrics identify underlying services, not individual nodes
 
-The EventStreamMetrics and EventStreamErrorMetrics tables use a **CorrelationId** column to identify the underlying service resource (such as a processing job or event hub entity) rather than the individual Eventstream node name. In most cases, there is a one-to-one relationship between a CorrelationId and a node. However, when an Eventstream uses advanced processing (such as the SQL operator with multiple destinations), a single CorrelationId may map to multiple nodes. Use the **NodeDirection** and **NodeType** columns together with the **CorrelationId** to distinguish between nodes.
+The EventStreamMetrics and EventStreamErrorMetrics tables use a **CorrelationId** column to identify the underlying service resource (such as a processing job or event hub entity) rather than the individual Eventstream node name. In most cases, there's a one-to-one relationship between a CorrelationId and a node. However, when an Eventstream uses advanced processing (such as the SQL operator with multiple destinations), a single CorrelationId may map to multiple nodes. Use the **NodeDirection** and **NodeType** columns together with the **CorrelationId** to distinguish between nodes.
 
-## Diagnostic logs are not yet available
+## Diagnostic logs aren't yet available
 
 During Public Preview, the monitoring tables show metrics and error counts, but not detailed diagnostic log messages. This means you can see that errors occurred, but not the specific error messages. Detailed diagnostic logs are planned for a future release.

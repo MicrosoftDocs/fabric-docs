@@ -51,3 +51,4 @@ EventStreamErrorMetrics
 | summarize TotalErrors = sum(Value) by
     TimeWindow = bin(Timestamp, 5m), MetricsName, NodeDirection
 | order by TimeWindow desc
+```

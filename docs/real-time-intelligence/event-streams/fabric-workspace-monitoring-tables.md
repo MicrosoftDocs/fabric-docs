@@ -28,7 +28,7 @@ These columns appear in all three Eventstream monitoring tables. They identify w
 | Timestamp | datetime | The date and time (UTC) when the event was recorded. |
 | ArtifactId | string | The unique identifier of the Eventstream. |
 | ArtifactName | string | The display name of the Eventstream. |
-| ArtifactKind | string | Always "Event Stream" for Eventstream items. |
+| ArtifactKind | string | Always `Event Stream` for Eventstream items. |
 | WorkspaceId | string | The unique identifier of the Fabric workspace. |
 | WorkspaceName | string | The display name of the workspace. |
 | CustomerTenantId | string | The Microsoft Entra tenant ID. |
@@ -55,18 +55,18 @@ Node status is emitted periodically (approximately every 6 hours).
 
 ## EventStreamMetrics
 
-This table contains data flow metrics for your Eventstream. It tells you how much data is flowing through each part of your Eventstream — how many messages are coming in, going out, and whether processing is keeping up with the incoming volume.
+This table contains data flow metrics for your Eventstream. It tells you how much data is flowing through each part of your Eventstream such as how many messages are coming in, going out, and whether processing is keeping up with the incoming volume.
 
 | Column | Type | Description |
 |---|---|---|
 | CorrelationId | string | An identifier that maps the metric to the underlying service resource (for example, a processing job or an event hub entity). |
 | NodeDirection | string | The role of the node: Source, Destination, Default Stream, or Derived Stream. |
 | NodeType | string | The type of the node. |
-| MetricsName | string | The name of the metric being reported (see available metrics below). |
+| MetricsName | string | The name of the metric being reported (see available metrics later in this article). |
 | Aggregation | string | How the metric was aggregated: Avg, Max, Min, or Sum. |
 | Value | real | The numeric value of the metric. |
 | Unit | string | The unit of measurement: Count, Seconds, or Bytes. |
-| MetricSpecificDimensions | dynamic | Additional context as a JSON object. Can include PartitionId, ProcessorId, QueryStepId, OperatorId, LogicalName, ChildEntityName, Protocol, or ContainerId depending on the source. |
+| MetricSpecificDimensions | dynamic | More context as a JSON object. Can include PartitionId, ProcessorId, QueryStepId, OperatorId, LogicalName, ChildEntityName, Protocol, or ContainerId depending on the source. |
 
 ### Stream metrics
 
@@ -105,14 +105,14 @@ This table tracks error counts by type. Use it to identify what kinds of errors 
 | Aggregation | string | Always "Sum" for error metrics. |
 | Value | real | The number of errors that occurred. |
 | Unit | string | Always "Count" for error metrics. |
-| MetricSpecificDimensions | dynamic | Additional context as a JSON object (for example, PartitionId, ProcessorId). |
+| MetricSpecificDimensions | dynamic | More context as a JSON object (for example, PartitionId, ProcessorId). |
 
 ### Error types
 
 | Error type | What it means |
 |---|---|
 | Runtime Errors | Errors that occurred during event processing, such as query execution failures or output write failures. |
-| Deserialization Errors | Errors that occurred when trying to read incoming events. This usually means the data format doesn't match the expected schema. |
+| Deserialization Errors | Errors that occurred when trying to read incoming events. This error usually means the data format doesn't match the expected schema. |
 | Data Conversion Errors | Errors that occurred when converting data between types, such as trying to convert a text value to a number. |
 
 ## Query your Eventstream monitoring data
