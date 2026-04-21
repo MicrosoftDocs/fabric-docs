@@ -7,8 +7,8 @@ ms.topic: include
 ms.date: 04/20/2026
 ---
 
-| Fabric item | Status | Supported permissions |
-| ---- | --- | --- |
-| Lakehouse | GA | Read, ReadWrite |
-| Azure Databricks Mirrored Catalog | GA | Read |
-| Mirrored Databases | GA | Read |
+| Fabric item | Supported permissions |
+| ---- | --- |
+| Lakehouse | Read, ReadWrite |
+| Azure Databricks Mirrored Catalog | Read |
+| Mirrored Databases | Read |
