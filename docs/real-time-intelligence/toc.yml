@@ -537,6 +537,8 @@ items:
         href: schema-sets/create-manage-event-schemas-real-time-hub.md
       - name: Use schemas in eventstreams
         href: schema-sets/use-event-schemas.md
+      - name: Schema Registry region availability
+        href: schema-sets/schema-registry-region-availability.md
       - name: Known limitations
         href: schema-sets/schema-registry-limitations.md
   - name: Eventhouse
