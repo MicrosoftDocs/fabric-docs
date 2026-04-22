@@ -66,7 +66,6 @@ On the **Review + connect** screen, review the summary, and select **Add** (Even
 
     If there's an existing connection to your Azure IoT Hub, select that existing connection, and then move on to the step to configure Azure IoT Hub data source.
 
-    :::image type="content" source="./media/azure-iot-hub-source-connector/extended-existing-connection.png" alt-text="Screenshot that shows the Connect page with an existing connection to an Azure IoT Hub." lightbox="./media/azure-iot-hub-source-connector/extended-existing-connection.png":::
 1. In the **Connection settings** section, enter the name of your Azure IoT Hub:
 
     :::image type="content" source="./media/azure-iot-hub-source-connector/extended-iot-hub-name.png" alt-text="Screenshot that shows the connection settings for the IoT Hub with the name of the IoT Hub." :::

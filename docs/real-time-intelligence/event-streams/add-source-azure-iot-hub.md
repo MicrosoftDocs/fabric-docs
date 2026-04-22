@@ -6,6 +6,7 @@ ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 12/05/2025
 ms.search.form: Source and Destination
+zone_pivot_groups: event-hubs-capabilities
 ---
 
 # Add Azure IoT Hub source to an eventstream
