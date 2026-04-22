@@ -55,6 +55,8 @@ Here's an example of how you can lay out your instructions to the agent to be cl
 
    :::image type="content" source="media/operations-agent/query-insights.png" alt-text="Screenshot of the Query insights tab in the KQL database.":::
 
+- Currently, only regular Eventhouse tables are supported. Shortcut tables, functions, and materialized views are not supported.
+
 - While system guardrails are in place, heavy usage might result in throttling, which limits the number of messages the agent can send. In such cases, you might receive simplified, non-LLM-generated messages through Microsoft Teams.
 
 - At present, the agent and LLM support only English instructions and goals.
