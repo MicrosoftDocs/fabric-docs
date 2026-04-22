@@ -31,6 +31,7 @@ In this tutorial, you build a Python app from scratch that:
 ## Prerequisites
 
 * Python 3.9 or later
+* Azure cli
 * Fabric workspace ID
 * Microsoft Entra access token with:
   * `Item.ReadWrite.All`
@@ -252,7 +253,7 @@ Add the following below the import statements:
 # ---------------------------------------------------------
 
 # Your Fabric workspace ID (GUID)
-workspace_id = "YOUR-WORKSPACE"
+workspace_id = "YOUR-WORKSPACE-ID"
 
 # Local GeoJSON file to upload to OneLake. Update as needed.
 local_geojson_path = Path(
@@ -331,7 +332,7 @@ def _fabric_headers() -> dict[str, str]:
     """Auth headers for Fabric REST API calls."""
     return {
         "Authorization": f"Bearer {_tokens.get('https://api.fabric.microsoft.com/.default')}",
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
     }
 ```
 
@@ -344,33 +345,70 @@ Add this block:
 ```python
 # ---------------------------------------------------------
 # LRO HANDLER
-# - Fabric create APIs may return 202 + Location + Retry-After.
-# - Poll the operation endpoint until it returns a created resource with an "id".
 # ---------------------------------------------------------
 
-def _handle_lro(client: httpx.Client, initial_response: httpx.Response) -> str:
-    """Poll a Fabric LRO until completion and return the created resource ID."""
-    operation_url = initial_response.headers.get("Location")
-    if not operation_url:
-        raise RuntimeError("Missing LRO Location header")
+def _handle_lro(
+    client: httpx.Client,
+    initial_response: httpx.Response,
+    *,
+    list_url: str | None = None,
+    match_display_name: str | None = None,
+    id_field: str = "id",
+) -> str:
+    """
+    Poll a Fabric long-running operation (LRO) until completion and return the created resource id.
+
+    Why this function exists:
+    - Many Fabric create APIs return HTTP 202 + Location header for async creation.
+    - Some LRO completion payloads are status-only and do NOT include the created resource id.
+      When that happens, we resolve the created resource by listing resources and matching displayName.
+
+    Parameters:
+    - list_url: The endpoint to list resources of the same type (e.g. .../maps).
+    - match_display_name: The displayName used in the create call; used to locate the created item.
+
+    Returns:
+    - The created resource id as a string.
+    """
+    op_url = initial_response.headers.get("Location")
+    if not op_url:
+        raise RuntimeError("Missing LRO Location header.")
 
     retry_after = int(initial_response.headers.get("Retry-After", "5"))
 
     while True:
         time.sleep(retry_after)
+        poll = client.get(op_url)
 
-        poll = client.get(operation_url, headers=_fabric_headers())
-
+        # Still running
         if poll.status_code == 202:
             retry_after = int(poll.headers.get("Retry-After", "5"))
             continue
 
         poll.raise_for_status()
-        body = poll.json()
+        body = poll.json() if poll.content else {}
 
-        if "id" in body:
-            return body["id"]
+        # Case A: Operation returns the created resource id directly.
+        if isinstance(body, dict) and id_field in body and body[id_field]:
+            return body[id_field]
 
+        # Case B: Status-only completion payload; resolve by listing.
+        status = (body.get("status") if isinstance(body, dict) else None)
+        if status == "Succeeded" and list_url and match_display_name:
+            r = client.get(list_url)
+            r.raise_for_status()
+
+            items = r.json().get("value", [])
+            match = next((i for i in items if i.get("displayName") == match_display_name), None)
+            if match and match.get(id_field):
+                return match[id_field]
+
+            raise RuntimeError(
+                f"LRO succeeded but could not resolve created resource by name. "
+                f"match_display_name={match_display_name!r}"
+            )
+
+        # Anything else is unexpected
         raise RuntimeError(f"LRO completed but no resource id was returned. Body: {body}")
 ```
 
@@ -410,7 +448,7 @@ Add:
 def _onelake_client() -> DataLakeServiceClient:
     return DataLakeServiceClient(
         account_url="https://onelake.dfs.fabric.microsoft.com",
-        credential=DefaultAzureCredential(),
+        credential=DefaultAzureCredential()
     )
 
 
@@ -443,6 +481,73 @@ def _upload_with_retry(
     raise RuntimeError(f"Upload failed after {attempts} attempts: {last_exc}")
 ```
 
+### Create helper function to retrieve the map ID once created
+
+When you create a map by using the Fabric REST API, the request may return a 202 Accepted response. This indicates that the map is being provisioned asynchronously as a long-running operation (LRO), rather than being created immediately. In this case, the response doesn't include the map ID, and the LRO completion endpoint may not return a usable result. Additionally, even after the operation completes, the newly created map might not appear immediately when calling the List Maps API due to backend propagation.
+
+To reliably obtain the map ID, you must query the list of maps and retry until the new map becomes visible. The following helper function implements this retry pattern and ensures your automation flow is resilient to asynchronous provisioning delays.
+
+Add the following code next:
+
+```python
+# ---------------------------------------------------------
+# Get Map ID
+# ---------------------------------------------------------
+
+def resolve_map_id(client, list_url, headers, map_name, max_attempts=10, delay=5):
+    """
+    Resolve the ID of a newly created Fabric map.
+
+    Why this function is needed:
+    - Creating a map may return HTTP 202 (Accepted), indicating an asynchronous
+      long-running operation (LRO) rather than immediate creation.
+    - LRO responses for map creation don't always return a resource ID.
+    - Even after the operation completes, the new map may not be immediately
+      visible in the List Maps API due to backend propagation delays.
+
+    What this function does:
+    - Repeatedly calls the List Maps API.
+    - Searches for a map matching the provided display name.
+    - Retries for a configurable number of attempts with a delay between calls.
+
+    Parameters:
+        client        : Authenticated HTTP client
+        list_url      : Maps list endpoint
+        headers       : Authorization headers for Fabric API
+        map_name      : Display name of the map to locate
+        max_attempts  : Maximum number of retry attempts
+        delay         : Delay (seconds) between retries
+
+    Returns:
+        The map ID (string) once the map becomes visible.
+
+    Raises:
+        RuntimeError if the map is not found after all retry attempts.
+    """
+
+    for attempt in range(max_attempts):
+        print(f"Resolving map (attempt {attempt + 1}/{max_attempts})...")
+
+        resp = client.get(list_url, headers=headers)
+        resp.raise_for_status()
+
+        items = resp.json().get("value", [])
+
+        match = next(
+            (m for m in items if m.get("displayName") == map_name),
+            None
+        )
+
+        if match:
+            print("✅ Map found!")
+            return match["id"]
+
+        print("⏳ Map not visible yet. Retrying...")
+        time.sleep(delay)
+
+    raise RuntimeError("Map created but still not visible after retries")
+```
+
 ## Create the end to end flow
 
 In this step, you add the application logic that runs the workflow end-to-end. You build it in steps:
@@ -465,7 +570,7 @@ with httpx.Client(timeout=60) as client:
     pass
 ```
 
-In the next sections, you'll replace `pass`.
+In the next section, you'll replace `pass`.
 
 ### Create Lakehouse
 
@@ -506,7 +611,7 @@ Add this code immediately after the Lakehouse creation block:
         workspace_guid=workspace_id,
         item_guid=lakehouse_id,
         dest_relative_path=geojson_relative_path,
-        content=local_geojson_path.read_bytes(),
+        content=local_geojson_path.read_bytes()
     )
     print("Uploaded GeoJSON to:", geojson_relative_path)
 ```
@@ -524,14 +629,14 @@ Add:
             workspace_guid=workspace_id,
             item_guid=lakehouse_id,
             dest_relative_path=svg_relative_path,
-            content=STARBUCKS_MARKER_SVG.encode("utf-8"),
+            content=STARBUCKS_MARKER_SVG.encode("utf-8")
         )
         print("Uploaded custom SVG marker to:", svg_relative_path)
 ```
 
 ### Build map.json
 
-`map.json` is the required part of a **Map public definition**. It contains arrays for `dataSources`, `iconSources`, `layerSources`, and `layerSettings`. 
+`map.json` is the required part of a **Map public definition**. It contains arrays for `dataSources`, `iconSources`, `layerSources`, and `layerSettings`.
 
 Add the following code next:
 
@@ -565,7 +670,7 @@ Add the following code next:
                     "name": icon_source_name,
                     "type": "svg",
                     "itemId": lakehouse_id,
-                    "relativePath": svg_relative_path,
+                    "relativePath": svg_relative_path
                 }
             ] if USE_CUSTOM_SVG_MARKER else []
         ),
@@ -577,7 +682,7 @@ Add the following code next:
                 "type": "geojson",
                 "itemId": lakehouse_id,
                 "relativePath": geojson_relative_path,
-                "refreshIntervalMs": 0,
+                "refreshIntervalMs": 0
             }
         ],
 
@@ -604,7 +709,7 @@ Add the following code next:
                                 "rotation": 0,
                                 "allowOverlap": False,
                                 "rotationAlignment": "viewport",
-                                "pitchAlignment": "viewport",
+                                "pitchAlignment": "viewport"
                             }
                         }
                         if USE_CUSTOM_SVG_MARKER
@@ -622,13 +727,13 @@ Add the following code next:
                                 "rotation": 0,
                                 "allowOverlap": False,
                                 "rotationAlignment": "viewport",
-                                "pitchAlignment": "viewport",
-                            },
+                                "pitchAlignment": "viewport"
+                            }
                         }
-                    ),
-                },
+                    )
+                }
             }
-        ],
+        ]
     }
 
 ```
@@ -643,30 +748,37 @@ The Create Map API supports sending a public definition inline (`definition.part
 Add:
 
 ```python
-# 5) Create the Map WITH definition inline (so no getDefinition/updateDefinition needed)
+    # 5) Create the Map WITH definition inline (so no getDefinition/updateDefinition needed)
+    map_name = "My Fabric Map"
     create_map_url = f"https://api.fabric.microsoft.com/v1/workspaces/{workspace_id}/maps"
     create_map_payload = {
-        "displayName": "My Fabric Map",
+        "displayName": map_name,
         "description": "Created using Fabric Maps REST API",
         "definition": {
             "parts": [
                 {
                     "path": "map.json",
                     "payload": _json_to_b64(map_json),
-                    "payloadType": "InlineBase64",
+                    "payloadType": "InlineBase64"
                 }
             ]
-        },
+        }
     }
-
+    
     map_resp = client.post(create_map_url, headers=_fabric_headers(), json=create_map_payload)
-
+    
     if map_resp.status_code == 201:
         map_id = map_resp.json()["id"]
     elif map_resp.status_code == 202:
-        map_id = _handle_lro(client, map_resp)
+        print("LRO completed via 202. Resolving map by name...")
+        map_id = resolve_map_id(
+            client,
+            create_map_url,
+            _fabric_headers(),
+            map_name
+        )  
     else:
-        raise RuntimeError(f"Failed to create map: {map_resp.status_code} {map_resp.text}")
+        raise RuntimeError(f"Create map failed: {map_resp.status_code} {map_resp.text}")
 
     print("Map created successfully. Map ID:", map_id)
     print("GeoJSON layer path:", geojson_relative_path)
@@ -685,10 +797,12 @@ python create_map_from_geojson.py
 
 If successful, you see output similar to:
 
-* Lakehouse ID
-* GeoJSON uploaded
-* SVG uploaded (if enabled)
-* Map ID
+* Lakehouse created. Lakehouse ID: `<Lakehouse ID>`
+* Uploaded GeoJSON to: Files/vector/starbucks-seattle.geojson
+* Uploaded custom SVG marker to: Files/icons/starbucks-marker.svg
+* Map created successfully. Map ID: `<Map ID>`
+* GeoJSON layer path: Files/vector/starbucks-seattle.geojson
+* Custom SVG marker path: Files/icons/starbucks-marker.svg
 
 In Microsoft Fabric, your map should look similar to this:
 
