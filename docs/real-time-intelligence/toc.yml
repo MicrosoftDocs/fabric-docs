@@ -1079,7 +1079,7 @@ items:
     href: kusto-tocs/query/toc.yml
   - name: Reference architectures
     items:
-    - name: Automative and mobile
+    - name: Automotive and Mobility
       items:
       - name: Connected fleet data analytics
         href: architectures/connected-fleet.md
