@@ -40,6 +40,6 @@ Together, these tables let you answer questions like:
 
 ## Related content
 
-- To learn how to enable Eventstream workspace monitoring for your workspace, see [Enable workspace monitoring](enable-fabric-workspace-monitoring.md).
-- To learn how to query your Eventstream monitoring data with KQL, see [Query Eventstream monitoring data with KQL](query-fabric-workspace-monitoring-data.md).
-- To learn about Fabric workspace monitoring and the monitoring Eventhouse, see [What is workspace monitoring?](/fabric/fundamentals/workspace-monitoring-overview).
+- [Enable workspace monitoring](enable-fabric-workspace-monitoring.md)
+- [Query Eventstream monitoring data with KQL](query-fabric-workspace-monitoring-data.md)
+- [Eventstream monitoring tables](fabric-workspace-monitoring-tables.md)

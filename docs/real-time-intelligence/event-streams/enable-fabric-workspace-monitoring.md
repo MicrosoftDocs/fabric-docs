@@ -62,6 +62,6 @@ To enable monitoring for a preexisting eventstream, republish it through the eve
 
 ## Related content
 
-- To learn about Eventstream monitoring, see [Eventstream workspace monitoring overview](fabric-workspace-monitoring.md).
-- To learn how to query your Eventstream monitoring data with Kusto Query Language (KQL), see [Query Eventstream monitoring data with KQL](query-fabric-workspace-monitoring-data.md).
-- To learn about Fabric workspace monitoring and the monitoring Eventhouse, see [What is workspace monitoring?](/fabric/fundamentals/workspace-monitoring-overview).
+- [Eventstream workspace monitoring overview](fabric-workspace-monitoring.md)
+- [Query Eventstream monitoring data with KQL](query-fabric-workspace-monitoring-data.md)
+- [Eventstream monitoring tables](fabric-workspace-monitoring-tables.md)

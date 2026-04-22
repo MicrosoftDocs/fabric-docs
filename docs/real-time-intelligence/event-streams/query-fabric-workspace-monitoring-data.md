@@ -62,6 +62,6 @@ EventStreamErrorMetrics
 
 ## Related content
 
-- To learn about Eventstream monitoring, see [Eventstream workspace monitoring overview](fabric-workspace-monitoring.md).
-- To learn how to enable Eventstream workspace monitoring for your workspace, see [Enable workspace monitoring](enable-fabric-workspace-monitoring.md).
-- To learn how to query your Eventstream monitoring data with KQL, see [Query Eventstream monitoring data with KQL](query-fabric-workspace-monitoring-data.md).
+- [Eventstream workspace monitoring overview](fabric-workspace-monitoring.md)
+- [Enable workspace monitoring](enable-fabric-workspace-monitoring.md)
+- [Eventstream monitoring tables](fabric-workspace-monitoring-tables.md)
