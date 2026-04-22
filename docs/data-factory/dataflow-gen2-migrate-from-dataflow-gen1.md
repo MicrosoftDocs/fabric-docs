@@ -104,6 +104,14 @@ There are other considerations to factor into your planning before migrating to 
 
 You require a Pro or Premium Per User (PPU) license to publish or manage Power BI dataflows (Dataflow Gen1). In contrast, you only require a Microsoft Fabric (Free) license to author a Dataflow Gen2 in a Premium capacity workspace.
 
+### Guidance by license type
+
+Dataflow Gen1 remains supported, but it's now in a legacy state and won't receive new feature investment. Existing workloads can continue to run while you plan your transition to Dataflow Gen2.
+
+- **Premium customers with Fabric access:** Dataflow Gen2 is the recommended path, offering improvements in performance, scale, reliability, functionality, and built-in AI. Many teams find it helpful to start by evaluating Gen2 for new or evolving workloads where these benefits can be realized quickly.
+- **Pro and Premium Per User (PPU) customers:** Dataflow Gen1 remains a supported option where it best fits your current needs. As new Dataflow Gen2 paths for Pro/PPU scenarios become available, we'll share clear guidance and recommended steps to help with a smooth transition.
+- **GCC customers on Premium:** Dataflow Gen2 support in GCC environments is planned to be available before any future Gen1 transition milestones, ensuring a supported upgrade path.
+
 ### Migration scenarios
 
 When you migrate your dataflows, it's important to think beyond simply copying existing solutions. Instead, we recommend modernizing your solutions by taking advantage of the latest innovations and capabilities of Dataflow Gen2. This approach ensures that your solutions can support the growing demands of the business.
