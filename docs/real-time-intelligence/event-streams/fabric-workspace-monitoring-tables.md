@@ -118,3 +118,8 @@ This table tracks error counts by type. Use it to identify what kinds of errors 
 | `Deserialization Errors` | Errors that occurred when trying to read incoming events. This error usually means the data format doesn't match the expected schema. |
 | `Data Conversion Errors` | Errors that occurred when converting data between types, such as trying to convert a text value to a number. |
 
+## Related content
+
+- To learn about Fabric workspace monitoring and the monitoring Eventhouse, see [What is workspace monitoring?](/fabric/fundamentals/workspace-monitoring-overview).
+- For step-by-step instructions to enable monitoring in your workspace, see[Enable workspace monitoring](/fabric/fundamentals/enable-workspace-monitoring).
+- To learn Kusto Query Language (KQL) syntax for querying your monitoring data, see [Kusto Query Language (KQL) overview](/kusto/query/).

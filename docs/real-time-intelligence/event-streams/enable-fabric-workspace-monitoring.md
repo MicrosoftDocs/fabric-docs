@@ -11,7 +11,7 @@ ms.topic: how-to
 
 # Enable workspace monitoring for eventstreams
 
-Eventstream monitoring uses Fabric workspace monitoring. When you enable workspace monitoring in your workspace, the process creates Eventstream tables in the monitoring database. You don't need to configure anything specific for event streams.
+Eventstream monitoring uses Fabric workspace monitoring. When you enable workspace monitoring in your workspace, the process creates Eventstream tables in the monitoring database. You don't need to configure anything specific for event streams. For concepts and prerequistes related to workspace monitoring, see [Eventstream workspace monitoring overview](fabric-workspace-monitoring.md).
 
 > [!NOTE]
 > Eventstream workspace monitoring is currently in preview. 
@@ -57,3 +57,9 @@ To enable monitoring for a preexisting eventstream, republish it through the eve
 1. Make any pending changes, or add and delete a node.
 1. Select **Publish** on the toolbar to republish the eventstream.
 1. After republishing, monitoring data appears in the monitoring tables within a few minutes (metrics and errors) or up to 6 hours (node status).
+
+## Related content
+
+- To learn about Fabric workspace monitoring and the monitoring Eventhouse, see [What is workspace monitoring?](/fabric/fundamentals/workspace-monitoring-overview).
+- For step-by-step instructions to enable monitoring in your workspace, see[Enable workspace monitoring](/fabric/fundamentals/enable-workspace-monitoring).
+- To learn Kusto Query Language (KQL) syntax for querying your monitoring data, see [Kusto Query Language (KQL) overview](/kusto/query/).
