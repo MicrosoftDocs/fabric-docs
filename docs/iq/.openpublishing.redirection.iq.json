@@ -6,6 +6,11 @@
       "redirect_document_id": true
     },
     {
+      "source_path_from_root": "/docs/iq/plan/how-to-view-entity-type-details.md",
+      "redirect_url": "/fabric/iq/plan/how-to-view-entity-type-details",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/iq/plan/planning-sheet-how-to-change-layouts.md",
       "redirect_url": "/fabric/iq/plan/planning-how-to-change-layouts",
       "redirect_document_id": true
@@ -14,6 +19,6 @@
       "source_path_from_root": "/docs/iq/plan/overview-known-issues.md",
       "redirect_url": "/fabric/iq/plan/overview-limitations",
       "redirect_document_id": true
-    }
+    }    
   ]
 }

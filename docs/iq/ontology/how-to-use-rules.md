@@ -38,13 +38,13 @@ Rules use the following ontology (preview) concepts. For definitions of these te
 
 ## Create a rule
 
-1. Open the rules configuration from the ontology overview, or from the preview experience.
+1. Open the rules configuration from the ontology overview, or from the entity type details.
 
     To open rules from the ontology overview, select **...** next to an entity type name to open its options menu. Hover over **Add and view rule**, then select **View rules**.
 
     :::image type="content" source="media/how-to-use-rules/view-rules-ontology.png" alt-text="Screenshot of View rules from the ontology page." lightbox="media/how-to-use-rules/view-rules-ontology.png":::
 
-    To open rules from the preview experience, select **Add and view rules > View rules** from the menu ribbon.
+    To open rules from the entity type details, select **Add and view rules > View rules** from the menu ribbon.
 
     :::image type="content" source="media/how-to-use-rules/view-rules-preview.png" alt-text="Screenshot of View rules from the preview page." lightbox="media/how-to-use-rules/view-rules-preview.png":::
 

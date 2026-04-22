@@ -52,8 +52,8 @@ landingContent:
             url: ontology/how-to-bind-data.md
           - text: Add relationship types
             url: ontology/how-to-create-relationship-types.md
-          - text: Use preview experience
-            url: ontology/how-to-use-preview-experience.md
+          - text: View entity type details
+            url: ontology/how-to-view-entity-type-details.md
             
   # Card
   - title: About graph in Microsoft Fabric
