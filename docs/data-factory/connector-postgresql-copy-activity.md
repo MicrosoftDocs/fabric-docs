@@ -3,7 +3,7 @@ title: Configure PostgreSQL in a copy activity
 description: This article explains how to copy data using PostgreSQL.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 02/14/2026
+ms.date: 04/22/2026
 ms.custom: 
   - pipelines
   - template-how-to
@@ -138,6 +138,25 @@ When copying data from PostgreSQL, the following mappings are used from PostgreS
 |DateArray|String|
 |Range|String|
 |Bpchar|String|
+
+When copying data to PostgreSQL, the following mappings are used from interim data types used by the service internally to PostgreSQL data types.
+
+| Interim data type | PostgreSQL data type |
+|:---|:---|
+| Int16 | smallint |
+| Int32 | integer |
+| Int64 | bigint |
+| Single | real |
+| Double | double precision |
+| Decimal | numeric, money |
+| Boolean | boolean |
+| String | text, char(n), varchar(n), name, citext, json,jsonb, xml, inet, cidr, macaddr, tsvector, tsquery, point, line, lseg, box, path, polygon, circle, int4range, int8range, numrange, daterange, tsrange, tstzrange, array types, integer[] |
+| Byte array | bytea, bit(n), varbit |
+| Date | date |
+| TimeSpan | time, interval |
+| DateTimeOffset | timetz, timestamptz |
+| DateTime | timestamp |
+| GUID | uuid |
 
 ## Table summary
 
