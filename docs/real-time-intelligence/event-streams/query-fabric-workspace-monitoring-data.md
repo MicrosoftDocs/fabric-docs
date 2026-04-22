@@ -13,6 +13,9 @@ ms.topic: how-to
 
 You can query your Eventstream monitoring data using KQL (Kusto Query Language) directly in the monitoring Eventhouse. Open the monitoring database and use the query editor to run queries against the Eventstream tables.
 
+> [!NOTE]
+> Eventstream workspace monitoring is currently in preview. 
+
 ## Check the status of all nodes
 
 This query returns the most recent status of each node in a specific Eventstream.

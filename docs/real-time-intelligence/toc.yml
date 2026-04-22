@@ -191,7 +191,7 @@ items:
         items:
         - name: Fabric workspace monitoring
           items:
-            - name: Monitor your eventstreams with Fabric workspace monitoring
+            - name: Monitor eventstreams with workspace monitoring
               href: event-streams/fabric-workspace-monitoring.md
             - name: Enable workspace monitoring for eventstreams
               href: event-streams/enable-fabric-workspace-monitoring.md
