@@ -8,7 +8,7 @@ ms.date: 12/01/2025
 ms.topic: how-to
 ---
 
-# Workspace outbound access protection for mirrored databases (preview)
+# Workspace outbound access protection for mirrored databases
 
 Workspace outbound access protection helps safeguard your data by controlling outbound connections from mirrored databases in your workspace to external data sources. When this feature is enabled, [mirrored database items](#supported-mirrored-database-item-types) are restricted from making outbound connections unless access is explicitly granted through approved data connection rules. 
 

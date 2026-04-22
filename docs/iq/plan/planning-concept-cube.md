@@ -14,7 +14,7 @@ In many business scenarios, plans are created separately for each dimension—su
 
 ## Driver-based allocation model
 
-Each cube is configured around a [data input measure](planning-how-to-input-data.md) or [forecast](planning-how-to-build-forecasts.md) measure. Allocation within the cube is performed using an allocation driver (also referred to as a reference measure or allocation key).
+Each cube is configured around a [data input measure](planning-how-to-input-data.md) or [forecast](planning-forecasting/planning-how-to-build-forecasts.md) measure. Allocation within the cube is performed using an allocation driver (also referred to as a reference measure or allocation key).
 
 The allocation driver is typically a DAX measure from the semantic model, such as prior year actuals, current year revenue, units sold, headcount, or production volume.
 
