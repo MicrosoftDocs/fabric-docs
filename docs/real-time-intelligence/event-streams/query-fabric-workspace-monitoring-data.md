@@ -9,9 +9,11 @@ ms.date: 04/21/2026
 ms.topic: how-to
 ---
 
-# Query Eventstream monitoring data
+# Query Eventstream monitoring data (preview)
 
-Eventstream monitoring uses Fabric workspace monitoring. When you enable workspace monitoring in your workspace, the process creates Eventstream tables in the monitoring database. You don't need to configure anything specific for event streams. For concepts and prerequistes related to workspace monitoring, see [Eventstream workspace monitoring overview](fabric-workspace-monitoring.md).
+Eventstream monitoring uses Fabric workspace monitoring. When you enable workspace monitoring in your workspace, the process creates Eventstream tables in the monitoring database. You don't need to configure anything specific for event streams. For concepts related to workspace monitoring, see [Eventstream workspace monitoring overview](fabric-workspace-monitoring.md).
+
+**Eventstream monitoring tables** are a set of three tables created in your workspace monitoring database that capture different aspects of your eventstream's behavior. All tables share common columns (base dimensions) and include table-specific columns for the data they track. For more information about the tables and the data they contain, see [Eventstream monitoring tables overview](fabric-workspace-monitoring-tables.md).
 
 You can query your Eventstream monitoring data using KQL (Kusto Query Language) directly in the monitoring Eventhouse. Open the monitoring database and use the query editor to run queries against the Eventstream tables.
 
@@ -60,6 +62,6 @@ EventStreamErrorMetrics
 
 ## Related content
 
-- To learn about Fabric workspace monitoring and the monitoring Eventhouse, see [What is workspace monitoring?](/fabric/fundamentals/workspace-monitoring-overview).
-- For step-by-step instructions to enable monitoring in your workspace, see[Enable workspace monitoring](/fabric/fundamentals/enable-workspace-monitoring).
-- To learn Kusto Query Language (KQL) syntax for querying your monitoring data, see [Kusto Query Language (KQL) overview](/kusto/query/).
+- To learn about Eventstream monitoring, see [Eventstream workspace monitoring overview](fabric-workspace-monitoring.md).
+- To learn how to enable Eventstream workspace monitoring for your workspace, see [Enable workspace monitoring](enable-fabric-workspace-monitoring.md).
+- To learn how to query your Eventstream monitoring data with KQL, see [Query Eventstream monitoring data with KQL](query-fabric-workspace-monitoring-data.md).

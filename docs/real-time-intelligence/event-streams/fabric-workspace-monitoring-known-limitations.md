@@ -9,9 +9,12 @@ ms.date: 04/21/2026
 ms.topic: article
 ---
 
-# Known limitations
+# Eventstream workspace monitoring - known limitations (preview)
 
 **Eventstream workspace monitoring** is in preview and has a few known limitations that affect how monitoring data is collected, displayed, and queried.
+
+> [!NOTE]
+> Eventstream workspace monitoring is currently in preview. 
 
 ## Node status updates are periodic, not real-time
 
@@ -32,7 +35,7 @@ Eventstreams that you published before enabling workspace monitoring don't autom
 
 ## Artifact and workspace names might show outdated values
 
-If you rename an Eventstream or move it to a different workspace, the **ArtifactName** and **WorkspaceName** columns in the monitoring tables might continue to show the old name for a period of time. The **ArtifactId** and **WorkspaceId** columns always contain the correct, current identifiers. When writing queries, use **ArtifactId** and **WorkspaceId** for reliable filtering instead of names.
+If you rename an Eventstream or move it to a different workspace, the **ArtifactName** and **WorkspaceName** columns in the monitoring tables might continue to show the old name for sometime. The **ArtifactId** and **WorkspaceId** columns always contain the correct, current identifiers. When writing queries, use **ArtifactId** and **WorkspaceId** for reliable filtering instead of names.
 
 ## Metrics identify underlying services, not individual nodes
 

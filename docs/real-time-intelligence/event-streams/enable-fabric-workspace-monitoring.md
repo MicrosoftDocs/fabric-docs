@@ -9,12 +9,14 @@ ms.date: 04/21/2026
 ms.topic: how-to
 ---
 
-# Enable workspace monitoring for eventstreams
+# Enable workspace monitoring for eventstreams (preview)
 
-Eventstream monitoring uses Fabric workspace monitoring. When you enable workspace monitoring in your workspace, the process creates Eventstream tables in the monitoring database. You don't need to configure anything specific for event streams. For concepts and prerequistes related to workspace monitoring, see [Eventstream workspace monitoring overview](fabric-workspace-monitoring.md).
+Eventstream monitoring uses [Fabric workspace monitoring](/fabric/fundamentals/workspace-monitoring-overview). When you enable workspace monitoring in your workspace, the process creates Eventstream tables in the monitoring database. You don't need to configure anything specific for eventstreams. 
 
 > [!NOTE]
 > Eventstream workspace monitoring is currently in preview. 
+
+[!INCLUDE [Workspace monitoring prerequisites](includes/workspace-monitoring-prerequisites.md)]
 
 ## Enable workspace monitoring
 
@@ -25,29 +27,29 @@ Go to your workspace settings and enable monitoring by creating an eventhouse.
 1. In the left navigation of Workspace settings, select **Monitoring**.
 1. Select **+ Eventhouse** and wait for the monitoring database to be created.
 
-:::image type="content" source="media/enable-fabric-workspace-monitoring/workspace-settings-monitor-eventhouse-button.png" alt-text="Workspace settings panel with the Monitoring section selected in the left navigation. The + Eventhouse button is visible in the Monitoring pane.":::
+    :::image type="content" source="media/enable-fabric-workspace-monitoring/workspace-settings-monitor-eventhouse-button.png" alt-text="Workspace settings panel with the Monitoring section selected in the left navigation. The + Eventhouse button is visible in the Monitoring pane.":::
 
-After the eventhouse is created, Fabric begins collecting monitoring data from all supported items in the workspace, including your eventstreams.
+    After the eventhouse is created, Fabric begins collecting monitoring data from all supported items in the workspace, including your eventstreams.
 
 ## Open the monitoring database
 
-Locate and explore the monitoring Eventhouse to verify the Eventstream tables are available.
+Locate and explore the monitoring eventhouse to verify the Eventstream tables are available.
 
-1. In your workspace, locate the monitoring Eventhouse that was created (it appears as an Eventhouse item).
-1. Open the Eventhouse and expand the database to see the available tables.
+1. In your workspace, locate the monitoring eventhouse that was created (it appears as an Eventhouse item).
+1. Open the eventhouse and expand the database to see the available tables.
 1. Look for the three Eventstream tables: **EventStreamNodeStatus**, **EventStreamMetrics**, and **EventStreamErrorMetrics**.
 
-:::image type="content" source="media/enable-fabric-workspace-monitoring/monitor-eventhouse-event-stream-tables.png" alt-text="The monitoring Eventhouse database expanded in the database explorer, showing the three Eventstream tables: EventStreamErrorMetrics, EventStreamMetrics, and EventStreamNodeStatus.":::
+    :::image type="content" source="media/enable-fabric-workspace-monitoring/monitor-eventhouse-event-stream-tables.png" alt-text="The monitoring Eventhouse database expanded in the database explorer, showing the three Eventstream tables: EventStreamErrorMetrics, EventStreamMetrics, and EventStreamNodeStatus.":::
 
-> [!NOTE]
-> It might take a few minutes after enabling monitoring for data to start appearing in the tables. Node status data is emitted periodically (approximately every 6 hours), so the EventStreamNodeStatus table might take longer to populate than the metrics tables.
+    > [!NOTE]
+    > It might take a few minutes after enabling monitoring for data to start appearing in the tables. Node status data is emitted periodically (approximately every 6 hours), so the EventStreamNodeStatus table might take longer to populate than the metrics tables.
 
 ## Enable monitoring for existing Eventstreams
 
 If you enable workspace monitoring in a workspace that already contains eventstreams, you need to republish those existing eventstreams before monitoring data appears for them.
 
 > [!IMPORTANT]
-> This behavior applies only to eventstreams that you created or last published before enabling workspace monitoring. Any new eventstreams you create after enabling monitoring are automatically configured and don't require republishing.
+> This step applies only to eventstreams that you created or published before enabling workspace monitoring. Any new eventstreams you create after you enable workspace monitoring are automatically configured and don't require republishing.
 
 ### Republish an existing eventstream
 
@@ -60,6 +62,6 @@ To enable monitoring for a preexisting eventstream, republish it through the eve
 
 ## Related content
 
+- To learn about Eventstream monitoring, see [Eventstream workspace monitoring overview](fabric-workspace-monitoring.md).
+- To learn how to query your Eventstream monitoring data with Kusto Query Language (KQL), see [Query Eventstream monitoring data with KQL](query-fabric-workspace-monitoring-data.md).
 - To learn about Fabric workspace monitoring and the monitoring Eventhouse, see [What is workspace monitoring?](/fabric/fundamentals/workspace-monitoring-overview).
-- For step-by-step instructions to enable monitoring in your workspace, see[Enable workspace monitoring](/fabric/fundamentals/enable-workspace-monitoring).
-- To learn Kusto Query Language (KQL) syntax for querying your monitoring data, see [Kusto Query Language (KQL) overview](/kusto/query/).

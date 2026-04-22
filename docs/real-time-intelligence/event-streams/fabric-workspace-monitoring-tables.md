@@ -9,7 +9,9 @@ ms.date: 04/21/2026
 ms.topic: article
 ---
 
-# Eventstream monitoring tables overview
+# Eventstream monitoring tables overview (preview)
+
+**Eventstream workspace monitoring** is a feature that lets you track the health and performance of eventstreams using Fabric workspace monitoring. When you enable workspace monitoring, Fabric automatically creates an eventhouse in your workspace that collects metrics, node status, and error data from your eventstreams. You can then query this data using KQL (Kusto Query Language) to troubleshoot issues, analyze trends, and build custom dashboards.
 
 **Eventstream monitoring tables** are a set of three tables created in your workspace monitoring database that capture different aspects of your eventstream's behavior. All tables share common columns (base dimensions) and include table-specific columns for the data they track.
 
@@ -58,7 +60,7 @@ Node status is emitted periodically (approximately every 6 hours).
 
 ## EventStreamMetrics
 
-This table contains data flow metrics for your eventstream. It tells you how much data is flowing through each part of your eventstream such as how many messages are coming in, going out, and whether processing is keeping up with the incoming volume.
+This table contains data flow metrics for your eventstream. It tells you how much data is flowing through each part of your eventstream. For example, it tells you how many messages are coming in, going out, and whether processing keeps up with the incoming volume.
 
 | Column | Type | Description |
 |---|---|---|
@@ -77,10 +79,10 @@ These metrics apply to default and derived streams.
 
 | Metric name | Aggregation | Unit | What it measures |
 |---|---|---|---|
-| `Incoming Bytes` | Sum | Bytes | The total bytes received by the stream. |
-| `Incoming Messages` | Sum | Count | The total number of messages received by the stream. |
-| `Outgoing Bytes` | Sum | Bytes | The total bytes read from the stream by consumers. |
-| `Outgoing Messages` | Sum | Count | The total number of messages read from the stream by consumers. |
+| `Incoming Bytes` | Sum | Bytes | The total bytes received by the eventstream. |
+| `Incoming Messages` | Sum | Count | The total number of messages received by the eventstream. |
+| `Outgoing Bytes` | Sum | Bytes | The total bytes read from the eventstream by consumers. |
+| `Outgoing Messages` | Sum | Count | The total number of messages read from the eventstream by consumers. |
 
 ### Processing metrics
 
@@ -120,6 +122,6 @@ This table tracks error counts by type. Use it to identify what kinds of errors 
 
 ## Related content
 
-- To learn about Fabric workspace monitoring and the monitoring Eventhouse, see [What is workspace monitoring?](/fabric/fundamentals/workspace-monitoring-overview).
-- For step-by-step instructions to enable monitoring in your workspace, see[Enable workspace monitoring](/fabric/fundamentals/enable-workspace-monitoring).
-- To learn Kusto Query Language (KQL) syntax for querying your monitoring data, see [Kusto Query Language (KQL) overview](/kusto/query/).
+- To learn about Eventstream monitoring, see [Eventstream workspace monitoring overview](fabric-workspace-monitoring.md).
+- To learn how to enable Eventstream workspace monitoring for your workspace, see [Enable workspace monitoring](enable-fabric-workspace-monitoring.md).
+- To learn how to query your Eventstream monitoring data with KQL, see [Query Eventstream monitoring data with KQL](query-fabric-workspace-monitoring-data.md).
