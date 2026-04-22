@@ -9,28 +9,28 @@ ms.date: 04/01/2026
 
 # OneLake lifecycle management
 
-Use OneLake lifecycle management to control storage costs by automatically moving files between storage tiers. Storage tiers help you manage data costs by providing cost-effective tiers based on your data access patterns.  By combining lifecycle management with storage tiers, you can automatically save money by moving less active data to lower storage tiers while keeping your active data in the hot tier.  Learn more about [OneLake storage tiers](onelake-storage-tiers.md).
+Use OneLake lifecycle management to control storage costs by automatically moving files between storage tiers. Storage tiers help you manage data costs by providing cost-effective tiers based on your data access patterns. By combining lifecycle management with storage tiers, you can automatically save money by moving less active data to lower storage tiers while keeping your active data in the hot tier.  Learn more about [OneLake storage tiers](onelake-storage-tiers.md).
 
 This article describes the structure and elements of a OneLake lifecycle management policy.  OneLake uses a similar policy structure as Azure Storage.  For more details, see [Azure Storage lifecycle policies](https://learn.microsoft.com/azure/storage/blobs/lifecycle-management-policy-structure).
 
 ## Managing your policy
 
-You can create or update your lifecycle policy for your workspace via the Fabric portal (**Workspace Settings** > **OneLake** > **Lifecycle Management**) or by using the [ Lifecycle Management APIs](). When updating your policy via an API, note that only full policy updates are supported - you must re-submit the entire policy in full via the [Import Lifecycle Policy API]().  
+You can create or update your lifecycle policy for your workspace via the Fabric portal (**Workspace Settings** > **OneLake** > **Lifecycle Management**) or by using the [Lifecycle Management APIs](). When updating your policy via an API, note that only full policy updates are supported - you must re-submit the entire policy in full via the [Import Lifecycle Policy API]().  
 
 In the **Lifecycle management** settings page, you can update your workspace's lifecycle policy by creating, deleting, and managing lifecycle rules. Your lifecycle policy is updated when creating a new rule, or updating, activating, or deleting an existing rule or rules.  
 
-[INSERT SCREENSHOT]
+<!-- TODO: [INSERT SCREENSHOT] -->
 
 ## Policy structure
 
 A lifecycle management policy is defined by a single JSON document and is made of a list of rules. Each rule contains the following information:
 
-- Scope: A rule can apply to the entire workspace, all diagnostics data in the workspace, or be filtered to a specific set of items with prefix matching.
-- Status: Whether a rule is active or not. An active rule will run daily. An inactive rule will not result in any actions until re-activated.
-- Condition: A rule's action is applied when a file in the scope meets the specified condition. You can set conditions on when a file was created, last accessed, or last modified.  
-- Action: A rule's action happens when a file in the scope meets the specified condition. Each action is linked to a single condition, and a single rule can have multiple action + condition pairs.
+- **Scope**: A rule can apply to the entire workspace, all diagnostics data in the workspace, or be filtered to a specific set of items with prefix matching.
+- **Status**: Whether a rule is active or not. An active rule will run daily. An inactive rule will not result in any actions until re-activated.
+- **Condition**: A rule's action is applied when a file in the scope meets the specified condition. You can set conditions on when a file was created, last accessed, or last modified.  
+- **Action**: A rule's action happens when a file in the scope meets the specified condition. Each action is linked to a single condition, and a single rule can have multiple action + condition pairs.
 
-The following sections will expand on each of these areas and how they are defined in the lifecycle policy JSON.
+The following sections expand on each of these areas and how they are defined in the lifecycle policy JSON.
 
 ## Rules
 
@@ -65,7 +65,7 @@ A rule contains several parameters, described in the following table:
 
 ## Filters
 
-The scope of a lifecycle rule is determined by its defined filters. If no filter is present, then the lifecycle rule applies to all files within the workspace.  There is no means to specify files to exclude from a rule's scope. If more than one filter is defined, a logical AND is applied to all filters.  
+The scope of a lifecycle rule is determined by its defined filters. If no filter is present, then the lifecycle rule applies to all files within the workspace. You can't specify files to exclude from a rule's scope. If more than one filter is defined, a logical AND is applied to all filters.  
 
 The following table describes each filter parameter:
 
@@ -76,15 +76,15 @@ The following table describes each filter parameter:
 
 ### prefixMatch
 
-Each rule can define up to 10 case-sensitive prefixes. A prefix string must start with an item name or GUID.  For example, if you want to scope a rule to all files within the files folder of a lakehouse, set the **prefixMatch** to "myLakehouse.Lakehouse/Files".  Characters such as '*' and '?' are treated as string literals.  
+Each rule can define up to 10 case-sensitive prefixes. A prefix string must start with an item name or GUID.  For example, if you want to scope a rule to all files within the files folder of a lakehouse, set the **prefixMatch** to "myLakehouse.Lakehouse/Files". Characters such as `*` and `?` are treated as string literals.  
 
 ### Diagnostic events  
 
-OneLake applies lifecycle rules to all diagnostics events when the rule applies to the entire workspace, or when the **prefixMatch** field is set to ***/diagnosticLogs**. If creating the rule in the Fabric portal, you can select the "Diagnostic Events" option in the rule scope. Lifecycle rules will not apply to diagnostics data if a rule is scoped to a lakehouse containing diagnostics data. 
+OneLake applies lifecycle rules to all diagnostics events when the rule applies to the entire workspace, or when the **prefixMatch** field is set to ***/diagnosticLogs**. If creating the rule in the Fabric portal, you can select the **Diagnostic Events** option in the rule scope. Lifecycle rules don't apply to diagnostics data if a rule is scoped to a lakehouse containing diagnostics data. 
 
 ## Actions
 
-Each rule must contain at least one action and condition.  Actions are applied to any files within the rule scope when the condition is met.  The following table describes each action supported by OneLake lifecycle policies:  
+Each rule must contain at least one action and condition. Actions are applied to any files within the rule scope when the condition is met. The following table describes each action supported by OneLake lifecycle policies:  
 
 | Action | Description |
 |---|---|
@@ -92,11 +92,11 @@ Each rule must contain at least one action and condition.  Actions are applied t
 | **TierToCold** | Move a file to the cold access tier.| 
 | **enableAutoTierToHotFromCool** | If a file is set to the cool tier, this action automatically moves that file to the hot tier when the file is accessed.<br><br>This action is available only when used with the **daysAfterLastAccessTimeGreaterThan** run condition. <br><br>This action has no effect on blobs that were set to the cool tier prior to enabling this action in a rule. <br><br>This action moves blobs from cool to hot only one time in 30 days. This safeguard is put into place to protect against multiple early deletion penalties charged to the account.|
 
-If you define more than one action on the same file, lifecycle management applies the least expensive action to the file.  The **tierToCold** action is considered less expensive than **tierToCool**.
+If you define more than one action on the same file, lifecycle management applies the least expensive action to the file. The **tierToCold** action is considered less expensive than **tierToCool**.
 
 ## Conditions
 
-Every action is linked to a time-based condition.  If file property exceeds the number of days specified by the condition, then the associated action executes.  Lifecycle conditions are assessed on each object only once during a policy run - if a file meets a condition after being assessed by a run, it will be processed in a subsequent policy run.  The following table describes each condition supported by OneLake lifecycle policies:
+Every action is linked to a time-based condition. If file property exceeds the number of days specified by the condition, then the associated action executes. Lifecycle conditions are assessed on each object only once during a policy run - if a file meets a condition after being assessed by a run, it will be processed in a subsequent policy run. The following table describes each condition supported by OneLake lifecycle policies:
 
 | Condition name                                     | Type    | Description    |
 |----------------------------------------------------|---------|------------------------|
@@ -106,7 +106,7 @@ Every action is linked to a time-based condition.  If file property exceeds the 
 
 ### Access time tracking
 
-Access time tracking is required when using the **daysAfterLastAccessTimeGreaterThan** condition.  This field keeps a record of when a file was last read or written in the "LastAccessTime" file property.  Metadata operations, such as getting a file's properties, are not access operations and will not update the access time of the file.
+Access time tracking is required when using the **daysAfterLastAccessTimeGreaterThan** condition. This field keeps a record of when a file was last read or written in the "LastAccessTime" file property.  Metadata operations, such as getting a file's properties, are not access operations and will not update the access time of the file.
 
 If you apply the **daysAfterLastAccessTimeGreaterThan** in a policy, OneLake will automatically turn on access time tracking for your workspace. If your policy no longer contains any rules with the **daysAfterLastAccessTimeGreaterThan**, OneLake will automatically turn off last access time tracking for your workspace.  If a file has not been accessed since access time tracking was turned on, the date access time tracking was turned on will be used as the last access dated.
 
@@ -117,53 +117,64 @@ If you apply the **daysAfterLastAccessTimeGreaterThan** in a policy, OneLake wil
 
 To create, update, or delete a lifecycle policy for a workspace, you must be a workspace admin.
 
-[Learn more about roles and workspace permissions](https://learn.microsoft.com/en-us/fabric/get-started/roles-workspaces)
+For more informatino, see [Roles in workspaces](../fundamentals/roles-workspaces.md).
 
-## Running your policy
+## Run your policy
 
-Lifecycle policies attempt to run once per day, but may be delayed if the previous policy did not complete within a day. New rules may take up to 24 hours to take effect.  A new run is scheduled within 24 hours of the previous run completing.  For more details on lifecycle policy performance, see [lifecycle management performance characteristics](https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-performance-characteristics).
-
+Lifecycle policies attempt to run once per day, but may be delayed if the previous policy did not complete within a day. New rules may take up to 24 hours to take effect. A new run is scheduled within 24 hours of the previous run completing. For more details on lifecycle policy performance, see [lifecycle management performance characteristics](/azure/storage/blobs/lifecycle-management-performance-characteristics).
 
 ### Open the lifecycle rules list
 
 1. Open your workspace in Fabric.
-2. Select **Workspace settings**.
-3. In the navigation pane, select **OneLake lifecycle management**.
-4. Scroll to the **Lifecycle rules** section.
+1. Select **Workspace settings**.
+1. In the navigation pane, select **OneLake lifecycle management**.
+1. Scroll to the **Lifecycle rules** section.
 
 If no rules exist, you see an empty state with a **Create rule** button.
 
 ### Create a lifecycle rule
 
 1. In the **Lifecycle rules** section, select **Create rule**.
-2. Name the rule:
-  - Enter a value in **Rule name**.
-  - Rule names must be unique in the workspace, up to 256 characters, and can only contain letters and numbers.
-3. Choose the scope:
-  - **Apply to the entire workspace**  
-    The rule applies to all billable files in the workspace.
-  - **Filter by path**  
-    The rule applies only to files within specific file paths.  
-    - Enter up to 10 paths in **Paths**.  
-      Example: `myLakehouse.Lakehouse/Files/Sales`
-4. Define conditions and actions:
-  - Under **Actions**, for each action and condition pair:
-    1. In **When a file meets this condition**, choose one:
-      - **Days since created**
-      - **Days since last modified**
-      - **Days since last accessed**
-    2. In **Number of days**, enter a value between 1 and 99,999.
-    3. In **Then do this**, choose one:
-      - **Move to cool storage**
-      - **Move to cold storage**
-      - **Move from cool to hot on access**
-    4. (Optional) Select **Add action** to add another condition and action pair. You can add up to 10 per rule.
-5. If you select **Days since last accessed**:
-  - Ensure last access time tracking is enabled for the workspace.
-  - If it is not enabled, select **Enable last access time tracking** in the informational message bar.  
-    Last access time tracking starts when you enable it and does not apply to historical access.
-6. Review the summary of the rule.
-7. Select **Create rule**.
+
+1. Name the rule:
+
+   - Enter a value in **Rule name**.
+   - Rule names must be unique in the workspace, up to 256 characters, and can only contain letters and numbers.
+
+1. Choose the scope:
+
+   - **Apply to the entire workspace**: The rule applies to all billable files in the workspace.
+   - **Filter by path**: The rule applies only to files within specific file paths.
+     - Enter up to 10 paths in **Paths**. For example: `myLakehouse.Lakehouse/Files/Sales`.
+
+1. Define conditions and actions:
+
+   - Under **Actions**, for each action and condition pair:
+
+     1. In **When a file meets this condition**, choose one:
+
+        - **Days since created**
+        - **Days since last modified**
+        - **Days since last accessed**
+
+     1. In **Number of days**, enter a value between 1 and 99,999.
+
+     1. In **Then do this**, choose one:
+
+        - **Move to cool storage**
+        - **Move to cold storage**
+        - **Move from cool to hot on access**
+
+     1. (Optional) Select **Add action** to add another condition and action pair. You can add up to 10 per rule.
+
+1. If you select **Days since last accessed**:
+
+   - Ensure last access time tracking is enabled for the workspace.
+   - If it is not enabled, select **Enable last access time tracking** in the informational message bar. Last access time tracking starts when you enable it and does not apply to historical access.
+
+1. Review the summary of the rule.
+
+1. Select **Create rule**.
 
 The rule appears in the lifecycle rules table with its name, status, scope, and last run time.
 
@@ -171,16 +182,20 @@ The rule appears in the lifecycle rules table with its name, status, scope, and 
 
 In the **Lifecycle rules** table:
 
-- Edit a rule:  
+- Edit a rule:
+
   Select **Edit** for a rule, update the name, scope, or actions, and then select **Save changes**. Changes take effect within 24 hours.
 
-- Pause a rule:  
+- Pause a rule:
+
   Select **Pause** and confirm. Pausing a rule stops it from running. Files that were already moved are not changed.
 
-- Enable a rule:  
+- Enable a rule:
+
   Select **Enable** and confirm. Enabling a rule starts moving files that meet the defined conditions. Rules take effect within 24 hours. Transaction charges may apply.
 
-- Delete a rule:  
+- Delete a rule:
+
   Select **Delete** and confirm. Deleting a rule is permanent and cannot be undone. Files already moved by the rule are not changed.
 
 You can also select multiple rules and use bulk actions to enable, pause, or delete them.
@@ -219,7 +234,7 @@ Use this pattern for data that starts hot but becomes less active over time:
 
 Files move from hot to cool after 30 days without access. When a file in cool storage is accessed, it automatically moves back to hot storage.
 
-[View storage by tier in the Fabric Capacity Metrics app](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app)
+You can view storage by tier in the [Fabric Capacity Metrics app](../enterprise/metrics-app.md).
 
 ## Limits and considerations
 

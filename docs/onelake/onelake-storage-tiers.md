@@ -13,9 +13,9 @@ As data volumes continue to grow, it's essential for data admins to have ways to
 
 ## What are storage tiers?
 
-OneLake supports three different storage tiers: hot, cool and cold. These are the same hot, cool, and cold access tiers supported by Azure Storage.  As you move from the hot tier to the cool or cold tier, static storage prices lower but transaction prices raise, making the cooler tiers ideal for governance, security, or audit scenarios, where data must be retained for long periods of time but rarely accessed. All three tiers are online and feature the same durability, retrieval latency, and throughput characteristics, although the cool and cold tiers have slightly lower data availability than the hot tier.  
+OneLake supports three different storage tiers: hot, cool, and cold. These are the same hot, cool, and cold access tiers supported by Azure Storage. As you move from the hot tier to the cool or cold tier, static storage prices lower but transaction prices raise, making the cooler tiers ideal for governance, security, or audit scenarios, where data must be retained for long periods of time but is accessed rarely. All three tiers are online and feature the same durability, retrieval latency, and throughput characteristics, although the cool and cold tiers have slightly lower data availability than the hot tier.  
 
- All data in OneLake lands in the hot tier by default.
+All data in OneLake lands in the hot tier by default.
 
 ### Hot tier
 
@@ -42,25 +42,30 @@ Use the cold tier for data you rarely access but must keep for long-term retenti
 - Highest access and transaction costs.
 - Subject to a minimum 90-day retention period. Moving data out of cold storage earlier can result in early movement fees.
 
-## Changing storage tiers
+## Change storage tiers
 
-You can change a file's storage tier via the following methods:
+You can change a file's storage tier by using the following methods:
 
-1. **Set Blob Tier**  
-   By calling the [Set Blob Tier API](https://learn.microsoft.com/rest/api/storageservices/set-blob-tier.md), explicitly or through a lifecycle management policy.  This API is recommended when moving data from a warmer tier to a cooler one.  You can also use Azure Storage Explorer to change the tier of a file, or all files within a folder, via the "Change access tier" option when selecting a file or folder.  
+- **Set Blob Tier**
 
-2. **Copy Blob**
-    By calling the Copy Blob operation to copy a blob from one tier to another. This API is recommended when moving a blob from a cooler tier to a warmer tier, in order to avoid the early deletion penalty.  However, copying a blob results in two transaction charges, from the source and destination tier.  
+  Call the [Set Blob Tier API](/rest/api/storageservices/set-blob-tier), explicitly or through a lifecycle management policy. This API is recommended when moving data from a warmer tier to a cooler one. You can also use Azure Storage Explorer to change the tier of a file, or all files within a folder, by using the **Change access tier** option when you select a file or folder.  
 
-3. **Lifecycle management rules**  
-   OneLake lifecycle management can move files between tiers based on pre-defined rules.  Lifecycle rules can move files to your choice of tier based on when they were created, last modified, or last accessed. When a lifecycle rule runs, it updates the file's tier according to the actions you define, based on when they were created, last modified, or last accessed. Lifecycle rules move data using the Set Blob Tier API.  Learn more about [OneLake lifecycle management](onelake-lifecycle-management.md).  
+- **Copy Blob**
 
-4. **Workspace default storage tier**  
-   If a file does not have a specific tier set, OneLake uses the workspace's default storage tier. All workspaces in Fabric start with a default tier of Hot. You can change the default tier of your workspace via the [Modify Default Tier API](https://learn.microsoft.com/rest/api/fabric/core/onelake-settings/modify-default-tier).  Changing the default tier of your workspace will move all files without an explicit tier (set via Set Blob Tier or Copy Blob) into the new default tier, resulting in capacity charges for all write operations when moving files to a cooler default tier, or read and data retrieval charges when changing to a warmer default tier.  
+  Call the Copy Blob operation to copy a blob from one tier to another. This API is recommended when moving a blob from a cooler tier to a warmer tier, in order to avoid the early deletion penalty. However, copying a blob results in two transaction charges, from the source and destination tier.  
 
-   All files uploaded to a workspace will autmomatically start in the default tier.  To upload a file in a different tier, you can use the 'x-ms-access-tier' header in the [Put Blob API](https://learn.microsoft.com/rest/api/storageservices/put-blob).  
+- **Lifecycle management rules**  
 
-!Note: OneLake only supports changing the storage tier of data which is fully billable.  Any item where storage or transactions are not billed, or only billed up to a limit, are currently exempt from tier change operations.  
+  OneLake lifecycle management can move files between tiers based on pre-defined rules.  Lifecycle rules can move files to your choice of tier based on when they were created, last modified, or last accessed. When a lifecycle rule runs, it updates the file's tier according to the actions you define, based on when they were created, last modified, or last accessed. Lifecycle rules move data using the Set Blob Tier API.  Learn more about [OneLake lifecycle management](onelake-lifecycle-management.md).  
+
+- **Workspace default storage tier**  
+
+  If a file does not have a specific tier set, OneLake uses the workspace's default storage tier. All workspaces in Fabric start in the hot tier by default. You can change the default tier of your workspace by using the [Modify Default Tier API](/rest/api/fabric/core/onelake-settings/modify-default-tier). Changing the default tier of your workspace moves all files that don't have an explicit tier (set by the Set Blob Tier or Copy Blob operations) into the new default tier. This action results in capacity charges for all write operations when moving files to a cooler default tier, or read and data retrieval charges when changing to a warmer default tier.  
+
+  All files uploaded to a workspace autmomatically start in the default tier. To upload a file in a different tier, use the `x-ms-access-tier` header in the [Put Blob API](/rest/api/storageservices/put-blob).  
+
+>[!Note]
+>OneLake only supports changing the storage tier of data that is fully billable. Any item where storage or transactions are not billed, or only billed up to a limit, are currently exempt from tier change operations.  
 
 ## Storage tiers and OneLake consumption
 
@@ -80,19 +85,19 @@ Storage tiers affect both your pay-as-you-go rate for OneLake storage and your F
 
 Cool storage has a minimum 30-day retention period, and cold storage has a minimum 90-day retention period. If you move or delete data earlier, you may be billed as if the data remained in that tier for the full retention period.
 
-For more information on OneLake consumption, see [OneLake compute and storage consumption](/onelake-consumption.md).  For more information about pricing, see [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).  
+For more information on OneLake consumption, see [OneLake compute and storage consumption](./onelake-consumption.md). For more information about pricing, see [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).  
 
 ### Consumption of tier change operations
 
 Changing a file's tier consumes CUs differently depending on the method used:
 
 - When a file is uploaded or moved between tiers, it's charged the new tier's storaage rate immpediately upon upload or tier change.
-- When a file is moved to a cooler tier, the operation is classified as a write transaction to the destination tier.  Write transaction (every 4MB, per 10,000) consumption rates of the destination tier apply.  
-- When a file is moved to a warmer tier, the operation is classified as a read from the source tier.  Read transaction (every 4MB, per 10,000) and data retrieval (per GB) consumption rates of the source tier apply.  Early deletion penalties may also apply if the tier is changed before the minimum retenetion period (charged as pay-as-you-go storage).  
+- When a file is moved to a cooler tier, the operation is classified as a write transaction to the destination tier. Write transaction (every 4MB, per 10,000) consumption rates of the destination tier apply.  
+- When a file is moved to a warmer tier, the operation is classified as a read from the source tier. Read transaction (every 4MB, per 10,000) and data retrieval (per GB) consumption rates of the source tier apply. Early deletion penalties may also apply if the tier is changed before the minimum retenetion period (charged as pay-as-you-go storage).  
 
 ### Early deletion penalty
 
-The cool and cold storage tiers each have a minimum number of days a file must be stored before moving or deleting the file - 30 days for the cool tier, and 90 days for the cold tier.  Files are subject to an early deletion penalty if they are deleted, overwritten, or moved to a different tier before this minimum storage period has transpired. For example, if a blob is moved to the cool tier and deleted after 21 days, you'll be charged an early deletion fee equivalent to 9 days of storage (30 day minimum minus 21 days stored).  This charge is prorated based on the data storage price of the corresponding tier.   Files in a soft-deleted state are not subject to the early deletion penalty. The penalty only applies if the retention period expires and the file is permanantly deleted before the minimum storage period.  
+The cool and cold storage tiers each have a minimum number of days a file must be stored before moving or deleting the file - 30 days for the cool tier, and 90 days for the cold tier. Files are subject to an early deletion penalty if they are deleted, overwritten, or moved to a different tier before this minimum storage period has transpired. For example, if a blob is moved to the cool tier and deleted after 21 days, you'll be charged an early deletion fee equivalent to 9 days of storage (30 day minimum minus 21 days stored). This charge is prorated based on the data storage price of the corresponding tier. Files in a soft-deleted state are not subject to the early deletion penalty. The penalty only applies if the retention period expires and the file is permanantly deleted before the minimum storage period.  
 
 ## Example: save costs by moving from hot to cool storage
 
