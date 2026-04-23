@@ -71,6 +71,34 @@ You can reset incremental copy either per entire job or per table, giving you fi
 
 In some cases, when you edit a copy job — for example, updating the incremental column in your source table — Copy job resets the incremental copy to a full copy on the next run. This ensures data consistency between the source and the destination.
 
+## Understand Reset behavior
+
+If your Copy job uses incremental copy, Fabric maintains internal state (for example, a watermark or checkpoint) to know what data has already been processed.
+
+### What Reset does
+
+**Reset** clears the Copy job's incremental state (watermark/checkpoint) for the selected source(s). After you reset, the next run behaves like an initial run for incremental logic (for example, it can re-read the full range of data, depending on your configuration).
+
+### What Reset does not do
+
+**Reset does not delete, truncate, or otherwise change data in the destination.** Existing rows remain in the destination table or files.
+
+### Why Reset might create duplicates
+
+If you reset and the next run reads data that was previously loaded, the outcome depends on your destination write behavior:
+
+- **Append**: Previously loaded rows can be written again, causing duplicates.
+- **Overwrite/Merge/Upsert (if configured)**: Duplicate risk is reduced because existing data might be replaced or matched, but the exact behavior depends on the destination and your mappings/keys.
+
+### Best practice when using Reset with Append
+
+If you must use **Append** and also need to **Reset**:
+
+1. **Truncate or otherwise clear the destination table/data** (for example, delete existing rows) before running the Copy job again.
+1. Run the Copy job after the destination is cleared.
+
+This ensures that the reloaded data doesn't stack on top of existing data.
+
 ## Related content
 
 - [What is Copy job in Data Factory for Microsoft Fabric?](what-is-copy-job.md)
