@@ -11,12 +11,14 @@ Keep forecasts aligned with reporting cycles by editing the forecast period, man
 
 ## Editing forecasts
 
-Go to **Planning**> **Insert Column** > **Manage Measures** and select the edit icon for the forecast measure.
+Select **Planning** > **Insert Column** > **Manage Measures** and select the edit icon for the forecast measure.
 
 >[!TIP]
->Forecasts can be edited by selecting Edit Measure from the column gripper.
+>You can also edit forecasts by selecting **Edit Measure** from the column gripper.
 
-* To extend or shorten the open period, select the end period from **Forecast Period**.
+The following edit options are available:
+
+* To extend or shorten the open period, select the end period in **Forecast Period**.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-configure-forecast-settings/edit-forecast-period.png" alt-text="Screenshot of editing the forecast period." lightbox="../media/planning-forecasting/planning-how-to-configure-forecast-settings/edit-forecast-period.png":::
 
@@ -41,27 +43,28 @@ Go to **Planning**> **Insert Column** > **Manage Measures** and select the edit 
 
 ## Set aggregation for forecast column totals
 
-When the grand total or subtotal columns are enabled, configure how the forecast measure total is calculated.
+When the grand total or subtotal columns are enabled, configure how the forecast measure total is calculated:
 
-* Set **Aggregate total** to **All Periods** to calculate the total as the sum of open and closed forecast periods.
+* To calculate the total as the sum of open and closed forecast periods, set **Aggregate total** to **All Periods**.
 
-:::image type="content" source="../media/planning-forecasting/planning-how-to-configure-forecast-settings/set-aggregation.png" alt-text="Screenshot of option to set aggregation method for forecast total and subtotal columns." lightbox="../media/planning-forecasting/planning-how-to-configure-forecast-settings/set-aggregation.png":::
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-configure-forecast-settings/set-aggregation.png" alt-text="Screenshot of option to set aggregation method for forecast total and subtotal columns." lightbox="../media/planning-forecasting/planning-how-to-configure-forecast-settings/set-aggregation.png":::
 
-* Set **Aggregate total** to **Closed Periods** to calculate the total as the sum of closed forecast periods.
+* To calculate the total as the sum of closed forecast periods, set **Aggregate total** to **Closed Periods**.
 
-:::image type="content" source="../media/planning-forecasting/planning-how-to-configure-forecast-settings/aggregation-closed-periods.png" alt-text="Screenshot of forecast aggregation set to closed periods." lightbox="../media/planning-forecasting/planning-how-to-configure-forecast-settings/aggregation-closed-periods.png":::
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-configure-forecast-settings/aggregation-closed-periods.png" alt-text="Screenshot of forecast aggregation set to closed periods." lightbox="../media/planning-forecasting/planning-how-to-configure-forecast-settings/aggregation-closed-periods.png":::
 
-* In the same way, set **Aggregate total** to **Open Periods** to include only open forecasts in the total.
+* To include only open forecasts in the total, set **Aggregate total** to **Open Periods**.
 
 ## Control forecast updates from actuals
 
-Define how the forecast responds as actuals are loaded. Choose to replace forecast values with actuals or keep forecast values unchanged.
+Define how the forecast responds as actuals are loaded: replace forecast values with actuals or keep forecast values unchanged.
 
-To replace forecasted values with actuals as they become available, the **Closed Period** configuration must be set to **Measure**.
+To replace forecasted values with actuals as they become available, set **Closed Period** to **Measure**.
 
 :::image type="content" source="../media/planning-forecasting/planning-how-to-configure-forecast-settings/retain-forecast-prerequisite.png" alt-text="Screenshot of setting closed period to measure." lightbox="../media/planning-forecasting/planning-how-to-configure-forecast-settings/retain-forecast-prerequisite.png":::
 
-* Choose **Overwrite forecasts** to replace forecasted values with actuals when the forecast for that period is closed.
+Then, choose an **Action for closed periods**:
+* To replace forecasted values with actuals when the forecast for that period is closed, choose **Overwrite forecasts**.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-configure-forecast-settings/overwrite-forecast-result.png" alt-text="Screenshot of overwriting forecasts with actuals." lightbox="../media/planning-forecasting/planning-how-to-configure-forecast-settings/overwrite-forecast-result.png":::
 
@@ -69,10 +72,10 @@ To replace forecasted values with actuals as they become available, the **Closed
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-configure-forecast-settings/retain-forecast.png" alt-text="Screenshot of option to retain forecast values." lightbox="../media/planning-forecasting/planning-how-to-configure-forecast-settings/retain-forecast.png":::
 
-* Select **Retain blank values** to leave empty forecast cells unchanged when the forecast is closed.
+* To leave empty forecast cells unchanged when the forecast is closed, select **Retain blank values**.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-configure-forecast-settings/retain-blank-forecasts-option.jpg" alt-text="Retaining blank forecast values when actuals become available." lightbox="../media/planning-forecasting/planning-how-to-configure-forecast-settings/retain-blank-forecasts-option.jpg":::
 
-    When the forecast is closed, blank values are replaced with actuals unless explicitly retained.
+    When the forecast is closed, blank values are replaced with actuals unless they're explicitly retained.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-configure-forecast-settings/replace-blank-values-actuals.png" alt-text="Screenshot of replacing blank forecasts with actuals when the retain option isn't selected." lightbox="../media/planning-forecasting/planning-how-to-configure-forecast-settings/replace-blank-values-actuals.png":::

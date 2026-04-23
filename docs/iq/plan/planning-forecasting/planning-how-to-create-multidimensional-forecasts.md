@@ -7,7 +7,7 @@ ms.topic: how-to
 
 # Create multidimensional forecasts
 
-Organizations often maintain forecasts separately by region, product, or other business dimensions, resulting in inconsistencies across forecast views. Cube‑based forecasting makes it possible to generate and distribute forecasts across multiple dimensions with varying levels of granularity in a single step. As forecasts are updated, values remain synchronized across all related dimensions.
+Organizations often maintain forecasts separately by region, product, or other business dimensions, resulting in inconsistencies across forecast views. Cube-based forecasting makes it possible to generate and distribute forecasts across multiple dimensions with varying levels of granularity in a single step. As you update forecasts, values remain synchronized across all related dimensions.
 
 This article explains how to configure and use a cube for multi-dimensional forecasting. For more information about using cubes, see [Plan across multiple dimensions with cubes](../planning-how-to-create-cube.md).
 
@@ -28,24 +28,23 @@ Forecasts are generated for the row dimensions included in the planning sheet. T
 
 1. Complete the forecast configuration and create the forecast.
 
-    After the forecast cube is created, it will appear in the **From Sheets** section of the **Data** pane. The forecast can then be imported into other sheets with different granularities without creating separate forecasts for each sheet.
+    After you create the forecast cube, it appears in the **From Sheets** section of the **Data** pane. You can then import the forecast into other sheets with different granularities without creating separate forecasts for each sheet.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-create-multidimensional-forecasts/forecast-cube.png" alt-text="Screenshot of a forecast cube measure." lightbox="../media/planning-forecasting/planning-how-to-create-multidimensional-forecasts/forecast-cube.png":::
 
-1. To import a forecast cube into a different planning sheet, go to **Data** > **From Sheets** and select **More(...)** > **Insert as a measure** for that cube.&#x20;
+1. To import a forecast cube into a different planning sheet, go to **Data** > **From Sheets** and select **More(...)** > **Insert as a measure** for that cube.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-create-multidimensional-forecasts/insert-forecast-cube.png" alt-text="Screenshot of inserting a forecast cube measure." lightbox="../media/planning-forecasting/planning-how-to-create-multidimensional-forecasts/insert-forecast-cube.png":::
 
-    After the forecast cube is inserted into the planning sheet, updates made in either sheet sync automatically, streamlining the process of forecasting across dimensions.
+    After you insert the forecast cube into the planning sheet, updates made in either sheet sync automatically, streamlining the process of forecasting across dimensions.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-create-multidimensional-forecasts/forecast-cube-inserted.png" alt-text="Screenshot of a forecast cube measure imported into another planning sheet." lightbox="../media/planning-forecasting/planning-how-to-create-multidimensional-forecasts/forecast-cube-inserted.png":::
 
-1. Forecast values are distributed equally across dimensions in the second sheet. Select a cell to redistribute values based on the measure weights in the second sheet.
+1. The system distributes forecast values equally across dimensions in the second sheet. Select a cell to redistribute values based on the measure weights in the second sheet.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-create-multidimensional-forecasts/redistribute-forecast-cube.png" alt-text="Screenshot of redistributing a forecast cube measure values." lightbox="../media/planning-forecasting/planning-how-to-create-multidimensional-forecasts/redistribute-forecast-cube.png":::
 
 ## Related content
 
-[Forecast data to predict future trends](./planning-how-to-build-forecasts.md)
-
-[Plan across multiple dimensions with cubes](../planning-concept-cube.md)
+* [Forecast data to predict future trends](./planning-how-to-build-forecasts.md)
+* [Plan across multiple dimensions with cubes](../planning-concept-cube.md)
