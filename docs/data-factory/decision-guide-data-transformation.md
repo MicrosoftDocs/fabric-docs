@@ -12,13 +12,19 @@ Microsoft Fabric Dataflows Gen2 offers multiple ways to ingest, transform, and l
 
 Depending on your transformation needs, choose from three powerful capabilities:
 
-- [**Fast copy in Dataflow Gen2**](dataflows-gen2-fast-copy.md) – Accelerate bulk data movement with minimal transformation.  
-- [**Modern Evaluator for Dataflow Gen2**](dataflow-gen2-modern-evaluator.md)  – Optimize complex transformation performance for non-foldable queries.  
-- [**Use partitioned compute in Dataflow Gen2**](dataflow-gen2-partitioned-compute.md) – Scale transformations across large and partitioned datasets.
+- [**Staging queries**](placedholder.md) - TBD
+- [**V Ordering**] - TBD
+- [**High-Scale Compute output**] - TBD
+- [**Fast copy**](dataflows-gen2-fast-copy.md) – Accelerate bulk data movement with minimal transformation.  
+- [**Modern Evaluator**](dataflow-gen2-modern-evaluator.md)  – Optimize complex transformation performance for non-foldable queries.  
+- [**Partitioned compute**](dataflow-gen2-partitioned-compute.md) – Scale transformations across large and partitioned datasets.
+- [**Incremental refresh**] - TBD
 
 This guide explains **when and why** to use each feature. It includes real-world examples and benchmarking results.
 
-## Choose the right strategy
+## Quick reference
+
+Use the following table to match your workload to the right Dataflow Gen2 capability.
 
 | Your goal | Recommended capability |
 |-----------|------------------------|
@@ -52,7 +58,9 @@ For a benchmark example, see [Scenario 2: Improve transformation speed by using 
 
 For a benchmark example, see [Scenario 3: Scale transformations with partitioned compute](#scenario-3-scale-transformations-with-partitioned-compute).
 
-## Capability comparison
+### Capability comparison
+
+The following table compares each capability in more detail, including supported sources and typical benefits.
 
 | Capability          | Flagship scenario                                    | Ideal workload                                      | Supported sources | Typical benefits |
 |--------------------|------------------------------------------------------|------------------------------------------------------|-------------------|------------------|
@@ -63,16 +71,20 @@ For a benchmark example, see [Scenario 3: Scale transformations with partitioned
 > [!NOTE]
 > For more information on query evaluation and query folding, see this [Power Query article](/power-query/query-folding-basics). It provides a framework that can help you understand the concepts discussed here.
 
-## Scenario benchmark dataset
+## Benchmark results summary
 
-All scenarios in this guide use the [**New York City Taxi & Limousine Commission (TLC) Trip Data – TLC Trip Record Data**](/azure/open-datasets/dataset-taxi-yellow?tabs=azureml-opendatasets) dataset, which contains billions of records detailing taxi trips across NYC.
+All scenarios in this guide use the [**New York City Taxi & Limousine Commission (TLC) Trip Data – TLC Trip Record Data**](/azure/open-datasets/dataset-taxi-yellow?tabs=azureml-opendatasets) dataset: billions of taxi trip records stored as Parquet files in ADLS Gen2, covering 2021–2025 (up to August). The destination is a Fabric lakehouse or warehouse, depending on the scenario.
 
-- **Data format:** Parquet files stored in ADLS Gen2  
-- **Data size:** Multi-gigabyte datasets for years 2021–2025 (up to August)  
-- **Destination:** Fabric Lakehouse and Warehouse  
-- **Goal:** Demonstrate execution time improvements using Dataflow Gen2 capabilities  
+The following table summarizes the benchmark results across all three scenarios. Each scenario also includes a Dataflow Gen1 baseline for comparison.
 
-This consistent dataset provides a fair and controlled environment to compare Fast Copy, Modern Evaluator, and Partitioned Compute strategies.
+| Scenario | Capability enabled | Gen2 execution time | Speedup vs. Gen1 baseline |
+|----------|-------------------|---------------------|---------------------------|
+| Bulk ingestion (5 files → lakehouse) | Fast Copy | 00:07:43 | 13× faster |
+| Complex transforms (1 file → warehouse) | Modern Evaluator | 01:00:58 | 1.2× faster |
+| Partitioned transforms (56 files → warehouse) | Partitioned Compute | 00:06:51 | 15× faster |
+| Partitioned transforms (56 files → warehouse) | Partitioned Compute + Modern Evaluator | 00:04:48 | 21× faster |
+
+For step-by-step details, dataset configurations, and design patterns for each capability, see the scenario sections that follow.
 
 ## Scenario 1: Accelerate bulk ingestion by using fast copy
 
