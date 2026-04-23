@@ -118,7 +118,7 @@ In your Fabric workspace, start by creating a new Copy job or opening an existin
 
 In the Copy job setup, after selecting the source tables or folders to be copied, add audit columns. How you configure audit columns depends on whether your source is table-based or file-based:
 
-- **Table-based sources**: Audit columns are configured per table. Each table has its own configuration, so each table has its own audit columns. Select (highlight) each table individually in the table list, and then define the audit columns for that table. Repeat this step for every table that you want to enrich with audit columns.
+- **Table-based sources**: Audit columns are configured per table. Each table has its own configuration, so each table has its own audit columns. Select each table individually in the table list, and then define the audit columns for that table. Repeat this step for every table that you want to enrich with audit columns.
 - **File-based sources**: Audit columns are configured once and shared across all files. You only need to define audit columns one time, and the same configuration applies to every file that the Copy job copies.
 
    :::image type="content" source="media/copy-job/configure-audit-columns.png" alt-text="Screenshot of configuring Audit Columns in Copy job.":::
