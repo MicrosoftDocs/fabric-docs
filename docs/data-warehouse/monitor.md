@@ -1,8 +1,8 @@
 ---
 title: Monitor T-SQL Queries with Data Warehouse Monitor
 description: Learn about monitoring running and completed queries in your Fabric warehouse using Data Warehouse Monitor.
-ms.reviewer: mariyaali
-ms.date: 04/23/2026
+ms.reviewer: mariyaali, twcyril
+ms.date: 05/08/2026
 ms.topic: how-to
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ms.custom: sfi-image-nochange
@@ -43,6 +43,9 @@ On the **Query history** page, you can review recent query executions and identi
 - Use the time filter to switch quickly between the last 24 hours, last 7 days, last 30 days, or a custom time range.
 - Review active filters as removable pills above the chart area. When you apply or remove filters, Monitor refreshes the chart and the query grid to match the current filter set.
 - Select **Refresh** to reload the current results. If you see a query that you want to stop, select the query by using the checkbox and then select **Cancel**. You're prompted to confirm before the query is canceled. Any unselected queries that are part of the same SQL sessions that you selected are also canceled.
+
+> [!NOTE]  
+> Currently, filters applied in the monitoring experience might not be synchronized between the chart and data grid. To view consistent results, use the refresh option to reload the data.
 
 :::image type="content" source="media/monitor/cancel-dialog.png" alt-text="Screenshot of the Query history cancel dialog." lightbox="media/monitor/cancel-dialog.png":::
 
