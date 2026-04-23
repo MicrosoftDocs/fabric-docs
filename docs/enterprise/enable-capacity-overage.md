@@ -13,6 +13,9 @@ ai-usage: ai-assisted
 
 Capacity overage is an opt-in feature that automatically pays for excess capacity usage, up to a limit set by the capacity admin. It prevents throttling and ensures that workloads continue uninterrupted, even when they temporarily exceed a capacity's limits. For more information about how capacity overage works, costs, and limits, see [Capacity overage in Microsoft Fabric](capacity-overage-overview.md).
 
+> [!NOTE]
+> Capacity overage is currently in public preview. Functionality and pricing are subject to change before general availability. This feature is currently only available for F SKUs.
+
 ## Prerequisites
 
 Before you enable capacity overage, ensure you meet the following requirements:
