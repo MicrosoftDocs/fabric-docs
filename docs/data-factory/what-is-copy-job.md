@@ -41,6 +41,15 @@ In incremental copy, every run after the initial full copy (called a "subsequent
 
 If a copy job fails, you don’t need to worry about data loss. Copy job always resumes from the end of the last successful run. A failure doesn't change the state managed by Copy job. You can also reset incremental copy back to a full copy at any time — either for the entire job or per table.
 
+#### When to use CDC vs. watermark-based incremental copy
+
+At a high level:
+
+- Use **CDC-based incremental copy** when CDC is enabled on your source and supported by the Copy job connector, and you need to replicate inserts, updates, and **deletes**, keep the destination continuously in sync, support SCD Type 2 history, or minimize scan load on high-change-volume tables.
+- Use **watermark-based incremental copy** when CDC isn't available on your source but your table has a reliable incremental column (for example, `ROWVERSION`, datetime, date, integer, or string interpreted as datetime) and you only need to track inserts and updates.
+
+When a source table has CDC enabled, Copy job lets you pick either approach per table, so you can mix them within a single job.
+
 See more details in:
 
 - [Incremental copy in Copy job](incremental-copy-job.md).
