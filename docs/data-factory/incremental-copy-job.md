@@ -44,7 +44,6 @@ CDC is a good fit when:
 
 - **Your source database has CDC enabled** and Copy job supports CDC for that connector. See [Change data capture (CDC) in Copy Job](cdc-copy-job.md) for the list of supported sources.
 - **You need to replicate deletes**, not just inserts and updates. CDC captures delete events so the destination can be kept in sync with the source.
-- **You need near real-time or high-fidelity replication**, where every insert, update, and delete between runs must be reflected at the destination.
 - **You want to keep the destination continuously synchronized** with the source as a mirrored copy, for example by using SCD Type 1 (Merge) write behavior.
 - **You need historical tracking** of changes at the destination. CDC in Copy job supports SCD Type 2, which preserves previous versions of each record.
 - **You want to minimize load on the source**. CDC reads from the database's change feed instead of scanning the source table for rows newer than a watermark, which can be more efficient for high-change-volume tables.
@@ -57,8 +56,6 @@ Watermark-based incremental copy is a good fit when:
 - **CDC isn't enabled or isn't available** on your source database, or you can't enable it because of permissions, licensing, or source system constraints.
 - **Your source table has a reliable incremental column** that increases monotonically whenever rows are inserted or updated. For supported types, see [Supported watermark column types](#supported-watermark-column-types).
 - **You only need to track inserts and updates**, not deletes. Watermark-based incremental copy can't detect rows that are deleted from the source.
-- **Append or overwrite semantics are acceptable** at the destination. If you need merge behavior based on changes, you typically pair incremental copy with a merge step downstream.
-- **Change volume is low to moderate**, or your extraction window is infrequent enough that scanning by watermark doesn't put excessive load on the source.
 - **You're copying files** based on their last-modified date. File-based incremental copy uses the file modification timestamp as the watermark.
 
 ### Quick comparison
@@ -69,10 +66,9 @@ Watermark-based incremental copy is a good fit when:
 | Detects inserts | Yes | Yes |
 | Detects updates | Yes | Yes (when the watermark column changes) |
 | Detects deletes | Yes | No |
-| Typical write methods | SCD Type 1 (Merge) or SCD Type 2 | Append, Overwrite, or Merge (when configured) |
-| Best for | High-fidelity replication, delete tracking, historical tracking, high change volumes | Sources without CDC, low to moderate change volumes, insert/update scenarios |
+| Typical write methods | SCD Type 1 (Merge) or SCD Type 2 | Append or Merge (when configured) |
 
-If your database has CDC enabled, you don't need to choose an incremental column — Copy job automatically detects the changes. When a source table has CDC enabled, Copy job lets you pick either CDC-based or watermark-based incremental copy per table, so you can mix approaches within a single job based on each table's requirements.
+If your database has CDC enabled, you don't need to choose an incremental column — Copy job automatically detects the changes. When a source table does not have CDC enabled, Copy job goes with watermark-based incremental copy approach.
 
 ## Supported watermark column types
 
