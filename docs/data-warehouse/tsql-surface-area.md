@@ -34,8 +34,8 @@ Fabric Data Warehouse supports T-SQL tables, views, stored procedures, functions
    - You can `ADD` nullable columns of supported column data types.
    - `DROP COLUMN` is supported.
    - `ADD` or `DROP` `PRIMARY KEY`, `UNIQUE`, and `FOREIGN_KEY` column constraints are supported, but only if the `NOT ENFORCED` option has been specified. All other `ALTER TABLE` operations are blocked. There are limitations with adding table constraints or columns when using [Source Control with Warehouse](source-control.md#limitations-in-source-control).
-   - `ALTER` distributed temporary tables are supported.
-   - `ALTER COLUMN` is in preview. To learn more about the supported type changes and behavioral consideration refer to [ALTER COLUMN in Fabric Data Warehouse](/sql/t-sql/statements/alter-table-transact-sql?view=sql-server-ver17#syntax-for-warehouse-in-fabric)
+   - `ALTER TABLE` on distributed temporary tables is supported.
+   - `ALTER TABLE ... ALTER COLUMN` is in preview. For more information, see [ALTER COLUMN in Fabric Data Warehouse](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true#syntax-for-warehouse-in-fabric).
    - Supported `ALTER TABLE` statements can be executed inside an explicit user-defined transaction in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 - `MERGE` syntax is supported and is a generally available feature. For more information, see [MERGE T-SQL syntax](/sql/t-sql/statements/merge-transact-sql?view=fabric&preserve-view=true).
 - [AI functions (preview)](ai-functions.md) enable advanced text processing without leaving your warehouse.
