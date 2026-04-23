@@ -1,0 +1,27 @@
+---
+title: "Limitations in Microsoft Fabric catalog mirroring for Dremio"
+description: Learn about limitations for Dremio catalog mirroring in Microsoft Fabric.
+author: matt1883
+ms.author: mahi
+ms.reviewer: mahi
+ms.date: 04/27/2026
+ms.topic: overview
+ms.custom: references_regions
+---
+
+# Limitations in Microsoft Fabric catalog mirroring for Dremio
+
+This article lists current limitations and considerations with Dremio catalog mirroring in Microsoft Fabric.
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+
+## Limitations and considerations
+
+- The connected Dremio project must be reachable via the public internet. Firewall rules or other network restrictions are not currently supported by catalog mirroring. Microsoft plans to address this limitation.
+- Dremio Iceberg tables that share names with previously dropped tables will not be successfully mirrored. This is due to the way the table's storage folder is reused across deletion/recreation of tables. Dremio is working on addressing this limitation. 
+
+## Related content
+
+- [Tutorial: Configure Microsoft Fabric mirrored databases from Dremio](catalog-mirroring-dremio-tutorial.md)
+- [Review the FAQ](catalog-mirroring-dremio-faq.md)
+- [Mirroring Dremio Catalog](catalog-mirroring-dremio.md)
