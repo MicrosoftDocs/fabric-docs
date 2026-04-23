@@ -20,7 +20,7 @@ ms.topic: tutorial
 - The Dremio project must be reachable via the public internet. Firewall rules or other network restrictions are not currently supported. See [limitations and considerations of this feature](catalog-mirroring-dremio-limitations.md).
 - You need a Fabric workspace associated with a Fabric capacity (F SKU or Trial).
 - You must have the necessary permissions in Dremio to read the catalogs, namespaces, and tables you want to mirror.
-- Your Fabric tenant administrator must first enable the [tenant admin setting](../../admin/about-tenant-settings.md) titled **"Enabled new mirrored catalog items (Preview)**.
+- Your Fabric tenant administrator must first enable the [tenant admin setting](../../admin/about-tenant-settings.md) titled **"Enable new mirrored catalog items (Preview)**.
 
 ## Create a mirrored Dremio catalog
 
