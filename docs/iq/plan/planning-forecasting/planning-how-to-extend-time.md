@@ -21,4 +21,4 @@ The **Extend Time** feature combines data input and forecasting to enable data e
 1. Select **Extend Time**.
 1. Select the start and end periods to extend the data input measures to the specified time range.
 
-:::image type="content" source="../media/planning-forecasting/planning-how-to-extend-time/extend-time-data-input.png" alt-text="Time extension for data input measures." lightbox="../media/planning-how-to-extend-time/extend-time-data-input.png":::
+:::image type="content" source="../media/planning-forecasting/planning-how-to-extend-time/extend-time-data-input.png" alt-text="Time extension for data input measures." lightbox="../media/planning-forecasting/planning-how-to-extend-time/extend-time-data-input.png":::
