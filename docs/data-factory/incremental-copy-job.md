@@ -80,7 +80,7 @@ Copy job supports the following watermark column types for watermark-based incre
 - **String (interpreted as datetime)**: String columns whose values can be interpreted as datetime. This lets you use incremental copy even when timestamps are stored as strings, with no need to cast or transform columns or make schema changes in the source.
 - **Integer**: An increasing number that tracks row changes.
 
-## How NULL values in a watermark column are handled
+### How NULL values in a watermark column are handled
 
 Watermark-based incremental copy detects new or changed rows by comparing values in the watermark column across runs. Because NULL values can't be compared in this way, they're handled as follows:
 
@@ -97,7 +97,7 @@ You can reset incremental copy either per entire job or per table, giving you fi
 
 In some cases, when you edit a copy job — for example, updating the incremental column in your source table — Copy job resets the incremental copy to a full copy on the next run. This ensures data consistency between the source and the destination.
 
-## Understand Reset behavior
+### Understand Reset behavior
 
 If your Copy job uses incremental copy, Fabric maintains internal state (for example, a watermark or checkpoint) to know what data has already been processed.
 
