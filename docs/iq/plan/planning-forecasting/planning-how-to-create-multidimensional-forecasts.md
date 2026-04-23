@@ -46,6 +46,6 @@ Forecasts are generated for the row dimensions included in the planning sheet. T
 
 ## Related content
 
-[Forecast data to predict future trends](../planning-how-to-build-forecasts.md)
+[Forecast data to predict future trends](./planning-how-to-build-forecasts.md)
 
-[Plan across multiple dimensions with cubes](../cube-concept.md)
+[Plan across multiple dimensions with cubes](../planning-concept-cube.md)
