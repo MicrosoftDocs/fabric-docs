@@ -124,9 +124,9 @@ items:
     - name: Create and manage roles
       href: ./security/create-manage-roles.md
     - name: SQL analytics endpoint security
-      href: sql-analytics-endpoint-onelake-security.md
+      href: ./security/sql-analytics-endpoint-onelake-security.md
     - name: Troubleshoot SQL analytics endpoint security
-      href: troubleshoot-onelake-security-for-sql-analytics-endpoint.md
+      href: ./security/troubleshoot-onelake-security-for-sql-analytics-endpoints.md
     - name: Granular data access control
       items:
       - name: Table and folder security
