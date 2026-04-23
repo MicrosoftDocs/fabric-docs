@@ -9,7 +9,7 @@ ms.topic: how-to
 
 Organizations often maintain forecasts separately by region, product, or other business dimensions, resulting in inconsistencies across forecast views. Cube‑based forecasting makes it possible to generate and distribute forecasts across multiple dimensions with varying levels of granularity in a single step. As forecasts are updated, values remain synchronized across all related dimensions.
 
-This article explains how to configure and use a cube for multi-dimensional forecasting. For more information about using cubes, see [Plan across multiple dimensions with cubes](../planning-how-to-create-data-cube.md).
+This article explains how to configure and use a cube for multi-dimensional forecasting. For more information about using cubes, see [Plan across multiple dimensions with cubes](../planning-how-to-create-cube.md).
 
 ## Extend forecasting to dimensions outside the sheet
 
@@ -38,7 +38,7 @@ Forecasts are generated for the row dimensions included in the planning sheet. T
 
     After the forecast cube is inserted into the planning sheet, updates made in either sheet sync automatically, streamlining the process of forecasting across dimensions.
 
-    :::image type="content" source="../media/planning-forecasting/planning-how-to-create-multidimensional-forecasts/forecast-cube-inserted.png" alt-text="Screenshot of a forecast cube measure." lightbox="../media/planning-forecasting/planning-how-to-create-multidimensional-forecasts/forecast-cube-inserted.png":::
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-create-multidimensional-forecasts/forecast-cube-inserted.png" alt-text="Screenshot of a forecast cube measure imported into another planning sheet." lightbox="../media/planning-forecasting/planning-how-to-create-multidimensional-forecasts/forecast-cube-inserted.png":::
 
 1. Forecast values are distributed equally across dimensions in the second sheet. Select a cell to redistribute values based on the measure weights in the second sheet.
 
@@ -46,6 +46,6 @@ Forecasts are generated for the row dimensions included in the planning sheet. T
 
 ## Related content
 
-[Forecast data to predict future trends](./planning-how-to-build-forecasts.md)
+[Forecast data to predict future trends](../planning-how-to-build-forecasts.md)
 
 [Plan across multiple dimensions with cubes](../cube-concept.md)
