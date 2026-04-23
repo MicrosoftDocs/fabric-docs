@@ -60,7 +60,7 @@ Watermark-based incremental copy detects new or changed rows by comparing values
 
 **Best practices**:
 
-- Apply a **NOT NULL** constraint to the watermark column in the source so that every row has a valid value for incremental tracking.
+- Apply a `NOT NULL` constraint to the watermark column in the source so that every row has a valid value for incremental tracking.
 - If you can't change the source schema, define a computed column or view that uses `COALESCE` (or an equivalent function) to replace NULL values with a sensible default, and use that computed column as the watermark.
 - Choose a watermark column that's guaranteed to increase monotonically and is always populated, such as a `ROWVERSION` column or a reliably maintained `LastUpdatedDatetime` column.
 
