@@ -32,19 +32,19 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Lakehouse with Schema | - | ✓ | ✓ |
 |  | Spark Connectors for SQL Data Warehouse | - | - | - |
 | **Data Factory** | Default Semantic Model | ✓ | - | ✓ |
-|  | Pipeline | ✓ | ✓ | Preview |
+|  | Pipeline | ✓ | ✓ | ✓ |
 |  | Dataflow Gen1 | - | - | - |
-|  | Dataflow Gen2 | - | ✓ | Preview |
-|  | Copy Job | ✓ | ✓ | Preview |
+|  | Dataflow Gen2 | - | ✓ | ✓ |
+|  | Copy Job | ✓ | ✓ | ✓ |
 |  | Mounted Azure Data Factory | ✓ | - | - |
-|  | Vnet data gateway | ✓ | - | Preview |
-|  | On-premises data gateway: Pipeline/Copy Job | ✓ | - | Preview |
-|  | On-premises data gateway: Dataflow Gen2 | -| - | Preview|
+|  | Vnet data gateway | ✓ | - | ✓ |
+|  | On-premises data gateway: Pipeline/Copy Job | ✓ | - | ✓ |
+|  | On-premises data gateway: Dataflow Gen2 | -| - | ✓ |
 |  | Data Workflow | - | - | - |
 |  | Data Build Tool job | - | - | - |
 | **Data Science** | ML Model | ✓ | ✓ | ✓ |
 |  | Experiment | ✓ | ✓ | ✓ |
-|  | Data Agent | ✓ | - | Preview |
+|  | Data Agent | ✓ | - |  |
 | **Data Warehouse** | SQL Endpoint | ✓ | ✓ | ✓ |
 |  | Warehouse | ✓ | ✓ | ✓ |
 |  | Warehouse with EDPE | - | - | - |
@@ -59,19 +59,19 @@ The following table shows the support status for each Fabric item. A check mark 
 | **Industry Solutions** | Healthcare data solutions | - | ✓ | - |
 |  | Sustainability Solution | - | ✓ | - |
 |  | Retail Solution | - | ✓ | - |
-| **Mirroring** | Mirrored Azure SQL Database | - | - | Preview|
-|  | Mirrored Azure SQL Managed Instance | ✓ | - | Preview |
-|  | Open Mirroring | ✓ | - | Preview |
+| **Mirroring** | Mirrored Azure SQL Database | - | - | ✓ |
+|  | Mirrored Azure SQL Managed Instance | ✓ | - | ✓ |
+|  | Open Mirroring | ✓ | - | ✓ |
 |  | Mirrored Azure Databricks Catalog | - | - | - |
-|  | Mirrored Snowflake | - | - | Preview|
-|  | Mirrored SQL Server 2025 (Windows/Linux on-premises) | ✓ | - | Preview |
+|  | Mirrored Snowflake | - | - | ✓ |
+|  | Mirrored SQL Server 2025 (Windows/Linux on-premises) | ✓ | - | ✓ |
 |  | Mirrored SQL Server 2016-2022 | - | - | - |
 |  | Mirrored Dataverse | - | - | - |
-|  | Mirrored SAP | - | - | Preview |
-|  | Mirrored Azure Cosmos DB | ✓ | - | Preview |
-|  | Mirrored Azure Database for PostgreSQL | - | - | Preview |
-|  | Mirrored Google Bigquery | - | - | Preview |
-|  | Mirrored Oracle |  | - | Preview |
+|  | Mirrored SAP | - | - | ✓ |
+|  | Mirrored Azure Cosmos DB | ✓ | - | ✓ |
+|  | Mirrored Azure Database for PostgreSQL | - | - | ✓ |
+|  | Mirrored Google Bigquery | - | - | ✓ |
+|  | Mirrored Oracle |  | - | ✓ |
 | **Fabric Databases** | SQL database in Fabric |  | ✓ | - |
 |  | Cosmos DB |  |  | - |
 |  | Snowflake database | - | - | - |
