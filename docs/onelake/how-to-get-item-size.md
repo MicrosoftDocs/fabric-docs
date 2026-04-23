@@ -5,7 +5,7 @@ ms.reviewer: eloldag # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
-ms.date: 04/16/2026
+ms.date: 04/23/2026
 
 #CustomerIntent:
 ---
@@ -14,11 +14,11 @@ ms.date: 04/16/2026
 
 Learn how to get the size of your OneLake data to manage and plan storage costs. Capacity admins can use the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app-storage-page.md) to find the total size of OneLake data stored in a given capacity or workspace. But to investigate further and track usage per-item, you can use the OneLake storage report or other tools.
 
-This article describes how to use the new OneLake storage report and Azure Storage PowerShell commands to investigate how much data is stored across OneLake.
+This article describes how to use the OneLake storage report and Azure Storage PowerShell commands to investigate how much data is stored across OneLake.
 
-## Investigating item sizes with the OneLake storage report
+## View item sizes with the OneLake storage report
 
-The OneLake storage report is a new feature built directly in the Fabric portal that calculates the amount of data stored in each of your items. Use this tool to easily investigate which items in your workspace are contributing the most to your OneLake storage bill, so you can make informed decisions about maintaining your data.  
+The OneLake storage report is built directly in the Fabric portal and calculates the amount of data stored in each of your items. Use this tool to investigate which items in your workspace are contributing the most to your OneLake storage bill, so you can make informed decisions about maintaining your data.  
 
 By refreshing the storage report in your workspace's settings, you can:
 
@@ -40,29 +40,29 @@ The storage report contains the following fields:
 | Type        | The type of the item (ex: Lakehouse).                                          |
 | Billing     | The billing status of the item. Non-billable items aren't charged for OneLake storage. Partially-billable items aren't charged up to a limit.   |
 | Total       | The total amount of data stored in the item, including system and soft-deleted data.                                                            |
-| Soft-delete | Deleted data that is within the seven day retention window. [Learn more](soft-delete.md).                                              |
+| Soft-delete | Deleted data that is within the seven day retention window. For more information, see [Recover deleted files in OneLake](soft-delete.md).                                              |
 | System      | Workload data such as internal metadata, logs, and temporary files that aren't directly accessible but count toward storage usage.             |
 
 You can generate a similar report programatically using tools like PowerShell  However, the OneLake storage report doesn't require external tools and scans all your data, including data you don't have access to, such as system data.  
 
 ### Storage report costs
 
-When you refresh your storage report, OneLake calculates the amount of data stored in each of your items automatically  You're charged for the iterative read operations required to scan your workspace. OneLake charges 1,626 Fabric Capacity Units (CUs) per 10,000 iterative read operations, and each iterative read operation can scan up to 5,000 files  Therefore, you can estimate that refreshing your report for a workspace containing 50,000,000 files consumes 1,626 CUs.
+When you refresh your storage report, OneLake calculates the amount of data stored in each of your items. You're charged for the iterative read operations required to scan your workspace. OneLake charges 1,626 Fabric Capacity Units (CUs) per 10,000 iterative read operations, and each iterative read operation can scan up to 5,000 files  Therefore, you can estimate that refreshing your report for a workspace containing 50,000,000 files consumes 1,626 CUs.
 
 For more information about OneLake capacity consumption, see [OneLake consumption](onelake-consumption.md).
 
 ### Storage report limitations  
 
-- The storage report doesn't  include any OneLake diagnostic events routed to a lakehouse.
+- The storage report doesn't include any OneLake diagnostic events routed to a lakehouse.
 - Refreshing the storage report might fail when called from a region different than the workspace region.  
 
-## Getting the size of OneLake items with PowerShell
+## Get the size of OneLake items with PowerShell
 
 You can also use tools like PowerShell with Azure Storage commands to explore and summarize your data in OneLake. Because OneLake is compatible with Azure Data Lake Storage (ADLS) tools, many of the commands work by just replacing the ADLS URL with a OneLake URL.
 
 To automate the steps in this article, use REST API commands to get the workspace and item information instead of providing them manually. For more information, see [List workspaces](/rest/api/fabric/core/workspaces/list-workspaces) and [List items](/rest/api/fabric/core/items/list-items).
 
-### Prerequisites
+### PowerShell prerequisites
 
 * Azure PowerShell. For more information, see [How to install Azure PowerShell](/powershell/azure/install-azure-powershell)
 
@@ -94,7 +94,7 @@ For ease of reuse, create this context as a local variable:
 $ctx = New-AzStorageContext -StorageAccountName 'onelake' -UseConnectedAccount -endpoint 'fabric.microsoft.com'
 ```
 
-## Get the size of an item or folder
+### Get the size of an item or folder
 
 To get an item size, use the [Get-AzDataLakeGen2ChildItem](/powershell/module/az.storage/get-azdatalakegen2childitem) command with the following values:
 
@@ -149,6 +149,6 @@ $colitems = Get-AzDataLakeGen2ChildItem -Context $ctx -FileSystem $workspaceName
 "Total file size: " + ($colitems.sum / 1GB) + " GB"
 ```
 
-## Limitations
+### PowerShell limitations
 
 These PowerShell commands don’t work on shortcuts that point to ADLS containers directly. Instead, we recommended that you create ADLS shortcuts to directories that are at least one level below a container.
