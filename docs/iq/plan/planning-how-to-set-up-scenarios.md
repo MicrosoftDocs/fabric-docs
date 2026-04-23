@@ -186,9 +186,9 @@ Use **Bulk edit** to apply changes to multiple values in a scenario at once. Use
 
 1. Select **Bulk Edit** from **Scenario**.
 1. In the **Bulk Edit** pane, configure the following:
-  * **Measure**: Select the scenario measure to update.
-  * **Row dimensions**: Select the required categories and subcategories.
-  * **Column dimensions**: Select the required columns or time periods.
+   * **Measure**: Select the scenario measure to update.
+   * **Row dimensions**: Select the required categories and subcategories.
+   * **Column dimensions**: Select the required columns or time periods.
 
 > [!NOTE]
 > As you select dimensions, the Planning sheet updates to reflect the filtered data.
