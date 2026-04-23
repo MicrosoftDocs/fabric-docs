@@ -63,7 +63,7 @@ If your Copy job uses incremental copy, Fabric maintains internal state (for exa
 If you reset and the next run reads data that was previously loaded, the outcome depends on your destination write behavior:
 
 - **Append**: Previously loaded rows can be written again, causing duplicates.
-- **Overwrite/Merge/Upsert (if configured)**: Duplicate risk is reduced because existing data may be replaced or matched, but the exact behavior depends on the destination and your mappings/keys.
+- **Overwrite/Merge/Upsert (if configured)**: Duplicate risk is reduced because existing data might be replaced or matched, but the exact behavior depends on the destination and your mappings/keys.
 
 > [!WARNING]
 > **Reset + Append = potential duplicates.** Reset clears the checkpoint, but it does not remove existing destination data.
