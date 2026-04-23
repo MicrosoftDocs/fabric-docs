@@ -42,7 +42,7 @@ Follow these steps to access the entity type details in your ontology (preview) 
 
 1. The entity type details view opens to the **Configure** page. Tabs across the top of the page allow you to switch between the **Configure**, **Instances**, and **Overview** pages.
 
-    :::image type="content" source="media/how-to-view-entity-type-details/entity-type-details-configure-1.png" alt-text="Screenshot of the entity type details configure page." lightbox="media/how-to-view-entity-type-details/entity-type-details-configure-1.png":::
+    :::image type="content" source="media/how-to-view-entity-type-details/entity-type-details-configure-1.png" alt-text="Screenshot of the entity type details configure page. The three tabs are highlighted." lightbox="media/how-to-view-entity-type-details/entity-type-details-configure-1.png":::
 
 ## Configure tab
 
@@ -92,7 +92,7 @@ To create more tiles, follow these steps.
 
 1. From the top right corner of the page, select **Add Tile**.
 
-    :::image type="content" source="media/how-to-view-entity-type-details/add-tile.png" alt-text="Screenshot of adding a tile.":::
+    :::image type="content" source="media/how-to-view-entity-type-details/add-tile.png" alt-text="Screenshot of adding a tile." lightbox="media/how-to-view-entity-type-details/add-tile.png":::
 
 1. Select the type of tile you want to create: a **Timeseries** (time series) line chart for streaming data, a **Static property** bar chart for static data, a **Map** for location properties, a **Resource links** tile to display linked external resources, or a **Fabric graph** tile to visualize relationships (only one Fabric graph tile is allowed per overview).
 
