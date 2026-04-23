@@ -43,7 +43,7 @@ If a copy job fails, you don’t need to worry about data loss. Copy job always 
 
 See more details in:
 
-- [Incremental copy in Copy job](incremental-copy-job.md) — supported watermark column types and how to reset incremental copy.
+- [Incremental copy in Copy job](incremental-copy-job.md).
 - [Change data capture (CDC) in Copy Job](/fabric/data-factory/cdc-copy-job).
 
 ### Update methods (Append, Overwrite, Merge, SCD Type 2) 
