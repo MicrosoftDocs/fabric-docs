@@ -56,6 +56,9 @@ Use **Compare scenarios** to analyze differences between two scenarios across me
 1. Select **Compare Scenario**.
 1. The **Scenario Comparison** view opens.
 
+    :::image type="content" source="media/planning-how-to-set-up-scenarios/compare-scenario-tab.png" alt-text="Screenshot showing the compare scenario." lightbox="media/planning-how-to-set-up-scenarios/compare-scenario-tab.png":::
+
+
 ### Configure comparison
 
 The following configuration options are available:
