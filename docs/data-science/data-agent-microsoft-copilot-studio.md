@@ -109,7 +109,7 @@ Before you can connect a Fabric data agent to Microsoft Copilot Studio, ensure t
    :::image type="content" source="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-channels.png" alt-text="Screenshot showing the list of channels to which you can publish from Copilot Studio." lightbox="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-channels.png":::
 
    > [!NOTE]
-   > The ability to use the custom agent with connected Fabric data agent isn't currently supported in Microsoft 365 Copilot.
+   > Using a custom agent with a connected Fabric data agent isn’t currently supported in Microsoft 365 Copilot. Copilot Studio agent with a connected Fabric data agent is only validated for Microsoft Teams. Other channels may also work but haven’t been formally tested.
 
 1. To publish to Teams, select Teams and Microsoft 365 Copilot from the list of channels. This opens the window on left. Select **Add channel** to enable this channel. Once done, the **See agent in Teams** are active. You can select it, which prompts you to open Microsoft Teams.
 
