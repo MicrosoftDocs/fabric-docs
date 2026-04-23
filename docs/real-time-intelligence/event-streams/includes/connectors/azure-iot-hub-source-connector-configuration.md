@@ -74,7 +74,7 @@ On the **Review + connect** screen, review the summary, and select **Add** (Even
     1. For **Connection name**, enter a name for the connection to the IoT Hub.
     1. For **Data gateway**, select the appropriate option based on your IoT Hub network configuration:
        - If your IoT Hub is public, select **none**.
-       - If your IoT Hub is under a private network and you want to connect through a streaming virtual network data gateway, select the streaming vNet data gateway (prefixed with **[Streaming vNet]**). You can select the refresh icon to get the newly created gateway listed.
+       - If your IoT Hub is under a private network and you want to connect through a streaming virtual network data gateway, select the streaming vNet data gateway (prefixed with **[Streaming VNet]**). You can select the refresh icon to get the newly created gateway listed.
 
        > [!NOTE]
        > If a data gateway is selected, skip the test connection step in this connection creation wizard.
@@ -99,7 +99,7 @@ On the **Review + connect** screen, review the summary, and select **Add** (Even
     - Select **Yes** to serialize the data into a standardized format.
     - Select **No** to keep the data in its original format and pass it through without modification.
 
-    Then, select **Next** at the bottom of the page.
+Then, select **Next** at the bottom of the page.
 
     :::image type="content" source="./media/azure-iot-hub-source-connector/extended-stream-details.png" alt-text="Screenshot that shows the Stream details section for Azure IoT Hub connector." lightbox="./media/azure-iot-hub-source-connector/extended-stream-details.png":::
 
