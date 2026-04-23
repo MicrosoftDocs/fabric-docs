@@ -9,11 +9,11 @@ ms.topic: how-to
 
 The *entity type details* view in ontology (preview) lets you explore your instantiated ontology data. The experience includes basic data previews, instance data, and a graph view. 
 
-When your ontology (preview) item is created, a [Graph in Microsoft Fabric](../../graph/overview.md) child item is also created and is responsible for storing and displaying data in the ontology entity type details.
+When your ontology (preview) item is created, a [Graph in Microsoft Fabric](../../graph/overview.md) child item is also created and is responsible for storing and displaying data in the **Overview** tab of the entity type details.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-:::image type="content" source="media/how-to-view-entity-type-details/preview-experience-1.png" alt-text="Screenshot of the entity type details." lightbox="media/how-to-view-entity-type-details/preview-experience-1.png":::
+:::image type="content" source="media/how-to-view-entity-type-details/entity-type-details-overview-1.png" alt-text="Screenshot of data graphs in the entity type details overview page." lightbox="media/how-to-view-entity-type-details/entity-type-details-overview-1.png":::
 
 ## Prerequisites
 
@@ -36,50 +36,81 @@ The entity type details include the following ontology (preview) concepts. For d
 
 Follow these steps to access the entity type details in your ontology (preview) item and see the entity type overview.
 
-1. In the **Entity Types** pane, select the entity type that you want to view. Select **Entity type overview**.
+1. In the **Explorer** pane, select the entity type that you want to view. Select **View Entity Type details** from the top ribbon.
 
-    :::image type="content" source="media/how-to-view-entity-type-details/entity-type-overview.png" alt-text="Screenshot of opening the experience from the menu ribbon.":::
+    :::image type="content" source="media/how-to-view-entity-type-details/view-entity-type-details.png" alt-text="Screenshot of opening the experience from the menu ribbon.":::
 
-1. The entity type details open.
+1. The entity type details view opens to the **Configure** page. Tabs across the top of the page allow you to switch between the **Configure**, **Instances**, and **Overview** pages.
 
-    :::image type="content" source="media/how-to-view-entity-type-details/preview-experience-1.png" alt-text="Screenshot of the entity type details showing relationship and property graphs." lightbox="media/how-to-view-entity-type-details/preview-experience-1.png":::
+    :::image type="content" source="media/how-to-view-entity-type-details/entity-type-details-configure-1.png" alt-text="Screenshot of the entity type details configure page." lightbox="media/how-to-view-entity-type-details/entity-type-details-configure-1.png":::
 
-In the entity type details, you see an overview for the entity type that lets you preview the data of all the entity instances. There are multiple ways to explore the data in this view:
+## Configure tab
 
-* [View and create tiles](#view-and-create-tiles): You can view data in line charts and create more tiles as needed. You can also configure time-specific slices for the tiles.
+On the **Configure** page, you can manage properties, data bindings, relationship types, and report links for the entity type. 
 
-* [Use graph view](#use-graph-view): You can view your entity instances in a graph view provided through [Graph in Microsoft Fabric](../../graph/overview.md). You can also open your entity directly in Graph in Microsoft Fabric, where you can see more options for drilling down into your data and learning about your instantiated ontology.
+:::image type="content" source="media/how-to-view-entity-type-details/entity-type-details-configure-2.png" alt-text="Screenshot of the entity type details configure page." lightbox="media/how-to-view-entity-type-details/entity-type-details-configure-2.png":::
 
-* [Explore entity instances](#explore-entity-instances): You can browse to a specific entity instance to get more information about the instance in the instance view.
+For more information about these features, see the following documents:
+* [Add properties](how-to-create-entity-types.md#add-properties)
+* [Bind data](how-to-bind-data.md)
+* [Add relationship types](how-to-create-relationship-types.md)
+* [Use resource links](how-to-use-resource-links.md)
 
-## View and create tiles
+## Instances tab
 
-The entity type details in ontology (preview) automatically shows tiles that display data about your entity types, including entity instance details and relationship graphs. All tiles you create at the entity level also appear at the entity instance level.
+On the **Instances** page, you can view the instances associated with the entity type and their static property values.
+
+:::image type="content" source="media/how-to-view-entity-type-details/entity-type-details-instances.png" alt-text="Screenshot of the entity type details instances page." lightbox="media/how-to-view-entity-type-details/entity-type-details-instances.png":::
+
+### Explore an individual instance
+
+You can browse to a specific entity instance to see more information about that specific instance. 
+
+To open the instance view, start in the **Instances** tab of the entity type details, and select a row from the table.
+
+:::image type="content" source="media/how-to-view-entity-type-details/entity-type-details-instances-select.png" alt-text="Screenshot of selecting a specific entity type instance." lightbox="media/how-to-view-entity-type-details/entity-type-details-instances-select.png":::
+
+The instance view loads and displays tiles for its static properties, relationships, and time series data.
+
+:::image type="content" source="media/how-to-view-entity-type-details/entity-type-details-instances-details.png" alt-text="Screenshot of data graphs for a single entity type instance." lightbox="media/how-to-view-entity-type-details/entity-type-details-instances-details.png":::
+
+You can **Expand** the relationship graph to open its full Graph view and run queries that are scoped specifically to this entity instance. For more information about the graph view and querying, see the [Open graph view](#open-graph-view) section later in this article.
+
+:::image type="content" source="media/how-to-view-entity-type-details/entity-type-details-instances-query.png" alt-text="Screenshot of the graph and query view for a specific entity instance." lightbox="media/how-to-view-entity-type-details/entity-type-details-instances-query.png":::
+
+## Overview tab
+
+On the **Overview** page, you can view entity instances as tiles in a dashboard. Tiles are provided through [Graph in Microsoft Fabric](../../graph/overview.md), and reflect relationships and time series data for the entity type.
+
+:::image type="content" source="media/how-to-view-entity-type-details/entity-type-details-overview-2.png" alt-text="Screenshot of the entity type details overview page." lightbox="media/how-to-view-entity-type-details/entity-type-details-overview-2.png":::
+
+### Manage tiles
+
+The entity type details in ontology (preview) automatically shows tiles that display data about your entity types, including entity instance details and relationship graphs. All tiles you create at the entity level also appear at the [entity instance](#instances-tab) level.
 
 To create more tiles, follow these steps.
 
-1. From the ribbon, select **+ Add Tile**.
+1. From the top right corner of the page, select **Add Tile**.
 
-    :::image type="content" source="media/how-to-view-entity-type-details/add-tile-1.png" alt-text="Screenshot of adding a tile.":::
+    :::image type="content" source="media/how-to-view-entity-type-details/add-tile.png" alt-text="Screenshot of adding a tile.":::
 
-1. Select the type of tile you want to create: a **Timeseries** (time series) line chart for streaming data, a **Static property** bar chart for static data, or **Fabric graph** for a relationship graph provided by Graph in Microsoft Fabric. Only one graph tile is allowed per dashboard.
+1. Select the type of tile you want to create: a **Timeseries** (time series) line chart for streaming data, a **Static property** bar chart for static data, a **Map** for location properties, a **Resource links** tile to display linked external resources, or a **Fabric graph** tile to visualize relationships (only one Fabric graph tile is allowed per overview).
 
-1. Complete the configuration for your chosen tile type.
+1. Complete the configuration for your chosen tile type. The following image shows an example of configuring a static property tile.
 
-    :::image type="content" source="media/how-to-view-entity-type-details/add-tile-2.png" alt-text="Screenshot of configuring a time series tile.":::
+    :::image type="content" source="media/how-to-view-entity-type-details/add-tile-static.png" alt-text="Screenshot of configuring a static property tile.":::
 
-    :::image type="content" source="media/how-to-view-entity-type-details/add-tile-3.png" alt-text="Screenshot of configuring a static property tile.":::
+1. Back on the overview page, verify that your new tile is visible at the bottom of the dashboard.
 
-1. Back on the overview page, verify that your new tile is visible.
-1. Use the time range selector to configure the time range for the data displayed in the tiles.
+If necessary, use the time range selector to configure the time range for the data displayed in time series tiles.
 
-    :::image type="content" source="media/how-to-view-entity-type-details/change-date-range.png" alt-text="Screenshot of configuring the time range." lightbox="media/how-to-view-entity-type-details/change-date-range.png":::
+:::image type="content" source="media/how-to-view-entity-type-details/change-date-range.png" alt-text="Screenshot of configuring the time range." lightbox="media/how-to-view-entity-type-details/change-date-range.png":::
 
 To edit or delete existing tiles, select **...** in the upper right corner of a tile.
 
 :::image type="content" source="media/how-to-view-entity-type-details/edit-delete.png" alt-text="Screenshot of edit and delete options for a tile." lightbox="media/how-to-view-entity-type-details/edit-delete.png":::
 
-## Use graph view
+### Open graph view
 
 Follow these steps to view your ontology (preview) entities in a graph view provided by [Graph in Microsoft Fabric](../../graph/overview.md).
 
@@ -93,7 +124,7 @@ Follow these steps to view your ontology (preview) entities in a graph view prov
 
 In the graph view, you can explore using Graph in Microsoft Fabric's interface, and craft custom queries as described in the next section.
 
-### Query across entity instances
+#### Query across entity instances
 
 In the full graph view, use the **Query builder** ribbon to craft custom queries.
 
@@ -114,22 +145,6 @@ You can also change the view type of the query results, from **Diagram** to **Ca
 To run more complex queries or explore the data in more detail, navigate to the Graph in Microsoft Fabric interface by selecting **Open in Fabric Graph**. For more information, see [Graph in Microsoft Fabric overview (preview)](../../graph/overview.md).
 
 :::image type="content" source="media/how-to-view-entity-type-details/open-in-graph.png" alt-text="Screenshot of the button to open Graph in Microsoft Fabric.":::
-
-## Explore entity instances
-
-You can browse to a specific entity instance that's bound to your ontology (preview) item to see more information about that specific instance. 
-
-To open the instance view, start in the overview page for the entity type, and select a row from the **Entity instances** table.
-
-:::image type="content" source="media/how-to-view-entity-type-details/instance-view-1.png" alt-text="Screenshot of selecting an instance from the overview page.":::
-
-The instance view displays any tiles you configured at the entity type level, and any specific properties bound to this instance.
-
-:::image type="content" source="media/how-to-view-entity-type-details/instance-view-2.png" alt-text="Screenshot of the instance view showing instance properties and relationships." lightbox="media/how-to-view-entity-type-details/instance-view-2.png":::
-
-You can also **Expand** the graph view, where you can run a query specific to this entity instance. This graph view is similar to the [general graph view for the entity type](#use-graph-view) view, but scoped to this particular instance and its relationships.
-
-:::image type="content" source="media/how-to-view-entity-type-details/instance-view-3.png" alt-text="Screenshot of the instance graph query." lightbox="media/how-to-view-entity-type-details/instance-view-3.png":::
 
 ## Refresh the graph model
 
@@ -163,6 +178,6 @@ To refresh the graph, follow these steps:
 
 ## Troubleshooting
 
-For troubleshooting tips related to the entity type details in ontology (preview), see [Troubleshoot ontology (preview)](resources-troubleshooting.md#troubleshoot-preview-experience).
+For troubleshooting tips related to the entity type details in ontology (preview), see [Troubleshoot ontology (preview)](resources-troubleshooting.md#troubleshoot-entity-type-details).
 
 
