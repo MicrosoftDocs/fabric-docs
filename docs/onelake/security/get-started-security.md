@@ -5,7 +5,7 @@ ms.reviewer: aamerril # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article
-ms.date: 09/05/2025
+ms.date: 04/23/2026
 #customer intent: As a OneLake user, I want to understand the core concepts and capabilities of data security in OneLake so that I can use them to protect my data stored and accessed in OneLake.
 ---
 
@@ -68,14 +68,14 @@ Another way to configure permissions is via an item's **Manage permissions** pag
 
 OneLake security enables you to define granular role-based security for data stored in OneLake and enforce that security consistently across all compute engines in Fabric. OneLake security is the **data plane** security model for data in OneLake.
 
-Fabric users in the Admin or Member roles can create OneLake security roles to grant users access to data within an item. Each role has four components:
+Fabric users in the Admin or Member workspace roles can create OneLake security roles to grant users access to data within an item. Each role has four components:
 
 * **Data**: The tables or folders that users can access.
 * **Permission**: The permissions that users have on the data.
 * **Members**: The users that are members of the role.
 * **Constraints**: The components of the data, if any, that are excluded from role access, such as specific rows or columns.
 
-OneLake security roles grant access to data for users in the **Viewer** workspace role or with **Read** permission on the item. Admins, Members, and Contributors aren't affected by OneLake security roles and can read and write all data in an item regardless of their role membership. A DefaultReader role exists in all lakehouses and gives any user with the ReadAll permission access to data in the lakehouse. You can delete or edit the DefaultReader role to remove that access.
+OneLake security roles grant access to data for users in the **Viewer** workspace role or with **Read** permission on the item. Workspace Admins, Members, and Contributors aren't affected by OneLake security roles and can read and write all data in an item regardless of their role membership. A DefaultReader role exists in all lakehouses and gives any user with the ReadAll permission access to data in the lakehouse. You can delete or edit the DefaultReader role to remove that access.
 
 Learn more about creating OneLake security roles for [Tables and folders](./table-folder-security.md), [Columns](./column-level-security.md), and [Rows](./row-level-security.md).
 
