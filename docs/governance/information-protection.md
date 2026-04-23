@@ -37,7 +37,7 @@ This article describes Fabric and Power BI's information protection [capabilitie
 
 Sensitivity labels can apply access control to Fabric and Power BI data and content in the following cases:
 
-* In the tenant where the sensitivity labels were applied. This scenario relies on sensitivity labels that are associated with Microsoft Purview *protection* policies. When a user logged in to the Fabric tenant where the labels were applied tries to access an item that has a label associated with a protection policy, their access is controlled by that protection policy. See [Protection policies in Microsoft Fabric (preview)](/fabric/governance/protection-policies-overview) for more information.
+* In the tenant where the sensitivity labels were applied. This scenario relies on sensitivity labels that are associated with Microsoft Purview *protection* policies. When a user logged in to the Fabric tenant where the labels were applied tries to access an item that has a label associated with a protection policy, their access is controlled by that protection policy. See [Protection policies in Microsoft Fabric](/fabric/governance/protection-policies-overview) for more information.
 
 * In Power BI Desktop (*.pbix*) files. This scenario relies on sensitivity labels that are associated with Microsoft Purview *publishing* policies. When a user tries to open a *.pbix* file that has a sensitivity label associated with a publishing policy, their access depends on the permissions they have under that policy. See [Restrict access to content by using sensitivity labels to apply encryption](/purview/encryption-sensitivity-labels).
 
