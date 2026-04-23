@@ -72,7 +72,7 @@ If your database has CDC enabled, you don't need to choose an incremental column
 
 ## Supported watermark column types
 
-Copy job supports the following watermark column types for incremental copy from a database:
+Copy job supports the following watermark column types for watermark-based incremental copy from a database:
 
 - **ROWVERSION**: A binary column that automatically changes whenever a row is modified. It’s ideal for SQL-based systems with high-throughput transactional workloads, because every insert or update is captured reliably without depending on application-managed timestamps.
 - **Datetime**: Datetime columns such as `LastUpdatedDatetime` or `ModifiedAt` that store both date and time. Copy job uses the precise timestamp to track incremental progress across runs. Datetime is preferred when your source tracks changes with high-frequency precision.
