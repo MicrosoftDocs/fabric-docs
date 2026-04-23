@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 # Incremental copy in Copy job
 
-This article describes how incremental copy works in Copy job in Microsoft Fabric Data Factory. It covers supported watermark column types, how NULL values in a watermark column are handled, and how to reset incremental copy back to a full copy.
+This article describes how incremental copy works in Copy job in Microsoft Fabric Data Factory. It covers supported watermark column types, and how to reset incremental copy back to a full copy.
 
 For an overview of Copy job, see [What is Copy job in Data Factory for Microsoft Fabric?](what-is-copy-job.md).
 
@@ -52,16 +52,6 @@ Watermark-based incremental copy detects new or changed rows by comparing values
 - **Subsequent incremental loads**: Rows with a NULL value in the watermark column are excluded. Only rows whose watermark value is greater than the last recorded watermark are copied, and NULL values can't satisfy that comparison. As a result, any row that's inserted or updated with a NULL watermark value after the initial load isn't picked up by later incremental runs.
 - **Column availability in the dropdown**: When you select the incremental column in Copy job, columns that aren't valid for watermark-based tracking might not appear in the dropdown. Make sure the column type is one of the [supported watermark column types](#supported-watermark-column-types) and that the column is accessible to the connection you're using.
 
-**Best practices**:
-
-- Apply a `NOT NULL` constraint to the watermark column in the source so that every row has a valid value for incremental tracking.
-- If you can't change the source schema, define a computed column or view that uses `COALESCE` (or an equivalent function) to replace NULL values with a sensible default, and use that computed column as the watermark.
-- Choose a watermark column that's guaranteed to increase monotonically and is always populated, such as a `ROWVERSION` column or a reliably maintained `LastUpdatedDatetime` column.
-
-**Troubleshooting**:
-
-- If rows are missing in the destination after an incremental run, check whether the source rows have a NULL value in the watermark column. Rows with NULL watermark values that are inserted or updated after the initial full load aren't copied by subsequent incremental runs.
-- To recover missing rows, either populate the watermark column in the source and then [reset incremental copy](#reset-incremental-copy) to trigger another full load, or switch to a watermark column that's never NULL.
 
 ## Reset incremental copy
 
