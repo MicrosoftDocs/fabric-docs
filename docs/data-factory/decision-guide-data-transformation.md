@@ -10,17 +10,17 @@ ms.topic: concept-article
 
 Microsoft Fabric Dataflows Gen2 offers multiple ways to ingest, transform, and load data efficiently. These methods help you balance **performance**, **scalability**, and **cost**.
 
-Depending on your transformation needs, choose from three powerful capabilities:
+The following capabilities help you optimize your dataflows:
 
-- [**Staging queries**](placedholder.md) - TBD
-- [**V Ordering**] - TBD
-- [**High-Scale Compute output**] - TBD
+- **Staging queries** - TBD
+- **V Ordering** - TBD
+- **High-Scale Compute output** - TBD
 - [**Fast copy**](dataflows-gen2-fast-copy.md) – Accelerate bulk data movement with minimal transformation.  
 - [**Modern Evaluator**](dataflow-gen2-modern-evaluator.md)  – Optimize complex transformation performance for non-foldable queries.  
 - [**Partitioned compute**](dataflow-gen2-partitioned-compute.md) – Scale transformations across large and partitioned datasets.
-- [**Incremental refresh**] - TBD
+- **Incremental refresh** - TBD
 
-This guide explains **when and why** to use each feature. It includes real-world examples and benchmarking results.
+This guide covers common use cases, real-world examples, and benchmarking results to help you choose the right feature for your workload.
 
 ## Quick reference
 
@@ -31,7 +31,6 @@ Use the following table to match your workload to the right Dataflow Gen2 capabi
 | Copy large datasets quickly with no transformations | [**Fast Copy**](#use-fast-copy-when) |
 | Run complex transformations efficiently | [**Modern Evaluator**](#use-modern-evaluator-when) |
 | Process large, partitioned datasets with complex transformations | [**Partitioned Compute**](#use-partitioned-compute-when) |
-| Optimize both transformation and load performance | **Modern Evaluator + Partitioned Compute** |
 
 ### Use fast copy when
 
@@ -39,7 +38,7 @@ Use the following table to match your workload to the right Dataflow Gen2 capabi
 - You need high-throughput ingestion for large datasets.  
 - You want faster loads at lower compute cost.
 
-For a benchmark example, see [Scenario 1: Accelerate bulk ingestion by using fast copy](#scenario-1-accelerate-bulk-ingestion-by-using-fast-copy).
+For a benchmark example, see [Scenario 1: Copy data](#scenario-1-copy-data).
 
 ### Use modern evaluator when
 
@@ -47,16 +46,16 @@ For a benchmark example, see [Scenario 1: Accelerate bulk ingestion by using fas
 - You're applying filters, column derivations, or data cleansing.  
 - You want faster, more efficient execution without changing logic.
 
-For a benchmark example, see [Scenario 2: Improve transformation speed by using modern evaluator](#scenario-2-improve-transformation-speed-by-using-modern-evaluator).
+For a benchmark example, see [Scenario 2: Complex transformations](#scenario-2-complex-transformations).
 
 ### Use partitioned compute when
 
-- You're working with large, partitioned, or mult-file datasets.  
+- You're working with large, partitioned, or multi-file datasets.  
 - You can parallelize transformations (aggregations, joins, filters).  
 - You need high-performance, scalable data preparation pipelines.  
 - You can combine it with Modern Evaluator when supported.
 
-For a benchmark example, see [Scenario 3: Scale transformations with partitioned compute](#scenario-3-scale-transformations-with-partitioned-compute).
+For a benchmark example, see [Scenario 3: Combine files](#scenario-3-combine-files).
 
 ### Capability comparison
 
@@ -86,7 +85,7 @@ The following table summarizes the benchmark results across all three scenarios.
 
 For step-by-step details, dataset configurations, and design patterns for each capability, see the scenario sections that follow.
 
-## Scenario 1: Accelerate bulk ingestion by using fast copy
+## Scenario 1: Copy data
 
 The NYC Taxi analytics team needs to load millions of raw Parquet trip records from ADLS Gen2 into a Fabric Lakehouse. The team doesn't need any transformations, only a direct copy to support downstream analytics.
 
@@ -140,7 +139,7 @@ This run took an hour and nine minutes to copy the data without fast copy enable
 
 This run took seven minutes to copy the data with fast copy enabled.
 
-## Scenario 2: Improve transformation speed by using modern evaluator
+## Scenario 2: Complex transformations
 
 After ingestion, the team applies filtering, null replacement, and code mapping before loading data into the Warehouse. These transformations don't fully fold back to Parquet and are slow in memory.
 
@@ -195,7 +194,7 @@ This transformation took an hour and 34 minutes without the modern evaluator.
 
 This transformation took an hour and one minute with the modern evaluator.
 
-## Scenario 3: Scale transformations with partitioned compute
+## Scenario 3: Combine files
 
 The team must now aggregate and enrich trip data across hundreds of Parquet files (monthly partitions). Transformations include computing tip percentages across the dataset.
 
@@ -236,20 +235,13 @@ The following table also includes a Dataflow Gen1 baseline for comparison. Dataf
 |-----------------------------------------|---------------------------|-------------------------|
 | **Dataflow Gen1 baseline**               | 01:40:57 | — |
 | **Dataflow Gen2 without Partitioned Compute**          | 01:44:56 | 1.04× slower |
-| **Dataflow Gen2 with Partitioned Compute**             | 00:06:51 | 15× faster |
-| **Dataflow Gen2 with Partitioned Compute + Modern Evaluator** | 00:04:48 | 21× faster |
+| **Dataflow Gen2 with Partitioned Compute + Modern evaluator**             | 00:06:51 | 15× faster |
 
 #### Without partitioned compute
 
 :::image type="content" source="media/decision-guide-data-transformation/results-without-partitioned-compute.png" alt-text="Screenshot of Recent runs results without Partitioned Compute." lightbox="media/decision-guide-data-transformation/results-without-partitioned-compute.png":::
 
 This transformation took an hour and 44 minutes without partitioned compute.
-
-#### With partitioned compute
-
-:::image type="content" source="media/decision-guide-data-transformation/results-with-partitioned-compute.png" alt-text="Screenshot of Recent runs results with Partitioned Compute." lightbox="media/decision-guide-data-transformation/results-with-partitioned-compute.png":::
-
-This transformation took six minutes and 51 seconds with partitioned compute.
 
 #### With partitioned compute + modern evaluator
 
