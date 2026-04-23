@@ -94,18 +94,18 @@ Google BigQuery uses change history to enable change data capture. When you enab
 1. Verify that change history is enabled. Run the following query:
 
    ```sql
-SELECT
-  table_catalog,
-  table_schema,
-  table_name,
-  is_change_history_enabled
-FROM
-  `project_id.dataset_id.INFORMATION_SCHEMA.TABLES`
-WHERE
-  table_name = 'table_name'
-  AND is_change_history_enabled = 'YES';
+   SELECT
+   table_catalog,
+   table_schema,
+   table_name,
+   is_change_history_enabled
+   FROM
+   `project_id.dataset_id.INFORMATION_SCHEMA.TABLES`
+   WHERE
+   table_name = 'table_name'
+   AND is_change_history_enabled = 'YES';
    ```
-
+   
    Replace `project_id`, `dataset_id`, and `table_name` with your values. The query should return if change history is enabled for your table.
 
 1. (Optional) Test the change history by querying changes:
