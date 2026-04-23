@@ -4,7 +4,7 @@ description: "Learn about Microsoft Fabric security concepts and features that c
 author: msmimart
 ms.author: mimart
 ms.reviewer: vparasuraman, amasingh
-ms.date: 12/12/2024
+ms.date: 04/23/2026
 ms.topic: concept-article
 ms.custom: fabric-cat, security-guidance
 ---
@@ -122,7 +122,7 @@ In addition to encryption, network traffic between Microsoft services always rou
 
 :::image type="content" source="media/security-scenario/fabric-shortcuts-cmk-scenario.svg" alt-text="Diagram shows a high-level representation of using CMK by using Fabric OneLake shortcuts.":::
 
-If you have a requirement to use CMK to encrypt data-at-rest, you have two options. You can use [Workspace customer managed keys](../security/workspace-customer-managed-keys.md) to configure a CMK stored in an Azure Key Vault to encrypt data at rest in your Fabric workspace. Or, you can use other cloud storage services (ADLS Gen2, AWS S3, GCS) with CMK encryption enabled and access data from Microsoft Fabric using [OneLake shortcuts](../onelake/onelake-shortcuts.md). In this pattern, your data continues to reside on a cloud storage service or an external storage solution where encryption at rest using CMK is enabled, and you can perform in-place read operations from Fabric whilst staying compliant. Once a shortcut has been created, within Fabric, the data can be accessed by other Fabric experiences.
+If you have a requirement to use CMK to encrypt data-at-rest, you have two options. You can use [Workspace customer managed keys](../security/workspace-customer-managed-keys.md) to configure a CMK stored in an Azure Key Vault or Azure Key Vault Managed HSM to encrypt data at rest in your Fabric workspace. When using either key store, you must assign the required permissions to the Power BI service and Microsoft Fabric to access the keys for encryption operations. Or, you can use other cloud storage services (ADLS Gen2, AWS S3, GCS) with CMK encryption enabled and access data from Microsoft Fabric using [OneLake shortcuts](../onelake/onelake-shortcuts.md). In this pattern, your data continues to reside on a cloud storage service or an external storage solution where encryption at rest using CMK is enabled, and you can perform in-place read operations from Fabric whilst staying compliant. Once a shortcut has been created, within Fabric, the data can be accessed by other Fabric experiences.
 
 There are some considerations for using this pattern:
 
@@ -133,7 +133,7 @@ There are some considerations for using this pattern:
 - AWS S3 supports encryption at-rest using [customer-managed keys](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html). Fabric can perform in-place reads on S3 buckets using [S3 shortcut](../onelake/create-s3-shortcut.md); however, write operations using a shortcut to AWS S3 are not supported.
 - Google cloud storage supports data encryption using [customer-managed keys](https://cloud.google.com/storage/docs/encryption). Fabric can perform in-place reads on GCS; however, write operations using a shortcut to GCS are not supported.
 - Enable [audit](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview) for Microsoft Fabric to keep track of activities.
-- In Microsoft Fabric, Power BI supports customer-managed key with [Bring your own encryption keys for Power BI](/power-bi/enterprise/service-encryption-byok).
+- In Microsoft Fabric, Power BI uses [Bring your own encryption keys (BYOK)](/power-bi/enterprise/service-encryption-byok) to encrypt Power BI semantic models at the capacity level, while workspace-level CMK encrypts other Fabric items at the workspace level. Together, these capabilities enable layered encryption controls tailored to your security architecture.
 - Disable the [shortcut caching](../onelake/onelake-shortcuts.md#caching) feature for S3, GCS, and S3-compatible shortcuts, as the cached data is persisted on OneLake.
 
 ## Data residency
