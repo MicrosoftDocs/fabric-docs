@@ -70,11 +70,11 @@ Once permissions are granted, SPNs can connect to client application tools like 
 
 ### Monitor
 
-When an SPN runs queries in the warehouse, there are various monitoring tools that provide visibility into the user or SPN that ran the query. You can find the user for query activity the following ways:
+When an SPN runs queries in the warehouse, there are various monitoring tools that provide visibility into the user or SPN that ran the query. You can identify the user in Data Warehouse Monitor in the following ways:
 
 - [Dynamic management views (DMVs)](monitor-using-dmv.md): `login_name` column in `sys.dm_exec_sessions`.
 - [Query Insights](query-insights.md): `login_name` column in `queryinsights.exec_requests_history` view.
-- [Query activity](query-activity.md): `submitter` column in Fabric query activity.
+- [Data Warehouse Monitor](monitor.md): `submitter` column in Fabric Data Warehouse Monitor.
 - [Capacity metrics app](../enterprise/metrics-app.md): Compute usage for warehouse operations performed by SPN appears as the Client ID under the **User** column in Background operations drill through table.
 
 For more information, see [Monitor Fabric Data warehouse](monitoring-overview.md).

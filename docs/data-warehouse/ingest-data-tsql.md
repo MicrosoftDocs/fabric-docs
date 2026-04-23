@@ -232,7 +232,7 @@ To learn more about cross-warehouse queries, see [Write a cross-database SQL Que
 
 ## Audit and monitor T-SQL ingestion
 
-Both `CTAS` and `INSERT ... SELECT` operations executed via T-SQL appear in the [warehouse query history/activity](query-activity.md), and can be monitored alongside other warehouse operations.
+Both `CTAS` and `INSERT ... SELECT` operations executed via T-SQL appear in the [warehouse query history/activity](monitor.md), and can be monitored alongside other warehouse operations.
 
 ## Data ingestion options
 

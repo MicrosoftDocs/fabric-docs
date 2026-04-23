@@ -262,8 +262,8 @@ items:
   items:
   - name: Monitoring overview
     href: monitoring-overview.md
-  - name: Query activity
-    href: query-activity.md
+  - name: Monitor
+    href: monitor.md
   - name: Query insights
     href: query-insights.md
   - name: How to
