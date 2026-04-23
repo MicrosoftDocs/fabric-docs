@@ -66,7 +66,7 @@ Watermark-based incremental copy is a good fit when:
 | Detects inserts | Yes | Yes |
 | Detects updates | Yes | Yes (when the watermark column changes) |
 | Detects deletes | Yes | No |
-| Typical write methods | SCD Type 1 (Merge) or SCD Type 2 | Append or Merge (when configured) |
+| Typical write methods | Merge or SCD Type 2 | Append or Merge (when configured) |
 
 If your database has CDC enabled, you don't need to choose an incremental column — Copy job automatically detects the changes. When a source table does not have CDC enabled, Copy job goes with watermark-based incremental copy approach.
 
