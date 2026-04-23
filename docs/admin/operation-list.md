@@ -762,6 +762,8 @@ The following operations are available in the audit logs.
 | Disable CMK encryption for your workspace | :::no-loc text="DisableWorkspaceEncryption"::: | Triggered when CMK encryption is disabled for a workspace |
 | Disable Workspace Outbound Access Protection | :::no-loc text="DisableWorkspaceOutboundAccessProtection"::: | Outbound Access Protection Disabled on Workspace |
 | Enable Workspace Outbound Access Protection | :::no-loc text="EnableWorkspaceOutboundAccessProtection"::: | Outbound Access Protection Enabled on Workspace |
+| Get Workspace Resource Instance Rules | :::no-loc text="GetWorkspaceResourceInstanceRules"::: | |
+| Set Workspace Resource Instance Rules | :::no-loc text="SetWorkspaceResourceInstanceRules"::: | |
 
 ## Considerations and limitations
 
