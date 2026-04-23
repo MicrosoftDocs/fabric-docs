@@ -9,7 +9,7 @@ ms.topic: overview
 ms.search.form: Dremio catalog mirroring overview
 ---
 
-# Mirroring Dremio catalog
+# Mirrored Dremio catalog
 
 A mirrored Dremio catalog in Fabric enables customers to read data managed by Dremio from Fabric workloads.
 
