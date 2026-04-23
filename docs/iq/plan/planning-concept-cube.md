@@ -3,7 +3,7 @@ title: Allocate plans with a cube
 description: Learn about multi-dimensional driver based allocation 
 ms.date: 04/12/2026
 ms.topic: concept-article
-ai-usage:ai-assisted
+ai-usage: ai-assisted
 #customer intent: As a user, I want to understand planning cubes and multi-dimensional driver based allocation.
 ---
 
