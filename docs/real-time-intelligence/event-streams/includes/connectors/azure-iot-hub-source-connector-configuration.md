@@ -99,7 +99,7 @@ On the **Review + connect** screen, review the summary, and select **Add** (Even
     - Select **Yes** to serialize the data into a standardized format.
     - Select **No** to keep the data in its original format and pass it through without modification.
 
-Then, select **Next** at the bottom of the page.
+1. Then, select **Next** at the bottom of the page.
 
     :::image type="content" source="./media/azure-iot-hub-source-connector/extended-stream-details.png" alt-text="Screenshot that shows the Stream details section for Azure IoT Hub connector." lightbox="./media/azure-iot-hub-source-connector/extended-stream-details.png":::
 
