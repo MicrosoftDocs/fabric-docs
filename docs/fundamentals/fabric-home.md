@@ -4,7 +4,7 @@ description: Learn how to quickly find content, search, filter, multitask with t
 author: SnehaGunda
 ms.author: sngun
 ms.topic: overview
-ms.date: 02/03/2026
+ms.date: 03/27/2026
 ai-usage: ai-assisted
 #customer intent: As a new Fabric user, I want to quickly find my content, understand navigation, personalize settings, and get help.
 ---
@@ -66,9 +66,9 @@ To explore:
 More about workloads: [Workloads in Fabric](../workload-development-kit/more-workloads-add.md).
 
 <a id="multitask-with-tabs-and-object-explorer"></a>
-## Multitask with tabbed navigation to access resources (preview)
+## Multitask with tabbed navigation to access resources
 
-The tabbed navigation allows you to work with multiple items and workspaces at the same time. It enhances navigation and reduces the need to switch context.
+The tabbed navigation allows you to work with multiple items, monitoring pages, and workspaces at the same time. It enhances navigation and reduces the need to switch context.
 
 ### Tabs for open items
 

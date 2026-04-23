@@ -3,8 +3,9 @@ title: Integrate Microsoft Entra with AWS S3 using Service Principal Authenticat
 description: Learn how to integrate Microsoft Entra with AWS S3 using Service Principal authentication for secure access to S3 buckets with unified identity management and OIDC-based authentication.
 ms.topic: how-to
 ms.date: 07/10/2025
-author: SnehaGunda
-ms.author: sngun
+ms.reviewer: # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ---
 
 # Integrate Microsoft Entra with AWS S3 shortcuts using service principal authentication

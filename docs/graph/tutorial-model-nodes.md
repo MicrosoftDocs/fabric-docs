@@ -2,7 +2,7 @@
 title: "Tutorial: Add node types to your graph"
 description: Learn how to add node types to your graph model in Microsoft Fabric by mapping source tables and configuring node properties.
 ms.topic: tutorial
-ms.date: 03/24/2026
+ms.date: 04/14/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Add nodes to your graph
 ai-usage: ai-assisted
@@ -12,11 +12,11 @@ ai-usage: ai-assisted
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-In this tutorial step, you add node types to your graph model. Nodes represent entities in your data, such as customers, products, or orders. Later, you connect these nodes with edges to define relationships between them.
+In this tutorial step, you add node types to your graph model. Node types represent entities in your data, such as customers, products, or orders. Later, you connect these node types with edge types to define relationships between them.
 
 ## Adventure Works node mappings
 
-In the Adventure Works data model, create a node type for each entity. The following table shows the node mappings. Use this information to add nodes to your graph:
+In the Adventure Works data model, create a node type for each entity. The following table shows the node mappings. Use this information to add node types to your graph:
 
 | Node type label | Mapping table | ID of mapping column |
 | --- | --- | --- |
@@ -44,22 +44,24 @@ To add node types to your graph, follow these steps:
     - **ID** of the mapping column: `CustomerID_K`
 
    > [!TIP]
-   > You can set compound keys (IDs consisting of multiple columns).
+   > You can set compound keys (IDs consisting of multiple columns). After you select a mapping table, choose one ID from the **ID** dropdown, then use the dropdown again to add another.
 
 1. Select **Confirm** to add the node type to your graph.
 1. Repeat the process for all remaining node types listed in the [Adventure Works node mappings](#adventure-works-node-mappings) table.
-
-   > [!TIP]
-   > When you double-click on a node type, you see its properties. Each property maps to a column in the source table. Delete properties that you don't need in queries or analysis, because too many properties make your graph harder to maintain and use.
 
 1. You see all eight node types represented in your graph. Select **Save** to save your progress.
 
     :::image type="content" source="./media/tutorial/node-add-completed.png" alt-text="Screenshot showing all of the nodes added to the graph." lightbox="./media/tutorial/node-add-completed.png":::
 
-After you add nodes to your graph, add edges to define the relationships between these nodes.
+## Understand node properties
 
-> [!TIP]
-> Besides creating node types from entire tables, any column or set of columns from any table can form a standalone node type if it represents an entity that you need on the graph. For example, you can create a `Country` node type from the `Country` column in the **adventureworks_employees** table, with `Country` as the ID. Delete properties that aren't required for the uniqueness of the `Country` nodes, such as employee name, employee ID, job title, gender, and other properties. You walk through this process in [Model a node and edge from the same table](tutorial-model-node-edge-from-same-table.md).
+When you add a node type, every column in the mapping table automatically becomes a **property** on that node type. You don't need to add properties manually. To see the properties for a node type, double-click it in the graph model editor to open the **Edit node schema** dialog.
+
+:::image type="content" source="./media/tutorial/edit-node-schema-properties.png" alt-text="Screenshot showing the Edit node schema dialog for the Employee node type with all 10 properties listed, each with a delete icon." lightbox="./media/tutorial/edit-node-schema-properties.png":::
+
+For this tutorial, keep all properties on every node type. In a later step, you extract a column into its own node type and remove redundant properties. For details, see [Model a node and edge from the same table](tutorial-model-node-edge-from-same-table.md). For general guidance on choosing which properties to keep or remove, see [Remove unnecessary properties](design-graph-schema.md#remove-unnecessary-properties).
+
+After you add node types to your graph, add edge types to define the relationships between them.
 
 ## Next step
 

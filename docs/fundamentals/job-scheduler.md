@@ -5,7 +5,7 @@ ms.reviewer: zhaya
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.date: 03/19/2026
+ms.date: 04/13/2026
 
 #customer intent: As a Fabric user, I want to understand how to use the job scheduler to automate tasks and manage schedules for my items in Fabric.
 
@@ -61,7 +61,7 @@ To ensure your schedule is valid:
 
 **Job throttling limits**
 
-* The Scheduler limits each user to 50 job submissions and 50 Get Job requests per minute to maintain system stability. Requests beyond these limits are automatically rejected.
+* The Scheduler limits each user to 100 job submissions and 100 Get Job requests per minute to maintain system stability. Requests beyond these limits are automatically rejected.
 
 * Jobs can run for a maximum of 24 days. Any jobs exceeding this duration are automatically terminated.
 

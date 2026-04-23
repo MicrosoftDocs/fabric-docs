@@ -1,7 +1,9 @@
 ---
 title: "Getting started with OneLake table APIs for Iceberg"
 description: "Quickstart and client configuration for using the OneLake REST API endpoint with Apache Iceberg REST Catalog (IRC) APIs in Microsoft Fabric."
-ms.reviewer: mahi
+ms.reviewer: mahi # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.date: 10/01/2025
 ms.topic: how-to
 #customer intent: As a OneLake user, I want to learn how to quickly configure my tools and applications to connect to OneLake table APIs using the Apache Iceberg REST Catalog standard, so that I can access, explore, and interact with my Fabric data using familiar open-source clients and libraries.

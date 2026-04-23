@@ -2,7 +2,7 @@
 title: "Tutorial: Add edge types to your graph"
 description: Learn how to add edge types to define relationships between nodes in your graph in Microsoft Fabric model, including configuring source and destination nodes.
 ms.topic: tutorial
-ms.date: 03/24/2026
+ms.date: 04/14/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Add edges to your graph
 ai-usage: ai-assisted
@@ -42,7 +42,7 @@ The following table shows the edge mappings to use:
 To add edges to your graph, follow these steps:
 
 1. Select **Add edge** to create a relationship between nodes.
-1. In **Add edge**, configure the edge, referencing the [Adventure Works edge mappings](#adventure-works-edge-mappings) table for the appropriate values:
+1. In **Add edge**, configure the edge by referencing the [Adventure Works edge mappings](#adventure-works-edge-mappings) table for the appropriate values:
    - Enter the edge **Label** to describe the relationship.
    - Select the **Mapping table**.
    - Select the **Source node** and its associated mapping column.
@@ -63,6 +63,9 @@ To add edges to your graph, follow these steps:
 
 1. Select **Confirm** to add the edge to your graph.
 1. Repeat the process for all remaining edge types listed in the [Adventure Works edge mappings](#adventure-works-edge-mappings) table.
+
+> [!TIP]
+> Unlike node types, edge types don't get properties automatically. You can add properties when the data describes the relationship itself - for example, quantity or price on a `contains` edge. Edge properties are most useful when you write GQL queries that filter, aggregate, or return relationship-level data. For this tutorial, you don't need to add edge properties. For guidance, see [Add properties to edge types](design-graph-schema.md#add-properties-to-edge-types).
 
 You should see all the edge types represented in your graph.
 

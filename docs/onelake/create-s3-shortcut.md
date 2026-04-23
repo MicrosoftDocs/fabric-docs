@@ -1,7 +1,9 @@
 ---
 title: Create an Amazon S3 shortcut
 description: Learn how to create a OneLake shortcut for Amazon S3 data access inside a Microsoft Fabric lakehouse.
-ms.reviewer: eloldag
+ms.reviewer: eloldag # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.date: 07/25/2024

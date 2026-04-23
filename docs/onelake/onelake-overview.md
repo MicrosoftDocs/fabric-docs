@@ -1,7 +1,9 @@
 ---
 title: OneLake, the OneDrive for data
 description: OneLake is included with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. Learn more.
-ms.reviewer: eloldag
+ms.reviewer: eloldag # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: overview
 ms.date: 12/10/2025
 #customer intent: As a data analyst, I want to understand the benefits of using OneLake so that I can effectively manage and analyze all the analytics data for my organization.

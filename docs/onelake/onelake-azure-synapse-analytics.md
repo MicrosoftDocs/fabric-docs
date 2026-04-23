@@ -1,7 +1,9 @@
 ---
 title: Integrate OneLake with Azure Synapse Analytics
 description: Learn how to use Azure Synapse Analytics to read and write data to OneLake with Apache Spark and serverless SQL.
-ms.reviewer: eloldag, mahi
+ms.reviewer: eloldag, mahi # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.date: 04/06/2026
 #customer intent: As a data engineer, I want to learn how to integrate OneLake with Azure Synapse Analytics so that I can efficiently read and write data into Fabric using Azure Synapse Spark pool.

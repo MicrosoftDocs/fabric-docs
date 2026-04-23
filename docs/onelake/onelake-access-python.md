@@ -1,7 +1,9 @@
 ---
 title: Access OneLake with Python
 description: Learn how to use the Azure Storage Python SDK to access and manage files and directories in OneLake.
-ms.reviewer: eloldag, mabasile
+ms.reviewer: eloldag, mabasile # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article
 ai-usage: ai-assisted
 ms.date: 09/27/2023

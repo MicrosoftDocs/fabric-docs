@@ -2,7 +2,7 @@
 title: Current Limitations of graph in Microsoft Fabric
 description: Understand the current limitations of graph in Microsoft Fabric, including data types, graph size, query constraints, and GQL (Graph Query Language) conformance.
 ms.topic: reference
-ms.date: 03/12/2026
+ms.date: 04/14/2026
 ms.reviewer: wangwilliam
 ---
 
@@ -73,7 +73,7 @@ The graph model might disappear or become empty when you switch between tabs or 
 
 ### Node property selection
 
-When you add a node to your graph model, all columns from the source table are added as properties by default. You can remove properties by selecting the trashcan icon. Choosing a custom display label (for example, displaying a name instead of an ID) isn't yet supported.
+When you add a node type to your graph model, all columns from the source table are added as properties by default. You can remove properties by selecting the trashcan icon. Edge types work differently - they start with no properties, and you add only the ones you need. Choosing a custom display label (for example, displaying a name instead of an ID) isn't yet supported.
 
 ## Querying
 

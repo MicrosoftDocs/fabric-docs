@@ -1,9 +1,9 @@
 ---
 title: Recover deleted files
 description: Learn how to use OneLake soft delete to recover accidentally deleted files and protect your data in Microsoft Fabric.
-ms.author: kgremban
-author: kgremban
-ms.reviewer: eloldag
+ms.reviewer: eloldag # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.custom:
 ms.date: 02/03/2026

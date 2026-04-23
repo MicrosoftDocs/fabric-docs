@@ -4,6 +4,7 @@ description: In this first part of the tutorial series, learn how to ingest a da
 ms.reviewer: amjafari, lagayhar
 ms.topic: tutorial
 ms.date: 12/26/2025
+ai-usage: ai-assisted
 ---
 
 # Tutorial Part 1: Use Apache Spark to ingest data into a Microsoft Fabric lakehouse
@@ -29,11 +30,17 @@ In this tutorial, you use the Apache Spark to:
 
 -  [Add a lakehouse](./tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) to this notebook. In this tutorial, you first download data from a public blob. Then, the data is stored in that lakehouse resource.
 
+> [!NOTE]
+> Before you begin, make sure you complete the [Prepare your system](./tutorial-data-science-prepare-system.md) steps: create a workspace, create a lakehouse, and attach it to your notebook. The sample data used in this tutorial comes from an Azure Open Datasets public container and is accessed programmatically in the notebook code.
+
 ## Follow along in a notebook
 
  The [1-ingest-data.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/1-ingest-data.ipynb) notebook accompanies this tutorial.
 
 [!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
+
+> [!TIP]
+> This tutorial reads sample data from an Azure Open Datasets container. If you encounter an access error when loading the data, you can manually download the `churn.csv` file from the [fabric-samples GitHub repository](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-science-tutorial) and upload it to your lakehouse.
 
 <!-- nbstart https://raw.githubusercontent.com/sdgilley/fabric-samples/sdg-new-happy-path/docs-samples/data-science/data-science-tutorial/1-ingest-data.ipynb -->
 
