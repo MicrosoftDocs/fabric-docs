@@ -12,7 +12,7 @@ ms.topic: tutorial
 
 [Catalog mirroring for Dremio](catalog-mirroring-dremio.md) enables Microsoft Fabric customers to read data managed by Dremio from Fabric workloads.
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 

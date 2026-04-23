@@ -15,7 +15,7 @@ A mirrored Dremio catalog in Fabric enables customers to read data managed by Dr
 
 For a tutorial on configuring your Dremio environment for Dremio catalog mirroring into Fabric, see [Tutorial: Configure mirrored Dremio catalog](catalog-mirroring-dremio-tutorial.md).
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
 [Mirroring in Fabric](../../mirroring/overview.md) allows users to enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs. You can enjoy an easy-to-use product designed to simplify your analytics needs and built for openness and collaboration between Microsoft Fabric and Dremio.
 
