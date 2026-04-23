@@ -11,7 +11,7 @@ Organizations often maintain forecasts separately by region, product, or other b
 
 This article explains how to configure and use a cube for multi-dimensional forecasting. For more information about using cubes, see [Plan across multiple dimensions with cubes](../planning-how-to-create-data-cube.md).
 
-## Configure additional dimensions for forecasting
+## Extend forecasting to dimensions outside the sheet
 
 Forecasts are generated for the row dimensions included in the planning sheet. To forecast other dimensions that aren't present in the current sheet, add breakdowns.
 
