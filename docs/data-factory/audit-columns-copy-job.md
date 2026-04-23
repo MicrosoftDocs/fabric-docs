@@ -3,7 +3,7 @@ title: Audit columns in Copy job
 description: Learn how to use audit columns in Copy job to add row-level data movement metadata for lineage tracking, compliance, and data quality.
 ms.reviewer: yexu
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 04/23/2026
 ms.search.form: copy-job-tutorials
 ms.custom: copy-job
 ai-usage: ai-assisted
@@ -12,6 +12,9 @@ ai-usage: ai-assisted
 # Audit columns in Copy job
 
 This article describes the audit columns capability in Copy job and how to use it.
+
+> [!IMPORTANT]
+> **Reset does not affect destination data.** If you use **Reset** with **Append** write behavior, the next run can write rows that were already loaded, which can result in duplicate data.
 
 ## What are audit columns?
 
@@ -43,6 +46,37 @@ No custom code or expression authoring is required. Add as many audit columns as
 > [!NOTE]
 > Audit columns are supported on all Copy job connectors except Snowflake, Office 365, and Databricks Delta Lake.
 
+## Understand Reset behavior (to avoid duplicates)
+
+If your Copy job uses incremental copy, Fabric maintains internal state (for example, a watermark or checkpoint) to know what data has already been processed.
+
+### What Reset does
+
+**Reset** clears the Copy job's incremental state (watermark/checkpoint) for the selected source(s). After you reset, the next run behaves like an initial run for incremental logic (for example, it can re-read the full range of data, depending on your configuration).
+
+### What Reset does not do
+
+**Reset does not delete, truncate, or otherwise change data in the destination.** Existing rows remain in the destination table or files.
+
+### Why Reset can create duplicates
+
+If you reset and the next run reads data that was previously loaded, the outcome depends on your destination write behavior:
+
+- **Append**: Previously loaded rows can be written again, causing duplicates.
+- **Overwrite/Merge/Upsert (if configured)**: Duplicate risk is reduced because existing data may be replaced or matched, but the exact behavior depends on the destination and your mappings/keys.
+
+> [!WARNING]
+> **Reset + Append = potential duplicates.** Reset clears the checkpoint, but it does not remove existing destination data.
+
+### Best practice when using Reset with Append
+
+If you must use **Append** and also need to **Reset**:
+
+1. **Truncate or otherwise clear the destination table/data** (for example, delete existing rows) before running the Copy job again.
+2. Run the Copy job after the destination is cleared.
+
+This ensures that the reloaded data doesn't stack on top of existing data.
+
 ## Why audit columns matter
 
 ### Row-level data lineage without the plumbing
@@ -59,13 +93,13 @@ For organizations in regulated industries—financial services, healthcare, insu
 - "Can you prove this financial transaction data was sourced from the production ERP system?"
 - "Which data movement job brought this patient record into the data warehouse, and when?"
 
-Without audit columns, answering these questions requires correlating external monitoring logs with destination table contents—a manual, error-prone, and time-consuming process. With audit columns, the answers are in the data itself. A simple `SELECT` query on the destination table tells you everything you need.
+Without audit columns, answering these questions requires correlating external monitoring logs with destination table contents—a manual, error-prone, and time-consuming process. With audit columns, the metadata is right there with the data.
 
 ### Data quality and debugging
 
 When data quality issues appear—duplicate rows, stale data, or missing records—the first question is always: when did this row arrive, and where did it come from? Audit columns answer that instantly.
 
-Without audit columns, you'd need to cross-reference workspace monitoring logs, match timestamps against row counts, and hope the correlation holds. With audit columns, the metadata is right there in the row.
+Without audit columns, you'd need to cross-reference workspace monitoring logs, match timestamps against row counts, and hope the correlation holds. With audit columns, the metadata is right there in the table.
 
 ### Downstream analytics and freshness tracking
 
@@ -91,14 +125,13 @@ In the Copy job setup, after selecting the source tables or folders to be copied
 
 ### Step 3: Run your Copy job
 
-Run the Copy job. With each execution, every row written to the destination table includes audit column values such as extraction time, workspace ID, Copy job name, run ID, and any custom metadata you've defined.
+Run the Copy job. With each execution, every row written to the destination table includes audit column values such as extraction time, workspace ID, Copy job name, run ID, and any custom metadata.
 
 ### Step 4: Query your data and build reports
 
-Open your destination table and query the audit columns along with your business data for a complete context. Audit columns are standard table fields, so they work seamlessly with Power BI, KQL queries, and other tools. You can build dashboards for data freshness, monitor ingestion SLAs, and create compliance lineage reports without relying on external metadata stores.
+Open your destination table and query the audit columns along with your business data for a complete context. Audit columns are standard table fields, so they work seamlessly with Power BI, KQL queries, notebooks, or other tools.
 
-   :::image type="content" source="media/copy-job/show-audit-columns.png" alt-text="Screenshot of showing Audit Columns created by Copy job.":::
-
+   :::image type="content" source="media/copy-job/show-audit-columns.png" alt-text="Screenshot of showing Audit Columns created by Copy job."::: 
 
 ## Related content
 
