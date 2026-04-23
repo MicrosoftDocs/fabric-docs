@@ -50,6 +50,25 @@ Copy job supports the following watermark column types for incremental copy from
 - **String (interpreted as datetime)**: String columns whose values can be interpreted as datetime. This lets you use incremental copy even when timestamps are stored as strings, with no need to cast or transform columns or make schema changes in the source.
 - **Integer**: An increasing number that tracks row changes.
 
+#### How NULL values in a watermark column are handled
+
+Watermark-based incremental copy detects new or changed rows by comparing values in the watermark column across runs. Because NULL values can't be compared in this way, they're handled as follows:
+
+- **Initial full load**: Rows with a NULL value in the watermark column are included. The initial run copies the complete dataset, regardless of watermark values.
+- **Subsequent incremental loads**: Rows with a NULL value in the watermark column are excluded. Only rows whose watermark value is greater than the last recorded watermark are copied, and NULL values can't satisfy that comparison. As a result, any row that's inserted or updated with a NULL watermark value after the initial load isn't picked up by later incremental runs.
+- **Column availability in the dropdown**: When you select the incremental column in Copy job, columns that aren't valid for watermark-based tracking might not appear in the dropdown. Make sure the column type is one of the [supported watermark column types](#incremental-copy-cdc-watermark) and that the column is accessible to the connection you're using.
+
+**Best practices**:
+
+- Apply a **NOT NULL** constraint to the watermark column in the source so that every row has a valid value for incremental tracking.
+- If you can't change the source schema, define a computed column or view that uses `COALESCE` (or an equivalent function) to replace NULL values with a sensible default, and use that computed column as the watermark.
+- Choose a watermark column that's guaranteed to increase monotonically and is always populated, such as a `ROWVERSION` column or a reliably maintained `LastUpdatedDatetime` column.
+
+**Troubleshooting**:
+
+- If rows are missing in the destination after an incremental run, check whether the source rows have a NULL value in the watermark column. Rows with NULL watermark values that are inserted or updated after the initial full load aren't copied by subsequent incremental runs.
+- To recover missing rows, either populate the watermark column in the source and then [reset incremental copy](#reset-incremental-copy) to trigger another full load, or switch to a watermark column that's never NULL.
+
 If your database has CDC enabled, you don’t need to choose an incremental column — Copy job automatically detects the changes. 
 
 If a copy job fails, you don’t need to worry about data loss. Copy job always resumes from the end of the last successful run. A failure does not change the state managed by Copy job. 
