@@ -3,7 +3,7 @@ title: Audit columns in Copy job
 description: Learn how to use audit columns in Copy job to add row-level data movement metadata for lineage tracking, compliance, and data quality.
 ms.reviewer: yexu
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 04/23/2026
 ms.search.form: copy-job-tutorials
 ms.custom: copy-job
 ai-usage: ai-assisted
@@ -59,13 +59,13 @@ For organizations in regulated industries—financial services, healthcare, insu
 - "Can you prove this financial transaction data was sourced from the production ERP system?"
 - "Which data movement job brought this patient record into the data warehouse, and when?"
 
-Without audit columns, answering these questions requires correlating external monitoring logs with destination table contents—a manual, error-prone, and time-consuming process. With audit columns, the answers are in the data itself. A simple `SELECT` query on the destination table tells you everything you need.
+Without audit columns, answering these questions requires correlating external monitoring logs with destination table contents—a manual, error-prone, and time-consuming process. With audit columns, the metadata is right there with the data.
 
 ### Data quality and debugging
 
 When data quality issues appear—duplicate rows, stale data, or missing records—the first question is always: when did this row arrive, and where did it come from? Audit columns answer that instantly.
 
-Without audit columns, you'd need to cross-reference workspace monitoring logs, match timestamps against row counts, and hope the correlation holds. With audit columns, the metadata is right there in the row.
+Without audit columns, you'd need to cross-reference workspace monitoring logs, match timestamps against row counts, and hope the correlation holds. With audit columns, the metadata is right there in the table.
 
 ### Downstream analytics and freshness tracking
 
@@ -85,20 +85,22 @@ In your Fabric workspace, start by creating a new Copy job or opening an existin
 
 ### Step 2: Add audit columns
 
-In the Copy job setup, after selecting the source tables or folders to be copied, add audit columns. This automatically adds metadata columns to every destination table in your job.
+In the Copy job setup, after selecting the source tables or folders to be copied, add audit columns. How you configure audit columns depends on whether your source is table-based or file-based:
+
+- **Table-based sources**: Audit columns are configured per table. Each table has its own configuration, so each table has its own audit columns. Select each table individually in the table list, and then define the audit columns for that table. Repeat this step for every table that you want to enrich with audit columns.
+- **File-based sources**: Audit columns are configured once and shared across all files. You only need to define audit columns one time, and the same configuration applies to every file that the Copy job copies.
 
    :::image type="content" source="media/copy-job/configure-audit-columns.png" alt-text="Screenshot of configuring Audit Columns in Copy job.":::
 
 ### Step 3: Run your Copy job
 
-Run the Copy job. With each execution, every row written to the destination table includes audit column values such as extraction time, workspace ID, Copy job name, run ID, and any custom metadata you've defined.
+Run the Copy job. With each execution, every row written to the destination table includes audit column values such as extraction time, workspace ID, Copy job name, run ID, and any custom metadata.
 
 ### Step 4: Query your data and build reports
 
-Open your destination table and query the audit columns along with your business data for a complete context. Audit columns are standard table fields, so they work seamlessly with Power BI, KQL queries, and other tools. You can build dashboards for data freshness, monitor ingestion SLAs, and create compliance lineage reports without relying on external metadata stores.
+Open your destination table and query the audit columns along with your business data for a complete context. Audit columns are standard table fields, so they work seamlessly with Power BI, KQL queries, notebooks, or other tools.
 
-   :::image type="content" source="media/copy-job/show-audit-columns.png" alt-text="Screenshot of showing Audit Columns created by Copy job.":::
-
+   :::image type="content" source="media/copy-job/show-audit-columns.png" alt-text="Screenshot of showing Audit Columns created by Copy job."::: 
 
 ## Related content
 

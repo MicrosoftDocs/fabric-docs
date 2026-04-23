@@ -895,6 +895,8 @@
             href: copy-job-activity.md
           - name: Change data capture (CDC) in Copy job
             href: cdc-copy-job.md
+          - name: Incremental copy in Copy job
+            href: incremental-copy-job.md
           - name: Audit columns in Copy job
             href: audit-columns-copy-job.md
           - name: Copy job with virtual network data gateway

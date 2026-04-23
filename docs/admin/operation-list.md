@@ -158,6 +158,7 @@ The following operations are available in the audit logs.
 | Created an organizational custom visual | :::no-loc text="InsertOrganizationalGalleryItem"::: |   |
 | Created an SQL query from a SQL analytics endpoint | :::no-loc text="CreateSqlQueryFromSqlAnalyticsEndpointLakehouse"::: |   |
 | Created deployment pipeline | :::no-loc text="CreateAlmPipeline"::: |   |
+| Created workload assignment using admin api | :::no-loc text="ExtensibilityCreatedWorkloadAssignmentAdminApi"::: |   |
 | Custom visual requested Azure AD access token | :::no-loc text="GenerateCustomVisualAADAccessToken"::: |   |
 | Custom visual requested Office Web Apps access token | :::no-loc text="CustomVisualWACAccessToken"::: | Not currently used  |
 | D L P Info | :::no-loc text="DLPInfo"::: |   |
@@ -249,6 +250,7 @@ The following operations are available in the audit logs.
 | Deleted organizational Power BI content pack | :::no-loc text="DeleteOrgApp"::: |   |
 | Deleted sensitivity label from Power BI item | :::no-loc text="SensitivityLabelRemoved"::: |   |
 | Deleted snapshot for user in Power BI tenant | :::no-loc text="DeleteSnapshot"::: | Generated when a user deletes a snapshot that describes a semantic model  |
+| Deleted workload assignment using admin api | :::no-loc text="ExtensibilityDeletedWorkloadAssignmentAdminApi"::: |   |
 | Deploy Model Version | :::no-loc text="DeployModelVersion"::: |   |
 | Deploy user application in FunctionSet | :::no-loc text="DeployUserAppFunctionSet"::: | Deploy user application through FunctionSet artifact  |
 | Deployed to a pipeline stage | :::no-loc text="DeployAlmPipeline"::: |   |
@@ -760,6 +762,8 @@ The following operations are available in the audit logs.
 | Disable CMK encryption for your workspace | :::no-loc text="DisableWorkspaceEncryption"::: | Triggered when CMK encryption is disabled for a workspace |
 | Disable Workspace Outbound Access Protection | :::no-loc text="DisableWorkspaceOutboundAccessProtection"::: | Outbound Access Protection Disabled on Workspace |
 | Enable Workspace Outbound Access Protection | :::no-loc text="EnableWorkspaceOutboundAccessProtection"::: | Outbound Access Protection Enabled on Workspace |
+| Get Workspace Resource Instance Rules | :::no-loc text="GetWorkspaceResourceInstanceRules"::: | |
+| Set Workspace Resource Instance Rules | :::no-loc text="SetWorkspaceResourceInstanceRules"::: | |
 
 ## Considerations and limitations
 
