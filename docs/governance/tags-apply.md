@@ -5,6 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.topic: how-to
 ms.date: 04/07/2026
+ai-usage: ai-assisted
 
 #customer intent: As a data creator, I want to apply tags to my items and workspaces so as to facilitate data management and discovery.
 
@@ -18,8 +19,9 @@ For more information about tags, see [Tags in Microsoft Fabric](tags-overview.md
 
 ## Prerequisites
 
-- You must be a workspace admin to apply tags to a workspace or remove tags from it. Non-admin workspace members (Viewer, Member, Contributor) can view workspace tags but can't modify them.
+- You must be a workspace admin to apply or remove tags on a workspace. All workspace roles (Viewer, Member, Contributor, and Admin) can view workspace tags, but only workspace admins can modify them.
 - You must have Write or Contributor permissions on an item to apply or remove tags from it.
+- The tags available in the dropdown are defined and managed by your tenant or domain admins. If you don't see the expected tags, contact your admin. For more information, see [Create and manage a set of tags](tags-define.md).
 
 ## Apply tags to a workspace
 
