@@ -46,7 +46,7 @@ No custom code or expression authoring is required. Add as many audit columns as
 > [!NOTE]
 > Audit columns are supported on all Copy job connectors except Snowflake, Office 365, and Databricks Delta Lake.
 
-## Understand Reset behavior (to avoid duplicates)
+## Understand Reset behavior
 
 If your Copy job uses incremental copy, Fabric maintains internal state (for example, a watermark or checkpoint) to know what data has already been processed.
 
@@ -58,15 +58,12 @@ If your Copy job uses incremental copy, Fabric maintains internal state (for exa
 
 **Reset does not delete, truncate, or otherwise change data in the destination.** Existing rows remain in the destination table or files.
 
-### Why Reset can create duplicates
+### Why Reset might create duplicates
 
 If you reset and the next run reads data that was previously loaded, the outcome depends on your destination write behavior:
 
 - **Append**: Previously loaded rows can be written again, causing duplicates.
 - **Overwrite/Merge/Upsert (if configured)**: Duplicate risk is reduced because existing data might be replaced or matched, but the exact behavior depends on the destination and your mappings/keys.
-
-> [!WARNING]
-> **Reset + Append = potential duplicates.** Reset clears the checkpoint, but it does not remove existing destination data.
 
 ### Best practice when using Reset with Append
 
