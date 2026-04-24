@@ -31,7 +31,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |ML models can serve real-time predictions from API endpoints (preview)|With this setting on, users can create real-time predictions from model and version endpoints. Even with real-time endpoints turned off, batch predictions can still be generated.  [Learn More](https://aka.ms/MLModelEndpointsLearnMore)|
 |Detect anomalies in Real-Time Intelligence (Preview)|This setting allows users to use statistical detection algorithms to detect anomalies in real-time data.  [Learn More](https://aka.ms/AD_docs)|
 |Users can create dbt job items (preview)|Users can import, author and execute dbt (data build tool) projects directly within Fabric. This allows users to access a powerful transformation engine that connects seamlessly with SQL-based workflows without having to setup a CLI environment. [Learn More](https://aka.ms/dbtjob_docs)|
-|Enable Operations Agents (Preview)|Users can create operations agents, which use Azure OpenAI to create operations plans and recommend actions to users in your organization in response to real-time data. By turning on this setting, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2338555).<br><br>Messages users send to operations agents will be processed through the Azure AI Bot Service, which processes data in the EU Data Boundary. Therefore, if your capacity\x{2019}s geographic boundary or national cloud boundary is outside the EU Data Boundary, data sent to operations agents can be processed outside your capacity\x{2019}s geographic boundary or national cloud boundary.<br><br>This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2338555).|
+|Enable Operations Agents (Preview)|Users can create operations agents, which use Azure OpenAI to create operations plans and recommend actions to users in your organization in response to real-time data. By turning on this setting, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2338555).<br><br>Messages users send to operations agents will be processed through the Azure AI Bot Service, which processes data in the EU Data Boundary. Therefore, if your capacity's geographic boundary or national cloud boundary is outside the EU Data Boundary, data sent to operations agents can be processed outside your capacity's geographic boundary or national cloud boundary.<br><br>This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2338555).|
 |All Power BI users can see "Set alert" button to create Fabric Activator alerts|When enabled, all Power BI users will see the "Set alert" button in reports. However, only users with permission to create Fabric items can actually set up Fabric Activator alerts, which send real-time notifications based on predefined data conditions.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2331953)|
 |Enable Mirrored Catalog item (preview)|Turn on this setting to allow users to create the Mirrored Catalog item in Fabric, to mirror external table Catalogs and access their tables through delegated shortcuts.  [Learn More](https://aka.ms/micfabricdoc)|
 |Users can create Plan (preview) items|Users can create a Plan in Fabric and leverage no-code integrated planning using Power BI Semantic models, Fabric SQL and OneLake.  [Learn More](https://aka.ms/planningdocs)|
@@ -60,7 +60,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Block users from reassigning personal workspaces (My Workspace)](portal-workspace.md#block-users-from-reassigning-personal-workspaces-my-workspace)|Turn on this setting to prevent users from reassigning their personal workspaces (My Workspace) from Premium capacities to shared capacities.  [Learn More](https://aka.ms/RestrictMyFolderCapacity)|
 |[Define workspace retention period](workspace-retention.md#set-up-the-retention-period-for-deleted-collaborative-workspaces)|Turn on this setting to define a retention period during which you can restore a deleted workspace and recover items in it. At the end of the retention period, the workspace is permanently deleted. By default, workspaces are always retained for a minimum of 7 days before they're permanently deleted.<br><br>Turn off this setting to accept the minimum retention period of 7 days. After 7 days the workspace and items in it will be permanently deleted.<br><br>Enter the number of days to retain a workspace before it's permanently deleted. My Workspace workspaces will be retained for 30 days automatically. Other workspaces can be retained for up to 90 days.|
 |Automatically convert and store reports using Power BI enhanced metadata format (PBIR) (preview)|Enable this setting to automatically convert reports to PBIR format after editing and save them in the workspace.<br><br>When this is activated, new reports will also be created in PBIR format.<br><br>PBIR format provides source control-friendly file structures, enhancing co-development and boosting development efficiency for Power BI reports.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2263123)|
-|Fabric item recovery|Once item recovery is enabled, deleted items are retained for a minimum of 7 days. You can specify a longer retention period for a maximum of 90 days. At the end of the retention period, the items are permanently deleted.<br><br>Note: Some Fabric items do not support item recovery.  [Learn more](https://aka.ms/FabricItemRecovery)<br><br>If you leave this setting turned off, deleting items will be a permanent action.<br><br>Turn on this setting to enable the deleted items to be retained for a defined period.<br><br>Enter the number of days to retain items before they\x{2019}re permanently deleted.|
+|Fabric item recovery|Once item recovery is enabled, deleted items are retained for a minimum of 7 days. You can specify a longer retention period for a maximum of 90 days. At the end of the retention period, the items are permanently deleted.<br><br>Note: Some Fabric items do not support item recovery.  [Learn more](https://aka.ms/FabricItemRecovery)<br><br>If you leave this setting turned off, deleting items will be a permanent action.<br><br>Turn on this setting to enable the deleted items to be retained for a defined period.<br><br>Enter the number of days to retain items before they're permanently deleted.|
 
 ## [Information protection](service-admin-portal-information-protection.md)
 
@@ -227,7 +227,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 | Setting name | Description |
 |------|-------|
 |Review questions|Allow semantic model owners to review questions people asked about their data.|
-|[Synonym sharing](/power-bi/natural-language/q-and-a-tooling-intro#field-synonyms)|Allow people to share Q&amp;A synonyms with your organization.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2163449)|
+|[Synonym sharing](/power-bi/natural-language/q-and-a-tooling-intro#field-synonyms)|Allow people to share Q&A synonyms with your organization.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2163449)|
 
 ## Explore settings (preview)
 
@@ -261,7 +261,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 
 | Setting name | Description |
 |------|-------|
-|Create and use Scorecards|Users in the organization can create and use Scorecards|
+|Create and use Scorecards|Users in the organization can create and use Scorecards. [Learn More](/power-bi/create-reports/service-goals-introduction) |
 
 ## [User experience experiments](service-admin-portal-user-experience-experiments.md)
 
@@ -347,7 +347,8 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Workspace admins can develop partner workloads](/fabric/workload-development-kit/environment-setup#enable-the-development-tenant-setting)|Workspace admins can develop partner workloads with a local machine development environment. Turning off this feature will prevent developers from uploading to this workspace.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2268434)|
 |[Users can see and work with additional workloads not validated by Microsoft](../workload-development-kit/publish-workload-requirements.md)|Turn on this setting to allow users to see and work with additional workloads not validated by Microsoft. Make sure that you only add workloads from publishers that you trust to meet your organization's policies.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2282060)|
 
-## Azure AI Service
+## Related content
 
-| Setting name | Description |
-|------|-------|
+- [What is the admin portal?](admin-center.md)
+- [About tenant settings](about-tenant-settings.md)
+- [Use the Fabric REST API to list tenant settings](/rest/api/fabric/admin/tenants/list-tenant-settings)
