@@ -100,7 +100,3 @@ OneLake supports inbound connectivity from Databricks serverless compute. You ca
    > The service principal has **Contributor** workspace role assignment and you can use it to write data back to OneLake.
 
 After you complete the preceding steps, you can read data from OneLake by using Databricks a notebook attached to serverless compute.
-
-## Related content
-
-- [Integrate OneLake with Azure HDInsight](onelake-azure-hdinsight.md)
