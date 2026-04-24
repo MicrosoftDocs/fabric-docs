@@ -18,9 +18,9 @@ For troubleshooting, see:
 
 ## Server level limitations
 
-- Mirroring in Fabric is supported for PostgreSQL versions 14, 15, 16, and 17.
+- Mirroring in Fabric is supported for PostgreSQL versions 14, 15, 16, 17 and 18.
 - Servers in the Burstable Compute Tier are **not supported**. 
-- Mirroring in Fabric can't be configured on a Read Replica server, or on a Primary server where a Read Replica exists.
+- Mirroring in Fabric can be configured on a server where a Read Replica exists, but initial snapshot and change batches will be served from the Primary server.
 - Transparent failover for HA-enabled servers is only supported for PostgreSQL version 17 and above. For previous versions, mirroring session will need to be re-established manually after a failover.
 - Recovering a server with Mirroring in Fabric enabled via Point in Time Restore (PITR) requires Mirroring to be reconfigured on the new server.
 - Before executing a Major Version Upgrade (MVU), disable Mirroring in Fabric and re-enable once the upgrade is finished.
@@ -40,7 +40,7 @@ For troubleshooting, see:
 
 - Permissions defined in Azure Database for PostgreSQL flexible server aren't propagated to the replicated data in Fabric OneLake.
 - To successfully configure Mirroring for Azure Database for PostgreSQL flexible server, the database role used to connect to the source server must be granted the permissions needed for Fabric mirroring in the database. You must grant the `CREATEDB`, `CREATEROLE`, `LOGIN`, `REPLICATION`, and `azure_cdc_admin` permissions to a new or existing role. For a sample script, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Database for PostgreSQL](azure-database-postgresql-tutorial.md#database-role-for-fabric-mirroring).
-- The database role used also needs to be `owner` of the tables in the source database. This means that tables have been created by that user, or that the ownership of those tables has been changed using `ALTER TABLE xxx OWNER TO <user>;`. When switching ownership to new user, you might need to grant to that user all privileges on `public` schema before. For more information regarding user account management, see Azure Database for PostgreSQL [user management](/azure/postgresql/flexible-server/how-to-create-users) documentation, PostgreSQL product documentation for [Database Roles and Privileges](https://www.postgresql.org/docs/current/static/user-manag.html), [GRANT Syntax](https://www.postgresql.org/docs/current/static/sql-grant.html), and [Privileges](https://www.postgresql.org/docs/current/static/ddl-priv.html). 
+- The database role used also needs to be `owner` of the tables in the source database (this is inherited from [CREATE PUBBLICATION requirements in PostgreSQL](https://www.postgresql.org/docs/current/sql-createpublication.html)). This means that tables have been created by that user, or that the ownership of those tables has been changed using `ALTER TABLE xxx OWNER TO <user>;`. When switching ownership to new user, you might need to grant to that user all privileges on `public` schema before. For more information regarding user account management, see Azure Database for PostgreSQL [user management](/azure/postgresql/flexible-server/how-to-create-users) documentation, PostgreSQL product documentation for [Database Roles and Privileges](https://www.postgresql.org/docs/current/static/user-manag.html), [GRANT Syntax](https://www.postgresql.org/docs/current/static/sql-grant.html), and [Privileges](https://www.postgresql.org/docs/current/static/ddl-priv.html). 
 
 ## Network and connectivity security
 
@@ -80,6 +80,28 @@ For troubleshooting, see:
     - `tsvector`
     - `txid_snapshot`
     - `xml`
+    - `json`
+    - `jsonb`
+    - `inet`
+    - `cidr`
+    - `macaddr`
+    - `macaddr8` 
+    - `tsvector`
+    - `tsquery`
+    - `int4range`
+    - `int8range`
+    - `numrange`
+    - `tsrange` 
+    - `tstzrange`
+    - `daterange`
+    - `circle`
+    - `line`
+    - `lseg`
+    - `box`
+    - `path`
+    - `point`
+    - `polygon`
+    - `interval`
 
 - Mirroring supports replicating columns containing spaces or special characters in names (such as  `,` `;` `{` `}` `(` `)` `\n` `\t` `=`). For tables under replication before this feature enabled, you need to update the mirrored database settings or restart mirroring to include those columns. Learn more from [Delta column mapping support](troubleshooting.md#delta-column-mapping-support).
 
