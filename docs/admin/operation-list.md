@@ -459,11 +459,11 @@ The following operations are available in the audit logs.
 | Pin Report To Teams Channel | :::no-loc text="PinReportToTeamsChannel"::: |   |
 | Pin Tile | :::no-loc text="PinTile"::: |   |
 | Pin Widget Tile | :::no-loc text="PinWidgetTile"::: |   |
+| Planning Session Upgraded| :::no-loc text="PlanningSessionUpgraded"::: | Session type is upgraded in planning workload.|
 | Post Dataset Rows | :::no-loc text="PostDatasetRows"::: |   |
 | Post Notebook Comment | :::no-loc text="PostNotebookComment"::: |   |
 | Post configure credentials | :::no-loc text="PostGitProviderCredentials"::: | Configure git provider credentials for a specific user |
 | Posted Power BI comment | :::no-loc text="PostComment"::: |   |
-| Planning Session Upgraded| :::no-loc text="PlanningSessionUpgraded"::: | Session type is upgraded in planning workload.|
 | Preview Lakehouse Table | :::no-loc text="PreviewLakehouseTable"::: |   |
 | Printed Power BI Dashboard | :::no-loc text="PrintDashboard"::: |   |
 | Printed Power BI report page | :::no-loc text="PrintReport"::: |   |
