@@ -86,7 +86,7 @@ For SAP Datasphere Outbound, please go to [Change Data Capture from SAP via SAP 
 
 To get started with CDC in Copy job, see the following tutorials for step-by-step guidance on specific sources:
 
-- [Change data capture from Azure SQL DB using Copy job](cdc-copy-job-azure-sql-db.md)
+- [Change data capture from Azure SQL DB using Copy job](cdc-copy-job-azure-sql-database.md)
 - [Change Data Capture from SAP via SAP Datasphere Outbound in Copy job](copy-job-tutorial-sap-datasphere.md)
 - [Change data capture from Snowflake using Copy job](cdc-copy-job-snowflake.md)
 - [Change data capture from Oracle database using Copy job](cdc-copy-job-oracle.md)
