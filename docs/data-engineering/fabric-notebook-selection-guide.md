@@ -137,7 +137,7 @@ Refer to the Glossary on the final page for explanations of terms such as NEE, V
 - Delta Lake Compatibility: Cross-environment support for Delta tables; fully supported in PySpark. 
 - FAIR Scheduling: A scheduling policy that allocates resources fairly across concurrent Spark jobs. 
 - FIFO Scheduling: First-In-First-Out execution order for job scheduling. 
-- NEE (Native Execution Engine): An optimized query engine unique to Fabric Spark. NEE offloads supported Spark operators to a native C++ execution path via Apache Gluten and Velox, with columnar, SIMD-accelerated processing and native support for Parquet and Delta formats. No code changes are required, and unsupported operators automatically fall back to JVM-based Spark. Fabric Spark Advisor surfaces real-time alerts when execution falls back to JVM-based Spark during notebook cell runs. 
+- NEE (Native Execution Engine): An optimized query engine unique to Fabric Spark. 
 - Spark Pool: A shared compute resource for running distributed Spark workloads. 
 - VORDER: Fabric optimization for vectorized query execution paths. 
 - Vectorized Acceleration: Processes data in batches using vector operations for faster performance. 

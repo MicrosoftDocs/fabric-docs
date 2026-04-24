@@ -192,7 +192,6 @@ Spark configurations apply at two levels:
 - **Immutable configs**: Some Spark configurations can't be modified. Error message: ```AnalysisException: Can't modify the value of a Spark config: <config_name>```
 - **V-Order**: Enabled by default in Fabric; write-time optimization for parquet files. See [V-Order](delta-optimization-and-v-order.md).
 - **Optimized Write**: Enabled by default in Fabric; disabled by default in Azure Synapse.
-- **spark.native.enabled**: Fabric-specific configuration that toggles the Native Execution Engine per application. Can be set at the environment level (default for all jobs) or inline per notebook or Spark job definition using `spark.conf.set('spark.native.enabled', 'true')`/`'false'`. Spark optimizations such as adaptive query execution, column pruning, and predicate pushdown continue to apply when native execution is active. During notebook cell execution, Fabric Spark Advisor surfaces real-time alerts when execution falls back to JVM-based Spark.
 
 > [!NOTE]
 > Learn how to [Migrate Spark configurations from Azure Synapse to Fabric](migrate-synapse-spark-configurations.md).

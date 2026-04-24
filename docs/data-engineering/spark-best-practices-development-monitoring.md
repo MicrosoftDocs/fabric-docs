@@ -246,7 +246,7 @@ Spark Session configs and Delta table feature flags exist so that you can custom
     spark.sql("SET spark.native.enabled = True")
     ```
 
-- If you're not using the NEE, and thus operating on the traditional Spark JVM-based execution engine, you miss huge performance gains. In representative benchmarks (TPC-DS at scale factor 1000 using Delta), workloads achieved up to 6x faster performance compared to open-source Spark, with approximately 83% compute-cost savings on a fixed-size Fabric cluster. Actual results vary by workload.
+- If you're not using the NEE, and thus operating on the traditional Spark JVM-based execution engine, you miss huge performance gains. 
 
 - **Read Optimization**: Spark determines the number of partitions based on input file sizes. Tune `spark.sql.files.maxPartitionBytes` and benchmark for your workload to optimize partition sizing.
 

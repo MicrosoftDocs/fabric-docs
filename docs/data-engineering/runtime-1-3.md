@@ -24,7 +24,7 @@ Microsoft Fabric Runtime 1.3 is a GA runtime version that incorporates the follo
 - R: 4.4.1
 
     > [!TIP]
-    > Fabric Runtime 1.3 includes support for [the Native Execution Engine](./native-execution-engine-overview.md), which can significantly enhance performance without more costs. To enable the native execution engine across all jobs and notebooks in your environment, navigate to your environment settings, select Spark compute, go to the Acceleration tab, and check Enable native execution engine. After you save and publish, this setting is applied across the environment, so all new jobs and notebooks automatically inherit and benefit from the enhanced performance capabilities. You can override this setting per application using `spark.native.enabled` in a notebook or Spark job definition. The native path preserves Fabric Spark optimizations such as adaptive query execution, cost-based rewrites, column pruning, and predicate pushdown. During notebook cell execution, Fabric Spark Advisor surfaces real-time alerts when execution falls back to JVM-based Spark, so you can quickly identify unsupported operators or configurations.
+    > Fabric Runtime 1.3 includes support for [the Native Execution Engine](./native-execution-engine-overview.md), which can significantly enhance performance without more costs. To enable the native execution engine across all jobs and notebooks in your environment, navigate to your environment settings, select Spark compute, go to the Acceleration tab, and check Enable native execution engine. After you save and publish, this setting is applied across the environment, so all new jobs and notebooks automatically inherit and benefit from the enhanced performance capabilities.
 
 ## Integrate Runtime 1.3
 
