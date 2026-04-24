@@ -3,7 +3,7 @@ title: What is Copy job in Data Factory
 description: This article explains the concept of the Copy job and the benefits it provides.
 ms.reviewer: yexu
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 04/24/2026
 ms.search.form: copy-job-tutorials 
 ms.custom: copy-job
 ai-usage: ai-assisted
@@ -50,6 +50,16 @@ See more details in:
 
 - [Incremental copy in Copy job](incremental-copy-job.md).
 - [Change data capture (CDC) in Copy Job](/fabric/data-factory/cdc-copy-job).
+
+### Full and incremental copy of data subsets with database queries
+
+You can copy subsets of data from your tables using database queries, which unlocks a wide range of data ingestion scenarios. For example:
+
+- Copy only data for a specific region from a table that has a region column to meet compliance requirements for data ingestion.
+- Copy only the top N rows for testing or sampling.
+- Project a column to a supported type (for example, cast a numeric `varchar` column to an integer) so you can use it as the incremental column. For more information, see [Incremental copy in Copy job](incremental-copy-job.md#use-an-unsupported-column-type-as-a-watermark-by-casting-with-query).
+
+This capability supports both full and incremental copies on table subsets based on your custom queries, which lets you flexibly select and filter data before loading. Your data ingestion becomes more efficient, precise, and tailored to your needs.
 
 ### Update methods (Append, Overwrite, Merge, SCD Type 2) 
 
