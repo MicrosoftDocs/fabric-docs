@@ -4,7 +4,7 @@ description: Learn to refresh Power BI semantic model with Apache Airflow Job.
 ms.reviewer: abnarain
 ms.topic: tutorial
 ms.custom: airflows, sfi-image-nochange
-ms.date: 12/18/2024
+ms.date: 04/24/2026
 ---
 
 # Tutorial: Refresh Power BI Semantic Model with Apache Airflow Job
@@ -30,7 +30,7 @@ To get started, you must complete the following prerequisites:
 
 - [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
 
-- [Create a semantic model in Power BI](https://docs.databricks.com/en/getting-started/data-pipeline-get-started.html)
+- [Create a semantic model in Power BI](/power-bi/connect-data/service-datasets-create-semantic-models)
 
 ## Add Apache Airflow requirement
 
