@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 # Apache Spark advisor for real-time advice on notebooks
 
-The Apache Spark advisor analyzes commands and code run by Apache Spark and displays real-time advice for Notebook runs. The Apache Spark advisor has built-in patterns to help users avoid common mistakes. It offers recommendations for code optimization, performs error analysis, and locates the root cause of failures. Spark Advisor also surfaces execution-path status for Fabric's Native Execution Engine, providing real-time visibility when a notebook cell's execution falls back from the native path to JVM-based Spark.
+The Apache Spark advisor analyzes commands and code run by Apache Spark and displays real-time advice for Notebook runs. The Apache Spark advisor has built-in patterns to help users avoid common mistakes. It offers recommendations for code optimization, performs error analysis, and locates the root cause of failures. Spark Advisor also provides real-time fallback visibility for Fabric's Native Execution Engine, surfacing alerts when a notebook cell's execution falls back from the native path to JVM-based Spark.
 
 ## Built-in advice
 
