@@ -110,6 +110,8 @@ items:
   items:
     - name: Mirroring Dremio catalog
       href: catalog-mirroring/catalog-mirroring-dremio.md
+    - name: Dremio catalog tutorial
+      href: catalog-mirroring/catalog-mirroring-dremio-tutorial.md
     - name: Limitations
       href: catalog-mirroring/catalog-mirroring-dremio-limitations.md
 - name: Mirroring Google BigQuery

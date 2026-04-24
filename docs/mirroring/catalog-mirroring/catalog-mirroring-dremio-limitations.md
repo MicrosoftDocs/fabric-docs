@@ -1,12 +1,11 @@
 ---
 title: "Limitations in Microsoft Fabric catalog mirroring for Dremio"
 description: Learn about limitations for Dremio catalog mirroring in Microsoft Fabric.
-author: matt1883
-ms.author: mahi
+author: kgremban
+ms.author: kgremban
 ms.reviewer: mahi
 ms.date: 04/27/2026
-ms.topic: overview
-ms.custom: references_regions
+ms.topic: limits-and-quotas
 ---
 
 # Limitations in Microsoft Fabric catalog mirroring for Dremio
