@@ -18,7 +18,7 @@ groups:
     title: Extended features (Schema support)
 - id: iot-hub-capabilities
   title: Azure IoT Hub integration capabilities
-  prompt: Select Extended features when using a Streaming vNet data gateway; otherwise, choose Basic features.
+  prompt: Select Extended features to preserve all IoT Hub message header properties. Otherwise, choose Basic.
   pivots:
   - id: basic-features
     title: Basic features
