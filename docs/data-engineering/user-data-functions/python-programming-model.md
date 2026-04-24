@@ -143,7 +143,7 @@ When writing User Data Functions, you must follow specific syntax rules to ensur
   | **Default type** | **Notes** |
   |---|---|
   | String | Any JSON-serializable string. |
-  | Datetime string | Specify as a string in the function signature. The runtime parses the string to `datetime` at invocation time. Use ISO 8601 format (for example, `2024-12-31T23:59:59Z`) for consistent, unambiguous parsing. |
+  | Datetime string | Specify as a string in the function signature. The runtime parses the string to `datetime` at invocation time. Use ISO 8601 format (for example, `2025-12-31T23:59:59Z`) for consistent, unambiguous parsing. |
   | Boolean | `True` or `False`. |
   | Integer | Any integer value. |
   | Float | Any floating-point value. |
@@ -158,7 +158,7 @@ When writing User Data Functions, you must follow specific syntax rules to ensur
   def function_name(
       requiredParam: str,
       optionalStr: str = "hello",
-    optionalDate: datetime = "2024-01-01T00:00:00Z",  # specify as a string; the runtime parses it to datetime at invocation time
+      optionalDate: datetime = "2025-01-01T00:00:00Z",  # specify as a string; the runtime parses it to datetime at invocation time
       optionalBool: bool = True,
       optionalInt: int = 10,
       optionalFloat: float = 1.5,
@@ -170,12 +170,7 @@ When writing User Data Functions, you must follow specific syntax rules to ensur
       # function body
   ```
 
-  > [!NOTE]
-  > **Limitations and guidance for default values:**
-  > - Defaults must be JSON-serializable. Sets and tuples are **not** supported as default values.
-  > - For list and dictionary defaults, prefer using `None` in the signature and assigning the real default inside the function body to avoid shared mutable default pitfalls.
-  > - For datetime defaults, use a consistent, unambiguous format such as ISO 8601 (`2024-12-31T23:59:59Z`) to ensure reliable parsing.
-  > - Using pandas DataFrame or Series as a default value requires the `fabric-user-data-functions` package version 1.0.0 or later in the item environment. To update, go to **Library management** in your user data functions item, find `fabric-user-data-functions`, and select the latest version.
+  Defaults must be JSON-serializable (sets and tuples aren't supported). For list or dictionary defaults, use `None` in the signature and assign the real default inside the function to avoid shared mutable defaults. Use ISO 8601 format (for example, `2025-12-31T23:59:59Z`) for datetime defaults. Using pandas DataFrame or Series as a default requires `fabric-user-data-functions` version 1.0.0 or later.
 
 #### Function requirements
 

@@ -155,7 +155,7 @@ def score_customer(
     customerId: str,                          # required — no default
     isActive: bool = True,                    # optional bool default
     maxRecords: int = 100,                    # optional int default
-    startDate: datetime = "2024-01-01T00:00:00Z",  # specify as a string; the runtime parses it to datetime at invocation time
+    startDate: datetime = "2025-01-01T00:00:00Z",  # specify as a string; the runtime parses it to datetime at invocation time
     tags: list | None = None,                 # optional list — use None to avoid mutable default
 ) -> dict:
     tags = tags or []
@@ -170,7 +170,7 @@ def score_customer(
 
 Supported default input types at a high level:
 - **JSON-serializable strings**, **booleans**, **integers**, and **floats** — use directly as defaults.
-- **Date/time strings** — specify as a string in the function signature; the runtime parses it to `datetime` at invocation time. Use ISO 8601 format (for example, `2024-12-31T23:59:59Z`) for reliable parsing.
+- **Date/time strings** — specify as a string in the function signature; the runtime parses it to `datetime` at invocation time. Use ISO 8601 format (for example, `2025-12-31T23:59:59Z`) for reliable parsing.
 - **Lists and dictionaries** — must be JSON-serializable. Prefer `None` in the signature and assign the real default inside the function to avoid shared mutable defaults.
 - **Objects or arrays of objects** — can map to pandas DataFrame or Series. Requires `fabric-user-data-functions` version 1.0.0 or later.
 
@@ -219,7 +219,7 @@ Now that you created multiple functions (the sample `manipulate_data` function a
 With all your functions created, tested, and published, you can now switch to **Run only** mode to execute them and see the results.
 
 > [!NOTE]
-> Parameters with defined default values can be omitted in the **Run** pane — the defined defaults are used automatically. Complex inputs such as lists and dictionaries should be provided as JSON. Date/time inputs should use a consistent format such as ISO 8601 (for example, `2024-12-31T23:59:59Z`) for proper parsing.
+> Parameters with defined default values can be omitted in the **Run** pane — the defined defaults are used automatically. Complex inputs such as lists and dictionaries should be provided as JSON. Date/time inputs should use a consistent format such as ISO 8601 (for example, `2025-12-31T23:59:59Z`) for proper parsing.
 
 1. Select **Run only mode** from the mode selector in the top-right corner of the portal.
    
@@ -315,7 +315,7 @@ If you encounter issues while working with User Data Functions:
 - **Library import errors** - Verify that all required libraries are added via Library Management and that the version is compatible with Python 3.11.
 - **Function not appearing in Functions explorer** - Make sure you published your changes after adding or modifying functions.
 - **Default value issues** - If a function fails to publish or inputs aren't parsed correctly:
-  - Use ISO 8601 format (for example, `2024-12-31T23:59:59Z`) for date/time default values to ensure reliable parsing.
+  - Use ISO 8601 format (for example, `2025-12-31T23:59:59Z`) for date/time default values to ensure reliable parsing.
   - Avoid mutable defaults for lists and dictionaries. Use `None` in the function signature and assign the real default inside the function body (for example, `items = items or []`).
   - Ensure all default values are JSON-serializable. Sets and tuples are not supported as defaults.
   - Verify that parameter names and default values match what's expected. If your function uses pandas DataFrame or Series defaults, ensure the `fabric-user-data-functions` package is version 1.0.0 or later.
