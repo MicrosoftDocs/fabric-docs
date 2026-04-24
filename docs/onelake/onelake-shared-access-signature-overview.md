@@ -57,7 +57,7 @@ You can also monitor the creation of user delegation keys in the Microsoft Purvi
 - Grant the least possible privileges to the SAS. Providing the minimum required privileges to the fewest possible resources is a security best-practice and lessens the impact if a SAS is compromised.
 - Monitor the generation of user delegation keys. You can audit the creation of user delegation keys in the Microsoft Purview portal. Search for the operation name **generateonelakeudk** to view keys generated in your tenant.
 - Understand the limitations of OneLake SAS. Because OneLake SAS tokens can't have workspace-level permissions, they aren't compatible with some Azure Storage tools which expect container-level permissions to traverse data, like Azure Storage Explorer.
-- Enable [OneLake diagnostics](https://learn.microsoft.com/fabric/onelake/onelake-diagnostics-overview) to track OneLake SAS usage. When a OneLake SAS token is used to access data, its usage, including the identity of the delegating user and the IP address of the application using the token, is logged by OneLake diagnostics. Enable diagnostics to maintain a full audit trail of OneLake SAS access to your data.
+- Enable [OneLake diagnostics](/fabric/onelake/onelake-diagnostics-overview) to track OneLake SAS usage. When a OneLake SAS token is used to access data, its usage, including the identity of the delegating user and the IP address of the application using the token, is logged by OneLake diagnostics. Enable diagnostics to maintain a full audit trail of OneLake SAS access to your data.
 
 ## Related content
 
@@ -65,5 +65,5 @@ You can also monitor the creation of user delegation keys in the Microsoft Purvi
 * [Generate a user delegation key](/rest/api/storageservices/get-user-delegation-key)
 * [Fabric and OneLake data security](security/data-access-control-model.md)
 * [Create a user delegation SAS for a blob with Python](/azure/storage/blobs/storage-blob-user-delegation-sas-create-python)
-* [OneLake diagnostics](https://learn.microsoft.com/fabric/onelake/onelake-diagnostics-overview)
+* [OneLake diagnostics](/fabric/onelake/onelake-diagnostics-overview)
 
