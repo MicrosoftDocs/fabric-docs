@@ -6,6 +6,7 @@ ms.topic: concept-article
 ms.custom:
   - best-spark-on-azure
 ms.date: 10/23/2025
+ai-usage: ai-assisted
 ---
 
 # Development and Monitoring
@@ -217,6 +218,10 @@ Various reasons can cause skew. The most common reasons result from Join or grou
 
 - Use repartition or coalesce to redistribute data. Coalesce vs Repartition: Use repartition to increase or decrease partitions. Repartition is an expensive operation as it shuffles the data, but it results in almost equal sized partitions. Coalesce only reduces partitions and avoids shuffles. Finding the optimal number of partitions often involves experimentation and tuning (and this changes with data volume and shape, thus can evolve) 
 
+##### Scenario: You want to monitor Native Execution Engine fallback during notebook runs.
+
+Fabric Spark Advisor provides real-time visibility when a notebook cell's execution falls back from the [Native Execution Engine](./native-execution-engine-overview.md) to JVM-based Spark. When execution falls back, Advisor surfaces an alert in the cell output during the run, giving you immediate feedback without needing to open the Spark UI or Spark History Server. If performance is lower than expected, check the Advisor pane for fallback alerts to identify cells or stages where native offloading wasn't applied. Review the affected queries for unsupported operators or configurations, and consider adjusting the logic or using the `spark.native.enabled` toggle to validate native versus JVM execution on specific cells.
+
 ##### Scenario: You have Fabric Spark Notebooks deployed in a production workspace, but you don't have direct access to it. The production support team reports that a Fabric Spark job failed in the production workspace, and you need to analyze the logs to troubleshoot the issue.
 
 In production workspaces, don't grant developers or non-privileged users direct access. Instead, grant read-only access only to privileged users such as Site Reliability Engineers (SREs) and production support engineers to retrieve Spark logs.
@@ -241,7 +246,7 @@ Spark Session configs and Delta table feature flags exist so that you can custom
     spark.sql("SET spark.native.enabled = True")
     ```
 
-- If you're not using the NEE, and thus operating on the traditional Spark JVM-based execution engine, you miss huge performance gains. We're talking 2x–5x improvements in many cases. 
+- If you're not using the NEE, and thus operating on the traditional Spark JVM-based execution engine, you miss huge performance gains. In representative benchmarks (TPC-DS at scale factor 1000 using Delta), workloads achieved up to 6x faster performance compared to open-source Spark, with approximately 83% compute-cost savings on a fixed-size Fabric cluster. Actual results vary by workload.
 
 - **Read Optimization**: Spark determines the number of partitions based on input file sizes. Tune `spark.sql.files.maxPartitionBytes` and benchmark for your workload to optimize partition sizing.
 
