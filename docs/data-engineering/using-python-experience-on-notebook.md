@@ -4,7 +4,8 @@ description: Learn how to work with pure Python notebooks for data exploration, 
 ms.reviewer: jingzh
 ms.topic: how-to
 ms.search.form: Create and use notebooks
-ms.date: 03/31/2025
+ms.date: 04/24/2026
+ai-usage: ai-assisted
 ---
 
 # Use Python experience on Notebook
@@ -51,7 +52,10 @@ Python notebook supports multiple job execution ways:
 - **Pipeline run**: You can orchestrate Python notebooks as notebook activities in [Pipeline](../data-factory/notebook-activity.md). Snapshot will be generated after the job execution.
 - **Reference run**: You can use `notebookutils.notebook.run()` or `notebookutils.notebook.runMultiple()` to reference run Python notebooks in another Python notebook as batch job. Snapshot will be generated after the reference run finished.
 - **%run**: You can use `%run` to reference and execute other notebooks within the same execution context, allowing you to directly call functions and reuse variables defined in those notebooks. For more details, see the documentation on how to [reference run a notebook](./author-execute-notebook.md#reference-run-a-notebook).
-- **Public API run**: You can schedule your python notebook run with the [notebook run public API](/rest/api/fabric/core/job-scheduler/run-on-demand-item-job), make sure the language and kernel properties in notebook metadata of the public API payload are set properly.
+- **Public API run**: You can schedule your Python notebook run with the [notebook run public API](/rest/api/fabric/core/job-scheduler/run-on-demand-item-job). The Job Scheduler API supports parameterized runs and returning exit values from notebook executions. Exit values can be used for conditional orchestration and signaling outcomes when orchestrating Python notebooks in automation and CI/CD scenarios. Make sure the language and kernel properties in notebook metadata of the public API payload are set properly. Parameter values passed via the Public API are available to the Python notebook at runtime using the standard parameter access pattern used in Fabric notebooks. For details on the request shape for parameters and exit value retrieval, see [Manage and execute notebooks in Fabric with APIs](notebook-public-api.md). You can monitor run status and cancel job instances via the Job Scheduler API, complementing the in-UI **View all runs** experience.
+
+> [!NOTE]
+> Service principal authentication is supported for the Items REST API (CRUD for notebooks) and the Job Scheduler API (execution), enabling secure unattended automation and CI/CD for Python notebooks. Add the service principal to the workspace with an appropriate role to use these APIs.
 
 You can monitor the Python notebook job run details on the ribbon tab **Run** -> **View all runs**.
 
@@ -63,7 +67,7 @@ You can monitor the Python notebook job run details on the ribbon tab **Run** ->
 You can interact with Lakehouse, Warehouses, SQL endpoints, and built-in resources folders on Python notebook.
 
  > [!NOTE]
- > - The Python Notebook runtime comes pre-installed with [delta‑rs](https://delta-io.github.io/delta-rs/) and [duckdb](https://duckdb.org/) libraries to support both reading and writing Delta Lake data. However, note that some Delta Lake features may not be fully supported at this time. For more details and the latest updates, kindly refer to the official [delta‑rs](https://github.com/delta-io/delta-rs) and [duckdb](https://duckdb.org/docs/stable/extensions/delta.html) websites.
+ > - The Python Notebook runtime comes pre-installed with [delta‑rs](https://delta-io.github.io/delta-rs/) and [duckdb](https://duckdb.org/) libraries to support both reading and writing Delta Lake data. However, note that some Delta Lake features may not be fully supported at this time. For more details and the latest updates, refer to the [delta‑rs](https://github.com/delta-io/delta-rs) and [DuckDB](https://duckdb.org/) documentation.
  > - We currently do not support deltalake(delta-rs) version 1.0.0 or above. Stay tuned.
 
 ### Lakehouse interaction
@@ -173,6 +177,9 @@ Here are the supported properties in Python notebook **%%configure**:
 You can view the compute resources update on notebook status bar, and monitor the CPU and Memory usage of the compute node in real-time.
 
    :::image type="content" source="media\use-python-experience-on-notebook\compute-resources-usage.png" alt-text="Screenshot showing compute resources update." lightbox="media\use-python-experience-on-notebook\compute-resources-usage.png":::
+
+> [!NOTE]
+> API-triggered runs honor session configuration such as compute vCores and `defaultLakehouse` specified via notebook metadata or `%%configure`. The Job Scheduler API also supports selecting the target Lakehouse and environment at run time. For details on the payload fields, see [Manage and execute notebooks in Fabric with APIs](notebook-public-api.md).
 
 ## NotebookUtils
 
