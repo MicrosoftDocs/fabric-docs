@@ -78,8 +78,8 @@ This step is especially helpful if:
 * The workspace was recently created
 * Your role assignment was added recently
 
-[!NOTE]
-This tutorial authenticates using Microsoft Entra ID via `DefaultAzureCredential`. Fabric REST APIs don't require a browser session, but signing in to the Fabric web experience can prevent first‑run authorization issues caused by delayed role provisioning. 
+> [!NOTE]
+> This tutorial authenticates using Microsoft Entra ID via `DefaultAzureCredential`. Fabric REST APIs don't require a browser session, but signing in to the Fabric web experience can prevent first‑run authorization issues caused by delayed role provisioning. 
 
 ## Create the GeoJSON file
 
