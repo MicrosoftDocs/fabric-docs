@@ -53,6 +53,6 @@ In addition to deduplication, design your event handlers to be **idempotent**—
 
 ## Related content
 
-- [Azure and Fabric events overview](https://learn.microsoft.com/fabric/real-time-hub/fabric-events-overview)
-- [Business events overview](https://learn.microsoft.com/fabric/real-time-hub/business-events/business-events-overview)
+- [Azure and Fabric events overview](/fabric/real-time-hub/fabric-events-overview)
+- [Business events overview](/fabric/real-time-hub/business-events/business-events-overview)
 - [CloudEvents specification](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md)
