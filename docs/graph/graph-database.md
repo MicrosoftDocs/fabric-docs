@@ -3,7 +3,7 @@ title: Graph Database Overview
 description: Discover what a graph database is, how it stores relationships as edges, and when to choose a graph database for connected data workloads in Microsoft Fabric.
 #customer intent: As a data professional, I want to understand what a graph database is and how it compares to standalone graph database deployments so that I can decide whether graph in Microsoft Fabric fits my workload.
 ms.topic: concept-article
-ms.date: 03/31/2026
+ms.date: 04/20/2026
 ms.reviewer: wangwilliam
 ---
 
@@ -44,9 +44,13 @@ LIMIT 100
 
 This pattern reads as: starting at the Person node for Annemarie, follow `:knows` edges to each friend node, then follow `:likes` edges to related `:Comment` nodes. Return the 100 newest of those comments ordered by their creation date.
 
+## AI-assisted graph reasoning (preview)
+
+Graph databases are a natural fit for AI reasoning because they encode the relationships that language models need to answer multi-hop questions accurately. In Microsoft Fabric, [Fabric Data Agent](../data-science/concept-data-agent.md) supports graph as a data source, enabling users to ask natural language questions that the agent answers by querying the graph. For details on how NL2GQL translates natural language into GQL, see the [Graph-powered AI reasoning announcement](https://blog.fabric.microsoft.com/en-US/blog/graph-powered-ai-reasoning-preview/).
+
 ## Graph data model and schema flexibility
 
-Graph data models are schema-optional: you can work with a fixed schema when you need strong governance, or evolve the model as new node types, relationships, or properties appear. This approach reduces the need for data duplication and lets teams unify data from multiple sources without heavy upfront redesign. For more information about the data model used in graph in Microsoft Fabric, see [Labeled property graphs](graph-data-models.md).
+Graph data models are schema-optional: you can start with a flexible model and formalize it over time. In graph in Microsoft Fabric, structural changes — such as adding new properties, modifying labels, or changing relationship types — currently require reingesting data into a new model. This approach reduces the need for data duplication and lets teams unify data from multiple sources without heavy upfront redesign. For more information about the data model used in graph in Microsoft Fabric, see [Labeled property graphs](graph-data-models.md).
 
 ## Common uses for graph databases
 
@@ -58,6 +62,7 @@ Graph databases align closely with domains where connections drive value, such a
 - Fraud and risk networks — detect suspicious patterns across accounts, transactions, and devices
 - Network and IT topology — map dependencies between servers, services, and infrastructure components
 - Supply chain dependency analysis — trace component origins and relationships across suppliers
+- Graph-based retrieval-augmented generation (RAG) — use graph structure as a knowledge source for AI agents that need multi-hop reasoning with explainable, grounded answers
 
 In these scenarios, questions are less about single records and more about how many entities relate and interact over several hops.
 
@@ -78,10 +83,11 @@ Representing your data as a graph and storing it in a separate, standalone graph
 - **Data movement and duplication**: Standalone graph databases typically require extracting, transforming, and loading data into a separate store, which increases complexity and can lead to duplicated datasets. Graph operates on OneLake so you can model and query connected data without moving it.
 - **Operational costs**: Standalone graph stacks run as separate clusters or services and often carry idle-capacity charges. In graph, workloads consume pooled capacity units (CUs) with automatic scale-down and centralized metrics, which simplifies operations and can lower cost.
 - **Scalability**: Some standalone graph databases depend on scale-up or vendor-specific clustering. Graph is designed for large-scale graphs and uses scale-out sharding across multiple workers to handle big-data workloads efficiently.
-- **Tooling and skills**: Vendor-specific graph systems can require specialized languages and separate analytics frameworks. Graph provides unified modeling, standards-based querying (GQL), built-in graph analytics algorithms, BI and AI integration, and low/no-code exploratory tools. These capabilities enable a broader set of users to work with connected data.
+- **Tooling and skills**: Vendor-specific graph systems can require specialized languages and separate analytics frameworks. Graph provides unified modeling, standards-based querying (GQL), built-in graph analytics algorithms, BI and AI integration including [Fabric Data Agent](../data-science/concept-data-agent.md) support for [natural language graph querying](https://blog.fabric.microsoft.com/en-US/blog/graph-powered-ai-reasoning-preview/) (preview), and low/no-code exploratory tools. These capabilities enable a broader set of users to work with connected data.
 - **Governance and security**: Separate graph deployments need independent governance and security setups. Graph uses OneLake governance, lineage, and workspace role-based access control (RBAC) so compliance, auditing, and permissions remain consistent with the rest of your Fabric environment.
 
 ## Related content
 
 - [Compare graph and relational databases](graph-relational-databases.md)
+- [Fabric data agent concepts](../data-science/concept-data-agent.md)
 - [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)

@@ -797,6 +797,8 @@ items:
             href: data-activator/activator-tutorial.md
       - name: Concepts
         items:
+          - name: Trigger modeling
+            href: data-activator/activator-trigger-model.md
           - name: Activator rules
             href: data-activator/activator-rules-overview.md
           - name: Detection conditions for Activator
@@ -967,6 +969,8 @@ items:
         items:
           - name: Build real-time work order routing
             href: map/tutorial-real-time-work-order-routing-application.md
+          - name: Create a map using the REST API with Python
+            href: map/tutorial-create-fabric-map-python.md
       - name: Concepts
         items:
           - name: Map items
@@ -1040,13 +1044,15 @@ items:
         href: operations-agent-tocs/toc.yml
       - name: MCP servers
         items:
-          - name: Fabric RTI MCP local server
+          - name: Overview
             href: mcp-overview.md
-          - name: Remote MCP Integrations
+          - name: Local RTI MCP server
+            href: mcp-local-server.md
+          - name: Remote MCP servers
             items:
-              - name: Get started with Eventhouse MCP remote Server
+              - name: Remote MCP for Eventhouse
                 href: mcp-remote-eventhouse.md
-              - name: Get started with Activator MCP remote Server
+              - name: Remote MCP for Activator
                 href: mcp-remote-activator.md
   - name: Git integration and deployment pipelines
     displayName: alm, application lifecycle management, cicd, devops
@@ -1069,7 +1075,7 @@ items:
     href: kusto-tocs/query/toc.yml
   - name: Reference architectures
     items:
-    - name: Automative and mobile
+    - name: Automotive and Mobility
       items:
       - name: Connected fleet data analytics
         href: architectures/connected-fleet.md

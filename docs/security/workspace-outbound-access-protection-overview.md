@@ -91,8 +91,6 @@ This section outlines important considerations and limitations when using worksp
 
 * In workspaces with outbound access protection enabled, querying data warehouse file paths from notebooks using the `dbo` schema isn't supported, because access to schema-based paths isn't supported. To query the warehouse from notebooks, use the T-SQL option instead.
 
-* The Fabric portal UI doesn't currently support enabling both inbound protection (workspace-level private links) and outbound access protection at the same time for a workspace. To configure both settings together, use the [Workspaces - Set Network Communication Policy API](/rest/api/fabric/core/workspaces/set-network-communication-policy?tabs=HTTP), which allows full management of inbound and outbound protection policies.
-
 * Workspace outbound access protection isn't currently compatible with [OneLake Diagnostics](/fabric/onelake/onelake-diagnostics-overview). If you require OneLake diagnostics and outbound access protection to work together, you must select a lakehouse in the same workspace.
 
 * Workspace outbound access protection isn't currently compatible with [Fabric external data sharing](/fabric/governance/external-data-sharing-overview). Cross-tenant allow lists aren't supported with workspace outbound access protection. 
@@ -153,6 +151,8 @@ The following table summarizes the level of granularity supported by different c
 | Lakehouse                       | Workspace  |
 | Warehouse                       | Workspace  |
 | Fabric SQL Database             | Workspace  |
+| Notebook                        | Workspace  |
+| Spark Job Definition            | Workspace  |
 
 ## Tenant admin API for workspace network policies
 
