@@ -1,7 +1,10 @@
 ---
 title: Add rules (with Fabric Activator)
 description: Learn about using Fabric Activator rules in ontology (preview).
-ms.date: 04/24/2026
+author: baanders
+ms.author: baanders
+ms.reviewer: baanders
+ms.date: 01/23/2026
 ms.topic: how-to
 ---
 
@@ -35,31 +38,36 @@ Rules use the following ontology (preview) concepts. For definitions of these te
 
 ## Create a rule
 
-1. Open the rules configuration from the Home configuration canvas, or from the entity type details.
+1. Open the rules configuration from the ontology overview, or from the preview experience.
 
-    To open rules from the configuration canvas, select **...** next to an entity type name to open its options menu. Hover over **Manage rules**, then select **Add rule**.
+    To open rules from the ontology overview, select **...** next to an entity type name to open its options menu. Hover over **Add and view rule**, then select **View rules**.
 
-    :::image type="content" source="media/how-to-use-rules/add-rules-canvas.png" alt-text="Screenshot of Manage rules from the Home configuration canvas." lightbox="media/how-to-use-rules/add-rules-canvas.png":::
+    :::image type="content" source="media/how-to-use-rules/view-rules-ontology.png" alt-text="Screenshot of View rules from the ontology page." lightbox="media/how-to-use-rules/view-rules-ontology.png":::
 
-    To open rules from the entity type details view (any tab), select **Manage rules > Add rules**.
+    To open rules from the preview experience, select **Add and view rules > View rules** from the menu ribbon.
 
-    :::image type="content" source="media/how-to-use-rules/add-rules-preview.png" alt-text="Screenshot of View rules from the entity type details Configuration tab." lightbox="media/how-to-use-rules/add-rules-preview.png":::
+    :::image type="content" source="media/how-to-use-rules/view-rules-preview.png" alt-text="Screenshot of View rules from the preview page." lightbox="media/how-to-use-rules/view-rules-preview.png":::
 
-1. The **Add rule** panel opens and displays the rule configuration options.
+1. The **Rules** panel opens, showing all the rules associated with an entity type. 
 
-    :::image type="content" source="media/how-to-use-rules/add-rule.png" alt-text="Screenshot of Add rule panel." lightbox="media/how-to-use-rules/add-rule.png":::
+    :::image type="content" source="media/how-to-use-rules/rules-panel.png" alt-text="Screenshot of Rules panel." lightbox="media/how-to-use-rules/rules-panel.png":::
 
-1. Configure the rule, including overall **Details**, **Monitor** settings, **Conditions**, **Actions**, and **Save location**. 
+1. By default, ontology rules are saved to a new Fabric Activator item. If you want to make changes, select **Edit** from the **Rules** panel. From there, you can change the name of the new Fabric Activator item or choose an existing Fabric Activator item to use instead.
 
-    While configuring, keep the following notes in mind:
+    :::image type="content" source="media/how-to-use-rules/edit-activator.png" alt-text="Screenshot of selecting the Fabric Activator item.":::
 
-    * Ontology-authored rules support temporal conditions (for example, thresholds exceeded over a time window) and aggregations via the Fabric Activator condition configuration, evaluated per entity instance. For more information about using these fields, see [Create a rule in Fabric Activator](../../real-time-intelligence/data-activator/activator-create-activators.md).
+    >[!NOTE]
+    >We recommend saving all rules for an ontology to the same workspace and Fabric Activator item.
 
-    * By default, ontology rules are saved to a new Fabric Activator item. If you want to choose an existing Fabric Activator item instead, select it manually from the **Save location** step. We recommend saving all rules for an ontology to the same workspace and Fabric Activator item.
+1. In the main **Rules** panel, create a new rule with the **Add rule** button.
 
-    :::image type="content" source="media/how-to-use-rules/save-location.png" alt-text="Screenshot of changing the save location.":::
+    :::image type="content" source="media/how-to-use-rules/add-rule.png" alt-text="Screenshot of adding the rule.":::
 
-1. When you're finished configuring, select **Create**.
+1. Configure the rule, including conditions, actions, and save location. Ontology-authored rules support temporal conditions (for example, thresholds exceeded over a time window) and aggregations via the Fabric Activator condition configuration; these options are available in the rule designer opened from ontology and are evaluated per entity instance. For more information about these fields, see [Create a rule in Fabric Activator](../../real-time-intelligence/data-activator/activator-create-activators.md).
+
+    :::image type="content" source="media/how-to-use-rules/rule-configuration.png" alt-text="Screenshot of configuring the rule." lightbox="media/how-to-use-rules/rule-configuration.png":::
+
+    When you're finished configuring, select **Create**.
 
 1. The rule is now visible in the **Rules** panel. To start or stop the rule, toggle the switch next to the rule name.
 
@@ -67,15 +75,8 @@ Rules use the following ontology (preview) concepts. For definitions of these te
 
 ## View and edit a rule
 
-You can reopen the **Rules** panel at any time by selecting **View rules** from any of the **Manage rules** dialogs described in [Create a rule](#create-a-rule).
+To examine the rule in more detail, open it in Fabric Activator. Select **...** next to the rule name to open its options menu, then **Open in Activator**. 
 
-In the **Rules** pane, you can: 
-* Change which Fabric Activator item is used to store ontology rules, by selecting **Edit** next to the Activator name
+:::image type="content" source="media/how-to-use-rules/open-in-activator.png" alt-text="Screenshot of opening the rule in Fabric Activator.":::
 
-    :::image type="content" source="media/how-to-use-rules/edit-activator-overall.png" alt-text="Screenshot of editing the overall activator instance used for ontology rules.":::
-
-* Manage the rule further by selecting *...** next to the rule name to open its options menu. From here, you can **Edit** the rule, **Delete** the rule, or **Open in Activator**. 
-
-    :::image type="content" source="media/how-to-use-rules/rule-options.png" alt-text="Screenshot of the options for a rule.":::
-    
-    In Fabric Activator, you can make further edits to the rule and analyze its conditions and actions. For more information, see [Create a rule in Fabric Activator](../../real-time-intelligence/data-activator/activator-create-activators.md).
+In Fabric Activator, you can make further edits to the rule and analyze its conditions and actions. For more information, see [Create a rule in Fabric Activator](../../real-time-intelligence/data-activator/activator-create-activators.md).
