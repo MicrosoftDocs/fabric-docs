@@ -13,11 +13,11 @@ ms.date: 03/30/2026
 
 1. Select **Create a New App** to create your app. You can also select **Explore PowerTable** to experience a sample PowerTable app.
 
-    :::image type="content" source="../media/includes/create-new-app.png" alt-text="Screenshot of the Create a New App button." lightbox="../media/includes/create-new-app.png":::
+    :::image type="content" source="../media/includes/create-new-app.png" alt-text="Screenshot of the Create a New App button.":::
 
 1. **Select a Connection:** Choose a Fabric SQL connection. You can also create a new connection if required.
 
-    :::image type="content" source="../media/includes/connect.png" alt-text="Screenshot of selecting the SQL connection." lightbox="../media/includes/connect.png":::
+    :::image type="content" source="../media/includes/connect.png" alt-text="Screenshot of selecting the SQL connection.":::
 
 1. **Database Name:** Select the Fabric SQL database. The metadata for your app is stored here. Select **Add**.
 
