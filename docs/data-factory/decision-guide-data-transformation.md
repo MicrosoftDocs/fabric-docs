@@ -12,13 +12,13 @@ Microsoft Fabric Dataflows Gen2 offers multiple ways to ingest, transform, and l
 
 The following capabilities help you optimize your dataflows:
 
-- **Staging queries** - TBD
-- **V Ordering** - TBD
-- **High-Scale Compute output** - TBD
+- **Staging queries** – Land data in an intermediate layer before applying transformations, enabling ELT patterns.  
+- **V-Ordering** – Optimize the physical layout of Parquet files during writes for faster write and read performance.  
+- **High-Scale Compute output** – Scale transformation processing after ingestion for high-throughput ELT workloads.  
 - [**Fast copy**](dataflows-gen2-fast-copy.md) – Accelerate bulk data movement with minimal transformation.  
-- [**Modern Evaluator**](dataflow-gen2-modern-evaluator.md)  – Optimize complex transformation performance for non-foldable queries.  
-- [**Partitioned compute**](dataflow-gen2-partitioned-compute.md) – Scale transformations across large and partitioned datasets.
-- **Incremental refresh** - TBD
+- [**Modern Evaluator**](dataflow-gen2-modern-evaluator.md) – Optimize complex transformation performance for non-foldable queries.  
+- [**Partitioned compute**](dataflow-gen2-partitioned-compute.md) – Scale transformations across large and partitioned datasets.  
+- **Incremental refresh** – Refresh only new or changed data to reduce processing time and compute cost.
 
 This guide covers common use cases, real-world examples, and benchmarking results to help you choose the right feature for your workload.
 
@@ -31,6 +31,10 @@ Use the following table to match your workload to the right Dataflow Gen2 capabi
 | Copy large datasets quickly with no transformations | [**Fast Copy**](#use-fast-copy-when) |
 | Run complex transformations efficiently | [**Modern Evaluator**](#use-modern-evaluator-when) |
 | Process large, partitioned datasets with complex transformations | [**Partitioned Compute**](#use-partitioned-compute-when) |
+| Stage data before applying transformations | [**Staging**](#use-staging-when) |
+| Scale transformation output for large datasets | [**High-Scale Compute**](#use-high-scale-compute-when) |
+| Refresh only new or changed data incrementally | [**Incremental Refresh**](#use-incremental-refresh-when) |
+| Optimize write performance to Fabric destinations | [**V-Ordering**](#use-v-ordering-when) |
 
 ### Use fast copy when
 
@@ -57,6 +61,38 @@ For a benchmark example, see [Scenario 2: Complex transformations](#scenario-2-c
 
 For a benchmark example, see [Scenario 3: Combine files](#scenario-3-combine-files).
 
+### Use staging when
+
+- You want to separate ingestion from transformation for better performance.
+- You need to land raw data before applying transformations.
+- You're working with large datasets where a copy-then-transform (ELT) approach is more efficient.
+
+For a benchmark example, see [Scenario 4: ELT patterns](#scenario-4-elt-patterns).
+
+### Use High-Scale Compute when
+
+- TBD
+- TBD
+- TBD
+
+For a benchmark example, see [Scenario 4: ELT patterns](#scenario-4-elt-patterns).
+
+### Use incremental refresh when
+
+- Your dataset grows over time and you only need to refresh new or changed data.  
+- You want to reduce refresh duration by avoiding full reloads.  
+- Your source supports date-based or key-based filtering for incremental detection.
+
+For a benchmark example, see [Scenario 5: Incremental refresh](#scenario-5-incremental-refresh).
+
+### Use V-Ordering when
+
+- You're loading data into Fabric destinations like lakehouses or warehouses.  
+- You want to optimize write performance and downstream read performance.  
+- You're working with Parquet-based destinations that benefit from columnar ordering.
+
+For a benchmark example, see [Scenario 6: Write-time optimization](#scenario-6-write-time-optimization).
+
 ### Capability comparison
 
 The following table compares each capability in more detail, including supported sources and typical benefits.
@@ -66,6 +102,10 @@ The following table compares each capability in more detail, including supported
 | **Fast Copy**       | Copy data directly from source to destination        | Straight copy or ingestion workloads with minimal transformations | ADLS Gen2, Blob storage, Azure SQL DB, Lakehouse, PostgreSQL, On-premises SQL Server, Warehouse, Oracle, Snowflake, Fabric SQL DB | High-throughput data movement, lower cost |
 | **Modern Evaluator** | Transforming data from connectors that don’t fold   | Complex transformations                              | Azure Blob Storage, ADLS Gen2, Lakehouse, Warehouse, OData, Power Platform Dataflows, SharePoint Online List, SharePoint folder, Web | Faster data movement and improved query performance |
 | **Partitioned Compute** | Partitioned datasets                             | High-volume transformations across multi-file sources | ADLS Gen2, Azure Blob Storage, Lakehouse files, Local folders | Parallelized execution and faster processing |
+| **Staging** | Stage raw data before applying transformations | Large-scale ingestion followed by transformation | ADLS Gen2, Blob storage, Azure SQL DB, Lakehouse, PostgreSQL, On-premises SQL Server, Warehouse, Oracle, Snowflake, Fabric SQL DB | Separates ingestion from transformation for better performance |
+| **High-Scale Compute** | TBD | TBD | Fabric Lakehouse | Maximized throughput during output stage |
+| **Incremental Refresh** | Incremental data loads | Growing datasets where only new or changed data needs processing | Sources that support date-based or key-based filtering | Reduced refresh times, lower compute cost |
+| **V-Ordering** | Write-time optimization to Fabric sources | Workloads loading into Fabric lakehouses or warehouses | Fabric Lakehouse, Fabric Warehouse | Faster writes, optimized Parquet layout for reads |
 
 > [!NOTE]
 > For more information on query evaluation and query folding, see this [Power Query article](/power-query/query-folding-basics). It provides a framework that can help you understand the concepts discussed here.
@@ -74,16 +114,21 @@ The following table compares each capability in more detail, including supported
 
 All scenarios in this guide use the [**New York City Taxi & Limousine Commission (TLC) Trip Data – TLC Trip Record Data**](/azure/open-datasets/dataset-taxi-yellow?tabs=azureml-opendatasets) dataset: billions of taxi trip records stored as Parquet files in ADLS Gen2, covering 2021–2025 (up to August). The destination is a Fabric lakehouse or warehouse, depending on the scenario.
 
-The following table summarizes the benchmark results across all three scenarios. Each scenario also includes a Dataflow Gen1 baseline for comparison.
+The following table summarizes the benchmark results across all scenarios. Each scenario also includes a Dataflow Gen1 baseline for comparison.
 
 | Scenario | Capability enabled | Gen2 execution time | Speedup vs. Gen1 baseline |
 |----------|-------------------|---------------------|---------------------------|
 | Bulk ingestion (5 files → lakehouse) | Fast Copy | 00:07:43 | 13× faster |
 | Complex transforms (1 file → warehouse) | Modern Evaluator | 01:00:58 | 1.2× faster |
-| Partitioned transforms (56 files → warehouse) | Partitioned Compute | 00:06:51 | 15× faster |
-| Partitioned transforms (56 files → warehouse) | Partitioned Compute + Modern Evaluator | 00:04:48 | 21× faster |
+| Partitioned transforms (56 files → warehouse) | Partitioned Compute | 00:04:48 | 21× faster |
+| ELT patterns (staging + transform) | Fast Copy + Staging + High-Scale Compute | TBD | TBD |
+| Incremental refresh | Incremental Refresh | TBD | TBD |
+| Write-time optimization | V-Ordering | TBD | TBD |
 
 For step-by-step details, dataset configurations, and design patterns for each capability, see the scenario sections that follow.
+
+> [!NOTE]
+> All scenarios in this article implicitly use the **Modern Evaluator** unless explicitly stated otherwise.
 
 ## Scenario 1: Copy data
 
@@ -248,3 +293,131 @@ This transformation took an hour and 44 minutes without partitioned compute.
 :::image type="content" source="media/decision-guide-data-transformation/results-with-partitioned-compute-and-modern-evaluator.png" alt-text="Screenshot of Recent runs results with Partitioned Compute + Modern Evaluator." lightbox="media/decision-guide-data-transformation/results-with-partitioned-compute-and-modern-evaluator.png":::
 
 This transformation took four minutes and 48 seconds with partitioned compute and modern evaluator.
+
+## Scenario 4: ELT patterns
+
+The team needs to ingest large volumes of raw trip data into staging first, then apply transformations separately. This extract-load-transform (ELT) approach decouples ingestion from transformation, enabling higher throughput and more scalable pipelines.
+
+### Challenges
+
+- Ingestion and transformation compete for the same resources when run together.  
+- Large datasets slow down when transformations are applied during the copy phase.  
+- The team needs a scalable pattern that separates data movement from data processing.
+
+### Dataset
+
+One parquet file.
+
+### Solution
+
+The team combines **Fast Copy** for high-throughput ingestion, **staging queries** to land data in an intermediate layer, and **High-Scale Compute output** to apply transformations at scale after ingestion.
+
+#### Design
+
+:::image type="content" source="media/decision-guide-data-transformation/elt-patterns-design.png" alt-text="Screenshot of dataflow design for ELT patterns showcasing Query settings." lightbox="media/decision-guide-data-transformation/elt-patterns-design.png":::
+
+A query loads a single parquet file into staging using fast copy. Multiple reference queries are created against the initial staged query to transform the data into multiple dimensions that are later loaded to a Lakehouse as separate tables.
+
+#### ELT pattern considerations
+
+- Fast Copy handles the initial data movement into staging.  
+- Staging queries land data in an intermediate layer before transformations.  
+- High-Scale Compute output processes transformations at scale after ingestion.  
+- Best suited for workloads where separating ingestion from transformation improves throughput.
+
+### Results
+
+TBD
+
+<!--
+| Configuration | Execution Time (hh:mm:ss) | Comparison against Gen1 |
+|---------------------|---------------------------|-------------------------|
+| **Dataflow Gen1 baseline** | TBD | — |
+| **Dataflow Gen2 without ELT pattern** | TBD | TBD |
+| **Dataflow Gen2 with Fast Copy + Staging + High-Scale Compute** | TBD | TBD |
+-->
+
+## Scenario 5: Incremental refresh
+
+As the taxi dataset grows daily, the team can't afford to reload the entire dataset on every refresh. They need a strategy that processes only new or changed records.
+
+### Challenges
+
+- Full dataset refreshes become slower and more expensive as data grows.  
+- The team needs to process only the delta (new or changed records) on each run.  
+- Refresh windows are limited, so efficiency is critical.
+
+### Dataset
+
+TBD
+
+### Solution
+
+The team enables **incremental refresh** in Dataflows Gen2. Incremental refresh detects and processes only new or changed data based on date or key filters, reducing refresh time and compute cost.
+
+#### Design
+
+TBD
+
+<!-- :::image type="content" source="media/decision-guide-data-transformation/incremental-refresh-design.png" alt-text="Screenshot of dataflow design for Incremental Refresh showcasing Query settings." lightbox="media/decision-guide-data-transformation/incremental-refresh-design.png"::: -->
+
+#### Incremental refresh considerations
+
+- Requires a date or key column to detect new or changed data.  
+- Reduces refresh duration by avoiding full reloads.  
+- Works best with growing datasets that have a clear incremental boundary.
+
+### Results
+
+TBD
+
+<!--
+| Configuration | Execution Time (hh:mm:ss) | Comparison against Gen1 |
+|---------------------|---------------------------|-------------------------|
+| **Dataflow Gen1 baseline** | TBD | — |
+| **Dataflow Gen2 without Incremental Refresh** | TBD | TBD |
+| **Dataflow Gen2 with Incremental Refresh** | TBD | TBD |
+-->
+
+## Scenario 6: Write-time optimization
+
+The team loads processed trip data into a Fabric lakehouse. They want to compare how enabling V-Ordering might affect their load times when writing to a table.
+
+### Challenges
+
+- The team doesn't know whether V-Ordering adds overhead to their write operations.  
+- It's unclear if this optimization should be applied during the dataflow write or handled as a post-load maintenance task on the table at a regular cadence.  
+- They need to measure load times with and without V-Ordering using the same dataset and configuration.
+
+### Dataset
+
+TBD
+
+### Solution
+
+The team runs the same dataflow twice—once with **V-Ordering** disabled and once with it enabled—to compare load times. V-Ordering optimizes the physical layout of Parquet files during write operations by applying columnar sorting and compression techniques.
+
+#### Design
+
+TBD
+
+<!-- :::image type="content" source="media/decision-guide-data-transformation/v-ordering-design.png" alt-text="Screenshot of dataflow design for V-Ordering showcasing Query settings." lightbox="media/decision-guide-data-transformation/v-ordering-design.png"::: -->
+
+#### V-Ordering considerations
+
+- V-Ordering is enabled at the destination level and also applies to staging queries—no changes to transformation logic are required.  
+- Optimized specifically for Fabric destinations like lakehouses and warehouses.  
+- Might add slight overhead during write operations, but can improve downstream read performance.  
+- Decide whether V-Ordering should run as part of the dataflow write or as a separate maintenance task on the Fabric item at a regular cadence—without adding execution time to your dataflow.
+
+### Results
+
+TBD
+
+<!--
+| Configuration | Execution Time (hh:mm:ss) | Comparison against Gen1 |
+|---------------------|---------------------------|-------------------------|
+| **Dataflow Gen1 baseline** | TBD | — |
+| **Dataflow Gen2 without V-Ordering** | TBD | TBD |
+| **Dataflow Gen2 with V-Ordering** | TBD | TBD |
+-->
