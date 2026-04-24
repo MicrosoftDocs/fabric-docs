@@ -155,7 +155,7 @@ def score_customer(
     customerId: str,                          # required — no default
     isActive: bool = True,                    # optional bool default
     maxRecords: int = 100,                    # optional int default
-    startDate: datetime = "2024-01-01T00:00:00Z",  # optional datetime default (ISO 8601)
+    startDate: datetime = "2024-01-01T00:00:00Z",  # specify as a string; the runtime parses it to datetime at invocation time
     tags: list | None = None,                 # optional list — use None to avoid mutable default
 ) -> dict:
     tags = tags or []
@@ -170,7 +170,7 @@ def score_customer(
 
 Supported default input types at a high level:
 - **JSON-serializable strings**, **booleans**, **integers**, and **floats** — use directly as defaults.
-- **Date/time strings** — parsed to `datetime`; use ISO 8601 format (for example, `2024-12-31T23:59:59Z`) for reliable parsing.
+- **Date/time strings** — specify as a string in the function signature; the runtime parses it to `datetime` at invocation time. Use ISO 8601 format (for example, `2024-12-31T23:59:59Z`) for reliable parsing.
 - **Lists and dictionaries** — must be JSON-serializable. Prefer `None` in the signature and assign the real default inside the function to avoid shared mutable defaults.
 - **Objects or arrays of objects** — can map to pandas DataFrame or Series. Requires `fabric-user-data-functions` version 1.0.0 or later.
 

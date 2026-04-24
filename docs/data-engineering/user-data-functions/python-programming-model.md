@@ -143,7 +143,7 @@ When writing User Data Functions, you must follow specific syntax rules to ensur
   | **Default type** | **Notes** |
   |---|---|
   | String | Any JSON-serializable string. |
-  | Datetime string | Parsed to `datetime`; use ISO 8601 format (for example, `2024-12-31T23:59:59Z`) for consistent, unambiguous parsing. |
+  | Datetime string | Specify as a string in the function signature. The runtime parses the string to `datetime` at invocation time. Use ISO 8601 format (for example, `2024-12-31T23:59:59Z`) for consistent, unambiguous parsing. |
   | Boolean | `True` or `False`. |
   | Integer | Any integer value. |
   | Float | Any floating-point value. |
@@ -158,7 +158,7 @@ When writing User Data Functions, you must follow specific syntax rules to ensur
   def function_name(
       requiredParam: str,
       optionalStr: str = "hello",
-      optionalDate: datetime = "2024-01-01T00:00:00Z",
+    optionalDate: datetime = "2024-01-01T00:00:00Z",  # specify as a string; the runtime parses it to datetime at invocation time
       optionalBool: bool = True,
       optionalInt: int = 10,
       optionalFloat: float = 1.5,
