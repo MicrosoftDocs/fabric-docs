@@ -109,7 +109,7 @@ Fabric user data functions support default argument values. When you invoke func
 ```python
 # Assume the UDF item defines a function like:
 # def score_customer(customerId: str, startDate: datetime = "2025-01-01T00:00:00Z", isActive: bool = True, maxRecords: int = 100) -> dict
-# Note: datetime defaults are specified as strings in the signature; the runtime parses them to datetime at invocation time.
+# The datetime defaults are specified as strings in the signature; the runtime parses them to datetime at invocation time.
 
 # 1. Call without optional parameters — defaults are used for startDate, isActive, and maxRecords
 result = myFunctions.scoreCustomer(customerId='C001')
