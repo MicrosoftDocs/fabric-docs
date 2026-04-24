@@ -46,7 +46,7 @@ Requests to OneLake (such as read, write, or list) consume Fabric capacity. OneL
 You can see capacity usage for each operation in the Fabric Capacity Metrics app. In the Fabric Capacity Metrics app, open the **Compute** tab. Hover over the item that you want to view operation details for.
 
 > [!IMPORTANT]
-> Starting in May 2026, OneLake is updating how compute operations are reported in the Fabric Capacity Metrics app. A new **OneLake** item in the Fabric Capacity Metrics app groups operations by workspace instead of by individual Fabric items. For item-level detail, use [OneLake diagnostics](https://file+.vscode-resource.vscode-cdn.net/c%3A/Users/eloldag/OneDrive%20-%20Microsoft/Trident/VSCodeFiles/DocUpdates/onelake-diagnostics.md).
+> Starting in May 2026, OneLake is updating how compute operations are reported in the Fabric Capacity Metrics app. A new **OneLake** item in the Fabric Capacity Metrics app groups operations by workspace instead of by individual Fabric items. For item-level detail, use [OneLake diagnostics](../onelake-diagnostics-overview.md).
 
 :::image type="content" source="media\onelake-capacity-consumption\image.png" alt-text="Screenshot showing how OneLake compute is viewed in Fabric Metrics app." lightbox="media\onelake-capacity-consumption\onelake-compute.png":::In the preceding example, the file upload results in a write transaction that consumes CU seconds. The **Compute** tab of the Fabric Capacity Metrics app reports this consumption as **OneLake Write (Hot)** under the operation name column.
 
