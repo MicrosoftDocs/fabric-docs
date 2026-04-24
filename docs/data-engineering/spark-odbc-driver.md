@@ -383,13 +383,13 @@ DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};WorkspaceId
    %SystemRoot%\System32\odbcad32.exe
    ```
 
-2. **Create New System DSN**
+1. **Create New System DSN**
    - Go to "System DSN" tab
    - Select "Add"
    - Select "Microsoft ODBC Driver for Microsoft Fabric Data Engineering"
    - Select "Finish"
 
-3. **Configure DSN Settings**
+1. **Configure DSN Settings**
    - **Data Source Name**: Enter a unique name (e.g., `FabricODBC`)
    - **Description**: Optional description
    - **Workspace ID**: Your Fabric workspace GUID
@@ -398,7 +398,7 @@ DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};WorkspaceId
    - **Environment ID** (optional): Enter the GUID of the Fabric environment item to attach during session creation
    - Configure additional settings as needed
 
-4. **Test Connection**
+1. **Test Connection**
    - Select "Test Connection" to verify settings
    - Select "OK" to save
 
