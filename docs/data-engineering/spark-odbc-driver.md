@@ -18,18 +18,18 @@ The Microsoft ODBC Driver for Fabric Data Engineering lets you connect, query, a
 
 ## Key features
 
-- **ODBC 3.x Compliant**: Full implementation of ODBC 3.x specification
-- **Microsoft Entra ID Authentication**: Multiple authentication flows including Azure CLI, interactive, client credentials, certificate-based, and access token authentication
-- **Spark SQL Query Support**: Direct execution of Spark SQL statements
-- **Comprehensive Data Type Support**: Support for all Spark SQL data types including complex types (ARRAY, MAP, STRUCT)
-- **Session Reuse**: Built-in session management for improved performance
-- **Large Table Support**: Optimized handling for large result sets with configurable page sizes
-- **Async Prefetch**: Background data loading for improved performance
-- **Proxy Support**: HTTP proxy configuration for enterprise environments
-- **Multi-Schema Lakehouse Support**: Connect to specific schema within a Lakehouse
-- **OneLake Integration**: Access Lakehouse data stored in Microsoft OneLake, including tables across multiple schemas, through a unified ODBC interface without separate storage configuration
-- **Environment Items Support**: Attach Fabric environment items during job execution to apply workspace libraries, Spark properties, and variables to each session
-- **Custom Spark Configuration**: Pass Spark configuration properties directly through the connection string to tune session behavior
+- **ODBC 3.x compliant**: Full implementation of ODBC 3.x specification
+- **Microsoft Entra ID authentication**: Multiple authentication flows including Azure CLI, interactive, client credentials, certificate-based, and access token authentication
+- **Spark SQL query support**: Direct execution of Spark SQL statements
+- **Comprehensive data type support**: Support for all Spark SQL data types including complex types (ARRAY, MAP, STRUCT)
+- **Session reuse**: Built-in session management for improved performance
+- **Large table support**: Optimized handling for large result sets with configurable page sizes
+- **Async prefetch**: Background data loading for improved performance
+- **Proxy support**: HTTP proxy configuration for enterprise environments
+- **Multi-schema Lakehouse support**: Connect to specific schema within a Lakehouse
+- **OneLake integration**: Access Lakehouse data stored in Microsoft OneLake, including tables across multiple schemas, through a unified ODBC interface without separate storage configuration
+- **Environment items support**: Attach Fabric environment items during job execution to apply workspace libraries, Spark properties, and variables to each session
+- **Custom Spark configuration**: Pass Spark configuration properties directly through the connection string to tune session behavior
 
 > [!NOTE]
 > In open-source Apache Spark, database and schema are used synonymously. For example, running `SHOW SCHEMAS` or `SHOW DATABASES` in a Fabric Notebook returns the same result — a list of all schemas in the Lakehouse.
