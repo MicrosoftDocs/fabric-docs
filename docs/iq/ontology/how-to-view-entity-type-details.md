@@ -94,7 +94,7 @@ To create more tiles, follow these steps.
 
     :::image type="content" source="media/how-to-view-entity-type-details/add-tile.png" alt-text="Screenshot of adding a tile." lightbox="media/how-to-view-entity-type-details/add-tile.png":::
 
-1. Select the type of tile you want to create: a **Timeseries** (time series) line chart for streaming data, a **Static property** bar chart for static data, a **Map** for location properties, a **Resource links** tile to display linked external resources, or a **Fabric graph** tile to visualize relationships (only one Fabric graph tile is allowed per overview).
+1. Select the type of tile you want to create: a **Timeseries** (time series) line chart for streaming data, a **Static property** bar chart for static data, a **Resource links** tile to display linked external resources, or a **Fabric graph** tile to visualize relationships (only one Fabric graph tile is allowed per overview).
 
 1. Complete the configuration for your chosen tile type. The following image shows an example of configuring a static property tile.
 
