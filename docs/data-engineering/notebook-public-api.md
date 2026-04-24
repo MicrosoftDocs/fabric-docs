@@ -58,9 +58,9 @@ This pattern enables conditional orchestration and downstream signaling based on
 
 ## End-to-end example
 
-The following example shows how to submit a parameterized notebook run and retrieve its status and exit value. For the complete request body schema, including all available session configuration and Lakehouse selection fields, see the [Job Scheduler - Run on demand Item Job](/rest/api/fabric/core/job-scheduler/run-on-demand-item-job) API reference.
+The following example shows how to submit a notebook run and retrieve its status and exit value. For the complete request body schema, including parameters, session configuration, and Lakehouse selection fields, see the [Job Scheduler - Run on demand Item Job](/rest/api/fabric/core/job-scheduler/run-on-demand-item-job) API reference.
 
-### Step 1: Submit a parameterized run
+### Step 1: Submit a run
 
 Use the **Run on demand Item Job** endpoint to start a notebook run:
 
@@ -68,31 +68,11 @@ Use the **Run on demand Item Job** endpoint to start a notebook run:
 POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{notebookId}/jobs/instances?jobType=RunNotebook
 ```
 
-Example request body with parameters and a default Lakehouse:
-
-```json
-{
-  "executionData": {
-    "parameters": {
-      "inputPath": { "value": "Files/input/data.csv", "type": "string" },
-      "threshold": { "value": "0.95", "type": "string" }
-    },
-    "configuration": {
-      "defaultLakehouse": {
-        "name": "MyLakehouse",
-        "id": "<lakehouse-id>",
-        "workspaceId": "<workspace-id>"
-      }
-    }
-  }
-}
-```
-
 The response returns `202 Accepted` with a `Location` header containing the URL of the job instance you use to monitor the run.
 
 ### Step 2: Retrieve run status and exit value
 
-Use the URL from the `Location` header (or construct it using the job instance ID) to check status and read the exit value after the run completes:
+Use the URL from the `Location` header to check status and read the exit value after the run completes:
 
 ```http
 GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{notebookId}/jobs/instances/{jobInstanceId}
@@ -109,6 +89,7 @@ Example response (abbreviated):
   "status": "Completed",
   "startTimeUtc": "2026-03-01T10:00:00Z",
   "endTimeUtc": "2026-03-01T10:05:00Z",
+  "failureReason": null,
   "exitValue": "success"
 }
 ```
