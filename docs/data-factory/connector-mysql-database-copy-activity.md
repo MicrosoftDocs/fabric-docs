@@ -127,7 +127,7 @@ When copying data from MySQL, the following mappings are used from MySQL data ty
 | TINYINT unsigned |Int16 |
 | TINYTEXT | String |
 | VARCHAR | String |
-| YEAR | Int16 |
+| YEAR | Integer |
 
 When copying data to MySQL, the following mappings are used from interim data types used by the service internally to MySQL data types.
 
