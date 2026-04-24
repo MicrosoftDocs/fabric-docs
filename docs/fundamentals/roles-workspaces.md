@@ -5,14 +5,15 @@ author: SnehaGunda
 ms.author: sngun
 ms.reviewer: yicw, mesrivas
 ms.topic: concept-article
-ms.date: 01/20/2026
+ms.date: 04/24/2026
+ai-usage: ai-assisted
 ---
 
 # Roles in workspaces in Microsoft Fabric
 
 Workspace roles let you manage who can do what in a [!INCLUDE [product-name](../includes/product-name.md)] workspace. [!INCLUDE [product-name](../includes/product-name.md)] workspaces sit on top of OneLake and divide the data lake into separate containers that can be secured independently. Workspace roles in [!INCLUDE [product-name](../includes/product-name.md)] extend the Power BI workspace roles by associating new [!INCLUDE [product-name](../includes/product-name.md)] capabilities such as data integration and data exploration with existing workspace roles. For more information on Power BI roles, see [Roles in workspaces in Power BI](/power-bi/collaborate-share/service-new-workspaces).
 
-You can either assign roles to individuals or to security groups, Microsoft 365 groups, and distribution lists. To grant access to a workspace, assign those user groups or individuals to one of the workspace roles: Admin, Member, Contributor, or Viewer. Here's how to [give users access to workspaces](give-access-workspaces.md).
+You can either assign roles to individuals or to security groups, Microsoft 365 groups, and distribution lists. To grant access to a workspace, assign those user groups or individuals to one of the workspace roles: Admin, Member, Contributor, or Viewer. Here's how to [give users access to workspaces](give-access-workspaces.md). Azure Active Directory service principals (app registrations) can also be assigned to workspace roles and inherit the same permissions as users for API-based operations in Fabric, including the Items REST API and the Job Scheduler API.
 
 To create a new workspace, see [Create a workspace](create-workspaces.md).
 
@@ -55,6 +56,9 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 <sup>3</sup> Other permissions are needed to perform certain operations on data in an Eventhouse. Learn more about the [hybrid role-based access control model](/kusto/access-control/role-based-access-control?view=microsoft-fabric&preserve-view=true).
 
 <sup>4</sup> Keep in mind that you also need permissions on the gateway. Those permissions are managed elsewhere, independent of workspace roles and permissions.
+
+> [!NOTE]
+> The Create/Modify and Write/Delete permissions for notebooks apply equally when using the Items REST API. Admin, Member, and Contributor can perform notebook CRUD operations via the API, while Viewer cannot. For Job Scheduler API execution, Admin, Member, and Contributor can start and cancel runs; all roles including Viewer can monitor run status and view execution output, including run metadata such as status and exit values returned by notebook runs.
 
 ## Related content
 
