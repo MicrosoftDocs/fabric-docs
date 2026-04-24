@@ -58,17 +58,17 @@ This pattern enables conditional orchestration and downstream signaling based on
 
 ## End-to-end example
 
-The following example shows how to submit a parameterized notebook run and retrieve its status and exit value.
+The following example shows how to submit a parameterized notebook run and retrieve its status and exit value. For the complete request body schema, including all available session configuration and Lakehouse selection fields, see the [Job Scheduler - Run on demand Item Job](/rest/api/fabric/core/job-scheduler/run-on-demand-item-job) API reference.
 
 ### Step 1: Submit a parameterized run
 
-Use the **Run on demand Item Job** endpoint to start a notebook run. The request body can include parameters, session configuration, environment and Lakehouse selection:
+Use the **Run on demand Item Job** endpoint to start a notebook run:
 
 ```http
 POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{notebookId}/jobs/instances?jobType=RunNotebook
 ```
 
-Example request body:
+Example request body with parameters and a default Lakehouse:
 
 ```json
 {
@@ -82,18 +82,17 @@ Example request body:
         "name": "MyLakehouse",
         "id": "<lakehouse-id>",
         "workspaceId": "<workspace-id>"
-      },
-      "useStarterPool": true
+      }
     }
   }
 }
 ```
 
-The response returns a job instance ID in the `Location` header that you can use to monitor the run.
+The response returns `202 Accepted` with a `Location` header containing the URL of the job instance you use to monitor the run.
 
 ### Step 2: Retrieve run status and exit value
 
-Use the **Get Item Job Instance** endpoint to check the status and read the exit value after the run completes:
+Use the URL from the `Location` header (or construct it using the job instance ID) to check status and read the exit value after the run completes:
 
 ```http
 GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{notebookId}/jobs/instances/{jobInstanceId}
