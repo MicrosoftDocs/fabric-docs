@@ -5,6 +5,7 @@ author: ms-arali
 ms.reviewer: arali
 ms.topic: how-to
 ms.date: 03/18/2026
+ai-usage: ai-assisted
 ---
 
 # Microsoft ODBC driver for Microsoft Fabric Data Engineering (Preview)
@@ -26,6 +27,9 @@ The Microsoft ODBC Driver for Fabric Data Engineering lets you connect, query, a
 - **Async Prefetch**: Background data loading for improved performance
 - **Proxy Support**: HTTP proxy configuration for enterprise environments
 - **Multi-Schema Lakehouse Support**: Connect to specific schema within a Lakehouse
+- **OneLake Integration**: Access Lakehouse data stored in Microsoft OneLake, including tables across multiple schemas, through a unified ODBC interface without separate storage configuration
+- **Environment Items Support**: Attach Fabric environment items during job execution to apply workspace libraries, Spark properties, and variables to each session
+- **Custom Spark Configuration**: Pass Spark configuration properties directly through the connection string to tune session behavior
 
 > [!NOTE]
 > In open-source Apache Spark, database and schema are used synonymously. For example, running `SHOW SCHEMAS` or `SHOW DATABASES` in a Fabric Notebook returns the same result — a list of all schemas in the Lakehouse.
@@ -36,7 +40,7 @@ Before using the Microsoft ODBC Driver for Microsoft Fabric Data Engineering, en
 
 - **Operating System**: Windows 10/11 or Windows Server 2016+
 - **Microsoft Fabric Access**: Access to a Microsoft Fabric workspace
-- **Azure Entra ID Credentials**: Appropriate credentials for authentication
+- **Microsoft Entra ID credentials**: Appropriate credentials for authentication
 - **Workspace and Lakehouse IDs**: GUID identifiers for your Fabric workspace and lakehouse
 - **Azure CLI** (optional): Required for Azure CLI authentication method
 
@@ -332,6 +336,44 @@ These parameters must be present in every connection string:
 | ProxyUsername | String | None | Proxy authentication username |
 | ProxyPassword | String | None | Proxy authentication password |
 
+#### Environment settings
+
+You can attach a Fabric environment item to the Spark session started by the driver. The selected environment's libraries, Spark properties, and variables are automatically applied when the session is created.
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| EnvironmentId | UUID | None | Fabric environment item identifier (GUID) to apply during Spark session creation |
+
+**Example connection string with an environment item:**
+
+```
+DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};WorkspaceId=<workspace-id>;LakehouseId=<lakehouse-id>;AuthFlow=AZURE_CLI;EnvironmentId=<environment-id>
+```
+
+> [!NOTE]
+> The environment is applied when the Spark session starts. If you also specify custom Spark configuration properties, session-level properties take precedence over the environment defaults.
+
+#### Custom Spark configuration
+
+You can pass Spark configuration properties directly in the connection string. Any parameter prefixed with `spark.` is automatically applied to the Spark session at creation time, allowing you to override workspace or runtime defaults.
+
+**Example Spark configurations:**
+
+```
+spark.sql.shuffle.partitions=200
+spark.sql.adaptive.enabled=true
+spark.sql.autoBroadcastJoinThreshold=10485760
+```
+
+**Example connection string with custom Spark properties:**
+
+```
+DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};WorkspaceId=<workspace-id>;LakehouseId=<lakehouse-id>;AuthFlow=AZURE_CLI;spark.sql.shuffle.partitions=200;spark.sql.adaptive.enabled=true
+```
+
+> [!NOTE]
+> Spark configuration properties are applied when the session is created. They apply to all queries run within that session and override environment or runtime defaults for the same properties.
+
 ## DSN configuration
 
 ### Create a system DSN
@@ -353,6 +395,7 @@ These parameters must be present in every connection string:
    - **Workspace ID**: Your Fabric workspace GUID
    - **Lakehouse ID**: Your Fabric lakehouse GUID
    - **Authentication**: Select authentication method
+   - **Environment ID** (optional): Enter the GUID of the Fabric environment item to attach during session creation
    - Configure additional settings as needed
 
 4. **Test Connection**

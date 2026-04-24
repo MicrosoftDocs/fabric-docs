@@ -47,7 +47,7 @@ The following image shows the lakehouse end-to-end architecture. The components 
 
 * **Transform and store**: Fabric standardizes on Delta Lake format. Which means all the Fabric engines can access and manipulate the same dataset stored in OneLake without duplicating data. OneLake's unified governance model ensures that data accessed through shortcuts participates in the same security and compliance policies as locally stored data, providing a single version of truth across the organization. This storage system provides the flexibility to build lakehouses using a medallion architecture or a data mesh, depending on your organizational requirement. You can choose between a low-code or no-code experience for data transformation, utilizing either pipelines/dataflows or notebook/Spark for a code-first experience. Lakehouse tables also support performance optimizations such as Z-ordering and Liquid Clustering to improve query performance and manage data layout at scale. Additionally, Materialized Lake Views are available to precompute and cache results over lakehouse data, which speeds up repeated analytics.
 
-* **Consume**: Power BI can consume data from the Lakehouse for reporting and visualization. Each Lakehouse has a built-in TDS endpoint, the *SQL analytics endpoint*, for easy connectivity and querying of data in the Lakehouse tables from other reporting tools.
+* **Consume**: Power BI can consume data from the Lakehouse for reporting and visualization. Each Lakehouse has a built-in TDS endpoint, the *SQL analytics endpoint*, for easy connectivity and querying of data in the Lakehouse tables from other reporting tools. For scenarios that require direct Spark session-based querying, ODBC-compatible tools and applications can connect to Spark SQL using the [Microsoft ODBC Driver for Microsoft Fabric Data Engineering (Preview)](./spark-odbc-driver.md).
 
   Through [cross-tenant data sharing](../governance/external-data-sharing-overview.md), reports, semantic models, and AI/data science workloads can also consume shared OneLake data across organizational boundaries, enabling collaboration without data duplication.
 
@@ -84,6 +84,8 @@ The following image shows the source, destination, and data transformation:
 * **Transform**: For data preparation and transformation, this tutorial covers two different approaches: notebooks and Spark for a code-first experience, and pipelines and dataflows for a low-code or no-code experience. The latest Fabric runtime includes a native execution engine that delivers significant performance improvements over open-source Spark for notebook and Spark job workloads.
 
 * **Consume**: Power BI can consume data from the lakehouse for reporting and visualization. Each lakehouse has a built-in TDS endpoint called the *SQL analytics endpoint* for easy connectivity and querying of data in the lakehouse tables from other reporting tools. You can also use Direct Lake over OneLake to let Power BI query lakehouse tables directly without import or a dedicated semantic model refresh cycle. Additionally, you can make your data available to non-Microsoft reporting tools by using the TDS/SQL analytics endpoint to connect and run SQL queries for analytics.
+
+  For Spark SQL workloads specifically, ODBC-compatible clients can connect using the [Microsoft ODBC Driver for Microsoft Fabric Data Engineering (Preview)](./spark-odbc-driver.md) with Microsoft Entra ID authentication (interactive, Azure CLI, service principal, certificate, or access token).
 
 ## Next step
 
