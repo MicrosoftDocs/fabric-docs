@@ -11,6 +11,12 @@ Organizations often maintain forecasts separately by region, product, or other b
 
 This article explains how to configure and use a cube for multi-dimensional forecasting. For more information about using cubes, see [Plan across multiple dimensions with cubes](../planning-how-to-create-cube.md).
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/fabric-new-user-research.md)]
+
+## Prerequisites
+
+* The column dimension is a standard date hierarchy (for example, year > quarter > month).
+
 ## Extend forecasting to dimensions outside the sheet
 
 Forecasts are generated for the row dimensions included in the planning sheet. To forecast other dimensions that aren't present in the current sheet, add breakdowns.
@@ -19,10 +25,10 @@ Forecasts are generated for the row dimensions included in the planning sheet. T
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-create-multidimensional-forecasts/add-breakdown-dimensions.png" alt-text="Screenshot of option to add breakdowns." lightbox="../media/planning-forecasting/planning-how-to-create-multidimensional-forecasts/add-breakdown-dimensions.png":::
 
-1. The first breakdown is set to the row dimensions in the sheet. To configure the cube, select **Add** to define the breakdown dimensions. Choose a reference measure to drive allocation weights. Select **Create** to create the cube.
+1. The first breakdown is set to the row dimensions in the sheet. To configure the cube, select **Add** and define the breakdown dimensions. Choose a reference measure to drive allocation weights. Select **Create** to create the cube.
 
     >[!NOTE]
-    >The dimensions and measures used to configure the cube can be sourced from the dataset without being added to the current sheet. The reference measure used for weighted allocation must have values for the future forecast period.
+    >The dimensions and measures used to configure the cube can be sourced from the dataset without adding them to the current sheet. The reference measure used for weighted allocation must have values for the future forecast period.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-create-multidimensional-forecasts/configure-cube.png" alt-text="Screenshot of configuring cubes." lightbox="../media/planning-forecasting/planning-how-to-create-multidimensional-forecasts/configure-cube.png":::
 

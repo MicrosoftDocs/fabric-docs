@@ -9,6 +9,12 @@ ms.topic: how-to
 
 Keep forecasts aligned with reporting cycles by editing the forecast period, managing closed periods, configuring aggregation, and defining how actuals update forecast results.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
+## Prerequisites
+
+* A forecast measure must be created in the planning sheet.
+
 ## Editing forecasts
 
 Select **Planning** > **Insert Column** > **Manage Measures** and select the edit icon for the forecast measure.
