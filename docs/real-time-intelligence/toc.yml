@@ -73,6 +73,8 @@ items:
         href: event-streams/monitor-capacity-consumption.md
       - name: Supported data formats
         href: event-streams/data-formats.md
+      - name: DeltaFlow output transformation (Preview)
+        href: event-streams/delta-flow-output-transformation.md
       - name: Create eventstreams
         items:
           - name: Create an eventstream
@@ -89,72 +91,74 @@ items:
         items:
           - name: Add and manage an event source
             href: event-streams/add-manage-eventstream-sources.md
-          - name: Azure Data Explorer
-            href: event-streams/add-source-azure-data-explorer-database.md
-          - name: Azure Event Hubs
-            href: event-streams/add-source-azure-event-hubs.md
-          - name: Azure Event Grid
-            href: event-streams/add-source-azure-event-grid.md
-          - name: Azure Service Bus
-            href: event-streams/add-source-azure-service-bus.md
-          - name: Azure IoT Hub
-            href: event-streams/add-source-azure-iot-hub.md
-          - name: Anomaly Detection events
-            href: event-streams/add-source-anomaly-events.md
-          - name: Custom endpoint
-            href: event-streams/add-source-custom-app.md
-          - name: Sample data
-            href: event-streams/add-source-sample-data.md
-          - name: Real-time weather
-            href: event-streams/add-source-real-time-weather.md
-          - name: Azure SQL Database Change Data Capture (CDC)
-            href: event-streams/add-source-azure-sql-database-change-data-capture.md
-          - name: PostgreSQL Database CDC
-            href: event-streams/add-source-postgresql-database-change-data-capture.md
-          - name: MongoDB CDC
-            href: event-streams/add-source-mongodb-change-data-capture.md
-          - name: MySQL Database CDC
-            href: event-streams/add-source-mysql-database-change-data-capture.md
-          - name: Azure Cosmos DB CDC
-            href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
-          - name: SQL Server on virtual machine database CDC
-            href: event-streams/add-source-sql-server-change-data-capture.md
-          - name: Azure SQL Managed Instance CDC
-            href: event-streams/add-source-azure-sql-managed-instance-change-data-capture.md
-          - name: DeltaFlow output transformation (Preview)
-            href: event-streams/delta-flow-output-transformation.md
-          - name: Google Cloud Pub/Sub
-            href: event-streams/add-source-google-cloud-pub-sub.md
           - name: Amazon Kinesis Data Streams
             href: event-streams/add-source-amazon-kinesis-data-streams.md
-          - name: Confluent Cloud for Apache Kafka
-            href: event-streams/add-source-confluent-kafka.md
-          - name: Apache Kafka
-            href: event-streams/add-source-apache-kafka.md
           - name: Amazon Managed Streaming for Apache Kafka
             href: event-streams/add-source-amazon-managed-streaming-for-apache-kafka.md
-          - name: Fabric Workspace Item events
-            href: event-streams/add-source-fabric-workspace.md
-          - name: Fabric OneLake events
-            href: event-streams/add-source-fabric-onelake.md
-          - name: Fabric Job events
-            href: event-streams/add-source-fabric-job.md
-          - name: Fabric capacity overview events
-            href: event-streams/add-source-fabric-capacity-overview-events.md
+          - name: Anomaly Detection events
+            href: event-streams/add-source-anomaly-events.md
+          - name: Apache Kafka
+            href: event-streams/add-source-apache-kafka.md
           - name: Azure Blob Storage events
             href: event-streams/add-source-azure-blob-storage.md
+          - name: Azure Cosmos DB Change Data Capture (CDC)
+            href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
+          - name: Azure Data Explorer Database
+            href: event-streams/add-source-azure-data-explorer-database.md
+          - name: Azure Event Grid
+            href: event-streams/add-source-azure-event-grid.md
+          - name: Azure Event Hubs
+            href: event-streams/add-source-azure-event-hubs.md
+          - name: Azure IoT Hub
+            href: event-streams/add-source-azure-iot-hub.md
+          - name: Azure Service Bus
+            href: event-streams/add-source-azure-service-bus.md
+          - name: Azure SQL Database CDC
+            href: event-streams/add-source-azure-sql-database-change-data-capture.md
+          - name: Azure SQL Managed Instance CDC
+            href: event-streams/add-source-azure-sql-managed-instance-change-data-capture.md
+          - name: Confluent Cloud for Apache Kafka
+            href: event-streams/add-source-confluent-kafka.md
+          - name: Cribl
+            href: event-streams/add-source-cribl.md
+          - name: Custom endpoint
+            href: event-streams/add-source-custom-app.md
+          - name: Fabric capacity overview events
+            href: event-streams/add-source-fabric-capacity-overview-events.md
+          - name: Fabric job events
+            href: event-streams/add-source-fabric-job.md
+          - name: Fabric OneLake events
+            href: event-streams/add-source-fabric-onelake.md
+          - name: Fabric workspace item events
+            href: event-streams/add-source-fabric-workspace.md
+          - name: Google Cloud Pub/Sub
+            href: event-streams/add-source-google-cloud-pub-sub.md
           - name: HTTP
             href: event-streams/add-source-http.md
           - name: Message Queuing Telemetry Transport (MQTT)
             href: event-streams/add-source-mqtt.md
-          - name: Cribl
-            href: event-streams/add-source-cribl.md
+          - name: MongoDB CDC
+            href: event-streams/add-source-mongodb-change-data-capture.md
+          - name: MySQL Database CDC
+            href: event-streams/add-source-mysql-database-change-data-capture.md
+          - name: PostgreSQL Database CDC
+            href: event-streams/add-source-postgresql-database-change-data-capture.md
+          - name: Real-time weather
+            href: event-streams/add-source-real-time-weather.md
+          - name: Sample data
+            href: event-streams/add-source-sample-data.md
           - name: Solace PubSub+
             href: event-streams/add-source-solace-pub-sub.md
+          - name: SQL Server on virtual machine database CDC
+            href: event-streams/add-source-sql-server-change-data-capture.md
       - name: Add destination connectors to eventstreams
         items:
           - name: Add and manage a destination
             href: event-streams/add-manage-eventstream-destinations.md
+          - name: Activator
+            href: event-streams/add-destination-activator.md
+          - name: Custom endpoint
+            href: event-streams/add-destination-custom-app.md
           - name: Derived stream
             href: event-streams/add-destination-derived-stream.md
           - name: Eventhouse
@@ -163,10 +167,6 @@ items:
             href: event-streams/add-destination-lakehouse.md
           - name: Spark Notebook
             href: event-streams/add-destination-spark-notebook.md            
-          - name: Activator
-            href: event-streams/add-destination-activator.md
-          - name: Custom endpoint
-            href: event-streams/add-destination-custom-app.md
       - name: Process events
         items:
           - name: Process events using event processor
@@ -229,6 +229,8 @@ items:
         items:
           - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
             href: event-streams/stream-consume-events-use-kafka-endpoint.md
+          - name: Stream SQL Change Events to Eventstream for Real-Time Processing
+            href: event-streams/stream-sql-change-events-to-eventstream.md
           - name: Replicate SAP Datasphere Data to Eventstream Kafka Endpoint with SAP Replication Flow
             href: event-streams/replicate-data-with-replication-flow.md
           - name: Stream Oracle CDC data to Eventstream Kafka endpoint with GoldenGate
@@ -558,8 +560,6 @@ items:
             href: eventhouse-compute-observability.md
           - name: Eventhouse Cost per GB Ingested
             href: pricing-cost-drivers.md
-          - name: Query cold data with hot windows
-            href: query-cold-data-hot-windows.md   
       - name: Migrate
         items:
           - name: Migrate from Azure Data Explorer
@@ -663,6 +663,10 @@ items:
                 href: /azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rti&pivots=fabric
               - name: Telegraf
                 href: get-data-telegraf.md
+      - name: Security
+        items:
+          - name: Eventhouse CMK
+            href: eventhouse-encryption.md
       - name: KQL Database
         items:
           - name: Create a KQL database
@@ -705,6 +709,8 @@ items:
                 href: create-functions.md
               - name: Enable Python plugin
                 href: python-plugin.md
+              - name: Query cold data with hot windows
+                href: query-cold-data-hot-windows.md   
           - name: Management commands
             href: kusto-tocs/management/toc.yml
           - name: API
@@ -791,6 +797,8 @@ items:
             href: data-activator/activator-tutorial.md
       - name: Concepts
         items:
+          - name: Trigger modeling
+            href: data-activator/activator-trigger-model.md
           - name: Activator rules
             href: data-activator/activator-rules-overview.md
           - name: Detection conditions for Activator
@@ -1026,13 +1034,15 @@ items:
         href: operations-agent-tocs/toc.yml
       - name: MCP servers
         items:
-          - name: Fabric RTI MCP local server
+          - name: Overview
             href: mcp-overview.md
-          - name: Remote MCP Integrations
+          - name: Local RTI MCP server
+            href: mcp-local-server.md
+          - name: Remote MCP servers
             items:
-              - name: Get started with Eventhouse MCP remote Server
+              - name: Remote MCP for Eventhouse
                 href: mcp-remote-eventhouse.md
-              - name: Get started with Activator MCP remote Server
+              - name: Remote MCP for Activator
                 href: mcp-remote-activator.md
   - name: Git integration and deployment pipelines
     displayName: alm, application lifecycle management, cicd, devops
@@ -1055,7 +1065,7 @@ items:
     href: kusto-tocs/query/toc.yml
   - name: Reference architectures
     items:
-    - name: Automative and mobile
+    - name: Automotive and Mobility
       items:
       - name: Connected fleet data analytics
         href: architectures/connected-fleet.md

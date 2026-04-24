@@ -1,7 +1,8 @@
 ---
 title: Visualize data in R
 description: How to create R visualizations.
-ms.reviewer: lagayhar, sgilley
+ms.author: lagayhar
+ms.reviewer: ruxu
 ms.topic: how-to
 ms.date: 06/30/2025
 ms.search.form: R Language

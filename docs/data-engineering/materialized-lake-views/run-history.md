@@ -19,7 +19,7 @@ The following screenshot shows the **Recent runs** table.
 
 :::image type="content" source="./media/materialized-lake-view-run-history/recent-runs-table.png" alt-text="Screenshot showing the Recent runs page for materialized lake views with a table of all runs." border="true" lightbox="./media/materialized-lake-view-run-history/recent-runs-table.png":::
 
-The **Run(s)** column shows what triggered the refresh - typically a schedule name. For complete-lineage and ad-hoc runs, the Lakehouse name is used as the default run name. Run names must be unique within a Lakehouse, so give your schedules and ad-hoc runs distinct names to keep the history easy to follow.
+The **Run(s)** column shows what triggered the refresh - typically a schedule name. For the lineage formed by all the MLVs in the Lakehouse and for ad-hoc runs, the Lakehouse name is used as the default run name. Run names must be unique within a Lakehouse, so give your schedules and ad-hoc runs distinct names to keep the history easy to follow.
 
 ## Run states in lineage view
 
@@ -31,7 +31,7 @@ Here's what each status means:
 | **Success** | All views refreshed successfully - your data is fresh. |
 | **Failed** | One or more views hit an error. A run is marked as Failed if any view in that run fails. Child views of a failed view are automatically marked as **Skipped**. |
 | **Skipped** | This run was skipped because the same view was already being refreshed by another active run. |
-| **Cancelled** | The run was manually canceled from the monitor hub. |
+| **Canceled** | The run was manually canceled from the monitor hub. |
 
 ## Find a specific run
 

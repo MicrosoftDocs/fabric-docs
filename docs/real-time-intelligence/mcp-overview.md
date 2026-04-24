@@ -1,58 +1,73 @@
 ---
-title: What is the Fabric Real-Time Intelligence Model Context Protocol (MCP) local server?
-description: Model Context Protocol (MCP) local server for RTI is a fully open-source implementation for Microsoft Fabric Real-Time Intelligence (RTI). It enables AI agents to interact with RTI components like Eventhouse.
+title: What is MCP in Real-Time Intelligence?
+description: Learn about Model Context Protocol (MCP) in Real-Time Intelligence. MCP enables AI agents to interact with RTI components like Eventhouse and Activator using natural language.
 ms.reviewer: sharmaanshul
 ms.topic: overview 
-ms.date: 03/10/2026
+ms.date: 04/20/2026
 ms.search.form: MCP, RTI, AI
 ms.collection: ce-skilling-ai-copilot
+ai-usage: ai-assisted
 
-#CustomerIntent: As a Fabric RTI AI developer, I want to use the RTI MCP server to create AI agents and AI applications.
+#CustomerIntent: As a Fabric RTI AI developer, I want to understand MCP options in RTI so I can choose the right approach for my AI agents and applications.
 ---
 
-# What is the Fabric RTI MCP local server (preview)?
+# What is MCP in Real-Time Intelligence? (preview)
 
-Integrating Model Context Protocol (MCP) with Real-Time Intelligence (RTI) lets you get AI-driven insights and actions in real time. This is a local RTI MCP local server that lets AI agents or AI applications interact with Fabric RTI or Azure Data Explorer (ADX) by providing tools through the MCP interface, so you can query and analyze data easily.
+Model Context Protocol (MCP) in Real-Time Intelligence (RTI) enables AI models, AI agents, and applications to interact with Fabric RTI components using natural language.
 
-MCP support for RTI and ADX is a full open-source [MCP server](https://github.com/microsoft/fabric-rti-mcp/) implementation for Microsoft Fabric Real-Time Intelligence (RTI). Customers need to install, host, and manage the deployment.
+The [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) provides a standardized way for AI models, like Azure OpenAI models, to discover and use external tools and data sources. MCP makes it easier to build intelligent applications that can query, reason, and act on real-time data. MCP also makes it easier for AI agents to find, connect to, and use enterprise data.
 
-[!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
+Fabric's Real-Time Intelligence provides two types of MCP servers: local and remote. Each option has different deployment models, capabilities, and use cases.
 
-## Introduction to the Model Context Protocol (MCP)
+## Local MCP server for RTI
 
-[Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) is a protocol that lets AI models, like Azure OpenAI models, interact with external tools and resources. MCP makes it easier for agents to find, connect to, and use enterprise data.
+The local MCP server for Fabric Real-Time Intelligence is an open-source server that you install, host, and manage yourself. It runs on your local machine and provides read-only access to Fabric RTI and Azure Data Explorer (ADX) resources.
 
-## Scenarios
+Key characteristics:
 
-The most common scenario for using the local RTI MCP Server is to connect to it from an existing AI client, such as Cline, Claude, and GitHub copilot. The client can then use all the available tools to access and interact with RTI or ADX resources using natural language. For example, you could use GitHub Copilot agent mode with the RTI MCP Server to list KQL databases or ADX clusters or run natural language queries on RTI Eventhouses.
+- **Deployment**: Self-hosted on your local machine
+- **Source**: [Open-source on GitHub](https://github.com/microsoft/fabric-rti-mcp/)
+- **Access**: Read-only queries to Eventhouse, Eventstream, Map, and Azure Data Explorer (ADX) clusters.
+- **Management**: You manage installation, updates, and maintenance
 
-## Architecture
+For detailed information, see [Get started with the local MCP server](mcp-local-server.md).
 
-The local RTI MCP Server is at the core of the system and acts as a bridge between AI agents and data sources. Agents send requests to the MCP server, which translates them into Eventhouse queries. The RTI MCP server runs locally and provides read‑only access to Fabric.
+## Remote MCP servers
 
-:::image type="content" source="media/mcp/model-context-protocol-server-architecture.png" alt-text="Diagram that shows the MCP architecture.":::
+Remote MCP servers are hosted by Microsoft and are available as HTTP endpoints. You configure your MCP client to connect to these servers without installing or managing any software.
 
-This architecture lets you build modular, scalable, and secure intelligent applications that respond to real-time signals. MCP uses a client-server architecture, so AI applications can interact with external tools efficiently. The architecture includes the following components:
+| Server | Description | Capabilities |
+|--------|-------------|--------------|
+| **Eventhouse MCP server** | Enables AI agents to query Eventhouse using natural language | Schema discovery, KQL query generation, data sampling, natural language to KQL translation |
+| **Activator MCP server** | Enables AI agents to interact with Fabric Activator | Create monitoring rules, manage alerts, trigger actions |
 
 * **MCP Host**: The environment where the AI model (like GPT-4, Claude, or Gemini) runs.
 * **MCP Client**: An intermediary service forwards the AI model's requests to MCP servers, like GitHub Copilot, Cline, or Claude Desktop.
-* **MCP Server**: Lightweight applications exposing specific capabilities by natural language APIs, databases. For example, Fabric RTI MCP server can execute KQL queries for real-time data retrieval from KQL databases.
+* **MCP Server**: Small applications that make specific features accessible to AI models, such as running database queries. For example, Fabric RTI MCP server can execute KQL queries for real-time data retrieval from KQL databases.
 
-## Key features
+- [Get started with the remote MCP server for Eventhouse](mcp-remote-eventhouse.md)
+- [Get started with the remote MCP server for Activator](mcp-remote-activator.md)
 
-**Real-Time Data Access**: Retrieve data from KQL databases in seconds.
+## When to use local vs. remote servers
 
-**Natural Language Interfaces**: Ask questions in plain English or other languages, and the system turns them into optimized queries (NL2KQL).
+**Natural Language Interfaces**: Ask questions in plain English or other languages, and the system turns them into optimized queries (NL2KQL- Natural Language to Kusto Query Language).
 
-**Schema Discovery**: Discover schema and metadata, so you can learn data structures dynamically.
+| Scenario | Recommended option |
+|----------|-------------------|
+| Query Eventhouse or ADX data with full control over the server | Local MCP server |
+| Query Eventhouse without managing server infrastructure | Remote Eventhouse MCP |
+| Create monitoring rules and alerts in Activator | Remote Activator MCP |
+| Use in cloud agent platforms like Copilot Studio or Azure AI Foundry | Remote MCP servers |
+| Need offline or air-gapped access | Local MCP server |
+| Want automatic updates and maintenance | Remote MCP servers |
 
-**Plug-and-Play Integration**: Connect MCP clients like GitHub Copilot, Claude, and Cline to RTI with minimal setup because of standardized APIs and discovery mechanisms.
+## Supported AI clients
 
-**Local Language Inference**: Work with your data in your preferred language.
+Both local and remote MCP servers work with popular AI clients:
 
 ## Supported RTI components
 
-**Eventhouse** - Run KQL queries against the KQL databases in your [Eventhouse](eventhouse.md) backend. This unified interface lets AI agents query, reason, and act on real-time data.
+**Eventhouse** - Run KQL queries against the KQL databases in your [Eventhouse](eventhouse.md) backend. This unified interface lets AI agents search your real-time data, analyze patterns, and take actions based on what they find.
 
 > [!NOTE]
 >
@@ -60,7 +75,7 @@ This architecture lets you build modular, scalable, and secure intelligent appli
 
 ## Related content
 
-* [RTI MCP server](https://github.com/microsoft/fabric-rti-mcp/)
-* [Model Context Protocol (MCP) overview](https://modelcontextprotocol.io/introduction)
+* [Get started with the local MCP server](mcp-local-server.md)
 * [Get started with the Eventhouse remote MCP](mcp-remote-eventhouse.md)
 * [Get started with the Activator remote MCP](mcp-remote-activator.md)
+* [Model Context Protocol (MCP) overview](https://modelcontextprotocol.io/introduction)

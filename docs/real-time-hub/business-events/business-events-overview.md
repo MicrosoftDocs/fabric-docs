@@ -8,11 +8,11 @@ ms.topic: overview
 
 # Business events overview (Preview)
 
-**Business events** a capability in Fabric Real-Time Intelligence that empowers teams to define, explore, and act on business signals in real time, accelerating event‑driven application development and faster decision‑making. 
+**Business events** is a capability in Fabric Real-Time Intelligence that empowers teams to define, explore, and act on business signals in real time, accelerating event‑driven application development and faster decision‑making. 
 
 You can generate business events from the following sources:
 
-- Spark notebooks 
+- Spark notebooks
 - User data functions (UDFs)
  
 Once published, these events are available in Real-Time hub, where you can set up alerts to take actions such as the following ones:
@@ -22,8 +22,8 @@ Once published, these events are available in Real-Time hub, where you can set u
 - Run analytical workflows (Notebooks)
 - Give real time context to AI/ML (Notebooks)
 - Run distributed processing (Spark Jobs)
-- Prepare and Move data (Dataflows)
-- Automate business processes (Power Automation)  
+- Prepare and move data (Dataflows Gen2)
+- Automate business processes (Power Automate)
 
 The following diagram shows how a manufacturing system detects abnormal vibration using a Spark Notebook, analyzes it, and publishes a `VibrationCriticalDetected` business event that triggers custom business logic in a User Data Function (UDF) through Activator.
 
@@ -81,7 +81,7 @@ In Microsoft Fabric:
 - **Eventstream**, **Notebook**, and **User Data Function (UDF)** act as publishers, emitting business events into the real-time ecosystem.
 - **Activator** runs as a consumer, subscribing to events and triggering automated workflows, actions, or downstream processes.
 
-This model lets you add new consumers - such as analytics flows, pipelines, automations, or external integrations - without changing or coordinating with the original publisher.
+This model lets you add new consumers - such as analytics flows, pipelines, automations, or external integrations - without changing or coordinating with the original publisher. New consumers can subscribe to existing events at any time, and the architecture supports scalable, parallel processing so multiple consumers can act on the same event simultaneously without affecting publisher code.
 
 ## Consistent modeling across the organization
 

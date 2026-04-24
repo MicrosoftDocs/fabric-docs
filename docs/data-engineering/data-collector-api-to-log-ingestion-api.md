@@ -18,6 +18,7 @@ This article shows how to configure emitter properties, route Apache Spark logs,
 
 For architecture and destination selection across the Fabric Apache Spark Diagnostic Emitter, see [Fabric Apache Spark Diagnostic Emitter overview](spark-diagnostic-emitter-overview.md).
 
+
 ## Migrate from the Data Collector API
 
 If you're currently using HTTP Data Collector API, migrate to Log Ingestion API to align with current Azure Monitor ingestion patterns.
@@ -147,7 +148,7 @@ Create a custom table in your Log Analytics workspace with the Log Ingestion API
 
 To configure Spark, create an environment in Fabric and choose one of the following authentication options. Use only one option for a given emitter.
 
-An environment in Fabric stores Spark settings and libraries that notebooks and Spark job definitions use at runtime. For steps to create one, see [Create, configure, and use an environment in Fabric](create-and-use-environment.md#create-an-environment).
+An environment in Fabric stores Spark settings and libraries that notebooks and Spark job definitions use at runtime. For steps to create one, see [Create, configure, and use an environment in Fabric](create-and-use-environment.md#create-an-environment-from-a-workspace).
 
 - Choose **Option 1** if you want a simpler setup by using a client secret.
 - Choose **Option 2** if your organization requires certificate-based authentication and centralized certificate management in Azure Key Vault.
@@ -315,6 +316,10 @@ SparkMetadataTest_CL
 | order by TimeGenerated desc
 | limit 100
 ```
+
+## Fabric workspaces with managed virtual network
+
+Fabric support enabling data exfiltration protection for workspaces. With exfiltration protection, the logs and metrics cannot be sent out to the destination endpoints directly. You can create corresponding [managed private endpoints](../security/security-managed-private-endpoints-create.md) for different destination endpoints in this scenario. 
 
 ## Available Apache Spark configurations
 

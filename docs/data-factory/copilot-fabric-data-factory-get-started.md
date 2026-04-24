@@ -174,7 +174,7 @@ Explain this pipeline error and provide troubleshooting steps: "The pipeline fai
 ## Related content
 
 - [What is Copilot in the Data Factory workload?](copilot-fabric-data-factory.md)
-- [Build pipeline expressions with Copilot](copilot-pipeline-expression-builder.md)
+- [Build pipeline expressions with Copilot](expression-language.md#build-pipeline-expressions-with-copilot)
 - [Expressions and functions for Data Factory](expression-language.md)
 - [Tutorial: Create an end-to-end pipeline](../data-factory/tutorial-end-to-end-pipeline.md)
 - [Tutorial: Create an end-to-end dataflow](../data-factory/tutorial-end-to-end-dataflow.md)
