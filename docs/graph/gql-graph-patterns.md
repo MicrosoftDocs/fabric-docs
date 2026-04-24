@@ -39,7 +39,7 @@ This pattern matches all nodes that have **both** the `Place` and `City` labels 
 - **Flexible ("covariant") matching**: Matched nodes can have more labels and properties beyond the ones specified.
 
 > [!NOTE]
-> graph models with multiple element labels aren't yet supported (known issue).
+> Nodes can have multiple labels, but edge types with multiple labels aren't yet supported.
 
 ### Simple edge patterns
 

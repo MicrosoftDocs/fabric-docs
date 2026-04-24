@@ -2,7 +2,7 @@
 title: Current Limitations of graph in Microsoft Fabric
 description: Understand the current limitations of graph in Microsoft Fabric, including data types, graph size, query constraints, and GQL (Graph Query Language) conformance.
 ms.topic: reference
-ms.date: 04/14/2026
+ms.date: 04/23/2026
 ms.reviewer: wangwilliam
 ---
 
@@ -105,7 +105,9 @@ Graph supports the following query features from the GQL standard:
 - FILTER statement
 - LET statement
 - Basic linear statement chaining
+- Full linear statement chaining
 - MATCH statement
+- OPTIONAL MATCH statement
 - Simple RETURN statement
 - Conjunction and disjunction
 - Negation
@@ -114,9 +116,13 @@ Graph supports the following query features from the GQL standard:
 - Simple anonymous patterns
 - Simple named edge patterns
 - Path patterns
-- Case mapping
+- Disconnected path patterns
+- Joined path patterns
+- Case mapping (US ASCII only)
 - STRING_JOIN function
 - COALESCE function
+- CASE expression
+- NULLIF expression
 - Property reference
 - Variable reference
 - Approximate numbers
@@ -127,6 +133,7 @@ Graph supports the following query features from the GQL standard:
 - Boolean conjunction
 - Boolean disjunction
 - Boolean negation
+- Boolean strict disjunction (XOR)
 - STARTS WITH predicate
 - Value comparison
 - Value equality
@@ -140,6 +147,7 @@ Graph supports the following query features from the GQL standard:
 - STRING value type
 - UINT value type
 - UINT64 value type
+- Explicit value type nullability (NOT NULL)
 - Character string concatenation
 - COUNT aggregate function
 - MAX aggregate function
@@ -167,13 +175,18 @@ Graph supports the following query features from the GQL standard:
 - Group variables
 - Horizontal aggregation
 - LABELS function
+- ELEMENTS function
 - Basic GQL status codes
 - Formatting and parsing of GQL values
 - Statements with DISTINCT
 - Grouping
+- WALK path mode
 - TRAIL path mode
+- SIMPLE path mode
+- ACYCLIC path mode
 - Abbreviated edge patterns
 - Path binding
+- Path value constructor
 - Simple TRIM function
 - EDGES function
 - NODES function
@@ -183,24 +196,21 @@ Graph supports the following query features from the GQL standard:
 - ENDS WITH predicate
 - Null test predicate
 - PATH value type
+- Multiple node labels
+- Orderedness and Distinctness
+- Return type
+- Unicode validation
+- TO_JSON_STRING function
 
 Conformance to GQL standards is still in progress for:
 
-- Orderedness
-- Return type
 - Correct GQL status codes
-- Unicode validation
 - CALL inline procedure statement
 - FOR statement with index
-- OPTIONAL MATCH statement
 - Regular FOR statement
 - NEXT
 - UNION DISTINCT statement
-- Disconnected path patterns
-- Joined path patterns
 - Unbounded graph pattern quantifiers
-- ACYCLIC path mode
-- SIMPLE path mode
 - ALL SHORTEST path search
 - ANY path search
 - ANY SHORTEST path search
@@ -210,13 +220,11 @@ Conformance to GQL standards is still in progress for:
 - Scalar subqueries
 - PROPERTIES function
 - RANGE function
-- Path value constructor
 - Record constructor
 - Enhanced numeric functions
 - Logarithmic functions
 - Trigonometric functions
 - Path value concatenation
-- Boolean strict disjunction
 - Label test predicate
 - Normalized predicate
 - Source/destination predicate
