@@ -54,9 +54,13 @@ To create a new table and import the CSV data, follow these steps:
     >[!NOTE]
     >To import only the table structure, select **Exclude records and import table structure only**.
 
-There are also [other ways to create a new table](#ways-to-create-a-table).
-
 [!INCLUDE [Configure PowerTable columns](includes/configure-columns.md)]
+
+:::image type="content" source="media/powertable-how-to-create-table-app/finish-table.png" alt-text="Screenshot of selecting Finish." lightbox="media/powertable-how-to-create-table-app/finish-table.png":::
+    
+The table app is created successfully in PowerTable with the configured columns and values. Select **Save** to save your table.
+
+:::image type="content" source="media/powertable-how-to-create-table-app/save-table.png" alt-text="Screenshot of saving the new table app." lightbox="media/powertable-how-to-create-table-app/save-table.png":::
 
 ### Write back changes to source
 
@@ -73,6 +77,9 @@ You can update your data table and sync changes with the source database.
 1. Select **PowerTable > Audit**. The audit trail records all changes in detail, including the Row ID, action type, modified columns, previous values, new values, user name, and timestamp.
 
     :::image type="content" source="media/powertable-how-to-create-table-app/audit.png" alt-text="Screenshot of audit log." lightbox="media/powertable-how-to-create-table-app/audit.png":::
+
+    >[!NOTE]
+    >There are also [other ways to create a new table](#ways-to-create-a-table).
 
 ## Next steps
 
