@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 # Apache Spark advisor for real-time advice on notebooks
 
-The Apache Spark advisor analyzes commands and code run by Apache Spark and displays real-time advice for Notebook runs. The Apache Spark advisor has built-in patterns to help users avoid common mistakes. It offers recommendations for code optimization, performs error analysis, and locates the root cause of failures. Spark Advisor also provides real-time fallback visibility for Fabric's Native Execution Engine, surfacing alerts when a notebook cell's execution falls back from the native path to JVM-based Spark.
+The Apache Spark advisor analyzes commands and code run by Apache Spark and displays real-time advice for Notebook runs. The Apache Spark advisor has built-in patterns to help users avoid common mistakes. It offers recommendations for code optimization, performs error analysis, and locates the root cause of failures.
 
 ## Built-in advice
 
@@ -66,7 +66,7 @@ This query contains the expression with Double type. We recommend that you enabl
 
 This query contains time consuming join due to "Or" condition within query. We recommend that you enable the configuration 'spark.advise.nonEqJoinConvertRule.enable', which can help to convert the join triggered by "Or" condition to SMJ or BHJ to accelerate this query.
 
-### Execution fell back to JVM-based Spark
+### Execution fallback to JVM-based Spark
 
 When the [Native Execution Engine](./native-execution-engine-overview.md) is enabled and a notebook cell's execution plan contains operators that can't be offloaded to the native path, Spark Advisor surfaces a real-time alert in the cell output. The alert indicates that execution fell back to JVM-based Spark and helps you identify the cause, such as unsupported operators, data types, or configurations. To address the fallback, review the query plan for unsupported operations and adjust your logic to use supported operators, or verify that `spark.native.enabled` is set correctly for your notebook or Spark job definition.
 
