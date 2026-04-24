@@ -175,6 +175,7 @@ If you're the Capacity administrator or Tenant administrator, you might be eligi
 
 1. From the upper right corner of Fabric, select the gear icon, then select **Admin portal**.
 1. Select **Capacity settings**, and then choose the **Trial** tab.
+1. Select the trial capacity that you want to re-size by clicking the name.
 1. Your current trial size is displayed here. Select the **Change size** button to increase from 4 capacity units to 64 capacity units.
 1. Select **Apply**. If you're eligible to change the size, you see a success message and receive a notification.
 
