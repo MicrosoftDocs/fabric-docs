@@ -13,7 +13,9 @@ ai-usage: ai-assisted
 
 This tutorial describes how to use change data capture (CDC) in Copy job to efficiently replicate data changes from Azure SQL DB to a destination. This ensures your destination data stays up to date automatically. For a CDC overview in Copy job, refer to [Change data capture (CDC) in Copy job](cdc-copy-job.md).
 
-Complete the following steps to create a new Copy job to ingest data from Azure SQL DB via CDC to another Azure SQL DB:
+## Prerequisites
+
+Before you begin, ensure you have the following:
 
 1. Ensure that change data capture (CDC) is enabled on your database and tables in the supported source store. In this case, it's Azure SQL DB.
 
@@ -27,6 +29,10 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
    > - All of the columns in the source table must be identified as captured columns as default.
 
    Learn more in [Enable and Disable change data capture - SQL Server | Microsoft Learn](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server).
+
+## Create a Copy job with Azure SQL DB CDC
+
+Complete the following steps to create a new Copy job to ingest data from Azure SQL DB via CDC to another Azure SQL DB:
 
 1. Select **+ New Item**, choose the **Copy job** icon,  name your Copy job, and select **Create**.
 
