@@ -3,7 +3,8 @@ title: Configure MySQL in a copy activity
 description: This article explains how to copy data using MySQL.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 02/14/2026
+ms.date: 04/23/2026
+ai-usage: ai-assisted
 ms.custom: 
   - pipelines
   - template-how-to
@@ -90,11 +91,11 @@ When copying data from MySQL, the following mappings are used from MySQL data ty
 | BIGINT UNSIGNED | UInt64 |
 | BIT(1) | UInt64 |
 | BIT(M), M>1 | UInt64 |
-| BLOB |Byte[] |
+| BLOB | Byte array |
 | BOOL |Boolean <br/>(If TreatTinyAsBoolean=false, it is mapped as SByte. TreatTinyAsBoolean is true by default) |
 | CHAR | String  |
-| DATE | Datetime  |
-| DATETIME | Datetime  |
+| DATE | DateTime  |
+| DATETIME | DateTime  |
 | DECIMAL | Decimal |
 | DOUBLE | Double  |
 | DOUBLE PRECISION | Double  |
@@ -105,11 +106,11 @@ When copying data from MySQL, the following mappings are used from MySQL data ty
 | INTEGER | Int32  |
 | INTEGER UNSIGNED | UInt32 |
 | JSON |String |
-| LONG VARBINARY | Byte[] |
+| LONG VARBINARY | Byte array |
 | LONG VARCHAR | String |
-| LONGBLOB |Byte[] |
+| LONGBLOB | Byte array |
 | LONGTEXT |String |
-| MEDIUMBLOB |Byte[] |
+| MEDIUMBLOB | Byte array |
 | MEDIUMINT |Int32 |
 | MEDIUMINT UNSIGNED |UInt32 |
 | MEDIUMTEXT |String |
@@ -120,13 +121,35 @@ When copying data from MySQL, the following mappings are used from MySQL data ty
 | SMALLINT UNSIGNED | UInt16 |
 | TEXT |String |
 | TIME |TimeSpan |
-| TIMESTAMP |Datetime |
-| TINYBLOB |Byte[] |
+| TIMESTAMP | DateTime |
+| TINYBLOB | Byte array |
 | TINYINT |SByte |
 | TINYINT unsigned |Int16 |
 | TINYTEXT | String |
 | VARCHAR | String |
-| YEAR | Int |
+| YEAR | Int16 |
+
+When copying data to MySQL, the following mappings are used from interim data types used by the service internally to MySQL data types.
+
+| Interim service data type | MySQL data type |
+| --- | --- |
+| Boolean | BOOL, BOOLEAN |
+| Byte | TINYINT |
+| Int16 | SMALLINT, YEAR |
+| UInt16 | SMALLINT UNSIGNED |
+| Int32 | MEDIUMINT, INT, INTEGER |
+| UInt32 | INT UNSIGNED, MEDIUMINT UNSIGNED |
+| Int64 | BIGINT |
+| UInt64 | BIGINT UNSIGNED |
+| Decimal | DECIMAL |
+| Single | FLOAT |
+| Double | DOUBLE |
+| String | VARCHAR, CHAR, VARSTRING, TEXT, TINYTEXT, MEDIUMTEXT, LONGTEXT, ENUM, SET, JSON |
+| Byte array | BINARY, VARBINARY, BLOB, TINYBLOB, MEDIUMBLOB, LONGBLOB, BIT, GEOMETRY |
+| Date | DATE |
+| DateTime | DATETIME, TIMESTAMP |
+| TimeSpan | TIME |
+| GUID | GUID, UUID |
 
 ## Table summary
 
