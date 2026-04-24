@@ -111,13 +111,13 @@ Fabric user data functions support default argument values. When you invoke func
 # def score_customer(customerId: str, startDate: datetime = "2024-01-01T00:00:00Z", isActive: bool = True, maxRecords: int = 100) -> dict
 # Note: datetime defaults are specified as strings in the signature; the runtime parses them to datetime at invocation time.
 
-# (1) Call without optional parameters — defaults are used for startDate, isActive, and maxRecords
+# 1. Call without optional parameters — defaults are used for startDate, isActive, and maxRecords
 result = myFunctions.scoreCustomer(customerId='C001')
 
-# (2) Override one default via a named argument, keep the others at their defaults
+# 2. Override one default via a named argument, keep the others at their defaults
 result = myFunctions.scoreCustomer(customerId='C001', maxRecords=50)
 
-# (3) Pass a date/time in ISO 8601 format for reliable parsing
+# 3. Pass a date/time in ISO 8601 format for reliable parsing
 result = myFunctions.scoreCustomer(customerId='C001', startDate='2024-12-31T23:59:59Z')
 ```
 
@@ -156,12 +156,7 @@ The following types are supported as default parameter values:
 
 ### Limitations and guidance
 
-> [!NOTE]
-> Keep the following in mind when using default parameter values:
-> - **Use `None` for list/dict defaults**: Assign the actual default inside the function body to avoid shared mutable defaults. For example: `def myFunc(items: list | None = None): items = items or []`.
-> - **JSON serializable only**: Defaults must be JSON-serializable. Sets and tuples are **not** supported as default values.
-> - **Date/time formats**: Use a consistent, unambiguous format such as ISO 8601 (`2024-12-31T23:59:59Z`) for datetime defaults to ensure reliable parsing.
-> - **pandas defaults**: Using pandas DataFrame or Series as a default value requires the `fabric-user-data-functions` package version 1.0.0 or later in the item environment.
+Defaults must be JSON-serializable (sets and tuples aren't supported). For list or dictionary defaults, use `None` in the signature and assign the real default inside the function to avoid shared mutable defaults. Use ISO 8601 format (for example, `2024-12-31T23:59:59Z`) for datetime defaults. Using pandas DataFrame or Series as a default requires `fabric-user-data-functions` version 1.0.0 or later.
 
 ## Display details
 
