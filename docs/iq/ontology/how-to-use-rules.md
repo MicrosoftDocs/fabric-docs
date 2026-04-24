@@ -1,5 +1,5 @@
 ---
-title: Add rules (with Fabric Activator)
+title: Use rules (with Fabric Activator)
 description: Learn about using Fabric Activator rules in ontology (preview).
 ms.date: 04/24/2026
 ms.topic: how-to
@@ -41,7 +41,7 @@ Rules use the following ontology (preview) concepts. For definitions of these te
 
     :::image type="content" source="media/how-to-use-rules/add-rules-canvas.png" alt-text="Screenshot of Manage rules from the Home configuration canvas." lightbox="media/how-to-use-rules/add-rules-canvas.png":::
 
-    To open rules from the entity type details view (any tab), select **Manage rules > Add rules**.
+    To open rules from the entity type details view (any tab), select **Manage rules > Add rule**.
 
     :::image type="content" source="media/how-to-use-rules/add-rules-preview.png" alt-text="Screenshot of View rules from the entity type details Configuration tab." lightbox="media/how-to-use-rules/add-rules-preview.png":::
 
@@ -57,24 +57,24 @@ Rules use the following ontology (preview) concepts. For definitions of these te
 
     * By default, ontology rules are saved to a new Fabric Activator item. If you want to choose an existing Fabric Activator item instead, select it manually from the **Save location** step. We recommend saving all rules for an ontology to the same workspace and Fabric Activator item.
 
-    :::image type="content" source="media/how-to-use-rules/save-location.png" alt-text="Screenshot of changing the save location.":::
+        :::image type="content" source="media/how-to-use-rules/save-location.png" alt-text="Screenshot of changing the save location.":::
 
 1. When you're finished configuring, select **Create**.
 
 1. The rule is now visible in the **Rules** panel. To start or stop the rule, toggle the switch next to the rule name.
 
-    :::image type="content" source="media/how-to-use-rules/completed-rule.png" alt-text="Screenshot of the option to disable a rule.":::
+    :::image type="content" source="media/how-to-use-rules/completed-rule.png" alt-text="Screenshot of the option to disable a rule." lightbox="media/how-to-use-rules/completed-rule.png":::
 
 ## View and edit a rule
 
 You can reopen the **Rules** panel at any time by selecting **View rules** from any of the **Manage rules** dialogs described in [Create a rule](#create-a-rule).
 
 In the **Rules** pane, you can: 
-* Change which Fabric Activator item is used to store ontology rules, by selecting **Edit** next to the Activator name
+* Change which Fabric Activator item is used to store ontology rules, by selecting **Edit** next to the Activator name.
 
     :::image type="content" source="media/how-to-use-rules/edit-activator-overall.png" alt-text="Screenshot of editing the overall activator instance used for ontology rules.":::
 
-* Manage the rule further by selecting *...** next to the rule name to open its options menu. From here, you can **Edit** the rule, **Delete** the rule, or **Open in Activator**. 
+* Manage the rule further by selecting **...** next to the rule name to open its options menu. From here, you can **Edit** the rule, **Delete** the rule, or **Open in Activator**. 
 
     :::image type="content" source="media/how-to-use-rules/rule-options.png" alt-text="Screenshot of the options for a rule.":::
     

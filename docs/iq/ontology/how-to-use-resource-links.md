@@ -52,13 +52,13 @@ You can view resources linked to an entity type from the following locations.
 
 The list of resources linked to an entity type is visible in the **Configure** tab in the entity type details, in the **Resources** section.
 
-:::image type="content" source="media/how-to-use-resource-links/resources-entry.png" alt-text="Screenshot of a resource inside the Resources section." lightbox="media/how-to-use-resource-links/resources-entry.png":::
+:::image type="content" source="media/how-to-use-resource-links/resources-entry.png" alt-text="Screenshot of a resource inside the Resources section of the Configure tab." lightbox="media/how-to-use-resource-links/resources-entry.png":::
 
 ### Overview tab
 
 Linked resources can be displayed on in a tile on the **Overview** tab of the entity type details. An entity type can only have one **Resource links** tile at a time.
 
-:::image type="content" source="media/how-to-use-resource-links/resources-entry.png" alt-text="Screenshot of a resource inside the Resources section." lightbox="media/how-to-use-resource-links/resources-entry.png":::
+:::image type="content" source="media/how-to-use-resource-links/resource-links-tile.png" alt-text="Screenshot of the Resource links tile on the Overview tab." lightbox="media/how-to-use-resource-links/resource-links-tile.png":::
 
 You can open the resources directly from the tile by selecting their names. Reports open inside Fabric in a new tab.
 
@@ -68,7 +68,7 @@ If there's no **Resource links** tile present in the entity type overview, you c
 
 1. In the entity type overview, select **Add tile > Resource links**.
 
-    :::image type="content" source="media/how-to-use-resource-links/add-tile.png" alt-text="Screenshot of adding a Resource links tile.":::
+    :::image type="content" source="media/how-to-use-resource-links/add-tile.png" alt-text="Screenshot of adding a Resource links tile." lightbox="media/how-to-use-resource-links/add-tile.png":::
 
 1. Preview the links that will be visible on the tile and select **Create**.
 
