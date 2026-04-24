@@ -13,7 +13,7 @@ ms.search.form: Dremio catalog mirroring overview
 
 A mirrored Dremio catalog in Fabric integrates your data managed by Dremio with the rest of your data in Fabric. You can continuously replicate your Dremio catalog directly into Fabric's OneLake.
 
-For a tutorial on configuring your Dremio environment for Dremio catalog mirroring into Fabric, see [Tutorial: Configure mirrored Dremio catalog](catalog-mirroring-dremio-tutorial.md).
+For a tutorial on configuring your Dremio environment for Dremio catalog mirroring into Fabric, see [Tutorial: Configure mirrored Dremio catalog](dremio-tutorial.md).
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -51,5 +51,5 @@ Schema/table selection:
 
 ## Related content
 
-- [Tutorial: Configure Microsoft Fabric mirrored databases from Dremio](catalog-mirroring-dremio-tutorial.md)
-- [Limitations in Microsoft Fabric catalog mirroring for Dremio](catalog-mirroring-dremio-limitations.md)
+- [Tutorial: Configure Microsoft Fabric mirrored databases from Dremio](dremio-tutorial.md)
+- [Limitations in Microsoft Fabric catalog mirroring for Dremio](dremio-limitations.md)

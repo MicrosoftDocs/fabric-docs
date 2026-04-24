@@ -10,14 +10,14 @@ ms.topic: tutorial
 
 # Tutorial: Configure mirrored Dremio catalog
 
-[Catalog mirroring for Dremio](catalog-mirroring-dremio.md) enables Microsoft Fabric customers to read data managed by Dremio from Fabric workloads.
+[Catalog mirroring for Dremio](dremio.md) enables Microsoft Fabric customers to read data managed by Dremio from Fabric workloads.
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
 - You must have an active Dremio account with access to a Dremio project that contains Iceberg tables you want to mirror.
-- The Dremio project must be reachable via the public internet. Firewall rules or other network restrictions are not currently supported. See [limitations and considerations of this feature](catalog-mirroring-dremio-limitations.md).
+- The Dremio project must be reachable via the public internet. Firewall rules or other network restrictions are not currently supported. See [limitations and considerations of this feature](dremio-limitations.md).
 - You need a Fabric workspace associated with a Fabric capacity (F SKU or Trial).
 - You must have the necessary permissions in Dremio to read the catalogs, namespaces, and tables you want to mirror.
 - Your Fabric tenant administrator must enable the [tenant admin setting](../../admin/about-tenant-settings.md) titled **Enable new mirrored catalog items (Preview)**.
@@ -39,7 +39,7 @@ Follow these steps to create a new mirrored Dremio catalog in Fabric.
 
 1. Once you connect to Dremio, on the **Choose data** page, select the **Catalog scope**, which is the part of the Dremio catalog you would like to mirror. Then, via the inclusion/exclusion list, select the namespaces and tables that you want to add and access from Fabric.
    - You can only see the catalogs, namespaces, and tables that you have access to based on the privileges granted in Dremio.
-   - By default, the **Automatically sync future tables** option is enabled. For more information, see [Dremio catalog mirroring](catalog-mirroring-dremio.md#metadata-sync).
+   - By default, the **Automatically sync future tables** option is enabled. For more information, see [Dremio catalog mirroring](dremio.md#metadata-sync).
 
    When you have made your selections, select **Next**.
 
@@ -66,5 +66,5 @@ You can also create shortcuts from your Lakehouse to your mirrored Dremio catalo
 
 ## Related content
 
-- [Dremio catalog mirroring](catalog-mirroring-dremio.md)
-- [Limitations in Microsoft Fabric catalog mirroring for Dremio](catalog-mirroring-dremio-limitations.md)
+- [Dremio catalog mirroring](dremio.md)
+- [Limitations in Microsoft Fabric catalog mirroring for Dremio](dremio-limitations.md)

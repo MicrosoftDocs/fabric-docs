@@ -23,5 +23,5 @@ This article lists current limitations and considerations with Dremio catalog mi
 
 ## Related content
 
-- [Tutorial: Configure Microsoft Fabric mirrored databases from Dremio](catalog-mirroring-dremio-tutorial.md)
-- [Mirroring Dremio Catalog](catalog-mirroring-dremio.md)
+- [Tutorial: Configure Microsoft Fabric mirrored databases from Dremio](dremio-tutorial.md)
+- [Mirroring Dremio Catalog](dremio.md)
