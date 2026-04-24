@@ -108,9 +108,9 @@ items:
       href: azure-databricks-faq.yml
 - name: Mirroring Dremio catalog
   items:
-    - name: Mirroring Dremio catalog
+    - name: Mirrored Dremio catalog
       href: catalog-mirroring/catalog-mirroring-dremio.md
-    - name: Dremio catalog tutorial
+    - name: Mirrored Dremio catalog tutorial
       href: catalog-mirroring/catalog-mirroring-dremio-tutorial.md
     - name: Limitations
       href: catalog-mirroring/catalog-mirroring-dremio-limitations.md
