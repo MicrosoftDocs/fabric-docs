@@ -70,9 +70,9 @@ landingContent:
         links:
           - text: Integrate OneLake with Azure Databricks
             url: onelake-azure-databricks.md
-          - text: Integrate OneLake with Azure HDInsight
-            url: onelake-azure-hdinsight.md
           - text: Integrate OneLake with Azure Storage Explorer
             url: onelake-azure-storage-explorer.md
           - text: Integrate OneLake with Azure Synapse Analytics
             url: onelake-azure-synapse-analytics.md
+          - text: Use OneLake files in Microsoft Foundry
+            url: onelake-foundry-knowledge.md
