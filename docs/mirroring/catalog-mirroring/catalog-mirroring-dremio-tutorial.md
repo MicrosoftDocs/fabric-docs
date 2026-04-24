@@ -1,8 +1,8 @@
 ---
 title: "Tutorial: Configure mirrored Dremio catalog"
 description: Learn how to create a mirrored Dremio catalog in Microsoft Fabric.
-author: matt1883
-ms.author: mahi
+author: kgremban
+ms.author: kgremban
 ms.reviewer: mahi
 ms.date: 04/27/2026
 ms.topic: tutorial
@@ -20,22 +20,28 @@ ms.topic: tutorial
 - The Dremio project must be reachable via the public internet. Firewall rules or other network restrictions are not currently supported. See [limitations and considerations of this feature](catalog-mirroring-dremio-limitations.md).
 - You need a Fabric workspace associated with a Fabric capacity (F SKU or Trial).
 - You must have the necessary permissions in Dremio to read the catalogs, namespaces, and tables you want to mirror.
-- Your Fabric tenant administrator must first enable the [tenant admin setting](../../admin/about-tenant-settings.md) titled **"Enable new mirrored catalog items (Preview)**.
+- Your Fabric tenant administrator must enable the [tenant admin setting](../../admin/about-tenant-settings.md) titled **Enable new mirrored catalog items (Preview)**.
 
 ## Create a mirrored Dremio catalog
 
 Follow these steps to create a new mirrored Dremio catalog in Fabric.
 
 1. Navigate to https://powerbi.com.
+
 1. Select **+ New** and then **Mirrored Dremio catalog (preview)**.
 
 1. Select an existing connection if you have one configured.
-   - If you don't have an existing connection, create a new connection and enter all the required details. For **Warehouse**, enter your Dremio project name. For **Connection credentials**, enter the PAT token for the identity you want to use, or select **Organizational account** if you'd like to use your signed-in identity associated with your Dremio project.
+   
+   If you don't have an existing connection, create a new connection and enter all the required details:
+   
+   - For **Warehouse**, enter your Dremio project name.
+   - For **Connection credentials**, enter the PAT token for the identity you want to use, or select **Organizational account** if you'd like to use your signed-in identity associated with your Dremio project.
 
 1. Once you connect to Dremio, on the **Choose data** page, select the **Catalog scope**, which is the part of the Dremio catalog you would like to mirror. Then, via the inclusion/exclusion list, select the namespaces and tables that you want to add and access from Fabric.
    - You can only see the catalogs, namespaces, and tables that you have access to based on the privileges granted in Dremio.
    - By default, the **Automatically sync future tables** option is enabled. For more information, see [Dremio catalog mirroring](catalog-mirroring-dremio.md#metadata-sync).
-   - When you have made your selections, select **Next**.
+
+   When you have made your selections, select **Next**.
 
 1. On the **Review and create** page, you can review the details and set the mirrored catalog item name, which must be unique in your workspace. Select **Create**.
 
