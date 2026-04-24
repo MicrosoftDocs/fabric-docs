@@ -649,11 +649,8 @@ Add the following code next:
     layer_source_id = str(uuid.uuid4())
     layer_setting_id = str(uuid.uuid4())
     icon_source_id = str(uuid.uuid4())
-
-    icon_source_name = "starbucks_marker"
-
-    # The map definition example shows iconOptions.image using "<layerSettingId>:<IconName>" formatting.
-    custom_sprite_image_name = f"{layer_setting_id}:{icon_source_name}"
+    custom_svg_marker = f"{layer_setting_id}:{icon_source_id}"
+    icon_source_name = "Starbucks Marker"
 
     map_json = {
         "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/map/definition/2.0.0/schema.json",
@@ -703,14 +700,15 @@ Add the following code next:
                         # Custom SVG marker path:
                         {
                             "iconOptions": {
-                                "image": custom_sprite_image_name,
+                                "image": custom_svg_marker,
                                 "anchor": "bottom",
                                 "opacity": 1.0,
                                 "rotation": 0,
                                 "allowOverlap": False,
                                 "rotationAlignment": "viewport",
                                 "pitchAlignment": "viewport"
-                            }
+                            },
+                                "icon": icon_source_id
                         }
                         if USE_CUSTOM_SVG_MARKER
                         # Built-in fallback path:
