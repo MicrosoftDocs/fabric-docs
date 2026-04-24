@@ -44,13 +44,15 @@ Data binding uses the following ontology (preview) concepts. For definitions of 
 
 First, bind static data to entity types in your ontology (preview) item. This non-timeseries binding defines the unique entity type instances.
 
-1. From the Home configuration canvas, select the entity type name in the **Explorer** and select **View entity type details** from the top ribbon.
+1. You can start a data binding from either the Home configuration canvas or the **Configure** tab of the entity type details.
 
-    :::image type="content" source="media/how-to-bind-data/view-entity-type-details.png" alt-text="Screenshot of the View Entity Type details button." lightbox="media/how-to-bind-data/view-entity-type-details.png":::
+    On the Home configuration canvas, select **...** next to an entity type name to open its options menu and select **Bind data**.
 
-1. The **Configure** page opens. This page surfaces important information about the entity type, including its properties and data bindings. Add a new binding by selecting **Manage property bindings > Add binding and properties**, or **Add properties from data** in the **Properties** pane if the entity type has no properties yet.
+    :::image type="content" source="media/how-to-bind-data/bind-data-canvas.png" alt-text="Screenshot of starting a data binding from the configuration canvas." lightbox="media/how-to-bind-data/bind-data-canvas.png":::
 
-    :::image type="content" source="media/how-to-bind-data/bind-data-1.png" alt-text="Screenshot of adding a new data binding to the entity type." lightbox="media/how-to-bind-data/bind-data-1.png":::
+    On the **Configure** page, select **Manage property bindings > Add binding and properties**, or **Add properties from data** in the **Properties** pane if the entity type has no properties yet.
+
+    :::image type="content" source="media/how-to-bind-data/bind-data-configuration.png" alt-text="Screenshot of adding a new data binding to the entity type." lightbox="media/how-to-bind-data/bind-data-configuration.png":::
 
 1. On the binding page, select **Add data binding** and choose the type of OneLake data source that contains the data for the entity.
 

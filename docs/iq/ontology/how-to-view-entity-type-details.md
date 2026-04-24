@@ -1,7 +1,7 @@
 ---
 title: View entity type details
 description: Learn about the entity type details view in ontology (preview).
-ms.date: 12/02/2025
+ms.date: 04/24/2026
 ms.topic: how-to
 ---
 
@@ -36,7 +36,7 @@ The entity type details include the following ontology (preview) concepts. For d
 
 Follow these steps to access the entity type details in your ontology (preview) item and see the entity type overview.
 
-1. In the **Explorer** pane, select the entity type that you want to view. Select **View Entity Type details** from the top ribbon.
+1. In the **Explorer** pane of the Home configuration canvas, select the entity type that you want to view. Select **View Entity Type details** from the top ribbon.
 
     :::image type="content" source="media/how-to-view-entity-type-details/view-entity-type-details.png" alt-text="Screenshot of opening the experience from the menu ribbon.":::
 
