@@ -155,7 +155,7 @@ def score_customer(
     customerId: str,                          # required — no default
     isActive: bool = True,                    # optional bool default
     maxRecords: int = 100,                    # optional int default
-    startDate: datetime = "2025-01-01T00:00:00Z",  # specify as a string; the runtime parses it to datetime at invocation time
+    startDate: datetime.datetime = "2025-01-01T00:00:00Z",  # specify as a string; the runtime parses it to datetime at invocation time
     tags: list | None = None,                 # optional list — use None to avoid mutable default
 ) -> dict:
     tags = tags or []
