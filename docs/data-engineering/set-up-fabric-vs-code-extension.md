@@ -30,9 +30,9 @@ The supported features are:
 - Clone Git enabled workspaces.
 - Support for version control for your items.
 - Open Fabric SQL Databases in [MSSQL extension](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql).
-- Explore and edit item definitions in VS Code for Fabric items. Item definitions open in read-only mode by default. To edit and save changes back to the workspace item, enable the **Fabric: Edit Item Definitions** setting in the Fabric extension settings.
+- Explore and edit item definitions in VS Code for Fabric items.
 - Fabric MCP support: install the Fabric MCP server alongside the Microsoft Fabric extension and GitHub Copilot Chat in VS Code to enable Fabric MCP tools and a tailored chat experience for working with Fabric artifacts directly from the chat interface.
-- Browse workspace folders and view their contents. Note that creating items inside folders is currently not supported; items are created at the workspace level.
+- Browse workspace folders and view their contents. 
 
 ### Sign in
 
@@ -60,7 +60,7 @@ With the Microsoft Fabric Extension, you can now create, delete, and rename any 
 2. Select **+** to create an item in the workspace.   
 3. Select the item type and provide a name to create the item in Fabric. 
    :::image type="content" source="media\vs-code\select-item-type.png" alt-text="Screenshot of selecting the item type to create in Fabric." lightbox="media\vs-code\select-item-type.png":::
-3. Select **Open in Explorer** to open an item definition to edit in Visual Studio Code. Item definitions open in read-only mode by default. To edit and save a definition back to the workspace item, enable the **Fabric: Edit Item Definitions** setting in the Fabric extension settings. Here is a list of ([supported items](/rest/api/fabric/articles/item-management/definitions/item-definition-overview)).
+3. Select **Open in Explorer** to open an item definition to edit in Visual Studio Code. Here is a list of ([supported items](/rest/api/fabric/articles/item-management/definitions/item-definition-overview)).
    :::image type="content" source="media\vs-code\open-pbi-report.png" alt-text="Screenshot showing how to open a Power BI report." lightbox="media\vs-code\open-pbi-report.png":::
 
 > [!NOTE]
