@@ -997,7 +997,7 @@ items:
             href: map/about-map-permissions.md
           - name: Automation with REST APIs
             items:
-              - name: Automating Fabric Maps with the REST API
+              - name: Automate Fabric Maps with the REST API
                 href: map/about-rest-api.md
               - name: Handle Errors in Fabric Maps Automation
                 href: map/rest-api-error-handling-best-practices.md

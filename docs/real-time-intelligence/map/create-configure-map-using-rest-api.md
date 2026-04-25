@@ -58,7 +58,7 @@ map_json = {
       "sourceId": "points-source",
       "options": {
         "type": "vector",
-        "visible": true,
+        "visible": True,
         "color": "#0078D4",
         "pointLayerType": "bubble",
         "bubbleOptions": {
@@ -86,6 +86,7 @@ import httpx
 BASE_URL = "https://api.fabric.microsoft.com"
 TOKEN = "<access-token>"
 WORKSPACE_ID = "<workspace-id>"
+map_name = "Automated Map (Pattern 1)"
 
 headers = {
     "Authorization": f"Bearer {TOKEN}",
@@ -94,7 +95,7 @@ headers = {
 
 # Metadata only – NOT map.json
 create_map_payload = {
-    "displayName": "Automated Map (Pattern 1)"
+    "displayName": map_name
 }
 
 response = httpx.post(
@@ -186,6 +187,7 @@ import httpx
 BASE_URL = "https://api.fabric.microsoft.com/v1"
 TOKEN = "<access-token>"
 WORKSPACE_ID = "<workspace-id>"
+map_name = "Automated Map (Pattern 2)"
 
 headers = {
     "Authorization": f"Bearer {TOKEN}",
@@ -223,7 +225,7 @@ map_json = {
 }
 
 payload = {
-    "displayName": "Work Order Map (Pattern 2)",
+    "displayName": map_name,
     "definition": {
         "parts": [
             {
@@ -234,8 +236,9 @@ payload = {
         ]
     }
 }
+with httpx.Client(timeout=60) as client:
 
-response = httpx.post(
+response = client.post(
     f"{BASE_URL}/workspaces/{WORKSPACE_ID}/maps",
     headers=headers,
     json=payload,
@@ -262,37 +265,85 @@ Both map‑creation patterns ultimately rely on the same map definition contract
 > **Rule of thumb:**
 > If **map.json** is included in any REST request/response, it is carried as a **Base64 payload** in a `definition.parts[]` entry with `payloadType: "InlineBase64"`.
 
-<!-- ### Error handling best practices
+## Create helper function to retrieve the map ID
 
-When automating Fabric Maps using the REST API, it's important to handle errors explicitly and consistently. REST calls can fail for a variety of reasons, including authentication issues, insufficient permissions, invalid map definitions, or transient service conditions. Robust error handling ensures that automation workflows fail predictably, surface actionable diagnostics, and can safely retry operations when appropriate. This section outlines recommended practices for detecting, logging, and responding to errors when creating or updating map items programmatically.
+When you create a map by using the Fabric REST API, the request may return a 202 Accepted response. This indicates that the map is being provisioned asynchronously as a long-running operation (LRO), rather than being created immediately. In this case, the response doesn't include the map ID, and the LRO completion endpoint may not return a usable result. Additionally, even after the operation completes, the newly created map might not appear immediately when calling the List Maps API due to backend propagation.
 
-Wrap API calls in structured error handling to surface useful diagnostics:
+To reliably obtain the map ID, you must query the list of maps and retry until the new map becomes visible. The following helper function implements this retry pattern and ensures your automation flow is resilient to asynchronous provisioning delays.
 
 ```python
-try:
-    response = httpx.post(
-        "...",
-        headers=headers,
-        json=payload,
-        timeout=30
-    )
-    response.raise_for_status()
-except httpx.HTTPStatusError as ex:
-    print("Request failed")
-    print("Status:", ex.response.status_code)
-    print("Details:", ex.response.text)
-    raise
-except httpx.RequestError as ex:
-    print("Network error:", str(ex))
-    raise
+# ---------------------------------------------------------
+# Get Map ID
+# ---------------------------------------------------------
+
+def resolve_map_id(client, list_url, headers, map_name, max_attempts=10, delay=5):
+    """
+    Resolve the ID of a newly created Fabric map.
+
+    Why this function is needed:
+    - Creating a map may return HTTP 202 (Accepted), indicating an asynchronous
+      long-running operation (LRO) rather than immediate creation.
+    - LRO responses for map creation don't always return a resource ID.
+    - Even after the operation completes, the new map may not be immediately
+      visible in the List Maps API due to backend propagation delays.
+
+    What this function does:
+    - Repeatedly calls the List Maps API.
+    - Searches for a map matching the provided display name.
+    - Retries for a configurable number of attempts with a delay between calls.
+
+    Parameters:
+        client        : Authenticated HTTP client
+        list_url      : Maps list endpoint
+        headers       : Authorization headers for Fabric API
+        map_name      : Display name of the map to locate
+        max_attempts  : Maximum number of retry attempts
+        delay         : Delay (seconds) between retries
+
+    Returns:
+        The map ID (string) once the map becomes visible.
+
+    Raises:
+        RuntimeError if the map is not found after all retry attempts.
+    """
+
+    for attempt in range(max_attempts):
+        print(f"Resolving map (attempt {attempt + 1}/{max_attempts})...")
+
+        resp = client.get(list_url, headers=headers)
+        resp.raise_for_status()
+
+        items = resp.json().get("value", [])
+
+        match = next(
+            (m for m in items if m.get("displayName") == map_name),
+            None
+        )
+
+        if match:
+            print("✅ Map found!")
+            return match["id"]
+
+        print("⏳ Map not visible yet. Retrying...")
+        time.sleep(delay)
+
+    raise RuntimeError("Map created but still not visible after retries")
 ```
 
-This pattern helps distinguish:
+Then instead of getting your map ID as in the previous sample (`map_id = created["id"]`), try this:
 
-* Authentication or authorization failures
-* Invalid map definitions
-* Transient connectivity issues
--->
+```python
+    if response.status_code == 201:
+        map_id = response.json()["id"]
+    elif response.status_code == 202:
+        print("LRO completed via 202. Resolving map by name...")
+        map_id = resolve_map_id(
+            client,
+            create_map_url,
+            _fabric_headers(),
+            map_name
+        )  
+```
 
 ## Next steps
 

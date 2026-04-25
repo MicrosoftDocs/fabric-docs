@@ -1,13 +1,13 @@
 ---
-title: Automating Fabric Maps with the REST API 
+title: Automate Fabric Maps with the REST API 
 description: Learn about using Microsoft Fabric Maps REST API to programmatically create and manage map items in Microsoft Fabric.
 ms.reviewer: smunk, sipa
 ms.topic: article
 ms.date: 04/22/2026
-ms.search.form: Automating Fabric Maps
+ms.search.form: Automate Fabric Maps
 ---
 
-# Automating Fabric Maps with the REST API
+# Automate Fabric Maps with the REST API
 
 Fabric Maps provides REST APIs that enables you to programmatically create and manage map items in Microsoft Fabric. This API allows you to automate map provisioning, apply consistent map definitions across environments, and integrate mapping workflows into applications and deployment pipelines.
 
