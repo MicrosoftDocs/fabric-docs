@@ -89,8 +89,6 @@ items:
     href: ./snowflake/create-snowflake-database-item.md
   - name: Use Snowflake with Iceberg tables
     href: onelake-iceberg-snowflake.md
-  - name: Azure HDInsight
-    href: onelake-azure-hdinsight.md
   - name: Microsoft Foundry knowledge
     href: onelake-foundry-knowledge.md
   - name: PowerShell

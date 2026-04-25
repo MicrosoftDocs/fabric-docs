@@ -2,7 +2,7 @@
 title: Include file for configuring PowerTable columns
 description: Include file for configuring PowerTable columns
 ms.topic: include
-ms.date: 03/30/2026
+ms.date: 04/13/2026
 ---
 
 ### Configure columns
@@ -19,9 +19,3 @@ PowerTable sheets automatically detect column properties and rename any unsuppor
     >[!NOTE]
     >In this step, you can **enable Slowly Changing Dimensions (SCDs)** by turning the toggle.
     >For a table, this is a one-time configuration that cannot be modified later.
-    
-    :::image type="content" source="../media/includes/finish-table.png" alt-text="Screenshot of selecting Finish." lightbox="../media/includes/finish-table.png":::
-
-1. The table app is created successfully in PowerTable with the configured columns and values. Select **Save** to save your table.
-
-    :::image type="content" source="../media/includes/save-table.png" alt-text="Screenshot of saving the new table app." lightbox="../media/includes/save-table.png":::
