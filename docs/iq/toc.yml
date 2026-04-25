@@ -75,6 +75,8 @@ items:
       items:
         - name: Cubes
           href: plan/planning-concept-cube.md
+        - name: Driver Model
+          href: plan/planning-concept-driver-model.md          
     - name: How-tos
       items:
         - name: Create a database connection
