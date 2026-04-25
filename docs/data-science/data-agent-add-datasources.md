@@ -13,13 +13,9 @@ ai-usage: ai-assisted
 
 # Add and configure datasources in Fabric data agent
 
-## Overview
-Data Agent in Microsoft Fabric enables organizations to build conversational
-experiences over their enterprise data. By connecting Fabric artifacts to a Data
-Agent, users can translate natural language questions into precise queries, empowering stakeholders, from analysts to executives, to
-unlock insights without writing a single line of code.
+Data Agent in Microsoft Fabric enables organizations to build conversational experiences over their enterprise data. By connecting Fabric artifacts to a Data Agent, users can translate natural language questions into precise queries, empowering stakeholders, from analysts to executives, to unlock insights without writing a single line of code. This article walks through every data source that Data Agent supports today and the configuration capabilities available for each data source.
 
-This doc walks through every data source that Data Agent supports today and the configuration capabilities available for each data source.
+## Overview
 
 Data Agent supports the following data source categories:
 
@@ -32,7 +28,8 @@ Data Agent supports the following data source categories:
 | **Ontology** | Fabric Ontology | Ontology-native | Domain knowledge and semantic context for data integration |
 | **Azure AI Search** | Azure AI Search Index | Natural language + search | Unstructured data retrieval (PDFs, text, enriched content) |
 
-> **Tip:** A single Data Agent can combine up to five data sources in any combination, letting you blend structured, real-time, semantic, and unstructured data in one conversational experience.
+> [!TIP]
+> A single Data Agent can combine up to five data sources in any combination, letting you blend structured, real-time, semantic, and unstructured data in one conversational experience.
 
 # [SQL](#tab/sql)
 ### Supported Artifacts
@@ -166,8 +163,6 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 | Number of Documents | Control how many documents are retrieved per query (recommended: 3–20). |
 | Context / Description | Describe the index contents, key fields, and usage guidance to help routing. |
 | Agent Instructions | Guide how the agent interprets search results and composes the final answer. |
-
-Please find more information about 
 
 ---
 
