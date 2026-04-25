@@ -47,7 +47,7 @@ To set up the automatic conversion and virtualization of tables from Delta Lake 
 
 1.  If the conversion log file shows that the table was successfully converted, read the Iceberg table using your service, app, or library of choice.
 
-    Depending on what Iceberg reader you use, you will need to know either the the path to the table directory or to the most recent `.metadata.json` file shown in the `metadata` directory.
+    Depending on what Iceberg reader you use, you will need to know either the path to the table directory or to the most recent `.metadata.json` file shown in the `metadata` directory.
 
     You can see the HTTP path to the latest metadata file of your table by opening the **Properties** view for the `*.metadata.json` file with the highest version number. Take note of this path.
 
