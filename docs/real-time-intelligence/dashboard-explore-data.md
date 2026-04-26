@@ -58,7 +58,7 @@ In addition to exploring data in the context of the entire dashboard, you can al
 
 1. Select **Save to dashboard** to save the insights as a new visual on the dashboard. You can also save the visual to a different existing dashboard or create a new dashboard for the visual.
 
-    :::image type="content" source="media/dashboard-explore-copilot/tile-copilot-query-result.png" alt-text="Screenshot of the Copilot pane showing the save to dashboard options.":::
+    :::image type="content" source="media/dashboard-explore-copilot/tile-copilot-query-result.png" alt-text="Screenshot of the Copilot pane showing the save to dashboard options." lightbox="media/dashboard-explore-copilot/tile-copilot-query-result.png":::
 
 ## Share Copilot exploration insights
 
@@ -77,10 +77,10 @@ After you explore data and find insights by using Copilot, share those insights 
     1. Run the query, share it again, save to either a new or existing dashboard, and more.
     1. If the visual is included, they can modify the visual type and customize it.
 
-    :::image type="content" source="media/dashboard-explore-copilot/shared-query.png" alt-text="Screenshot of the shared Copilot query with visual customization options.":::
+    :::image type="content" source="media/dashboard-explore-copilot/shared-query.png" alt-text="Screenshot of the shared Copilot query with visual customization options." lightbox="media/dashboard-explore-copilot/shared-query.png":::
 
 ## Related content
 
 - [Create a real-time dashboard](dashboard-real-time-create.md)
 - [Customize real-time dashboard visuals](dashboard-visuals-customize.md)
-- [Use Copilot to edit tiles](dashboard-real-time-create.md#use-copilot-to-add-edit-tile-preview)
+- [Use Copilot to edit tiles](dashboard-real-time-create.md#add-edit-tile)
