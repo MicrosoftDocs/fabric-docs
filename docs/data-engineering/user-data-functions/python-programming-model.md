@@ -6,6 +6,7 @@ ms.topic: overview
 ms.custom: freshness-kr
 ms.date: 01/21/2026
 ms.search.form: Write new user data functions items
+ai-usage: ai-assisted
 ---
 
 # Fabric User data functions programming model overview
@@ -137,14 +138,39 @@ When writing User Data Functions, you must follow specific syntax rules to ensur
 #### Parameter requirements
 
 - **Type annotations required**: All parameters must include type annotations (for example, `name: str`).
-- **Default values**: Default parameter values are supported. You can define default arguments in Fabric user data functions to make your code easier to call and maintain. Default values support common JSON-serializable types, including strings, boolean, numbers (int, float), arrays (lists), and objects (dictionaries).
-**Syntax**
-    ```python
-        @udf.function()
-        def function_name(param1: type = value1, param2: type = value2, listparam: list | None = None, ...) -> output_type:
-            # function body
-    ```
-  Note that the default value must be JSON serializable. For example, nested lists such as [1, 2, [3]] are permitted, whereas nested sets or tuples are not supported.  For list or dictionary defaults, prefer using None in the signature and assigning the real default inside the function. 
+- **Default values**: Default parameter values are supported. You can define default arguments in Fabric user data functions to make your code easier to call and maintain. Parameters with default values are optional at invocation time; parameters without defaults are required. The following types are supported as default values:
+
+  | **Default type** | **Notes** |
+  |---|---|
+  | String | Any JSON-serializable string. |
+  | Datetime string | Specify as a string in the function signature. The runtime parses the string to `datetime` at invocation time. Use ISO 8601 format (for example, `2025-12-31T23:59:59Z`) for consistent, unambiguous parsing. |
+  | Boolean | `True` or `False`. |
+  | Integer | Any integer value. |
+  | Float | Any floating-point value. |
+  | List | Must be JSON-serializable. Prefer `None` in the signature and assign the real default inside the function to avoid shared mutable defaults. |
+  | Dictionary | Must be JSON-serializable. Prefer `None` in the signature and assign the real default inside the function. |
+  | pandas DataFrame | Provided as a JSON object that the SDK converts to a pandas type. Requires `fabric-user-data-functions` version 1.0.0 or later. |
+  | pandas Series | Provided as a JSON array of objects that the SDK converts to a pandas type. Requires `fabric-user-data-functions` version 1.0.0 or later. |
+
+  **Syntax**
+  ```python
+  @udf.function()
+  def function_name(
+      requiredParam: str,
+      optionalStr: str = "hello",
+      optionalDate: datetime.datetime = "2025-01-01T00:00:00Z",  # specify as a string; the runtime parses it to datetime at invocation time
+      optionalBool: bool = True,
+      optionalInt: int = 10,
+      optionalFloat: float = 1.5,
+      optionalList: list | None = None,   # assign real default inside the function
+      optionalDict: dict | None = None,   # assign real default inside the function
+  ) -> dict:
+      optionalList = optionalList or [1, 2, 3]
+      optionalDict = optionalDict or {"key": "value"}
+      return {"param": requiredParam}
+  ```
+
+  Defaults must be JSON-serializable (sets and tuples aren't supported). For list or dictionary defaults, use `None` in the signature and assign the real default inside the function to avoid shared mutable defaults. Use ISO 8601 format (for example, `2025-12-31T23:59:59Z`) for datetime defaults. Using pandas DataFrame or Series as a default requires `fabric-user-data-functions` version 1.0.0 or later.
 
 #### Function requirements
 
