@@ -112,4 +112,4 @@ Select the template that you want to modify from the list of available templates
 
 ## Related content
 
-[Create a model using Model Builder](./create-model-using-model-builder.md).
+[Create a model using Model Builder](./how-to-create-model-using-model-builder.md).
