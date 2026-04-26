@@ -94,7 +94,7 @@ You can also specify the aggregation and distribution methods for Driver Input r
 
 :::image type="content" source="../media/planning-model-builder/configure-row-properties-for-model/driver-input.png" alt-text="Screenshot of driver input row.":::
 
-Based on the inputs entered in the planning sheet, this row is automatically calculated using the selected driver configuration. To learn more, refer to this section: [Create a driver-based model](./create-driver-based-model.md).
+Based on the inputs entered in the planning sheet, this row is automatically calculated using the selected driver configuration. To learn more, refer to this section: [Create a driver-based model](./how-to-create-driver-based-model.md).
 
 :::image type="content" source="../media/planning-model-builder/configure-row-properties-for-model/driver-input-in-planning-sheet.png" alt-text="Screenshot of driver input entered in the planning sheet.":::
 
@@ -164,7 +164,7 @@ The following are the available aggregations:
 
 ## Next step
 
-[Create a model using Model Builder](./create-model-using-model-builder.md)
+[Create a model using Model Builder](./how-to-create-model-using-model-builder.md)
 
 ## Related content
 
