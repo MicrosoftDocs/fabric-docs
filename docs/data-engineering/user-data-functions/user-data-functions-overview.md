@@ -10,7 +10,7 @@ ms.search.form: User data functions overview
 
 # What is Fabric User data functions?
 
-User Data Functions enable you to create reusable Python functions that can be invoked across Microsoft Fabric and from external applications. Write your business logic once and call it from Pipelines, Notebooks, Activator rules, Power BI translytical apps, or any external system via REST endpoints.
+User Data Functions enable you to create reusable Python functions that can be invoked across Microsoft Fabric and from external applications. Write your business logic once and call it from Pipelines, Notebooks, Activator rules, Power BI Translytical Task Flows, or any external system via REST endpoints.
 
 User Data Functions provide a serverless compute environment where you can host and run custom Python code directly in Fabric. Whether you need to standardize product categories, apply complex business rules, or integrate with external APIs, you can write functions that are immediately available across your entire data platform. The service supports [Python 3.11.9 runtime](https://www.python.org/downloads/release/python-3119/), [public libraries from PyPI](https://pypi.org/), and [Fabric data connections](./connect-to-data-sources.md).
 
@@ -24,7 +24,7 @@ Fabric User Data Functions provides a serverless platform to host your custom lo
 
 The following are key benefits:
 
-- **Reusability**: Write your business logic once as a User Data Function and invoke it from multiple Fabric items—Pipelines, Notebooks, Activator rules, and Power BI translytical apps. When business rules change, update the function once rather than modifying code in multiple places.
+- **Reusability**: Write your business logic once as a User Data Function and invoke it from multiple Fabric items—Pipelines, Notebooks, Activator rules, and Power BI Translytical Task Flows. When business rules change, update the function once rather than modifying code in multiple places.
 - **Serverless hosting**: Deploy Python functions without managing infrastructure. User Data Functions provide a serverless compute environment with built-in authentication, eliminating the need to set up and maintain separate API services or containers.
 - **External connectivity**: Each function automatically exposes its own unique REST endpoint, enabling integration with external applications, web services, and custom clients. Call your functions from any system that supports HTTP requests.
 
@@ -46,7 +46,7 @@ Call your functions from any Fabric workload to centralize business logic and ma
 - **[Data Pipelines](./create-functions-activity-data-pipelines.md)** - Execute functions as pipeline activities for data transformations, validations, or orchestration logic
 - **[Notebooks](../notebook-utilities.md)** - Invoke functions from PySpark or Python notebooks for data science workflows and exploratory analysis
 - **[Activator rules](../../real-time-intelligence/data-activator/activator-rules-overview.md)** - Trigger functions in response to real-time events and streaming data
-- **[Power BI translytical apps](/power-bi/create-reports/translytical-task-flow-overview)** - Call functions directly from Power BI reports for interactive data experiences
+- **[Power BI Translytical Task Flows](/power-bi/create-reports/translytical-task-flow-overview)** - Call functions directly from Power BI reports for interactive data experiences
 
 ### Connect to Fabric data sources
 
