@@ -6,6 +6,7 @@ ms.topic: overview
 ms.custom: freshness-kr
 ms.date: 01/21/2026
 ms.search.form: User data functions overview
+ai-usage: ai-assisted
 ---
 
 # What is Fabric User data functions?
@@ -46,7 +47,7 @@ Call your functions from any Fabric workload to centralize business logic and ma
 - **[Data Pipelines](./create-functions-activity-data-pipelines.md)** - Execute functions as pipeline activities for data transformations, validations, or orchestration logic
 - **[Notebooks](../notebook-utilities.md)** - Invoke functions from PySpark or Python notebooks for data science workflows and exploratory analysis
 - **[Activator rules](../../real-time-intelligence/data-activator/activator-rules-overview.md)** - Trigger functions in response to real-time events and streaming data
-- **[Power BI Translytical Task Flows](/power-bi/create-reports/translytical-task-flow-overview)** - Call functions directly from Power BI reports for interactive data experiences
+- **[Power BI Translytical Task Flows](/power-bi/create-reports/translytical-task-flow-overview)** - Call functions directly from Power BI reports for interactive data experiences. User Data Functions can receive report context—such as the current filter and selection context—in the request payload, enabling action execution and write-back scenarios from within a report. After a write-back completes, data visibility in the report depends on the report's storage mode and refresh semantics: updated values appear immediately for Direct Lake or DirectQuery reports, or after an automatic refresh triggered by the task flow for import-mode reports.
 
 ### Connect to Fabric data sources
 
@@ -57,6 +58,8 @@ Your functions can securely access data from across the Fabric platform:
 - **[Lakehouses](../lakehouse-overview.md)** - Read and write Lakehouse files; read-only access to SQL endpoints
 - **[Mirrored databases](../../mirroring/overview.md)** - Read-only access to mirrored database data
 
+Write-back from Power BI Translytical Task Flows is natively supported when invoking User Data Functions. User Data Functions can perform add, update, and delete operations against Fabric SQL Database, Fabric Data Warehouse, and Lakehouse files, making them the ideal integration point for task-flow-driven write-back scenarios.
+
 Learn more about [connecting to Fabric data sources](./connect-to-data-sources.md).
 
 ### Call from external applications
@@ -64,7 +67,7 @@ Learn more about [connecting to Fabric data sources](./connect-to-data-sources.m
 Each User Data Function automatically exposes its own unique REST endpoint for integration with systems outside Fabric:
 
 - **Web applications** - Invoke functions from web apps, mobile apps, or single-page applications
-- **External services** - Integrate with external systems, microservices, or legacy applications
+- **External services** - Integrate with external systems, microservices, or legacy applications—for example, post messages or updates to Microsoft Teams, or call external REST APIs as part of task-flow-driven actions
 - **API workflows** - Chain functions with other APIs to build complex integration scenarios
 - **Custom clients** - Call from any programming language or platform that supports HTTP requests
 
