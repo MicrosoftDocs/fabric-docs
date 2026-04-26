@@ -80,8 +80,8 @@ By organizing logic into a model, you can build reusable frameworks that adapt t
 
 ## Next step
 
-* Create a model using Model Builder.
+[Create a model using Model Builder](./planning-driver-model/create-model-using-model-builder.md).
 
 ## Related content
 
-* Create a driver-based model.
+[Create a driver-based model](./planning-driver-model/create-driver-based-model.md).
