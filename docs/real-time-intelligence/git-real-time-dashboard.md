@@ -201,7 +201,7 @@ across:
 - `baseQueries[].queryId`
 - `parameters[].dataSource.queryRef.queryId`
 
-Sharing a `queryId` between two tiles, or between a tile and a baseQuery, fails with: `/queries: Some query ids are used in multiple query references (tiles, base queries, parameters)`.
+If a `queryId` is shared between two tiles, or between a tile and a baseQuery, then validation will fail with: `/queries: Some query ids are used in multiple query references (tiles, base queries, parameters)`.
 
 When duplicating a tile to a new page programmatically, also duplicate the query (assign a new `queryId`, keep the same `text` and `dataSource`) and point the new tile's `queryRef.queryId` at the new query.
 
@@ -221,17 +221,17 @@ To preserve the link between the file and the live workspace item, do not modify
 - Per parameter: `id`, `variableName` (and `beginVariableName` / `endVariableName` for `kind: "duration"`)
 - `.platform`: `config.logicalId`
 
-Modifying these causes Fabric to treat the entry as a deletion plus re-creation on the next `Update from Git`, which loses pinned-item references, share targets, and any state attached to the original `id`.
+Modifying these will cause the change to be treated as a deletion and a re-creation on the next `Update from Git`, which will cause lost context: pinned-item references, share targets, and any state attached to the original `id`.
 
 ### Parameters
 When a tile that uses a parameter (referenced via the query's `usedVariables`) is added to a new page, that parameter does not automatically appear on the new page. 
 If the parameter's `showOnPages.kind` is `"selection"`, you need to append the new page's `id` to `showOnPages.pageIds`. 
-If the parameter has a usable `defaultValue`, the tile will render with the default — sometimes acceptable, sometimes not.
+If the parameter has a usable `defaultValue`, then the tile renders with the default.
 
 Multi-variable parameters like `kind: "duration"` parameters expose two variables via `beginVariableName` and `endVariableName` (commonly `_startTime` and `_endTime`). They share a single parameter object with one `showOnPages` setting.
 
 ## Example edits via Git
-Using the schema and validation notes above can allow you to make changes to the Real-Time dashboard via Git instead of via the user interface.
+Using the schema and validation notes allows you to make changes to the Real-Time dashboard via Git instead of via the user interface.
 
 ### Example: Copy a tile to a new page
 
