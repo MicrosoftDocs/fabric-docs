@@ -2,7 +2,7 @@
 author: spelluru
 ms.author: spelluru
 ms.topic: include
-ms.date: 04/15/2026
+ms.date: 04/26/2026
 ---
 
 1. Ask a question about the data. For example, "What are the top 5 event types?" or "Which state had the most events?".
@@ -10,6 +10,8 @@ ms.date: 04/15/2026
 1. Continue exploring and drilling through the data by asking follow-up questions or making more requests.
 
 1. The filtered data appears in the Copilot pane. Select the expand icon to see the results reflected in the **Visual**, **Table**, and **Query** tabs.
+
+    :::image type="content" source="media/copilot-data-explore/tile-expand-button.png" alt-text="Screenshot of the expand icon in the Copilot pane.":::
 
    ### [Visual](#tab/visual)
 
