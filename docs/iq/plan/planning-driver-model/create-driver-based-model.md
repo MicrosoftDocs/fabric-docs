@@ -47,8 +47,8 @@ Consider adding another input driver, such as **Price Growth %**, to evaluate ho
 
 1. Create a new row to capture the driver output, such as **Final Gross Revenue**. Alternatively, you can reuse an existing row if it fits your use case.
 
->[!Note]
->Ensure that the new row is created as an independent row to avoid circular references.
+   >[!Note]
+   >Ensure that the new row is created as an independent row to avoid circular references.
 
 1. Configure the row properties for the *Final Gross Revenue* as follows:
 
