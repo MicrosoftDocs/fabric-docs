@@ -18,7 +18,7 @@ The first column contains a list of General Ledger (GL) account items for variou
 
 >[!Note]
 >Data can include both actuals and forecasts, and models can be configured to handle both closed and open periods.
->To learn more, refer to [Hybrid row configuration](./configure-row-properties-for-model.md/#hybrid-row-configuration).
+>To learn more, refer to [Hybrid row configuration](./how-to-configure-row-properties-for-model.md/#hybrid-row-configuration).
 
 ## Objectives and approach
 
@@ -61,7 +61,7 @@ Net Profit = Income Before Tax(EBT) - Income Tax Expense
 
 This means the *Net Profit* row needs two child rows: *Income Before Tax* and *Income Tax Expense*.
 
-To add a child node, select the **+** icon next to the node. You can also select the node to which you want to add child rows, then select **Add Child** and [choose the type of row](./configure-row-properties-for-model.md/#type) you want to add.
+To add a child node, select the **+** icon next to the node. You can also select the node to which you want to add child rows, then select **Add Child** and [choose the type of row](./how-to-configure-row-properties-for-model.md/#type) you want to add.
 
 :::image type="content" source="../media/planning-model-builder/create-model-using-model-builder/add-child-row.png" alt-text="Screenshot of adding a child row.":::
 
@@ -245,9 +245,9 @@ This approach reduces the need to recreate formulas from scratch and ensures con
 
 ## Next step
 
-* [Create templates for reusable row structures](./create-templates-for-reusable-row-structures.md).
+* [Create templates for reusable row structures](./how-to-create-templates-for-reusable-row-structures.md).
 
 ## Related content
 
-* [Configure row properties in the model](./configure-row-properties-for-model.md).
-* [Create a driver-based model](./create-driver-based-model.md).
+* [Configure row properties in the model](./how-to-configure-row-properties-for-model.md).
+* [Create a driver-based model](./how-to-create-driver-based-model.md).
