@@ -31,11 +31,11 @@ Model Builder makes it easier to create driver-based models by:
 
 ## Steps to create a driver-based model
 
-Follow the steps mentioned in the [Create a model using Model Builder](./create-model-using-model-builder.md) section and create the model you want.
+Follow the steps mentioned in the [Create a model using Model Builder](./how-to-create-model-using-model-builder.md) section and create the model you want.
 
 For example, consider the model:
 
-:::image type="content" source="../media/planning-model-builder/configure-row-properties-for-model/sample-model.jpg" alt-text="Screenshot of sample model.":::
+:::image type="content" source="../media/planning-model-builder/how-to-configure-row-properties-for-model/sample-model.jpg" alt-text="Screenshot of sample model.":::
 
 ```text
 Gross Revenue = Volume x Revenue per Barrel
@@ -71,4 +71,4 @@ This shows how driver-based modeling helps you find outcomes based on key assump
 
 Changes automatically roll up to top-level results and also distribute across periods, allowing you to perform fast, flexible what-if analysis directly in the planning sheet.
 
-You can also modify the distribution method while creating a driver-based model. To know more, refer to [Distribution](./configure-row-properties-for-model.md/#distribution).
+You can also modify the distribution method while creating a driver-based model. To know more, refer to [Distribution](./how-to-configure-row-properties-for-model.md/#distribution).
