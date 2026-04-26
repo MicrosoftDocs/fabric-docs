@@ -22,6 +22,8 @@ items:
         href: ../data-agent-configuration-best-practices.md
       - name: How to configure a data agent
         href: ../develop-iterative-process-data-agent.md
+      - name: Add a datasource to a data agent
+        href: ../data-agent-add-datasources.md
       - name: Connect to a Foundry Search Index
         href: ../data-agent-ai-search-index.md
   - name: How to consume a Fabric data agent
