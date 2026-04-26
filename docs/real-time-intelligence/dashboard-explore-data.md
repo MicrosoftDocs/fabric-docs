@@ -83,4 +83,4 @@ After you explore data and find insights by using Copilot, share those insights 
 
 - [Create a real-time dashboard](dashboard-real-time-create.md)
 - [Customize real-time dashboard visuals](dashboard-visuals-customize.md)
-- [Use Copilot to edit tiles](dashboard-real-time-create#use-copilot-to-addedit-tile-preview)
+- [Use Copilot to edit tiles](dashboard-real-time-create.md#use-copilot-to-addedit-tile-preview)
