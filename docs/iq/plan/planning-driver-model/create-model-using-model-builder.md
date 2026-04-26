@@ -40,15 +40,15 @@ The first column contains a list of General Ledger (GL) account items for variou
 
     :::image type="content" source="../media/planning-model-builder/create-model-using-model-builder/delete-rows.png" alt-text="Screenshot of deleting all rows except the top row.":::
 
->[!TIP]
->Use the **Select All** checkbox in the column header to select all rows, then clear the selection for the top row.
+    >[!TIP]
+    >Use the **Select All** checkbox in the column header to select all rows, then clear the selection for the top row.
 
-The model will look like this, with one row:
+    The model will look like this, with one row:
 
-:::image type="content" source="../media/planning-model-builder/create-model-using-model-builder/one-row-model.jpg" alt-text="Screenshot of model with only one row.":::
+    :::image type="content" source="../media/planning-model-builder/create-model-using-model-builder/one-row-model.jpg" alt-text="Screenshot of model with only one row.":::
 
 1. Start with the top-level parent row in your model. Since the objective is to calculate *Net Profit*, rename the top row to ***Net Profit*** by double-clicking the ***All*** row and updating its name.
-
+   
     :::image type="content" source="../media/planning-model-builder/create-model-using-model-builder/rename-top-row.png" alt-text="Screenshot of renaming the top row.":::
 
 ### Add Child row
