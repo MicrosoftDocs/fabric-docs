@@ -181,7 +181,7 @@ The following properties are **required**:
             - **Partition column name**: Select from the destination columns in schemas mapping when you upsert data to a new table. When you upsert data to an existing table that already has partitions, the partition columns are derived from the existing table automatically. Supported data types are string, integer, boolean, and datetime. Format respects type conversion settings under the **Mapping** tab.
             
               > [!NOTE]
-              > Partition columns can not overlap with key columns.
+              > Partition columns cannot overlap with key columns.
     - Under **Advanced**, you can specify the following fields:
       
       - **Enable TimestampNtz**: Specifies whether to enable TimestampNtz for the Lakehouse table destination. When disabled (default), datetime values are written as timestamp. When enabled, you can edit the destination column type to timestamp_ntz. For auto-created tables, source datetime columns with UTC kind are mapped to timestamp, while other source datetime columns are mapped to timestamp_ntz.
