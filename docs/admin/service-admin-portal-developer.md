@@ -5,8 +5,8 @@ author: msmimart
 ms.author: mimart
 ms.custom:
   - tenant-setting
-ms.topic: how-to
-ms.date: 01/26/2026
+ms.topic: concept-article
+ms.date: 04/08/2026
 LocalizationGroup: Administration
 ---
 
@@ -27,15 +27,6 @@ To learn more, see [What is Power BI embedded analytics?](/power-bi/developer/em
 
 Learn about the [Embed for your customers](/power-bi/developer/embedded/embedded-analytics-power-bi#embed-for-your-customers) method to build an app that uses non-interactive authentication against Power BI.
 
-## Service principals can use Fabric APIs
-
->[!NOTE]
->This setting is being rolled out and might not be available in your tenant. Once removed, these settings replace it:
->* [Service principals can create workspaces, connections, and deployment pipelines](#service-principals-can-create-workspaces-connections-and-deployment-pipelines)
->* [Service principals can call Fabric public APIs](#service-principals-can-call-fabric-public-apis)
-
-Web apps registered in Microsoft Entra ID use an assigned [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access Power BI APIs without a signed-in user. To allow an app to use service principal authentication, its service principal must be included in an allowed security group.
-
 ## Service principals can create workspaces, connections, and deployment pipelines
 
 Use a [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access these Fabric APIs that aren't protected by a Fabric permission model.
@@ -49,6 +40,8 @@ Use a [service principal](/power-bi/developer/embedded/pbi-glossary#service-prin
 To allow an app to use service principal authentication, its service principal must be included in an allowed security group. You can control who can access service principals by creating dedicated security groups and using these groups in other tenant settings.
 
 This setting is disabled by default for new customers.
+
+<a name='service-principals-can-use-fabric-apis'></a>
 
 ## Service principals can call Fabric public APIs
 
@@ -79,3 +72,4 @@ The maximum number of Fabric identities defined and created for a Fabric tenant 
 ## Related content
 
 - [About tenant settings](tenant-settings-index.md)
+- [Enable service principal authentication for developer settings](enable-service-principal-admin-apis.md)

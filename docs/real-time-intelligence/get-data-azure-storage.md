@@ -23,10 +23,6 @@ In this article, you learn how to get data from Azure Storage (ADLS Gen2 contain
     >
     > * A continuous ingestion stream can affect your billing. For more information, see [Eventhouse and KQL Database consumption](real-time-intelligence-consumption.md).
 
-> [!WARNING]
->
-> Ingestion from an Azure Storage account (continuous and one-time) using a [private link](/azure/private-link/private-link-overview) isn't supported.
-
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
@@ -115,10 +111,6 @@ Set the source to get data.
         | Subscription | The storage account subscription. |
         | Blob storage account | Storage account name. |
         | Container | The storage container containing the file you want to ingest. |
-
-        > [!NOTE] 
-        >
-        > Using a [private link](/azure/private-link/private-link-overview) isn't supported.
 
     1. In the **Connection** field, open the dropdown and select **+ New connection**, then **Save** > **Close**. The connection settings are prepopulated.
 

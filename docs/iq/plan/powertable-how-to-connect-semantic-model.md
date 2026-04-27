@@ -1,7 +1,7 @@
 ---
 title: Connect PowerTable sheet to a semantic model
 description: Learn how to connect a PowerTable sheet to a semantic model and build collaborative table apps with live data synchronization.
-ms.date: 03/27/2026
+ms.date: 04/13/2026
 ms.topic: how-to
 #customer intent: As a user, I want to connect PowerTable sheets to a semantic model so that I can build a collaborative table app using governed data from my existing Power BI or Fabric semantic model.
 ---
@@ -55,6 +55,12 @@ Before you begin, make sure that you have the following prerequisites in place:
     :::image type="content" source="media/powertable-how-to-connect-semantic-model/configured-semantic-model.png" alt-text="Screenshot of configured semantic model for the new table." lightbox="media/powertable-how-to-connect-semantic-model/configured-semantic-model.png":::
 
 [!INCLUDE [Configure PowerTable columns](includes/configure-columns.md)]
+
+:::image type="content" source="media/powertable-how-to-connect-semantic-model/finish-table-from-model.jpg" alt-text="Screenshot of selecting Finish." lightbox="media/powertable-how-to-connect-semantic-model/finish-table-from-model.jpg":::
+
+The table app is created successfully in PowerTable with the configured columns and values. Select **Save** to save your table.
+
+:::image type="content" source="media/powertable-how-to-connect-semantic-model/save-table-from-model.png" alt-text="Screenshot of saving the new table app." lightbox="media/powertable-how-to-connect-semantic-model/save-table-from-model.png":::
 
 ## Next steps
 

@@ -1,7 +1,9 @@
 ---
 title: Security best practices
 description: Best practices for securing your data in OneLake including least privilege access, workload permissions, and user permissions.
-ms.reviewer: eloldag, aamerril
+ms.reviewer: aamerril # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article
 ms.date: 09/05/2025
 ai-usage: ai-assisted

@@ -1,7 +1,9 @@
 ---
 title: Data security overview
 description: Get started with securing your data in OneLake with this overview of the core concepts and capabilities.
-ms.reviewer: aamerril
+ms.reviewer: aamerril # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article
 ms.date: 09/05/2025
 #customer intent: As a OneLake user, I want to understand the core concepts and capabilities of data security in OneLake so that I can use them to protect my data stored and accessed in OneLake.

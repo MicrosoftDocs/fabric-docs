@@ -7,12 +7,13 @@ ms.date: 01/06/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ms.search.form: Fabric data agent Concepts
+ai-usage: ai-assisted
 #customer intent: As a Data Analyst, I want to create a Fabric data agent so that I can make it easier for me and my colleagues to get answers from data.
 ---
 
 # Fabric data agent concepts
 
-Data agent in Microsoft Fabric is a new Microsoft Fabric feature that enables you to build your own conversational Q&A systems by using generative AI. A Fabric data agent makes data insights more accessible and actionable for everyone in your organization. By using a Fabric data agent, your team can have conversations, with plain English-language questions, about the data that your organization stored in Fabric OneLake and then receive relevant answers. This way, even people without technical expertise in AI or a deep understanding of the data structure can receive precise and context-rich answers. Within broader agentic application architectures on Microsoft Fabric, data agents serve as the conversational analytics component, connecting to governed data in OneLake through lakehouses, warehouses, semantic models, and KQL databases in multi-agent solutions.
+Data agent in Microsoft Fabric is a generally available feature that enables you to build your own conversational Q&A systems by using generative AI.A Fabric data agent makes data insights more accessible and actionable for everyone in your organization. By using a Fabric data agent, your team can have conversations, with plain English-language questions, about the data that your organization stored in Fabric OneLake and then receive relevant answers. This way, even people without technical expertise in AI or a deep understanding of the data structure can receive precise and context-rich answers. Within broader agentic application architectures on Microsoft Fabric, data agents serve as the conversational analytics component, connecting to governed data in OneLake through lakehouses, warehouses, semantic models, and KQL databases in multi-agent solutions.
 
 You can also add organization-specific instructions, examples, and guidance to fine-tune the Fabric data agent. This approach ensures that responses align with your organization's needs and goals, allowing everyone to engage with data more effectively. Fabric data agent fosters a culture of data-driven decision-making because it lowers barriers to insight accessibility, facilitates collaboration, and helps your organization extract more value from its data.
 
@@ -118,7 +119,7 @@ Microsoft Purview integration provides governance controls for Fabric data agent
 
 **Microsoft Purview policies**: Purview policies such as data access controls and sensitivity labels apply to data sources that agents query. If a Purview policy restricts access to a lakehouse or warehouse, the agent respects that restriction when processing user queries.
 
-**Outbound access protection**: Fabric data agents operate within the tenant's outbound access protection boundaries. Outbound connections from agent operations are subject to the same network and access rules configured for your Fabric tenant. Administrators can manage permitted outbound connections through the Fabric admin portal under tenant settings to control which external endpoints agents can reach.
+**Outbound access protection**: Fabric data agents operate within workspace outbound access protection boundaries. Workspace administrators can manage permitted outbound connections through the workspace settings to control which external endpoints the data agent can reach.
 
 **Microsoft 365 Copilot integration**: When Fabric data agents are surfaced through Microsoft 365 Copilot, Purview governance policies continue to apply. Users can only access data that their credentials and Purview policies allow, regardless of the entry point.
 

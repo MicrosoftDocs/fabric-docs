@@ -2,7 +2,7 @@
 title: "Microsoft Fabric Decision Guide: Choose a dataflow strategy"
 description: "Identify the best strategy for your Microsoft Fabric data transformation."
 ms.reviewer: krirukm
-ms.date: 11/18/2025
+ms.date: 4/16/2026
 ms.topic: concept-article
 ---
 
@@ -108,10 +108,13 @@ This query combines the five year-wise Parquet files and loads the result into t
 
 Fast Copy provides **up to about nine times faster ingestion** while reducing compute usage.
 
-| Dataflow Capability | Execution Time (hh:mm:ss) |
-|---------------------|---------------------------|
-| **Without Fast Copy** | 01:09:21 |
-| **With Fast Copy**    | 00:07:43 |
+The following table also includes a Dataflow Gen1 baseline for comparison. Dataflow Gen1 uses a fundamentally different architecture than Dataflow Gen2, it doesn't support capabilities like fast copy, and it can only load data as CSV files, whereas Dataflow Gen2 loads data as Parquet files in these scenarios. The same M script was used across both Gen1 and Gen2 runs.
+
+| Configuration | Execution Time (hh:mm:ss) | Comparison against Gen1 |
+|---------------------|---------------------------|-------------------------|
+| **Dataflow Gen1 baseline** | 01:42:18 | — |
+| **Dataflow Gen2 without Fast Copy** | 01:09:21 | 1.5× faster |
+| **Dataflow Gen2 with Fast Copy**    | 00:07:43 | 13× faster |
 
 #### Without fast copy
 
@@ -160,10 +163,13 @@ This query ingests data from a consolidated parquet file, filters the trip_dista
 
 Modern Evaluator improves transformation speed by **about 1.6×** while preserving the no-code Power Query experience.
 
-| Dataflow Capability | Execution Time (hh:mm:ss) |
-|---------------------|---------------------------|
-| **Without Modern Evaluator** | 01:34:55 |
-| **With Modern Evaluator**    | 01:00:58 |
+The following table also includes a Dataflow Gen1 baseline for comparison. Dataflow Gen1 uses a fundamentally different architecture than Dataflow Gen2, it doesn't support capabilities like modern evaluator, and it can only load data as CSV files, whereas Dataflow Gen2 loads data as Parquet files in these scenarios. The same M script was used across both Gen1 and Gen2 runs.
+
+| Configuration | Execution Time (hh:mm:ss) | Comparison against Gen1 |
+|---------------------|---------------------------|-------------------------|
+| **Dataflow Gen1 baseline** | 01:13:44 | — |
+| **Dataflow Gen2 without Modern Evaluator** | 01:34:55 | 1.3× slower |
+| **Dataflow Gen2 with Modern Evaluator**    | 01:00:58 | 1.2× faster |
 
 #### Without modern evaluator
 
@@ -212,11 +218,14 @@ This query combines 56 parquet files and creates a new custom column for tip per
 
 Partitioned Compute delivers **15× faster performance**, and when combined with Modern Evaluator, **22× faster processing** for large, partitioned datasets.
 
-| Dataflow Capability                     | Execution Time (hh:mm:ss) |
-|-----------------------------------------|---------------------------|
-| **Without Partitioned Compute**          | 01:44:56 |
-| **With Partitioned Compute**             | 00:06:51 |
-| **With Partitioned Compute + Modern Evaluator** | 00:04:48 |
+The following table also includes a Dataflow Gen1 baseline for comparison. Dataflow Gen1 uses a fundamentally different architecture than Dataflow Gen2, it doesn't support capabilities like partitioned compute, and it can only load data as CSV files, whereas Dataflow Gen2 loads data as Parquet files in these scenarios. The same M script was used across both Gen1 and Gen2 runs.
+
+| Configuration                     | Execution Time (hh:mm:ss) | Comparison against Gen1 |
+|-----------------------------------------|---------------------------|-------------------------|
+| **Dataflow Gen1 baseline**               | 01:40:57 | — |
+| **Dataflow Gen2 without Partitioned Compute**          | 01:44:56 | 1.04× slower |
+| **Dataflow Gen2 with Partitioned Compute**             | 00:06:51 | 15× faster |
+| **Dataflow Gen2 with Partitioned Compute + Modern Evaluator** | 00:04:48 | 21× faster |
 
 #### Without partitioned compute
 

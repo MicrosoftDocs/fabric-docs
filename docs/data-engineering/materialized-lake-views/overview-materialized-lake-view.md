@@ -3,7 +3,8 @@ title: Overview of Materialized Lake Views
 description: Learn about the features, availability, and limitations of materialized lake views in Microsoft Fabric.
 ms.reviewer: nijelsf
 ms.topic: overview
-ms.date: 03/18/2026
+ms.date: 04/14/2026
+ai-usage: ai-assisted
 # customer intent: As a data engineer, I want to understand what materialized lake views are in Microsoft Fabric so that I can use them for building a medallion architecture.
 ---
 
@@ -30,6 +31,9 @@ Materialized lake views aren't the right choice for every scenario. Consider alt
 - **Non-SQL logic** such as ML inference, API calls, or complex Python processing — use Spark notebooks instead
 - **High-frequency streaming data** that requires sub-second updates — consider [Real-Time Intelligence](../../real-time-intelligence/overview.md) instead
 
+> [!NOTE]
+> This feature is currently not available in South Central US region.
+
 ## Get started with materialized lake views
 
 To create your first materialized lake view in Microsoft Fabric, see [Get started with materialized lake views](get-started-with-materialized-lake-views.md). For a complete walkthrough that builds a medallion architecture, see [Tutorial: Build a medallion architecture with materialized lake views](tutorial.md).
@@ -45,16 +49,36 @@ The lifecycle of a materialized lake view follows four stages:
 - **Query**: Applications and reports query the materialized lake view like any other Delta table, with no awareness of the underlying transformation logic.
 - **Monitor**: Track refresh history, execution status, data quality metrics, and dependency lineage through built-in Fabric tools.
 
+### Authoring options
+
+Materialized lake views support two authoring approaches:
+
+- **SQL authoring**: Define views using standard SQL CREATE MATERIALIZED LAKE VIEW statements directly in the Fabric lakehouse editor.
+- **PySpark authoring (Preview)**: Create, refresh, and replace views from Fabric notebooks using DataFrameWriter. PySpark-authored views support:
+  - Data quality constraints
+  - Table properties
+  - Scheduled refreshes
+
+  > [!NOTE]
+  > PySpark-authored views currently perform full refresh only.
+
 ## Key capabilities
 
 Materialized lake views include built-in features that handle the operational complexity you'd otherwise manage yourself in notebooks and pipelines.
 
 ### Automatic refresh optimization
 
-Fabric automatically determines when and how to refresh your materialized lake views:
+Fabric automatically determines when and how to refresh your materialized lake views. A decision engine selects the most efficient refresh strategy, and source data changes are detected by default through Change Data Feed:
+
 - **Incremental refresh**: Only processes new or changed data
 - **Full refresh**: Rebuilds the entire materialized lake view when needed  
 - **Skip refresh**: No refresh needed when source data hasn't changed
+
+Optimal refresh supports a range of common query patterns, including:
+
+- Aggregations with GROUP BY
+- Left outer and semi joins
+- Common table expressions (CTEs)
 
 ### Built-in data quality
 

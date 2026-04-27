@@ -9,8 +9,11 @@ metadata:
   ms.subservice: onelake
   ms.topic: landing-page
   ms.collection: collection # Optional; Remove if no collection is used.
-  ms.reviewer: eloldag
+  ms.reviewer: eloldag # Product team ms alias(es)
+  # author: Do not use - assigned by folder in docfx file
+  # ms.author: Do not use - assigned by folder in docfx file
   ms.date: 12/10/2025
+
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -67,9 +70,9 @@ landingContent:
         links:
           - text: Integrate OneLake with Azure Databricks
             url: onelake-azure-databricks.md
-          - text: Integrate OneLake with Azure HDInsight
-            url: onelake-azure-hdinsight.md
           - text: Integrate OneLake with Azure Storage Explorer
             url: onelake-azure-storage-explorer.md
           - text: Integrate OneLake with Azure Synapse Analytics
             url: onelake-azure-synapse-analytics.md
+          - text: Use OneLake files in Microsoft Foundry
+            url: onelake-foundry-knowledge.md

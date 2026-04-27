@@ -41,6 +41,8 @@ items:
       href: ontology/how-to-use-preview-experience.md
     - name: Add rules
       href: ontology/how-to-use-rules.md
+    - name: Use resource links
+      href: ontology/how-to-use-resource-links.md
   - name: Resources
     items:
     - name: Troubleshooting
@@ -63,10 +65,16 @@ items:
       href: plan/overview.md
     - name: Region availability
       href: plan/overview-regions.md
+    - name: Known limitations
+      href: plan/overview-limitations.md   
   - name: Planning sheets
     items:
     - name: Planning sheets overview
       href: plan/planning-overview.md
+    - name: Concepts
+      items:
+        - name: Cubes
+          href: plan/planning-concept-cube.md
     - name: How-tos
       items:
         - name: Create a database connection
@@ -75,14 +83,30 @@ items:
           href: plan/planning-how-to-create-semantic-model-connection.md
         - name: Create a Planning sheet
           href: plan/planning-how-to-get-started.md
-        - name: Build forecasts
-          href: plan/planning-how-to-build-forecasts.md
         - name: Input data
           href: plan/planning-how-to-input-data.md
         - name: Set up scenarios
           href: plan/planning-how-to-set-up-scenarios.md
         - name: Write back data
           href: plan/planning-how-to-write-back-data.md
+        - name: Change layouts
+          href: plan/planning-how-to-change-layouts.md
+        - name: Create a cube
+          href: plan/planning-how-to-create-cube.md
+        - name: Add comments
+          href: plan/planning-how-to-add-comments.md
+        - name: Add notes
+          href: plan/planning-how-to-add-notes.md
+        - name: Add bookmarks
+          href: plan/planning-how-to-add-bookmark.md
+        - name: Forecasting
+          items: 
+              - name: Configure forecasts
+                href: plan/planning-forecasting/planning-how-to-build-forecasts.md
+              - name: Manage rolling forecasts
+                href: plan/planning-forecasting/planning-how-to-manage-rolling-forecasts.md
+              - name: Create statistical forecasts
+                href: plan/planning-forecasting/planning-how-to-create-statistical-forecasts.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
@@ -91,7 +115,11 @@ items:
       items:
         - name: Create a table app
           href: plan/powertable-how-to-create-table-app.md
-        - name: Connect to semantic model
+        - name: Enter table data manually
+          href: plan/powertable-how-to-enter-table-data-manually.md
+        - name: Connect to a database
+          href: plan/powertable-how-to-connect-existing-database.md
+        - name: Connect to a semantic model
           href: plan/powertable-how-to-connect-semantic-model.md
         - name: Set up access control
           href: plan/powertable-how-to-set-up-access-control.md  

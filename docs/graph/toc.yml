@@ -43,6 +43,8 @@ items:
         href: security-overview.md
   - name: How-tos
     items:
+      - name: Design a graph schema
+        href: design-graph-schema.md
       - name: Share and manage permissions
         href: share-graph-manage-permissions.md
       - name: Manage data
@@ -83,6 +85,8 @@ items:
             items:
             - name: GQL quick reference
               href: gql-reference-abridged.md
+            - name: GQL standard conformance
+              href: gql-conformance.md
             - name: GQL status codes reference
               href: gql-reference-status-codes.md
             - name: GQL reserved words reference

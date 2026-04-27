@@ -61,6 +61,11 @@
             "redirect_document_id": true
         },
         {
+            "source_path_from_root": "/docs/onelake/create-onedrive-sharepoint-shortcut.md",
+            "redirect_url": "/fabric/onelake/shortcuts/create-onedrive-sharepoint-shortcut",
+            "redirect_document_id": true
+        },
+        {
             "source_path_from_root": "/docs/onelake/shortcuts-ai-transformations/ai-transformations.md",
             "redirect_url": "/fabric/onelake/shortcuts/transformations-ai",
             "redirect_document_id": true
@@ -73,6 +78,11 @@
         {
             "source_path_from_root": "/docs/onelake/table-apis/onelake-iceberg-table-apis-detailed.md",
             "redirect_url": "/fabric/onelake/table-apis/iceberg-table-apis-get-started",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/onelake-azure-hdinsight.md",
+            "redirect_url": "/fabric/onelake/onelake-overview",
             "redirect_document_id": false
         }
     ]
