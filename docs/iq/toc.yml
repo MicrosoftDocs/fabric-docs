@@ -109,6 +109,12 @@ items:
                 href: plan/planning-forecasting/planning-how-to-manage-rolling-forecasts.md
               - name: Create statistical forecasts
                 href: plan/planning-forecasting/planning-how-to-create-statistical-forecasts.md
+              - name: Create multidimensional forecasts
+                href: plan/planning-forecasting/planning-how-to-create-multidimensional-forecasts.md
+              - name: Extend planning time range
+                href: plan/planning-forecasting/planning-how-to-extend-time.md
+              - name: Edit forecast settings
+                href: plan/planning-forecasting/planning-how-to-configure-forecast-settings.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
@@ -117,7 +123,11 @@ items:
       items:
         - name: Create a table app
           href: plan/powertable-how-to-create-table-app.md
-        - name: Connect to semantic model
+        - name: Enter table data manually
+          href: plan/powertable-how-to-enter-table-data-manually.md
+        - name: Connect to a database
+          href: plan/powertable-how-to-connect-existing-database.md
+        - name: Connect to a semantic model
           href: plan/powertable-how-to-connect-semantic-model.md
         - name: Set up access control
           href: plan/powertable-how-to-set-up-access-control.md  
