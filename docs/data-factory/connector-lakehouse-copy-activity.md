@@ -3,7 +3,7 @@ title: Configure Lakehouse in a copy activity
 description: This article explains how to copy data using Lakehouse.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 03/12/2026
+ms.date: 04/17/2026
 ms.custom:
   - pipelines
   - template-how-to
@@ -171,9 +171,17 @@ The following properties are **required**:
             - **Partition column name**: Select from the destination columns in schemas mapping. Supported data types are string, integer, boolean, and datetime. Format respects type conversion settings under the **Mapping** tab.
     
           It supports [Delta Lake time travel](https://docs.delta.io/latest/delta-batch.html#-deltatimetravel). The overwritten table has delta logs for the previous versions, which you can access in your Lakehouse. You can also copy the previous version table from Lakehouse, by specifying **Version** in the copy activity source.
-        - **Upsert (Preview)**: Insert new values to existing table and update existing values. Upsert is not supported when using partitioned Lakehouse tables. Partition cannot be enabled while this action is selected.
-            - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. A drop-down listing all destination columns. You can select one or more columns to be treated as key columns while writing into Lakehouse Table.
-    
+
+        - **Upsert**: Insert new values to existing table and update existing values. 
+            - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. A drop-down listing all destination columns. You can select one or more columns to be treated as key columns while writing into Lakehouse Table.  
+            
+            Under **Advanced**, you can enable partition on your target table: 
+            - **Enable Partition**: This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".
+            
+            - **Partition column name**: Select from the destination columns in schemas mapping when you upsert data to a new table. When you upsert data to an existing table that already has partitions, the partition columns are derived from the existing table automatically. Supported data types are string, integer, boolean, and datetime. Format respects type conversion settings under the **Mapping** tab.
+            
+              > [!NOTE]
+              > Partition columns cannot overlap with key columns.
     - Under **Advanced**, you can specify the following fields:
       
       - **Enable TimestampNtz**: Specifies whether to enable TimestampNtz for the Lakehouse table destination. When disabled (default), datetime values are written as timestamp. When enabled, you can edit the destination column type to timestamp_ntz. For auto-created tables, source datetime columns with UTC kind are mapped to timestamp, while other source datetime columns are mapped to timestamp_ntz.

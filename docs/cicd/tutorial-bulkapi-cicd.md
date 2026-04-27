@@ -11,7 +11,7 @@ ms.date: 03/18/2026
 ---
 
 # Tutorial - Fabric CI/CD with Bulk Import Item Definitions API
-In this tutorial, you use an Azure DevOps pipeline that leverages the [Bulk import item definition api](https://learn.microsoft.com/rest/api/fabric/core/items/bulk-import-item-definitions(beta)) to deploy items from a Git folder. The Git folder contains item definitions from a **dev** workspace that is connected to Git, and the pipeline deploys them to a **test** workspace that isn’t connected to Git.
+In this tutorial, you use an Azure DevOps pipeline that leverages the [Bulk import item definition api](/rest/api/fabric/core/items/bulk-import-item-definitions(beta)) to deploy items from a Git folder. The Git folder contains item definitions from a **dev** workspace that is connected to Git, and the pipeline deploys them to a **test** workspace that isn’t connected to Git.
 
 ## Prerequisites
 - **Azure DevOps** Azure Project and repository + permissions to configure Azure DevOps pipeline and create variable groups.

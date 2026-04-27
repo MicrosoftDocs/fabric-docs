@@ -38,6 +38,7 @@ Customer-managed keys are currently supported for the following Fabric items:
 * Industry solutions
 * SQL Database
 * Eventhouse (preview)
+* Graph (preview)
 
 This feature can't be enabled for a workspace that contains unsupported items. When customer-managed key encryption for a Fabric workspace is enabled, only supported items can be created in that workspace. To use unsupported items, create them in a different workspace that doesn't have this feature enabled.
 

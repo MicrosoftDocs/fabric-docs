@@ -877,12 +877,30 @@
             href: what-is-copy-job.md
           - name: Copy job connectors
             href: copy-job-connectors.md
-          - name: Copy job tutorials
+          - name: Incremental copy
+            href: incremental-copy-job.md
+          - name: Change data capture (CDC)
+            href: cdc-copy-job.md
+          - name: Audit columns
+            href: audit-columns-copy-job.md
+          - name: Run copy job from a pipeline
+            href: copy-job-activity.md
+          - name: Copy job with virtual network data gateway
+            href: copy-job-with-virtual-network-data-gateway.md
+          - name: CI/CD
+            href: cicd-copy-job.md
+          - name: REST API Capabilities
+            href: copy-job-rest-api-capabilities.md
+          - name: Workspace monitoring
+            href: copy-job-workspace-monitoring.md
+          - name: Tutorials
             items: 
               - name: How to create a Copy job
                 href: create-copy-job.md
               - name: How to monitor a Copy job
                 href: monitor-copy-job.md
+              - name: Change data capture from Azure SQL Database
+                href: cdc-copy-job-azure-sql-database.md
               - name: Change data capture from SAP via SAP Datasphere Outbound 
                 href: copy-job-tutorial-sap-datasphere.md
               - name: Change data capture from Snowflake
@@ -891,20 +909,6 @@
                 href: cdc-copy-job-bigquery.md
               - name: Change data capture from Oracle database
                 href: cdc-copy-job-oracle.md
-          - name: Run copy job from a pipeline
-            href: copy-job-activity.md
-          - name: Change data capture (CDC) in Copy job
-            href: cdc-copy-job.md
-          - name: Audit columns in Copy job
-            href: audit-columns-copy-job.md
-          - name: Copy job with virtual network data gateway
-            href: copy-job-with-virtual-network-data-gateway.md
-          - name: CI/CD for Copy job
-            href: cicd-copy-job.md
-          - name: REST API Capabilities
-            href: copy-job-rest-api-capabilities.md
-          - name: Workspace monitoring for Copy job
-            href: copy-job-workspace-monitoring.md
       - name: Copy activity
         href: copy-data-activity.md
         items:

@@ -245,4 +245,5 @@ Other ways to ingest data into your warehouse include:
 ## Related content
 
 - [Ingest data into the Warehouse](ingest-data.md)
+- [Troubleshoot ingestion errors](troubleshoot-ingestion-errors.md)
 - [Write a cross-database SQL Query](query-warehouse.md#write-a-cross-database-query)

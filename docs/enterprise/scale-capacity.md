@@ -4,10 +4,10 @@ description: This article walks through how to scale a Microsoft Fabric capacity
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: how-to
-ms.date: 02/27/2025
+ms.date: 04/20/2026
 ---
 
-# Scale your capacity
+# Scale your Fabric capacity
 
 This article shows how to scale a Microsoft Fabric capacity in Azure. Scaling allows you to increase or decrease the size of your capacity.
 
@@ -23,6 +23,17 @@ To scale your capacity, you need:
 * An [F SKU capacity](buy-subscription.md#azure-skus)
 
 * To be a [capacity admin](../admin/microsoft-fabric-admin.md#capacity-admin-roles)
+
+* The following Azure RBAC actions on the Fabric capacity resource:
+
+  * `Microsoft.Fabric/capacities/read`
+  * `Microsoft.Fabric/capacities/write`
+  * `Microsoft.Fabric/capacities/suspend/action`
+  * `Microsoft.Fabric/capacities/resume/action`
+
+  Create an [Azure custom role](/azure/role-based-access-control/custom-roles) scoped to these actions. These actions are also included in the [Azure  privileged built-in roles](/azure/role-based-access-control/built-in-roles/privileged), but using those roles isn't recommended because they grant more permissions than necessary.
+
+  For more information about Microsoft Fabric resource provider operations, see [Microsoft.Fabric](/azure/role-based-access-control/permissions/analytics#microsoftfabric). To assign the custom role to the Fabric capacity resource, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
 
 ## Scale a capacity
 

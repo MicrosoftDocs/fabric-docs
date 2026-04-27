@@ -8,7 +8,7 @@ ms.date: 12/01/2025
 ms.topic: how-to
 ---
 
-# Workspace outbound access protection for Data Factory (preview)
+# Workspace outbound access protection for Data Factory
 
 Workspace outbound access protection helps safeguard your data by controlling outbound connections from Data Factory items in your workspace to external data sources. When this feature is enabled, [Data Factory items](#supported-data-factory-item-types) are restricted from making outbound connections unless access is explicitly granted through approved data connection rules. 
 
@@ -116,6 +116,8 @@ When you allow a gateway, dataflows can connect to any data source accessible th
   - Warehouse
   - Fabric SQL DB
   - Dataflows
+  - Notebook
+  - Spark Job Definition
 
 > [!NOTE]
 > Other Fabric connectors like Datamarts and KQL Database don’t support workspace-level granularity.
@@ -126,6 +128,8 @@ When you allow a gateway, dataflows can connect to any data source accessible th
   - CopyJob
   - UserDataFunction
   - PowerBIDataset
+  - Notebook
+  - Spark Job Definition
 
 - **Pipeline activities**: The Teams activity and Office 365 Outlook activity don't support outbound access protection.
 
@@ -135,8 +139,6 @@ When you allow a gateway, dataflows can connect to any data source accessible th
 
   - To ensure the Lakehouse is compatible with outbound access protection, we recommend enabling outbound access protection on the workspace before creating a Lakehouse to ensure compatibility.
   - Enabling outbound access protection on an existing workspace that already contains a Lakehouse (and its associated Semantic model) isn't supported.
-
-- **Exploratory APIs in pipelines and Copy job**: APIs used for Browse, Preview, and Test Connection operations don't support outbound access protection.
 
 - **Workspace staging in pipelines**: Internal staging scenarios using workspace staging don't work. Use external staging instead. Staging settings are configurable in the [pipeline copy settings](/fabric/data-factory/copy-data-activity#configure-your-other-settings-under-settings-tab).
 
