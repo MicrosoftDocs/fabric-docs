@@ -129,6 +129,8 @@ items:
                     href: workspace-outbound-access-protection-data-agent.md
               - name: Data Warehouse
                 href: workspace-outbound-access-protection-data-warehouse.md
+              - name: IQ
+                href: workspace-outbound-access-protection-iq.md
               - name: Mirrored databases
                 href: workspace-outbound-access-protection-mirrored-databases.md
               - name: OneLake (preview)
