@@ -1,6 +1,6 @@
 ---
-title: Configure SQL server in a copy activity
-description: This article explains how to copy data using SQL server.
+title: Configure SQL Server in a copy activity
+description: This article explains how to copy data using SQL Server.
 ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 01/22/2026
@@ -10,7 +10,7 @@ ms.custom:
   - connectors
 ---
 
-# Configure SQL server in a copy activity
+# Configure SQL Server in a copy activity
 
 This article outlines how to use the copy activity in a pipeline to copy data from and to SQL server.
 
