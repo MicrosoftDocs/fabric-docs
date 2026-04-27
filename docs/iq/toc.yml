@@ -113,6 +113,8 @@ items:
                 href: plan/planning-forecasting/planning-how-to-extend-time.md
               - name: Edit forecast settings
                 href: plan/planning-forecasting/planning-how-to-configure-forecast-settings.md
+        - name: Optimize input values to meet a target
+          href: plan/planning-how-to-optimize-input-values.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
