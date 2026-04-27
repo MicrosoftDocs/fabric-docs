@@ -2,14 +2,14 @@
 title: Plan your Synapse Spark migration to Fabric
 description: Assess scope, choose a migration pattern, and understand feature differences before you migrate Synapse Spark workloads to Microsoft Fabric.
 ms.topic: how-to
-ms.date: 04/20/2026
+ms.date: 04/28/2026
 ms.reviewer: jejiang
 ai-usage: ai-assisted
 ---
 
-# Plan your Synapse Spark migration to Fabric
+# Phase 1: Migration strategy and planning
 
-This article is part 1 of 6 in the Azure Synapse Spark to Microsoft Fabric migration best practices series.
+This article is Phase 1 of 4 in the Azure Synapse Spark to Microsoft Fabric migration best practices series.
 
 Start here before you migrate any notebooks, Spark job definitions, pools, or lake metadata. This article helps you assess the scope of your Synapse Spark estate, choose a migration approach that matches your risk tolerance and delivery timeline, and understand the Fabric differences that affect planning.
 
@@ -151,8 +151,6 @@ For the full comparison, see [Compare Fabric and Azure Synapse Spark: Key Differ
 ## Related content
 
 - [Step 1: Plan your Synapse Spark migration to Fabric](synapse-migration-strategy-planning.md)
-- [Step 2: Migrate Synapse Spark workloads with Migration Assistant](synapse-migration-spark-assistant.md)
-- [Step 3: Refactor Synapse Spark code for Fabric](synapse-migration-code-refactoring.md)
-- [Step 4: Migrate Spark pools, environments, and libraries from Synapse to Fabric](synapse-migration-pools-environments-libraries.md)
+- [Steps 2-4: Migrate Synapse Spark workloads to Fabric](synapse-migration-spark-workloads.md)
 - [Step 5: Migrate Hive Metastore metadata and data paths to Fabric](synapse-migration-hms-data.md)
 - [Step 6: Complete Synapse to Fabric migration with security, validation, and cutover](synapse-migration-security-validation-cutover.md)

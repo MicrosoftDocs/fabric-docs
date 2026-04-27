@@ -2,14 +2,14 @@
 title: Complete Synapse to Fabric migration with security, validation, and cutover
 description: Map security and governance controls, validate migrated workloads, and execute cutover from Synapse Spark to Fabric Spark.
 ms.topic: how-to
-ms.date: 04/20/2026
+ms.date: 04/28/2026
 ms.reviewer: jejiang
 ai-usage: ai-assisted
 ---
 
-# Complete Synapse to Fabric migration with security, validation, and cutover
+# Phase 4: Security and governance migration
 
-This article is part 6 of 6 in the Azure Synapse Spark to Microsoft Fabric migration best practices series.
+This article is Phase 4 of 4 in the Azure Synapse Spark to Microsoft Fabric migration best practices series.
 
 Use this article in the final stage of your migration to validate workloads, align security and governance controls, and plan your production cutover. This article provides guidance on security mapping and a checklist-driven approach to validation, optimization, and cutover readiness.
 
@@ -120,9 +120,7 @@ For final validation, downstream rerouting, and cutover guidance, see [Step 6: C
 ## Related content
 
 - [Step 1: Plan your Synapse Spark migration to Fabric](synapse-migration-strategy-planning.md)
-- [Step 2: Migrate Synapse Spark workloads with Migration Assistant](synapse-migration-spark-assistant.md)
-- [Step 3: Refactor Synapse Spark code for Fabric](synapse-migration-code-refactoring.md)
-- [Step 4: Migrate Spark pools, environments, and libraries from Synapse to Fabric](synapse-migration-pools-environments-libraries.md)
+- [Steps 2-4: Migrate Synapse Spark workloads to Fabric](synapse-migration-spark-workloads.md)
 - [Step 5: Migrate Hive Metastore metadata and data paths to Fabric](synapse-migration-hms-data.md)
 - [Step 6: Complete Synapse to Fabric migration with security, validation, and cutover](synapse-migration-security-validation-cutover.md)
 - [Migrate from Azure Synapse Spark to Fabric (overview)](migrate-synapse-overview.md)

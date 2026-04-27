@@ -2,14 +2,14 @@
 title: Migrate Hive Metastore metadata and data paths to Fabric
 description: Migrate Hive Metastore objects and align data access with OneLake shortcuts and data movement options for Synapse to Fabric migration.
 ms.topic: how-to
-ms.date: 04/20/2026
+ms.date: 04/28/2026
 ms.reviewer: jejiang
 ai-usage: ai-assisted
 ---
 
-# Migrate Hive Metastore metadata and data paths to Fabric
+# Phase 3: Hive Metastore and data migration
 
-This article is part 5 of 6 in the Azure Synapse Spark to Microsoft Fabric migration best practices series.
+This article is Phase 3 of 4 in the Azure Synapse Spark to Microsoft Fabric migration best practices series.
 
 Use this article when you're ready to migrate your Hive Metastore catalog and plan data access in Fabric. This article focuses on two decisions: how to migrate your table metadata and whether to use OneLake shortcuts (zero-copy) or move data to accessible storage.
 
@@ -97,8 +97,6 @@ You have data in ADLS Gen2 linked to your Synapse workspace that you need to mak
 ## Related content
 
 - [Step 1: Plan your Synapse Spark migration to Fabric](synapse-migration-strategy-planning.md)
-- [Step 2: Migrate Synapse Spark workloads with Migration Assistant](synapse-migration-spark-assistant.md)
-- [Step 3: Refactor Synapse Spark code for Fabric](synapse-migration-code-refactoring.md)
-- [Step 4: Migrate Spark pools, environments, and libraries from Synapse to Fabric](synapse-migration-pools-environments-libraries.md)
+- [Steps 2-4: Migrate Synapse Spark workloads to Fabric](synapse-migration-spark-workloads.md)
 - [Step 5: Migrate Hive Metastore metadata and data paths to Fabric](synapse-migration-hms-data.md)
 - [Step 6: Complete Synapse to Fabric migration with security, validation, and cutover](synapse-migration-security-validation-cutover.md)

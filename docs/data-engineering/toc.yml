@@ -478,32 +478,30 @@ items:
       href: migrate-synapse-overview.md
     - name: Spark migration best practices
       items:
-      - name: "Step 1: Plan your Synapse Spark migration"
+      - name: "Phase 1: Migration strategy and planning"
         href: synapse-migration-strategy-planning.md
-      - name: "Step 2: Migrate Spark workloads with Migration Assistant"
-        href: synapse-migration-spark-assistant.md
-      - name: "Step 3: Refactor Synapse Spark code for Fabric"
-        href: synapse-migration-code-refactoring.md
-      - name: "Step 4: Migrate Spark pools, environments, and libraries"
-        href: synapse-migration-pools-environments-libraries.md
-      - name: "Step 5: Migrate Hive Metastore metadata and data paths"
+      - name: "Phase 2: Spark workload migration"
+        href: synapse-migration-spark-workloads.md
+      - name: "Phase 3: Hive Metastore and data migration"
         href: synapse-migration-hms-data.md
-      - name: "Step 6: Complete migration with security, validation, and cutover"
+      - name: "Phase 4: Security and governance migration"
         href: synapse-migration-security-validation-cutover.md
-    - name: Migrate Spark pools
-      href: migrate-synapse-spark-pools.md
-    - name: Migrate Spark configurations
-      href: migrate-synapse-spark-configurations.md
-    - name: Migrate Spark libraries
-      href: migrate-synapse-spark-libraries.md
-    - name: Migrate notebooks
-      href: migrate-synapse-notebooks.md
-    - name: Migrate Spark job definition
-      href: migrate-synapse-spark-job-definition.md
-    - name: Migrate data and pipelines
-      href: migrate-synapse-data-pipelines.md
-    - name: Migrate Hive Metastore metadata
-      href: migrate-synapse-hms-metadata.md
+    - name: Component migration guides
+      items:
+      - name: Migrate Spark pools
+        href: migrate-synapse-spark-pools.md
+      - name: Migrate Spark configurations
+        href: migrate-synapse-spark-configurations.md
+      - name: Migrate Spark libraries
+        href: migrate-synapse-spark-libraries.md
+      - name: Migrate notebooks
+        href: migrate-synapse-notebooks.md
+      - name: Migrate Spark job definition
+        href: migrate-synapse-spark-job-definition.md
+      - name: Migrate data and pipelines
+        href: migrate-synapse-data-pipelines.md
+      - name: Migrate Hive Metastore metadata
+        href: migrate-synapse-hms-metadata.md
     - name: Fabric Spark Migration Assistant (preview)
       href: synapse-to-fabric-spark-migration-assistant.md
 - name: API for GraphQL
