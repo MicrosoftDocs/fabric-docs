@@ -15,7 +15,10 @@ An Eventhouse is a scalable environment for processing and analyzing large volum
 
 In this article, you learn about how to manage and gain insights about an eventhouse in Real-Time Intelligence.
 
-For advanced analytic insights, see [Workspace Monitoring Overview](../fundamentals/workspace-monitoring-overview.md), [View Workspace monitoring](#view-workspace-monitoring) and [Eventhouse monitoring overview](monitor-eventhouse.md).
+For more monitoring insights, see the following articles:
+
+* [Workspace Monitoring Overview](../fundamentals/workspace-monitoring-overview.md) - Learn about workspace-level monitoring capabilities.
+* [Eventhouse Monitoring Overview](monitor-eventhouse.md) - Explore comprehensive insights into eventhouse usage and performance.
 
 ## Prerequisites
 
