@@ -48,7 +48,7 @@ You can create your Fabric SQL database by following these steps
 
 1. Select **Create new connection** from the Connection credentials dropdown.
 
-       :::image type="content" source="media/planning-how-to-get-started/new-connection.png" alt-text="Screenshot to add and configure a new fabric SQL database." lightbox="media/planning-how-to-get-started/new-connection.png":::
+    :::image type="content" source="media/planning-how-to-get-started/new-connection.png" alt-text="Screenshot to add  a new fabric SQL database." lightbox="media/planning-how-to-get-started/new-connection.png":::
 
 1. Enter a **Connection name**.
 1. Select **Authentication kind** as **Organizational account.**
@@ -64,7 +64,7 @@ A Fabric SQL database connection is created which can be used while connecting t
 
 1. In your new plan item, you see options to get your data from the semantic model or Excel/CSV and create a Planning sheet from it, or to start with a Planning sheet and then connect it to data.
 
-     :::image type="content" source="media/planning-how-to-get-started/create-sheet.jpg" alt-text="Screenshot to configure a connection credentials." lightbox="media/planning-how-to-get-started/create-sheet.jpg":::
+     :::image type="content" source="media/planning-how-to-get-started/create-sheet.jpg" alt-text="Screenshot showing the options to create a new planning sheet." lightbox="media/planning-how-to-get-started/create-sheet.jpg":::
    
 1. Select **Planning**, **Name** the new Planning sheet, and **Create** it.
 
