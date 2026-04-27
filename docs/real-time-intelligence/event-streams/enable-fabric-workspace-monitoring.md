@@ -39,7 +39,7 @@ Locate and explore the monitoring eventhouse to verify the Eventstream tables ar
 1. Open the eventhouse and expand the database to see the available tables.
 1. Look for the three Eventstream tables: **EventStreamNodeStatus**, **EventStreamMetrics**, and **EventStreamErrorMetrics**.
 
-    :::image type="content" source="media/enable-fabric-workspace-monitoring/monitor-eventhouse-event-stream-tables.png" alt-text="The monitoring Eventhouse database expanded in the database explorer, showing the three Eventstream tables: EventStreamErrorMetrics, EventStreamMetrics, and EventStreamNodeStatus.":::
+    :::image type="content" source="media/enable-fabric-workspace-monitoring/monitor-eventhouse-event-stream-tables.png" alt-text="Screenshot of Eventhouse database explorer showing three Eventstream monitoring tables highlighted in red." lightbox="media/enable-fabric-workspace-monitoring/monitor-eventhouse-event-stream-tables.png":::
 
     > [!NOTE]
     > It might take a few minutes after enabling monitoring for data to start appearing in the tables. Node status data is emitted periodically (approximately every 6 hours), so the EventStreamNodeStatus table might take longer to populate than the metrics tables.
