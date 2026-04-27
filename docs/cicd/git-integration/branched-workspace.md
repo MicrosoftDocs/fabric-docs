@@ -86,7 +86,7 @@ If your workspace is connected to a Git branch and you want to switch to another
 
 When you switch branches, the workspace syncs with the new branch and all items in the workspace are overridden. If there are different versions of the same item in each branch, the item is replaced.
 
-Be aware that folder relations are created or deleted only by explicit structural operations (Branch‑out, disconnect, delete) — not by Git state changes. Branch switching is a Git state change. Thus, switching branches doesn't create or modify workspace folder relations. If a workspace already has a relation, the relation is preserved.
+Perfroming switch branch doesn't affect the relationship (link) between a *branched workspace* and its source workspace. Branch switching is a Git state change. Thus, switching branches doesn't create or modify workspace relationships. If a workspace already has a relationship, then it is preserved.
 
 >[!NOTE]
 >When switching branches, if the workspace contains an item in the old branch but not the new one, the item is deleted. Additionally, in a workspace with selective branching, performing a switch operation resets the item selection, and all items from the switched branch are synchronized to the workspace.
