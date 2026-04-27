@@ -42,7 +42,13 @@ Some GitHub Enterprise versions and settings aren't supported. For example:
 ### Azure DevOps to GitHub Enterprise migration consideration
 If your team uses Fabric Git Integration and is evaluating a migration from Azure DevOps to GitHub Enterprise, it’s recommended to run validation tests to ensure Git Integration functionality remains unaffected. Fabric Git Integration relies on the underlying Git provider APIs, which differ in capabilities and limitations between Azure DevOps and GitHub Enterprise, as described above.
 
-
+### Differences between Git Integration and recycle bin item recovery behavior
+If you use Git Integration, you might encounter unexpected behavior in scenarios where deleted items are re‑created or restored through a combination of Git operations and recycle bin recovery.
+This occurs because Git operations (such as Undo or Update from Git) re‑create deleted items by assigning a new item ID, whereas restoring an item from the recycle bin preserves the original item ID. As a result, duplicate items with different identities can exist in the workspace, which may cause Git Integration to stop working as expected and also can affect existing dependencies.
+##### Mitigation
+Delete the item that was re‑created by Git Integration. After the duplicate item is removed, Git operations should resume normally.
+##### Additional note
+Git Integration re‑creates item definitions only and does not restore item data. In contrast, restoring an item from the recycle bin restores both the item definition and its data.
 
 ### Workspace limitations
 
