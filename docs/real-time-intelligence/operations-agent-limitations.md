@@ -55,6 +55,10 @@ Here's an example of how you can lay out your instructions to the agent to be cl
 
    :::image type="content" source="media/operations-agent/query-insights.png" alt-text="Screenshot of the Query insights tab in the KQL database.":::
 
+- Currently, only regular Eventhouse tables are supported. Shortcut tables, functions, and materialized views are not supported.
+
+- When you use a Fabric Ontology as the knowledge source, only one ontology per agent is supported and no additional data sources can be added. If the ontology schema changes (for example, an entity is removed) and existing agent queries become invalid, monitoring stops. The agent doesn't receive notifications about ontology schema changes.
+
 - While system guardrails are in place, heavy usage might result in throttling, which limits the number of messages the agent can send. In such cases, you might receive simplified, non-LLM-generated messages through Microsoft Teams.
 
 - At present, the agent and LLM support only English instructions and goals.

@@ -5,6 +5,7 @@ ms.reviewer: arali
 ms.topic: overview
 ms.date: 03/18/2026
 no-loc: [Copilot]
+ai-usage: ai-assisted
 #customer intent: As a Microsoft Fabric user I want to learn about Apache Spark-based runtime 1.3 in Fabric.
 ---
 

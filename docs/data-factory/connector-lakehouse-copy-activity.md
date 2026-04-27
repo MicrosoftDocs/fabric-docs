@@ -3,7 +3,7 @@ title: Configure Lakehouse in a copy activity
 description: This article explains how to copy data using Lakehouse.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 02/25/2026
+ms.date: 04/17/2026
 ms.custom:
   - pipelines
   - template-how-to
@@ -18,7 +18,7 @@ This article outlines how to use the copy activity in a pipeline to copy data fr
 
 This connector supports Lakehouse in the workspace with a private link enabled. For more information on configuration, see [Set up and use private links](../security/security-workspace-level-private-links-set-up.md).
 
-To support workspace-level private link in the on-premises data gateway (version 3000.286.12 or above), you need to add `*.dfs.fabric.microsoft.com` to the allowlist to ensure Lakehouse connector can access Onelake APIs through the network.
+To support workspace-level private link in the on-premises data gateway (version 3000.286.12 or above), you need to add `*.dfs.fabric.microsoft.com` to the allow list to ensure Lakehouse connector can access Onelake APIs through the network.
 
 ## Supported format
 
@@ -171,10 +171,24 @@ The following properties are **required**:
             - **Partition column name**: Select from the destination columns in schemas mapping. Supported data types are string, integer, boolean, and datetime. Format respects type conversion settings under the **Mapping** tab.
     
           It supports [Delta Lake time travel](https://docs.delta.io/latest/delta-batch.html#-deltatimetravel). The overwritten table has delta logs for the previous versions, which you can access in your Lakehouse. You can also copy the previous version table from Lakehouse, by specifying **Version** in the copy activity source.
-        - **Upsert (Preview)**: Insert new values to existing table and update existing values. Upsert is not supported when using partitioned Lakehouse tables. Partition cannot be enabled while this action is selected.
-            - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. A drop-down listing all destination columns. You can select one or more columns to be treated as key columns while writing into Lakehouse Table.
-    
+
+        - **Upsert**: Insert new values to existing table and update existing values. 
+            - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. A drop-down listing all destination columns. You can select one or more columns to be treated as key columns while writing into Lakehouse Table.  
+            
+            Under **Advanced**, you can enable partition on your target table: 
+            - **Enable Partition**: This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".
+            
+            - **Partition column name**: Select from the destination columns in schemas mapping when you upsert data to a new table. When you upsert data to an existing table that already has partitions, the partition columns are derived from the existing table automatically. Supported data types are string, integer, boolean, and datetime. Format respects type conversion settings under the **Mapping** tab.
+            
+              > [!NOTE]
+              > Partition columns cannot overlap with key columns.
     - Under **Advanced**, you can specify the following fields:
+      
+      - **Enable TimestampNtz**: Specifies whether to enable TimestampNtz for the Lakehouse table destination. When disabled (default), datetime values are written as timestamp. When enabled, you can edit the destination column type to timestamp_ntz. For auto-created tables, source datetime columns with UTC kind are mapped to timestamp, while other source datetime columns are mapped to timestamp_ntz.
+
+         > [!NOTE]
+         > Querying columns of type timestamp_ntz via T‑SQL Query (Preview) is currently not supported.
+
       - **Apply V-Order**: Specify to apply V-Order via copy. Disabling it preserves the original parquet files without applying additional V-Order optimization. For more information, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).
 
   - If you select **Files**:
@@ -221,7 +235,7 @@ If you choose Binary as your file format, mapping isn't supported.
 
 For the **Settings** tab configuration, go to [Settings](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
-## Lakehouse tables data type mapping
+## Data type mapping for Lakehouse tables
 
 The following sections describe data type mappings when copying data from Lakehouse tables. Refer to the subsection corresponding to your source mode for details.
 
@@ -243,6 +257,7 @@ When copying data from Lakehouse tables in Table mode, the following mappings ar
 | binary              | Byte array       |
 | date                | Date             |
 | timestamp           | DateTime         |
+| timestamp_ntz        | DateTime         |
 
 When copying data to Lakehouse tables in Table mode, the following mappings are used from interim data types used by the service internally to supported delta destination data types.
 
@@ -262,7 +277,8 @@ When copying data to Lakehouse tables in Table mode, the following mappings are 
 | GUID             | string              |
 | Date             | date                |
 | TimeSpan         | Not supported       |
-| DateTime         | timestamp           |
+| DateTime (When DateTimeKind is UTC) | timestamp           |
+| DateTime (When DateTimeKind is unspecified, local, or not provided) | timestamp_ntz        |
 | DateTimeOffset   | timestamp           |
 | String           | string              |
 | Byte array       | binary              |
@@ -375,6 +391,7 @@ The following tables contain more information about a copy activity in Lakehouse
 |**schema name** |The name of the schema. |\<your schema name><br>(the default is *dbo*) |No | schema |
 |**table name** |The name of the table. |\<your table name> |Yes | table |
 |**Table action**| Append new values to an existing table, overwrite the existing data and schema in the table using the new values or insert new values to existing table and update existing values.|• **Append**<br>• **Overwrite**<br>• **Upsert**|No|tableActionOption:<br>• Append<br> • OverwriteSchema <br>• Upsert|
+|**Enable TimestampNtz** | Enables TimestampNtz for the Lakehouse table destination. When disabled (default), datetime values are written as timestamp. When enabled, you can edit the destination column type to timestamp_ntz. For auto-created tables, source datetime columns with UTC kind are mapped to timestamp, while other source datetime columns are mapped to timestamp_ntz. | Selected or unselected (default) | No | enableTimestampNtz |
 |**Apply V-Order**| Apply V-Order via copy. Disabling it preserves the original parquet files without applying additional V-Order optimization. For more information, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).|Selected (default) or unselected|No|applyVOrder|
 |**Enable partitions**|This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".| Selected or unselected |No| partitionOption: <br> PartitionByKey or None|
 |**Partition columns**|The destination columns in schemas mapping.| \<your partition columns\> |No| partitionNameList|

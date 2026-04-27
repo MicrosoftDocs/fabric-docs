@@ -464,8 +464,7 @@ A path consists of:
 - Contains at least one node (minimum path length is zero edges).
 
 > [!NOTE]
-> Currently, literal syntax for paths isn't supported.
-> Instead, use `MATCH pathVar=...path pattern...` to bind paths.
+> You can construct path values with the `PATH [node, edge, node]` syntax or bind paths with `MATCH pathVar=...path pattern...`.
 
 **How comparison works:**
 
