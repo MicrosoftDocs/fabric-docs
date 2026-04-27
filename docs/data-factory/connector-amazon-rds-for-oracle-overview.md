@@ -1,6 +1,6 @@
 ---
-title: Amazon RDS For Oracle connector overview
-description: This article provides an overview of the supported capabilities of the Amazon RDS For Oracle connector.
+title: Amazon RDS for Oracle connector overview
+description: This article provides an overview of the supported capabilities of the Amazon RDS for Oracle connector.
 ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 08/28/2025
@@ -8,7 +8,7 @@ ms.custom:
   - template-how-to
 ---
 
-# Amazon RDS For Oracle connector overview
+# Amazon RDS for Oracle connector overview
 
 The Amazon RDS For Oracle connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
