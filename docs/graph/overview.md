@@ -2,7 +2,7 @@
 title: What is graph in Microsoft Fabric?
 description: Learn about the core purpose, architecture, and benefits of graph in Microsoft Fabric, including integration and feature highlights.
 ms.topic: overview
-ms.date: 04/10/2026
+ms.date: 04/20/2026
 ms.reviewer: wangwilliam
 ms.custom: references_regions
 ms.search.form: graph overview
@@ -34,7 +34,7 @@ Graph provides an efficient way to model, visualize, and query these relationshi
 - Business user: Visually explore relationships, run NL (natural language) queries, and gain insights effortlessly.
 - Data engineer: Define graph models, unify data in OneLake with low and no-code tools.
 - Data scientist: Use graph algorithms and ML (machine learning) in Fabric's data science environment.
-- Developer: Build AI agents and real-time apps using graph-powered contextual insights.
+- Developer: Build AI agents and real-time apps using graph-powered contextual insights. Fabric Data Agent supports [graph as a data source](../data-science/data-agent-add-datasources.md?tabs=gql) (preview).
 
 Graph broadens access to graph insights beyond specialized roles. Any user can use connected data in daily decision-making.
 
@@ -49,6 +49,8 @@ By using graph, you can:
 
 - Query by using GQL (Graph Query Language), including pattern matching, path constructs, aggregations, and other features as they're released. The official International Standard for GQL is [ISO/IEC 39075 Information technology — Database languages — GQL](https://www.iso.org/standard/76120.html).
 
+- Power graph-based AI reasoning by adding [graph as a data source](../data-science/data-agent-add-datasources.md?tabs=gql) in Fabric Data Agent. For details on how NL2GQL works, see the [Graph-powered AI reasoning announcement](https://blog.fabric.microsoft.com/en-US/blog/graph-powered-ai-reasoning-preview/).
+
 - Benefit from job function-based experiences:  
   - Data engineers can model and create graphs.  
   - Analysts can run low-code or no-code queries and curate view sets.  
@@ -61,6 +63,15 @@ By using graph, you can:
 Graph is deeply integrated with the Microsoft Fabric platform, including OneLake for unified data storage and Fabric UI for visualization. It integrates seamlessly with Microsoft Fabric's governance, security, and operational features.
 
 You can incorporate graph analytics into your existing workflows, eliminating the need for data duplication and specialized skills. So, you can make insights accessible to a broader audience compared to traditional standalone [graph databases](graph-database.md). For a detailed look at the end-to-end data flow, see [How graph works](how-graph-works.md).
+
+### Graph-powered AI reasoning with Fabric Data Agent (preview)
+
+[Fabric Data Agent](../data-science/concept-data-agent.md) supports graph in Microsoft Fabric as a data source for AI-powered reasoning over connected data. When you add graph as a data source, users can ask natural language questions that the agent answers by querying the graph.
+
+This integration is suited for scenarios like multi-hop question answering, knowledge assistants, and retrieval-augmented generation (RAG) workflows where relationship context improves answer quality. For details on how NL2GQL translates natural language into GQL, see the [Graph-powered AI reasoning announcement](https://blog.fabric.microsoft.com/en-US/blog/graph-powered-ai-reasoning-preview/).
+
+> [!NOTE]
+> Graph-powered AI reasoning is currently in preview. For more information about Fabric Data Agent, see [Fabric data agent concepts](../data-science/concept-data-agent.md).
 
 ## How graph differs from standalone graph databases
 
@@ -139,6 +150,7 @@ Graph is currently available in the following regions:
 - [Quickstart: Create your first graph](quickstart.md)
 - [Tutorial: Introduction to graph](tutorial-introduction.md)
 - [How graph works](how-graph-works.md)
+- [Fabric data agent concepts](../data-science/concept-data-agent.md)
 - [GQL language guide](gql-language-guide.md)
 - [Manage and refresh graph data](manage-data.md)
 - [Share and manage graph permissions](share-graph-manage-permissions.md)

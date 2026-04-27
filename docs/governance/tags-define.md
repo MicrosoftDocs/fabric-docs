@@ -5,12 +5,13 @@ author: msmimart
 ms.author: mimart
 ms.topic: how-to
 ms.date: 09/04/2025
+ai-usage: ai-assisted
 #customer intent: As a Fabric admin, I want to create and manage a set of tags so that data creators and data consumers can use them to better manage and find data.
 ---
 
 # Create and manage a set of tags
 
-This article describes how to create and manage a set of tags in Microsoft Fabric. The target audience is Fabric and domain administrators who want to define and manage tags within their organization or specific domains. Up to 10,000 tags of all types can be created in a tenant.
+This article describes how to create and manage a set of tags in Microsoft Fabric. The target audience is Fabric and domain administrators who want to define and manage tags within their organization or specific domains.
 
 For more information about tags, see [Tags in Microsoft Fabric](./tags-overview.md).
 
@@ -20,11 +21,19 @@ As a Fabric or domain administrator, you can:
   * **Rename tags.** If desired or necessary, you can rename a tag. When you rename a tag, its name changes wherever the tag is applied.
   * **Delete a tag.** If you decide that a tag isn't needed, you can delete it from the set of tags you defined. When you delete a tag from the set of defined tags, the tag is removed from all items where it was previously applied.
 
+Tags you define can also be applied to workspaces by workspace admins via workspace settings. Applied workspace tags are visible as indicators on workspace pages and can be used for discovery and filtering in the workspaces list and in OneLake Catalog Explorer.
+
 ## Prerequisites
 
 You must have a **Fabric administrator** role to create and manage tenant-level tags.
 
 You must have a **Fabric administrator** or **Domain administrator** role to create and manage domain-level tags within your assigned domains.
+
+## Limits
+
+- Up to 10,000 tags of all types can be created in a tenant.
+- Workspace admins can apply up to 10 tags per workspace.
+- Only tags defined at the tenant or domain level are available for selection in workspace settings.
 
 ## Create tenant-level tags
 
