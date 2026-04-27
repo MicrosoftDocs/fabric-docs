@@ -3,14 +3,14 @@ title: How to configure Excel format in the pipeline of Data Factory in Microsof
 description: This article explains how to configure Excel format in the pipeline of Data Factory in Microsoft Fabric.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 06/25/2024
+ms.date: 04/24/2026
 ms.custom:
   - template-how-to
 ---
 
 # Excel format in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] 
 
-This article outlines how to configure Excel format in the pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+Excel format supports reading data from .xlsx and .xls files. This article outlines how to configure Excel format as a source in a copy activity pipeline in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Supported capabilities
 
@@ -78,7 +78,7 @@ You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, 
 - **First row as header**: Specifies whether to treat the first row in the given worksheet/range as a header line with names of columns. Unselected by default.
 
 
-## Table summary
+## Excel copy activity properties
 
 ### Excel as source
 
