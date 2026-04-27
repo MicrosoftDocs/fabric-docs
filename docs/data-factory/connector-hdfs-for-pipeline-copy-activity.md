@@ -1,6 +1,6 @@
 ---
-title: Configure Hdfs for Pipeline in a copy activity
-description: This article explains how to copy data using Hdfs for Pipeline.
+title: Configure HDFS for Pipeline in a copy activity
+description: This article explains how to copy data using HDFS for Pipeline.
 ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 06/04/2025
@@ -8,7 +8,7 @@ ms.custom:
   - template-how-to
 ---
 
-# Configure Hdfs for Pipeline in a copy activity
+# Configure HDFS for Pipeline in a copy activity
 
 This article outlines how to use the copy activity in a pipeline to copy data from and to Hdfs for Pipeline.
 
