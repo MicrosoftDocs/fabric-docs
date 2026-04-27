@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 Run table maintenance on Delta tables to keep them healthy over time by compacting small files, applying read optimizations, and removing obsolete files that are no longer referenced. 
 
-You can run maintenance either as an ad hoc operation in the Fabric portal (Lakehouse table **Maintenance** action) or as a scheduled and orchestrated process by using notebooks, pipelines, or REST API. This article focuses on the ad hoc portal workflow.
+You can run maintenance either as an ad hoc operation in the Fabric portal (Lakehouse table **Maintenance** action) or as a scheduled and orchestrated process by using notebooks, pipelines, or REST API. Fabric Data Factory pipelines include a dedicated [Lakehouse Maintenance activity (Preview)](../data-factory/lakehouse-maintenance-activity.md) that can run OPTIMIZE (with optional V-Order) and VACUUM on Lakehouse Delta tables as part of scheduled pipeline workflows. This article focuses on the ad hoc portal workflow.
 
 For cross-workload maintenance guidance, including recommendations for SQL analytics endpoint, Power BI Direct Lake, and Data Warehouse consumers, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md). For code-first maintenance patterns, see [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md) and [Manage the Lakehouse with Microsoft Fabric REST API](lakehouse-api.md).
 
@@ -23,6 +23,9 @@ Table maintenance in Lakehouse applies only to Delta tables. Legacy Hive tables 
 In the **Run maintenance commands** dialog, choose options based on your goal.
 
 As a general practice, run maintenance after major ingestion or update activity, or when you observe many small files and slower read performance.
+
+> [!NOTE]
+> **Orchestrate with pipelines**: For recurring maintenance jobs, use the [Lakehouse Maintenance activity (Preview)](../data-factory/lakehouse-maintenance-activity.md) in Fabric Data Factory pipelines. It exposes the same options (OPTIMIZE with optional V-Order, VACUUM) and integrates with other pipeline steps through dependencies, triggers, and parameters—so you can chain maintenance with data loads and follow up with a [Refresh SQL Endpoint activity](../data-factory/refresh-sql-endpoint-activity.md) in the same pipeline.
 
 1. From your Microsoft Fabric account, navigate to the desired Lakehouse.
 1. In Lakehouse Explorer, under **Tables**, right-click the target table (or use the ellipsis).
@@ -42,7 +45,7 @@ As a general practice, run maintenance after major ingestion or update activity,
 1. Select **Run now** to execute the table maintenance job.
 1. Track job execution in either of these places:
    - **Notifications** pane (bell icon in the Fabric portal header) for immediate run status.
-   - **Monitoring hub** (select **Monitor** in the left navigation) for full job details. Look for activities that contain `TableMaintenance` in the activity name.
+   - **Monitoring hub** (select **Monitor** in the left navigation) for full job details. Look for activities that contain `TableMaintenance` in the activity name for portal-initiated runs. For maintenance run through Fabric Data Factory pipelines, look for the pipeline run in the **Monitoring hub > Pipelines** view and filter by the Lakehouse Maintenance activity name.
 
 After you run maintenance, success appears as a completed table maintenance activity in Notifications and as a successful `TableMaintenance` entry in Monitoring hub.
 
@@ -58,6 +61,7 @@ If you must use a retention interval under seven days, set `spark.databricks.del
 
 ## Related content
 
+- [Lakehouse Maintenance activity (Preview)](../data-factory/lakehouse-maintenance-activity.md)
 - [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
 - [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md)
 - [Manage the Lakehouse with Microsoft Fabric REST API](lakehouse-api.md)

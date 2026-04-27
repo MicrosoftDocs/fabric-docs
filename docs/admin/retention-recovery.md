@@ -22,7 +22,7 @@ The following table compares workspace retention and item-level soft-delete and 
 
 | Feature | Collaborative workspace retention | My workspace retention | Item retention (preview) |
 | --- | --- | --- | --- |
-| **Applies when** | User deletes a collaborative workspace | User deletes a My workspace | User deletes a [supported item](#supported-item-types) |
+| **Applies when** | User deletes a collaborative workspace | *My workspace* is deleted | User deletes a [supported item](#supported-item-types) |
 | **Default retention state** | Enabled | Enabled | Disabled |
 | **Can an admin disable retention?** | No | No | Yes |
 | **Minimum retention period** | 7 days | 30 days (fixed) | 7 days (when enabled) |

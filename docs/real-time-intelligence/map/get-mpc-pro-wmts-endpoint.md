@@ -251,7 +251,7 @@ Use the following Python code snippets to retrieve the information required to c
     ```
 
 > [!TIP]
-> Refer to [Get Capabilities API](/rest/api/planetarycomputer/data-plane/mosaics-wmts-mosaics/get-capabilities-xml) documentation for more detailed and granular settings of MPC Pro WMTS endpoint.
+> Refer to [Get Capabilities API](/rest/api/planetarycomputer/data-plane/mosaic-collections-wmts/get-capabilities-xml) documentation for more detailed and granular settings of MPC Pro WMTS endpoint.
 
 As a result, you obtain the WMTS endpoint configured with rendering options from MPC Pro. The URL follows the format shown below.
 

@@ -50,8 +50,6 @@ Delete the item that was re‑created by Git Integration. After the duplicate it
 ##### Additional note
 Git Integration re‑creates item definitions only and does not restore item data. In contrast, restoring an item from the recycle bin restores both the item definition and its data.
 
-For differences in Deployment Pipeline, check out our [documentation](../deployment-pipelines/understand-the-deployment-process.md#differences-between-deployment-pipeline-and-recycle-bin-item-recovery-behavior). 
-
 ### Workspace limitations
 
 - Only the workspace admin can manage the connections to the [Git Repo](/azure/devops/repos/get-started) such as connecting, disconnecting, or adding a branch.  
