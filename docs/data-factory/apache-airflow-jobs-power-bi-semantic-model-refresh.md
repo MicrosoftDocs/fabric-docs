@@ -28,7 +28,7 @@ To get started, you must complete the following prerequisites:
 
 - [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
 
-- [Create a semantic model in Power BI](/power-bi/connect-data/service-datasets-create-semantic-models)
+- [Create a semantic model in Power BI](https://docs.databricks.com/en/getting-started/data-pipeline-get-started.html)
 
 ## Add Apache Airflow requirement
 
