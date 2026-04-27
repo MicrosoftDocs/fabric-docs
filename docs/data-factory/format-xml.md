@@ -3,14 +3,14 @@ title: How to configure XML format in the pipeline of Data Factory in Microsoft 
 description: This article explains how to configure XML format in the pipeline of Data Factory in Microsoft Fabric.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 06/25/2024
+ms.date: 04/24/2026
 ms.custom:
   - template-how-to
 ---
 
 # XML format in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] 
 
-This article outlines how to configure XML format in the pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+XML (Extensible Markup Language) is a text-based format for structured data exchange. This article outlines how to configure XML format as a source in a copy activity pipeline in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Supported capabilities
 
@@ -67,7 +67,7 @@ You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, 
     - **Fastest**: The compression operation should complete as quickly as possible, even if the resulting file is not optimally compressed.
     - **Optimal**: The compression operation should be optimally compressed, even if the operation takes a longer time to complete. For more information, see [Compression Level topic](/dotnet/api/system.io.compression.compressionlevel).
 
-- **Encoding**: Specify the encoding type used to write test files. Select one type from the drop-down list. The default value is **UTF-8**.
+- **Encoding**: Specify the encoding type used to read text files. Select one type from the drop-down list. The default value is **UTF-8**.
 
 - **Null value**: Specifies the string representation of null value. The default value is empty string.
 
@@ -91,7 +91,7 @@ If there is an item defined for the namespace URI in this map, the field name is
 - **Detect data type**: Specify whether to detect integer, double, and Boolean data types. It is selected by default.
 
 
-## Table summary
+## XML copy activity properties
 
 ### XML as source
 
@@ -102,7 +102,7 @@ The following properties are supported in the copy activity **Source** section w
 |**File format**|The file format that you want to use.| **XML**|Yes|type (*under `datasetSettings`*):<br>Xml|
 |**Compression type**|The compression codec used to read XML files.|**None**<br>**bzip2** <br>**gzip**<br>**deflate**<br>**ZipDeflate**<br>**TarGZip** <br>**tar**|No|type (*under `compression`*):  <br><br>bzip2<br>gzip<br>deflate<br>ZipDeflate<br>TarGZip <br>tar|
 |**Compression level** |The compression ratio. |**Fastest**<br>**Optimal** |No |level (*under `compression`*): <br>Fastest<br>Optimal |
-|**Encoding**|The encoding type used to read test files.|"UTF-8" (by default),"UTF-8 without BOM", "UTF-16LE", "UTF-16BE", "UTF-32LE", "UTF-32BE", "US-ASCII", "UTF-7", "BIG5", "EUC-JP", "EUC-KR", "GB2312", "GB18030", "JOHAB", "SHIFT-JIS", "CP875", "CP866", "IBM00858", "IBM037", "IBM273", "IBM437", "IBM500", "IBM737", "IBM775", "IBM850", "IBM852", "IBM855", "IBM857", "IBM860", "IBM861", "IBM863", "IBM864", "IBM865", "IBM869", "IBM870", "IBM01140", "IBM01141", "IBM01142", "IBM01143", "IBM01144", "IBM01145", "IBM01146", "IBM01147", "IBM01148", "IBM01149", "ISO-2022-JP", "ISO-2022-KR", "ISO-8859-1", "ISO-8859-2", "ISO-8859-3", "ISO-8859-4", "ISO-8859-5", "ISO-8859-6", "ISO-8859-7", "ISO-8859-8", "ISO-8859-9", "ISO-8859-13", "ISO-8859-15", "WINDOWS-874", "WINDOWS-1250", "WINDOWS-1251", "WINDOWS-1252", "WINDOWS-1253", "WINDOWS-1254", "WINDOWS-1255", "WINDOWS-1256", "WINDOWS-1257", "WINDOWS-1258" |No |encodingName |
+|**Encoding**|The encoding type used to read text files.|"UTF-8" (by default),"UTF-8 without BOM", "UTF-16LE", "UTF-16BE", "UTF-32LE", "UTF-32BE", "US-ASCII", "UTF-7", "BIG5", "EUC-JP", "EUC-KR", "GB2312", "GB18030", "JOHAB", "SHIFT-JIS", "CP875", "CP866", "IBM00858", "IBM037", "IBM273", "IBM437", "IBM500", "IBM737", "IBM775", "IBM850", "IBM852", "IBM855", "IBM857", "IBM860", "IBM861", "IBM863", "IBM864", "IBM865", "IBM869", "IBM870", "IBM01140", "IBM01141", "IBM01142", "IBM01143", "IBM01144", "IBM01145", "IBM01146", "IBM01147", "IBM01148", "IBM01149", "ISO-2022-JP", "ISO-2022-KR", "ISO-8859-1", "ISO-8859-2", "ISO-8859-3", "ISO-8859-4", "ISO-8859-5", "ISO-8859-6", "ISO-8859-7", "ISO-8859-8", "ISO-8859-9", "ISO-8859-13", "ISO-8859-15", "WINDOWS-874", "WINDOWS-1250", "WINDOWS-1251", "WINDOWS-1252", "WINDOWS-1253", "WINDOWS-1254", "WINDOWS-1255", "WINDOWS-1256", "WINDOWS-1257", "WINDOWS-1258" |No |encodingName |
 |**Preserve zip file name as folder**|Indicates whether to preserve the source zip file name as a folder structure during copy.|Selected (default) or unselect|No|preserveZipFileNameAsFolder<br>(*under `compressionProperties`->`type` as `ZipDeflateReadSettings`*):<br>true (default) or false|
 |**Preserve compression file name as folder**|Indicates whether to preserve the source compressed file name as a folder structure during copy.|Selected (default) or unselect|No|preserveCompressionFileNameAsFolder<br>(*under `compressionProperties`->`type` as `TarGZipReadSettings` or `TarReadSettings`*):<br>true (default) or false|
 |**Null value**|The string representation of null value.| \<your null value\> <br> empty string (by default) |No | nullValue|

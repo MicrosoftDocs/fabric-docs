@@ -3,14 +3,14 @@ title: How to configure Binary format in the pipeline of Data Factory in Microso
 description: This article explains how to configure Binary format in the pipeline of Data Factory in Microsoft Fabric.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 06/25/2024
+ms.date: 04/24/2026
 ms.custom:
   - template-how-to
 ---
 
-# Binary format for Data Factory in Microsoft Fabric
+# Binary format in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
-This article outlines how to configure Binary format in Data Factory.
+Binary format copies files as-is without parsing, which is useful for moving files between storage locations without transformation. This article outlines how to configure Binary format in a copy activity pipeline in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Supported capabilities
 
@@ -87,7 +87,7 @@ You can choose from the **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate
   - **Fastest**: The compression operation should complete as quickly as possible, even if the resulting file isn't optimally compressed.
   - **Optimal**: The compression operation should be optimally compressed, even if the operation takes a longer time to complete. For more information, go to the [Compression Level](/dotnet/api/system.io.compression.compressionlevel) article.
 
-## Table summary
+## Binary copy activity properties
 
 ### Binary as source
 
