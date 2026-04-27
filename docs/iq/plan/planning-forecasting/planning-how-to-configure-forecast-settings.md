@@ -80,7 +80,7 @@ Then, choose an **Action for closed periods**:
 
 * To leave empty forecast cells unchanged when the forecast is closed, select **Retain blank values**.
 
-    :::image type="content" source="../media/planning-forecasting/planning-how-to-configure-forecast-settings/retain-blank-forecasts-option.jpg" alt-text="Retaining blank forecast values when actuals become available." lightbox="../media/planning-forecasting/planning-how-to-configure-forecast-settings/retain-blank-forecasts-option.jpg":::
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-configure-forecast-settings/retain-blank-forecasts-option.jpg" alt-text="Screenshot of retaining blank forecast values when actuals become available." lightbox="../media/planning-forecasting/planning-how-to-configure-forecast-settings/retain-blank-forecasts-option.jpg":::
 
     When the forecast is closed, blank values are replaced with actuals unless they're explicitly retained.
 
