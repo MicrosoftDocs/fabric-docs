@@ -35,7 +35,7 @@ Follow the steps mentioned in the [Create a model using Model Builder](./how-to-
 
 For example, consider the model:
 
-:::image type="content" source="../media/planning-model-builder/how-to-configure-row-properties-for-model/sample-model.jpg" alt-text="Screenshot of sample model.":::
+:::image type="content" source="../media/planning-model-builder/configure-row-properties-for-model/sample-model.jpg" alt-text="Screenshot of sample model.":::
 
 ```text
 Gross Revenue = Volume x Revenue per Barrel
