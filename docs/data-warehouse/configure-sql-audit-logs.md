@@ -8,7 +8,7 @@ ms.search.form: Warehouse SQL Audit Logs # This article's title should not chang
 ---
 # How to configure SQL audit logs
 
-**Applies to:** [!INCLUDE [fabric-dw.md](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw.md](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Auditing in Fabric Data Warehouse provides enhanced security and compliance capabilities by tracking and recording database events. 
 
@@ -46,121 +46,175 @@ You can configure SQL audit logs using the **Fabric portal** or via **REST API**
 
 Your warehouse will now record the selected audit events and store the logs securely in OneLake.
 
-## [Configure using the REST API](#tab/api)
-
-<a id="obtain-your-power-bi-bearer-token"></a>
-
+# Configure using the REST API
+ 
 1. Download and install [Visual Studio Code](https://code.visualstudio.com/download).
 1. Install the [REST Client extension from the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=humao.rest-client).
 1. Obtain the bearer token using the following steps. You can find your Power BI bearer token in **your browser's developer tools** or via **PowerShell**.
-
-    **To use the Edge developer tools to find your Power BI bearer token:**
-    
-    1. Open your Microsoft Fabric workspace in a browser (Microsoft Edge).
-    1. Press **F12** to open Developer Tools. 
-    1. Select the **Console** tab. If necessary, select **Expand Quick View** to reveal the console prompt `>`.
-    1. Type the command `powerBIAccessToken` and press **Enter**. Right-click on the large unique string returned in the console and select **Copy string contents**.
-    1. Paste it in place of `<bearer token>` in the following scripts.
-    
-    **To use PowerShell to find your Power BI bearer token:**
-    
-    1. Install the `MicrosoftPowerBIMgmt` module from [Microsoft Power BI Cmdlets for Windows PowerShell and PowerShell Core](/powershell/power-bi/overview).
-    
-       ```powershell
-       Install-Module -Name MicrosoftPowerBIMgmt
-       ```
-    
-    1. Use [Connect-PowerBIServiceAccount](/powershell/module/microsoftpowerbimgmt.profile/connect-powerbiserviceaccount) to connect to Power BI PowerShell, and retrieve the bearer token.
-    
-       ```powershell
-       Connect-PowerBIServiceAccount
-       $token = (Get-PowerBIAccessToken).Authorization
-       Write-Output "Bearer $token"
-       ```
-    
+**To use the Edge developer tools to find your Power BI bearer token:**
+ 
+1. Open your Microsoft Fabric workspace in a browser (Microsoft Edge).
+1. Press **F12** to open Developer Tools.
+1. Select the **Console** tab. If necessary, select **Expand Quick View** to reveal the console prompt `>`.
+1. Type the command `powerBIAccessToken` and press **Enter**. Right-click on the large unique string returned in the console and select **Copy string contents**.
+1. Paste it in place of `<bearer token>` in the following scripts.
+**To use PowerShell to find your Power BI bearer token:**
+ 
+1. Install the `MicrosoftPowerBIMgmt` module from [Microsoft Power BI Cmdlets for Windows PowerShell and PowerShell Core](/powershell/power-bi/overview).
+```powershell
+Install-Module -Name MicrosoftPowerBIMgmt
+```
+ 
+1. Use [Connect-PowerBIServiceAccount](/powershell/module/microsoftpowerbimgmt.profile/connect-powerbiserviceaccount) to connect to Power BI PowerShell, and retrieve the bearer token.
+```powershell
+Connect-PowerBIServiceAccount
+$token = (Get-PowerBIAccessToken).Authorization
+Write-Output "Bearer $token"
+```
+ 
 1. Once you have obtained the Power BI bearer token, you can send a `PATCH` request using the REST Client extension. In VS Code, create a new text file in VS Code with the `.http` extension.
-1. Copy and paste the following request:
-
-    ```http
-    PATCH https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/warehouses/<warehouseId>/settings/sqlAudit
-    content-type: application/json
-    Authorization: Bearer <BEARER_TOKEN>
-    
-    {
-        "state": "Enabled",
-        "retentionDays": "0"
-    }
-    ```
-
-    - Replace `<workspaceId>` and `<warehouseId>` with the corresponding Fabric workspace and warehouse IDs. To find these values, visit your warehouse in the Fabric portal.
-        - `<workspaceID>`: Find the workspace GUID in the URL after the `/groups/` section, or by running `SELECT @@SERVERNAME` in an existing warehouse. For example, `11aaa111-a11a-1111-1aaa-aa111111aaa`. Don't include the `/` characters. 
-        - `<warehouseID>`: Find the warehouse GUID in the URL after the `/warehouses/` section, or by running `SELECT @@SERVERNAME` in an existing warehouse. For example, `11aaa111-a11a-1111-1aaa-aa111111aaa`. Don't include the `/` characters.
-    - Replace `<BEARER_TOKEN>` with your [bearer token](#obtain-your-power-bi-bearer-token).
-    - Setting `state` to "Enabled" activates auditing (use "Disabled" to turn it off).
-    - The `retentionDays` parameter is set to `0` by default for unlimited retention.
-    
-   > [!IMPORTANT]
-   > In the extension example code, you must include an empty line immediately after providing the bearer token. This empty line signals the extension where the HTTP headers end and the API command body begins, allowing it to correctly distinguish between the two.
-    
+1. Copy and paste the request that matches your item type:
+**For Fabric Warehouse:**
+ 
+```http
+PATCH https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/warehouses/<warehouseId>/settings/sqlAudit
+content-type: application/json
+Authorization: Bearer <BEARER_TOKEN>
+ 
+{
+  "state": "Enabled",
+  "retentionDays": "0"
+}
+```
+ 
+**For SQL Analytics Endpoint:**
+ 
+```http
+PATCH https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/sqlEndpoints/<itemId>/settings/sqlAudit
+content-type: application/json
+Authorization: Bearer <BEARER_TOKEN>
+ 
+{
+  "state": "Enabled",
+  "retentionDays": 0
+}
+```
+ 
+- Replace `<workspaceId>` and `<warehouseId>` (or `<itemId>` for SQL Analytics Endpoint) with the corresponding Fabric workspace and item IDs. To find these values, visit your warehouse or SQL Analytics Endpoint in the Fabric portal.
+- `<workspaceID>`: Find the workspace GUID in the URL after the `/groups/` section, or by running `SELECT @@SERVERNAME` in an existing warehouse. For example, `11aaa111-a11a-1111-1aaa-aa111111aaa`. Don't include the `/` characters.
+- `<warehouseID>` / `<itemId>`: Find the warehouse or SQL Analytics Endpoint GUID in the URL after the `/warehouses/` or `/sqlEndpoints/` section, or by running `SELECT @@SERVERNAME` in an existing warehouse. For example, `11aaa111-a11a-1111-1aaa-aa111111aaa`. Don't include the `/` characters.
+- Replace `<BEARER_TOKEN>` with your [bearer token](#obtain-your-power-bi-bearer-token).
+- Setting `state` to "Enabled" activates auditing (use "Disabled" to turn it off).
+- The `retentionDays` parameter is set to `0` by default for unlimited retention.
+> [!IMPORTANT]
+> In the extension example code, you must include an empty line immediately after providing the bearer token. This empty line signals the extension where the HTTP headers end and the API command body begins, allowing it to correctly distinguish between the two.
+ 
 1. Select **Send Request**.
-
 #### Check audit log status with the REST API
-
+ 
 To verify if the SQL Audit Logs are enabled, send a GET request using the same REST Client extension.
-
+ 
 1. In VS Code, create a new text file in VS Code with the `.http` extension.
-1. Copy and paste the following request, providing your own `workspaceId`, `<warehouseId>`, and `<BEARER_TOKEN>`.
-
+1. Copy and paste the request that matches your item type, providing your own `workspaceId`, item ID, and `<BEARER_TOKEN>`.
+**For Fabric Warehouse:**
+ 
 ```http
 GET https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/warehouses/<warehouseId>/settings/sqlAudit
 content-type: application/json
 Authorization: Bearer <BEARER_TOKEN>
 ```
-
-The response returns `ENABLED` or `DISABLED` and the current configuration of `auditActionsAndGroups`.
-
+ 
+**For SQL Analytics Endpoint:**
+ 
+```http
+GET https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/sqlEndpoints/<itemId>/settings/sqlAudit
+content-type: application/json
+Authorization: Bearer <BEARER_TOKEN>
+```
+ 
+The response returns `Enabled` or `Disabled` and the current configuration of `auditActionsAndGroups`.
+ 
 #### Configure audit action groups with the REST API
-
-SQL audit logs rely on predefined action groups that capture specific events within the database. For details on audit action groups, see [SQL audit logs in Fabric Data Warehouse](sql-audit-logs.md#database-level-audit-action-groups-and-actions). 
-
+ 
+SQL audit logs rely on predefined action groups that capture specific events within the database. For details on audit action groups, see [SQL audit logs in Fabric Data Warehouse](sql-audit-logs.md#database-level-audit-action-groups-and-actions).
+ 
 1. In VS Code, create a new text file in VS Code with the `.http` extension.
-1. Copy and paste the following request, providing your own `workspaceId`, `<warehouseId>`, and `<BEARER_TOKEN>`.
-
-    ```http
-    POST https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/warehouses/<warehouseId>/settings/sqlAudit
-    content-type: application/json
-    Authorization: Bearer <BEARER_TOKEN>
-    [  "DATABASE_OBJECT_PERMISSION_CHANGE_GROUP" ]
-    ```
-
+1. Copy and paste the request that matches your item type, providing your own `workspaceId`, item ID, and `<BEARER_TOKEN>`.
+**For Fabric Warehouse:**
+ 
+```http
+POST https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/warehouses/<warehouseId>/settings/sqlAudit
+content-type: application/json
+Authorization: Bearer <BEARER_TOKEN>
+ 
+[ "DATABASE_OBJECT_PERMISSION_CHANGE_GROUP" ]
+```
+ 
+**For SQL Analytics Endpoint:**
+ 
+```http
+POST https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/sqlEndpoints/<itemId>/settings/sqlAudit/setAuditActionsAndGroups
+content-type: application/json
+Authorization: Bearer <BEARER_TOKEN>
+ 
+[ "DATABASE_OBJECT_PERMISSION_CHANGE_GROUP" ]
+```
+ 
+> [!NOTE]
+> The SQL Analytics Endpoint uses a different URL suffix (`/setAuditActionsAndGroups`) for configuring audit action groups, compared to the Warehouse endpoint.
+ 
 1. Select **Send Request**.
-
 ---
 
 ## Query audit logs
-
+ 
 SQL audit log data is stored in **.XEL files** in the OneLake, and can be accessed using the [sys.fn_get_audit_file_v2](/sql/relational-databases/system-functions/sys-fn-get-audit-file-v2-transact-sql?view=fabric&preserve-view=true) Transact-SQL (T-SQL) function. For more information on how audit files are stored in the OneLake, see [SQL audit logs in Fabric Data Warehouse](sql-audit-logs.md#storage).
-
-From the [SQL query editor](sql-query-editor.md) or any query tool such as [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), use the following sample T-SQL queries, providing your own `workspaceId` and `<warehouseId>`.
-
+ 
+> [!IMPORTANT]
+> For Fabric Warehouse, audit files are persisted under the warehouse item path (`<warehouseId>`). For SQL Analytics Endpoint, audit files are persisted under the **parent Lakehouse** item path (`<lakehouseId>`), since the SQL Analytics Endpoint is a child item of the Lakehouse.
+ 
+From the [SQL query editor](sql-query-editor.md) or any query tool such as [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), use the following sample T-SQL queries, providing your own `workspaceId` and item ID.
+ 
+**For Fabric Warehouse:**
+ 
 ```sql
 SELECT * 
 FROM sys.fn_get_audit_file_v2
 ('https://onelake.blob.fabric.microsoft.com/<workspaceId>/<warehouseId>/Audit/sqldbauditlogs/'
 , default, default, default, default);
 ```
-
+ 
+**For SQL Analytics Endpoint:**
+ 
+```sql
+SELECT * 
+FROM sys.fn_get_audit_file_v2
+('https://onelake.blob.fabric.microsoft.com/<workspaceId>/<lakehouseId>/Audit/sqldbauditlogs/'
+, default, default, default, default);
+```
+ 
 To filter logs by time range, use the following query:
-
+ 
+**For Fabric Warehouse:**
+ 
 ```sql
 SELECT * 
 FROM sys.fn_get_audit_file_v2
 ('https://onelake.blob.fabric.microsoft.com/<workspaceId>/<warehouseId>/Audit/sqldbauditlogs/'
 , default, default, '2025-03-30T08:40:40Z', '2025-03-30T09:10:40Z');
 ```
-
+ 
+**For SQL Analytics Endpoint:**
+ 
+```sql
+SELECT * 
+FROM sys.fn_get_audit_file_v2
+('https://onelake.blob.fabric.microsoft.com/<workspaceId>/<lakehouseId>/Audit/sqldbauditlogs/'
+, default, default, '2025-03-30T08:40:40Z', '2025-03-30T09:10:40Z');
+```
+ 
 ## Related content
-
+ 
 - [Security in Microsoft Fabric](../security/security-overview.md)
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md)
