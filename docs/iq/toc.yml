@@ -109,16 +109,22 @@ items:
                 href: plan/planning-forecasting/planning-how-to-manage-rolling-forecasts.md
               - name: Create statistical forecasts
                 href: plan/planning-forecasting/planning-how-to-create-statistical-forecasts.md
+              - name: Create multidimensional forecasts
+                href: plan/planning-forecasting/planning-how-to-create-multidimensional-forecasts.md
+              - name: Extend planning time range
+                href: plan/planning-forecasting/planning-how-to-extend-time.md
+              - name: Edit forecast settings
+                href: plan/planning-forecasting/planning-how-to-configure-forecast-settings.md
         - name: Driver Model
           items: 
               - name: Create a model using Model Builder
-                href: plan/planning-driver-model/how-to-create-model-using-model-builder.md
+                href: plan/planning-driver-model/planning-how-to-create-model-using-model-builder.md
               - name: Configure row properties in the model
-                href: plan/planning-driver-model/how-to-configure-row-properties-for-model.md
+                href: plan/planning-driver-model/planning-how-to-configure-row-properties-for-model.md
               - name: Create templates for reusable row structures
-                href: plan/planning-driver-model/how-to-create-templates-for-reusable-row-structures.md
+                href: plan/planning-driver-model/planning-how-to-create-templates-for-reusable-row-structures.md
               - name: Create a driver-based model
-                href: plan/planning-driver-model/how-to-create-driver-based-model.md
+                href: plan/planning-driver-model/planning-how-to-create-driver-based-model.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
