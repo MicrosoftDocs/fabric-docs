@@ -1,4 +1,4 @@
-<!-- Required: Article metadata
+Required: Article metadata
 ---
 title: What is Microsoft Copilot in/for <Product/Service>
 description: <Article description>.
@@ -14,9 +14,8 @@ ms.collection:
 #customer intent: As a <role>, I want <what> so that <why>.
 ---
 
--->
 
-# What is Microsoft Copilot in Fabric for Real-Time Intelligence?
+# What is Microsoft Copilot in Fabric Real-Time Intelligence?
 
 <!-- Required: Introductory paragraphs (no heading)
 

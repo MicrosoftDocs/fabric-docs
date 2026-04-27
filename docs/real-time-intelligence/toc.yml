@@ -9,7 +9,7 @@ items:
         href: real-time-intelligence-compare.md
       - name: Implement medallion architecture
         href: architecture-medallion.md
-      - name: End to end sample
+      - name: End to end sample RTI solution
         href: sample-end-to-end.md
   - name: Tutorials
     items:
@@ -539,6 +539,16 @@ items:
         href: schema-sets/use-event-schemas.md
       - name: Known limitations
         href: schema-sets/schema-registry-limitations.md
+  - name: Copilot
+    items:
+      - name: Copilot in Real-Time Intelligence
+        href: copilot-guidelines.md
+      - name: Copilot for Writing KQL Queries
+        href: copilot-writing-queries.md
+      - name: Generate Real-Time Dashboard Using Copilot
+        href: copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric
+      - name: Explore data in Real-Time Dashboard Using Copilot
+        href: dashboard-explore-data.md
   - name: Eventhouse
     items:
       - name: Eventhouse overview
@@ -758,10 +768,6 @@ items:
         href: data-activator/activator-alert-queryset.md
       - name: Add query visualization to a dashboard
         href: add-query-visualization.md
-  - name: Copilot
-    item:
-      - name: Copilot in Fabric Real-Time Intelligence
-        href: copilot-real-time-intelligence-workload.md
   - name: Real-Time Dashboard
     items:
       - name: Real-Time Dashboard overview
@@ -1031,11 +1037,16 @@ items:
               href: map/share-map-org-apps.md
         - name: Manage Map permissions
           href: map/manage-map-permissions.md
-  - name: AI agents and MCP servers
+  - name: Operations agents
     displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
     items:
       - name: Operations agents
         href: operations-agent-tocs/toc.yml
+  - name: AI Agents
+    displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
+    items:
+      - name: Overview
+        href: rti-ai-agents-overview.md 
       - name: MCP servers
         items:
           - name: Overview
