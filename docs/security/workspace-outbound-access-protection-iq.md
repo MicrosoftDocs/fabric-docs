@@ -3,7 +3,7 @@ title: Workspace outbound access protection for Fabric IQ
 description: Learn how to configure Workspace Outbound Access Protection to secure your Fabric IQ artifacts.
 #customer intent: As a workspace admin, I want to enable outbound access protection for my workspace so that I can secure Fabric IQ data connections to only approved destinations.
 author: wmwxwa
-ms.author: wmwxwa
+ms.author: wangwilliam
 ms.date: 04/27/2026
 ms.topic: how-to
 ---
