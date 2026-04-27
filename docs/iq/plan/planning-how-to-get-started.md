@@ -1,7 +1,7 @@
 ---
 title: Get started with Planning sheets
 description: Learn how to get started with your first Planning sheet in plan (preview). Discover how to create a Planning sheet, connect to your semantic model, and perform planning, budgeting, forecasting, and data analysis.
-ms.date: 04/06/2026
+ms.date: 04/27/2026
 ms.topic: how-to
 ---
 
@@ -44,7 +44,7 @@ You can create your Fabric SQL database by following these steps
 
 1. Select **Create Connection** to create a Fabric SQL Connection or select an existing connection.
 
-     :::image type="content" source="media/planning-how-to-get-started/create-connection.png" alt-text="Screenshot to create a new fabric SQL database." lightbox="media/planning-how-to-get-started/create-connection.png":::
+     :::image type="content" source="media/planning-how-to-get-started/create-connection.jpg" alt-text="Screenshot to create a new fabric SQL database." lightbox="media/planning-how-to-get-started/create-connection.jpg":::
 
 1. Select **Create new connection** from the Connection credentials dropdown.
 
@@ -64,7 +64,7 @@ A Fabric SQL database connection is created which can be used while connecting t
 
 1. In your new plan item, you see options to get your data from the semantic model or Excel/CSV and create a Planning sheet from it, or to start with a Planning sheet and then connect it to data.
 
-     :::image type="content" source="media/planning-how-to-get-started/create-sheet.png" alt-text="Screenshot to configure a connection credentials." lightbox="media/planning-how-to-get-started/create-sheet.png":::
+     :::image type="content" source="media/planning-how-to-get-started/create-sheet.jpg" alt-text="Screenshot to configure a connection credentials." lightbox="media/planning-how-to-get-started/create-sheet.jpg":::
    
 1. Select **Planning**, **Name** the new Planning sheet, and **Create** it.
 
