@@ -34,11 +34,11 @@ Before you set up Planning sheets, make sure you have the following prerequisite
     >[!NOTE]
     >During planning item creation, a Fabric SQL database is automatically created in your workspace. This database stores your plan report's metadata.
 
-During planning item creation, a Fabric SQL database is automatically created in your workspace. This database stores your plan report's metadata.
+## Connect the plan item to a Fabric SQL database
 
-You can create your Fabric SQL database by following these steps
+You can create your Fabric SQL database connection by following these steps.
 
-1. Select the **Set up connection.**
+1. Select **Set up connection**.
 
      :::image type="content" source="media/planning-how-to-get-started/connection-setup.png" alt-text="Screenshot to set up connection to create fabric SQL database." lightbox="media/planning-how-to-get-started/connection-setup.png":::
 
@@ -51,11 +51,11 @@ You can create your Fabric SQL database by following these steps
     :::image type="content" source="media/planning-how-to-get-started/new-connection.png" alt-text="Screenshot to add  a new fabric SQL database." lightbox="media/planning-how-to-get-started/new-connection.png":::
 
 1. Enter a **Connection name**.
-1. Select **Authentication kind** as **Organizational account.**
+1. Select **Authentication kind** as **Organizational account**.
 
     :::image type="content" source="media/planning-how-to-get-started/connection-credentials.png" alt-text="Screenshot to configure a connection credentials." lightbox="media/planning-how-to-get-started/connection-credentials.png":::
 
-1. Select **Create.**
+1. Select **Create**.
 
 A Fabric SQL database connection is created which can be used while connecting to a semantic model.
 
@@ -72,9 +72,9 @@ A Fabric SQL database connection is created which can be used while connecting t
 
 ## Connect Planning sheet to a semantic model connection
 
-1. In your new Planning sheet, select Add.
+1. In your new Planning sheet, select **Add**.
 
-1. Connect to your Fabric SQL connection under Select a Connection.
+1. Connect to your Fabric SQL connection under **Select a Connection**.
 
     :::image type="content" source="media/planning-how-to-get-started/semantic-model-connection.png" alt-text="Screenshot of connecting to a semantic model." lightbox="media/planning-how-to-get-started/semantic-model-connection.png":::
 
