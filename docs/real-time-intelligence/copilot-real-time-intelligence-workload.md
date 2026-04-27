@@ -1,15 +1,13 @@
-Required: Article metadata
 ---
-title: What is Microsoft Copilot in/for <Product/Service>
-description: <Article description>.
-author: <your GitHub alias>
-ms.author: <your Microsoft alias or a team alias>
-ms.service: <the approved service name>
-ms.subservice: <the approved subservice name>
-ms.topic: overview #Don't change
+title: Copilot AI Features in Real-Time Intelligence
+description: Microsoft Copilot for Real-Time Intelligence in Fabric uses AI to simplify dashboards, querysets, and data analysis. 
+author: spelluru
+ms.author: spelluru
+ms.reviewer: anshul
+ms.service: fabric
+ms.topic: overview
 ms.date: 04/16/2026
-ms.collection:
-  - ce-skilling-ai-copilot
+ms.collection: ce-skilling-ai-copilot
 
 #customer intent: As a <role>, I want <what> so that <why>.
 ---
@@ -17,33 +15,11 @@ ms.collection:
 
 # What is Microsoft Copilot in Fabric Real-Time Intelligence?
 
-<!-- Required: Introductory paragraphs (no heading)
+This article provides an overview of Copilot in Real-Time Intelligence, including its features and benefits. Microsoft Copilot for Real-Time Dashboards and KQL Querysets in Fabric is an AI tool that enhances productivity and efficiency by offering quick insights and natural language processing capabilities.
 
-[Introduce and explain the purpose of the article.]
+# Features of Copilot in Real-Time Intelligence
 
-Write a brief introduction that helps the user 
-understand how Copilot integrates with their 
-specific product or service. Explain the 
-purpose of the article and highlight the
-features using Copilot in their context.
-
-Example:
-
-This article provides an overview of Copilot in <Product/Service>, including its features and benefits. Microsoft Copilot for <Product/Service> is an AI tool that enhances productivity and efficiency by offering intelligent code completion, quick actions, and natural language processing capabilities. This article explores how Copilot can assist users in [specific tasks or roles], improving accuracy and streamlining workflows.
-
--->
-
-## How Copilot works in Real-Time Intelligence
-
-<!-- Optional: Feature sections - H2
-
-[Description of how Copilot integrates with the product/service and its functionality.]
-
-Describe How Copilot works in a product or service
-
--->
-
-## Features of Copilot in Real-Time Intelligence
+Copilot can assist users in creating dashboards, generating KQL queries, and exploring data more effectively, helping them make faster, data-driven decisions.
 
 Copilot in Real-Time Dashboards
 - generate dashboards
