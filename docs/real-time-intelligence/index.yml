@@ -213,8 +213,7 @@ landingContent:
             - text: RTI operations agents
               url: operations-agent.md
             - text: RTI Model Context Protocol (MCP) servers
-              url: mcp-overview.md
-           
+              url: mcp-overview.md  
         - linkListType: how-to-guide
           links:
           - text: Get started with operation agents
@@ -225,4 +224,24 @@ landingContent:
             url: mcp-remote-eventhouse.md
           - text: Use a remote MCP server to interact with Activator
             url: mcp-remote-activator.md
-              
+
+ # Card
+  - title: Reference architectures
+    linkLists:
+        - linkListType: reference
+          links:
+            - text: Automative and mobile
+              url: architectures/connected-fleet.md
+            - text: Energy and resources
+              url: architectures/wind-farm-maintenance.md
+            - text: Industrials and manufacturing
+              url: architectures/connected-factory.md
+            - text: Retail and consumer goods
+              url: architectures/grocery-store-operations.md
+            - text: Healthcare and life sciences
+              url: architectures/healthcare-billing-system.md
+            - text: Financial services
+              url: architectures/fraud-detection.md
+            - text: Telecommunications and media
+              url: architectures/internet-service-provider-analytics.md
+                             

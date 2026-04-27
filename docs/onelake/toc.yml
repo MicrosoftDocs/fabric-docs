@@ -89,8 +89,6 @@ items:
     href: ./snowflake/create-snowflake-database-item.md
   - name: Use Snowflake with Iceberg tables
     href: onelake-iceberg-snowflake.md
-  - name: Azure HDInsight
-    href: onelake-azure-hdinsight.md
   - name: Microsoft Foundry knowledge
     href: onelake-foundry-knowledge.md
   - name: PowerShell
@@ -149,6 +147,8 @@ items:
     items:
     - name: Manage inbound access
       href: onelake-manage-inbound-access.md
+    - name: Resource Instance rules for inbound access
+      href: onelake-manage-inbound-access-trusted-resources.md
     - name: Manage outbound access
       href: onelake-manage-outbound-access.md
   - name: Monitor and recover

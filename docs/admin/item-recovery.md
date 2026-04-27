@@ -102,7 +102,12 @@ While a deleted item is in its retention period, you can permanently delete it i
 1. Find the item you want to permanently delete.
 1. Select the item, then choose **Delete permanently** from the toolbar.
 
-You're asked to confirm the permanent deletion. After you confirm, the item and its contents are no longer recoverable.
+You're asked to confirm the permanent deletion.
+
+> [!CAUTION]
+> After you confirm permanent deletion, the item and its contents are no longer recoverable.
+>
+> After you permanently delete an item, Microsoft OneLake retains the data for an additional seven days. You can't restore data during this period. The deletion is final and can't be reversed.
 
 ### Use the REST API to permanently delete an item
 
@@ -127,8 +132,10 @@ curl --request DELETE \
   --header 'Authorization: Bearer {token}'
 ```
 
-> [!WARNING]
-> You can't undo a permanent deletion.
+> [!CAUTION]
+> After you confirm permanent deletion, the item and its contents are no longer recoverable.
+>
+> After you permanently delete an item, Microsoft OneLake retains the data for an additional seven days. You can't restore data during this period. The deletion is final and can't be reversed.
 
 ## Related content
 

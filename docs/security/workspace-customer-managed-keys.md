@@ -38,6 +38,7 @@ Customer-managed keys are currently supported for the following Fabric items:
 * Industry solutions
 * SQL Database
 * Eventhouse (preview)
+* Graph (preview)
 
 This feature can't be enabled for a workspace that contains unsupported items. When customer-managed key encryption for a Fabric workspace is enabled, only supported items can be created in that workspace. To use unsupported items, create them in a different workspace that doesn't have this feature enabled.
 
@@ -160,7 +161,7 @@ Before you configure your Fabric workspace with a customer-managed key, consider
 
 * CMK is supported on all [F SKUs](../enterprise/licenses.md). Trial capacities can't be used for encryption using CMK.
 
-* You can turn on CMK for workspaces hosted in BYOK capacities. The same or separate keys can be used to protect both items in a CMK‑enabled workspace and semantic models residing on the BYOK capacity. 
+* You can turn on CMK for workspaces hosted in BYOK capacities. The same or separate keys can be used to protect both items in a CMK‑enabled workspace and semantic models residing on the BYOK capacity. (preview)
 
 * CMK can be enabled using the Fabric portal and doesn't have API support.
 
