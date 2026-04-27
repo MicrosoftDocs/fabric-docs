@@ -52,7 +52,7 @@ az login
 `DefaultAzureCredential` can use your signed-in identity to acquire access tokens for:
 
 * Fabric REST APIs (resource: `https://api.fabric.microsoft.com/.default`)
-* OneLake access via ADLS-compatible endpoints (OneLake supports existing ADLS/Blob tools and SDKs). Note that OneLake supports browsing and reading/writing data using ADLS Gen2 APIs and SDKs, including GUID-based addressing for workspaces and items.
+* OneLake access via ADLS-compatible endpoints (OneLake supports existing ADLS/Blob tools and SDKs). OneLake supports browsing and reading/writing data using ADLS Gen2 APIs and SDKs, including GUID-based addressing for workspaces and items.
 
 > [!TIP]
 > About `https://api.fabric.microsoft.com/.default`
@@ -290,8 +290,8 @@ STARBUCKS_MARKER_SVG = """\
 """
 ```
 
-[!TIP]
-SVG is typically a strong choice for markers because it scales cleanly at different zoom levels and screen DPIs.
+> [!TIP]
+> SVG is typically a strong choice for markers because it scales cleanly at different zoom levels and screen DPIs.
 
 ## Step 4—Add helper functions
 
@@ -483,7 +483,7 @@ def _upload_with_retry(
 
 ### Create helper function to retrieve the map ID once created
 
-When you create a map by using the Fabric REST API, the request may return a 202 Accepted response. This indicates that the map is being provisioned asynchronously as a long-running operation (LRO), rather than being created immediately. In this case, the response doesn't include the map ID, and the LRO completion endpoint may not return a usable result. Additionally, even after the operation completes, the newly created map might not appear immediately when calling the List Maps API due to backend propagation.
+When you create a map by using the Fabric REST API, the request can return a 202 Accepted response. This indicates that the map is being provisioned asynchronously as a long-running operation (LRO), rather than being created immediately. In this case, the response doesn't include the map ID, and the LRO completion endpoint may not return a usable result. Additionally, even after the operation completes, the newly created map might not appear immediately when calling the List Maps API due to backend propagation.
 
 To reliably obtain the map ID, you must query the list of maps and retry until the new map becomes visible. The following helper function implements this retry pattern and ensures your automation flow is resilient to asynchronous provisioning delays, and is only required if you need the map ID.
 
