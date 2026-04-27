@@ -170,6 +170,16 @@ If you see this error, have your Fabric tenant admin double-check that you've en
 
 Keep in mind the following temporary limitations when you use this feature: 
 
+* **Supported Apache Iceberg version**
+
+  The table format virtualization feature currently supports [**Apache Iceberg V2**](https://iceberg.apache.org/spec/#version-2-row-level-deletes) today. This means when a Delta Lake table is read by this feature, Iceberg V2 metadata is generated. Original Iceberg tables provided to this feature must be Iceberg V2 in order for conversion to Delta Lake format to occur.
+
+  We're working on support for reading [Iceberg V3 tables](https://iceberg.apache.org/spec/#version-3-extended-types-and-capabilities). Stay tuned!
+
+* **Latest metadata version converted**
+
+  The table format virtualization feature currently converts the latest table metadata version in the original table format. If multiple versions are written to the original table format, only the most recent table metadata version will be converted to the virtual table format.
+
 * **Supported data types**
   
   The following Iceberg column data types map to their corresponding Delta Lake types using this feature.
