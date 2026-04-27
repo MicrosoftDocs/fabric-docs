@@ -105,7 +105,7 @@ Any other DDL operation on source tables is currently not supported and can caus
 | Any other resource errors | Mirroring is disabled | To ensure your compute resources are not impacted and to minimize impact on the Azure Database for PostgreSQL flexible server, mirroring disables on any persistent resource errors. | 
 | "Users can access data stored in OneLake with apps external to Fabric" setting disabled | "Replicator - Tables Cannot Reach Replicating Status" | Enable the Tenant setting [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings).|
 
-## PostgreSQL queries for troubleshooting
+## SQL queries for troubleshooting
 
 If you're experiencing mirroring problems, connect to the source Azure Database for PostgreSQL server and perform these checks using system views and functions to validate configuration.
 
@@ -136,6 +136,7 @@ SELECT * FROM azure_cdc.check_prerequisites();
 - `data`: JSONB array containing detailed status entries with `status`, `status_code`, and optional `details`
 
 **Status Codes:**
+
 | Status Code | Level | Description |
 |------------|-------|-------------|
 | IDENTITY_NOT_CONFIGURED | ERROR | Service principal credentials are not configured (azure.service_principal_id or azure.service_principal_tenant_id GUCs not set) |
@@ -164,6 +165,7 @@ SELECT * FROM azure_cdc.get_all_tables_mirror_status();
 - `mirroring_data`: JSONB array containing detailed status entries with `status`, `status_code`, and optional `details`
 
 **Status Codes:**
+
 | Status Code | Level | Description |
 |------------|-------|-------------|
 | SCHEMA_DOES_NOT_EXIST | ERROR | The specified schema does not exist |
@@ -199,6 +201,7 @@ SELECT * FROM azure_cdc.get_health_status('my_database', 'my_publication');
 **Returns:** Set of `(error_time timestamptz, schema_name text, table_name text, error_type char(1), error_code text, params jsonb)`
 
 **Error Types:**
+
 | Error Type | Description |
 |------------|-------------|
 | S | System-wide error |
@@ -206,6 +209,7 @@ SELECT * FROM azure_cdc.get_health_status('my_database', 'my_publication');
 | T | Table-specific error |
 
 **Error Codes:**
+
 | Error Code | Type | Description |
 |------------|------|-------------|
 | CDC_ERR_SYS_MAX_NUMBER_OF_WORKERS_REACHED | S | Max number of workers reached |
