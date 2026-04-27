@@ -107,6 +107,12 @@ items:
                 href: plan/planning-forecasting/planning-how-to-manage-rolling-forecasts.md
               - name: Create statistical forecasts
                 href: plan/planning-forecasting/planning-how-to-create-statistical-forecasts.md
+              - name: Create multidimensional forecasts
+                href: plan/planning-forecasting/planning-how-to-create-multidimensional-forecasts.md
+              - name: Extend planning time range
+                href: plan/planning-forecasting/planning-how-to-extend-time.md
+              - name: Edit forecast settings
+                href: plan/planning-forecasting/planning-how-to-configure-forecast-settings.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
