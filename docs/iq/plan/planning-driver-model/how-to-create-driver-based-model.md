@@ -71,4 +71,4 @@ This shows how driver-based modeling helps you find outcomes based on key assump
 
 Changes automatically roll up to top-level results and also distribute across periods, allowing you to perform fast, flexible what-if analysis directly in the planning sheet.
 
-You can also modify the distribution method while creating a driver-based model. To know more, refer to [Distribution](./how-to-configure-row-properties-for-model.md/#distribution).
+You can also modify the distribution method while creating a driver-based model. To know more, refer to [Distribution](./how-to-configure-row-properties-for-model.md#distribution).
