@@ -90,7 +90,7 @@ This separation allows data pipelines and map configuration to evolve independen
 
 ## Order of operations
 
-When automating Fabric Maps, there are two supported patterns:
+When you automate the creation of a map item in Fabric Maps using REST API, there are two supported patterns:
 
 ### Option 1: Create the map, then assign the map definition
 

@@ -267,7 +267,7 @@ Both map‑creation patterns ultimately rely on the same map definition contract
 
 ## Create helper function to retrieve the map ID
 
-When you create a map by using the Fabric REST API, the request may return a 202 Accepted response. This indicates that the map is being provisioned asynchronously as a long-running operation (LRO), rather than being created immediately. In this case, the response doesn't include the map ID, and the LRO completion endpoint may not return a usable result. Additionally, even after the operation completes, the newly created map might not appear immediately when calling the List Maps API due to backend propagation.
+When you create a map by using the Fabric REST API, the request can return a 202 Accepted response. This indicates that the map is being provisioned asynchronously as a long-running operation (LRO), rather than being created immediately. In this case, the response doesn't include the map ID, and the LRO completion endpoint may not return a usable result. Additionally, even after the operation completes, the newly created map might not appear immediately when calling the List Maps API due to backend propagation.
 
 To reliably obtain the map ID, you must query the list of maps and retry until the new map becomes visible. The following helper function implements this retry pattern and ensures your automation flow is resilient to asynchronous provisioning delays.
 
@@ -330,7 +330,7 @@ def resolve_map_id(client, list_url, headers, map_name, max_attempts=10, delay=5
     raise RuntimeError("Map created but still not visible after retries")
 ```
 
-Then instead of getting your map ID as in the previous sample (`map_id = created["id"]`), try this:
+Then instead of getting your map ID as in the previous sample (`map_id = created["id"]`), try:
 
 ```python
     if response.status_code == 201:
