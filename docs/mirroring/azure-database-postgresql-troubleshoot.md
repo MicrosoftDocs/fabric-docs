@@ -147,7 +147,7 @@ SELECT * FROM azure_cdc.check_prerequisites();
 | SERVER_IN_RECOVERY | ERROR | Server is a standby replica in recovery mode (CDC mirroring not supported on standbys) |
 | MAX_WORKER_PROCESSES_TOO_LOW | ERROR | max_worker_processes is below the recommended threshold (13) |
 
-1. Execute the following query to validate if tables in your source database are eligible for replication. Excludes system schemas (`pg_catalog`, `information_schema`, `pg_toast`) and extension-owned tables.
+2. Execute the following query to validate if tables in your source database are eligible for replication. Excludes system schemas (`pg_catalog`, `information_schema`, `pg_toast`) and extension-owned tables.
 
 ```sql
 SELECT * FROM azure_cdc.get_all_tables_mirror_status();
@@ -180,7 +180,7 @@ SELECT * FROM azure_cdc.get_all_tables_mirror_status();
 | HAS_UNIQUE_INDEX | OK | Table has a suitable unique index |
 | NO_INDEX_FULL_IDENTITY | WARNING | No suitable unique index; full row identity will be used (may affect performance) |
 
-1. Execute the following query to return errors and issues detected during replication operations, including system-wide errors, publication-specific errors, and per-table errors.
+3. Execute the following query to return errors and issues detected during replication operations, including system-wide errors, publication-specific errors, and per-table errors.
 
 ```sql
 -- Get only system-wide errors
@@ -229,7 +229,7 @@ SELECT * FROM azure_cdc.get_health_status('my_database', 'my_publication');
 | CDC_ERR_TABLE_TRUNCATE_NOT_SUPPORTED | T | Truncate operation not supported (may cause data inconsistency) |
 
 
-1. Execute the following query to check if publication is created correctly and replication changes properly flow:
+4. Execute the following query to check if publication is created correctly and replication changes properly flow:
 
     ```sql
     select * from azure_cdc.tracked_publications;
@@ -240,13 +240,13 @@ SELECT * FROM azure_cdc.get_health_status('my_database', 'my_publication');
     select * from azure_cdc.tracked_batches;
     ```
 
-1. If the `azure_cdc.tracked_publications` view doesn't show any progress on processing incremental changes, execute the following SQL query to check if there are any problems reported:
+5. If the `azure_cdc.tracked_publications` view doesn't show any progress on processing incremental changes, execute the following SQL query to check if there are any problems reported:
 
     ```sql
     SELECT * FROM pg_stat_activity WHERE state = 'idle in transaction';
     ```
 
-1. If there aren't any issues reported, execute the following command to review the current configuration of the mirrored PostgreSQL database. Confirm it was properly enabled.
+6. If there aren't any issues reported, execute the following command to review the current configuration of the mirrored PostgreSQL database. Confirm it was properly enabled.
 
     ```sql
     SELECT * FROM pg_replication_slots;
@@ -254,7 +254,7 @@ SELECT * FROM azure_cdc.get_health_status('my_database', 'my_publication');
 
     The key columns to look for here are the `slot_name` and `active`. Any value besides `t` (true) indicates a potential problem.
 
-1. [Contact support](/power-bi/support/service-support-options) if troubleshooting is required.
+7. [Contact support](/power-bi/support/service-support-options) if troubleshooting is required.
 
 ## Managed identity
 
