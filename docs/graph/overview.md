@@ -34,7 +34,7 @@ Graph provides an efficient way to model, visualize, and query these relationshi
 - Business user: Visually explore relationships, run NL (natural language) queries, and gain insights effortlessly.
 - Data engineer: Define graph models, unify data in OneLake with low and no-code tools.
 - Data scientist: Use graph algorithms and ML (machine learning) in Fabric's data science environment.
-- Developer: Build AI agents and real-time apps using graph-powered contextual insights. [Fabric Data Agent](../data-science/concept-data-agent.md) supports graph as a data source (preview).
+- Developer: Build AI agents and real-time apps using graph-powered contextual insights. Fabric Data Agent supports [graph as a data source](../data-science/data-agent-add-datasources.md) (preview).
 
 Graph broadens access to graph insights beyond specialized roles. Any user can use connected data in daily decision-making.
 
@@ -49,7 +49,7 @@ By using graph, you can:
 
 - Query by using GQL (Graph Query Language), including pattern matching, path constructs, aggregations, and other features as they're released. The official International Standard for GQL is [ISO/IEC 39075 Information technology — Database languages — GQL](https://www.iso.org/standard/76120.html).
 
-- Power graph-based AI reasoning by adding graph in Microsoft Fabric as a data source in [Fabric Data Agent](../data-science/concept-data-agent.md). For details on how NL2GQL works, see the [Graph-powered AI reasoning announcement](https://blog.fabric.microsoft.com/en-US/blog/graph-powered-ai-reasoning-preview/).
+- Power graph-based AI reasoning by adding [graph as a data source](../data-science/data-agent-add-datasources.md) in Fabric Data Agent. For details on how NL2GQL works, see the [Graph-powered AI reasoning announcement](https://blog.fabric.microsoft.com/en-US/blog/graph-powered-ai-reasoning-preview/).
 
 - Benefit from job function-based experiences:  
   - Data engineers can model and create graphs.  
