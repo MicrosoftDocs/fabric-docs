@@ -40,12 +40,11 @@ Fabric uses the PAT to securely read your dbt project from GitHub.
 
 To run a dbt project from GitHub in Fabric, follow these steps:
 
-1. [Create a dbt job](#create-a-dbt-job)
-1. [Connect to GitHub](#connect-to-github)
+1. [Create a dbt job connected to GitHub](#create-a-dbt-job-connected-to-github)
 1. [Configure connection settings](#configure-connection-settings)
 1. [Run the dbt job](#run-the-dbt-job)
 
-### Create a dbt job
+### Create a dbt job connected to GitHub
 
 1. Open your Fabric workspace.
 1. Select **+ New item**.
@@ -54,10 +53,6 @@ To run a dbt project from GitHub in Fabric, follow these steps:
    :::image type="content" source="media/dbt-run-github/create-dbt-job.png" alt-text="Screenshot of the new item menu in Microsoft Fabric with the dbt job option.":::
 
    :::image type="content" source="media/dbt-run-github/name-dbt-job.png" alt-text="Screenshot of the dbt job naming dialog in Microsoft Fabric.":::
-
-The dbt job doesn't contain dbt code. It acts as a container that points to your GitHub project and runs commands against it.
-
-### Connect to GitHub
 
 1. Select **Connect to a GitHub project**.
 
@@ -108,5 +103,5 @@ Use the logs to verify the run and troubleshoot any failures.
 
 ## Related content
 
-- [dbt job OneLake logger](dbt-job-onelake-logger.md)
+- [Access complete dbt job logs with OneLake](dbt-job-onelake-logs.md)
 - [dbt jobs in Fabric](dbt-job-overview.md)
