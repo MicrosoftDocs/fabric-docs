@@ -7,7 +7,7 @@ ms.reviewer: yicw, mesrivas,liud
 ms.topic: concept-article
 ms.search.form: product-trident, Manage your workspace
 #customer intent: As a report creator, I need to know about workspaces so that I can create collections of artifacts that are related.
-ms.date: 01/30/2026
+ms.date: 04/28/2026
 
 ---
 
