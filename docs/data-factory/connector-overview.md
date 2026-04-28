@@ -32,16 +32,16 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | Acterys: Model Automation & Planning (Beta) | ✓/− |  |  |
 | Actian (Beta) | ✓/− |  |  |
 | [Active Directory](/power-query/connectors/active-directory#connect-to-active-directory-from-power-query-online) | ✓/− |  |  |
-| [Adobe Analytics](/power-query/connectors/adobe-analytics) | ✓/− |  |  |
+| [Adobe Analytics](connector-adobe-analytics-overview.md) | ✓/− |  |  |
 | [ADPAnalytics (Beta)](/power-query/connectors/adp-analytics) | ✓/− |  |  |
-| [Amazon Athena](/power-query/connectors/amazon-athena) | ✓/− |  |  |
+| [Amazon Athena](connector-amazon-athena-overview.md) | ✓/− |  |  |
 | [Amazon OpenSearch Service (Beta)](/power-query/connectors/amazon-opensearch-service) | ✓/− |  |  |
 | [Amazon RDS For Oracle](connector-amazon-rds-for-oracle-overview.md) |  | ✓/− | ✓/− |
 | [Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-overview.md) |  | ✓/− | ✓/− |
 | [Amazon Redshift](connector-amazon-redshift-overview.md) | ✓/− | ✓/− |  |
 | [Amazon S3](connector-amazon-s3-overview.md) |  | ✓/✓ | ✓/✓ |
 | [Amazon S3 Compatible](connector-amazon-s3-compatible-overview.md) |  | ✓/✓ | ✓/✓ |
-| [Anaplan](/power-query/connectors/anaplan) | ✓/− |  |  |
+| [Anaplan](connector-anaplan-overview.md) | ✓/− |  |  |
 | Asana | ✓/− |  |  |
 | [Assemble Views](/power-query/connectors/assemble-views) | ✓/− |  |  |
 | AtScale cubes | ✓/− |  |  |
@@ -78,7 +78,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [CData Connect Cloud](/power-query/connectors/cdata-connect-cloud) | ✓/− |  |  |
 | [Celonis EMS](/power-query/connectors/celonis-ems) | ✓/− |  |  |
 | Cherwell (Beta) | ✓/− |  |  |
-| [ClickHouse](/power-query/connectors/clickhouse#connect-to-clickhouse-from-power-query-online) | ✓/− |  |  |
+| [ClickHouse](connector-clickhouse-overview.md) | ✓/− |  |  |
 | [CloudBluePSA (Beta)](connector-cloudbluepsa-overview.md) | ✓/− |  |  |
 | [Cognite Data Fusion (OData)](/power-query/connectors/cognite-data-fusion-(odata)#connect-to-cognite-data-fusion-from-power-query-online) | ✓/− |  |  |
 | [Cognite Data Fusion (Rest API) (Beta)](/power-query/connectors/cognite-data-fusion-(rest-api)) | ✓/− |  |  |
@@ -87,8 +87,8 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Databricks](connector-databricks-overview.md) | ✓/− |  |  |
 | [Dataflow](connector-dataflows-overview.md) | ✓/− |  |  |
 | [Dataverse](connector-dataverse-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
-| [Delta Sharing](/power-query/connectors/delta-sharing) | ✓/− |  |  |
-| [Denodo](/power-query/connectors/denodo) | ✓/− |  |  |
+| [Delta Sharing](connector-delta-sharing-overview.md) | ✓/− |  |  |
+| [Denodo](connector-denodo-overview.md) | ✓/− |  |  |
 | Dremio Cloud | ✓/− |  |  |
 | Dremio Software | ✓/− |  |  |
 | Dynamics 365 Business Central | ✓/− |  |  |
@@ -97,7 +97,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Dynamics AX](connector-dynamics-ax-overview.md) |  | ✓/− | ✓/− |
 | [Dynamics CRM](connector-dynamics-crm-overview.md) |  | ✓/✓ |✓/✓  |
 | [Dynatrace Grail DQL (Beta)](/power-query/connectors/dynatrace-grail-dql) | ✓/− |  |  |
-| [Eduframe (Beta)](/power-query/connectors/eduframe) | ✓/− |  |  |
+| [Eduframe (Beta)](connector-eduframe-overview.md) | ✓/− |  |  |
 | Emigo Data Source | ✓/− |  |  |
 | Entersoft Business Suite | ✓/− |  |  |
 | [EQuIS](/power-query/connectors/equis) | ✓/− |  |  |
@@ -114,12 +114,12 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [FHIR](connector-fhir-overview.md) | ✓/− |  |  |
 | [Folder](connector-folder-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [FTP](connector-ftp-overview.md) |  | ✓/− | ✓/− |
-| [Funnel](/power-query/connectors/funnel) | ✓/− |  |  |
+| [Funnel](connector-funnel-overview.md) | ✓/− |  |  |
 | [Google Analytics](connector-google-analytics-overview.md) | ✓/− |  |  |
 | [Google BigQuery](connector-google-bigquery-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [Google BigQuery (Microsoft Entra ID)](/power-query/connectors/google-bigquery-aad#connect-to-google-bigquery-microsoft-entra-id-data-from-power-query-online) | ✓/− |  |  |
 | [Google Cloud Storage](connector-google-cloud-storage-overview.md) |  | ✓/✓ | ✓/✓ |
-| [Google Sheets](/power-query/connectors/google-sheets) | ✓/− |  |  |
+| [Google Sheets](connector-google-sheets-overview.md) | ✓/− |  |  |
 | [Greenplum for Pipeline](connector-greenplum-for-pipeline-overview.md) |  | ✓/− | ✓/− |
 | [Hadoop Distributed File System (Hdfs)](connector-hdfs-for-pipeline-overview.md) |  | ✓/− | ✓/− |
 | HDInsight Interactive Query | ✓/− |  |  |
@@ -159,7 +159,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [MySQL database](connector-mysql-database-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [OData](connector-odata-overview.md) | ✓/− | ✓/− | ✓/− |
 | [Odbc](connector-odbc-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
-| [OneStream](/power-query/connectors/onestream) | ✓/− |  |  |
+| [OneStream](connector-onestream-overview.md) | ✓/− |  |  |
 | [OpenSearch Project (Beta)](/power-query/connectors/opensearch-project) | ✓/− |  |  |
 | [Oracle Cloud Storage](connector-oracle-cloud-storage-overview.md) |  | ✓/− | ✓/−  |
 | [Oracle database](connector-oracle-database-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
@@ -176,7 +176,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | Power BI dataflows (Legacy) | ✓/− |  |  |
 | [Presto](connector-presto-overview.md) |  | ✓/− | ✓/− |
 | Product Insights (Beta) | ✓/− |  |  |
-| [Profisee](/power-query/connectors/profisee) | ✓/− |  |  |
+| [Profisee](connector-profisee-overview.md) | ✓/− |  |  |
 | QubolePresto (Beta) | ✓/− |  |  |
 | Quickbase | ✓/− |  |  |
 | [REST](connector-rest-overview.md) |  | ✓/✓ | ✓/✓ |
@@ -201,7 +201,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [SingleStore Direct Query Connector](/power-query/connectors/singlestore) | ✓/− |  |  |
 | [SIS-CC SDMX (Beta)](/power-query/connectors/sis-cc-sdmx) | ✓/− |  |  |
 | Siteimprove | ✓/− |  |  |
-| [Smartsheet](/power-query/connectors/smartsheet) | ✓/− |  |  |
+| [Smartsheet](connector-smartsheet-overview.md) | ✓/− |  |  |
 | [Snowflake](connector-snowflake-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [SoftOne BI (Beta)](/power-query/connectors/softone-bi) | ✓/− |  |  |
 | [SolarWinds Service Desk](/power-query/connectors/solarwinds-service-desk) | ✓/− |  |  |
