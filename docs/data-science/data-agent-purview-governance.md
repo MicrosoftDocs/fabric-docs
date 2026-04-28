@@ -1,10 +1,10 @@
 # Audit Logging for Fabric Data Agent with Microsoft Purview 
 
-## Overview
 Microsoft Purview Data Security Posture Management (DSPM) for AI enables organizations to **monitor, audit, and investigate AI interactions** across Fabric Data Agents and Copilot experiences.
 
 With audit logging enabled, **user prompts, AI responses, and interaction metadata** are captured and stored in Microsoft Purview through the Microsoft 365 audit pipeline.
 
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 ---
 
 ## Prerequisites
@@ -29,14 +29,9 @@ For more information about this option, see [Tenant settings index](https://lear
 
 ---
 
-## How Audit Logging Works
+## Viewing Data Agent Audit Logs
 
-When a user interacts with a Fabric Data Agent:
-
-1. The user submits a **prompt**
-2. The Data Agent generates a **response**
-3. Both prompt and response are sent to Microsoft Purview
-4. A **Copilot Interaction audit record** is created
+When a user interacts with a Fabric Data Agent, a Copilot Interaction audit record is created for the request as well as the response. 
 
 Each audit record includes:
 
@@ -47,10 +42,6 @@ Each audit record includes:
 - User prompt or AI response
 
 All records are stored in the **Microsoft 365 unified audit log**.
-
----
-
-## Viewing Data Agent Audit Logs
 
 To review audit logs:
 
@@ -79,7 +70,7 @@ Use Activity Explorer filters to locate specific interactions:
   - Fabric Data Agent
   - Other AI apps
 
-User Prompt: 
+Sample User Prompt: 
 
 :::image type="content" source="./media/data-agent-governance/purview-DA-prompt.png" alt-text="Screenshot showing user prompt in Fabric data agent." lightbox="./media/data-agent-governance/purview-DA-prompt.png":::
 
@@ -87,12 +78,6 @@ Data Agent Response:
 
 :::image type="content" source="./media/data-agent-governance/purview-DA-response.png" alt-text="Screenshot showing Data Agent response from M365." lightbox="./media/data-agent-governance/purview-DA-response.png":::
 
-
-This enables:
-
-- Monitoring of AI usage patterns
-- Investigation of security or compliance events
-- Tracking access to sensitive data
 
 ---
 
