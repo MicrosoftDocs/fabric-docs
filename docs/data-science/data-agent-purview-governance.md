@@ -1,3 +1,11 @@
+---
+title: Auditing data agent interactions in Microsoft Purview (preview)
+description: Learn how to use DSPM for AI to govern AI interactions in Data Agent.
+ms.reviewer: mayurjain
+ms.topic: how-to
+ms.date: 04/28/2026
+---
+
 # Audit Logging for Fabric Data Agent with Microsoft Purview (Preview)
 
 Microsoft Purview Data Security Posture Management (DSPM) for AI enables organizations to **monitor, audit, and investigate AI interactions** across Fabric Data Agents and Copilot experiences.
