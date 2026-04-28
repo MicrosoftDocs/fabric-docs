@@ -201,17 +201,25 @@ across:
 - `baseQueries[].queryId`
 - `parameters[].dataSource.queryRef.queryId`
 
-If a `queryId` is shared between two tiles, or between a tile and a baseQuery, then validation will fail with: `/queries: Some query ids are used in multiple query references (tiles, base queries, parameters)`.
+If a `queryId` is shared between two tiles, or between a tile and a baseQuery, then validation fails with: `/queries: Some query IDs are used in multiple query references (tiles, base queries, parameters)`.
 
 When duplicating a tile to a new page programmatically, also duplicate the query (assign a new `queryId`, keep the same `text` and `dataSource`) and point the new tile's `queryRef.queryId` at the new query.
 
-### ID uniqueness within category
+### ID uniqueness and format
 
-Every `id` in `tiles[]`, `queries[]`, `baseQueries[]`, `parameters[]`, `dataSources[]`, and `pages[]` must be a unique GUID within its category.
+Every `id` in `tiles[]`, `queries[]`, `baseQueries[]`, `parameters[]`, `dataSources[]`, and `pages[]` must be:
+
+- **Unique** within its category.
+- **A valid RFC 4122 UUID** (for example, `3e4666bf-d5e5-4aa7-b8ce-cefe41c7568a`). Readable strings that happen to have dashes (for example, `my-tile-0001-0000-0000-000000000001`) are rejected at load time with: `Needs to follow the UUID format as defined by RFC 4122`.
+
+For programmatic edits, generate IDs with a UUID library: `uuid.uuid4()` for fresh IDs, or `uuid.uuid5(namespace, label)` for deterministic IDs that survive script reruns.
+
+> [!TIP]
+> If you see a load error like `/tiles/N/queryRef ... must have required property 'baseQueryId'`, the actual fault is usually a malformed `queryRef.queryId`, not a missing `baseQueryId`. The schema's `queryRef` is a `oneOf` between `{ kind: "query", queryId: <uuid> }` and `{ kind: "baseQuery", baseQueryId: <uuid> }`. When the inner UUID is invalid, the validator fails the `query`-kind branch and reports failures from the `baseQuery`-kind branch instead. Fix the UUID and the cascade clears.
 
 ### Identity preservation across edits
 
-To preserve the link between the file and the live workspace item, do not modify the following on **existing** entries:
+To preserve the link between the file and the live workspace item, don't modify the following on **existing** entries:
 
 - Top-level: `id`, `eTag`, `schema_version`
 - Per tile: `id`, `pageId`, `queryRef.queryId`
@@ -221,10 +229,10 @@ To preserve the link between the file and the live workspace item, do not modify
 - Per parameter: `id`, `variableName` (and `beginVariableName` / `endVariableName` for `kind: "duration"`)
 - `.platform`: `config.logicalId`
 
-Modifying these will cause the change to be treated as a deletion and a re-creation on the next `Update from Git`, which will cause lost context: pinned-item references, share targets, and any state attached to the original `id`.
+Modifying these identifiers will cause the change to be treated as a deletion and a re-creation on the next `Update from Git`, which will cause lost context: pinned-item references, share targets, and any state attached to the original `id`.
 
 ### Parameters
-When a tile that uses a parameter (referenced via the query's `usedVariables`) is added to a new page, that parameter does not automatically appear on the new page. 
+When a tile that uses a parameter (referenced via the query's `usedVariables`) is added to a new page, that parameter doesn't automatically appear on the new page. 
 If the parameter's `showOnPages.kind` is `"selection"`, you need to append the new page's `id` to `showOnPages.pageIds`. 
 If the parameter has a usable `defaultValue`, then the tile renders with the default.
 
@@ -240,11 +248,11 @@ To copy a tile from page A to a newly added page B by editing `RealTimeDashboard
 1. Add page B to `pages[]` with a new `id`.
 2. Deep-copy the source tile in `tiles[]`. Assign:
    - new tile `id` (fresh GUID)
-   - `pageId` = page B's id
+   - `pageId` = page B's ID
 3. Find the source query in `queries[]` by the source tile's `queryRef.queryId`.
 4. Deep-copy the query into `queries[]` with a new `id`.
 5. Update the cloned tile's `queryRef.queryId` to the new query's `id`.
-6. For each parameter referenced in the cloned query's `usedVariables[]`: if `showOnPages.kind == "selection"`, append page B's id to `showOnPages.pageIds`.
+6. For each parameter referenced in the cloned query's `usedVariables[]`: if `showOnPages.kind == "selection"`, append page B's ID to `showOnPages.pageIds`.
 7. Validate that no `queryId` appears more than once across `tiles[]`, `baseQueries[]`, and `parameters[].dataSource.queryRef`.
 8. Commit, push, and run **Update from Git** on the workspace.
 

@@ -120,6 +120,14 @@ items:
     - name: FAQ about Mirroring Azure Databricks
       displayName: Frequently asked questions about mirroring Azure Databricks
       href: azure-databricks-faq.yml
+- name: Mirroring Dremio catalog
+  items:
+    - name: Mirrored Dremio catalog
+      href: catalog-mirroring/dremio.md
+    - name: Mirrored Dremio catalog tutorial
+      href: catalog-mirroring/dremio-tutorial.md
+    - name: Limitations
+      href: catalog-mirroring/dremio-limitations.md
 - name: Mirroring Google BigQuery
   items: 
     - name: Mirrored databases from Google BigQuery
