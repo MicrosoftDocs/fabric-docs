@@ -1,7 +1,7 @@
 ---
 title: Create templates for reusable row structures
 description: Learn how to create templates for reusing row structures in model
-ms.date: 04/26/2026
+ms.date: 04/28/2026
 ms.topic: how-to
 #customer intent: As a user, I want to learn how to create templates for reusing row structures in a model.
 ---
@@ -20,11 +20,11 @@ For example, a template such as **Net Profit** can be created once and then appl
 
 1. Consider the following model, which consists of repeated line items as rows for different companies.
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/sample-data-for-template.png" alt-text="Screenshot of a sample data model.":::
+    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/sample-data-for-template.png" alt-text="Screenshot of a sample data model." lightbox="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/sample-data-for-template.png":::
 
 1. To build a model structure that categorizes revenue and costs separately, you can create a template. A template is essentially a subset or a mini model that can be reused across your model for different categories wherever needed.
 
-    ```text
+    ```
     Gross Profit
         Gross Revenue
             Sales
@@ -38,20 +38,20 @@ For example, a template such as **Net Profit** can be created once and then appl
 
 1. Select the row where you want to insert the template, then select **Insert Template**.
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/insert-template.png" alt-text="Screenshot of selecting insert template option.":::
+    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/insert-template.png" alt-text="Screenshot of selecting insert template option." lightbox="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/insert-template.png":::
 
 1. Build the template as you would build a model. First, rename the template by double-clicking and updating the name.
 1. To add child rows, select the **+** icon (**Add Child**) or select **Insert Row**. Alternatively, you can use **Bulk Insert** to create the template structure at once.
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/insert-bulk-rows-for-template.png" alt-text="Screenshot of inserting rows in bulk for creating template.":::
+    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/insert-bulk-rows-for-template.png" alt-text="Screenshot of inserting rows in bulk for creating template." lightbox="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/insert-bulk-rows-for-template.png":::
 
     The template structure is created as shown:
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/created-template.png" alt-text="Screenshot of created template.":::
+    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/created-template.png" alt-text="Screenshot of created template." lightbox="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/created-template.png":::
 
 1. Configure the template's rows.
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/template-rows-configuration.png" alt-text="Screenshot of configuring rows in the template.":::
+    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/template-rows-configuration.png" alt-text="Screenshot of configuring rows in the template." lightbox="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/template-rows-configuration.png":::
 
 ## Ways to insert template
 
@@ -59,11 +59,11 @@ Templates can be inserted into the model in two ways:
 
 * **Append**: Append inserts the template row structure within the model as it is.
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/append-template.png" alt-text="Screenshot of appending template in the model.":::
+    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/append-template.png" alt-text="Screenshot of appending template in the model." lightbox="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/append-template.png":::
 
 * **Replace**: Replace replaces the existing model structure with the template's row structure.
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/replace-template.png" alt-text="Screenshot of replacing model structure with template.":::
+    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/replace-template.png" alt-text="Screenshot of replacing model structure with template." lightbox="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/replace-template.png" :::
 
 ### Set Conditions
 
@@ -94,13 +94,13 @@ Each group can have its own AND/OR logic, allowing you to control how conditions
 
 If you choose **Replace**, the template is applied to the model as shown below. The template cannot be edited directly from the model; instead, edit the template to modify the row structure.
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/apply-template-to-model.png" alt-text="Screenshot of applying the template to the model.":::
+:::image type="content" source="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/apply-template-to-model.png" alt-text="Screenshot of applying the template to the model." lightbox="../media/planning-model-builder/planning-how-to-create-templates-for-reusable-row-structures/apply-template-to-model.png":::
 
 You can create multiple templates for a model and apply them wherever required.
 
 ## Manage templates
 
-Select **Manage Template** to edit, duplicate, or delete inserted templates.
+Select **Manage Template** to edit, duplicate, or delete the created templates.
 
 Select the template that you want to modify from the list of available templates in the dropdown. Then choose the appropriate action icon to perform the required operation.
 
