@@ -22,71 +22,18 @@ This guide covers common use cases, real-world examples, and benchmarking result
 
 ## Quick reference
 
-Use the following table to match your workload to the right Dataflow Gen2 capability.
+Match your workload to the right Dataflow Gen2 capability. For a benchmark example of each, see the linked scenario.
 
-| Your goal | Recommended capability |
-|-----------|------------------------|
-| Copy large datasets quickly with no transformations | [**Fast Copy**](#use-fast-copy-when) |
-| Handle heavy data shaping efficiently | [**Modern Evaluator**](#use-modern-evaluator-when) |
-| Process large, partitioned datasets with complex transformations | [**Partitioned Compute**](#use-partitioned-compute-when) |
-| Stage data before applying transformations | [**Staging**](#use-staging-when) |
-| Scale transformation output for large datasets | [**High-Scale Compute**](#use-high-scale-compute-when) |
-
-### Use fast copy when
-
-- Your dataflow performs a direct copy from supported sources.  
-- You need high-throughput ingestion for large datasets.  
-- You want faster loads at lower compute cost.
-
-For a benchmark example, see [Scenario 1: Copy data](#scenario-1-copy-data).
-
-### Use modern evaluator when
-
-- You're working with non-foldable or partially foldable connectors.  
-- You're applying filters, column derivations, or data cleansing.  
-- You want faster, more efficient execution without changing logic.
-
-For a benchmark example, see [Scenario 2: Heavy data shaping](#scenario-2-heavy-data-shaping).
-
-### Use partitioned compute when
-
-- You're working with large, partitioned, or multi-file datasets.  
-- You can parallelize transformations (aggregations, joins, filters).  
-- You need high-performance, scalable data preparation pipelines.  
-- You can combine it with Modern Evaluator when supported.
-
-For a benchmark example, see [Scenario 3: Combine files](#scenario-3-combine-files).
-
-### Use staging when
-
-- You want to separate ingestion from transformation for better performance.
-- You need to land raw data before applying transformations.
-- You're working with large datasets where a copy-then-transform (ELT) approach is more efficient.
-
-For a benchmark example, see [Scenario 4: ELT patterns](#scenario-4-elt-patterns).
-
-### Use High-Scale Compute when
-
-- You're already using staging and referencing the staged query in a downstream query.
-- Your final destination is a lakehouse and you want to improve throughput when moving data from the staging warehouse to the lakehouse.
-- You need to scale transformation processing after ingestion for high-throughput ELT workloads.
-
-For a benchmark example, see [Scenario 4: ELT patterns](#scenario-4-elt-patterns).
-
-### Capability comparison
-
-The following table compares each capability in more detail, including typical benefits.
-
-| Capability          | Flagship scenario                                    | Ideal workload                                      | Typical benefits |
-|--------------------|------------------------------------------------------|------------------------------------------------------|------------------|
-| **Fast Copy**       | Copy data directly from source to destination        | Straight copy or ingestion workloads with minimal transformations | High-throughput data movement, lower cost |
-| **Modern Evaluator** | Transforming data from connectors that don't fold   | Heavy data shaping                                   | Faster data movement and improved query performance |
-| **Partitioned Compute** | Partitioned datasets                             | High-volume transformations across multi-file sources | Parallelized execution and faster processing |
-| **Staging** | Stage raw data before applying transformations | Large-scale ingestion followed by transformation | Separates ingestion from transformation for better performance |
-| **High-Scale Compute** | Scale output from a staged query to a lakehouse | ELT workloads that reference a staged query and write to a lakehouse destination | Maximized throughput from staging warehouse to lakehouse |
+| Capability | Use it when… | Key benefit | Benchmark |
+|---|---|---|---|
+| **Fast Copy** | You need a direct, high-throughput copy from a supported source with no transformations. | Faster ingestion at lower compute cost. | [Scenario 1: Copy data](#scenario-1-copy-data) |
+| **Modern Evaluator** | You're shaping data from non-foldable or partially foldable connectors (filters, derivations, cleansing). | Faster execution without changing logic. | [Scenario 2: Heavy data shaping](#scenario-2-heavy-data-shaping) |
+| **Partitioned Compute** | You're transforming large, partitioned, or multi-file datasets that can run in parallel. Combine with Modern Evaluator when supported. | Parallelized execution across partitions. | [Scenario 3: Combine files](#scenario-3-combine-files) |
+| **Staging** | You want to land raw data first, then transform (ELT) to avoid contention in a single pass. | Separates ingestion from transformation. | [Scenario 4: ELT patterns](#scenario-4-elt-patterns) |
+| **High-Scale Compute** | You're already using staging, referencing the staged query downstream, and writing to a lakehouse destination. | Maximizes throughput from the staging warehouse to the lakehouse. | [Scenario 4: ELT patterns](#scenario-4-elt-patterns) |
 
 > [!NOTE]
-> For more information on query evaluation and query folding, see this [Power Query article](/power-query/query-folding-basics). It provides a framework that can help you understand the concepts discussed here.
+> For background on query evaluation and query folding, see [Query folding basics](/power-query/query-folding-basics).
 
 ## Benchmark results summary
 
@@ -94,12 +41,12 @@ All scenarios in this guide use the [**New York City Taxi & Limousine Commission
 
 The following table summarizes the benchmark results across all scenarios. Each scenario also includes a Dataflow Gen1 baseline for comparison.
 
-| Scenario | Capability enabled | Gen2 execution time | Speedup vs. Gen1 baseline |
-|----------|-------------------|---------------------|---------------------------|
-| Bulk ingestion (5 files → lakehouse) | Fast Copy | 00:07:43 | 13× faster |
-| Heavy data shaping (1 file → lakehouse) | Modern Evaluator | 00:46:15 | 1.6× faster |
-| Partitioned transforms (56 files → warehouse) | Partitioned Compute | 00:04:48 | 21× faster |
-| ELT patterns (staging + transform) | Fast Copy + Staging + High-Scale Compute | TBD | TBD |
+| Scenario | What it does | Capability enabled | Gen2 execution time | Speedup vs. Gen1 baseline |
+|----------|--------------|--------------------|---------------------|---------------------------|
+| [Scenario 1: Copy data](#scenario-1-copy-data) | Bulk-load 5 consolidated Parquet files from ADLS Gen2 into a lakehouse with no transformations. | Fast Copy | 00:07:43 | 13× faster |
+| [Scenario 2: Heavy data shaping](#scenario-2-heavy-data-shaping) | Apply non-foldable transformations (filters, derivations, cleansing) to a single large Parquet file loaded into a lakehouse. | Modern Evaluator | 00:46:15 | 1.6× faster |
+| [Scenario 3: Combine files](#scenario-3-combine-files) | Combine and transform 56 partitioned Parquet files in parallel and load into a warehouse. | Partitioned Compute | 00:04:48 | 21× faster |
+| [Scenario 4: ELT patterns](#scenario-4-elt-patterns) | Stage raw data first, then transform downstream and write to a lakehouse. | Fast Copy + Staging + High-Scale Compute | TBD | TBD |
 
 For step-by-step details, dataset configurations, and design patterns for each capability, see the scenario sections that follow.
 
