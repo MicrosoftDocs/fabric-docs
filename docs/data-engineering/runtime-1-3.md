@@ -15,7 +15,7 @@ Fabric runtime offers a seamless integration with Azure. It provides a sophistic
 Microsoft Fabric Runtime 1.3 is the latest GA runtime version and incorporates the following components and upgrades designed to enhance your data processing capabilities:
 
 - Apache Spark 3.5
-- Operating System: Mariner 2.0 (Azure Linux 2.0)
+- Operating system: Mariner 2.0 (Azure Linux 2.0)
 - Java: 11
 - Scala: 2.12.17
 - Python: 3.11
