@@ -30,7 +30,7 @@ In this tutorial step, you generate an ontology from the sample semantic model t
 
     :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/generate-ontology-1-a.png" alt-text="Screenshot of Generate ontology button in the ribbon of an open semantic model." lightbox="media/tutorial-1-create-ontology/semantic-model/generate-ontology-1-a.png":::
 
-    If the semantic model was previously closed, you can also select **Generate Ontology** from the model overview page without opening the model.
+    If you closed the semantic model earlier, you can select **Generate Ontology** from the model overview page without opening the model.
 
     :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/generate-ontology-1-b.png" alt-text="Screenshot of Generate ontology button in the ribbon of the semantic model overview." lightbox="media/tutorial-1-create-ontology/semantic-model/generate-ontology-1-b.png":::
 
@@ -159,6 +159,9 @@ Follow these steps to configure the details of each relationship type.
 
     :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/verify-relationship-types.png" alt-text="Screenshot of a the new from relationship type." lightbox="media/tutorial-1-create-ontology/semantic-model/verify-relationship-types.png":::
 
+    >[!IMPORTANT]
+    >Make sure to select the correct **Matched** columns that match the entity type key properties.
+
 1. **Save** the configuration. Confirm that the relationship type updated successfully, then select **Cancel** to close the configuration options.
 1. Select **Home** to return to the configuration canvas to access the other relationship type.
 1. Repeat these steps until all relationship types are updated.
@@ -237,8 +240,8 @@ First, create entity types. Entity types represent types of objects in a busines
 1. Fields from the source table populate the data binding configuration. Observe the sections of the configuration page:
     * **Entity type key**: Identifies the field (or fields) that can be used to uniquely identify each record of ingested data.
     * **Binding selection**: Identifies the source table that holds the data for the binding.
-    * **Entity type key mapping**: Identifies the column(s) in the source data table that maps to the entity type key property. You can select string and integer columns from your source data as the entity type key. Together, the columns you select uniquely identify a record.
-    * **Properties**: Lists the columns from the source data that will be represented as properties on your Store entity type. The **Source column** side populates automatically with the columns from the *dimstore* table, and the **Property name** side lists their corresponding property names on the *Store* entity type within ontology. Don't change the default property names, which match the source column names.
+    * **Entity type key mapping**: Identifies the column(s) in the source data table that map to the entity type key property. You can select string and integer columns from your source data as the entity type key. Together, the columns you select uniquely identify a record.
+    * **Properties**: Lists the columns from the source data that will be represented as properties on the *Store* entity type. The **Source column** side populates automatically with the columns from the *dimstore* table, and the **Property name** side lists their corresponding property names on the *Store* entity type within ontology. For this tutorial, keep the default property names.
 
     :::image type="content" source="media/tutorial-1-create-ontology/onelake/store-bind-data-4.png" alt-text="Screenshot of the configuration." lightbox="media/tutorial-1-create-ontology/onelake/store-bind-data-4.png":::
 
@@ -254,7 +257,7 @@ First, create entity types. Entity types represent types of objects in a busines
 
      :::image type="content" source="media/tutorial-1-create-ontology/onelake/store-bind-data-7.png" alt-text="Screenshot of closing the data binding." lightbox="media/tutorial-1-create-ontology/onelake/store-bind-data-7.png":::
 
-1. You see the **Configure** page for the entity. This page surfaces important information about the entity type, including its properties and data bindings. View your configured data bindings.
+1. You see the **Configure** page of the entity type details. This page surfaces important information about the entity type, including its properties and data bindings. View your configured data bindings.
 
      :::image type="content" source="media/tutorial-1-create-ontology/onelake/store-bind-data-8.png" alt-text="Screenshot of the data bindings in the Configure page." lightbox="media/tutorial-1-create-ontology/onelake/store-bind-data-8.png":::
 
@@ -285,7 +288,7 @@ Next, create relationship types between the entity types to represent contextual
 
 1. Select the **SaleEvent** entity type from the **Explorer**.
 
-1. Select either **Add relationship** from the menu ribbon, or **... > Add relationship type** from the configuration canvas.
+1. Select **Add relationship** from the menu ribbon, or **... > Add relationship type** from the configuration canvas.
 
     :::image type="content" source="media/tutorial-1-create-ontology/onelake/relationship-type-1.png" alt-text="Screenshot of adding a relationship type." lightbox="media/tutorial-1-create-ontology/onelake/relationship-type-1.png":::
 
@@ -306,17 +309,17 @@ Next, create relationship types between the entity types to represent contextual
 
 1. In the middle section, enter the following details.
     1. **Mapping table**: **Browse available sources** and select the *factsales* table. This table in the source data can link *Store* and *SaleEvent* entities together, because it contains identifying information for both entity types. Each row in this table references a store and a sale event by ID.
-    1. **Matched SaleEvent: SaleId**: This field populates automatically with `SaleId`. This setting specifies the column in the relationship source data table whose values match the key property defined on the *SaleEvent* entity. In this case, the relationship data source and the entity data source both use the *factsales* table, so you're selecting the same column (`SaleId`).
+    1. **Matched SaleEvent: SaleId**: Select `SaleId`. This setting specifies the column in the relationship source data table whose values match the key property defined on the *SaleEvent* entity. In this case, the relationship data source and the entity data source both use the *factsales* table, so you're selecting the same column (`SaleId`).
     1. **Matched Store: StoreId**: Select `StoreId`. This setting specifies the column in the relationship source data table (*factsales >* `StoreId`) whose values match the key property defined on the *Store* entity (*dimstore >* `StoreId`). In the tutorial data, the column name is the same (`StoreId`) in both tables.
 
     :::image type="content" source="media/tutorial-1-create-ontology/onelake/relationship-type-4.png" alt-text="Screenshot of the completed relationship type configuration." lightbox="media/tutorial-1-create-ontology/onelake/relationship-type-4.png":::
 
     >[!IMPORTANT]
-    >Make sure to select the correct source columns that match the entity type key properties.
+    >Make sure to select the correct **Matched** columns that match the entity type key properties.
 
 1. **Save** the relationship type. Confirm that the relationship type updated successfully, then select **Cancel** to close the configuration options.
 
-1. You see the **Configure** page for the entity, where the new relationship is visible next to the data bindings for the entity type. 
+1. You see the **Configure** page in the entity type overview, where the new relationship is visible next to the data bindings for the entity type. 
 
      :::image type="content" source="media/tutorial-1-create-ontology/onelake/relationship-type-5.png" alt-text="Screenshot of the relationship type in the Configure page." lightbox="media/tutorial-1-create-ontology/onelake/relationship-type-5.png":::
 

@@ -19,7 +19,7 @@ When you bound data to your entity types in previous tutorial steps, ontology au
 
 1. Start in the Home configuration canvas of ontology. Select the *SaleEvent* entity type, and **View Entity Type details** from the top ribbon.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/view-entity-type-details.png" alt-text="Screenshot of opening the entity type details for SaleEvent.":::
+    :::image type="content" source="media/tutorial-3-preview-ontology/view-entity-type-details.png" alt-text="Screenshot of opening the entity type details for SaleEvent." lightbox="media/tutorial-3-preview-ontology/view-entity-type-details.png":::
 
 1. Open the **Instances** tab. Verify that it shows six entity instances with data populated from the *factsales* lakehouse table, like revenue and unit counts.
 
@@ -34,7 +34,7 @@ When you bound data to your entity types in previous tutorial steps, ontology au
 
     :::image type="content" source="media/tutorial-3-preview-ontology/switch-freezer.png" alt-text="Screenshot of switching to a different entity type." lightbox="media/tutorial-3-preview-ontology/switch-freezer.png":::
 
-1. Open the **Overview** tab. The tab loads with empty charts, because the default time range of "Last 30 days" doesn't include any data.
+1. Open the **Overview** tab. The tab loads with empty charts, because the default time range of *Last 30 days* doesn't include any data.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/overview.png" alt-text="Screenshot of the Overview tab." lightbox="media/tutorial-3-preview-ontology/overview.png":::
 
@@ -42,7 +42,7 @@ When you bound data to your entity types in previous tutorial steps, ontology au
 
     :::image type="content" source="media/tutorial-3-preview-ontology/freezer-telemetry-edit-time.png" alt-text="Screenshot of the time selector." lightbox="media/tutorial-3-preview-ontology/freezer-telemetry-edit-time.png":::
 
-1. Observe the time series data that's now visible from different *Freezer* entity instances in the time window you selected.
+1. Observe the time series data that's now visible from several *Freezer* entity instances in the time window you selected.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/freezer-telemetry.png" alt-text="Screenshot of the time series tiles." lightbox="media/tutorial-3-preview-ontology/freezer-telemetry.png":::
 
@@ -54,7 +54,7 @@ The **Overview** tab also contains a **Relationship graph**, which you use to vi
 
     :::image type="content" source="media/tutorial-3-preview-ontology/relationship-graph-sale.png" alt-text="Screenshot of expanding the SaleEvent relationship graph." lightbox="media/tutorial-3-preview-ontology/relationship-graph-sale.png":::
 
-1. The expanded graph view opens. Observe the details of the relationships to the *SaleEvent* entity type from *Store* and *Products*.
+1. The expanded graph view opens. Observe the details of the relationships from the *SaleEvent* entity type to *Products* and *Store*.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/relationship-graph-expanded.png" alt-text="Screenshot of data in the expanded relationship graph." lightbox="media/tutorial-3-preview-ontology/relationship-graph-expanded.png":::
 
@@ -62,12 +62,12 @@ The **Overview** tab also contains a **Relationship graph**, which you use to vi
 
     :::image type="content" source="media/tutorial-3-preview-ontology/relationship-graph-store.png" alt-text="Screenshot of expanding the Store relationship graph." lightbox="media/tutorial-3-preview-ontology/relationship-graph-store.png":::
 
-1. In the graph, observe the relationship between *Store* and *SaleEvent*, and the relationship between *Store* and *Freezer*. Then, select **Run query** in the query builder ribbon. This action runs the default query and shows a graph of entity instances alongside their connections.
+1. In the graph, observe the relationships that *Store* has with *Freezer* and *SaleEvent*. Then, select **Run query** in the query builder ribbon. This action runs the default query and shows a graph of entity instances alongside their connections.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/relationship-default-query.png" alt-text="Screenshot of the Store relationship graph and instances." lightbox="media/tutorial-3-preview-ontology/relationship-default-query.png":::
 
->[!TIP]
->If the graph looks sparse, check the entity type keys in the data bindings and verify that they match the keys defined in [Create entity types and data bindings](tutorial-1-create-ontology.md#create-entity-types-and-data-bindings). For example, the key for the *SaleEvent* entity type is `SaleId`.
+    >[!TIP]
+    >If the graph result looks sparse, check the entity type keys in the data bindings and verify that they match the keys defined in [Create entity types and data bindings](tutorial-1-create-ontology.md#create-entity-types-and-data-bindings). For example, the key for the *SaleEvent* entity type is `SaleId`.
 
 ## Query graph instances
 

@@ -24,13 +24,15 @@ Follow these steps to create the *Freezer* entity type and add properties to it.
 
 1. Start in the Home configuration canvas of ontology. Select **Add entity type** from the top ribbon. Enter *Freezer* for the name of your entity type and select **Add Entity Type**.
 
-    :::image type="content" source="media/tutorial-2-enrich-ontology/add-freezer.png" alt-text="Screenshot of adding the new Freezer entity type.":::
+    :::image type="content" source="media/tutorial-2-enrich-ontology/add-freezer.png" alt-text="Screenshot of adding the new Freezer entity type." lightbox="media/tutorial-2-enrich-ontology/add-freezer.png":::
 
 1. With the Freezer entity type selected in the **Explorer**, select **View entity type details** from the top ribbon. 
 
     :::image type="content" source="media/tutorial-2-enrich-ontology/view-entity-type-details.png" alt-text="Screenshot of the button to view Freezer entity type details.":::
 
-1. The **Configure** page opens. This page surfaces important information about the entity type, including its properties and data bindings. Expand **Manage property bindings** and select **Add properties**.
+1. The **Configure** page of the entity type details opens. This page surfaces important information about the entity type, including its properties and data bindings. 
+
+    Expand **Manage property bindings** and select **Add properties**.
 
     :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-properties-1.png" alt-text="Screenshot of adding properties to the Freezer entity type." lightbox="media/tutorial-2-enrich-ontology/freezer-properties-1.png":::
 
@@ -43,14 +45,11 @@ Follow these steps to create the *Freezer* entity type and add properties to it.
     | `minSafeTempC` | Double |
     | `StoreId` | String |
 
-    >[!NOTE]
-    >Property names must be unique across all entity types.
-
     Here's what it looks like before saving:
 
     :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-properties-2.png" alt-text="Screenshot of the properties for the Freezer entity type.":::
 
-The properties are added to the **Configure** page, labeled as unbound to any data source.
+The properties are added to the **Configure** page, unbound to any data source.
 
 :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-properties-3.png" alt-text="Screenshot of the new unbound properties on the Freezer entity type." lightbox="media/tutorial-2-enrich-ontology/freezer-properties-3.png":::
 
@@ -75,8 +74,8 @@ Next, bind static data to the properties you created on the *Freezer* entity typ
 1. Fields from the source table populate the data binding configuration. Observe the sections of the configuration page:
     * **Entity type key**: Identifies the field (or fields) that can be used to uniquely identify each record of ingested data.
     * **Binding selection**: Identifies the source table that holds the data for the binding.
-    * **Entity type key mapping**: Identifies the column(s) in the source data table that maps to the entity type key property. You can select string and integer columns from your source data as the entity type key. Together, the columns you select uniquely identify a record.
-    * **Properties**: Lists the columns from the source data and corresponding properties on the *Freezer* entity type. The **Source column** side populates automatically with the columns from the *freezer* table, and the **Property name** side lists their corresponding property names on the *Freezer* entity type within ontology. Don't change the default property names, which match the source column names.
+    * **Entity type key mapping**: Identifies the column(s) in the source data table that map to the entity type key property. You can select string and integer columns from your source data as the entity type key. Together, the columns you select uniquely identify a record.
+    * **Properties**: Lists the columns from the source data and corresponding properties on the *Freezer* entity type. The **Source column** side populates automatically with the columns from the *freezer* table, and the **Property name** side lists their corresponding property names on the *Freezer* entity type within ontology. For this tutorial, keep the default property names.
 
     :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-4.png" alt-text="Screenshot of the configuration." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-4.png":::
 
@@ -86,7 +85,7 @@ Next, bind static data to the properties you created on the *Freezer* entity typ
 
 1. **Save** the data binding. Confirm that the entity type updated successfully, then select **Cancel** to close the configuration options.
 
-1. Back in the **Configure** page for *Freezer*, view the same list of properties and see that they're now bound to a data source.
+1. Back in the **Configure** page for *Freezer*, view the list of properties and see that they're now bound to a data source.
 
     :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-6.png" alt-text="Screenshot of the data bindings in the Configure page." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-6.png":::
 
@@ -151,9 +150,9 @@ Finally, create a new relationship type to represent the connection between a st
      :::image type="content" source="media/tutorial-2-enrich-ontology/relationship-type-3.png" alt-text="Screenshot of the relationship type configuration." lightbox="media/tutorial-2-enrich-ontology/relationship-type-3.png":::
 
 1. In the middle section, enter the following details.
-    1. **Mapping table**: Expand **Browse available sources** and choose the *freezer* table. This table in the source data can link *Store* and *Freezer* entities together, because it contains identifying information for both entity types. Each row in this table references a store and a freezer by ID.
+    1. **Mapping table**: Select the *freezer* table. This table in the source data can link *Store* and *Freezer* entities together, because it contains identifying information for both entity types. Each row in this table references a store and a freezer by ID.
     1. **Matched Store: StoreId**: Select `StoreId`. This setting specifies the column in the relationship source data table (*freezer >* `StoreId`) whose values match the key property defined on the *Store* entity (*dimstore >* `StoreId`). In the tutorial data, the column name is the same (`StoreId`) in both tables.
-    1. **Matched Store: StoreId**: This field populates automatically with `FreezerId`. This setting specifies the column in the relationship source data table whose values match the key property defined on the *Freezer* entity. In this case, the relationship data source and the entity data source both use the *freezer* table, so you're selecting the same column (`FreezerId`).
+    1. **Matched Freezer: FreezerId**: Select `FreezerId`. This setting specifies the column in the relationship source data table whose values match the key property defined on the *Freezer* entity. In this case, the relationship data source and the entity data source both use the *freezer* table, so you're selecting the same column (`FreezerId`).
 
     :::image type="content" source="media/tutorial-2-enrich-ontology/relationship-type-4.png" alt-text="Screenshot of the completed relationship type configuration." lightbox="media/tutorial-2-enrich-ontology/relationship-type-4.png":::
 
