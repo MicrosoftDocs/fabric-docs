@@ -21,9 +21,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: What is administration in Fabric?
-            url: microsoft-fabric-admin.md       
-          - text: What is the admin portal?
-            url: admin-center.md                
+            url: admin-overview.md
       - linkListType: get-started
         links:
           - text: Enable Fabric for your organization
