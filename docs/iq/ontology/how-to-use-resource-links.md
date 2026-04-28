@@ -28,11 +28,11 @@ Before adding resource links, make sure you have the following prerequisites:
 
 To add a link to an existing Power BI report on an entity type, follow these steps.
 
-1. From the Home contextual canvas, select the entity type from the **Explorer** pane. Select **View Entity Type details** from the ribbon.
+1. In the Home contextual canvas, select the entity type in the **Explorer** pane. Select **View Entity Type details** from the ribbon.
 
     :::image type="content" source="media/how-to-use-resource-links/view-entity-type-details.png" alt-text="Screenshot of selecting View Entity Type details from the canvas." lightbox="media/how-to-use-resource-links/view-entity-type-details.png":::
 
-    The **Configure** tab opens.
+    The entity type details view opens to the **Configure** tab.
 
 1. The **Resources** section displays any linked resources. Select **Add** to add a new resource link.
 
@@ -40,7 +40,7 @@ To add a link to an existing Power BI report on an entity type, follow these ste
 
 1. Fabric opens your OneLake catalog of resources. Choose the Power BI report you want to link to the entity type, and select **Add**.
 
-1. Verify that the report appears now in the **Resources** section.
+1. Verify that the report appears in the **Resources** section.
 
     :::image type="content" source="media/how-to-use-resource-links/resources-entry.png" alt-text="Screenshot of a resource inside the Resources section." lightbox="media/how-to-use-resource-links/resources-entry.png":::
 
@@ -50,13 +50,13 @@ You can view resources linked to an entity type from the following locations.
 
 ### Configure tab
 
-The list of resources linked to an entity type is visible in the **Configure** tab in the entity type details, in the **Resources** section.
+The list of resources linked to an entity type is visible in the **Configure** tab of the entity type details, in the **Resources** section.
 
 :::image type="content" source="media/how-to-use-resource-links/resources-entry.png" alt-text="Screenshot of a resource inside the Resources section of the Configure tab." lightbox="media/how-to-use-resource-links/resources-entry.png":::
 
 ### Overview tab
 
-Linked resources can be displayed on in a tile on the **Overview** tab of the entity type details. An entity type can only have one **Resource links** tile at a time.
+Linked resources can be displayed in a tile on the **Overview** tab of the entity type details. An entity type can only have one **Resource links** tile at a time.
 
 :::image type="content" source="media/how-to-use-resource-links/resource-links-tile.png" alt-text="Screenshot of the Resource links tile on the Overview tab." lightbox="media/how-to-use-resource-links/resource-links-tile.png":::
 
@@ -103,7 +103,7 @@ To remove a linked resource from an entity type:
 
 To remove linked resources from the **Overview** tab, remove the entire Resource links tile. (You can't keep the tile while deleting individual links from it.)
 
-1. Expand the **...** options on the Resource links tile and select **Delete**.
+1. Expand the **...** options on the **Resource links** tile and select **Delete**.
 
     :::image type="content" source="media/how-to-use-resource-links/delete-tile.png" alt-text="Screenshot of deleting the Resource links tile from the entity type overview." lightbox="media/how-to-use-resource-links/delete-tile.png":::
 

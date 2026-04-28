@@ -35,7 +35,7 @@ Rules use the following ontology (preview) concepts. For definitions of these te
 
 ## Create a rule
 
-1. Open the rules configuration from the Home configuration canvas, or from the entity type details.
+1. Open the rules configuration from the Home configuration canvas or from the entity type details.
 
     To open rules from the configuration canvas, select **...** next to an entity type name to open its options menu. Hover over **Manage rules**, then select **Add rule**.
 
@@ -49,7 +49,7 @@ Rules use the following ontology (preview) concepts. For definitions of these te
 
     :::image type="content" source="media/how-to-use-rules/add-rule.png" alt-text="Screenshot of Add rule panel." lightbox="media/how-to-use-rules/add-rule.png":::
 
-1. Configure the rule, including overall **Details**, **Monitor** settings, **Conditions**, **Actions**, and **Save location**. 
+1. Configure the rule, including **Details**, **Monitor**, **Conditions**, **Actions**, and **Save location**. 
 
     While configuring, keep the following notes in mind:
 
@@ -74,8 +74,6 @@ In the **Rules** pane, you can:
 
     :::image type="content" source="media/how-to-use-rules/edit-activator-overall.png" alt-text="Screenshot of editing the overall activator instance used for ontology rules.":::
 
-* Manage the rule further by selecting **...** next to the rule name to open its options menu. From here, you can **Edit** the rule, **Delete** the rule, or **Open in Activator**. 
+* Manage the rule by selecting **...** next to the rule name to open its options menu. From here, you can **Edit** the rule, **Delete** the rule, or **Open in Activator**. Opening a rule in Fabric Activator lets you make more edits to the rule and analyze its conditions and actions. For more information, see [Create a rule in Fabric Activator](../../real-time-intelligence/data-activator/activator-create-activators.md).
 
     :::image type="content" source="media/how-to-use-rules/rule-options.png" alt-text="Screenshot of the options for a rule.":::
-    
-    In Fabric Activator, you can make further edits to the rule and analyze its conditions and actions. For more information, see [Create a rule in Fabric Activator](../../real-time-intelligence/data-activator/activator-create-activators.md).
