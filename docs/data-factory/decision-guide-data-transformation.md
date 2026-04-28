@@ -2,7 +2,7 @@
 title: "Microsoft Fabric Decision Guide: Choose a dataflow strategy"
 description: "Identify the best strategy for your Microsoft Fabric data transformation."
 ms.reviewer: krirukm
-ms.date: 4/16/2026
+ms.date: 6/4/2026
 ms.topic: concept-article
 ---
 
@@ -12,11 +12,11 @@ Microsoft Fabric Dataflows Gen2 offers multiple ways to ingest, transform, and l
 
 The following capabilities help you optimize your dataflows:
 
-- **Staging queries** – Land data in an intermediate layer before applying transformations, enabling ELT patterns.  
+- [**Staging queries**](dataflow-gen2-data-destinations-and-managed-settings.md#using-staging-before-loading-to-a-destination) – Land data in an intermediate layer before applying transformations, enabling ELT patterns.  
 - **V-Ordering** – Optimize the physical layout of Parquet files during writes for faster write and read performance.  
 - **High-Scale Compute output** – Scale transformation processing after ingestion for high-throughput ELT workloads.  
 - [**Fast copy**](dataflows-gen2-fast-copy.md) – Accelerate bulk data movement with minimal transformation.  
-- [**Modern Evaluator**](dataflow-gen2-modern-evaluator.md) – Optimize complex transformation performance for non-foldable queries.  
+- [**Modern Evaluator**](dataflow-gen2-modern-evaluator.md) – Speed up heavy data shaping on non-foldable queries.  
 - [**Partitioned compute**](dataflow-gen2-partitioned-compute.md) – Scale transformations across large and partitioned datasets.  
 - **Incremental refresh** – Refresh only new or changed data to reduce processing time and compute cost.
 
@@ -29,7 +29,7 @@ Use the following table to match your workload to the right Dataflow Gen2 capabi
 | Your goal | Recommended capability |
 |-----------|------------------------|
 | Copy large datasets quickly with no transformations | [**Fast Copy**](#use-fast-copy-when) |
-| Run complex transformations efficiently | [**Modern Evaluator**](#use-modern-evaluator-when) |
+| Handle heavy data shaping efficiently | [**Modern Evaluator**](#use-modern-evaluator-when) |
 | Process large, partitioned datasets with complex transformations | [**Partitioned Compute**](#use-partitioned-compute-when) |
 | Stage data before applying transformations | [**Staging**](#use-staging-when) |
 | Scale transformation output for large datasets | [**High-Scale Compute**](#use-high-scale-compute-when) |
@@ -50,7 +50,7 @@ For a benchmark example, see [Scenario 1: Copy data](#scenario-1-copy-data).
 - You're applying filters, column derivations, or data cleansing.  
 - You want faster, more efficient execution without changing logic.
 
-For a benchmark example, see [Scenario 2: Complex transformations](#scenario-2-complex-transformations).
+For a benchmark example, see [Scenario 2: Heavy data shaping](#scenario-2-heavy-data-shaping).
 
 ### Use partitioned compute when
 
@@ -71,9 +71,9 @@ For a benchmark example, see [Scenario 4: ELT patterns](#scenario-4-elt-patterns
 
 ### Use High-Scale Compute when
 
-- TBD
-- TBD
-- TBD
+- You're already using staging and referencing the staged query in a downstream query.
+- Your final destination is a lakehouse and you want to improve throughput when moving data from the staging warehouse to the lakehouse.
+- You need to scale transformation processing after ingestion for high-throughput ELT workloads.
 
 For a benchmark example, see [Scenario 4: ELT patterns](#scenario-4-elt-patterns).
 
@@ -95,17 +95,17 @@ For a benchmark example, see [Scenario 6: Write-time optimization](#scenario-6-w
 
 ### Capability comparison
 
-The following table compares each capability in more detail, including supported sources and typical benefits.
+The following table compares each capability in more detail, including typical benefits.
 
-| Capability          | Flagship scenario                                    | Ideal workload                                      | Supported sources | Typical benefits |
-|--------------------|------------------------------------------------------|------------------------------------------------------|-------------------|------------------|
-| **Fast Copy**       | Copy data directly from source to destination        | Straight copy or ingestion workloads with minimal transformations | ADLS Gen2, Blob storage, Azure SQL DB, Lakehouse, PostgreSQL, On-premises SQL Server, Warehouse, Oracle, Snowflake, Fabric SQL DB | High-throughput data movement, lower cost |
-| **Modern Evaluator** | Transforming data from connectors that don’t fold   | Complex transformations                              | Azure Blob Storage, ADLS Gen2, Lakehouse, Warehouse, OData, Power Platform Dataflows, SharePoint Online List, SharePoint folder, Web | Faster data movement and improved query performance |
-| **Partitioned Compute** | Partitioned datasets                             | High-volume transformations across multi-file sources | ADLS Gen2, Azure Blob Storage, Lakehouse files, Local folders | Parallelized execution and faster processing |
-| **Staging** | Stage raw data before applying transformations | Large-scale ingestion followed by transformation | ADLS Gen2, Blob storage, Azure SQL DB, Lakehouse, PostgreSQL, On-premises SQL Server, Warehouse, Oracle, Snowflake, Fabric SQL DB | Separates ingestion from transformation for better performance |
-| **High-Scale Compute** | TBD | TBD | Fabric Lakehouse | Maximized throughput during output stage |
-| **Incremental Refresh** | Incremental data loads | Growing datasets where only new or changed data needs processing | Sources that support date-based or key-based filtering | Reduced refresh times, lower compute cost |
-| **V-Ordering** | Write-time optimization to Fabric sources | Workloads loading into Fabric lakehouses or warehouses | Fabric Lakehouse, Fabric Warehouse | Faster writes, optimized Parquet layout for reads |
+| Capability          | Flagship scenario                                    | Ideal workload                                      | Typical benefits |
+|--------------------|------------------------------------------------------|------------------------------------------------------|------------------|
+| **Fast Copy**       | Copy data directly from source to destination        | Straight copy or ingestion workloads with minimal transformations | High-throughput data movement, lower cost |
+| **Modern Evaluator** | Transforming data from connectors that don't fold   | Heavy data shaping                                   | Faster data movement and improved query performance |
+| **Partitioned Compute** | Partitioned datasets                             | High-volume transformations across multi-file sources | Parallelized execution and faster processing |
+| **Staging** | Stage raw data before applying transformations | Large-scale ingestion followed by transformation | Separates ingestion from transformation for better performance |
+| **High-Scale Compute** | Scale output from a staged query to a lakehouse | ELT workloads that reference a staged query and write to a lakehouse destination | Maximized throughput from staging warehouse to lakehouse |
+| **Incremental Refresh** | Incremental data loads | Growing datasets where only new or changed data needs processing | Reduced refresh times, lower compute cost |
+| **V-Ordering** | Write-time optimization to Fabric sources | Workloads loading into Fabric lakehouses or warehouses | Faster writes, optimized Parquet layout for reads |
 
 > [!NOTE]
 > For more information on query evaluation and query folding, see this [Power Query article](/power-query/query-folding-basics). It provides a framework that can help you understand the concepts discussed here.
@@ -119,7 +119,7 @@ The following table summarizes the benchmark results across all scenarios. Each 
 | Scenario | Capability enabled | Gen2 execution time | Speedup vs. Gen1 baseline |
 |----------|-------------------|---------------------|---------------------------|
 | Bulk ingestion (5 files → lakehouse) | Fast Copy | 00:07:43 | 13× faster |
-| Complex transforms (1 file → warehouse) | Modern Evaluator | 01:00:58 | 1.2× faster |
+| Heavy data shaping (1 file → warehouse) | Modern Evaluator | 01:00:58 | 1.2× faster |
 | Partitioned transforms (56 files → warehouse) | Partitioned Compute | 00:04:48 | 21× faster |
 | ELT patterns (staging + transform) | Fast Copy + Staging + High-Scale Compute | TBD | TBD |
 | Incremental refresh | Incremental Refresh | TBD | TBD |
@@ -184,7 +184,7 @@ This run took an hour and nine minutes to copy the data without fast copy enable
 
 This run took seven minutes to copy the data with fast copy enabled.
 
-## Scenario 2: Complex transformations
+## Scenario 2: Heavy data shaping
 
 After ingestion, the team applies filtering, null replacement, and code mapping before loading data into the Warehouse. These transformations don't fully fold back to Parquet and are slow in memory.
 
