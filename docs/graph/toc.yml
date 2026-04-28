@@ -43,18 +43,34 @@ items:
         href: security-overview.md
   - name: How-tos
     items:
-      - name: Design a graph schema
-        href: design-graph-schema.md
-      - name: Share and manage permissions
-        href: share-graph-manage-permissions.md
-      - name: Manage data
-        href: manage-data.md
-      - name: Monitor graph status
-        href: monitoring-overview.md
-      - name: Monitor graph performance
-        href: monitor-graph-performance.md
-      - name: Optimize GQL query performance
-        href: gql-query-performance.md
+      - name: Graph Modeling
+        items:
+          - name: Design a graph schema
+            href: design-graph-schema.md
+          - name: Convert relational data to a graph model
+            href: convert-relational-data-to-graph-model.md
+      - name: Data Management
+        items:
+          - name: Share and manage permissions
+            href: share-graph-manage-permissions.md
+          - name: Manage data
+            href: manage-data.md
+      - name: Querying
+        items:
+          - name: Write common GQL queries
+            href: write-common-gql-queries.md
+          - name: Filter and aggregate graph data
+            href: filter-aggregate-graph-data.md
+          - name: Write graph pattern queries
+            href: write-graph-pattern-queries.md
+          - name: Optimize GQL query performance
+            href: gql-query-performance.md
+      - name: Integration & Operations
+        items:
+          - name: Monitor graph status
+            href: monitoring-overview.md
+          - name: Monitor graph performance
+            href: monitor-graph-performance.md
   - name: Troubleshoot
     items:
       - name: Troubleshooting

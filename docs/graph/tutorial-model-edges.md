@@ -2,7 +2,7 @@
 title: "Tutorial: Add edge types to your graph"
 description: Learn how to add edge types to define relationships between nodes in your graph in Microsoft Fabric model, including configuring source and destination nodes.
 ms.topic: tutorial
-ms.date: 04/14/2026
+ms.date: 04/27/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Add edges to your graph
 ai-usage: ai-assisted
@@ -15,12 +15,7 @@ ai-usage: ai-assisted
 In this tutorial step, you add edge types to your graph model. Edges define the relationships between nodes, such as "`Customer` purchases `Order`" or "`Employee` sells `Order`."
 
 > [!IMPORTANT]
-> When you define an edge type, use a mapping table that contains two columns such that:
->
-> - One column matches the **source node's key** in terms of values and data type.
-> - Another column matches the **target node's key** in terms of values and data type.
->
-> Tables that you use to create node types can also serve as edge mapping tables if they meet this requirement.
+> For canonical edge-mapping requirements, including source and target key compatibility and data type alignment, see [Choose edge types](design-graph-schema.md#choose-edge-types).
 
 ## Adventure Works edge mappings
 
