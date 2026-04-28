@@ -128,7 +128,7 @@ The following table summarizes the benchmark results across all scenarios. Each 
 For step-by-step details, dataset configurations, and design patterns for each capability, see the scenario sections that follow.
 
 > [!NOTE]
-> All scenarios in this article implicitly use the **Modern Evaluator** unless explicitly stated otherwise.
+> All scenarios in this article implicitly use the **Modern Evaluator** and **V-order** disabled unless explicitly stated otherwise.
 
 ## Scenario 1: Copy data
 
@@ -162,7 +162,7 @@ This query combines the five year-wise Parquet files and loads the result into t
 
 ### Results
 
-Fast Copy provides **up to about nine times faster ingestion** while reducing compute usage.
+With Fast Copy enabled, Dataflow Gen2 ingests this dataset **about 13× faster than the Dataflow Gen1 baseline** (00:07:43 vs 01:42:18) while reducing compute usage. Without Fast Copy, Dataflow Gen2 is already about 1.5× faster than Gen1 on the same workload.
 
 The following table also includes a Dataflow Gen1 baseline for comparison. Dataflow Gen1 uses a fundamentally different architecture than Dataflow Gen2, it doesn't support capabilities like fast copy, and it can only load data as CSV files, whereas Dataflow Gen2 loads data as Parquet files in these scenarios. The same M script was used across both Gen1 and Gen2 runs.
 
@@ -172,17 +172,11 @@ The following table also includes a Dataflow Gen1 baseline for comparison. Dataf
 | **Dataflow Gen2 without Fast Copy** | 01:09:21 | 1.5× faster |
 | **Dataflow Gen2 with Fast Copy**    | 00:07:43 | 13× faster |
 
-#### Without fast copy
+### Key takeaways
 
-:::image type="content" source="media/decision-guide-data-transformation/results-without-fast-copy.png" alt-text="Screenshot of Recent runs results without Fast Copy." lightbox="media/decision-guide-data-transformation/results-without-fast-copy.png":::
-
-This run took an hour and nine minutes to copy the data without fast copy enabled.
-
-#### With fast copy
-
-:::image type="content" source="media/decision-guide-data-transformation/results-with-fast-copy.png" alt-text="Screenshot of Recent runs results with Fast Copy." lightbox="media/decision-guide-data-transformation/results-with-fast-copy.png":::
-
-This run took seven minutes to copy the data with fast copy enabled.
+- Enabling Fast Copy collapsed an hour-long ingestion into roughly seven minutes, an order-of-magnitude improvement on the same dataset and M script.
+- The speedup comes from native, parallelized data movement that bypasses the mashup engine, so it only applies to extract–load steps that meet the [Fast Copy prerequisites](/fabric/data-factory/dataflows-gen2-fast-copy). Any transformation that breaks folding falls back to the standard engine and forfeits the gains.
+- For supported sources, treat Fast Copy as the default for ingestion and reserve heavier transformation engines (covered in the next scenarios) for steps that actually reshape the data.
 
 ## Scenario 2: Heavy data shaping
 
@@ -217,7 +211,7 @@ This query ingests data from a consolidated parquet file, filters the trip_dista
 
 ### Results
 
-Modern Evaluator improves transformation speed by **about 1.6×** while preserving the no-code Power Query experience.
+With Modern Evaluator enabled, Dataflow Gen2 runs this shaping workload **about 1.2× faster than the Dataflow Gen1 baseline** (01:00:58 vs 01:13:44) while preserving the no-code Power Query experience. Without Modern Evaluator, the same workload runs about 1.3× slower than Gen1.
 
 The following table also includes a Dataflow Gen1 baseline for comparison. Dataflow Gen1 uses a fundamentally different architecture than Dataflow Gen2, it doesn't support capabilities like modern evaluator, and it can only load data as CSV files, whereas Dataflow Gen2 loads data as Parquet files in these scenarios. The same M script was used across both Gen1 and Gen2 runs.
 
@@ -227,17 +221,11 @@ The following table also includes a Dataflow Gen1 baseline for comparison. Dataf
 | **Dataflow Gen2 without Modern Evaluator** | 01:34:55 | 1.3× slower |
 | **Dataflow Gen2 with Modern Evaluator**    | 01:00:58 | 1.2× faster |
 
-#### Without modern evaluator
+### Key takeaways
 
-:::image type="content" source="media/decision-guide-data-transformation/results-without-modern-evaluator.png" alt-text="Screenshot of Recent runs results without Modern Evaluator." lightbox="media/decision-guide-data-transformation/results-without-modern-evaluator.png":::
-
-This transformation took an hour and 34 minutes without the modern evaluator.
-
-#### With modern evaluator
-
-:::image type="content" source="media/decision-guide-data-transformation/results-with-modern-evaluator.png" alt-text="Screenshot of Recent runs results with Modern Evaluator." lightbox="media/decision-guide-data-transformation/results-with-modern-evaluator.png":::
-
-This transformation took an hour and one minute with the modern evaluator.
+- Without Modern Evaluator, Dataflow Gen2 ran ~1.3× slower than the Dataflow Gen1 baseline on this shaping workload; enabling Modern Evaluator flipped that to ~1.2× faster than Gen1, on identical M script and dataset.
+- The lift comes from a more efficient execution path for non-foldable and semi-foldable queries, which is where Power Query traditionally spends the most time, especially against connectors like ADLS Gen2 and SharePoint. Gains scale with row volume and shaping complexity.
+- Treat Modern Evaluator as the default for shaping-heavy flows where queries don't fully fold back to the source. The bigger the dataset and the more transformations applied in-engine, the more impact you should expect.
 
 ## Scenario 3: Combine files
 
@@ -272,27 +260,21 @@ This query combines 56 parquet files and creates a new custom column for tip per
 
 ### Results
 
-Partitioned Compute delivers **15× faster performance**, and when combined with Modern Evaluator, **22× faster processing** for large, partitioned datasets.
+Partitioned Compute delivers **about 15× faster performance than the Dataflow Gen1 baseline** (00:06:51 vs 01:40:57) on large, partitioned datasets, and stacking it with Modern Evaluator pushes the speedup further (updated benchmark row pending).
 
 The following table also includes a Dataflow Gen1 baseline for comparison. Dataflow Gen1 uses a fundamentally different architecture than Dataflow Gen2, it doesn't support capabilities like partitioned compute, and it can only load data as CSV files, whereas Dataflow Gen2 loads data as Parquet files in these scenarios. The same M script was used across both Gen1 and Gen2 runs.
 
 | Configuration                     | Execution Time (hh:mm:ss) | Comparison against Gen1 |
 |-----------------------------------------|---------------------------|-------------------------|
 | **Dataflow Gen1 baseline**               | 01:40:57 | — |
-| **Dataflow Gen2 without Partitioned Compute**          | 01:44:56 | 1.04× slower |
-| **Dataflow Gen2 with Partitioned Compute + Modern evaluator**             | 00:06:51 | 15× faster |
+| **Dataflow Gen2 with Partitioned Compute**             | 00:06:51 | 15× faster |
 
-#### Without partitioned compute
+### Key takeaways
 
-:::image type="content" source="media/decision-guide-data-transformation/results-without-partitioned-compute.png" alt-text="Screenshot of Recent runs results without Partitioned Compute." lightbox="media/decision-guide-data-transformation/results-without-partitioned-compute.png":::
-
-This transformation took an hour and 44 minutes without partitioned compute.
-
-#### With partitioned compute + modern evaluator
-
-:::image type="content" source="media/decision-guide-data-transformation/results-with-partitioned-compute-and-modern-evaluator.png" alt-text="Screenshot of Recent runs results with Partitioned Compute + Modern Evaluator." lightbox="media/decision-guide-data-transformation/results-with-partitioned-compute-and-modern-evaluator.png":::
-
-This transformation took four minutes and 48 seconds with partitioned compute and modern evaluator.
+- Partitioned Compute alone delivered a 15× speedup and finished in under seven minutes.
+- The gain comes from processing each partition in parallel and merging the results, so it's most effective on multi-file or partitioned sources where folding isn't available and sequential evaluation is the bottleneck.
+- Use the **Sample transform file** pattern from Combine Files so transformation logic is applied consistently per partition. Partitioned Compute supports a subset of transformations, so validate that your shaping steps are compatible before relying on it.
+- For high-volume, partitioned ingestion to staging or a warehouse, make Partitioned Compute the default and combine it with Modern Evaluator whenever possible.
 
 ## Scenario 4: ELT patterns
 
@@ -337,6 +319,12 @@ TBD
 | **Dataflow Gen2 with Fast Copy + Staging + High-Scale Compute** | TBD | TBD |
 -->
 
+### Key takeaways
+
+- The ELT pattern decouples ingestion from transformation: Fast Copy handles bulk movement into a staging layer, then downstream reference queries reshape the staged data without re-reading the source.
+- Enabling **High-Scale Compute output** on the downstream queries scales transformation throughput when writing from staging to a lakehouse destination, which is the typical bottleneck once ingestion is offloaded to Fast Copy.
+- Use this pattern when a single dataflow tries to ingest and transform large volumes in one pass and resource contention slows both phases. Benchmark numbers for this scenario are pending and will be added once available.
+
 ## Scenario 5: Incremental refresh
 
 As the taxi dataset grows daily, the team can't afford to reload the entire dataset on every refresh. They need a strategy that processes only new or changed records.
@@ -378,6 +366,12 @@ TBD
 | **Dataflow Gen2 without Incremental Refresh** | TBD | TBD |
 | **Dataflow Gen2 with Incremental Refresh** | TBD | TBD |
 -->
+
+### Key takeaways
+
+- Incremental refresh processes only new or changed rows on each run, so refresh duration and compute cost scale with the delta instead of the full dataset.
+- It requires a date or key column that the source can filter on to detect changes; without a clean incremental boundary, full refreshes remain the safer choice.
+- Apply it to growing datasets where full refresh windows are tightening or already exceeding their SLA. Benchmark numbers for this scenario are pending and will be added once available.
 
 ## Scenario 6: Write-time optimization
 
@@ -421,3 +415,9 @@ TBD
 | **Dataflow Gen2 without V-Ordering** | TBD | TBD |
 | **Dataflow Gen2 with V-Ordering** | TBD | TBD |
 -->
+
+### Key takeaways
+
+- V-Ordering is configured at the destination and applies to staging queries too, so no changes to transformation logic are required to turn it on.
+- It optimizes the physical Parquet layout for Fabric lakehouses and warehouses, which can speed up downstream reads at the cost of some additional work at write time.
+- Decide whether V-Ordering should run inline with the dataflow write or as a separate maintenance task on the Fabric item at a regular cadence, depending on which side of the pipeline (write vs. read) is more sensitive to latency. Benchmark numbers for this scenario are pending and will be added once available.
