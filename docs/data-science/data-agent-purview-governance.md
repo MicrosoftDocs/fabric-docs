@@ -58,7 +58,7 @@ To review audit logs:
 3. Open **Activity Explorer**
 4. Look for records labeled **Copilot Interaction**
 
-:::image type="content" source="./media/data-agent-governance/Purview-DA-activity-explorer.png" alt-text="Screenshot showing Activity Explorer in Purview DSPM for AI." lightbox="./media/data-agent-governance/Purview-DA-activity-explorer.png":::
+:::image type="content" source="./media/data-agent-governance/purview-activity-explorer.png" alt-text="Screenshot showing Activity Explorer in Purview DSPM for AI." lightbox="./media/data-agent-governance/purview-activity-explorer.png":::
 
 Each record represents a single interaction between a user and the Data Agent.
 
@@ -81,13 +81,13 @@ Use Activity Explorer filters to locate specific interactions:
 ### User Prompt 
 For each interaction, Microsoft Purview captures and logs the full text of the user’s prompt.
 
-:::image type="content" source="./media/data-agent-governance/purview-DA-prompt.png" alt-text="Screenshot showing user prompt in Fabric data agent." lightbox="./media/data-agent-governance/purview-DA-prompt.png":::
+:::image type="content" source="./media/data-agent-governance/purview-da-prompt.png" alt-text="Screenshot showing user prompt in Fabric data agent." lightbox="./media/data-agent-governance/purview-da-prompt.png":::
 
 ### Data Agent Response
 For each interaction, the response returned by the Data Agent including the natural language answer and structured outputs such as generated queries or code are logged.
 
 
-:::image type="content" source="./media/data-agent-governance/purview-DA-response.png" alt-text="Screenshot showing Data Agent response from M365." lightbox="./media/data-agent-governance/purview-DA-response.png":::
+:::image type="content" source="./media/data-agent-governance/purview-da-response.png" alt-text="Screenshot showing Data Agent response from M365." lightbox="./media/data-agent-governance/purview-da-response.png":::
 
 
 ---
