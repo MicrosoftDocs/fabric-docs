@@ -205,9 +205,17 @@ If a `queryId` is shared between two tiles, or between a tile and a baseQuery, t
 
 When duplicating a tile to a new page programmatically, also duplicate the query (assign a new `queryId`, keep the same `text` and `dataSource`) and point the new tile's `queryRef.queryId` at the new query.
 
-### ID uniqueness within category
+### ID uniqueness and format
 
-Every `id` in `tiles[]`, `queries[]`, `baseQueries[]`, `parameters[]`, `dataSources[]`, and `pages[]` must be a unique GUID within its category.
+Every `id` in `tiles[]`, `queries[]`, `baseQueries[]`, `parameters[]`, `dataSources[]`, and `pages[]` must be:
+
+- **Unique** within its category.
+- **A valid RFC 4122 UUID** (for example, `3e4666bf-d5e5-4aa7-b8ce-cefe41c7568a`). Readable strings that happen to have dashes (for example, `my-tile-0001-0000-0000-000000000001`) are rejected at load time with: `Needs to follow the UUID format as defined by RFC 4122`.
+
+For programmatic edits, generate ids with a UUID library: `uuid.uuid4()` for fresh ids, or `uuid.uuid5(namespace, label)` for deterministic ids that survive script re-runs.
+
+> [!TIP]
+> If you see a load error like `/tiles/N/queryRef ... must have required property 'baseQueryId'`, the actual fault is usually a malformed `queryRef.queryId`, not a missing `baseQueryId`. The schema's `queryRef` is a `oneOf` between `{ kind: "query", queryId: <uuid> }` and `{ kind: "baseQuery", baseQueryId: <uuid> }`. When the inner UUID is invalid, the validator fails the `query`-kind branch and reports failures from the `baseQuery`-kind branch instead. Fix the UUID and the cascade clears.
 
 ### Identity preservation across edits
 
