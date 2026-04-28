@@ -65,6 +65,27 @@ List view is divided into the task flow and the items list.
 
 Lineage view shows the flow of data between the items in the workspace. Read more about [lineage view](../governance/lineage.md).
 
+## Branched workspace
+A *Branched workspace* is a workspace that is linked to a source workspace. It lets developers work on changes in an isolated environment, understand how their work relates to other workspaces, and promote changes back to the main workspace with confidence.
+
+The relationship (link) between a *Branched workspace* and its source workspace is established when the user performs branch-out. For Fabric developers, branch-out creates a new Git branch from the latest commit of the source workspace’s currently connected branch. The user can then either create a new workspace connected to that new branch, or use an existing workspace by switching its Git connection to the newly created branch.
+
+## Branched Workspace relationship
+The *Branched workspace* relationship has several visual representations in the Fabric UI:
+- Workspace tree: Represents the source workspace as the parent of the branched workspace
+
+   :::image type="content" source="media/branch-out/branch-6.png" alt-text="Workspace tree hierarchy with branched workspaces." lightbox="media/branch-out/branch-6.png":::
+
+- Workspace breadcrumbs: Navigation option from branched workspace to source workspace 
+
+   :::image type="content" source="media/branch-out/branch-7.png" alt-text="Branched workspace breadcrumbs." lightbox="media/branch-out/branch-7.png":::
+
+- Source control - [related branches](./git-integration-process.md#branches) tab
+
+   :::image type="content" source="media/branch-out/branch-8.png" alt-text="Branched workspace related branches." lightbox="media/branch-out/branch-8.png":::
+
+For more information, see [Branched workspaces](../cicd/git-integration/branched-workspace.md).
+
 ## Workspace settings
 
 Workspace admins can use workspace settings to manage and update the workspace. The settings include general settings of the workspace, like the basic information of the workspace, contact list, SharePoint, license, Azure connections, storage, and other experiences' specific settings.
