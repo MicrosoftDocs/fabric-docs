@@ -1,7 +1,7 @@
 ---
 title: Create a driver-based model using Model Builder
 description: Learn how to create a driver-based model using Model Builder
-ms.date: 04/27/2026
+ms.date: 04/28/2026
 ms.topic: how-to
 #customer intent: As a user, I want to learn how to create a driver-based model using Model Builder.
 ---
@@ -15,8 +15,8 @@ A **driver model** is a type of model in which outputs are determined by key inp
 For example:
 
 ```
-* Revenue = Units Sold × Price
-* Cost = Headcount × Cost per Employee
+Revenue = Units Sold × Price
+Cost = Headcount × Cost per Employee
 ```
 
 Configuring drivers allows you to quickly adjust assumptions and instantly see the impact across the model.
@@ -35,7 +35,7 @@ Follow the steps mentioned in the [Create a model using Model Builder](./plannin
 
 For example, consider the model:
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-create-driver-based-model/sample-model.jpg" alt-text="Screenshot of sample model.":::
+:::image type="content" source="../media/planning-model-builder/planning-how-to-create-driver-based-model/sample-model.jpg" alt-text="Screenshot of sample model." lightbox="../media/planning-model-builder/planning-how-to-create-driver-based-model/sample-model.jpg":::
 
 ```
 Gross Revenue = Volume x Revenue per Barrel
@@ -53,17 +53,17 @@ Consider adding another input driver, such as **Price Growth %**, to evaluate ho
 1. Configure the row properties for the *Final Gross Revenue* as follows:
 
     * **Type**: Driver Input (as this row is driven by a driver input).
-    * **Driver Row**: Gross Revenue (one driver).
+    * **Driver Row**: Gross Revenue (one of the drivers).
     * **Driver Method**: Growth By Percentage.
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-driver-based-model/configure-driver-method.png" alt-text="Screenshot of configuring driver row and driver method.":::
+    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-driver-based-model/configure-driver-method.png" alt-text="Screenshot of configuring driver row and driver method." lightbox="../media/planning-model-builder/planning-how-to-create-driver-based-model/configure-driver-method.png":::
 
 1. Go back to the planning sheet and select the 'Driver' icon. Then, enter the price growth % values in the **Driver Input** table that appears below. You can enter driver input at either the total or leaf levels.
 
     :::image type="content" source="../media/planning-model-builder/planning-how-to-create-driver-based-model/enter-driver-input.png" alt-text="Screenshot of entering driver input in planning sheet.":::
 
 1. After you enter the *Price Growth %* values, the ***Final Gross Revenue*** row is automatically updated based on the selected driver method (10% growth in gross revenue).
-1. Enter different driver inputs to calculate not only the change in revenue, but also the net revenue and gross profit as price growth changes roll up to the top.
+1. Enter different driver inputs to calculate not only the change in gross revenue, but also the net revenue and gross profit as price growth changes roll up to the top.
 
     :::image type="content" source="../media/planning-model-builder/planning-how-to-create-driver-based-model/result-driver-input.png" alt-text="Screenshot of results after entering driver input in planning sheet.":::
 
