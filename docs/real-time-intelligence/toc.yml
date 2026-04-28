@@ -187,8 +187,22 @@ items:
             href: event-streams/pause-resume-data-streams.md
           - name: Set alerts on eventstreams
             href: event-streams/set-alerts-event-stream.md
-      - name: Monitor status and performance of eventstreams
-        href: event-streams/monitor.md
+      - name: Monitor eventstreams
+        items:
+        - name: Fabric workspace monitoring
+          items:
+            - name: Monitor eventstreams with workspace monitoring
+              href: event-streams/fabric-workspace-monitoring.md
+            - name: Enable workspace monitoring for eventstreams
+              href: event-streams/enable-fabric-workspace-monitoring.md
+            - name: Eventstream monitoring tables
+              href: event-streams/fabric-workspace-monitoring-tables.md
+            - name: Query eventstream monitoring data
+              href: event-streams/query-fabric-workspace-monitoring-data.md
+            - name: Known limitations
+              href: event-streams/fabric-workspace-monitoring-known-limitations.md
+        - name: Monitor status and performance of eventstreams
+          href: event-streams/monitor.md
       - name: Integrate with other Fabric items
         href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
       - name: Develop
@@ -537,6 +551,8 @@ items:
         href: schema-sets/create-manage-event-schemas-real-time-hub.md
       - name: Use schemas in eventstreams
         href: schema-sets/use-event-schemas.md
+      - name: Schema Registry region availability
+        href: schema-sets/schema-registry-region-availability.md
       - name: Known limitations
         href: schema-sets/schema-registry-limitations.md
   - name: Eventhouse
