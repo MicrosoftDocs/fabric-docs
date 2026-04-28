@@ -129,7 +129,7 @@ items:
                     href: workspace-outbound-access-protection-data-agent.md
               - name: Data Warehouse
                 href: workspace-outbound-access-protection-data-warehouse.md
-              - name: IQ
+              - name: Fabric IQ
                 href: workspace-outbound-access-protection-iq.md
               - name: Mirrored databases
                 href: workspace-outbound-access-protection-mirrored-databases.md
