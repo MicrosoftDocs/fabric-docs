@@ -1,6 +1,6 @@
 ---
 title: Copilot AI Features in Real-Time Intelligence
-description: Microsoft Copilot for Real-Time Intelligence in Fabric uses AI to simplify dashboards, querysets, and data analysis. 
+description: This article provides an overview of Copilot in Real-Time Intelligence, including its features and best practices. 
 author: spelluru
 ms.author: spelluru
 ms.reviewer: anshul
@@ -12,12 +12,15 @@ ms.collection: ce-skilling-ai-copilot
 #customer intent: As a <role>, I want <what> so that <why>.
 ---
 
+# What is Copilot in the Real-Time Intelligence workload? (preview)
 
-# What is Microsoft Copilot in Fabric Real-Time Intelligence?
+Copilot in the Real-Time Intelliigence workload is an AI assistant that streamlines your data queries, analysis, and exploration. Copilot in Real-Time Intelligence enhances productivity and efficiency by offering quick insights and natural language processing capabilities.
 
-This article provides an overview of Copilot in Real-Time Intelligence, including its features and benefits. Microsoft Copilot for Real-Time Dashboards and KQL Querysets in Fabric is an AI tool that enhances productivity and efficiency by offering quick insights and natural language processing capabilities.
+Available across Fabric workloads, each Copilot experience is tailored specifically to the tasks and data within that workload. This article focuses on the Real-Time Intelligence experience. 
 
-# Features of Copilot in Real-Time Intelligence
+For information about Copilot in other Fabric workloads, see the [Overview of Copilot in Fabric](../fundamentals/copilot-fabric-overview.md)
+
+# Features of Copilot in Real-Time Dashboards
 
 Copilot can assist users in creating dashboards, generating KQL queries, and exploring data more effectively, helping them make faster, data-driven decisions.
 
