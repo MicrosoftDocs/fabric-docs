@@ -1,7 +1,7 @@
 ---
 title: Driver Model
 description: Learn about the Driver Model and Model Builder in Plan
-ms.date: 04/25/2026
+ms.date: 04/28/2026
 ms.topic: concept-article
 #customer intent: As a user, I want to understand what is a model, a driver model and the model builder interface in Plan.
 ---
@@ -30,7 +30,7 @@ In a driver model, you create a model with a hierarchical structure of connected
 
 The following formulas illustrate how input drivers can be connected to business outcomes.
 
-```text
+```
 Revenue = Units Sold × Price
 Total Cost = Headcount × Cost per Employee
 ```
@@ -59,7 +59,7 @@ Model Builder is a no-code, flexible interface for creating and managing advance
 
 The image below shows the Model Builder interface before a model is built:
 
-:::image type="content" source="media/includes/before-model.png" alt-text="Screenshot of model builder interface before a model is built.":::
+:::image type="content" source="media/includes/before-model.png" alt-text="Screenshot of model builder interface before a model is built." lightbox="media/includes/before-model.png":::
 
 From here, you can create parent rows, add related line items as child rows, and define how values flow through the model.
 
