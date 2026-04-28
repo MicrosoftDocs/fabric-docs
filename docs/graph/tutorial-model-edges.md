@@ -2,7 +2,7 @@
 title: "Tutorial: Add edge types to your graph"
 description: Learn how to add edge types to define relationships between nodes in your graph in Microsoft Fabric model, including configuring source and destination nodes.
 ms.topic: tutorial
-ms.date: 04/24/2026
+ms.date: 04/27/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Add edges to your graph
 ai-usage: ai-assisted
