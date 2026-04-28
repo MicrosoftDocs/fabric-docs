@@ -87,9 +87,9 @@ items:
           href: plan/planning-how-to-input-data.md
         - name: Set up scenarios
           href: plan/planning-how-to-set-up-scenarios.md
-        - name: Writeback
+        - name: Use writeback
           items:
-              - name: Configure Writeback
+              - name: Configure writeback
                 href: plan/planning-writeback/planning-how-to-persist-data.md
         - name: Change layouts
           href: plan/planning-how-to-change-layouts.md
@@ -101,7 +101,7 @@ items:
           href: plan/planning-how-to-add-notes.md
         - name: Add bookmarks
           href: plan/planning-how-to-add-bookmark.md
-        - name: Forecasting
+        - name: Use forecasting
           items: 
               - name: Configure forecasts
                 href: plan/planning-forecasting/planning-how-to-build-forecasts.md
