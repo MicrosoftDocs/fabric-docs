@@ -155,6 +155,8 @@ items:
   items:
   - name: Lineage for models and experiments
     href: data-science-lineage.md
+  - name: Audit data agent interactions with Purview
+    href: data-agent--purview-governance.md
 - name: Preparing data 
   items:
   - name: Read and write data with Pandas
