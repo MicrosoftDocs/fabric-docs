@@ -74,15 +74,15 @@ The relationship (link) between a *Branched workspace* and its source workspace 
 The *Branched workspace* relationship has several visual representations in the Fabric UI:
 - Workspace tree: Represents the source workspace as the parent of the branched workspace
 
-   :::image type="content" source="media/branch-out/branch-6.png" alt-text="Workspace tree hierarchy with branched workspaces." lightbox="media/branch-out/branch-6.png":::
+   :::image type="content" source="../cicd/git-integration/media/branch-out/branch-6.png" alt-text="Workspace tree hierarchy with branched workspaces." lightbox="../cicd/git-integration/media/branch-out/branch-6.png":::
 
 - Workspace breadcrumbs: Navigation option from branched workspace to source workspace 
 
-   :::image type="content" source="media/branch-out/branch-7.png" alt-text="Branched workspace breadcrumbs." lightbox="media/branch-out/branch-7.png":::
+   :::image type="content" source="../cicd/git-integration/media/branch-out/branch-7.png" alt-text="Branched workspace breadcrumbs." lightbox="../cicd/git-integration/media/branch-out/branch-7.png":::
 
-- Source control - [related branches](./git-integration-process.md#branches) tab
+- Source control - [related branches](../cicd/git-integration/git-integration-process.md#branches) tab
 
-   :::image type="content" source="media/branch-out/branch-8.png" alt-text="Branched workspace related branches." lightbox="media/branch-out/branch-8.png":::
+   :::image type="content" source="../cicd/git-integration/media/branch-out/branch-8.png" alt-text="Branched workspace related branches." lightbox="../cicd/git-integration/media/branch-out/branch-8.png":::
 
 For more information, see [Branched workspaces](../cicd/git-integration/branched-workspace.md).
 
