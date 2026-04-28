@@ -3,7 +3,7 @@ title: Refresh Materialized Lake Views in a Lakehouse
 description: Learn how to refresh a materialized lake view in a lakehouse in Microsoft Fabric.
 ms.reviewer: abhishjain
 ms.topic: how-to
-ms.date: 28/04/2026
+ms.date: 04/28/2026
 # customer intent: As a data engineer, I want to refresh materialized lake views in a lakehouse so that I can ensure that the data is up to date and optimize query performance.
 ---
 
@@ -61,7 +61,7 @@ Without CDF enabled, optimal refresh can only choose between no refresh and full
 > [!TIP]
 > To help you identify refresh optimization opportunities, Fabric surfaces a banner that lists materialized lake views eligible for incremental refresh but blocked because CDF isn't enabled on one or more source tables. The banner appears in the **lineage view**, on the **recent runs** details, and at the **individual node** level, so you can spot the gap from whichever entry point you use.
 
-:::image type="content" source="./media/refresh-materialized-lake-view/cdf-warning-banner-lineage.png" alt-text="Screenshot that shows the Save refresh and cost banner on the Materialized lake views page with the Activate CDF button." border="true" lightbox="./media/refresh-materialized-lake-view/cdf-warning-banner-lineage.png":::
+:::image type="content" source="./media/refresh-materialized-lake-view/change-data-feed-warning-banner-lineage.png" alt-text="Screenshot that shows the Save refresh and cost banner on the Materialized lake views page with the Activate CDF button." border="true" lightbox="./media/refresh-materialized-lake-view/change-data-feed-warning-banner-lineage.png":::
 
 To enable CDF directly from the banner:
 
