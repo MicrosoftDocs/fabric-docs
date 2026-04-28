@@ -10,7 +10,7 @@ ms.topic: how-to
 
 # Access complete dbt job logs with OneLake
 
-Your dbt logs are now stored directly in OneLake, so the full, untruncated logs for every run are available. This removes the 1 MB download limit and ensures you can review complete execution details—including errors, warnings, and debug information—whenever needed.
+Your dbt logs are now stored directly in OneLake, so the full, untruncated logs for every run are available. Logging with OneLake removes the 1-MB download limit and ensures you can review complete execution details—including errors, warnings, and debug information—whenever needed.
 
 ## Prerequisites
 
