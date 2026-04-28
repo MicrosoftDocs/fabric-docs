@@ -85,7 +85,7 @@ For **Settings** tab configuration, go to [Configure your other settings under s
 
 When copying data from MySQL, the following mappings are used from MySQL data types to interim data types used by the service internally.
 
-| MySQL data type | Interim service data type |
+| MySQL data type | Interim data type |
 |:--- |:--- |
 | BIGINT | Int64 |
 | BIGINT UNSIGNED | UInt64 |
@@ -131,7 +131,7 @@ When copying data from MySQL, the following mappings are used from MySQL data ty
 
 When copying data to MySQL, the following mappings are used from interim data types used by the service internally to MySQL data types.
 
-| Interim service data type | MySQL data type |
+| Interim data type | MySQL data type |
 | --- | --- |
 | Boolean | BOOL, BOOLEAN |
 | Byte | TINYINT |
