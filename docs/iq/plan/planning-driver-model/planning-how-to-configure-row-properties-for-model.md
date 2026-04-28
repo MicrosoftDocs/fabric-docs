@@ -10,7 +10,7 @@ ms.topic: how-to
 
 In this article, you learn about the row properties and how to configure them in a model.
 
-## **Hybrid Row Configuration**
+## **Hybrid row configuration**
 
 The Model Builder looks as shown below. There are two tabs: **Closed Period** and **Open Period.**
 
@@ -20,11 +20,11 @@ By default, the row configurations are the same for both closed and open periods
 
 Open period row values represent the plan, forecast, or any projection measures, whereas the closed period values refer to the actuals. Using this option, you can configure different formulas, data sources, or manual values for the actuals and the forecast.
 
-## Row Properties
+## Row properties
 
 To configure the row properties, select the **Type**, **Configuration,** and **Aggregation** dropdowns from the model builder view and choose the required options. Make sure you choose the correct period (open/closed).
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/row-type.jpg" alt-text="Screenshot of row type and configuration dropdowns.":::
+:::image type="content" source="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/row-type.jpg" alt-text="Screenshot of row type and configuration dropdowns." lightbox="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/row-type.jpg":::
 
 Alternatively, hover over a row and select the pencil icon beside the row name to edit the complete row properties.
 
@@ -65,14 +65,14 @@ In this case, the row values are retrieved from the source data based on the row
 
 #### **Data Input**
 
-For **Data Input** nodes, you can either enter values manually or copy values from an existing row.
+For **Data Input** rows, you can either enter values manually or copy values from an existing row.
 
 * **Row**: Select a data source row whose values you want to copy.
 * **Static**: Enter a value to be applied across all periods.
 
 The example below demonstrates both options configured.
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/data-input-row.png" alt-text="Screenshot of data input row.":::
+:::image type="content" source="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/data-input-row.png" alt-text="Screenshot of data input row." lightbox="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/data-input-row.png":::
 
 #### **Aggregate**
 
@@ -82,9 +82,9 @@ This type offers various aggregation options, allowing you to define how child r
 
 #### **Linked Row**
 
-In a **Linked Row**, you can select another row to link to. Linked rows share the same values, properties, configuration, and simulation behavior, ensuring they remain in sync. Use this type when the same row must be reused in multiple parts of the model, allowing all instances to be changed once. This type can be specified for open period rows.
+In a **Linked Row**, you can select another row to link to. Linked rows share the same values, properties, configuration, and simulation behavior, ensuring they remain in sync. Use this type when the same row must be reused in multiple parts of the model, allowing all instances to be changed at once. This type can be specified for open period rows.
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/linked-row.png" alt-text="Screenshot of linked row.":::
+:::image type="content" source="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/linked-row.png" alt-text="Screenshot of linked row." lightbox="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/linked-row.png" :::
 
 #### **Driver Input**
 
@@ -92,11 +92,11 @@ If you choose the **Driver Input** type for a row, you can define how its values
 
 You can also specify the aggregation and distribution methods for Driver Input rows.
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/driver-input.png" alt-text="Screenshot of driver input row.":::
+:::image type="content" source="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/driver-input.png" alt-text="Screenshot of driver input row." lightbox="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/driver-input.png":::
 
 Based on the inputs entered in the planning sheet, this row is automatically calculated using the selected driver configuration. To learn more, refer to this section: [Create a driver-based model](./planning-how-to-create-driver-based-model.md).
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/driver-input-in-planning-sheet.png" alt-text="Screenshot of driver input entered in the planning sheet.":::
+:::image type="content" source="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/driver-input-in-planning-sheet.png" alt-text="Screenshot of driver input entered in the planning sheet." lightbox="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/driver-input-in-planning-sheet.png":::
 
 #### **Distribution**
 
@@ -112,7 +112,7 @@ If you select **Copy**, choose how values should be copied:
 
 Enter the total in the planning sheet, and the values are distributed or copied accordingly based on the selected method.
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/distribution-row.png" alt-text="Screenshot of distribution type row.":::
+:::image type="content" source="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/distribution-row.png" alt-text="Screenshot of distribution type row." lightbox="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/distribution-row.png":::
 
 ### Formatting
 
@@ -123,10 +123,10 @@ Use the following options to control how values are displayed:
 * **Prefix:** Add a prefix to values, such as a currency symbol.
 * **Suffix:** Add a suffix to values, such as units.
 
+:::image type="content" source="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/formatting-trend-simulation.png" alt-text="Screenshot of formatting, trend, and simulation options.":::
+
 >[!Note]
 >The following settings—Desired Trend and Simulation settings are for the tree view layout.
-
-:::image type="content" source="../media/planning-model-builder/planning-how-to-configure-row-properties-for-model/formatting-trend-simulation.png" alt-text="Screenshot of formatting, trend, and simulation options.":::
 
 ### **Desired Trend**
 
@@ -150,7 +150,7 @@ The following are the available aggregations:
 
 <table><thead><tr><th width="255">Time aggregation</th><th>Description</th></tr></thead><tbody><tr><td>Sum</td><td>Adds all the period values.</td></tr><tr><td>Minimum</td><td>Returns the minimum value among the period values.</td></tr><tr><td>Maximum</td><td>Returns the maximum value among the period values.</td></tr><tr><td>Average (children)</td><td>Calculates the average of the immediate child node values.</td></tr><tr><td>Average (leaf)</td><td>Calculates the average of the leaf node values.</td></tr><tr><td>Average excluding zeros</td><td>Calculates the average of the non-zero period values.</td></tr><tr><td>First</td><td>Displays the first period value of the node.</td></tr><tr><td>Last</td><td>Displays the last period value of the node.</td></tr><tr><td>Weighted average</td><td>Calculates the weighted average of the period values based on selected nodes.</td></tr><tr><td>Standard deviation</td><td>Calculates the standard deviation of the period values.</td></tr><tr><td>Formula</td><td>Calculates and applies a custom formula entered by the user.</td></tr></tbody></table>
 
-### Other Options
+### Other options
 
 **Distribute parent value to children:** For Data Input rows, select this option to allocate the entered parent row value to child rows.
 
