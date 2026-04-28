@@ -20,7 +20,7 @@ In this article, you learn how to create and use an AI operations agent in Real-
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity). Trial capacities aren't supported.
-* An [eventhouse](create-eventhouse.md) in your workspace.
+* An [eventhouse](create-eventhouse.md) or [ontology](../iq/ontology/overview.md) in your workspace.
 * A [KQL database](create-database.md) in your eventhouse.
 * A Microsoft Teams account.
 * Fabric admin permissions enabled for operations agent preview, and Microsoft Copilot and Azure OpenAI.
