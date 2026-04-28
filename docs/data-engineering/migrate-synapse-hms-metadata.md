@@ -5,7 +5,7 @@ ms.reviewer: aimurg
 ms.topic: how-to
 ms.custom:
   - fabric-cat
-ms.date: 11/15/2023
+ms.date: 04/28/2026
 ---
 
 # Migrate Hive Metastore metadata from Azure Synapse Analytics to Fabric
@@ -104,7 +104,7 @@ Step 2 is when the actual metadata is imported from intermediate storage into th
 * **2.4) Run all notebook commands** to import catalog objects from intermediate path.
 
 > [!NOTE]
-> When importing multiple databases, you can (i) create one lakehouse per database (the approach used here), or (ii) move all tables from different databases to a single lakehouse. For the latter, all migrated tables could be `<lakehouse>.<db_name>_<table_name>`, and you will need to adjust the import notebook accordingly.
+> When importing multiple databases, you can (i) create one lakehouse per database (the approach used here), or (ii) move all tables from different databases to a single lakehouse. For the latter, all migrated tables could be `<lakehouse>.<db_name>_<table_name>`, and you need to adjust the import notebook accordingly.
 
 ### Step 3: Validate content
 

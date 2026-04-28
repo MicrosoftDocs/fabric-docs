@@ -14,15 +14,15 @@ ms.search.form: Schema Registry
 
 # Schema Registry in Fabric Real-Time Intelligence (preview)
 
-Schema Registry in Fabric Real-Time Intelligence is a centralized repository for managing and organizing data schemas. This feature provides a structured framework for defining, validating, and evolving schemas used in event-driven architectures, helping you improve data quality and maintain consistency across your real-time workflows.
+Schema Registry in Fabric Real-Time Intelligence is a central place to define, validate, and evolve data schemas for streaming data. Use it to improve data quality and keep your real-time event-driven workflows consistent.
 
 > [!NOTE]
-> This feature is currently in preview.
+> This feature is currently in preview. For the list of supported regions, see [Schema Registry region availability](schema-registry-region-availability.md).
 
 ## Benefits of using Schema Registry
-Schema Registry in Fabric Real-Time Intelligence helps improve data quality, consistency, and control across your event-driven workflows. 
+Schema Registry in Fabric Real-Time Intelligence helps improve data quality, consistency, and control across your event-driven workflows.
 
-Registering a schema means defining what your data should look like, what fields it should have, what types of values are expected, and how it’s structured. 
+Registering a schema means defining what your data should look like, what fields it should have, what types of values are expected.
 
 When schema registration is enabled, only events that match the registered schema are allowed to move through your event-driven architecture. It helps catch errors early and ensures that your data is clean, consistent, and ready to use. 
 
@@ -47,7 +47,7 @@ With Schema Registry, you can organize one or more related schemas into schema s
 
 ### Schema formats
 
-Currently, the Schema Registry supports **Avro** schema format.
+The Schema Registry supports the **Avro** schema format.
 
 ### Schema registration
 
@@ -61,7 +61,7 @@ You can register schemas using Fabric Real-Time hub user interface (UI) or Schem
 
 ### Schema versioning
 
-Versioning is supported in Schema Registry within Fabric Real-Time Intelligence. However, the system doesn't guarantee a semantic version. Also, there's no check to see if a schema is actually changed. Any edits to an existing schema are treated as a new version. As described earlier, there aren't compatibility checks or native support for schema evolution yet. For more information, see [Update a schema](create-manage-event-schemas.md#update-an-event-schema).
+Versioning is supported in Schema Registry within Fabric Real-Time Intelligence. Any edits to an existing schema are treated as a new version. Schema Registry doesn't support semantic versions. Instead, schema versions are tracked as incremental numeric versions to indicate change over time. There is no compatibility checks or native support for schema evolution yet. For more information, see [Update a schema](create-manage-event-schemas.md#update-an-event-schema).
 
 ## Related content
 

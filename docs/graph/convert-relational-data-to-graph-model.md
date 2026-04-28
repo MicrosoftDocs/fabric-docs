@@ -2,7 +2,7 @@
 title: Convert relational data to a graph model in Microsoft Fabric
 description: Learn how to convert relational tables into a graph model in Microsoft Fabric with step-by-step schema mapping for node types, edge types, and common patterns.
 ms.topic: how-to
-ms.date: 04/24/2026
+ms.date: 04/27/2026
 ms.reviewer: wangwilliam
 ai-usage: ai-assisted
 ---
