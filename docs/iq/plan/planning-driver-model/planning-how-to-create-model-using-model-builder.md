@@ -1,98 +1,101 @@
 ---
-title: Create a model using Model Builder
-description: Learn how to create a model using Model Builder
+title: Create a model by using model builder
+description: Learn how to create a model by using model builder.
 ms.date: 04/28/2026
 ms.topic: how-to
-#customer intent: As a user, I want to learn how to create a model using the Model Builder.
+#customer intent: As a user, I want to learn how to create a model by using the model builder.
 ---
 
-# Create a model using Model Builder
+# Create a model by using model builder
 
-In this article, you learn how to build a model for your data using the Model Builder.
+This article explains how to build a model for your data by using the [model builder](planning-concept-driver-model.md#model-builder).
 
-Consider the brewery data sample shown below in the planning sheet.
+## Sample scenario
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/data-sample-for-model.jpg" alt-text="Screenshot of a sample brewery data set." lightbox="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/data-sample-for-model.jpg":::
+This article shows screenshots from the brewery data sample in the following Planning sheet.
 
-The first column contains a list of General Ledger (GL) account items for various quarters of the year 2026. In this module, you learn how to create a sample Profit and Loss (P\&L) model using this example.
+:::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/data-sample-for-model.png" alt-text="Screenshot of a sample brewery data set." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/data-sample-for-model.png":::
 
->[!Note]
->Data can include both actuals and forecasts, and models can be configured to handle both closed and open periods.
->To learn more, refer to [Hybrid row configuration](./planning-how-to-configure-row-properties-for-model.md#hybrid-row-configuration).
+The first column contains a list of General Ledger (GL) account items for various quarters of the year 2026. This article shows how to create a sample Profit and Loss (P&L) model using this example.
+
+>[!NOTE]
+>Data can include both actuals and forecasts, and models can be configured to handle both closed and open periods. For more information, see [Hybrid row configuration](planning-how-to-configure-model-row-properties.md#hybrid-row-configuration).
 
 ## Objectives and approach
 
-* You learn how to group related line items into a hierarchical structure.
-* You create formula or aggregate rows to calculate key financial metrics such as *Gross Revenue*, *Net Revenue*, *Total Cost of Goods Sold (COGS), Gross Profit*, *Operating Income (EBIT), Income Tax Expense*, and *Net Profit*.
-* Finally, you build a reusable and scalable P\&L model for your sample data, step by step.
+In this article, you:
+
+* Learn how to group related line items into a hierarchical structure.
+* Create formula or aggregate rows to calculate key financial metrics such as *Gross Revenue*, *Net Revenue*, *Total Cost of Goods Sold (COGS), Gross Profit*, *Operating Income (EBIT), Income Tax Expense*, and *Net Profit*.
+* Build a reusable and scalable P&L model for your sample data.
 
 ## Create model
 
-1. Go to the Model Builder by selecting **Model > Driver Model** and then selecting **Enable** in the pop-up.
+1. Go to the model builder by selecting **Model > Driver Model**, then select **Enable** in the pop-up window.
 
-    :::image type="content" source="../media/includes/enable-model-builder.png" alt-text="Screenshot of enabling model builder from the planning sheet.":::
+    :::image type="content" source="../media/planning-driver-model/planning-concept-driver-model/enable-model-builder.png" alt-text="Screenshot of enabling model builder from the Planning sheet." lightbox="../media/planning-driver-model/planning-concept-driver-model/enable-model-builder.png":::
 
-    The Driver Model view opens, where you build the model.
+    The driver model view opens. This view is where you build the model.
 
-    :::image type="content" source="../media/includes/before-model.png" alt-text="Screenshot of model builder interface before a model is built." lightbox="../media/includes/before-model.png":::
+    :::image type="content" source="../media/planning-driver-model/planning-concept-driver-model/before-model.png" alt-text="Screenshot of model builder interface before a model is built." lightbox="../media/planning-driver-model/planning-concept-driver-model/before-model.png":::
 
-1. Delete all rows except the topmost row (*All)* to start building your model from scratch. To delete rows, select all rows except the top row and then select **Delete.**
+1. Delete all rows except the topmost row (*All*) to start building your model from scratch. To delete rows, select all rows except the top row, then select **Delete**.
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/delete-rows.png" alt-text="Screenshot of deleting all rows except the top row." lightbox="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/delete-rows.png":::
+    :::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/delete-rows.png" alt-text="Screenshot of deleting all rows except the top row." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/delete-rows.png":::
 
     >[!TIP]
     >Use the **Select All** checkbox in the column header to select all rows, then clear the selection for the top row.
 
-    The model will look like this, with one row:
+    The model looks like this image, with one row:
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/one-row-model.jpg" alt-text="Screenshot of model with only one row.":::
+    :::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/one-row-model.png" alt-text="Screenshot of model with only one row." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/one-row-model.png":::
 
-1. Start with the top-level parent row in your model. Since the objective is to calculate *Net Profit*, rename the top row to ***Net Profit*** by double-clicking the ***All*** row and updating its name.
+1. Start with the top-level parent row in your model. Because the objective is to calculate *Net Profit*, rename the top row to **Net Profit** by double-selecting the **All** row and updating its name.
    
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/rename-top-row.png" alt-text="Screenshot of renaming the top row.":::
+    :::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/rename-top-row.png" alt-text="Screenshot of renaming the top row." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/rename-top-row.png":::
 
 ### Add Child row
 
-The net profit or the net income for this model can be calculated using the formula:
+The net profit for this model is calculated using this formula:
 
 ```
 Net Profit = Income Before Tax(EBT) - Income Tax Expense
 ```
 
-This means the *Net Profit* row needs two child rows: *Income Before Tax* and *Income Tax Expense*.
+This means that the *Net Profit* row needs two child rows: *Income Before Tax* and *Income Tax Expense*.
 
-To add a child node, select the **+** icon next to the node. You can also select the node to which you want to add child rows, then select **Add Child** and [choose the type of row](./planning-how-to-configure-row-properties-for-model.md#type) you want to add.
+1. To add a child node, select the **+** icon next to the node. You can also select the node to which you want to add child rows, then select **Add Child** and [choose the type of row](planning-how-to-configure-model-row-properties.md#type) you want to add.
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/add-child-row.png" alt-text="Screenshot of adding a child row.":::
+    :::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/add-child-row.png" alt-text="Screenshot of adding a child row." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/add-child-row.png":::
 
-Add another child row for *Net Profit* and rename both rows.
+1. Add another child row for *Net Profit* and rename both rows.
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/add-another-child-row.png" alt-text="Screenshot of adding another child row.":::
+    :::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/add-another-child-row.png" alt-text="Screenshot of adding another child row." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/add-another-child-row.png":::
 
 ### Row type configuration
 
-* The *Net Profit* row is a formula row. In **Type**, select **Formula**. Alternatively, you can select **Aggregate**.
-* Select **Configuration**. Choose **Subtract** from the side panel that opens automatically.
-* Select **Apply**.
+1. The *Net Profit* row is a formula row. In **Type**, select **Formula**. Alternatively, you can select **Aggregate**.
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/row-type-configuration.png" alt-text="Screenshot of configuring the top row.":::
+    >[!NOTE]
+    >Using **Aggregate** automatically aggregates the child rows, while **Formula** uses explicit row name references to perform the calculation. If row names change, make sure to update the formula accordingly.
 
->[!Note]
->Using **Aggregate** automatically aggregates the child rows, while **Formula** uses explicit row name references to perform the calculation.
->If row names change, make sure to update the formula accordingly.
+1. Select **Configuration**. Choose **Subtract** from the side panel that opens automatically.
+1. Select **Apply**.
 
-* Similarly, configure the child rows' type as per your requirements. Select ***Data Source*** to retrieve values from the source data, or choose ***Data Input*** to enter values manually.
-* For a **Data Source** row, select the corresponding row from the data source in the side panel to retrieve the values. If you choose the **Data Input** type instead, enter the values manually in the side panel.
+    :::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/row-type-configuration.png" alt-text="Screenshot of configuring the top row." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/row-type-configuration.png":::
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/row-type-for-child-rows.png" alt-text="Screenshot of configuring the child rows." lightbox="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/row-type-for-child-rows.png":::
+1. Configure the type of other child rows as needed for your data. Select **Data Source** to retrieve values from the source data, or choose **Data Input** to enter values manually.
+1. For a **Data Source** row, select the corresponding row from the data source in the side panel to retrieve the values. If you choose the **Data Input** type instead, enter the values manually in the side panel.
 
-By following the above steps, you have created a calculated row at the top level.
+    :::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/row-type-for-child-rows.png" alt-text="Screenshot of configuring the child rows." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/row-type-for-child-rows.png":::
 
-Now, repeat the same process to add additional child nodes and continue configuring their row type and configuration settings.
+After you complete these steps, you have a calculated row at the top level.
+
+Repeat this process as needed to add and configure more child nodes.
 
 ### Add Formula type row
 
-For some rows, selecting the **Formula** type is more suitable than using the **Aggregate** type.
+For some rows, the **Formula** type is more suitable than the **Aggregate** type.
 
 ```
 Income Before Tax (EBT) = Operating Income (EBIT)
@@ -103,24 +106,24 @@ Income Before Tax (EBT) = Operating Income (EBIT)
 
 For *Income Before Tax (EBT)*,
 
-* Create four child rows.
-* Configure the **Type** as *Data Source* for the child rows if you have data in the source.
-* For each row, select the corresponding row from the data source.
+1. Create four child rows.
+1. Configure the **Type** as *Data Source* for the child rows if you have data in the source.
+1. For each row, select the corresponding row from the data source.
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/another-row-type-configuration.png" alt-text="Screenshot of configuring another set of child rows." lightbox="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/another-row-type-configuration.png":::
+    :::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/another-row-type-configuration.png" alt-text="Screenshot of configuring another set of child rows." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/another-row-type-configuration.png":::
 
-* Configure the parent row, Income Before Tax (EBT), as **Formula** type.
-* Enter the formula in the formula box by selecting and referencing the required rows. As you type, suggestions appear automatically, or use Ctrl + Space to view them. You can switch between the **References** and **Functions** tabs to select row references or functions.
+1. Configure the parent row, Income Before Tax (EBT), as a **Formula** type.
+1. Enter the formula in the formula box by selecting and referencing the required rows. As you enter text, suggestions appear automatically, or use <kbd>Ctrl</kbd>+<kbd>Space</kbd> to view them. Switch between the **References** and **Functions** tabs to select row references or functions.
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/formula-row.png" alt-text="Screenshot of configuring a formula type row." lightbox="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/formula-row.png":::
+    :::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/formula-row.png" alt-text="Screenshot of configuring a formula type row." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/formula-row.png":::
 
-* Complete other configurations for the row and select **Apply**.
+1. Complete other configurations for the row and select **Apply**.
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/mini-row-structure.png" alt-text="Screenshot of a small row structure." lightbox="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/mini-row-structure.png":::
+    :::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/mini-row-structure.png" alt-text="Screenshot of a small row structure." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/mini-row-structure.png":::
 
 ### Build further rows
 
-Use the steps described above to create and configure additional row structures.
+To build out the rest of the example for this article, repeat the row building process to create and configure the following row structures.
 
 ```
 Income Before Tax (EBT)
@@ -137,28 +140,28 @@ Income Before Tax (EBT)
         Total Operating Expenses
 ```
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/build-further-rows.png" alt-text="Screenshot of building further rows." lightbox="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/build-further-rows.png":::
+:::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/build-further-rows.png" alt-text="Screenshot of building further rows." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/build-further-rows.png":::
 
 >[!TIP]
->Alternatively, use the [**Bulk Insert**](#add-multiple-rows-using-bulk-insert) feature to instantly build the model.
+>You can also use the [Bulk insert](#add-multiple-rows-with-bulk-insert) feature to instantly build the model.
 
-### Add Sibling row
+### Add sibling row
 
-To add a new row at the same level as an existing one, select the row, and then select **Add Sibling**. This creates a sibling row for the selected row.
+To add a new row at the same level as an existing one, select the row, then select **Add Sibling**. This action creates a sibling row for the selected row.
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/add-sibling-row.jpg" alt-text="Screenshot of adding a sibling row.":::
+:::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/add-sibling-row.png" alt-text="Screenshot of adding a sibling row." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/add-sibling-row.png":::
 
 In the example above, two line items, *Distributor Allowances & Rebates* and *Returns & Breakage*, are to be added at the same level as *Federal & State Excise Taxes*.
 
-You can add two of them as sibling rows to the first line item.
+Add them as sibling rows to the first line item.
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/sibling-rows-added-for-row.png" alt-text="Screenshot of sibling rows added.":::
+:::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/sibling-rows-added-for-row.png" alt-text="Screenshot of sibling rows added." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/sibling-rows-added-for-row.png":::
 
-Repeat the same steps to build the *Total COGS* section and complete the model. You can also use the **Bulk Insert** and **Bulk Edit** features to speed up the process.
+Repeat the same steps to build the *Total COGS* section and complete the model. Optionally, use the **Bulk Insert** and **Bulk Edit** features to speed up the process.
 
-## Add multiple rows using Bulk Insert
+## Add multiple rows with bulk insert
 
-Use **Bulk Insert** to add multiple rows at once or build the entire model in one step. This is useful when you already have the model structure planned or prepared.
+Use **Bulk Insert** to add multiple rows at once or build the entire model in one step. This feature is useful when you already have the model structure planned or prepared.
 
 1. Select the row under which you want to add new rows.
 1. Select **Bulk Insert**.
@@ -167,44 +170,46 @@ Use **Bulk Insert** to add multiple rows at once or build the entire model in on
 1. Choose whether to insert the rows as **Child** or **Sibling** rows to the selected row.
 1. Select **Add** to apply the changes.
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/bulk-insert-rows.png" alt-text="Screenshot of inserting rows in bulk." lightbox="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/bulk-insert-rows.png":::
+:::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/bulk-insert-rows.png" alt-text="Screenshot of inserting rows in bulk." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/bulk-insert-rows.png":::
 
-The rows are added under *Total COGS* based on the defined structure. Update the type and configuration for each row as needed.
+The rows are added under *Total COGS* based on the defined structure. Update the **Type** and **Configuration** for each row as needed.
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/result-of-bulk-insert.png" alt-text="Screenshot of bulk inserted rows." lightbox="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/result-of-bulk-insert.png":::
+:::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/result-of-bulk-insert.png" alt-text="Screenshot of bulk inserted rows." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/result-of-bulk-insert.png":::
 
 ### Aggregation
 
 The **Aggregation** property is typically set to *Sum* to roll up column values across the period from January to December. For rows that represent rates or percentages, set it to *Average (Children)*.
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/column-aggregation.jpg" alt-text="Screenshot of configuring period values aggregation.":::
+:::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/column-aggregation.png" alt-text="Screenshot of configuring period values aggregation." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/column-aggregation.png":::
 
-## Edit multiple rows using Bulk Edit
+## Edit multiple rows with bulk edit
 
-If multiple rows share common settings, use **Bulk Edit** to format them all at once.
+If multiple rows share common settings, use **Bulk Edit** to apply formatting to all of them at once.
 
 1. Select the rows that you want to format.
 1. Select **Bulk Edit**.
 1. In the side panel, enter the required settings, such as scale, decimal points, prefix, suffix, desired trend, simulation settings, and description.
 1. Select **Apply** to apply these settings to all selected rows at once.
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/bulk-edit.jpg" alt-text="Screenshot of editing rows in bulk.":::
+:::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/bulk-edit.png" alt-text="Screenshot of editing rows in bulk." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/bulk-edit.png":::
 
 ## Finish model
 
-The completed model looks like this:
+The completed model looks like this example:
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/completed-model.png" alt-text="Screenshot of completed model." lightbox="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/completed-model.png":::
+:::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/completed-model.png" alt-text="Screenshot of completed model." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/completed-model.png":::
 
 The model you build applies to the **Open Period** by default, unless you modify specific rows by toggling to the **Open Period**.
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/toggle-open-period.png" alt-text="Screenshot of toggling on to open period.":::
+:::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/toggle-open-period.png" alt-text="Screenshot of toggling on to open period." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/toggle-open-period.png":::
 
 ## Build model in one step
 
-If you have the complete model structure handy in a notepad, you can build the entire model in one step by copy-pasting it through [**Bulk Insert**](#add-multiple-rows-using-bulk-insert).
+If you have the complete model structure written in a text editor, build the entire model in one step by copying and pasting it with [bulk insert](#add-multiple-rows-with-bulk-insert).
 
-You can then configure the type, configuration, formatting, and aggregation individually or through [**Bulk Edit**](#edit-multiple-rows-using-bulk-edit).
+Then configure the **Type**, **Configuration**, formatting, and aggregation, either individually or by using [bulk edit](#edit-multiple-rows-with-bulk-edit).
+
+The full model for the sample scenario is shown here:
 
 ```
 Income Before Tax (EBT)
@@ -239,15 +244,15 @@ Income Tax Expense
     Effective Tax Rate
 ```
 
-You can reuse the model across different datasets that follow the same business logic. Maintain and scale the model by adding or removing rows and/or adjusting row configurations as needed to reflect changing business needs.
+You can reuse the model across different datasets that follow the same business logic. Maintain and scale the model by adding or removing rows, and adjusting row configurations as needed to reflect changing business needs.
 
-This approach reduces the need to recreate formulas from scratch and ensures consistency across datasets that follow the same logic. Features such as **Bulk Insert** and **Templates** help streamline this process and enable efficient model building at scale.
+This approach reduces the need to recreate formulas from scratch and ensures consistency across datasets that follow the same logic. Features such as **Bulk Insert** and **Templates** streamline this process and enable efficient model building at scale.
 
-## Next step
+## Next steps
 
-* [Create templates for reusable row structures](./planning-how-to-create-templates-for-reusable-row-structures.md).
+[Create templates for reusable row structures](planning-how-to-create-templates.md)
 
 ## Related content
 
-* [Configure row properties in the model](./planning-how-to-configure-row-properties-for-model.md).
-* [Create a driver-based model](./planning-how-to-create-driver-based-model.md).
+* [Configure row properties in the model](planning-how-to-configure-model-row-properties.md)
+* [Create a driver model](planning-how-to-create-driver-model.md)
