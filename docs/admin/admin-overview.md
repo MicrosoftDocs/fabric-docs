@@ -14,33 +14,17 @@ ms.date: 04/21/2026
 
 Microsoft Fabric administration is the set of tasks and tools you use to configure, secure, and govern the Fabric software as a service (SaaS) platform across your organization. As an admin, you control tenant-wide settings, manage feature access to meet company policies and regulations, and delegate responsibilities so no single team becomes a bottleneck.
 
-This article describes admin responsibilities, tools, and key tasks for managing your Fabric environment.
+There are generally three categories of tasks that admins focus on to ensure the platform is configured correctly and compliant with organizational policies:
 
-## Microsoft Fabric admin responsibilities
+* **Administration**—This *Fabric administration documentation* covers how to manage the Fabric platform, configure tenant and workspace features, and monitor usage and activity. 
+* **Security**—See the *[Security documentation](../security/index.yml)* to learn how to help safeguard data with identity, access, encryption, and network protection settings.
+* **Governance**—See the *[Governance documentation](../governance/index.yml)* to learn how to define and enforce policies for data access, sharing, classification, and auditing.
 
-This article uses the generic term "admin." For details about which types of admins can perform specific tasks, see [Understand Fabric admin roles](roles.md), [Microsoft Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference), and [Microsoft 365 admin roles](/microsoft-365/admin/add-users/about-admin-roles).
+This article gives an overview of Fabric admin responsibilities, tools, and key tasks for managing your Fabric environment.
 
-An admin is responsible for managing the organization's Microsoft Fabric environment, including:
+## Admin tasks and tools for Fabric
 
-* **Administration**—Manage and operate the Fabric platform—configure tenant and workspace settings, control features and access, allocate resources, and monitor usage and activity. Details about these tasks are covered in this Fabric administration documentation.
-* **Security**—Help safeguard data with identity, access, encryption, and network protection settings. See the [Fabric security documentation](../security/index.yml) for details.
-* **Governance**—Define and enforce policies for data access, sharing, classification, and auditing. See the [Fabric governance documentation](../governance/index.yml) for details.
-
-Admins ensure that Microsoft Fabric operates according to organizational policies and external regulations while enabling users to access and use the platform effectively.
-
-## Admin tasks and tools for Microsoft Fabric
-
-Your role determines which admin responsibilities and tools you can access.
-
-| Responsibility | Management tools |
-|--------------|------------------|
-| Data classification | Microsoft Purview |
-| Data loss prevention | Microsoft Purview |
-| Activity auditing | Compliance portal |
-| Conditional access | Microsoft Entra ID |
-| Tenant-level monitoring | Admin portal monitoring workspace |
-
-Microsoft Fabric admins work mostly in the Microsoft Fabric admin portal, but you should be familiar with related admin tools. To find out which role is required to perform these tasks, see [Understand Fabric admin roles](roles.md).
+Fabric admins use a combination of the Fabric admin portal and related admin tools to perform tasks based on their areas of responsibility. The following are common admin tasks and the tools typically used for each one.
 
 * **[Microsoft Fabric admin portal](#what-is-the-admin-portal)**
   * Acquire and work with capacities
@@ -68,15 +52,17 @@ Microsoft Fabric admins work mostly in the Microsoft Fabric admin portal, but yo
   * Manage workspaces and other aspects of Microsoft Fabric using scripts
 
 * **[Administrative APIs and SDK](/rest/api/fabric/articles/using-fabric-apis)**
-  * Build custom admin tools.
+  * Build custom admin tools
+
+### Admin roles
+
+Fabric defines several admin roles that determine what tasks a user can perform in the Microsoft Fabric environment. These roles include the Power Platform administrator, Fabric administrator, Capacity admin, and other specialized roles that allow delegation of responsibilities without giving full administrative access. For details about which types of admins can perform specific tasks, see [Understand Fabric admin roles](roles.md), [Microsoft Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference), and [Microsoft 365 admin roles](/microsoft-365/admin/add-users/about-admin-roles).
 
 ## What is the admin portal?
 
 The admin portal includes settings that govern Microsoft Fabric. For example, you can change [tenant settings](tenant-settings-index.md), access the Microsoft 365 admin portal, and control how users interact with Microsoft Fabric.
 
-To access the admin portal, you need a [Fabric license](../enterprise/licenses.md#per-user-licenses) and the **Fabric administrator** role.
-
-If you're not in one of these roles, you only see **Capacity settings** in the admin portal.
+To access the admin portal, you need a [Fabric license](../enterprise/licenses.md#per-user-licenses) and a [Fabric admin role](roles.md). If you don't have one of these roles, you only see **Capacity settings** in the admin portal.
 
 ### Admin portal features
 
@@ -93,7 +79,7 @@ The admin portal controls are listed in the following table, with links to relev
 | [Tags](../governance/tags-overview.md) | Manage tags for organizing content. |
 | [Capacity settings](capacity-settings.md) | Manage Microsoft Fabric F, Power BI Premium P, and Power BI Embedded EM and A capacities. |
 | [Refresh summary](service-admin-portal-refresh-summary.md) | Schedule refresh on a capacity and view the details of refreshes that occurred. |
-| [Embed codes](service-admin-portal-embed-codes.md) | View and manage the embed codes that have been generated for your organization to share reports publicly. |
+| [Embed codes](service-admin-portal-embed-codes.md) | View and manage the embed codes generated for your organization to share reports publicly. |
 | [Organizational visuals](organizational-visuals.md#organizational-visuals) | View, add, and manage which type of Power BI visuals users can access across the organization. |
 | [Organizational themes (preview)](/power-bi/create-reports/desktop-organizational-themes) | Manage and distribute custom report themes across the organization. |
 | [Azure connections](service-admin-portal-azure-connections.md) | Configure and manage connections to Azure resources. |
@@ -104,19 +90,15 @@ The admin portal controls are listed in the following table, with links to relev
 
 ### How to get to the admin portal
 
-To get to the admin portal, follow these steps:
-
-1. Sign in to [Microsoft Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-admin-admin-center) using your admin account credentials.
-
-1. Select the **Settings** (gear) icon, and then select **Admin portal**.
+To get to the admin portal, sign in to [Microsoft Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-admin-admin-center) using your admin account credentials. Select the **Settings** (gear) icon, and then select **Admin portal**.
 
    :::image type="content" source="./media/admin-center/admin-portal-option-settings-menu.png" alt-text="Screenshot of the Admin portal option on the Fabric settings menu.":::
 
 ## Manage licenses and subscriptions
 
-To access the Fabric SaaS platform, you need a license. Fabric has two types of licenses:
+Fabric has two types of licenses that control how users and capacities can operate within the service: capacity licenses and per user licenses. To access the Fabric SaaS platform, you need a license of either type depending on whether you're consuming capacity resources or using Fabric as an individual user.
 
-* [Capacity license](../enterprise/licenses.md#capacity) - An organizational license that provides a pool of resources for Fabric operations. Capacity licenses are divided into stock keeping units (SKUs). Each SKU provides a different number of capacity units (CUs) which are used to calculate the capacity's compute power.
+* [Capacity license](../enterprise/licenses.md#capacity) - An organizational license that provides a pool of resources for Fabric operations. Capacity licenses are divided into stock keeping units (SKUs). Each SKU provides a different number of capacity units (CUs) that are used to calculate the capacity's compute power.
 
 * [Per user license](../enterprise/licenses.md#per-user-licenses) - Per user licenses allow users to work in Fabric.
 
@@ -126,7 +108,7 @@ After you purchase licenses, use the Microsoft 365 admin center, PowerShell, or 
 
 ### Turn off self-service sign-up and purchasing
 
-Self-service lets individuals sign up, try, or buy Fabric or Power BI on their own. You might want to restrict self-service if all licensing is centralized and managed by an admin team, or if your organization doesn't permit trials. To learn how to turn off self-service, see [Enable or disable self-service](/power-bi/enterprise/service-admin-disable-self-service).
+Self-service lets individuals sign up, try, or buy Fabric or Power BI on their own. You might want to restrict self-service if a centralized admin team manages all licensing for your organization, or if your organization doesn't permit trials. To learn how to turn off self-service, see [Enable or disable self-service](/power-bi/enterprise/service-admin-disable-self-service).
 
 Turning off self-service sign-up keeps users from exploring Fabric on their own. If you block individual sign-up, you might want to [get Fabric (free) licenses for your organization and assign them to all users](/power-bi/enterprise/service-admin-licensing-organization#about-self-service-sign-up).
 
@@ -177,7 +159,7 @@ You can also control your organization's [disaster recovery capacity setting](/a
 
 ## Delegate admin rights
 
-To prevent becoming a bottleneck in your organization, you can delegate many controls to Capacity, Workspace, and Domain administrators. [Delegating settings](delegate-settings.md) lets your organization have several admins with different levels of admin rights in multiple logical locations. For example, you can have three admins with access to all the settings in your organization, and another admin for each team in your organization. The team admin can control settings and permissions relevant for the team, at the capacity, workspace, or domain level, depending on the way your organization is set up. You can also have multiple levels of admins in your organization, depending on your organization's needs.
+To prevent bottlenecks, delegate admin rights to Capacity, Workspace, and Domain administrators. [Delegating settings](delegate-settings.md) lets you distribute admin responsibilities across multiple roles and locations. For example, you can have organization-wide admins and team-specific admins who control settings at the capacity, workspace, or domain level. You can structure multiple admin levels based on your organization's needs.
 
 ## Monitor Fabric usage and activity
 

@@ -4,11 +4,7 @@ items:
 - name: Overview
   items:
   - name: Administration overview
-    href: admin-overview.md          
-  - name: Governance and compliance documentation
-    href: ../governance/index.yml      
-  - name: Security documentation
-    href: ../security/index.yml         
+    href: admin-overview.md
 - name: Get started
   items:
   - name: Enable Fabric for your organization
