@@ -150,7 +150,7 @@ For the full comparison, see [Compare Fabric and Azure Synapse Spark: Key Differ
 
 ## Related content
 
-- [Step 1: Plan your Synapse Spark migration to Fabric](synapse-migration-strategy-planning.md)
-- [Steps 2-4: Migrate Synapse Spark workloads to Fabric](synapse-migration-spark-workloads.md)
-- [Step 5: Migrate Hive Metastore metadata and data paths to Fabric](synapse-migration-hms-data.md)
-- [Step 6: Complete Synapse to Fabric migration with security, validation, and cutover](synapse-migration-security-validation-cutover.md)
+- [Phase 1: Migration strategy and planning](synapse-migration-strategy-planning.md)
+- [Phase 2: Spark workload migration](synapse-migration-spark-workloads.md)
+- [Phase 3: Hive Metastore and data migration](synapse-migration-hms-data.md)
+- [Phase 4: Security and governance migration](synapse-migration-security-validation-cutover.md)

@@ -22,7 +22,7 @@ Before you begin, confirm that Fabric Data Engineering is the right destination 
 Start with these articles:
 
 - [Compare Fabric and Azure Synapse Spark: Key Differences](comparison-between-fabric-and-azure-synapse-spark.md)
-- [Step 1: Plan your Synapse Spark migration to Fabric](synapse-migration-strategy-planning.md)
+- [Phase 1: Migration strategy and planning](synapse-migration-strategy-planning.md)
 
 If you're migrating an existing Synapse workspace, plan to create or use an existing Fabric workspace as the migration target. This article doesn't cover full workspace provisioning or non-Spark workload migration.
 

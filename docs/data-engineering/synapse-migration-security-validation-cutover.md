@@ -44,7 +44,7 @@ Use this checklist to track progress through your Spark migration. Each phase bu
 
 ### Phase 1: Assess and plan
 
-For planning guidance, migration patterns, and feature comparison, see [Step 1: Plan your Synapse Spark migration to Fabric](synapse-migration-strategy-planning.md).
+For planning guidance, migration patterns, and feature comparison, see [Phase 1: Migration strategy and planning](synapse-migration-strategy-planning.md).
 
 - **1.1** Complete Spark asset inventory: Spark pools, notebooks, Spark job definitions, lake databases, Hive Metastore (HMS) databases, and linked services used in notebooks.
 - **1.2** Review Synapse vs. Fabric feature differences. Flag blockers: GPU workloads, unsupported catalog APIs, linked service dependencies.
@@ -55,7 +55,7 @@ For planning guidance, migration patterns, and feature comparison, see [Step 1: 
 
 ### Phase 2: Set up connections and credentials
 
-For linked service replacement and authentication guidance, see [Step 3: Refactor Synapse Spark code for Fabric](synapse-migration-code-refactoring.md) and [Step 6: Complete Synapse to Fabric migration with security, validation, and cutover](synapse-migration-security-validation-cutover.md).
+For linked service replacement and authentication guidance, see [Phase 2: Spark workload migration](synapse-migration-spark-workloads.md) and [Phase 4: Security and governance migration](synapse-migration-security-validation-cutover.md).
 
 - **2.1** Inventory all Synapse linked services used by notebooks, Spark job definitions, and Lakehouse data access.
 - **2.2** Create Fabric Connections for external data sources (ADLS Gen2, Cosmos DB, Azure SQL, and others) via **Workspace Settings** > **Manage connections and gateways**.
@@ -65,7 +65,7 @@ For linked service replacement and authentication guidance, see [Step 3: Refacto
 
 ### Phase 3: Migrate data and Hive Metastore
 
-For lake metadata and data-access migration guidance, see [Step 5: Migrate Hive Metastore metadata and data paths to Fabric](synapse-migration-hms-data.md) and [Migrate data and pipelines](migrate-synapse-data-pipelines.md).
+For lake metadata and data-access migration guidance, see [Phase 3: Hive Metastore and data migration](synapse-migration-hms-data.md) and [Migrate data and pipelines](migrate-synapse-data-pipelines.md).
 
 - **3.1** Create OneLake shortcuts to existing ADLS Gen2 paths (zero-copy, preferred approach). Use the Fabric Connections set up in Phase 2 for data gateway-based access.
 - **3.2** For non-Delta files (CSV, JSON, Parquet), create shortcuts in the Files section. If data copy is required, use AzCopy or Data Factory Copy Activity.
@@ -75,7 +75,7 @@ For lake metadata and data-access migration guidance, see [Step 5: Migrate Hive 
 
 ### Phase 4: Migrate Spark workloads
 
-For item migration, code refactoring, and environment setup guidance, see [Step 2: Migrate Synapse Spark workloads with Migration Assistant](synapse-migration-spark-assistant.md), [Step 3: Refactor Synapse Spark code for Fabric](synapse-migration-code-refactoring.md), and [Step 4: Migrate Spark pools, environments, and libraries from Synapse to Fabric](synapse-migration-pools-environments-libraries.md).
+For item migration, code refactoring, and environment setup guidance, see [Phase 2: Spark workload migration](synapse-migration-spark-workloads.md).
 
 - **4.1** Run Spark Migration Assistant for notebooks, Spark job definitions, Spark pools, and lake databases. Review the migration report for errors and warnings.
 - **4.2** Create Fabric Environments with target Spark runtime, pool configuration, and custom libraries. Pre-install missing libraries identified in Phase 1.
@@ -86,7 +86,7 @@ For item migration, code refactoring, and environment setup guidance, see [Step 
 
 ### Phase 5: Security, governance, and network
 
-For security, governance, and network mapping guidance, see [Step 6: Complete Synapse to Fabric migration with security, validation, and cutover](synapse-migration-security-validation-cutover.md).
+For security, governance, and network mapping guidance, see [Phase 4: Security and governance migration](synapse-migration-security-validation-cutover.md).
 
 - **5.1** Map Synapse RBAC roles to Fabric workspace roles (Admin, Member, Contributor, Viewer).
 - **5.2** Configure OneLake RBAC for fine-grained data access control at the folder and table level.
@@ -97,7 +97,7 @@ For security, governance, and network mapping guidance, see [Step 6: Complete Sy
 
 ### Phase 6: Optimize and validate
 
-For post-migration validation and production-readiness guidance, see [Step 6: Complete Synapse to Fabric migration with security, validation, and cutover](synapse-migration-security-validation-cutover.md).
+For post-migration validation and production-readiness guidance, see [Phase 4: Security and governance migration](synapse-migration-security-validation-cutover.md).
 
 - **6.1** Enable Native Execution Engine (NEE) for Spark performance improvement on Parquet and Delta workloads.
 - **6.2** Run `OPTIMIZE VORDER` on tables consumed by Power BI Direct Lake or the SQL analytics endpoint.
@@ -107,7 +107,7 @@ For post-migration validation and production-readiness guidance, see [Step 6: Co
 
 ### Phase 7: Cutover
 
-For final validation, downstream rerouting, and cutover guidance, see [Step 6: Complete Synapse to Fabric migration with security, validation, and cutover](synapse-migration-security-validation-cutover.md).
+For final validation, downstream rerouting, and cutover guidance, see [Phase 4: Security and governance migration](synapse-migration-security-validation-cutover.md).
 
 - **7.1** Confirm all migrated notebooks, SJDs, and Spark jobs run successfully in Fabric.
 - **7.2** Verify data integrity through row counts, schema validation, and query result comparison.
@@ -119,10 +119,10 @@ For final validation, downstream rerouting, and cutover guidance, see [Step 6: C
 
 ## Related content
 
-- [Step 1: Plan your Synapse Spark migration to Fabric](synapse-migration-strategy-planning.md)
-- [Steps 2-4: Migrate Synapse Spark workloads to Fabric](synapse-migration-spark-workloads.md)
-- [Step 5: Migrate Hive Metastore metadata and data paths to Fabric](synapse-migration-hms-data.md)
-- [Step 6: Complete Synapse to Fabric migration with security, validation, and cutover](synapse-migration-security-validation-cutover.md)
+- [Phase 1: Migration strategy and planning](synapse-migration-strategy-planning.md)
+- [Phase 2: Spark workload migration](synapse-migration-spark-workloads.md)
+- [Phase 3: Hive Metastore and data migration](synapse-migration-hms-data.md)
+- [Phase 4: Security and governance migration](synapse-migration-security-validation-cutover.md)
 - [Migrate from Azure Synapse Spark to Fabric (overview)](migrate-synapse-overview.md)
 - [Spark Synapse to Fabric Spark Migration Assistant](synapse-to-fabric-spark-migration-assistant.md)
 - [Compare Fabric and Azure Synapse Spark: Key Differences](comparison-between-fabric-and-azure-synapse-spark.md)

@@ -486,7 +486,7 @@ items:
         href: synapse-migration-hms-data.md
       - name: "Phase 4: Security and governance migration"
         href: synapse-migration-security-validation-cutover.md
-    - name: Component migration guides
+    - name: Component migration guides (manual)
       items:
       - name: Migrate Spark pools
         href: migrate-synapse-spark-pools.md
