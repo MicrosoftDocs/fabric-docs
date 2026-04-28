@@ -1,7 +1,7 @@
 ---
 title: Create a model using Model Builder
 description: Learn how to create a model using Model Builder
-ms.date: 04/27/2026
+ms.date: 04/28/2026
 ms.topic: how-to
 #customer intent: As a user, I want to learn how to create a model using the Model Builder.
 ---
@@ -34,11 +34,11 @@ The first column contains a list of General Ledger (GL) account items for variou
 
     The Driver Model view opens, where you build the model.
 
-    :::image type="content" source="../media/includes/before-model.png" alt-text="Screenshot of model builder interface before a model is built.":::
+    :::image type="content" source="../media/includes/before-model.png" alt-text="Screenshot of model builder interface before a model is built." lightbox="../media/includes/before-model.png":::
 
 1. Delete all rows except the topmost row (*All)* to start building your model from scratch. To delete rows, select all rows except the top row and then select **Delete.**
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/delete-rows.png" alt-text="Screenshot of deleting all rows except the top row.":::
+    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/delete-rows.png" alt-text="Screenshot of deleting all rows except the top row." lightbox="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/delete-rows.png":::
 
     >[!TIP]
     >Use the **Select All** checkbox in the column header to select all rows, then clear the selection for the top row.
@@ -84,7 +84,7 @@ Add another child row for *Net Profit* and rename both rows.
 * Similarly, configure the child rows' type as per your requirements. Select ***Data Source*** to retrieve values from the source data, or choose ***Data Input*** to enter values manually.
 * For a **Data Source** row, select the corresponding row from the data source in the side panel to retrieve the values. If you choose the **Data Input** type instead, enter the values manually in the side panel.
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/row-type-for-child-rows.png" alt-text="Screenshot of configuring the child rows.":::
+    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/row-type-for-child-rows.png" alt-text="Screenshot of configuring the child rows." lightbox="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/row-type-for-child-rows.png":::
 
 By following the above steps, you have created a calculated row at the top level.
 
@@ -107,16 +107,16 @@ For *Income Before Tax (EBT)*,
 * Configure the **Type** as *Data Source* for the child rows if you have data in the source.
 * For each row, select the corresponding row from the data source.
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/another-row-type-configuration.png" alt-text="Screenshot of configuring another set of child rows.":::
+    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/another-row-type-configuration.png" alt-text="Screenshot of configuring another set of child rows." lightbox="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/another-row-type-configuration.png":::
 
-* For the parent row, Income Before Tax (EBT)*, configure it as **Formula** type.
+* Configure the parent row, Income Before Tax (EBT), as **Formula** type.
 * Enter the formula in the formula box by selecting and referencing the required rows. As you type, suggestions appear automatically, or use Ctrl + Space to view them. You can switch between the **References** and **Functions** tabs to select row references or functions.
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/formula-row.png" alt-text="Screenshot of configuring a formula type row.":::
+    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/formula-row.png" alt-text="Screenshot of configuring a formula type row." lightbox="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/formula-row.png":::
 
 * Complete other configurations for the row and select **Apply**.
 
-    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/mini-row-structure.png" alt-text="Screenshot of a small row structure.":::
+    :::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/mini-row-structure.png" alt-text="Screenshot of a small row structure." lightbox="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/mini-row-structure.png":::
 
 ### Build further rows
 
@@ -137,7 +137,7 @@ Income Before Tax (EBT)
         Total Operating Expenses
 ```
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/build-further-rows.png" alt-text="Screenshot of building further rows.":::
+:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/build-further-rows.png" alt-text="Screenshot of building further rows." lightbox="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/build-further-rows.png":::
 
 >[!TIP]
 >Alternatively, use the [**Bulk Insert**](#add-multiple-rows-using-bulk-insert) feature to instantly build the model.
@@ -167,11 +167,11 @@ Use **Bulk Insert** to add multiple rows at once or build the entire model in on
 1. Choose whether to insert the rows as **Child** or **Sibling** rows to the selected row.
 1. Select **Add** to apply the changes.
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/bulk-insert-rows.png" alt-text="Screenshot of inserting rows in bulk.":::
+:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/bulk-insert-rows.png" alt-text="Screenshot of inserting rows in bulk." lightbox="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/bulk-insert-rows.png":::
 
 The rows are added under *Total COGS* based on the defined structure. Update the type and configuration for each row as needed.
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/result-of-bulk-insert.png" alt-text="Screenshot of bulk inserted rows.":::
+:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/result-of-bulk-insert.png" alt-text="Screenshot of bulk inserted rows." lightbox="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/result-of-bulk-insert.png":::
 
 ### Aggregation
 
@@ -194,7 +194,7 @@ If multiple rows share common settings, use **Bulk Edit** to format them all at 
 
 The completed model looks like this:
 
-:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/completed-model.png" alt-text="Screenshot of completed model.":::
+:::image type="content" source="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/completed-model.png" alt-text="Screenshot of completed model." lightbox="../media/planning-model-builder/planning-how-to-create-model-using-model-builder/completed-model.png":::
 
 The model you build applies to the **Open Period** by default, unless you modify specific rows by toggling to the **Open Period**.
 
