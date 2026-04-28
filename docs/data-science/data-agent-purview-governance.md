@@ -70,11 +70,14 @@ Use Activity Explorer filters to locate specific interactions:
   - Fabric Data Agent
   - Other AI apps
 
-Sample User Prompt: 
+### User Prompt 
+For each interaction, Microsoft Purview captures and logs the full text of the user’s prompt.
 
 :::image type="content" source="./media/data-agent-governance/purview-DA-prompt.png" alt-text="Screenshot showing user prompt in Fabric data agent." lightbox="./media/data-agent-governance/purview-DA-prompt.png":::
 
-Data Agent Response: 
+### Data Agent Response
+For each interaction, the response returned by the Data Agent including the natural language answer and structured outputs such as generated queries or code are logged.
+
 
 :::image type="content" source="./media/data-agent-governance/purview-DA-response.png" alt-text="Screenshot showing Data Agent response from M365." lightbox="./media/data-agent-governance/purview-DA-response.png":::
 
