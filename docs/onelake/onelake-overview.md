@@ -43,6 +43,8 @@ Within a workspace, you create and access all data through *data items*. Similar
 
 OneLake is built on top of Azure Data Lake Storage (ADLS) Gen2 and can support any type of file, structured or unstructured. All Fabric data items like data warehouses and lakehouses store their data automatically in OneLake in Delta Parquet format. If a data engineer loads data into a lakehouse using Apache Spark, and then a SQL developer uses T-SQL to load data in a fully transactional data warehouse, both are contributing to the same data lake. OneLake stores all tabular data in Delta Parquet format.
 
+Fabric also supports zero-copy access to externally managed Apache Iceberg tables through mirrored catalogs and shortcuts (for example, [Mirrored Dremio catalog (preview)](../mirroring/catalog-mirroring/dremio.md)). In this case, metadata is synchronized while the underlying files remain in the external system, keeping OneLake as the logical access point without duplicating data.
+
 OneLake supports the same ADLS Gen2 APIs and SDKs to be compatible with existing ADLS Gen2 applications, including Azure Databricks. You can address data in OneLake as if it's one big ADLS storage account for the entire organization. Every workspace appears as a container within that storage account, and different data items appear as folders within those containers.
 
 :::image type="content" source="media\onelake-overview\access-onelake-data-other-tools.png" alt-text="Diagram showing how you can access OneLake data with APIs and SDKs." lightbox="media\onelake-overview\access-onelake-data-other-tools.png":::
@@ -83,6 +85,8 @@ Data is often optimized for a single engine, which makes it difficult to reuse t
 You don't need to copy data just to use it with another engine or feel stuck with using a particular engine because that's where your data is. For example, imagine a team of SQL engineers building a fully transactional data warehouse. They can use the T-SQL engine and all the power of T-SQL to create tables, transform data, and load the data to tables. If a data scientist wants to make use of this data, they don't need to go through a special Spark/SQL driver. OneLake stores all data in Delta Parquet format. The data scientist can use the full power of the Spark engine and its open-source libraries directly over the data.
 
 Business users can build Power BI reports directly on top of OneLake using the Direct Lake mode in the Analysis Services engine. The Analysis Services engine powers Power BI semantic models, and it has always offered two modes of accessing data: import and direct query. This third mode, Direct Lake mode, gives users all the speed of import without needing to copy the data, combining the best of import and direct query. For more information, see [Direct Lake](https://aka.ms/DirectLake).
+
+Mirrored Iceberg tables from external catalogs (for example, Dremio) appear within seconds in OneLake and are queryable via the SQL analytics endpoint and other Fabric engines without data movement.
 
 :::image type="content" source="media\onelake-overview\use-same-copy-of-data.png" alt-text="Example diagram showing loading data using Spark, querying using T-SQL, and viewing the data in a Power BI report." lightbox="media\onelake-overview\use-same-copy-of-data.png":::
 

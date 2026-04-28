@@ -28,6 +28,8 @@ Use this overview to understand how each storage option works and choose the bes
 
 A [Lakehouse](../data-engineering/lakehouse-overview.md) is a core storage item in Fabric that uses OneLake to store data in both file and table formats. A Lakehouse represents a curated folder structure in OneLake and includes a SQL interface. A Lakehouse stores data as Delta Parquet files. You can organize raw files such as CSV files or images in folders, and you can create managed Delta tables for structured data. This model supports both structured and unstructured data in the same environment.
 
+While Lakehouse tables are stored as Delta, Fabric can also access Apache Iceberg tables through OneLake shortcuts and catalog integrations (such as the [Mirrored Dremio catalog (preview)](../mirroring/catalog-mirroring/dremio.md)), enabling unified querying via the automatic SQL analytics endpoint.
+
 Fabric automatically provisions a [SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md) for each Lakehouse. You and tools such as Power BI can query Delta tables by using Transact-SQL, as if querying a relational database. The Lakehouse combines the scalability and flexibility of a data lake with core warehouse capabilities, including direct table querying and schema management.
 
 ## Warehouse for structured analytics
@@ -53,6 +55,8 @@ A mirrored database in Fabric is a continuously replicated copy of an external o
 Mirroring synchronizes source changes into Fabric in near real time without requiring traditional extract, transform, load pipelines. After replication, the data becomes [immediately queryable](../mirroring/explore.md) through SQL endpoints and is available across Fabric workloads, including Power BI, Spark notebooks, and pipelines.
 
 This architecture supports hybrid transactional and analytical processing (HTAP) scenarios, where you analyze operational data while maintaining source system integrity. If the source data is already stored in a location accessible through OneLake shortcuts (such as Azure Data Lake Storage or another Fabric workspace), consider using shortcuts for zero-copy access instead of mirroring. Mirroring is best suited for operational databases that require continuous change data capture, while shortcuts are ideal when you need live, read-only access without replication.
+
+Note that catalog mirroring integrations, such as the [Mirrored Dremio catalog (preview)](../mirroring/catalog-mirroring/dremio.md), synchronize only metadata and create shortcuts for zero-copy access without copying or replicating data. For those zero-copy scenarios, see the [OneLake shortcuts](#onelake-shortcuts-for-zero-copy-data-access) section.
 
 ## OneLake shortcuts for zero-copy data access
 
@@ -104,7 +108,7 @@ Semantic models also enable conversational AI, semantic search, enterprise repor
 
 Microsoft Fabric provides multiple data store options, each optimized for specific workloads:
 
-- **Lakehouse** for large-scale data engineering and open-format storage like Delta and Iceberg, with support for Spark and SQL engines.
+- **Lakehouse** for large-scale data engineering and open-format storage. Lakehouse tables are stored natively in Delta format. Apache Iceberg tables are accessible in Fabric via OneLake shortcuts and catalog integrations (such as the [Mirrored Dremio catalog](../mirroring/catalog-mirroring/dremio.md)), with support for Spark and SQL engines.
 - **Warehouse** for structured, relational analytics with high-performance SQL capabilities and enterprise reporting.
 - **Eventhouse** for real-time telemetry and log analytics by using Kusto Query Language.
 - **SQL database** for transactional workloads and operational analytics.

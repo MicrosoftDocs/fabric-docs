@@ -7,6 +7,7 @@ ms.reviewer: mahi
 ms.date: 04/27/2026
 ms.topic: overview
 ms.search.form: Dremio catalog mirroring overview
+ai-usage: ai-assisted
 ---
 
 # Mirrored Dremio catalog
@@ -34,6 +35,17 @@ You can access your mirrored Dremio catalog data multiple ways:
 - Use Power BI with Direct Lake mode to create reports against the mirrored Dremio catalog item.
 - Use other Fabric workloads to query tables in the mirrored Dremio catalog item.
 
+Mirrored tables are available to query within seconds after selection, with end-to-end metadata propagation typically completing in seconds to a few minutes.
+
+## Connect and authenticate
+
+Mirroring connects to a Dremio Iceberg REST Catalog endpoint. The following authentication methods are supported:
+
+- **Credential vending** – Dremio provides short-lived credentials for accessing the underlying Iceberg table data.
+- **Personal Access Token (PAT)** – Authenticate with a Dremio-issued personal access token.
+
+For detailed steps on configuring the connection and authentication, see [Tutorial: Configure mirrored Dremio catalog](dremio-tutorial.md).
+
 ## Metadata sync
 
 When you create a new mirrored Dremio catalog in Fabric, the **Automatically sync future tables** option is enabled by default. The following metadata changes are reflected from your Dremio environment to Fabric if automatic sync is enabled:
@@ -42,6 +54,8 @@ When you create a new mirrored Dremio catalog in Fabric, the **Automatically syn
 - Deletion of namespaces from the catalog
 - Addition of tables to a namespace
 - Deletion of tables from a namespace
+- When **Automatically sync future tables** is enabled, newly created Iceberg tables in selected namespaces are automatically included in Fabric without requiring a manual refresh.
+- Schema and data changes to existing tables follow normal propagation intervals.
 
 Schema/table selection:
 
