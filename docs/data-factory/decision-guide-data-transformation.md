@@ -16,8 +16,7 @@ The following capabilities help you optimize your dataflows:
 - **High-Scale Compute output** – Scale transformation processing after ingestion for high-throughput ELT workloads.  
 - [**Fast copy**](dataflows-gen2-fast-copy.md) – Accelerate bulk data movement with minimal transformation.  
 - [**Modern Evaluator**](dataflow-gen2-modern-evaluator.md) – Speed up heavy data shaping on non-foldable queries.  
-- [**Partitioned compute**](dataflow-gen2-partitioned-compute.md) – Scale transformations across large and partitioned datasets.  
-- **Incremental refresh** – Refresh only new or changed data to reduce processing time and compute cost.
+- [**Partitioned compute**](dataflow-gen2-partitioned-compute.md) – Scale transformations across large and partitioned datasets.
 
 This guide covers common use cases, real-world examples, and benchmarking results to help you choose the right feature for your workload.
 
@@ -32,7 +31,6 @@ Use the following table to match your workload to the right Dataflow Gen2 capabi
 | Process large, partitioned datasets with complex transformations | [**Partitioned Compute**](#use-partitioned-compute-when) |
 | Stage data before applying transformations | [**Staging**](#use-staging-when) |
 | Scale transformation output for large datasets | [**High-Scale Compute**](#use-high-scale-compute-when) |
-| Refresh only new or changed data incrementally | [**Incremental Refresh**](#use-incremental-refresh-when) |
 
 ### Use fast copy when
 
@@ -75,14 +73,6 @@ For a benchmark example, see [Scenario 4: ELT patterns](#scenario-4-elt-patterns
 
 For a benchmark example, see [Scenario 4: ELT patterns](#scenario-4-elt-patterns).
 
-### Use incremental refresh when
-
-- Your dataset grows over time and you only need to refresh new or changed data.  
-- You want to reduce refresh duration by avoiding full reloads.  
-- Your source supports date-based or key-based filtering for incremental detection.
-
-For a benchmark example, see [Scenario 5: Incremental refresh](#scenario-5-incremental-refresh).
-
 ### Capability comparison
 
 The following table compares each capability in more detail, including typical benefits.
@@ -94,7 +84,6 @@ The following table compares each capability in more detail, including typical b
 | **Partitioned Compute** | Partitioned datasets                             | High-volume transformations across multi-file sources | Parallelized execution and faster processing |
 | **Staging** | Stage raw data before applying transformations | Large-scale ingestion followed by transformation | Separates ingestion from transformation for better performance |
 | **High-Scale Compute** | Scale output from a staged query to a lakehouse | ELT workloads that reference a staged query and write to a lakehouse destination | Maximized throughput from staging warehouse to lakehouse |
-| **Incremental Refresh** | Incremental data loads | Growing datasets where only new or changed data needs processing | Reduced refresh times, lower compute cost |
 
 > [!NOTE]
 > For more information on query evaluation and query folding, see this [Power Query article](/power-query/query-folding-basics). It provides a framework that can help you understand the concepts discussed here.
@@ -111,12 +100,11 @@ The following table summarizes the benchmark results across all scenarios. Each 
 | Heavy data shaping (1 file → lakehouse) | Modern Evaluator | 00:46:15 | 1.6× faster |
 | Partitioned transforms (56 files → warehouse) | Partitioned Compute | 00:04:48 | 21× faster |
 | ELT patterns (staging + transform) | Fast Copy + Staging + High-Scale Compute | TBD | TBD |
-| Incremental refresh | Incremental Refresh | TBD | TBD |
 
 For step-by-step details, dataset configurations, and design patterns for each capability, see the scenario sections that follow.
 
 > [!NOTE]
-> All scenarios in this article implicitly use the **Modern Evaluator** unless explicitly stated otherwise.
+> All scenarios in this article implicitly use the **Modern Evaluator** and **V-order** disabled unless explicitly stated otherwise.
 
 ## Scenario 1: Copy data
 
@@ -195,23 +183,23 @@ This query ingests data from a consolidated parquet file, filters the trip_dista
 - Expected refresh times could be **significantly faster** (varies by dataset and transformations).  
 - Optimized for large volumes (millions of rows).  
 - Beneficial for non-foldable queries.  
-- Faster writes to destinations like Lakehouse (CSV).  
+- Faster writes to destinations like Lakehouse.  
 
 ### Results
 
-With Modern Evaluator enabled, Dataflow Gen2 runs this shaping workload **about 1.6× faster than the Dataflow Gen1 baseline** (00:46:15 vs 01:13:44) while preserving the no-code Power Query experience. Without Modern Evaluator, the same workload runs about 1.3× slower than Gen1.
+With Modern Evaluator enabled, Dataflow Gen2 runs this shaping workload **about 1.6× faster than the Dataflow Gen1 baseline** (00:46:15 vs 01:13:44) while preserving the no-code Power Query experience. Without Modern Evaluator, the same workload is roughly on par with Gen1 (01:14:28 vs 01:13:44).
 
 The following table also includes a Dataflow Gen1 baseline for comparison. Dataflow Gen1 uses a fundamentally different architecture than Dataflow Gen2, it doesn't support capabilities like modern evaluator, and it can only load data as CSV files, whereas Dataflow Gen2 loads data as Parquet files in these scenarios. The same M script was used across both Gen1 and Gen2 runs.
 
 | Configuration | Execution Time (hh:mm:ss) | Comparison against Gen1 |
 |---------------------|---------------------------|-------------------------|
 | **Dataflow Gen1 baseline** | 01:13:44 | — |
-| **Dataflow Gen2 without Modern Evaluator** | 01:34:55 | 1.3× slower |
+| **Dataflow Gen2 without Modern Evaluator** | 01:14:28 | Roughly on par with Gen1 |
 | **Dataflow Gen2 with Modern Evaluator**    | 00:46:15 | 1.6× faster |
 
 ### Key takeaways
 
-- Without Modern Evaluator, Dataflow Gen2 ran ~1.3× slower than the Dataflow Gen1 baseline on this shaping workload; enabling Modern Evaluator flipped that to ~1.6× faster than Gen1, on identical M script and dataset.
+- Without Modern Evaluator, Dataflow Gen2 was roughly on par with the Dataflow Gen1 baseline on this shaping workload; enabling Modern Evaluator improved performance to ~1.6× faster than Gen1, on identical M script and dataset.
 - The lift comes from a more efficient execution path for non-foldable and semi-foldable queries, which is where Power Query traditionally spends the most time, especially against connectors like ADLS Gen2 and SharePoint. Gains scale with row volume and shaping complexity.
 - Treat Modern Evaluator as the default for shaping-heavy flows where queries don't fully fold back to the source. The bigger the dataset and the more transformations applied in-engine, the more impact you should expect.
 
@@ -312,51 +300,3 @@ TBD
 - The ELT pattern decouples ingestion from transformation: Fast Copy handles bulk movement into a staging layer, then downstream reference queries reshape the staged data without re-reading the source.
 - Enabling **High-Scale Compute output** on the downstream queries scales transformation throughput when writing from staging to a lakehouse destination, which is the typical bottleneck once ingestion is offloaded to Fast Copy.
 - Use this pattern when a single dataflow tries to ingest and transform large volumes in one pass and resource contention slows both phases. Benchmark numbers for this scenario are pending and will be added once available.
-
-## Scenario 5: Incremental refresh
-
-As the taxi dataset grows daily, the team can't afford to reload the entire dataset on every refresh. They need a strategy that processes only new or changed records.
-
-### Challenges
-
-- Full dataset refreshes become slower and more expensive as data grows.  
-- The team needs to process only the delta (new or changed records) on each run.  
-- Refresh windows are limited, so efficiency is critical.
-
-### Dataset
-
-TBD
-
-### Solution
-
-The team enables **incremental refresh** in Dataflows Gen2. Incremental refresh detects and processes only new or changed data based on date or key filters, reducing refresh time and compute cost.
-
-#### Design
-
-TBD
-
-<!-- :::image type="content" source="media/decision-guide-data-transformation/incremental-refresh-design.png" alt-text="Screenshot of dataflow design for Incremental Refresh showcasing Query settings." lightbox="media/decision-guide-data-transformation/incremental-refresh-design.png"::: -->
-
-#### Incremental refresh considerations
-
-- Requires a date or key column to detect new or changed data.  
-- Reduces refresh duration by avoiding full reloads.  
-- Works best with growing datasets that have a clear incremental boundary.
-
-### Results
-
-TBD
-
-<!--
-| Configuration | Execution Time (hh:mm:ss) | Comparison against Gen1 |
-|---------------------|---------------------------|-------------------------|
-| **Dataflow Gen1 baseline** | TBD | — |
-| **Dataflow Gen2 without Incremental Refresh** | TBD | TBD |
-| **Dataflow Gen2 with Incremental Refresh** | TBD | TBD |
--->
-
-### Key takeaways
-
-- Incremental refresh processes only new or changed rows on each run, so refresh duration and compute cost scale with the delta instead of the full dataset.
-- It requires a date or key column that the source can filter on to detect changes; without a clean incremental boundary, full refreshes remain the safer choice.
-- Apply it to growing datasets where full refresh windows are tightening or already exceeding their SLA. Benchmark numbers for this scenario are pending and will be added once available.
