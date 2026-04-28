@@ -45,6 +45,8 @@ items:
     items:
       - name: Design a graph schema
         href: design-graph-schema.md
+      - name: Convert relational data to a graph model
+        href: convert-relational-data-to-graph-model.md
       - name: Share and manage permissions
         href: share-graph-manage-permissions.md
       - name: Manage data
