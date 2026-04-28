@@ -127,7 +127,7 @@ For the full comparison, see [Compare Fabric and Azure Synapse Spark: Key Differ
 | **Spark engine** | Synapse Spark pools (Spark 3.4, 3.5); GPU pools supported | Fabric Spark (Runtime 1.2/1.3/2.0: Spark 3.4–4.0); no GPU support; runs on latest-generation hardware for improved performance |
 | **Scaling** | Node autoscale for Spark (min 3 nodes) | Node autoscale for Spark (single-node minimum); capacity-based scaling |
 | **Session startup** | Pool-based; cold start for new clusters | Starter Pools (seconds-level startup); Custom Live Pools; High Concurrency mode |
-| **Cost model** | Per-node-hour (Spark); pause/resume | Two options: (1) Capacity Model — per-CU with RI discounts (~40%), or (2) Autoscale Billing for Spark — pay-per-use model similar to Synapse |
+| **Cost model** | Per-node-hour (Spark); pause/resume | Two options: (1) Fabric Spark uses a Capacity Unit (CU)-based shared consumption model, or (2) Autoscale Billing for Spark – pay as you go Spark mode |
 
 ### Spark: Synapse Spark vs. Fabric Spark
 
