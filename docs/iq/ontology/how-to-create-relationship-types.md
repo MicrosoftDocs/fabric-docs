@@ -67,17 +67,17 @@ Follow these steps to create a relationship type and bind data to it:
 
 1. **Save** the relationship type. Confirm that the relationship type updated successfully, then select **Cancel** to close the configuration options.
 
-1. You see the **Configure** page for the entity, where the updated relationship remains visible in the **Relationships** section.
+1. You see the **Configure** page for the entity, where the updated relationship is visible in the **Relationships** section.
 
     :::image type="content" source="media/how-to-create-relationship-types/add-relationship-5.png" alt-text="Screenshot of the relationship type on the configuration page." lightbox="media/how-to-create-relationship-types/add-relationship-5.png":::
 
 ## Edit or delete relationship type
 
-To edit or delete a relationship type, reopen its configuration page. This can be done from the Home configuration canvas or the **Relationships** section of the **Configure** page by selecting the relationship type in the canvas view. On the **Configure** page, you can also select **Manage relationships > {relationship type name}**.
+To edit or delete a relationship type, reopen its configuration page by selecting the relationship type in the canvas view (visible in both the Home configuration canvas and the **Relationships** section of the **Configure** page). On the **Configure** page, you can also select **Manage relationships > {relationship type name}**.
 
 :::image type="content" source="media/how-to-create-relationship-types/reopen-relationship.png" alt-text="Screenshot of reopening the relationship configuration." lightbox="media/how-to-create-relationship-types/reopen-relationship.png":::
 
-From this page, you can edit the relationship type configuration or delete the relationship type.
+On this page, edit the relationship type configuration or delete the relationship type.
 
 :::image type="content" source="media/how-to-create-relationship-types/delete-relationship.png" alt-text="Screenshot of editing/deleting a relationship type." lightbox="media/how-to-create-relationship-types/delete-relationship.png":::
 
