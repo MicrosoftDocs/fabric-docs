@@ -85,6 +85,8 @@ The following image shows the source, destination, and data transformation:
 
 * **Consume**: Power BI can consume data from the lakehouse for reporting and visualization. Each lakehouse has a built-in TDS endpoint called the *SQL analytics endpoint* for easy connectivity and querying of data in the lakehouse tables from other reporting tools. You can also use Direct Lake over OneLake to let Power BI query lakehouse tables directly without import or a dedicated semantic model refresh cycle. Additionally, you can make your data available to non-Microsoft reporting tools by using the TDS/SQL analytics endpoint to connect and run SQL queries for analytics.
 
+  For Spark SQL workloads specifically, ODBC-compatible clients can connect using the [Microsoft ODBC Driver for Microsoft Fabric Data Engineering (Preview)](./spark-odbc-driver.md) with Microsoft Entra ID authentication (interactive, Azure CLI, service principal, certificate, or access token).
+
 ## Next step
 
 > [!div class="nextstepaction"]
