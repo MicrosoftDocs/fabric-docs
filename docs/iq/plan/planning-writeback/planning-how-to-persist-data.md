@@ -12,7 +12,7 @@ Writeback saves data from a Planning sheet to external data destinations such as
 
 Write back budgets, forecasts, adjustments, and scenarios to the Writeback table in the data platform to keep planning data synchronized with enterprise systems.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
 ## Writeback use cases
 
