@@ -162,14 +162,14 @@ This query combines the five year-wise Parquet files and loads the result into t
 
 ### Results
 
-With Fast Copy enabled, Dataflow Gen2 ingests this dataset **about 13× faster than the Dataflow Gen1 baseline** (00:07:43 vs 01:42:18) while reducing compute usage. Without Fast Copy, Dataflow Gen2 is already about 1.5× faster than Gen1 on the same workload.
+With Fast Copy enabled, Dataflow Gen2 ingests this dataset **about 13× faster than the Dataflow Gen1 baseline** (00:07:43 vs 01:42:18) while reducing compute usage. Without Fast Copy, Dataflow Gen2 is already about 2.9× faster than Gen1 on the same workload.
 
 The following table also includes a Dataflow Gen1 baseline for comparison. Dataflow Gen1 uses a fundamentally different architecture than Dataflow Gen2, it doesn't support capabilities like fast copy, and it can only load data as CSV files, whereas Dataflow Gen2 loads data as Parquet files in these scenarios. The same M script was used across both Gen1 and Gen2 runs.
 
 | Configuration | Execution Time (hh:mm:ss) | Comparison against Gen1 |
 |---------------------|---------------------------|-------------------------|
 | **Dataflow Gen1 baseline** | 01:42:18 | — |
-| **Dataflow Gen2 without Fast Copy** | 01:09:21 | 1.5× faster |
+| **Dataflow Gen2 without Fast Copy** | 00:35:25 | 2.9× faster |
 | **Dataflow Gen2 with Fast Copy**    | 00:07:43 | 13× faster |
 
 ### Key takeaways
