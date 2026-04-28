@@ -2,7 +2,7 @@
 title: "Microsoft Fabric Decision Guide: Choose a dataflow strategy"
 description: "Identify the best strategy for your Microsoft Fabric data transformation."
 ms.reviewer: krirukm
-ms.date: 6/4/2026
+ms.date: 4/29/2026
 ms.topic: concept-article
 ---
 
@@ -12,8 +12,6 @@ Microsoft Fabric Dataflows Gen2 offers multiple ways to ingest, transform, and l
 
 The following capabilities help you optimize your dataflows:
 
-- [**Staging queries**](dataflow-gen2-data-destinations-and-managed-settings.md#using-staging-before-loading-to-a-destination) – Land data in an intermediate layer before applying transformations, enabling ELT patterns.  
-- **High-Scale Compute output** – Scale transformation processing after ingestion for high-throughput ELT workloads.  
 - [**Fast copy**](dataflows-gen2-fast-copy.md) – Accelerate bulk data movement with minimal transformation.  
 - [**Modern Evaluator**](dataflow-gen2-modern-evaluator.md) – Speed up heavy data shaping on non-foldable queries.  
 - [**Partitioned compute**](dataflow-gen2-partitioned-compute.md) – Scale transformations across large and partitioned datasets.
@@ -29,8 +27,6 @@ Match your workload to the right Dataflow Gen2 capability. For a benchmark examp
 | **Fast Copy** | You need a direct, high-throughput copy from a supported source with no transformations. | Faster ingestion at lower compute cost. | [Scenario 1: Copy data](#scenario-1-copy-data) |
 | **Modern Evaluator** | You're shaping data from non-foldable or partially foldable connectors (filters, derivations, cleansing). | Faster execution without changing logic. | [Scenario 2: Heavy data shaping](#scenario-2-heavy-data-shaping) |
 | **Partitioned Compute** | You're transforming large, partitioned, or multi-file datasets that can run in parallel. Combine with Modern Evaluator when supported. | Parallelized execution across partitions. | [Scenario 3: Combine files](#scenario-3-combine-files) |
-| **Staging** | You want to land raw data first, then transform (ELT) to avoid contention in a single pass. | Separates ingestion from transformation. | [Scenario 4: ELT patterns](#scenario-4-elt-patterns) |
-| **High-Scale Compute** | You're already using staging, referencing the staged query downstream, and writing to a lakehouse destination. | Maximizes throughput from the staging warehouse to the lakehouse. | [Scenario 4: ELT patterns](#scenario-4-elt-patterns) |
 
 > [!NOTE]
 > For background on query evaluation and query folding, see [Query folding basics](/power-query/query-folding-basics).
@@ -46,7 +42,6 @@ The following table summarizes the benchmark results across all scenarios. Each 
 | [Scenario 1: Copy data](#scenario-1-copy-data) | Bulk-load 5 consolidated Parquet files from ADLS Gen2 into a lakehouse with no transformations. | Fast Copy | 00:07:43 | 13× faster |
 | [Scenario 2: Heavy data shaping](#scenario-2-heavy-data-shaping) | Apply non-foldable transformations (filters, derivations, cleansing) to a single large Parquet file loaded into a lakehouse. | Modern Evaluator | 00:46:15 | 1.6× faster |
 | [Scenario 3: Combine files](#scenario-3-combine-files) | Combine and transform 56 partitioned Parquet files in parallel and load into a warehouse. | Partitioned Compute | 00:04:48 | 21× faster |
-| [Scenario 4: ELT patterns](#scenario-4-elt-patterns) | Stage raw data first, then transform downstream and write to a lakehouse. | Fast Copy + Staging + High-Scale Compute | TBD | TBD |
 
 For step-by-step details, dataset configurations, and design patterns for each capability, see the scenario sections that follow.
 
@@ -198,52 +193,3 @@ The following table also includes a Dataflow Gen1 baseline for comparison. Dataf
 - The gain comes from processing each partition in parallel and merging the results, so it's most effective on multi-file or partitioned sources where folding isn't available and sequential evaluation is the bottleneck.
 - Use the **Sample transform file** pattern from Combine Files so transformation logic is applied consistently per partition. Partitioned Compute supports a subset of transformations, so validate that your shaping steps are compatible before relying on it.
 - For high-volume, partitioned ingestion to staging or a warehouse, make Partitioned Compute the default and combine it with Modern Evaluator whenever possible.
-
-## Scenario 4: ELT patterns
-
-The team needs to ingest large volumes of raw trip data into staging first, then apply transformations separately. This extract-load-transform (ELT) approach decouples ingestion from transformation, enabling higher throughput and more scalable pipelines.
-
-### Challenges
-
-- Ingestion and transformation compete for the same resources when run together.  
-- Large datasets slow down when transformations are applied during the copy phase.  
-- The team needs a scalable pattern that separates data movement from data processing.
-
-### Dataset
-
-One parquet file.
-
-### Solution
-
-The team combines **Fast Copy** for high-throughput ingestion, **staging queries** to land data in an intermediate layer, and **High-Scale Compute output** to apply transformations at scale after ingestion.
-
-#### Design
-
-:::image type="content" source="media/decision-guide-data-transformation/elt-patterns-design.png" alt-text="Screenshot of dataflow design for ELT patterns showcasing Query settings." lightbox="media/decision-guide-data-transformation/elt-patterns-design.png":::
-
-A query loads a single parquet file into staging using fast copy. Multiple reference queries are created against the initial staged query to transform the data into multiple dimensions that are later loaded to a Lakehouse as separate tables.
-
-#### ELT pattern considerations
-
-- Fast Copy handles the initial data movement into staging.  
-- Staging queries land data in an intermediate layer before transformations.  
-- High-Scale Compute output processes transformations at scale after ingestion.  
-- Best suited for workloads where separating ingestion from transformation improves throughput.
-
-### Results
-
-TBD
-
-<!--
-| Configuration | Execution Time (hh:mm:ss) | Comparison against Gen1 |
-|---------------------|---------------------------|-------------------------|
-| **Dataflow Gen1 baseline** | TBD | — |
-| **Dataflow Gen2 without ELT pattern** | TBD | TBD |
-| **Dataflow Gen2 with Fast Copy + Staging + High-Scale Compute** | TBD | TBD |
--->
-
-### Key takeaways
-
-- The ELT pattern decouples ingestion from transformation: Fast Copy handles bulk movement into a staging layer, then downstream reference queries reshape the staged data without re-reading the source.
-- Enabling **High-Scale Compute output** on the downstream queries scales transformation throughput when writing from staging to a lakehouse destination, which is the typical bottleneck once ingestion is offloaded to Fast Copy.
-- Use this pattern when a single dataflow tries to ingest and transform large volumes in one pass and resource contention slows both phases. Benchmark numbers for this scenario are pending and will be added once available.
