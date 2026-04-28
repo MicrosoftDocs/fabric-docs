@@ -2,7 +2,7 @@
 title: GQL Language Guide for graph in Microsoft Fabric
 description: Learn how to write GQL queries for graph in Microsoft Fabric, including pattern matching, filtering, aggregation, sorting, and subqueries with examples.
 ms.topic: reference
-ms.date: 04/23/2026
+ms.date: 04/27/2026
 ms.reviewer: splantikow
 ms.search.form: GQL Language Guide
 ---
@@ -24,6 +24,13 @@ This article provides a comprehensive reference for GQL in graph. It covers:
 
 > [!NOTE]
 > The official International Standard for GQL is [ISO/IEC 39075 Information Technology - Database Languages - GQL](https://www.iso.org/standard/76120.html).
+
+If you're looking for task-oriented guidance instead of a full language reference, see the how-to guides:
+
+- [Write common GQL queries](write-common-gql-queries.md) — neighbors, multi-hop traversal, shared connections, and entity existence checks
+- [Filter and aggregate graph data](filter-aggregate-graph-data.md) — FILTER, WHERE, GROUP BY, and aggregate functions
+- [Write graph pattern queries](write-graph-pattern-queries.md) — multi-hop patterns, path modes, variable reuse, and OPTIONAL MATCH
+- [Optimize GQL query performance](gql-query-performance.md) — filtering strategy, traversal limits, and key constraint recommendations
 
 ## Prerequisites
 
@@ -1348,6 +1355,13 @@ Keep these references handy for quick lookups:
 
 ## Related content
 
+**How-to guides:**
+
+- [Write common GQL queries](write-common-gql-queries.md) - Practical query patterns for neighbors, multi-hop, shared connections, and more.
+- [Filter and aggregate graph data](filter-aggregate-graph-data.md) - FILTER, WHERE, GROUP BY, and aggregate functions.
+- [Write graph pattern queries](write-graph-pattern-queries.md) - Multi-hop traversal, path modes, variable reuse, and optional matching.
+- [Optimize GQL query performance](gql-query-performance.md) - Best practices for writing efficient GQL queries.
+
 **Further details on key topics:**
 
 - [Social network schema example](gql-schema-example.md) - Complete working example of graph schema.
@@ -1355,7 +1369,6 @@ Keep these references handy for quick lookups:
 - [GQL expressions and functions](gql-expressions.md) - All expression types and built-in functions.
 - [GQL graph types](gql-graph-types.md) - Graph types and constraints.
 - [GQL values and value types](gql-values-and-value-types.md) - Complete type system reference and value handling.
-- [Optimize GQL query performance for graph](gql-query-performance.md) - Best practices for writing efficient GQL queries.
 
 **Quick references:**
 
