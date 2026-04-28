@@ -160,13 +160,13 @@ To learn how to use Copilot responsibly, see the guidance at [Privacy, security,
 
 ### Available regions for Azure OpenAI Service
 
-To access the prebuilt [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), including the [Copilot in Fabric](copilot-fabric-overview.md), you must have an F2 or higher SKU or a P SKU in the following [Fabric regions](../admin/region-availability.md). The Azure OpenAI Service isn't available on trial SKUs.
+To access the prebuilt [Azure OpenAI Service](/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure?tabs=global-standard-aoai%2Cglobal-standard&pivots=azure-openai), including the [Copilot in Fabric](copilot-fabric-overview.md), you must have an F2 or higher SKU or a P SKU in the following [Fabric regions](../admin/region-availability.md). The Azure OpenAI Service isn't available on trial SKUs.
 
 The Azure OpenAI Service that powers Fabric Copilot is currently deployed only in US datacenters (East US, East US2, South Central US, and West US) and one EU datacenter (France Central). This deployment differs from the standard Azure OpenAI Service available in the Azure portal, which is accessible in many more regions. For details on standard Azure OpenAI region availability, see [Azure OpenAI Service region availability](/azure/ai-services/openai/concepts/models?tabs=global-standard%2Cstandard-chat-completions#model-summary-table-and-region-availability). If your data is outside the US or EU, the feature is disabled by default unless your tenant admin enables the **Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance** tenant setting. To learn how to get to the tenant settings, see [About tenant settings](../admin/service-admin-portal-copilot.md).
 
 ### Data processing across geographic areas
 
-The prebuilt [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/) and [Copilot in Fabric](copilot-fabric-overview.md) might process your prompts and results (input and output when using Copilot) outside your capacity's geographic region, depending on where the Azure OpenAI service is hosted. The following table shows the mapping of where data is processed across geographic areas for Copilot in Fabric and Azure OpenAI features.
+The prebuilt [Azure OpenAI Service](/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure?tabs=global-standard-aoai%2Cglobal-standard&pivots=azure-openai) and [Copilot in Fabric](copilot-fabric-overview.md) might process your prompts and results (input and output when using Copilot) outside your capacity's geographic region, depending on where the Azure OpenAI service is hosted. The following table shows the mapping of where data is processed across geographic areas for Copilot in Fabric and Azure OpenAI features.
 
 > [!NOTE]  
 > The data processed for Copilot interactions can include user prompts, meta prompts, structure of data (schema), and conversation history. You don't send any data, such as content in tables, to Azure OpenAI for processing unless you direct it.

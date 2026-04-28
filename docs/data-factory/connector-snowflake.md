@@ -2,7 +2,7 @@
 title: Set up your Snowflake database connection
 description: This article provides information about how to create a Snowflake database connection in Microsoft Fabric.
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 04/21/2026
 ms.custom:
   - template-how-to
   - connectors
@@ -22,6 +22,9 @@ The Snowflake database connector supports the following authentication types for
 |Snowflake| √ | √ |
 |Microsoft Account| √ | √ |
 |Key-pair | √ | √ |
+|Service Principal (SPN)| √ | √ |
+
+[!INCLUDE [snowflake-authentication-types-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/snowflake-authentication-types-supported.md)]
 
 ## Set up your connection for Dataflow Gen2
 You can connect Dataflow Gen2 in Microsoft Fabric to Snowflake using Power Query connectors. Follow these steps to create your connection:

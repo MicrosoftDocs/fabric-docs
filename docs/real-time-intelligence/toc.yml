@@ -969,6 +969,8 @@ items:
         items:
           - name: Build real-time work order routing
             href: map/tutorial-real-time-work-order-routing-application.md
+          - name: Create a map using the REST API with Python
+            href: map/tutorial-create-fabric-map-python.md
       - name: Concepts
         items:
           - name: Map items
@@ -993,6 +995,12 @@ items:
             href: map/sharing-maps.md
           - name: Permissions in Fabric Maps
             href: map/about-map-permissions.md
+          - name: Automation with REST APIs
+            items:
+              - name: Automate Fabric Maps with the REST API
+                href: map/about-rest-api.md
+              - name: Handle Errors in Fabric Maps Automation
+                href: map/rest-api-error-handling-best-practices.md
       - name: How-to guides
         items:
         - name: Create a map
@@ -1027,6 +1035,8 @@ items:
               href: map/share-map-org-apps.md
         - name: Manage Map permissions
           href: map/manage-map-permissions.md
+        - name: Create and Configure a Fabric Map with REST APIs
+          href: map/create-configure-map-using-rest-api.md
   - name: AI agents and MCP servers
     displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
     items:
@@ -1065,7 +1075,7 @@ items:
     href: kusto-tocs/query/toc.yml
   - name: Reference architectures
     items:
-    - name: Automative and mobile
+    - name: Automotive and Mobility
       items:
       - name: Connected fleet data analytics
         href: architectures/connected-fleet.md

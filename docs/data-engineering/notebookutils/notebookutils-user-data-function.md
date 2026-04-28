@@ -100,6 +100,64 @@ result <- myFunctions$functionName("value1", "value2")
 
 ---
 
+## Default parameter values
+
+Fabric user data functions support default argument values. When you invoke functions retrieved via `notebookutils.udf.getFunctions`, any parameter that has a defined default can be omitted—the runtime uses the default automatically. You can also supply named arguments to override specific defaults while leaving others at their defaults.
+
+### [Python](#tab/python)
+
+```python
+# Assume the UDF item defines a function like:
+# def score_customer(customerId: str, startDate: datetime = "2025-01-01T00:00:00Z", isActive: bool = True, maxRecords: int = 100) -> dict
+# The datetime defaults are specified as strings in the signature; the runtime parses them to datetime at invocation time.
+
+# 1. Call without optional parameters — defaults are used for startDate, isActive, and maxRecords
+result = myFunctions.scoreCustomer(customerId='C001')
+
+# 2. Override one default via a named argument, keep the others at their defaults
+result = myFunctions.scoreCustomer(customerId='C001', maxRecords=50)
+
+# 3. Pass a date/time in ISO 8601 format for reliable parsing
+result = myFunctions.scoreCustomer(customerId='C001', startDate='2025-12-31T23:59:59Z')
+```
+
+### [Scala](#tab/scala)
+
+```scala
+// All required parameters must be supplied; optional (default) parameters can be omitted.
+// Scala does not support named arguments when calling UDF functions through notebookutils.
+val result = myFunctions.scoreCustomer("C001")
+```
+
+### [R](#tab/r)
+
+```r
+# All required parameters must be supplied; optional (default) parameters can be omitted.
+result <- myFunctions$scoreCustomer("C001")
+```
+
+---
+
+### Supported default input types
+
+The following types are supported as default parameter values:
+
+| **Default type** | **Notes** |
+|---|---|
+| String | Any JSON-serializable string. |
+| Datetime string | Specify as a string in the function signature. The runtime parses it to `datetime` at invocation time. Use a consistent format such as ISO 8601 (for example, `2025-12-31T23:59:59Z`). |
+| Boolean | `True` or `False`. |
+| Integer | Any integer value. |
+| Float | Any floating-point value. |
+| List | Must be JSON-serializable; prefer `None` in the signature and assign inside the function to avoid mutable default pitfalls. |
+| Dictionary | Must be JSON-serializable; prefer `None` in the signature and assign inside the function. |
+| pandas DataFrame | Provided as a JSON object that the SDK converts to a pandas type. Requires `fabric-user-data-functions` version 1.0.0 or later. |
+| pandas Series | Provided as a JSON array of objects that the SDK converts to a pandas type. Requires `fabric-user-data-functions` version 1.0.0 or later. |
+
+### Limitations and guidance
+
+Defaults must be JSON-serializable (sets and tuples aren't supported). For list or dictionary defaults, use `None` in the signature and assign the real default inside the function to avoid shared mutable defaults. Use ISO 8601 format (for example, `2025-12-31T23:59:59Z`) for datetime defaults. Using pandas DataFrame or Series as a default requires `fabric-user-data-functions` version 1.0.0 or later.
+
 ## Display details
 
 You can inspect UDF item metadata and function signatures programmatically.
