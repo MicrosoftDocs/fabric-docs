@@ -137,19 +137,6 @@ Use the table below to identify the cause and take appropriate action.
 > [!TIP]
 > If you're unsure which setting is causing the issue, start by contacting your tenant administrator, as most Copilot requirements are controlled at the organization level.
 
-## Known issues
-
-### Copilot might not use the latest cell error output when troubleshooting
-
-In some cases, Copilot might not fully incorporate the most recent error output from a notebook cell when diagnosing issues. This can lead to incomplete or less relevant troubleshooting guidance.
-
-**Workaround:**
-
-To improve response quality, explicitly reference or include the latest error message in your prompt when asking Copilot for help.
-
-> [!NOTE]
-> These are known issues that may occur in production environments. A fix is in progress and will be rolled out in an upcoming update.
-
 ## Related content
 
 - [How to use the Copilot chat pane](./copilot-notebooks-chat-pane.md)
