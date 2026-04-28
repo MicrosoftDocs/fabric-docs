@@ -3,14 +3,14 @@ title: How to configure ORC format in the pipeline of Data Factory in Microsoft 
 description: This article explains how to configure ORC format in the pipeline of Data Factory in Microsoft Fabric.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 06/25/2024
+ms.date: 04/24/2026
 ms.custom:
   - template-how-to
 ---
 
 # ORC format in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
-This article outlines how to configure ORC format in the pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+ORC (Optimized Row Columnar) is a columnar storage format designed for efficient large-scale data processing in Hadoop workloads. This article outlines how to configure ORC format in a copy activity pipeline in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Supported capabilities
 
@@ -62,7 +62,7 @@ Under **Advanced** settings in the **Destination** tab, the following ORC format
 - **Max rows per file**: When writing data into a folder, you can choose to write to multiple files and specify the maximum rows per file. Specify the maximum rows that you want to write per file.
 - **File name prefix**: Applicable when **Max rows per file** is configured. Specify the file name prefix when writing data to multiple files, resulted in this pattern: `<fileNamePrefix>_00000.<fileExtension>`. If not specified, the file name prefix is auto generated. This property doesn't apply when the source is a file based store or a partition option enabled data store.
 
-## Table summary
+## ORC copy activity properties
 
 ### ORC as source
 
