@@ -70,8 +70,13 @@ A *Branched workspace* is a workspace that is linked to a source workspace. It l
 
 The relationship (link) between a *Branched workspace* and its source workspace is established when the user performs branch-out. For Fabric developers, branch-out creates a new Git branch from the latest commit of the source workspace’s currently connected branch. The user can then either create a new workspace connected to that new branch, or use an existing workspace by switching its Git connection to the newly created branch.
 
-## Branched Workspace relationship
-The *Branched workspace* relationship has several visual representations in the Fabric UI:
+### Branched workspace relationship
+The *Branched workspace* relationship has several visual representations in the Fabric UI, including a new icon to indicate a relationship.
+   
+   :::image type="content" source="../cicd/git-integration/media/branch-out/branch-9.png" alt-text="New icon for branched workspaces." lightbox="../cicd/git-integration/media/branch-out/branch-9.png":::
+
+The following additional visual representations are also in the Fabric UI:
+
 - Workspace tree: Represents the source workspace as the parent of the branched workspace
 
    :::image type="content" source="../cicd/git-integration/media/branch-out/branch-6.png" alt-text="Workspace tree hierarchy with branched workspaces." lightbox="../cicd/git-integration/media/branch-out/branch-6.png":::
@@ -80,7 +85,7 @@ The *Branched workspace* relationship has several visual representations in the 
 
    :::image type="content" source="../cicd/git-integration/media/branch-out/branch-7.png" alt-text="Branched workspace breadcrumbs." lightbox="../cicd/git-integration/media/branch-out/branch-7.png":::
 
-- Source control - [related branches](../cicd/git-integration/git-integration-process.md#branches) tab
+- Source control - [related branches](../cicd/git-integration/git-integration-process.md#branches) ta
 
    :::image type="content" source="../cicd/git-integration/media/branch-out/branch-8.png" alt-text="Branched workspace related branches." lightbox="../cicd/git-integration/media/branch-out/branch-8.png":::
 
