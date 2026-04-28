@@ -89,8 +89,8 @@ items:
           href: plan/planning-how-to-set-up-scenarios.md
         - name: Writeback
           items:
-              -name: Configure Writeback
-              -href: plan/planning-writeback/planning-how-to-persist-data.md
+              - name: Configure Writeback
+              - href: plan/planning-writeback/planning-how-to-persist-data.md
         - name: Change layouts
           href: plan/planning-how-to-change-layouts.md
         - name: Create a cube
