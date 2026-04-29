@@ -132,10 +132,10 @@ When copying data from PostgreSQL, the following mappings are used from PostgreS
 |bit|Byte[]|
 |bit varying|Byte[]|
 |xml|String|
-|IntArray|String|
-|TextArray|String|
-|NumericArray|String|
-|DateArray|String|
+|integer[]|String|
+|text[]|String|
+|numeric[]|String|
+|date[]|String|
 |range|String|
 |bpchar|String|
 
