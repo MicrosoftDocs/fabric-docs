@@ -106,7 +106,7 @@ On the top of the KQL table details page, you can take the following actions on 
 | Endorse | Endorse parent KQL Database of the KQL table. For more information, see [Endorse data streams](endorse-data-streams.md). |
 | Detect anomalies (Preview) | Detect anomalies in data stored in the KQL table. Follow steps from [How to set up anomaly detection](../real-time-intelligence/anomaly-detection.md#how-to-set-up-anomaly-detection).|
 | Create real-time dashboard (Preview) |[Create a real-time dashboard](../real-time-intelligence/dashboard-real-time-create.md) based on data in the KQL table. |
-| Add to data agent | Add the KQL table as a data source to a data agent so that it can be used in downstream workflows and automations. |
+| Add to data agent | Add the KQL table as a data source to a [data agent](../data-science/concept-data-agent.md) so that it can be used in downstream workflows and automations. |
 
 :::image type="content" source="./media/view-data-stream-details/kql-table-actions.png" alt-text="Screenshot that shows the actions available for a KQL table in the detail view page.":::
 
