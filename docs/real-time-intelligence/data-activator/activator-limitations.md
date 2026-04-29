@@ -18,6 +18,7 @@ Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is subject
 
 * Creating alerts for a report using Dynamic M parameters isn't supported.
 * Creating alerts from the Fabric or Power BI Capacity Metrics app isn't supported.
+* Creating alerts from a SQL analytics endpoint isn't currently supported.
 
 ## Activator item migration from Preview to GA
 
