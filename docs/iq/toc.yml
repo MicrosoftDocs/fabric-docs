@@ -83,6 +83,8 @@ items:
           href: plan/planning-how-to-create-semantic-model-connection.md
         - name: Create a Planning sheet
           href: plan/planning-how-to-get-started.md
+        - name: Create a database connection for collaboration
+          href: plan/planning-how-to-connect-to-database-collaboration.md
         - name: Input data
           href: plan/planning-how-to-input-data.md
         - name: Set up scenarios
