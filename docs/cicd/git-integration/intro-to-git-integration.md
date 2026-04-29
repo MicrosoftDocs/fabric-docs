@@ -117,10 +117,6 @@ The following items currently support Git integration:
 
 If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren't saved or synced, but they're not deleted either. They appear in the source control panel but you can't commit or update them.
 
-## Considerations and limitations
-
-[!INCLUDE [limitations](../includes/git-limitations.md)]
-
 ## Related content
 
 * [Get started with Git integration](./git-get-started.md)
