@@ -5,7 +5,7 @@ ms.date: 04/28/2026
 ms.topic: how-to
 ---
 
-# Create operations agent
+# Create an operations agent connected to ontology
 
 Ontology (preview) integrates with [operations agent (preview)](../../real-time-intelligence/operations-agent.md) to continuously monitor your ontology, surface insights against your business goals, and recommend actions—all grounded in the ontology's entity types and relationships.
 
@@ -13,7 +13,7 @@ Ontology (preview) integrates with [operations agent (preview)](../../real-time-
 
 ## Prerequisites
 
-Make sure you meet the [operations agent prerequisites](https://learn.microsoft.com/fabric/real-time-intelligence/operations-agent#prerequisites), including the Microsoft Teams account and tenant settings for operations agent, Microsoft Copilot, and Azure OpenAI.
+Make sure you meet the [operations agent prerequisites](../../real-time-intelligence/operations-agent.md#prerequisites), including the Microsoft Teams account and tenant settings for operations agent, Microsoft Copilot, and Azure OpenAI.
 
 ## Create operations agent with ontology (preview) source
 
