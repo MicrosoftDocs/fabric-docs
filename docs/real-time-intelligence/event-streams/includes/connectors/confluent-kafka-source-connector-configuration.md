@@ -44,7 +44,7 @@ ms.date: 04/02/2026
 
          :::image type="content" source="./media/confluent-kafka-source-connector/configure-data-source.png" alt-text="Screenshot that shows the second page - Configure Confluent data source page - of the Confluent connection settings."::: 
     
-    1. You may expand **Additional settings** to configure **TLS verify hostname**, **TLS cipher suites, and **TLS revocation mode**:
+    1. You may expand **Additional settings** to configure **TLS verify hostname**, **TLS cipher suites**, and **TLS revocation mode**:
         - **TLS verify hostname**: Controls whether hostname verification is enabled for the TLS connection. The default value is **True**.
         - **TLS cipher suites**: Specifies which TLS cipher suites the client can use. The default value is **Use system defaults**.
         - **TLS revocation mode**: Controls whether client certificate revocation checking is enabled for the TLS connection. The default value is **Off**.
