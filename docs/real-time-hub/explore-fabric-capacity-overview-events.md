@@ -58,7 +58,7 @@ An event has the following top-level data:
 | `time` | timestamp | Timestamp of when the occurrence happened. | `2024-04-23T21:17:32.6029537+00:00` |
 | `id` | string | Unique identifier for the event. | `00000000-0000-0000-0000-000000000000` |
 | `specversion` | string | The version of the Cloud Event spec. | `1.0` |
-| `dataschemaversion` | String | The version of the data schema. | `1.0` |
+| `dataschemaversion` | string | The version of the data schema. | `1.0` |
 
 The `data` object has the following properties for Summary events:
 
