@@ -43,6 +43,8 @@ items:
       href: ontology/how-to-use-rules.md
     - name: Use resource links
       href: ontology/how-to-use-resource-links.md
+    - name: Create linked operations agent
+      href: ontology/how-to-create-operations-agent.md
   - name: Resources
     items:
     - name: Troubleshooting
