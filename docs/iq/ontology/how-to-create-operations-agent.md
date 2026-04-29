@@ -26,9 +26,9 @@ Follow these steps to create a new operations agent that monitors an ontology (p
     * **Business goals**: Describe what the agent should optimize. For example, *Keep frozen products safe by monitoring freezer conditions in real time.*
     * **Instructions**: Add guidance for the agent's behavior. For example, *Monitor the freezer temperature and keep the temperature below 20.*
     * **Knowledge source**: Select **Add** and choose your ontology item.
-    * **Actions** (optional): Define one or more actions the agent can recommend, such as *NotifyStoreOperations* with parameters like *StoreId* and *FreezerId*. If you add an action, configure it with an activator and Power Automate flow as described in [Configure an operations agent](../../real-time-intelligence/operations-agent.md#configure-an-operations-agent).
+    * **Actions** (optional): Define one or more actions the agent can recommend, such as *NotifyStoreOperations* with parameters like *StoreId* and *FreezerId*. If you add an action, configure it with Activator and Power Automate flow as described in [Configure an operations agent](../../real-time-intelligence/operations-agent.md#configure-an-operations-agent).
 
-1. Save the agent to generate its playbook. Review the concepts and rules in the playbook and confirm they reference the expected ontology entity types (such as *Store*, *Product*, and *Freezer*) and properties.
+1. Save the agent and select **Generate playbook**. Review the concepts and rules in the playbook and confirm they reference the expected ontology entity types (such as *Store*, *Product*, and *Freezer*) and properties.
 
 1. Select **Start** in the toolbar to start the agent.
 
