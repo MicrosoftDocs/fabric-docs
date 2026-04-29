@@ -1,7 +1,7 @@
 ---
 title: Get started with Planning sheets
 description: Learn how to get started with your first Planning sheet in plan (preview). Discover how to create a Planning sheet, connect to your semantic model, and perform planning, budgeting, forecasting, and data analysis.
-ms.date: 04/27/2026
+ms.date: 04/29/2026
 ms.topic: how-to
 ---
 
@@ -33,31 +33,7 @@ Before you set up Planning sheets, make sure you have the following prerequisite
 
     >[!NOTE]
     >During planning item creation, a Fabric SQL database is automatically created in your workspace. This database stores your plan report's metadata.
-
-## Connect the plan item to a Fabric SQL database connection
-
-You can create your Fabric SQL database connection by following these steps.
-
-1. Select **Set up connection**.
-
-     :::image type="content" source="media/planning-how-to-get-started/connection-setup.png" alt-text="Screenshot to set up connection to create fabric SQL database." lightbox="media/planning-how-to-get-started/connection-setup.png":::
-
-1. Select **Create Connection** to create a Fabric SQL Connection or select an existing connection.
-
-     :::image type="content" source="media/planning-how-to-get-started/create-connection.jpg" alt-text="Screenshot to create a new fabric SQL database." lightbox="media/planning-how-to-get-started/create-connection.jpg":::
-
-1. Select **Create new connection** from the Connection credentials dropdown.
-
-    :::image type="content" source="media/planning-how-to-get-started/new-connection.png" alt-text="Screenshot to add  a new fabric SQL database." lightbox="media/planning-how-to-get-started/new-connection.png":::
-
-1. Enter a **Connection name**.
-1. Select **Authentication kind** as **Organizational account**.
-
-    :::image type="content" source="media/planning-how-to-get-started/connection-credentials.png" alt-text="Screenshot to configure a connection credentials." lightbox="media/planning-how-to-get-started/connection-credentials.png":::
-
-1. Select **Create**.
-
-A Fabric SQL database connection is created which can be used while connecting to a semantic model.
+    >You can create a database connection for collaboration. This step is optional and is required only if you want to collaborate. For more information, see [Create a database connection for collaboration](planning-how-to-connect-to-database-collaboration.md)
 
 
 ## Create a Planning sheet
