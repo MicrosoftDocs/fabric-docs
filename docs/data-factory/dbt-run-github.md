@@ -1,6 +1,6 @@
 ---
-title: Run dbt Projects from GitHub in Microsoft Fabric
-description: Run dbt projects in Microsoft Fabric by connecting to GitHub. Learn how to execute and monitor dbt jobs without moving your code.
+title: Run dbt Projects from a GitHub Repository in Microsoft Fabric
+description: Run dbt projects in Microsoft Fabric by connecting to GitHub repository. Learn how to execute and monitor dbt jobs without moving your code.
 ms.reviewer: akurnala
 ms.date: 04/20/2026
 ai-usage: ai-assisted
@@ -8,9 +8,9 @@ ms.subservice: data-factory
 ms.topic: how-to
 ---
 
-# Run dbt projects from GitHub in Microsoft Fabric
+# Run dbt projects from a GitHub repository in Microsoft Fabric
 
-If your team already maintains a dbt project in GitHub, you can connect it to Microsoft Fabric and run it there. Your dbt project stays in GitHub and Fabric pulls the code and handles execution. You don't need to copy or rewrite anything.
+If your team already maintains a dbt project in a GitHub repository, you can connect it to a Microsoft Fabric dbt job and run it there. Your dbt project stays in GitHub repository and Fabric pulls the code and handles execution. You don't need to copy or rewrite anything.
 
 - **GitHub** stores your dbt project code.
 - **Fabric** runs dbt commands and displays the results.
@@ -66,7 +66,7 @@ To run a dbt project from GitHub in Fabric, follow these steps:
 
 Provide the following details to create a connection between Fabric and GitHub:
 
-- **Repository name or URL** - the GitHub repository that contains your dbt project.
+- **Repository name or URL** - the GitHub repository that contains your dbt project. For example: `https://GitHub.com/a/dbtjob_CICD`
 - **Connection name** - a friendly name to identify this connection.
 - **Classic PAT token** - used by Fabric to securely access the repository.
 
