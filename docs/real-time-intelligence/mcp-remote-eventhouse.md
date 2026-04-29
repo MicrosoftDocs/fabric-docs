@@ -97,7 +97,7 @@ The Eventhouse MCP server exposes a set of tools that AI agents can use to inter
 
 When using the global endpoint (as shown in the `kql-global` example above), provide both `workspaceId` and `itemId` in each tool call.
 
-Tools in Public MCP Server support optional `clusterUrl` and `databaseName` parameters. Passing both parameters to a tool runs the request against the specified Azure Data Explorer cluster and database, and the public MCP server is used only for billing requests to the large language model (LLM).
+Tools in Public MCP Server support optional `clusterUrl` and `databaseName` parameters. When both parameters are provided, the request runs against the specified Azure Data Explorer cluster and database, and the public MCP server is used only for billing requests to the large language model (LLM).
 
 ## Test the connection
 
