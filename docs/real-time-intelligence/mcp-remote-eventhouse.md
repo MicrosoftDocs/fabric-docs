@@ -83,18 +83,7 @@ The Eventhouse MCP server acts as an **HTTP-based MCP endpoint**. Add the remote
     "eventhouse-remote": {
       "type": "http",
       "url": "https://api.fabric.microsoft.com/v1/mcp/dataPlane/workspaces/11112222-bbbb-3333-cccc-4444dddd5555/items/b1b1b1b1-cccc-dddd-eeee-f2f2f2f2f2f2/kqlEndpoint"
-    }
-  }
-}
-```
-
-### Use the global MCP endpoint
-
-You can also configure the public MCP global endpoint when tools need to target different Azure Data Explorer clusters or databases:
-
-```json
-{
-  "servers": {
+    },
     "kql-global": {
       "type": "http",
       "url": "https://api.fabric.microsoft.com/v1/mcp/dataPlane/kqlEndpoint"
@@ -102,6 +91,8 @@ You can also configure the public MCP global endpoint when tools need to target 
   }
 }
 ```
+
+Use the public MCP global endpoint when tools need to target different Azure Data Explorer clusters or databases. When you use the global endpoint, provide both `workspaceId` and `itemId` in each tool call.
 
 Tools on this endpoint support optional `clusterUrl` and `databaseName` parameters. When you pass both parameters to a tool, the request runs against the specified Azure Data Explorer cluster and database, and the public MCP server is used only for billing requests to the large language model (LLM).
 
