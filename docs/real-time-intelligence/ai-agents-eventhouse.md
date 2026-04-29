@@ -1,5 +1,5 @@
 ---
-title: Develop AI agents for Real-Time Intelligence
+title: Develop AI agents for Real-Time Intelligence (preview)
 description: Learn about the tools and resources available for building AI agents that interact with Eventhouse and other Real-Time Intelligence components, including MCP servers and skills.
 ms.reviewer: sharmaanshul
 ms.topic: overview
@@ -31,14 +31,18 @@ For more information, see [What is MCP in Real-Time Intelligence?](mcp-overview.
 
 Skills are reusable, prebuilt AI capabilities that you can add to your AI agents. A skill packages a specific task, such as querying a KQL database or analyzing time-series data, into a component that an AI agent can invoke. Skills simplify agent development by providing ready-to-use query patterns and data interaction logic.
 
-### Available skills for Eventhouse and KQL Databases
+### Available skills for Eventhouse and KQL databases
 
-The following open-source repositories provide skills relevant to Real-Time Intelligence:
+The [Skills for Fabric](https://github.com/microsoft/skills-for-fabric) open-source repository provides reusable skills for Microsoft Fabric workloads. The following skills are available for Eventhouse and KQL databases:
 
-| Repository | Description | RTI-relevant skills |
-|------------|-------------|---------------------|
-| [Skills for Fabric](https://github.com/microsoft/skills-for-fabric) | Community skills for Microsoft Fabric workloads | Skills for querying and interacting with Fabric items including Eventhouse |
-| [Kusto MCP Tools](https://github.com/Azure/azure-kusto-mcp-server) | MCP server and tools for Azure Data Explorer | KQL query execution, schema exploration, and cluster management for ADX and Eventhouse |
+| Skill | Type | Description |
+|-------|------|-------------|
+| [eventhouse-authoring-cli](https://github.com/microsoft/skills-for-fabric/tree/main/skills/eventhouse-authoring-cli) | Authoring | Execute KQL management commands (table management, ingestion, policies, functions, materialized views) against Fabric Eventhouse and KQL databases via CLI. |
+| [eventhouse-consumption-cli](https://github.com/microsoft/skills-for-fabric/tree/main/skills/eventhouse-consumption-cli) | Consumption | Run KQL queries against Fabric Eventhouse for real-time intelligence and time-series analytics. Covers KQL operators (`where`, `summarize`, `join`, `render`), schema discovery (`.show tables`), time-series patterns with `bin()`, and ingestion monitoring. |
+
+For the full catalog of available skills across all Fabric workloads, see the [skill catalog](https://github.com/microsoft/skills-for-fabric/blob/main/docs/skill-catalog.md).
+
+The [Kusto MCP Tools](https://github.com/Azure/azure-kusto-mcp-server) repository provides an MCP server and tools for Azure Data Explorer, including KQL query execution, schema exploration, and cluster management for ADX and Eventhouse.
 
 ### How skills work
 
