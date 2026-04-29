@@ -1,5 +1,5 @@
 ---
-title: How to configure Delimited Text format in the pipeline of Data Factory in Microsoft Fabric
+title: How to Configure Delimited Text Format in a Data Pipeline
 description: This article explains how to configure Delimited Text format in the pipeline of Data Factory in Microsoft Fabric.
 ms.reviewer: jianleishen
 ms.topic: how-to

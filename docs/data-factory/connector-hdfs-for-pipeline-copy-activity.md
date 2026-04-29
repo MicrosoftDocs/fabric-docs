@@ -1,5 +1,5 @@
 ---
-title: Configure HDFS for Pipeline in a copy activity
+title: Configure HDFS for Pipeline in a Copy Activity
 description: This article explains how to copy data using HDFS for Pipeline.
 ms.reviewer: jianleishen
 ms.topic: how-to

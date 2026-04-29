@@ -1,5 +1,5 @@
 ---
-title: Set up your Microsoft 365 connection
+title: Set up your Microsoft 365 Connection
 description: This article provides information about how to create a Microsoft 365 connection in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.topic: how-to

@@ -1,5 +1,5 @@
 ---
-title: Configure Amazon RDS for SQL Server in a copy activity
+title: Configure Amazon RDS for SQL Server in a Copy Activity
 description: This article explains how to copy data using Amazon RDS for SQL Server.
 ms.reviewer: jianleishen
 ms.topic: how-to

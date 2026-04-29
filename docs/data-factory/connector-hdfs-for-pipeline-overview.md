@@ -1,5 +1,5 @@
 ---
-title: HDFS for Pipeline connector overview
+title: HDFS for Pipeline Connector Overview
 description: This article provides an overview of the supported capabilities of the HDFS for Pipeline connector.
 ms.reviewer: jianleishen
 ms.topic: how-to

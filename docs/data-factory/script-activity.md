@@ -1,5 +1,5 @@
 ---
-title: How to use the Script activity
+title: How to Use the Script Activity
 description: Learn how to use the Script activity
 ms.reviewer: xupzhou
 ms.topic: how-to

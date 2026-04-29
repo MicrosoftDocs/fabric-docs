@@ -1,5 +1,5 @@
 ---
-title: Configure Amazon RDS for Oracle in a copy activity
+title: Configure Amazon RDS for Oracle in a Copy Activity
 description: This article explains how to copy data using Amazon RDS for Oracle.
 ms.reviewer: jianleishen
 ms.topic: how-to
