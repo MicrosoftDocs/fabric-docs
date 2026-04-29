@@ -89,55 +89,55 @@ When copying data from PostgreSQL, the following mappings are used from PostgreS
 
 | PostgreSQL data type | Interim service data type |
 |:--- |:--- |
-|SmallInt|Int16|
-|Integer|Int32|
-|BigInt|Int64|
-|Decimal (Precision <= 28)|Decimal|
-|Decimal (Precision > 28)|Unsupported |
-|Numeric|Decimal|
-|Real|Single|
-|Double|Double|
-|SmallSerial|Int16|
-|Serial|Int32|
-|BigSerial|Int64|
-|Money|Decimal|
-|Char|String|
-|Varchar|String|
-|Text|String|
-|Bytea|Byte[]|
-|Timestamp|DateTime|
-|Timestamp with time zone|DateTime|
-|Date|DateTime|
-|Time|TimeSpan|
-|Time with time zone|DateTimeOffset|
-|Interval|TimeSpan|
-|Boolean|Boolean|
-|Point|String|
-|Line|String|
-|Iseg|String|
-|Box|String|
-|Path|String|
-|Polygon|String|
-|Circle|String|
-|Cidr|String|
-|Inet|String|
-|Macaddr|String|
-|Macaddr8|String|
-|Tsvector|String|
-|Tsquery|String|
-|UUID|Guid|
-|Json|String|
-|Jsonb|String|
-|Array|String|
-|Bit|Byte[]|
-|Bit varying|Byte[]|
-|XML|String|
+|smallint|Int16|
+|integer|Int32|
+|bigint|Int64|
+|decimal (precision <= 28)|Decimal|
+|decimal (precision > 28)|Unsupported |
+|numeric|Decimal|
+|real|Single|
+|double|Double|
+|smallserial|Int16|
+|serial|Int32|
+|bigserial|Int64|
+|money|Decimal|
+|char(n)|String|
+|varchar(n)|String|
+|text|String|
+|bytea|Byte[]|
+|timestamp|DateTime|
+|timestamp with time zone|DateTime|
+|date|DateTime|
+|time|TimeSpan|
+|time with time zone|DateTimeOffset|
+|interval|TimeSpan|
+|boolean|Boolean|
+|point|String|
+|line|String|
+|lseg|String|
+|box|String|
+|path|String|
+|polygon|String|
+|circle|String|
+|cidr|String|
+|inet|String|
+|macaddr|String|
+|macaddr8|String|
+|tsvector|String|
+|tsquery|String|
+|uuid|Guid|
+|json|String|
+|jsonb|String|
+|array|String|
+|bit|Byte[]|
+|bit varying|Byte[]|
+|xml|String|
 |IntArray|String|
 |TextArray|String|
 |NumericArray|String|
 |DateArray|String|
-|Range|String|
-|Bpchar|String|
+|range|String|
+|bpchar|String|
 
 When copying data to PostgreSQL, the following mappings are used from interim data types used by the service internally to PostgreSQL data types.
 
@@ -150,7 +150,7 @@ When copying data to PostgreSQL, the following mappings are used from interim da
 | Double | double precision |
 | Decimal | numeric, money |
 | Boolean | boolean |
-| String | text, char(n), varchar(n), name, citext, json,jsonb, xml, inet, cidr, macaddr, tsvector, tsquery, point, line, lseg, box, path, polygon, circle, int4range, int8range, numrange, daterange, tsrange, tstzrange, array types, integer[] |
+| String | text, char(n), varchar(n), name, citext, json,jsonb, xml, inet, cidr, macaddr, tsvector, tsquery, point, line, lseg, box, path, polygon, circle, int4range, int8range, numrange, daterange, tsrange, tstzrange, integer[] |
 | Byte array | bytea, bit(n), varbit |
 | Date | date |
 | TimeSpan | time, interval |
