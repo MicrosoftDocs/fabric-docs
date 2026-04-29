@@ -33,8 +33,6 @@ Before you set up Planning sheets, make sure you have the following prerequisite
 
     >[!NOTE]
     >During planning item creation, a Fabric SQL database is automatically created in your workspace. This database stores your plan report's metadata.
-    >You can create a database connection for collaboration. This step is optional and is required only if you want to collaborate. For more information, see [Create a database connection for collaboration](planning-how-to-create-database-connection.md#create-a-database-connection-for-collaboration).
-
 
 ## Create a Planning sheet
 
@@ -46,11 +44,13 @@ Before you set up Planning sheets, make sure you have the following prerequisite
 
     :::image type="content" source="media/planning-how-to-get-started/new-plan-creation-1.png" alt-text="Screenshot of naming a new planning sheet." lightbox="media/planning-how-to-get-started/new-plan-creation-1.png":::
 
-## Connect Planning sheet to a semantic model connection
+## Add semantic model connection
+
+In this section, you add the semantic model connection you created earlier in [Prerequisites](#prerequisites) to your Planning sheet. The result of this step is that your Planning sheet has access to data in the semantic model.
 
 1. In your new Planning sheet, select **Add**.
 
-1. Connect to your Fabric SQL connection under **Select a Connection**.
+1. Connect to your semantic model connection under **Select a Connection**.
 
     :::image type="content" source="media/planning-how-to-get-started/semantic-model-connection.png" alt-text="Screenshot of connecting to a semantic model." lightbox="media/planning-how-to-get-started/semantic-model-connection.png":::
 
@@ -61,3 +61,7 @@ Before you set up Planning sheets, make sure you have the following prerequisite
 1. Add semantic model data into your fields. Now your first Planning sheet is created.
    
    :::image type="content" source="media/planning-how-to-get-started/planning-sheet.png" alt-text="Screenshot of the created planning sheet." lightbox="media/planning-how-to-get-started/planning-sheet.png":::
+
+## Optional: Connect to a database for collaboration
+
+If you want to collaborate with others on this Planning sheet, create a database connection to store comments and other collaboration details. For more information, see [Create a database connection for collaboration](planning-how-to-create-database-connection.md#create-a-database-connection-for-collaboration).

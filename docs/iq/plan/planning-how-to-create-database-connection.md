@@ -61,27 +61,24 @@ Create this type of database connection to enable multi-user collaboration on pl
 
 ### Create a connection to a database for collaboration
 
-1. Select the **Set up connection.**
+1. Inside a plan (preview) item, select **Set up connection**.
 
-     :::image type="content" source="media/planning-how-to-create-database-connection/connection-setup.png" alt-text="Screenshot of database connection setup option for collaboration." lightbox="media/planning-how-to-create-database-connection/connection-setup.png":::
+    :::image type="content" source="media/planning-how-to-create-database-connection/connection-setup.png" alt-text="Screenshot of database connection setup option for collaboration." lightbox="media/planning-how-to-create-database-connection/connection-setup.png":::
 
+1. Select **Create Connection** to create a new Fabric SQL connection. Alternatively, you can select an existing connection and skip the creation steps.
 
-1. Select **Create Connection** to create a Fabric SQL Connection or select an existing connection.
+    :::image type="content" source="media/planning-how-to-create-database-connection/create-connection.jpg" alt-text="Screenshot of creation of database connection  option for collaboration." lightbox="media/planning-how-to-create-database-connection/create-connection.jpg":::
 
-     :::image type="content" source="media/planning-how-to-create-database-connection/create-connection.jpg" alt-text="Screenshot of creation of database connection  option for collaboration." lightbox="media/planning-how-to-create-database-connection/create-connection.jpg":::
+1. Select **Create new connection** from the Connection credentials dropdown menu and select **Create**.
 
-1. Select **Create new connection** from the Connection credentials dropdown.
-
-     :::image type="content" source="media/planning-how-to-create-database-connection/new-connection.png" alt-text="Screenshot of adding a new database connection  option for collaboration." lightbox="media/planning-how-to-create-database-connection/new-connection.png":::
-
+    :::image type="content" source="media/planning-how-to-create-database-connection/new-connection.png" alt-text="Screenshot of adding a new database connection  option for collaboration." lightbox="media/planning-how-to-create-database-connection/new-connection.png":::
 
 1. Enter a **Connection name**.
-1. Select **Authentication kind** as **Organizational account.**
+1. For **Authentication kind**, select *Organizational account*.
 
-     :::image type="content" source="media/planning-how-to-create-database-connection/connection-credentials.png" alt-text="Screenshot of adding credentials for the new database connection  collaboration." lightbox="media/planning-how-to-create-database-connection/connection-credentials.png":::
+    :::image type="content" source="media/planning-how-to-create-database-connection/connection-credentials.png" alt-text="Screenshot of adding credentials for the new database connection  collaboration." lightbox="media/planning-how-to-create-database-connection/connection-credentials.png":::
 
-
-1. Select **Create.**
+1. Select **Create**.
 
 A database connection is created to store collaboration data.
 
