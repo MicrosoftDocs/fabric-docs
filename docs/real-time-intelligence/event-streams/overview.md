@@ -4,7 +4,7 @@ description: Learn how eventstreams can help you capture, transform, and route r
 ms.reviewer: zhenxilin
 ms.topic: concept-article
 ms.custom: sfi-image-nochange
-ms.date: 02/18/2026
+ms.date: 04/29/2026
 ms.search.form: Eventstream Overview
 ai-usage: ai-assisted
 ---
