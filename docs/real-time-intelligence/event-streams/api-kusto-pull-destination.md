@@ -426,8 +426,8 @@ Destination fields used in DirectIngestion mode:
 
 | Field | Value source |
 |---|---|
-| `workspaceId` | Eventhouse workspace ID from step 1 |
-| `itemId` | Eventhouse item ID from step 1 |
+| `workspaceId` | The workspace ID where you created the Eventhouse in Step 1 |
+| `itemId` | The Eventhouse item ID (`id`) returned in the Step 1 response |
 | `connectionName` | Any unique name up to 40 characters. A random suffix is recommended, for example `eventhouse-conn-7f3a`. |
 | `tableName` | Table name from step 3 |
 | `mappingRuleName` | Mapping rule name from step 3 |
@@ -466,11 +466,11 @@ The sample request includes a payload with Base64-encoded definition parts.
 }
 ```
 
-To generate your own `.platform` payload, do the following:
+To generate your own `.platform` payload value, do the following:
 
 1. Create a `.platform` file by using the format shown in [Create Eventstream item with definition](api-create-with-definition.md).
-1. Base64-encode the `.platform` file content by using the same approach shown in [Encode the topology to Base64](#encode-the-topology-to-base64).
-1. Replace the example `.platform` payload value in the sample request with your encoded string.
+1. Base64-encode the entire `.platform` file content by using the same approach shown in [Encode the topology to Base64](#encode-the-topology-to-base64).
+1. Use the encoded string as the value for the `payload` field, replacing `<base64Platform>` in the sample request.
 
 Example:
 
