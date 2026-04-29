@@ -1,5 +1,5 @@
 ---
-title: Configure MariaDB in copy activity
+title: Configure MariaDB in a Copy Activity
 description: This article explains how to copy data using MariaDB.
 ms.reviewer: jianleishen
 ms.topic: how-to
@@ -10,7 +10,7 @@ ms.custom:
   - connectors
 ---
 
-# Configure MariaDB in copy activity
+# Configure MariaDB in a copy activity
 
 This article outlines how to use the copy activity in a pipeline to copy data from MariaDB.
 
