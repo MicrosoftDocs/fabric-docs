@@ -11,10 +11,10 @@ This article explains how to connect to a database for collaboration from a Plan
 
 ## Prerequisites
 
-You have access to Planning sheets.
-You have permission to create and manage connections.
+* You have access to Planning sheets.
+* You have permission to create and manage connections.
 
-### Create a connection to a database for collaboration
+## Create a connection to a database for collaboration
 
 1. Select the **Set up connection.**
 
