@@ -92,9 +92,13 @@ The Eventhouse MCP server acts as an **HTTP-based MCP endpoint**. Add the remote
 }
 ```
 
+## Available tools
+
+The Eventhouse MCP server exposes a set of tools that AI agents can use to interact with the Eventhouse and its KQL databases. These tools allow agents to discover KQL database schemas, generate KQL queries from natural language, execute queries, and sample data.
+
 Use the public MCP global endpoint when tools need to target different Azure Data Explorer clusters or databases. When you use the global endpoint, provide both `workspaceId` and `itemId` in each tool call.
 
-Tools on this endpoint support optional `clusterUrl` and `databaseName` parameters. When you pass both parameters to a tool, the request runs against the specified Azure Data Explorer cluster and database, and the public MCP server is used only for billing requests to the large language model (LLM).
+Tools in Public MCP Server support optional `clusterUrl` and `databaseName` parameters. When you pass both parameters to a tool, the request runs against the specified Azure Data Explorer cluster and database, and the public MCP server is used only for billing requests to the large language model (LLM).
 
 ## Test the connection
 
@@ -119,10 +123,6 @@ Once configured, verify that the setup is working.
    - *Analyze the data in the StormEvents table and show the most damaging storm events*
 
 1. Review the response returned by Copilot.
-
-## Available tools
-
-The Eventhouse MCP server exposes a set of tools that AI agents can use to interact with the Eventhouse and its KQL databases. These tools allow agents to discover KQL database schemas, generate KQL queries from natural language, execute queries, and sample data.
 
 ## Troubleshoot
 
