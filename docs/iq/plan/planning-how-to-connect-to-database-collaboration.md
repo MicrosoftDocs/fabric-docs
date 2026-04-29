@@ -33,7 +33,7 @@ This article explains how to connect to a database for collaboration from a Plan
 1. Enter a **Connection name**.
 1. Select **Authentication kind** as **Organizational account.**
 
-     :::image type="content" source="media/planning-how-to-connect-to-database-collaboration/connection-credentials.png" alt-text="Screenshot of adding a new database connection  option for collaboration." lightbox="media/planning-how-to-connect-to-database-collaboration/connection-credentials.png":::
+     :::image type="content" source="media/planning-how-to-connect-to-database-collaboration/connection-credentials.png" alt-text="Screenshot of adding credentials for the new database connection  collaboration." lightbox="media/planning-how-to-connect-to-database-collaboration/connection-credentials.png":::
 
 
 1. Select **Create.**
