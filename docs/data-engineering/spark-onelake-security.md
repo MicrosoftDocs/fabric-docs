@@ -82,10 +82,6 @@ df.filter("region = 'EMEA'").groupBy("product_category").sum("amount").show()
 
 In both examples, the `transactions` table data that's loaded into the DataFrame is already filtered by OneLake security. Subsequent transformations operate over the filtered data only.
 
-### Lakehouse explorer tablepreview
-
-The lakehouse explorer preview also honors OneLake security and shows the filtered view of secured tables when previewing data through Spark. Users see only the rows and columns granted to them by their OneLake security role.
-
 ### Direct file access is blocked
 
 Direct path access bypasses lakehouse catalog policy resolution. When OneLake security is enabled on a table, the OneLake and Fabric platform layer blocks the following patterns for non-privileged users:
