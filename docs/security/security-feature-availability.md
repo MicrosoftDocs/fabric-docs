@@ -54,8 +54,8 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Variable Library | ✓ | - | ✓ |
 | **Governance and Security** | Sensitivity Label | - | - | - |
 |  | Share item | - | - | - |
-| **Graph** | Graph model  | - | - | - |
-|  | Graph queryset | - | - | - |
+| **Fabric IQ** | Graph model  | - | - | Preview |
+|  | Graph queryset | - | - | Preview |
 | **Industry Solutions** | Healthcare data solutions | - | ✓ | - |
 |  | Sustainability Solution | - | ✓ | - |
 |  | Retail Solution | - | ✓ | - |
