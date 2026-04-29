@@ -1,7 +1,7 @@
 ---
 title: Design a Graph Schema for Graph in Microsoft Fabric
 description: Learn best practices for designing a graph schema in Microsoft Fabric, including how to choose node types, edge types, key columns, and properties.
-ms.date: 04/14/2026
+ms.date: 04/27/2026
 ms.topic: how-to
 ms.reviewer: wangwilliam
 ai-usage: ai-assisted
@@ -158,6 +158,7 @@ To change your graph schema:
 
 ## Related content
 
+- [Convert relational data to a graph model](convert-relational-data-to-graph-model.md)
 - [Tutorial: Introduction to graph](tutorial-introduction.md)
 - [GQL graph types](gql-graph-types.md)
 - [Optimize GQL query performance](gql-query-performance.md)
