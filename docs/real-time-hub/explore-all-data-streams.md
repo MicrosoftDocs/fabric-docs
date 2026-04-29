@@ -3,7 +3,7 @@ title: Explore All data streams in Fabric Real-Time hub
 description: This article shows how to explore All data streams in Fabric Real-Time hub. It provides details on the All data streams page in the Real-Time hub user interface.
 ms.reviewer: majia
 ms.topic: how-to
-ms.date: 12/11/2025
+ms.date: 04/27/2026
 ---
 
 # Explore All data streams in Fabric Real-Time hub
@@ -67,6 +67,7 @@ Here are the actions available on a KQL table from the **All data streams** page
 | Endorse | Endorse parent KQL Database of the KQL table. For more information, see [Endorse data streams](endorse-data-streams.md). |
 | Detect anomalies (preview) | Detect anomalies in data stored in the KQL table. Follow steps from [How to set up anomaly detection](../real-time-intelligence/anomaly-detection.md#how-to-set-up-anomaly-detection).|
 | Create real-time dashboard (preview) |[Create a Real-Time Dashboard with Copilot](/fabric/fundamentals/copilot-generate-dashboard) based on data in the KQL table. |
+| Add to data agent | Add the KQL table as a data source to a [data agent](../data-science/concept-data-agent.md) so that it can be used in downstream workflows and automations. |
 
 :::image type="content" source="./media/get-started-real-time-hub/kql-table-actions.png" alt-text="Screenshot that shows the actions available on a KQL table stream." lightbox="./media/get-started-real-time-hub/kql-table-actions.png":::
 
