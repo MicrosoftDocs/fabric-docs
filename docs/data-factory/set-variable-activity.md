@@ -1,6 +1,6 @@
 ---
 title: Set Variable activity
-description: Learn how to use the Set Variable activity to add a value to an existing array variable defined in Fabric pipeline.
+description: Learn how to use the Set Variable activity to set the value of an existing variable defined in a Fabric pipeline.
 ms.reviewer: makromer
 ms.topic: how-to
 ms.custom: pipelines
