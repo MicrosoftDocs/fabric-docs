@@ -5,8 +5,6 @@ ms.topic: include
 ms.date: 04/29/2026
 ---
 
-When both **Trust CA certificate** and **Client certificate and key** are enabled and configured, the connector uses **mTLS** to establish the connection.
-
 - **Trust CA certificate**: Enable this option to configure the server CA certificate. Select your subscription, resource group, and key vault, and then provide the certificate name.
 - **Client certificate and key**: Enable this option to configure the client certificate and key.
     - **Use the same CA certificate key vault**: Select this checkbox when both certificates are stored in the same key vault. Then provide the certificate name.
