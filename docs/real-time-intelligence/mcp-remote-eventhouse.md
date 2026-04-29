@@ -115,6 +115,9 @@ Once configured, verify that the setup is working.
 
 The Eventhouse MCP server exposes a set of tools that AI agents can use to interact with the Eventhouse and its KQL databases. These tools allow agents to discover KQL database schemas, generate KQL queries from natural language, execute queries, and sample data.
 
+> [!NOTE]
+> Tools in the public MCP server support optional `clusterUrl` and `databaseName` parameters. When you pass these parameters to a tool, the request runs against the specified Azure Data Explorer cluster and database, and the public MCP server is used only for billing requests to the large language model (LLM).
+
 ## Troubleshoot
 
 If you encounter issues:
