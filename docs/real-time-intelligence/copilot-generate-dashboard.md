@@ -50,6 +50,7 @@ Copilot automatically generates the Insights Page and Data Profile Page. The Ins
 
 ## Related content
 
+- [Copilot for Real-Time Intelligence](copilot-real-time-intelligence.md), including [best practices](copilot-real-time-intelligence.md#best-practices-for-copilot-kql-queries) and [limitations](copilot-real-time-intelligence.md#limitations)
 - [Query data in a KQL queryset](kusto-query-set.md)
 - [Privacy, security, and responsible use of Copilot for Real-Time Intelligence](../fundamentals/copilot-real-time-intelligence-privacy-security.md)
 - [Copilot in Fabric](../fundamentals/copilot-fabric-overview.md)

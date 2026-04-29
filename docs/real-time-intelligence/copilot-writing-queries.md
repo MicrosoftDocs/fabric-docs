@@ -66,6 +66,7 @@ Hover over a previous question (2) and select the **pencil** icon to copy it to 
 
 ## Related content
 
+- [Copilot for Real-Time Intelligence](copilot-real-time-intelligence.md), including [best practices](copilot-real-time-intelligence.md#best-practices-for-copilot-kql-queries) and [limitations](copilot-real-time-intelligence.md#limitations)
 - [Generate Real-Time dashboard with Copilot in Fabric in the Real-time intelligence workload](copilot-generate-dashboard.md)
 - [Privacy, security, and responsible use of Copilot for Real-Time Intelligence](../fundamentals/copilot-real-time-intelligence-privacy-security.md)
 - [Copilot in Fabric](../fundamentals/copilot-fabric-overview.md)
