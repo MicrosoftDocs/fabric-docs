@@ -2,7 +2,7 @@
 title: Add a Microsoft Fabric workload
 description: Learn how to add, remove, and use a workload in the Microsoft Fabric workload hub.
 ms.topic: how-to
-ms.date: 05/21/2024
+ms.date: 04/29/2026
 ---
 
 # Add a workload in the workload hub

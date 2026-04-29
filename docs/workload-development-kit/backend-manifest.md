@@ -2,7 +2,8 @@
 title: Overview of the backend manifest of a workload for the Fabric Workload Development Kit
 description: This article describes the overview and key concepts for the backend manifest definition.
 ms.topic: concept-article
-ms.date: 07/14/2024
+ms.date: 04/29/2026
+ms.author: billmath
 #customer intent: As a developer, I want to understand how to create a backend manifest for a customized Fabric workload so that I can create customized user experiences.
 ---
 
