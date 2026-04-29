@@ -7,6 +7,7 @@ ms.search.form: MCP, RTI, AI, Eventhouse
 ms.reviewer: sharmaanshul
 ms.subservice: rti-eventhouse
 ms.collection: not-ai
+ai-usage: ai-assisted
 
 #CustomerIntent: As a Fabric RTI AI developer, I want to get started and use the RTI MCP server to create AI agents and AI applications that use Eventhouse and KQL databases to query and analyze real-time data.
 ---
@@ -87,6 +88,23 @@ The Eventhouse MCP server acts as an **HTTP-based MCP endpoint**. Add the remote
 }
 ```
 
+### Use the global MCP endpoint
+
+You can also configure the public MCP global endpoint when tools need to target different Azure Data Explorer clusters or databases:
+
+```json
+{
+  "servers": {
+    "kql-global": {
+      "type": "http",
+      "url": "https://api.fabric.microsoft.com/v1/mcp/dataPlane/kqlEndpoint"
+    }
+  }
+}
+```
+
+Tools on this endpoint support optional `clusterUrl` and `databaseName` parameters. When you pass both parameters to a tool, the request runs against the specified Azure Data Explorer cluster and database, and the public MCP server is used only for billing requests to the large language model (LLM).
+
 ## Test the connection
 
 Once configured, verify that the setup is working.
@@ -114,9 +132,6 @@ Once configured, verify that the setup is working.
 ## Available tools
 
 The Eventhouse MCP server exposes a set of tools that AI agents can use to interact with the Eventhouse and its KQL databases. These tools allow agents to discover KQL database schemas, generate KQL queries from natural language, execute queries, and sample data.
-
-> [!NOTE]
-> Tools in the public MCP server support optional `clusterUrl` and `databaseName` parameters. When you pass these parameters to a tool, the request runs against the specified Azure Data Explorer cluster and database, and the public MCP server is used only for billing requests to the large language model (LLM).
 
 ## Troubleshoot
 
