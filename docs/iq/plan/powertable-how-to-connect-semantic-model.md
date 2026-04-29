@@ -1,7 +1,7 @@
 ---
 title: Connect PowerTable sheet to a semantic model
 description: Learn how to connect a PowerTable sheet to a semantic model and build collaborative table apps with live data synchronization.
-ms.date: 03/11/2026
+ms.date: 04/13/2026
 ms.topic: how-to
 #customer intent: As a user, I want to connect PowerTable sheets to a semantic model so that I can build a collaborative table app using governed data from my existing Power BI or Fabric semantic model.
 ---
@@ -17,15 +17,12 @@ In this article, you look at the steps to connect to a semantic model from a Pow
 
 ## Prerequisites
 
-Before you begin, make sure you have the following prerequisites in place:
+Before you begin, make sure that you have the following prerequisites in place:
 
-* A Fabric SQL database to store your app's metadata.
-* [Connections or data sources](../../data-factory/data-source-management.md) to the Fabric SQL database and semantic model.
-* A Plan item in your Fabric workspace.
+* Connections established to the [Fabric SQL database](planning-how-to-create-database-connection.md) and/or [semantic model](planning-how-to-create-semantic-model-connection.md) that contain the data for your PowerTable.
+* [A plan item](planning-how-to-get-started.md#create-plan-item) created in your Fabric workspace.
 
 [!INCLUDE [new PowerTable sheet](includes/create-powertable.md)]
-
-[!INCLUDE [SQL database connection](includes/connect-sql-database.md)]
 
 ## Create a table
 
@@ -36,4 +33,35 @@ Before you begin, make sure you have the following prerequisites in place:
 1. Select your **Connection** and the required **Semantic Model**.
 1. Select **Next**.
 
-    :::image type="content" source="media/powertable-how-to-connect-semantic-model/new-table.png" alt-text="Screenshot of filling in the table details described in this section.":::
+    :::image type="content" source="media/powertable-how-to-connect-semantic-model/new-table.png" alt-text="Screenshot of connecting to semantic model." lightbox="media/powertable-how-to-connect-semantic-model/new-table.png":::
+    
+    >[!NOTE]
+    >Capacity workspaces with Pro licenses are not supported. Make sure to select a workspace of premium capacity.
+
+1. Map and assign your data to the table by selecting the required fields and corresponding values.
+
+    :::image type="content" source="media/powertable-how-to-connect-semantic-model/assign-fields.png" alt-text="Screenshot of assigning fields and values." lightbox="media/powertable-how-to-connect-semantic-model/assign-fields.png":::
+
+1. Set the primary key fields by selecting the three dots and selecting primary keys.
+
+    :::image type="content" source="media/powertable-how-to-connect-semantic-model/set-primary-key.png" alt-text="Screenshot of setting primary keys." lightbox="media/powertable-how-to-connect-semantic-model/set-primary-key.png":::
+
+1. If needed, you can use filters to include only specific field values from the table.
+
+    :::image type="content" source="media/powertable-how-to-connect-semantic-model/using-filters.png" alt-text="Screenshot of using filters." lightbox="media/powertable-how-to-connect-semantic-model/using-filters.png":::
+
+1. Select **Next**.
+
+    :::image type="content" source="media/powertable-how-to-connect-semantic-model/configured-semantic-model.png" alt-text="Screenshot of configured semantic model for the new table." lightbox="media/powertable-how-to-connect-semantic-model/configured-semantic-model.png":::
+
+[!INCLUDE [Configure PowerTable columns](includes/configure-columns.md)]
+
+:::image type="content" source="media/powertable-how-to-connect-semantic-model/finish-table-from-model.jpg" alt-text="Screenshot of selecting Finish." lightbox="media/powertable-how-to-connect-semantic-model/finish-table-from-model.jpg":::
+
+The table app is created successfully in PowerTable with the configured columns and values. Select **Save** to save your table.
+
+:::image type="content" source="media/powertable-how-to-connect-semantic-model/save-table-from-model.png" alt-text="Screenshot of saving the new table app." lightbox="media/powertable-how-to-connect-semantic-model/save-table-from-model.png":::
+
+## Next steps
+
+Configure [access control](powertable-how-to-set-up-access-control.md) and [automated workflows and approvals](powertable-how-to-configure-approval-workflow.md) for your new app.

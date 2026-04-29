@@ -8,9 +8,9 @@ ms.search.form: Ontology Overview
 
 # What is ontology (preview)?
 
-The *ontology (preview)* item (part of the [IQ (preview) workload](../overview.md)) digitally represents the enterprise vocabulary and semantic layer that unifies meaning across domains and OneLake sources. It defines enterprise concepts as *entity types* (like *Customer*), *properties* (like a Customer's *name* and *email*), and *relationships* (like *Customer places Order*), while clarifying the constraints of these terms. After defining your ontology, bind the entity type definitions to real data, so downstream tools can share the same language. Both humans and AI agents can use this language for cross-domain reasoning and decision-ready actions.
+The *ontology (preview)* item (part of the [Fabric IQ (preview) workload](../overview.md)) digitally represents the enterprise vocabulary and semantic layer that unifies meaning across domains and OneLake sources. It defines enterprise concepts as *entity types* (like *Customer*), *properties* (like a Customer's *name* and *email*), and *relationships* (like *Customer places Order*), while clarifying the constraints of these terms. After defining your ontology, bind the entity type definitions to real data, so downstream tools can share the same language. Both humans and AI agents can use this language for cross-domain reasoning and decision-ready actions.
 
-Ontology works well in situations where you need cross-domain consistency, governance, or AI agent grounding, and you want to reason across processes.
+Ontology provides a scaled, secure, and governed shared business model used across teams, agents, and workflows in Fabric IQ. It provides a shared context layer that can be consumed by Fabric Data Agents and Real-Time Intelligence components for consistent reasoning and actions. Ontology works well in situations where you need cross-domain consistency, governance, or AI agent grounding, and you want to reason across processes.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 

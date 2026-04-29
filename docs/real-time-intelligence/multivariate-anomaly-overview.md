@@ -4,12 +4,13 @@ description: Learn about multivariate anomaly detection in Real-Time Intelligenc
 ms.reviewer: adieldar
 ms.topic: concept-article
 ms.subservice: rti-anomaly-detector
-ms.date: 11/19/2024
+ms.date: 04/20/2026
 ---
 
 # Multivariate anomaly detection in Microsoft Fabric - overview
+## What is multivariate anomaly detection?
 
-What is multivariate anomaly detection for time series? Univariate anomaly detection, which is implemented by the KQL function [series_decompose_anomalies()](/kusto/query/series-decompose-anomalies-function?view=microsoft-fabric&preserve-view=true), enables you to monitor and detect anomalies in the distribution of a single variable over time. In contrast, multivariate anomaly detection is a method of detecting anomalies in the joint distribution of multiple variables over time. This method is useful when the variables are correlated, thus the combination of their values at specific time might be anomalous, while the value of each variable by itself is normal. Multivariate anomaly detection can be used in various applications, such as monitoring the health of complex IoT systems, detecting fraud in financial transactions, and identifying unusual patterns in network traffic.
+Univariate anomaly detection, which is implemented by the KQL function [series_decompose_anomalies()](/kusto/query/series-decompose-anomalies-function?view=microsoft-fabric&preserve-view=true), monitors and detects anomalies in a single variable over time. Multivariate anomaly detection extends this approach by detecting anomalies in the **joint distribution** of multiple variables over time—meaning it analyzes how the variables relate to and influence each other as a group, rather than examining each variable in isolation. Multivariate anomaly detection is useful for monitoring the health of complex IoT systems, detecting fraud in financial transactions, and identifying unusual patterns in network traffic.
 
 For example, consider a system that monitors the performance of a fleet of vehicles. The system collects data on various metrics, such as speed, fuel consumption, and engine temperature. By analyzing these metrics together, the system can detect anomalies that wouldn't be apparent by analyzing each metric individually. On its own, an increase in fuel consumption could be due to various acceptable reasons. However, a sudden increase in fuel consumption combined with a decrease in engine temperature could indicate a problem with the engine, even if each metric on its own is within normal range.
 

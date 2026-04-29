@@ -61,7 +61,7 @@ In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), th
 Microsoft Fabric offers three different approaches for bringing data into OneLake through mirroring.
 
 - **Database mirroring** - Database mirroring in Fabric replicates entire databases and tables to bring data from various systems together into a single analytics platform.
-- **Metadata mirroring** - Metadata mirroring in Fabric synchronizes metadata (such as catalog names, schemas, and tables) instead of physically moving the data. This approach uses [shortcuts](../onelake/onelake-shortcuts.md), ensuring the data remains in its source while still being easily accessible within Fabric.
+- **Metadata mirroring** - Metadata mirroring in Fabric synchronizes metadata (such as catalog names, schemas, and tables) instead of physically moving the data. This approach uses [shortcuts](../onelake/onelake-shortcuts.md), ensuring the data remains in its source while still being easily accessible within Fabric. Because metadata mirroring relies on OneLake shortcuts, it also supports [cross-tenant data sharing](../governance/external-data-sharing-overview.md). Organizations can consume live, governed data from other tenants through shortcuts without copying data or building ETL pipelines.
 - **Open mirroring** - Open mirroring in Fabric is designed to extend mirroring based on open Delta Lake table format. This capability enables any developer to write their application's change data directly into a mirrored database item in Fabric, based on the open mirroring approach and public APIs.
 
 Currently, the following external databases are available:
@@ -74,9 +74,10 @@ Currently, the following external databases are available:
 | [Microsoft Fabric mirrored databases from Azure Database for MySQL (preview)](azure-database-mysql.md) | Yes | Database mirroring | [Tutorial: Azure Database for MySQL (preview)](azure-database-mysql-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database.md) | Yes | Database mirroring | [Tutorial: Azure SQL Database](azure-sql-database-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure SQL Managed Instance](azure-sql-managed-instance.md) | Yes | Database mirroring | [Tutorial: Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md) |
+| [Microsoft Fabric mirrored catalogs from Dremio](catalog-mirroring/dremio.md) | Yes | Metadata mirroring | [Tutorial: Dremio](catalog-mirroring/dremio-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Google BigQuery (preview)](google-bigquery.md) | Yes | Database mirroring | [Tutorial: Google BigQuery](google-bigquery-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Oracle](oracle.md) | Yes | Database mirroring | [Tutorial: Oracle](oracle-tutorial.md) |
-| [Microsoft Fabric mirrored databases from SAP (preview)](sap.md) | Yes | Database mirroring | [Tutorial: SAP](sap-datasphere-tutorial.md) |
+| [Microsoft Fabric mirrored databases from SAP](sap.md) | Yes | Database mirroring | [Tutorial: SAP](sap-datasphere-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Snowflake](snowflake.md) | Yes | Database mirroring | [Tutorial: Snowflake](snowflake-tutorial.md) |
 | [Microsoft Fabric mirrored databases from SQL Server](sql-server.md) | Yes | Database mirroring | [Tutorial: SQL Server](sql-server-tutorial.md) |
 | [Open mirrored databases](open-mirroring.md) | Yes | Open mirroring | [Tutorial: Open mirroring](open-mirroring-tutorial.md) |
@@ -84,7 +85,7 @@ Currently, the following external databases are available:
 
 ## Near real-time replication
 
-Near real-time replication can depend on various factors, including:
+For database mirroring and open mirroring, near real-time replication can depend on various factors, including:
 
 - Location or region of source
 - Location or region of destination
@@ -92,6 +93,9 @@ Near real-time replication can depend on various factors, including:
 - Frequency of changes
 - Network bandwidth and latency from source
 - Compute resources allocated to the on-premises data gateway
+
+> [!NOTE]
+> Metadata mirroring doesn't replicate data. Instead, it relies on [OneLake shortcuts](../onelake/onelake-shortcuts.md) to reference source data in place. Latency for metadata mirroring reflects source system access time and shortcut performance rather than data replication speed.
 
 ## How does database mirroring work?
 
@@ -105,7 +109,7 @@ Backoff logic that detects low activity avoids excessive overhead on data source
 
 ## How does metadata mirroring work?
 
-Mirroring not only enables data replication but can also be achieved through shortcuts or metadata mirroring rather than full data replication, allowing data to be available without physically moving or duplicating it. Mirroring in this context refers to replicating only metadata-such as catalog names, schemas, and tables-rather than the actual data itself. This approach enables Fabric to make data from different sources accessible without duplicating it, simplifying data management and minimizing storage needs.
+Metadata mirroring references source data through [OneLake shortcuts](../onelake/onelake-shortcuts.md) instead of replicating it, maintaining a single version of truth with no duplication and no ETL. Mirroring in this context synchronizes only metadata (catalog names, schemas, and tables) rather than the actual data itself. This approach enables Fabric to make data from different sources accessible without copying it, simplifying data management and minimizing storage needs.
 
 For example, when accessing [data registered in Unity Catalog, Fabric mirrors only the catalog structure from Azure Databricks](azure-databricks.md), allowing the underlying data to be accessed through shortcuts. This method ensures that any changes in the source data are instantly reflected in Fabric without requiring data movement, maintaining real-time synchronization and enhancing efficiency in accessing up-to-date information.
 
@@ -120,6 +124,8 @@ Once data is in the landing zone with the proper format, replication starts runn
 Sharing makes access control and management easier. Security controls like row-level security (RLS), object level security (OLS), and more make sure you can control access to sensitive information. Sharing also enables secure and democratized decision-making across your organization.
 
 By sharing, users grant other users or a group of users access to a mirrored database without giving access to the workspace and the rest of its items. When someone shares a mirrored database, they also grant access to the SQL analytics endpoint.
+
+You can also share mirrored databases and data accessible through shortcuts across tenant boundaries by using [OneLake external data sharing](../governance/external-data-sharing-overview.md). Cross-tenant sharing creates a read-only shortcut in the consumer tenant, so both organizations work from the same live data without duplication.
 
 For more information, see [Share your mirrored database and manage permissions](share-and-manage-permissions.md).
 

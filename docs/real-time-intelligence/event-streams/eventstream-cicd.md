@@ -35,6 +35,9 @@ To connect a workspace to an Azure or GitHub Repo, follow these steps:
    :::image type="content" source="./media/eventstream-cicd/connect-to-git.png" alt-text="Screenshot that shows connect a workspace to git." lightbox="./media/eventstream-cicd/connect-to-git.png":::
 3. Choose a git repository and enter a git folder. One workspace is synced to a git folder.
    :::image type="content" source="./media/eventstream-cicd/enter-git-folder.png" alt-text="Screenshot that shows enter a git folder to be synced with." lightbox="./media/eventstream-cicd/enter-git-folder.png":::
+
+   Fabric Git integration supports selective branch syncing per workspace. When connecting, you can choose which branch to sync with, and you can switch branches later from the **Git integration** settings. Branched workspaces are clearly indicated in the UI, helping admins manage parallel development flows across teams.
+
 4. From your workspace view, you see the status of the Eventstream item as **Synced**.
    :::image type="content" source="./media/eventstream-cicd/workspace-git-status.png" alt-text="Screenshot that shows git status in the workspace." lightbox="./media/eventstream-cicd/workspace-git-status.png":::
 
@@ -44,13 +47,15 @@ After making changes to your Eventstream item, you see an **Uncommitted** git st
 
 :::image type="content" source="./media/eventstream-cicd/uncommitted-eventstream.png" alt-text="Screenshot that shows uncommitted eventstream item in the workspace." lightbox="./media/eventstream-cicd/uncommitted-eventstream.png":::
 
+Before committing, you can use the built-in diff experience in the **Source control** pane to review item-level changes. Select an item in the **Changes** tab to compare the current workspace version against the last committed version, so you can verify your changes before pushing them to Git.
+
 Once the Eventstream item is synced, you can view the latest Eventstream change in your git repository.
 
 :::image type="content" source="./media/eventstream-cicd/view-in-git-repo.png" alt-text="Screenshot that shows the latest Eventstream change in git repo." lightbox="./media/eventstream-cicd/view-in-git-repo.png":::
 
 ## Update Eventstream items from Git
 
-If you make changes to your Eventstream item in the git repository, you see an **Update Required** git status beside your Eventstream item in the workspace view. Select the **Source control** button at the top of the view and select **Update all** to merge the latest Eventstream changes.
+If you make changes to your Eventstream item in the git repository, you see an **Update Required** git status beside your Eventstream item in the workspace view. Select the **Source control** button at the top of the view and select **Update all** to merge the latest Eventstream changes. You can also review the diff for each item in the **Updates** tab before applying changes, ensuring you understand what will be modified in your workspace.
 
 :::image type="content" source="./media/eventstream-cicd/update-from-git.png" alt-text="Screenshot that shows update eventstream items from git." lightbox="./media/eventstream-cicd/update-from-git.png":::
 
@@ -73,6 +78,8 @@ To learn more about deployment pipeline, visit [Get started with deployment pipe
 ## CI/CD Support for Eventstream Components
 
 Fabric CI/CD features include Git Integration, Deployment Pipelines, and Public APIs. This section outlines the compatibility of various Eventstream components with different CI/CD features. Understanding these support levels is essential for maintaining and deploying Eventstream items across workspaces.
+
+You can also use the [Import/Export Item Definitions Batch APIs (preview)](/rest/api/fabric/) for large-scale item synchronization. Eventstream items can be synchronized via these batch APIs to streamline multi-workspace or multi-environment operations. Review the API documentation for applicable limits and authentication requirements.
 
 ### Support level definitions
 
@@ -99,10 +106,12 @@ Fabric CI/CD features include Git Integration, Deployment Pipelines, and Public 
 
 * **Git Integration** and **Deployment Pipeline** have limited support for cross-workspace scenarios. To avoid issues, make sure all Eventstream destinations within the same workspace. Cross-workspace deployment may not work as expected.
 * If an Eventstream includes an Eventhouse destination using **Direct Ingestion** mode, you’ll need to manually reconfigure the connection after importing or deploying it to a new workspace.
+* **Connection references**: Consider using connection reference items (Variable Library) to centralize and rebind connections when deploying Eventstream items across workspaces. This approach can reduce manual reconfiguration, for example when Eventhouse destinations use Direct Ingestion.
 
 ## Related content
 
 - [Get started with Git integration](/fabric/cicd/git-integration/git-get-started)
 - [Choose the best Fabric CI/CD workflow option for you](/fabric/cicd/manage-deployment)
+- [Azure DevOps Pipelines extension for Fabric](https://marketplace.visualstudio.com/items?itemName=ms-fabric.fabric-devops-pipelines)
 
 

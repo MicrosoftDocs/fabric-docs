@@ -13,6 +13,8 @@ SQL Server Integration Services (SSIS) is a widely used ETL tool that lets you d
 
 Over time, organizations accumulate a considerable number of SSIS packages that serve different business purposes. The **Invoke SSIS Package** activity in Data Factory for Microsoft Fabric lets you move existing SSIS workloads into Fabric with minimal changes.
 
+> [!VIDEO https://www.youtube.com/embed/sgvtMtMU6og]
+
 > [!IMPORTANT]
 > The Invoke SSIS Package activity is currently in **preview**. Preview features may have limited functionality and are subject to change before general availability.
 
@@ -20,8 +22,8 @@ Over time, organizations accumulate a considerable number of SSIS packages that 
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
-- A [workspace](../get-started/create-workspaces.md) is created.
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
+- A [workspace](../fundamentals/create-workspaces.md) is created.
 - Your SSIS packages (*.dtsx* files) are ready. If you also use package configuration files (*.dtsConfig*), have those available as well.
 
 ## Step 1 – Move SSIS packages to OneLake
@@ -65,6 +67,8 @@ If your package requires runtime values—for example, connection strings, crede
 
 Use this tab to override connection-manager properties at execution time. For each connection manager, provide the **Scope**, **Name**, **Property**, and **Value**. This is especially important when the package protection level is set to **DontSaveSensitive**, because passwords and credentials aren't persisted in the package and must be supplied at runtime.
 
+:::image type="content" source="media/invoke-ssis-package-activity/activity-configuration-manager.png" alt-text="Screenshot showing the activity configuration manager.":::
+
 ### Property Overrides tab
 
 Use this tab to override any package property by entering its property path and the desired value. For example, to override a user variable:
@@ -98,6 +102,18 @@ After you trigger a run, monitor its progress in the pipeline **Output** tab or 
 :::image type="content" source="media/invoke-ssis-package-activity/monitor-execution.png" alt-text="Screenshot showing the monitoring view with the Invoke SSIS Package activity status and logging path.":::
 
 To view logs, navigate to the logging path in OneLake and review the log files for detailed execution information and error messages.
+
+:::image type="content" source="media/invoke-ssis-package-activity/one-lake-log.png" alt-text="Screenshot showing the OneLake log files for the Invoke SSIS Package activity.":::
+
+## Scenarios: Connect SSIS packages to Fabric services
+
+SSIS packages running through the Invoke SSIS Package activity can connect to several Fabric services as data sources or destinations. The following tutorials walk through each scenario:
+
+- **SQL database in Microsoft Fabric** – Connect SSIS packages to Fabric SQL Database using Microsoft Entra service principal authentication with the OLE DB connection manager. See [Integrate SSIS with SQL database in Microsoft Fabric](/sql/integration-services/fabric-integration/integrate-fabric-sql-database).
+
+- **OneLake (via Azure Data Lake Storage Gen2)** – Write files from SSIS packages to ADLS Gen2 and surface them in OneLake through a lakehouse shortcut, with no package changes required. See [Use SSIS packages to write files to OneLake through Azure Data Lake Storage Gen2](/sql/integration-services/fabric-integration/tutorial-ssis-write-files-onelake).
+
+- **Fabric Data Warehouse** – Write data to a Fabric Data Warehouse by reconfiguring authentication to Microsoft Entra ID and using the `COPY INTO` command for data ingestion. See [Integrating SSIS with Fabric Data Warehouse](/sql/integration-services/fabric-integration/integrate-fabric-data-warehouse).
 
 ## Pricing model
 

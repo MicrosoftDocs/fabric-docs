@@ -1,7 +1,9 @@
 ---
 title: Manage inbound access from OneLake with workspace private links
 description: Inbound access protection in Fabric secures your data by limiting inbound requests. 
-ms.reviewer: eloldag, mabasile
+ms.reviewer: eloldag, mabasile # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article
 ms.date: 08/20/2025
 #customer intent: As a data admin, I want to learn how to protect my data by limiting inbound requests. As a data engineer, I want to learn how to work with my data, even when private links are turned on. 
@@ -35,4 +37,8 @@ To connect to your tenant private endpoint, you can continue to use the OneLake 
 - `https://onelake.blob.fabric.microsoft.com`
 
 If your environment doesn't have a workspace private link set up, the workspace FQDN connects over the public internet. If only a tenant private link is set up, the workspace FQDN connects to the tenant private link. If both a tenant and workspace private link are set up, the workspace FQDN connects to the workspace private link.
+
+## Related content
+
+- To learn how to restrict inbound access based on approved Azure resource, see [Manage inbound access to OneLake with trusted resources](onelake-manage-inbound-access-trusted-resources.md).
 

@@ -3,7 +3,7 @@ title: What is Copy job in Data Factory
 description: This article explains the concept of the Copy job and the benefits it provides.
 ms.reviewer: yexu
 ms.topic: how-to
-ms.date: 06/13/2025
+ms.date: 04/24/2026
 ms.search.form: copy-job-tutorials 
 ms.custom: copy-job
 ai-usage: ai-assisted
@@ -37,27 +37,29 @@ You can choose how your data is copied from source to destination:
 
 ### Incremental copy (CDC, Watermark) 
 
-In incremental copy, every run after the initial full copy (called a "subsequent load") transfers only certain changes. Copy job automatically tracks and manages the state of the last successful run, so it knows what data to copy next. 
-- When Copy job copies from a database using an incremental column ("watermark column"), each subsequent load copies only rows with a value in that column larger than any row previously copied.
-- When Copy job copied from a database that has CDC enabled, each subsequent load copies all rows inserted, updated, or deleted since the last successful run.
-- When Copy job copies files, each subsequent load copies only those files created or modified since the last successful run.
+In incremental copy, every run after the initial full copy (called a "subsequent load") transfers only certain changes. Copy job automatically tracks and manages the state of the last successful run, so it knows what data to copy next. Copy job supports watermark-based incremental copy (such as ROWVERSION, datetime, date, string interpreted as datetime, and integer columns) and CDC-based incremental copy when CDC is enabled on the source.
 
-Typically, an incremental column holds a date/time value or an increasing number.
-If your database has CDC enabled, you don’t need to choose an incremental column — Copy job automatically detects the changes. 
+If a copy job fails, you don’t need to worry about data loss. Copy job always resumes from the end of the last successful run. A failure doesn't change the state managed by Copy job. You can also reset incremental copy back to a full copy at any time — either for the entire job or per table.
 
-If you are using a watermark to copy incrementally from a database, subsequent loads do not copy any rows with a "null" value in that column, because the "null" value is considered _less_ than any other value.
+#### When to use CDC vs. watermark-based incremental copy
 
-See more details for [Change data capture (CDC) in Copy Job](/fabric/data-factory/cdc-copy-job).
+- Use **CDC-based incremental copy** when CDC is enabled on your source and supported by the Copy job connector, and you need to replicate inserts, updates, and **deletes**, keep the destination continuously in sync, support SCD Type 2 history, or minimize scan load on high-change-volume tables.
+- Use **watermark-based incremental copy** when CDC isn't available on your source but your table has a reliable incremental column (for example, `ROWVERSION`, datetime, date, integer, or string interpreted as datetime) and you only need to track inserts and updates.
 
-If a copy job fails, you don’t need to worry about data loss. Copy job always resumes from the end of the last successful run. A failure does not change the state managed by Copy job. 
+See more details in:
 
-### Reset incremental copy
+- [Incremental copy in Copy job](incremental-copy-job.md).
+- [Change data capture (CDC) in Copy Job](/fabric/data-factory/cdc-copy-job).
 
-You have the flexibility in managing incremental copy, including the ability to reset it back to a full copy on the next run. This is incredibly useful when there’s a data discrepancy between your source and destination—you can simply let Copy Job perform a full copy in the next run to resolve the issue, then continue with incremental updates afterward.
+### Full and incremental copy of data subsets with database queries
 
-You can reset incremental copy either per entire job or per table, giving you fine-grained control. For example, you can re-copy smaller tables without impacting larger ones. This means smarter troubleshooting, less disruption, and more efficient data movement. 
+You can copy subsets of data from your tables using database queries, which unlocks a wide range of data ingestion scenarios. For example:
 
-In some cases, when you edit a copy job — for example, updating the incremental column in your source table — Copy job will reset the incremental copy to a full copy on the next run. This ensures data consistency between the source and the destination.
+- Copy only data for a specific region from a table that has a region column to meet compliance requirements for data ingestion.
+- Copy only the top N rows for testing or sampling.
+- Project a column to a supported type (for example, cast a numeric `varchar` column to an integer) so you can use it as the incremental column. For more information, see [Incremental copy in Copy job](incremental-copy-job.md#use-an-unsupported-column-type-as-a-watermark-by-casting-with-query).
+
+This capability supports both full and incremental copies on table subsets based on your custom queries, which lets you flexibly select and filter data before loading. Your data ingestion becomes more efficient, precise, and tailored to your needs.
 
 ### Update methods (Append, Overwrite, Merge, SCD Type 2) 
 
@@ -88,6 +90,28 @@ This approach ensures that your destination remains clean, fully synchronized, a
 
 [!INCLUDE [copy-job-auto-table-creation-truncate-connectors](includes/copy-job-auto-table-creation-truncate-connectors.md)]
 
+### Audit columns
+
+Audit columns are additional metadata columns that Copy job can automatically append to every row it writes to the destination. When you enable audit columns, each row in your destination table can be enriched with information such as:
+
+- Data extraction time
+- Source file path
+- Workspace ID, Copy job ID, Copy job run ID, and Copy job name
+- Incremental window lower bound and upper bound
+- Custom user-defined values
+
+With audit columns, you get row-level data lineage without custom code, enabling compliance reporting, data quality debugging, and ingestion freshness tracking.
+
+See more details in [Audit columns in Copy job](audit-columns-copy-job.md).
+
+### Performance
+
+Copy job automatically optimizes copy performance based on the data volume, so you get fast data movement without manual tuning. Whether you're copying a small lookup table or a large transaction log, Copy job applies the right strategy for each table automatically.
+
+When copying data from large tables, you can also optionally enable **auto-partitioning (Preview)**. With auto-partitioning, Copy job analyzes the source schema and data characteristics to determine the optimal partitioning strategy. It automatically selects the right partition column, computes balanced boundaries, and executes parallel reads — all without any user input. This can dramatically increase throughput for large datasets. You can turn on the auto-partitioning toggle under **Advanced settings** in your Copy job.
+
+Auto-partitioning is supported for watermark-based incremental copy including both initial full copy and incremental copy, on the following connectors: Amazon RDS for SQL Server, Azure SQL Database, Azure Synapse Analytics (SQL Pool), Fabric Data Warehouse, SQL database in Fabric, SQL Server, and Azure SQL Managed Instance.
+
 ### Run options (Run, Schedule, Event Trigger)
 
 You have full flexibility to decide when a copy job runs — it can **run once** or on a **schedule**. Even if a job is scheduled, you can still select **Run** at any time to trigger it manually. In incremental copy, the manually triggered job will still only transfer changes since the last run. 
@@ -116,7 +140,8 @@ See more details in [CI/CD for Copy job](/fabric/data-factory/cicd-copy-job).
 
 ### Observability
 
-See more details in [How to monitor a Copy job](monitor-copy-job.md).
+See more details in [How to monitor a Copy job](monitor-copy-job.md) and [Workspace monitoring for Copy job](copy-job-workspace-monitoring.md)
+
 
 ## Region availability
 
@@ -137,7 +162,13 @@ See our [supported connectors](copy-job-connectors.md) page for the full list of
 
 Submit your feedback on [Fabric Ideas](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas/label-name/data%20factory%20%7C%20copy%20job) and join the conversation on the [Fabric Community](https://community.fabric.microsoft.com/t5/Copy-job/bd-p/db_copyjob).
 
+## Data type mapping
+
+[!INCLUDE [data-type-mapping-data-movement](includes/data-type-mapping-data-movement.md)]
+
 ## Related content
 
+- [Incremental copy in Copy job](incremental-copy-job.md)
 - [How to create a Copy job](create-copy-job.md)
 - [How to monitor a Copy job](monitor-copy-job.md)
+- [Audit columns in Copy job](audit-columns-copy-job.md)

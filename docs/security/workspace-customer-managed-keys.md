@@ -35,8 +35,11 @@ Customer-managed keys are currently supported for the following Fabric items:
 * Experiment
 * Pipeline
 * Dataflow
+* Copy job
 * Industry solutions
 * SQL Database
+* Eventhouse (preview)
+* Graph (preview)
 
 This feature can't be enabled for a workspace that contains unsupported items. When customer-managed key encryption for a Fabric workspace is enabled, only supported items can be created in that workspace. To use unsupported items, create them in a different workspace that doesn't have this feature enabled.
 
@@ -115,7 +118,7 @@ After completing the prerequisites, follow the steps in this section to enable c
 
 1. Select **Apply**.
 
-Once you complete these steps, your workspace is encrypted with a customer-managed key. This means that all data in Onelake is encrypted and that existing and future items in the workspace are encrypted by the customer-managed key you used for the setup. You can review the encryption status *Active, In progress or Failed* in the **Encryption** tab in workspace settings. Items for which encryption is in progress or failed are listed categorically too. The key needs to remain active in the Key Vault while encryption is in progress *(Status: In progress)*. Refresh the page to view the latest encryption status. If encryption has failed for some items in the workspace, you can retry using a different key.
+Once you complete these steps, your workspace is encrypted with a customer-managed key. This means that all data in OneLake is encrypted and that existing and future items in the workspace are encrypted by the customer-managed key you used for the setup. You can review the encryption status *Active, In progress or Failed* in the **Encryption** tab in workspace settings. Items for which encryption is in progress or failed are listed categorically too. The key needs to remain active in the Key Vault while encryption is in progress *(Status: In progress)*. Refresh the page to view the latest encryption status. If encryption has failed for some items in the workspace, you can retry using a different key.
 
 ## Revoke access
 
@@ -157,7 +160,9 @@ Before you configure your Fabric workspace with a customer-managed key, consider
   * Metadata of ML model and experiment, like the model name, version, metrics
   * Warehouse queries on Object Explored and backend cache, which is evicted after each use
 
-* CMK is supported on all [F SKUs](../enterprise/licenses.md). Trial capacities can't be used for encryption using CMK. CMK can't be enabled for workspaces that have BYOK enabled and CMK workspaces can't be moved to capacities for which BYOK is enabled either.
+* CMK is supported on all [F SKUs](../enterprise/licenses.md). Trial capacities can't be used for encryption using CMK.
+
+* You can turn on CMK for workspaces hosted in BYOK capacities. The same or separate keys can be used to protect both items in a CMK‑enabled workspace and semantic models residing on the BYOK capacity. (preview)
 
 * CMK can be enabled using the Fabric portal and doesn't have API support.
 

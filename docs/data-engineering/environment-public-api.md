@@ -16,9 +16,9 @@ The Microsoft Fabric REST API provides a service endpoint for the create, read, 
 > [!IMPORTANT]
 >
 > - The GA release includes updates in the request/response contract of existing APIs, API deprecations, and new APIs. You can find the details in the following sections.
-> - A new query parameter `beta` is introduced to facilitate the transition of request/response contract changes. The `beta` query parameter defaults to `True` until **April 30, 2026**, making the preview contracts still available. Set the value to `False` to start using the stable Release version of the contracts.
+> - A new query parameter `beta` is introduced to facilitate the transition of request/response contract changes. The `beta` query parameter defaults to `True` until **August 31, 2026**, making the preview contracts still available. Set the value to `False` to start using the stable Release version of the contracts.
 > - `Preview` query parameter has been replaced by `beta`. For backward compatibility, preview is still supported and behaves the same as beta.
-> - The to-be-deprecated APIs will continue to be supported until **April 30, 2026**, please use the newly introduced APIs to replace them as soon as possible.
+> - The to-be-deprecated APIs will continue to be supported until **August 31, 2026**, please use the newly introduced APIs to replace them as soon as possible.
 
 ### APIs with request/response contract update
 
@@ -31,7 +31,7 @@ The Microsoft Fabric REST API provides a service endpoint for the create, read, 
 |Published|List published libraries|Get the libraries that are published and effective in Spark sessions.|Update in response contract.|[List published libraries (Preview)](/rest/api/fabric/environment/published/list-libraries)|[List published libraries](/rest/api/fabric/environment/published/list-libraries)|
 |Published|List published Spark compute|Get the Spark compute configurations and Spark properties that are published and effective in Spark sessions.|Update in response contract.|[List published libraries (Preview)](/rest/api/fabric/environment/published/get-spark-compute)|[List published libraries](/rest/api/fabric/environment/published/get-spark-compute)|
 
-The `beta` parameter defaults to `True` until **April 30, 2026**, i.e., the system considers the parameter as `True` if the request is sending without specifying this parameter until the deprecation date. We highly recommend migrating your implementations to the stable version by explicitly set the `beta` parameter to `False` as soon as possible.
+The `beta` parameter defaults to `True` until **August 31, 2026**, i.e., the system considers the parameter as `True` if the request is sending without specifying this parameter until the deprecation date. We highly recommend migrating your implementations to the stable version by explicitly set the `beta` parameter to `False` as soon as possible.
 
 Using `List staging libraries` API as an example, which has an update in the API response.
 
@@ -97,12 +97,12 @@ Using `List staging libraries` API as an example, which has an update in the API
 
 > [!IMPORTANT]
 >
-> - The to-be-deprecated APIs will continue to be supported until **April 30, 2026**. We highly recommend to use newly introduced APIs to replace your implementations as soon as possible.
+> - The to-be-deprecated APIs will continue to be supported until **August 31, 2026**. We highly recommend to use newly introduced APIs to replace your implementations as soon as possible.
 
 |Category|API|Description|Note|
 |---------|---------|---------|---------|
-|Staging|[Upload staging libraries](/rest/api/fabric/environment/staging/upload-custom-library)|Add one custom library or one/multiple public library in the environment.|Support until **April 30, 2026**, please use the newly introduced `Import external libraries`/`Upload custom library` APIs to replace.|
-|Staging|[Delete staging libraries](/rest/api/fabric/environment/staging/delete-custom-library)|Delete one staging custom library or all public libraries.|Support until **April 30, 2026**, please use the newly introduced `Remove external library`/`Delete custom library` APIs to replace.|
+|Staging|[Upload staging libraries](/rest/api/fabric/environment/staging/upload-custom-library)|Add one custom library or one/multiple public library in the environment.|Support until **August 31, 2026**, please use the newly introduced `Import external libraries`/`Upload custom library` APIs to replace.|
+|Staging|[Delete staging libraries](/rest/api/fabric/environment/staging/delete-custom-library)|Delete one staging custom library or all public libraries.|Support until **August 31, 2026**, please use the newly introduced `Remove external library`/`Delete custom library` APIs to replace.|
 
 Below are a few examples covering the scenarios when managing staging libraries.
 
@@ -287,7 +287,7 @@ If you want to remove an existing Spark property, specify the value as `null` wi
 - Sample request
 
     ```http
-    PATCH https://api.fabric.microsoft.com/v1/workspaces/f089354e-8366-4e18-aea3-4cb4a3a50b48/environments/707cfd07-cbf1-41da-aad7-dd157ddb8c11/staging/sparkcompute?beta=False
+    PATCH https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/environments/bbbbcccc-1111-dddd-2222-eeee3333ffff/staging/sparkcompute?beta=False
 
     {
       "instancePool": {
@@ -354,8 +354,8 @@ The changes that you made for the staging libraries and Spark compute are cached
 - Sample response
 
     ```http
-    Location: https://api.fabric.microsoft.com/v1/operations/abcdef00-9d7e-469a-abf1-fca847a0ea69
-    x-ms-operation-id: abcdef00-9d7e-469a-abf1-fca847a0ea69
+    Location: https://api.fabric.microsoft.com/v1/operations/ccccdddd-2222-eeee-3333-ffff4444aaaa
+    x-ms-operation-id: ccccdddd-2222-eeee-3333-ffff4444aaaa
     Retry-After: 120  
     ```
 
@@ -371,4 +371,3 @@ During the publish operation, you can also call the following API to cancel it.
 
 - [Create, configure, and use an environment in Fabric](create-and-use-environment.md)
 - [Item APIs - Environment](https://aka.ms/EnvironmentRESTAPISwaggerPage)
-

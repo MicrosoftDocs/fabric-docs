@@ -98,6 +98,8 @@ items:
     href: source-control.md
 - name: Develop
   items:
+  - name: AI functions
+    href: ai-functions.md
   - name: Query labels
     href: query-label.md
   - name: Transactions
@@ -116,8 +118,6 @@ items:
       displayName: Create a warehouse snapshot
     - name: Analyze with range bands
       href: analyze-range-bands.md
-    - name: Datamart upgrade to warehouse
-      href: datamart-upgrade-to-warehouse.md
     - name: Create an IDENTITY column
       href: tutorial-identity.md
 - name: Dimensional modeling
@@ -142,6 +142,8 @@ items:
     href: ingest-data-pipelines.md
   - name: Ingest data with TSQL
     href: ingest-data-tsql.md
+  - name: Troubleshoot ingestion errors
+    href: troubleshoot-ingestion-errors.md
   - name: Use dbt with data warehouse
     href: tutorial-setup-dbt.md   
 

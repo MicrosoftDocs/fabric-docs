@@ -3,11 +3,12 @@ title: Refresh SQL Endpoint Activity
 description: Learn how to use the Refresh SQL Endpoint activity in Microsoft Fabric pipelines to ensure your Lakehouse SQL endpoint reflects the latest data for downstream processes.
 ms.date: 02/17/2026
 ms.topic: how-to
+ai-usage: ai-assisted
 ---
 
 # Refresh SQL Endpoint activity
 
-The Refresh SQL Endpoint activity in Microsoft Fabric pipelines lets you programmatically refresh a Lakehouse SQL endpoint as part of an orchestrated workflow. This approach ensures that downstream consumers—such as Power BI reports, notebooks, or external SQL clients—see the latest data after data preparation or maintenance steps complete.
+The Refresh SQL Endpoint activity in Microsoft Fabric pipelines lets you programmatically refresh a Lakehouse SQL endpoint as part of an orchestrated workflow. It's part of the Lakehouse Utility Suite for pipelines, and is typically used after the [Lakehouse Maintenance activity](lakehouse-maintenance-activity.md) (for example, after OPTIMIZE or VACUUM operations). Downstream consumers—such as Power BI reports, notebooks, or external SQL clients—then see the latest data after data preparation or maintenance steps complete.
 
 Use this activity to make SQL endpoints immediately reflect recent updates without relying on manual refreshes or ad-hoc processes. Use this activity when your pipeline:
 
@@ -35,6 +36,9 @@ Before using this activity, make sure that:
 
     :::image type="content" source="media/refresh-sql-endpoint-activity/refresh-sql-endpoint-on-canvas.png" alt-text="Screenshot of the Refresh SQL Endpoint activity on the pipeline canvas." lightbox="media/refresh-sql-endpoint-activity/refresh-sql-endpoint-on-canvas.png":::
 
+    > [!TIP]
+    > You can orchestrate this activity alongside other Lakehouse Utility Suite activities—such as the [Lakehouse Maintenance activity](lakehouse-maintenance-activity.md)—in the same pipeline so maintenance and refresh run in sequence.
+
 1. Refer to the [**General** settings](/fabric/data-factory/activity-overview#general-settings) guidance to configure the **General** settings tab.
 
 ## Refresh SQL Endpoint activity settings
@@ -42,7 +46,7 @@ Before using this activity, make sure that:
 1. Select the **Settings** tab to configure the activity.  
 1. Configure connection by selecting an existing connection from the **Connection** dropdown, or creating a new connection, and specifying its configuration details.
 1. Specify the **Workspace** that contains the Lakehouse.
-1. Specify the**SQL Endpoint** that contains the materialized lake view to refresh. This SQL endpoint is the Lakehouse whose SQL endpoint you want to refresh. The SQL endpoint associated with the selected Lakehouse.
+1. Specify the **SQL Endpoint** for the Lakehouse you want to refresh. The refresh updates the Lakehouse SQL endpoint metadata so it reflects recent data and schema changes.
 
     :::image type="content" source="media/refresh-sql-endpoint-activity/refresh-sql-endpoint-settings.png" alt-text="Screenshot of the Refresh SQL Endpoint activity settings." lightbox="media/refresh-sql-endpoint-activity/refresh-sql-endpoint-settings.png":::
 
@@ -66,7 +70,7 @@ When the activity run finishes:
 ## Common scenarios
 
 - Refreshing the SQL endpoint after a Notebook writes transformed data to a Lakehouse.
-- Triggering a SQL endpoint refresh after Optimize or Vacuum operations complete.
+- Trigger a SQL endpoint refresh after the [Lakehouse Maintenance activity](lakehouse-maintenance-activity.md) (OPTIMIZE or VACUUM) completes.
 - Ensuring reports and dashboards query the most recent Lakehouse state at well‑defined points in a pipeline.
 
 ## Why does my SQL Endpoint Refresh fail when underlying data is locked?
@@ -125,4 +129,5 @@ This approach is practical and robust for many analytics workloads.
 
 ## Related content
 
+- [Lakehouse Maintenance activity](lakehouse-maintenance-activity.md)
 - [Refresh SQL Endpoint Metadata with the REST API](/rest/api/fabric/sqlendpoint/items/refresh-sql-endpoint-metadata?tabs=HTTP)

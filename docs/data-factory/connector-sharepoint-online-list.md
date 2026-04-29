@@ -3,11 +3,12 @@ title: Set up your SharePoint connection
 description: This article provides information about how to create a SharePoint connection in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.topic: how-to
-ms.date: 02/10/2026
+ms.date: 03/19/2026
 ms.custom:
 - template-how-to
 - connectors
 - sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # Set up your SharePoint connection
@@ -24,12 +25,24 @@ The SharePoint connector supports the following authentication types for copy an
 |Service Principal| n/a | √ |
 |Workspace identity| √ | √ |
 
-## Set up your connection in Dataflow Gen2
-
+## Set up your connection for Dataflow Gen2
 You can connect Dataflow Gen2 in Microsoft Fabric to SharePoint Online list using Power Query connectors. Follow these steps to create your connection:
 
-1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
-1. [Connect to a SharePoint Online list (from Power Query Online)](/power-query/connectors/sharepoint-online-list#connect-to-a-sharepoint-online-list-from-power-query-online).
+1. Check [capabilities](#capabilities) to make sure your scenario is supported.
+1. [Get data in Fabric](#get-data).
+1. [Connect to a SharePoint Online list](#connect-to-a-sharepoint-online-list).
+
+### Capabilities
+
+[!INCLUDE [sharepoint-online-list-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sharepoint-online-list/sharepoint-online-list-capabilities-supported.md)]
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Connect to a SharePoint Online list
+
+[!INCLUDE [sharepoint-online-list-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sharepoint-online-list/sharepoint-online-list-connect-to-power-query-online.md)]
 
 ## Set up your connection in Manage connections and gateways
 
@@ -101,15 +114,13 @@ Fill in the required properties. You need to specify the tenant ID, service prin
 - **Service principal ID**: The Application (client) ID of the application registered in Microsoft Entra ID.
 - **Service principal key**: The application's key.
 
-
->[!Note]
-> - For permission settings related to SharePoint Online List in the pipeline, refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites).
-
 ### Workspace identity authentication
 
 Use the workspace’s managed identity for authentication. For more information, see [Workspace identity](../security/workspace-identity.md).
 
+
 ## Related content
 
+- [For more information about this connector, see the SharePoint Online List connector documentation.](/power-query/connectors/sharepoint-online-list)
 - [Configure SharePoint Online List in a copy activity](connector-sharepoint-online-list-copy-activity.md)
 - [Configure SharePoint Online File in a copy activity](connector-sharepoint-online-file-copy-activity.md)

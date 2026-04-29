@@ -3,8 +3,9 @@ title: Microsoft Fabric VS Code extensions
 description: Learn about the Microsoft Fabric and Fabric User data functions extensions for Visual Studio Code to support local development and debugging. 
 ms.reviewer: sumuth
 ms.topic: overview
-ms.date: 06/17/2025
+ms.date: 04/25/2026
 ms.search.form: VS Code extension
+ai-usage: ai-assisted
 ---
 
 # Microsoft Fabric extensions for Visual Studio Code
@@ -29,9 +30,9 @@ The supported features are:
 - Clone Git enabled workspaces.
 - Support for version control for your items.
 - Open Fabric SQL Databases in [MSSQL extension](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql).
-- Explore and edit item definitions in VS Code for Fabric items
-- Fabric MCP support
-- Manage folders and items within folders
+- Explore and edit item definitions in VS Code for Fabric items.
+- Fabric MCP support: install the Fabric MCP server alongside the Microsoft Fabric extension and GitHub Copilot Chat in VS Code to enable Fabric MCP tools and a tailored chat experience for working with Fabric artifacts directly from the chat interface.
+- Browse workspace folders and view their contents. 
 
 ### Sign in
 
@@ -40,29 +41,41 @@ To sign in to your Fabric account, press F1 and type `Fabric: Sign in`. You're p
 ## Manage your workspaces and item
 View all your workspaces in Fabric explorer. You can filter the workspaces you want to work with in VS Code. 
 
-:::image type="content" source="media\vscode\manage-workspace.png" alt-text="Screenshot of viewing workspaces and filter them." lightbox="media\vscode\manage-workspace.png" :::
+:::image type="content" source="media\vs-code\manage-workspace.png" alt-text="Screenshot of viewing workspaces and filter them." lightbox="media\vs-code\manage-workspace.png" :::
 
 ### Switch tenants
 
 You can enable Microsoft Fabric for your tenant  such that everyone in the tenant has access to Microsoft Fabric. You may have access to more than one tenant; you can switch between tenants using the tenant switcher.
 
 1. Sign in to Microsoft Fabric.
-2. Select **Switch tenant** and  then choose the tenant you want to navigate to.
+1. Select **Switch tenant** and  then choose the tenant you want to navigate to.
 
-   :::image type="content" source="media\vscode\switch-tenant.png" alt-text="Screenshot of selecting switch tenant to change the default tenant." lightbox="media/vscode/switch-tenant.png":::
+   :::image type="content" source="media\vs-code\switch-tenant.png" alt-text="Screenshot of selecting switch tenant to change the default tenant." lightbox="media\vs-code\switch-tenant.png":::
 
 ### Create a Fabric item in VS Code
 
 With the Microsoft Fabric Extension, you can now create, delete, and rename any Fabric item directly within VS Code, streamlining your workflow without ever leaving VS Code. You can also view the newly created items in [Fabric portal](https://app.fabric.microsoft.com).
 
 1. Select the workspace of your choice.
-2. Select **+** to create an item in the workspace.   
-3. Select the item type and provide a name to create the item in Fabric. 
-   :::image type="content" source="media\vscode\select-item-type.png" alt-text="Screenshot of selecting the item type to create in Fabric." lightbox="media/vscode/select-item-type.png":::
-3. Select **Open in Explorer** to open an item definition to edit in Visual Studio Code. Here is a list of ([supported items](/rest/api/fabric/articles/item-management/definitions/item-definition-overview)).
-   :::image type="content" source="media\vscode\open-pbi-report.png" alt-text="Screenshot showing how to open a Power BI report." lightbox="media/vscode/open-pbi-report.png":::
-   
-You can access almost all Azure services provided by these extensions through the Command palette in VS Code. Press **F1**, then type in `Fabric` to find the available commands.
+1. Select **+** to create an item in the workspace.   
+1. Select the item type and provide a name to create the item in Fabric. 
+   :::image type="content" source="media\vs-code\select-item-type.png" alt-text="Screenshot of selecting the item type to create in Fabric." lightbox="media\vs-code\select-item-type.png":::
+1. Select **Open in Explorer** to open an item definition to edit in Visual Studio Code. Here is a list of ([supported items](/rest/api/fabric/articles/item-management/definitions/item-definition-overview)).
+   :::image type="content" source="media\vs-code\open-pbi-report.png" alt-text="Screenshot showing how to open a Power BI report." lightbox="media\vs-code\open-pbi-report.png":::
+
+> [!NOTE]
+> Items are created at the workspace level. Creating items inside workspace folders is currently not supported.
+
+### Use Fabric tools in VS Code Chat
+
+When you install the Fabric MCP server alongside the Microsoft Fabric extension and GitHub Copilot Chat, a Fabric agent mode becomes available in VS Code Chat. The Fabric agent provides tools for:
+
+- Understanding and navigating [item definitions](/rest/api/fabric/articles/item-management/definitions/item-definition-overview)
+- Invoking Fabric REST APIs
+- Accessing Fabric documentation
+- Performing create, update, delete, and list operations on tenant items
+
+For example, you can use Fabric tools in VS Code Chat to perform basic OneLake file operations, create a Fabric Lakehouse, upload CSV files to OneLake, and create and run Fabric notebooks—all without leaving VS Code.
 
 ## Fabric User data functions
 

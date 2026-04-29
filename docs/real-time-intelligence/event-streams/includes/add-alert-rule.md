@@ -26,7 +26,7 @@ ms.date: 03/06/2026
 
       :::image type="content" source="../media/set-alerts-event-stream/group-condition-each-event.png" alt-text="Screenshot of the Condition section with the event grouped option selected." lightbox="../media/set-alerts-event-stream/group-condition-each-event.png" border="true":::
 
-1. In the **Action** section of the rule, select an action to perform when the condition is met, and configure other fields for the action. 
+1. In the **Action** section of the rule, select an action to perform when the condition is met, and configure other fields for the action. Supported actions include sending notifications such as Microsoft Teams messages or email, or triggering workflows via webhooks or Power Automate.
 
    :::image type="content" source="../media/set-alerts-event-stream/alert-actions.png" alt-text="Screenshot of the Action section of the Add rule pane." lightbox="../media/set-alerts-event-stream/alert-actions.png" border="true":::
 

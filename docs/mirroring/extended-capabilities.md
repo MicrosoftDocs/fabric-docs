@@ -28,14 +28,14 @@ Both capabilities run on the same managed mirroring foundation: secure source co
 
 ## Delta change data feed (preview)
 
-Delta change data feedcaptures inserts, updates, and deletes, then applies them to Delta Lake tables in OneLake. This flow supports near real-time analytics without full reloads or heavy ETL pipelines.
+Delta change data feed captures inserts, updates, and deletes, then applies them to Delta Lake tables in OneLake. This flow supports near real-time analytics without full reloads or heavy ETL pipelines.
 
 - Continuously processes incremental changes (delta-based).
 - Uses change-only processing.
 - Supports downstream incremental processing.
 - Is available for all mirroring sources, including open mirroring partners.
 
-### Enable delta change data feed
+### Enable delta change data feed via UX
 
 Delta change data feed is enabled per mirrored database.
 
@@ -43,6 +43,10 @@ Delta change data feed is enabled per mirrored database.
 1. Under **Delta table management**, select the check box to **Enable delta change data feed**.
 
 :::image type="content" source="media/mirroring-extended-capabilities/enable-change-data-feed.png" alt-text="Screenshot of the Oracle Database mirroring configuration dashboard showing delta change data feed settings, OneLake data access options, and replication status.":::
+
+### Enable delta change data feed via APIs
+
+To enable delta change data feed using APIs, follow [the steps outlined in the mirrored database REST API documentation](mirrored-database-rest-api.md#enable-delta-change-data-feed-for-a-mirrored-database).
 
 ## Mirroring views (preview)
 

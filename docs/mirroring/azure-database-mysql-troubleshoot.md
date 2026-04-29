@@ -14,14 +14,11 @@ This article covers troubleshooting steps for mirroring Azure Database for MySQL
 
 ## Changes to Fabric capacity or workspace
 
+Changes to the Fabric capacity or workspace can affect mirroring. For more information, review the effects on mirroring from [Changes to Fabric capacity](troubleshooting.md#changes-to-fabric-capacity).
+
 | Cause | Result | Recommended resolution |
 | --- | --- | --- |
-| Fabric capacity paused or deleted | Mirroring stops | 1. Resume or assign capacity from the Azure portal.<br />2. Go to the Fabric mirrored database item. From the toolbar, select **Stop replication**.<br />3. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
-| Fabric capacity resumed | Mirroring doesn't resume | 1. Go to the Fabric mirrored database item. From the toolbar, select **Stop replication**.<br />2. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
-| Workspace deleted | Mirroring stops automatically | If mirroring is still active on the Azure Database for MySQL, connect by using a server admin and stop the mirroring replication process through the MySQL administrative tools or by disabling the mirroring configuration in the Fabric portal. |
-| Fabric trial capacity expired | Mirroring stops automatically | See [Fabric trial capacity expires](../fundamentals/fabric-trial.md#the-trial-expires). |
-| Fabric capacity exceeded | Mirroring pauses | Wait until the overload state is over or update your capacity. For more information, see [Actions you can take to recover from overload situations](../enterprise/throttling.md#how-to-stop-throttling-when-it-occurs). Mirroring continues once the capacity is recovered. |
-| Any other resource errors | Mirroring is disabled | To ensure your compute resources aren't affected and to minimize impact on the Azure Database for MySQL, mirroring disables on any persistent resource errors. |
+| Workspace deleted | Mirroring stops automatically | If mirroring is still active on the Azure Database for MySQL, connect by using a server admin and stop the mirroring replication process through the MySQL administrative tools or by disabling the mirroring configuration in the Azure portal. |
 
 ## SQL queries for troubleshooting
 
@@ -34,6 +31,14 @@ Check if the following server parameters are set to the required values:
 | `binlog_row_image` | `noblob`/`full` |
 | `gtid_mode` | `OFF` |
 | `aad_auth_only` | `OFF` |
+
+Execute the following query to check if there's any error:
+
+```sql
+SELECT * FROM fabric_info.error_logs;
+```
+
+Review the output for any errors or warnings in the replication status. [Contact support](/power-bi/support/service-support-options) if troubleshooting is required.
 
 | Status Code | Status Type | Description |
 | --- | --- | --- |
@@ -95,16 +100,6 @@ Only columns with following types are supported:
 - `year`
 
 In MySQL, time values are stored in the server's time zone. Ensure consistent time zone handling for accurate data representation.
-
-Execute the following query to check if there's any error:
-
-```sql
-SELECT * FROM fabric_info.error_logs;
-```
-
-Review the output for any errors or warnings in the replication status.
-
-[Contact support](/power-bi/support/service-support-options) if troubleshooting is required.
 
 ## Managed identity
 

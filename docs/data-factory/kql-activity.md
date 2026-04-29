@@ -53,6 +53,12 @@ The KQL activity might typically be used with other activities. After you config
 
 [!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
+## Known limitations
+
+- **Cross‑workspace deployment limitation:** When a pipeline containing a KQL activity is deployed across workspaces using deployment pipelines, workspace‑specific linked service properties are not remapped and continue to reference the source workspace. This can cause pipeline runs in the target workspace to fail with UserErrorKustoReadFailed / EntityNotFoundException.
+
+The workaround is to use workspace variables (Variable Library) for all workspace‑specific connection properties and reference them via endpointVariableLibrary, artifactIdVariableLibrary, and workspaceIdVariableLibrary.
+
 ## Related content
 
 - [How to monitor pipeline runs](monitor-pipeline-runs.md)

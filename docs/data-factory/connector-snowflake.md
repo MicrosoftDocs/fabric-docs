@@ -2,10 +2,11 @@
 title: Set up your Snowflake database connection
 description: This article provides information about how to create a Snowflake database connection in Microsoft Fabric.
 ms.topic: how-to
-ms.date: 11/13/2025
+ms.date: 04/21/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your Snowflake database connection
@@ -21,14 +22,32 @@ The Snowflake database connector supports the following authentication types for
 |Snowflake| √ | √ |
 |Microsoft Account| √ | √ |
 |Key-pair | √ | √ |
+|Service Principal (SPN)| √ | √ |
 
-## Set up your connection in Dataflow Gen2
+[!INCLUDE [snowflake-authentication-types-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/snowflake-authentication-types-supported.md)]
 
+## Set up your connection for Dataflow Gen2
 You can connect Dataflow Gen2 in Microsoft Fabric to Snowflake using Power Query connectors. Follow these steps to create your connection:
 
-1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
-1. Check [Snowflake limitations and known issues](/power-query/connectors/snowflake#limitations-and-known-issues) to make sure your scenario is supported.
-1. [Connect to a Snowflake database (from Power Query Online)](/power-query/connectors/snowflake#connect-to-a-snowflake-database-from-power-query-online).
+1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
+1. [Get data in Fabric](#get-data).
+1. [Connect to a Snowflake database](#connect-to-a-snowflake-database).
+
+### Capabilities
+
+[!INCLUDE [snowflake-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/snowflake-capabilities-supported.md)]
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Connect to a Snowflake database
+
+[!INCLUDE [snowflake-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/snowflake-connect-to-power-query-online.md)]
+
+### Limitations and considerations
+
+[!INCLUDE [snowflake-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/snowflake-limitations-and-considerations-include.md)]
 
 ## Set up your connection in Manage connections and gateways
 
@@ -125,6 +144,8 @@ To use Key-pair authentication, you need to configure and create a Key-pair auth
 
     :::image type="content" source="media/connector-snowflake/key-pair-authentication-passphrase.png" alt-text="Screenshot showing the passphrase option.":::
 
+
 ## Related content
 
+- [For more information about this connector, see the Snowflake database connector documentation.](/power-query/connectors/snowflake)
 - [Configure Snowflake in a copy activity](connector-snowflake-copy-activity.md)

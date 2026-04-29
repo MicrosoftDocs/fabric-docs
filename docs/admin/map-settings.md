@@ -1,19 +1,19 @@
 ---
-title: Map tenant settings 
+title: Azure Map tenant settings 
 description: Toggle tenant settings to permit or restrict organization members from using Map items.
 author: msmimart
 ms.author: mimart
 ms.reviewer: limingchen
-ms.topic: how-to
-ms.date: 09/15/2025
+ms.topic: concept-article
+ms.date: 04/08/2026
 ms.search.form: Map tenant settings
 ---
 
-# Map tenant settings
+# Azure Maps Services settings
 
 Tenant settings control whether members of your organization can use Map items. Administrators can enable or disable this feature to allow or restrict access. If enabled, users can create, view, and interact with Map items in their Fabric environment. If disabled, Map item functionality is unavailable to all users in the tenant.
 
-Microsoft Fabric includes two tenant settings that determine whether Azure Maps services are available in Map items and Map visualizations. These settings affect user access to map-powered features, including Map items and Map visualizations within Notebooks.
+Microsoft Fabric includes three tenant settings that determine whether Azure Maps services are available in Map items and Map visualizations. These settings affect user access to map-powered features, including Map items and Map visualizations within Notebooks.
 
 ## Access to Azure Maps Services
 
@@ -41,3 +41,10 @@ When enabled, this setting allows data sent to Azure Maps to be routed to the ne
 > [!NOTE]
 > Azure Maps does not process or transmit any customer names or personally identifiable information (PII).
 
+## Access to Azure Maps Weather Services (Preview)
+
+The **Users can use Azure Maps Weather Services (Preview)** setting controls whether users can access weather data in Map experiences that use Azure Maps Weather, sourced from AccuWeather.
+
+This setting is relevant only for organizations that already use Azure Maps-powered features in Fabric. It doesn't turn on Azure Maps by itself. To use Azure Maps Weather Services, you must also enable **Users can use Azure Maps services**.
+
+For more information, see [Azure Maps Weather services](https://go.microsoft.com/fwlink/?linkid=2340279).

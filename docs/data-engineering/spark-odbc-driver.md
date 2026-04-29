@@ -2,13 +2,13 @@
 title: Microsoft ODBC Driver for Microsoft Fabric Data Engineering
 description: Learn how to connect, query, and manage Spark workloads in Microsoft Fabric using the Microsoft ODBC Driver for Microsoft Fabric Data Engineering.
 author: ms-arali
-ms.author: arali
 ms.reviewer: arali
 ms.topic: how-to
-ms.date: 02/10/2026
+ms.date: 03/18/2026
+ai-usage: ai-assisted
 ---
 
-# Microsoft ODBC Driver for Microsoft Fabric Data Engineering (Preview)
+# Microsoft ODBC driver for Microsoft Fabric Data Engineering (Preview)
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
@@ -16,17 +16,20 @@ ODBC (Open Database Connectivity) is a widely adopted standard that enables clie
 
 The Microsoft ODBC Driver for Fabric Data Engineering lets you connect, query, and manage Spark workloads in Microsoft Fabric with the reliability and simplicity of the ODBC standard. Built on Microsoft Fabric's Livy APIs, the driver provides secure and flexible Spark SQL connectivity to your .NET, Python, and other ODBC-compatible applications and BI tools.
 
-## Key Features
+## Key features
 
-- **ODBC 3.x Compliant**: Full implementation of ODBC 3.x specification
-- **Microsoft Entra ID Authentication**: Multiple authentication flows including Azure CLI, interactive, client credentials, certificate-based, and access token authentication
-- **Spark SQL Query Support**: Direct execution of Spark SQL statements
-- **Comprehensive Data Type Support**: Support for all Spark SQL data types including complex types (ARRAY, MAP, STRUCT)
-- **Session Reuse**: Built-in session management for improved performance
-- **Large Table Support**: Optimized handling for large result sets with configurable page sizes
-- **Async Prefetch**: Background data loading for improved performance
-- **Proxy Support**: HTTP proxy configuration for enterprise environments
-- **Multi-Schema Lakehouse Support**: Connect to specific schema within a Lakehouse
+- **ODBC 3.x compliant**: Full implementation of ODBC 3.x specification
+- **Microsoft Entra ID authentication**: Multiple authentication flows including Azure CLI, interactive, client credentials, certificate-based, and access token authentication
+- **Spark SQL query support**: Direct execution of Spark SQL statements
+- **Comprehensive data type support**: Support for all Spark SQL data types including complex types (ARRAY, MAP, STRUCT)
+- **Session reuse**: Built-in session management for improved performance
+- **Large table support**: Optimized handling for large result sets with configurable page sizes
+- **Async prefetch**: Background data loading for improved performance
+- **Proxy support**: HTTP proxy configuration for enterprise environments
+- **Multi-schema Lakehouse support**: Connect to specific schema within a Lakehouse
+- **OneLake integration**: Access Lakehouse data stored in Microsoft OneLake, including tables across multiple schemas, through a unified ODBC interface without separate storage configuration
+- **Environment items support**: Attach Fabric environment items during job execution to apply workspace libraries, Spark properties, and variables to each session
+- **Custom Spark configuration**: Pass Spark configuration properties directly through the connection string to tune session behavior
 
 > [!NOTE]
 > In open-source Apache Spark, database and schema are used synonymously. For example, running `SHOW SCHEMAS` or `SHOW DATABASES` in a Fabric Notebook returns the same result — a list of all schemas in the Lakehouse.
@@ -37,11 +40,11 @@ Before using the Microsoft ODBC Driver for Microsoft Fabric Data Engineering, en
 
 - **Operating System**: Windows 10/11 or Windows Server 2016+
 - **Microsoft Fabric Access**: Access to a Microsoft Fabric workspace
-- **Azure Entra ID Credentials**: Appropriate credentials for authentication
+- **Microsoft Entra ID credentials**: Appropriate credentials for authentication
 - **Workspace and Lakehouse IDs**: GUID identifiers for your Fabric workspace and lakehouse
 - **Azure CLI** (optional): Required for Azure CLI authentication method
 
-## Download and MSI Installation
+## Download and MSI installation
 
 Microsoft ODBC Driver for Microsoft Fabric Data Engineering version 1.0.0 is in public preview which you can download from this download center link.
 
@@ -53,7 +56,7 @@ Microsoft ODBC Driver for Microsoft Fabric Data Engineering version 1.0.0 is in 
 4. Choose installation directory (default: `C:\Program Files\Microsoft ODBC Driver for Microsoft Fabric Data Engineering\`)
 5. Complete the installation
 
-### Silent Installation
+### Silent installation
 
 ```powershell
 # Silent installation
@@ -63,7 +66,7 @@ msiexec /i "MicrosoftFabricODBCDriver-1.0.msi" /quiet
 msiexec /i "MicrosoftFabricODBCDriver-1.0.msi" /l*v install.log
 ```
 
-### Verify Installation
+### Verify installation
 
 After installation, verify the driver is registered:
 
@@ -71,10 +74,10 @@ After installation, verify the driver is registered:
 2. Navigate to the **Drivers** tab
 3. Verify "Microsoft ODBC Driver for Microsoft Fabric Data Engineering" is listed
 
-## Quick Start Example
+## Quick start example
 This example demonstrates how to connect to Microsoft Fabric and execute a query using the Microsoft ODBC Driver for Microsoft Fabric Data Engineering. Before running this code, ensure you have completed the prerequisites and installed the driver.
 
-### Python Example
+### Python example
 
 ```python
 import pyodbc
@@ -98,7 +101,7 @@ print(row.message)
 conn.close()
 ```
 
-### .NET Example
+### .NET example
 
 ```csharp
 using System.Data.Odbc;
@@ -124,9 +127,9 @@ if (await reader.ReadAsync())
 }
 ```
 
-## Connection String Format
+## Connection string format
 
-### Basic Connection String
+### Basic connection string
 
 The Microsoft ODBC Driver for Microsoft Fabric Data Engineering uses the following connection string format:
 
@@ -134,7 +137,7 @@ The Microsoft ODBC Driver for Microsoft Fabric Data Engineering uses the followi
 DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};<parameter1>=<value1>;<parameter2>=<value2>;...
 ```
 
-### Connection String Components
+### Connection string components
 
 | Component | Description | Example |
 |-----------|-------------|---------|
@@ -143,21 +146,21 @@ DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};<parameter1
 | LakehouseId | Microsoft Fabric lakehouse identifier (GUID) | `xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx` |
 | AuthFlow | Authentication method | `AZURE_CLI`, `INTERACTIVE`, `CLIENT_CREDENTIAL`, `CLIENT_CERTIFICATE`, `ACCESS_TOKEN` |
 
-### Example Connection Strings
+### Example connection strings
 
-#### Basic Connection (Azure CLI Authentication)
+#### Basic connection (Azure CLI authentication)
 
 ```
 DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};WorkspaceId=<workspace-id>;LakehouseId=<lakehouse-id>;AuthFlow=AZURE_CLI
 ```
 
-#### With Performance Options
+#### With performance options
 
 ```
 DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};WorkspaceId=<workspace-id>;LakehouseId=<lakehouse-id>;AuthFlow=AZURE_CLI;ReuseSession=true;LargeTableSupport=true;PageSizeBytes=18874368
 ```
 
-#### With Logging
+#### With logging
 
 ```
 DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};WorkspaceId=<workspace-id>;LakehouseId=<lakehouse-id>;AuthFlow=AZURE_CLI;LogLevel=DEBUG;LogFile=odbc_driver.log
@@ -167,7 +170,7 @@ DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};WorkspaceId
 
 The Microsoft ODBC Driver for Microsoft Fabric Data Engineering supports multiple authentication methods through Microsoft Entra ID (formerly Azure Active Directory). Authentication is configured using the `AuthFlow` parameter in the connection string.
 
-### Authentication Methods
+### Authentication methods
 
 | AuthFlow Value | Description |
 |----------------|-------------|
@@ -177,7 +180,7 @@ The Microsoft ODBC Driver for Microsoft Fabric Data Engineering supports multipl
 | `CLIENT_CERTIFICATE` | Service principal with certificate |
 | `ACCESS_TOKEN` | Pre-acquired bearer access token |
 
-### Azure CLI Authentication
+### Azure CLI authentication
 
 **Best for**: Development and interactive applications
 
@@ -197,7 +200,7 @@ conn = pyodbc.connect(connection_string)
 - Azure CLI installed: `az --version`
 - Logged in: `az login`
 
-### Interactive Browser Authentication
+### Interactive browser authentication
 
 **Best for**: User-facing applications
 
@@ -220,7 +223,7 @@ conn = pyodbc.connect(connection_string)
 - Opens a browser window for user authentication
 - Credentials are cached for subsequent connections
 
-### Client Credentials (Service Principal) Authentication
+### Client credentials (service principal) authentication
 
 **Best for**: Automated services and background jobs
 
@@ -236,17 +239,17 @@ connection_string = (
 )
 ```
 
-**Required Parameters**
+**Required parameters**
 - `TenantId`: Azure tenant ID
 - `ClientId`: Application (client) ID from Microsoft Entra ID
 - `ClientSecret`: Client secret from Microsoft Entra ID
  
-**Best Practices**
+**Best practices**
 - Store secrets securely (Azure Key Vault, environment variables)
 - Use managed identities when possible
 - Rotate secrets regularly
 
-### Certificate-Based Authentication
+### Certificate-based authentication
 
 **Best for**: Enterprise applications requiring certificate-based authentication
 
@@ -263,13 +266,13 @@ connection_string = (
 )
 ```
 
-**Required Parameters**:
+**Required parameters**:
 - `TenantId`: Azure tenant ID
 - `ClientId`: Application (client) ID
 - `CertificatePath`: Path to PFX/PKCS12 certificate file
 - `CertificatePassword`: Certificate password
 
-### Access Token Authentication
+### Access token authentication
 
 **Best for**: Custom authentication scenarios
 
@@ -286,9 +289,9 @@ connection_string = (
 )
 ```
 
-## Configuration Parameters
+## Configuration parameters
 
-### Required Parameters
+### Required parameters
 
 These parameters must be present in every connection string:
 
@@ -298,16 +301,16 @@ These parameters must be present in every connection string:
 | LakehouseId | UUID | Microsoft Fabric lakehouse identifier | `d8faa650-...` |
 | AuthFlow | String | Authentication flow type | `AZURE_CLI` |
 
-### Optional Parameters
+### Optional parameters
 
-#### Connection Settings
+#### Connection settings
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | Database | String | None | Specific database to connect to |
 | Scope | String | `https://api.fabric.microsoft.com/.default` | OAuth scope |
 
-#### Performance Settings
+#### Performance settings
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -316,14 +319,14 @@ These parameters must be present in every connection string:
 | EnableAsyncPrefetch | Boolean | `false` | Enable background data prefetching |
 | PageSizeBytes | Integer | `18874368` (18 MB) | Page size for result pagination (1-18 MB) |
 
-#### Logging Settings
+#### Logging settings
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | LogLevel | String | `INFO` | Log level: `TRACE`, `DEBUG`, `INFO`, `WARN`, `ERROR` |
 | LogFile | String | `odbc_driver.log` | Log file path (absolute or relative) |
 
-#### Proxy Settings
+#### Proxy settings
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -333,34 +336,73 @@ These parameters must be present in every connection string:
 | ProxyUsername | String | None | Proxy authentication username |
 | ProxyPassword | String | None | Proxy authentication password |
 
-## DSN Configuration
+#### Environment settings
 
-### Create a System DSN
+You can attach a Fabric environment item to the Spark session started by the driver. The selected environment's libraries, Spark properties, and variables are automatically applied when the session is created.
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| EnvironmentId | UUID | None | Fabric environment item identifier (GUID) to apply during Spark session creation |
+
+**Example connection string with an environment item:**
+
+```
+DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};WorkspaceId=<workspace-id>;LakehouseId=<lakehouse-id>;AuthFlow=AZURE_CLI;EnvironmentId=<environment-id>
+```
+
+> [!NOTE]
+> The environment is applied when the Spark session starts. If you also specify custom Spark configuration properties, session-level properties take precedence over the environment defaults.
+
+#### Custom Spark configuration
+
+You can pass Spark configuration properties directly in the connection string. Any parameter prefixed with `spark.` is automatically applied to the Spark session at creation time, allowing you to override workspace or runtime defaults.
+
+**Example Spark configurations:**
+
+```
+spark.sql.shuffle.partitions=200
+spark.sql.adaptive.enabled=true
+spark.sql.autoBroadcastJoinThreshold=10485760
+```
+
+**Example connection string with custom Spark properties:**
+
+```
+DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};WorkspaceId=<workspace-id>;LakehouseId=<lakehouse-id>;AuthFlow=AZURE_CLI;spark.sql.shuffle.partitions=200;spark.sql.adaptive.enabled=true
+```
+
+> [!NOTE]
+> Spark configuration properties are applied when the session is created. They apply to all queries run within that session and override environment or runtime defaults for the same properties.
+
+## DSN configuration
+
+### Create a system DSN
 
 1. **Open ODBC Administrator**
    ```cmd
    %SystemRoot%\System32\odbcad32.exe
    ```
 
-2. **Create New System DSN**
+1. **Create New System DSN**
    - Go to "System DSN" tab
-   - Click "Add"
+   - Select "Add"
    - Select "Microsoft ODBC Driver for Microsoft Fabric Data Engineering"
-   - Click "Finish"
+   - Select "Finish"
 
-3. **Configure DSN Settings**
+1. **Configure DSN Settings**
    - **Data Source Name**: Enter a unique name (e.g., `FabricODBC`)
    - **Description**: Optional description
    - **Workspace ID**: Your Fabric workspace GUID
    - **Lakehouse ID**: Your Fabric lakehouse GUID
    - **Authentication**: Select authentication method
+   - **Environment ID** (optional): Enter the GUID of the Fabric environment item to attach during session creation
    - Configure additional settings as needed
 
-4. **Test Connection**
-   - Click "Test Connection" to verify settings
-   - Click "OK" to save
+1. **Test Connection**
+   - Select "Test Connection" to verify settings
+   - Select "OK" to save
 
-### Use DSN in Applications
+### Use DSN in applications
 
 ```python
 # Python - Connect using DSN
@@ -373,9 +415,9 @@ using var connection = new OdbcConnection("DSN=FabricODBC");
 await connection.OpenAsync();
 ```
 
-## Usage Examples
+## Usage examples
 
-### Basic Connection and Query
+### Basic connection and query
 
 #### Python
 
@@ -477,7 +519,7 @@ class Program
 }
 ```
 
-### Working with Large Result Sets
+### Working with large result sets
 
 ```python
 import pyodbc
@@ -516,7 +558,7 @@ print(f"Total rows processed: {row_count}")
 conn.close()
 ```
 
-### Schema Discovery
+### Schema discovery
 
 ```python
 import pyodbc
@@ -546,7 +588,7 @@ for db in cursor.fetchall():
 conn.close()
 ```
 
-## Data Type Mapping
+## Data type mapping
 
 The driver maps Spark SQL data types to ODBC SQL types:
 
@@ -570,7 +612,7 @@ The driver maps Spark SQL data types to ODBC SQL types:
 | MAP | SQL_VARCHAR | SQLCHAR* | str (JSON) | string |
 | STRUCT | SQL_VARCHAR | SQLCHAR* | str (JSON) | string |
 
-## BI Tool Integration
+## BI tool integration
 
 ### Microsoft Excel
 
@@ -614,11 +656,15 @@ EXEC('SELECT * FROM employees LIMIT 10') AT FABRIC_LINKED_SERVER;
 
 ## Troubleshooting
 
-### Common Issues
+This section provides guidance for resolving common issues you might encounter when using the Microsoft ODBC Driver for Microsoft Fabric Data Engineering.
 
-#### Connection Failures
+### Common issues
 
-**Problem**: Cannot connect to Microsoft Fabric
+The following sections describe common problems and their solutions:
+
+#### Connection failures
+
+**Problem**: Can't connect to Microsoft Fabric
 
 **Solutions**:
 1. Verify Workspace ID and Lakehouse ID are correct GUIDs
@@ -626,28 +672,30 @@ EXEC('SELECT * FROM employees LIMIT 10') AT FABRIC_LINKED_SERVER;
 3. Ensure you have appropriate Fabric workspace permissions
 4. Check network connectivity and proxy settings
 
-#### Authentication Errors
+#### Authentication errors
 
 **Problem**: Authentication fails with Azure CLI
 
 **Solutions**:
-1. Run `az login` to refresh credentials
-2. Verify correct tenant: `az account set --subscription <subscription-id>`
-3. Check token validity: `az account get-access-token --resource https://api.fabric.microsoft.com`
+- Run `az login` to refresh credentials
+- Verify correct tenant: `az account set --subscription <subscription-id>`
+- Check token validity: `az account get-access-token --resource https://api.fabric.microsoft.com`
 
-#### Query Timeouts
+#### Query timeouts
 
 **Problem**: Queries timing out on large tables
 
 **Solutions**:
-1. Enable `LargeTableSupport=true`
-2. Adjust `PageSizeBytes` for optimal chunk size
-3. Enable async prefetch: `EnableAsyncPrefetch=1`
-4. Use `LIMIT` clause to restrict result size
+- Enable `LargeTableSupport=true`
+- Adjust `PageSizeBytes` for optimal chunk size
+- Enable async prefetch: `EnableAsyncPrefetch=1`
+- Use `LIMIT` clause to restrict result size
 
-### Enable Logging
+### Enable logging
 
-For troubleshooting, enable detailed logging:
+When troubleshooting issues, enabling detailed logging can help you identify the root cause of problems. You can enable logging through the connection string.
+
+To enable detailed logging:
 
 ```
 LogLevel=DEBUG;LogFile=C:\temp\odbc_driver_debug.log;
@@ -660,18 +708,20 @@ Log levels:
 - `WARN`: Warnings only
 - `ERROR`: Errors only
 
-### ODBC Tracing
+### ODBC tracing
 
-Enable Windows ODBC tracing for low-level diagnostics - and turn it off when not needed for optimal performance:
+For low-level diagnostics, you can enable Windows ODBC tracing to capture detailed ODBC API calls and driver behavior. Remember to turn off tracing when not needed to maintain optimal performance.
+
+To enable ODBC tracing:
 
 1. Open `odbcad32.exe`
 2. Go to "Tracing" tab
 3. Set trace file path (e.g., `C:\temp\odbctrace.log`)
-4. Click "Start Tracing Now"
+4. Select "Start Tracing Now"
 5. Reproduce the issue
-6. Click "Stop Tracing Now"
+6. Select "Stop Tracing Now"
 
-## Related Content
+## Related content
 
 * [Apache Spark Runtimes in Fabric](./runtime.md)
 * [Fabric Runtime 1.3](./runtime-1-3.md)

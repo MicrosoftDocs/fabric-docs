@@ -1,19 +1,19 @@
 ---
 title: Access Fabric data locally with OneLake file explorer
 description: OneLake file explorer seamlessly integrates OneLake with Windows File Explorer. Learn how to install and use this application.
-ms.reviewer: eloldag
+ms.reviewer: harmeetgill # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
-ms.date: 03/06/2025
+ms.date: 03/03/2026
 #customer intent: As a OneLake user, I want to learn how to install and use the OneLake file explorer client app for Windows so that I can seamlessly access and sync my OneLake data with Windows File Explorer.
 ---
 
-# Use OneLake file explorer (preview) to access Fabric data
+# Use OneLake file explorer to access Fabric data
 
-The OneLake file explorer application seamlessly integrates OneLake with Windows File Explorer. This application automatically syncs all OneLake items that you have access to in Windows File Explorer. "Sync" refers to pulling up-to-date metadata on files and folders, and sending changes made locally to the OneLake service. Syncing doesn’t download the data, it creates placeholders. You must double-click on a file to download the data locally.
+The OneLake file explorer application seamlessly integrates OneLake with Windows File Explorer. This application automatically syncs all OneLake items that you have access to in Windows File Explorer. "Sync" refers to pulling up-to-date metadata on files and folders, and sending changes made locally to the OneLake service. Syncing doesn't download the data, it creates placeholders. You must double-click on a file to download the data locally.
 
-:::image type="content" source="media\onelake-file-explorer\onelake-file-explorer-screen-v-2.png" alt-text="Screenshot of OneLake files integrated in the Windows File Explorer screen." lightbox="media\onelake-file-explorer\onelake-file-explorer-screen-v-2.png":::
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+:::image type="content" source="media\onelake-file-explorer\onelake-file-explorer-screen.png" alt-text="Screenshot of OneLake files integrated in the Windows File Explorer screen." lightbox="media\onelake-file-explorer\onelake-file-explorer-screen.png":::
 
 When you create, update, or delete a file via Windows File Explorer, it automatically syncs the changes to OneLake service. Updates to your item made outside of your File Explorer aren't automatically synced. To pull these updates, you need to right-click on the item or subfolder in Windows File Explorer and select **OneLake** > **Sync from OneLake**.
 
@@ -23,11 +23,11 @@ OneLake file explorer currently supports Windows and is validated on Windows 10 
 
 To install:
 
-1. Download the [OneLake file explorer](https://go.microsoft.com/fwlink/?linkid=2235671).
+1. Download the [OneLake file explorer](https://www.microsoft.com/en-us/download/details.aspx?id=105222).
 
 1. Double-click the file to start installing.
 
-   The storage location on your PC for the placeholders and any downloaded content is `\%USERPROFILE%\OneLake - Microsoft\`.
+   The storage location on your PC for the placeholders and any downloaded content is `%USERPROFILE%\OneLake - Microsoft\`.
 
 Once the application is installed and running, you can see your OneLake data in Windows File Explorer.
 
@@ -41,12 +41,12 @@ Starting in version 1.0.13, the OneLake file explorer app notifies you when a ne
 
 - If Windows search is disabled, OneLake file explorer fails to start.
 
-- Windows File Explorer is case insensitive, while OneLake is case sensitive. You can create files with the same name but different cases in the OneLake service using other tools, but Windows File Explorer only shows the oldest of these files.
+- Windows File Explorer is case insensitive, while OneLake is case sensitive. You can create files with the same name but different cases in the OneLake service by using other tools, but Windows File Explorer only shows the oldest of these files.
 
 - If a file fails to sync due to a network issue, you have to trigger the sync to OneLake. To prompt the sync process, open the file and save it. Alternatively, you can trigger a modify event [using PowerShell](onelake-powershell.md) by executing this command: `(Get-Item -Path "<file_path>").LastWriteTimeUtc = Get-Date`
-- OneLake File Explorer does not support environments that require network proxy configurations. Attempts to launch or authenticate the application behind a proxy may result in connection failures or sign-in issues.
+- OneLake File Explorer doesn't support environments that require network proxy configurations. Attempts to launch or authenticate the application behind a proxy might result in connection failures or sign-in problems.
   
-- OneLake File Explorer does not support syncing files marked as read-only. This limitation applies specifically to files marked as read-only by the user on their local machine. This behavior is by design to prevent conflicts with local file system permissions and to avoid unintended edits to protected content
+- OneLake File Explorer doesn't support syncing files marked as read-only. This limitation applies specifically to files that the user marks as read-only on their local machine. This behavior is by design to prevent conflicts with local file system permissions and to avoid unintended edits to protected content.
 
 ## Scenarios
 
@@ -56,7 +56,7 @@ The following scenarios provide details for working with the OneLake file explor
 
 OneLake file explorer starts automatically at startup of Windows. You can disable the application from starting automatically by selecting **Startup apps** in Windows Task Manager and then right-clicking **OneLake**, and selecting **Disable**.
 
-- To manually start the application, search for OneLake using Windows search (Windows+S) and select the OneLake application. The views for any folders that were previously synced refresh automatically.
+- To manually start the application, search for OneLake by using Windows search (Windows+S) and select the OneLake application. The views for any folders that were previously synced refresh automatically.
 
 - To exit, right-click on the OneLake icon in the Windows notification area, located at the far right of the taskbar, and select **Exit**. The sync pauses, and you can't access placeholder files and folders. You continue to see the blue cloud icon for placeholders that were previously synced but not downloaded.
 
@@ -84,9 +84,9 @@ The OneLake file explorer only syncs updates when you're online and the applicat
 
 ### Create files or folders in OneLake file explorer
 
-1. Navigate to the **OneLake** section in Windows File Explorer.
+1. Go to the **OneLake** section in Windows File Explorer.
 
-1. Navigate to the appropriate folder in your item.
+1. Go to the folder you want in your item.
 
 1. Right-click and select **New folder** or **New file type**.
 
@@ -95,15 +95,15 @@ The OneLake file explorer only syncs updates when you're online and the applicat
 
 ### Delete files or folders in OneLake file explorer
 
-1. Navigate to the **OneLake** section in Windows File Explorer.
+1. Go to the **OneLake** section in Windows File Explorer.
 
-1. Navigate to the **Files** or **Tables** folder in your item.
+1. Go to the **Files** or **Tables** folder in your item.
 
 1. Select a file or folder and delete.
 
 ### Edit files
 
-You can open files using your favorite apps and make edits. Select **Save** to sync the file to OneLake. Starting in version 1.0.11, you can also make updates with Excel to your files. **Close** the file after the update in Excel and it initiates the sync to OneLake.
+Open files by using your favorite apps and make edits. Select **Save** to sync the file to OneLake. Starting in version 1.0.11, you can also make updates to your files by using Excel. **Close** the file after the update in Excel and it initiates the sync to OneLake.
 
 If you edit a file locally and select **Save**, the OneLake file explorer app detects if that file was updated elsewhere (by someone else) since you last selected **Sync from OneLake**. A **Confirm the action** dialog box appears:
 
@@ -115,11 +115,11 @@ If you select **No**, the local changes aren't sent to the OneLake service. You 
 
 ### Copy or move files
 
-You can copy files to, from, and within your items using standard keyboard shortcuts like Ctrl+C and Ctrl+V. You can also move files by dragging and dropping them.
+Copy files to, from, and within your items by using standard keyboard shortcuts like Ctrl+C and Ctrl+V. Move files by dragging and dropping them.
 
 ### Support for large files and a large number of files
 
-When you upload or download files using the OneLake file explorer, the performance should be similar to using OneLake APIs. In general, the time it takes to sync changes from OneLake is proportional to the number of files.
+When you upload or download files by using the OneLake file explorer, the performance is similar to using OneLake APIs. In general, the time it takes to sync changes from OneLake is proportional to the number of files.
 
 ### OneLake shortcut support
 
@@ -129,7 +129,7 @@ All folders in your items including [OneLake shortcuts](onelake-shortcuts.md) ar
 
 Starting in version 1.0.10, you can find your client-side logs by right-clicking on the OneLake icon in the Windows notification area, located at the far right of the taskbar. Select **Diagnostic operations** > **Open logs folder**. This action opens your logs directory in a new Windows file explorer window.  
 
-Client-side logs are stored on your local machine under `%temp%\OneLake\Diagnostics\`.
+The local machine stores client-side logs under `%temp%\OneLake\Diagnostics\`.
 
 You can enable more client-side logging by selecting **Diagnostic operations** > **Enable tracing**.
 

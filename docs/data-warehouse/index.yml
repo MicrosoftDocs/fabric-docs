@@ -77,6 +77,8 @@ landingContent:
             url: ingest-data-tsql.md
           - text: Ingest data using Copy
             url: ingest-data-copy.md
+          - text: Troubleshoot ingestion errors
+            url: troubleshoot-ingestion-errors.md
       - linkListType: concept
         links:
           - text: Mirroring 
@@ -117,6 +119,8 @@ landingContent:
     linkLists: 
       - linkListType: concept
         links:
+          - text: Use AI functions
+            url: ai-functions.md
           - text: Query using the SQL Query editor
             url: sql-query-editor.md
           - text: Query with T-SQL

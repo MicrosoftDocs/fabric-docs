@@ -14,7 +14,7 @@ This article describes common scenarios, resolutions, and workarounds for Micros
 | Source | Limitations | Troubleshoot | FAQ |
 | :--- | :--- | :--- | :--- |
 | Azure Cosmos DB | [Limitations](./azure-cosmos-db-limitations.md) | [Troubleshoot](./azure-cosmos-db-troubleshooting.yml) | [FAQ](./azure-cosmos-db-faq.yml) |
-| Azure Database for MySQL (Preview) | [Limitations](./azure-database-mysql-limitations.md) | [Troubleshoot](./azure-database-mysql-troubleshoot.md) | [FAQ](./azure-database-mysql-mirroring-faq.yml) |
+| Azure Database for MySQL | [Limitations](./azure-database-mysql-limitations.md) | [Troubleshoot](./azure-database-mysql-troubleshoot.md) | [FAQ](./azure-database-mysql-mirroring-faq.yml) |
 | Azure Database for PostgreSQL | [Limitations](./azure-database-postgresql-limitations.md) | [Troubleshoot](./azure-database-postgresql-troubleshoot.md) | [FAQ](./azure-database-postgresql-mirroring-faq.yml) |
 | Azure Databricks | [Limitations](./azure-databricks-limitations.md) | | [FAQ](./azure-databricks-faq.yml) |
 | Azure SQL Database | [Limitations](./azure-sql-database-limitations.md) | [Troubleshoot](./azure-sql-database-troubleshoot.md) | [FAQ](./azure-sql-database-mirroring-faq.yml) |
@@ -44,7 +44,7 @@ If you observe a delay in the appearance of mirrored data, check the following i
 
   If you enable the workspace monitoring, you can check the mirroring execution latency by querying the `ReplicatorBatchLatency` value from the [mirrored database operation logs](../mirroring/monitor-logs.md).
 
-  For source types like [Azure SQL Database](azure-sql-database-troubleshoot.md#t-sql-queries-for-troubleshooting), [Azure SQL Managed Instance](azure-sql-managed-instance-troubleshoot.md#t-sql-queries-for-troubleshooting), and [Azure Database for PostgreSQL](azure-database-postgresql-troubleshoot.md#sql-queries-for-troubleshooting), follow the specific instruction to also check the source database configuration and status.
+  For source types like [Azure SQL Database](azure-sql-database-troubleshoot.md#t-sql-queries-for-troubleshooting), [Azure SQL Managed Instance](azure-sql-managed-instance-troubleshoot.md#t-sql-queries-for-troubleshooting), [Azure Database for MySQL](azure-database-mysql-troubleshoot.md#sql-queries-for-troubleshooting) and [Azure Database for PostgreSQL](azure-database-postgresql-troubleshoot.md#sql-queries-for-troubleshooting), follow the specific instruction to also check the source database configuration and status.
 
 - **Data in OneLake:** Mirroring continuously replicates your data into OneLake in Delta Lake table format. To validate if the data lands in OneLake properly, you can create a shortcut from the mirrored tables into a Lakehouse, then build notebooks with Spark queries to query the data. Learn more about [Explore with notebooks](../mirroring/explore-onelake-shortcut.md).
 

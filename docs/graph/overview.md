@@ -1,14 +1,14 @@
 ---
-title: What is graph in Microsoft Fabric? Overview
+title: What is graph in Microsoft Fabric?
 description: Learn about the core purpose, architecture, and benefits of graph in Microsoft Fabric, including integration and feature highlights.
-ms.topic: concept-article
-ms.date: 03/12/2026
+ms.topic: overview
+ms.date: 04/20/2026
 ms.reviewer: wangwilliam
 ms.custom: references_regions
 ms.search.form: graph overview
 ---
 
-# graph in Microsoft Fabric overview (preview)
+# Graph in Microsoft Fabric overview (preview)
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
@@ -31,10 +31,10 @@ Traditional relational and tabular data formats make it difficult - if not impos
 
 Graph provides an efficient way to model, visualize, and query these relationships. It helps you understand the interconnectedness of your data and drive better insights.
 
-- Business user: Visually explore relationships, [run NL (natural language) queries](https://forms.office.com/r/97QkVDBeuM), and gain insights effortlessly.
+- Business user: Visually explore relationships, run NL (natural language) queries, and gain insights effortlessly.
 - Data engineer: Define graph models, unify data in OneLake with low and no-code tools.
 - Data scientist: Use graph algorithms and ML (machine learning) in Fabric's data science environment.
-- Developer: Build AI agents and real-time apps using graph-powered contextual insights.
+- Developer: Build AI agents and real-time apps using graph-powered contextual insights. Fabric Data Agent supports [graph as a data source](../data-science/data-agent-add-datasources.md?tabs=gql) (preview).
 
 Graph broadens access to graph insights beyond specialized roles. Any user can use connected data in daily decision-making.
 
@@ -42,19 +42,19 @@ Graph broadens access to graph insights beyond specialized roles. Any user can u
 
 By using graph, you can:
 
-- Create a labeled property graph over structured data in OneLake by defining its nodes and edges in terms of underlying tabular data.
+- Create a labeled property graph over structured data in OneLake by defining its nodes and edges in terms of underlying tabular data. To learn how to load and refresh source data, see [Manage and refresh data](manage-data.md).
 
     > [!IMPORTANT]
-    > graph currently doesn't support schema evolution. After you ingest and model your data, the structure of nodes, relationships, and properties is fixed. If you need to make structural changes - such as adding new properties, modifying labels, or changing relationship types - you must reingest the updated source data into a new model.
+    > Graph currently doesn't support schema evolution. After you ingest and model your data, the structure of nodes, relationships, and properties is fixed. If you need to make structural changes - such as adding new properties, modifying labels, or changing relationship types - you must reingest the updated source data into a new model. For guidance on planning your schema, see [Design a graph schema](design-graph-schema.md).
 
-- Query by using GQL (Graph Query Language), including pattern matching, path constructs, aggregations, and other features as they're released. The official International Standard for GQL is [ISO/IEC 39075 Information Technology - Database Languages - GQL](https://www.iso.org/standard/76120.html).
-<!-- - Enrich your graph with scores and communities for downstream BI (business intelligence) and AI (artificial intelligence) workflows. Run built-in graph algorithms such as shortest path, page rank, weakly connected components (WCC), and Louvain. -->
+- Query by using GQL (Graph Query Language), including pattern matching, path constructs, aggregations, and other features as they're released. The official International Standard for GQL is [ISO/IEC 39075 Information technology — Database languages — GQL](https://www.iso.org/standard/76120.html).
+
+- Power graph-based AI reasoning by adding [graph as a data source](../data-science/data-agent-add-datasources.md?tabs=gql) in Fabric Data Agent. For details on how NL2GQL works, see the [Graph-powered AI reasoning announcement](https://blog.fabric.microsoft.com/en-US/blog/graph-powered-ai-reasoning-preview/).
 
 - Benefit from job function-based experiences:  
   - Data engineers can model and create graphs.  
   - Analysts can run low-code or no-code queries and curate view sets.  
-  - Business users can explore visually or [use natural language](https://forms.office.com/r/97QkVDBeuM) to interact with the data.  
-    <!-- - Developers and data scientists can integrate graph analytics in notebooks and applications. -->
+  - Business users can explore visually or use natural language to interact with the data.
 
 - Operate within Fabric: Automatically shut down when not in use and monitor usage in the capacity metrics app - all governed by Fabric OneLake security, compliance, and permission model.
 
@@ -62,7 +62,16 @@ By using graph, you can:
 
 Graph is deeply integrated with the Microsoft Fabric platform, including OneLake for unified data storage and Fabric UI for visualization. It integrates seamlessly with Microsoft Fabric's governance, security, and operational features.
 
-You can incorporate graph analytics into your existing workflows, eliminating the need for data duplication and specialized skills. So, you can make insights accessible to a broader audience compared to traditional standalone [graph databases](graph-database.md).
+You can incorporate graph analytics into your existing workflows, eliminating the need for data duplication and specialized skills. So, you can make insights accessible to a broader audience compared to traditional standalone [graph databases](graph-database.md). For a detailed look at the end-to-end data flow, see [How graph works](how-graph-works.md).
+
+### Graph-powered AI reasoning with Fabric Data Agent (preview)
+
+[Fabric Data Agent](../data-science/concept-data-agent.md) supports graph in Microsoft Fabric as a data source for AI-powered reasoning over connected data. When you add graph as a data source, users can ask natural language questions that the agent answers by querying the graph.
+
+This integration is suited for scenarios like multi-hop question answering, knowledge assistants, and retrieval-augmented generation (RAG) workflows where relationship context improves answer quality. For details on how NL2GQL translates natural language into GQL, see the [Graph-powered AI reasoning announcement](https://blog.fabric.microsoft.com/en-US/blog/graph-powered-ai-reasoning-preview/).
+
+> [!NOTE]
+> Graph-powered AI reasoning is currently in preview. For more information about Fabric Data Agent, see [Fabric data agent concepts](../data-science/concept-data-agent.md).
 
 ## How graph differs from standalone graph databases
 
@@ -138,8 +147,11 @@ Graph is currently available in the following regions:
 
 ## Related content
 
-- [Sign up for preview of natural language querying of graph](https://forms.office.com/r/97QkVDBeuM)
+- [Quickstart: Create your first graph](quickstart.md)
+- [Tutorial: Introduction to graph](tutorial-introduction.md)
+- [How graph works](how-graph-works.md)
+- [Fabric data agent concepts](../data-science/concept-data-agent.md)
+- [GQL language guide](gql-language-guide.md)
+- [Manage and refresh graph data](manage-data.md)
+- [Share and manage graph permissions](share-graph-manage-permissions.md)
 - [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)
-- [End-to-end tutorials in Microsoft Fabric](../fundamentals/end-to-end-tutorials.md)
-- [GQL in KQL graph semantics overview](/kusto/query/graph-query-language)
-- [KQL graph semantics overview](/kusto/query/graph-semantics-overview)

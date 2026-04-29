@@ -11,22 +11,50 @@ This article explains how Activator ingests data from KQL Querysets. Understandi
 
 ## How it works
 
-KQL Querysets are a **query data source** for Activator. Activator runs a KQL query that you define against an Eventhouse KQL database, and evaluates your rules against the results.
+KQL Querysets are a **query data source** for Activator. Activator runs a KQL query that you define against an Eventhouse KQL database on a schedule. Each time the query returns results, Activator ingests an event for each row in the query.
 
-Unlike Power BI or Real-Time Dashboard data sources, where Activator derives its query from an existing visual or dashboard tile, with a KQL Queryset you write the query yourself. Activator runs that KQL query against your Eventhouse KQL database on a schedule and evaluates your rules against the results.
+> [!NOTE]
+> Activator's integration with KQL Querysets does not currently support using a timestamp column from your queries as the event timestamp. Activator uses the time at which it runs the query as the event timestamp. The implication is that you must write your queries to return the **current state** of a set of objects. For example, given a query that returns the temperature of some sensors, the query should return two columns: Sensor ID and Temperature, showing the current temperature of each sensor.
 
-Activator converts the columns returned by your KQL query into objects and properties. For example, consider the following query:
+When you select **Set alert** in a KQL Queryset, a side pane opens where you configure your alert. Within this side pane, the only supported alert type is **on each event**. When you use this alert type, Activator alerts you for every row the query returns on every scheduled run. If you wish to build alerts with grouping logic, you can edit the alert within the Activator item after creating it. The following sections describe these two methods.
+
+### Method 1: On each event (default)
+
+With this method, you build your alert condition and time window into the KQL query itself. Activator fires an alert for every row returned on every scheduled run.
+
+For example, consider the following query that alerts whenever a sensor reading has a temperature greater than zero:
 
 ```kql
-SensorReadings
-| summarize Temperature = max(Temperature), Timestamp = max(Timestamp) by DeviceId
+CurrentSensorTemperatures
+| where Temperature > 0
+| project SensorID, Temperature
 ```
 
-- The **grouping column** (DeviceId) becomes an **object** in Activator: one object is created for each device.
-- The **value column** (Temperature) becomes a **property** on that object: Activator tracks the value of Temperature for each device over time.
-- The **timestamp column** (Timestamp) becomes the **event time**: Activator uses it as the timestamp for each recorded value of the Temperature property.
+In this query, the `where Temperature > 0` clause defines the **alert condition**. Because Activator fires an alert for every row returned, filtering in the query ensures you only get alerted for the events you care about.
 
-If your query does not include a timestamp column, Activator uses the time at which it ran the query as the event time.
+This pattern — embedding your alert logic and time windowing in the KQL query — is the simplest approach for using KQL Querysets with Activator.
+
+> [!NOTE]
+> With this method, Activator alerts you every time the query runs and returns matching rows. Using the example, if the temperature stays above zero for an extended period, you receive an alert every 5 minutes for the duration. Depending on your scenario, this method might create an undesirable number of alerts.
+
+### Method 2: Stateful alerting with object grouping
+
+If you want to be alerted only when a condition changes state — for example, alerted once when the temperature rises above zero rather than continuously while it remains above zero — you can use stateful trigger logic by opening the Activator item directly.
+
+To set up stateful alerting:
+
+1. Create an alert from the KQL Queryset using **Set alert** as usual. Your KQL query should not include the alert condition in this case, because Activator handles the condition evaluation. You still need the time window clause. For the sensor example, the query would be:
+
+   ```kql
+   CurrentSensorTemperatures
+   | project SensorID, Temperature
+   ```
+
+1. Open the Activator item that contains the rule that you created in the previous step. Delete the rule. You do not need it anymore.
+1. [Assign the data to an object](../activator-assign-data-objects.md). Using the sensor example, create a **Sensor** object and key it by **SensorID**.
+1. Create a rule on the object using a **Numeric Change** condition — for example, *Temperature increases above 0*. A **Numeric Change** condition activates only when the value transitions from not meeting the condition to meeting it. For more information, see [Detection conditions](../activator-detection-conditions.md).
+
+With this approach, Activator tracks the state of each object instance and alerts you only when the condition is first met. In this example, each sensor is an object instance. Activator sends an alert only when the temperature of a sensor first rises above zero. 
 
 ### Activator queries the Eventhouse directly
 
@@ -43,6 +71,7 @@ This means:
 ### Query frequency
 
 By default, Activator runs your KQL query every 5 minutes. You can change the query frequency in the data source settings, as described in [Query frequency for query data sources](../activator-query-frequency.md).
+
 
 > [!TIP]
 > KQL queries against Eventhouse are fast, but be mindful of query cost and cluster load when setting a high query frequency. Choose a frequency that reflects how quickly the underlying data changes and how quickly you need to detect changes.

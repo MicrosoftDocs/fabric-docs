@@ -3,14 +3,14 @@ title: How to configure Excel format in the pipeline of Data Factory in Microsof
 description: This article explains how to configure Excel format in the pipeline of Data Factory in Microsoft Fabric.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 06/25/2024
+ms.date: 04/24/2026
 ms.custom:
   - template-how-to
 ---
 
 # Excel format in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] 
 
-This article outlines how to configure Excel format in the pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+Excel format supports reading data from .xlsx and .xls files. This article outlines how to configure Excel format as a source in a copy activity pipeline in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Supported capabilities
 
@@ -21,7 +21,6 @@ Excel format is supported for the following activities and connectors as source.
 | **Supported connector** | [Amazon S3](connector-amazon-s3-copy-activity.md)|
 |  | [Amazon S3 Compatible](connector-amazon-s3-compatible-copy-activity.md) |
 |  | [Azure Blob Storage](connector-azure-blob-storage-copy-activity.md) |
-|  | [Azure Data Lake Storage Gen1](connector-azure-data-lake-storage-gen1-copy-activity.md) |
 |  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md)|
 |  | [Azure Files](connector-azure-files-copy-activity.md)|
 |  | File system |
@@ -79,7 +78,7 @@ You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, 
 - **First row as header**: Specifies whether to treat the first row in the given worksheet/range as a header line with names of columns. Unselected by default.
 
 
-## Table summary
+## Excel copy activity properties
 
 ### Excel as source
 

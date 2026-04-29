@@ -66,7 +66,7 @@ If you're not sure what changes were made and which version to choose and don’
 1. Commit your changes into the new branch. This new branch now has the changes you made to the items connected to an earlier version of the Git branch that doesn't conflict with your changes.
 1. In git, resolve the conflicts between the original branch and the new branch.
 1. In git, merge the new branch into the original branch
-1. In Fabric, [switch](./manage-branches.md#switch-branches) the workspace back to the original branch.
+1. In Fabric, [switch](./branched-workspace.md#switch-branches) the workspace back to the original branch.
 
 ## Related content
 
