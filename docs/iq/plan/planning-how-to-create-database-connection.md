@@ -1,23 +1,27 @@
 ---
-title: Create a database connection in plan (preview)
-description: "Learn how to create a database connection in plan (preview)."
-ms.date: 04/02/2026
+title: Create database connections in plan (preview)
+description: "Learn how to create database connections in plan (preview). Connect to existing data or enable multi-user collaboration."
+ms.date: 04/29/2026
 ms.topic: how-to
 ---
 
-# Create a database connection
+# Create database connections
 
-This article explains how to create a database connection from a plan (preview) item.
+This article explains how to create database connections for use in a plan (preview) item.
 
-This is a one-time action performed during the initial creation of a Planning sheet, and can be reused later.
+There are two main use cases for connecting plan items to databases:
+* [**Connect plan to existing data**](#connect-plan-to-existing-data). Create this type of database connection to let plan access your existing business data so that you can use that data in Planning sheets. This connection is required to get data into your plan item.
+* [**Create a database connection for collaboration**](#create-a-database-connection-for-collaboration). Create this type of database connection to enable multi-user collaboration on plan items. This connection is optional and allows other users to comment and collaborate on a plan that you create.
 
-## Prerequisites
+## Connect plan to existing data
 
-Before you can create the database connection, make sure you have the following prerequisite in place:
+Create this type of database connection to let plan access your existing business data so that you can use that data in Planning sheets. This connection is required to get data into your plan item. This database connection is created once per plan item, and can be reused later.
 
-* Data in a [Fabric SQL database](../../database/sql/overview.md)
+### Prerequisites
 
-## Create a database connection
+Start with data in a [Fabric SQL database](../../database/sql/overview.md) that you want to connect to in plan.
+
+### Create a database connection
 
 1. In your Fabric toolbar, select the **Settings** icon. Select **Manage connections and gateways**.
 
@@ -33,7 +37,7 @@ Before you can create the database connection, make sure you have the following 
 
 :::image type="content" source="media/planning-how-to-create-database-connection/new-connection-database.png" alt-text="Screenshot of creating a new database connection.":::
 
-## Share the database connection 
+### Share the database connection 
 
 You can share the created connection and manage the user permissions. 
 
@@ -45,6 +49,42 @@ You can share the created connection and manage the user permissions.
 
     :::image type="content" source="media/planning-how-to-create-database-connection/manage-users-2.png" alt-text="Screenshot of editing permissions in the Manage users pane." lightbox="media/planning-how-to-create-database-connection/manage-users-2.png":::
 
+## Create a database connection for collaboration
+
+Create this type of database connection to enable multi-user collaboration on plan items. This connection is optional and allows other users to comment and collaborate on a plan that you create.
+
+### Prerequisites
+
+* You have a plan (preview) item created.
+* You have access to Planning sheets.
+* You have permission in the plan item to create and manage connections.
+
+### Create a connection to a database for collaboration
+
+1. Select the **Set up connection.**
+
+     :::image type="content" source="media/planning-how-to-create-database-connection/connection-setup.png" alt-text="Screenshot of database connection setup option for collaboration." lightbox="media/planning-how-to-create-database-connection/connection-setup.png":::
+
+
+1. Select **Create Connection** to create a Fabric SQL Connection or select an existing connection.
+
+     :::image type="content" source="media/planning-how-to-create-database-connection/create-connection.jpg" alt-text="Screenshot of creation of database connection  option for collaboration." lightbox="media/planning-how-to-create-database-connection/create-connection.jpg":::
+
+1. Select **Create new connection** from the Connection credentials dropdown.
+
+     :::image type="content" source="media/planning-how-to-create-database-connection/new-connection.png" alt-text="Screenshot of adding a new database connection  option for collaboration." lightbox="media/planning-how-to-create-database-connection/new-connection.png":::
+
+
+1. Enter a **Connection name**.
+1. Select **Authentication kind** as **Organizational account.**
+
+     :::image type="content" source="media/planning-how-to-create-database-connection/connection-credentials.png" alt-text="Screenshot of adding credentials for the new database connection  collaboration." lightbox="media/planning-how-to-create-database-connection/connection-credentials.png":::
+
+
+1. Select **Create.**
+
+A database connection is created to store collaboration data.
+
 ## Next steps
 
-Now that your database connection is created, you can create a Planning sheet that uses this connection: [Create a Planning sheet](planning-how-to-get-started.md).
+Create a Planning sheet that uses the data connections: [Create a Planning sheet](planning-how-to-get-started.md).
