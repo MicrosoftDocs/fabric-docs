@@ -30,7 +30,9 @@ ms.date: 03/31/2026
         - **SASL_SSL**: Use this option when your Kafka cluster uses SASL-based authentication. By default, the Kafka broker’s server certificate must be signed by a Certificate Authority (CA) included in the [trusted CA list](https://github.com/microsoft/fabric-event-streams/blob/main/References/certificate-authority-list/trusted-ca-list.txt). If your Kafka cluster uses a custom CA, you can configure it by using **TLS/mTLS settings**.
         - **SSL (mTLS)**: Use this option when your Kafka cluster requires mTLS authentication, and you must configure both a custom server CA certificate and a client certificate in **TLS/mTLS settings**.
     1. The default **SASL mechanism** is **SCRAM-SHA-512** and can't be changed.
-    1. If your Kafka cluster uses a custom CA or requires mTLS, expand **TLS/mTLS settings** and configure the following options as needed:[!INCLUDE [secure-connection-settings-common](./secure-connection-settings-common.md)]
+    1. If your Kafka cluster uses a custom CA or requires mTLS, expand **TLS/mTLS settings** and configure the following options as needed:
+
+        [!INCLUDE [secure-connection-settings-common](./secure-connection-settings-common.md)]
 
     :::image type="content" source="./media/amazon-msk-kafka-source-connector/configure-settings.png" alt-text="Screenshot that shows the first page of the Amazon MSK Kafka connection settings." lightbox="./media/amazon-msk-kafka-source-connector/configure-settings.png":::    
 

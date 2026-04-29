@@ -40,13 +40,7 @@ ms.date: 04/02/2026
     1. If your Kafka cluster requires mTLS, expand **TLS/mTLS settings** and configure the following options as needed.  
         When both **Trust CA Certificate** and **Client certificate and key** are enabled and configured, the system automatically uses **mTLS** to establish the connection. No separate security protocol selection is required.
 
-        - **Trust CA Certificate**: Enable Trust CA Certificate configuration. Select your subscription, resource group, and key vault, and then provide the server ca name. 
-        - **Client certificate and key**: Enable Client certificate and key configuration. Select your subscription, resource group, and key vault, and then provide the client certificate name. 
-
-        > [!NOTE]
-        > The TLS/mTLS settings in this section are currently in preview, including **Trust CA Certificate**, **Client certificate and key**, and **Additional settings**.
-        >
-        > For sources in a private network, ensure that the Azure Key Vault containing your certificates is connected to the Azure virtual network used by the streaming virtual network data gateway for Eventstream connector virtual network injection (for example, via a private endpoint).
+        [!INCLUDE [secure-connection-settings-common](./secure-connection-settings-common.md)]
 
          :::image type="content" source="./media/confluent-kafka-source-connector/configure-data-source.png" alt-text="Screenshot that shows the second page - Configure Confluent data source page - of the Confluent connection settings."::: 
     
