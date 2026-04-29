@@ -30,11 +30,11 @@ ms.date: 04/23/2026
 1. For **Version**, select either **V5** or **V3** based on your MQTT broker's protocol version.
 1. If your MQTT broker requires mTLS, expand **TLS/mTLS settings** and configure the following options as needed.
 
-    [!INCLUDE [tls-mtls-settings-common](./tls-mtls-settings-common.md)]
+    [!INCLUDE [secure-connection-settings-common](./secure-connection-settings-common.md)]
 
     :::image type="content" source="./media/mqtt-source-connector/next.png" alt-text="Screenshot that shows the Configure connection settings page." lightbox="./media/mqtt-source-connector/next.png"::: 
 
-[!INCLUDE [tls-mtls-certificate-requirements](./tls-mtls-certificate-requirements.md)]
+[!INCLUDE [secure-certificate-requirements](./secure-certificate-requirements.md)]
 
 ### Stream or source details
 
