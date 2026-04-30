@@ -17,7 +17,10 @@ To manage Power BI visuals, you must be a Fabric administrator. For more informa
 
 ## Power BI visuals tenant settings
 
-To manage the tenant settings for Power BI visuals from the admin portal, go to **Tenant settings** and scroll down to **Power BI visuals**.
+To manage the tenant settings for Power BI visuals from the Fabric admin portal, go to **Tenant settings** and scroll down to **Power BI visuals**.
+
+> [!NOTE]
+> These settings are managed in the **Fabric admin portal** (accessible at [https://app.fabric.microsoft.com/admin-portal](https://app.fabric.microsoft.com/admin-portal) or through **Settings** > **Admin portal** in the Power BI service). These settings are *not* available in the Power Platform admin center.
 
 :::image type="content" source="media/organizational-visuals/power-bi-visuals-tenant-settings.png" alt-text="Screenshot of the Power BI visuals tenant settings location.":::
 
@@ -105,7 +108,7 @@ When you enable this setting, users can download data from a custom visual into 
 
 1. Select **Apply**.
 
-UI changes to tenant settings apply only to the Power BI service. To enable users in your organization to download data from custom visuals in Power BI Desktop, use AD Group Policy.
+UI changes to tenant settings apply both for Power BI Service and PowerBI Desktop. To enable users in your organization to download data from custom visuals in Power BI Desktop, use AD Group Policy.
 
 |Key  |Value name  |Value  |
 |---------|---------|---------|
