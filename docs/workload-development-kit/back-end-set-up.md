@@ -2,7 +2,7 @@
 title: Set Up a Microsoft Fabric Workload Back End by Using the OpenAPI Specification
 description: Learn how to generate and run a Fabric workload back end based on the Swagger file included in our sample.
 ms.reviewer: natalior
-ms.date: 06/10/2025
+ms.date: 04/29/2026
 ms.topic: how-to
 ---
 # Set up a Microsoft Fabric workload back end by using the OpenAPI Specification (Swagger)

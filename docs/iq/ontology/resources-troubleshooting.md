@@ -64,7 +64,7 @@ The following table describes common issues when using the preview experience of
 
 ## Troubleshoot ontology as data agent source
 
-The following table describes common issues when using ontology (preview) as a source for [Fabric data agent (preview)](../../data-science/concept-data-agent.md).
+The following table describes common issues when using ontology (preview) as a source for [Fabric data agent](../../data-science/concept-data-agent.md).
 
 | Issue | Recommendation |
 |---|---|

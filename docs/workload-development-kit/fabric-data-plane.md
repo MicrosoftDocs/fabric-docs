@@ -3,7 +3,7 @@ title: Work with customer data in Microsoft Fabric
 description: Learn about how to work with customer data in Microsoft Fabric.
 ms.topic: concept-article
 ms.custom: sfi-ropc-nochange
-ms.date: 05/21/2024
+ms.date: 04/29/2026
 #customer intent:
 ---
 

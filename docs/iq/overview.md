@@ -53,7 +53,7 @@ Fabric IQ (preview) is a Fabric workload that contains the following items. Some
 * *[Plan (preview)](plan/overview.md)* allows you to integrate planning, visualization, analytics, and data management on a single platform. Plan is a unified no-code platform for collaborative planning, reporting, analytics, data integration, and management. It enables organizations to work from a consistent data foundation, allowing business users to plan, analyze, and report without switching between multiple tools.
 * *[Graph (preview)](../graph/overview.md)* offers native graph storage and compute for nodes, edges, and traversals over connected data. It's good for path finding, dependency analysis, and graph algorithms. Graph is integrated with the ontology item and brings a visual representation of your business concepts and relationships to the Fabric IQ workload.
     * This item is also part of the Real-Time Intelligence workload.
-* *[Data agent (preview)](../data-science/concept-data-agent.md)* allows you to build your own conversational Q&A systems using generative AI. In Fabric IQ, data agents can connect to your ontology as a source, enabling them to understand your business concepts and use these terms when answering questions.
+* *[Data agent](../data-science/concept-data-agent.md)* allows you to build your own conversational Q&A systems using generative AI. In Fabric IQ, data agents can connect to your ontology as a source, enabling them to understand your business concepts and use these terms when answering questions.
     * This item is also part of the Data Science workload.
 * *[Operations agent (preview)](../real-time-intelligence/operations-agent.md)* lets you create an AI agent to monitor real-time data and recommend business actions. It supports the Fabric IQ workload vision of intelligent agents that can reason across business concepts while being aware of terminology.
     * This item is also part of the Real-Time Intelligence workload.
@@ -87,7 +87,7 @@ Learn more about the items that make up Fabric IQ:
 * [What is ontology (preview)?](ontology/overview.md)
 * [What is plan (preview)?](plan/overview.md)
 * [What is Fabric Graph (preview)?](../graph/overview.md)
-* [What is the Fabric data agent (preview)?](../data-science/concept-data-agent.md)
+* [What is the Fabric data agent?](../data-science/concept-data-agent.md)
 * [Getting started with operations agents](../real-time-intelligence/operations-agent.md)
 * [Semantic models](../data-warehouse/semantic-models.md)
 
