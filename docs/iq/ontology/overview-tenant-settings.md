@@ -1,7 +1,7 @@
 ---
 title: Ontology (preview) required tenant settings
 description: Enable settings on your Fabric tenant before using ontology (preview) features.
-ms.date: 03/13/2026
+ms.date: 04/30/2026
 ms.topic: concept-article
 ---
 
@@ -29,24 +29,11 @@ If you don't enable this setting, you get errors when accessing a newly created 
 
 :::image type="content" source="media/overview-tenant-settings/graph-error.png" alt-text="Screenshot of the error from missing graph permissions.":::
 
-## Data agent item types (preview)
+## Data agent tenant settings
 
-This setting is optional, but required if you want to use ontology (preview) with a Fabric data agent: *Users can create and share Data agent item types (preview)*.
+If you want to use ontology (preview) with a Fabric data agent, make sure to configure the required [Fabric data agent tenant settings](../../data-science/data-agent-tenant-settings.md).
 
-:::image type="content" source="media/overview-tenant-settings/prerequisite-data-agent.png" alt-text="Screenshot of enabling data agents in the admin portal.":::
-
-If you don't enable this setting, you see errors when creating a new data agent item.
-
-## Copilot and Azure OpenAI Service
-
-These settings are optional, but required if you want to use ontology (preview) with a Fabric data agent:
-* *Users can use Copilot and other features powered by Azure OpenAI*
-* *Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance*
-* *Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance*
-
-:::image type="content" source="media/overview-tenant-settings/prerequisite-open-ai.png" alt-text="Screenshot of enabling multiple OpenAI settings in the admin portal.":::
-
-If you don't enable these settings, you might see the `403 Forbidden - Disallowed` error when trying to use data agent.
+If you don't enable this setting, you might see errors when creating a new data agent item.
 
 ## Next steps
 

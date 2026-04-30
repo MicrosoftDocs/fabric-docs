@@ -3,7 +3,7 @@ title: Fabric workload monitoring hub
 description: Learn how to use the monitoring hub in the Microsoft Fabric Workload Development Kit.
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 05/21/2024
+ms.date: 04/29/2026
 ---
 
 # Set up the Fabric monitoring hub

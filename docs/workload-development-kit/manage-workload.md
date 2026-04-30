@@ -2,7 +2,7 @@
 title: Upload and manage a workload
 description: Learn how to deploy and manage a workload solution in Microsoft Fabric to improve performance and user engagement.
 ms.topic: how-to
-ms.date: 05/21/2024
+ms.date: 04/29/2026
 
 #customer intent: As an independent software vendor (ISV), I want know how to upload my Microsoft Fabric extension workload to integrate my app into the Fabric framework.
 ---

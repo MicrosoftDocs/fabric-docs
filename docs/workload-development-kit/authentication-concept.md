@@ -3,7 +3,7 @@ title: Overview of Fabric Workload Development Kit authentication
 description: This article describes how to use tokens to authenticate and validate for a customized Fabric workload.
 ms.topic: concept-article
 ms.custom: sfi-image-nochange
-ms.date: 05/21/2024
+ms.date: 04/29/2026
 #customer intent: As a developer, I want to understand how to authenticate a customized Fabric workload so that I can create customized user experiences.
 ---
 

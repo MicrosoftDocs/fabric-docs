@@ -2,7 +2,7 @@
 title: Microsoft Fabric Workload Development Kit overview
 description: Learn about building a Fabric workload.
 ms.topic: overview
-ms.date: 05/21/2024
+ms.date: 04/29/2026
 ---
 
 # Microsoft Fabric Workload Development Kit
