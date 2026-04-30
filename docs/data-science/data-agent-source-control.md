@@ -29,6 +29,10 @@ Microsoft Fabric Git integration synchronizes a Fabric workspace with a Git repo
 - Ability to view differences, review history, and revert to prior states via history for different workspace items including data agents
 - Branch-based collaboration (feature branches, main)
 
+### Latest Git integration enhancements
+
+Fabric Git integration now supports selective branching, letting you switch the connected branch at the workspace level to align with feature branch workflows. The **Source control** pane also provides a built-in diff experience for item changes, so you can review exactly what changed before committing or pulling updates. Branched workspaces are more clearly indicated in the Fabric UI, making it easier to identify which branch each workspace is connected to.
+
 For more information on the Git integration process, you can refer to the following resources.
 
 - [What is Microsoft Fabric Git integration?](../cicd/git-integration/intro-to-git-integration.md?tabs=azure-devops)
@@ -66,7 +70,7 @@ Any change—whether functional or descriptive—causes the data agent to become
 
 ### Folder and file structure in the Git repository
 
-In the following, you review the structure of how a data agent’s configuration is stored in a Git repository. Understanding this structure is important for managing changes and following best practices.
+In the following, you review the structure of how a data agent’s configuration is stored in a Git repository. Understanding this structure is important for managing changes and following best practices. When using feature branches, make changes in the branch tied to the workspace, review diffs in the **Source control** pane, and merge via pull requests for controlled promotion. The files and config structure for data agents remains the same across branches.
 
 #### Root structure
 
@@ -149,6 +153,14 @@ To deploy changes:
 
 You can review a deployment plan before applying changes, ensuring that only intended updates are promoted. For more information, see [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md?tabs=from-fabric%2Cnew-ui).
 
+#### Automate CI/CD with Azure DevOps Pipelines
+
+The [Azure DevOps Pipelines extension for Fabric](https://marketplace.visualstudio.com/items?itemName=ms-fabric.fabric-devops-pipelines) provides native tasks that run [Fabric CLI](https://go.microsoft.com/fwlink/?linkid=2313665) commands in Azure DevOps pipeline jobs. Teams can orchestrate CI/CD for data agent updates using Azure DevOps (with the CLI) alongside or instead of Fabric deployment pipelines. To get started, install the extension from the Visual Studio Marketplace, set up a service connection in your Azure DevOps project, and add Fabric CLI tasks to your pipeline definition.
+
+#### Bulk synchronization via batch APIs (preview)
+
+The Import/Export Item Definitions Batch APIs (preview) provide an option for large-scale synchronization of item definitions, including data agent configurations. You can export and import data agent definitions in batch to streamline promotion across environments. For more information, see the [Fabric REST API documentation](/rest/api/fabric/).
+
 > [!NOTE]
 > Service principals are supported in the Fabric data agent **only** as part of ALM scenarios. This support is limited to enabling ALM operations (such as Git integration and deployment pipelines) and doesn't extend to other Fabric data agent features. If you need to interact with a data agent outside of ALM workflows, service principal isn't supported.
 
@@ -168,6 +180,7 @@ This approach supports both the functional requirement of enabling consumption a
 - Test data agent changes in the test workspace before promoting to production.
 - Use descriptive commit messages to make history easier to understand.
 - Don't directly make changes to the published folder in the Git repository.
+- Use environment-agnostic configuration patterns (for example, connection references via Variable Library where supported) to avoid hardcoding environment-specific values in data agent data source configurations. This practice facilitates smoother branch merges and deployments across development, test, and production.
 
 ### Limitations and considerations
 

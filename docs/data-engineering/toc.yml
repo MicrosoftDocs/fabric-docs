@@ -53,6 +53,8 @@ items:
     href: lakehouse-sql-analytics-endpoint.md
   - name: Lakehouse schemas
     href: lakehouse-schemas.md
+  - name: Spark views in lakehouse
+    href: lakehouse-spark-views.md
   - name: Git and deployment pipelines
     href: lakehouse-git-deployment-pipelines.md
   - name: Lakehouse REST API
@@ -67,6 +69,14 @@ items:
     href: lakehouse-streaming-data.md
   - name: Get streaming data into a lakehouse with Eventstreams
     href: ../real-time-intelligence/event-streams/add-destination-lakehouse.md
+- name: Lakehouse access control
+  items:
+  - name: Workspace roles and permissions
+    href: workspace-roles-lakehouse.md
+  - name: Sharing and permissions management
+    href: lakehouse-sharing.md
+  - name: Spark support for OneLake security
+    href: spark-onelake-security.md
 - name: Delta Lake
   items:
     - name: Lakehouse and Delta tables
@@ -124,8 +134,30 @@ items:
   - name: Operations and engineering
     items:
     - name: NotebookUtils
-      href: notebook-utilities.md
       displayName: MSSparkUtils
+      items:
+      - name: Overview
+        href: notebook-utilities.md
+      - name: File system utilities
+        href: notebookutils/notebookutils-file-system.md
+      - name: File mount and unmount
+        href: notebookutils/notebookutils-mount.md
+      - name: Notebook run and orchestration
+        href: notebookutils/notebookutils-notebook-run.md
+      - name: Notebook management
+        href: notebookutils/notebookutils-notebook-management.md
+      - name: Credentials utilities
+        href: notebookutils/notebookutils-credentials.md
+      - name: Lakehouse utilities
+        href: notebookutils/notebookutils-lakehouse.md
+      - name: Runtime context
+        href: notebookutils/notebookutils-runtime.md
+      - name: Session management
+        href: notebookutils/notebookutils-session-management.md
+      - name: User Data Function (UDF) utilities
+        href: notebookutils/notebookutils-user-data-function.md
+      - name: Variable library utilities
+        href: notebookutils/notebookutils-variable-library.md
     - name: Run notebooks in high concurrency mode
       href: configure-high-concurrency-session-notebooks.md
     - name: Run notebooks in pipelines with high concurrency mode
@@ -190,12 +222,6 @@ items:
           href: ../data-science/ai-functions/pyspark/translate.md
         - name: Customize AI function configurations
           href: ../data-science/ai-functions/pyspark/configuration.md
-- name: Lakehouse access control
-  items:
-  - name: Workspace roles and permissions
-    href: workspace-roles-lakehouse.md
-  - name: Sharing and permissions management
-    href: lakehouse-sharing.md
 - name: Spark compute
   items:
     - name: Overview and planning
@@ -406,6 +432,10 @@ items:
         href: get-started-api-livy-session.md
       - name: Submit Livy API batch jobs
         href: get-started-api-livy-batch.md
+      - name: High concurrency support in the Fabric Livy API
+        href: high-concurrency-livy.md
+      - name: Get started with high concurrency with the Livy endpoint
+        href: get-started-high-concurrency-livy.md
 - name: VS Code integration
   items:
   - name: Fabric extensions for VS Code
@@ -416,14 +446,18 @@ items:
       href: ./user-data-functions/create-user-data-functions-vs-code.md
   - name: Fabric Data Engineering VS Code extension
     items:
-    - name: Overview
+    - name: Get started with the VS Code extension
       href: setup-vs-code-extension.md
-    - name: VS Code extension with Docker image
-      href: set-up-vs-code-extension-with-docker-image.md
-    - name: Manage environment artifact with VS Code extension
-      href: manage-environment-with-vs-code.md  
+    - name: Manage Fabric workspace with VS Code under VFS mode
+      href: manage-workspace-with-vs-code-vfs-mode.md
+    - name: Manage environments with VS Code extension
+      href: manage-environment-with-vs-code.md
+    - name: Manage environments with VS Code under VFS mode
+      href: manage-environment-with-vs-code-vfs-mode.md
     - name: Notebook with VS Code extension
       href: author-notebook-with-vs-code.md
+    - name: Notebook with VS Code under VFS mode
+      href: author-notebook-with-vs-code-vfs-mode.md
     - name: Fabric Notebook custom agent inside VS Code
       href: notebook-custom-agent-with-vs-code.md
     - name: Notebook resource with VS Code extension
@@ -436,26 +470,40 @@ items:
       href: author-notebook-with-vs-code-web.md
     - name: Develop notebook with Fabric runtime
       href: fabric-runtime-in-vscode.md
+    - name: VS Code extension with Docker image
+      href: set-up-vs-code-extension-with-docker-image.md
 - name: Migrate to Fabric
   items:
   - name: From Azure Synapse
     items:
     - name: Overview
       href: migrate-synapse-overview.md
-    - name: Migrate Spark pools
-      href: migrate-synapse-spark-pools.md
-    - name: Migrate Spark configurations
-      href: migrate-synapse-spark-configurations.md
-    - name: Migrate Spark libraries
-      href: migrate-synapse-spark-libraries.md
-    - name: Migrate notebooks
-      href: migrate-synapse-notebooks.md
-    - name: Migrate Spark job definition
-      href: migrate-synapse-spark-job-definition.md
-    - name: Migrate data and pipelines
-      href: migrate-synapse-data-pipelines.md
-    - name: Migrate Hive Metastore metadata
-      href: migrate-synapse-hms-metadata.md
+    - name: Spark migration best practices
+      items:
+      - name: "Phase 1: Migration strategy and planning"
+        href: synapse-migration-strategy-planning.md
+      - name: "Phase 2: Spark workload migration"
+        href: synapse-migration-spark-workloads.md
+      - name: "Phase 3: Hive Metastore and data migration"
+        href: synapse-migration-hms-data.md
+      - name: "Phase 4: Security and governance migration"
+        href: synapse-migration-security-validation-cutover.md
+    - name: Component migration guides (manual)
+      items:
+      - name: Migrate Spark pools
+        href: migrate-synapse-spark-pools.md
+      - name: Migrate Spark configurations
+        href: migrate-synapse-spark-configurations.md
+      - name: Migrate Spark libraries
+        href: migrate-synapse-spark-libraries.md
+      - name: Migrate notebooks
+        href: migrate-synapse-notebooks.md
+      - name: Migrate Spark job definition
+        href: migrate-synapse-spark-job-definition.md
+      - name: Migrate data and pipelines
+        href: migrate-synapse-data-pipelines.md
+      - name: Migrate Hive Metastore metadata
+        href: migrate-synapse-hms-metadata.md
     - name: Fabric Spark Migration Assistant (preview)
       href: synapse-to-fabric-spark-migration-assistant.md
 - name: API for GraphQL
@@ -539,7 +587,7 @@ items:
       - name: Integration with Fabric pipelines
         href: ./user-data-functions/create-functions-activity-data-pipelines.md
       - name: Integration with Fabric notebooks
-        href: ./notebook-utilities.md#user-data-function-udf-utilities
+        href: ./notebookutils/notebookutils-user-data-function.md
       - name: Invoke functions using Python
         href: ./user-data-functions/tutorial-invoke-from-python-app.md
    - name: Manage

@@ -1,6 +1,6 @@
 ---
-title: How to configure delimited text format in the pipeline of Data Factory in Microsoft Fabric
-description: This article explains how to configure delimited text format in the pipeline of Data Factory in Microsoft Fabric.
+title: How to Configure Delimited Text Format in a Data Pipeline
+description: This article explains how to configure Delimited Text format in the pipeline of Data Factory in Microsoft Fabric.
 ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 11/25/2025
@@ -21,7 +21,6 @@ Delimited text format is supported for the following activities and connectors a
 | **Supported connector** |[Amazon S3](connector-amazon-s3-copy-activity.md) |
 |  | [Amazon S3 Compatible](connector-amazon-s3-compatible-copy-activity.md) |
 |  | [Azure Blob Storage](connector-azure-blob-storage-copy-activity.md) |
-|  | [Azure Data Lake Storage Gen1](connector-azure-data-lake-storage-gen1-copy-activity.md) |
 |  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md)|
 |  | [Azure Files](connector-azure-files-copy-activity.md)|
 |  | File system |

@@ -3,7 +3,7 @@ title: Interactively Explore KQL Tables with Copilot in the Real-Time Hub
 description: Explore KQL tables in Real-time Hub with Copilot. This guide shows you how to filter, preview, and visualize streaming data interactively.
 ms.reviewer: mibar
 ms.topic: how-to
-ms.date: 11/23/2025
+ms.date: 04/27/2026
 ---
 
 # Explore KQL table data with Copilot

@@ -5,7 +5,7 @@ ms.reviewer: aksdi
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.subservice: rti-eventhouse
-ms.date: 11/25/2025
+ms.date: 04/27/2026
 ms.search.form: Get data in a KQL Database
 ---
 
@@ -23,10 +23,6 @@ In this article, you learn how to get data from Azure Storage (ADLS Gen2 contain
     >
     > * A continuous ingestion stream can affect your billing. For more information, see [Eventhouse and KQL Database consumption](real-time-intelligence-consumption.md).
 
-> [!WARNING]
->
-> Ingestion from an Azure Storage account (continuous and one-time) using a [private link](/azure/private-link/private-link-overview) isn't supported.
-
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
@@ -41,9 +37,6 @@ In Azure:
 
 * [Register the Event Grid resource provider](/azure/event-grid/subscribe-to-partner-events) with your Azure subscription.
 * Assign [Storage Blob Data Reader](/azure/role-based-access-control/built-in-roles) role permissions to the workspace identity.
-* Assign permissions to the user configuring the continuous ingestion, or to an AD group with the user who is configuring the continuous ingestion:
-    * [Storage Account Contributor](/azure/role-based-access-control/built-in-roles/storage?branch=main#storage-account-contributor).
-    * [Event Grid Contributor permission](/azure/role-based-access-control/built-in-roles/integration#eventgrid-contributor).
 * [Create](#create-a-container-with-data-file) a [blob container](/azure/storage/blobs/blob-containers-portal) to hold the data files.
     * Upload a data file. The data file structure is used to define the table schema. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md).
 
@@ -118,10 +111,6 @@ Set the source to get data.
         | Subscription | The storage account subscription. |
         | Blob storage account | Storage account name. |
         | Container | The storage container containing the file you want to ingest. |
-
-        > [!NOTE] 
-        >
-        > Using a [private link](/azure/private-link/private-link-overview) isn't supported.
 
     1. In the **Connection** field, open the dropdown and select **+ New connection**, then **Save** > **Close**. The connection settings are prepopulated.
 

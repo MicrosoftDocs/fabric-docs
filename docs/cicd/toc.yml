@@ -22,10 +22,16 @@ items:
     href: git-integration/intro-to-git-integration.md
   - name: "Get started with Git integration"
     href: git-integration/git-get-started.md
-  - name: "Understand the Git integration process"
+  - name: "Basic concepts in Git integration"
     href: git-integration/git-integration-process.md
-  - name: "Manage Git branches"
-    href: git-integration/manage-branches.md
+  - name: "Development process in Fabric"
+    items:
+    - name: Overview
+      href: git-integration/manage-branches.md
+    - name: Development process using Branched workspace
+      href: git-integration/branched-workspace.md
+    - name: Development process using client tool
+      href: git-integration/client-tool.md     
   - name: Handle errors and conflicts
     items:
     - name: Resolve conflicts

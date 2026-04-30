@@ -1,7 +1,9 @@
 ---
 title: Integrate OneLake with Azure Databricks
 description: Learn how to connect to OneLake from Azure Databricks. After completing this tutorial, you can read and write to a lakehouse from Azure Databricks.
-ms.reviewer: eloldag, mabasile
+ms.reviewer: eloldag, mabasile # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ai-usage: ai-assisted
 ms.date: 03/23/2026

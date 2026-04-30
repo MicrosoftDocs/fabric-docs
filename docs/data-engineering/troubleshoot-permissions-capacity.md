@@ -159,7 +159,21 @@ Autoscale Billing is purely serverless and pay-as-you-go—you set the maximum C
 
 See [configure Autoscale Billing for Spark](configure-autoscale-billing.md) and [Autoscale Billing overview](autoscale-billing-for-spark-overview.md) for more details.
 
-**Fix 2: Monitor and Identify High-Consumption Spark Workloads**
+**Fix 2: Review Running and Queued Spark Jobs with Job Concurrency & Queue Monitoring**
+
+Use Job Concurrency & Queue Monitoring in Workspace settings for real-time visibility into Spark job state and capacity pressure.
+
+1. Go to **Workspace settings**.
+1. Select **Data Engineering/Science** > **Spark settings**.
+1. Select **Jobs** to open the live dashboard with active and queued Spark jobs, CU consumption, and concurrency thresholds.
+1. Select **View job submission details** to inspect specific job events and logs.
+1. Compare workspace utilization against usage from other workspaces on the same capacity to identify noisy-neighbor scenarios.
+
+Use these insights to diagnose delays, track cross-workspace activity, and decide whether to reschedule jobs, resize capacity, or cancel stalled sessions.
+
+See [Job Concurrency and Queue Monitoring](job-concurrency-queue-monitoring.md#get-started-with-workspace-monitoring) for more details.
+
+**Fix 3: Monitor and Identify High-Consumption Spark Workloads**
 
 Use the [Fabric Capacity Metrics app](../enterprise/capacity-planning-troubleshoot-consumption.md) to identify which workspaces, users, or jobs are consuming the most Compute Units:
 1. Navigate to Admin Portal and access the Capacity Metrics app
@@ -169,7 +183,7 @@ Use the [Fabric Capacity Metrics app](../enterprise/capacity-planning-troublesho
 
 Understanding [how Fabric capacity throttling works](../enterprise/throttling.md) is essential. Fabric uses "bursting" and "smoothing" to handle temporary spikes, but sustained overloads trigger throttling.
 
-**Fix 3: Reduce Concurrent Spark Operations and Optimize Workloads**
+**Fix 4: Reduce Concurrent Spark Operations and Optimize Workloads**
 
 For Spark operations (Notebooks, Spark job definitions):
 - Stagger job execution times to avoid peak loads
@@ -178,7 +192,7 @@ For Spark operations (Notebooks, Spark job definitions):
 - Restart your Fabric capacity from the Admin Portal (Capacity Settings > Fabric Capacity > Restart) to clear orphaned sessions. Wait approximately 10 minutes before retrying operations
 - Optimize Spark jobs to use resources more efficiently
 
-**Fix 4: Scale Up Your Capacity**
+**Fix 5: Scale Up Your Capacity**
 
 If throttling occurs frequently despite optimization and autoscale, upgrade to a higher capacity SKU (e.g., from F2 to F8 or F16) to increase your available Compute Units. Higher SKUs allow more concurrent Spark jobs and higher throughput.
 

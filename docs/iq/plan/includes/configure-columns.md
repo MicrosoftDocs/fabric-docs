@@ -1,0 +1,21 @@
+---
+title: Include file for configuring PowerTable columns
+description: Include file for configuring PowerTable columns
+ms.topic: include
+ms.date: 04/13/2026
+---
+
+### Configure columns
+
+PowerTable sheets automatically detect column properties and rename any unsupported column names to match the supported format. You can review and modify them as needed.
+
+1. Review the detected column settings.
+1. Select the **primary key** if unselected.
+1. Modify column properties, such as the data type, input type, and display name.
+1. Enter default values wherever required.
+1. Optionally, add columns using **Add column**.
+1. Select **Finish**.
+
+    >[!NOTE]
+    >In this step, you can **enable Slowly Changing Dimensions (SCDs)** by turning the toggle.
+    >For a table, this is a one-time configuration that cannot be modified later.

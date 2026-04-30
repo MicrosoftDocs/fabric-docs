@@ -22,9 +22,6 @@ When a row violates a constraint, you can use one of these actions:
 
 - **FAIL**: Stops MLV refresh at the first constraint violation. This is the default behavior, even when you don't specify `FAIL`.
 
-  > [!CAUTION]
-  > Creating or refreshing an MLV with a `FAIL` action can result in a "delta table not found" error. If this occurs, recreate the MLV and avoid the `FAIL` action.
-
 - **DROP**: Continues processing and removes records that violate the constraint. The lineage view shows the count of dropped records.
 
 > [!NOTE]
@@ -32,21 +29,24 @@ When a row violates a constraint, you can use one of these actions:
 
 ### Define data quality checks in a materialized lake view
 
-**DQ MLV (Data Quality MLV)**:  An MLV that includes one or more data quality constraints declared in a WITH DATA QUALITY clause. Each constraint defines a boolean expression and an action to take when a row violates it. Passing rows are written to the output table; failing rows are either dropped silently or cause the entire refresh to abort, depending on the on-violation setting. 
+When you create a materialized lake view, you can define constraints — data quality rules that validate each row during a refresh. A constraint is a Boolean expression that every row must satisfy. Rows that pass are written to the output table. Rows that fail are handled according to the on-violation setting: they are either dropped silently or cause the entire refresh to fail.
+
 The following example defines the constraint `cust_blank`, which checks if the `customerName` field isn't null. The constraint excludes rows with a null `customerName` from processing.
-
-The table summarizes supported operations. '—' means the operation isn't supported. 'N/A' means the function type isn't applicable to that context.
-
-| Scenario | Description | SpSQL Non-DQ Create | SpSQL Non-DQ LINEAGE | PySpark Non-DQ Create | PySpark Non-DQ LINEAGE | SpSQL DQ Create | SpSQL DQ LINEAGE | PySpark DQ Create | PySpark DQ LINEAGE |
-|--------|-------------|--------------------|---------------------|----------------------|-----------------------|----------------|-----------------|------------------|-------------------|
-| System Functions | Built-in: UPPER, LOWER, COALESCE, etc. | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
-| UDF - Same NB | spark.udf.register() in same notebook | Yes | — | Yes | Yes | Yes | — | Yes | Yes |
-| UDF - Diff NB | UDF defined in separate NB, registered in same NB | Yes | — | Yes | Yes | Yes | — | Yes | Yes |
-| Third party Libraries | Vectorized UDF using pandas framework | Yes | — | Yes | Yes | Yes | — | Yes | Yes |
-| Custom wheel | Function packaged in Python wheel file | Yes | — | Yes | Yes | Yes | — | Yes | Yes |
-| Custom jar | Function compiled in Java/Scala JAR | Yes | — | Yes | Yes | Yes | — | Yes | Yes |
-| PyPI Library | Function from public PyPI package | Yes | N/A | Yes | Yes | Yes | — | Yes | Yes |
-| Fabric UDF | Function defined in Fabric User Data Functions | N/A | N/A | Yes | Yes | N/A | N/A | Yes | Yes |
+```sql
+CREATE OR REPLACE MATERIALIZED LAKE VIEW IF NOT EXISTS silver.customers_enriched  
+(CONSTRAINT cust_blank CHECK (customerName is not null) on MISMATCH DROP)
+AS
+SELECT
+    c.customerID,
+    c.customerName,
+    c.contact, 
+    CASE  
+       WHEN COUNT(o.orderID) OVER (PARTITION BY c.customerID) > 0 THEN TRUE  
+       ELSE FALSE  
+    END AS has_orders 
+FROM bronze.customers c LEFT JOIN bronze.orders o 
+ON c.customerID = o.customerID;
+```
 
 ### System Built in Functions 
 
@@ -56,8 +56,7 @@ Built-in Spark/SQL functions such as UPPER(), LOWER(), TRIM(), COALESCE(), INITC
 ```sql
 CREATE MATERIALIZED LAKE VIEW sample_lakehouse.silver.names (
 CONSTRAINT substring_check
-CHECK (SUBSTRING(name, 1, 2) = 'Al')
-ON MISMATCH drop
+CHECK (SUBSTRING(name, 1, 2) = 'Al') ON MISMATCH drop
 ) AS
 SELECT id, name
 FROM (VALUES (1, 'Alice'), (2, 'Bob'), (3, 'Ann')) AS t(id, name)
@@ -174,7 +173,7 @@ Third party libraries like Pandas UDFs allow data quality rules to be implemente
 
 ### Custom Libraries – Python Wheel (.whl) 
 
-Functions packaged as jar files or wheel files can be installed on the Fabric cluster (via Environment settings) and used in MLV definitions. CREATE and lINEAGE REFRESH is supported for PySpark contexts. See [Manage custom libraries in Fabric environments](../environment-manage-library.md#custom-libraries) for more details.
+Functions packaged as jar files or wheel files can be installed on the Fabric cluster (via Environment settings) and used in MLV definitions. CREATE and LINEAGE REFRESH is supported for PySpark contexts. See [Manage custom libraries in Fabric environments](../environment-manage-library.md#custom-libraries) for more details.
 
 ```python
   %%pyspark

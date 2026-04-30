@@ -134,6 +134,8 @@ When using F SKU capacities, to stop throttling:
 When using P SKU capacities, to stop throttling:
 * Enable [Autoscale](/power-bi/enterprise/service-premium-auto-scale) for the P capacity.
 
+Capacity overage billing can also stop throttling from occurring; however, it's charged at 3x the normal capacity rate. For more details, see [Enable capacity overage](enable-capacity-overage.md).
+
 ## In-flight operations aren't throttled
 
 Throttling only affects operations requested after the capacity starts throttling. All operations, including long running ones that were submitted before throttling began, are allowed to run to completion. This behavior gives you the assurance that operations are completed, even during surges in CU usage.

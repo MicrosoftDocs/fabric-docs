@@ -57,7 +57,7 @@ To use a Lakehouse Maintenance activity in a pipeline, complete the following st
 
     Optionally, you can add a **Schema name** if it exists in your Lakehouse. The schema that contains the target tables.
 
-    The **Table name** is the table you wish to maintain. You can specify multiple tables if desired.
+    The **Table name** is the table you wish to maintain.
 
     :::image type="content" source="media/lakehouse-maintenance-activity/lakehouse-maintenance-settings.png" alt-text="Screenshot of the Lakehouse Maintenance activity settings tab." lightbox="media/lakehouse-maintenance-activity/lakehouse-maintenance-settings.png":::
 
@@ -96,6 +96,7 @@ To use a Lakehouse Maintenance activity in a pipeline, complete the following st
 ## Known issues
 
 - The Lakehouse Maintenance activity doesn't support maintenance on Lakehouses with schemas enabled yet.
+- The Lakehouse Maintenance activity does not currently support execution in workspaces where Private Link is enabled. We are working on a fix for this.
 
 ## Related content
 

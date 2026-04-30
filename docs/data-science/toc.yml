@@ -155,6 +155,8 @@ items:
   items:
   - name: Lineage for models and experiments
     href: data-science-lineage.md
+  - name: Audit data agent interactions with Purview
+    href: data-agent-purview-governance.md
 - name: Preparing data 
   items:
   - name: Read and write data with Pandas
@@ -221,6 +223,8 @@ items:
     href: mlflow-upgrade.md
   - name: Fabric autologging
     href: mlflow-autologging.md
+  - name: Cross-workspace logging
+    href: machine-learning-cross-workspace-logging.md
 - name: Model scoring
   items:
     - name: Score models with PREDICT

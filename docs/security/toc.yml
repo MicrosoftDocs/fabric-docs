@@ -119,14 +119,24 @@ items:
             items:
               - name: Data Engineering
                 href: workspace-outbound-access-protection-data-engineering.md
-              - name: Data Factory (preview)
+              - name: Data Factory
                 href: workspace-outbound-access-protection-data-factory.md
+              - name: Data Science (preview)
+                items: 
+                  - name: Models and Experiments
+                    href: workspace-outbound-access-protection-data-science.md
+                  - name: Data Agent (preview)
+                    href: workspace-outbound-access-protection-data-agent.md
               - name: Data Warehouse
                 href: workspace-outbound-access-protection-data-warehouse.md
-              - name: Mirrored databases (preview)
+              - name: Fabric IQ
+                href: workspace-outbound-access-protection-iq.md
+              - name: Mirrored databases
                 href: workspace-outbound-access-protection-mirrored-databases.md
               - name: OneLake (preview)
                 href: workspace-outbound-access-protection-onelake.md
+              - name: Real-Time Intelligence (preview)
+                href: workspace-outbound-access-protection-real-time-intelligence.md
       - name: Trusted workspace access
         href: security-trusted-workspace-access.md
 - name: Data security

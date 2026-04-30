@@ -55,8 +55,33 @@ When you create a new mirrored database, in the **Choose data** page you might r
    - `timestamp without time zone`
    - `timestamp with time zone` 
    - `uuid` 
-
+   - `xml`
+   - `json`
+   - `jsonb`
+   - `inet`
+   - `cidr`
+   - `macaddr`
+   - `macaddr8` 
+   - `tsvector`
+   - `tsquery`
+   - `int4range`
+   - `int8range`
+   - `numrange`
+   - `tsrange` 
+   - `tstzrange`
+   - `daterange`
+   - `circle`
+   - `line`
+   - `lseg`
+   - `box`
+   - `path`
+   - `point`
+   - `polygon`
+   - `interval`
+    
    In Postgres, two 'time with time zone' values that correspond to exactly the same moment, but in different time zones, are considered different. For example: `06:24:00.59+05` and `05:24:00.59+04` correspond to the same epoch time, but Postgres treats them differently.
+
+   Default unconstrained numeric columns in source database schemas (without defined precision and scale) are converted to Decimal128(38, 0) before being replicated to OneLake tables, aligning with the SQL standard convention that unspecified scale means integer precision.
 
 ## Data definition language (DDL) operations supported on source database
 
@@ -82,9 +107,129 @@ Any other DDL operation on source tables is currently not supported and can caus
 
 ## SQL queries for troubleshooting
 
-If you're experiencing mirroring problems, perform the following server level checks using system views and functions to validate configuration.
+If you're experiencing mirroring problems, connect to the source Azure Database for PostgreSQL server and perform these checks using system views and functions to validate configuration.
 
-1. Execute the following query to check if the changes properly flow:
+1. Execute the following query to validate if all prerequisites are met before starting CDC mirroring. This function checks various system and configuration requirements to ensure the server is ready for CDC operations.
+
+```sql
+-- Check if all prerequisites are met
+SELECT * FROM azure_cdc.check_prerequisites();
+
+-- Example output when all checks pass (on mock mode with identity configured):
+ status |                                                               data
+--------+----------------------------------------------------------------------------------------------------------------------------------
+ ERROR  | [{"status": "ERROR", "details": {"current_value": "12", "required_value": "13"}, "status_code": "MAX_WORKER_PROCESSES_TOO_LOW"}]
+
+-- Example output on standby replica:
+ status |                                               data
+--------+---------------------------------------------------------------------------------------------------
+ ERROR  | [{"status": "ERROR", "status_code": "SERVER_IN_RECOVERY"}]
+
+-- Example output when identity not configured:
+ status |                                data
+--------+---------------------------------------------------------------------
+ ERROR  | [{"status": "ERROR", "status_code": "IDENTITY_NOT_CONFIGURED"}]
+```
+
+**Returns:** `(status text, data jsonb)`
+- `status`: Overall status - `OK` if all checks pass, `ERROR` if any check fails
+- `data`: JSONB array containing detailed status entries with `status`, `status_code`, and optional `details`
+
+**Status Codes:**
+
+| Status Code | Level | Description |
+|------------|-------|-------------|
+| IDENTITY_NOT_CONFIGURED | ERROR | Service principal credentials are not configured (azure.service_principal_id or azure.service_principal_tenant_id GUCs not set) |
+| CDC_ADMIN_ROLE_NOT_EXISTS | ERROR | The azure_cdc_admin role does not exist in the database |
+| USER_NOT_CDC_ADMIN | ERROR | Current user does not have the azure_cdc_admin role |
+| NO_CREATE_PRIVILEGE_ON_DATABASE | ERROR | Current user lacks CREATE privilege on the database |
+| PUBLICATION_LIMIT_REACHED | ERROR | Maximum number of publications (1) has been reached for the database |
+| SERVER_IN_RECOVERY | ERROR | Server is a standby replica in recovery mode (CDC mirroring not supported on standbys) |
+| MAX_WORKER_PROCESSES_TOO_LOW | ERROR | max_worker_processes is below the recommended threshold (13) |
+
+2. Execute the following query to validate if tables in your source database are eligible for replication. Excludes system schemas (`pg_catalog`, `information_schema`, `pg_toast`) and extension-owned tables.
+
+```sql
+SELECT * FROM azure_cdc.get_all_tables_mirror_status();
+ table_schema | table_name | mirroring_status |                      mirroring_data
+--------------+------------+------------------+------------------------------------------------------
+ public       | customers  | OK               | [{"status": "OK", "status_code": "HAS_PRIMARY_KEY"}]
+ public       | orders     | OK               | [{"status": "OK", "status_code": "HAS_UNIQUE_INDEX"}]
+ public       | logs       | WARNING          | [{"status": "WARNING", "status_code": "NO_INDEX_FULL_IDENTITY"}]
+```
+
+**Returns:** Set of `(table_schema text, table_name text, mirroring_status text, mirroring_data jsonb)`
+- `table_schema`: Schema name of the table
+- `table_name`: Name of the table
+- `mirroring_status`: Overall status - `OK`, `WARNING`, or `ERROR`
+- `mirroring_data`: JSONB array containing detailed status entries with `status`, `status_code`, and optional `details`
+
+**Status Codes:**
+
+| Status Code | Level | Description |
+|------------|-------|-------------|
+| SCHEMA_DOES_NOT_EXIST | ERROR | The specified schema does not exist |
+| TABLE_DOES_NOT_EXIST | ERROR | The specified table does not exist in the schema |
+| FORBIDDEN_CHARS_IN_COLUMN_NAME | ERROR | Column names contain forbidden characters (e.g., spaces) |
+| FORBIDDEN_CHARS_IN_TABLE_NAME | ERROR | Table name contains forbidden characters |
+| UNSUPPORTED_DATA_TYPE | WARNING | Table has columns with unsupported data types |
+| UNSUPPORTED_TYPE_IN_REPLICA_IDENTITY | ERROR | Unsupported data type in replica identity columns (when no unique index exists) |
+| NOT_REGULAR_TABLE | ERROR | Table is not a regular, permanent table (e.g., view, temporary, partition) |
+| NOT_TABLE_OWNER | ERROR | Current user is not the owner of the table |
+| HAS_PRIMARY_KEY | OK | Table has a primary key |
+| HAS_UNIQUE_INDEX | OK | Table has a suitable unique index |
+| NO_INDEX_FULL_IDENTITY | WARNING | No suitable unique index; full row identity will be used (may affect performance) |
+
+3. Execute the following query to return errors and issues detected during replication operations, including system-wide errors, publication-specific errors, and per-table errors.
+
+```sql
+-- Get only system-wide errors
+SELECT * FROM azure_cdc.get_health_status('', '');
+
+-- Get system-wide errors and publication-specific errors
+SELECT * FROM azure_cdc.get_health_status('my_database', 'my_publication');
+```
+
+**Parameters:**
+- `db_name` (text): Database name
+- `pub_name` (text): Publication name
+
+**Behavior:**
+- When called with empty strings for both parameters (`azure_cdc.get_health_status('', '')`): Returns only system-wide errors (error type 'S').
+- When called with valid database and publication names: Returns both system-wide errors and publication/table-specific errors for the specified publication.
+
+**Returns:** Set of `(error_time timestamptz, schema_name text, table_name text, error_type char(1), error_code text, params jsonb)`
+
+**Error Types:**
+
+| Error Type | Description |
+|------------|-------------|
+| S | System-wide error |
+| P | Publication-specific error |
+| T | Table-specific error |
+
+**Error Codes:**
+
+| Error Code | Type | Description |
+|------------|------|-------------|
+| CDC_ERR_SYS_MAX_NUMBER_OF_WORKERS_REACHED | S | Max number of workers reached |
+| CDC_ERR_SYS_MAX_NUMBER_OF_PUBLICATIONS_REACHED | S | Maximum number of publications for the database reached |
+| CDC_ERR_SYS_ONELAKE_PERMISSION_DENIED | S | Permission denied for OneLake action |
+| CDC_ERR_SYS_ONELAKE_ARTIFACT_DOES_NOT_EXIST | S | OneLake artifact not found |
+| CDC_ERR_SYS_ONELAKE_COMM_FAILED | S | OneLake communication failed |
+| CDC_ERR_SYS_ONELAKE_BAD_REQUEST | S | Bad request to OneLake |
+| CDC_ERR_PUB_SNAPSHOT_TIMEOUT | P | Snapshot not ready after timeout |
+| CDC_ERR_PUB_SNAPSHOT_WORKER_TIMEOUT | P | Snapshot worker timeout for a specific table |
+| CDC_ERR_PUB_ONELAKE_PERMISSION_DENIED | P | Permission denied for OneLake action |
+| CDC_ERR_PUB_ONELAKE_ARTIFACT_DOES_NOT_EXIST | P | OneLake artifact not found |
+| CDC_ERR_PUB_ONELAKE_COMM_FAILED | P | OneLake communication failed |
+| CDC_ERR_PUB_MAX_NUMBER_OF_WORKERS_REACHED | P | Max number of workers reached for publication |
+| CDC_ERR_PUB_ONELAKE_BAD_REQUEST | P | Bad request to OneLake |
+| CDC_ERR_PUB_TOO_MANY_ERRORS | P | Too many errors during publication processing |
+| CDC_ERR_TABLE_TRUNCATE_NOT_SUPPORTED | T | Truncate operation not supported (may cause data inconsistency) |
+
+
+4. Execute the following query to check if publication is created correctly and replication changes properly flow:
 
     ```sql
     select * from azure_cdc.tracked_publications;
@@ -95,13 +240,13 @@ If you're experiencing mirroring problems, perform the following server level ch
     select * from azure_cdc.tracked_batches;
     ```
 
-1. If the `azure_cdc.tracked_publications` view doesn't show any progress on processing incremental changes, execute the following SQL query to check if there are any problems reported:
+5. If the `azure_cdc.tracked_publications` view doesn't show any progress on processing incremental changes, execute the following SQL query to check if there are any problems reported:
 
     ```sql
     SELECT * FROM pg_stat_activity WHERE state = 'idle in transaction';
     ```
 
-1. If there aren't any issues reported, execute the following command to review the current configuration of the mirrored PostgreSQL database. Confirm it was properly enabled.
+6. If there aren't any issues reported, execute the following command to review the current configuration of the mirrored PostgreSQL database. Confirm it was properly enabled.
 
     ```sql
     SELECT * FROM pg_replication_slots;
@@ -109,7 +254,7 @@ If you're experiencing mirroring problems, perform the following server level ch
 
     The key columns to look for here are the `slot_name` and `active`. Any value besides `t` (true) indicates a potential problem.
 
-1. [Contact support](/power-bi/support/service-support-options) if troubleshooting is required.
+7. [Contact support](/power-bi/support/service-support-options) if troubleshooting is required.
 
 ## Managed identity
 
