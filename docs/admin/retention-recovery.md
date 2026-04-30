@@ -22,7 +22,7 @@ The following table compares workspace retention and item-level soft-delete and 
 
 | Feature | Collaborative workspace retention | My workspace retention | Item retention (preview) |
 | --- | --- | --- | --- |
-| **Applies when** | User deletes a collaborative workspace | User deletes a My workspace | User deletes a [supported item](#supported-item-types) |
+| **Applies when** | User deletes a collaborative workspace | *My workspace* is deleted | User deletes a [supported item](#supported-item-types) |
 | **Default retention state** | Enabled | Enabled | Disabled |
 | **Can an admin disable retention?** | No | No | Yes |
 | **Minimum retention period** | 7 days | 30 days (fixed) | 7 days (when enabled) |
@@ -50,9 +50,6 @@ During the retention period, you can restore a deleted workspace or permanently 
 Fabric supports soft-delete and recovery for individual items within workspaces. When you delete a supported item, it enters a retention period during which workspace contributors, members, and admins can recover it. This feature provides an additional layer of data protection at the item level.
 
 By default, item recovery is turned off. You can turn on item recovery and set up the retention period (from 7 to 90 days) by using the **Fabric Item Recovery** tenant setting in the admin portal.
-
-> [!NOTE]
-> After you permanently delete an item, Microsoft OneLake retains the item's data for an additional seven days before permanent removal. This built-in protection helps recover from accidental deletions or user errors. For more information, see [Recover deleted files in OneLake](../onelake/soft-delete.md).
 
 For step-by-step instructions on setting up item recovery and restoring or permanently deleting items, see [Recover or permanently delete items](item-recovery.md).
 

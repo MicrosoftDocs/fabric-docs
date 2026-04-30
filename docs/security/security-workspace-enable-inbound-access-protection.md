@@ -35,7 +35,7 @@ You must have the Fabric administrator role to enable the workspace inbound acce
 
    :::image type="content" source="./media/security-workspace-enable-inbound-access-protection/enable-toggle-inbound-network-rules.png" alt-text="Screenshot showing the toggle enabled for inbound network rules." :::
 
-1. Expand the section **Configure workspace IP firewall rules**. This setting is enabled by default, allowing workspace admins to configure IP firewall rules for their workspaces. To change the setting, switch the toggle to **Disabled** or **Enabled** as needed. Then select **Apply**.
+1. Expand the section **Configure workspace-level IP firewall rules and trusted resource instances**. This setting is enabled by default, allowing workspace admins to configure IP firewall rules and trusted resource instance rules for their workspaces. To change the setting, switch the toggle to **Disabled** or **Enabled** as needed. Then select **Apply**.
 
    :::image type="content" source="./media/security-workspace-enable-inbound-access-protection/enable-toggle-ip-firewall.png" alt-text="Screenshot showing the toggle enabled for IP firewall." :::
 

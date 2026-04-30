@@ -39,6 +39,8 @@ items:
     href: fabric-operations.md   
   - name: Optimize your capacity
     href: optimize-capacity.md
+  - name: Get capacity overview events in Real-Time Hub
+    href: /fabric/real-time-hub/create-streams-fabric-capacity-overview-events?context=/fabric/context/context-enterprise
   - name: Capacity overage
     items:
     - name: Capacity overage overview

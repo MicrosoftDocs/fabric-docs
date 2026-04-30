@@ -5,13 +5,15 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: yaronc
 ms.topic: overview
-ms.date: 02/18/2026
+ms.date: 04/20/2026
 #customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to learn about the OneLake catelog and the capabilities it offers.
 ---
 
 # OneLake catalog overview
 
-OneLake catalog is a centralized place that helps you find, explore, and use the Fabric items you need, and govern the data you own. The catalog is embedded in Microsoft Teams, Microsoft Excel, and Microsoft Copilot Studio, so users can discover and act on items directly from these applications. It features three tabs:
+OneLake catalog is a centralized place in Microsoft Fabric that helps you find, explore, and use the Fabric items you need, and govern the data you own. As a Fabric admin or user, you access the catalog from the Fabric navigation pane. The catalog is also embedded in Microsoft Teams, Microsoft Excel, and Microsoft Copilot Studio so you can discover and act on items directly from these applications. You can also programmatically discover catalog metadata across workspaces by using the [Microsoft Fabric Catalog Search REST API](/rest/api/fabric/core/catalog/search). 
+
+The OneLake catalog features three tabs:
 
 * **[Explore tab](./onelake-catalog-explore.md)**: The Explore tab has an items list with an in-context item details view that makes it possible to browse through and explore items without losing your list context. It also provides selectors and filters to narrow down and focus the list, making it easier to find what you need. By default, the OneLake catalog opens on the Explore tab. Along with the OneLake catalog, you can open and work across multiple workspaces side by side using the [object explorer](../fundamentals/fabric-home.md#multitask-with-tabs-and-object-explorer).
 
@@ -34,3 +36,4 @@ To open the OneLake catalog, select the OneLake icon in the Fabric navigation pa
 * [Fabric domains](./domains.md)
 * [Lineage in Fabric](./lineage.md)
 * [Monitor hub](../admin/monitoring-hub.md)
+* [Enable OneLake catalog federation in Azure Databricks](/azure/databricks/query-federation/onelake).

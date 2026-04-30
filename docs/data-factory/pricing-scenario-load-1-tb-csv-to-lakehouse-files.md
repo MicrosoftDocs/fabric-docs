@@ -17,7 +17,7 @@ The prices used in the following example are hypothetical and don’t intend to 
 
 To accomplish this scenario, you need to create a pipeline with the following configuration:
 
-:::image type="content" source="media/pricing-scenarios/load-1-tb-csv-to-lakehouse-files.png" alt-text="Screenshot showing the configuration of a pipeline copying CSV data to a Lakehouse table.":::
+:::image type="content" source="media/pricing-scenarios/load-1-tb-csv-to-lakehouse-files.png" alt-text="Screenshot showing the configuration of a pipeline copying CSV data to Lakehouse files.":::
 
 ## Cost estimation using the Fabric Metrics App
 

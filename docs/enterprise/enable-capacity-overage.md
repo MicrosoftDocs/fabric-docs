@@ -1,5 +1,5 @@
 ---
-title: Enable capacity overage in Microsoft Fabric
+title: Enable capacity overage (preview) in Microsoft Fabric
 description: Learn how to enable and configure capacity overage in Microsoft Fabric to prevent throttling by automatically billing for excess capacity usage.
 author: SnehaGunda
 ms.author: sngun
@@ -9,9 +9,13 @@ ms.date: 03/11/2026
 ai-usage: ai-assisted
 ---
 
-# Enable capacity overage in Microsoft Fabric
+# Enable capacity overage (preview) in Microsoft Fabric
 
 Capacity overage is an opt-in feature that automatically pays for excess capacity usage, up to a limit set by the capacity admin. It prevents throttling and ensures that workloads continue uninterrupted, even when they temporarily exceed a capacity's limits. For more information about how capacity overage works, costs, and limits, see [Capacity overage in Microsoft Fabric](capacity-overage-overview.md).
+
+> [!IMPORTANT]
+> Capacity overage is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 

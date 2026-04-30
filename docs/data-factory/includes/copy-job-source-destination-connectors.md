@@ -2,7 +2,7 @@
 title: Include file the copy job supported connectors table for copy job sources and destinations
 description: Include file copy job supported connectors table for copy job sources and destinations
 ms.reviewer: yexu
-ms.date: 01/05/2025
+ms.date: 04/24/2026
 ms.topic: include
 ---
 
