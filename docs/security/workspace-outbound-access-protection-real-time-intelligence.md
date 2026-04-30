@@ -50,13 +50,13 @@ When you enable workspace outbound access protection, outbound access from Event
 
 ### Supported Eventhouse outbound access scenarios
 
-Within the **same workspace**, Eventhouse can still access certain resources and perform specific actions even when outbound access protection is **enabled**. Supported scenarios include:
+Within the same workspace, Eventhouse can still access other OAP supported items and perform specific actions even when outbound access protection is enabled. Supported scenarios include:
 
 - Querying data stored in Real-Time Intelligence items.
 
 - Querying other Eventhouse databases.
 
-In addition, Eventhouse can access certain **external** resources that aren't scoped to a specific workspace if the relevant workspace outbound access protection rules are configured. Supported scenarios include:
+In addition, Eventhouse can access specific external resources that aren't scoped to a specific workspace or can access specific Fabric items if the relevant workspace outbound access protection rules are configured. Supported scenarios include:
 
 - Querying data stored in OneLake in other workspaces.
 
