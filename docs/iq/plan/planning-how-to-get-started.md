@@ -63,4 +63,4 @@ In this section, you add the semantic model connection you created earlier in [P
 
 ## Optional: Connect to a database for collaboration
 
-If you want to collaborate with others on this Planning sheet, create a database connection to store comments and other collaboration details. For more information, see [Create a database connection for collaboration](planning-how-to-create-database-connection.md#create-a-database-connection-for-collaboration).
+If you want to collaborate with others on this Planning sheet, create a database connection for your plan item to store comments and other collaboration details. For more information, see [Create a database connection for collaboration](planning-how-to-create-database-connection.md).

@@ -1,14 +1,17 @@
 ---
-title: Create database connections for collaboration plan (preview)
+title: Create a database connection for collaboration plan (preview)
 description: "Learn how to create and share database connections in plan (preview) for multi-user collaboration."
 ms.date: 04/30/2026
 ms.topic: how-to
 ---
 
-# Create database connections for collaboration
+# Create a database connection for collaboration in plan (preview)
 
-This article explains how to create database connection to enable multi-user collaboration on plan items.
+This article explains how to create database connection to enable multi-user collaboration on plan (preview) items.
+
 This connection is optional and allows other users to comment and collaborate on a plan that you create.
+
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
@@ -51,8 +54,6 @@ You can share the created connection and manage the user permissions.
 
     :::image type="content" source="media/planning-how-to-create-database-connection/manage-users-2.png" alt-text="Screenshot of editing permissions in the Manage users pane." lightbox="media/planning-how-to-create-database-connection/manage-users-2.png":::
 
-
-
 ## Next steps
 
-Create a Planning sheet that uses the data connections: [Create a Planning sheet](planning-how-to-get-started.md).
+Create a Planning sheet in your plan (preview) item: [Create a Planning sheet](planning-how-to-get-started.md).

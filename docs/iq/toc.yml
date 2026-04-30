@@ -75,16 +75,16 @@ items:
       items:
         - name: Cubes
           href: plan/planning-concept-cube.md
-        - name: Row-level security (RLS) behavior in Fabric Plan
+        - name: Row-level security (RLS)
           href: plan/planning-concept-row-level-security.md
     - name: How-tos
       items:
-        - name: Create database connections
-          href: plan/planning-how-to-create-database-connection.md
         - name: Create a semantic model connection
           href: plan/planning-how-to-create-semantic-model-connection.md
         - name: Create a Planning sheet
           href: plan/planning-how-to-get-started.md
+        - name: Create a database connection for collaboration
+          href: plan/planning-how-to-create-database-connection.md
         - name: Input data
           href: plan/planning-how-to-input-data.md
         - name: Set up scenarios
