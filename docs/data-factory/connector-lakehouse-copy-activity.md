@@ -271,6 +271,7 @@ When copying data to Lakehouse tables in Table mode, the following mappings are 
 | GUID             | string              |
 | Date             | date                |
 | TimeSpan         | Not supported       |
+| DateTime         | timestamp           |
 | DateTimeOffset   | timestamp           |
 | String           | string              |
 | Byte array       | binary              |
