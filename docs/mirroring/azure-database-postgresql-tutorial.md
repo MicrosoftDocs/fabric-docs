@@ -74,7 +74,7 @@ You can accomplish this by specifying a database role for connecting to your sou
     ```
 
 
-The database user created with one of the two previous methods also needs to be `owner` of the tables to replicate in the mirrored database (this is inherited from [CREATE PUBBLICATION requirements in PostgreSQL](https://www.postgresql.org/docs/current/sql-createpublication.html)). This means that tables have been created by that user, or that the ownership of those tables has been changed using `ALTER TABLE <table name here> OWNER TO <user>;`.
+The database user created with one of the two previous methods also needs to be `owner` of the tables to replicate in the mirrored database (this is inherited from [CREATE PUBLICATION requirements in PostgreSQL](https://www.postgresql.org/docs/current/sql-createpublication.html)). This means that tables have been created by that user, or that the ownership of those tables has been changed using `ALTER TABLE <table name here> OWNER TO <user>;`.
 
 - When switching ownership to new user, you might need to grant to that user all privileges on `public` schema before. For more information regarding user account management, see Azure Database for PostgreSQL [user management](/azure/postgresql/flexible-server/how-to-create-users) documentation, PostgreSQL product documentation for [Database Roles and Privileges](https://www.postgresql.org/docs/current/static/user-manag.html), [GRANT Syntax](https://www.postgresql.org/docs/current/static/sql-grant.html), and [Privileges](https://www.postgresql.org/docs/current/static/ddl-priv.html).
 
