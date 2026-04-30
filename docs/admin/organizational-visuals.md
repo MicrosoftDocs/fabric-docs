@@ -108,7 +108,7 @@ When you enable this setting, users can download data from a custom visual into 
 
 1. Select **Apply**.
 
-UI changes to tenant settings apply only to the Power BI service. To enable users in your organization to download data from custom visuals in Power BI Desktop, use AD Group Policy.
+UI changes to tenant settings apply both for Power BI Service and PowerBI Desktop. To enable users in your organization to download data from custom visuals in Power BI Desktop, use AD Group Policy.
 
 |Key  |Value name  |Value  |
 |---------|---------|---------|
