@@ -75,6 +75,8 @@ items:
       items:
         - name: Cubes
           href: plan/planning-concept-cube.md
+        - name: Row-level security (RLS) behavior in Fabric Plan
+          href: plan/planning-row-level-security.md
     - name: How-tos
       items:
         - name: Create database connections
