@@ -68,12 +68,12 @@ This section shows how to prepare the Azure virtual network with a subnet config
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/select-subnet.png" alt-text="Screenshot of showing selecting or creating subnets." lightbox="media/streaming-connector-virtual-network-on-premises-support/select-subnet.png":::
 
-4. When configuring your subnet, make sure to use an IP address range that doesn't overlap with **10.240.0.0/16** or **10.224.0.0/12** and at least **16 IPs** are available (for example, when creating subnet in Azure, make sure you set xx.xx.xx.xx **/27** at least), and select Subnet Delegation to delegate subnet to service: **Messaging Connectors**.
+4. When configuring your subnet, make sure to use an IP address range that doesn't overlap with **10.240.0.0/16** or **10.224.0.0/12** and at least **16 (15+1) IPs** are available (for example, when creating subnet in Azure, make sure you set xx.xx.xx.xx **/27** at least), and select Subnet Delegation to delegate subnet to service: **Messaging Connectors**.
 
    > [!NOTE]
-   > When planning the available IP count for a subnet, consider the number of connectors that will run in the subnet and the potential for connector resource auto-scaling. Note that Azure reserves **5** IP addresses per subnet. 
+   > When planning the available IP count for a subnet, consider the number of connectors that will run in the subnet and the potential for connector resource auto-scaling. Note that Azure reserves **15** IP addresses per subnet. 
    > - Each connector uses one IP address. When connector resource auto-scaling occurs, the maximum number of IP addresses a connector can use equals the source's partition count (if the source has partitions).
-   > - **Example**: If you have two Apache Kafka connectors added to eventstreams with a vNet in a new subnet, and each Kafka source has 10 partitions, the maximum IP count needed is 25 (5 Azure-reserved IPs + 10 IPs × 2 connectors).
+   > - **Example**: If you have two Apache Kafka connectors added to eventstreams with a vNet in a new subnet, and each Kafka source has 10 partitions, the maximum IP count needed is 35 (15 Azure-reserved IPs + 10 IPs × 2 connectors).
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/set-up-subnet.png" alt-text="Screenshot of showing how to set up a subnet." lightbox="media/streaming-connector-virtual-network-on-premises-support/set-up-subnet.png":::
 
