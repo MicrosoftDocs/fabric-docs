@@ -101,10 +101,9 @@ Schema locks prevent conflicts on DDL statements, such as a table's schema being
 
 - Avoid long-running transactions, or schedule during periods of low or no concurrent activity.
 - Schedule DDL operations only during maintenance windows to minimize blocking.
-- Avoid placing DDL statements inside explicit user transactions (`BEGIN TRAN`). Long-running transactions that modify tables can cause blocking issues for other DML operations and `SELECT` queries, both on user tables and system catalog views like `sys.tables`. To monitor and troubleshoot potential lock conflicts, use `sys.dm_tran_locks`.
+- While DDL statements can be executed inside explicit user transactions (`BEGIN TRAN`), they should be used with caution in concurrent workloads. Due to locking behavior, DDL within a transaction can block concurrent DML or SELECT operations on the affected tables, as well as SELECT queries on system catalog views such `sys.tables` or `sys.objects`. To monitor and troubleshoot potential lock conflicts, use `sys.dm_tran_locks`.
 - Monitor locks and conflicts in the warehouse.
     - Use [sys.dm_tran_locks](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-locks-transact-sql?view=fabric&preserve-view=true) to inspect current locks.
-- Fabric Data Warehouse supports some DDL statements inside user-defined transactions, but are not recommended in long-running transactions. Inside transactions, DDL statements can block concurrent transactions or cause write-write conflicts.
 
 <a id="ddl-support-within-transactions"></a>
 

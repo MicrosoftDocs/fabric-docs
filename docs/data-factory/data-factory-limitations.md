@@ -3,7 +3,7 @@ title: Data Factory limitations overview
 description: Identifies limitations that affect Data Factory in Microsoft Fabric features.
 ms.reviewer: susabat
 ms.topic: troubleshooting
-ms.date: 3/23/2026
+ms.date: 4/29/2026
 ms.custom: configuration
 ---
 
@@ -96,7 +96,6 @@ The following list describes the limitations for Dataflow Gen2 in Data Factory i
 * **Required permissions to consume dataflows**: Consuming data from a Dataflow Gen2 requires Admin, Member, or Contributor permissions. Viewer permission isn’t supported.
 
 * **Staging authentication expiration**: If staging items aren’t accessed for more than 90 days, re‑authentication is required. This can be done by creating a new Dataflow Gen2 in the same workspace.
-* **Relative references not supported with gateways**: Relative references for Fabric connectors ([Lakehouse](connector-lakehouse.md), [Warehouse](connector-data-warehouse.md), [SQL database](connector-sql-database.md)) aren't yet supported when a gateway is used.
 
 ## Related content
 

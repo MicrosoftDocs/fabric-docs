@@ -148,6 +148,18 @@
                 href: connector-access-database-overview.md
               - name: Set up your connection
                 href: connector-access-database.md
+          - name: Adobe Analytics
+            items:
+              - name: Adobe Analytics - Overview
+                href: connector-adobe-analytics-overview.md
+              - name: Set up your connection
+                href: connector-adobe-analytics.md
+          - name: Amazon Athena
+            items:
+              - name: Amazon Athena - Overview
+                href: connector-amazon-athena-overview.md
+              - name: Set up your connection
+                href: connector-amazon-athena.md
           - name: Amazon RDS for Oracle
             items:
             - name: Amazon RDS for Oracle - Overview
@@ -182,6 +194,12 @@
                 href: connector-amazon-s3-compatible-overview.md
               - name: Configure in a pipeline Copy activity
                 href: connector-amazon-s3-compatible-copy-activity.md
+          - name: Anaplan
+            items:
+              - name: Anaplan - Overview
+                href: connector-anaplan-overview.md
+              - name: Set up your connection
+                href: connector-anaplan.md
           - name: Azure Analysis Services
             items: 
               - name: Azure Analysis Services - Overview
@@ -302,6 +320,12 @@
                 href: connector-cloudbluepsa-overview.md
               - name: Set up your connection
                 href: connector-cloudbluepsa.md
+          - name: ClickHouse
+            items:
+              - name: ClickHouse - Overview
+                href: connector-clickhouse-overview.md
+              - name: Set up your connection
+                href: connector-clickhouse.md
           - name: Common Data Service (Legacy)
             items: 
               - name: Common Data Service (Legacy) - Overview
@@ -336,6 +360,18 @@
                 href: connector-data-warehouse.md
               - name: Configure in a pipeline Copy activity
                 href: connector-data-warehouse-copy-activity.md
+          - name: Delta Sharing
+            items:
+              - name: Delta Sharing - Overview
+                href: connector-delta-sharing-overview.md
+              - name: Set up your connection
+                href: connector-delta-sharing.md
+          - name: Denodo
+            items:
+              - name: Denodo - Overview
+                href: connector-denodo-overview.md
+              - name: Set up your connection
+                href: connector-denodo.md
           - name: Dynamics AX
             items: 
               - name: Dynamics AX - Overview
@@ -348,6 +384,12 @@
                 href: connector-dynamics-crm-overview.md
               - name: Configure in a pipeline Copy activity
                 href: connector-dynamics-crm-copy-activity.md
+          - name: Eduframe
+            items:
+              - name: Eduframe - Overview
+                href: connector-eduframe-overview.md
+              - name: Set up your connection
+                href: connector-eduframe.md
           - name: FHIR
             items: 
               - name: FHIR - Overview
@@ -412,6 +454,12 @@
                 href: connector-ftp-overview.md
               - name: Configure in a pipeline Copy activity
                 href: connector-ftp-copy-activity.md
+          - name: Funnel
+            items:
+              - name: Funnel - Overview
+                href: connector-funnel-overview.md
+              - name: Set up your connection
+                href: connector-funnel.md
           - name: Google Analytics
             items: 
               - name: Google Analytics - Overview
@@ -434,6 +482,12 @@
                 href: connector-google-cloud-storage.md
               - name: Configure in a pipeline Copy activity
                 href: connector-google-cloud-storage-copy-activity.md
+          - name: Google Sheets
+            items:
+              - name: Google Sheets - Overview
+                href: connector-google-sheets-overview.md
+              - name: Set up your connection
+                href: connector-google-sheets.md
           - name: Greenplum for Pipeline
             items: 
               - name: Greenplum for Pipeline - Overview
@@ -564,6 +618,12 @@
                 href: connector-odbc.md
               - name: Configure in a pipeline Copy activity
                 href: connector-odbc-copy-activity.md
+          - name: OneStream
+            items:
+              - name: OneStream - Overview
+                href: connector-onestream-overview.md
+              - name: Set up your connection
+                href: connector-onestream.md
           - name: Oracle database
             items: 
               - name: Oracle database - Overview
@@ -598,6 +658,12 @@
               href: connector-presto-overview.md
             - name: Configure in a pipeline Copy activity
               href: connector-presto-copy-activity.md    
+          - name: Profisee
+            items:
+              - name: Profisee - Overview
+                href: connector-profisee-overview.md
+              - name: Set up your connection
+                href: connector-profisee.md
           - name: REST
             items: 
               - name: REST - Overview
@@ -703,6 +769,12 @@
                 href: connector-sharepoint-online-list.md
               - name: Configure in a pipeline Copy activity
                 href: connector-sharepoint-online-list-copy-activity.md
+          - name: Smartsheet
+            items:
+              - name: Smartsheet - Overview
+                href: connector-smartsheet-overview.md
+              - name: Set up your connection
+                href: connector-smartsheet.md
           - name: Snowflake
             items: 
               - name: Snowflake - Overview
@@ -877,12 +949,30 @@
             href: what-is-copy-job.md
           - name: Copy job connectors
             href: copy-job-connectors.md
-          - name: Copy job tutorials
+          - name: Incremental copy
+            href: incremental-copy-job.md
+          - name: Change data capture (CDC)
+            href: cdc-copy-job.md
+          - name: Audit columns
+            href: audit-columns-copy-job.md
+          - name: Run copy job from a pipeline
+            href: copy-job-activity.md
+          - name: Copy job with virtual network data gateway
+            href: copy-job-with-virtual-network-data-gateway.md
+          - name: CI/CD
+            href: cicd-copy-job.md
+          - name: REST API Capabilities
+            href: copy-job-rest-api-capabilities.md
+          - name: Workspace monitoring
+            href: copy-job-workspace-monitoring.md
+          - name: Tutorials
             items: 
               - name: How to create a Copy job
                 href: create-copy-job.md
               - name: How to monitor a Copy job
                 href: monitor-copy-job.md
+              - name: Change data capture from Azure SQL Database
+                href: cdc-copy-job-azure-sql-database.md
               - name: Change data capture from SAP via SAP Datasphere Outbound 
                 href: copy-job-tutorial-sap-datasphere.md
               - name: Change data capture from Snowflake
@@ -891,20 +981,6 @@
                 href: cdc-copy-job-bigquery.md
               - name: Change data capture from Oracle database
                 href: cdc-copy-job-oracle.md
-          - name: Run copy job from a pipeline
-            href: copy-job-activity.md
-          - name: Change data capture (CDC) in Copy job
-            href: cdc-copy-job.md
-          - name: Audit columns in Copy job
-            href: audit-columns-copy-job.md
-          - name: Copy job with virtual network data gateway
-            href: copy-job-with-virtual-network-data-gateway.md
-          - name: CI/CD for Copy job
-            href: cicd-copy-job.md
-          - name: REST API Capabilities
-            href: copy-job-rest-api-capabilities.md
-          - name: Workspace monitoring for Copy job
-            href: copy-job-workspace-monitoring.md
       - name: Copy activity
         href: copy-data-activity.md
         items:
@@ -1064,6 +1140,8 @@
           href: dbt-job-how-to.md
         - name: Configure a dbt job
           href: dbt-job-configure.md
+        - name: dbt job activity in a pipeline
+          href: dbt-job-activity.md
         - name: dbt job pricing
           href: dbt-job-pricing.md
   - name: Create, manage, & schedule pipelines

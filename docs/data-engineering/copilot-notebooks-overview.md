@@ -137,37 +137,6 @@ Use the table below to identify the cause and take appropriate action.
 > [!TIP]
 > If you're unsure which setting is causing the issue, start by contacting your tenant administrator, as most Copilot requirements are controlled at the organization level.
 
-## Known issues
-
-### Copilot shows "Copilot is currently unavailable"
-
-In some cases, Copilot may display *"Copilot is currently unavailable"* in the chat pane. This typically occurs when the notebook session is disrupted, for example, after closing another notebook in the same workspace.
-
-**Impact:**
-
-- Copilot chat becomes unavailable.
-- Prompts can't be submitted or completed.
-
-**How to resolve:**
-
-1. Close all open notebooks in your workspace.
-1. Reopen your notebook and the Copilot pane again.
-
-**Best practice:**
-
-- Avoid closing other notebooks while actively using Copilot, as this may interrupt the session.
-
-### Copilot might not use the latest cell error output when troubleshooting
-
-In some cases, Copilot might not fully incorporate the most recent error output from a notebook cell when diagnosing issues. This can lead to incomplete or less relevant troubleshooting guidance.
-
-**Workaround:**
-
-To improve response quality, explicitly reference or include the latest error message in your prompt when asking Copilot for help.
-
-> [!NOTE]
-> These are known issues that may occur in production environments. A fix is in progress and will be rolled out in an upcoming update.
-
 ## Related content
 
 - [How to use the Copilot chat pane](./copilot-notebooks-chat-pane.md)

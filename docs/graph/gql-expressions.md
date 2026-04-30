@@ -2,7 +2,7 @@
 title: GQL Expressions, Predicates, and Functions
 description: Learn about GQL expressions, predicates, and built-in functions for data processing, filtering, and analysis in graph in Microsoft Fabric queries.
 ms.topic: reference
-ms.date: 03/12/2026
+ms.date: 04/23/2026
 ms.reviewer: splantikow
 ---
 
@@ -84,6 +84,7 @@ Combine conditions with logical operators:
 - `AND` (both conditions true)
 - `OR` (either condition true)
 - `NOT` (negates condition)
+- `XOR` (exclusive disjunction — true when exactly one operand is true)
 
 **Example:**
 
@@ -238,6 +239,47 @@ To convert a group list into a regular list, use `collect_list(edges)`.
 > [!NOTE]
 > For comprehensive coverage of aggregation techniques including variable-length edge binding and combining horizontal/vertical aggregation, see [Advanced Aggregation Techniques](gql-language-guide.md#advanced-aggregation-techniques).
 
+### Conditional expressions
+
+Use conditional expressions to return different values based on conditions.
+
+**Searched CASE:**
+
+```gql
+CASE
+  WHEN condition1 THEN result1
+  WHEN condition2 THEN result2
+  ELSE default_result
+END
+```
+
+**Simple CASE:**
+
+```gql
+CASE expression
+  WHEN value1 THEN result1
+  WHEN value2 THEN result2
+  ELSE default_result
+END
+```
+
+**NULLIF:**
+
+`NULLIF(a, b)` returns `NULL` if `a` equals `b`, otherwise returns `a`.
+
+**Example:**
+
+```gql
+MATCH (p:Person)
+RETURN p.firstName,
+       CASE
+         WHEN p.gender = 'male' THEN 'M'
+         WHEN p.gender = 'female' THEN 'F'
+         ELSE 'Other'
+       END AS gender_code,
+       NULLIF(p.browserUsed, 'Unknown') AS browser
+```
+
 ### String functions
 
 - `char_length(string)` - returns string length.
@@ -258,13 +300,15 @@ RETURN upper(p.firstName) AS name_upper
 
 - `nodes(path)` - returns nodes from a path value.
 - `edges(path)` - returns edges from a path value.
+- `elements(path)` - returns all nodes and edges from a path as a single list, in path order.
 - `labels(node_or_edge)` - returns the labels of a node or edge as a list of strings.
+- `path_length(path)` - returns the number of edges in a path.
 
 **Example:**
 
 ```gql
 MATCH p=(:Company)<-[:workAt]-(:Person)-[:knows]-{1,3}(:Person)-[:workAt]->(:Company)
-RETURN nodes(p) AS chain_of_colleagues
+RETURN nodes(p) AS chain_of_colleagues, path_length(p) AS hops
 ```
 
 ### List functions
@@ -294,12 +338,14 @@ RETURN zoned_datetime() AS now
 ### Generic functions
 
 - `coalesce(value1, value2, ...)` - returns the first non-null value.
+- `to_json_string(value)` - converts a value to its JSON string representation.
 
 **Example:**
 
 ```gql
 MATCH (p:Person)
-RETURN coalesce(p.firstName, 'Unknown') AS display_name
+RETURN coalesce(p.firstName, 'Unknown') AS display_name,
+       to_json_string(p) AS person_json
 ```
 
 ## Related content

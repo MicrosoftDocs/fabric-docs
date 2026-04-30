@@ -6,6 +6,7 @@ ms.topic: overview
 ms.custom:
   - fabric-cat
 ms.date: 02/13/2026
+ai-usage: ai-assisted
 ---
 
 # Compare Fabric Data Engineering and Azure Synapse Spark
