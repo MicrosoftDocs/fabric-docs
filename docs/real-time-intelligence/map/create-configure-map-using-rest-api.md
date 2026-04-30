@@ -37,21 +37,21 @@ This article demonstrates both approaches.
 - Python 3.9 or later
 - An OAuth 2.0 access token for the Fabric REST API
 
-## Example map definition (map.json)
+## Example map definition (`map.json`)
 
-The following example shows a simplified **map.json** payload that:
+The following example shows a simplified `map.json` payload that:
 
 - Uses the default basemap
-- Reads GeoJSON from a Lakehouse
-- Renders the data as a visible vector layer
+- Reads GeoJSON data from a Lakehouse data source
+- Renders the data as a vector layer
 
 The `map.json` definition is a **declarative configuration** that describes:
 
-- Data sources (for example, Lakehouse or Eventhouse)
-- Layer sources (files or queries used by the map)
-- Layer settings (how the data is visualized)
+- `dataSources` (for example, Lakehouse or Eventhouse resources that provide data)
+- `layerSources` (the files, tables, or functions that define the data for each layer)
+- `layerSettings` (the visualization settings for each layer, such as colors, icons, or styling)
 
-The definition describes *what the map should render*, not how to render it procedurally.
+The definition describes what the map should render, rather than defining procedural steps for rendering.
 
 ```json
 map_json = {
@@ -71,7 +71,7 @@ map_json = {
   "layerSources": [
     {
       "id": "points-source",
-      "name": "Points GeoJSON",
+      "name": "Points-GeoJSON",
       "type": "geojson",
       "itemId": "<lakehouse-item-id>",
       "relativePath": "Files/data/points.geojson",
