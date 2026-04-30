@@ -16,7 +16,7 @@ This connection is optional and allows other users to comment and collaborate on
 * You have access to Planning sheets.
 * You have permission in the plan item to create and manage connections.
 
-## Create a connection to a database for collaboration
+## Create a database connection for collaboration
 
 1. Inside a plan (preview) item, select **Set up connection**.
 
