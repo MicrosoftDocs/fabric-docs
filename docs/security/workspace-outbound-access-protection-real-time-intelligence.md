@@ -1,45 +1,99 @@
 ---
-title: Workspace outbound access protection for Real-Time Intelligence
+title: Workspace Outbound Access Protection for Real-Time Intelligence
 description: Learn how to configure Workspace Outbound Access Protection (outbound access protection) to secure your Real-Time Intelligence artifacts in Microsoft Fabric.
 #customer intent: As a workspace admin, I want to enable outbound access protection for my workspace so that I can secure Real-Time Intelligence data connections to only approved destinations.
 author: msmimart
 ms.author: mimart
-ms.date: 04/10/2026
+ms.date: 04/30/2026
 ms.topic: how-to
 ---
 
 # Workspace outbound access protection for Real-Time Intelligence (preview)
 
-Workspace outbound access protection helps safeguard your data by controlling outbound connections from Real-Time Intelligence items in your workspace to external data sources. When this feature is enabled, items are restricted from making outbound connections unless access is explicitly granted through approved data connection rules. 
+Workspace outbound access protection helps safeguard your data by controlling outbound connections from Real-Time Intelligence items in your workspace to external data sources. When you enable this feature, items can't make outbound connections unless you explicitly grant access through approved data connection rules. 
 
-Workspace outbound access protection for Real-Time Intelligence currently supports only the eventstream item type.
+This article describes how outbound access protection applies to Real-Time Intelligence items and what scenarios are supported when the protection is enabled. 
 
-## Understanding workspace outbound access protection for eventstreams
+> [!NOTE]
+> Workspace outbound access protection settings apply at the workspace level. All Real-Time Intelligence items in the workspace follow the same outbound access rules. 
 
-Workspace outbound access protection enables secure data ingestion by allowing workspace admins to control which external sources can connect to eventstreams within the workspace. When outbound access protection is enabled, eventstreams can only connect to data sources that have been explicitly approved through data connection rules.
+## Supported items
 
-The following table summarizes the supported sources and destinations for eventstreams:
+Workspace outbound access protection applies to the following Real-Time Intelligence items: 
 
-| Category | Details |
-|----------|---------|
-| **Supported sources** | Cloud or gateway connections |
-| **Supported destinations** | Lakehouse |
+- Eventhouse
+- Eventstream
 
-When outbound access protection is enabled, all outbound connections are blocked by default. The workspace admin must then configure data connection rules for cloud or gateway connection policies to specify which external sources the eventstream can connect to. Once these policies are set, the eventstream can connect only to the approved sources and the lakehouse that is set as the destination. All other outbound connections are blocked.
+## Outbound access protection for Eventstream
 
-:::image type="content" source="media/workspace-outbound-access-protection-real-time-intelligence/block-and-allow-small.png" alt-text="Screenshot of connections showing allowed connections to SQL Server and ADLS G2 Storage." lightbox="media/workspace-outbound-access-protection-real-time-intelligence/block-and-allow.png" border="false":::
+When you enable workspace outbound access protection, it restricts outbound access from Eventstream. By default, Eventstream can only perform a limited set of supported actions.
 
-### Configuring outbound access protection for eventstreams
+### Supported Eventstream outbound access scenarios
 
-You can only create an allow list using data connection rules; managed private endpoints aren't supported for eventstreams. To configure outbound access protection for eventstreams:
+- Send data to Real-Time Intelligence items in the **same workspace**.
 
-1. Follow the steps to [enable outbound access protection](workspace-outbound-access-protection-set-up.md). 
+- Send data to supported Microsoft Fabric items in the **same workspace**.
 
-1. After enabling outbound access protection, set up [data connection rules for cloud or gateway connection policies](workspace-outbound-access-protection-allow-list-connector.md) to allow outbound access to other workspaces or external resources as needed.
+These scenarios use internal Fabric communication and are allowed when outbound access protection is **enabled**.
 
-Once configured, Real-Time Intelligence items can connect only to the approved destinations specified in the data connection rules, while all other outbound connections remain blocked.
+### Unsupported Eventstream outbound access scenarios
+
+When you enable workspace outbound access protection, the following Eventstream outbound access scenarios are **blocked**:
+
+- Sending data to items in other workspaces, including other Real-Time Intelligence items or supported Microsoft Fabric items.
+
+- Sending data to external resources outside of Microsoft Fabric, such as external databases, APIs, or services.
+
+## Outbound access protection for Eventhouse
+
+When you enable workspace outbound access protection, outbound access from Eventhouse is restricted. By default, Eventhouse can only perform a limited set of supported actions.
+
+### Supported Eventhouse outbound access scenarios
+
+- Querying data stored in OneLake in the **same workspace**, when outbound access protection is **enabled**.
+
+- Querying other Eventhouse items in the **same workspace**, when outbound access protection is **enabled**.
+
+- Querying data stored in OneLake in other workspaces, if allowed by data connection rules.
+
+- Ingesting data from Azure Event Hubs, considering they aren't scoped to a Fabric workspace and aren't affected by outbound access protection settings.
+
+- Receiving data from Eventstream items in the same workspace.
+
+  - Eventstream scenarios that span multiple workspaces or external resources are blocked when outbound access protection is **enabled**, as mentioned in the Eventstream section above.
+
+### Unsupported Eventhouse outbound access scenarios
+
+When you enable workspace outbound access protection, the following Eventhouse outbound access scenarios are **blocked**:
+
+- Accessing Eventhouse items in other workspaces, except through OneLake as mentioned in the supported scenarios.
+
+- Accessing external resources outside of Microsoft Fabric, such as external databases, APIs, or services.
+
+- Performing outbound operations that aren't included in the supported scenarios.
+
+## Limitations
+
+- Eventhouse outbound access protection is in public preview.
+
+- Managed private endpoints aren't supported for Eventhouse.
+
+- Data connection rules aren't supported for Eventhouse.
+
+- You can't customize outbound access behavior per endpoint or service.
+
+- All Eventhouse items in the workspace follow the same outbound access settings.
+
+## Considerations
+
+- Workspace outbound access protection is enforced per workspace.
+
+- All Real-Time Intelligence items in the workspace share the same outbound access policy.
+
+- Inbound ingestion scenarios that don't require outbound workspace access (for example, Event Hubs ingestion) aren't affected.
 
 ## Next steps
 
+[Learn more about workspace outbound access protection](workspace-outbound-access-protection-overview.md)
 [Enable workspace outbound access protection](workspace-outbound-access-protection-set-up.md)
 [Create an allow list using data connection rules](workspace-outbound-access-protection-allow-list-connector.md)
