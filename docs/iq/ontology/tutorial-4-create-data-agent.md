@@ -24,7 +24,7 @@ Follow these steps to create a new data agent that connects to your ontology (pr
 
 1. The agent opens when it's ready. Select **Add a data source**. 
 
-    :::image type="content" source="media/tutorial-4-create-data-agent/add-source.png" alt-text="Screenshot of adding a source to the data agent.":::
+    :::image type="content" source="media/tutorial-4-create-data-agent/add-source.png" alt-text="Screenshot of adding a source to the data agent." lightbox="media/tutorial-4-create-data-agent/add-source.png":::
 
     Search for the *RetailSalesOntology* item and select **Add**. Now your ontology is added as a source for the data agent.
 

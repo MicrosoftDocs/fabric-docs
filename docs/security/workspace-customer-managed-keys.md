@@ -35,6 +35,7 @@ Customer-managed keys are currently supported for the following Fabric items:
 * Experiment
 * Pipeline
 * Dataflow
+* Copy job
 * Industry solutions
 * SQL Database
 * Eventhouse (preview)
