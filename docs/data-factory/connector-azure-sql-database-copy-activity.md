@@ -3,7 +3,7 @@ title: Configure Azure SQL Database in a copy activity
 description: This article explains how to copy data using Azure SQL Database.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 1/13/2025
+ms.date: 01/13/2025
 ms.custom:
   - pipelines
   - template-how-to
