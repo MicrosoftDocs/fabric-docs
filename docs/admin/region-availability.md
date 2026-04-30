@@ -33,16 +33,16 @@ This table lists regions where all Fabric workloads are available.
 | Canada Central                              | West Europe <sup>6</sup>     |             |                    | Australia Southeast <sup>6</sup> |
 | Canada East                                 | France Central               |             |                    | Central India                    |
 | Central US <sup>6</sup>                     | Germany West Central         |             |                    | East Asia                        |
-| East US <sup>4, 5</sup>                     | Italy North <sup>6</sup>     |             |                    | Indonesia Central <sup>1</sup>   |
-| East US 2 <sup>5</sup>                      | Norway East                  |             |                    | Israel Central <sup>1, 3, 6</sup>|
-| Mexico Central <sup>1, 6</sup>              | Poland Central <sup>6</sup>  |             |                    | Japan East                       |
-| North Central US                            | Spain Central <sup>1, 6</sup>|             |                    | Japan West <sup>1, 3, 5, 6</sup> |
+| East US <sup>4, 5</sup>                     | Italy North <sup>6</sup>     |             |                    | Indonesia Central   |
+| East US 2 <sup>5</sup>                      | Norway East                  |             |                    | Israel Central <sup>3, 6</sup>|
+| Mexico Central <sup>6</sup>              | Poland Central <sup>6</sup>  |             |                    | Japan East                       |
+| North Central US                            | Spain Central <sup>6</sup>|             |                    | Japan West <sup>3, 5, 6</sup> |
 | South Central US <sup>1, 2, 3, 4, 5, 6</sup>| Sweden Central               |             |                    | Korea Central                    |
-| West US                                     | Switzerland North            |             |                    | Malaysia West <sup>1</sup>       |
-| West US 2                                   | Switzerland West             |             |                    | New Zealand North <sup>1</sup>   |
+| West US                                     | Switzerland North            |             |                    | Malaysia West       |
+| West US 2                                   | Switzerland West             |             |                    | New Zealand North   |
 | West US 3 <sup>6</sup>                      | UK South                     |             |                    | Southeast Asia                   |
 |                                             | UK West                      |             |                    | South India                      |
-|                                             |                              |             |                    | Taiwan North <sup>1</sup>        |
+|                                             |                              |             |                    | Taiwan North        |
 |                                             |                              |             |                    | Taiwan Northwest <sup>1</sup>    |
 
 <sup>1</sup> [Ontology (preview)](../iq/ontology/overview.md) isn't available in these regions.
