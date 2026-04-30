@@ -11,7 +11,7 @@ ms.topic: tutorial
 [Mirroring in Fabric](../mirroring/overview.md) (now generally available) is an enterprise, cloud-based, zero-ETL, SaaS technology. In this section, you learn how to create a mirrored Azure Database for PostgreSQL flexible server, which creates a read-only, continuously replicated copy of your PostgreSQL data in OneLake.
 
 > [!IMPORTANT]  
-> Newly created Azure Database for PostgreSQL flexible servers after Ignite 2025 automatically include the latest general availability version of mirroring components. Existing servers upgrade progressively as part of the next maintenance cycles without requiring manual intervention. You don't need to disable and re-enable mirroring to receive updates.
+> Newly created Azure Database for PostgreSQL flexible servers after November 2025 automatically include the latest general availability version of mirroring components. Existing servers upgrade progressively as part of the next maintenance cycles without requiring manual intervention. You don't need to disable and re-enable mirroring to receive updates.
 
 ## Prerequisites
 
@@ -74,7 +74,7 @@ You can accomplish this by specifying a database role for connecting to your sou
     ```
 
 
-The database user created with one of the two previous methods also needs to be `owner` of the tables to replicate in the mirrored database. This means that tables have been created by that user, or that the ownership of those tables has been changed using `ALTER TABLE <table name here> OWNER TO <user>;`.
+The database user created with one of the two previous methods also needs to be `owner` of the tables to replicate in the mirrored database (this is inherited from [CREATE PUBLICATION requirements in PostgreSQL](https://www.postgresql.org/docs/current/sql-createpublication.html)). This means that tables have been created by that user, or that the ownership of those tables has been changed using `ALTER TABLE <table name here> OWNER TO <user>;`.
 
 - When switching ownership to new user, you might need to grant to that user all privileges on `public` schema before. For more information regarding user account management, see Azure Database for PostgreSQL [user management](/azure/postgresql/flexible-server/how-to-create-users) documentation, PostgreSQL product documentation for [Database Roles and Privileges](https://www.postgresql.org/docs/current/static/user-manag.html), [GRANT Syntax](https://www.postgresql.org/docs/current/static/sql-grant.html), and [Privileges](https://www.postgresql.org/docs/current/static/ddl-priv.html).
 
