@@ -1,6 +1,6 @@
 ---
 title: Manage MLflow models across workspaces and platforms
-description: Learn how to use cross-workspace logging to build MLOps workflows across Fabric workspaces and bring existing ML models from local machines, Azure Databricks, Azure Machine Learning, and other platforms into Fabric.
+description: Learn how to build MLOps workflows across Fabric workspaces and bring existing machine learning models into Fabric by using cross-workspace logging.
 author: ruixinxu
 ms.author: ruxu
 ms.reviewer: mopeez
@@ -12,37 +12,38 @@ ai-usage: ai-assisted
 
 # Manage MLflow models across workspaces and platforms
 
-Production machine learning requires more than training a good model — you need reliable workflows to move models from development through validation into production. Cross-workspace logging in Microsoft Fabric enables two key scenarios:
+Production machine learning requires more than training a good model. You need reliable workflows to move models from development through validation into production. Cross-workspace logging in Microsoft Fabric enables two key scenarios:
 
-- **Build end-to-end MLOps workflows.** Train and experiment in a development workspace, validate in a test workspace, and deploy to a production serving workspace — all using standard MLflow APIs. This separation of environments helps teams enforce quality gates and maintain clear audit trails from experimentation to production.
+- **Build end-to-end MLOps workflows**. Train and experiment in a development workspace, validate in a test workspace, and deploy to a production-serving workspace by using standard MLflow APIs. This separation of environments helps teams enforce quality gates and maintain clear audit trails from experimentation to production.
 
-- **Bring existing ML assets into Fabric.** If you already have trained models in Azure Databricks, Azure Machine Learning, a local environment, or any other platform that supports MLflow, you can log those experiments and models directly into a Fabric workspace. This makes it easy to consolidate your ML artifacts in one place without rebuilding your training pipelines.
+- **Bring existing machine learning assets into Fabric**. If you already trained models in Azure Databricks, Azure Machine Learning, a local environment, or any other platform that supports MLflow, you can log those experiments and models directly into a Fabric workspace. You can easily consolidate your machine learning artifacts in one place without rebuilding your training pipelines.
 
-Cross-workspace logging works through the `synapseml-mlflow` package, which provides a Fabric-compatible MLflow tracking plugin. You authenticate with your target workspace, set the tracking URI, and use standard MLflow commands — the same code you already know.
+Cross-workspace logging works through the `synapseml-mlflow` package, which provides a Fabric-compatible MLflow tracking plugin. You authenticate with your target workspace, set the tracking URI, and use standard MLflow commands.
 
 > [!NOTE]
-> Cross-workspace logging focuses on the **code-first experience**. UI integration for cross-workspace scenarios will be addressed in a future release.
+> Cross-workspace logging focuses on the *code-first experience*. UI integration for cross-workspace scenarios will be addressed in a future release.
 
 ## Prerequisites
 
-- A [Microsoft Fabric subscription](/fabric/enterprise/licenses). Or, sign up for a free [Microsoft Fabric trial](/fabric/get-started/fabric-trial).
-- **WRITE** permission on the target Fabric workspace.
-- [Upgrade your machine learning tracking system](mlflow-upgrade.md) for both source and target workspaces.
-- For Fabric notebook scenarios: Create a new notebook and attach a Lakehouse before running code.
+- A [Microsoft Fabric subscription](/fabric/enterprise/licenses) or a free [Microsoft Fabric trial](/fabric/get-started/fabric-trial).
+- Write permission on the target Fabric workspace.
+- [A machine learning tracking system](mlflow-upgrade.md) that's upgraded for both source and target workspaces.
+
+For Fabric notebook scenarios, create a new notebook and attach a lakehouse before you run any code.
 
 > [!TIP]
 > Cross-workspace logging is supported in workspaces with [outbound access protection](../security/workspace-outbound-access-protection-data-science.md#cross-workspace-logging-with-outbound-access-protection) enabled. Cross-workspace logging to a different workspace requires a managed private endpoint. Logging within the same workspace and from outside Fabric works without additional configuration.
 
 ## Install the MLflow plugin
 
-The `synapseml-mlflow` package enables cross-workspace logging by providing the Fabric MLflow tracking plugin. Choose the install command based on your environment:
+The `synapseml-mlflow` package enables cross-workspace logging by providing the Fabric MLflow tracking plugin. Choose the install command based on your environment.
 
 > [!IMPORTANT]
-> MLflow 3 is not yet supported. You must pin `mlflow-skinny` to version 2.22.2 or earlier.
+> MLflow 3 isn't currently supported. You must pin `mlflow-skinny` to version 2.22.2 or earlier.
 
 ### [Fabric notebook](#tab/fabric-notebook)
 
-Use this command in a Fabric notebook to install the package with online notebook dependencies.
+For a Fabric notebook, use this command to install the package with online notebook dependencies:
 
 ```python
 %pip install -U "synapseml-mlflow[online-notebook]" "mlflow-skinny<=2.22.2"
@@ -50,7 +51,7 @@ Use this command in a Fabric notebook to install the package with online noteboo
 
 ### [Outside Fabric workspace](#tab/local)
 
-Use this command in any environment outside Fabric, such as a local machine (VS Code, Jupyter), Azure Databricks, Azure Machine Learning, or any other platform that supports Python and MLflow.
+In any environment outside Fabric, such as a local machine (Visual Studio Code, Jupyter), Azure Databricks, Azure Machine Learning, or any other platform that supports Python and MLflow, use this command:
 
 ```bash
 pip install -U "synapseml-mlflow" "mlflow-skinny<=2.22.2"
@@ -66,7 +67,7 @@ In this scenario, you run a notebook in one Fabric workspace (source) and log ex
 
 ### Set the target workspace
 
-Set the `MLFLOW_TRACKING_URI` environment variable to point to your target workspace:
+Point to your target workspace by setting the `MLFLOW_TRACKING_URI` environment variable:
 
 ```python
 import os
@@ -115,11 +116,11 @@ with mlflow.start_run() as run:
     )
 ```
 
-After the run completes, the experiment and registered model appear in the **target workspace**.
+After the run finishes, the experiment and registered model appear in the target workspace.
 
 ## Move MLflow objects between Fabric workspaces
 
-In this scenario, you first log objects in the source workspace, then download the artifacts and re-log them to the target workspace. This is useful when you need to promote a trained model from a development workspace to a production workspace.
+In this scenario, you first log objects in the source workspace, then download the artifacts and re-log them to the target workspace. This method is useful when you need to promote a trained model from a development workspace to a production workspace.
 
 ### Step 1: Log objects in the source workspace
 
@@ -183,10 +184,10 @@ with mlflow.start_run() as run:
 
 You can log MLflow experiments and models to a Fabric workspace from any environment where you build your models, including:
 
-- **Local machines** — VS Code, Jupyter notebooks, or any local Python environment.
-- **Azure Databricks** — Databricks notebooks and jobs.
-- **Azure Machine Learning** — Azure ML compute instances and pipelines.
-- **Any other platform** — Any environment that supports Python and MLflow.
+- **Local machines**. VS Code, Jupyter notebooks, or any local Python environment.
+- **Azure Databricks**. Azure Databricks notebooks and jobs.
+- **Azure Machine Learning**. Azure Machine Learning compute instances and pipelines.
+- **Any other platform**. Any environment that supports Python and MLflow.
 
 ### Step 1: Install the package
 
@@ -200,7 +201,7 @@ pip install -U "synapseml-mlflow" "mlflow-skinny<=2.22.2"
 
 Choose an authentication method based on your environment:
 
-#### [Interactive (DefaultAzureCredential)](#tab/auth-interactive)
+#### [Interactive (`DefaultAzureCredential`)](#tab/auth-interactive)
 
 Use this method for local development environments with browser access, such as VS Code or Jupyter.
 
@@ -213,7 +214,7 @@ SetFabricAnalyticsDefaultTokenCredentialsGlobally(
 )
 ```
 
-#### [Device Code](#tab/auth-device-code)
+#### [Device code](#tab/auth-device-code)
 
 Use this method for environments without a browser, such as Azure Databricks notebooks or remote servers. Follow the on-screen instructions to complete authentication.
 
@@ -227,34 +228,34 @@ SetFabricAnalyticsDefaultTokenCredentialsGlobally(
 )
 ```
 
-#### [Service Principal](#tab/auth-spn)
+#### [Service principal](#tab/auth-spn)
 
-Use this method for non-interactive scenarios such as automated pipelines, CI/CD, or production workloads.
+Use this method for non-interactive scenarios such as automated pipelines, continuous integration and continuous delivery (CI/CD), or production workloads.
 
 1. In Microsoft Entra ID, [create an app registration](/entra/identity-platform/quickstart-register-app).
-2. Note the **Tenant ID**, **Client ID**, and create a **Client Secret**.
-3. Grant the service principal **WRITE** permission on the target Fabric workspace.
+1. Note the values for **Tenant ID** and **Client ID**. Create a **Client Secret**.
+1. Grant write permission to the service principal on the target Fabric workspace.
 
-```python
-from fabric.analytics.environment.credentials import SetFabricAnalyticsDefaultTokenCredentialsGlobally
-from azure.identity import ClientSecretCredential
+   ```python
+   from fabric.analytics.environment.credentials import SetFabricAnalyticsDefaultTokenCredentialsGlobally
+   from azure.identity import ClientSecretCredential
 
-spn_credential = ClientSecretCredential(
-    tenant_id="<your-tenant-id>",
-    client_id="<your-client-id>",
-    client_secret="<your-client-secret>"
-)
+   spn_credential = ClientSecretCredential(
+       tenant_id="<your-tenant-id>",
+       client_id="<your-client-id>",
+       client_secret="<your-client-secret>"
+   )
 
-SetFabricAnalyticsDefaultTokenCredentialsGlobally(
-    credential=spn_credential
-)
-```
+   SetFabricAnalyticsDefaultTokenCredentialsGlobally(
+       credential=spn_credential
+   )
+   ```
 
 ---
 
-### Step 3: Set target workspace and log MLflow objects
+### Step 3: Set the target workspace and log MLflow objects
 
-After authentication, set the tracking URI to point to your target Fabric workspace and log experiments and models using standard MLflow APIs:
+After authentication, set the tracking URI to point to your target Fabric workspace and log experiments and models by using standard MLflow APIs:
 
 ```python
 import os
@@ -290,58 +291,56 @@ with mlflow.start_run() as run:
 
 ## Use cross-workspace logging with outbound access protection
 
-If your workspace has [outbound access protection](../security/workspace-outbound-access-protection-overview.md) enabled, cross-workspace logging requires a [cross-workspace managed private endpoint](../security/workspace-outbound-access-protection-allow-list-endpoint.md#allow-outbound-access-to-another-workspace-in-the-tenant) from the source workspace to the target workspace. Logging within the same workspace and logging from outside Fabric (local machines, Azure Databricks, Azure Machine Learning) work without additional configuration.
+If your workspace has [outbound access protection](../security/workspace-outbound-access-protection-overview.md) enabled, cross-workspace logging requires a [cross-workspace managed private endpoint](../security/workspace-outbound-access-protection-allow-list-endpoint.md#allow-outbound-access-to-another-workspace-in-the-tenant) from the source workspace to the target workspace.
 
-For details on supported scenarios and required configuration, see [Workspace outbound access protection for Data Science](../security/workspace-outbound-access-protection-data-science.md#cross-workspace-logging-with-outbound-access-protection).
+Logging within the same workspace and logging from outside Fabric (local machines, Azure Databricks, Azure Machine Learning) work without additional configuration.
+
+For details on supported scenarios and required configuration, see [Workspace outbound access protection for Fabric Data Science](../security/workspace-outbound-access-protection-data-science.md#cross-workspace-logging-with-outbound-access-protection).
 
 ### Install the package in an OAP-enabled workspace
 
-The standard `%pip install` command requires outbound internet access, which is blocked in OAP-enabled workspaces. To install the `synapseml-mlflow` package, first download it from a non-OAP environment, then upload it to the lakehouse.
+The standard `%pip install` command requires outbound internet access, which is blocked in workspaces with outbound access protection (OAP) enabled. To install the `synapseml-mlflow` package, first download it from a non-OAP environment, then upload it to the lakehouse.
 
-**Step 1: Download the package** 
-Download the synapseml-mlflow package from a machine that has internet access.
+1. Download the `synapseml-mlflow` package from a machine that has internet access.
 
-```bash
-pip download synapseml-mlflow[online-notebook]
-```
+   ```bash
+   pip download synapseml-mlflow[online-notebook]
+   ```
 
-**Step 2: Upload the downloaded files** 
-Upload the downloaded files to the lakehouse in your OAP-enabled workspace. Upload all `.whl` files to the **Files** section of the lakehouse (for example, `/lakehouse/default/Files`).
+1. Upload the downloaded files to the lakehouse in your OAP-enabled workspace. Upload all `.whl` files to the **Files** section of the lakehouse (for example, `/lakehouse/default/Files`).
 
-**Step 3: Install from the lakehouse path in your Fabric notebook**
+1. Install from the lakehouse path in your Fabric notebook:
 
-```python
-%pip install --no-index --find-links=/lakehouse/default/Files "synapseml-mlflow[online-notebook]>2.0.0" "mlflow-skinny<=2.22.2" --pre
-```
+   ```python
+   %pip install --no-index --find-links=/lakehouse/default/Files "synapseml-mlflow[online-notebook]>2.0.0" "mlflow-skinny<=2.22.2" --pre
+   ```
 
-**Step 4: Set the tracking URI to use the managed private endpoint**
+1. Set the tracking URI to use the managed private endpoint. If your current workspace has OAP enabled, you must configure a [cross-workspace managed private endpoint](../security/workspace-outbound-access-protection-allow-list-endpoint.md#allow-outbound-access-to-another-workspace-in-the-tenant) from the source workspace to the target workspace. Then, route the tracking URI through the private endpoint.
 
-If your current workspace has OAP enabled, you must config a [cross-workspace managed private endpoint](../security/workspace-outbound-access-protection-allow-list-endpoint.md#allow-outbound-access-to-another-workspace-in-the-tenant) from the source workspace to the target workspace and route the tracking URI through the private endpoint.
+   ```python
+   import os
+   from fabric.analytics.environment.context import FabricContext, InternalContext
 
-```python
-import os
-from fabric.analytics.environment.context import FabricContext, InternalContext
+   context = FabricContext(workspace_id=target_workspace_id, internal_context=InternalContext(is_wspl_enabled=True))
+   print(context.pbi_shared_host)
+   # You need to set up and use this private endpoint if your current workspace has OAP enabled
 
-context = FabricContext(workspace_id=target_workspace_id, internal_context=InternalContext(is_wspl_enabled=True))
-print(context.pbi_shared_host)
-# You need to set up and use this private endpoint if your current workspace has OAP enabled
-
-os.environ["MLFLOW_TRACKING_URI"] = f"sds://{context.pbi_shared_host}/v1/workspaces/{target_workspace_id}/mlflow"
-```
+   os.environ["MLFLOW_TRACKING_URI"] = f"sds://{context.pbi_shared_host}/v1/workspaces/{target_workspace_id}/mlflow"
+   ```
 
 ## Known limitations
 
-- **WRITE permission required.** You must have WRITE permission on the target workspace.
-- **Cross-workspace lineage not supported.** You can't view relationships between notebooks, experiments, and models when these objects are logged from different workspaces.
-- **Source notebook not visible in target workspace.** The source notebook doesn't appear in the target workspace. On artifact details and list pages, the link to the source notebook is empty.
-- **Item snapshots not supported.** ML experiments or models logged to another workspace don't appear in the source run notebook item snapshot.
-- **Large language models not supported.** Cross-workspace logging doesn't support large language models (LLMs).
+- **Write permission is required**. You must have write permission on the target workspace.
+- **Cross-workspace lineage isn't supported**. You can't view relationships between notebooks, experiments, and models when these objects are logged from different workspaces.
+- **The source notebook isn't visible in the target workspace**. The source notebook doesn't appear in the target workspace. On artifact details and list pages, the link to the source notebook is empty.
+- **Item snapshots aren't supported**. Machine learning experiments or models that are logged to another workspace don't appear in the snapshot of the source-run notebook item.
+- **Large language models aren't supported**. Cross-workspace logging doesn't support large language models (LLMs).
 
 ## Related content
 
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
 - [Track and manage machine learning models](machine-learning-model.md)
 - [Upgrade your machine learning tracking system](mlflow-upgrade.md)
-- [Autologging in Microsoft Fabric](mlflow-autologging.md)
-- [Machine learning experiments and models Git integration and deployment pipelines](machine-learning-artifacts-git-deployment-pipelines.md)
+- [Autolog in Microsoft Fabric](mlflow-autologging.md)
+- [Git integration and deployment pipelines for machine learning experiments and models](machine-learning-artifacts-git-deployment-pipelines.md)
 - [Workspace outbound access protection for Data Science](../security/workspace-outbound-access-protection-data-science.md)
