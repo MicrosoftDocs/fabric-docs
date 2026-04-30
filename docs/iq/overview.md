@@ -16,7 +16,7 @@ As a [workload in Fabric](../fundamentals/fabric-terminology.md), Fabric IQ is a
 * [Ontology (preview)](ontology/overview.md)
 * [Plan (preview)](plan/overview.md)
 * [Graph (preview)](../graph/overview.md)
-* [Data agent (preview)](../data-science/concept-data-agent.md)
+* [Data agent](../data-science/concept-data-agent.md)
 * [Operations agent (preview)](../real-time-intelligence/operations-agent.md)
 * [Power BI semantic models](../data-warehouse/semantic-models.md)
 
