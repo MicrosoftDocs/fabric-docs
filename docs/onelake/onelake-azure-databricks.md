@@ -1,28 +1,28 @@
 ---
 title: Integrate OneLake with Azure Databricks
 description: Learn how to connect to OneLake from Azure Databricks. After completing this tutorial, you can read and write to a lakehouse from Azure Databricks.
-ms.reviewer: eloldag, mabasile # Product team ms alias(es)
+ms.reviewer: preshah # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ai-usage: ai-assisted
-ms.date: 03/23/2026
+ms.date: 04/30/2026
 #customer intent: As a data engineer, I want to learn how to integrate OneLake with Azure Databricks so that I can read and write data to a Microsoft Fabric lakehouse from my Azure Databricks workspace.
 ---
 
 # Integrate OneLake with Azure Databricks
 
-This article shows how to read and write data in OneLake from an Azure Databricks notebook. Both approaches use service principal authentication and the OneLake ABFS endpoint. Choose the section that matches your Databricks compute type:
+This article shows how to access **OneLake data from Azure Databricks**. Both approaches use service principal authentication and the OneLake ABFS endpoint. Choose the section that matches your Databricks compute type:
 
 - **Standard or job cluster**: Use the Spark ABFS driver with OAuth configuration to read and write data directly through Spark DataFrames.
 - **Serverless compute**: Serverless runtimes don't allow you to set custom Spark configuration properties. Instead, use the Microsoft Authentication Library (MSAL) and the Python `deltalake` library to authenticate and read or write Delta tables.
 
-For other Databricks integration scenarios, see the following resources:
+For related Databricks integration scenarios, see the following resources:
 
 | Scenario | Documentation |
 | -------- | ------------- |
-| Configure read-only access to OneLake data for Unity Catalog | [Enable OneLake catalog federation](/azure/databricks/query-federation/onelake) |
-| Bring Unity Catalog data into OneLake | [Mirroring Azure Databricks Unity Catalog](../mirroring/azure-databricks.md) |
+| Query OneLake data from Unity Catalog without copying it | [Enable OneLake catalog federation](/azure/databricks/query-federation/onelake) |
+| Access Databricks Unity Catalog data from Fabric | [Mirroring Azure Databricks Unity Catalog](../mirroring/azure-databricks.md) |
 
 ## Prerequisites
 
@@ -94,7 +94,7 @@ Instead, use MSAL to acquire an OAuth token and the Python `deltalake` library t
 
 ### Set up a serverless notebook
 
-1. Create a notebook in Databricks workspace and attach it to serverless compute.
+1. Create a notebook in your Databricks workspace and attach it to serverless compute.
 
    :::image type="content" source="media\onelake-azure-databricks\connect-to-serverless.png" alt-text="Screenshot showing how to connect Databricks notebook with serverless compute.":::
 
@@ -112,8 +112,8 @@ Instead, use MSAL to acquire an OAuth token and the Python `deltalake` library t
 
    ```python
    # Fetch from Databricks secrets.
-   tenant_id = dbutils.secrets.get(scope="<replace-scope-name>",key="<replace value with key value for tenant _id>")
-   client_id = dbutils.secrets.get(scope="<replace-scope-name>",key="<replace value with key value for client _id>")
+   tenant_id = dbutils.secrets.get(scope="<replace-scope-name>",key="<replace value with key value for tenant_id>")
+   client_id = dbutils.secrets.get(scope="<replace-scope-name>",key="<replace value with key value for client_id>")
    client_secret = dbutils.secrets.get(scope="<replace-scope-name>",key="<replace value with key value for secret>")
    ```
 
@@ -140,9 +140,10 @@ Instead, use MSAL to acquire an OAuth token and the Python `deltalake` library t
    result = app.acquire_token_for_client(scopes=["https://onelake.fabric.microsoft.com/.default"])
 
    if "access_token" in result:
-       access_token = result["access_token"]
        print("Access token acquired.")
        token_val = result['access_token']
+   else:
+       raise Exception(f"Failed to acquire token: {result.get('error_description', result)}")
    ```
 
 1. Read a Delta table from OneLake.
@@ -175,4 +176,3 @@ Instead, use MSAL to acquire an OAuth token and the Python `deltalake` library t
 
 - [Use OneLake with Azure Databricks](/azure/databricks/query-federation/onelake)
 - [Mounting cloud object storage on Azure Databricks](/azure/databricks/dbfs/mounts)
-- [Integrate OneLake with Azure HDInsight](onelake-azure-hdinsight.md)
