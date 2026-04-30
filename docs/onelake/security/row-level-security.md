@@ -3,7 +3,7 @@ title: Row-level security
 description: Learn how to use OneLake security to enforce access permissions at the row level in OneLake.
 ms.reviewer: aamerril
 ms.topic: how-to
-ms.date: 09/05/2025
+ms.date: 04/29/2026
 #customer intent: As a [], I want to learn how to [] so that I can [].
 ---
 
@@ -13,16 +13,15 @@ Row-level security (RLS) is a feature of OneLake security that allows for defini
 
 ## Prerequisites
 
-* An OneLake security supported item type, see [Get started with OneLake data access roles](get-started-onelake-security.md).
-* For creating semantic models, use the steps to create a [DirectLake model](../../fundamentals/direct-lake-power-bi-desktop.md).
-* For a full list of limitations, see the [known limitations section.](./data-access-control-model.md#onelake-security-limitations)
+* A data item that supports OneLake security. For a list of supported item types, see [Get started with OneLake security](get-started-onelake-security.md).
+* Review the [known limitations section](./data-access-control-model.md#onelake-security-limitations).
 
-## Enforce row-level security
+## Understand row-level security
 
-OneLake security RLS gets enforced in one of two ways: 
+OneLake security RLS gets enforced in one of two ways:
 
 * **Filtered tables in Fabric engines:** Queries to the list of supported Fabric engines, like Spark notebooks, result in the user seeing only the rows they're allowed to see per the RLS rules.
-* **Blocked access to tables:** Tables with RLS rules applied to them can't be read outside of supported Fabric engines or [authorized third-party engines](./onelake-security-integrations-overview.md) that enforce OneLake security. Access is blocked for non-authorized engines.
+* **Blocked access to tables:** Tables with RLS rules applied to them can't be read except through supported Fabric engines or authorized third-party engines that enforce OneLake security. Access is blocked for non-authorized engines.
 
 For filtered tables, the following behaviors apply:
 
@@ -33,7 +32,14 @@ For filtered tables, the following behaviors apply:
   * RLS rules that are applied to non-Delta table objects instead block access to the entire table for members of the role.
 * Access to a table might be blocked if the RLS statement contains syntax errors that prevent it from being evaluated.
 
-### Authorized engine enforcement
+### Access data from authorized engines
+
+[Supported Fabric engines](./data-access-control-model.md#engine-and-user-access-to-data) can access tables with RLS rules applied to them.
+
+>[!TIP]
+>
+>* To access data from a SQL analytics endpoint, [enable OneLake security for SQL analytics endpoint](./get-started-onelake-security.md#enable-onelake-security-for-sql-analytics-endpoint).
+>* To access data from a semantic model, the semantic model needs to use [Direct Lake on OneLake](../../fundamentals/direct-lake-develop.md).
 
 Authorized third-party engines can retrieve effective access definitions, including RLS predicates, through the [authorized engine APIs](./onelake-security-integrations-overview.md). OneLake returns engine-agnostic, precomputed effective access for the requesting user, and the authorized engine enforces the policies at query time. OneLake remains the single source of truth for security policies.
 
@@ -60,27 +66,6 @@ Use the following steps to define RLS rules:
 1. Type the SQL statement for defining which rows you want users to see in the code editor. Use the [Syntax rules](#syntax-rules) section for guidance. 
 
 1. Select **Save** to confirm the row security rules.
-
-### Enable OneLake security for SQL analytics endpoint
-
-Before you can use OneLake security with SQL analytics endpoint, you must enable its **User's identity mode**. Newly created SQL analytics endpoints will default to user's identity mode, so these steps must be followed for existing SQL analytics endpoints.
-
-> [!NOTE]
-> Switching to **User's identity** mode only needs to be done once per SQL analytics endpoint. Endpoints that are not switched to user's identity mode will continue to use a delegated identity to evaluate permissions.
-
-1. Navigate to SQL analytics endpoint.
-
-1. In the SQL analytics endpoint experience, select the **Security** tab in the top ribbon.
-
-1. Select **User's identity** under **OneLake access mode**.
-
-   :::image type="content" source="./media/row-level-security/sqlaep-enable-userid.png" alt-text="Screenshot that shows selecting 'user identity' to enable OneLake security for SQL analytics endpoint.":::
-
-1. In the prompt, select **Yes, use the user's identity**. 
-
-   :::image type="content" source="./media/row-level-security/sqlaep-prompt.png" alt-text="Screenshot that shows user prompt which must be accepted to enable OneLake security for table read access.":::
-
-Now the SQL analytics endpoint is ready to use with OneLake security.
 
 ## Syntax rules
 

@@ -3,7 +3,7 @@ title: Table and folder security in OneLake
 description: Learn how to use OneLake security to enforce access permissions at the table and folder level in OneLake.
 ms.reviewer: aamerril
 ms.topic: how-to
-ms.date: 09/05/2025
+ms.date: 04/29/2026
 #customer intent: As a [], I want to learn how to [] so that I can [].
 ---
 
@@ -13,9 +13,8 @@ Table-level and folder-level security, or object level security (OLS), is a feat
 
 ## Prerequisites
 
-* An OneLake security supported item type, see [Get started with OneLake data access roles](get-started-onelake-security.md).
-* For creating semantic models, use the steps to create a [DirectLake model](../../fundamentals/direct-lake-power-bi-desktop.md).
-* For a full list of limitations, see the [known limitations section.](./data-access-control-model.md#onelake-security-limitations)
+* A data item that supports OneLake security. For a list of supported item types, see [Get started with OneLake security](get-started-onelake-security.md).
+* Review the [known limitations section](./data-access-control-model.md#onelake-security-limitations).
 
 ## Define security rules
 

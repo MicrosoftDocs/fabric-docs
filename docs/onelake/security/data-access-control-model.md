@@ -91,23 +91,22 @@ Data access to OneLake occurs in one of two ways:
 
 OneLake security ensures that data is always kept secure. Because certain OneLake security features like row and column level security aren't supported by storage level operations, not all types of access to row or column level secured data can be permitted. This guarantees that users can't see rows or columns they aren't permitted to. Microsoft Fabric engines are enabled to apply row and column level security filtering to data queries. This means when a user queries data in a lakehouse or other item with OneLake security RLS or CLS on it, the results the user sees have the hidden rows and columns removed. For user access to data in OneLake with RLS or CLS on it, the query is blocked if the user requesting access isn't permitted to see all the rows or columns in that table.
 
-### Authorized third-party engines
-
-OneLake security supports enforcement by authorized third-party engines through the [authorized engine model](./onelake-security-integrations-overview.md). External engines can register as authorized engines and retrieve security definitions and precomputed effective access through OneLake APIs. These engines enforce table permissions, RLS, and CLS at query time in their own compute layer. OneLake remains the single source of truth for access control, while engines retain full control over query optimization and execution.
-
-For more information on integrating an engine with OneLake security, see [OneLake security integrations overview](./onelake-security-integrations-overview.md).
-
 The table below outlines which engines support RLS and CLS filtering.
 
 | **Engine** | **RLS/CLS filtering** | **Status** |
 |---|---|---|---|---|
 | Lakehouse | Yes | GA |
-| Spark notebooks | Yes | GA |
-| SQL Analytics Endpoint in "user's identity mode" | Yes | GA |
-| Semantic models using DirectLake on OneLake mode | Yes | GA |
-| Eventhouse | RLS | Public preview |
-| Data warehouse external tables | No | Planned |
+| [Spark notebooks](../../data-engineering/spark-onelake-security.md) | Yes | GA |
+| [SQL Analytics Endpoint in **user's identity access mode**](./get-started-onelake-security.md#enable-onelake-security-for-sql-analytics-endpoint) | Yes | GA |
+| [Semantic models using Direct Lake on OneLake mode](../../fundamentals/direct-lake-develop.md) | Yes | GA |
+| Eventhouse | RLS only | Public preview |
 | Authorized third-party engines (via OneLake authorized engine APIs) | Yes (when implemented by the engine) | Public preview |
+
+### Authorized third-party engines
+
+OneLake security supports enforcement by authorized third-party engines through the [authorized engine model](./onelake-security-integrations-overview.md). External engines can register as authorized engines and retrieve security definitions and precomputed effective access through OneLake APIs. These engines enforce table permissions, RLS, and CLS at query time in their own compute layer. OneLake remains the single source of truth for access control, while engines retain full control over query optimization and execution.
+
+For more information on integrating an engine with OneLake security, see [OneLake security integrations overview](./onelake-security-integrations-overview.md).
 
 ## OneLake security access control model details
 
