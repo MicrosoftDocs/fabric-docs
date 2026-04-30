@@ -4,26 +4,26 @@ description: Learn how to connect, query, and manage Spark workloads in Microsof
 ms.reviewer: arali
 ms.topic: how-to
 ms.date: 12/05/2025
+ai-usage: ai-assisted
 ---
 
-# Microsoft JDBC driver for Microsoft Fabric Data Engineering (preview)
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+# Microsoft JDBC driver for Microsoft Fabric Data Engineering
 
 JDBC (Java Database Connectivity) is a widely adopted standard that enables client applications to connect to and work with data from databases and big data platforms.
 
-The Microsoft JDBC Driver for Fabric Data Engineering lets you connect, query, and manage Spark workloads in Microsoft Fabric with the reliability and simplicity of the JDBC standard. Built on Microsoft Fabric's Livy APIs, the driver provides secure and flexible Spark SQL connectivity to your Java applications and BI tools. This integration allows you to submit and execute Spark code directly without needing to create separate Notebook or Spark Job Definition artifacts.
+The Microsoft JDBC Driver for Fabric Data Engineering lets you connect, query, and manage Spark workloads in Microsoft Fabric with the reliability and simplicity of the JDBC standard. Built on Microsoft Fabric's Livy APIs, the driver provides secure and flexible Spark SQL connectivity to your Java applications and BI tools. This integration allows you to submit and execute Spark code directly without needing to create separate Notebook or Spark Job Definition artifacts. The driver is compatible with popular JDBC clients such as DbVisualizer and DBeaver, as well as BI tools that support JDBC connectivity, including Tableau.
 
 ## Key Features
 
 - **JDBC 4.2 Compliant**: Full implementation of JDBC 4.2 specification
 - **Microsoft Entra ID Authentication**: Multiple authentication flows including interactive, client credentials, and certificate-based authentication
-- **Enterprise Connection Pooling**: Built-in connection pooling with health monitoring and automatic recovery
+- **Enterprise Connection Pooling**: Built-in connection pooling with health monitoring, automatic recovery, and HikariCP integration
 - **Spark SQL Native Query Support**: Direct execution of Spark SQL statements without translation
 - **Comprehensive Data Type Support**: Support for all Spark SQL data types including complex types (ARRAY, MAP, STRUCT)
 - **Asynchronous Result Set Prefetching**: Background data loading for improved performance
 - **Circuit Breaker Pattern**: Protection against cascading failures with automatic retry
 - **Auto-Reconnection**: Transparent session recovery on connection failures
+- **Advanced Retry Logic**: Retry with exponential backoff and session recovery for improved resilience
 - **Proxy Support**: HTTP and SOCKS proxy configuration for enterprise environments
 
 ## Prerequisites
@@ -32,12 +32,12 @@ Before using the Microsoft JDBC Driver for Microsoft Fabric Data Engineering, en
 
 - **Java Development Kit (JDK)**: Version 11 or higher (Java 21 recommended)
 - **Microsoft Fabric Access**: Access to a Microsoft Fabric workspace
-- **Azure Entra ID Credentials**: Appropriate credentials for authentication
+- **Microsoft Entra ID credentials**: Appropriate credentials for authentication
 - **Workspace and Lakehouse IDs**: GUID identifiers for your Fabric workspace and lakehouse
 
 ## Download and Installation
 
-Microsoft JDBC Driver for Microsoft Fabric Data Engineering version 1.0.0 is the public preview version and supports Java 11, 17 and 21. We're continually improving Java connectivity support and recommend that you work with the latest version of the Microsoft JDBC driver.
+Microsoft JDBC Driver for Microsoft Fabric Data Engineering version 1.0.0 supports Java 11, 17, and 21. We're continually improving Java connectivity support and recommend that you work with the latest version of the Microsoft JDBC driver.
 
 * [Download Microsoft JDBC Driver for Microsoft Fabric Data Engineering (zip)](https://download.microsoft.com/download/5e763393-274e-48c5-a55a-0375340bc520/ms-sparksql-jdbc-1.0.0.zip)
 * [Download Microsoft JDBC Driver for Microsoft Fabric Data Engineering (tar)](https://download.microsoft.com/download/5e763393-274e-48c5-a55a-0375340bc520/ms-sparksql-jdbc-1.0.0.tar)
@@ -152,7 +152,7 @@ Connection conn = DriverManager.getConnection(url);
 
 **Parameters:**
 - `AuthFlow=1`: Specifies interactive browser authentication
-- `AuthTenantID` (optional): Azure tenant ID
+- `AuthTenantID` (optional): Microsoft Entra tenant ID
 - `AuthClientID` (optional): Application (client) ID
 
 **Behavior:**
@@ -181,7 +181,7 @@ Connection conn = DriverManager.getConnection(url);
 - `AuthFlow=3`: Specifies client credentials authentication
 - `AuthClientID`: Application (client) ID from Microsoft Entra ID
 - `AuthClientSecret`: Client secret from Microsoft Entra ID
-- `AuthTenantID`: Azure tenant ID
+- `AuthTenantID`: Microsoft Entra tenant ID
 
 **Best Practices:**
 - Store secrets securely (Azure Key Vault, environment variables)
@@ -211,7 +211,7 @@ Connection conn = DriverManager.getConnection(url);
 - `AuthClientID`: Application (client) ID
 - `AuthCertificatePath`: Path to PFX/PKCS12 certificate file
 - `AuthCertificatePassword`: Certificate password
-- `AuthTenantID`: Azure tenant ID
+- `AuthTenantID`: Microsoft Entra tenant ID
 
 ### Access Token Authentication
 

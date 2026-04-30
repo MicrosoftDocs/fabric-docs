@@ -117,27 +117,31 @@ Create and manage warehouses in workspaces enabled with private links by using t
 #### [REST API](#tab/rest-apis-15)
 * [Warehouse REST API](/rest/api/fabric/warehouse/items)
 * [Items - REST API (WarehouseSnapshot)](/rest/api/fabric/warehousesnapshot/items)
-* To get the workspace private link service connection string for a warehouse:
-   [Get Connection String - REST API (Warehouse)](/rest/api/fabric/warehouse/items/get-connection-string)
 ---
 
 To use the warehouse connection string with a workspace-level private link, add z{xy} to the regular warehouse connection string. For example:
 
-```http
-https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com
+```
+{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com
 ```
 
-Using the warehouse connection string, you can also access a warehouse via the SQL Tabular Data Stream (TDS) endpoint in tools such as SQL Server Management Studio.
+* To get the workspace private link service connection string for a warehouse:
+   [Get Connection String - REST API (Warehouse)](/rest/api/fabric/warehouse/items/get-connection-string)
+
+Using the warehouse connection string, you can also access a warehouse via the SQL Tabular Data Stream (TDS) endpoint in tools such as SQL Server Management Studio. All SQL endpoints and warehouses in a workspace share the same connection string hostname for TDS connectivity.
+When using the REST API to retrieve the connection string use the `privateLinkType=Workspace` flag to get the workspace private link connection string.
 
 ### SQL Endpoint support
 
-Find the workspace private link service connection string for a SQL Endpoint by using the Fabric portal or REST API.
+To use the SQL Endpoint connection string with a workspace-level private link, add z{xy} to the regular SQL Endpoint connection string. For example:
 
-#### [Fabric portal](#tab/fabric-portal-3)
-* [Find the Connection String (SQL Endpoint)](/fabric/data-warehouse/how-to-connect#find-the-warehouse-connection-string)
-#### [REST API](#tab/rest-apis-3)
-* [Items - List SQL Endpoints](/rest/api/fabric/sqlendpoint/items/list-sql-endpoints)
-* [Items - Get Connection String (SQL Endpoint)](/rest/api/fabric/sqlendpoint/items/get-connection-string)
+```
+{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com
+```
+
+* To get the workspace private link service connection string for a SQL Endpoint:
+  [Items - Get Connection String (SQL Endpoint)](/rest/api/fabric/sqlendpoint/items/get-connection-string)
+
 ---
 
 ### Notebook support
@@ -338,6 +342,7 @@ For more information, see [Private links for Azure and Fabric Events](/fabric/re
 - For Data Engineering workloads:
    - To query Lakehouse files or tables from a workspace that has workspace-level private link enabled, you must create a cross-workspace managed private endpoint connection to access resources in the other workspace. <!--For instructions, see [Cross workspace communication](security-cross-workspace-communication.md).-->
    - You can use either relative or full paths to query files or tables within the same workspace, or use a cross-workspace managed private endpoint connection to access them from another workspace. To read files in a Lakehouse located in another workspace, use a fully qualified path that includes the workspace ID and lakehouse ID (not their display names). This approach ensures the Spark session can resolve the path correctly and avoids socket timeout errors. [Learn more](workspace-outbound-access-protection-data-engineering.md#understanding-file-path-behavior-in-fabric-notebooks).
+- Variable Libraries cannot be accessed from a Pipeline.
 - Current limitations for Private Link with an eventhouse:
    - Copilot features: Machine learning workloads might experience limited functionality due to a known regression.
    - Eventstream pull: Eventstream workloads don't currently support full polling functionality.
@@ -346,6 +351,41 @@ For more information, see [Private links for Azure and Fabric Events](/fabric/re
 * The **OneLake Catalog - Govern** tab isn't available when Private Link is activated.
 * **OneLake Security** isn't currently supported when a workspace-level private link is enabled for a workspace.
 * Workspace monitoring isn't currently supported when a workspace-level private link is enabled for a workspace.
+
+## Azure role-based access control (RBAC) and workspace-level private links
+
+Provisioning and management of workspace‑level private links and associated private endpoints require specific Azure RBAC permissions. These permissions can be narrowly scoped by defining a custom Azure role that grants only the required Virtual Network, Private Link, and Private Endpoint actions at the resource group level, enabling delegated management without assigning broad roles such as Owner or Contributor. The following custom role definition provides necessary permissions to create virual networks, subnets, Fabric workspace private links and private endpoints scoped to a specific group.
+
+```
+{
+  "Name": "Custom Fabric WSPL role",
+  "Description": "Read access to resource group, create private endpoints for Fabric WSPL",
+  "Actions": [
+    "*/read",
+    "Microsoft.Network/virtualNetworks/write",
+    "Microsoft.Network/virtualNetworks/subnets/write",
+    "Microsoft.Network/privateEndpoints/write",
+    "Microsoft.Network/privateEndpoints/delete",
+    "Microsoft.Network/privateEndpoints/privateDnsZoneGroups/write",
+    "Microsoft.Network/virtualNetworks/subnets/join/action",
+    "Microsoft.Network/virtualNetworks/join/action",
+    "Microsoft.Network/privateDnsZones/join/action",
+    "Microsoft.Network/privateDnsZones/write",
+    "Microsoft.Network/privateDnsZones/delete",
+    "Microsoft.Network/privateDnsZones/virtualNetworkLinks/write",
+    "Microsoft.Network/privateDnsZones/virtualNetworkLinks/delete",
+    "Microsoft.Resources/deployments/validate/action",
+    "Microsoft.Resources/deployments/write",
+    "Microsoft.Fabric/privateLinkServicesForFabric/*",
+    "Microsoft.Network/privateEndpoints/privateLinkServiceProxies/write"
+  ],
+  "NotActions": [],
+  "NotDataActions": [],
+  "AssignableScopes": [
+    "/subscriptions/<replace-with-subscription-id>/resourceGroups/<replace-with-resource-group>"
+  ]
+}
+```
 
 ## Common errors and troubleshooting
 

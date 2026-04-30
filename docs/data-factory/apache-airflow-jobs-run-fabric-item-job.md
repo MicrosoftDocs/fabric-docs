@@ -3,7 +3,7 @@ title: Run a Fabric item using Apache Airflow DAG.
 description: Learn to run Microsoft Fabric items using Apache Airflow DAGs.
 ms.reviewer: noelleli
 ms.topic: tutorial
-ms.date: 03/31/2026
+ms.date: 04/22/2026
 ms.custom: Airflows, sfi-image-nochange
 ---
 
@@ -45,7 +45,7 @@ To get started, you must complete the following prerequisites:
     1. Select **Manage** from the menu, then **API permissions**.
     1. Select **Add a permission**, then select **Power BI Service**
     1. Select **Delegated permissions**.  
-    1. Add **Item.Read.All** and **Item.Execute.All**. (Alternatively you can also add the read and execute permissions based on the item type, like Notebook.Read.All and Notebook.Execute.All.)
+    1. Add **Item.Read.All** and **Item.Execute.All**. (Alternatively you can also add the read and execute permissions based on the item type, like DataPipeline.Execute.All, DataPipeline.Read.All, Notebook.Read.All or Notebook.Execute.All.)
     1. Finally, [add the service principal as a contributor in the workspace](/fabric/fundamentals/give-access-workspaces) where the item you'll use Airflow to run is located.
 
 > [!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=a32354a9-4a7b-4c2a-81ad-901cc5f2a63f]

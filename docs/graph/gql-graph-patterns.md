@@ -2,7 +2,7 @@
 title: GQL Graph Patterns for graph in Microsoft Fabric
 description: Learn about GQL graph pattern syntax for matching nodes, edges, and paths in graph queries. Includes examples and pattern composition rules.
 ms.topic: reference
-ms.date: 03/12/2026
+ms.date: 04/27/2026
 ms.reviewer: splantikow
 ---
 
@@ -39,7 +39,7 @@ This pattern matches all nodes that have **both** the `Place` and `City` labels 
 - **Flexible ("covariant") matching**: Matched nodes can have more labels and properties beyond the ones specified.
 
 > [!NOTE]
-> graph models with multiple element labels aren't yet supported (known issue).
+> Nodes can have multiple labels, but edge types with multiple labels aren't yet supported.
 
 ### Simple edge patterns
 
@@ -392,6 +392,8 @@ Both forms are equivalent and match chains of at least 2 `knows` relationships.
 
 ## Related content
 
+- [Write graph pattern queries](write-graph-pattern-queries.md)
+- [Write common GQL queries](write-common-gql-queries.md)
 - [GQL language guide](gql-language-guide.md)
 - [Social network schema example](gql-schema-example.md)
 - [GQL graph types](gql-graph-types.md)

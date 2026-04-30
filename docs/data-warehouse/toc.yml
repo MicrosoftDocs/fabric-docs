@@ -142,6 +142,8 @@ items:
     href: ingest-data-pipelines.md
   - name: Ingest data with TSQL
     href: ingest-data-tsql.md
+  - name: Troubleshoot ingestion errors
+    href: troubleshoot-ingestion-errors.md
   - name: Use dbt with data warehouse
     href: tutorial-setup-dbt.md   
 
