@@ -8,15 +8,13 @@ ms.topic: how-to
 
 # Persist data with Writeback
 
-Plan supports exporting planning data to multiple destination types, including file-based destinations, data warehouses, and data lake storage. Write back budgets, forecasts, adjustments, and scenarios to the writeback table in the data platform to keep planning data synchronized with enterprise systems. Unlike conventional BI and planning tools that require predefined database schemas and IT-managed writeback infrastructure, Plan supports dynamic database configuration and runtime table creation.
+Plan supports exporting planning data to Fabric SQL databases. Write back budgets, forecasts, adjustments, and scenarios to keep planning data synchronized with enterprise systems. Unlike conventional BI and planning tools that require predefined database schemas and IT-managed writeback infrastructure, Plan supports dynamic database configuration and runtime table creation.
 
 [!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
 ## Writeback use cases
 
-Maintain planning and analytics data in a single governed environment instead of exporting data manually.
-
-Common scenarios include:
+Maintain planning and analytics data in a single governed environment instead of exporting data manually.Common scenarios include:
 
 * Save budget and forecast inputs directly to the  data platform.
 * Store scenario planning results for further analysis.
@@ -34,24 +32,16 @@ Before you begin, make sure that you have the following prerequisites in place:
 
 To save data using writeback, first configure a destination.
 
->[!TIP]
->On-premises database servers must be directly reachable from the internet for writeback. They must have a public IP address with port forwarding.
-
 1. Go to **Writeback > Add Destination**.
-1. Select a database connection.
-1. Select the target database-browse and select the required database from the OneLake catalog.
-1. Enter a **Table Name**.
-1. Enter the **Decimal Precision** to specify the number of digits after the decimal point for numeric columns.
-1. Use **Text Length** to define the maximum length for string columns(for example, length of all string columns = 512) or choose **Custom**.
-1. Select **Add** to create the writeback destination.
+2. Select a database connection.
+3. Select the target database-browse and select the required database from the OneLake catalog.
+4. Enter a **Table Name**.
+5. Enter the **Decimal Precision** to specify the number of digits after the decimal point for numeric columns.
+6. Use **Text Length** to define the maximum length for string columns(for example, length of all string columns = 512) or choose **Custom**.
+7. Select **Add** to create the writeback destination.
 
 :::image type="content" source="../media/planning-writeback/planning-how-to-persist-data/create-writeback-destination.png" alt-text="Screenshot of creating a writeback destination.":::
 
->[!NOTE]
->Data writeback capabilities are subject to specific row limits depending on the file source or destination used.  
-* Local file formats such as Excel and CSV support a significant volume of up to 200,000 rows
-* Cloud-based integrations via OneDrive and SharePoint are restricted to a smaller capacity of 250 rows.
-  
 ## Manage destinations
 
 To view, update, or reuse configured destinations, go to **Writeback > Manage**.
@@ -104,4 +94,3 @@ Select **Writeback > Writeback** to trigger a writeback. After completion, a con
 * Select a writeback ID to view detailed information about a specific writeback instance.
 
     :::image type="content" source="../media/planning-writeback/planning-how-to-persist-data/writeback-detailed-logs.png" alt-text="Screenshot of writeback logs with  payload size, milestones,a dn duration.":::
-
