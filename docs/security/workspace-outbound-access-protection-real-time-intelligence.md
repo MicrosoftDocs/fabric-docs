@@ -50,17 +50,17 @@ When you enable workspace outbound access protection, outbound access from Event
 
 ### Supported Eventhouse outbound access scenarios
 
-- Querying data stored in OneLake in the **same workspace**, when outbound access protection is **enabled**.
+Within the **same workspace**, Eventhouse can still access certain resources and perform specific actions even when outbound access protection is **enabled**. Supported scenarios include:
 
-- Querying other Eventhouse items in the **same workspace**, when outbound access protection is **enabled**.
+- Querying data stored in Real-Time Intelligence items.
 
-- Querying data stored in OneLake in other workspaces, if allowed by data connection rules.
+- Querying other Eventhouse databases.
 
-- Ingesting data from Azure Event Hubs, considering they aren't scoped to a Fabric workspace and aren't affected by outbound access protection settings.
+In addition, Eventhouse can access certain **external** resources that aren't scoped to a specific workspace if the relevant workspace outbound access protection rules are configured. Supported scenarios include:
 
-- Receiving data from Eventstream items in the same workspace.
+- Querying data stored in OneLake in other workspaces.
 
-  - Eventstream scenarios that span multiple workspaces or external resources are blocked when outbound access protection is **enabled**, as mentioned in the Eventstream section above.
+- Ingesting data from Azure Event Hubs.
 
 ### Unsupported Eventhouse outbound access scenarios
 
@@ -68,7 +68,7 @@ When you enable workspace outbound access protection, the following Eventhouse o
 
 - Accessing Eventhouse items in other workspaces, except through OneLake as mentioned in the supported scenarios.
 
-- Accessing external resources outside of Microsoft Fabric, such as external databases, APIs, or services.
+- Accessing external resources outside of Microsoft Fabric, except through Azure Event Hubs as mentioned in the supported scenarios.
 
 - Performing outbound operations that aren't included in the supported scenarios.
 
@@ -79,8 +79,6 @@ When you enable workspace outbound access protection, the following Eventhouse o
 - Managed private endpoints aren't supported for Eventhouse.
 
 - Data connection rules aren't supported for Eventhouse.
-
-- You can't customize outbound access behavior per endpoint or service.
 
 - All Eventhouse items in the workspace follow the same outbound access settings.
 
