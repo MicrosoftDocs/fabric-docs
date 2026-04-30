@@ -2,7 +2,7 @@
 title: Format Multitasking Tabs
 description: Learn how to format multitasking tabs on the left pane of Microsoft Fabric. One item opens by default with automatically handled lifecycle events.
 ms.topic: how-to
-ms.date: 08/22/2025
+ms.date: 04/29/2026
 ---
 
 # Format multitasking tabs

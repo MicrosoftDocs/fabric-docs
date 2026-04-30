@@ -2,7 +2,7 @@
 title: Supportability - Best Practices for partners
 description: Guide for partners to support their customers on Fabric.
 ms.topic: concept-article
-ms.date: 07/03/2024
+ms.date: 04/29/2026
 ---
 
 # Supportability: Best Practices for partners

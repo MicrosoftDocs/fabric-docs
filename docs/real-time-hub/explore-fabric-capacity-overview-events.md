@@ -58,6 +58,7 @@ An event has the following top-level data:
 | `time` | timestamp | Timestamp of when the occurrence happened. | `2024-04-23T21:17:32.6029537+00:00` |
 | `id` | string | Unique identifier for the event. | `00000000-0000-0000-0000-000000000000` |
 | `specversion` | string | The version of the Cloud Event spec. | `1.0` |
+| `dataschemaversion` | string | The version of the data schema. | `1.0` |
 
 The `data` object has the following properties for Summary events:
 
@@ -71,8 +72,8 @@ The `data` object has the following properties for Summary events:
 | `capacityId` | string | The ID of the capacity on which the operation ran. A capacity always retains the same capacity ID, even if it's paused, restarted, scaled up, or scaled down. You can find the identifiers (IDs) of the capacities you have access to in the Power BI Service settings pane under **Governance and administration** -> **Admin portal**- **Capacity settings**. When you select a capacity, the ID appears in the browser URL. You can also check the "workspace settings" > "Workspace type" to see which capacity is assigned to a workspace. | `00000000-0000-0000-0000-000000000000`  |
 | `capacityName` | string | The name of the capacity. Capacity name can be changed without impacting the capacity ID. | `foocapacity` |
 | `capacitySku` | string | The Stock Keeping Unit (SKU) size of the capacity on which the operation ran at that time. SKUs can be scaled up or down at any time by admins, so the SKU may change for the same capacity ID. | `FT1` |
-| `windowStartTime` | timestamp | Indicates the start time window from which the smoothing took place. The windows are split into 30-second buckets and represent the capacity unit (CU) smoothing windows. Each capacity emits one event per window while active. When a capacity is paused, no events are emitted. | `2025-09-22 05:23:00.0000000` |
-| `windowEndTime` | timestamp | Indicates the end time of the window in which the smoothing took place. This timestamp is always 30 seconds after the window start time as smoothing windows are always 30 seconds long. | `2025-09-22 05:23:30.0000000` |
+| `windowStartTime` | UTC string | Indicates the start time window from which the smoothing took place. The windows are split into 30-second buckets and represent the capacity unit (CU) smoothing windows. Each capacity emits one event per window while active. When a capacity is paused, no events are emitted. | `2025-09-22 05:23:00.0000000` |
+| `windowEndTime` | UTC string | Indicates the end time of the window in which the smoothing took place. This timestamp is always 30 seconds after the window start time as smoothing windows are always 30 seconds long. | `2025-09-22 05:23:30.0000000` |
 | `baseCapacityUnits` | integer | The amount of CU per second available on the specific SKU. You can use this figure to create a CU budget value for the time window by multiplying the value by 1000 (to convert second to milliseconds) and multiply the result by 30. You can compare this to the amount of capacityUnitMs used in the same window. | `64` |
 | `capacityUnitMs` | double | CU Milliseconds used within the time window. This value can be compared to the budgeted CU. You can then divide capacityUnitMs by the budget to calculate % utilization. | `191.1869444` |
 | `interactiveDelayThresholdPercentage` | double | The percentage of interactive delay at the timepoint. This percentage is an expression of the average % utilization of the upcoming 20 time windows (10 minutes). When this value exceeds 100%, interactive delay begins. | `51.12069` |
@@ -134,7 +135,7 @@ The `data` object has the following properties for State events:
 | `capacityId` | string | The ID of the capacity on which the operation ran. A capacity always retains the same capacity ID, even if it's paused, restarted, scaled up, or scaled down. | `00000000-0000-0000-0000-000000000000`  |
 | `capacityName` | string | The name of the capacity on which the operation ran. The capacity name can be changed without impacting the capacity ID. | `foocapacity` |
 | `capacitySku` | string | The SKU size of the capacity on which the operation ran at that time. SKUs can be scaled up or down at any time by admins, so the SKU may change for the same capacity ID. | `FT1` |
-| `transitionTime` | timestamp | The time when the capacity state changed. | `2025-09-07 17:23:10.5399586` |
+| `transitionTime` | UTC string | The time when the capacity state changed. | `2025-09-07 17:23:10.5399586` |
 | `capacityState` | string | The state of the premium capacity during the timestamp. | `Active` |
 | `stateChangeReason` | string | This shows why the capacity moved to the current state. | `InteractiveDelay` |
 | `activationId` | string | When a capacity is paused and restarted, it keeps the same capacity ID but gets a new activationId. The restart creates this new ID, which helps track pauses and restarts.  | `00000000-0000-0000-0000-000000000000` |
