@@ -1,9 +1,9 @@
 ---
 title: Spark Synapse to Fabric Spark Migration Assistant
 description: This document describes the Spark Synapse to Fabric Migration Assistant, a Microsoft Fabric-owned experience that helps customers migrate Spark workloads from Azure Synapse Analytics to Microsoft Fabric.
-ms.reviewer: jejiang
 ms.topic: tutorial
 ms.date: 03/18/2026
+ms.reviewer: jejiang
 ai-usage: ai-assisted
 ---
 

@@ -59,6 +59,16 @@
             "source_path_from_root": "/docs/admin/service-admin-portal-quick-measure-suggestions-settings.md",
             "redirect_url": "/rest/api/fabric/articles/tenant-settings-index",
             "redirect_document_id": false
-        }                                
+        },
+        {
+            "source_path_from_root": "/docs/admin/microsoft-fabric-admin.md",
+            "redirect_url": "/fabric/admin/admin-overview",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/admin/admin-center.md",
+            "redirect_url": "/fabric/admin/admin-overview",
+            "redirect_document_id": false
+        }
     ]
 }

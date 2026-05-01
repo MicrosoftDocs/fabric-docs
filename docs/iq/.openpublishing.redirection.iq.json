@@ -14,6 +14,11 @@
       "source_path_from_root": "/docs/iq/plan/overview-known-issues.md",
       "redirect_url": "/fabric/iq/plan/overview-limitations",
       "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/iq/plan/planning-how-to-build-forecasts.md",
+      "redirect_url": "/fabric/iq/plan/planning-forecasting/planning-how-to-build-forecasts",
+      "redirect_document_id": true
     }
   ]
 }

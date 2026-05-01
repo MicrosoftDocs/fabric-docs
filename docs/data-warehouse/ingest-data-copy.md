@@ -97,3 +97,4 @@ Other ways to ingest data into your warehouse include:
 ## Related content
 
 - [Ingesting data into the Warehouse](ingest-data.md)
+- [Troubleshoot ingestion errors](troubleshoot-ingestion-errors.md)

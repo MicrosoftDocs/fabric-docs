@@ -77,6 +77,8 @@ landingContent:
             url: ingest-data-tsql.md
           - text: Ingest data using Copy
             url: ingest-data-copy.md
+          - text: Troubleshoot ingestion errors
+            url: troubleshoot-ingestion-errors.md
       - linkListType: concept
         links:
           - text: Mirroring 

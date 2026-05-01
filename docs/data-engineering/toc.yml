@@ -69,6 +69,14 @@ items:
     href: lakehouse-streaming-data.md
   - name: Get streaming data into a lakehouse with Eventstreams
     href: ../real-time-intelligence/event-streams/add-destination-lakehouse.md
+- name: Lakehouse access control
+  items:
+  - name: Workspace roles and permissions
+    href: workspace-roles-lakehouse.md
+  - name: Sharing and permissions management
+    href: lakehouse-sharing.md
+  - name: Spark support for OneLake security
+    href: spark-onelake-security.md
 - name: Delta Lake
   items:
     - name: Lakehouse and Delta tables
@@ -214,12 +222,6 @@ items:
           href: ../data-science/ai-functions/pyspark/translate.md
         - name: Customize AI function configurations
           href: ../data-science/ai-functions/pyspark/configuration.md
-- name: Lakehouse access control
-  items:
-  - name: Workspace roles and permissions
-    href: workspace-roles-lakehouse.md
-  - name: Sharing and permissions management
-    href: lakehouse-sharing.md
 - name: Spark compute
   items:
     - name: Overview and planning
@@ -476,20 +478,32 @@ items:
     items:
     - name: Overview
       href: migrate-synapse-overview.md
-    - name: Migrate Spark pools
-      href: migrate-synapse-spark-pools.md
-    - name: Migrate Spark configurations
-      href: migrate-synapse-spark-configurations.md
-    - name: Migrate Spark libraries
-      href: migrate-synapse-spark-libraries.md
-    - name: Migrate notebooks
-      href: migrate-synapse-notebooks.md
-    - name: Migrate Spark job definition
-      href: migrate-synapse-spark-job-definition.md
-    - name: Migrate data and pipelines
-      href: migrate-synapse-data-pipelines.md
-    - name: Migrate Hive Metastore metadata
-      href: migrate-synapse-hms-metadata.md
+    - name: Spark migration best practices
+      items:
+      - name: "Phase 1: Migration strategy and planning"
+        href: synapse-migration-strategy-planning.md
+      - name: "Phase 2: Spark workload migration"
+        href: synapse-migration-spark-workloads.md
+      - name: "Phase 3: Hive Metastore and data migration"
+        href: synapse-migration-hms-data.md
+      - name: "Phase 4: Security and governance migration"
+        href: synapse-migration-security-validation-cutover.md
+    - name: Component migration guides (manual)
+      items:
+      - name: Migrate Spark pools
+        href: migrate-synapse-spark-pools.md
+      - name: Migrate Spark configurations
+        href: migrate-synapse-spark-configurations.md
+      - name: Migrate Spark libraries
+        href: migrate-synapse-spark-libraries.md
+      - name: Migrate notebooks
+        href: migrate-synapse-notebooks.md
+      - name: Migrate Spark job definition
+        href: migrate-synapse-spark-job-definition.md
+      - name: Migrate data and pipelines
+        href: migrate-synapse-data-pipelines.md
+      - name: Migrate Hive Metastore metadata
+        href: migrate-synapse-hms-metadata.md
     - name: Fabric Spark Migration Assistant (preview)
       href: synapse-to-fabric-spark-migration-assistant.md
 - name: API for GraphQL

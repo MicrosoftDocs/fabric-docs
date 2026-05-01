@@ -119,7 +119,7 @@ Microsoft Purview integration provides governance controls for Fabric data agent
 
 **Microsoft Purview policies**: Purview policies such as data access controls and sensitivity labels apply to data sources that agents query. If a Purview policy restricts access to a lakehouse or warehouse, the agent respects that restriction when processing user queries.
 
-**Outbound access protection**: Fabric data agents operate within the tenant's outbound access protection boundaries. Outbound connections from agent operations are subject to the same network and access rules configured for your Fabric tenant. Administrators can manage permitted outbound connections through the Fabric admin portal under tenant settings to control which external endpoints agents can reach.
+**Outbound access protection**: Fabric data agents operate within workspace outbound access protection boundaries. Workspace administrators can manage permitted outbound connections through the workspace settings to control which external endpoints the data agent can reach.
 
 **Microsoft 365 Copilot integration**: When Fabric data agents are surfaced through Microsoft 365 Copilot, Purview governance policies continue to apply. Users can only access data that their credentials and Purview policies allow, regardless of the entry point.
 

@@ -3,13 +3,13 @@ title: Implement Medallion Architecture in Real-Time Intelligence
 description: Understand the medallion architecture and learn how to implement it in Real-Time Intelligence for optimal data structuring and storage.
 ms.reviewer: bwatts
 ms.topic: concept-article
-ms.date: 03/19/2026
+ms.date: 04/20/2026
 #customer intent: As a data engineer, I want to understand medallion architecture in Real-Time Intelligence and learn how to implement a KQL database so that I can optimally structure and store my organization's data.
 ---
 
 # Implement medallion architecture in Real-Time Intelligence
 
-This article explains how to implement the medallion architecture by using Real-Time Intelligence in Microsoft Fabric. The medallion architecture ensures the Atomicity, Consistency, Isolation, and Durability (ACID) properties as data moves through its stages. Starting with raw data, it undergoes a series of validations and transformations to become optimized for efficient analytics. The architecture consists of three stages: Bronze layer (raw data), Silver layer (validated data), and Gold layer (enriched data).
+This article explains how to implement the medallion architecture by using Real-Time Intelligence in Microsoft Fabric. The medallion architecture ensures the Atomicity, Consistency, Isolation, and Durability (ACID) properties so that your data remains accurate and reliable as it moves through its stages. Starting with raw data, it undergoes a series of validations and transformations to become optimized for efficient analytics. The architecture consists of three stages: Bronze layer (raw data), Silver layer (validated data), and Gold layer (enriched data).
 
 For more information, see [What is the medallion architecture?](/azure/databricks/lakehouse/medallion).
 
@@ -19,13 +19,13 @@ Real-Time Intelligence has features that facilitate creating the medallion archi
 
 - **Update policies**
 
-    As data enters the Bronze layer, you can use update policies to transform and enrich it, adding business value such as improved data quality, consistency, and relevance for downstream analytics. Update policies facilitate the processing of continuous data streams by simplifying streaming concepts like incremental processing, checkpointing, and watermarks. This abstraction allows you to build streaming applications and pipelines without the need for extra tools. By ingesting and transforming live streaming data, Real-Time Intelligence enables data engineers and data scientists to handle real-time data from various sources.
+    As data enters the Bronze layer, you can use update policies to transform and enrich it, adding business value such as improved data quality, consistency, and relevance for downstream analytics. Update policies handle the complexity of processing continuous data streams automatically, so you don't need to manage the technical details yourself. This abstraction allows you to build streaming applications and pipelines without the need for extra tools. By ingesting and transforming live streaming data, Real-Time Intelligence enables data engineers and data scientists to handle real-time data from various sources.
 
     For more information, see [Update policy](/kusto/management/update-policy?view=microsoft-fabric&preserve-view=true).
 
 - **Materialized views**
 
-    Materialized views remove duplicate values as they arrive, making deduplicated records immediately available for querying. They compute aggregate views in real time, ensuring performance enhancement, data freshness, and cost reduction. This capability eliminates the need for extra tools to perform data aggregation. By exposing an aggregation query over a source table or another materialized view, they always provide up-to-date results. Querying a materialized view is more efficient than running the aggregation directly over the source table, leading to performance improvements. Additionally, materialized views consume fewer resources, which can lead to cost savings.
+    Materialized views remove duplicate values as they arrive, making deduplicated records immediately available for querying. They compute aggregate views in real time, ensuring performance enhancement, data freshness, and cost reduction. This capability eliminates the need for extra tools to perform data aggregation. Materialized views automatically keep summary calculations up-to-date as new data arrives. Querying a materialized view is more efficient than running the aggregation directly over the source table, leading to performance improvements. Additionally, materialized views consume fewer resources, which can lead to cost savings.
 
     For more information, see [Materialized views](/kusto/management/materialized-views/materialized-view-overview?view=microsoft-fabric&preserve-view=true).
 

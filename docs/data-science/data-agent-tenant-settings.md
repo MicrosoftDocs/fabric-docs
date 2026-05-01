@@ -1,9 +1,9 @@
 ---
 title: Configure Fabric data agent tenant settings
-description: Learn how to configure Fabric data agent tenant settings for Power BI Semantic Models.
+description: Learn how to configure Fabric data agent tenant settings.
 ms.reviewer: amjafari
 ms.topic: how-to
-ms.date: 02/02/2026
+ms.date: 04/20/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 # Configure Fabric data agent tenant settings
 
-To use a data agent in Microsoft Fabric, configure the required tenant settings. If your Fabric data agent uses a Power BI semantic model as a data source, enable specific tenant settings to allow connectivity. This guide walks you through the necessary configurations for a seamless setup.
+To use a data agent in Microsoft Fabric, configure the required tenant settings. This guide walks you through the necessary configurations for a seamless setup.
 
 ## Access tenant settings
 
@@ -67,17 +67,6 @@ For a Fabric data agent to function properly, enable the [**Copilot and Azure Op
   - In order to use fully conversational agentic AI experiences, the agent needs to store conversation history across user sessions. This ensures that the AI agent keeps context about what a user asked in previous sessions. Conversation history is stored for as long as the user allows, up to 28 days if not manually removed.
   - Users can delete their conversation history at any time by clearing the chat.
   - For more information, see [Conversation history stored outside your capacity's geographic region](../admin/service-admin-portal-copilot.md#conversation-history-stored-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance).
-
-## Enable integration of Power BI semantic models via XMLA endpoints
-
-Fabric data agents can query and manage Power BI semantic models programmatically via XMLA (XML for Analysis) endpoints. To enable this functionality, you must configure XMLA endpoints correctly.
-
-### Steps to enable XMLA endpoints
-
-1. In **Tenant Settings**, go to the **Integration settings** section.
-1. Find **Allow XMLA endpoints and Analyze in Excel with on-premises datasets** and turn it on, as shown in the next screenshot:
-
-:::image type="content" source="media/data-agent-tenant-settings/xmla-setting.png" alt-text="Screenshot highlighting the XMLA setting in the admin portal." lightbox="media/data-agent-tenant-settings/xmla-setting.png":::
 
 ## Related content
 
