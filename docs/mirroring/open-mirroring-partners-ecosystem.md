@@ -50,6 +50,13 @@ For an overview of dab Nexus, see [Effortless SAP Data Integration in Microsoft 
 
 For the technical documentation of dab Nexus, see [Quickstart Guide Managed App - dab:Help](https://aka.ms/mirroring/dab-mirroring-doc).
 
+## Informatica
+
+Open mirroring with Informatica enables near real-time replication to a mirrored database in Microsoft Fabric OneLake. Mirroring ensures that changes in the source system are quickly reflected in Microsoft Fabric to keep the mirrored data continuously up-to-date and ready for timely analysis and reporting.
+
+For more information on Informatica, see [Using open mirroring to replicate data to Microsoft Fabric OneLake](https://docs.informatica.com/integration-cloud/data-ingestion-and-replication/current-version/database-ingestion-and-replication/database-ingestion-and-replication-targets---preparation-and-usa/microsoft-fabric-onelake-targets/using-open-mirroring-to-replicate-data-to-microsoft-fabric-onela.html)
+
+
 ## MongoDB
 
 MongoDB integrated with open mirroring for a solution to bring operational data from MongoDB Atlas to Microsoft Fabric for Big data analytics, AI and BI, combining it with the rest of the data estate of the enterprise. Once mirroring is enabled for a MongoDB Atlas collection, the corresponding table in OneLake is kept in sync with the changes in source MongoDB Atlas collection, unlocking opportunities of varied analytics and AI and BI in near real-time.
@@ -61,6 +68,12 @@ For more information, see [MongoDB integration into open mirroring in Microsoft 
 Oracle GoldenGate 23ai integration into Microsoft Fabric via open mirroring. Any supported Oracle GoldenGate source including Oracle Database@Azure can replicate data into a Mirrored Database in Microsoft Fabric. This powerful combination unlocks real-time data integration, continuously synchronizing data across your hybrid and multicloud environments. Mirrored Database in Microsoft Fabric as a destination is available through the GoldenGate for Distributed Applications and Analytics 23ai product.
 
 For more information, see [Oracle GoldenGate 23ai integration into open mirroring in Microsoft Fabric](https://aka.ms/mirroring/oracle-goldengate-23ai-docs).
+
+## Profisee
+
+Profisee is a modern, cloud-native master data management platform that enables organizations to create a single, trusted view of their most critical business data across domains such as customer, product, supplier and location. By integrating with Open Mirroring, Profisee continuously delivers governed, high-quality master data into Microsoft OneLake, ensuring that AI, BI and analytics workloads in Microsoft Fabric are built on a reliable and governed data foundation. With built-in AI-powered automation and deep integration with the Microsoft ecosystem, Profisee helps organizations accelerate time to value from their data.
+
+For more information on Profisee for Microsoft Fabric, see [Profisee and Microsoft Fabric](https://profisee.com/solutions/microsoft-enterprise/microsoft-fabric/).
 
 ## Qlik
 
