@@ -54,7 +54,7 @@ For the technical documentation of dab Nexus, see [Quickstart Guide Managed App 
 
 Open mirroring with Informatica enables near real-time replication to a mirrored database in Microsoft Fabric OneLake. Mirroring ensures that changes in the source system are quickly reflected in Microsoft Fabric to keep the mirrored data continuously up-to-date and ready for timely analysis and reporting.
 
-For more information on Informatica, see [Using open mirroring to replicate data to Microsoft Fabric OneLake](https://docs.informatica.com/integration-cloud/data-ingestion-and-replication/current-version/database-ingestion-and-replication/database-ingestion-and-replication-targets---preparation-and-usa/microsoft-fabric-onelake-targets/using-open-mirroring-to-replicate-data-to-microsoft-fabric-onela.html)
+For more information on Informatica, see [Using open mirroring to replicate data to Microsoft Fabric OneLake](https://docs.informatica.com/integration-cloud/data-ingestion-and-replication/current-version/database-ingestion-and-replication/database-ingestion-and-replication-targets---preparation-and-usa/microsoft-fabric-onelake-targets/using-open-mirroring-to-replicate-data-to-microsoft-fabric-onela.html).
 
 
 ## MongoDB
