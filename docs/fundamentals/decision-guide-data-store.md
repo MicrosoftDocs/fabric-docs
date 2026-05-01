@@ -15,7 +15,9 @@ ms.search.form: Choose a Data Store, Databases datastore decision guide
 
 Use this reference guide and the example scenarios to help you choose a data store for your Microsoft Fabric workloads, all available in a unified storage in the OneLake.
 
-:::image type="content" source="media/decision-guide-data-store/decision-guide.svg" alt-text="Diagram of a decision for ideal use cases for Fabric features. Complete text is available in the following table.":::
+:::image type="complex" source="media/decision-guide-data-store/decision-guide.svg" alt-text="Diagram of a decision guide for choosing the ideal data store in Microsoft Fabric.":::
+The diagram shows a decision guide for selecting a Fabric data store. For streaming event data and high-granularity interactive analytics, use an eventhouse. For AI, NoSQL, and vector search, use Cosmos DB in Fabric. For operational transactional (OLTP) workloads, use SQL database in Fabric. For enterprise data warehousing, SQL-based BI, OLAP, and full SQL transaction support, use Data Warehouse. For big data and machine learning with unstructured or semi-structured data and data engineering, use a lakehouse. All data stores are available in OneLake in open table format by default.
+:::image-end:::
 
 | Ideal use case | Microsoft Fabric workload |  Data available in [OneLake](../onelake/onelake-overview.md) in open table format by default |
 |:--|:--|:--|
