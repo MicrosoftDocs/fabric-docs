@@ -1,13 +1,13 @@
 ### YamlMime:Landing
 
 title: Activator documentation
-summary: Learn about Activator, and how to create events and triggers for your data.
+summary: Learn about Fabric Activator, and how to create alerts, rules, and triggers on your data.
 
 metadata:
   title: Activator documentation
-  description: Browse the Activator documentation.
+  description: Learn about Fabric Activator, and how to monitor data, create alerts, rules, and triggers.
   ms.topic: landing-page
-  ms.date: 09/24/2024
+  ms.date: 04/30/2026
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -18,6 +18,10 @@ landingContent:
         links:
           - text: What is Activator?
             url: activator-introduction.md
+      - linkListType: concept
+        links:
+          - text: Overview of Activator rules
+            url: activator-rules-overview.md
 
   - title: Create alerts
     linkLists:
@@ -39,6 +43,8 @@ landingContent:
           url: ../../real-time-hub/set-alerts-azure-blob-storage-events.md?context=/fabric/context/context-rti&pivots=fabric
         - text: Create alerts on Power BI reports
           url: activator-get-data-power-bi.md
+        - text: Create alerts on Fabric Warehouse SQL queries
+          url: set-alerts-warehouse-sql-query.md
         - text: Get data from eventstreams
           url: ../event-streams/add-destination-activator.md
 
@@ -69,12 +75,14 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
-          - text: Creating triggers
-            url: activator-create-activators.md
+          - text: Trigger modeling in Activator
+            url: activator-trigger-model.md
           - text: Detection conditions
-            url: activator-detection-conditions.md          
+            url: activator-detection-conditions.md
       - linkListType: how-to-guide
         links:
+          - text: Create Activator rules
+            url: activator-create-activators.md
           - text: Assign data to objects
             url: activator-assign-data-objects.md
           - text: Trigger Fabric items
@@ -89,6 +97,17 @@ landingContent:
           - text: Activator tutorial using sample data
             url: activator-tutorial.md
 
+  - title: Reduce costs
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Reduce rule costs with Eventstream filters
+            url: reduce-cost-rules-apply-filters.md
+          - text: Reduce rule costs with summarizations
+            url: reduce-cost-rules-apply-summarizations.md
+          - text: Combine multiple eventstreams in a rule
+            url: combine-multiple-streams.md
+
   - title: Troubleshoot
     linkLists:
       - linkListType: how-to-guide
@@ -96,5 +115,14 @@ landingContent:
           - text: Activator limitations
             url: activator-limitations.md
           - text: Troubleshoot errors
-            url: activator-troubleshooting.md                   
-            
+            url: activator-troubleshooting.md
+          - text: Activator throttling
+            url: activator-throttling-effects.md
+
+  - title: Reference
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Capacity consumption, usage reporting, and billing
+            url: activator-capacity-usage.md
+
