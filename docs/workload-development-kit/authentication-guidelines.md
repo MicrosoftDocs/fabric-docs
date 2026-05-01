@@ -2,7 +2,7 @@
 title: Overview of Fabric Workload Authentication Guidelines 
 description: This article describes important concepts and guidelines when you're working with authentication in Microsoft Fabric workloads.
 ms.topic: best-practice
-ms.date: 11/03/2024
+ms.date: 04/29/2026
 #customer intent: As a developer, I want to understand what the best practices are for working with authentication to grant users the optimal experience.
 ---
 
