@@ -29,7 +29,7 @@ Trusted workspace access requires creating a connection directly to the ADLS sto
 
 Follow the steps in the [Tutorial to Enable network security access](../mirroring/azure-databricks-tutorial.md). It is recommended to give granular control on the storage account by specifying a specific folder within a container, and [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal#step-2-open-the-add-role-assignment-page).
 
-When ADLS Gen2 is protected by an Azure Storage firewall, Fabric uses Workspace Identity to access the storage account. Workspace Identity is used for storage firewall access to ADLS Gen2. A service principal or OAuth is used for Databricks authentication and Unity Catalog authorization. Even if a service principal is selected for Databricks authentication, the Workspace Identity must be granted the appropriate permissions on the Azure Storage account.
+When ADLS Gen2 is protected by an Azure Storage firewall, Fabric uses Workspace Identity to access the firewall. Even if **Service principal** is selected for ADLS authentication in the **Network Security** tab, the Workspace Identity must be allowed in the Azure Storage account firewall.  A service principal or OAuth are used for Databricks authentication and Unity Catalog authorization.
 
 ## Permissions
 
