@@ -1,6 +1,6 @@
 ---
 title: Autologging in Synapse Data Science
-description: Use autologging with MLflow to automatically capture machine learning metrics and parameters.
+description: Automatically capture machine learning metrics and parameters by using autologging with MLflow.
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: ruxu
@@ -13,21 +13,25 @@ ai-usage: ai-assisted
 
 # Autologging in [!INCLUDE [product-name](../includes/product-name.md)]
 
-[!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] includes autologging, which significantly reduces the amount of code required to automatically log the parameters, metrics, and items of a machine learning model during training. This article describes autologging for [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+This article describes autologging for [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
-Autologging extends [MLflow Tracking](https://mlflow.org/docs/latest/tracking/autolog.html) capabilities and is deeply integrated into the [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience. Autologging can capture various metrics, including accuracy, loss, F1 score, and custom metrics you define. By using autologging, developers and data scientists can easily track and compare the performance of different models and experiments without manual tracking.
+By using autologging, you need significantly less code to automatically log the parameters, metrics, and items of a machine learning model during training.
+
+Autologging extends [MLflow tracking](https://mlflow.org/docs/latest/tracking/autolog.html) capabilities and is deeply integrated into the [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience.
+
+Autologging can capture metrics including accuracy, loss, F1 score, and custom metrics you define. By using autologging, developers and data scientists can easily track and compare the performance of different models and experiments without manual tracking.
 
 ## Supported frameworks
 
-Autologging supports a wide range of machine learning frameworks, including TensorFlow, PyTorch, Scikit-learn, and XGBoost. To learn more about the framework-specific properties that autologging captures, see the [MLflow documentation](https://mlflow.org/docs/latest/tracking/autolog.html).
+Autologging supports a wide range of machine learning frameworks, including TensorFlow, PyTorch, scikit-learn, and XGBoost. To learn more about the framework-specific properties that autologging captures, see the [MLflow documentation](https://mlflow.org/docs/latest/tracking/autolog.html).
 
 ## Configuration
 
-Autologging works by automatically capturing values of input parameters, output metrics, and output items of a machine learning model as it's being trained. This information is logged to your [!INCLUDE [product-name](../includes/product-name.md)] workspace, where you can access and visualize it by using the MLflow APIs or the corresponding experiment and model items in your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
+Autologging works during training to automatically capture the values of a machine learning model's input parameters, output metrics, and output items. This information is logged to your [!INCLUDE [product-name](../includes/product-name.md)] workspace, where you can access and visualize it by using the MLflow APIs or the corresponding experiment and model items in your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
 
-When you launch a [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] notebook, [!INCLUDE [product-name](../includes/product-name.md)] calls [mlflow.autolog()](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html#mlflow.autolog) to instantly enable tracking and load the corresponding dependencies. As you train models in your notebook, MLflow automatically tracks this model information.
+When you open a [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] notebook, [!INCLUDE [product-name](../includes/product-name.md)] calls [`mlflow.autolog()`](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html#mlflow.autolog) to instantly enable tracking and load the corresponding dependencies. As you train models in your notebook, MLflow automatically tracks model information.
 
-The configuration happens automatically behind the scenes when you run `import mlflow`. The default configuration for the notebook [mlflow.autolog()](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html#mlflow.autolog) hook is:
+The configuration happens automatically when you run `import mlflow`. The default configuration for the notebook [mlflow.autolog()](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html#mlflow.autolog) hook is:
 
 ```python
 
@@ -49,13 +53,13 @@ mlflow.autolog(
 
 ## Customization
 
-To customize logging behavior, use the [mlflow.autolog()](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html#mlflow.autolog) configuration. This configuration provides parameters to enable model logging, collect input samples, configure warnings, or enable logging for added content that you specify.
+To customize logging behavior, use the [`mlflow.autolog()`](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html#mlflow.autolog) configuration. This configuration provides parameters to enable model logging, collect input samples, configure warnings, or enable logging for added content that you specify.
 
 ### Track more metrics, parameters, and properties
 
 For runs you create by using MLflow, update the MLflow autologging configuration to track extra metrics, parameters, files, and metadata:
 
-1. Update the [mlflow.autolog()](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html#mlflow.autolog) call to set `exclusive=False`.
+1. Update the [`mlflow.autolog()`](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html#mlflow.autolog) call to `exclusive=False`.
 
     ```python
         mlflow.autolog(
@@ -75,15 +79,15 @@ For runs you create by using MLflow, update the MLflow autologging configuration
 
 1. Use the MLflow tracking APIs to log extra [parameters](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html#mlflow.log_param) and [metrics](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html#mlflow.log_metric). The following example code shows how to log your custom metrics and parameters alongside extra properties.
 
-    ```python
-    import mlflow
-    mlflow.autolog(exclusive=False)
+   ```python
+   import mlflow
+   mlflow.autolog(exclusive=False)
 
-    with mlflow.start_run():
-      mlflow.log_param("parameter name", "example value")
-      # <add model training code here>
-      mlflow.log_metric("metric name", 20)
-    ```
+   with mlflow.start_run():
+   mlflow.log_param("parameter name", "example value")
+   # <add model training code here>
+   mlflow.log_metric("metric name", 20)
+   ```
 
 ### Disable [!INCLUDE [product-name](../includes/product-name.md)] autologging
 
@@ -103,18 +107,23 @@ mlflow.autolog(disable=True)
 
 #### Disable autologging for all notebooks and sessions
 
-Workspace administrators can enable or disable [!INCLUDE [product-name](../includes/product-name.md)] autologging for all notebooks and sessions in their workspace by using the workspace settings. To enable or disable [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] autologging:
+Workspace administrators can enable or disable [!INCLUDE [product-name](../includes/product-name.md)] autologging for all notebooks and sessions in their workspace by using the workspace settings.
+
+To enable or disable [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] autologging:
 
 1. In your workspace, select **Workspace settings**.
 
-   :::image type="content" source="./media/mlflow-autologging/autologging-workspace-setting.png" alt-text="Screenshot of workspace with Workspace settings highlighted." lightbox="./media/mlflow-autologging/autologging-workspace-setting.png":::
+   :::image type="content" source="./media/mlflow-autologging/autologging-workspace-setting.png" alt-text="Screenshot that shows a workspace with Workspace settings highlighted." lightbox="./media/mlflow-autologging/autologging-workspace-setting.png":::
 
-1. In *Workspace settings*, expand **Data Engineering/Science** on the left navigation bar and select **Spark settings**.
-1. In *Spark settings*, select the **Automatic log** tab.
+1. In **Workspace settings**, expand **Data Engineering/Science** on the left menu and select **Spark settings**.
+
+1. In **Spark settings**, select the **Automatic log** tab.
+
 1. Set **Automatically track machine learning experiments and models** to **On** or **Off**.
+
 1. Select **Save**.
 
-   :::image type="content" source="./media/mlflow-autologging/autologging-setting-detail.png" alt-text="Screenshot of workspace setting for autologging." lightbox="./media/mlflow-autologging/autologging-setting-detail.png":::
+   :::image type="content" source="./media/mlflow-autologging/autologging-setting-detail.png" alt-text="Screenshot that shows the workspace settings for autologging." lightbox="./media/mlflow-autologging/autologging-setting-detail.png":::
 
 ## Related content
 

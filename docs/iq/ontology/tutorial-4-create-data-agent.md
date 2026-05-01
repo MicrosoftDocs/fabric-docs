@@ -7,7 +7,7 @@ ms.topic: tutorial
 
 # Ontology (preview) tutorial part 4: Create data agent
 
-Ontology (preview) integrates with [Fabric data agent (preview)](../../data-science/concept-data-agent.md) to let you ask questions in natural language, and get answers grounded in the ontology's definitions and bindings.   
+Ontology (preview) integrates with [Fabric data agent](../../data-science/concept-data-agent.md) to let you ask questions in natural language, and get answers grounded in the ontology's definitions and bindings.   
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -15,7 +15,7 @@ Ontology (preview) integrates with [Fabric data agent (preview)](../../data-scie
 
 Follow these steps to create a new data agent that connects to your ontology (preview) item.
 
-1. Go to your Fabric workspace. Use the **+ New item** button to create a new **Data agent (preview)** item named *RetailOntologyAgent*.
+1. Go to your Fabric workspace. Use the **+ New item** button to create a new **Data agent** item named *RetailOntologyAgent*.
 
     :::image type="content" source="media/tutorial-4-create-data-agent/data-agent-new.png" alt-text="Screenshot of creating a new data agent item." lightbox="media/tutorial-4-create-data-agent/data-agent-new.png":::
 
