@@ -19,15 +19,15 @@ This article explains what folders in workspaces are and how to use them in work
 
 1. In a workspace, select **New folder**.
 
-    :::image type="content" source="media/workspaces-folders/create-folder-new-menu.png" alt-text="Screenshot showing entry point of folder creation in new menu.":::
+    :::image type="content" source="media/workspaces-folders/create-folder-new-menu.png" alt-text="Screenshot of the entry point for folder creation in the new menu.":::
 
 1. Enter a name for the folder in the **New folder** dialog box. See [Folder name requirements](#folder-name-requirements) for naming restrictions.
 
-    :::image type="content" source="media/workspaces-folders/input-name-new-folder-dialog.png" alt-text="Screenshot showing New Folder dialog with a sample folder name.":::
+    :::image type="content" source="media/workspaces-folders/input-name-new-folder-dialog.png" alt-text="Screenshot of the New Folder dialog with a sample folder name.":::
 
 1. The folder is created successfully.
 
-    :::image type="content" source="media/workspaces-folders/newly-created-folder-workspace.png" alt-text="Screenshot showing a folder is created successfully.":::
+    :::image type="content" source="media/workspaces-folders/newly-created-folder-workspace.png" alt-text="Screenshot of a folder created successfully in the workspace.":::
 
 1. You can create nested subfolders in a folder in the same way. A maximum of 10 levels of nested subfolders can be created. 
 
@@ -51,35 +51,35 @@ Folder names must follow certain naming conventions:
 
 1. Select the context menu (**...**) of the item you want to move, then select **Move to**.
 
-    :::image type="content" source="media/workspaces-folders/select-move-context-menu.png" alt-text="Screenshot showing the entrypoint of move to button in context menu of an item." lightbox="media/workspaces-folders/select-move-context-menu.png":::
+    :::image type="content" source="media/workspaces-folders/select-move-context-menu.png" alt-text="Screenshot of the Move to option in the context menu of an item." lightbox="media/workspaces-folders/select-move-context-menu.png":::
 
 1. Select the destination folder where you want to move this item.
 
-    :::image type="content" source="media/workspaces-folders/select-destination-folder.png" alt-text="Screenshot showing the dialog for selecting destination folder." lightbox="media/workspaces-folders/select-destination-folder.png":::
+    :::image type="content" source="media/workspaces-folders/select-destination-folder.png" alt-text="Screenshot of the dialog for selecting a destination folder." lightbox="media/workspaces-folders/select-destination-folder.png":::
 
 1. Select **Move here**.
 
-    :::image type="content" source="media/workspaces-folders/select-move-here.png" alt-text="Screenshot showing move here button in the destination folder." lightbox="media/workspaces-folders/select-move-here.png":::
+    :::image type="content" source="media/workspaces-folders/select-move-here.png" alt-text="Screenshot of the Move here button in the destination folder dialog." lightbox="media/workspaces-folders/select-move-here.png":::
 
 1. By selecting **Open folder** in the notification or navigating to the folder directly, you can go to the destination folder to check if the item moved successfully.
 
-    :::image type="content" source="media/workspaces-folders/notification-moved-successfully.png" alt-text="Screenshot showing the notification for moving successfully.":::
+    :::image type="content" source="media/workspaces-folders/notification-moved-successfully.png" alt-text="Screenshot of the notification confirming an item moved successfully.":::
 
 ### Move multiple items
 
 1. Select multiple items, then select **Move** from the command bar.
 
-    :::image type="content" source="media/workspaces-folders/multi-select-items-move.png" alt-text="Screenshot showing multi-selected items and move button." lightbox="media/workspaces-folders/multi-select-items-move.png":::
+    :::image type="content" source="media/workspaces-folders/multi-select-items-move.png" alt-text="Screenshot of multiple selected items and the Move button in the workspace." lightbox="media/workspaces-folders/multi-select-items-move.png":::
 
 1. Select a destination where you want to move these items. You can also create a new folder if you need it. 
 
-    :::image type="content" source="media/workspaces-folders/create-new-folder-while-moving.png" alt-text="Screenshot showing new folder button in destination selector dialog." lightbox="media/workspaces-folders/create-new-folder-while-moving.png":::
+    :::image type="content" source="media/workspaces-folders/create-new-folder-while-moving.png" alt-text="Screenshot of the new folder button in the destination selector dialog." lightbox="media/workspaces-folders/create-new-folder-while-moving.png":::
 
 ## Create an item in a folder
 
 1. Go to a folder, select **New**, then select the item you want to create. The item is created in this folder.
 
-    :::image type="content" source="media/workspaces-folders/create-items-folder.png" alt-text="Screenshot showing create item from new menu inside a folder." lightbox="media/workspaces-folders/create-items-folder.png":::
+    :::image type="content" source="media/workspaces-folders/create-items-folder.png" alt-text="Screenshot of creating an item from the New menu inside a folder." lightbox="media/workspaces-folders/create-items-folder.png":::
 
     > [!NOTE]
     > Currently, you can't create certain items in a folder: 
@@ -96,21 +96,21 @@ You can now publish your Power BI reports to specific folders in your workspace.
 
 When you publish a report, you can choose the specific workspace and folder for your report, as illustrated in the following image. 
 
-:::image type="content" source="media/workspaces-folders/publish-folder-select-folder.png" alt-text="Screenshot showing selecting a folder for where a report gets published." lightbox="media/workspaces-folders/publish-folder-select-folder.png":::
+:::image type="content" source="media/workspaces-folders/publish-folder-select-folder.png" alt-text="Screenshot of the publish dialog with a folder selected as the report destination." lightbox="media/workspaces-folders/publish-folder-select-folder.png":::
 
 To publish reports to specific folders in the service, make sure that in Power BI Desktop, the **Publish dialogs support folder selection** setting is enabled in the **Preview features** tab in the options menu. 
 
-:::image type="content" source="media/workspaces-folders/publish-folder-dialog.png" alt-text="Screenshot showing selecting publish dialogs support folder selection box." lightbox="media/workspaces-folders/publish-folder-dialog.png":::
+:::image type="content" source="media/workspaces-folders/publish-folder-dialog.png" alt-text="Screenshot of the Publish dialogs support folder selection checkbox in preview features." lightbox="media/workspaces-folders/publish-folder-dialog.png":::
     
 ## Rename a folder
 
 1. Select the context (**...**) menu, then select **Rename**.
 
-    :::image type="content" source="media/workspaces-folders/rename-folder.png" alt-text="Screenshot showing rename folder entry point in context menu.":::
+    :::image type="content" source="media/workspaces-folders/rename-folder.png" alt-text="Screenshot of the Rename option for a folder in the context menu.":::
 
 1. Give the folder a new name and select the **Rename** button.
 
-    :::image type="content" source="media/workspaces-folders/input-name-rename-dialog.png" alt-text="Screenshot showing inputting name in rename dialog.":::
+    :::image type="content" source="media/workspaces-folders/input-name-rename-dialog.png" alt-text="Screenshot of the Rename dialog with a new folder name entered.":::
 
 > [!NOTE]
 > When renaming a folder, follow the same naming convention as when you're creating a folder.  See [Folder name requirements](#folder-name-requirements) for naming restrictions.
@@ -120,7 +120,7 @@ To publish reports to specific folders in the service, make sure that in Power B
 1. Make sure the folder is empty.
 1. Select the context menu (**...**) and select **Delete**.
 
-    :::image type="content" source="media/workspaces-folders/delete-folder.png" alt-text="Screenshot showing delete folder entry point in contextual menu.":::
+    :::image type="content" source="media/workspaces-folders/delete-folder.png" alt-text="Screenshot of the Delete option for a folder in the contextual menu.":::
 
     > [!NOTE]
     > Currently you can only delete empty folders.
