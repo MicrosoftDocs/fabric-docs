@@ -3,89 +3,130 @@ title: Custom authorization with functions for API for GraphQL
 description: Learn how to use user data functions to enble custom authorization for API for GraphQL
 author: mksuni
 ms.author: sumuth
-ms.date: 03/20/2026
+ms.date: 05/01/2026
 ms.topic: concept-article
 ms.search.form: how to use user data functions to enble custom authorization for API for GraphQL
 ---
 # Use an Authorizer UDF to control access to a GraphQL API
 
-## Overview
+Authorizer User-Defined Functions (UDFs) let you execute custom authorization logic **before a GraphQL API request is processed**. This capability enables API owners to enforce business-specific access rules that go beyond static role assignments. With an Authorizer UDF, you can evaluate information from the authenticated request—such as claims in a JWT token—and decide whether the request should be allowed. The logic is implemented as a function and invoked automatically for incoming API calls.
 
-Authorizer User-Defined Functions (UDFs) let you execute custom authorization logic **before a GraphQL API request is processed**. This capability enables API owners to enforce business-specific access rules that go beyond static role assignments.
+## Use-cases
 
-With an Authorizer UDF, you can evaluate information from the authenticated request—such as claims in a JWT token—and decide whether the request should be allowed. The logic is implemented as a function and invoked automatically for incoming API calls.
-
-## When to use an Authorizer UDF
-
-Use an Authorizer UDF when you need to:
+Use an authorizer user data function when you need to:
 
 - Apply custom business logic before API execution
 - Restrict access based on user identity or token claims
-- Validate service principals separately from user accounts
-- Combine dynamic authorization logic with RBAC and row-level security
+- Validate service principal separately from user accounts
 
-This approach is useful when static role definitions alone are not sufficient.
+## How authorization feature works
 
-## How Authorizer UDFs work
+When custom authorization is enabled with a user data function:
 
-When the Authorizer UDF feature is enabled:
+- A function runs before the GraphQL API executes.
+- It receives context from the authenticated request.
+- Custom logic checks authorization.
+- If authorized, the API request proceeds; if not, it’s denied.
+- The result is achieved faster for future requests.
 
-1. A function is invoked **before** the GraphQL API executes.
-2. The function receives context from the authenticated request.
-3. Custom logic determines whether the request is authorized.
-4. If authorization succeeds, the API request continues.
-5. If authorization fails, the request is denied.
+## Create a user data function
 
-The result of the function invocation is cached, so subsequent requests execute faster after the initial evaluation.
+A authorizer function within a Fabric user data function requires a specific format. 
 
-## Enable the Authorizer UDF feature
+1. The function name can be user defined. It does not have any GraphQL-specific restrictions and should be defined based on the user data function constraints.
+2. The function argument/parameter name should be request and it should be of type dictionary. When the GraphQL service invokes a function, it sends a payload containing a dictionary called request with the following fields:
+   - tokenClaims: dictionary — key-value pairs containing token claims extracted from the incoming user token.
+   - query: string — the query string passed when the GraphQL API is called.
+   - variables: dictionary — key-value pairs containing variables passed when the GraphQL API is called.
+   - The function return type should be again a dictionary. It should send back two keys : isAuthorized and roles. isAuthorized is mandatory and roles is optional parameter. Roles needs to be sent when RBAC   feature is enabled.
+   
+**Example**
 
-To use an Authorizer UDF, you must enable the feature on your GraphQL API and provide the required function details.
+Create a user data functions in [Fabric portal](https://app.fabric.microsoft.com).Replace the entire code for hello fabric sample with the code below.
 
-Once enabled, the API invokes the configured Authorizer UDF automatically for incoming requests.
+```python
+from typing import TYPE_CHECKING
+import fabric.functions as fn
+import logging
 
-## Implement authorization logic in the function
+user data function = fn.UserDataFunctions()
 
-The Authorizer UDF contains custom logic written by the API owner. The function can:
+@user data function.function()
+def invokeauthudf(request: dict) -> dict:
+    
+    token_claims: dict = request.get("tokenClaims", {})
+    query: str = request.get("query", "")
+    variables: dict = request.get("variables", {})
+    domain = "onmicrosoft.com"
+    spn = "59f4323d-c886-4eaf-b686-1219c4f380ab"
 
-- Inspect claims from the JWT token of the authenticated caller
-- Validate user principal names (UPNs) or email domains
-- Evaluate application IDs for service principals
-- Call external systems or APIs if needed
-- Query data sources to validate access
+    # Extract claims from token_claims dictionary
+    tid_claim = token_claims.get("tid")
+    upn_claim = token_claims.get("upn")
+    appid_claim = token_claims.get("appid")
+    logging.info(f"Query: {query}");
+    logging.info(f"Claims: {token_claims}");
+    logging.info(f"Tenant: {tid_claim}");
+    logging.info(f"UPN: {upn_claim}");
+    logging.info(f"SPN: {appid_claim}");
 
-In the demo, the function checks whether the authenticated user belongs to a specific email domain (for example, a company-owned domain) and only allows access if the condition is met. 
+    # Authorization logic
+    ## Optional: Do role-based access check
+    roles = []
 
-## Example: Restrict access by user domain
+    if upn_claim is not None:
+        is_authorized = domain in upn_claim
+        roles = ["Default"]
+    else:
+        is_authorized =  spn in appid_claim
+        roles = ["SPN"]
 
-In this scenario:
+    logging.info(f"Authorized: {is_authorized}")
+    logging.info(f"Roles: {roles}")
+    logging.info(f"SPN: {spn}")
+    logging.info(f"App ID: {appid_claim}")
+    return {
 
-- The Authorizer UDF checks the authenticated user’s UPN.
-- The function validates whether the email domain matches an allowed domain.
-- Only users from the allowed domain can access the GraphQL API.
+            "isAuthorized": is_authorized,
+            "roles": roles
+    }
+```
 
-This pattern is useful when you want to restrict access to employees from a specific tenant or organization. 
+### What does this function do?
 
-## Supporting service principal access
+- This Authorizer user data function runs before a GraphQL request executes, reads identity claims (UPN, app ID) from the caller’s JWT token, and logs request details.
+- It authorizes users by checking if their email (UPN) belongs to a specific domain, and authorizes service principals by matching a known app ID.
+- Based on the result, it returns isAuthorized and assigns a role (Default for users, SPN for apps) that downstream RBAC uses to enforce access.
 
-Authorizer UDFs can also distinguish between **user-based access** and **service principal (SPN) access**.
+## Add a connection to the User data function
 
-In the demo:
+Before enabling the feature, you need to add a connection for a user data function type. 
 
-- A local application authenticates using a service principal.
-- The Authorizer UDF checks the application ID claim in the token.
-- Access is granted only if the application ID matches the expected value.
+1. Under **settings** , select **Manage connections and gateways**.
+2. On the **Connections** tab, select **New**.
+3. In the **New connection** page, select **Cloud**, provide a name for your connection and select **User Data Function** as the connection type. Use **OAUth** method and update the credentials to authenticate. Note that you don’t need to check  "Allow this connection to be utilized with either on-premises data gateways or VNet data gateways" when creating this connection. 
 
-This allows secure, programmatic access to the API while applying different rules than those used for human users. 
+## Enable the authorization feature
 
-## Integrating with RBAC and row-level security
+You can enable the authorization feature once the function is created and a connection with the user data function type has been set up. You need write permissions to enable or disable this feature.
 
-Authorizer UDFs work together with RBAC features:
+1.	Open the API for GraphQL item and select **Settings**. 
+2.	Select **Authorization (Preview)** and enable the feature. 
+3.	Provide the user data function item and the auth function you want to use. 
 
-- Role-based access determines **which data types and operations** are allowed.
-- Row-level and column-level controls restrict **which data rows and fields** can be accessed.
-- The Authorizer UDF controls **who is allowed to proceed** before those rules are applied.
 
+## Limitations and behaviors
+
+| Category               | Details                                                     |
+| ---------------------- | ----------------------------------------------------------- |
+| Authentication         | Only OAuth is supported                                     |
+| B2B support            | Not available for guest users due to connection limitations |
+| Permissions            | Write required for config; Execute required for API calls   |
+| Unsupported configs    | SPN with OID not supported                                  |
+| Caching                | Changes may take up to 15 minutes to apply                  |
+| Region dependency      | UDF and GraphQL must be in same region                      |
+| Private link           | Not supported with blocked public access                    |
+| Authorization failures | Occur when isAuthorized = false or roles mismatch           |
 
 ## Next steps
 
