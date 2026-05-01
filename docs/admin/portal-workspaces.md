@@ -130,8 +130,7 @@ To gain access to a particular My workspace
 1. Select the workspace and then choose **Get Access** from the ribbon, or select **More options (...)** and choose **Get Access**.
 
 > [!NOTE]
-> - Once access is obtained, the ribbon and the More options (...) menu shows **Remove Access** for the same My workspace. If you don't remove access by selecting one of these options, access will automatically be revoked for the admin after 24-hours. The My workspace owner's access remains intact.
-> - In sovereign clouds (GCC, GCC High, DoD), certain admin actions such as taking ownership of another user's *My workspace* might not be available. If the workspace belongs to another user, admins might not be able to use **Get Access** or take ownership.
+> Once access is obtained, the ribbon and the More options (...) menu shows **Remove Access** for the same My workspace. If you don't remove access by selecting one of these options, access will automatically be revoked for the admin after 24-hours. The My workspace owner's access remains intact.
 
 Once you have access, the My workspace shows up in the list of workspaces accessible from the navigation pane. The icon :::image type="icon" border="false" source="./media/portal-workspaces/personal-workspace-icon.png"::: indicates that it's a My workspace.
 
