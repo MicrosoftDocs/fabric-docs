@@ -130,5 +130,5 @@ Enable the authorization feature once the function and the connection for this u
 
 ## Next steps
 
-- [Connect to an application](../data-engineering/connect-apps-api-graphql.md)
-- [Develop in VS Code](../data-engineering/api-graphql-develop-vs-code)
+- [Connect to an application](./connect-apps-api-graphql.md)
+- [Develop in VS Code](./api-graphql-develop-vs-code)
