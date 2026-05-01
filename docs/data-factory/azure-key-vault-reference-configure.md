@@ -25,7 +25,7 @@ To use Azure Key Vault references in Microsoft Fabric, you:
 - An [Azure Key Vault](/azure/key-vault/secrets/quick-create-portal)
   - Either of the following is true:
     - The Azure Key Vault is accessible from public network.
-    - The Azure Key Vault is private with an On-premises Data Gateway having network line of site to the Key Vault Private Endpoint
+    - The Azure Key Vault is private with an On-premises Data Gateway having network line of site to the Key Vault Private Endpoint.
   - The creator of Azure Key Vault reference connection has at least [Key Vault Certificate User](/azure/role-based-access-control/built-in-roles/security#key-vault-certificate-user) permissions on the Key Vault.
 
 - Check [supported connectors and authentication types](#supported-connectors-and-authentication-types) to ensure the connector you want to use supports AKV references.
