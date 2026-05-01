@@ -265,7 +265,7 @@ After you've imported the task flow into a new workspace, modify it to suit your
 
 To import or export a task flow select the **Import and export task flow** icon in the task flow details pane and choose the relevant option.
 
-:::image type="content" source="./media/task-flow-work-with/import-export-task-flow.png" alt-text="Screenshot showing how to access the import task flow and export taskflow options.":::
+:::image type="content" source="./media/task-flow-work-with/import-export-task-flow.png" alt-text="Screenshot showing how to access the import task flow and export task flow options.":::
 
 ## Related concepts
 
