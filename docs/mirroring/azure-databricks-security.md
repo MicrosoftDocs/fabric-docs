@@ -2,7 +2,7 @@
 title: "Microsoft Fabric Mirrored Databases From Azure Databricks Security"
 description: Learn about security for Azure Databricks mirroring in Microsoft Fabric.
 ms.reviewer: preshah, sheppardshep
-ms.date: 03/30/2026
+ms.date: 05/01/2026
 ms.topic: overview
 ms.search.form: Databricks security overview
 ---
