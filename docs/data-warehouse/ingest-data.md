@@ -16,7 +16,7 @@ ms.search.form: Ingesting data # This article's title should not change. If so, 
 
 Choose a data ingestion option based on the following criteria: 
 
-- Use the **COPY (Transact-SQL)** statement for code-rich data ingestion operations. It provides the highest data ingestion throughput. Use it when you need to add data ingestion as part of a Transact-SQL logic. 
+- Use the **COPY (Transact-SQL)** statement for code-rich data ingestion operations. It provides the highest data ingestion throughput. Use it when you need to add data ingestion as part of your Transact-SQL logic. 
     - To get started, see [Ingest data using the COPY statement](ingest-data-copy.md).
     - The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] also supports the traditional `BULK INSERT` statement, which is a synonym for `COPY INTO` with classic loading options.
     - The `COPY` statement in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports data sources from Azure storage accounts and OneLake lakehouse folders.
@@ -33,7 +33,7 @@ Choose a data ingestion option based on the following criteria:
 
 ## Supported data formats and sources
 
-Data ingestion for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports many data formats and sources. Each option outlined in this article includes its own list of supported data connector types and data formats.  
+Data ingestion for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports many data formats and sources. Each option outlined in this article includes its own list of supported data connector types and data formats.
 
 For **T-SQL ingestion**, table data sources must be within the same [!INCLUDE [product-name](../includes/product-name.md)] workspace, and file data sources must be in Azure Data Lake or Azure Blob storage. You can query data by using three-part naming or the `OPENROWSET` function for the source data. Table data sources can reference Delta Lake data sets, while `OPENROWSET` can reference Parquet, CSV, or JSONL files in Azure Data Lake or Azure Blob storage.
 
@@ -92,7 +92,7 @@ Consider splitting large CSV files, especially when the number of files is small
 
 #### What is the file splitting guidance for the COPY command loading Parquet files?
 
-Consider splitting large Parquet files, especially when the number of files is small. 
+Consider splitting large Parquet files, especially when the number of files is small.
 
 #### Are there any limitations on the number or size of files?
 
