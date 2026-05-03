@@ -1064,11 +1064,11 @@ items:
       - name: Explore data in Real-Time Dashboard Using Copilot
         href: dashboard-explore-data.md
   - name: Operations agents
-    displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
+    displayName: AI agents, AI, agents, Operation agents
     items:
       - name: Operations agents
         href: operations-agent-tocs/toc.yml
-  - name: Develop AI Agents
+  - name: Build AI agents
     displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source, skills
     items:
       - name: Overview
