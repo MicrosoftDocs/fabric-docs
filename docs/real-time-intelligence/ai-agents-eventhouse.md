@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 #CustomerIntent: As a developer, I want to understand the AI agent tools available for Real-Time Intelligence so I can build intelligent applications that query and act on real-time data.
 ---
 
-# Develop AI agents for Real-Time Intelligence (preview)
+# Build AI agents for Real-Time Intelligence (preview)
 
 Fabric Real-Time Intelligence provides tools and open-source resources for building AI agents that interact with your real-time data. You can use Model Context Protocol (MCP) servers for live connectivity and skills for reusable, prebuilt query capabilities against Eventhouse, KQL databases, and Azure Data Explorer (ADX) clusters.
 
@@ -55,7 +55,4 @@ Skills for Eventhouse typically provide the following capabilities:
 ## Related content
 
 - [What is MCP in Real-Time Intelligence?](mcp-overview.md)
-- [Get started with the local MCP server](mcp-local-server.md)
-- [Get started with the remote MCP server for Eventhouse](mcp-remote-eventhouse.md)
-- [Get started with the remote MCP server for Activator](mcp-remote-activator.md)
-- [Eventhouse overview](eventhouse.md)
+- [Skills for Fabric](https://github.com/microsoft/skills-for-fabric)
