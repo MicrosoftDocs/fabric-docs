@@ -1058,11 +1058,11 @@ items:
       - name: Copilot for Real-Time Intelligence
         href: copilot-real-time-intelligence.md
       - name: Copilot for Writing KQL Queries
-        href: copilot-writing-queries.md
+        topicUid: copilot-writing-queries.md
       - name: Generate Real-Time Dashboard Using Copilot
-        href: copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric
+        topicUid: copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric
       - name: Explore data in Real-Time Dashboard Using Copilot
-        href: dashboard-explore-data.md
+        topicUid: dashboard-explore-data.md
   - name: Operations agents
     displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
     items:
