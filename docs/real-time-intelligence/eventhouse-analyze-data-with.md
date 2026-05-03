@@ -13,7 +13,7 @@ Microsoft Fabric provides a unified **Analyze data with** menu that gives you a 
 
 From a KQL database in Eventhouse, the **Analyze data with** action lets you:
 
-- Analyze data using SQL Endpoint, when OneLake availability and sync are enabled.
+- Analyze data using SQL analytics endpoint, when OneLake availability and sync are enabled.
 - Open a new or existing notebook with the database automatically added to the notebook environment.
 - Launch analysis actions from a single location, without switching contexts or reconfiguring access.
 
