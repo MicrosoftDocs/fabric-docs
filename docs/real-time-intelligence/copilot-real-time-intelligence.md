@@ -35,7 +35,7 @@ Copilot in Real-Time Dashboards simplifies dashboard creation and data explorati
 
 Copilot also supports [Azure Data Explorer](/azure/data-explorer/) (ADX) clusters. When connected to an ADX cluster, Copilot generates KQL queries and explores data in the same way it does for an Eventhouse. A Fabric-enabled capacity is required.
 
-For more information on connecting to ADX from Fabric, see [Consume ADX data in Fabric](migrate-azure-data-explorer#consume-adx-data-in-fabric).
+For more information on connecting to ADX from Fabric, see [Consume ADX data in Fabric](migrate-azure-data-explorer.md#consume-adx-data-in-fabric).
 
 ## Best practices for Copilot KQL queries
 
