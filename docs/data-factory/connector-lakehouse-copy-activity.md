@@ -3,7 +3,7 @@ title: Configure Lakehouse in a copy activity
 description: This article explains how to copy data using Lakehouse.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 04/17/2026
+ms.date: 04/30/2026
 ms.custom:
   - pipelines
   - template-how-to
@@ -184,11 +184,6 @@ The following properties are **required**:
               > Partition columns cannot overlap with key columns.
     - Under **Advanced**, you can specify the following fields:
       
-      - **Enable TimestampNtz**: Specifies whether to enable TimestampNtz for the Lakehouse table destination. When disabled (default), datetime values are written as timestamp. When enabled, you can edit the destination column type to timestamp_ntz. For auto-created tables, source datetime columns with UTC kind are mapped to timestamp, while other source datetime columns are mapped to timestamp_ntz.
-
-         > [!NOTE]
-         > Querying columns of type timestamp_ntz via T‑SQL Query (Preview) is currently not supported.
-
       - **Apply V-Order**: Specify to apply V-Order via copy. Disabling it preserves the original parquet files without applying additional V-Order optimization. For more information, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).
 
   - If you select **Files**:
@@ -257,7 +252,6 @@ When copying data from Lakehouse tables in Table mode, the following mappings ar
 | binary              | Byte array       |
 | date                | Date             |
 | timestamp           | DateTime         |
-| timestamp_ntz        | DateTime         |
 
 When copying data to Lakehouse tables in Table mode, the following mappings are used from interim data types used by the service internally to supported delta destination data types.
 
@@ -277,8 +271,7 @@ When copying data to Lakehouse tables in Table mode, the following mappings are 
 | GUID             | string              |
 | Date             | date                |
 | TimeSpan         | Not supported       |
-| DateTime (When DateTimeKind is UTC) | timestamp           |
-| DateTime (When DateTimeKind is unspecified, local, or not provided) | timestamp_ntz        |
+| DateTime         | timestamp           |
 | DateTimeOffset   | timestamp           |
 | String           | string              |
 | Byte array       | binary              |
@@ -391,7 +384,6 @@ The following tables contain more information about a copy activity in Lakehouse
 |**schema name** |The name of the schema. |\<your schema name><br>(the default is *dbo*) |No | schema |
 |**table name** |The name of the table. |\<your table name> |Yes | table |
 |**Table action**| Append new values to an existing table, overwrite the existing data and schema in the table using the new values or insert new values to existing table and update existing values.|• **Append**<br>• **Overwrite**<br>• **Upsert**|No|tableActionOption:<br>• Append<br> • OverwriteSchema <br>• Upsert|
-|**Enable TimestampNtz** | Enables TimestampNtz for the Lakehouse table destination. When disabled (default), datetime values are written as timestamp. When enabled, you can edit the destination column type to timestamp_ntz. For auto-created tables, source datetime columns with UTC kind are mapped to timestamp, while other source datetime columns are mapped to timestamp_ntz. | Selected or unselected (default) | No | enableTimestampNtz |
 |**Apply V-Order**| Apply V-Order via copy. Disabling it preserves the original parquet files without applying additional V-Order optimization. For more information, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).|Selected (default) or unselected|No|applyVOrder|
 |**Enable partitions**|This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".| Selected or unselected |No| partitionOption: <br> PartitionByKey or None|
 |**Partition columns**|The destination columns in schemas mapping.| \<your partition columns\> |No| partitionNameList|

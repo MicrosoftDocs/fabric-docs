@@ -1113,7 +1113,7 @@
               - name: Implement slowly changing dimension type 2
                 href: slowly-changing-dimension-type-two.md
               - name: Staging in Dataflow Gen2
-                href: data-in-staging-artifacts.md
+                href: data-in-staging-items.md
               - name: How to handle schema drift
                 href: how-to-handle-schema-drift.md
               - name: How to obfuscate data

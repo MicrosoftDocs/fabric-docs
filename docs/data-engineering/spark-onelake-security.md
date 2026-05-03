@@ -82,10 +82,6 @@ df.filter("region = 'EMEA'").groupBy("product_category").sum("amount").show()
 
 In both examples, the `transactions` table data that's loaded into the DataFrame is already filtered by OneLake security. Subsequent transformations operate over the filtered data only.
 
-### Lakehouse explorer tablepreview
-
-The lakehouse explorer preview also honors OneLake security and shows the filtered view of secured tables when previewing data through Spark. Users see only the rows and columns granted to them by their OneLake security role.
-
 ### Direct file access is blocked
 
 Direct path access bypasses lakehouse catalog policy resolution. When OneLake security is enabled on a table, the OneLake and Fabric platform layer blocks the following patterns for non-privileged users:
@@ -124,6 +120,7 @@ Users must access secured tables through the lakehouse table name (for example `
 
 OneLake security RLS and CLS in Spark inherit the [overall OneLake security limitations](../onelake/security/get-started-onelake-security.md). Notable behaviors and limits include:
 
+* Spark RLS/CLS implementation doesn't support service principals; only user identities are evaluated for row- and column-level security policies. Running notebooks with workspace identity will not enforce RLS/CLS for the workspace identity itself, only for the individual users executing the queries within the notebook context.
 * The OneLake and Fabric platform layer applies RLS and CLS only to **Delta parquet** tables. Non-Delta objects in a secured role are blocked.
 * The OneLake and Fabric platform layer blocks direct path reads (`abfss://`, `DeltaTable.forPath`) against secured tables for non-privileged users.
 * The OneLake and Fabric platform layer doesn't support a user being a member of two roles where one defines RLS and the other defines CLS for the affected tables.
