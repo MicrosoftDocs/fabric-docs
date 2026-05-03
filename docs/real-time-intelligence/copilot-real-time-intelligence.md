@@ -17,8 +17,6 @@ ai-usage: ai-assisted
 
 Copilot in the Fabric Real-Time Intelligence workload is an AI assistant that helps you query, analyze, and explore your real-time data. Copilot translates natural language into Kusto Query Language (KQL) queries, generates dashboards, and enables interactive data exploration, all without requiring KQL expertise.
 
-Each Fabric workload has its own Copilot experience tailored to its tasks and data. This article focuses on the Real-Time Intelligence experience. For Copilot in other workloads, see [Overview of Copilot in Fabric](../fundamentals/copilot-fabric-overview.md).
-
 ## Copilot in KQL querysets
 
 Copilot in KQL querysets transforms natural language questions into KQL queries. Describe your data analysis needs in plain language, and Copilot generates the corresponding query. Copilot supports conversational interactions, so you can refine queries and ask follow-up questions without starting over.
@@ -35,9 +33,9 @@ Copilot in Real-Time Dashboards simplifies dashboard creation and data explorati
 
 ## Copilot for Azure Data Explorer
 
-Copilot for KQL is also available for [Azure Data Explorer](/azure/data-explorer/) (ADX) clusters through Fabric capacity. When you use Copilot in a KQL queryset or Real-Time Dashboard connected to an ADX cluster, Copilot generates KQL queries and explores data in the same way it does for an eventhouse. A Fabric-enabled capacity is required.
+Copilot also supports [Azure Data Explorer](/azure/data-explorer/) (ADX) clusters. When connected to an ADX cluster, Copilot generates KQL queries and explores data in the same way it does for an Eventhouse. A Fabric-enabled capacity is required.
 
-For more information on connecting to ADX from Fabric, see [Real-Time Intelligence and Azure Data Explorer](real-time-intelligence-compare.md).
+For more information on connecting to ADX from Fabric, see [Consume ADX data in Fabric](migrate-azure-data-explorer#consume-adx-data-in-fabric).
 
 ## Best practices for Copilot KQL queries
 
@@ -62,13 +60,19 @@ The following tips apply to Copilot in both KQL querysets and Real-Time Dashboar
 
 Copilot enhances prompts by using the most relevant examples (referred to as natural language and KQL pairs, or "shots") from a Public Shots database. This database is curated by the Real-Time Intelligence team, derived from KQL documentation, and available to all Copilot users. The Public Shots database provides a solid foundation but is generic and lacks domain-specific knowledge of your KQL database.
 
-To improve Copilot's ability to generate accurate and complex KQL queries for your specific scenarios, create a Private Shots database. This approach lets you include advanced KQL queries that address your team's unique requirements, such as queries that use [graph semantics](/kusto/query/graph-semantics-overview), [time series analysis](/kusto/query/time-series-analysis), [anomaly detection](/kusto/query/series-decompose-anomalies-function), or [stored functions](/kusto/query/schema-entities/stored-functions) defined in your KQL database.
+To improve Copilot's ability to generate accurate and complex KQL queries for your specific scenarios, create a Private Shots database. 
+
+This approach lets you include advanced KQL queries that address your team's unique requirements. For example, queries that use:
+    - [graph semantics](/kusto/query/graph-semantics-overview),
+    - [time series analysis](/kusto/query/time-series-analysis),
+    - [anomaly detection](/kusto/query/series-decompose-anomalies-function),
+    - or [stored functions](/kusto/query/schema-entities/stored-functions) defined in your KQL database.
 
 Private Shots are automatically published from both KQL querysets and Real-Time Dashboards. When you save these artifacts, the KQL queries they contain are published to the Private Shots database, improving Copilot's ability to generate queries that align with your data and use cases.
 
 > [!NOTE]
 >
-> - After saving the Private Shots artifacts, it can take a few minutes for them to be published and available for Copilot to use.
+> - After you save the Private Shots artifacts, it can take a few minutes for them to be published and available for Copilot to use.
 > - Only the KQL is mandatory. The LLM generates the natural language description. You can add a short description by including a preceding comment attached to the KQL.
 > - KQL queries are checked for valid syntax. Only valid queries are added to the Private Shots database.
 > - Copilot uses only Private Shots that are accessible to the user. If you lack permission to view a specific dashboard or queryset, Copilot doesn't use shots from those artifacts.
@@ -88,15 +92,11 @@ The following limitations apply to Copilot across Real-Time Intelligence:
 
 To view Microsoft's guidelines for responsible AI in Real-Time Intelligence, see [Privacy, security, and responsible use of Copilot for Real-Time Intelligence](../fundamentals/copilot-real-time-intelligence-privacy-security.md).
 
-Microsoft is committed to ensuring that AI systems are guided by [AI principles](https://www.microsoft.com/en/ai/principles-and-approach/) and the [Responsible AI Standard](https://www.microsoft.com/ai/responsible-ai). These principles include empowering customers to use these systems effectively and in line with their intended uses.
+Microsoft is committed to ensuring that [AI principles](https://www.microsoft.com/en/ai/principles-and-approach/) and the [Responsible AI Standard](https://www.microsoft.com/ai/responsible-ai) guide the AI systems. These principles include empowering customers to use these systems effectively and in line with their intended uses.
 
 ## Related content
 
 - [Copilot for writing KQL queries](copilot-writing-queries.md)
 - [Generate a Real-Time Dashboard using Copilot](copilot-generate-dashboard.md)
 - [Copilot-assisted real-time data exploration](dashboard-explore-data.md)
-- [Privacy, security, and responsible use of Copilot for Real-Time Intelligence](../fundamentals/copilot-real-time-intelligence-privacy-security.md)
 - [Overview of Copilot in Fabric](../fundamentals/copilot-fabric-overview.md)
-- [Copilot for Microsoft Fabric: FAQ](../fundamentals/copilot-faq-fabric.yml)
-- [Copilot for Microsoft Fabric and Power BI: FAQ](../fundamentals/copilot-faq-fabric.yml)
-- [Privacy, security, and responsible use of Copilot for Real-Time Intelligence](../fundamentals/copilot-real-time-intelligence-privacy-security.md)
