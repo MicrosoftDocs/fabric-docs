@@ -2,7 +2,7 @@
 title: Understand the development sample
 description: Understand how the workload development kit workload sample works, and the Fabric capabilities it showcases.
 ms.topic: how-to
-ms.date: 12/31/2024
+ms.date: 04/29/2026
 
 #customer intent: As a developer, I want to understand the Fabric capabilities that the workload development kit sample showcases, so that I can use them in the workloads I develop.
 ---

@@ -197,7 +197,7 @@ Consider these Direct Lake security limitations.
 - Bidirectional relationships aren't supported in a Direct Lake model if the source Fabric artifact relies on OneLake security RLS.
 - OneLake security doesn't support dynamic definitions or complex role configurations, such as combining multiple OLS and RLS roles across related tables.
 - Consolidate OneLake security RLS and OLS permissions into one role per user instead of assigning multiple roles.
-- If the OneLake security configuration changes, such as due to shortcut changes in the target artifact, refresh Direct Lake on OneLake models that access that artifact. If autosync is enabled, the service usually refreshes them automatically. Otherwise, refresh the models manually.
+- If the OneLake security configuration changes, such as due to shortcut changes in the target artifact, refresh Direct Lake on OneLake models that access that artifact. You must refresh the models manually or by using refresh APIs.
 - If a Lakehouse has OneLake security:
   - The SQL analytics endpoint is, by default, fixed identity to the owner of the Lakehouse, so the SQL analytics endpoint OneLake security is the same as the owner (no limitations). Direct Lake on SQL stays using Direct Lake, unless extra SQL granular access roles are added.
   - The SQL analytics endpoint can be changed to SSO. When this happens, OneLake security roles are added as SQL granular access control rules and the user is blocked from editing them directly on the SQL analytics endpoint. At this point, Direct Lake on SQL falls back to DirectQuery 100% of the time.
