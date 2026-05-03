@@ -29,7 +29,7 @@ For more information, see [What is MCP in Real-Time Intelligence?](mcp-overview.
 
 ## Skills for Fabric
 
-Skills are reusable, prebuilt AI capabilities that you can add to your AI agents. A skill packages a specific task, such as querying a KQL database or analyzing time-series data, into a component that an AI agent can invoke. Skills simplify agent development by providing ready-to-use query patterns and data interaction logic.
+Skills for Fabric (also referred to as Agent Skills) provide a standardized, secure, and extensible way for AI coding agents to author, query, operate, and govern Microsoft Fabric workloads. These skills allow AI tools to act as Fabric‑aware agents that are capable of understanding Workspaces, Eventhouses, and other items, while respecting Microsoft security, governance, and responsible AI requirements.
 
 ### Available skills for Eventhouse and KQL databases
 
@@ -42,36 +42,15 @@ The [Skills for Fabric](https://github.com/microsoft/skills-for-fabric) open-sou
 
 For the full catalog of available skills across all Fabric workloads, see the [skill catalog](https://github.com/microsoft/skills-for-fabric/blob/main/docs/skill-catalog.md).
 
-The [Kusto MCP Tools](https://github.com/Azure/azure-kusto-mcp-server) repository provides an MCP server and tools for Azure Data Explorer, including KQL query execution, schema exploration, and cluster management for ADX and Eventhouse.
-
-### How skills work
-
-Skills follow a standard pattern:
-
-1. **Discovery**: The AI agent discovers available skills through the MCP protocol or a skill registry.
-1. **Invocation**: When the agent determines a skill is needed, it invokes the skill with the appropriate parameters.
-1. **Execution**: The skill executes the task, such as running a KQL query against an eventhouse, and returns the results.
-1. **Response**: The agent uses the results to formulate a response or take further action.
-
 ### Eventhouse skill capabilities
 
-Skills for Eventhouse and Kusto typically provide the following capabilities:
+Skills for Eventhouse typically provide the following capabilities:
 
 - **KQL query execution**: Run Kusto Query Language queries against KQL databases in an eventhouse or ADX cluster.
 - **Schema discovery**: Explore database schemas, tables, columns, and data types.
 - **Data sampling**: Retrieve sample data from tables to understand data structure and content.
 - **Natural language to KQL**: Translate natural language questions into optimized KQL queries.
 - **Time-series analysis**: Analyze time-series data patterns, trends, and anomalies.
-
-## Choose the right approach
-
-| Scenario | Recommended approach |
-|----------|---------------------|
-| Build an AI agent that queries live Eventhouse data | MCP servers |
-| Add prebuilt query capabilities to an existing agent | Skills |
-| Create a cloud-hosted agent in Copilot Studio or Azure AI Foundry | Remote MCP servers |
-| Build a local development or debugging workflow | Local MCP server |
-| Contribute or customize open-source query tools | Skills repositories |
 
 ## Related content
 
