@@ -1,6 +1,6 @@
 ---
 title: Include file for Eventhouse Endpoint in Analyze data menu
-description: Include file for Eventhouse Endpoint in Analyze data menu.
+description: Include file for Eventhouse endpoint in the Analyze data menu.
 author: spelluru
 ms.author: spelluru
 ms.reviewer: tzgitlin, salilkanade, wiassaf
