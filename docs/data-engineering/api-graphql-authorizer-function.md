@@ -1,5 +1,5 @@
 ---
-title: Custom authorization with functions for API for GraphQL
+title: Custom authorization with user data functions for API for GraphQL
 description: Learn how to use user data functions to enble custom authorization for API for GraphQL
 author: mksuni
 ms.author: sumuth
@@ -7,7 +7,7 @@ ms.date: 05/01/2026
 ms.topic: concept-article
 ms.search.form: how to use user data functions to enble custom authorization for API for GraphQL
 ---
-# Use an Authorizer UDF to control access to a GraphQL API
+# Custom authorization with user data functions for a GraphQL API
 
 Authorizer User-Defined Functions (UDFs) let you execute custom authorization logic **before a GraphQL API request is processed**. This capability enables API owners to enforce business-specific access rules that go beyond static role assignments. With an Authorizer UDF, you can evaluate information from the authenticated request—such as claims in a JSON Web Token (JWT) token—and decide whether the request should be allowed. The logic is implemented as a function and invoked automatically for incoming API calls.
 
@@ -71,24 +71,16 @@ def invokeauthudf(request: dict) -> dict:
     logging.info(f"SPN: {appid_claim}");
 
     # Authorization logic
-    ## Optional: Do role-based access check
-    roles = []
-
     if upn_claim is not None:
         is_authorized = domain in upn_claim
-        roles = ["Default"]
     else:
         is_authorized =  spn in appid_claim
-        roles = ["SPN"]
-
     logging.info(f"Authorized: {is_authorized}")
-    logging.info(f"Roles: {roles}")
     logging.info(f"SPN: {spn}")
     logging.info(f"App ID: {appid_claim}")
     return {
 
-            "isAuthorized": is_authorized,
-            "roles": roles
+            "isAuthorized": is_authorized
     }
 ```
 
@@ -126,9 +118,9 @@ Enable the authorization feature once the function and the connection for this u
 | Caching                | Changes may take up to 15 minutes to apply                  |
 | Region dependency      | UDF and GraphQL must be in same region                      |
 | Private link           | Not supported with blocked public access                    |
-| Authorization failures | Occur when isAuthorized = false or roles mismatch           |
+| Authorization failures | Occur when isAuthorized = false           |
 
 ## Next steps
 
-- [Connect to an application](./connect-apps-api-graphql.md)
-- [Develop in VS Code](./api-graphql-develop-vs-code)
+- [Connect to an application](connect-apps-api-graphql.md)
+- [Develop in VS Code](api-graphql-develop-vs-code)
