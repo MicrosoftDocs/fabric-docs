@@ -1,6 +1,8 @@
 ---
 title: Data Agent Example Queries
 description: Overview of data agent example queries.
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: midesa
 ms.topic: concept-article
 ms.date: 09/11/2025
@@ -8,15 +10,15 @@ ms.date: 09/11/2025
 
 # Example queries
 
-Example queries (also called “few-shot examples”) give the Data Agent concrete patterns to learn from. They are sample questions and their corresponding query logic that creators supply to guide how the agent should respond. When a user asks a question against a data source, the Data Agent automatically retrieves the most relevant examples—typically the top four—and feeds them into its generation process. By referencing these examples, the agent can better understand the expected structure, filters, and joins, which helps it produce more accurate, consistent, and context-aware query results.
+Example queries (also called "few-shot examples") give the Data Agent concrete patterns to learn from. They are sample questions and their corresponding query logic that creators supply to guide how the agent should respond. When a user asks a question against a data source, the Data Agent automatically retrieves the most relevant examples—typically the top four—and feeds them into its generation process. By referencing these examples, the agent can better understand the expected structure, filters, and joins, which helps it produce more accurate, consistent, and context-aware query results.
 
 ## Provide example queries
 
-When providing example queries, you must include both a natural language question and its corresponding query answer. Each question should be unique to give the Data Agent a diverse set of reference points. Every example query is validated against the schema of the selected data source—queries that don't pass validation aren't sent to the agent. To ensure your examples are used, it’s essential to confirm they pass this validation step.
+When providing example queries, you must include both a natural language question and its corresponding query answer. Each question should be unique to give the Data Agent a diverse set of reference points. Every example query is validated against the schema of the selected data source—queries that don't pass validation aren't sent to the agent. To ensure your examples are used, it's essential to confirm they pass this validation step.
 
 :::image type="content" source="media/how-to-create-data-agent/data-agent-adding-examples-sql.png" alt-text="Screenshot of adding example queries to the data agent." lightbox="media/how-to-create-data-agent/data-agent-adding-examples-sql.png":::
 
-The table shows which data sources currently support example queries in the Data Agent. These examples help guide the agent’s query generation process by providing patterns and context.
+The table shows which data sources currently support example queries in the Data Agent. These examples help guide the agent's query generation process by providing patterns and context.
 
 | Data Source Type            | Supports Example Queries? |
 |-----------------------------|---------------------------|
@@ -26,7 +28,7 @@ The table shows which data sources currently support example queries in the Data
 | Semantic Models             | ❌ No                    |
 | Ontology                    | ❌ No                    |
 
-You can also use the **run steps** view to debug which example queries were retrieved and applied to a user’s question. This view is especially useful for confirming that the right examples are being used and for diagnosing why certain results are being generated. If the wrong examples appear, try refining your questions or adding clearer, more targeted examples.  
+You can also use the **run steps** view to debug which example queries were retrieved and applied to a user's question. This view is especially useful for confirming that the right examples are being used and for diagnosing why certain results are being generated. If the wrong examples appear, try refining your questions or adding clearer, more targeted examples.  
 
 :::image type="content" source="media/how-to-evaluate-data-agent/example-queries-run-steps.png" alt-text="Screenshot of the referenced example queries in the run steps." lightbox="media/how-to-evaluate-data-agent/example-queries-run-steps.png":::
 
@@ -38,14 +40,14 @@ When creating example queries for the Data Agent, following best practices ensur
 |---|---------------|---------------|
 | 1 | **Ensure questions clearly map to the query** | The Data Agent uses these examples to learn the pattern between the question and the resulting SQL/KQL. Ambiguity reduces accuracy. |
 | 2 | **Include comments in the query to guide the agent** | Comments ( `-- substitute customer_id here`) help the agent understand where to substitute values or apply important logic. |
-| 3 | **Highlight join logic or complex patterns** | Use example queries to show how to handle multi-table joins, aggregations, or other advanced logic that’s hard to describe in plain instructions. |
+| 3 | **Highlight join logic or complex patterns** | Use example queries to show how to handle multi-table joins, aggregations, or other advanced logic that's hard to describe in plain instructions. |
 | 4 | **Avoid overlap or contradictions** | Each example should be distinct and non-conflicting to give the agent a clean signal of how to behave. |
 | 5 | **Use run steps to debug which examples are passed** | Run steps let you see which examples were retrieved for a given user question — if the wrong ones show up, adjust your questions or add more specific examples. |
 | 6 | **Reflect real user behavior** | Add example queries that represent the kinds of questions your users ask to maximize relevance and accuracy. |
 
 ## Validate example queries
 
-The Fabric Data Agent SDK provides built-in tools to **evaluate and improve the quality of your example queries**. Using the `evaluate_few_shots` function, you can validate each natural-language/SQL pair to confirm it's clear, correct, and aligned with your data source schema. The SDK runs each example through the Data Agent’s evaluation process, returning a detailed summary of which examples passed and which need refinement.
+The Fabric Data Agent SDK provides built-in tools to **evaluate and improve the quality of your example queries**. Using the `evaluate_few_shots` function, you can validate each natural-language/SQL pair to confirm it's clear, correct, and aligned with your data source schema. The SDK runs each example through the Data Agent's evaluation process, returning a detailed summary of which examples passed and which need refinement.
 
 ### Provide example queries
 
@@ -90,10 +92,10 @@ print(f"Success rate: {result.success_rate:.2f}% ({result.success_count}/{result
 
 ### Track feedback
 
-After running the validator, you’ll receive a clear breakdown of which examples **passed** and which **failed**. This feedback makes it easy to identify strengths and weaknesses in your few-shot examples.  
+After running the validator, you'll receive a clear breakdown of which examples **passed** and which **failed**. This feedback makes it easy to identify strengths and weaknesses in your few-shot examples.  
 
 - **Success Cases:** Examples where the SQL matched the expected answers. These examples are strong references you can model future examples after.  
-- **Failure Cases:** Examples where the SQL didn’t match the expected answer, or where the question/query pair may be unclear or invalid. These cases should be reviewed and refined.  
+- **Failure Cases:** Examples where the SQL didn't match the expected answer, or where the question/query pair may be unclear or invalid. These cases should be reviewed and refined.  
 
 ```python
 # Access success and failure cases as pre-computed Pandas DataFrames
@@ -163,8 +165,8 @@ When you run the validator on your example queries, it generates three key score
 - **Clarity**  
   Measures whether the natural language question is **clear and unambiguous**. Questions should be specific, include necessary metrics, timeframes, and filters, and avoid vague or multi-intent phrasing.
 
-  *Example – Good:* “Total revenue by region for 2024.”  
-  *Example – Needs Improvement:* “Show performance.”  
+  *Example – Good:* "Total revenue by region for 2024."  
+  *Example – Needs Improvement:* "Show performance."  
 
 - **Relatedness**  
   Evaluates how closely the SQL query matches the **intent of the natural language question**. The SQL should return the correct metric, apply the proper filters, and match the requested granularity.
@@ -175,7 +177,7 @@ When you run the validator on your example queries, it generates three key score
 - **Mapping**  
   Checks whether **all literals in the natural language question appear in the SQL query**. Every number, date, or category mentioned in the question should be explicitly represented in the SQL.
 
-  *Example – Good:* “Orders over 100 in March 2025 for ‘West’” → SQL includes `> 100`, `2025-03`, and `'West'`.  
+  *Example – Good:* "Orders over 100 in March 2025 for 'West'" → SQL includes `> 100`, `2025-03`, and `'West'`.  
   *Example – Needs Improvement:* SQL is missing one of those literals (for example, no month filter).  
 
 An example is considered **high quality** only if **all three scores**—Clarity, Relatedness, and Mapping—are positive. Use these scores to refine your example queries: rewrite unclear questions, align SQL more closely with the question intent, and ensure every literal in the question appears in the SQL query. This iterative process helps the Data Agent learn from better patterns and produce more accurate results.  
