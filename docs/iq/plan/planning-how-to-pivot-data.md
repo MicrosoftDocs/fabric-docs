@@ -26,15 +26,15 @@ With the **Pivot** option in the Planning sheet, you can:
 ## Create and use pivot views
 
 1. Open your Planning sheet.
-2. Select **Pivot**.
+1. Select **Pivot**.
 
     :::image type="content" source="media/planning-how-to-pivot-data/create-pivot.png" alt-text="Screenshot of creating pivot." lightbox="media/planning-how-to-pivot-data/create-pivot.png":::
 
 
-3. select **Add**
-4. Enter a **Name** for the pivot view.
-5. Select the required row dimensions from **Available Fields**.
-6. Select **Save**.
+1. select **Add**
+1. Enter a **Name** for the pivot view.
+1. Select the required row dimensions from **Available Fields**.
+1. Select **Save**.
 
     :::image type="content" source="media/planning-how-to-pivot-data/configure-pivot.png" alt-text="Screenshot of configuring a pivot." lightbox="media/planning-how-to-pivot-data/configure-pivot.png":::
 
