@@ -16,6 +16,10 @@ Review the following known issues and limitations before you begin working with 
 
 Plan items aren’t supported in workspaces or tenants that use private links.
 
+## B2B Users Support
+
+Plan doesn't support Microsoft Entra B2B IDs.
+
 ## Semantic model
 
 * You must have **Admin** or **Build** permission on the semantic model.
