@@ -9,7 +9,7 @@ items:
         href: real-time-intelligence-compare.md
       - name: Implement medallion architecture
         href: architecture-medallion.md
-      - name: End to end sample
+      - name: End to end sample RTI solution
         href: sample-end-to-end.md
   - name: Tutorials
     items:
@@ -187,8 +187,22 @@ items:
             href: event-streams/pause-resume-data-streams.md
           - name: Set alerts on eventstreams
             href: event-streams/set-alerts-event-stream.md
-      - name: Monitor status and performance of eventstreams
-        href: event-streams/monitor.md
+      - name: Monitor eventstreams
+        items:
+        - name: Fabric workspace monitoring
+          items:
+            - name: Monitor eventstreams with workspace monitoring
+              href: event-streams/fabric-workspace-monitoring.md
+            - name: Enable workspace monitoring for eventstreams
+              href: event-streams/enable-fabric-workspace-monitoring.md
+            - name: Eventstream monitoring tables
+              href: event-streams/fabric-workspace-monitoring-tables.md
+            - name: Query eventstream monitoring data
+              href: event-streams/query-fabric-workspace-monitoring-data.md
+            - name: Known limitations
+              href: event-streams/fabric-workspace-monitoring-known-limitations.md
+        - name: Monitor status and performance of eventstreams
+          href: event-streams/monitor.md
       - name: Integrate with other Fabric items
         href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
       - name: Develop
@@ -537,6 +551,8 @@ items:
         href: schema-sets/create-manage-event-schemas-real-time-hub.md
       - name: Use schemas in eventstreams
         href: schema-sets/use-event-schemas.md
+      - name: Schema Registry region availability
+        href: schema-sets/schema-registry-region-availability.md
       - name: Known limitations
         href: schema-sets/schema-registry-limitations.md
   - name: Eventhouse
@@ -663,6 +679,10 @@ items:
                 href: /azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rti&pivots=fabric
               - name: Telegraf
                 href: get-data-telegraf.md
+      - name: Security
+        items:
+          - name: Eventhouse CMK
+            href: eventhouse-encryption.md
       - name: KQL Database
         items:
           - name: Create a KQL database
@@ -793,6 +813,8 @@ items:
             href: data-activator/activator-tutorial.md
       - name: Concepts
         items:
+          - name: Trigger modeling
+            href: data-activator/activator-trigger-model.md
           - name: Activator rules
             href: data-activator/activator-rules-overview.md
           - name: Detection conditions for Activator
@@ -963,6 +985,8 @@ items:
         items:
           - name: Build real-time work order routing
             href: map/tutorial-real-time-work-order-routing-application.md
+          - name: Create a map using the REST API with Python
+            href: map/tutorial-create-fabric-map-python.md
       - name: Concepts
         items:
           - name: Map items
@@ -987,6 +1011,12 @@ items:
             href: map/sharing-maps.md
           - name: Permissions in Fabric Maps
             href: map/about-map-permissions.md
+          - name: Automation with REST APIs
+            items:
+              - name: Automate Fabric Maps with the REST API
+                href: map/about-rest-api.md
+              - name: Handle Errors in Fabric Maps Automation
+                href: map/rest-api-error-handling-best-practices.md
       - name: How-to guides
         items:
         - name: Create a map
@@ -1021,20 +1051,39 @@ items:
               href: map/share-map-org-apps.md
         - name: Manage Map permissions
           href: map/manage-map-permissions.md
-  - name: AI agents and MCP servers
-    displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
+        - name: Create and Configure a Fabric Map with REST APIs
+          href: map/create-configure-map-using-rest-api.md
+  - name: Copilot
+    items:
+      - name: Copilot for Real-Time Intelligence
+        href: copilot-real-time-intelligence.md
+      - name: Copilot for Writing KQL Queries
+        href: copilot-writing-queries.md
+      - name: Generate Real-Time Dashboard Using Copilot
+        href: copilot-generate-dashboard.md
+      - name: Explore data in Real-Time Dashboard Using Copilot
+        href: dashboard-explore-data.md
+  - name: Operations agents
+    displayName: AI agents, AI, agents, Operation agents
     items:
       - name: Operations agents
         href: operations-agent-tocs/toc.yml
+  - name: Build AI agents
+    displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source, skills
+    items:
+      - name: Overview
+        href: ai-agents-eventhouse.md 
       - name: MCP servers
         items:
-          - name: Fabric RTI MCP local server
+          - name: Overview
             href: mcp-overview.md
-          - name: Remote MCP Integrations
+          - name: Local RTI MCP server
+            href: mcp-local-server.md
+          - name: Remote MCP servers
             items:
-              - name: Get started with Eventhouse MCP remote Server
+              - name: Remote MCP for Eventhouse
                 href: mcp-remote-eventhouse.md
-              - name: Get started with Activator MCP remote Server
+              - name: Remote MCP for Activator
                 href: mcp-remote-activator.md
   - name: Git integration and deployment pipelines
     displayName: alm, application lifecycle management, cicd, devops
@@ -1057,7 +1106,7 @@ items:
     href: kusto-tocs/query/toc.yml
   - name: Reference architectures
     items:
-    - name: Automative and mobile
+    - name: Automotive and Mobility
       items:
       - name: Connected fleet data analytics
         href: architectures/connected-fleet.md

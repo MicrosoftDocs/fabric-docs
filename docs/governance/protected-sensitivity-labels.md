@@ -67,3 +67,4 @@ To enable this setting, go to: **Admin portal > Tenant settings > Information pr
 ## Related content
 
 - [Information protection](information-protection.md)
+- [Set or remove sensitivity labels using Power BI REST admin APIs](service-security-sensitivity-label-inheritance-set-remove-api.md)

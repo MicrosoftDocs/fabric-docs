@@ -2,7 +2,7 @@
 title: Frontend manifests documentation
 description: This document outlines the structure, core functionalities, and examples for a workload's frontend manifests, detailing the Product and Item manifests required in the Fabric Workload Development Kit.
 ms.topic: concept-article
-ms.date: 10/29/2024
+ms.date: 04/29/2026
 #customer intent: As a developer, I want to understand how to create frontend manifests for a customized Fabric workload to define identity, appearance, and behavior.
 ---
 

@@ -46,7 +46,7 @@ Other limitations for generating ontology from a semantic model are organized by
 
 Semantic models used for ontology generation are subject to general limitations of semantic models in the Power BI service. Some examples of relevant limitations are [semantic model size considerations](../../enterprise/powerbi/service-premium-large-models.md) and [XMLA endpoint limitations](../../enterprise/powerbi/service-premium-connect-tools.md#unsupported-semantic-models).
 
-### Lakehouse tables
+### Data requirements
 
 * Ontology only supports **managed** lakehouse tables (located in the same OneLake directory as the lakehouse), not **external** tables that show in the lakehouse but reside in a different location.
 * The ontology graph does not support delta tables with column mapping enabled. Column mapping can be enabled manually, or is enabled automatically on lakehouse tables where column names have certain special characters, including `,`, `;`, `{}`, `()`, `\n`, `\t`, `=`, and space. It also happens automatically on the delta tables that store data for import mode semantic model tables.
@@ -54,6 +54,8 @@ Semantic models used for ontology generation are subject to general limitations 
  
     >[!NOTE]
     >`Decimal` is different from the floating-point `Double` type, which is supported. `Decimal` is a fixed-precision numeric type that is most commonly used for representing monetary values.
+
+* In ontology, property names can only be duplicated across entities for properties of the same type. For example, you can't have one entity type with a string `ID` property and another entity type with an integer `ID` property, but you can have two entity types that both have a string `ID` property. If you have duplicate properties with different data types in your source data, the entities may not generate correctly from the semantic model.
 
 ### Workspace
 

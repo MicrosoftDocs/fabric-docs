@@ -44,7 +44,7 @@ Both queries return the same results, but the first version lets the query engin
 
 Return only the node and edge properties your scenario requires. Avoid returning full nodes or using `RETURN *` when you need only a subset of properties.
 
-In graph, OneLake tables back node properties. Selecting unnecessary properties increases data read, serialization cost, and response size. During graph modeling, all columns from the source table are added as properties by default unless you remove them.
+In graph, OneLake tables back node properties. Selecting unnecessary properties increases data read, serialization cost, and response size. During graph modeling, all columns from the source table are added as node type properties by default unless you remove them.
 
 **Recommended:** Narrow projection.
 
@@ -61,7 +61,7 @@ RETURN *
 ```
 
 > [!NOTE]
-> Remove unused properties during graph modeling by selecting the trashcan icon next to each property. Fewer properties per node reduce both storage and query overhead.
+> Remove unused node type properties during graph modeling by selecting the trashcan icon next to each property. Fewer properties per node reduce both storage and query overhead.
 
 ## Limit result set size
 
@@ -83,11 +83,11 @@ RETURN p.firstName, friend.firstName
 ```
 
 > [!IMPORTANT]
-> graph truncates responses larger than 64 MB and aggregation performance can be unstable when results exceed 128 MB. Use `FILTER`, `LIMIT`, and `GROUP BY` to keep results within these bounds. For more information, see [Current limitations](limitations.md).
+> Graph truncates responses larger than 64 MB and aggregation performance can be unstable when results exceed 128 MB. Use `FILTER`, `LIMIT`, and `GROUP BY` to keep results within these bounds. For more information, see [Current limitations](limitations.md).
 
 ## Keep traversals shallow and targeted
 
-Avoid deeply nested or highly complex graph patterns. Prefer simple, targeted traversals that directly answer a specific question. Each extra hop in a variable-length pattern can exponentially increase the number of paths the engine evaluates, especially in densely connected graphs.
+Avoid deeply nested or highly complex graph patterns. Use simple, targeted traversals that directly answer a specific question. Each extra hop in a variable-length pattern can exponentially increase the number of paths the engine evaluates, especially in densely connected graphs.
 
 **Recommended:** Tight bounds.
 
@@ -107,7 +107,7 @@ RETURN *
 ```
 
 > [!IMPORTANT]
-> graph supports up to **eight hops** in variable-length patterns. Even so, use the tightest bounds your scenario allows. In the example, the `{1,3}` pattern is significantly cheaper than `{1,8}` on the same graph.
+> Graph supports up to **eight hops** in variable-length patterns. Even so, use the tightest bounds your scenario allows. In the example, the `{1,3}` pattern is significantly cheaper than `{1,8}` on the same graph.
 
 ## Use TRAIL to prevent redundant traversals
 
