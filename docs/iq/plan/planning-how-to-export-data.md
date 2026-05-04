@@ -33,12 +33,12 @@ Use PDF export to generate formatted, paginated sheets.
 1. Select the **Properties**
    * **Entire Matrix -** The Entire Matrix is exported.
    * **Selected Columns -** Only the selected columns are exported.
-1. Configure [**Advanced Settings**](#configure-advanced-PDF-export-options)
+1. Configure [**Advanced Settings**](#configure-advanced-export-options)
 1. Select **Export** and download the file.
 
      :::image type="content" source="media/planning-how-to-export-data/pdf-download.png" alt-text="Screenshot of downloading the exported  pdf." lightbox="media/planning-how-to-export-data/pdf-download.png":::
 
-## Configure advanced  PDF export options
+## Configure advanced export options
 
 ### **Page Setup**
 
