@@ -28,14 +28,14 @@ Ensure the following configurations are enabled before using audit logging:
 - In Microsoft Purview:
   - Enable the policy:
     **DSPM for AI – Capture interactions for Copilot experiences**
-For more information about one-click policies, see [Considerations for DSPM for AI](https://learn.microsoft.com/purview/dspm-for-ai-considerations#one-click-policies-from-data-security-posture-management-for-ai)
+For more information about one-click policies, see [Considerations for DSPM for AI](/purview/dspm-for-ai-considerations#one-click-policies-from-data-security-posture-management-for-ai)
 
 ### 3. Enable Fabric Tenant Setting
 - In the Fabric Admin Portal:
   - Turn on:
     **Allow Microsoft Purview to secure AI interactions** 
 
-For more information about this option, see [Tenant settings index](https://learn.microsoft.com/fabric/admin/tenant-settings-index#information-protection).
+For more information about this option, see [Tenant settings index](/fabric/admin/tenant-settings-index#information-protection).
 
 ---
 
