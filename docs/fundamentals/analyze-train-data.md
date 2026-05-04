@@ -42,7 +42,7 @@ Data Agents integrate with [Microsoft Foundry](../data-science/data-agent-foundr
 
 The following diagram shows how Data Agents and Operations Agents in Fabric IQ use governed enterprise data and automation services to deliver insights and trigger actions.
 
-:::image type="content" source="./media/analyze-train-data/analyze-agents.png" alt-text="Diagram of AI agents architecture.":::
+:::image type="content" source="./media/analyze-train-data/analyze-agents.png" alt-text="Diagram that shows the architecture of AI agents, including Data Agents and Operations Agents, in Microsoft Fabric.":::
 
 ### Choose between data agents and operations agents
 

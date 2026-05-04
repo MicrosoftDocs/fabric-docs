@@ -9,7 +9,7 @@ items:
         href: real-time-intelligence-compare.md
       - name: Implement medallion architecture
         href: architecture-medallion.md
-      - name: End to end sample
+      - name: End to end sample RTI solution
         href: sample-end-to-end.md
   - name: Tutorials
     items:
@@ -1053,11 +1053,26 @@ items:
           href: map/manage-map-permissions.md
         - name: Create and Configure a Fabric Map with REST APIs
           href: map/create-configure-map-using-rest-api.md
-  - name: AI agents and MCP servers
-    displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
+  - name: Copilot
+    items:
+      - name: Copilot for Real-Time Intelligence
+        href: copilot-real-time-intelligence.md
+      - name: Copilot for Writing KQL Queries
+        href: copilot-writing-queries.md
+      - name: Generate Real-Time Dashboard Using Copilot
+        href: copilot-generate-dashboard.md
+      - name: Explore data in Real-Time Dashboard Using Copilot
+        href: dashboard-explore-data.md
+  - name: Operations agents
+    displayName: AI agents, AI, agents, Operation agents
     items:
       - name: Operations agents
         href: operations-agent-tocs/toc.yml
+  - name: Build AI agents
+    displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source, skills
+    items:
+      - name: Overview
+        href: ai-agents-eventhouse.md 
       - name: MCP servers
         items:
           - name: Overview
