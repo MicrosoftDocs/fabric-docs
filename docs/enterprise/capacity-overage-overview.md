@@ -1,5 +1,5 @@
 ---
-title: Capacity overage in Microsoft Fabric
+title: Capacity overage (preview) in Microsoft Fabric
 description: Learn about capacity overage in Microsoft Fabric, including how it works, cost considerations, overage limits, and best practices.
 author: SnehaGunda
 ms.author: sngun
@@ -9,14 +9,15 @@ ms.date: 03/11/2026
 ai-usage: ai-assisted
 ---
 
-# Capacity overage in Microsoft Fabric
+# Capacity overage (preview) in Microsoft Fabric
 
 Capacity overage is an opt-in feature that automatically pays for excess capacity usage, up to a limit set by the capacity admin. It prevents throttling and ensures that workloads continue uninterrupted, even when they temporarily exceed a capacity's limits.
 
 This feature acts as a safety net that keeps your capacity running while you take action to prevent further throttling. When enabled, capacity overage charges at 3 times the pay-as-you-go rate, limited only to usage that exceeds your current capacity and would otherwise trigger throttling. By enabling capacity overage, you ensure that workloads continue uninterrupted during unexpected demand spikes or small regular overloads. This approach complements good capacity management practices rather than replacing them.
 
-> [!NOTE]
-> Capacity overage is currently in public preview. Functionality and pricing are subject to change before general availability. This feature is currently only available for F SKUs.
+> [!IMPORTANT]
+> Capacity overage is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Key benefits
 
@@ -106,6 +107,8 @@ The following table shows the daily CU hours available for each capacity SKU to 
 ## Considerations and limitations
 
 Consider the following when using capacity overage:
+
+- Capacity overage is available only for F SKUs.
 
 - Capacity overage pays off your excess capacity debt for the current time window but doesn't clear your future debt. This ensures capacity overage pays off the minimum viable amount of CU to keep your capacity running. It also means, if you have significant overloads, capacity overage can continue for long periods, eventually reaching your CU hours limit. When capacity overage activates, review your capacity and take appropriate action.
 
