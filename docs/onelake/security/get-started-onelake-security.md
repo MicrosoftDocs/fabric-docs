@@ -47,11 +47,11 @@ Before you can use OneLake security with SQL analytics endpoint, you must config
 
 1. Select **View data access mode (preview)** > **Data access mode settings**.
 
-   :::image type="content" source="./media/row-level-security/data-access-mode-settings.png" alt-text="Screenshot that shows navigating to the data access mode settings for a SQL analytics endpoint.":::
+   :::image type="content" source="./media/get-started-onelake-security/data-access-mode-settings.png" alt-text="Screenshot that shows navigating to the data access mode settings for a SQL analytics endpoint.":::
 
 1. Select **Use OneLake security for tables (User's identity access mode)**, then select **Apply**.
 
-   :::image type="content" source="./media/row-level-security/use-onelake-security.png" alt-text="Screenshot that shows selecting OneLake security (user's identity access mode) as the data access mode.":::
+   :::image type="content" source="./media/get-started-onelake-security/use-onelake-security.png" alt-text="Screenshot that shows selecting OneLake security (user's identity access mode) as the data access mode.":::
 
 1. Select **Continue** to confirm your choice.
 
