@@ -5,17 +5,18 @@ ms.reviewer: orhasban
 ms.topic: how-to
 ms.subservice: rti-eventhouse
 ms.custom: sfi-image-nochange
-ms.date: 11/19/2024
+ms.date: 02/23/2026
 ms.search.form: Notebooks
 --- 
 # Use Fabric notebooks with data from a KQL database
 
 Notebooks are both readable documents containing data analysis descriptions and results and executable documents that can be run to perform data analysis. In this article, you learn how to use a Fabric notebook to connect to data in a [KQL Database](create-database.md) and run queries using native [KQL (Kusto Query Language)](/azure/data-explorer/kusto/query/index?context=/fabric/context/context-rti&pivots=fabric). For more information on notebooks, see [How to use Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md).
 
-There are two ways to use Fabric notebooks with data from your KQL database:
+There are a few ways to use Fabric notebooks with data from your KQL database:
 
 * [Use Kusto snippets in a notebook](#use-kusto-snippets-in-a-notebook)
 * [Create a notebook from a KQL database](#create-a-notebook-from-a-kql-database)
+* [Analyze data in a KQL Database](eventhouse-analyze-data-with.md) with a new or existing notebook.
 
 ## Prerequisites
 
@@ -87,7 +88,7 @@ Fabric notebooks provide [code snippets](../data-engineering/author-execute-note
     | kustoQuery | The KQL query to be evaluated. | [KQL overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context-rti&pivots=fabric)
     | KustoUri | The query URI of your KQL database. | [Copy a KQL database URI](access-database-copy-uri.md#copy-uri)
     | database | The name of your KQL database. | [Access an existing KQL database](access-database-copy-uri.md)
-    | data | The data to be written to the table.
+    | data | The data to be written to the table. |
 
 1. Run the code cell.
 
@@ -112,3 +113,4 @@ When you create a notebook as a related item in a KQL database, the notebook is 
 
 * [KQL overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context-rti&pivots=fabric)
 * [How to use Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md)
+* [Analyze data in a KQL Database](eventhouse-analyze-data-with.md)
