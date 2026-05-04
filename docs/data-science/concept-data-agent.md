@@ -1,6 +1,8 @@
 ---
 title: Fabric data agent creation
 description: Learn how to create a Fabric data agent that can answer questions about data.
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: amjafari
 ms.topic: concept-article
 ms.date: 01/06/2026
@@ -151,7 +153,7 @@ To maintain ongoing quality and policy alignment, consider these operational pra
 - Conversation history in the Fabric data agent might not always persist. In certain cases, such as backend infrastructure changes, service updates, or model upgrades, past conversation history might be reset or lost.
 - The Fabric data agent can't execute queries when the data source's workspace capacity is in a different region than the data agent's workspace capacity. For example, a lakehouse with capacity in North Europe fails if the Data Agent's capacity is in France Central.
 - Users can provide up to 100 example queries per data source in their Data Agent.
-- Fabric Data Agents are currently designed for conversational insights rather than for returning complete datasets. To ensure concise and performant responses, chat outputs automatically limit and/or summarize the data returned. At present, responses are capped at a maximum of 25 rows and 25 columns. Please note that previous chat history can influence subsequent responses. For example, if you ask to “show all rows for this year,” the agent will still return a maximum of 25 rows. Follow‑up questions may then be answered based on this already limited context, which can affect the result. In such cases, starting a new chat session is recommended.
+- Fabric Data Agents are currently designed for conversational insights rather than for returning complete datasets. To ensure concise and performant responses, chat outputs automatically limit and/or summarize the data returned. At present, responses are capped at a maximum of 25 rows and 25 columns. Please note that previous chat history can influence subsequent responses. For example, if you ask to "show all rows for this year," the agent will still return a maximum of 25 rows. Follow‑up questions may then be answered based on this already limited context, which can affect the result. In such cases, starting a new chat session is recommended.
 - Agent responses might be truncated or blocked if Microsoft Purview DLP or access restriction policies apply to the underlying data sources. The specific behavior depends on your organization's policy configuration.
 - Assets that are marked as sensitive by Purview policies might be inaccessible to the agent, which can result in incomplete answers or an inability to query certain data sources.
 - Agent interactions might be logged and discoverable through Microsoft Purview Audit and eDiscovery. Organizations should consider these governance controls when deploying agents for sensitive workloads.

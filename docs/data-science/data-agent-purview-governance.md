@@ -1,6 +1,8 @@
 ---
 title: Auditing data agent interactions in Microsoft Purview (preview)
 description: Learn how to use DSPM for AI to govern AI interactions in Data Agent.
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: mayurjain
 ms.topic: how-to
 ms.date: 04/28/2026
@@ -77,7 +79,7 @@ Use Activity Explorer filters to locate specific interactions:
   Isolate interactions from `Fabric-Data Agent`
 
 ### User Prompt 
-For each interaction, Microsoft Purview captures and logs the full text of the user’s prompt.
+For each interaction, Microsoft Purview captures and logs the full text of the user's prompt.
 
 :::image type="content" source="./media/data-agent-governance/purview-da-prompt.png" alt-text="Screenshot showing user prompt in Fabric data agent." lightbox="./media/data-agent-governance/purview-da-prompt.png":::
 
