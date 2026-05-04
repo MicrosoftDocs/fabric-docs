@@ -28,7 +28,7 @@ Use PDF export to generate formatted, paginated sheets.
 1. In the Planning sheet, select **Export** from **Planning**.
 1. Select **Export to PDF**.
 
-     :::image type="content" source="media/planning-how-to-export-data/export-pdf.png" alt-text="Screenshot of exporting to pdf." lightbox="media/planning-how-to-export-data/export-pdf.png":::
+     :::image type="content" source="media/planning-how-to-export-data/export-pdf.jpg" alt-text="Screenshot of exporting to pdf." lightbox="media/planning-how-to-export-data/export-pdf.jpg":::
 
 1. Select the **Properties**
    * **Entire Matrix -** The Entire Matrix is exported.
