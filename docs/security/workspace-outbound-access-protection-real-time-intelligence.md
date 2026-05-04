@@ -54,8 +54,6 @@ Within the same workspace, Eventhouse can still access other OAP supported items
 
 - Querying data stored in Real-Time Intelligence items.
 
-- Querying other Eventhouse databases.
-
 In addition, Eventhouse can access specific external resources that aren't scoped to a specific workspace or can access specific Fabric items if the relevant workspace outbound access protection rules are configured. Supported scenarios include:
 
 - Querying data stored in OneLake in other workspaces.
@@ -66,7 +64,7 @@ In addition, Eventhouse can access specific external resources that aren't scope
 
 When you enable workspace outbound access protection, the following Eventhouse outbound access scenarios are **blocked**:
 
-- Accessing Eventhouse items in other workspaces, except through OneLake as mentioned in the supported scenarios.
+- Accessing other Eventhouse databases, except through OneLake as mentioned in the supported scenarios.
 
 - Accessing external resources outside of Microsoft Fabric, except through Azure Event Hubs as mentioned in the supported scenarios.
 
