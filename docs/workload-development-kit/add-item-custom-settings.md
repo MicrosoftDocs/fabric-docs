@@ -2,7 +2,7 @@
 title: Add Customized Item Settings
 description: Learn how you can add your own item settings tabs in Microsoft Fabric.
 ms.topic: how-to
-ms.date: 11/25/2024
+ms.date: 04/29/2026
 ---
 # Add custom item settings
 

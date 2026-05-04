@@ -1,6 +1,6 @@
 ---
 title: Set up your Google Cloud Storage connection
-description: This article provides information about how to do create a Google Cloud Storage connection in Microsoft Fabric.
+description: This article provides information about how to create a Google Cloud Storage connection in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.topic: how-to
 ms.date: 03/13/2026

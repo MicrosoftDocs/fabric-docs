@@ -3,14 +3,14 @@ title: How to configure Avro format in the pipeline of Data Factory in Microsoft
 description: This article explains how to configure Avro format in the pipeline of Data Factory in Microsoft Fabric.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 06/25/2024
+ms.date: 04/24/2026
 ms.custom:
   - template-how-to
 ---
 
 # Avro format in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
-This article outlines how to configure Avro format in the pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+Avro is a row-based data serialization format commonly used in Apache Hadoop workloads. This article outlines how to configure Avro format in a copy activity pipeline in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Supported capabilities
 
@@ -67,13 +67,13 @@ Under **Advanced** settings in the **Destination** tab, the following Avro forma
 - **Max rows per file**: When writing data into a folder, you can choose to write to multiple files and specify the maximum rows per file. 
 - **File name prefix**: Applicable when **Max rows per file** is configured. Specify the file name prefix when writing data to multiple files, resulted in this pattern: `<fileNamePrefix>_00000.<fileExtension>`. If not specified, the file name prefix is auto generated. This property doesn't apply when the source is a file based store or a partition option enabled data store.
 
-## Table summary
+## Avro copy activity properties
 
 ### Avro as source
 
 The following properties are supported in the copy activity **Source** section when using the Avro format.
 
-|Name |Description |Value|Required |Avro script property |
+|Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 | **File format**|The file format that you want to use.| **Avro**|Yes|type (*under `datasetSettings`*):<br>Avro|
 |**Compression type**|The compression codec used to read Avro files.|**None**<br>**deflate**|No|avroCompressionCodec:  <br><br>deflate|
@@ -83,7 +83,7 @@ The following properties are supported in the copy activity **Source** section w
 
 The following properties are supported in the copy activity **Destination** section when using the Avro format.
 
-|Name |Description |Value|Required |Avro script property |
+|Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 | **File format**|The file format that you want to use.| **Avro**|Yes|type (*under `datasetSettings`*):<br>Avro|
 |**Compression type**|The compression codec used to write Avro files.|**None**<br>**deflate**|No|avroCompressionCodec:  <br><br>deflate|

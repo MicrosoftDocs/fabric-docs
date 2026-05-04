@@ -4,14 +4,14 @@ description: Learn how eventstreams can help you capture, transform, and route r
 ms.reviewer: zhenxilin
 ms.topic: concept-article
 ms.custom: sfi-image-nochange
-ms.date: 02/18/2026
+ms.date: 04/29/2026
 ms.search.form: Eventstream Overview
 ai-usage: ai-assisted
 ---
 
 # Overview of Microsoft Fabric eventstreams
 
-You can use the eventstreams feature in Microsoft Fabric Real-Time Intelligence to bring real-time events into Fabric, transform them, and then route them to various destinations without writing any code. You create an eventstream, add event data sources to the stream, optionally add transformations to transform the event data, and then route the data to supported destinations.
+You can use the eventstreams feature in Microsoft Fabric Real-Time Intelligence to bring real-time events into Fabric, transform them, and then send them to various destinations without writing any code. You create an eventstream, add event data sources to the stream, optionally add transformations to transform the event data, and then send the data to supported destinations.
 
 Also, with Apache Kafka endpoints available for eventstreams, you can send or consume real-time events by using the Kafka protocol.
 
@@ -100,7 +100,7 @@ To use DeltaFlow, choose **Analytics-ready events & auto-updated schema** during
 
 The Fabric eventstreams feature offers an Apache Kafka endpoint, so you can connect and consume streaming events through the Kafka protocol. If your application already uses the Apache Kafka protocol to send or receive streaming events with specific topics, you can easily connect it to your eventstream. Just update your connection settings to use the Kafka endpoint provided in your eventstream.
 
-The Fabric eventstreams feature is associated with Azure Event Hubs, a fully managed cloud-native service. When you create an eventstream, an event hub namespace is automatically provisioned. An event hub is allocated to the default stream without requiring any provisioning configurations. To learn more about the Kafka-compatible features in Azure Event Hubs, see [What is Azure Event Hubs for Apache Kafka?](/azure/event-hubs/azure-event-hubs-kafka-overview).
+The Fabric eventstreams feature is associated with Azure Event Hubs, a fully managed cloud-native service. When you create an eventstream, an event hub namespace is automatically created for you. An event hub is allocated to the default stream without requiring any provisioning configurations. To learn more about the Kafka-compatible features in Azure Event Hubs, see [What is Azure Event Hubs for Apache Kafka?](/azure/event-hubs/azure-event-hubs-kafka-overview).
 
 To learn more about how to obtain the Kafka endpoint details for sending events to an eventstream, see [Add a custom endpoint or custom app source to an eventstream](./add-source-custom-app.md). For information about consuming events from an eventstream, see [Add a custom endpoint or custom app destination to an eventstream](./add-destination-custom-app.md).
 
