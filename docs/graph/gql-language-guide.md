@@ -2,7 +2,7 @@
 title: GQL Language Guide for graph in Microsoft Fabric
 description: Learn how to write GQL queries for graph in Microsoft Fabric, including pattern matching, filtering, aggregation, sorting, and subqueries with examples.
 ms.topic: reference
-ms.date: 03/12/2026
+ms.date: 04/27/2026
 ms.reviewer: splantikow
 ms.search.form: GQL Language Guide
 ---
@@ -24,6 +24,13 @@ This article provides a comprehensive reference for GQL in graph. It covers:
 
 > [!NOTE]
 > The official International Standard for GQL is [ISO/IEC 39075 Information Technology - Database Languages - GQL](https://www.iso.org/standard/76120.html).
+
+If you're looking for task-oriented guidance instead of a full language reference, see the how-to guides:
+
+- [Write common GQL queries](write-common-gql-queries.md) — neighbors, multi-hop traversal, shared connections, and entity existence checks
+- [Filter and aggregate graph data](filter-aggregate-graph-data.md) — FILTER, WHERE, GROUP BY, and aggregate functions
+- [Write graph pattern queries](write-graph-pattern-queries.md) — multi-hop patterns, path modes, variable reuse, and OPTIONAL MATCH
+- [Optimize GQL query performance](gql-query-performance.md) — filtering strategy, traversal limits, and key constraint recommendations
 
 ## Prerequisites
 
@@ -397,7 +404,7 @@ WHERE p.birthday > 19950101 AND f.birthday > 19950101
 ```
 
 > [!NOTE]
-> graph models with multiple element labels aren't yet supported (known issue).
+> Nodes can have multiple labels, but edge types with multiple labels aren't yet supported.
 
 Label expressions let you match different kinds of nodes in a single pattern, making your queries more flexible.
 
@@ -432,7 +439,16 @@ The reuse of variable `c` ensures both people work at the **same** company, crea
 (:Person)-[:knows]->{1,3}(:Person)  -- Friends up to 3 degrees away
 ```
 
-**TRAIL patterns for cycle-free traversal:**
+**Path modes for controlling traversal:**
+
+Path modes control how the query engine handles repeated elements during variable-length traversal:
+
+| Path mode | Description |
+| --------- | ----------- |
+| `WALK` | Allows repeated nodes and edges. No restrictions on traversal. |
+| `TRAIL` | No repeated edges, but nodes may repeat. This is the default path mode. |
+| `SIMPLE` | No repeated nodes (except the first and last may be equal). |
+| `ACYCLIC` | No repeated nodes at all, preventing any cycle in the path. |
 
 Use `TRAIL` patterns to prevent cycles during graph traversal, ensuring each edge is visited at most once:
 
@@ -453,6 +469,17 @@ RETURN
   celebrity.firstName || ' ' || celebrity.lastName AS celebrity_name, 
   count(e) AS distance
 LIMIT 1000
+```
+
+Use `ACYCLIC` when you need to guarantee no node is visited twice:
+
+<!-- GQL Query: Added 2026-04-23 -->
+```gql
+-- Find paths where no person appears more than once
+MATCH ACYCLIC (src:Person)-[:knows]->{1,4}(dst:Person)
+WHERE src.firstName = 'Alice'
+RETURN dst.firstName, dst.lastName
+LIMIT 100
 ```
 
 **Variable-length edge binding:**
@@ -538,14 +565,14 @@ MATCH (p:Person)-[r:workAt]->(targetCompany)
 ```
 
 > [!IMPORTANT]
-> graph doesn't yet support arbitrary statement composition. For more information, see the article on [current limitations](limitations.md).
+> Graph supports basic and full linear statement composition (chaining `MATCH`, `LET`, `FILTER`, `RETURN`, and other core statements). Set operations like `UNION DISTINCT`, `EXCEPT`, `INTERSECT`, and `OTHERWISE` aren't yet supported. For more information, see the article on [current limitations](limitations.md).
 
 **Key joining behaviors:**
 
 How `MATCH` handles data joining:
 
 - **Variable equality**: Input variables join with pattern variables by using equality matching
-- **Inner join**: Input rows without pattern matches are discarded (no left or right joins)
+- **Inner join**: Input rows without pattern matches are discarded. Use [`OPTIONAL MATCH`](#optional-match-statement) for left-outer-join behavior.
 - **Filtering order**: Statement-level `WHERE` filters after pattern matching completes
 - **Pattern connectivity**: Multiple patterns must share at least one variable for proper joining
 - **Performance**: Shared variables create efficient join constraints
@@ -562,6 +589,31 @@ How `MATCH` handles data joining:
 MATCH (p:Person)-[:workAt]->(c:Company), 
       (p)-[:isLocatedIn]->(city:City)
 ```
+
+#### `OPTIONAL MATCH` statement
+
+**Syntax:**
+
+```gql
+OPTIONAL MATCH <graph pattern> [ WHERE <predicate> ]
+```
+
+`OPTIONAL MATCH` works like `MATCH` but uses left-outer-join semantics. If the pattern finds no match for an input row, the query retains the row with `NULL` values for unmatched variables instead of discarding it.
+
+**Example:**
+
+<!-- GQL Query: Added 2026-04-23 -->
+```gql
+-- Find all people and, if available, their workplace
+MATCH (p:Person)
+OPTIONAL MATCH (p)-[:workAt]->(c:Company)
+RETURN p.firstName, p.lastName, c.name AS company_name
+```
+
+People who don't work at any company still appear in the results with `NULL` for `company_name`.
+
+> [!TIP]
+> Use `OPTIONAL MATCH` when you want to include entities that might not have a particular relationship, similar to a SQL `LEFT JOIN`.
 
 #### `LET` statement
 
@@ -851,7 +903,7 @@ GQL supports rich data types for storing and manipulating different kinds of inf
 
 #### Basic value types
 
-- **Numbers**: `INT64`, `UINT64`, `DOUBLE` for calculations and measurements
+- **Numbers**: `INT64`, `UINT64`, `FLOAT64` (also called `DOUBLE`) for calculations and measurements
 - **Text**: `STRING` for names, descriptions, and textual data
 - **Logic**: `BOOL` with three values: TRUE, FALSE, and UNKNOWN (for null handling)
 - **Time**: `ZONED DATETIME` for timestamps with timezone information
@@ -949,9 +1001,18 @@ upper(p.firstName) = 'ALICE'         -- Convert to uppercase for comparison
 GQL provides these function categories for different data processing needs:
 
 - **Aggregate functions**: `count()`, `sum()`, `avg()`, `min()`, `max()` for summarizing data
-- **String functions**: `char_length()`, `upper()`, `lower()`, `trim()` for text processing  
-- **Graph functions**: `nodes()`, `edges()`, `labels()` for analyzing graph structures
-- **General functions**: `coalesce()` for handling null values gracefully
+- **Conditional expressions**: `CASE`/`WHEN`/`THEN`/`ELSE`/`END` and `NULLIF()` for conditional logic. For example:
+
+  ```gql
+  MATCH (p:Person)
+  RETURN p.firstName,
+    CASE WHEN p.birthday < 20000101 THEN 'Before 2000' ELSE '2000 or later' END AS era,
+    NULLIF(p.gender, 'unknown') AS gender
+  ```
+
+- **String functions**: `char_length()`, `upper()`, `lower()`, `trim()` for text processing (US ASCII only for case mapping)  
+- **Graph functions**: `nodes()`, `edges()`, `elements()`, `labels()`, `path_length()` for analyzing graph structures
+- **General functions**: `coalesce()`, `to_json_string()` for handling null values and serialization
 
 #### Operator precedence for complex expressions
 
@@ -961,6 +1022,7 @@ GQL provides these function categories for different data processing needs:
 1. Comparison (`=`, `<>`, `<`, `>`, `<=`, `>=`)
 1. Logical negation (`NOT`)
 1. Logical conjunction (`AND`)
+1. Logical exclusive disjunction (`XOR`)
 1. Logical disjunction (`OR`)
 
 In the preceding list, an operator with a lower number "binds tighter" than an operator with a higher number.
@@ -979,11 +1041,29 @@ This section covers sophisticated patterns and techniques for building complex, 
 ### Complex multistatement composition
 
 > [!IMPORTANT]
-> graph doesn't yet support arbitrary statement composition. For more information, see the article on [current limitations](limitations.md).
+> Graph supports basic and full linear statement composition. Set operations like `UNION DISTINCT`, `EXCEPT`, `INTERSECT`, and `OTHERWISE` aren't yet supported. For more information, see the article on [current limitations](limitations.md).
 
 Understanding how to compose complex queries efficiently is crucial for advanced graph querying.
 
+#### `UNION ALL`
+
+Use `UNION ALL` to combine results from two or more linear query blocks:
+
+<!-- GQL Query: Added 2026-04-23 -->
+```gql
+-- Combine results from two separate pattern matches
+MATCH (p:Person)-[:workAt]->(c:Company)
+RETURN p.firstName AS name, c.name AS affiliation
+UNION ALL
+MATCH (p:Person)-[:studyAt]->(u:University)
+RETURN p.firstName AS name, u.name AS affiliation
+```
+
+`UNION ALL` keeps all rows, including duplicates. `UNION DISTINCT` (which removes duplicates) isn't yet supported.
+
 #### Multistep pattern progression
+
+Chain multiple statements to progressively build complex analysis:
 
 <!-- GQL Query: Checked 2025-11-17 -->
 ```gql
@@ -1001,6 +1081,8 @@ ORDER BY avgBirthday DESC
 This query progressively builds complexity: find companies, their employees, employee locations, filter companies with employees born before 1985, calculate average birthday, and summarize and sort results.
 
 #### Use of horizontal aggregation
+
+Horizontal aggregation aggregates over variable-length patterns within a single row:
 
 <!-- GQL Query: Broken 2025-11-17 Lack of support for nested aggregates -->
 ```gql
@@ -1273,6 +1355,13 @@ Keep these references handy for quick lookups:
 
 ## Related content
 
+**How-to guides:**
+
+- [Write common GQL queries](write-common-gql-queries.md) - Practical query patterns for neighbors, multi-hop, shared connections, and more.
+- [Filter and aggregate graph data](filter-aggregate-graph-data.md) - FILTER, WHERE, GROUP BY, and aggregate functions.
+- [Write graph pattern queries](write-graph-pattern-queries.md) - Multi-hop traversal, path modes, variable reuse, and optional matching.
+- [Optimize GQL query performance](gql-query-performance.md) - Best practices for writing efficient GQL queries.
+
 **Further details on key topics:**
 
 - [Social network schema example](gql-schema-example.md) - Complete working example of graph schema.
@@ -1280,7 +1369,6 @@ Keep these references handy for quick lookups:
 - [GQL expressions and functions](gql-expressions.md) - All expression types and built-in functions.
 - [GQL graph types](gql-graph-types.md) - Graph types and constraints.
 - [GQL values and value types](gql-values-and-value-types.md) - Complete type system reference and value handling.
-- [Optimize GQL query performance for graph](gql-query-performance.md) - Best practices for writing efficient GQL queries.
 
 **Quick references:**
 

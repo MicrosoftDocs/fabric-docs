@@ -42,7 +42,13 @@ Some GitHub Enterprise versions and settings aren't supported. For example:
 ### Azure DevOps to GitHub Enterprise migration consideration
 If your team uses Fabric Git Integration and is evaluating a migration from Azure DevOps to GitHub Enterprise, it’s recommended to run validation tests to ensure Git Integration functionality remains unaffected. Fabric Git Integration relies on the underlying Git provider APIs, which differ in capabilities and limitations between Azure DevOps and GitHub Enterprise, as described above.
 
-
+### Differences between Git Integration and recycle bin item recovery behavior
+If you use Git Integration, you might encounter unexpected behavior in scenarios where deleted items are re‑created or restored through a combination of Git operations and recycle bin recovery.
+This occurs because Git operations (such as Undo or Update from Git) re‑create deleted items by assigning a new item ID, whereas restoring an item from the recycle bin preserves the original item ID. As a result, duplicate items with different identities can exist in the workspace, which may cause Git Integration to stop working as expected and also can affect existing dependencies.
+##### Mitigation
+Delete the item that was re‑created by Git Integration. After the duplicate item is removed, Git operations should resume normally.
+##### Additional note
+Git Integration re‑creates item definitions only and does not restore item data. In contrast, restoring an item from the recycle bin restores both the item definition and its data.
 
 ### Workspace limitations
 
@@ -73,22 +79,6 @@ If your team uses Fabric Git Integration and is evaluating a migration from Azur
   - The directory name can't contain any of the following characters: <kbd>"</kbd><kbd>/</kbd><kbd>:</kbd> <kbd><</kbd><kbd>></kbd><kbd>\\</kbd><kbd>*</kbd><kbd>?</kbd><kbd>|</kbd>
 
 - The item folder (the folder that contains the item files) can't contain any of the following characters: <kbd>"</kbd><kbd>:</kbd><kbd><</kbd><kbd>></kbd><kbd>\\</kbd><kbd>*</kbd><kbd>?</kbd><kbd>|</kbd>. If you rename the folder to something that includes one of these characters, Git can't connect or sync with the workspace and an error occurs.
-
-### Branching out limitations
-
-- Branch out requires permissions listed in [permissions table](/fabric/cicd/git-integration/git-integration-process#fabric-permissions-needed-for-common-operations).
-- There must be an available capacity for this action.
-- All [workspace](#workspace-limitations) and [branch naming limitations](#branch-and-folder-limitations) apply when branching out to a new workspace.
-- Only [Git supported items](/fabric/cicd/git-integration/intro-to-git-integration#supported-items) are available in the new workspace.
-- The related branches list only shows branches and workspaces you have permission to view.
-- [Git integration](/fabric/admin/git-integration-admin-settings) must be enabled.
-- When branching out, a new branch is created and the settings from the original branch aren't copied. Adjust any settings or definitions to ensure that the new meets your organization's policies.
-- When branching out to an existing workspace:
-  - The target workspace must support a Git connection.
-  - The user must be an admin of the target workspace.
-  - The target workspace must have capacity.
-  - The workspace can't have template apps.
-- **Note that when you branch out to a workspace, any items that aren't saved to Git can get lost. We recommend that you [commit](/fabric/cicd/git-integration/git-integration-process#commit-to-git) any items you want to keep before branching out.**
 
 ### Sync and commit limitations
 

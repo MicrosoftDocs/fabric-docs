@@ -2,7 +2,7 @@
 title: Create and deploy the boilerplate Azure web app
 description: Learn about how to create and build the boilerplate Azure web app as a Microsoft Fabric sample.
 ms.topic: how-to
-ms.date: 05/21/2024
+ms.date: 04/29/2026
 #customer intent: As a developer, I want to understand how to build the backend of a customized Azure Fabric workload so that I can create customized user experiences.
 ---
 

@@ -6,7 +6,7 @@ ms.author: mimart
 ms.topic: reference
 ms.collection: ce-skilling-ai-copilot
 ms.update-cycle: 180-days
-ms.date: 04/10/2026
+ms.date: 04/24/2026
 ---
 
 <!--WARNING! DO NOT MANUALLY EDIT THIS DOCUMENT - MANUAL EDITS WILL BE LOST. This document is automatically generated weekly from the tenant settings of the PROD version of Microsoft Fabric. Manual edits will be overwritten with the tenant settings content as it appears to customers in the current PROD Fabric UI.-->
@@ -33,6 +33,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |Users can create dbt job items (preview)|Users can import, author and execute dbt (data build tool) projects directly within Fabric. This allows users to access a powerful transformation engine that connects seamlessly with SQL-based workflows without having to setup a CLI environment. [Learn More](https://aka.ms/dbtjob_docs)|
 |Enable Operations Agents (Preview)|Users can create operations agents, which use Azure OpenAI to create operations plans and recommend actions to users in your organization in response to real-time data. By turning on this setting, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2338555).<br><br>Messages users send to operations agents will be processed through the Azure AI Bot Service, which processes data in the EU Data Boundary. Therefore, if your capacity's geographic boundary or national cloud boundary is outside the EU Data Boundary, data sent to operations agents can be processed outside your capacity's geographic boundary or national cloud boundary.<br><br>This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2338555).|
 |All Power BI users can see "Set alert" button to create Fabric Activator alerts|When enabled, all Power BI users will see the "Set alert" button in reports. However, only users with permission to create Fabric items can actually set up Fabric Activator alerts, which send real-time notifications based on predefined data conditions.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2331953)|
+|Enable Mirrored Catalog item (preview)|Turn on this setting to allow users to create the Mirrored Catalog item in Fabric, to mirror external table Catalogs and access their tables through delegated shortcuts.  [Learn More](https://aka.ms/micfabricdoc)|
 |Users can create Plan (preview) items|Users can create a Plan in Fabric and leverage no-code integrated planning using Power BI Semantic models, Fabric SQL and OneLake.  [Learn More](https://aka.ms/planningdocs)|
 
 ## [Help and support settings](service-admin-portal-help-support.md)
