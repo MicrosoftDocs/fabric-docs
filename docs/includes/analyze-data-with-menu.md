@@ -13,7 +13,6 @@ From a Lakehouse or Warehouse, the **Analyze data with** action lets you:
 
 - Analyze data using the SQL analytics endpoint, when OneLake availability and sync are enabled.
 - Analyze data using Eventhouse endpoint, directly from the source data experience, without navigating to a separate workload.
-- Open a new or existing notebook with the database automatically added to the notebook environment.
 - Launch analysis actions from a single location, without switching contexts or reconfiguring access.
 
 This integration provides a consistent experience regardless of where your data lives. The same **Analyze data with** menu is available in Lakehouse, Warehouse, and Eventhouse, so the way you analyze data looks and feels the same across all workloads. Whether you're doing exploratory analysis, advanced transformations, or experimentation, you can get started quickly from a familiar starting point.
