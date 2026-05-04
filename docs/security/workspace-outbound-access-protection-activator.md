@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 
 # Workspace outbound access protection for Activator (preview)
 
-Workspace outbound access protection helps safeguard your data by controlling outbound connections from [Activator](#supported-activator-item-types) items in your workspace to external resources. When this feature is enabled, Activator action targets are restricted from making outbound connections unless access is explicitly granted through approved data connection rules.
+Workspace outbound access protection helps safeguard your data by controlling outbound connections from Activator items in your workspace to external resources. When this feature is enabled, Activator action targets are restricted from making outbound connections unless access is explicitly granted through approved data connection rules.
 
 > [!IMPORTANT]
 > Support for Activator with workspace outbound access protection is currently in preview.
