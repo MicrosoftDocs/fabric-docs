@@ -78,3 +78,10 @@ After Copilot generates the query, review it in the Query tab. You can run the q
 ## Continue data exploration
 
 [!INCLUDE [copilot-explore-data](../includes/copilot-explore-data.md)]
+
+## Related content
+
+- [Copilot for Real-Time Intelligence](copilot-real-time-intelligence.md), including [best practices](copilot-real-time-intelligence.md#best-practices-for-copilot-kql-queries) and [limitations](copilot-real-time-intelligence.md#limitations)
+- [Create a Real-Time Dashboard](dashboard-real-time-create.md)
+- [Privacy, security, and responsible use of Copilot for Real-Time Intelligence](../fundamentals/copilot-real-time-intelligence-privacy-security.md)
+- [Copilot in Fabric](../fundamentals/copilot-fabric-overview.md)
