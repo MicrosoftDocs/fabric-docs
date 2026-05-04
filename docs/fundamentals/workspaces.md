@@ -66,13 +66,11 @@ List view is divided into the task flow and the items list.
 Lineage view shows the flow of data between the items in the workspace. Read more about [lineage view](../governance/lineage.md).
 
 ## Branched workspace
-A *Branched workspace* is a workspace that is linked to a source workspace. It lets developers work on changes in an isolated environment, understand how their work relates to other workspaces, and promote changes back to the main workspace with confidence.
+A **Branched workspace** is a workspace that is linked to a source workspace. It lets developers work on changes in an isolated environment, understand how their work relates to other workspaces, and promote changes back to the main workspace with confidence.
 
-The relationship (link) between a *Branched workspace* and its source workspace is established when the user performs [branch-out](../cicd/git-integration/branched-workspace.md#branch-out-operation). For Fabric developers, branch-out creates a new Git branch from the latest commit of the source workspace’s currently connected branch. The user can then either create a new workspace connected to that new branch, or use an existing workspace by [switching](../cicd/git-integration/branched-workspace.md#switch-branches) its Git connection to the newly created branch. A new git icon (denoted by the 3 circles connected together), shown in the screenshot below, was added to the UI to indicate a relationship.
+The relationship (link) between a *Branched workspace* and its source workspace is established when the user performs [Git Integration -branch-out operation](../cicd/git-integration/branched-workspace.md#branch-out-operation). For more information, see [development process using branched workspaces](../cicd/git-integration/branched-workspace.md).
    
- :::image type="content" source="../cicd/git-integration/media/branch-out/branch-8.png" alt-text="Branched workspace related branches." lightbox="../cicd/git-integration/media/branch-out/branch-8.png":::
-
-For more information, see [Branched workspaces](../cicd/git-integration/branched-workspace.md).
+ :::image type="content" source="../cicd/git-integration/media/branch-out/branch-6.png" alt-text="Branched workspace related branches." lightbox="../cicd/git-integration/media/branch-out/branch-6.png":::
 
 ## Workspace settings
 
