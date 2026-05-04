@@ -39,12 +39,6 @@ You can only create an allow list using data connection rules; managed private e
 
 Once configured, Activator can only send actions to the destinations specified in the data connection rules, while all other outbound connections remain blocked.
 
-## Supported Activator item types
-
-The following Activator item type is supported with outbound access protection:
-
-* Activator
-
 ## Considerations and limitations
 
 - **Fabric item actions**: Actions targeting Fabric items in the same workspace are always allowed. Actions targeting Fabric items in other workspaces require explicit approval through data connection rules.
