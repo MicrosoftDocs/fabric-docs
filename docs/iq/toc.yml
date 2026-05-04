@@ -77,6 +77,8 @@ items:
           href: plan/planning-concept-cube.md
         - name: Row-level security (RLS)
           href: plan/planning-concept-row-level-security.md
+        - name: Driver model
+          href: plan/planning-driver-model/planning-concept-driver-model.md          
     - name: How-tos
       items:
         - name: Create a semantic model connection
@@ -115,8 +117,18 @@ items:
                 href: plan/planning-forecasting/planning-how-to-extend-time.md
               - name: Edit forecast settings
                 href: plan/planning-forecasting/planning-how-to-configure-forecast-settings.md
-        - name: Optimize input values
-          href: plan/planning-how-to-optimize-input-values.md
+              - name: Optimize input values
+                href: plan/planning-how-to-optimize-input-values.md
+        - name: Use driver models
+          items: 
+              - name: Create a model
+                href: plan/planning-driver-model/planning-how-to-create-model-using-model-builder.md
+              - name: Configure row properties
+                href: plan/planning-driver-model/planning-how-to-configure-model-row-properties.md
+              - name: Create templates
+                href: plan/planning-driver-model/planning-how-to-create-templates.md
+              - name: Create a driver model
+                href: plan/planning-driver-model/planning-how-to-create-driver-model.md    
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
