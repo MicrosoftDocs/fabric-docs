@@ -3,7 +3,7 @@ title: Develop AI agents for Real-Time Intelligence (preview)
 description: Learn about the tools and resources available for building AI agents that interact with Eventhouse and other Real-Time Intelligence components, including MCP servers and skills.
 ms.reviewer: sharmaanshul
 ms.topic: overview
-ms.date: 04/29/2026
+ms.date: 05/04/2026
 ms.search.form: MCP, RTI, AI, skills, agents
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted

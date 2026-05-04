@@ -6,7 +6,7 @@ ms.author: spelluru
 ms.reviewer: anshul
 ms.service: fabric
 ms.topic: overview
-ms.date: 04/29/2026
+ms.date: 05/04/2026
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
 
