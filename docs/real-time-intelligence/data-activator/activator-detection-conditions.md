@@ -38,7 +38,7 @@ The following table describes the available aggregation types.
 | Sum             | Computes the sum of the property or column values over the time window. |
 | Total           | Computes the number of events containing the property or column over the time window. Unlike **Sum**, which adds up the values of the property, **Total** counts how many events occurred. |
 
-## Condition
+## Conditions
 
 A condition defines the pattern that [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] must detect in the data to activate the rule. Conditions are grouped by data type, and each group contains condition types that describe different kinds of change or state.
 
