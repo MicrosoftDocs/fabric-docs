@@ -83,8 +83,6 @@ items:
     href: onelake-azure-storage-explorer.md
   - name: Azure Databricks
     href: onelake-azure-databricks.md
-  - name: Databricks Unity Catalog
-    href: onelake-unity-catalog.md
   - name: Snowflake database item
     href: ./snowflake/create-snowflake-database-item.md
   - name: Use Snowflake with Iceberg tables

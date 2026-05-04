@@ -73,10 +73,8 @@ Use Activity Explorer filters to locate specific interactions:
 - **User**  
   Identify activity by specific users
 
-- **Application**  
-  Isolate interactions from:
-  - Fabric Data Agent
-  - Other AI apps
+- **App**  
+  Isolate interactions from `Fabric-Data Agent`
 
 ### User Prompt 
 For each interaction, Microsoft Purview captures and logs the full text of the user’s prompt.
