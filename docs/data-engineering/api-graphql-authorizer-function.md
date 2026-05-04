@@ -1,11 +1,11 @@
 ---
 title: Custom authorization with user data functions for API for GraphQL
-description: Learn how to use user data functions to enble custom authorization for API for GraphQL
+description: Learn how to use user data functions to enable custom authorization for API for GraphQL
 author: mksuni
 ms.author: sumuth
 ms.date: 05/01/2026
 ms.topic: concept-article
-ms.search.form: how to use user data functions to enble custom authorization for API for GraphQL
+ms.search.form: how to use user data functions to enable custom authorization for API for GraphQL
 ---
 # Custom authorization with user data functions for a GraphQL API
 
@@ -26,23 +26,23 @@ When custom authorization is enabled with a user data function:
 - A function runs before the GraphQL API executes.
 - It receives context from the authenticated request.
 - Custom logic checks authorization.
-- The API request proceeds is the authorization is successful, otherwise it is denied.
+- The API request proceeds if the authorization is successful, otherwise it is denied.
 - The result is achieved faster for future requests.
 
 ## Create a user data function
 
-A authorizer function within a Fabric user data function requires a specific format. 
+An authorizer function within a Fabric user data function requires a specific format. 
 
 1. The function name can be user defined. It does not have any GraphQL-specific restrictions and should be defined based on the user data function constraints.
 2. The function argument/parameter name should be request and it should be of type dictionary. When the GraphQL service invokes a function, it sends a payload containing a dictionary called request with the following fields:
    - **tokenClaims (dictionary):** key-value pairs containing token claims extracted from the incoming user token.
    - **query(string):** the query string passed when the GraphQL API is called.
    - **variables(dictionary):** key-value pairs containing variables passed when the GraphQL API is called.
-   - **Return type(dictionary):** The function send back `isAuthorized`.
+   - **Return type(dictionary):** The function sends back `isAuthorized`.
    
 **Example**
 
-Create a user data functions in [Fabric portal](https://app.fabric.microsoft.com).Update the function code with this sample authorizer function.
+Create a user data function in [Fabric portal](https://app.fabric.microsoft.com). Update the function code with this sample authorizer function.
 
 ```python
 from typing import TYPE_CHECKING
