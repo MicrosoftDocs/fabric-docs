@@ -4,7 +4,7 @@ description: Use an eventhouse endpoint to query Lakehouse or Warehouse tables w
 ms.reviewer: tzgitlin, salilkanade, wiassaf
 ms.subservice: rti-eventhouse
 ms.topic: how-to
-ms.date: 02/23/2026
+ms.date: 05/04/2026
 ---
 
 # Enable Eventhouse endpoint for lakehouse and warehouse
@@ -62,7 +62,7 @@ You can enable the Eventhouse endpoint using any of these three methods:
 ### Method 3: From the Lakehouse/Warehouse ribbon in the OneLake catalog
 
 1. In the **OneLake catalog**, select your **Lakehouse** or **Warehouse** to open the details.
-1. From the toolbar, select **Analyze Data with** > **Eventhouse endpoint**.
+1. From the toolbar, select **Analyze data with** > **Eventhouse endpoint**.
 
    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Lakehouse ribbon." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png":::
 
