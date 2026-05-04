@@ -1,37 +1,46 @@
 ---
-title: Create a database connection in plan (preview)
-description: "Learn how to create a database connection in plan (preview)."
-ms.date: 04/02/2026
+title: Create a database connection for collaboration plan (preview)
+description: "Learn how to create and share database connections in plan (preview) for multi-user collaboration."
+ms.date: 04/30/2026
 ms.topic: how-to
 ---
 
-# Create a database connection
+# Create a database connection for collaboration in plan (preview)
 
-This article explains how to create a database connection from a plan (preview) item.
+This article explains how to create database connection to enable multi-user collaboration on plan (preview) items.
 
-This is a one-time action performed during the initial creation of a Planning sheet, and can be reused later.
+This connection is optional and allows other users to comment and collaborate on a plan that you create.
+
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
-Before you can create the database connection, make sure you have the following prerequisite in place:
+* You have a plan (preview) item created.
+* You have access to Planning sheets.
+* You have permission in the plan item to create and manage connections.
 
-* Data in a [Fabric SQL database](../../database/sql/overview.md)
+## Create a database connection for collaboration
 
-## Create a database connection
+1. Inside a plan (preview) item, select **Set up connection**.
 
-1. In your Fabric toolbar, select the **Settings** icon. Select **Manage connections and gateways**.
+    :::image type="content" source="media/planning-how-to-create-database-connection/connection-setup.png" alt-text="Screenshot of database connection setup option for collaboration." lightbox="media/planning-how-to-create-database-connection/connection-setup.png":::
 
-    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/manage-connection-gateways.png" alt-text="Screenshot of opening the manage connection gateways settings.":::
+1. Select **Create Connection** to create a new Fabric SQL connection. Alternatively, you can select an existing connection and skip the creation steps.
 
-1. Select **New**.
-1. Select **Cloud**.
-1. Enter a **Database Connection name**.
-1. For **Connection type**, select *SQL database in Fabric*.
-1. Set the **Authentication method** to *OAuth 2.0*.
-1. Select **Edit credentials**, then sign in with your Microsoft account.
+    :::image type="content" source="media/planning-how-to-create-database-connection/create-connection.jpg" alt-text="Screenshot of creation of database connection  option for collaboration." lightbox="media/planning-how-to-create-database-connection/create-connection.jpg":::
+
+1. Select **Create new connection** from the Connection credentials dropdown menu and select **Create**.
+
+    :::image type="content" source="media/planning-how-to-create-database-connection/new-connection.png" alt-text="Screenshot of adding a new database connection  option for collaboration." lightbox="media/planning-how-to-create-database-connection/new-connection.png":::
+
+1. Enter a **Connection name**.
+1. For **Authentication kind**, select *Organizational account*.
+
+    :::image type="content" source="media/planning-how-to-create-database-connection/connection-credentials.png" alt-text="Screenshot of adding credentials for the new database connection  collaboration." lightbox="media/planning-how-to-create-database-connection/connection-credentials.png":::
+
 1. Select **Create**.
 
-:::image type="content" source="media/planning-how-to-create-database-connection/new-connection-database.png" alt-text="Screenshot of creating a new database connection.":::
+A database connection is created to store collaboration data.
 
 ## Share the database connection 
 
@@ -47,4 +56,4 @@ You can share the created connection and manage the user permissions.
 
 ## Next steps
 
-Now that your database connection is created, you can create a Planning sheet that uses this connection: [Create a Planning sheet](planning-how-to-get-started.md).
+Create a Planning sheet in your plan (preview) item: [Create a Planning sheet](planning-how-to-get-started.md).
