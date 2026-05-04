@@ -1,6 +1,6 @@
 ---
-title: How to create a Microsoft 365 connection
-description: This article provides information about how to do create Microsoft 365 connection in [!INCLUDE [product-name](../includes/product-name.md)].
+title: Set up your Microsoft 365 Connection
+description: This article provides information about how to create a Microsoft 365 connection in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.topic: how-to
 ms.date: 03/13/2026
@@ -11,7 +11,7 @@ ms.custom:
 ai-usage: ai-assisted
 ---
 
-# How to create a Microsoft 365 connection
+# Set up your Microsoft 365 connection
 
 This article outlines the steps to create a Microsoft 365 connection.
 

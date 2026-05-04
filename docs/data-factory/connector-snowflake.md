@@ -22,7 +22,7 @@ The Snowflake database connector supports the following authentication types for
 |Snowflake| √ | √ |
 |Microsoft Account| √ | √ |
 |Key-pair | √ | √ |
-|Service Principal (SPN)| √ | √ |
+|Service Principal (SPN)|  | √ |
 
 [!INCLUDE [snowflake-authentication-types-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/snowflake-authentication-types-supported.md)]
 

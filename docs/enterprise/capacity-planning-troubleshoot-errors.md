@@ -134,6 +134,7 @@ After you identify the workspace and item causing the overload:
 - Optimize the dataset (semantic model), report, or query.
 - Adjust schedules for heavy workloads.
 - Scale up capacity or move workloads to different capacities.
+- Consider enabling the Fabric capacity overage feature to prevent throttling; however, it's charged at 3x the normal capacity rate. For more details, see [Enable capacity overage](enable-capacity-overage.md).
 
 For immediate actions, see [How to stop throttling when it occurs](throttling.md#how-to-stop-throttling-when-it-occurs).
 

@@ -1,9 +1,9 @@
 ---
 title: Variable references in Dataflow
-description: --
+description: Learn how to use variable references in a Dataflow Gen2 in Microsoft Fabric.
 ms.reviewer: miescobar
 ms.topic: tutorial
-ms.date: 3/23/2026
+ms.date: 03/23/2026
 ms.custom: dataflows
 ---
 

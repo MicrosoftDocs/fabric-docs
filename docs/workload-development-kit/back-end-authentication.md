@@ -2,7 +2,7 @@
 title: Fabric Workload Development Kit backend authentication
 description: Learn about building the backend authentication of a customized Fabric workload.
 ms.topic: how-to
-ms.date: 05/21/2024
+ms.date: 04/29/2026
 ---
 
 # Backend authentication and authorization overview

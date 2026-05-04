@@ -75,20 +75,26 @@ items:
       items:
         - name: Cubes
           href: plan/planning-concept-cube.md
+        - name: Row-level security (RLS)
+          href: plan/planning-concept-row-level-security.md
+        - name: Driver model
+          href: plan/planning-driver-model/planning-concept-driver-model.md          
     - name: How-tos
       items:
-        - name: Create a database connection
-          href: plan/planning-how-to-create-database-connection.md
         - name: Create a semantic model connection
           href: plan/planning-how-to-create-semantic-model-connection.md
         - name: Create a Planning sheet
           href: plan/planning-how-to-get-started.md
+        - name: Create a database connection for collaboration
+          href: plan/planning-how-to-create-database-connection.md
         - name: Input data
           href: plan/planning-how-to-input-data.md
         - name: Set up scenarios
           href: plan/planning-how-to-set-up-scenarios.md
-        - name: Write back data
-          href: plan/planning-how-to-write-back-data.md
+        - name: Use writeback
+          items:
+              - name: Configure writeback
+                href: plan/planning-writeback/planning-how-to-persist-data.md
         - name: Change layouts
           href: plan/planning-how-to-change-layouts.md
         - name: Create a cube
@@ -99,7 +105,7 @@ items:
           href: plan/planning-how-to-add-notes.md
         - name: Add bookmarks
           href: plan/planning-how-to-add-bookmark.md
-        - name: Forecasting
+        - name: Use forecasting
           items: 
               - name: Configure forecasts
                 href: plan/planning-forecasting/planning-how-to-build-forecasts.md
@@ -113,8 +119,18 @@ items:
                 href: plan/planning-forecasting/planning-how-to-extend-time.md
               - name: Edit forecast settings
                 href: plan/planning-forecasting/planning-how-to-configure-forecast-settings.md
-        - name: Optimize input values
-          href: plan/planning-how-to-optimize-input-values.md
+              - name: Optimize input values
+                href: plan/planning-how-to-optimize-input-values.md
+        - name: Use driver models
+          items: 
+              - name: Create a model
+                href: plan/planning-driver-model/planning-how-to-create-model-using-model-builder.md
+              - name: Configure row properties
+                href: plan/planning-driver-model/planning-how-to-configure-model-row-properties.md
+              - name: Create templates
+                href: plan/planning-driver-model/planning-how-to-create-templates.md
+              - name: Create a driver model
+                href: plan/planning-driver-model/planning-how-to-create-driver-model.md    
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
