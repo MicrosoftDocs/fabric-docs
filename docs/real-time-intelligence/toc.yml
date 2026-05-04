@@ -747,7 +747,7 @@ items:
                     href: query-acceleration-overview.md
                   - name: Accelerate queries over OneLake shortcuts
                     href: query-acceleration.md
-                  - name: External tools
+              - name: External tools
                 items:
                   - name: Query Fabric OneLake Delta tables from Snowflake
                     href: query-onelake-from-snowflake.md    
