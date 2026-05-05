@@ -1,10 +1,8 @@
 ---
 title: Admin API admin settings
 description: Learn how to configure Admin API settings in Fabric.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: ''
-
+author: msmimart
+ms.author: mimart
 ms.custom:
   - tenant-setting
 ms.topic: how-to

@@ -1,11 +1,8 @@
 ---
 title: Build a report by streaming events from Azure IoT Hub to Microsoft Fabric
 description: This article provides instruction on how to build a report by streaming data from Azure IoT Hub to Eventstream in Microsoft Fabric.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: tutorial
-ms.custom:
 ms.date: 11/18/2024
 ms.search.form: Eventstreams Tutorials
 #CustomerIntent: As a developer, I want to stream real-time events from Azure IoT Hub to Microsoft Fabric and build a report to monitor the health my devices.
@@ -33,7 +30,7 @@ Follow these steps to create an eventstream in your workspace:
 
 ## Create a KQL database
 
-Follow these steps to create an eventhouse, which automatically creaets a KQL database in your workspace:
+Follow these steps to create an eventhouse, which automatically creates a KQL database in your workspace:
 
 1. Navigate to **My workspace**. 
 1. Select **+ New item** button at the top of the page.
@@ -147,3 +144,4 @@ If you want to learn more about ingesting and processing real-time using Eventst
 - [Introduction to Microsoft Fabric Eventstream](./overview.md)
 - [Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse](./transform-and-stream-real-time-events-to-lakehouse.md)
 - [Stream real-time events from a custom app to a Microsoft Fabric KQL database](./stream-real-time-events-from-custom-app-to-kusto.md)
+

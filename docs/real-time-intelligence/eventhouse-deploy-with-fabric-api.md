@@ -1,12 +1,9 @@
 ---
 title: Deploy an eventhouse using Fabric APIs
 description: Learn how to use Fabric APIs for Eventhouse and KQL Database to automate deployments, manage data efficiently, and enhance your development workflow.
-author: shsagir
-ms.author: shsagir
-ms.reviewer: bwatts
+ms.subservice: rti-eventhouse
 ms.topic: how-to
 ms.date: 03/09/2025
-ms.custom:
 #customer intent: As a developer, I want to use the Eventhouse and KQL APIs so that I can automate deployments and manage data efficiently.
 ---
 # Deploy an eventhouse using Fabric APIs

@@ -1,10 +1,9 @@
 ---
 title: Permission model
 description: Learn how permissions work in Microsoft Fabric.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: overview
-ms.custom:
 ms.date: 05/22/2025
 ---
 
@@ -43,7 +42,7 @@ This table shows a small set of the capabilities each role has. For a full and m
 
 Item permissions are used to control access to individual Fabric items within a workspace. Item permissions are confined to a specific item and don't apply to other items. Use item permissions to control who can view, modify, and manage individual items in a workspace. You can use item permissions to give a user access to a single item in a workspace that they don't have access to.
 
-When you're sharing the item with a user or group, you can configure item permissions. Sharing an item grants the user the read permission for that item by default. Read permissions allow users to see the metadata for that item and view any reports associated with it. However, read permissions don't allow users to access underlying data in SQL or OneLake.
+When you're sharing the item with a user or group, you can configure item permissions. Sharing an item grants the user the read permission for that item by default. Read permissions allow users to see the metadata for that item and view any reports associated with it. However, read permissions don't allow users to access underlying data in SQL or OneLake. For example, if you share a Power BI report that uses DirectLake mode, the recipient can view the report but must also have OneLake data permissions to query the underlying Delta tables directly. For scenarios that require deeper data access, grant additional compute-level permissions through the SQL analytics endpoint or semantic model security.
 
 Different Fabric items have different permissions. To learn more about the permissions for each item, see:
 
@@ -61,6 +60,8 @@ Different Fabric items have different permissions. To learn more about the permi
 
 * [Real-Time Intelligence](/azure/data-explorer/kusto/management/security-roles)
 
+* [Mirrored database](../mirroring/share-and-manage-permissions.md)
+
 ## Compute permissions
 
 Permissions can also be set within a specific compute engine in Fabric, specifically through the SQL analytics endpoint or in a semantic model. Compute engine permissions enable a more granular data access control, such as table and row level security.
@@ -77,17 +78,15 @@ You can find more information in these articles:
 
 * [Object-level security (OLS)](service-admin-object-level-security.md)
 
-## OneLake permissions (data access roles)
+## OneLake security
 
-OneLake has its own permissions for governing access to files and folders in OneLake through [OneLake data access roles.](../onelake/security/get-started-data-access-roles.md) OneLake data access roles allow users to create custom roles within a lakehouse and to grant read permissions only to the specified folders when accessing OneLake. For each OneLake role, users can assign users, security groups or grant an automatic assignment based on the workspace role.
+OneLake has its own permissions for governing access to tables and folders in OneLake through [OneLake security.](../onelake/security/get-started-onelake-security.md) OneLake security allows users to create custom roles within a lakehouse and to grant read permissions only to the specified tables and folders when accessing OneLake. For each OneLake role, users can assign users, security groups or grant an automatic assignment based on the workspace role.
 
 Learn more about [OneLake Data Access Control Model](../onelake/security/data-access-control-model.md) and view the how-to guides.
 
-* [How to secure a lakehouse for Data Science teams](../onelake/security/how-to-secure-data-onelake-for-data-science.md)
+### Cross-tenant data sharing and OneLake shortcuts
 
-* [How to secure a lakehouse for Data Warehousing teams](../onelake/security/how-to-secure-data-onelake-for-data-warehousing.md)
-
-* [How to secure data for common data architectures](../onelake/security/how-to-common-data-architectures.md)
+OneLake shortcuts don't copy data; access is enforced at the source. When you share data across Microsoft Entra tenants by using OneLake data sharing, external users must be granted appropriate OneLake table or folder permissions to access the shared data. Shortcuts that reference cross-tenant shared data follow the same permission model: the source tenant controls access, and the consuming tenant's users must have explicit OneLake permissions granted by the data owner.
 
 ## Order of operation
 
@@ -96,6 +95,8 @@ Fabric has three different security levels. A user must have access at each leve
 1. Entra authentication: Checks if the user is able to authenticate to the Microsoft Entra tenant.
 2. Fabric access: Checks if the user can access Microsoft Fabric.
 3. Data security: Checks if the user can perform the requested action on a table or file.
+
+For cross-tenant access scenarios, users first authenticate through their home Microsoft Entra tenant. Fabric then validates that the user has been granted access to the shared data in the source tenant through OneLake data sharing permissions.
 
 ## Examples
 
@@ -144,6 +145,9 @@ This works fine when using import models as the data is imported in the semantic
 Because RLS is defined in the Semantic Model the data will be read first and then the rows will be filtered.
 
 If any security is defined in the SQL analytics endpoint that the report is built on, the queries automatically fall back to DirectQuery mode. If you do not want this default fallback behavior, you can create a new Lakehouse using shortcuts to the tables in the original Lakehouse and not define RLS or OLS in SQL on the new Lakehouse.
+
+> [!NOTE]
+> In cross-tenant scenarios where a Power BI report uses DirectLake mode and references data shared through OneLake, the external recipient must have both item-level read permissions on the report and OneLake data permissions on the shared tables in the source tenant.
 
 ## Related content
 

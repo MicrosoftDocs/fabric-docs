@@ -1,9 +1,9 @@
 ---
 title: Understand your Fabric capacity throttling
 description: Learn why and how capacities are throttled in Microsoft Fabric.
-author: JulCsc
-ms.author: juliacawthra
-ms.topic: conceptual
+author: dknappettmsft
+ms.author: daknappe
+ms.topic: concept-article
 ms.custom:
   - ignite-2023
   - build-2024
@@ -23,6 +23,7 @@ Fabric is designed to deliver fast performance to its customers. Tasks that migh
 ### Bursting
 To ensure fast performance, Fabric uses _bursting_ to let operations run as fast as they can. Bursting allows operations to temporarily use more compute than the provisioned compute for the capacity SKU. Because of bursting, users get results quickly without waiting. Bursting also enables a smaller capacity to run larger operations that would normally require a more expensive capacity. 
 
+
 ### Smoothing
 To avoid penalizing users when operations benefit from bursting, Fabric _smooths_, or averages, the CU usage of an operation over a longer timeframe. This behavior ensures users can enjoy consistently fast performance without experiencing throttling. 
 
@@ -35,6 +36,9 @@ An operation's utilization type determines the number of timepoints used for smo
 Due to smoothing, only a portion of the CU usage for an operation applies to any individual timepoint, which reduces throttling overall. Smoothed CU usage accumulates as operations run. Smoothed usage is paid for by _future capacity_, which is the CUs available in future timepoints, because the capacity is running continuously. 
 
 Bursting and smoothing work together to make it easier for capacity users to do their work. For example, users typically spend time scheduling jobs and spreading them out across the day. With smoothing, the compute cost for background jobs is smoothed over 24-hours. This means scheduled jobs can all run simultaneously without causing any spikes that would otherwise block jobs from starting. At the same time, users can enjoy consistently fast performance without waiting for slow jobs to complete or wasting time managing job schedules.
+
+>[!NOTE]
+>Bursting and smoothing are not supported when a capacity admin has enabled Autoscale Billing for Spark. In this scenario, Spark usage operates in a Pay-As-You-Go mode, and the concepts of bursting and smoothing do not apply.
 
 ## Throttle triggers and throttle stages
 
@@ -119,6 +123,7 @@ When a capacity is overloaded, a capacity admin can use the Fabric capacity metr
 2. The *Throttling* charts on the *Compute* page show when smoothed usage exceeds one of the throttling limits.
 
 ## How to stop throttling when it occurs
+
 Capacities are self-healing, so you can always wait until the overload state is over before submitting new requests.
 
 However, to stop throttling faster, you can use the strategies listed below.
@@ -126,6 +131,7 @@ However, to stop throttling faster, you can use the strategies listed below.
 When using F SKU capacities, to stop throttling:
 - Temporarily increase the SKU. By increasing your SKU, you burndown carryforward faster because each timepoint has more idle capacity. 
 - Pause and then resume your capacity. Pausing a capacity results in a billing event for the accumulated future capacity usage. When a capacity starts or resumes, it has zero future capacity usage so it can accept new operations right away.
+- Capacity overage billing can also stop throttling from occurring; however, it's charged at 3x the normal capacity rate. For more details, see [Enable capacity overage](enable-capacity-overage.md).
 
 When using P SKU capacities, to stop throttling:
 * Enable [Autoscale](/power-bi/enterprise/service-premium-auto-scale) for the P capacity.

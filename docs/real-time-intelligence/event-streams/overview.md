@@ -1,20 +1,23 @@
 ---
-title: Microsoft Fabric event streams overview
-description: Learn about eventstreams and its capability of capturing, transforming, and routing real-time events to various destinations in Microsoft Fabric.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
-ms.topic: overview
-ms.custom:
-ms.date: 2/05/2025
+title: Microsoft Fabric Eventstreams Overview
+description: Learn how eventstreams can help you capture, transform, and route real-time events to various destinations in Microsoft Fabric.
+ms.reviewer: zhenxilin
+ms.topic: concept-article
+ms.custom: sfi-image-nochange
+ms.date: 04/29/2026
 ms.search.form: Eventstream Overview
+ai-usage: ai-assisted
 ---
 
-# Fabric Eventstream - overview
-The eventstreams feature in the Microsoft Fabric **Real-Time Intelligence** experience lets you bring real-time events into Fabric, transform them, and then route them to various destinations without writing any code (no-code). You create an eventstream, which is an instance of the **Eventstream** item in Fabric, add event data sources to the stream, optionally add transformations to transform the event data, and then route the data to supported destinations. Additionally, with Apache Kafka endpoints available on the Eventstream item, you can send or consume real-time events using the Kafka protocol.
+# Overview of Microsoft Fabric eventstreams
+
+You can use the eventstreams feature in Microsoft Fabric Real-Time Intelligence to bring real-time events into Fabric, transform them, and then send them to various destinations without writing any code. You create an eventstream, add event data sources to the stream, optionally add transformations to transform the event data, and then send the data to supported destinations.
+
+Also, with Apache Kafka endpoints available for eventstreams, you can send or consume real-time events by using the Kafka protocol.
 
 ## Bring events into Fabric
-The eventstreams feature provides you with various source connectors to fetch event data from the various sources. There are more sources available when you enable **Enhanced capabilities** at the time of creating an eventstream. 
+
+Eventstreams provide you with source connectors to fetch event data from the various sources. More sources are available when you enable **Enhanced capabilities** at the time of creating an eventstream.
 
 # [Enhanced capabilities](#tab/enhancedcapabilities)
 
@@ -26,54 +29,100 @@ The eventstreams feature provides you with various source connectors to fetch ev
 
 ---
 
-## Process events using no-code experience
-The drag and drop experience gives you an intuitive and easy way to create your event data processing, transforming, and routing logic without writing any code. An end-to-end data flow diagram in an eventstream can provide you with a comprehensive understanding of the data flow and organization. The event processor editor is a no-code experience that allows you to drag and drop to design the event data processing logic. 
+## Process events
+
+An end-to-end data flow diagram in an eventstream can give you a comprehensive understanding of the data flow and organization.
+
+The event processor editor is a drag-and-drop experience. It's an intuitive way to create your event data processing, transforming, and routing logic without writing any code.
 
 [!INCLUDE [supported-transformations-enhanced](./includes/supported-transformations-enhanced.md)]
 
-If you enabled **Enhanced capabilities** while creating an eventstream, the transformation operations are supported for all destinations (with derived stream acting as an intermediate bridge for some destinations, like Custom endpoint, Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]). If you didn't, the transformation operations are available only for the Lakehouse and Eventhouse (event processing before ingestion) destinations.
+In addition to the no-code transformations, eventstreams support a [SQL operator (preview)](process-events-using-sql-code-editor.md) for code-first stream processing. Use the SQL operator to define custom transformation logic by using SQL expressions, including windowing, joins, and aggregations. You can choose between no-code transformations and SQL-based authoring within an eventstream to build complex streaming logic.
+
+If you enabled **Enhanced capabilities** while creating an eventstream, the transformation operations are supported for all destinations. The derived stream acts as an intermediate bridge for some destinations, like a custom endpoint or Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]). If you didn't enable **Enhanced capabilities**, the transformation operations are available only for the lakehouse and eventhouse (event processing before ingestion) destinations.
 
 ## Route events to destinations
-The Fabric event streams feature supports sending data to the following supported destinations. 
+
+The Fabric eventstreams feature supports sending data to the following supported destinations.
 
 # [Enhanced capabilities](#tab/enhancedcapabilities)
 
 [!INCLUDE [supported-destinations-enhanced](./includes/supported-destinations-enhanced.md)]
 
-You can attach multiple destinations in an eventstream to simultaneously receive data from your eventstreams without interfering with each other.
+You can attach multiple destinations in an eventstream to simultaneously receive data from your eventstreams without the eventstreams interfering with each other.
 
-:::image type="content" source="./media/overview/multiple-destinations-enhanced.png" alt-text="Screenshot showing an Eventstream item overview." lightbox="./media/overview/multiple-destinations-enhanced.png" :::
+:::image type="content" source="./media/overview/multiple-destinations-enhanced.png" alt-text="Screenshot that shows an overview of an eventstream item with enhanced capabilities." lightbox="./media/overview/multiple-destinations-enhanced.png" :::
 
 # [Standard capabilities](#tab/standardcapabilities)
 
 [!INCLUDE [supported-destinations](./includes/supported-destinations-standard.md)]
 
-You can attach multiple destinations in an eventstream to simultaneously receive data from your eventstreams without interfering with each other.
+You can attach multiple destinations in an eventstream to simultaneously receive data from your eventstreams without the eventstreams interfering with each other.
 
-:::image type="content" source="./media/overview/eventstream-overview.png" alt-text="Screenshot showing an Eventstream item overview." lightbox="./media/overview/eventstream-overview.png" :::
+:::image type="content" source="./media/overview/eventstream-overview.png" alt-text="Screenshot that shows an overview of an eventstream item." lightbox="./media/overview/eventstream-overview.png" :::
 
 ---
 
+## Schema management
+
+Eventstreams provide schema management capabilities to help you govern and validate the structure of your streaming data:
+
+- **Schema Registry (preview)**: Register and version schemas centrally by using the Fabric Schema Registry to manage schema evolution across your eventstreams. For more information, see [Use event schemas in eventstreams](../schema-sets/use-event-schemas.md).
+- **Multiple schema inferencing (preview)**: Infer and work with multiple schemas within a single eventstream. Design diverse transformation paths by selecting the appropriate inferred schema for each path. For more information, see [Enhance event processing by using multiple schema inferencing](process-events-with-multiple-schemas.md).
+- **Confluent Schema Registry–based deserialization (preview)**: When you ingest data from Confluent Cloud for Apache Kafka, eventstreams can use Confluent Schema Registry to deserialize schema-encoded messages, improving interoperability with Confluent-based streaming ecosystems.
+
+These features improve schema governance and interoperability when you consume varied streams in your eventstreams.
+
+## DeltaFlow: Analytics-ready CDC streams (Preview)
+
+DeltaFlow is a capability within Fabric Eventstreams that transforms raw Change Data Capture (CDC) events from your operational databases into analytics-ready streaming data. 
+
+Key capabilities of DeltaFlow:
+
+- **Analytics-ready event shape**: CDC events are transformed into a tabular format that reflects the source table structure. You can then write straightforward analytics queries using tools like Kusto Query Language (KQL) without first parsing nested Debezium JSON payloads.
+- **Automatic schema registration**: DeltaFlow autodiscovers source table schemas and registers them with the Fabric Schema Registry.
+- **Automatic destination table management**: When you route DeltaFlow-enabled streams to a supported destination such as an eventhouse, destination tables are automatically created and managed to match the source table schema.
+- **Schema evolution handling**: When source database tables change (for example, new columns are added or new tables are created), DeltaFlow automatically detects the changes, updates registered schemas, and adjusts destination tables accordingly.
+
+DeltaFlow (Preview) is available with the following CDC source connectors:
+
+- [Azure SQL Database CDC](./add-source-azure-sql-database-change-data-capture.md)
+- [Azure SQL Managed Instance CDC](./add-source-azure-sql-managed-instance-change-data-capture.md)
+- [SQL Server on virtual machine (VM) CDC](./add-source-sql-server-change-data-capture.md)
+- [PostgreSQL Database CDC](./add-source-postgresql-database-change-data-capture.md)
+
+To use DeltaFlow, choose **Analytics-ready events & auto-updated schema** during the schema handling step when setting up a CDC connector as an Eventstream source. To learn how DeltaFlow transforms raw CDC events into analytics-ready output, see [DeltaFlow output transformation](./delta-flow-output-transformation.md).
+
 > [!NOTE]
-> We recommend that you use the Microsoft Fabric event streams feature with at least four capacity units ([SKU](../../enterprise/licenses.md#capacity): F4)
+> We recommend that you use the Fabric eventstreams feature with at least four [capacity](../../enterprise/licenses.md#capacity) units: F4.
 
-## Apache Kafka on Fabric event streams 
-The Fabric event streams feature offers an Apache Kafka endpoint on the Eventstream item, enabling users to connect and consume streaming events through the Kafka protocol. If your application already uses the Apache Kafka protocol to send or receive streaming events with specific topics, you can easily connect it to your Eventstream. Just update your connection settings to use the Kafka endpoint provided in your Eventstream.
+## Apache Kafka on Fabric eventstreams
 
-Fabric event streams feature is powered by Azure Event Hubs, a fully managed cloud-native service. When an eventstream is created, an event hub namespace is automatically provisioned, and an event hub is allocated to the default stream without requiring any provisioning configurations. To learn more about the Kafka-compatible features in Azure Event Hubs service, see [Azure Event Hubs for Apache Kafka](/azure/event-hubs/azure-event-hubs-kafka-overview).
+The Fabric eventstreams feature offers an Apache Kafka endpoint, so you can connect and consume streaming events through the Kafka protocol. If your application already uses the Apache Kafka protocol to send or receive streaming events with specific topics, you can easily connect it to your eventstream. Just update your connection settings to use the Kafka endpoint provided in your eventstream.
 
-To learn more about how to obtain the Kafka endpoint details for sending events to eventstream, see [Add custom endpoint source to an eventstream](./add-source-custom-app.md); and for consuming events from eventstream, see [Add a custom endpoint destination to an eventstream](./add-destination-custom-app.md).
+The Fabric eventstreams feature is associated with Azure Event Hubs, a fully managed cloud-native service. When you create an eventstream, an event hub namespace is automatically created for you. An event hub is allocated to the default stream without requiring any provisioning configurations. To learn more about the Kafka-compatible features in Azure Event Hubs, see [What is Azure Event Hubs for Apache Kafka?](/azure/event-hubs/azure-event-hubs-kafka-overview).
+
+To learn more about how to obtain the Kafka endpoint details for sending events to an eventstream, see [Add a custom endpoint or custom app source to an eventstream](./add-source-custom-app.md). For information about consuming events from an eventstream, see [Add a custom endpoint or custom app destination to an eventstream](./add-destination-custom-app.md).
+
+## Operational and security capabilities
+
+Eventstreams provide controls for operational management and secure connectivity:
+
+- **Pause and resume controls**: Derived eventstreams support pause and resume controls, so you can temporarily halt processing without affecting other inputs or outputs in your eventstream and then resume later. For more information, see [Pause and resume data streams](pause-resume-data-streams.md).
+- **Workspace Private Link (preview)**: Select sources and destinations support Workspace Private Link for private network access, which helps you secure inbound connections to your eventstreams. For more information, see [Secure inbound connections with Tenant and Workspace Private Links](set-up-tenant-workspace-private-links.md).
 
 ## Limitations
 
-Fabric Eventstream has the following general limitations. Before working with Eventstream, review these limitations to ensure they align with your requirements.
+Fabric eventstreams have the following general limitations. Before you work with eventstreams, review these limitations to ensure that they align with your requirements.
 
 | Limit | Value |
 | ----- | --------- |
-| Maximum message size |  1 MB |
+| Maximum message size | 1 MB |
 | Maximum retention period of event data | 90 days |
-| Event delivery guarantees | At-least-once |
+| Event delivery guarantees | At least once |
 
 ## Related content
 
-- [Create and manage an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)
+- [Create an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)
+
+

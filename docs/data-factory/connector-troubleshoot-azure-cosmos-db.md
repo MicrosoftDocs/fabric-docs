@@ -1,12 +1,10 @@
 ---
 title: Troubleshoot the Azure Cosmos DB connector
 description: Learn how to troubleshoot issues with the Azure Cosmos DB connector in Data Factory in Microsoft Fabric.
-ms.reviewer: whhender
-ms.author: xupzhou
-author: pennyzhou-msft
+ms.reviewer: xupzhou
 ms.topic: troubleshooting
-ms.custom:
 ms.date: 10/23/2024
+ms.custom: connectors
 ---
 
 # Troubleshoot the Azure Cosmos DB connector in Data Factory in Microsoft Fabric

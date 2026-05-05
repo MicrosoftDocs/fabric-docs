@@ -2,11 +2,10 @@
 title: Get data from Azure Storage
 description: Learn how to get data from Azure Storage in a KQL database in Real-Time Intelligence.
 ms.reviewer: aksdi
-ms.author: shsagir
-author: shsagir
 ms.topic: how-to
-ms.custom:
-ms.date: 05/05/2025
+ms.custom: sfi-image-nochange
+ms.subservice: rti-eventhouse
+ms.date: 04/27/2026
 ms.search.form: Get data in a KQL Database
 ---
 
@@ -18,34 +17,33 @@ In this article, you learn how to get data from Azure Storage (ADLS Gen2 contain
 
     [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
+* **One-time ingestion**: Use this method to retrieve data from Azure Storage as a one-time operation.
+
     > [!NOTE]
     >
-    > A continuous ingestion stream can affect your billing. For more information, see [Eventhouse and KQL Database consumption](real-time-intelligence-consumption.md).
-
-* **One-time ingestion**: Use this method to retrieve data from Azure Storage as a one-time operation.
+    > * A continuous ingestion stream can affect your billing. For more information, see [Eventhouse and KQL Database consumption](real-time-intelligence-consumption.md).
 
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
 * A [KQL database](create-database.md) with editing permissions.
-* A [storage account](/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal).
+* An Azure [storage account](/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal).
 
-For continuous ingestion you also require:
+### Prerequisites for continuous ingestion
 
-* A [workspace identity](../security/workspace-identity.md). *My Workspace* isn't supported. If necessary, [Create a new Workspace](../fundamentals/create-workspaces.md).
-* Enable [Hierarchical namespace](/azure/storage/blobs/create-data-lake-storage-account#enable-the-hierarchical-namespace) on the storage account.
+* A Fabric [workspace identity](../security/workspace-identity.md). *My Workspace* isn't supported. If necessary, [Create a new Workspace](../fundamentals/create-workspaces.md).
 
-    :::image type="content" source="media/get-data-azure-storage/storage-heirarchical-namespace-enabled.png" alt-text="Screenshot of Azure portal open to the Overview window.":::
+In Azure:
 
-* *Storage Blob Data Reader* role permissions assigned to the workspace identity.
-* A [container](/azure/storage/blobs/blob-containers-portal) to hold the data files.
-* A data file uploaded to the container. The data file structure is used to define the table schema. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md).
+* [Register the Event Grid resource provider](/azure/event-grid/subscribe-to-partner-events) with your Azure subscription.
+* Assign [Storage Blob Data Reader](/azure/role-based-access-control/built-in-roles) role permissions to the workspace identity.
+* [Create](#create-a-container-with-data-file) a [blob container](/azure/storage/blobs/blob-containers-portal) to hold the data files.
+    * Upload a data file. The data file structure is used to define the table schema. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md).
 
-    > [!NOTE]
-    > You must upload a data file:
-    >
-    > * Before the [configuration](#configure) to define the table schema during set-up.
-    > * After the configuration to trigger the continuous ingestion, to preview data, and to verify the connection.
+        > [!NOTE]
+        > You must upload a data file:
+        > * Before the [configuration](#configure) to define the table schema during set-up.
+        > * After the configuration to trigger the continuous ingestion, to preview data, and to verify the connection.
 
 ### Add the workspace identity role assignment to the storage account
 
@@ -79,13 +77,13 @@ For continuous ingestion you also require:
 
 Set the source to get data.
 
-1. From your Workspace, open the EventHouse, and select the database.
+1. From your Workspace, open the eventhouse, and select the database.
 
 1. On the KQL database ribbon, select **Get Data**.
 
 1. Select the data source from the available list. In this example, you're ingesting data from **Azure storage**.
 
-    [!INCLUDE [get-data-kql](includes/get-data-kql.md)]
+    :::image type="content" source="media/get-data-azure-storage/get-data-azure-storage-tile.png" alt-text="Screenshot of the get data tiles with the Azure storage option highlighted.":::
 
 ## Configure
 
@@ -131,7 +129,7 @@ Set the source to get data.
 
         | **Setting** | **Field description** |
         |--|--|
-        | RTAStorageAccount | An event stream connected to your storage account from Fabric. |
+        | RTAStorageAccount | An eventstream connected to your storage account from Fabric. |
         | Container | The storage container containing the file you want to ingest. |
         | Connection | This is prepopulated with the connection string |
 
@@ -236,7 +234,7 @@ Optionally:
 
 [!INCLUDE [mapping-transformations](includes/mapping-transformations.md)]
 
-### Advanced options based on data type
+[!INCLUDE [get-data-process-event-advanced-options-data-type](includes/get-data-process-event-advanced-options-data-type.md)]
 
 **Tabular (CSV, TSV, PSV)**:
 

@@ -1,12 +1,9 @@
 ---
 title: Get Eventstream item Definition
 description: Learn how to call APIs to get an Eventstream item definition.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
-ms.date: 12/16/2024
+ms.date: 09/08/2025
 ms.search.form: Eventstream REST API
 ---
 
@@ -31,7 +28,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/eventstreams/{
 ## Sample request
 
 ```http
-POST https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/eventstreams/cfafbeb1-8037-4d0c-896e-a46fb27ff229/getDefinition
+POST https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/eventstreams/bbbbcccc-1111-dddd-2222-eeee3333ffff/getDefinition
 ```
 
 ## Sample Response
@@ -162,10 +159,12 @@ Below is the decoded payload content of the Base64 string for reference.
       }
     }
   ],
-  "compatibilityLevel": "1.0"
+  "compatibilityLevel": "1.1"
 }
 ```
 
 ## Related content
 
 * [Get Eventstream Definition](/rest/api/fabric/eventstream/items/get-eventstream-definition)
+
+

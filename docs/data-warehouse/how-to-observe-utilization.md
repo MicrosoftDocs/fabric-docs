@@ -1,12 +1,11 @@
 ---
 title: How to Observe Fabric Data Warehouse Utilization Trends
 description: Learn how to use the Fabric Capacity Metrics app to observe Microsoft Fabric Data Warehouse utilization trends.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: sosivara
 ms.date: 04/06/2025
 ms.topic: how-to
 ms.search.form: Warehouse billing and utilization
+ms.custom: sfi-image-nochange
 ---
 
 # How to: Observe Fabric Data Warehouse utilization trends
@@ -60,7 +59,7 @@ The following animated image walks through several steps you can use to drill th
       WHERE dist_statement_id = '00AA00AA-BB11-CC22-DD33-44EE44EE44EE';
       ```
 
-      The following T-SQL query uses the **Operation Id** in a query on the `queryinsights.exec_requests_history` view. 
+      The following T-SQL query uses the **Operation Id** in a user initiated query on the `queryinsights.exec_requests_history` view. 
 
       ```sql
       SELECT * FROM queryinsights.exec_requests_history 

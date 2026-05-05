@@ -1,10 +1,8 @@
 ---
 title: Azure and Fabric events capacity consumption
 description: Learn how to monitor capacity consumption for Azure and Fabric events.
-author: george-guirguis
-ms.author: geguirgu
+ms.reviewer: geguirgu
 ms.topic: how-to
-ms.custom:
 ms.date: 11/18/2024
 ms.search.form: Monitor Fabric events capacity consumption
 ---
@@ -33,6 +31,9 @@ Azure and Fabric events usage is defined by two operation types, which are descr
 ### Event operations
 
 Event operations represent operations for publish, filtering, and delivery of events. For Azure and Fabric events generated in Fabric, the publish operation charge doesn’t kick in until a consumer is established for these events. The publish operations are charged to the publisher’s capacity, while the filtering and delivery operations are charged to the consumer’s capacity.
+
+> [!NOTE]
+> Azure events, such as Azure Storage events, also incur [Azure Event Grid pricing](https://azure.microsoft.com/pricing/details/event-grid/) in addition to the Fabric capacity consumption described in this article.
  
 For example, when a Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] trigger is created to take an action on a workspace item event, the source workspace’s capacity is charged for the publish operations, and the [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)]’s capacity is charged for the filtering and delivery operations. 
 
@@ -67,3 +68,4 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 
 - [Install the Premium metrics app](/power-bi/enterprise/service-premium-install-app)
 - [Use the Premium metrics app](/power-bi/enterprise/service-premium-metrics-app)
+

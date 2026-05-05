@@ -1,8 +1,6 @@
 ---
 title: "Data Warehouse Tutorial: Analyze Data in a Notebook"
 description: "In this tutorial, learn how to analyze data with notebooks in a Warehouse."
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: prlangad
 ms.date: 04/06/2025
 ms.topic: tutorial

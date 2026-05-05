@@ -1,13 +1,11 @@
 ---
 title: Develop, execute, and manage notebooks
 description: Learn how to author, execute, and manage Microsoft Fabric notebook jobs with rich built-in features.
-ms.reviewer: snehagunda
-ms.author: jingzh
-author: JeneZhang
+ms.reviewer: jingzh
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.search.form: Develop and run notebooks
-ms.date: 05/21/2025
+ms.date: 05/29/2025
 ---
 
 # Develop, execute, and manage Microsoft Fabric notebooks
@@ -38,6 +36,7 @@ We provide rich operations to develop notebooks:
 - [Notebook contents](#notebook-contents)
 - [Markdown folding](#markdown-folding)
 - [Find and replace](#find-and-replace)
+- [Full‑size mode on a cell](#fullsize-mode-on-a-cell)
 
 ### Add a cell
 
@@ -91,10 +90,7 @@ The IntelliSense features are at different levels of maturity for different lang
 > You must have an active Apache Spark session to use IntelliSense code completion.
 
 #### Enhance Python Development with Pylance
- 
-> [!NOTE]
-> Currently, the feature is in preview.
- 
+
 Pylance, a powerful and feature-rich language server, is now available in Fabric notebook. Pylance makes Python development easier with smart completions, better error detection, and improved code insights. Key improvements include smarter autocompletion, enhanced lambda support, parameter suggestions, improved hover information, better docstring rendering, and error highlighting. With Pylance, writing Python and PySpark code becomes faster, more accurate, and more efficient.
 
 ### Code snippets
@@ -106,19 +102,19 @@ Fabric notebooks provide code snippets that help you easily write commonly used 
 
 Snippets appear in [Shortcut keys of IDE style IntelliSense](#ide-style-intellisense) mixed with other suggestions. The code snippet contents align with the code cell language. You can see available snippets by typing **Snippet**. You can also type any keyword to see a list of relevant snippets. For example, if you type **read**, you see the list of snippets to read data from various data sources.
 
-:::image type="content" border="true" source="media/author-execute-notebook/code-snippet.gif" alt-text="Animated GIF of code snippets.":::
+:::image type="content" border="true" source="media/author-execute-notebook/code-snippet.gif" alt-text="Animated GIF of code snippets." lightbox="media/author-execute-notebook/code-snippet.gif":::
 
 ### Drag and drop to insert snippets
 
 Use drag and drop to read data from Lakehouse explorer conveniently. Multiple file types are supported here; you can operate on text files, tables, images, etc. You can either drop to an existing cell or to a new cell. The notebook generates the code snippet accordingly to preview the data.
 
-:::image type="content" border="true" source="media/author-execute-notebook/drag-drop-insert-snippet.gif" alt-text="Animated GIF of drag and drop to insert snippets.":::
+:::image type="content" border="true" source="media/author-execute-notebook/drag-drop-insert-snippet.gif" alt-text="Animated GIF of drag and drop to insert snippets." lightbox="media/author-execute-notebook/drag-drop-insert-snippet.gif":::
 
 ### Drag and drop to insert images
 
 Use drag and drop to easily insert images from your browser or local computer to a markdown cell.
 
-:::image type="content" border="true" source="media/author-execute-notebook/drag-drop-insert-image.gif" alt-text="Animated GIF of drag and drop to insert images.":::
+:::image type="content" border="true" source="media/author-execute-notebook/drag-drop-insert-image.gif" alt-text="Animated GIF of drag and drop to insert images." lightbox="media/author-execute-notebook/drag-drop-insert-image.gif":::
 
 ### Format text cell with toolbar buttons
 
@@ -146,8 +142,6 @@ Supported undo cell operations:
 
 You can drag from the empty part of a cell and drop it to the desired position.
 
-<!-- :::image type="content" border="true" source="media/author-execute-notebook/drag-drop-move-cell.gif" alt-text="Animated GIF of drag and drop to move a cell."::: -->
-
 You can also move the selected cell using **Move up** and **Move down** on the ribbon.
 
 :::image type="content" source="media\author-execute-notebook\move-cell-options.png" alt-text="Screenshot showing the options for moving a cell." lightbox="media\author-execute-notebook\move-cell-options.png":::
@@ -156,13 +150,12 @@ You can also move the selected cell using **Move up** and **Move down** on the r
 
 To delete a cell, select the delete button at the right side of the cell.
 
-You can also use [shortcut keys in command mode](#shortcut-keys-in-command-mode). Press **Shift+D** to delete the current cell.
+You can also use [shortcut keys in command mode](#shortcut-keys-in-command-mode). Press **D,D** (D twice) to delete the current cell.
 
 ### Collapse a cell input
 
 Select the **More commands** ellipses (...) on the cell toolbar and **Hide input** to collapse the current cell's input. To expand it again, select **Show input** when the cell is collapsed.
 
-<!-- :::image type="content" border="true" source="media/author-execute-notebook/collapse-cell-input.gif" alt-text="Animated GIF of collapsing cell input."::: -->
 
 ### Collapse a cell output
 
@@ -170,16 +163,16 @@ Select the **More commands** ellipses (...) on the cell toolbar and **Hide outpu
 
 ### Cell output security
 
-Using [OneLake data access roles (preview)](../onelake/security/get-started-data-access-roles.md), users can configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table see an unauthorized error during query execution.
+You can use [OneLake data access roles (preview)](../onelake/security/get-started-onelake-security.md) to configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table see an unauthorized error during query execution.
 
 > [!IMPORTANT]
-> Security only applies during query execution and any notebook cells containing query results can be viewed by users that aren't authorized to run queries against the data directly.
+> Security only applies during query execution. Notebook cells that contain query results can be viewed by users that aren't authorized to run queries against the data directly.
 
 ### Lock or freeze a cell
 
 The lock and freeze cell operations allow you to make cells read-only or stop code cells from being run on an individual basis.
 
-:::image type="content" border="true" source="media/author-execute-notebook/lock-and-freeze-cell.gif" alt-text="Animated GIF of lock or freeze a cell.":::
+:::image type="content" border="true" source="media/author-execute-notebook/lock-and-freeze-cell.gif" alt-text="Animated GIF of lock or freeze a cell." lightbox="media/author-execute-notebook/lock-and-freeze-cell.gif":::
 
 ### Merge and split cells
 
@@ -199,13 +192,67 @@ Selecting Outlines or Table of Contents presents the first markdown header of an
 
 The markdown folding option allows you to hide cells under a markdown cell that contains a heading. The markdown cell and its hidden cells are treated the same as a set of contiguous multi-selected cells when performing cell operations.
 
-:::image type="content" border="true" source="media/author-execute-notebook/markdown-folding.gif" alt-text="Animated GIF of markdown folding.":::
+:::image type="content" border="true" source="media/author-execute-notebook/markdown-folding.gif" alt-text="Animated GIF of markdown folding." lightbox="media/author-execute-notebook/markdown-folding.gif":::
 
 ### Find and replace
 
 The find and replace option can help you match and locate the keywords or expression within your notebook content. You can also easily replace the target string with a new string.
 
 :::image type="content" source="media\author-execute-notebook\find-replace.png" alt-text="Screenshot showing find and replace pane." lightbox="media\author-execute-notebook\find-replace.png":::
+
+### Full‑size mode on a cell
+
+Full‑size mode lets you fully focus on writing and editing code within a single cell - perfect for long or complex logic. You can toggle this mode by clicking the expand cell button in the cell toolbar to expand the cell, and exit by clicking return to default size.
+
+:::image type="content" border="true" source="media/author-execute-notebook/full-size-mode-on-a-cell.gif" alt-text="Animated GIF of full‑size mode on a cell." lightbox="media/author-execute-notebook/full-size-mode-on-a-cell.gif":::
+
+## Copilot inline code completion (preview)
+
+Copilot inline code completion is an AI-powered feature that helps you to write Python code faster and more efficiently in Fabric Notebooks. This feature provides intelligent, context-aware code suggestions as you type code. It reduces repetitive tasks, minimizes syntax errors, and accelerates development by integrating seamlessly into your notebook workflow.
+
+### Key benefits
+
+* **AI-driven completions:** Generates suggestions based on your notebook's context using a model trained on millions of lines of code.
+* **Boosts productivity:** Helps write complex functions, reduces repetitive coding, and speeds up exploration of unfamiliar libraries.
+* **Reduces errors:** Minimizes typos and syntax mistakes with intelligent, context-aware completions.
+* **Minimal setup:** Built into Fabric notebooks and doesn't require any installation. You can just enable it and start coding.
+
+### How it works
+
+Enable inline code suggestions using the toggle at the bottom of your notebook. 
+
+:::image type="content" source="media\author-execute-notebook\copilot-inline-code.png" alt-text="Screenshot showing how to enable Copilot code completions." lightbox="media\author-execute-notebook\copilot-inline-code.png":::
+
+As you type, suggestions appear in light gray text, press tab to accept or modify. Suggestions are based on previous notebook cells.
+
+:::image type="content" source="media\author-execute-notebook\copilot-code-suggestion.png" alt-text="Screenshot showing automatic code suggestion with Copilot code completion." lightbox="media\author-execute-notebook\copilot-code-suggestion.png":::
+
+> [!NOTE]
+> Enabling Copilot inline code completion consumes more [capacity units](../enterprise/fabric-copilot-capacity.md).
+
+### Current limitations
+
+* Copilot Inline Code Completion currently supports Python language and uses context from previous cells and Lakehouse schemas.
+* Suggestions consider data from Lakehouse schemas.
+* Only a subset of schema elements is used when there are many tables or columns.
+* Dynamically created tables (via Spark) aren't recognized in real time.
+* Inline completions are primarily scoped to context from prior cells and Lakehouse schemas. The notebook-wide Copilot actions and diagnostics described in the following sections can use broader notebook context (structure and runtime state) without requiring a Spark session to start.
+
+## Copilot notebook-wide actions
+
+Copilot supports multi-step, notebook-wide capabilities that go beyond individual cells. You can use Copilot to generate code across cells, refactor logic into reusable functions, summarize entire workflows, and validate notebook output. Copilot understands the workspace context, attached Lakehouse schemas, tables, and files, notebook structure, and runtime state, and is immediately context-aware without requiring a Spark session to start.
+
+For details on the chat pane and slash commands, see [Use the Copilot chat pane](./copilot-notebooks-chat-pane.md).
+
+## Performance insights with Copilot
+
+Copilot surfaces optimization recommendations based on data size, join patterns, and runtime behavior. For example, it can propose efficient join strategies, help you avoid data shuffles, spot data quality issues, and suggest refactors for better reuse and maintainability. These insights appear in Copilot conversations and align with the `/optimize` command.
+
+## Fix with Copilot
+
+When a cell or Spark job fails, a **Fix with Copilot** option appears below the failed cell. Copilot provides an error summary, likely root cause, recommended fixes, and the ability to auto-apply changes with an approval diff. You can also use the `/fix` command in Copilot chat to run targeted diagnostics on a specific cell or the entire notebook.
+
+For more information, see [Diagnose notebook failures with Copilot](./copilot-notebooks-chat-pane.md#diagnose-notebook-failures).
 
 ## Run notebooks
 
@@ -239,12 +286,11 @@ Select **Cancel all** to cancel the running cells or cells waiting in the queue.
 
 :::image type="content" source="media\author-execute-notebook\cancel-all-stop-session.png" alt-text="Screenshot showing where to select Cancel all runs and stop a session." lightbox="media\author-execute-notebook\cancel-all-stop-session.png":::
 
-
 ### Reference run
 
 #### Reference run a Notebook
 
-In addition to [notebookutils reference run API](notebook-utilities.md), you can also use the ```%run <notebook name>``` magic command to reference another notebook within current notebook's context. All the variables defined in the reference notebook are available in the current notebook. The ```%run``` magic command supports nested calls but doesn't support recursive calls. You receive an exception if the statement depth is larger than **five**.
+In addition to [notebookutils reference run API](notebookutils/notebookutils-notebook-run.md), you can also use the ```%run <notebook name>``` magic command to reference another notebook within current notebook's context. All the variables defined in the reference notebook are available in the current notebook. The ```%run``` magic command supports nested calls but doesn't support recursive calls. You receive an exception if the statement depth is larger than **five**.
 
 Example:
 ``` %run Notebook1 { "parameterInt": 1, "parameterFloat": 2.5, "parameterBool": true,  "parameterString": "abc" } ```.
@@ -275,7 +321,7 @@ Examples:
 
 - To run *script_file.py* from the built-in resources with specific variables: ``` %run -b script_file.py { "parameterInt": 1, "parameterFloat": 2.5, "parameterBool": true, "parameterString": "abc" } ```
 
-> [!NOTE] 
+> [!NOTE]
 > If the command doesn't contain **-b/--builtin**, it attempts to find and execute notebook item inside the same workspace rather than the built-in resources.
 
 Usage example for nested run case:
@@ -309,24 +355,34 @@ A step-by-step cell execution status is displayed beneath the cell to help you s
 
 #### Session timeout config
 
-In the bottom left corner, you can select on the session status to get more information about the current session:
+In the bottom left corner, you can select the session status to get more information about the current session:
 
-![Screenshot that shows Session Information.](./media/author-execute-notebook/session-info.png)
+:::image type="content" source="media/author-execute-notebook/session-info.png" alt-text="Screenshot that shows Session Information." lightbox="media/author-execute-notebook/session-info.png":::
 
 In the pop-up, there's an option to reset the timeout to x minutes or hours.
 
-![Screenshot that shows Session timeout.](./media/author-execute-notebook/session-timeout.png)
+:::image type="content" source="media/author-execute-notebook/session-timeout.png" alt-text="Screenshot that shows Session timeout." lightbox="media/author-execute-notebook/session-timeout.png":::
 
 Take your pick in how long you want an uninterrupted session, and hit apply. The session timeout resets itself with the new value and you're good to go!
 
-You can also set timeout as following:
+You can also set timeout as described in:
 
 - [Data Engineering workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
-- [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md#spark-session-configuration-magic-command)
+- [Spark session configuration magic command](author-execute-notebook.md#spark-session-configuration-magic-command)
 
-**How do ABT and Idle Session Timeout impact long-running Fabric Notebook executions?**
+**Stay signed in:** During sign in, if you see the **Stay signed in** dialog, select **Yes** to deactivate the idle session timeout for your current session.
 
-If your tenant uses Activity-Based Timeout (ABT) enabled, long-running interactive jobs in Fabric notebooks may be impacted by Microsoft 365's idle session timeout policy. This security feature is designed to sign out users on inactive, nonmanaged devices, even if a notebook job is still running. While activity in other Microsoft 365 apps can keep the session alive, idle devices are signed out by design.
+> [!IMPORTANT]
+> Don't select the **Don’t show this again** checkbox, as this will lock in your sign-in settings permanently. This option might not appear if your tenant admin has disabled the Keep Me Signed In (KMSI) setting.
+
+**Request a policy change:** If you need a longer session duration, ask your tenant admin to extend the idle session timeout duration policy. They can do this by navigating to Org Settings > Security & Privacy > Idle Session Timeout within the Microsoft 365 Admin Center.
+
+> [!NOTE]
+> Selecting KMSI and/or extending the idle session timeout duration time extends the risk of an unlocked machine being accessed.
+
+**How do ABT and idle session timeout impact long-running Fabric Notebook executions?**
+
+If your tenant uses activity-based timeout (ABT), long-running interactive jobs in Fabric notebooks might be impacted by Microsoft 365's idle session timeout policy. This security feature is designed to sign out users on inactive, nonmanaged devices, even if a notebook job is still running. While activity in other Microsoft 365 apps can keep the session alive, idle devices are signed out by design.
 
 **Why are users signed out even when a notebook job is still running?**
 
@@ -334,9 +390,9 @@ Idle session timeout prioritizes security by ending sessions on inactive devices
 
 ### Inline Apache Spark job indicator
 
-The Fabric notebook is Apache Spark based. Code cells are executed on the Apache Spark cluster remotely. A Spark job progress indicator is provided with a real-time progress bar that appears to help you understand the job execution status. The number of tasks per each job or stage helps you to identify the parallel level of your Spark job. You can also drill deeper to the Spark UI of a specific job (or stage) via selecting the link on the job (or stage) name.
+Fabric notebooks are Apache Spark based. Code cells are executed on the Apache Spark cluster remotely. A Spark job progress indicator is provided with a real-time progress bar that appears to help you understand the job execution status. The number of tasks per each job or stage helps you to identify the parallel level of your Spark job. You can also drill deeper to the Spark UI of a specific job (or stage) via selecting the link on the job (or stage) name.
 
-You can also find the **Cell level real-time log** next to the progress indicator, and **Diagnostics** can provide you with useful suggestions to help refine and debug the code.
+You can also find the **Cell level real-time log** next to the progress indicator, and **Diagnostics** can provide you with useful suggestions to help refine and debug the code. When prompted, Copilot can use runtime job information to help surface performance and reliability recommendations. If a job or cell fails, the [Fix with Copilot](#fix-with-copilot) entry point is available to help diagnose and resolve the issue.
 
 :::image type="content" source="media\author-execute-notebook\spark-progress-details.png" alt-text="Screenshot of details of Spark jobs progress." lightbox="media\author-execute-notebook\spark-progress-details.png":::
 
@@ -453,7 +509,7 @@ IPython Widgets are eventful Python objects that have a representation in the br
 
 - If you close a notebook that contains an IPython widget, you can't see or interact with it until you execute the corresponding cell again.
   
-- The interact function (ipywidgets.interact) is not supported.
+- The interact function (ipywidgets.interact) isn't supported.
 
 ## Integrate a notebook
 
@@ -472,6 +528,25 @@ After you create a notebook with parameters, you can execute it from a pipeline 
 :::image type="content" source="media\author-execute-notebook\assign-parameter.png" alt-text="Screenshot showing where to assign parameters values from a pipeline." lightbox="media\author-execute-notebook\assign-parameter.png":::
 
 When assigning parameter values, you can use the [pipeline expression language](..\data-factory\expression-language.md) or [functions and variables](..\data-factory\parameters.md).
+
+Notebook parameters support simple types such as `int`, `float`, `bool`, and `string`. Complex types such as `list` and `dict` aren't yet supported. To pass a complex type, consider serializing it to a string format (for example, JSON) and then deserializing it within the notebook. The following sample shows how to pass a JSON string from pipeline to notebook and deserialize it:
+
+:::image type="content" source="media\author-execute-notebook\notebook-parameter-json-pipeline.png" alt-text="Screenshot showing how to pass json string from a pipeline." lightbox="media\author-execute-notebook\notebook-parameter-json-pipeline.png":::
+
+The following python code demonstrates how to deserialize the JSON string into a Python dictionary:
+
+```python
+import json
+
+# Deserialize the JSON string into a Python dictionary
+params = json.loads(json_string)
+
+# Access the individual parameters
+param1 = params.get("param1")
+param2 = params.get("param2")
+```
+
+Make sure that the parameter name in the parameter code cell matches the parameter name in the pipeline.
 
 ## Spark session configuration magic command
 
@@ -522,9 +597,37 @@ You can personalize your Spark session with the magic command **%%configure**. F
 > - We recommend that you set the same value for "DriverMemory" and "ExecutorMemory" in %%configure. The "driverCores" and "executorCores" values should also be the same.
 > - The "defaultLakehouse" will overwrite your pinned lakehouse in Lakehouse explorer, but that only works in your current notebook session.
 > - You can use %%configure in Fabric pipelines, but if it's not set in the first code cell, the pipeline run fails due to can't restart session.
-> - The %%configure used in notebookutils.notebook.run will be ignored but used in %run notebook will continue executing.
+> - The %%configure used in notebookutils.notebook.run is ignored but used in %run notebook continues executing.
 > - The standard Spark configuration properties must be used in the "conf" body. Fabric doesn't support first level reference for the Spark configuration properties.
 > - Some special Spark properties, including "spark.driver.cores", "spark.executor.cores", "spark.driver.memory", "spark.executor.memory", and "spark.executor.instances" don't take effect in "conf" body.
+
+You can also use `%%configure` magic command to dynamically inject configuration values from the [Variable Library](../cicd/variable-library/variable-library-overview.md) into your notebook.
+
+```json
+%%configure
+{
+  "defaultLakehouse": {
+    "name": {
+      "variableName": "$(/**/myVL/LHname)" 
+    },
+    "id": {
+      "variableName": "$(/**/myVL/LHid)"
+    },
+    "workspaceId": {
+      "variableName": "$(/**/myVL/WorkspaceId)"
+    }
+  }
+}
+```
+
+In this example:
+- `myVL` is the name of your Variable Library.
+- `LHname`, `LHid`, and `WorkspaceId` are variable keys defined in the library.
+- All variables should be defined as String type in the variable library, even for GUID values.
+- The `workspaceId` is required when the lakehouse is in a different workspace than the current notebook.
+- These values are resolved at runtime depending on the active environment (for example, Dev, Test, Prod).
+
+This allows you to switch configurations like default lakehouse without modifying your notebook code.
 
 ## Parameterized session configuration from a pipeline
 
@@ -608,7 +711,7 @@ customizedLogger.critical("customized critical message")
 
 ## View the history of input commands
 
-Fabric notebook support magic command ```%history``` to print the input command history that executed in the current session, comparing to the standard Jupyter Ipython command the ```%history``` works for multiple languages context in notebook. 
+Fabric notebook support magic command ```%history``` to print the input command history that executed in the current session, comparing to the standard Jupyter Ipython command the ```%history``` works for multiple languages context in notebook.
 
 ``` %history [-n] [range [range ...]] ```
 
@@ -647,7 +750,7 @@ Similar to Jupyter Notebooks, Fabric notebooks have a modal user interface. The 
 | Select next cell | J |
 | Insert cell above | A |
 | Insert cell below | B |
-| Delete selected cells | Shift + D |
+| Delete selected cells | D,D |
 | Switch to edit mode | Enter |
 
 ### Shortcut keys in edit mode
@@ -672,10 +775,10 @@ Using the following keystroke shortcuts, you can easily navigate and run code in
 | Dedent | Ctrl + [ |
 | Switch to command mode | Esc |
 
-To find all shortcut keys, select **View** on the notebook ribbon, and then select **Keybindings**.
+To find all shortcut keys, select **View** on the notebook ribbon, and then select **Key bindings**.
 
 ## Related content
 
 - [Notebook visualization](notebook-visualization.md)
 - [Introduction of Fabric NotebookUtils](notebook-utilities.md)
-
+- [Diagnose notebook failures with Copilot](copilot-notebooks-chat-pane.md#diagnose-notebook-failures)

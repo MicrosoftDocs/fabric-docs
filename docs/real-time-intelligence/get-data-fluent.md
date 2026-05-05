@@ -2,17 +2,15 @@
 title: Get data from Fluent Bit
 description: Learn how to get data from Fluent Bit in a KQL database in Real-Time Intelligence.
 ms.reviewer: akshayd
-ms.author: shsagir
-author: shsagir
+ms.subservice: rti-eventhouse
 ms.topic: how-to
-ms.custom:
 ms.date: 12/01/2024
 ---
 # Get data with Fluent Bit
 
 [!INCLUDE [fluent-bit](~/../kusto-repo/data-explorer/includes/cross-repo/fluent-bit.md)]
 
-For a complete list of data connectors, see [Data connectors overview](data-connectors/data-connectors.md).
+For a complete list of data connectors, see [Data connectors overview](event-house-connectors.md).
 
 ## Prerequisites
 
