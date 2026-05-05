@@ -16,7 +16,8 @@ Use **Writeback type** to define the table structure. There are four supported t
 :::image type="content" source="../media/planning-writeback/planning-how-to-customise-general-settings/writeback-type.jpg" alt-text="Screenshot of writeback type" lightbox="../media/planning-writeback/planning-how-to-customise-general-settings/writeback-type.jpg":::
 
 * **Long**
-  **Long** is the default writeback type. Store each cell in a measure as a key-value pair. Only **Long** supports writing back **comments** and **notes**.
+  
+  **Long** is the default writeback type. Stores each cell in a measure as a key-value pair. Only **Long** supports writing back comments and notes.
 
     :::image type="content" source="../media/planning-writeback/planning-how-to-customise-general-settings/writeback-type-long.jpg" alt-text="Screenshot of writeback type long" lightbox="../media/planning-writeback/planning-how-to-customise-general-settings/writeback-type-long.jpg":::
 
@@ -38,11 +39,11 @@ Use **Writeback type** to define the table structure. There are four supported t
 
     :::image type="content" source="../media/planning-writeback/planning-how-to-customise-general-settings/writeback-type-wide-with-changes.jpg" alt-text="Screenshot of writeback type wide with changes" lightbox="../media/planning-writeback/planning-how-to-customise-general-settings/writeback-type-wide-with-changes.jpg":::
 
-> [!CAUTION]
+> [!NOTE]
 >
 > * After the first writeback, changing the **Writeback type** displays a warning before existing tables are deselected in **Settings > Destinations**. The table can be reselected for writeback; however, the system checks for conflicts between the existing table type and the selected **Writeback type**. If a conflict is detected, the system prompts to drop and write back the table. When in doubt, create a new table and run writeback instead of dropping an existing table.
-
-* Changing row or column dimensions displays a warning before it drops and writes back the table.
+>
+> * Changing row or column dimensions displays a warning before it drops and writes back the table.
 
 ## Filter Type
 
@@ -50,18 +51,18 @@ Use filters to control which data gets written back to the destination. Select f
 
 :::image type="content" source="../media/planning-writeback/planning-how-to-customise-general-settings/writeback-filter-type.png" alt-text="Screenshot of writeback filter type" lightbox="../media/planning-writeback/planning-how-to-customise-general-settings/writeback-filter-type.png":::
 
-* **None**
+* **None**:
   Writes back the entire report or scenario without applying any filter.
 
-* **Data with Comments only**
-  Writes back only the cells that contain comments. This option works only with the **Long** writeback type.
+* **Data with Comments only**:
+  Writes back the cells that contain comments. This option works only with the **Long** writeback type.
 
-* **Calculated rows only**
+* **Calculated rows only**:
   Writes back only calculated rows, including any notes added to those rows.
 
 ## Date key configuration
 
-**Add Date Key** adds a **Date Key** column to the writeback table. For high-level planning scenarios such as revenue by year or month, plan appends a representative date to the date dimension. The first day of the year, month or quarter is used. For example, when the column dimensions are year–month, plan writes 01-01-2025 for January 2025.
+**Add Date Key** adds a date key column to the writeback table. For high-level planning scenarios such as revenue by year or month, plan appends a representative date to the date dimension. The first day of the year, month or quarter is used. For example, when the column dimensions are year–month, plan writes 01-01-2025 for January 2025.
 
 > [!NOTE]
 > **Add Date Key** works only when a date hierarchy is used in column dimensions.
@@ -78,7 +79,7 @@ Use **Decimal Precision** to define the number of digits after the decimal point
 
 :::image type="content" source="../media/planning-writeback/planning-how-to-customise-general-settings/writeback-decimal-precision.jpg" alt-text="Screenshot of writeback with decimal precision" lightbox="../media/planning-writeback/planning-how-to-customise-general-settings/writeback-decimal-precision.jpg":::
 
-The configured precision is displayed in the **Decimal Precision** section.
+The configured precision is displayed in the **Decimal Precision** section under writeback settings.
 
 :::image type="content" source="../media/planning-writeback/planning-how-to-customise-general-settings/writeback-configured-decimal-precision.jpg" alt-text="Screenshot of writeback settings configured with decimal precision" lightbox="../media/planning-writeback/planning-how-to-customise-general-settings/writeback-configured-decimal-precision.jpg":::
 
@@ -88,9 +89,9 @@ Use **Text field length** to control the number of characters written back for t
 
 :::image type="content" source="../media/planning-writeback/planning-how-to-customise-general-settings/writeback-text-field-length.png" alt-text="Screenshot of writeback settings with text length' text length" lightbox="../media/planning-writeback/planning-how-to-customise-general-settings/writeback-text-field-length.png":::
 
-The **Text Length** section of the report shows the set text length as follows.
+The **Text Length** section in writeback settings shows the set text length as follows.
 
 :::image type="content" source="../media/planning-writeback/planning-how-to-customise-general-settings/writeback-configured-text-length.png" alt-text="Screenshot of writeback settings configured with text length' text length" lightbox="../media/planning-writeback/planning-how-to-customise-general-settings/writeback-configured-text-length.png":::
 
 > [!CAUTION]
->If the **Text length** exceeds the configured limit, **writeback fails**.
+> Writeback fails if the actual text length exceeds the configured limit.
