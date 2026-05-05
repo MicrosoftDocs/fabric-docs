@@ -1,6 +1,8 @@
 ---
 title: Data agent as Model Context Protocol server (preview)
 description: Learn how to consume a data agent as MCP server.
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: amjafari
 ms.topic: how-to
 ms.date: 12/18/2025
@@ -11,13 +13,13 @@ ms.collection: ce-skilling-ai-copilot
 
 # Consume Fabric data agent as a model context protocol server
 
-The Model Context Protocol (MCP) is an emerging standard in the AI landscape that allows AI systems to connect with tools and data outside of themselves. It defines how an AI model can discover what’s available and interact with it in a consistent way. Instead of building one-off integrations, MCP offers a standard way to plug things in that works across different apps and services. This makes it much easier for AI systems to go beyond their built-in knowledge while keeping things consistent. It also helps teams move faster, since they don’t have to reinvent the same connections every time.
+The Model Context Protocol (MCP) is an emerging standard in the AI landscape that allows AI systems to connect with tools and data outside of themselves. It defines how an AI model can discover what's available and interact with it in a consistent way. Instead of building one-off integrations, MCP offers a standard way to plug things in that works across different apps and services. This makes it much easier for AI systems to go beyond their built-in knowledge while keeping things consistent. It also helps teams move faster, since they don't have to reinvent the same connections every time.
 
 MCP has two main parts: the client and the server.
 
-An MCP client is the app or experience the user interacts with. It’s where you ask questions or trigger actions. The client reaches out to MCP servers to find tools and use them. For example, Visual Studio Code can act as an MCP client when it connects to external tools to retrieve data, or help you write and run code.
+An MCP client is the app or experience the user interacts with. It's where you ask questions or trigger actions. The client reaches out to MCP servers to find tools and use them. For example, Visual Studio Code can act as an MCP client when it connects to external tools to retrieve data, or help you write and run code.
 
-An MCP server exposes tools, data, or services so they can be used by clients. It tells the client what’s available and how to use it. For example, a Fabric data agent can act as an MCP server by exposing enterprise data and queries that an AI system can use.
+An MCP server exposes tools, data, or services so they can be used by clients. It tells the client what's available and how to use it. For example, a Fabric data agent can act as an MCP server by exposing enterprise data and queries that an AI system can use.
 
 Together, the client and server make it easy to connect AI systems with real data and actions, without building custom integrations every time.
 
@@ -33,7 +35,7 @@ Fabric data agents can also function as MCP servers. When used as an MCP server,
 The Fabric data agent as an MCP server is valuable for people who build or test their own AI systems. It allows them to connect directly to the data agent and access enterprise data that lives in Fabric OneLake without having to switch between different tools or platforms. This capability makes it easier to integrate enterprise knowledge into AI experiments and development workflows, all within a single environment.
 
    > [!NOTE]
-   > Currently, you can use the Fabric data agent MCP server only in **VS Code**. If you’re using your own MCP client, it can also work, as long as you set up authentication
+   > Currently, you can use the Fabric data agent MCP server only in **VS Code**. If you're using your own MCP client, it can also work, as long as you set up authentication
 
 
 :::image type="content" source="./media/data-agent-mcp-server/data-agent-mcp-server-not-published.png" alt-text="Screenshot showing the data agent MCP server before publishing." lightbox="./media/data-agent-mcp-server/data-agent-mcp-server-not-published.png":::
