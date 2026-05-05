@@ -14,6 +14,7 @@ Notebooks are both readable documents containing data analysis descriptions and 
 
 There are a few ways to use Fabric notebooks with data from your KQL database:
 
+* [Load KQL database data from OneLake catalog](#load-kql-database-data-from-onelake-catalog)
 * [Use Kusto snippets in a notebook](#use-kusto-snippets-in-a-notebook)
 * [Create a notebook from a KQL database](#create-a-notebook-from-a-kql-database)
 * [Analyze data in a KQL Database](eventhouse-analyze-data-with.md) with a new or existing notebook.
@@ -22,6 +23,32 @@ There are a few ways to use Fabric notebooks with data from your KQL database:
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with at least viewing permissions
+
+## Load KQL database data from OneLake catalog 
+
+The KQL databases in the OneLake catalog are available as data sources in the notebook environment. You can add a KQL database as a data source to your notebook, and then reference it in your code cells to run KQL queries against it.
+
+1. In your Workspace, navigate to an existing notebook or create a new one.
+
+1. In the Notebook's Explorer pane, select **Add data items** and then select **From OneLake catalog**.
+
+    :::image type="content" source="media/notebooks/notebook-onelake-catalog.png" alt-text="Screenshot of a notebook with the Explorer pane open to the Data items tab. The Add data items button is expanded and the option to select From OneLake catatlog is highlighted." lightbox="media/notebooks/notebook-onelake-catalog.png":::
+
+1. In the OneLake catalog, navigate to your KQL database. You can find it under the Eventhouse that it belongs to, you can filter the list by type and select KQL Database type, or you can search for it by name.
+
+    :::image type="content" source="media/notebooks/notebook-onelake-catalog-filter.png" alt-text="Screenshot of the OneLake catalog filter, with a KQL database filter highlighted." lightbox="media/notebooks/notebook-onelake-catalog.png":::
+
+1. The KQL database is added under OneLake in the notebook's explorer pane.
+    1. Expand the database to see the tables within it.
+    1. Hover over a table, select the **more ...** menu, and then select **Load data**.
+
+        :::image type="content" source="media/notebooks/notebook-load-data.png" alt-text="Screenshot of a KQL database expanded to show its tables. The more menu for a table is expanded to show the Load data option." lightbox="media/notebooks/notebook-load-data.png":::
+
+1. The data from the table is loaded into a new code cell in the notebook, and a connection to the KQL database is automatically established. You can then run the code cell to query the data and return results within your notebook. 
+
+    :::image type="content" source="media/notebooks/notebook-load-data-snippet.png" alt-text="Screenshot of the Notebook after data from the KQL database was loaded. The code snippet is highlighted.":::
+
+For more information on the notebook experience with KQL data and the data analysis options, see **xxxxxxx**.
 
 ## Use Kusto snippets in a notebook
 
