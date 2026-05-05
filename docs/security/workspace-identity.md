@@ -117,7 +117,7 @@ The application associated with the workspace identity can be seen in **Enterpri
 
 > [!WARNING]
 > Modifications to the application made here will cause the workspace identity to stop working, and such changes may be reverted.
-> Modifications to add API permissions to allow access to a target resources are safe to do and should not cause the workspace identity to stop working.
+> Adding API permissions to allow access to target resources is supported and shouldn't cause the workspace identity to stop working.
 > Additionally, adhere to the principle of least privilege when managing Application Administrator roles. Ensure that only appropriate users are assigned this role. For more details, refer to [Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator)
 
 To view the audit logs and sign-in logs for this identity:
