@@ -5,7 +5,7 @@ author: SnehaGunda
 ms.author: sngun
 ms.reviewer: dacoelho
 ms.topic: concept-article
-ms.date: 05/01/2026
+ms.date: 05/05/2026
 ms.search.form: delta lake interoperability
 ai-usage: ai-assisted
 ---
@@ -53,9 +53,9 @@ The following matrix shows key Delta Lake features and its availability on each 
 |Fabric Spark Runtime 1.3|Yes|Yes|Reader: 1<br/>Writer: 2|No|
 |Fabric Spark Runtime 1.2|Yes, read only|Yes|Reader: 1<br/>Writer: 2|No|
 |Fabric Spark Runtime 1.1|Yes, read only|No|Reader: 1<br/>Writer: 2|No|
-|Dataflows Gen2|Yes, read only|No|Reader: 1<br/>Writer: 2|No|
+|Dataflows Gen2|Yes, read only|No|Reader: 1<br/>Writer: 2|Yes|
 |Pipelines|Yes, read only|No|Reader: 1<br/>Writer: 2|No|
-|Power BI direct lake semantic models|Yes|No|N/A (not applicable)|No|
+|Power BI direct lake semantic models|Yes|No|N/A (not applicable)|Yes|
 |Export Power BI semantic models into OneLake|No|No|Reader: 2<br/>Writer: 5<br/>Column Mappings (name)|No|
 |KQL databases|No|No|Reader: 1<br/>Writer: 1|No|
 |Eventstreams|No|No|Reader: 1<br/>Writer: 2|No|
