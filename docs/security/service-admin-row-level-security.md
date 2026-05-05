@@ -4,14 +4,9 @@ description: How to configure row-level security for imported semantic models, a
 author: billmath
 ms.author: billmath
 ms.topic: how-to
-<<<<<<< HEAD
-ms.date: 07/16/2025
-ms.custom: ''
-=======
 ms.date: 05/05/2026
 ms.update-cycle: 180-days
 ms.custom: 'sfi-image-nochange'
->>>>>>> 2ec7c602329483c4b7da5d20a87444a5636f72e4
 LocalizationGroup: Administration
 ms.collection: ce-skilling-ai-copilot
 no-loc: [Copilot]
@@ -175,7 +170,6 @@ To return to normal viewing, select **Back to Row-Level Security**.
 ## Using RLS with workspaces in Power BI
 
 If you publish your Power BI Desktop report to a [workspace](/power-bi/collaborate-share/service-new-workspaces) in the Power BI service, the RLS roles are applied to members who are assigned to the **Viewer** role in the workspace. Even if  **Viewers** are given Build permissions to the semantic model, RLS still applies. For example, if Viewers with Build permissions use [Analyze in Excel](/power-bi/collaborate-share/service-analyze-in-excel), their view of the data is restricted by RLS. Workspace members assigned **Admin**, **Member**, or **Contributor** have edit permission for the semantic model and, therefore, RLS doesn't apply to them. If you want RLS to apply to people in a workspace, you can only assign them the **Viewer** role. Read more about [roles in workspaces](/power-bi/collaborate-share/service-roles-new-workspaces).
-<<<<<<< HEAD
 
 ## Considerations for external (B2B guest) users
 
@@ -194,8 +188,6 @@ Microsoft Entra security groups that contain external B2B guest users might not 
 > The exact scope of this limitation may vary depending on your Microsoft Entra ID configuration and the type of B2B guest invitation used. An SME should validate behavior in your specific tenant configuration.
 
 For more information on sharing content with external users, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/guidance/whitepaper-azure-b2b-power-bi).
-=======
->>>>>>> 2ec7c602329483c4b7da5d20a87444a5636f72e4
 
 ## Considerations for external (B2B guest) users
 
