@@ -19,7 +19,7 @@ Row-level security (RLS) with Power BI can be used to restrict data access for g
 You can configure RLS for imported semantic models in Power BI Desktop or the Power BI service. You can also configure RLS on semantic models that are using DirectQuery, such as SQL Server. For Analysis Services or Azure Analysis Services live connections, you configure row-level security in the model, not in Power BI. The security option doesn't show up for live connection semantic models.
 
 > [!NOTE]
-> This article covers RLS for Power BI semantic models specifically. For data security in other Fabric items, see [Data warehouse security](/fabric/data-warehouse/security) or [Lakehouse security](/fabric/data-engineering/lakehouse-security).
+> This article covers RLS for Power BI semantic models specifically. For data security in other Fabric items, see [Security in Microsoft Fabric](/fabric/security/security-overview).
 
 [!INCLUDE [include-short-name](../includes/row-level-security-desktop-define-roles.md)]
 
@@ -116,4 +116,4 @@ If you publish your Power BI Desktop report to a [workspace](/power-bi/collabora
 
 Questions? [Try asking the Power BI Community](https://community.powerbi.com/)
 Suggestions? [Contribute ideas to improve Power BI](https://ideas.powerbi.com/)
-```
+
