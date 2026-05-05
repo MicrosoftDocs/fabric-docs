@@ -1,19 +1,17 @@
 ---
 title: "Quickstart: Create a Copy job in Data Factory"
-description: "Copy data in Data Factory without creating a Fabric data pipeline."
-author: KrishnakumarRukmangathan
-ms.author: krirukm
-ms.reviewer: whhender
-ms.topic: quickstart  #Don't change
+description: "Copy data in Data Factory without creating a Fabric pipeline."
+ms.reviewer: krirukm
+ms.topic: quickstart
 ms.date: 04/29/2025
+ms.custom: copy-job
 
 #customer intent: As a Data Factory user I want to quickly try the Copy job functionality so that I can evaluate it for my own environment and start learning the tool.
-
 ---
 
 # Quickstart: Create a Copy job
 
-Copy jobs in Data Factory ingest data without the need to create a Fabric data pipeline. It brings together various copy patterns such as bulk or batch, incremental or continuous copy into a unified experience. If you only need to copy data without transformations, use a Copy job.
+Copy jobs in Data Factory ingest data without the need to create a Fabric pipeline. It brings together various copy patterns such as bulk or batch, incremental or continuous copy into a unified experience. If you only need to copy data without transformations, use a Copy job.
 
 This quickstart guide walks you through how to copy data incrementally from a Fabric Warehouse table to a Fabric Lakehouse table using Copy job.  
 
@@ -100,7 +98,7 @@ Before you start, complete these prerequisites:
 
     :::image type="content" source="media/quickstart-copy-job/schedule-runs.png" alt-text="Screenshot of the review and save page, with the run options set to run on schedule every one minute." lightbox="media/quickstart-copy-job/schedule-runs.png":::
 
-1. Once the Copy job artifact is saved successfully, it starts the first run to bring in the initial data from the source table.
+1. Once the Copy job item is saved successfully, it starts the first run to bring in the initial data from the source table.
 
 1. Use the **Copy Job panel** or **Monitoring Hub** to monitor progress. [Learn more about monitoring Copy Jobs](monitor-copy-job.md).
 

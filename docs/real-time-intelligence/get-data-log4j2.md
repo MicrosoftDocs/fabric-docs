@@ -2,10 +2,8 @@
 title: Get data with the Apache log4J 2 connector
 description: Learn how to get data from the Apache log4J 2 connector in a KQL database in Real-Time Intelligence.
 ms.reviewer: akshayd
-ms.author: shsagir
-author: shsagir
 ms.topic: how-to
-ms.custom:
+ms.subservice: rti-eventhouse
 ms.date: 11/19/2024
 ---
 # Get data with the Apache log4J 2 connector

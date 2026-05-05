@@ -1,9 +1,9 @@
 ---
 title: Content sharing report
 description: Learn how to use the Microsoft content sharing report.
-author: KesemSharabi
-ms.author: kesharab
-ms.topic: conceptual
+author: msmimart
+ms.author: mimart
+ms.topic: concept-article
 ms.custom:
   - build-2023
   - ignite-2023
@@ -24,7 +24,7 @@ The report is designed for admins to analyze their Fabric inventory in various w
 
 Use the slicers pane on the left side of the report to filter inventory on key attributes such as workspace, item type, and capacity. The filters pane on the right side of the report provides more options to further manipulate the data.
 
-To switch pages, use the navigation buttons at the top right of the report. Some buttons are enabled only after a certain action is taken. The Details page button is enabled after any visual element is selected, allowing users to drill through for a tabular view of their data.
+To switch pages, use the navigation buttons at the top right of the report.
 
 ## Report pages
 
@@ -104,14 +104,14 @@ In addition to drilling through, users can also access the *Workspace* page dire
 
 The Details page highlights item distribution in a tabular format.
 
-You can only navigate to the *Details* page by drilling through from other pages in the report. To drill through, right-click a value in any visual, then select the *Details* page from the *Drill through* menu. After drilling through to the *Details* page, you can see information for the specific subset of items.
+You can also navigate to the *Details* page by drilling through from other pages in the report. To drill through, right-click a value in any visual, then select the *Details* page from the *Drill through* menu. After drilling through to the *Details* page, you can see information for the specific subset of items.
 
 You can export data from the Details page, or any other visual, by clicking _More options_ in the visual header and selecting _Export data_.
 
 You can also navigate directly to an item or its workspace using the hyperlinks in the data table.
 
 > [!NOTE]
-> Workspaces can only be accessed if you have a valid workspace role, else you are redirected to your *My workspace*. Item urls currently only support legacy Power BI items and some Fabric items.
+> Workspaces can only be accessed if you have a valid workspace role, else you're redirected to your *My workspace*. Item urls currently only support legacy Power BI items and some Fabric items.
 
 ## Measures
 
@@ -120,15 +120,15 @@ The following measures are used in visuals throughout the *content sharing* repo
 | Measure name    | Description |
 | -------- | ------- |
 | Total items  | The number of Fabric items across the entire tenant.   |
-| Total domains | The number of domains across the entire tenant.     |
-| Total capacities    | The number of capacities across the entire tenant.    |
-| Total workspaces  | The number of workspaces across the entire tenant.    |
+| Total domains | The number of domains with items.     |
+| Total capacities    | The number of capacities with items.    |
+| Total workspaces  | The number of workspaces with items.    |
 | User access count | The number of individual users and service principals with access to an item.    |
 | Group access count    | The number of group members and service principals with access to an item. Group owners aren't included in *group access counts*. Group access counts are calculated by flattening membership of all nested groups, so users aren't double counted if they're members of multiple groups in a nest. *Group access counts* also include +1 for each nested group in a nest. |
 | Total access count    | The number of individual users, service principals, and group members with access to an item. *Total access counts* for workspaces, capacities, and domains are a sum of access counts for all underlying items, not the container itself. *Total access counts* include both individual access to an item and access through a group, so users are double counted if they have access to an item in both scenarios.   |
 
 > [!NOTE]
-> Access counts include access to an item through _Manage permissions_, or access inherited through a workspace role. Access counts also include service principals and sharing links for a specific persons or group.
+> Access counts include access to an item through _Manage permissions_, or access inherited through a workspace role. Access counts include service principals and sharing links for a specific persons or group. Access counts include permissions to an item through a related item, such as permissions to a semantic model through org app access.
 
 ## Considerations and limitations
 
@@ -144,22 +144,24 @@ This section lists the report's considerations and limitations.
 
 * Items created and deleted within a 24 hour period may have incomplete information.
 
-* To drill through from the Analysis page decomp visual, you must right-click a node and select the desired drill through target page. The page navigation buttons don't always enable even when decomp visual elements are selected.
-
 * Reports and dashboards embedded in apps appear twice. Use the _Item ID_ value to differentiate.
 
-### Pro and Premium Per User (PPU)
+### Power BI Pro and Power BI Premium Per-User (PPU)
 
-Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on internal logical capacities.
+Semantic models in *Power BI Pro* and *Power BI Premium Per-User* (PPU) workspaces are hosted on internal logical capacities.
 
   * **Pro** - Appear as *Reserved Capacity for Pro Workspaces* with the capacity SKU value *Pro*.
 
-  * **PPU** - Appear as *Reserved Capacity for Premium Per User Workspaces* with the capacity SKU value *PPU*.
+  * **PPU** - Appear as *Reserved Capacity for Power BI Premium Per-User (PPU) Workspaces* with the capacity SKU value *PPU*.
 
 ### Counting logic
 
 * All *My workspaces* are counted as separate records as part of the _Total workspaces_ measure.
 * Trial Fabric capacities are counted as separate records as part of the _Total capacities_ measure. Trial capacities can be filtered out using the Capacity SKU filter with the value _FT1_.
+
+### Model limitations
+
+* The semantic model is read-only and can't be used with Fabric data agents.
 
 ## Related content
 

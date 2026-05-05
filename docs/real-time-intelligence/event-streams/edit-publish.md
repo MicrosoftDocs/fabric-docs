@@ -1,11 +1,8 @@
 ---
 title: Edit and publish Microsoft Fabric event streams
 description: Learn how to edit and publish an eventstream.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: how-to
-ms.custom:
 ms.date: 10/26/2024
 ms.search.form: Source and Destination
 ---
@@ -40,12 +37,15 @@ Here's an overview of everything you find in the two different modes:
 
 [!INCLUDE [create-an-eventstream](./includes/create-an-eventstream.md)]
 
-1. On the next screen, select **Add external source** to stream your data to Fabric event streams.
+## Add a source to your eventstream
+[!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
-   :::image type="content" border="true" source="media/edit-publish/build.png" alt-text="A screenshot of selecting Add external source.":::
-1. Select **Connect** on the **Azure Event Hubs** tile.
+Select **Connect** on the **Azure Event Hubs** tile.
 
-   :::image type="content" source="media/edit-publish/select-azure-event-hubs.png" alt-text="Screenshot that shows the Select a data source page with Azure Event Hubs selected."::: 
+:::image type="content" source="media/edit-publish/select-azure-event-hubs.png" alt-text="Screenshot that shows the Select a data source page with Azure Event Hubs selected."::: 
+
+## Configure and connect to your source
+
 1. On the **Connect data source** page, select **New connection**.
 
    :::image type="content" source="media/edit-publish/new-connection-link.png" alt-text="Screenshot that shows the Connect data source page with the New connection link selected." lightbox="media/edit-publish/new-connection-link.png":::     
@@ -92,3 +92,5 @@ The following steps show how you can add event processing operations and a desti
 - [New capabilities in Microsoft Fabric event streams](overview.md)
 - [Create default and derived eventstreams](create-default-derived-streams.md)
 - [Route data streams based on content](route-events-based-on-content.md)
+
+

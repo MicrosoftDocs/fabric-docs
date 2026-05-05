@@ -1,11 +1,9 @@
 ---
 title: Notebook contextual monitoring and debugging
 description: Learn how to monitor Apache Spark jobs within a Fabric notebook, including job progress, resource usage, and Spark Advisor recommendations.
-ms.reviewer: snehagunda
-author: jejiang
-ms.author: jejiang
+ms.reviewer: jejiang
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 02/24/2023
 ms.search.form: Monitor notebook all runs, monitor Spark jobs within a notebook
 ---
@@ -62,3 +60,4 @@ If you want to access additional information about the Spark execution at the no
 - Learn about [Spark advisor](spark-advisor-introduction.md)
 - [Apache Spark application detail monitoring](spark-detail-monitoring.md)
 - [Use the extended Spark history server to debug apps](apache-spark-history-server.md)
+- [Diagnose notebook failures with Copilot](copilot-notebooks-chat-pane.md#diagnose-notebook-failures)

@@ -1,8 +1,6 @@
 ---
 title: "Load data with Dataflow Gen2 into SQL database"
 description: Learn how to load data into a SQL database with Dataflow Gen2 in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 11/06/2024
 ms.topic: how-to
@@ -19,7 +17,6 @@ Fabric Dataflow Gen2 supports many configurations and options, including schedul
 ## Prerequisites
 
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
-- Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md).
 - [Create a new workspace](../../fundamentals/workspaces.md) or use an existing Fabric workspace.
 - [Create a new SQL database](create.md) or use an existing SQL database.
 - Load the [AdventureWorks sample data](load-adventureworks-sample-data.md) in a new SQL database, or use your own sample data.

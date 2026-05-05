@@ -2,9 +2,9 @@
 title: Task flows overview
 description: This article gives an overview of task flows and task flow terminology.
 ms.reviewer: liud
-ms.author: painbar
-author: paulinbar
-ms.topic: conceptual
+author: SnehaGunda
+ms.author: sngun
+ms.topic: concept-article
 ms.date: 05/06/2025
 
 #customer intent: As a data analytics solutions architect, or as a data engineer, I want to learn about task flows and how they can help facilitate the completion of a complex data analytics solution. 
@@ -28,7 +28,9 @@ Fabric provides a range possibilities for creating a task flow:
 
 * You can import a task flow that you or someone else has created previously and customize it to meet your needs.
 
-Each workspace has one task flow. The task flow occupies the upper part of workspace list view. It consists of a canvas where you can build the visualization of your data analytics project, and a side pane where you can see and edit details about the task flow, tasks, and connectors.
+* You can create multiple task flow canvases in a workspace, and maintain separate task flows on each canvas.
+
+ The task flow occupies the upper part of workspace list view. It consists of a canvas where you can build the visualization of your data analytics project, and a side pane where you can see and edit details about the task flow, tasks, and connectors.
 
 > [!NOTE]
 > You can [resize or hide the task flow](./task-flow-work-with.md#resize-or-hide-the-task-flow) using the controls on the horizontal separator bar.
@@ -39,7 +41,11 @@ Key concepts to know when working with a task flow are described in the followin
 
 ### Task flow
 
-A task flow is a collection of connected tasks that represent relationships in a process or collection of processes that complete an end-to-end data solution. A workspace has one task flow. You can either build it from scratch, use one of Fabric's predefined task flows, or import an existing task flow.
+A task flow is a collection of connected tasks that represent relationships in a process or collection of processes that complete an end-to-end data solution. A workspace can have one or more task flow canvases. In each canvas, you can build a task flow from scratch, use one of Fabric's predefined task flows, or import an existing task flow.
+
+### Task flow canvas
+
+A task flow canvas is the workspace area where you create and manage a task flow. A workspace can include multiple canvases so you can organize separate processes or workstreams independently.
 
 
 ### Task
@@ -78,3 +84,4 @@ Connectors are arrows that represent logical connections between the tasks in th
 
 * [Set up a task flow](./task-flow-create.md)
 * [Work with task flows](./task-flow-work-with.md)
+* [Manage multiple task flow canvases in a workspace](./task-flow-multiple-canvases.md)

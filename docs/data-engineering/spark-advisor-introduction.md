@@ -1,13 +1,13 @@
 ---
 title: Apache Spark advisor for real-time advice on notebooks
 description: The Apache Spark advisor analyzes commands and code run by Apache Spark and displays real-time advice for notebook runs.
-author: jejiang
-ms.author: jejiang
+ms.reviewer: jejiang
 ms.topic: overview
 ms.date: 02/25/2023
 ms.custom:
   - template-howto
 ms.search.form: View Spark advisor within a notebook
+ai-usage: ai-assisted
 ---
 
 # Apache Spark advisor for real-time advice on notebooks
@@ -66,18 +66,22 @@ This query contains the expression with Double type. We recommend that you enabl
 
 This query contains time consuming join due to "Or" condition within query. We recommend that you enable the configuration 'spark.advise.nonEqJoinConvertRule.enable', which can help to convert the join triggered by "Or" condition to SMJ or BHJ to accelerate this query.
 
+### Execution fallback to JVM-based Spark
+
+When the [Native Execution Engine](./native-execution-engine-overview.md) is enabled and a notebook cell's execution plan contains operators that can't be offloaded to the native path, Spark Advisor surfaces a real-time alert in the cell output. The alert indicates that execution fell back to JVM-based Spark and helps you identify the cause, such as unsupported operators, data types, or configurations. To address the fallback, review the query plan for unsupported operations and adjust your logic to use supported operators, or verify that `spark.native.enabled` is set correctly for your notebook or Spark job definition.
+
 ## User experience
 
 The Apache Spark advisor displays the advice, including info, warnings, and errors, at Notebook cell output in real-time.
 
 - Info
-    :::image type="content" source="media\spark-advisor-introduction\info.png" alt-text="Screenshot showing the info.":::
+    :::image type="content" source="media\spark-advisor-introduction\info.png" alt-text="Screenshot showing the info." lightbox="media/spark-advisor-introduction/info.png":::
 
 - Warning
-    :::image type="content" source="media\spark-advisor-introduction\warning.png" alt-text="Screenshot showing the warning.":::
+    :::image type="content" source="media\spark-advisor-introduction\warning.png" alt-text="Screenshot showing the warning." lightbox="media/spark-advisor-introduction/warning.png":::
 
 - Error
-    :::image type="content" source="media\spark-advisor-introduction\errors.png" alt-text="Screenshot showing the errors.":::
+    :::image type="content" source="media\spark-advisor-introduction\errors.png" alt-text="Screenshot showing the errors." lightbox="media/spark-advisor-introduction/errors.png":::
 
 ## Spark Advisor Setting
 
@@ -85,7 +89,7 @@ The Spark advisor setting allows you to choose whether to show or hide specific 
 
 You can access the Spark Advisor settings at the Fabric Notebook level to enjoy its benefits and ensure a productive notebook authoring experience.
 
-:::image type="content" source="media\spark-advisor-introduction\spark-advisor-setting.png" alt-text="Screenshot showing the spark advisor setting.":::
+:::image type="content" source="media\spark-advisor-introduction\spark-advisor-setting.png" alt-text="Screenshot showing the spark advisor setting." lightbox="media/spark-advisor-introduction/spark-advisor-setting.png":::
 
 ## Related content
 

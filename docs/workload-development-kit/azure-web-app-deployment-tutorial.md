@@ -1,11 +1,8 @@
 ---
 title: Create and deploy the boilerplate Azure web app
 description: Learn about how to create and build the boilerplate Azure web app as a Microsoft Fabric sample.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
-ms.custom:
-ms.date: 05/21/2024
+ms.date: 04/29/2026
 #customer intent: As a developer, I want to understand how to build the backend of a customized Azure Fabric workload so that I can create customized user experiences.
 ---
 
@@ -17,7 +14,7 @@ Make sure that you review the [workload cloud setup tutorial](workload-cloud-set
 
 ## Create and deploy the boilerplate backend web app
 
-1. In the [Azure portal](https://ms.portal.azure.com/#home), create a [web app resource](https://ms.portal.azure.com/#create/Microsoft.WebSite).
+1. In the [Azure portal](https://portal.azure.com/#home), create a [web app resource](https://portal.azure.com/#create/Microsoft.WebSite).
 1. Enter or select the relevant information:
 
    - For **Publish**, select **Code**.
@@ -44,7 +41,7 @@ For general instructions, see [Get started with Azure App Service](/azure/app-se
 
 ## Create and deploy the boilerplate frontend web app
 
-1. In the [Azure portal](https://ms.portal.azure.com/#home), create a [web app resource](https://ms.portal.azure.com/#create/Microsoft.WebSite).
+1. In the [Azure portal](https://portal.azure.com/#home), create a [web app resource](https://portal.azure.com/#create/Microsoft.WebSite).
 1. Enter or select the relevant information:
 
    - For **Publish**, select **Code**.
@@ -68,3 +65,4 @@ For more information, see [Custom domain mapping in Azure](/azure/app-service/ap
 1. In PowerShell, run `Connect-AzAccount` and sign in with a user who has access to the Azure web app you created.
 1. Run `Set-AzContext -Subscription "<subscription_id>"`.
 1. Run `Publish-AzWebApp -ResourceGroupName <resource_group_name> -Name <web_app_name> -ArchivePath <zip_file_path>`.
+

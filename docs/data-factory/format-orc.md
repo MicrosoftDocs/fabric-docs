@@ -1,17 +1,16 @@
 ---
-title: How to configure ORC format in the data pipeline of Data Factory in Microsoft Fabric
-description: This article explains how to configure ORC format in the data pipeline of Data Factory in Microsoft Fabric.
-author: jianleishen
-ms.author: jianleishen
+title: How to configure ORC format in the pipeline of Data Factory in Microsoft Fabric
+description: This article explains how to configure ORC format in the pipeline of Data Factory in Microsoft Fabric.
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 06/25/2024
+ms.date: 04/24/2026
 ms.custom:
   - template-how-to
 ---
 
 # ORC format in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
-This article outlines how to configure ORC format in the data pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+ORC (Optimized Row Columnar) is a columnar storage format designed for efficient large-scale data processing in Hadoop workloads. This article outlines how to configure ORC format in a copy activity pipeline in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Supported capabilities
 
@@ -22,7 +21,6 @@ ORC format is supported for the following activities and connectors as a source 
 | **Supported connector** | [Amazon S3](connector-amazon-s3-copy-activity.md) |
 |  | [Amazon S3 Compatible](connector-amazon-s3-compatible-copy-activity.md) |
 |  | [Azure Blob Storage](connector-azure-blob-storage-copy-activity.md) |
-|  | [Azure Data Lake Storage Gen1](connector-azure-data-lake-storage-gen1-copy-activity.md) |
 |  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md)|
 |  | [Azure Files](connector-azure-files-copy-activity.md)|
 |  | File system |
@@ -39,7 +37,7 @@ ORC format is supported for the following activities and connectors as a source 
 
 ## ORC format in copy activity
 
-To configure ORC format, choose your connection in the source or destination of data pipeline copy activity, and then select **ORC** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
+To configure ORC format, choose your connection in the source or destination of a pipeline copy activity, and then select **ORC** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
 
 :::image type="content" source="./media/format-common/file-settings.png" alt-text="Screenshot showing file format settings.":::
 
@@ -64,7 +62,7 @@ Under **Advanced** settings in the **Destination** tab, the following ORC format
 - **Max rows per file**: When writing data into a folder, you can choose to write to multiple files and specify the maximum rows per file. Specify the maximum rows that you want to write per file.
 - **File name prefix**: Applicable when **Max rows per file** is configured. Specify the file name prefix when writing data to multiple files, resulted in this pattern: `<fileNamePrefix>_00000.<fileExtension>`. If not specified, the file name prefix is auto generated. This property doesn't apply when the source is a file based store or a partition option enabled data store.
 
-## Table summary
+## ORC copy activity properties
 
 ### ORC as source
 

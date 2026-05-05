@@ -1,11 +1,8 @@
 ---
 title: Monitor Apache Spark capacity consumption
 description: Learn how to monitor Apache Spark capacity consumption, including what operations are treated as billable activities.
-ms.reviewer: snehagunda
-author: jejiang
-ms.author: jejiang
+ms.reviewer: jejiang
 ms.topic: how-to
-ms.custom:
 ms.date: 11/11/2024
 ms.search.form: Monitor Spark capacity consumption
 ---

@@ -1,11 +1,12 @@
 ---
 title: Understand the metrics app compute page
 description: Learn how to read the Microsoft Fabric Capacity metrics app's compute page.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.topic: how-to
-ms.custom:
-ms.date: 03/23/2025
+ms.custom: sfi-image-nochange
+ms.date: 07/10/2025
+ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -16,34 +17,44 @@ The Microsoft Fabric Capacity Metrics app's compute page provides an overview of
 
 At the top of each page, the **Capacity Name** field allows you to select the capacity the app shows results for.
 
-## Multi metric ribbon chart
+## Cards
 
-The multi metric ribbon chart provides an hourly view of your capacity's usage. To identify daily patterns, drill down to a specific day. Selecting each stacked column filters the main matrix and the other visuals according to your selection.
+In this page, there are three cards present to provide specific information of SKU, Average utilization % and Peak utilization %. The information on the cards is filtered according to your capacity and date range selection.
 
-The multi metric column ribbon displays the following four values. You see the top results for these values per item during the past two weeks.
+* **SKU** - Latest SKU of the capacity. Shows most recent SKU for active state if capacity is paused, and shows blank if capacity is active but not reporting usage.
+   
+* **Average utilization %** - Average utilization percentage of the capacity. Utilization is calculated with respect to base capacity units of the capacity and does not consider autoscale capacity units. This excludes timepoint when the capacity was not active (e.g., paused) and the timepoints where capacity was active but not reporting usage.
+
+* **Peak utilization %** - Peak utilization percentage of the capacity. Utilization is calculated with respect to base capacity units of the capacity and does not consider autoscale capacity units. User can filter out peak utilization reported for pause events using "_Filter paused events_" in the visual-level filter pane. Paused events are included by default.
+
+## Multimetric ribbon chart
+
+
+The multimetric ribbon chart provides an hourly view of your capacity's usage. To identify daily patterns, drill down to a specific day. Selecting each stacked column filters the main matrix and the other visuals according to your selection.
+
+The multimetric column ribbon displays the following four values. You see the top results for these values per item during the past two weeks.
 
 * **CU** - Capacity Units (CU) processing time in seconds.
-
 * **Duration** - Processing time in seconds.
-
 * **Operations** - The number of operations that took place.
-
 * **Users** - The number of unique users that performed operations, including service principals
 
 ## Capacity utilization and throttling
 
 Displays usage and throttling for the selected capacity. To toggle how the visual is displayed, use the tabs at the top of the visual.
 
+> [!TIP]
+> The matrix table at the bottom of the page includes a helpful tooltip feature. When you hover over rows in the details table, a tooltip appears showing the breakdown of consumption by operation type (such as query or refresh). This tooltip is one of the only places in the app where you can see this granular breakdown, making it valuable for understanding what types of operations are consuming your capacity resources.
+
 ### Utilization  
 
 Displays CU usage over time.
 
-:::image type="content" source="media/fabric-cross-filter.gif" alt-text="Animation that shows cross-filtered data in the multi metric ribbon chart." lightbox="media/fabric-cross-filter.gif":::
+:::image type="content" source="media/fabric-cross-filter.gif" alt-text="Animation that shows cross-filtered data in the multimetric ribbon chart." lightbox="media/fabric-cross-filter.gif":::
 
 To toggle how the visual is displayed, use the tabs at the top right corner of the visual.
 
 * **Linear** - Display the information using a linear scale that starts at 0 percent.
-
 * **Logarithmic** - Display the information using a logarithmic scale that depends on your CUs consumption.
 
 The utilization chart displays the following elements:
@@ -56,19 +67,15 @@ The utilization chart displays the following elements:
 
     [*Interactive*](fabric-operations.md#interactive-operations) operations cover a wide range of resources triggered by users. These operations are associated with interactive page loads.
 
-* **Background non-billable %** - Baby blue columns represent the percent of CU consumption used during preview background operations in a 30-second period.
-
-* **Interactive non-billable %** - Green columns represent the percent of CU consumption used during preview interactive operations in a 30-second period.
-
+* **Background nonbillable %** - Baby blue columns represent the percent of CU consumption used during preview background operations in a 30-second period.
+* **Interactive nonbillable %** - Green columns represent the percent of CU consumption used during preview interactive operations in a 30-second period.
 * **Autoscale CU % Limit** - An orange dotted line that shows the percent of CU consumption for autoscaled capacities. The line represents timepoints where the capacity is overloaded.
-
 * **CU % Limit** - A grey dotted line that shows the threshold of the allowed percent of CU consumption for the selected capacity. Columns that stretch above this line, represent timepoints where the capacity is overloaded.
 
-Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-ribbon-chart), affect this chart's display as follows:
+Filters applied to the page in the [Multimetric ribbon chart](#multimetric-ribbon-chart), affect this chart's display as follows:
 
 * *No filters applied* - Columns display the peak timepoint every six minutes.
-
-* *Filters are applied* - The visuals displays every 30-second timepoint. To view granular data, select a date from the multi metric ribbon chart's x-axis.
+* *Filters are applied* - The visuals displays every 30-second timepoint. To view granular data, select a date from the multimetric ribbon chart's x-axis.
 
 ### Throttling
 
@@ -88,56 +95,73 @@ Throttling is based on the amount of future capacity consumption resulting from 
 To toggle how the visual is displayed, use the tabs at the top right corner of the visual.
 
 * **Linear** - Display the information using a linear scale that starts at 0 percent.
-
 * **Logarithmic** - Display the information using a logarithmic scale that depends on your CUs consumption.
 
 To toggle between interactive delay, interactive rejection, and background rejection, use the tabs at the top of the visual. Timepoints with a value that's above 100% are rendered with a darker color.
+
+Each visual is rendered according to static legends displayed on it. For example, the Interactive delay tab shows legends for **Interactive delay**, **No Interactive delay**, and **No interactive delay (capacity overage billed)**.
 
 The interactive and background rejection tabs work in the same way. If you see that you utilized 75% of the future capacity consumption for a specific timepoint, you have 15 minutes remaining before the start of interactive or background rejection, which causes user requested jobs to be rejected.
 
 The throttling chart displays the following elements:
 
   * **Interactive delay** - Interactive operations get delayed when *10 min Interactive %* smoothing crosses the *Interactive delay* threshold.
-  
   * **Interactive rejection** - Interactive operations get rejected when *60 min Interactive %* smoothing crosses the *Interactive rejection* threshold.
-
   * **Background rejection** - Background operations get rejected when *24 hours Background %* smoothing crosses the *Background rejection* threshold.
 
-Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-ribbon-chart), affect this chart's display as follows:
+> [!NOTE]
+> When capacity overage is enabled for the capacity, the capacity doesn't enter the throttling state until the capacity overage limit is exceeded. This state is represented as **No interactive delay (capacity overage billed)**, **No interactive rejection (capacity overage billed)** and **No background rejection (capacity overage billed)** in the throttling charts. For more information, see [Capacity overage overview](capacity-overage-overview.md).
+Filters applied to the page in the [Multimetric ribbon chart](#multimetric-ribbon-chart), affect this chart's display as follows:
 
 * *No filters applied* - Columns display the peak timepoint every six minutes.
-
-* *Filters are applied* - The visuals displays every 30-second timepoint. To view granular data, select a date from the multi metric ribbon chart's x-axis.
+* *Filters are applied* - The visuals displays every 30-second timepoint. To view granular data, select a date from the multimetric ribbon chart's x-axis.
 
 ### Overages
-  
-Displays the *add*, *burndown*, and *cumulative* carryforward over time. Carryforward only takes into account billable operations.
+
+The **Overages** tab has two views: **Overage (Carryforward)** and **Overage (Billed)**, as shown in the following image:
 
 :::image type="content" source="media/fabric-cross-filter-overages.gif" alt-text="Animation that shows overage over time." lightbox="media/fabric-cross-filter-overages.gif":::
 
-The overages chart displays the following elements:
+#### Overage (Carryforward)
+
+**Overage (Carryforward)** displays the add, burndown, and cumulative carryforward over time. Carryforward only takes into account billable operations.
+
+The overages carryforward chart displays the following elements:
 
   * **Add %** - Green columns represent the carryforward percent added during the current 30-second period.
-  
   * **Burndown %** - Blue columns represent the carryforward percent burned down for the current 30-second period.
-  
   * **Cumulative %** - Red line represent the cumulative carryforward percent for the current 30-second period. Cumulative percent is displayed on the secondary axis located on the right side of the visual.
-  
-Once you select a column in the chart, you can use the *Explore* button to drill through to the [timepoint](metrics-app-timepoint-page.md) page.
 
-Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-ribbon-chart), affect this chart's display as follows:
+#### Overage (Billed)
+
+**Overage (Billed)** shows the overage usage that is billed for the capacity. These visuals are only populated when capacity overage is enabled and the capacity has incurred overages and has overages that would have resulted in throttling.
+
+This view displays the following visuals:
+
+- **Table** - shows details of billed overages for the capacity at a point in time.
+  - **Rolling cumulative 24 hour billed overage CU (hr)** - Max of rolling cumulative 24 hours billed overage in capacity unit hours.
+  - **Overage billing limit CU (hr)** - Max of overage billing limit in capacity units hours.
+  - **Overage (Billed) CUs (s)** - Sum of billed overages in capacity units seconds.
+
+- **Timepoint visual** - shows billed overage capacity unit seconds over time.
+  - **Overage (Billed) CUs (s)** - Amount of overage capacity unit seconds billed for the current 30-second window.
+
+- **Cumulative visual** - shows the cumulative overages billed over the past 24 hours for each window.
+  - **Rolling cumulative 24 hour billed overage CU (hr)** - Amount of overage capacity unit hours billed for the past 24 hours from the current window.
+  - **Overage billing limit CU (hr)** - 24-hour limit for billed overage set at the capacity level in capacity unit hours.
+  
+Once you select a column in the chart, you can use the *Explore* buttons to drill through to the [timepoint summary](metrics-app-timepoint-summary-page.md) or [timepoint detail](metrics-app-timepoint-page.md) pages.
+
+Filters applied to the page in the [Multimetric ribbon chart](#multimetric-ribbon-chart), affect the Timepoint and Cumulative visuals as follows:
 
 * *No filters applied* - Columns display the peak timepoint every 20 minutes.
-
-* *Filters are applied* - The visuals displays every 30-second timepoint. To view granular data, select a date from the multi metric ribbon chart's x-axis.
+* *Filters are applied* - The visuals displays every 30-second timepoint. To view granular data, select a date from the multimetric ribbon chart's x-axis.
 
 >[!NOTE]
 >Peak is calculated as the highest number of seconds from both [*interactive* and *background*](fabric-operations.md#interactive-and-background-operations) operations.
 
-To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, select a timepoint you want to explore and then select **Explore**.
-
 >[!NOTE]
->Non billable usage doesn't drain capacity or lead to throttling or auto scale.
+>Nonbillable usage doesn't drain capacity or lead to throttling or auto scale.
 
 ## System Events
 
@@ -146,9 +170,7 @@ Displays capacity events. When the state of the capacity has remained unchanged 
 The system events table displays the following elements:
 
   * **Time** - The time the capacity was paused or resumed.
-  
   * **State** - The state of the capacity. 
-  
   * **State Change Reason** - Displays the event trigger.
 
 This table lists system events for capacities.
@@ -197,18 +219,16 @@ The table in this section lists the default fields that are displayed in the mat
 <sup>*</sup> The billing type column displays the following values:
 
 * *Billable* - Indicates that operations for this item are billable.
-
-* *Non-Billable*  - Indicates that operations for this item are non-billable.
-
+* *Nonbillable*  - Indicates that operations for this item are nonbillable.
 * *Both* - There are two scenarios when an item can have both as billable type:
-        - If the item has both billable and non-billable operations.
-        - If the item has operations that are in transition period from non-billable to billable.
+  - If the item has both billable and nonbillable operations.
+  - If the item has operations that are in transition period from nonbillable to billable.
 
 ### Optional fields
 
 The table in this section lists the optional fields that you can add to the matrix by item and operation visual. You can add or remove optional fields from the table using the *Select optional column(s)* dropdown menu.
 
-|**Name**  |**Description**  |
+|Name  |Description  |
 |----------|-----------------|
 |Rejected count   |The total number of rejected operations for an item             |
 |Failed count     |The total number of failed operations for an item               |
@@ -220,6 +240,10 @@ The table in this section lists the optional fields that you can add to the matr
 |Item Size (GB) |The amount of memory an item needs measured in gigabytes (GB) |
 |Overloaded minutes |Displays a sum of 30 seconds increments where overloading occurred at least once. Sort to view the items that were affected the most due to overload penalty |
 |Performance delta |Displays the performance effect on the items. The number represents the percent of change from seven days ago. For example, 20 suggests that there's a 20% improvement today, compared with the same metric taken a week ago |
+
+## Considerations and Limitations
+The following considerations apply to the compute page:
+- Throttling charts aren't populated in sovereign clouds. In these clouds, throttling occurs when utilization exceeds 100%. Use the utilization chart on the compute page to observe when throttling occurs. 
 
 ## Related content
 

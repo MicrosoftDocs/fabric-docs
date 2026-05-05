@@ -1,8 +1,6 @@
 ---
 title: Assign data to objects in Activator
 description: Learn how to assign data to objects in Activator and improve your data management capabilities.
-author: spelluru
-ms.author: spelluru
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: Activator Object Creation
@@ -51,9 +49,7 @@ To assign an eventstream to multiple objects, for each object follow the procedu
 
 ## Related content
 
-* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
-* [Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from eventstreams](activator-get-data-eventstreams.md)
-* [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
+* [Fabric Activator tutorial using sample data](activator-tutorial.md)
 
 You can also learn more about Microsoft Fabric:
 

@@ -4,7 +4,6 @@ description: Prerequisites to use for R articles.
 author: sdgilley
 ms.author: sgilley
 ms.topic: include
-ms.custom: 
 ms.date: 01/22/2024
 ---
 

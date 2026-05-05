@@ -1,8 +1,6 @@
 ---
 title: Clone Tables in the Fabric Portal
 description: How to clone tables in the Warehouse in the Fabric portal.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: prlangad
 ms.date: 04/06/2025
 ms.topic: how-to

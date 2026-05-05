@@ -1,8 +1,6 @@
 ---
 title: "Create GraphQL API in your SQL database"
 description: Learn how to create GraphQL API in your SQL database in the Fabric portal.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: antho, sukkaur
 ms.date: 10/07/2024
 ms.topic: how-to
@@ -17,7 +15,6 @@ Start building GraphQL APIs directly from within the Fabric SQL query editor. F
 ## Prerequisites
 
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
-- Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md).
 - [Create a new workspace](../../fundamentals/workspaces.md) or use an existing Fabric workspace.
 - [Create a new SQL database](create.md) or use an existing SQL database.
 

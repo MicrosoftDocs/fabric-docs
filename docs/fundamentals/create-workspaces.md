@@ -1,12 +1,11 @@
 ---
 title: Create a workspace
 description: "Learn how you can create a workspace: a collection of items such as lakehouses, warehouses, and reports, with task flows built to deliver key metrics for your organization."
-author: paulinbar
-ms.author: painbar
+author: SnehaGunda
+ms.author: sngun
 ms.reviewer: yicw
 ms.topic: how-to
-ms.date: 02/26/2025
-ms.custom:
+ms.date: 01/30/2026
 #customer intent: As a report creator, I want use workspaces so that I can create collections of artifacts that are related.
 ---
 # Create a workspace
@@ -31,6 +30,8 @@ To create a workspace:
 
 1. When done, either continue to the advanced settings, or select **Apply**.
 
+You can open and work across multiple workspaces side by side. Items are color-coded and numbered to indicate which workspace they belong to. To learn more see, [object explorer and tabbed navigation in Fabric portal](./fabric-home.md#multitask-with-tabs-and-object-explorer).
+
 ## Advanced settings
 
 Expand **Advanced** and you see advanced setting options:
@@ -43,12 +44,13 @@ By default, the first workspace admin who created the workspace is the contact. 
 
 :::image type="content" border="true" source="media/create-workspaces/fabric-contact-list.png" alt-text="Screenshot of Contact list.":::
 
-### License mode
+### Workspace type
 
-Different [license](../enterprise/licenses.md) mode provides different sets of feature for your workspace. After the creation, you can still change the workspace license type in workspace settings, but some migration effort is needed.
+Different [workspace types](../enterprise/licenses.md#workspace-types) provide different sets of features for your workspace.
+You can change the workspace type after creating a workspace. You can do so from the workspace settings, but some migration effort is needed.
 
 >[!NOTE]
-> Currently, if you want to downgrade the workspace license type from Premium capacity to Pro (Shared capacity), you must first remove any non-Power BI Fabric items that the workspace contains. Only after you remove such items will you be allowed to downgrade the capacity. For more information, see [Moving data around](../admin/portal-workspaces.md#moving-data-around).
+> Currently, if you want to downgrade the workspace type from a Power BI Premium to a Power BI Pro (Shared capacity), you must first remove any non-Power BI Fabric items that the workspace contains. Only after you remove such items will you be allowed to downgrade the capacity. For more information, see [Moving data around](../admin/portal-workspaces.md#moving-data-around).
 
 ### Default storage format
 
@@ -61,6 +63,22 @@ Power BI semantic models can store data in a highly compressed in-memory cache f
 ### Dataflow storage (preview)
 
 Data used with Power BI is stored in internal storage provided by Power BI by default. With the integration of dataflows and Azure Data Lake Storage Gen 2 (ADLS Gen2), you can store your dataflows in your organization's Azure Data Lake Storage Gen2 account. Learn more about [dataflows in Azure Data Lake Storage Gen2 accounts](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration#considerations-and-limitations).
+
+## Reassign a workspace to a different capacity
+
+When you create a workspace, it's assigned to a [capacity](../enterprise/licenses.md#capacity). The capacity that new workspaces are assigned to by default is determined by the capacity type and/or by the configuration of Fabric or capacity administrators. After a workspace is created, you can reassign it to another available capacity if you have the [workspace admin role](roles-workspaces.md), the capacity admin role, or the capacity contributor role.
+
+You can reassign a workspace to a different capacity via workspace types in the workspace settings.
+
+1. Open the workspace settings and choose **Workspace type**. Information about the current workspace type is displayed.
+
+1. Select **Edit**. The list of available workspace types appears.
+
+1. Select the desired workspace type and specify the capacity the workspace will be hosted on.
+
+> [!NOTE]
+> * You can choose specific capacities only when you select one of the Fabric workspace types. Fabric automatically reserves shared capacity for Power BI workspace types.
+> * The types of items contained in the workspace can affect the ability to change workspace types and/or move the workspace to a capacity in a different region. See [Moving data around](../admin/portal-workspaces.md#moving-data-around) for detail.
 
 ## Give users access to your workspace
 

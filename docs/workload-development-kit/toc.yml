@@ -69,6 +69,8 @@ items:
     href: add-item-custom-settings.md
   - name: Deploy to Azure
     href: deploy-to-azure.md
+  - name: Setup Workload Backend using Swagger
+    href: back-end-set-up.md
 - name: Publish
   items:
   - name: Publishing requirements

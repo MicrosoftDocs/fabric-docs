@@ -1,10 +1,9 @@
 ---
 title: Migrate from Azure Synapse Data Explorer to Eventhouse - REST API (preview)
 description: Migrate a source Azure Synapse Data Explorer to Eventhouse.
-author: shsagir
-ms.author: shsagir
 ms.reviewer: sharmaanshul
 ms.topic: reference
+ms.subservice: rti-eventhouse
 ms.date: 03/26/2025
 ---
 # Migrate from Azure Synapse Data Explorer to Eventhouse - REST API (preview)

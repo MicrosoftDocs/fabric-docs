@@ -1,10 +1,7 @@
 ---
 title: Query logs
 description: View and analyze the log of queries run on an Eventhouse KQL database within Real-Time Intelligence.
-author: shsagir
-ms.author: shsagir
 ms.topic: reference
-ms.custom:
 ms.date: 11/06/2024
 ---
 

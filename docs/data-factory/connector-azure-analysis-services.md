@@ -1,36 +1,43 @@
 ---
 title: Set up your Azure Analysis Services connection
 description: This article provides information about how to create an Azure Analysis Services connection in Microsoft Fabric.
-author: pennyzhou-msft
-ms.author: xupzhou
+ms.reviewer: xupzhou
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 03/13/2026
 ms.custom:
   - template-how-to
+  - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your Azure Analysis Services connection
 
-This article outlines the steps to create an Azure Analysis Services connection.
+You can connect Dataflow Gen2 to Azure Analysis Services in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+
+1. Check [capabilities](#capabilities) to make sure your scenario is supported.
+1. [Complete prerequisites for Azure Analysis Services](#prerequisites).
+1. [Get data in Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
+1. [Connect to Azure Analysis Services](#connect-to-azure-analysis-services).
+
 
 ## Supported authentication types
 
-The Azure Analysis Services connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Access database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Organizational account| n/a | √ |
 
-## Set up your connection in Dataflow Gen2
+## Capabilities
+[!INCLUDE [azure-analysis-services-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-analysis-services/azure-analysis-services-capabilities-supported.md)]
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Azure Analysis Services. The following links provide the specific Power Query connector information you need to connect to Azure Analysis Services in Dataflow Gen2:
+## Prerequisites
+[!INCLUDE [azure-analysis-services-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-analysis-services/azure-analysis-services-prerequisites.md)]
 
-- To get started using the Azure Analysis Services connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [Azure Analysis Services prerequisites](/power-query/connectors/azure-analysis-services#prerequisites) before connecting to the Azure Analysis Services connector.
-- To connect to the Azure Analysis Services connector from Power Query, go to [Connect to Azure Analysis Services database from Power Query Online](/power-query/connectors/azure-analysis-services#connect-to-azure-analysis-services-database-from-power-query-online).
+## Connect to Azure Analysis Services
 
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+[!INCLUDE [azure-analysis-services-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-analysis-services/azure-analysis-services-connect-to-power-query-online.md)]
 
-## Set up your connection in a data pipeline
+## Related content
 
-Data Factory in Microsoft Fabric doesn't currently support Azure Analysis Services in data pipelines.
+- [For more information about this connector, see the Azure Analysis Services connector documentation.](/power-query/connectors/azure-analysis-services)
