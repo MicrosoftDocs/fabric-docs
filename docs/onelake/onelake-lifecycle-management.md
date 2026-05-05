@@ -3,7 +3,7 @@ title: Creating a lifecycle management policy in OneLake
 description: Automatically move data between storage tiers using a lifecycle management policy.
 ms.reviewer: eloldag, mabasile
 ms.topic: concept-article
-ms.date: 04/01/2026
+ms.date: 05/01/2026
 #customer intent: As a workspace admin, I want to lower my storage costs for data I must retain for long periods but is otherwise rarely accessed. 
 ---
 
@@ -11,7 +11,7 @@ ms.date: 04/01/2026
 
 Use OneLake lifecycle management to control storage costs by automatically moving files between storage tiers. Storage tiers help you manage data costs by providing cost-effective tiers based on your data access patterns. By combining lifecycle management with storage tiers, you can automatically save money by moving less active data to lower storage tiers while keeping your active data in the hot tier. Learn more about [OneLake storage tiers](onelake-storage-tiers.md).
 
-This article describes the structure and elements of a OneLake lifecycle management policy. OneLake uses a similar policy structure as Azure Storage. For more information, see [Azure Storage lifecycle policies](https://learn.microsoft.com/azure/storage/blobs/lifecycle-management-policy-structure).
+This article describes the structure and elements of a OneLake lifecycle management policy. OneLake uses a similar policy structure as Azure Storage. For more information, see [Azure Storage lifecycle policies](/azure/storage/blobs/lifecycle-management-policy-structure).
 
 ## Managing your policy
 

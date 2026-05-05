@@ -3,7 +3,7 @@ title: Storage tiers in OneLake
 description: Manage your storage costs in OneLake by moving data between storage tiers.
 ms.reviewer: eloldag, mabasile
 ms.topic: concept-article
-ms.date: 04/01/2026
+ms.date: 05/01/2026
 #customer intent: As a workspace admin, I want to lower my storage costs for data I must retain for long periods but is otherwise rarely accessed. 
 ---
 

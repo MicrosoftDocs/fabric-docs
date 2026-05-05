@@ -168,7 +168,8 @@ items:
   - name: Recover deleted files
     href: soft-delete.md
   - name: Plan for disaster recovery
-    href: onelake-disaster-recovery.md- name: OneLake file explorer for Windows
+    href: onelake-disaster-recovery.md
+- name: OneLake file explorer for Windows
   items:
   - name: OneLake file explorer overview
     href: onelake-file-explorer.md
