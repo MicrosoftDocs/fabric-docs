@@ -6,7 +6,7 @@ ms.author: billmath
 ms.reviewer: ''
 
 ms.topic: how-to
-ms.date: 03/08/2025
+ms.date: 07/16/2025
 ms.custom: ''
 LocalizationGroup: Administration
 ms.collection: ce-skilling-ai-copilot
@@ -48,7 +48,7 @@ Security takes you to the Role-Level Security page where you add members to a ro
 
 ### Add members
 
-In the Power BI service, you can add a member to the role by typing in the email address or name of the user or security group. You can't add Groups created in Power BI. You can add members [external to your organization](/power-bi/guidance/whitepaper-azure-b2b-power-bi#data-security-for-external-partners).
+In the Power BI service, you can add a member to the role by typing in the email address or name of the user or security group. You can't add Groups created in Power BI. You can add members [external to your organization](/power-bi/guidance/whitepaper-azure-b2b-power-bi#data-security-for-external-partners). For guidance on how RLS works with external B2B guest users, see [Considerations for external (B2B guest) users](#considerations-for-external-b2b-guest-users).
 
 You can use the following groups to set up row-level security.
 
@@ -98,7 +98,33 @@ To return to normal viewing, select **Back to Row-Level Security**.
 
 ## Using RLS with workspaces in Power BI
 
-If you publish your Power BI Desktop report to a [workspace](/power-bi/collaborate-share/service-new-workspaces) in the Power BI service, the RLS roles are applied to members who are assigned to the **Viewer** role in the workspace. Even if  **Viewers** are given Build permissions to the semantic model, RLS still applies. For example, if Viewers with Build permissions use [Analyze in Excel](/power-bi/collaborate-share/service-analyze-in-excel), their view of the data is restricted by RLS. Workspace members assigned **Admin**, **Member**, or **Contributor** have edit permission for the semantic model and, therefore, RLS doesn’t apply to them. If you want RLS to apply to people in a workspace, you can only assign them the **Viewer** role. Read more about [roles in workspaces](/power-bi/collaborate-share/service-roles-new-workspaces).
+If you publish your Power BI Desktop report to a [workspace](/power-bi/collaborate-share/service-new-workspaces) in the Power BI service, the RLS roles are applied to members who are assigned to the **Viewer** role in the workspace. Even if  **Viewers** are given Build permissions to the semantic model, RLS still applies. For example, if Viewers with Build permissions use [Analyze in Excel](/power-bi/collaborate-share/service-analyze-in-excel), their view of the data is restricted by RLS. Workspace members assigned **Admin**, **Member**, or **Contributor** have edit permission for the semantic model and, therefore, RLS doesn't apply to them. If you want RLS to apply to people in a workspace, you can only assign them the **Viewer** role. Read more about [roles in workspaces](/power-bi/collaborate-share/service-roles-new-workspaces).
+
+## Considerations for external (B2B guest) users
+
+If you share Power BI content with external users through [Microsoft Entra B2B](/azure/active-directory/external-identities/what-is-b2b), it's important to understand how RLS interacts with guest user identities.
+
+### UPN resolution for B2B guests
+
+When an external B2B guest user accesses a Power BI report, the `USERPRINCIPALNAME()` DAX function typically returns the guest's email address (for example, `user@partner.com`). It does *not* return the `#EXT#` UPN format that Microsoft Entra ID uses internally (for example, `user_partner.com#EXT#@yourtenant.onmicrosoft.com`).
+
+This distinction matters for dynamic RLS. If your user-mapping table stores the `#EXT#` UPN format, the filter expression won't match the value returned by `USERPRINCIPALNAME()`, and the guest user sees no data or the wrong data.
+
+**Recommended approach:** Use the guest user's email address in your user-mapping table, and filter with `USERPRINCIPALNAME()`:
+
+```dax
+[UserEmail] = USERPRINCIPALNAME()
+```
+
+Where the `UserEmail` column contains email addresses like `user@partner.com` for both internal and external users.
+
+> [!IMPORTANT]
+> If you use dynamic RLS with `USERPRINCIPALNAME()`, always test with actual external guest users. The **Test as role** feature uses your own identity and won't reveal external user UPN resolution issues.
+
+> [!NOTE]
+> UPN resolution behavior for B2B guests can vary depending on your Microsoft Entra ID configuration, such as cross-tenant access settings and guest user type. Always validate the behavior in your specific environment.
+
+For more information on sharing Power BI content with external users, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/guidance/whitepaper-azure-b2b-power-bi).
 
 [!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/rls-limitations.md)]
 
@@ -110,6 +136,8 @@ If you publish your Power BI Desktop report to a [workspace](/power-bi/collabora
 - [Row-level security (RLS) guidance in Power BI Desktop](/power-bi/guidance/rls-guidance)
 - [Power BI implementation planning: Report consumer security planning](/power-bi/guidance/powerbi-implementation-planning-security-report-consumer-planning#enforce-data-security-based-on-consumer-identity)
 - [RLS for Embedded scenarios for ISVs](/power-bi/developer/embedded/embedded-row-level-security)
+- [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/guidance/whitepaper-azure-b2b-power-bi)
 
 Questions? [Try asking the Power BI Community](https://community.powerbi.com/)
 Suggestions? [Contribute ideas to improve Power BI](https://ideas.powerbi.com/)
+```
