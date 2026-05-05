@@ -110,4 +110,4 @@ An existing forecast row can be edited by selecting the edit icon on the row. Th
 
 For more information, see [data input row properties](./planning-how-to-insert-data-input-rows.md#data-input-row-properties). After making the required changes, select **Update**.
 
-:::image type="content" source="media/planning-how-to-insert-forecast-rows/edit-update-more-options.png" alt-text="Screenshot of the side panel when editing a forecast row.":::
+:::image type="content" source="media/planning-how-to-insert-forecast-rows/edit-update-more-options.png" alt-text="Screenshot of the side panel with more options when editing a forecast row.":::
