@@ -1,6 +1,8 @@
 ﻿---
 title: Data agent configurations
 description: Overview of the various configurations for the data agent.
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: midesa
 ms.topic: concept-article
 ms.date: 12/2/2025
@@ -63,7 +65,7 @@ Use the following template as a starting point:
 
 ## When asked about
 // Provide query-specific logic or table preferences for certain topics. 
-// Example: “When asked about shoe sales, always use the SalesProduct table.”
+// Example: "When asked about shoe sales, always use the SalesProduct table."
 
 ```
 
@@ -71,7 +73,7 @@ Use the following template as a starting point:
 
 ## Data source description
 
-Data Source descriptions allow creators to provide high-level context about each data source so the Data Agent can intelligently route questions. A description should summarize what the data source contains, the types of questions it can answer, and any business-specific nuances that help distinguish it from other sources. The agent uses this information during its reasoning process to determine which source is the most relevant to a user’s query.
+Data Source descriptions allow creators to provide high-level context about each data source so the Data Agent can intelligently route questions. A description should summarize what the data source contains, the types of questions it can answer, and any business-specific nuances that help distinguish it from other sources. The agent uses this information during its reasoning process to determine which source is the most relevant to a user's query.
 
 :::image type="content" source="media/how-to-create-data-agent/configuration-data-source-description.png" alt-text="Screenshot of adding data source descriptions to the data agent." lightbox="media/how-to-create-data-agent/configuration-data-source-description.png":::
 
@@ -80,7 +82,7 @@ Data Source descriptions allow creators to provide high-level context about each
 
 ## Data source example queries
 
-Example queries, also known as few shot examples, are used by data agent tools to improve the quality of generated queries. They allow creators to pass example query logic that the agent can reference when forming a response. When a data source is used, the corresponding tool automatically looks up the most relevant example queries for the user’s question and passes the top three to the data agent tool. These examples are incorporated into the generation process, helping the agent produce more accurate and contextually appropriate query results.
+Example queries, also known as few shot examples, are used by data agent tools to improve the quality of generated queries. They allow creators to pass example query logic that the agent can reference when forming a response. When a data source is used, the corresponding tool automatically looks up the most relevant example queries for the user's question and passes the top three to the data agent tool. These examples are incorporated into the generation process, helping the agent produce more accurate and contextually appropriate query results.
 
 :::image type="content" source="media/how-to-create-data-agent/data-agent-adding-examples-sql.png" alt-text="Screenshot of adding example queries to the data agent" lightbox="media/how-to-create-data-agent/data-agent-adding-examples-sql.png":::
 
