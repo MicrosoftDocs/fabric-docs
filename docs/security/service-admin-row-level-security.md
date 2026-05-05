@@ -189,12 +189,8 @@ Microsoft Entra security groups that contain external B2B guest users might not 
 
 For more information on sharing content with external users, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/guidance/whitepaper-azure-b2b-power-bi).
 
-## Considerations for external (B2B guest) users
-
-If you share Power BI content with external users through [Microsoft Entra B2B](/azure/active-directory/external-identities/what-is-b2b), it's important to understand how RLS interacts with guest user identities.
 
 ### UPN resolution for B2B guests
-
 
 When an external B2B guest user accesses a Power BI report, the `USERPRINCIPALNAME()` DAX function typically returns an email-like identifier (for example, `user@partner.com`). In some configurations, it might return a guest UPN in the `#EXT#` format (for example, `user_partner.com#EXT#@yourtenant.onmicrosoft.com`).
 
@@ -248,11 +244,4 @@ For more information on sharing Power BI content with external users, see [Distr
 
 Questions? [Try asking the Power BI Community](https://community.powerbi.com/)
 Suggestions? [Contribute ideas to improve Power BI](https://ideas.powerbi.com/)
-<<<<<<< HEAD
-<<<<<<< HEAD
-```
-=======
 
->>>>>>> 2ec7c602329483c4b7da5d20a87444a5636f72e4
-=======
->>>>>>> f250aa0450c17e9979aede613b8122d8a861af69
