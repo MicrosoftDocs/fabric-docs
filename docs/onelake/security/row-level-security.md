@@ -51,7 +51,7 @@ You can define row-level security rules as part of any OneLake security role tha
 
 RLS rules use SQL syntax to specify the rows that a user can see. This syntax takes the form of a SQL `SELECT` statement with the RLS rules defined in the `WHERE` clause. RLS rules only support a subset of the SQL language as defined in [Syntax rules](#syntax-rules). Queries with invalid RLS syntax or RLS syntax that doesn't match the underlying table result in no rows being shown to users, or query errors in the SQL analytics endpoint.
 
-As a best practice, avoid using vague or overly complex RLS expressions. Strongly-typed expressions with integer or string lookups with "=" will be the most secure and easy to understand.
+As a best practice, avoid using vague or overly complex RLS expressions. Strongly typed expressions with integer or string lookups with "=" will be the most secure and easy to understand.
 
 Use the following steps to define RLS rules:
 

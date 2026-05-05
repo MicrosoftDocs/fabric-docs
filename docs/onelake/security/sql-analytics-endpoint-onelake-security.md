@@ -157,7 +157,7 @@ The access mode determines how data access is authenticated and enforced when qu
 1. A pop-up launches to confirm your selection. Select **Yes** to confirm the change.
 
 > [!IMPORTANT]
-> Changing the security mode temporarily makes SQL analytics endpoints unavailable across the entire workspace. This action cancels all running and queued queries at all SQL analytics endpoints in that workspace. Change modes only if needed, and preferrably during non-business hours to avoid downtime.
+> Changing the security mode temporarily makes SQL analytics endpoints unavailable across the entire workspace. This action cancels all running and queued queries at all SQL analytics endpoints in that workspace. Change modes only if needed, and preferably during non-business hours to avoid downtime.
 
 ## Considerations when switching between modes
 
@@ -204,7 +204,7 @@ The access mode determines how data access is authenticated and enforced when qu
 
   * **General rule**: When enforcement cannot clearly validate access, the system applies the most restrictive outcome.
 
-* **Column-Level Security (CLS) design**: CLS maintains a strict allowlist of columns.
+* **Column-Level Security (CLS) design**: CLS maintains a strict allow list of columns.
 
   * Renaming or removing an allowed column invalidates the security rule. While the rule persists in the system, it remains inactive—denying all access to the resource—until the original column naming is restored.
 
@@ -253,7 +253,7 @@ The access mode determines how data access is authenticated and enforced when qu
 
 * Changes to **OneLake security GRANT/DENY policies** are enforced immediately and are **not delayed by storage token caching**.
 
-* **Active query cancellation**: To maintain data integrity and security, active queries may be automatically cancelled if a shortcut configuration changes during execution.
+* **Active query cancellation**: To maintain data integrity and security, active queries may be automatically canceled if a shortcut configuration changes during execution.
 
 * **Row-Level Security (RLS) constraints**:
 
