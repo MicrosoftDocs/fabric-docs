@@ -6,7 +6,7 @@ ms.author: billmath
 ms.reviewer: ''
 
 ms.topic: how-to
-ms.date: 03/08/2025
+ms.date: 07/16/2025
 ms.custom: ''
 LocalizationGroup: Administration
 ms.collection: ce-skilling-ai-copilot
@@ -54,7 +54,10 @@ You can use the following groups to set up row-level security.
 
 - Distribution Group
 - Mail-enabled Group
-- [Microsoft Entra Security Group](/azure/active-directory/fundamentals/groups-view-azure-portal)
+- [Microsoft Entra Security Group](/azure/active-directory/fundamentals/groups-view-azure-portal) — If the security group contains external B2B guest users, see [Considerations for external (B2B guest) users](#considerations-for-external-b2b-guest-users) for known limitations.
+
+> [!IMPORTANT]
+> Microsoft Entra security groups that contain external B2B guest users might not work as expected with RLS. If you need to grant RLS-filtered access to external users, consider adding them directly to RLS roles by email address instead of through a security group. For more details, see [Entra security groups with external members](#entra-security-groups-with-external-members).
 
 Note that Microsoft 365 groups aren't supported and can't be added to any roles.
 
@@ -98,7 +101,25 @@ To return to normal viewing, select **Back to Row-Level Security**.
 
 ## Using RLS with workspaces in Power BI
 
-If you publish your Power BI Desktop report to a [workspace](/power-bi/collaborate-share/service-new-workspaces) in the Power BI service, the RLS roles are applied to members who are assigned to the **Viewer** role in the workspace. Even if  **Viewers** are given Build permissions to the semantic model, RLS still applies. For example, if Viewers with Build permissions use [Analyze in Excel](/power-bi/collaborate-share/service-analyze-in-excel), their view of the data is restricted by RLS. Workspace members assigned **Admin**, **Member**, or **Contributor** have edit permission for the semantic model and, therefore, RLS doesn’t apply to them. If you want RLS to apply to people in a workspace, you can only assign them the **Viewer** role. Read more about [roles in workspaces](/power-bi/collaborate-share/service-roles-new-workspaces).
+If you publish your Power BI Desktop report to a [workspace](/power-bi/collaborate-share/service-new-workspaces) in the Power BI service, the RLS roles are applied to members who are assigned to the **Viewer** role in the workspace. Even if  **Viewers** are given Build permissions to the semantic model, RLS still applies. For example, if Viewers with Build permissions use [Analyze in Excel](/power-bi/collaborate-share/service-analyze-in-excel), their view of the data is restricted by RLS. Workspace members assigned **Admin**, **Member**, or **Contributor** have edit permission for the semantic model and, therefore, RLS doesn't apply to them. If you want RLS to apply to people in a workspace, you can only assign them the **Viewer** role. Read more about [roles in workspaces](/power-bi/collaborate-share/service-roles-new-workspaces).
+
+## Considerations for external (B2B guest) users
+
+If you share Power BI content with external users through [Microsoft Entra B2B](/azure/active-directory/external-identities/what-is-b2b), be aware of the following considerations for RLS.
+
+### Entra security groups with external members
+
+Microsoft Entra security groups that contain external B2B guest users might not work as expected when used for RLS role membership. In some configurations, the external guest's membership in the security group isn't correctly evaluated by the Power BI service when enforcing RLS filters.
+
+**Recommended workaround:** Instead of adding external users to RLS roles through Entra security groups, add them directly to the role by email address. This ensures their identity is correctly matched when RLS filters are applied.
+
+> [!IMPORTANT]
+> If you currently use Microsoft Entra security groups for RLS role membership and those groups include B2B guest users, verify that the guest users see the correct filtered data. If they don't, add the external users directly to the RLS role by email address.
+
+> [!NOTE]
+> The exact scope of this limitation may vary depending on your Microsoft Entra ID configuration and the type of B2B guest invitation used. An SME should validate behavior in your specific tenant configuration.
+
+For more information on sharing content with external users, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/guidance/whitepaper-azure-b2b-power-bi).
 
 [!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/rls-limitations.md)]
 
@@ -113,3 +134,4 @@ If you publish your Power BI Desktop report to a [workspace](/power-bi/collabora
 
 Questions? [Try asking the Power BI Community](https://community.powerbi.com/)
 Suggestions? [Contribute ideas to improve Power BI](https://ideas.powerbi.com/)
+```
