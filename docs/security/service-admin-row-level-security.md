@@ -14,7 +14,14 @@ no-loc: [Copilot]
 
 # Row-level security (RLS) with Power BI
 
-Row-level security (RLS) with Power BI can be used to restrict data access for given users. Filters restrict data access at the row level, and you can define filters within roles. In the Power BI service, users with access to a workspace have access to semantic models in that workspace. RLS only restricts data access for users with **Viewer** permissions. It doesn't apply to Admins, Members, or Contributors.
+Row-level security (RLS) restricts data access for specific users. Filters restrict data at the row level, and you define filters within roles. In the Power BI service, users with access to a workspace have access to semantic models in that workspace. RLS only restricts data access for users with **Viewer** permissions. It doesn't apply to Admins, Members, or Contributors.
+
+To implement RLS, follow this high-level workflow:
+
+1. **Define roles and rules** in Power BI Desktop using DAX filter expressions.
+1. **Publish** the semantic model and report to the Power BI service.
+1. **Add members** to roles in the Power BI service.
+1. **Validate** by using the **Test as role** feature to confirm data filtering works as expected.
 
 You can configure RLS for imported semantic models in Power BI Desktop or the Power BI service. You can also configure RLS on semantic models that are using DirectQuery, such as SQL Server. For Analysis Services or Azure Analysis Services live connections, you configure row-level security in the model, not in Power BI. The security option doesn't show up for live connection semantic models.
 
@@ -35,22 +42,22 @@ To manage security on your semantic model, open the workspace where you saved yo
 
 1. In Fabric, select the **More options** menu for a semantic model. This menu appears when you hover on a semantic model name.
 
-    :::image type="content" source="media/service-admin-row-level-security/dataset-canvas-more-options.png" alt-text="Screenshot showing the More options menu in navigation menu.":::
+    :::image type="content" border="true" source="media/service-admin-row-level-security/dataset-canvas-more-options.png" alt-text="Screenshot showing the More options menu in navigation menu.":::
 
 1. Select **Security**.
 
-    :::image type="content" source="media/service-admin-row-level-security/dataset-more-options-menu.png" alt-text="Screenshot showing the More options menu with Security selected.":::
+    :::image type="content" border="true" source="media/service-admin-row-level-security/dataset-more-options-menu.png" alt-text="Screenshot showing the More options menu with Security selected.":::
 
 Security takes you to the Role-Level Security page where you add members to a role you created. Users with **Contributor** or higher workspace roles see the **Security** option and can assign users to a role. Semantic model ownership or Build permission may also be required depending on the scenario.
 
 > [!NOTE]
 > You can only manage security on models that have row-level security roles already defined in Power BI Desktop or when editing your data model in the Power BI service. If your model doesn't have roles already defined, you can't manage security in the Power BI service.
 
-## Working with members
+## Manage role membership
 
 ### Add members
 
-In the Power BI service, you can add a member to the role by typing in the email address or name of the user or security group. You can't add Groups created in Power BI. You can add members [external to your organization](../enterprise/powerbi/service-admin-entra-b2b.md).
+In the Power BI service, add a member to the role by typing the email address or name of the user or security group. You can't add groups created in Power BI. You can add members [external to your organization](/power-bi/guidance/whitepaper-azure-b2b-power-bi#data-security-for-external-partners).
 
 You can use the following groups to set up row-level security.
 
@@ -61,36 +68,37 @@ You can use the following groups to set up row-level security.
 > [!IMPORTANT]
 > Microsoft 365 groups aren't supported and can't be added to any roles. Only the group types listed above are supported for RLS role membership.
 
- :::image type="content" source="media/service-admin-row-level-security/row-level-security-add-member.png" alt-text="Screenshot showing how to add a member.":::
+ :::image type="content" border="true" source="media/service-admin-row-level-security/row-level-security-add-member.png" alt-text="Screenshot showing how to add a member.":::
 
-You can also see how many members are part of the role by the number in parentheses next to the role name, or next to Members.
+You can see how many members are part of the role by the number in parentheses next to the role name, or next to Members.
 
- :::image type="content" source="media/service-admin-row-level-security/row-level-security-member-count.png" alt-text="Screenshot showing members in role.":::
+ :::image type="content" border="true" source="media/service-admin-row-level-security/row-level-security-member-count.png" alt-text="Screenshot showing members in role.":::
 
 ### Remove members
 
 You can remove members by selecting the X next to their name.
 
- :::image type="content" source="media/service-admin-row-level-security/row-level-security-remove-member.png" alt-text="Screenshot showing how to remove a member.":::
+ :::image type="content" border="true" source="media/service-admin-row-level-security/row-level-security-remove-member.png" alt-text="Screenshot showing how to remove a member.":::
 
 ## Validating the role within the Power BI service
 
-You can validate that the role you defined is working correctly in the Power BI service by testing the role.
+You can validate that the role you defined works correctly in the Power BI service by testing the role.
 
 1. Select **More options** (...) next to the role.
 2. Select **Test as role**.
 
- :::image type="content" source="media/service-admin-row-level-security/row-level-security-test-role.png" alt-text="Screenshot of Test as role option.":::
+ :::image type="content" border="true" source="media/service-admin-row-level-security/row-level-security-test-role.png" alt-text="Screenshot of Test as role option.":::
 
-You're redirected to the report that was published from Power BI Desktop with this semantic model, if it exists. Dashboards aren't available for testing using the  **Test as role** option.
+> [!NOTE]
+> Dashboards aren't available for testing using the **Test as role** option. You're redirected to the report that was published from Power BI Desktop with this semantic model, if one exists.
 
 In the page header, the role being applied is shown. Test other roles, a combination of roles, or a specific person by selecting **Now viewing as**. Here you see important permissions details pertaining to the individual or role being tested. For more information about how permissions interact with RLS, see [RLS user experience](/power-bi/guidance/powerbi-implementation-planning-security-report-consumer-planning#rls-user-experience).
 
- :::image type="content" source="media/service-admin-row-level-security/row-level-security-test-role-2.png" alt-text="Screenshot of Now viewing as dropdown for a specific person.":::
+ :::image type="content" border="true" source="media/service-admin-row-level-security/row-level-security-test-role-2.png" alt-text="Screenshot of Now viewing as dropdown for a specific person.":::
 
 Test other reports connected to the semantic model by selecting **Viewing** in the page header. You can only test reports located in the same workspace as your semantic model.
 
-:::image type="content" source="media/service-admin-row-level-security/row-level-security-test-role-3.png" alt-text="Screenshot of Viewing to select a different report to test.":::
+:::image type="content" border="true" source="media/service-admin-row-level-security/row-level-security-test-role-3.png" alt-text="Screenshot of Viewing to select a different report to test.":::
 
 To return to normal viewing, select **Back to Row-Level Security**.
 
@@ -101,7 +109,7 @@ To return to normal viewing, select **Back to Row-Level Security**.
 
 ## Using RLS with workspaces in Power BI
 
-If you publish your Power BI Desktop report to a [workspace](/power-bi/collaborate-share/service-new-workspaces) in the Power BI service, the RLS roles are applied to members who are assigned to the **Viewer** role in the workspace. Even if  **Viewers** are given Build permissions to the semantic model, RLS still applies. For example, if Viewers with Build permissions use [Analyze in Excel](/power-bi/collaborate-share/service-analyze-in-excel), their view of the data is restricted by RLS. Workspace members assigned **Admin**, **Member**, or **Contributor** have edit permission for the semantic model and, therefore, RLS doesn't apply to them. If you want RLS to apply to people in a workspace, you can only assign them the **Viewer** role. Read more about [roles in workspaces](/power-bi/collaborate-share/service-roles-new-workspaces).
+If you publish your Power BI Desktop report to a [workspace](/power-bi/collaborate-share/service-new-workspaces) in the Power BI service, the RLS roles apply to members assigned the **Viewer** role in the workspace. Even if **Viewers** have Build permissions to the semantic model, RLS still applies. For example, if Viewers with Build permissions use [Analyze in Excel](/power-bi/collaborate-share/service-analyze-in-excel), their view of the data is restricted by RLS. Workspace members assigned **Admin**, **Member**, or **Contributor** have edit permission for the semantic model, so RLS doesn't apply to them. If you want RLS to apply to people in a workspace, you can only assign them the **Viewer** role. Read more about [roles in workspaces](/power-bi/collaborate-share/service-roles-new-workspaces).
 
 [!INCLUDE [include-short-name](../includes/row-level-security-limitations.md)]
 
