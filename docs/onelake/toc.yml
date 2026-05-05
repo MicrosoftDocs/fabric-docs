@@ -28,7 +28,7 @@ items:
     - name: ADLS Gen2 shortcut
       href: create-adls-shortcut.md
     - name: Blob Storage shortcut
-      href: create-blob-shortcut.md
+      href: ./shortcuts/create-blob-shortcut.md
     - name: Dataverse shortcut
       href: create-dataverse-shortcut.md
     - name: OneDrive or SharePoint shortcut
