@@ -37,7 +37,7 @@ You can configure RLS for imported semantic models in Power BI Desktop or the Po
 
 The following examples show common DAX filter expressions you can use when defining RLS roles:
 
-- **Static RLS** ΓÇö Restricts data to a fixed value:
+- **Static RLS** - Restricts data to a fixed value:
 
   ```dax
   [Region] = "West"
@@ -198,7 +198,7 @@ This distinction matters for dynamic RLS. If your user-mapping table stores a di
 
 ### USERNAME() behavior for B2B guests
 
-The `USERNAME()` DAX function returns the user's domain\username identifier. For B2B guest users, this function typically returns the guest's home tenant UPN (for example, `user@partner.com`) rather than a domain\username format. Because `USERNAME()` and `USERPRINCIPALNAME()` often return the same value for B2B guests, most implementations use `USERPRINCIPALNAME()` for consistency.
+The `USERNAME()` DAX function returns the user's domain\username identifier. For B2B guest users, this function often returns a UPN-like identifier similar to USERPRINCIPALNAME(), depending on configuration (for example, `user@partner.com`) rather than a domain\username format. Because `USERNAME()` and `USERPRINCIPALNAME()` often return the same value for B2B guests, most implementations use `USERPRINCIPALNAME()` for consistency.
 
 > [!TIP]
 > If your existing dynamic RLS uses `USERNAME()`, verify what value it returns for guest users in your environment before sharing content externally. You can check by adding a card visual displaying `USERNAME()` in a test report.
@@ -229,7 +229,7 @@ If a B2B guest user sees an empty report or receives a "no data" message, follow
 3. **Check for case sensitivity** - DAX string comparisons are case-insensitive by default, but verify your data source hasn't introduced case-sensitive values.
 4. **Review cross-tenant access settings** - If your organization uses [cross-tenant access policies](/azure/active-directory/external-identities/cross-tenant-access-overview), these can affect which UPN format is presented to Power BI.
 5. **Test with the actual guest user** - The **Test as role** feature uses your own identity. Always validate with the real external guest account.
-6. **Verify role assignment** — If a guest user sees *more* data than expected, confirm they're assigned to an RLS role. Users who aren't assigned to any RLS role see the full unfiltered dataset when they have report access.
+6. **Verify role assignment** — If a guest user sees *more* data than expected, confirm they're assigned to an RLS role. Users who aren't assigned to any RLS role typically see no data (empty results), because RLS is enforced but no matching role is applied.
 
 For more information on sharing Power BI content with external users, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/guidance/whitepaper-azure-b2b-power-bi).
 
