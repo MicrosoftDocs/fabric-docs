@@ -16,7 +16,7 @@ This article explains how to insert and remove blank rows.
 
 ## Insert a blank row
 
-1. Select the row above which you want to insert a blank row.
+1. Select the row underneath the space where you want to insert the blank row. The blank row will be inserted above the selected row.
 1. Hover over the row and select the row gripper.
 1. Select **Insert** > **Add Empty Row**.
 

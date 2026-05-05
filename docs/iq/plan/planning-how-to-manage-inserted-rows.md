@@ -33,7 +33,7 @@ To manage an inserted row:
 * **Delete**: Permanently remove inserted rows.
 * **Show row indicator toggle**: Show or hide the pencil icon displayed next to inserted rows.
 
-    :::image type="content" source="media/planning-how-to-manage-inserted-rows/available-actions.png" alt-text="Screenshot of available actions in manage rows.":::
+    :::image type="content" source="media/planning-how-to-manage-inserted-rows/available-actions.png" alt-text="Screenshot of available actions in manage rows." lightbox="media/planning-how-to-manage-inserted-rows/available-actions.png":::
 
 * **Search and filter**: Search for a particular row category or filter rows based on the type.
 
@@ -43,16 +43,16 @@ To manage an inserted row:
 
 The **Manage Rows** pane includes a **Row Settings** tab that allows you to configure settings for inserted rows.
 
-:::image type="content" source="media/planning-how-to-manage-inserted-rows/row-settings.png" alt-text="Screenshot of row settings and insert row configuration option.":::
+:::image type="content" source="media/planning-how-to-manage-inserted-rows/row-settings.png" alt-text="Screenshot of row settings and insert row configuration option." lightbox="media/planning-how-to-manage-inserted-rows/row-settings.png":::
 
-### Insert row configuration
+### Insert Row Configuration
 
 Use **Insert Row Configuration** to control the types of rows that can be inserted. You can define category-based rules for bulk row insertion.
 
 The following options are available:
 
-* **Text**: See [Text](planning-how-to-insert-rows-data-input.md#insert-a-row-hierarchy).
-* **Distinct Values**: See [Distinct Values](planning-how-to-insert-rows-data-input.md#insert-distinct-values-as-rows).
-* **Disable Insert Row**: See [Disable Insert Row](planning-how-to-insert-rows-data-input.md#disable-row-insertion).
-* **Options list from CSV**: See [Options list from CSV](planning-how-to-insert-rows-data-input.md#upload-rows-from-excel-or-csv).
-* **Allow Blank Values**: See [Allow Blank Values](planning-how-to-insert-rows-data-input.md#allow-blank-values-in-categories).
+* [Text](planning-how-to-insert-rows-data-input.md#insert-a-row-hierarchy)
+* [Distinct Values](planning-how-to-insert-rows-data-input.md#insert-distinct-values-as-rows)
+* [Disable Insert Row](planning-how-to-insert-rows-data-input.md#disable-row-insertion)
+* [Options list from CSV](planning-how-to-insert-rows-data-input.md#upload-rows-from-excel-or-csv)
+* [Allow Blank Values](planning-how-to-insert-rows-data-input.md#allow-blank-values-in-categories)

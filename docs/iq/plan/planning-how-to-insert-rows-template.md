@@ -16,7 +16,7 @@ This article explains how to insert template rows and use them across hierarchy 
 
 ## Create a template row
 
-1. Select the row above which you want to insert the template row.
+1. Select the row underneath the space where you want to insert the template row. The template row will be inserted above the selected row.
 1. Go to **Planning** > **Insert Row** > **Data Input** and select **Number**, or select the **row gripper**, then choose **Insert** > **Data Input**.
 1. In the **Static Row** pane, select **Templated**, enter a title, and configure values as needed:
 
@@ -31,27 +31,27 @@ This article explains how to insert template rows and use them across hierarchy 
 1. Finally, select **Create** to insert the row across all hierarchy levels.
 
 > [!NOTE]
->Formula (calculated) rows can also be created as template rows by selecting **Planning** > **Insert Row** > **Formula**. Alternatively, set the **Row Type** to *Formula* in the side pane above.
+>You can also create formula (calculated) rows as template rows, by selecting **Planning** > **Insert Row** > **Formula**. Alternatively, set the **Row Type** to *Formula* in the side pane shown in the images.
 
 ## Configure template row properties
 
-Configure other properties for template rows, such as **Scaling Factor**, **Include in total**, **Distribute parent value to children**, and **Allow input**. For more information, see [row properties](planning-how-to-insert-rows-data-input.md#data-input-row-properties).
+Configure other properties for template rows, such as **Scaling Factor**, **Include in total**, **Distribute parent value to children**, and **Allow input**. For more information, see [Row properties](planning-how-to-insert-rows-data-input.md#data-input-row-properties).
 
 You can also configure the following settings for template rows:
 
-* **Row position**: Defines where the row appears at each category level. By default, it is set to *Auto.*
+* **Row position**: Defines where the row appears at each category level. By default, it's set to *Auto*.
     * **Auto**: Creates the template row above the selected row.
     * **First**: Creates the template row at the top of each category level.
     * **Last**: Creates the template row at the bottom of each category level.
     
-    :::image type="content" source="media/planning-how-to-insert-rows-template/template-row-properties.png" alt-text="Screenshot of row position in template row properties." :::
+    :::image type="content" source="media/planning-how-to-insert-rows-template/template-row-properties.png" alt-text="Screenshot of row position in template row properties." lightbox="media/planning-how-to-insert-rows-template/template-row-properties.png":::
 
 ## Edit or delete a template row
 
-* Use the row gripper and select the Edit or Delete Row options.
+* Use the row gripper and select the **Edit** or **Delete Row** options.
 * Or go to **Insert Row** > **Manage Rows** > **Template Rows**, hover over the created row, and choose the appropriate action through the icons.
 
-    :::image type="content" source="media/planning-how-to-insert-rows-template/edit-delete-template-row.png" alt-text="Screenshot of editing or deleting a template row." :::
+    :::image type="content" source="media/planning-how-to-insert-rows-template/edit-delete-template-row.png" alt-text="Screenshot of editing or deleting a template row." lightbox="media/planning-how-to-insert-rows-template/edit-delete-template-row.png":::
 
 ## Conditional template rows
 
@@ -60,7 +60,7 @@ Template conditions can be configured to control which parent categories and lev
 1. In the **Static Row** window > **Template conditions** section, select **Configure**.
 1. In the **Set Template Conditions** window, specify where the template rows should be applied by choosing the required categories, and select **Apply**.
 
-    :::image type="content" source="media/planning-how-to-insert-rows-template/set-template-conditions.png" alt-text="Screenshot of setting a template condition" :::
+    :::image type="content" source="media/planning-how-to-insert-rows-template/set-template-conditions.png" alt-text="Screenshot of setting a template condition" lightbox="media/planning-how-to-insert-rows-template/set-template-conditions.png":::
 
 1. Use this to restrict or allow specific hierarchy levels to get the template rows.
 
@@ -74,14 +74,14 @@ Plan provides a dynamic referencing feature that lets you reference a sibling’
 
 ### Create a dynamic reference in template rows
 
-1. Select the row above which you want to insert the template row.
+1. Select the row underneath the space where you want to insert the template row. The template row will be inserted above the selected row.
 1. Go to **Planning** > **Insert Row** and select **Formula**, or use the **row gripper** > **Insert > Formula**.
 1. In the **Calculated Row** window, select **Templated** and enter a title.
 1. Define a formula by using **References** to source values from a sibling row.
 
-    In the example below, a template row named *Cocktails* references the value of *Soda* under the *Beverages* category.
+    In the following example, a template row named *Cocktails* references the value of *Soda* under the *Beverages* category.
 
-    :::image type="content" source="media/planning-how-to-insert-rows-template/dynamic-reference-row.png" alt-text="Screenshot of configuring dynamic reference row." :::
+    :::image type="content" source="media/planning-how-to-insert-rows-template/dynamic-reference-row.png" alt-text="Screenshot of configuring dynamic reference row." lightbox="media/planning-how-to-insert-rows-template/dynamic-reference-row.png":::
 
     The referenced value is applied across all sibling categories within the same *Sub Region*. For sub-regions such as *APAC* and *EMEA*, the *Cocktails* row dynamically retrieves the value of the *Soda* subcategory within each respective sub-region.
 

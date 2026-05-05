@@ -12,10 +12,10 @@ Create row-level forecasts to predict outcomes at a detailed level, such as by r
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-> [!NOTE]
->The **Forecast** row option is only available when the report contains forecast measures. For more information, see [forecast measures](planning-forecasting/planning-how-to-build-forecasts.md).
-
 This article explains how to create and configure forecast rows.
+
+> [!NOTE]
+>The **Forecast** row option is only available when the report contains forecast measures. For more information, see [Forecast measures](planning-forecasting/planning-how-to-build-forecasts.md).
 
 ## Insert a forecast row
 
@@ -34,13 +34,13 @@ This article explains how to create and configure forecast rows.
 The following options can be configured while creating a forecast row:
 
 * **Row name**: Specifies the label for the forecast row.
-* **Insert As**:
+* **Insert As**: Choose one of the following options.
     * **Single Row**: Inserts a single forecast row.
     * **Templated Row**: Replicates the forecast row across all hierarchy levels.
     
     :::image type="content" source="media/planning-how-to-insert-rows-forecast/insert-as.png" alt-text="Screenshot of configuring row name and insert as option.":::
 
-* **Closed period**: Populate past or closed periods by:
+* **Closed period**: Populate past or closed periods by choosing one of the following options.
     * Referencing another row: Select **Linked Row** in **Closed Period** and choose the row you want to refer.
     
       :::image type="content" source="media/planning-how-to-insert-rows-forecast/linked-row.png" alt-text="Screenshot of configuring closed period through linked row option.":::
@@ -49,7 +49,7 @@ The following options can be configured while creating a forecast row:
     
       :::image type="content" source="media/planning-how-to-insert-rows-forecast/formula.png" alt-text="Screenshot of configuring closed period through formula option.":::
 
-* **Open period**: Populate future periods using one of the following:
+* **Open period**: Populate future periods using one of the following options.
     * **Linked row**: Reference values from another row.
     
       :::image type="content" source="media/planning-how-to-insert-rows-forecast/open-period.png" alt-text="Screenshot of options available in open period":::
@@ -79,7 +79,7 @@ The forecast range can be configured using one of the following options:
 
     :::image type="content" source="media/planning-how-to-insert-rows-forecast/multiple-time-range.png" alt-text="Screenshot of configuring multiple forecast range":::
 
-When you split the forecast period, ensure that all time ranges together cover the entire forecasting duration. Otherwise, the forecast cannot be created.
+    When you split the forecast period, ensure that all time ranges together cover the entire forecasting duration. Otherwise, the forecast cannot be created.
 
 ## Configure forecast source
 
@@ -104,7 +104,7 @@ When you split the forecast period, ensure that all time ranges together cover t
 
 Edit an existing forecast row by selecting the edit icon on the row. The side pane opens where the following properties can be updated:
 
-:::image type="content" source="media/planning-how-to-insert-rows-forecast/edit-update.png" alt-text="Screenshot of the side pane when editing a forecast row.":::
+:::image type="content" source="media/planning-how-to-insert-rows-forecast/edit-update.png" alt-text="Screenshot of the side pane when editing a forecast row." lightbox="media/planning-how-to-insert-rows-forecast/edit-update.png":::
 
 * Edit the **Title** as needed.
 * Reconfigure **Period Settings** to update forecast values for closed and open periods.
@@ -112,4 +112,4 @@ Edit an existing forecast row by selecting the edit icon on the row. The side pa
 
 For more information, see [data input row properties](planning-how-to-insert-rows-data-input.md#data-input-row-properties). After making the required changes, select **Update**.
 
-:::image type="content" source="media/planning-how-to-insert-rows-forecast/edit-update-more-options.png" alt-text="Screenshot of the side pane with more options when editing a forecast row.":::
+:::image type="content" source="media/planning-how-to-insert-rows-forecast/edit-update-more-options.png" alt-text="Screenshot of the side pane with more options when editing a forecast row." lightbox="media/planning-how-to-insert-rows-forecast/edit-update-more-options.png":::

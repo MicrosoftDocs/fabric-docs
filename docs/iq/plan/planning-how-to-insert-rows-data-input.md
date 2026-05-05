@@ -20,8 +20,8 @@ This article explains how to insert data input rows and enter values directly in
 
 Insert a data input row using either of the following methods:
 
-* From the Planning tab
-* Using row gripper
+* [From the Planning tab](#from-the-planning-tab)
+* [Using row gripper](#using-the-row-gripper)
 
 ### From the Planning tab
 
@@ -36,13 +36,13 @@ Insert a data input row using either of the following methods:
 1. Hover over a row to highlight the **row gripper** icon.
 1. Select the gripper and choose **Insert** > **Data Input**.
 
-:::image type="content" source="media/planning-how-to-insert-rows-data-input/steps-insert-row-row-gripper.png" alt-text="Screenshot of inserting data input rows using row gripper.":::
+    :::image type="content" source="media/planning-how-to-insert-rows-data-input/steps-insert-row-row-gripper.png" alt-text="Screenshot of inserting data input rows using row gripper.":::
 
-A side pane opens where you can configure row properties.
+    A side pane opens where you can configure row properties.
 
-:::image type="content" source="media/planning-how-to-insert-rows-data-input/side-pane-row-properties.png" alt-text="Screenshot of row properties side pane." :::
+    :::image type="content" source="media/planning-how-to-insert-rows-data-input/side-pane-row-properties.png" alt-text="Screenshot of row properties side pane." lightbox="media/planning-how-to-insert-rows-data-input/side-pane-row-properties.png":::
 
-Enter a name in the **Title** field and select **Create**. The system adds an empty row with default properties at the selected level.
+1. Enter a name in the **Title** field, configure additional settings as needed (described in the following sections), and select **Create**. The system adds an empty row with default properties at the selected level.
 
 Before you select **Create**, you can modify default row properties by configuring additional settings. The following sections describe these settings.
 
@@ -72,15 +72,15 @@ Before you select **Create**, you can modify default row properties by configuri
     
     :::image type="content" source="media/planning-how-to-insert-rows-data-input/include-in-total-default-value.jpg" alt-text="Screenshot of configuring include in total, distribute parent value to children and default value." lightbox="media/planning-how-to-insert-rows-data-input/include-in-total-default-value.jpg":::
 
-* **Bind for cross filter/RLS**: Enable **Bind for Cross filter/RLS** to ensure that cross-filter selections and row-level security (RLS) rules are applied to formula rows and data input rows that reference other rows. [Learn more about binding rows](planning-how-to-insert-rows-formula.md#configure-formula-row-properties).
+* **Bind for cross filter/RLS**: Enable **Bind for Cross filter/RLS** to ensure that cross-filter selections and row-level security (RLS) rules are applied to formula rows and data input rows that reference other rows. For more information about binding rows, see [Configure formula row properties](planning-how-to-insert-rows-formula.md#configure-formula-row-properties).
 
-    :::image type="content" source="media/planning-how-to-insert-rows-data-input/bind-for-cross-filter.png" alt-text="Screenshot of configuring bind for cross filter/RLS.":::
+    :::image type="content" source="media/planning-how-to-insert-rows-data-input/bind-for-cross-filter.png" alt-text="Screenshot of configuring bind for cross filter/RLS." lightbox="media/planning-how-to-insert-rows-data-input/bind-for-cross-filter.png":::
 
     > [!NOTE]
     >If the **Bind for cross filter/RLS option** is disabled, a manager responsible for *Canada* accounts might see a manually inserted row that references *US* data.
 
-* **Delete a static row**: Hover over the row, select the row gripper, and then select **Delete Row**.\
-  Alternatively, delete rows from [**Manage Rows**](planning-how-to-manage-inserted-rows.md) interface.
+* **Delete a static row**: Hover over the row, select the row gripper, and then select **Delete Row**.
+  Alternatively, delete rows from the [Manage Rows](planning-how-to-manage-inserted-rows.md) interface.
 
     :::image type="content" source="media/planning-how-to-insert-rows-data-input/delete-row.png" alt-text="Screenshot of deleting a row." :::
 
@@ -94,8 +94,9 @@ You can bulk insert leaf-level rows or row hierarchies by using the **Insert Row
 
 ### Insert rows
 
-1. Select any child row or the parent row under which you want to create new rows.
+1. Select any child row or the parent row under which you want to create new rows. The new rows will be created below the selected row.
 1. Use the row gripper and select **Insert** > **Insert Row(s)**, or go to **Planning** > **Insert Row** > **Data Input** > **Insert Row(s)**.
+
     :::image type="content" source="media/planning-how-to-insert-rows-data-input/steps-bulk-insert-row-gripper.png" alt-text="Screenshot of bulk inserting rows using row gripper.":::
 
     :::image type="content" source="media/planning-how-to-insert-rows-data-input/steps-bulk-insert-planning-tab.png" alt-text="Screenshot of bulk inserting rows using Planning tab." lightbox="media/planning-how-to-insert-rows-data-input/steps-bulk-insert-planning-tab.png":::
@@ -104,7 +105,7 @@ You can bulk insert leaf-level rows or row hierarchies by using the **Insert Row
 1. To insert another row, select **Add New** or use the **+ icon** next to the parent category.
     :::image type="content" source="media/planning-how-to-insert-rows-data-input/bulk-inserting-rows.png" alt-text="Screenshot of bulk inserting rows." lightbox="media/planning-how-to-insert-rows-data-input/bulk-inserting-rows.png":::
 
-1. To insert multiple rows at once, use the dropdown next to **Add New** and choose whether you want to insert **1, 5**, or **10 rows**.
+1. To insert multiple rows at once, use the dropdown next to **Add New** and choose whether you want to insert **1**, **5**, or **10 rows**.
 1. Enter row names and select **Save**.
 
 You can also specify row dimensions for the new rows by selecting the icon in the **Insert Row(s) window**.
@@ -121,7 +122,7 @@ To insert a hierarchy of rows:
 
 :::image type="content" source="media/planning-how-to-insert-rows-data-input/insert-row-hierarchy.png" alt-text="Screenshot of inserting row hierarchy." lightbox="media/planning-how-to-insert-rows-data-input/insert-row-hierarchy.png":::
 
-Overwriting is only allowed when the row type is set to **Text** in **Insert Row >** **Manage Rows > Row Settings >** [**Insert Row Configuration**](planning-how-to-manage-inserted-rows.md#insert-row-configuration).
+Overwriting is only allowed when the row type is set to **Text** in **Insert Row >** **Manage Rows > Row Settings >** **Insert Row Configuration**. For more information, see [Insert Row Configuration](planning-how-to-manage-inserted-rows.md#insert-row-configuration).
 
 :::image type="content" source="media/planning-how-to-insert-rows-data-input/insert-row-configuration.png" alt-text="Screenshot of insert row configuration window." :::
 
@@ -139,7 +140,7 @@ By default, this toggle is disabled. The blank categories are highlighted in a r
 By enabling this option, you can insert row hierarchies that contain blank leaf categories.
 
 > [!NOTE]
->You cannot create a blank parent node if the child nodes contain values.
+>You can't create a blank parent node if the child nodes contain values.
 
 ## Disable row insertion
 
