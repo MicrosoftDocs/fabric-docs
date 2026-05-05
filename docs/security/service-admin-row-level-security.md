@@ -198,7 +198,7 @@ This distinction matters for dynamic RLS. If your user-mapping table stores a di
 
 ### USERNAME() behavior for B2B guests
 
-The `USERNAME()` DAX function returns the user's domain\username identifier. For B2B guest users, this function often returns a UPN-like identifier similar to USERPRINCIPALNAME(), depending on configuration (for example, `user@partner.com`) rather than a domain\username format. Because `USERNAME()` and `USERPRINCIPALNAME()` often return the same value for B2B guests, most implementations use `USERPRINCIPALNAME()` for consistency.
+The `USERNAME()` DAX function returns the user's domain\username identifier. For B2B guest users, this function typically often returns a UPN-like identifier similar to USERPRINCIPALNAME(), depending on configuration (for example, `user@partner.com`) rather than a domain\username format. Because `USERNAME()` and `USERPRINCIPALNAME()` often return the same value for B2B guests, most implementations use `USERPRINCIPALNAME()` for consistency.
 
 > [!TIP]
 > If your existing dynamic RLS uses `USERNAME()`, verify what value it returns for guest users in your environment before sharing content externally. You can check by adding a card visual displaying `USERNAME()` in a test report.
@@ -246,4 +246,3 @@ For more information on sharing Power BI content with external users, see [Distr
 
 Questions? [Try asking the Power BI Community](https://community.powerbi.com/)
 Suggestions? [Contribute ideas to improve Power BI](https://ideas.powerbi.com/)
-
