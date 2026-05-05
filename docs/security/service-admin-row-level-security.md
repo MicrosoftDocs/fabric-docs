@@ -28,6 +28,9 @@ You can configure RLS for imported semantic models in Power BI Desktop or the Po
 > [!NOTE]
 > This article covers RLS for Power BI semantic models specifically. For data security in other Fabric items, see [Security in Microsoft Fabric](/fabric/security/security-overview).
 
+> [!NOTE]
+> For Direct Lake semantic models in Microsoft Fabric, RLS is supported. However, if a DAX query falls back to DirectQuery mode due to unsupported features, RLS filters still apply but performance characteristics may change. Monitor query fallback behavior in the Fabric capacity metrics app.
+
 [!INCLUDE [include-short-name](../includes/row-level-security-desktop-define-roles.md)]
 
 ### Common DAX filter patterns
@@ -52,7 +55,16 @@ The following examples show common DAX filter expressions you can use when defin
   [UserDomain] = USERNAME()
   ```
 
-Dynamic RLS is the most common approach because it allows a single role definition to filter data differently for each user, based on a user-mapping table in your data model.
+- **Dynamic RLS with CUSTOMDATA** — Restricts data based on a custom string passed from the embedding application:
+
+  ```dax
+  [AppRole] = CUSTOMDATA()
+  ```
+
+  > [!NOTE]
+  > `CUSTOMDATA()` is primarily used in embedded scenarios where the application passes a custom effective identity string via the Power BI REST API.
+
+Dynamic RLS is the most common approachbecause it allows a single role definition to filter data differently for each user, based on a user-mapping table in your data model.
 
 ### Bi-directional cross-filtering
 
@@ -163,7 +175,6 @@ If you publish your Power BI Desktop report to a [workspace](/power-bi/collabora
 ## Related content
 
 - [Restrict data access with row-level security (RLS) for Power BI Desktop](/power-bi/guidance/rls-guidance)
-- [Row-level security (RLS) guidance in Power BI Desktop](/power-bi/guidance/rls-guidance)
 - [Power BI implementation planning: Report consumer security planning](/power-bi/guidance/powerbi-implementation-planning-security-report-consumer-planning#enforce-data-security-based-on-consumer-identity)
 - [RLS for Embedded scenarios for ISVs](/power-bi/developer/embedded/embedded-row-level-security)
 
