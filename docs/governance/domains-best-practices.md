@@ -1,8 +1,8 @@
 ---
 title: Best practices for planning and creating domains in Microsoft Fabric
 description: Discover best practices to consider when creating domains for your organization.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: best-practice
 ms.date: 10/15/2024
 ---

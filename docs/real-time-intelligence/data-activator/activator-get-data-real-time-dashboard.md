@@ -1,14 +1,13 @@
 ---
 title: Create Activator alerts from a Real-Time Dashboard
 description: Learn how to create an Activator alert from a Real-Time Dashboard and receive real-time notifications when conditions are met.
-author: spelluru
-ms.author: spelluru
 ms.topic: how-to
 ms.reviewer: guregini
 ms.custom: FY25Q1-Linter
-ms.date: 09/15/2024
+ms.date: 04/17/2026
+ai-usage: ai-assisted
 ms.search.form: Real-Time Dashboard
-#Customer intent: As a customer, I want to learn how to create Activator alerts from a Real-Time Dashboard so that I can trigger notifications when conditions are met on daa in the dashboard.
+#Customer intent: As a customer, I want to learn how to create Activator alerts from a Real-Time Dashboard so that I can trigger notifications when conditions are met on data in the dashboard.
 ---
 # Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts for a Real-Time Dashboard
 
@@ -25,62 +24,159 @@ Use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to trigger no
 
 ## Create an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule using **Set alert**
 
-1. Open a Real-Time Dashboard.
-1. Toggle from **viewing** to **editing** mode in the toolbar.
-1. Choose a tile on the Real-Time Dashboard for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to monitor.
-1. Select the **More menu (...)** at the top-right of the tile, and choose **Set Alert**. You can also use the *Set Alert* button in the Real-Time Dashboard menu bar.
+Open a Real-Time Dashboard and then do either of the following steps:
 
-:::image type="content" source="media/activator-get-data/data-activator-get-data-06.png" alt-text="Screenshot showing how to add an Activator rule from a tile.":::
+1. From the ribbon menu bar:
+    1. Set alerts by selecting the *Set alert* button.
+        :::image type="content" source="media/activator-get-data/ribbon-button.png" alt-text="Screenshot showing how to add an Activator rule from the ribbon menu bar." lightbox="media/activator-get-data/ribbon-button.png":::
+
+    1. In the popup window, choose the tile you want to monitor and then select **Select** to open the side pane.
+        :::image type="content" source="media/activator-get-data/ribbon-popup.png" alt-text="Screenshot of the popup window with the list of tiles to create an Activator rule." lightbox="media/activator-get-data/ribbon-popup.png":::
+
+1. From the tile:
+    1. Choose a tile on the Real-Time Dashboard for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to monitor.
+    1. Select **Set Alert** from the tile's toolbar or in the **More menu (...)** at the top-right of the tile.
+
+        :::image type="content" source="media/activator-get-data/set-alerts.png" alt-text="Screenshot showing how to add an Activator rule from a tile." lightbox="media/activator-get-data/set-alerts.png":::
 
 ## Define the [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alert conditions
 
-In the **Set alert** pane, define your rule conditions. Rule conditions include deciding which field to monitor and setting the threshold. Select whether to receive your notification in email or in Microsoft Teams. Set the location to save this [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule and select **Create**.
+### Details section
 
-:::image type="content" source="media/activator-get-data/data-activator-get-data-07.png" alt-text="Screenshot of create an alert window in Activator.":::
+In the **Set alert** pane, enter a name for your rule.
+:::image type="content" source="media/activator-get-data/details.png" alt-text="Screenshot of details section in the create an alert pane." lightbox="media/activator-get-data/details.png":::
 
-## Optional: Edit your rule in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
+### Monitor section
+
+Select how often you want [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to run the query. The default value is every 5 minutes.
+
+:::image type="content" source="media/activator-get-data/monitor.png" alt-text="Screenshot of create an alert window in Activator, monitor highlighted." lightbox="media/activator-get-data/monitor.png":::
+
+### Condition section
+
+Define your rule conditions as follows:
+
+* If your visualization has no dimensions, select the **On each event when** condition to monitor changes in the data stream by choosing a specific field to monitor.
+* If your visualization includes dimensions, select the **On each event grouped by** condition to monitor changes in the data stream by selecting a field for grouping, which divides the data into distinct groups.
+
+1. In the **When** dropdown, select the value to evaluate.
+1. In the **Condition** dropdown, select the condition to meet. For more information, see [Conditions](activator-detection-conditions.md#conditions).
+1. In the **Occurrence** dropdown, set the number of times the condition must be met to trigger the alert.
+
+:::image type="content" source="media/activator-get-data/condition.png" alt-text="Screenshot of create an alert window in Activator, save condition highlighted." lightbox="media/activator-get-data/condition.png":::
+
+### Action section
+
+In the **Action** section, select one of the following actions to take when the alert is triggered:
+
+* **Send email**:
+    1. For **Select action**, choose **Send email**.
+    1. For **To**, enter the email address of the recipient or use the dropdown to select from a list of users in your organization. By default, your email address is populated there.
+    1. For **Subject**, enter the subject of the email notification.
+    1. For **Headline**, enter the headline of the email notification.
+    1. For **Notes**, enter any additional information you want to include in the email notification.
+        >[!NOTE]
+        > When entering the subject, headline, or notes, you can refer to properties in the data by typing `@` or by selecting the button next to the text boxes. For example, `@BikepointID`.
+    1. For **Context**, select the values from the dropdown list you want to include in the email notification.
+
+    :::image type="content" source="media/activator-get-data/action-email.png" alt-text="Screenshot of the Send email notification section in the Add Rule side pane.":::
+
+* **Send Microsoft Teams notification**:
+    1. For **Select action**, select **Teams** --> **Message to individuals** or **Group chat message**, or **Channel post**.
+    1. Follow one of these steps depending on your selection:
+        * If you selected the **Message to individuals** option, enter **email addresses** of receivers or use the drop-down list to select a property whose value is an email address. When the condition is met, a Teams message is sent to the specified individuals.
+        * If you selected the **Group chat message** option, select a **group chat** from the drop-down list. When the condition is met, a message is posted to the group chat.
+        * If you selected the **Channel post** option, select a **team** and **channel** from the drop-down lists. When the condition is met, a message is posted to the selected channel.
+    1. For **Headline**, enter the headline of the Teams notification.
+    1. For **Notes**, enter notes for the Teams notification.
+        >[!NOTE]
+        > When entering subject, headline, or notes, you can refer to properties in the data by typing `@` or by selecting the button next to the text boxes. For example, `@BikepointID`.
+    1. For **Context**, select the values from the drop-down list you want to include in the Teams notification.
+
+    :::image type="content" source="media/activator-get-data/action-teams.png" alt-text="Screenshot of the Send Microsoft Teams notification section in the Add Rule side pane.":::
+
+* **Run Fabric activities**:
+    To configure the alert to launch a Fabric pipeline, Dataflow, Spark job, notebook, or User Data Function when the condition is met, follow these steps:
+    1. For **Select action**, select **Run Pipeline**, **Run Dataflow**, **Run Spark job**, **Run Notebook**, or **Run User Data Function (preview)**.
+    1. On Select Fabric item to run, select the Fabric item (pipeline, dataflow, notebook, Spark job, or function) from the list.
+    1. Select Add parameter and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter.
+    You can pass parameters from the alert data by typing `@` or by selecting the button next to the text box. For example, `@BikepointID`.
+        :::image type="content" source="media/activator-get-data/fabric-activities.png" alt-text="Screenshot of the Run Fabric activities section in the Add Rule side pane.":::
+  * **Custom actions**:
+      To configure the alert to call a custom action when the condition is met, follow these steps:
+      1. For **Select action**, select **Create custom action**.
+
+          :::image type="content" source="media/activator-get-data/custom-action.png" alt-text="Screenshot of the Create custom action section in the Add Rule side pane.":::
+
+      1. As mentioned in the Action section, create the rule first, and then complete the custom action setup by following steps from [Trigger custom actions (Power Automate flows)](activator-trigger-power-automate-flows.md).
+      1. After you create the custom action, in the **Definition** pane of the rule, select the custom action you created from the **Action** drop-down list.
+
+### Save location section
+
+Set the location to save this [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule and select **Create**.
+
+:::image type="content" source="media/activator-get-data/save.png" alt-text="Screenshot of create an alert window in Activator, save location highlighted.":::
+
+## Modify your rule in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
 
 When your rule is ready, you receive a notification with a link to your rule. Select the link to edit your rule in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. Editing your rule is useful if you want to do one of the following refinements:
 
 * Add other recipients to your alert.
-* Define a more complex alert condition than is possible in the *Set alert* pane.
+* Define a more complex alert condition than is possible in the **Set alert** pane.
 
 For information on how to edit rules in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], see [Create activators in design mode](activator-create-activators.md).
 
+## Limitations for setting alerts
+
+When you create alerts, remember that you can only set alerts on specific types of visuals.
+The following visuals aren't supported:
+
+* Tables
+* Maps
+* Funnel charts
+* Anomalies
+* Scatter charts
+* Markdowns
+* Heatmaps
+* Time charts (as described in the next section)
+
+> [!NOTE]
+> These limitations apply to Real-Time Dashboard visuals. For alerts on table visuals in published Power BI reports, see [Create an alert in Power BI report](activator-get-data-power-bi.md).
+
 ## Limitations on charts with a time axis
 
-If you have a chart with a time axis in Power BI or in a Real-Time Dashboard, then [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] reads the measure value exactly once for each point on the time axis. If the measured value for a given time point changes after [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] reads it, then [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] ignores the changed value.
+If you use a chart with a time axis in Power BI or in a Real-Time Dashboard, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] reads the measure value exactly once for each point on the time axis. If the measured value for a given time point changes after [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] reads it, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] ignores the changed value.
 
 ### Limitation example
 
-The following example illustrates this limitation. In this example, a chart shows the number of items sold over time. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] first reads the chart in the morning of January 3. At this time, the chart shows 10 items sold:
+The following example illustrates this limitation. In this example, a chart shows the number of bikes sold. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] first reads the chart in the morning of January 3. At this time, the chart shows 10 bikes sold:
 
-|Date        | Number of items sold
+|Date        | Number of bikes sold
 |------------|---------------------
 |1 January   |20
 |2 January   |18
 |3 January   |10
 
-Later in the day of January 3, more items are sold. The chart updates to reflect this change, and the number of items sold now reads 15:
+Later in the day of January 3, more bikes are sold. The chart updates to reflect this change, and the number of bikes sold now reads 15:
 
-|Date        | Number of items sold
+|Date        | Number of bikes sold
 |------------|---------------------
 |1 January   |20
 |2 January   |18
 |3 January   |15 *(changed from earlier in the day)*
 
-[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] ignores the changed value, because it has already read a value of 10 earlier in the day.
+[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] ignores the changed value, because it already read a value of 10 earlier in the day.
 
 ### How to work around this limitation
 
-The most common reason that a measure value can change over time is that the most recent point on the time axis is subject to change. In the example, the number of sales increases throughout the day. The number of items sold on previous days never changes, because these dates are in the past. To avoid this limitation:
+The most common reason that a measure value changes over time is that the most recent point on the time axis can change. In the example, the number of sales increases throughout the day. The number of items sold on previous days never changes, because these dates are in the past. To avoid this limitation:
 
-1. **Exclude the current date/time from the chart**, so that this value isn't sampled while it's still subject to change.
+1. **Exclude the current date and time from the chart**, so that the value isn't sampled while it's still subject to change.
 
       * Add a relative time filter to your chart to exclude the current date or time from your chart. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] sees the value only after it's final for the period of time being measured, and no longer subject to change.
-      * Add a time filter where the time range ends at 'one bin before' the current time. So, the last bin sampled by [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is already "closed" and doesn't change.
+      * Add a time filter where the time range ends at "one bin before" the current time. So, the last bin sampled by [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is already "closed" and doesn't change.
 
-        ```kusto 
+        ```kusto
         TableForReflex
         | where YourTimeColumn between (ago(5h)..bin(now(), 1h))
         | summarize count() by bin(YourTimeColumn, 1h)

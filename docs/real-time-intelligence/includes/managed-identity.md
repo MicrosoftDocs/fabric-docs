@@ -1,6 +1,4 @@
 ---
-author: shsagir
-ms.author: shsagir
 ms.topic: include
 ms.date: 01/31/2024
 ---

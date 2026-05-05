@@ -1,14 +1,9 @@
 ---
 title: Git source code format
 description: This article describes the format of items in Microsoft Fabric's Git integration tool and how they're structured in the folder.
-author: billmath
-ms.author: billmath
 ms.reviewer: NimrodShalit
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 01/23/2025
-ms.custom: 
+ms.date: 12/15/2025
 #customer intent: As a developer, I want to understand how the items in Microsoft Fabric's Git integration tool are structured so that I can use it effectively.
 ---
 
@@ -55,12 +50,13 @@ The following items are currently supported in Microsoft Fabric:
 - [Paginated report](#paginated-report-files)
 - [Report](#report-files)
 - [Semantic model](#semantic-model-files)
+- [User data functions](#user-data-functions-files)
 
 #### Mirrored databases
 
 Mirrored database folders contain a *.json* file defining the mirrored database.
 
-For instructions on using Git integration with mirrored databases, see [CI/CD for mirrored databases](../../database/mirrored-database/mirrored-database-cicd.md#mirrored-database-git-integration).
+For instructions on using Git integration with mirrored databases, see [CI/CD for mirrored databases](../../mirroring/mirrored-database-cicd.md#mirrored-database-git-integration).
 
 #### Notebook files
 
@@ -92,6 +88,16 @@ Semantic model folders contain the following files:
 - \definition folder with TMDL files
 
 For more information about semantic model folders and a complete list of their contents, see [Power BI Desktop project semantic model folder](/power-bi/developer/projects/projects-dataset).
+
+#### User data functions files
+
+User data functions folders contain the following files:
+
+- **function-app.py** - Your Python function code. This is the main file you edit.
+- **definitions.json** - Item definitions such as connections and library references.
+- **resources/functions.json** - Metadata about connections, libraries, and functions within the item. Don't edit this file manually.
+
+For instructions on using Git integration with user data functions, see [User data functions source control and deployment](../../data-engineering/user-data-functions/git-and-deployment-pipelines.md).
 
 ### Automatically generated system files
 
@@ -132,7 +138,7 @@ The `.platform` file contains the following attributes:
 - `displayName`: (string) The name of the item.
 - `description`: (optional string) Description of the item.
 
-To rename an item, change the `displayName`. Changing the name of the folder doesn’t change the display name of the item in the workspace.
+ If you rename the artifact in the workspace and the artifact folder in Git has a '.' suffix, then after committing, the `displayName` and directory name in Git will match.
 
 The logicalId connects an item in a workspace with its corresponding item in a Git branch. Items with the same logicalIds are assumed to be the same. The logicalId preserves the link even if the name or directory change. Since a branch can be synced to multiple workspaces, it’s possible to have items in different workspaces with the same logicalId, but a single workspace can’t have two items with the same logicalId. The logicalId is created when the workspace is connected to a Git branch or a new item is synced. The logicalId is necessary for Git integration to function properly. Therefore, it’s essential not to change it in any way.
 

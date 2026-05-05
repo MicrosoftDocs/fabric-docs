@@ -1,12 +1,9 @@
 ---
 title: Quick start - Run a sample workload
 description: Create a Microsoft Fabric workload using a sample workload and the instructions in this quickstart tutorial.
-author: KesemSharabi
-ms.author: kesharab
-ms.topic: quickstart  #Don't change
-ms.custom:
-ms.date: 04/09/2025
-# Customer intent: Run a workload sample to get a five minute to 'wow' experience.
+ms.topic: quickstart
+ms.date: 04/29/2026
+#customer intent: Run a workload sample to get a five minute to 'wow' experience.
 ---
 
 # Quickstart - Run a workload sample
@@ -176,10 +173,10 @@ The rest of the steps in this quickstart are performed in Visual Studio. Use thi
 
 2. In PowerShell, run the command: `.\Microsoft.Fabric.Workload.DevGateway.exe`. When the output shows the message *info: DevGateway started*. the workload is running successfully.
 
-    If you saved the `workload-dev-mode.json` file from [step 10](#step-10-copy-to-your-local-drive) to a specific folder, run the command with `DevMode`.
+    If you saved the `workload-dev-mode.json` file from [step 10](#step-10-copy-to-your-local-drive) to a specific folder, run the command with the `DevMode:LocalConfigFilePath` parameter.
 
     ```powershell
-    .\Microsoft.Fabric.Workload.DevGateway.exe -DevMode:<path_to_config_json_path>
+    .\Microsoft.Fabric.Workload.DevGateway.exe -DevMode:LocalConfigFilePath <path_to_config_json_path>
     ```
 
 ## Step 13: Open the sample workload in Fabric

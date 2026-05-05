@@ -1,12 +1,11 @@
 ---
 title: Microsoft Exchange Online connector overview
 description: This article provides an overview of the supported capabilities of the Microsoft Exchange Online connector.
-author: DougKlopfenstein
-ms.author: dougklo
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Microsoft Exchange Online connector overview
@@ -14,10 +13,12 @@ ms.custom:
 The Microsoft Exchange Online connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-For information on how to connect to Microsoft Exchange Online in Dataflow Gen2, go to [Set up your Microsoft Exchange Online connection](connector-microsoft-exchange-online.md).
+| Supported capabilities | Gateway | Authentication |
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-) | None | Organizational account |
 
-## Support in data pipelines
+## Related content
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Microsoft Exchange Online in data pipelines.
+For information on how to connect to Microsoft Exchange Online, go to [Set up your Microsoft Exchange Online connection](connector-microsoft-exchange-online.md).

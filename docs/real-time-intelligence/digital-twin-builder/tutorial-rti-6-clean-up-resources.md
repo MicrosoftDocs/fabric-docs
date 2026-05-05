@@ -1,9 +1,7 @@
 ---
-title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial: Clean up resources'
+title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial part 6: Clean up resources'
 description: Delete resources created during the Digital twin builder (preview) in Real-Time Intelligence tutorial.
-author: baanders
-ms.author: baanders
-ms.date: 05/02/2025
+ms.date: 11/10/2025
 ms.topic: tutorial
 ---
 
@@ -19,7 +17,7 @@ To delete the data from this tutorial, follow these steps:
     * the eventhouse with the KQL database
     * the eventstream
     * the digital twin builder (preview) item
-        * the associated lakehouse with all of its mapping and relationship data
+        * the associated lakehouse with all of its entity types and relationship types, mapping, and entity instance and relationship instance data
     * the Fabric notebook
     * the Real-Time Dashboard
 

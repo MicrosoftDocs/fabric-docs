@@ -1,8 +1,6 @@
 ---
 title: "Data Warehouse Tutorial: Time Travel with T-SQL in a Warehouse"
 description: "In this tutorial, learn how to use T-SQL statements to time travel in a warehouse table."
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: ajagadish
 ms.date: 04/06/2025
 ms.topic: how-to

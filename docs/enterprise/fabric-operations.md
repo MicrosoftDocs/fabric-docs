@@ -1,13 +1,15 @@
 ---
 title: Fabric operations
 description: Understand the Microsoft Fabric operations.
-author: JulCsc
-ms.author: juliacawthra
-ms.topic: conceptual
+author: dknappettmsft
+ms.author: daknappe
+ms.topic: reference
 ms.custom:
-ms.date: 03/20/2025
+ms.date: 04/08/2026
+ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
+ai-usage: ai-assisted
 ---
 
 # Fabric operations
@@ -60,6 +62,11 @@ This section is divided into Fabric experience. Each experience had a table that
 | Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
 | ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
 | Copilot in Fabric                            | Compute cost associated with input prompts and output completion      | Multiple | Copilot and AI | Background |
+| AI Functions | Compute cost associated with using Fabric AI functions and Azure OpenAI Service | Multiple | Copilot and AI | Interactive, Background |
+| AI Services | Compute cost associated with using Azure AI Services in Fabric (Text Analytics and Azure AI Translator) | Notebook | Copilot and AI | Background |
+
+> [!NOTE]
+> Starting March 17, 2026, the Capacity Metrics app shows AI Functions and AI Services as separate operations. This is a reporting-only change; underlying consumption rates are unchanged.
 
 ### Data agent in Fabric
 
@@ -79,19 +86,22 @@ The Data Factory experience contains operations for [Dataflows Gen2](#dataflows-
 
 You can find the consumption rates for Dataflows Gen2 in [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](../data-factory/pricing-dataflows-gen2.md).
 
+>[!NOTE]
+>As of October 2025, the operation name **Dataflow Gen2 Refresh** has been renamed to **Dataflow Gen2 Run Queries**.
+
 | Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
 | ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
-| Dataflow Gen2 Refresh                            | Compute cost associated with dataflow Gen2 refresh operation       | Dataflow Gen2 | Dataflows Standard Compute Capacity Usage CU | Background |
+| Dataflow Gen2 Run Queries                           | Compute cost associated with dataflow Gen2 evaluation operation       | Dataflow Gen2 | Dataflows Standard Compute Capacity Usage CU | Background |
 | High Scale Dataflow Compute - SQL Endpoint Query | Usage related to the dataflow Gen2 staging warehouse SQL endpoint  | Warehouse     | High Scale Dataflow Compute Capacity Usage CU | Background |
 
 #### Pipelines
 
-You can find the consumption rates for Pipelines in [Data pipelines pricing for Data Factory in Microsoft Fabric](../data-factory/pricing-pipelines.md).
+You can find the consumption rates for Pipelines in [Pipeline pricing for Data Factory in Microsoft Fabric](../data-factory/pricing-pipelines.md).
 
 | Operation    | Description                                                                                                              | Item     | Azure billing meter | Type       |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------ | -------- | ------------------- | ---------- |
 | DataMovement | The amount of time used by the copy activity in a Data Factory pipeline divided by the number of data integration units  | Pipeline | Data Movement Capacity Usage CU | Background |
-| ActivityRun  | A Data Factory data pipeline activity execution                                                                          | Pipeline | Data Orchestration Capacity Usage CU | Background |
+| ActivityRun  | A Data Factory pipeline activity execution                                                                          | Pipeline | Data Orchestration Capacity Usage CU | Background |
 
 ### Databases
 
@@ -121,16 +131,25 @@ GraphQL operations are made up of requests performed on API for GraphQL items by
 
 ### Fabric User Data Functions
 
-[Fabric User Data Functions](https://aka.ms/ms-fabric-functions-docs) operations are made up of requests initiated by the Fabric portal, other Fabric artifacts, or client applications. Each request and response operation incurs a charge for the function execution, internal storage of the function metadata in OneLake, and associated read and write operations in OneLake.
+[Fabric User Data Functions](https://aka.ms/ms-fabric-functions-docs) operations are made up of requests initiated by the Fabric portal, other Fabric artifacts, or client applications. Each operation incurs a charge for the function execution, internal storage of the function metadata in OneLake, and associated read and write operations in OneLake.
 
 | Operation          | Description                                                                                        | Item      | Azure billing meter | Type       |
 | ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |
-| User Data Functions Execution    | Compute charge for the execution of the function inside of the User Data Functions artifact. Memory consumption is allocated with a fixed 2GB used every second.  | User Data Functions | User Data Function Execution (CU/s)  | Interactive |
+| User Data Functions Execution    | Compute charge for the execution of the function inside of the User Data Functions item. This operation results from running a function after a request from the Fabric portal, another Fabric item, or an external application.  | User Data Functions | User Data Function Execution (CU/s)  | Interactive |
+| User Data Functions Portal Test    | Compute charge for the test execution of a function inside of the User Data Functions item. This operation results from testing a function in “Develop mode” during a test session. The test session has a minimum duration of 15 minutes.  | User Data Functions | User Data Function Execution (CU/s)  | Interactive |
 | User Data Functions Static Storage | Static storage of internal function metadata in a service-managed OneLake account. This is calculated with the compressed size of the User Data Functions item metadata. This is the cost of creating User Data Functions items even if they’re not used.  | OneLake Storage | OneLake Storage | Background |
 | User Data Functions Static Storage Read | Read operation of internal function metadata stored in a service-managed OneLake account. This operation is executed every time a function is executed after a period of inactivity. | OneLake Read Operations | OneLake Read Operations | Background |
 | User Data Functions Static Storage Write | Writes and updates of internal function metadata stored in a system-managed OneLake account. This operation is executed every time the User Data Functions item is published. | OneLake Write Operations | OneLake Write Operations | Background |
 | User Data Functions Static Storage Iterative Read | Read operations for internal function metadata stored in a service-managed OneLake account. This operation is executed every time the User Data Functions are listed. | OneLake Iterative Read Operations | OneLake Iterative Read Operations | Background |
 | User Data Functions Static Storage Other Operations | Storage operations for related to various function metadata in a service-managed OneLake account. | OneLake Other Operations | OneLake Other Operations | Background |
+
+### ML Model Endpoint
+
+[ML Model endpoint docs](../data-science/model-endpoints.md) allow you to serve real-time predictions seamlessly. Behind the scenes, Fabric spins up and manages the underlying container infrastructure to host your model.
+
+| Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
+| ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
+| Model Endpoint                            | TBD      | ML model | ML Model Endpoint Capacity Usage CU | Background |
 
 ### OneLake
 
@@ -190,7 +209,15 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 ### Real-Time Intelligence
 
-The Real-Time Intelligence experience contains operations for [Eventstream](#eventstream), [Azure and Fabric events](#azure-and-fabric-events) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+The Real-Time Intelligence experience contains operations for [Anomaly Detector](#anomaly-detector), [Azure and Fabric events](#azure-and-fabric-events), [digital twin builder (preview)](#digital-twin-builder-preview), [Eventstream](#eventstream), and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+
+### Anomaly Detector
+
+You can find the consumption rates for Anomaly Detector in [Anomaly Detector capacity usage and billing in Real-Time Intelligence](../real-time-intelligence/anomaly-detection-billing.md).
+
+| Operation        | Description                                          | Item     | Azure billing meter                               | Type       |
+| ---------------- | ---------------------------------------------------- | -------- | ------------------------------------------------- | ---------- |
+| Anomaly Detector Run Queries | Interactive analysis and continuous monitoring          | AnomalyDetector | Anomaly Detector Queries Capacity Usage CU         | Background |
 
 #### Azure and Fabric events
 
@@ -200,6 +227,17 @@ You can find the consumption rates for Azure and Fabric events in [Azure and Fab
 | ---------------- | ---------------------------------------------------- | -------- | ------------------------------------------------- | ---------- |
 | Event Operations | Publish, delivery, and filtering operations          | Multiple | Real-Time Intelligence - Event Operations         | Background |
 | Event Listener   | Uptime of the event listener                         | Multiple | Real-Time Intelligence – Event Listener and Alert | Background |
+
+#### Digital twin builder (preview)
+
+You can find the consumption rates for digital twin builder (preview) in [Digital twin builder (preview) capacity consumption, usage reporting, and billing](../real-time-intelligence/digital-twin-builder/resources-capacity-usage.md).
+
+>[!NOTE]
+> The meters for digital twin builder are currently in preview and may be subject to change.
+
+| Operation        | Description                 | Item     | Azure billing meter              | Type       |
+| ---------------- | --------------------------- | -------- | -------------------------------- | ---------- |
+| Digital Twin Builder Operation | Usage for on-demand and scheduled digital twin builder flow operations  | Digital twin builder flow | Digital Twin Builder Operation Capacity Usage CU | Background |
 
 #### Eventstream
 
@@ -232,6 +270,8 @@ Two Spark VCores (a unit of computing power for Spark) equals one capacity unit 
 | Spark job scheduled run | Batch job runs triggered by notebook scheduled events   | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 | Spark job pipeline run  | Batch job runs triggered by pipeline                    | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 | Spark job VS Code run   | Spark job definition submitted from VS Code             | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
+| Materialized lake view run |  Users schedule Materialized lake view runs        | Lakehouse | Spark Memory Optimized Capacity Usage CU          | Background |
+| Shortcut Transformations   | Shortcut Transformations created in the Lakehouse             | Lakehouse | Spark Memory Optimized Capacity Usage CU          | Background |
 
 ## Related content
 

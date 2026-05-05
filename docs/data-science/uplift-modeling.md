@@ -1,13 +1,11 @@
 ---
 title: 'Tutorial: Create, train, and evaluate an uplift model'
 description: This tutorial describes creation, training, and evaluation of uplift models and application of uplift modeling techniques.
-ms.author: lagayhar 
-author: lgayhardt
-ms.reviewer: amjafari
-reviewer: amhjf
+ms.author: lagayhar
+ms.reviewer: ruxu
 ms.topic: tutorial
-ms.custom:
-ms.date: 01/29/2024
+ms.custom: sfi-image-nochange
+ms.date: 07/16/2025
 #customer intent: As a data scientist, I want to build an uplift model so I can estimate causal impact.
 ---
 
@@ -374,7 +372,7 @@ def uplift_plot(uplift_df):
         label="Random Treatment",
     )
     plt.legend()
-    plt.xlabel("Porportion Targeted")
+    plt.xlabel("Proportion Targeted")
     plt.ylabel("Uplift")
     plt.grid()
 
@@ -461,7 +459,7 @@ def uplift_plot(uplift_df):
         label="Random Treatment",
     )
     plt.legend()
-    plt.xlabel("Porportion Targeted")
+    plt.xlabel("Proportion Targeted")
     plt.ylabel("Uplift")
     plt.grid()
 

@@ -1,22 +1,24 @@
 ---
-title: Manage and monitor an Eventhouse
+title: Manage and Monitor an Eventhouse
 description: Learn how to manage and monitor an eventhouse and gain insights from the system information in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
 ms.topic: how-to
-ms.custom:
-ms.date: 05/11/2025
+ms.custom: sfi-image-nochange
+ms.subservice: rti-eventhouse
+ms.date: 04/27/2026
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.
 ---
 # Manage and monitor an eventhouse
 
-The Eventhouse page serves as the central hub for all your interactions within the Eventhouse environment. It's your gateway to seamlessly manage and monitor an eventhouse, navigate through databases, and perform various Eventhouse-related actions.
+An Eventhouse is a scalable environment for processing and analyzing large volumes of real-time data. It supports structured streaming for continuous data ingestion and analysis, and uses Kusto Query Language (KQL) to easily gain insights from your data. The Eventhouse page serves as the central hub for all your interactions within the Eventhouse environment. It's your gateway to seamlessly manage and monitor an eventhouse, navigate through databases, and perform various Eventhouse-related actions.
 
 In this article, you learn about how to manage and gain insights about an eventhouse in Real-Time Intelligence.
 
-For advanced analytic insights, see [View Worspace monitoring](#view-worspace-monitoring) and [Eventhouse monitoring overview](monitor-eventhouse.md).
+For more monitoring insights, see the following articles:
+
+* [Workspace Monitoring Overview](../fundamentals/workspace-monitoring-overview.md) - Learn about workspace-level monitoring capabilities.
+* [Eventhouse Monitoring Overview](monitor-eventhouse.md) - Explore comprehensive insights into eventhouse usage and performance.
 
 ## Prerequisites
 
@@ -43,20 +45,7 @@ D. **Details area**: The [details area](#view-eventhouse-details) provides addit
 
 ## Eventhouse ribbon
 
-The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh your main view, enable minimum consumption, add databases, add plugins, and collapse or expand the details area.
-
-### Enable minimum consumption
-
-Minimum consumption sets a minimum available capacity unit (CU) size for an eventhouse.
-
-1. From the ribbon, select **Minimum consumption**
-1. In the **Minimum consumption** pane, select the size corresponding to the [minimum available CU](eventhouse.md#minimum-consumption) size you want to apply to this eventhouse, and then select **Done**.
-
-    The following table maps the size to the minimum [capacity units](../admin/capacity-settings.md) allotted to the eventhouse:
-
-    [!INCLUDE [capacity-eventhouse](includes/capacity-eventhouse.md)]
-
-    :::image type="content" source="media/eventhouse/minimum-capacity.png" alt-text="Screenshot showing how to select the correct minimum consumption in Real-Time Intelligence Eventhouse.":::
+The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh your main view, [schedule the capacity planner](eventhouse-smart-capacity-control.md), add databases, add plugins, and collapse or expand the details area.
 
 ## Explorer pane
 
@@ -69,10 +58,9 @@ The eventhouse details area displays the region, last ingestion date, minimum co
 In the details area, you can copy the following eventhouse URI values:
 
 | URI type | Usage |
-|--|--|
-| Query URI | URI that can be used to [add database shortcuts](database-shortcut.md) or by [connectors](data-connectors/data-connectors.md) and APIs to run queries or management commands. |
+| -- | -- |
+| Query URI | URI that can be used to [add database shortcuts](database-shortcut.md) or by [connectors](event-house-connectors.md) and APIs to run queries or management commands. |
 | Ingestion URI | URI that is for use by connectors and APIs to ingest data. |
-| [Minimum consumption](#enable-minimum-consumption) | Minimum available capacity unit (CU) size for your eventhouse.|
 
 ## View system overview
 
@@ -99,9 +87,9 @@ The system overview page provides a snapshot of the current state of the eventho
     * **Eventhouse storage**: Shows the storage capacity of the eventhouse. The storage capacity is divided into categories:
         * **Original size**: The uncompressed original data size of the eventhouse.
         * **Compressed size**: The compressed data size of the eventhouse.
-        * **Premium**: The amount of Premium storage utilized. This is the high-performance storage tier for your most active data, ensuring the fastest possible access for real-time processing and analysis. If all data isn't stored in the Premium cache, query latency may be negatively impacted. For more information, review your [caching policy](data-policies.md#caching-policy).
+        * **Premium**: The amount of Premium storage utilized. This tier is the high-performance storage tier for your most active data, ensuring the fastest possible access for real-time processing and analysis. If all data isn't stored in the Premium cache, query latency might be negatively impacted. For more information, review your [caching policy](data-policies.md#caching-policy).
 
-    * **Storage resources**: Shows a snapshot of the storage breakdown by database. You can drilldown into each database from the bar to see the details. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
+    * **Storage resources**: Shows a snapshot of the storage breakdown by database. You can drill down into each database from the bar to see the details. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
 
     * **Activity in minutes**: Shows the duration in minutes to run compute operations such as queries and commands. It's important to note that compute minutes don't directly correspond to compute units, which represent the actual processing time consumed by these operations.
 
@@ -109,13 +97,43 @@ The system overview page provides a snapshot of the current state of the eventho
 
         In the case where 78 queries and 173 ingest operations run at the same time and total 183 compute minutes, if they all finish within a 5-minute period, the actual compute units used is still only 5 minutes.
 
+        The tile also allows users to open the underlying KQL query by selecting **Open query** in the ellipsis menu.
+        :::image type="content" source="media/eventhouse/eventhouse-activity.png" alt-text="Screenshot of the Activity in minutes tile.":::
+
+        This provides full visibility into how the compute minutes are calculated.
+        :::image type="content" source="media/eventhouse/eventhouse-activity-kql.png" alt-text="Screenshot of the Activity in minutes KQL query.":::  
+
     * **Ingestion**: Shows the number of ingested rows and the number of databases that the data was ingested to. The information can help you understand the amount of data that is ingested into the eventhouse over time.
+
+        The tile also allows users to open the underlying KQL query by selecting **Open query** in the ellipsis menu.
+        :::image type="content" source="media/eventhouse/eventhouse-ingestion.png" alt-text="Screenshot of the Ingestion details tile.":::
+
+        This provides full visibility into how the number of ingested rows and the number of databases are calculated.
+        :::image type="content" source="media/eventhouse/eventhouse-ingestion-kql.png" alt-text="Screenshot of the Ingestion details KQL query.":::    
 
     * **Top 10 queried databases**: Highlights the most active databases in the eventhouse, including the number of queries, errors, duration per database, and cache misses. The information can assist you in obtaining a comprehensive overview of which databases are utilizing compute units.
 
+        The tile also allows users to open the underlying KQL query by selecting **Open query** in the ellipsis menu.
+        :::image type="content" source="media/eventhouse/eventhouse-queries.png" alt-text="Screenshot of the Top 10 queried databases tile.":::
+
+        This provides full visibility into the top 10 queried databases and their metrics.
+        :::image type="content" source="media/eventhouse/eventhouse-queries-kql.png" alt-text="Screenshot of the Top 10 queried databases KQL query.":::
+
     * **Top 10 ingested databases**: Highlights the number of ingested rows and ingestion errors for the databases with the most ingested rows. Currently only partial ingestion errors are reported.
 
+        The tile also allows users to open the underlying KQL query by selecting **Open query** in the ellipsis menu.
+        :::image type="content" source="media/eventhouse/eventhouse-ingested-databases.png" alt-text="Screenshot of the Top 10 ingested databases tile":::
+
+        This provides full visibility into top 10 ingested databases and their metrics.
+        :::image type="content" source="media/eventhouse/eventhouse-ingested-databases-kql.png" alt-text="Screenshot of the Top 10 ingested databases KQL query.":::
+
     * **Activity in minutes - top 5 users**: Shows the total compute minutes of the most active users. The information can help you understand the efficiency with which users are utilizing compute units.
+
+        The tile also allows users to open the underlying KQL query by selecting **Open query** in the ellipsis menu.
+        :::image type="content" source="media/eventhouse/eventhouse-users.png" alt-text="Screenshot of the Activity in minutes - Top 5 users tile.":::
+
+        This provides full visibility into the top 5 users and their compute minutes.    
+        :::image type="content" source="media/eventhouse/eventhouse-users-kql.png" alt-text="Screenshot of the Activity in minutes - Top 5 users KQL query.":::
 
     * **What's new - Last 7 days**: Highlights database owners and recent eventhouse events, such as the following operations:
 
@@ -144,11 +162,11 @@ The databases overview page provides a summary of all the databases in the event
 
     :::image type="content" source="media/eventhouse/list-tile-view.png" alt-text="Screenshot showing the eventhouse details page with the tile and list view buttons surrounded by a red box." lightbox="media/eventhouse/list-tile-view.png":::
 
-1. To explore a specific database, select the name of this database from the list. For more information, see (manage-monitor-database.md).
+1. To explore a specific database, select the name of this database from the list.
 
-## View Worspace monitoring
+## View Workspace monitoring
 
-You can access the read-only Workspace monitoring database from the Evenhouse explorer pane. Workspace monitoring provides a set of tables that you can query to get insights into the usage and performance of your eventhouse. For more information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
+You can access the read-only Workspace monitoring database from the Eventhouse explorer pane. Workspace monitoring provides a set of tables that you can query to get insights into the usage and performance of your eventhouse. For more information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
 
 > [!NOTE]
 >
