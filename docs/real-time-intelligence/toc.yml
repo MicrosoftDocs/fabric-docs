@@ -565,6 +565,8 @@ items:
         href: eventhouse-deploy-with-fabric-api.md
       - name: Manage and monitor an eventhouse
         href: manage-monitor-eventhouse.md
+      - name: Eventhouse endpoint for Lakehouse and Warehouse
+        href: eventhouse-as-endpoint.md
       - name: Eventhouse capacity 
         items:
           - name: Resource consumption
@@ -743,8 +745,6 @@ items:
                     href: query-acceleration-overview.md
                   - name: Accelerate queries over OneLake shortcuts
                     href: query-acceleration.md
-              - name: Eventhouse endpoint for Lakehouse and Warehouse
-                href: eventhouse-as-endpoint.md
               - name: External tools
                 items:
                   - name: Query Fabric OneLake Delta tables from Snowflake
@@ -1065,9 +1065,7 @@ items:
         href: dashboard-explore-data.md
   - name: Operations agents
     displayName: AI agents, AI, agents, Operation agents
-    items:
-      - name: Operations agents
-        href: operations-agent-tocs/toc.yml
+    href: operations-agent-tocs/toc.yml
   - name: Build AI agents
     displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source, skills
     items:
