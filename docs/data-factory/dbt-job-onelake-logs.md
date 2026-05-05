@@ -22,7 +22,7 @@ Your dbt logs are now stored directly in OneLake, so the full, untruncated logs 
 To retrieve untruncated logs for a dbt job run, follow these steps:
 
 1. [Run a dbt command](#run-a-dbt-command)
-1. [Download the output.json file](#download-the-outputjson-file)
+1. [From the Output tab, click Output to download the dbt-output-<run_id>.json file](#download-the-outputjson-file)
 1. [Find the logs in OneLake Explorer](#find-the-logs-in-onelake-explorer)
 
 ### Run a dbt command
@@ -37,35 +37,24 @@ Fabric generates execution logs after the command completes.
 
 ### Download the output.json file
 
-1. After the dbt job completes, download the `output.json` file from the run.
+1. After the dbt job completes, download the `dbt-output-<run_id>.json` file from the run by clicking on output button.
 
    :::image type="content" source="media/dbt-job-onelake-logs/download-selector.png" alt-text="Screenshot of the download option for the output.json file in Microsoft Fabric.":::
 
-1. Open the file. It contains metadata about the run, including the paths where full logs are stored in OneLake.
+2. Open the file to view run metadata, including the paths to full logs stored in OneLake (under the detailed_monitoring_output_path field)
+   :::image type="content" source="media/dbt-job-onelake-logs/output-file.png" alt-text="Screenshot of a log file in OneLake Explorer.":::
 
 ### Find the logs in OneLake Explorer
 
 1. Open **OneLake Explorer**.
-1. Navigate to the log paths listed in `output.json` under the 'detailed_monitoring_output_path'.
+1. Navigate to the log paths listed in `dbt-output-<run_id>.json` under the 'detailed_monitoring_output_path' Example: OneLake/WorkspaceName/detailed_monitoring_output_path/Output/a1dea285-5a9d-473c-87f2-9717192494b7 has the entire logs.
 1. Open the log files to view the complete, untruncated output for the dbt job run.
 
    :::image type="content" source="media/dbt-job-onelake-logs/file-location.png" alt-text="Screenshot of OneLake Explorer showing the location of full dbt log files.":::
 
-   :::image type="content" source="media/dbt-job-onelake-logs/output-file.png" alt-text="Screenshot of a log file in OneLake Explorer.":::
-
-## How OneLake logs dbt logs
-
-When a dbt job runs:
-
-1. Fabric executes the dbt command.
-1. Logs are streamed and written to OneLake.
-1. A reference to those log paths is added to `output.json`.
-
-This process preserves the full log output regardless of size.
-
 ## Known limitations
 
-- Currently, full logs aren't displayed directly in the dbt job UI. You need to use `output.json` to locate and access them in OneLake.
+- To ensure optimal application performance and prevent browser slowdowns or crashes, the app enforces a 10 MB size limit for rendering lineage views and output tables.For results exceeding this limit, users need to check the full output log results in OneLake  You need to use dbt-output-<run_id>.json to locate and access them in OneLake. Full results remain accessible via the dbt job UX, which does not impose a size restriction.
 
 ## Related content
 
