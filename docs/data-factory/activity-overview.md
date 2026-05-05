@@ -2,34 +2,45 @@
 title: Activity overview
 description: Learn about activities.
 ms.reviewer: pennyzhou-msft
-ms.author: whhender
-author: whhender
 ms.topic: overview
-ms.date: 09/16/2024
+ms.date: 07/25/2025
+ms.custom: pipelines
 ms.search.form: Pipeline Activity Overview
+ai-usage: ai-assisted
 ---
 
 # Activity overview
 
-This article helps you understand activities in [!INCLUDE [product-name](../includes/product-name.md)] and use them to construct end-to-end data-driven workflows for your data movement and data processing scenarios.
+Activities are the building blocks that help you create end-to-end data workflows in [!INCLUDE [product-name](../includes/product-name.md)]. Think of them as the tasks that move and transform your data to meet your business needs. You might use a copy activity to move data from SQL Server to Azure Blob Storage. Then you could add a Dataflow activity or Notebook activity to process and transform that data before loading it into Azure Synapse Analytics for reporting.
 
-## Overview
+Activities are grouped together in pipelines to accomplish specific goals. For example, you might create a pipeline that:
 
-A [!INCLUDE [product-name](../includes/product-name.md)] Workspace can have one or more pipelines. A pipeline is a logical grouping of activities that together perform a task. For example, a pipeline could contain a set of activities that ingest and clean log data, and then kick off a data flow to analyze the log data. The pipeline allows you to manage the activities as a set instead of each one individually. You deploy and schedule the pipeline instead of the activities independently.
+- Pulls in log data from different sources
+- Cleans and organizes that data
+- Runs analytics to find insights
 
-The activities in a pipeline define actions to perform on your data. For example, you can use a copy activity to copy data from SQL Server to an Azure Blob Storage. Then, use a Dataflow activity or a Notebook activity to process and transform data from the blob storage to an Azure Synapse Analytics pool on top of which business intelligence reporting solutions are built.
+Grouping your activities into a pipeline lets you manage all these steps as one unit instead of handling each activity separately. You can deploy and schedule the entire pipeline at once, to run whenever you need it.
 
-[!INCLUDE [product-name](../includes/product-name.md)] has three types of activities: data movement activities, data transformation activities, and control activities.
+[!INCLUDE [product-name](../includes/product-name.md)] offers three types of activities:
+
+- [**Data movement activities**](#data-movement-activities) - Move data between systems
+- [**Data transformation activities**](#data-transformation-activities) - Process and transform your data  
+- [**Control flow activities**](#control-flow-activities) - Manage how your pipeline runs
 
 ## Data movement activities
 
-Copy activity in [!INCLUDE [product-name](../includes/product-name.md)] copies data from a source data store to a sink data store. Fabric supports the data stores listed in the [Connector overview](connector-overview.md) article. Data from any source can be written to any sink.
+These activities help you move data from one place to another in your pipeline.
 
-For more information, see [How to copy data using the copy activity](copy-data-activity.md).
+Movement activity | Description
+---------------- | -----------
+[Copy data](copy-data-activity.md) | You can copy data from any supported source to any supported destination. See the [Connector overview](connector-overview.md) to see what's available.
+[Copy job](copy-job-activity.md) | Copy jobs are a simplified method for moving data quickly.
+
+If you need to choose between different data movement options, see the [data movement decision guide](decision-guide-data-movement.md) article.
 
 ## Data transformation activities
 
-[!INCLUDE [product-name](../includes/product-name.md)] supports the following transformation activities that can be added either individually or chained with another activity.
+These activities help you process and transform your data. You can use them individually or chain them together with other activities.
 
 For more information, see the [data transformation activities](transform-data.md) article.
 
@@ -39,14 +50,14 @@ Data transformation activity | Compute environment
 [Dataflow Gen2](dataflows-gen2-overview.md) | Compute manager by Microsoft Fabric
 [Delete data](delete-data-activity.md) | Compute manager by Microsoft Fabric
 [Fabric Notebook](notebook-activity.md) | Apache Spark clusters managed by Microsoft Fabric
-[HDInsight activity](azure-hdinsight-activity.md) | Apache Spark clusters managed by Microsoft Fabric 
+[HDInsight activity](azure-hdinsight-activity.md) | Apache Spark clusters managed by Microsoft Fabric
 [Spark Job Definition](spark-job-definition-activity.md) | Apache Spark clusters managed by Microsoft Fabric
 [Stored Procedure](stored-procedure-activity.md) | Azure SQL, Azure Synapse Analytics, or SQL Server
 [SQL script](script-activity.md) | Azure SQL, Azure Synapse Analytics, or SQL Server
 
-
 ## Control flow activities
-The following control flow activities are supported:
+
+These activities help you control how your pipeline runs:
 
 Control activity | Description
 ---------------- | -----------
@@ -63,7 +74,9 @@ Control activity | Description
 [If condition](if-condition-activity.md) | The If Condition can be used to branch based on condition that evaluates to true or false. The If Condition activity provides the same functionality that an if statement provides in programming languages. It evaluates a set of activities when the condition evaluates to `true` and another set of activities when the condition evaluates to `false`.
 [Invoke pipeline](invoke-pipeline-activity.md) | Execute Pipeline activity allows a Data Factory or Synapse pipeline to invoke another pipeline.
 [KQL activity](kql-activity.md) | Executes a KQL script against a Kusto instance.
+[Lakehouse maintenance activity](lakehouse-maintenance-activity.md) | Perform routine table maintenance on a Lakehouse from a Microsoft Fabric pipeline.
 [Lookup Activity](lookup-activity.md) | Lookup Activity can be used to read or look up a record/ table name/ value from any external source. This output can further be referenced by succeeding activities.
+[Refresh SQL Endpoint activity](refresh-sql-endpoint-activity.md) | Refreshes a Lakehouse SQL endpoint to reflect the latest data.
 [Set Variable](set-variable-activity.md) | Set the value of an existing variable.
 [Switch activity](switch-activity.md) | Implements a switch expression that allows multiple subsequent activities for each potential result of the expression.
 [Teams activity](teams-activity.md) | Posts a message in a Teams channel or group chat.
@@ -74,33 +87,70 @@ Control activity | Description
 
 ## Adding activities to a pipeline with the [!INCLUDE [product-name](../includes/product-name.md)] UI
 
-Use these steps to add and configure activities in a [!INCLUDE [product-name](../includes/product-name.md)] pipeline:
+Here's how to add and configure activities in your pipeline:
 
 1. Create a new pipeline in your workspace.
-1. On the Activities tab for the pipeline, browse the activities displayed, scrolling to the right if necessary to see all activities. Select an activity to add it to the pipeline editor.
-1. When you add an activity and select it in the pipeline editor canvas, its **General** settings will appear in the properties pane below the canvas.
-1. Each activity also contains custom properties specific to its configuration on other tabs in the properties pane.
+1. Go to the Activities tab and browse through the available activities. Scroll right to see all options, then select an activity to add it to the pipeline editor.
+1. When you add an activity and select it on the canvas, you'll see its **General** settings in the properties pane below.
+1. Each activity has other configuration options on other tabs in the properties pane.
 
 :::image type="content" source="media/activity-overview/activity-ui.png" alt-text="Screenshot showing the pipeline editor with the Activities tab, toolbar, a copy activity, and the General tab of its properties, all highlighted.":::
 
 ## General settings
 
-When you add a new activity to a pipeline and select it, you'll see its properties panes in the area at the bottom of the screen. These properties panes include **General**, **Settings**, and sometimes other panes as well.
+When you add a new activity to a pipeline and select it, you'll see its properties at the bottom of the screen. These include **General**, **Settings**, and sometimes other tabs.
 
    :::image type="content" source="media/activity-overview/general-settings.png" alt-text="Screenshot showing the General settings tab of an activity.":::
 
-The general settings will always include **Name** and **Description** fields for every activity.  Some activities also include the following:
+Every activity includes **Name** and **Description** fields in the general settings. Some activities also have these options:
 
-|Setting  |Description  |
-|---------|---------|
-|Timeout |The maximum amount of time an activity can run. The default is 12 hours, and the maximum amount of time allowed is seven days. The format for the timeout is in D.HH:MM:SS. |
-|Retry |Maximum number of retry attempts. |
-|(Advanced properties) Retry interval (sec) |The number of seconds between each retry attempt. |
-|(Advanced properties) Secure output |When checked, output from the activity isn't captured in logging. |
-|(Advanced properties) Secure input |When checked, input from the activity isn't captured in logging. |
+Setting | Description
+---------|----------
+Timeout | How long an activity can run before timing out. The default is 12 hours, and the maximum is seven days. Use the format D.HH:MM:SS.
+Retry | How many times to retry if the activity fails.
+(Advanced properties) Retry interval (sec) | How many seconds to wait between retry attempts.
+(Advanced properties) Secure output | When selected, activity output won't appear in logs.
+(Advanced properties) Secure input | When selected, activity input won't appear in logs.
 
 > [!NOTE]
-> There is a default soft limit of maximum 80 activities per pipeline, which includes inner activities for containers.
+> By default, you can have up to 120 activities per pipeline. This includes inner activities for containers.
+
+## Deactivate an activity
+
+You can deactivate one or more activities from a pipeline to skip them during validation and pipeline runs. This feature improves pipeline developer efficiency, letting you comment out part of the pipeline without deleting it from the canvas. You can reactivate activities at a later time.
+
+### Deactivate activities
+
+[!INCLUDE [deactivate-activities](includes/deactivate-activities.md)]
+
+### Reactivate activities
+
+To reactivate the activities, choose _Activated_ for the _Activity State_, and they revert back to their previous behaviors, as expected.
+
+### Inactive activity behaviors
+
+An inactive activity behaves differently in a pipeline.
+
+- On canvas, the inactive activity is grayed out, with _Inactive sign_ placed next to the activity type
+- On canvas, a status sign (Succeeded, Failed or Skipped) is placed on the box, to visualize the _Mark activity as_ setting
+- The activity is excluded from pipeline validation. Hence, you don't need to provide all required fields for an inactive activity.
+- During debug run and pipeline run, the activity won't actually execute. Instead, it runs a place holder line item, with the reserved status **Inactive**
+- The branching option is controlled by _Mark activity as_ option. In other words:
+   - If you mark the activity as _Succeeded_, the _UponSuccess_ or _UponCompletion_ branch runs
+   - If you mark the activity as _Failed_, the _UponFailure_ or _UponCompletion_ branch runs
+   - If you mark the activity as _Skipped_, the _UponSkip_ branch runs
+
+   :::image type="content" source="./media/deactivate-activity/deactivate-02-run-status.png" alt-text="Screenshot showing activity run status of an inactive activity.":::
+
+### Best practices for deactivation
+
+Deactivation is a powerful tool for pipeline developers. It allows developers to "comment out" part of the code, without permanently deleting the activities. It shines in following scenarios:
+
+- When developing a pipeline, developer can add place holder inactive activities before filling all the required fields. For instance, I need a Copy activity from SQL Server to Data warehouse, but I haven't set up all the connections yet. So I use an _inactive_ copy activity as the place holder for iterative development process.
+- After deployment, developer can comment out certain activities that are constantly causing troubles to avoid costly retries. For instance, my on-premises SQL server is having network connection issues, and I know my copy activities fail for certain. I may want to deactivate the copy activity, to avoid retry requests from flooding the brittle system.
+
+> [!NOTE]
+> An inactive activity never actually runs. This means the activity won't have an error field, or its typical output fields. Any references to missing fields may throw errors downstream.
 
 ## Related content
 

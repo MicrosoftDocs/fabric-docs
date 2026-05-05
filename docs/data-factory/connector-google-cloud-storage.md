@@ -1,12 +1,14 @@
 ---
 title: Set up your Google Cloud Storage connection
-description: This article provides information about how to do create a Google Cloud Storage connection in Microsoft Fabric.
-author: pennyzhou-msft
-ms.author: xupzhou
+description: This article provides information about how to create a Google Cloud Storage connection in Microsoft Fabric.
+ms.reviewer: xupzhou
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 03/13/2026
 ms.custom:
-  - template-how-to
+- template-how-to
+- connectors
+- sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # Set up your Google Cloud Storage connection
@@ -21,13 +23,12 @@ This Google Cloud Storage connector supports the following authentication types 
 |:---|:---|:---|
 |Basic| √| n/a|
 
-## Set up your connection in Dataflow Gen2
-
+## Set up your connection for Dataflow Gen2
 The Google Cloud Storage connector isn't currently supported in Dataflow Gen2.
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
-To create a connection in a data pipeline:
+To create a connection in a pipeline:
 
 1. From the page header in the Data Factory service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**
 
@@ -80,7 +81,7 @@ Select **Create**. Your creation is successfully tested and saved if all the cre
 
 ## Table summary
 
-The following table contains connector properties that are supported in pipeline copy.
+The following table contains connector properties that are supported in a pipeline copy.
 
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|
@@ -98,6 +99,7 @@ The following properties in the table are the supported authentication types.
 |**Basic**||||✓|
 |- Username|ID of the secret access key. To find the access key and secret, go to [Prerequisites](connector-google-cloud-storage-copy-activity.md#prerequisites).|Yes |||
 |- Password|The secret access key itself.|Yes |||
+
 
 ## Related content
 

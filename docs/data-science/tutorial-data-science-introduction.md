@@ -1,11 +1,8 @@
 ---
 title: Data science tutorial - get started
 description: Learn about the Data science tutorial, including an overview of the steps you follow through the series and details about the end-to-end scenario.
-ms.reviewer: None
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.reviewer: amjafari, lagayhar
 ms.topic: tutorial
-ms.custom:
 ms.date: 04/21/2025
 ---
 
@@ -98,3 +95,4 @@ can visualize data persisted in a lakehouse. The SemPy library also supports dat
 
 > [!div class="nextstepaction"]
 > [Prepare your system for the data science tutorial](tutorial-data-science-prepare-system.md)
+

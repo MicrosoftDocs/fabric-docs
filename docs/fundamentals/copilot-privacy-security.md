@@ -3,9 +3,10 @@ title: "Privacy, Security, and Responsible AI Use of Copilot in Fabric"
 description: Learn about privacy, security, and responsible AI use for Copilot in Microsoft Fabric for data science.
 author: snehagunda
 ms.author: sngun
-ms.reviewer: guptamaya, maghan
-ms.date: 04/09/2025
-ms.topic: conceptual
+ms.reviewer: guptamaya
+ms.date: 06/25/2025
+ms.update-cycle: 180-days
+ms.topic: concept-article
 ms.collection:
   - ce-skilling-ai-copilot
 ms.custom:
@@ -24,7 +25,7 @@ This article provides answers to common questions related to business data secur
 ### Business data is secure
 
 - Copilot features use [Azure OpenAI Service](/azure/ai-services/openai/overview), which is fully controlled by Microsoft. Your data isn't used to train models and isn't available to other customers.
-- You retain control over where your data is processed. Data processed by Copilot in Fabric stays within your tenant's geographic region, unless you explicitly allow data to be processed outside your region—for example, to let your users use Copilot when Azure OpenAI isn't available in your region or availability is limited due to high demand. Learn more about [admin settings for Copilot](../admin/service-admin-portal-copilot.md).
+- You retain control over where your data is processed. Data processed by Copilot in Fabric stays within your capacity's geographic region, unless you explicitly allow data to be processed outside your region—for example, to let your users use Copilot when Azure OpenAI isn't available in your region or availability is limited due to high demand. Learn more about [admin settings for Copilot](../admin/service-admin-portal-copilot.md).
 - Copilot doesn't store your data for abuse monitoring. To enhance privacy and trust, we've updated our approach to abuse monitoring: previously, we retained data from Copilot in Fabric, containing prompt inputs and outputs, for up to 30 days to check for abuse or misuse. Following customer feedback, we've eliminated this 30-day retention. Now, we no longer store prompt related data, demonstrating our unwavering commitment to your privacy and security.
 
 ### Check Copilot outputs
@@ -105,11 +106,15 @@ Interactions with Copilot are specific to each user. This means that Copilot can
 
 Copilot uses Azure OpenAI—not OpenAI's publicly available services—to process all data, including user inputs, grounding data, and Copilot outputs. Copilot currently uses a combination of GPT models, including GPT 3.5. Microsoft hosts the OpenAI models in Microsoft's Azure environment and the Service doesn't interact with any services by OpenAI (for example, ChatGPT or the OpenAI API). Your data isn't used to train models and isn't available to other customers. Learn more about [Azure OpenAI](/azure/ai-services/openai/overview).
 
+### Abuse monitoring of prompts
+
+Copilot and AI experiences in Fabric are currently **not** onboarded to any automated abuse monitoring of your prompts. This means that we currently do not process any customer prompts for monitoring of abusive content. This also means that no retention of prompts is in place for this purpose.
+
 ### Data residency and compliance
 
-*You retain control over where your data is processed.* Data processed by Copilot in Fabric stays within your tenant's geographic region, unless you explicitly allow data to be processed outside your region—for example, to let your users use Copilot when Azure OpenAI isn't available in your region or availability is limited due to high demand. (See [where Azure OpenAI is currently available.](/azure/ai-services/openai/concepts/models#model-summary-table-and-region-availability))
+*You retain control over where your data is processed.* Data processed by Copilot in Fabric stays within your capacity's geographic region, unless you explicitly allow data to be processed outside your region—for example, to let your users use Copilot when Azure OpenAI isn't available in your region or availability is limited due to high demand. (See [where Azure OpenAI is currently available.](/azure/ai-services/openai/concepts/models#model-summary-table-and-region-availability))
 
-To allow data to be processed elsewhere, your admin can turn on the setting **Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance**. Learn more about [admin settings for Copilot](../admin/service-admin-portal-copilot.md).
+To allow data to be processed elsewhere, your admin can turn on the setting **Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance**. Learn more about [admin settings for Copilot](../admin/service-admin-portal-copilot.md).
 
 ## What should I know to use Copilot responsibly?
 
@@ -138,3 +143,4 @@ Privacy, security, and responsible use for:
 
 - [What is Microsoft Fabric?](../fundamentals/microsoft-fabric-overview.md)
 - [Copilot in Fabric and Power BI: FAQ](copilot-faq-fabric.yml)
+

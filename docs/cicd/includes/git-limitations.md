@@ -1,27 +1,27 @@
 ---
 title: Include file for Git integration limitations
 description: Include file for the Git integration limitations. This file is referenced in this repo and also in an article in the Power BI repo.
-author: billmath
-ms.author: billmath
 ms.topic: include
-ms.custom: 
-ms.date: 02/26/2025
+ms.date: 12/16/2025
 ---
 
 ### General Git integration limitations
 
 - The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Fabric must be at least as strong as the authentication method for Git. For example, if Git requires multifactor authentication, Fabric needs to require multifactor authentication as well.
 - Power BI Datasets connected to Analysis Services aren't supported at this time.
+- If you use a workspace identity in one artifact and commit it to Git, it can be updated (back to a fabric workspace) only in a workspace connected to the same identity. Be careful, as this also affects features like branch out.
 - Submodules aren't supported.
 - Sovereign clouds aren't supported.
+- If your workspace contains hundreds of items, consider splitting it into smaller sets of artifacts. Each set should be placed in a separate workspace and linked to a different Git branch, or connected to a single branch organized into different folders.
 
 #### [Azure DevOps limitations](#tab/azure-devops)
 
-- The Azure DevOps account must be registered to the same user that is using the Fabric workspace.
 - Azure DevOps isn't supported if [Enable IP Conditional Access policy validation](/azure/devops/organizations/accounts/change-application-access-policies#cap-support-on-azure-devops) is enabled.
-- The tenant admin must enable [cross-geo exports](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview) if the workspace and Git repo are in two different geographical regions.
+- If the workspace and Git repo are in two different geographical regions, the tenant admin must enable [cross-geo exports](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
 - If your organization configured [conditional access](/appcenter/general/configuring-aad-conditional-access), make sure the **Power BI Service** has the same [conditions set](/fabric/security/security-conditional-access) for authentication to function as expected.
-- The commit size is limited to 125 MB.
+- The following commit size limit is applied:
+  - 25 MB using the Azure DevOps connector with Service Principal. 
+  - 125 MB using the default single sign-on (SSO) Microsoft Entra ID account and Azure DevOps connector with User Principal.
 
 #### [GitHub limitations](#tab/github)
 
@@ -33,9 +33,22 @@ ms.date: 02/26/2025
 
 ### GitHub Enterprise limitations
 
-Some GitHub Enterprise settings aren't supported. For example:
+Some GitHub Enterprise versions and settings aren't supported. For example:
 
+- GitHub Enterprise Server with a custom domain is not supported, even if the instance is publicly accessible
+- GitHub Enterprise Server hosted on a private network
 - IP allowlist
+
+### Azure DevOps to GitHub Enterprise migration consideration
+If your team uses Fabric Git Integration and is evaluating a migration from Azure DevOps to GitHub Enterprise, it’s recommended to run validation tests to ensure Git Integration functionality remains unaffected. Fabric Git Integration relies on the underlying Git provider APIs, which differ in capabilities and limitations between Azure DevOps and GitHub Enterprise, as described above.
+
+### Differences between Git Integration and recycle bin item recovery behavior
+If you use Git Integration, you might encounter unexpected behavior in scenarios where deleted items are re‑created or restored through a combination of Git operations and recycle bin recovery.
+This occurs because Git operations (such as Undo or Update from Git) re‑create deleted items by assigning a new item ID, whereas restoring an item from the recycle bin preserves the original item ID. As a result, duplicate items with different identities can exist in the workspace, which may cause Git Integration to stop working as expected and also can affect existing dependencies.
+##### Mitigation
+Delete the item that was re‑created by Git Integration. After the duplicate item is removed, Git operations should resume normally.
+##### Additional note
+Git Integration re‑creates item definitions only and does not restore item data. In contrast, restoring an item from the recycle bin restores both the item definition and its data.
 
 ### Workspace limitations
 
@@ -43,6 +56,7 @@ Some GitHub Enterprise settings aren't supported. For example:
   Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integration-process#permissions) can work in the workspace.
 - Workspaces with template apps installed can't be connected to Git.
 - [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces) can't connect to a Git provider.
+- Workspaces can contain a maximum of 1,000 items. If the Git branch contains more than 1,000 items, syncing the content to the workspace will fail. To avoid this limitation, consider splitting your artifacts into smaller sets. Each set should be placed in a separate workspace and linked to a different Git branch, or organized into different folders within a single branch. For further reading follow [workspace item limits](/fabric/admin/portal-workspaces#workspace-item-limits).
 
 ### Branch and folder limitations
 
@@ -50,7 +64,7 @@ Some GitHub Enterprise settings aren't supported. For example:
 - Maximum length of full path for file names is 250 characters. Longer names fail.
 - Maximum file size is 25 MB.
 - Folder structure is maintained up to 10 levels deep.
-- Downloading a report/dataset as *.pbix* from the service after deploying them with Git integration is not recommended, as the results are unreliable. We recommend using PowerBI Desktop to download reports/datasets as *.pbix*.
+- Downloading a report/dataset as *.pbix* from the service after deploying them with Git integration is not recommended, as the results are unreliable. We recommend using Power BI Desktop to download reports/datasets as *.pbix*.
 - If the item’s display name has any of these characteristics, The Git folder is renamed to the logical ID (Guid) and type:
   - Has more than 256 characters
   - Ends with a <kbd>.</kbd> or a space
@@ -65,22 +79,6 @@ Some GitHub Enterprise settings aren't supported. For example:
   - The directory name can't contain any of the following characters: <kbd>"</kbd><kbd>/</kbd><kbd>:</kbd> <kbd><</kbd><kbd>></kbd><kbd>\\</kbd><kbd>*</kbd><kbd>?</kbd><kbd>|</kbd>
 
 - The item folder (the folder that contains the item files) can't contain any of the following characters: <kbd>"</kbd><kbd>:</kbd><kbd><</kbd><kbd>></kbd><kbd>\\</kbd><kbd>*</kbd><kbd>?</kbd><kbd>|</kbd>. If you rename the folder to something that includes one of these characters, Git can't connect or sync with the workspace and an error occurs.
-
-### Branching out limitations
-
-- Branch out requires permissions listed in [permissions table](/fabric/cicd/git-integration/git-integration-process#fabric-permissions-needed-for-common-operations).
-- There must be an available capacity for this action.
-- All [workspace](#workspace-limitations) and [branch naming limitations](#branch-and-folder-limitations) apply when branching out to a new workspace.
-- Only [Git supported items](/fabric/cicd/git-integration/intro-to-git-integration#supported-items) are available in the new workspace.
-- The related branches list only shows branches and workspaces you have permission to view.
-- [Git integration](/fabric/admin/git-integration-admin-settings) must be enabled.
-- When branching out, a new branch is created and the settings from the original branch aren't copied. Adjust any settings or definitions to ensure that the new meets your organization's policies.
-- When branching out to an existing workspace:
-  - The target workspace must support a Git connection.
-  - The user must be an admin of the target workspace.
-  - The target workspace must have capacity.
-  - The workspace can't have template apps.
-- **Note that when you branch out to a workspace, any items that aren't saved to Git can get lost. We recommend that you [commit](/fabric/cicd/git-integration/git-integration-process#commit-to-git) any items you want to keep before branching out.**
 
 ### Sync and commit limitations
 

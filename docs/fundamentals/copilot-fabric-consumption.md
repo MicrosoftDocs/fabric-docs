@@ -5,6 +5,7 @@ author: SnehaGunda
 ms.author: sngun
 ms.topic: how-to
 ms.date: 01/23/2025
+ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -18,7 +19,7 @@ This page contains information on how the Fabric Copilot usage is billed and rep
 
 
 ## Consumption rate
-Requests to Copilot consume Fabric Capacity Units. This table defines how many capacity units (CU) are consumed when Copilot is used. For example, when user using [Copilot for Power BI](/power-bi/create-reports/copilot-introduction), [Copilot for Data Factory](../fundamentals/copilot-fabric-data-factory.md), or [Copilot for Data Science and Data Engineering](../data-engineering/copilot-notebooks-overview.md).
+Requests to Copilot consume Fabric Capacity Units. This table defines how many capacity units (CU) are consumed when Copilot is used. For example, when user using [Copilot for Power BI](/power-bi/create-reports/copilot-introduction), [Copilot for Data Factory](../fundamentals/copilot-fabric-data-factory.md), or [Copilot for Data Engineering and Data Science](../data-engineering/copilot-notebooks-overview.md).
 
 | **Operation in Metrics App** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
 |---|---|---|---|
@@ -56,4 +57,4 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 
 - [Overview of Copilot in Fabric](../fundamentals/copilot-fabric-overview.md)
 - [Copilot in Fabric: FAQ](../fundamentals/copilot-faq-fabric.yml)
-- [AI services in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)
+- [Foundry Tools in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)

@@ -1,12 +1,10 @@
 ---
 title: Access an existing KQL database
-description: Learn how to access an existing KQL database and optionally copy the query URI and the ingestion URI run queries or get data in Real-Time Intelligence.
+description: Learn how to access an existing KQL database and optionally copy the query URI, the ingestion URI, or the MCP server URI to run queries, get data, or connect AI agents in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
 ms.topic: how-to
-ms.custom:
-ms.date: 02/25/2025
+ms.date: 07/29/2025
+ms.subservice: rti-eventhouse
 ms.search.form: product-kusto
 ---
 
@@ -36,14 +34,15 @@ To access your existing KQL database:
 
 The main page of your KQL database shows an overview of the contents in your database.
 
-:::image type="content" source="media/set-up-connectors/copy-uri.png" alt-text="Screenshot of the database details card showing the database details. The options titled Query URI and Ingestion URI are highlighted.":::
+:::image type="content" source="media/set-up-connectors/copy-uri.png" alt-text="Screenshot of the database details card showing the database details. The options titled Query URI, Ingestion URI, and MCP Server URI are highlighted.":::
 
-You can copy two types of URIs from the **Database details** card in your KQL database.
+You can copy three types of URIs from the **Database details** card in your KQL database.
 
 |URI type |Usage |
 |---|---|
 |Query URI |URI that can be used to run queries or management commands.|
 |Ingestion URI |URI that can be used as a target for data ingestion.|
+|MCP Server URI |URI that can be used to connect AI agents to the KQL database via the [Model Context Protocol (MCP)](mcp-remote-eventhouse.md).|
 
 ## Share a KQL database link
 
@@ -54,7 +53,8 @@ To share your KQL database, follow these steps:
 1. Send the link to the authorized users.
 
 > [!NOTE]
-> The shared link provides access to a single database. There is no bulk sharing option for multiple databases, and an Eventhouse can't be shared.
+> The shared link provides access to a single database.
+> To share all the databases in an eventhouse, use the [share an Eventhouse](create-eventhouse.md#share-an-eventhouse) option.
 
 :::image type="content" source="media/create-database/database-share.png" alt-text="Screenshot that shows the Share button on the top right of the screen.":::
 

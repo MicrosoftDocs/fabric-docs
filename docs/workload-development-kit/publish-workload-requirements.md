@@ -1,10 +1,8 @@
 ---
 title: Fabric Workload Hub validation guidelines and requirements
 description: Learn about the guidelines and requirements for publishing a Microsoft Fabric workload to the Workload Hub.
-author: KesemSharabi
-ms.author: kesharab
-ms.topic: conceptual
-ms.date: 02/18/2025
+ms.topic: concept-article
+ms.date: 04/29/2026
 ---
 
 # Workload publishing requirements
@@ -80,7 +78,7 @@ Fabric users expect a fast loading UX. Independent of the technical implementati
 | Samples | Partners can use samples that are creating preconfigured items of their type to help customers get started more easily. | Attestation | Optional | Optional | |
 | Custom Item actions | Partners can implement custom actions as part of their item editor. | Attestation | Optional | Optional | |
 | Workspace settings | Workspace settings provide a way that workloads can be configured on a workspace level. | Attestation | Not supported | Not supported | [Workspace](../fundamentals/workspaces.md) |
-| Global Search | Searching for items in Fabric is supported through the top search bar. | Attestation | Not supported | Not supported | [Fabric Search](../fundamentals/fabric-search.md) |
+| Global Search | Searching for items in Fabric is supported through the top search bar. | Attestation | Not supported | Not supported | [Fabric Search](../fundamentals/fabric-home.md) |
 
 ## Security & Compliance requirements
 
@@ -119,3 +117,4 @@ Fabric users expect a fast loading UX. Independent of the technical implementati
 * [Microsoft Fabric Workload Development Kit](development-kit-overview.md)
 * [Publishing flow](./publish-workload-flow.md)
 * [Commercial marketplace certification policies](/legal/marketplace/certification-policies)
+

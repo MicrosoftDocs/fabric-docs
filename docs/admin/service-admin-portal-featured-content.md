@@ -1,10 +1,8 @@
 ---
 title: Manage featured content
 description: Learn how to manage featured content in Power BI.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: ''
-
+author: msmimart
+ms.author: mimart
 ms.custom:
   - admin-portal
 ms.topic: how-to

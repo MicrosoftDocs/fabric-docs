@@ -2,8 +2,8 @@
 title: Take ownership of Fabric items
 description: This article explains how to take ownership of Fabric items when current owner credentials are no longer valid or accessible.
 ms.reviewer: sakjai
-ms.author: painbar
-author: paulinbar
+author: SnehaGunda
+ms.author: sngun
 ms.topic: how-to
 ms.date: 01/31/2025
 #customer intent: As a member of a workspace that has items that no longer work correctly because the current owner has left the organization, I want to know how to take over ownership of such items and make other changes to get the items working again.
@@ -15,7 +15,7 @@ When a user leaves the organization, or if they don't sign in for more than 90 d
 When a user takes over ownership of an item using this procedure, they also become the owner of any child items the item might have. You can't take over ownership of child items directly - only through the parent item.
 
 > [!NOTE]
-> Items such as semantic models, reports, datamarts, dataflows gen1 and dataflows gen2 have existing functionality for changing item ownership that remains the same. This article describes the procedure for taking ownership of other Fabric items.
+> Items such as semantic models, reports, dataflows gen1 and dataflows gen2 have existing functionality for changing item ownership that remains the same. This article describes the procedure for taking ownership of other Fabric items.
 
 ## Prerequisites
 
@@ -40,10 +40,10 @@ To take ownership of a Fabric item:
    | **Complete Failure** | Can't take over \<item_name\>. Try again. | Retry take over of parent item. |
 
 > [!NOTE]
-> Data Pipeline items require the additional step of ensuring that the **Last Modified By** user is also updated after taking item ownership. You can do this by making a small edit to the item and saving it. For example, you could make a small change to the activity name.
+> Pipeline items require the additional step of ensuring that the **Last Modified By** user is also updated after taking item ownership. You can do this by making a small edit to the item and saving it. For example, you could make a small change to the activity name.
 
 > [!IMPORTANT]
-> The take over feature doesn't cover ownership change of related items. For instance, if a data pipeline has notebook activity, changing ownership of the data pipeline doesn't change the ownership of the notebook. Ownership of related items needs to be changed separately.
+> The take over feature doesn't cover ownership change of related items. For instance, if a pipeline has notebook activity, changing ownership of the pipeline doesn't change the ownership of the notebook. Ownership of related items needs to be changed separately.
 
 ## Repair connections after Fabric item ownership change
 
@@ -106,6 +106,6 @@ This is a separate item from Dataflows Gen1 and Gen2. Refer to the creation expe
 
 * The option to take over an item isn't available if the item is a system-generated item not visible or accessible to users in a workspace. For instance, a parent item might have system-generated child items - this can happen when items such as Eventstream items and Activator items are created through the Real-Time hub. In such cases, the take over option is not available for the parent item.
 
-* Currently, there's no API support for changing ownership of Fabric items. This doesn't impact existing functionality for changing ownership of items such as semantic models, reports, dataflows gen1 and gen2, and datamarts, which continues to be available. For information about taking ownership of warehouses, see [Change ownership of Fabric Warehouse](/fabric/data-warehouse/change-ownership).
+* Currently, there's no API support for changing ownership of Fabric items. This doesn't impact existing functionality for changing ownership of items such as semantic models, reports, dataflows gen1 and gen2 which continues to be available. For information about taking ownership of warehouses, see [Change ownership of Fabric Warehouse](/fabric/data-warehouse/change-ownership).
 
 * This Fabric-item takeover feature doesn't cover ownership takeover as a service principal.

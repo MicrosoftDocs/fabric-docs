@@ -1,12 +1,14 @@
 ---
 title: How to create a REST connection
 description: This article provides information about how to do create a REST connection in Microsoft Fabric.
-author: pennyzhou-msft
-ms.author: xupzhou
+ms.reviewer: xupzhou
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 03/13/2026
 ms.custom:
-  - template-how-to
+- template-how-to
+- connectors
+- sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # How to create REST connection
@@ -20,17 +22,18 @@ This REST connector supports the following authentication types for copy and Dat
 |Authentication type |Copy |Dataflow Gen2 (Web API) |
 |:---|:---|:---|
 |Anonymous| √| √|
-|Basic| | √|
-|Organizational account| | √|
+|Basic| √| √|
+|Organizational account| √| √|
+|Service principal| √| |
 |Windows| | √|
 
-## Set up your connection in Dataflow Gen2
+## Set up your connection for Dataflow Gen2
 
 The Microsoft 365 connector isn't currently supported in Dataflow Gen2. To connect to REST data in Dataflow Gen2, use the [Web API](/power-query/connectors/web/web) connector.
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
-To create a connection in a data pipeline:
+To create a connection in a pipeline:
 
 1. From the page header in Data Factory service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**.
 
@@ -82,7 +85,7 @@ Select **Create**. Your creation is successfully tested and saved if all the cre
 
 ## Table summary
 
-The following table contains connector properties that are supported in pipeline copy.
+The following table contains connector properties that are supported in a pipeline copy.
 
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|
@@ -100,6 +103,8 @@ The following the following table contains the properties for supported authenti
 |:---|:---|:---|:---|:---|
 |**Anonymous**||||✓|
 
+
 ## Related content
 
+- [For more information about this connector, see the How to create a REST connector documentation.](/power-query/connectors/web/web)
 - [How to configure REST in copy activity](connector-rest-copy-activity.md)

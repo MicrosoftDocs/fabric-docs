@@ -1,10 +1,9 @@
 ---
 title: Security in Microsoft Fabric
 description: Learn how Microsoft Fabric security works, and what features are available.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: overview
-ms.custom:
 ms.date: 05/11/2025
 ---
 
@@ -162,7 +161,7 @@ Fabric data resiliency ensures that your data is available if there is a disaste
 
 As an [administrator in Fabric](../admin/admin-overview.md), you get to control capabilities for the entire organization. Fabric enables delegation of the admin role to capacities, workspaces, and domains. By delegating admin responsibilities to the right people, you can implement a model that lets several key admins control general Fabric settings across the organization, while other admins who are in charge of settings related to specific areas.
 
-Using various tools, admins can also [monitor](../admin/admin-overview.md#monitor) key Fabric aspects such as capacity consumption.
+Using various tools, admins can also [monitor](../admin/admin-overview.md#monitor-fabric-usage-and-activity) key Fabric aspects such as capacity consumption.
 
 ## Audit Logs
 To view your audit logs, follow the instructions in [Track user activities in Microsoft Fabric](../admin/track-user-activities.md). You can also refer to the [Operation list](../admin/operation-list.md) to see which activities are available for searching in the audit logs.

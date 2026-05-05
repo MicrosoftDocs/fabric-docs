@@ -1,10 +1,7 @@
 ---
 title: Explore supported discrete event sources for Fabric Real-Time hub  
 description: Discover the list of discrete event sources supported by Fabric Real-Time hub and how they can be used.
-author: spelluru
-ms.author: spelluru
 ms.topic: include
-ms.custom:
 ms.date: 11/18/2024
 ---
 

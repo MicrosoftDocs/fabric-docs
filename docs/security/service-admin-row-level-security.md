@@ -3,11 +3,10 @@ title: Row-level security (RLS) with Power BI
 description: How to configure row-level security for imported semantic models, and DirectQuery, within the Power BI service.
 author: billmath
 ms.author: billmath
-ms.reviewer: ''
-
 ms.topic: how-to
-ms.date: 07/16/2025
-ms.custom: ''
+ms.date: 05/05/2026
+ms.update-cycle: 180-days
+ms.custom: 'sfi-image-nochange'
 LocalizationGroup: Administration
 ms.collection: ce-skilling-ai-copilot
 no-loc: [Copilot]
@@ -24,9 +23,12 @@ To implement RLS, follow this high-level workflow:
 1. **Add members** to roles in the Power BI service.
 1. **Validate** by using the **Test as role** feature to confirm data filtering works as expected.
 
-You can configure RLS for data models imported into Power BI with Power BI. You can also configure RLS on semantic models that are using DirectQuery, such as SQL Server. For Analysis Services or Azure Analysis Services live connections, you configure row-level security in the model, not in Power BI. The security option doesn't show up for live connection semantic models.
+You can configure RLS for imported semantic models in Power BI Desktop or the Power BI service. You can also configure RLS on semantic models that are using DirectQuery, such as SQL Server. For Analysis Services or Azure Analysis Services live connections, you configure row-level security in the model, not in Power BI. The security option doesn't show up for live connection semantic models.
 
-[!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/rls-desktop-define-roles.md)]
+> [!NOTE]
+> This article covers RLS for Power BI semantic models specifically. For data security in other Fabric items, see [Security in Microsoft Fabric](/fabric/security/security-overview).
+
+[!INCLUDE [include-short-name](../includes/row-level-security-desktop-define-roles.md)]
 
 By default, row-level security filtering uses single-directional filters, whether the relationships are set to single direction or bi-directional. You can manually enable bi-directional cross-filtering with row-level security by selecting the relationship and checking the **Apply security filter in both directions** checkbox. Note that if a table takes part in multiple bi-directional relationships you can only select this option for one of those relationships. Select this option when you've also implemented dynamic row-level security at the server level, where row-level security is based on username or login ID.
 
@@ -46,7 +48,7 @@ To manage security on your semantic model, open the workspace where you saved yo
 
     :::image type="content" border="true" source="media/service-admin-row-level-security/dataset-more-options-menu.png" alt-text="Screenshot showing the More options menu with Security selected.":::
 
-Security takes you to the Role-Level Security page where you add members to a role you created. Contributor (and higher workspace roles) will see **Security** and can assign users to a role.
+Security takes you to the Role-Level Security page where you add members to a role you created. Users with **Contributor** or higher workspace roles see the **Security** option and can assign users to a role. Semantic model ownership or Build permission may also be required depending on the scenario.
 
 > [!NOTE]
 > You can only manage security on models that have row-level security roles already defined in Power BI Desktop or when editing your data model in the Power BI service. If your model doesn't have roles already defined, you can't manage security in the Power BI service.
@@ -63,7 +65,8 @@ You can use the following groups to set up row-level security.
 - Mail-enabled Group
 - [Microsoft Entra Security Group](/azure/active-directory/fundamentals/groups-view-azure-portal)
 
-Note that Microsoft 365 groups aren't supported and can't be added to any roles.
+> [!IMPORTANT]
+> Microsoft 365 groups aren't supported and can't be added to any roles. Only the group types listed above are supported for RLS role membership.
 
  :::image type="content" border="true" source="media/service-admin-row-level-security/row-level-security-add-member.png" alt-text="Screenshot showing how to add a member.":::
 
@@ -102,23 +105,27 @@ To return to normal viewing, select **Back to Row-Level Security**.
 > [!NOTE]
 > The Test as role feature doesn't work for DirectQuery models with Single Sign-On (SSO) enabled. Additionally, not all aspects of a report can be validated in the Test as role feature including Q&A visualizations, Quick insights visualizations, and Copilot.
 
-[!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/rls-usernames.md)]
+[!INCLUDE [include-short-name](../includes/row-level-security-username.md)]
 
 ## Using RLS with workspaces in Power BI
 
 If you publish your Power BI Desktop report to a [workspace](/power-bi/collaborate-share/service-new-workspaces) in the Power BI service, the RLS roles apply to members assigned the **Viewer** role in the workspace. Even if **Viewers** have Build permissions to the semantic model, RLS still applies. For example, if Viewers with Build permissions use [Analyze in Excel](/power-bi/collaborate-share/service-analyze-in-excel), their view of the data is restricted by RLS. Workspace members assigned **Admin**, **Member**, or **Contributor** have edit permission for the semantic model, so RLS doesn't apply to them. If you want RLS to apply to people in a workspace, you can only assign them the **Viewer** role. Read more about [roles in workspaces](/power-bi/collaborate-share/service-roles-new-workspaces).
 
-[!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/rls-limitations.md)]
+[!INCLUDE [include-short-name](../includes/row-level-security-limitations.md)]
 
-[!INCLUDE [include-short-name](~/../powerbi-repo//powerbi-docs/includes/rls-faq.md)]
+[!INCLUDE [include-short-name](../includes/row-level-security-faq.md)]
 
 ## Related content
 
-- [Restrict data access with row-level security (RLS) for Power BI Desktop](../security/service-admin-row-level-security.md)
+- [Restrict data access with row-level security (RLS) for Power BI Desktop](/power-bi/guidance/rls-guidance)
 - [Row-level security (RLS) guidance in Power BI Desktop](/power-bi/guidance/rls-guidance)
 - [Power BI implementation planning: Report consumer security planning](/power-bi/guidance/powerbi-implementation-planning-security-report-consumer-planning#enforce-data-security-based-on-consumer-identity)
 - [RLS for Embedded scenarios for ISVs](/power-bi/developer/embedded/embedded-row-level-security)
 
 Questions? [Try asking the Power BI Community](https://community.powerbi.com/)
 Suggestions? [Contribute ideas to improve Power BI](https://ideas.powerbi.com/)
+<<<<<<< HEAD
 ```
+=======
+
+>>>>>>> 4630c8fac68e94e9f419bafddb82a6f6abbd650a

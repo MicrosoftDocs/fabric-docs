@@ -1,16 +1,19 @@
 ---
-title: How To Use the Microsoft Copilot Code Completion in Microsoft Fabric in the SQL database workload
+title: How to Use the Microsoft Copilot Code Completion in the SQL Database Workload
 description: Learn more about Microsoft Copilot Code Completion feature in Microsoft Fabric in the SQL database workload, to ask questions specific about your database.
 author: markingmyname
 ms.author: maghan
 ms.reviewer: yoleichen, wiassaf
-ms.date: 04/09/2025
+ms.date: 11/18/2025
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
+ms.update-cycle: 180-days
+ms.custom:
+  - sfi-image-nochange
 ---
 
-# How to use the Microsoft Copilot code completion in Fabric in the SQL database workload (Preview)
+# How to use the Microsoft Copilot code completion in the SQL database workload
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
@@ -29,10 +32,10 @@ As you start writing T-SQL code or comments in the editor, Copilot in Fabric SQL
 - Verify the **Show Copilot completions** setting in enabled in your database settings.
   - You can also check the setting's status through the status bar at the bottom of the query editor.
 
-   :::image type="content" source="media/copilot-code-completion/copilot-setting-status-bar.jpg" alt-text="Screenshot from the Fabric SQL database Query editor, showing the Copilot settings are ready and enabled.":::
+  :::image type="content" source="media/copilot-code-completion/copilot-setting-status-bar.jpg" alt-text="Screenshot from the Fabric SQL database Query editor, showing the Copilot settings are ready and enabled.":::
 
   - If not enabled, then in your database **Settings**, select the **Copilot** pane. Enable the **Show Copilot completions** option is enabled.
-      :::image type="content" source="media/copilot-code-completion/copilot-setting-toggle.png" alt-text="Screenshot from the Fabric SQL database settings, showing the Copilot page and the Show Copilot completions setting." lightbox="media/copilot-code-completion/copilot-setting-toggle.png":::
+    :::image type="content" source="media/copilot-code-completion/copilot-setting-toggle.png" alt-text="Screenshot from the Fabric SQL database settings, showing the Copilot page and the Show Copilot completions setting." lightbox="media/copilot-code-completion/copilot-setting-toggle.png":::
 
 ## How can code completions help you?
 
@@ -67,3 +70,4 @@ To begin using the Copilot Code Completion feature, follow these steps to enable
 - [How to use the Copilot chat pane in Fabric in SQL database](copilot-chat-pane.md)
 - [How to use the Copilot explain and fix quick action features in Fabric in SQL database](copilot-quick-actions.md)
 - [Privacy, security, and responsible AI use of Copilot in Microsoft Fabric](../../fundamentals/copilot-privacy-security.md)
+
