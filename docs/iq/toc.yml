@@ -92,15 +92,15 @@ items:
         - name: Insert rows
           items:
               - name: Insert data input rows
-                href: plan/planning-how-to-insert-data-input-rows.md
+                href: plan/planning-how-to-insert-rows-data-input.md
               - name: Insert template rows
-                href: plan/planning-how-to-insert-template-rows.md
+                href: plan/planning-how-to-insert-rows-template.md
               - name: Insert formula rows
-                href: plan/planning-how-to-insert-formula-rows.md
+                href: plan/planning-how-to-insert-rows-formula.md
               - name: Insert forecast rows
-                href: plan/planning-how-to-insert-forecast-rows.md
+                href: plan/planning-how-to-insert-rows-forecast.md
               - name: Insert blank rows
-                href: plan/planning-how-to-insert-blank-rows.md
+                href: plan/planning-how-to-insert-rows-blank.md
               - name: Manage inserted rows
                 href: plan/planning-how-to-manage-inserted-rows.md
         - name: Set up scenarios
