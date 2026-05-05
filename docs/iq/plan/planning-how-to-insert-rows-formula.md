@@ -22,7 +22,7 @@ This article explains how to insert formula rows and configure their properties.
 1. Go to **Planning** > **Insert Row** and then select **Formula**, or select the row gripper and select **Insert** > **Formula**.
 1. In the **Calculated Row** pane, enter a title and define the formula, then select **Create** to insert the row.
 
-    :::image type="content" source="media/planning-how-to-insert-rows-formula/creating-formula-row.png" alt-text="Screenshot of creating a formula row." :::
+    :::image type="content" source="media/planning-how-to-insert-rows-formula/create-formula-row.png" alt-text="Screenshot of creating a formula row." :::
 
 > [!NOTE]
 >The **Create** option is only enabled after a valid formula is entered.

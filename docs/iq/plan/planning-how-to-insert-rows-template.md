@@ -60,7 +60,7 @@ Template conditions can be configured to control which parent categories and lev
 1. In the **Static Row** window > **Template conditions** section, select **Configure**.
 1. In the **Set Template Conditions** window, specify where the template rows should be applied by choosing the required categories, and select **Apply**.
 
-    :::image type="content" source="media/planning-how-to-insert-rows-template/set-template-conditions.png" alt-text="Screenshot of setting a template condition" lightbox="media/planning-how-to-insert-rows-template/set-template-conditions.png":::
+    :::image type="content" source="media/planning-how-to-insert-rows-template/set-template-conditions.png" alt-text="Screenshot of setting a template condition." lightbox="media/planning-how-to-insert-rows-template/set-template-conditions.png":::
 
 1. Use this to restrict or allow specific hierarchy levels to get the template rows.
 

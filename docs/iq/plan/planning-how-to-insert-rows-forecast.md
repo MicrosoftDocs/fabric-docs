@@ -52,7 +52,7 @@ The following options can be configured while creating a forecast row:
 * **Open period**: Populate future periods using one of the following options.
     * **Linked row**: Reference values from another row.
     
-      :::image type="content" source="media/planning-how-to-insert-rows-forecast/open-period.png" alt-text="Screenshot of options available in open period":::
+      :::image type="content" source="media/planning-how-to-insert-rows-forecast/open-period.png" alt-text="Screenshot of options available in open period.":::
 
     * **Formula**: Define a formula for forecast values.
     * **Data input**: Manually enter forecast values with optional default values using a **static** value, another **row**, or a **formula**.
@@ -77,7 +77,7 @@ The forecast range can be configured using one of the following options:
 
 * Split the forecast into multiple time ranges using **Add Range**.
 
-    :::image type="content" source="media/planning-how-to-insert-rows-forecast/multiple-time-range.png" alt-text="Screenshot of configuring multiple forecast range":::
+    :::image type="content" source="media/planning-how-to-insert-rows-forecast/multiple-time-range.png" alt-text="Screenshot of configuring multiple forecast range.":::
 
     When you split the forecast period, ensure that all time ranges together cover the entire forecasting duration. Otherwise, the forecast cannot be created.
 
