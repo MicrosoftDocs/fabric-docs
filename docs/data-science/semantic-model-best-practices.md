@@ -1,6 +1,8 @@
 ---
 title: Semantic model best practices for data agent
 description: Learn best practices for configuring Power BI semantic models to maximize accuracy and relevance when using them with Fabric data agent.
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: pareshm
 ms.topic: concept-article
 ms.collection: ce-skilling-ai-copilot

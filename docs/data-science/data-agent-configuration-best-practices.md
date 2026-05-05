@@ -1,6 +1,8 @@
 ﻿---
 title: Best practices for configuring your data agent
 description: Learn some best practices for how to configure and instruct your data agent.
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: midesa
 ms.topic: how-to
 ms.date: 08/15/2025
@@ -14,7 +16,7 @@ To explore the different types of data agent configurations, see [data agent con
 
 ## 1. Get your data AI ready
 
-To ensure the data agent can generate accurate queries, it’s important that your data sources, tables, and columns use clear and descriptive names. Avoid vague or generic labels like `Table1`, `col1`, or `flag`, which can make it difficult for the agent to interpret user intent.
+To ensure the data agent can generate accurate queries, it's important that your data sources, tables, and columns use clear and descriptive names. Avoid vague or generic labels like `Table1`, `col1`, or `flag`, which can make it difficult for the agent to interpret user intent.
 
 ❌**Less effective:**
 
@@ -36,11 +38,11 @@ For better accuracy and relevance, design data agents that are focused on a spec
 
 ✅ **Better:** A data agent tailored to support the leadership team by combining insights from multiple data sources for meeting preparation
 
-By narrowing the agent’s focus, you improve its ability to generate precise responses and reduce ambiguity in query interpretation.
+By narrowing the agent's focus, you improve its ability to generate precise responses and reduce ambiguity in query interpretation.
 
 ## 3. Minimize the data source scope
 
-Include only the data sources necessary to answer the expected user questions. Within each data source, select only the specific tables and columns that are relevant to your use case. A more focused configuration improves the agent’s ability to generate accurate and efficient queries.
+Include only the data sources necessary to answer the expected user questions. Within each data source, select only the specific tables and columns that are relevant to your use case. A more focused configuration improves the agent's ability to generate accurate and efficient queries.
 
 ❌ **Less effective:** Connecting an entire Lakehouse or model with all tables and columns
 
@@ -91,7 +93,7 @@ Instructions should be concise and purposeful. Include only the information need
 ❌ **Less effective:**
 
 ```md
-You are an HR data agent who should try to help employees with all kinds of questions about work. You have access to many systems, like the HRIS platform, old payroll databases from previous vendors, archived employee files, scanned PDF policy documents, and maybe even some spreadsheets that HR used in the past. If someone asks about their pay, you might want to look in one of the old systems if needed. Also, sometimes data isn't updated immediately, so just do your best. Remember that the company reorganized in 2017, so department names might be different before then. Try to be friendly, but also make sure you don’t seem robotic. Sometimes HR policies change, so answers might not always be the same depending on the date. Just explain if something seems complicated.
+You are an HR data agent who should try to help employees with all kinds of questions about work. You have access to many systems, like the HRIS platform, old payroll databases from previous vendors, archived employee files, scanned PDF policy documents, and maybe even some spreadsheets that HR used in the past. If someone asks about their pay, you might want to look in one of the old systems if needed. Also, sometimes data isn't updated immediately, so just do your best. Remember that the company reorganized in 2017, so department names might be different before then. Try to be friendly, but also make sure you don't seem robotic. Sometimes HR policies change, so answers might not always be the same depending on the date. Just explain if something seems complicated.
 ```
 
 **Why is this less effective?**
@@ -204,15 +206,15 @@ Join to EmployeeDim if necessary.
 Use the EmployeeData data warehouse to answer questions related to employee details, employment status, pay history, and organizational structure.
 
 When generating queries:
-• Use EmployeeDim as the primary table for employee details.  
-• Always include the following columns in the response (if available):  
+* Use EmployeeDim as the primary table for employee details.  
+* Always include the following columns in the response (if available):  
   - EmployeeID  
   - EmployeeName  
   - EmploymentStatus  
   - JobTitle  
   - DepartmentName  
-• Join other tables to EmployeeDim using EmployeeID unless otherwise specified.  
-• Filter for the most recent records when applicable.  
+* Join other tables to EmployeeDim using EmployeeID unless otherwise specified.  
+* Filter for the most recent records when applicable.  
 
 Example values:
 - EmploymentStatus: "Active", "On Leave", "Terminated"  
@@ -233,7 +235,7 @@ If multiple records exist, filter for the record where `IsCurrent = True`.
 
 ## 10. Use example queries to express complex query logic
 
-Use [example queries](./data-agent-configurations.md#data-source-example-queries) to help the data agent understand how to construct accurate queries—especially when the logic is complex or nuanced. These examples act as templates that the agent can generalize from, even if the user’s question isn’t an exact match.
+Use [example queries](./data-agent-configurations.md#data-source-example-queries) to help the data agent understand how to construct accurate queries—especially when the logic is complex or nuanced. These examples act as templates that the agent can generalize from, even if the user's question isn't an exact match.
 
 * Include example queries for common or representative question types.
 * Focus on examples where the query logic involves filtering, joins, aggregations, or date handling.
@@ -245,7 +247,7 @@ Use [example queries](./data-agent-configurations.md#data-source-example-queries
 
 ### How example queries are used
 
-For each user question, the data agent performs a **vector similarity search** to retrieve the top 3 most relevant example queries. These are then passed into the agent’s augmented prompt to guide query generation.
+For each user question, the data agent performs a **vector similarity search** to retrieve the top 3 most relevant example queries. These are then passed into the agent's augmented prompt to guide query generation.
 
 ## Next steps
 
