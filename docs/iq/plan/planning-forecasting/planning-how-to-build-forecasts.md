@@ -36,20 +36,20 @@ The first step in configuring a forecast is to set the time frame for which the 
 
 ## Options to populate open forecasts
 
-Generate open forecasts using one of these methods:
+Generate open forecasts by setting **Open Period** to one of these methods:
 
-* **Measure**- If measure values exist for an open period, use those values to populate the forecast.
-* **Formula**- If measure values exist for an open period, use a formula based on those values to populate the forecast.
-* **Data Input**- Allow users to enter forecasts.
+* **Measure**: If measure values exist for an open period, use those values to populate the forecast. This setting is read-only.
+* **Formula**: If measure values exist for an open period, use a formula based on those values to populate the forecast. This setting is read-only.
+* **Data Input**: Allow users to enter forecasts. This setting allows users to override prepopulated forecasts.
 
 :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/forecast-open-period-options.png" alt-text="Screenshot of options to populate open forecasts.":::
 
-When open forecast measures are configured as **Data Input**, you can initialize the forecast using historical or current data from the source. If the source data contains blank values, configure a default value using one of the options shown.
+When open forecast measures are configured with the **Data Input** method, you can initialize the forecast using historical or current data from the source. If the source data contains blank values, configure a default value using one of the options shown.
+
+:::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/open-forecast-default-value.png" alt-text="Screenshot of default value for forecasts when open period is set to data input.":::
 
 > [!TIP]
 > When a measure or formula is selected as the default value, ensure that data is available for the forecast period.
-
-:::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/open-forecast-default-value.png" alt-text="Screenshot of default value for forecasts when open period is set to data input.":::
 
 ## Populate open forecasts from the data source
 
@@ -57,11 +57,11 @@ If forecast values are already available for future periods in the data source, 
 
 To initialize the open forecast from a measure in the planning sheet, set **Open Period** to **Measure**, then select the measure from **Linked Measure**.
 
-To set forecast values based on a formula, set **Open Period** to **Formula** and enter the formula.
-
 :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/open-forecast-measure-formula.png" alt-text="Screenshot of configuring an open forecast from a measure.":::
 
-Consider a business case where the revenue projections are available for the forecast period, in this case, 2026.
+To set forecast values based on a formula, set **Open Period** to **Formula** and enter the formula.
+
+Consider a business case where the revenue projections are available for the forecast period 2026.
 
 :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/revenue-projections.png" alt-text="Screenshot of revenue projections." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/revenue-projections.png":::
 
@@ -78,7 +78,7 @@ Create and save the forecast.
 Prepopulate future forecast periods using existing historical or current data. These initial values can then be manually adjusted by selecting and editing the cell.
 
 > [!NOTE]
-> This option is available only when **Open Period** is set to **Data Input**.
+> This option is only available when [**Open Period**](#options-to-populate-open-forecasts) is set to **Data Input**.
 
 1. Set **Open Period** to **Data Input** and **Default Value** to **None**.
 
@@ -122,7 +122,7 @@ You can set the time period used to initialize the forecast in two ways:
 Split a forecast period into multiple ranges and initialize each range using a different method, such as average values or data from a prior period.
 
 > [!NOTE]
-> This option is available only when **Open Period** is set to **Data Input**.
+> This option is only available when [**Open Period**](#options-to-populate-open-forecasts) is set to **Data Input**.
 
 1. Configure the initial forecast settings, then go to **Period Setup**.
 1. Set the **Target Period** to January–March 2026, **Copy Source** to the Revenue measure, **Apply Operation** to **Single Period**, and **Source Periods** to December 2025.
