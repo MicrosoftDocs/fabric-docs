@@ -150,7 +150,7 @@ To return to normal viewing, select **Back to Row-Level Security**.
 > - For dynamic RLS, confirm the user-mapping table contains matching values for `USERPRINCIPALNAME()` or `USERNAME()`.
 > - For DirectQuery models with SSO enabled, Test as role isn't supported. Instead, sign in as an actual Viewer-role user to validate data filtering.
 
-[!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/rls-usernames.md)]
+[!INCLUDE [include-short-name](../includes/row-level-security-username.md)]
 
 ## Using RLS with workspaces in Power BI
 
