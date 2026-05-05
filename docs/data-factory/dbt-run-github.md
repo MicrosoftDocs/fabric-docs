@@ -1,6 +1,6 @@
 ---
 title: Run dbt Projects from a GitHub Repository in Microsoft Fabric
-description: Run dbt projects in Microsoft Fabric by connecting to GitHub repository. Learn how to execute and monitor dbt jobs without moving your code.
+description: Run dbt projects in Microsoft Fabric by connecting to a GitHub repository. Learn how to execute and monitor dbt jobs without moving your code.
 ms.reviewer: akurnala
 ms.date: 04/20/2026
 ai-usage: ai-assisted
@@ -10,7 +10,7 @@ ms.topic: how-to
 
 # Run dbt projects from a GitHub repository in Microsoft Fabric
 
-If your team already maintains a dbt project in a GitHub repository, you can connect it to a Microsoft Fabric dbt job and run it there. Your dbt project stays in GitHub repository and Fabric pulls the code and handles execution. You don't need to copy or rewrite anything.
+If your team already maintains a dbt project in a GitHub repository, you can connect it to a Microsoft Fabric dbt job and run it there. Your dbt project stays in the GitHub repository and Fabric pulls the code and handles execution. You don't need to copy or rewrite anything.
 
 - **GitHub** stores your dbt project code.
 - **Fabric** runs dbt commands and displays the results.
@@ -32,7 +32,7 @@ Before you start, make sure you have:
 
 - An existing dbt project stored in a GitHub repository
 - Access to a Microsoft Fabric workspace with permission to create items
-- A **classic GitHub Personal Access Token (PAT)** with access to the repository
+- A classic GitHub personal access token (PAT) with access to the repository
 
 Fabric uses the PAT to securely read your dbt project from GitHub.
 
@@ -66,9 +66,9 @@ To run a dbt project from GitHub in Fabric, follow these steps:
 
 Provide the following details to create a connection between Fabric and GitHub:
 
-- **Repository name or URL** - the GitHub repository that contains your dbt project. For example: `https://GitHub.com/a/dbtjob_CICD`
+- **Repository name or URL** - the GitHub repository that contains your dbt project. For example: `https://github.com/a/dbtjob_CICD`
 - **Connection name** - a friendly name to identify this connection.
-- **Classic PAT token** - used by Fabric to securely access the repository.
+- **Classic PAT** - Fabric uses this token to securely access the repository.
 
    :::image type="content" source="media/dbt-run-github/connect-github-project.png" alt-text="Screenshot of the GitHub connection settings form in Microsoft Fabric.":::
 
