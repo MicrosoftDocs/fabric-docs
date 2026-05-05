@@ -124,8 +124,4 @@ If you publish your Power BI Desktop report to a [workspace](/power-bi/collabora
 
 Questions? [Try asking the Power BI Community](https://community.powerbi.com/)
 Suggestions? [Contribute ideas to improve Power BI](https://ideas.powerbi.com/)
-<<<<<<< HEAD
-```
-=======
 
->>>>>>> 4630c8fac68e94e9f419bafddb82a6f6abbd650a
