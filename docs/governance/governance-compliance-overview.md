@@ -1,11 +1,11 @@
 ---
 title: Governance and compliance in Microsoft Fabric
 description: This article provides an overview of the governance and compliance in Microsoft Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: overview
-ms.custom:
 ms.date: 09/26/2024
+ai-usage: ai-assisted
 ---
 
 # Governance overview and guidance
@@ -90,7 +90,7 @@ To make sure data in Fabric is secure from unauthorized access and stays complia
 
 ### Purview Information Protection
 
-Information protection in Fabric enables you to discover, classify, and protect Fabric data using sensitivity labels from Microsoft Purview Information Protection. Fabric provides multiple capabilities, such as default labeling, label inheritance, and programmatic labeling, to help achieve maximal sensitivity label coverage across your entire Fabric data estate. Once labeled, data remains protected even when it's exported out of Fabric via supported export paths. Compliance admins can monitor activities on sensitivity labels in Microsoft Purview Audit.
+Information protection in Fabric enables you to discover, classify, and protect Fabric data using sensitivity labels from Microsoft Purview Information Protection. Fabric provides multiple capabilities, such as default labeling, label inheritance, and [programmatic labeling](/fabric/governance/service-security-sensitivity-label-inheritance-set-remove-api), to help achieve maximal sensitivity label coverage across your entire Fabric data estate. Once labeled, data remains protected even when it's exported out of Fabric via supported export paths. Compliance admins can monitor activities on sensitivity labels in Microsoft Purview Audit.
 
 For more information, see [Information Protection in Microsoft Fabric](./information-protection.md).
 
@@ -214,3 +214,5 @@ The admin monitoring workspace provides admins with monitoring capabilities for 
 
 * [Fabric security overview](../security/security-overview.md)
 * [Fabric administration overview](../admin/admin-overview.md)
+* [Microsoft Purview permissions](/purview/purview-permissions)
+

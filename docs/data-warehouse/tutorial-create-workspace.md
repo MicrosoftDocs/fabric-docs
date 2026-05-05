@@ -1,8 +1,6 @@
 ---
 title: "Data Warehouse Tutorial: Create a Workspace"
 description: "In this first tutorial, learn how to create a workspace to support the other tutorials in the series."
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: scbradl
 ms.date: 04/06/2025
 ms.topic: tutorial
@@ -30,7 +28,7 @@ In this task, learn how to create a workspace. A workspace contains the items ne
 
 1. Expand the **Advanced** section.
 
-1. Choose either the **Fabric capacity** or **Trial** license mode.
+1. Choose either the **Fabric** capacity or **Fabric Trial** workspace type.
 
 1. In the **Capacity** dropdown list, choose a premium capacity you have access to.
 

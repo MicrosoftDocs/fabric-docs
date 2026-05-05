@@ -1,12 +1,9 @@
 ---
 title: Create default and derived Fabric event streams
 description: Learn how to create default and derived Microsoft Fabric event streams.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: anboisve
 ms.topic: how-to
-ms.custom:
-ms.date: 11/18/2024
+ms.date: 11/10/2025
 ms.search.form: Source and Destination
 ---
 
@@ -47,8 +44,21 @@ Once you create a new eventstream, you can add a source to the eventstream and t
 
     :::image type="content" source="media/create-default-derived-streams/access-stream.png" alt-text="A screenshot of accessing a derived stream in Real-Time hub." lightbox="media/create-default-derived-streams/access-stream.png":::
 
+## Pause and resume derived streams
+
+You can now pause and resume traffic from your derived streams. This provides greater flexibility and control over your data flow without deleting or reconfiguring your eventstream topology.
+
+When a derived stream is paused, Eventstream temporarily stops sending data to its destination while preserving all stream configurations. You can resume traffic at any time to continue processing events seamlessly.
+
+Use this feature to:
+
+- Temporarily stop data flow for maintenance or troubleshooting.
+- Reduce ingestion or processing costs during testing or low-activity periods.
+
 ## Related content
 
 - [Enhanced capabilities in Microsoft Fabric event streams](overview.md)
 - [Edit and publish an eventstream](edit-publish.md)
 - [Route data streams based on content](route-events-based-on-content.md)
+
+

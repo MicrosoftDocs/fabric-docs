@@ -3,11 +3,10 @@ title: Row-level security (RLS) with Power BI
 description: How to configure row-level security for imported semantic models, and DirectQuery, within the Power BI service.
 author: billmath
 ms.author: billmath
-ms.reviewer: ''
-
 ms.topic: how-to
-ms.date: 07/16/2025
-ms.custom: ''
+ms.date: 05/05/2026
+ms.update-cycle: 180-days
+ms.custom: 'sfi-image-nochange'
 LocalizationGroup: Administration
 ms.collection: ce-skilling-ai-copilot
 no-loc: [Copilot]
@@ -22,7 +21,7 @@ You can configure RLS for imported semantic models in Power BI Desktop or the Po
 > [!NOTE]
 > This article covers RLS for Power BI semantic models specifically. For data security in other Fabric items, see [Data warehouse security](/fabric/data-warehouse/security) or [Lakehouse security](/fabric/data-engineering/lakehouse-security).
 
-[!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/rls-desktop-define-roles.md)]
+[!INCLUDE [include-short-name](../includes/row-level-security-desktop-define-roles.md)]
 
 By default, row-level security filtering uses single-directional filters, whether the relationships are set to single direction or bi-directional. You can manually enable bi-directional cross-filtering with row-level security by selecting the relationship and checking the **Apply security filter in both directions** checkbox. Note that if a table takes part in multiple bi-directional relationships you can only select this option for one of those relationships. Select this option when you've also implemented dynamic row-level security at the server level, where row-level security is based on username or login ID.
 
@@ -51,7 +50,7 @@ Security takes you to the Role-Level Security page where you add members to a ro
 
 ### Add members
 
-In the Power BI service, you can add a member to the role by typing in the email address or name of the user or security group. You can't add Groups created in Power BI. You can add members [external to your organization](/power-bi/guidance/whitepaper-azure-b2b-power-bi#data-security-for-external-partners).
+In the Power BI service, you can add a member to the role by typing in the email address or name of the user or security group. You can't add Groups created in Power BI. You can add members [external to your organization](../enterprise/powerbi/service-admin-entra-b2b.md).
 
 You can use the following groups to set up row-level security.
 
@@ -98,15 +97,15 @@ To return to normal viewing, select **Back to Row-Level Security**.
 > [!NOTE]
 > The Test as role feature doesn't work for DirectQuery models with Single Sign-On (SSO) enabled. Additionally, not all aspects of a report can be validated in the Test as role feature including Q&A visualizations, Quick insights visualizations, and Copilot.
 
-[!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/rls-usernames.md)]
+[!INCLUDE [include-short-name](../includes/row-level-security-username.md)]
 
 ## Using RLS with workspaces in Power BI
 
 If you publish your Power BI Desktop report to a [workspace](/power-bi/collaborate-share/service-new-workspaces) in the Power BI service, the RLS roles are applied to members who are assigned to the **Viewer** role in the workspace. Even if  **Viewers** are given Build permissions to the semantic model, RLS still applies. For example, if Viewers with Build permissions use [Analyze in Excel](/power-bi/collaborate-share/service-analyze-in-excel), their view of the data is restricted by RLS. Workspace members assigned **Admin**, **Member**, or **Contributor** have edit permission for the semantic model and, therefore, RLS doesn't apply to them. If you want RLS to apply to people in a workspace, you can only assign them the **Viewer** role. Read more about [roles in workspaces](/power-bi/collaborate-share/service-roles-new-workspaces).
 
-[!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/rls-limitations.md)]
+[!INCLUDE [include-short-name](../includes/row-level-security-limitations.md)]
 
-[!INCLUDE [include-short-name](~/../powerbi-repo//powerbi-docs/includes/rls-faq.md)]
+[!INCLUDE [include-short-name](../includes/row-level-security-faq.md)]
 
 ## Related content
 

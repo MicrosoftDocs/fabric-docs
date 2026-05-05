@@ -1,19 +1,15 @@
 ---
-title: Use AI to turn whiteboard sketches into data pipelines
+title: Use AI to turn whiteboard sketches into pipelines
 description: This article shows how AI can easily transform images directly to pipelines for Data Factory for Microsoft Fabric.
-author: dcstwh
-ms.author: weetok
+ms.reviewer: weetok
 ms.topic: how-to
-ms.date: 08/29/2024
+ms.date: 04/24/2026
+ms.custom: pipelines, sfi-image-nochange
 ---
 
-# Use Azure OpenAI to turn whiteboard sketches into data pipelines
+# Use Azure OpenAI to turn whiteboard sketches into pipelines
 
-Data factory in Microsoft Fabric provides cloud-scale data movement and data transformation services that allow you to solve the most complex data factory and ETL scenarios and empowers you with a modern data integration experience to ingest, prepare, and transform data from a rich set of data sources. Within Data Factory, you can create data pipelines to use out-of-the-box rich data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.
-
-Now, with the `gpt-4o` AI model in Azure, we're pushing the limits of what you can do with Data Factory and making it possible for you to create data solutions from just an image.
-
-What do you need to get started? Just a Microsoft Fabric account and an idea. Here, we show you how to transform a whiteboard idea to a Fabric Data Factory data pipeline using just a picture and `gpt-4o`.
+You can use the Azure OpenAI `gpt-4o` model to convert a whiteboard sketch or diagram into a working Data Factory pipeline in Microsoft Fabric. This article walks through uploading an image to a Lakehouse, analyzing it with `gpt-4o`, and creating a pipeline from the generated JSON using the Fabric REST APIs.
 
 ## Prerequisites
 
@@ -103,7 +99,7 @@ payload = {
         "content": [
         {
             "type": "text",
-            "text": "You are an AI assistant that helps an Azure engineer understand an image that likely shows a Data Factory in Microsoft Fabric data pipeline. Show list of pipeline activities and how they are connected."
+            "text": "You are an AI assistant that helps an Azure engineer understand an image that likely shows a Data Factory in Microsoft Fabric pipeline. Show list of pipeline activities and how they are connected."
         }
         ]
     },
@@ -154,7 +150,7 @@ payload = {
         "content": [
         {
             "type": "text",
-            "text": "You are an AI assistant that helps an Azure engineer understand an image that likely shows a Data Factory in Microsoft Fabric data pipeline. Succeeded is denoted by a green line, and Fail is denoted by a red line. Generate an ADF v2 pipeline JSON with what you see. Return ONLY the JSON text required, without any leading or trailing markdown denoting a code block."
+            "text": "You are an AI assistant that helps an Azure engineer understand an image that likely shows a Data Factory in Microsoft Fabric pipeline. Succeeded is denoted by a green line, and Fail is denoted by a red line. Generate an ADF v2 pipeline JSON with what you see. Return ONLY the JSON text required, without any leading or trailing markdown denoting a code block."
         }
         ]
     },
@@ -190,7 +186,7 @@ print(pipeline_json)
 
 Run this code block to generate the pipeline JSON from the image.
 
-## Step 4: Create the pipeline with Fabric REST APIs
+## Step 5: Create the pipeline with Fabric REST APIs
 
 Now that you obtained the pipeline JSON, you can create it directly using the Fabric REST APIs. Add another code block to the Notebook, and add the following code. This code creates the pipeline in your workspace.
 
@@ -202,7 +198,7 @@ json_data = json.loads(pipeline_json)
 # Extract the activities from the JSON
 activities = json_data["properties"]["activities"]
 
-# Prepare the data pipeline JSON definition
+# Prepare the pipeline JSON definition
 data = {}
 activities_list = []
 
@@ -281,7 +277,7 @@ data_str = str(data).replace("'",'"')
 createPipeline_json = data_str.encode(encoding="utf-8")
 createPipeline_Json64 = base64.b64encode(createPipeline_json)
 
-# Create a new data pipeline in Fabric
+# Create a new pipeline in Fabric
 timestr = time.strftime("%Y%m%d-%H%M%S")
 pipelineName = f"Pipeline from image with AI-{timestr}"
 
@@ -326,12 +322,12 @@ Output confirms the name of the pipeline created, and showing a list of your wor
 
 ## Step 6: Use your pipeline
 
-Once your pipeline is created, you can edit it in your Fabric workspace, to see your image implemented as a pipeline. You can select each activity to configure it as you wish, and then run and monitor it as you require.
+Once your pipeline is created, you can edit it in your Fabric workspace to see your image implemented as a pipeline. You can select each activity to configure it, and then run and monitor it as needed.
 
 :::image type="content" source="media/image-to-pipeline-with-ai/generated-pipeline.png" lightbox="media/image-to-pipeline-with-ai/generated-pipeline.png" alt-text="Screenshot showing the pipeline generated by the notebook with AI.":::
 
 ## Related content
 
 - [View or download the complete Python notebook with this sample](https://github.com/n0elleli/Azure-DataFactory/blob/fabric_samples/FabricSamples/Image%20to%20Pipeline%20with%20AI/NotebookSample.py)
-- [How to monitor data pipeline runs in Microsoft Fabric](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs in Microsoft Fabric](monitor-pipeline-runs.md)
 - [Azure OpenAI Service documentation](/azure/ai-services/openai/overview)

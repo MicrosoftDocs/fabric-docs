@@ -1,11 +1,10 @@
 ---
 title: Service tags
 description: Learn how to use service tags in Microsoft Fabric.
-author: KesemSharabi
-ms.author: kesharab
-ms.topic: conceptual
-ms.custom:
-ms.date: 02/25/2024
+author: msmimart
+ms.author: mimart
+ms.topic: concept-article
+ms.date: 03/11/2026
 ---
 
 # Service tags
@@ -18,8 +17,8 @@ In Microsoft Fabric, you can use the service tags listed in the table below. The
 
 | Tag | Purpose | Can use inbound or outbound? | Can be regional? | Can use with Azure Firewall? |
 |--|--|--|--|--|
-| DataFactory | Azure Data Factory | Both | No | Yes |
-| DataFactoryManagement| On premises data pipeline activity | Outbound | No | Yes |
+| DataFactory | Azure Data Factory | Both | Yes | Yes |
+| DataFactoryManagement| On premises pipeline activity | Outbound | No | Yes |
 | EventHub | Azure Event Hubs | Outbound | Yes | Yes |
 | Power BI | Power BI and Microsoft Fabric | Both | Yes | Yes |
 | PowerQueryOnline | Power Query Online | Both | No | Yes |
@@ -30,6 +29,12 @@ In Microsoft Fabric, you can use the service tags listed in the table below. The
 ## Use service tags
 
 You can use the service tags to define network access controls on [network security groups](/azure/virtual-network/network-security-groups-overview#service-tags), [Azure Firewall](/azure/firewall/service-tags), and user-defined routes.
+
+When using a regional service tag, ensure that you add:
+
+* The service tag for your home region
+* The capacity region, if it differs from the home region
+* The corresponding paired regions
 
 ## Related content
 

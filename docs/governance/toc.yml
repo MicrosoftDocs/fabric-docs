@@ -17,8 +17,12 @@ items:
     href: onelake-catalog-overview.md
   - name: Find and explore data
     href: onelake-catalog-explore.md
+  - name: View item details
+    href: onelake-catalog-item-details.md
   - name: Govern your data
     href: onelake-catalog-govern.md
+  - name: Secure your data
+    href: secure-your-data.md
 - name: Microsoft Purview
   items:
   - name: Microsoft Purview and Fabric
@@ -62,6 +66,8 @@ items:
       href: protection-policies-overview.md
     - name: Create and manage protection policies
       href: protection-policies-create.md
+    - name: Troubleshoot access restrictions
+      href: troubleshoot-restricted-access.md
   - name: Data loss prevention policies
     items:
     - name: Get started with Data loss prevention policies for Fabric and Power BI
@@ -72,6 +78,8 @@ items:
       href: data-loss-prevention-respond.md
     - name: Monitor DLP policy violations
       href: data-loss-prevention-monitor.md
+    - name: Troubleshoot access restrictions
+      href: troubleshoot-restricted-access.md
 - name: Endorsement
   items:
   - name: Overview

@@ -1,10 +1,9 @@
 ---
 title: Microsoft Fabric security white paper
 description: Download and review the Microsoft Fabric security white paper to get an understanding of the security features and capabilities of Microsoft Fabric.
-author: KesemSharabi
-ms.author: kesharab
-ms.topic: conceptual
-ms.custom:
+author: msmimart
+ms.author: mimart
+ms.topic: concept-article
 ms.date: 05/06/2024
 ---
 

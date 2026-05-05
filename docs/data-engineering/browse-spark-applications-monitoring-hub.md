@@ -1,12 +1,12 @@
 ---
 title: Use the Monitor pane to manage Apache Spark applications
 description: Learn how to access the Monitor pane and use it to sort, search, filter, manage, and cancel Apache Spark applications.
-author: jejiang
-ms.author: jejiang
+ms.reviewer: jejiang
 ms.topic: overview
 ms.date: 05/13/2024
 ms.custom:
-  - template-howto
+- template-howto
+- sfi-image-nochange
 ms.search.form: Browse Spark applications in the Monitor pane
 ---
 

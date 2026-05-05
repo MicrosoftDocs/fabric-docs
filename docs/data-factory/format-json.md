@@ -1,17 +1,16 @@
 ---
-title: How to configure JSON format in the data pipeline of Data Factory in Microsoft Fabric
-description: This article explains how to configure JSON format in the data pipeline of Data Factory in Microsoft Fabric.
-author: jianleishen
-ms.author: jianleishen
+title: How to configure JSON format in the pipeline of Data Factory in Microsoft Fabric
+description: This article explains how to configure JSON format in the pipeline of Data Factory in Microsoft Fabric.
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 06/25/2024
+ms.date: 11/19/2025
 ms.custom:
   - template-how-to
 ---
 
 # JSON format in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
-This article outlines how to configure JSON format in the data pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+This article outlines how to configure JSON format in the pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Supported capabilities
 
@@ -22,7 +21,6 @@ JSON format is supported for the following activities and connectors as a source
 | **Supported connector** | [Amazon S3](connector-amazon-s3-copy-activity.md) |
 |  | [Amazon S3 Compatible](connector-amazon-s3-compatible-copy-activity.md) |
 |  | [Azure Blob Storage](connector-azure-blob-storage-copy-activity.md) |
-|  | [Azure Data Lake Storage Gen1](connector-azure-data-lake-storage-gen1-copy-activity.md) |
 |  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md)|
 |  | [Azure Files](connector-azure-files-copy-activity.md)|
 |  | File system |
@@ -37,10 +35,9 @@ JSON format is supported for the following activities and connectors as a source
 |  | [GetMetadata activity](get-metadata-activity.md) |
 |  | [Delete activity](delete-data-activity.md) |
 
-
 ## JSON format in copy activity
 
-To configure JSON format, choose your connection in the source or destination of data pipeline copy activity, and then select **JSON** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
+To configure JSON format, choose your connection in the source or destination of a pipeline copy activity, and then select **JSON** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
 
 :::image type="content" source="./media/format-common/file-settings.png" alt-text="Screenshot showing file format settings.":::
 

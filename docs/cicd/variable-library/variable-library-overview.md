@@ -1,86 +1,84 @@
 ---
-title: Fabric Application lifecycle management Variable library
-description: Learn how to use the Fabric Application lifecycle management (ALM) Variable library tool to customize your stages.
-author: billmath
-ms.author: billmath
-ms.service: fabric
-ms.subservice: cicd
+title: Fabric Application Lifecycle Management Variable Library
+description: Learn how to use a Microsoft Fabric application lifecycle management (ALM) variable library to customize your release stages.
 ms.topic: overview
-ms.date: 01/22/2025
+ms.date: 12/15/2025
 ms.search.form: Variable library overview
-#customer intent: As a developer, I want to learn how to use the Fabric Application lifecycle management (ALM) Variable library tool to customize my stages so that I can manage my content lifecycle.
+#customer intent: As a developer, I want to learn how to use a Fabric application lifecycle management (ALM) variable library to customize my release stages, so that I can manage my content lifecycle.
 ---
 
-# What is a Variable library? (preview)
+# What is a variable library?
 
-A Microsoft Fabric Variable library can be thought of as a bucket of variables that can be consumed by other items in the workspace. It functions as an item within the workspace that contains a list of variables, along with their respective values for each stage of the release pipeline. It presents a unified approach for customers to efficiently manage item configurations within a workspace, ensuring scalability and consistency across different lifecycle stages.
+A Microsoft Fabric variable library is a bucket of variables that other items in the workspace can consume as part of application lifecycle management (ALM). It functions as an item within the workspace that contains a list of variables, along with their respective values for each stage of the release pipeline. It presents a unified approach for efficient management of item configurations within a workspace, to help ensure scalability and consistency across lifecycle stages.
 
-For example, a Variable library can contain variables that hold different values for:
+For example, a variable library can contain variables that hold values for:
 
 * An integer to be used in a wait activity in a pipeline.
-* A lakehouse reference to be the source in *Copy data* activity. Each value is used in a different pipeline based on the release stage the pipeline is in.
-* A lakehouse reference to be configured as a Notebook default lakehouse. Each value is used in a different pipeline based on the release stage the notebook is in.
+* A lakehouse reference to be the source in a *copy data* activity. Each value is used in a different pipeline, based on the release stage of the pipeline.
+* A lakehouse reference to be configured as a notebook default lakehouse. Each value is used in a different pipeline, based on the release stage of the notebook.
 
-Value resolution in the consumer item isn't necessarily tied to its deployment. Rather, each consumer item resolves the value based on its own context.
+A Fabric variable library:
 
-The Variable library experience differs based on the variable type, but the core concept remains the same: it allows you to define and manage variables that can be used in other items.
+* Is compatible with continuous integration and continuous delivery (CI/CD) processes. This compatibility allows [integration with Git](../git-integration/intro-to-git-integration.md#supported-items) and deployment through [deployment pipelines](../deployment-pipelines/intro-to-deployment-pipelines.md#supported-items).
+* Supports automation via Fabric public APIs.
+- Value resolution in the consumer item isn't necessarily tied to its deployment. Rather, each consumer item resolves the value based on its own context.
+- The experience of a variable library differs based on the variable type, but all variable libraries allow you to define and manage variables that other items can use.
 
-The Fabric Variable library:
+## Benefits
 
-* Is compatible with CI/CD processes, allowing [integration with Git](../git-integration/intro-to-git-integration.md#supported-items) and deployment through [Deployment pipelines](../deployment-pipelines/intro-to-deployment-pipelines.md#supported-items).
-* Supports automation via Microsoft Fabric public APIs.
+Variable libraries enable customers to customize and share configurations.
 
-> [!NOTE]
-> The Microsoft Fabric Variable library item is currently in **preview**.
+### Customize configurations
 
-Variable libraries enable customers to:
+You can configure a variable value based on the release pipeline stage. You can configure the variable library with sets of values: one value for each stage of the release pipeline. Then, after one-time settings of the active value set for each stage, the correct value is automatically used in the pipeline stage. Examples include:
 
-* Customize configurations:
+* Changing an item's connection based on the stage.
+* Switching to a different cloud data source based on the stage.
+* Adjusting data quantity in a query based on the stage.
 
-  A variable value can be configured based on the release pipeline stage. The user can configure the Variable library with different sets of value, one for each stage of the release pipeline. Then, after one-time settings of the active value-set for each stage, the correct value is automatically used in the pipeline stage. Some examples include:
+### Share configurations
 
-  * Changing items connection based on the stage
-  * Switching to a different cloud data source based on the stage
-  * Adjusting data quantity in a query based on the stage
-
-* Share configurations
-
-  Variable libraries provide a centralized way to manage configurations across the workspace items. For example, if you have several Lakehouses in the workspace and each one has a shortcut that uses the same datasource, you can create a Variable library with that datasource as one of the variables. That way, if you want to change the data source, only have to change it one in the Variable library instead of changing it in each Lakehouse separately.
+Variable libraries provide a centralized way to manage configurations across the workspace items. For example, if you have several lakehouses in the workspace and each one has a shortcut that uses the same data source, you can create a variable library with that data source as one of the variables. That way, if you want to change the data source, you have to change it only once in the variable library. You don't need to change it in each lakehouse separately.
 
 ## Variable library structure
 
-### Core components
+The Variable Library in Fabric is a structured system designed to manage configuration parameters across workspaces and deployment stages. At its core are user-defined [variables](variable-types.md), which can be basic types (like string, integer, boolean) or complex types such as [item references](item-reference-variable-type.md). These variables are grouped within a Variable Library item and can be referenced by consumer items within the same workspace. 
 
-Variable libraries contain one or more variables. Each variable has a name, type, and [default value](#default-value). You can also add a note to each variable to describe its purpose or how to use it.
+To support dynamic configuration, each variable can have multiple [value-sets](value-sets.md) or alternative sets of values tailored for different environments (e.g., dev, test, prod). One value-set is designated as "active" per workspace, determining which values are used during runtime. 
 
-:::image type="content" source="./media/variable-library-overview/define-values.png" alt-text="Screenshot of variable library with several variables and their core components.":::
+Users can create, edit, and manage variables and value-sets through the Fabric UI or APIs, with built-in validation and permission checks. The system supports CI/CD workflows, allowing variables to be managed as code, integrated with Git, and deployed via pipelines. This structure ensures scalable, automated, and governed configuration management across complex data systems.
 
-### Default value
+:::image type="content" source="./media/variable-library-overview/define-values.png" alt-text="Screenshot of a variable library with several variables and their core components.":::
 
-The default value is the value that is used unless you specifically define a [different value to use](#alternative-value-sets).  
-All variables must have a default value. If the variable type is *String*, the default value can be null.
-
-### Alternative value sets
-
-Value sets define the values of each variable in the Variable library. A Variable library typically contains multiple value sets. The active (or effective) value set contains the value the consumer items receives for that workspace. In each workspace, you select a value set to be active. The active value set of a workspace doesn't change during deployment or update from Git.
-
-:::image type="content" source="./media/variable-library-overview/alternative-values.png" alt-text="Screenshot of variable library with several alternative value sets.":::
-
-When you create an alternative value set, the new value set is created with pointers to the default value for each variable. You can then change the value for each variable in the new value set.
 
 ## Supported items
 
-The following items support the Variable library:
+The following items support the variable library:
 
-* [Data pipeline](../../data-factory/variable-library-integration-with-data-pipelines.md)
-<!--- * [Lakehouse](../../data-engineering/lakehouse-overview.md)
-* Notebook --->
+- [Pipeline ](../../data-factory/variable-library-integration-with-data-pipelines.md)
+- [Shortcut for a lakehouse ](../../onelake/assign-variables-to-shortcuts.md)
+- Notebook, through [NotebookUtils](../../data-engineering/notebookutils/notebookutils-variable-library.md) and [`%%configure`](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command)
+- [Dataflow Gen 2](../../data-factory/dataflow-gen2-variable-library-integration.md)
+- [Copy job](../../data-factory/cicd-copy-job.md)
+- [User data functions](../../data-engineering/user-data-functions/python-programming-model.md#get-variables-from-fabric-variable-libraries)
+
+## Naming conventions
+The name of variable library item itself must follow these conventions:
+
+- Isn't empty
+- Doesn't have leading or trailing spaces
+- Starts with a letter
+- Can include letters, numbers, underscores, hyphens, and spaces
+- Doesn't exceed 256 characters in length
+
+The variable library name is *not* case sensitive.
+
 
 ## Considerations and limitations
 
- [!INCLUDE [limitations](../includes/variable-library-limitations.md)]
+[!INCLUDE [limitations](../includes/variable-library-limitations.md)]
 
 ## Related content
 
 * [Variable library permissions](./variable-library-permissions.md)
-* [Get started with Variable libraries](./get-started-variable-libraries.md)
+* [Create and manage variable libraries](./get-started-variable-libraries.md)

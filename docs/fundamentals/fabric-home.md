@@ -1,167 +1,230 @@
 ---
-title: Find content from Microsoft Fabric Home
-description: Open reports, workloads, and workspaces from the Microsoft Fabric Home. Learn how to change your layout and feature your important content.
-author: julcsc
-ms.author: juliacawthra
-ms.topic: concept-article
-ms.custom:
-ms.date: 01/14/2025
-#customer intent: As a Fabric user, I know how to find my content from Home.
+title: Use Fabric Home to Find, Personalize, and Manage Content
+description: Learn how to quickly find content, search, filter, multitask with tabs, personalize settings, and get help in Fabric—boost productivity and get started now.
+author: SnehaGunda
+ms.author: sngun
+ms.topic: overview
+ms.date: 03/27/2026
+ai-usage: ai-assisted
+#customer intent: As a new Fabric user, I want to quickly find my content, understand navigation, personalize settings, and get help.
 ---
 
-# Navigate to your items from [!INCLUDE [product-name](../includes/product-name.md)] Home
+# Use Fabric Home to find, personalize, and manage content
 
-This article gives a high level view of navigating to your items and actions from [!INCLUDE [product-name](../includes/product-name.md)] Home. 
+Home is your personalized Fabric start page. Use it to find items and workspaces, multitask with tabs, personalize settings, and get contextual help to work faster.
 
-## Find what you need on your Home canvas
+## Home at a glance
 
-The final section of Home is the center area, called the **canvas**. The content of your canvas updates as you select different items. By default, the Home canvas displays options for creating new items, recents, and getting started resources. To collapse a section on your canvas, select the **Show less** view. 
+Home is your personalized start page. It shows supported item types (apps, reports, warehouses, lakehouses, notebooks, task flows, and more) you can access. Some preview or restricted item types might not appear.
 
-When you create a new item, it saves in your **My workspace** unless you selected a workspace from **Workspaces**. To learn more about creating items in workspaces, see [create workspaces](../fundamentals/create-workspaces.md).
+:::image type="content" source="media/fabric-home/fabric-home-steps.png" alt-text="Screenshot of Fabric Home with numbered regions." lightbox="media/fabric-home/fabric-home-steps.png":::
 
-> [!NOTE]
-> Power BI **Home** is different from the other product workloads. To learn more, visit [Power BI Home](/power-bi/consumer/end-user-home).
+Key areas:
 
-## Overview of Home 
-
-On Home, you see items that you create and that you have permission to use. These items are from all the workspaces that you access. That means that the items available on everyone's Home are different. At first, you might not have much content, but that changes as you start to create and share [!INCLUDE [product-name](../includes/product-name.md)] items.
-
-> [!NOTE]
-> Home isn't workspace-specific. For example, the **Recent workspaces** area on Home might include items from many different workspaces.
-
-In [!INCLUDE [product-name](../includes/product-name.md)], the term *item* refers to: apps, lakehouses, activators, warehouses, reports, and more. Your items are accessible and viewable in [!INCLUDE [product-name](../includes/product-name.md)], and often the best place to start working in [!INCLUDE [product-name](../includes/product-name.md)] is from **Home**. However, once you create at least one new workspace, been granted access to a workspace, or you add an item to **My workspace**, you might find it more convenient to start working directly in a workspace. One way to navigate to a workspace is by using the nav pane and workspace selector.
-
-:::image type="content" source="media/fabric-home/workspace.png" alt-text="Screenshot showing sample Home for the Data Engineering workload.":::
-
-To open **Home**, select it from the top of your navigation pane (nav pane). 
-
-:::image type="content" source="media/fabric-home/fabric-home-icon.png" alt-text="Screenshot showing the Home button.":::
-
-## Most important content at your fingertips
-
-The items that you can create and access appear on Home. If your Home canvas gets crowded, use [global search](../fundamentals/fabric-search.md) to find what you need, quickly. The layout and content on Fabric Home is different for every user.
-
-:::image type="content" source="media/fabric-home/fabric-home-steps.png" alt-text="Screenshot of Home with sections of the canvas numbered." lightbox="media/fabric-home/fabric-home-steps.png":::
-
-1. The left navigation pane (nav pane) links you to different views of your items and to creator resources. You can [remove buttons from the nav pane](#add-and-remove-buttons-from-the-nav-pane) to suit your workflow.
-1. The selector for switching between Fabric and Power BI.
-1. Options for creating new items. 
-1. The top menu bar for orienting yourself in Fabric, finding items, help, and sending feedback to Microsoft. The Account manager control is a critical button for looking up your account information and managing your Fabric trial.
-1. Learning resources to get you started learning about Fabric and creating items. 
-1. Your items organized by recent workspaces, recent items, and favorites. 
+1. Navigation pane (nav pane): Switch views (Home, Browse, Workloads, OneLake, and more) and open workspaces
+1. Fabric and Power BI switcher
+1. Create: Start a new item or task flow
+1. Top bar: Search, Help (?), Feedback, Notifications, Settings, and Account manager
+1. Learning and getting started resources
+1. Your content: Recent workspaces, recent items, and favorites
 
 > [!IMPORTANT]
-> Only the content that you can access appears on your Home. For example, if you don't have permissions to a report, that report doesn't appear on Home. The exception to this restriction is if your subscription or license changes to one with less access, then you receive a prompt letting you know that the item is no longer available and asking you to start a trial or upgrade your license. 
+> Home lists only supported content you can access.  If a license or subscription change removes access, Fabric prompts you to upgrade or start a trial.
 
-## Locate items from Home
+## Work with workspaces
 
-[!INCLUDE [product-name](../includes/product-name.md)] offers many ways of locating and viewing your items and ways of creating new items. All approaches access the same pool of items, just in different ways. Searching is sometimes the easiest and quickest way to find something. While other times, using the nav pane to open a workspace, using the nav pane to open OneLake, or selecting a card on the Home canvas is your best option.
+A workspace is a collaborative container for related items.
 
-### Use the navigation pane
+Open a workspace:
 
-Along the left side is a narrow vertical bar, referred to as the ***nav pane***. The nav pane organizes actions you can take with your items in ways that help you get to where you want to be quickly. Occasionally, using the nav pane is the quickest way to get to your items. 
+1. Select **Workspaces** in the nav pane, then select a workspace.
+1. Enter part of the workspace name in global search and select the workspace.
+1. Use the workspace selector at the bottom of the nav pane.
+1. Open an item in a workspace to activate that workspace.
 
-:::image type="content" source="media/fabric-home/fabric-left-nav-panes.png" alt-text="Screenshot of the nav pane for Data factory.":::
+Workspace behavior:
 
-In the bottom section of the nav pane is where your active workspaces and items are listed. In this example, our active items are: an Activator, the *Retail sales* workspace, and a KQL database. Select any of these items to display them on your canvas. To open other workspaces, use the [workspace selector](#find-and-open-workspaces) to view a list of your workspaces and select one to open on your canvas. To open other items, select them from the nav pane buttons. 
+- If no workspace is open, **My workspace** opens by default.
+- When you create a new item, it's added to the active workspace unless you choose a different one. Most creation dialogs default to the active workspace.
+- If task flow templates are enabled in your tenant, they appear in the first row on Home to help you start structured solutions. See [Task flows in Microsoft Fabric](task-flow-overview.md).
 
-The nav pane is there when you open Home and remains there as you open other areas of [!INCLUDE [product-name](../includes/product-name.md)].
+For governance details, see [Workspaces](workspaces.md).
 
-#### Add and remove buttons from the nav pane
+## Create items and explore workloads
 
-You can remove buttons from the nav pane for products and actions you don't think you need. You can always add them back later.
+Workloads are Fabric capability areas, like Data Factory, Data Engineering, and Real-Time Intelligence.
 
-To remove a button, right-click the button and select **Unpin**.
+To explore:
 
-To add a button back to the nav pane, start by selecting the ellipses (...). Then right-click the button and select **Pin**. If you don't have space on the nav pane, the pinned button might displace a current button. 
+1. Select **Workloads** in the nav pane to open the Workload hub.
+1. Review available workloads and their landing pages (overview, supported item types, samples, learning links).
+1. Open a workload to create items for that capability.
 
-:::image type="content" source="media/fabric-home/fabric-add-icon.png" alt-text="Screenshot showing how to add an item back to the nav pane.":::
+> [!NOTE]
+> Your organization or Microsoft can add more workloads over time. Tabs in the Workload hub refresh as new workloads are provisioned.
 
-### Find and open workspaces
+More about workloads: [Workloads in Fabric](../workload-development-kit/more-workloads-add.md).
 
-*Workspaces* are places to collaborate with colleagues to create collections of items such as lakehouses, warehouses, and reports and to create task flows. 
+<a id="multitask-with-tabs-and-object-explorer"></a>
+## Multitask with tabbed navigation to access resources
 
-There are different ways to find and open your workspaces. If you know the name or owner, you can search. Or you can select the **Workspaces** button in the nav pane and choose which workspace to open. 
+The tabbed navigation allows you to work with multiple items, monitoring pages, and workspaces at the same time. It enhances navigation and reduces the need to switch context.
 
-:::image type="content" source="media/fabric-home/fabric-home-workspaces.png" alt-text="Screenshot showing list of workspaces with red outlines around the Search fields and Workspaces buttons.":::
+### Tabs for open items
 
-The workspace opens on your canvas, and the name of the workspace is listed on your nav pane. When you open a workspace, you can view its content. It includes items such as notebooks, pipelines, reports, and lake houses. 
+When you create or open an item, it appears in a tab horizontally across the top of the Fabric portal and shows the item name, icon for the item type (for example, notebook, pipeline, semantic model, and so on). You can hover over the tab to view the workspace it's created in. You can drag a tab to the required position. Tabs make it easier to identify and switch between open items without losing focus.
 
-- If no workspaces are active, by default you see **My workspace**.  
-- When you open a workspace, its name replaces **My workspace**.  
-- Whenever you create a new item, it's added to the open workspace.  
+> [!NOTE]
+> The tabbed navigation is only available in the Fabric view, not in Power BI view. For instance, when you switch to the Power BI view from the left nav switcher, the tabbed experience isn't available.
 
-For more information, see [Workspaces](../fundamentals/workspaces.md).
+You can right-click any tab in the horizontal tab bar to access the following options, similar to Microsoft Edge:
 
-## Create items
+* **Open in new browser tab**: Opens the selected Fabric tab in a new browser tab with the same item and context.
 
-### Create workspaces using a task flow
+* **Pin tab**: Keeps a tab fixed on the left side for quick access to important items. Pinned tabs stay visible even when you open more items. To unpin, right-click the tab and select **Unpin** or select the pinned icon.
 
-The first row on your Home canvas is a selection of task flow templates. Fabric task flow is a workspace feature that enables you to build a visualization of the flow of work in the workspace. Fabric provides a range of predefined, end-to-end task flows based on industry best practices that are intended to make it easier to get started with your project.
+### Multiple open workspaces
 
-To learn more, see [Task flows in Microsoft Fabric](../fundamentals/task-flow-overview.md)
+You can open and work across multiple workspaces side by side. Items are color-coded and numbered to indicate which workspace they belong to. This feature helps reduce confusion and improves context when working in multiple environments.
 
-### Create items using workloads
+### Object explorer
 
-**Workloads** refer to the different capabilities available in [!INCLUDE [product-name](../includes/product-name.md)]. [!INCLUDE [product-name](../includes/product-name.md)] includes preinstalled workloads that can't be removed, including Data Factory, Data Engineering, Real-Time Intelligence, and more. You might also have preinstalled workloads that Microsoft or your organization added. 
+The object explorer provides a structured view of items across all your currently open workspaces. Use it to quickly locate and open resources without having to switch between pages. You can pin the object explorer for easy access. Use the filter option to view items of a specific type or search for an item by a keyword. The items are organized by the hierarchy they belong to.
 
-The Workload hub is a central location where you can view all the workloads available to you. Navigate to your Workload hub by selecting **Workloads** from the nav pane. [!INCLUDE [product-name](../includes/product-name.md)] displays a list and description of the available workloads. Select a workload to open it and learn more. 
+:::image type="content" source="media/fabric-home/tabs-object-explorer.png" alt-text="Screenshot of the object explorer and multiple tabs to quickly locate and open resources.":::
 
-:::image type="content" source="media/fabric-home/fabric-workload-hub.png" alt-text="Screenshot of Workloads selected from the nav pane.":::
+### Customize horizontal tab display
 
-If your organization gives you access to additional workloads, your Workload hub displays additional tabs.
+You can also configure how horizontal tabs are displayed. Right-click any tab and select **Open horizontal tab setting** menu and choose the display style that fits your needs.
 
-:::image type="content" source="./media/fabric-home/fabric-my-workloads-organization.png" alt-text="Screenshot of the My workloads interface." lightbox="./media/fabric-home/fabric-my-workloads-organization.png":::
+:::image type="content" source="media/fabric-home/horizontal-tab-settings.png" alt-text="Screenshot of the horizontal tab settings menu.":::
 
-When you select a workload, the landing page for that workload displays. Each workload in Fabric has its own item types associated with it. The landing page has information about these items type and details about the workload, learning resources, and samples that you can use to test run the workload. 
+You can choose from the following two tab display patterns:
 
-:::image type="content" source="media/fabric-home/fabric-home-workload-landing.png" alt-text="Screenshot of the Data Engineering workload detail page." lightbox="media/fabric-home/fabric-home-workload-landing.png":::
+1. **Full tab names**
+   - Displays the complete name of each tab.
+   - Ideal when clarity and readability of item names are most important.
+   - Tabs expand to fit their full text for easy identification.
 
-For more information about workloads, see [Workloads in Fabric](../workload-development-kit/more-workloads-add.md)
+1. **Adaptive truncated names**
+   - Automatically shortens tab names when horizontal space becomes limited.
+   - Keeps more tabs visible at the same time. It's useful for multitasking or complex development workflows.
+   - The layout intelligently adapts to your window size and the number of open tabs.
 
-## Find your content using search, sort, and filter
+After you make a selection, changes apply instantly, it's not required to refresh the browser or tabs. When the number of open tabs exceeds the limit that can be displayed on the screen, an overflow menu appears. This menu provides a complete list of currently open tabs, allowing you to quickly navigate to any item without losing track of your work.
 
-To learn about the many ways to search from [!INCLUDE [product-name](../includes/product-name.md)], see [Searching and sorting](../fundamentals/fabric-search.md). Global searching is available by item, name, keyword, workspace, and more.
+### Keyboard shortcuts for object explorer and horizontal tabs
 
-## Find answers in the context sensitive Help pane
+Use keyboard shortcuts in horizontal tabs and object explorer to switch between items, expand or collapse folders, and jump to specific tabs. This functionality is similar to an IDE environment.
 
-Select the Help icon (**?**) to open and use the contextual Help pane and to search for answers to questions.
+**Prerequisites:**
 
-[!INCLUDE [product-name](../includes/product-name.md)] provides context sensitive help in the right rail of your browser. In this example, we selected **Browse** from the nav pane and the Help pane automatically updates to show us articles about the features of the **Browse** screen. For example, the Help pane displays articles on *View your favorites* and *See content that others shared with you*. If there are community posts related to the current view, they display under **Forum topics**. 
+- Switch to the Fabric view using the lower-left experience switcher.
+- Enable the multitasking (horizontal tabs and object explorer) feature.
 
-Leave the Help pane open as you work, and use the suggested topics to learn how to use [!INCLUDE [product-name](../includes/product-name.md)] features and terminology. Or, select the **X** to close the Help pane and save screen space. 
+**Keyboard shortcuts in object explorer**
 
-:::image type="content" source="media/fabric-home/fabric-home-help-context.png" alt-text="Screenshot of the Help pane with Recent selected in Data factory." lightbox="media/fabric-home/fabric-home-help-context.png":::
+Object explorer helps you browse workspaces, folders, and items. Use the following shortcuts to quickly navigate:
 
-The Help pane is also a great place to search for answers to your questions. Type your question or keywords in the **Search** field. 
+| Action | Shortcut |
+|--------|----------|
+| Expand workspace or subfolder | → Right arrow |
+| Collapse workspace or subfolder | ← Left arrow |
+| Navigate to the previous object | ↑ Up arrow<br>(If the object is a collapsed workspace/subfolder, Left arrow functions the same as Up arrow) |
+| Navigate to the next object | ↓ Down arrow<br>(If the object is an expanded workspace/subfolder, Right arrow functions the same as Down arrow) |
 
-:::image type="content" source="media/fabric-home/fabric-home-help-results.png" alt-text="Screenshot of the Help pane before beginning a search.":::
+**Use keyboard shortcuts in horizontal tabs**
 
-To return to the default Help pane, select the left arrow. 
+Horizontal tabs let you switch between multiple open items. Use the following shortcuts to move efficiently across tabs:
 
-:::image type="content" source="media/fabric-home/fabric-home-arrow.png" alt-text="Screenshot of the left arrow icon.":::
+| Action | Shortcut |
+|--------|----------|
+| Navigate to the Nth tab | * Windows: Alt + Number (1–9)<br>* macOS: Control + Number (1–9) |
 
-For more information about searching, see [Searching and sorting](../fundamentals/fabric-search.md).
+### More open items
 
-For more information about the Help pane, see [Get in-product help](fabric-help-pane.md).
+The previous limit of 10 open items has been increased. You can keep more resources active at once. This is especially useful for complex workflows that require multiple pipelines, notebooks, or reports.
 
-## Find help and support
+## Maximize editing space with focus mode
 
-If the self-help answers don't resolve your issue, scroll to the bottom of the Help pane for more resources. Use the links to ask the community for help or to connect with [!INCLUDE [product-name](../includes/product-name.md)] Support. For more information about contacting Support, see [Support options](/power-bi/support/service-support-options).
+Focus mode helps developers create a distraction-free workspace by hiding the navigation sidebar and object explorer. It maximizes the editor pane by expanding it to use the full monitor area, removing side panels and navigation layers to reduce distractions, and enabling writers to focus and work more productively without UI clutter.
 
-## Find your account and license information
+To enable focus mode, open the item you want to edit and select **Focus Mode** from the global header. The navigation sidebar and object explorer are collapsed, maximizing the editor pane.
 
-Information about your account and license is available from the Account manager. To open your Account manager, select the tiny photo from the upper-right corner of [!INCLUDE [product-name](../includes/product-name.md)]. 
+:::image type="content" source="media/fabric-home/focus-mode.png" alt-text="Screenshot of the option to enable focus mode in the Fabric global header." lightbox="media/fabric-home/focus-mode.png":::
 
-:::image type="content" source="media/fabric-home/fabric-home-account.png" alt-text="Screenshot showing the Account manager expanded.":::
+To exit, select **Exit Focus Mode**, the same toggle control turns it off.
 
-For more information about licenses and trials, see [Licenses](../enterprise/licenses.md).
+## Find content fast: Search, filter, sort
 
-## Find notifications, settings, and feedback
+Use the following table to compare Fabric’s search and filtering tools. Use global search for broad, cross-workspace discovery (names, creators, tags), the local keyword filter to narrow the current view, sorting to quickly order columns, and the Filters panel for precise refinements by type, time, or owner.
 
-In the upper-right corner of Home are several helpful icons. Take time to explore your **Notifications center**, **Settings**, and **Feedback** options. The Help (**?**) icon displays your [Help and search options](#find-help-and-support) and the [**Account manager** icon](#find-your-account-and-license-information) displays information about your account and license. Both of these features are described in detail earlier in this article.
+| Feature | How to use | Notes / examples |
+|---------|------------|------------------|
+| Global search | Use the search box in the top bar to find items by name, title, creator, tag, or workspace. Results show only content you can access. | Examples: part of a report name; a colleague’s name to see items they shared; a tag (if tagging is enabled)—see [Tags overview](../governance/tags-overview.md). Tag results appear only if your organization enables tagging. |
+| Local keyword filtering | Use the **Filter by keyword** field on canvases (for example, Browse) to narrow the current list without leaving the page. | Applies only to the current view. |
+| Sorting | Select a column header (for example, Name or Refreshed) to sort; select again to toggle direction. | Not all columns are sortable—hover to confirm. |
+| Filters panel | Select **Filter** (upper-right of a content list) to refine results by type, time, and owner. | Examples: Type (report, notebook), Time (recently accessed or modified), Owner (creator). |
+
+### Considerations
+
+> [!NOTE]
+> Global search uses Azure AI Search. It isn’t available in sovereign clouds or regions where Azure AI Search isn’t supported. Tag and community content visibility depend on feature enablement. See [Azure AI Search regions](/azure/search/search-region-support).
+
+## Use the help pane effectively
+
+Select the **?** icon to open the contextual Help pane:
+
+- Feature-aware view: Shows topics and community discussions relevant to the current screen.
+- Forum topics: Community posts tied to on-screen features (shown when the tenant enables forum integration).
+- Other resources: Support and feedback links.
+- Search box: Enter keywords to search documentation and forums; use the dropdown to refine.
+
+Keep it docked as you work or close it to reclaim space. Use the back arrow to return to the default view.
+
+## Personalize via settings
+
+Select the gear icon in the top bar to open settings. Links shown depend on your role (for example, admin vs contributor) and enabled preview features.
+
+| Section | What you can do |
+|---------|------------------|
+| Preferences | Set display language, personalize UI behavior, manage notifications, configure item settings (per item type), enable developer mode (where applicable). |
+| Resources and extensions | Manage personal and group storage, Power BI item settings, connections and gateways, embed codes, Azure Analysis Services migrations.|
+| Governance and insights | Access the Admin portal (if permitted) and Microsoft Purview hub (preview) for governance and compliance insights. |
+
+Learn more: [Admin portal](../admin/admin-center.md) • [Microsoft Purview hub (preview)](../governance/use-microsoft-purview-hub.md)
+
+## Manage your account, notifications, and feedback
+
+- Account manager (profile photo): View Workspace type, trial status, organizational context
+- Notifications: Alerts, system messages, subscriptions
+- Feedback: Send product feedback to Microsoft
+- Settings: Open the settings pane
+- Help (?): Open contextual help and search
+
+For licensing guidance, see [Licenses](../enterprise/licenses.md). For trial info, see [Start a Fabric trial](fabric-trial.md).
+
+## Get support
+
+If self-help doesn't solve your problem:
+
+- Open the **Help** pane and scroll to **Support links**.
+- Ask the community in the forums.
+- If entitled, open a support ticket. See [Support options](/power-bi/support/service-support-options).
+
+## Tips to stay efficient
+
+- Pin only the nav pane buttons you use often. Use right-click or the ellipsis (…) menu > **Unpin** / **Pin** (UI may vary).
+- Use tabs and **Object explorer** (preview) to reduce context switching.
+- Use global search for infrequently used items; refine with filters.
+- Keep **Help** open while you learn a new workload.
+- Review settings regularly as your workflow evolves.
 
 ## Related content
 
-- [Power BI Home](/power-bi/consumer/end-user-home)
-- [Start a Fabric trial](../fundamentals/fabric-trial.md)
+- [Workspaces](workspaces.md)  
+- [Task flows in Microsoft Fabric](task-flow-overview.md)  
+- [Get in-product help](fabric-help-pane.md)  
+- [Workloads in Fabric](../workload-development-kit/more-workloads-add.md)  
+- [Start a Fabric trial](fabric-trial.md)  
+- [Licenses](../enterprise/licenses.md)

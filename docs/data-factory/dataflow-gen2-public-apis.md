@@ -1,21 +1,17 @@
 ---
-title: "Public APIs Capabilities for Dataflows Gen2 in Fabric Data Factory (Preview)"
-description: "Use the Dataflows public APIs to manage your data integration through operations including dataflows CRUD (Create, Read, Update, and Delete), scheduling, and monitoring."
-author: conxu-ms
-ms.author: conxu
-ms.reviewer: dougklopfenstein
+title: "Public APIs Capabilities for Dataflow Gen2 in Fabric Data Factory"
+description: "Use the dataflow public APIs to manage your data integration through operations including dataflow CRUD (Create, Read, Update, and Delete), scheduling, and monitoring."
+ms.reviewer: conxu
 ms.topic: concept-article
 ms.date: 05/01/2025
+ms.custom: dataflows
 ---
 
-# Public APIs capabilities for Dataflows Gen2 in Fabric Data Factory (Preview)
-
->[!NOTE]
->The Microsoft Fabric API for Data Factory is currently in public preview. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+# Public APIs capabilities for Dataflow Gen2 in Fabric Data Factory
 
 Fabric Data Factory provides a robust set of APIs that enable users to automate and manage their dataflows efficiently. These APIs allow for seamless integration with various data sources and services, enabling users to create, update, and monitor their data workflows programmatically. The APIs support a wide range of operations including dataflows CRUD (Create, Read, Update, and Delete), scheduling, and monitoring, making it easier for users to manage their data integration processes.
 
-## APIs use cases for Dataflows
+## APIs use cases for dataflows
 
 The APIs for dataflows in Fabric Data Factory can be used in various scenarios:
 
@@ -35,7 +31,7 @@ To effectively use the APIs for dataflows in Fabric Data Factory, it is essentia
 
 ### CRUD Support
 
-CRUD stands for Create, Read, Update, and Delete, which are the four basic operations that can be performed on data. In Fabric Data Factory, the CRUD operations are supported through the Fabric API for Data Factory, which is currently in preview. These APIs allow users to manage their dataflows programmatically. Here are some key points about CRUD support:
+CRUD stands for Create, Read, Update, and Delete, which are the four basic operations that can be performed on data. In Fabric Data Factory, the CRUD operations are supported through the Fabric API for Data Factory. These APIs allow users to manage their dataflows programmatically. Here are some key points about CRUD support:
 
 - **Create**: Create new dataflows using the API. This involves defining the dataflow structure, specifying data sources, transformations, and destinations.
 - **Read**: Retrieve information about existing dataflows. This includes details about their configuration, status, and execution history.
@@ -123,7 +119,7 @@ Payload:
 
 ```http
 {
-    "id": "\<artifactId>",
+    "id": "\<itemId>",
     "type": "Dataflow",
     "displayName": "My dataflow",
     "description": "My dataflow description",
@@ -206,7 +202,7 @@ Payload:
 
 ```http
 {
-    "id": "\<artifactId>",
+    "id": "\<itemId>",
     "type": "Dataflow",
     "displayName": "My dataflow",
     "description": "My dataflow description",
@@ -234,7 +230,7 @@ Headers:
 
 ```http
 {
-    "id": "\<artifactId>",
+    "id": "\<itemId>",
     "type": "Dataflow",
     "displayName": "My dataflow",
     "description": "My dataflow description",
@@ -343,7 +339,7 @@ Payload:
 
 ```http
 { 
-    "id": "\<artifactId>", 
+    "id": "\<itemId>", 
     "type": "Dataflow", 
     "displayName": "My dataflow updated", 
     "description": "My dataflow description updated", 
@@ -567,13 +563,13 @@ Retry-After: 60
 - **Service Principal authentication** is not currently supported.
 - **"Get Item"** and **"List Item Access Details"** does not return the correct information if you filter on dataflow item type. 
 - When you do not specify the type it will return the **Dataflow Gen2 (CI/CD, preview)** - the new Dataflow Gen2 with CI/CD and GIT support.
-- **Run APIs** are invokable, but the actual run never succeeds.
+- **Run APIs** can be invoked, but the actual run never succeeds.
 
 ## Related content
 
 ### Documentation
 
-- [Fabric data pipeline public REST API](pipeline-rest-api.md)
+- [Fabric pipeline public REST API](pipeline-rest-api-capabilities.md)
 
 - [Microsoft Fabric REST API](/rest/api/fabric/articles/)
 

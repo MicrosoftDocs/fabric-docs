@@ -1,9 +1,9 @@
 ---
 title: Microsoft Fabric site reliability engineering (SRE) model
 description: Learn about the Microsoft Fabric site reliability engineering (SRE) model.
-author: JulCsc
-ms.author: juliacawthra
-ms.topic: conceptual
+author: dknappettmsft
+ms.author: daknappe
+ms.topic: concept-article
 ms.date: 01/29/2025
 ---
 
@@ -87,7 +87,7 @@ Once the affected component or scenario of the service is determined, the Fabric
 
 * **Execute Business Continuity/Disaster Recovery (BCDR) process** - Allows the team to fail over primary workloads to this alternate environment in three minutes if a serious issue is found in a new service version. BCDR can also be used when environmental factors or dependent services prevent the primary cluster/region from operating normally.
 
-* **Leverage resiliency of dependent services** - Fabric proactively evaluates and invests in resiliency and redundancy efforts for all dependent services (such as SQL, Redis Cache, Key Vault). Resiliency includes sufficient component monitoring to detect upstream and downstream regressions as well as local, zonal, and regional redundancy (where applicable). Investing in these capabilities ensures that tooling exists for automatic or manual triggering of recovery operations to mitigate impact from an affected dependency. 
+* **Leverage resiliency of dependent services** - Fabric proactively evaluates and invests in resiliency and redundancy efforts for all dependent services (such as SQL, Redis Cache, Key Vault). Resiliency includes sufficient component monitoring to detect upstream and downstream regressions as well as local, zone, and regional redundancy (where applicable). Investing in these capabilities ensures that tooling exists for automatic or manual triggering of recovery operations to mitigate impact from an affected dependency. 
 
 ### Time To Notify Zero
 

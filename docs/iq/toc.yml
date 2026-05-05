@@ -1,0 +1,193 @@
+items:
+- name: Fabric IQ documentation
+  href: index.yml
+- name: What is Fabric IQ?
+  href: overview.md
+- name: Ontology
+  items:
+  - name: Overview
+    items:
+    - name: What is ontology?
+      href: ontology/overview.md
+    - name: Required tenant settings
+      href: ontology/overview-tenant-settings.md
+  - name: Ontology tutorial
+    items:
+    - name: 0- Introduction and environment setup
+      href: ontology/tutorial-0-introduction.md
+    - name: 1- Create an ontology
+      href: ontology/tutorial-1-create-ontology.md
+    - name: 2- Enrich the ontology
+      href: ontology/tutorial-2-enrich-ontology.md
+    - name: 3- Preview the ontology
+      href: ontology/tutorial-3-preview-ontology.md
+    - name: 4- Create data agent
+      href: ontology/tutorial-4-create-data-agent.md
+    - name: 5- Conclude and clean up resources
+      href: ontology/tutorial-5-conclusion.md
+  - name: Concepts
+    items:
+    - name: Generating an ontology from semantic model
+      href: ontology/concepts-generate.md
+  - name: How-tos
+    items:
+    - name: Create entity types
+      href: ontology/how-to-create-entity-types.md
+    - name: Bind data
+      href: ontology/how-to-bind-data.md
+    - name: Add relationship types
+      href: ontology/how-to-create-relationship-types.md
+    - name: Use preview experience
+      href: ontology/how-to-use-preview-experience.md
+    - name: Add rules
+      href: ontology/how-to-use-rules.md
+    - name: Use resource links
+      href: ontology/how-to-use-resource-links.md
+  - name: Resources
+    items:
+    - name: Troubleshooting
+      href: ontology/resources-troubleshooting.md
+    - name: Billing and capacity usage
+      href: ontology/resources-capacity-usage.md
+    - name: Glossary
+      href: ontology/resources-glossary.md
+    - name: FAQ
+      href: ontology/resources-frequently-asked-questions.yml
+    - name: Ontology REST API
+      href: /rest/api/fabric/ontology/items
+    - name: CI/CD in Fabric
+      href: ../cicd/cicd-overview.md
+- name: Plan
+  items:
+  - name: Overview
+    items:
+    - name: What is plan?
+      href: plan/overview.md
+    - name: Region availability
+      href: plan/overview-regions.md
+    - name: Known limitations
+      href: plan/overview-limitations.md   
+  - name: Planning sheets
+    items:
+    - name: Planning sheets overview
+      href: plan/planning-overview.md
+    - name: Concepts
+      items:
+        - name: Cubes
+          href: plan/planning-concept-cube.md
+        - name: Row-level security (RLS)
+          href: plan/planning-concept-row-level-security.md
+        - name: Driver model
+          href: plan/planning-driver-model/planning-concept-driver-model.md          
+    - name: How-tos
+      items:
+        - name: Create a semantic model connection
+          href: plan/planning-how-to-create-semantic-model-connection.md
+        - name: Create a Planning sheet
+          href: plan/planning-how-to-get-started.md
+        - name: Create a database connection for collaboration
+          href: plan/planning-how-to-create-database-connection.md
+        - name: Input data
+          href: plan/planning-how-to-input-data.md
+        - name: Set up scenarios
+          href: plan/planning-how-to-set-up-scenarios.md
+        - name: Use writeback
+          items:
+              - name: Configure writeback
+                href: plan/planning-writeback/planning-how-to-persist-data.md
+        - name: Change layouts
+          href: plan/planning-how-to-change-layouts.md
+        - name: Create a cube
+          href: plan/planning-how-to-create-cube.md
+        - name: Add comments
+          href: plan/planning-how-to-add-comments.md
+        - name: Add notes
+          href: plan/planning-how-to-add-notes.md
+        - name: Add bookmarks
+          href: plan/planning-how-to-add-bookmark.md
+        - name: Use forecasting
+          items: 
+              - name: Configure forecasts
+                href: plan/planning-forecasting/planning-how-to-build-forecasts.md
+              - name: Manage rolling forecasts
+                href: plan/planning-forecasting/planning-how-to-manage-rolling-forecasts.md
+              - name: Create statistical forecasts
+                href: plan/planning-forecasting/planning-how-to-create-statistical-forecasts.md
+              - name: Create multidimensional forecasts
+                href: plan/planning-forecasting/planning-how-to-create-multidimensional-forecasts.md
+              - name: Extend planning time range
+                href: plan/planning-forecasting/planning-how-to-extend-time.md
+              - name: Edit forecast settings
+                href: plan/planning-forecasting/planning-how-to-configure-forecast-settings.md
+              - name: Optimize input values
+                href: plan/planning-how-to-optimize-input-values.md
+        - name: Use driver models
+          items: 
+              - name: Create a model
+                href: plan/planning-driver-model/planning-how-to-create-model-using-model-builder.md
+              - name: Configure row properties
+                href: plan/planning-driver-model/planning-how-to-configure-model-row-properties.md
+              - name: Create templates
+                href: plan/planning-driver-model/planning-how-to-create-templates.md
+              - name: Create a driver model
+                href: plan/planning-driver-model/planning-how-to-create-driver-model.md    
+  - name: PowerTable sheets
+    items:
+    - name: PowerTable sheets overview
+      href: plan/powertable-overview.md
+    - name: How-tos
+      items:
+        - name: Create a table app
+          href: plan/powertable-how-to-create-table-app.md
+        - name: Enter table data manually
+          href: plan/powertable-how-to-enter-table-data-manually.md
+        - name: Connect to a database
+          href: plan/powertable-how-to-connect-existing-database.md
+        - name: Connect to a semantic model
+          href: plan/powertable-how-to-connect-semantic-model.md
+        - name: Set up access control
+          href: plan/powertable-how-to-set-up-access-control.md  
+        - name: Generate forms
+          href: plan/powertable-how-to-generate-forms.md  
+        - name: Configure approval workflow
+          href: plan/powertable-how-to-configure-approval-workflow.md
+        - name: Review changes in approval workflow
+          href: plan/powertable-how-to-review-approval-workflow.md      
+  - name: Intelligence sheets
+    items:
+    - name: Intelligence sheets overview
+      href: plan/intelligence-overview.md
+    - name: How-tos
+      items:
+        - name: Get started with Intelligence sheets
+          href: plan/intelligence-how-to-get-started.md
+        - name: Build financial reports
+          href: plan/intelligence-how-to-build-financial-reports.md
+        - name: Comment and collaborate
+          href: plan/intelligence-how-to-comment-collaborate.md
+        - name: Create paginated reports
+          href: plan/intelligence-how-to-create-paginated-reports.md
+        - name: Export data and visuals
+          href: plan/intelligence-how-to-export-data-visuals.md
+        - name: Visualize planning data
+          href: plan/intelligence-how-to-visualize-planning-data.md
+        - name: Plan projects with Gantt charts
+          href: plan/intelligence-how-to-create-gantt-chart.md
+  - name: InfoBridge
+    items:
+    - name: InfoBridge overview
+      href: plan/infobridge-overview.md
+    - name: How-tos
+      items:
+        - name: Share measures
+          href: plan/infobridge-how-to-share-measures.md
+        - name: Write back data
+          href: plan/infobridge-how-to-write-back-data.md
+- name: Graph
+  href: ../graph/toc.yml
+- name: Data agent
+  href: ../data-science/data-agent-toc/toc.yml
+- name: Operations agent
+  href: ../real-time-intelligence/operations-agent-tocs/toc.yml
+- name: Power BI semantic model
+  href: ../data-warehouse/semantic-model-toc/toc.yml

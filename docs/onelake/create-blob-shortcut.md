@@ -2,11 +2,10 @@
 title: Create an Azure Blob Storage shortcut
 description: Learn how to create a OneLake shortcut for Azure Blob Storage inside a Microsoft Fabric lakehouse.
 ms.reviewer: eloldag
-ms.author: kgremban
-author: kgremban
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.search.form: Shortcuts
 ms.topic: how-to
-ms.custom:
 ms.date: 05/16/2025
 #customer intent: As a data engineer, I want to learn how to create an Azure Blob Storage shortcut inside a Microsoft Fabric lakehouse so that I can efficiently manage and access my data.
 ---
@@ -47,14 +46,12 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
 
    * To **Create new connection**, provide the following connection settings.
 
-     :::image type="content" source="./media/create-blob-shortcut/create-new-connection.png" alt-text="Screenshot of the New shortcut window showing the connection settings and connection credentials.":::
-
-     |Field | Description|
-     |-----|-----|
-     | **Account name or URL**| The name of your blob storage account. |
-     |**Connection** | The default value, **Create new connection**. |
-     |**Connection name** | A name for your Azure Blob Storage connection. The service generates a suggested connection name based on the storage account name, but you can overwrite with a preferred name. |
-     |**Authentication kind**| Select the authorization model from the drop-down menu that you want to use to connect to the Storage account. The supported models are: account key, organizational account, Shared Access Signature (SAS), service principal, and workspace identity. Once you select a model, fill in the required credentials. For more information, see [Azure Blob Storage shortcuts authorization](./onelake-shortcuts.md#azure-blob-storage-shortcuts). |
+   |Field | Description|
+   |-----|-----|
+   |**Account name or URL**| The name of your blob storage account. |
+   |**Connection** | The default value, **Create new connection**. |
+   |**Connection name** | A name for your Azure Blob Storage connection. The service generates a suggested connection name based on the storage account name, but you can overwrite with a preferred name. |
+   |**Authentication kind**| Select the authorization model from the drop-down menu that you want to use to connect to the Storage account. The supported models are: account key, organizational account, Anonymous, Shared Access Signature (SAS), service principal, and workspace identity. Once you select a model, fill in the required credentials. For more information, see [Authorization](#authorization). |
 
 1. Select **Next**.
 
@@ -75,6 +72,21 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
 1. The lakehouse automatically refreshes. The shortcut or shortcuts appear in the **Explorer** pane.
 
    :::image type="content" source="./media/create-blob-shortcut/view-shortcuts.png" alt-text="Screenshot showing the lakehouse explorer view with a list of folders that display the shortcut symbol.":::
+
+## Access
+
+Azure Blob Storage shortcut can point to the account name or URL for the Storage account.
+
+Example: `accountname` or `https://accountname.blob.core.windows.net/`
+
+## Authorization
+
+Blob storage shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the shortcut and all access to that shortcut is authorized using that credential. Blob shortcuts support the following delegated authorization types:
+
+- **Organizational account** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
+- **Service principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
+- **Workspace identity** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
+- **Shared Access Signature (SAS)** - must include at least the following permissions: Read, List, and Execute.
 
 ## Related content
 

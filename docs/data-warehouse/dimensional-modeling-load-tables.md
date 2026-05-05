@@ -1,11 +1,9 @@
 ---
 title: "Load Tables in a Dimensional Model"
 description: "Learn about loading tables in a dimensional model in Microsoft Fabric Warehouse."
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: drubiolo, chweb
 ms.date: 04/06/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - fabric-cat
 ---
@@ -32,8 +30,8 @@ For a Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)] solution, you can use
 
 Specifically, you can:
 
-- Use [data pipelines](../data-factory/data-factory-overview.md#data-pipelines) to build workflows to orchestrate the ETL process. Data pipelines can execute SQL scripts, stored procedures, and more.
-- Use [dataflows](../data-factory/data-factory-overview.md#dataflows) to develop low-code logic to ingest data from hundreds of data sources. Dataflows support combining data from multiple sources, transforming data, and then loading it to a destination, like a dimensional model table. Dataflows are built by using the familiar [Power Query](/power-query/power-query-what-is-power-query) experience that's available today across many Microsoft products, including Microsoft Excel and Power BI Desktop.
+- Use [pipelines](../data-factory/pipeline-overview.md) to build workflows to orchestrate the ETL process. Pipelines can execute SQL scripts, stored procedures, and more.
+- Use [dataflows](../data-factory/dataflows-gen2-overview.md) to develop low-code logic to ingest data from hundreds of data sources. Dataflows support combining data from multiple sources, transforming data, and then loading it to a destination, like a dimensional model table. Dataflows are built by using the familiar [Power Query](/power-query/power-query-what-is-power-query) experience that's available today across many Microsoft products, including Microsoft Excel and Power BI Desktop.
 
 > [!NOTE]
 > ETL development can be complex, and development can be challenging. It's estimated that 60-80 percent of a data warehouse development effort is dedicated to the ETL process.
@@ -72,7 +70,7 @@ We recommend that you create a schema in the warehouse, possibly named `staging`
 
 You can also consider data virtualization alternatives as part of your staging strategy. You can use:
 
-- [Mirroring](../database/mirrored-database/overview.md), which is a low-cost and low-latency turnkey solution that allows you to create a replica of your data in OneLake. For more information, see [Why use Mirroring in Fabric?](../database/mirrored-database/overview.md#why-use-mirroring-in-fabric).
+- [Mirroring](../mirroring/overview.md), which is a low-cost and low-latency turnkey solution that allows you to create a replica of your data in OneLake. For more information, see [Why use Mirroring in Fabric?](../mirroring/overview.md#why-use-mirroring-in-fabric).
 - [OneLake shortcuts](../onelake/onelake-shortcuts.md), which point to other storage locations that could contain your source data. Shortcuts can be [used as tables in T-SQL queries](../onelake/onelake-shortcuts.md#sql).
 - [PolyBase in SQL Server](/sql/relational-databases/polybase/polybase-guide?view=sql-server-ver16&preserve-view=true), which is a data virtualization feature for SQL Server. PolyBase allows T-SQL queries to join data from external sources to relational tables in an instance of SQL Server.
 - [Data virtualization with Azure SQL Managed Instance](/azure/azure-sql/managed-instance/data-virtualization-overview?view=azuresql&tabs=managed-identity&preserve-view=true), which allows you to execute T-SQL queries on files storing data in common data formats in [Azure Data Lake Storage (ADLS) Gen2](/azure/storage/blobs/data-lake-storage-introduction) or [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction), and combine it with locally stored relational data by using joins.
@@ -96,11 +94,11 @@ Here are some transformations that your ETL process could perform.
 
 ### Load data
 
-You can load tables in a Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)] by using the following [data ingestion options](ingest-data.md#data-ingestion-options).
+You can load tables in a Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)] by using the following [data ingestion options](ingest-data.md).
 
 - **[COPY INTO (T-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true):** This option is useful when the source data comprise Parquet or CSV files stored in an external Azure storage account, like [ADLS Gen2](/azure/storage/blobs/data-lake-storage-introduction) or [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction).
-- **Data pipelines:** In addition to orchestrating the ETL process, data pipelines can include activities that run T-SQL statements, perform lookups, or copy data from a data source to a destination.
-- **Dataflows:** As an alternative to data pipelines, dataflows provide a code-free experience to transform and clean data.
+- **Pipelines:** In addition to orchestrating the ETL process, pipelines can include activities that run T-SQL statements, perform lookups, or copy data from a data source to a destination.
+- **Dataflows:** As an alternative to pipelines, dataflows provide a code-free experience to transform and clean data.
 - **Cross-warehouse ingestion:** When data is stored in the same workspace, cross-warehouse ingestion allows joining different warehouse or lakehouse tables. It supports T-SQL commands like `INSERT...SELECT`, `SELECT INTO`, and `CREATE TABLE AS SELECT (CTAS)`. These commands are especially useful when you want to transform and load data from staging tables within the same workspace. They're also set-based operations, which is likely to be the most efficient and fastest way to load dimensional model tables.
 
 > [!TIP]
@@ -147,7 +145,7 @@ Consider the process of the `Product` dimension table.
 
 ### Surrogate keys
 
-We recommend that each dimension table has a [surrogate key](dimensional-modeling-dimension-tables.md#surrogate-key), which should use the smallest possible integer data type. In SQL Server-based environments that's typically done by creating an identity column, however this feature isn't supported in Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Instead, you'll need to use a [workaround technique](generate-unique-identifiers.md) that generates unique identifiers.
+We recommend that each dimension table has a [surrogate key](dimensional-modeling-dimension-tables.md#surrogate-key), which should use the smallest possible integer data type. In SQL Server-based environments that's typically done by creating an `IDENTITY` column, and in Fabric Data Warehouse, `IDENTITY` columns are available with some limitations. For more information, see [IDENTITY columns](identity.md) and [Use IDENTITY columns to create surrogate keys in Fabric Data Warehouse](tutorial-identity.md).
 
 > [!IMPORTANT]
 > When a dimension table includes automatically generated surrogate keys, you should never perform a truncate and full reload of it. That's because it would invalidate the data loaded into fact tables that use the dimension. Also, if the dimension table supports [SCD type 2](dimensional-modeling-dimension-tables.md#scd-type-2) changes, it might not be possible to regenerate the historical versions.
@@ -245,7 +243,7 @@ Lastly, if fact data was inserted by using a special dimension member (like _Unk
 For more information about loading data into a Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see:
 
 - [Ingest data into the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](ingest-data.md)
-- [Ingest data into your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using data pipelines](ingest-data-pipelines.md)
+- [Ingest data into your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using pipelines](ingest-data-pipelines.md)
 - [Ingest data into your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using the COPY statement](ingest-data-copy.md)
 - [Ingest data into your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using Transact-SQL](ingest-data-tsql.md)
 - [Tutorial: Set up dbt for Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](tutorial-setup-dbt.md)

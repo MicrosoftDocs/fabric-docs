@@ -1,25 +1,24 @@
 ---
-title: "Deploy a SQL database via REST API"
-description: Learn how to deploy a new SQL database in Microsoft Fabric using REST API.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: dlevy
-ms.date: 03/03/2025
+title: "Create a SQL database with the REST API"
+description: Learn how to deploy a new SQL database in Microsoft Fabric with the REST API.
+ms.reviewer: dlevy, imotiwala
+ms.date: 02/19/2026
 ms.topic: how-to
 ms.search.form: Develop and run queries in SQL editor
 ---
-# Create a SQL database in Microsoft Fabric via REST API
+# Create a SQL database with the REST API for Microsoft Fabric
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-The Fabric platform has a rich set of REST APIs that can be used to deploy and manage resources. Those APIs can be used to deploy Fabric SQL databases. This article and sample script demonstrate a basic PowerShell script that can be used to deploy a Fabric SQL database and add data to it.
+You can use the [Fabric REST API](/rest/api/fabric/articles/) to deploy and manage resources, include SQL databases in Fabric. 
+
+This article and sample script demonstrate how to use PowerShell to call the Fabric REST API to deploy a Fabric SQL database.
 
 ## Prerequisites
 
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
-- Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md).
-- [Create a new workspace](../../fundamentals/workspaces.md) or use an existing Fabric workspace.
-- You must be a member of the Admin or Member roles for the workspace to create a SQL database.
+- You can use an existing workspace or [create a new Fabric workspace](../../fundamentals/workspaces.md).
+- You must be a member of the [Admin or Member roles for the workspace](../../fundamentals/give-access-workspaces.md) to create a SQL database. 
 - Install the golang version of [SQLCMD](/sql/tools/sqlcmd/sqlcmd-utility). Run `winget install sqlcmd` on Windows to install. For other operating systems, see [aka.ms/go-sqlcmd](https://aka.ms/go-sqlcmd).
 - PowerShell 5.1 or [PowerShell 7.4 and higher](/powershell/scripting/install/installing-powershell-on-windows)
 - The Az PowerShell module. Run `Install-Module az` in PowerShell to install.
@@ -104,11 +103,11 @@ try {
 
     $databaseProperties = (Invoke-RestMethod -Headers $headers -Uri https://api.fabric.microsoft.com/v1/workspaces/$($workspaceid)/SqlDatabases/$($databaseid) | select -ExpandProperty Properties)
 
-    #4. Connnect to the database and create a table
+    #4. Connect to the database and create a table
 
     Write-Host 'Attempting to connect to the database.'
 
-   sqlcmd.exe -S $databaseProperties.ServerFqdn -d $databaseProperties.DatabaseName -G -Q 'create table test2 
+    sqlcmd.exe -S $databaseProperties.ServerFqdn -d $databaseProperties.DatabaseName -G -Q 'create table test2 
     ( 
     id int 
     );
@@ -202,7 +201,7 @@ Invoke-RestMethod -Headers $headers -Uri https://api.fabric.microsoft.com/v1/wor
 
 $databaseProperties = (Invoke-RestMethod -Headers $headers -Uri https://api.fabric.microsoft.com/v1/workspaces/$($workspaceid)/SqlDatabases/$($databaseid) | select -ExpandProperty Properties)
 
-#4. Connnect to the database and create a table
+#4. Connect to the database and create a table
 
 Write-Host 'Attempting to connect to the database.'
 
@@ -234,7 +233,30 @@ Write-Output 'Cleaned up: '$databaseProperties.DatabaseName
 
 ---
 
+## Database collation
+
+By default, the database is created with the case-insensitive collation `SQL_Latin1_General_CP1_CI_AS`. 
+
+Database collation can't be modified after creation, though collations on individual columns are supported.
+
+When you create a SQL database with the REST API, you can specify the collation in PowerShell. Add a property named `creationPayload` in the `$body` hashtable. The `collation` property contains the collation name, for example:
+
+```powershell
+$collation = 'Latin1_General_100_BIN2_UTF8' # Desired collation name
+
+$body = @{
+    displayName = $matches[0] + (Get-Date -Format "MMddyyyy")
+    type = "SQLDatabase"
+    description = "Created using public api"
+    creationPayload = @{
+        collation = $collation
+        creationMode = "new"
+    }
+}
+```
+
 ## Related content
 
 - [Microsoft Fabric REST API references - Microsoft Fabric REST APIs](/rest/api/fabric/articles/)
 - [Identity support for logging into the Microsoft Fabric - Microsoft Fabric REST APIs](/rest/api/fabric/articles/identity-support)
+- [Options to create a SQL database in the Fabric portal](create-options.md)

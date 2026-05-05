@@ -1,12 +1,10 @@
 ---
 title: Multi-Geo support for Fabric
 description: Learn how you can deploy content to data centers in regions other than the home region of the Fabric tenant.
-author: KesemSharabi
-ms.author: kesharab
-ms.reviewer: ''
-ms.custom:
+author: msmimart
+ms.author: mimart
 ms.topic: how-to
-ms.date: 02/02/2025
+ms.date: 01/29/2026
 LocalizationGroup: Premium
 ---
 
@@ -20,7 +18,7 @@ Multi-Geo is a Microsoft Fabric feature that helps multinational customers addre
 
 * Power BI Embedded supports Multi-Geo.
 
-* Power BI Premium Per User (PPU) isn't supported for Multi-Geo.
+* Power BI Premium Per-User (PPU) isn't supported for Multi-Geo.
 
 ## Enable and configure
 
@@ -52,7 +50,9 @@ Follow these steps to change the default capacity region when you're creating a 
 
 # [Trial](#tab/trial)
 
-Trial capacities are created in your home region and don't support Multi-Geo.
+Trial capacities are available in multiple geos. Your home region is used as the default region.
+
+For information about selecting a region for your trial capacity, refer to step 4 in [Start a new trial capacity from the Account manager](../fundamentals/fabric-trial.md#method-1-start-a-new-trial-capacity-from-the-account-manager).
 
 # [Fabric Capacity](#tab/fabric-capacity)
 
@@ -72,7 +72,7 @@ When you're performing a migration, don't delete or pause either the source or d
 
 1. Open the [workspace settings](../fundamentals/workspaces.md#workspace-settings).
 
-2. From the side bar, select **License info**.
+2. From the side bar, select **Workspace type**.
 
 3. From the **License capacity** dropdown menu, select the capacity you want to move the workspace to.
 
@@ -98,13 +98,8 @@ Large-storage format semantic models shouldn't be moved from the region where th
 
 * Confirm that any movement you initiate between regions follows all corporate and government compliance requirements prior to initiating data transfer.
 
-* When you're using Multi-Geo, the following items are stored in the region that isn't your home region:
-    * SQL databases
-    * Models (*.ABF* files) for import and DirectQuery semantic models
-    * Query cache
-    * R images
+* When you're using Multi-Geo, compute and storage (including OneLake and experience-specific storage) is located in the multi-geo region, yet some tenant metadata remains in the home region, including the following:
 
-    These items remain in the home region of the tenant:
     * Push datasets
     * Dashboard/report metadata: tile names, tile queries, and any other data
     * Service buses for gateway queries or scheduled refresh jobs
@@ -131,7 +126,11 @@ Large-storage format semantic models shouldn't be moved from the region where th
 
 * Multi-Geo doesn't support [Metrics in Power BI](/power-bi/create-reports/service-goals-introduction).
 
+* Multi-Geo doesn't support Power BI Q&A Settings as detailed semantic model metadata lives in the home tenant. 
+
 * Workspaces with non-Power BI Fabric items can't be moved between regions. You must delete all the non-Power BI Fabric items before moving a workspace to a different region. Once the workspace is moved, it can take up to 30 minutes before non-Power BI items can be created.
+
+For more details, see [Moving data around](portal-workspaces.md#moving-data-around).
 
 ## Related content
 

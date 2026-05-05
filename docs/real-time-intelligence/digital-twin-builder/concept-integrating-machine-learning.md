@@ -1,8 +1,6 @@
 ---
 title: Integrating with machine learning (ML)
 description: Learn about integrating ontology data from digital twin builder (preview) into machine learning (ML) models.
-author: baanders
-ms.author: baanders
 ms.date: 04/17/2025
 ms.topic: concept-article
 ---
@@ -27,7 +25,7 @@ The following sections describe the typical steps involved in using ontology dat
 ### Step 1: Ingesting ontology data 
 
 First, you need to pull ontology data into a queryable format. Ontology data usually includes: 
-* Entity relationships (like which sensor belongs to which equipment)
+* Relationship instances between entity instances (like which sensor belongs to which equipment)
 * Hierarchical mappings (like *production line > equipment > sensors*)
 * Static metadata (like equipment type, location, and operational limits)
 
@@ -40,7 +38,7 @@ The following chart represents an example of ontology data.
 
 Here are some ways you can enrich and use this data:
 * Join it with time series data, which adds context to raw sensor readings
-* Aggregate relationships (like collecting the count of sensors for each piece of equipment)
+* Aggregate relationship instances (like collecting the count of sensors for each piece of equipment)
 * Filter by hierarchy (allows you to isolate data like failures in a specific plant location)
 
 ### Step 2: Transforming ontology data for ML 

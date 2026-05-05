@@ -1,15 +1,19 @@
 ---
 title: Migrate from Azure Synapse Data Explorer to Fabric (preview)
 description: Learn about migrating from Azure Synapse Data Explorer to Microsoft Fabric, including key considerations and different migration scenarios.
-author: shsagir
-ms.author: shsagir
 ms.reviewer: sharmaanshul
 ms.topic: how-to
 ms.date: 03/26/2025
 #customer intent: As a data engineer, I want to understand the migration process from Azure Synapse Data Explorer to Fabric Eventhouse so that I can effectively transition my workloads.
 ---
 
+
 # Migrate from Azure Synapse Data Explorer to Fabric Eventhouse (preview)
+
+> [!IMPORTANT]
+> Azure Synapse Analytics Data Explorer (Preview) will be retired on October 7, 2025. After this date, workloads running on Synapse Data Explorer will be deleted, and the associated application data will be lost. We highly recommend [migrating to Eventhouse](/fabric/real-time-intelligence/migrate-synapse-data-explorer) in Microsoft Fabric.
+
+The Microsoft Cloud Accelerate Factory (CAF) program accepts customer nominations from the Microsoft account team, to help customers migrate to Fabric. CAF provides hands-on keyboard resources at no-cost to the customer. Hands-On keyboard resources are assigned for 6-8 weeks with an agreed scope. Customers can also use [this form](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0PMD-G9mq1Kry22u32eGOtUQ1pWQVIyUU9USDBXSjUwQ1E0NEJCMExORC4u) to request help directly from Microsoft.
 
 While Azure Synapse provides [Data Explorer](/azure/synapse-analytics/data-explorer/data-explorer-overview), Fabric offers [Eventhouses](eventhouse.md), [KQL databases](create-database.md), and [KQL querysets](create-query-set.md). Eventhouses in Fabric are designed to ingest, store, and analyze real-time data streams. They provide a scalable, high-performance, and cost-effective solution for processing and analyzing real-time data.
 
@@ -47,8 +51,8 @@ Before you migrate, consider the following key points:
 | Cluster-level policies | :x: | |
 | System-assigned managed identities | :x: | Not supported in Eventhouse. |
 | Cluster Azure RBAC roles | :heavy_check_mark: |  |
-| Data connections, such as Event Hubs, IoT Hub, Event Grid | :x: | Not all data connections available in Synapse Data Explorer are supported in Eventhouse. You must manually create supported data connections in the new eventhouse. |
-| Data export operations | :x: | Data export operations, such as `.export` commands and continous export, aren't migrated automatically. You must manaully add them in the new eventhouse.|
+| Data connections, such as Event Hubs, IoT Hub, Event Grid | :x: | Not all data connections available in Synapse Data Explorer are supported in Eventhouse. You must remove them before migration and re-create supported data connections in the new eventhouse. |
+| Data export operations | :x: | Data export operations, such as `.export` commands and continuous export, aren't migrated automatically. You must manually add them in the new eventhouse.|
 | Follower and leader clusters | :x: | You must manually remove them before migration. |
 | Database pretty names | :x: | You must manually add them in the new eventhouse. |
 | Customer-managed keys | :x: | You must manually remove them before migration. |
