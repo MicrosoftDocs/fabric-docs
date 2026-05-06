@@ -6,7 +6,7 @@ ms.author: spelluru
 ms.reviewer: anshul
 ms.service: fabric
 ms.topic: overview
-ms.date: 05/04/2026
+ms.date: 05/06/2026
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
 
@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 
 # Copilot for Real-Time Intelligence
 
-Copilot in the Fabric Real-Time Intelligence workload is an AI assistant that helps you query, analyze, and explore your real-time data. Copilot translates natural language into Kusto Query Language (KQL) queries, generates dashboards, and enables interactive data exploration, all without requiring KQL expertise.
+Copilot in the Fabric Real-Time Intelligence workload is an AI assistant that helps you query, analyze, and explore your real-time data. Copilot translates natural language into Kusto Query Language (KQL) queries and enables interactive data exploration, without requiring KQL expertise.
 
 ## Copilot in KQL querysets
 
@@ -25,9 +25,9 @@ For details on how to use Copilot in KQL querysets, see [Copilot for writing KQL
 
 ## Copilot in Real-Time Dashboards
 
-Copilot in Real-Time Dashboards simplifies dashboard creation and data exploration:
+Copilot in Real-Time Dashboards simplifies dashboard tile edits and data exploration:
 
-- **Edit tile queries**: Use Copilot to author or modify the KQL query behind a dashboard tile directly in the editing pane, using natural language instead of writing KQL manually.
+- **Edit tile queries**: Use Copilot to author or modify the KQL query behind a dashboard tile directly in the editing pane, using natural language instead of writing KQL manually. For details, see [Use Copilot to add/edit a tile](dashboard-real-time-create.md#add-or-edit-tile)
 - **Explore data interactively**: In view mode, use Copilot to ask questions about your dashboard data, filter results, and save insights as new tiles. For details, see [Copilot-assisted real-time data exploration](dashboard-explore-data.md).
 
 ## Copilot for data in Azure Data Explorer
