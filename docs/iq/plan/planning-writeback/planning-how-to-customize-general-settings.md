@@ -10,6 +10,8 @@ ms.topic: how-to
 
 Writeback's **General** settings let you configure writeback behavior for a Planning sheet. These settings control how data is structured, filtered, and written to the destination.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Writeback Type
 
 Use **Writeback Type** to define the table structure.
