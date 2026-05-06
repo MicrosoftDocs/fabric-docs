@@ -136,7 +136,11 @@ items:
               - name: OneLake (preview)
                 href: workspace-outbound-access-protection-onelake.md
               - name: Real-Time Intelligence (preview)
-                href: workspace-outbound-access-protection-real-time-intelligence.md
+                items:
+                  - name: Eventhouse
+                    href: workspace-outbound-access-protection-eventhouse.md
+                  - name: Eventstream
+                    href: workspace-outbound-access-protection-event-stream.md
       - name: Trusted workspace access
         href: security-trusted-workspace-access.md
 - name: Data security
