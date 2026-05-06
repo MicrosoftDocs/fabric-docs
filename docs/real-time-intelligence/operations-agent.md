@@ -21,7 +21,7 @@ In this article, you learn how to create and use an AI operations agent in Real-
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity). Trial capacities aren't supported.
 * An [eventhouse](create-eventhouse.md) or [ontology](../iq/ontology/overview.md) in your workspace.
-* A [KQL database](create-database.md) in your eventhouse.
+* A [KQL database](create-database.md) in your eventhouse, if you are using an eventhouse.
 * A Microsoft Teams account.
 * Fabric admin permissions enabled for operations agent preview, and Microsoft Copilot and Azure OpenAI.
 * The cross-geo processing and storage for AI as per [data agent tenant settings](../data-science/data-agent-tenant-settings.md). This prerequisite only applies if your Fabric capacity isn't provisioned in US or EU regions.  
@@ -56,11 +56,11 @@ On the **Agent setup** page, you can configure the operations agent and adjust i
 
     :::image type="content" source="media/operations-agent/agent-instructions.png" alt-text="Screenshot of the instructions section on the setup page." lightbox="media/operations-agent/agent-instructions.png":::
 
-1. Choose a relevant data source that the agent can analyze and learn from. This choice ensures the agent has access to accurate and up-to-date information for generating insights.
+1. Choose a relevant data source that the agent can analyze and monitor. This choice ensures the agent has access to accurate and up-to-date information for generating insights.
 
     :::image type="content" source="media/operations-agent/knowledge-source.png" alt-text="Screenshot of the knowledge source section on the setup page." lightbox="media/operations-agent/knowledge-source.png":::
 
-1. Define the actions that the agent can take based on the insights it generates. Name the action and provide a description to clarify its purpose. Optionally, list the parameters that the action requires, such as a specific value.
+1. Define the actions that the agent can take based on the insights it generates. Name the action and provide a description to clarify its purpose. Optionally, list the parameters that the action requires, such as a specific value. The agent can always send you notifications in Teams without defining additional actions.
 
     :::image type="content" source="media/operations-agent/actions.png" alt-text="Screenshot of the actions section on the setup page." lightbox="media/operations-agent/actions.png":::
 

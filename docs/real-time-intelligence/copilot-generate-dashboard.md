@@ -2,7 +2,7 @@
 title: Generate Real-Time Dashboard Using Copilot
 description: Learn how to create insightful Real-Time Dashboard from your data using Copilot
 ms.reviewer: mibar
-ms.date: 08/21/2025
+ms.date: 04/28/2026
 ms.topic: how-to
 ms.subservice: rti-dashboard
 ms.collection:
@@ -25,7 +25,7 @@ For billing information about Copilot, see [Announcing Copilot in Fabric pricing
 
 [!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
-## Creating a Real-Time Dashboard with Copilot
+## Create a Real-Time Dashboard with Copilot
 
 You can create a Real-Time Dashboard with Copilot in several ways:
 
@@ -50,8 +50,8 @@ Copilot automatically generates the Insights Page and Data Profile Page. The Ins
 
 ## Related content
 
+- [Copilot for Real-Time Intelligence](copilot-real-time-intelligence.md), including [best practices](copilot-real-time-intelligence.md#best-practices-for-copilot-kql-queries) and [limitations](copilot-real-time-intelligence.md#limitations)
 - [Query data in a KQL queryset](kusto-query-set.md)
 - [Privacy, security, and responsible use of Copilot for Real-Time Intelligence](../fundamentals/copilot-real-time-intelligence-privacy-security.md)
 - [Copilot in Fabric](../fundamentals/copilot-fabric-overview.md)
 - [Copilot for Microsoft Fabric: FAQ](../fundamentals/copilot-faq-fabric.yml)
-

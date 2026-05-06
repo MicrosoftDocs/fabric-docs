@@ -7,7 +7,7 @@ ms.reviewer: yicw, mesrivas,liud
 ms.topic: concept-article
 ms.search.form: product-trident, Manage your workspace
 #customer intent: As a report creator, I need to know about workspaces so that I can create collections of artifacts that are related.
-ms.date: 01/30/2026
+ms.date: 04/28/2026
 
 ---
 
@@ -64,6 +64,13 @@ List view is divided into the task flow and the items list.
 ### Lineage view
 
 Lineage view shows the flow of data between the items in the workspace. Read more about [lineage view](../governance/lineage.md).
+
+## Branched workspace
+A **Branched workspace** is a workspace that is linked to a source workspace. It lets developers work on changes in an isolated environment, understand how their work relates to other workspaces, and promote changes back to the main workspace with confidence.
+
+The relationship (link) between a *Branched workspace* and its source workspace is established when the user performs [Git Integration -branch-out operation](../cicd/git-integration/branched-workspace.md#branch-out-operation). For more information, see [development process using branched workspaces](../cicd/git-integration/branched-workspace.md).
+   
+ :::image type="content" source="../cicd/git-integration/media/branch-out/branch-6.png" alt-text="Branched workspace related branches." lightbox="../cicd/git-integration/media/branch-out/branch-6.png":::
 
 ## Workspace settings
 
