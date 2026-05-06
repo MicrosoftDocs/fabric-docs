@@ -5,7 +5,7 @@ author: SnehaGunda
 ms.author: sngun
 ms.reviewer: dacoelho
 ms.topic: concept-article
-ms.date: 05/06/2026
+ms.date: 06/05/2026
 ms.search.form: delta lake interoperability
 ai-usage: ai-assisted
 ---
