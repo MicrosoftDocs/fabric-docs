@@ -43,6 +43,8 @@ items:
       href: ontology/how-to-use-rules.md
     - name: Use resource links
       href: ontology/how-to-use-resource-links.md
+    - name: Use ontology MCP server
+      href: ontology/how-to-use-ontology-mcp-server.md
   - name: Resources
     items:
     - name: Troubleshooting
@@ -89,6 +91,20 @@ items:
           href: plan/planning-how-to-create-database-connection.md
         - name: Input data
           href: plan/planning-how-to-input-data.md
+        - name: Insert rows
+          items:
+              - name: Insert data input rows
+                href: plan/planning-how-to-insert-rows-data-input.md
+              - name: Insert template rows
+                href: plan/planning-how-to-insert-rows-template.md
+              - name: Insert formula rows
+                href: plan/planning-how-to-insert-rows-formula.md
+              - name: Insert forecast rows
+                href: plan/planning-how-to-insert-rows-forecast.md
+              - name: Insert blank rows
+                href: plan/planning-how-to-insert-rows-blank.md
+              - name: Manage inserted rows
+                href: plan/planning-how-to-manage-inserted-rows.md
         - name: Set up scenarios
           href: plan/planning-how-to-set-up-scenarios.md
         - name: Use writeback
