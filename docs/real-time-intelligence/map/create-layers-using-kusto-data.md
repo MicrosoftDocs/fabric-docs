@@ -15,9 +15,9 @@ This article walks through adding KQL data from Kusto tables, functions, and mat
 
 > [!IMPORTANT]
 > Embedded KQL querysets are deprecated for use in Fabric Maps. You can no longer create new map layers using KQL querysets or use Application Lifecycle Management (ALM) to import or export the queryset associated with a map layer, which is now no longer supported.  
-> 
+>
 > Existing map layers created from KQL querysets will continue to function until **June 29, 2026**.  
-> 
+>
 > To ensure continued support, migrate your existing layers to Kusto functions, which also work with ALM. For more information, see [Migrate KQL Queryset to Kusto function](migrate-kusto-query-layer.md).
 
 ## Prerequisites
@@ -27,6 +27,12 @@ Before you begin, ensure that:
 - You have access to a KQL database in Microsoft Fabric.
 - The target table, function, or materialized view returns geometry columns.
 - You have permission to create and edit maps in Fabric.
+
+## Limitations
+
+The following limitations apply when creating layers from Kusto data in Fabric Maps:
+
+- **Kusto result dataset**: Supports up to 100,000 features returned by the query.
 
 ## Create a data layer from a KQL database
 
@@ -82,6 +88,10 @@ Before you begin, ensure that:
     With Geometry data in a single column:
 
     :::image type="content" source="media/layers/database/kql-data-review-geometry.png" alt-text="Fabric Maps Review and add to map configuration step. Form displays Data source: KQL database RandomRealTimeData, Function: RealTimeDataFunction1, Data layer name: Latest flight data - US, Geometry data column: Geometry data locates on single column with populated geometry field, Data refresh: 5 seconds. Left sidebar shows three-step progress: Preview data, Set geometry, and data refresh interval, and Review and add to map (currently highlighted in teal). Bottom right contains Back and Add to map buttons for finalizing Kusto layer configuration.":::
+
+    > [!NOTE]
+    > Kusto-based layers support up to 100,000 features returned by the query.  
+    > If your dataset exceeds this limit, refine your query or apply filters to reduce the result size.
 
 1. Once your layer is created, you can focus the map to zoom into where the data elements are located. To do this. select the data layer context menu (**...**) then **Zoom to fit**.
 
