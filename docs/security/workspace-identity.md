@@ -81,6 +81,7 @@ Workspace identity is supported for authentication to target resources in connec
 
 > [!WARNING]
 > Modifying or deleting the service principal or app registration in Azure is not recommended, as it will cause Fabric items relying on workspace identity to stop working. Such changes may be reverted.
+> Adding API permissions to allow access to target resources is supported for workspace identities.
 > Additionally, adhere to the principle of least privilege when managing Application Administrator roles. Ensure that only appropriate users are assigned this role. For more details, refer to [Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator)
 
 ### Administer the workspace identity in Fabric
@@ -116,6 +117,7 @@ The application associated with the workspace identity can be seen in **Enterpri
 
 > [!WARNING]
 > Modifications to the application made here will cause the workspace identity to stop working, and such changes may be reverted.
+> Adding API permissions to allow access to target resources is supported for workspace identities.
 > Additionally, adhere to the principle of least privilege when managing Application Administrator roles. Ensure that only appropriate users are assigned this role. For more details, refer to [Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator)
 
 To view the audit logs and sign-in logs for this identity:
