@@ -14,6 +14,7 @@ The following operations are available in the audit logs.
 |---|---|---|
 | Abort copy blob operation | :::no-loc text="AbortCopyBlob"::: | OneLake operation. Stops a pending Copy Blob operation, and leaves a destination blob with zero length and full metadata.  |
 | Accept an invitation to   external data share | :::no-loc text="AcceptExternalDataShare"::: | Accept an invitation to external data share |
+| Activated policy set | :::no-loc text="ActivatedPolicySet"::: |   |
 | Add Admin Personal Workspace Access  |  :::no-loc text="AddAdminPersonalWorkspaceAccess":::  |    |
 | Add Artifact To Pipeline  |  :::no-loc text="AddArtifactToPipeline":::  |    |
 | Add Experiment Run  |  :::no-loc text="AddExperimentRun":::  |    |
@@ -158,6 +159,7 @@ The following operations are available in the audit logs.
 | Created an organizational custom visual | :::no-loc text="InsertOrganizationalGalleryItem"::: |   |
 | Created an SQL query from a SQL analytics endpoint | :::no-loc text="CreateSqlQueryFromSqlAnalyticsEndpointLakehouse"::: |   |
 | Created deployment pipeline | :::no-loc text="CreateAlmPipeline"::: |   |
+| Created Fabric policy rule | :::no-loc text="CreatedFabricPolicyRule"::: |   |
 | Created workload assignment using admin api | :::no-loc text="ExtensibilityCreatedWorkloadAssignmentAdminApi"::: |   |
 | Custom visual requested Azure AD access token | :::no-loc text="GenerateCustomVisualAADAccessToken"::: |   |
 | Custom visual requested Office Web Apps access token | :::no-loc text="CustomVisualWACAccessToken"::: | Not currently used  |
@@ -167,6 +169,7 @@ The following operations are available in the audit logs.
 | Dataflow migrated to external storage account | :::no-loc text="DataflowMigratedToExternalStorageAccount"::: | Not currently used  |
 | Dataflow permissions added | :::no-loc text="DataflowPermissionsAdded"::: | Not currently used  |
 | Dataflow permissions removed | :::no-loc text="DataflowPermissionsRemoved"::: | Not currently used  |
+| Deactivated policy set | :::no-loc text="DeactivatedPolicySet"::: |   |
 | Delete Alm Pipeline Access As Admin | :::no-loc text="DeleteAlmPipelineAccessAsAdmin"::: |   |
 | Delete Alm Pipeline Access | :::no-loc text="DeleteAlmPipelineAccess"::: |   |
 | Delete Artifact | :::no-loc text="DeleteArtifact"::: | Generated when an item is deleted. When [item recovery](item-recovery.md) is **disabled** in tenant admin settings, this operation is logged at the time the user deletes the item. When item recovery is **enabled**, this operation is logged when the item is permanently deleted (after the soft-delete retention period expires or when the item is manually purged from the recycle bin); the initial user action is logged as `ArtifactSoftDeleted`.  |
@@ -245,6 +248,7 @@ The following operations are available in the audit logs.
 | Deleted an organizational custom visual | :::no-loc text="DeleteOrganizationalGalleryItem"::: |   |
 | Deleted current value connection of Power BI metric | :::no-loc text="DeleteGoalCurrentValueConnection"::: |   |
 | Deleted deployment pipeline | :::no-loc text="DeleteAlmPipeline"::: |   |
+| Deleted Fabric policy rule | :::no-loc text="DeletedFabricPolicyRule"::: |   |
 | Deleted link to external resource | :::no-loc text="DeleteLinkToExternalResource"::: |   |
 | Deleted member of Power BI gateway cluster | :::no-loc text="DeleteGatewayClusterMember"::: |   |
 | Deleted organizational Power BI content pack | :::no-loc text="DeleteOrgApp"::: |   |
@@ -476,9 +480,11 @@ The following operations are available in the audit logs.
 | Query blob contents | :::no-loc text="QueryBlobContents"::: | OneLake operation. Applies a SQL statement on a blob's contents, only returning the specified subset. |
 | Ran Power BI email subscription | :::no-loc text="RunEmailSubscription"::: |   |
 | Re-encrypted credentials using Power gateway cluster | :::no-loc text="ReencryptCredentials"::: |   |
+| Read active Fabric policy | :::no-loc text="ReadActiveFabricPolicy"::: |   |
 | Read Artifact | :::no-loc text="ReadArtifact"::: |   |
 | Read Environment Resource | :::no-loc text="ReadEnvironmentResource"::: | Read resources in environment |
 | Read Experiment Run | :::no-loc text="ReadExperimentRun"::: |   |
+| Read Fabric policy rules | :::no-loc text="ReadFabricPolicyRules"::: |   |
 | Read file or get blob | :::no-loc text="ReadFileOrGetBlob"::: | OneLake operation. Reads a file in OneLake. |
 | ReadDataflow | :::no-loc text="ReadDataflow"::: | Read Dataflow  |
 | Rebind Report | :::no-loc text="RebindReport"::: |   |
@@ -726,6 +732,7 @@ The following operations are available in the audit logs.
 | Updated dataflow storage assignment permissions | :::no-loc text="UpdatedDataflowStorageAssignmentPermissions"::: |  |
 | Updated deployment pipeline access | :::no-loc text="UpdateAlmPipelineAccess"::: |  |
 | Updated deployment pipeline configuration | :::no-loc text="SetConfigurationAlmPipeline"::: |  |
+| Updated Fabric policy rules | :::no-loc text="UpdatedFabricPolicyRules"::: |  |
 | Updated featured tables | :::no-loc text="UpdateFeaturedTables"::: |  |
 | Updated organization's Power BI settings | :::no-loc text="UpdatedAdminFeatureSwitch"::: |  |
 | Updated parameters for installed Power BI template app | :::no-loc text="UpdateInstalledTemplateAppParameters"::: |  |
