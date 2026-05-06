@@ -21,7 +21,8 @@ In this guide, you learn how to connect an Azure App Service resource to a SQL d
 
 Before you begin, ensure you have:
 
-* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free).
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
+.
 * An app hosted on App Service. If you don't have one, [create and deploy an app to App Service](/azure/app-service/quickstart-dotnetcore).
 * A SQL database in Microsoft Fabric. If you don't have one, [create a SQL database in Fabric](./create.md).
 
