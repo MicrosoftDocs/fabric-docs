@@ -9,7 +9,7 @@ items:
         href: real-time-intelligence-compare.md
       - name: Implement medallion architecture
         href: architecture-medallion.md
-      - name: End to end sample
+      - name: End to end sample RTI solution
         href: sample-end-to-end.md
   - name: Tutorials
     items:
@@ -565,6 +565,8 @@ items:
         href: eventhouse-deploy-with-fabric-api.md
       - name: Manage and monitor an eventhouse
         href: manage-monitor-eventhouse.md
+      - name: Eventhouse endpoint for Lakehouse and Warehouse
+        href: eventhouse-as-endpoint.md
       - name: Eventhouse capacity 
         items:
           - name: Resource consumption
@@ -700,55 +702,53 @@ items:
             href: edit-table-schema.md
           - name: Manage and monitor tables
             href: manage-monitor-table.md
-          - name: Notebooks
+      - name: Notebooks
+        items:
+          - name: Use Fabric notebooks with data from a KQL database
+            href: notebooks.md
+          - name: Use a notebook with Apache Spark to query a KQL database
+            href: spark-connector.md
+          - name: Use a notebook with Kqlmagic to query a KQL database
+            href: notebook-kql-magic.md
+      - name: Data management
+        items:
+          - name: Data management overview
+            href: data-management.md
+            displayName: managed identity, data policies, table update policy, materialized view, stored function, python plugin
+          - name: Entity diagram view in KQL database
+            href: database-entity-diagram.md
+          - name: Change data policies
+            href: data-policies.md
+          - name: Create a table update policy
+            href: table-update-policy.md
+          - name: Create materialized views
+            href: materialized-view.md
+          - name: Create and manage functions
+            href: create-functions.md
+          - name: Enable Python plugin
+            href: python-plugin.md
+          - name: Query cold data with hot windows
+            href: query-cold-data-hot-windows.md   
+      - name: Management commands
+        href: kusto-tocs/management/toc.yml
+      - name: API
+        href: kusto-tocs/api/toc.yml
+      - name: OneLake
+        items:
+          - name: Eventhouse OneLake availability
+            href: event-house-onelake-availability.md
+          - name: Create OneLake shortcuts in a KQL database
+            href: onelake-shortcuts.md
+          - name: Query acceleration over OneLake shortcuts
             items:
-              - name: Use Fabric notebooks with data from a KQL database
-                href: notebooks.md
-              - name: Use a notebook with Apache Spark to query a KQL database
-                href: spark-connector.md
-              - name: Use a notebook with Kqlmagic to query a KQL database
-                href: notebook-kql-magic.md
-          - name: Data management
+              - name: Accelerate queries over OneLake shortcuts - overview
+                href: query-acceleration-overview.md
+              - name: Accelerate queries over OneLake shortcuts
+                href: query-acceleration.md
+          - name: External tools
             items:
-              - name: Data management overview
-                href: data-management.md
-                displayName: managed identity, data policies, table update policy, materialized view, stored function, python plugin
-              - name: Entity diagram view in KQL database
-                href: database-entity-diagram.md
-              - name: Change data policies
-                href: data-policies.md
-              - name: Create a table update policy
-                href: table-update-policy.md
-              - name: Create materialized views
-                href: materialized-view.md
-              - name: Create and manage functions
-                href: create-functions.md
-              - name: Enable Python plugin
-                href: python-plugin.md
-              - name: Query cold data with hot windows
-                href: query-cold-data-hot-windows.md   
-          - name: Management commands
-            href: kusto-tocs/management/toc.yml
-          - name: API
-            href: kusto-tocs/api/toc.yml
-          - name: OneLake
-            items:
-              - name: Eventhouse OneLake availability
-                href: event-house-onelake-availability.md
-              - name: Create OneLake shortcuts in a KQL database
-                href: onelake-shortcuts.md
-              - name: Query acceleration over OneLake shortcuts
-                items:
-                  - name: Accelerate queries over OneLake shortcuts - overview
-                    href: query-acceleration-overview.md
-                  - name: Accelerate queries over OneLake shortcuts
-                    href: query-acceleration.md
-              - name: Eventhouse endpoint for Lakehouse and Warehouse
-                href: eventhouse-as-endpoint.md
-              - name: External tools
-                items:
-                  - name: Query Fabric OneLake Delta tables from Snowflake
-                    href: query-onelake-from-snowflake.md    
+              - name: Query Fabric OneLake Delta tables from Snowflake
+                href: query-onelake-from-snowflake.md    
   - name: KQL Queryset
     items:
       - name: Copilot for Writing KQL Queries
@@ -1053,11 +1053,24 @@ items:
           href: map/manage-map-permissions.md
         - name: Create and Configure a Fabric Map with REST APIs
           href: map/create-configure-map-using-rest-api.md
-  - name: AI agents and MCP servers
-    displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
+  - name: Copilot
     items:
-      - name: Operations agents
-        href: operations-agent-tocs/toc.yml
+      - name: Copilot for Real-Time Intelligence
+        href: copilot-real-time-intelligence.md
+      - name: Copilot for Writing KQL Queries
+        href: copilot-writing-queries.md
+      - name: Generate Real-Time Dashboard Using Copilot
+        href: copilot-generate-dashboard.md
+      - name: Explore data in Real-Time Dashboard Using Copilot
+        href: dashboard-explore-data.md
+  - name: Operations agents
+    displayName: AI agents, AI, agents, Operation agents
+    href: operations-agent-tocs/toc.yml
+  - name: Build AI agents
+    displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source, skills
+    items:
+      - name: Overview
+        href: ai-agents-eventhouse.md 
       - name: MCP servers
         items:
           - name: Overview

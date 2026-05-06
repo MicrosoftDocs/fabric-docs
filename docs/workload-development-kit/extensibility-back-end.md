@@ -3,7 +3,7 @@ title: Implement the Microsoft Fabric backend
 description: Learn how to build the backend of a customized Microsoft Fabric workload by using Fabric extensions. Learn about the Microsoft Fabric Workload Development Kit and how to use it by following a detailed example.
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 05/21/2024
+ms.date: 04/29/2026
 #customer intent: As a developer, I want to understand how to build the backend of a customized Microsoft Fabric workload and use the Microsoft Fabric Workload Development Kit so that I can create customized user experiences.
 ---
 

@@ -1048,6 +1048,8 @@
             href: create-first-dataflow-gen2.md
           - name: Get data in dataflows
             href: get-data-dataflow-gen2.md
+          - name: My Queries (Preview)
+            href: dataflow-gen2-my-queries.md
           - name: Use a dataflow in a pipeline
             href: tutorial-dataflows-gen2-pipeline-activity.md
           - name: Save a draft of your dataflow
@@ -1113,7 +1115,7 @@
               - name: Implement slowly changing dimension type 2
                 href: slowly-changing-dimension-type-two.md
               - name: Staging in Dataflow Gen2
-                href: data-in-staging-artifacts.md
+                href: data-in-staging-items.md
               - name: How to handle schema drift
                 href: how-to-handle-schema-drift.md
               - name: How to obfuscate data
