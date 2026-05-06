@@ -3,7 +3,7 @@ title: Real-Time Intelligence Tutorial Part 3 - Set an Alert on Your Eventstream
 description: Learn how to set an alert on your eventstream in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: tutorial
-ms.date: 10/28/2025
+ms.date: 05/06/2026
 ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to set an alert on my eventstream in Real-Time Intelligence.
@@ -25,13 +25,13 @@ Here you configure the rules for the alert.
 
     :::image type="content" source="media/tutorial/set-alert.png" alt-text="Screenshot of eventstreams details page and set alert selected." lightbox="media/tutorial/set-alert.png":::
 
-1. Select **Set alert**
+1. Select **Set alert**.
 
 1. In the **Add rule** page, follow these steps:
 
     1. In the **Details** section, for **Rule name**, enter **TutorialRule**.
-    
-    1. In the **Monitor** section, follow these steps to set the condition for the alert:
+
+    1. In the **Condition** section, follow these steps to set the condition for the alert:
 
         1. For **Check**, select **On each event when**.
 
@@ -49,7 +49,7 @@ Here you configure the rules for the alert.
 
         1. For **To**, select your Teams account.
 
-        1. For **Headline**, enter **@BikepointID has no bikes**. 
+        1. For **Headline**, enter **@** or open the tag icon. In the list select **BikepointID**, and then type **has no bikes**. The resulting headline should be **@BikepointID has no bikes**.
 
         1. For **Notes**, enter **The bike point:​ @BikepointID has @No_Bikes bikes. Please replenish the station**.
 
@@ -69,8 +69,7 @@ Here you configure the rules for the alert.
     :::image type="content" source="media/tutorial/activator-sample-alert.png" alt-text="Screenshot of a sample Teams alert.":::
 
 
-
-## Open the Activator item
+## Open, view, and stop the Activator item
 
 1. In the **Alert created** pane, select **Open** at the bottom of the pane. The Activator item you just created opens in a new tab.
 
