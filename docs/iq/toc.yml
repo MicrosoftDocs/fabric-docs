@@ -43,6 +43,8 @@ items:
       href: ontology/how-to-use-rules.md
     - name: Use resource links
       href: ontology/how-to-use-resource-links.md
+    - name: Connect an operations agent
+      href: ontology/how-to-create-operations-agent.md
     - name: Use ontology MCP server
       href: ontology/how-to-use-ontology-mcp-server.md
   - name: Resources
@@ -111,6 +113,8 @@ items:
           items:
               - name: Configure writeback
                 href: plan/planning-writeback/planning-how-to-persist-data.md
+              - name: Customize writeback settings
+                href: plan/planning-writeback/planning-how-to-customize-general-settings.md
               - name: Configure destination settings
                 href: plan/planning-writeback/planning-how-to-configure-destination-settings.md
         - name: Change layouts
