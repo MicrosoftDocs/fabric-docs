@@ -1,82 +1,88 @@
 ---
-title: Export Data from Planning Sheets to Excel and PDF
-description: Learn how to export planning sheets to Excel or PDF in Fabric Plan.Explore Excel export modes, PDF settings, headers, formatting, and advanced configuration options..
+title: Export data from Planning sheets
+description: Learn how to export Planning sheets to Excel or PDF in Fabric plan (preview). Explore Excel export modes, PDF settings, headers, formatting, and advanced configuration options.
 ms.date: 05/04/2026
 ms.topic: how-to
 #customer intent: As a user, I want to understand how to export planning sheets to Excel or PDF in Fabric Plan.
 ---
-# Exports in the Planning sheet
 
-Planning sheet allows you to export reports to **PDF** and **Excel** while preserving formatting, layout, and data context. You can export complete sheets or selected data.
+# Export data from Planning sheets to Excel and PDF
 
-Exported Planning sheets retain key elements such as:
+Planning sheets allow you to export reports to PDF and Excel formats while preserving formatting, layout, and data context. You can export complete sheets or select specific data.
+
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
+Exported Planning sheets retain key elements like:
 
 * Planning sheet layout and structure
 * Cell values and number formatting
 * Notes and annotations
 * Filters and layouts
-* Calculated rows and columns.
+* Calculated rows and columns
 
 ## Prerequisite
 
-* You have access to the Planning sheets to be exported.
+You have access to the Planning sheets to be exported.
 
 ## Export a Planning sheet to PDF
 
-Use PDF export to generate formatted, paginated sheets.
+Use the PDF export capability to generate formatted, paginated sheets.
 
-1. In the Planning sheet, select **Export** from **Planning**.
-1. Select **Export to PDF**.
+1. In the Planning sheet, select **Planning** and **Export** from the toolbar.
+1. Select **PDF** as the format.
 
      :::image type="content" source="media/planning-how-to-export-data/export-pdf.jpg" alt-text="Screenshot of exporting to pdf." lightbox="media/planning-how-to-export-data/export-pdf.jpg":::
 
-1. Select the **Properties**
-   * **Entire Matrix -** The Entire Matrix is exported.
-   * **Selected Columns -** Only the selected columns are exported.
-1. Configure [**Advanced Settings**](#configure-advanced-export-options)
+1. Under **Properties**, select one of the following:
+   * **Entire Matrix**: The entire matrix is exported.
+   * **Selected Columns**: Only the selected columns are exported.
+1. Configure [Advanced Settings](#advanced-settings-for-pdf-export) if needed.
 1. Select **Export** and download the file.
 
      :::image type="content" source="media/planning-how-to-export-data/pdf-download.png" alt-text="Screenshot of downloading the exported  pdf." lightbox="media/planning-how-to-export-data/pdf-download.png":::
 
-## Configure advanced export options
+### Advanced settings for PDF export
 
-### **Page Setup**
+The advanced **PDF Settings** are presented in three tabs, described in the sections below.
 
-You can customise the output using page setup settings:
+#### Page setup
 
-* Select **Content Order**
-  * **Row-first**: Data fills across rows first, then continues to the next page.
-  * **Column-first**: Data fills down columns first, then continues to the next page.
-* Select **page size** (A4, A3, custom sizes)
-* Select portrait or landscape **orientation**
-* Select **scaling** to fit content.
-* Select the **Margin** type.
+The **Page Setup** tab contains these options to customize the output:
+
+1. For **Content order**, select one of the following:
+    * **Row-first**: Data fills across rows first, then continues to the next page.
+    * **Column-first**: Data fills down columns first, then continues to the next page.
+1. Select **Page size** (A4, A3, custom sizes)
+1. Select portrait or landscape **Orientation**
+1. Select **Scaling** to fit content
+1. Select the **Margin** type
 
     :::image type="content" source="media/planning-how-to-export-data/pdf-settings.png" alt-text="Screenshot of configuring pdf page settings." lightbox="media/planning-how-to-export-data/pdf-settings.png":::
 
-### **Advanced Settings**
+#### Advanced settings
 
-* Enable **Image/Logo** to include images.
+The **Advanced Settings** tab contains these options:
+
+* Enable **Image/Logo** to include images
 * Use an image as a background
-* Set margins to align content horizontally and vertically.
+* Set **Margins** to align content horizontally and vertically
 
    :::image type="content" source="media/planning-how-to-export-data/advanced-settings.png" alt-text="Screenshot of configuring advanced pdf page settings." lightbox="media/planning-how-to-export-data/advanced-settings.png":::
 
-
-* Include comments on the last page.
-* Include Filter information.
-* Enable compression to reduce the PDF file size.
+* **Include comments on the last page**
+* Include Filter information
+* Enable compression to reduce the PDF file size
   
     :::image type="content" source="media/planning-how-to-export-data/advanced-settings-alignment.png" alt-text="Screenshot of configuring advanced alignment page settings." lightbox="media/planning-how-to-export-data/advanced-settings-alignment.png":::
   
-### Formatting
+#### Formatting
 
-You can customize formatting using the following options:
+The **Formatting** tab contains these options to customize formatting:
 
-* Apply **font styles** as needed.
-* Select the display type for the **Header** and **Footer**.
-* Set the **decimal precision**.
-* Configure **Auto wrap** options.
+* Apply **Font** styles
+* Select the display type for the **Header** and **Footer**
+* Set the **Decimal Precision**
+* Configure **Word Wrap** options
 
     :::image type="content" source="media/planning-how-to-export-data/format-settings.png" alt-text="Screenshot of configuring page format settings." lightbox="media/planning-how-to-export-data/format-settings.png":::
   
@@ -84,48 +90,50 @@ Select **Apply** to save your changes, or select **Reset** to clear all changes.
 
 ## Export a Planning sheet to Excel
 
-Use Excel export for further analysis and data manipulation.
+Use the Excel export capability for further analysis and data manipulation.
 
-1. In the Planning sheet, select **Export** from **Planning**.
-1. Select **Export to Excel**.
+1. In the Planning sheet, select **Planning** and **Export** from the toolbar.
+1. Select **Excel** as the format.
 1. Under **Export mode**, select one of the following:
-   * **Fully expanded** - Exports all hierarchy levels in an expanded view.
-   * **With expand/collapse** - Exports data with hierarchy controls to expand or collapse levels in Excel.
-   * **Current state** - Exports the report exactly as it appears, including applied filters and expanded levels.
+    * **Fully expanded**: Exports all hierarchy levels in an expanded view.
+    * **With expand/collapse**: Exports data with hierarchy controls to expand or collapse levels in Excel.
+    * **Current state**: Exports the report exactly as it appears, including applied filters and expanded levels.
 1. Under **Properties**, select one of the following:
-   * **Entire Matrix -** The Entire Matrix is exported.
-   * **Selected Columns -** Only the selected columns are exported.
-1. Configure [**Advanced Settings**](#advanced-settings-in-excel-export-options) as required.
+    * **Entire Matrix**: The entire matrix is exported.
+    * **Selected Columns**: Only the selected columns are exported.
+1. Configure [Advanced Settings](#advanced-settings-for-excel-export) if needed.
 1. Select **Export to** export the Excel file.
 
-     :::image type="content" source="media/planning-how-to-export-data/export-excel.png" alt-text="Screenshot of exporting to excel." lightbox="media/planning-how-to-export-data/export-excel.png":::
+     :::image type="content" source="media/planning-how-to-export-data/export-excel.png" alt-text="Screenshot of exporting to Excel." lightbox="media/planning-how-to-export-data/export-excel.png":::
 
 1. Select the link to save your file to your local system.
 
-    ::image type="content" source="media/planning-how-to-export-data/excel-download.png" alt-text="Screenshot of downloading the exported excel." lightbox="media/planning-how-to-export-data/excel-download.png":::
+    :::image type="content" source="media/planning-how-to-export-data/excel-download.png" alt-text="Screenshot of downloading the exported Excel." lightbox="media/planning-how-to-export-data/excel-download.png":::
 
-### Advanced Settings in Excel export options
+### Advanced settings for Excel export
 
-**Header Settings**
+The advanced **Excel Settings** are presented in three tabs, described in the sections below.
+
+#### Header Settings
 
 Planning sheets support exporting header elements such as dates and symbols to Excel. Use header settings to control and preview which header lines are included in the export.
 
 ::image type="content" source="media/planning-how-to-export-data/header-settings.png" alt-text="Screenshot of configuring header settings in the exported excel." lightbox="media/planning-how-to-export-data/header-settings.png":::
 
-**Footer Settings**
+#### Footer Settings
 
 Planning sheets support exporting footer elements such as dates to Excel. Use footer settings to control and preview which footer lines are included in the export.
 
-::image type="content" source="media/planning-how-to-export-data/footer-settings.png" alt-text="Screenshot of configuring footer settings in the exported excel." lightbox="media/planning-how-to-export-data/footer-settings.png":::
+:::image type="content" source="media/planning-how-to-export-data/footer-settings.png" alt-text="Screenshot of configuring footer settings in the exported excel." lightbox="media/planning-how-to-export-data/footer-settings.png":::
 
-**General Settings**
+#### General Settings
 
 Configure additional options as required:
 
-* Freeze headers and label columns.
-* Smart fit to automatically fit content to columns.
-* Add a formula appendix sheet.
+* Smart fit to automatically fit content to columns
+* Freeze headers and label columns
+* Add a formula appendix sheet
 
-   ::image type="content" source="media/planning-how-to-export-data/general-settings.png" alt-text="Screenshot of configuring general settings in the exported excel." lightbox="media/planning-how-to-export-data/general-settings.png":::
+   :::image type="content" source="media/planning-how-to-export-data/general-settings.png" alt-text="Screenshot of configuring general settings in the exported excel." lightbox="media/planning-how-to-export-data/general-settings.png":::
 
-Select **Apply** to apply the changes and configure your PDF Export settings, or select **Reset** to reset all the applied changes.
+Select **Apply** to apply the changes and configure your Excel Export settings, or select **Reset** to reset all the applied changes.

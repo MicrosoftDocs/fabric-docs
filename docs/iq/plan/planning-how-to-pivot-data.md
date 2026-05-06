@@ -1,13 +1,15 @@
 ---
-title: Pivot Data in Planning Sheets
-description: Learn how to use the Pivot feature in Fabric Plan planning sheets for flexible data analysis and customized views.
+title: Pivot data in Planning sheets
+description: Learn how to use the Pivot feature in Fabric plan (preview) Planning sheets for flexible data analysis and customized views.
 ms.date: 05/04/2026
 ms.topic: how-to
 #customer intent: As a user, I want to understand and use use the Pivot feature in Fabric Plan planning sheets effectively.
 ---
-# Pivot Data in Planning Sheets
+# Pivot data in Planning sheets
 
-Pivot data lets you reorganize row dimensions to create alternate views of your data without changing the underlying dataset.
+*Pivot data* lets you reorganize row dimensions to create alternate views of your data without changing the underlying dataset.
+
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 Each pivot view represents a unique arrangement of dimensions, enabling flexible analysis and planning across different perspectives.
 
@@ -21,17 +23,16 @@ With the **Pivot** option in the Planning sheet, you can:
 
 ## Prerequisite
 
-* Access to a Planning sheet..
+You have access to a Planning sheet.
 
 ## Create and use pivot views
 
 1. Open your Planning sheet.
-1. Select **Pivot**.
+1. Select **Pivot** from the toolbar.
 
     :::image type="content" source="media/planning-how-to-pivot-data/create-pivot.png" alt-text="Screenshot of creating pivot." lightbox="media/planning-how-to-pivot-data/create-pivot.png":::
 
-
-1. select **Add**
+1. Select **Add**
 1. Enter a **Name** for the pivot view.
 1. Select the required row dimensions from **Available Fields**.
 1. Select **Save**.
@@ -44,11 +45,11 @@ The pivot view is created.
 
 Each pivot represents a unique combination of row dimensions.
 
-* Select your pivot view.
+Start by selecting your pivot view.
 
-   :::image type="content" source="media/planning-how-to-pivot-data/pivot-views.png" alt-text="Screenshot of  pivot views." lightbox="media/planning-how-to-pivot-data/pivot-views.png":::
+:::image type="content" source="media/planning-how-to-pivot-data/pivot-views.png" alt-text="Screenshot of  pivot views." lightbox="media/planning-how-to-pivot-data/pivot-views.png":::
 
-The Pivot views can be managed by enabling the **Pivot Explorer**.
+You can manage pivot views by enabling the **Pivot Explorer**, which provides the following options:
 
 * Edit an existing pivot by updating its name or fields.
 * Select (**⋮**) to **Duplicate** or **Delete** pivots.
