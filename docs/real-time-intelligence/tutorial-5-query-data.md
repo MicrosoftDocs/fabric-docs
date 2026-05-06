@@ -4,7 +4,7 @@ description: Learn how to query your streaming data in a KQL queryset Real-Time 
 ms.reviewer: tzgitlin
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
-ms.date: 06/08/2025
+ms.date: 05/06/2026
 ms.update-cycle: 180-days
 ms.subservice: rti-core
 ms.collection: ce-skilling-ai-copilot
