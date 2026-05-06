@@ -27,11 +27,10 @@ For details on how to use Copilot in KQL querysets, see [Copilot for writing KQL
 
 Copilot in Real-Time Dashboards simplifies dashboard creation and data exploration:
 
-- **Generate dashboards**: Select a data table in Real-Time Hub or a KQL queryset and use Copilot to automatically generate a Real-Time Dashboard with an insights page and a data profile page. For details, see [Generate a Real-Time Dashboard using Copilot](copilot-generate-dashboard.md).
 - **Edit tile queries**: Use Copilot to author or modify the KQL query behind a dashboard tile directly in the editing pane, using natural language instead of writing KQL manually.
 - **Explore data interactively**: In view mode, use Copilot to ask questions about your dashboard data, filter results, and save insights as new tiles. For details, see [Copilot-assisted real-time data exploration](dashboard-explore-data.md).
 
-## Copilot for Azure Data Explorer
+## Copilot for data in Azure Data Explorer
 
 Copilot also supports [Azure Data Explorer](/azure/data-explorer/) (ADX) clusters. When connected to an ADX cluster, Copilot generates KQL queries and explores data in the same way it does for an Eventhouse. A Fabric-enabled capacity is required.
 
@@ -60,7 +59,7 @@ The following tips apply to Copilot in both KQL querysets and Real-Time Dashboar
 
 Copilot enhances prompts by using the most relevant examples (referred to as natural language and KQL pairs, or "shots") from a Public Shots database. This database is curated by the Real-Time Intelligence team, derived from KQL documentation, and available to all Copilot users. The Public Shots database provides a solid foundation but is generic and lacks domain-specific knowledge of your KQL database.
 
-To improve Copilot's ability to generate accurate and complex KQL queries for your specific scenarios, create a Private Shots database. 
+To improve Copilot's ability to generate accurate and complex KQL queries for your specific scenarios, create a Private Shots database.
 
 This approach lets you include advanced KQL queries that address your team's unique requirements. For example, queries that use:
     - [graph semantics](/kusto/query/graph-semantics-overview),
@@ -97,6 +96,5 @@ Microsoft is committed to ensuring that [AI principles](https://www.microsoft.co
 ## Related content
 
 - [Copilot for writing KQL queries](copilot-writing-queries.md)
-- [Generate a Real-Time Dashboard using Copilot](copilot-generate-dashboard.md)
 - [Copilot-assisted real-time data exploration](dashboard-explore-data.md)
 - [Overview of Copilot in Fabric](../fundamentals/copilot-fabric-overview.md)
