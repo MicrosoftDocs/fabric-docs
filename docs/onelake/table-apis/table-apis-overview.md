@@ -1,7 +1,9 @@
 ---
 title: "Overview of OneLake table APIs"
 description: "Introduction to the OneLake REST API endpoint for table operations in Microsoft Fabric, including Iceberg support."
-ms.reviewer: mahi
+ms.reviewer: mahi # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.date: 10/01/2025
 ms.topic: overview
 #customer intent: As a OneLake user, I want to learn what the OneLake table APIs are, what prerequisites and authentication steps are required, and which table formats are supported, so that I can prepare to connect and work with my data programmatically in Microsoft Fabric.

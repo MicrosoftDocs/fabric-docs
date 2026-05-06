@@ -11,7 +11,7 @@ ms.date: 02/04/2026
 
 # Microsoft Fabric terminology
 
-Learn the definitions of terms used in Microsoft Fabric, including terms specific to Fabric Data Engineering, Data Factory, Fabric Data Science, Fabric Data Warehouse, IQ, Real-Time Intelligence, and Power BI.
+Learn the definitions of terms used in Microsoft Fabric, including terms specific to Fabric Data Engineering, Data Factory, Fabric Data Science, Fabric Data Warehouse, Fabric IQ, Real-Time Intelligence, and Power BI.
 
 ## General terms
 
@@ -71,7 +71,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Fabric Data Warehouse:** The Fabric Data Warehouse functions as a traditional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. For more information, see [Fabric Data Warehouse](../data-warehouse/data-warehousing.md#fabric-data-warehouse).
 
-## IQ
+## Fabric IQ
 
 - **Ontology**: Ontology (preview) is an item where you can define entity types, relationships, properties, and other constraints to organize data according to your business vocabulary. For more information, see [What is ontology (preview)?](../iq/ontology/overview.md)
 - **Plan**: Plan (preview) is a unified no-code platform for collaborative planning, reporting, analytics, data integration, and management. For more information, see [What is plan (preview)?](../iq/plan/overview.md)

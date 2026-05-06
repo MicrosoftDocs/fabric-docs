@@ -1,7 +1,9 @@
 ---
 title: OneLake consumption
 description: Information on how OneLake consumes Fabric capacity units including how consumption is calculated, billed, and reported.
-ms.reviewer: eloldag
+ms.reviewer: eloldag # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.date: 02/11/2026
 #customer intent: As a capacity admin, I want to understand how OneLake usage is billed and reported, including consumption of storage and transactions, so that I can effectively manage and optimize my costs and resources.

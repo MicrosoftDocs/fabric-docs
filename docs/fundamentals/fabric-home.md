@@ -4,7 +4,7 @@ description: Learn how to quickly find content, search, filter, multitask with t
 author: SnehaGunda
 ms.author: sngun
 ms.topic: overview
-ms.date: 02/03/2026
+ms.date: 03/27/2026
 ai-usage: ai-assisted
 #customer intent: As a new Fabric user, I want to quickly find my content, understand navigation, personalize settings, and get help.
 ---
@@ -66,9 +66,9 @@ To explore:
 More about workloads: [Workloads in Fabric](../workload-development-kit/more-workloads-add.md).
 
 <a id="multitask-with-tabs-and-object-explorer"></a>
-## Multitask with tabbed navigation to access resources (preview)
+## Multitask with tabbed navigation to access resources
 
-The tabbed navigation allows you to work with multiple items and workspaces at the same time. It enhances navigation and reduces the need to switch context.
+The tabbed navigation allows you to work with multiple items, monitoring pages, and workspaces at the same time. It enhances navigation and reduces the need to switch context.
 
 ### Tabs for open items
 
@@ -91,13 +91,13 @@ You can open and work across multiple workspaces side by side. Items are color-c
 
 The object explorer provides a structured view of items across all your currently open workspaces. Use it to quickly locate and open resources without having to switch between pages. You can pin the object explorer for easy access. Use the filter option to view items of a specific type or search for an item by a keyword. The items are organized by the hierarchy they belong to.
 
-:::image type="content" source="media/fabric-home/tabs-object-explorer.png" alt-text="Screenshot showing the object explorer & multiple tabs to quickly locate and open resources.":::
+:::image type="content" source="media/fabric-home/tabs-object-explorer.png" alt-text="Screenshot of the object explorer and multiple tabs to quickly locate and open resources.":::
 
 ### Customize horizontal tab display
 
 You can also configure how horizontal tabs are displayed. Right-click any tab and select **Open horizontal tab setting** menu and choose the display style that fits your needs.
 
-:::image type="content" source="media/fabric-home/horizontal-tab-settings.png" alt-text="Screenshot showing the horizontal tab settings menu.":::
+:::image type="content" source="media/fabric-home/horizontal-tab-settings.png" alt-text="Screenshot of the horizontal tab settings menu.":::
 
 You can choose from the following two tab display patterns:
 
@@ -151,7 +151,7 @@ Focus mode helps developers create a distraction-free workspace by hiding the na
 
 To enable focus mode, open the item you want to edit and select **Focus Mode** from the global header. The navigation sidebar and object explorer are collapsed, maximizing the editor pane.
 
-:::image type="content" source="media/fabric-home/focus-mode.png" alt-text="Screenshot showing how to enable the focus mode." lightbox="media/fabric-home/focus-mode.png":::
+:::image type="content" source="media/fabric-home/focus-mode.png" alt-text="Screenshot of the option to enable focus mode in the Fabric global header." lightbox="media/fabric-home/focus-mode.png":::
 
 To exit, select **Exit Focus Mode**, the same toggle control turns it off.
 

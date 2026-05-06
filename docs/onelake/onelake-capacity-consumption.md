@@ -1,7 +1,9 @@
 ---
 title: OneLake capacity consumption example
 description: Information on how OneLake uses Fabric capacity and how storage is billed with capacity consumption examples.
-ms.reviewer: eloldag
+ms.reviewer: eloldag # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.date: 02/02/2026
 #customer intent: As a capacity admin, I want to understand how OneLake consumes storage and compute so that I can effectively manage my capacity and optimize costs.

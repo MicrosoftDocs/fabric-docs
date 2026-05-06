@@ -1,8 +1,8 @@
 ---
 title: Current Limitations of graph in Microsoft Fabric
-description: Understand the current limitations of graph in Microsoft Fabric, including data types, graph size, query constraints, and GQL (Graph Query Language) conformance.
+description: Understand the current limitations of graph in Microsoft Fabric, including data types, graph size, query constraints, and GQL language support.
 ms.topic: reference
-ms.date: 03/12/2026
+ms.date: 05/04/2026
 ms.reviewer: wangwilliam
 ---
 
@@ -20,7 +20,7 @@ For help with common problems, see [Troubleshooting graph](troubleshooting-and-f
 
 - OneLake parquet and CSV files are the only data sources currently supported.
 - Support for Power BI semantic models as data sources is under development.
-- Support for column- and row-level [OneLake security](../onelake/security/get-started-security.md#onelake-security-preview) is under development.
+- Support for column- and row-level [OneLake security](../onelake/security/get-started-security.md#onelake-security) is under development.
 - Support for [Lakehouse with schema](../data-engineering/lakehouse-schemas.md) is under development.
 
 ### Data types
@@ -32,6 +32,7 @@ Graph currently supports the following data types:
 - Integer (values are 64-bit signed integers)
 - String (values are Unicode character strings)
 - Zoned DateTime (values are timestamps together with a timeshift for the time zone)
+- Duration (values are ISO 8601 duration intervals)
 
 The following OneLake types are supported:
 
@@ -73,7 +74,7 @@ The graph model might disappear or become empty when you switch between tabs or 
 
 ### Node property selection
 
-When you add a node to your graph model, all columns from the source table are added as properties by default. You can remove properties by selecting the trashcan icon. Choosing a custom display label (for example, displaying a name instead of an ID) isn't yet supported.
+When you add a node type to your graph model, all columns from the source table are added as properties by default. You can remove properties by selecting the trashcan icon. Edge types work differently - they start with no properties, and you add only the ones you need. Choosing a custom display label (for example, displaying a name instead of an ID) isn't yet supported.
 
 ## Querying
 
@@ -98,144 +99,43 @@ Queries time out if they take more than 20 minutes.
 
 ## GQL conformance
 
-Graph supports the following query features from the GQL standard:
-
-- FILTER statement
-- LET statement
-- Basic linear statement chaining
-- MATCH statement
-- Simple RETURN statement
-- Conjunction and disjunction
-- Negation
-- Local pattern predicates
-- Pattern property specifications
-- Simple anonymous patterns
-- Simple named edge patterns
-- Path patterns
-- Case mapping
-- STRING_JOIN function
-- COALESCE function
-- Property reference
-- Variable reference
-- Approximate numbers
-- Booleans
-- Character strings with escaping
-- Exact numbers
-- Arithmetic operators
-- Boolean conjunction
-- Boolean disjunction
-- Boolean negation
-- STARTS WITH predicate
-- Value comparison
-- Value equality
-- BOOL value type
-- EDGE reference value type
-- INT value type
-- INT64 value type
-- FLOAT value type
-- FLOAT64 value type
-- NODE reference value type
-- STRING value type
-- UINT value type
-- UINT64 value type
-- Character string concatenation
-- COUNT aggregate function
-- MAX aggregate function
-- MIN aggregate function
-- OFFSET and LIMIT statements
-- CREATE GRAPH statement
-- Closed graph type support
-- ORDER BY statement
-- RETURN statement with GROUP BY
-- RETURN statement with GROUP BY and slicing
-- List indexing
-- List value TRIM function
-- Character string length function
-- SIZE
-- Collection membership
-- Simple LIST value type
-- Null type and empty type
-- AVG aggregate function
-- COLLECT_LIST aggregate function
-- SUM aggregate function
-- CURRENT_DATETIME function
-- ZONED DATETIME value type
-- UNION ALL statement
-- Bounded graph pattern quantifiers
-- Group variables
-- Horizontal aggregation
-- LABELS function
-- Basic GQL status codes
-- Formatting and parsing of GQL values
-- Statements with DISTINCT
-- Grouping
-- TRAIL path mode
-- Abbreviated edge patterns
-- Path binding
-- Simple TRIM function
-- EDGES function
-- NODES function
-- Null
-- Path length function
-- CONTAINS predicate
-- ENDS WITH predicate
-- Null test predicate
-- PATH value type
+For a detailed mapping of supported GQL features against the ISO/IEC 39075:2024 standard, including minimum conformance, optional features by group, and features not yet supported, see [GQL standard conformance](gql-conformance.md).
 
 Conformance to GQL standards is still in progress for:
 
-- Orderedness
-- Return type
 - Correct GQL status codes
-- Unicode validation
-- CALL inline procedure statement
 - FOR statement with index
-- OPTIONAL MATCH statement
-- Regular FOR statement
 - NEXT
 - UNION DISTINCT statement
-- Disconnected path patterns
-- Joined path patterns
 - Unbounded graph pattern quantifiers
-- ACYCLIC path mode
-- SIMPLE path mode
 - ALL SHORTEST path search
 - ANY path search
 - ANY SHORTEST path search
-- Substring functions
-- Unicode normalization functions
 - Data conversion
 - Scalar subqueries
 - PROPERTIES function
 - RANGE function
-- Path value constructor
-- Record constructor
 - Enhanced numeric functions
 - Logarithmic functions
 - Trigonometric functions
 - Path value concatenation
-- Boolean strict disjunction
 - Label test predicate
 - Normalized predicate
 - Source/destination predicate
-- Value type predicate
 - INT32 value type
 - FLOAT32 value type
-- RECORD value type
+- Closed RECORD value type
 - UINT32 value type
-- DURATION
 - ZONED TIME value type
 - DATE value type
 - Parameter passing
 - Undirected edges
 - GQL-preamble
 - Nonlocal pattern predicates
-- Undirected edge patterns
 - IS DIRECTED predicate
 - REGEXP_CONTAINS predicate
 - Dynamic parameter specification
 - Session user
-- ANY value type
 - BYTES value type
 - DECIMAL value type
 - LOCAL DATETIME value type
@@ -258,7 +158,7 @@ Conformance to GQL standards is still in progress for:
 - Byte string concatenation
 - Byte string TRIM function
 - Simple TRIM function with TRIM specification
-- Multi-character TRIM function
+- Multicharacter TRIM function
 - Byte string length function
 - CARDINALITY
 - ALL_DIFFERENT predicate
