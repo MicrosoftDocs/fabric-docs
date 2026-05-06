@@ -18,7 +18,7 @@ The **Series allowed for Writeback** section of the **Writeback Settings** tab l
 
 Clear series that should not be written back to the destination.
 
-:::image type="content" source="../media/planning-writeback/planning-how-to-configure-data-settings/writeback-settings.jpg" alt-text="Screenshot of the Writeback settings" lightbox="../media/planning-writeback/planning-how-to-configure-data-settings/writeback-settings.jpg":::
+:::image type="content" source="../media/planning-writeback/planning-how-to-configure-data-settings/writeback-settings.jpg" alt-text="Screenshot of the Writeback Settings" lightbox="../media/planning-writeback/planning-how-to-configure-data-settings/writeback-settings.jpg":::
 
 ## Show text inputs with HTML formatting
 
@@ -46,7 +46,7 @@ Control whether HTML content is saved as plain text or with HTML tags during wri
     * When disabled, the content is written back as plain text.
     * When enabled, the content is written back with HTML tags preserved.
 
-    :::image type="content" source="../media/planning-writeback/planning-how-to-configure-data-settings/writeback-settings-dialog-box.png" alt-text="Screenshot of the Writeback settings":::
+    :::image type="content" source="../media/planning-writeback/planning-how-to-configure-data-settings/writeback-settings-dialog-box.png" alt-text="Screenshot of the Writeback Settings with the Show Text Inputs with HTML Formatting toggle enabled.":::
 
 ### Use HTML in DAX measures
 
