@@ -111,6 +111,8 @@ items:
           items:
               - name: Configure writeback
                 href: plan/planning-writeback/planning-how-to-persist-data.md
+              - name: Destination Settings
+                href: plan/planning-writeback/planning-how-to-configure-data-settings.md
         - name: Change layouts
           href: plan/planning-how-to-change-layouts.md
         - name: Create a cube
