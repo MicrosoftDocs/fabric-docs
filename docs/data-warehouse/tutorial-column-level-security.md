@@ -1,8 +1,6 @@
 ---
 title: Implement Column-Level Security in Fabric Data Warehousing
 description: A guide to use column-level security in Fabric data warehousing.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: dhsundar
 ms.date: 07/26/2024
 ms.topic: how-to

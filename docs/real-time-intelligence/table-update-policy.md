@@ -2,11 +2,9 @@
 title: Create a table update policy in Real-Time Intelligence
 description: Learn how to create a table update policy using the `.alter update policy` command.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
 ms.topic: how-to
-ms.custom:
 ms.date: 11/19/2024
+ms.subservice: rti-eventhouse
 ms.search.form: product-kusto
 ---
 # Create a table update policy

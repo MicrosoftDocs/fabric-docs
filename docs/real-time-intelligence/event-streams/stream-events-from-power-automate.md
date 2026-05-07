@@ -1,11 +1,8 @@
 ---
 title: Stream events to Eventstream using Logic Apps and Power Automate 
 description: Learn how to stream real-time events from Power Automate or Logic Apps to Eventstream using the custom endpoint.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: WenyangShi
+ms.reviewer: xujiang1
 ms.topic: tutorial
-ms.custom:
 ms.date: 1/20/2025
 ms.search.form: Eventstreams Tutorials
 #CustomerIntent: As a developer, I want to stream real-time events from my Power Automate and Logic Apps using Fabric event streams.
@@ -46,7 +43,7 @@ In this tutorial, you learn how to:
 Before you start, you must complete the following prerequisites:
 
 - Access to a workspace with Contributor or higher permissions where your eventstream is located.
-- For **Logic Apps**, an Azure account with a valid subscription to create logic apps. If you don't have one, [sign up for a free Azure account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- For **Logic Apps**, an Azure account with a valid subscription to create logic apps. If you don't have one, [sign up for a free Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - For **Power Automate**, an active **Power Automate** account.
 
 
@@ -87,7 +84,7 @@ In this section, you'll learn how to design a workflow that periodically generat
 
    :::image type="content" border="true" source="media\stream-events-from-power-automate-and-logic-app\long-running.png" alt-text="Screenshot that shows how to set recurrence for long running.":::
 
-1. Select the **+ Add an action** and then select the **Excute JavaScript**.
+1. Select the **+ Add an action** and then select the **Execute JavaScript**.
    
    :::image type="content" border="true" source="media\stream-events-from-power-automate-and-logic-app\add-javascript.png" alt-text="Screenshot that shows how to add JavaScript.":::
 
@@ -176,3 +173,4 @@ If you want to discover more advanced functionalities for working with Fabric ev
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)
 - [Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse](./transform-and-stream-real-time-events-to-lakehouse.md)
+

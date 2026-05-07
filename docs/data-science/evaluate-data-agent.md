@@ -1,25 +1,20 @@
----
-title: Evaluate your data agent 
+﻿---
+title: Evaluate your data agent
 description: Learn how to use the Python data agent SDK to evaluate your data agent.
-ms.author: midesa
-author: midesa
+ms.author: jburchel
+author: jonburchel
 ms.topic: how-to
-ms.custom: 
 ms.date: 05/06/2025
+ms.reviewer: midesa
 ---
 
 # Evaluate your data agent (preview)
 
 Evaluation with the Fabric SDK allows you to programmatically test how well your Data Agent responds to natural language questions. Using a simple Python interface, you can define ground truth examples, run evaluations, and analyze results—all within your notebook environment. This helps you validate accuracy, debug errors, and confidently improve your agent before deploying it to production.
 
-## Prerequisites
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-- [A paid F2 or higher Fabric capacity resource](../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service)
-- [Fabric data agent tenant settings](./data-agent-tenant-settings.md) is enabled.
-- [Copilot tenant switch](./data-agent-tenant-settings.md) is enabled.
-- [Cross-geo processing for AI](./data-agent-tenant-settings.md) is enabled.
-- [Cross-geo storing for AI](./data-agent-tenant-settings.md) is enabled.
-- At least one of the following data sources: A warehouse, a lakehouse, one or more Power BI semantic models, or a KQL database with data.
+[!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
 ## Install the data agent SDK
 
@@ -67,7 +62,7 @@ This dataset serves as the input for running automated evaluations against your 
 
 ## Evaluate and assess your data agent
 
-The next step is to run the evaluation using the ```evaluate_data_agent``` function. This function compares the agent’s responses against your expected results and stores the evaluation metrics.
+The next step is to run the evaluation using the ```evaluate_data_agent``` function. This function compares the agent's responses against your expected results and stores the evaluation metrics.
 
 ```python
 from fabric.dataagent.evaluation import evaluate_data_agent
@@ -116,7 +111,7 @@ df = get_evaluation_summary(table_name)
 
 By default, this function looks for a table named evaluation_output. If you specified a custom table name during evaluation (like "```demo_evaluation_output```"), pass that name as the ```table_name``` argument.
 
-The returned DataFrame includes aggregated metrics such as the number of correct, incorrect, or unclear responses. This result helps you quickly assess the agent’s accuracy and identify areas for improvement.
+The returned DataFrame includes aggregated metrics such as the number of correct, incorrect, or unclear responses. This result helps you quickly assess the agent's accuracy and identify areas for improvement.
 
 #### get_evaluation_summary
 
@@ -175,7 +170,7 @@ Returns a DataFrame containing detailed results for a specific evaluation run, i
 
 - ```evaluation_id```*(str)* – Required. The unique identifier for the evaluation run to retrieve details for.
 - ```table_name```*(str, optional)* – The name of the table containing the evaluation results. Defaults to ```evaluation_output```.
-- ```get_all_rows```*(bool, optional)* – Whether to return all rows from the evaluation (True) or only rows where the agent’s response was incorrect or unclear (False). Defaults to ```False```.
+- ```get_all_rows```*(bool, optional)* – Whether to return all rows from the evaluation (True) or only rows where the agent's response was incorrect or unclear (False). Defaults to ```False```.
 - ```verbose```*(bool, optional)* – If set to True, prints a summary of evaluation metrics to the console. Defaults to ```False```.
 
 **Returns:**
@@ -190,7 +185,7 @@ Returns a DataFrame containing detailed results for a specific evaluation run, i
 
 ## Customize your prompt for evaluation
 
-By default, the Fabric SDK uses a built-in prompt to evaluate whether the Data Agent’s actual answer matches the expected answer. However, you can supply your own prompt for more nuanced or domain-specific evaluations using the ```critic_prompt``` parameter.
+By default, the Fabric SDK uses a built-in prompt to evaluate whether the Data Agent's actual answer matches the expected answer. However, you can supply your own prompt for more nuanced or domain-specific evaluations using the ```critic_prompt``` parameter.
 
 Your custom prompt should include the placeholders ```{query}```, ```{expected_answer}```, and ```{actual_answer}```. These placeholders are dynamically substituted for each question during evaluation.
 
@@ -226,7 +221,15 @@ This feature is especially useful when:
 - Your expected and actual answers may vary in format but still be semantically equivalent.
 - You need to capture domain-specific nuances in how answers should be judged.
 
+## Diagnostics Button  
+
+The **Diagnostics** button allows you to **download a full snapshot of your Data Agent's configuration and execution steps**. This export includes details such as data source settings, applied instructions, example queries used, and the underlying steps the Data Agent took to generate its response.  
+
+Use this feature when working with Microsoft Support or troubleshooting unexpected behavior. By reviewing the downloaded file, you can see exactly how the Data Agent processed your request, which configurations were applied, and where potential issues may have occurred. This level of transparency makes it easier to debug and optimize your Data Agent's performance.  
+
+:::image type="content" source="media/how-to-create-data-agent/data-agent-diagnostics.png" alt-text="Screenshot of diagnostics button in the Data Agent" lightbox="media/how-to-create-data-agent/data-agent-diagnostics.png":::
+
 ## Next steps
 
 - [Use the Fabric data agent SDK](./fabric-data-agent-sdk.md)
-- [Access sample notebooks on how to use the data agent SDK](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/Fabric-Data-Agent-SDK/Samples)
+- [Access sample notebooks on how to use the data agent SDK](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-agent-sdk)

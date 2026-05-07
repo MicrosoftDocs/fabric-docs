@@ -1,12 +1,14 @@
 ---
 title: Set up your HTTP connection
 description: This article provides information about how to create an HTTP connection in Microsoft Fabric.
-author: pennyzhou-msft
-ms.author: xupzhou
+ms.reviewer: xupzhou
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 03/13/2026
 ms.custom:
-  - template-how-to
+- template-how-to
+- connectors
+- sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # Set up your HTTP connection
@@ -22,13 +24,12 @@ The HTTP connector supports the following authentication types for copy and Data
 |Anonymous| √ | n/a |
 |Basic| √ | n/a |
 
-## Set up your connection in Dataflow Gen2
-
+## Set up your connection for Dataflow Gen2
 The HTTP connector isn't currently supported in Dataflow Gen2.
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
-To create a connection in a data pipeline:
+To create a connection in a pipeline:
 
 1. From the page header in the Data Factory service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**.
 
@@ -81,7 +82,7 @@ Select **Create**. Your creation is successfully tested and saved if all the cre
 
 ## Table summary
 
-The following connector properties in the table are supported in pipeline copy:
+The following connector properties in the table are supported in a pipeline copy:
 
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|
@@ -100,6 +101,7 @@ The following properties in the table are the supported authentication types.
 |**Basic**||||✓|
 |- Username|The user name to use to access the HTTP endpoint.|Yes |||
 |- Password|The password for specified username.|Yes |||
+
 
 ## Related content
 

@@ -2,18 +2,17 @@
 title: Eventhouse overview
 description: Learn about eventhouse data storage in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
-ms.author: shsagir
-author: shsagir
 ms.topic: concept-article
+ms.subservice: rti-eventhouse
 ms.custom:
-ms.date: 02/12/2025
+ms.date: 04/29/2026
 ms.search.form: Eventhouse
 ---
 # Eventhouse overview
 
-Eventhouses provide a solution for handling and analyzing large volumes of data, particularly in scenarios requiring real-time analytics and exploration. They're designed to handle real-time data streams efficiently, which lets organizations ingest, process, and analyze data in near real-time. These aspects make eventhouses useful for scenarios where timely insights are crucial. Eventhouses provide a scalable infrastructure that allows organizations to handle growing volumes of data, ensuring optimal performance and resource use. Eventhouses are the preferred engine for semistructured and free text analysis. An eventhouse is a workspace of databases, which might be shared across a certain project. It allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. Eventhouses provide unified monitoring and management across all databases and per database.
+Eventhouses are databases designed for storing and analyzing streaming data, so you can query billions of events in seconds. They're designed to handle real-time data streams efficiently, which lets organizations ingest, process, and analyze data in near real-time. These aspects make eventhouses useful for scenarios where timely insights are crucial. Eventhouses provide a scalable infrastructure that allows organizations to handle growing volumes of data, ensuring optimal performance and resource use. Eventhouses are the preferred engine for semistructured and free text analysis. An Eventhouse is a container that can hold multiple databases, making it easy to manage related data for a project. It allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. Eventhouses provide unified monitoring and management across all databases and per database.
 
-Eventhouses are tailored to time-based, streaming events with structured, semistructured, and unstructured data. You can get data from multiple sources, in multiple pipelines (For example, Eventstream, SDKs, Kafka, Logstash, data flows, and more) and multiple data formats. This data is automatically indexed and partitioned based on ingestion time.
+Eventhouses are tailored to time-based, streaming events with structured, semistructured (For example, JSON, XML), and unstructured data (For example, free text analysis). You can get data from multiple sources, in multiple pipelines (For example, Eventstream, Software Development Kits, Kafka, Logstash, data flows, and more) and multiple data formats. This data is automatically organized for fast searching based on when it arrived. 
 
 ## When do I create an eventhouse?
 
@@ -48,15 +47,19 @@ The databases page of an eventhouse shows you database information either in lis
 
 For more information, see [Database details](manage-monitor-database.md#database-details).
 
-## Minimum consumption
+## Capacity Planner
 
-Your eventhouse is designed to optimize cost by suspending the service when not in use. When reactivating the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can't tolerate this latency, use **Minimum consumption**. This setting enables the service to be always available, but at a selected minimum level. You pay for the minimum compute level you select, or your actual consumption when your compute level is above the minimum set. The specified compute is available to all the databases within the eventhouse. A limited premium storage is included in the service, and corresponds to the minimum consumption levels shown in the following table:
+Your eventhouse is designed to optimize cost by suspending the service when not in use. When reactivating the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can't tolerate this latency, enable the [Capacity Planner mode](eventhouse-smart-capacity-control.md#enable-capacity-planner). This setting enables the service to be always available. With Always-On enabled, you see 100% EventHouse UpTime and you don't pay for cache storage as it's included in the capacity charges.
 
-[!INCLUDE [capacity-eventhouse](includes/capacity-eventhouse.md)]
+As part of the always-on capacity planner feature, you can additionally [schedule and configure your minimum capacity](eventhouse-smart-capacity-control.md#schedule-minimum-capacity). This step is useful in scenarios where you have unpredictable query or ingestion loads and need to ensure adequate performance during sudden high loads. This setting allows you to prevent our autoscale mechanism from scaling below a certain size, while still allowing it to scale to a larger size if the workload requires it. A limited amount of premium storage is included in the service, and if your cache utilization approaches this limit, autoscale adjusts to the next larger size.
 
-For instructions on how to enable minimum consumption, see [Enable minimum consumption](manage-monitor-eventhouse.md#enable-minimum-consumption).
+## Share an eventhouse
+
+When you [share a direct link to an Eventhouse](create-eventhouse.md#share-an-eventhouse), the recipient inherits the sender's permission level to all Eventhouse items including KQL databases and tables, and all related Eventhouse components including dashboards, functions, materialized views, and embedded querysets.
+
+Individual KQL databases can be shared independently, although users with database-only access don't gain access to Eventhouse-level navigation elements like System overview or the list of KQL databases in the Eventhouse. To share an individual database, see [Share a KQL database link](access-database-copy-uri.md#share-a-kql-database-link).
 
 ## Related content
 
-> [!div class="nextstepaction"]
 > [Create an eventhouse](create-eventhouse.md)
+> [Manage and monitor an eventhouse](manage-monitor-eventhouse.md)

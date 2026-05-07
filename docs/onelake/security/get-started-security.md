@@ -1,137 +1,122 @@
 ---
-title: OneLake security overview
+title: Data security overview
 description: Get started with securing your data in OneLake with this overview of the core concepts and capabilities.
-ms.reviewer: eloldag
-ms.author: aamerril
-author: aamerril
+ms.reviewer: aamerril # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article
-ms.custom:
-ms.date: 03/24/2025
+ms.date: 04/23/2026
 #customer intent: As a OneLake user, I want to understand the core concepts and capabilities of data security in OneLake so that I can use them to protect my data stored and accessed in OneLake.
 ---
 
-# OneLake security overview
+# Data security overview
 
-OneLake is a hierarchical data lake, like Azure Data Lake Storage (ADLS) Gen2 or the Windows file system. You can set security at each of the levels within the data lake. However, some levels in the hierarchy are given special treatment because they correlate with Fabric concepts. OneLake security controls all access to OneLake data with different permissions inherited from the parent item or workspace permissions.
+OneLake is a hierarchical data lake, like Azure Data Lake Storage (ADLS) Gen2 or the Windows file system. Security in OneLake is enforced on both the control plane and the data plane:
 
-- **Workspace**: a collaborative environment for creating and managing items.
+* **Control plane permissions**: Govern what actions users can perform within the environment, such as creating, managing, or sharing items. Control plane permissions often provide data plane permissions by default.
+* **Data plane permissions**: Govern what data users can access or view, regardless of their ability to manage resources. For OneLake, this refers to OneLake security.
 
-- **Item**: a set of capabilities bundled together into a single component. A data item is a subtype of item that allows data to be stored within it using OneLake.
+You can set security at each level within the data lake. However, some levels in the hierarchy receive special treatment because they correlate with Fabric concepts. [OneLake security](#onelake-security) controls all access to OneLake data with permissions inherited from the parent item or workspace. You can set permissions at the following levels:
 
-- **Folders**: folders within an item that are used for storing and managing data.
+* **Workspace**: A collaborative environment for creating and managing items. You manage security through workspace roles at this level.
 
-Items always live within workspaces and workspaces always live directly under the OneLake namespace. You can visualize this structure as follows:
+* **Item**: A set of capabilities bundled together into a single component. A data item is a subtype of item that allows data to be stored within it by using OneLake, such as a lakehouse, warehouse, or SQL database. Items inherit permissions from the workspace roles but can have additional permissions as well.
+
+* **Folders**: You use folders within an item for storing and managing data, such as Tables/ or Files/.
+
+Items always live within workspaces, and workspaces always live directly under the OneLake namespace. You can visualize this structure as follows:
 
 :::image type="content" source=".\media\get-started-security\structure.png" alt-text="Diagram showing the hierarchical nature of OneLake as a folder structure. OneLake/Workspace/Item as an example." lightbox=".\media\get-started-security\structure.png":::
 
-## Security in OneLake
+## Permissions in OneLake
 
-This section describes the security model based on generally available OneLake features.
+This section describes how permissions in OneLake manage access at the workspace and item levels.
 
 ### Workspace permissions
 
-Workspace permissions allow for defining access to all items within that workspace. There are four different workspace roles, each of which grants different types of access.
+Workspace permissions define what actions users can take within a workspace and its items. Manage these permissions at the workspace level. These permissions are primarily control plane permissions. They determine administrative and item management capabilities, not direct data access. However, items and folders generally inherit workspace permissions to grant data access by default. Workspace permissions define access to all items within that workspace.
 
-| Role | Can add admins? | Can add members? | Can write data and create items? | Can read data? |
-|--|--|--|--|--|
-| Admin | Yes | Yes | Yes | Yes |
-| Member | No | Yes | Yes | Yes |
-| Contributor | No | No | Yes | Yes |
-| Viewer | No | No | No | Yes |
+The four different workspace roles grant different types of access. The following table lists the default behaviors of each workspace role:
 
-> [!NOTE]
-> You can view the Warehouse item with read-write roles, but you can only write to warehouses using SQL queries.
+| Role | Can add admins? | Can add members? | Can edit OneLake security? | Can write data and create items? | Can read data in OneLake? | Can update and delete the workspace? |
+|--|--|--|--|--|--|--|--|
+| Admin | Yes | Yes | Yes | Yes | Yes | Yes |
+| Member | No | Yes | Yes | Yes | Yes | No |
+| Contributor | No | No | No | Yes | Yes | No |
+| Viewer | No | No | No | No | No* | No |
 
-You can simplify the management of Fabric workspace roles by assigning them to security groups. This method lets you control access by adding or removing members from the security group.
+\* You can give Viewers access to data by using OneLake security roles.
+
+Learn more about [Roles in workspaces in Microsoft Fabric](../../fundamentals/roles-workspaces.md).
+
+Simplify the management of Fabric workspace roles by assigning them to security groups. This method lets you control access by adding or removing members from the security group.
 
 ### Item permissions
 
-With the [sharing](../../fundamentals/share-items.md) feature, you can give a user direct access to an item. The user can only see that item in the workspace and isn't a member of any workspace roles. Item permissions grant access to connect to that item and which item endpoints the user is able to access.
+By using the [sharing](../../fundamentals/share-items.md) feature, you can give a user direct access to an item. The user can only see that item in the workspace and isn't a member of any workspace roles. Item permissions grant access to connect to that item and any of its endpoints that the user can access.
 
 | Permission | See the item metadata? | See data in SQL? | See data in OneLake? |
 |--|--|--|--|
+| Write | Yes | Yes | Yes |
 | Read | Yes | No | No |
-| ReadData | No | Yes | No |
-| ReadAll | No | No | Yes* |
-
-*Not applicable to items with OneLake data access roles (preview) enabled. If the preview is enabled, ReadAll only grants access if the DefaultReader role is in use. If the DefaultReader role is edited or deleted, access is instead granted based on what data access roles the user is part of.
+| ReadData | No | Only in [**Delegated mode**](./sql-analytics-endpoint-onelake-security.md#delegated-mode-in-onelake-security) | No |
+| ReadAll | No | No | Only through the **DefaultReader** |
 
 Another way to configure permissions is via an item's **Manage permissions** page. Using this page, you can add or remove individual item permission for users or groups. The item type determines which permissions are available.
 
-### Compute permissions
+## OneLake security
 
-You can also give data access through the SQL compute engine in Microsoft Fabric. The access granted through SQL only applies to users accessing data through SQL, but you can use this security to give more selective access to certain users. In its current state, SQL supports restricting access to specific tables and schemas, as well as row and column level security.
+OneLake security enables you to define granular role-based security for data stored in OneLake and enforce that security consistently across all compute engines in Fabric. OneLake security is the **data plane** security model for data in OneLake.
 
-Users might see different results when they access data through SQL compared to when they access data directly in OneLake, depending on the compute permissions applied. To prevent this mismatch, ensure that a user's item permissions are configured to only grant them access to either the SQL analytics endpoint (using ReadData) or OneLake (using ReadAll or data access roles (preview)).
-
-In the following example, a user is given read-only access to a lakehouse through item sharing. The user is granted SELECT permission on a table through the SQL analytics endpoint. When that user tries to read data through the OneLake APIs, they're denied access because they don't have sufficient permissions. The user can successfully read through SQL SELECT statements.
-
-:::image type="content" source=".\media\get-started-security\sql.png" alt-text="Diagram showing a user accessing data through SQL but denied access when querying OneLake directly.":::
-
-## OneLake security (preview)
-
-OneLake security allows users to define granular role-based security to data stored in OneLake, and enforce that security consistently across all compute engines in Fabric.
-
-[!INCLUDE [onelake-security-preview](../../includes/onelake-security-preview.md)]
-
-OneLake security replaces the existing OneLake data access roles (preview) feature that was released in April 2024.
-
-Fabric users in the Admin, Member, or Contributor roles can create OneLake security roles to grant users access to data within an item. Each role has four components:
+Fabric users in the Admin or Member workspace roles can create OneLake security roles to grant users access to data within an item. Each role has four components:
 
 * **Data**: The tables or folders that users can access.
 * **Permission**: The permissions that users have on the data.
 * **Members**: The users that are members of the role.
 * **Constraints**: The components of the data, if any, that are excluded from role access, such as specific rows or columns.
 
-Users that aren't part of a role can't see any data in that lakehouse.
+OneLake security roles grant access to data for users in the **Viewer** workspace role or with **Read** permission on the item. Workspace Admins, Members, and Contributors aren't affected by OneLake security roles and can read and write all data in an item regardless of their role membership. A DefaultReader role exists in all lakehouses and gives any user with the ReadAll permission access to data in the lakehouse. You can delete or edit the DefaultReader role to remove that access.
 
 Learn more about creating OneLake security roles for [Tables and folders](./table-folder-security.md), [Columns](./column-level-security.md), and [Rows](./row-level-security.md).
 
-## OneLake data access roles (preview)
+Learn more about the [access control model for OneLake security](./data-access-control-model.md).
 
-OneLake data access roles is a feature that enables you to apply role-based access control (RBAC) to your data stored in OneLake. You can define security roles that grant read access to specific folders within a Fabric item, and assign them to users or groups. The access permissions determine what folders users see when accessing the lake view of the data through the lakehouse UX, notebooks, or OneLake APIs.  
+### Authorized engines and third-party enforcement
 
-Fabric users in the Admin, Member, or Contributor roles can get started by creating OneLake data access roles to grant access to only specific folders in a lakehouse. To grant access to data in a lakehouse, add users to a data access role. Users that aren't part of a data access role can see no data in that lakehouse.
+OneLake security supports enforcement by authorized third-party engines through the [authorized engine model](./onelake-security-integrations-overview.md). External query engines can register as authorized engines, retrieve security policy definitions and precomputed effective access through OneLake APIs, and enforce table permissions, RLS, and CLS at query time. OneLake remains the single source of truth for security policies, and policies are authored once and enforced consistently across Fabric engines and authorized external engines.
 
->[!NOTE]
->To access shortcut data, users need the ReadAll permission on the target lakehouse in addition to access through a OneLake data access role.
->
->If you use Power BI semantic models or T-SQL to access shortcuts, keep in mind that the calling user’s identity isn't passed to the shortcut target path. Instead, the calling item owner’s identity is passed, which delegates access to the calling user.
-
-Learn more about creating data access roles in [Get started with data access roles](./get-started-data-access-roles.md).
-
-Learn more about the security model for access roles [Data access control model](./data-access-control-model.md).
+For more information, see [OneLake security integrations overview](./onelake-security-integrations-overview.md).
 
 ## Shortcut security
 
-Shortcuts in Microsoft Fabric allow for simplified data management. OneLake folder security applies to OneLake shortcuts based on roles defined in the lakehouse where the data is stored.
+Shortcuts in Microsoft Fabric simplify data management. OneLake folder security applies to OneLake shortcuts based on roles defined in the lakehouse where the data is stored.
 
-For more information on shortcut security considerations, see [OneLake access control model](./data-access-control-model.md).
+For more information on shortcut security considerations, see [OneLake security access control model > Shortcuts](./data-access-control-model.md#shortcuts).
 
-For information on access and authentication details for specific shortcuts, see [OneLake shortcuts > Types of shortcuts](../onelake-shortcuts.md#types-of-shortcuts).
+For information on access and authentication details for specific shortcuts, see [types of OneLake shortcuts](../onelake-shortcuts.md#types-of-shortcuts).
 
 ## Authentication
 
-OneLake uses Microsoft Entra ID for authentication; you can use it to give permissions to user identities and service principals. OneLake automatically extracts the user identity from tools, which use Microsoft Entra authentication and maps it to the permissions you set in the Fabric portal.
+OneLake uses Microsoft Entra ID for authentication. Use it to give permissions to user identities and service principals. OneLake automatically extracts the user identity from tools that use Microsoft Entra authentication and maps it to the permissions you set in the Fabric portal.
 
 > [!NOTE]
 > To use service principals in a Fabric tenant, a tenant administrator must enable Service Principal Names (SPNs) for the entire tenant or specific security groups. Learn more about enabling Service Principals in [Developer settings of the tenant admin portal](../../admin/tenant-settings-index.md#developer-settings).
 
-## Audit Logs
+## Audit logs
 
 To view your OneLake audit logs, follow the instructions in [Track user activities in Microsoft Fabric](/fabric/admin/track-user-activities). OneLake operation names correspond to [ADLS APIs](/rest/api/storageservices/data-lake-storage-gen2) such as CreateFile or DeleteFile. OneLake audit logs don't include read requests or requests made to OneLake via Fabric workloads.
 
 ## Encryption and networking
 
-### Data at Rest
+### Data at rest
 
-Data stored in OneLake is encrypted at rest by default using Microsoft-managed keys. Microsoft-managed keys are rotated appropriately. Data in OneLake is encrypted and decrypted transparently and is FIPS 140-2 compliant.
+Data stored in OneLake is encrypted at rest by default by using Microsoft-managed keys. Microsoft-managed keys are rotated appropriately. OneLake encrypts and decrypts data transparently and is FIPS 140-2 compliant.
 
-Encryption at rest using customer-managed keys currently isn't supported. You can submit a request for this feature on [Microsoft Fabric ideas](https://ideas.fabric.microsoft.com/).
+You can use encryption at rest by using customer-managed keys to add another layer of protection by using keys you own and control. For more information, see [Customer-managed keys for Fabric workspaces](../../security/workspace-customer-managed-keys.md).
 
 ### Data in transit
 
-Data in transit across the public internet between Microsoft services is always encrypted with at least TLS 1.2. Fabric negotiates to TLS 1.3 whenever possible. Traffic between Microsoft services always routes over the Microsoft global network.
+Data in transit across the public internet between Microsoft services is always encrypted by using at least TLS 1.2. Fabric negotiates to TLS 1.3 whenever possible. Traffic between Microsoft services always routes over the Microsoft global network.
 
 Inbound OneLake communication also enforces TLS 1.2 and negotiates to TLS 1.3 whenever possible. Outbound Fabric communication to customer-owned infrastructure prefers secure protocols but might fall back to older, insecure protocols (including TLS 1.0) when newer protocols aren't supported.
 
@@ -147,8 +132,8 @@ When you turn on this setting, users can access data from all sources. For examp
 
 ## Related content
 
-- [Fabric and OneLake security overview](./fabric-onelake-security.md)
-- [OneLake data access roles (preview)](./get-started-data-access-roles.md)
-- [Workspace roles](../../fundamentals/roles-workspaces.md)
-- [OneLake file explorer](../onelake-file-explorer.md)
-- [Share items](../../fundamentals/share-items.md)
+* [OneLake security overview](./get-started-onelake-security.md)
+* [OneLake security access control model](./data-access-control-model.md)
+* [Workspace roles](../../fundamentals/roles-workspaces.md)
+* [OneLake file explorer](../onelake-file-explorer.md)
+* [Share items](../../fundamentals/share-items.md)

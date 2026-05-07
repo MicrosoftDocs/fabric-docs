@@ -1,17 +1,16 @@
 ---
-title: How to configure Binary format in the data pipeline of Data Factory in Microsoft Fabric
-description: This article explains how to configure Binary format in the data pipeline of Data Factory in Microsoft Fabric.
-author: jianleishen
-ms.author: jianleishen
+title: How to configure Binary format in the pipeline of Data Factory in Microsoft Fabric
+description: This article explains how to configure Binary format in the pipeline of Data Factory in Microsoft Fabric.
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 06/25/2024
+ms.date: 04/24/2026
 ms.custom:
   - template-how-to
 ---
 
-# Binary format for Data Factory in Microsoft Fabric
+# Binary format in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
-This article outlines how to configure Binary format in Data Factory.
+Binary format copies files as-is without parsing, which is useful for moving files between storage locations without transformation. This article outlines how to configure Binary format in a copy activity pipeline in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Supported capabilities
 
@@ -22,7 +21,6 @@ Binary format is supported for the following activities and connectors as source
 | **Supported connector** | [Amazon S3](connector-amazon-s3-copy-activity.md) |
 |  | [Amazon S3 Compatible](connector-amazon-s3-compatible-copy-activity.md) |
 |  | [Azure Blob Storage](connector-azure-blob-storage-copy-activity.md) |
-|  | [Azure Data Lake Storage Gen1](connector-azure-data-lake-storage-gen1-copy-activity.md) |
 |  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md) |
 |  | [Azure Files](connector-azure-files-copy-activity.md)|
 |  | File system |
@@ -38,7 +36,7 @@ Binary format is supported for the following activities and connectors as source
 
 ## Binary format in copy activity
 
-To configure Binary format, choose your connection in the source or destination of the data pipeline copy activity, and then select **Binary** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
+To configure Binary format, choose your connection in the source or destination of the pipeline copy activity, and then select **Binary** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
 
 :::image type="content" source="./media/format-common/file-settings.png" alt-text="Screenshot showing file settings button.":::
 
@@ -89,7 +87,7 @@ You can choose from the **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate
   - **Fastest**: The compression operation should complete as quickly as possible, even if the resulting file isn't optimally compressed.
   - **Optimal**: The compression operation should be optimally compressed, even if the operation takes a longer time to complete. For more information, go to the [Compression Level](/dotnet/api/system.io.compression.compressionlevel) article.
 
-## Table summary
+## Binary copy activity properties
 
 ### Binary as source
 

@@ -1,14 +1,9 @@
 ---
 title: Git integration process
 description: Understand how Microsoft Fabric interacts with Git on Azure Repos or GitHub, what permissions are needed, and how to sync.
-author: billmath
-ms.author: billmath
 ms.reviewer: NimrodShalit
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 03/02/2025
-ms.custom:
+ms.date: 03/18/2026
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
 
@@ -36,18 +31,18 @@ The following list shows what different workspace roles can do depending on thei
 
 The following table describes the permissions needed in the Fabric workspace to perform various common operations:
 
-| **Operation**                                                        | **Workspace role**                                                                        |
+| **Operation**                            | **Workspace role**                                    |
 |----------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
-| Connect workspace to Git repo                                        | Admin                                                                                     |
-| Sync workspace with Git repo                                         | Admin                                                                                     |
-| Disconnect workspace from Git repo                                   | Admin                                                                                     |
-| Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     |
-| View Git connection details                                          | Admin, Member, Contributor                                                                |
-| See workspace 'Git status'                                           | Admin, Member, Contributor                                                                |
-| Update from Git                                                      | All of the following roles:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   |
-| Commit workspace changes to Git                                      | All of the following roles:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   |
-| Create new Git branch from within Fabric                             | Admin                                                                                     |
-| Branch out to another workspace                                      | Admin, Member, Contributor                                                                |
+| Connect workspace to Git repo                    | Admin                                           |
+| Sync workspace with Git repo                     | Admin                                           |
+| Disconnect workspace from Git repo                  | Admin                                           |
+| Switch branch in the workspace (or any change in connection setting) | Admin                                           |
+| View Git connection details                     | Admin, Member, Contributor                                |
+| See workspace 'Git status'                      | Admin, Member, Contributor                                |
+| Update from Git                           | All of the following roles:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)  |
+| Commit workspace changes to Git                   | All of the following roles:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)  |
+| Create new Git branch from within Fabric               | Admin                                           |
+| Branch out to another workspace                   | Admin, Member, Contributor                                |
 
 #### Git roles
 
@@ -55,40 +50,40 @@ The following table describes the Git permissions needed to perform various comm
 
 ##### [Azure Repos](#tab/Azure)
 
-| **Operation**                                                        | **Git permissions**                           |
+| **Operation**                            | **Git permissions**              |
 |----------------------------------------------------------------------|-----------------------------------------------|
-| Connect workspace to Git repo                                        | Read=Allow                                    |
-| Sync workspace with Git repo                                         | Read=Allow                                    |
-| Disconnect workspace from Git repo                                   | No permissions are needed                     |
-| Switch branch in the workspace (or any change in connection setting) | Read=Allow  (in target repo/directory/branch) |
-| View Git connection details                                          | Read or None                                  |
-| See workspace 'Git status'                                           | Read=Allow                                    |
-| Update from Git                                                      | Read=Allow   |
-| Commit workspace changes to Git                                      | Read=Allow<br/>Contribute=Allow<br/>branch policy should allow direct commit  |
-| Create new Git branch from within Fabric                             | Role=Write<br/>Create branch=Allow            |
-| Branch out to another workspace                                      | Read=Allow<br/>Create branch=Allow            |
-                                    
+| Connect workspace to Git repo                    | Read=Allow                  |
+| Sync workspace with Git repo                     | Read=Allow                  |
+| Disconnect workspace from Git repo                  | No permissions are needed           |
+| Switch branch in the workspace (or any change in connection setting) | Read=Allow (in target repo/directory/branch) |
+| View Git connection details                     | Read or None                 |
+| See workspace 'Git status'                      | Read=Allow                  |
+| Update from Git                           | Read=Allow  |
+| Commit workspace changes to Git                   | Read=Allow<br/>Contribute=Allow<br/>branch policy should allow direct commit |
+| Create new Git branch from within Fabric               | Role=Write<br/>Create branch=Allow      |
+| Branch out to another workspace                   | Read=Allow<br/>Create branch=Allow      |
+                  
 
 ##### [GitHub Repos](#tab/GitHub)
 
 - If you're using a fine-grained access token, the following permissions are needed for common operations:
 
-  | **Operation**                                                        | **Git permissions**                           |
-  |----------------------------------------------------------------------|-----------------------------------------------|
-  | Connect workspace to Git repo                                        | Contents= Access: Read                        |
-  | Sync workspace with Git repo                                         | Contents= Access: Read                        |
-  | Disconnect workspace from Git repo                                   | No permissions are needed                     |
-  | Switch branch in the workspace (or any change in connection setting) | Contents= Access: Read (in target repo/directory/branch) |
-  | View Git connection details                                          | Contents= Access: Read or None                |
-  | See workspace 'Git status'                                           | Contents= Access: Read                        |
-  | Update from Git                                                      | Contents= Access: Read                        |
-  | Commit workspace changes to Git                                      | Contents= Access: Read and write<br/>branch policy should allow direct commit  |
-  | Create new Git branch from within Fabric                             | Contents= Access: Read and write              |
-  | Branch out to another workspace                                      | Content=Read and write                        |
+ | **Operation**                            | **Git permissions**              |
+ |----------------------------------------------------------------------|-----------------------------------------------|
+ | Connect workspace to Git repo                    | Contents= Access: Read            |
+ | Sync workspace with Git repo                     | Contents= Access: Read            |
+ | Disconnect workspace from Git repo                  | No permissions are needed           |
+ | Switch branch in the workspace (or any change in connection setting) | Contents= Access: Read (in target repo/directory/branch) |
+ | View Git connection details                     | Contents= Access: Read or None        |
+ | See workspace 'Git status'                      | Contents= Access: Read            |
+ | Update from Git                           | Contents= Access: Read            |
+ | Commit workspace changes to Git                   | Contents= Access: Read and write<br/>branch policy should allow direct commit |
+ | Create new Git branch from within Fabric               | Contents= Access: Read and write       |
+ | Branch out to another workspace                   | Content=Read and write            |
 
 - If you're using classic access token, the repo scope must be enabled:
 
-  :::image type="content" source="./media/git-integration-process/classic-token.png" alt-text="Screenshot of classic token generation with repo scope enabled.":::
+ :::image type="content" source="./media/git-integration-process/classic-token.png" alt-text="Screenshot of classic token generation with repo scope enabled.":::
 
 ---
 
@@ -102,7 +97,7 @@ If both the workspace and Git branch have content, you have to decide which dire
 - If you commit your workspace to the Git branch, all supported workspace content is exported to Git and overwrites the current Git content.
 - If you update the workspace with the Git content, the workspace content is overwritten, and you lose your workspace content. Since a Git branch can always be restored to a previous stage while a workspace can’t, if you choose this option, you're asked to confirm.
 
-:::image type="content" source="./media/git-integration-process/git-sync-direction.png" alt-text="Screenshot of dialog asking which direction to sync if both Git and the workspace have content.":::
+:::image type="content" source="./media/git-integration-process/git-sync-direction-2.png" alt-text="Screenshot of dialog asking which direction to sync if both Git and the workspace have content.":::
 
 If you don’t select which content to sync, you can’t continue to work.
 
@@ -187,8 +182,8 @@ When changes are made either to the workspace or the Git branch, the source cont
 
 The **Commit and update** panel has two sections.
 
-**Changes** shows the number of items that were changed in the workspace and need to be committed to Git.  
-**Updates** shows the number of items that were modified in the Git branch and need to be updated to the workspace.  
+**Changes** shows the number of items that were changed in the workspace and need to be committed to Git. 
+**Updates** shows the number of items that were modified in the Git branch and need to be updated to the workspace. 
 
 In each section, the changed items are listed with an icon indicating the status:
 
@@ -196,6 +191,7 @@ In each section, the changed items are listed with an icon indicating the status
 - :::image type="icon" source="./media/git-integration-process/modified-icon.png"::: modified
 - :::image type="icon" source="./media/git-integration-process/deleted-icon.png" ::: deleted
 - :::image type="icon" source="./media/git-integration-process/conflict-icon.png"::: conflict
+- :::image type="icon" source="./media/git-integration-process/warning.png"::: same-changes
 
 The Refresh button :::image type="icon" source="./media/git-integration-process/refresh-icon.png"::: on top of the panel updates the list of changes and updates.
 
@@ -216,24 +212,23 @@ Read more about the update process and how to [resolve conflicts](./conflict-res
 
 ### Branches
 
-The *Branches* tab of the Source control panel enables you to manage your branches and perform branch related actions. It has two main sections:
+The *Branches* tab of the Source control panel enables you to manage your branches and perform branch related actions. It has the following sections:
 
-- **Actions you can take on the current branch**:
+ - [*Branch out to another workspace*](./branched-workspace.md) (contributor and above): Creates a new branched workspace, or switches the connected branch of existing branched workspace to a new Git branch which created based on the last commit of the source workspace. 
+ - [*Checkout new branch*](./conflict-resolution.md#resolve-conflict-in-git) (must be workspace admin): Creates a new branch based on the last synced commit in the workspace and changes the Git connection in the current workspace. It doesn't change the workspace content.
+ - [*Switch branch*](./branched-workspace.md#switch-branches) (must be workspace admin): Syncs the workspace with another new or existing branch and overrides all items in the workspace with the content of the selected branch.
 
-  - [*Branch out to another workspace*](./manage-branches.md#scenario-2---develop-using-another-workspace) (contributor and above): Creates a new workspace, or switches to an existing workspace based on the last commit to the current workspace. It then connects to the target workspace and branch.
-  - [*Checkout new branch*](./conflict-resolution.md#resolve-conflict-in-git) (must be workspace admin): Creates a new branch based on the last synced commit in the workspace and changes the Git connection in the current workspace. It doesn't change the workspace content.
-  - [*Switch branch*](./manage-branches.md#switch-branches) (must be workspace admin): Syncs the workspace with another new or existing branch and overrides all items in the workspace with the content of the selected branch.
+ :::image type="content" source="./media/git-integration-process/branch-out.png" alt-text="Screenshot of the branch out tab in the source control panel.":::
 
-  :::image type="content" source="./media/git-integration-process/branch-out.png" alt-text="Screenshot of the branch out tab in the source control panel.":::
+- *Related branches*: The Related Branches tab also has a list of related workspaces you can select and switch to. A related workspace is one of the two:
+  1) Branched workspaces
+  1) Has same connection properties as the current branch, such as the same organization, project, repository, and git folder. 
+  This feature allows you to navigate to related workspaces from the context of your current work, without having to look for them in your list of Fabric workspaces. 
+  To open the relevant workspace, select item in the list.
 
-- **Related branches**.  
-   The *Branches* tab also has a list of related workspaces you can select and switch to. A related workspace is one with the same connection properties as the current branch, such as the same organization, project, repository, and git folder.  
-   This feature allows you to navigate to workspaces connected to other branches related to the context of your current work, without having to look for them in your list of Fabric workspaces.  
-   To open the relevant workspace, select item in the list.
+ :::image type="content" source="./media/git-integration-process/related-branches.png" alt-text="Screenshot showing a list of related branches that the user can switch to.":::
 
-  :::image type="content" source="./media/git-integration-process/related-branches.png" alt-text="Screenshot showing a list of related branches that the user can switch to.":::
-
-For more information, see [Branching out limitations](#branching-out-limitations).
+For more information, see [Branching out limitations](./branched-workspace.md#branching-out-limitations).
 
 ### Account details
 
@@ -254,8 +249,8 @@ GitHub account details include:
 
 - Git account details
 
-  - Provider
-  - Account name
+ - Provider
+ - Account name
 
 - Git repository
 - Branch

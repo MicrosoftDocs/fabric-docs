@@ -1,11 +1,9 @@
 ---
 title: Overview of Fabric Workload Development Kit authentication
 description: This article describes how to use tokens to authenticate and validate for a customized Fabric workload.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: concept-article
-ms.custom:
-ms.date: 05/21/2024
+ms.custom: sfi-image-nochange
+ms.date: 04/29/2026
 #customer intent: As a developer, I want to understand how to authenticate a customized Fabric workload so that I can create customized user experiences.
 ---
 
@@ -73,6 +71,14 @@ Here's an example of a consent popup for our app "my workload app" and its depen
 
 ## Related content
 
+<<<<<<< HEAD
 * [Set up workload authentication](./authentication-setup.md)
 * [Development Kit overview](./development-kit-overview.md)
 * [Workload communication](./workload-communication.md)
+=======
+* [Backend authentication and authorization overview](./back-end-authentication.md)
+* [Authentication JavaScript API](./authentication-javascript-api.md)
+* [Authentication setup](./authentication-tutorial.md)
+* [Workload authentication guidelines & deep dive](./authentication-guidelines.md)
+
+>>>>>>> 55751bcb96e7b547f0265edc6cd039c8bae34fb5

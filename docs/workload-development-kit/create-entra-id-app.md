@@ -1,11 +1,8 @@
 ---
 title: Set up a Microsoft Entra ID application of your Workload Development Kit solution's
 description: Learn how to set up a Microsoft Entra ID application for your workload development environment.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
-ms.custom:
-ms.date: 02/05/2025
+ms.date: 04/29/2026
 
 #customer intent: As an Independent Software Vendor (ISV) or a developer, I want to learn how to set up the authorization for a customized Fabric workload.
 ---
@@ -98,7 +95,7 @@ To add an application ID URI to your app, follow these steps.
 
 ## Step 5: Add scopes
 
-You need to define [scopes](/entra/identity-platform/scopes-oidc) (also known as permissions) for your app. The scopes allow others to use your app's functionality. For example, the [workload sample](quickstart-sample.md) gives four examples of API permissions that other can use. You can see these mock permissions in [scopes.cs](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Constants/WorkloadScopes.cs):
+You need to define [scopes](/entra/identity-platform/scopes-oidc) (also known as permissions) for your app. The scopes allow others to use your app's functionality. For example, the [workload sample](quickstart-sample.md) gives four examples of API permissions that other can use. You can see these mock permissions in [scopes.cs](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/dotnet/src/Constants/WorkloadScopes.cs):
 
 * `Item1.Read.All` - For reading workload items
 
@@ -163,7 +160,7 @@ To configure the [backend](extensibility-back-end.md), you need to configure a s
 
 ## Step 9: Add an idtyp optional claim
 
-Te `idtype` [claim](/entra/identity-platform/optional-claims-reference) signals that the token that the workload gets from Fabric is an app only token.
+The `idtype` [claim](/entra/identity-platform/optional-claims-reference) signals that the token that the workload gets from Fabric is an app only token.
 
 1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com).
 

@@ -1,17 +1,20 @@
 ---
 title: Set alerts on OneLake events in Real-Time hub
 description: This article describes how to set alerts on OneLake events in Real-Time hub.
-author: robece
-ms.author: robece
+ms.reviewer: robece
 ms.topic: how-to
-ms.date: 11/13/2024
+ms.date: 12/14/2025
 ---
 
 # Set alerts on OneLake events in Real-Time hub
 
 This article describes how to set alerts on OneLake events in Real-Time hub.
 
-[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+[!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
+
+## Navigate to Real-Time hub
+
+[!INCLUDE [navigate-to-real-time-hub](./includes/navigate-to-real-time-hub.md)]
 
 ## Launch the Set alert page
 
@@ -25,10 +28,10 @@ Do steps from one of the following sections, which opens a side panel where you 
 
 1. In Real-Time hub, select **Fabric events**.
 1. Move the mouse over **OneLake events**, and do one of the following steps:
-    - Select the **Alert** button.
+    - Select the **Set alert** button.
     - Select **ellipsis (...)**, and select **Set alert**.
 
-        :::image type="content" source="./media/set-alerts-fabric-onelake-events/list-page.png" alt-text="Screenshot that shows the Fabric events list page." lightbox="./media/set-alerts-fabric-onelake-events/list-page.png":::
+        :::image type="content" source="./media/set-alerts-fabric-onelake-events/fabric-one-lake.png" alt-text="Screenshot that shows the Fabric events list page." lightbox="./media/set-alerts-fabric-onelake-events/fabric-one-lake.png":::
     
 
 ### Using the event detail page
@@ -38,11 +41,11 @@ Do steps from one of the following sections, which opens a side panel where you 
 
     :::image type="content" source="./media/set-alerts-fabric-onelake-events/detail-view.png" alt-text="Screenshot that shows the OneLake events detail page with Set alert button selected." lightbox="./media/set-alerts-fabric-onelake-events/detail-view.png":::
 
-## Set alert for OneLake events
+[!INCLUDE [rule-details](./includes/rule-details.md)]
 
-On the **Set alert** page, follow these steps:
+## Monitor section
 
-1. In the **Monitor** section, choose **Select events**.
+1. In the **Monitor** section, for **Source**, choose **Select source events**.
 
     :::image type="content" source="./media/set-alerts-fabric-onelake-events/select-events-link.png" alt-text="Screenshot that shows the Set alert page." lightbox="./media/set-alerts-fabric-onelake-events/select-events-link.png":::    
 1. In the **Connect data source** wizard, do these steps:
@@ -57,10 +60,10 @@ On the **Set alert** page, follow these steps:
         1. Select the data source from the list. 
         1. Select **Next** at the bottom of the page. 
     
-            :::image type="content" source="./media/create-streams-onelake-events/select-data-source.png" alt-text="Screenshot that shows the selection of a specific OneLake data source." lightbox="./media/create-streams-onelake-events/select-data-source.png":::       
+            :::image type="content" source="../real-time-intelligence/event-streams/includes/connectors/media/fabric-onelake-source-connector/select-data-source.png" alt-text="Screenshot that shows the selection of a specific OneLake data source." lightbox="../real-time-intelligence/event-streams/includes/connectors/media/fabric-onelake-source-connector/select-data-source.png":::       
         1. Select all tables or a specific table that you're interested in, and then select **Add**. 
 
-            :::image type="content" source="./media/create-streams-onelake-events/select-tables.png" alt-text="Screenshot that shows the selection of all tables." lightbox="./media/create-streams-onelake-events/select-tables.png":::       
+            :::image type="content" source="../real-time-intelligence/event-streams/includes/connectors/media/fabric-onelake-source-connector/select-tables.png" alt-text="Screenshot that shows the selection of all tables." lightbox="../real-time-intelligence/event-streams/includes/connectors/media/fabric-onelake-source-connector/select-tables.png":::       
 
         > [!NOTE]
         > OneLake events are supported for data in OneLake. However, events for data in OneLake via shortcuts aren't yet available.
@@ -76,19 +79,33 @@ On the **Set alert** page, follow these steps:
     1. On the **Review + connect** page, review the settings, and select **Save**.
     
         :::image type="content" source="./media/set-alerts-fabric-onelake-events/review-create-page.png" alt-text="Screenshot that shows the Add source wizard Review and create page for OneLake events.":::        
-1. For **Condition**, confirm that **On each event** is selected.
-1. For **Action**, select one of the following options:
-    1. To receive an email when the event occurs and the condition is met, select **Send me an email**.
-    1. To receive notification via Teams, select **Message me in Teams**.
-    1. To run a Fabric item, select **Run a Fabric item**.
-1. In the **Save location** section, do these steps:
-    1. For **Workspace**, select the workspace where you want to save the alert.
-    1. For **Activator item**, select an existing Activator item or create an Activator item for this alert.
+
+[!INCLUDE [rule-condition-events](./includes/rule-condition-events.md)]
+
+[!INCLUDE [rule-action](./includes/rule-action.md)]
+
+[!INCLUDE [rule-save-location](./includes/rule-save-location.md)]
+
+## Create alert
+
 1. Select **Create** at the bottom of the page to create the alert.
 
     :::image type="content" source="./media/set-alerts-fabric-onelake-events/create-alert.png" alt-text="Screenshot that shows the Set alert page with all fields selected.":::        
+1. You see the **Alert created** page with a link to **open** the rule in the Fabric activator user interface in a separate tab. Select **Done** to close the **Alert created** page. 
+
+    :::image type="content" source="./media/set-alerts-fabric-onelake-events/alert-created-page.png" alt-text="Screenshot that shows the Alert created page for Fabric OneLake item events." lightbox="./media/set-alerts-fabric-onelake-events/alert-created-page.png":::
+1. You see a page with the activator item created by the **Add rule** wizard. If you are on the **Fabric events** page, select **Job events** to see this page. 
+
+    :::image type="content" source="./media/set-alerts-fabric-onelake-events/items-created-wizard.png" alt-text="Screenshot that shows the Fabric OneLake items events page with the activator items created." lightbox="./media/set-alerts-fabric-onelake-events/items-created-wizard.png":::      
+1. Move the mouse over the **Activator** item, and select **Open**. 
+
+    :::image type="content" source="./media/set-alerts-fabric-onelake-events/activator-menu.png" alt-text="Screenshot that shows the activator menu." lightbox="./media/set-alerts-fabric-onelake-events/activator-menu.png"::: 
+1. You see the Activator item in the Fabric Activator editor user interface. Select the rule if it's not already selected. You can update the rule in this user interface. For example, update the subject, headline, or change the action from email to Teams message. 
+
+    :::image type="content" source="./media/set-alerts-fabric-onelake-events/activator-editor.png" alt-text="Screenshot that shows the activator in an editor." lightbox="./media/set-alerts-fabric-onelake-events/activator-editor.png"::: 
 
 ## Related content
 
 - [Set alerts on Azure blob storage events](set-alerts-azure-blob-storage-events.md)
 - [Set alerts on Fabric workspace item events](set-alerts-fabric-workspace-item-events.md)
+

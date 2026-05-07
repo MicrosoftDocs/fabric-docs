@@ -1,8 +1,6 @@
 ---
 title: View Data in the Data Preview
 description: Learn about using the Data preview in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: jacindaeng
 ms.date: 04/06/2025
 ms.topic: how-to
@@ -41,5 +39,4 @@ After creating a warehouse and ingesting data, select a specific table or view f
 
 ## Related content
 
-- [Define relationships in data models for data warehousing in Microsoft Fabric](data-modeling-defining-relationships.md)
-- [Model data in the default Power BI semantic model in Microsoft Fabric](default-power-bi-semantic-model.md)
+- [Semantic models in Microsoft Fabric](semantic-models.md)

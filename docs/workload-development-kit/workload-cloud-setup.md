@@ -1,11 +1,8 @@
 ---
 title: Set up workload cloud mode
 description: Learn the prerequisites and steps to use a cloud environment with Microsoft Fabric Workload Development Kit.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
-ms.custom:
-ms.date: 08/12/2024
+ms.date: 04/29/2026
 ---
 
 # Set up workload cloud mode
@@ -101,7 +98,7 @@ To configure your application in Microsoft Entra:
 1. Open *src/Packages/manifest/WorkloadManifest.xml*.
 1. Under `AADApp`, set `AppId`, `redirectUri`, and `ResourceId` (the ID URI).
 
-Note the requirements that are specified in [XSD file](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Packages/manifest/WorkloadDefinition.xsd) and the [backend manifest overview](backend-manifest.md).
+Note the requirements that are specified in XSD file and the [backend manifest overview](backend-manifest.md).
 
 ## Configure your frontend app
 
@@ -113,3 +110,4 @@ Here's an example:
 WORKLOAD_NAME=Fabric.WorkloadSample
 WORKLOAD_BE_URL=beserver.datafactory.contoso.com
 ```
+

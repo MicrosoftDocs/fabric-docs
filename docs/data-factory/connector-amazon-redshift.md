@@ -1,17 +1,22 @@
 ---
 title: Set up your Amazon Redshift connection
 description: This article provides information about how to create an Amazon Redshift connection in Microsoft Fabric.
-author: DougKlopfenstein
-ms.author: dougklo
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 03/13/2026
 ms.custom:
   - template-how-to
+  - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your Amazon Redshift connection
 
-This article outlines the steps to create an Amazon Redshift connection.
+You can connect Dataflow Gen2 to Amazon Redshift in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+
+1. Check [capabilities](#capabilities) to make sure your scenario is supported.
+1. [Complete prerequisites for Amazon Redshift](#prerequisites).
+1. [Get data in Fabric](#get-data).
+1. [Connect to Amazon Redshift data](#connect-to-amazon-redshift-data).
 
 ## Supported authentication types
 
@@ -22,12 +27,21 @@ The Amazon Redshift connector supports the following authentication types for co
 |Amazon Redshift| n/a | √ |
 |Microsoft Account| n/a | √ |
 
-## Set up your connection in Dataflow Gen2
+## Capabilities
+[!INCLUDE [amazon-redshift-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/amazon-redshift/amazon-redshift-capabilities-supported.md)]
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Amazon Redshift. The following links provide the specific Power Query connector information you need to connect to Amazon Redshift in Dataflow Gen2:
+## Prerequisites
+[!INCLUDE [amazon-redshift-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/amazon-redshift/amazon-redshift-prerequisites.md)]
 
-- To get started using the Amazon Redshift connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [Amazon Redshift prerequisites](/power-query/connectors/amazon-redshift#prerequisites) before connecting to the Amazon Redshift connector.
-- To connect to the Amazon Redshift connector from Power Query, go to [Connect to Amazon Redshift data from Power Query Online](/power-query/connectors/amazon-redshift#connect-to-amazon-redshift-data-from-power-query-online).
 
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+## Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+## Connect to Amazon Redshift data
+
+[!INCLUDE [amazon-redshift-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/amazon-redshift/amazon-redshift-connect-to-power-query-online.md)]
+
+## Related content
+
+- [For more information about this connector, see the Amazon Redshift connector documentation.](/power-query/connectors/amazon-redshift)

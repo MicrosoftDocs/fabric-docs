@@ -1,11 +1,9 @@
 ---
 title: Use sparklyr
 description: How to use sparklyr, an R interface to Apache Spark.
-ms.reviewer: None
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: lagayhar
+ms.reviewer: ruxu
 ms.topic: how-to
-ms.custom:
 ms.date: 04/16/2025
 ms.search.form: R Language
 ---
@@ -198,3 +196,4 @@ Learn more about the R functionalities:
 - [Create R visualization](./r-visualization.md)
 - [Tutorial: avocado price prediction](./r-avocado.md)
 - [Tutorial: flight delay prediction](./r-flight-delay.md)
+

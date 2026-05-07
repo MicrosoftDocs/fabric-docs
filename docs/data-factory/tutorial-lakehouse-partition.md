@@ -1,44 +1,43 @@
 ---
 title: Load data to Lakehouse using partition
 description: Learn steps to load data to Lakehouse using partition.
-ms.reviewer: whhender
-ms.author: jianleishen
-author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: tutorial
-ms.custom: 
+ms.custom: pipelines
 ms.date: 12/18/2024
 ms.search.form: Pipeline Tutorials
 ---
 
-# Load data to Lakehouse using partition in a Data pipeline
+# Load data to Lakehouse using partition in a pipeline
 
 The partition feature in Lakehouse table as destination offers the capability to load data to Lakehouse table with partitions. The partitions are generated in Lakehouse destination, and then benefit the downstream jobs or consumption. 
 
-This tutorial helps you learn how to load data to Lakehouse using partition in a Data pipeline. As an example, you load sample dataset into Lakehouse using one or multiple partition columns by taking the following steps. The sample dataset **Public Holidays** is used as sample data.
+This tutorial helps you learn how to load data to Lakehouse using partition in a pipeline. As an example, you load sample dataset into Lakehouse using one or multiple partition columns by taking the following steps. The sample dataset **Public Holidays** is used as sample data.
 
 ## Prerequisite
 
 - Make sure you have a Project Microsoft Fabric enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 
-## Create a Data pipeline
+## Create a pipeline
 
 1. Navigate to [Power BI](https://app.powerbi.com/).
-1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
+1. Select the Power BI icon in the bottom left of the screen, then select **Fabric** to open homepage of Data Factory.
 
 1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace. If you created a new workspace in the prior Prerequisites section, use this one.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
+<!--   :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace."::: -->
 
-1. Select **Data pipeline** and then input a pipeline name to create a new pipeline.
+1. Select  **+ New item**.
+1. Search for and select **Pipeline** and then input a pipeline name to create a new pipeline. to create a new pipeline.
 
-   :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new Data pipeline button in the newly created workspace.":::
+   :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new pipeline button in the newly created workspace.":::
 
    :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
 
 
 ## Load data to Lakehouse using partition columns
 
-1. Open your Data pipeline and add a copy activity by selecting **Pipeline activity** -> **Copy data**. Under **Source**, select **More** at the bottom of the connection list, then select **Public Holidays** under **Sample data** tab.
+1. Open your pipeline and add a copy activity by selecting **Pipeline activity** -> **Copy data**. Under **Source**, select **More** at the bottom of the connection list, then select **Public Holidays** under **Sample data** tab.
 
     :::image type="content" source="media/tutorial-lakehouse-partition/connection-more.png" lightbox="media/tutorial-lakehouse-partition/connection-more.png" alt-text="Screenshot of using sample dataset.":::
 

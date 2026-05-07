@@ -1,0 +1,223 @@
+---
+title: Anomaly Detection in Real-Time Intelligence
+description: Learn how to set up and configure anomaly detection for your real-time data streams using Microsoft Fabric Real-Time Intelligence.
+ms.reviewer: tessarhurr, v-hzargari
+ms.topic: how-to
+ms.subservice: rti-anomaly-detector
+ms.date: 03/05/2026
+ms.search.form: Anomaly Detection How To
+---
+
+# Anomaly detection in Real-Time Intelligence (Preview)
+
+This article explains how to set up anomaly detection in Real-Time Intelligence to automatically identify unusual patterns and outliers in your Eventhouse tables. The system provides recommended models and allows you to set up continuous monitoring with automated actions.
+
+Key capabilities include:
+
+- **Model recommendations**: Suggests the best algorithms and parameters for your data.
+- **Interactive anomaly exploration**: Visualize detected anomalies and adjust model sensitivity.
+- **Continuous monitoring**: Set up real-time anomaly detection with automated notifications.
+- **Reanalysis with new data**: Update your models as new data arrives to improve accuracy.
+
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
+
+## Prerequisites
+
+- A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
+- Role of **Admin**, **Contributor**, or **Member** [in the workspace](../fundamentals/roles-workspaces.md).
+- An [Eventhouse](create-eventhouse.md) in your workspace with a KQL database.
+- A Python plugin enabled on that same Eventhouse.
+  1. To enable the plugin, navigate to your Eventhouse.
+  1. In the upper toolbar, select **Plugins** and then enable the **Python language extension**.
+  1. Select the Python 3.11.7 DL plugin and select **Done**.
+  
+    :::image type="content" source="media/anomaly-detection/python.png" alt-text="Screenshot of enabling the Python plugin in Eventhouse." lightbox="media/anomaly-detection/python.png":::
+
+> [!NOTE]
+> * Ensure your Eventhouse table contains sufficient historical data to improve model recommendations and anomaly detection accuracy. For example, datasets with one data point per day require a few months of data, while datasets with one data point per second might only need a few days.
+> * This feature is available in all regions where Microsoft Fabric is available.
+
+## How to set up anomaly detection
+
+### Getting started
+
+You can start anomaly detection in **three** ways:
+
+## [From an Eventhouse table](#tab/eventhouse)
+
+1. Select a database and the **table** or the **shortcut** you want to analyze.
+
+1. In the upper toolbar, select **Create Anomaly Detector** or select the **Anomaly Detector** option from the ellipsis (⋯) in the database tree.
+
+:::image type="content" source="media/anomaly-detection/eventhouse-anomaly-detector.png" alt-text="Screenshot of the Anomaly Detector option in the Eventhouse database tree and in the upper toolbar." lightbox="media/anomaly-detection/eventhouse-anomaly-detector.png":::
+
+## [From Real-Time hub](#tab/real-time-hub)
+
+1. Select **Real-Time hub** in the left navigation pane.
+
+    :::image type="content" source="media/anomaly-detection/real-time-hub.png" alt-text="Screenshot of the Real-Time hub button in the left navigation pane.":::
+
+1. Find the table you want to analyze for anomalies and do **either** of the following steps:
+    - Select the ellipsis (⋯) to open the table's ribbon menu, and select **Anomaly detection**.
+
+        :::image type="content" source="media/anomaly-detection/detect-dropdown.png" alt-text="Screenshot of the Real-Time hub with a table selected for anomaly detection.":::
+
+    - Select the table to open the details page. In the upper toolbar, select **Anomaly detection**.
+
+        :::image type="content" source="media/anomaly-detection/detect-details-page.png" alt-text="Screenshot of the detect anomalies option in the details page.":::
+1. On the **Anomaly detection** page, for **Save to**, select the drop-down list, and then select **Create detector**. 
+
+    :::image type="content" source="media/anomaly-detection/real-time-hub-create-detector.png" alt-text="Screenshot of the Anomaly Detector page in Real-Time hub.":::
+1. On the **Create anomaly detector** page, select your Fabric **workspace**, enter a **name** for the anomaly detector, and then select **Create**. 
+
+    :::image type="content" source="media/anomaly-detection/real-time-hub-create-anomaly-detector-dialog.png" alt-text="Screenshot of the Create Anomaly Detector page in Real-Time hub.":::     
+
+## [From the Create button](#tab/create)
+
+1. In the Fabric home page, select the ellipsis (⋯) icon and then the **Create** option.
+
+    :::image type="content" source="media/anomaly-detection/create-button.png" alt-text="Screenshot of the Create button in the left navigation pane.":::
+
+1. In the **Create** pane, select **Anomaly detection** under the **Real-Time Intelligence** section.
+
+    :::image type="content" source="media/anomaly-detection/create-anomaly-detection.png" alt-text="Screenshot of the Create pane with Anomaly detection selected.":::
+
+1. In the **Anomaly detection** configuration pane, select the **Data source** you want to analyze. 
+
+    :::image type="content" source="media/anomaly-detection/add-source.png" alt-text="Screenshot of the Anomaly detection configuration pane with Data source option highlighted.":::
+
+1. In the **Select source** pane, choose the Eventhouse and table you want to analyze, and then select **Add**.
+
+    :::image type="content" source="media/anomaly-detection/select-source.png" alt-text="Screenshot of the Select source pane with an Eventhouse and table selected.":::
+
+----
+
+### Configure input columns for analysis
+
+Specify which columns to analyze and how to group your data.
+
+1. In the configuration pane, add the **Value to watch** column that contains the numeric data you want to monitor for anomalies.
+
+    :::image type="content" source="media/anomaly-detection/value-to-watch.png" alt-text="Screenshot of the Value to watch configuration settings.":::
+
+    > [!NOTE]
+    > Ensure the selected column contains numeric values, as only numeric data is supported for anomaly detection.
+
+1. Choose the **Group by** column to specify how your data should be partitioned for analysis. This column typically represents entities such as devices, locations, or other logical groupings.
+
+    :::image type="content" source="media/anomaly-detection/group-by.png" alt-text="Screenshot of the Group by configuration settings.":::
+
+1. Select the **Timestamp** column that represents the time each data point was recorded. This column is crucial for time-series anomaly detection and ensures accurate analysis of trends over time.
+
+    :::image type="content" source="media/anomaly-detection/timestamp.png" alt-text="Screenshot of the Timestamp configuration settings.":::
+
+1. Select **Run analysis** to begin the automated model evaluation.
+
+### Wait for analysis completion
+
+The system analyzes your data to find the best anomaly detection models.
+
+> [!IMPORTANT]
+> Analysis typically takes up to four minutes depending on your data size and can run for up to 30 minutes. You can go to another page and check back when the analysis is complete.
+
+During analysis, the system:
+
+- Samples your table data for efficient processing
+- Tests multiple anomaly detection algorithms
+- Evaluates different parameter configurations
+- Identifies the most effective models for your specific data patterns
+
+### Review recommended models and anomalies
+
+After the analysis finishes, review the results and explore the detected anomalies.
+
+1. Open the anomaly detection results by selecting the notification you received or by going back to the table and selecting **View anomaly results**.
+
+1. The results page provides the following insights:
+    - A **visualization** of your data with anomalies clearly highlighted.
+    - A list of **recommended algorithms**, ranked by their effectiveness for your data.
+    - **Sensitivity settings** to adjust the detection thresholds.
+    - A detailed table of **detected anomalies** within the selected time range.
+
+1. Use the model selector to compare the performance of different recommended algorithms and choose the one that best fits your needs.
+
+1. Adjust the **sensitivity** settings to refine the anomaly detection results:
+    - Options include low, medium, and high confidence levels.
+    - Experiment with these settings to balance between detecting more anomalies and reducing false positives.
+
+1. Interact with the visuals and tables to gain deeper insights into the detected anomalies and understand the patterns in your data.
+
+1. **Save** the anomaly detector to preserve your configuration and revisit it later.
+
+1. **Publish** the detected anomalies to the Real-Time Hub to enable continuous monitoring of incoming data. You can also configure downstream actions, such as sending alerts to Activator.
+
+By reviewing and fine-tuning the results, you can ensure that your anomaly detection setup is optimized for your specific use case.
+
+### Reanalyze anomaly detection models with new data
+
+Keep your anomaly detection models up to date as new data becomes available.
+
+Follow these steps to reanalyze the model with new data:
+
+1. Go to your anomaly detection item.
+1. In the **Edit** panel, modify any of the previously filled-out fields as needed.
+1. Select **Run analysis**. This action starts a new analysis based on your updated inputs.
+
+> [!WARNING]
+> Reanalyzing updates the model used by existing monitoring rules, which might affect downstream actions.
+
+### Explore anomaly detection events and set alerts
+
+After publishing your anomaly detection results, you can explore the detected anomalies in the Real-Time Hub and set up alerts to notify you of future anomalies.
+For more information, see:
+
+- [Explore anomaly detection events](../real-time-hub/explore-anomaly-detection.md)
+- [Set alerts on anomaly detection events](../real-time-hub/set-alerts-anomaly-detection.md)
+
+## Limitations and considerations
+
+Be aware of these current limitations:
+
+- Anomaly detection is disabled if the input table doesn't match the required schema (numeric value column, datetime column, and string column).
+- Sufficient historical data improves model recommendations and accuracy.
+- Each anomaly detector supports only a single model configuration.
+
+## Running multiple operations in the anomaly detector
+
+When you interact with the anomaly detector, Eventhouse runs Python queries in the background to support real-time analysis. These operations include:
+
+- Running anomaly detection or other types of analysis.
+- Switching between recommended models.
+- Changing the time window or IDs you're viewing.
+- Continuously monitoring incoming data for anomalies by setting alerts.
+
+Eventhouse supports up to eight concurrent queries per Eventhouse. If you exceed this limit, the system retries the queries, but it doesn't queue extra queries and they might silently fail. Error messages that provide more clarity are under development.
+
+To avoid problems:
+
+- Allow each query to complete before starting a new one.
+- If performance seems slow or unresponsive, reduce the number of concurrent queries.
+
+For more information, see [Python Plugin](/kusto/query/python-plugin?view=microsoft-fabric&preserve-view=true).
+
+## Wait times for enabling the Python Plugin
+
+When you start data analysis, the anomaly detector automatically enables the Python Plugin on your Eventhouse. Enabling the plugin can take up to one hour. Once enabled, the analysis starts automatically.
+
+For more information, see [Enable Python plugin in Real-Time Intelligence](python-plugin.md).
+
+## Next steps
+
+After you configure anomaly detection, you can:
+
+- [Explore anomaly detection events](../real-time-hub/explore-anomaly-detection.md)
+- [Set alerts on anomaly detection events](../real-time-hub/set-alerts-anomaly-detection.md)
+- [Set up Activator for automated responses](../real-time-intelligence/data-activator/activator-introduction.md)
+- [Learn about multivariate anomaly detection](multivariate-anomaly-detection.md)
+- [Create alerts from a KQL queryset](data-activator/activator-alert-queryset.md)
+
+## Related content
+
+- [KQL query reference](/kusto/query/)
+- [Real-Time Dashboard documentation](dashboard-real-time-create.md)
+- [Activator overview](data-activator/activator-introduction.md)

@@ -2,10 +2,9 @@
 title: Get data from OneLake
 description: Learn how to get data from OneLake into a KQL database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
+ms.subservice: rti-eventhouse
 ms.date: 05/12/2025
 ms.search.form: Get data in a KQL Database
 ---
@@ -28,7 +27,7 @@ Select OneLake as your data source, as follows:
 
 1. Select the data source. In this example, you're ingesting data from **OneLake** or from the list in the embedded **OneLake catalog**.
 
-    :::image type="content" source="media/get-data-onelake/get-data-onelake-catalog.png" alt-text="Screenshot of the Select a data source window with both the Onelake tile and the embedded Onelake catalog options highlighted." lightbox="media/get-data-onelake/get-data-onelake-catalog.png":::
+    :::image type="content" source="media/get-data-onelake/get-data-onelake-tile.png" alt-text="Screenshot of the Select a data source window with both the Onelake tile and the embedded Onelake catalog options highlighted." lightbox="media/get-data-onelake/get-data-onelake-tile.png":::
 
     >[!NOTE]
     >

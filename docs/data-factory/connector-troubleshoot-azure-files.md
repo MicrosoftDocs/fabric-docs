@@ -1,12 +1,10 @@
 ---
 title: Troubleshoot the Azure Files connector
 description: Learn how to troubleshoot issues with the Azure Files connector in Data Factory in Microsoft Fabric.
-ms.reviewer: whhender
-ms.author: xupzhou
-author: pennyzhou-msft
+ms.reviewer: xupzhou
 ms.topic: troubleshooting
-ms.custom:
 ms.date: 10/23/2024
+ms.custom: connectors
 ---
 
 # Troubleshoot the Azure Files connector in Data Factory in Microsoft Fabric

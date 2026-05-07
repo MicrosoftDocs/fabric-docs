@@ -1,10 +1,9 @@
 ---
 title: What is the admin monitoring workspace?
 description: Understand the Microsoft Fabric monitoring workspace and the reports it holds.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: overview
-ms.custom:
 ms.date: 09/17/2024
 ---
 
@@ -46,7 +45,7 @@ By default, the admin monitoring workspace is a Pro-licensed workspace. To take 
    
 4. Select the **Actions** button, then select **Reassign workspace**.
    
-5. Select the desired **license mode**, then click **Save**.
+5. Select the desired **Workspace type**, then click **Save**.
 
 ## Reports and semantic models
 
@@ -65,6 +64,8 @@ You can use the reports in the admin monitoring workspace for getting insights a
 * [Granular delegated admin privileges (GDAP)](/partner-center/gdap-introduction) aren't supported.
 
 * Once access is provided to the admin monitoring workspace or its underlying content, access can't be removed without reinitializing the workspace. However, sharing links can be modified as with a typical workspace.
+
+* Semantic models in the admin monitoring workspace are read-only and can't be used with Fabric data agents.
 
 ### Refreshes
 

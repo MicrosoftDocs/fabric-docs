@@ -1,11 +1,9 @@
 ---
 title: Overview of Fabric workload authentication JavaScript API
 description: Learn how to use JavaScript APIs to authenticate a customized Fabric workload.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
-ms.custom:
-ms.date: 05/21/2024
+ms.custom: sfi-image-nochange
+ms.date: 04/29/2026
 ---
 
 # Authentication JavaScript API
@@ -77,10 +75,11 @@ This parameter is used when facing OBO failures in the workload BE because of so
 
 OBO failures because of conditional access policies return a string called "claims." This string should be sent to the workload FE where the FE should ask for a token and pass the claim as claimsForConditionalAccessPolicy. For more information, see [Handling multi-factor auth (MFA), conditional access, and incremental consent](/entra/msal/dotnet/acquiring-tokens/web-apps-apis/on-behalf-of-flow#handling-multi-factor-auth-mfa-c).
 
-Refer to [AuthenticationService](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Services/AuthenticationService.cs) AddBearerClaimToResponse usage in the BE sample to see examples of responses when OBO operations fail due to consent missing or conditional access policies.
+Refer to [AuthenticationService](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/dotnet/src/Services/AuthenticationService.cs) AddBearerClaimToResponse usage in the BE sample to see examples of responses when OBO operations fail due to consent missing or conditional access policies.
 
 **To learn more about this additionalScopesToConsent and claimsForConditionalAccessPolicy and see examples of usage, see [Development Kit overview - Example scenarios](./development-kit-overview.md#example-scenarios).**
 
 ### promptFullConsent
 When passed as true, a full consent of the static dependencies will pop for the user regardless whether it provided a consent previously or not.
 An example usage for this parameter is to add a button to the UX where the user can use it to grant full consent to the workload.
+

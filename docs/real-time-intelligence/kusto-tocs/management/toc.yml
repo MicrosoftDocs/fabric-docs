@@ -131,6 +131,8 @@ items:
         href: /kusto/management/external-tables-azure-storage?view=microsoft-fabric&preserve-view=true
       - name: Create or alter delta external table
         href: /kusto/management/external-tables-delta-lake?view=microsoft-fabric&preserve-view=true
+      - name: .show external table details
+        href: /kusto/management/show-external-tables-details?view=microsoft-fabric&preserve-view=true
       - name: Manage external table mappings
         items:
         - name: .alter external table mapping command
@@ -222,6 +224,38 @@ items:
     - name: .show materialized-view(s) details
       displayName: show materialized view details
       href: /kusto/management/materialized-views/materialized-view-show-details-command?view=microsoft-fabric&preserve-view=true
+  - name: Graphs
+    items:
+    - name: Persistent graph overview
+      href: /kusto/management/graph/graph-persistent-overview?view=microsoft-fabric&preserve-view=true
+    - name: Graph models overview
+      href: /kusto/management/graph/graph-model-overview?view=microsoft-fabric&preserve-view=true
+    - name: .create-or-alter graph_model
+      href: /kusto/management/graph/graph-model-create-or-alter?view=microsoft-fabric&preserve-view=true
+    - name: .drop graph_model
+      href: /kusto/management/graph/graph-model-drop?view=microsoft-fabric&preserve-view=true
+    - name: .show graph_model
+      href: /kusto/management/graph/graph-model-show?view=microsoft-fabric&preserve-view=true
+    - name: .show graph_models
+      href: /kusto/management/graph/graph-models-show?view=microsoft-fabric&preserve-view=true
+    - name: Graph snapshot overview
+      href: /kusto/management/graph/graph-snapshot-overview?view=microsoft-fabric&preserve-view=true
+    - name: .make graph_snapshot
+      href: /kusto/management/graph/graph-snapshot-make?view=microsoft-fabric&preserve-view=true
+    - name: .drop graph_snapshot
+      href: /kusto/management/graph/graph-snapshot-drop?view=microsoft-fabric&preserve-view=true
+    - name: .drop graph_snapshots
+      href: /kusto/management/graph/graph-snapshots-drop?view=microsoft-fabric&preserve-view=true
+    - name: .show graph_snapshot
+      href: /kusto/management/graph/graph-snapshot-show?view=microsoft-fabric&preserve-view=true
+    - name: .show graph_snapshots
+      href: /kusto/management/graph/graph-snapshots-show?view=microsoft-fabric&preserve-view=true
+    - name: .show graph_snapshot statistics
+      href: /kusto/management/graph/graph-snapshot-statistics-show?view=microsoft-fabric&preserve-view=true
+    - name: .show graph_snapshots statistics
+      href: /kusto/management/graph/graph-snapshots-statistics-show?view=microsoft-fabric&preserve-view=true
+    - name: .show graph_snapshots failures
+      href: /kusto/management/graph/graph-snapshots-failures-show?view=microsoft-fabric&preserve-view=true
   - name: Stored query results
     items:
     - name: Stored query results
@@ -465,9 +499,10 @@ items:
     - name: .show table policy mirroring command
       href: /kusto/management/show-table-mirroring-policy-command?view=microsoft-fabric&preserve-view=true
       displayName: .show table mirroring policy
-    - name: .show table operations mirroring-status command
-      href: /kusto/management/show-table-operations-mirroring-status-command?view=microsoft-fabric&preserve-view=true
-      displayName: .show table mirroring status operations
+    - name: .show database operations mirroring-statistics
+      href: /kusto/management/show-database-operations-mirroring-statistics?view=microsoft-fabric&preserve-view=true
+    - name: .show table operations mirroring-statistics
+      href: /kusto/management/show-table-operations-mirroring-statistics?view=microsoft-fabric&preserve-view=true
     - name: .show table operations mirroring-exported-artifacts command
       href: /kusto/management/show-table-operations-mirroring-exported-artifacts-command?view=microsoft-fabric&preserve-view=true
       displayName: .show table mirroring operations exported artifacts
@@ -520,6 +555,12 @@ items:
       displayName: external table, delta table
     - name: .show query acceleration policy command
       href: /kusto/management/show-query-acceleration-policy-command?view=microsoft-fabric&preserve-view=true
+      displayName: external table, delta table
+    - name: Query acceleration troubleshooting guide
+      href: /kusto/management/query-acceleration-troubleshooting-guide?view=microsoft-fabric&preserve-view=true
+      displayName: external table, delta table
+    - name: .alter-merge query acceleration policy command
+      href: /kusto/management/alter-merge-query-acceleration-policy-command?view=microsoft-fabric&preserve-view=true
       displayName: external table, delta table
   - name: Restricted view access
     items:
@@ -733,6 +774,12 @@ items:
       href: /kusto/management/data-ingestion/cancel-queued-ingestion-operation-command?view=microsoft-fabric&preserve-view=true
     - name: .show queued ingestion operation command
       href: /kusto/management/data-ingestion/show-queued-ingestion-operations?view=microsoft-fabric&preserve-view=true
+    - name: Queued ingestion via REST API
+      href: /kusto/management/data-ingestion/queued-ingest-use-http?view=microsoft-fabric&preserve-view=true
+    - name: Queued ingestion status via REST API
+      href: /kusto/management/data-ingestion/queued-ingest-status-http?view=microsoft-fabric&preserve-view=true
+    - name: Queued ingestion Configuration via REST API
+      href: /kusto/management/data-ingestion/queued-ingest-configuration-http?view=microsoft-fabric&preserve-view=true
   - name: Streaming ingestion
     items:
     - name: Streaming ingestion and schema changes
