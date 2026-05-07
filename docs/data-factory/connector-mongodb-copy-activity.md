@@ -87,7 +87,7 @@ For **Mapping** tab configuration, see [Configure your mappings under mapping ta
 
 For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
-### Import and export JSON documents
+## Import and export JSON documents
 
 You can use this MongoDB connector to easily:
 

@@ -120,7 +120,7 @@ When copying data from MongoDB Atlas, the following mappings are used from Mongo
 | Regular Expression     | String                                                                         | String                                                                        |
 | Min key                | String                                                                         | Int64                                                                         |
 | Max key                | String                                                                         | Int64                                                                         |
-| Binary                 | GUID (when SubType is "04" )<br>String                                         | String            |
+| Binary                 | GUID (when SubType is "04" )<br>String                                         | String                   |  
 
 ## Differences between MongoDB Atlas versions
 
