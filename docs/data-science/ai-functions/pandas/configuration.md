@@ -214,4 +214,4 @@ aifunc.default_conf.model_deployment_name = "grok-4-fast-non-reasoning"
 - Translate text with [`ai.translate`](./translate.md).
 
 - Learn more about the [full set of AI functions](../overview.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

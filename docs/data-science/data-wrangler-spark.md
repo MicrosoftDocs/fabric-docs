@@ -142,4 +142,4 @@ The toolbar above the Data Wrangler display grid provides options to save the ge
 
 - For an overview of Data Wrangler, visit [this companion article](data-wrangler.md)
 - To try out Data Wrangler in Visual Studio Code, head to [Data Wrangler in VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.datawrangler)
-- Did we miss a feature you need? Let us know! Suggest it at the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/)
+- Did we miss a feature you need? Let us know! Suggest it at the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas)
