@@ -122,7 +122,7 @@
         },
         {
             "source_path_from_root": "/docs/workload-development-kit/authentication-guidelines.md",
-            "redirect_url": "/fabric/workload-development-kit/development-kit-overview#authentication-overview",
+            "redirect_url": "/fabric/workload-development-kit/authentication-setup.md",
             "redirect_document_id": false
         }
     ]
