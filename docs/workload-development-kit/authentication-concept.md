@@ -248,8 +248,6 @@ If your workloads include long running operations, for example, as part of [JobS
 ### Related content
 
 * [Set up workload authentication](./authentication-setup.md)
-* [Authentication JavaScript API](./authentication-javascript-api.md)
-* [Backend authentication and authorization overview](./back-end-authentication.md)
 * [Development Kit overview](./development-kit-overview.md)
 * [Workload communication](./workload-communication.md)
 * [Microsoft identity platform best practices](/entra/identity-platform/identity-platform-integration-checklist)
