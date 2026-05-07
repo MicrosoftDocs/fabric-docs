@@ -181,4 +181,4 @@ Te `idtype` [claim](/entra/identity-platform/optional-claims-reference) signals 
 
 ## Related content
 
-* Learn how to work with [authentication in workloads](./authentication-guidelines.md).
+* Learn how to work with [authentication in workloads](./development-kit-overview.md#authentication-overview).

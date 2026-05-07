@@ -45,7 +45,7 @@ Microsoft Entra ID is used for secure authentication, ensuring that all interact
 
 The [development kit overview](development-kit-overview.md) provides a glimpse into our architecture. For more information about how projects are configured, for authentication guidelines, and to get started, see the following articles:
 
-* [Workload authentication setup guide](./authentication-tutorial.md)
+* [Workload authentication setup guide](./authentication-setup.md)
 
 * [Workload authentication architecture overview](./authentication-concept.md)
 

@@ -73,7 +73,6 @@ Here's an example of a consent popup for our app "my workload app" and its depen
 
 ## Related content
 
-* [Backend authentication and authorization overview](./back-end-authentication.md)
-* [Authentication JavaScript API](./authentication-javascript-api.md)
-* [Authentication setup](./authentication-tutorial.md)
-* [Workload authentication guidelines & deep dive](./authentication-guidelines.md)
+* [Set up workload authentication](./authentication-setup.md)
+* [Development Kit overview](./development-kit-overview.md)
+* [Workload communication](./workload-communication.md)
