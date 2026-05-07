@@ -5,7 +5,7 @@ author: SnehaGunda
 ms.author: sngun
 ms.reviewer: dacoelho
 ms.topic: concept-article
-ms.date: 05/01/2026
+ms.date: 06/05/2026
 ms.search.form: delta lake interoperability
 ai-usage: ai-assisted
 ---
@@ -35,6 +35,7 @@ The following matrix shows key Delta Lake features and its availability on each 
 |Fabric Spark Runtime 1.3|Name: Yes<br/>ID: Yes|Yes|Yes|Yes|Read: Yes<br/>Write: Yes|
 |Fabric Spark Runtime 1.2|Name: Yes<br/>ID: Yes|Yes|Yes|Yes|Read: Yes<br/>Write: Yes|
 |Fabric Spark Runtime 1.1|Name: Yes<br/>ID: Yes|No|Yes|Yes|Read: Yes<br/>Write: Yes|
+|Python notebooks|Name: No<br/>ID: No|No|No|Yes|Read: Yes<br/>Write: Yes|
 |Dataflows Gen2|Name: Yes<br/>ID: No|Yes|Yes|No|Read: Yes<br/>Write: Yes|
 |Pipelines|Name: No<br/>ID: No|No|Yes|No|Read: Yes<br/>Write: Yes, overwrite only|
 |Power BI direct lake semantic models|Name: Yes<br/>ID: Yes|Yes|N/A (not applicable)|N/A (not applicable)|Read: Yes<br/>Write: N/A (not applicable)|
@@ -53,9 +54,10 @@ The following matrix shows key Delta Lake features and its availability on each 
 |Fabric Spark Runtime 1.3|Yes|Yes|Reader: 1<br/>Writer: 2|No|
 |Fabric Spark Runtime 1.2|Yes, read only|Yes|Reader: 1<br/>Writer: 2|No|
 |Fabric Spark Runtime 1.1|Yes, read only|No|Reader: 1<br/>Writer: 2|No|
-|Dataflows Gen2|Yes, read only|No|Reader: 1<br/>Writer: 2|No|
+|Python notebooks|No|Yes|Reader: 1<br/>Writer: 2|No|
+|Dataflows Gen2|Yes, read only|No|Reader: 1<br/>Writer: 2|Yes|
 |Pipelines|Yes, read only|No|Reader: 1<br/>Writer: 2|No|
-|Power BI direct lake semantic models|Yes|No|N/A (not applicable)|No|
+|Power BI direct lake semantic models|Yes|No|N/A (not applicable)|Yes|
 |Export Power BI semantic models into OneLake|No|No|Reader: 2<br/>Writer: 5<br/>Column Mappings (name)|No|
 |KQL databases|No|No|Reader: 1<br/>Writer: 1|No|
 |Eventstreams|No|No|Reader: 1<br/>Writer: 2|No|
@@ -75,6 +77,8 @@ Currently, Fabric doesn't support these Delta Lake features:
 * Identity columns writing (Azure Databricks feature)
 * Lakeflow Spark Declarative Pipelines (Azure Databricks feature)
 * Delta Lake 4.x features outside of Lakehouse and Spark Notebooks and Jobs: collations, variant type, coordinated commits, etc. Type widening is supported where noted on previous features matrix in this article.
+* **Python notebooks Delta Lake feature support**: Python notebooks use [delta-rs](https://delta-io.github.io/delta-rs/) (`deltalake`), [DuckDB](https://duckdb.org/), and [Polars](https://pola.rs/) instead of the Spark Delta Lake reader/writer to read and write Delta Lake tables. The `deltalake` versions currently pinned by Fabric don't support some Delta Lake table features, including deletion vectors, column mapping, liquid clustering writes and optimization, and type widening. Polars `read_delta` and `write_delta` use `deltalake` as the backend, so they share the same limitations.
+* **Python notebooks Delta Lake workarounds and fallback**: The DuckDB `delta_scan` function can provide a read-only workaround for some tables that `deltalake` can't read, such as tables with deletion vectors. If a Delta Lake capability isn't available or doesn't work in a Python notebook, use a PySpark notebook instead. PySpark notebooks provide the most complete Delta Lake support in Fabric and cover the Delta Lake scenarios listed for Fabric Spark runtimes in these tables. For more information, see [Data interaction in Python notebooks](../data-engineering/using-python-experience-on-notebook.md#data-interaction) and the [Fabric notebook selection guide](../data-engineering/fabric-notebook-selection-guide.md).
 
 ## Special characters on table names
 

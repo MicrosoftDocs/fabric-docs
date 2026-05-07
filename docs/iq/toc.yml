@@ -43,6 +43,10 @@ items:
       href: ontology/how-to-use-rules.md
     - name: Use resource links
       href: ontology/how-to-use-resource-links.md
+    - name: Connect an operations agent
+      href: ontology/how-to-create-operations-agent.md
+    - name: Use ontology MCP server
+      href: ontology/how-to-use-ontology-mcp-server.md
   - name: Resources
     items:
     - name: Troubleshooting
@@ -89,12 +93,30 @@ items:
           href: plan/planning-how-to-create-database-connection.md
         - name: Input data
           href: plan/planning-how-to-input-data.md
+        - name: Insert rows
+          items:
+              - name: Insert data input rows
+                href: plan/planning-how-to-insert-rows-data-input.md
+              - name: Insert template rows
+                href: plan/planning-how-to-insert-rows-template.md
+              - name: Insert formula rows
+                href: plan/planning-how-to-insert-rows-formula.md
+              - name: Insert forecast rows
+                href: plan/planning-how-to-insert-rows-forecast.md
+              - name: Insert blank rows
+                href: plan/planning-how-to-insert-rows-blank.md
+              - name: Manage inserted rows
+                href: plan/planning-how-to-manage-inserted-rows.md
         - name: Set up scenarios
           href: plan/planning-how-to-set-up-scenarios.md
         - name: Use writeback
           items:
               - name: Configure writeback
                 href: plan/planning-writeback/planning-how-to-persist-data.md
+              - name: Customize writeback settings
+                href: plan/planning-writeback/planning-how-to-customize-general-settings.md
+              - name: Configure destination settings
+                href: plan/planning-writeback/planning-how-to-configure-destination-settings.md
         - name: Change layouts
           href: plan/planning-how-to-change-layouts.md
         - name: Create a cube
@@ -105,6 +127,10 @@ items:
           href: plan/planning-how-to-add-notes.md
         - name: Add bookmarks
           href: plan/planning-how-to-add-bookmark.md
+        - name: Export data
+          href: plan/planning-how-to-export-data.md
+        - name: Pivot data
+          href: plan/planning-how-to-pivot-data.md
         - name: Use forecasting
           items: 
               - name: Configure forecasts
