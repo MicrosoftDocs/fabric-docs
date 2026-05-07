@@ -205,7 +205,7 @@ FROM OPENROWSET(BULK 'https://onelake.dfs.fabric.microsoft.com/{workspaceId}/{la
 WHERE data.filepath(1) = '2023'
 ```
 
-This example builds on the previous one that reads data from Azure Data Lake Storage. Use this approach when you need to transform source data, for example, convert values, joining with other tables, or read specific partitions. In such cases, using `INSERT ... SELECT` provides the flexibility to apply transformations during data ingestion.
+This example builds on the previous one that reads data from Azure Data Lake Storage. Use this approach when you need to transform source data, for example, by converting values, by joining with other tables, or by reading specific partitions. In such cases, using `INSERT ... SELECT` provides the flexibility to apply transformations during data ingestion.
 
 <a id="ingesting-data-from-tables-on-different-warehouses-and-lakehouses"></a>
 
