@@ -125,6 +125,10 @@ items:
           href: plan/planning-how-to-add-notes.md
         - name: Add bookmarks
           href: plan/planning-how-to-add-bookmark.md
+        - name: Export data
+          href: plan/planning-how-to-export-data.md
+        - name: Pivot data
+          href: plan/planning-how-to-pivot-data.md
         - name: Use forecasting
           items: 
               - name: Configure forecasts
