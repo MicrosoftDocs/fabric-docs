@@ -124,6 +124,22 @@
             "source_path_from_root": "/docs/workload-development-kit/authentication-guidelines.md",
             "redirect_url": "/fabric/workload-development-kit/authentication-setup.md",
             "redirect_document_id": false
+        },
+                {
+            "source_path_from_root": "/docs/workload-development-kit/authentication-javascript-api.md",
+            "redirect_url": "/fabric/workload-development-kit/authentication-setup.md",
+            "redirect_document_id": false
+        },
+                
+        {
+            "source_path_from_root": "/docs/workload-development-kit/create-entra-id-app.md",
+            "redirect_url": "/fabric/workload-development-kit/authentication-setup.md",
+            "redirect_document_id": false
+        },
+                {
+            "source_path_from_root": "/docs/workload-development-kit/back-end-authentication.md",
+            "redirect_url": "/fabric/workload-development-kit/authentication-concept.md",
+            "redirect_document_id": false
         }
     ]
 }

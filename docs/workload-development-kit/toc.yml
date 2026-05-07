@@ -20,15 +20,11 @@ items:
   - name: Backend implementation guide
     href: extensibility-back-end.md 
 - name: Authentication
-items:
-- name: Authentication overview
-  href: authentication-concept.md  
-- name: Backend authentication
-  href: back-end-authentication.md
-  - name: Set up an enterprise application
-    href: create-entra-id-app.md        
-  - name: Authentication JavaScript API
-    href: authentication-javascript-api.md      
+  items:
+  - name: Authentication overview
+    href: authentication-concept.md  
+  - name: Using authentication in your workload
+    href: authentication-setup.md      
 - name: Tutorials
   items:
   - name: Azure web app deployment
