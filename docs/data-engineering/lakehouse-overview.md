@@ -3,7 +3,8 @@ title: What is a lakehouse?
 description: A lakehouse in Microsoft Fabric combines data lake scalability with data warehouse querying. Store structured and unstructured data in one place and analyze it with Spark and SQL.
 ms.reviewer: avinandac
 ms.topic: overview
-ms.date: 02/24/2026
+ms.date: 05/07/2026
+ai-usage: ai-assisted
 # customer intent: As a data engineer, I want to understand what a lakehouse is in Microsoft Fabric so that I can use it for big data processing and analytics.
 ms.search.form: Lakehouse Overview
 ---
@@ -53,18 +54,33 @@ You can load, transform, and query data in a lakehouse through several Fabric to
 
 For a full comparison of ingestion options, see [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md).
 
+### Analyze your lakehouse data with the engine of your choice
+
+The lakehouse ribbon includes an **Analyze data with** dropdown that lets you open your data in different analysis experiences directly from the lakehouse:
+
+| Option | Description |
+|---|---|
+| **SQL analytics endpoint** | Query Delta tables with T-SQL in a read-only editor. See [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md). |
+| **Eventhouse endpoint** | Run KQL queries for high-performance, real-time analytics. See [Eventhouse endpoint](../real-time-intelligence/eventhouse-as-endpoint.md). |
+| **Notebook** (New / Existing) | Open a Spark notebook to explore or transform data with code. See [Explore data with a notebook](lakehouse-notebook-explore.md). |
+
+:::image type="content" source="media\lakehouse-overview\lakehouse-analyze-data.png" alt-text="Screenshot analyze data with dropdown in the lakehouse UI ribbon" lightbox="media\lakehouse-overview\lakehouse-analyze-data.png":::
+
+For details on each option and where to find the dropdown, see [Navigate the Fabric Lakehouse explorer](navigate-lakehouse-explorer.md#analyze-data-with).
+
 ## Lakehouse SQL analytics endpoint
 
 When you create a lakehouse, Fabric automatically generates a [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md). This endpoint lets you:
 
 - **Query Delta tables with T-SQL** — Use familiar SQL syntax without setting up a separate warehouse.
 - **Connect Power BI directly** — Create a [Power BI semantic model](../data-warehouse/semantic-models.md) to build reports on your lakehouse data.
-- **Share read-only access** — Analysts and report builders can query the data without affecting Spark workloads.
+- **Share read-only access** — Analysts and report builders can query the data without affecting Spark workloads. 
+
+The SQL analytics endpoint is read-only and doesn't support the full T-SQL surface of a [data warehouse](../data-warehouse/data-warehousing.md). Use it for exploration, reporting, and ad-hoc queries.
 
 > [!NOTE]
 > Since September 5, 2025, default semantic models are no longer created automatically when you create a lakehouse. Existing default semantic models were decoupled from their parent items by November 30, 2025 and became independent semantic models. For more information, see [Power BI semantic models in Microsoft Fabric](../data-warehouse/semantic-models.md).
 
-The SQL analytics endpoint is read-only and doesn't support the full T-SQL surface of a [data warehouse](../data-warehouse/data-warehousing.md). Use it for exploration, reporting, and ad-hoc queries.
 
 > [!NOTE]
 > Only Delta tables appear in the SQL analytics endpoint. This includes Delta tables reached through [OneLake shortcuts](../onelake/onelake-shortcuts.md), which are visible and queryable alongside locally stored tables. Parquet, CSV, and other formats can't be queried through this endpoint. If you don't see your table, [convert it to Delta format](load-to-tables.md).
