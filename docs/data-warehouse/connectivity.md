@@ -2,7 +2,7 @@
 title: Warehouse Connectivity
 description: Learn about connecting to Fabric Data Warehouse, including authentication and best practices.
 ms.reviewer: fresantos, salilkanade, pvenkat
-ms.date: 01/23/2026
+ms.date: 04/21/2026
 ms.topic: concept-article
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ms.custom: sfi-image-nochange
@@ -53,7 +53,6 @@ You can't use the Fully Qualified Domain Name (FQDN) of the TDS Endpoint alone.
 
 - SQL Authentication isn't supported.
 - Multiple Active Result Sets (MARS) isn't supported for [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. MARS is disabled by default. If `MultipleActiveResultSets` is included in the connection string, remove it or set it to false.
-- If you receive the error "Couldn't complete the operation because we reached a system limit", it's due to the system token size reaching its limit. This error can occur if the workspace has too many warehouses or SQL analytics endpoints, if the user is part of too many Microsoft Entra groups, or a combination of these two factors. To prevent this error, limit the number of warehouses and SQL analytics endpoints per workspace to 40 or fewer. If the error persists, contact support.
 - If you receive error code 24804 with the message "Couldn't complete the operation due to a system update. Close out this connection, sign in again, and retry the operation" or error code 6005 with the message "SHUTDOWN is in progress. Execution fail against sql server. Please contact SQL Server team if you need further support.", it's due to temporary connection loss, likely because of a system deployment or reconfiguration. To resolve this issue, sign in again and retry. To learn how to build resiliency and retries in your application, see [Best Practices](#best-practices).
 - Linked server connections from SQL Server aren't supported.
 

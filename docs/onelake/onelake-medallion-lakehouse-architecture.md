@@ -1,7 +1,9 @@
 ---
 title: "Implement Medallion Lakehouse Architecture in Fabric"
 description: Understand medallion lakehouse architecture in Microsoft Fabric and learn how to implement a lakehouse.
-ms.reviewer: wiassaf, arali
+ms.reviewer: wiassaf, arali # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.date: 02/12/2026
 ms.topic: concept-article
 ms.custom:

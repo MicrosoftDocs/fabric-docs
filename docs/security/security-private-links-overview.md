@@ -98,8 +98,11 @@ You can use Dataflow gen2 to get data, transform data, and publish dataflow via 
 
 When you connect to Pipeline via private link, you can use the pipeline to load data from any data source with public endpoints into a private-link-enabled Microsoft Fabric lakehouse. Customers can also author and operationalize pipelines with activities, including Notebook and Dataflow activities, using the private link. However, copying data from and into a Data Warehouse isn't currently possible when Fabric's private link is enabled.
 
-### ML Model, Experiment, and Data agent
-ML Model, Experiment, and Data agent supports private link. 
+### Data agent
+Data agents can connect to lakehouse, warehouse, and SQL data sources within a workspace that has workspace-level private links enabled (public access disabled). Cross-workspace access is supported when network connectivity is explicitly established (for example, using a managed private endpoint) and subject to region and token constraints.
+
+Current limitations: Kusto, semantic models, and mirrored data sources are not supported in private link scenarios. These limitations are inherent to the artifact types themselves, and not a limitation of Data Agents.
+Cross-region private-link access for SQL sources is also not supported.
 
 ### Power BI
 
@@ -153,15 +156,17 @@ Limitations:
 
 Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. In a tenant where private link is enabled, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data. Also included is the ability to ingest healthcare data from various sources, such as Azure Storage accounts, and more.
 
-### Fabric Events
+### Azure and Fabric Events
 
-Fabric Events support Private Link without affecting event delivery, because the events originate from within the tenant.
+Fabric events (such as Job events, Workspace item events, and OneLake events) support Private Link at the tenant level without affecting event delivery, because they originate from within the tenant. However, when [workspace-level private links](security-workspace-level-private-links-overview.md) are configured to block public access on the workspace where the events originate (the source workspace), event consumers such as Activator alerts or eventstreams in other workspaces are blocked from consuming those events unless a private link is established from the consumer's network to the source workspace.
 
-### Azure Events
+Azure events (such as Azure Blob Storage events) are affected by both tenant-level and workspace-level private links. When the **Block Public Internet Access** tenant setting is enabled, Azure event sources outside the tenant are blocked from delivering events into Fabric entirely:
+* New configurations to consume Azure events are blocked.
+* Existing configurations consuming Azure events stop delivering events. The system detects the configuration change and puts the consumer in a paused state.
 
-Azure Events support Private Link with the following behavior when the Block Public Internet Access tenant setting is enabled: 
-* New configurations to consume Azure events (e.g., Azure Blob Storage events) will be blocked from being delivered. 
-* Existing configurations consuming Azure events will stop new events from being delivered.
+Additionally, when you configure a consumer to receive Azure events, an eventstream item is created in a Fabric workspace to represent the Azure source. Workspace-level private links affect Azure event consumption in the same way as Fabric events: if the workspace containing this eventstream item blocks public network access, consumers in other workspaces are blocked unless a private link is established.
+
+For more information, see [Private links for Azure and Fabric Events](/fabric/real-time-hub/private-links-real-time-events).
   
 <!--### Other Fabric items
 
@@ -188,7 +193,7 @@ API for GraphQL supports Private Link, allowing secure API access and querying f
 
 * API monitoring dashboard and logging based on Workspace Monitoring is not supported.
 * Service Principals (SPN) are supported as clients however it's not possible to use a service principal to create a saved credential for access between the API and data source.
-* If the API for GraphQL artifact and the data source artifact belongs to two different capacity region is not supported when public access is disabled. You will get auth error in this scenario.
+* Having API for GraphQL artifact and the data source artifact in two different capacity regions isn't supported when the public access is disabled. You will get auth error in this scenario.
 
   
 ## Other considerations and limitations
@@ -223,6 +228,8 @@ There are several considerations to keep in mind while working with private endp
 * The OneLake Catalog - Govern tab isn't available when Private Link is activated.
   
 * Private links resource REST APIs don't support tags.
+  
+* Plan (preview) items in Fabric IQ (preview) aren't supported in workspaces or tenants that use private links.
 
 * The following URLs must be accessible from the client browser:
 

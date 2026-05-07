@@ -3,7 +3,7 @@ title: Microsoft Fabric Migration Overview
 description: Overview of migration options for moving data and workloads to Fabric from various sources.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 03/16/2026
+ms.date: 04/07/2026
 ms.topic: overview
 ms.custom:
 - migration
@@ -92,6 +92,7 @@ Microsoft Fabric provides a unified analytics platform. By migrating your data a
 
 | Article | Description |
 |:--|:--|
+| **[Migrate with Migration Assistant](../database/sql/migration-assistant.md)** | [Migrate from an on-premises SQL Server database](../database/sql/migrate-with-migration-assistant-using-dacpac.md) to a SQL database in Fabric by using the Fabric Migration Assistant. |
 | **[SqlPackage and Copy job](../database/sql/sqlpackage.md#import-a-database-with-sqlpackage)** | Migrate from Azure SQL Database or on-premises SQL Server to SQL database in Fabric with minimal downtime by using a `.bacpac` file and SqlPackage, then a [Copy job](../data-factory/what-is-copy-job.md). |
 
 ## Migration resources

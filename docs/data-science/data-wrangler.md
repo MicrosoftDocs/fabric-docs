@@ -151,4 +151,4 @@ Now that you know how to use Data Wrangler with pandas DataFrames, explore these
 - [Watch a live demo](https://www.youtube.com/watch?v=Ge0VWZMa50I) - See Data Wrangler in action with Guy in a Cube
 - [Try Data Wrangler in VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.datawrangler) - Use Data Wrangler in Visual Studio Code
 
-**Have feedback?** Share your ideas in the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
+**Have feedback?** Share your ideas in the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

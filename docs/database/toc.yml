@@ -135,7 +135,14 @@ items:
       href: sql/load-data-pipelines.md
     - name: Load data with Fabric Dataflow Gen2
       href: sql/dataflows.md
-
+  - name: Migrate
+    items:
+    - name: Migrate with the Migration Assistant
+      href: sql/migration-assistant.md
+      displayName: Migration Assistant
+    - name: Migrate from SQL Server using DACPAC
+      href: sql/migrate-with-migration-assistant-using-dacpac.md
+      displayName: How to Migrate from SQL Server using DACPAC
   - name: Mirroring to OneLake
     items:
     - name: Mirroring to OneLake Overview

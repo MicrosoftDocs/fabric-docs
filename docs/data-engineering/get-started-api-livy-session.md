@@ -4,7 +4,7 @@ description: Learn how to submit Spark session jobs using the Livy API.
 ms.reviewer: avinandac
 ms.topic: how-to
 ms.search.form: Get started with Session jobs with the Livy API for Data Engineering
-ms.date: 04/07/2026
+ms.date: 04/10/2026
 ms.custom: sfi-image-nochange
 ---
 
@@ -220,7 +220,7 @@ Add these scopes only if your Spark jobs need to access the corresponding Azure 
 | `Code.AccessSQL.All` | Allows getting access tokens to Azure SQL. | Your Spark code needs to connect to Azure SQL databases. |
 
 > [!NOTE]
-> The `Lakehouse.Execute.All` and `Lakehouse.Read.All` scopes are also required but are not part of the `Code.*` family. They grant permission to execute operations in and read metadata from Fabric lakehouses respectively.
+> The `Lakehouse.Execute.All` and `Lakehouse.Read.All` scopes are also required but aren't part of the `Code.*` family. They grant permission to execute operations in and read metadata from Fabric lakehouses respectively.
 
 ## Create a Livy API Spark session
 

@@ -15,6 +15,9 @@ Dataflows are a cloud-based tool that helps you prepare and transform data witho
 
 Dataflow Gen2 is the newer, more powerful version that works alongside the original Power BI Dataflow (now called Gen1). Built using the familiar [Power Query](/power-query/power-query-what-is-power-query) experience that's available across several Microsoft products and services such as Excel, Power BI, Power Platform, and Dynamics 365, Dataflow Gen2 provides enhanced features, better performance, and fast copy capabilities to quickly ingest and transform data. If you're starting fresh, we recommend Dataflow Gen2 for its enhanced features and better performance.
 
+> [!IMPORTANT]
+> As of April 2026, the option to create new Dataflow Gen2 items without CI/CD and Git integration support (previously known as Dataflow Gen2 Classic) is no longer available. All new Dataflow Gen2 items are now created with CI/CD and Git integration support by default. Existing Dataflow Gen2 items without CI/CD support continue to work as expected. To convert an existing classic dataflow, use the [Save As feature](migrate-to-dataflow-gen2-using-save-as.md).
+
 ## What can you do with dataflows?
 
 With dataflows, you can:
@@ -141,7 +144,7 @@ If you have a dataflow in Power BI or Power Apps, you can copy your queries and 
 
 ### Use the Save As feature
 
-If you already have any type of dataflow (Gen1, Gen2, or Gen2 CI/CD), Data Factory now includes a Save As feature. This lets you save any existing dataflow as a new Dataflow Gen2 (CI/CD) item with just one action. More details: [Migrate to Dataflow Gen2 (CI/CD) using Save As](migrate-to-dataflow-gen2-using-save-as.md).
+If you already have any type of dataflow (Gen1 or Gen2), Data Factory includes a Save As feature. This lets you save any existing dataflow as a new Dataflow Gen2 item with CI/CD and Git integration support in just one action. More details: [Migrate to Dataflow Gen2 using Save As](migrate-to-dataflow-gen2-using-save-as.md).
 
 ## Staging items in your workspace
 

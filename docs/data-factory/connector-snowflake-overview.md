@@ -3,7 +3,7 @@ title: Snowflake connector overview
 description: This article provides an overview of the Snowflake connector in Microsoft Fabric.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 11/10/2025
+ms.date: 04/21/2026
 ms.custom:
   - template-how-to
   - connectors
@@ -17,7 +17,7 @@ The Snowflake connector is supported in Data Factory for [!INCLUDE [product-name
 
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
-| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Snowflake<br> Microsoft Account <br> Key-pair |
+| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Snowflake<br> Microsoft Account <br> Key-pair <br> Service Principal (SPN) |
 | **Pipeline**<br>- [Copy activity](connector-snowflake-copy-activity.md) (source/destination) <br>- Lookup activity  <br>- Script activity |None<br> On-premises<br> Virtual network |Snowflake<br> Microsoft Account <br> Key-pair |
 | **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- CDC<br>- Append <br>- Override <br>- CDC Merge |None<br> On-premises<br> Virtual network |Snowflake<br> Microsoft Account <br> Key-pair |
 

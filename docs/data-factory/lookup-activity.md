@@ -52,7 +52,7 @@ The example in the previous image shows a Lakehouse connection, but each connect
 Preview data helps you:
 - Validate that your Lakehouse table or query returns the expected columns and values  
 - Confirm whether the result is a **single row** or **multiple rows**  
-- Understand the output shape (`firstRow` vs `value`) before referencing it in expressions  
+- Understand the output shape (`firstRow` vs `value`) before referencing it in [expressions](expression-language.md)  
 
 ## Use the Lookup activity output
 
@@ -60,7 +60,7 @@ After the Lookup activity runs, it returns the results of your query in the **Ou
 
 :::image type="content" source="media/lookup-activity/lookup-activity-output.png" alt-text="Screenshot showing the Lookup activity output after running.":::
 
-You'll be able to use the output of the Lookup activity via the expression builder in subsequent activities.
+You'll be able to use the output of the Lookup activity via the [expression](expression-language.md) builder in subsequent activities.
 
 The Lookup output is commonly used to:
 - Control branching logic (for example, **If Condition** or **Switch**)  

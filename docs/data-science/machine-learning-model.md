@@ -164,8 +164,8 @@ Once you train a model on a data set, you can apply that model to data it never 
 
 Fabric supports multiple approaches for applying your trained models:
 
-- **Batch scoring** – Apply your model at scale across large datasets using Apache Spark. This is ideal for generating predictions on historical or scheduled data.
-- **Real-time scoring** – Deploy your model to an endpoint for on-demand predictions, useful for applications that need immediate results.
+- **Batch scoring** ï¿½ Apply your model at scale across large datasets using Apache Spark. This is ideal for generating predictions on historical or scheduled data.
+- **Real-time scoring** ï¿½ Deploy your model to an endpoint for on-demand predictions, useful for applications that need immediate results.
 
 To get started with applying your models, choose the approach that fits your scenario:
 
@@ -179,4 +179,5 @@ To get started with applying your models, choose the approach that fits your sce
 
 - [Track experiments with MLflow in Fabric](machine-learning-experiment.md)
 - [MLflow Experiment APIs reference](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
+- [Manage MLflow models across workspaces and platforms](machine-learning-cross-workspace-logging.md)
 

@@ -1,8 +1,8 @@
 ---
 title: Learn how to analyze query processing for Direct Lake semantic models
 description: Describes how to analyze query processing for Direct Lake semantic models.
-author: JulCsc
-ms.author: juliacawthra
+author: kgremban
+ms.author: kgremban
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: how-to

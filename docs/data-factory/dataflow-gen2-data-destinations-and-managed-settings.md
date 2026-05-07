@@ -266,6 +266,21 @@ Lakehouse, Warehouse, and SQL databases in Microsoft Fabric all support the abil
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-schema-support.png" alt-text="Screenshot highlighting the Enable schema support option.":::
 
+### Automatic SQL analytics endpoint metadata sync for Lakehouse destinations
+
+When a Dataflow Gen2 refresh writes data to a Lakehouse table destination, the SQL analytics endpoint metadata is automatically synchronized as part of the refresh. This means your data is immediately queryable through the SQL analytics endpoint after a successful refresh, with no additional action or separate API call required.
+
+This behavior is controlled by the **Synchronize SQL Analytics Endpoint metadata** option, which lives under **Advanced options** in the Lakehouse connection settings (visible when you create or edit a Lakehouse data destination connection). The option is set to **True** by default.
+
+In most scenarios, you should leave this option enabled so downstream consumers (Power BI semantic models, notebooks, SQL queries) always see the latest data after a dataflow refresh.
+
+You can set this option to **False** in edge cases where:
+
+* You don't query the Lakehouse through the SQL analytics endpoint and don't need the metadata sync.
+* You see significantly longer refresh times caused by a large delta log backlog on the destination Lakehouse, and you want to skip the synchronization step until the backlog is addressed (for example, through table maintenance and vacuuming).
+
+When the option is set to **False**, the SQL analytics endpoint metadata isn't refreshed by the dataflow, and downstream SQL endpoint consumers may see stale data until the next sync (manual or scheduled) occurs.
+
 ### Vacuuming your Lakehouse data destination
 
 When using Lakehouse as a destination for Dataflow Gen2 in Microsoft Fabric, it's important to perform regular maintenance to keep optimal performance and efficient storage management. One essential maintenance task is vacuuming your data destination. This process helps to remove old files that are no longer referenced by the Delta table log, which optimizes storage costs and maintains the integrity of your data.

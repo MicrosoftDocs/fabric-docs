@@ -235,3 +235,4 @@ ML Experiment are integrated directly into Monitor, where you can select a speci
 
 - [Learn about MLflow Experiment APIs](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html)
 - [Track and manage machine learning models](machine-learning-model.md)
+- [Manage MLflow models across workspaces and platforms](machine-learning-cross-workspace-logging.md)

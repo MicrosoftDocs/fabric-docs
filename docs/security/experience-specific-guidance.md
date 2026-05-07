@@ -19,7 +19,7 @@ Many guidance sections in this document use the following sample scenario for pu
 Let's say you have a capacity C1 in region A that has a workspace W1. If you've [turned on disaster recovery](./disaster-recovery-guide.md#disaster-recovery-capacity-setting) for capacity C1, OneLake data is replicated to a backup in region B. If region A faces disruptions, the Fabric service in C1 fails over to region B. 
 
 > [!NOTE]
-> This recovery guidance applies only when the secondary region supports Fabric.
+> This recovery guidance applies only when the primary region has an Azure‑paired secondary region and Fabric is supported in the paired region.
 
 The following image illustrates this scenario. The box on the left shows the disrupted region. The box in the middle represents the continued availability of the data after failover, and the box on the right shows the fully covered situation after the customer acts to restore their services to full function.
 
@@ -332,14 +332,21 @@ This guide walks you through the recovery procedures for the Real-Time Intellige
 
 ### Graph Model/Queryset
 
-Graph Model and Graph Queryset items from the primary region remain unavailable to customers, and these items aren't replicated to the secondary region.
+Graph Model and Graph Queryset items from the primary region remain unavailable to customers, and these items aren't replicated to the secondary region. To recover, create or use a capacity in a different region and recreate the Graph Model and Graph Queryset items there.
 
-If you want to recover a Graph Model or Graph Queryset item when a disaster happens, set up [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md), and [synchronize](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) your Graph Model and Graph Queryset items with your Git repo.
+1. Create or use an existing Fabric capacity in a different region that isn't affected by the disaster.
 
-During the recovery, after the new region/capacity in Fabric is set up, you can use the repo to rebuild the Graph Model and Graph Queryset items in the new workspace you created. Since the new workspace is empty, [Git sync](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) gets the contents from the repo into the empty workspace. This step restores the Graph Model and Graph Queryset items in the new workspace.
+1. Create a new workspace or use an existing workspace in that capacity.
 
-> [!NOTE]
-> If the original Graph Model item has a lakehouse configured for data loading, refer to the [Lakehouse section](#lakehouse) to recover it first. After the lakehouse is recovered, connect the newly recovered lakehouse to the newly recovered Graph Model item.
+1. Recreate the Graph Model item in the secondary workspace (referenced in step 2). Reconfigure the model definition, including nodes, edges, etc., to match the original Graph Model.
+
+1. If the original lakehouse is in the failing region, recover it first by following the [Lakehouse section](#lakehouse).
+
+1. Connect a lakehouse as the OneLake data source for the newly created Graph Model item. Use the recovered lakehouse if it was in the failing region, or reconnect to the existing lakehouse if it remains available.
+
+1. Reconfigure any data loading schedules or connections for the Graph Model in the new workspace.
+
+1. Recreate the Graph Queryset item in the secondary workspace. Manually reenter the queries and any saved query configurations from the original Graph Queryset.
 
 ### KQL Database/Queryset
 

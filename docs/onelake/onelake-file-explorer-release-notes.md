@@ -1,7 +1,9 @@
 ---
 title: OneLake file explorer release notes
 description: Information about major updates in each release of the OneLake file explorer client app for Windows.
-ms.reviewer: harmeetgill
+ms.reviewer: harmeetgill # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.date: 03/13/2026
 #customer intent: As a OneLake file explorer user, I want to stay informed about app updates and easily access release notes so that I can take advantage of new features and improvements.
@@ -91,7 +93,7 @@ When you move a folder (cut and paste or drag and drop) from a location outside 
 
 ## Support lifecycle
 
-Only the most recent version of OneLake file explorer is supported. If you contact support for OneLake file explorer, they ask you to upgrade to the most recent version. Download the latest [OneLake file explorer](https://go.microsoft.com/fwlink/?linkid=2235671).
+Only the most recent version of OneLake file explorer is supported. If you contact support for OneLake file explorer, they ask you to upgrade to the most recent version. Download the latest [OneLake file explorer](https://www.microsoft.com/en-us/download/details.aspx?id=105222).
 
 ## Related content
 

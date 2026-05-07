@@ -1,29 +1,25 @@
 ---
 title: Create roles 
-description: Learn how to create and manage roles with OneLake security (preview) to control access to items within OneLake.
+description: Learn how to create and manage roles with OneLake security to control access to items within OneLake.
 ms.reviewer: aamerril
 ms.topic: how-to
 ms.date: 03/03/2026
 #customer intent: As a Fabric user, I want to learn how to create and manage OneLake security roles so that I can control access to specific folders in my lakehouse and ensure data security.
 ---
 
-# Create and manage OneLake security roles (preview)
+# Create and manage OneLake security roles
 
 By using OneLake security roles, you can control who can access specific tables and folders in your Fabric data items. This article shows you how to create, edit, and delete security roles, and how to assign members to those roles. For an overview of OneLake security concepts and permissions, see [OneLake security overview](get-started-security.md).
 
 The following data items support OneLake security:
 
-| Fabric item | Status | Supported permissions |
-| ---- | --- | --- |
-| Lakehouse | Preview | Read, ReadWrite |
-| Azure Databricks Mirrored Catalog | Preview | Read |
+[!INCLUDE [onelake-security-supported-items](../../includes/onelake-security-supported-items.md)]
 
 Role creation and membership assignment take effect as soon as you save the role, so make sure you want to grant access before adding someone to a role.
 
 ## Prerequisites
 
 * Fabric Write or Reshare permissions (generally included for Admin or Member workspace users)
-* While in preview OneLake security is disabled by default and needs to be enabled on a per-item basis. For more information, see [Get started with OneLake security](get-started-onelake-security.md).
 
 ## Create a role
 
@@ -31,7 +27,7 @@ Use the following steps to create a OneLake security role.
 
 1. Open the Fabric item where you want to define security.
 
-1. Select **Manage OneLake security (preview)** from the item menu.
+1. Select **Manage OneLake security** from the item menu.
 
 1. On the **OneLake security** pane, select **New**.
 
@@ -41,7 +37,7 @@ Use the following steps to create a OneLake security role.
    | --------- | ----- |
    | **Role name** | Provide a name that meets the following guidelines:<br><br>* The role name only contains alphanumeric characters.<br>* The role name starts with a letter.<br>* Names are case insensitive and must be unique.<br>* The maximum name length is 128 characters. |
    | **Type of role** | Select **Grant**. |
-   | **Select Grant permissions** | Choose the permissions you want to grant. **Read** is selected at a minimum, and you can optionally add **ReadWrite**. |
+   | **Select Grant permissions** | Choose the permissions you want to grant. **Read** is selected at a minimum, and you can optionally add **ReadWrite** for some item types. |
 
 1. Select **Next**.
 
@@ -76,7 +72,7 @@ Use the following steps to edit an existing OneLake security role.
 
 1. Open the item where you want to define security.
 
-1. Select **Manage OneLake security (preview)** from the item menu.
+1. Select **Manage OneLake security** from the item menu.
 
 1. On the **OneLake security** pane, select the role that you want to edit.
 
@@ -128,7 +124,7 @@ Use the following steps to delete a OneLake data access role.
 
 1. Open the lakehouse where you want to define security.
 
-1. Select **Manage OneLake security (preview)** from the Lakehouse menu.
+1. Select **Manage OneLake security** from the Lakehouse menu.
 
 1. On the **OneLake security** pane, check the box next to the roles you want to delete.
 

@@ -4,7 +4,7 @@ description: Learn how to submit Spark batch jobs using the Livy API.
 ms.reviewer: avinandac
 ms.topic: how-to
 ms.search.form: Get started with batch jobs with the Livy API for Data Engineering
-ms.date: 04/07/2026
+ms.date: 04/10/2026
 ms.custom: sfi-image-nochange
 ---
 
@@ -80,17 +80,17 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         df_valid_totalPrice_plus_year.write.mode('overwrite').format('delta').save(deltaTablePath)
     ```
 
-1. Save the Python file locally. This Python code payload contains two Spark statements that work on data in a Lakehouse and needs to be uploaded to your Lakehouse.  You need the ABFS path of the payload to reference in your Livy API batch job in Visual Studio Code and your Lakehouse table name in the Select SQL statement.
+1. Save the Python file locally. This Python code payload contains two Spark statements that work on data in a Lakehouse and needs to be uploaded to your Lakehouse. You need the ABFS (Azure Blob File System) path of the payload to reference in your Livy API batch job in Visual Studio Code and your Lakehouse table name in the `SELECT` SQL statement.
 
     :::image type="content" source="media\livy-api\Livy-batch-payload.png" alt-text="Screenshot showing the Python payload cell." lightbox="media\livy-api\Livy-batch-payload.png" :::
 
 1. Upload the Python payload to the files section of your Lakehouse. In the Lakehouse explorer, select **Files**. Then select > **Get data** > **Upload files**. Select files via the file picker.
 
-    :::image type="content" source="media\livy-api\Livy-batch-payload-in-lakehouse-files.png" alt-text="Screenshot showing payload in Files section of the Lakehouse." lightbox="media\livy-api\Livy-batch-payload-in-lakehouse-files.png" :::
+    :::image type="content" source="media\livy-api\livy-batch-payload-in-lakehouse-files.png" alt-text="Screenshot showing payload in Files section of the Lakehouse." lightbox="media\livy-api\livy-batch-payload-in-lakehouse-files.png" :::
 
-1. After the file is in the Files section of your Lakehouse, click on the three dots to the right of your payload filename and select Properties.
+1. After the file is in the Files section of your Lakehouse, select the three dots (ellipsis) to the right of your payload filename and select Properties.
 
-    :::image type="content" source="media\livy-api\Livy-batch-ABFS-path.png" alt-text="Screenshot showing payload ABFS path in the Properties of the file in the Lakehouse." lightbox="media\livy-api\Livy-batch-ABFS-path.png" :::
+    :::image type="content" source="media\livy-api\livy-batch-ABFS-path.png" alt-text="Screenshot showing payload ABFS path in the Properties of the file in the Lakehouse." lightbox="media\livy-api\livy-batch-ABFS-path.png" :::
 
 1. Copy this ABFS path to your Notebook cell in step 1.
 
@@ -244,7 +244,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Run the notebook cell, a popup should appear in your browser allowing you to choose the identity to sign-in with.
 
-    :::image type="content" source="media/livy-api/entra-logon-user.png" alt-text="Screenshot showing logon screen to Microsoft Entra app." lightbox="media/livy-api/entra-logon-user.png" :::
+    :::image type="content" source="media/livy-api/entra-logon-user.png" alt-text="Screenshot showing sign-in screen to Microsoft Entra app." lightbox="media/livy-api/entra-logon-user.png" :::
 
 1. After you choose the identity to sign-in with, you need to approve the Microsoft Entra app registration API permissions.
 
@@ -254,7 +254,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media\livy-api\entra-authentication-complete.png" alt-text="Screenshot showing authentication complete." lightbox="media\livy-api\entra-authentication-complete.png" :::
 
-1. In Visual Studio Code you should see the Microsoft Entra token returned.
+1. In Visual Studio Code, you should see the Microsoft Entra token returned.
 
     :::image type="content" source="media/livy-api/Livy-session-entra-token.png" alt-text="Screenshot showing the Microsoft Entra token returned after running cell and logging in." lightbox="media/livy-api/Livy-session-entra-token.png":::
 
@@ -282,7 +282,7 @@ Add these scopes only if your Spark jobs need to access the corresponding Azure 
 | `Code.AccessSQL.All` | Allows getting access tokens to Azure SQL. | Your Spark code needs to connect to Azure SQL databases. |
 
 > [!NOTE]
-> The `Lakehouse.Execute.All` and `Lakehouse.Read.All` scopes are also required but are not part of the `Code.*` family. They grant permission to execute operations in and read metadata from Fabric lakehouses respectively.
+> The `Lakehouse.Execute.All` and `Lakehouse.Read.All` scopes are also required but aren't part of the `Code.*` family. They grant permission to execute operations in and read metadata from Fabric lakehouses respectively.
 
 ## Submit a Livy Batch and monitor batch job.
 
@@ -364,13 +364,13 @@ Add these scopes only if your Spark jobs need to access the corresponding Azure 
 
 1. Run the notebook cell, you should see several lines printed as the Livy Batch job is created and run.
 
-    :::image type="content" source="media\livy-api\Livy-batch-job-submission.png" alt-text="Screenshot showing results in Visual Studio Code after Livy Batch Job has been successfully submitted." lightbox="media\livy-api\Livy-batch-job-submission.png" :::
+    :::image type="content" source="media\livy-api\Livy-batch-job-submission.png" alt-text="Screenshot showing results in Visual Studio Code after Livy Batch Job is successfully submitted." lightbox="media\livy-api\Livy-batch-job-submission.png" :::
 
 1. To see the changes, navigate back to your Lakehouse.
 
 ## Integration with Fabric Environments
 
-By default, this Livy API session runs against the default starter pool for the workspace.  Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs.  To use your Fabric Environment, update the prior notebook cell with this one line change.
+By default, this Livy API session runs against the default starter pool for the workspace. Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs. To use your Fabric Environment, update the prior notebook cell with this one line change.
 
 ```python
 payload_data = {

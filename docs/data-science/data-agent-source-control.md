@@ -1,6 +1,8 @@
 ---
 title: "Source Control, CI/CD, and ALM for Fabric Data Agent"
 description: "Learn how to use source control, CI/CD, and ALM with Microsoft Fabric data agent."
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: amjafari
 ms.topic: concept-article
 ms.date: 08/8/2025
@@ -8,7 +10,7 @@ ms.date: 08/8/2025
 
 # Source Control, CI/CD, and ALM for Fabric data agent
 
-This article describes how to manage Fabric data agents using Git integration and deployment pipelines as part of Microsoft Fabric’s Application Lifecycle Management (ALM) capabilities. You learn how to connect a workspace to a Git repository. You’ll also learn how to track and version data agent configurations. Finally, you’ll learn how to promote updates across development, test, and production environments. Git integration and deployment pipelines enable continuous integration and continuous deployment (CI/CD) of data agent changes, allowing updates to be tested and promoted automatically as part of your ALM workflow. Source control for Fabric data agents is currently in preview.
+This article describes how to manage Fabric data agents using Git integration and deployment pipelines as part of Microsoft Fabric's Application Lifecycle Management (ALM) capabilities. You learn how to connect a workspace to a Git repository. You'll also learn how to track and version data agent configurations. Finally, you'll learn how to promote updates across development, test, and production environments. Git integration and deployment pipelines enable continuous integration and continuous deployment (CI/CD) of data agent changes, allowing updates to be tested and promoted automatically as part of your ALM workflow. Source control for Fabric data agents is currently in preview.
 
 You can use two complementary approaches to support ALM for Fabric data agents:
 
@@ -53,7 +55,7 @@ You can connect your Fabric workspace to a Git repository from the **Workspace s
 
 :::image type="content" source="./media/data-agent-cicd/git-repo.png" alt-text="Screenshot showing the git repository." lightbox="./media/data-agent-cicd/git-repo.png":::
 
-4. When you make modifications to the Fabric data agent in a Git-connected workspace, the changes are detected and the data agent’s status in the Source control pane changes to Uncommitted changes. These modifications can include:
+4. When you make modifications to the Fabric data agent in a Git-connected workspace, the changes are detected and the data agent's status in the Source control pane changes to Uncommitted changes. These modifications can include:
 
     - Changing the schema selection.
     - Updating AI instructions or data source instructions.
@@ -70,7 +72,7 @@ Any change—whether functional or descriptive—causes the data agent to become
 
 ### Folder and file structure in the Git repository
 
-In the following, you review the structure of how a data agent’s configuration is stored in a Git repository. Understanding this structure is important for managing changes and following best practices. When using feature branches, make changes in the branch tied to the workspace, review diffs in the **Source control** pane, and merge via pull requests for controlled promotion. The files and config structure for data agents remains the same across branches.
+In the following, you review the structure of how a data agent's configuration is stored in a Git repository. Understanding this structure is important for managing changes and following best practices. When using feature branches, make changes in the branch tied to the workspace, review diffs in the **Source control** pane, and merge via pull requests for controlled promotion. The files and config structure for data agents remains the same across branches.
 
 #### Root structure
 
@@ -110,7 +112,7 @@ The **datasource.json** defines the configuration for that data source, includin
 - `displayName`, which shows the name of the data source.
 - `elements`, which refers to the schema map and includes a complete list of tables and columns from the data source.
   - Each table has an `is_selected` property. If `true`, the table is included and if `false`, it means the table isn't selected and won't be used by the data agent.
-  - Column entries also show `is_selected`, but column-level selection isn’t currently supported. If a table is selected, all of its columns are included regardless of the column `is_selected` value. If a table isn't selected (`is_selected`: `false` at the table level), none of the columns are considered despite that `is_selected` is set to `true` at the column level.
+  - Column entries also show `is_selected`, but column-level selection isn't currently supported. If a table is selected, all of its columns are included regardless of the column `is_selected` value. If a table isn't selected (`is_selected`: `false` at the table level), none of the columns are considered despite that `is_selected` is set to `true` at the column level.
 - Type conventions:
 
   - If the type is a data source, it's simply the data source type (for example: `"type": "lakehouse_tables"`).
@@ -140,7 +142,7 @@ Deployment pipelines provide a controlled way to move data agents between worksp
 
 :::image type="content" source="./media/data-agent-cicd/select-deployment-pipeline.png" alt-text="Screenshot showing the deployment pipeline setup." lightbox="./media/data-agent-cicd/select-deployment-pipeline.png":::
 
-Before deploying, you need to assign a workspace to each stage in the deployment pipeline: development, test, and production. If you don’t assign a workspace to the test or production stage, the workspaces are automatically created. The automatically created workspaces are named after the development workspace, with [test] or [prod] appended.
+Before deploying, you need to assign a workspace to each stage in the deployment pipeline: development, test, and production. If you don't assign a workspace to the test or production stage, the workspaces are automatically created. The automatically created workspaces are named after the development workspace, with [test] or [prod] appended.
 
 :::image type="content" source="./media/data-agent-cicd/test-workspace.png" alt-text="Screenshot showing the dev to test." lightbox="./media/data-agent-cicd/test-workspace.png":::
 

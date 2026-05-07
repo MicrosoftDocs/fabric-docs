@@ -1,40 +1,45 @@
 ---
 title: Row-level security
-description: Learn how to use OneLake security (preview) to enforce access permissions at the row level in OneLake.
+description: Learn how to use OneLake security to enforce access permissions at the row level in OneLake.
 ms.reviewer: aamerril
 ms.topic: how-to
-ms.date: 09/05/2025
+ms.date: 04/29/2026
 #customer intent: As a [], I want to learn how to [] so that I can [].
 ---
 
-# Row-level security in OneLake (preview)
+# Row-level security in OneLake
 
-Row-level security (RLS) is a feature of OneLake security (preview) that allows for defining row-level data restrictions for tabular data stored in OneLake. Users can define roles in OneLake that contain rules for filtering rows of data for members of that role. When a member of an RLS role goes to query that data, the RLS rules are evaluated and only allowed rows are returned. RLS rules defined in OneLake are consistently enforced across Fabric engines and [authorized third-party engines](./onelake-security-integrations-overview.md) via OneLake APIs, ensuring a single policy definition is applied regardless of the query engine.
+Row-level security (RLS) is a feature of OneLake security that allows for defining row-level data restrictions for tabular data stored in OneLake. Users can define roles in OneLake that contain rules for filtering rows of data for members of that role. When a member of an RLS role goes to query that data, the RLS rules are evaluated and only allowed rows are returned. RLS rules defined in OneLake are consistently enforced across Fabric engines and [authorized third-party engines](./onelake-security-integrations-overview.md) via OneLake APIs, ensuring a single policy definition is applied regardless of the query engine.
 
 ## Prerequisites
 
-* An item in OneLake with OneLake security turned on. For more information, see [Get started with OneLake data access roles](get-started-onelake-security.md).
-* Switch the SQL Analytics Endpoint on the lakehouse to "User's identity" mode through the **Security** tab.
-* For creating semantic models, use the steps to create a [DirectLake model](../../fundamentals/direct-lake-power-bi-desktop.md).
-* For a full list of limitations, see the [known limitations section.](./data-access-control-model.md#onelake-security-limitations)
+* A data item that supports OneLake security. For a list of supported item types, see [Get started with OneLake security](get-started-onelake-security.md).
+* Review the [known limitations section](./data-access-control-model.md#onelake-security-limitations).
 
-## Enforce row-level security
+## Understand row-level security
 
-OneLake security RLS gets enforced in one of two ways: 
+OneLake security RLS gets enforced in one of two ways:
 
 * **Filtered tables in Fabric engines:** Queries to the list of supported Fabric engines, like Spark notebooks, result in the user seeing only the rows they're allowed to see per the RLS rules.
-* **Blocked access to tables:** Tables with RLS rules applied to them can't be read outside of supported Fabric engines or [authorized third-party engines](./onelake-security-integrations-overview.md) that enforce OneLake security. Access is blocked for non-authorized engines.
+* **Blocked access to tables:** Tables with RLS rules applied to them can't be read except through supported Fabric engines or authorized third-party engines that enforce OneLake security. Access is blocked for non-authorized engines.
 
 For filtered tables, the following behaviors apply:
 
 * RLS rules don't restrict access for users in the Admin, Member, and Contributor roles.
 * If the RLS rule has a mismatch with the table it's defined on, the query fails and no rows are returned. For example, if the RLS rule references a column that isn't part of the table.
-* Queries of RLS tables fail with an error if a user is part of two different roles and one of the roles has column-level security (CLS). 
-* RLS rules can only be enforced for objects that are Delta parquet tables. 
+* Queries of RLS tables fail with an error if a user is part of two different roles and one of the roles has column-level security (CLS).
+* RLS rules can only be enforced for objects that are Delta parquet tables.
   * RLS rules that are applied to non-Delta table objects instead block access to the entire table for members of the role.
 * Access to a table might be blocked if the RLS statement contains syntax errors that prevent it from being evaluated.
 
-### Authorized engine enforcement
+### Access data from authorized engines
+
+[Supported Fabric engines](./data-access-control-model.md#engine-and-user-access-to-data) can access tables with RLS rules applied to them.
+
+>[!TIP]
+>
+>* To access data from a SQL analytics endpoint, [enable OneLake security for SQL analytics endpoint](./get-started-onelake-security.md#enable-onelake-security-for-sql-analytics-endpoint).
+>* To access data from a semantic model, the semantic model needs to use [Direct Lake on OneLake](../../fundamentals/direct-lake-develop.md).
 
 Authorized third-party engines can retrieve effective access definitions, including RLS predicates, through the [authorized engine APIs](./onelake-security-integrations-overview.md). OneLake returns engine-agnostic, precomputed effective access for the requesting user, and the authorized engine enforces the policies at query time. OneLake remains the single source of truth for security policies.
 
@@ -44,44 +49,23 @@ For more information, see [Integrate a third-party engine with OneLake security]
 
 You can define row-level security rules as part of any OneLake security role that grants access to table data in Delta parquet format. Rows are a concept only relevant to tabular data, so RLS definitions aren't allowed for non-table folders or unstructured data.  
 
-RLS rules use SQL syntax to specify the rows that a user can see. This syntax takes the form of a SQL `SELECT` statement with the RLS rules defined in the `WHERE` clause. RLS rules only support a subset of the SQL language as defined in [Syntax rules](#syntax-rules). Queries with invalid RLS syntax or RLS syntax that doesn't match the underlying table result in no rows being shown to users, or query errors in the SQL analytics endpoint. 
+RLS rules use SQL syntax to specify the rows that a user can see. This syntax takes the form of a SQL `SELECT` statement with the RLS rules defined in the `WHERE` clause. RLS rules only support a subset of the SQL language as defined in [Syntax rules](#syntax-rules). Queries with invalid RLS syntax or RLS syntax that doesn't match the underlying table result in no rows being shown to users, or query errors in the SQL analytics endpoint.
 
-As a best practice, avoid using vague or overly complex RLS expressions. Strongly-typed expressions with integer or string lookups with "=" will be the most secure and easy to understand.
+As a best practice, avoid using vague or overly complex RLS expressions. Strongly typed expressions with integer or string lookups with "=" will be the most secure and easy to understand.
 
-Use the following steps to define RLS rules: 
+Use the following steps to define RLS rules:
 
-1. Navigate to your Lakehouse and select **Manage OneLake security (preview)**.
+1. Navigate to your Lakehouse and select **Manage OneLake security**.
 
 1. Select an existing role that you want to define table or folder security for, or select **New** to create a new role.
 
-1. On the role details page, select more options (**...**) next to the table you want to define RLS for, then select **Row security (preview)**. 
+1. On the role details page, select more options (**...**) next to the table you want to define RLS for, then select **Row security**. 
 
    :::image type="content" source="./media/row-level-security/select-row-security.png" alt-text="Screenshot that shows selecting 'row security' to edit permissions on a table.":::
 
 1. Type the SQL statement for defining which rows you want users to see in the code editor. Use the [Syntax rules](#syntax-rules) section for guidance. 
 
 1. Select **Save** to confirm the row security rules.
-
-### Enable OneLake security for SQL analytics endpoint
-
-Before you can use OneLake security with SQL analytics endpoint, you must enable its **User's identity mode**. Newly created SQL analytics endpoints will default to user's identity mode, so these steps must be followed for existing SQL analytics endpoints.
-
-> [!NOTE]
-> Switching to **User's identity** mode only needs to be done once per SQL analytics endpoint. Endpoints that are not switched to user's identity mode will continue to use a delegated identity to evaluate permissions.
-
-1. Navigate to SQL analytics endpoint.
-
-1. In the SQL analytics endpoint experience, select the **Security** tab in the top ribbon.
-
-1. Select **User's identity** under **OneLake access mode**.
-
-   :::image type="content" source="./media/row-level-security/sqlaep-enable-userid.png" alt-text="Screenshot that shows selecting 'user identity' to enable OneLake security for SQL analytics endpoint.":::
-
-1. In the prompt, select **Yes, use the user's identity**. 
-
-   :::image type="content" source="./media/row-level-security/sqlaep-prompt.png" alt-text="Screenshot that shows user prompt which must be accepted to enable OneLake security for table read access.":::
-
-Now the SQL analytics endpoint is ready to use with OneLake security.
 
 ## Syntax rules
 

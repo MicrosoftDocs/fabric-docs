@@ -33,11 +33,11 @@ To view the list of preinstalled packages and their versions for each runtime, s
 
 ## External repositories
 
-You can add libraries from public repositories like PyPI and Conda, or from private repositories. The source and publish mode options differ depending on the repository type. When you add a library, you select a publish mode (Full or Quick). For details on how each mode works, see [Select publish mode for libraries](#select-publish-mode-for-libraries).
+You can add libraries from public repositories like PyPI, Conda and Maven, or from private repositories. The source and publish mode options differ depending on the repository type. When you add a library, you select a publish mode (Full or Quick). For details on how each mode works, see [Select publish mode for libraries](#select-publish-mode-for-libraries).
 
 :::image type="content" source="media\environment-library-management\environment-library-management-external-repositories-library.png" alt-text="Screenshot that shows the environment External repositories Libraries screen." lightbox="media\environment-library-management\environment-library-management-external-repositories-library.png":::
 
-### Add a library from a public repository
+### Add a library from a public Python repository
 
 Public repositories let you install packages from PyPI or Conda. 
 
@@ -54,6 +54,20 @@ Public repositories let you install packages from PyPI or Conda.
    If the library name is found, you see the available versions. 
 
 1. Select the version and then save and publish your environment.
+
+### Add library from Maven
+Fabric supports installing libraries directly from Maven repositories. To do this, create a [POM file](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html) that lists the Maven dependencies you want to install, and upload it to the Environment.
+
+
+1. In the **External repositories** tab, select **Import pom.xml**.
+
+1. Select the pom.xml file from your local directory.
+
+> [!NOTE]
+>
+> - Importing pom.xml is supported only in Spark 4.0 and later.
+> - Importing pom.xml is supported only in Full mode. In this mode, Fabric performs dependency resolution and conflict detection for Maven packages. If any library is incompatible with the runtime, you will see an error after publishing.
+> - Importing pom.xml is not supported in workspaces with Outbound Access Protection enabled. In these workspaces, download the required libraries from Maven and upload them as custom libraries instead.
 
 ### Add a library from a private repository
 
@@ -76,7 +90,7 @@ Azure Artifact Feeds can be scoped to either a project (private) or an organizat
 
 #### Set up a connection for your Azure Artifact Feed
 
-Fabric doesn't store credentials directly. Instead, you create a connection through [Data Factory Connector](/fabric/data-factory/connector-overview) and reference it by connection ID in a YML file. Learn more about [Azure Artifact Feed](/azure/devops/artifacts/quickstarts/python-packages).
+Environment doesn't store credentials directly. Instead, you create a connection through [Data Factory Connector](/fabric/data-factory/connector-overview) and reference it by connection ID in a YML file. Learn more about [Azure Artifact Feed](/azure/devops/artifacts/quickstarts/python-packages).
 
 1. Select the **Settings** gear icon in the top-right corner of the Fabric portal, and then select **Manage connections and gateways**.
 
