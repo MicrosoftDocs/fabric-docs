@@ -556,4 +556,4 @@ Evaluation notebooks are available to assess AI function output quality. These n
 
 - Customize the [configuration of AI functions in pandas](./pandas/configuration.md) or the [configuration of AI functions in PySpark](./pyspark/configuration.md).
 - Use [multimodal input with AI functions](./multimodal-overview.md) to process images, PDFs, and text files.
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).
