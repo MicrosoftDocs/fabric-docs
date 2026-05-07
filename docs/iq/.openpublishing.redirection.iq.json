@@ -26,7 +26,7 @@
       "redirect_document_id": true
     },
         {
-      "source_path_from_root": "/docs/iq/plan/planning-how-to-customize-general-settings.md",
+      "source_path_from_root": "/docs/iq/plan/planning-writeback/planning-how-to-customize-general-settings.md",
       "redirect_url": "/fabric/iq/plan/planning-writeback/planning-how-to-configure-general-settings",
       "redirect_document_id": true
     }

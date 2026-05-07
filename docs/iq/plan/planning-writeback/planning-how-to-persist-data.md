@@ -54,7 +54,7 @@ Use writeback settings to configure how data entered in a Planning sheet is save
 
 Configure settings from **Writeback > Settings**.
 
-* **General**: Defines the core settings for the writeback operation. For detailed information about general settings for writeback, see [Customize general settings for writeback](planning-how-to-customize-general-settings.md).
+* **General**: Defines the core settings for the writeback operation. For detailed information about general settings for writeback, see [Configure general settings for writeback](planning-how-to-configure-general-settings.md).
 * **Data**: Used to select and configure the measures and dimensions that participate in the writeback process.
 * **Destinations**: Defines where the planning data is written back, such as a database table or storage location.
 * **Advanced**: Provides more configuration options for controlling writeback behavior and system-level settings.
