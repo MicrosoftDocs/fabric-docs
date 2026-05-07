@@ -71,6 +71,6 @@ For detailed steps on setting up authentication for your workload, see [Set up w
 * [Publish a Fabric workload to Workload Hub](publish-workload-flow.md)
 * [Monetize your workload](monetization.md)
 * [Quick start: Run a workload sample](quickstart-sample.md)
-* [Authentication overview](authentication.concept.md)
+* [Authentication overview](authentication-concept.md)
 * [Set up workload authentication](authentication-setup.md)
 
