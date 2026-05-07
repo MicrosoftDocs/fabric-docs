@@ -1,12 +1,10 @@
 ---
 title: Working with authentication in the Workload Development Kit
-description: Learn about building a Fabric workload.
+description: Learn about authentication when building a Fabric workload.
 author: billmath  
 ms.author: billmath
-ms.topic: overview
 ms.date: 05/07/2026
-ms.topic: overview
-ms.date: 04/29/2026
+ms.topic: how-to
 ---
 
 # Working with authentication in the Workload Development Kit

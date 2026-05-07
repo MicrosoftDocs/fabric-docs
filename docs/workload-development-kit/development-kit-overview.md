@@ -5,8 +5,6 @@ author: billmath
 ms.author: billmath
 ms.topic: overview
 ms.date: 05/07/2026
-ms.topic: overview
-ms.date: 04/29/2026
 ---
 
 # Microsoft Fabric Workload Development Kit
