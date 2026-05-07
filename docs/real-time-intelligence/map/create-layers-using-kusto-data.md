@@ -5,7 +5,7 @@ ms.reviewer: smunk, sipa
 ms.topic: how-to
 ms.service: fabric
 ms.subservice: rti-core
-ms.date: 3/12/2026
+ms.date: 5/7/2026
 ms.search.form: Create layers using Kusto data
 ---
 
@@ -91,7 +91,6 @@ The following limitations apply when creating layers from Kusto data in Fabric M
 
     > [!NOTE]
     > Kusto-based layers support up to 100,000 features returned by the query.  
-    > If your dataset exceeds this limit, refine your query or apply filters to reduce the result size.
 
 1. Once your layer is created, you can focus the map to zoom into where the data elements are located. To do this. select the data layer context menu (**...**) then **Zoom to fit**.
 
