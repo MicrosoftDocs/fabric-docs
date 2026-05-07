@@ -56,7 +56,7 @@ The Microsoft Fabric Workload Development Kit might contain trademarks or logos 
 Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
 Any use of third-party trademarks or logos are subject to those third-party's policies.
 
-## Authentication overview
+## Authentication
 
 All interactions between workloads and other Fabric or Azure components must be accompanied by proper authentication support for requests received or sent. Tokens sent out must be generated properly, and tokens received must be validated properly as well.
 
