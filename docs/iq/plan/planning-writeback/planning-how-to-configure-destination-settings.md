@@ -6,9 +6,9 @@ ms.topic: how-to
 #customer intent: As a user, I want to manage writeback destinations and understand when to reset writeback data.
 ---
 
-# Destination settings
+# Configure destination settings for writeback
 
-In the **Writeback Settings** pane, the **Destinations** tab lets you add, view, delete, and manage writeback destinations. Use this tab to configure and manage existing destinations.
+In **Writeback Settings**, the **Destinations** tab lets you add, view, delete, and manage writeback destinations. Use this tab to configure and manage existing destinations.
 
 [!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
