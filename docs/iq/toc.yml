@@ -115,6 +115,8 @@ items:
                 href: plan/planning-writeback/planning-how-to-persist-data.md
               - name: Customize writeback settings
                 href: plan/planning-writeback/planning-how-to-customize-general-settings.md
+              - name: Configure destination settings
+                href: plan/planning-writeback/planning-how-to-configure-destination-settings.md
         - name: Change layouts
           href: plan/planning-how-to-change-layouts.md
         - name: Create a cube
@@ -125,6 +127,10 @@ items:
           href: plan/planning-how-to-add-notes.md
         - name: Add bookmarks
           href: plan/planning-how-to-add-bookmark.md
+        - name: Export data
+          href: plan/planning-how-to-export-data.md
+        - name: Pivot data
+          href: plan/planning-how-to-pivot-data.md
         - name: Use forecasting
           items: 
               - name: Configure forecasts
