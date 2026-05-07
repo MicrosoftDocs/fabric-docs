@@ -13,12 +13,24 @@ Fabric workloads rely on integration with [Microsoft Entra ID](/entra/fundamenta
 
 All interactions between workloads and other Fabric or Azure components must be accompanied by proper authentication support for requests received or sent. Tokens sent out must be generated properly, and tokens received must be validated properly as well.  
 
+Authentication in the workload development context ensures that:
+
+- **Identity is verified**: Every request between components proves who (or what service) is making the call.
+- **Authorization is enforced**: Tokens carry scopes and claims that determine what actions the caller can perform.
+- **Trust boundaries are maintained**: The dual-token (SubjectAndApp) pattern ensures both the user identity and the calling service identity are validated independently.
+
 It's recommended that you become familiar with the [Microsoft identity platform](/entra/identity-platform/) before starting to work with Fabric workloads. It's also recommended to go over [Microsoft identity platform best practices and recommendations](/entra/identity-platform/identity-platform-integration-checklist).
 
 ## Flows
 
-<!--:::image type="content" source="./media/authentication-concept/authentication-diagram.png" alt-text="Screenshot showing the Workload Development Kit authentication flow.":::
--->
+The following table summarizes the authentication flows between Fabric workload components:
+
+| Communication path | Token type | Purpose |
+|--------------------|-----------|---------|
+| Workload FE → Workload BE | Subject token (delegated/bearer) | User-initiated data plane calls |
+| Fabric BE → Workload BE | SubjectAndApp token | Lifecycle management (create, update, delete items) |
+| Workload BE → Fabric BE | SubjectAndApp token (control APIs) or Subject token (public APIs) | Item permission resolution, calling Fabric services |
+| Workload BE → External services | Subject token (OBO) or App token | Accessing Azure resources like Lakehouse, OneLake |
 
 * From workload frontend to workload backend
 
@@ -36,13 +48,16 @@ It's recommended that you become familiar with the [Microsoft identity platform]
 
    This is done with a SubjectAndApp token for workload control APIs (for example, ResolveItemPermissions), or with a Subject token (for other Fabric APIs).
 
+   - **Workload control APIs** (for example, `ResolveItemPermissions`, `NotifyWorkloadItemStateChange`): Use the SubjectAndApp token format. The `appToken` proves the request comes from your registered workload; the `subjectToken` provides user context for permission checks.
+   - **Public Fabric APIs** (for example, OneLake APIs, Power BI REST APIs): Use a standard OBO Subject token. Acquire this token by exchanging the user's delegated token via the [On-Behalf-Of flow](/entra/identity-platform/v2-oauth2-on-behalf-of-flow).
+
 * From workload backend to external services
 
    An example of such communication is writing to a Lakehouse file. This is done with Subject token or an App token, depending on the API.
 
    If you plan on communicating with services using a Subject token, make sure you're familiar with [On behalf of flows](/entra/identity-platform/v2-oauth2-on-behalf-of-flow).
 
-   Refer to [Authentication tutorial](./authentication-tutorial.md) to set up your environment to work with authentication.
+   Refer to [Set up workload authentication](./authentication-setup.md) to configure your environment to work with authentication.
 
 ## Authentication JavaScript API
 
@@ -211,16 +226,30 @@ The [AuthenticateControlPlaneCall](https://github.com/microsoft/Microsoft-Fabric
 
 Authorization is achieved by invoking the [ValidatePermissions](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/dotnet/src/Services/AuthorizationHandler.cs#L37) method. This method calls the `resolvePermissions` API in the Fabric workload-control endpoint for the relevant Fabric item and verifies that the user has the necessary permissions for the operation.
 
+### Common authentication errors
+
+| Error | Cause | Resolution |
+|-------|-------|------------|
+| `401 Unauthorized` — Invalid signature | Token was tampered with or signing keys are stale | Ensure your token validation library refreshes signing keys from the Microsoft Entra discovery endpoint |
+| `401 Unauthorized` — Token expired | Access token exceeded its lifetime (default: 60–90 minutes) | Implement token refresh logic; for long-running operations, use the [long-running OBO pattern](/entra/msal/dotnet/acquiring-tokens/web-apps-apis/on-behalf-of-flow#long-running-obo-processes) |
+| `403 Forbidden` — Insufficient permissions | The token's scopes don't include required permissions | Verify your app registration includes the necessary API permissions and that admin consent was granted |
+| `AADSTS65001` — Consent not granted | User hasn't consented to your workload application | Trigger the consent popup via the [authentication JavaScript API](./authentication-javascript-api.md) |
+| `AADSTS700024` — Client assertion invalid | The `appToken` doesn't match the expected workload publisher tenant | Verify `tid` claim matches your publisher tenant ID in workload configuration |
+
 ### Long-running operations - refresh Token
 
 Authorization is achieved by invoking the [ValidatePermissions](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/dotnet/src/Services/AuthorizationHandler.cs#L37) method. This method calls the `resolvePermissions` API in the Fabric workload-control endpoint for the relevant Fabric item and verifies that the user has the necessary permissions for the operation.
 
 If your workloads include long running operations, for example, as part of [JobScheduler](./monitoring-hub.md) you might run into a situation where the Token lifetime isn't sufficient. For more information about how to authenticate long running process, [Long-running OBO processes](/entra/msal/dotnet/acquiring-tokens/web-apps-apis/on-behalf-of-flow#long-running-obo-processes).
 
-
+> [!NOTE]
+> Microsoft Entra access tokens have a default lifetime of 60–90 minutes (configurable via [token lifetime policies](/entra/identity-platform/configurable-token-lifetimes)). For workload operations that exceed this window — such as scheduled jobs or batch processing — you must implement the long-running OBO pattern to maintain valid authentication throughout the operation.
 
 ### Related content
 
 * [Set up workload authentication](./authentication-setup.md)
+* [Authentication JavaScript API](./authentication-javascript-api.md)
+* [Backend authentication and authorization overview](./back-end-authentication.md)
 * [Development Kit overview](./development-kit-overview.md)
 * [Workload communication](./workload-communication.md)
+* [Microsoft identity platform best practices](/entra/identity-platform/identity-platform-integration-checklist)
