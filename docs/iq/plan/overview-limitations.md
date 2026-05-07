@@ -2,7 +2,7 @@
 title: Known limitations in plan (preview)
 description: This article lists known issues and limitations present in plan (preview).
 ms.topic: concept-article
-ms.date: 04/15/2026
+ms.date: 05/6/2026
 #customer intent: As a user, I want to know the limitation present in plan.
 ---
 
@@ -11,6 +11,10 @@ ms.date: 04/15/2026
 Review the following known issues and limitations before you begin working with plan (preview).
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
+## B2B user support
+
+Plan doesn't support Microsoft Entra B2B IDs.
 
 ## Private link support
 
