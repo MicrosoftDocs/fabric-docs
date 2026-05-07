@@ -1,14 +1,14 @@
 ---
-title: Customize general settings for writeback
+title: Configure general settings for writeback
 description: Learn how to customize writeback behavior, including writeback types, filters, decimal precision, and text field lengths.
 ms.date: 04/30/2026
 ms.topic: how-to
 #customer intent: As a user, I want to customize how data is structured, filtered, and written to the destination database.
 ---
 
-# Customize general settings for writeback
+# Configure general settings for writeback
 
-Writeback's **General** settings let you configure writeback behavior for a Planning sheet. These settings control how data is structured, filtered, and written to the destination.
+In **Writeback Settings**, the **General** tab lets you configure writeback behavior for a Planning sheet. These settings control how data is structured, filtered, and written to the destination.
 
 [!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 

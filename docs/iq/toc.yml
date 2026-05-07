@@ -113,9 +113,9 @@ items:
           items:
               - name: Set up writeback
                 href: plan/planning-writeback/planning-how-to-persist-data.md
-              - name: Configure General settings
+              - name: Configure general settings
                 href: plan/planning-writeback/planning-how-to-configure-general-settings.md
-              - name: Configure Destination settings
+              - name: Configure destination settings
                 href: plan/planning-writeback/planning-how-to-configure-destination-settings.md
         - name: Change layouts
           href: plan/planning-how-to-change-layouts.md
