@@ -115,8 +115,12 @@ items:
                 href: plan/planning-writeback/planning-how-to-persist-data.md
               - name: Configure general settings
                 href: plan/planning-writeback/planning-how-to-configure-general-settings.md
+              - name: Configure data settings
+                href: plan/planning-writeback/planning-how-to-configure-data-settings.md
               - name: Configure destination settings
                 href: plan/planning-writeback/planning-how-to-configure-destination-settings.md
+              - name: Configure advanced settings
+                href: plan/planning-writeback/planning-how-to-configure-advanced-settings.md
         - name: Change layouts
           href: plan/planning-how-to-change-layouts.md
         - name: Create a cube
