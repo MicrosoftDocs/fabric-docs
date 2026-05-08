@@ -71,5 +71,5 @@ For an overview of authentication in the workload development kit, see [Authenti
 * [Monetize your workload](monetization.md)
 * [Quick start: Run a workload sample](quickstart-sample.md)
 * [Authentication overview](authentication-concept.md)
-* [Set up workload authentication](authentication-setup.md)
+
 

@@ -43,8 +43,6 @@ landingContent:
           url: more-workloads-add.md
         - text: Upload and manage a workload
           url: manage-workload.md
-        - text: Set up authentication
-          url: authentication-setup.md
         - text: Front-end implementation guide
           url: extensibility-front-end.md
         - text: Backend implementation guide
