@@ -124,9 +124,17 @@ These features are described in the following sections.
 
 ### Gain access to any user's My workspace
 
-Fabric admins can temporarily access any user's My workspace to view and manage its contents. You can manually remove this access, or it automatically revokes after 24 hours. The My workspace owner's access remains intact. Fabric admins can manage access to My workspaces by using the Fabric Admin portal or the Fabric Admin APIs.
+Fabric admins can temporarily access any user's My workspace to view and manage its contents. This access automatically revokes after 24 hours. The My workspace owner's access remains intact. 
 
-To manage access to a My workspace by using the Fabric Admin portal:
+When you gain temporary access to a My workspace, you can:
+
+* See the My workspace in the list of workspaces accessible from the navigation pane. The icon :::image type="icon" border="false" source="./media/portal-workspaces/personal-workspace-icon.png"::: indicates that it's a My workspace.
+
+* Perform any actions in the My workspace as if it's your own My workspace. You can view and make any changes to the contents, including sharing or unsharing. But you can't grant anyone else access to the My workspace.
+
+You can manage access to My workspaces by using the Fabric Admin portal or the Fabric Admin APIs. 
+
+To manage access by using the Fabric Admin portal:
 
 1. In the Fabric Admin portal, open the **Workspaces** page and find the personal workspace you want to access.
 1. Select the workspace, and then choose **Get Access** from the ribbon. Or, select **More options (...)** and choose **Get Access**.
@@ -135,16 +143,12 @@ To manage access to a My workspace by using the Fabric Admin portal:
    > [!NOTE]
    > If you don't remove access, it automatically revokes after 24 hours. 
 
-To manage access to a My workspace by using the Fabric Admin APIs:
+To manage access by using the Fabric Admin APIs:
 
 * Use [Workspaces - Grant Admin Temporary Access](/rest/api/fabric/admin/workspaces/grant-admin-temporary-access) to gain access to the My workspace. 
 * Use [Workspaces - Remove Admin Temporary Access](/rest/api/fabric/admin/workspaces/remove-admin-temporary-access) to remove access to the My workspace.
 
-After you gain access, you can:
 
-* See the My workspace in the list of workspaces accessible from the navigation pane. The icon :::image type="icon" border="false" source="./media/portal-workspaces/personal-workspace-icon.png"::: indicates that it's a My workspace.
-
-* Perform any actions in the My workspace as if it's your own My workspace. You can view and make any changes to the contents, including sharing or unsharing. But you can't grant anyone else access to the My workspace.  
 
 ### Designate a default capacity for My workspaces
 
