@@ -32,7 +32,7 @@ This section describes some of the main features you can use to help manage your
 
 ### Admin portal
 
-The Microsoft Fabric admin portal is a centralized place that allows your organization's administrators to control your overall Fabric estate. This includes settings that govern Microsoft Fabric. For example, you can make changes to tenant settings, govern capacities, domains, and workspaces, and control how users interact with Microsoft Fabric. To provide flexibility, some aspects of administration and governance can be delegated to capacities, domains, and workspaces so the respective admins can manage them in their scope.
+The Microsoft Fabric admin portal is a centralized place that allows your organization's administrators to control your overall Fabric estate. This control includes settings that govern Microsoft Fabric. For example, you can make changes to tenant settings, govern capacities, domains, and workspaces, and control how users interact with Microsoft Fabric. To provide flexibility, you can delegate some aspects of administration and governance to capacities, domains, and workspaces so the respective admins can manage them in their scope.
 
 For more information about the admin portal, see [What is the admin portal?](../admin/admin-center.md)
 
@@ -58,15 +58,15 @@ For more information, see [Domains](./domains.md).
 
 ### Workspaces
 
-Teams in organizations use workspaces to create Fabric items and collaborate with each other. These workspaces can be assigned to teams or departments based on governance requirements and data boundaries. How exactly workspace assignment is done depends on internal team structure and how the teams want to handle their Fabric items (for example, do they need one or many workspaces).
+Teams in organizations use workspaces to create Fabric items and collaborate with each other. Assign these workspaces to teams or departments based on governance requirements and data boundaries. How you assign workspaces depends on internal team structure and how the teams want to handle their Fabric items (for example, do they need one or many workspaces).
 
-**Guidance**: For development purposes, a best practice is to have isolated workspaces per developer, so that they can work on their own without interfering with the shared workspace. Fabric admins are expected to define who has permission to create workspaces. Workspace admins are expected to define Spark environments that can be reused by users. For further information about best practices, see [Best practices for lifecycle management in Fabric](../cicd/best-practices-cicd.md).
+**Guidance**: For development purposes, a best practice is to have isolated workspaces per developer, so each developer can work on their own without interfering with the shared workspace. Fabric admins define who has permission to create workspaces. Workspace admins define Spark environments that users can reuse. For more information about best practices, see [Best practices for lifecycle management in Fabric](../cicd/best-practices-cicd.md).
 
 ### Capacities
 
-Capacities are the compute resources used by all Fabric workloads. Based on organizational requirements, capacities can be used as isolation boundaries for compute, chargebacks etc.
+Capacities are the compute resources used by all Fabric workloads. Based on organizational requirements, use capacities as isolation boundaries for compute, chargebacks, and more.
 
-**Guidance**: Split up capacities based on the requirements of the environment, for example, development/test/acceptance/production (DTAP). This makes for better workload isolation and chargeback.
+**Guidance**: Split up capacities based on the requirements of the environment, such as development, test, acceptance, and production (DTAP). This approach provides better workload isolation and chargeback.
 
 ### Metadata scanning
 
