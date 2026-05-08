@@ -120,7 +120,7 @@ To enable file downloads:
 The ribbon across the top of the Lakehouse explorer provides quick access to common actions: refresh your lakehouse, access item settings, load data, create or open notebooks, create semantic models, and more.
 
 > [!NOTE]
-> Ribbon actions apply to the primary lakehouse. They are grayed out when you select a non-primary lakehouse. Jump to the [reference lakehouse](#reference-lakehouses) section for more info.
+> Ribbon actions apply to the primary lakehouse. They are grayed out when you select a non-primary lakehouse. Go to the [reference lakehouse](#reference-lakehouses) section for more information.
 
 ### Analyze your lakehouse data with the engine of your choice
 
