@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 
 # Governance overview and guidance
 
-Microsoft Fabric governance and compliance provides a set of capabilities that help you manage, protect, monitor, and improve the discoverability of your organization's sensitive information. These capabilities help you gain and maintain customer trust and meet data governance and compliance requirements and regulations. Many of these capabilities are built in and included with your Microsoft Fabric license, while some others require additional licensing from Microsoft Purview.
+Microsoft Fabric governance and compliance capabilities help you manage, protect, monitor, and improve the discoverability of your organization's sensitive information. These capabilities help you gain and maintain customer trust and meet data governance and compliance requirements and regulations. Many of these capabilities are built in and included with your Microsoft Fabric license, while some others require additional licensing from Microsoft Purview.
 
 This article describes at a high level the main features and components that help you govern your organization's data estate. It includes guidance for taking advantage of the capabilities these features and components offer. It also provides links to more detailed information about each feature and component.
 
