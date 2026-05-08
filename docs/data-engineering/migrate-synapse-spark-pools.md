@@ -12,8 +12,9 @@ ms.date: 11/15/2023
 
 While Azure Synapse provides Spark pools, Fabric offers [Starter pools](configure-starter-pools.md) and [Custom pools](create-custom-spark-pools.md). The Starter pool can be a good choice if you have a single pool with no custom configurations or libraries in Azure Synapse, and if the [Medium node size](spark-compute.md) meets your requirements. However, if you seek more flexibility with your Spark pool configurations, we recommended using *Custom pools*. There are two options here: 
 
-* Option 1: Move your Spark pool to a workspace's default pool.
-* Option 2: Move your Spark pool to a custom environment in Fabric. 
+* Option 1: you can use the migration assistant to migrate notebooks from Azure Synapse to Fabric using a more guided and streamlined experience.
+* Option 2: Move your Spark pool to a workspace's default pool.
+* Option 3: Move your Spark pool to a custom environment in Fabric. 
 
 If you have more than one Spark pool and you plan to move those to the same Fabric workspace, we recommended using Option 2, creating multiple custom environments and pools.
 
@@ -21,9 +22,13 @@ For Spark pool considerations, refer to [differences between Azure Synapse Spark
 
 ## Prerequisites
 
-If you don’t have one already, create a [Fabric workspace](../fundamentals/create-workspaces.md) in your tenant.
+If you don't have one already, create a [Fabric workspace](../fundamentals/create-workspaces.md) in your tenant.
 
-## Option 1: From Spark pool to workspace's default pool
+## Option 1: Use migration assistant
+
+You can use the [**migration assistant**](./synapse-to-fabric-spark-migration-assistant.md) for migration from Azure Synapse to Fabric. It is designed to provide a guided and streamlined experience for migrating notebooks and related resources.
+
+## Option 2: From Spark pool to workspace's default pool
 
 You can create a custom Spark pool from your Fabric workspace and use it as the default pool in the workspace. The default pool is used by all notebooks and Spark job definitions in the same workspace. 
 
@@ -46,7 +51,7 @@ To move from an existing Spark pool from Azure Synapse to a workspace default po
 > [!NOTE]
 > In this option, pool level libraries or configurations are not supported. However, you can adjust compute configuration for individual items such as notebooks and Spark job definitions, and add inline libraries. If you need to add custom libraries and configurations to an environment, consider a custom [environment](create-and-use-environment.md).
 
-## Option 2: From Spark pool to custom environment
+## Option 3: From Spark pool to custom environment
 
 With custom environments, you can set up custom Spark properties and libraries. To create a custom environment:
 
@@ -74,3 +79,4 @@ Learn more on creating and using an [Environment](environment-manage-compute.md)
 
 - [Migrate Spark configurations](migrate-synapse-spark-configurations.md)
 - [Migrate Spark libraries](migrate-synapse-spark-libraries.md)
+- [Migrate Azure Synapse notebooks to Fabric](./synapse-to-fabric-spark-migration-assistant.md)
