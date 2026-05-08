@@ -7,7 +7,7 @@ ms.author: limingchen
 ms.topic: article
 ms.service: fabric
 ms.subservice: rti-core
-ms.date: 3/9/2026
+ms.date: 5/7/2026
 ms.search.form: Data filtering
 ---
 
@@ -96,7 +96,6 @@ Fabric Maps is designed to add geographic context to business data, helping you 
 
 > [!NOTE]
 > Ontology-based layers support up to 100,000 features returned by the selected entity.  
-> If the dataset exceeds this limit, refine the entity selection or apply filters to reduce the result size.
 
 ## Next steps
 
