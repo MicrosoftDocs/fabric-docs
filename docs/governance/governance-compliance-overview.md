@@ -10,9 +10,9 @@ ai-usage: ai-assisted
 
 # Governance overview and guidance
 
-Microsoft Fabric governance and compliance provides a set of capabilities that help you manage, protect, monitor, and improve the discoverability of your organization's sensitive information, so as to gain and maintain customer trust and to meet data governance and compliance requirements and regulations. Many of these capabilities are built in and included with your Microsoft Fabric license, while some others require additional licensing from Microsoft Purview.
+Microsoft Fabric governance and compliance provides a set of capabilities that help you manage, protect, monitor, and improve the discoverability of your organization's sensitive information. These capabilities help you gain and maintain customer trust and meet data governance and compliance requirements and regulations. Many of these capabilities are built in and included with your Microsoft Fabric license, while some others require additional licensing from Microsoft Purview.
 
-This article describes at a high level the main features and components that help you govern your organization's data estate, and includes some guidance regarding taking advantage of the capabilities these features and components offer. It also provides links to more detailed information about each feature and component.
+This article describes at a high level the main features and components that help you govern your organization's data estate. It includes guidance for taking advantage of the capabilities these features and components offer. It also provides links to more detailed information about each feature and component.
 
 | [Manage your data estate](#manage-your-data-estate) | [Secure, protect, and comply](#secure-protect-and-comply) | [Encourage data discovery, trust, and use](#encourage-data-discovery-trust-and-use) | [Monitor, uncover, get insights, and act](#monitor-uncover-get-insights-and-act) |
 |:-|:-|:-|:-|
@@ -34,23 +34,23 @@ This section describes some of the main features you can use to help manage your
 
 The Microsoft Fabric admin portal is a centralized place that allows your organization's administrators to control your overall Fabric estate. This includes settings that govern Microsoft Fabric. For example, you can make changes to tenant settings, govern capacities, domains, and workspaces, and control how users interact with Microsoft Fabric. To provide flexibility, some aspects of administration and governance can be delegated to capacities, domains, and workspaces so the respective admins can manage them in their scope.
 
-For more information about the admin portal, see [What is the admin portal?](../admin/admin-center.md).
+For more information about the admin portal, see [What is the admin portal?](../admin/admin-center.md)
 
 **Guidance**: Platform/IT owners should have access to the admin portal. They can define domains, and delegate domain and capacity management to domain and capacity owners as best suits your organizational needs.
 
 ### Tenant, domain, and workspace settings
 
-Tenant, domain, and workspace admins each have settings within their scope that they can configure to control who has access to certain functionalities at different levels. Some tenant-level settings can be delegated to domain and capacity admins.
+Tenant, domain, and workspace admins each have settings within their scope that they can configure to control who has access to certain functionalities at different levels. You can delegate some tenant-level settings to domain and capacity admins.
 
 For more information, see [About tenant settings](../admin/about-tenant-settings.md), [Configure domain settings](./domains.md#configure-domain-settings), and [Workspace settings](../fundamentals/workspaces.md#workspace-settings).
 
-**Guidance**: Fabric admins should define tenant-wide settings, leaving domain admins to override delegated settings as needed. Individual teams (workspace owners) are expected to define their own more granular workspace-level controls and settings.
+**Guidance**: Fabric admins should define tenant-wide settings, and domain admins should override delegated settings as needed. Individual teams (workspace owners) define their own more granular workspace-level controls and settings.
 
 ### Domains
 
-Domains are a way of logically grouping together all the data in an organization that is relevant to particular areas or fields, for example, by business unit. One of the most common uses for domains is to group data by business department, making it possible for departments to manage their data according to their specific regulations, restrictions, and needs.
+Use domains to logically group all the data in an organization that's relevant to particular areas or fields, such as by business unit. One of the most common uses for domains is to group data by business department, so each department can manage its data according to its specific regulations, restrictions, and needs.
 
-Grouping data into domains and subdomains enables better discoverability and governance. For instance, in the [OneLake data hub](../governance/onelake-catalog-overview.md), users can filter content by domain in order find content that is relevant to them. With respect to governance, some tenant-level settings for managing and governing data can be delegated to the domain level, thus allowing domain-specific configuration of those settings.
+Grouping data into domains and subdomains enables better discoverability and governance. For instance, in the [OneLake data hub](../governance/onelake-catalog-overview.md), users can filter content by domain to find content that is relevant to them. With respect to governance, you can delegate some tenant-level settings for managing and governing data to the domain level, which allows domain-specific configuration of those settings.
 
 For more information, see [Domains](./domains.md).
 
