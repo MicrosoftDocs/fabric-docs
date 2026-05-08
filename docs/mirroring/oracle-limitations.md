@@ -32,7 +32,6 @@ We support these Oracle Server environments:
 * Oracle Cloud Infrastructure (OCI)
 * Oracle Database@Azure
 * Oracle Exadata
-* Oracle Autonomous Database
 
 >[!NOTE]
 >* LogMiner needs to be enabled on your Oracle server. This tool helps track changes in your Oracle database for real-time mirroring.
@@ -79,6 +78,9 @@ Tables that don't have a Primary Key (PK) are supported - if you have a unique i
 
 We can't support table names that have a length greater than or equal to 30.
 
+## Large Tables and Reseeds
+Onboarding or reseeding multiple very large tables at the same time does cause sharp memory spikes. If you stagger large tables and avoid bulk restarts that trigger multiple reseeds concurrently, it has proven to work well.
+
 ## Required Permissions
 
 Your sync user needs these permissions:
@@ -104,6 +106,10 @@ Your database needs these archive log settings:
 * Keep archive log mode on during mirroring
 * Redo log file archiving enabled by the database admin
 
+Aggressive purging of Oracle archive logs during initial load or heavy CDC activity can force retries and increase memory pressure. The guidance that’s proven stable is to avoid purging during initial load and heavy CDC, and, if downtime windows aren’t clear, to retain at least the last ~24 hours of logs.
+
+If you get this error - "Complete Logminer Dictionary not found or ORA-01291: missing logfile\\nORA-06512: at \\\"SYS.DBMS_LOGMNR\\\.", please following the above guidance on the retention of log files.
+
 ### Logging Configuration
 
 If your Oracle user doesn't have direct ALTER DATABASE and ALTER TABLE permissions, ask your DBA to run these commands:
@@ -128,6 +134,19 @@ Currently, we only support connecting to Oracle using an On-Premises Data Gatewa
 For machine requirements and setup instructions to install and register your gateway, see the [On-premises Data Gateway installation guide](/data-integration/gateway/service-gateway-install#download-and-install-a-standard-gateway).
 >[!NOTE]
 >* To ensure that you have the latest performance enhancements and updates, make sure that you have the upgraded to the latest version of the [On-Premises Data Gateway](oracle-tutorial.md#install-the-on-premises-data-gateway). To review recent updates, refer to the [Currently supported monthly updates](/data-integration/gateway/service-gateway-monthly-updates).
+
+In higher‑concurrency setups, memory usage accumulates over time as each mirroring pipeline runs its own process. Customers have seen better stability by using fewer, more powerful gateway VMs with sufficient headroom and by dedicating the VMs exclusively to the on‑premises Data Gateway (no other Fabric or batch workloads).
+
+If you get this error - "Unable to connect to the remote server…", this means a connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. Oracle Mirror Publisher runs on On Premises Data Gateway and needs to have the authoritative requirements for gateway outbound connectivity. Please refer to the [Adjust communication settings for the on-premises data gateway](/data-integration/gateway/service-gateway-communication) and follow the guidance listed there.
+
+## Issues outside of Mirroring for Oracle
+
+If you get any of the following errors - 
+
+* ORA-00604: error occurred at recursive SQL level 1\\nORA-01289: cannot add duplicate logfile +DBSV6162_ARCHIVE_OBIA/CPOBIACH/ARCHIVELOG/2026_03_03/thread_1_seq_138823.582.1226964749\\nORA-06512: at \\\"SYS.DBMS_LOGMNR\\\", line 82\\nORA-06512: at line 1\\nORA-06512: at line 1\\nORA-06512: at \\\"SYS.DBMS_LOGMNR\\\", line 72\\nORA-06512: at line 1'
+* ORA-65040: operation not allowed from within a pluggable database.
+
+You need to reach out to the Oracle support team or open up a support ticket with Oracle (not Microsoft) and let them know that the Oracle database used for Mirroring needs to be updated to the latest patch.
 
 ## Related Content
 
