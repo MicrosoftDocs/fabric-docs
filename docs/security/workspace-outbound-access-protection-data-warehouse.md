@@ -16,7 +16,7 @@ Workspace outbound access protection helps safeguard your data by controlling ou
 
 ## Understanding outbound access protection with Data Warehouse
 
-When outbound access protection is enabled, the workspace automatically blocks all outbound warehouse and SQL endpoint connections to external networks and other workspaces. Any attempt to access data, services, or resources outside the current workspace is denied.
+When outbound access protection is enabled, outbound connections from warehouses and SQL analytics endpoints are restricted to the workspace's administrator-allowed endpoints. Any attempt to access data, services, or resources at endpoints that haven't been explicitly allowed is denied.
 
 ## Configuring outbound access protection for Data Warehouse
 
