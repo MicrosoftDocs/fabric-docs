@@ -81,7 +81,7 @@ The plugin doesn't currently support grounding on:
 
 Sensitivity labels on Power BI items aren't surfaced in the Cowork UI today. Underlying [sensitivity labels](/power-bi/enterprise/service-security-sensitivity-label-overview) on the source data still apply at the Power BI layer.
 
-<!-- TODO_REVIEWER: Confirm whether sensitivity labels from a grounded Power BI item propagate to downstream Cowork artifacts (email, document, meeting invite) created in the same chat. Reader feedback flagged this as the first question security reviewers will ask. If labels do propagate, document the behavior. If they don't, call it out explicitly so security reviewers can plan around it. -->
+<!-- TODO_REVIEWER: Confirm whether sensitivity labels from a grounded Power BI item propagate to downstream Cowork artifacts (email, document, meeting invite) created in the same chat. If labels do propagate, document the behavior. If they don't, call it out explicitly so security reviewers can plan around it. -->
 
 <!-- TODO_REVIEWER: Confirm whether the "tenant admin can't disable the plugin today" limitation should be called out here for customers, or whether it should stay internal until the admin control ships. Removed from public copy for now. -->
 
@@ -92,8 +92,8 @@ To use the Fabric IQ plugin in Cowork, the following prerequisites must be met.
 **User prerequisites**
 
 1. You're enrolled in the [Microsoft 365 Copilot Frontier program](https://adoption.microsoft.com/copilot/frontier-program/) and can access Cowork.
-1. <!-- TODO_REVIEWER: Confirm the exact public-facing license name. The internal source says "$30 M365 Copilot Premium license"; the public Cowork docs reference Microsoft 365 Copilot. Pick one and use it consistently. --> You have a Microsoft 365 Copilot license that includes Cowork.
-1. You have at least **Read** permission on the Power BI reports or semantic models you want to ask about, in your home Fabric tenant.
+1. You have a Microsoft 365 Copilot Premium License.
+1. You have at least **Read** permission on the Power BI reports and underlying semantic models you want to ask about, in your home Fabric tenant.
 
 **Tenant prerequisites**
 
@@ -103,7 +103,7 @@ A Fabric or Power BI admin must complete the following steps in the Fabric admin
 1. If your Fabric tenant and your Microsoft 365 tenant are in different geographic regions, also enable the cross-region toggle on the same tenant setting. For more information, see [Data residency](../../admin/admin-share-power-bi-metadata-microsoft-365-services.md#data-residency).
 1. Enable **Users can use the Power BI Model Context Protocol server endpoint (preview)** so that Cowork can query Power BI semantic models on behalf of signed-in users. For details on the setting, see [Integration tenant settings](../../admin/service-admin-portal-integration.md#users-can-use-the-power-bi-model-context-protocol-server-endpoint-preview).
 
-<!-- TODO_REVIEWER: This bullet names "Power BI Model Context Protocol server endpoint" because that's the literal UI label of the tenant setting an admin has to toggle to enable the Fabric IQ plugin in Cowork. We kept MCP out of the explanatory sections of the article (which use generic "Cowork queries Power BI on your behalf" language) so the article stays stable across the planned Fabric AI Hub transition. If the admin setting gets renamed during that transition, update this bullet's setting name and link to match. -->
+<!-- TODO_REVIEWER: We kept MCP out of the explanatory sections of the article (which use generic "Cowork queries Power BI on your behalf" language) so the article stays stable across the planned Fabric AI Hub transition. If the admin setting gets renamed during that transition, update this bullet's setting name and link to match. -->
 
 No additional Fabric capacity, F SKU, or Power BI Premium per user (PPU) license is required for the Fabric IQ plugin itself, beyond what your Power BI content already requires.
 
@@ -113,7 +113,7 @@ When you ask a question in Cowork that the Fabric IQ plugin can answer, Cowork f
 
 1. **Discover the right artifact.** If you attach a report or paste a link, Cowork uses that artifact directly. If you reference a report by name, Cowork searches Power BI artifacts you have access to and selects the best match.
 1. **Query Power BI on your behalf.** Cowork sends the question, along with the chosen report or semantic model, to Power BI. Power BI runs the query against the underlying data and returns the result.
-1. **Compose the answer in Cowork.** Cowork uses the returned data to write a natural-language answer in the chat. You can then ask follow-up questions or hand the answer off to another Cowork skill.
+1. **Compose the answer in Cowork.** Cowork uses the returned data to write a natural-language answer in the chat or combine it with other skills. You can ask follow-up questions or hand answers off to other Cowork skills.
 
 Because Cowork queries Power BI as the signed-in user, item permissions and row-level security in Power BI continue to apply. Cowork doesn't see data that you can't already see in Power BI.
 
