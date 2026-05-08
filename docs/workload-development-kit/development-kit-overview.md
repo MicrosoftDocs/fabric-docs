@@ -64,7 +64,6 @@ Fabric workloads rely on integration with [Microsoft Entra ID](/entra/fundamenta
 
 For an overview of authentication in the workload development kit, see [Authentication overview](authentication-concept.md)
 
-For detailed steps on setting up authentication for your workload, see [Set up workload authentication](authentication-setup.md).
 
 ## Related content
 
