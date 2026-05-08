@@ -32,7 +32,7 @@ Users with administrator, member, or contributor [workspace role](workspace-role
 
 If you use a delegated account or fixed identity (owner's identity) to create the warehouse, the warehouse uses that credential while accessing OneLake. This creates a problem when the owner leaves the organization, because the warehouse will stop working. **To avoid this, create warehouses using an SPN.**
 
-Fabric also requires the user to sign in every 30 days to ensure a valid token is provided for security reasons. For a data warehouse, the owner needs to sign in to Fabric every 30 days. This can be automated using an SPN with the [List](/rest/api/fabric/warehouse/items/list-warehouses?tabs=HTTP) API.
+Fabric also requires the user to sign in every 30 days to ensure a valid token is provided for security reasons. For a warehouse, the owner needs to sign in to Fabric every 30 days. This can be automated using an SPN with the [List](/rest/api/fabric/warehouse/items/list-warehouses?tabs=HTTP) API.
 
 :::image type="content" source="media/service-principals/create-api.png" alt-text="Screenshot of a Fabric API POST call using an SPN." lightbox="media/service-principals/create-api.png"::: 
 
@@ -70,20 +70,20 @@ Once permissions are granted, SPNs can connect to client application tools like 
 
 ### Monitor
 
-When an SPN runs queries in the warehouse, there are various monitoring tools that provide visibility into the user or SPN that ran the query. You can find the user for query activity the following ways:
+When an SPN runs queries in the warehouse, there are various monitoring tools that provide visibility into the user or SPN that ran the query. You can identify the user in Data Warehouse Monitor in the following ways:
 
 - [Dynamic management views (DMVs)](monitor-using-dmv.md): `login_name` column in `sys.dm_exec_sessions`.
 - [Query Insights](query-insights.md): `login_name` column in `queryinsights.exec_requests_history` view.
-- [Query activity](query-activity.md): `submitter` column in Fabric query activity.
+- [Data Warehouse Monitor](monitor.md): `submitter` column in Fabric Data Warehouse Monitor.
 - [Capacity metrics app](../enterprise/metrics-app.md): Compute usage for warehouse operations performed by SPN appears as the Client ID under the **User** column in Background operations drill through table.
 
-For more information, see [Monitor Fabric Data warehouse](monitoring-overview.md).
+For more information, see [Monitor Fabric Data Warehouse](monitoring-overview.md).
 
 ### Takeover API
 
 Ownership of warehouses can be changed from an SPN to user, and from a user to an SPN.
 
-- Takeover from SPN or user to user: See [Change ownership of Fabric Warehouse with PowerShell](change-ownership.md?tabs=powershell).
+- Takeover from SPN or user to user: See [Change ownership of a warehouse with PowerShell](change-ownership.md?tabs=powershell).
     - It is not possible to set a Service Principal Name (SPN) as the owner via the Fabric portal, use PowerShell.
 - Takeover from SPN or user to SPN: Use a POST call on REST API.
 
