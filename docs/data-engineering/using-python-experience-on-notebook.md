@@ -67,7 +67,7 @@ You can monitor the Python notebook job run details on the ribbon tab **Run** ->
 You can interact with Lakehouse, Warehouses, SQL endpoints, and built-in resources folders on Python notebook.
 
  > [!NOTE]
- > - The Python Notebook runtime comes pre-installed with [delta‑rs](https://delta-io.github.io/delta-rs/) and [duckdb](https://duckdb.org/) libraries to support both reading and writing Delta Lake data. However, note that some Delta Lake features may not be fully supported at this time. For more details and the latest updates, refer to the [delta‑rs](https://github.com/delta-io/delta-rs) and [DuckDB](https://duckdb.org/) documentation.
+ > The Python Notebook runtime comes pre-installed with [delta‑rs](https://delta-io.github.io/delta-rs/) and [duckdb](https://duckdb.org/) libraries to support both reading and writing Delta Lake data. However, note that some Delta Lake features may not be fully supported at this time. For more details and the latest updates, refer to the [delta‑rs](https://github.com/delta-io/delta-rs) and [DuckDB](https://duckdb.org/) documentation.
 
 ### Lakehouse interaction
 
