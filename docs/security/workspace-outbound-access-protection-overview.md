@@ -115,6 +115,8 @@ Workspace admins can specify which workspaces are allowed as destinations for ce
 * Fabric SQL Database
 * Lakehouse
 * Warehouse
+* Notebook
+* Spark Job Definition
 
 Other Fabric connection types, such as Datamarts, KQL Database, Fabric Data Pipelines, and CopyJob, don't support workspace-level granularity. For these connection types, admins can't specify individual workspaces in the allow list.
 
