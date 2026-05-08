@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 
 In Microsoft Fabric, the Delta Lake table format is the standard for analytics. [Delta Lake](https://docs.delta.io/latest/delta-intro.html) is an open-source storage layer that brings ACID (Atomicity, Consistency, Isolation, Durability) transactions to big data and analytics workloads.
 
-All Fabric experiences natively generate and consume Delta Lake tables, providing a unified product experience. Delta Lake tables produced by one compute engine, such as Fabric Data Warehouse or Synapse Spark, can be consumed by any other engine, such as Power BI. When you ingest data into Fabric, Fabric stores it as Delta tables by default. You can easily integrate external data containing Delta Lake tables by using OneLake shortcuts.
+All Fabric experiences natively generate and consume Delta Lake tables, providing a unified product experience. Delta Lake tables produced by one compute engine, such as Fabric Data Warehouse or Synapse Spark, can be consumed by any other engine, such as Power BI. When you ingest data into Fabric, it stores the data as Delta tables by default. You can easily integrate external data containing Delta Lake tables by using OneLake shortcuts.
 
 ## Delta Lake features and Fabric experiences
 
@@ -24,7 +24,7 @@ To achieve interoperability, all the Fabric experiences align on the Delta Lake 
 - **Readers**: SQL analytics endpoint and Power BI direct lake semantic models
 - **Writers and readers**: Fabric Spark runtime, dataflows, pipelines, and Kusto Query Language (KQL) databases
 
-The following matrix shows key Delta Lake features and its availability on each Fabric experience.
+The following matrix shows key Delta Lake features and their availability on each Fabric experience.
 
 | Fabric capability | Column mappings | Deletion vectors | V-order writing | Table optimization and maintenance | Partitions |
 | --- | --- | --- | --- | --- | --- |
@@ -72,17 +72,17 @@ The following matrix shows key Delta Lake features and its availability on each 
 
 Currently, Fabric doesn't support these Delta Lake features:
 
-- V2 Checkpoints aren't uniformly available in all experiences. Only Spark notebooks and Spark jobs can read and write to tables with V2 Checkpoints. Lakehouse and SQL analytics endpoints don't correctly list tables containing V2 Checkpoint files in the ```__delta_log``` folder.
+- V2 Checkpoints aren't uniformly available in all experiences. Only Spark notebooks and Spark jobs can read and write to tables with V2 Checkpoints. Lakehouse and SQL analytics endpoints don't correctly list tables containing V2 Checkpoint files in the `__delta_log` folder.
 - Delta Lake 3.x Uniform. This feature is supported only in the Data Engineering Spark-compute (Notebooks, Spark Jobs).
-- Identity columns writing (Azure Databricks feature)
-- Lakeflow Spark Declarative Pipelines (Azure Databricks feature)
-- Delta Lake 4.x features outside of Lakehouse and Spark Notebooks and Jobs: collations, variant type, coordinated commits, etc. Type widening is supported where noted on previous features matrix in this article.
-- **Python notebooks Delta Lake feature support**: Python notebooks use [delta-rs](https://delta-io.github.io/delta-rs/) (`deltalake`), [DuckDB](https://duckdb.org/), and [Polars](https://pola.rs/) instead of the Spark Delta Lake reader/writer to read and write Delta Lake tables. The `deltalake` versions currently pinned by Fabric don't support some Delta Lake table features, including deletion vectors, column mapping, liquid clustering writes and optimization, and type widening. Polars `read_delta` and `write_delta` use `deltalake` as the backend, so they share the same limitations.
+- Identity columns writing (Azure Databricks feature).
+- Lakeflow Spark Declarative Pipelines (Azure Databricks feature).
+- Delta Lake 4.x features outside of Lakehouse and Spark Notebooks and Jobs: collations, variant type, coordinated commits, and more. Type widening is supported where noted on the previous features matrix in this article.
+- **Python notebooks Delta Lake feature support**: Python notebooks use [delta-rs](https://delta-io.github.io/delta-rs/) (`deltalake`), [DuckDB](https://duckdb.org/), and [Polars](https://pola.rs/) instead of the Spark Delta Lake reader and writer to read and write Delta Lake tables. The `deltalake` versions currently pinned by Fabric don't support some Delta Lake table features, including deletion vectors, column mapping, liquid clustering writes and optimization, and type widening. Polars `read_delta` and `write_delta` use `deltalake` as the backend, so they share the same limitations.
 - **Python notebooks Delta Lake workarounds and fallback**: The DuckDB `delta_scan` function can provide a read-only workaround for some tables that `deltalake` can't read, such as tables with deletion vectors. If a Delta Lake capability isn't available or doesn't work in a Python notebook, use a PySpark notebook instead. PySpark notebooks provide the most complete Delta Lake support in Fabric and cover the Delta Lake scenarios listed for Fabric Spark runtimes in these tables. For more information, see [Data interaction in Python notebooks](../data-engineering/using-python-experience-on-notebook.md#data-interaction) and the [Choosing between Python and PySpark Notebooks in Microsoft Fabric](../data-engineering/fabric-notebook-selection-guide.md).
 
 ## Special characters on table names
 
-Microsoft Fabric supports special characters as part of the table names. This feature allows the usage of unicode characters to compose table names in Fabric experiences.
+Fabric supports special characters as part of the table names. This feature allows the usage of Unicode characters to compose table names in Fabric experiences.
 
 The following special characters are either reserved or not compatible with at least one of Fabric technologies and must not be used as part of a table name: `"` (double quotes), `'` (single quote), `#`, `%`, `+`, `:`, `?`, or ` (backtick).
 
