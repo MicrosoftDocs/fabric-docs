@@ -12,11 +12,11 @@ ms.date: 11/15/2023
 
 While Azure Synapse provides Spark pools, Fabric offers [Starter pools](configure-starter-pools.md) and [Custom pools](create-custom-spark-pools.md). The Starter pool can be a good choice if you have a single pool with no custom configurations or libraries in Azure Synapse, and if the [Medium node size](spark-compute.md) meets your requirements. However, if you seek more flexibility with your Spark pool configurations, we recommended using *Custom pools*. There are two options here: 
 
-* Option 1: you can use the migration assistant to migrate notebooks from Azure Synapse to Fabric using a more guided and streamlined experience.
+* Option 1: You can use the migration assistant to migrate notebooks from Azure Synapse to Fabric using a more guided and streamlined experience.
 * Option 2: Move your Spark pool to a workspace's default pool.
 * Option 3: Move your Spark pool to a custom environment in Fabric. 
 
-If you have more than one Spark pool and you plan to move those to the same Fabric workspace, we recommended using Option 2, creating multiple custom environments and pools.
+If you have more than one Spark pool and you plan to move those to the same Fabric workspace, we recommended using Option 3, creating multiple custom environments and pools.
 
 For Spark pool considerations, refer to [differences between Azure Synapse Spark and Fabric](comparison-between-fabric-and-azure-synapse-spark.md).
 
