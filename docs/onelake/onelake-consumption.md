@@ -69,11 +69,11 @@ The following table defines CU consumption when disaster recovery is enabled. Pr
 
 | **Operation in Metrics App** | **New operation name** | **Operation Unit of Measure** | **Hot Consumption rate** | **Cool Consumption Rate** | **Cold Consumption Rate** |
 |---| -------- |---|---|---|---|
-| **OneLake BCDR Read via Redirect** |OneLake BCDR Read | OneLake BCDR Read via Redirect | Every 4 MB, per 10,000 | 104 CU seconds | 260 CU seconds  | 2,600 CU seconds |
-| **OneLake BCDR Write via Redirect** |OneLake BCDR Write| OneLake BCDR Write via Redirect | Every 4 MB, per 10,000 | 3056 CU seconds | 5,200 CU seconds | 9,880 CU seconds |
-| **OneLake BCDR Other Operations Via Redirect** |OneLake BCDR Other| OneLake BCDR Other Operations Via Redirect | Per 10,000 | 104 CU seconds | 104 CU seconds | 104 CU seconds |
-| **OneLake BCDR Iterative Read via Redirect** |OneLake BCDR Iterative Read  OneLake BCDR Iterative Read via Redirect | Per 10,000 | 1626 CU seconds | 1,626 CU seconds | 1,626 CU seconds |
-| **OneLake BCDR Iterative Write via Redirect** |OneLake BCDR Iterative Write | OneLake BCDR Iterative Write via Redirect | Per 100 | 2730 CU seconds | 2730 CU seconds | 2730 CU seconds |
+| **OneLake BCDR Read via Redirect** |OneLake BCDR Read | Every 4 MB, per 10,000 | 104 CU seconds | 260 CU seconds  | 2,600 CU seconds |
+| **OneLake BCDR Write via Redirect** |OneLake BCDR Write|Every 4 MB, per 10,000 | 3056 CU seconds | 5,200 CU seconds | 9,880 CU seconds |
+| **OneLake BCDR Other Operations Via Redirect** |OneLake BCDR Other| Per 10,000 | 104 CU seconds | 104 CU seconds | 104 CU seconds |
+| **OneLake BCDR Iterative Read via Redirect** |OneLake BCDR Iterative Read | Per 10,000 | 1626 CU seconds | 1,626 CU seconds | 1,626 CU seconds |
+| **OneLake BCDR Iterative Write via Redirect** |OneLake BCDR Iterative Write |  Per 100 | 2730 CU seconds | 2730 CU seconds | 2730 CU seconds |
 
 ## OneLake storage tiers
 The cool and cold tiers introduce a per-GB data retrieval fee, which will consume CUs based on the amount of data read. 
