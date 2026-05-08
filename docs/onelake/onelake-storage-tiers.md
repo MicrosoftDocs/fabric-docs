@@ -129,6 +129,21 @@ Following are some simple guidelines for optimizing your costs through efficient
 - Use lifecycle rules to move data to cool or cold storage automatically.
 - Load data directly to the cool or cold access tier if you know it will never be frequently accessed to save on tier change transactions.
 
+## Updates to OneLake consumption reporting
+
+As part of the rollout of OneLake storage tiers, OneLake compute operations reporting is changing for  capacity billing.  These updates improve clarity and align reporting with the new storage tier model. There is no change to billing rates.
+
+Key updates include:
+
+- Operation names include the storage tier. For example, “OneLake Read via Proxy” becomes “OneLake Read (Hot).”
+- Proxy and Redirect operations are consolidated. Operations previously reported separately will appear under a single operation name. Because consumption rates are the same, this has no billing impact.
+- Operations are reported at the workspace level. A new OneLake item in the Fabric Capacity Metrics app groups operations by workspace instead of individual items. For item-level detail, use OneLake diagnostics to understand usage across Fabric and non-Fabric workloads.
+- Units of measure and consumption rates remain unchanged.
+
+## Limitations
+
+- After enabling lifecycle management or storage tiers, you will be charged for Oracle and MS SQL operations.  Upgrading to [OPDG version 3000.314.5](https://www.microsoft.com/download/details.aspx?id=53127) or later will make these mirroring operations free again.
+
 ## Related content
 
 - [OneLake lifecycle management](onelake-lifecycle-management.md)
