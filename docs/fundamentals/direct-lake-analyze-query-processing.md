@@ -75,4 +75,5 @@ SQL Server Profiler can provide more details about query performance by tracing 
 
 ## Related content
 
+- [Delta Lake in Microsoft Fabric overview](delta-lake-overview.md)
 - [Direct Lake overview](../fundamentals/direct-lake-overview.md)

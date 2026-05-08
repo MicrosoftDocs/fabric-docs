@@ -88,6 +88,7 @@ The following special characters are either reserved or not compatible with at l
 
 ## Related content
 
+* [Delta Lake in Microsoft Fabric overview](delta-lake-overview.md)
 * [Cross-workload table maintenance and optimization](table-maintenance-optimization.md)
 * [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
 * Learn more about [Delta Lake tables](../data-engineering/lakehouse-and-delta-tables.md) in Fabric Lakehouse and Synapse Spark.

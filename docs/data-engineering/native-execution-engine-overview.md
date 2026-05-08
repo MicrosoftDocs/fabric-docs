@@ -235,6 +235,7 @@ While the Native Execution Engine (NEE) in Microsoft Fabric significantly boosts
 
 ## Related content
 
+- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
 - [Apache Spark Runtimes in Fabric](./runtime.md)
 - [What is autotune for Apache Spark configurations in Fabric?](./autotune.md)
 

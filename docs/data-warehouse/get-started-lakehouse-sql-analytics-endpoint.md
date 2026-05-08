@@ -135,6 +135,7 @@ For more information and examples on querying external data, see [Query external
 
 ## Related content
 
+- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
 - [What is a lakehouse in Microsoft Fabric?](../data-engineering/lakehouse-overview.md)
 - [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md)
 - [Bring your data to OneLake with Lakehouse](../onelake/create-lakehouse-onelake.md)

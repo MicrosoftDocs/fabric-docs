@@ -353,6 +353,7 @@ For retention behavior and safety guidance, see [VACUUM command](../fundamentals
 
 ## Related content
 
+- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
 - [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
 - [Table compaction](table-compaction.md)
 - [Tune file size](tune-file-size.md)

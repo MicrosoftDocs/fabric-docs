@@ -336,6 +336,7 @@ For more information on query lifecycle DMVs, see [Monitor connections, sessions
 
 ## Related content
 
+- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
 - [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
 - [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md)
 - [Table compaction](../data-engineering/table-compaction.md)

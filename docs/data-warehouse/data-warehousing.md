@@ -13,7 +13,7 @@ ms.search.form: SQL Analytics Endpoint overview, Warehouse overview, Warehouse i
 Fabric Data Warehouse is an enterprise scale relational warehouse on a data lake foundation. 
 
 - The **ideal use cases for Fabric Data Warehouse** are star or snowflake schemas, curated corporate data marts, governed semantic models for business intelligence.
-- Fabric Data Warehouse data, like all Fabric data, is stored in Delta tables, which are Parquet data files with a file-based transaction log. **Built on the Fabric open data format**, a warehouse allows sharing and collaboration between data engineers and business users without compromising security or governance.
+- Fabric Data Warehouse data, like all Fabric data, is stored in Delta tables, which are Parquet data files with a file-based transaction log. To learn more about Delta Lake as Fabric's universal storage format, see [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md). **Built on the Fabric open data format**, a warehouse allows sharing and collaboration between data engineers and business users without compromising security or governance.
 - Fabric Data Warehouse is **primarily developed with T-SQL**, and shares a large surface area based on the SQL Database Engine, with **full multi-table ACID transaction support**, materialized views, functions, and stored procedures.
 - **Bulk loading of Fabric Data Warehouse** can be accomplished via T-SQL and TDS connections, or via Spark, with data bulk written directly to the Delta tables.
 - The **easy-to-use SaaS experience** is also tightly integrated with Power BI for easy analysis and reporting.
