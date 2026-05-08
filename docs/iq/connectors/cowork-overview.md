@@ -101,6 +101,9 @@ A Fabric or Power BI admin must complete the following steps in the Fabric admin
 
 1. Enable **Share Fabric data with your Microsoft 365 services** so that Fabric metadata is available to Microsoft 365. For details on what's shared and how to turn the setting on, see [Share data with your Microsoft 365 services](../../admin/admin-share-power-bi-metadata-microsoft-365-services.md).
 1. If your Fabric tenant and your Microsoft 365 tenant are in different geographic regions, also enable the cross-region toggle on the same tenant setting. For more information, see [Data residency](../../admin/admin-share-power-bi-metadata-microsoft-365-services.md#data-residency).
+1. Enable **Users can use the Power BI Model Context Protocol server endpoint (preview)** so that Cowork can query Power BI semantic models on behalf of signed-in users. For details on the setting, see [Integration tenant settings](../../admin/service-admin-portal-integration.md#users-can-use-the-power-bi-model-context-protocol-server-endpoint-preview).
+
+<!-- TODO_REVIEWER: This bullet names "Power BI Model Context Protocol server endpoint" because that's the literal UI label of the tenant setting an admin has to toggle to enable the Fabric IQ plugin in Cowork. We kept MCP out of the explanatory sections of the article (which use generic "Cowork queries Power BI on your behalf" language) so the article stays stable across the planned Fabric AI Hub transition. If the admin setting gets renamed during that transition, update this bullet's setting name and link to match. -->
 
 No additional Fabric capacity, F SKU, or Power BI Premium per user (PPU) license is required for the Fabric IQ plugin itself, beyond what your Power BI content already requires.
 
