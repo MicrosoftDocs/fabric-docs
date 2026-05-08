@@ -3,7 +3,7 @@ title: Storage tiers in OneLake (preview)
 description: Manage your storage costs in OneLake by moving data between storage tiers.
 ms.reviewer: eloldag, mabasile
 ms.topic: concept-article
-ms.date: 04/01/2026
+ms.date: 05/08/2026
 #customer intent: As a workspace admin, I want to lower my storage costs for data I must retain for long periods but is otherwise rarely accessed. 
 ---
 
@@ -13,7 +13,7 @@ As data volumes continue to grow, it's essential for data admins to have ways to
 
 ## What are storage tiers?
 
-OneLake supports three different storage tiers: hot, cool, and cold. These are the same hot, cool, and cold access tiers supported by Azure Storage.  As you move from the hot tier to the cool or cold tier, static storage prices lower but transaction prices rise, making the cooler tiers ideal for governance, security, or audit scenarios, where data must be retained for long periods of time but rarely accessed. All three tiers are online and feature the same durability, retrieval latency, and throughput characteristics, although the cool and cold tiers have slightly lower data availability than the hot tier.  
+OneLake supports three different storage tiers: hot, cool, and cold. These tiers are the same hot, cool, and cold access tiers supported by Azure Storage.  As you move from the hot tier to the cool or cold tier, static storage prices lower but transaction prices rise. The cooler tiers are ideal for governance, security, or audit scenarios, where data must be retained for long periods of time but is rarely accessed. All three tiers are online and feature the same durability, retrieval latency, and throughput characteristics, although the cool and cold tiers have slightly lower data availability than the hot tier.  
 
 All data in OneLake lands in the hot tier by default.
 
@@ -48,24 +48,24 @@ You can change a file's storage tier via the following methods:
 
 - **Set Blob Tier**  
 
-    By calling the [Set Blob Tier API](https://learn.microsoft.com/rest/api/storageservices/set-blob-tier), explicitly or through a lifecycle management policy.  This API is recommended when moving data from a warmer tier to a cooler one.  You can also use Azure Storage Explorer to change the tier of a file, or all files within a folder, via the "Change access tier" option when selecting a file or folder.  
+  Call the [Set Blob Tier API](/rest/api/storageservices/set-blob-tier), explicitly or through a lifecycle management policy. This API is recommended when moving data from a warmer tier to a cooler one.  You can also use Azure Storage Explorer to change the tier of a file, or all files within a folder, via the "Change access tier" option when selecting a file or folder.  
 
 - **Copy Blob**
 
-    By calling the Copy Blob operation to copy a blob from one tier to another. This API is recommended when moving a blob from a cooler tier to a warmer tier, in order to avoid the early deletion penalty.  However, copying a blob results in two transaction charges, from the source and destination tier.  
+  Call the [Copy Blob](/rest/api/storageservices/copy-blob) operation to copy a blob from one tier to another. This API is recommended when moving a blob from a cooler tier to a warmer tier, in order to avoid the early deletion penalty.  However, copying a blob results in two transaction charges, from the source and destination tier.  
 
 - **Lifecycle management rules**  
 
-    OneLake lifecycle management can move files between tiers based on pre-defined rules.  Lifecycle rules can move files to your choice of tier based on when they were created, last modified, or last accessed. When a lifecycle rule runs, it updates the file's tier according to the actions you define, based on when they were created, last modified, or last accessed. Lifecycle rules move data using the Set Blob Tier API.  Learn more about [OneLake lifecycle management](onelake-lifecycle-management.md).  
+  OneLake lifecycle management can move files between tiers based on pre-defined rules.  Lifecycle rules can move files to your choice of tier based on when they were created, last modified, or last accessed. When a lifecycle rule runs, it updates the file's tier according to the actions you define, based on when they were created, last modified, or last accessed. Lifecycle rules move data using the Set Blob Tier API.  Learn more about [OneLake lifecycle management](onelake-lifecycle-management.md).  
 
 - **Workspace default storage tier**  
 
-    If a file does not have a specific tier set, OneLake uses the workspace's default storage tier. All workspaces in Fabric start with a default tier of Hot. You can change the default tier of your workspace via the [Modify Default Tier API](https://learn.microsoft.com/rest/api/fabric/core/onelake-settings/modify-default-tier).  Changing the default tier of your workspace will move all files without an explicit tier (set via Set Blob Tier or Copy Blob) into the new default tier, resulting in capacity charges for all write operations when moving files to a cooler default tier, or read and data retrieval charges when changing to a warmer default tier.  
+  If a file does not have a specific tier set, OneLake uses the workspace's default storage tier. All workspaces in Fabric start with a default tier of Hot. You can change the default tier of your workspace via the [Modify Default Tier API](/rest/api/fabric/core/onelake-settings/modify-default-tier). Changing the default tier of your workspace moves all files that don't have an explicit tier set (via Set Blob Tier or Copy Blob) into the new default tier. Moving files to a cooler default tier results in capacity charges for all write operations, and moving files to a warmer default tier results in capacity charges for all read and data retrieval operations.  
 
-   All files uploaded to a workspace will land in the default tier.  To upload a file in a different tier, you can use the 'x-ms-access-tier' header in the [Put Blob API](https://learn.microsoft.com/rest/api/storageservices/put-blob).  
+  All files uploaded to a workspace land in the default tier.  To upload a file in a different tier, use the 'x-ms-access-tier' header in the [Put Blob API](/rest/api/storageservices/put-blob).  
 
 > [!NOTE]
-> OneLake only supports changing the storage tier of data which is fully billable.  Any item where storage or transactions are not billed, or only billed up to a limit, are currently exempt from tier change operations.  
+> OneLake only supports changing the storage tier of data that is fully billable.  Any item where storage or transactions are not billed, or only billed up to a limit, are currently exempt from tier change operations.  
 
 ## Storage tiers and OneLake consumption
 
@@ -75,11 +75,11 @@ Storage tiers affect both your pay-as-you-go rate for OneLake storage and your F
 
 - **Transaction charges:** The per-transaction CU consumption for reading, writing, or listing data, which is lowest for hot storage and highest for cold storage.
 
-- **Access costs:** The cool and cold tiers introduce a per-GB data retrieval fee, which will consume CUs based on the amount of data read.  
+- **Access costs:** The cool and cold tiers introduce a per-GB data retrieval fee, which consumes CUs based on the amount of data read.  
 
 - **Early deletion penalty:** Additional charges that apply when you change the tier or delete data out of cool or cold storage before the minimum retention period. Can be avoided by copying the data out of the tier instead.  
 
-Cool storage has a minimum 30-day retention period, and cold storage has a minimum 90-day retention period. If you move or delete data earlier, you will be billed as if the data remained in that tier for the full retention period.
+Cool storage has a minimum 30-day retention period, and cold storage has a minimum 90-day retention period. If you move or delete data earlier, you are billed as if the data remained in that tier for the full retention period.
 
 For more information on OneLake consumption, see [OneLake compute and storage consumption](onelake-consumption.md).  For more information about pricing, see [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).  
 
@@ -99,7 +99,7 @@ The cool and cold storage tiers each have a minimum number of days a file must b
 
 The following example shows how tiering can reduce storage costs over time, especially for infrequently accessed data.
 
-Assume you have 10 TB of data that must be retained for 5 years.  Once per year, you perform a compliance audit which reads approximately 10% (1TB) of the data.
+Assume you have 10 TB of data that must be retained for 5 years.  Once per year, you perform a compliance audit that reads approximately 10% (1TB) of the data.
 
 The following table shows the cost of storing the data for 5 years at the hot, cool, and cold tiers:
 
@@ -127,11 +127,11 @@ Following are some simple guidelines for optimizing your costs through efficient
 
 - To find the optimal access tier, estimate what percentage of the data is read each month.  The hot tier is generally most cost-effective when at least 50% of the data is read per month.
 - Use lifecycle rules to move data to cool or cold storage automatically.
-- Load data directly to the cool or cold access tier if you know it will never be frequently accessed to save on tier change transactions.
+- To save on tier change transaction costs, load data directly to the cool or cold access tier if you know it won't be frequently accessed.
 
 ## Updates to OneLake consumption reporting
 
-As part of the rollout of OneLake storage tiers, OneLake compute operations reporting is changing for  capacity billing.  These updates improve clarity and align reporting with the new storage tier model. There is no change to billing rates.
+As part of the rollout of OneLake storage tiers, OneLake compute operations reporting is changing for capacity billing. These updates improve clarity and align reporting with the new storage tier model. There is no change to billing rates.
 
 Key updates include:
 
@@ -142,7 +142,7 @@ Key updates include:
 
 ## Limitations
 
-- After enabling lifecycle management or storage tiers, you will be charged for Oracle and MS SQL operations.  Upgrading to [OPDG version 3000.314.5](https://www.microsoft.com/download/details.aspx?id=53127) or later will make these mirroring operations free again.
+- After enabling lifecycle management or storage tiers, you will be charged for Oracle and MS SQL operations.  Upgrade to [OPDG version 3000.314.5](https://www.microsoft.com/download/details.aspx?id=53127) or later to make these mirroring operations free again.
 
 ## Related content
 
