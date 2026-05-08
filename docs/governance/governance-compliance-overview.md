@@ -158,7 +158,7 @@ In modern business intelligence projects, understanding the flow of data from a 
 
 For more information, see [Lineage](./lineage.md) and [Impact analysis](./impact-analysis.md).
 
-**Guidance**: We recommend using proper and consistent naming conventions for items. This can help while looking at lineage information.  
+**Guidance**: Use proper and consistent naming conventions for items. This practice helps when looking at lineage information.  
 
 ### Purview for governance across the org
 
@@ -168,21 +168,21 @@ The data governance capabilities offered on Fabric via Purview's [live view](/pu
 
 #### Data curation
 
-Data curation in your organization involves gathering metadata information, lineage information, and others from all sources that your organization uses. These could be on-premises, third-party clouds, third-party products and services, or CRM systems to name a few. This extraction process is also referred to as scanning in Purview. All information is retrieved using built-in scanners in Purview that scan your organization's data estate to collect this information. In Purview this is executed by Data Map.
+Data curation in your organization involves gathering metadata information, lineage information, and other data from all sources that your organization uses. These sources can be on-premises, third-party clouds, third-party products and services, or CRM systems. This extraction process is also referred to as scanning in Purview. The built-in scanners in Purview retrieve all information by scanning your organization's data estate. In Purview, Data Map executes this process.
 
 #### Data Map
 
-Purview has a scanning engine that can scan and fetch metadata from disparate sources and populate Purview's data map. Purview exposes this metadata via Atlas APIs so that it can be consumed by external services or ISVs. Data Map also interacts with Fabric and gets its metadata populated internally, so that business users can search, find, and use these data products to build their insights. Currently, data consumers can look at all Fabric workspaces they have viewer access to. This is known as [live view](/purview/live-view). On top of this, manual scans can be executed on all Fabric Items from Purview, where item level metadata is picked and made available for use in Purview. This is only available for the enterprise tier. Currently you can have lineage on an item level.
+Purview has a scanning engine that can scan and fetch metadata from disparate sources and populate Purview's data map. Purview exposes this metadata via Atlas APIs so that external services or ISVs can consume it. Data Map also interacts with Fabric and gets its metadata populated internally, so that business users can search, find, and use these data products to build their insights. Currently, data consumers can view all Fabric workspaces they have viewer access to. This view is known as [live view](/purview/live-view). On top of this view, you can execute manual scans on all Fabric items from Purview, where the process picks item-level metadata and makes it available for use in Purview. This feature is only available for the enterprise tier. Currently, you can have lineage on an item level.
 
 #### Data discovery in Purview
 
-Data consumers who work with your data should be able to search and find the relevant data. Purview helps here by providing concepts of domains. Business-friendly terminology and groupings make it more relevant and easier to search for data which teams are interested in, based on terms they're familiar with. This also blends well with the data mesh architectural pattern. Data catalog is the application layer in Purview that helps teams search for data.
+Data consumers who work with your data should be able to search and find the relevant data. Purview helps by providing the concepts of domains. Business-friendly terminology and groupings make it more relevant and easier to search for data that teams are interested in, based on terms they're familiar with. This approach also blends well with the data mesh architectural pattern. Data catalog is the application layer in Purview that helps teams search for data.
 
 **Guidance**: Enterprise and business architecture teams should define domains and also a persona mapping between business and technical players to make roles and responsibilities clear. These definitions must be in line with the domain definitions in Fabric.
 
 #### Data Catalog in Purview
 
-Purview Data Catalog exposes the metadata captured from all sources feeding your data platform. With Data Catalog, customers can search for the data and items they're interested in working with without having to know which systems are holding your data. All Fabric item metadata is available inside Purview.
+Purview Data Catalog exposes the metadata captured from all sources feeding your data platform. By using Data Catalog, you can search for the data and items you're interested in working with without having to know which systems are holding your data. All Fabric item metadata is available inside Purview.
 
 ## Monitor, uncover, get insights, and act
 
