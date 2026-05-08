@@ -18,7 +18,7 @@ The **Series allowed for Writeback** section of the **Writeback Settings** tab l
 
 Clear series that should not be written back to the destination.
 
-:::image type="content" source="../media/planning-writeback/planning-how-to-configure-data-settings/writeback-settings.jpg" alt-text="Screenshot of the Writeback Settings" lightbox="../media/planning-writeback/planning-how-to-configure-data-settings/writeback-settings.jpg":::
+:::image type="content" source="../media/planning-writeback/planning-how-to-configure-data-settings/writeback-settings.jpg" alt-text="Screenshot of the Writeback Settings." lightbox="../media/planning-writeback/planning-how-to-configure-data-settings/writeback-settings.jpg":::
 
 ## Show text inputs with HTML formatting
 
