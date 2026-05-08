@@ -23,7 +23,7 @@ With the Fabric IQ plugin enabled in Cowork, you can:
 1. Reference a Power BI report that you have access to and ask Cowork to summarize it, compare values, or explain a trend.
 1. Chain a data answer into other Cowork skills, such as drafting an email, creating a document, or scheduling a follow-up meeting, all in the same chat.
 
-Under the covers, the plugin uses the [Power BI Model Context Protocol (MCP) server](/power-bi/developer/mcp/) to query semantic models and reports on your behalf, combined with Cowork-native search to discover the right Power BI artifacts when you reference them by name. Queries run against Power BI as you, so existing item permissions and row-level security (RLS) continue to apply.
+Under the covers, Cowork queries Power BI semantic models and reports on your behalf and uses Cowork-native search to find the right Power BI artifacts when you reference them by name. Queries run against Power BI as you, so existing item permissions and row-level security (RLS) continue to apply.
 
 ## Ground a Cowork chat in Power BI data
 
@@ -100,10 +100,10 @@ No additional Fabric capacity, F SKU, or Power BI Premium per user (PPU) license
 When you ask a question in Cowork that the Fabric IQ plugin can answer, Cowork follows this flow:
 
 1. **Discover the right artifact.** If you attach a report or paste a link, Cowork uses that artifact directly. If you reference a report by name, Cowork searches Power BI artifacts you have access to and selects the best match.
-1. **Query Power BI through the MCP server.** Cowork sends the question, plus the chosen report or semantic model, to the [Power BI MCP server](/power-bi/developer/mcp/). The MCP server translates the question into DAX, runs it against the semantic model, and returns the result.
+1. **Query Power BI on your behalf.** Cowork sends the question, along with the chosen report or semantic model, to Power BI. Power BI runs the query against the underlying data and returns the result.
 1. **Compose the answer in Cowork.** Cowork uses the returned data to write a natural-language answer in the chat. You can then ask follow-up questions or hand the answer off to another Cowork skill.
 
-Because the MCP server runs queries as the signed-in user, item permissions and row-level security in Power BI continue to apply. Cowork doesn't see data that you can't already see in Power BI.
+Because Cowork queries Power BI as the signed-in user, item permissions and row-level security in Power BI continue to apply. Cowork doesn't see data that you can't already see in Power BI.
 
 ## Send feedback
 
@@ -114,6 +114,5 @@ The Fabric IQ plugin is in preview, and feedback during Frontier helps shape the
 - [What is Fabric IQ (preview)?](../overview.md)
 - [Available plugins for Copilot Cowork (Frontier)](/microsoft-365/copilot/cowork/cowork-available-plugins)
 - [Use plugins with Copilot Cowork (Frontier)](/microsoft-365/copilot/cowork/cowork-plugins)
-- [Power BI MCP server documentation](/power-bi/developer/mcp/)
 - [Share data with your Microsoft 365 services](../../admin/admin-share-power-bi-metadata-microsoft-365-services.md)
 - [Power BI semantic models](../../data-warehouse/semantic-models.md)
