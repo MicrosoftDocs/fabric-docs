@@ -22,7 +22,7 @@ A lifecycle management policy is a collection of rules defined in a JSON documen
 
 Each lifecycle rule contains the following elements:
 
-- **Scope**: A rule can apply to the entire workspace, all diagnostics data in the workspace, or be filtered to a specific set of items with prefix matching.
+- **Scope**: A rule can apply to the entire workspace, in the workspace, or be filtered to a set of paths with prefix matching.
 - **Status**: The active status of a rule. An active rule will run daily. An inactive rule won't result in any actions until reactivated.
 - **Condition**: A rule's action is applied when a file in the scope meets the specified condition. You can set conditions on when a file was created, last accessed, or last modified.
 - **Action**: A rule's action happens when a file in the scope meets the specified condition. Each action is linked to a single condition, and a single rule can have multiple action + condition pairs.
@@ -62,7 +62,7 @@ A rule contains several parameters, described in the following table:
 | **type**       | An enum value  | The only valid type is `Lifecycle`.                                                                                    | Yes |
 | **definition** | An object that defines the lifecycle rule | The definition contains the filters (scope), actions, and conditions.                       | Yes |
 
-## Scope
+### Scope
 
 The scope of a lifecycle rule is determined by its defined filters. If no filter is present, then the lifecycle rule applies to all files within the workspace. You can't specify files to exclude from a rule's scope. If more than one filter is defined, a logical AND is applied to all filters.  
 
@@ -73,15 +73,11 @@ The following table describes each filter parameter:
 | **blobTypes**  | Array of predefined enum values | OneLake only supports **blockblob**.                                             | Yes      |
 | **prefixMatch**| Array of strings                | These strings are prefixes to be matched. The value ***/diagnosticLogs** will scope the rule to all diagnostic events in the workspace.           | No       |
 
-### prefixMatch
+#### prefixMatch
 
-Each rule can define up to 10 case-sensitive prefixes. A prefix string must start with an item name or GUID. For example, if you want to scope a rule to all files within the files folder of a lakehouse, set the **prefixMatch** to "myLakehouse.Lakehouse/Files". Characters such as `*` and `?` are treated as string literals.  
+Each rule can define up to 10 case-sensitive prefixes to filter the paths the rule applies to. A prefix string must start with an item name or GUID. For example, if you want to scope a rule to all files within the files folder of a lakehouse, set the **prefixMatch** to "myLakehouse.Lakehouse/Files". Characters such as `*` and `?` are treated as string literals.  
 
-### Diagnostic events  
-
-OneLake applies lifecycle rules to all diagnostics events when the rule applies to the entire workspace, or when the **prefixMatch** field is set to ***/diagnosticLogs**. If creating the rule in the Fabric portal, you can select the **Diagnostic Events** option in the rule scope. Lifecycle rules don't apply to diagnostics data if a rule is scoped to a lakehouse containing diagnostics data. 
-
-## Actions
+### Actions
 
 Each rule must contain at least one action and condition. Actions are applied to any files within the rule scope when the condition is met. The following table describes each action supported by OneLake lifecycle policies:  
 
@@ -93,7 +89,7 @@ Each rule must contain at least one action and condition. Actions are applied to
 
 If you define more than one action on the same file, lifecycle management applies the least expensive action to the file. The **tierToCold** action is considered less expensive than **tierToCool**.
 
-## Conditions
+### Conditions
 
 Every action is linked to a time-based condition. If a file's property exceeds the number of days specified by the condition, then the associated action executes. Lifecycle conditions are assessed on each object only once during a policy run - if a file meets a condition after assessment, it will be processed in a subsequent policy run. The following table describes each condition supported by OneLake lifecycle policies:
 
@@ -103,20 +99,24 @@ Every action is linked to a time-based condition. If a file's property exceeds t
 | **daysAfterCreationGreaterThan**                   | Integer | The age in days after the file's creation time.   |
 | **daysAfterLastAccessTimeGreaterThan** | Integer | The age in days after the file's last accessed time. To learn more, see [Access time tracking](#access-time-tracking).   |
 
-### Access time tracking
+#### Access time tracking
 
 Access time tracking is required when using the **daysAfterLastAccessTimeGreaterThan** condition. This field keeps a record of when a file was last read or written in the "LastAccessTime" file property. Metadata operations, such as getting a file's properties, aren't access operations and do not update the access time of the file. If you apply the **daysAfterLastAccessTimeGreaterThan** in a policy, OneLake automatically turns on access time tracking for your workspace and sets the last access time for all files to the current day. If your policy no longer contains any rules with the **daysAfterLastAccessTimeGreaterThan**, OneLake automatically turns off last access time tracking for your workspace.  
 
 > [!NOTE]
 > To minimize the effect on read access latency, only the first read of the last 24 hours updates the last access time. Subsequent reads in the same 24-hour period don't update the last access time. If a file is modified between reads, the last access time is the more recent of the two values
 
-## Managing your policy
+## Manage your policy
 
 You can create or update your lifecycle policy for your workspace via the Fabric portal (**Workspace Settings** > **OneLake** > **Lifecycle Management**) or by using the [Lifecycle Management APIs](https://learn.microsoft.com/rest/api/fabric/core/onelake-lifecycle-policy).  
 
 When you update your policy via an API, only full policy updates are supported - you must resubmit the entire policy in full via the [Import Lifecycle Policy API](https://learn.microsoft.com/rest/api/fabric/core/onelake-lifecycle-policy/import-policy).  
 
-### Creating a policy in the Fabric portal
+### Prerequisites
+
+To create, update, or delete a lifecycle policy for a workspace, you must be a workspace admin. For more information, see [Roles in workspaces](../fundamentals/roles-workspaces.md).
+
+### Create a policy in the Fabric portal
 
 In the **Lifecycle management** settings page, you can update your workspace's lifecycle policy by creating, deleting, and managing lifecycle rules. 
 
@@ -127,10 +127,6 @@ To manage your lifecycle policy via the Fabric portal:
 3. Select **Add** to create a new rule or create a template rule with pre-defined actions and conditions.
 
 You can also delete, pause, or re-activate rules from the Fabric portal.  
-
-### Permissions
-
-To create, update, or delete a lifecycle policy for a workspace, you must be a workspace admin. For more information, see [Roles in workspaces](../fundamentals/roles-workspaces.md).
 
 ### Run your policy
 
