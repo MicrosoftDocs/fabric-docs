@@ -349,7 +349,6 @@ For more information, see [Private links for Azure and Fabric Events](/fabric/re
    - Fabric doesn't currently support Azure Event Hubs integration.
    - Queued ingestion via OneLake isn't currently available.
 * The **OneLake Catalog - Govern** tab isn't available when Private Link is activated.
-* **OneLake Security** isn't currently supported when a workspace-level private link is enabled for a workspace.
 * Workspace monitoring isn't currently supported when a workspace-level private link is enabled for a workspace.
 
 ## Azure role-based access control (RBAC) and workspace-level private links

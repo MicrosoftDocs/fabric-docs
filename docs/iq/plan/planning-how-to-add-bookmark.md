@@ -6,9 +6,12 @@ ms.topic: how-to
 ai-usage: ai-assisted
 #customer intent: As a user, I want to understand and use bookmark feature effectively.
 ---
+
 # Add and manage bookmarks in Planning sheet
 
 Bookmarks in Planning sheets allow you to save and revisit specific report states. These states can include filters, sorting, layouts, hierarchy expansions, and other configurations. You can create and manage bookmarks to save and quickly access specific views.
+
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Prerequisite
 
