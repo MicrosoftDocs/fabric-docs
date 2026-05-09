@@ -113,5 +113,5 @@ When integrating external Delta tables, consult the [feature interoperability ma
 - [Delta Lake table format interoperability](delta-lake-interoperability.md) — Feature support matrix for Delta capabilities across Fabric workloads
 - [Lakehouse and Delta Lake tables](../data-engineering/lakehouse-and-delta-tables.md) — Comprehensive guide for Spark developers
 - [Table maintenance and optimization](table-maintenance-optimization.md) — Cross-workload optimization strategies
-- [OneLake, the OneDrive for data](onelake-overview.md) — Learn about Fabric's unified data lake
+- [OneLake, the OneDrive for data](../onelake/onelake-overview.md) — Learn about Fabric's unified data lake
 - [Delta Lake official documentation](https://docs.delta.io/latest/delta-intro.html) — Open-source project specifications and features
