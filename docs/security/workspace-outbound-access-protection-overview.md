@@ -64,6 +64,7 @@ The following table summarizes the supported workloads and item types that can b
 | Real-Time Intelligence | Data connection rules | <ul><li>Eventstream</li></ul> | [Workspace outbound access protection for Real-Time Intelligence](workspace-outbound-access-protection-real-time-intelligence.md) |
 | Mirrored databases | Data connection rules | Microsoft Fabric mirrored databases from:<ul><li>Azure SQL Database</li><li>Snowflake</li><li>Mirrored Database</li><li>Azure Cosmos DB</li><li>Azure SQL Managed Instance</li><li>Azure Database for PostgreSQL</li><li>SQL Server</li><li>Oracle</li><li>Google Big Query</li><li>SAP</li><li>Azure Database for MySQL</li></ul> | [Workspace outbound access protection for mirrored databases](workspace-outbound-access-protection-mirrored-databases.md) |
 | OneLake | Managed private endpoints | <ul><li>OneLake shortcuts</li></ul> | [Workspace outbound access protection for OneLake](workspace-outbound-access-protection-onelake.md) |
+| Power BI (preview) | Data connection rules | <ul><li>Semantic models</li></ul> | [Workspace outbound access protection for semantic models](workspace-outbound-access-protection-semantic-models.md) |
 
 ## Considerations and limitations
 
@@ -87,13 +88,13 @@ This section outlines important considerations and limitations when using worksp
 
 ### General limitations
 
-* Workspace outbound access protection isn't supported for existing workspaces that already contain a semantic model in a lakehouse.
-
 * In workspaces with outbound access protection enabled, querying data warehouse file paths from notebooks using the `dbo` schema isn't supported, because access to schema-based paths isn't supported. To query the warehouse from notebooks, use the T-SQL option instead.
 
 * Workspace outbound access protection isn't currently compatible with [OneLake Diagnostics](/fabric/onelake/onelake-diagnostics-overview). If you require OneLake diagnostics and outbound access protection to work together, you must select a lakehouse in the same workspace.
 
 * Workspace outbound access protection isn't currently compatible with [Fabric external data sharing](/fabric/governance/external-data-sharing-overview). Cross-tenant allow lists aren't supported with workspace outbound access protection. 
+
+* Power BI items other than semantic models don't yet support outbound access protection. These items can't be created in workspaces with outbound access protection enabled. If these items already exist in a workspace, outbound access protection can't be enabled on that workspace.
 
 ### Data connection rules
 
