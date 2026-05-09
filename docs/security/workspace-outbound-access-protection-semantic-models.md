@@ -75,7 +75,7 @@ Because Power BI reports don't support outbound access protection yet, you can't
 
 - **Reports and dashboards aren't supported**: You can't enable outbound access protection on a workspace that contains Power BI reports or dashboards. Remove them first, or host them in a separate workspace that connects to the semantic model remotely.
 - **PBIX publish blocked**: Publishing .pbix files fails because the embedded report isn't supported. Use the deployment alternatives listed above.
-- **Same-workspace connections need exceptions**: Even lakehouses and warehouses in the same workspace require explicit SQL Server and ADLS Gen2 connection rules. The same applies to other data sources in the same workspace, such as SQL databases and KQL databases in eventhouses.
+- **Same-workspace connections need exceptions**: Even lakehouses and warehouses in the same workspace require explicit SQL Server and ADLS Gen2 connection rules. The same applies to other data sources in the same workspace, such as SQL databases. Some connectors, such as the connector for KQL databases in eventhouses, don't support workspace-level or endpoint-granular exceptions yet. To use those sources from a semantic model, you have to allow the entire connector type.
 - **F SKU required**: Outbound access protection requires Fabric capacity. Power BI Premium (P SKUs), Embedded (EM SKUs), and Pro workspaces aren't supported.
 - **Propagation delay**: Policy changes take about 15 minutes to take effect.
 
