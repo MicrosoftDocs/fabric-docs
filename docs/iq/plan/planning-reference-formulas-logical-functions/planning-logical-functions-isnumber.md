@@ -27,12 +27,12 @@ Returns *TRUE* if the value is a numeric value; otherwise, returns *FALSE*.
 ## Example
 
 ```
-IF(ISNUMBER(2026 Actuals), 2026 Actuals*1.05, "Not a number")
+IF(ISNUMBER(Revenue), Revenue*1.05, "Not a number")
 ```
 
-In this example, the **ISNUMBER** function checks whether *2026 Actuals* contains a numeric value. If the condition is *TRUE*, the formula applies a 5% increase to the value; otherwise, it returns '*Not a number'*.
+In this example, the **ISNUMBER** function checks whether *Revenue* contains a numeric value. If the condition is *TRUE*, the formula applies a 5% increase to the value; otherwise, it returns '*Not a number'*.
 
-:::image type="content" source="../../media/planning-reference-formulas-logical-functions/isnumber.png" alt-text="Screenshot of switch function." lightbox="../../media/planning-reference-formulas-logical-functions/isnumber.png":::
+:::image type="content" source="../media/planning-reference-formulas-logical-functions/isnumber.png" alt-text="Screenshot of switch function." lightbox="../media/planning-reference-formulas-logical-functions/isnumber.png":::
 
 ## **Excel equivalent**
 

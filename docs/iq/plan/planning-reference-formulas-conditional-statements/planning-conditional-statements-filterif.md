@@ -35,4 +35,4 @@ SUM(FILTERIF([[Sales], [Sales1], [Sales2]], ">0.1m"))
 
 Filters values from *Sales*, *Sales1*, and *Sales2* that are greater than *0.1 million* and returns their sum.
 
-:::image type="content" source="../../media/planning-reference-formulas-conditional-statements/filterif.png" alt-text="Screenshot of filter if function." lightbox="../../media/planning-reference-formulas-conditional-statements/filterif.png":::
+:::image type="content" source="../media/planning-reference-formulas-conditional-statements/filterif.png" alt-text="Screenshot of filter if function." lightbox="../media/planning-reference-formulas-conditional-statements/filterif.png":::

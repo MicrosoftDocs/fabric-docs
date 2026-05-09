@@ -32,7 +32,7 @@ IF(NOT(Sub Region == "APAC"), 52640000, 0)
 
 In this example, the **NOT** function is used within an [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements-if.md) statement to assign values to the *2027 Actuals Plan*. The function evaluates whether *Sub Region* is **not** *APAC*. If the condition is *TRUE*, the formula returns 52.64 *million*; otherwise, it returns *0*.
 
-:::image type="content" source="../../media/planning-reference-formulas-logical-functions/not.png" alt-text="Screenshot of switch function." lightbox="../../media/planning-reference-formulas-logical-functions/not.png":::
+:::image type="content" source="../media/planning-reference-formulas-logical-functions/not.png" alt-text="Screenshot of switch function." lightbox="../media/planning-reference-formulas-logical-functions/not.png":::
 
 ## **Excel equivalent**
 

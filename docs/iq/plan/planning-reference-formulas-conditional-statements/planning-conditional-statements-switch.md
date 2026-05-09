@@ -35,7 +35,7 @@ SWITCH(Sub-Category, "Bookcases", 4.55, "Chairs", 2.67, "Tables", 2.81, "Art", 1
 
 Evaluates the *Sub-Category* value and returns the corresponding numeric value for each match; if no match is found, returns 0.
 
-:::image type="content" source="../../media/planning-reference-formulas-conditional-statements/switch.png" alt-text="Screenshot of switch function." lightbox="../../media/planning-reference-formulas-conditional-statements/switch.png":::
+:::image type="content" source="../media/planning-reference-formulas-conditional-statements/switch.png" alt-text="Screenshot of switch function." lightbox="../media/planning-reference-formulas-conditional-statements/switch.png":::
 
 ## **Excel equivalent**
 

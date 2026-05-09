@@ -36,7 +36,7 @@ IF(ISBLANK(2027 Actuals Plan), 0, 2027 Actuals Plan)
 
 In this example, the **ISBLANK** function checks whether the *2027 Actuals Plan* value is blank. If the condition is *TRUE*, the formula returns *0*; otherwise, it returns the existing value.
 
-:::image type="content" source="../../media/planning-reference-formulas-logical-functions/isblank.png" alt-text="Screenshot of switch function." lightbox="../../media/planning-reference-formulas-logical-functions/isblank.png":::
+:::image type="content" source="../media/planning-reference-formulas-logical-functions/isblank.png" alt-text="Screenshot of switch function." lightbox="../media/planning-reference-formulas-logical-functions/isblank.png":::
 
 ## **Excel equivalent**
 

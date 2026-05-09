@@ -33,7 +33,7 @@ COUNTIF([[2024.Plan_Variance %], [2025.Plan_Variance %], [2026.Plan_Variance %]]
 
 Returns the count of *Plan Variance %* values across *2024*, *2025*, and *2026* that are greater than 0.
 
-:::image type="content" source="../../media/planning-reference-formulas-conditional-statements/countif.png" alt-text="Screenshot of count if function." lightbox="../../media/planning-reference-formulas-conditional-statements/countif.png":::
+:::image type="content" source="../media/planning-reference-formulas-conditional-statements/countif.png" alt-text="Screenshot of count if function." lightbox="../media/planning-reference-formulas-conditional-statements/countif.png":::
 
 ## Excel equivalent
 

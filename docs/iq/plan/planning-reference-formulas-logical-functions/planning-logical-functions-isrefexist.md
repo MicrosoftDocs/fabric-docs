@@ -8,7 +8,7 @@ ms.topic: reference
 
 # ISREFEXIST
 
-The **ISREFEXIST** function returns *TRUE* if the specified reference exists in the sheet. It returns *FALSE* if the reference is invalid or does not exist. It is commonly used to validate references before applying calculations or logic.
+The **ISREFEXIST** function returns *TRUE* if the specified reference exists in the sheet. It returns *FALSE* if the reference is invalid or doesn't exist. It is commonly used to validate references before applying calculations or logic.
 
 ## Syntax
 
@@ -27,10 +27,10 @@ Returns *TRUE* if a valid reference exists; otherwise, returns *FALSE*.
 ## **Example**
 
 ```
-IF(ISREFEXIST(2026 Revenue Plan), 2026 Revenue Plan, "Reference Does Not Exist")
+IF(ISREFEXIST(2026 Revenue Plan), 2026 Revenue Plan, "Reference doesn't exist")
 ```
 
-In this example, the **ISREFEXIST** function checks whether the *2026 Revenue Plan* reference exists. If the condition is *TRUE*, the formula returns the value of the *2026 Revenue Plan*; otherwise, it returns the text *'Reference Does Not Exist'*.
+In this example, the **ISREFEXIST** function checks whether the *2026 Revenue Plan* reference exists. If the condition is *TRUE*, the formula returns the value of the *2026 Revenue Plan*; otherwise, it returns the text *'Reference doesn't exist'*.
 
 ## **Excel equivalent**
 
