@@ -3,6 +3,9 @@ title: TLS mTLS settings common
 description: This include file provides common TLS and mTLS settings guidance for source connectors.
 ms.topic: include
 ms.date: 04/29/2026
+author: xujiang1
+ms.author: xujiang1
+ms.service: fabric
 ---
 
 - **Trust CA certificate**: Enable this option to configure the server CA certificate. Select your subscription, resource group, and key vault, and then provide the certificate name.
