@@ -34,7 +34,7 @@ IF(PY > 0, (AC - PY) / PY, 0)
 
 Returns *`(AC - PY) / PY`* if *PY* is greater than 0; otherwise, returns 0.
 
-:::image type="content" source="../../media/planning-formulas/planning-conditional-statements/if.png" alt-text="Screenshot of if function." lightbox="../../media/planning-formulas/planning-conditional-statements/if.png":::
+:::image type="content" source="../../media/planning-reference-formulas-conditional-statements/if.png" alt-text="Screenshot of if function." lightbox="../../media/planning-reference-formulas-conditional-statements/if.png":::
 
 ## Excel equivalent
 

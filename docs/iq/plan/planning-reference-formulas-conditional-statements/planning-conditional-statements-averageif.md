@@ -33,7 +33,7 @@ AVERAGEIF([Sales,Sales1,Sales2], ">0.1m")
 
 Returns the average of *Sales*, *Sales1*, and *Sales2* column values when they are greater than *0.1 million.*
 
-:::image type="content" source="../../media/planning-formulas/planning-conditional-statements/averageif.png" alt-text="Screenshot of average if function." lightbox="../../media/planning-formulas/planning-conditional-statements/averageif.png":::
+:::image type="content" source="../../media/planning-reference-formulas-conditional-statements/averageif.png" alt-text="Screenshot of average if function." lightbox="../../media/planning-reference-formulas-conditional-statements/averageif.png":::
 
 ## **Excel equivalent**
 

@@ -33,7 +33,7 @@ IFNA((Actuals - Plan) / Plan, 0)
 
 Returns *`(Actuals - Plan) / Plan`* if the expression evaluates successfully; otherwise, returns 0 if the #N/A error occurs.
 
-:::image type="content" source="../../media/planning-formulas/planning-conditional-statements/ifna.png" alt-text="Screenshot of ifna function." lightbox="../../media/planning-formulas/planning-conditional-statements/ifna.png":::
+:::image type="content" source="../../media/planning-reference-formulas-conditional-statements/ifna.png" alt-text="Screenshot of ifna function." lightbox="../../media/planning-reference-formulas-conditional-statements/ifna.png":::
 
 ## **Excel equivalent**
 

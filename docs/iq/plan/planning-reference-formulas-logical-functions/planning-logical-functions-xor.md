@@ -8,7 +8,7 @@ ms.topic: reference
 
 # XOR
 
-The **XOR** (*Exclusive OR*) function returns *TRUE* if exactly one or an odd number of the specified conditions is *TRUE*. Otherwise, it returns *FALSE*. It is commonly used with [**IF**](../planning-conditional-statements/planning-conditional-statements-if.md) and other logical functions to evaluate mutually exclusive conditions.
+The **XOR** (*Exclusive OR*) function returns *TRUE* if exactly one or an odd number of the specified conditions is *TRUE*. Otherwise, it returns *FALSE*. It is commonly used with [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements-if.md) and other logical functions to evaluate mutually exclusive conditions.
 
 ## Syntax
 
@@ -31,9 +31,9 @@ Returns *TRUE* if an odd number of conditions are *TRUE*; otherwise, returns *FA
 IF(XOR(Sub Region == "APAC", Sub Category == "Juices"), 52640000, 0)
 ```
 
-In this example, the **XOR** function is used within an [**IF**](../planning-conditional-statements/planning-conditional-statements-if.md) statement to assign values to the *2027 Actuals Plan*. The function evaluates whether only one of the conditions is *TRUE*: *Sub Region* is *APAC* or *Sub Category* is Juices. If exactly one condition is *TRUE*, the formula returns *52.64 million*; otherwise, it returns *0*.
+In this example, the **XOR** function is used within an [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements-if.md) statement to assign values to the *2027 Actuals Plan*. The function evaluates whether only one of the conditions is *TRUE*: *Sub Region* is *APAC* or *Sub Category* is Juices. If exactly one condition is *TRUE*, the formula returns *52.64 million*; otherwise, it returns *0*.
 
-:::image type="content" source="../../media/planning-formulas/planning-logical-functions/xor.png" alt-text="Screenshot of switch function." lightbox="../../media/planning-formulas/planning-logical-functions/xor.png":::
+:::image type="content" source="../../media/planning-reference-formulas-logical-functions/xor.png" alt-text="Screenshot of switch function." lightbox="../../media/planning-reference-formulas-logical-functions/xor.png":::
 
 ## **Excel equivalent**
 

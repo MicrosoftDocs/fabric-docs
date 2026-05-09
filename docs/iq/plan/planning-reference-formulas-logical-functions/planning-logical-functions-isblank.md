@@ -8,7 +8,7 @@ ms.topic: reference
 
 # ISBLANK
 
-The **ISBLANK** function returns *TRUE* if the specified value is blank or empty. It returns *FALSE* if the value contains any text, number, or expression. It is commonly used with [**IF**](../planning-conditional-statements/planning-conditional-statements-if.md) and other logical functions to validate missing values before performing calculations.
+The **ISBLANK** function returns *TRUE* if the specified value is blank or empty. It returns *FALSE* if the value contains any text, number, or expression. It is commonly used with [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements-if.md) and other logical functions to validate missing values before performing calculations.
 
 > [!Note]
 > The **ISEMPTY** function works similar to **ISBLANK** and can also be used to check for blank or empty values.
@@ -22,7 +22,7 @@ ISBLANK(value)
 
 ## Arguments
 
-* value - The value to evaluate.&#x20;
+* value - The value to evaluate.
 
 ## Return value
 
@@ -36,7 +36,7 @@ IF(ISBLANK(2027 Actuals Plan), 0, 2027 Actuals Plan)
 
 In this example, the **ISBLANK** function checks whether the *2027 Actuals Plan* value is blank. If the condition is *TRUE*, the formula returns *0*; otherwise, it returns the existing value.
 
-:::image type="content" source="../../media/planning-formulas/planning-logical-functions/isblank.png" alt-text="Screenshot of switch function." lightbox="../../media/planning-formulas/planning-logical-functions/isblank.png":::
+:::image type="content" source="../../media/planning-reference-formulas-logical-functions/isblank.png" alt-text="Screenshot of switch function." lightbox="../../media/planning-reference-formulas-logical-functions/isblank.png":::
 
 ## **Excel equivalent**
 

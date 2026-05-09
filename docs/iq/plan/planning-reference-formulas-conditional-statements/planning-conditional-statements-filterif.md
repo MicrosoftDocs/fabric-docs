@@ -10,7 +10,7 @@ ms.topic: reference
 
 The **FILTERIF** function filters a list of values based on a specified condition and returns the filtered results as an array.
 
-Because it returns an array, it is typically used with aggregate functions such as **SUM** or **AVERAGE**. It can also be used to populate a [calculated row](../../planning-how-to-insert-formula-rows.md).
+Because it returns an array, it is typically used with aggregate functions such as **SUM** or **AVERAGE**. It can also be used to populate a [calculated row](../planning-how-to-insert-rows-formula.md).
 
 ## Syntax
 
@@ -35,4 +35,4 @@ SUM(FILTERIF([[Sales], [Sales1], [Sales2]], ">0.1m"))
 
 Filters values from *Sales*, *Sales1*, and *Sales2* that are greater than *0.1 million* and returns their sum.
 
-:::image type="content" source="../../media/planning-formulas/planning-conditional-statements/filterif.png" alt-text="Screenshot of filter if function." lightbox="../../media/planning-formulas/planning-conditional-statements/filterif.png":::
+:::image type="content" source="../../media/planning-reference-formulas-conditional-statements/filterif.png" alt-text="Screenshot of filter if function." lightbox="../../media/planning-reference-formulas-conditional-statements/filterif.png":::
