@@ -3,7 +3,7 @@ title: Connector Capability Comparison Between Azure Data Factory and Data Facto
 description: This documentation provides an in-depth comparison of connector availability between Azure Data Factory (ADF) and Data Factory in Fabric.
 ms.reviewer: lle
 ms.topic: how-to
-ms.date: 02/28/2026
+ms.date: 05/09/2026
 ms.custom:
   - template-how-to
   - connectors
@@ -54,7 +54,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |  |  | User-assigned managed identity |  |  |  |  |
 |  |  |  |  |  | Organizational account |  |
 | [Azure Database for MySQL](connector-azure-database-for-mysql-overview.md) | ✓/✓ | Basic | Support `SSLMode` and `UseSystemTrustStore`. | ✓/✓ | Basic | `SSLMode` and `UseSystemTrustStore` are not supported. |
-| Azure Databricks Delta Lake | ✓/✓ | Access token | Support `domain` and `clusterId`.<br>Support Lookup activity. | ✓/✓ | Personal Access Token | Support Server Hostname, HTTP Path. <br>Lookup activity is not supported. |
+| Azure Databricks Delta Lake | ✓/✓ | Access token | Support `domain` and `clusterId`. | ✓/✓ | Personal Access Token | Support Server Hostname, HTTP Path.  |
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  |  |  |
 | [Azure File Storage](connector-azure-files-overview.md) | ✓/✓ | Account key |  | ✓/✓ | Account key |  |
@@ -112,7 +112,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |--------------------|---------------------|-------------------------|-------------------------|-------------------------------|---------------------------|----------------------------|
 | [Amazon Redshift](connector-amazon-redshift-overview.md) | ✓/- | Basic | Support Amazon Redshift UNLOAD  | ✓/- | Amazon Redshift |Amazon Redshift UNLOAD is not supported |
 | [DB2](connector-ibm-db2-database-overview.md) | ✓/- | Basic | | ✓/- | Basic | |
-| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/- | UserAuthentication | Support version 1.1 (Return the results of the first statement after excluding the evaluation statements when executing multiple statements) <br><br>Service Account Email is not supported for Service Account Login authentication type.| ✓/- | |  Version 1.1 is not supported. (Return the result of the first statement when executing multiple statements) <br><br>Service Account Login authentication type supports Service Account Email. |
+| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/- | UserAuthentication | Support version 1.1 (Return the results of the first statement after excluding the evaluation statements when executing multiple statements) <br><br>Service Account Email is not supported for Service Account Login authentication type.| ✓/✓ | |  Version 1.1 is not supported. (Return the result of the first statement when executing multiple statements) <br><br>Service Account Login authentication type supports Service Account Email. |
 | | | ServiceAuthentication | | | Service Account Login | |
 | [Greenplum](connector-greenplum-for-pipeline-overview.md) | ✓/- | Basic | Support `sslMode`. | ✓/- | Basic | `sslMode` is not supported. |
 | [Hive](connector-hive-llap-overview.md) | ✓/- | Anonymous | | N | | |
@@ -125,11 +125,11 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | [MariaDB](connector-mariadb-overview.md) | ✓/- | Basic | Support `sslMode` and `useSystemTrustStore`. | ✓/- | Basic | `sslMode` and `useSystemTrustStore` are not supported. |
 | [Microsoft Access](connector-microsoft-access-overview.md) | ✓/✓ | Anonymous | Support `credential`. | ✓/✓ | Anonymous | `credential` is not supported. |
 | | | Basic | | | Basic | |
-| [MySQL](connector-mysql-database-overview.md) | ✓/- | Basic | Support `port`, `sslMode` and `useSystemTrustStore`.<br><br>Support additional connection properties: `allowZeroDateTime`, `connectionTimeout`, `convertZeroDateTime`, `guidFormat`, `sslCert`, `sslKey`, `treatTinyAsBoolean`. | ✓/- | Basic | `port`, `sslMode` and `useSystemTrustStore` are not supported.<br><br>Additional connection properties are not supported. |
+| [MySQL](connector-mysql-database-overview.md) | ✓/- | Basic | Support `port`, `sslMode` and `useSystemTrustStore`.<br><br>Support additional connection properties: `allowZeroDateTime`, `connectionTimeout`, `convertZeroDateTime`, `guidFormat`, `sslCert`, `sslKey`, `treatTinyAsBoolean`. | ✓/✓ | Basic | `port`, `sslMode` and `useSystemTrustStore` are not supported.<br><br>Additional connection properties are not supported. |
 | Netezza | ✓/- | Basic | | N | | |
-| [Oracle](connector-oracle-database-overview.md) | ✓/✓ | Basic | Support additional connection properties: `encryptionClient`, `encryptionTypesClient`, `cryptoChecksumClient`, `cryptoChecksumTypesClient`, `initialLobFetchSize`, `fetchSize`, `statementCacheSize`, `initializationString`, `enableBulkLoad`, `supportV1DataTypes`, and `fetchTswtzAsTimestamp`. | ✓/✓ | Basic | Additional connection properties are not supported. |
+| [Oracle](connector-oracle-database-overview.md) | ✓/✓ | Basic | Support additional connection properties: `encryptionClient`, `encryptionTypesClient`, `cryptoChecksumClient`, `cryptoChecksumTypesClient`, `initialLobFetchSize`, `fetchSize`, `statementCacheSize`, `initializationString`, `enableBulkLoad`, `supportV1DataTypes`, and `fetchTswtzAsTimestamp`. | ✓/✓ | Basic | Support automatic table creation.<br><br>Support Write behavior.<br><br>Additional connection properties are not supported. |
 | [Amazon RDS for Oracle](connector-amazon-rds-for-oracle-overview.md) | ✓/- | Basic | Support additional connection properties: `encryptionClient`, `encryptionTypesClient`, `cryptoChecksumClient`, `cryptoChecksumTypesClient`, `initialLobFetchSize`, `fetchSize`, `statementCacheSize`, `initializationString`, `enableBulkLoad`, `supportV1DataTypes`, and `fetchTswtzAsTimestamp`. | ✓/− | Basic | Additional connection properties are not supported. |
-| [PostgreSQL](connector-postgresql-overview.md) | ✓/- | Basic | Support `port` and `sslMode`.<br><br>Support additional connection properties: `schema`, `pooling`, `connectionTimeout`, `commandTimeout`, `trustServerCertificate`, `sslCertificate`, `sslKey`, `sslPassword`, `readBufferSize`, `logParameters`, `timezone`, `encoding`. | ✓/- | Basic | `port` and `sslMode` are not supported.<br><br>Additional connection properties are not supported. |
+| [PostgreSQL](connector-postgresql-overview.md) | ✓/- | Basic | Support `port` and `sslMode`.<br><br>Support additional connection properties: `schema`, `pooling`, `connectionTimeout`, `commandTimeout`, `trustServerCertificate`, `sslCertificate`, `sslKey`, `sslPassword`, `readBufferSize`, `logParameters`, `timezone`, `encoding`. | ✓/✓ | Basic | `port` and `sslMode` are not supported.<br><br>Additional connection properties are not supported. |
 | [Presto](connector-presto-overview.md) | ✓/- | Anonymous | Support `enableSsl`. | ✓/- | Anonymous | `enableSsl` is not supported. |
 | | | LDAP | | | LDAP | |
 | [SAP BW Open Hub](connector-sap-bw-open-hub-application-server-overview.md) | ✓/- | Basic | | ✓/- | Basic | |
@@ -138,7 +138,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | | | Windows | | | Windows | |
 | [SAP Table](connector-sap-table-application-server-overview.md) | ✓/- | Basic | Support `sncMode`, `sncMyName`, `sncPartnerName`, `sncLibraryPath`, and `sncQop`. | ✓/− | Basic | `sncMode`, `sncMyName`, `sncPartnerName`, `sncLibraryPath`, and `sncQop` are not supported. |
 | | | Secure Network Communications (SNC) | | | | |
-| [Snowflake](connector-snowflake-overview.md) | ✓/✓ | Basic | Support `accountIdentifier`, `database`, `UseUtcTimestamps`, `treatDecimalAsString` and `schema`. | ✓/✓ | | `accountIdentifier`, `database`, `UseUtcTimestamps`, `treatDecimalAsString` and `schema` are not supported. |
+| [Snowflake](connector-snowflake-overview.md) | ✓/✓ | Basic | Support `accountIdentifier`, `database`, `UseUtcTimestamps`, `treatDecimalAsString` and `schema`. | ✓/✓ | | Support automatic table creation.<br><br>Support Write behavior.<br><br>`accountIdentifier`, `database`, `UseUtcTimestamps`, `treatDecimalAsString` and `schema` are not supported. |
 | | | KeyPair | | | KeyPair | |
 | | | | | | Snowflake | |
 | | | | | | Microsoft Account | |
@@ -176,6 +176,9 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | [SFTP](connector-sftp-overview.md)                 | ✓/✓                | Basic                         | Support `skipHostKeyValidation`. | ✓/✓                           | Basic                     | `skipHostKeyValidation` is not supported. |
 |                      |                     | SSH public key                |                        |                               |                           |                           |
 |                      |                     | multifactor                   |                        |                               |                           |                           |
+| [SharePoint Online File](connector-sharepoint-online-file-copy-activity.md) | N                |                          |  | ✓/✓                           | Organizational account                    |  |
+|                      |                     |                 |                        |                               | Workspace identity                          |                           |
+
 ## File format connectors
 
 
@@ -232,7 +235,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | SAP ECC            | ✓/-                | Basic                 | | N                      |                          | |
 | [ServiceNow](connector-servicenow-overview.md)         | ✓/-                | Basic                 | Support pageSize | ✓/-                   | Basic                   |  pageSize is not supported|
 | | | OAuth2 | | | | |
-| [SharePoint Online List](connector-sharepoint-online-list-overview.md) | ✓/-                | Service principal     | Support `servicePrincipalCredentialType`, `ServicePrincipalCert`, `servicePrincipalEmbeddedCert` and `servicePrincipalEmbeddedCertPassword`. | ✓/-                   | Service principal       |  `servicePrincipalCredentialType`, `ServicePrincipalCert`, `servicePrincipalEmbeddedCert` and `servicePrincipalEmbeddedCertPassword` are not supported.<br><br>Support Implementation and View mode. |
+| [SharePoint Online List](connector-sharepoint-online-list-overview.md) | ✓/-                | Service principal     | Support `servicePrincipalCredentialType`, `ServicePrincipalCert`, `servicePrincipalEmbeddedCert` and `servicePrincipalEmbeddedCertPassword`. | ✓/-                   | N     | Support Implementation and View mode. |
 | | | | | | Organizational account | |
 | | | | | | Workspace identity | |
 | Shopify            | ✓/-                | Access token          | | N                      |                          | |
