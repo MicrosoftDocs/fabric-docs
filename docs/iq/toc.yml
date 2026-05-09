@@ -160,7 +160,49 @@ items:
               - name: Create templates
                 href: plan/planning-driver-model/planning-how-to-create-templates.md
               - name: Create a driver model
-                href: plan/planning-driver-model/planning-how-to-create-driver-model.md    
+                href: plan/planning-driver-model/planning-how-to-create-driver-model.md
+    - name: Reference
+      items:
+        - name: Formulas and Functions
+          items:
+            - name: Conditional statements
+              items:
+                - name: Conditional statements overview
+                  href: plan/planning-reference-formulas-conditional-statements/planning-conditional-statements-overview.md
+                - name: IF
+                  href: plan/planning-reference-formulas-conditional-statements/planning-conditional-statements-if.md
+                - name: IFNA
+                  href: plan/planning-reference-formulas-conditional-statements/planning-conditional-statements-ifna.md
+                - name: AVERAGEIF
+                  href: plan/planning-reference-formulas-conditional-statements/planning-conditional-statements-averageif.md
+                - name: COUNTIF
+                  href: plan/planning-reference-formulas-conditional-statements/planning-conditional-statements-countif.md
+                - name: SUMIF
+                  href: plan/planning-reference-formulas-conditional-statements/planning-conditional-statements-sumif.md
+                - name: FILTERIF
+                  href: plan/planning-reference-formulas-conditional-statements/planning-conditional-statements-filterif.md
+                - name: SWITCH
+                  href: plan/planning-reference-formulas-conditional-statements/planning-conditional-statements-switch.md
+            - name: Logical functions
+              items:
+                - name: Logical functions overview
+                  href: plan/planning-reference-formulas-logical-functions/planning-logical-functions-overview.md
+                - name: AND
+                  href: plan/planning-reference-formulas-logical-functions/planning-logical-functions-and.md
+                - name: OR
+                  href: plan/planning-reference-formulas-logical-functions/planning-logical-functions-or.md
+                - name: NOT
+                  href: plan/planning-reference-formulas-logical-functions/planning-logical-functions-not.md
+                - name: XOR
+                  href: plan/planning-reference-formulas-logical-functions/planning-logical-functions-xor.md
+                - name: IN
+                  href: plan/planning-reference-formulas-logical-functions/planning-logical-functions-in.md
+                - name: ISBLANK
+                  href: plan/planning-reference-formulas-logical-functions/planning-logical-functions-isblank.md
+                - name: ISNUMBER
+                  href: plan/planning-reference-formulas-logical-functions/planning-logical-functions-isnumber.md
+                - name: ISREFEXIST
+                  href: plan/planning-reference-formulas-logical-functions/planning-logical-functions-isrefexist.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
