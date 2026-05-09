@@ -4,7 +4,7 @@ items:
 
 - name: Get started with Fabric
   items:
-  - name: Understand Microsoft Fabric
+  - name: What is Microsoft Fabric?
     href: microsoft-fabric-overview.md
   - name: See what's new
     href: whats-new.md
