@@ -23,6 +23,9 @@ This integration provides a consistent experience regardless of where your data 
 > To use KQL queries to analyze the data, use the KQL queryset embedded in your Eventhouse.
 > See [Explore your KQL database with the embedded KQL queryset](create-database.md#explore-your-kql-database-with-the-embedded-kql-queryset).
 
+> [!NOTE]
+> The **Analyze data with** menu is not available for read-only [monitoring eventhouses](manage-monitor-eventhouse.md#view-workspace-monitoring).
+
 ## Prerequisites
 
 - A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
