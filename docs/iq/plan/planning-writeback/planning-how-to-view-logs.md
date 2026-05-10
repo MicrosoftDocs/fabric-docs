@@ -20,7 +20,7 @@ Plan provides writeback logging as soon as you start a writeback operation. You 
 
 Use the search bar to find logs by **ID**.
 
-:::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-filter by-status.jpg" alt-text="The writeback logs table showing the search bar used for finding logs by ID" lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-filter by-status.jpg":::
+:::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-filter by-status.jpg" alt-text="The writeback logs table showing the search bar used for finding logs by ID" lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-filter-by-status.jpg":::
 
 ### Filter by status
 
