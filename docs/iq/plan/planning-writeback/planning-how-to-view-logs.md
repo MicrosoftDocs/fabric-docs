@@ -16,13 +16,13 @@ Plan provides writeback logging as soon as you start a writeback operation. You 
 
 ## Filter writeback logs
 
-### 1. Search logs
+### Search logs
 
 Use the search bar to find logs by **ID**.
 
 :::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-filter by-status.jpg" alt-text="The writeback logs table showing the search bar used for finding logs by ID" lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-filter by-status.jpg":::
 
-### 2. Filter by status
+### Filter by status
 
 Select **Status** to filter logs by the execution state of the writeback operation. You can filter by **Success**, **Failed**, **Running**, and **Cancelled**. Multiple statuses can be selected simultaneously.
 
@@ -33,7 +33,7 @@ Select **Status** to filter logs by the execution state of the writeback operati
 
 :::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-status.jpg" alt-text="Interface showing the writeback log status filter menu with multiple execution states selected" lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-status.jpg":::
 
-### 3. Filter by time
+### Filter by time
 
 Select **Created At** to filter logs by when writeback started. You can filter by **Within the last**, **Last 7 days**, **Last 30 days**, and **Between**.
 
@@ -46,7 +46,7 @@ Select **Created At** to filter logs by when writeback started. You can filter b
 
 :::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-filter-by-time-between.jpg" alt-text="The 'Between' time filter interface showing a calendar date picker used to specify a custom start and end date range for logs" lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-filter-by-time-between.jpg":::
 
-### **4. Reset filter**
+### Reset filter
 
 Select **Reset Filter** to clear all applied filters.
 
@@ -58,7 +58,7 @@ The writeback logs console displays a list of log columns that help you identify
 
 :::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-analyze.jpg" alt-text="A comprehensive view of the writeback logs table, showing columns for ID, Duration, Status, Created At, and Started By" lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-analyze.jpg":::
 
-### 1. ID
+### ID
 
 Displays the unique identifier for each writeback. You can sort this column in ascending or descending order. Selecting the **ID** opens a detailed summary of the writeback. The **General** tab includes the summary, and status.
 
@@ -97,34 +97,34 @@ The details pane provides the following information:
 * **No. of rows** - The total number of rows successfully written to the destination table during this operation.
 * **Status** - Indicates whether the writeback operation to this specific destination succeeded or failed.
 
-### 2. Duration
+### Duration
 
 Displays the total time taken to complete the writeback.
 
-### 3. Status
+### Status
 
 Indicates whether the writeback succeeded or failed. This column can be sorted alphabetically.
 
-### 4. Created at
+### Created at
 
 Displays the date and time when the writeback was initiated. You can sort this column chronologically.
 
-### 5. Started by
+### Started by
 
 Displays the user who started the writeback. You can sort this column alphabetically.
 
-### 6. Scenarios
+### Scenarios
 
 Displays the scenarios included in the writeback. If no scenario was written back, the console shows **Base**.
 
-### 7. Incoming Cell Count
+### Incoming Cell Count
 
 Displays the number of cells written back from the report.
 
-### 8. Event
+### Event
 
 Displays the type of log entry, such as Writeback or Reset.
 
-### 9. Writeback Type
+### Writeback Type
 
 Displays the format used for the writeback, such as Long.
