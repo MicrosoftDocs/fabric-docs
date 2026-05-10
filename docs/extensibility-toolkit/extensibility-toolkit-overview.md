@@ -83,6 +83,7 @@ There are several important concepts to understand before beginning development:
 - Native Fabric experience: Review the [Fabric UX system](https://aka.ms/fabricux); all published workloads must comply with these design principles.
 - Integrate with the Fabric workspace: Your application must function in a [Fabric workspace](../fundamentals/workspaces.md), where users create instances and collaborate.
 - Multitenant integration: Your workload is embedded in Fabric, but your code runs in your cloud. Fabric exposes APIs for user data and context so you can map between the customer's environment and your deployment.
+- The Fabric Extensibility Toolkit is not supported in Power BI Pro capacities.
 
 ## Trademarks
 

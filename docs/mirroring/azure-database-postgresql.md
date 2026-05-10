@@ -61,7 +61,7 @@ To know more about compute tiers available in Azure Database for PostgreSQL flex
 
 ## High availability support
 
-Mirroring supports highly available Azure Database for PostgreSQL flexible server configurations. Replication continues seamlessly across failover events without requiring additional configuration. For any specific limitations or considerations, see [Limitations in Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql-limitations.md).
+Mirroring supports highly available Azure Database for PostgreSQL flexible server configurations. Replication continues seamlessly across failover events without requiring additional configuration for PostgreSQL versions starting from 17 and above. For any specific limitations or considerations, see [Limitations in Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql-limitations.md).
 
 ## Next step
 
