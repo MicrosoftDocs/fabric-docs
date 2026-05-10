@@ -9,10 +9,10 @@ ms.date: 05/01/2026
 
 # OneLake lifecycle management (preview)
 
-OneLake storage tiers let you make cost-effective tiering decisions based on data access patterns, keeping frequently-accessed data in the hot tier and moving less active data to cool or cold storage to lower long-term data retention costs. Lifecycle management policies simplify tiering by automatically moving less active data to cooler storage tiers based on when a file was created, last modified, or last accessed. For example, you can create policies to:
+OneLake storage tiers let you make cost-effective tiering decisions based on data access patterns, keeping frequently accessed data in the hot tier and moving less active data to cool or cold storage to lower long-term data retention costs. Lifecycle management policies simplify tiering by automatically moving less active data to cooler storage tiers based on when a file was created, last modified, or last accessed. For example, you can create policies to:
 
-- Move files that have not been modified in 30 days to the cool tier, and that have not been modified in 90 days to the cold tier.
-- Move files within a specific path that have not been accessed in 30 days to the cool tier, and back to the hot tier when accessed.
+- After 30 days without modification, move files to the cool tier. After 90 days without modification, move files to the cold tier.
+- After 30 days without being accessed, move files within a specific path to the cool tier. If a file is accessed, move it back to the hot tier.
 
 This article describes the structure and elements of a OneLake lifecycle management policy. OneLake uses a similar policy structure as Azure Storage. For more information, see [Azure Storage lifecycle policies](/azure/storage/blobs/lifecycle-management-policy-structure). To learn more about storage tiers in OneLake, check out [OneLake storage tiers](onelake-storage-tiers.md).
 
@@ -23,11 +23,11 @@ A lifecycle management policy is a collection of rules defined in a JSON documen
 Each lifecycle rule contains the following elements:
 
 - **Scope**: A rule can apply to the entire workspace, in the workspace, or be filtered to a set of paths with prefix matching.
-- **Status**: The active status of a rule. An active rule will run daily. An inactive rule won't result in any actions until reactivated.
+- **Status**: The active status of a rule. An active rule attempts to run daily. An inactive rule won't run until reactivated.
 - **Condition**: A rule's action is applied when a file in the scope meets the specified condition. You can set conditions on when a file was created, last accessed, or last modified.
 - **Action**: A rule's action happens when a file in the scope meets the specified condition. Each action is linked to a single condition, and a single rule can have multiple action + condition pairs.
 
-:::image type="content" source="media/onelake-lifecycle-management/lifecycle-rule.png" alt-text="The rule creation experience in the Fabric portal, showing the options for the rule's scope, actions, and conditions." lightbox="media/onelake-lifecycle-management/lifecycle-rule.png" border="false":::
+:::image type="content" source="media/onelake-lifecycle-management/lifecycle-rule.png" alt-text="Screenshot that shows the lifecycle rule creation experience in the Fabric portal, showing the options for the rule's scope, actions, and conditions." lightbox="media/onelake-lifecycle-management/lifecycle-rule.png" border="false":::
 
 The following sections expand on each of these areas and how they're defined in the lifecycle policy JSON.
 
@@ -64,14 +64,14 @@ A rule contains several parameters, described in the following table:
 
 ### Scope
 
-The scope of a lifecycle rule is determined by its defined filters. If no filter is present, then the lifecycle rule applies to all files within the workspace. You can't specify files to exclude from a rule's scope. If more than one filter is defined, a logical AND is applied to all filters.  
+A rule's filters determine its scope. If no filter is present, then the lifecycle rule applies to all files within the workspace. You can't specify files to exclude from a rule's scope. If more than one filter is defined, a logical AND is applied to all filters.  
 
 The following table describes each filter parameter:
 
 | Filter name    | Type                            | Description                                                                      | Required |
 |----------------|---------------------------------|----------------------------------------------------------------------------------|----------|
 | **blobTypes**  | Array of predefined enum values | OneLake only supports **blockblob**.                                             | Yes      |
-| **prefixMatch**| Array of strings                | These strings are prefixes to be matched. The value ***/diagnosticLogs** will scope the rule to all diagnostic events in the workspace.           | No       |
+| **prefixMatch**| Array of strings                | These strings are prefixes to be matched.  | No       |
 
 #### prefixMatch
 
@@ -101,7 +101,7 @@ Every action is linked to a time-based condition. If a file's property exceeds t
 
 #### Access time tracking
 
-Access time tracking is required when using the **daysAfterLastAccessTimeGreaterThan** condition. This field keeps a record of when a file was last read or written in the "LastAccessTime" file property. Metadata operations, such as getting a file's properties, aren't access operations and do not update the access time of the file. If you apply the **daysAfterLastAccessTimeGreaterThan** in a policy, OneLake automatically turns on access time tracking for your workspace and sets the last access time for all files to the current day. If your policy no longer contains any rules with the **daysAfterLastAccessTimeGreaterThan**, OneLake automatically turns off last access time tracking for your workspace.  
+Access time tracking is required when using the **daysAfterLastAccessTimeGreaterThan** condition. This field keeps a record of when a file was last read or written in the "LastAccessTime" file property. Metadata operations, such as getting a file's properties, aren't access operations and don't update the access time of the file. If you apply the **daysAfterLastAccessTimeGreaterThan** in a policy, OneLake automatically turns on access time tracking for your workspace and sets the last access time for all files to the current day. If your policy no longer contains any rules with the **daysAfterLastAccessTimeGreaterThan**, OneLake automatically turns off last access time tracking for your workspace.  
 
 > [!NOTE]
 > To minimize the effect on read access latency, only the first read of the last 24 hours updates the last access time. Subsequent reads in the same 24-hour period don't update the last access time. If a file is modified between reads, the last access time is the more recent of the two values
@@ -124,21 +124,21 @@ To manage your lifecycle policy via the Fabric portal:
 
 1. Navigate to your workspace and select **Workspace settings**.
 2. Expand the **OneLake** section and select **Lifecycle management**.
-3. Select **Add** to create a new rule or create a template rule with pre-defined actions and conditions.
+3. Select **Add** to create a new rule or create a template rule with predefined actions and conditions.
 
-You can also delete, pause, or re-activate rules from the Fabric portal.  
+You can also delete, pause, or reactivate rules from the Fabric portal.  
 
 ### Run your policy
 
-Lifecycle policies attempt to run once per day, but may be delayed if the previous policy didn't complete within a day. New rules may take up to 24 hours to take effect. A new run is scheduled within 24 hours of the previous run completing. For more information on lifecycle policy performance, see [lifecycle management performance characteristics](/azure/storage/blobs/lifecycle-management-performance-characteristics).
+Lifecycle policies attempt to run once per day, but might be delayed if the previous policy didn't complete within a day. New rules take up to 24 hours to take effect. A new run is scheduled within 24 hours of the previous run completing. For more information on lifecycle policy performance, see [lifecycle management performance characteristics](/azure/storage/blobs/lifecycle-management-performance-characteristics).
 
 You can view the amount of data stored by tier in the [Fabric Capacity Metrics app](../enterprise/metrics-app.md).
 
 ## Limitations and considerations
 
 - Each workspace has one lifecycle management policy with up to 10 rules.
-- Rules may take up to 24 hours to apply after creation or update.
-- Changing the default tier or running rules that move data between tiers may generate transaction charges.
+- Rules take up to 24 hours to apply after creation or update.
+- Changing the default tier or running rules that move data between tiers will generate transaction charges.
 - Cool storage has a minimum 30-day retention period; cold storage has a minimum 90-day retention period. Moving data earlier can result in early movement fees.
 - Storage tiers are only supported on block blobs (the default for files in OneLake).  
 
