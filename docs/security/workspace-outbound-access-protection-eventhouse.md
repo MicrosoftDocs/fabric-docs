@@ -10,7 +10,7 @@ ms.topic: how-to
 
 # Workspace outbound access protection for Eventhouse (preview)
 
-Workspace outbound access protection helps safeguard your data by controlling outbound connections from Real-Time Intelligence items in your workspace to external data sources. When you enable this feature, items can't make outbound connections unless you explicitly grant access through approved data connection rules. 
+Workspace outbound access protection (OAP) helps safeguard your data by controlling outbound connections from Real-Time Intelligence items in your workspace to external data sources. When you enable this feature, items can't make outbound connections unless you explicitly grant access through approved data connection rules. 
 
 This article describes how outbound access protection applies to Real-Time Intelligence items and what scenarios are supported when the protection is enabled. 
 
@@ -26,18 +26,20 @@ Workspace outbound access protection applies to the following Real-Time Intellig
 
 ## Outbound access protection for Eventhouse
 
-When you enable workspace outbound access protection, outbound access from Eventhouse is restricted. By default, Eventhouse can only perform a limited set of supported actions.
-
 ### Supported Eventhouse outbound access scenarios
 
-Within the same workspace, Eventhouse can still access other OAP supported items and perform specific actions even when outbound access protection is enabled. Supported scenarios include:
+Within the same workspace, Eventhouse can access other OAP-supported items and perform specific actions, even when outbound access protection is enabled. Supported scenarios include:
 
 - Querying data stored in Real-Time Intelligence items.
 
-In addition, Eventhouse can access specific external resources that aren't scoped to a specific workspace or can access specific Fabric items if the relevant workspace outbound access protection rules are configured. Supported scenarios include:
+Eventhouse can also access resources outside the current workspace in the following cases:
 
-- Querying data stored in OneLake in other workspaces.
+- External resources that aren't scoped to a specific workspace.
+- Fabric items across workspaces, if the relevant outbound access protection rules are configured.
 
+Supported scenarios include:
+
+- Querying data stored in OneLake in other workspaces (OneLake data is scoped per workspace).
 - Ingesting data from Azure Event Hubs.
 
 ### Unsupported Eventhouse outbound access scenarios
@@ -53,8 +55,6 @@ When you enable workspace outbound access protection, the following Eventhouse o
 ## Limitations
 
 - Eventhouse outbound access protection is in public preview.
-
-- Managed private endpoints aren't supported for Eventhouse.
 
 - Data connection rules aren't supported for Eventhouse.
 
