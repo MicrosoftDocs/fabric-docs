@@ -126,7 +126,7 @@ The ribbon across the top of the Lakehouse explorer provides quick access to com
 
 The **Analyze data with** dropdown in the top-right area of the ribbon lists the different engines available to query your lakehouse data. Select the dropdown to choose from the following options:
 
-:::image type="content" source="media\lakehouse-overview\lakehouse-analyze-data.png" alt-text="Screenshot analyze data with dropdown in the lakehouse UI ribbon" lightbox="media\lakehouse-overview\lakehouse-analyze-data.png":::
+:::image type="content" source="media\lakehouse-overview\lakehouse-analyze-data.png" alt-text="Screenshot showing the Analyze data with dropdown in the lakehouse ribbon." lightbox="media\lakehouse-overview\lakehouse-analyze-data.png":::
 
 - **SQL analytics endpoint** — Opens the [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) T-SQL editor, where you can query your Delta tables with SQL to prepare them for reporting.
 - **Eventhouse endpoint** — Opens the [eventhouse endpoint](../real-time-intelligence/eventhouse-as-endpoint.md), where you can use KQL to query your lakehouse data with high-performance, real-time analytics capabilities.
