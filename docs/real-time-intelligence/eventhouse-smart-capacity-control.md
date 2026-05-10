@@ -1,5 +1,5 @@
 ---
-title: Schedule Eventhouse Capacity for Real-Time Analytics Workloads
+title: Schedule Eventhouse Capacity for Real-Time Analytics Workloads (preview)
 description: Optimize Eventhouse capacity with a customizable schedule. Guarantee performance during peak hours and save costs during low activity periods. Learn more.
 author: spelluru
 ms.author: spelluru
@@ -72,6 +72,10 @@ In addition to the always-on **Capacity Planner mode**, you can further customiz
 1. Select **Done**.
 
 :::image type="content" source="media/eventhouse/minimum-capacity-small.png" alt-text="Screenshot showing the eventhouse capacity planner for the Eventhouse." lightbox="media/eventhouse/minimum-capacity.png":::
+
+> [!NOTE]
+>
+> If you want to ensure a certain minimum capacity starting at a round hour, like 08:00, define the time range to start at the previous hour (07:00) so that the minimum capacity takes effect at the intended time. While this feature is in public preview, the minimum capacity takes a few minutes to reach the defined capacity.
 
 ## Capacity units mapping
 
