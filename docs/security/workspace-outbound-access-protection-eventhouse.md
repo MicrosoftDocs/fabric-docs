@@ -4,7 +4,7 @@ description: Learn how to configure Workspace Outbound Access Protection (outbou
 #customer intent: As a workspace admin, I want to enable outbound access protection for my workspace so that I can secure Real-Time Intelligence data connections to only approved destinations.
 author: msmimart
 ms.author: mimart
-ms.date: 05/06/2026
+ms.date: 05/10/2026
 ms.topic: how-to
 ---
 
@@ -44,7 +44,7 @@ Supported scenarios include:
 
 ### Unsupported Eventhouse outbound access scenarios
 
-When you enable workspace outbound access protection, the following Eventhouse outbound access scenarios are **blocked**:
+When you enable workspace OAP, the following Eventhouse outbound access scenarios are **blocked**:
 
 - Accessing other Eventhouse databases, except through OneLake as mentioned in the supported scenarios.
 
@@ -58,13 +58,13 @@ When you enable workspace outbound access protection, the following Eventhouse o
 
 - Data connection rules aren't supported for Eventhouse.
 
-- All Eventhouse items in the workspace follow the same outbound access settings.
+- All Eventhouse items in the workspace follow the same OAP.
 
 ## Considerations
 
-- Workspace outbound access protection is enforced per workspace.
+- Workspace OAP is enforced per workspace.
 
-- All Real-Time Intelligence items in the workspace share the same outbound access policy.
+- All Real-Time Intelligence items in the workspace share the same OAP.
 
 - Inbound ingestion scenarios that don't require outbound workspace access (for example, Event Hubs ingestion) aren't affected.
 
