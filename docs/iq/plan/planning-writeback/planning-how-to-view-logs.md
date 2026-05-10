@@ -27,7 +27,7 @@ Use the search bar to find logs by **ID**.
 Select **Status** to filter logs by the execution state of the writeback operation. You can filter by **Success**, **Failed**, **Running**, and **Cancelled**. Multiple statuses can be selected simultaneously.
 
 * **Success** - If you select this option, the logs are filtered to show only writeback processes that completed without errors.
-* **Failed** - Selecting this option filters the logs to display writeback processes that encountered an error and did not complete successfully.
+* **Failed** - Selecting this option filters the logs to display writeback processes that encountered an error and didn't complete successfully.
 * **Running** - This option filters the logs to show writeback processes that are currently executing.
 * **Cancelled** - If you select this option, the log display writeback processes that were explicitly stopped or aborted before completion.
 
