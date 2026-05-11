@@ -48,7 +48,9 @@ You can see capacity usage for each operation in the Fabric Capacity Metrics app
 > [!IMPORTANT]
 > Starting in May 2026, OneLake is updating how compute operations are reported in the Fabric Capacity Metrics app. A new **OneLake** item in the Fabric Capacity Metrics app groups operations by workspace instead of by individual Fabric items. For item-level detail, use [OneLake diagnostics](../onelake/onelake-diagnostics-overview.md).
 
-:::image type="content" source="media\onelake-capacity-consumption\image.png" alt-text="Screenshot showing how OneLake compute is viewed in Fabric Metrics app." lightbox="media\onelake-capacity-consumption\onelake-compute.png":::In the preceding example, the file upload results in a write transaction that consumes CU seconds. The **Compute** tab of the Fabric Capacity Metrics app reports this consumption as **OneLake Write (Hot)** under the operation name column.
+:::image type="content" source="media\onelake-capacity-consumption\onelake-operations.png" alt-text="Screenshot showing how OneLake compute is viewed in Fabric Metrics app." lightbox="media\onelake-capacity-consumption\onelake-operations.png":::
+
+In the preceding example, the file upload results in a write transaction that consumes CU seconds. The **Compute** tab of the Fabric Capacity Metrics app reports this consumption as **OneLake Write (Hot)** under the operation name column.
 
 However, if you read this data by using a notebook, you consume CU seconds of read transactions. The metrics app reports this consumption as **OneLake Read (Hot)**. To learn how each type of operation consumes capacity units, see [OneLake consumption page](../onelake/onelake-consumption.md).
 
