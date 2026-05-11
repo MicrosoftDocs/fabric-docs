@@ -36,9 +36,9 @@ Returns *TRUE* if all conditions are met; otherwise, returns *FALSE*.
 IF(AND(Sub Region == "APAC", Sub Category== "Juices"), 50000000, 0)
 ```
 
-In this example, the **AND** function is used within an [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements-if.md) statement to assign values to the *2027 Actuals Plan*. The *AND* function evaluates whether both conditions are met: *Sub Region* is *APAC* and *Sub Category* is *Juices*. If both conditions are *TRUE*, the formula returns 50 *million*; otherwise, it returns *0*.
+In this example, the **AND** function is used within an [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements.md#if) statement to assign values to the *2027 Actuals Plan*. The *AND* function evaluates whether both conditions are met: *Sub Region* is *APAC* and *Sub Category* is *Juices*. If both conditions are *TRUE*, the formula returns 50 *million*; otherwise, it returns *0*.
 
-:::image type="content" source="../media/planning-reference-formulas-logical-functions/and.png" alt-text="Screenshot of switch function." lightbox="../media/planning-reference-formulas-logical-functions/and.png":::
+:::image type="content" source="../media/planning-reference-formulas-logical-functions/and.png" alt-text="Screenshot of and  function." lightbox="../media/planning-reference-formulas-logical-functions/and.png":::
 
 **Excel equivalent**
 
@@ -69,9 +69,9 @@ Returns *TRUE* if any condition is met; otherwise, returns *FALSE*.
 IF(OR(Sub Region == "APAC", Sub Category == "Juices"), 52640000, 0)
 ```
 
-In this example, the **OR** function is used within an [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements-if.md) statement to assign values to the *2027 Actuals Plan*. The function evaluates whether either condition is met: *Sub Region* is *APAC* or *Sub Category* is *Juices*. If at least one condition is *TRUE*, the formula returns 52.64 *million*; otherwise, it returns *0*.
+In this example, the **OR** function is used within an [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements.md#if) statement to assign values to the *2027 Actuals Plan*. The function evaluates whether either condition is met: *Sub Region* is *APAC* or *Sub Category* is *Juices*. If at least one condition is *TRUE*, the formula returns 52.64 *million*; otherwise, it returns *0*.
 
-:::image type="content" source="../media/planning-reference-formulas-logical-functions/or.png" alt-text="Screenshot of switch function." lightbox="../media/planning-reference-formulas-logical-functions/or.png":::
+:::image type="content" source="../media/planning-reference-formulas-logical-functions/or.png" alt-text="Screenshot of or function." lightbox="../media/planning-reference-formulas-logical-functions/or.png":::
 
 **Excel equivalent**
 
@@ -101,9 +101,9 @@ Returns *TRUE* if the condition is *FALSE* and *FALSE* if the condition is *TRUE
 IF(NOT(Sub Region == "APAC"), 52640000, 0)
 ```
 
-In this example, the **NOT** function is used within an [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements-if.md) statement to assign values to the *2027 Actuals Plan*. The function evaluates whether *Sub Region* is **not** *APAC*. If the condition is *TRUE*, the formula returns 52.64 *million*; otherwise, it returns *0*.
+In this example, the **NOT** function is used within an [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements.md#if) statement to assign values to the *2027 Actuals Plan*. The function evaluates whether *Sub Region* is **not** *APAC*. If the condition is *TRUE*, the formula returns 52.64 *million*; otherwise, it returns *0*.
 
-:::image type="content" source="../media/planning-reference-formulas-logical-functions/not.png" alt-text="Screenshot of switch function." lightbox="../media/planning-reference-formulas-logical-functions/not.png":::
+:::image type="content" source="../media/planning-reference-formulas-logical-functions/not.png" alt-text="Screenshot of not function." lightbox="../media/planning-reference-formulas-logical-functions/not.png":::
 
 **Excel equivalent**
 
@@ -111,7 +111,7 @@ In this example, the **NOT** function is used within an [**IF**](../planning-ref
 
 ## XOR
 
-The **XOR** (*Exclusive OR*) function returns *TRUE* if exactly one or an odd number of the specified conditions is *TRUE*. Otherwise, it returns *FALSE*. It is commonly used with [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements-if.md) and other logical functions to evaluate mutually exclusive conditions.
+The **XOR** (*Exclusive OR*) function returns *TRUE* if exactly one or an odd number of the specified conditions is *TRUE*. Otherwise, it returns *FALSE*. It is commonly used with [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements.md#if) and other logical functions to evaluate mutually exclusive conditions.
 
 **Syntax**
 
@@ -136,7 +136,7 @@ IF(XOR(Sub Region == "APAC", Sub Category == "Juices"), 52640000, 0)
 
 In this example, the **XOR** function is used within an [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements.md#if) statement to assign values to the *2027 Actuals Plan*. The function evaluates whether only one of the conditions is *TRUE*: *Sub Region* is *APAC* or *Sub Category* is Juices. If exactly one condition is *TRUE*, the formula returns *52.64 million*; otherwise, it returns *0*.
 
-:::image type="content" source="../media/planning-reference-formulas-logical-functions/xor.png" alt-text="Screenshot of switch function." lightbox="../media/planning-reference-formulas-logical-functions/xor.png":::
+:::image type="content" source="../media/planning-reference-formulas-logical-functions/xor.png" alt-text="Screenshot of exclusive or  function." lightbox="../media/planning-reference-formulas-logical-functions/xor.png":::
 
 **Excel equivalent**
 
@@ -144,7 +144,7 @@ In this example, the **XOR** function is used within an [**IF**](../planning-ref
 
 ## IN
 
-The **IN** function returns *TRUE* if a specified value matches any value in a list or array. It returns *FALSE* if no match is found. It is commonly used with [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements-if.md) and other conditional functions to simplify multiple *OR* conditions.
+The **IN** function returns *TRUE* if a specified value matches any value in a list or array. It returns *FALSE* if no match is found. It is commonly used with [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements.md#if) and other conditional functions to simplify multiple *OR* conditions.
 
 **Syntax**
 
@@ -169,7 +169,7 @@ IF(IN(Sub Category,["Juices", 'Soda']), 52640000, 0)
 
 In this example, the **IN** function is used within an [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements.md#if) statement to assign values to the *2027 Actuals Plan*. The function evaluates whether the *Sub Category* matches any value in the list: *Juices* or *Soda*. If a match is found, the formula returns 52.64 *million*; otherwise, it returns *0*.
 
-:::image type="content" source="../media/planning-reference-formulas-logical-functions/in.png" alt-text="Screenshot of switch function." lightbox="../media/planning-reference-formulas-logical-functions/in.png":::
+:::image type="content" source="../media/planning-reference-formulas-logical-functions/in.png" alt-text="Screenshot of in function." lightbox="../media/planning-reference-formulas-logical-functions/in.png":::
 
 ## ISBLANK
 
@@ -201,7 +201,7 @@ IF(ISBLANK(2027 Actuals Plan), 0, 2027 Actuals Plan)
 
 In this example, the **ISBLANK** function checks whether the *2027 Actuals Plan* value is blank. If the condition is *TRUE*, the formula returns *0*; otherwise, it returns the existing value.
 
-:::image type="content" source="../media/planning-reference-formulas-logical-functions/isblank.png" alt-text="Screenshot of switch function." lightbox="../media/planning-reference-formulas-logical-functions/isblank.png":::
+:::image type="content" source="../media/planning-reference-formulas-logical-functions/isblank.png" alt-text="Screenshot of is blank function." lightbox="../media/planning-reference-formulas-logical-functions/isblank.png":::
 
 **Excel equivalent**
 
@@ -233,7 +233,7 @@ IF(ISNUMBER(Revenue), Revenue*1.05, "Not a number")
 
 In this example, the **ISNUMBER** function checks whether *Revenue* contains a numeric value. If the condition is *TRUE*, the formula applies a 5% increase to the value; otherwise, it returns '*Not a number'*.
 
-:::image type="content" source="../media/planning-reference-formulas-logical-functions/isnumber.png" alt-text="Screenshot of switch function." lightbox="../media/planning-reference-formulas-logical-functions/isnumber.png":::
+:::image type="content" source="../media/planning-reference-formulas-logical-functions/isnumber.png" alt-text="Screenshot of is number function." lightbox="../media/planning-reference-formulas-logical-functions/isnumber.png":::
 
 **Excel equivalent**
 
