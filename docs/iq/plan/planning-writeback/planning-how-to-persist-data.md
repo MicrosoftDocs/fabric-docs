@@ -1,12 +1,12 @@
 ---
-title: Configure writeback to persist data
+title: Set up writeback to persist data
 description: Learn how to write back data from a Planning sheet to your database or data platform. Configure destinations and save planning inputs securely. 
 ms.date: 04/27/2026
 ms.topic: how-to
 #customer intent: As a user, I want to understand and use writeback effectively.
 ---
 
-# Configure writeback to persist data
+# Set up writeback to persist data
 
 Plan (preview) supports exporting planning data to Fabric SQL databases. Write back budgets, forecasts, adjustments, and scenarios to keep planning data synchronized with enterprise systems. Unlike conventional BI and planning tools that require predefined database schemas and IT-managed writeback infrastructure, plan supports dynamic database configuration and runtime table creation.
 
@@ -54,7 +54,7 @@ Use writeback settings to configure how data entered in a Planning sheet is save
 
 Configure settings from **Writeback > Settings**.
 
-* **General**: Defines the core settings for the writeback operation.
+* **General**: Defines the core settings for the writeback operation. For detailed information about general settings for writeback, see [Configure general settings for writeback](planning-how-to-configure-general-settings.md).
 * **Data**: Used to select and configure the measures and dimensions that participate in the writeback process.
 * **Destinations**: Defines where the planning data is written back, such as a database table or storage location.
 * **Advanced**: Provides more configuration options for controlling writeback behavior and system-level settings.

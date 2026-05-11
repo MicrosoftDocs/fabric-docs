@@ -7,7 +7,7 @@ ms.author: limingchen
 ms.topic: article
 ms.service: fabric
 ms.subservice: rti-core
-ms.date: 3/9/2026
+ms.date: 5/7/2026
 ms.search.form: Data filtering
 ---
 
@@ -30,6 +30,12 @@ Before you begin, ensure that the following requirements are met:
 
 > [!NOTE]
 > [Ontologies](../../iq/ontology/overview.md) in Fabric define business concepts as entity types, properties, and relationships, and bind them to data stored in OneLake. Fabric Maps uses these bindings to visualize entity instances spatially.
+
+## Limitations
+
+The following limitations apply when creating layers from ontology entities in Fabric Maps:
+
+- **Ontology result dataset**: Supports up to 100,000 features returned by the selected entity.
 
 ## Connect a Fabric Map to an ontology
 
@@ -87,6 +93,9 @@ Fabric Maps is designed to add geographic context to business data, helping you 
 - Ensure that latitude and longitude values are stored as numeric properties in your ontology. Invalid or non-numeric values can prevent entities from rendering correctly.
 - If multiple entity types share spatial properties (for example, assets and facilities), you can add each entity type as a separate layer and control their visibility independently.
 - Ontology-based layers are especially useful when combined with other Fabric Maps features, such as basemaps and imagery layers, to provide additional geographic context.
+
+> [!NOTE]
+> Ontology-based layers support up to 100,000 features returned by the selected entity.  
 
 ## Next steps
 

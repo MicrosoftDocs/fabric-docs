@@ -1,6 +1,8 @@
 ---
 title: Consume a data agent in Microsoft Foundry (preview)
 description: Learn how to consume a data agent in Microsoft Foundry (preview).
+ms.author: jburchel
+author: jonburchel
 ms.topic: how-to
 ms.reviewer: scottpolly
 ms.date: 12/05/2025

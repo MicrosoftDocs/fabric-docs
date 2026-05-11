@@ -4,7 +4,7 @@ description: Learn about workspace identity in Microsoft Fabric.
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.date: 02/20/2026
+ms.date: 05/08/2026
 ---
 
 # Workspace identity
@@ -81,6 +81,7 @@ Workspace identity is supported for authentication to target resources in connec
 
 > [!WARNING]
 > Modifying or deleting the service principal or app registration in Azure is not recommended, as it will cause Fabric items relying on workspace identity to stop working. Such changes may be reverted.
+> Adding API permissions to allow access to target resources is supported for workspace identities.
 > Additionally, adhere to the principle of least privilege when managing Application Administrator roles. Ensure that only appropriate users are assigned this role. For more details, refer to [Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator)
 
 ### Administer the workspace identity in Fabric
@@ -116,6 +117,7 @@ The application associated with the workspace identity can be seen in **Enterpri
 
 > [!WARNING]
 > Modifications to the application made here will cause the workspace identity to stop working, and such changes may be reverted.
+> Adding API permissions to allow access to target resources is supported for workspace identities.
 > Additionally, adhere to the principle of least privilege when managing Application Administrator roles. Ensure that only appropriate users are assigned this role. For more details, refer to [Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator)
 
 To view the audit logs and sign-in logs for this identity:
@@ -151,6 +153,8 @@ When a workspace gets renamed, the workspace identity is also renamed to match t
 * A default of 10,000 workspace identities can be created in a tenant. You can also specify your own maximum in the tenant settings, which becomes the upper limit for Fabric identity creation across your tenant. For more information, see [Define maximum number of Fabric identities in a tenant](../admin/service-admin-portal-developer.md#define-maximum-number-of-fabric-identities-in-a-tenant).
 
 * Azure Data Lake Storage Gen2 shortcuts in a workspace that has a workspace identity will be capable of trusted service access.
+
+* Workspace identity isn’t supported in B2B or cross-tenant scenarios.
 
 ## Troubleshooting issues with creating a workspace identity
 
