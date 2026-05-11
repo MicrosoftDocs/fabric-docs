@@ -1,6 +1,8 @@
 ﻿---
 title: Adopting an iterative process for improving your data agent
 description: Learn how to adopt an iterative process for improving your data agent.
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: midesa
 ms.topic: best-practice
 ms.date: 06/12/2025
@@ -8,9 +10,9 @@ ms.date: 06/12/2025
 
 # Adopt an iterative process to improve your data agent
 
-Tuning a data agent is not a one-time setup—it’s an ongoing, iterative process that involves experimentation, observation, and refinement.
+Tuning a data agent is not a one-time setup—it's an ongoing, iterative process that involves experimentation, observation, and refinement.
 
-This article outlines best practices to help you get started with improving your data agent, but it’s important to recognize that every data environment and use case is unique. You may find that certain types of instructions, examples, or formatting work better for your specific datasets, or that additional context is needed to help the agent interpret user questions more accurately. As you evaluate responses, expect to go through cycles of trial and error—revising agent instructions, expanding your benchmark set, or adjusting example queries to resolve confusion or improve accuracy. Over time, this process will help uncover gaps in logic, schema alignment, or query phrasing that may not be immediately obvious. The key is to treat the data agent as an evolving system that improves through regular testing, feedback, and iteration—not a static configuration set once and forgotten.
+This article outlines best practices to help you get started with improving your data agent, but it's important to recognize that every data environment and use case is unique. You may find that certain types of instructions, examples, or formatting work better for your specific datasets, or that additional context is needed to help the agent interpret user questions more accurately. As you evaluate responses, expect to go through cycles of trial and error—revising agent instructions, expanding your benchmark set, or adjusting example queries to resolve confusion or improve accuracy. Over time, this process will help uncover gaps in logic, schema alignment, or query phrasing that may not be immediately obvious. The key is to treat the data agent as an evolving system that improves through regular testing, feedback, and iteration—not a static configuration set once and forgotten.
 
 ## Step 1: Start with a benchmark set
 
@@ -38,7 +40,7 @@ Ask the following questions as part of your review:
 - Is the user question ambiguous given the structure or naming in the schema?
 - Are values inconsistently formatted (e.g., `"ca"` vs. `"CA"` vs. `"Ca"`), making it harder for the agent to apply filters correctly?
 
-Each of these issues can impact the agent’s ability to interpret intent and generate accurate queries. Identifying them early helps guide more effective refinements in later steps.
+Each of these issues can impact the agent's ability to interpret intent and generate accurate queries. Identifying them early helps guide more effective refinements in later steps.
 
 ## Step 3: Guide better reasoning with clearer agent instructions
 
@@ -48,7 +50,7 @@ When iterating on agent instructions:
 
 - **Clarify data source usage:** Specify which data sources to use for particular types of questions and in what order of priority. If certain sources should only be used in specific contexts, make that clear.
 - **Define expected response behavior:** Set expectations for tone, structure, and level of detail. Indicate whether responses should be concise summaries, include tabular output, or provide row-level details.
-- **Guide the agent’s reasoning steps:** Provide a logical framework the agent should follow when interpreting a question—such as rephrasing it, identifying relevant terms, or selecting tools based on topic.
+- **Guide the agent's reasoning steps:** Provide a logical framework the agent should follow when interpreting a question—such as rephrasing it, identifying relevant terms, or selecting tools based on topic.
 - **Explain terminology:** Include definitions or mappings for ambiguous, business-specific, or commonly misunderstood terms so the agent can more accurately interpret user questions.
 
 Improving these instructions over time helps the agent make better decisions at every step—from question interpretation to query execution and final response formatting.
@@ -82,7 +84,7 @@ By improving and expanding your example queries based on observed issues, you gi
 
 ## Step 6: Address join issues
 
-Join logic is a common source of failure in query generation. When the data agent returns incorrect or incomplete results due to join errors, you’ll need to provide clearer structural guidance and examples to help the agent understand how your data is related.
+Join logic is a common source of failure in query generation. When the data agent returns incorrect or incomplete results due to join errors, you'll need to provide clearer structural guidance and examples to help the agent understand how your data is related.
 
 To improve join accuracy:
 

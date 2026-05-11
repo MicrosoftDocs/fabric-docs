@@ -1,8 +1,10 @@
 ---
 title: Microsoft Fabric Workload Development Kit overview
 description: Learn about building a Fabric workload.
+author: billmath  
+ms.author: billmath
 ms.topic: overview
-ms.date: 04/29/2026
+ms.date: 05/07/2026
 ---
 
 # Microsoft Fabric Workload Development Kit
@@ -54,9 +56,20 @@ The Microsoft Fabric Workload Development Kit might contain trademarks or logos 
 Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
 Any use of third-party trademarks or logos are subject to those third-party's policies.
 
+## Authentication
+
+All interactions between workloads and other Fabric or Azure components must be accompanied by proper authentication support for requests received or sent. Tokens sent out must be generated properly, and tokens received must be validated properly as well.
+
+Fabric workloads rely on integration with [Microsoft Entra ID](/entra/fundamentals/whatis) for authentication and authorization. It's recommended that you become familiar with the [Microsoft identity platform](/entra/identity-platform/) before starting to work with Fabric workloads. It's also recommended to review [Microsoft identity platform best practices and recommendations](/entra/identity-platform/identity-platform-integration-checklist).
+
+For an overview of authentication in the workload development kit, see [Authentication overview](authentication-concept.md)
+
+
 ## Related content
 
 * [Publish a Fabric workload to Workload Hub](publish-workload-flow.md)
 * [Monetize your workload](monetization.md)
 * [Quick start: Run a workload sample](quickstart-sample.md)
+* [Authentication overview](authentication-concept.md)
+
 

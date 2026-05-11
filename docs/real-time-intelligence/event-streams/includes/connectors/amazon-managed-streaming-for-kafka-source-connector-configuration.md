@@ -32,23 +32,8 @@ ms.date: 03/31/2026
     1. The default **SASL mechanism** is **SCRAM-SHA-512** and can't be changed.
     1. If your Kafka cluster uses a custom CA or requires mTLS, expand **TLS/mTLS settings** and configure the following options as needed:
 
-        - **Trust CA Certificate**: Enable Trust CA Certificate configuration. Select your subscription, resource group, and key vault, and then provide the server ca name. 
-        - **Client certificate and key**: Enable Client certificate and key configuration. Select your subscription, resource group, and key vault, and then provide the client certificate name. 
-        
-            If you don’t use mTLS but still use **SASL_SSL** with your custom CA cert, then you can skip this client certificate configuration.  
+        [!INCLUDE [secure-connection-settings-common](./secure-connection-settings-common.md)]
 
-        > [!NOTE]
-        > The TLS/mTLS settings in this section are currently in preview.
-        >
-        > For sources in a private network, ensure that the Azure Key Vault containing your certificates is connected to the Azure virtual network used by the streaming virtual network data gateway for Eventstream connector virtual network injection (for example, via a private endpoint).
+    :::image type="content" source="./media/amazon-msk-kafka-source-connector/configure-settings.png" alt-text="Screenshot that shows the first page of the Amazon MSK Kafka connection settings." lightbox="./media/amazon-msk-kafka-source-connector/configure-settings.png":::    
 
-    :::image type="content" source="./media/amazon-msk-kafka-source-connector/configure-settings.png" alt-text="Screenshot that shows the first page of the Amazon MSK Kafka connection settings." lightbox="./media/amazon-msk-kafka-source-connector/configure-settings.png":::      
-
-### Stream or source details
-
-[!INCLUDE [stream-source-details](./stream-source-details.md)]
-
-### Review and connect
-
-On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
-
+[!INCLUDE [secure-certificate-requirements](./secure-certificate-requirements.md)]

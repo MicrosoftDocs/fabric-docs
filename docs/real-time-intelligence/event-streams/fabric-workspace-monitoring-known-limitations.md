@@ -35,7 +35,9 @@ Eventstreams that you published before enabling workspace monitoring don't autom
 
 ## Artifact and workspace names might show outdated values
 
-If you rename an Eventstream or move it to a different workspace, the **ArtifactName** and **WorkspaceName** columns in the monitoring tables might continue to show the old name for sometime. The **ArtifactId** and **WorkspaceId** columns always contain the correct, current identifiers. When writing queries, use **ArtifactId** and **WorkspaceId** for reliable filtering instead of names.
+In some cases, artifact and workspace names may not appear correctly in the experience. This can result in either missing (empty) values or names that are no longer up to date. This is a known limitation, and we are actively working on improvements to ensure more accurate and reliable metadata display in future updates.
+ 
+The **ArtifactId** and **WorkspaceId** columns always contain the correct, current identifiers. When writing queries, use **ArtifactId** and **WorkspaceId** for reliable filtering instead of names.
 
 ## Metrics identify underlying services, not individual nodes
 

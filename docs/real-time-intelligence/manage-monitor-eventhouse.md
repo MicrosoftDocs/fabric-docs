@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.subservice: rti-eventhouse
-ms.date: 04/27/2026
+ms.date: 05/11/2026
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.
 ---
@@ -45,7 +45,9 @@ D. **Details area**: The [details area](#view-eventhouse-details) provides addit
 
 ## Eventhouse ribbon
 
-The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh your main view, [schedule the capacity planner](eventhouse-smart-capacity-control.md), add databases, add plugins, and collapse or expand the details area.
+<!--The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh your main view, [schedule the capacity planner](eventhouse-smart-capacity-control.md), add databases, add plugins, and collapse or expand the details area. -->
+
+The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh your main view, toggle always-on, add databases, add plugins, and collapse or expand the details area.
 
 ## Explorer pane
 

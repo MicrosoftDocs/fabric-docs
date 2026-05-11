@@ -143,7 +143,7 @@ To switch to edit mode, select **Editing** in the top-right corner.
 
 :::image type="content" source="media/real-time-dashboard/edit-mode.png" alt-text="Screenshot showing the selection of the editing view." lightbox="media/real-time-dashboard/edit-mode.png":::
 
-[adding new tiles](#addedit-tile)
+[adding new tiles](#add-or-edit-tile)
 
 :::image type="content" source="media/real-time-dashboard/home-tab.png" alt-text="Screenshot of the toolbar options under the Home tab." lightbox="media/real-time-dashboard/home-tab.png":::
 
@@ -151,7 +151,7 @@ Under the Manage tab, you can manage data sources, [parameters](dashboard-parame
 
 :::image type="content" source="media/real-time-dashboard/manage-tab.png" alt-text="Screenshot of the toolbar options under the Manage tab." lightbox="media/real-time-dashboard/manage-tab.png":::
 
-## Add/Edit tile
+## Add or Edit tile
 
 Dashboard tiles use Kusto Query Language (KQL) queries to fetch data and generate visuals. Each tile or query is designed to support a single visual representation. The tile editor gives you two options for authoring and editing a tile's query and visual:
 

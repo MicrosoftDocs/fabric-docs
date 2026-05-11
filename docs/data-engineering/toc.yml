@@ -344,6 +344,8 @@ items:
       href: spark-admin-settings-faq.yml 
   - name: Spark monitoring and diagnostics
     items:
+      - name: Monitoring and optimization best practices
+        href: spark-monitoring-best-practices.md
       - name: Spark monitoring and diagnostics features
         items: 
          - name: Apache Spark monitoring overview
@@ -540,6 +542,8 @@ items:
       href: api-graphql-azure-api-management.md
     - name: Connect AI agents with a local Model Context Protocol (MCP) server
       href: api-graphql-local-model-context-protocol.md
+    - name: Authorizer User data functions
+      href: api-graphql-authorizer-function.md
   - name: Monitoring
     items:
     - name: Monitoring dashboard and logging (preview)

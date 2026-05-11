@@ -169,7 +169,7 @@ Keyboard shortcuts provide a quick way to navigate and work more efficiently in 
 | Refresh metadata | Ctrl + Shift + R | Command + Shift + R | 
 | Open settings | Ctrl + Shift + X | Command + Shift + X | 
 | Copy SQL connection string | Ctrl + Shift + C | Command + Shift + C | 
-| Open query activity | Ctrl + Shift + A | Command + Shift + A | 
+| Open Monitor | Ctrl + Shift + A | Command + Shift + A | 
 | Open Copilot chat pane | Ctrl + Shift + I | Command + Shift + I | 
 | New semantic model | Ctrl + Shift + M | Command + Shift + M | 
 | New SQL Query | Ctrl + J | Command + J |

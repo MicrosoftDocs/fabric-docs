@@ -4,7 +4,7 @@ description: Learn how to create a KQL database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: how-to
 ms.subservice: rti-eventhouse
-ms.date: 02/24/2026
+ms.date: 05/04/2026
 ms.search.form: KQL Database
 ---
 # Create a KQL database
@@ -48,7 +48,7 @@ When you create a new KQL database, an attached environment is automatically cre
     :::image type="content" source="media/create-database/rename-queryset.png" alt-text="Screenshot of the Rename queryset window showing the queryset name and the Pencil icon.":::
 
 > [!TIP]
-> You can also [analyze data with](eventhouse-analyze-data-with.md) an SQL analytics endpoint or notebook, or create a standalone [KQL queryset](create-query-set.md).
+> You can also [analyze data with](eventhouse-analyze-data-with.md) an SQL analytics endpoint or create a standalone [KQL queryset](create-query-set.md).
 
 ## Related content
 
