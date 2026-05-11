@@ -16,9 +16,9 @@ This article describes at a high level the main features and components that hel
 
 | [Manage your data estate](#manage-your-data-estate) | [Secure, protect, and comply](#secure-protect-and-comply) | [Encourage data discovery, trust, and use](#encourage-data-discovery-trust-and-use) | [Monitor, uncover, get insights, and act](#monitor-uncover-get-insights-and-act) |
 |:-|:-|:-|:-|
-| [Admin portal](#admin-portal) | [Privacy](#privacy) | [OneLake data hub](#onelake-data-hub) | [Monitoring hub](#monitoring-hub) |
+| [Admin portal](#admin-portal) | [Privacy](#privacy) | [OneLake catalog](#onelake-catalog) | [Monitoring hub](#monitoring-hub) |
 | [Tenant, domain, and workspace settings](#tenant-domain-and-workspace-settings) | [Data security](#data-security) | [Endorsement, trust, and reuse](#endorsement) | [Capacity metrics](#capacity-metrics) |
-| [Domains](#domains) | [Purview Information Protection](#purview-information-protection)* | [Tags](#tags) | [Purview hub](#purview-hub) |
+| [Domains](#domains) | [Purview Information Protection](#purview-information-protection)* | [Tags](#tags) | [OneLake catalog](#onelake-catalog) |
 | [Workspaces](#workspaces) | [Purview Data Loss Prevention](#purview-data-loss-prevention)* | [Data lineage and impact analysis](#data-lineage-and-impact-analysis) | [Admin monitoring](#admin-monitoring) |
 | [Capacities](#capacities) | [Securing Fabric items within a workspace](#securing-items-in-a-workspace) | [Purview for governance across the org](#purview-for-governance-across-the-org)* |  |
 | [Metadata scanning](#metadata-scanning) | [Securing data in Fabric items](#securing-data-in-fabric-items) |  |  |
@@ -50,7 +50,7 @@ For more information, see [About tenant settings](../admin/about-tenant-settings
 
 Use domains to logically group all the data in an organization that's relevant to particular areas or fields, such as by business unit. One of the most common uses for domains is to group data by business department, so each department can manage its data according to its specific regulations, restrictions, and needs.
 
-Grouping data into domains and subdomains enables better discoverability and governance. For instance, in the [OneLake data hub](../governance/onelake-catalog-overview.md), users can filter content by domain to find content that is relevant to them. With respect to governance, you can delegate some tenant-level settings for managing and governing data to the domain level, which allows domain-specific configuration of those settings.
+Grouping data into domains and subdomains enables better discoverability and governance. For instance, in the [OneLake catalog](../governance/onelake-catalog-overview.md), users can filter content by domain to find content that is relevant to them. With respect to governance, you can delegate some tenant-level settings for managing and governing data to the domain level, which allows domain-specific configuration of those settings.
 
 For more information, see [Domains](./domains.md).
 
@@ -130,17 +130,17 @@ Microsoft Fabric has HIPAA BAA, ISO/IEC 27017, ISO/IEC 27018, ISO/IEC 27001, and
 
 Fabric provides built-in capabilities to help users find and use reliable, quality data.
 
-### OneLake data hub
+### OneLake catalog
 
-The OneLake data hub makes it easy to find, explore, and use the Fabric data items in your organization that you have access to. It provides information about the items and entry points for working with them. Filtering and search options make it easier to get to relevant data.
+The OneLake catalog makes it easy to find, explore, and use the Fabric data items in your organization that you have access to. It provides information about the items and entry points for working with them. Filtering and search options make it easier to get to relevant data.
 
-For more information, see [Discover data items in the OneLake data hub](../governance/onelake-catalog-overview.md).
+For more information, see the [OneLake catalog overview](../governance/onelake-catalog-overview.md).
 
- **Guidance**: Carefully defining and setting up domains is essential for creating an efficient experience in the data hub. Carefully defined domains help set the context for teams and make for better definition of boundaries and ownership. Mapping workspaces to domains is key to helping implement this in Fabric.
+ **Guidance**: Carefully defining and setting up domains is essential for creating an efficient experience in the catalog. Carefully defined domains help set the context for teams and make for better definition of boundaries and ownership. Mapping workspaces to domains is key to helping implement this in Fabric.
 
 ### Endorsement
 
-Endorsement is a way to make trustworthy, quality data more discoverable. Organizations often have large numbers of Microsoft Fabric items - data, processes, and content -  available for sharing and reuse by their Fabric users. Endorsement helps users identify and find the trustworthy high-quality items they need. With endorsement, item owners can promote their quality items, and organizations can certify items that meet their quality standards. Endorsed items are then clearly labeled, both in Fabric and in other places where users look for Fabric items. Endorsed items are also given priority in some searches, and you can sort for endorsed items for in some lists. In the [Microsoft Purview hub](./use-microsoft-purview-hub.md), admins can get insights about their organization's endorsed items in order to better drive users to quality content. 
+Endorsement is a way to make trustworthy, quality data more discoverable. Organizations often have large numbers of Microsoft Fabric items - data, processes, and content -  available for sharing and reuse by their Fabric users. Endorsement helps users identify and find the trustworthy high-quality items they need. With endorsement, item owners can promote their quality items, and organizations can certify items that meet their quality standards. Endorsed items are then clearly labeled, both in Fabric and in other places where users look for Fabric items. Endorsed items are also given priority in some searches, and you can sort for endorsed items for in some lists. In the [OneLake catalog](./onelake-catalog-govern.md), admins can get insights about their organization's endorsed items in order to better drive users to quality content. 
 
 For more information, see [Endorsement](./endorsement-overview.md).
 
@@ -197,12 +197,6 @@ For more information, see [Use the Monitoring hub](../admin/monitoring-hub.md).
 ### Capacity metrics
 
 **Guidance**: Platform owners and users with platform administrator roles should be aware of this feature and use it to monitor usage and consumption. For more information, see [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md).
-
-### Purview hub
-
-Microsoft Purview hub is a centralized page in Fabric that helps Fabric administrators and data owners manage and govern their Fabric data estate. For administrators and data owners, the hub offers reports that provide insights about their Fabric items, particularly with respect to sensitivity labeling and endorsement. The hub also serves as a gateway to more advanced Purview capabilities such as Information Protection, Data Loss Prevention, and Audit. For more information, see [Microsoft Purview hub](./use-microsoft-purview-hub.md).
-
-**Guidance**: Data stewards and owners should be made aware of the Fabric's Purview hub and what it provides in terms of getting insights about your organization's sensitive and endorsed data.
 
 ### Admin monitoring
 
