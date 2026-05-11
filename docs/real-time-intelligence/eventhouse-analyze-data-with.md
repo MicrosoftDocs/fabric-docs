@@ -1,13 +1,13 @@
 ---
-title: Analyze Data in a KQL Database
-description: Learn how to analyze data in a KQL Database with an SQL analytics endpoint in Microsoft Fabric Real-Time Intelligence
+title: Analyze Data in a KQL database
+description: Learn how to analyze data in a KQL database with an SQL analytics endpoint in Microsoft Fabric Real-Time Intelligence
 ms.reviewer: tzgitlin
 ms.topic: how-to
 ms.subservice: rti-eventhouse
 ms.date: 05/04/2026
 ms.search.form: KQL Database
 ---
-# Analyze data in a KQL Database
+# Analyze data in a KQL database
 
 Microsoft Fabric provides a unified **Analyze data with** menu that gives you a consistent way to move from data to analysis across Lakehouse, Warehouse, and Eventhouse. Instead of navigating different menus for each workload, you can start your analysis from a single, predictable entry point.
 
