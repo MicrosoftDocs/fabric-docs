@@ -6,7 +6,9 @@ ms.topic: faq
 #customer intent: As a user, I want to understand how writeback operates, how it handles Row-Level Security (RLS), and how data is updated and stored.
 ---
 
-# FAQs on writeback
+# Writeback FAQ
+
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
 ## If a user updates a data input column in reading mode and closes the report, will the latest data be available when reopening?
 
