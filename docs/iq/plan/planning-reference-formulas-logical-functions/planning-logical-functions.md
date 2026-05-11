@@ -11,26 +11,26 @@ ms.search.form: Logical functions
 
 Apply logical functions to test conditions and return *TRUE* or *FALSE* results. These functions are commonly used to evaluate expressions, validate data, and build conditional logic in reports.
 
-# AND
+## AND
 
 The **AND** function returns *TRUE* only if all specified conditions are *TRUE*. If any condition evaluates to *FALSE*, the function returns *FALSE*. It is commonly used with [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements.md#if) and other conditional functions to evaluate multiple criteria.
 
-## Syntax
+**Syntax**
 
 ```
 AND(logical_test1, [logical_test2], ...)
 ```
 
-## Arguments
+**Arguments**
 
 * *logical\_test1*: The first condition to evaluate.
 * *logical\_test2, ...* (Optional): Additional conditions to evaluate.
 
-## Return value
+**Return value**
 
 Returns *TRUE* if all conditions are met; otherwise, returns *FALSE*.
 
-## **Example**
+**Example**
 
 ```
 IF(AND(Sub Region == "APAC", Sub Category== "Juices"), 50000000, 0)
@@ -40,30 +40,30 @@ In this example, the **AND** function is used within an [**IF**](../planning-ref
 
 :::image type="content" source="../media/planning-reference-formulas-logical-functions/and.png" alt-text="Screenshot of switch function." lightbox="../media/planning-reference-formulas-logical-functions/and.png":::
 
-## **Excel equivalent**
+**Excel equivalent**
 
 [AND](https://support.microsoft.com/en-us/office/and-function-5f19b2e8-e1df-4408-897a-ce285a19e9d9)
 
-# OR
+## OR
 
 The **OR** function returns *TRUE* if at least one of the specified conditions is *TRUE*. It returns *FALSE* only when all conditions evaluate to *FALSE*. It is commonly used with [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements.md#if) and other conditional functions to evaluate multiple criteria.
 
-## Syntax
+**Syntax**
 
 ```
 OR(logical_test1, [logical_test2], ...)
 ```
 
-## Arguments
+**Arguments**
 
 * *logical\_test1*: The first condition to evaluate.
 * *logical\_test2, ...* (Optional): Additional conditions to evaluate.
 
-## Return value
+**Return value**
 
 Returns *TRUE* if any condition is met; otherwise, returns *FALSE*.
 
-## **Example**
+**Example**
 
 ```
 IF(OR(Sub Region == "APAC", Sub Category == "Juices"), 52640000, 0)
@@ -73,29 +73,29 @@ In this example, the **OR** function is used within an [**IF**](../planning-refe
 
 :::image type="content" source="../media/planning-reference-formulas-logical-functions/or.png" alt-text="Screenshot of switch function." lightbox="../media/planning-reference-formulas-logical-functions/or.png":::
 
-## **Excel equivalent**
+**Excel equivalent**
 
 [OR](https://support.microsoft.com/en-us/office/or-function-7d17ad14-8700-4281-b308-00b131e22af0)
 
-# NOT
+## NOT
 
 The **NOT** function returns the opposite of a logical value. It returns *TRUE* if the specified condition is *FALSE*, and *FALSE* if the condition is *TRUE*. It is commonly used with [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements.md#if) and other logical functions to invert conditions in calculations.
 
-## Syntax
+**Syntax**
 
 ```
 NOT(logical_test)
 ```
 
-## Arguments
+**Arguments**
 
 * *logical\_test*: The condition to evaluate and reverse.
 
-## Return value
+**Return value**
 
 Returns *TRUE* if the condition is *FALSE* and *FALSE* if the condition is *TRUE*.
 
-## **Example**
+**Example**
 
 ```
 IF(NOT(Sub Region == "APAC"), 52640000, 0)
@@ -105,30 +105,30 @@ In this example, the **NOT** function is used within an [**IF**](../planning-ref
 
 :::image type="content" source="../media/planning-reference-formulas-logical-functions/not.png" alt-text="Screenshot of switch function." lightbox="../media/planning-reference-formulas-logical-functions/not.png":::
 
-## **Excel equivalent**
+**Excel equivalent**
 
 [NOT](https://support.microsoft.com/en-us/office/not-function-9cfc6011-a054-40c7-a140-cd4ba2d87d77)
 
-# XOR
+## XOR
 
 The **XOR** (*Exclusive OR*) function returns *TRUE* if exactly one or an odd number of the specified conditions is *TRUE*. Otherwise, it returns *FALSE*. It is commonly used with [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements-if.md) and other logical functions to evaluate mutually exclusive conditions.
 
-## Syntax
+**Syntax**
 
 ```
 XOR(logical_test1,[logical_test2], ...)
 ```
 
-## Arguments
+**Arguments**
 
 * *logical\_test1*: The first condition to evaluate.
 * *logical\_test2, ...* (Optional): Additional conditions to evaluate.
 
-## Return value
+**Return value**
 
 Returns *TRUE* if an odd number of conditions are *TRUE*; otherwise, returns *FALSE*.
 
-## **Example**
+**Example**
 
 ```
 IF(XOR(Sub Region == "APAC", Sub Category == "Juices"), 52640000, 0)
@@ -138,30 +138,30 @@ In this example, the **XOR** function is used within an [**IF**](../planning-ref
 
 :::image type="content" source="../media/planning-reference-formulas-logical-functions/xor.png" alt-text="Screenshot of switch function." lightbox="../media/planning-reference-formulas-logical-functions/xor.png":::
 
-## **Excel equivalent**
+**Excel equivalent**
 
 [XOR](https://support.microsoft.com/en-us/office/xor-function-1548d4c2-5e47-4f77-9a92-0533bba14f37)
 
-# IN
+## IN
 
 The **IN** function returns *TRUE* if a specified value matches any value in a list or array. It returns *FALSE* if no match is found. It is commonly used with [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements-if.md) and other conditional functions to simplify multiple *OR* conditions.
 
-## Syntax
+**Syntax**
 
 ```
 IN(value, [item1, item2, ...])
 ```
 
-## Arguments
+**Arguments**
 
 * *value*: The value to check.
 * *item1, item2, ...*: A required list of values to compare against.
 
-## Return value
+**Return value**
 
 Returns *TRUE* if a match is found; otherwise, returns *FALSE*.
 
-## **Example**
+**Example**
 
 ```
 IF(IN(Sub Category,["Juices", 'Soda']), 52640000, 0)
@@ -171,7 +171,7 @@ In this example, the **IN** function is used within an [**IF**](../planning-refe
 
 :::image type="content" source="../media/planning-reference-formulas-logical-functions/in.png" alt-text="Screenshot of switch function." lightbox="../media/planning-reference-formulas-logical-functions/in.png":::
 
-# ISBLANK
+## ISBLANK
 
 The **ISBLANK** function returns *TRUE* if the specified value is blank or empty. It returns *FALSE* if the value contains any text, number, or expression. It is commonly used with [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements.md#if) and other logical functions to validate missing values before performing calculations.
 
@@ -179,21 +179,21 @@ The **ISBLANK** function returns *TRUE* if the specified value is blank or empty
 > The **ISEMPTY** function works similar to **ISBLANK** and can also be used to check for blank or empty values.
 
 
-## Syntax
+**Syntax**
 
 ```
 ISBLANK(value)
 ```
 
-## Arguments
+**Arguments**
 
 * value - The value to evaluate.
 
-## Return value
+**Return value**
 
 Returns *TRUE* if the value is blank; otherwise, returns *FALSE*.
 
-## **Example**
+**Example**
 
 ```
 IF(ISBLANK(2027 Actuals Plan), 0, 2027 Actuals Plan)
@@ -203,29 +203,29 @@ In this example, the **ISBLANK** function checks whether the *2027 Actuals Plan*
 
 :::image type="content" source="../media/planning-reference-formulas-logical-functions/isblank.png" alt-text="Screenshot of switch function." lightbox="../media/planning-reference-formulas-logical-functions/isblank.png":::
 
-## **Excel equivalent**
+**Excel equivalent**
 
 [ISBLANK](https://support.microsoft.com/en-us/office/is-functions-0f2d7971-6019-40a0-a171-f2d869135665), [ISEMPTY](https://support.microsoft.com/en-us/office/isempty-function-a86d5871-f6bd-455c-9256-a69a42e55e50)
 
-# ISNUMBER
+## ISNUMBER
 
 The **ISNUMBER** function returns *TRUE* if the specified value is a valid number. It returns *FALSE* if the value is not numeric. It is commonly used with [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements.md#if) and other conditional functions to validate numeric inputs before performing calculations.
 
-## Syntax
+**Syntax**
 
 ```
 ISNUMBER(value)
 ```
 
-## Arguments
+**Arguments**
 
 * value - The value to evaluate.
 
-## Return value
+**Return value**
 
 Returns *TRUE* if the value is a numeric value; otherwise, returns *FALSE*.
 
-## Example
+**Example**
 
 ```
 IF(ISNUMBER(Revenue), Revenue*1.05, "Not a number")
@@ -235,29 +235,29 @@ In this example, the **ISNUMBER** function checks whether *Revenue* contains a n
 
 :::image type="content" source="../media/planning-reference-formulas-logical-functions/isnumber.png" alt-text="Screenshot of switch function." lightbox="../media/planning-reference-formulas-logical-functions/isnumber.png":::
 
-## **Excel equivalent**
+**Excel equivalent**
 
 [ISNUMBER](https://support.microsoft.com/en-us/office/is-functions-0f2d7971-6019-40a0-a171-f2d869135665)
 
-# ISREFEXIST
+## ISREFEXIST
 
 The **ISREFEXIST** function returns *TRUE* if the specified reference exists in the sheet. It returns *FALSE* if the reference is invalid or doesn't exist. It is commonly used to along with [**IF**](../planning-reference-formulas-conditional-statements/planning-conditional-statements.md#if) to validate references before applying calculations or logic.
 
-## Syntax
+**Syntax**
 
 ```
 ISREFEXIST(reference)
 ```
 
-## Arguments
+**Arguments**
 
 * reference - The reference to validate.
 
-## Return value
+**Return value**
 
 Returns *TRUE* if a valid reference exists; otherwise, returns *FALSE*.
 
-## **Example**
+**Example**
 
 ```
 IF(ISREFEXIST(2026 Revenue Plan), 2026 Revenue Plan, "Reference doesn't exist")
@@ -265,7 +265,7 @@ IF(ISREFEXIST(2026 Revenue Plan), 2026 Revenue Plan, "Reference doesn't exist")
 
 In this example, the **ISREFEXIST** function checks whether the *2026 Revenue Plan* reference exists. If the condition is *TRUE*, the formula returns the value of the *2026 Revenue Plan*; otherwise, it returns the text *'Reference doesn't exist'*.
 
-## **Excel equivalent**
+**Excel equivalent**
 
 [ISREF](https://support.microsoft.com/en-us/office/is-functions-0f2d7971-6019-40a0-a171-f2d869135665)
 

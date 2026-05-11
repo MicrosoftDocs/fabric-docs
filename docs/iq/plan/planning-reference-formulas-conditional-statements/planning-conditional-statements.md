@@ -13,27 +13,27 @@ Conditional statements let you perform calculations based on specified condition
 
 In Plan, conditional statements help you create dynamic calculations that adapt to different scenarios, such as applying thresholds, categorizing data, or managing error conditions.
 
-# IF
+## IF
 
 The **IF** function returns one value if a condition is true and another value if it is false.
 
-## Syntax
+**Syntax**
 
 ```
 IF(logical_test, value_if_true, value_if_false )
 ```
 
-## Arguments
+**Arguments**
 
 * *logical\_test*: The condition to evaluate.
 * *value\_if\_true*: The value returned if the condition is true.
 * *value\_if\_false*: The value returned if the condition is false.
 
-## Return value
+**Return value**
 
 Returns either *value\_if\_true* or *value\_if\_false* based on the result of the condition.
 
-## Example
+**Example**
 
 ```
 IF(PY > 0, (AC - PY) / PY, 0)
@@ -43,30 +43,30 @@ Returns *`(AC - PY) / PY`* if *PY* is greater than 0; otherwise, returns 0.
 
 :::image type="content" source="../media/planning-reference-formulas-conditional-statements/if.png" alt-text="Screenshot of if function." lightbox="../media/planning-reference-formulas-conditional-statements/if.png":::
 
-## Excel equivalent
+**Excel equivalent**
 
 [IF](https://support.microsoft.com/en-us/office/if-function-69aed7c9-4e8a-4755-a9bc-aa8bbff73be2)
 
-# IFNA
+## IFNA
 
 The **IFNA** function returns the specified value if an expression results in the #N/A error; otherwise, it returns the result of that expression.
 
-## Syntax
+**Syntax**
 
 ```
 IFNA(value, value_if_na)
 ```
 
-## Arguments
+**Arguments**
 
 * *value*: The expression to evaluate for the #N/A error.
 * *value\_if\_na*: The value to return if the expression results in the #N/A error.
 
-## **Return value**
+**Return value**
 
 Returns either the result of the *value* or *value\_if\_na* if the #N/A error occurs.
 
-## **Example**
+**Example**
 
 ```
 IFNA((Actuals - Plan) / Plan, 0)
@@ -76,30 +76,30 @@ Returns *`(Actuals - Plan) / Plan`* if the expression evaluates successfully; ot
 
 :::image type="content" source="../media/planning-reference-formulas-conditional-statements/ifna.png" alt-text="Screenshot of ifna function." lightbox="../media/planning-reference-formulas-conditional-statements/ifna.png":::
 
-## **Excel equivalent**
+**Excel equivalent**
 
 [IFNA](https://support.microsoft.com/en-us/office/ifna-function-6626c961-a569-42fc-a49d-79b4951fd461)
 
-# COUNTIF
+## COUNTIF
 
 The **COUNTIF** function returns the count of values that match a specified condition.
 
-## Syntax
+**Syntax**
 
 ```
 COUNTIF(list, condition)
 ```
 
-## Arguments
+**Arguments**
 
 * *list*: The list of values to evaluate.
 * *condition*: The condition used to filter the values.
 
-## Return value
+**Return value**
 
 Returns the number of values that satisfy the given condition.
 
-## Example
+**Example**
 
 ```
 COUNTIF([[2024.Plan_Variance %], [2025.Plan_Variance %], [2026.Plan_Variance %]], ">0")
@@ -109,33 +109,33 @@ Returns the count of *Plan Variance %* values across *2024*, *2025*, and *2026* 
 
 :::image type="content" source="../media/planning-reference-formulas-conditional-statements/countif.png" alt-text="Screenshot of count if function." lightbox="../media/planning-reference-formulas-conditional-statements/countif.png":::
 
-## Excel equivalent
+**Excel equivalent**
 
 [COUNTIF](https://support.microsoft.com/en-us/office/countif-function-e0de10c6-f885-4e71-abb4-1f464816df34)
 
-# SUMIF
+## SUMIF
 
 The **SUMIF** function returns the sum of values in a list that satisfy a specified condition.
 
-## Syntax
+**Syntax**
 
 ```
 SUMIF(list, condition, [range])
 ```
 
-## Arguments
+**Arguments**
 
 * *list*: The list of values to evaluate.
 * *condition*: The condition used to filter values in the list.
 * *range* (Optional): The list of values to sum if the values in the *list* meet the condition. If not specified, the values in the original *list* are summed.
 
-## Return value
+**Return value**
 
 Returns the sum of values that satisfy the condition.
 
-## Example
+**Example**
 
-### 1. Without Range
+**1. Without Range**
 
 ```
 SUMIF([10, 20, 30, 40], ">20")
@@ -143,7 +143,7 @@ SUMIF([10, 20, 30, 40], ">20")
 
 In this example, the **SUMIF** function returns the sum of values greater than 20 from the list and returns 70 (30 + 40).
 
-### 2. With Range
+**2. With Range**
 
 ```
 SUMIF([10, 20, 30, 40], ">20", [1, 2, 3, 4])
@@ -151,26 +151,26 @@ SUMIF([10, 20, 30, 40], ">20", [1, 2, 3, 4])
 
 The **SUMIF** function evaluates the values in the first list and returns the sum of corresponding values from the second list where the condition is met. In this example, the result is 7 (3 + 4).
 
-# AVERAGEIF
+## AVERAGEIF
 
 The **AVERAGEIF** function returns the average of values in a list that meet a specified condition.
 
-## Syntax
+**Syntax**
 
 ```
 AVERAGEIF(list, condition)
 ```
 
-## Arguments
+**Arguments**
 
 * *list*: The list of values to evaluate.
 * *condition*: The condition used to filter the values.
 
-## Return value
+**Return value**
 
 Returns the average of the values that satisfy the given condition.
 
-## Example
+**Example**
 
 ```
 AVERAGEIF([Sales,Sales1,Sales2], ">0.1m")
@@ -180,32 +180,32 @@ Returns the average of *Sales*, *Sales1*, and *Sales2* column values when they a
 
 :::image type="content" source="../media/planning-reference-formulas-conditional-statements/averageif.png" alt-text="Screenshot of average if function." lightbox="../media/planning-reference-formulas-conditional-statements/averageif.png":::
 
-## **Excel equivalent**
+**Excel equivalent**
 
 [AVERAGEIF](https://support.microsoft.com/en-us/office/averageif-function-faec8e2e-0dec-4308-af69-f5576d8ac642)
 
-# FILTERIF
+## FILTERIF
 
 The **FILTERIF** function filters a list of values based on a specified condition and returns the filtered results as an array.
 
 Because it returns an array, it is typically used with aggregate functions such as **SUM** or **AVERAGE**. It can also be used to populate a [calculated row](../planning-how-to-insert-rows-formula.md).
 
-## Syntax
+**Syntax**
 
 ```
 FILTERIF(list, condition)
 ```
 
-## Arguments
+**Arguments**
 
 * *list*: The list of values to evaluate.
 * *condition*: The condition used to filter the values.
 
-## Return value
+**Return value**
 
 Returns an array of values that meet the specified condition.
 
-## Example
+**Example**
 
 ```
 SUM(FILTERIF([[Sales], [Sales1], [Sales2]], ">0.1m"))
@@ -215,28 +215,28 @@ Filters values from *Sales*, *Sales1*, and *Sales2* that are greater than *0.1 m
 
 :::image type="content" source="../media/planning-reference-formulas-conditional-statements/filterif.png" alt-text="Screenshot of filter if function." lightbox="../media/planning-reference-formulas-conditional-statements/filterif.png":::
 
-# SWITCH
+## SWITCH
 
 The **SWITCH** function evaluates an expression against a list of values and returns the result corresponding to the first matching value. If no match is found, an optional default value is returned.
 
-## Syntax
+**Syntax**
 
 ```
 SWITCH(expression, val1, res1, val2, res2, ..., val_n, res_n, default)
 ```
 
-## Arguments
+**Arguments**
 
 * *expression*: The expression to evaluate.
 * *val1, val2, … val\_n*: The values to compare against the expression.
 * *res1, res2, … res\_n*: The result to return for each matching value.
 * *default* (Optional): The value to return if no match is found.
 
-## **Return value**
+**Return value**
 
 Returns the result corresponding to the first matching value. If no match is found, returns the *default* value (if specified).
 
-## **Example**
+**Example**
 
 ```
 SWITCH(Sub-Category, "Bookcases", 4.55, "Chairs", 2.67, "Tables", 2.81, "Art", 1.35, "Paper", 3.79, "Machines", 10.55, "Envelopes", 1.23, "Storage", 2.53, 0)
@@ -246,6 +246,6 @@ Evaluates the *Sub-Category* value and returns the corresponding numeric value f
 
 :::image type="content" source="../media/planning-reference-formulas-conditional-statements/switch.png" alt-text="Screenshot of switch function." lightbox="../media/planning-reference-formulas-conditional-statements/switch.png":::
 
-## **Excel equivalent**
+**Excel equivalent**
 
 [SWITCH](https://support.microsoft.com/en-us/office/switch-function-47ab33c0-28ce-4530-8a45-d532ec4aa25e)
