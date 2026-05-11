@@ -191,7 +191,7 @@ When ragged hierarchy is turned on, only available levels are displayed, and emp
 
 1. Turn on **Ragged Hierarchy**.
 
-  :::image type="content" source="media/planning-how-to-change-layouts/ragged-on.png" alt-text="Screenshot showing the ragged hierarchy enabled." lightbox="media/planning-how-to-change-layouts/ragged-on.png":::
+  :::image type="content" source="media/planning-how-to-change-layouts/ragged-on.png" alt-text="Screenshot showing the ragged hierarchy turned on." lightbox="media/planning-how-to-change-layouts/ragged-on.png":::
 
 When ragged hierarchy is turned on, you see the following options:
 

@@ -33,7 +33,7 @@ Before you set up planning sheets, make sure you have the following prerequisite
     > [!NOTE]
     > When you create a planning item, you also automatically create a Fabric SQL database in your workspace. This database stores your plan report's metadata.
 
-## Create a planning sheet
+## Create your planning sheet
 
 1. In your new plan item, you see options to get your data from the semantic model or from Excel, and to create a planning sheet from it. Alternatively, start with a planning sheet and then connect it to data.
 

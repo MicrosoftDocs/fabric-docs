@@ -5,7 +5,7 @@ ms.date: 04/30/2026
 ms.topic: how-to
 ---
 
-# Create a database connection for collaboration in a plan (preview)
+# Create a database connection for collaboration in a plan
 
 This article explains how to create a database connection to enable multi-user collaboration on plan items.
 

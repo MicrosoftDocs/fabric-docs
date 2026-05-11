@@ -7,7 +7,7 @@ ms.topic: how-to
 
 # Create and share a cloud connection for a semantic model
 
-This article explains how to connect to a semantic model from a plan (preview) item. This step is required to work with your semantic model data in a planning sheet.
+This article explains how to connect to a semantic model from a plan item. This step is required to work with your semantic model data in a planning sheet.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
