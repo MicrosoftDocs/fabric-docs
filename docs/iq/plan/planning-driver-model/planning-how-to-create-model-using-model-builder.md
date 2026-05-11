@@ -10,6 +10,8 @@ ms.topic: how-to
 
 This article explains how to build a model for your data by using the [model builder](planning-concept-driver-model.md#model-builder).
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Sample scenario
 
 This article shows screenshots from the brewery data sample in the following Planning sheet.

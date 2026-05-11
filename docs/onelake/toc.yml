@@ -28,7 +28,7 @@ items:
     - name: ADLS Gen2 shortcut
       href: create-adls-shortcut.md
     - name: Blob Storage shortcut
-      href: create-blob-shortcut.md
+      href: ./shortcuts/create-blob-shortcut.md
     - name: Dataverse shortcut
       href: create-dataverse-shortcut.md
     - name: OneDrive or SharePoint shortcut
@@ -120,7 +120,9 @@ items:
     - name: Create and manage roles
       href: ./security/create-manage-roles.md
     - name: SQL analytics endpoint security
-      href: sql-analytics-endpoint-onelake-security.md
+      href: ./security/sql-analytics-endpoint-onelake-security.md
+    - name: Troubleshoot SQL analytics endpoint security
+      href: ./security/troubleshoot-onelake-security-for-sql-analytics-endpoints.md
     - name: Granular data access control
       items:
       - name: Table and folder security

@@ -88,6 +88,5 @@ Learn more about the items that make up Fabric IQ:
 * [What is plan (preview)?](plan/overview.md)
 * [What is Fabric Graph (preview)?](../graph/overview.md)
 * [What is the Fabric data agent?](../data-science/concept-data-agent.md)
-* [Getting started with operations agents](../real-time-intelligence/operations-agent.md)
+* [Create and configure operations agents](../real-time-intelligence/operations-agent.md)
 * [Semantic models](../data-warehouse/semantic-models.md)
-

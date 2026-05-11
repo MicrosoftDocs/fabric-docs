@@ -156,4 +156,4 @@ display(results)
 - Learn more about the [full set of AI functions](../overview.md).
 - Use [multimodal input with AI functions](../multimodal-overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

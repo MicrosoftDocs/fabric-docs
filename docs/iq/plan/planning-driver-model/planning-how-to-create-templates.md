@@ -10,6 +10,8 @@ ms.topic: how-to
 
 This article explains how to create templates and use them in your model.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 A *template* is a predefined layout of rows that can be used to build models with repetitive structures. You create the template once based on your requirements and reuse it multiple times across the model.
 
 For example, a template such as *Net Profit* can be created once and then applied across different product categories to maintain a consistent structure. This scenario is illustrated in the following image:
