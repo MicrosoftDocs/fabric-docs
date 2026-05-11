@@ -44,7 +44,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Data Build Tool job | - | - | - |
 | **Data Science** | ML Model | ✓ | ✓ | ✓ |
 |  | Experiment | ✓ | ✓ | ✓ |
-|  | Data Agent | ✓ | - |  |
+|  | Data Agent | ✓ | - | Preview |
 | **Data Warehouse** | SQL Endpoint | ✓ | ✓ | ✓ |
 |  | Warehouse | ✓ | ✓ | ✓ |
 |  | Warehouse with EDPE | - | - | - |
@@ -54,7 +54,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Variable Library | ✓ | - | ✓ |
 | **Governance and Security** | Sensitivity Label | - | - | - |
 |  | Share item | - | - | - |
-| **Graph** | Graph model  | - | - | - |
+| **Fabric IQ** | Graph model  | - | - | - |
 |  | Graph queryset | - | - | - |
 | **Industry Solutions** | Healthcare data solutions | - | ✓ | - |
 |  | Sustainability Solution | - | ✓ | - |

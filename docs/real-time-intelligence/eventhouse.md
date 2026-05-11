@@ -18,7 +18,7 @@ Eventhouses are tailored to time-based, streaming events with structured, semist
 
 Use an eventhouse for any scenario that includes event-based data. For example, telemetry and log data, time series and IoT data, security and compliance logs, or financial records.
 
-You can create a [KQL database](create-database.md) within an eventhouse. The KQL database can either be a standard database, or a [database shortcut](database-shortcut.md). An exploratory [query environment](create-database.md#explore-your-kql-database) is created for each KQL database, which can be used for exploration and data management. [Data availability in OneLake](one-logical-copy.md) can be enabled on a database or table level.
+You can create a [KQL database](create-database.md) within an eventhouse. The KQL database can either be a standard database, or a [database shortcut](database-shortcut.md). An exploratory [query environment](create-database.md#explore-your-kql-database-with-the-embedded-kql-queryset) is created for each KQL database, which can be used for exploration and data management. [Data availability in OneLake](one-logical-copy.md) can be enabled on a database or table level.
 
 ## What information do I see in an eventhouse?
 
@@ -49,7 +49,7 @@ For more information, see [Database details](manage-monitor-database.md#database
 
 ## Capacity Planner
 
-Your eventhouse is designed to optimize cost by suspending the service when not in use. When reactivating the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can't tolerate this latency, enable the [Capacity Planner mode](eventhouse-smart-capacity-control.md#enable-capacity-planner). This setting enables the service to be always available. With Always-On enabled, you see 100% EventHouse UpTime and you don't pay for cache storage as it's included in the capacity charges.
+Your eventhouse is designed to optimize cost by suspending the service when not in use. When reactivating the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can't tolerate this latency, enable the [Capacity Planner mode](eventhouse-smart-capacity-control.md#enable-capacity-planner). This setting enables the service to be always available. With Always-On enabled, you see 100% eventHouse UpTime and you don't pay for cache storage as it's included in the capacity charges.
 
 As part of the always-on capacity planner feature, you can additionally [schedule and configure your minimum capacity](eventhouse-smart-capacity-control.md#schedule-minimum-capacity). This step is useful in scenarios where you have unpredictable query or ingestion loads and need to ensure adequate performance during sudden high loads. This setting allows you to prevent our autoscale mechanism from scaling below a certain size, while still allowing it to scale to a larger size if the workload requires it. A limited amount of premium storage is included in the service, and if your cache utilization approaches this limit, autoscale adjusts to the next larger size.
 

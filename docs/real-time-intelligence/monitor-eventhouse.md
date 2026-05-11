@@ -29,7 +29,7 @@ You can find sample queries in the [workspace-monitoring](https://github.com/mic
 
 The templates let you create monitoring dashboards that track workspace activities in real-time by connecting directly to the underlying monitoring Eventhouse. In the dashboard, you can monitor semantic models, KQL database queries, and ingestions.
 
-Follow the [Visualize your Workspace Monitoring Data](../fundamentals/sample-gallery-workspace-monitoring.md) guide to create the templates or download the templates from the [workspace-monitoring-dashboards](https://github.com/microsoft/fabric-toolbox/tree/main/monitoring/workspace-monitoring-dashboards) GitHub repository or from the links in the following section. 
+Follow the [Visualize your Workspace Monitoring Data](../fundamentals/sample-gallery-workspace-monitoring.md) guide to create the templates or download the templates from the [workspace-monitoring-dashboards](https://github.com/microsoft/fabric-toolbox/tree/main/monitoring/workspace-monitoring-dashboards) GitHub repository or from the links in the following section.
 
 The repository contains instructions on how to prepare the environment and how to use the templates.
 
