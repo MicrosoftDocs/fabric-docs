@@ -33,9 +33,9 @@ The workspace identity authentication type currently supports these data sources
 
 ## Prerequisites
 
-1. You must be a workspace admin to be able to [create and manage a workspace identity](../security/workspace-identity#create-and-manage-a-workspace-identity). The workspace you're creating the identity for can't be **My Workspace**.
+1. You must be a workspace admin to be able to [create and manage a workspace identity](../security/workspace-identity.md#create-and-manage-a-workspace-identity). The workspace you're creating the identity for can't be **My Workspace**.
 
-1. [Grant the identity permissions](../security/workspace-identity-authenticate#step-2-grant-the-identity-permissions-on-the-storage-account) to access your data source.
+1. [Grant the identity permissions](../security/workspace-identity-authenticate.md#step-2-grant-the-identity-permissions-on-the-storage-account) to access your data source.
 
 ## Connect to your data using workspace identity in a pipeline
 
