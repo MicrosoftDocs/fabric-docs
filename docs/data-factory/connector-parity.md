@@ -176,8 +176,6 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | [SFTP](connector-sftp-overview.md)                 | ✓/✓                | Basic                         | Support `skipHostKeyValidation`. | ✓/✓                           | Basic                     | `skipHostKeyValidation` is not supported. |
 |                      |                     | SSH public key                |                        |                               |                           |                           |
 |                      |                     | multifactor                   |                        |                               |                           |                           |
-| [SharePoint Online File](connector-sharepoint-online-file-copy-activity.md) | N                |                          |  | ✓/✓                           | Organizational account                    |  |
-|                      |                     |                 |                        |                               | Workspace identity                          |                           |
 
 ## File format connectors
 
@@ -235,6 +233,8 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | SAP ECC            | ✓/-                | Basic                 | | N                      |                          | |
 | [ServiceNow](connector-servicenow-overview.md)         | ✓/-                | Basic                 | Support pageSize | ✓/-                   | Basic                   |  pageSize is not supported|
 | | | OAuth2 | | | | |
+| [SharePoint Online File](connector-sharepoint-online-file-overview.md) | N                |                          |  | ✓/✓                           | Organizational account                    |  |
+|                      |                     |                 |                        |                               | Workspace identity                          |                           |
 | [SharePoint Online List](connector-sharepoint-online-list-overview.md) | ✓/-                | Service principal     | Support `servicePrincipalCredentialType`, `ServicePrincipalCert`, `servicePrincipalEmbeddedCert` and `servicePrincipalEmbeddedCertPassword`. | ✓/-                   |     | `servicePrincipalCredentialType`, `ServicePrincipalCert`, `servicePrincipalEmbeddedCert` and `servicePrincipalEmbeddedCertPassword` are not supported.<br><br>Support Implementation and View mode. |
 | | | | | | Organizational account | |
 | | | | | | Workspace identity | |
