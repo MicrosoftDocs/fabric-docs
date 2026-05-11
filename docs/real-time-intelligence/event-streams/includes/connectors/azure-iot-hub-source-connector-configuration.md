@@ -95,9 +95,6 @@ On the **Review + connect** screen, review the summary, and select **Add** (Even
             :::image type="content" source="./media/azure-iot-hub-source-connector/extended-access-key-value.png" alt-text="Screenshot that shows the access key for an Azure IoT Hub." lightbox="./media/azure-iot-hub-source-connector/extended-access-key-value.png":::
 1. Now, on the **Connect** page of wizard, for **Consumer group**, enter the name of the consumer group. By default, `$Default` is selected, which is the default consumer group for the IoT Hub.
 1. For **Starting position**, select where in the stream to start reading records.
-1. (Optional) Expand **Advanced settings** to choose how to handle source data before it's streamed to Fabric:
-    - Select **Yes** to serialize the data into a standardized format.
-    - Select **No** to keep the data in its original format and pass it through without modification.
 
 1. Then, select **Next** at the bottom of the page.
 

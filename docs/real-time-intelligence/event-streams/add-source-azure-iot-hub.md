@@ -14,8 +14,6 @@ zone_pivot_groups: iot-hub-capabilities
 
 This article shows you how to add an Azure IoT Hub source to a Microsoft Fabric eventstream.
 
-[!INCLUDE [select-view](./includes/select-view.md)]
-
 [!INCLUDE [azure-iot-hub-source-connector-prerequisites](./includes/connectors/azure-iot-hub-source-connector-prerequisites.md)]
 - An eventstream. If you don't have an eventstream, [create one](create-manage-an-eventstream.md).
 
