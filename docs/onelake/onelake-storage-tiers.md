@@ -3,7 +3,7 @@ title: Storage tiers in OneLake (preview)
 description: Manage your storage costs in OneLake by moving data between storage tiers.
 ms.reviewer: eloldag, mabasile
 ms.topic: concept-article
-ms.date: 04/01/2026
+ms.date: 05/11/2026
 #customer intent: As a workspace admin, I want to lower my storage costs for data I must retain for long periods but is otherwise rarely accessed. 
 ---
 
@@ -48,7 +48,7 @@ You can change a file's storage tier via the following methods:
 
 - **Set Blob Tier**  
 
-    Call the [Set Blob Tier API](https://learn.microsoft.com/rest/api/storageservices/set-blob-tier), explicitly or through a lifecycle management policy. This API is recommended when moving data from a warmer tier to a cooler one. You can also use Azure Storage Explorer to change the tier of a file, or all files within a folder, via the "Change access tier" option when selecting a file or folder.  
+    Call the Set Blob Tier API, explicitly or through a lifecycle management policy. This API is recommended when moving data from a warmer tier to a cooler one. You can also use Azure Storage Explorer to change the tier of a file, or all files within a folder, via the "Change access tier" option when selecting a file or folder.  
 
 - **Copy Blob**
 
@@ -60,9 +60,9 @@ You can change a file's storage tier via the following methods:
 
 - **Workspace default storage tier**  
 
-    If a file doesn't have a specific tier set, OneLake uses the workspace's default storage tier. All workspaces in Fabric start with a default tier of Hot. You can change the default tier of your workspace via the [Modify Default Tier API](https://learn.microsoft.com/rest/api/fabric/core/onelake-settings/modify-default-tier).  Changing the default tier of your workspace moves all files without an explicit tier (set via Set Blob Tier or Copy Blob) into the new default tier. You are charged for capacity consumption for the write operations when moving files to a cooler default tier, or the read and retrieval charges when changing to a warmer default tier.  
+    If a file doesn't have a specific tier set, OneLake uses the workspace's default storage tier. All workspaces in Fabric start with a default tier of Hot. You can change the default tier of your workspace via the Modify Default Tier API.  Changing the default tier of your workspace moves all files without an explicit tier (set via Set Blob Tier or Copy Blob) into the new default tier. You are charged for capacity consumption for the write operations when moving files to a cooler default tier, or the read and retrieval charges when changing to a warmer default tier.  
 
-   All files uploaded to a workspace will land in the default tier. To upload a file in a different tier, you can use the 'x-ms-access-tier' header in the [Put Blob API](https://learn.microsoft.com/rest/api/storageservices/put-blob).  
+   All files uploaded to a workspace will land in the default tier. To upload a file in a different tier, you can use the 'x-ms-access-tier' header in the [Put Blob API](/rest/api/storageservices/put-blob).  
 
 > [!NOTE]
 > OneLake only supports changing the storage tier of files which are fully billable.  Any items where storage or transactions aren't billed, or only billed up to a limit, are currently exempt from tier change operations.  

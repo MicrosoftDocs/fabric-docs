@@ -3,7 +3,7 @@ title: Creating a lifecycle management policy in OneLake (preview)
 description: Automatically move data between storage tiers using a lifecycle management policy.
 ms.reviewer: eloldag, mabasile
 ms.topic: concept-article
-ms.date: 05/01/2026
+ms.date: 05/11/2026
 #customer intent: As a workspace admin, I want to lower my storage costs for data I must retain for long periods but is otherwise rarely accessed. 
 ---
 
@@ -108,9 +108,9 @@ Access time tracking is required when using the **daysAfterLastAccessTimeGreater
 
 ## Manage your policy
 
-You can create or update your lifecycle policy for your workspace via the Fabric portal (**Workspace Settings** > **OneLake** > **Lifecycle Management**) or by using the [Lifecycle Management APIs](/rest/api/fabric/core/onelake-lifecycle-policy).  
+You can create or update your lifecycle policy for your workspace via the Fabric portal (**Workspace Settings** > **OneLake** > **Lifecycle Management**) or by using the Lifecycle Management APIs.
 
-When you update your policy via an API, only full policy updates are supported - you must resubmit the entire policy in full via the [Import Lifecycle Policy API](/rest/api/fabric/core/onelake-lifecycle-policy/import-policy).  
+When you update your policy via an API, only full policy updates are supported - you must resubmit the entire policy in full by using the Import Lifecycle Policy API.
 
 ### Prerequisites
 
