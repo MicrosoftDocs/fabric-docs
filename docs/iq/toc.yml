@@ -163,12 +163,12 @@ items:
                 href: plan/planning-driver-model/planning-how-to-create-driver-model.md
     - name: Reference
       items:
-        - name: Formulas and Functions
+        - name: Formulas and functions
           items:
             - name: Conditional statements
-              href: plan/planning-reference-formulas-conditional-statements/planning-conditional-statements.md
+              href: plan/planning-reference-formulas/conditional-statements.md
             - name: Logical functions
-              href: plan/planning-reference-formulas-logical-functions/planning-logical-functions.md
+              href: plan/planning-reference-formulas/logical-functions.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
