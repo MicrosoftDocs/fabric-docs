@@ -6,13 +6,60 @@ ms.topic: overview
 ai-usage: ai-assisted
 ---
 
-# What is Fabric IQ (preview)?
+# What is Fabric IQ?
 
-Fabric IQ (preview) is a workload for unifying data sitting across OneLake and contextualizing it according to the language of your business. The data is then exposed to analytics, AI agents, and applications with consistent semantic meaning and context. This page provides an overview of the Fabric IQ workload, the items it contains, and how those items work together to deliver unified data and semantics in Microsoft Fabric.
+*Fabric IQ* is part of Microsoft IQ, a set of capabilities that form the enterprise intelligence layer of the Microsoft stack. In Microsoft IQ, Fabric IQ works alongside [Work IQ](/microsoft-365/copilot/extensibility/work-iq) and [Foundry IQ](/azure/foundry/agents/concepts/what-is-foundry-iq) to provide context for a complete view of your organization. Fabric IQ captures the business data piece of this vision.
 
-[!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
+Fabric IQ unifies analytical, real-time, and operational data under a coherent semantic framework so agents and people interpret information the same way. Through [OneLake tables](../onelake/onelake-overview.md), [Power BI semantic models](../data-warehouse/semantic-models.md), and [ontologies](ontology/overview.md), Fabric IQ organizes contextual business data so it can be consumed by agents and Microsoft IQ as a whole.
 
-As a [workload in Fabric](../fundamentals/fabric-terminology.md), Fabric IQ is a collection of capabilities that work together to add context to your data through a consistent interface of skills, tools, and APIs. The items that are part of the Fabric IQ workload are:
+:::image type="content" source="media/overview/fabric-iq-pillars.png" alt-text="Diagram showing the Fabric IQ pillars of ontologies, semantic models, and OneLake." lightbox="media/overview/fabric-iq-pillars.png":::
+
+## Why use Fabric IQ?
+
+Organizations work with data at the level of tables and schemas, which are structures built for machines, not meaning. However, they run on business concepts like customers, shipments, and assets. Without semantic understanding, AI remains unfit for high-stakes decisions because each question requires manual translation by a domain expert.
+
+Fabric IQ addresses this gap by providing:
+
+* **Unification of data.** Unify analytical and operational data by combining data from various sources across OneLake (like [lakehouses](../data-engineering/lakehouse-overview.md), [eventhouses](../real-time-intelligence/eventhouse.md), and [Power BI semantic models](../data-warehouse/semantic-models.md)) into a single consistent model. Fabric IQ can also unify external operational data using [OneLake shortcuts](../onelake/onelake-shortcuts), referencing it in place without copying or building ETL pipelines.
+* **Alignment with a consistent view of the business.** Teams, applications, and AI agents all operate from a consistent, trusted foundation of shared concepts and data. This eliminates ambiguity and ensures decisions by both people and AI reflect a unified view of the business.
+* **Consistent language and richer intelligence.** A single definition of a concept (like Customer, Material, or Asset) drives how Power BI, notebooks, and agents interpret data. Users uncover insights that reflect not just raw data, but semantic meaning, including how entities relate, what matters most, and what actions to take.
+* **Faster onboarding.** New dashboards and AI experiences get consistent business meaning because business concepts only need to be declared once.
+* **Governance and trust.** Reduced duplication and inconsistent definitions across teams by enforcing clear semantics, while constraints improve data quality.
+* **Cross-domain reasoning.** Relationships between concepts through graph links allow you to traverse relationships (like Order > Shipment > Temperature Sensor > Cold Chain Breach) to explain outcomes.
+* **AI readiness and decision-ready actions.** Structured grounding for copilots and agents, so answers reflect your enterprise language as defined in your [ontology](../iq/ontology/overview).
+
+## Pillars of Fabric IQ in Microsoft IQ
+
+Fabric IQ brings together three categories of business context: [operational intelligence](#operational-intelligence), [business intelligence](#business-intelligence), and [unified data](#unified-data).
+
+:::image type="content" source="media/overview/fabric-iq-pillars.png" alt-text="Diagram showing the Fabric IQ pillars of ontologies, semantic models, and OneLake." lightbox="media/overview/fabric-iq-pillars.png":::
+
+### Operational intelligence with ontologies
+
+[Ontologies](ontology/overview.md) define core business entities, relationships, properties, rules, and actions. Agents understand what actions are available and how to invoke them. Operations agents monitor live data, detect anomalies, and take governed action.
+
+Ontologies can be generated from existing Power BI semantic models, allowing you to bootstrap from trusted logic and definitions already in production. Both humans and AI agents can use this shared language for cross-domain reasoning and decision-ready actions. You can also query your ontology using natural language through the NL2Ontology query layer, which converts business questions into structured queries.
+
+### Business intelligence with semantic models
+
+[Power BI semantic models](../data-warehouse/semantic-models.md) provide a curated analytics layer with measures, hierarchies, and dimensions. Ontologies can be generated directly from semantic models already in production, keeping business language consistent across experiences. 
+
+Semantic models and ontologies work together. You can generate or align ontologies directly from semantic models so terminology and KPIs stay consistent across reports, agents, and applications. Define enterprise concepts, such as Customer, Shipment, and Breach, only once and reuse them across Fabric IQ experiences.
+
+### Unified data with OneLake
+
+[OneLake](../onelake/onelake-overview.md) unifies structured, unstructured, real-time, and graph data across clouds (Azure, AWS, GCP, on-prem, SAP, Snowflake, Databricks) with zero-copy, zero-ETL access. Graph provides native storage and compute for relationship-heavy queries and traversals. 
+
+With OneLake, Fabric IQ brings intelligence to the data rather than requiring data migration.
+
+## IQ as a workload in Fabric
+
+Within Microsoft Fabric, the *Fabric IQ (preview)* [workload](../fundamentals/fabric-terminology.md) is a grouping of related Fabric items for unifying and contextualizing business data.
+
+>[!NOTE]
+>Fabric items can be part of multiple workloads. Several of the items in Fabric IQ are shared with other Fabric workloads like Real-Time Intelligence and Power BI, since they are relevant to the intent of multiple workload scenarios.
+
+The items that are grouped in the Fabric IQ workload are:
 * [Ontology (preview)](ontology/overview.md)
 * [Plan (preview)](plan/overview.md)
 * [Graph (preview)](../graph/overview.md)
@@ -23,20 +70,9 @@ As a [workload in Fabric](../fundamentals/fabric-terminology.md), Fabric IQ is a
 For more information about the role of each item in the Fabric IQ workload, see the section [Items in Fabric IQ (preview)](#items-in-fabric-iq-preview).
 
 >[!NOTE]
->Fabric items can be part of multiple workloads. Several of the items in Fabric IQ are shared with other Fabric workloads like Real-Time Intelligence and Power BI, since they are relevant to the intent of multiple workload scenarios.
+> OneLake is the data foundation for all Microsoft Fabric items. Though OneLake isn't explicitly included as an item in the Fabric IQ workload, all items in the workload rely on OneLake data tables and interact with them natively.
 
-## Why use Fabric IQ (preview)?
-
-The Fabric IQ (preview) workload enables the following benefits:
-
-* **Unification of data:** Unify analytical and operational data, by combining data from various sources across OneLake (like [lakehouses](../data-engineering/lakehouse-overview.md), [eventhouses](../real-time-intelligence/eventhouse.md), and [Power BI semantic models](../data-warehouse/semantic-models.md)) into a single consistent model. Fabric IQ can also unify external operational data using [OneLake shortcuts](../onelake/onelake-shortcuts.md), referencing it in place without copying or building ETL pipelines.
-* **Consistent language across tools:** Provides a single definition of a concept (like *Customer*, *Material*, or *Asset*) that drives how Power BI, notebooks, and agents interpret data.
-* **Faster onboarding:** Provides new dashboards and AI experiences with consistent business meaning, as business concepts only need to be declared once.
-* **Governance and trust:** Reduces duplication and inconsistent definitions across teams by enforcing clear semantics, while constraints improve data quality.
-* **Cross domain reasoning:** Represents relationships between concepts with graph links, and allows you to traverse relationships (like *Order > Shipment > Temperature Sensor > Cold Chain Breach*) to explain outcomes.
-* **AI readiness and decision-ready actions:** Provides structured grounding for copilots and agents, so answers reflect your enterprise language as defined in your ontology. Ontology also defines rules through integration with Fabric Activator, enabling governed, real-time actions (like alerts or notifications) when conditions are met. Because business rules and constraints live in the ontology, agents can move beyond answers to safe, auditable actions.
-
-## Where Fabric IQ (preview) fits in Fabric
+### Where Fabric IQ (preview) fits in Fabric
 
 Here's how the Fabric IQ (preview) workload implements key Fabric capabilities:
 
@@ -83,7 +119,11 @@ This section describes how items work together or relate to one another.
 
 ## Next steps
 
-Learn more about the items that make up Fabric IQ:
+Learn about the other workloads in Microsoft IQ:
+* [Work IQ](/microsoft-365/copilot/extensibility/work-iq)
+* [Foundry IQ](/azure/foundry/agents/concepts/what-is-foundry-iq)
+
+Learn about the Fabric items in the Fabric IQ workload:
 * [What is ontology (preview)?](ontology/overview.md)
 * [What is plan (preview)?](plan/overview.md)
 * [What is Fabric Graph (preview)?](../graph/overview.md)
