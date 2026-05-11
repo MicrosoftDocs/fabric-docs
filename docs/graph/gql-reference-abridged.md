@@ -2,7 +2,7 @@
 title: GQL Quick Reference for graph in Microsoft Fabric
 description: Quick reference for GQL syntax, statements, graph patterns, expressions, and functions supported by graph in Microsoft Fabric, with examples.
 ms.topic: reference
-ms.date: 03/12/2026
+ms.date: 04/23/2026
 ms.reviewer: splantikow
 ms.search.form: GQL Quick Reference
 ---
@@ -348,6 +348,18 @@ Learn more about [graph types](gql-graph-types.md).
 
 ## Expressions & operators
 
+### Conditional
+
+Conditional expressions return different values based on conditions.
+
+```gql
+CASE WHEN cond THEN val ELSE val END   -- Searched CASE
+CASE expr WHEN val THEN val ELSE val END -- Simple CASE
+NULLIF(a, b)                           -- NULL if a = b
+```
+
+For more information about conditional expressions, see the [GQL expressions and functions](gql-expressions.md).
+
 ### Comparison
 
 Comparison operators compare values and check for equality, ordering, or nulls.
@@ -364,7 +376,7 @@ For more information about comparison predicates, see the [GQL expressions and f
 Logical operators combine or negate boolean conditions in queries.
 
 ```gql
-AND, OR, NOT                     -- Boolean logic
+AND, OR, NOT, XOR               -- Boolean logic
 ```
 
 For more information about logical expressions, see the [GQL expressions and functions](gql-expressions.md).
@@ -462,6 +474,8 @@ Graph functions let you get information from nodes, paths, and edges.
 labels(node)                     -- Get node labels
 nodes(path)                      -- Get path nodes
 edges(path)                      -- Get path edges
+elements(path)                   -- Get all path nodes and edges
+path_length(path)                -- Get number of edges in a path
 ```
 
 For more information about graph functions, see [GQL expressions and functions](gql-expressions.md).
@@ -482,6 +496,8 @@ Generic functions let you work with data in common ways.
 
 ```gql
 coalesce(expr1, expr2, ...)    -- Get the first non-null value
+to_json_string(value)          -- Convert value to JSON string
+nullif(a, b)                   -- NULL if a = b, else a
 ```
 
 For more information about generic functions, see [GQL expressions and functions](gql-expressions.md).

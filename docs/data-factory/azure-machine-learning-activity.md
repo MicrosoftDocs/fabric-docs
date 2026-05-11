@@ -1,6 +1,6 @@
 ---
 title: Azure Machine Learning activity
-description: Learn how to add an Azure Batch activity to a pipeline and use it to connect to an Azure Machine Learning instance and run a command.
+description: Learn how to add an Azure Machine Learning activity to a pipeline and use it to connect to an Azure Machine Learning instance and run a command.
 ms.reviewer: xupxhou, abnarain
 ms.topic: how-to
 ms.custom: pipelines
@@ -31,7 +31,7 @@ To use an Azure Machine Learning activity in a pipeline, complete the following 
 
    :::image type="content" source="media/azure-machine-learning-activity/add-azure-machine-learning-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and Azure Machine Learning activity highlighted.":::
 
-1. Select the new Azure Batch activity on the pipeline editor canvas if it isn't already selected.
+1. Select the new Azure Machine Learning activity on the pipeline editor canvas if it isn't already selected.
 
    :::image type="content" source="media/azure-machine-learning-activity/azure-machine-learning-activity-general-settings.png" alt-text="Screenshot showing the General settings tab of the Azure Machine Learning activity.":::
 

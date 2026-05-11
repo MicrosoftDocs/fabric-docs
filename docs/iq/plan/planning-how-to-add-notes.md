@@ -11,6 +11,8 @@ ai-usage: ai-assisted
 
 Notes are designed for **contextual explanation and documentation**, helping users interpret data, justify values, and improve decision-making. Planning enables **data-level annotation**, allowing users to document insights at granular levels such as rows, columns, or individual cells.
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Prerequisites
 
 * You have access to a Planning sheet.

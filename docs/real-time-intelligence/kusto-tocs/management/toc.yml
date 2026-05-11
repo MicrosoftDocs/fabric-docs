@@ -250,6 +250,12 @@ items:
       href: /kusto/management/graph/graph-snapshot-show?view=microsoft-fabric&preserve-view=true
     - name: .show graph_snapshots
       href: /kusto/management/graph/graph-snapshots-show?view=microsoft-fabric&preserve-view=true
+    - name: .show graph_snapshot statistics
+      href: /kusto/management/graph/graph-snapshot-statistics-show?view=microsoft-fabric&preserve-view=true
+    - name: .show graph_snapshots statistics
+      href: /kusto/management/graph/graph-snapshots-statistics-show?view=microsoft-fabric&preserve-view=true
+    - name: .show graph_snapshots failures
+      href: /kusto/management/graph/graph-snapshots-failures-show?view=microsoft-fabric&preserve-view=true
   - name: Stored query results
     items:
     - name: Stored query results
@@ -550,6 +556,12 @@ items:
     - name: .show query acceleration policy command
       href: /kusto/management/show-query-acceleration-policy-command?view=microsoft-fabric&preserve-view=true
       displayName: external table, delta table
+    - name: Query acceleration troubleshooting guide
+      href: /kusto/management/query-acceleration-troubleshooting-guide?view=microsoft-fabric&preserve-view=true
+      displayName: external table, delta table
+    - name: .alter-merge query acceleration policy command
+      href: /kusto/management/alter-merge-query-acceleration-policy-command?view=microsoft-fabric&preserve-view=true
+      displayName: external table, delta table
   - name: Restricted view access
     items:
     - name: Restricted view access policy
@@ -762,6 +774,12 @@ items:
       href: /kusto/management/data-ingestion/cancel-queued-ingestion-operation-command?view=microsoft-fabric&preserve-view=true
     - name: .show queued ingestion operation command
       href: /kusto/management/data-ingestion/show-queued-ingestion-operations?view=microsoft-fabric&preserve-view=true
+    - name: Queued ingestion via REST API
+      href: /kusto/management/data-ingestion/queued-ingest-use-http?view=microsoft-fabric&preserve-view=true
+    - name: Queued ingestion status via REST API
+      href: /kusto/management/data-ingestion/queued-ingest-status-http?view=microsoft-fabric&preserve-view=true
+    - name: Queued ingestion Configuration via REST API
+      href: /kusto/management/data-ingestion/queued-ingest-configuration-http?view=microsoft-fabric&preserve-view=true
   - name: Streaming ingestion
     items:
     - name: Streaming ingestion and schema changes

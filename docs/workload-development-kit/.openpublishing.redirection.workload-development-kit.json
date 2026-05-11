@@ -119,6 +119,6 @@
             "source_path_from_root": "/docs/workload-development-kit/authentication-tutorial.md",
             "redirect_url": "/fabric/workload-development-kit/create-entra-id-app",
             "redirect_document_id": false
-        }        
+        }
     ]
 }
