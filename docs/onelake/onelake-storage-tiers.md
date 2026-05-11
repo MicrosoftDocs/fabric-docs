@@ -65,7 +65,7 @@ You can change a file's storage tier via the following methods:
    All files uploaded to a workspace will land in the default tier. To upload a file in a different tier, you can use the 'x-ms-access-tier' header in the [Put Blob API](https://learn.microsoft.com/rest/api/storageservices/put-blob).  
 
 > [!NOTE]
-> OneLake only supports changing the storage tier of files which are fully billable.  Any item where storage or transactions aren't billed, or only billed up to a limit, are currently exempt from tier change operations.  
+> OneLake only supports changing the storage tier of files which are fully billable.  Any items where storage or transactions aren't billed, or only billed up to a limit, are currently exempt from tier change operations.  
 
 ## Storage tiers and OneLake consumption
 
@@ -142,7 +142,7 @@ Key updates include:
 
 ## Limitations
 
-- After enabling lifecycle management or storage tiers, you'll be charged for Oracle and MS SQL operations. Upgrading to the [on-premise data gateway version 3000.314.5](https://www.microsoft.com/download/details.aspx?id=53127) or later makes these mirroring operations free again.
+- After enabling lifecycle management or storage tiers, you'll be charged for Oracle and MS SQL operations. Upgrading to the [on-premises data gateway version 3000.314.5](https://www.microsoft.com/download/details.aspx?id=53127) or later makes these mirroring operations free again.
 
 ## Related content
 
