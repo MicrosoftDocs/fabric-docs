@@ -100,6 +100,9 @@ To edit or delete a property,
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
 
+[!INCLUDE [supported property types](includes/supported-property-types.md)]
+
+
 ## Modeling untyped properties
 
 Entity types in ontology (preview) support creating properties without specifying a data type upfront. This capability enables conceptual modeling workflows where you define business concepts and their meanings before making technical decisions about data types. When you're ready to bind data to these properties, the data type is determined at that point.
@@ -118,12 +121,10 @@ An untyped property is always unbound. Once you bind data to an untyped property
 
 To create a property without specifying a data type, choose *Define at binding* as the **Property type** when defining the property.
 
-:::image type="content" source="media/how-to-create-entity-types/untyped-property.png" alt-text="Screenshot of creating an untyped property.":::
+:::image type="content" source="media/how-to-create-entity-types/untyped-property.png" alt-text="Screenshot of creating an untyped property." lightbox="media/how-to-create-entity-types/untyped-property.png":::
 
 ### Assign a data type by binding data
 
 When you're ready to assign a data type to an untyped property, [bind a source column to it](how-to-bind-data.md). The source column's native data type becomes the property's data type.
 
 After binding, the property becomes operational and appears in query results, previews, and downstream experiences.
-
-[!INCLUDE [supported property types](includes/supported-property-types.md)]
