@@ -121,7 +121,7 @@ items:
                 href: plan/planning-writeback/planning-how-to-configure-destination-settings.md
               - name: Configure advanced settings
                 href: plan/planning-writeback/planning-how-to-configure-advanced-settings.md
-              - name: View Logs
+              - name: View logs
                 href: plan/planning-writeback/planning-how-to-view-logs.md
         - name: Change layouts
           href: plan/planning-how-to-change-layouts.md
