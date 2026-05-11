@@ -1,7 +1,7 @@
 ---
 title: Create entity types
 description: Learn about entity types in ontology (preview) and how to manage them.
-ms.date: 03/30/2026
+ms.date: 05/11/2026
 ms.topic: how-to
 ---
 
@@ -52,7 +52,7 @@ Follow these steps to create entity types in your ontology (preview) item.
 
     You can create properties on entity types without binding data to them. Later, you can bind either static or time series data to these properties. This section shows that process. (Alternatively, you can go straight to the data binding step and add properties while binding data to them in a single operation. For detailed instructions on that process, see [Data binding](how-to-bind-data.md).)
 
-1. Add a name, data type, and property type for each property. Select **Save** to view the saved properties in the properties tab.
+1. Add a name and property type for each property, or choose *Define at binding* to [model untyped properties](#modeling-untyped-properties) without specifying a data type upfront. Select **Save** to view the saved properties in the properties tab.
 
     >[!NOTE]
     >Property names can only be duplicated across entities for properties of the same type. For example, you can't have one entity type with a string `ID` property and another entity type with an integer `ID` property, but you can have two entity types that both have a string `ID` property.
@@ -99,5 +99,31 @@ To edit or delete a property,
     :::image type="content" source="media/how-to-create-entity-types/edit-delete-property.png" alt-text="Screenshot of editing or deleting a property.":::
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
+
+## Modeling untyped properties
+
+Entity types in ontology (preview) support creating properties without specifying a data type upfront. This capability enables conceptual modeling workflows where you define business concepts and their meanings before making technical decisions about data types. When you're ready to bind data to these properties, the data type is determined at that point.
+
+Untyped properties are useful when:
+
+* You're modeling business concepts before identifying source systems or data structures.
+* You want to separate conceptual modeling (what the business means) from physical modeling (how data is structured).
+
+An untyped property is always unbound. Once you bind data to an untyped property, it becomes both typed and bound in a single operation.
+
+>[!NOTE]
+>Untyped properties don't appear in query results, data previews, or downstream experiences (such as Fabric Graph, SQL endpoint, or KQL) until a data type is assigned through binding. However, untyped properties are included in the entity type definition returned by the API, so programmatic consumers can discover and reference them before binding.
+
+### Create untyped property
+
+To create a property without specifying a data type, choose *Define at binding* as the **Property type** when defining the property.
+
+:::image type="content" source="media/how-to-create-entity-types/untyped-property.png" alt-text="Screenshot of creating an untyped property.":::
+
+### Assign a data type by binding data
+
+When you're ready to assign a data type to an untyped property, [bind a source column to it](how-to-bind-data.md). The source column's native data type becomes the property's data type.
+
+After binding, the property becomes operational and appears in query results, previews, and downstream experiences.
 
 [!INCLUDE [supported property types](includes/supported-property-types.md)]
