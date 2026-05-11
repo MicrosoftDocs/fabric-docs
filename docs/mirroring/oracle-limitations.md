@@ -148,7 +148,7 @@ If you get any of the following errors -
 * ORA-00604: error occurred at recursive SQL level 1\\nORA-01289: cannot add duplicate logfile +DBSV6162_ARCHIVE_OBIA/CPOBIACH/ARCHIVELOG/2026_03_03/thread_1_seq_138823.582.1226964749\\nORA-06512: at \\\"SYS.DBMS_LOGMNR\\\," line 82\\nORA-06512: at line 1\\nORA-06512: at line 1\\nORA-06512: at \\\"SYS.DBMS_LOGMNR\\\," line 72\\nORA-06512: at line 1'
 * ORA-65040: operation not allowed from within a pluggable database.
 
-You need to reach out to the Oracle support team or open up a support ticket with Oracle - not Microsoft. Let the Oracle support teram know that the Oracle database used for Mirroring needs updates to the latest patch.
+You need to reach out to the Oracle support team or open up a support ticket with Oracle - not Microsoft. Let the Oracle support team know that the Oracle database used for Mirroring needs updates to the latest patch.
 
 ## Related Content
 
