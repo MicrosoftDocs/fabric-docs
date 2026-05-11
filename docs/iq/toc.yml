@@ -121,6 +121,8 @@ items:
                 href: plan/planning-writeback/planning-how-to-configure-destination-settings.md
               - name: Configure advanced settings
                 href: plan/planning-writeback/planning-how-to-configure-advanced-settings.md
+              - name: Enable writeback in reading mode
+                href: plan/planning-writeback/planning-how-to-enable-writeback-in-reading-mode.md
         - name: Change layouts
           href: plan/planning-how-to-change-layouts.md
         - name: Create a cube
