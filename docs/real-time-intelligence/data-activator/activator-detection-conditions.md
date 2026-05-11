@@ -1,91 +1,90 @@
 ---
-title: Detection conditions in Activator
+title: Detection settings in Activator
 description: Understand how detection settings in Activator rules operate and learn how to configure them effectively.
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
-ms.date: 11/25/2024
-ms.search.form: Data Activator Detection Condition
+ms.date: 05/04/2026
+ms.search.form: Data Activator Detection Settings
+ai-usage: ai-assisted
 ---
 
 # Detection settings in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
 
-This article describes the range of detection settings available to you when you create a rule. You learn how detection settings operate in Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] and how to configure them effectively. The various detection settings work together to pinpoint the exact data that you're interested in tracking. 
+This article describes the range of detection settings available when you create a rule. You learn how detection settings operate in Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] and how to configure them effectively. The various detection settings work together to pinpoint the exact data that you're interested in tracking.
 
-Our example uses the **Package delivery events** sample eventstream. From this eventstream, we already created an object named **Temperature** and a rule **Too hot for medicine**.
+The examples in this article use the **Package delivery events** sample eventstream. It specifically references the **Temperature** attribute and **Too hot for medicine** rule created in the [tutorial](activator-tutorial.md).
 
 ## Detection setting options
 
-Detection settings are managed in the **Definition** pane which opens on the right side of [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. Select a rule from the **Explorer** or select **New rule** to open the **Definition** pane. Here you set the detection settings using **Summarization**, **Filter**, and **Condition**.
+You configure detection settings in the **Definition** pane, which appears on the right side of [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. The pane opens when you select a rule in the **Explorer** pane on the left. The detection settings in **Summarization**, **Condition**, and **Property filter** work together to define exactly which data events trigger the rule. Each setting is described in the sections that follow.
 
-:::image type="content" source="media/activator-detection-conditions/data-activator-pane.png" alt-text="Screenshot of opening Definition pane in activator."lightbox="media/activator-detection-conditions/data-activator-pane.png":::
+The following image shows the **Definition** pane with the detection settings for the **Temperature** attribute of the **Too hot for medicine** rule.
 
-**Summarization**
+:::image type="content" source="media/activator-detection-conditions/data-activator-detection-pane.png" alt-text="Screenshot of Definition pane in Activator showing the detection settings of the Temperature attribute for the Too hot for medicine rule." lightbox="media/activator-detection-conditions/data-activator-detection-pane.png":::
 
-A summarization is made up of an aggregation (average, minimum, sum, etc.), window size, and step size for the attribute used in the rule. In this example, we use the **Temperature** object as our attribute. The **Temperature** object comes from our *Package delivery events* stream.
+## Summarization
 
-If the **Summarization** section isn't shown in your **Definition** pane, select **Add summarization** to open it.
+A summarization converts a stream of raw events into a single computed value over a rolling time window. It's made up of an aggregation type (**Operation**), a **Window size**, and a **Step size**. Summarizations are useful when a rule should respond to a trend or pattern over time, rather than to individual events.
 
-When you create a summarization, you specify a time window for your rule. The time window ranges from 10 seconds to 24 hours. A summarization takes all of the values of the rule properties during each time window and converts them into a single summary value for the time window. In this example, our rule summarization is the **Average** aggregation for the attribute **Temperature**. 
+The **Window size** defines how far back in time each computation looks. For example, a window size of 1 hour means each summary value is computed from events in the most recent hour. The **Step size** controls how frequently the window advances and a new summary value is computed. For example, a step size of 15 minutes means a new aggregated value is produced every 15 minutes. Both values can range from 10 seconds to 24 hours.
 
-:::image type="content" source="media/activator-detection-conditions/data-activator-summarizations.png" alt-text="Screenshot showing the Monitor section of the Definition pane with the Temperature attribute selected.":::
+The following table describes the available aggregation types.
 
-The summarization also includes a step size. The step size ranges from 10 seconds to 24 hours. 
-
-|Summary type  |Description  |
-|---------|---------|
-|Average over time      |Computes the average value of the property or column over the time window.|
-|Count     |Computes the number of events containing the property or column over the time window.|
-|Minimum/Maximum over time     |Computes the minimum/maximum value of the property or column during the time window.|
-Total  | Computes the total value of the property or column during that time window. 
-
-## Filters
-
-The **Definition** pane has a button for **Add filter** and a section called **Property filter**. Here we're covering the **Add filter** button. 
-
-In a filter, you specify a comparison operation for the selected attribute. The filter retains only those events that meet the comparison condition. All other events are removed from consideration for the rule.
-
-:::image type="content" source="media/activator-detection-conditions/data-activator-filter.png" alt-text="Screenshot of using an activator filter.":::
-
-Use filters on any type of attribute. The filters create a condition on a subset of your data. For example, you might set a filter of “City=Redmond” on some package-tracking events, to set a condition on only events on packages in Redmond. You can also set a filter on numerical data. In our example, we filtered for temperatures greater than 60. Any events that don't fit the filter conditions aren't included.
-
-You can specify up to three filters.
+| Aggregation     | Description |
+| -----------     | ----------- |
+| Average         | Computes the average value of the property or column over the time window. |
+| Minimum         | Computes the minimum value of the property or column over the time window. |
+| Maximum         | Computes the maximum value of the property or column over the time window. |
+| Sum             | Computes the sum of the property or column values over the time window. |
+| Total           | Computes the number of events containing the property or column over the time window. Unlike **Sum**, which adds up the values of the property, **Total** counts how many events occurred. |
 
 ## Conditions
 
-The third detection setting is **Condition**. Use **Condition** to tell [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] when to activate the rule.
+A condition defines the pattern that [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] must detect in the data to activate the rule. Conditions are grouped by data type, and each group contains condition types that describe different kinds of change or state.
 
-:::image type="content" source="media/activator-detection-conditions/data-activator-conditions.png" alt-text="Screenshot of using activator condition types.":::
+The following image and table describe the condition categories available in the drop-down.
 
-Condition types fall into the following categories:
+:::image type="content" source="media/activator-detection-conditions/data-activator-conditions.png" alt-text="Screenshot of the Condition section in the Definition pane showing the Condition drop-down expanded with eight collapsed categories: Numeric change, Numeric state, Text change, Text state, Logical change, Logical state, Common change, and Heartbeat.":::
 
-|Condition type  |Description  |
-|---------|---------|
-|**Is** conditions     |**Is** conditions activate for each event where the condition is true. |
-|**Becomes** conditions     |**Becomes** conditions activate only when the condition becomes true, after being false. For example, "Becomes greater than 10" activates when the value of the property changes from a value of five (less than 10) to a value of 11 (greater than 10). It only activates when the condition goes from being false to true. |
-|**Enters, Exits Range** conditions     |The Enters range condition activates when a property value enters a defined value range. It only activates when the previous value of the property was outside of the range, and the current value is within the range. The exits range condition is similar, except that it activates when the property value goes outside of the range. |
-|**Changes, Changes to, Changes from**     |These conditions activate when a condition changes, changes to, or changes from specified boundaries.   |
-Text states such as **Contains**, **Ends**, **Begins**  | These conditions activate when text meets the selected condition. 
-|**Heartbeat** conditions | "No presence of data" conditions activate when data doesn't arrive in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. Time elapsed is the time that you want the rule to monitor if new data doesn't arrive. "Object first appearance" conditions activate the first time a given object ID appears in the event stream.
+| Category | Description |
+| -------- | ----------- |
+| **Numeric change** | Conditions that activate when a numeric value changes relative to a threshold, such as **Increases above** or **Decreases below**. Use these conditions to detect directional trends in numeric data. |
+| **Numeric state** | Conditions that activate when a numeric value is in a particular state, such as **Is greater than**, **Is less than**, or **Is between**. The rule activates for each event where the condition is true. |
+| **Text change** | Conditions that activate when a text value changes to or from a specific value, such as **Changes to** or **Changes from**. |
+| **Text state** | Conditions that activate when a text value matches a pattern, such as **Contains**, **Begins with**, or **Ends with**. |
+| **Logical change** | Conditions that activate when a boolean value changes state. **Becomes true** activates when a value changes from false to true. **Becomes false** activates when a value changes from true to false. |
+| **Logical state** | Conditions that activate for each event where a boolean value matches the specified state. **Is equal to** and **Is not equal to** compare the value against true or false. |
+| **Common change** | Activates when an attribute value changes. The **Changes** condition applies across data types and has no specific threshold or target value. |
+| **Heartbeat** | Conditions based on event arrival. **No presence of data** activates when no new events arrive within a specified time. **Object first appearance** activates the first time a given object ID appears in the event stream. |
 
-After you specify a condition type, you specify an occurrence.
+### Occurrence
 
-The occurrence indicates how long, or how many times, the condition must be true before the rule activates.
+For some condition types, an **Occurrence** field appears that controls how long, or how many times, the condition must be true before the rule activates. For example, if you want to be alerted only when a temperature remains above 100 degrees for at least 10 minutes, set the condition to **Is greater than** 100 and set the occurrence to **When it has been true for** 10 minutes. The following table describes the available occurrence options.
 
-|Timer  |Description  |
-|---------|---------|
-|Every time |Activate the rule each time the condition is true. |
-|Number of times |Count how many times the condition is true, and activate the rule only when it becomes true the specified number of times. |
-|Stays |Activate the rule if the condition is continuously true for the specified amount of time. |
+| Occurrence | Description |
+| ---------- | ----------- |
+| Every time the condition is met | The rule activates each time the condition is true. |
+| When it has been true for *n* times | The rule activates only after the condition is true the specified number of times. |
+| When it has been true for | The rule activates only if the condition remains continuously true for the specified duration. |
+
+## Property filter
+
+The **Property filter** section creates a condition on a subset of your data, limiting which events the rule evaluates. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] supports property filters on any type of attribute - numeric, text, or boolean.
+
+Each filter specifies an **Attribute**, an **Operation**, and a **Value**. Only events that satisfy the filter are passed to the rule condition. All other events are excluded.
+
+:::image type="content" source="media/activator-detection-conditions/data-activator-filter.png" alt-text="Screenshot of the Property filter section in the Definition pane showing Filter 1 configured with Attribute set to Temperature (°C), Operation set to Is greater than, and Value set to 0.":::
+
+For example, the image shows a filter on the **Temperature (°C)** attribute where **Operation** is **Is greater than** and **Value** is **0**. This filter excludes all events where Temperature is zero or below. Another example is a text filter where **Attribute** is set to **City**, **Operation** is **Is equal to**, and **Value** is **Redmond** - limiting rule evaluation to events where packages are in Redmond.
+
+You can apply up to three filters to a single rule. When you apply multiple filters, an event must satisfy all filters for the event to be evaluated. Filters are combined with AND logic.
 
 ## Advanced settings
 
-To learn about the advanced settings, see [Latency in Activator](activator-latency.md).
+The **Advanced settings** section of the **Definition** pane contains timing settings that affect rule evaluation accuracy, not detection logic. The **Wait time for late-arriving events** setting controls how long Activator holds the evaluation window open to allow delayed events to arrive. To learn more, see [Latency in Activator](activator-latency.md).
 
 ## Related content
 
 * [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules in design mode](activator-create-activators.md)
 * [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
-
-You can also learn more about Microsoft Fabric:
-
-* [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
+* [Latency in Activator](activator-latency.md)

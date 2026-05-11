@@ -11,6 +11,8 @@ Data input fields are essential for planning. Use them to enter targets, adjustm
 
 The **Extend Time** feature combines data input and forecasting to enable data entry beyond the periods available in the source data.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Prerequisites
 
 * The planning sheet must have at least one data input measure.

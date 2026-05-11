@@ -542,6 +542,8 @@ items:
       href: api-graphql-azure-api-management.md
     - name: Connect AI agents with a local Model Context Protocol (MCP) server
       href: api-graphql-local-model-context-protocol.md
+    - name: Authorizer User data functions
+      href: api-graphql-authorizer-function.md
   - name: Monitoring
     items:
     - name: Monitoring dashboard and logging (preview)

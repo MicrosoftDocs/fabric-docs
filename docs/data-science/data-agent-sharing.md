@@ -1,7 +1,9 @@
 ﻿---
 title: Fabric data agent sharing and permission management
 description: Learn how to share a Fabric data agent, and manage Fabric data agent permissions.
-ms.reviewer: amjafari, scottpolly
+ms.author: jburchel
+author: jonburchel
+ms.reviewer: amjafari
 ms.topic: concept-article
 ms.date: 09/17/2025
 ms.update-cycle: 180-days
@@ -73,7 +75,7 @@ Follow least privilege: grant only the data source permissions required. For sem
 > [!NOTE]
 > This permissions change applies only to interactions through Fabric data agents. Other entry points (for example, Analyze in Excel or direct report authorship) may still require Build permission.
 
-If a user can open the Fabric data agent but lacks the minimum permission on one or more underlying sources, queries that touch those sources fail with an authorization error or return empty results, depending on the source’s security model.
+If a user can open the Fabric data agent but lacks the minimum permission on one or more underlying sources, queries that touch those sources fail with an authorization error or return empty results, depending on the source's security model.
 
 <!-- <img src="./media/data-agent-sharing/sharing-main.png" alt="Screenshot showing how to share a Fabric data agent link." width="300"/> -->
 
