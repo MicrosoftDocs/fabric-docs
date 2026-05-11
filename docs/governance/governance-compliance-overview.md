@@ -50,11 +50,7 @@ For more information, see [About tenant settings](../admin/about-tenant-settings
 
 Use domains to logically group all the data in an organization that's relevant to particular areas or fields, such as by business unit. One of the most common uses for domains is to group data by business department, so each department can manage its data according to its specific regulations, restrictions, and needs.
 
-<<<<<<< HEAD
-Grouping data into domains and subdomains enables better discoverability and governance. For instance, in the [OneLake catalog](../governance/onelake-catalog-overview.md), users can filter content by domain in order find content that is relevant to them. With respect to governance, some tenant-level settings for managing and governing data can be delegated to the domain level, thus allowing domain-specific configuration of those settings.
-=======
-Grouping data into domains and subdomains enables better discoverability and governance. For instance, in the [OneLake data hub](../governance/onelake-catalog-overview.md), users can filter content by domain to find content that is relevant to them. With respect to governance, you can delegate some tenant-level settings for managing and governing data to the domain level, which allows domain-specific configuration of those settings.
->>>>>>> 8e98c0c7a96998d0f9e247256ca54e0f5db9380d
+Grouping data into domains and subdomains enables better discoverability and governance. For instance, in the [OneLake catalog](../governance/onelake-catalog-overview.md), users can filter content by domain to find content that is relevant to them. With respect to governance, you can delegate some tenant-level settings for managing and governing data to the domain level, which allows domain-specific configuration of those settings.
 
 For more information, see [Domains](./domains.md).
 
