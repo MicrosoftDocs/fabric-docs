@@ -15,7 +15,7 @@ Layout options control how data is structured and displayed in the report. You c
 
 ## Prerequisites
 
-Before you configure layout options, ensure that you have the following:
+Before you configure layout options, ensure that you have the following prerequisites:
 
 * Access to a planning sheet with data loaded.
 
@@ -37,13 +37,13 @@ Table layouts determine how row categories are presented in the report.
 
 ### Hierarchy
 
-This view displays data in a hierarchical format with expand and collapse functionality. This is the default layout.
+This view displays data in a hierarchical format with expand and collapse functionality. This layout is the default.
 
 :::image type="content" source="media/planning-how-to-change-layouts/hierarchy-layout.png" alt-text="Screenshot showing the hierarchy layouts." lightbox="media/planning-how-to-change-layouts/hierarchy-layout.png":::
 
 ### Table
 
-This view displays data in a tabular format without hierarchical expansion for rows. Column hierarchies can still support expand and collapse functionality.
+This view displays data in a tabular format without hierarchical expansion for rows. Column hierarchies can still support the expand and collapse functionality.
 
 :::image type="content" source="media/planning-how-to-change-layouts/table-layout.png" alt-text="Screenshot showing the table layouts." lightbox="media/planning-how-to-change-layouts/table-layout.png":::
 

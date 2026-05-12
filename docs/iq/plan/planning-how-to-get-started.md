@@ -57,7 +57,7 @@ In this section, you add the semantic model connection that you created earlier 
 
     :::image type="content" source="media/planning-how-to-get-started/new-plan-4.png" alt-text="Screenshot of choosing a semantic model." lightbox="media/planning-how-to-get-started/new-plan-4.png":::
 
-1. Add semantic model data into your fields. Now you've created your first planning sheet.
+1. Add semantic model data into your fields. Now you have your first planning sheet.
   
    :::image type="content" source="media/planning-how-to-get-started/planning-sheet.png" alt-text="Screenshot of the created planning sheet." lightbox="media/planning-how-to-get-started/planning-sheet.png":::
 

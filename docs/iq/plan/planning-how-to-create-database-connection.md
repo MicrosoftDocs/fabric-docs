@@ -41,7 +41,7 @@ This connection is optional and allows other users to comment and collaborate on
 
 1. Select **Create**.
 
-You have now created a database connection to store collaboration data.
+Now you have a database connection to store collaboration data.
 
 ## Share the database connection
 

@@ -12,7 +12,7 @@ Data input rows and columns allow planning sheet authors to extend a sheet by en
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-Using data input rows and columns, you can capture business inputs that aren't available in the underlying dataset or need manual adjustments while maintaining the sheet's hierarchy, totals, and calculations.
+Using data input rows and columns, you can capture business inputs that aren't available in the underlying dataset. You can also make manual adjustments to these inputs, while maintaining the sheet's hierarchy, totals, and calculations.
 
 ## When to use data input rows and columns
 
@@ -32,7 +32,7 @@ For example, a financial report might retrieve revenue and expenses from a datab
 
 Before you create data input rows or columns, make sure that you have the following prerequisites in place:
 
-* You've configured the planning sheet with the required dataset.
+* You configured the planning sheet with the required dataset.
 
 * You have edit permissions in the planning sheet.
 
