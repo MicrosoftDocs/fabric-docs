@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 The concept of multitenancy in Real-Time Intelligence refers to serving different tenants and storing their data in a single eventhouse.
 
-[!INCLUDE [multitenancy](~/../kusto-repo/data-explorer/includes/cross-repo/multitenancy.md)]
+[!INCLUDE [multitenancy](~/../data-explorer-repo/data-explorer/includes/cross-repo/multitenancy.md)]
 
 ## Related content
 
