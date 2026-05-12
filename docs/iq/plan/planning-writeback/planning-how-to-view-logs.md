@@ -12,7 +12,7 @@ Plan provides writeback logging as soon as you start a writeback operation. You 
 
 [!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
-:::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-menu.png" alt-text="The Logs button highlighted within the Writeback ribbon tab":::
+:::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-menu.png" alt-text="Screenshot of the logs button highlighted within the Writeback ribbon tab.":::
 
 ## Filter writeback logs
 
@@ -20,7 +20,7 @@ Plan provides writeback logging as soon as you start a writeback operation. You 
 
 Use the search bar to find logs by **ID**.
 
-:::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-filter-by-status.jpg" alt-text="The writeback logs table showing the search bar used for finding logs by ID" lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-filter-by-status.jpg":::
+:::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-filter-by-status.jpg" alt-text="Screenshot of the writeback logs table showing the search bar used for finding logs by ID." lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-filter-by-status.jpg":::
 
 ### Filter by status
 
@@ -31,7 +31,7 @@ Select **Status** to filter logs by the execution state of the writeback operati
 * **Running**: This option filters the logs to show writeback processes that are currently executing.
 * **Cancelled**: This option filters the logs to show writeback processes that were explicitly stopped or aborted before completion.
 
-:::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-status.jpg" alt-text="Interface showing the writeback log status filter menu with multiple execution states selected" lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-status.jpg":::
+:::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-status.jpg" alt-text="Screenshot showing the writeback log status filter menu with multiple execution states selected." lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-status.jpg":::
 
 ### Filter by time
 
@@ -42,25 +42,25 @@ Select **Created At** to filter logs by when writeback started. You can filter b
 * **Last 30 days**: This option filters the logs that were created in the last 30 days.
 * **Between**: This option lets you specify the starting and ending date within which you can filter your writeback logs.
 
-:::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-filter-by-time-between.jpg" alt-text="The 'Between' time filter interface showing a calendar date picker used to specify a custom start and end date range for logs" lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-filter-by-time-between.jpg":::
+:::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-filter-by-time-between.jpg" alt-text="Screenshot of the 'Between' time filter interface with a calendar date picker to specify a custom start and end date range for logs." lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-filter-by-time-between.jpg":::
 
 ### Reset filter
 
 Select **Reset Filter** to clear all applied filters.
 
-:::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-reset-filter.png" alt-text="The Reset Filter button highlighted in the writeback logs toolbar, used to clear all active filters" lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-reset-filter.png":::
+:::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-reset-filter.png" alt-text="Screenshot of the Reset Filter button highlighted in the writeback logs toolbar, used to clear all active filters." lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-reset-filter.png":::
 
 ## Analyze writeback logs
 
 The writeback logs console displays a list of log columns that help you identify and analyze each writeback.
 
-:::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-analyze.jpg" alt-text="A comprehensive view of the writeback logs table, showing columns for ID, Duration, Status, Created At, and Started By" lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-analyze.jpg":::
+:::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-analyze.jpg" alt-text="Screenshot of a comprehensive view of the writeback logs table, showing columns for ID, Duration, Status, Created At, and Started By." lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-analyze.jpg":::
 
 ### ID
 
 The **ID** column displays the unique identifier for each writeback. You can sort this column in ascending or descending order. Selecting the **ID** opens a detailed summary of the writeback. The **General** tab includes the summary, and status.
 
-:::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-general.jpg" alt-text="The General tab of the writeback logs detail pane, showing specific execution data like the ID, status, and event source" lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-general.jpg":::
+:::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-general.jpg" alt-text="Screenshot of the general tab of the writeback logs detail pane, showing specific execution data like the ID, status, and event source." lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-general.jpg":::
 
 The details pane provides the following information:
 
@@ -81,7 +81,7 @@ The details pane provides the following information:
 
 Select Fabric SQL to view the configuration, connection details, and execution outcome of the writeback operation specific to your Microsoft Fabric SQL database destination.
 
-:::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-fabric-sql.png" alt-text="The Fabric SQL destination details view within the writeback logs, showing connection properties and execution outcomes" lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-fabric-sql.png":::
+:::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-fabric-sql.png" alt-text="Screenshot of the Fabric SQL destination details view within the writeback logs, showing connection properties and execution outcomes." lightbox="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-fabric-sql.png":::
 
 Select the specific destination table entry (for example, *Sales\_Plan\_Writeback\_12*) to view detailed connection properties and execution metrics for that specific Microsoft Fabric SQL database target.
 
