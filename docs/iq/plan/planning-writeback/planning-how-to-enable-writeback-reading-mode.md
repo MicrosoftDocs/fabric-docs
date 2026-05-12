@@ -28,3 +28,5 @@ Select **Writeback** to write report data to the configured destination. Plan (p
 ## Logs
 
 Select **Logs** to open the writeback logs page.
+
+:::image type="content" source="../media/planning-writeback/planning-how-to-enable-writeback-in-reading-mode/writeback-logs.png" alt-text="Screenshot of the writeback logs interface displaying a table of past writeback events, durations, and statuses" lightbox="../media/planning-writeback/planning-how-to-enable-writeback-in-reading-mode/writeback-logs.png":::
