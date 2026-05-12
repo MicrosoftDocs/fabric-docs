@@ -78,6 +78,10 @@ You always have the opportunity to add one or the other at a later point should 
 
 For more detailed decision guidance, see [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md).
 
+### Analyze data in the Lakehouse, Warehouse, or Eventhouse
+
+[!INCLUDE [analyze-data-with-menu](../includes/analyze-data-with-menu.md)]
+
 ## Migration
 
 Use [the Fabric Migration Assistant for Data Warehouse](migration-assistant.md) to migrate from Azure Synapse Analytics, SQL Server, and other SQL Database Engine platforms. Review [Migration​ planning](migration-synapse-dedicated-sql-pool-warehouse.md) and [Migration​ methods for ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-methods.md).
