@@ -3,6 +3,10 @@ title: Set details for a rule
 description: Include file with instructions to add details for a rule in a Fabric activator. 
 ms.topic: include
 ms.date: 10/13/2025
+author: spelluru
+ms.author: spelluru
+ms.service: fabric
+ms.subservice: rti-eventstream
 ---
 
 ## Details section
