@@ -1,14 +1,14 @@
 ---
 title: Use service principal authentication with Fabric data agent
-description: Learn how to configure and use a Microsoft Entra service principal to authenticate to a Fabric data agent for automated and programmatic scenarios.
-ms.author: <your-alias>
-author: <your-github-handle>
-ms.reviewer: <reviewer-alias>
-reviewer: <reviewer-github-handle>
+description: Learn how to configure service principal to authenticate to a Fabric data agent.
+ms.author: amjafari
+author: amjafari
+ms.reviewer: amjafari
 ms.topic: how-to
-ms.custom:
-  - build-2025
-ms.date: 05/05/2026
+ms.date: 05/12/2026
+ms.collection: ce-skilling-ai-copilot
+ai-usage: ai-assisted
+#customer intent: As an Analyst, I want to use service principal to authenticate to a Fabric data agent from custom application.
 ---
 
 # Use service principal authentication with Fabric data agent
