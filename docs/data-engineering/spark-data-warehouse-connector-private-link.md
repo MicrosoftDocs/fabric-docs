@@ -13,8 +13,7 @@ The [Spark connector for Fabric Data Warehouse](spark-data-warehouse-connector.m
 
 ## Prerequisites
 
-> [!IMPORTANT]
-> Run these import statements at the beginning of your notebook or before you start using the connector:
+Use these import statements at the beginning of your notebook or before you start using the connector:
 
 # [PySpark](#tab/pyspark)
 
@@ -48,7 +47,7 @@ Both strategies use a two-phase commit approach. Data is first written to tempor
 
 ## Automatic strategy selection
 
-In Private Link-enabled environments, the connector automatically selects `MULTI_THREAD_NO_DUPLICATES_BATCH_INSERT`. No configuration is needed.
+In private link-enabled environments, the connector automatically selects `MULTI_THREAD_NO_DUPLICATES_BATCH_INSERT`. No configuration is needed.
 
 # [PySpark](#tab/pyspark)
 
@@ -122,7 +121,7 @@ After all partitions complete, the driver merges every staging table into the ta
 
 Use the following guidance to choose a strategy:
 
-- **Start with `MULTI_THREAD_NO_DUPLICATES_BATCH_INSERT`**. It's the default in Private Link environments and provides the best throughput.
+- **Start with `MULTI_THREAD_NO_DUPLICATES_BATCH_INSERT`**. It's the default in private link environments and provides the best throughput.
 - **Switch to `NO_DUPLICATES_BATCH_INSERT`** if you encounter executor OutOfMemoryErrors. This strategy streams rows without buffering entire partitions, trading throughput for lower memory usage.
 
 Both strategies provide identical zero-duplicate guarantees.

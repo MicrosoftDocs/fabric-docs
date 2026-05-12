@@ -193,7 +193,7 @@ Currently, the connector:
 
 ## Related content
 
-* [Private Link support for the Spark connector](spark-data-warehouse-connector-private-link.md)
+* [Private link support for the Spark connector](spark-data-warehouse-connector-private-link.md)
 * [Apache Spark runtimes in Fabric](runtime.md)
 * [Apache Spark monitoring overview](spark-monitoring-overview.md)
 * [Security for data warehousing in Fabric](../data-warehouse/security.md)

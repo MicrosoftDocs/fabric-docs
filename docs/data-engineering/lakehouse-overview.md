@@ -64,9 +64,9 @@ The lakehouse ribbon includes an **Analyze data with** dropdown that lets you op
 | **Eventhouse endpoint** | Run KQL queries for high-performance, real-time analytics. See [Eventhouse endpoint](../real-time-intelligence/eventhouse-as-endpoint.md). |
 | **Notebook** (New / Existing) | Open a Spark notebook to explore or transform data with code. See [Explore data with a notebook](lakehouse-notebook-explore.md). |
 
-:::image type="content" source="media\lakehouse-overview\lakehouse-analyze-data.png" alt-text="Screenshot analyze data with dropdown in the lakehouse UI ribbon" lightbox="media\lakehouse-overview\lakehouse-analyze-data.png":::
+:::image type="content" source="media\lakehouse-overview\lakehouse-analyze-data.png" alt-text="Screenshot showing the Analyze data with dropdown in the lakehouse ribbon." lightbox="media\lakehouse-overview\lakehouse-analyze-data.png":::
 
-For details on each option and where to find the dropdown, see [Navigate the Fabric Lakehouse explorer](navigate-lakehouse-explorer.md#analyze-data-with).
+For details on each option and where to find the dropdown, see [Navigate the Fabric Lakehouse explorer](navigate-lakehouse-explorer.md#analyze-your-lakehouse-data-with-the-engine-of-your-choice).
 
 ## Lakehouse SQL analytics endpoint
 
