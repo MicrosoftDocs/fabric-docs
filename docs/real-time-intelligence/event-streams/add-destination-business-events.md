@@ -48,7 +48,7 @@ Add a business events destination to your eventstream by following these steps:�
 
         1. On the **Define business page**, follow these steps:
             1. Specify the **name** and **description** of the event schema. 
-            1. Select **Add row** to add fields to the event schema. For each field, specify data type, name, and description. Repeat this step until you added all the necessary fields to your event schema.
+            1. Select **Add row** to add fields to the event schema. For each field, specify data type, name, and description. Repeat this step until you've added all the necessary fields to your event schema.
             1. In the right pane, select a **workspace** to host the event schema set with the business event type.
             1. Select an existing **event schema set** or create a new one.
             1. Specify a name for the schema set if you're creating a new one.
@@ -76,7 +76,7 @@ Add a business events destination to your eventstream by following these steps:�
         :::image type="content" source="media/add-destination-business-events/map-schema-source-field-name-dropdown.png" alt-text="Screenshot of the Map schema dialog with the source field name drop-down list expanded, showing available fields like BikepointID, Street, Neighborhood, Latitude, and Longitude." lightbox="media/add-destination-business-events/map-schema-source-field-name-dropdown.png":::
 
         > [!NOTE]
-        > You can add a **Manage field** operator to apply advanced field transformations such as built-in functions, when no suitable source field is available to map to the destination field in the mapper wizard
+        > You can add a **Manage field** operator to apply advanced field transformations such as built-in functions, when no suitable source field is available to map to the destination field in the mapper wizard.
 
 1.  After selecting **Finish**, a **Mapper** node appears on the canvas, indicating that schema mapping is defined. 
 
