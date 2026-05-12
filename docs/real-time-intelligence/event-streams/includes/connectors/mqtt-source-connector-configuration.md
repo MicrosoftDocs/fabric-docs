@@ -1,6 +1,6 @@
 ---
 title: MQTT connector for Fabric event streams
-description: The include files has the common content for configuring an Message Queuing Telemetry Transport (MQTT) connector for Fabric event streams and Real-Time hub. 
+description: The include files has the common content for configuring a Message Queuing Telemetry Transport (MQTT) connector for Fabric event streams and Real-Time hub. 
 ms.reviewer: zhenxilin
 ms.topic: include
 ms.date: 04/23/2026
