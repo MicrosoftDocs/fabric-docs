@@ -7,7 +7,7 @@ ms.topic: concept-article
 ms.search.form: Warehouse Data Retention
 ---
 
-# Data retention in Fabric Data Warehouse (Public Preview)
+# Data retention in Fabric Data Warehouse (Preview)
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
