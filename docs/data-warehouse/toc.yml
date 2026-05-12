@@ -142,6 +142,8 @@ items:
     href: ingest-data-pipelines.md
   - name: Ingest data with TSQL
     href: ingest-data-tsql.md
+  - name: Troubleshoot ingestion errors
+    href: troubleshoot-ingestion-errors.md
   - name: Use dbt with data warehouse
     href: tutorial-setup-dbt.md   
 
@@ -219,15 +221,23 @@ items:
 
 - name: Data recovery
   items:
-  - name: Restore in-place
-    href: restore-in-place.md
-  - name: Restore in-place in the Fabric portal
-    href: restore-in-place-portal.md
-    displayName: Restore
   - name: Clone tables
     href: clone-table.md
-  - name: Clone tables in the Fabric portal
-    href: tutorial-clone-table-portal.md
+  - name: Configurable data retention
+    href: data-retention.md
+    displayName: Data retention, retention period
+  - name: Restore in-place
+    href: restore-in-place.md
+  - name: How to
+    items:
+    - name: Configure retention
+      href: how-to-configure-retention.md
+    - name: Clone tables in the Fabric portal
+      href: tutorial-clone-table-portal.md
+    - name: Restore in-place in the Fabric portal
+      href: restore-in-place-portal.md
+      displayName: Restore
+
 - name: Manage performance
   items:
   - name: Data clustering
@@ -260,8 +270,8 @@ items:
   items:
   - name: Monitoring overview
     href: monitoring-overview.md
-  - name: Query activity
-    href: query-activity.md
+  - name: Monitor
+    href: monitor.md
   - name: Query insights
     href: query-insights.md
   - name: How to

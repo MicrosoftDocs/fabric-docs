@@ -28,6 +28,7 @@ The following operations are available in the audit logs.
 | Added data source to Power BI gateway  |  :::no-loc text="AddDatasourceToGateway":::  |    |
 | Added external resource  |  :::no-loc text="AddExternalResource":::  | Registers or connects an external resource in the Fabric workspace.   |
 | Added link to external resource  |  :::no-loc text="AddLinkToExternalResource":::  | Links a Fabric item to an external resource for reference or integration.    |
+| Added runtime lineage event subscription  |  :::no-loc text="AddedRuntimeLineageEventSubscription":::  |   |
 | Added user to Power BI gateway cluster  |  :::no-loc text="AddUsersToGatewayCluster":::  |  Not currently used  |
 | Added user to Power BI gateway cluster datasource  |  :::no-loc text="AddUsersToGatewayClusterDatasource":::  |    |
 | Admin Get Artifacts Byuser Id | :::no-loc text="AdminGetArtifactsByuserId"::: |   |
@@ -158,6 +159,7 @@ The following operations are available in the audit logs.
 | Created an organizational custom visual | :::no-loc text="InsertOrganizationalGalleryItem"::: |   |
 | Created an SQL query from a SQL analytics endpoint | :::no-loc text="CreateSqlQueryFromSqlAnalyticsEndpointLakehouse"::: |   |
 | Created deployment pipeline | :::no-loc text="CreateAlmPipeline"::: |   |
+| Created workload assignment using admin api | :::no-loc text="ExtensibilityCreatedWorkloadAssignmentAdminApi"::: |   |
 | Custom visual requested Azure AD access token | :::no-loc text="GenerateCustomVisualAADAccessToken"::: |   |
 | Custom visual requested Office Web Apps access token | :::no-loc text="CustomVisualWACAccessToken"::: | Not currently used  |
 | D L P Info | :::no-loc text="DLPInfo"::: |   |
@@ -168,7 +170,7 @@ The following operations are available in the audit logs.
 | Dataflow permissions removed | :::no-loc text="DataflowPermissionsRemoved"::: | Not currently used  |
 | Delete Alm Pipeline Access As Admin | :::no-loc text="DeleteAlmPipelineAccessAsAdmin"::: |   |
 | Delete Alm Pipeline Access | :::no-loc text="DeleteAlmPipelineAccess"::: |   |
-| Delete Artifact | :::no-loc text="DeleteArtifact"::: |   |
+| Delete Artifact | :::no-loc text="DeleteArtifact"::: | Generated when an item is deleted. When [item recovery](item-recovery.md) is **disabled** in tenant admin settings, this operation is logged at the time the user deletes the item. When item recovery is **enabled**, this operation is logged when the item is permanently deleted (after the soft-delete retention period expires or when the item is manually purged from the recycle bin); the initial user action is logged as `ArtifactSoftDeleted`.  |
 | Delete Capacity Delegation settings | :::no-loc text="DeleteCapacityTenantSettingDelegation"::: | Delete Capacity delegation settings.  |
 | Delete Datamart | :::no-loc text="DeleteDatamart"::: |   |
 | Delete Domain | :::no-loc text="DeleteDataDomainAsAdmin"::: | Delete Domain  |
@@ -247,8 +249,10 @@ The following operations are available in the audit logs.
 | Deleted link to external resource | :::no-loc text="DeleteLinkToExternalResource"::: |   |
 | Deleted member of Power BI gateway cluster | :::no-loc text="DeleteGatewayClusterMember"::: |   |
 | Deleted organizational Power BI content pack | :::no-loc text="DeleteOrgApp"::: |   |
+| Deleted runtime lineage event subscription | :::no-loc text="DeletedRuntimeLineageEventSubscription"::: |   |
 | Deleted sensitivity label from Power BI item | :::no-loc text="SensitivityLabelRemoved"::: |   |
 | Deleted snapshot for user in Power BI tenant | :::no-loc text="DeleteSnapshot"::: | Generated when a user deletes a snapshot that describes a semantic model  |
+| Deleted workload assignment using admin api | :::no-loc text="ExtensibilityDeletedWorkloadAssignmentAdminApi"::: |   |
 | Deploy Model Version | :::no-loc text="DeployModelVersion"::: |   |
 | Deploy user application in FunctionSet | :::no-loc text="DeployUserAppFunctionSet"::: | Deploy user application through FunctionSet artifact  |
 | Deployed to a pipeline stage | :::no-loc text="DeployAlmPipeline"::: |   |
@@ -457,6 +461,7 @@ The following operations are available in the audit logs.
 | Pin Report To Teams Channel | :::no-loc text="PinReportToTeamsChannel"::: |   |
 | Pin Tile | :::no-loc text="PinTile"::: |   |
 | Pin Widget Tile | :::no-loc text="PinWidgetTile"::: |   |
+| Planning Session Upgraded| :::no-loc text="PlanningSessionUpgraded"::: | Session type is upgraded in planning workload.|
 | Post Dataset Rows | :::no-loc text="PostDatasetRows"::: |   |
 | Post Notebook Comment | :::no-loc text="PostNotebookComment"::: |   |
 | Post configure credentials | :::no-loc text="PostGitProviderCredentials"::: | Configure git provider credentials for a specific user |
@@ -480,6 +485,7 @@ The following operations are available in the audit logs.
 | ReadDataflow | :::no-loc text="ReadDataflow"::: | Read Dataflow  |
 | Rebind Report | :::no-loc text="RebindReport"::: |   |
 | Received Power BI dataflow secret from Key Vault | :::no-loc text="ReceiveDataflowSecretFromKeyVault"::: |   |
+| Recovered an item (Preview) | :::no-loc text="ArtifactRecovered"::: | Generated when a soft-deleted item is recovered. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
 | Refresh Datamart | :::no-loc text="RefreshDatamart"::: |   |
 | Refresh Goal Current Value Rollup | :::no-loc text="RefreshGoalCurrentValueRollup"::: |   |
 | Refresh Goal Target Value Rollup | :::no-loc text="RefreshGoalTargetValueRollup"::: |   |
@@ -615,6 +621,7 @@ The following operations are available in the audit logs.
 | Shared Power BI dashboard | :::no-loc text="ShareDashboard"::: |   |
 | Shared Power BI report | :::no-loc text="ShareReport"::: |   |
 | Shared Power BI semantic model | :::no-loc text="ShareDataset"::: |   |
+| Soft-deleted an item (Preview) | :::no-loc text="ArtifactSoftDeleted"::: | Generated when an item is soft-deleted and moved to the recycle bin. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
 | Start Notebook Session | :::no-loc text="StartNotebookSession"::: |   |
 | Start Publish Environment | :::no-loc text="StartPublishEnvironment"::: | Start publish environment |
 | Started Power BI extended trial | :::no-loc text="OptInForExtendedProTrial"::: | Not currently used  |
@@ -760,6 +767,8 @@ The following operations are available in the audit logs.
 | Disable CMK encryption for your workspace | :::no-loc text="DisableWorkspaceEncryption"::: | Triggered when CMK encryption is disabled for a workspace |
 | Disable Workspace Outbound Access Protection | :::no-loc text="DisableWorkspaceOutboundAccessProtection"::: | Outbound Access Protection Disabled on Workspace |
 | Enable Workspace Outbound Access Protection | :::no-loc text="EnableWorkspaceOutboundAccessProtection"::: | Outbound Access Protection Enabled on Workspace |
+| Get Workspace Resource Instance Rules | :::no-loc text="GetWorkspaceResourceInstanceRules"::: | |
+| Set Workspace Resource Instance Rules | :::no-loc text="SetWorkspaceResourceInstanceRules"::: | |
 
 ## Considerations and limitations
 

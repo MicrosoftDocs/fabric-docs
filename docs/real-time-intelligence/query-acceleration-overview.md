@@ -4,14 +4,14 @@ description: Overview on learning how to use the query acceleration policy over 
 ms.reviewer: sharmaanshul
 ms.subservice: rti-eventhouse
 ms.topic: concept-article
-ms.date: 11/19/2024
+ms.date: 04/20/2026
 #customer intent: Learn how to use the query acceleration policy to accelerate queries over shortcuts and external delta tables.
 ---
 # Query acceleration for OneLake shortcuts - overview
 
 OneLake shortcuts are references from an Eventhouse that point to internal Fabric or external sources. This kind of shortcut is later accessed for query in [KQL querysets](create-query-set.md) by using the [`external_table()` function](/kusto/query/external-table-function). Queries run over OneLake shortcuts can be less performant than on data that is ingested directly to Eventhouses due to various factors such as network calls to fetch data from storage, the absence of indexes, and more. 
 
-Query acceleration allows specifying a policy on top of external delta tables that defines the number of days to cache data for high-performance queries. 
+Query acceleration allows specifying a policy on top of external delta tables (a storage format that tracks changes to data over time) that defines the number of days to cache data for high-performance queries. 
 
 Query acceleration is supported in Eventhouse over delta tables from [OneLake shortcuts](onelake-shortcuts.md), Azure Data Lake Store Gen1, Amazon S3, Google Cloud Services, Azure blob storage external tables, and all destinations supported by OneLake shortcuts.
 

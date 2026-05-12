@@ -133,6 +133,10 @@ A [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analyt
 
 For more information and examples on querying external data, see [Query external data lake files by using Fabric Data Warehouse or SQL analytics endpoint](query-external-data-lake-files.md). For an example and use case for querying partitioned parquet files, see [Query partitioned data](query-parquet-files.md#query-partitioned-data-with-openrowset).
 
+## Analyze data in the Lakehouse, Warehouse, or Eventhouse
+
+[!INCLUDE [analyze-data-eventhouse-endpoint](../includes/analyze-data-eventhouse-endpoint.md)]
+
 ## Related content
 
 - [What is a lakehouse in Microsoft Fabric?](../data-engineering/lakehouse-overview.md)

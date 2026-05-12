@@ -54,6 +54,8 @@ landingContent:
             url: endorsement-promote-certify.md 
       - linkListType: how-to-guide
         links:
+          - text: Manage multiple task flow canvases
+            url: task-flow-multiple-canvases.md
           - text: Apply sensitivity labels
             url: apply-sensitivity-labels.md 
 

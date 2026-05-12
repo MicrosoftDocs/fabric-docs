@@ -25,8 +25,7 @@ The following table lists the supported Fabric item types and their correspondin
 | Data Pipeline | Data Pipeline |
 | Notebook | RunNotebook, RunNotebookInteractive, PipelineRunNotebook, SparkSecurityControl |
 | Lakehouse | TableMaintenance, TableLoad, LakehouseOperation, LivyBatch, LivySession, MaterializedLakeViews, SparkSecurityControl |
-| Warehouse | DatamartBatch, SqlAnalyticsEndpoint |
-| DatamartBatch | SparkJobDefinition, sparkjob, SparkSecurityControl |
+| Warehouse | SqlAnalyticsEndpoint |
 | CopyJob | CopyJob |
 | DataflowFabric | Refresh, Publish |
 | DBTItem | DBTItem |

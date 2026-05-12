@@ -4,7 +4,7 @@ items:
 
 - name: Get started with Fabric
   items:
-  - name: Understand Microsoft Fabric
+  - name: What is Microsoft Fabric?
     href: microsoft-fabric-overview.md
   - name: See what's new
     href: whats-new.md
@@ -192,6 +192,8 @@ items:
     href: task-flow-create.md
   - name: Work with task flows
     href: task-flow-work-with.md
+  - name: Manage multiple task flow canvases
+    href: task-flow-multiple-canvases.md
 
 - name: Use decision guides
   items:

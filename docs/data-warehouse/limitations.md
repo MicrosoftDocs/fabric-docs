@@ -1,8 +1,8 @@
 ---
 title: Limitations of Fabric Data Warehouse
 description: This article contains a list of current limitations in Microsoft Fabric Data Warehouse.
-ms.reviewer: joanpo, ajagadish, anphil, fresantos
-ms.date: 02/20/2026
+ms.reviewer: joanpo, ajagadish, anphil, fresantos, pvenkat
+ms.date: 04/24/2026
 ms.topic: limits-and-quotas
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
@@ -24,6 +24,7 @@ Current general product limitations for Data Warehousing in Microsoft Fabric are
 For more limitations in specific areas, see:
 
 - [Clone table](clone-table.md#limitations)
+- [Configurable data retention](data-retention.md#limitations)
 - [Connectivity](connectivity.md#considerations-and-limitations)
 - [Data types in Microsoft Fabric](data-types.md)
 - [Delta lake logs](query-delta-lake-logs.md#limitations)
@@ -76,6 +77,8 @@ AND type_name(user_type_id) IN ('varchar', 'varbinary');
 ```
 
 - Schemas with names that conflict with system schemas (such as `sys` or `information_schema`) and database security principals (such as `db_owner`, `db_datareader`) aren't supported in the SQL analytics endpoint. Tables under these schemas will fail to sync to the SQL analytics endpoint.
+
+- A workspace supports up to **150 warehouse and SQL analytics endpoint items combined**. Creating additional items beyond this limit isn't supported. Delete an existing item before creating a new one.
 
 ## Known issues
 

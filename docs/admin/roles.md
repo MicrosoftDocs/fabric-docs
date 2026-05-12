@@ -7,18 +7,51 @@ ms.topic: concept-article
 ms.custom:
   - has-azure-ad-ps-ref
   - azure-ad-ref-level-one-done
-ms.date: 08/12/2025
+ms.date: 04/21/2026
 ---
 
 # Understand Microsoft Fabric admin roles
 
-Microsoft Fabric administration involves managing organization-wide settings that control how Microsoft Fabric operates. To be a Microsoft Fabric admin for an organization, a user must be assigned one of the following roles:
+There are several roles that work together to administer Microsoft Fabric for your organization. Most admin roles are assigned in the Microsoft 365 admin portal or by using PowerShell. The capacity admin roles are assigned when the capacity is created. To learn more about each of the admin roles, see [About admin roles](/microsoft-365/admin/add-users/about-admin-roles). To learn how to assign admin roles, see [Assign admin roles](/microsoft-365/admin/add-users/assign-admin-roles).
 
-* Power Platform administrator
+## Microsoft 365 admin roles
 
-* Fabric administrator
+This section lists the Microsoft 365 admin roles and the tasks they can perform.
 
-These roles provide access the [admin portal](admin-center.md) and control over organization-wide Fabric settings, usage metrics, and admin features, except for licensing. See [Microsoft 365 admin roles](/microsoft-365/admin/add-users/about-admin-roles) for details about these roles and the tasks they can perform. Assigning users to dedicated Fabric admin roles allows organizations to grant the permissions needed to administer Fabric without granting full Microsoft 365 admin rights.
+* **Global administrator**
+  * Unlimited access to all management features for the organization
+  * Assign roles to other users
+
+* **Billing administrator**
+  * Manage subscriptions
+  * Purchase licenses
+
+* **License administrator**
+  * Assign or remove licenses for users
+
+* **User administrator**
+  * Create and manage users and groups
+  * Reset user passwords
+
+## Power Platform and Fabric admin roles
+
+As a Power Platform or a Fabric admin, you have full access to all the Microsoft Fabric management tasks.
+
+* **Power Platform administrator** or **Fabric administrator**
+  * Enable and disable Microsoft Fabric features
+  * Report on usage and performance
+  * Review and manage auditing
+
+These roles provide access to the [admin portal](admin-overview.md#what-is-the-admin-portal) and control over organization-wide Fabric settings, usage metrics, and admin features, except for licensing. Assigning users to dedicated Fabric admin roles allows organizations to grant the permissions needed to administer Fabric without granting full Microsoft 365 admin rights.
+
+## Capacity admin roles
+
+As a capacity admin, you can perform these tasks on the capacity you're an admin of.
+
+* **Capacity administrator**
+  * Assign workspaces to the capacity
+  * Manage user permission to the capacity
+  * Manage workloads to configure memory usage
 
 ## Assign users to Fabric admin roles
 
@@ -34,5 +67,5 @@ You can also assign users to roles by using PowerShell. To assign users to an ad
 
 ## Related content
 
-* [What is the admin portal?](admin-center.md)
+* [Administration overview](admin-overview.md)
 * [What is the admin monitoring workspace?](monitoring-workspace.md)
