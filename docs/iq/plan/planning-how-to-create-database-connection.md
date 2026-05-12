@@ -1,5 +1,5 @@
 ---
-title: Create a Database Connection for Collaboration Plan (Preview)
+title: Create a Database Connection for Collaboration in a Plan
 description: Learn how to create and share database connections in a plan (preview) for multi-user collaboration.
 ms.date: 04/30/2026
 ms.topic: how-to
