@@ -47,7 +47,14 @@ To configure the alert to send a Teams message to an individual or a group chat 
 
 ### Run Fabric activities
 
-To configure the alert to launch a Fabric pipeline, dataflow (preview), notebook, or Spark job when the condition is met, follow these steps:
+An Activator rule can run a Fabric activity defined in one of the following Fabric item types:
+- Dataflow
+- Pipeline
+- Spark job
+- Notebook
+- Function
+
+To configure your rule to launch a Fabric activity, follow these steps:
 
 1. For **Select action**, select the appropriate Fabric item type within the "Run Fabric Activities" section
 
