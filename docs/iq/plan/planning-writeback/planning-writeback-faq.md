@@ -10,6 +10,8 @@ ms.topic: faq
 
 [!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
+This article provides answers to frequently asked questions regarding the writeback feature in plan. Review these common scenarios to understand how data updates, storage, and security operate.
+
 ## If a user updates a data input column in reading mode and closes the report, will the latest data be available when reopening?
 
 A: Yes. Plan (preview) captures changes made to data input columns and stores them in the backend database. This works in both reading and edit modes. When the report is reopened, plan retrieves the latest values and loads the report with updated data.
