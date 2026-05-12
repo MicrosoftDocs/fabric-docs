@@ -2,7 +2,11 @@
 title: Set conditions for a rule
 description: Include file with instructions to add conditions for a rule in a Fabric activator. 
 ms.topic: include
-ms.date: 02/27/2026
+ms.date: 05/12/2026
+author: spelluru
+ms.author: spelluru
+ms.service: fabric
+ms.subservice: rti-eventstream
 ---
 
 ## Condition section
