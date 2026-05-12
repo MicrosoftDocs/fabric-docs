@@ -414,6 +414,8 @@ items:
     items:
     - name: Data warehouse and lakehouse connector
       href: spark-data-warehouse-connector.md
+    - name: Data warehouse connector Private Link support
+      href: spark-data-warehouse-connector-private-link.md
     - name: Spark connector for SQL databases
       href: spark-sql-connector.md
     - name: JDBC driver for Fabric Data Engineering
