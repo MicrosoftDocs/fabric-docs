@@ -157,6 +157,8 @@ items:
             href: event-streams/add-manage-eventstream-destinations.md
           - name: Activator
             href: event-streams/add-destination-activator.md
+          - name: Business Events
+            href: event-streams/add-destination-business-events.md
           - name: Custom endpoint
             href: event-streams/add-destination-custom-app.md
           - name: Derived stream
@@ -830,6 +832,12 @@ items:
             href: data-activator/activator-throttling-effects.md
       - name: Create alerts
         items:
+          - name: Create rules and activations
+            href: data-activator/activator-create-activators.md
+          - name: Configure actions for Activator rules
+            href: data-activator/rule-actions.md
+          - name: Assign data to Activator objects
+            href: data-activator/activator-assign-data-objects.md            
           - name: Create alerts from a Real-Time Dashboard
             href: data-activator/activator-get-data-real-time-dashboard.md
           - name: Create alerts from a KQL Queryset
@@ -852,10 +860,6 @@ items:
             href: data-activator/set-alerts-warehouse-sql-query.md
           - name: Get data from eventstreams
             href: event-streams/add-destination-activator.md
-          - name: Create rules and activations
-            href: data-activator/activator-create-activators.md
-          - name: Assign data to Activator objects
-            href: data-activator/activator-assign-data-objects.md
           - name: Trigger Fabric items
             href: data-activator/activator-trigger-fabric-items.md
           - name: Use custom actions to trigger Power Automate flows
