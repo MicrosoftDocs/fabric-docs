@@ -1,5 +1,5 @@
 ---
-title: Data Retention in Fabric Data Warehouse
+title: Data retention in Fabric Data Warehouse
 description: Learn about data retention in Fabric Data Warehouse, including how retention works, how to configure it, scenarios, best practices, and impact on dependent features.
 ms.reviewer: ajagadish
 ms.date: 04/27/2026
@@ -90,7 +90,7 @@ If your warehouse undergoes frequent large-scale data modifications (such as dai
 
 ### Data recovery preparedness
 
-For production warehouses, maintaining a longer retention period provides more flexibility for data recovery through [restore points](restore-in-place.md), [table clones](clone-table.md), and [time travel](time-travel.md) queries in the event of accidental data corruption.
+For production warehouses, maintaining a longer retention period provides more flexibility for data recovery through [restore points](restore-in-place.md), [table clones](clone-table.md), and [time travel](time-travel.md) queries if there is an accidental data corruption.
 
 ## How configurable retention affects dependent features
 
@@ -98,13 +98,13 @@ The configured retention period applies uniformly across the following features 
 
 ### Time travel
 
-[Query data as it existed in the past](time-travel.md) allows you to query data as it existed at a past point in time within the retention period. The `FOR TIMESTAMP AS OF` query hint can retrieve data from any point within the configured retention period.
+[Time travel](time-travel.md) allows you to query data as it existed at a past point in time within the retention period. The `FOR TIMESTAMP AS OF` query hint can retrieve data from any point within the configured retention period.
 
 For example, if the retention period is set to 15 days, you can query data as it existed up to 15 calendar days in the past.
 
 ### Clone table
 
-[Clone table in Microsoft Fabric](clone-table.md) rely on the retention period. You can create a clone of a table at a past point in time only within the configured retention period. If you request a clone beyond the retention period, an error occurs.
+[Table clones](clone-table.md) rely on the retention period. You can create a clone of a table at a past point in time only within the configured retention period. If you request a clone beyond the retention period, an error occurs.
 
 ### Restore points
 
@@ -153,13 +153,14 @@ To estimate the storage impact of a retention period change, consider:
 
 ## Dropped item retention (preview)
 
-[Recover or permanently delete items (preview)](../admin/item-recovery.md) preserves warehouses and their associated tables, schemas, snapshots, permissions, and saved queries for a configurable period after they're dropped or deleted. This ensures that accidental deletions don't result in permanent data loss or business-impacting outages. Dropped retention guarantees a minimum retention period of 7 calendar days, and has a separate tenant-level retention configuration. You can [configure the dropped item retention period in the **Item Recovery** tenant setting](../admin/item-recovery.md#set-up-the-retention-period-for-deleted-items).
-
-## Related content
-
-- [Restore in-place of a warehouse in Microsoft Fabric](restore-in-place.md)
+[Dropped item retention](../admin/item-recovery.md) preserves warehouses and their associated tables, schemas, snapshots, permissions, and saved queries for a configurable period after they're dropped or deleted. This ensures that accidental deletions don't result in permanent data loss or business-impacting outages. Dropped retention guarantees a minimum retention period of 7 calendar days, and has a separate tenant-level retention configuration. You can [configure the dropped item retention period in the **Item Recovery** tenant setting](../admin/item-recovery.md#set-up-the-retention-period-for-deleted-items).
 
 ## Next step
 
 > [!div class="nextstepaction"]
 > [How to configure data retention in Fabric Data Warehouse](how-to-configure-retention.md)
+
+
+## Related content
+
+- [Restore in-place of a warehouse in Microsoft Fabric](restore-in-place.md)
