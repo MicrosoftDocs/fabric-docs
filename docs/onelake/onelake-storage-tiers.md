@@ -143,6 +143,7 @@ Key updates include:
 ## Limitations
 
 - After enabling lifecycle management or storage tiers, you'll be charged for Oracle and MS SQL operations. Upgrading to the [on-premises data gateway version 3000.314.5](https://www.microsoft.com/download/details.aspx?id=53127) or later makes these mirroring operations free again.
+- Storage tiers are only supported on block blobs. OneLake stores all files in block blobs by defaults, except for [OneLake diagnostics](https://learn.microsoft.com/fabric/onelake/onelake-diagnostics-overview), which are stored as append blobs. To learn how to convert your diagnostics data to block blobs for long-term storage, see [convert append blobs to block blobs](https://learn.microsoft.com/azure/storage/blobs/convert-append-and-page-blobs-to-block-blobs?tabs=azure-powershell).
 
 ## Related content
 
