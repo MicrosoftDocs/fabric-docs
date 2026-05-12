@@ -42,6 +42,8 @@ items:
         href: ../data-agent-mcp-server.md
   - name: Source Control, CI/CD, and ALM for Fabric data agent
     href: ../data-agent-source-control.md
+  - name: Service Pincipal for Fabric data agent
+    href: ../data-agent-service-principal.md
   - name: Fabric data agent end-to-end tutorial
     href: ../data-agent-end-to-end-tutorial.md
   - name: Fabric data agent sharing
