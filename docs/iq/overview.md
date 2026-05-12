@@ -28,9 +28,9 @@ Fabric IQ addresses this gap by providing:
 * **Cross-domain reasoning.** Relationships between concepts through graph links allow you to traverse relationships (like Order > Shipment > Temperature Sensor > Cold Chain Breach) to explain outcomes.
 * **AI readiness and decision-ready actions.** Structured grounding for copilots and agents, so answers reflect your enterprise language as defined in your [ontology](ontology/overview.md).
 
-## Pillars of Fabric IQ in Microsoft IQ
+## Pillars of Fabric IQ
 
-Fabric IQ brings together three categories of business context: [operational intelligence](#operational-intelligence-with-ontologies), [business intelligence](#business-intelligence-with-semantic-models), and [unified data](#unified-data-with-onelake).
+Fabric IQ brings three categories of business context into Microsoft IQ: [operational intelligence](#operational-intelligence-with-ontologies), [business intelligence](#business-intelligence-with-semantic-models), and [unified data](#unified-data-with-onelake).
 
 :::image type="content" source="media/overview/fabric-iq-pillars.png" alt-text="Diagram showing the Fabric IQ pillars of ontologies, semantic models, and OneLake." lightbox="media/overview/fabric-iq-pillars.png":::
 
@@ -67,10 +67,10 @@ The items that are grouped in the Fabric IQ workload are:
 * [Operations agent (preview)](../real-time-intelligence/operations-agent.md)
 * [Power BI semantic models](../data-warehouse/semantic-models.md)
 
-For more information about the role of each item in the Fabric IQ workload, see the section [Items in Fabric IQ (preview)](#items-in-fabric-iq-preview).
-
 >[!NOTE]
 > OneLake is the data foundation for all Microsoft Fabric items. Though OneLake isn't explicitly included as an item in the Fabric IQ workload, all items in the workload rely on OneLake data tables and interact with them natively.
+
+For more information about the role of each item in the Fabric IQ workload, see the section [Items in Fabric IQ (preview)](#items-in-fabric-iq-preview).
 
 ### Where Fabric IQ (preview) fits in Fabric
 
