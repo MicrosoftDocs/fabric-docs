@@ -5,7 +5,7 @@ ms.reviewer: vimeland
 reviewer: vimeland
 author: jonburchel
 ms.author: jburchel
-ms.topic: conceptual
+ms.topic: article
 ms.date: 01/16/2026
 ai.usage: ai-assisted
 ---
