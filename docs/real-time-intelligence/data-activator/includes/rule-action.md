@@ -3,7 +3,11 @@ title: Set Actions for Rules in Fabric Activator
 description: Learn how to configure actions for rules in Fabric activators. An action can send an email, Teams message, run a Fabric pipeline, dataflow, notebook, Spark job, or custom function.
 #customer intent: As an IT admin, I want to configure email alerts for specific conditions so that I can notify relevant stakeholders automatically.
 ms.topic: include
-ms.date: 11/11/2025
+ms.date: 05/12/2026
+author: spelluru
+ms.author: spelluru
+ms.service: fabric
+ms.subservice: rti-eventstream
 ---
 
 ## Action section
