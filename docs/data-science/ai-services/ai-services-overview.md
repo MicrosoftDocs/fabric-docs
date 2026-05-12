@@ -5,8 +5,6 @@ ms.author: lagayhar
 author: lgayhardt
 ms.reviewer: singhrana
 reviewer: ranadeepsingh
-ms.reviewer: nareshvenkat
-reviewer: nareshvenkat11
 ms.topic: overview
 ms.custom:
   - references_regions
