@@ -76,12 +76,12 @@ Create a dedicated workspace for testing the early access channel:
 1. Create a new workspace or designate an existing test environment.
 1. Create an Environment item and set these properties to use early access.
 
-    :::image type="content" source="media\mrs\EnableReleaseChannelInEnvironment.jpg" alt-text="Screenshot showing properties required to change the release channel." lightbox="media\mrs\EnableReleaseChannelInEnvironment.jpg":::
+    :::image type="content" source="media\mrs\enable-release-channel-in-environment.jpg" alt-text="Screenshot showing properties required to change the release channel." lightbox="media\mrs\enable-release-channel-in-environment.jpg":::
 
 1. In your notebook or Spark Job Definition, refer to the Environment item you created.
 1. When the session starts, validate the usage of the early access release channel by using the following command.
 
-    :::image type="content" source="media\mrs\VerifyUsageOfReleaseChannelInSession.jpg" alt-text="Screenshot showing early access release channel in use in the current session." lightbox="media\mrs\VerifyUsageOfReleaseChannelInSession.jpg":::
+    :::image type="content" source="media\mrs\verify-usage-of-release-channel-in-session.jpg" alt-text="Screenshot showing early access release channel in use in the current session." lightbox="media\mrs\verify-usage-of-release-channel-in-session.jpg":::
 
 ### 2. Identify representative workloads
 
