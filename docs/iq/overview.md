@@ -20,17 +20,17 @@ Organizations work with data at the level of tables and schemas, which are struc
 
 Fabric IQ addresses this gap by providing:
 
-* **Unification of data.** Unify analytical and operational data by combining data from various sources across OneLake (like [lakehouses](../data-engineering/lakehouse-overview.md), [eventhouses](../real-time-intelligence/eventhouse.md), and [Power BI semantic models](../data-warehouse/semantic-models.md)) into a single consistent model. Fabric IQ can also unify external operational data using [OneLake shortcuts](../onelake/onelake-shortcuts), referencing it in place without copying or building ETL pipelines.
+* **Unification of data.** Unify analytical and operational data by combining data from various sources across OneLake (like [lakehouses](../data-engineering/lakehouse-overview.md), [eventhouses](../real-time-intelligence/eventhouse.md), and [Power BI semantic models](../data-warehouse/semantic-models.md)) into a single consistent model. Fabric IQ can also unify external operational data using [OneLake shortcuts](../onelake/onelake-shortcuts.md), referencing it in place without copying or building ETL pipelines.
 * **Alignment with a consistent view of the business.** Teams, applications, and AI agents all operate from a consistent, trusted foundation of shared concepts and data. This eliminates ambiguity and ensures decisions by both people and AI reflect a unified view of the business.
 * **Consistent language and richer intelligence.** A single definition of a concept (like Customer, Material, or Asset) drives how Power BI, notebooks, and agents interpret data. Users uncover insights that reflect not just raw data, but semantic meaning, including how entities relate, what matters most, and what actions to take.
 * **Faster onboarding.** New dashboards and AI experiences get consistent business meaning because business concepts only need to be declared once.
 * **Governance and trust.** Reduced duplication and inconsistent definitions across teams by enforcing clear semantics, while constraints improve data quality.
 * **Cross-domain reasoning.** Relationships between concepts through graph links allow you to traverse relationships (like Order > Shipment > Temperature Sensor > Cold Chain Breach) to explain outcomes.
-* **AI readiness and decision-ready actions.** Structured grounding for copilots and agents, so answers reflect your enterprise language as defined in your [ontology](../iq/ontology/overview).
+* **AI readiness and decision-ready actions.** Structured grounding for copilots and agents, so answers reflect your enterprise language as defined in your [ontology](ontology/overview.md).
 
 ## Pillars of Fabric IQ in Microsoft IQ
 
-Fabric IQ brings together three categories of business context: [operational intelligence](#operational-intelligence), [business intelligence](#business-intelligence), and [unified data](#unified-data).
+Fabric IQ brings together three categories of business context: [operational intelligence](#operational-intelligence-with-ontologies), [business intelligence](#business-intelligence-with-semantic-models), and [unified data](#unified-data-with-onelake).
 
 :::image type="content" source="media/overview/fabric-iq-pillars.png" alt-text="Diagram showing the Fabric IQ pillars of ontologies, semantic models, and OneLake." lightbox="media/overview/fabric-iq-pillars.png":::
 
