@@ -162,7 +162,15 @@ items:
               - name: Create templates
                 href: plan/planning-driver-model/planning-how-to-create-templates.md
               - name: Create a driver model
-                href: plan/planning-driver-model/planning-how-to-create-driver-model.md    
+                href: plan/planning-driver-model/planning-how-to-create-driver-model.md
+    - name: Reference
+      items:
+        - name: Formulas and functions
+          items:
+            - name: Conditional statements
+              href: plan/planning-reference-formulas/conditional-statements.md
+            - name: Logical functions
+              href: plan/planning-reference-formulas/logical-functions.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
