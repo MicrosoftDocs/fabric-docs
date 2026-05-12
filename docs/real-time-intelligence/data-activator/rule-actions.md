@@ -14,7 +14,7 @@ When you create a rule in Fabric Activator, you can configure actions to take wh
 
 ## Configure actions for a rule
 
-[!INCLUDE [rule-action](../includes/rule-action.md)]
+[!INCLUDE [rule-action](./includes/rule-action.md)]
 
 ## Related content
 To learn how to create rules, see [Create a rule in Activator](activator-create-activators.md). 
