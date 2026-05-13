@@ -1,11 +1,9 @@
 ---
 title: FAQ for workload certification
 description: Learn how to certify and publish a workload with the Microsoft Fabric Workload Development Kit.
-author: KesemSharabi
-ms.author: kesharab
+ms.reviewer: tebercov
 ms.topic: how-to
-ms.custom:
-ms.date: 05/21/2024
+ms.date: 04/29/2026
 ---
 
 # Frequently asked questions
@@ -67,6 +65,20 @@ No, the Partner Workloads can't charge the Fabric capacity directly. To purchase
 
 Partner Workloads can be assigned on F & P Capacities. 
 
+### How can I get leads for my published workload?
+
+You can apply several approaches to generate and capture leads for your published workload:
+
+- **Azure Marketplace lead management**: On Azure Marketplace page that is linked from your workload page, you can enable lead generation. The embedded video allows capturing views when the video is played or autoplayed.
+
+- **YouTube video integration**: On your workload page, you can add a YouTube video, which provides analytics including view counts and engagement metrics that can help you understand user interest.
+
+- **User token information**: When any user creates an item using your workload, a user token is always passed as part of the OAuth 2.0 On-Behalf-Of (OBO) authentication flow. You can apply the email, name, and organization information that is included in the Microsoft Entra token to identify and track users engaging with your workload.
+
+- **Trial experience**: Design an effective trial experience that captures user interest and converts them into paying customers. For guidance on monetization patterns and trial strategies, see [Partner Monetization Patterns](https://fabricux-c6c9fchnggh3d5dn.b02.azurefd.net/?path=/docs/patterns-partner-monetization--docs).
+
+Currently there's no direct integration with Partner Center leads when a workload is being added to a tenant, capacity, or workspace.
+
 <!--
 ## Fabric Workload Submission 
 
@@ -91,5 +103,5 @@ Partner Workloads can be assigned on F & P Capacities.
 ### Where do I create a SaaS offer?
 ### Do I need to submit a SaaS offer for my workload to show up in Fabric Hub?
 ### When should I re-submit SaaS offer in Partner center??
-### Should I re-submit a SaaS offer in Partner center everytime I have a new .nugget package?
+### Should I re-submit a SaaS offer in Partner center every time I have a new .nugget package?
 -->

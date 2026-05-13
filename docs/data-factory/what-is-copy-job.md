@@ -1,97 +1,174 @@
 ---
 title: What is Copy job in Data Factory
 description: This article explains the concept of the Copy job and the benefits it provides.
-author: dearandyxu
-ms.author: yexu
+ms.reviewer: yexu
 ms.topic: how-to
-ms.date: 08/30/2024
+ms.date: 04/24/2026
 ms.search.form: copy-job-tutorials 
+ms.custom: copy-job
+ai-usage: ai-assisted
 ---
 
-# What is the Copy job in Data Factory for Microsoft Fabric?
+# What is Copy job in Data Factory for Microsoft Fabric?
 
-Data Factory in Fabric enables users to integrate data from over 100 built-in connectors, offering three key capabilities: data ingestion, data transformation, and data orchestration. Dataflow Gen2 handles data transformations, while pipelines and Airflow manage integration flows. Copy Job simplifies data ingestion with built-in patterns for batch and incremental copy, eliminating the need for pipeline creation.
+Copy Job is the go-to solution in Microsoft Fabric Data Factory for simplified data movement from many sources to many destinations — no pipelines required. With native support for multiple delivery styles, including bulk copy, incremental copy, and change data capture (CDC) replication, Copy job offers the flexibility to handle a wide range of data movement scenarios — all through an intuitive, easy-to-use experience. Whether you’re new to data integration or just want a faster way to get your data where it needs to go, Copy job offers a flexible and user-friendly solution.
 
-## Advantages of the Copy job
-
-While the Copy activity within data pipelines handles data ingestion with bulk/batch operations, creating data pipelines in Data Factory still proves to challenge for many users that are new to the field, with a steeper learning curve. So, we're thrilled to introduce the Copy job, elevating the data ingestion experience to a more streamlined and user-friendly process from any source to any destination. Now, you can use Copy Job to simplify data ingestion without the need to create pipelines. Moreover, Copy Job supports various data delivery styles, including both built-in batch copy and incremental copy, offering flexibility to meet your specific needs.
-
-:::image type="content" source="media/copy-job/monitor-copy-job.png" lightbox="media/copy-job/monitor-copy-job.png" alt-text="Screenshot showing the Copy job and its results pane.":::
+## Advantages 
 
 Some advantages of the Copy job over other data movement methods include:
 
-- **Intuitive experience**: No compromises experience for data copying including both configuration and monitoring, making it easier than ever.
-- **Efficiency**: Enable incremental copying effortlessly, reducing manual intervention. This efficiency translates to less resource utilization and faster copy durations.
-- **Flexibility**: While enjoying the simplicity, you also have the flexibility to control your data movement. Choose which tables and columns to copy, map the data, define read/write behavior, and set schedules that fit your needs, whether for a one-time task or recurring operation.
-- **Robust performance**: A serverless setup enabling data transfer with large-scale parallelism, maximizing data movement throughput for your system. 
+- **Easy to use**: Set up and monitor data copying with a simple, guided experience — no technical expertise needed.
+- **Efficient**: Copy only new or changed data from the last run to save time and resources, with minimal manual steps.
+- **Flexible**: Choose which data to move, map columns, set how data is written, and schedule jobs to run once or regularly.
+- **High performance**: Move large amounts of data quickly and reliably, thanks to a serverless, scalable system.
 
-## Supported connectors
+:::image type="content" source="media/copy-job/monitor-copy-job.png" lightbox="media/copy-job/monitor-copy-job.png" alt-text="Screenshot showing the Copy job and its results pane.":::
 
-You can use the Copy Job to move your data across cloud data stores or from on-premises data stores behind a firewall or within a virtual network via a gateway. The Copy job supports the following data stores as both source and destination:
+You can also visit the [data movement strategy](/fabric/data-factory/decision-guide-data-movement) to see how Copy job compares with Mirroring and copy activity in pipelines. 
 
-| Connector | Source | Destination | Full load | Incremental load (Preview) | Append |  Override |  Merge | On-premises data gateway |
-| --- | --- | --- | --- | --- | --- |  --- |  --- |  --- | 
-| Azure SQL DB | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |<!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| Oracle | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| On-premises SQL Server | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| Fabric Warehouse | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| Fabric Lakehouse table | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| Fabric Lakehouse file | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| Amazon S3 | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| Azure Data Lake Storage Gen2 | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| Azure Blob Storage | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| Azure SQL Managed Instance | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| Snowflake | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| Azure Synapse Analytics | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| Azure Data Explorer | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| Azure PostgreSQL | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |
-| Google Cloud Storage | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |<!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| MySQL | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| Azure MySQL | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| PostgreSQL | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| SQL database in Fabric (Preview)  | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| Amazon S3 compatible  | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| SAP HANA  | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| ODBC | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| Amazon RDS for SQL Server | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| Google BigQuery | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| Salesforce | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-| Salesforce service cloud | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
+## Concepts
 
-> [!NOTE]
-> Staging copy is not yet supported by Copy Job, which means copying data from sources like Snowflake, Fabric Warehouse, and Synapse SQL Pool using OPDG may fail in some cases due to this limitation. The product team is actively addressing such issues and adding more connectors. Please also share your feedback on [Fabric Ideas](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).
+### Copy modes (Full copy, Incremental copy)
+
+You can choose how your data is copied from source to destination:
+
+- **Full copy**: Every time the job runs, it copies all data from your source to your destination. 
+- **Incremental copy**: The first run copies everything, and subsequent runs only move new or changed data since the last run.
+
+### Incremental copy (CDC, Watermark) 
+
+In incremental copy, every run after the initial full copy (called a "subsequent load") transfers only certain changes. Copy job automatically tracks and manages the state of the last successful run, so it knows what data to copy next. Copy job supports watermark-based incremental copy (such as ROWVERSION, datetime, date, string interpreted as datetime, and integer columns) and CDC-based incremental copy when CDC is enabled on the source.
+
+If a copy job fails, you don’t need to worry about data loss. Copy job always resumes from the end of the last successful run. A failure doesn't change the state managed by Copy job. You can also reset incremental copy back to a full copy at any time — either for the entire job or per table.
+
+#### When to use CDC vs. watermark-based incremental copy
+
+- Use **CDC-based incremental copy** when CDC is enabled on your source and supported by the Copy job connector, and you need to replicate inserts, updates, and **deletes**, keep the destination continuously in sync, support SCD Type 2 history, or minimize scan load on high-change-volume tables.
+- Use **watermark-based incremental copy** when CDC isn't available on your source but your table has a reliable incremental column (for example, `ROWVERSION`, datetime, date, integer, or string interpreted as datetime) and you only need to track inserts and updates.
+
+See more details in:
+
+- [Incremental copy in Copy job](incremental-copy-job.md).
+- [Change data capture (CDC) in Copy Job](/fabric/data-factory/cdc-copy-job).
+
+### Full and incremental copy of data subsets with database queries
+
+You can copy subsets of data from your tables using database queries, which unlocks a wide range of data ingestion scenarios. For example:
+
+- Copy only data for a specific region from a table that has a region column to meet compliance requirements for data ingestion.
+- Copy only the top N rows for testing or sampling.
+- Project a column to a supported type (for example, cast a numeric `varchar` column to an integer) so you can use it as the incremental column. For more information, see [Incremental copy in Copy job](incremental-copy-job.md#use-an-unsupported-column-type-as-a-watermark-by-casting-with-query).
+
+This capability supports both full and incremental copies on table subsets based on your custom queries, which lets you flexibly select and filter data before loading. Your data ingestion becomes more efficient, precise, and tailored to your needs.
+
+### Update methods (Append, Overwrite, Merge, SCD Type 2) 
+
+You can also decide how data is written to your destination:
+
+By default, Copy job **appends** new data, so you keep a full history. If you prefer, you can choose to **merge** (update existing rows using a key column), **overwrite** (replace existing data), or **SCD Type 2** (preserve change history with effective dating). If you select merge or SCD Type 2, Copy job uses the primary key by default, if one exists.
+
+- When copying to a database: New rows are added to your tables. For supported databases, you can also choose to merge, overwrite, or use SCD Type 2 for existing data.
+- When copying to storage: New data is saved as new files. If a file with the same name already exists, it's replaced.
+
+When performing an incremental copy from the source and merging into the destination, rows from the source are inserted or updated in the destination. When performing CDC replication from the source and merging into the destination, rows from the source are inserted, updated, or deleted in the destination. When using SCD Type 2 with CDC replication, changes are preserved as versioned rows with effective dating, and deletes are handled as soft deletes.
+
+See more details for [SCD Type 2 in CDC Copy job](/fabric/data-factory/cdc-copy-job#scd-type-2-historical-tracking-preview).
+
+### Automatic table creation and truncation on destination
+
+Copy job can automatically create tables in the destination if they don’t already exist. If the destination tables are already available, you can simply select them as your target. With flexible column mapping options, you can easily define how to map schemas from the source tables to the destination tables.
+
+You can also optionally truncate destination data before the full load, ensuring their source and destination are fully synchronized without duplicates.
+
+By default, Copy job does not delete any data in destination. When you enable this option:
+
+- The first run of incremental copy will truncate all data in the destination before loading the full dataset.
+- Subsequent incremental copies will continue to append or merge data without affecting existing records.
+- If customers later reset incremental copy to full copy, enabling this option will again clear the destination before loading.
+
+This approach ensures that your destination remains clean, fully synchronized, and free of duplicates, providing a reliable foundation for their data ingestion solution.
+
+[!INCLUDE [copy-job-auto-table-creation-truncate-connectors](includes/copy-job-auto-table-creation-truncate-connectors.md)]
+
+### Audit columns
+
+Audit columns are additional metadata columns that Copy job can automatically append to every row it writes to the destination. When you enable audit columns, each row in your destination table can be enriched with information such as:
+
+- Data extraction time
+- Source file path
+- Workspace ID, Copy job ID, Copy job run ID, and Copy job name
+- Incremental window lower bound and upper bound
+- Custom user-defined values
+
+With audit columns, you get row-level data lineage without custom code, enabling compliance reporting, data quality debugging, and ingestion freshness tracking.
+
+See more details in [Audit columns in Copy job](audit-columns-copy-job.md).
+
+### Performance
+
+Copy job automatically optimizes copy performance based on the data volume, so you get fast data movement without manual tuning. Whether you're copying a small lookup table or a large transaction log, Copy job applies the right strategy for each table automatically.
+
+When copying data from large tables, you can also optionally enable **auto-partitioning (Preview)**. With auto-partitioning, Copy job analyzes the source schema and data characteristics to determine the optimal partitioning strategy. It automatically selects the right partition column, computes balanced boundaries, and executes parallel reads — all without any user input. This can dramatically increase throughput for large datasets. You can turn on the auto-partitioning toggle under **Advanced settings** in your Copy job.
+
+Auto-partitioning is supported for watermark-based incremental copy including both initial full copy and incremental copy, on the following connectors: Amazon RDS for SQL Server, Azure SQL Database, Azure Synapse Analytics (SQL Pool), Fabric Data Warehouse, SQL database in Fabric, SQL Server, and Azure SQL Managed Instance.
+
+### Run options (Run, Schedule, Event Trigger)
+
+You have full flexibility to decide when a copy job runs — it can **run once** or on a **schedule**. Even if a job is scheduled, you can still select **Run** at any time to trigger it manually. In incremental copy, the manually triggered job will still only transfer changes since the last run. 
+
+With support for **multiple schedules** in copy job, you gain even greater control. A single copy job can have multiple schedules—for example, one running daily at 6 AM and another running weekly on Sundays. All schedules can be managed directly within the same copy job, making orchestration simpler, cleaner, and more efficient. 
+
+If you use the copy job activity in a pipeline, you can also take advantage of the pipeline’s orchestration and trigger capabilities. For example, you can use **event triggers** to start a copy job activity when specific events occur, such as new files arriving in a data lake or changes in a database. 
+
+See more details for [copy job activity](/fabric/data-factory/copy-job-activity).
 
 
-## Copy behavior
+### Hosting options (Virtual network, On-premises, Cloud)
 
-You can choose from the following data delivery styles.
+You can use Copy job to move data from any source to any destination, whether your data is on-premises, in the cloud, or within a virtual network. On the connection page of Copy job, you can choose from multiple host options, including an on-premises gateway or a virtual network gateway, to securely access data behind a firewall or within a virtual network. 
 
-- **Full copy mode**: Each copy job run copies all data from the source to the destination at once.  
-- **Incremental copy mode**: The initial job run copies all data, and subsequent job runs only copy changes since the last run. When copying from a database, new or updated rows will be captured and moved to your destination. If your source database has CDC enabled, inserted, updated, and deleted rows can be captured and replicated to the destination. See more details in [CDC in Copy job](cdc-copy-job.md). When copying from a storage store, new or updated files identified by their LastModifiedTime will be captured and moved to your destination.
+See more details to [Secure your data movement with Copy Job and Virtual Network Data Gateway](/fabric/data-factory/copy-job-with-virtual-network-data-gateway).
 
-   > [!NOTE]
-   > Incremental copy mode is still in Preview.
 
-You can also choose how data is written to your destination store.
+### Operationalization（GIT/CICD, Variable library） 
 
-By default, Copy Job **appends** data to your destination, so that you won't miss any change history. But, you can also adjust the update method to **merge** or **overwrite**. When performing a merge, you need to provide a key column. By default, the primary key is used if it has.
+You can use source control, continuous integration, continuous deployment, and a collaborative environment to run successful data analytics projects with Copy job.  
 
-- When copy data to storage store: New rows from the tables or files are copied to new files in the destination. If a file with the same name already exists on target store, it will be overwritten.
-- When copy data to database: New rows from the tables or files are appended to destination tables. You can change the update method to merge or overwrite for supported data stores.
+Additionally, with Variable library support, you can parameterize connections in Copy Job. This powerful capability streamlines CI/CD by externalizing connection values, enabling you to deploy the same Copy Job across multiple environments while the Variable library injects the correct connection for each stage. 
 
-## Incremental column
+See more details in [CI/CD for Copy job](/fabric/data-factory/cicd-copy-job).
 
-In incremental copy mode, you need to select an incremental column for each table to identify changes. Copy Job uses this column as a watermark, comparing its value with the same from last run in order to copy the new or updated data only. The incremental column can be a timestamp or an increasing INT. If your source database has CDC enabled, you don't need to select any incremental column to identify changes.
+### Observability
+
+See more details in [How to monitor a Copy job](monitor-copy-job.md) and [Workspace monitoring for Copy job](copy-job-workspace-monitoring.md)
+
 
 ## Region availability
 
-The Copy job has the same regional availability as the pipeline.
+Copy job has the same [regional availability as Fabric](../admin/region-availability.md).
 
 ## Pricing
 
-The Copy job uses the same billing meter: **Data Movement**, with an identical consumption rate.
+You can get the details in [**pricing Copy job**](pricing-copy-job.md).
 
-## Related Content
+## Supported connectors
 
+With Copy job, you can move your data between cloud data stores or from on-premises sources that are behind a firewall or inside a virtual network using a gateway.
+
+See our [supported connectors](copy-job-connectors.md) page for the full list of supported sources and destinations:
+
+- [Sources and destinations](copy-job-connectors.md#copy-job-sources-and-destinations)
+- [Change data capture (CDC) replication (Preview)](copy-job-connectors.md#cdc-replication-preview)
+
+Submit your feedback on [Fabric Ideas](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas/label-name/data%20factory%20%7C%20copy%20job) and join the conversation on the [Fabric Community](https://community.fabric.microsoft.com/t5/Copy-job/bd-p/db_copyjob).
+
+## Data type mapping
+
+[!INCLUDE [data-type-mapping-data-movement](includes/data-type-mapping-data-movement.md)]
+
+## Related content
+
+- [Incremental copy in Copy job](incremental-copy-job.md)
 - [How to create a Copy job](create-copy-job.md)
 - [How to monitor a Copy job](monitor-copy-job.md)
+- [Audit columns in Copy job](audit-columns-copy-job.md)

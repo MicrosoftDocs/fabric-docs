@@ -1,0 +1,116 @@
+### YamlMime:Landing
+
+title: Fabric IQ documentation
+summary:  Fabric IQ (preview) enables a governed, self-service knowledge graph that links business entities, relationships, and business logic into a coherent framework for driving action across all enterprise data.
+
+metadata:
+  title: Fabric IQ documentation
+  description: Learn about Fabric IQ (preview) for governed, self-service knowledge graphs in Fabric.
+  ms.topic: landing-page
+  ms.collection: collection
+  ms.date: 11/05/2025
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+  # Card
+  - title: About Fabric IQ (preview)
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Fabric IQ (preview)?
+            url: overview.md
+          - text: What is ontology (preview)?
+            url: ontology/overview.md
+
+  # Card
+  - title: Get started with ontology (preview)
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: 0- Introduction and environment setup
+            url: ontology/tutorial-0-introduction.md
+          - text: 1- Create an ontology
+            url: ontology/tutorial-1-create-ontology.md
+          - text: 2- Enrich the ontology
+            url: ontology/tutorial-2-enrich-ontology.md
+          - text: 3- Preview the ontology
+            url: ontology/tutorial-3-preview-ontology.md
+          - text: 4- Create data agent
+            url: ontology/tutorial-4-create-data-agent.md
+          - text: 5- Conclude and clean up resources
+            url: ontology/tutorial-5-conclusion.md
+
+
+  # Card
+  - title: Read about ontology (preview) features
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Create entity types
+            url: ontology/how-to-create-entity-types.md
+          - text: Bind data
+            url: ontology/how-to-bind-data.md
+          - text: Add relationship types
+            url: ontology/how-to-create-relationship-types.md
+          - text: Use preview experience
+            url: ontology/how-to-use-preview-experience.md
+            
+  # Card
+  - title: About graph in Microsoft Fabric
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Graph overview
+            url: ../graph/overview.md
+          - text: What is a graph database?
+            url: ../graph/graph-database.md
+          - text: Labeled property graph
+            url: ../graph/graph-data-models.md
+
+  # Card
+  - title: Get started with graph in Microsoft Fabric
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Quickstart guide for graph
+            url: ../graph/quickstart.md
+          - text: Try Fabric for free
+            url: /fabric/fundamentals/fabric-trial
+
+  # Card
+  - title: Graph tutorial
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: Introduction
+            url: ../graph/tutorial-introduction.md
+          - text: 1 - Load sample data
+            url: ../graph/tutorial-load-data.md
+          - text: 2 - Create a graph
+            url: ../graph/tutorial-create-graph.md
+          - text: 3 - Add nodes to your graph
+            url: ../graph/tutorial-model-nodes.md
+          - text: 4 - Add edges to your graph
+            url: ../graph/tutorial-model-edges.md
+          - text: 5 - Add multiple node types using one table
+            url: ../graph/tutorial-model-node-edge-from-same-table.md
+          - text: 6 - Query the graph with the query builder
+            url: ../graph/tutorial-query-builder.md
+          - text: 7 - Query the graph with GQL
+            url: ../graph/tutorial-query-code-editor.md
+          - text: 8 - Clean up tutorial resources
+            url: ../graph/tutorial-clean-up.md
+
+  # Card
+  - title: Graph reference
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Graph Query Language (GQL) documentation
+            url: /fabric/graph/gql-reference-abridged
+          - text: GQL Query API reference
+            url: ../graph/gql-query-api.md
+          - text: Graph Items REST API reference
+            url: /rest/api/fabric/graphmodel/items
+          - text: Fabric REST API reference
+            url: /rest/api/fabric/articles

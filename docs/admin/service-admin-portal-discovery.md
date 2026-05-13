@@ -1,10 +1,8 @@
 ---
 title: Discovery admin settings
 description: Learn how to configure discovery admin settings in Fabric.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: ''
-
+author: msmimart
+ms.author: mimart
 ms.custom:
   - tenant-setting
 ms.topic: how-to

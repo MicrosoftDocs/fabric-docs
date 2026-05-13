@@ -1,16 +1,18 @@
 ---
-title: Query the SQL Analytics Endpoint or Warehouse
-description: Learn more about options to write TSQL queries on the SQL analytics endpoint or Warehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: prlangad, kecona
-ms.date: 04/06/2025
+title: Query the Warehouse or SQL analytics endpoint
+description: Learn more about options to write T-SQL queries on a warehouse or SQL analytics endpoint in Microsoft Fabric.
+ms.reviewer: prlangad
+ms.date: 01/06/2026
 ms.topic: how-to
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
 ---
-# Query the SQL analytics endpoint or Warehouse in Microsoft Fabric
+# Query the warehouse or SQL analytics endpoint
 
 **Applies to:** [!INCLUDE [fabric-se-dw-mirroreddb](includes/applies-to-version/fabric-se-dw-mirroreddb.md)]
+
+In this article, learn how to query a warehouse or a SQL analytics endpoint in Microsoft Fabric. 
+
+## Prerequisites
 
 To get started with this tutorial, check the following prerequisites:
 
@@ -21,7 +23,7 @@ To get started with this tutorial, check the following prerequisites:
 
 - Alternatively, you can use any of these tools to connect to your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#fabric-data-warehouse) via a T-SQL connection string. For more information, see [Connectivity](connectivity.md).
     - [Download SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
-    - Download and install both [Visual Studio Code and the mssql extension](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
+    - Download and install both [Visual Studio Code and the MSSQL extension](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 
 > [!NOTE]
 > Review the [T-SQL surface area in Fabric Data Warehouse](tsql-surface-area.md) for [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
@@ -117,10 +119,20 @@ There are several ways you can write cross-database or cross-warehouse queries w
 
 1. Once the script is automatically generated, select the **Run** button to run the script and see the results.
 
-> [!NOTE]
-> At this time, there's limited T-SQL functionality. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL commands that are currently not available.
+## More examples
+
+You can query external data from the warehouse as well, including:
+
+- [Query delimited files](query-delimited-files.md)
+- [Query external data lake files](query-external-data-lake-files.md)
+- [Query JSON files](query-json-files.md)
+- [Query Parquet files](query-parquet-files.md)
 
 ## Next step
 
 > [!div class="nextstepaction"]
 > [Create reports on data warehousing in Microsoft Fabric](create-reports.md)
+
+## Related content
+
+- [T-SQL surface area](tsql-surface-area.md)

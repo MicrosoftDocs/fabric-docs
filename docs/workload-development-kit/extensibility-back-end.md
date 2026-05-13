@@ -1,11 +1,9 @@
 ---
 title: Implement the Microsoft Fabric backend
 description: Learn how to build the backend of a customized Microsoft Fabric workload by using Fabric extensions. Learn about the Microsoft Fabric Workload Development Kit and how to use it by following a detailed example.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
-ms.custom:
-ms.date: 05/21/2024
+ms.custom: sfi-image-nochange
+ms.date: 04/29/2026
 #customer intent: As a developer, I want to understand how to build the backend of a customized Microsoft Fabric workload and use the Microsoft Fabric Workload Development Kit so that I can create customized user experiences.
 ---
 
@@ -44,8 +42,6 @@ The workload development kit architecture integrates seamlessly with a lakehouse
 Microsoft Entra ID is used for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
 
 The [development kit overview](development-kit-overview.md) provides a glimpse into our architecture. For more information about how projects are configured, for authentication guidelines, and to get started, see the following articles:
-
-* [Workload authentication setup guide](./authentication-tutorial.md)
 
 * [Workload authentication architecture overview](./authentication-concept.md)
 
@@ -176,7 +172,7 @@ To set up the workload sample project on your local machine:
 
 1. *Program.cs* is the entry point and startup script for your application. In this file, you can configure various services, initialize the application, and start the web host.
 1. Build to ensure your project can access the required dependencies for compilation and execution.
-1. Download the DevGateway from [Microsoft's Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=105993)
+1. Download the DevGateway from [Microsoft's Download Center](https://www.microsoft.com/download/details.aspx?id=105993)
 1. Run the *Microsoft.Fabric.Workload.DevGateway.exe* application and sign in with a user that has **workspace admin privileges** for the workspace specified in the `WorkspaceGuid` field of workload-dev-mode.json.
 
    :::image type="content" source="./media/extensibility-back-end/sign-in.png" alt-text="Screenshot of the Microsoft sign in page.":::
@@ -199,7 +195,7 @@ To set up the workload sample project on your local machine:
 
 ### Code generation
 
-We use the workload Boilerplate C# ASP.NET Core sample to demonstrate how to build a workload by using REST APIs. The sample starts with generating server stubs and contract classes based on the Workload API [Swagger specification](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Contracts/FabricAPI/Workload/swagger.json). You can generate the code by using any of several Swagger code-generation tools. The Boilerplate sample uses [NSwag](https://github.com/RicoSuter/NSwag). The sample contains the *GenerateServerStub.cmd* command line script, which wraps the NSwag code generator. The script takes a single parameter, which is a full path to NSwag installation directory. It also checks for the Swagger definition file (*swagger.json*) and the configuration file (*nswag.json*) in the folder.
+We use the workload Boilerplate C# ASP.NET Core sample to demonstrate how to build a workload by using REST APIs. The sample starts with generating server stubs and contract classes based on the Workload API [Swagger specification](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/dotnet/src/Contracts/FabricAPI/Workload/swagger.json). You can generate the code by using any of several Swagger code-generation tools. The Boilerplate sample uses [NSwag](https://github.com/RicoSuter/NSwag). The sample contains the *GenerateServerStub.cmd* command line script, which wraps the NSwag code generator. The script takes a single parameter, which is a full path to NSwag installation directory. It also checks for the Swagger definition file (*swagger.json*) and the configuration file (*nswag.json*) in the folder.
 
 Executing this script produces a C# file named *WorkloadAPI_Generated.cs*. The contents of this file can be logically divided into three parts as explained in the next sections.
 
@@ -481,3 +477,4 @@ We welcome contributions to this project. If you find any issues or want to add 
 
 * [Microsoft Fabric Workload Development Kit overview](development-kit-overview.md)
 * [Microsoft Fabric Workload Development Kit frontend](extensibility-front-end.md)
+

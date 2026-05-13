@@ -1,11 +1,9 @@
 ---
 title: "Dimensional Modeling"
 description: "Learn about dimensional modeling in Microsoft Fabric Data Warehouse."
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: drubiolo, chweb
 ms.date: 04/06/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - fabric-cat
 ---

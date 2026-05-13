@@ -1,17 +1,15 @@
 ### YamlMime:Landing
 
-title: Microsoft Fabric governance documentation
+title: Fabric governance documentation
 summary: Govern, manage, and protect all your data in Fabric.
 
 metadata:
-  title: Microsoft Fabric governance
-  description: A landing page for Microsoft Fabric governance documentation
-  ms.service: fabric  #Required; use either service or product per approved list.
+  title: Fabric governance documentation
+  description: Learn how to govern, manage, and protect your data in Fabric.
   ms.subservice: governance
-  ms.custom:
   ms.topic: landing-page # Required
-  author: paulinbar
-  ms.author: painbar
+  author: msmimart
+  ms.author: mimart
   ms.date: 02/11/2024
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -90,10 +88,8 @@ landingContent:
         links:
           - text: Monitor
             url: ../admin/monitoring-workspace.md
-          - text: Data insights for admins
-            url:  use-microsoft-purview-hub.md?tabs=admin-view
-          - text: Data insights for creators
-            url:  use-microsoft-purview-hub.md?tabs=data-owner-view
+          - text: Data insights
+            url:  onelake-catalog-govern.md
       - linkListType: overview
         links:            
           - text: Automate 

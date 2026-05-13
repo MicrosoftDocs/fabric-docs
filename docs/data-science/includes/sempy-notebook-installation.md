@@ -1,8 +1,10 @@
 ---
 title: Install SemPy Python library in your notebook
 description: Code snippet for installing SemPy in a notebook.
-author: fbsolo-ms1
-ms.author: franksolomon
+author: s-polly
+ms.author: scottpolly
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: include
 ms.date: 08/08/2023
 ---
@@ -12,4 +14,4 @@ For Spark 3.4 and above, Semantic link is available in the default runtime when 
 
 ` ` ` python
 %pip install -U semantic-link
-` ` ` 
+` ` `

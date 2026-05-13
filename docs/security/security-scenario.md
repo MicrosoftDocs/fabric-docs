@@ -1,11 +1,11 @@
 ---
 title: "Microsoft Fabric end-to-end security scenario"
 description: "Learn about Microsoft Fabric security concepts and features that can help you confidently build your own analytical solution with Fabric."
-author: KesemSharabi
-ms.author: kesharab
-ms.reviewer: vparasuraman
-ms.date: 12/12/2024
-ms.topic: conceptual
+author: msmimart
+ms.author: mimart
+ms.reviewer: vparasuraman, amasingh
+ms.date: 04/23/2026
+ms.topic: concept-article
 ms.custom: fabric-cat, security-guidance
 ---
 
@@ -78,9 +78,9 @@ Next, you set up _outbound protection_, which is concerned with securely accessi
 
 Your organization has some data sources that are located on your on-premises network. Because these data sources are behind firewalls, Fabric requires secure access. To allow Fabric to securely connect to your on-premises data source, you install an [on-premises data gateway](/data-integration/gateway/service-gateway-onprem).
 
-The gateway can be used by [Data Factory dataflows](../data-factory/data-factory-overview.md#dataflows) and [data pipelines](../data-factory/data-factory-overview.md#data-pipelines) to ingest, prepare, and transform the on-premises data, and then load it to OneLake with a [copy activity](../data-factory/copy-data-activity.md). Data Factory supports a comprehensive set of [connectors](../data-factory/connector-overview.md) that enable you to connect to more than 100 different data stores.
+The gateway can be used by [Data Factory dataflows](../data-factory/dataflows-gen2-overview.md) and [pipelines](../data-factory/pipeline-overview.md) to ingest, prepare, and transform the on-premises data, and then load it to OneLake with a [copy activity](../data-factory/copy-data-activity.md). Data Factory supports a comprehensive set of [connectors](../data-factory/connector-overview.md) that enable you to connect to more than 100 different data stores.
 
-You then build dataflows with [Power Query](/power-query/power-query-what-is-power-query), which provides an intuitive experience with a low-code interface. You use it to ingest data from your data sources, and transform it by using any of 300+ data transformations. You then build and orchestrate a complex extract, transform, and load (ETL) process with data pipelines. You ETL processes can refresh dataflows and perform many different tasks at scale, processing petabytes of data.
+You then build dataflows with [Power Query](/power-query/power-query-what-is-power-query), which provides an intuitive experience with a low-code interface. You use it to ingest data from your data sources, and transform it by using any of 300+ data transformations. You then build and orchestrate a complex extract, transform, and load (ETL) process with pipelines. You ETL processes can refresh dataflows and perform many different tasks at scale, processing petabytes of data.
 
 In this scenario, you already have multiple ETL processes. First, you have some pipelines in [Azure Data Factory (ADF)](/azure/data-factory/). Currently, these pipelines ingest your on-premises data and load it into a data lake in Azure Storage by using the [self-hosted integration runtime](/azure/data-factory/concepts-integration-runtime#self-hosted-integration-runtime). Second, you have a data ingestion framework in [Azure Databricks](/azure/databricks/) that's written in Spark.
 
@@ -90,7 +90,7 @@ You also have some data sources that are in Azure SQL Database. You need to conn
 
 If you're developing or migrating your data ingestion framework in Spark, then you can connect to data sources in Azure securely and privately from Fabric [notebooks](../data-engineering/how-to-use-notebook.md) and jobs with the help of [managed private endpoints](security-managed-private-endpoints-overview.md). Managed private endpoints can be created in your Fabric workspaces to connect to data sources in Azure that have blocked public internet access. They support private endpoints, such as Azure SQL Database and Azure Storage. Managed private endpoints are provisioned and managed in a [managed VNet](security-managed-vnets-fabric-overview.md) that's dedicated to a Fabric workspace. Unlike your typical [Azure Virtual Networks](/azure/virtual-network/virtual-networks-overview), managed VNets and managed private endpoints won't be found in the Azure portal. That's because they're fully managed by Fabric, and you find them in your workspace settings.
 
-Because you already have a lot of data stored in [Azure Data Lake Storage (ADLS) Gen2](/azure/storage/blobs/data-lake-storage-introduction) accounts, you now only need to connect Fabric workloads, such as Spark and Power BI, to it. Also, thanks to OneLake [ADLS shortcuts](../onelake/onelake-shortcuts.md#adls-shortcuts), you can easily connect to your existing data from any Fabric experience, such as data integration pipelines, data engineering notebooks, and Power BI reports.
+Because you already have a lot of data stored in [Azure Data Lake Storage (ADLS) Gen2](/azure/storage/blobs/data-lake-storage-introduction) accounts, you now only need to connect Fabric workloads, such as Spark and Power BI, to it. Also, thanks to OneLake [ADLS shortcuts](../onelake/create-adls-shortcut.md), you can easily connect to your existing data from any Fabric experience, such as data integration pipelines, data engineering notebooks, and Power BI reports.
 
 Fabric workspaces that have a [workspace identity](workspace-identity.md) can securely access ADLS Gen2 storage accounts, even when you've disabled the public network. That's made possible by [trusted workspace access](security-trusted-workspace-access.md). It allows Fabric to securely connect to the storage accounts by using a Microsoft backbone network. That means communication doesn't use the public internet, which allows you to disable public network access to the storage account but still allow certain Fabric workspaces to connect to them.
 
@@ -122,7 +122,9 @@ In addition to encryption, network traffic between Microsoft services always rou
 
 :::image type="content" source="media/security-scenario/fabric-shortcuts-cmk-scenario.svg" alt-text="Diagram shows a high-level representation of using CMK by using Fabric OneLake shortcuts.":::
 
-If you have a requirement to use CMK to encrypt data-at-rest, you have two options. You can use [Workspace customer managed keys](../security/workspace-customer-managed-keys.md) to configure a CMK stored in an Azure Key Vault to encrypt data at rest in your Fabric workspace. Or, you can use other cloud storage services (ADLS Gen2, AWS S3, GCS) with CMK encryption enabled and access data from Microsoft Fabric using [OneLake shortcuts](../onelake/onelake-shortcuts.md). In this pattern, your data continues to reside on a cloud storage service or an external storage solution where encryption at rest using CMK is enabled, and you can perform in-place read operations from Fabric whilst staying compliant. Once a shortcut has been created, within Fabric, the data can be accessed by other Fabric experiences.
+If you have a requirement to use CMK to encrypt data-at-rest, you have two options. You can use [Workspace customer managed keys](../security/workspace-customer-managed-keys.md) to configure a CMK stored in an Azure Key Vault or Azure Key Vault Managed HSM to encrypt data at rest in your Fabric workspace. When using either key store, you must assign the required permissions to the Power BI service and Microsoft Fabric to access the keys for encryption operations. Or, you can use other cloud storage services (ADLS Gen2, AWS S3, GCS) with CMK encryption enabled and access data from Microsoft Fabric using [OneLake shortcuts](../onelake/onelake-shortcuts.md). In this pattern, your data continues to reside on a cloud storage service or an external storage solution where encryption at rest using CMK is enabled, and you can perform in-place read operations from Fabric whilst staying compliant. Once a shortcut has been created, within Fabric, the data can be accessed by other Fabric experiences.
+
+Workspace-level CMK is supported in all Fabric capacities, including BYOK-enabled ones. When using BYOK and CMK together, you can use the same key or separate keys. Capacity-level BYOK encrypts Power BI semantic models, while workspace-level CMK encrypts other Fabric items such as lakehouses, pipelines, and notebooks.
 
 There are some considerations for using this pattern:
 
@@ -133,7 +135,7 @@ There are some considerations for using this pattern:
 - AWS S3 supports encryption at-rest using [customer-managed keys](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html). Fabric can perform in-place reads on S3 buckets using [S3 shortcut](../onelake/create-s3-shortcut.md); however, write operations using a shortcut to AWS S3 are not supported.
 - Google cloud storage supports data encryption using [customer-managed keys](https://cloud.google.com/storage/docs/encryption). Fabric can perform in-place reads on GCS; however, write operations using a shortcut to GCS are not supported.
 - Enable [audit](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview) for Microsoft Fabric to keep track of activities.
-- In Microsoft Fabric, Power BI supports customer-managed key with [Bring your own encryption keys for Power BI](/power-bi/enterprise/service-encryption-byok).
+- In Microsoft Fabric, Power BI uses [Bring your own encryption keys (BYOK)](/power-bi/enterprise/service-encryption-byok) to encrypt Power BI semantic models at the capacity level, while workspace-level CMK encrypts other Fabric items at the workspace level. Together, these capabilities enable layered encryption controls tailored to your security architecture.
 - Disable the [shortcut caching](../onelake/onelake-shortcuts.md#caching) feature for S3, GCS, and S3-compatible shortcuts, as the cached data is persisted on OneLake.
 
 ## Data residency
@@ -173,9 +175,9 @@ The following table lists common security scenarios and the tools you can use to
 
 | **Scenario** | **Tools** | **Direction** |
 | --- | --- | --- |
-| I'm an **ETL developer** and I want to load large volumes of data to Fabric at-scale from multiple source systems and tables. The source data is on-premises (or other cloud) and is behind firewalls and/or Azure data sources with private endpoints. | Use [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) with [data pipelines](../data-factory/data-factory-overview.md#data-pipelines) ([copy activity](../data-factory/copy-data-activity.md)). | Outbound |
-| I'm a **power user** and I want to load data to Fabric from source systems that I have access to. Because I'm not a developer, I need to transform the data by using a low-code interface. The source data is on-premises (or other cloud) and is behind firewalls. | Use [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) with [Dataflow Gen 2](../data-factory/data-factory-overview.md#dataflows). | Outbound |
-| I'm a **power user** and I want to load data in Fabric from source systems that I have access to. The source data is in Azure behind private endpoints, and I don't want to install and maintain on-premises data gateway infrastructure. | Use a [VNet data gateway](/data-integration/vnet/overview) with [Dataflow Gen 2](../data-factory/data-factory-overview.md#dataflows). | Outbound |
+| I'm an **ETL developer** and I want to load large volumes of data to Fabric at-scale from multiple source systems and tables. The source data is on-premises (or other cloud) and is behind firewalls and/or Azure data sources with private endpoints. | Use [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) with the [copy activity](../data-factory/copy-data-activity.md) in a [pipeline](../data-factory/pipeline-overview.md). | Outbound |
+| I'm a **power user** and I want to load data to Fabric from source systems that I have access to. Because I'm not a developer, I need to transform the data by using a low-code interface. The source data is on-premises (or other cloud) and is behind firewalls. | Use [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) with [Dataflow Gen 2](../data-factory/dataflows-gen2-overview.md). | Outbound |
+| I'm a **power user** and I want to load data in Fabric from source systems that I have access to. The source data is in Azure behind private endpoints, and I don't want to install and maintain on-premises data gateway infrastructure. | Use a [VNet data gateway](/data-integration/vnet/overview) with [Dataflow Gen 2](../data-factory/dataflows-gen2-overview.md). | Outbound |
 | I'm a **developer** who can write data ingestion code by using Spark notebooks. I want to load data in Fabric from source systems that I have access to. The source data is in Azure behind private endpoints, and I don't want to install and maintain on-premises data gateway infrastructure. | Use [Fabric notebooks](../data-engineering/how-to-use-notebook.md) with [Azure private endpoints](/azure/private-link/manage-private-endpoint?tabs=manage-private-link-powershell). | Outbound |
 | I have many existing pipelines in Azure Data Factory (ADF) and Synapse pipelines that connect to my data sources and load data into Azure. I now want to modify those pipelines to load data into Fabric. | Use the [Lakehouse connector](../data-factory/connector-lakehouse-overview.md) in existing pipelines. | Outbound |
 | I have a data ingestion framework developed in Spark that connects to my data sources securely and loads them into Azure. I'm running it on Azure Databricks and/or Synapse Spark. I want to continue using Azure Databricks and/or Synapse Spark to load data into Fabric. | Use the [OneLake and the Azure Data Lake Storage (ADLS) Gen2 API](../onelake/onelake-api-parity.md) (Azure Blob Filesystem driver) | Outbound |

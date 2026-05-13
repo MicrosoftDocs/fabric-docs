@@ -2,11 +2,10 @@
 title: Use Fabric notebooks with data from a KQL database
 description: Learn how to query data in a KQL Database from Microsoft Fabric Notebooks using KQL (Kusto Query Language)
 ms.reviewer: orhasban
-ms.author: shsagir
-author: shsagir
 ms.topic: how-to
-ms.custom:
-ms.date: 11/19/2024
+ms.subservice: rti-eventhouse
+ms.custom: sfi-image-nochange
+ms.date: 02/23/2026
 ms.search.form: Notebooks
 --- 
 # Use Fabric notebooks with data from a KQL database
@@ -88,7 +87,7 @@ Fabric notebooks provide [code snippets](../data-engineering/author-execute-note
     | kustoQuery | The KQL query to be evaluated. | [KQL overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context-rti&pivots=fabric)
     | KustoUri | The query URI of your KQL database. | [Copy a KQL database URI](access-database-copy-uri.md#copy-uri)
     | database | The name of your KQL database. | [Access an existing KQL database](access-database-copy-uri.md)
-    | data | The data to be written to the table.
+    | data | The data to be written to the table. |
 
 1. Run the code cell.
 

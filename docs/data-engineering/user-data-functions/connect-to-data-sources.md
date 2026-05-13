@@ -1,16 +1,16 @@
 ---
-title: Connect to data sources - Fabric User data functions (Preview)
+title: Connect to data sources - Fabric User data functions
 description: Learn how to connect your Fabric User data function items to data sources.
-ms.author: luisbosquez
-author: luisbosquez
+ms.reviewer: luisbosquez
 ms.topic: overview
-ms.date: 03/31/2025
-ms.search.form: Add new data connections to user data functions items
+ms.custom: freshness-kr
+ms.date: 01/21/2026
+ms.search.form: Add new fabric item connections to user data functions items
 ---
 
-# Connect to data sources from your Fabric User data functions item (Preview)
+# Connect to data sources from your Fabric User data functions item
 
-Fabric User data functions provides native data source connections by using the Manage connections feature in the Fabric portal. This feature allows you to connect to your Fabric data sources without having to create connection strings or manage access credentials.
+You can connect your Fabric User data functions to supported Fabric data sources directly from the Fabric portal. Fabric handles authentication for you, so your user data function code only needs to reference a connection alias instead of storing credentials or connection details.
 
 In this article, you learn how to:
 
@@ -18,102 +18,156 @@ In this article, you learn how to:
 - Use your new connection in your function code.
 - Modify or delete your data connection.
 
-## Supported data source connections in Fabric User data functions
+## Supported data sources in Fabric User data functions
 
 The following data sources are currently supported for Fabric User data functions:
 
 - [Fabric SQL databases](../../database/sql/overview.md) for read/write operations
 - [Fabric warehouses](../../data-warehouse/create-warehouse.md) for read/write operations
 - [Fabric lakehouses](../lakehouse-overview.md) for read/write operations for Lakehouse files and for read-only operations for the SQL Endpoint.
-- [Fabric mirrored databases](../../database/mirrored-database/overview.md) for read-only operations
-
-## Create a new data connection for your user data functions item
-
-Any data connections you add are associated with your user data functions item and can be referenced in the code of any of your functions. To follow this guide, you need an existing Fabric User data functions item and an existing Fabric data source.
-
-### 1. Access the Manage connections feature from the Functions portal
-
-Find and select **Manage connections** in the ribbon of the Functions portal editor.
-
-:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-1.png" alt-text="Screenshot of functions portal editor with manage connections button highlighted." lightbox="..\media\user-data-functions-manage-connections\manage-connections-1.png":::
-
-The pane that opens contains any data connections you created. Select **Add data connection** to create a new connection.
-
-:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-2.png" alt-text="Screenshot of side pane with the connections tab selected and no connections listed." lightbox="..\media\user-data-functions-manage-connections\manage-connections-2.png":::
-
-### 2. Select your data connection from the OneLake catalog
-
-When you select **Add data connection**, the OneLake catalog opens with a list of all the data sources your user account has access to. The list is filtered to include only supported data sources, some of which might be in other workspaces.
-
-Choose your data source, then select **Connect**.
-
-:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-3.png" alt-text="Screenshot of OneLake data catalog with a list of data sources." lightbox="..\media\user-data-functions-manage-connections\manage-connections-3.png":::
+- [Fabric mirrored databases](../../mirroring/overview.md) for read-only operations
 
 > [!NOTE]
-> If you can't find the data source you're looking for, make sure you have the right permissions to connect to it. Alternatively, make sure you're using a supported data source, as listed at the beginning of this article.
+> You can also connect to the [Fabric variable library](../../cicd/variable-library/variable-library-overview.md) to access configuration settings as variables in your functions. To learn how to use Variable Library variables in your function code, see [Get variables from Fabric variable libraries](./python-programming-model.md#get-variables-from-fabric-variable-libraries).
 
-Once created, the new connection to the data source you selected is shown in the side pane on the **Connections** tab. When you see the connection, take note of the **Alias field** that was generated for it. You need this alias to reference the connection from any function in your user data functions item.
+## Prerequisites
 
-:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-4.png" alt-text="Screenshot of the connections side pane with a new data source connection created." lightbox="..\media\user-data-functions-manage-connections\manage-connections-4.png":::
+Before you can connect to data sources, you need:
 
-### 3. Use your connection alias in your function code
-Once you're back in the portal editor, you need to add the alias of the connection you created in the `Manage Connections` tab to your code. In this case we will use a code sample called "Read data from a table in SQL Database". You can find this sample by clicking on the Edit tab, then clicking on the "Insert sample" button and navigating to "SQL Database".
+- A [Fabric User Data Functions item](./create-user-data-functions-portal.md) in your workspace
+- **Write permissions** for the User Data Functions item to manage connections
+- At least one of the [supported data sources](#supported-data-sources-in-fabric-user-data-functions) (SQL database, warehouse, lakehouse, or mirrored database) in an accessible workspace
+- **Read permissions** (or higher) for the data source you want to connect to
 
-:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-5.png" alt-text="Screenshot of Insert Sample data catalog with a list of data sources." lightbox="..\media\user-data-functions-manage-connections\manage-connections-5.png":::
+## Add a connection in the Fabric portal
 
-This is the sample code that was inserted:
+To access data from your functions, you need to create a connection to your data source. This connection handles authentication and authorization automatically, so you don't need to manage connection strings or credentials in your code. Once you create a connection, it generates an alias that you can reference from any function in your user data functions item.
 
-```python
-@udf.connection(argName="sqlDB",alias="<alias for sql database>")
-@udf.function()
-def read_from_sql_db(sqlDB: fn.FabricSqlConnection)-> list:
-    # Replace with the query you want to run
-    query = "SELECT * FROM (VALUES ('John Smith', 31), ('Kayla Jones', 33)) AS Employee(EmpName, DepID);"
+To add a connection:
 
-    # Establish a connection to the SQL database
-    connection = sqlDB.connect()
-    cursor = connection.cursor()
+1. In the Fabric portal, find and open your user data functions item. 
 
-    query.capitalize()
+1. Select **Manage connections** in the ribbon of the user data functions editor.
 
-    # Execute the query
-    cursor.execute(query)
+   :::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections.png" alt-text="Screenshot of user data functions editor with manage connections button highlighted." lightbox="..\media\user-data-functions-manage-connections\manage-connections.png":::
 
-    # Fetch all results
-    results = []
-    for row in cursor.fetchall():
-        results.append(row)
+1. In the pane that opens, select **Add data connection**.
 
-    # Close the connection
-    cursor.close()
-    connection.close()
-        
-    return results
-```
+   :::image type="content" source="..\media\user-data-functions-manage-connections\add-data-connection.png" alt-text="Screenshot of side pane with the connections tab selected and no connections listed." lightbox="..\media\user-data-functions-manage-connections\add-data-connection.png":::
 
-> [!NOTE]
-> While this sample connects to a SQL Database, it does not need a schema or data in your database to run.
+1. When the OneLake catalog opens, browse the list of data sources.
 
-To use the data connection you created, modify the following line in this sample: `@udf.connection(argName="sqlDB",alias="<alias for sql database>")` by replacing the value of the `alias` with the one you obtained from the `Manage Connections` menu. The following code shows this example with the value `ContosoSalesDat`:
+   > [!NOTE]
+   > The list is filtered to include only supported data sources that your user account has access to. Data sources might be in other workspaces. If you can't find the data source you're looking for, make sure you have the right permissions to connect to it.
 
-```python
-@udf.connection(argName="sqlDB",alias="ContosoSalesDat")
-@udf.function()
-def read_from_sql_db(sqlDB: fn.FabricSqlConnection)-> list:
-    [...]
-```
+1. Choose your data source, then select **Connect**.
 
-After modifying the code, publish your function using the Publish button in the toolbar. This operation may take a few minutes.
+   :::image type="content" source="..\media\user-data-functions-manage-connections\add-data-from-catalog.png" alt-text="Screenshot of OneLake data catalog with a list of data sources." lightbox="..\media\user-data-functions-manage-connections\add-data-from-catalog.png":::
 
-:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-6.png" alt-text="Screenshot of the 'Publish' button." lightbox="..\media\user-data-functions-manage-connections\manage-connections-6.png":::
+1. Once created, the new connection appears in the side pane on the **Connections** tab. Take note of the **Alias** name that was generated for it. You need this alias to reference the connection from functions in your user data functions item.
 
-Once the publishing is completed, you can run your function by hovering on its name in the Functions Explorer list, and clicking on the "Run" button in the side panel. The bottom panel "Output" will show the outcome of running the function.
+   :::image type="content" source="..\media\user-data-functions-manage-connections\connection-added.png" alt-text="Screenshot of the connections side pane with a new data source connection created." lightbox="..\media\user-data-functions-manage-connections\connection-added.png":::
 
-:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-7.png" alt-text="Screenshot of the side panel used to Run a function." lightbox="..\media\user-data-functions-manage-connections\manage-connections-7.png":::
+## Use your connection in your function code
 
-And that's all you need to connect to a data source from your Fabric User Data Functions. 
+After you create a connection, you can reference it in your function code using the connection's alias. The alias is automatically generated based on the name of the data source you connected to. You add this alias to the `@udf.connection` decorator in your function, and the connection handles authentication when your function runs.
 
-## Next steps
+While you can add connection code to any function you write from scratch, using a sample provides a starting point with the connection code already written. You just need to modify the alias to match your connection.
+
+To use the connection in your code:
+
+1. If you're not already in the editor, open your user data functions item and select **Develop mode**, then select the **Edit** tab.
+
+1. On the ribbon, select **Insert sample**.
+
+1. From the dropdown list, select **SQL Database** > **Read data from a table in SQL Database**.
+
+   :::image type="content" source="..\media\user-data-functions-manage-connections\use-connections-insert-sample.png" alt-text="Screenshot of Insert Sample data catalog with a list of data sources." lightbox="..\media\user-data-functions-manage-connections\use-connections-insert-sample.png":::
+
+   The sample inserts the following code that reads data from a SQL database table:
+
+   ```python
+   @udf.connection(argName="sqlDB",alias="<alias for sql database>")
+   @udf.function()
+   def read_from_sql_db(sqlDB: fn.FabricSqlConnection)-> list:
+       # Replace with the query you want to run
+       query = "SELECT * FROM (VALUES ('John Smith', 31), ('Kayla Jones', 33)) AS Employee(EmpName, DepID);"
+
+       # Establish a connection to the SQL database
+       connection = sqlDB.connect()
+       cursor = connection.cursor()
+
+       query.capitalize()
+
+       # Execute the query
+       cursor.execute(query)
+
+       # Fetch all results
+       results = []
+       for row in cursor.fetchall():
+           results.append(row)
+
+       # Close the connection
+       cursor.close()
+       connection.close()
+           
+       return results
+   ```
+
+   > [!NOTE]
+   > This sample query generates test data inline using the `VALUES` clause, so you can test your connection even if your database doesn't have any tables yet. When you're ready to query your own data, replace the query with one that references your actual tables.
+
+1. Replace `<alias for sql database>` in the `@udf.connection` decorator with the alias from the connection you created in the previous section.
+
+   For example, if your connection alias is `ContosoSalesDat`, the decorator would look like this:
+
+   ```python
+   @udf.connection(argName="sqlDB",alias="ContosoSalesDat")
+   @udf.function()
+   def read_from_sql_db(sqlDB: fn.FabricSqlConnection)-> list:
+       [...]
+   ```
+
+1. [Test your function](./test-user-data-functions.md) to verify the connection works correctly.
+
+After you test your function with the connection, you can publish and run it. For more information, see [Test your user data functions](./test-user-data-functions.md).
+
+## Modify or delete a connection
+
+You can modify or delete existing connections from the **Manage connections** pane. However, be aware of the effect on your functions before making changes.
+
+### Modify a connection alias
+
+To modify the alias of an existing connection:
+
+1. In the Fabric portal, open your user data functions item.
+
+1. Select **Manage connections** in the ribbon.
+
+1. In the **Manage connections** pane, find the connection you want to modify and select the **Edit connection** icon (pencil).
+
+1. Enter the new alias name.
+1. Select **Update** to save your changes.
+
+> [!IMPORTANT]
+> When you change a connection's alias, any function using the old alias fails at runtime. You must update all function code that references the old alias to use the new alias name. To connect to a different data source, create a new connection instead of modifying an existing one.
+
+### Delete a connection
+
+To delete a connection:
+
+1. In the Fabric portal, open your user data functions item.
+
+1. Select **Manage connections** in the ribbon.
+
+1. In the **Manage connections** pane, find the connection you want to delete and select the **Delete connection** icon (trash can).
+
+1. Confirm the deletion.
+
+> [!WARNING]
+> If you delete a connection that's referenced in your function code, those functions fail at runtime with a connection error. Before deleting a connection, make sure no functions are using it, or update your function code to remove references to the deleted connection alias.
+
+## Related content
 
 - [Create a Fabric User data functions item](./create-user-data-functions-portal.md) from within Fabric or [use the Visual Studio Code extension](./create-user-data-functions-vs-code.md)
 - [Learn about the User data functions programming model](./python-programming-model.md)

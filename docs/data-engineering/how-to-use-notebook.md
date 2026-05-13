@@ -1,13 +1,12 @@
 ---
 title: How to use notebooks
 description: Learn how to create a new notebook, import an existing notebook, connect notebooks to lakehouses, collaborate in notebooks, and comment code cells.
-ms.reviewer: snehagunda
-ms.author: jingzh
-author: JeneZhang
+ms.reviewer: jingzh
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.search.form: Create and use notebooks
-ms.date: 07/25/2024
+ms.date: 04/24/2026
+ai-usage: ai-assisted
 ---
 
 # How to use Microsoft Fabric notebooks
@@ -21,29 +20,37 @@ With a Fabric notebook, you can:
 - Keep data secure with built-in enterprise security features.
 - Analyze data across raw formats (CSV, txt, JSON, etc.), processed file formats (parquet, Delta Lake, etc.), using powerful Spark capabilities.
 - Be productive with enhanced authoring capabilities and built-in data visualization.
+- Leverage Copilot for context-aware code generation, refactoring, and validation across your notebook.
+- Quickly diagnose and repair failed cells or Spark jobs with Fix with Copilot, including approval-based code changes.
 
 This article describes how to use notebooks in data science and data engineering experiences.
 
 ## Security context of running notebook
 
-The execution of a notebook can be triggered by three different manners in Fabric with full flexibility to meet different scenarios:
+Notebook execution can be triggered in three ways, each with a different security context:
 
-- **Interactive run**: User manually triggers the execution via the different UX entries or calling the REST API. The execution would be running under the current user's security context.
-- **Run as pipeline activity**: The execution is triggered from Fabric Data Factory pipeline. You can find the detail steps in the [Notebook Activity](../data-factory/notebook-activity.md). The execution would be running under the pipeline owner's security context.
-- **Scheduler**: The execution is triggered from a scheduler plan. The execution would be running under the security context of the user who setup/update the scheduler plan.
+- **Interactive run**: You manually trigger execution through the UI or REST API. The notebook runs under your security context (the current user).
+- **Run as pipeline activity**: Execution is triggered from a Fabric Data Factory pipeline. See [Notebook activity](../data-factory/notebook-activity.md) for details. The notebook runs under the identity of the **pipeline's last modified user**—not the pipeline owner or notebook owner. This means whoever last edited the pipeline determines the security context for data access, API calls, and permissions.
+- **Scheduler**: Execution is triggered from a scheduled run. The notebook runs under the identity of the user who created or last updated the schedule.
 
-The flexibility of these execution options with different security context allows you to meet different scenarios and requirements, but also requires you to be aware of the security context when you design and develop your notebook, otherwise it may cause unexpected behavior and even some security issues.
+### Automate execution via APIs
+
+You can also execute notebooks on demand through the [Job Scheduler API](/rest/api/fabric/core/job-scheduler). API-triggered runs support parameterized execution, session configuration (such as compute vCores and Spark settings), environment and runtime selection, and choosing the target Fabric Lakehouse. You can monitor run status and cancel job instances through the same API. Runs return an exit value that external schedulers and Fabric pipelines can read to enable conditional orchestration and downstream signaling.
+
+The Items REST API and the Job Scheduler API both support service principal authentication for secure unattended automation and CI/CD. Note that some downstream services (such as T-SQL endpoints) don't support service principals and require a user principal.
+
+These execution options provide flexibility for different scenarios, but you must understand which identity runs your notebook. The security context affects data access permissions, API call authorization, and resource availability.
 
 The first time when a notebook is created, a warning message is shown to remind you the risk of running the code without reviewing it.
 
-:::image type="content" source="media\how-to-use-notebook\notebook-security-warning.png" alt-text="Screenshot showing warning of running notebook.":::
+:::image type="content" source="media\how-to-use-notebook\notebook-security-warning.png" alt-text="Screenshot showing warning of running notebook." lightbox="media\how-to-use-notebook\notebook-security-warning.png":::
 
-Here are some best practices to help you avoid security issues:
+Follow these best practices to avoid security issues:
 
-- Before you manually run the notebook, Open the Notebook setting and check the Detail section under the About panel for the modification update, make sure you are OK with the latest change.
-- Before you add a notebook activity to a pipeline, Open the Notebook setting and check the Detail section under the About panel for the modification update, make sure you are OK with the latest change. If you are not sure about the latest change, better open the Notebook to review the change before you add it into the pipeline.
-- Before you update the scheduler plan, Open the Notebook setting and check the Detail section under the About panel for the modification update, make sure you are OK with the latest change. If you are not sure about the latest change, better open the Notebook to review the change before you update the scheduler plan.
-- Separate the workspace into different stage (dev, test, prod) and control the access of different stage to avoid the security issue. Only add the user who you trust to the prod stage.
+- **Before running a notebook manually**: Check who last modified the notebook and use the [version history](#version-history) panel to review the actual content changes before executing code you didn't write.
+- **Before adding a notebook to a pipeline**: Verify who last modified the pipeline, because the notebook runs under that user's identity. Open the notebook from the pipeline to review its latest content. If the identity doesn't have the required permissions (or if you need a user principal instead of a service principal for certain APIs), have the appropriate user edit the pipeline to update the last modified identity.
+- **Before creating or updating a schedule**: The notebook runs under the identity of whoever creates or updates the schedule. Ensure that user has the necessary permissions for all operations in the notebook.
+- **Use workspace stages**: Separate workspaces into dev, test, and prod stages. Restrict access to production workspaces to trusted users only.
 
 
 ## Create notebooks
@@ -54,32 +61,34 @@ You can either create a new notebook or import an existing notebook.
 
 Like other standard Fabric item creation processes, you can easily create a new notebook from the Fabric **Data Engineering** homepage, the workspace **New** option, or the **Create Hub**.
 
+For step-by-step notebook creation guidance in specific workflows, see:
+
+- [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md#open-or-create-a-notebook-from-a-lakehouse) for creating a notebook from a lakehouse context in the Fabric portal.
+- [Author notebooks in Microsoft Fabric with Visual Studio Code](author-notebook-with-vs-code.md#create-a-notebook) for creating notebooks from VS Code.
+- [Public APIs for notebooks](/rest/api/fabric/core/items) for creating and managing notebooks through the Items REST API (CRUD operations).
+- [Execute notebooks via Job Scheduler API](/rest/api/fabric/core/job-scheduler) for on-demand notebook execution with parameterization, session configuration, environment and Lakehouse selection, run monitoring, and cancellation.
+
 ### Import existing notebooks
 
 You can import one or more existing notebooks from your local computer using the entry in the workspace toolbar. Fabric notebooks recognize the standard Jupyter Notebook *.ipynb* files, and source files like *.py*, *.scala*, and *.sql*, and create new notebook items accordingly.
 
-:::image type="content" source="media\how-to-use-notebook\new-menu-notebook-options.png" alt-text="Screenshot showing where to find notebook options on the New menu.":::
+:::image type="content" source="media\how-to-use-notebook\new-menu-notebook-options.png" alt-text="Screenshot showing where to find notebook options on the New menu." lightbox="media\how-to-use-notebook\new-menu-notebook-options.png":::
 
 ## Export a notebook
 
-You can export your notebook to other standard formats. Synapse notebook can be exported into:
+You can export your notebook to other standard formats. The Fabric notebook can be exported into:
 
-- The standard notebook file (.ipynb) that is used for Jupyter notebooks.
-- An HTML file (.html) that can be opened from a browser directly.  
-- A Python file (.py).  
-- A Latex file (.tex).
-
-:::image type="content" source="media\how-to-use-notebook\export-notebook.png" alt-text="Screenshot showing where to export notebook.":::
+:::image type="content" source="media\how-to-use-notebook\export-notebook.png" alt-text="Screenshot showing where to export notebook." lightbox="media\how-to-use-notebook\export-notebook.png":::
 
 ## Save a notebook
 
 In Fabric, a notebook will by default save automatically after you open and edit it; you don't need to worry about losing code changes. You can also use **Save a copy** to clone another copy in the current workspace or to another workspace.
 
-:::image type="content" source="media\how-to-use-notebook\save-copy.png" alt-text="Screenshot showing where to save a copy.":::
+:::image type="content" source="media\how-to-use-notebook\save-copy.png" alt-text="Screenshot showing where to save a copy." lightbox="media\how-to-use-notebook\save-copy.png":::
 
 If you prefer to save a notebook manually, you can switch to the **Manual** save option to have a local branch of your notebook item, and then use **Save** or **CTRL+s** to save your changes.
 
-:::image type="content" source="media\how-to-use-notebook\manual-save.png" alt-text="Screenshot showing where to switch manual save.":::
+:::image type="content" source="media\how-to-use-notebook\manual-save.png" alt-text="Screenshot showing where to switch manual save." lightbox="media\how-to-use-notebook\manual-save.png":::
 
 You can also switch to manual save mode by selecting **Edit** -> **Save options** -> **Manual**. To turn on a local branch of your notebook then save it manually, select **Save** or use the **Ctrl+s** keyboard shortcut.
 
@@ -89,7 +98,7 @@ Fabric notebooks now support close interactions with lakehouses; you can easily 
 
 You can navigate to different lakehouses in the Lakehouse explorer and set one lakehouse as the default by pinning it. Your default is then mounted to the runtime working directory, and you can read or write to the default lakehouse using a local path.
 
-:::image type="content" source="media\how-to-use-notebook\pin-default-lakehouse.png" alt-text="Screenshot showing where to pin a default lakehouse.":::
+:::image type="content" source="media\how-to-use-notebook\pin-default-lakehouse.png" alt-text="Screenshot showing where to pin a default lakehouse." lightbox="media\how-to-use-notebook\pin-default-lakehouse.png":::
 
 > [!NOTE]
 > You must restart the session after pinning a new lakehouse or renaming the default lakehouse.
@@ -110,17 +119,20 @@ If you select a file (.csv,.parquet,.txt,.jpg,.png, etc.) with a right mouse cli
 
 You can easily copy a path with a different format from the select file or folder and use the corresponding path in your code.
 
-:::image type="content" source="media\how-to-use-notebook\lakehouse-file-operation.png" alt-text="Screenshot showing context menu of files in lakehouse.":::
+:::image type="content" source="media\how-to-use-notebook\lakehouse-file-operation.png" alt-text="Screenshot showing context menu of files in lakehouse." lightbox="media\how-to-use-notebook\lakehouse-file-operation.png":::
 
 ## Notebook resources
 
 The notebook resource explorer provides a Unix-like file system to help you manage your folders and files. It offers a writeable file system space where you can store small-sized files, such as code modules, semantic models, and images. You can easily access them with code in the notebook as if you were working with your local file system.
 
-![Animated GIF of notebook resources.](media/how-to-use-notebook/notebook-resources-operations.gif)
+:::image type="content" source="media/how-to-use-notebook/notebook-resources-operations.gif" alt-text="Animated GIF of notebook resources." lightbox="media/how-to-use-notebook/notebook-resources-operations.gif":::
 
 > [!NOTE]
 > - The maximum Resource storages for both built-in folder and environment folder are **500 MB**, with a single file size up to **100 MB**. They both allow up to **100** file/folder instances in total.
 > - When using `notebookutils.notebook.run()`, use the `notebookutils.nbResPath` command to access the target notebook resource. The relative path **builtin/** will always point to the root notebook’s built-in folder.
+
+> [!NOTE]
+> Files in the Resources folder (both built-in and environment) and libraries installed through inline commands (such as `%pip install` or `install.packages()`) are scoped to the current notebook session. They aren't affected by environment publishing in either Quick mode or Full mode.
 
 ### Built-in resources folder
 
@@ -137,15 +149,29 @@ Environment Resources Folder is a shared repository designed to streamline colla
 
 - You can find the **Resources** tab inside the environment and have the full operations to manage the resource files here. These files can be shared across multiple notebooks once the notebook is attached to the current environment.
 
-   :::image type="content" source="media\how-to-use-notebook\manage-environment-resources.png" alt-text="Screenshot showing where to manage resources in environment.":::
+   :::image type="content" source="media\how-to-use-notebook\manage-environment-resources.png" alt-text="Screenshot showing where to manage resources in environment." lightbox="media\how-to-use-notebook\manage-environment-resources.png":::
 
 - In the Notebook page, you can easily find a second root folder under Resources inherited from the attached environment.
-   
-   :::image type="content" source="media\how-to-use-notebook\environment-resources-folder.png" alt-text="Screenshot showing where to open environment resources folder.":::
+
+   :::image type="content" source="media\how-to-use-notebook\environment-resources-folder.png" alt-text="Screenshot showing where to open environment resources folder." lightbox="media\how-to-use-notebook\environment-resources-folder.png":::
 
 - You can also operate on the files/folders same with the Built-in resources folder. 
 - The Environment resource path is automatically mounted to the notebook cluster. You can use the relative path **/env** to access the environment resources.
 
+Fabric Environments support two library publishing modes that affect how libraries are delivered to your notebook sessions:
+
+- **Quick mode** publishes in about 5 seconds and installs libraries when your notebook session starts. Quick mode can override library versions published through Full mode, but only for the current session.
+- **Full mode** creates a stable, reproducible library snapshot. Publishing typically takes 3 to 6 minutes, and session startup adds 1 to 3 minutes for dependency deployment. Using Full mode with a [custom live pool](custom-live-pools-overview.md) can bring session start times back to approximately 5 seconds while maintaining the stable snapshot.
+
+For details on each mode, see [Manage libraries in Fabric environments](environment-manage-library.md#select-publish-mode-for-libraries).
+
+### Use environment libraries in notebooks
+
+Choose a library publishing mode based on your workflow:
+
+- **Quick mode for iterative development**: Use Quick mode when you're actively experimenting in notebooks and need fast library iteration. Libraries install at session start with minimal publish time.
+- **Full mode for reproducibility**: Use Full mode when you need consistent library versions across collaborators, scheduled runs, or pipeline jobs. The snapshot ensures every session starts with the same dependencies.
+- **Full mode with a custom live pool for fast and stable sessions**: When both fast session startup and reproducibility matter, configure Full mode with a [custom live pool](custom-live-pools-overview.md). This combination achieves approximately 5-second session starts while preserving the stable library snapshot.
 
 > [!NOTE]
 > Reading/writing with a relative path is not functioning in a [High concurrency session](../data-engineering/configure-high-concurrency-session-notebooks.md).
@@ -156,7 +182,7 @@ The file editor allows you to view and edit files directly within the notebook's
 
 - You can access this feature through **'View and edit'** in the file menu. Double-click on file is a faster way.
 
-   :::image type="content" source="media\how-to-use-notebook\view-edit-file.png" alt-text="Screenshot showing where to view and edit files.":::
+   :::image type="content" source="media\how-to-use-notebook\view-edit-file.png" alt-text="Screenshot showing where to view and edit files." lightbox="media\how-to-use-notebook\view-edit-file.png":::
 
 - Content change on file editor needs to be saved manually by clicking the **Save** button or keyboard shortcut: **Ctrl+S**, file editor doesn't support autosave.
 - [notebook mode](#notebook-mode-switcher) also affects the file editor. You can only view files but cannot edit them if you are in the notebook mode without editing permission.
@@ -172,7 +198,19 @@ The Fabric notebook is a collaborative item that supports multiple users editing
 
 When you open a notebook, you enter the coediting mode by default, and every notebook edit is automatically saved. If your colleagues open the same notebook at the same time, you see their profile, run output, cursor indicator, selection indicator, and editing trace. By using the collaboration features, you can easily accomplish pair programming, remote debugging, and tutoring scenarios.
 
-:::image type="content" source="media\how-to-use-notebook\collaboration.png" alt-text="Screenshot showing a code cell with another user editing.":::
+:::image type="content" source="media\how-to-use-notebook\collaboration.png" alt-text="Screenshot showing a code cell with another user editing." lightbox="media\how-to-use-notebook\collaboration.png":::
+
+### Use Copilot in notebooks
+
+Copilot is immediately context-aware of the workspace, attached Lakehouse schemas, tables, and files, the notebook's structure, and the current runtime state. You don't need to start a session for Copilot to begin helping you. Copilot supports multi-step, notebook-wide code generation, refactoring, summarization, and validation across entire workflows, so you can work across cells without losing context.
+
+### Performance insights from Copilot
+
+Copilot surfaces performance guidance based on data size, join patterns, and runtime behavior. For example, it can recommend efficient join strategies, help you avoid costly shuffles, propose refactoring into reusable functions, and highlight potential data quality issues observed during execution. These insights appear as part of your Copilot conversations and align with the `/optimize` command.
+
+### Troubleshoot with Copilot
+
+When a cell or Spark job fails, a **Fix with Copilot** option appears below the failed cell. It provides an error summary, root-cause analysis, and recommended fixes. Copilot can auto-apply code changes with an approval diff so you can review before committing. You can also use the `/fix` command in Copilot chat to run targeted diagnostics for a specific cell or the entire notebook. For more information, see [Diagnose notebook failures with Copilot](copilot-notebooks-chat-pane.md#diagnose-notebook-failures).
 
 ### Share a notebook
 
@@ -180,19 +218,19 @@ Sharing a notebook is a convenient way for you to collaborate with team members.
 
 1. Select **Share** on the notebook toolbar.
 
-   :::image type="content" source="media\how-to-use-notebook\open-share-notebook-popup.png" alt-text="Screenshot showing where to select Share.":::
+   :::image type="content" source="media\how-to-use-notebook\open-share-notebook-popup.png" alt-text="Screenshot showing where to select Share." lightbox="media\how-to-use-notebook\open-share-notebook-popup.png":::
 
 1. Select the corresponding category of **people who can view this notebook**. You can choose **Share**, **Edit**, or **Run** permissions for the recipients.
 
-   :::image type="content" source="media\how-to-use-notebook\select-permissions.png" alt-text="Screenshot showing where to select permissions.":::
+   :::image type="content" source="media\how-to-use-notebook\select-permissions.png" alt-text="Screenshot showing where to select permissions." lightbox="media\how-to-use-notebook\select-permissions.png":::
 
 1. After you select **Apply**, you can either send the notebook directly or copy the link to others. Recipients can then open the notebook with the corresponding view granted by their permission level.
 
-   :::image type="content" source="media\how-to-use-notebook\create-and-send-link.png" alt-text="Screenshot showing where to create and send link.":::
+   :::image type="content" source="media\how-to-use-notebook\create-and-send-link.png" alt-text="Screenshot showing where to create and send link." lightbox="media\how-to-use-notebook\create-and-send-link.png":::
 
 1. To further manage your notebook permissions, select **Workspace item list** > **More options**, and then select **Manage permissions**. From that screen, you can update the existing notebook access and permissions.
 
-   :::image type="content" source="media\how-to-use-notebook\manage-permissions-in-workspace.png" alt-text="Screenshot showing where to manage permissions in workspace.":::
+   :::image type="content" source="media\how-to-use-notebook\manage-permissions-in-workspace.png" alt-text="Screenshot showing where to manage permissions in workspace." lightbox="media\how-to-use-notebook\manage-permissions-in-workspace.png":::
 
 ### Comment a code cell
 
@@ -200,11 +238,11 @@ Commenting is another useful feature for collaborative scenarios. Currently, Fab
 
 1. Select the **Comments** button on the notebook toolbar or cell comment indicator to open the **Comments** pane.
 
-   :::image type="content" source="media\how-to-use-notebook\open-comment-pane.png" alt-text="Screenshot showing where to select Comment.":::
+   :::image type="content" source="media\how-to-use-notebook\open-comment-pane.png" alt-text="Screenshot showing where to select Comment." lightbox="media\how-to-use-notebook\open-comment-pane.png":::
 
 1. Select code in the code cell, select **New** in the **Comments** pane, add comments, and then select **Post comment** to save.
 
-   :::image type="content" source="media\how-to-use-notebook\new-comment.png" alt-text="Screenshot showing where to select New.":::
+   :::image type="content" source="media\how-to-use-notebook\new-comment.png" alt-text="Screenshot showing where to select New." lightbox="media\how-to-use-notebook\new-comment.png":::
 
 1. If you need them, find the **Edit comment**, **Resolve thread**, and **Delete thread** options by selecting the More option next to your comment.
 
@@ -214,7 +252,7 @@ Commenting is another useful feature for collaborative scenarios. Currently, Fab
  
 1. Select a section of code in a cell and new a comment thread.
  
-1. Input user name and choose the correct one on the suggestion list if you want to mention someone for discussion about a certain section.
+1. Enter the user name and choose the correct one from the suggestion list if you want to mention someone in a discussion about a certain section.
  
 1. Share your insights and **Post** them.
  
@@ -222,7 +260,7 @@ Commenting is another useful feature for collaborative scenarios. Currently, Fab
  
 1. Moreover, authorize and configure the permissions for users when tagging someone who doesn’t have access, ensuring that your code assets are well managed.
 
-![Animated GIF of tagging others in a comment.](media/how-to-use-notebook/tagging-others-in-a-comment.gif)
+:::image type="content" source="media/how-to-use-notebook/tagging-others-in-a-comment.gif" alt-text="Animated GIF of tagging others in a comment." lightbox="media/how-to-use-notebook/tagging-others-in-a-comment.gif":::
 
 > [!NOTE]
 > For a comment item, the tagged user will not receive an Email notification anymore if you update the comment within one hour. But it sends Email notification to the new tagged user.
@@ -235,42 +273,63 @@ Version history allows you to easily version your live notebook changes. It supp
 
 1. Access version **history** from notebook global toolbar.
 
-   :::image type="content" source="media\how-to-use-notebook\history-access.png" alt-text="Screenshot showing history access.":::
+   :::image type="content" source="media\how-to-use-notebook\history-access.png" alt-text="Screenshot showing history access." lightbox="media\how-to-use-notebook\history-access.png":::
 
 1. Notebook supports two ways of creating checkpoints.
 
    - Manual checkpoint: You can manually **create new version** to record your development milestones, providing flexibility for managing your notebook versions.
 
-      :::image type="content" source="media\how-to-use-notebook\create-new-version.png" alt-text="Screenshot showing how to create new version.":::
+      :::image type="content" source="media\how-to-use-notebook\create-new-version.png" alt-text="Screenshot showing how to create new version." lightbox="media\how-to-use-notebook\create-new-version.png":::
 
    - System checkpoint: These checkpoints are created automatically every 5 minutes based on editing time interval by Notebook system, ensuring that your work is consistently saved and versioned. You can find the modification records from all the contributors in the system checkpoint timeline list.
-      :::image type="content" source="media\how-to-use-notebook\expand-system-checkpoint.png" alt-text="Screenshot showing expand checkpoint list."lightbox="media\how-to-use-notebook\expand-system-checkpoint.png":::
+   :::image type="content" source="media\how-to-use-notebook\expand-system-checkpoint.png" alt-text="Screenshot showing expand checkpoint list." lightbox="media\how-to-use-notebook\expand-system-checkpoint.png":::
+
+1. Multi-Source Checkpointing for Notebook
+   
+   Fabric notebooks seamlessly integrate with Git, deployment pipelines, and Visual Studio Code. Each saved version is automatically captured in the notebook’s version history. Versions may originate from direct edits within the notebook, Git synchronizations, deployment pipeline activities, or publishing via VS Code. The source of each version is clearly labeled in version history to provide full traceability.
+ 
+      :::image type="content" source="media\how-to-use-notebook\multi-source-checkpoint.png" alt-text="Screenshot showing multi-source checkpoint for notebook version history." lightbox="media\how-to-use-notebook\multi-source-checkpoint.png":::
 
 1. You can click on a checkpoint to open the **diff view**, it highlights the content differences between the selected checkpoint and the current live version, including the differences of cell content, cell output, and metadata. The version of this checkpoint can be managed individually in **'more options'** menu.
 
-   :::image type="content" source="media\how-to-use-notebook\checkpoint-diff-view.png" alt-text="Screenshot showing view diff."lightbox="media\how-to-use-notebook\checkpoint-diff-view.png":::
+   :::image type="content" source="media\how-to-use-notebook\checkpoint-diff-view.png" alt-text="Screenshot showing view diff." lightbox="media\how-to-use-notebook\checkpoint-diff-view.png":::
 
-1. You can manage the version from the checkpoint drop-down menu, if you want to keep a pervious version, click **restore** from checkpoint and overwrite the current notebook, or using **save as copy** to clone it to a new notebook.
+1. You can manage the version from the checkpoint drop-down menu, if you want to keep a previous version, click **restore** from checkpoint and overwrite the current notebook, or use **save as copy** to clone it to a new notebook.
 
-   :::image type="content" source="media\how-to-use-notebook\more-options-with-the-checkpoint.png" alt-text="Screenshot showing more options with the checkpoint."lightbox="media\how-to-use-notebook\more-options-with-the-checkpoint.png":::
+   :::image type="content" source="media\how-to-use-notebook\more-options-with-the-checkpoint.png" alt-text="Screenshot showing more options with the checkpoint." lightbox="media\how-to-use-notebook\more-options-with-the-checkpoint.png":::
 
 > [!NOTE]
 >
-> - Known limitation: After clicking on the **Restore** button and navigate **Back to notebook**, the notebook won't be immediately recovered from the checkpoint. A message bar prompts you to view the changes. You need to click the **View changes** button and select keeping the *Saved version* to finish the restore.
-    :::image type="content" source="media\how-to-use-notebook\view-changes-messagebar.png" alt-text="Screenshot showing view changes after restore.":::
+> - Known limitation: When multiple collaborators are editing, if one of them clicks the **Restore** button and then navigates **Back to notebook**, the notebook won't be immediately recovered from the checkpoint. A message bar prompts you to view the changes. You need to click the **View changes** button and select keeping the *Saved version* to finish the restore.
+   :::image type="content" source="media\how-to-use-notebook\view-changes-messagebar.png" alt-text="Screenshot showing view changes after restore." lightbox="media\how-to-use-notebook\view-changes-messagebar.png":::
 > - System checkpoints will expire after **1** year.
 
 ## Notebook mode switcher
 
-Fabric notebooks support four modes that you can easily switch: **Develop** mode，**Run only** mode, **Edit** mode, and **View** mode. Each mode maps to a specific permission combination. When sharing the notebook to other team members, you can grant proper permissions to the recipients. They can see the best available notebook mode according to their permission, and they are able to switch between the mode they have permission to.
+Fabric notebooks support four modes that you can switch between: **Develop**, **Run only**, **Edit**, and **View**. Each mode aligns with a set of permissions.
 
-:::image type="content" source="media\how-to-use-notebook\switch-mode.png" alt-text="Screenshot showing where switch modes.":::
+When you share a notebook, you assign permissions to users. Based on those permissions, users can access and switch between the modes available to them.
 
-- **Develop mode**: Read, execute, write permission needed.
-- **Run only mode**: Read, execute permission needed.
-- **Edit mode**: Read, write permission needed.
-- **View mode**: Read permission needed.
+:::image type="content" source="media\how-to-use-notebook\switch-mode.png" alt-text="Screenshot showing where to switch modes." lightbox="media\how-to-use-notebook\switch-mode.png":::
+
+- **Develop mode**: Requires read, execute, and write permissions.
+- **Run only mode**: Requires read and execute permissions.
+- **Edit mode**: Requires read and write permissions (cannot run).
+- **View mode**: Requires read permissions.
+
+### Permissions and access
+
+Permissions can be set at the workspace or notebook level in Microsoft Fabric. They determine which modes a user can access:
+
+- Permissions limit the set of available modes.
+- They don't automatically select a mode for the user.
+- Modes can't grant capabilities beyond what permissions allow.
 
 ## Related content
 
 - [Author and execute notebooks](author-execute-notebook.md)
+- [Overview of Copilot for Data Engineering and Data Science](copilot-notebooks-overview.md)
+- [Manage libraries in Fabric environments](environment-manage-library.md)
+- [Diagnose notebook failures with Copilot](copilot-notebooks-chat-pane.md#diagnose-notebook-failures)
+- [Job Scheduler REST API reference](/rest/api/fabric/core/job-scheduler)
+

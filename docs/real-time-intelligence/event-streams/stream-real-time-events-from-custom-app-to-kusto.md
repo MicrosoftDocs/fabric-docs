@@ -1,11 +1,9 @@
 ---
 title: Stream real-time events from a custom app to a Microsoft Fabric KQL database
 description: Learn how to stream real-time events from a custom app to a Microsoft Fabric KQL database and build a real-time Power BI report.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: tutorial
-ms.custom:
+ms.custom: sfi-image-nochange, sfi-ropc-nochange
 ms.date: 11/15/2023
 ms.search.form: Eventstreams Tutorials
 #CustomerIntent: As a developer, I want to stream real-time events from my app to a Microsoft Fabric KQL database by using Fabric event streams, and then build reports for business users.
@@ -262,3 +260,5 @@ If you want to discover more advanced functionalities for working with Fabric ev
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)
 - [Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse](./transform-and-stream-real-time-events-to-lakehouse.md)
+
+

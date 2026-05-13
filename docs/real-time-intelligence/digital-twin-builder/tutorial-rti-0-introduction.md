@@ -1,37 +1,28 @@
 ---
 title: Digital twin builder (preview) in Real-Time Intelligence tutorial introduction
 description: Get started with a sample scenario that uses digital twin builder (preview) with Real-Time Intelligence features.
-author: baanders
-ms.author: baanders
-ms.date: 04/28/2025
+ms.date: 11/10/2025
 ms.topic: tutorial
 ---
 
 # Digital twin builder (preview) in Real-Time Intelligence tutorial: Introduction
 
-Digital twin builder (preview) is a new item within the [Real-Time Intelligence](../overview.md) workload in [Microsoft Fabric](../../fundamentals/microsoft-fabric-overview.md). It creates digital representations of real-world environments to optimize physical operations using data.
+Digital twin builder (preview) is an item in the [Real-Time Intelligence](../overview.md) workload in [Microsoft Fabric](../../fundamentals/microsoft-fabric-overview.md). It creates digital representations of real-world environments to optimize physical operations using data.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 In this tutorial, you learn how to set up a digital twin builder item and use it to build an ontology that contextualizes sample data streamed from an eventstream. After building the ontology in digital twin builder, you use shortcuts to expose the data in an eventhouse, and query it using KQL (Kusto Query Language) queries. Then, you visualize these query results in a Real-Time Dashboard.
 
-## Prerequisites
+<!--## Prerequisites (title in include)-->
+[!INCLUDE [Prerequisites for digital twin builder](../includes/digital-twin-builder-prerequisites.md)]
 
-* A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-* Digital twin builder access enabled on your tenant.
-    - [Fabric administrators](../../admin/roles.md) can grant access to digital twin builder in the [admin portal](../../admin/admin-center.md). In the [tenant settings](../../admin/tenant-settings-index.md), enable *Digital Twin Builder (preview).*
-
-        :::image type="content" source="media/tutorial/prereq-tenant-setting.png" alt-text="Screenshot of enabling digital twin builder in the admin portal.":::
-
-    - The tenant can't have [Autoscale Billing for Spark](../../data-engineering/autoscale-billing-for-spark-overview.md) enabled, as digital twin builder isn't compatible with it. This setting is also managed in the [admin portal](../../admin/admin-center.md). 
-
-## Scenario
+## Tutorial scenario
 
 The sample scenario used in this tutorial is a set of bus data, containing information about bus movements and locations. By using digital twin builder (preview) to contextualize and model the data, you can analyze and estimate bus behavior.
 
 This analysis includes estimating whether a bus will be late at the next stop, while also using borough-level location data to analyze delay patterns. The analysis can be used to estimate delays at individual stops and identify geographic trends, like which stops and boroughs experience more frequent delays.
 
-## Data summary
+## Tutorial data summary
 
 In this tutorial, you combine data from two data sources: real-time bus movement and timing details (fact data), and precise geographic and contextual bus stop data (dimensional data). Contextualizing the bus data in digital twin builder (preview) enables dynamic analysis and operational insights. Incorporating static bus stop data establishes a foundation for localized analysis and identifying delay patterns. Additionally, the borough ownership and locality data from the stop data enables understanding of broader geographical trends and overall transit efficiency.
 

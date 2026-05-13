@@ -1,11 +1,9 @@
 ---
 title: Better Together - the Lakehouse and Warehouse
 description: Learn more about scenarios for the lakehouse and data warehousing workloads in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: cynotebo
-ms.date: 04/06/2025
-ms.topic: conceptual
+ms.date: 06/26/2025
+ms.topic: concept-article
 ms.search.form: SQL Analytics Endpoint overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
 # Better together: the lakehouse and warehouse
@@ -16,15 +14,13 @@ This article explains the data warehousing workload with the [[!INCLUDE [fabric-
 
 ## What is a Lakehouse SQL analytics endpoint?
 
-In Fabric, when you create a warehouse, a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) is automatically created.
+The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to query data in the Lakehouse using T-SQL language and TDS protocol. 
 
-The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to query data in the Lakehouse using T-SQL language and TDS protocol. Every Lakehouse has one [!INCLUDE [fabric-se](includes/fabric-se.md)], and each workspace can have more than one Lakehouse. The number of [!INCLUDE [fabric-se](includes/fabric-se.md)]s in a workspace matches the number of Lakehouse items.
-
-- The [!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically generated for every Lakehouse and exposes Delta tables from the Lakehouse as SQL tables that can be queried using the T-SQL language.
+- The [!INCLUDE [fabric-se](includes/fabric-se.md)] exposes Delta tables from the Lakehouse as SQL tables that can be queried using the T-SQL language.
 - Every delta table from a Lakehouse is represented as one table. Data should be in delta format.
-- The [default Power BI semantic model](semantic-models.md) is created for every [!INCLUDE [fabric-se](includes/fabric-se.md)] and it follows the naming convention of the Lakehouse objects.
+- Every Lakehouse has one [!INCLUDE [fabric-se](includes/fabric-se.md)], and each workspace can have more than one Lakehouse. The number of [!INCLUDE [fabric-se](includes/fabric-se.md)]s in a workspace matches the number of Lakehouse items.
 
-There's no need to create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in Microsoft Fabric. Microsoft Fabric users can't create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in a workspace. A [!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically created for every Lakehouse. To get a [!INCLUDE [fabric-se](includes/fabric-se.md)], [create a lakehouse](../onelake/create-lakehouse-onelake.md) and a [!INCLUDE [fabric-se](includes/fabric-se.md)] will be automatically created for the Lakehouse.
+There's no need to create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in Microsoft Fabric. A SQL analytics endpoint is automatically created for every lakehouse, database, or mirrored database. A SQL analytics endpoint acts as a lightweight data warehousing capability for their parent items, complimenting the warehouse's lakehouse architecture. This allows Spark or Fabric mirroring to control data in a folder structure in the lakehouse that the SQL analytics endpoint can view.
 
 > [!NOTE]
 > Behind the scenes, the [!INCLUDE [fabric-se](includes/fabric-se.md)] is using the same engine as the [Warehouse](data-warehousing.md#fabric-data-warehouse) to serve high performance, low latency SQL queries.
@@ -124,6 +120,8 @@ Use the following steps to enable cross-workspace data analytics:
 1. Switch to the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse and find the SQL table that has a name that matches the shortcut name. This SQL table references the folder in another workspace.
 1. Query the SQL table that references data in another workspace. The table can be used as any other table in the [!INCLUDE [fabric-se](includes/fabric-se.md)]. You can join the tables that reference data in different workspaces.
 
+For more about security in the SQL analytics endpoint, see [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md).
+
 > [!NOTE]
 > If the SQL table is not immediately shown in the [!INCLUDE [fabric-se](includes/fabric-se.md)], you might need to wait a few minutes. The SQL table that references data in another workspace is created with a delay.
 
@@ -133,12 +131,18 @@ Data partitioning is a well-known data access optimization technique in data lak
 
 A [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) can represent partitioned Delta Lake data sets as SQL tables and enable you to analyze them.
 
+For more information and examples on querying external data, see [Query external data lake files by using Fabric Data Warehouse or SQL analytics endpoint](query-external-data-lake-files.md). For an example and use case for querying partitioned parquet files, see [Query partitioned data](query-parquet-files.md#query-partitioned-data-with-openrowset).
+
+## Analyze data in the Lakehouse, Warehouse, or Eventhouse
+
+[!INCLUDE [analyze-data-eventhouse-endpoint](../includes/analyze-data-eventhouse-endpoint.md)]
+
 ## Related content
 
 - [What is a lakehouse in Microsoft Fabric?](../data-engineering/lakehouse-overview.md)
 - [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md)
 - [Bring your data to OneLake with Lakehouse](../onelake/create-lakehouse-onelake.md)
-- [Default Power BI semantic models in Microsoft Fabric](semantic-models.md)
+- [Power BI semantic models in Microsoft Fabric](semantic-models.md)
 - [Options to get data into the Fabric Lakehouse](../data-engineering/load-data-lakehouse.md)
 - [How to copy data using copy activity](../data-factory/copy-data-activity.md)
 - [Move data from Azure SQL DB into Lakehouse via copy assistant](../data-factory/tutorial-move-data-lakehouse-copy-assistant.md)

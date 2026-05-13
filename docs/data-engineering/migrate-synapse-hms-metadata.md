@@ -1,13 +1,11 @@
 ---
 title: Migrate Hive Metastore metadata
 description: Learn about your different options for migrating Hive Metastore metadata from Azure Synapse Spark to Microsoft Fabric.
-ms.reviewer: snehagunda
-ms.author: aimurg
-author: murggu
+ms.reviewer: aimurg
 ms.topic: how-to
 ms.custom:
   - fabric-cat
-ms.date: 11/15/2023
+ms.date: 04/28/2026
 ---
 
 # Migrate Hive Metastore metadata from Azure Synapse Analytics to Fabric
@@ -61,7 +59,7 @@ The focus of Step 1 is on exporting the metadata from source HMS to the Files se
 
 * **1.3) Run all notebook commands** to export catalog objects to OneLake. Once cells are completed, this folder structure under the intermediate output directory is created.
 
-  :::image type="content" source="media\migrate-synapse\migrate-hms-metadata-export-api.png" alt-text="Screenshot showing HMS export in OneLake.":::
+  :::image type="content" source="media\migrate-synapse\migrate-hms-metadata-export-api.png" alt-text="Screenshot showing HMS export in OneLake." lightbox="media/migrate-synapse/migrate-hms-metadata-export-api.png":::
 
 ### Step 2: Import metadata into Fabric lakehouse
 
@@ -106,7 +104,7 @@ Step 2 is when the actual metadata is imported from intermediate storage into th
 * **2.4) Run all notebook commands** to import catalog objects from intermediate path.
 
 > [!NOTE]
-> When importing multiple databases, you can (i) create one lakehouse per database (the approach used here), or (ii) move all tables from different databases to a single lakehouse. For the latter, all migrated tables could be `<lakehouse>.<db_name>_<table_name>`, and you will need to adjust the import notebook accordingly.
+> When importing multiple databases, you can (i) create one lakehouse per database (the approach used here), or (ii) move all tables from different databases to a single lakehouse. For the latter, all migrated tables could be `<lakehouse>.<db_name>_<table_name>`, and you need to adjust the import notebook accordingly.
 
 ### Step 3: Validate content
 
@@ -135,7 +133,7 @@ DESCRIBE EXTENDED <lakehouse_name>.<table_name>
 
 Alternatively, all imported tables are visible within the Lakehouse explorer UI Tables section for each lakehouse. 
 
-:::image type="content" source="media\migrate-synapse\migrate-hms-metadata-import-lakehouse.png" alt-text="Screenshot showing HMS metadata imported in the lakehouse.":::
+:::image type="content" source="media\migrate-synapse\migrate-hms-metadata-import-lakehouse.png" alt-text="Screenshot showing HMS metadata imported in the lakehouse." lightbox="media/migrate-synapse/migrate-hms-metadata-import-lakehouse.png":::
 
 ### Other considerations
 

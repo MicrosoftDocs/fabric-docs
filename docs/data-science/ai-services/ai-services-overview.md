@@ -1,51 +1,48 @@
 ---
-title: Use Azure AI services in Fabric
-description: Overview of using Azure AI services in Fabric.
-ms.author: franksolomon
-author: Blackmist
-ms.reviewer: ruxu
-reviewer: ruixinxu
+title: Use Foundry Tools in Fabric
+description: Overview of using Foundry Tools in Fabric.
+ms.author: lagayhar
+author: lgayhardt
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: overview
 ms.custom:
   - references_regions
-ms.date: 11/29/2024
-ms.search.form:
+ms.date: 05/12/2026
+ms.update-cycle: 180-days
+ms.search.form: 
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
 
-# AI services in Fabric (preview)
+# Foundry Tools in Fabric (preview)
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-[Azure AI services](/azure/ai-services/what-are-ai-services) help developers and organizations rapidly create intelligent, cutting-edge, market-ready, and responsible applications with prebuilt and customizable APIs and models. Formerly named **Azure Cognitive Services**, Azure AI services empower developers even when they don't have direct AI or data science skills or knowledge. The goal of Azure AI services is to help developers create applications that can see, hear, speak, understand, and even begin to reason.
+[Foundry Tools](/azure/ai-services/what-are-ai-services) help developers and organizations rapidly create intelligent, cutting-edge, market-ready, and responsible applications with prebuilt and customizable APIs and models. Formerly named **Azure Cognitive Services**, Foundry Tools empower developers even when they don't have direct AI or data science skills or knowledge. The goal of Foundry Tools is to help developers create applications that can see, hear, speak, understand, and even begin to reason.
 
-Fabric provides two options to use Azure AI services:
+Fabric provides two options to use Foundry Tools:
 
 - **Pre-built AI models in Fabric (preview)**
 
-    Fabric seamlessly integrates with Azure AI services, allowing you to enrich your data with prebuilt AI models without any prerequisite. We recommend this option because you can use your Fabric authentication to access AI services, and all usages are billed against your Fabric capacity. This option is currently in public preview, with limited AI services available.
+    Fabric seamlessly integrates with Foundry Tools, allowing you to enrich your data with prebuilt AI models without any prerequisite. We recommend this option because you can use your Fabric authentication to access Foundry Tools, and all usages are billed against your Fabric capacity. This option is currently in public preview, with limited Microsoft Foundry tools available.
 
-    Fabric offers [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/) by default, with support for both SynapseML and the RESTful API. You can also use the [OpenAI Python Library](https://platform.openai.com/docs/api-reference?lang=python) to access Azure OpenAI service in Fabric. For more information about available models, visit [prebuilt AI models in Fabric](./ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
+    Fabric offers [Azure OpenAI Service](/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure?tabs=global-standard-aoai%2Cglobal-standard&pivots=azure-openai), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure Translator in Foundry Tools](https://azure.microsoft.com/products/ai-services/translator/) by default, with support for both SynapseML and the RESTful API. You can also use the [OpenAI Python Library](https://platform.openai.com/docs/api-reference?lang=python) to access Azure OpenAI service in Fabric. For more information about available models, visit [prebuilt AI models in Fabric](./ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
 
 - **Bring your own key (BYOK)**
 
-    You can provision your AI services on Azure, and bring your own key to use them from Fabric. If the prebuilt AI models don't yet support the desired AI services, you can still use BYOK (Bring your own key).
+    You can provision your Foundry tools on Azure, and bring your own key to use them from Fabric. If the prebuilt AI models don't yet support the desired Foundry tools, you can still use BYOK (Bring your own key).
 
-    To learn more about how to use Azure AI services with BYOK, visit [Azure AI services in SynapseML with bring your own key](./ai-services-in-synapseml-bring-your-own-key.md).
+    To learn more about how to use Foundry Tools with BYOK, visit [Foundry Tools in SynapseML with bring your own key](./ai-services-in-synapseml-bring-your-own-key.md).
 
 ## Prebuilt AI models in Fabric (preview)
 
-> [!NOTE]
-> Prebuilt AI models are currently available in preview and offered for free, with a limit on the number of concurrent requests per user. For Open AI models, the limit is 20 requests per minute per user.
+### [Azure OpenAI Service](/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure?tabs=global-standard-aoai%2Cglobal-standard&pivots=azure-openai)
 
-### [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/)
+[REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-python-sdk.md), [SynapseML](how-to-use-openai-synapse-ml.md), [AI Functions](how-to-use-openai-ai-functions.md)
 
-[REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-sdk-synapse.md). [SynapseML](how-to-use-openai-sdk-synapse.md)
-
-- GPT-35-turbo: GPT-3.5 models can understand and generate natural language or code. The most capable and cost effective model in the GPT-3.5 family is GPT-3. The `5 Turbo` option, which is optimized for chat, works well for traditional completion tasks as well. The `gpt-35-turbo-0125` model supports up to 16,385 input tokens and 4,096 output tokens.
-- gpt-4 family: `gpt-4-32k` is supported.
-- text-embedding-ada-002 (version 2), embedding model that can be used with embedding API requests. The maximum accepted request token is 8,191, and the returned vector has dimensions of 1,536.
+- Language Models: `gpt-5.1`, `gpt-5`, `gpt-5-mini`, `gpt-4.1`, and `gpt-4.1-mini` are hosted. [See table for details](#consumption-rate-for-openai-language-models)
+- Text Embedding Model: `text-embedding-ada-002` is hosted. [See table for details](#consumption-rate-for-openai-embedding-models)
 
 ### [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) 
 [REST API](how-to-use-text-analytics.md), [SynapseML](how-to-use-text-analytics.md)
@@ -56,7 +53,7 @@ Fabric provides two options to use Azure AI services:
 - Named entity recognition: identifies known entities and general named entities in the input text
 - Entity linking: identifies and disambiguates the identity of entities found in text
 
-### [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/) 
+### [Translator](https://azure.microsoft.com/products/ai-services/translator/) 
 [REST API](how-to-use-text-translator.md), [SynapseML](how-to-use-text-translator.md)
 - Translate: Translates text
 - Transliterate: Converts text in one language, in one script, to another script.
@@ -65,10 +62,10 @@ Fabric provides two options to use Azure AI services:
 
 ### Available regions for Azure OpenAI Service
 
-For the list of Azure regions where prebuilt AI services in Fabric are now available, visit the [Available regions](../../fundamentals/copilot-fabric-overview.md#available-regions) section of the **Overview of Copilot in Fabric and Power BI (preview)** article.
+For the list of Azure regions where prebuilt Foundry Tools in Fabric are now available, visit the [Available regions](../../fundamentals/copilot-fabric-overview.md#available-regions) section of the **Overview of Copilot in Fabric and Power BI (preview)** article.
 
-### Available regions for Text Analytics and Azure AI Translator 
-Prebuilt [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) and the [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/) in Fabric are now available for public preview in the Azure regions listed in this article. If you don't find your Microsoft Fabric home region in this article, you can still create a Microsoft Fabric capacity in a supported region. For more information, visit [Buy a Microsoft Fabric subscription](../../enterprise/buy-subscription.md).
+### Available regions for Text Analytics and Translator 
+Prebuilt [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) and the [Translator](https://azure.microsoft.com/products/ai-services/translator/) in Fabric are now available for public preview in the Azure regions listed in this article. If you don't find your Microsoft Fabric home region in this article, you can still create a Microsoft Fabric capacity in a supported region. For more information, visit [Buy a Microsoft Fabric subscription](../../enterprise/buy-subscription.md).
 To determine your Fabric home region, visit [Find your Fabric home region](../../admin/find-fabric-home-region.md).
 
 | Asia Pacific | Europe | Americas | Middle East and Africa |
@@ -86,25 +83,21 @@ To determine your Fabric home region, visit [Find your Fabric home region](../..
 
 ## Consumption rate
 
-> [!NOTE]
-> The billing for prebuilt AI services in Fabric became effective on November 1st, 2024, as part of your existing Power BI Premium or Fabric Capacity.
-
-A request for prebuilt AI services consumes Fabric Capacity Units. This table defines how many capacity units (CU) are consumed when an AI service is used.
-
 ### Consumption rate for OpenAI language models
 
-| **Models** | **Context (Tokens)** | **Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** |
-|---|---|---|---|
-|GPT-4o-2024-08-06 Global |128 K|84.03 CU seconds |336.13 CU seconds|
-|GPT-4o-mini-0718 Global |128 K|5.04 CU seconds |20.17 CU seconds|
-|GPT-4| 32 K |2,016.81 CU seconds |4,033.61 CU seconds|
-|GPT-3.5-Turbo-0125 |16K|16.81 CU seconds |50.42 CU seconds|
+| **Model** | **Deployment Name** | **Context Window (Tokens)** | **Input (Per 1,000 Tokens)** | **Cached Input (Per 1,000 Tokens)**  | **Output (Per 1,000 Tokens)** | **Retirement Date** |
+|---|---|---|---|---|---|---|
+| gpt-5.1-2025-11-13 | `gpt-5.1` | 400,000<br> Max output: 128,000 | 42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds | |
+| gpt-5-2025-08-07 | `gpt-5` | 400,000<br> Max output: 128,000 |  42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds | TBD |
+| gpt-5-mini-2025-08-07 | `gpt-5-mini` | 400,000<br> Max output: 128,000 | 8.40 CU seconds | 0.84 CU seconds | 67.23 CU seconds | |
+| gpt-4.1-2025-04-14 | `gpt-4.1` | 128,000<br>Max output: 32,768 | 67.23 CU seconds | 16.81 CU seconds | 268.91 CU seconds | May 30, 2026 |
+| gpt-4.1-mini-2025-04-14 | `gpt-4.1-mini` | 128,000<br>Max output: 32,768 | 13.45 CU seconds | 3.36 CU seconds | 53.78 CU seconds | Jun 15, 2026 |
 
 ### Consumption rate for OpenAI embedding models
 
-| **Models** | **Operation Unit of Measure** | **Consumption rate** |
-|---|---|---|
-|text-embedding-ada-002 | 1,000 Tokens|3.36 CU seconds|
+| **Models** | **Deployment Name** | **Context (Tokens)** | **Input (Per 1,000 Tokens)** |
+|---|---|---|---|
+| Ada | `text-embedding-ada-002` | 8192 | 3.36 CU seconds |
 
 ### Consumption rate for Text Analytics
 
@@ -125,23 +118,36 @@ A request for prebuilt AI services consumes Fabric Capacity Units. This table de
 |Translate | 1M Characters | 336,134.45 CU seconds|
 |Transliterate | 1M Characters | 336,134.45 CU seconds|
 
-## Changes to AI services in Fabric consumption rate
+## Changes to Foundry Tools in Fabric consumption rate
 
-Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in the Microsoft Release Notes or the Microsoft Fabric Blog. If any change to a AI service in Fabric Consumption Rate materially increases the Capacity Units (CU) required to use, customers can use the cancellation options available for the chosen payment method.
+Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in the Microsoft Release Notes or the Microsoft Fabric Blog. If any change to an AI service in Fabric Consumption Rate materially increases the Capacity Units (CU) required to use, customers can use the cancellation options available for the chosen payment method.
 
 ## Monitor the Usage
 
-The workload meter associated with the task determines the charges for prebuilt AI services in Fabric. For example, if AI service usage is derived from a Spark workload, the AI usage is grouped together and billed under the Spark billing meter on [Fabric Capacity Metrics app](../../enterprise/metrics-app-compute-page.md).
+Prebuilt AI services in Fabric are billed against the Copilot and AI billing meter on your Fabric capacity. For current consumption rates, see [Consumption rate](#consumption-rate) earlier in this article.
+
+You can monitor AI services usage using the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md). To view AI-related usage:
+
+1. Install the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md#install-the-app) (requires capacity admin permissions for initial setup).
+2. In the app, look for usage reported under the Copilot and AI meter to see capacity consumption from AI Services and AI Functions operations.
+
+> [!NOTE]
+> Starting March 17, 2026, the Capacity Metrics app shows AI Functions and AI Services as separate operations. This is a reporting-only change; underlying consumption rates are unchanged.
+> 
+> Prebuilt AI services and AI functions usage is reported under the Copilot and AI meter.
+> This is separate from the Spark compute used to run your notebook or Spark job, which continues to be reported under the Spark billing meter. For more information on Spark compute usage, see [Spark compute usage reporting](../../data-engineering/spark-compute.md).
 
 ### Example
+A data analyst uses [Fabric AI functions](../ai-functions/overview.md) in a Fabric PySpark notebook to leverage LLM to classify millions of customer reviews into product categories. The notebook runs on Spark compute and calls [`ai.classify`](../ai-functions/pyspark/classify.md) for each row.
 
-An online shop owner uses SynapseML and Spark to categorize millions of products into relevant categories. Currently, the shop owner applies hard-coded logic to clean and map the raw "product type" to categories. However, the owner plans to switch to use of the new native Fabric OpenAI LLM (Large Language Model) endpoints. This iteratively processes the data against an LLM for each row, and then categorizes the products based on their "product name," "description," "technical details," and so on.
+- The CU consumption for running the notebook (cluster time, data processing) is reported under the Spark billing meter.
+- The CU consumption for the AI function calls (token usage for classification) is reported as AI Functions under the Copilot and AI billing meter.
 
-The expected cost for Spark usage is 1000 CUs. The expected cost for OpenAI usage is about 300 CUs.
-
-To test the new logic, first iterate it in a Spark notebook interactive run. For the operation name of the run, use "Notebook Interactive Run." The owner expects to see an all-up usage of 1300 CUs under "Notebook Interactive Run," with the Spark billing meter accounting for the entire usage.​
-
-Once the shop owner validates the logic, the owner sets up the regular run and expects to see an all-up usage of 1300 CUs under the operation name "Spark Job Scheduled Run," with the Spark billing meter accounting for the entire usage.​
+This separation makes it easier to track and forecast AI-related costs independently from your compute costs.
 
 ## Related content
-- [Use prebuilt Azure OpenAI in Fabric](how-to-use-openai-sdk-synapse.md)
+
+- [Fabric AI Functions](../ai-functions/overview.md) for large scale dataset transformations in Fabric for Pandas or PySpark DataFrames
+- [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) for distributed processing using Spark DataFrames with no overhead
+- [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) for pythonic control over single API calls using OpenAI Python SDK
+- [Use Azure OpenAI with REST API](how-to-use-openai-via-rest-api.md) for direct REST API calls to the LLM endpoint

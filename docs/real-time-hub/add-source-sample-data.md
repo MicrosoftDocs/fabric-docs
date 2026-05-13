@@ -1,11 +1,12 @@
 ---
 title: Get events from sample data sources
-description: This article describes how to get events from sample data sources.
-author: ahartoon
-ms.author: anboisve
+description: Sample data sources in Real-Time hub let you quickly test event streaming. Learn how to connect, configure, and view sample data streams step by step.
+#customer intent: As a data analyst, I want to get events from sample data sources into Real-Time hub so that I can explore and test real-time data capabilities without needing a live data source.
+ms.reviewer: anboisve
 ms.topic: how-to
-ms.custom:
-ms.date: 11/18/2024
+ms.date: 04/01/2026
+author: spelluru
+ms.author: spelluru
 ---
 
 # Get events from sample data sources into Real-Time hub
@@ -14,15 +15,15 @@ This article describes how to get events from sample data sources into Real-Time
 
 
 
-## Prerequisites
+[!INCLUDE [sample-data-connector-prerequisites](../real-time-intelligence/event-streams/includes/connectors/sample-data-connector-prerequisites.md)]
 
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
+## Data sources page
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 ## Add sample data as a source
 
-1. On the **Data sources** page, select **Sample scenarios** from categories at the top.
+1. On the **Data sources** page, select **Samples** from categories at the top.
 1. Select **Connect** on a sample scenario tile (for example, Bicycle rentals) on the page.
 
     :::image type="content" source="./media/add-source-sample-data/select-sample-data.png" alt-text="Screenshot that shows the selection of Sample data as the source type in the Connect to data source page." lightbox="./media/add-source-sample-data/select-sample-data.png":::
@@ -52,3 +53,4 @@ To learn about consuming data streams, see the following articles:
 - [Process data streams](process-data-streams-using-transformations.md)
 - [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
 - [Set alerts on data streams](set-alerts-data-streams.md)
+

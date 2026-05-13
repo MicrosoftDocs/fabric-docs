@@ -1,11 +1,10 @@
 ---
-title: Workspace monitoring overview
+title: Workspace Monitoring Overview
 description: Understand what is workspace monitoring in Microsoft Fabric and how it can help you to gain insights into the usage and performance of your workspace.
-author: KesemSharabi
-ms.author: kesharab
+author: SnehaGunda
+ms.author: sngun
 ms.topic: overview
-ms.custom:
-ms.date: 03/23/2025
+ms.date: 04/27/2026
 #customer intent: As a workspace admin I want to monitor my workspace to gain insights into the usage and performance of my workspace so that I can optimize my workspace and improve the user experience.
 ---
 
@@ -15,7 +14,7 @@ Workspace monitoring is a Microsoft Fabric database that collects and organizes 
 
 ## Monitoring
 
-Workspace monitoring creates an [Eventhouse](../real-time-intelligence/eventhouse.md) database in your workspace that collects and organizes logs and metrics from the Fabric items in the workspace. Workspace contributors can query the database to learn more about the performance of their Fabric items.
+Workspace monitoring creates an [Eventhouse](../real-time-intelligence/eventhouse.md) database in your workspace that collects and organizes logs and metrics from the Fabric items in the workspace. To learn how to manage and monitor the Eventhouse created for workspace monitoring, see [Manage and Monitor an Eventhouse](../real-time-intelligence/manage-monitor-eventhouse.md). Workspace contributors can query the database to learn more about the performance of their Fabric items.
 
 * **Security** - Workspace monitoring is a secure read-only database that is accessible only to workspace users with at least a contributor role.
 
@@ -26,6 +25,9 @@ Workspace monitoring creates an [Eventhouse](../real-time-intelligence/eventhous
 ## Operation logs
 
 After you install [workspace monitoring](enable-workspace-monitoring.md), you can query the following logs:
+
+* All up Fabric
+  * [Item job events](item-job-event-logs.md) to monitor job performance and trends for Fabric items.
 
 * Data engineering (GraphQL)
     * [GraphQL operations](../data-engineering/graphql-operations.md)
@@ -38,7 +40,7 @@ After you install [workspace monitoring](enable-workspace-monitoring.md), you ca
     * [Query logs](../real-time-intelligence/monitor-logs-query.md)
 
 * Mirrored database
-    * [Mirrored database logs](../database/mirrored-database/monitor-logs.md)
+    * [Mirrored database logs](../mirroring/monitor-logs.md)
 
 * Power BI
     * [Semantic models](/power-bi/enterprise/semantic-model-operations)
@@ -49,7 +51,7 @@ Workload monitoring sample queries are available from [workspace-monitoring](htt
 
 ## Templates
 
-You can explore workspace monitoring using Power BI reports and Real-time dashboard templates available from [workspace-monitoring-dashboards](https://github.com/microsoft/fabric-toolbox/tree/main/monitoring/workspace-monitoring-dashboards).
+You can create and explore workspace monitoring using Power BI reports and Real-time dashboards by following the [Visualize workspace monitoring](sample-gallery-workspace-monitoring.md) guide or via the templates available from [workspace-monitoring-dashboards](https://github.com/microsoft/fabric-toolbox/tree/main/monitoring/workspace-monitoring-dashboards).
 
 ## Considerations and limitations
 
@@ -65,11 +67,15 @@ You can explore workspace monitoring using Power BI reports and Real-time dashbo
 
 * User data operation logs aren't available even though the table is available in the monitoring database.
 
+* If any table listed above is missing from the monitoring Eventhouse, it might be because the Eventhouse was created before the table became available. To resolve this issue, go to the **Monitoring** tab in the workspace settings pane, turn off the **Log workspace activity** setting, and then turn it on again.
+
 * Workspace monitoring is billed based on the capacity consumed by the monitoring items. For more details, see [Eventhouse and KQL Database consumption](../real-time-intelligence/real-time-intelligence-consumption.md) and [Microsoft Fabric event streams capacity consumption](../real-time-intelligence/event-streams/monitor-capacity-consumption.md).
 
 * [Throttling](../enterprise/throttling.md)
-    * Monitoring Eventstream and Eventhouse operations arn't impacted by the state of the capacity. When the capacity is throttled, the queries on the monitoring Eventhouse and the Eventstream ingestion operations continue to function normally. There's also no impact to real-time dashboards built on top of the monitoring database.
+    * Monitoring Eventstream and Eventhouse operations aren't impacted by the state of the capacity. When the capacity is throttled, the queries on the monitoring Eventhouse and the Eventstream ingestion operations continue to function normally. There's also no impact to real-time dashboards built on top of the monitoring database.
     * Power BI reports or Activator alerts, built on top of the monitoring database respect the capacity state and get throttled.
+
+* Currently private links are not supported for workspace monitoring.
 
 ## Related content
 

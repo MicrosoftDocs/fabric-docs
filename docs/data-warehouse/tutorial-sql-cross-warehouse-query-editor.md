@@ -1,8 +1,6 @@
 ---
 title: "Data Warehouse Tutorial: Create a Cross-Warehouse Query in a Warehouse"
 description: "In this tutorial, learn how to work with the SQL query editor to write cross-warehouse query."
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: prlangad
 ms.date: 04/06/2025
 ms.topic: tutorial

@@ -1,13 +1,13 @@
 ---
 title: Microsoft Entra Authentication in Fabric Data Warehouse
 description: Learn more about Microsoft Entra authentication, an alternative to SQL authentication in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: frnuson, kadejo, jaszymas
 ms.date: 04/06/2025
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom:
-  - fabric-cat
+- fabric-cat
+- sfi-image-nochange
+- sfi-ropc-nochange
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 # Microsoft Entra authentication as an alternative to SQL authentication
@@ -80,7 +80,7 @@ Fabric natively supports authentication and authorization for Microsoft Entra us
 
 Fabric uses the Tabular Data Stream (TDS) protocol, the same as SQL Server, when you connect with a connection string.
 
-Fabric is compatible with any application or tool able to connect to a product with the SQL Database Engine. Similar to a SQL Server instance connection, TDS operates on TCP port 1433. For more information about Fabric SQL connectivity and finding the SQL connection string, see [Connectivity](connectivity.md#retrieve-the-sql-connection-string).
+Fabric is compatible with any application or tool able to connect to a product with the SQL Database Engine. Similar to a SQL Server instance connection, TDS operates on TCP port 1433. For more information about Fabric SQL connectivity and finding the SQL connection string, see [Find the warehouse connection string](how-to-connect.md#find-the-warehouse-connection-string).
 
 A sample SQL connection string looks like: `<guid_unique_your_item>.datawarehouse.fabric.microsoft.com`.
 

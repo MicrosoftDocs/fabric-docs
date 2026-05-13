@@ -1,34 +1,58 @@
 ---
-title: Eventhouse and KQL Database consumption
+title: Eventhouse and KQL Database Consumption
 description: Learn how eventhouses and KQL databases consume capacity units in Real-Time Intelligence.
 ms.reviewer: bwatts
-ms.author: shsagir
-author: shsagir
 ms.topic: concept-article
+ms.subservice: rti-eventhouse
 ms.custom:
-ms.date: 11/19/2024
+ms.date: 05/11/2026
 ms.search.form: Eventhouse,KQL Database, Overview
+ai-usage: ai-assisted
 ---
 # Eventhouse and KQL Database consumption
 
-[Eventhouses](create-eventhouse.md) and [KQL databases](create-database.md) operate on a fully managed Kusto engine. With an Eventhouse or KQL database, you can expect available compute for your analytics within 5 to 10 seconds. The compute resources grow with your data analytic needs. This article explains compute usage reporting of the KQL databases in Microsoft Fabric, including [Eventhouse UpTime](#eventhouse uptime) and [storage](#monitor-onelake-storage).
+[Eventhouses](create-eventhouse.md) and [KQL databases](create-database.md) operate on a fully managed engine. With an Eventhouse or KQL database, you can expect available compute for your analytics within 5 to 10 seconds. The compute resources grow with your data analytic needs. This article explains compute usage reporting of the KQL databases in Microsoft Fabric, including [Eventhouse UpTime](#eventhouse-uptime) and [storage](#monitor-onelake-storage).
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, visit [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md).
 
 > [!IMPORTANT]
 > **Changes to Microsoft Fabric Workload Consumption Rate**
 >
-> Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in [Microsoft's Release Notes](/fabric/release-plan) or [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/en-US/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers can use the cancellation options available for the chosen payment method.  
+> Consumption rates are subject to change at any time. Microsoft makes reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in [Microsoft's Release Notes](/fabric/release-plan) or [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers can use the cancellation options available for the chosen payment method.  
 
 ## Capacity
 
-Based on the Capacity SKU that was purchased in Fabric, you're entitled to a set of Capacity Units (CUs) that are shared across all Fabric workloads. For more information on licenses supported, see [Microsoft Fabric licenses](../enterprise/licenses.md).
+Based on the Capacity Stock Keeping Unit (SKU) that was purchased in Fabric, you're entitled to a set of Capacity Units (CUs) that are shared across all Fabric workloads. For more information on licenses supported, see [Microsoft Fabric licenses](../enterprise/licenses.md).
 
-Capacity is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different resources consume CUs at different times. The amount of capacity that used by a KQL database is based on the **Eventhouse UpTime** operation.
+Capacity is a dedicated set of resources that's available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different resources consume CUs at different times. The amount of capacity that used by a KQL database is based on the **Eventhouse UpTime** operation.
+
+## Throttling
+
+When capacity limits are reached, the eventhouse applies throttling to protect system stability. There are three levels of throttling:
+
+- **Proactive** – queries are throttled, but data ingestion continues normally.
+- **Reactive** – both ingestion and queries are paused, but no data is lost.
+- **Extreme reactive** – ingestion and queries are paused, data is held for a period, but data might be lost after a certain period.
+
+When an eventhouse enters proactive, capacity is reduced to maintain availability for an extended period for modest actions (proactive and reactive), maintaining eventhouse availability with reduced performance.
+
+## Workspace-level surge protection
+
+Surge protection now includes workspace-level controls that provide more granular management of compute usage across your organization. This update helps you better control capacity utilization and prioritize critical workloads.
+
+### Key enhancements
+
+**Per-workspace CU % limits**: You can define a compute unit (CU) consumption threshold for individual workspaces, as a percentage of overall capacity utilization. These thresholds are set over a rolling 24-hour period.
+
+**Automatic blocking**: A workspace is placed in a blocked state automatically When the workspace exceeds its threshold. The workspace rejects new operations until its usage drops below the threshold or until you manually remove the block.
+
+**Mission critical mode**: You can designate high-priority workspaces as mission critical, which exempts them from surge protection rules and effectively prioritizes them over other workspaces. This mode can also be used to remove an active blocked state.
+
+For information on Fabric capcity-level surge protection, see [Surge protection](../enterprise/surge-protection.md).
 
 ## Eventhouse UpTime
 
-**Eventhouse UpTime for an eventhouse** is the number of seconds that your eventhouse is active in relation to the number of virtual cores used by your eventhouse. An autoscale mechanism is used to determine the size of your eventhouse. This mechanism ensures cost and performance optimization based on your usage pattern. An eventhouse with multiple KQL databases attached to it only shows Eventhouse UpTime for the eventhouse item. You will not see usage for the KQL database sub-item.
+**Eventhouse UpTime for an eventhouse** is the number of seconds that your eventhouse is active in relation to the number of virtual cores used by your eventhouse. An autoscale mechanism is used to determine the size of your eventhouse. This mechanism ensures cost and performance optimization based on your usage pattern. An eventhouse with multiple KQL databases attached to it only shows Eventhouse UpTime for the eventhouse item. You don't see usage for the KQL database subitem.
 
 > For example, an eventhouse with 4 KQL databases using 4 virtual cores that is active for 30 seconds will use 120 seconds of Capacity Units.
 
@@ -37,7 +61,7 @@ Capacity is a dedicated set of resources that is available at a given time to be
 > For example, a database using 4 virtual cores that is active for 30 seconds will use 120 seconds of Capacity Units.
 
 > [!NOTE]
-> If your KQL database is a sub-item of an eventhouse, the Eventhouse UpTime is relfected in the eventhouse item and the database item isn't shown in the list.
+> If your KQL database is a subitem of an eventhouse, the Eventhouse UpTime is reflected in the eventhouse item and the database item isn't shown in the list.
 
 ### Monitor Eventhouse UpTime
 
@@ -54,9 +78,12 @@ Here are some insights you can take from the example:
 
 * The capacity being examined is called *rtafielddemo*.
 * The capacity units for the selected day were used by a single workspace called *RTA Field Demo*.
-* The *Items* view has been filtered to show both *Eventhouse* and *KQL Database*.
-* Selecting a single item, such as an *Eventhouse item*, breaks down the CU usage by operations.
+* The *Items* view is filtered to show both *Eventhouse* and *KQL Database*.
+* Select a single item, such as an *Eventhouse item*, breaks down the CU usage by operations.
 * The utilization graph, on the right side of the app, shows nearly 100% CU usage over time. This high utilization can explain query throttling experienced by users and indicates a need to increase the capacity units.
+
+> [!NOTE]
+> To better understand your Eventhouse compute size, see [Understand Eventhouse compute usage](eventhouse-compute-observability.md).
 
 ## Storage billing
 
@@ -64,8 +91,10 @@ Storage is billed separately from your Fabric or Power BI Premium Capacity units
 
 * **OneLake Cache Storage** is premium storage that is utilized to provide the fastest query response times. When you set the [cache policy](/azure/data-explorer/kusto/management/cachepolicy?context=/fabric/context/context-rti&pivots=fabric), you affect this storage tier. For instance, if you typically query back seven days then you can set the cache retention to seven days for best performance. This storage tier is comparable to the Azure ADLS (Azure Data Lake Storage) premium tier.
 
+<!-- // hide until capacity planner is released
 > [!NOTE]
-> Enabling [minimum consumption](manage-monitor-eventhouse.md#enable-minimum-consumption) means that you aren't charged for *OneLake Cache Storage*. When minimum capacity is set, the eventhouse is always active resulting in 100% Eventhouse UpTime.
+> Enabling the [Capacity Planner](eventhouse-smart-capacity-control.md) means that you aren't charged for *OneLake Cache Storage*. When minimum capacity is set, the eventhouse is always active resulting in 100% Eventhouse UpTime. You can then use the capacity planner scheduler to set minimum capacity values for specific times, without needing to worry about cache storage costs as it's included in the capacity charges. For more information, see [Schedule smart Eventhouse capacity control](eventhouse-smart-capacity-control.md).
+-->
 
 * **OneLake Standard Storage** is standard storage that is used to persist and store all queryable data. When you set the [retention policy](data-policies.md#data-retention-policy), you affect this storage tier. For instance, if you need to maintain 365 days of queryable data you can set the retention to 365 days. This storage tier is comparable to the Azure ADLS (Azure Data Lake Storage) hot tier.
 
@@ -81,4 +110,5 @@ The following image shows a sample storage page from monitoring a KQL database i
 
 * [Microsoft Fabric concepts and licenses](../enterprise/licenses.md)
 * [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
-* [Create a KQL database](create-database.md)
+* [Eventhouse compute usage](eventhouse-compute-observability.md)
+* [Surge protection](../enterprise/surge-protection.md)

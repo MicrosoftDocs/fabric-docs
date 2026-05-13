@@ -1,19 +1,14 @@
 ---
-title: Create and Manage a Warehouse Snapshot (Preview)
+title: Create and Manage a Warehouse Snapshot
 description: Learn how to create, use, and manage warehouse snapshots in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: twcyril
-ms.date: 05/08/2025
-ms.service: fabric
+ms.date: 05/01/2026
 ms.topic: how-to
+ms.search.form: Manage warehouse snapshots
 ---
-# Create and manage a warehouse snapshot (preview)
+# Create and manage a warehouse snapshot
 
 This article includes steps to create and manage warehouse snapshots using the Fabric portal, T-SQL queries, or the [Fabric API](/rest/api/fabric/articles/).
-
-> [!NOTE]
-> Warehouse snapshots are currently a [preview feature](../fundamentals/preview.md).
 
 ## Prerequisites
 
@@ -60,7 +55,7 @@ Content-Type: application/json
   1. Paste it in place of `<bearer token>`.
 
 - Provide self-explanatory values for `<snapshot item display name>`  and `<helpful description of snapshot item>`.
-- Provide a time for the snapshot to be based on. The timestamp can be set to any point within the retention period (within the last 30 days). If `snapshotDateTime` isn't provided, the snapshot uses the current time. 
+- Provide a time for the snapshot to be based on. The timestamp can be set to any point within the [configured retention period](data-retention.md). If `snapshotDateTime` isn't provided, the snapshot uses the current time. 
 
 To return the properties of the specified snapshot:
 
@@ -81,7 +76,9 @@ Once created, warehouse snapshots appear as child items in the workspace.
 
 :::image type="content" source="media/create-manage-warehouse-snapshot/workspace.png" alt-text="Screenshot from the Fabric portal showing the warehouse snapshot in the item list." lightbox="media/create-manage-warehouse-snapshot/workspace.png":::
 
-Connect to the snapshot just like a warehouse. In the settings of your warehouse snapshot, visit **SQL endpoint** to view and copy the **SQL connection string**. The connection string looks like this: `<server-name>.datawarehouse.fabric.microsoft.com`. Users with appropriate permissions (Admin, Member, Contributor, or Viewer) can query a snapshot just like a warehouse. For more information, see [Warehouse connectivity in Microsoft Fabric](connectivity.md).
+Connect to the snapshot just like a warehouse. In the settings of your warehouse snapshot, select the **SQL endpoint** page to view and copy the **SQL connection string**. This is the server name for your warehouse snapshot, and it looks like: `<server-name>.datawarehouse.fabric.microsoft.com`.  
+
+Users with appropriate permissions (Admin, Member, Contributor, or Viewer) can query a snapshot just like a warehouse. For more information, see [Warehouse connectivity in Microsoft Fabric](connectivity.md).
 
 ## View the snapshot timestamp
 
@@ -105,7 +102,7 @@ You can update the timestamp of an existing warehouse snapshot at any time.
 
 You can accomplish this with T-SQL commands in the context of the parent warehouse, or via the Fabric portal. For more information, see [Update snapshot timestamp](warehouse-snapshot.md#update-snapshot-timestamp).
 
-In the Fabric portal, select **Capture new state** from the context menu, then select a timestamp for the snapshot. You can select **Current** or any point within the retention period (within the last 30 days).
+In the Fabric portal, select **Capture new state** from the context menu, then select a timestamp for the snapshot. You can select **Current** or any point within the [configured retention period](data-retention.md).
 
 The `ALTER DATABASE` SQL statement uses the system time of the warehouse as the new point in time in which the source warehouse data will be reflected in the snapshot. 
 
@@ -116,12 +113,17 @@ The `ALTER DATABASE` SQL statement uses the system time of the warehouse as the 
    SET TIMESTAMP = CURRENT_TIMESTAMP; 
    ```
 
-- The timestamp can also be set to any point within the retention period (within the last 30 days). The format of the `TIMESTAMP` argument is `YYYY-MM-DDTHH:MM:SS.SS`. For example, to set the timestamp to April 27, 2025 at 18:10 UTC:
+- The timestamp can also be set to any point within the [configured retention period](data-retention.md). The format of the `TIMESTAMP` argument is `YYYY-MM-DDTHH:MM:SS.SS`. For example, to set the timestamp to April 27, 2025 at 18:10 UTC:
 
    ```sql
    ALTER DATABASE [<snapshot name>]
    SET TIMESTAMP = '2025-04-27T18:10:00.00';
    ```
+
+Warehouse snapshots can also be updated via the Fabric portal. In the ribbon, under **Management**, select **Manage warehouse snapshot**.
+
+> [!NOTE]
+> When you change the [configurable retention period](data-retention.md), if a decrease to the retention period would invalidate one or more existing warehouse snapshots (because their snapshot timestamp falls outside the new retention window), the retention change is blocked. To proceed, first advance the affected snapshots to a more recent timestamp or delete them, and then update the retention period.
 
 ## Rename
 
@@ -163,7 +165,7 @@ Content-Type: application/json
   1. Paste it in place of `<bearer token>`.
 
 - Provide self-explanatory values for `<snapshot item new display name>` and `<helpful description of snapshot item>`.
-- Provide a time for the snapshot to be based on. The timestamp can be set to any point within the retention period (within the last 30 days). If `snapshotDateTime` isn't provided, the snapshot uses the current time.
+- Provide a time for the snapshot to be based on. The timestamp can be set to any point within the [configured retention period](data-retention.md). If `snapshotDateTime` isn't provided, the snapshot uses the current time.
 
 ---
 
