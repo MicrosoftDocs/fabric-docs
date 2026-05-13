@@ -1,5 +1,5 @@
 ---
-title: Enable writeback in reading mode
+title: Enable Writeback in Reading Mode
 description: Learn how to perform writeback operations and access logs while in report reading view.
 ms.date: 05/04/2026
 ms.topic: how-to

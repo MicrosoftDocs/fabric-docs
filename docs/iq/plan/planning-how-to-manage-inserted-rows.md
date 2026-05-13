@@ -1,5 +1,5 @@
 ---
-title: Manage inserted rows in a Planning sheet
+title: Manage Inserted Rows in a Planning Sheet
 description: Learn how to manage inserted rows in a Planning sheet. 
 ms.date: 05/05/2026
 ms.topic: how-to

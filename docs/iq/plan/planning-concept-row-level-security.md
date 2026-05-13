@@ -1,5 +1,5 @@
 ---
-title: Row-level security (RLS) behavior in Fabric plan
+title: Row-Level Security (RLS) Behavior in Fabric Plan
 description: Learn how Row-Level Security (RLS) behaves in Fabric plan (preview). Understand data access rules, role-based visibility, and key differences from Power BI security models.  
 ms.date: 04/30/2026
 ms.topic: concept-article

@@ -1,5 +1,5 @@
 ---
-title: Create a model by using model builder
+title: Create a Model by Using Model Builder
 description: Learn how to create a model by using model builder.
 ms.date: 04/28/2026
 ms.topic: how-to
