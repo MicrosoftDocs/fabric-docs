@@ -4,7 +4,7 @@ description: How to configure row-level security for imported semantic models, a
 author: billmath
 ms.author: billmath
 ms.topic: how-to
-ms.date: 05/05/2026
+ms.date: 05/13/2026
 ms.update-cycle: 180-days
 ms.custom: 'sfi-image-nochange'
 LocalizationGroup: Administration
@@ -37,25 +37,25 @@ You can configure RLS for imported semantic models in Power BI Desktop or the Po
 
 The following examples show common DAX filter expressions you can use when defining RLS roles:
 
-- **Static RLS** — Restricts data to a fixed value:
+- **Static RLS** - Restricts data to a fixed value:
 
   ```dax
   [Region] = "West"
   ```
 
-- **Dynamic RLS with UPN** — Restricts data based on the signed-in user's email address:
+- **Dynamic RLS with UPN** ΓÇö Restricts data based on the signed-in user's email address:
 
   ```dax
   [UserEmail] = USERPRINCIPALNAME()
   ```
 
-- **Dynamic RLS with USERNAME** — Restricts data based on the user's domain and username:
+- **Dynamic RLS with USERNAME** ΓÇö Restricts data based on the user's domain and username:
 
   ```dax
   [UserDomain] = USERNAME()
   ```
 
-- **Dynamic RLS with CUSTOMDATA** — Restricts data based on a custom string passed from the embedding application:
+- **Dynamic RLS with CUSTOMDATA** ΓÇö Restricts data based on a custom string passed from the embedding application:
 
   ```dax
   [AppRole] = CUSTOMDATA()
@@ -64,7 +64,7 @@ The following examples show common DAX filter expressions you can use when defin
   > [!NOTE]
   > `CUSTOMDATA()` is primarily used in embedded scenarios where the application passes a custom effective identity string via the Power BI REST API.
 
-Dynamic RLS is the most common approachbecause it allows a single role definition to filter data differently for each user, based on a user-mapping table in your data model.
+Dynamic RLS is the most common approach because it allows a single role definition to filter data differently for each user, based on a user-mapping table in your data model.
 
 ### Bi-directional cross-filtering
 
@@ -106,7 +106,7 @@ You can use the following groups to set up row-level security.
 
 - Distribution Group
 - Mail-enabled Group
-- [Microsoft Entra Security Group](/azure/active-directory/fundamentals/groups-view-azure-portal)
+- [Microsoft Entra Security Group](/azure/active-directory/fundamentals/groups-view-azure-portal) ΓÇö If the security group contains external B2B guest users, see [Considerations for external (B2B guest) users](#considerations-for-external-b2b-guest-users) for known limitations.
 
 > [!IMPORTANT]
 > Microsoft 365 groups aren't supported and can't be added to any roles. Only the group types listed above are supported for RLS role membership.
@@ -170,10 +170,27 @@ If you publish your Power BI Desktop report to a [workspace](/power-bi/collabora
 
 ## Considerations for external (B2B guest) users
 
-If you share Power BI content with external users through [Microsoft Entra B2B](/azure/active-directory/external-identities/what-is-b2b), it's important to understand how RLS interacts with guest user identities.
+If you share Power BI content with external users through [Microsoft Entra B2B](/azure/active-directory/external-identities/what-is-b2b), be aware of the following considerations for RLS.
+
+### Entra security groups with external members
+
+Microsoft Entra security groups that contain external B2B guest users might not work as expected when used for RLS role membership. In some configurations — particularly when the external user has a guest-type account (rather than a member-type account) — the guest's group membership isn't correctly evaluated by the Power BI service when enforcing RLS filters.
+
+**Recommended workaround:** Instead of adding external users to RLS roles through Entra security groups, add them directly to the role by email address. The email address is resolved to the user's B2B account. This ensures their identity is correctly matched when RLS filters are applied.  For more information see [Manage Role Membership](#manage-role-membership).
+
+For organizations with many external users, consider using dynamic RLS with `USERPRINCIPALNAME()` instead of group-based role membership. This approach evaluates each user's identity individually and avoids the group membership resolution issue entirely.
+
+> [!IMPORTANT]
+> If you currently use Microsoft Entra security groups for RLS role membership and those groups include B2B guest users, verify that the guest users see the correct filtered data. If they don't, add the external users directly to the RLS role by email address.
+
+> [!NOTE]
+> The exact scope of this limitation may vary depending on your Microsoft Entra ID configuration and the type of B2B guest invitation used. Always test with actual guest user accounts before relying on group-based RLS for external access.
+
+For more information on sharing content with external users, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/guidance/whitepaper-azure-b2b-power-bi).
+
+If the issue persists after applying the workaround, see [Troubleshooting: External guest sees no data](#troubleshooting-external-guest-sees-no-data) for additional diagnostic steps.
 
 ### UPN resolution for B2B guests
-
 
 When an external B2B guest user accesses a Power BI report, the `USERPRINCIPALNAME()` DAX function typically returns an email-like identifier (for example, `user@partner.com`). In some configurations, it might return a guest UPN in the `#EXT#` format (for example, `user_partner.com#EXT#@yourtenant.onmicrosoft.com`).
 
@@ -181,7 +198,7 @@ This distinction matters for dynamic RLS. If your user-mapping table stores a di
 
 ### USERNAME() behavior for B2B guests
 
-The `USERNAME()` DAX function returns the user's domain\username identifier. For B2B guest users, this function typically returns the guest's home tenant UPN (for example, `user@partner.com`) rather than a domain\username format. Because `USERNAME()` and `USERPRINCIPALNAME()` often return the same value for B2B guests, most implementations use `USERPRINCIPALNAME()` for consistency.
+The `USERNAME()` DAX function returns the user's domain\username identifier. For B2B guest users, this function typically often returns a UPN-like identifier similar to USERPRINCIPALNAME(), depending on configuration (for example, `user@partner.com`) rather than a domain\username format. Because `USERNAME()` and `USERPRINCIPALNAME()` often return the same value for B2B guests, most implementations use `USERPRINCIPALNAME()` for consistency.
 
 > [!TIP]
 > If your existing dynamic RLS uses `USERNAME()`, verify what value it returns for guest users in your environment before sharing content externally. You can check by adding a card visual displaying `USERNAME()` in a test report.
@@ -212,6 +229,8 @@ If a B2B guest user sees an empty report or receives a "no data" message, follow
 3. **Check for case sensitivity** - DAX string comparisons are case-insensitive by default, but verify your data source hasn't introduced case-sensitive values.
 4. **Review cross-tenant access settings** - If your organization uses [cross-tenant access policies](/azure/active-directory/external-identities/cross-tenant-access-overview), these can affect which UPN format is presented to Power BI.
 5. **Test with the actual guest user** - The **Test as role** feature uses your own identity. Always validate with the real external guest account.
+6. **Verify role assignment** — If a guest user sees *more* data than expected, confirm they're assigned to an RLS role. Users who aren't assigned to any RLS role typically see no data (empty results), because RLS is enforced but no matching role is applied.
+
 For more information on sharing Power BI content with external users, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/guidance/whitepaper-azure-b2b-power-bi).
 
 [!INCLUDE [include-short-name](../includes/row-level-security-limitations.md)]
