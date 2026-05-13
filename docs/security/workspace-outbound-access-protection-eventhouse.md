@@ -40,7 +40,7 @@ Even with outbound access protection enabled, Eventhouse can connect to the foll
 
 When you enable workspace OAP, the following Eventhouse outbound access scenarios are **blocked**:
 
-- Accessing Eventhouse databases directly, other than OneLake.
+- Accessing Eventhouse databases directly, other than through OneLake shortcuts.
 - Connecting to external resources, other than Event Hubs.
 - Using Copilot to generate queries or analyze data.
 
