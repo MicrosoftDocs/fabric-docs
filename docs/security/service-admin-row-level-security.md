@@ -4,7 +4,7 @@ description: How to configure row-level security for imported semantic models, a
 author: billmath
 ms.author: billmath
 ms.topic: how-to
-ms.date: 05/05/2026
+ms.date: 05/13/2026
 ms.update-cycle: 180-days
 ms.custom: 'sfi-image-nochange'
 LocalizationGroup: Administration
