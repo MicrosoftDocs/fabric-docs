@@ -1,5 +1,5 @@
 ---
-title: Use rules (with Fabric Activator)
+title: Use Rules (with Fabric Activator)
 description: Learn about using Fabric Activator rules in ontology (preview).
 ms.date: 04/24/2026
 ms.topic: how-to

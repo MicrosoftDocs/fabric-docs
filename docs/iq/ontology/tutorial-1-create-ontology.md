@@ -1,5 +1,5 @@
 ---
-title: "Tutorial part 1: Create an ontology"
+title: "Tutorial Part 1: Create an Ontology"
 description: Create an ontology (preview) item with data from a semantic model or OneLake. Part 1 of the ontology (preview) tutorial.
 ms.date: 04/13/2026
 ms.topic: tutorial
