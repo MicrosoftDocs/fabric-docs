@@ -5,7 +5,7 @@ ms.reviewer: zhaya
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.date: 04/13/2026
+ms.date: 05/13/2026
 
 #customer intent: As a Fabric user, I want to understand how to use the job scheduler to automate tasks and manage schedules for my items in Fabric.
 
@@ -63,6 +63,8 @@ To ensure your schedule is valid:
 
 * The Scheduler limits each user to 100 job submissions and 100 Get Job requests per minute to maintain system stability. Requests beyond these limits are automatically rejected.
 
+* Fabric limits each item to 100 concurrent jobs. All jobs submitted beyond this number are automatically failed. A job counts toward this limit as long as it's in any active state (starting, preparing, queueing, or running). The slot is released only after the job completes.
+
 * Jobs can run for a maximum of 24 days. Any jobs exceeding this duration are automatically terminated.
 
 > [!IMPORTANT]
@@ -72,7 +74,7 @@ To ensure your schedule is valid:
 
 You can receive email notifications when a job triggered by a **schedule** fails to complete.
 
-:::image type="content" source="media/job-scheduler/job-scheduler-failure-notifications.png" alt-text="Screenshot of failure notification field in scheduler pane.":::
+:::image type="content" source="media/job-scheduler/job-scheduler-failure-notifications.png" alt-text="Screenshot of the failure notification field in the Fabric job scheduler pane.":::
 
 ### Configure failure notifications
 While configuring a schedule, add users or groups under **Failure notifications** to receive emails when a scheduled run fails.

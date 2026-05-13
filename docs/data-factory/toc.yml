@@ -11,12 +11,6 @@
         href: guided-lab-experience.md
       - name: Data Factory training
         href: /training/paths/get-started-fabric
-      - name: Copilot in Fabric in the Data Factory workload
-        items: 
-          - name: What is Copilot in Fabric in the Data Factory workload? 
-            href: copilot-fabric-data-factory.md
-          - name: Get started with Copilot in Fabric in the Data Factory workload
-            href: copilot-fabric-data-factory-get-started.md
       - name: Pricing in Data Factory
         items: 
           - name: Pricing overview
@@ -87,6 +81,12 @@
         href: create-first-dataflow-gen2.md
       - name: Operationalize Data Factory
         href: transform-data.md
+  - name: Copilot in Data Factory
+    items: 
+      - name: What is Copilot in Data Factory? 
+        href: copilot-fabric-data-factory.md
+      - name: Get started with Copilot in Data Factory
+        href: copilot-fabric-data-factory-get-started.md
   - name: Migrate to Fabric
     items:
     - name: Compare Azure Data Factory to Data Factory in Fabric
@@ -142,6 +142,8 @@
         items:
           - name: Service principal support
             href: service-principals.md
+          - name: Workspace identity support
+            href: workspace-identity.md
           - name: Access database
             items: 
               - name: Access database - Overview
@@ -1048,6 +1050,8 @@
             href: create-first-dataflow-gen2.md
           - name: Get data in dataflows
             href: get-data-dataflow-gen2.md
+          - name: My Queries (Preview)
+            href: dataflow-gen2-my-queries.md
           - name: Use a dataflow in a pipeline
             href: tutorial-dataflows-gen2-pipeline-activity.md
           - name: Save a draft of your dataflow
@@ -1113,7 +1117,7 @@
               - name: Implement slowly changing dimension type 2
                 href: slowly-changing-dimension-type-two.md
               - name: Staging in Dataflow Gen2
-                href: data-in-staging-artifacts.md
+                href: data-in-staging-items.md
               - name: How to handle schema drift
                 href: how-to-handle-schema-drift.md
               - name: How to obfuscate data
@@ -1285,7 +1289,7 @@
             href: access-apache-airflow-job-logs.md
           - name: CI/CD for Apache Airflow Jobs
             href: cicd-apache-airflow-jobs.md
-  - name: FAQ and Troubleshooting
+  - name: Troubleshoot
     items: 
       - name: Keyboard shortcuts
         href: keyboard-shortcuts.md

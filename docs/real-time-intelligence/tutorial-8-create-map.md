@@ -87,7 +87,7 @@ In this part of the tutorial, you learn how to create a map using geospatial dat
 
     :::image type="content" source="media/tutorial/selection.png" alt-text="Screenshot of geojson selection." lightbox="media/tutorial/selection.png":::
 
-1. We should see the borough boundaries and Buckingham Palace road on the map. You can toggle visibility of each layer by clicking the eye icon next to each layer under **Data layers**.
+1. The borough boundaries and Buckingham Palace road appear on the map. You can toggle visibility of each layer by selecting the eye icon next to each layer under **Data layers**.
 
     :::image type="content" source="media/tutorial/map-data-layers.png" alt-text="Screenshot of 3 data layers in map." lightbox="media/tutorial/map-data-layers.png":::
 

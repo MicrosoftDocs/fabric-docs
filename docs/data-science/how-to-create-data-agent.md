@@ -1,12 +1,14 @@
 ﻿---
 title: Create a Fabric data agent
 description: Learn how to create a Fabric data agent.
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: amjafari
 ms.topic: how-to
-ms.date: 09/17/2025
+ms.date: 05/12/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
-ai.usage: ai-assisted
+ai-usage: ai-assisted
 #customer intent: As an Analyst, I want to create a Fabric data agent that relies on generative AI, that my colleagues and I can use to have conversations about our data.
 ---
 
@@ -22,7 +24,7 @@ You don't need to create or supply an Azure OpenAI key or an access token to use
 
 - Data access runs under your Microsoft Entra ID user identity and your workspace/data permissions. The agent reads schemas and runs SQL/DAX/KQL only if you have access. While most data sources respect workspace permissions, Power BI semantic model interactions via data agents are governed by model-level Read permission and don't require workspace role membership.
 - To add a Power BI semantic model as a data source, you need Read permission on that model (Write isn't required). Read access is also sufficient to ask questions against sources you can access.
-	For more about semantic model permissions, see [Dataset and semantic model security](../admin/service-admin-portal-dataset-security.md). In data agent usage, Read permission is sufficient for querying; Write is required only for modifying the semantic model or enabling features such as Prep for AI.
+    For more about semantic model permissions, see [Dataset and semantic model security](../admin/service-admin-portal-dataset-security.md). In data agent usage, Read permission is sufficient for querying; Write is required only for modifying the semantic model or enabling features such as Prep for AI.
 - If your organization uses a Power BI Premium per capacity (P1 or higher) capacity instead of an F SKU, make sure [Microsoft Fabric is enabled](../admin/fabric-switch.md) on that capacity.
 - Service principals and API tokens aren't required for the in-product chat experience. Any automation with service principals is a separate scenario and isn't covered here.
 

@@ -1,19 +1,51 @@
 ---
 title: Data in Dataflow Gen2 staging 
-description: This article provides information about what staging items are.
+description: Learn what staging items are in Dataflow Gen2, the ELT patterns they enable, and how to manage staged data.
 ms.reviewer: jeluitwi
 ms.topic: concept-article
-ms.date: 11/14/2025
+ms.date: 05/01/2026
 ms.custom: dataflows
 ---
 
 # Data in Dataflow Gen2 staging items
 
-To improve performance and reliability, Dataflow Gen2 uses staging items to store intermediate data during data transformation. This article provides information about what staging items are and how to handle data within them.
+To improve performance and reliability, Dataflow Gen2 uses staging items to store intermediate data during data transformation. This article describes what staging items are, the ELT patterns they unlock through the **stage once, reference many** model, and how to manage the data they hold.
 
 ## What are staging items?
 
 Staging items are intermediate data storage locations used by Dataflow Gen2 to store data during data transformation. These items go by the "DataflowsStagingLakehouse" and "DataflowsStagingWarehouse" names. The staging items are used to store intermediate data during data transformation to improve performance. These items are created automatically when you create your first dataflow and are managed by Dataflow Gen2. These items are hidden from the user in the workspace, but might be visible in other experiences like Get Data or the Lakehouse explorer. We strongly advise not to access or modify the data in the staging items directly as it might lead to unexpected behavior. Also storing data yourself in the staging items isn't supported and might result in data loss.
+
+## ELT patterns: stage once, reference many
+
+Beyond providing intermediate storage, staging unlocks a set of ELT patterns built on a single foundation: **stage once, reference many**. A source query is marked as staged so its output is materialized to internal staging storage. Downstream queries then reference that staged query instead of rereading the source. Fast Copy is an optional accelerator that makes the staged query populate faster, but it isn't what defines the pattern.
+
+The pattern matters because once data is staged, downstream queries can:
+
+- Run against an indexed, queryable copy without hitting the source again.
+- Fold filters, joins, and aggregations back to the staging SQL endpoint instead of executing in the mashup engine.
+- Branch into multiple parallel transformations or destinations from a single materialized result.
+
+### Common use cases
+
+The following patterns are typically layered on top of a staged source query.
+
+| Use case | Description |
+|---|---|
+| **Shape staged data into analytics models** | Referenced queries shape staged data into fact and dimension tables, summaries, rollups, or KPIs through deduplication, group-by, and key generation. |
+| **Fold-down compute pushdown** | Referenced queries written against staged data fold their joins, filters, and group-by operations to the staging SQL endpoint, pushing compute to the warehouse engine instead of the mashup engine. This is often the single biggest performance win staging enables. |
+| **Data quality and audit branch** | Referenced queries validate or inspect staged data (null checks, constraint validation, row counts) without rereading the source. |
+| **Fan-out to multiple destinations** | Multiple referenced queries each load a different destination from the same staged source (for example, one Lakehouse and one Warehouse). |
+| **Stage-then-merge** | Each source is staged in its own query, then a downstream referenced query merges or joins the staged results, folding the join back to the staging SQL endpoint. |
+
+### When staging isn't the right fit
+
+Staging adds storage cost and an extra write before downstream queries run. Consider skipping it when:
+
+- Your transformation already folds end-to-end to the source system, with no compute in the mashup engine.
+- The dataflow has a single output and no downstream branching, validation, or fan-out.
+- Source latency is the bottleneck and the source can't be parallelized through staging.
+
+For more guidance on when to enable or disable staging, see [Best practices for getting the best performance with Dataflow Gen2](dataflow-gen2-performance-best-practices.md).
 
 ## Data in staging items
 
@@ -49,5 +81,7 @@ For more information about OneLake storage pricing, see [Microsoft Fabric pricin
 
 ## Related content
 
+- [Best practices for getting the best performance with Dataflow Gen2](dataflow-gen2-performance-best-practices.md)
+- [Dataflow Gen2 data destinations and managed settings](dataflow-gen2-data-destinations-and-managed-settings.md)
 - [Differences between Dataflow Gen1 and Gen2](dataflows-gen2-overview.md)
 - [Build your first data integration](transform-data.md)
