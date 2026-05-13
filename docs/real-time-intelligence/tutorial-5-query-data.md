@@ -129,7 +129,7 @@ If you're new to writing KQL, you can ask a question in natural language and Cop
 
 1. Select **Run** to run the query.
 
-    :::image type="content" source="media/tutorial/copilot-run.png" alt-text="Screenshot of the queryset with the copilot generated query inserted, and the Run button hightlighted." lightbox="media/tutorial/copilot-run.png":::
+    :::image type="content" source="media/tutorial/copilot-run.png" alt-text="Screenshot of the queryset with the copilot generated query inserted, and the Run button highlighted." lightbox="media/tutorial/copilot-run.png":::
 
 Ask follow-up questions or change the scope of your query. Use this feature to learn KQL and generate queries quickly.
 
