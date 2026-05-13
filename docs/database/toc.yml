@@ -3,7 +3,7 @@ items:
   href: index.yml
 - name: SQL database in Fabric
   items:
-  - name: Overview
+  - name: What is SQL database in Fabric?
     href: sql/overview.md
   - name: Frequently asked questions
     href: sql/faq.yml

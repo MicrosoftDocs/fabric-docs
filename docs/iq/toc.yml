@@ -121,6 +121,12 @@ items:
                 href: plan/planning-writeback/planning-how-to-configure-destination-settings.md
               - name: Configure advanced settings
                 href: plan/planning-writeback/planning-how-to-configure-advanced-settings.md
+              - name: View logs
+                href: plan/planning-writeback/planning-how-to-view-logs.md
+              - name: Enable writeback in reading mode
+                href: plan/planning-writeback/planning-how-to-enable-writeback-reading-mode.md
+              - name: Writeback FAQ
+                href: plan/planning-writeback/planning-writeback-faq.md
         - name: Change layouts
           href: plan/planning-how-to-change-layouts.md
         - name: Create a cube
@@ -160,7 +166,15 @@ items:
               - name: Create templates
                 href: plan/planning-driver-model/planning-how-to-create-templates.md
               - name: Create a driver model
-                href: plan/planning-driver-model/planning-how-to-create-driver-model.md    
+                href: plan/planning-driver-model/planning-how-to-create-driver-model.md
+    - name: Reference
+      items:
+        - name: Formulas and functions
+          items:
+            - name: Conditional statements
+              href: plan/planning-reference-formulas/conditional-statements.md
+            - name: Logical functions
+              href: plan/planning-reference-formulas/logical-functions.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
