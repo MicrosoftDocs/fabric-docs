@@ -54,7 +54,7 @@ After building a model, it's imperative that researchers and engineers understan
 
 ## Enterprise support on Azure Synapse Analytics
 
-SynapseML is generally available on Azure Synapse Analytics with enterprise support. Build large-scale machine learning pipelines using Foundry Tools, LightGBM, ONNX, and other [selected SynapseML features](https://techcommunity.microsoft.com/t5/azure-synapse-analytics-blog/streamline-collaboration-and-insights-with-simplified-machine/ba-p/2924707). Use templates to quickly prototype distributed machine learning systems, like visual search engines, predictive maintenance pipelines, and document translation.
+SynapseML is generally available on Azure Synapse Analytics with enterprise support. Build large-scale machine learning pipelines using Foundry Tools, LightGBM, ONNX, and other [selected SynapseML features](https://techcommunity.microsoft.com/blog/azuresynapseanalyticsblog/streamline-collaboration-and-insights-with-simplified-machine-learning-on-azure-/2924707). Use templates to quickly prototype distributed machine learning systems, like visual search engines, predictive maintenance pipelines, and document translation.
 
 ## Related content
 
