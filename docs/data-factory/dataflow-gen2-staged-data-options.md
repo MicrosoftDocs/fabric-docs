@@ -1,6 +1,6 @@
 ---
-title: Staged data options for Dataflow Gen2 with CI/CD (Preview)
-description: Tune how Dataflow Gen2 with CI/CD writes intermediate (staged) data and copies that data to Fabric Lakehouse destinations using the Staged Data options on the Scale tab.
+title: Staged data options for Dataflow Gen2 (Preview)
+description: Tune how Dataflow Gen2 writes intermediate (staged) data and copies that data to Fabric Lakehouse destinations using the Staged Data options on the Scale tab.
 ms.reviewer: jeluitwi
 ms.topic: how-to
 ms.date: 5/13/2026
@@ -50,7 +50,7 @@ For more on when staging helps, see [Best practices for getting the best perform
 
 ### Default behavior
 
-The option is **off by default** to preserve the existing refresh behavior of your dataflows. Turn it on explicitly to opt into the optimized copy path.
+The option is **off by default**. For most dataflows that stage data and write to a Fabric Lakehouse, turning this option on is beneficial.
 
 ### Considerations
 
@@ -60,26 +60,26 @@ The option is **off by default** to preserve the existing refresh behavior of yo
 
 ## Enable V-Order compression (Preview)
 
-V-Order is a write-time optimization for the Parquet file format that improves read performance for downstream Fabric engines. For background, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).
+V-Order is a write-time optimization for the Parquet file format that improves read performance for downstream Fabric engines, at the cost of additional CPU during the write. For background and cross-engine guidance, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md) and [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
 
 When this option is on, Dataflow Gen2 applies V-Order compression to data written to the **staging Lakehouse**. When it's off, staged data is written without V-Order.
 
+### When to turn V-Order on or off for staging
+
+The staging Lakehouse holds intermediate data that the dataflow then reads back to apply more transformations or to write to a destination. Choose your setting based on how the staged data is consumed:
+
+- **Turn V-Order off (improved write performance)** when staged data is read only a small number of times within the same refresh. This is typical when staging is used purely as a transformation buffer (for example, when transforming a bronze layer into a silver layer that then writes out to a destination). Skipping V-Order reduces write-time CPU and shortens refresh duration, especially for large staging writes.
+- **Turn V-Order on (improved read performance)** when the staged data is read multiple times, or when downstream Fabric engines that benefit from V-Order (such as Power BI Direct Lake or Fabric Warehouse) read the staged data directly. V-Order improves read performance by roughly 10% for the SQL analytics endpoint and Warehouse, and is the recommended write format for Direct Lake consumption.
+
+If you're unsure, the rule of thumb is: data read once benefits more from V-Order being off, and data read many times benefits more from V-Order being on. Spark consumers don't benefit from V-Order. For a detailed matrix of write methods and read engines, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
+
 ### Default behavior
 
-The option is **on by default** to preserve current behavior, where staged data is V-Order compressed.
-
-### When to turn it off
-
-Most workloads should leave V-Order on for staged data because it improves downstream read performance from the staging Lakehouse and any subsequent destination writes. Turn V-Order off only when:
-
-- You don't read from the staging Lakehouse via the SQL analytics endpoint or downstream Fabric engines, and
-- You want to reduce write-time CPU and refresh duration for very large staging writes.
-
-When V-Order is disabled, files written to the staging Lakehouse aren't V-Order compressed, and downstream queries against those files might be slower.
+The option is **on by default**. Use the guidance above to decide what's right for your dataflow.
 
 ### Where else V-Order applies
 
-In addition to the dataflow-level setting that controls the staging Lakehouse, V-Order can also be controlled on the Lakehouse data destination connection itself, through the **Enable use of V-Order compression** advanced option. That setting controls whether data written to the destination Lakehouse is V-Order compressed.
+In addition to the dataflow-level setting that controls the staging Lakehouse, V-Order can also be controlled on the Lakehouse data destination connection itself, through the **Enable use of V-Order compression** advanced option. That setting controls whether data written to the destination Lakehouse is V-Order compressed, and the same scenario-based guidance applies.
 
 For details on the destination-level option, see [Enable V-Order compression on a Lakehouse destination](dataflow-gen2-data-destinations-and-managed-settings.md#enable-v-order-compression-on-a-lakehouse-destination).
 
@@ -88,5 +88,6 @@ For details on the destination-level option, see [Enable V-Order compression on 
 - [Best practices for getting the best performance with Dataflow Gen2](dataflow-gen2-performance-best-practices.md)
 - [Dataflow Gen2 data destinations and managed settings](dataflow-gen2-data-destinations-and-managed-settings.md)
 - [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md)
+- [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
 - [Modern Evaluator for Dataflow Gen2 with CI/CD](dataflow-gen2-modern-evaluator.md)
 - [Use partitioned compute in Dataflow Gen2 (Preview)](dataflow-gen2-partitioned-compute.md)
