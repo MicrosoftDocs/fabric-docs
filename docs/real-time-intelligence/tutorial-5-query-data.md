@@ -41,9 +41,7 @@ In this step, you create a materialized view, which returns an up-to-date result
 
 1. Copy and paste, then run the following command to create a materialized view that shows the most recent number of bikes at each bike station.
 
-    ```
-
- kusto
+    ```kusto
     .create-or-alter materialized-view with (folder="Gold") AggregatedData on table TransformedData
     {
        TransformedData
@@ -125,7 +123,7 @@ If you're new to writing KQL, you can ask a question in natural language and Cop
 
 1. Select the **Insert** button to add the query to the KQL editor.
 
-    :::image type="content" source="media/tutorial/copilot.png" alt-text="Screenshot of Copilot dialog showing a generated KQL query and the Insert button." lightbox="media/tutorial/copilot.png":::
+    :::image type="content" source="media/tutorial/copilot-small.png" alt-text="Screenshot of Copilot dialog showing a generated KQL query and the Insert button." lightbox="media/tutorial/copilot.png":::
 
 1. Select **Run** to run the query.
 
