@@ -9,7 +9,7 @@ ms.topic: how-to
 
 Plan (preview) lets users perform writeback even when a report is in reading view. You can also review logs from [Logs](#logs) under the **Writeback** tab.
 
-:::image type="content" source="../media/planning-writeback/planning-how-to-enable-writeback-reading-mode/writeback-enable-reading-mode.jpg" alt-text="Interface showing the Writeback ribbon tab with the Writeback and Logs buttons available" lightbox="../media/planning-writeback/planning-how-to-enable-writeback-reading-mode/writeback-enable-reading-mode.jpg":::
+:::image type="content" source="../media/planning-writeback/planning-how-to-enable-writeback-reading-mode/writeback-enable-reading-mode.jpg" alt-text="Screenshot showing the Writeback ribbon tab with the Writeback and Logs buttons available." lightbox="../media/planning-writeback/planning-how-to-enable-writeback-reading-mode/writeback-enable-reading-mode.jpg":::
 
 [!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
@@ -19,7 +19,7 @@ The **Writeback** tab option is only available when at least one destination is 
 
 The following options are displayed for users in the reading view who also have writeback access:
 
-:::image type="content" source="../media/planning-writeback/planning-how-to-enable-writeback-reading-mode/writeback-with-access.png" alt-text="Interface showing the available writeback options and report data for authorized users in reading mode" lightbox="../media/planning-writeback/planning-how-to-enable-writeback-reading-mode/writeback-with-access.png":::
+:::image type="content" source="../media/planning-writeback/planning-how-to-enable-writeback-reading-mode/writeback-with-access.png" alt-text="Screenshot showing the available writeback options and report data for authorized users in reading mode." lightbox="../media/planning-writeback/planning-how-to-enable-writeback-reading-mode/writeback-with-access.png":::
 
 ## Writeback
 
@@ -29,4 +29,4 @@ Select **Writeback** to write report data to the configured destination. Plan (p
 
 Select **Logs** to open the writeback logs page.
 
-:::image type="content" source="../media/planning-writeback/planning-how-to-enable-writeback-reading-mode/writeback-logs.png" alt-text="Screenshot of the writeback logs interface displaying a table of past writeback events, durations, and statuses" lightbox="../media/planning-writeback/planning-how-to-enable-writeback-reading-mode/writeback-logs.png":::
+:::image type="content" source="../media/planning-writeback/planning-how-to-enable-writeback-reading-mode/writeback-logs.png" alt-text="Screenshot of the writeback logs interface displaying a table of past writeback events, durations, and statuses." lightbox="../media/planning-writeback/planning-how-to-enable-writeback-reading-mode/writeback-logs.png":::
