@@ -47,13 +47,11 @@ When you enable workspace OAP, the following Eventhouse outbound access scenario
 ## Limitations
 
 - Eventhouse outbound access protection is in public preview.
-
 - All Eventhouse items in the workspace follow the same OAP.
 
 ## Considerations
 
 - Workspace OAP is enforced per workspace.
-
 - All Real-Time Intelligence items in the workspace share the same OAP.
 
 ## Next steps
