@@ -39,7 +39,7 @@ items:
       href: ontology/how-to-create-relationship-types.md
     - name: View entity type details
       href: ontology/how-to-view-entity-type-details.md
-    - name: Add rules
+    - name: Use rules
       href: ontology/how-to-use-rules.md
     - name: Use resource links
       href: ontology/how-to-use-resource-links.md
