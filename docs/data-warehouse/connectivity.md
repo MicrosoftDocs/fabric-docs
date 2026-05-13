@@ -39,7 +39,7 @@ Add retries to your applications and ETL jobs to make them more resilient. For m
 - [Step 4: Connect resiliently to SQL with ADO.NET - ADO.NET Provider for SQL Server](/sql/connect/ado-net/step-4-connect-resiliently-sql-ado-net?view=fabric&preserve-view=true)
 - [Step 4: Connect resiliently to SQL with PHP - PHP drivers for SQL Server](/sql/connect/php/step-4-connect-resiliently-to-sql-with-php?view=fabric&preserve-view=true)
 - Use service tags for firewall clearance, as described in the following section.
-- Always specify the **Initial Catalog** or **Database** property when connecting to your Fabric Data Warehouse. For more information, see [Initial catalog required](#initial-catalog-required).
+- You should provide the warehouse item name as the **Initial Catalog** or **Database name** when you connect. If you don't provide [the `InitialCatalog` connection string property](#connection-behavior-for-initialcatalog), your initial connection context will be to the `master` warehouse.
 
 <a id="allow-power-bi-service-tags-through-firewall"></a>
 
