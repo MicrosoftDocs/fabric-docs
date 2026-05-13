@@ -81,7 +81,7 @@ The service principal authenticates to Microsoft Entra ID using the [client cred
 
 ## Limitations
 
-- Managed identities aren't yet supported for Fabric data agent authentication. You need to use a service principal instead.
+- Managed identities aren't currently supported for Fabric data agent authentication. You need to use a service principal instead.
 - The SPN must have explicit access to every data source added to the data agent. Sharing only the data agent item isn't enough if the SPN lacks read access to the underlying data sources.
 
 ## Related content
