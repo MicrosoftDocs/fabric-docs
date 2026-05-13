@@ -229,7 +229,7 @@ If a B2B guest user sees an empty report or receives a "no data" message, follow
 3. **Check for case sensitivity** - DAX string comparisons are case-insensitive by default, but verify your data source hasn't introduced case-sensitive values.
 4. **Review cross-tenant access settings** - If your organization uses [cross-tenant access policies](/azure/active-directory/external-identities/cross-tenant-access-overview), these can affect which UPN format is presented to Power BI.
 5. **Test with the actual guest user** - The **Test as role** feature uses your own identity. Always validate with the real external guest account.
-6. **Verify role assignment** — If a guest user sees *more* data than expected, confirm they're assigned to an RLS role. Users who aren't assigned to any RLS role typically see no data (empty results), because RLS is enforced but no matching role is applied.
+6. **Verify role assignment** — If a guest user sees *more* data than expected, confirm they're assigned to an RLS role. Users who aren't assigned to any RLS role typically see no data (empty results), because RLS is enforced but no matching role is applied. A DAX filter evaluates TRUE/FALSE for each row. Only rows that return TRUE are visible. Everything else is completely removed.
 
 For more information on sharing Power BI content with external users, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/guidance/whitepaper-azure-b2b-power-bi).
 
