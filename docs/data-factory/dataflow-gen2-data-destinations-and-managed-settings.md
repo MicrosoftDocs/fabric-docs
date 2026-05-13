@@ -281,6 +281,29 @@ You can set this option to **False** in edge cases where:
 
 When the option is set to **False**, the SQL analytics endpoint metadata isn't refreshed by the dataflow, and downstream SQL endpoint consumers may see stale data until the next sync (manual or scheduled) occurs.
 
+### Enable V-Order compression on a Lakehouse destination
+
+> [!NOTE]
+> This advanced option is currently in preview.
+
+When a Dataflow Gen2 refresh writes data to a Fabric Lakehouse table destination, you can control whether the data is written using V-Order compression. V-Order is a write-time optimization for the Parquet file format that improves read performance for downstream Fabric engines such as the SQL analytics endpoint, Direct Lake semantic models, and Spark. For background, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).
+
+This behavior is controlled by the **Enable use of V-Order compression** option, which lives under **Advanced options** in the Lakehouse connection settings (visible when you create or edit a Lakehouse data destination connection). The option is set to **True** by default.
+
+:::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-vorder-compression.png" alt-text="Screenshot of the Connect to data destination dialog for Lakehouse with the Enable use of V-Order compression advanced option highlighted.":::
+
+In most scenarios, you should leave this option enabled so downstream consumers benefit from faster reads against the destination Lakehouse.
+
+You can set this option to **False** in scenarios where:
+
+* You don't read from the destination Lakehouse through Fabric engines that benefit from V-Order, and
+* You want to reduce write-time CPU and shorten refresh duration for very large writes.
+
+When the option is set to **False**, files written to the destination Lakehouse aren't V-Order compressed, and downstream queries against those tables might be slower.
+
+> [!NOTE]
+> The destination-level **Enable use of V-Order compression** option controls writes to the destination Lakehouse. To control V-Order compression for the staging Lakehouse used during dataflow execution, use the dataflow-level **Enable V-Order compression** option on the Scale tab. For more information, see [Staged data options for Dataflow Gen2 with CI/CD](dataflow-gen2-staged-data-options.md).
+
 ### Vacuuming your Lakehouse data destination
 
 When using Lakehouse as a destination for Dataflow Gen2 in Microsoft Fabric, it's important to perform regular maintenance to keep optimal performance and efficient storage management. One essential maintenance task is vacuuming your data destination. This process helps to remove old files that are no longer referenced by the Delta table log, which optimizes storage costs and maintains the integrity of your data.
