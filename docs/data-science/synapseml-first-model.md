@@ -1,35 +1,62 @@
 ---
-title: Build a model with SynapseML
-description: Get a quick introduction to building a machine learning model with SynapseML.
-ms.topic: how-to
-ms.author: scottpolly
+ai-usage: ai-assisted
 author: s-polly
-ms.reviewer: ruxu
-reviewer: ruixinxu
-ms.date: 09/29/2025
-ms.update-cycle: 180-days
+description: Get a quick introduction to building a machine learning model with SynapseML.
+ms.author: scottpolly
 ms.collection: ce-skilling-ai-copilot
-ai.usage: ai-assisted
+ms.date: 05/13/2026
+ms.reviewer: ruxu
+ms.topic: how-to
+ms.update-cycle: 180-days
+reviewer: ruixinxu
+title: Build a model with SynapseML
 ---
 
 # Build a model with SynapseML
 
-This article shows how to build a machine learning model with SynapseML and how it simplifies complex machine learning tasks. Use SynapseML to build a training pipeline with a featurization stage and a LightGBM regression stage. The pipeline predicts ratings from book review text. Here's how to use prebuilt models with SynapseML to solve machine learning problems.
+This article shows you how to build a machine learning model with SynapseML in a Microsoft Fabric notebook. You create a training pipeline that uses text featurization and LightGBM regression to predict book ratings from review text. You also learn how to use Foundry Tools for prebuilt sentiment analysis.
+
+## Quick start
+
+| Step | Action | Estimated time |
+|------|--------|----------------|
+| 1 | Create a Fabric notebook and attach a lakehouse | 5 minutes |
+| 2 | (Optional) Set up Foundry Tools and Azure Key Vault | 15 minutes |
+| 3 | Import libraries and load data | 2 minutes |
+| 4 | Build and train the pipeline | 3 minutes |
+| 5 | Generate predictions | 1 minute |
+| 6 | (Optional) Run Foundry Tools sentiment analysis | 2 minutes |
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
+| Requirement | How to get it | How to verify |
+|-------------|---------------|---------------|
+| Microsoft Fabric subscription | [Get a subscription](../../enterprise/licenses.md) or sign up for a [free trial](../../fundamentals/fabric-trial.md) | Sign in at <https://fabric.microsoft.com/> |
+| Fabric notebook | [Create a notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) in a Fabric workspace | Notebook opens in the Fabric portal |
+| Lakehouse | Select **Add** under **Lakehouses** in the notebook **Explorer** pane | Lakehouse name appears under **Lakehouses** |
+| Foundry Tools key (optional - only for the [sentiment analysis step](#optional-use-foundry-tools-for-sentiment-analysis)) | [Create a multi-service resource for Foundry Tools](/azure/ai-services/multi-service-resource) | Key appears in the Azure portal under the resource's **Keys and Endpoint** section |
+| Azure Key Vault (optional - only for the [sentiment analysis step](#optional-use-foundry-tools-for-sentiment-analysis)) | [Create an Azure Key Vault instance](/azure/key-vault/general/quick-create-portal) | Secret appears in the Key Vault **Secrets** list |
+
+> [!NOTE]
+> The Foundry Tools key and Azure Key Vault are only required if you want to run the optional sentiment analysis step at the end of this article. You can complete the core model-building steps without them.
+
 ## Prepare resources
+
 Set up the tools and resources you need to build the model and pipeline.
 
-1. [Create a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks)
-1. Attach your notebook to a lakehouse. In **Explorer**, expand **Lakehouses**, and then select **Add**.
-1. Get a Foundry Tools key by following the instructions in [Quickstart: Create a multi-service resource for Foundry Tools](/azure/ai-services/multi-service-resource).
-1. [Create an Azure Key Vault instance](/azure/key-vault/general/quick-create-portal) and add your Foundry Tools key to the key vault as a secret.
-1. Record your key vault name and secret name. You need this information to run the one step transform later in this article.
+1. [Create a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) in your Fabric workspace.
+1. Attach your notebook to a lakehouse. In the **Explorer** pane, expand **Lakehouses**, and then select **Add**.
+1. (Optional) If you want to run the sentiment analysis step later, complete these steps:
+   1. Get a Foundry Tools key by following the instructions in [Quickstart: Create a multi-service resource for Foundry Tools](/azure/ai-services/multi-service-resource).
+   1. [Create an Azure Key Vault instance](/azure/key-vault/general/quick-create-portal) and add your Foundry Tools key to the key vault as a secret.
+   1. Record your key vault name and secret name. You need this information for the sentiment analysis step.
+
+**Verification:** Your notebook shows the attached lakehouse name under **Lakehouses** in the **Explorer** pane.
 
 ## Set up the environment
+
 In your notebook, import SynapseML libraries and initialize your Spark session.
 
 ```python
@@ -39,8 +66,24 @@ from synapse.ml.core.platform import *
 spark = SparkSession.builder.getOrCreate()
 ```
 
+**Verification:** Run the following cell to confirm Spark is running:
+
+```python
+print(f"Spark version: {spark.version}")
+```
+
+Expected output:
+
+```output
+Spark version: 3.4.1
+```
+
+> [!NOTE]
+> The exact Spark version depends on your Fabric runtime. Any version 3.4 or later is expected.
+
 ## Load a dataset
-Load your dataset and split it into train and test sets.
+
+Load the book reviews dataset and split it into training and test sets. The dataset contains two columns: `rating` (integer 1-5) and `text` (review content).
 
 ```python
 train, test = (
@@ -55,8 +98,30 @@ train, test = (
 display(train)
 ```
 
+**Verification:** Run the following cell to confirm the data loaded correctly:
+
+```python
+print(f"Training rows: {train.count()}, Test rows: {test.count()}")
+print(f"Columns: {train.columns}")
+train.printSchema()
+```
+
+Expected output:
+
+```output
+Training rows: ~800, Test rows: ~200
+Columns: ['rating', 'text']
+root
+ |-- rating: integer (nullable = false)
+ |-- text: string (nullable = false)
+```
+
+> [!NOTE]
+> The exact row counts vary because `randomSplit` is non-deterministic. Expect approximately 800 training rows and 200 test rows.
+
 ## Create the training pipeline
-Create a pipeline that featurizes data using `TextFeaturizer` from the `synapse.ml.featurize.text` library and derives a rating using the `LightGBMRegressor` function.
+
+Create a pipeline that featurizes the review text with `TextFeaturizer` and predicts the rating with `LightGBMRegressor`.
 
 ```python
 from pyspark.ml import Pipeline
@@ -71,31 +136,121 @@ model = Pipeline(
 ).fit(train)
 ```
 
-## Predict the output of the test data
-Call the `transform` function on the model to predict and display the output of the test data as a dataframe.
+**Verification:** Run the following cell to confirm the pipeline trained:
 
 ```python
-display(model.transform(test))
+print(f"Pipeline stages: {len(model.stages)}")
+print(f"Stage 1: {type(model.stages[0]).__name__}")
+print(f"Stage 2: {type(model.stages[1]).__name__}")
 ```
 
-## Use Foundry Tools to transform data in one step
-Alternatively, for these kinds of tasks that have a prebuilt solution, you can use SynapseML's integration with Foundry Tools to transform your data in one step. Run the following code with these replacements:
+Expected output:
 
-- Replace `<secret-name>` with the name of your Foundry Tools key secret.
-- Replace `<key-vault-name>` with the name of your key vault.
+```output
+Pipeline stages: 2
+Stage 1: TextFeaturizerModel
+Stage 2: LightGBMRegressionModel
+```
+
+## Predict the output of the test data
+
+Call the `transform` method on the model to predict ratings for the test data and display the results.
+
+```python
+predictions = model.transform(test)
+display(predictions)
+```
+
+**Verification:** Run the following cell to confirm predictions were generated:
+
+```python
+print(f"Prediction columns: {predictions.columns}")
+print(f"Prediction count: {predictions.count()}")
+predictions.select("rating", "prediction").show(5)
+```
+
+Expected output:
+
+```output
+Prediction columns: ['rating', 'text', 'features', 'prediction']
+Prediction count: ~200
++------+------------------+
+|rating|        prediction|
++------+------------------+
+|     2| 2.456...|
+|     5| 3.891...|
+...
+```
+
+> [!NOTE]
+> The `prediction` column contains the model's predicted rating (a float). Compare it against the actual `rating` column to assess model performance.
+
+## (Optional) Use Foundry Tools for sentiment analysis
+
+If you want to analyze the sentiment of your book reviews, you can use SynapseML's integration with Foundry Tools. This step uses the prebuilt `TextSentiment` model to classify text sentiment, which is a different task than the rating prediction in the previous steps.
+
+> [!IMPORTANT]
+> This step requires a Foundry Tools key stored in Azure Key Vault. If you skipped those prerequisites, complete them first or skip this section.
+
+Run the following code with these replacements:
+
+- Replace `<your-secret-name>` with the name of your Foundry Tools key secret in Key Vault.
+- Replace `<your-key-vault-name>` with the name of your Azure Key Vault instance.
 
 ```python
 from synapse.ml.services import TextSentiment
 from synapse.ml.core.platform import find_secret
 
-model = TextSentiment(
+sentiment_model = TextSentiment(
     textCol="text",
     outputCol="sentiment",
-    subscriptionKey=find_secret("<secret-name>", "<key-vault-name>")
+    subscriptionKey=find_secret("<your-secret-name>", "<your-key-vault-name>")
 ).setLocation("eastus")
 
-display(model.transform(test))
+sentiment_results = sentiment_model.transform(test)
+display(sentiment_results)
 ```
+
+> [!NOTE]
+> Update the `setLocation` value if your Foundry Tools resource is in a different Azure region (for example, `"westus2"` or `"westeurope"`).
+
+**Verification:** Run the following cell to confirm sentiment analysis completed:
+
+```python
+print(f"Sentiment columns: {sentiment_results.columns}")
+sentiment_results.select("text", "sentiment").show(3, truncate=50)
+```
+
+Expected output:
+
+```output
+Sentiment columns: ['rating', 'text', 'sentiment']
++--------------------------------------------------+--------------------+
+|                                              text|           sentiment|
++--------------------------------------------------+--------------------+
+|Ok~ but I think the Keirsey Temperment Test is ...|[{mixed, ...}]      |
+...
+```
+
+## Troubleshooting
+
+| Issue | Cause | Resolution |
+|-------|-------|------------|
+| `JAVA_GATEWAY_EXITED` error when creating SparkSession | Running code outside a Fabric notebook | Run this code in a Fabric notebook where Spark is preconfigured. Don't run locally without a Spark installation. |
+| `Could not find <secret> in keyvault <vault>` | Key Vault name or secret name is incorrect, or notebook identity lacks access | Verify names match exactly. In the Azure portal, confirm your Fabric workspace identity has **Get** permission on Key Vault secrets. |
+| `TextFeaturizer` returns empty features | Input text column is null or empty | Check for null values: `train.filter(train.text.isNull()).count()` - remove nulls before training. |
+| `randomSplit` returns unexpected row counts | Spark's random splitting is non-deterministic | This is expected behavior. Set a seed for reproducibility: `.randomSplit([0.8, 0.2], seed=42)` |
+| `AnalysisException: Path does not exist` | Network issue accessing the sample data blob | Verify network connectivity. In Fabric, confirm your workspace can access external Azure Blob Storage URLs. |
+| Foundry Tools returns 401 or 403 | Invalid or expired subscription key | Generate a new key in the Azure portal under your Foundry Tools resource **Keys and Endpoint** section. Update the Key Vault secret. |
+| `setLocation` returns 404 | Region mismatch | Set the location to match the Azure region where you created your Foundry Tools resource. |
+
+## Clean up resources
+
+If you created Azure resources for the optional Foundry Tools step and no longer need them, delete them to avoid charges:
+
+1. In the Azure portal, delete the Foundry Tools multi-service resource.
+1. In the Azure portal, delete the Key Vault instance.
+1. In your Fabric workspace, delete the test notebook if you no longer need it.
 
 ## Related content
 
