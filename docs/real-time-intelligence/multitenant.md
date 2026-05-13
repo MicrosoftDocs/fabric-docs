@@ -4,7 +4,7 @@ description: Learn about the different ways to architect a multitenant solution 
 ms.reviewer: vplauzon
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
-ms.date: 05/12/2026
+ms.date: 05/13/2026
 ai-usage: ai-assisted
 ---
 # How to architect a multitenant solution in Real-Time Intelligence
