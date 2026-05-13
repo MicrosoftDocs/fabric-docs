@@ -9,13 +9,13 @@ ai-usage: ai-assisted
 
 # Fabric IQ in Microsoft 365 Copilot Cowork (Frontier)
 
-The **Fabric IQ** plugin connects [Microsoft 365 Copilot Cowork (Frontier)](https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-available-plugins) to your Microsoft Fabric and Power BI data. With the plugin enabled, a Power BI report stops being the end of a workflow and becomes the starting point. You can ground a Cowork chat in trusted business data, then chain that data into the other Cowork skills you already use, like drafting emails, creating documents, or scheduling reviews, without leaving the conversation.
+The **Fabric IQ** plugin connects [Microsoft 365 Copilot Cowork (Frontier)](/microsoft-365/copilot/cowork/cowork-available-plugins) to your Microsoft Fabric and Power BI data. With the plugin enabled, a Power BI report stops being the end of a workflow and becomes the starting point. You can ground a Cowork chat in trusted business data, then chain that data into the other Cowork skills you already use, like drafting emails, creating documents, or scheduling reviews, without leaving the conversation.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 [Fabric IQ](../overview.md) is the Microsoft Fabric workload that gives analytics, AI agents, and apps a consistent business vocabulary on top of unified OneLake data. The Cowork plugin is the first step toward bringing that experience into the everyday flow of Microsoft 365 work, starting with Power BI reports and semantic models.
 
-The Fabric IQ plugin is installed by default for Frontier customers. For the broader list of plugins available in Cowork, see [Available plugins for Copilot Cowork (Frontier)](https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-available-plugins).
+The Fabric IQ plugin is installed by default for Frontier customers. For the broader list of plugins available in Cowork, see [Available plugins for Copilot Cowork (Frontier)](/microsoft-365/copilot/cowork/cowork-available-plugins).
 
 ## What you can do with the Fabric IQ plugin
 
@@ -42,7 +42,7 @@ The first release of the Fabric IQ plugin supports the following ways to bring a
 
 <!-- TODO_REVIEWER: Add a screenshot here showing the + (attach) picker in the Cowork composer with a Power BI report selected, plus a sample chat response grounded on that report. Reader feedback flagged the lack of a visual as the biggest "what does this actually look like" gap. -->
 
-For the general experience of working with plugins in Cowork, see [Use plugins with Copilot Cowork (Frontier)](https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-plugins).
+For the general experience of working with plugins in Cowork, see [Use plugins with Copilot Cowork (Frontier)](/microsoft-365/copilot/cowork/cowork-plugins).
 
 ## Chain Fabric IQ with other Cowork skills
 
@@ -124,7 +124,7 @@ The Fabric IQ plugin is in preview, and feedback during Frontier helps shape the
 ## Related content
 
 - [What is Fabric IQ (preview)?](../overview.md)
-- [Available plugins for Copilot Cowork (Frontier)](https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-available-plugins)
-- [Use plugins with Copilot Cowork (Frontier)](https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-plugins)
+- [Available plugins for Copilot Cowork (Frontier)](/microsoft-365/copilot/cowork/cowork-available-plugins)
+- [Use plugins with Copilot Cowork (Frontier)](/microsoft-365/copilot/cowork/cowork-plugins)
 - [Share data with your Microsoft 365 services](../../admin/admin-share-power-bi-metadata-microsoft-365-services.md)
 - [Power BI semantic models](../../data-warehouse/semantic-models.md)
