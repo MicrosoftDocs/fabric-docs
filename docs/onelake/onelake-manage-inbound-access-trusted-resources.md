@@ -17,7 +17,7 @@ Resource Instance Rules offer a simpler alternative — admins add a trusted Azu
 
 This article explains how Resource Instance Rules work for OneLake and when to use them. To learn about other inbound protection options, see [Inbound network protection in Microsoft Fabric](../security/security-inbound-overview.md).
 
-> [!IMPORTANT]
+> [!NOTE]
 > Resource Instance Rules for OneLake are currently in **public preview**. Features and behavior might change before general availability.
 
 ## How Resource Instance Rules work
