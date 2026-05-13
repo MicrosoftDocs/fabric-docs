@@ -43,6 +43,7 @@ Follow the steps in [Create a Microsoft Entra application and service principal 
 1. Under **Supported account types**, select **Accounts in this organizational directory only**.
 1. Select **Register**.
 1. From the app registration's **Overview** page, copy the **Application (client) ID** and **Directory (tenant) ID** . They might be required later.
+1. Configure a credential for the app registration. Depending on your organization's security policies, you can use a certificate, federated identity credential, or client secret. For guidance, see [Add a credential to your application](/entra/identity-platform/howto-create-service-principal-portal#option-1-recommended-upload-a-trusted-certificate).
 
 > [!NOTE]
 > Service principal management is part of Entra ID administration duties. If you can't register applications yourself, ask your Entra ID administrator to provide the **App ID**, **secret**, and **tenant ID**.
