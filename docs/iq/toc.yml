@@ -121,6 +121,8 @@ items:
                 href: plan/planning-writeback/planning-how-to-configure-destination-settings.md
               - name: Configure advanced settings
                 href: plan/planning-writeback/planning-how-to-configure-advanced-settings.md
+              - name: View logs
+                href: plan/planning-writeback/planning-how-to-view-logs.md
               - name: Enable writeback in reading mode
                 href: plan/planning-writeback/planning-how-to-enable-writeback-reading-mode.md
               - name: Writeback FAQ
