@@ -58,7 +58,7 @@ You can't use the Fully Qualified Domain Name (FQDN) of the TDS Endpoint alone.
 
 ### Connection behavior for InitialCatalog
 
-In May 2026, Microsoft updated the connection behavior for Fabric Data Warehouse and SQL analytics endpoint to make [the `InitialCatalog` connection string property](/dotnet/api/microsoft.data.sqlclient.sqlconnectionstringbuilder.initialcatalog) optional. Currently, users connect to the `master` system database when the `InitialCatalog` property isn't provided. In Fabric Data Warehouse, you can only connect to the `master` database, you cannot modify the `master` database, and you can't create, alter, or drop user objects in the `master` database. 
+In May 2026, Microsoft updated the connection behavior for Fabric Data Warehouse and SQL analytics endpoint to make [the `InitialCatalog` connection string property](/dotnet/api/microsoft.data.sqlclient.sqlconnectionstringbuilder.initialcatalog) optional. Currently, users connect to the `master` system database when the `InitialCatalog` property isn't provided. In Fabric Data Warehouse, you can only connect to the `master` database, you can't modify the `master` database, and you can't create, alter, or drop user objects in the `master` database. 
 
 You can use the `USE` Transact-SQL syntax to change your connection warehouse context once connected to `master`, and the `DB_NAME()` function to determine your current warehouse. For example:
 
@@ -77,15 +77,17 @@ The following table outlines the updated connection behavior for Fabric Data War
 |----------------|------------------|--------------|
 | Existing warehouse name provided | Connects to the specified warehouse | *No change* - connects to the specified warehouse |
 | Existing warehouse ID provided | Connects to the specified warehouse | *No change* - connects to the specified warehouse |
-| `InitialCatalog` property not provided | Connects to a non-determinant warehouse in the workspace | Connects to `master` |
-| `InitialCatalog = master` | Connects to a non-determinant warehouse in the workspace | Connects to `master` |
-| Warehouse in `InitialCatalog` property does not exist | Connects to a non-determinant warehouse in the workspace | Throws an error indicating no warehouse exists |
+| `InitialCatalog` property not provided | Connects to a nondeterminant warehouse in the workspace | Connects to `master` |
+| `InitialCatalog = master` | Connects to a nondeterminant warehouse in the workspace | Connects to `master` |
+| Warehouse in `InitialCatalog` property doesn't exist | Connects to a nondeterminant warehouse in the workspace | Throws an error indicating no warehouse exists |
 
 #### Error handling
 
-If no warehouses exist in the workspace and a connection is attempted without specifying a valid warehouse, users will see the following error: "Login failed for user '\<token-identified principal\>'. Reason: Authentication was successful, but the database was not found, or you have insufficient permissions to connect to it.". The following screenshot shows the error as it appears in SSMS when an invalid warehouse name is provided as the `InitialCatalog`:
+If no warehouses exist in the workspace and a connection is attempted without specifying a valid warehouse, users will see the following error: "Login failed for user '\<token-identified principal\>'. Reason: Authentication was successful, but the database was not found, or you have insufficient permissions to connect to it."
 
-   :::image type="content" source="media/connectivity/login-failed-user.png" alt-text="Screenshot of the SSMS error message when a valid initial catalog is not provided.":::
+The following screenshot shows the error as it appears in SSMS when an invalid warehouse name is provided as the `InitialCatalog`:
+
+   :::image type="content" source="media/connectivity/login-failed-user.png" alt-text="Screenshot of the SSMS error message when a valid initial catalog isn't provided.":::
 
 ## Next step
 
