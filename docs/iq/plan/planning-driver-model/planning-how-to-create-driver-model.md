@@ -10,6 +10,8 @@ ms.topic: how-to
 
 This article explains how to create a driver-based model.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 A [*driver model*](planning-concept-driver-model.md) is a type of model in which outputs are determined by key input variables called *drivers*. Examples include units sold, price per unit, headcount, production volume, and so on. These inputs are linked to outputs such as revenue, costs, or demand through defined formulas or proportional logic.
 
 For example:

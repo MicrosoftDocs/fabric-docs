@@ -730,4 +730,4 @@ The Fabric Capacity Metrics App also includes a dedicated **AI Functions** opera
 - Summarize text with [`ai.summarize` in pandas](./pandas/summarize.md) or [`ai.summarize` in PySpark](./pyspark/summarize.md).
 - Translate text with [`ai.translate` in pandas](./pandas/translate.md) or [`ai.translate` in PySpark](./pyspark/translate.md).
 - Customize the [configuration of AI functions in pandas](./pandas/configuration.md) or the [configuration of AI functions in PySpark](./pyspark/configuration.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

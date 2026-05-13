@@ -176,7 +176,7 @@ If you share Power BI content with external users through [Microsoft Entra B2B](
 
 Microsoft Entra security groups that contain external B2B guest users might not work as expected when used for RLS role membership. In some configurations — particularly when the external user has a guest-type account (rather than a member-type account) — the guest's group membership isn't correctly evaluated by the Power BI service when enforcing RLS filters.
 
-**Recommended workaround:** Instead of adding external users to RLS roles through Entra security groups, add them directly to the role by email address. This ensures their identity is correctly matched when RLS filters are applied.
+**Recommended workaround:** Instead of adding external users to RLS roles through Entra security groups, add them directly to the role by email address. The email address is resolved to the user's B2B account. This ensures their identity is correctly matched when RLS filters are applied.  For more information see [Manage Role Membership](#manage-role-membership).
 
 For organizations with many external users, consider using dynamic RLS with `USERPRINCIPALNAME()` instead of group-based role membership. This approach evaluates each user's identity individually and avoids the group membership resolution issue entirely.
 
