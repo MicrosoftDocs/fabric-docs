@@ -111,8 +111,22 @@ items:
           href: plan/planning-how-to-set-up-scenarios.md
         - name: Use writeback
           items:
-              - name: Configure writeback
+              - name: Set up writeback
                 href: plan/planning-writeback/planning-how-to-persist-data.md
+              - name: Configure general settings
+                href: plan/planning-writeback/planning-how-to-configure-general-settings.md
+              - name: Configure data settings
+                href: plan/planning-writeback/planning-how-to-configure-data-settings.md
+              - name: Configure destination settings
+                href: plan/planning-writeback/planning-how-to-configure-destination-settings.md
+              - name: Configure advanced settings
+                href: plan/planning-writeback/planning-how-to-configure-advanced-settings.md
+              - name: View logs
+                href: plan/planning-writeback/planning-how-to-view-logs.md
+              - name: Enable writeback in reading mode
+                href: plan/planning-writeback/planning-how-to-enable-writeback-reading-mode.md
+              - name: Writeback FAQ
+                href: plan/planning-writeback/planning-writeback-faq.md
         - name: Change layouts
           href: plan/planning-how-to-change-layouts.md
         - name: Create a cube
@@ -123,6 +137,10 @@ items:
           href: plan/planning-how-to-add-notes.md
         - name: Add bookmarks
           href: plan/planning-how-to-add-bookmark.md
+        - name: Export data
+          href: plan/planning-how-to-export-data.md
+        - name: Pivot data
+          href: plan/planning-how-to-pivot-data.md
         - name: Use forecasting
           items: 
               - name: Configure forecasts
@@ -148,7 +166,15 @@ items:
               - name: Create templates
                 href: plan/planning-driver-model/planning-how-to-create-templates.md
               - name: Create a driver model
-                href: plan/planning-driver-model/planning-how-to-create-driver-model.md    
+                href: plan/planning-driver-model/planning-how-to-create-driver-model.md
+    - name: Reference
+      items:
+        - name: Formulas and functions
+          items:
+            - name: Conditional statements
+              href: plan/planning-reference-formulas/conditional-statements.md
+            - name: Logical functions
+              href: plan/planning-reference-formulas/logical-functions.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
