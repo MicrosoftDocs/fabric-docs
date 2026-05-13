@@ -4,7 +4,7 @@ description: Learn how to query your streaming data in a KQL queryset Real-Time 
 ms.reviewer: tzgitlin
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
-ms.date: 05/06/2026
+ms.date: 05/13/2026
 ms.update-cycle: 180-days
 ms.subservice: rti-core
 ms.collection: ce-skilling-ai-copilot
@@ -41,7 +41,9 @@ In this step, you create a materialized view, which returns an up-to-date result
 
 1. Copy and paste, then run the following command to create a materialized view that shows the most recent number of bikes at each bike station.
 
-    ``` kusto
+    ```
+
+ kusto
     .create-or-alter materialized-view with (folder="Gold") AggregatedData on table TransformedData
     {
        TransformedData
@@ -117,7 +119,7 @@ If you're new to writing KQL, you can ask a question in natural language and Cop
 
     :::image type="content" source="media/tutorial/copilot-select.png" alt-text="Screenshot of how to get to the right copilot.":::
 
-1. Enter a question in natural language. For example, "Which station has the most bikes right now. Use the materialized view for the most updated data." It can help to include the name of the materialized view in your question.
+1. Enter a question in natural language. For example, "What is the average number of bikes at each bike point? Use the materialized view for the most updated data." It can help to include the name of the materialized view in your question.
 
     The Copilot suggests a query based on your question.
 
@@ -126,6 +128,8 @@ If you're new to writing KQL, you can ask a question in natural language and Cop
     :::image type="content" source="media/tutorial/copilot.png" alt-text="Screenshot of Copilot dialog showing a generated KQL query and the Insert button." lightbox="media/tutorial/copilot.png":::
 
 1. Select **Run** to run the query.
+
+    :::image type="content" source="media/tutorial/copilot-run.png" alt-text="Screenshot of the queryset with the copilot generated query inserted, and the Run button hightlighted." lightbox="media/tutorial/copilot-run.png":::
 
 Ask follow-up questions or change the scope of your query. Use this feature to learn KQL and generate queries quickly.
 
