@@ -63,7 +63,7 @@ Planning supports the following connection types:
 
 ## Connect to a Direct Lake semantic model
 
-If you want to connect to a Direct Lake semantic model, follow the steps below. These steps can be performed by admin or member users.
+If you want to connect to a Direct Lake semantic model, follow the steps below. These steps can be performed by workspace **Admin** or **Member** users.
 
 1. Next to the name of the semantic model in your Fabric workspace, select **... > Settings > Gateway & Cloud Connections**.
 
