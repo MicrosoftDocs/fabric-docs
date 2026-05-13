@@ -19,7 +19,7 @@ items:
       href: ontology/tutorial-1-create-ontology.md
     - name: 2- Enrich the ontology
       href: ontology/tutorial-2-enrich-ontology.md
-    - name: 3- Preview the ontology
+    - name: 3- View the ontology
       href: ontology/tutorial-3-preview-ontology.md
     - name: 4- Create data agent
       href: ontology/tutorial-4-create-data-agent.md
@@ -121,6 +121,10 @@ items:
                 href: plan/planning-writeback/planning-how-to-configure-destination-settings.md
               - name: Configure advanced settings
                 href: plan/planning-writeback/planning-how-to-configure-advanced-settings.md
+              - name: View logs
+                href: plan/planning-writeback/planning-how-to-view-logs.md
+              - name: Enable writeback in reading mode
+                href: plan/planning-writeback/planning-how-to-enable-writeback-reading-mode.md
               - name: Writeback FAQ
                 href: plan/planning-writeback/planning-writeback-faq.md
         - name: Change layouts
