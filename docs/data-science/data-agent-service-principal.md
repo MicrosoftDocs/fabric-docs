@@ -30,8 +30,8 @@ This article explains how to register a service principal, grant it the right ac
 When a service principal calls a Fabric data agent, the agent treats the SPN like any other Microsoft Entra identity:
 
 - The SPN must have access to the **workspace** where the data agent is published.
-- The SPN must have read access to each **data source** attached to the agent (warehouse, lakehouse, semantic model, KQL database, mirrored database, or ontology). The agent only reads schemas and runs SQL/DAX/KQL on sources that the calling identity can access.
-- The SPN acquires a Microsoft Entra access token for the Fabric resource and uses that token as a bearer token when calling the data agent endpoint (REST API or MCP server URL).
+- The SPN must have read access to each **data source** attached to the agent (warehouse, lakehouse, semantic model, KQL database, mirrored database, or ontology). The agent only reads schemas and runs the query on the data sources that the calling identity can access.
+- The SPN acquires a Microsoft Entra access token for the Fabric resource and uses that token as a bearer token when asking questions to the data agent. This endpoint is for querying the agent with natural language questions, not for managing or configuring it.
 
 ## Step 1: Create a service principal in Microsoft Entra ID
 
@@ -42,7 +42,7 @@ Follow the steps in [Create a Microsoft Entra application and service principal 
 1. Give the application a name, for example *fabric-data-agent-spn*.
 1. Under **Supported account types**, select **Accounts in this organizational directory only**.
 1. Select **Register**.
-1. From the app registration's **Overview** page, copy the **Application (client) ID** and **Directory (tenant) ID**. You'll need them later.
+1. From the app registration's **Overview** page, copy the **Application (client) ID** and **Directory (tenant) ID** . They might be required later.
 
 > [!NOTE]
 > Service principal management is part of Entra ID administration duties. If you can't register applications yourself, ask your Entra ID administrator to provide the **App ID**, **secret**, and **tenant ID**.
@@ -54,6 +54,8 @@ A Fabric tenant administrator must allow service principals to call Fabric APIs:
 1. In the [Fabric admin portal](/fabric/admin/admin-center), go to **Tenant settings** > **Developer settings**.
 1. Enable **Service principals can use Fabric APIs**.
 1. Scope the setting to **The entire organization** or to a specific security group that contains your service principal.
+
+   :::image type="content" source="media/data-agent-service-principal/spn-fabric-portal.png" alt-text="Screenshot of the Fabric portal for SPN.":::
 
 For more details, see [Service principals in Microsoft Fabric](../data-warehouse/service-principals.md).
 
@@ -78,12 +80,12 @@ The service principal authenticates to Microsoft Entra ID and uses the resulting
 
 ## Step 6: Get an access token
 
-Use the [client credentials flow](/entra/identity-platform/v2-oauth2-client-creds-grant-flow) to request a token for the Fabric resource (`https://api.fabric.microsoft.com`).
+Use the [client credentials flow](/entra/identity-platform/v2-oauth2-client-creds-grant-flow) to request a token for the Fabric resource (`https://api.powerbi.microsoft.com`).
 
 ## Limitations
 
-- Managed identities aren't yet supported for Fabric data agent authentication. Use a service principal instead.
-- The SPN must have explicit access to every data source attached to the agent. Sharing only the data agent item isn't enough if the SPN lacks read access to the underlying data.
+- Managed identities aren't yet supported for Fabric data agent authentication. You need to use a service principal instead.
+- The SPN must have explicit access to every data source added to the data agent. Sharing only the data agent item isn't enough if the SPN lacks read access to the underlying data sources.
 
 ## Related content
 
