@@ -3,6 +3,7 @@ title: Get started with Planning sheets
 description: Learn how to get started with your first Planning sheet in plan (preview). Discover how to create a Planning sheet, connect to your semantic model, and perform planning, budgeting, forecasting, and data analysis.
 ms.date: 04/29/2026
 ms.topic: how-to
+ms.search.form: Getting started with Planning Sheet
 ---
 
 # Create a Planning sheet
