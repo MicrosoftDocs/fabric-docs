@@ -27,11 +27,11 @@ This article explains how to register a service principal, grant it the right ac
 
 ## How service principal authentication works with Fabric data agent
 
-When a service principal calls a Fabric data agent, the agent treats the SPN like any other Microsoft Entra identity:
+When a service principal calls a Fabric data agent, the data agent treats the SPN like any other Microsoft Entra identity:
 
 - The SPN must have access to the **workspace** where the data agent is published.
-- The SPN must have read access to each **data source** attached to the agent (warehouse, lakehouse, semantic model, KQL database, mirrored database, or ontology). The agent only reads schemas and runs the query on the data sources that the calling identity can access.
-- The SPN acquires a Microsoft Entra access token for the Fabric resource and uses that token as a bearer token when asking questions to the data agent. This endpoint is for querying the agent with natural language questions, not for managing or configuring it.
+- The SPN must have read access to each **data source** attached to the data agent (warehouse, lakehouse, semantic model, KQL database, mirrored database, or ontology). The data agent only reads schemas and runs the query on the data sources that the calling identity can access.
+- The SPN acquires a Microsoft Entra access token for the Fabric resource and uses that token as a bearer token when asking questions to the data agent. This endpoint is for querying the data agent with natural language questions, not for managing or configuring it.
 
 ## Step 1: Create a service principal in Microsoft Entra ID
 
@@ -77,12 +77,13 @@ The Fabric data agent runs queries against its attached data sources under the c
 
 ## Step 5: Acquire a token and call the Fabric data agent
 
-The service principal authenticates to Microsoft Entra ID using the [client credentials flow](/entra/identity-platform/v2-oauth2-client-creds-grant-flow) to request a token for the Fabric resource (`https://api.powerbi.microsoft.com`). It then uses the resulting access token as a bearer token when calling the data agent.
+The service principal authenticates to Microsoft Entra ID using the [client credentials flow](/entra/identity-platform/v2-oauth2-client-creds-grant-flow) to request a token for the Fabric resource (`https://analysis.windows.net/powerbi/api/.default`). It then uses the resulting access token as a bearer token when calling the data agent.
 
 ## Limitations
 
 - Managed identities aren't currently supported for Fabric data agent authentication. You need to use a service principal instead.
 - The SPN must have explicit access to every data source added to the data agent. Sharing only the data agent item isn't enough if the SPN lacks read access to the underlying data sources.
+- Service principal authentication is not yet supported for data agents connected to a KQL database (Kusto).
 
 ## Related content
 
