@@ -35,7 +35,8 @@ To define security roles:
 
 1. Under **Select tables**, select the table to which you want to apply a row-level security filter.
 
-1. Under **Filter data**, use the default editor to define your roles. The expressions created return a true or false value.
+1. Under **Filter data**, use the default editor to define your roles. The expressions created return a true or false value. A DAX filter evaluates TRUE/FALSE for each row. Only rows that return TRUE are visible
+Everything else is completely removed.
 
 
 

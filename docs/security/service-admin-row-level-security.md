@@ -66,6 +66,45 @@ The following examples show common DAX filter expressions you can use when defin
 
 Dynamic RLS is the most common approach because it allows a single role definition to filter data differently for each user, based on a user-mapping table in your data model.
 
+
+### Example: Filtering sales data by region
+
+Suppose you have a `Sales` table with columns `Region`, `Product`, and `Amount`. You want to restrict users assigned to the "West" role so they see only rows where the region is "West".
+
+In the **DAX filter** field for the "West" role, enter the following expression:
+
+```dax
+[Region] = "West"
+```
+
+**Before filtering (all data):**
+
+| Region | Product | Amount |
+|--------|---------|--------|
+| West | Widget A | 500 |
+| East | Widget B | 300 |
+| West | Widget C | 450 |
+| South | Widget A | 200 |
+| East | Widget C | 375 |
+
+**After filtering (view for "West" role users):**
+
+| Region | Product | Amount |
+|--------|---------|--------|
+| West | Widget A | 500 |
+| West | Widget C | 450 |
+
+The DAX expression acts as a row filter that evaluates each row in the table. Only rows where the `Region` column equals "West" are visible to users assigned to that role.
+
+> [!TIP]
+> Use the **View as role** feature (described in [Validating the role within the Power BI service](#validating-the-role-within-the-power-bi-service)) to validate that your filter returns the expected rows before publishing the report.
+
+By default, row-level security filtering uses single-directional filters, whether the relationships are set to single direction or bi-directional. You can manually enable bi-directional cross-filtering with row-level security by selecting the relationship and checking the **Apply security filter in both directions** checkbox. Note that if a table takes part in multiple bi-directional relationships you can only select this option for one of those relationships. Select this option when you've also implemented dynamic row-level security at the server level, where row-level security is based on username or login ID.
+
+For more information, see [Bidirectional cross-filtering using DirectQuery in Power BI](/power-bi/transform-model/desktop-bidirectional-filtering) and the [Securing the Tabular BI Semantic Model](https://download.microsoft.com/download/D/2/0/D20E1C5F-72EA-4505-9F26-FEF9550EFD44/Securing%20the%20Tabular%20BI%20Semantic%20Model.docx) technical article.
+
+:::image type="content" border="true" source="../includes/media/powerbi-security-apply-filter-in-both-directions.png" alt-text="Screenshot of the model relationship setting to apply security filter in both directions.":::
+
 ### Bi-directional cross-filtering
 
 By default, row-level security filtering uses single-directional filters, whether the relationships are set to single direction or bi-directional.
@@ -229,7 +268,7 @@ If a B2B guest user sees an empty report or receives a "no data" message, follow
 3. **Check for case sensitivity** - DAX string comparisons are case-insensitive by default, but verify your data source hasn't introduced case-sensitive values.
 4. **Review cross-tenant access settings** - If your organization uses [cross-tenant access policies](/azure/active-directory/external-identities/cross-tenant-access-overview), these can affect which UPN format is presented to Power BI.
 5. **Test with the actual guest user** - The **Test as role** feature uses your own identity. Always validate with the real external guest account.
-6. **Verify role assignment** — If a guest user sees *more* data than expected, confirm they're assigned to an RLS role. Users who aren't assigned to any RLS role typically see no data (empty results), because RLS is enforced but no matching role is applied.
+6. **Verify role assignment** — If a guest user sees *more* data than expected, confirm they're assigned to an RLS role. Users who aren't assigned to any RLS role typically see no data (empty results), because RLS is enforced but no matching role is applied. A DAX filter evaluates TRUE/FALSE for each row. Only rows that return TRUE are visible. Everything else is completely removed.
 
 For more information on sharing Power BI content with external users, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/guidance/whitepaper-azure-b2b-power-bi).
 
