@@ -76,11 +76,7 @@ The Fabric data agent runs queries against its attached data sources under the c
 
 ## Step 5: Acquire a token and call the Fabric data agent
 
-The service principal authenticates to Microsoft Entra ID and uses the resulting access token as a bearer token when calling the data agent.
-
-## Step 6: Get an access token
-
-Use the [client credentials flow](/entra/identity-platform/v2-oauth2-client-creds-grant-flow) to request a token for the Fabric resource (`https://api.powerbi.microsoft.com`).
+The service principal authenticates to Microsoft Entra ID using the [client credentials flow](/entra/identity-platform/v2-oauth2-client-creds-grant-flow) to request a token for the Fabric resource (`https://api.powerbi.microsoft.com`). It then uses the resulting access token as a bearer token when calling the data agent.
 
 ## Limitations
 
