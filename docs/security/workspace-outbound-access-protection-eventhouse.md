@@ -32,7 +32,7 @@ Even with outbound access protection enabled, Eventhouse can connect to the foll
 
 | Resource type | Location | Supported items |
 |---|---|---|
-| External | Azure | [Event Hubs](/azure/event-hubs/event-hubs-about&preview=true) |
+| External | Azure | [Event Hubs](/azure/event-hubs/event-hubs-about) |
 | Fabric | Same workspace | Eventstream, OneLake, [follower databases](/azure/data-explorer/follower?tabs=csharp&preview=true) |
 | Fabric | Other workspaces (requires access rules) | OneLake, [follower databases](/azure/data-explorer/follower?tabs=csharp&preview=true) |
 
