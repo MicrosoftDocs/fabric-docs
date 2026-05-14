@@ -1,7 +1,7 @@
 ---
 title: "Tutorial part 0: Introduction and environment setup"
 description: Get started with ontology (preview) by setting up a sample retail scenario. Part 0 of the ontology (preview) tutorial.
-ms.date: 02/04/2026
+ms.date: 04/13/2026
 ms.topic: tutorial
 zone_pivot_group_filename: iq/ontology/zone-pivot-groups.json
 zone_pivot_groups: create-ontology-scenario
@@ -30,7 +30,7 @@ The example scenario for this tutorial is a fictional company called Lakeshore R
     * *Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance*
     * *Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance*
 
-    :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal.":::
+    :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal." lightbox="media/tutorial-0-introduction/prerequisite-ontology.png":::
 
     For more information about these prerequisites, see [Ontology (preview) required tenant settings](overview-tenant-settings.md).
 ::: zone-end
@@ -44,7 +44,7 @@ The example scenario for this tutorial is a fictional company called Lakeshore R
     * *Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance*
     * *Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance*
 
-    :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal.":::
+    :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal." lightbox="media/tutorial-0-introduction/prerequisite-ontology.png":::
 
     For more information about these prerequisites, see [Ontology (preview) required tenant settings](overview-tenant-settings.md).
 ::: zone-end
@@ -123,8 +123,8 @@ This section prepares you to generate an ontology from a semantic model. If you'
 
     | From table | To table | Cardinality | Cross-filter direction | Make this relationship active? |
     |---|---|---|---|---|
-    | *factsales*, select `StoreId` | *dimstore*, select `StoreId` | Many to one (*:1) | Single | Yes |
-    | *factsales*, select `ProductId` | *dimproducts*, select `ProductId` | Many to one (*:1) | Single | Yes |
+    | *factsales*, select `StoreId` column | *dimstore*, select `StoreId` column | Many to one (*:1) | Single | Yes |
+    | *factsales*, select `ProductId` column | *dimproducts*, select `ProductId` column | Many to one (*:1) | Single | Yes |
 
     The relationships look like this when you're done:
 
