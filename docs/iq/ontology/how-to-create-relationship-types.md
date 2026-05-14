@@ -58,7 +58,7 @@ Follow these steps to create a relationship type and bind data to it:
     * **Relationship type**: Sets details of the relationship type.
     * **Target entity type**: Lists details of the target entity.
 
-     :::image type="content" source="media/how-to-create-relationship-types/add-relationship-4.png" alt-text="Screenshot of the relationship type configuration." lightbox="media/how-to-create-relationship-types/add-relationship-4.png":::
+     :::image type="content" source="media/how-to-create-relationship-types/add-relationship-sections.png" alt-text="Screenshot of the relationship type configuration." lightbox="media/how-to-create-relationship-types/add-relationship-sections.png":::
 
 1. In the middle panel, enter the relationship type details.
     1. **Mapping table**: Expand **Browse available sources** and choose the table in the source data that can link the two entity types together. This table should contain identifying information for both entity types within each row (such as columns for a store ID and a freezer ID).
@@ -69,13 +69,13 @@ Follow these steps to create a relationship type and bind data to it:
 
 1. You see the **Configure** page for the entity, where the updated relationship is visible in the **Relationships** section.
 
-    :::image type="content" source="media/how-to-create-relationship-types/add-relationship-5.png" alt-text="Screenshot of the relationship type on the configuration page." lightbox="media/how-to-create-relationship-types/add-relationship-5.png":::
+    :::image type="content" source="media/how-to-create-relationship-types/add-relationship-finished.png" alt-text="Screenshot of the relationship type on the configuration page." lightbox="media/how-to-create-relationship-types/add-relationship-finished.png":::
 
 ## Edit or delete relationship type
 
 To edit or delete a relationship type, reopen its configuration page by selecting the relationship type in the canvas view (visible in both the Home configuration canvas and the **Relationships** section of the **Configure** page). On the **Configure** page, you can also select **Manage relationships > {relationship type name}**.
 
-:::image type="content" source="media/how-to-create-relationship-types/reopen-relationship.png" alt-text="Screenshot of reopening the relationship configuration." lightbox="media/how-to-create-relationship-types/reopen-relationship.png":::
+:::image type="content" source="media/how-to-create-relationship-types/open-relationship.png" alt-text="Screenshot of reopening the relationship configuration." lightbox="media/how-to-create-relationship-types/open-relationship.png":::
 
 On this page, edit the relationship type configuration or delete the relationship type.
 
