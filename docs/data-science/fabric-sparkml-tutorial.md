@@ -1,5 +1,5 @@
 ---
-ai-usage: ai-assisted
+title: How to train models with Apache Spark MLlib
 author: s-polly
 description: Use Apache Spark MLlib to create a predictive analytics model with logistic regression. Explore feature engineering, training, and ROC evaluation in Fabric.
 #customer intent: As a Microsoft Fabric user, I want to train a logistic regression model in a PySpark notebook, so that I can perform predictive analysis without setting up Spark locally.
@@ -10,7 +10,7 @@ ms.date: 05/13/2026
 ms.reviewer: ruxu
 ms.topic: tutorial
 reviewer: ruixinxu
-title: How to train models with Apache Spark MLlib
+ai-usage: ai-assisted
 ---
 
 # Build a machine learning model with Apache Spark MLlib
