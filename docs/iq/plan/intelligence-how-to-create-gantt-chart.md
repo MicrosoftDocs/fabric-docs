@@ -1,5 +1,5 @@
 ---
-title: Plan projects with Gantt charts
+title: Plan Projects with Gantt Charts
 description: Learn how to plan and track projects with the Gantt charts in Intelligence. Break work into tasks, manage dependencies, assign resources, and monitor milestones and deliverables.
 ms.date: 03/11/2026
 ms.topic: how-to

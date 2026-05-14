@@ -1,5 +1,5 @@
 ---
-title: Known limitations in plan (preview)
+title: Known Limitations in Plan (Preview)
 description: This article lists known issues and limitations present in plan (preview).
 ms.topic: concept-article
 ms.date: 05/6/2026

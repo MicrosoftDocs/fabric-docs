@@ -1,5 +1,5 @@
 ---
-title: Create entity types
+title: Create Entity Types
 description: Learn about entity types in ontology (preview) and how to manage them.
 ms.date: 05/11/2026
 ms.topic: how-to
@@ -35,73 +35,65 @@ Entity types use the following ontology (preview) concepts. For definitions of t
 
 Follow these steps to create entity types in your ontology (preview) item.
 
-1. Select **Add entity type** from the top ribbon or the center of the configuration canvas.
+1. From the Home configuration canvas, select **Add entity type** from the top ribbon or the center of the canvas.
 
-    :::image type="content" source="media/how-to-create-entity-types/add-entity-type.png" alt-text="Screenshot of adding entity type.":::
+    :::image type="content" source="media/how-to-create-entity-types/add-entity-type.png" alt-text="Screenshot of adding entity type." lightbox="media/how-to-create-entity-types/add-entity-type.png":::
 
 1. Enter a name for your entity type, and select **Add Entity Type**.
 
     >[!NOTE]
     >Entity type names must be 1–26 characters, contain only alphanumeric characters, hyphens, and underscores, and start and end with an alphanumeric character.
 
-1. The configuration canvas displays your new entity type, and the **Entity type configuration** pane appears.
+1. The configuration canvas displays your new entity type.
 
-    :::image type="content" source="media/how-to-create-entity-types/entity-type-configuration.png" alt-text="Screenshot of the Entity type configuration pane.":::
+    :::image type="content" source="media/how-to-create-entity-types/new-entity-type.png" alt-text="Screenshot of the new entity type on the canvas.":::
 
-1. In the properties tab, select **Add properties**.
+### Add properties
 
-    You can create properties on entity types without binding data to them. Later, you can bind either static or time series data to these properties. This section shows that process. (Alternatively, you can go straight to the data binding step and add properties while binding data to them in a single operation. For detailed instructions on that process, see [Data binding](how-to-bind-data.md).)
+This section shows how to create properties on entity types without binding data to them (the properties remain unbound until you add data bindings for them later). It's also possible to add properties while binding data in a single operation, which is described in [Data binding](how-to-bind-data.md).
 
-1. Add a name and property type for each property, or choose *Define at binding* to [model untyped properties](#modeling-untyped-properties) without specifying a data type upfront. Select **Save** to view the saved properties in the properties tab.
+1. Select the entity type name in the **Explorer** and select **View entity type details** from the top ribbon.
+
+    :::image type="content" source="media/how-to-create-entity-types/view-entity-type-details.png" alt-text="Screenshot of the View Entity Type details button." lightbox="media/how-to-create-entity-types/view-entity-type-details.png":::
+
+1. The **Configure** page opens. This page surfaces important information about the entity type, including its properties and data bindings. Expand **Manage property bindings** and select **Add properties**.
+
+    :::image type="content" source="media/how-to-create-entity-types/add-properties-1.png" alt-text="Screenshot of adding properties to the entity type." lightbox="media/how-to-create-entity-types/add-properties-1.png":::
+
+1. Add a name and property type for each property, or choose *Define at binding* to [model untyped properties](#modeling-untyped-properties) without specifying a data type upfront. Select **Save** to view the saved properties in the Properties pane.
+
+    :::image type="content" source="media/how-to-create-entity-types/add-properties-2.png" alt-text="Screenshot of configuring the listed property details." lightbox="media/how-to-create-entity-types/add-properties-2.png":::
 
     >[!NOTE]
     >Property names can only be duplicated across entities for properties of the same type. For example, you can't have one entity type with a string `ID` property and another entity type with an integer `ID` property, but you can have two entity types that both have a string `ID` property.
 
-    :::image type="content" source="media/how-to-create-entity-types/add-property-details.png" alt-text="Screenshot of configuring the listed property details.":::
+1. The properties are added to the **Configure** page, unbound to any data source.
 
-1. Next, define your entity type **Key** using one or more properties modeled on the entity type. This value represents a unique identifier for each record of ingested data. 
+    :::image type="content" source="media/how-to-create-entity-types/add-properties-3.png" alt-text="Screenshot of the new unbound properties on the entity type." lightbox="media/how-to-create-entity-types/add-properties-3.png":::
 
-    String and integer columns from your source data are available to select as the entity type key. Together, the columns you select uniquely identify a record.
+1. Optionally, select a property to use as the **display name property** for instances of this entity type in downstream experiences.
 
-    :::image type="content" source="media/how-to-create-entity-types/entity-type-key.png" alt-text="Screenshot of the entity type key.":::
+    :::image type="content" source="media/how-to-create-entity-types/choose-display-name.png" alt-text="Screenshot of the option to choose a property as a display name." lightbox="media/how-to-create-entity-types/choose-display-name.png":::
 
-    This process is done once for each entity type.
-
-1. Optionally, select a property to use as the **Instance display name** for all your instances in downstream experiences.
-
-1. [Bind data](how-to-bind-data.md) to the entity type to make it operational.
+1. To make the entity type operational, [bind data](how-to-bind-data.md) to it.
 
 ## Edit or delete an entity type
 
-To delete an entity type that exists in your ontology (preview) item, hover over the entity type name in the **Entity types** pane and select **...** to open its options menu. Select **Delete entity type**.
+To delete an entity type from in your ontology (preview) item, go to the Home configuration canvas. Next to the entity type name in the **Explorer**, select **... > Delete entity type**.
 
-:::image type="content" source="media/how-to-create-entity-types/delete-entity-type.png" alt-text="Screenshot of deleting an entity type.":::
+:::image type="content" source="media/how-to-create-entity-types/delete-entity-type.png" alt-text="Screenshot of deleting an entity type." lightbox="media/how-to-create-entity-types/delete-entity-type.png":::
 
-You can edit and delete the name, key, or display name for an entity at any time.
+To edit details of the entity type, select **View Entity type details** from the top ribbon to open the **Configure** page.
 
-:::image type="content" source="media/how-to-create-entity-types/edit-entity-type.png" alt-text="Screenshot of editing entity type details.":::
+From this page, you can add, rename, and delete properties, and rename or delete the entity type itself.
 
-You can also add, edit, or delete properties of an entity type at any time. Deleting a property removes it from the entity everywhere it's configured, including entity type key and [relationship type configurations](how-to-create-relationship-types.md).
+:::image type="content" source="media/how-to-create-entity-types/edit-entity-type.png" alt-text="Screenshot of editing entity type details." lightbox="media/how-to-create-entity-types/edit-entity-type.png":::
 
-To add a new property, 
-1. Select an entity type to open the **Entity type configuration** pane.
-1. In the **Properties** tab, select the **+** icon.
-
-    :::image type="content" source="media/how-to-create-entity-types/add-property.png" alt-text="Screenshot of adding a property.":::
-
-1. Fill property details when prompted.
-
-To edit or delete a property,
-1. Select an entity type to open the **Entity type configuration** pane.
-1. In the **Properties** tab, select **...** next to the property name. 
-1. Select your preferred action from the options menu.
-
-    :::image type="content" source="media/how-to-create-entity-types/edit-delete-property.png" alt-text="Screenshot of editing or deleting a property.":::
+Deleting a property removes it from the entity everywhere it's configured, including entity type key and [relationship type configurations](how-to-create-relationship-types.md).
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
 
 [!INCLUDE [supported property types](includes/supported-property-types.md)]
-
 
 ## Modeling untyped properties
 

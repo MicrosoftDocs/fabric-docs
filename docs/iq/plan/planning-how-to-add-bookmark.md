@@ -1,5 +1,5 @@
 ---
-title: Add and manage bookmarks in Planning sheet
+title: Add and Manage Bookmarks in Planning Sheet
 description: Learn how to create, manage, and share bookmarks in Planning Sheets.
 ms.date: 04/17/2026
 ms.topic: how-to

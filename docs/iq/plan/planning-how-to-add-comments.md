@@ -1,5 +1,5 @@
 ---
-title: Commenting and Collaboration in Planning sheet
+title: Commenting and Collaboration in Planning Sheet
 description: Learn how to use commenting and collaboration features in Planning sheets to assign tasks, add context, and streamline team workflows with real-time discussions.
 ms.date: 04/15/2026
 ms.topic: how-to

@@ -1,5 +1,5 @@
 ---
-title: Set up writeback to persist data
+title: Set Up Writeback to Persist Data
 description: Learn how to write back data from a Planning sheet to your database or data platform. Configure destinations and save planning inputs securely. 
 ms.date: 04/27/2026
 ms.topic: how-to

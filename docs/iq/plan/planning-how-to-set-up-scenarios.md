@@ -1,5 +1,5 @@
 ---
-title: Set up a scenario
+title: Set Up a Scenario
 description: Learn how to simulate business outcomes in Planning sheets by using scenarios. Simulate business outcomes for effective planning decisions.
 ms.date: 04/22/2026
 ms.topic: how-to
