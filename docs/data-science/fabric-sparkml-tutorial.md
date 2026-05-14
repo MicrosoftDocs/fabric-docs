@@ -17,14 +17,13 @@ title: How to train models with Apache Spark MLlib
 
 In this article, you learn how to use Apache Spark [MLlib](https://spark.apache.org/mllib/) to create a machine learning application that handles predictive analysis on an Azure open dataset. Spark provides built-in machine learning libraries. This example uses *classification* through logistic regression.
 
-| Step | Description | Estimated time |
-|------|-------------|---------------|
-| 1 | Set up notebook and imports | 2 minutes |
-| 2 | Load and sample NYC taxi data | 3 minutes |
-| 3 | Prepare and engineer features | 5 minutes |
-| 4 | Encode categorical features | 2 minutes |
-| 5 | Train logistic regression model | 3 minutes |
-| 6 | Evaluate and visualize results | 2 minutes |
+> [!div class="checklist"]
+> * Set up notebook and imports
+> * Load and sample NYC taxi data
+> * Prepare and engineer features
+> * Encode categorical features
+> * Train logistic regression model
+> * Evaluate and visualize results
 
 The core SparkML and MLlib Spark libraries provide many utilities that are useful for machine learning tasks. These utilities are suitable for:
 
