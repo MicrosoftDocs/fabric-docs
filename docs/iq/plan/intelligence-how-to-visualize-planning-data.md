@@ -1,5 +1,5 @@
 ---
-title: Visualize planning data
+title: Visualize Planning Data
 description: Integrate planning with Intelligence sheets and visualize variances, impacts, and simulations in real time.
 ms.date: 03/10/2026
 ms.topic: how-to
