@@ -54,7 +54,7 @@ On **Agent setup**, configure the operations agent and adjust it to your data by
 
 1. Provide specific instructions to guide the agent's behavior and decision-making process.
 
-    :::image type="content" source="media/operations-agent/agent-instructions.png" alt-text="Screenshot of the instructions section on the setup page." lightbox="media/operations-agent/agent-instructions.png":::
+    :::image type="content" source="media/operations-agent/agent-instruction.png" alt-text="Screenshot of the instructions section on the setup page." lightbox="media/operations-agent/agent-instruction.png":::
 
 1. Choose a relevant data source that the agent can analyze and learn from. This choice ensures the agent has access to accurate and up-to-date information for generating insights.
 
