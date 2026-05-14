@@ -171,7 +171,7 @@ To refresh the graph, follow these steps:
 
     :::image type="content" source="media/how-to-view-entity-type-details/refresh-graph-3.png" alt-text="Screenshot of the Refresh now button in the graph model scheduling options.":::
 
-    >![TIP]
+    >[!TIP]
     >You can also use this panel to manage a recurring refresh schedule for the graph model, to keep your ontology (preview) data up to date automatically on a specified cadence.
 
 1. Verify that when you return to the ontology item, the data shown reflects your changes.
