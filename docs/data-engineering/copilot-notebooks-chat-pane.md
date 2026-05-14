@@ -3,7 +3,7 @@ title: Use the Copilot for Data Engineering and Data Science chat pane (preview)
 description: Learn how to use the Copilot chat pane in Fabric notebooks to generate code, analyze data, and get AI-powered assistance.
 ms.topic: how-to
 ms.reviewer: jejiang
-ms.date: 03/18/2026
+ms.date: 05/14/2026
 ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -43,10 +43,6 @@ To use Copilot in Fabric notebooks:
 
 1. The Copilot chat pane opens on the right side of your notebook.
 
-1. Select a model from the model selector. Different models (for example, GPT-5 or GPT-4.1) might produce different results depending on the complexity of your task.
-
-    :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-select-model.png" alt-text="Screenshot of the model selector in the Copilot chat pane showing available models." lightbox="media/copilot-notebooks-chat-pane/copilot-select-model.png":::
-
 1. Enter a prompt or select a suggested starter prompt.
 
 For detailed instructions, example prompts, and a walkthrough of the chat pane experience, see the [example walkthrough section](#example-walkthrough).
@@ -55,7 +51,7 @@ For detailed instructions, example prompts, and a walkthrough of the chat pane e
 
 The following walkthrough shows one example of an end-to-end Copilot flow, from selecting a starter prompt through reviewing and approving changes. Your experience might vary — Copilot responses depend on your data, notebook context, and how you phrase your prompts. 
 
-1. Open the notebook and select **Copilot** from the ribbon to open the chat pane. Select a model from the model selector at the top (for example, GPT-5 or GPT-4.1), then choose one of the prebuilt starter prompts or type a custom question in the chat box.
+1. Open the notebook and select **Copilot** from the ribbon to open the chat pane. Then choose one of the prebuilt starter prompts or type a custom question in the chat box.
 
     :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-ribbon-button.png" alt-text="Screenshot of the Copilot chat pane open from the ribbon, showing starter prompts and a text box." lightbox="media/copilot-notebooks-chat-pane/copilot-ribbon-button.png":::
 
@@ -102,10 +98,6 @@ Copilot preserves your chat history across sessions. You can view previous conve
 To start a new conversation, select the new chat option.
 
 :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-new-chat.png" alt-text="Screenshot showing the new chat option in the Copilot chat pane." lightbox="media/copilot-notebooks-chat-pane/copilot-new-chat.png":::
-
-## Model selection
-
-You can choose between available models (for example, GPT-5 or GPT-4.1) from the model selector in the chat pane. Different models might provide different results depending on the complexity of your task.
 
 ## Approval settings
 
