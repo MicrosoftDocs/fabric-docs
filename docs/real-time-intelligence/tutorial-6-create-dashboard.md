@@ -174,7 +174,7 @@ To customize the visualization of a tile on your dashboard, follow these steps:
 
 You can set up [Activator](data-activator/activator-introduction.md) alerts on your Real-Time Dashboard tiles to get notified when certain conditions are met in your data. Set up an alert on the *Bike locations Map* tile to get notified when the number of bikes at any station exceeds a certain threshold.
 
-1. From the new bar chart tile, select the Alert icon. Or, from the **More options** (three dots) menu, select **Set Alert**.
+1. From the new bar chart tile, select the Alert icon. Or, from the **More options** (three dots) menu, select **Add Alert**.
 
    :::image type="content" source="media/tutorial/tutorial-dashboard-set-alert.png" alt-text="Screenshot of the set alert option." lightbox="media/tutorial/tutorial-dashboard-set-alert.png":::
 
@@ -206,7 +206,7 @@ You can set up [Activator](data-activator/activator-introduction.md) alerts on y
 
    :::image type="content" source="media/tutorial/tutorial-dashboard-alert-open.png" alt-text="Screenshot alert summary with the open button highlighted." lightbox="media/tutorial/tutorial-dashboard-alert-open.png":::
 
-1. From the Activator Alerts page, you can view and manage your alert definitions, see analytics, and alert history. 
+1. From the Activator Alerts page, you can view and manage your alert definitions, see analytics, and alert history.
 
    For more details, see [Create alerts for a Real-Time Dashboard](data-activator/activator-get-data-real-time-dashboard.md).
 
