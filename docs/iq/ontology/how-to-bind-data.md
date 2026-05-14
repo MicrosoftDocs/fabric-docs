@@ -23,7 +23,7 @@ Before binding data to your ontology, make sure you have the following prerequis
 
 * A [Fabric workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
 * **Ontology item (preview)** [enabled on your Fabric tenant](overview-tenant-settings.md#ontology-item-preview).
-* An ontology (preview) item with [entity types](how-to-bind-data.md) created.
+* An ontology (preview) item with [entity types](how-to-create-entity-types.md) created.
 * Data that you prepared according to these guidelines:
     * The data is organized, and has gone through any necessary ETL required by your business.
     * The data contains all required information for it to be modeled. For more information, see [Core concept: Data binding](overview.md#data-binding).

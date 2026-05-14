@@ -1,5 +1,5 @@
 ---
-title: "Tutorial part 1: Create an ontology"
+title: "Tutorial Part 1: Create an Ontology"
 description: Create an ontology (preview) item with data from a semantic model or OneLake. Part 1 of the ontology (preview) tutorial.
 ms.date: 04/13/2026
 ms.topic: tutorial
@@ -284,7 +284,7 @@ When you're done, you see these entity types listed in the **Explorer** in the c
 
 Next, create relationship types between the entity types to represent contextual connections in your data.
 
-### Store has SaleEvent
+### SaleEvent from Store
 
 1. Select the **SaleEvent** entity type from the **Explorer**.
 
@@ -325,7 +325,7 @@ Next, create relationship types between the entity types to represent contextual
 
 Now the first relationship is created, and bound to data in your source table. Continue to the next section to create another relationship type.
 
-### Products soldIn SaleEvent
+### SaleEvent sold Products
 
 Select **Home** to return to the configuration canvas where you can add new entity types.
 
