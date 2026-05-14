@@ -55,12 +55,12 @@ The following sample JSON shows a complete rule definition:
 
 A rule contains several parameters, described in the following table:
 
-| Parameter name | Type  | Notes    | Required |
-|----------------|-------|----------|----------|
-| **name**       | String | A rule name can include up to 256 alphanumeric characters. The rule name is case-sensitive. It must be unique within a policy. | Yes |
-| **enabled**    | Boolean | An optional boolean to allow a rule to be temporarily disabled. The default value is true.                                    | No  |
-| **type**       | An enum value  | The only valid type is `Lifecycle`.                                                                                    | Yes |
-| **definition** | An object that defines the lifecycle rule | The definition contains the filters (scope), actions, and conditions.                       | Yes |
+| Parameter name | Type | Notes | Required |
+| -- | -- | -- | -- |
+| **name** | String | A rule name can include up to 256 alphanumeric characters. The rule name is case-sensitive. It must be unique within a policy. | Yes |
+| **enabled** | Boolean | An optional boolean to allow a rule to be temporarily disabled. The default value is true. | No |
+| **type** | An enum value | The only valid type is `Lifecycle`. | Yes |
+| **definition** | An object that defines the lifecycle rule | The definition contains the filters (scope), actions, and conditions. | Yes |
 
 ### Scope
 
@@ -68,10 +68,10 @@ A rule's filters determine its scope. If no filter is present, then the lifecycl
 
 The following table describes each filter parameter:
 
-| Filter name    | Type                            | Description                                                                      | Required |
-|----------------|---------------------------------|----------------------------------------------------------------------------------|----------|
-| **blobTypes**  | Array of predefined enum values | OneLake only supports **blockblob**.                                             | Yes      |
-| **prefixMatch**| Array of strings                | These strings are prefixes to be matched.  | No       |
+| Filter name | Type | Description | Required |
+| -- | -- | -- | -- |
+| **blobTypes** | Array of predefined enum values | OneLake only supports **blockblob**. | Yes |
+| **prefixMatch** | Array of strings | These strings are prefixes to be matched. | No |
 
 #### prefixMatch
 
@@ -82,10 +82,10 @@ Each rule can define up to 10 case-sensitive prefixes to filter the paths the ru
 Each rule must contain at least one action and condition. Actions are applied to any files within the rule scope when the condition is met. The following table describes each action supported by OneLake lifecycle policies:  
 
 | Action | Description |
-|---|---|
-| **TierToCool** | Move a file to the cool storage tier.|
-| **TierToCold** | Move a file to the cold access tier.| 
-| **enableAutoTierToHotFromCool** | If a file is set to the cool tier, this action automatically moves that file to the hot tier when the file is accessed.<br><br>This action is available only when used with the **daysAfterLastAccessTimeGreaterThan** run condition. <br><br>This action has no effect on files that were set to the cool tier before enabling this action in a rule. <br><br>This action moves files from cool to hot only one time in 30 days. This safeguard is put into place to protect against multiple early deletion penalties charged to the account.|
+| --- | --- |
+| **TierToCool** | Move a file to the cool storage tier. |
+| **TierToCold** | Move a file to the cold access tier. | 
+| **enableAutoTierToHotFromCool** | If a file is set to the cool tier, this action automatically moves that file to the hot tier when the file is accessed.<br><br>This action is available only when used with the **daysAfterLastAccessTimeGreaterThan** run condition. <br><br>This action has no effect on files that were set to the cool tier before enabling this action in a rule. <br><br>This action moves files from cool to hot only one time in 30 days. This safeguard is put into place to protect against multiple early deletion penalties charged to the account. |
 
 If you define more than one action on the same file, lifecycle management applies the least expensive action to the file. The **tierToCold** action is considered less expensive than **tierToCool**.
 
@@ -93,11 +93,11 @@ If you define more than one action on the same file, lifecycle management applie
 
 Every action is linked to a time-based condition. If a file's property exceeds the number of days specified by the condition, then the associated action executes. Lifecycle conditions are assessed on each object only once during a policy run - if a file meets a condition after assessment, it will be processed in a subsequent policy run. The following table describes each condition supported by OneLake lifecycle policies:
 
-| Condition name                                     | Type    | Description    |
-|----------------------------------------------------|---------|------------------------|
-| **daysAfterModificationGreaterThan**               | Integer | The age in days after the file's last modified time. |
-| **daysAfterCreationGreaterThan**                   | Integer | The age in days after the file's creation time.   |
-| **daysAfterLastAccessTimeGreaterThan** | Integer | The age in days after the file's last accessed time. To learn more, see [Access time tracking](#access-time-tracking).   |
+| Condition name | Type | Description |
+| -- | -- | -- |
+| **daysAfterModificationGreaterThan** | Integer | The age in days after the file's last modified time. |
+| **daysAfterCreationGreaterThan** | Integer | The age in days after the file's creation time. |
+| **daysAfterLastAccessTimeGreaterThan** | Integer | The age in days after the file's last accessed time. To learn more, see [Access time tracking](#access-time-tracking). |
 
 #### Access time tracking
 
@@ -108,9 +108,9 @@ Access time tracking is required when using the **daysAfterLastAccessTimeGreater
 
 ## Manage your policy
 
-You can create or update your lifecycle policy for your workspace via the Fabric portal (**Workspace Settings** > **OneLake** > **Lifecycle Management**) or by using the Lifecycle Management APIs.
+You can create or update your lifecycle policy for your workspace via the Fabric portal (**Workspace Settings** > **OneLake** > **Lifecycle Management**) or by using the [OneLake Lifecycle Policy APIs](/rest/api/fabric/core/onelake-lifecycle-policy).
 
-When you update your policy via an API, only full policy updates are supported - you must resubmit the entire policy in full by using the Import Lifecycle Policy API.
+When you update your policy via an API, only full policy updates are supported. Resubmit the entire policy in full by using the [Import Policy API](/rest/api/fabric/core/onelake-lifecycle-policy/import-policy).
 
 ### Prerequisites
 
@@ -118,13 +118,13 @@ To create, update, or delete a lifecycle policy for a workspace, you must be a w
 
 ### Create a policy in the Fabric portal
 
-In the **Lifecycle management** settings page, you can update your workspace's lifecycle policy by creating, deleting, and managing lifecycle rules. 
+In the **Lifecycle management** settings page, you can update your workspace's lifecycle policy by creating, deleting, and managing lifecycle rules.
 
 To manage your lifecycle policy via the Fabric portal:
 
 1. Navigate to your workspace and select **Workspace settings**.
-2. Expand the **OneLake** section and select **Lifecycle management**.
-3. Select **Add** to create a new rule or create a template rule with predefined actions and conditions.
+1. Expand the **OneLake** section and select **Lifecycle management**.
+1. Select **Add** to create a new rule or create a template rule with predefined actions and conditions.
 
 You can also delete, pause, or reactivate rules from the Fabric portal.  
 
@@ -146,3 +146,4 @@ You can view the amount of data stored by tier in the [Fabric Capacity Metrics a
 
 - [OneLake storage tiers](onelake-storage-tiers.md)
 - [OneLake compute and storage consumption](onelake-consumption.md)
+- 
