@@ -87,7 +87,7 @@ items:
       items:
         - name: Create a semantic model connection
           href: plan/planning-how-to-create-semantic-model-connection.md
-        - name: Create a Planning sheet
+        - name: Create a planning sheet
           href: plan/planning-how-to-get-started.md
         - name: Create a database connection for collaboration
           href: plan/planning-how-to-create-database-connection.md
@@ -205,7 +205,7 @@ items:
       href: plan/intelligence-overview.md
     - name: How-tos
       items:
-        - name: Get started with Intelligence sheets
+        - name: Get started with intelligence sheets
           href: plan/intelligence-how-to-get-started.md
         - name: Build financial reports
           href: plan/intelligence-how-to-build-financial-reports.md

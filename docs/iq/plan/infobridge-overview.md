@@ -47,5 +47,5 @@ The following table lists the core capabilities of InfoBridge.
  
 Learn how to use InfoBridge in the following articles:
 
-* [Connect measures between Planning sheets](infobridge-how-to-share-measures.md)
+* [Connect measures between planning sheets](infobridge-how-to-share-measures.md)
 * [Write back InfoBridge data](infobridge-how-to-write-back-data.md)

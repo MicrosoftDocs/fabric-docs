@@ -8,7 +8,7 @@ ms.topic: how-to
 
 # Plan projects with Gantt charts
 
-The Intelligence sheet features a best-in-class Gantt chart for Fabric that helps visualize, communicate, and track project progress. The fully customizable Gantt chart enables you to:
+The intelligence sheet features a best-in-class Gantt chart for Fabric that helps visualize, communicate, and track project progress. The fully customizable Gantt chart enables you to:
 
 * Plan projects by breaking work into tasks with defined start and end dates.
 * Identify task dependencies and anticipate potential delays.
