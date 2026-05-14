@@ -86,3 +86,7 @@ If you want to connect to a Direct Lake semantic model, follow the steps below. 
 ## Next steps
 
 Now that your semantic model connection is created, you can create a Planning sheet that uses this connection: [Create a Planning sheet](planning-how-to-get-started.md).
+
+## Related content
+* [Prerequisites for Plan](overview-prerequisites-for-plan.md)
+* [Trobleshooting guide](planning-troubleshooting.md)
