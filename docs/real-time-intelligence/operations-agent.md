@@ -3,7 +3,7 @@ title: Create and Configure Operations Agents
 description: Learn how to use operations agents in Fabric Real-Time Intelligence.
 ms.reviewer: willthom, v-hzargari
 ms.topic: how-to
-ms.date: 05/10/2026
+ms.date: 05/14/2026
 ms.search.form: Operations Agent
 ---
 
