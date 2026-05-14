@@ -344,8 +344,6 @@ items:
       href: spark-admin-settings-faq.yml 
   - name: Spark monitoring and diagnostics
     items:
-      - name: Monitoring and optimization best practices
-        href: spark-monitoring-best-practices.md
       - name: Spark monitoring and diagnostics features
         items: 
          - name: Apache Spark monitoring overview
@@ -414,6 +412,8 @@ items:
     items:
     - name: Data warehouse and lakehouse connector
       href: spark-data-warehouse-connector.md
+    - name: Data warehouse connector Private Link support
+      href: spark-data-warehouse-connector-private-link.md
     - name: Spark connector for SQL databases
       href: spark-sql-connector.md
     - name: JDBC driver for Fabric Data Engineering
@@ -480,16 +480,6 @@ items:
     items:
     - name: Overview
       href: migrate-synapse-overview.md
-    - name: Spark migration best practices
-      items:
-      - name: "Phase 1: Migration strategy and planning"
-        href: synapse-migration-strategy-planning.md
-      - name: "Phase 2: Spark workload migration"
-        href: synapse-migration-spark-workloads.md
-      - name: "Phase 3: Hive Metastore and data migration"
-        href: synapse-migration-hms-data.md
-      - name: "Phase 4: Security and governance migration"
-        href: synapse-migration-security-validation-cutover.md
     - name: Component migration guides (manual)
       items:
       - name: Migrate Spark pools
@@ -656,6 +646,18 @@ items:
         href: spark-best-practices-development-monitoring.md
       - name: Spark basics
         href: spark-best-practices-basics.md
+      - name: Spark monitoring and performance optimization
+        href: spark-monitoring-best-practices.md
+      - name: Synapse to Fabric migration
+        items:
+        - name: "Phase 1: Migration strategy and planning"
+          href: synapse-migration-strategy-planning.md
+        - name: "Phase 2: Spark workload migration"
+          href: synapse-migration-spark-workloads.md
+        - name: "Phase 3: Hive Metastore and data migration"
+          href: synapse-migration-hms-data.md
+        - name: "Phase 4: Security and governance migration"
+          href: synapse-migration-security-validation-cutover.md
 - name: Troubleshooting guide
   items:
   - name: Permissions and capacity errors

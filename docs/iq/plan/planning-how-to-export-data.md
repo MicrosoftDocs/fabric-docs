@@ -1,5 +1,5 @@
 ---
-title: Export data from Planning sheets
+title: Export Data from Planning Sheets
 description: Learn how to export Planning sheets to Excel or PDF in Fabric plan (preview). Explore Excel export modes, PDF settings, headers, formatting, and advanced configuration options.
 ms.date: 05/04/2026
 ms.topic: how-to
@@ -118,7 +118,7 @@ The advanced **Excel Settings** are presented in three tabs, described in the se
 
 Planning sheets support exporting header elements such as dates and symbols to Excel. Use header settings to control and preview which header lines are included in the export.
 
-::image type="content" source="media/planning-how-to-export-data/header-settings.png" alt-text="Screenshot of configuring header settings in the exported excel." lightbox="media/planning-how-to-export-data/header-settings.png":::
+:::image type="content" source="media/planning-how-to-export-data/header-settings.png" alt-text="Screenshot of configuring header settings in the exported excel." lightbox="media/planning-how-to-export-data/header-settings.png":::
 
 #### Footer Settings
 

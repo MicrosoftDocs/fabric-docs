@@ -151,28 +151,32 @@ items:
       href: onelake-manage-inbound-access-trusted-resources.md
     - name: Manage outbound access
       href: onelake-manage-outbound-access.md
-  - name: Monitor and recover
-    items:
-    - name: OneLake diagnostics
-      href: onelake-diagnostics-overview.md
-    - name: Recover deleted files
-      href: soft-delete.md
-    - name: Plan for disaster recovery
-      href: onelake-disaster-recovery.md
   - name: Encrypt data with customer-managed keys
     href: /fabric/security/workspace-customer-managed-keys?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
   - name: Best practices
     href: ./security/best-practices-secure-data-in-onelake.md
+- name: Manage and govern
+  items:
+  - name: Get the size of OneLake items
+    href: how-to-get-item-size.md
+  - name: Storage tiers
+    href: onelake-storage-tiers.md
+  - name: Data lifecycle management
+    href: onelake-lifecycle-management.md
+  - name: Discover data in the OneLake catalog
+    href: ../governance/onelake-catalog-overview.md?toc=/fabric/onelake/TOC.json&bc=/fabric/onelake/breadcrumb/toc.json
+  - name: OneLake diagnostics
+    href: onelake-diagnostics-overview.md
+  - name: Recover deleted files
+    href: soft-delete.md
+  - name: Plan for disaster recovery
+    href: onelake-disaster-recovery.md
 - name: OneLake file explorer for Windows
   items:
   - name: OneLake file explorer overview
     href: onelake-file-explorer.md
   - name: Release notes
     href: onelake-file-explorer-release-notes.md
-- name: Get the size of OneLake items
-  href: how-to-get-item-size.md
-- name: Discover data in the OneLake catalog
-  href: ../governance/onelake-catalog-overview.md?toc=/fabric/onelake/TOC.json&bc=/fabric/onelake/breadcrumb/toc.json
 - name: Billing and consumption
   items:
   - name: OneLake compute and storage consumption

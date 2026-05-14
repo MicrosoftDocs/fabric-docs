@@ -1,5 +1,5 @@
 ---
-title: Known limitations in plan (preview)
+title: Known Limitations in Plan (Preview)
 description: This article lists known issues and limitations present in plan (preview).
 ms.topic: concept-article
 ms.date: 05/6/2026
@@ -26,7 +26,3 @@ Plan items aren’t supported in workspaces or tenants that use private links.
 * Semantic models in Direct Lake mode require [additional configuration](planning-how-to-create-semantic-model-connection.md#connect-to-a-direct-lake-semantic-model).
 * Only OAuth-based semantic model connections are supported. 
 * Semantic models in **My workspace** aren't supported.
-
-## Browser support
-
-Some older browsers that support only HTTP/1.1 or earlier might cause errors when creating or using artifacts. Use a modern browser that supports HTTP/2.
