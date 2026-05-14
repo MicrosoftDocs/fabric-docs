@@ -36,7 +36,7 @@ This article lists *all* the required prerequisites, tenant settings, and capaci
 
 1. In the Power BI Admin portal, under **Capacity settings**, ensure that the **XMLA Endpoint** setting is configured as **Read Only** or **Read Write**.
 
-    :::image type="content" source="media/overview-prerequisites-for-plan/set-xmla-readonly.png" alt-text="Screenshot of setting xmla endpoints as read only or read write":::
+    :::image type="content" source="media/overview-prerequisites-for-plan/set-xmla-read-only.png" alt-text="Screenshot of setting xmla endpoints as read only or read write":::
 
 ## Semantic model connection owner permissions
 
