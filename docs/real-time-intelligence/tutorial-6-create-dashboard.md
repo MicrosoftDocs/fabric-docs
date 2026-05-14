@@ -3,7 +3,7 @@ title: Real-Time Intelligence tutorial part 6 - Create a Real-Time Dashboard
 description: Learn how to create a Real-Time Dashboard in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: tutorial
-ms.date: 12/29/2025
+ms.date: 05/14/2025
 ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to create a Real-Time Dashboard in Real-Time Intelligence.
