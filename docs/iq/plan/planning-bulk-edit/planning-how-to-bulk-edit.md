@@ -25,7 +25,7 @@ Use bulk edit operations to:
 
 ## Select a measure
 
-1. In **Measure**, select the data input measure to update.
+In **Measure**, select the data input measure to update.
 
 :::image type="content" source="../media/planning-bulk-edit/bulk-edit-select-measure.png" alt-text="Screenshot of selecting a measure in Bulk Edit." lightbox="../media/planning-bulk-edit/bulk-edit-select-measure.png":::
 
@@ -41,7 +41,7 @@ The Planning sheet updates dynamically based on the selected filters.
 
 ## Select a row hierarchy level
 
-1. In **Apply to Row Level**, select the hierarchy level to update.
+In **Apply to Row Level**, select the hierarchy level to update.
 
 :::image type="content" source="../media/planning-bulk-edit/bulk-edit-select-apply-to-row-level.png" alt-text="Screenshot of the Apply to Row Level option in Bulk Edit." lightbox="../media/planning-bulk-edit/bulk-edit-select-apply-to-row-level.png":::
 
