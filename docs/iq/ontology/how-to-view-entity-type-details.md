@@ -178,6 +178,6 @@ To refresh the graph, follow these steps:
 
 ## Troubleshooting
 
-For troubleshooting tips related to the entity type details in ontology (preview), see [Troubleshoot ontology (preview)](resources-troubleshooting.md#troubleshoot-entity-type-details).
+For troubleshooting tips related to the entity type details in ontology (preview), see [Troubleshoot ontology (preview)](resources-troubleshooting.md).
 
 
