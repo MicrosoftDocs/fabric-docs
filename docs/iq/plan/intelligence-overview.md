@@ -9,7 +9,7 @@ ai-usage: ai-assisted
 
 # What are Intelligence sheets in plan (preview)?
 
-The *Intelligence sheets* component of plan (preview) provides a powerful no-code reporting experience that enables teams to collaboratively build reports, generate fully formatted exports, visualize data, and manage project plans from a single platform in Microsoft Fabric. It couples seamlessly with the Planning sheet to provide real-time insights across your plans, budgets, and what-if scenarios.
+The *Intelligence sheets* component of plan (preview) provides a powerful no-code reporting experience that enables teams to collaboratively build reports, generate fully formatted exports, visualize data, and manage project plans from a single platform in Microsoft Fabric. It couples seamlessly with the planning sheet to provide real-time insights across your plans, budgets, and what-if scenarios.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -50,7 +50,7 @@ The following table lists the core capabilities of Intelligence sheets.
 | **Commenting & collaboration** | - Add context to reports with cell, row, measure, and category level notes <br>- Create multi-threaded comments with task assignments and `@mentions` |
 | **Excel, PDF, PNG export** | - Export reports as high-quality files with fully preserved layout and formatting. |
 | **100+ charts** | - Brings over 100 business and storytelling charts. <br>- Includes special charts like marimekko, radar/polar, network graphs, sankey, multi axis charts, and lollipop, that are not available natively on Power BI |
-| **Real-time intelligence** | - Connect to Planning sheets to visualize plans, budgets, forecasts, and simulations in real time |
+| **Real-time intelligence** | - Connect to planning sheets to visualize plans, budgets, forecasts, and simulations in real time |
 | **Gantt chart** | - Best-in-class solution for project planning and resource allocation |
 
 ## Next steps

@@ -60,17 +60,17 @@ The following steps describe how to add another input driver, **Price Growth %**
 
     :::image type="content" source="../media/planning-driver-model/planning-how-to-create-driver-model/configure-driver-method.png" alt-text="Screenshot of configuring driver row and driver method." lightbox="../media/planning-driver-model/planning-how-to-create-driver-model/configure-driver-method.png":::
 
-1. Go back to the Planning sheet and select the driver icon. Then, enter the price growth % values in the **Driver Input** table that appears. You can enter driver input at either the total or leaf levels.
+1. Go back to the planning sheet and select the driver icon. Then, enter the price growth % values in the **Driver Input** table that appears. You can enter driver input at either the total or leaf levels.
 
-    :::image type="content" source="../media/planning-driver-model/planning-how-to-create-driver-model/enter-driver-input.png" alt-text="Screenshot of entering driver input in Planning sheet.":::
+    :::image type="content" source="../media/planning-driver-model/planning-how-to-create-driver-model/enter-driver-input.png" alt-text="Screenshot of entering driver input in planning sheet.":::
 
 1. After you enter the *Price Growth %* values, the **Final Gross Revenue** row updates automatically based on the selected driver method (10% growth in gross revenue).
 1. Enter different driver inputs to calculate the change in gross revenue, the net revenue, and gross profit as price growth changes roll up to the top.
 
-    :::image type="content" source="../media/planning-driver-model/planning-how-to-create-driver-model/result-driver-input.png" alt-text="Screenshot of results after entering driver input in Planning sheet.":::
+    :::image type="content" source="../media/planning-driver-model/planning-how-to-create-driver-model/result-driver-input.png" alt-text="Screenshot of results after entering driver input in planning sheet.":::
 
 This example shows how driver-based modeling helps you find outcomes based on key assumptions so you can test different driver inputs without changing the core model.
 
-Changes automatically roll up to top-level results and distribute across periods, allowing you to perform fast, flexible what-if analysis directly in the Planning sheet.
+Changes automatically roll up to top-level results and distribute across periods, allowing you to perform fast, flexible what-if analysis directly in the planning sheet.
 
 You can also modify the distribution method while creating a driver model. For more information, see [Distribution](planning-how-to-configure-model-row-properties.md#distribution).

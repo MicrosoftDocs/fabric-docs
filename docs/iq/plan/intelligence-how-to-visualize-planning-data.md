@@ -17,15 +17,15 @@ Plan, forecast, and visualize scenarios on live data sources without duplicating
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-## Create Planning sheet
+## Create planning sheet
 
 1. Create a planning sheet that can contain manual data inputs, simulations, scenarios, and forecasts.
 
-    :::image type="content" source="media/intelligence-how-to-visualize-planning-data/planning-sheet.png" alt-text="Screenshot of a Planning sheet containing sample data." lightbox="media/intelligence-how-to-visualize-planning-data/planning-sheet.png":::
+    :::image type="content" source="media/intelligence-how-to-visualize-planning-data/planning-sheet.png" alt-text="Screenshot of a planning sheet containing sample data." lightbox="media/intelligence-how-to-visualize-planning-data/planning-sheet.png":::
 
-1. In a new Intelligence sheet, select the Planning visual and choose the Planning sheet to import data from.
+1. In a new Intelligence sheet, select the Planning visual and choose the planning sheet to import data from.
 
-    :::image type="content" source="media/intelligence-how-to-visualize-planning-data/intelligence-sheet.png" alt-text="Screenshot of a new Intelligence sheet importing data from a Planning sheet." lightbox="media/intelligence-how-to-visualize-planning-data/intelligence-sheet.png":::
+    :::image type="content" source="media/intelligence-how-to-visualize-planning-data/intelligence-sheet.png" alt-text="Screenshot of a new Intelligence sheet importing data from a planning sheet." lightbox="media/intelligence-how-to-visualize-planning-data/intelligence-sheet.png":::
 
     The selected sheet is imported into the Intelligence sheet.
 
@@ -34,10 +34,10 @@ Plan, forecast, and visualize scenarios on live data sources without duplicating
 ## Add visuals
 
 1. Add a chart (or a visual that consumes the planning data). 
-1. Measures from the Planning sheet (data input, formulas, simulations, forecasts) appear as fields under the **From Sheets** section of the **Data** pane. You can assign dimensions and measures from your semantic models and other Planning sheets.
+1. Measures from the planning sheet (data input, formulas, simulations, forecasts) appear as fields under the **From Sheets** section of the **Data** pane. You can assign dimensions and measures from your semantic models and other planning sheets.
 
-    :::image type="content" source="media/intelligence-how-to-visualize-planning-data/from-sheets.png" alt-text="Screenshot of the Planning sheet measures visible in the From Sheets section." lightbox="media/intelligence-how-to-visualize-planning-data/from-sheets.png":::
+    :::image type="content" source="media/intelligence-how-to-visualize-planning-data/from-sheets.png" alt-text="Screenshot of the planning sheet measures visible in the From Sheets section." lightbox="media/intelligence-how-to-visualize-planning-data/from-sheets.png":::
 
-1. As you run simulations in the Planning sheet, the charts in the Intelligence sheet are updated to reflect the changes in real time.
+1. As you run simulations in the planning sheet, the charts in the Intelligence sheet are updated to reflect the changes in real time.
 
-    :::image type="content" source="media/intelligence-how-to-visualize-planning-data/simulations.gif" alt-text="GIF of the screen showing the report changing as values are adjusted in the Planning sheet." lightbox="media/intelligence-how-to-visualize-planning-data/simulations.gif":::
+    :::image type="content" source="media/intelligence-how-to-visualize-planning-data/simulations.gif" alt-text="GIF of the screen showing the report changing as values are adjusted in the planning sheet." lightbox="media/intelligence-how-to-visualize-planning-data/simulations.gif":::
