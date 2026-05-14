@@ -17,6 +17,8 @@ title: How to train models with Apache Spark MLlib
 
 In this article, you learn how to use Apache Spark [MLlib](https://spark.apache.org/mllib/) to create a machine learning application that handles predictive analysis on an Azure open dataset. Spark provides built-in machine learning libraries. This example uses *classification* through logistic regression.
 
+This tutorial covers these steps:
+
 > [!div class="checklist"]
 > * Set up notebook and imports
 > * Load and sample NYC taxi data
@@ -36,17 +38,10 @@ The core SparkML and MLlib Spark libraries provide many utilities that are usefu
 
 ## Prerequisites
 
-Before you begin, ensure you have the following resources and permissions:
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-| Requirement | Details | How to verify |
-|-------------|---------|---------------|
-| Microsoft Fabric workspace | A workspace with active Fabric capacity (trial or paid) | Open [Fabric portal](https://app.fabric.microsoft.com) and confirm you can access a workspace |
-| Lakehouse | A lakehouse attached to your notebook | In your workspace, select **+ New** > **Lakehouse** if you don't have one |
-| PySpark notebook | A notebook configured with PySpark runtime | Select **+ New** > **Notebook** in your workspace |
-| Fabric capacity | F2 or higher, or Fabric trial capacity | Check **Settings** > **Capacity** in the Fabric admin portal |
-
-> [!NOTE]
-> This tutorial runs in a Microsoft Fabric notebook with a preconfigured Spark session. You don't need to install Spark or Java locally.
+* If necessary, create a Microsoft Fabric lakehouse as described in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
+* Create a new notebook in your workspace by selecting **+** and then **Notebook**. For more information, see [Create a notebook](../data-engineering/how-to-use-notebook.md).
 
 ## Understand classification and logistic regression
 
