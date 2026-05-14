@@ -21,9 +21,9 @@ The Fabric IQ plugin is installed by default for Frontier customers. For the bro
 
 With the Fabric IQ plugin enabled in Cowork, you can:
 
-1. Ground a Cowork chat in a specific Power BI report and ask questions about the data it contains.
-1. Reference a Power BI report that you have access to and ask Cowork to summarize it, compare values, or explain a trend.
-1. Chain a data answer into other Cowork skills, such as drafting an email, creating a document, or scheduling a follow-up meeting, all in the same chat.
+- Ground a Cowork chat in a specific Power BI report and ask questions about the data it contains.
+- Reference a Power BI report that you have access to and ask Cowork to summarize it, compare values, or explain a trend.
+- Chain a data answer into other Cowork skills, such as drafting an email, creating a document, or scheduling a follow-up meeting, all in the same chat.
 
 Under the covers, Cowork queries Power BI semantic models and reports on your behalf and uses Cowork-native search to find the right Power BI artifacts when you reference them by name. Queries run against Power BI as you, so existing item permissions and row-level security (RLS) continue to apply.
 
@@ -67,12 +67,12 @@ The first release of the Fabric IQ plugin has the following limitations. These l
 
 The plugin doesn't currently support grounding on:
 
-1. Paginated (RDL) reports
-1. Power BI dashboards
-1. Reports inside a Power BI app
-1. Share links across reports, dashboards, and semantic models
-1. Direct references to a semantic model by name (semantic models are queried indirectly through reports that use them)
-1. Fabric items that aren't Power BI reports or semantic models, such as lakehouses, eventhouses, ontologies, and data agents
+- Paginated (RDL) reports
+- Power BI dashboards
+- Reports inside a Power BI app
+- Share links across reports, dashboards, and semantic models
+- Direct references to a semantic model by name (semantic models are queried indirectly through reports that use them)
+- Fabric items that aren't Power BI reports or semantic models, such as lakehouses, eventhouses, ontologies, and data agents
 
 **Behavior gaps**
 
@@ -91,9 +91,9 @@ To use the Fabric IQ plugin in Cowork, the following prerequisites must be met.
 
 **User prerequisites**
 
-1. You're enrolled in the [Microsoft 365 Copilot Frontier program](https://adoption.microsoft.com/copilot/frontier-program/) and can access Cowork.
-1. You have a Microsoft 365 Copilot Premium License.
-1. You have at least **Read** permission on the Power BI reports and underlying semantic models you want to ask about, in your home Fabric tenant.
+- You're enrolled in the [Microsoft 365 Copilot Frontier program](https://adoption.microsoft.com/copilot/frontier-program/) and can access Cowork.
+- You have a Microsoft 365 Copilot Premium License.
+- You have at least **Read** permission on the Power BI reports and underlying semantic models you want to ask about, in your home Fabric tenant.
 
 **Tenant prerequisites**
 
