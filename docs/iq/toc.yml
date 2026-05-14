@@ -69,8 +69,10 @@ items:
       href: plan/overview.md
     - name: Region availability
       href: plan/overview-regions.md
+    - name: Prerequisites
+      href: plan/overview-prerequisites-for-plan.md
     - name: Known limitations
-      href: plan/overview-limitations.md   
+      href: plan/overview-limitations.md
   - name: Planning sheets
     items:
     - name: Planning sheets overview
@@ -167,6 +169,10 @@ items:
                 href: plan/planning-driver-model/planning-how-to-create-templates.md
               - name: Create a driver model
                 href: plan/planning-driver-model/planning-how-to-create-driver-model.md
+    - name: Troubleshoot
+      items:
+        -name: Troubleshoot semantic model connection issues
+         href: plan/planning-troubleshooting.md
     - name: Reference
       items:
         - name: Formulas and functions
