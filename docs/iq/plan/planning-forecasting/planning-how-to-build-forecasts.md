@@ -1,5 +1,5 @@
 ---
-title: Create forecasts using predictions and historical data
+title: Create Forecasts Using Predictions and Historical Data
 description: Learn how to create and manage forecasts in a Planning sheet. Create forecast models, manage forecast periods, and streamline planning and forecasting workflows.
 ms.date: 04/26/2026
 ms.topic: how-to

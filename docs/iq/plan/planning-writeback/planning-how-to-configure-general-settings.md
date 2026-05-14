@@ -1,5 +1,5 @@
 ---
-title: Configure general settings for writeback
+title: Configure General Settings for Writeback
 description: Learn how to customize writeback behavior, including writeback types, filters, decimal precision, and text field lengths.
 ms.date: 04/30/2026
 ms.topic: how-to
