@@ -1,5 +1,5 @@
 ---
-title: What is plan (preview)?
+title: What Is Plan (Preview)?
 description: Learn about the plan (preview) item, including its components, core features, and use cases.
 ms.date: 04/16/2026
 ms.topic: overview
@@ -25,7 +25,7 @@ By combining historical data, real-time signals, and future projections in a sin
 To learn which regions support plan during preview, see [Region availability for plan (preview)](overview-regions.md).
 
 > [!NOTE]
-> The preview of plan in Fabric IQ is now accessible to organizations worldwide in Microsoft Fabric as part of the Microsoft Fabric SKU, and new meters have been created. Meters are currently available but are not currently billed. To learn about Planning sheet limitations, see [Known limitations](overview-limitations.md).
+> The preview of plan in Fabric IQ is now accessible to organizations worldwide in Microsoft Fabric as part of the Microsoft Fabric SKU, and new meters have been created. Meters are currently available but are not currently billed. To learn about planning sheet limitations, see [Known limitations](overview-limitations.md).
 
 ## Why use plan?
 

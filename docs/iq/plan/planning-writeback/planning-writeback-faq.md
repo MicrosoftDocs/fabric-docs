@@ -18,11 +18,11 @@ A: Yes. Plan (preview) captures changes made to data input columns and stores th
 
 ## How does row-level security (RLS) work in plan?
 
-Plan (preview) respects the RLS defined in the original Power BI dataset. The Planning sheet displays only the rows that the user is allowed to see. RLS in Power BI applies to users with Viewer access in the workspace.
+Plan (preview) respects the RLS defined in the original Power BI dataset. The planning sheet displays only the rows that the user is allowed to see. RLS in Power BI applies to users with Viewer access in the workspace.
 
 ## How does writeback work with RLS?
 
-Plan (preview) writes back only the rows visible to the user. If a user can see a limited set of dimension categories based on RLS, only those rows are written back. You can only write back the data that's visible in the Planning sheet.
+Plan (preview) writes back only the rows visible to the user. If a user can see a limited set of dimension categories based on RLS, only those rows are written back. You can only write back the data that's visible in the planning sheet.
 
 ## How is data stored when multiple users perform writeback? When are rows overwritten or appended?
 

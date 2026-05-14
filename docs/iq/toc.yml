@@ -19,7 +19,7 @@ items:
       href: ontology/tutorial-1-create-ontology.md
     - name: 2- Enrich the ontology
       href: ontology/tutorial-2-enrich-ontology.md
-    - name: 3- Preview the ontology
+    - name: 3- View the ontology
       href: ontology/tutorial-3-preview-ontology.md
     - name: 4- Create data agent
       href: ontology/tutorial-4-create-data-agent.md
@@ -37,9 +37,9 @@ items:
       href: ontology/how-to-bind-data.md
     - name: Add relationship types
       href: ontology/how-to-create-relationship-types.md
-    - name: Use preview experience
-      href: ontology/how-to-use-preview-experience.md
-    - name: Add rules
+    - name: View entity type details
+      href: ontology/how-to-view-entity-type-details.md
+    - name: Use rules
       href: ontology/how-to-use-rules.md
     - name: Use resource links
       href: ontology/how-to-use-resource-links.md
@@ -87,7 +87,7 @@ items:
       items:
         - name: Create a semantic model connection
           href: plan/planning-how-to-create-semantic-model-connection.md
-        - name: Create a Planning sheet
+        - name: Create a planning sheet
           href: plan/planning-how-to-get-started.md
         - name: Create a database connection for collaboration
           href: plan/planning-how-to-create-database-connection.md
@@ -107,6 +107,8 @@ items:
                 href: plan/planning-how-to-insert-rows-blank.md
               - name: Manage inserted rows
                 href: plan/planning-how-to-manage-inserted-rows.md
+        - name: Bulk edit data
+          href: plan/planning-how-to-bulk-edit.md
         - name: Set up scenarios
           href: plan/planning-how-to-set-up-scenarios.md
         - name: Use writeback
@@ -121,6 +123,10 @@ items:
                 href: plan/planning-writeback/planning-how-to-configure-destination-settings.md
               - name: Configure advanced settings
                 href: plan/planning-writeback/planning-how-to-configure-advanced-settings.md
+              - name: View logs
+                href: plan/planning-writeback/planning-how-to-view-logs.md
+              - name: Enable writeback in reading mode
+                href: plan/planning-writeback/planning-how-to-enable-writeback-reading-mode.md
               - name: Writeback FAQ
                 href: plan/planning-writeback/planning-writeback-faq.md
         - name: Change layouts
@@ -199,7 +205,7 @@ items:
       href: plan/intelligence-overview.md
     - name: How-tos
       items:
-        - name: Get started with Intelligence sheets
+        - name: Get started with intelligence sheets
           href: plan/intelligence-how-to-get-started.md
         - name: Build financial reports
           href: plan/intelligence-how-to-build-financial-reports.md
