@@ -8,7 +8,7 @@ ms.search.form: Insufficient permissions to connect to semantic model, Semantic 
 #customer intent: As a user, I want to troubleshoot common issues that occur when connecting to a semantic model in plan (preview).
 ---
 
-# Troubleshoot
+# Troubleshoot semantic model conmnection issues in plan (preview)
 
 This article provides troubleshooting guidance for Plan in Microsoft Fabric. For any known limitations that you should be aware of, see [Known limitations](overview-limitations.md).
 
