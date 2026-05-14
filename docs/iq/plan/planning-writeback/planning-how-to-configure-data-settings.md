@@ -1,5 +1,5 @@
 ---
-title: Configure data settings for writeback
+title: Configure Data Settings for Writeback
 description: Learn how to configure data settings, including selecting series for writeback and managing HTML formatting in text inputs and Data Analysis Expressions (DAX) measures.
 ms.date: 05/02/2026
 ms.topic: how-to
