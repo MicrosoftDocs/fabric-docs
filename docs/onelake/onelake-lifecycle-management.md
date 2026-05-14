@@ -27,7 +27,7 @@ Each lifecycle rule contains the following elements:
 - **Condition**: A rule's action is applied when a file in the scope meets the specified condition. You can set conditions on when a file was created, last accessed, or last modified.
 - **Action**: A rule's action happens when a file in the scope meets the specified condition. Each action is linked to a single condition, and a single rule can have multiple action + condition pairs.
 
-:::image type="content" source="media/onelake-lifecycle-management/lifecycle-rule.png" alt-text="Screenshot that shows the lifecycle rule creation experience in the Fabric portal, showing the options for the rule's scope, actions, and conditions." lightbox="media/onelake-lifecycle-management/lifecycle-rule.png" border="false":::
+:::image type="content" source="media/onelake-lifecycle-management/lifecycle-rule.png" alt-text="Screenshot that shows the lifecycle rule creation experience in the Fabric portal, showing the options for the rule's scope, actions, and conditions.":::
 
 The following sections expand on each of these areas and how they're defined in the lifecycle policy JSON.
 
