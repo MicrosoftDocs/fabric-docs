@@ -10,7 +10,7 @@ ms.search.form: Insufficient permissions to connect to semantic model, Semantic 
 
 # Troubleshoot
 
-This article provides troubleshooting guidance for Plan in Microsoft Fabric. For any known limitations that you should be aware of, see [Known issues and limitations](overview-limitations.md).
+This article provides troubleshooting guidance for Plan in Microsoft Fabric. For any known limitations that you should be aware of, see [Known limitations](overview-limitations.md).
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
