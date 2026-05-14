@@ -107,6 +107,8 @@ items:
                 href: plan/planning-how-to-insert-rows-blank.md
               - name: Manage inserted rows
                 href: plan/planning-how-to-manage-inserted-rows.md
+        - name: Bulk edit data
+          href: plan/planning-bulk-edit/planning-how-to-bulk-edit.md
         - name: Set up scenarios
           href: plan/planning-how-to-set-up-scenarios.md
         - name: Use writeback
