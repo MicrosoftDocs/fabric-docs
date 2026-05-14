@@ -1,5 +1,5 @@
 ---
-title: Write back InfoBridge data
+title: Write Back InfoBridge Data
 description: Learn how to integrate and transform plans, budgets, and forecasts from multiple data sources and write data back easily to a unified data integration platform.
 ms.date: 03/11/2026
 ms.topic: how-to

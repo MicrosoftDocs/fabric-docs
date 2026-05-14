@@ -1,5 +1,5 @@
 ---
-title: Comment and collaborate
+title: Comment and Collaborate
 description: Learn how to perform collaborative commenting in Intelligence sheets with cell, row, and column-level threaded conversations, task assignments, and mentions.
 ms.date: 03/31/2026
 ms.topic: how-to
