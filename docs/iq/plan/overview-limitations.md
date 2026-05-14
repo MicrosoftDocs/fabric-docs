@@ -18,7 +18,7 @@ Plan doesn't support Microsoft Entra B2B IDs.
 
 ## Private link support
 
-Plan items aren’t supported in workspaces or tenants that use [private links](https://learn.microsoft.com/en-us/fabric/security/security-private-links-overview#what-is-a-private-endpoint).
+Plan items aren’t supported in workspaces or tenants that use [private links](../../security/security-private-links-overview.md#what-is-a-private-endpoint).
 
 ## Semantic model
 

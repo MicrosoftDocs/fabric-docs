@@ -171,8 +171,8 @@ items:
                 href: plan/planning-driver-model/planning-how-to-create-driver-model.md
     - name: Troubleshoot
       items:
-        -name: Troubleshoot semantic model connection issues
-         href: plan/planning-troubleshooting.md
+          - name: Troubleshoot semantic model connection issues
+            href: plan/planning-troubleshooting.md
     - name: Reference
       items:
         - name: Formulas and functions

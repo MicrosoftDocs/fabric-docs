@@ -13,17 +13,17 @@ This article lists *all* the required prerequisites, tenant settings, and capaci
 
 ## Tenant settings
 
-[Fabric administrators](https://learn.microsoft.com/en-us/fabric/admin/roles) can grant access to these settings in the [admin portal](https://learn.microsoft.com/en-us/fabric/admin/admin-center) under [tenant settings](https://learn.microsoft.com/en-us/fabric/admin/tenant-settings-index).
+[Fabric administrators](../../admin/roles.md) can grant access to these settings in the [admin portal](../../admin/admin-center.md) under [tenant settings](../../admin/tenant-settings-index.md).
 
 1. This setting is *required* to create plan (preview) items: **Users can create Plan (preview) items**. Enable this setting.
 
    :::image type="content" source="media/overview-prerequisites-for-plan/enable-plan.png" alt-text="Screenshot of enabling plan for organizational users." lightbox="media/overview-prerequisites-for-plan/enable-plan.png":::
 
-1. Under [**Integration settings**](https://learn.microsoft.com/en-us/fabric/admin/tenant-settings-index#integration-settings), enable **Allow XMLA endpoints and Analyze in Excel with on-premises semantic models**.
+1. Under [**Integration settings**](../../admin/tenant-settings-index.md#integration-settings), enable **Allow XMLA endpoints and Analyze in Excel with on-premises semantic models**.
 
    :::image type="content" source="media/overview-prerequisites-for-plan/allow-xmla-endpoints.png" alt-text="Screenshot of enabling allow xmla endpoints and analyze in excel with on-premises semantic models":::
 
-1. Under [**Developer settings**](https://learn.microsoft.com/en-us/fabric/admin/tenant-settings-index#developer-settings), enable **Embed content in apps**.
+1. Under [**Developer settings**](../../admin/tenant-settings-index.md#developer-settings), enable **Embed content in apps**.
 
 ## Capacity settings
 
