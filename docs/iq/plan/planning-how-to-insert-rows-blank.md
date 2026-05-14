@@ -1,5 +1,5 @@
 ---
-title: Insert blank rows in a Planning sheet
+title: Insert Blank Rows in a Planning Sheet
 description: Learn how to insert and delete blank rows in a Planning sheet. 
 ms.date: 05/05/2026
 ms.topic: how-to

@@ -1,5 +1,5 @@
 ---
-title: "Tutorial part 2: Enrich the ontology with additional data"
+title: "Tutorial Part 2: Enrich the Ontology with Additional Data"
 description: Enrich the ontology by creating a new entity and binding time series data. Part 2 of the ontology (preview) tutorial.
 ms.date: 04/20/2026
 ms.topic: tutorial

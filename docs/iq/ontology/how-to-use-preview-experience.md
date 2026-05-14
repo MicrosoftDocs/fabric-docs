@@ -1,5 +1,5 @@
 ---
-title: Use preview experience
+title: Use Preview Experience
 description: Learn about the preview experience in ontology (preview).
 ms.date: 12/02/2025
 ms.topic: how-to

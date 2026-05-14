@@ -1,5 +1,5 @@
 ---
-title: Resource links in ontology (preview)
+title: Resource Links in Ontology (Preview)
 description: Learn about linking resources to an entity type in ontology (preview).
 ms.date: 04/24/2026
 ms.topic: how-to

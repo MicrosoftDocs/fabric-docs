@@ -1,5 +1,5 @@
 ---
-title: Build financial reports
+title: Build Financial Reports
 description: Learn how to format financial data in Intelligence sheets with structured layouts, custom number formatting, templates, totals, subtotals, and calculations.
 ms.date: 03/11/2026
 ms.topic: how-to

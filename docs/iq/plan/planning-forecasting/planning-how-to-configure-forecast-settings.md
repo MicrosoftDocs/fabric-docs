@@ -1,5 +1,5 @@
 ---
-title: Configure closed periods, aggregation, and general forecast settings
+title: Configure Closed Periods, Aggregation, and General Forecast Settings
 description: Learn how to extend open periods, adjust and reopen closed periods, and set the aggregation method for 
 ms.date: 04/22/2026
 ms.topic: how-to
