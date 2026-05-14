@@ -116,4 +116,5 @@ For more information, see [OAP and workspace considerations](../security/workspa
 
 * [Git integration](./git-integration/intro-to-git-integration.md)
 * [Manage admin access to workspace inbound access protection settings](../security/security-workspace-enable-inbound-access-protection.md)
+* [Row-level security (RLS) with Power BI](/fabric/security/service-admin-row-level-security)
 * [Workspace outbound access protection](../security/workspace-outbound-access-protection-overview.md)
