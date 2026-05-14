@@ -1,5 +1,5 @@
 ---
-title: Billing and capacity usage
+title: Billing and Capacity Usage
 description: Learn how ontology (preview) capacity usage is billed and reported.
 ms.date: 03/20/2026
 ms.topic: concept-article
