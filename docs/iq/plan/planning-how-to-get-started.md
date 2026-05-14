@@ -15,6 +15,8 @@ This article describes how to get started with your first planning sheet in plan
 
 Before you set up planning sheets, make sure you have the following prerequisites:
 
+* Completed the overall [prerequisites for plan (preview)](overview-prerequisites.md), including the required tenant and capacity settings.
+
 * Data in a [Power BI semantic model](../../data-warehouse/semantic-models.md), and a [connection to your semantic model](planning-how-to-create-semantic-model-connection.md).
 
 > [!NOTE]
