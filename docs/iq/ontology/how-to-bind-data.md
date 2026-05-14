@@ -1,5 +1,5 @@
 ---
-title: Bind data
+title: Bind Data
 description: Learn about the data binding process in ontology (preview).
 ms.date: 03/30/2026
 ms.topic: how-to

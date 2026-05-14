@@ -1,5 +1,5 @@
 ---
-title: Configure advanced settings for writeback
+title: Configure Advanced Settings for Writeback
 description: Learn how to configure advanced writeback settings, including enforcing column validation rules and renaming writeback columns.
 ms.date: 05/03/2026
 ms.topic: how-to

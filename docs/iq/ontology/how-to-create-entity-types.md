@@ -1,5 +1,5 @@
 ---
-title: Create entity types
+title: Create Entity Types
 description: Learn about entity types in ontology (preview) and how to manage them.
 ms.date: 04/21/2026
 ms.topic: how-to

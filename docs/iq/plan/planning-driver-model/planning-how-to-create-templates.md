@@ -1,5 +1,5 @@
 ---
-title: Create templates for reusable row structures
+title: Create Templates for Reusable Row Structures
 description: Learn how to create templates for reusing row structures in models.
 ms.date: 04/28/2026
 ms.topic: how-to
