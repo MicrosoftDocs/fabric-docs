@@ -1,7 +1,8 @@
 ---
 ai-usage: ai-assisted
 author: s-polly
-description: A tutorial on how to use Apache Spark MLlib to create a machine learning
+description: Use Apache Spark MLlib to create a predictive analytics model with logistic regression. Explore feature engineering, training, and ROC evaluation in Fabric.
+#customer intent: As a Microsoft Fabric user, I want to train a logistic regression model in a PySpark notebook, so that I can perform predictive analysis without setting up Spark locally.
   model that analyzes a dataset by using classification through logistic regression.
 ms.author: scottpolly
 ms.custom: dev-focus
@@ -46,7 +47,7 @@ Before you begin, ensure you have the following resources and permissions:
 | Fabric capacity | F2 or higher, or Fabric trial capacity | Check **Settings** > **Capacity** in the Fabric admin portal |
 
 > [!NOTE]
-> This tutorial runs in a Microsoft Fabric notebook with a pre-configured Spark session. You don't need to install Spark or Java locally.
+> This tutorial runs in a Microsoft Fabric notebook with a preconfigured Spark session. You don't need to install Spark or Java locally.
 
 ## Understand classification and logistic regression
 
@@ -64,7 +65,7 @@ This tutorial uses Apache Spark to perform analysis on the NYC taxi-trip tip dat
 
 ## Create an Apache Spark machine learning model
 
-1. Create a PySpark notebook. For more information, visit [Create a notebook](../data-engineering/how-to-use-notebook.md).
+1. Create a PySpark notebook. For more information, see [Create a notebook](../data-engineering/how-to-use-notebook.md).
 
     After you create the notebook, attach it to a lakehouse by selecting **Add lakehouse** in the left panel.
 
@@ -92,7 +93,7 @@ This tutorial uses Apache Spark to perform analysis on the NYC taxi-trip tip dat
 
 ## Construct the input DataFrame
 
-This example loads the data from Azure Open Datasets storage into an Apache Spark DataFrame. You then apply Spark operations to clean and filter the dataset.
+This example loads the data from Azure Open Datasets storage into an Apache Spark DataFrame. Then, you apply Spark operations to clean and filter the dataset.
 
 1. Paste the following code into a new cell and run it to create a Spark DataFrame. This step retrieves NYC yellow taxi data filtered to May 2018.
 
@@ -107,14 +108,14 @@ This example loads the data from Azure Open Datasets storage into an Apache Spar
         .repartition(20)
     ```
 
-    **Verify**: Run the following cell to confirm data loaded successfully.
+    **Verify**: Run the following cell to confirm data loads successfully.
 
     ```python
     print(f"Loaded {nyc_tlc_df.count()} rows")
     # Expected output: Loaded approximately 9,000,000+ rows
     ```
 
-1. Sample the dataset down to speed up development and training.
+1. Sample the dataset to speed up development and training.
 
     ```python
     # Sample without replacement to avoid duplicates
@@ -128,7 +129,7 @@ This example loads the data from Azure Open Datasets storage into an Apache Spar
     # Expected output: Sampled approximately 9,000-10,000 rows
     ```
 
-1. View the data using the built-in `display()` command to explore the data sample.
+1. View the data by using the built-in `display()` command to explore the data sample.
 
     ```python
     display(sampled_taxi_df.limit(10))
@@ -138,7 +139,7 @@ This example loads the data from Azure Open Datasets storage into an Apache Spar
 
 ## Prepare the data
 
-Data preparation is a crucial step in the machine learning process. It involves cleaning, transformation, and organization of raw data to make it suitable for analysis and modeling. In this section, you perform several data preparation steps:
+Data preparation is a crucial step in the machine learning process. It involves cleaning, transforming, and organizing raw data to make it suitable for analysis and modeling. In this section, perform several data preparation steps:
 
 - Filter the dataset to remove outliers and incorrect values.
 - Remove columns that aren't needed for model training.
@@ -193,7 +194,7 @@ taxi_featurised_df.groupBy('trafficTimeBins').count().show()
 
 The final task converts the labeled data into a format that logistic regression can handle. The input to a logistic regression algorithm must have a *label/feature vector pairs* structure, where the *feature vector* is a vector of numbers that represent the input point.
 
-Convert the categorical columns `trafficTimeBins` and `weekdayString` into integer representations using the `OneHotEncoder` approach:
+Convert the categorical columns `trafficTimeBins` and `weekdayString` into integer representations by using the `OneHotEncoder` approach:
 
 ```python
 # Convert categorical features into numeric representations
@@ -234,7 +235,7 @@ print(f"Training rows: {train_data_df.count()}, Test rows: {test_data_df.count()
 # Expected output: Approximately 70%/30% split of the encoded data
 ```
 
-Create the model formula, train the logistic regression model, and evaluate it using Area Under the ROC (Receiver Operating Characteristic) Curve:
+Create the model formula, train the logistic regression model, and evaluate it by using Area Under the ROC (Receiver Operating Characteristic) Curve:
 
 ```python
 # Create a logistic regression model
@@ -291,7 +292,7 @@ plt.show()
 
 ## Clean up resources
 
-After you finish this tutorial, you can delete the notebook and lakehouse to free workspace capacity:
+After you finish this tutorial, delete the notebook and lakehouse to free workspace capacity:
 
 1. In your workspace, right-click the notebook and select **Delete**.
 1. If you created a lakehouse specifically for this tutorial, right-click it and select **Delete**.
