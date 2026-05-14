@@ -1,5 +1,5 @@
 ---
-title: Create a driver model
+title: Create a Driver Model
 description: Learn how to create a driver model by using the model builder.
 ms.date: 04/28/2026
 ms.topic: how-to

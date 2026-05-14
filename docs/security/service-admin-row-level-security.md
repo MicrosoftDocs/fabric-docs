@@ -276,6 +276,7 @@ For more information on sharing Power BI content with external users, see [Distr
 
 [!INCLUDE [include-short-name](../includes/row-level-security-faq.md)]
 
+
 ## Related content
 
 - [Restrict data access with row-level security (RLS) for Power BI Desktop](/power-bi/guidance/rls-guidance)

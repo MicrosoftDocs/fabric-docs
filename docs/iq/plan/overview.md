@@ -1,5 +1,5 @@
 ---
-title: What is plan (preview)?
+title: What Is Plan (Preview)?
 description: Learn about the plan (preview) item, including its components, core features, and use cases.
 ms.date: 04/16/2026
 ms.topic: overview
