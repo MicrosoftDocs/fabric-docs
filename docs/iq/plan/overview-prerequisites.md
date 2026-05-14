@@ -21,7 +21,7 @@ This article lists all the required prerequisites, tenant settings, and capacity
 
 1. Under [Integration settings](../../admin/tenant-settings-index.md#integration-settings), enable **Allow XMLA endpoints and Analyze in Excel with on-premises semantic models**.
 
-   :::image type="content" source="media/overview-prerequisites/allow-xmla-endpoints.png" alt-text="Screenshot of enabling allow xmla endpoints and analyze in excel with on-premises semantic models":::
+   :::image type="content" source="media/overview-prerequisites/allow-xmla-endpoints.png" alt-text="Screenshot of enabling allow xmla endpoints and analyze in excel with on-premises semantic models.":::
 
 1. Under [Developer settings](../../admin/tenant-settings-index.md#developer-settings), enable **Embed content in apps**.
 
@@ -36,7 +36,7 @@ This article lists all the required prerequisites, tenant settings, and capacity
 
 * In the Power BI Admin portal, under **Capacity settings**, ensure that the **XMLA Endpoint** setting is configured as **Read Only** or **Read Write**.
 
-    :::image type="content" source="media/overview-prerequisites/set-xmla-read-only.png" alt-text="Screenshot of setting xmla endpoints as read only or read write":::
+    :::image type="content" source="media/overview-prerequisites/set-xmla-read-only.png" alt-text="Screenshot of setting xmla endpoints as read only or read write.":::
 
 ## Semantic model connection owner permissions
 
