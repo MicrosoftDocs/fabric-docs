@@ -1,5 +1,5 @@
 ---
-title: What is ontology (preview)?
+title: What Is Ontology (Preview)?
 description: Learn about core concepts and features of the ontology (preview) item.
 ms.date: 10/06/2025
 ms.topic: overview

@@ -1,5 +1,5 @@
 ---
-title: Allocate plans with a cube
+title: Allocate Plans with a Cube
 description: Learn about multi-dimensional driver based allocation 
 ms.date: 04/12/2026
 ms.topic: concept-article

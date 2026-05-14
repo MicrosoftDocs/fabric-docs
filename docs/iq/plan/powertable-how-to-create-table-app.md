@@ -1,5 +1,5 @@
 ---
-title: Create a table app with PowerTable sheets
+title: Create a Table App with PowerTable Sheets
 description: Learn how to create a no-code table app with PowerTable sheets, by importing Excel sheets or connecting to database tables and semantic models to build collaborative data apps with live synchronization.
 ms.date: 03/27/2026
 ms.topic: how-to

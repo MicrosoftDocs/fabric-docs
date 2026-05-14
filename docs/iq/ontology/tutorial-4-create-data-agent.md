@@ -1,5 +1,5 @@
 ---
-title: "Tutorial part 4: Create data agent"
+title: "Tutorial Part 4: Create Data Agent"
 description: Create a data agent that queries the ontology (preview) in natural language. Part 4 of the ontology (preview) tutorial.
 ms.date: 02/04/2026
 ms.topic: tutorial

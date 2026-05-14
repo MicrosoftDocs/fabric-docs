@@ -1,5 +1,5 @@
 ---
-title: Add relationship types
+title: Add Relationship Types
 description: Learn about relationship types in ontology (preview) and how to manage them.
 ms.date: 04/21/2026
 ms.topic: how-to
