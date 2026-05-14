@@ -205,7 +205,7 @@ items:
       href: plan/intelligence-overview.md
     - name: How-tos
       items:
-        - name: Get started with Intelligence sheets
+        - name: Get started with intelligence sheets
           href: plan/intelligence-how-to-get-started.md
         - name: Build financial reports
           href: plan/intelligence-how-to-build-financial-reports.md
