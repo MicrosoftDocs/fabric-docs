@@ -39,7 +39,7 @@ The semantic model linked to the shared cloud connection can’t be found. It co
 ### Resolution
 
 1. Verify that the semantic model exists in the required workspace in Microsoft Fabric.
-2. If it has been moved, locate the new workspace and connect to it.
+2. If it got moved, locate the new workspace and connect to it.
 3. Ensure the connection owner has either **Member** or **Admin** access to the correct workspace.
 4. If not, ask a workspace Admin to upgrade their role to either **Member or Admin** by selecting **Workspace > Manage access**.
 
@@ -47,7 +47,7 @@ The semantic model linked to the shared cloud connection can’t be found. It co
 
 ### Cause
 
-The credentials for this shared cloud connection have expired.
+The credentials for this shared cloud connection expired.
 
 ### Resolution
 
@@ -55,7 +55,7 @@ The connection owner must reauthenticate the connection by following these steps
 
 1. In Microsoft Fabric **Home**, go to **Settings >** **Manage connections and gateways**.
 2. Locate the connection, select **More actions** (`···`), then **Settings**.
-3. Select **Edit credentials**, re-authenticate, and then select **Save**.
+3. Select **Edit credentials**, reauthenticate, and then select **Save**.
 4. Return to the artifact and retry the connection.
 
 ## When workspace is not accessible
