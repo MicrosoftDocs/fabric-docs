@@ -37,8 +37,8 @@ items:
       href: ontology/how-to-bind-data.md
     - name: Add relationship types
       href: ontology/how-to-create-relationship-types.md
-    - name: Use preview experience
-      href: ontology/how-to-use-preview-experience.md
+    - name: View entity type details
+      href: ontology/how-to-view-entity-type-details.md
     - name: Use rules
       href: ontology/how-to-use-rules.md
     - name: Use resource links
@@ -108,7 +108,7 @@ items:
               - name: Manage inserted rows
                 href: plan/planning-how-to-manage-inserted-rows.md
         - name: Bulk edit data
-          href: plan/planning-bulk-edit/planning-how-to-bulk-edit.md
+          href: plan/planning-how-to-bulk-edit.md
         - name: Set up scenarios
           href: plan/planning-how-to-set-up-scenarios.md
         - name: Use writeback
