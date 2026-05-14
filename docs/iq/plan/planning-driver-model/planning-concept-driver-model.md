@@ -47,9 +47,9 @@ Driver-based modeling also aligns with allocation concepts, where values are dis
 
 ## Model builder
 
-In Planning sheet, when you select **Driver Model**, **Model Builder** is enabled.
+In planning sheet, when you select **Driver Model**, **Model Builder** is enabled.
 
-:::image type="content" source="../media/planning-driver-model/planning-concept-driver-model/enable-model-builder.png" alt-text="Screenshot of enabling Model Builder from the Planning sheet.":::
+:::image type="content" source="../media/planning-driver-model/planning-concept-driver-model/enable-model-builder.png" alt-text="Screenshot of enabling Model Builder from the planning sheet.":::
 
 The model builder is a no-code, flexible interface for creating and managing advanced and driver models.
 
