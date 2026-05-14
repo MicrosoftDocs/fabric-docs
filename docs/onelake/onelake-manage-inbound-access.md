@@ -17,7 +17,7 @@ Inbound access protection secures connections between your virtual network and M
 
 Turning on inbound access protection restricts public access to your Fabric tenant or workspace. All inbound calls must use an approved private endpoint, either from your own virtual network or from an approved service such as another Fabric workspace. These private endpoints ensure that connections come only from trusted sources and not the public internet. To learn more about how to set up private endpoints and block public access to your workspace, see [Fabric workspace private links](/fabric/security/security-workspace-level-private-links-overview).
 
-:::image type="content" source="media/onelake-manage-inbound-access/onelake-inbound-workspace-managed-private-endpoint.png" alt-text="Diagram of the destination storage account making an outbound call to the source storage account during copy operations." lightbox="media/onelake-manage-inbound-access/onelake-inbound-workspace-managed-private-endpoint.png" border="false":::
+:::image type="content" source="media/onelake-manage-inbound-access/onelake-inbound-workspace-managed-private-endpoint.png" alt-text="Diagram of the destination storage account making an outbound call to the source storage account during copy operations." lightbox="media/onelake-manage-inbound-access/onelake-inbound-workspace-managed-private-endpoint.png":::
 
 ## OneLake and private links
 
