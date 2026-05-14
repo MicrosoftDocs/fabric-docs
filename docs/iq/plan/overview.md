@@ -106,7 +106,7 @@ Plan extends Microsoft Fabric beyond analytics into enterprise decision intellig
 
 ## Prerequisites for plan (preview)
 
-For more information about prerequisites for using plan (preview), see [Prerequisites for plan (preview)](overview-prerequisites-for-plan.md). Prerequisites include tenant settings, capacity settings, semantic model connection owner permissions, and database connections.
+For more information about prerequisites for using plan (preview), see [Prerequisites for plan (preview)](overview-prerequisites.md). Prerequisites include tenant settings, capacity settings, semantic model connection owner permissions, and database connections.
 
 ## Next steps
 
