@@ -22,16 +22,16 @@ Plan items aren’t supported in workspaces or tenants that use [private links](
 
 ## Semantic model
 
-* You must have **Admin** or **Build** permissions on the semantic model.
+* You must have *Admin* or *Build* permissions on the semantic model.
 * Semantic models in Direct Lake mode require [additional configuration](planning-how-to-create-semantic-model-connection.md#connect-to-a-direct-lake-semantic-model).
 * Only OAuth-based semantic model connections are supported. 
-* Semantic models published in **My workspace** aren't supported.
+* Semantic models published in *My workspace* aren't supported.
 
 ## Capacities supported
 
-* Power BI Pro and Power BI Premium Per User (PPU) aren't supported for Plan scenarios that use XMLA endpoints and embed tokens. Similarly, lower-capacity SKUs that do not support XMLA endpoints are also unsupported.
+Power BI Pro and Power BI Premium Per User (PPU) aren't supported for Plan scenarios that use XMLA endpoints and embed tokens. Similarly, lower-capacity SKUs that do not support XMLA endpoints are also unsupported.
 
 ## Workspace permissions
 
-* Users with the **Contributor** role can't create or share cloud connections.
-* Users with lower-level workspace roles, such as **Contributor**, can't create Plan artifacts that require embed token generation.
+* Users with the *Contributor* role can't create or share cloud connections.
+* Users with lower-level workspace roles, such as *Contributor*, can't create Plan artifacts that require embed token generation.
