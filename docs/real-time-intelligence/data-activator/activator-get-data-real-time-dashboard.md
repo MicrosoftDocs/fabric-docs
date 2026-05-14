@@ -97,7 +97,7 @@ In the **Action** section, select one of the following actions to take when the 
 
 * **Run Fabric activities**:
     To configure the alert to launch a Fabric pipeline, Dataflow, Spark job, notebook, or User Data Function when the condition is met, follow these steps:
-    1. For **Select action**, select **Run Pipeline**, **Run Dataflow**, **Run Spark job**, **Run Notebook**, or **Run User Data Function (preview)**.
+    1. For **Select action**, select **Run Pipeline**, **Run Dataflow**, **Run Spark job**, **Run Notebook**, or **Run User Data Function**.
     1. On Select Fabric item to run, select the Fabric item (pipeline, dataflow, notebook, Spark job, or function) from the list.
     1. Select Add parameter and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter.
     You can pass parameters from the alert data by typing `@` or by selecting the button next to the text box. For example, `@BikepointID`.
