@@ -1,5 +1,5 @@
 ---
-title: Comparing Different Mltitenant Solutions in Real-Time Intelligence
+title: Comparing Different Multitenant Solutions in Real-Time Intelligence
 description: Learn about the different ways to architect a multitenant solution using an eventhouse in Real-Time Intelligence.
 ms.reviewer: vplauzon
 ms.topic: concept-article
