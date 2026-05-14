@@ -48,8 +48,11 @@ In this part of the tutorial, you create a Real-Time Dashboard in Real-Time Inte
 
 You can access this real-time dashboard any time by browsing to your workspace and selecting the *TutorialDashboard*.
 
-<!-- ## Using Copilot. Content drafted, but not published as per Michal's request. Leaving here for future. 
+<!-- // Content drafted, but not published as per Michal's request. Leaving here for future. // 
+
 ## Generate a real-time dashboard using Copilot (preview)
+
+## Using Copilot to create a real-time daashboard
 
 The process uses AI to generate a Real-Time Dashboard from the streaming data in your table. You can then customize the dashboard by adding or modifying tiles as needed.
 
@@ -77,6 +80,8 @@ Copilot automatically generates the Copilot Insights page and Profile page, both
 
 --> 
 
+<!-- // Content drafted for new experience, but not yet released. Need new screenshot of the final result.//
+
 ## Add a new tile by using a query
 
 You need to be in editing mode to add new tiles to a dashboard. Each tile is based on a KQL query, and you can choose from various visualization types to display the data.
@@ -100,8 +105,6 @@ You need to be in editing mode to add new tiles to a dashboard. Each tile is bas
 
     A preview of the map visual appears, but it doesn't have the necessary configuration to display the data correctly.
 
-    :::image type="content" source="media/tutorial/map-preview.png" alt-text="Screenshot of the map visual preview." lightbox="media/tutorial/map-preview.png":::
-
 1. In the **Visualization** pane, select the expand button to see all visualization options. Then enter the following information to configure the map visual:
 
     | Field | Value |
@@ -117,6 +120,37 @@ You need to be in editing mode to add new tiles to a dashboard. Each tile is bas
     :::image type="content" source="media/tutorial/final-dashboard.png" alt-text="Screenshot of final dashboard with two tiles." lightbox="media/tutorial/final-dashboard.png":::
 
 1. Save the dashboard by selecting the **Save** icon on the top left corner of the dashboard.
+
+-->
+
+## Add a new tile by using a query
+
+Make sure that you're in **Editing** mode in the dashboard before beginning the following steps. If you're not in **Editing** mode, toggle from **Viewing** on the top right corner of the dashboard.
+
+1. Select **Add visual**.
+
+1. In the query editor, enter and run the following query:
+
+    ```kusto
+    RawData
+    | where Timestamp > ago(1h)
+    ```
+
+1. In the **Visualization** pane, select the expand button to see all visualization options. Then enter the following information to configure the map visual:
+
+    | Field | Value |
+    | --- | --- |
+    | Tile name | *Bike locations Map* |
+    | **Define location by** | *Latitude and longitude* |
+    | **Latitude column** | *Latitude* |
+    | **Longitude column** | *Longitude* |
+    | **Label column** | *BikepointID* |
+
+1. View the Visual tab to see a draft of the new tile. When you are happy with the visualization, select **Apply changes**.
+
+    :::image type="content" source="media/tutorial/final-dashboard.png" alt-text="Screenshot of final dashboard with two tiles." lightbox="media/tutorial/final-dashboard.png":::
+
+1. The new or edited tile is displayed in the dashboard. To save the dashboard with the new tile, select **Save** at the top left corner of the dashboard.
 
 ## Customize tile visuals
 
