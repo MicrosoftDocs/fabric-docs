@@ -1,5 +1,5 @@
 ---
-title: Share measures between sheets
+title: Share Measures Between Sheets
 description: Learn how to create bridges and connect Planning sheets to share data inputs and forecasts between sheets.
 ms.date: 03/11/2026
 ms.topic: how-to

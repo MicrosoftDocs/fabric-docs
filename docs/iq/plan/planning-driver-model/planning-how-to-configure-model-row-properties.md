@@ -1,5 +1,5 @@
 ---
-title: Configure row properties
+title: Configure Row Properties
 description: Learn how to configure row properties for a model.
 ms.date: 04/26/2026
 ms.topic: how-to

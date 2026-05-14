@@ -1,5 +1,5 @@
 ---
-title: Driver model
+title: Driver Model
 description: Learn about the driver model and model builder in plan (preview).
 ms.date: 04/28/2026
 ms.topic: concept-article

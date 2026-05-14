@@ -1,5 +1,5 @@
 ---
-title: "Tutorial part 0: Introduction and environment setup"
+title: "Tutorial Part 0: Introduction and Environment Setup"
 description: Get started with ontology (preview) by setting up a sample retail scenario. Part 0 of the ontology (preview) tutorial.
 ms.date: 04/13/2026
 ms.topic: tutorial

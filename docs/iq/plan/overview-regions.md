@@ -1,5 +1,5 @@
 ---
-title: Region availability for plan (preview)
+title: Region Availability for Plan (Preview)
 description: See the list of regions where plan (preview) is available.
 ms.date: 03/19/2026
 ms.topic: overview
