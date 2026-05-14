@@ -1,5 +1,5 @@
 ---
-title: Intelligence sheets in plan (preview)
+title: Intelligence Sheets in Plan (Preview)
 description: Learn about the Intelligence sheets component of the plan (preview) item for a no-code reporting experience. Build reports, visualize data, and get real-time insights across plans and budgets.
 ms.date: 03/30/2026
 ms.topic: overview

@@ -1,5 +1,5 @@
 ---
-title: Get started with Intelligence sheets
+title: Get Started with Intelligence Sheets
 description: Learn how to configure the Intelligence sheets component of the plan (preview) item for no-code reporting.
 ms.date: 03/11/2026
 ms.topic: how-to

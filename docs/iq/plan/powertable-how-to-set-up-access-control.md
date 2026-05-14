@@ -1,5 +1,5 @@
 ---
-title: Set up access control
+title: Set Up Access Control
 description: Learn how to configure row and column permissions in PowerTable to control data security and secure access to table apps.
 ms.date: 03/27/2026
 ms.topic: how-to

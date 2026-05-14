@@ -1,5 +1,5 @@
 ---
-title: Pivot data in Planning sheets
+title: Pivot Data in Planning Sheets
 description: Learn how to use the Pivot feature in Fabric plan (preview) Planning sheets for flexible data analysis and customized views.
 ms.date: 05/04/2026
 ms.topic: how-to

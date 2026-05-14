@@ -21,7 +21,7 @@ For architecture and destination selection across the Fabric Apache Spark Diagno
 
 ## Migrate from the Data Collector API
 
-If you're currently using HTTP Data Collector API, migrate to Log Ingestion API to align with current Azure Monitor ingestion patterns.
+The [HTTP Data Collector API](/azure/azure-monitor/logs/data-collector-api) is deprecated. [Migrate to Log Ingestion API](/azure/azure-monitor/logs/custom-logs-migrate) to avoid disruption and align with current Azure Monitor ingestion patterns.
 
 Key changes in the new model:
 
