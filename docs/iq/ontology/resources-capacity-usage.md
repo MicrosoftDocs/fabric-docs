@@ -78,7 +78,7 @@ Consider the following factors that could potentially affect cost:
 * **Ontology logic and operations:** Charges for running queries and associated compute. Operations like indexing, refresh rates, and idle time can affect CU usage.
 * **AI reasoning and query:** Charges for advanced reasoning and natural language queries powered by AI, based on the number of tokens used.
 * **Associated Fabric items:** Charges from associated Fabric items that are being used through ontology, like [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) and [Fabric Activator](../../real-time-intelligence/data-activator/activator-capacity-usage.md).
-* **Graph refresh:** The [Graph in Microsoft Fabric](../../graph/overview.md) child item of your ontology (preview) item can be set to refresh automatically on a set schedule, and these refreshes contributes to capacity usage. If capacity usage is too high, you can edit or disable the Graph item schedule in your workspace. For more information, see [Refresh the graph model](how-to-use-preview-experience.md#refresh-the-graph-model). 
+* **Graph refresh:** The [Graph in Microsoft Fabric](../../graph/overview.md) child item of your ontology (preview) item can be set to refresh automatically on a set schedule, and these refreshes contributes to capacity usage. If capacity usage is too high, you can edit or disable the Graph item schedule in your workspace. For more information, see [Refresh the graph model](how-to-view-entity-type-details.md#refresh-the-graph-model). 
 
 ### Subject to changes in Microsoft Fabric workload consumption rate
 
