@@ -1,7 +1,7 @@
 ---
 title: Reliability in Eventhouse
 description: Learn about production deployment recommendations for reliability, resiliency, and disaster recovery in Microsoft Fabric Eventhouse.
-ms.reviewer: sharmaanshul
+ms.reviewer: smorshtein
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
 ms.date: 05/13/2026
