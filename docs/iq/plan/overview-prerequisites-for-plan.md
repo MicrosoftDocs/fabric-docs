@@ -48,8 +48,8 @@ The shared cloud connection owner, whether a user account or service principal, 
 
 Following are optional database connections that you can configure for specific scenarios such as collaboration and writeback.
 
-1. Create and share a Fabric SQL database connection with report viewers so they can collaborate on the plan report. To know more, see [Create a database connection for collaboration](planning-how-to-create-semantic-model-connection.md).
-1. Create and configure writeback destinations if you want to write back the plan data. For more information, see [Configure writeback destinations](planning-writeback/how-to-persist-planning-data.md#configure-writeback-destinations).
+1. Create and share a Fabric SQL database connection with report viewers so they can collaborate on the plan report. To know more, see [Create a database connection for collaboration](planning-how-to-create-database-connection.md).
+1. Create and configure a writeback destination if you want to write back the plan data. For more information, see [Create a writeback destination](planning-writeback/planning-how-to-persist-data.md#create-a-writeback-destination).
 
 > [!NOTE]
 > During plan (preview) item creation, a Fabric SQL database is automatically created in your workspace. This database stores your plan report's metadata.
