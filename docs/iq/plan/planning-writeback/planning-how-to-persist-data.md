@@ -1,6 +1,6 @@
 ---
 title: Set Up Writeback to Persist Data
-description: Learn how to write back data from a Planning sheet to your database or data platform. Configure destinations and save planning inputs securely. 
+description: Learn how to write back data from a planning sheet to your database or data platform. Configure destinations and save planning inputs securely. 
 ms.date: 04/27/2026
 ms.topic: how-to
 #customer intent: As a user, I want to understand and use writeback effectively.
@@ -18,14 +18,14 @@ Maintain planning and analytics data in a single governed environment instead of
 
 * Save budget and forecast inputs directly to the data platform.
 * Store scenario planning results for further analysis.
-* Capture manual adjustments made in Planning sheets.
+* Capture manual adjustments made in planning sheets.
 * Synchronize planning data with enterprise data warehouses.
 
 ## Prerequisites
 
 Before you begin, make sure you have the following prerequisites in place:
 
-* The Planning sheet contains at least one row or column dimension.
+* The planning sheet contains at least one row or column dimension.
 * Required permissions are assigned to users who perform writeback.
 
 ## Create a writeback destination
@@ -46,11 +46,11 @@ To save data using writeback, first configure a destination.
 
 To view, update, or reuse configured destinations, go to **Writeback > Manage**.
 
-:::image type="content" source="../media/planning-writeback/planning-how-to-persist-data/manage-destination.png" alt-text="Screenshot of writeback destinations configured in the Planning sheet." lightbox="../media/planning-writeback/planning-how-to-persist-data/manage-destination.png":::
+:::image type="content" source="../media/planning-writeback/planning-how-to-persist-data/manage-destination.png" alt-text="Screenshot of writeback destinations configured in the planning sheet." lightbox="../media/planning-writeback/planning-how-to-persist-data/manage-destination.png":::
 
 ## Configure writeback settings
 
-Use writeback settings to configure how data entered in a Planning sheet is saved back to the underlying data source. Writeback settings help ensure that planning data entered by users is stored correctly, consistently, and in a format that aligns with the organization's data model. Define the structure, filtering behavior, and data format used when writing planning values to the destination.
+Use writeback settings to configure how data entered in a planning sheet is saved back to the underlying data source. Writeback settings help ensure that planning data entered by users is stored correctly, consistently, and in a format that aligns with the organization's data model. Define the structure, filtering behavior, and data format used when writing planning values to the destination.
 
 Configure settings from **Writeback > Settings**.
 
@@ -67,8 +67,8 @@ Control how data is structured in the writeback table. Go to **Writeback > Setti
 
 * Select **Long** to store measures as key-value pairs a row-based format.
 * Select **Wide** to store measures in a column-based format.
-* Select **Long with Changes**. This format is the same as long format, but tracks only the changed values written back from the Planning sheet.
-* Select **Wide with Changes**. This format is the same as wide format, but tracks only the changed values written back from the Planning sheet.
+* Select **Long with Changes**. This format is the same as long format, but tracks only the changed values written back from the planning sheet.
+* Select **Wide with Changes**. This format is the same as wide format, but tracks only the changed values written back from the planning sheet.
 
 :::image type="content" source="../media/planning-writeback/planning-how-to-persist-data/select-writeback-type.jpg" alt-text="Screenshot of selecting the writeback type." lightbox="../media/planning-writeback/planning-how-to-persist-data/select-writeback-type.jpg":::
 

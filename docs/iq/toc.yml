@@ -3,6 +3,10 @@ items:
   href: index.yml
 - name: What is Fabric IQ?
   href: overview.md
+- name: Connectors
+  items:
+  - name: Cowork (Frontier)
+    href: connectors/cowork-overview.md
 - name: Ontology
   items:
   - name: Overview
@@ -37,8 +41,8 @@ items:
       href: ontology/how-to-bind-data.md
     - name: Add relationship types
       href: ontology/how-to-create-relationship-types.md
-    - name: Use preview experience
-      href: ontology/how-to-use-preview-experience.md
+    - name: View entity type details
+      href: ontology/how-to-view-entity-type-details.md
     - name: Use rules
       href: ontology/how-to-use-rules.md
     - name: Use resource links
@@ -69,8 +73,10 @@ items:
       href: plan/overview.md
     - name: Region availability
       href: plan/overview-regions.md
+    - name: Prerequisites
+      href: plan/overview-prerequisites.md
     - name: Known limitations
-      href: plan/overview-limitations.md   
+      href: plan/overview-limitations.md
   - name: Planning sheets
     items:
     - name: Planning sheets overview
@@ -87,7 +93,7 @@ items:
       items:
         - name: Create a semantic model connection
           href: plan/planning-how-to-create-semantic-model-connection.md
-        - name: Create a Planning sheet
+        - name: Create a planning sheet
           href: plan/planning-how-to-get-started.md
         - name: Create a database connection for collaboration
           href: plan/planning-how-to-create-database-connection.md
@@ -108,7 +114,7 @@ items:
               - name: Manage inserted rows
                 href: plan/planning-how-to-manage-inserted-rows.md
         - name: Bulk edit data
-          href: plan/planning-bulk-edit/planning-how-to-bulk-edit.md
+          href: plan/planning-how-to-bulk-edit.md
         - name: Set up scenarios
           href: plan/planning-how-to-set-up-scenarios.md
         - name: Use writeback
@@ -185,6 +191,10 @@ items:
                 href: plan/planning-driver-model/planning-how-to-create-templates.md
               - name: Create a driver model
                 href: plan/planning-driver-model/planning-how-to-create-driver-model.md
+    - name: Troubleshoot
+      items:
+          - name: Troubleshoot semantic model connection
+            href: plan/planning-troubleshoot-semantic-model.md
     - name: Reference
       items:
         - name: Formulas and functions
@@ -221,7 +231,7 @@ items:
       href: plan/intelligence-overview.md
     - name: How-tos
       items:
-        - name: Get started with Intelligence sheets
+        - name: Get started with intelligence sheets
           href: plan/intelligence-how-to-get-started.md
         - name: Build financial reports
           href: plan/intelligence-how-to-build-financial-reports.md

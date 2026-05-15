@@ -5,7 +5,7 @@ ms.reviewer: eloldag # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
-ms.date: 02/02/2026
+ms.date: 05/12/2026
 #customer intent: As a capacity admin, I want to understand how OneLake consumes storage and compute so that I can effectively manage my capacity and optimize costs.
 ---
 
@@ -41,12 +41,12 @@ For more information, see [Understand the metrics app storage page](../enterpris
 
 ## OneLake compute
 
-Requests to OneLake (such as read, write, or list) consume Fabric capacity. OneLake maps APIs to operations like ADLS [maps each REST operation to a price](/azure/storage/blobs/map-rest-apis-transaction-categories). 
+Requests to OneLake (such as read, write, or list) consume Fabric capacity. OneLake maps APIs to operations like ADLS [maps each REST operation to a price](/azure/storage/blobs/map-rest-apis-transaction-categories).
 
 You can see capacity usage for each operation in the Fabric Capacity Metrics app. In the Fabric Capacity Metrics app, open the **Compute** tab. Hover over the item that you want to view operation details for.
 
 > [!IMPORTANT]
-> Starting in May 2026, OneLake is updating how compute operations are reported in the Fabric Capacity Metrics app. A new **OneLake** item in the Fabric Capacity Metrics app groups operations by workspace instead of by individual Fabric items. For item-level detail, use [OneLake diagnostics](../onelake/onelake-diagnostics-overview.md).
+> As of May 2026, the Fabric Capacity Metrics app reports OneLake compute operations at the workspace level under a single **OneLake** item, rather than by individual Fabric items. For item-level detail, use [OneLake diagnostics](../onelake/onelake-diagnostics-overview.md).
 
 :::image type="content" source="media\onelake-capacity-consumption\onelake-operations.png" alt-text="Screenshot showing how OneLake compute is viewed in Fabric Metrics app." lightbox="media\onelake-capacity-consumption\onelake-operations.png":::
 

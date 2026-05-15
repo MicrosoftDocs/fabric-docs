@@ -2,7 +2,7 @@
 title: Known Limitations in Plan (Preview)
 description: This article lists known issues and limitations present in plan (preview).
 ms.topic: concept-article
-ms.date: 05/6/2026
+ms.date: 05/13/2026
 #customer intent: As a user, I want to know the limitation present in plan.
 ---
 
@@ -18,11 +18,20 @@ Plan doesn't support Microsoft Entra B2B IDs.
 
 ## Private link support
 
-Plan items aren’t supported in workspaces or tenants that use private links.
+Plan items aren’t supported in workspaces or tenants that use [private links](../../security/security-private-links-overview.md#what-is-a-private-endpoint).
 
 ## Semantic model
 
-* You must have **Admin** or **Build** permission on the semantic model.
+* You must have *Admin* or *Build* permissions on the semantic model.
 * Semantic models in Direct Lake mode require [additional configuration](planning-how-to-create-semantic-model-connection.md#connect-to-a-direct-lake-semantic-model).
 * Only OAuth-based semantic model connections are supported. 
-* Semantic models in **My workspace** aren't supported.
+* Semantic models published in *My workspace* aren't supported.
+
+## Capacities supported
+
+Power BI Pro and Power BI Premium Per User (PPU) aren't supported for Plan scenarios that use XMLA endpoints and embed tokens. Similarly, lower-capacity SKUs that do not support XMLA endpoints are also unsupported.
+
+## Workspace permissions
+
+* Users with the *Contributor* role can't create or share cloud connections.
+* Users with lower-level workspace roles, such as *Contributor*, can't create Plan artifacts that require embed token generation.

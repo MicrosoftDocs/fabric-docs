@@ -22,7 +22,7 @@ Before you configure layout options, ensure that you have the following:
 
 ## Configure table layouts
 
-1. Open the Planning Sheet.
+1. Open the planning sheet.
 1. Go to **Layout options**.
 1. Select the required **Layout**. Various types of [table](#types-of-table-layouts) and [measure layouts](#types-of-measure-layouts) are listed in the following screenshot.
 

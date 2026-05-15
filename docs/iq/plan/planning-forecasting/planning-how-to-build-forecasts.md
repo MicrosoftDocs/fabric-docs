@@ -1,13 +1,13 @@
 ---
 title: Create Forecasts Using Predictions and Historical Data
-description: Learn how to create and manage forecasts in a Planning sheet. Create forecast models, manage forecast periods, and streamline planning and forecasting workflows.
+description: Learn how to create and manage forecasts in a planning sheet. Create forecast models, manage forecast periods, and streamline planning and forecasting workflows.
 ms.date: 04/26/2026
 ms.topic: how-to
 ---
 
 # Forecast data to predict future trends
 
-Forecasting capabilities in the Planning sheet enable organizations to move beyond static annual plans and adopt agile planning methods, such as rolling forecasts and periodic reforecasting. Use forecasting to project revenue, expenses, and other metrics for upcoming periods based on historical data.
+Forecasting capabilities in the planning sheet enable organizations to move beyond static annual plans and adopt agile planning methods, such as rolling forecasts and periodic reforecasting. Use forecasting to project revenue, expenses, and other metrics for upcoming periods based on historical data.
 
 Create dynamic forecasts directly on semantic models and update them as new actuals become available. Forecasts can be generated using multiple approaches, such as copying historical values, applying averages, or manually adjusting projections.
 

@@ -1,6 +1,6 @@
 ---
-title: Commenting and Collaboration in Planning Sheet
-description: Learn how to use commenting and collaboration features in Planning sheets to assign tasks, add context, and streamline team workflows with real-time discussions.
+title: Commenting and Collaboration in Planning Sheets
+description: Learn how to use commenting and collaboration features in planning sheets to assign tasks, add context, and streamline team workflows with real-time discussions.
 ms.date: 04/15/2026
 ms.topic: how-to
 ai-usage: ai-assisted
@@ -8,15 +8,15 @@ ai-usage: ai-assisted
 ---
 # Commenting and collaboration
 
-Commenting and collaboration features allow users to add contextual discussions directly within the Planning sheets. These capabilities enable teams to review data, provide feedback, assign tasks, and track discussions all within the Planning sheet environment.
+Commenting and collaboration features allow users to add contextual discussions directly within the planning sheets. These capabilities enable teams to review data, provide feedback, assign tasks, and track discussions all within the planning sheet environment.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-Data-level commentary is commonly used in analytical and planning scenarios. The Planning sheet provides built-in support for notes, annotations, and collaborative comments, which are dynamically associated with specific data points such as cells, rows, columns, or report sections that remain linked to the relevant data context even when filters or hierarchies change.
+Data-level commentary is commonly used in analytical and planning scenarios. The planning sheet provides built-in support for notes, annotations, and collaborative comments, which are dynamically associated with specific data points such as cells, rows, columns, or report sections that remain linked to the relevant data context even when filters or hierarchies change.
 
 ## Prerequisites
 
-* You have saved a Planning sheet configured with the required dataset.
+* You have saved a planning sheet configured with the required dataset.
 * You have appropriate *user permissions* to create, reply to, or manage comments.
 
 ## Add data-level comments

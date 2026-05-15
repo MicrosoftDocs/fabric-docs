@@ -14,7 +14,7 @@ This article explains how to build a model for your data by using the [model bui
 
 ## Sample scenario
 
-This article shows screenshots from the brewery data sample in the following Planning sheet.
+This article shows screenshots from the brewery data sample in the following planning sheet.
 
 :::image type="content" source="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/data-sample-for-model.png" alt-text="Screenshot of a sample brewery data set." lightbox="../media/planning-driver-model/planning-how-to-create-model-using-model-builder/data-sample-for-model.png":::
 
@@ -35,7 +35,7 @@ In this article, you:
 
 1. Go to the model builder by selecting **Model > Driver Model**, then select **Enable** in the pop-up window.
 
-    :::image type="content" source="../media/planning-driver-model/planning-concept-driver-model/enable-model-builder.png" alt-text="Screenshot of enabling model builder from the Planning sheet." lightbox="../media/planning-driver-model/planning-concept-driver-model/enable-model-builder.png":::
+    :::image type="content" source="../media/planning-driver-model/planning-concept-driver-model/enable-model-builder.png" alt-text="Screenshot of enabling model builder from the planning sheet." lightbox="../media/planning-driver-model/planning-concept-driver-model/enable-model-builder.png":::
 
     The driver model view opens. This view is where you build the model.
 
