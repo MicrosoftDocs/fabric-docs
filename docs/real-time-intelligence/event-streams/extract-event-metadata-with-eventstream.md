@@ -16,9 +16,9 @@ This article describes how to access event metadata—including system propertie
 
 When devices and applications send messages to cloud messaging services like Azure IoT Hub or Azure Event Hubs, each message is composed of three parts:
 
-- **Event payload—The actual data content (telemetry readings, business events, etc.).
-- **System properties—Platform-generated metadata stamped on each message by the messaging service, providing context about the message origin, timing, and routing.
-- **Custom properties—User-defined key-value pairs attached by the sender, carrying application-specific context such as device location, firmware version, batch ID, or priority level.
+- **Event payload**: The actual data content (telemetry readings, business events, etc.).
+- **System properties**: Platform-generated metadata stamped on each message by the messaging service, providing context about the message origin, timing, and routing.
+- **Custom properties**: User-defined key-value pairs attached by the sender, carrying application-specific context such as device location, firmware version, batch ID, or priority level.
 
 ### Examples of system properties
 
@@ -52,7 +52,7 @@ Eventstream connectors preserve event metadata—both system properties and cust
 | **Azure IoT Hub** (Extended features) | IoT Hub system properties and custom properties |
 
 > [!NOTE]
-> For Azure IoT Hub, select **Extended features** when configuring the source in Eventstream to enable full metadata preservation.
+> For Azure IoT Hub and Azure Event Hubs, select **Extended features** when configuring the source in Eventstream to enable full metadata preservation.
 
 ## How metadata is retained in Eventstream
 
@@ -131,11 +131,11 @@ This section walks through a complete scenario using the IoT Hub source connecto
 
 ### Step 1: Configure the IoT Hub source with metadata preservation
 
-1. Open your Eventstream in Fabric.
-1. Select **Add source** > **Azure IoT Hub**.
+1. Open your Eventstream or the Real-Time hub in Fabric.
+1. Select **Add source** (in Eventstream) or **Add data** (in Real-Time hub) > **Azure IoT Hub**.
 1. In the source configuration, select **Extended features** to enable the enhanced connector.
-1. Complete the connection details (IoT Hub name, consumer group, shared access policy).
-1. Select **Add** to start ingesting events with full metadata.
+1. Complete the connection configuration details.
+1. Select **Add** to start ingesting events with full metadata. See more detailed step in [Add Azure IoT Hub source to Eventstream](./add-source-azure-iot-hub.md)
 
 With Extended features enabled, the connector preserves all IoT Hub system properties and custom properties when events land in Eventstream.
 
