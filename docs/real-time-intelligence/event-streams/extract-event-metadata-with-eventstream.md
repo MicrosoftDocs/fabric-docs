@@ -198,13 +198,13 @@ YourTable
 
 Beyond latency monitoring, metadata preservation unlocks several production scenarios:
 
-- **Per-device or per-publisher dashboards—Use device identity or publisher information from system properties to build real-time dashboards showing metrics per device, per application, or per location. For example, use the IoT Hub `iothub-connection-device-id` property to group telemetry by device.
-- **End-to-end pipeline latency monitoring—Compare ingestion timestamps from system properties against downstream processing time to measure data freshness and detect pipeline bottlenecks. For example, use `x-opt-enqueued-time` from Event Hubs or `iothub-enqueuedtime` from IoT Hub.
-- **Event ordering and deduplication—Use sequence numbers or offsets from system properties to detect duplicate events, ensure correct ordering, or implement exactly once processing logic in downstream consumers.
-- **Security auditing—Monitor authentication patterns using authentication-related system properties to detect anomalies or unauthorized access across your device or application fleet.
-- **Conditional routing—Route events to different destinations based on metadata values, such as separating telemetry from lifecycle events, or routing high-priority messages to a dedicated processing path.
-- **Business context enrichment—Use custom properties (device location, firmware version, batch ID, priority level) for richer analytics without modifying the event payload schema.
-- **Multi-destination fan-out with filtering—Combine the SQL operator's metadata extraction with multiple `INTO` clauses to route events to different destinations based on metadata values.
+- **Per-device or per-publisher dashboards** — Use device identity or publisher information from system properties to build real-time dashboards showing metrics per device, per application, or per location. For example, use the IoT Hub `iothub-connection-device-id` property to group telemetry by device.
+- **End-to-end pipeline latency monitoring** — Compare ingestion timestamps from system properties against downstream processing time to measure data freshness and detect pipeline bottlenecks. For example, use `x-opt-enqueued-time` from Event Hubs or `iothub-enqueuedtime` from IoT Hub.
+- **Event ordering and deduplication** — Use sequence numbers or offsets from system properties to detect duplicate events, ensure correct ordering, or implement exactly once processing logic in downstream consumers.
+- **Security auditing** — Monitor authentication patterns using authentication-related system properties to detect anomalies or unauthorized access across your device or application fleet.
+- **Conditional routing** — Route events to different destinations based on metadata values, such as separating telemetry from lifecycle events, or routing high-priority messages to a dedicated processing path.
+- **Business context enrichment** — Use custom properties (device location, firmware version, batch ID, priority level) for richer analytics without modifying the event payload schema.
+- **Multi-destination fan-out with filtering** — Combine the SQL operator's metadata extraction with multiple `INTO` clauses to route events to different destinations based on metadata values.
 
 ## Related content
 
