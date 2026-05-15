@@ -68,6 +68,7 @@ The items that are grouped in the IQ workload are:
 * [Data agent](../data-science/concept-data-agent.md)
 * [Operations agent (preview)](../real-time-intelligence/operations-agent.md)
 * [Power BI semantic models](../data-warehouse/semantic-models.md)
+* [Digital twin builder](../real-time-intelligence/digital-twin-builder/overview.md)
 
 >[!NOTE]
 > OneLake is the data foundation for all Microsoft Fabric items. Though OneLake isn't explicitly included as an item in the IQ workload, all items in the workload rely on OneLake data tables and interact with them natively.
