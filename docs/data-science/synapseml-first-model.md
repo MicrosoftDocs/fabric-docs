@@ -50,14 +50,7 @@ spark = SparkSession.builder.getOrCreate()
 print(f"Spark version: {spark.version}")
 ```
 
-Expected output:
-
-```output
-Spark version: 3.4.1
-```
-
-> [!NOTE]
-> The exact Spark version depends on your Fabric runtime. Any version 3.4 or later is expected.
+The output displays the Spark version number. Any version 3.4 or later is expected. The exact version depends on your Fabric runtime.
 
 ## Load a dataset
 
@@ -84,18 +77,7 @@ print(f"Columns: {train.columns}")
 train.printSchema()
 ```
 
-Expected output:
-
-```output
-Training rows: ~800, Test rows: ~200
-Columns: ['rating', 'text']
-root
- |-- rating: integer (nullable = false)
- |-- text: string (nullable = false)
-```
-
-> [!NOTE]
-> The exact row counts vary because `randomSplit` is non-deterministic. Expect approximately 800 training rows and 200 test rows.
+The output shows approximately 800 training rows and 200 test rows, with two columns: `rating` (integer) and `text` (string). The exact row counts vary because `randomSplit` is non-deterministic.
 
 ## Create the training pipeline
 
@@ -122,13 +104,7 @@ print(f"Stage 1: {type(model.stages[0]).__name__}")
 print(f"Stage 2: {type(model.stages[1]).__name__}")
 ```
 
-Expected output:
-
-```output
-Pipeline stages: 2
-Stage 1: TextFeaturizerModel
-Stage 2: LightGBMRegressionModel
-```
+The output shows two pipeline stages: `TextFeaturizerModel` and `LightGBMRegressionModel`.
 
 ## Predict the output of the test data
 
@@ -147,21 +123,7 @@ print(f"Prediction count: {predictions.count()}")
 predictions.select("rating", "prediction").show(5)
 ```
 
-Expected output:
-
-```output
-Prediction columns: ['rating', 'text', 'features', 'prediction']
-Prediction count: ~200
-+------+------------------+
-|rating|        prediction|
-+------+------------------+
-|     2| 2.456...|
-|     5| 3.891...|
-...
-```
-
-> [!NOTE]
-> The `prediction` column contains the model's predicted rating (a float). Compare it against the actual `rating` column to assess model performance.
+The output lists four columns (`rating`, `text`, `features`, `prediction`) and approximately 200 rows. The `prediction` column contains the model's predicted rating as a float. Compare it against the actual `rating` column to assess model performance.
 
 ## (Optional) Use Foundry Tools for sentiment analysis
 
@@ -199,16 +161,7 @@ print(f"Sentiment columns: {sentiment_results.columns}")
 sentiment_results.select("text", "sentiment").show(3, truncate=50)
 ```
 
-Expected output:
-
-```output
-Sentiment columns: ['rating', 'text', 'sentiment']
-+--------------------------------------------------+--------------------+
-|                                              text|           sentiment|
-+--------------------------------------------------+--------------------+
-|Ok~ but I think the Keirsey Temperment Test is ...|[{mixed, ...}]      |
-...
-```
+The output shows three columns (`rating`, `text`, `sentiment`). The `sentiment` column contains structured results with labels like `positive`, `negative`, `neutral`, or `mixed` for each review.
 
 ## Troubleshooting
 
