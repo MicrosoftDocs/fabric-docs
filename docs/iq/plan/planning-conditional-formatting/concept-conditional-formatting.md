@@ -2,7 +2,7 @@
 title: Conditional formatting
 description: Learn how to apply conditional formatting in planning sheets using color scales, classifications, data bars, bubble charts, icons, and action indicators to visualize and analyze data effectively.
 ms.date: 05/14/2026
-ms.topic: overview
+ms.topic: concept-article
 #customer intent: As a user, I want to use conditional formatting in planning sheets effectively.
 ---
 
@@ -25,8 +25,10 @@ Conditional formatting supports the following capabilities:
 * Apply formatting to rows, columns, measures, and charts.
 * Include formatting in exported Excel and PDF reports.
 
+## How to apply
+
 Conditional formatting can be applied using the following methods:
 
-* Use quick formatting options such as quick rules, color scales, classifications, and data bars. For more information, see [quick formatting options](planning-how-to-quick-formatting-conditional-formatting.md).
-* Create advanced formatting rules using nested IF conditions, classification, and other custom logic. For more information, see [create rule](planning-how-to-create-rules-conditional-formatting.md)
-You can manage existing rules by editing, hiding, reordering, or deleting them using [manage rules](planning-how-to-manage-rules-conditional-formatting.md)
+* Use quick formatting options such as quick rules, color scales, classifications, and data bars. For more information, see [quick formatting options](how-to-apply-quick-formatting.md).
+* Create advanced formatting rules using nested IF conditions, classification, and other custom logic. For more information, see [Create conditional formatting rules](how-to-create-rules.md).
+* Manage existing rules by editing, hiding, reordering, or deleting them. For more information, see using [Manage conditional formatting rules](how-to-manage-rules.md).

@@ -5,25 +5,26 @@ ms.date: 05/15/2026
 ms.topic: how-to
 #customer intent: As a user, I want to understand and manage conditional formatting rules in planning sheets.
 ---
-# Manage Conditional Formatting Rules
 
-The **Manage rules** option allows you to view, edit, reorder, enable, disable, or delete existing conditional formatting rules in the planning sheet.
+# Manage conditional formatting rules
 
-Use the Manage rules pane to organize and control how multiple conditional formatting rules are applied to your data.
+The **Manage rules** options allow you to view, edit, reorder, enable, disable, or delete existing conditional formatting rules in the planning sheet.
+
+Use the **Manage rules** pane to organize and control how multiple conditional formatting rules are applied to your data.
 
 ## Open Manage rules
 
-To open the Manage rules pane:
+To open the **Manage rules** pane:
 
 1. Open the planning sheet.
 1. Select **Conditional formatting** from the toolbar.
 1. Select **Manage rules**.
 
-    :::image type="content" source="media/planning-how-to-manage-rules-conditional-formatting/manage-rules.png" alt-text="Screenshot of manage rules." lightbox="media/planning-how-to-manage-rules-conditional-formatting/manage-rules.png":::
+    :::image type="content" source="../media/planning-conditional-formatting/how-to-manage-rules/manage-rules.png" alt-text="Screenshot of manage rules." lightbox="../media/planning-conditional-formatting/how-to-manage-rules/manage-rules.png":::
 
 ## Rule management options
 
-The Manage rules pane displays all the conditional formatting rules configured for the current planning sheet. The following actions can be performed from the manage rules pane:
+The **Manage rules** pane displays all the conditional formatting rules configured for the current planning sheet. The following actions can be performed from the **Manage rules** pane:
 
 ### Add new rule
 
@@ -53,8 +54,8 @@ Create a copy of an existing rule to reuse the same configuration with minor mod
 
 When multiple conditional formatting rules are applied to the same value, rule priority determines which formatting is displayed. Rearrange the rule order to control formatting precedence.
 
-:::image type="content" source="media/planning-how-to-manage-rules-conditional-formatting/manage-rules-pane.png" alt-text="Screenshot of manage rules option in conditional formatting." lightbox="media/planning-how-to-manage-rules-conditional-formatting/manage-rules-pane.png":::
+:::image type="content" source="../media/planning-conditional-formatting/how-to-manage-rules/manage-rules-pane.png" alt-text="Screenshot of manage rules option in conditional formatting.":::
 
 ### Export behavior
 
-Conditional formatting rules configured in the planning sheet can also be applied during Excel and PDF exports. Enable or disable rules to be included in the exported report. Learn more about [exports](planning-how-to-export-data.md) here.
+Conditional formatting rules configured in the planning sheet can also be applied during Excel and PDF exports. Enable or disable rules to be included in the exported report. For more information, see [Export data from planning sheets to Excel and PDF](../planning-how-to-export-data.md).
