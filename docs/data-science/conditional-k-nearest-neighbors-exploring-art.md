@@ -14,40 +14,12 @@ ai-usage: ai-assisted
 
 In this article, you use the conditional k-nearest neighbors (k-NN) algorithm from SynapseML to find visually similar artwork. You query a dataset of art from the Metropolitan Museum of Art in NYC, filtering by culture and medium categories.
 
-## Quick start overview
-
-| Step | Action | Estimated time |
-|------|--------|---------------|
-| 1 | Set up prerequisites (notebook + lakehouse) | 5 minutes |
-| 2 | Import libraries and load dataset | 2 minutes |
-| 3 | Define categories and filter data | 1 minute |
-| 4 | Fit conditional k-NN models | 3 to 5 minutes |
-| 5 | Define helper functions | 1 minute |
-| 6 | Run demo query and view results | 2 to 3 minutes |
-
 ## Prerequisites
 
-| Requirement | How to verify |
-|---|---|
-| A [Microsoft Fabric workspace](../fundamentals/workspaces.md) with an active capacity | Open Fabric portal and confirm your workspace is accessible |
-| A [notebook attached to a lakehouse](../data-engineering/lakehouse-notebook-explore.md#open-or-create-a-notebook-from-a-lakehouse) | Open the notebook and verify the lakehouse appears in the **Explorer** pane |
-| Fabric runtime 1.2 or later (includes SynapseML and PySpark) | Run `spark.version` in a notebook cell - confirm output shows version 3.4 or later |
-| Network access to `mmlspark.blob.core.windows.net` | No firewall blocks on outbound HTTPS to Azure Blob Storage |
+[!INCLUDE [prerequisites](includes/prerequisites.md)]
 
-> [!NOTE]
-> The Fabric runtime includes SynapseML, PySpark, matplotlib, Pillow, numpy, and requests. You don't need to install these packages separately.
-
-## Overview of the BallTree
-
-The conditional k-NN model relies on the [BallTree](https://en.wikipedia.org/wiki/Ball_tree) data structure. A BallTree is a recursive binary tree where each node (or "ball") contains a partition of the data points you want to query.
-
-To build a BallTree:
-
-1. Determine the "ball" center closest to each data point, based on a specified feature.
-1. Assign each data point to the nearest ball.
-1. Repeat recursively, creating a structure that supports binary-tree traversals.
-
-This structure enables efficient k-nearest neighbor lookups at each leaf node.
+* Create a new [notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
+* Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
 
 ## Step 1: Import libraries
 
@@ -65,7 +37,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 ```
 
-**Verification:** All imports should complete without errors. If you see `ModuleNotFoundError`, confirm you're using Fabric runtime 1.2 or later.
+All imports should complete without errors. If you see `ModuleNotFoundError`, confirm you're using Fabric runtime 1.2 or later.
 
 ## Step 2: Load the dataset
 
@@ -78,24 +50,7 @@ df = spark.read.parquet(
 display(df.drop("Norm_Features"))
 ```
 
-**Verification:** Run the following cell to confirm the data loaded correctly:
-
-```python
-row_count = df.count()
-print(f"Total rows: {row_count}")
-print(f"Columns: {df.columns}")
-assert row_count > 50000, f"Expected 50,000+ rows, got {row_count}"
-assert "Norm_Features" in df.columns, "Missing Norm_Features column"
-print("OK Dataset loaded successfully")
-```
-
-Expected output:
-
-```
-Total rows: 51224
-Columns: ['id', 'Title', 'Artist', 'Thumbnail_Url', 'Image_Url', 'Culture', 'Classification', 'Museum_Page', 'Norm_Features', 'Museum']
-OK Dataset loaded successfully
-```
+The dataset contains approximately 51,000 rows.
 
 ### Dataset schema
 
@@ -148,15 +103,7 @@ small_df.cache()
 print(f"Filtered dataset row count: {small_df.count()}")
 ```
 
-**Verification:**
-
-```python
-filtered_count = small_df.count()
-assert filtered_count > 0, "Filtered dataset is empty - check category names"
-print(f"OK Filtered to {filtered_count} rows matching selected cultures/mediums")
-```
-
-Expected output: A count of several thousand rows (varies based on selected categories).
+The output shows a count of several thousand rows, depending on the selected categories.
 
 ## Step 4: Fit conditional k-NN models
 
@@ -189,14 +136,6 @@ culture_cknn = (
 )
 ```
 
-**Verification:**
-
-```python
-assert medium_cknn is not None, "Medium model failed to fit"
-assert culture_cknn is not None, "Culture model failed to fit"
-print("OK Both conditional k-NN models fitted successfully")
-```
-
 ## Step 5: Define matching and visualization methods
 
 Define helper functions to query the models and display results.
@@ -227,7 +166,7 @@ def plot_img(axis, url, title):
     except Exception as e:
         axis.text(0.5, 0.5, "Image\nunavailable", ha="center", va="center", fontsize=6)
     if title is not None:
-        axis.set_title(title, fontsize=4)
+        axis.set_title(title, fontsize=10)
     axis.axis("off")
 
 
@@ -251,15 +190,6 @@ def plot_urls(url_arr, titles, filename):
     plt.tight_layout()
     plt.savefig(filename, dpi=150)
     plt.show()
-```
-
-**Verification:** Run this cell - functions should define without errors. You can test `plot_img` with a sample URL:
-
-```python
-fig, ax = plt.subplots(1, 1, figsize=(3, 3))
-plot_img(ax, "https://mmlsparkdemo.blob.core.windows.net/met/thumbnails/388395.jpg", "Test Image")
-plt.show()
-print("OK Visualization functions work correctly")
 ```
 
 ## Step 6: Run the query and visualize results
@@ -315,19 +245,7 @@ print(f"Selected art IDs: {selected_ids}")
 result_df = test_all(small_df, medium_cknn, culture_cknn, selected_ids, root="./")
 ```
 
-**Verification:**
-
-```python
-import os
-
-assert result_df is not None, "test_all returned None - check selected IDs"
-assert os.path.exists("./matches_by_culture.png"), "Culture visualization not saved"
-assert os.path.exists("./matches_by_medium.png"), "Medium visualization not saved"
-print(f"OK Query complete. Results: {result_df.count()} rows")
-print("OK Saved: matches_by_culture.png, matches_by_medium.png")
-```
-
-Expected output: Two image grids appear inline. The first shows the original artwork with nearest neighbors across cultures. The second shows nearest neighbors across mediums. Both PNG files are saved in the current directory.
+Two image grids appear inline. The first grid shows the original artwork with nearest neighbors across cultures. The second grid shows nearest neighbors across mediums.
 
 ## Cleanup
 
@@ -353,6 +271,18 @@ print("OK Cleanup complete")
 | `HTTPError` or blank images in visualization | Thumbnail URL no longer accessible | Some thumbnails may become unavailable over time. The `plot_img` function displays "Image unavailable" for failed downloads. |
 | `OutOfMemoryError` during model fitting | Dataset too large for available memory | Reduce the number of categories in `mediums` and `cultures` lists |
 | Slow model fitting (>10 minutes) | Large dataset with many categories | Start with fewer categories (3 each), then expand once the pipeline works |
+
+## How conditional k-NN works
+
+The conditional k-NN model relies on the [BallTree](https://en.wikipedia.org/wiki/Ball_tree) data structure. A BallTree is a recursive binary tree where each node (or "ball") contains a partition of the data points you want to query.
+
+To build a BallTree:
+
+1. Determine the "ball" center closest to each data point, based on a specified feature.
+1. Assign each data point to the nearest ball.
+1. Repeat recursively, creating a structure that supports binary-tree traversals.
+
+This structure enables efficient k-nearest neighbor lookups at each leaf node.
 
 ## Related content
 
