@@ -1,5 +1,5 @@
 ---
-title: "Tutorial part 3: View the ontology"
+title: "Tutorial Part 3: View the Ontology"
 description: View the ontology by observing its entity instances and relationship graphs. Part 3 of the ontology (preview) tutorial.
 ms.date: 04/19/2026
 ms.topic: tutorial

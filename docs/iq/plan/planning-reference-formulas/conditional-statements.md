@@ -1,5 +1,5 @@
 ---
-title: Conditional statements
+title: Conditional Statements
 description: Learn about conditional statement functions in plan (preview) and how to use them to perform calculations based on specified conditions. 
 ms.date: 05/08/2026
 ms.topic: reference
