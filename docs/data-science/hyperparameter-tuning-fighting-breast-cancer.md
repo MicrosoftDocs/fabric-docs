@@ -16,25 +16,21 @@ This tutorial shows you how to use SynapseML to identify the best combination of
 
 Hyperparameter tuning is the process of finding optimal configuration values (hyperparameters) for a machine learning algorithm that aren't learned from the training data. Examples include learning rate, number of trees, and regularization strength.
 
-## Quick start
+In this tutorial, you learn how to:
 
-| Step | Action | Estimated time |
-|------|--------|---------------|
-| 1 | Set up dependencies and load data | 2 minutes |
-| 2 | Define classifiers and hyperparameter search space | 1 minute |
-| 3 | Run hyperparameter tuning | 3-5 minutes |
-| 4 | Evaluate the best model | 1 minute |
+> [!div class="checklist"]
+>
+> * Set up dependencies and load the breast cancer dataset.
+> * Define classifiers and a hyperparameter search space with SynapseML.
+> * Run distributed randomized grid search with cross-validation.
+> * Evaluate the best model with classification metrics.
 
 ## Prerequisites
 
-Before you begin, make sure you have the following:
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-| Requirement | Details | Verify |
-|-------------|---------|--------|
-| Microsoft Fabric workspace | A workspace with a Microsoft Fabric-enabled capacity (F2 or higher) | Open your workspace in the Fabric portal |
-| Fabric notebook | A notebook attached to a lakehouse | Create one from **Data Science** > **Notebook** |
-| Fabric runtime | Runtime 1.2 or later (includes SynapseML and Spark) | Check in notebook **Environment** settings |
-| Network access | Outbound access to `mmlspark.blob.core.windows.net` | Verify with the data load step below |
+* Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
+* Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
 
 > [!NOTE]
 > SynapseML, PySpark, and pandas come pre-installed in Fabric notebooks. You don't need to install any packages.
