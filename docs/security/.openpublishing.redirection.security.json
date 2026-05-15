@@ -34,6 +34,11 @@
             "source_path_from_root": "/docs/security/workspace-outbound-access-protection-iq.md",
             "redirect_url": "/fabric/security/workspace-outbound-access-protection-overview",
             "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/security/workspace-outbound-access-protection-real-time-intelligence.md",
+            "redirect_url": "/fabric/security/workspace-outbound-access-protection-eventhouse",
+            "redirect_document_id": false
         }
         ]
 }
