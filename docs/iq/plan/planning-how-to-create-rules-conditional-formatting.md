@@ -23,7 +23,7 @@ Conditional formatting helps you highlight important data points in a planning s
 1. Enter a **Title** for the rule.
 1. Select where to apply formatting using **Apply to** (rows, columns, headers, or measures).
 
-    :::image type="content" source="media/planning-how-to-create-rules-conditional-formatting/configure-rule.png" alt-text="Screenshot of configuring rules in conditional formatting." lightbox="media/planning-how-to-create-rules-conditional-formatting/configure-rule.png":::
+    :::image type="content" source="media/planning-how-to-create-rules-conditional-formatting/configure-rules.png" alt-text="Screenshot of configuring rules in conditional formatting." lightbox="media/planning-how-to-create-rules-conditional-formatting/configure-rules.png":::
 
 1. Select the formatting scope using **Row hierarchy levels**:
 
