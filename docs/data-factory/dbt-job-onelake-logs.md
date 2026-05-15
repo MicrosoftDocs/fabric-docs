@@ -51,7 +51,7 @@ Fabric generates execution logs after the command completes.
 1. Navigate to the log paths listed in `dbt-output-<run_id>.json` under `detailed_monitoring_output_path`. For example: `OneLake/WorkspaceName/detailed_monitoring_output_path/Output/cccc2222-dd33-4444-55ee-666666ffffff` contains the complete logs.
 1. Open the log files to view the complete, untruncated output for the dbt job run.
 
-   :::image type="content" source="media/dbt-job-onelake-logs/file-location.png" alt-text="Screenshot of OneLake Explorer showing the location of full dbt log files.":::
+   :::image type="content" source="media/dbt-job-onelake-logs/file-location.png" alt-text="Screenshot of OneLake Explorer showing the location of full dbt log files." lightbox="media/dbt-job-onelake-logs/file-location.png":::
 
 ## Known limitations
 

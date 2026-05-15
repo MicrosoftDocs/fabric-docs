@@ -70,7 +70,7 @@ Provide the following details to create a connection between Fabric and GitHub:
 - **Connection name** - a friendly name to identify this connection.
 - **Classic PAT** - Fabric uses this token to securely access the repository.
 
-   :::image type="content" source="media/dbt-run-github/connect-github-project.png" alt-text="Screenshot of the GitHub connection settings form in Microsoft Fabric.":::
+   :::image type="content" source="media/dbt-run-github/connect-github-project.png" alt-text="Screenshot of the GitHub connection settings form in Microsoft Fabric." lightbox="media/dbt-run-github/connect-github-project.png":::
 
 After you enter the connection details:
 
@@ -80,14 +80,14 @@ After you enter the connection details:
 
 1. Select the **adapter**. The adapter determines which data platform dbt runs against.
 
-   :::image type="content" source="media/dbt-run-github/select-adapter.png" alt-text="Screenshot of the adapter selection dropdown for a dbt project in Microsoft Fabric.":::
+   :::image type="content" source="media/dbt-run-github/select-adapter.png" alt-text="Screenshot of the adapter selection dropdown for a dbt project in Microsoft Fabric." lightbox="media/dbt-run-github/select-adapter.png":::
 
 ### Run the dbt job
 
 1. Save the dbt job.
 1. Select **Run**.
 
-   :::image type="content" source="media/dbt-run-github/run-project.png" alt-text="Screenshot of the Run button for a dbt job in Microsoft Fabric.":::
+   :::image type="content" source="media/dbt-run-github/run-project.png" alt-text="Screenshot of the Run button for a dbt job in Microsoft Fabric." lightbox="media/dbt-run-github/run-project.png":::
 
 When the job runs, Fabric:
 
