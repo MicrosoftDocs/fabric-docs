@@ -21,7 +21,7 @@ In this article, you use the conditional k-nearest neighbors (k-NN) algorithm fr
 * Create a new [notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
 
-## Step 1: Import libraries
+## Import libraries
 
 In the first notebook cell, import the required Python libraries:
 
@@ -39,7 +39,7 @@ import matplotlib.pyplot as plt
 
 All imports should complete without errors. If you see `ModuleNotFoundError`, confirm you're using Fabric runtime 1.2 or later.
 
-## Step 2: Load the dataset
+## Load the dataset
 
 The dataset is a parquet file containing artwork metadata from the Metropolitan Museum of Art. Load it into a Spark DataFrame:
 
@@ -67,7 +67,7 @@ The table contains these columns:
 - **Norm_Features**: Pre-computed image embedding vector (used for similarity search)
 - **Museum**: The museum that hosts the art piece
 
-## Step 3: Define categories and filter the data
+## Define categories and filter the data
 
 Define the culture and medium categories you want to query. Then filter the dataset to include only artwork that matches your selected categories:
 
@@ -105,7 +105,7 @@ print(f"Filtered dataset row count: {small_df.count()}")
 
 The output shows a count of several thousand rows, depending on the selected categories.
 
-## Step 4: Fit conditional k-NN models
+## Fit conditional k-NN models
 
 Create two conditional k-NN models - one conditioned on the medium (Classification) and one conditioned on culture. Each model accepts:
 
@@ -136,7 +136,7 @@ culture_cknn = (
 )
 ```
 
-## Step 5: Define matching and visualization methods
+## Define matching and visualization methods
 
 Define helper functions to query the models and display results.
 
@@ -192,7 +192,7 @@ def plot_urls(url_arr, titles, filename):
     plt.show()
 ```
 
-## Step 6: Run the query and visualize results
+## Run the query and visualize results
 
 Define the `test_all()` function to orchestrate querying both models and generating visualizations:
 
