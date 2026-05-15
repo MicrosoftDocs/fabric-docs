@@ -46,17 +46,11 @@ This table lists regions where all Fabric workloads are available.
 |                                             |                              |             |                    | Taiwan Northwest <sup>1</sup>    |
 
 <sup>1</sup> [Ontology (preview)](../iq/ontology/overview.md) isn't available in these regions. 
-
 <sup>2</sup> [Healthcare Solutions](/industry/healthcare/healthcare-data-solutions/overview) isn't available in this region. 
-
 <sup>3</sup> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) isn't available in these regions. 
-
 <sup>4</sup> [Operations agent (preview)](../real-time-intelligence/operations-agent.md) isn't available in these regions. 
-
 <sup>5</sup> [Plan (preview)](../iq/plan/overview.md) isn't available in these regions. 
-
 <sup>6</sup> [Schema Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) isn't available in these regions. 
-
 <sup>7</sup> [Business Continuity Disaster Recovery (BCDR)](/azure/reliability/reliability-fabric#cross-region-disaster-recovery-and-business-continuity) for Power BI isn't available by default in this region. Power BI is supported in this region but not in its paired region.
 
 ### Power BI
