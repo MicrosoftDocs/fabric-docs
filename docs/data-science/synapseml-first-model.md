@@ -16,44 +16,22 @@ title: Build a model with SynapseML
 
 This article shows you how to build a machine learning model with SynapseML in a Microsoft Fabric notebook. You create a training pipeline that uses text featurization and LightGBM regression to predict book ratings from review text. You also learn how to use Foundry Tools for prebuilt sentiment analysis.
 
-## Quick start
-
-| Step | Action | Estimated time |
-|------|--------|----------------|
-| 1 | Create a Fabric notebook and attach a lakehouse | 5 minutes |
-| 2 | (Optional) Set up Foundry Tools and Azure Key Vault | 15 minutes |
-| 3 | Import libraries and load data | 2 minutes |
-| 4 | Build and train the pipeline | 3 minutes |
-| 5 | Generate predictions | 1 minute |
-| 6 | (Optional) Run Foundry Tools sentiment analysis | 2 minutes |
+> [!div class="checklist"]
+> * Create a Fabric notebook and attach a lakehouse
+> * Import libraries and load data
+> * Build and train a text featurization and LightGBM regression pipeline
+> * Generate predictions
+> * (Optional) Run Foundry Tools sentiment analysis
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
-| Requirement | How to get it | How to verify |
-|-------------|---------------|---------------|
-| Microsoft Fabric subscription | [Get a subscription](../../enterprise/licenses.md) or sign up for a [free trial](../../fundamentals/fabric-trial.md) | Sign in at <https://fabric.microsoft.com/> |
-| Fabric notebook | [Create a notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) in a Fabric workspace | Notebook opens in the Fabric portal |
-| Lakehouse | Select **Add** under **Lakehouses** in the notebook **Explorer** pane | Lakehouse name appears under **Lakehouses** |
-| Foundry Tools key (optional - only for the [sentiment analysis step](#optional-use-foundry-tools-for-sentiment-analysis)) | [Create a multi-service resource for Foundry Tools](/azure/ai-services/multi-service-resource) | Key appears in the Azure portal under the resource's **Keys and Endpoint** section |
-| Azure Key Vault (optional - only for the [sentiment analysis step](#optional-use-foundry-tools-for-sentiment-analysis)) | [Create an Azure Key Vault instance](/azure/key-vault/general/quick-create-portal) | Secret appears in the Key Vault **Secrets** list |
-
-> [!NOTE]
-> The Foundry Tools key and Azure Key Vault are only required if you want to run the optional sentiment analysis step at the end of this article. You can complete the core model-building steps without them.
-
-## Prepare resources
-
-Set up the tools and resources you need to build the model and pipeline.
-
-1. [Create a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) in your Fabric workspace.
-1. Attach your notebook to a lakehouse. In the **Explorer** pane, expand **Lakehouses**, and then select **Add**.
-1. (Optional) If you want to run the sentiment analysis step later, complete these steps:
-   1. Get a Foundry Tools key by following the instructions in [Quickstart: Create a multi-service resource for Foundry Tools](/azure/ai-services/multi-service-resource).
-   1. [Create an Azure Key Vault instance](/azure/key-vault/general/quick-create-portal) and add your Foundry Tools key to the key vault as a secret.
-   1. Record your key vault name and secret name. You need this information for the sentiment analysis step.
-
-**Verification:** Your notebook shows the attached lakehouse name under **Lakehouses** in the **Explorer** pane.
+- [Create a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) in your Fabric workspace.
+- [Attach a lakehouse to the notebook](../data-engineering/lakehouse-notebook-explore.md#add-or-remove-a-lakehouse). In the **Explorer** pane, expand **Lakehouses**, and then select **Add**.
+- (Optional) To run the [sentiment analysis step](#optional-use-foundry-tools-for-sentiment-analysis), you need:
+  - A Foundry Tools key. Follow the instructions in [Quickstart: Create a multi-service resource for Foundry Tools](/azure/ai-services/multi-service-resource).
+  - An [Azure Key Vault instance](/azure/key-vault/general/quick-create-portal) with your Foundry Tools key stored as a secret.
 
 ## Set up the environment
 
