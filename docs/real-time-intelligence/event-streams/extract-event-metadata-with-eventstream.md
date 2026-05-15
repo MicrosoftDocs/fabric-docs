@@ -10,15 +10,15 @@ ms.date: 05/15/2026
 
 # Extract event metadata in Eventstream
 
-This article describes how to access event metadata — including system properties and custom properties — from streaming sources in Microsoft Fabric Eventstream, and how to extract them using the SQL operator for downstream analytics.
+This article describes how to access event metadata—including system properties and custom properties—from streaming sources in Microsoft Fabric Eventstream, and how to extract them using the SQL operator for downstream analytics.
 
 ## Why event metadata matters
 
 When devices and applications send messages to cloud messaging services like Azure IoT Hub or Azure Event Hubs, each message is composed of three parts:
 
-- **Event payload** — The actual data content (telemetry readings, business events, etc.).
-- **System properties** — Platform-generated metadata stamped on each message by the messaging service, providing context about the message origin, timing, and routing.
-- **Custom properties** — User-defined key-value pairs attached by the sender, carrying application-specific context such as device location, firmware version, batch ID, or priority level.
+- **Event payload—The actual data content (telemetry readings, business events, etc.).
+- **System properties—Platform-generated metadata stamped on each message by the messaging service, providing context about the message origin, timing, and routing.
+- **Custom properties—User-defined key-value pairs attached by the sender, carrying application-specific context such as device location, firmware version, batch ID, or priority level.
 
 ### Examples of system properties
 
@@ -26,9 +26,6 @@ Different messaging services provide different system properties. The following 
 
 - **Azure IoT Hub** — `iothub-connection-device-id` (device identity), `iothub-enqueuedtime` (ingestion timestamp), `iothub-connection-auth-method` (authentication method), `iothub-message-source` (message type)
 - **Azure Event Hubs** — `x-opt-enqueued-time` (ingestion timestamp), `x-opt-sequence-number` (sequence number), `x-opt-offset` (partition offset), `correlation-id` (correlation identifier), `content-type` (content type), `message-id` (message identifier)
-
-> [!NOTE]
-> As Eventstream adds support for more sources (such as Apache Kafka, Azure Service Bus, and others), additional system properties specific to each source will also be preserved. Refer to the source-specific documentation for the full list of available system properties.
 
 ### Why retaining metadata is essential
 
@@ -47,7 +44,7 @@ Without access to these properties downstream, analytics pipelines lose the abil
 
 ## Supported sources with metadata retention
 
-Eventstream connectors preserve event metadata — both system properties and custom properties — when ingesting data from the following sources:
+Eventstream connectors preserve event metadata—both system properties and custom properties—when ingesting data from the following sources:
 
 | Source | Metadata support |
 |--------|-----------------|
@@ -59,7 +56,7 @@ Eventstream connectors preserve event metadata — both system properties and cu
 
 ## How metadata is retained in Eventstream
 
-When Eventstream ingests events from a supported source, the connector copies both system properties and custom properties into the **user metadata section** of the event within Eventstream (the embedded Event Hub).
+When Eventstream ingests events from a supported source, the connector copies both system properties and custom properties into the **user metadata section** of the event within Eventstream (the embedded Event Hubs).
 
 ### System properties
 
@@ -88,7 +85,7 @@ Once events are flowing into Eventstream with metadata preserved, you can use th
 
 ### Extract all properties
 
-The following query extracts all properties — including the copied system properties and custom properties — into a single JSON object:
+The following query extracts all properties—including the copied system properties and custom properties—into a single JSON object:
 
 ```sql
 SELECT
@@ -117,6 +114,10 @@ INTO [your-destination]
 FROM [your-source-stream]
 ```
 
+> [!NOTE]
+> **Known limitation**: When using the `GETMETADATAPROPERTYVALUE` function in a SQL operator, query test in edit mode will run successfully but will not return results for the metadata properties extracted by this function
+
+
 ## End-to-end scenario: Measure IoT ingestion latency
 
 This section walks through a complete scenario using the IoT Hub source connector to calculate end-to-end ingestion latency from IoT devices to Fabric Eventhouse.
@@ -138,7 +139,7 @@ This section walks through a complete scenario using the IoT Hub source connecto
 
 With Extended features enabled, the connector preserves all IoT Hub system properties and custom properties when events land in Eventstream.
 
-:::image type="content" source="media/extract-event-metadata-with-eventstream/azure-iothub-source-configuration.png" alt-text="Screenshot that shows the azure iothub source configuration." lightbox="media/extract-event-metadata-with-eventstream/azure-iothub-source-configuration.png":::  
+:::image type="content" source="media/extract-event-metadata-with-eventstream/azure-iothub-source-configuration.png" alt-text="Screenshot that shows the Azure iothub source configuration." lightbox="media/extract-event-metadata-with-eventstream/azure-iothub-source-configuration.png":::  
 
 ### Step 2: Add a SQL operator to extract metadata
 
@@ -191,23 +192,23 @@ YourTable
 | order by AvgLatency desc
 ```
 
-:::image type="content" source="media/extract-event-metadata-with-eventstream/kql-query-in-kql-database.png" alt-text="Screenshot that shows the sql query inside eventstream's edit mode." lightbox="media/extract-event-metadata-with-eventstream/kql-query-in-kql-database.png.png":::  
+:::image type="content" source="media/extract-event-metadata-with-eventstream/kql-query-in-kql-database.png" alt-text="Screenshot that shows the kql sql query inside eventhouse." lightbox="media/extract-event-metadata-with-eventstream/kql-query-in-kql-database.png":::  
 
-## Additional scenarios enabled by metadata
+## More scenarios enabled by metadata
 
 Beyond latency monitoring, metadata preservation unlocks several production scenarios:
 
-- **Per-device or per-publisher dashboards** — Use device identity or publisher information from system properties to build real-time dashboards showing metrics per device, per application, or per location. For example, use the IoT Hub `iothub-connection-device-id` property to group telemetry by device.
-- **End-to-end pipeline latency monitoring** — Compare ingestion timestamps from system properties against downstream processing time to measure data freshness and detect pipeline bottlenecks. For example, use `x-opt-enqueued-time` from Event Hubs or `iothub-enqueuedtime` from IoT Hub.
-- **Event ordering and deduplication** — Leverage sequence numbers or offsets from system properties to detect duplicate events, ensure correct ordering, or implement exactly-once processing logic in downstream consumers.
-- **Security auditing** — Monitor authentication patterns using authentication-related system properties to detect anomalies or unauthorized access across your device or application fleet.
-- **Conditional routing** — Route events to different destinations based on metadata values, such as separating telemetry from lifecycle events, or routing high-priority messages to a dedicated processing path.
-- **Business context enrichment** — Use custom properties (device location, firmware version, batch ID, priority level) for richer analytics without modifying the event payload schema.
-- **Multi-destination fan-out with filtering** — Combine the SQL operator's metadata extraction with multiple `INTO` clauses to route events to different destinations based on metadata values.
+- **Per-device or per-publisher dashboards—Use device identity or publisher information from system properties to build real-time dashboards showing metrics per device, per application, or per location. For example, use the IoT Hub `iothub-connection-device-id` property to group telemetry by device.
+- **End-to-end pipeline latency monitoring—Compare ingestion timestamps from system properties against downstream processing time to measure data freshness and detect pipeline bottlenecks. For example, use `x-opt-enqueued-time` from Event Hubs or `iothub-enqueuedtime` from IoT Hub.
+- **Event ordering and deduplication—Use sequence numbers or offsets from system properties to detect duplicate events, ensure correct ordering, or implement exactly once processing logic in downstream consumers.
+- **Security auditing—Monitor authentication patterns using authentication-related system properties to detect anomalies or unauthorized access across your device or application fleet.
+- **Conditional routing—Route events to different destinations based on metadata values, such as separating telemetry from lifecycle events, or routing high-priority messages to a dedicated processing path.
+- **Business context enrichment—Use custom properties (device location, firmware version, batch ID, priority level) for richer analytics without modifying the event payload schema.
+- **Multi-destination fan-out with filtering—Combine the SQL operator's metadata extraction with multiple `INTO` clauses to route events to different destinations based on metadata values.
 
 ## Related content
 
-- [Add Azure IoT Hub source to Eventstream](add-source-azure-iot-hub.md)
-- [Add Azure Event Hubs source to Eventstream](add-source-azure-event-hubs.md)
-- [Process events using the SQL operator](process-events-using-sql-operator.md)
-- [Add Eventhouse destination](add-destination-eventhouse.md)
+- [Add Azure IoT Hub source to Eventstream](./add-source-azure-iot-hub.md)
+- [Add Azure Event Hubs source to Eventstream](./add-source-azure-event-hubs.md)
+- [Process events using the SQL operator](./process-events-using-sql-code-editor.md)
+- [Add Eventhouse destination](./add-destination-kql-database.md)
