@@ -1,14 +1,14 @@
 ---
 title: Bulk Edit Data
-description: Learn how to bulk edit data input values across categories, dimensions, and hierarchy levels in a Planning sheet.
+description: Learn how to bulk edit data input values across categories, dimensions, and hierarchy levels in a planning sheet.
 ms.date: 05/13/2026
 ms.topic: how-to
-#customer intent: As a user, I want to update multiple values across selected categories and hierarchy levels in a Planning sheet.
+#customer intent: As a user, I want to update multiple values across selected categories and hierarchy levels in a planning sheet.
 ---
 
 # Bulk edit data
 
-Use *bulk edit* to update multiple values in a Planning sheet at the same time. Apply the same value across categories, dimensions, hierarchy levels, or data input types.
+Use *bulk edit* to update multiple values in a planning sheet at the same time. Apply the same value across categories, dimensions, hierarchy levels, or data input types.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -36,7 +36,7 @@ In **Measure**, select the data input measure to update.
 1. Select multiple values for each dimension as required.
 1. Add filters for another dimensions.
 
-The Planning sheet updates dynamically based on the selected filters.
+The planning sheet updates dynamically based on the selected filters.
 
 :::image type="content" source="media/planning-how-to-bulk-edit/bulk-edit-select-filter.png" alt-text="Screenshot of filters used to select categories and dimensions in Bulk Edit." lightbox="media/planning-how-to-bulk-edit/bulk-edit-select-filter.png":::
 
@@ -49,7 +49,7 @@ In **Apply to Row Level**, select the hierarchy level to update.
 ## Select a column hierarchy level
 
 1. In **Apply to Column Level**, select the column hierarchy level to update.
-1. If the Planning sheet doesn't contain a column hierarchy, apply updates at the grand total or quarter level.
+1. If the planning sheet doesn't contain a column hierarchy, apply updates at the grand total or quarter level.
 
 :::image type="content" source="media/planning-how-to-bulk-edit/bulk-edit-select-apply-to-column-level.png" alt-text="Screenshot of the Apply to Column Level option in Bulk Edit." lightbox="media/planning-how-to-bulk-edit/bulk-edit-select-apply-to-column-level.png":::
 
@@ -74,7 +74,7 @@ Supported update types include:
 
 1. Child rows inherit values based on the selected distribution method.
 
-    :::image type="content" source="media/planning-how-to-bulk-edit/bulk-edit-result.png" alt-text="Screenshot of updated cells highlighted in a Planning sheet." lightbox="media/planning-how-to-bulk-edit/bulk-edit-result.png":::
+    :::image type="content" source="media/planning-how-to-bulk-edit/bulk-edit-result.png" alt-text="Screenshot of updated cells highlighted in a planning sheet." lightbox="media/planning-how-to-bulk-edit/bulk-edit-result.png":::
 
 ## Supported data input types
 

@@ -23,6 +23,14 @@ landingContent:
             url: ontology/overview.md
 
   # Card
+  - title: Connectors
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Fabric IQ in Microsoft 365 Copilot Cowork (Frontier)
+            url: connectors/cowork-overview.md
+
+  # Card
   - title: Get started with ontology (preview)
     linkLists:
       - linkListType: tutorial
