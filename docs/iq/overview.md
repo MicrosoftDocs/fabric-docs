@@ -31,9 +31,9 @@ It also enables these benefits:
 
 ## Pillars of Fabric IQ
 
-Fabric IQ brings three categories of business context into Microsoft IQ: [unified data](#unified-data-with-onelake), [business intelligence](#business-intelligence-with-power-bi-semantic-models), and [operational intelligence](#operational-intelligence-with-ontologies-and-real-time-intelligence).
+Fabric IQ brings three pillars of business context into Microsoft IQ: [unified data](#unified-data-with-onelake), [business intelligence](#business-intelligence-with-power-bi-semantic-models), and [operational intelligence](#operational-intelligence-with-ontologies).
 
-:::image type="content" source="media/overview/fabric-iq-pillars.png" alt-text="Diagram showing the Fabric IQ pillars and how they relate to Fabric workloads of IQ, Real-Time Intelligence, Power BI semantic models, and OneLake." lightbox="media/overview/fabric-iq-pillars.png":::
+:::image type="content" source="media/overview/fabric-iq-pillars.png" alt-text="Diagram showing the Fabric IQ pillars." lightbox="media/overview/fabric-iq-pillars.png":::
 
 ### Unified data with OneLake
 
@@ -47,13 +47,11 @@ With OneLake, Fabric IQ brings intelligence to the data rather than requiring da
 
 Semantic models and ontologies work together. You can generate or align ontologies directly from semantic models so terminology and KPIs stay consistent across reports, agents, and applications. Define enterprise concepts, such as Customer, Shipment, and Breach, only once and reuse them across Fabric IQ experiences.
 
-### Operational intelligence with ontologies and Real-Time Intelligence
+### Operational intelligence with ontologies
 
 [Ontologies](ontology/overview.md) define core business entities, relationships, properties, rules, and actions. Agents understand what actions are available and how to invoke them. Operations agents monitor live data, detect anomalies, and take governed action.
 
 Ontologies can be generated from existing Power BI semantic models, allowing you to bootstrap from trusted logic and definitions already in production. Both humans and AI agents can use this shared language for cross-domain reasoning and decision-ready actions. You can also query your ontology using natural language through the NL2Ontology query layer, which converts business questions into structured queries.
-
-[Real-Time Intelligence](../real-time-intelligence/overview.md) is the event and action plane. It delivers the signals that make ontologies come to life and ensures decisions result in timely, coordinated action. Real-Time Intelligence delivers live signals, then Fabric IQ provides business meaning and rules. Together, they enable business-aware, event-driven apps and agents.
 
 ## IQ as a workload in Fabric
 
