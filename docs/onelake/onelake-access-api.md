@@ -72,7 +72,7 @@ OneLake regional endpoints all follow the same format: `https://<region>-onelake
 
 ## Additional OneLake endpoints
 
-OneLake also supports a general FQDN (`https://api.onelake.fabric.microsoft.com`), along with a regional (`https://<region>-api.onelake.fabric.microsoft.com`) and workspace (`https://<wsid>.z<xy>.onelake.fabric.microsoft.com`) version.  These FQDNs function identically to the blob and DFS variants, but may be incompatible with some Azure Storage tooling which rely on the blob and DFS variants to use the correct Azure Storage APIs.
+OneLake also supports a general FQDN (`https://api.onelake.fabric.microsoft.com`) and regional (`https://<region>-api.onelake.fabric.microsoft.com`).To connect to your workspace over a private endpoint, you need to use the workspace fully qualified domain name (FQDN) version ('https://<wsid>.z<xy>.onelake.fabric.microsoft.com'). These FQDNs function identically to the blob and DFS variants, but may be incompatible with some Azure Storage tooling which rely on the blob and DFS variants to use the correct Azure Storage APIs.
 
 ## Common issues
 
@@ -81,9 +81,11 @@ If a tool or package compatible with ADLS isn't working over OneLake, the most c
 ## Resources
 
 OneLake is accessible through the same APIs and SDKs as ADLS. To learn more about using ADLS APIs, please see the following pages:
-- [ADLS Gen2 API Reference](/rest/api/storageservices/data-lake-storage-gen2)
-- ADLS Gen2 Filesystem SDKs
-  - [.NET](/azure/storage/blobs/data-lake-storage-directory-file-acl-dotnet)
+- [ADLS API Reference](/rest/api/storageservices/data-lake-storage-gen2)
+
+- ADLS Filesystem SDKs
+
+- [.NET](/azure/storage/blobs/data-lake-storage-directory-file-acl-dotnet)
   - [Python](/azure/storage/blobs/data-lake-storage-directory-file-acl-python)
   - [Java](/azure/storage/blobs/data-lake-storage-directory-file-acl-java)
 
