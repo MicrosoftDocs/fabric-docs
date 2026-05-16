@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: overview
-ms.date: 05/15/2026
+ms.date: 05/16/2026
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -53,7 +53,7 @@ The following item types aren't currently supported in workspaces enabled with w
 
 * **SQL databases**
 
-   Tenant-level [private links](../../security/security-private-links-overview.md) are available for SQL database, but currently, workspace-level private links are not available in SQL database.
+   Tenant-level [private links](security-private-links-overview.md) are available for SQL database, but currently, workspace-level private links are not available in SQL database.
 
 > [!NOTE]
 > Default semantic models used to block workspace-level private links for workspaces with lakehouses, warehouses, or mirrored databases. This is no longer an issue. Default semantic models stopped being created automatically on September 5, 2025, and existing ones were decoupled from their parent items by November 30, 2025. For more information, see [Power BI semantic models in Microsoft Fabric](../data-warehouse/semantic-models.md).
