@@ -332,7 +332,7 @@ Data agents can connect to lakehouse, warehouse, and SQL data sources within a w
 Current limitations: 
 Kusto, semantic models, and mirrored data sources are not supported in private link scenarios. These limitations are inherent to the artifact types themselves, and not a limitation of Data Agents. 
 Cross-region private-link access for SQL sources is also not supported.
-Private links are not supported for external integrations such as AI Foundry or M365.
+Private links are not supported for external integrations such as AI Foundry or Microsoft 365.
 
 ## Supported and unsupported management tools
 
@@ -366,7 +366,7 @@ Private links are not supported for external integrations such as AI Foundry or 
 
 ## Azure role-based access control (RBAC) and workspace-level private links
 
-Provisioning and management of workspace‑level private links and associated private endpoints require specific Azure RBAC permissions. These permissions can be narrowly scoped by defining a custom Azure role that grants only the required Virtual Network, Private Link, and Private Endpoint actions at the resource group level, enabling delegated management without assigning broad roles such as Owner or Contributor. The following custom role definition provides necessary permissions to create virual networks, subnets, Fabric workspace private links and private endpoints scoped to a specific group.
+Provisioning and management of workspace‑level private links and associated private endpoints require specific Azure RBAC permissions. These permissions can be narrowly scoped by defining a custom Azure role that grants only the required Virtual Network, Private Link, and Private Endpoint actions at the resource group level, enabling delegated management without assigning broad roles such as Owner or Contributor. The following custom role definition provides necessary permissions to create virtual networks, subnets, Fabric workspace private links and private endpoints scoped to a specific group.
 
 ```
 {
