@@ -209,7 +209,7 @@ In the **Add Rule** side pane, follow these steps to define your alert condition
         :::image type="content" source="media/activator-alert-queryset/action-teams.png" alt-text="Screenshot of the Send Microsoft Teams notification section in the Add Rule side pane.":::
 
     - **Run Fabric activities**:
-        To configure the alert to launch a Fabric pipeline, Dataflow, Spark job, notebook, or User Data Function (preview) when the condition is met, follow these steps:
+        To configure the alert to launch a Fabric pipeline, Dataflow, Spark job, notebook, or User Data Function when the condition is met, follow these steps:
         1. For **Select action**, select the appropriate Fabric item type within the **Run Fabric Activities** section.
         1. On **Select Fabric item to run**, select the Fabric item from the list.
         1. Select **Add parameter** and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter.

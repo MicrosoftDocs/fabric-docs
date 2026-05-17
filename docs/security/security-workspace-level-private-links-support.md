@@ -321,6 +321,15 @@ Event consumption within the same workspace is always allowed, regardless of pri
 
 For more information, see [Private links for Azure and Fabric Events](/fabric/real-time-hub/private-links-real-time-events).
 
+
+### Data agent
+Data agents can connect to lakehouse, warehouse, and SQL data sources within a workspace that has workspace-level private links enabled (public access disabled). Cross-workspace access is supported when network connectivity is explicitly established (for example, using a managed private endpoint) and subject to region and token constraints.
+
+Current limitations: 
+Kusto, semantic models, and mirrored data sources are not supported in private link scenarios. These limitations are inherent to the artifact types themselves, and not a limitation of Data Agents. 
+Cross-region private-link access for SQL sources is also not supported.
+Private links are not supported for external integrations such as AI Foundry or M365.
+
 ## Supported and unsupported management tools
 
 - You can use either the Fabric portal or REST API to manage all [supported item types](#supported-item-types-for-workspace-level-private-link) in workspaces with workspace private links enabled. When a workspace allows public access, the Fabric portal continues to function using public connectivity. If a workspace is configured to deny inbound public access, you can access it in the Fabric portal only when the request originates from the workspace's associated private endpoint. If access is attempted from public connectivity or from a different private endpoint, the Fabric portal displays an "Access Restricted" message. 

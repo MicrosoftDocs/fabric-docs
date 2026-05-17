@@ -1,13 +1,13 @@
 ---
-title: Build financial reports
-description: Learn how to format financial data in Intelligence sheets with structured layouts, custom number formatting, templates, totals, subtotals, and calculations.
+title: Build Financial Reports
+description: Learn how to format financial data in intelligence sheets with structured layouts, custom number formatting, templates, totals, subtotals, and calculations.
 ms.date: 03/11/2026
 ms.topic: how-to
 ai-usage: ai-assisted
-#customer intent: As a user, I want to create financial reports in Intelligence sheets
+#customer intent: As a user, I want to create financial reports in intelligence sheets
 ---
 
-# Build financial reports with Intelligence sheets
+# Build financial reports with intelligence sheets
 
 Intelligence sheets include built-in features that can present financial data in a clear format. You can organize metrics into a structured layout that supports both on-screen analysis and formatted exports.
 
@@ -15,7 +15,7 @@ Intelligence sheets include built-in features that can present financial data in
 
 You can apply custom number formatting and scaling, apply single-click templates, display totals and subtotals, and insert calculations. Together, these capabilities help you create presentation-ready financial reports that support planning, analysis, and decision-making.
 
-This article provides a basic overview of how to create financial reports with Intelligence sheets.
+This article provides a basic overview of how to create financial reports with intelligence sheets.
 
 ## Format numeric data
 

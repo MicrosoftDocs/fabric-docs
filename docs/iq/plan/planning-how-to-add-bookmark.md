@@ -1,25 +1,25 @@
 ---
-title: Add and manage bookmarks in Planning sheet
-description: Learn how to create, manage, and share bookmarks in Planning Sheets.
+title: Add and Manage Bookmarks in Planning Sheets
+description: Learn how to create, manage, and share bookmarks in planning sheets.
 ms.date: 04/17/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 #customer intent: As a user, I want to understand and use bookmark feature effectively.
 ---
 
-# Add and manage bookmarks in Planning sheet
+# Add and manage bookmarks in planning sheets
 
-Bookmarks in Planning sheets allow you to save and revisit specific report states. These states can include filters, sorting, layouts, hierarchy expansions, and other configurations. You can create and manage bookmarks to save and quickly access specific views.
+Bookmarks in planning sheets allow you to save and revisit specific report states. These states can include filters, sorting, layouts, hierarchy expansions, and other configurations. You can create and manage bookmarks to save and quickly access specific views.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Prerequisite
 
-* You have access to the Planning sheet with the required dataset.
+* You have access to the planning sheet with the required dataset.
 
 ## Create a bookmark
 
-Create bookmarks to save the current state of your Planning sheet after you apply the required changes to the sheet, such as filters, layout changes, and sorts.
+Create bookmarks to save the current state of your planning sheet after you apply the required changes to the sheet, such as filters, layout changes, and sorts.
 
 1. Select the bookmark icon and open the **Bookmark** pane.
 
