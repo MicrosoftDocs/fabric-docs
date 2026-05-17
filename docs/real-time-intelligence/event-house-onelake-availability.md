@@ -1,6 +1,7 @@
 ---
 title: Eventhouse OneLake Availability
 description: Learn how to turn on KQL database data availability in OneLake.
+ai-usage: ai-assisted
 ms.reviewer: tzgitlin
 ms.topic: how-to
 ms.subservice: rti-eventhouse
@@ -15,9 +16,13 @@ Delta Lake is a unified data lake table format that achieves seamless data acces
 
 In this article, you learn how to turn on availability of KQL database data in OneLake.
 
+When **OneLake availability** and schema synchronization are enabled, you can also use **Analyze data with** > **SQL endpoint** at the database level to query the Delta Lake representation in near real-time through SQL-based engines.
+
 ## How it works
 
 You can turn on **OneLake availability** at the database or table level. When enabled at the database level, all new tables and their data are made available in OneLake. When turning on the feature, you can also choose to apply this option to existing tables by selecting the *Apply to existing tables* option, to include historic backfill. Turning on at the table level makes only that table and its data available in OneLake. The [Data retention policy](data-policies.md#data-retention-policy) of your KQL database is also applied to the data in OneLake. Data removed from your KQL database at the end of the retention period is also removed from OneLake. If you turn off **OneLake availability**, data is soft deleted from OneLake.
+
+Backend schema synchronization keeps the Delta Lake representation aligned with the KQL database, enabling near-real-time querying through the SQL endpoint and notebooks. For expected latency and batching behavior, see [Adaptive behavior](#adaptive-behavior).
 
 While **OneLake availability** is turned on, you can't do the following tasks:
 
@@ -66,6 +71,15 @@ You can turn on **OneLake availability** either on a KQL database or table.
     :::image type="content" source="media/event-house-onelake-availability/enable-data-copy.png" alt-text="Screenshot of the OneLake section details once Availability is set to Enabled. The option to expose data to OneLake is turned on.":::
 
 With the **OneLake availability** in your KQL database or table turned on, you can now access all the data at the given OneLake path in Delta Lake format. You can also create a OneLake shortcut from a Lakehouse, Data Warehouse, or query the data directly via Power BI Direct Lake mode.
+
+## Use with **Analyze data with** options
+
+When **OneLake availability** is enabled, Eventhouse and KQL database items expose **Analyze data with** options at the database level:
+
+* **SQL endpoint**: Available when both **OneLake availability** and schema synchronization are enabled.
+* **Notebook**: Opens notebook-based analysis for the selected database.
+
+If you turn off **OneLake availability**, the **SQL endpoint** option is removed from this menu until you enable it again.
 
 ## Adaptive behavior
 
@@ -122,6 +136,9 @@ To partition your delta tables, use the [.alter-merge table policy mirroring](/a
 ## Query delta tables
 
 You can use Fabric Notebook to read the OneLake data using the following code snippet.
+
+> [!TIP]
+> You can launch a new or existing Fabric notebook directly from **Analyze data with** > **Notebook** on an Eventhouse or KQL database. The notebook automatically attaches to the selected database context. Use the following code sample when you want manual path-based access.
 
 > In the code snippet, replace `<workspaceGuid>`, `<workspaceGuid>`, and `<tableName>` with your own values.
 
