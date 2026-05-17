@@ -11,12 +11,6 @@
         href: guided-lab-experience.md
       - name: Data Factory training
         href: /training/paths/get-started-fabric
-      - name: Copilot in Fabric in the Data Factory workload
-        items: 
-          - name: What is Copilot in Fabric in the Data Factory workload? 
-            href: copilot-fabric-data-factory.md
-          - name: Get started with Copilot in Fabric in the Data Factory workload
-            href: copilot-fabric-data-factory-get-started.md
       - name: Pricing in Data Factory
         items: 
           - name: Pricing overview
@@ -87,6 +81,12 @@
         href: create-first-dataflow-gen2.md
       - name: Operationalize Data Factory
         href: transform-data.md
+  - name: Copilot in Data Factory
+    items: 
+      - name: What is Copilot in Data Factory? 
+        href: copilot-fabric-data-factory.md
+      - name: Get started with Copilot in Data Factory
+        href: copilot-fabric-data-factory-get-started.md
   - name: Migrate to Fabric
     items:
     - name: Compare Azure Data Factory to Data Factory in Fabric
@@ -142,6 +142,8 @@
         items:
           - name: Service principal support
             href: service-principals.md
+          - name: Workspace identity support
+            href: workspace-identity.md
           - name: Access database
             items: 
               - name: Access database - Overview
@@ -1048,6 +1050,8 @@
             href: create-first-dataflow-gen2.md
           - name: Get data in dataflows
             href: get-data-dataflow-gen2.md
+          - name: My Queries (Preview)
+            href: dataflow-gen2-my-queries.md
           - name: Use a dataflow in a pipeline
             href: tutorial-dataflows-gen2-pipeline-activity.md
           - name: Save a draft of your dataflow
@@ -1140,6 +1144,10 @@
           href: dbt-job-how-to.md
         - name: Configure a dbt job
           href: dbt-job-configure.md
+        - name: Run dbt projects from GitHub
+          href: dbt-run-github.md
+        - name: dbt job logs with OneLake
+          href: dbt-job-onelake-logs.md
         - name: dbt job activity in a pipeline
           href: dbt-job-activity.md
         - name: dbt job pricing
@@ -1285,7 +1293,7 @@
             href: access-apache-airflow-job-logs.md
           - name: CI/CD for Apache Airflow Jobs
             href: cicd-apache-airflow-jobs.md
-  - name: FAQ and Troubleshooting
+  - name: Troubleshoot
     items: 
       - name: Keyboard shortcuts
         href: keyboard-shortcuts.md

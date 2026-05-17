@@ -1,5 +1,5 @@
 ---
-title: Create templates for reusable row structures
+title: Create Templates for Reusable Row Structures
 description: Learn how to create templates for reusing row structures in models.
 ms.date: 04/28/2026
 ms.topic: how-to
@@ -9,6 +9,8 @@ ms.topic: how-to
 # Create templates for reusable row structures
 
 This article explains how to create templates and use them in your model.
+
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
 A *template* is a predefined layout of rows that can be used to build models with repetitive structures. You create the template once based on your requirements and reuse it multiple times across the model.
 

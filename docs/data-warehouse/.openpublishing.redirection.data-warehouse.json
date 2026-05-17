@@ -79,6 +79,11 @@
         "source_path_from_root": "/docs/data-warehouse/datamart-upgrade-to-warehouse.md",
         "redirect_url": "/fabric/data-warehouse/data-warehousing",
         "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-warehouse/query-activity.md",
+        "redirect_url": "/fabric/data-warehouse/monitor",
+        "redirect_document_id": false
       }
     ]
 }

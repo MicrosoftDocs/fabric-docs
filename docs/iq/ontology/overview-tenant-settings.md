@@ -35,6 +35,12 @@ If you want to use ontology (preview) with a Fabric data agent, make sure to con
 
 If you don't enable this setting, you might see errors when creating a new data agent item.
 
+## Operations agent tenant settings
+
+If you want to use ontology (preview) with a Fabric operations agent, make sure to configure the tenant settings listed in the [Fabric operations agent prerequisites](../../real-time-intelligence/operations-agent.md#prerequisites).
+
+If you don't enable this setting, you might see errors when creating a new operations agent item.
+
 ## Next steps
 
 Now that your tenant is ready to work with ontology (preview), get started with the [Ontology (preview) tutorial](tutorial-0-introduction.md).
