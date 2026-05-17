@@ -4,7 +4,7 @@ description: Learn about production deployment recommendations for reliability, 
 ms.reviewer: smorshtein
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
-ms.date: 05/13/2026
+ms.date: 05/17/2026
 ai-usage: ai-assisted
 ---
 
@@ -20,6 +20,8 @@ During some incidents, read access remains available while write operations are 
 
 ## Design for reliability
 
+Use the following recommendations to build reliable applications and workloads on Eventhouse. The guidance covers handling transient faults, designing for Availability Zone resiliency, recovering from region-wide failures, and implementing backup and recovery strategies.
+
 ### Design for transient fault handling
 
 Applications that interact with Eventhouse should be prepared to handle temporary operation failures, connectivity interruptions, and service throttling by retrying requests that fail due to transient conditions.
@@ -30,7 +32,7 @@ Availability Zones help reduce the impact of localized infrastructure failures w
 
 ### Design for region-wide failures
 
-Deploy Eventhouse resources into a single Azure region. If that region becomes unavailable, the eventhouse and its data in that region are unavailable.
+Deploy eventhouse resources into a single Azure region. If that region becomes unavailable, the eventhouse and its data in that region are unavailable.
 
 Implement a customer-managed multiregion resiliency approach:
 
