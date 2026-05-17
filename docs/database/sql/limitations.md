@@ -2,7 +2,7 @@
 title: "Limitations for SQL database"
 description: A detailed list of limitations for SQL database in Microsoft Fabric.
 ms.reviewer: nzagorac, antho, sukkaur, imotiwala, drskwier, ajayj
-ms.date: 03/03/2026
+ms.date: 05/15/2026
 ms.topic: concept-article
 ms.update-cycle: 180-days
 ms.search.form: Databases Limitations for SQL, Databases Limitations
@@ -22,6 +22,10 @@ This article applies to SQL database in Fabric only. For the warehouse and SQL a
 SQL database in Fabric is available in most regions where Microsoft Fabric is available. The region of your workspace based on the license capacity, which is displayed in **Workspace settings**, in the **Workspace type** page. For more information, see [Fabric availability](/azure/reliability/reliability-fabric#availability).
 
 Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../../mirroring/azure-sql-database-limitations.md#supported-regions).
+
+## Workspace level limitations
+
+Tenant-level [private links](../../security/security-private-links-overview.md) are available for SQL database, but currently, workspace-level private links are not available in SQL database.
 
 ## Database level limitations
 
@@ -164,7 +168,7 @@ The Azure platform provides a number of PaaS capabilities that are added as an a
 | [VNet](/azure/virtual-network/virtual-networks-overview) | Partial, restricted access using [VNet Endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
 | **VNet Service endpoint** | Yes, see [virtual network service endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
 | **VNet Global peering** | Yes, using [Private IP and service endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
-| **Private connectivity** | Yes, using [Private Link](/azure/private-link/private-endpoint-overview) | Yes, using [Private links](../../security/security-private-links-overview.md)  |
+| **Private connectivity** | Yes, using [Private Link](/azure/private-link/private-endpoint-overview) | Yes, tenant-level [private links](../../security/security-private-links-overview.md) are available for SQL database, but currently, workspace-level private links are not available in SQL database. |
 | **Connectivity Policy**|[Redirect, Proxy, or Default](/azure/azure-sql/database/connectivity-architecture?view=azuresql-db&preserve-view=true#connection-policy)|[Default](/azure/azure-sql/database/connectivity-architecture?view=fabric-sqldb&preserve-view=true#connection-policy)|
 
 ## Resource limits
