@@ -71,14 +71,6 @@ If you deploy two regions in the same tenant, all tenant metadata stays anchored
 
 To avoid this dependency, deploy the two regions in a separate Microsoft Entra tenant homed in your secondary region of choice. To protect from regional infrastructure outages with RTO ~ 0, deploy a secondary stack.
 
-## Backup and restore
-
-For most solutions, don't rely exclusively on backups. Use backups to complement multiregion resiliency. Options include:
-
-- Continuous export to external storage.
-- Scheduled or manual export to cloud storage.
-- Ingest raw data from an upstream source that you can back up separately.
-
 ## Disaster recovery model for KQL databases
 
 KQL data isn't stored in OneLake by default and therefore isn't included in Fabric's capacity-level disaster recovery capabilities.
