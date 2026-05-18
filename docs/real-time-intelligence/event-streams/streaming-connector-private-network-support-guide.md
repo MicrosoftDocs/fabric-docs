@@ -64,7 +64,7 @@ This section shows how to prepare the Azure virtual network with a subnet config
 3. You can either select an existing subnet to edit or create a new one.
 
    > [!NOTE]  
-   > It is strongly recommended to **create a new subnet for connector vNet injection** to avoid potential conflicts. If you choose to use an existing subnet, ensure that it does not contain any Private Endpoints, Load Balancers, Application Gateways, virtual machines (VMs), virtual machine scale sets (VMSS), or network interfaces (NICs).
+   > It is strongly recommended to **create a new subnet for connector vNet injection** to avoid potential conflicts. If you choose to use an existing subnet, ensure that it does not contain any Private Endpoints, Load Balancers, Application Gateways, virtual machines (VMs), virtual machine scale sets, or network interfaces (NICs).
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/select-subnet.png" alt-text="Screenshot of showing selecting or creating subnets." lightbox="media/streaming-connector-virtual-network-on-premises-support/select-subnet.png":::
 
