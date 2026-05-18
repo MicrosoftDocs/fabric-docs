@@ -1,25 +1,25 @@
 ---
-title: Planning sheets in plan (preview)
-description: Learn about the Planning sheets component of the plan (preview) item for budgeting and forecasting.
+title: Planning Sheets in Plan (Preview)
+description: Learn about the planning sheets component of the plan (preview) item for budgeting and forecasting.
 ms.date: 03/27/2026
 ms.topic: overview
 ms.search.form: Fabric Planning Sheets Overview
-#customer intent: As a user, I want to understand and use Planning sheets effectively.
+#customer intent: As a user, I want to understand and use planning sheets effectively.
 ---
 
-# What are Planning sheets in plan (preview)?
+# What are planning sheets in plan (preview)?
 
-The *Planning sheets* component of plan (preview) enables organizations to implement structured, collaborative, and data-driven planning processes within their enterprise data environment.
+The *planning sheets* component of plan (preview) enables organizations to implement structured, collaborative, and data-driven planning processes within their enterprise data environment.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-A Planning sheet is a structured workspace in plan that allows users to enter, update, and analyze planning data across defined business dimensions such as time, department, account, or product. Planning sheets provide a controlled environment for budgeting, forecasting, and scenario analysis while ensuring that planning data follows organizational rules and governance policies.
+A planning sheet is a structured workspace in plan that allows users to enter, update, and analyze planning data across defined business dimensions such as time, department, account, or product. Planning sheets provide a controlled environment for budgeting, forecasting, and scenario analysis while ensuring that planning data follows organizational rules and governance policies.
 
 The platform is designed for business users and features a no-code, self-service architecture.
 
-## Why use Planning sheets?
+## Why use planning sheets?
 
-Use Planning sheets to deliver **strategic business value** by helping your organization do the following:
+Use planning sheets to deliver **strategic business value** by helping your organization do the following:
 
 * Improve forecast accuracy through data-driven planning
 * Accelerate planning cycles with streamlined workflows
@@ -34,7 +34,7 @@ Planning sheets also provide **measurable operational outcomes**, including:
 * Reduced effort required for data reconciliation
 * Improved auditability and compliance of planning processes.
 
-### Where to use Planning sheets
+### Where to use planning sheets
 
 Plans are used in several areas of the platform:
 
@@ -46,7 +46,7 @@ Plans are used in several areas of the platform:
 
 ## Key capabilities
 
-The following table lists the core capabilities of Planning sheets.
+The following table lists the core capabilities of planning sheets.
 
 | Capability | Description | Key features |
 | --- | --- | --- |
@@ -62,4 +62,4 @@ The following table lists the core capabilities of Planning sheets.
 
 ## Next steps
 
-To create your first Planning sheet, see [Get started with Planning sheets](planning-how-to-get-started.md).
+To create your first planning sheet, see [Get started with planning sheets](planning-how-to-get-started.md).

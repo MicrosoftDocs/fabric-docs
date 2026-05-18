@@ -1,5 +1,5 @@
 ---
-title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial part 4: Project data to Eventhouse'
+title: 'Digital Twin Builder (Preview) in Real-Time Intelligence Tutorial Part 4: Project Data to Eventhouse'
 description: Generate an Eventhouse projection from digital twin builder (preview) ontology using Fabric notebooks.
 ms.date: 12/12/2025
 ms.topic: tutorial

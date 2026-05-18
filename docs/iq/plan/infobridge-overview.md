@@ -1,5 +1,5 @@
 ---
-title: InfoBridge in plan (preview)
+title: InfoBridge in Plan (Preview)
 description: Learn about the InfoBridge component of the plan (preview) item. InfoBridge is a no-code data integration and transformation tool to connect multiple data sources, prepare data, and create unified reports.
 ms.date: 03/30/2026
 ms.topic: overview
@@ -48,5 +48,5 @@ The following table lists the core capabilities of InfoBridge.
  
 Learn how to use InfoBridge in the following articles:
 
-* [Connect measures between Planning sheets](infobridge-how-to-share-measures.md)
+* [Connect measures between planning sheets](infobridge-how-to-share-measures.md)
 * [Write back InfoBridge data](infobridge-how-to-write-back-data.md)

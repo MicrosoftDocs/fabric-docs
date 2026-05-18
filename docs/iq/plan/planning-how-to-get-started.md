@@ -18,6 +18,9 @@ Before you set up Planning sheets, make sure you have the following prerequisite
 * Data in a [Power BI semantic model](../../data-warehouse/semantic-models.md), and a [connection to your semantic model](planning-how-to-create-semantic-model-connection.md).
 
 > [!NOTE]
+> You can find the required tenant and capacity settings, as well as all other prerequisites, here: [Prerequisites for plan (preview)](overview-prerequisites.md).
+
+> [!NOTE]
 > The preview of plan in Fabric IQ is now accessible to organizations worldwide in Microsoft Fabric as part of the Microsoft Fabric SKU, and new meters have been created. Meters are currently available but are not currently billed.
 
 ## Create plan item

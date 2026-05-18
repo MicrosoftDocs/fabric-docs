@@ -1,21 +1,21 @@
 ---
-title: Get started with Intelligence sheets
-description: Learn how to configure the Intelligence sheets component of the plan (preview) item for no-code reporting.
+title: Get Started with Intelligence Sheets
+description: Learn how to configure the intelligence sheets component of the plan (preview) item for no-code reporting.
 ms.date: 03/11/2026
 ms.topic: how-to
 ms.search.form: Getting Started with Intelligence
-#customer intent: As a user, I want to set up Intelligence sheets to visualize my planning data in Fabric.
+#customer intent: As a user, I want to set up intelligence sheets to visualize my planning data in Fabric.
 ---
 
-# Get started with Intelligence sheets
+# Get started with intelligence sheets
 
-The *Intelligence sheet* provides a no-code, end-to-end reporting experience that brings all your data visualization needs together on a single platform. This article details the steps to get started with your first Intelligence sheet.
+The *intelligence sheet* provides a no-code, end-to-end reporting experience that brings all your data visualization needs together on a single platform. This article details the steps to get started with your first intelligence sheet.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-## Create an Intelligence sheet
+## Create an intelligence sheet
 
-1. Select **New Intelligence Sheet** or select the Intelligence sheets icon from the landing page. Select the **Blank Canvas** option.
+1. Select **New Intelligence Sheet** or select the intelligence sheets icon from the landing page. Select the **Blank Canvas** option.
 
     :::image type="content" source="media/intelligence-how-to-get-started/new-intelligence-sheet.png" alt-text="Screenshot of creating a new intelligence sheet." lightbox="media/intelligence-how-to-get-started/new-intelligence-sheet.png":::
 
@@ -44,7 +44,7 @@ The *Intelligence sheet* provides a no-code, end-to-end reporting experience tha
 
 ## Enable the toolbar
 
-A key feature of the Intelligence sheet is its high level of customization. You can tailor reports to the specific needs of your audience. Each visual includes a dedicated toolbar that provides options for formatting, configuration, and accessing built-in features.
+A key feature of the intelligence sheet is its high level of customization. You can tailor reports to the specific needs of your audience. Each visual includes a dedicated toolbar that provides options for formatting, configuration, and accessing built-in features.
 
 After adding the visual to the canvas and assigning data, hover over the visual and select the arrow icon to enable the toolbar.
 
