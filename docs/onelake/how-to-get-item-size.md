@@ -33,7 +33,7 @@ Use the storage report to:
 
 The OneLake storage report is available in the OneLake section of any workspace's settings.
 
-1. In the Fabric portal, go to the workspace that you want to use.
+1. In the Fabric portal, go to the workspace that you want to review.
 2. Open **Workspace settings** > **OneLake** > **Storage report**.
 3. Select **Refresh** to load the storage data.
 
@@ -54,7 +54,7 @@ The storage report contains the following fields:
 | Soft-delete | Deleted data within the seven day retention window. For more information, see [Recover deleted files in OneLake](soft-delete.md).                                              |
 | System      | Workload data such as internal metadata, logs, and temporary files that aren't directly accessible but count toward storage usage.             |
 
-You can generate a similar report programmatically by using tools like PowerShell. However, the OneLake storage report doesn't require external tools and scans all your data, including data you don't have access to, such as system data.  
+You can generate a similar report programmatically by using tools like PowerShell. However, the OneLake storage report doesn't require external tools and scans all your data, including data you don't have access to, such as system data. System folders are used by workloads across Fabric for metadata, temporary files, or other use-cases.
 
 ### Storage report costs
 
