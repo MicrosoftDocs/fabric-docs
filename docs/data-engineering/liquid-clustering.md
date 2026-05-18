@@ -235,7 +235,7 @@ The following session configurations control liquid clustering behavior in Fabri
 
 ### Auto recluster tuning
 
-These configurations control the sensitivity and scope of auto reclustering. The defaults are suitable for most workloads. Adjust them only when you need to adjust the trade off between clustering quality and write amplification.
+These configurations control the sensitivity and scope of auto reclustering. The defaults are suitable for most workloads. Adjust them only when you need to adjust the trade-off between clustering quality and write amplification.
 
 | Configuration | Type | Default | Description |
 |---|---|---|---|
