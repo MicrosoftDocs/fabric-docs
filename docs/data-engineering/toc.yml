@@ -95,6 +95,8 @@ items:
           href: table-compaction.md
         - name: Tune file size
           href: tune-file-size.md
+        - name: Liquid clustering
+          href: liquid-clustering.md
         - name: Automated statistics for Delta tables
           href: automated-table-statistics.md	
     - name: Delta driver mode snapshot
