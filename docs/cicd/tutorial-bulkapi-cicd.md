@@ -170,7 +170,7 @@ stages:
 
             echo "Request body built with $(echo "$PARTS_JSON" | jq length) parts"
 
-            API_URL="https://api.fabric.microsoft.com/v1/workspaces/$WORKSPACE_ID/importItemDefinitions?beta=true"
+            API_URL="https://api.fabric.microsoft.com/v1/workspaces/$WORKSPACE_ID/items/bulkImportDefinitions?beta=true"
             echo "Calling Bulk Import Item definition API: $API_URL"
 
             # Call the Bulk Import API and capture response headers
