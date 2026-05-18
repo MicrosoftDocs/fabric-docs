@@ -1,7 +1,7 @@
 ---
 title: Add and Manage Eventstream Sources
 description: Learn how to add and manage an event source in an eventstream.
-ms.reviewer: zhenxilin
+ms.reviewer: xujiang1
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 03/19/2026
