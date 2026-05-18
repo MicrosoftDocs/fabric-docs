@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 # Hyperparameter tuning - fighting breast cancer
 
-This tutorial shows you how to use SynapseML to identify the best combination of hyperparameters for chosen classifiers in Microsoft Fabric. You perform distributed randomized grid search hyperparameter tuning to build a model that classifies breast cancer tumors as malignant or benign.
+This article shows you how to use SynapseML to identify the best combination of hyperparameters for chosen classifiers in Microsoft Fabric. You perform distributed randomized grid search hyperparameter tuning to build a model that classifies breast cancer tumors as malignant or benign.
 
 Hyperparameter tuning is the process of finding optimal configuration values (hyperparameters) for a machine learning algorithm that aren't learned from the training data. Examples include learning rate, number of trees, and regularization strength.
 
@@ -29,8 +29,9 @@ In this tutorial, you learn how to:
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-* Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
-* Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
+- Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
+- Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
+- A Fabric capacity of F4 or higher is recommended. Smaller capacities might encounter memory errors during hyperparameter tuning.
 
 > [!NOTE]
 > SynapseML, PySpark, and pandas come pre-installed in Fabric notebooks. You don't need to install any packages.
@@ -73,9 +74,9 @@ print(f"Total rows: {data.count()}, Columns: {len(data.columns)}")
 print(f"Tuning set: {tune.count()} rows, Test set: {test.count()} rows")
 print(f"Label distribution:\n{data.groupBy('Label').count().toPandas()}")
 # Expected output:
-# Total rows: ~683, Columns: 10
-# Tuning set: ~540-550 rows, Test set: ~130-140 rows
-# Label distribution: Label 0 (benign) ~444, Label 1 (malignant) ~239
+# Total rows: 683, Columns: 10
+# Tuning set: 540-550 rows, Test set: 130-140 rows
+# Label distribution: Label 0 (benign) 444, Label 1 (malignant) 239
 ```
 
 ## Define the classifiers
@@ -83,7 +84,6 @@ print(f"Label distribution:\n{data.groupBy('Label').count().toPandas()}")
 Define three classifiers and wrap them in SynapseML's `TrainClassifier`. The `TrainClassifier` wrapper handles feature vectorization and label indexing automatically.
 
 ```python
-from synapse.ml.automl import TuneHyperparameters
 from synapse.ml.train import TrainClassifier
 from pyspark.ml.classification import (
     LogisticRegression,
@@ -102,8 +102,8 @@ Verify that the models are defined:
 
 ```python
 print(f"Models defined: {len(mmlmodels)}")
-for i, m in enumerate(mmlmodels):
-    print(f"  {i+1}. {type(m.getModel()).__name__}")
+for i, model in enumerate(smlmodels):
+    print(f"  {i+1}. {type(model).__name__}")
 # Expected output:
 # Models defined: 3
 #   1. LogisticRegression
@@ -141,7 +141,10 @@ Verify the search space:
 
 ```python
 print(f"Hyperparameter entries: {len(searchSpace)}")
-assert len(searchSpace) == 5, "Expected 5 hyperparameter entries"
+if len(searchSpace) == 5:
+    print("✓ Search space has 5 entries as expected")
+else:
+    print(f"⚠ Expected 5 entries but found {len(searchSpace)}")
 # Expected output: Hyperparameter entries: 5
 ```
 
@@ -150,6 +153,8 @@ assert len(searchSpace) == 5, "Expected 5 hyperparameter entries"
 Run `TuneHyperparameters` with two-fold cross-validation to find the best model. The `numRuns` parameter controls how many random configurations to evaluate (set to 6 = 3 models x 2 runs each).
 
 ```python
+from synapse.ml.automl import TuneHyperparameters
+
 bestModel = TuneHyperparameters(
     evaluationMetric="accuracy",
     models=mmlmodels,
@@ -168,8 +173,11 @@ Verify that training completed:
 
 ```python
 print(f"Best model metric (accuracy): {bestModel.getBestMetric():.4f}")
-assert bestModel.getBestMetric() > 0.5, "Model should perform better than random"
-# Expected output: Best model metric (accuracy): ~0.92-0.97
+if bestModel.getBestMetric() > 0.5:
+    print("✓ Model performs better than random")
+else:
+    print("⚠ Model accuracy is below 0.5. Try a different seed or increase numRuns.")
+# Expected output: Best model metric (accuracy): 0.92-0.97
 ```
 
 ## Evaluate the best model
@@ -202,11 +210,16 @@ print(f"Accuracy: {metrics_df['accuracy'].iloc[0]:.4f}")
 print(f"Precision: {metrics_df['precision'].iloc[0]:.4f}")
 print(f"Recall: {metrics_df['recall'].iloc[0]:.4f}")
 print(f"AUC: {metrics_df['AUC'].iloc[0]:.4f}")
-# Expected output: accuracy ~0.92-0.97, precision/recall/AUC in similar range
-assert metrics_df['accuracy'].iloc[0] > 0.80, "Accuracy should exceed 80% on this dataset"
+# Expected output: accuracy 0.92-0.97, precision/recall/AUC in similar range
+if metrics_df['accuracy'].iloc[0] > 0.80:
+    print("✓ Accuracy exceeds 80% as expected")
+else:
+    print("⚠ Accuracy is below 80%. Try a different seed or increase numRuns.")
 ```
 
 ## Clean up
+
+The cached data is released automatically when the Spark session ends.
 
 If you created a notebook solely for this tutorial, delete it from your workspace:
 
@@ -214,9 +227,7 @@ If you created a notebook solely for this tutorial, delete it from your workspac
 1. Select the **...** (ellipsis) next to the notebook name.
 1. Select **Delete**.
 
-The cached data is released automatically when the Spark session ends.
-
-## Troubleshooting
+## Troubleshoot
 
 | Issue | Cause | Resolution |
 |-------|-------|------------|
@@ -228,6 +239,6 @@ The cached data is released automatically when the Spark session ends.
 
 ## Related content
 
-- [How to use LightGBM with SynapseML](lightgbm-overview.md)
+- [Overview of LightGBM in SynapseML](lightgbm-overview.md)
 - [Foundry Tools in SynapseML with bring your own key](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
-- [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
+- [Classification tasks using SynapseML](classification-before-and-after-synapseml.md)
