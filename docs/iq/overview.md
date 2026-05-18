@@ -1,7 +1,7 @@
 ---
 title: What is Fabric IQ (preview)?
 description: Learn about the purpose and item components of the Fabric IQ (preview) workload in Microsoft Fabric.
-ms.date: 05/11/2026
+ms.date: 05/18/2026
 ms.topic: overview
 ai-usage: ai-assisted
 ---
@@ -37,9 +37,7 @@ Fabric IQ brings three pillars of business context into Microsoft IQ: [unified d
 
 ### Unified data with OneLake
 
-[OneLake](../onelake/onelake-overview.md) unifies structured, unstructured, real-time, and graph data across clouds (Azure, AWS, GCP, on-prem, SAP, Snowflake, Databricks) with zero-copy, zero-ETL access. Graph provides native storage and compute for relationship-heavy queries and traversals. 
-
-With OneLake, Fabric IQ brings intelligence to the data rather than requiring data migration.
+[OneLake](../onelake/onelake-overview.md) is the foundation of Fabric IQ, unifying enterprise data across clouds and on-premises data into a single, governed source of truth. Through shortcuts, mirroring, and the OneLake catalog, it eliminates fragmentation and creates a multi-cloud, unified data lake that Fabric IQ uses to securely discover and access relevant context. It also serves as the distribution layer for that data, making it consistently available to Fabric workloads, Foundry, and Copilot Studio so all intelligence from semantic models, ontology, and agents is grounded in the same trusted, organization-wide data.
 
 ### Business intelligence with Power BI semantic models
 
