@@ -5,7 +5,7 @@ ms.reviewer: eloldag # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
-ms.date: 05/14/2026
+ms.date: 05/18/2026
 
 #CustomerIntent:
 ---
@@ -34,8 +34,8 @@ Use the storage report to:
 The OneLake storage report is available in the OneLake section of any workspace's settings.
 
 1. In the Fabric portal, go to the workspace that you want to use.
-1. Open **Workspace settings** > **OneLake** > **Storage report**.
-1. Select **Refresh** to load the storage data.
+2. Open **Workspace settings** > **OneLake** > **Storage report**.
+3. Select **Refresh** to load the storage data.
 
 The duration of the refresh depends on the number of items and files in your workspace. For large workspaces (containing terabytes or petabytes of data), the refresh can take several hours or more than a day. While the report is refreshing, you can't initiate a new refresh.  
 
@@ -48,10 +48,10 @@ The storage report contains the following fields:
 | Name        | Description                                                                                                                                     |
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | Item name   | The friendly name of the item.                                                                                                                  |
-| Type        | The type of the item (for example,Lakehouse).                                          |
+| Type        | The type of the item (example: Lakehouse).                                          |
 | Billing     | The billing status of the item. Non-billable items aren't charged for OneLake storage. Partially-billable items aren't charged up to a limit.   |
 | Total       | The total amount of data stored in the item, including system and soft-deleted data.                                                            |
-| Soft-delete | Deleted data that is within the seven day retention window. For more information, see [Recover deleted files in OneLake](soft-delete.md).                                              |
+| Soft-delete | Deleted data within the seven day retention window. For more information, see [Recover deleted files in OneLake](soft-delete.md).                                              |
 | System      | Workload data such as internal metadata, logs, and temporary files that aren't directly accessible but count toward storage usage.             |
 
 You can generate a similar report programmatically by using tools like PowerShell. However, the OneLake storage report doesn't require external tools and scans all your data, including data you don't have access to, such as system data.  
@@ -62,8 +62,8 @@ When you refresh your storage report, OneLake calculates the amount of data stor
 
 The cost model uses the following values:
 
-- **1.626 CUs** (Fabric Capacity Units) per 10,000 iterative read operations
-- **5,000 files** scanned per iterative read operation
+* **1,626 Fabric Capacity Units** (CUs) per 10,000 iterative read operations
+* **5,000 files** scanned per iterative read operation
 
 For example, a workspace containing 50,000,000 files requires 10,000 iterative read operations (50,000,000 ÷ 5,000) and consumes 1,626 CUs to refresh.
 
@@ -71,8 +71,7 @@ For more information about OneLake capacity consumption, see [OneLake consumptio
 
 ### Storage report limitations  
 
-* The storage report doesn't include any OneLake diagnostic events routed to a lakehouse.
-* Refreshing the storage report might fail when called from a region different than the workspace region.  
+* The storage report doesn't currently include any OneLake diagnostic events stored within a lakehouse.
 
 ## Use PowerShell
 
