@@ -20,7 +20,7 @@ This tutorial uses widget-making-machine telemetry as the running example, but t
 In this tutorial, you complete the following tasks:
 
 > [!div class="checklist"]
-> * Set up an Eventstream over your Event Hub.
+> * Set up an eventstream over your event hub.
 > * Create a User Data Function to file the repair job.
 > * Author an Activator rule that triggers the function.
 
@@ -28,13 +28,13 @@ If you're new to Fabric Activator, see [What is Fabric Activator?](activator-int
 
 ## Scenario overview
 
-A manufacturer operates a fleet of widget-making machines across multiple plants. Each machine emits telemetry—temperature, vibration, pressure, run state—into an Azure Event Hub. When a machine sustains a high running temperature, it needs a maintenance visit before it breaks down.
+A manufacturer operates a fleet of widget-making machines across multiple plants. Each machine emits telemetry—temperature, vibration, pressure, run state—into an Azure event hub. When a machine sustains a high running temperature, it needs a maintenance visit before it breaks down.
 
 For this tutorial, each event uses a small representative schema: a per-machine ID (`machine_id`), a location tag (`plant_id`), a numeric metric to monitor (`temperature_c`), and a run-state field (`state`). The exact field names don't matter—the same prompt shape works for any per-entity ID plus a metric you want to threshold.
 
 You build a Fabric pipeline that watches the telemetry stream, applies a sustained-threshold rule, and calls a User Data Function to file the repair job. The rule groups events by `machine_id` and fires when `temperature_c` stays above 50°C for 5 minutes. When it fires, it passes `machine_id`, `plant_id`, and the current temperature into the action.
 
-:::image type="content" source="media/activator-agentic-tutorial/architecture.png" alt-text="Diagram showing widget-making machines emitting telemetry to an Azure Event Hub, which a Fabric Eventstream ingests. A Fabric Activator rule on the stream invokes file_repair_job on a Fabric User Data Function, which sends an HTTPS POST request to the Repair-job API." lightbox="media/activator-agentic-tutorial/architecture.png":::
+:::image type="content" source="media/activator-agentic-tutorial/architecture.png" alt-text="Architecture diagram of telemetry flowing from machines through Azure Event Hubs, a Fabric eventstream, an Activator rule, and a UDF." lightbox="media/activator-agentic-tutorial/architecture.png":::
 
 ## Prerequisites
 
@@ -44,27 +44,27 @@ Before you begin, you need:
 - A skill-compatible agent—for example, GitHub Copilot CLI or GitHub Copilot in Visual Studio Code—with the [Fabric skills](https://github.com/microsoft/fabric-skills) installed.
 - An Azure Event Hubs namespace and hub streaming the telemetry. You need the namespace FQDN, hub name, and a `Listen+Send` connection string.
 
-## Set up the Eventstream
+## Set up the eventstream
 
-In this step, you create the Eventstream that subscribes to your Event Hub. You prompt the agent and validate the result in the portal.
+In this step, you create the eventstream that subscribes to your event hub. You prompt the agent and validate the result in the portal.
 
-1. Give the agent this prompt, replacing the placeholders with values from your Event Hub:
+1. Give the agent this prompt, replacing the placeholders with values from your event hub:
 
-    > Create a Fabric Eventstream in my workspace called `WidgetMachineTelemetry` that ingests from this Azure Event Hub:
-    >
-    > - Namespace: `<your namespace FQDN>`
-    > - Hub name: `<your hub name>`
-    > - Connection string: `<your Listen+Send connection string>`
-    >
-    > When you're done, give me a direct portal link to the Eventstream item so I can verify it.
+    Create a Fabric eventstream in my workspace called `WidgetMachineTelemetry` that ingests from this Azure event hub:
 
-1. The agent invokes the Eventstream authoring skill. It creates the Eventstream item, configures the Event Hub as a source, and returns a clickable URL to the item in the Fabric portal. You don't need a destination—Activator subscribes directly to the stream.
+    - Namespace: `<your namespace FQDN>`
+    - Hub name: `<your hub name>`
+    - Connection string: `<your Listen+Send connection string>`
 
-1. Select the link the agent gave you. In the **Live view**, confirm the Event Hub source is **Connected** and widget-machine telemetry events are flowing through.
+    When you're done, give me a direct portal link to the eventstream item so I can verify it.
 
-    :::image type="content" source="media/activator-agentic-tutorial/event-stream-widget-machine-telemetry.png" alt-text="Screenshot of the WidgetMachineTelemetry Eventstream showing the Event Hub source connected and the Activator destination, with live data preview." lightbox="media/activator-agentic-tutorial/event-stream-widget-machine-telemetry.png":::
+1. The agent invokes the eventstream authoring skill. It creates the eventstream item, configures the event hub as a source, and returns a clickable URL to the item in the Fabric portal. You don't need a destination—Activator subscribes directly to the stream.
 
-    *Figure 1: The `WidgetMachineTelemetry` Eventstream—events flow from the `widget-telemetry` Event Hub source through the stream to the `WidgetMachineMaintenance` Activator destination.*
+1. Select the link the agent gave you. In the **Live view**, confirm the event hub source is **Connected** and widget-machine telemetry events are flowing through.
+
+    :::image type="content" source="media/activator-agentic-tutorial/event-stream-widget-machine-telemetry.png" alt-text="Screenshot of the WidgetMachineTelemetry eventstream showing the event hub source connected and the Activator destination, with live data preview." lightbox="media/activator-agentic-tutorial/event-stream-widget-machine-telemetry.png":::
+
+    *Figure 1: The `WidgetMachineTelemetry` eventstream—events flow from the `widget-telemetry` event hub source through the stream to the `WidgetMachineMaintenance` Activator destination.*
 
 ## Create the User Data Function
 
@@ -72,9 +72,9 @@ In this step, you create the User Data Function that your Activator rule calls. 
 
 1. Give the agent this prompt:
 
-    > Create a Fabric User Data Function called `MaintenanceDispatcher` in my workspace, written in Python, with a function `file_repair_job(machine_id, plant_id, temperature_c)` that sends those values as JSON in a POST request to `https://contoso.com/maintenance/fileRepairJob` and returns the parsed response.
-    >
-    > When you're done, give me a direct portal link to the UDF item so I can verify it.
+    Create a Fabric User Data Function called `MaintenanceDispatcher` in my workspace, written in Python, with a function `file_repair_job(machine_id, plant_id, temperature_c)` that sends those values as JSON in a POST request to `https://contoso.com/maintenance/fileRepairJob` and returns the parsed response.
+
+    When you're done, give me a direct portal link to the UDF item so I can verify it.
 
 1. The agent invokes the Fabric UDF authoring skill. It scaffolds a Python UDF item, implements `file_repair_job` with `httpx`, publishes the UDF, confirms the function is callable, and returns a clickable URL to the item.
 
@@ -89,13 +89,13 @@ In this step, you create the User Data Function that your Activator rule calls. 
 
 ## Author the Activator rule
 
-In this step, you create the Activator rule that watches the Eventstream and calls your UDF when a machine overheats.
+In this step, you create the Activator rule that watches the eventstream and calls your UDF when a machine overheats.
 
 1. Give the agent this prompt:
 
-    > Create an Activator rule in my workspace subscribed to the `WidgetMachineTelemetry` Eventstream, that triggers my `file_repair_job` UDF when a machine's temperature stays above 50°C for 5 minutes.
-    >
-    > When you're done, give me a direct portal link to the rule so I can verify it.
+    Create an Activator rule in my workspace subscribed to the `WidgetMachineTelemetry` eventstream, that triggers my `file_repair_job` UDF when a machine's temperature stays above 50°C for 5 minutes.
+
+    When you're done, give me a direct portal link to the rule so I can verify it.
 
 1. The agent invokes the Activator authoring skill and creates the Activator item. The agent groups the rule by `machine_id`, builds the sustained-threshold detection, and configures the action to call your UDF with `machine_id`, `plant_id`, and the current temperature. The agent then returns a clickable URL to the rule.
 
@@ -111,7 +111,7 @@ In this step, you create the Activator rule that watches the Eventstream and cal
 
 ## Clean up resources
 
-When you're finished, delete the Eventstream, User Data Function, and Activator items from your workspace, and delete the Event Hubs namespace from the Azure portal to stop charges.
+When you're finished, delete the eventstream, User Data Function, and Activator items from your workspace, and delete the Event Hubs namespace from the Azure portal to stop charges.
 
 ## Related content
 
