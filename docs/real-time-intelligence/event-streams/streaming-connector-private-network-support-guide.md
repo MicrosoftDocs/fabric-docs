@@ -64,7 +64,7 @@ This section shows how to prepare the Azure virtual network with a subnet config
 3. You can either select an existing subnet to edit or create a new one.
 
    > [!NOTE]  
-   > It is strongly recommended to **create a new subnet for connector vNet injection** to avoid potential conflicts. If you choose to use an existing subnet, ensure that it does not contain any Private Endpoints, Load Balancers, Application Gateways, virtual machines (VMs), virtual machine scale sets (VMSS), or network interfaces (NICs).
+   > It is strongly recommended to **create a new subnet for connector vNet injection** to avoid potential conflicts. If you choose to use an existing subnet, ensure that it does not contain any Private Endpoints, Load Balancers, Application Gateways, virtual machines (VMs), virtual machine scale sets, or network interfaces (NICs).
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/select-subnet.png" alt-text="Screenshot of showing selecting or creating subnets." lightbox="media/streaming-connector-virtual-network-on-premises-support/select-subnet.png":::
 
@@ -207,12 +207,12 @@ After the Streaming virtual network data gateway is created, go back to Get even
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/new-connection.png" alt-text="Screenshot of showing how to create a new DMTS connection." lightbox="media/streaming-connector-virtual-network-on-premises-support/new-connection.png":::
 
-1. Ensure selecting the **streaming virtual network data gateway** under **Data gateway**. It has the prefix `[Streaming vNet]`. You can select refresh icon to get the newly created gateway listed.
+1. Ensure selecting the **streaming virtual network data gateway** under **Data gateway**. It has the prefix `[Streaming VNET]`. You can select refresh icon to get the newly created gateway listed.
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/select-data-gateway.png" alt-text="Screenshot of showing how to select a streaming virtual network when creating new DMTS connection." lightbox="media/streaming-connector-virtual-network-on-premises-support/select-data-gateway.png":::
 
     > [!NOTE]  
-    > If a data gateway is selected, skip the test connection step in this connection creation wizard.
+    > If you use a data gateway, test connection isn't supported for this scenario, so **Skip test connection** is selected by default.
     
 1. Select the **Connection** you created with the streaming virtual network data gateway included. It has a prefix: `[vNet]`.
 
@@ -240,6 +240,7 @@ Azure Service Bus | Azure Service Bus
 Azure Cosmos DB CDC | Azure Cosmos DB v2
 Azure Data Explorer (ADX) | Azure Data Explorer (Kusto)
 Azure Event Hubs (Extended features mode) | Event Hubs
+Azure IoT Hub (Extended features mode) | IoTHub
 Amazon MSK Kafka | Kafka Cluster
 Apache Kafka | Kafka Cluster
 Amazon Kinesis Data Streams | Kinesis
