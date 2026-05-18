@@ -149,6 +149,22 @@ items:
           href: plan/planning-how-to-export-data.md
         - name: Pivot data
           href: plan/planning-how-to-pivot-data.md
+        - name: Conditional formatting
+          items:
+              - name: Conditional formatting overview
+                href: plan/planning-conditional-formatting/concept-conditional-formatting.md
+              - name: Create rules
+                href: plan/planning-conditional-formatting/how-to-create-rules.md
+              - name: Format by rules
+                href: plan/planning-conditional-formatting/how-to-format-if.md
+              - name: Format by color scales
+                href: plan/planning-conditional-formatting/how-to-format-color-scales.md
+              - name: Format by classification
+                href: plan/planning-conditional-formatting/how-to-format-classification.md
+              - name: Apply quick formatting
+                href: plan/planning-conditional-formatting/how-to-apply-quick-formatting.md
+              - name: Manage rules
+                href: plan/planning-conditional-formatting/how-to-manage-rules.md
         - name: Use forecasting
           items: 
               - name: Configure forecasts
