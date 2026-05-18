@@ -4,11 +4,10 @@ description: Learn how to access and use system properties and custom properties
 ms.reviewer: xujiang1
 ms.author: xujiang1
 ms.topic: how-to
-ms.custom: references_regions
 ms.date: 05/15/2026
 ---
 
-# Extract event metadata in Eventstream
+# Extract event metadata in eventstream
 
 This article describes how to access event metadata—including system properties and custom properties—from streaming sources in Microsoft Fabric Eventstream, and how to extract them using the SQL operator for downstream analytics.
 
@@ -54,7 +53,7 @@ Eventstream connectors preserve event metadata—both system properties and cust
 > [!NOTE]
 > For Azure IoT Hub and Azure Event Hubs, select **Extended features** when configuring the source in Eventstream to enable full metadata preservation.
 
-## How metadata is retained in Eventstream
+## How metadata is retained in eventstream
 
 When Eventstream ingests events from a supported source, the connector copies both system properties and custom properties into the **user metadata section** of the event within Eventstream (the embedded Event Hubs).
 
@@ -135,11 +134,11 @@ This section walks through a complete scenario using the IoT Hub source connecto
 1. Select **Add source** (in Eventstream) or **Add data** (in Real-Time hub) > **Azure IoT Hub**.
 1. In the source configuration, select **Extended features** to enable the enhanced connector.
 1. Complete the connection configuration details.
-1. Select **Add** to start ingesting events with full metadata. See more detailed step in [Add Azure IoT Hub source to Eventstream](./add-source-azure-iot-hub.md)
+1. Select **Add** to start ingesting events with full metadata. See more detailed step in [Add Azure IoT Hub source to Eventstream](./add-source-azure-iot-hub.md).
 
 With Extended features enabled, the connector preserves all IoT Hub system properties and custom properties when events land in Eventstream.
 
-:::image type="content" source="media/extract-event-metadata-with-eventstream/azure-iothub-source-configuration.png" alt-text="Screenshot that shows the Azure iothub source configuration." lightbox="media/extract-event-metadata-with-eventstream/azure-iothub-source-configuration.png":::  
+:::image type="content" source="media/extract-event-metadata-with-eventstream/azure-iot-hub-source-configuration.png" alt-text="Screenshot that shows the Azure iothub source configuration." lightbox="media/extract-event-metadata-with-eventstream/azure-iot-hub-source-configuration.png":::  
 
 ### Step 2: Add a SQL operator to extract metadata
 
@@ -164,7 +163,7 @@ FROM [your-iothub-stream]
 
 :::image type="content" source="media/extract-event-metadata-with-eventstream/sql-editor-query-in-eventstream.png" alt-text="Screenshot that shows the sql query inside eventstream's edit mode." lightbox="media/extract-event-metadata-with-eventstream/sql-editor-query-in-eventstream.png":::  
 
-### Step 3: Query metadata in Eventhouse with KQL
+### Step 3: Query metadata in eventhouse with KQL
 
 Once data is flowing into Eventhouse, use Kusto Query Language (KQL) to perform real-time analytics on the metadata. The following query calculates the end-to-end ingestion latency:
 
