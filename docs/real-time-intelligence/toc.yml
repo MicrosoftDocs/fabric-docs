@@ -817,6 +817,8 @@ items:
         items:
           - name: Create and activate an Activator rule
             href: data-activator/activator-tutorial.md
+          - name: Create an end-to-end Activator rule using agentic AI
+            href: data-activator/activator-agentic-tutorial.md
       - name: Concepts
         items:
           - name: Trigger modeling
