@@ -1,6 +1,6 @@
 ---
 title: Interpretability - Tabular SHAP explainer
-description: Use Kernel SHAP to explain a tabular classification model in a Microsoft Fabric notebook.
+description: Use Kernel SHAP to explain a tabular classification model trained on the Adult Census Income dataset in a Microsoft Fabric notebook with SynapseML.
 ms.topic: how-to
 ms.author: scottpolly
 author: s-polly
@@ -12,30 +12,17 @@ ai-usage: ai-assisted
 
 # Interpretability - Tabular SHAP explainer
 
-In this article, you use Kernel SHAP (SHapley Additive exPlanations) to explain a tabular classification model. Kernel SHAP is a model-agnostic method that estimates the contribution of each feature to a model's prediction. You train a logistic regression model on the Adult Census Income dataset and then use the SynapseML `TabularSHAP` transformer to compute feature-level explanations.
+Use Kernel SHAP (SHapley Additive exPlanations) to explain a tabular classification model. Kernel SHAP is a model-agnostic method that estimates the contribution of each feature to a model's prediction. You train a logistic regression model on the Adult Census Income dataset and then use the SynapseML `TabularSHAP` transformer to compute feature-level explanations.
 
 ## Prerequisites
 
-| Requirement | Details |
-|---|---|
-| Microsoft Fabric subscription | [Get a free trial](/fabric/get-started/fabric-trial) |
-| Fabric workspace | [Create a workspace](/fabric/get-started/create-workspaces) |
-| Fabric notebook | [Create a notebook](/fabric/data-engineering/how-to-use-notebook) attached to a lakehouse |
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-SynapseML, PySpark, pandas, and plotly are pre-installed in Fabric notebook environments. No extra package installation is required.
+- Create a new notebook in your workspace and attach it to a lakehouse. For more information, see [Create a notebook](../data-engineering/how-to-use-notebook.md).
 
-## Quick start summary
+SynapseML, PySpark, pandas, and plotly are preinstalled in Fabric notebook environments. No extra package installation is required.
 
-| Step | Action | Estimated run time |
-|---|---|---|
-| 1 | Import packages and define helper UDFs | Less than 1 minute |
-| 2 | Load data and train a classification model | 2-5 minutes |
-| 3 | Select observations to explain | Less than 1 minute |
-| 4 | Configure and run TabularSHAP | 3-10 minutes |
-| 5 | Extract SHAP values and convert to pandas | Less than 1 minute |
-| 6 | Visualize SHAP values with plotly | Less than 1 minute |
-
-## Step 1: Import packages and define helper UDFs
+## Import packages and define helper UDFs
 
 In your Fabric notebook, paste the following code into a cell and run it. This imports the required libraries and defines two user-defined functions (UDFs) for extracting vector elements later.
 
@@ -60,7 +47,7 @@ print("TabularSHAP imported successfully")
 print(f"PySpark version: {pyspark.__version__}")
 ```
 
-## Step 2: Load data and train a classification model
+## Load data and train a classification model
 
 Load the Adult Census Income dataset from Azure Blob Storage, index the target label, and train a logistic regression pipeline.
 
@@ -127,7 +114,7 @@ Pipeline stages: ['StringIndexerModel', 'OneHotEncoderModel', 'VectorAssembler',
 Model trained successfully
 ```
 
-## Step 3: Select observations to explain
+## Select observations to explain
 
 Randomly select five observations from the scored training data. These serve as the instances for which you generate SHAP explanations.
 
@@ -147,7 +134,7 @@ assert count == 5, f"Expected 5 rows, got {count}"
 print("Sample selected successfully")
 ```
 
-## Step 4: Configure and run TabularSHAP
+## Configure and run TabularSHAP
 
 Create a `TabularSHAP` explainer and apply it to the selected observations. The key parameters are:
 
@@ -186,7 +173,7 @@ print(f"SHAP output columns: {shap_df.columns}")
 print("TabularSHAP transform completed")
 ```
 
-## Step 5: Extract SHAP values
+## Extract SHAP values
 
 Extract the class 1 probability and SHAP values from the result DataFrame. For each observation, the SHAP values vector starts with the base value (mean output of the background dataset), followed by one value per feature.
 
@@ -215,7 +202,7 @@ assert shaps_local.shape == (5, expected_cols), f"Unexpected shape: {shaps_local
 print("SHAP values extracted successfully")
 ```
 
-## Step 6: Visualize SHAP values
+## Visualize SHAP values
 
 Create a bar chart for each observation that shows how each feature contributes to the predicted probability.
 
