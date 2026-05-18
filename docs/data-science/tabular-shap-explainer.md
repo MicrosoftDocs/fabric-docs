@@ -24,7 +24,7 @@ SynapseML, PySpark, pandas, and plotly are preinstalled in Fabric notebook envir
 
 ## Import packages and define helper UDFs
 
-In your Fabric notebook, paste the following code into a cell and run it. This imports the required libraries and defines two user-defined functions (UDFs) for extracting vector elements later.
+In your Fabric notebook, paste the following code into a cell and run it. This step imports the required libraries and defines two user-defined functions (UDFs) for extracting vector elements later.
 
 ```python
 import pyspark
@@ -40,7 +40,7 @@ vec_access = udf(lambda v, i: float(v[i]), FloatType())
 vec2array = udf(lambda vec: vec.toArray().tolist(), ArrayType(FloatType()))
 ```
 
-**Verify**: Run the following in a new cell. You should see the output `TabularSHAP imported successfully`.
+**Verify**: Run the following code in a new cell. You should see the output `TabularSHAP imported successfully`.
 
 ```python
 print("TabularSHAP imported successfully")
@@ -104,19 +104,18 @@ print(f"Training rows: {training.count()}")
 print(f"Pipeline stages: {[type(s).__name__ for s in model.stages]}")
 assert training.count() > 30000, "Dataset should contain over 30,000 rows"
 print("Model trained successfully")
+
+# Expected output:
+#Training rows: 32561
+#Pipeline stages: ['StringIndexerModel', 'OneHotEncoderModel', #'VectorAssembler', 'LogisticRegressionModel']
+#Model trained successfully
 ```
 
-Expected output:
 
-```output
-Training rows: 32561
-Pipeline stages: ['StringIndexerModel', 'OneHotEncoderModel', 'VectorAssembler', 'LogisticRegressionModel']
-Model trained successfully
-```
 
 ## Select observations to explain
 
-Randomly select five observations from the scored training data. These serve as the instances for which you generate SHAP explanations.
+Randomly select five observations from the scored training data. These observations are the instances for which you generate SHAP explanations.
 
 ```python
 explain_instances = (
@@ -268,8 +267,8 @@ The sum of the base value and all feature SHAP values equals the model's predict
 
 | Issue | Cause | Resolution |
 |---|---|---|
-| `OutOfMemoryError` during TabularSHAP | `numSamples` is too large for available memory. | Reduce `numSamples`, for example to 1000, or increase Spark executor memory. |
-| SHAP transform is slow | High `numSamples` with many features increases compute time. | Reduce `numSamples` to 1000-2000 for faster exploratory results. Increase for final analysis. |
+| `OutOfMemoryError` during TabularSHAP | `numSamples` is too large for available memory. | Reduce `numSamples`, for example to 1,000, or increase Spark executor memory. |
+| SHAP transform is slow | High `numSamples` with many features increases compute time. | Reduce `numSamples` to 1,000-2,000 for faster exploratory results. Increase for final analysis. |
 | `FileNotFoundException` for parquet | Network access to `mmlspark.blob.core.windows.net` is blocked. | Verify that your Fabric workspace has outbound internet access. Alternatively, upload the dataset to your lakehouse. |
 | `shapValues` column contains nulls | Some observations might fail if feature values are outside the training distribution. | Check for null or unexpected values in input features. Filter nulls from results. |
 | `display()` shows no output | The code is running outside a Fabric notebook environment. | Use `shaps_local.head()` or `print(shaps_local)` in standard Python environments. |
