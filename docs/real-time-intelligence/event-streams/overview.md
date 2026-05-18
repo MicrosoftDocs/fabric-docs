@@ -1,7 +1,7 @@
 ---
 title: Microsoft Fabric Eventstreams Overview
 description: Learn how eventstreams can help you capture, transform, and route real-time events to various destinations in Microsoft Fabric.
-ms.reviewer: zhenxilin
+ms.reviewer: xujiang1
 ms.topic: concept-article
 ms.custom: sfi-image-nochange
 ms.date: 04/29/2026

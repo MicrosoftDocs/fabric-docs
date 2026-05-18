@@ -48,21 +48,21 @@ You can change a file's storage tier via the following methods:
 
 - **Set Blob Tier**  
 
-    Call the Set Blob Tier API, explicitly or through a lifecycle management policy. This API is recommended when moving data from a warmer tier to a cooler one. You can also use Azure Storage Explorer to change the tier of a file, or all files within a folder, via the "Change access tier" option when selecting a file or folder.  
+  Call the [Set Blob Tier](/rest/api/storageservices/set-blob-tier) operation, explicitly or through a lifecycle management policy. This API is recommended when moving data from a warmer tier to a cooler one. You can also use Azure Storage Explorer to change the tier of a file, or all files within a folder, via the "Change access tier" option when selecting a file or folder.  
 
 - **Copy Blob**
 
-    Call the Copy Blob operation to copy a blob from one tier to another. This API is recommended when moving a blob from a cooler tier to a warmer tier, in order to avoid the early deletion penalty. However, copying a blob results in two transaction charges, from the source and destination tier.  
+  Call the [Copy Blob](/rest/api/storageservices/copy-blob) operation to copy a blob from one tier to another. This API is recommended when moving a blob from a cooler tier to a warmer tier, in order to avoid the early deletion penalty. However, copying a blob results in two transaction charges, from the source and destination tier.  
 
 - **Lifecycle management rules**  
 
-    Define a OneLake lifecycle management to move files between tiers based on predefined rules. Lifecycle rules can move files to your choice of tier based on when they were created, last modified, or last accessed. When a lifecycle rule runs, it updates the file's tier according to the actions you define, based on when they were created, last modified, or last accessed. Lifecycle rules move data using the Set Blob Tier API. Learn more about [OneLake lifecycle management](onelake-lifecycle-management.md).  
+  Define a OneLake lifecycle management to move files between tiers based on predefined rules. Lifecycle rules can move files to your choice of tier based on when they were created, last modified, or last accessed. When a lifecycle rule runs, it updates the file's tier according to the actions you define, based on when they were created, last modified, or last accessed. Lifecycle rules move data using the [Set Blob Tier](/rest/api/storageservices/set-blob-tier) operation. For more information, see [OneLake lifecycle management](onelake-lifecycle-management.md).  
 
 - **Workspace default storage tier**  
 
-    If a file doesn't have a specific tier set, OneLake uses the workspace's default storage tier. All workspaces in Fabric start with a default tier of Hot. You can change the default tier of your workspace via the Modify Default Tier API.  Changing the default tier of your workspace moves all files without an explicit tier (set via Set Blob Tier or Copy Blob) into the new default tier. You are charged for capacity consumption for the write operations when moving files to a cooler default tier, or the read and retrieval charges when changing to a warmer default tier.  
+  If a file doesn't have a specific tier set, OneLake uses the workspace's default storage tier. All workspaces in Fabric start with a default tier of Hot. You can change the default tier of your workspace by using the [Modify Default Tier](/rest/api/fabric/core/onelake-settings/modify-default-tier) operation. Changing the default tier of your workspace moves all files without an explicit tier (a tier set via the Set Blob Tier or Copy Blob operations) into the new default tier. You are charged for capacity consumption for the write operations when moving files to a cooler default tier, or the read and retrieval charges when changing to a warmer default tier.  
 
-   All files uploaded to a workspace will land in the default tier. To upload a file in a different tier, you can use the 'x-ms-access-tier' header in the [Put Blob API](/rest/api/storageservices/put-blob).  
+  All files uploaded to a workspace will land in the default tier. To upload a file in a different tier, you can use the 'x-ms-access-tier' header in the [Put Blob](/rest/api/storageservices/put-blob) operation.
 
 > [!NOTE]
 > OneLake only supports changing the storage tier of files which are fully billable.  Any items where storage or transactions aren't billed, or only billed up to a limit, are currently exempt from tier change operations.  
@@ -103,7 +103,7 @@ Assume you have 10 TB of data that must be retained for five years. Once per yea
 
 The following table shows the cost of storing the data for five years at the hot, cool, and cold tiers:
 
-| Tier | Storage rate | Monthly storage cost | Total storage cost (60 months) |
+| Tier | Storage rate             | Monthly storage cost | Total storage cost (60 months) |
 |------|--------------------------|----------------------|--------------------------------|
 | Hot  | $0.023 per GB            | $230/month           | $13,800                        |
 | Cool | $0.0125 per GB           | $125/month           | $7,500                         |
@@ -129,15 +129,13 @@ Following are some simple guidelines for optimizing your costs through efficient
 - Use lifecycle rules to move data to cool or cold storage automatically.
 - Load historical data directly to the cool or cold access tier to save on tier change transactions.
 
-## Updates to OneLake consumption reporting
+## Changes to OneLake consumption reporting
 
-As part of the rollout of OneLake storage tiers, OneLake compute operations reporting is changing for  capacity billing. These updates improve clarity and align reporting with the new storage tier model. There's no change to billing rates.
+As of May 2026, OneLake compute operations reporting in the Fabric Capacity Metrics app reflects the following changes to support storage tiers. There's no change to billing rates.
 
-Key updates include:
-
-- Operation names include the storage tier. For example, “OneLake Read via Proxy” becomes “OneLake Read (Hot).”
-- Proxy and Redirect operations are consolidated. Operations previously reported separately now appear under a single operation name. Because consumption rates are the same, there's no effect on billing.
-- Operations are reported at the workspace level. A new OneLake item in the Fabric Capacity Metrics app groups operations by workspace instead of individual items. For item-level detail, use OneLake diagnostics to understand usage across Fabric and non-Fabric workloads.
+- Operation names include the storage tier. For example, the former "OneLake Read via Proxy" is now "OneLake Read (Hot)."
+- Proxy and Redirect operations are consolidated under a single operation name. Because consumption rates are the same, there's no effect on billing.
+- Operations are reported at the workspace level. A single **OneLake** item in the Fabric Capacity Metrics app groups operations by workspace instead of by individual items. For item-level detail, use OneLake diagnostics.
 - Units of measure and consumption rates remain unchanged.
 
 ## Limitations

@@ -9,6 +9,8 @@ items:
         href: real-time-intelligence-compare.md
       - name: Implement medallion architecture
         href: architecture-medallion.md
+      - name: Multitenant solutions
+        href: multitenant.md
       - name: End to end sample RTI solution
         href: sample-end-to-end.md
   - name: Tutorials
@@ -177,6 +179,8 @@ items:
             href: event-streams/process-events-with-multiple-schemas.md
           - name: Process events using SQL code editor
             href: event-streams/process-events-using-sql-code-editor.md
+          - name: Extract event metadata with eventstream
+            href: event-streams/extract-event-metadata-with-eventstream.md
       - name: Preview data
         href: event-streams/preview-data.md
       - name: Manage eventstreams
@@ -813,6 +817,8 @@ items:
         items:
           - name: Create and activate an Activator rule
             href: data-activator/activator-tutorial.md
+          - name: Create an end-to-end Activator rule using agentic AI
+            href: data-activator/activator-agentic-tutorial.md
       - name: Concepts
         items:
           - name: Trigger modeling
