@@ -34,7 +34,7 @@ In this tutorial, you learn how to:
 - A Fabric capacity of F4 or higher is recommended. Smaller capacities might encounter memory errors during hyperparameter tuning.
 
 > [!NOTE]
-> SynapseML, PySpark, and pandas come pre-installed in Fabric notebooks. You don't need to install any packages.
+> SynapseML, PySpark, and pandas come preinstalled in Fabric notebooks. You don't need to install any packages.
 
 ## Set up the dependencies
 
@@ -113,7 +113,7 @@ for i, model in enumerate(smlmodels):
 
 ## Build the hyperparameter search space
 
-Import the SynapseML AutoML classes from `synapse.ml.automl`. Specify the hyperparameters with `HyperparamBuilder`. Use `DiscreteHyperParam` for categorical choices and `RangeHyperParam` for continuous ranges. `TuneHyperparameters` randomly samples values from a uniform distribution.
+Import the SynapseML AutoML classes from `synapse.ml.automl`. Specify the hyperparameters by using `HyperparamBuilder`. Use `DiscreteHyperParam` for categorical choices and `RangeHyperParam` for continuous ranges. `TuneHyperparameters` randomly samples values from a uniform distribution.
 
 ```python
 from synapse.ml.automl import (
@@ -223,7 +223,7 @@ The cached data is released automatically when the Spark session ends.
 
 If you created a notebook solely for this tutorial, delete it from your workspace:
 
-1. Navigate to your workspace in the Fabric portal.
+1. Go to your workspace in the Fabric portal.
 1. Select the **...** (ellipsis) next to the notebook name.
 1. Select **Delete**.
 
