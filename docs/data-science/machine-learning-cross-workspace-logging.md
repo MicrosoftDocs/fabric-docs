@@ -39,7 +39,7 @@ For Fabric notebook scenarios, create a new notebook and attach a lakehouse befo
 The `synapseml-mlflow` package enables cross-workspace logging by providing the Fabric MLflow tracking plugin. Choose the install command based on your environment.
 
 > [!NOTE]
-> The `synapseml-mlflow` package now supports MLflow 3. You no longer need to pin `mlflow-skinny` to version 2.22.2. For an overview of MLflow 3 features in Fabric, see [MLflow 3 in Fabric Data Science](mlflow-3.md).
+> The `synapseml-mlflow` package now supports MLflow 3. You no longer need to pin `mlflow-skinny` to version 2.22.2. For an overview of MLflow 3 features in Fabric, see [MLflow 3 in Fabric Data Science](mlflow-3-overview.md).
 
 ### [Fabric notebook](#tab/fabric-notebook)
 

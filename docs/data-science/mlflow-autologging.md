@@ -26,7 +26,7 @@ Autologging can capture metrics including accuracy, loss, F1 score, and custom m
 Autologging supports a wide range of machine learning frameworks, including TensorFlow, PyTorch, scikit-learn, and XGBoost. To learn more about the framework-specific properties that autologging captures, see the [MLflow documentation](https://mlflow.org/docs/latest/tracking/autolog.html).
 
 > [!NOTE]
-> With MLflow 3 support in Fabric, autologging also captures **GenAI traces** by default (`log_traces=True`). For more information about LoggedModel and Traces, see [MLflow 3 in Fabric Data Science](mlflow-3.md).
+> With MLflow 3 support in Fabric, autologging also captures **GenAI traces** by default (`log_traces=True`). For more information about LoggedModel and Traces, see [MLflow 3 in Fabric Data Science](mlflow-3-overview.md).
 
 ## Configuration
 
@@ -132,4 +132,4 @@ To enable or disable [!INCLUDE [product-name](../data-science/includes/fabric-ds
 
 - [Build a machine learning model with Apache Spark MLlib](fabric-sparkml-tutorial.md)
 - [Machine learning experiments in Microsoft Fabric](./machine-learning-experiment.md)
-- [MLflow 3 in Fabric Data Science](mlflow-3.md)
+- [MLflow 3 in Fabric Data Science](mlflow-3-overview.md)

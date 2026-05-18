@@ -19,7 +19,7 @@ Microsoft Fabric supports MLflow 3, the latest major version of the open-source 
 
 This article explains what changes in MLflow 3, how to use the new features in Fabric, and how to migrate from MLflow 2.x.
 
-:::image type="content" border="true" source="media/mlflow-3/mlflow-3-demo.gif" alt-text="Animated GIF of an MLflow 3 experiment in Fabric, showing the Runs, Models, and Traces tabs with the Save logged model and Compare logged models cards." lightbox="media/mlflow-3/mlflow-3-demo.gif":::
+:::image type="content" border="true" source="media/mlflow-3/mlflow-3-overview.gif" alt-text="Animated GIF of an MLflow 3 experiment in Fabric, showing the Runs, Models, and Traces tabs with the Save logged model and Compare logged models cards." lightbox="media/mlflow-3/mlflow-3-overview.gif":::
 
 ## Prerequisites
 

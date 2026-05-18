@@ -224,7 +224,7 @@ With MLflow 3 support in Fabric, the experiment page includes two extra surfaces
 - **Logged Models section** lists every LoggedModel produced by runs in the experiment. Each entry shows the model name, ID, source run, parameters, and metrics. Select a LoggedModel to open its detail page, compare it against other models, or register it as a Fabric ML model item.
 - **Traces tab** shows GenAI traces captured from your runs, including inputs, outputs, latency, token usage, and the span hierarchy of each request.
 
-For details about LoggedModel and Traces, see [MLflow 3 in Fabric Data Science](mlflow-3.md).
+For details about LoggedModel and Traces, see [MLflow 3 in Fabric Data Science](mlflow-3-overview.md).
 
 ## Monitor ML Experiments (preview)
 
@@ -245,4 +245,4 @@ ML Experiment are integrated directly into Monitor, where you can select a speci
 - [Learn about MLflow Experiment APIs](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html)
 - [Track and manage machine learning models](machine-learning-model.md)
 - [Manage MLflow models across workspaces and platforms](machine-learning-cross-workspace-logging.md)
-- [MLflow 3 in Fabric Data Science](mlflow-3.md)
+- [MLflow 3 in Fabric Data Science](mlflow-3-overview.md)
