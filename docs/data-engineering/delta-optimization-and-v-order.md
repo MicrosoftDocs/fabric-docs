@@ -242,14 +242,6 @@ DeltaTable.createOrReplace(spark)\
   .execute()
 ```
 
-## What is Optimize Write?
-
-Analytical Spark workloads usually perform better when file sizes are more consistent and file counts are lower. Ingestion pipelines often produce many small files, which leads to the common small file problem.
-
-Optimize Write is a Delta Lake feature in Fabric and Synapse that reduces file count and increases individual file size during writes in Apache Spark. The target file size can be changed per workload requirements using configurations.
-
-The feature is __enabled by default__ in Microsoft Fabric [Runtime for Apache Spark](./runtime.md). To learn more about Optimize Write usage scenarios, read the article [The need for optimize write on Apache Spark](/azure/synapse-analytics/spark/optimize-write-for-apache-spark).
-
 ## Merge optimization
 
 Delta Lake `MERGE` updates a target table from a source table, view, or DataFrame. In open-source Delta Lake, `MERGE` can spend unnecessary shuffle work on unchanged rows. Fabric runtime includes Low Shuffle Merge optimization to reduce that overhead.
