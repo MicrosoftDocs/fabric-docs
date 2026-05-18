@@ -49,6 +49,10 @@ items:
     href: create-lakehouse.md
   - name: Navigate the lakehouse explorer
     href: navigate-lakehouse-explorer.md
+  - name: Lakehouse table maintenance
+    href: lakehouse-table-maintenance.md
+  - name: High concurrency for table load and preview
+    href: high-concurrency-for-lakehouse-operations.md
   - name: Lakehouse SQL analytics endpoint
     href: lakehouse-sql-analytics-endpoint.md
   - name: Lakehouse schemas
@@ -65,6 +69,8 @@ items:
     href: load-data-lakehouse.md
   - name: Shortcut data in a lakehouse
     href: lakehouse-shortcuts.md
+  - name: Load to tables
+    href: load-to-tables.md
   - name: Data streaming with Spark structured streaming
     href: lakehouse-streaming-data.md
   - name: Get streaming data into a lakehouse with Eventstreams
@@ -81,14 +87,10 @@ items:
   items:
     - name: Lakehouse and Delta tables
       href: lakehouse-and-delta-tables.md
-    - name: Load to tables
-      href: load-to-tables.md
-    - name: High concurrency mode for lakehouse table load and preview operations
-      href: high-concurrency-for-lakehouse-operations.md
-    - name: Lakehouse table maintenance
-      href: lakehouse-table-maintenance.md
-    - name: Delta tables performance
-      items: 
+    - name: Data layout
+      items:
+        - name: Liquid clustering
+          href: liquid-clustering.md
         - name: Delta optimization and V-Order
           href: delta-optimization-and-v-order.md
         - name: Table compaction
@@ -96,9 +98,11 @@ items:
         - name: Tune file size
           href: tune-file-size.md
         - name: Automated statistics for Delta tables
-          href: automated-table-statistics.md	
-    - name: Delta driver mode snapshot
-      href: driver-mode-snapshot.md
+          href: automated-table-statistics.md
+    - name: Optimization and performance
+      items:
+        - name: Delta driver mode snapshot
+          href: driver-mode-snapshot.md
 - name: Notebooks
   items:
   - name: Get started and authoring
