@@ -138,18 +138,6 @@ Additionally, with Variable library support, you can parameterize connections in
 
 See more details in [CI/CD for Copy job](/fabric/data-factory/cicd-copy-job).
 
-### Observability
-
-See more details in [How to monitor a Copy job](monitor-copy-job.md) and [Workspace monitoring for Copy job](copy-job-workspace-monitoring.md)
-
-
-## Region availability
-
-Copy job has the same [regional availability as Fabric](../admin/region-availability.md).
-
-## Pricing
-
-You can get the details in [**pricing Copy job**](pricing-copy-job.md).
 
 ## Supported connectors
 
@@ -165,6 +153,19 @@ Submit your feedback on [Fabric Ideas](https://community.fabric.microsoft.com/t5
 ## Data type mapping
 
 [!INCLUDE [data-type-mapping-data-movement](includes/data-type-mapping-data-movement.md)]
+
+### Observability
+
+See more details in [How to monitor a Copy job](monitor-copy-job.md) and [Workspace monitoring for Copy job](copy-job-workspace-monitoring.md)
+
+
+## Region availability
+
+Copy job has the same [regional availability as Fabric](../admin/region-availability.md).
+
+## Pricing
+
+You can get the details in [**pricing Copy job**](pricing-copy-job.md).
 
 ## Related content
 
