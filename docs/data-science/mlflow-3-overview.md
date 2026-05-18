@@ -25,6 +25,7 @@ This article explains what changes in MLflow 3, how to use the new features in F
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
+- A workspace upgraded to the latest machine learning tracking experience. To check eligibility and upgrade, see [Upgrade your machine learning tracking system](mlflow-upgrade.md).
 - `mlflow` version 3.0 or later. Fabric notebooks include a compatible version by default.
 - For cross-workspace and outside-Fabric scenarios, install the upgraded `synapseml-mlflow` package:
 
@@ -250,6 +251,7 @@ Generative AI evaluation (`mlflow.genai.evaluate()`) is not yet enabled in Fabri
 
 ## Related content
 
+- [Upgrade your machine learning tracking system](mlflow-upgrade.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
 - [Track and manage machine learning models](machine-learning-model.md)
 - [Autologging in Fabric Data Science](mlflow-autologging.md)
