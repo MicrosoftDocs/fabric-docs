@@ -51,7 +51,7 @@ Configure the attributes used to detect anomalies.
 
     | Field | Value |
     |---|---|
-    | Value to watch | No_Empty_Docks |
+    | Value to watch | No_Bikes |
     | Group by | Street |
     | Timestamp | Timestamp |
 
