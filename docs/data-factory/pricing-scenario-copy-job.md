@@ -14,7 +14,14 @@ In this scenario, a Copy job was used to load 1 TB of CSV data stored in Azure D
 
 The prices used in the following example are hypothetical and don’t intend to imply exact actual pricing. These are just to demonstrate how you can estimate, plan, and manage cost for Data Factory projects in Microsoft Fabric. Also, since Fabric capacities are priced uniquely across regions, we use the pay-as-you-go pricing for a Fabric capacity at US West 2 (a typical Azure region), at $0.18 per CU per hour. Refer here to [Microsoft Fabric - Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/) to explore other Fabric capacity pricing options.
 
-## Configuration
+The Copy job pricing model has two copy patterns with different consumption rates: full copy (1.5 CU hours per intelligent throughput optimization unit) and incremental copy (3 CU hours per intelligent throughput optimization unit). This article walks through two scenarios so that you can understand when each rate applies:
+
+- **Scenario 1: Incremental copy mode** – use this when you need to keep a destination in sync with a source over time. Both the initial full load and the subsequent delta runs are billed at the incremental copy rate.
+- **Scenario 2: Pure full copy** – use this when you only need a one-time full copy or a recurring full snapshot reload. Each run is billed at the full copy rate.
+
+## Scenario 1: Incremental copy mode
+
+### Configuration
 
 To accomplish this scenario, you need to create a Copy job with the following configurations:
 
@@ -23,14 +30,14 @@ To accomplish this scenario, you need to create a Copy job with the following co
 3. Upload an additional 1 GB CSV file to the same ADLS Gen2 account.
 4. Run the Copy Job again, and it will automatically detect and copy only this new file.
 
-## Cost estimation using the Fabric Metrics App
+### Cost estimation using the Fabric Metrics App
 
 The first run of the Copy Job performs an initial full copy, while subsequent runs only copy new or changed files using incremental copy.
 
 :::image type="content" source="media/pricing-scenarios/fabric-metrics-app-copy-job.png" alt-text="Screenshot showing the duration and CU consumption of the copy job in the Fabric Metrics App.":::
 
 
-### Initial full copy
+#### Initial full copy
 
 The initial full copy with data movement – incremental copy operation utilized 506,880 CU seconds with a 626.64 second duration.
 
@@ -47,7 +54,7 @@ To convert CU hours into CU seconds, multiply by 3600 (the number of seconds in 
 Utilized CU seconds = 140.8 * 3600 = 506,880
 
 
-### Subsequent incremental copy
+#### Subsequent incremental copy
 
 The subsequent incremental copy with data movement – incremental copy operation utilized 720 CU seconds with a 40.48 second duration.
 
@@ -67,7 +74,7 @@ Utilized CU seconds = 0.2 * 3600 = 720
 > Although reported as a metric, the actual duration of the run isn't relevant when calculating the effective CU hours with the Fabric Metrics App since the CU seconds metric it also reports already accounts for its duration.
 
 
-### Total
+#### Total
 
 |Metric  | Consumption  |
 |---------|---------|
@@ -75,6 +82,48 @@ Utilized CU seconds = 0.2 * 3600 = 720
 | Data movement – incremental copy CU seconds (subsequent incremental copy)     | 720 CU seconds        |
 
 **Total run cost at $0.18/CU hour** = (506,880 + 720) / (60*60) CU-hours * ($0.18/CU hour) = **$25.38**
+
+## Scenario 2: Pure full copy
+
+Use a pure full copy when you only need to copy data once or when each run should overwrite the destination with a complete fresh snapshot. Each run is billed at the full copy rate of 1.5 CU hours per intelligent throughput optimization unit.
+
+### Configuration
+
+To accomplish this scenario, you need to create a Copy job with the following configurations:
+
+1. Upload 1 TB CSV files to your ADLS Gen2 account.
+2. Create and run a Copy job using its built-in full copy mode to move the 1 TB files to your Fabric Lakehouse.
+
+### Cost estimation using the Fabric Metrics App
+
+The Copy Job performs a one-time full load of all 1 TB of source data into the Lakehouse.
+
+#### Full copy
+
+The full copy with the data movement operation utilized 253,440 CU seconds with a 626.64 second duration.
+
+The pricing is based on the used intelligent throughput optimization. For more information, see this [article](copy-activity-performance-and-scalability-guide.md#intelligent-throughput-optimization). In this example, the used intelligent throughput optimization is 256.
+
+The utilized CU seconds can be derived using the following calculation:
+
+According to [Copy job pricing model](pricing-copy-job.md#pricing-model), each unit of intelligent throughput optimization consumes 1.5 CU hours for full copy. Given the intelligent throughput optimization used is 256, and the data movement operation duration is 626.64 seconds (approximately 11 minutes), the total CU hours utilized will be:
+
+Utilized CU hours = 256 * 1.5 * (11/60) = 70.4
+
+To convert CU hours into CU seconds, multiply by 3600 (the number of seconds in an hour).
+
+Utilized CU seconds = 70.4 * 3600 = 253,440
+
+> [!NOTE]
+> Although reported as a metric, the actual duration of the run isn't relevant when calculating the effective CU hours with the Fabric Metrics App since the CU seconds metric it also reports already accounts for its duration.
+
+#### Total
+
+|Metric  | Consumption  |
+|---------|---------|
+| Data movement CU seconds (full copy)     | 253,440 CU seconds        |
+
+**Total run cost at $0.18/CU hour** = 253,440 / (60*60) CU-hours * ($0.18/CU hour) = **$12.67**
 
 ## Related content
 
