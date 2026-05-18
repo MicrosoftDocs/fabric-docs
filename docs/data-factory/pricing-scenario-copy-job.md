@@ -4,7 +4,8 @@ description: This article provides an example pricing scenario for loading 1 TB 
 ms.reviewer: yexu
 ms.topic: concept-article
 ms.custom: configuration
-ms.date: 07/24/2025
+ms.date: 05/18/2026
+ai-usage: ai-assisted
 ---
 
 # Pricing scenario using a Copy job to load 1 TB of CSV data to a Lakehouse table
@@ -29,26 +30,26 @@ The first run of the Copy Job performs an initial full copy, while subsequent ru
 :::image type="content" source="media/pricing-scenarios/fabric-metrics-app-copy-job.png" alt-text="Screenshot showing the duration and CU consumption of the copy job in the Fabric Metrics App.":::
 
 
-### Full copy
+### Initial full copy
 
-The initial full copy with data movement operation utilized 253,440 CU seconds with a 626.64 second duration.
+The initial full copy with data movement – incremental copy operation utilized 506,880 CU seconds with a 626.64 second duration.
 
 The pricing is based on the used intelligent throughput optimization. For more information, see this [article](copy-activity-performance-and-scalability-guide.md#intelligent-throughput-optimization). In this example, the used intelligent throughput optimization is 256.
 
 The utilized CU seconds can be derived using the following calculation:
 
-According to [Copy job pricing model](pricing-copy-job.md#pricing-model), each unit of intelligent throughput optimization consumes 1.5 CU hours for full copy. Given the intelligent throughput optimization used is 256, and the data movement operation duration is 626.64 seconds (approximately 11 minutes), the total CU hours utilized will be: 
+According to [Copy job pricing model](pricing-copy-job.md#pricing-model), each unit of intelligent throughput optimization consumes 3 CU hours for incremental copy. This rate also applies to the initial full load in incremental copy mode. Given the intelligent throughput optimization used is 256, and the data movement – incremental copy operation duration is 626.64 seconds (approximately 11 minutes), the total CU hours utilized will be:
 
-Utilized CU hours = 256 * 1.5 * (11/60) = 70.4
+Utilized CU hours = 256 * 3 * (11/60) = 140.8
 
 To convert CU hours into CU seconds, multiply by 3600 (the number of seconds in an hour).
 
-Utilized CU seconds = 70.4 * 3600 = 253,440
+Utilized CU seconds = 140.8 * 3600 = 506,880
 
 
-### Incremental copy
+### Subsequent incremental copy
 
-The incremental copy with data movement – incremental copy operation utilized 720 CU seconds with a 40.48 second duration.
+The subsequent incremental copy with data movement – incremental copy operation utilized 720 CU seconds with a 40.48 second duration.
 
 The pricing is also based on the used intelligent throughput optimization. In this example, the used intelligent throughput optimization is 4.
 
@@ -70,10 +71,10 @@ Utilized CU seconds = 0.2 * 3600 = 720
 
 |Metric  | Consumption  |
 |---------|---------|
-| Data movement CU seconds     | 253,440 CU seconds        |
-| Data movement – incremental copy CU seconds      | 720 CU seconds        |
+| Data movement – incremental copy CU seconds (initial full copy)     | 506,880 CU seconds        |
+| Data movement – incremental copy CU seconds (subsequent incremental copy)     | 720 CU seconds        |
 
-**Total run cost at $0.18/CU hour** = (253,440 + 720) / (60*60) CU-hours * ($0.18/CU hour) = **$12.708**
+**Total run cost at $0.18/CU hour** = (506,880 + 720) / (60*60) CU-hours * ($0.18/CU hour) = **$25.38**
 
 ## Related content
 
