@@ -1,6 +1,6 @@
 ---
 title: Create an end-to-end Activator rule using agentic AI
-description: Learn how to use an AI agent with Fabric skills to wire up an end-to-end pipeline that watches a stream of telemetry, detects sustained overheating, and calls a Fabric User Data Function to file a repair job.
+description: Learn how to use an AI agent with Fabric skills to build an end-to-end pipeline that watches a stream of telemetry, detects sustained overheating, and calls a Fabric User Data Function to file a repair job.
 ms.reviewer: jtmsft
 ms.author: niallegan
 author: NiallEgan
@@ -13,9 +13,9 @@ ms.search.form: Activator Agentic Tutorial
 
 # Tutorial: Create an end-to-end Activator rule using agentic AI
 
-Fabric Activator detects patterns in streaming data and takes action when conditions are met. In this tutorial, you use an AI agent to wire up an end-to-end pipeline that watches a stream of telemetry events, detects sustained overheating, and calls a Fabric User Data Function to file a repair job. You write the prompts; the agent does the authoring.
+Fabric Activator detects patterns in streaming data and takes action when conditions are met. In this tutorial, you use an AI agent to build an end-to-end pipeline that watches a stream of telemetry events, detects sustained overheating, and calls a Fabric User Data Function to file a repair job. You write the prompts; the agent does the authoring.
 
-This tutorial uses widget-making-machine telemetry as the running example, but the same prompts work for almost any time-series data with a stable per-entity ID — IoT devices, vehicle fleets, logistics events, financial ticks, application metrics, and so on. Swap the field names and threshold to fit your data shape.
+This tutorial uses widget-making-machine telemetry as the running example, but the same prompts work for almost any time-series data with a stable per-entity ID — IoT devices, vehicle fleets, logistics events, financial ticks, application metrics, and so on. Replace the field names and threshold to fit your data shape.
 
 In this tutorial, you complete the following tasks:
 
@@ -32,9 +32,9 @@ A manufacturer operates a fleet of widget-making machines across multiple plants
 
 For this tutorial, each event uses a small representative schema: a per-machine ID (`machine_id`), a location tag (`plant_id`), a numeric metric to monitor (`temperature_c`), and a run-state field (`state`). The exact field names don't matter — the same prompt shape works for any per-entity ID plus a metric you want to threshold.
 
-You wire up a Fabric pipeline that watches the telemetry stream, applies a sustained-threshold rule, and calls a User Data Function to file the repair job. The rule groups events by `machine_id`, fires when `temperature_c` stays above 50°C for 5 minutes, and passes `machine_id`, `plant_id`, and the current temperature into the action.
+You build a Fabric pipeline that watches the telemetry stream, applies a sustained-threshold rule, and calls a User Data Function to file the repair job. The rule groups events by `machine_id`, fires when `temperature_c` stays above 50°C for 5 minutes, and passes `machine_id`, `plant_id`, and the current temperature into the action.
 
-:::image type="content" source="media/activator-agentic-tutorial/architecture.png" alt-text="Diagram showing widget-making machines emitting telemetry to an Azure Event Hub, which a Fabric Eventstream ingests. A Fabric Activator rule on the stream invokes file_repair_job on a Fabric User Data Function, which POSTs over HTTPS to the Repair-job API." lightbox="media/activator-agentic-tutorial/architecture.png":::
+:::image type="content" source="media/activator-agentic-tutorial/architecture.png" alt-text="Diagram showing widget-making machines emitting telemetry to an Azure Event Hub, which a Fabric Eventstream ingests. A Fabric Activator rule on the stream invokes file_repair_job on a Fabric User Data Function, which sends an HTTPS POST request to the Repair-job API." lightbox="media/activator-agentic-tutorial/architecture.png":::
 
 ## Prerequisites
 
@@ -58,7 +58,7 @@ In this step, you create the Eventstream that subscribes to your Event Hub. You 
     >
     > When you're done, give me a direct portal link to the Eventstream item so I can verify it.
 
-1. The agent invokes the Eventstream authoring skill, creates the Eventstream item, wires up the Event Hub as a source, and returns a clickable URL to the item in the Fabric portal. You don't need a destination — Activator subscribes directly to the stream.
+1. The agent invokes the Eventstream authoring skill, creates the Eventstream item, configures the Event Hub as a source, and returns a clickable URL to the item in the Fabric portal. You don't need a destination — Activator subscribes directly to the stream.
 
 1. Select the link the agent gave you. In the **Live view**, confirm the Event Hub source is **Connected** and widget-machine telemetry events are flowing through.
 
@@ -68,24 +68,24 @@ In this step, you create the Eventstream that subscribes to your Event Hub. You 
 
 ## Create the User Data Function
 
-In this step, you create the User Data Function that's invoked by your Activator rule. It POSTs the repair-job request to your downstream API.
+In this step, you create the User Data Function that's invoked by your Activator rule. It sends the repair-job request to your downstream API.
 
 1. Give the agent this prompt:
 
-    > Create a Fabric User Data Function called `MaintenanceDispatcher` in my workspace, written in Python, with a function `file_repair_job(machine_id, plant_id, temperature_c)` that POSTs those values as JSON to `https://contoso.com/maintenance/fileRepairJob` and returns the parsed response.
+    > Create a Fabric User Data Function called `MaintenanceDispatcher` in my workspace, written in Python, with a function `file_repair_job(machine_id, plant_id, temperature_c)` that sends those values as JSON in a POST request to `https://contoso.com/maintenance/fileRepairJob` and returns the parsed response.
     >
     > When you're done, give me a direct portal link to the UDF item so I can verify it.
 
 1. The agent invokes the Fabric UDF authoring skill, scaffolds a Python UDF item, implements `file_repair_job` with `httpx`, publishes the UDF, confirms it's invokable, and returns a clickable URL to the item.
 
-1. Select the link the agent gave you and use the built-in **Test** pane to invoke `file_repair_job` with a sample payload (for example, `machine_id="widget-press-042"`, `plant_id="plant-eu-01"`, `temperature_c=52.7`). The call to `contoso.com` fails with an HTTP error — that's expected, because the placeholder endpoint doesn't resolve. What matters is that the UDF deployed, registered, and reached the outbound HTTP call.
+1. Select the link the agent gave you and use the built-in **Test** pane to invoke `file_repair_job` with a sample payload (for example, `machine_id="widget-press-042"`, `plant_id="plant-eu-01"`, `temperature_c=52.7`). The call to `contoso.com` returns an HTTP error — that's expected, because the placeholder endpoint doesn't resolve. The important behavior is that the UDF deployed, registered, and reached the outbound HTTP call.
 
     :::image type="content" source="media/activator-agentic-tutorial/udf-maintenance-dispatcher.png" alt-text="Screenshot of the MaintenanceDispatcher User Data Function showing the file_repair_job Python source in the portal editor." lightbox="media/activator-agentic-tutorial/udf-maintenance-dispatcher.png":::
 
-    *Figure 2: The `MaintenanceDispatcher` User Data Function — `file_repair_job` POSTs the overheating machine's details to the maintenance system.*
+    *Figure 2: The `MaintenanceDispatcher` User Data Function — `file_repair_job` sends the overheating machine's details to the maintenance system.*
 
 > [!NOTE]
-> This tutorial uses `https://contoso.com/maintenance/fileRepairJob` as a placeholder for the real maintenance system endpoint. Swap it for any HTTPS endpoint of your own. For authenticated endpoints, retrieve credentials from Azure Key Vault via a UDF generic connection. For more information, see [Access data sources in Fabric User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md).
+> This tutorial uses `https://contoso.com/maintenance/fileRepairJob` as a placeholder for the real maintenance system endpoint. Replace it with any HTTPS endpoint of your own. For authenticated endpoints, retrieve credentials from Azure Key Vault via a UDF generic connection. For more information, see [Access data sources in Fabric User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md).
 
 ## Author the Activator rule
 
@@ -97,13 +97,13 @@ In this step, you create the Activator rule that watches the Eventstream and cal
     >
     > When you're done, give me a direct portal link to the rule so I can verify it.
 
-1. The agent invokes the Activator authoring skill, creates the Activator item, groups the rule by `machine_id`, builds the sustained-threshold detection, wires the action to your UDF (passing `machine_id`, `plant_id`, and the current temperature), and returns a clickable URL to the rule.
+1. The agent invokes the Activator authoring skill, creates the Activator item, groups the rule by `machine_id`, builds the sustained-threshold detection, configures the action to call your UDF (passing `machine_id`, `plant_id`, and the current temperature), and returns a clickable URL to the rule.
 
 1. Select the link the agent gave you, then walk through this checklist:
 
     - **Data is flowing into the rule.** Open the rule's underlying Activator object in the **Explorer** pane and confirm recent events are appearing in the live table with non-null `machine_id` and `temperature_c` values.
     - **The rule is running.** Confirm the rule is in the **Started** or **Running** state and the Activator object summary shows your machines as active instances.
-    - **Activations are being recorded.** As hot-running machines stay above 50°C for 5 minutes, you should see entries appear in the rule's **History** tab, each showing the `machine_id` that triggered, the temperature at fire time, and a successful call to `file_repair_job`.
+    - **Activations are being recorded.** As overheating machines stay above 50°C for 5 minutes, you should see entries appear in the rule's **History** tab, each showing the `machine_id` that triggered, the temperature at fire time, and a successful call to `file_repair_job`.
 
     :::image type="content" source="media/activator-agentic-tutorial/activator-overheating-dispatch.png" alt-text="Screenshot of the OverheatingDispatch rule in Running state with the action bound to MaintenanceDispatcher.file_repair_job and dynamic parameters mapped to machine_id_value, plant_id, and temperature_c." lightbox="media/activator-agentic-tutorial/activator-overheating-dispatch.png":::
 
