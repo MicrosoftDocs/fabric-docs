@@ -179,7 +179,7 @@ items:
             href: event-streams/process-events-with-multiple-schemas.md
           - name: Process events using SQL code editor
             href: event-streams/process-events-using-sql-code-editor.md
-          - name: Extract event metadata with Eventstream
+          - name: Extract event metadata with eventstream
             href: event-streams/extract-event-metadata-with-eventstream.md
       - name: Preview data
         href: event-streams/preview-data.md
