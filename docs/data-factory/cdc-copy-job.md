@@ -9,7 +9,7 @@ ms.custom: copy-job
 ai-usage: ai-assisted
 ---
 
-# Change data capture (CDC) in Copy Job (Preview)
+# Change data capture (CDC) in Copy Job
 
 This article describes the change data capture (CDC) capability in Copy job and how to use it. 
 
