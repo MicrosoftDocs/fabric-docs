@@ -62,7 +62,7 @@ In this step, you create the Eventstream that subscribes to your Event Hub. You 
 
 1. Select the link the agent gave you. In the **Live view**, confirm the Event Hub source is **Connected** and widget-machine telemetry events are flowing through.
 
-    :::image type="content" source="media/activator-agentic-tutorial/eventstream-widget-machine-telemetry.png" alt-text="Screenshot of the WidgetMachineTelemetry Eventstream showing the Event Hub source connected and the Activator destination, with live data preview." lightbox="media/activator-agentic-tutorial/eventstream-widget-machine-telemetry.png":::
+    :::image type="content" source="media/activator-agentic-tutorial/event-stream-widget-machine-telemetry.png" alt-text="Screenshot of the WidgetMachineTelemetry Eventstream showing the Event Hub source connected and the Activator destination, with live data preview." lightbox="media/activator-agentic-tutorial/event-stream-widget-machine-telemetry.png":::
 
     *Figure 1: The `WidgetMachineTelemetry` Eventstream — events flow from the `widget-telemetry` Event Hub source through the stream to the `WidgetMachineMaintenance` Activator destination.*
 
