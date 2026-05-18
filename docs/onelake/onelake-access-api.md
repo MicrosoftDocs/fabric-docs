@@ -84,8 +84,7 @@ OneLake is accessible through the same APIs and SDKs as ADLS. To learn more abou
 - [ADLS API Reference](/rest/api/storageservices/data-lake-storage-gen2)
 
 - ADLS Filesystem SDKs
-
-- [.NET](/azure/storage/blobs/data-lake-storage-directory-file-acl-dotnet)
+  - [.NET](/azure/storage/blobs/data-lake-storage-directory-file-acl-dotnet)
   - [Python](/azure/storage/blobs/data-lake-storage-directory-file-acl-python)
   - [Java](/azure/storage/blobs/data-lake-storage-directory-file-acl-java)
 
