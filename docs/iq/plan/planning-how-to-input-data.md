@@ -142,9 +142,9 @@ Columns have the following configurable properties:
   * **Visual Measure**: A column is added at each column hierarchy.
   * **Visual Column**: A single column is added at the end, outside the column hierarchy.
 
-* **Input type**: Specifies the data type for the column (such as *Number*).
+* **Input type**: Specifies the data type for the column (such as **Number**).
 
-* **Row aggregation type**: Defines how values roll up across hierarchy levels (such as *Sum*).
+* **Row aggregation type**: Defines how values roll up across hierarchy levels (such as **Sum**).
 
 * **Distribute parent value to children**: Automatically allocates parent values proportionally to child members.
 

@@ -85,7 +85,7 @@ The tree view provides the following options:
   
   * **Appearance**: Configure font color, primary color, background color, and conditional formatting.
 
-    :::image type="content" source="media/planning-how-to-change-layouts/display-settings.png" alt-text="Screenshot showing the display settings of tree layout." lightbox="media/planning-how-to-change-layouts/display-settings.png":::
+:::image type="content" source="media/planning-how-to-change-layouts/display-settings.png" alt-text="Screenshot showing the display settings of tree layout." lightbox="media/planning-how-to-change-layouts/display-settings.png":::
 
 #### Node actions
 

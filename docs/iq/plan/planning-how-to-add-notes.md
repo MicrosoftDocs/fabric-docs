@@ -89,7 +89,7 @@ You see all notes displayed as numbered references in the footnote section.
 
 The notes column provides a structured way to enter notes for each row by providing a dedicated column to capture row-level annotations.
 
-1. From the **Notes** menu, turn on the **Notes column**.
+1. On the **Notes** menu, turn on **Notes Column**.
 
 1. Enter notes directly for each row.
 
@@ -99,7 +99,7 @@ The notes column provides a structured way to enter notes for each row by provid
 
 You can hide notes to simplify the report view.
 
-From the **Notes** menu, turn on **Hide all notes**.
+From the **Notes** menu, turn on **Hide All Notes**.
 
 All notes are hidden from view, and you can't create notes while this option is active.
 
@@ -111,7 +111,7 @@ A consolidated panel or view displays all notes associated with the report.
 
 1. Go to the **Notes** menu.
 
-1. Select **View all notes**.
+1. Select **View all notes**. You see a list of the notes.
 
    :::image type="content" source="media/planning-how-to-add-notes/view-notes.jpg" alt-text="Screenshot of viewing all notes." lightbox="media/planning-how-to-add-notes/view-notes.jpg":::
 
@@ -120,8 +120,6 @@ A consolidated panel or view displays all notes associated with the report.
 Use note settings to customize how notes appear and behave.
 
 1. Select **Notes** > **Settings**.
-
-    :::image type="content" source="media/planning-how-to-add-notes/note-settings.png" alt-text="Screenshot of note settings." lightbox="media/planning-how-to-add-notes/note-settings.png":::
 
 1. Configure options such as:
    * Indicator display (style and size)
@@ -132,6 +130,8 @@ Use note settings to customize how notes appear and behave.
    * Marker setting
 
 1. Select **Apply**.
+
+:::image type="content" source="media/planning-how-to-add-notes/note-settings.png" alt-text="Screenshot of note settings." lightbox="media/planning-how-to-add-notes/note-settings.png":::
 
 You can adjust how note indicators are displayed and positioned within cells.
 

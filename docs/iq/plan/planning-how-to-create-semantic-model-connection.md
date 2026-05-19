@@ -23,7 +23,7 @@ Before you can create the semantic model connection, make sure that you have:
 
 Use this connection to connect to your semantic models when you create a plan. A workplace admin or member who has access to the semantic model must complete the following steps.
 
-1. In your Microsoft Fabric toolbar, select the **Settings** icon. Select **Manage connections and gateways** > **New**.
+1. On your Microsoft Fabric toolbar, select the **Settings** icon. Select **Manage connections and gateways** > **New**.
 
     :::image type="content" source="media/planning-how-to-create-semantic-model-connection/manage-connection-gateways.png" alt-text="Screenshot of opening the settings for managing the connection gateways.":::
 

@@ -1,13 +1,13 @@
 ---
 title: Create a Database Connection for Collaboration in a Plan
-description: Learn how to create and share database connections in a plan (preview) for multi-user collaboration.
+description: Learn how to create and share database connections in a plan (preview) for multiuser collaboration.
 ms.date: 04/30/2026
 ms.topic: how-to
 ---
 
 # Create a database connection for collaboration in a plan
 
-This article explains how to create a database connection to enable multi-user collaboration on plan items.
+This article explains how to create a database connection to enable multiuser collaboration on plan items.
 
 This connection is optional and allows other users to comment and collaborate on a plan that you create.
 
@@ -57,4 +57,4 @@ You can share the created connection and manage the user permissions.
 
 ## Related content
 
-* [Create a planning sheet](planning-how-to-get-started.md).
+* [Create a planning sheet](planning-how-to-get-started.md)
