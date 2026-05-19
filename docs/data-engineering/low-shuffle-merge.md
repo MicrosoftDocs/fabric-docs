@@ -2,6 +2,7 @@
 title: Low shuffle merge optimization on Delta tables
 description: Low shuffle merge optimization on Delta tables for Apache Spark
 ms.service: azure-synapse-analytics
+ms.reviewer: saravi
 ms.topic: reference
 ms.subservice: spark
 ms.date: 05/18/2026
