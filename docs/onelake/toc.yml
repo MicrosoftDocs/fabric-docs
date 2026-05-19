@@ -7,8 +7,8 @@ items:
     href: onelake-overview.md
 - name: Get started
   items:
-  - name: Bring your data to OneLake with Lakehouse
-    href: create-lakehouse-onelake.md
+  - name: "Quickstart: Get data in OneLake"
+    href: quickstart-get-data.md
   - name: Transform with Apache Spark and query data with SQL
     href: onelake-onecopy-quickstart.md
   - name: Connect to ADLS and transform data with Azure Databricks
