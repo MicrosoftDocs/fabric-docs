@@ -10,7 +10,7 @@ ms.custom: references_regions
 
 > [!Warning]
 >
-> The instructions in this document rely on the Azure Monitor HTTP Data Collector API to emit Spark logs and metrics. This API is being deprecated, and support for the legacy version will end on September 14, 2026. For more details, see [Azure Monitor HTTP Data Collector API](./previous-versions/azure/azure-monitor/logs/data-collector-api).
+> The instructions in this document rely on the Azure Monitor HTTP Data Collector API to emit Spark logs and metrics. This API is being deprecated, and support for the legacy version will end on September 14, 2026. For more details, see [Azure Monitor HTTP Data Collector API](/previous-versions/azure/azure-monitor/logs/data-collector-api).
 >
 > If you used this document to configure your emitters, we recommend updating your log emitter configuration to use the new Azure Monitor API for data ingestion as soon as possible. For guidance on migrating your setup, refer to [Collect logs and metrics with Azure Log Analytics](./data-collector-api-to-log-ingestion-api.md).
 
