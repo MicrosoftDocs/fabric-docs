@@ -140,6 +140,9 @@ OPTIMIZE sales FULL;
 
 Use `OPTIMIZE FULL` when you've changed clustering keys over time and want to rebuild Z-Cubes that don't adhere to the current clustering strategy. A **Z-Cube** is the logical unit liquid clustering uses to group related files — files within a Z-Cube share the same clustering columns. Data is clustered into a single Z-Cube until cluster keys change or the amount of data exceeds 100GB.
 
+> [!TIP]
+> Starting in Fabric Runtime 2.0, the [Native execution engine](native-execution-engine-overview.md) supports performing `OPTIMIZE` on liquid clustered tables, delivering 30–50% faster multi-dimensional clustering performance. Prior runtimes will fallback to regular Spark JVM execution. 
+
 ## How liquid clustering works
 
 When you run `OPTIMIZE` on a liquid clustered table, the following happens:

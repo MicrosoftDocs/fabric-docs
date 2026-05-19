@@ -54,6 +54,9 @@ deltaTable.optimize().executeZOrderBy("order_date", "region")
 
 ---
 
+> [!TIP]
+> Starting in Fabric Runtime 2.0, the [Native execution engine](native-execution-engine-overview.md) supports performing `OPTIMIZE` with `ZORDER` specified, delivering 30–50% faster multi-dimensional clustering performance. Prior runtimes will fallback to regular Spark JVM execution. 
+
 ## Scope Z-Order with a WHERE predicate
 
 You can add a `WHERE` clause to limit which files `OPTIMIZE ZORDER BY` rewrites. Only files containing rows that match the predicate are candidates for compaction and Z-Order layout. This is useful for incremental maintenance — for example, Z-Ordering only the most recent data after an ingestion run.
