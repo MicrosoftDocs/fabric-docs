@@ -23,7 +23,6 @@ Use Z-Order when:
 - You're on Fabric Runtime 1.2 or earlier, where liquid clustering isn't available or has limited support.
 - You have an established Z-Order workflow and don't need to change columns frequently.
 - You want multi-column file skipping without introducing partitioning.
-- You want to enable multi-dimensional data skipping within individual table partitions.
 
 ## Apply Z-Order
 
@@ -55,7 +54,7 @@ deltaTable.optimize().executeZOrderBy("order_date", "region")
 ---
 
 > [!TIP]
-> Starting in Fabric Runtime 2.0, the [Native execution engine](native-execution-engine-overview.md) supports performing `OPTIMIZE` with `ZORDER` specified, delivering 30–50% faster multi-dimensional clustering performance. Prior runtimes will fallback to regular Spark JVM execution. 
+> Starting in Fabric Runtime 2.0, the [Native execution engine](native-execution-engine-overview.md) supports performing `OPTIMIZE` with `ZORDER` specified, delivering 30–50% faster multi-dimensional clustering performance. Prior runtimes fall back to regular Spark JVM execution. 
 
 ## Scope Z-Order with a WHERE predicate
 
@@ -91,7 +90,7 @@ deltaTable.optimize().where("order_date >= current_date() - INTERVAL 7 DAYS").ex
 
 ---
 
-Using a `WHERE` predicate reduces the amount of data rewritten, which lowers compute cost and execution time. The predicate filters based on file-level statistics, so choose a column that has good min/max clustering to get the best selectivity.
+Using a `WHERE` predicate reduces the amount of data rewritten, which lowers compute cost and execution time. The predicate filters based on file-level statistics, so it works best on columns that already have tight min/max ranges per file (for example, a date column written in chronological order).
 
 ## Z-Order with partitioning
 

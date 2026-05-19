@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 
 # Apply liquid clustering on Delta tables
 
-Liquid clustering is a flexible data layout strategy for Delta tables in Microsoft Fabric that replaces static Hive-style partitioning and manual Z-Order maintenance with declarative, change-friendly clustering. You define which columns to cluster on, and the Fabric Spark Runtime handles the physical data layout automatically.
+Liquid clustering is a flexible data layout strategy for Delta tables in Microsoft Fabric. It replaces static Hive-style partitioning and manual Z-Order maintenance with declarative, change-friendly clustering. You define which columns to cluster on, and the Fabric Spark Runtime handles the physical data layout automatically.
 
 Use this article to:
 
@@ -22,7 +22,7 @@ Use this article to:
 
 ## What is liquid clustering?
 
-Liquid clustering organizes data within Delta table parquet files so that rows with similar values on the clustering columns are co-located. This enables enhanced **data skipping** during query execution: when a query filters on clustering columns, the engine reads only the files whose value ranges match the predicate, skipping the rest.
+Liquid clustering organizes data in Delta table files so that rows with similar values in the clustering columns are co-located. This enables enhanced [file skipping](./delta-lake-file-skipping.md) during query execution: when a query filters on clustering columns, the engine reads only the files whose value ranges match the predicate, skipping the rest.
 
 Unlike partitioning, liquid clustering:
 
@@ -50,7 +50,7 @@ Liquid clustering offers significant advantages over both Hive-style partitionin
 | Aspect | Z-Order | Liquid clustering |
 |---|---|---|
 | **Column changes** | Must re-run `OPTIMIZE ZORDER BY (...)` with new columns | `ALTER TABLE ... CLUSTER BY` persists the definition |
-| **Incremental support** | Supports rewriting selective segments of data when manually specifying the `WHERE` clause of the `OPTIMIZE` command  | Incremental mode (only available starting in Runtime 2.0) automatically only processes new/changed/unhealthy files; supports rewriting selective segments of data when manually specifying the `WHERE` clause of the `OPTIMIZE` command |
+| **Incremental support** | No incremental mode; use `WHERE` to limit scope manually | Incremental mode (Runtime 2.0+) processes only new, changed, or unhealthy files automatically |
 | **Metadata** | No persistent column definition | Clustering columns stored in table metadata |
 | **Multi-column layout** | Z-Order curve applied at optimize time | Z-Order for 1 clustering column; Hilbert curve for 2+ columns, providing optimized data locality |
 
@@ -141,7 +141,7 @@ OPTIMIZE sales FULL;
 Use `OPTIMIZE FULL` when you've changed clustering keys over time and want to rebuild Z-Cubes that don't adhere to the current clustering strategy. A **Z-Cube** is the logical unit liquid clustering uses to group related files — files within a Z-Cube share the same clustering columns. Data is clustered into a single Z-Cube until cluster keys change or the amount of data exceeds 100GB.
 
 > [!TIP]
-> Starting in Fabric Runtime 2.0, the [Native execution engine](native-execution-engine-overview.md) supports performing `OPTIMIZE` on liquid clustered tables, delivering 30–50% faster multi-dimensional clustering performance. Prior runtimes will fallback to regular Spark JVM execution. 
+> Starting in Fabric Runtime 2.0, the [Native execution engine](native-execution-engine-overview.md) supports performing `OPTIMIZE` on liquid clustered tables, delivering 30–50% faster multi-dimensional clustering performance. Prior runtimes fall back to regular Spark JVM execution.
 
 ## How liquid clustering works
 
@@ -238,7 +238,7 @@ The following session configurations control liquid clustering behavior in Fabri
 
 ### Auto recluster tuning
 
-These configurations control the sensitivity and scope of auto reclustering. The defaults are suitable for most workloads. Adjust them only when you need to adjust the trade-off between clustering quality and write amplification.
+These configurations control the sensitivity and scope of auto reclustering. The defaults are suitable for most workloads. Adjust them only when you need to change the trade-off between clustering quality and write amplification.
 
 | Configuration | Type | Default | Description |
 |---|---|---|---|
@@ -250,7 +250,7 @@ These configurations control the sensitivity and scope of auto reclustering. The
 For best results, choose clustering columns based on your most common query filter patterns:
 
 - **Pick 1 to 4 columns** that appear frequently in `WHERE` clauses. More columns dilute the per-column file skipping effectiveness of the space-filling curve and will increase the time to cluster data.
-- **Column cardinality can impact file skipping effectiveness across chosen clustering keys**. Low cardinality columns will have reduced file skipping potential when combined with high cardinality clustering keys.
+- **Consider column cardinality**. Low-cardinality columns produce fewer distinct value ranges, which reduces file skipping benefit when combined with high-cardinality clustering keys.
 - **Column order has no impact on clustering**. The order of the columns specified after `CLUSTER BY` has no impact on the resulting multi-dimensional clustering.
 
 ### Supported column types
@@ -265,10 +265,10 @@ Not all column types can be used as clustering keys. The engine evaluates each c
 - `TimestampNTZType`
 - `StringType`
 
-**Conditionally eligible**
+**Conditionally eligible:**
 
 > [!NOTE]
-> The following types can be enabled in starting in Fabric Spark runtime 2.0 (Delta 4.1)
+> The following types can be enabled starting in Fabric Spark Runtime 2.0 (Delta 4.1)
 
 - `StructType` — when `spark.microsoft.delta.clusteredTable.complexTypes.enabled` is enabled, and all leaf fields are themselves eligible types.
 - `ArrayType` — when `spark.microsoft.delta.clusteredTable.complexTypes.enabled` is enabled, and the element type is eligible.
@@ -288,7 +288,7 @@ For the equivalent eligible types used in file-level statistics, see [File skipp
 |---|---|
 | **Partitioning** | **Incompatible**. For file skipping purposes, liquid clustering is recommended over partitioning. |
 | **Z-Order** | **Incompatible**. For file skipping purposes, liquid clustering is recommended over Z-Order. |
-| **Fast optimize** | Compatible starting in Runtime 2.0. In earlier runtimes, fast optimize has no effect on liquid clustered tables. During `OPTIMIZE`, reduces the files scoped for clustering when there's insufficient data to produce a healthy sized file or not enough small files exist. |
+| **Fast optimize** | Compatible starting in Runtime 2.0. In earlier runtimes, fast optimize has no effect on liquid clustered tables. During `OPTIMIZE`, skips clustering when there aren't enough small files or insufficient data to produce a healthy-sized output file. |
 | **Adaptive target file size** | Compatible. The target file size set by adaptive evaluation is used as the target size for clustering. |
 | **Optimize write** | Compatible. Produces consolidated files on write that are then clustered during `OPTIMIZE`. |
 | **Auto compaction** | **Do not use with liquid clustering in Runtime 1.3 or earlier.** In those runtimes, every auto compaction trigger rewrites all data in Z-Cubes smaller than 100 GB, causing severe write amplification. In Runtime 2.0+, auto compaction is compatible: incremental clustering ensures only new or unhealthy files are rewritten. Auto compaction handles small-file consolidation; `OPTIMIZE` handles clustering layout. |
