@@ -5,6 +5,7 @@ ms.author: scottpolly
 author: s-polly
 ms.reviewer: ruxu
 reviewer: ruixinxu
+ms.custom: dev-focus
 ms.topic: how-to
 ms.date: 05/13/2026
 ai-usage: ai-assisted
@@ -22,32 +23,16 @@ These tools enable powerful, scalable predictive and analytical models for many 
 
 In this article, you train a binary classification model on the Adult Census Income dataset, using the SynapseML `TrainClassifier` wrapper and evaluate it with `ComputeModelStatistics`.
 
-## Quick start overview
-
-| Step | Action | Estimated time |
-|------|--------|----------------|
-| 1 | Set up prerequisites (workspace, notebook) | 5 min |
-| 2 | Import libraries | Less than 1 min |
-| 3 | Download and load data | 1 to 2 min |
-| 4 | Select features and split data | Less than 1 min |
-| 5 | Train the model | 1 to 3 min |
-| 6 | Score and evaluate | Less than 1 min |
-
 ## Prerequisites
 
-Before you begin, make sure you have the following:
+[!INCLUDE [prerequisites](includes/prerequisites.md)]
+* Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
+* Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
 
-| Requirement | How to verify |
-|---|---|
-| A [Microsoft Fabric subscription](/fabric/enterprise/licenses) | You can access the Fabric portal at `https://app.fabric.microsoft.com` |
-| A Fabric [workspace](/fabric/get-started/create-workspaces) with a capacity assigned | The workspace appears in the left navigation of the Fabric portal |
-| A [lakehouse](/fabric/data-engineering/create-lakehouse) attached to your workspace | You can see the lakehouse in your workspace item list |
-| A [Fabric notebook](/fabric/data-engineering/how-to-use-notebook) attached to the lakehouse | The notebook opens with a Spark session and shows the lakehouse in the Explorer pane |
+## Import libraries
 
 > [!NOTE]
 > Fabric notebooks provide a pre-configured Spark session (the `spark` variable) and an IPython kernel with common libraries pre-imported. You don't need to install SynapseML, PySpark, NumPy, or pandas separately.
-
-## Step 1: Import libraries
 
 In your Fabric notebook, create a new cell and import the required libraries:
 
@@ -58,7 +43,7 @@ import pandas as pd
 
 **Expected output:** The cell completes with no errors. If you see an `ImportError`, verify that your notebook is attached to a lakehouse and running on a Fabric Spark runtime.
 
-## Step 2: Download and load the data
+## Download and load the data
 
 Download the Adult Census Income dataset and load it into a Spark DataFrame. This dataset contains census features like education, marital status, and hours worked per week, along with an income label column.
 
@@ -87,7 +72,7 @@ data.show(5)
 print(f"Row count: {data.count()}")  # Expected: 32561
 ```
 
-## Step 3: Select features and split the data
+## Select features and split the data
 
 Select the feature columns and the label column (` income`), then split the data into training (75%) and test (25%) sets:
 
@@ -105,7 +90,7 @@ print(f"Test rows: {test.count()}")        # Expected: about 8,100
 
 The exact counts might vary slightly, but training should contain approximately 75% of the total rows.
 
-## Step 4: Train the model
+## Train the model
 
 Use the `TrainClassifier` class from `synapse.ml.train` to train a logistic regression classifier. `TrainClassifier` wraps a base SparkML classifier, handles string-valued feature columns automatically, and binarizes the label column.
 
@@ -124,7 +109,7 @@ model = TrainClassifier(model=LogisticRegression(), labelCol=" income").fit(trai
 print(f"Model type: {type(model).__name__}")  # Expected: TrainedClassifierModel
 ```
 
-## Step 5: Score and evaluate the model
+## Score and evaluate the model
 
 Score the model against the test set, then use the `ComputeModelStatistics` class to compute accuracy, Area Under the Curve (AUC), precision, and recall:
 
@@ -179,7 +164,7 @@ if os.path.isfile("AdultCensusIncome.csv"):
 
 ## Related content
 
-- [Explore and validate relationships in semantic models (preview)](semantic-link-validate-relationship.md)
+- [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
 - [Track models with MLflow](mlflow-autologging.md)
-- [SynapseML documentation](https://microsoft.github.io/SynapseML/)
-- [Machine learning model training in Fabric](/fabric/data-science/model-training-overview)
+- [What is SynapseML?](synapse-overview.md)
+- [Machine learning model training in Fabric](model-training-overview.md)
