@@ -121,7 +121,6 @@ metrics = ComputeModelStatistics().transform(prediction)
 metrics.select("accuracy").show()
 ```
 
-**Expected output:** A single-row table showing the model's accuracy. For logistic regression on this dataset, expect an accuracy value around 0.84 (84%).
 
 **Verification** - view all computed metrics:
 
