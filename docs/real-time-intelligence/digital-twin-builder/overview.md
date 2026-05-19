@@ -1,7 +1,7 @@
 ---
 title: What Is Digital Twin Builder (Preview)?
 description: Overview of the digital twin builder (preview) item, including its purpose and major features.
-ms.date: 05/01/2025
+ms.date: 05/18/2026
 ms.topic: overview
 ---
 
