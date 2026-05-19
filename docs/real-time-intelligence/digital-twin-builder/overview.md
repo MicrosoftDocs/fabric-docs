@@ -1,5 +1,5 @@
 ---
-title: What is digital twin builder (preview)?
+title: What Is Digital Twin Builder (Preview)?
 description: Learn what digital twin builder (preview) is and how it creates digital representations of real-world environments in Real-Time Intelligence in Microsoft Fabric.
 ms.date: 05/18/2026
 ms.topic: overview
