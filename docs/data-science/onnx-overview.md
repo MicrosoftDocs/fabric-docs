@@ -38,12 +38,6 @@ print(f"onnxmltools version: {onnxmltools.__version__}")
 print(f"lightgbm version: {lightgbm.__version__}")
 ```
 
-Expected output (versions might vary by Fabric runtime):
-
-```output
-onnxmltools version: 1.x.x
-lightgbm version: 4.x.x
-```
 
 > [!NOTE]
 > The `lightgbm` package is pre-installed in Fabric Runtime 1.2 and later. You only need to install `onnxmltools`.
@@ -66,11 +60,6 @@ print(f"Rows: {df.count()}, Columns: {len(df.columns)}")
 display(df.limit(5))
 ```
 
-Expected output:
-
-```output
-Rows: 6819, Columns: 96
-```
 
 The displayed table includes columns such as:
 
@@ -87,10 +76,15 @@ Use the `VectorAssembler` to combine feature columns, then train a `LightGBMClas
 from pyspark.ml.feature import VectorAssembler
 from synapse.ml.lightgbm import LightGBMClassifier
 
-feature_cols = df.columns[1:]
+# Rename feature columns to avoid duplicate names after LightGBM sanitization
+original_feature_cols = df.columns[1:]
+feature_cols = [f"feature_{i}" for i in range(len(original_feature_cols))]
+col_mapping = dict(zip(original_feature_cols, feature_cols))
+df_renamed = df.withColumnsRenamed(col_mapping)
+
 featurizer = VectorAssembler(inputCols=feature_cols, outputCol="features")
 
-train_data = featurizer.transform(df)["Bankrupt?", "features"]
+train_data = featurizer.transform(df_renamed)["Bankrupt?", "features"]
 
 model = (
     LightGBMClassifier(featuresCol="features", labelCol="Bankrupt?")
@@ -118,13 +112,6 @@ Verify the model trained successfully:
 ```python
 print(f"Model type: {type(model).__name__}")
 print(f"Number of features: {model.numFeatures}")
-```
-
-Expected output:
-
-```output
-Model type: LightGBMClassificationModel
-Number of features: 95
 ```
 
 ## Convert the model to ONNX format
