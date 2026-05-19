@@ -43,42 +43,36 @@ items:
     href: tutorial-lakehouse-clean-up.md
 - name: Lakehouse
   items:
-  - name: What is a lakehouse?
-    href: lakehouse-overview.md
-  - name: Create a lakehouse
-    href: create-lakehouse.md
-  - name: Navigate the lakehouse explorer
-    href: navigate-lakehouse-explorer.md
-  - name: Lakehouse SQL analytics endpoint
-    href: lakehouse-sql-analytics-endpoint.md
-  - name: Lakehouse schemas
-    href: lakehouse-schemas.md
-  - name: Spark views in lakehouse
-    href: lakehouse-spark-views.md
-  - name: Git and deployment pipelines
-    href: lakehouse-git-deployment-pipelines.md
-  - name: Lakehouse REST API
-    href: lakehouse-api.md
-- name: Get data into a lakehouse
-  items:
+  - name: Overview
+    items:
+    - name: What is a lakehouse?
+      href: lakehouse-overview.md
+    - name: Create a lakehouse
+      href: create-lakehouse.md
+    - name: Navigate the lakehouse explorer
+      href: navigate-lakehouse-explorer.md
+    - name: Lakehouse SQL analytics endpoint
+      href: lakehouse-sql-analytics-endpoint.md
+    - name: Lakehouse schemas
+      href: lakehouse-schemas.md
+    - name: Spark views in lakehouse
+      href: lakehouse-spark-views.md
+    - name: Git and deployment pipelines
+      href: lakehouse-git-deployment-pipelines.md
+    - name: Lakehouse REST API
+      href: lakehouse-api.md
   - name: Get data into a lakehouse
-    href: load-data-lakehouse.md
-  - name: Shortcut data in a lakehouse
-    href: lakehouse-shortcuts.md
-  - name: Data streaming with Spark structured streaming
-    href: lakehouse-streaming-data.md
-  - name: Get streaming data into a lakehouse with Eventstreams
-    href: ../real-time-intelligence/event-streams/add-destination-lakehouse.md
-- name: Lakehouse access control
-  items:
-  - name: Workspace roles and permissions
-    href: workspace-roles-lakehouse.md
-  - name: Sharing and permissions management
-    href: lakehouse-sharing.md
-  - name: Spark support for OneLake security
-    href: spark-onelake-security.md
-- name: Delta Lake
-  items:
+    items:
+    - name: Get data into a lakehouse
+      href: load-data-lakehouse.md
+    - name: Shortcut data in a lakehouse
+      href: lakehouse-shortcuts.md
+    - name: Data streaming with Spark structured streaming
+      href: lakehouse-streaming-data.md
+    - name: Get streaming data into a lakehouse with Eventstreams
+      href: ../real-time-intelligence/event-streams/add-destination-lakehouse.md
+  - name: Delta Lake
+    items:
     - name: Lakehouse and Delta tables
       href: lakehouse-and-delta-tables.md
     - name: Load to tables
@@ -88,17 +82,27 @@ items:
     - name: Lakehouse table maintenance
       href: lakehouse-table-maintenance.md
     - name: Delta tables performance
-      items: 
-        - name: Delta optimization and V-Order
-          href: delta-optimization-and-v-order.md
-        - name: Table compaction
-          href: table-compaction.md
-        - name: Tune file size
-          href: tune-file-size.md
-        - name: Automated statistics for Delta tables
-          href: automated-table-statistics.md	
+      items:
+      - name: Delta optimization and V-Order
+        href: delta-optimization-and-v-order.md
+      - name: Table compaction
+        href: table-compaction.md
+      - name: Tune file size
+        href: tune-file-size.md
+      - name: Liquid clustering
+        href: liquid-clustering.md
+      - name: Automated statistics for Delta tables
+        href: automated-table-statistics.md
     - name: Delta driver mode snapshot
       href: driver-mode-snapshot.md
+  - name: Access control
+    items:
+    - name: Workspace roles and permissions
+      href: workspace-roles-lakehouse.md
+    - name: Sharing and permissions management
+      href: lakehouse-sharing.md
+    - name: Spark support for OneLake security
+      href: spark-onelake-security.md
 - name: Notebooks
   items:
   - name: Get started and authoring
@@ -222,8 +226,10 @@ items:
           href: ../data-science/ai-functions/pyspark/translate.md
         - name: Customize AI function configurations
           href: ../data-science/ai-functions/pyspark/configuration.md
-- name: Spark compute
+- name: Apache Spark
   items:
+  - name: Spark compute
+    items:
     - name: Overview and planning
       items:
       - name: Overview
@@ -264,36 +270,34 @@ items:
         href: job-queueing-for-fabric-spark.md
       - name: Job concurrency and queue monitoring (preview)
         href: job-concurrency-queue-monitoring.md
-- name: Environments
-  items:
-  - name: Get started
+  - name: Environments
     items:
-    - name: Create, configure and use an environment
-      href: create-and-use-environment.md
-  - name: Configure and manage
-    items:
-    - name: Manage Spark compute in environments
-      href: environment-manage-compute.md
-    - name: Manage libraries in environments
-      href: environment-manage-library.md
-    - name: Manage libraries in environments secured by outbound access protection
-      href: environment-manage-library-with-outbound-access-protection.md
-    - name: Manage resources in a Fabric environment
-      href: environment-manage-resources.md
-  - name: Automation and governance
-    items:
-    - name: Environment Git integration and deployment pipeline
-      href: environment-git-and-deployment-pipeline.md
-    - name: Manage the environment through public APIs
-      href: environment-public-api.md
-    - name: Library management best practices
-      href: library-management.md
-  - name: Migration
-    items:
-    - name: Migrate existing workspace libraries and Spark properties
-      href: environment-workspace-migration.md
-- name: Apache Spark
-  items:
+    - name: Get started
+      items:
+      - name: Create, configure and use an environment
+        href: create-and-use-environment.md
+    - name: Configure and manage
+      items:
+      - name: Manage Spark compute in environments
+        href: environment-manage-compute.md
+      - name: Manage libraries in environments
+        href: environment-manage-library.md
+      - name: Manage libraries in environments secured by outbound access protection
+        href: environment-manage-library-with-outbound-access-protection.md
+      - name: Manage resources in a Fabric environment
+        href: environment-manage-resources.md
+    - name: Automation and governance
+      items:
+      - name: Environment Git integration and deployment pipeline
+        href: environment-git-and-deployment-pipeline.md
+      - name: Manage the environment through public APIs
+        href: environment-public-api.md
+      - name: Library management best practices
+        href: library-management.md
+    - name: Migration
+      items:
+      - name: Migrate existing workspace libraries and Spark properties
+        href: environment-workspace-migration.md
   - name: Apache Spark Runtimes
     items:
     - name: Runtimes overview
@@ -344,8 +348,6 @@ items:
       href: spark-admin-settings-faq.yml 
   - name: Spark monitoring and diagnostics
     items:
-      - name: Monitoring and optimization best practices
-        href: spark-monitoring-best-practices.md
       - name: Spark monitoring and diagnostics features
         items: 
          - name: Apache Spark monitoring overview
@@ -482,16 +484,6 @@ items:
     items:
     - name: Overview
       href: migrate-synapse-overview.md
-    - name: Spark migration best practices
-      items:
-      - name: "Phase 1: Migration strategy and planning"
-        href: synapse-migration-strategy-planning.md
-      - name: "Phase 2: Spark workload migration"
-        href: synapse-migration-spark-workloads.md
-      - name: "Phase 3: Hive Metastore and data migration"
-        href: synapse-migration-hms-data.md
-      - name: "Phase 4: Security and governance migration"
-        href: synapse-migration-security-validation-cutover.md
     - name: Component migration guides (manual)
       items:
       - name: Migrate Spark pools
@@ -658,7 +650,19 @@ items:
         href: spark-best-practices-development-monitoring.md
       - name: Spark basics
         href: spark-best-practices-basics.md
-- name: Troubleshooting guide
+      - name: Spark monitoring and performance optimization
+        href: spark-monitoring-best-practices.md
+      - name: Synapse to Fabric migration
+        items:
+        - name: "Phase 1: Migration strategy and planning"
+          href: synapse-migration-strategy-planning.md
+        - name: "Phase 2: Spark workload migration"
+          href: synapse-migration-spark-workloads.md
+        - name: "Phase 3: Hive Metastore and data migration"
+          href: synapse-migration-hms-data.md
+        - name: "Phase 4: Security and governance migration"
+          href: synapse-migration-security-validation-cutover.md
+- name: Troubleshoot
   items:
   - name: Permissions and capacity errors
     href: troubleshoot-permissions-capacity.md

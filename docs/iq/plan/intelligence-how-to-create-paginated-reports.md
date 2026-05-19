@@ -1,9 +1,9 @@
 ---
-title: Create paginated reports
-description: Learn how to work with in Intelligence sheet pagination options for reports. Customize headers, footers, layout, and formatting to create structured, readable, and consistent reports.
+title: Create Paginated Reports
+description: Learn how to work with intelligence sheet pagination options for reports. Customize headers, footers, layout, and formatting to create structured, readable, and consistent reports.
 ms.date: 03/10/2026
 ms.topic: how-to
-#customer intent: As a user, I want to design and format paginated reports in Intelligence sheets
+#customer intent: As a user, I want to design and format paginated reports in intelligence sheets
 ---
 
 # Pagination and formatting for Reports

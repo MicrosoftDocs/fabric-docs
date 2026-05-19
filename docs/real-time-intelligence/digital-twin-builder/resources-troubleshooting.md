@@ -1,5 +1,5 @@
 ---
-title: Troubleshooting digital twin builder (preview)
+title: Troubleshooting Digital Twin Builder (Preview)
 description: This article provides troubleshooting suggestions for digital twin builder (preview).
 ms.date: 08/04/2025
 ms.topic: concept-article

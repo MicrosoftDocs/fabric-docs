@@ -1,5 +1,5 @@
 ---
-title: Extend time for data input measures
+title: Extend Time for Data Input Measures
 description: Learn how to extend time beyond source data horizons for data input measures.
 ms.date: 04/22/2026
 ms.topic: how-to

@@ -3,6 +3,7 @@ title: Get Started with Planning Sheets
 description: Learn how to get started with your first planning sheet. The article covers how to create a planning sheet, connect to your semantic model, and perform several tasks.
 ms.date: 04/29/2026
 ms.topic: how-to
+ms.search.form: Getting Started with Planning Sheets
 ---
 
 # Create a planning sheet
@@ -18,7 +19,9 @@ Before you set up planning sheets, make sure you have the following prerequisite
 * Data in a [Power BI semantic model](../../data-warehouse/semantic-models.md), and a [connection to your semantic model](planning-how-to-create-semantic-model-connection.md).
 
 > [!NOTE]
-> The preview of plan in Fabric IQ is now accessible to organizations worldwide in Microsoft Fabric as part of the Microsoft Fabric SKU. This SKU includes new meters. Meters are currently available but aren't currently billed.
+> You can find the required tenant and capacity settings, as well as all other prerequisites, here: [Prerequisites for plan (preview)](overview-prerequisites.md).
+> [!NOTE]
+> The preview of plan in Fabric IQ is now accessible to organizations worldwide in Microsoft Fabric as part of the Microsoft Fabric SKU, and new meters have been created. Meters are currently available but are not currently billed.
 
 ## Create plan item
 

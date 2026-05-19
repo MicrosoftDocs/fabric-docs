@@ -1,6 +1,6 @@
 ---
-title: Insert formula rows in a Planning sheet
-description: Learn how to insert and configure formula rows in a Planning sheet. 
+title: Insert Formula Rows in a Planning Sheet
+description: Learn how to insert and configure formula rows in a planning sheet. 
 ms.date: 05/05/2026
 ms.topic: how-to
 #customer intent: As a user, I want to understand how to insert and configure formula rows.
@@ -8,11 +8,11 @@ ms.topic: how-to
 
 # Insert formula rows
 
-In your Planning sheet, you might occasionally need to perform calculations with row values. *Formula rows* let you calculate values based on other rows in the report. Define formulas by referencing existing rows and applying functions.
+In your planning sheet, you might occasionally need to perform calculations with row values. *Formula rows* let you calculate values based on other rows in the report. Define formulas by referencing existing rows and applying functions.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-The Planning sheet has an intuitive formula editor where you enter the row formula. The Excel-like engine supports multiple functions (logical, mathematical, and more) and provides features such as autocomplete, syntax help, and multi-line editing to simplify formula creation and troubleshooting.
+The planning sheet has an intuitive formula editor where you enter the row formula. The Excel-like engine supports multiple functions (logical, mathematical, and more) and provides features such as autocomplete, syntax help, and multi-line editing to simplify formula creation and troubleshooting.
 
 This article explains how to insert formula rows and configure their properties.
 
