@@ -91,38 +91,38 @@ items:
       href: delta-lake-table-maintenance.md
     - name: Table layout
       items:
-        - name: V-Order
-          href: delta-optimization-and-v-order.md
-        - name: Liquid clustering
-          href: native-execution-engine-z-order-liquid-clustering.md
         - name: Table compaction
           href: table-compaction.md
         - name: Tune file size
           href: tune-file-size.md
+        - name: V-Order
+          href: delta-optimization-and-v-order.md
+        - name: Liquid clustering
+          href: native-execution-engine-z-order-liquid-clustering.md
     - name: Delta commands and operations
       items:
         - name: OPTIMIZE
           href: table-compaction.md
         - name: VACUUM
           href: delta-lake-vacuum.md
-        - name: REORG
-          href: delta-lake-reorg.md
-        - name: Clone tables
-          href: delta-lake-clone.md
         - name: DESCRIBE DETAIL and HISTORY
           href: delta-lake-describe.md
+        - name: Clone tables
+          href: delta-lake-clone.md
+        - name: REORG
+          href: delta-lake-reorg.md
         - name: RESTORE
           href: delta-lake-restore.md
     - name: Delta features
       items:
+        - name: Deletion vectors
+          href: delta-lake-deletion-vectors.md
         - name: Time travel
           href: delta-lake-time-travel.md
         - name: Change data feed
           href: delta-lake-change-data-feed.md
         - name: Schema evolution
           href: delta-lake-schema-evolution.md
-        - name: Deletion vectors
-          href: delta-lake-deletion-vectors.md
         - name: Low-Shuffle Merge
           href: low-shuffle-merge.md
     - name: Performance and optimization
