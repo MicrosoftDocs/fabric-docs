@@ -29,6 +29,10 @@ To create a lakehouse:
     :::image type="content" source="media\create-lakehouse\new-lakehouse-menu.png" alt-text="Screenshot showing the Lakehouse option in the New menu." lightbox="media/create-lakehouse/new-lakehouse-menu.png":::
 
 1. Enter a name for the lakehouse and select the workspace where you want to create it.
+
+> [!NOTE]
+> Lakehouse name must begin with a letter (A–Z or a–z) and may only contain alphanumeric characters and underscores thereafter. Special characters, spaces, and symbols are not permitted. The total length of the name must not exceed 123 characters.
+
 1. The **Lakehouse schemas** checkbox is selected by default. Schemas let you organize tables into logical groups (for example, `sales.orders` and `marketing.campaigns`) instead of placing all tables in a single flat list. Clear the checkbox if you don't need schema-based organization. For more information, see [What are lakehouse schemas?](lakehouse-schemas.md).
 1. Select **Create**.
 
