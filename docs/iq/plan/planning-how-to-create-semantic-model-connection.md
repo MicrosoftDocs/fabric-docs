@@ -25,7 +25,7 @@ Use this connection to connect to your semantic models when you create a plan. A
 
 1. In your Microsoft Fabric toolbar, select the **Settings** icon. Select **Manage connections and gateways** > **New**.
 
-    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/manage-connection-gateways.png" alt-text="Screenshot of opening the manage connection gateways settings.":::
+    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/manage-connection-gateways.png" alt-text="Screenshot of opening the settings for managing the connection gateways.":::
 
 1. For the new connection, select **Cloud**.
 
@@ -45,7 +45,7 @@ Use this connection to connect to your semantic models when you create a plan. A
 
 1. Next to the name of the semantic model connection in your Fabric workspace, select **...**, and then select **Manage users**.
 
-    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/manage-users.png" alt-text="Screenshot of opening the manage user connection.":::
+    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/manage-users.png" alt-text="Screenshot of opening the connection for managing users.":::
 
 1. Search for the name or email of the users to share the semantic model connection.
 
@@ -79,7 +79,7 @@ If you want to connect to a Direct Lake semantic model, follow these steps. An *
 
 1. From the connection list, select **Create a connection**.
 
-    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/connection.png" alt-text="Screenshot of the manage connection gateways settings.":::
+    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/connection.png" alt-text="Screenshot of the settings for managing connection gateways.":::
 
 1. Enter the new connection name. For **Authentication method**, select **OAuth 2.0**.
 
