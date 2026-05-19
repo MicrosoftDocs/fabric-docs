@@ -98,7 +98,11 @@ items:
         - name: V-Order
           href: delta-optimization-and-v-order.md
         - name: Liquid clustering
-          href: native-execution-engine-z-order-liquid-clustering.md
+          href: liquid-clustering.md
+        - name: Z-Order
+          href: delta-lake-zorder.md
+        - name: Partitioning
+          href: delta-lake-partitioning.md
     - name: Delta commands and operations
       items:
         - name: OPTIMIZE
@@ -115,6 +119,8 @@ items:
           href: delta-lake-restore.md
     - name: Delta features
       items:
+        - name: Concurrency control
+          href: delta-lake-concurrency-control.md
         - name: Deletion vectors
           href: delta-lake-deletion-vectors.md
         - name: Time travel

@@ -250,6 +250,35 @@ For best results, choose clustering columns based on your most common query filt
 - **Column cardinality can impact file skipping effectiveness across chosen clustering keys**. Low cardinality columns will have reduced file skipping potential when combined with high cardinality clustering keys.
 - **Column order has no impact on clustering**. The order of the columns specified after `CLUSTER BY` has no impact on the resulting multi-dimensional clustering.
 
+### Supported column types
+
+Not all column types can be used as clustering keys. The engine evaluates each column's data type to determine eligibility.
+
+**Always eligible (atomic types):**
+
+- `NumericType` (`ByteType`, `ShortType`, `IntegerType`, `LongType`, `FloatType`, `DoubleType`, `DecimalType`)
+- `DateType`
+- `TimestampType`
+- `TimestampNTZType`
+- `StringType`
+
+**Conditionally eligible**
+
+> [!NOTE]
+> The following types can be enabled in starting in Fabric Spark runtime 2.0 (Delta 4.1)
+
+- `StructType` — when `spark.microsoft.delta.clusteredTable.complexTypes.enabled` is enabled, and all leaf fields are themselves eligible types.
+- `ArrayType` — when `spark.microsoft.delta.clusteredTable.complexTypes.enabled` is enabled, and the element type is eligible.
+- `MapType` — when `spark.microsoft.delta.clusteredTable.complexTypes.enabled` is enabled, and both the key and value types are orderable and eligible.
+
+**Not eligible:**
+
+- `BinaryType`
+- `BooleanType`
+- `NullType`
+
+For the equivalent eligible types used in file-level statistics, see [File skipping — Eligible data types](delta-lake-file-skipping.md#eligible-data-types).
+
 ## Interaction with other features
 
 | Feature | Behavior |
@@ -274,3 +303,9 @@ For best results, choose clustering columns based on your most common query filt
 
 - [Table compaction](./table-compaction.md)
 - [Tune file size](./tune-file-size.md)
+- [Z-Order](delta-lake-zorder.md)
+- [Partitioning](delta-lake-partitioning.md)
+- [File skipping](delta-lake-file-skipping.md)
+- [Concurrency control](delta-lake-concurrency-control.md)
+- [V-Order](delta-optimization-and-v-order.md)
+- [Apache Spark Runtimes in Fabric](runtime.md)

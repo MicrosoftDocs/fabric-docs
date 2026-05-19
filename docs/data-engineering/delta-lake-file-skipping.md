@@ -54,7 +54,10 @@ Not all column types support file-level statistics and therefore file skipping. 
 - `TimestampNTZType`
 - `StringType`
 
-### Conditionally eligible - Fabric Spark runtime 2.0 (Delta 4.1)
+### Conditionally eligible
+
+> [!NOTE]
+> The following types can be enabled in starting in Fabric Spark runtime 2.0 (Delta 4.1)
 
 - `VariantType` — when `spark.databricks.delta.variantShredding.collectVariantDataSkippingStats` is enabled.
 - `ArrayType` — when `spark.microsoft.delta.skipping.complexTypes.enabled` is enabled and the element type is itself eligible.
@@ -152,12 +155,13 @@ When `delta.dataSkippingStatsColumns` is set, only the specified columns get sta
 
 File skipping works best when related values are co-located in the same files. Techniques such as `ZORDER BY` and liquid clustering physically reorganize data so that rows with similar column values end up in the same files. This tightens the min/max ranges per file, which increases the percentage of files that the engine can skip for a given filter.
 
-For more on data layout optimization, see [Table compaction](table-compaction.md) and [Liquid clustering](native-execution-engine-z-order-liquid-clustering.md).
+For more on data layout optimization, see [Table compaction](table-compaction.md), [Liquid clustering](liquid-clustering.md), and [Z-Order](delta-lake-zorder.md).
 
 ## Related content
 
 - [Table compaction](table-compaction.md)
 - [Automated statistics for Delta tables](automated-table-statistics.md)
 - [V-Order](delta-optimization-and-v-order.md)
-- [Liquid clustering](native-execution-engine-z-order-liquid-clustering.md)
+- [Liquid clustering](liquid-clustering.md)
+- [Z-Order](delta-lake-zorder.md)
 - [Delta table maintenance](delta-lake-table-maintenance.md)

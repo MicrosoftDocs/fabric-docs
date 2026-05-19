@@ -230,6 +230,27 @@ ALTER TABLE dbo.table_name
 SET TBLPROPERTIES ('delta.autoOptimize.autoCompact' = 'true')
 ```
 
+#### Reduce evalution overhead
+Starting in Fabric Spark runtime 2.0 (Delta 4.1), you can enable the `onCheckpointOnly` auto compaction mode. By default, auto compaction evaluates file metadata after every write operation to determine whether a table has too many small files. With `onCheckpointOnly`, this evaluation is deferred to log checkpointing oeprations (typically every 10 commits). At checkpoint time, the table snapshot is already fully reconstructed, so the evaluation reads from metadata that is already in memory rather than requiring an additional scan. This reduces per-commit overhead while still ensuring tables are periodically compacted.
+
+# [Spark SQL](#tab/sparksql)
+
+```sql
+SET spark.microsoft.delta.autoCompact.onCheckpointOnly.enabled = TRUE
+```
+
+# [PySpark](#tab/pyspark)
+
+```python
+spark.conf.set('spark.microsoft.delta.autoCompact.onCheckpointOnly.enabled', True)
+```
+
+# [Scala](#tab/scala)
+
+```scala
+spark.conf.set("spark.microsoft.delta.autoCompact.onCheckpointOnly.enabled", "true")
+```
+
 #### Tune auto compaction thresholds
 
 Tune auto compaction behavior by setting these Spark session configurations:
@@ -287,3 +308,5 @@ These metrics help you confirm that compaction reduced file counts and produced 
 - [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md)
 - [Tune file size](./tune-file-size.md)
 - [Lakehouse table maintenance](./lakehouse-table-maintenance.md)
+- [Liquid clustering](liquid-clustering.md)
+- [Z-Order](delta-lake-zorder.md)

@@ -249,6 +249,6 @@ DeltaTable.createOrReplace(spark)\
 - [Table compaction](table-compaction.md)
 - [VACUUM](delta-lake-vacuum.md)
 - [Tune file size](tune-file-size.md)
-- [The need for optimize write on Apache Spark](/azure/synapse-analytics/spark/optimize-write-for-apache-spark)
-- [Low Shuffle Merge optimization on Delta tables](/azure/synapse-analytics/spark/low-shuffle-merge-for-apache-spark)
+- [Liquid clustering](liquid-clustering.md)
+- [Z-Order](delta-lake-zorder.md)
 - [Delta Lake interoperability](../fundamentals/delta-lake-interoperability.md)
