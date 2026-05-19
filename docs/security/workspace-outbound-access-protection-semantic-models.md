@@ -1,10 +1,11 @@
 ---
 title: Workspace outbound access protection for semantic models (preview)
 description: Learn how workspace outbound access protection secures semantic model connections by enforcing allow lists on bound data connections during refresh and query operations.
-author: kayu
-ms.author: kayu
-ms.topic: concept
-ms.date: 07/10/2025
+author: kgremban
+ms.author: kgremban
+ms.reviewer: kayu
+ms.topic: concept-article
+ms.date: 05/19/2026
 #customer intent: As a workspace admin, I want to control which external data sources my semantic models can connect to, so that I can prevent unauthorized data exfiltration and enforce network security policies.
 ai-usage: ai-assisted
 ---
