@@ -4,7 +4,7 @@ description: Learn how to create a KQL database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: how-to
 ms.subservice: rti-eventhouse
-ms.date: 05/04/2026
+ms.date: 05/18/2026
 ms.search.form: KQL Database
 ---
 # Create a KQL database
