@@ -8,7 +8,7 @@ ms.topic: how-to
 
 # Configure general settings for writeback
 
-In **Writeback Settings**, the **General** tab lets you configure writeback behavior for a Planning sheet. These settings control how data is structured, filtered, and written to the destination.
+In **Writeback Settings**, the **General** tab lets you configure writeback behavior for a planning sheet. These settings control how data is structured, filtered, and written to the destination.
 
 [!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
@@ -68,7 +68,7 @@ In this example, the planning is done at month level. The record date column in 
 
 ## Decimal Precision
 
-Use **Decimal Precision** to define the number of digits after the decimal point. This is a one-time setting that applies to all destinations configured for a Planning sheet. Set the precision when you configure the first writeback destination.
+Use **Decimal Precision** to define the number of digits after the decimal point. This is a one-time setting that applies to all destinations configured for a planning sheet. Set the precision when you configure the first writeback destination.
 
 :::image type="content" source="../media/planning-writeback/planning-how-to-configure-general-settings/writeback-decimal-precision.jpg" alt-text="Screenshot of writeback with decimal precision." lightbox="../media/planning-writeback/planning-how-to-configure-general-settings/writeback-decimal-precision.jpg":::
 

@@ -69,8 +69,10 @@ items:
       href: plan/overview.md
     - name: Region availability
       href: plan/overview-regions.md
+    - name: Prerequisites
+      href: plan/overview-prerequisites.md
     - name: Known limitations
-      href: plan/overview-limitations.md   
+      href: plan/overview-limitations.md
   - name: Planning sheets
     items:
     - name: Planning sheets overview
@@ -87,7 +89,7 @@ items:
       items:
         - name: Create a semantic model connection
           href: plan/planning-how-to-create-semantic-model-connection.md
-        - name: Create a Planning sheet
+        - name: Create a planning sheet
           href: plan/planning-how-to-get-started.md
         - name: Create a database connection for collaboration
           href: plan/planning-how-to-create-database-connection.md
@@ -143,6 +145,22 @@ items:
           href: plan/planning-how-to-export-data.md
         - name: Pivot data
           href: plan/planning-how-to-pivot-data.md
+        - name: Conditional formatting
+          items:
+              - name: Conditional formatting overview
+                href: plan/planning-conditional-formatting/concept-conditional-formatting.md
+              - name: Create rules
+                href: plan/planning-conditional-formatting/how-to-create-rules.md
+              - name: Format by rules
+                href: plan/planning-conditional-formatting/how-to-format-if.md
+              - name: Format by color scales
+                href: plan/planning-conditional-formatting/how-to-format-color-scales.md
+              - name: Format by classification
+                href: plan/planning-conditional-formatting/how-to-format-classification.md
+              - name: Apply quick formatting
+                href: plan/planning-conditional-formatting/how-to-apply-quick-formatting.md
+              - name: Manage rules
+                href: plan/planning-conditional-formatting/how-to-manage-rules.md
         - name: Use forecasting
           items: 
               - name: Configure forecasts
@@ -169,6 +187,10 @@ items:
                 href: plan/planning-driver-model/planning-how-to-create-templates.md
               - name: Create a driver model
                 href: plan/planning-driver-model/planning-how-to-create-driver-model.md
+    - name: Troubleshoot
+      items:
+          - name: Troubleshoot semantic model connection
+            href: plan/planning-troubleshoot-semantic-model.md
     - name: Reference
       items:
         - name: Formulas and functions
@@ -205,7 +227,7 @@ items:
       href: plan/intelligence-overview.md
     - name: How-tos
       items:
-        - name: Get started with Intelligence sheets
+        - name: Get started with intelligence sheets
           href: plan/intelligence-how-to-get-started.md
         - name: Build financial reports
           href: plan/intelligence-how-to-build-financial-reports.md
@@ -237,3 +259,7 @@ items:
   href: ../real-time-intelligence/operations-agent-tocs/toc.yml
 - name: Power BI semantic model
   href: ../data-warehouse/semantic-model-toc/toc.yml
+- name: Integrations
+  items:
+  - name: Cowork (Frontier)
+    href: connectors/cowork-overview.md

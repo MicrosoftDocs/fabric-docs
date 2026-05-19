@@ -37,7 +37,7 @@ This table lists regions where all Fabric workloads are available.
 | East US 2 <sup>5</sup>                      | Norway East                  |             |                    | Israel Central <sup>3, 6</sup>|
 | Mexico Central <sup>6</sup>              | Poland Central <sup>6</sup>  |             |                    | Japan East                       |
 | North Central US                            | Spain Central <sup>6</sup>|             |                    | Japan West <sup>3, 5, 6</sup> |
-| South Central US <sup>1, 2, 3, 4, 5, 6</sup>| Sweden Central               |             |                    | Korea Central                    |
+| South Central US <sup>1, 2, 3, 4, 5, 6</sup>| Sweden Central <sup>7</sup>               |             |                    | Korea Central                    |
 | West US                                     | Switzerland North            |             |                    | Malaysia West       |
 | West US 2                                   | Switzerland West             |             |                    | New Zealand North   |
 | West US 3 <sup>6</sup>                      | UK South                     |             |                    | Southeast Asia                   |
@@ -45,12 +45,13 @@ This table lists regions where all Fabric workloads are available.
 |                                             |                              |             |                    | Taiwan North        |
 |                                             |                              |             |                    | Taiwan Northwest <sup>1</sup>    |
 
-<sup>1</sup> [Ontology (preview)](../iq/ontology/overview.md) isn't available in these regions.
+<sup>1</sup> [Ontology (preview)](../iq/ontology/overview.md) isn't available in these regions. 
 <sup>2</sup> [Healthcare Solutions](/industry/healthcare/healthcare-data-solutions/overview) isn't available in this region. 
-<sup>3</sup> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) isn't available in these regions.
-<sup>4</sup> [Operations agent (preview)](../real-time-intelligence/operations-agent.md) isn't available in these regions.
-<sup>5</sup> [Plan (preview)](../iq/plan/overview.md) isn't available in these regions.
-<sup>6</sup> [Schema Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) isn't available in these regions.
+<sup>3</sup> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) isn't available in these regions. 
+<sup>4</sup> [Operations agent (preview)](../real-time-intelligence/operations-agent.md) isn't available in these regions. 
+<sup>5</sup> [Plan (preview)](../iq/plan/overview.md) isn't available in these regions. 
+<sup>6</sup> [Schema Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) isn't available in these regions. 
+<sup>7</sup> [Business Continuity Disaster Recovery (BCDR)](/azure/reliability/reliability-fabric#cross-region-disaster-recovery-and-business-continuity) for Power BI isn't available by default in this region. Power BI is supported in this region but not in its paired region.
 
 ### Power BI
 

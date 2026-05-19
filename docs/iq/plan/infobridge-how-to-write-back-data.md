@@ -18,7 +18,7 @@ This section explains how to write back the output of a bridge to a Fabric SQL d
 
 In the following example, a sample bridge is created using **InfoBridge** that merges two data sources:
 
-* **Query 1**: A Planning sheet containing actual revenue from 2026
+* **Query 1**: A planning sheet containing actual revenue from 2026
 * **Query 2**: An external Excel file containing forecast and projected revenue
 
 Through the **Merge Query** operation, measures from both queries are combined to produce a unified dataset that integrates actual and forecasted values.
