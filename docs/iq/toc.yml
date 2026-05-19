@@ -5,10 +5,6 @@ items:
   items:
   - name: What is Fabric IQ?
     href: overview.md
-- name: Connectors
-  items:
-  - name: Cowork (Frontier)
-    href: connectors/cowork-overview.md
 - name: Ontology
   items:
   - name: Overview
@@ -265,3 +261,7 @@ items:
   href: ../real-time-intelligence/operations-agent-tocs/toc.yml
 - name: Power BI semantic model
   href: ../data-warehouse/semantic-model-toc/toc.yml
+- name: Integrations
+  items:
+  - name: Cowork (Frontier)
+    href: connectors/cowork-overview.md
