@@ -30,7 +30,7 @@ Use the storage report to:
 * Break down storage costs across visible, hidden, and soft-deleted data
 
 >[!NOTE]
->The OneLake storage report is currently in public preview.
+>The OneLake storage report is currently in preview.
 
 ### Open the storage report
 
@@ -52,7 +52,7 @@ The storage report contains the following fields:
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | Item name   | The friendly name of the item.                                                                                                                  |
 | Type        | The type of the item (example: Lakehouse).                                          |
-| Billing     | The billing status of the item. Non-billable items aren't charged for OneLake storage. Partially-billable items aren't charged up to a limit.   |
+| Billing     | The billing status of the item. Non-billable items aren't charged for OneLake storage. Partially billable items aren't charged up to a limit.   |
 | Total       | The total amount of data stored in the item, including system and soft-deleted data.                                                            |
 | Soft-delete | Deleted data within the seven day retention window. For more information, see [Recover deleted files in OneLake](soft-delete.md).                                              |
 | System      | Workload data such as internal metadata, logs, and temporary files that aren't directly accessible but count toward storage usage.             |
