@@ -1,6 +1,6 @@
 ---
-title: ONNX - Inference on Spark
-description: Use SynapseML to build a LightGBM model, convert it to ONNX format, then perform inference on Spark in Microsoft Fabric.
+title: ONNX inference on Spark
+description: Use SynapseML to build a LightGBM model, convert it to ONNX format, and then perform inference on Spark in Microsoft Fabric.
 ms.topic: how-to
 ms.author: scottpolly
 author: s-polly
@@ -16,11 +16,10 @@ In this article, you train a LightGBM model with SynapseML, convert it to [ONNX]
 
 ## Prerequisites
 
-| Requirement | Details |
-|---|---|
-| Microsoft Fabric subscription | You need a Fabric workspace with a capacity assigned. See [Create a workspace](/fabric/get-started/create-workspaces). |
-| Lakehouse | Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create one. |
-| Fabric runtime | This article requires Fabric Runtime 1.2 or later. |
+[!INCLUDE [prerequisites](includes/prerequisites.md)]
+
+- Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create one.
+- Fabric Runtime 1.2 or later.
 
 ### Install required packages
 
@@ -42,7 +41,7 @@ print(f"lightgbm version: {lightgbm.__version__}")
 Expected output (versions might vary by Fabric runtime):
 
 ```output
-onnxmltools version: 1.16.0
+onnxmltools version: 1.x.x
 lightgbm version: 4.x.x
 ```
 
@@ -160,11 +159,7 @@ print(f"ONNX model payload size: {len(model_payload_ml)} bytes")
 assert len(model_payload_ml) > 0, "ONNX conversion failed: empty payload"
 ```
 
-Expected output:
-
-```output
-ONNX model payload size: ~800000 bytes
-```
+The output shows the ONNX model payload size in bytes (typically around 800,000 bytes).
 
 > [!IMPORTANT]
 > Use `from onnxmltools.convert.common.data_types import FloatTensorType` for the type definition. The older import path `from onnxconverter_common.data_types import FloatTensorType` is incompatible with current versions of `onnxmltools`.
@@ -228,7 +223,10 @@ testDf = (
 display(onnx_ml.transform(testDf))
 ```
 
-The output should contain columns for **features**, **prediction**, and **probability**:
+> [!NOTE]
+> Because the test data is randomly generated, the prediction values don't represent real-world results. This section demonstrates that the ONNX model runs correctly on Spark.
+
+The output should contain columns for `features`, `prediction`, and `probability`:
 
 | Features | prediction | probability |
 |---|---|---|
