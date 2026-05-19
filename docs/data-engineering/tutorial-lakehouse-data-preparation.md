@@ -72,7 +72,7 @@ The tables follow a star schema, which is a common pattern for organizing analyt
 
 In this tutorial page, select the tab that matches the notebook you imported, and keep using that same tab for all steps. The tabs are in this article, not in the notebook.
 
-1. **Cell 1 - Spark session configuration.** This cell enables two Fabric features that optimize how data is written and read in subsequent cells. [V-order](delta-optimization-and-v-order.md) optimizes the parquet file layout for faster reads and better compression. [Optimize write](delta-optimization-and-v-order.md#what-is-optimize-write) reduces the number of files written and increases individual file size.
+1. **Cell 1 - Spark session configuration.** This cell enables two Fabric features that optimize how data is written and read in subsequent cells. [V-order](delta-optimization-and-v-order.md) optimizes the parquet file layout for faster reads and better compression. [Optimize write](/azure/synapse-analytics/spark/optimize-write-for-apache-spark) reduces the number of files written and increases individual file size.
 
    Run this cell, and wait for it to finish before moving on to the next step.
 

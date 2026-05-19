@@ -223,6 +223,10 @@ On the first stream read, Spark processes the full initial snapshot of the table
 
 ### Start a stream from the current table version
 
+# [Spark SQL](#tab/sparksql)
+
+Structured Streaming uses the DataFrame API. Use PySpark or Scala for streaming reads.
+
 # [PySpark](#tab/pyspark)
 
 ```python
@@ -248,6 +252,10 @@ display(df)
 ---
 
 ### Start a stream from a specific version
+
+# [Spark SQL](#tab/sparksql)
+
+Structured Streaming uses the DataFrame API. Use PySpark or Scala for streaming reads.
 
 # [PySpark](#tab/pyspark)
 
@@ -276,6 +284,10 @@ display(df)
 ---
 
 ### Start a stream from a timestamp
+
+# [Spark SQL](#tab/sparksql)
+
+Structured Streaming uses the DataFrame API. Use PySpark or Scala for streaming reads.
 
 # [PySpark](#tab/pyspark)
 
@@ -306,6 +318,10 @@ display(df)
 ### Write the stream to a downstream Delta table
 
 Use `writeStream` with a checkpoint location to maintain exactly-once processing state across restarts.
+
+# [Spark SQL](#tab/sparksql)
+
+Structured Streaming uses the DataFrame API. Use PySpark or Scala for streaming writes.
 
 # [PySpark](#tab/pyspark)
 

@@ -187,7 +187,7 @@ ALTER TABLE person SET TBLPROPERTIES("delta.parquet.vorder.enabled" = "false");
 ALTER TABLE person UNSET TBLPROPERTIES("delta.parquet.vorder.enabled");
 ```
 
-After you enable or disable V-Order using table properties, only future writes to the table are affected. Parquet files keep the ordering used when it was created. To change the current physical structure to apply or remove V-Order, see how to [Control V-Order when optimizing a table](#control-v-order-when-optimizing-a-table).
+After you enable or disable V-Order using table properties, only future writes to the table are affected. Parquet files keep the ordering used when it was created. To change the current physical structure to apply or remove V-Order, read [Table compaction](table-compaction.md).
 
 ### Controlling V-Order directly on write operations
 

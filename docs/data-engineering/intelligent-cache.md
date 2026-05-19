@@ -56,6 +56,8 @@ spark.conf.set('spark.synapse.vegas.useCache', True)
 spark.conf.set("spark.synapse.vegas.useCache", "true")
 ```
 
+---
+
 The percentage of disc space that the intelligent cache can use defaults to 50%:
 
 # [Spark SQL](#tab/sparksql)
@@ -75,6 +77,8 @@ spark.conf.set('spark.synapse.vegas.cacheSize', 50)
 ```scala
 spark.conf.set("spark.synapse.vegas.cacheSize", 50)
 ```
+
+---
 
 
 ## Related content
