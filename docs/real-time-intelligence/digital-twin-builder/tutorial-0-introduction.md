@@ -3,54 +3,56 @@ title: Digital Twin Builder (Preview) Tutorial Introduction
 description: Get an introduction to the digital twin builder (preview) tutorial scenario and review the prerequisites. Part 0 of the digital twin builder (preview) tutorial.
 ms.date: 05/18/2026
 ms.topic: tutorial
+ai-usage: ai-assisted
+#customer intent: As an operations analyst, I want to understand the digital twin builder (preview) tutorial scenario and prerequisites so that I can build an ontology and Power BI report for a sample distillation process.
 ---
 
 # Digital twin builder (preview) tutorial: Introduction
 
-Digital twin builder (preview) is a [Microsoft Fabric](../../fundamentals/microsoft-fabric-overview.md) item for building comprehensive operational analytics scenarios for physical operations. Digital twin builder's low-code/no-code experience allows businesses to connect to disparate data sources through Fabric and Azure IoT Operations; build comprehensive digital twins; and generate insights without the need for highly technical specialized skilling. With digital twin builder, operations staff can explore twins based on their relationships and perform time-series analytics, all within Fabric's all-in-one analytic platform. Customers can then use insights from these experiences for driving operational improvements such as reducing waste, improving yield, enhancing safety, and achieving sustainability targets.
+Digital twin builder (preview) is a [Microsoft Fabric](../../fundamentals/microsoft-fabric-overview.md) item for building operational analytics scenarios for physical operations. Digital twin builder provides a low-code/no-code experience that connects disparate data sources through Fabric and Azure IoT Operations, builds digital twins, and generates insights without specialized technical skills. Operations staff can explore twins based on their relationships and run time-series analytics within Fabric. Use the resulting insights to reduce waste, improve yield, enhance safety, and meet sustainability targets.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-This tutorial walks you through building a scenario ontology in digital twin builder for the fictional energy company Contoso, Ltd. It focuses on digital twin builder's capabilities for modeling and contextualizing data from multiple sources, and finishes with a Power BI dashboard to visualize the data.
+This tutorial walks you through building a scenario ontology in digital twin builder for the fictional energy company Contoso, Ltd. It covers modeling and contextualizing data from multiple sources, and finishes with a Power BI report that visualizes the data.
 
 <!--## Prerequisites (title in include)-->
 [!INCLUDE [Prerequisites for digital twin builder](../includes/digital-twin-builder-prerequisites.md)]
 
-* The latest Power BI desktop app on your machine (step 5 of the tutorial requires use of the desktop app, **not** the Power BI service in Fabric). You can get it here: [Download Power BI](https://www.microsoft.com/power-platform/products/power-bi/downloads).
+* The latest [Power BI Desktop](https://www.microsoft.com/power-platform/products/power-bi/downloads) app installed on your machine. Tutorial part 5 (Create a Power BI report) requires Power BI Desktop and **doesn't** work with the Power BI service in Fabric.
 
-## Tutorial scenario
+## Tutorial scenario: Contoso, Ltd. bioethanol distillation
 
-This tutorial features the fictional energy company Contoso, Ltd.
+This tutorial features the fictional energy company Contoso, Ltd., a bioethanol producer that wants to use digital twin builder (preview) across its distillation sites to improve efficiency, reduce energy consumption, and ensure product quality.
 
-Contoso, Ltd. is a leading energy company that is committed to producing bioethanol, a sustainable and renewable nonfossil fuel product. To achieve their goals of improving efficiency, reducing energy consumption, and ensuring product quality, Contoso, Ltd. decides to implement a solution using digital twin builder (preview) across their distillation sites.
+Contoso, Ltd. faces three challenges in its current distillation processes:
 
-Contoso, Ltd. faces several challenges in their current distillation processes:
-* **Efficiency:** The existing distillation units aren't optimized, which leads to longer processing times and higher operational costs.
-* **Energy consumption:** The energy required to maintain the distillation process is substantial, impacting the company's sustainability goals.
-* **Product quality:** It's challenging to ensure consistent product quality across different sites, due to variations in process parameters.
+* **Efficiency:** Existing distillation units aren't optimized, which leads to longer processing times and higher operational costs.
+* **Energy consumption:** The energy required to maintain the distillation process is substantial, which affects sustainability goals.
+* **Product quality:** Variations in process parameters make it hard to ensure consistent product quality across different sites.
 
-To mitigate these challenges, Contoso, Ltd. needs to:
-* Collect data and metadata from multiple sources, including sensors, control systems, and laboratory information management systems. This comprehensive data collection enables a holistic view of the distillation process.
-* Relate assets by creating semantic context to represent large processes and asset details. This semantic context helps in understanding the relationships between different assets and their roles in the overall process.
+To address these challenges, Contoso, Ltd. needs to:
+
+* Collect data and metadata from multiple sources, including sensors, control systems, and laboratory information management systems.
+* Relate assets by creating semantic context that represents large processes and asset details.
 * Scale semantic context to make data-driven decisions across sites.
 
-The following diagram shows how their distillation process is structured:
+The following diagram shows how the Contoso, Ltd. distillation process is structured:
 
-:::image type="content" source="media/tutorial/contoso-diagram.png" alt-text="Flow diagram of Contoso, Ltd." lightbox="media/tutorial/contoso-diagram.png":::
+:::image type="content" source="media/tutorial/contoso-diagram.png" alt-text="Diagram showing the structure of Contoso, Ltd.'s distillation process across sites, including the Distiller, Condenser, and Reboiler assets and their data flows." lightbox="media/tutorial/contoso-diagram.png":::
 
-Digital twin builder can help Contoso, Ltd. transform their operations. The platform enables them to seamlessly integrate and contextualize data from various sources, creating a unified view of their distillation process. This holistic approach allows Contoso, Ltd. to gain valuable insights, optimize their operations, and make informed decisions that drive efficiency, reduce energy consumption, and enhance product quality.
+Digital twin builder integrates and contextualizes data from these sources into a unified view of the distillation process, so Contoso, Ltd. can optimize operations, reduce energy consumption, and improve product quality.
 
-### Sample ontology
+### Sample ontology used in this tutorial
 
-This tutorial deals with a subset of the distillation process outlined in the previous section. The process is seen in the following ontology:
+This tutorial uses a subset of the Contoso, Ltd. distillation process. The following ontology represents that subset:
 
-:::image type="content" source="media/tutorial/contoso-ontology.png" alt-text="Flow diagram of Contoso, Ltd. as an ontology." lightbox="media/tutorial/contoso-ontology.png":::
+:::image type="content" source="media/tutorial/contoso-ontology.png" alt-text="Diagram showing the Contoso, Ltd. distillation process represented as an ontology, with entity types such as Process, Distiller, Condenser, and Reboiler and the semantic relationships between them." lightbox="media/tutorial/contoso-ontology.png":::
 
 ## Tutorial data summary
 
-Contoso, Ltd. wants to model and standardize distillation processes across their sites. To model their process on digital twin builder, they start by representing 10 sites, where each site is an instance of the *Process* entity type. 
+Contoso, Ltd. models and standardizes distillation processes across 10 sites in digital twin builder. Each site is an instance of the *Process* entity type.
 
-### Raw data for tutorial
+### Raw data sources used in this tutorial
 
 For this tutorial, you use the following data sources:
 
@@ -62,34 +64,33 @@ For this tutorial, you use the following data sources:
 | Technicians | SAP data detailing technicians working at sites. |
 | Distillation process data | MES / process data for multiple sites, containing start and end times and waste KPIs for each process entry. A customer brings in the MES data and contextualizes it with asset and event data, in order to isolate each process that occurred. |
 
-### Operational data
+### Operational time series data
 
-Through an edge system, Contoso, Ltd. receives time series data from various sites. All sites perform the same distillation process that includes the following assets:
+Through an edge system, Contoso, Ltd. receives time series data from its sites. All sites perform the same distillation process, which includes the following assets:
+
 * *Distiller*: Produces time series data for `RefluxRatio`, `MainTowerPressure`, `FeedFlowRate`, and `FeedTrayTemperature`.
 * *Condenser*: Produces time series data for `Pressure`, `Power`, and `Temperature`.
 * *Reboiler*: Produces time series data for `Pressure`, `InletTemperature`, and `OutletTemperature`.
 
 These measurements help monitor and control the distillation process, ensuring efficient and safe operation.
 
-## Tutorial steps
+## What you build in this tutorial
 
-In this tutorial, you build the digital twin builder (preview) solution for Contoso, Ltd.
-
-Specifically, the steps of the tutorial teach you how to:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
-> * Set up your environment and deploy a digital twin builder item
-> * Create entity types, and map property and time series data to them
-> * Define semantic relationships between entity types
-> * Search and explore your ontology
-> * Create a Power BI report with digital twin builder data
+> * Set up your environment and deploy a digital twin builder item.
+> * Create entity types, and map property and time series data to them.
+> * Define semantic relationships between entity types.
+> * Search and explore your ontology.
+> * Create a Power BI report with digital twin builder data.
 
-Here's the Power BI report you build in this tutorial.
+The following images show the Power BI report you build in tutorial part 5.
 
-:::image type="content" source="media/tutorial/dashboard-1.png" alt-text="Power BI dashboard page 1, showing condenser asset details over time.":::
+:::image type="content" source="media/tutorial/dashboard-1.png" alt-text="Power BI report page 1, showing condenser asset details over time.":::
 
-:::image type="content" source="media/tutorial/dashboard-2.png" alt-text="Power BI dashboard page 2, showing relationship instance data for maintenance orders.":::
+:::image type="content" source="media/tutorial/dashboard-2.png" alt-text="Power BI report page 2, showing relationship instance data for maintenance orders.":::
 
 ## Next step
 
