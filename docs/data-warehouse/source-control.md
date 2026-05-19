@@ -51,7 +51,7 @@ When you commit the warehouse item to the Git repo, the warehouse is converted t
 
 Shared queries are also committed to the repo and inherit the name that they are saved as.
 
-> For workspaces with source control enabled, any schema changes made through external tools (for example, executing queries in SSMS) will appear as uncommitted changes in the Fabric Warehouse. Users must review and commit these changes through the Fabric workspace Source Control UX.
+For workspaces with source control enabled, any schema changes made through external tools (for example, executing queries in SSMS) will appear as uncommitted changes in the Warehouse. Users must review and commit these changes through the workspace Source Control in the Fabric portal.
 
 ## Deployment pipelines
 
