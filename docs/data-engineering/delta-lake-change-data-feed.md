@@ -3,7 +3,7 @@ title: Use change data feed with Delta tables
 description: Learn what Delta Lake change data feed is, when to use it, how to enable it, and how to read row-level changes in Microsoft Fabric.
 ms.reviewer: milescole
 ms.topic: how-to
-ms.date: 05/18/2026
+ms.date: 05/19/2026
 ai-usage: ai-assisted
 ---
 
@@ -215,6 +215,21 @@ val changes = spark.read.format("delta")
 
 ---
 
+## How batch CDF reads resolve the ending version
+
+When you read CDF changes in batch mode, a [Native execution engine](native-execution-engine-overview.md) optimized implemtation is used that can improve performance by 2-3x. This is enabled by default when both the start and end version is provided and the [Native execution engine](native-execution-engine-overview.md) is enabled.
+
+### Open-ended reads (start version only)
+
+When you specify only a starting version and omit the ending version, the behavior depends on configuration:
+
+- **Default behavior**: The ending version is resolved at execution time. Each time the query runs, it reads up to the latest table version at that moment. If you hold a reference to the DataFrame and re-evaluate it after the table changes, the results include the newer changes.
+
+- **With `startOnly` optimization**: When the Spark configuration `spark.microsoft.delta.changeDataFeed.batch.staticReader.startOnly.enabled` is set to `true`, the ending version is resolved at query planning time instead of execution time. The resulting query plan is frozen with that version, which enables the same reader optimizations that can improve performance by 2–3x when the [Native execution engine](native-execution-engine-overview.md) is enabled.
+
+  > [!IMPORTANT]
+  > With the `startOnly` optimization, the query plan captures the table version at the time Spark analyzes the query. If new commits arrive between analysis and execution, those changes are not included in the results. For periodic ETL pipelines this is typically fine because the next run picks up any missed versions. However, for one-shot queries or workflows that assume every change up to the moment of execution is included, this behavior can cause changes arriving in the short time between query planning and execution to be silently missed. This optimization is disabled by default.
+
 ## Read change data with Structured Streaming
 
 You can also consume CDF as a streaming source using the Spark `readStream` API.
@@ -368,7 +383,7 @@ When you read from CDF, the result includes your table columns plus metadata col
 | Column | Description |
 |---|---|
 | `_change_type` | The kind of row change: `insert`, `update_preimage`, `update_postimage`, or `delete`. |
-| `_commit_version` | The Delta table version where Fabric committed the change. |
+| `_commit_version` | The Delta table version where the change was committed. |
 | `_commit_timestamp` | The commit timestamp for that table version. |
 
 
@@ -387,7 +402,7 @@ Different Delta operations produce different CDF records.
 - `INSERT` produces `insert` records.
 - `UPDATE` and `MERGE` produce both `update_preimage` and `update_postimage` records.
 - `DELETE` produces `delete` records.
-- `OPTIMIZE` and `REORG` don't produce row-level change records because they reorganize files or metadata rather than represent new business-row changes.
+- `OPTIMIZE` and `REORG` don't produce row-level change records because they reorganize files without changing logical data (`dataChange = false`).
 
 This behavior helps you separate logical data changes from maintenance operations.
 
