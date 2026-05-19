@@ -1,5 +1,5 @@
 ---
-title: Write back InfoBridge data
+title: Write Back InfoBridge Data
 description: Learn how to integrate and transform plans, budgets, and forecasts from multiple data sources and write data back easily to a unified data integration platform.
 ms.date: 03/11/2026
 ms.topic: how-to
@@ -18,7 +18,7 @@ This section explains how to write back the output of a bridge to a Fabric SQL d
 
 In the following example, a sample bridge is created using **InfoBridge** that merges two data sources:
 
-* **Query 1**: A Planning sheet containing actual revenue from 2026
+* **Query 1**: A planning sheet containing actual revenue from 2026
 * **Query 2**: An external Excel file containing forecast and projected revenue
 
 Through the **Merge Query** operation, measures from both queries are combined to produce a unified dataset that integrates actual and forecasted values.

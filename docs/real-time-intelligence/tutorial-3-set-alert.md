@@ -21,7 +21,7 @@ Here you configure the rules for the alert. Your starting point is the eventstre
 
 1. From the left navigation bar, select **Real-Time**.
 
-1. In the list of recent Select the **TutorialEventstream** eventstream you created in the previous tutorial. The eventstream details page opens.
+1. In the list of recent data streams, select the **TutorialEventstream** eventstream you created in the previous tutorial. The eventstream details page opens.
 
     :::image type="content" source="media/tutorial/set-alert.png" alt-text="Screenshot of eventstreams details page and set alert selected." lightbox="media/tutorial/set-alert.png":::
 

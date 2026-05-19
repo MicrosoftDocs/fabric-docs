@@ -142,6 +142,8 @@
         items:
           - name: Service principal support
             href: service-principals.md
+          - name: Workspace identity support
+            href: workspace-identity.md
           - name: Access database
             items: 
               - name: Access database - Overview
@@ -1142,6 +1144,10 @@
           href: dbt-job-how-to.md
         - name: Configure a dbt job
           href: dbt-job-configure.md
+        - name: Run dbt projects from GitHub
+          href: dbt-run-github.md
+        - name: dbt job logs with OneLake
+          href: dbt-job-onelake-logs.md
         - name: dbt job activity in a pipeline
           href: dbt-job-activity.md
         - name: dbt job pricing

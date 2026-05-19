@@ -1,5 +1,5 @@
 ---
-title: Digital twin builder (preview) tutorial introduction
+title: Digital Twin Builder (Preview) Tutorial Introduction
 description: Get started with digital twin builder (preview) by setting up resources for the tutorial. Part 0 of the digital twin builder (preview) tutorial.
 ms.date: 05/01/2025
 ms.topic: tutorial

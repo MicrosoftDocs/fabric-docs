@@ -1,5 +1,5 @@
 ---
-title: Connect PowerTable sheet to a database
+title: Connect PowerTable Sheet to a Database
 description: Learn how to connect PowerTable sheet to database tables to build collaborative data apps with live synchronization.
 ms.date: 04/10/2026
 ms.topic: how-to
