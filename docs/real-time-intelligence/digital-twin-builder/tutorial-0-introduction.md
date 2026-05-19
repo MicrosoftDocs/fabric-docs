@@ -1,13 +1,13 @@
 ---
 title: Digital Twin Builder (Preview) Tutorial Introduction
-description: Get started with digital twin builder (preview) by setting up resources for the tutorial. Part 0 of the digital twin builder (preview) tutorial.
+description: Get an introduction to the digital twin builder (preview) tutorial scenario and review the prerequisites. Part 0 of the digital twin builder (preview) tutorial.
 ms.date: 05/18/2026
 ms.topic: tutorial
 ---
 
 # Digital twin builder (preview) tutorial: Introduction
 
-Digital twin builder (preview) is a [Microsoft Fabric](../../fundamentals/microsoft-fabric-overview.md) item for building comprehensive operational analytics scenarios for physical operations. Digital twin builder's low-code/no code experience allows businesses to connect to disparate data sources through Fabric and Azure IoT Operations; build comprehensive digital twins; and generate insights without the need for highly technical specialized skilling. With digital twin builder, operations staff can explore twins based on their relationships and perform time-series analytics, all within Microsoft Fabric's all-in-one analytic platform. Customers can then use insights from these experiences for driving operational improvements such as reducing waste, improving yield, enhancing safety, and achieving sustainability targets.
+Digital twin builder (preview) is a [Microsoft Fabric](../../fundamentals/microsoft-fabric-overview.md) item for building comprehensive operational analytics scenarios for physical operations. Digital twin builder's low-code/no-code experience allows businesses to connect to disparate data sources through Fabric and Azure IoT Operations; build comprehensive digital twins; and generate insights without the need for highly technical specialized skilling. With digital twin builder, operations staff can explore twins based on their relationships and perform time-series analytics, all within Fabric's all-in-one analytic platform. Customers can then use insights from these experiences for driving operational improvements such as reducing waste, improving yield, enhancing safety, and achieving sustainability targets.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -16,7 +16,7 @@ This tutorial walks you through building a scenario ontology in digital twin bui
 <!--## Prerequisites (title in include)-->
 [!INCLUDE [Prerequisites for digital twin builder](../includes/digital-twin-builder-prerequisites.md)]
 
-* The latest Power BI desktop app on your machine (step 5 of the tutorial requires use of the desktop app, **not** the Power BI service in Fabric). You can get it here: [Download Power BI](https://www.microsoft.com/power-platform/products/power-bi/downloads?msockid=2612a5667524602e3f9bb50b74976110). 
+* The latest Power BI desktop app on your machine (step 5 of the tutorial requires use of the desktop app, **not** the Power BI service in Fabric). You can get it here: [Download Power BI](https://www.microsoft.com/power-platform/products/power-bi/downloads).
 
 ## Tutorial scenario
 
@@ -89,7 +89,7 @@ Here's the Power BI report you build in this tutorial.
 
 :::image type="content" source="media/tutorial/dashboard-1.png" alt-text="Power BI dashboard page 1, showing condenser asset details over time.":::
 
-:::image type="content" source="media/tutorial/dashboard-2.png" alt-text="Screenshot of Power BI dashboard page 2, showing relationship instance data for maintenance orders.":::
+:::image type="content" source="media/tutorial/dashboard-2.png" alt-text="Power BI dashboard page 2, showing relationship instance data for maintenance orders.":::
 
 ## Next step
 

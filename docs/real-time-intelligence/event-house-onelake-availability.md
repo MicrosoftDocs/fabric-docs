@@ -1,13 +1,13 @@
 ---
-title: Eventhouse OneLake Availability
-description: Learn how to turn on KQL database data availability in OneLake.
+title: Eventhouse OneLake availability
+description: Learn how to turn on OneLake availability for a KQL database in an eventhouse so you can query the data in Delta Lake format across Fabric engines.
 ms.reviewer: tzgitlin
 ms.topic: how-to
 ms.subservice: rti-eventhouse
 ms.date: 05/18/2026
 ---
 
-# Eventhouse OneLake Availability
+# Eventhouse OneLake availability
 
 You can create a logical copy of KQL database data in an eventhouse by turning on **OneLake availability**. Turning on **OneLake availability** means that you can query the data in your KQL database in Delta Lake format via other Fabric engines such as Direct Lake mode in Power BI, Warehouse, Lakehouse, Notebooks, and more.
 
@@ -44,7 +44,7 @@ If you need to do any of these tasks, use the following steps:
 
 ## Prerequisites
 
-* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions and data
 
 ## Turn on OneLake availability
@@ -65,13 +65,13 @@ You can turn on **OneLake availability** either on a KQL database or table.
 
     :::image type="content" source="media/event-house-onelake-availability/enable-data-copy.png" alt-text="Screenshot of the OneLake section details once Availability is set to Enabled. The option to expose data to OneLake is turned on.":::
 
-With the **OneLake availability** in your KQL database or table turned on, you can now access all the data at the given OneLake path in Delta Lake format. You can also create a OneLake shortcut from a Lakehouse, Data Warehouse, or query the data directly via Power BI Direct Lake mode.
+With the **OneLake availability** in your KQL database or table turned on, you can now access all the data at the given OneLake path in Delta Lake format. You can also create a OneLake shortcut from a lakehouse or warehouse, or query the data directly via Power BI Direct Lake mode.
 
 ## Adaptive behavior
 
 Eventhouse offers a robust mechanism that intelligently batches incoming data streams into one or more Parquet files, structured for analysis. Batching data streams is important when dealing with trickling data. Writing many small Parquet files into the lake can be inefficient resulting in higher costs and poor performance.
 
-Eventhouse's adaptive mechanism can delay write operations if there isn't enough data to create optimal Parquet files. This behavior ensures Parquet files are optimal in size and adhere to Delta Lake best practices. The Eventhouse adaptive mechanism ensures that the Parquet files are primed for analysis and balances the need for prompt data availability with cost and performance considerations.
+The eventhouse adaptive mechanism can delay write operations if there isn't enough data to create optimal Parquet files. This behavior ensures Parquet files are optimal in size and adhere to Delta Lake best practices. The eventhouse adaptive mechanism ensures that the Parquet files are primed for analysis and balances the need for prompt data availability with cost and performance considerations.
 
 > [!NOTE]
 >
@@ -87,7 +87,7 @@ For example, use the following command to set the delay to 5 minutes:
 > [!CAUTION]
 > Adjusting the delay to a shorter period might result in a suboptimal delta table with a large number of small files, which can lead to inefficient query performance. The resultant table in OneLake is read-only and can't be optimized after creation.
 
-You can monitor how long ago new data was added in the lake by checking your data latency using the [.show table mirroring operations command](/azure/data-explorer/kusto/management/show-table-mirroring-operations-command?context=/fabric/context/context-rti&pivots=fabric) command.
+You can monitor how long ago new data was added in the lake by checking your data latency using the [`.show table mirroring operations` command](/azure/data-explorer/kusto/management/show-table-mirroring-operations-command?context=/fabric/context/context-rti&pivots=fabric).
 
 Results are measured from the last time data was added. When *Latency* results in 00:00:00, all the data in the KQL database is available in OneLake.
 
@@ -121,23 +121,21 @@ To partition your delta tables, use the [.alter-merge table policy mirroring](/a
 
 ## Query delta tables
 
-You can use Fabric Notebook to read the OneLake data using the following code snippet.
+You can use a Fabric notebook to read the OneLake data using the following code snippet. In the code snippet, replace `<workspaceGuid>`, `<eventhouseGuid>`, and `<tableName>` with your own values.
 
-> In the code snippet, replace `<workspaceGuid>`, `<workspaceGuid>`, and `<tableName>` with your own values.
-
-  ```python
-delta_table_path = 'abfss://`<workspaceGuid>`@onelake.dfs.fabric.microsoft.com/`<eventhouseGuid>`/Tables/`<tableName>`'
+```python
+delta_table_path = 'abfss://<workspaceGuid>@onelake.dfs.fabric.microsoft.com/<eventhouseGuid>/Tables/<tableName>'
 
 df = spark.read.format("delta").load(delta_table_path)
 
 df.show()
-   ```
+```
 
 > [!NOTE]
 > For an Azure Data Explorer database, use this code:
 >
 > ```python
-> delta_table_path = 'abfss://`<workspaceName>`@onelake.dfs.fabric.microsoft.com/`<itemName>`.KustoDatabase/Tables/`<tableName>`'
+> delta_table_path = 'abfss://<workspaceName>@onelake.dfs.fabric.microsoft.com/<itemName>.KustoDatabase/Tables/<tableName>'
 > ```
 
 ## Related content
