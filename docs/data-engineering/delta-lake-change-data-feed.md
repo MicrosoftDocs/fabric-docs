@@ -19,9 +19,9 @@ When CDF is enabled on a Delta table, Delta writes change information for suppor
 
 CDF records these row-level changes:
 
-- Inserts.
-- Updates.
-- Deletes.
+- Inserts
+- Updates
+- Deletes
 
 For updates, CDF can return both the row before the update and the row after the update, which helps you understand exactly what changed between table versions.
 
@@ -31,7 +31,7 @@ Use CDF when you need to work with only the changes in a Delta table instead of 
 
 CDF is useful for these scenarios:
 
-- Incremental ETL pipelines that process only newly inserted, updated, or deleted rows.
+- Incremental extract, transform, and load (ETL) pipelines that process only newly inserted, updated, or deleted rows.
 - Change data capture (CDC) downstream patterns that publish table changes to other systems or downstream tables.
 - Audit and compliance workflows that need a record of row-level changes over time.
 - Materialized view refresh patterns where you update derived tables based on the latest source-table changes.
@@ -217,24 +217,24 @@ val changes = spark.read.format("delta")
 
 ## How batch CDF reads resolve the ending version
 
-When you read CDF changes in batch mode, a [Native execution engine](native-execution-engine-overview.md) optimized implemtation is used that can improve performance by 2-3x. This is enabled by default when both the start and end version is provided and the [Native execution engine](native-execution-engine-overview.md) is enabled.
+When you read CDF changes in batch mode, a [Native execution engine](native-execution-engine-overview.md) optimized implementation is used that can improve performance by 2-3x. The optimization is enabled by default when both the start and end version are provided and the [Native execution engine](native-execution-engine-overview.md) is enabled.
 
 ### Open-ended reads (start version only)
 
 When you specify only a starting version and omit the ending version, the behavior depends on configuration:
 
-- **Default behavior**: The ending version is resolved at execution time. Each time the query runs, it reads up to the latest table version at that moment. If you hold a reference to the DataFrame and re-evaluate it after the table changes, the results include the newer changes.
+- **Default behavior**: The ending version is resolved at execution time. Each time the query runs, it reads up to the latest table version at that moment. If you hold a reference to the DataFrame and reevaluate it after the table changes, the results include the newer changes.
 
-- **With `startOnly` optimization**: When the Spark configuration `spark.microsoft.delta.changeDataFeed.batch.staticReader.startOnly.enabled` is set to `true`, the ending version is resolved at query planning time instead of execution time. The resulting query plan is frozen with that version, which enables the same reader optimizations that can improve performance by 2–3x when the [Native execution engine](native-execution-engine-overview.md) is enabled.
+- **With `startOnly` optimization**: When the Spark configuration `spark.microsoft.delta.changeDataFeed.batch.staticReader.startOnly.enabled` is set to `true`, the ending version is resolved at query planning time instead of execution time. The query plan captures the table version at that moment. The [Native execution engine](native-execution-engine-overview.md) can then apply the same reader optimizations that improve performance by 2–3x.
 
   > [!IMPORTANT]
-  > With the `startOnly` optimization, the query plan captures the table version at the time Spark analyzes the query. If new commits arrive between analysis and execution, those changes are not included in the results. For periodic ETL pipelines this is typically fine because the next run picks up any missed versions. However, for one-shot queries or workflows that assume every change up to the moment of execution is included, this behavior can cause changes arriving in the short time between query planning and execution to be silently missed. This optimization is disabled by default.
+  > With the `startOnly` optimization, the query plan captures the table version at the time Spark analyzes the query. If new commits arrive between analysis and execution, those changes aren't included in the results. For periodic ETL pipelines, the gap is typically fine because the next run picks up any missed versions. However, for one-shot queries or workflows that assume every change up to the moment of execution is included, this behavior can cause changes arriving in the short time between query planning and execution to be silently missed. The optimization is disabled by default.
 
 ## Read change data with Structured Streaming
 
 You can also consume CDF as a streaming source using the Spark `readStream` API.
 
-On the first stream read, Spark processes the full initial snapshot of the table (all existing rows as `insert` change types) and then incrementally picks up only new changes on subsequent reads. This means you don't need to seed the downstream target separately — the first micro-batch delivers the baseline.
+On the first stream read, Spark processes the full initial snapshot of the table (all existing rows as `insert` change types) and then incrementally picks up only new changes on subsequent reads. You don't need to seed the downstream target separately—the first micro-batch delivers the baseline.
 
 ### Start a stream from the current table version
 
@@ -332,7 +332,7 @@ display(df)
 
 ### Write the stream to a downstream Delta table
 
-Use `writeStream` with a checkpoint location to maintain exactly-once processing state across restarts.
+Use `writeStream` with a checkpoint location to maintain exactly once processing state across restarts.
 
 # [Spark SQL](#tab/sparksql)
 
@@ -389,9 +389,9 @@ When you read from CDF, the result includes your table columns plus metadata col
 
 ## Understand storage impact
 
-CDF adds storage overhead because Delta writes additional files under the `_change_data` folder for tracked changes.
+CDF adds storage overhead because Delta writes extra files under the `_change_data` folder for tracked changes.
 
-Those extra files are part of the table's change history, not part of the current active table snapshot. They are also subject to `VACUUM`, so your retention strategy affects how long you can read older change records.
+Those extra files are part of the table's change history, not part of the current active table snapshot. They're also subject to `VACUUM`, so your retention strategy affects how long you can read older change records.
 
 If you run `VACUUM`, older CDF files outside the retention window can be removed along with other obsolete table files.
 

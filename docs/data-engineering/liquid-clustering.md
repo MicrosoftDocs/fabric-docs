@@ -54,7 +54,7 @@ Liquid clustering offers significant advantages over both Hive-style partitionin
 | **Metadata** | No persistent column definition | Clustering columns stored in table metadata |
 | **Multi-column layout** | Z-Order curve applied at optimize time | Z-Order for one clustering column; Hilbert curve for 2+ columns, providing optimized data locality |
 
-Liquid clustering uses Z-Order for single-column layouts and the Hilbert curve for 2+ columns—an improvement over Z-Order, which applies only the Z-Order curve for multi-dimensional clustering.Liquid clustering wraps both algorithms in an incremental, metadata-aware framework that reduces ongoing maintenance cost.
+Liquid clustering uses Z-Order for single-column layouts and the Hilbert curve for 2+ columns—an improvement over Z-Order, which applies only the Z-Order curve for multi-dimensional clustering. Liquid clustering wraps both algorithms in an incremental, metadata-aware framework that reduces ongoing maintenance cost.
 
 ## Create a liquid clustered table
 
@@ -141,7 +141,7 @@ OPTIMIZE sales FULL;
 Use `OPTIMIZE FULL` when you change clustering keys and want to rebuild Z-Cubes that don't adhere to the current clustering strategy. A **Z-Cube** is the logical unit liquid clustering uses to group files that share the same clustering columns. Data is clustered into a single Z-Cube until cluster keys change or the amount of data exceeds 100 GB.
 
 > [!TIP]
-> Starting in Fabric Runtime 2.0, the [Native execution engine](native-execution-engine-overview.md) supports performing `OPTIMIZE` on liquid clustered tables, delivering 30–50% faster multi-dimensional clustering performance. Prior runtimes fall back to regular non-accelerated Spark execution.
+> Starting in Fabric Runtime 2.0, the [Native execution engine](native-execution-engine-overview.md) supports performing `OPTIMIZE` on liquid clustered tables, delivering 30–50% faster multi-dimensional clustering performance. Prior runtimes fall back to regular nonaccelerated Spark execution.
 
 ## How liquid clustering works
 
@@ -188,7 +188,7 @@ Already well-clustered, appropriately sized files are skipped entirely.
 
 Incremental liquid clustering includes automatic overlap detection, known as **auto reclustering**, to maintain clustering quality over time. As new data arrives, it can create overlap between file value ranges, degrading data skipping effectiveness. Auto reclustering detects overlapping value ranges across files and selectively reclusters only the affected files.
 
-Auto reclustering runs automatically as part of `OPTIMIZE` whenever there's new or changed data to cluster. No manual intervention or scheduled full reclusters are required, the incremental clustering strategy maintains near-optimal clustering quality as data evolves.
+Auto reclustering runs automatically as part of `OPTIMIZE` whenever there's new or changed data to cluster. No manual intervention or scheduled full reclusters are required. The incremental clustering strategy maintains near-optimal clustering quality as data evolves.
 
 ### Revert to full rewrite behavior
 

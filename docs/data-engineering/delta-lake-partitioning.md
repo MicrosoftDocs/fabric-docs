@@ -22,12 +22,12 @@ The primary use case for partitioning in Delta Lake is **enabling concurrent wri
 
 Use partitioning when:
 
-- You have **concurrent writers** that need to update, delete, or merge into the same table without conflicting — for example, multiple pipelines processing different business units or regions simultaneously.
-- Your partition column has **low to moderate cardinality** (tens to hundreds of distinct values, not thousands). _Note: larger tables can accomodate more partitions, generally you should target for each partition to have at least 1GB of data._
-- Partition values align with your **write patterns** — each writer naturally targets a specific partition.
+- You have **concurrent writers** that need to update, delete, or merge into the same table without conflicting—for example, multiple pipelines processing different business units or regions simultaneously.
+- Your partition column has **low to moderate cardinality** (tens to hundreds of distinct values, not thousands). _Note: larger tables can accommodate more partitions. Target at least 1 GB of data in each partition._
+- Partition values align with your **write patterns**—each writer naturally targets a specific partition.
 
 > [!IMPORTANT]
-> For file skipping and read performance alone, liquid clustering is generally more effective than partitioning because it eliminates the risk of small-file issues from choosing partitioning columns with suboptimal cardinality and enables changing clustering strategy over the tables lifecycle. Choose partitioning primarily when you need to isolate concurrent writers.
+> For file skipping and read performance alone, liquid clustering is more effective than partitioning. Liquid clustering eliminates the risk of small-file issues from high-cardinality partition columns and lets you change clustering strategy over the table's lifecycle. Choose partitioning primarily when you need to isolate concurrent writers.
 
 ## Create a partitioned table
 
@@ -80,7 +80,7 @@ DeltaTable.create(spark)
 
 Partitioning is the primary mechanism in Delta Lake for avoiding conflicts between concurrent write operations. When a table is partitioned, operations that target different partitions operate on disjoint sets of files and don't conflict with each other.
 
-For example, two concurrent `MERGE INTO` operations on a table partitioned by `region` don't conflict as long as each targets a different region — provided the partition column is **explicitly included** in the merge condition:
+For example, two concurrent `MERGE INTO` operations on a table partitioned by `region` don't conflict as long as each targets a different region—provided the partition column is **explicitly included** in the merge condition:
 
 # [Spark SQL](#tab/sparksql)
 
@@ -125,14 +125,14 @@ WHEN NOT MATCHED THEN INSERT *
 
 ---
 
-Without partitioning — or without including the partition column in the operation condition — these same operations could conflict even if they logically modify different rows. The partition column must appear in the merge condition itself, not just in the source data. Without it, Delta Lake can't determine at validation time that the two operations touched disjoint file sets.
+Without partitioning—or without including the partition column in the operation condition—these same operations could conflict even if they logically modify different rows. The partition column must appear in the merge condition itself, not just in the source data. Without it, Delta Lake can't determine at validation time that the two operations touched disjoint file sets.
 
 For a complete guide to conflict types and resolution strategies, see [Concurrency control](delta-lake-concurrency-control.md).
 
 ## Common pitfalls
 
 - **High cardinality** partition columns (for example, `user_id` with millions of values) create thousands of tiny directories and files, which degrades both write and read performance.
-    - Date columns should be choosen with caution. For many tables, partitioning by a date column will result in too many small partitions. Target to have ~ 1GB of data in each partition.
+    - Date columns should be chosen with caution. For many tables, partitioning by a date column results in too many small partitions. Target at least 1 GB of data in each partition.
 - **Partition columns can't be changed** after table creation without rewriting the entire table.
 - **Small file problem** is common with streaming or frequent appends into many partitions, because each write creates at least one file per partition.
 - **Partitioning and liquid clustering are incompatible** on the same table. You must choose one strategy.

@@ -134,8 +134,8 @@ Deletion vectors are metadata structures that mark rows as deleted without immed
 
 Run `REORG` from Spark-based experiences in Fabric, such as:
 
-- Fabric notebooks.
-- Spark job definitions.
+- Fabric notebooks
+- Spark job definitions
 
 Don't run `REORG` from the SQL analytics endpoint. `REORG` is a Spark SQL maintenance command for Delta tables.
 

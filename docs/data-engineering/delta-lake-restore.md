@@ -19,10 +19,10 @@ Use `RESTORE` when you need to recover quickly from a bad change without manuall
 
 You can restore a table when you need to:
 
-- Recover from accidental deletes or updates.
-- Undo a bad `MERGE`, overwrite, or append operation.
-- Roll back a schema change that breaks downstream workloads.
-- Recover from corruption introduced by a faulty write or pipeline step.
+- Recover from accidental deletes or updates
+- Undo a bad `MERGE`, overwrite, or append operation
+- Roll back a schema change that breaks downstream workloads
+- Recover from corruption introduced by a faulty write or pipeline step
 
 Unlike a read-only historical query, `RESTORE` changes the live table state that new readers see.
 

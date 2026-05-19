@@ -19,14 +19,14 @@ Both commands are read-only inspection commands. They don't modify table data, m
 
 Typical metadata includes:
 
-- Table format.
-- Table identifier and name.
-- OneLake location.
-- Creation time and last modified time.
-- Partition columns.
-- File count and total size in bytes.
-- Table properties.
-- Minimum reader and writer protocol versions.
+- Table format
+- Table identifier and name
+- OneLake location
+- Creation time and last modified time
+- Partition columns
+- File count and total size in bytes
+- Table properties
+- Minimum reader and writer protocol versions
 
 ### Run DESCRIBE DETAIL
 

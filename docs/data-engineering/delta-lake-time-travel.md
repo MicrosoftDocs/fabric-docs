@@ -17,11 +17,11 @@ Time travel is read-only. It doesn't roll back the table or create a new current
 
 Use time travel when you need to:
 
-- Audit what data looked like at a previous point in time.
-- Debug a pipeline issue by checking the table before or after a write.
-- Run reproducible analytics against a known table snapshot.
-- Compare the current table state with an older state.
-- Recover data that was accidentally deleted by reading an older version before you decide whether to restore it.
+- Audit what data looked like at a previous point in time
+- Debug a pipeline issue by checking the table before or after a write
+- Run reproducible analytics against a known table snapshot
+- Compare the current table state with an older state
+- Recover data that was accidentally deleted by reading an older version before you decide whether to restore it
 
 ## Use SQL syntax
 
@@ -138,8 +138,8 @@ For more information, see [RESTORE](delta-lake-restore.md).
 
 Time travel works in these Fabric experiences:
 
-- Fabric notebooks by using Spark SQL or PySpark.
-- Spark job definitions that use Spark SQL or PySpark.
+- Fabric notebooks by using Spark SQL or PySpark
+- Spark job definitions that use Spark SQL or PySpark
 - The SQL analytics endpoint, see [Time Travel in Fabric Warehouse](../data-warehouse/time-travel.md)
 
 Use Spark experiences when you need full Delta Lake APIs. The SQL analytics endpoint is best for supported query scenarios, not for Spark-only maintenance operations.

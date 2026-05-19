@@ -30,10 +30,10 @@ Because `VACUUM` permanently deletes files from OneLake, use it carefully when y
 
 Run `VACUUM` when you want to:
 
-- Reduce storage cost by deleting obsolete files from OneLake.
-- Reclaim space after updates, deletes, and merge operations.
-- Clean up pre-compaction files after `OPTIMIZE` creates replacement files.
-- Keep long-running production tables from accumulating unnecessary stale data files.
+- Reduce storage cost by deleting obsolete files from OneLake
+- Reclaim space after updates, deletes, and merge operations
+- Clean up pre-compaction files after `OPTIMIZE` creates replacement files
+- Keep long-running production tables from accumulating unnecessary stale data files
 
 `VACUUM` doesn't improve query performance by itself in the same way that compaction or file layout optimizations do. Its main purpose is storage cleanup.
 
@@ -41,9 +41,9 @@ Run `VACUUM` when you want to:
 
 `VACUUM` is a Spark command in Fabric. Run it in places that use the Spark engine, such as:
 
-- Fabric notebooks.
-- Spark job definitions.
-- The Lakehouse **Maintenance** UI and pipeline-based maintenance workflows.
+- Fabric notebooks
+- Spark job definitions
+- The Lakehouse **Maintenance** UI and pipeline-based maintenance workflows
 
 Don't run `VACUUM` in the SQL analytics endpoint or the Warehouse SQL editor. Those experiences don't support Spark Delta maintenance commands.
 

@@ -94,7 +94,7 @@ items:
         - name: Liquid clustering
           href: liquid-clustering.md
         - name: Z-Order
-          href: delta-lake-zorder.md
+          href: delta-lake-z-order.md
         - name: Partitioning
           href: delta-lake-partitioning.md
     - name: Delta commands and operations

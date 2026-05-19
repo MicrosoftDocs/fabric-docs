@@ -46,9 +46,9 @@ Deletion vectors improve write efficiency for workloads with frequent small row-
 
 They help because they:
 
-- Speed up `DELETE`, `UPDATE`, and `MERGE` operations that touch relatively few rows.
-- Reduce write amplification because Delta Lake doesn't need to rewrite an entire Parquet file for every small change.
-- Lower I/O for large files when only a small subset of rows changes.
+- Speed up `DELETE`, `UPDATE`, and `MERGE` operations that touch relatively few rows
+- Reduce write amplification because Delta Lake doesn't need to rewrite an entire Parquet file for every small change
+- Lower I/O for large files when only a small subset of rows changes
 
 This behavior is often a good fit for slowly changing dimensions, upsert pipelines, cleanup jobs, and operational tables that receive frequent corrections.
 

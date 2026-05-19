@@ -17,9 +17,9 @@ Cloning is useful when you want a safe copy of a table for development, validati
 
 A clone creates a target Delta table from a source Delta table snapshot. You can:
 
-- Clone the latest version of the source table.
-- Clone a specific table version by using `VERSION AS OF`.
-- Clone a specific point in time by using `TIMESTAMP AS OF`.
+- Clone the latest version of the source table
+- Clone a specific table version by using `VERSION AS OF`
+- Clone a specific point in time by using `TIMESTAMP AS OF`
 
 Because the clone is based on a snapshot, it doesn't track later changes in the source table automatically.
 
@@ -29,11 +29,11 @@ A shallow clone creates a new Delta table that references the source table's exi
 
 Use a shallow clone when you need a fast, storage-efficient copy for short-lived work:
 
-- Create a sandbox for development.
-- Test schema or transformation changes without risk.
-- Run experiments against production-like data.
-- Create temporary copies for troubleshooting.
-- Create point-in-time snapshots for validation.
+- Create a sandbox for development
+- Test schema or transformation changes without risk
+- Run experiments against production-like data
+- Create temporary copies for troubleshooting
+- Create point-in-time snapshots for validation
 
 A shallow clone is storage-efficient because the source and clone share the same OneLake data files. After the clone exists, updates that you make to the clone create new files for the clone and don't change the source table.
 
@@ -152,11 +152,11 @@ SHALLOW CLONE operations.sales_orders""")
 
 Use Delta table clone when you need to:
 
-- Create sandbox environments for development.
-- Test schema changes without risk to the source table.
-- Validate transformations against a production snapshot.
-- Create a point-in-time copy for debugging or auditing.
-- Provide a read-only snapshot for a downstream team.
+- Create sandbox environments for development
+- Test schema changes without risk to the source table
+- Validate transformations against a production snapshot
+- Create a point-in-time copy for debugging or auditing
+- Provide a read-only snapshot for a downstream team
 
 ## OneLake considerations
 

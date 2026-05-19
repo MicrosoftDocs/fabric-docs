@@ -37,7 +37,7 @@ In this case, 4 of 5 files are skipped — 80% less data scanned — because the
 Delta Lake collects file statistics automatically with the following defaults:
 
 - Only the **first 32 columns** (by ordinal position) have statistics collected.
-- Statistics tracked per column per file: **min**, **max**, and **null count**.
+- Statistics tracked per column per file: **min**, **max**, and **null count**
 - Collecting statistics on long string columns is costly and adds write overhead, so positioning matters.
 
 The column limit is controlled by the `delta.dataSkippingNumIndexedCols` table property. Columns beyond that threshold don't get file-level statistics and can't participate in file skipping.
