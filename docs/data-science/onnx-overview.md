@@ -76,18 +76,14 @@ Use the `VectorAssembler` to combine feature columns, then train a `LightGBMClas
 from pyspark.ml.feature import VectorAssembler
 from synapse.ml.lightgbm import LightGBMClassifier
 
-# Rename feature columns to avoid duplicate names after LightGBM sanitization
-original_feature_cols = df.columns[1:]
-feature_cols = [f"feature_{i}" for i in range(len(original_feature_cols))]
-col_mapping = dict(zip(original_feature_cols, feature_cols))
-df_renamed = df.withColumnsRenamed(col_mapping)
-
+feature_cols = df.columns[1:]
 featurizer = VectorAssembler(inputCols=feature_cols, outputCol="features")
 
-train_data = featurizer.transform(df_renamed)["Bankrupt?", "features"]
+train_data = featurizer.transform(df)["Bankrupt?", "features"]
 
 model = (
     LightGBMClassifier(featuresCol="features", labelCol="Bankrupt?")
+    .setDataTransferMode("bulk")
     .setEarlyStoppingRound(300)
     .setLambdaL1(0.5)
     .setNumIterations(1000)
@@ -111,7 +107,7 @@ Verify the model trained successfully:
 
 ```python
 print(f"Model type: {type(model).__name__}")
-print(f"Number of features: {model.numFeatures}")
+print(f"Number of features: {len(feature_cols)}")
 ```
 
 ## Convert the model to ONNX format
@@ -164,12 +160,7 @@ print("Model inputs:" + str(onnx_ml.getModelInputs()))
 print("Model outputs:" + str(onnx_ml.getModelOutputs()))
 ```
 
-Expected output:
-
-```output
-Model inputs:{'input': NodeInfo(name=input,info=TensorInfo(shape=[-1,95], type=FLOAT))}
-Model outputs:{'label': ..., 'probabilities': ...}
-```
+The output lists the model's input and output nodes. 
 
 Configure the model by mapping input and output columns. The `FeedDict` maps ONNX model input names to DataFrame column names. The `FetchDict` maps desired output column names to ONNX model output names:
 
@@ -230,12 +221,7 @@ assert "prediction" in results.columns, "Missing prediction column"
 assert "probability" in results.columns, "Missing probability column"
 ```
 
-Expected output:
-
-```output
-Result count: 10000
-Output columns: ['features', 'prediction', 'probability']
-```
+The output confirms that all test rows were scored and the result DataFrame contains the `features`, `prediction`, and `probability` columns.
 
 ## Troubleshooting
 
@@ -245,6 +231,7 @@ Output columns: ['features', 'prediction', 'probability']
 | `RuntimeError: Operator LgbmClassifier got an input with a wrong type` | Wrong import path for `FloatTensorType`. | Use `from onnxmltools.convert.common.data_types import FloatTensorType` instead of importing from `onnxconverter_common.data_types`. |
 | `ModuleNotFoundError: No module named 'onnx.mapping'` | Incompatible `onnxmltools` version 1.7.0 or earlier with the current `onnx` package. | Run `%pip install onnxmltools --upgrade --quiet` to install a compatible version. |
 | `ONNX conversion returns empty payload` | Booster model string extraction failed. | Verify that `model.getLightGBMBooster().modelStr().get()` returns a non-empty string before conversion. |
+| `Feature (Column_) appears more than one time` during `model.fit()` | Dataset columns with special characters produce duplicate names after LightGBM sanitization. | Add `.setDataTransferMode("bulk")` to the `LightGBMClassifier` configuration. Bulk mode uses Apache Arrow and avoids the column name sanitization issue. |
 | `AssertionError` on SparkContext in `ONNXModel()` | Spark session isn't initialized. | Run this code in a Fabric notebook with a lakehouse attached. The `spark` variable is pre-initialized by the runtime. |
 
 ## Clean up resources
