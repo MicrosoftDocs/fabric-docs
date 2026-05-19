@@ -12,7 +12,9 @@ ai-usage: ai-assisted
 
 # ONNX inference on Spark
 
-In this article, you train a LightGBM model with SynapseML, convert it to [ONNX](https://onnx.ai/) (Open Neural Network Exchange) format, and then use the ONNX model to perform inference on Spark in Microsoft Fabric.
+[ONNX](https://onnx.ai/) (Open Neural Network Exchange) provides a portable, hardware-optimized runtime for machine learning models. By converting a model to ONNX format, you can run batch inference on Spark with lower latency and without depending on the original training framework at prediction time.
+
+In this article, you train a LightGBM model with SynapseML, convert it to ONNX format, and then use the ONNX model to perform inference on Spark in Microsoft Fabric.
 
 ## Prerequisites
 
