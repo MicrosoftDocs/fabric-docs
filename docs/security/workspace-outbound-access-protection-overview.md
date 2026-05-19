@@ -65,7 +65,7 @@ The following table summarizes the supported workloads and item types that can b
 | Real-Time Intelligence | Data connection rules | <ul><li>Eventhouse</li><li>Eventstream</li></ul> | [Workspace outbound access protection for Eventhouse](workspace-outbound-access-protection-eventhouse.md) <br>[Workspace outbound access protection for Eventstream](workspace-outbound-access-protection-event-stream.md) |
 | Mirrored databases | Data connection rules | Microsoft Fabric mirrored databases from:<ul><li>Azure SQL Database</li><li>Snowflake</li><li>Mirrored Database</li><li>Azure Cosmos DB</li><li>Azure SQL Managed Instance</li><li>Azure Database for PostgreSQL</li><li>SQL Server</li><li>Oracle</li><li>Google Big Query</li><li>SAP</li><li>Azure Database for MySQL</li></ul> | [Workspace outbound access protection for mirrored databases](workspace-outbound-access-protection-mirrored-databases.md) |
 | OneLake | Managed private endpoints | <ul><li>OneLake shortcuts</li></ul> | [Workspace outbound access protection for OneLake](workspace-outbound-access-protection-onelake.md) |
-| Power BI (preview) | Data connection rules | <ul><li>Semantic models</li></ul> | [Workspace outbound access protection for semantic models](workspace-outbound-access-protection-semantic-models.md) |
+| Power BI | Data connection rules | <ul><li>Semantic models</li></ul> | [Workspace outbound access protection for semantic models](workspace-outbound-access-protection-semantic-models.md) |
 
 ## Considerations and limitations
 
