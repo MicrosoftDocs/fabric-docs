@@ -16,26 +16,12 @@ This article shows how to perform a text classification task with two methods. O
 
 The task predicts whether a customer review of a book sold on Amazon is good (rating > 3) or bad, based on the review text. You train **LogisticRegression** learners with different hyperparameters, and then choose the best model.
 
-## Quick start
-
-| Step | Description | Estimated time |
-|------|-------------|----------------|
-| 1 | Set up prerequisites and attach lakehouse | 5 minutes |
-| 2 | Load and explore the data | 1 minute |
-| 3 | Extract text features | 1 minute |
-| 4 | Classify with pyspark (manual featurization) | 3 minutes |
-| 5 | Classify with SynapseML (automatic featurization) | 2 minutes |
-
 ## Prerequisites
 
-Before you start, make sure you have the following:
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-| Requirement | Details | How to verify |
-|---|---|---|
-| Microsoft Fabric workspace | A workspace backed by a Fabric capacity (F2 or higher, or trial capacity) | Open [Fabric portal](https://app.fabric.microsoft.com) and confirm your workspace appears |
-| Fabric notebook | Create or open a notebook in your workspace | Select **New** > **Notebook** in your workspace |
-| Attached lakehouse | The notebook must be attached to a lakehouse | In the notebook, select **Add** on the left pane to attach an existing lakehouse or create a new one |
-| Fabric Runtime 1.2+ | Runtime includes PySpark, SynapseML, and NumPy preinstalled | In the notebook, select **Environment** in the ribbon to verify the runtime version |
+* Create a [notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
+* Attach your notebook to a lakehouse. In the notebook, select **Add** on the left pane to attach an existing lakehouse or create a new one.
 
 > [!NOTE]
 > All libraries used in this article (`pyspark`, `synapseml`, `numpy`) are preinstalled in the Fabric Spark runtime. You don't need to install any packages.
@@ -51,19 +37,6 @@ rawData = spark.read.parquet(
 rawData.show(5)
 ```
 
-**Expected output:**
-
-```output
-+--------------------+------+
-|                text|rating|
-+--------------------+------+
-|One of the } } } ...|   4.0|
-|This is a MDI too...|   3.0|
-|...                 |   ...|
-+--------------------+------+
-only showing top 5 rows
-```
-
 Verify that the dataset loaded correctly:
 
 ```python
@@ -72,14 +45,6 @@ print(f"Columns: {rawData.columns}")
 assert rawData.count() == 10000, "Expected 10,000 rows"
 assert set(rawData.columns) == {"text", "rating"}, "Expected columns: text, rating"
 print("Data loaded successfully")
-```
-
-**Expected output:**
-
-```output
-Row count: 10000
-Columns: ['text', 'rating']
-Data loaded successfully
 ```
 
 ## Extract features and process data
@@ -150,21 +115,6 @@ assert "rating" not in data.columns, "rating column should be dropped"
 print("Feature extraction successful")
 ```
 
-**Expected output:**
-
-```output
-+--------------------+----------+---------+-----+
-|                text|wordLength|wordCount|label|
-+--------------------+----------+---------+-----+
-|One of the } } } ...|      3.72|       30| true|
-|This is a MDI too...|      4.25|       12|false|
-|...                 |       ...|      ...|  ...|
-+--------------------+----------+---------+-----+
-
-Columns: ['text', 'wordLength', 'wordCount', 'label']
-Feature extraction successful
-```
-
 ## Classify using pyspark
 
 To choose the best LogisticRegression classifier using the `pyspark` library, you must explicitly perform these steps:
@@ -213,14 +163,6 @@ assert processedData.first()["features"].size == 10002, "Expected 10000 text + 2
 print("Featurization successful")
 ```
 
-**Expected output:**
-
-```output
-Feature vector size: 10002
-Label values: [0, 1]
-Featurization successful
-```
-
 ### Train and evaluate models
 
 ```python
@@ -265,15 +207,6 @@ print(f"Best regularization parameter: {lrHyperParams[metrics.index(bestMetric)]
 print(f"Test AUC scores: {[f'{m:.4f}' for m in metrics]}")
 assert 0.5 < validationAUC <= 1.0, f"AUC {validationAUC} is outside expected range (0.5, 1.0]"
 print(f"pyspark classification complete - AUC: {validationAUC:.4f}")
-```
-
-**Expected output (approximate values):**
-
-```output
-Number of models trained: 4
-Best regularization parameter: 0.05
-Test AUC scores: ['0.7521', '0.7465', '0.7280', '0.6876']
-pyspark classification complete - AUC: 0.7480
 ```
 
 > [!NOTE]
@@ -324,14 +257,6 @@ auc_value = metrics.first()["AUC"]
 print(f"Available metrics: {metrics.columns}")
 assert 0.5 < auc_value <= 1.0, f"AUC {auc_value} is outside expected range (0.5, 1.0]"
 print(f"SynapseML classification complete - AUC: {auc_value:.4f}")
-```
-
-**Expected output (approximate values):**
-
-```output
-Best model's AUC on validation set = 74.80%
-Available metrics: ['evaluation_type', 'confusion_matrix', 'accuracy', 'precision', 'recall', 'AUC']
-SynapseML classification complete - AUC: 0.7480
 ```
 
 > [!NOTE]
