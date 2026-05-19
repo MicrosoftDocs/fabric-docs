@@ -50,14 +50,15 @@ In this step, you create the eventstream that subscribes to your event hub. You 
 
 1. Give the agent this prompt, replacing the placeholders with values from your event hub:
 
-    > [!TIP]
-    > Create a Fabric eventstream in my workspace called `WidgetMachineTelemetry` that ingests from this Azure event hub:
-    >
-    > - Namespace: `<your namespace FQDN>`
-    > - Hub name: `<your hub name>`
-    > - Connection string: `<your Listen+Send connection string>`
-    >
-    > When you're done, give me a direct portal link to the eventstream item so I can verify it.
+    ```text
+    Create a Fabric eventstream in my workspace called `WidgetMachineTelemetry` that ingests from this Azure event hub:
+
+    - Namespace: `<your namespace FQDN>`
+    - Hub name: `<your hub name>`
+    - Connection string: `<your Listen+Send connection string>`
+
+    When you're done, give me a direct portal link to the eventstream item so I can verify it.
+    ```
 
 1. The agent invokes the eventstream authoring skill. It creates the eventstream item, configures the event hub as a source, and returns a clickable URL to the item in the Fabric portal. You don't need a destination—Activator subscribes directly to the stream.
 
@@ -73,10 +74,11 @@ In this step, you create the User Data Function that your Activator rule calls. 
 
 1. Give the agent this prompt:
 
-    > [!TIP]
-    > Create a Fabric User Data Function called `MaintenanceDispatcher` in my workspace, written in Python, with a function `file_repair_job(machine_id, plant_id, temperature_c)` that sends those values as JSON in a POST request to `https://contoso.com/maintenance/fileRepairJob` and returns the parsed response.
-    >
-    > When you're done, give me a direct portal link to the UDF item so I can verify it.
+    ```text
+    Create a Fabric User Data Function called `MaintenanceDispatcher` in my workspace, written in Python, with a function `file_repair_job(machine_id, plant_id, temperature_c)` that sends those values as JSON in a POST request to `https://contoso.com/maintenance/fileRepairJob` and returns the parsed response.
+
+    When you're done, give me a direct portal link to the UDF item so I can verify it.
+    ```
 
 1. The agent invokes the Fabric UDF authoring skill. It scaffolds a Python UDF item, implements `file_repair_job` with `httpx`, publishes the UDF, confirms the function is callable, and returns a clickable URL to the item.
 
@@ -95,10 +97,11 @@ In this step, you create the Activator rule that watches the eventstream and cal
 
 1. Give the agent this prompt:
 
-    > [!TIP]
-    > Create an Activator rule in my workspace subscribed to the `WidgetMachineTelemetry` eventstream, that triggers my `file_repair_job` UDF when a machine's temperature stays above 50°C for 5 minutes.
-    >
-    > When you're done, give me a direct portal link to the rule so I can verify it.
+    ```text
+    Create an Activator rule in my workspace subscribed to the `WidgetMachineTelemetry` eventstream, that triggers my `file_repair_job` UDF when a machine's temperature stays above 50°C for 5 minutes.
+
+    When you're done, give me a direct portal link to the rule so I can verify it.
+    ```
 
 1. The agent invokes the Activator authoring skill and creates the Activator item. The agent groups the rule by `machine_id`, builds the sustained-threshold detection, and configures the action to call your UDF with `machine_id`, `plant_id`, and the current temperature. The agent then returns a clickable URL to the rule.
 
