@@ -63,7 +63,7 @@ You can turn on **OneLake availability** for either a KQL database or table.
 
 When you turn on **OneLake availability** in your KQL database or table, you can access all the data at the given OneLake path in Delta Lake format. You can also create a OneLake shortcut from a lakehouse or warehouse, or query the data directly via Power BI Direct Lake mode.
 
-## Adaptive behavior
+## Adaptive behavior for parquet file batching
 
 An eventhouse intelligently batches incoming data streams into one or more Parquet files structured for analysis. Batching data streams is important when dealing with trickling data, because writing many small Parquet files into the lake can be inefficient. This inefficiency results in higher costs and poor query performance.
 
