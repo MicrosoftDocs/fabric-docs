@@ -73,6 +73,19 @@ The `VORDER` clause results in the files scoped for compaction having the V-Orde
 OPTIMIZE dbo.table_name VORDER
 ```
 
+You can combine Z-Order and V-Order in a single command. Spark applies the operations in this order: bin compaction → Z-Order → V-Order.
+
+```sql
+OPTIMIZE dbo.table_name ZORDER BY (column1, column2) VORDER
+```
+
+V-Order behavior during `OPTIMIZE` depends on how you invoke the command:
+
+| Invocation | Behavior |
+|---|---|
+| `OPTIMIZE table VORDER` | Forces V-Order on rewritten files, regardless of session or table settings. |
+| `OPTIMIZE table` (no `VORDER` keyword) | Inherits V-Order behavior from `TBLPROPERTIES("delta.parquet.vorder.enabled")` if set, otherwise falls back to the session config `spark.sql.parquet.vorder.default`. |
+
 #### `OPTIMIZE` with liquid clustering
 
 Liquid clustering is specified as a table option; see [enable liquid clustering](https://docs.delta.io/delta-clustering/#enable-liquid-clustering) for details. When liquid clustering is enabled, `OPTIMIZE` performs the physical rewrite that applies the clustering policy.
@@ -249,6 +262,24 @@ Use these recommendations to balance write cost, read performance, and maintenan
 - **Enable fast optimize** to reduce write amplification and make `OPTIMIZE` more idempotent.
 - **Enable file-level compaction targets** to reduce unnecessary recompaction as target file sizes increase over time.
 - **Use optimize write in suitable ingestion paths** because pre-write compaction is often less costly than post-write compaction. For guidance, see [Optimize write](./tune-file-size.md#optimize-write).
+
+## OPTIMIZE output metrics
+
+`OPTIMIZE` returns operation metrics that summarize what was rewritten. You can also view these metrics later in Delta table history via `DESCRIBE HISTORY`. Typical metric fields include:
+
+| Metric | Description |
+|--------|-------------|
+| `numFilesAdded` | Number of new compacted files written. |
+| `numFilesRemoved` | Number of small files replaced by compaction. |
+| `numAddedBytes` | Total bytes in the new compacted files. |
+| `numRemovedBytes` | Total bytes in the files that were replaced. |
+| `minFileSize` | Smallest file size after compaction. |
+| `p25FileSize` | 25th percentile file size after compaction. |
+| `p50FileSize` | Median file size after compaction. |
+| `p75FileSize` | 75th percentile file size after compaction. |
+| `maxFileSize` | Largest file size after compaction. |
+
+These metrics help you confirm that compaction reduced file counts and produced healthier file sizes.
 
 ## Related content
 

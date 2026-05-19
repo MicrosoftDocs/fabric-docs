@@ -87,22 +87,54 @@ items:
   items:
     - name: Lakehouse and Delta tables
       href: lakehouse-and-delta-tables.md
-    - name: Data layout
+    - name: Table maintenance overview
+      href: delta-lake-table-maintenance.md
+    - name: Table layout
       items:
-        - name: Liquid clustering
-          href: liquid-clustering.md
-        - name: Delta optimization and V-Order
+        - name: V-Order
           href: delta-optimization-and-v-order.md
+        - name: Liquid clustering
+          href: native-execution-engine-z-order-liquid-clustering.md
         - name: Table compaction
           href: table-compaction.md
         - name: Tune file size
           href: tune-file-size.md
+    - name: Delta commands and operations
+      items:
+        - name: OPTIMIZE
+          href: table-compaction.md
+        - name: VACUUM
+          href: delta-lake-vacuum.md
+        - name: REORG
+          href: delta-lake-reorg.md
+        - name: Clone tables
+          href: delta-lake-clone.md
+        - name: DESCRIBE DETAIL and HISTORY
+          href: delta-lake-describe.md
+        - name: RESTORE
+          href: delta-lake-restore.md
+    - name: Delta features
+      items:
+        - name: Time travel
+          href: delta-lake-time-travel.md
+        - name: Change data feed
+          href: delta-lake-change-data-feed.md
+        - name: Schema evolution
+          href: delta-lake-schema-evolution.md
+        - name: Deletion vectors
+          href: delta-lake-deletion-vectors.md
+        - name: Low-Shuffle Merge
+          href: low-shuffle-merge.md
+    - name: Performance and optimization
+      items:
+        - name: File skipping
+          href: delta-lake-file-skipping.md
         - name: Automated statistics for Delta tables
           href: automated-table-statistics.md
-    - name: Optimization and performance
-      items:
         - name: Delta driver mode snapshot
           href: driver-mode-snapshot.md
+        - name: Intelligent cache
+          href: intelligent-cache.md
 - name: Notebooks
   items:
   - name: Get started and authoring
@@ -314,8 +346,6 @@ items:
     items:
     - name: Native execution engine overview
       href: native-execution-engine-overview.md
-    - name: Z-Order and liquid clustering support
-      href: native-execution-engine-z-order-liquid-clustering.md
   - name: Spark job definition (SJD)
     items:
     - name: What is a Spark job definition?
@@ -426,8 +456,6 @@ items:
       href: spark-odbc-driver.md  
     - name: ADO.NET driver for Fabric Data Engineering
       href: spark-adonet-driver.md    
-  - name: Intelligent cache
-    href: intelligent-cache.md
   - name: Livy API
     items:
       - name: What is the Livy API?
