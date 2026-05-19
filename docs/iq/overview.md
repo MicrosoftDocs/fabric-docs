@@ -1,6 +1,6 @@
 ---
-title: What is Fabric IQ (preview)?
-description: Learn about the purpose and item components of the Fabric IQ (preview) workload in Microsoft Fabric.
+title: What is Fabric IQ?
+description: Learn about Fabric IQ, part of Microsoft IQ and a workload in Microsoft Fabric.
 ms.date: 05/18/2026
 ms.topic: overview
 ai-usage: ai-assisted
