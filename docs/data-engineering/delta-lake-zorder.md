@@ -9,7 +9,7 @@ ai-usage: ai-assisted
 
 # Z-Order for Delta tables
 
-Z-Order is a data layout technique that co-locates related data in the same files by applying a Z-Order (Morton) space-filling curve across one or more columns. This tightens the min/max ranges stored in file-level statistics, which improves [file skipping](delta-lake-file-skipping.md) when queries filter on those columns.
+Z-Order is a data layout technique that colocates related data in the same files by applying a Z-Order (Morton) space-filling curve across one or more columns. The technique tightens the min/max ranges stored in file-level statistics, which improves [file skipping](delta-lake-file-skipping.md) when queries filter on those columns.
 
 > [!TIP]
 > For most workloads starting in Fabric Runtime 2.0, **liquid clustering is the recommended data layout strategy**. It offers flexible column selection, incremental optimization, and no small-file penalties from high-cardinality columns. Use Z-Order only when you have an established workflow on an older runtime or don't need the flexibility of liquid clustering.
@@ -26,7 +26,7 @@ Use Z-Order when:
 
 ## Apply Z-Order
 
-Z-Order is applied as part of the `OPTIMIZE` command. Unlike liquid clustering, you specify the columns directly in the `OPTIMIZE` statement each time you run it — the columns aren't stored in table metadata.
+Z-Order is applied as part of the `OPTIMIZE` command. Unlike liquid clustering, you specify the columns directly in the `OPTIMIZE` statement each time you run it—the columns aren't stored in table metadata.
 
 # [Spark SQL](#tab/sparksql)
 
@@ -54,11 +54,11 @@ deltaTable.optimize().executeZOrderBy("order_date", "region")
 ---
 
 > [!TIP]
-> Starting in Fabric Runtime 2.0, the [Native execution engine](native-execution-engine-overview.md) supports performing `OPTIMIZE` with `ZORDER` specified, delivering 30–50% faster multi-dimensional clustering performance. Prior runtimes fall back to regular Spark JVM execution. 
+> Starting in Fabric Runtime 2.0, the [Native execution engine](native-execution-engine-overview.md) supports performing `OPTIMIZE` with `ZORDER` specified, delivering 30–50% faster multi-dimensional clustering performance. Prior runtimes fall back to regular non-accelerated Spark execution.
 
 ## Scope Z-Order with a WHERE predicate
 
-You can add a `WHERE` clause to limit which files `OPTIMIZE ZORDER BY` rewrites. Only files containing rows that match the predicate are candidates for compaction and Z-Order layout. This is useful for incremental maintenance — for example, Z-Ordering only the most recent data after an ingestion run.
+You can add a `WHERE` clause to limit which files `OPTIMIZE ZORDER BY` rewrites. Only files containing rows that match the predicate are candidates for compaction and Z-Order layout. The `WHERE` clause is useful for incremental maintenance, for example, Z-Ordering only the most recent data after an ingestion run.
 
 # [Spark SQL](#tab/sparksql)
 
@@ -94,7 +94,7 @@ Using a `WHERE` predicate reduces the amount of data rewritten, which lowers com
 
 ## Z-Order with partitioning
 
-Z-Order and partitioning can be combined. When both are used, `OPTIMIZE ZORDER BY` applies the Z-Order layout within each partition independently. This is useful when you need partitioning for [concurrent writer isolation](delta-lake-partitioning.md#partitioning-and-concurrent-writes) and Z-Order for file skipping on additional columns.
+Z-Order and partitioning can be combined. When both are used, `OPTIMIZE ZORDER BY` applies the Z-Order layout within each partition independently. The combination is useful when you need partitioning for [concurrent writer isolation](delta-lake-partitioning.md#partitioning-and-concurrent-writes) and Z-Order for file skipping on other columns.
 
 # [Spark SQL](#tab/sparksql)
 
@@ -133,10 +133,10 @@ deltaTable.optimize().executeZOrderBy("order_date")
 
 | Aspect | Z-Order | Liquid clustering |
 |---|---|---|
-| **Column changes** | Must re-specify on each `OPTIMIZE` | `ALTER TABLE CLUSTER BY` persists definition |
-| **Incremental mode** | No — full rewrite each run | Yes (Runtime 2.0+) |
+| **Column changes** | Must respecify on each `OPTIMIZE` | `ALTER TABLE CLUSTER BY` persists definition |
+| **Incremental mode** | No. Full rewrite each run | Yes (Runtime 2.0+) |
 | **Column storage** | Not persisted in metadata | Stored in table metadata |
-| **Curve algorithm** | Z-Order curve | Z-Order (1 column), Hilbert (2+ columns) |
+| **Curve algorithm** | Z-Order curve | Z-Order (one column), Hilbert (2+ columns) |
 | **Runtime requirement** | All runtimes | Runtime 1.2+ (incremental in 2.0+) |
 
 ## Related content
