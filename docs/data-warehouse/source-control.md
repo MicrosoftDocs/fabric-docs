@@ -2,7 +2,7 @@
 title: "Source Control with Fabric Data Warehouse (Preview)"
 description: "Learn how to use source control with Microsoft Fabric Warehouse."
 ms.reviewer: salilkanade, pvenkat
-ms.date: 04/10/2026
+ms.date: 05/19/2026
 ms.topic: concept-article
 ---
 
@@ -50,6 +50,8 @@ The following image is an example of the file structure of each warehouse item i
 When you commit the warehouse item to the Git repo, the warehouse is converted to a source code format, as a SQL database project. A SQL project is a local representation of SQL objects that comprise the schema for a single database, such as tables, stored procedures, or functions. The folder structure of the database objects is organized by **Schema/Object Type**. Each object in the warehouse is represented with a .sql file that contains its data definition language (DDL) definition. Warehouse table data and [SQL security features](security.md) aren't included in the SQL database project.
 
 Shared queries are also committed to the repo and inherit the name that they are saved as.
+
+> For workspaces with source control enabled, any schema changes made through external tools (for example, executing queries in SSMS) will appear as uncommitted changes in the Fabric Warehouse. Users must review and commit these changes through the Fabric workspace Source Control UX.
 
 ## Deployment pipelines
 
