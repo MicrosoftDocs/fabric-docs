@@ -82,4 +82,4 @@ After the analysis completes, review the detected anomalies.
 
 > [!div class="nextstepaction"]
 > [Real-Time Intelligence tutorial part 8: Create a map using geospatial data](tutorial-8-create-map.md)
-```
+``
