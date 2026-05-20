@@ -1,5 +1,5 @@
 ---
-title: Build a table app using PowerTable by entering data manually.
+title: Build a Table App Using PowerTable by Entering Data Manually
 description: Learn how to use PowerTable to create a collaborative table app with live synchronization by entering data manually.
 ms.date: 04/10/2026
 ms.topic: how-to

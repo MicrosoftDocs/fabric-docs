@@ -35,6 +35,9 @@ Mashup Exception Error: Couldn't refresh the entity because of an issue with the
 > [!NOTE]
 > The dataflow engine uses an outbound HTTPS (port 443) endpoint to write data into a Lakehouse. However, reading data from the Lakehouse requires the TDS protocol (TCP over port 1433). This explains why the first query might succeed, while a query referencing it could fail, even if both Lakehouses are in the same OneLake instance.
 
+> [!NOTE]
+> It is important to note that many proxy services are designed only for generic TCP, HTTP, or TLS traffic, and do not support TDS protocol.
+
 ## Troubleshooting
 
 To troubleshoot, review the error details for the failed table or activity. These details provide information about the encountered error.
