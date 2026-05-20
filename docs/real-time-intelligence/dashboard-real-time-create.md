@@ -159,7 +159,7 @@ Dashboard tiles use Kusto Query Language (KQL) queries to fetch data and generat
 
 You can switch between the two options at any time.
 
-:::image type="content" source="media/real-time-dashboard/tile-editing-panes.png" alt-text="Screenshot of the three panes in the tile editing window: Explorer, Run query, and Copilot.":::
+:::image type="content" source="media/real-time-dashboard/tile-editing-panes.png" alt-text="Screenshot of the three panes in the tile editing window: Explorer, Run query, and Copilot." lightbox = "media/real-time-dashboard/tile-editing-panes.png":::
 
 ### [Use Copilot to add/edit tile (preview)](#tab/new-tile-copilot)
 
