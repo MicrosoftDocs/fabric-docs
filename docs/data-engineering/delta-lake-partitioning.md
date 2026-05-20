@@ -153,7 +153,7 @@ For a complete guide to conflict types and resolution strategies, see [Concurren
 
 - [Concurrency control](delta-lake-concurrency-control.md)
 - [Liquid clustering](liquid-clustering.md)
-- [Z-Order](delta-lake-zorder.md)
+- [Z-Order](delta-lake-z-order.md)
 - [Table compaction](table-compaction.md)
 - [File skipping](delta-lake-file-skipping.md)
 - [V-Order](delta-optimization-and-v-order.md)

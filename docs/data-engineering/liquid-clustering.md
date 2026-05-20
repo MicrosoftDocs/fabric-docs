@@ -306,7 +306,7 @@ For the equivalent eligible types used in file-level statistics, see [File skipp
 
 - [Table compaction](./table-compaction.md)
 - [Tune file size](./tune-file-size.md)
-- [Z-Order](delta-lake-zorder.md)
+- [Z-Order](delta-lake-z-order.md)
 - [Partitioning](delta-lake-partitioning.md)
 - [File skipping](delta-lake-file-skipping.md)
 - [Concurrency control](delta-lake-concurrency-control.md)

@@ -250,5 +250,5 @@ DeltaTable.createOrReplace(spark)\
 - [VACUUM](delta-lake-vacuum.md)
 - [Tune file size](tune-file-size.md)
 - [Liquid clustering](liquid-clustering.md)
-- [Z-Order](delta-lake-zorder.md)
+- [Z-Order](delta-lake-z-order.md)
 - [Delta Lake interoperability](../fundamentals/delta-lake-interoperability.md)

@@ -146,7 +146,7 @@ for attempt in range(max_retries):
 
 ### Choose the right layout strategy
 
-[Liquid clustering](liquid-clustering.md) and [partitioning](delta-lake-partitioning.md) solve different problems. Liquid clustering optimizes file layout for read performance. Partitioning creates physical boundaries that prevent concurrent writer conflicts. If your workload needs both, partition by the writer-isolation column and use [Z-Order](delta-lake-zorder.md) within each partition for read performance.
+[Liquid clustering](liquid-clustering.md) and [partitioning](delta-lake-partitioning.md) solve different problems. Liquid clustering optimizes file layout for read performance. Partitioning creates physical boundaries that prevent concurrent writer conflicts. If your workload needs both, partition by the writer-isolation column and use [Z-Order](delta-lake-z-order.md) within each partition for read performance.
 
 ## Related content
 
@@ -154,7 +154,7 @@ for attempt in range(max_retries):
 - [Liquid clustering](liquid-clustering.md)
 - [Low-Shuffle Merge](low-shuffle-merge.md)
 - [Table compaction](table-compaction.md)
-- [Z-Order](delta-lake-zorder.md)
+- [Z-Order](delta-lake-z-order.md)
 - [Delta table maintenance](delta-lake-table-maintenance.md)
 - [Delta Lake interoperability](../fundamentals/delta-lake-interoperability.md)
 - [Delta Lake concurrency control (open-source documentation)](https://docs.delta.io/concurrency-control/)

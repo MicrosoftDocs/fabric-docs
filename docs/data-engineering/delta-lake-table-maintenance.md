@@ -17,7 +17,7 @@ As Delta tables grow, write activity changes the physical layout of the table. R
 
 ## Use OPTIMIZE for bin compaction
 
-Use `OPTIMIZE` when your Delta table has accumulated many small files and you want to consolidate them into fewer, larger files. This operation improves read performance by reducing file-management overhead and making scans more efficient. `OPTIMIZE` also supports additional arguments and features such as `VORDER`. For full syntax, options, and examples, see [Table compaction](table-compaction.md) and [V-Order](delta-optimization-and-v-order.md).
+Use `OPTIMIZE` when your Delta table has accumulated many small files and you want to consolidate them into fewer, larger files. This operation improves read performance by reducing file-management overhead and making scans more efficient. `OPTIMIZE` also supports other arguments and features such as `VORDER`. For full syntax, options, and examples, see [Table compaction](table-compaction.md) and [V-Order](delta-optimization-and-v-order.md).
 
 # [Spark SQL](#tab/sparksql)
 
@@ -78,7 +78,7 @@ deltaTable.vacuum()
 Use `REORG` when you need to rewrite table state for a specific maintenance goal instead of general file compaction. In Delta Lake, `REORG TABLE ... APPLY (PURGE)` physically removes rows that deletion vectors marked as deleted. For the supported options and when to use them, see [Reorganize Delta tables with REORG](delta-lake-reorg.md).
 
 > [!NOTE]
-> `REORG` generally does not need to be run as `OPTIMIZE` will automatically purge files where greater than 5% of records are referenced by deletion vectors. 
+> `REORG` isn't typically needed because `OPTIMIZE` automatically purges files where greater than 5% of records are referenced by deletion vectors. 
 
 # [Spark SQL](#tab/sparksql)
 
@@ -104,10 +104,10 @@ spark.sql("REORG TABLE table_name APPLY (PURGE)")
 
 The Fabric Spark Runtime supports two types of statistics on Delta tables: file statistics and table statistics.
 
-- **File statistics** — Delta Lake records per-file min, max, and null-count values for indexed columns every time a data file is written. The Spark engine uses these statistics to skip files that can't contain rows matching a query predicate, which reduces the amount of data scanned. By default, statistics are collected for the first 32 columns. For details on how file skipping works and how to customize which columns statistics are collected for, see [File skipping](delta-lake-file-skipping.md).
-- **Table statistics** — Column-level statistics aggregated across the all files in the table are maintained automatically so Spark has better metadata for query planning. These statistics improve performance through better optimization decisions for filters, joins, and aggregations. To learn how automated statistics work and how to configure, see [Automated statistics for Delta tables](automated-table-statistics.md).
+- **File statistics**—Delta Lake records per-file min, max, and null-count values for indexed columns every time a data file is written. The Spark engine uses these statistics to skip files that can't contain rows matching a query predicate, which reduces the amount of data scanned. By default, statistics are collected for the first 32 columns. For details on how file skipping works and how to customize which columns statistics are collected for, see [File skipping](delta-lake-file-skipping.md).
+- **Table statistics**—Column-level statistics aggregated across all files in the table are maintained automatically so Spark has better metadata for query planning. These statistics improve performance through better optimization decisions for filters, joins, and aggregations. To learn how automated statistics work and how to configure, see [Automated statistics for Delta tables](automated-table-statistics.md).
 
-## Use auto-compaction for continuous file management
+## Use autocompaction for continuous file management
 
 Delta Lake also supports automatic compaction after writes so tables can stay healthier without requiring a separate manual job every time. You can control this behavior through table properties or workspace settings, depending on how you manage your Spark workloads. See [Auto compaction](table-compaction.md#auto-compaction) for details on how to enable.
 
@@ -117,7 +117,7 @@ If you prefer a UI-based workflow, you can run maintenance actions directly from
 
 ## Follow a practical maintenance cadence
 
-Run `OPTIMIZE` after large batch ingestion or whenever small files begin to accumulate and slow down reads. Run `VACUUM` on a regular cadence, such as weekly or after major compaction cycles, to reclaim storage from files the table no longer references. `REORG TABLE ... APPLY (PURGE)` is generally not needed as routine maintenance because `OPTIMIZE` automatically purges files where greater than 5% of records are referenced by deletion vectors. Reserve `PURGE` for scenarios that require explicit control, such as compliance or GDPR obligations. Monitor table condition with `DESCRIBE DETAIL` and `DESCRIBE HISTORY` so you can track file counts, size, and maintenance history before and after each operation.
+Run `OPTIMIZE` after large batch ingestion or whenever small files begin to accumulate and slow down reads. Run `VACUUM` on a regular cadence, such as weekly or after major compaction cycles, to reclaim storage from files the table no longer references. `REORG TABLE ... APPLY (PURGE)` isn't needed as routine maintenance because `OPTIMIZE` automatically purges files where greater than 5% of records are referenced by deletion vectors. Reserve `PURGE` for scenarios that require explicit control, such as compliance or GDPR obligations. Monitor table condition with `DESCRIBE DETAIL` and `DESCRIBE HISTORY` so you can track file counts, size, and maintenance history before and after each operation.
 
 # [Spark SQL](#tab/sparksql)
 

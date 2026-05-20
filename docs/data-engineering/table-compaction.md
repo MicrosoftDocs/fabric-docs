@@ -309,4 +309,4 @@ These metrics help you confirm that compaction reduced file counts and produced 
 - [Tune file size](./tune-file-size.md)
 - [Lakehouse table maintenance](./lakehouse-table-maintenance.md)
 - [Liquid clustering](liquid-clustering.md)
-- [Z-Order](delta-lake-zorder.md)
+- [Z-Order](delta-lake-z-order.md)

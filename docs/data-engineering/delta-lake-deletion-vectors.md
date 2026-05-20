@@ -17,13 +17,13 @@ Instead of replacing a full data file for a small delete or update, Delta Lake s
 
 A deletion vector is a companion file for a Delta table data file. It records which row positions in a Parquet file are no longer valid.
 
-This design gives you a form of soft delete at the row level:
+This design enables soft delete at the row level to enable faster updates, merges, and deletes:
 
 - The original Parquet file stays in place.
-- Delta writes a much smaller deletion vector file.
+- Delta writes a tiny deletion vector file.
 - Readers skip the marked rows at query time.
 
-Because the data file doesn't need an immediate rewrite, deletion vectors are especially useful when a change affects only a small number of rows in a large file.
+Because the data file doesn't need an immediate rewrite, deletion vectors are especially useful when a change affects a small percentage of data in a large file.
 
 ## How deletion vectors work
 
@@ -172,7 +172,7 @@ For many workloads, that overhead is small compared to the write savings. Howeve
 
 `OPTIMIZE` automatically purges files where greater than 5% of records are referenced by deletion vectors, so routine compaction typically handles deletion vector cleanup without a separate step.
 
-Use `REORG TABLE ... APPLY (PURGE)` when you need explicit control over when soft-deleted rows are physically removed — for example, to meet compliance or GDPR requirements, or to force-purge files that fall below the 5% threshold that `OPTIMIZE` uses.
+Use `REORG TABLE ... APPLY (PURGE)` when you need explicit control over when soft-deleted rows are physically removed—for example, to meet compliance or GDPR requirements, or to force-purge files that fall below the 5% threshold that `OPTIMIZE` uses.
 
 `PURGE` rewrites the affected data files, removes the soft-deleted rows from the active Parquet files, and eliminates the deletion vector files for those rewritten files.
 
@@ -196,7 +196,7 @@ spark.sql("REORG TABLE sales.orders APPLY (PURGE)")
 
 ---
 
-Run `PURGE` when you have a specific need to force-remove soft-deleted rows below the 5% threshold, or when compliance requirements demand physical removal on a defined schedule. For most workloads, `OPTIMIZE` handles deletion vector cleanup automatically.
+Run `PURGE` when you have a specific need to force-remove soft-deleted rows below the 5% threshold, or when compliance requirements demand physical removal on a defined schedule. For most workloads, `OPTIMIZE` sufficiently handles deletion vector cleanup automatically.
 
 ## Compare REORG, OPTIMIZE, and VACUUM
 
@@ -208,7 +208,7 @@ These commands work together, but they do different jobs.
 
 ### OPTIMIZE
 
-`OPTIMIZE` compacts small files to improve scan efficiency. It also automatically purges files where greater than 5% of records are referenced by deletion vectors, so it serves as the primary maintenance command for most deletion vector cleanup.
+`OPTIMIZE` compacts small files to improve scan efficiency. It also automatically purges files where greater than 5% of records are referenced by deletion vectors. That behavior makes `OPTIMIZE` the primary maintenance command for most deletion vector cleanup.
 
 ### VACUUM
 
@@ -232,7 +232,7 @@ You can inspect protocol-related metadata by using commands such as `DESCRIBE DE
 ## Follow best practices
 
 - Enable deletion vectors for tables that have frequent small deletes, updates, or merges.
-- `OPTIMIZE` automatically purges files with greater than 5% of records referenced by deletion vectors, so a separate `PURGE` step is usually unnecessary.
+- `OPTIMIZE` automatically purges files with greater than 5% of records referenced by deletion vectors, so a separate `PURGE` step is unnecessary.
 - Use `REORG TABLE ... APPLY (PURGE)` only when you need explicit control, such as compliance requirements or force-purging below the 5% threshold.
 - Use `VACUUM` to clean up obsolete deletion vector files only after they become unreferenced and older than the retention threshold.
 - Confirm that all readers support reader version 3 and writer version 7, or the v2 checkpoint protocol, before you enable deletion vectors on shared tables.

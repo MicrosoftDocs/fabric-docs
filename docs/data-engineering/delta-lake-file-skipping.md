@@ -9,13 +9,13 @@ ai-usage: ai-assisted
 
 # File skipping for Delta tables
 
-File skipping is a Delta Lake read optimization that lets the Spark engine avoid scanning data files that can't contain matching rows. By reading less data, queries run faster and consume fewer I/O resources.
+File skipping is a Delta Lake read optimization that lets the Spark engine avoid scanning data files that can't contain matching rows. Because the engine reads less data, queries run faster and consume fewer I/O resources.
 
 ## How file skipping works
 
 Every time a data file is written to a Delta table, Delta Lake records per-file column statistics in the transaction log. These statistics include the **minimum value**, **maximum value**, and **null count** for each indexed column in that file.
 
-When a query includes a filter predicate, the engine compares the predicate value against the min/max range stored for each file. If the predicate value falls outside the range for a file, that file is skipped entirely — there's no need to open or scan it.
+When a query includes a filter predicate, the engine compares the predicate value against the min/max range stored for each file. If the predicate value falls outside the range for a file, that file is skipped entirely—there's no need to open or scan it.
 
 For example, consider a `sales` table partitioned into five data files by date ranges:
 
@@ -27,7 +27,7 @@ For example, consider a `sales` table partitioned into five data files by date r
 | File 4 | `date [2024-06-01 .. 2024-07-31]` | Skipped |
 | File 5 | `date [2024-08-01 .. 2024-09-30]` | Skipped |
 
-In this case, 4 of 5 files are skipped — 80% less data scanned — because their min/max ranges don't overlap with the filter value.
+In this case, four of five files are skipped—80% less data scanned—because their min/max ranges don't overlap with the filter value.
 
 > [!IMPORTANT]
 > The data type of the predicate value must match the column type. A type mismatch can prevent the engine from using file-level statistics for skipping.
@@ -40,7 +40,7 @@ Delta Lake collects file statistics automatically with the following defaults:
 - Statistics tracked per column per file: **min**, **max**, and **null count**
 - Collecting statistics on long string columns is costly and adds write overhead, so positioning matters.
 
-The column limit is controlled by the `delta.dataSkippingNumIndexedCols` table property. Columns beyond that threshold don't get file-level statistics and can't participate in file skipping.
+The `delta.dataSkippingNumIndexedCols` table property controls the column limit. Columns beyond that threshold don't get file-level statistics and can't participate in file skipping.
 
 ## Eligible data types
 
@@ -59,15 +59,15 @@ Not all column types support file-level statistics and therefore file skipping. 
 > [!NOTE]
 > The following types can be enabled in starting in Fabric Spark runtime 2.0 (Delta 4.1)
 
-- `VariantType` — when `spark.databricks.delta.variantShredding.collectVariantDataSkippingStats` is enabled.
-- `ArrayType` — when `spark.microsoft.delta.skipping.complexTypes.enabled` is enabled and the element type is itself eligible.
-- `MapType` — when `spark.microsoft.delta.skipping.complexTypes.enabled` is enabled and both the key and value types are eligible.
+- `VariantType`: when `spark.databricks.delta.variantShredding.collectVariantDataSkippingStats` is enabled.
+- `ArrayType`: when `spark.microsoft.delta.skipping.complexTypes.enabled` is enabled and the element type is itself eligible.
+- `MapType`: when `spark.microsoft.delta.skipping.complexTypes.enabled` is enabled and both the key and value types are eligible.
 
 ### Not eligible
 
 - `BinaryType`
 - `BooleanType`
-- `StructType` (as a whole — leaf fields inside structs are evaluated individually)
+- `StructType` (as a whole—leaf fields inside structs are evaluated individually)
 - `NullType`
 
 ## Maximize column coverage
@@ -149,13 +149,13 @@ spark.sql("ALTER TABLE table_name SET TBLPROPERTIES ('delta.dataSkippingStatsCol
 
 ---
 
-When `delta.dataSkippingStatsColumns` is set, only the specified columns get statistics collected. This gives you fine-grained control over the trade-off between write cost and read benefit.
+When `delta.dataSkippingStatsColumns` is set, only the specified columns get statistics collected. This approach gives you fine-grained control over the trade-off between write cost and read benefit.
 
 ## Combine file skipping with data layout
 
-File skipping works best when related values are co-located in the same files. Techniques such as `ZORDER BY` and liquid clustering physically reorganize data so that rows with similar column values end up in the same files. This tightens the min/max ranges per file, which increases the percentage of files that the engine can skip for a given filter.
+File skipping works best when related values are colocated in the same files. Techniques such as `ZORDER BY` and liquid clustering physically reorganize data so that rows with similar column values end up in the same files. Colocating similar values tightens the min/max ranges per file, which increases the percentage of files that the engine can skip for a given filter.
 
-For more on data layout optimization, see [Table compaction](table-compaction.md), [Liquid clustering](liquid-clustering.md), and [Z-Order](delta-lake-zorder.md).
+For more on data layout optimization, see [Table compaction](table-compaction.md), [Liquid clustering](liquid-clustering.md), and [Z-Order](delta-lake-z-order.md).
 
 ## Related content
 
@@ -163,5 +163,5 @@ For more on data layout optimization, see [Table compaction](table-compaction.md
 - [Automated statistics for Delta tables](automated-table-statistics.md)
 - [V-Order](delta-optimization-and-v-order.md)
 - [Liquid clustering](liquid-clustering.md)
-- [Z-Order](delta-lake-zorder.md)
+- [Z-Order](delta-lake-z-order.md)
 - [Delta table maintenance](delta-lake-table-maintenance.md)

@@ -116,6 +116,11 @@ df.write.format("delta").mode("overwrite").insertInto("schema_name.target_table"
 
 By default, `INSERT OVERWRITE` fails if the incoming DataFrame has a different schema than the target table. When you use the DataFrame API, you can set the `overwriteSchema` option to `true` to replace both the data and the schema in one operation.
 
+# [Spark SQL](#tab/sparksql)
+
+> [!NOTE]
+> Spark SQL `INSERT OVERWRITE` doesn't support `overwriteSchema`. Use `CREATE OR REPLACE TABLE` to replace both schema and data with SQL.
+
 # [PySpark](#tab/pyspark)
 
 ```python

@@ -1,6 +1,6 @@
 ---
 title: Drop Delta tables and schemas
-description: Learn how to drop Delta tables and schemas in Microsoft Fabric, understand what happens in OneLake, use CASCADE for schema drops, and follow safe practices for permanent removal.
+description: Learn how to drop Delta tables and schemas in Microsoft Fabric. Understand managed vs. external behavior in OneLake and use CASCADE for schema drops.
 ms.reviewer: milescole
 ms.topic: how-to
 ms.date: 05/19/2026
@@ -16,8 +16,8 @@ Use `DROP TABLE` to permanently remove a Delta table's metadata and schema defin
 The behavior of `DROP TABLE` depends on how the table was created:
 
 - **Managed tables** are created without specifying a `LOCATION`. Fabric controls both the metadata and the data files. When you drop a managed table, the lakehouse table entry and all underlying data files in storage are deleted.
-- **External tables** are created with an explicit `LOCATION`. When dropping an extenal table, only the lakehouse table entry is removed. The data files remain in storage at the specified OneLake path.
-- **Shortcut tables** are created as a virtual pointer to another lakehouse or storage location. When dropping a shortcut table, only the lakehouse table entry is removed, underlying data files are not. See [shortcuts in a lakehouse](./lakehouse-shortcuts.md) for more details.
+- **External tables** are created with an explicit `LOCATION`. When you drop an external table, only the lakehouse table entry is removed. The data files remain in storage at the specified OneLake path.
+- **Shortcut tables** are created as a virtual pointer to another lakehouse or storage location. When you drop a shortcut table, only the lakehouse table entry is removed. The underlying data files aren't affected. For more information, see [shortcuts in a lakehouse](./lakehouse-shortcuts.md).
 
 ## Drop a table
 
