@@ -26,6 +26,7 @@ Fabric Runtime 2.0 incorporates the following components and upgrades designed t
 
 > [!IMPORTANT]
 > Fabric Runtime 2.0 is being updated to Spark 4.1. The Fabric Runtime version displayed in the portal doesn't change however following components will be upgraded.
+>
 > | Component | Current version | Updated version |
 > |---|---|---|
 > | Spark | 4.0 | 4.1 |
