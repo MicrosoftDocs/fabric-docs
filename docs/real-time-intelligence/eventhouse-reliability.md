@@ -8,7 +8,7 @@ ms.date: 05/17/2026
 ai-usage: ai-assisted
 ---
 
-# Reliability in Eventhouse
+# Reliability in eventhouse
 
 Reliability is a shared responsibility. Microsoft provides platform capabilities that support resiliency and recovery. You're responsible for understanding how those capabilities apply to your workloads and selecting the patterns and configurations needed to meet your business objectives and uptime goals.
 
@@ -20,26 +20,26 @@ During some incidents, read access remains available while write operations are 
 
 ## Design for reliability
 
-Use the following recommendations to build reliable applications and workloads on Eventhouse. The guidance covers handling transient faults, designing for Availability Zone resiliency, recovering from region-wide failures, and implementing backup and recovery strategies.
+Use the following recommendations to build reliable applications and workloads on eventhouse. The guidance covers handling transient faults, designing for availability zone resiliency, recovering from region-wide failures, and implementing backup and recovery strategies.
 
 ### Design for transient fault handling
 
-Applications that interact with Eventhouse should be prepared to handle temporary operation failures, connectivity interruptions, and service throttling by retrying requests that fail due to transient conditions.
+Applications that interact with eventhouse should be prepared to handle temporary operation failures, connectivity interruptions, and service throttling by retrying requests that fail due to transient conditions.
 
-### Design for Availability Zone resiliency
+### Design for availability zone resiliency
 
-Availability Zones help reduce the impact of localized infrastructure failures within a region. Capacity might be temporarily reduced during a zone outage and ingestion or query requests might need to be retried.
+Availability zones help reduce the impact of localized infrastructure failures within a region. Capacity might be temporarily reduced during a zone outage and ingestion or query requests might need to be retried.
 
 ### Design for region-wide failures
 
 Deploy eventhouse resources into a single Azure region. If that region becomes unavailable, the eventhouse and its data in that region are unavailable.
 
-Implement a customer-managed multiregion resiliency approach:
+Implement a customer-managed multiregional resiliency approach:
 
-1. Deploy separate eventhouse instances in multiple regions.
-1. Replicate data into both regions (for example, by double-ingesting from an upstream source).
-1. Prepare application traffic failover procedures (for example, connection string or DNS switch).
-1. Define operational runbooks for region failover and failback.
+* Deploy separate eventhouse instances in multiple regions.
+* Replicate data into both regions (for example, by double-ingesting from an upstream source).
+* Prepare application traffic failover procedures (for example, connection string or DNS switch).
+* Define operational runbooks for region failover and failback.
 
 ### Design for backup and recovery
 
@@ -59,9 +59,9 @@ Design ingestion pipelines so replay and rebuild are operationally straightforwa
 
 Transient faults are short, intermittent failures that can occur in distributed cloud environments. Applications should retry affected requests.
 
-## Resilience to Availability Zone failures
+## Resilience to availability zone failures
 
-Availability Zones are physically separate datacenter locations within an Azure region. In supported regions, Eventhouse uses zonal isolation to reduce the impact of localized failures.
+Availability zones are physically separate datacenter locations within an Azure region. In supported regions, eventhouse uses zonal isolation to reduce the impact of localized failures.
 
 ## Resilience to region-wide failures
 
@@ -97,8 +97,8 @@ Plan for this scenario explicitly by using scripted validation and recovery step
 
 ## What's covered by default
 
-- **Power BI artifacts** benefit from built-in geo-redundancy and remain accessible in read-only mode during regional disruptions.
-- **Real-Time Intelligence/KQL services** include Availability Zone resiliency, and Fabric supports cost-optimized secondary capacities that can remain mostly idle until needed.
+* **Power BI artifacts** benefit from built-in geo-redundancy and remain accessible in read-only mode during regional disruptions.
+* **Real-Time Intelligence/KQL services** include availability zone resiliency, and Fabric supports cost-optimized secondary capacities that can remain mostly idle until needed.
 
 ## Resilience to service maintenance
 
@@ -110,6 +110,6 @@ For information about the SLA for Microsoft Fabric, see [Service Level Agreement
 
 ## Related content
 
-- [Eventhouse overview](eventhouse.md)
-- [Create an eventhouse](create-eventhouse.md)
-- [Data availability in OneLake](one-logical-copy.md)
+* [Eventhouse overview](eventhouse.md)
+* [Create an eventhouse](create-eventhouse.md)
+* [Data availability in OneLake](one-logical-copy.md)
