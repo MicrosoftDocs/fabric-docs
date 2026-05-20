@@ -5,8 +5,7 @@ ms.reviewer: eloldag # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: overview
-ms.date: 05/20/2026
-ai-usage: ai-assisted
+ms.date: 12/10/2025
 #customer intent: As a data analyst, I want to understand the benefits of using OneLake so that I can effectively manage and analyze all the analytics data for my organization.
 ---
 
@@ -94,8 +93,6 @@ OneLake automatically protects your data with built-in features that help you re
 ### Soft delete for file recovery
 
 When you delete files in OneLake, they aren't immediately removed. OneLake retains deleted files for seven days, giving you time to recover from accidental deletions or user errors. You can restore soft-deleted files using Azure Storage Explorer or PowerShell.
-
-To understand your workspace's true storage footprint, workspace administrators can use [OneLake item-size reporting](how-to-get-item-size.md), which surfaces visible data as well as hidden system data and soft-deleted data for each item.
 
 For step-by-step instructions, see [Recover deleted files in OneLake](soft-delete.md).
 
