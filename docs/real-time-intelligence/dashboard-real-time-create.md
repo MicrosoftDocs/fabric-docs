@@ -50,7 +50,7 @@ For detailed instructions, see [Generate Real-Time Dashboard Using Copilot](../f
 
 1. Select **Save to dashboard** > **To a new Dashboard**.
 
-    :::image type="content" source="media/real-time-dashboard/save-to-dashboard.png" alt-text="Screenshot of the save query to dashboard button in a queryset query."  lightbox="media/real-time-dashboard/save-to-dashboard.png":::
+    :::image type="content" source="media/real-time-dashboard/save-to-dashboard-existing.png" alt-text="Screenshot of the save query to dashboard button in a queryset query."  lightbox="media/real-time-dashboard/save-to-dashboard-existing.png":::
 
 1. On the **New Real-Time Dashboard** popup, enter a name and workspace location for the dashboard, and select **Create**.
 
@@ -60,13 +60,11 @@ For detailed instructions, see [Generate Real-Time Dashboard Using Copilot](../f
 
 1. To give the tile a name, open the tile options and select **Rename**.
 
-    :::image type="content" source="media/real-time-dashboard/rename-new-tile.png" alt-text="Screenshot of the Rename tile option in the tile menu." lightbox="media/real-time-dashboard/rename-new-tile.png":::
-
 ### [Replacing the file](#tab/replacing-file)
 
 Select the **Manage** tab, then choose **Replace with file**. Select the file you want to use to create a new dashboard, update an existing one, restore a previous version, or use a file received from another user.
 
-:::image type="content" source="media/real-time-dashboard/replace-file.png" alt-text="Screenshot of the Replace with file option." lightbox="media/real-time-dashboard/replace-file.png":::
+:::image type="content" source="media/real-time-dashboard/replace-with-file-button.png" alt-text="Screenshot of the Replace with file option." lightbox="media/real-time-dashboard/replace-with-file-button.png":::
 
 ----
 
