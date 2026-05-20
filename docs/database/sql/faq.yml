@@ -65,7 +65,7 @@ sections:
       - question: |
           How to stop/disable replication of data from SQL database in Fabric to OneLake?  
         answer: |
-          You can [stop and start SQL database mirroring with the Fabric REST API])(start-stop-mirroring-api.md).
+          You can [stop and start SQL database mirroring with the Fabric REST API](start-stop-mirroring-api.md).
 
       - question: | 
           Are system objects such as system views and dynamic management views the same as Fabric database mirroring?
