@@ -16,7 +16,6 @@ Use [Entity diagram view in KQL database](database-entity-diagram.md) to simplif
 
 For more information, see [Management commands](/azure/data-explorer/kusto/management/index?context=/fabric/context/context&pivots=fabric)
 
-[!INCLUDE [managed-identity](includes/managed-identity.md)]
 
 ## Data retention policy
 

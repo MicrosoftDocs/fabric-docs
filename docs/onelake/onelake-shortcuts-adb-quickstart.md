@@ -6,6 +6,7 @@ ms.reviewer: eloldag, harmeetgill # Product team ms alias(es)
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.date: 09/27/2023
+ROBOTS: NOINDEX
 #customer intent: As a data analyst, I want to learn how to connect to Azure Data Lake Storage (ADLS) with a shortcut to a Delta table so that I can transform ADLS data using an Azure Databricks notebook and build Power BI reports for data analysis.
 ---
 

@@ -3,6 +3,7 @@ title: Get Started with Intelligence Sheets
 description: Learn how to configure the intelligence sheets component of the plan (preview) item for no-code reporting.
 ms.date: 03/11/2026
 ms.topic: how-to
+ms.search.form: Getting Started with Intelligence
 #customer intent: As a user, I want to set up intelligence sheets to visualize my planning data in Fabric.
 ---
 
