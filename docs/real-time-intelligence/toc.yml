@@ -571,6 +571,8 @@ items:
         href: eventhouse-deploy-with-fabric-api.md
       - name: Manage and monitor an eventhouse
         href: manage-monitor-eventhouse.md
+      - name: Reliability in Eventhouse
+        href: eventhouse-reliability.md
       - name: Eventhouse endpoint for Lakehouse and Warehouse
         href: eventhouse-as-endpoint.md
       - name: Eventhouse capacity
