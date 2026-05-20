@@ -110,6 +110,8 @@ You can also view and configure SQL database auditing settings programmatically 
 
 For more information, see [Manage SQL database auditing with the REST API](auditing-manage-rest-api.md).
 
+ **Note:** Auditing must be resaved after a restore operation to re-enable auditing in Fabric SQL DB
+
 ## Related content
 
 - [Manage SQL database auditing with the REST API](auditing-manage-rest-api.md)
