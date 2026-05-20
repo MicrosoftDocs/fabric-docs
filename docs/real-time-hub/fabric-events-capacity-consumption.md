@@ -29,12 +29,12 @@ Azure, Fabric, and Business events usage is defined by two operation types, whic
 
 ### Event operations
 
-Event operations represent operations for publish, filtering, and delivery of events. For Azure and Fabric events generated in Fabric, the publish operation charge doesnΓÇÖt kick in until a consumer is established for these events. The publish operations are charged to the publisherΓÇÖs capacity, while the filtering and delivery operations are charged to the consumerΓÇÖs capacity.
+Event operations represent operations for publish, filtering, and delivery of events. For Azure and Fabric events generated in Fabric, the publish operation charge doesn't kick in until a consumer is established for these events. The publish operations are charged to the publisher's capacity, while the filtering and delivery operations are charged to the consumer's capacity.
 
 > [!NOTE]
 > Azure events, such as Azure Storage events, also incur [Azure Event Grid pricing](https://azure.microsoft.com/pricing/details/event-grid/) in addition to the Fabric capacity consumption described in this article.
  
-For example, when a Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] rule is created to take an action on a workspace item event, the source workspaceΓÇÖs capacity is charged for the publish operations, and the [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)]ΓÇÖs capacity is charged for the filtering and delivery operations. 
+For example, when a Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] rule is created to take an action on a workspace item event, the source workspace's capacity is charged for the publish operations, and the [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)]'s capacity is charged for the filtering and delivery operations. 
 
 For Business events, the EventSchemaSet artifact's capacity is charged for the publish operations, and the consumer's capacity is charged for the filtering and delivery operations. For example, when a Notebook publishes a Business event to an EventSchemaSet and an Activator rule is configured to consume that event, the EventSchemaSet's capacity is charged for the publish operations (not the Notebook's), and the Activator's capacity is charged for the filtering and delivery operations.
 
@@ -63,7 +63,7 @@ In some cases, the publisher or the consumer can be nonartifacts. For example, f
 
 
 ## Changes to Microsoft Fabric workload consumption rate 
-Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in MicrosoftΓÇÖs Release Notes or Microsoft Fabric Blog. If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, you can use the cancellation options available for the chosen payment method. 
+Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft's Release Notes or Microsoft Fabric Blog. If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, you can use the cancellation options available for the chosen payment method. 
 
 ## Related content 
 
