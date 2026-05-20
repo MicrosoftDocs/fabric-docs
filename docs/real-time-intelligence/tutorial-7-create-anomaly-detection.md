@@ -34,7 +34,7 @@ Open the Eventhouse table created in the previous tutorial.
 
 Create a detector to analyze the data for anomalies.
 
-1. In the **New Anomaly detector** pane:
+n the **New Anomaly detector** pane:
    1. Enter a name for the detector.
    1. Select your Fabric workspace.
    1. Select **Create**.
