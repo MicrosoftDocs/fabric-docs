@@ -38,6 +38,7 @@ Customer-managed keys are currently supported for the following Fabric items:
 * Copy job
 * Industry solutions
 * SQL Database
+* Mirrored Database
 * Eventhouse (preview)
 * Graph (preview)
 
@@ -159,6 +160,8 @@ Before you configure your Fabric workspace with a customer-managed key, consider
   * Metadata generated when creating a Pipeline and Copy job, such as DB name, table, schema
   * Metadata of ML model and experiment, like the model name, version, metrics
   * Warehouse queries on Object Explored and backend cache, which is evicted after each use
+
+* Mirrored Dataverse and Mirrored Azure Databricks Catalog are not supported in workspaces where customer-managed keys setting is turned on.
 
 * CMK is supported on all [F SKUs](../enterprise/licenses.md). Trial capacities can't be used for encryption using CMK.
 
