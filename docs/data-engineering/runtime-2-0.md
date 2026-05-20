@@ -24,6 +24,24 @@ Fabric Runtime 2.0 incorporates the following components and upgrades designed t
 - Delta Lake: 4.0
 - R: 4.5.2
 
+> [!IMPORTANT]
+> Fabric Runtime 2.0 is being updated to Spark 4.1. The runtime version displayed in the portal doesn't change.
+>
+> | Component | Current version | Updated version |
+> |---|---|---|
+> | Spark | 4.0 | 4.1 |
+> | Delta Lake | 4.0 | 4.1 |
+> | Python | 3.12 | 3.13 |
+>
+> :::image type="content" source="media/runtime/runtime-2-0-upgrade.png" alt-text="Screenshot showing the Runtime 2.0 version change from Spark 4.0, Delta 4.0 to Spark 4.1, Delta 4.1." lightbox="media/runtime/runtime-2-0-upgrade.png":::
+>
+> **Breaking change:** The Python upgrade requires you to re-publish every Environment that has libraries. Until you re-publish, the **Public libraries** and **Custom libraries** tabs appear empty, and Spark jobs that target the affected Environment fail with "No module found" or "Class not found" errors.
+>
+> **Required actions**
+>
+> - Before the upgrade, record or export your library list from each Environment.
+> - After the upgrade, re-add the libraries and select **Publish** to rebuild them against Spark 4.1.
+
 > [!TIP]
 > Fabric Runtime 2.0 includes support for [the Native Execution Engine](./native-execution-engine-overview.md), which can significantly enhance performance without more costs. You can enable the native execution engine at the environment level so that all jobs and notebooks automatically inherit the enhanced performance capabilities.
 
