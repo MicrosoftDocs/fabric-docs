@@ -214,6 +214,7 @@ Here are a few real-world scenarios where you can use Fabric Activator:
 ## Related content
 
 - [Tutorial: Create and activate a Fabric Activator rule](activator-tutorial.md)
+- [Tutorial: Create an end-to-end Activator rule using agentic AI](activator-agentic-tutorial.md)
 - [Activator rules overview](activator-rules-overview.md)
 - [Trigger Fabric items from an Activator rule](activator-trigger-fabric-items.md)
 - [Detection conditions in Activator](activator-detection-conditions.md)
