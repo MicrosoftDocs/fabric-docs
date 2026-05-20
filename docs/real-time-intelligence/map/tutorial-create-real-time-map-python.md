@@ -5,7 +5,7 @@ ms.reviewer: smunk, sipa
 ms.service: fabric
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 05/15/2026
+ms.date: 05/25/2026
 ---
 
 # Tutorial: Create a real-time map from Eventhouse data using REST APIs
@@ -20,7 +20,7 @@ Unlike static scenarios that use files stored in a Lakehouse, this tutorial demo
 
 This tutorial focuses on **automating the end-to-end workflow** using Fabric REST APIs and Python, allowing you to provision resources and configure a real-time map experience programmatically. For static data scenarios using Lakehouse files, see [Create a map using REST API with Python](tutorial-create-fabric-map-python.md).
 
-In this tutorial, you'll learn how to build and automate a real-time geospatial solution in Microsoft Fabric using Eventstream, Eventhouse, and KQL.
+In this tutorial, you learn how to build and automate a real-time geospatial solution in Microsoft Fabric using Eventstream, Eventhouse, and KQL.
 
 > [!div class="checklist"]
 >
@@ -222,7 +222,7 @@ class Config:
 
 Instead of hardcoding the workspace ID directly in the script, this tutorial uses an environment variable. This approach improves security and makes it easier to reuse the script across environments without modifying the code.
 
-Prior to running this script, you will need to create an environment variable named `FABRIC_WORKSPACE_ID`.
+Prior to running this script, you'll need to create an environment variable named `FABRIC_WORKSPACE_ID`.
 
 #### Set the environment variable using Windows PowerShell
 
@@ -855,7 +855,7 @@ def resolve_map_id(client, list_url, headers, map_name, max_attempts=10, delay=5
 
 Next, create the primary functions that define the workflow. These will all be called from `main()`.
 
-The primary functions are added in the order they are defined in code. `main()` calls them in a slightly different order so the table exists before the Eventstream binds to it and so seeded data is available before verification runs.
+The primary functions are added in the order they're defined in code. `main()` calls them in a slightly different order so the table exists before the Eventstream binds to it and so seeded data is available before verification runs.
 
 1. Create an Eventhouse
 1. Create the Eventhouse table
@@ -948,7 +948,7 @@ def create_eventhouse(client: httpx.Client, fabric: FabricClient, cfg: Config) -
 
 Before sending events into Eventstream, ensure that the destination table exists in the Eventhouse.
 
-Although Eventhouse can create tables automatically during ingestion in some scenarios, this behavior is not guaranteed when using REST APIs. If the destination table does not exist, ingestion can fail silently or events may not be written as expected.
+Although Eventhouse can create tables automatically during ingestion in some scenarios, this behavior isn't guaranteed when using REST APIs. If the destination table doesn't exist, ingestion can fail silently or events may not be written as expected.
 
 To ensure reliable and repeatable automation, this step explicitly creates (or merges) the table schema using the Kusto management API. This guarantees that:
 
@@ -1007,7 +1007,7 @@ def create_kql_table_if_missing(client: httpx.Client, fabric: FabricClient, cfg:
 
 After the seeding step (run later from `main()` once the Eventstream exists), this helper verifies that data has been successfully ingested into the Eventhouse table.
 
-It is defined here, next to the table-creation helper, because both operate on the same Eventhouse and KQL database. It is called from `main()` *after* `seed_eventstream_from_csv` to confirm the pipeline is working.
+It's defined here, next to the table-creation helper, because both operate on the same Eventhouse and KQL database. It's called from `main()` *after* `seed_eventstream_from_csv` to confirm the pipeline is working.
 
 This step executes a simple count query against the table and returns the result. It helps validate that:
 
@@ -1593,7 +1593,7 @@ if __name__ == "__main__":
 
 ## Run the application
 
-During script execution, you'll be prompted to paste the Eventstream connection string.
+During script execution, you are prompted to paste the Eventstream connection string.
 
 To retrieve this value:
 
@@ -1620,7 +1620,7 @@ Verify that all items were created:
 
 At this point, all resources are created and configured.
 
-To simulate continuous streaming and watch the map update in near real time, continue with the follow-up [Tutorial: Simulate real-time data ingestion into a Fabric map](tutorial-simulate-real-time-data-ingestion.md). It builds directly on this tutorial and reuses the Eventhouse, Eventstream, KQL function, and Map you just created.
+To simulate continuous streaming and watch the map update in near real time, continue with the follow-up [Tutorial: Simulate real-time data ingestion into a Fabric map](tutorial-simulate-real-time-data-ingestion.md). It builds directly on this tutorial and reuses the Eventhouse, Eventstream, KQL function, and Map you created.
 
 ## Summary
 

@@ -5,7 +5,7 @@ ms.reviewer: smunk, sipa
 ms.service: fabric
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 05/15/2026
+ms.date: 05/25/2026
 ---
 
 # Tutorial: Simulate real-time data ingestion into a Fabric map
