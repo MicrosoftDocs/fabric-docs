@@ -614,6 +614,7 @@ The following operations are available in the audit logs.
 | Set file properties | :::no-loc text="SetFileProperties"::: | OneLake operation. Set user-defined properties for a file. |
 | Set scheduled refresh on Power BI dataflow | :::no-loc text="SetScheduledRefreshOnDataflow"::: |   |
 | Set scheduled refresh on Power BI semantic model | :::no-loc text="SetScheduledRefresh"::: |   |
+| Set Warehouse Hardware Acceleration|:::no-loc text="SetWarehouseHardwarePlatform":::|Changed the current hardware acceleration settings for warehouses in a workspace.|
 | Share Artifact | :::no-loc text="ShareArtifact"::: |   |
 | Share Datamart | :::no-loc text="ShareDatamart"::: |   |
 | Share Lakehouse Table | :::no-loc text="ShareLakehouseTable"::: |   |
