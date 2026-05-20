@@ -6,6 +6,7 @@ ms.topic: how-to
 ms.date: 04/24/2026
 ms.custom: pipelines, sfi-image-nochange
 ms.collection: ce-skilling-ai-copilot
+ms.update-cycle: 180-days
 ---
 
 # Use Azure OpenAI to turn whiteboard sketches into pipelines
