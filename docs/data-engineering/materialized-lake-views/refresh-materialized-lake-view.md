@@ -58,12 +58,8 @@ By default, optimal refresh mode is enabled for a materialized lake view lineage
 ### Incremental refresh and append-only data
 
 Today, incremental refresh applies only when source data is **append-only** between refreshes. If any source table records a delete or update, Fabric falls back to full refresh—even with CDF enabled and a query that uses only [supported SQL constructs](#sql-constructs-supported-by-incremental-refresh).
-
-Deletes and updates are harder to process incrementally. The engine needs a reliable way to identify rows, such as a unique key. Without that information, a full refresh is the only safe choice.
-
-***What's changing***:
-
-- **Incremental support for deletes and updates is in active development.** The plan is to introduce a **refresh hint** mechanism for supplying metadata—such as a unique key—so the engine can apply deletes and updates incrementally instead of falling back to a full refresh.
+ 
+The engine needs a reliable way to identify deleted rows. To improve efficiency, users can now supply refresh hints. We are piloting this with select customers.
   
 ### Enable incremental refresh
 
