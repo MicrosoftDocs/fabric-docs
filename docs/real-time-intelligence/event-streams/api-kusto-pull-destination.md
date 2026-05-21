@@ -16,22 +16,13 @@ You complete three steps:
 
 > [!div class="checklist"]
 >
-> - Create an Eventhouse.
-> - Create a KQL database that includes the table and ingestion mapping in `DatabaseSchema.kql`.
-> - Create an Eventstream that uses Eventhouse DirectIngestion mode.
+> - [Create an Eventhouse](/rest/api/fabric/eventhouse/items/create-eventhouse?tabs=HTTP).
+> - [Create a KQL database](/rest/api/fabric/kqldatabase/items/create-kql-database?tabs=HTTP#create-a-readwrite-kql-database-with-definition-example) that includes the table and ingestion mapping in `DatabaseSchema.kql`.
+> - [Create an item](/rest/api/fabric/core/items/create-item?tabs=HTTP) for Eventstream that uses Eventhouse DirectIngestion mode.
 
 ## Prerequisites
 
 - You have access to a workspace with the **Fabric** capacity or **Fabric Trial** workspace type with Contributor or higher permissions.
-
-## References
-
-- [Eventhouse create API](/rest/api/fabric/eventhouse/items/create-eventhouse?tabs=HTTP)
-- [Eventhouse definition](/rest/api/fabric/articles/item-management/definitions/eventhouse-definition)
-- [Create KQL database API](/rest/api/fabric/kqldatabase/items/create-kql-database?tabs=HTTP#create-a-readwrite-kql-database-with-definition-example)
-- [KQL database definition](/rest/api/fabric/articles/item-management/definitions/kql-database-definition)
-- [Eventstream create API](/rest/api/fabric/eventstream/items/create-eventstream?tabs=HTTP)
-- [Eventstream definition template example](api-create-with-definition.md)
 
 ## Authentication and permission requirements
 
@@ -341,6 +332,15 @@ If the response includes a `Location` header, use it to poll for operation compl
 1. Create a KQL database with `DatabaseProperties.json` and `DatabaseSchema.kql`.
 1. Build and Base64-encode `eventstream.json`.
 1. Create Eventstream with an Eventhouse DirectIngestion destination.
+
+## References
+
+- [Eventhouse create API](/rest/api/fabric/eventhouse/items/create-eventhouse?tabs=HTTP)
+- [Eventhouse definition](/rest/api/fabric/articles/item-management/definitions/eventhouse-definition)
+- [Create KQL database API](/rest/api/fabric/kqldatabase/items/create-kql-database?tabs=HTTP#create-a-readwrite-kql-database-with-definition-example)
+- [KQL database definition](/rest/api/fabric/articles/item-management/definitions/kql-database-definition)
+- [Create item API (for Eventstream)](/rest/api/fabric/core/items/create-item?tabs=HTTP)
+- [Eventstream definition template example](api-create-with-definition.md)
 
 ## Related content
 
