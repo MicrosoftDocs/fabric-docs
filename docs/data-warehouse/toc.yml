@@ -69,7 +69,7 @@ items:
 - name: Design
   items:
   - name: Better together - the lakehouse and warehouse
-    href: get-started-lakehouse-sql-analytics-endpoint.md
+    href: ../data-engineering/lakehouse-sql-analytics-endpoint-use-cases.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: Data types
     href: data-types.md
   - name: IDENTITY column
@@ -238,7 +238,7 @@ items:
       href: result-set-caching.md
       displayName: result set caching
     - name: SQL analytics endpoint performance
-      href: sql-analytics-endpoint-performance.md
+      href: ../data-engineering/sql-analytics-endpoint-performance.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
     - name: Statistics
       href: statistics.md
     - name: V-Order

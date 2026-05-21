@@ -45,7 +45,7 @@ Mirrored databases are an item in **Fabric Data Warehousing** distinct from the 
 Every Mirrored Azure Cosmos DB item creates these items you can interact with in your Fabric workspace:  
 
 - The mirrored database item. Mirroring manages the replication of data into [OneLake](../onelake/onelake-overview.md) and conversion to Parquet, in an analytics-ready format. This enables downstream scenarios like data engineering, data science, and more.
-- [SQL analytics endpoint](../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md), which is automatically generated
+- [SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md), which is automatically generated
 
 ### Mirrored database
 

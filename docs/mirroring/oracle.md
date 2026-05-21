@@ -31,7 +31,7 @@ We support these Oracle Server environments:
 When you mirror an Oracle database, Fabric creates:
 
 * A mirrored database in [OneLake](../onelake/onelake-overview.md) that handles data replication
-* A [SQL analytics endpoint](../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md) for data analysis
+* A [SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md) for data analysis
 
 The SQL analytics endpoint lets you:
 
