@@ -46,7 +46,7 @@ Entity types support descriptions, synonyms, and custom metadata attributes. Fol
 
 1. In the **Metadata** section, select **Add metadata attribute**.
 
-    :::image type="content" source="media/how-to-add-semantic-enrichment/image1.png" alt-text="Screenshot of adding metadata attributes to an entity type.":::
+    :::image type="content" source="media/how-to-add-semantic-enrichment/add-metadata-entity.png" alt-text="Screenshot of adding metadata attributes to an entity type.":::
 
 1. Add a **Description** to explain what the entity type represents. The description helps users and agents understand the purpose and meaning of the entity type.
 
@@ -74,9 +74,9 @@ Properties support descriptions and custom metadata attributes, but not synonyms
 
 1. In the **Metadata** section, select **Add metadata attribute**.
 
-    :::image type="content" source="media/how-to-add-semantic-enrichment/image2.png" alt-text="Screenshot of adding metadata to properties.":::
+    :::image type="content" source="media/how-to-add-semantic-enrichment/add-metadata-properties.png" alt-text="Screenshot of adding metadata to properties.":::
 
-    :::image type="content" source="media/how-to-add-semantic-enrichment/image3.png" alt-text="Screenshot showing property metadata configuration.":::
+    :::image type="content" source="media/how-to-add-semantic-enrichment/add-metadata-properties-2.png" alt-text="Screenshot showing property metadata configuration.":::
 
 1. Add a **Description** that explains what the property represents and how it should be interpreted.
 
@@ -118,9 +118,9 @@ You can modify or remove metadata attributes from entity types, properties, and 
 
 1. In the **Metadata** section, locate the metadata attribute you want to edit or delete.
 
-    :::image type="content" source="media/how-to-add-semantic-enrichment/image4.png" alt-text="Screenshot of editing metadata attributes.":::
+    :::image type="content" source="media/how-to-add-semantic-enrichment/edit-metadata.png" alt-text="Screenshot of editing metadata attributes.":::
 
-    :::image type="content" source="media/how-to-add-semantic-enrichment/image5.png" alt-text="Screenshot showing delete option for metadata.":::
+    :::image type="content" source="media/how-to-add-semantic-enrichment/edit-metadata-2.png" alt-text="Screenshot showing edit metadata configuration.":::
 
 1. To edit an attribute:
     * Select the attribute to modify its value.
