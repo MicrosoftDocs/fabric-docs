@@ -5,7 +5,8 @@ ms.reviewer: eloldag # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
-ms.date: 05/18/2026
+ms.date: 05/20/2026
+ai-usage: ai-assisted
 
 #CustomerIntent:
 ---
@@ -42,7 +43,7 @@ The OneLake storage report is available in the OneLake section of any workspace'
 
 The duration of the refresh depends on the number of items and files in your workspace. For large workspaces (containing terabytes or petabytes of data), the refresh can take several hours or more than a day. While the report is refreshing, you can't initiate a new refresh.  
 
-To help prevent escalating costs due to repeated refreshes, OneLake automatically caches the storage report for eight hours. During the cache window, you can't initiate a new refresh.
+To help prevent escalating costs due to repeated refreshes, OneLake automatically caches the storage report for eight hours. During the cache window, you can't initiate a new refresh. Other workspace administrators can view the most recent cached results at any time without triggering another refresh scan or incurring additional scan costs.
 
 ### Storage report format
 
@@ -61,7 +62,7 @@ You can generate a similar report programmatically by using tools like PowerShel
 
 ### Storage report costs
 
-When you refresh your storage report, OneLake calculates the amount of data stored in each of your items. You're charged for the iterative read operations required to scan your workspace.
+When you refresh your storage report, OneLake calculates the amount of data stored in each of your items. You're charged for the iterative read operations required to scan your workspace. For very large workspaces, this scan can take significant time and consume substantial capacity resources, so plan refreshes accordingly.
 
 The cost model uses the following values:
 
