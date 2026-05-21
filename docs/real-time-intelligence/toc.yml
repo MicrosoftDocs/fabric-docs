@@ -997,9 +997,9 @@ items:
             href: map/tutorial-real-time-work-order-routing-application.md
           - name: Create a map using the REST API with Python
             href: map/tutorial-create-fabric-map-python.md
-          - name: Create a real-time map from Eventhouse data using REST APIs
+          - name: Automate the creation of a real-time map using REST APIs
             href: map/tutorial-create-real-time-map-python.md
-          - name: Simulate real-time data ingestion into a Fabric map
+          - name: Simulate real-time data ingestion into a map
             href: map/tutorial-simulate-real-time-data-ingestion.md
       - name: Concepts
         items:

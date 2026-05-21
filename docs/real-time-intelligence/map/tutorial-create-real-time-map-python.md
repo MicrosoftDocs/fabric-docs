@@ -1,6 +1,6 @@
 ---
-title: Create a real-time map from Eventhouse data using REST APIs
-description: Learn how to automate a real-time Fabric Maps scenario using Eventstream and Eventhouse with the Fabric REST API and Python.
+title: Automate the creation of a real-time map using REST APIs
+description: Learn how to automate the creation of a real-time map that uses an Eventstream and Eventhouse with the Fabric REST API and Python.
 ms.reviewer: smunk, sipa
 ms.service: fabric
 ms.topic: tutorial
@@ -8,7 +8,7 @@ ms.custom: mvc
 ms.date: 05/25/2026
 ---
 
-# Tutorial: Create a real-time map from Eventhouse data using REST APIs
+# Tutorial: Automate the creation of a real-time map using REST APIs
 
 Fabric Maps can visualize **real-time geospatial data** by connecting to **Eventhouse datasets** that are continuously updated through Eventstream ingestion.
 
@@ -24,10 +24,12 @@ In this tutorial, you learn how to build and automate a real-time geospatial sol
 
 > [!div class="checklist"]
 >
-> - Create an Eventhouse and KQL database using the Fabric REST API  
-> - Create an Eventstream to ingest data into the Eventhouse  
-> - Create a map with an inline definition that references Eventhouse data  
-> - Configure a map layer with periodic refresh for real-time updates  
+> Using the Fabric REST API, you:
+>
+> - Create an Eventhouse and KQL database
+> - Create an Eventstream to ingest data into the Eventhouse
+> - Create a map with an inline definition that references Eventhouse data
+> - Configure a map layer with periodic refresh for real-time updates
 > - Seed initial events so the map displays data immediately
 
 To simulate continuous streaming and watch the map update in near real time, complete this tutorial first, then continue with the follow-up [Tutorial: Simulate real-time data ingestion into a Fabric map](tutorial-simulate-real-time-data-ingestion.md), which builds directly on the Eventhouse, Eventstream, KQL function, and Map you create here.
