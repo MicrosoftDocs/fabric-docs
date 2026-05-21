@@ -1,14 +1,14 @@
 ---
-title: Add Semantic Enrichment to Ontology
+title: Add semantic enrichment with metadata
 description: Learn how to add metadata, descriptions, synonyms, and custom attributes to ontology objects to improve semantic accuracy and agent performance.
 ms.date: 05/21/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
 
-# Add semantic enrichment to ontology (preview)
+# Add semantic enrichment with metadata
 
-Semantic enrichment enables you to add structured metadata to ontology objects, including descriptions, synonyms, and custom key-value attributes. By enriching your ontology with semantic metadata, you improve discoverability, provide context for AI agents, and ensure consistent understanding across your organization.
+Semantic enrichment lets you add structured metadata to ontology objects, including descriptions, synonyms, and custom key-value attributes. By enriching your ontology with semantic metadata, you improve discoverability, provide context for AI agents, and ensure consistent understanding across your organization.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -22,11 +22,11 @@ This metadata improves agent answer correctness, especially for prompts that dep
 
 ## Prerequisites
 
-Before adding semantic enrichment to your ontology, make sure you have the following prerequisites:
+Before you add semantic enrichment to your ontology, make sure you have:
 
 * A [Fabric workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
 * **Ontology item (preview)** [enabled on your Fabric tenant](overview-tenant-settings.md#ontology-item-preview).
-* An ontology (preview) item with [entity types](how-to-create-entity-types.md) or [relationship types](how-to-create-relationship-types.md) created.
+* An ontology (preview) item that has [entity types](how-to-create-entity-types.md) or [relationship types](how-to-create-relationship-types.md).
 * Understanding of [core ontology concepts](overview.md#core-concepts-defining-an-ontology).
 
 ## Key concepts
@@ -62,7 +62,7 @@ Entity types support descriptions, synonyms, and custom metadata attributes. Fol
     * Data quality indicators
 
     > [!IMPORTANT]
-    > Custom attribute keys must be unique within each entity type. Duplicate key names are not allowed on the same entity type.
+    > Custom attribute keys must be unique within each entity type. You can't use duplicate key names on the same entity type.
 
 1. Select **Save** to apply your metadata changes.
 
@@ -78,7 +78,7 @@ Properties support descriptions and custom metadata attributes, but not synonyms
 
     :::image type="content" source="media/how-to-add-semantic-enrichment/add-metadata-properties-2.png" alt-text="Screenshot showing property metadata configuration.":::
 
-1. Add a **Description** that explains what the property represents and how it should be interpreted.
+1. Add a **Description** that explains what the property represents and how to interpret it.
 
 1. To add **Custom attributes**, enter key-value pairs for domain-specific metadata. Common use cases include:
     * Units (for example, `unit: celsius`, `unit: meters`)
@@ -86,7 +86,7 @@ Properties support descriptions and custom metadata attributes, but not synonyms
     * Valid ranges (for example, `min: 0`, `max: 100`)
 
     > [!IMPORTANT]
-    > Custom attribute keys must be unique within each property. Duplicate key names are not allowed on the same property.
+    > Custom attribute keys must be unique within each property. You can't use duplicate key names on the same property.
 
 1. Select **Save** to apply your changes.
 
@@ -106,7 +106,7 @@ Relationship types support descriptions and custom metadata attributes. Follow t
     * Business rules
 
     > [!IMPORTANT]
-    > Custom attribute keys must be unique within each relationship type. Duplicate key names are not allowed on the same relationship type.
+    > Custom attribute keys must be unique within each relationship type. You can't use duplicate key names on the same relationship type.
 
 1. Select **Save** to apply your metadata changes.
 
@@ -132,7 +132,7 @@ You can modify or remove metadata attributes from entity types, properties, and 
     * Confirm the deletion.
 
     > [!NOTE]
-    > Predefined metadata attributes (Description and Synonym) cannot be deleted, only edited. Custom metadata attributes can be deleted.
+    > You can't delete predefined metadata attributes (Description and Synonym), but you can edit them. You can delete custom metadata attributes.
 
 ## Query metadata with SQL and APIs
 
@@ -140,7 +140,7 @@ After adding semantic enrichment to your ontology, you can query metadata attrib
 
 ### Query with SQL
 
-You can query ontology metadata using SQL queries against your ontology item:
+To query ontology metadata, use SQL queries against your ontology item:
 
 ```sql
 -- Query entity type metadata
@@ -166,7 +166,7 @@ For more information about using the Ontology APIs, see the API reference docume
 
 ### Query with MCP tools
 
-Ontology metadata is accessible through Model Context Protocol (MCP) tools. For more information, see [Use the ontology MCP server](how-to-use-ontology-mcp-server.md).
+Access ontology metadata through Model Context Protocol (MCP) tools. For more information, see [Use the ontology MCP server](how-to-use-ontology-mcp-server.md).
 
 ## Best practices for semantic enrichment
 
@@ -177,7 +177,7 @@ Follow these best practices to maximize the value of semantic enrichment:
 * Start descriptions with what the entity type, property, or relationship represents
 * Include the business context and purpose
 * Mention key characteristics or constraints
-* Keep descriptions concise but informative (1-3 sentences)
+* Keep descriptions concise but informative (one to three sentences)
 
 ### Use effective synonyms
 
@@ -191,7 +191,7 @@ Follow these best practices to maximize the value of semantic enrichment:
 * Use consistent key naming conventions across your ontology
 * Choose keys that are self-explanatory (for example, `unit`, `sensitivity`, `owner`)
 * Document your custom attribute standards for your team
-* Consider how agents and downstream systems will consume the attributes
+* Consider how agents and downstream systems consume the attributes
 
 ### Optimize for agent performance
 
@@ -209,10 +209,10 @@ Follow these best practices to maximize the value of semantic enrichment:
 
 ## Limitations and considerations
 
-* **Duplicate keys**: Custom attribute keys must be unique within each entity type, property, or relationship type. Attempting to add duplicate keys results in an error.
-* **Predefined metadata**: Description and Synonym fields are predefined and cannot be deleted, only edited or left empty.
-* **Synonyms**: Only entity types support synonyms. Properties and relationship types don't support synonym attributes.
-* **Object size limits**: Entity type objects have a maximum size limit. Consider this when adding large numbers of custom attributes.
+* **Duplicate keys**: Custom attribute keys must be unique within each entity type, property, or relationship type. If you add duplicate keys, you get an error.
+* **Predefined metadata**: Description and Synonym fields are predefined. You can edit them or leave them empty, but you can't delete them.
+* **Synonyms**: Only entity types support synonyms. Properties and relationship types don't support synonyms.
+* **Object size limits**: Entity type objects have a maximum size limit. Consider this limit when you add large numbers of custom attributes.
 
 ## Related content
 
