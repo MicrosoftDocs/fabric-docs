@@ -5,11 +5,11 @@ ms.reviewer: ajagadish
 ms.date: 04/24/2026
 ms.topic: how-to
 ---
-# How to: Query using time travel at the statement level
+# How to: Query using time travel at the statement level and SQL analytics endpoint
+
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 In Microsoft Fabric, the capability to [time travel](time-travel.md) unlocks the ability to query the prior versions of data without the need to generate multiple data copies, saving on storage costs. This article describes how to query warehouse tables using time travel at the statement level, using the T-SQL [OPTION clause](/sql/t-sql/queries/option-clause-transact-sql?view=fabric&preserve-view=true) and the [FOR TIMESTAMP AS OF](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true#for-timestamp) syntax.
-
-Warehouse tables can be queried up to the [configured retention period](data-retention.md) using the `OPTION` clause, providing the date format `yyyy-MM-ddTHH:mm:ss[.fff]`.
 
 The following examples can be executed in the [SQL Query Editor](sql-query-editor.md), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), or any T-SQL query editor.
 
@@ -20,7 +20,7 @@ The following examples can be executed in the [SQL Query Editor](sql-query-edito
 
 This example shows how to time travel on an individual table in warehouse.
 
-The [OPTION T-SQL clause](/sql/t-sql/queries/option-clause-transact-sql?view=fabric&preserve-view=true) specifies the point-in-time to return the data.
+The [OPTION T-SQL clause](/sql/t-sql/queries/option-clause-transact-sql?view=fabric&preserve-view=true) specifies the point-in-time to return the data. The `OPTION` clause uses the date format `yyyy-MM-ddTHH:mm:ss[.fff]`.
 
 ```sql
 /* Time travel using a SELECT statement */
@@ -121,7 +121,9 @@ OPTION (FOR TIMESTAMP AS OF '2024-05-01T21:55:27.513');
 
 ### Time travel for DML operations
 
-Data Manipulation Language (DML) is used to insert, create and populate the tables by manipulating and transforming the existing data. The [OPTION clause](/sql/t-sql/queries/option-clause-transact-sql?view=fabric&preserve-view=true) and `OPTION (FOR TIMESTAMP AS OF ... ` can be used along with DML operations such as `INSERT INTO ... SELECT`, `CREATE TABLE AS SELECT` (CTAS), and `SELECT INTO`.
+**Applies to:** [!INCLUDE [Warehouse](includes/fabric-dw.md)] only
+
+In Fabric Data Warehouse, Data Manipulation Language (DML) is used to insert, create and populate the tables by manipulating and transforming the existing data. The [OPTION clause](/sql/t-sql/queries/option-clause-transact-sql?view=fabric&preserve-view=true) and `OPTION (FOR TIMESTAMP AS OF ... ` can be used along with DML operations such as `INSERT INTO ... SELECT`, `CREATE TABLE AS SELECT` (CTAS), and `SELECT INTO`.
 
 ```sql
 /*Time travel for INSERT INTO...SELECT*/
