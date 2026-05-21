@@ -374,7 +374,7 @@ Retry-After: 60
 The following limitations apply to the materialized lake views REST APIs:
 
 - *Schedule limits per lakehouse:* The [job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule) enforces limits on how many schedules can be configured per lakehouse.
-- *Job status display:* The status returned by [list item job instances](#list-job-instances-for-mlv-in-lakehouse) and [get item job instance](#get-job-instance-details-for-mlv-in-lakehouse) reflects Monitoring hub status. It might differ from materialized lake views [run history](./run-history.md#run-states-in-lineage-view) status (for example, **Skipped** can appear as **Canceled** in Monitoring hub).
+- *Job status display:* The status returned by [list item job instances](#list-job-instances-for-mlv-in-lakehouse) and [get item job instance](#get-job-instance-details-for-mlv-in-lakehouse) reflects Monitoring hub status. It might differ from materialized lake views [run history](./run-history.md#view-recent-refreshes) status (for example, **Skipped** can appear as **Canceled** in Monitoring hub).
 - *Entity display limits:* The [job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP#limitations) interface displays a limited number of completed and active jobs, which can affect visibility into historical or concurrent executions.
 
 ## Related content
