@@ -210,6 +210,7 @@ When you finish with the rules you created as part of the tutorial, stop them. I
 
 ## Related content
 
+* [Tutorial: Create an end-to-end Activator rule using agentic AI](activator-agentic-tutorial.md)
 * [What is Fabric Activator?](activator-introduction.md)
 
 To learn more about Microsoft Fabric, see:

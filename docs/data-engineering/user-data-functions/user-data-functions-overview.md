@@ -55,7 +55,7 @@ Your functions can securely access data from across the Fabric platform:
 
 - **[SQL databases](../../database/sql/overview.md)** - Read and write operations on Fabric SQL databases
 - **[Warehouses](../../data-warehouse/create-warehouse.md)** - Read and write operations for structured data
-- **[Lakehouses](../lakehouse-overview.md)** - Read and write Lakehouse files; read-only access to SQL endpoints
+- **[Lakehouses](../lakehouse-overview.md)** - Read and write Lakehouse files; read-only access to SQL analytics endpoints
 - **[Mirrored databases](../../mirroring/overview.md)** - Read-only access to mirrored database data
 
 Write-back from Power BI Translytical Task Flows is natively supported when invoking User Data Functions. User Data Functions can perform add, update, and delete operations against Fabric SQL Database, Fabric Data Warehouse, and Lakehouse files, making them the ideal integration point for task-flow-driven write-back scenarios.
