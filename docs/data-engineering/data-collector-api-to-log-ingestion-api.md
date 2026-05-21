@@ -144,6 +144,10 @@ Create a custom table in your Log Analytics workspace with the Log Ingestion API
 
    :::image type="content" source="media\data-collector-api-to-log-ingestion-api\monitoring-metrics-publisher-role.png" alt-text="Screenshot showing the Monitoring Metrics Publisher role assignment." lightbox="media\data-collector-api-to-log-ingestion-api\monitoring-metrics-publisher-role.png":::
 
+1. Retrieve the **stream name** and **DCR ID**. Open Data collection rule -> Overview -> JSON View
+
+   :::image type="content" source="media\data-collector-api-to-log-ingestion-api\stream-name-dcrid.png" alt-text="Screenshot showing the retrieve the stream name and DCR ID" lightbox="media\data-collector-api-to-log-ingestion-api\stream-name-dcrid.png":::
+
 ### Step 6. Configure Spark properties
 
 To configure Spark, create an environment in Fabric and choose one of the following authentication options. Use only one option for a given emitter.
