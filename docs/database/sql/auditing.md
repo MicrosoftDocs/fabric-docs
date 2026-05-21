@@ -2,7 +2,7 @@
 title: Auditing for Fabric SQL Database
 description: Learn how to configure and manage auditing for SQL database in Microsoft Fabric using the Fabric portal or the REST API.
 ms.reviewer: srsaluru, wiassaf
-ms.date: 03/10/2026
+ms.date: 05/21/2026
 ms.topic: concept-article
 ms.search.form: SQL database security
 ---
@@ -59,6 +59,10 @@ By default, audit data is retained indefinitely, unless you configure a custom r
 
 Fabric currently stores audit logs in the item's folder in OneLake and scopes them to the item lifecycle. If you delete the item, Fabric also deletes its audit logs. If you require retention independent of the item's lifecycle, move audit logs to a separate storage location (for example, another Lakehouse or an Azure Storage account) using tools such as AzCopy or SSDT.
 
+### Settings retention after restore
+
+After a restore operation, auditing settings are retained, but Auditing must be re-enabled in Fabric SQL Database. In the Fabric portal, open **Manage SQL auditing**, select **Save**.
+
 ## Configure auditing for SQL database from the Fabric portal
 
 To begin auditing for a Fabric SQL database:
@@ -109,8 +113,6 @@ For more information, see [sys.fn_get_audit_file](/sql/relational-databases/syst
 You can also view and configure SQL database auditing settings programmatically using the Fabric REST API. The REST API enables you to manage auditing consistently across all databases in a workspace using PowerShell scripts.
 
 For more information, see [Manage SQL database auditing with the REST API](auditing-manage-rest-api.md).
-
- **Note:** Auditing must be resaved after a restore operation to re-enable auditing in Fabric SQL DB
 
 ## Related content
 
