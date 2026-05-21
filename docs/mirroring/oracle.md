@@ -21,7 +21,6 @@ We support these Oracle Server environments:
 * Oracle Cloud Infrastructure (OCI)
 * Oracle Database@Azure
 * Oracle Exadata
-* Oracle Autonomous Database
 
 >[!NOTE]
 >* LogMiner needs to be enabled on your Oracle server. This tool helps track changes in your Oracle database for real-time mirroring.
@@ -57,6 +56,7 @@ Before you set up Oracle mirroring, you need:
 * [Supplemental logging](oracle-tutorial.md#set-up-oracle-permissions-and-enable-supplemental-logging) configured
 * [On-Premises Data Gateway](oracle-tutorial.md#install-the-on-premises-data-gateway) installed and set up
 * [Required user permissions](oracle-limitations.md#required-permissions)
+* Ensure your databases are in write mode since LogMiner doesn't work on read mode databases
 
 >[!NOTE]
 >* To ensure that you have the latest performance enhancements and updates, make sure that you have the upgraded to the latest version of the [On-Premises Data Gateway](oracle-tutorial.md#install-the-on-premises-data-gateway). To review recent updates, refer to the [Currently supported monthly updates](/data-integration/gateway/service-gateway-monthly-updates).
