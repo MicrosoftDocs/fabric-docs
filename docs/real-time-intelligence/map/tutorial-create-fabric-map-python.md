@@ -970,7 +970,7 @@ if __name__ == "__main__":
 
 ```
 
-At this point, all configuration and code has been defined.
+At this point, all configuration and code have been defined.
 
 In the next step, you run the script to create the Lakehouse, upload data, and generate the map.
 
