@@ -55,8 +55,6 @@ items:
       href: lakehouse-table-maintenance.md
     - name: High concurrency for table load and preview
       href: high-concurrency-for-lakehouse-operations.md
-    - name: Lakehouse SQL analytics endpoint
-      href: lakehouse-sql-analytics-endpoint.md
     - name: Lakehouse schemas
       href: lakehouse-schemas.md
     - name: Spark views in lakehouse
@@ -65,6 +63,16 @@ items:
       href: lakehouse-git-deployment-pipelines.md
     - name: Lakehouse REST API
       href: lakehouse-api.md
+  - name: Lakehouse SQL analytics endpoint
+    items: 
+    - name: Lakehouse SQL analytics endpoint overview
+      href: lakehouse-sql-analytics-endpoint.md
+    - name: SQL analytics endpoint use cases
+      href: lakehouse-sql-analytics-endpoint-use-cases.md
+    - name: Metadata sync
+      href: sql-analytics-endpoint-metadata-sync.md
+    - name: SQL analytics endpoint performance
+      href: sql-analytics-endpoint-performance.md      
   - name: Get data into a lakehouse
     items:
     - name: Get data into a lakehouse

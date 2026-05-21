@@ -81,6 +81,6 @@ The [!INCLUDE [product-name](../includes/product-name.md)] workspace provides a 
 
 - [OneLake, the OneDrive for data](../onelake/onelake-overview.md)
 - [What is Fabric Data Warehouse?](data-warehousing.md)
-- [Better together: the lakehouse and warehouse](get-started-lakehouse-sql-analytics-endpoint.md)
+- [Lakehouse SQL analytics endpoint use cases](../data-engineering/lakehouse-sql-analytics-endpoint-use-cases.md)
 - [Burstable capacity in Fabric Data Warehouse](burstable-capacity.md)
 - [Smoothing and throttling in Fabric Data Warehouse](compute-capacity-smoothing-throttling.md)
