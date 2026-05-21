@@ -1,6 +1,6 @@
 ---
 title: Simulate real-time data ingestion for a Fabric map using REST APIs
-description: Learn how to create a Fabric notebook programmatically that continuously streams vehicle location updates into Eventstream, driving real-time refreshes of a Fabric Map.
+description: Learn how to create a Fabric notebook programmatically that continuously streams vehicle location updates into the eventstream, driving real-time refreshes of a Fabric map.
 ms.reviewer: smunk, sipa
 ms.service: fabric
 ms.topic: tutorial
@@ -10,23 +10,23 @@ ms.date: 05/25/2026
 
 # Tutorial: Simulate real-time data ingestion into a Fabric map
 
-In the previous tutorial, you provisioned an Eventhouse, Eventstream, KQL function, and Map. The provisioning script also sent a small set of **seed events** so the map wasn't empty on first open.
+In the previous tutorial, you provisioned an eventhouse, eventstream, KQL function, and map. The provisioning script also sent a small set of **seed events** so the map wasn't empty on first open.
 
-In this tutorial, you build on that by creating a **real-time simulator notebook** programmatically using the Fabric REST API. When run, the notebook continuously sends updated vehicle locations into the Eventstream Custom endpoint. As events flow into Eventhouse, the map refreshes automatically.
+In this tutorial, you build on that by creating a **real-time simulator notebook** programmatically using the Fabric REST API. When run, the notebook continuously sends updated vehicle locations into the eventstream custom  endpoint. As events flow into Eventhouse, the map refreshes automatically.
 
 > [!div class="checklist"]
 >
 > - Create a Fabric notebook programmatically using the Fabric REST API
 > - Embed a continuous data simulator inside the notebook as an `ipynb` definition
-> - Run the notebook in Fabric to stream vehicle location updates into Eventstream
-> - Observe the Map refresh in near real time as new events are ingested
+> - Run the notebook in Fabric to stream vehicle location updates into the eventstream
+> - Observe the map refresh in near real time as new events are ingested
 
 ## Prerequisites
 
-- Complete [Tutorial: Create a real-time map from Eventhouse data using REST APIs](tutorial-create-real-time-map-python.md). This tutorial reuses the Eventhouse, Eventstream, KQL function, and Map that the provisioning tutorial created.
+- Complete [Tutorial: Automate the creation of a real-time map using REST APIs](tutorial-create-real-time-map-python.md). This tutorial reuses the eventhouse, eventstream, KQL function, and map that the provisioning tutorial created.
 - The `FABRIC_WORKSPACE_ID` environment variable set to the same workspace ID you used in the previous tutorial.
 - A working Python environment with `httpx` and `azure-identity` installed (the same environment from the previous tutorial works).
-- The **Eventstream Custom endpoint connection string** from the previous tutorial. To retrieve it, see [Run the application](tutorial-create-real-time-map-python.md#run-the-application).
+- The **Eventstream custom  endpoint connection string** from the previous tutorial. To retrieve it, see [Run the application](tutorial-create-real-time-map-python.md#run-the-application).
 - You're signed in for `DefaultAzureCredential`. If your session has expired, run:
 
   ```bash
@@ -38,7 +38,7 @@ In this tutorial, you build on that by creating a **real-time simulator notebook
 The simulator slots into the same pipeline you built in tutorial 1:
 
 ```
-Simulator notebook  -->  Eventstream Custom endpoint  -->  Eventhouse table
+Simulator notebook  -->  Eventstream custom  endpoint  -->  Eventhouse table
                                                                 |
                                                                 v
                                                   KQL function (latest per vehicle)
@@ -93,7 +93,9 @@ import httpx
 from azure.identity import DefaultAzureCredential
 
 # Reuse the same workspace as the provisioning tutorial
-WORKSPACE_ID = os.environ["FABRIC_WORKSPACE_ID"]
+WORKSPACE_ID = os.environ.get("FABRIC_WORKSPACE_ID")
+if not WORKSPACE_ID:
+    raise SystemExit("Set FABRIC_WORKSPACE_ID to your Fabric workspace GUID before running.")
 NOTEBOOK_DISPLAY_NAME = "Real-time vehicle simulator (Eventstream)"
 
 # Vehicles seeded by the provisioning script.
@@ -158,6 +160,15 @@ def _handle_lro(client: httpx.Client, resp: httpx.Response) -> str:
             raise RuntimeError(f"LRO failed: {body}")
         if isinstance(body, dict) and body.get("id"):
             return body["id"]
+        # Fabric LRO succeeded without inline id — fetch the result resource.
+        if isinstance(body, dict) and body.get("status") == "Succeeded":
+            result = client.get(op_url.rstrip("/") + "/result", headers=_headers_for_url(op_url))
+            if result.status_code == 200 and result.content:
+                rbody = result.json()
+                if isinstance(rbody, dict) and rbody.get("id"):
+                    return rbody["id"]
+            # Some update operations have no result body; return empty string sentinel.
+            return ""
         raise RuntimeError(f"LRO succeeded but no id returned: {body}")
 
 def build_simulator_ipynb() -> dict:
@@ -191,6 +202,18 @@ def build_simulator_ipynb() -> dict:
                 "outputs": [],
                 "source": [
                     "%pip install azure-eventhub\n"
+                ]
+            },
+            {
+                "cell_type": "code",
+                "metadata": {},
+                "execution_count": None,
+                "outputs": [],
+                "source": [
+                    "# Replace <PASTE_CONNECTION_STRING_HERE> with the Eventstream\n",
+                    "# Connection string-primary key (SAS Key Authentication).\n",
+                    "import os\n",
+                    "os.environ[\"EVENTHUB_CONNECTION_STRING\"] = \"<PASTE_CONNECTION_STRING_HERE>\"\n"
                 ]
             },
             {
@@ -254,28 +277,63 @@ def build_simulator_ipynb() -> dict:
     }
 
 
+def _find_notebook_id_by_name(client: httpx.Client, display_name: str) -> str | None:
+    """Page through workspace notebooks and return the id of one matching display_name, or None."""
+    url = f"https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/notebooks"
+    while url:
+        resp = client.get(url, headers=_fabric_headers())
+        resp.raise_for_status()
+        body = resp.json()
+        for item in body.get("value", []):
+            if item.get("displayName") == display_name:
+                return item.get("id")
+        url = body.get("continuationUri")
+    return None
+
+
 def main():
     ipynb = build_simulator_ipynb()
-
-    payload = {
-        "displayName": NOTEBOOK_DISPLAY_NAME,
-        "description": "Continuously sends vehicle location updates to Eventstream",
-        "definition": {
-            "format": "ipynb",
-            "parts": [
-                {
-                    "path": "artifact.content.ipynb",
-                    "payloadType": "InlineBase64",
-                    "payload": _json_to_b64(ipynb)
-                }
-            ]
-        }
+    definition = {
+        "format": "ipynb",
+        "parts": [
+            {
+                "path": "artifact.content.ipynb",
+                "payloadType": "InlineBase64",
+                "payload": _json_to_b64(ipynb)
+            }
+        ]
     }
 
-    url = f"https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/notebooks"
+    create_url = f"https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/notebooks"
+    create_payload = {
+        "displayName": NOTEBOOK_DISPLAY_NAME,
+        "description": "Continuously sends vehicle location updates to Eventstream",
+        "definition": definition,
+    }
 
     with httpx.Client(timeout=60) as client:
-        resp = client.post(url, headers=_fabric_headers(), json=payload)
+        resp = client.post(create_url, headers=_fabric_headers(), json=create_payload)
+
+        if resp.status_code == 409 and "ItemDisplayNameAlreadyInUse" in resp.text:
+            print(f"Notebook '{NOTEBOOK_DISPLAY_NAME}' already exists; updating its definition...")
+            notebook_id = _find_notebook_id_by_name(client, NOTEBOOK_DISPLAY_NAME)
+            if not notebook_id:
+                raise RuntimeError(
+                    f"Got 409 for '{NOTEBOOK_DISPLAY_NAME}' but couldn't find it via list."
+                )
+            update_url = (
+                f"https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}"
+                f"/notebooks/{notebook_id}/updateDefinition"
+            )
+            upd = client.post(update_url, headers=_fabric_headers(), json={"definition": definition})
+            if upd.status_code not in (200, 202):
+                raise RuntimeError(f"updateDefinition failed: {upd.status_code} {upd.text}")
+            if upd.status_code == 202:
+                _handle_lro(client, upd)
+            print("\nDONE (updated existing notebook)")
+            print("Notebook ID:", notebook_id)
+            return
+
         notebook_id = _handle_lro(client, resp)
         print("\nDONE")
         print("Notebook ID:", notebook_id)
@@ -305,9 +363,20 @@ When the script completes, it prints the new notebook's ID. The notebook is now 
 
 ### Provide the connection string
 
-The notebook reads `EVENTHUB_CONNECTION_STRING` from the environment. If it isn't set, the second code cell prompts you to paste it.
+The notebook includes a dedicated cell that sets the `EVENTHUB_CONNECTION_STRING` environment variable for the running notebook session. The simulator cell below it reads that variable and skips the `input()` prompt entirely.
 
 Use the **same connection string** you pasted when running the provisioning script. To retrieve it again, see [Run the application](tutorial-create-real-time-map-python.md#run-the-application).
+
+1. In the open notebook, locate the cell that contains:
+
+    ```python
+    os.environ["EVENTHUB_CONNECTION_STRING"] = "<PASTE_CONNECTION_STRING_HERE>"
+    ```
+
+1. Replace `<PASTE_CONNECTION_STRING_HERE>` with the connection string you copied from the eventstream **Custom endpoint → SAS Key Authentication → Connection string-primary key**.
+
+> [!IMPORTANT]
+> Don't save the notebook with your real connection string pasted into the cell. Before you commit or share the notebook, clear the value (for example, set it back to `<PASTE_CONNECTION_STRING_HERE>`) so the secret isn't persisted in the `.ipynb` file. For long-term use, store the connection string in **Azure Key Vault** and load it with `notebookutils.credentials.getSecret(...)` instead of hardcoding it.
 
 > [!NOTE]
 > After the `%pip install azure-eventhub` cell runs, Fabric may require you to restart the Python kernel before the `from azure.eventhub import …` cell can resolve the package. If you see an `ImportError`, restart the kernel and run the import cell again.
@@ -318,7 +387,7 @@ Run all cells. The final cell enters an infinite loop that sends a batch of vehi
 
 ## Verify the map updates
 
-1. Open the Map created by the provisioning tutorial (**My Real-Time Fabric Map**).
+1. Open the map created by the provisioning tutorial (**My Real-Time Fabric Map**).
 1. Confirm the seed points are already visible.
 1. With the simulator notebook still running, watch the markers move as the map auto-refreshes on the interval defined by `refresh_interval_ms` in `map.json`.
 
@@ -328,8 +397,8 @@ To stop streaming, interrupt the notebook kernel (**Stop** in the notebook toolb
 
 ## Troubleshooting
 
-- **Map appears empty after running the simulator.** Open the Eventstream in Fabric and check the **Data preview** to confirm events are arriving. Then run `eh_realtime_locations | take 10` in the KQL queryset to confirm rows reached Eventhouse.
-- **`EVENTHUB_CONNECTION_STRING` errors or `Unauthorized`.** Re-copy the connection string from the Eventstream's **Custom endpoint → SAS Key Authentication → Connection string-primary key**, then paste it again when prompted.
+- **Map appears empty after running the simulator.** Open the eventstream in Fabric and check the **Data preview** to confirm events are arriving. Then run `eh_realtime_locations | take 10` in the KQL queryset to confirm rows reached the eventhouse.
+- **`EVENTHUB_CONNECTION_STRING` errors or `Unauthorized`.** Re-copy the connection string from the eventstream's **Custom endpoint → SAS Key Authentication → Connection string-primary key**, then paste it again when prompted.
 - **Map markers don't update visibly.** Confirm `refreshIntervalMs` in the layer source of `map.json` is set (the provisioning tutorial uses `Config.refresh_interval_ms`). Lower values refresh more often.
 - **`ImportError: azure.eventhub` after `%pip install`.** Restart the notebook kernel and rerun the import cell.
 - **Create Notebook returns 400.** Verify `parts[].path` is exactly `artifact.content.ipynb` and `format` is `ipynb`.
@@ -339,8 +408,8 @@ To stop streaming, interrupt the notebook kernel (**Stop** in the notebook toolb
 In this tutorial, you extended the resources created in the previous tutorial by:
 
 - Creating a Fabric notebook **programmatically** through the Fabric REST API, with the notebook content supplied as an inline `ipynb` definition
-- Embedding a continuous data generator that sends per-vehicle location updates to the Eventstream Custom endpoint
-- Running the notebook in Fabric and observing the Map refresh in near real time as new events flowed through Eventstream and Eventhouse
+- Embedding a continuous data generator that sends per-vehicle location updates to the eventstream custom  endpoint
+- Running the notebook in Fabric and observing the map refresh in near real time as new events flowed through eventstream and eventhouse
 
 Combined with the provisioning tutorial, you now have a fully automated, end-to-end real-time geospatial scenario in Microsoft Fabric.
 
@@ -352,4 +421,4 @@ You can extend this solution toward real-world scenarios:
 - Enhance the KQL function to compute aggregates, trends, or geospatial joins
 - Add more layers to the map for richer context and analysis
 - Integrate alerts or downstream workflows based on streaming events
-- Explore building static or historical spatial views using Lakehouse data
+- Explore building static or historical spatial views using lakehouse data

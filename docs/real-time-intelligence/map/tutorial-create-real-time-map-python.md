@@ -1,6 +1,6 @@
 ---
 title: Automate the creation of a real-time map using REST APIs
-description: Learn how to automate the creation of a real-time map that uses an Eventstream and Eventhouse with the Fabric REST API and Python.
+description: Learn how to automate the creation of a real-time map that uses an eventstream and eventhouse with the Fabric REST API and Python.
 ms.reviewer: smunk, sipa
 ms.service: fabric
 ms.topic: tutorial
@@ -10,11 +10,11 @@ ms.date: 05/25/2026
 
 # Tutorial: Automate the creation of a real-time map using REST APIs
 
-Fabric Maps can visualize **real-time geospatial data** by connecting to **Eventhouse datasets** that are continuously updated through Eventstream ingestion.
+Fabric Maps can visualize **real-time geospatial data** by connecting to **eventhouse datasets** that are continuously updated through Eventstream ingestion.
 
 Unlike static scenarios that use files stored in a Lakehouse, this tutorial demonstrates a **streaming, event-driven architecture** where:
 
-- Events are ingested into an Eventhouse  
+- Events are ingested into an eventhouse  
 - Data is queried using Kusto Query Language (KQL)  
 - A map dynamically refreshes as new data arrives  
 
@@ -26,13 +26,13 @@ In this tutorial, you learn how to build and automate a real-time geospatial sol
 >
 > Using the Fabric REST API, you:
 >
-> - Create an Eventhouse and KQL database
-> - Create an Eventstream to ingest data into the Eventhouse
-> - Create a map with an inline definition that references Eventhouse data
+> - Create an eventhouse and KQL database
+> - Create an eventstream to ingest data into the eventhouse
+> - Create a map with an inline definition that references eventhouse data
 > - Configure a map layer with periodic refresh for real-time updates
 > - Seed initial events so the map displays data immediately
 
-To simulate continuous streaming and watch the map update in near real time, complete this tutorial first, then continue with the follow-up [Tutorial: Simulate real-time data ingestion into a Fabric map](tutorial-simulate-real-time-data-ingestion.md), which builds directly on the Eventhouse, Eventstream, KQL function, and Map you create here.
+To simulate continuous streaming and watch the map update in near real time, complete this tutorial first, then continue with the follow-up [Tutorial: Simulate real-time data ingestion into a Fabric map](tutorial-simulate-real-time-data-ingestion.md), which builds directly on the eventhouse, eventstream, KQL function, and map you create here.
 
 ## Scenario overview: Real-time asset tracking
 
@@ -62,7 +62,7 @@ This tutorial focuses on automating this scenario using REST APIs rather than co
 
 ## Create the seed data file (initial map data)
 
-To ensure the map displays data immediately after provisioning, the script sends a small set of seed events to the Eventstream.
+To ensure the map displays data immediately after provisioning, the script sends a small set of seed events to the eventstream.
 
 1. Create a new file in the same directory as your Python script: **vehicle_locations_seed.csv**
 1. Paste the following content:
@@ -135,7 +135,7 @@ In this step, you install the dependencies and add the imports your script uses.
 
 ### Install required libraries
 
-Run:
+In the terminal window you just opened, run the following command:
 
 ```
 pip install httpx azure-identity azure-eventhub
@@ -205,7 +205,7 @@ class Config:
         self.kql_function_name = "LatestVehicleLocations"
 
         self.eventstream_display_name = "es_realtime_locations"
-        self.eventstream_description = "Streams events into an Eventhouse table (created via Eventstream REST API)"
+        self.eventstream_description = "Streams events into an eventhouse table (created via Eventstream REST API)"
 
         self.map_display_name = "My Real-Time Fabric Map"
         self.map_description = "Created using Fabric Maps REST API (Eventhouse + Eventstream + Kusto function)"
@@ -216,7 +216,7 @@ class Config:
         # Seed data (initial map data)
         self.seed_csv_path = os.path.join(os.path.dirname(__file__), "vehicle_locations_seed.csv")
         
-        # Will be provided interactively after Eventstream is created
+        # Will be provided interactively after eventstream is created
         self.eventhub_connection_string = os.environ.get("EVENTHUB_CONNECTION_STRING", "")
 ```
 
@@ -226,9 +226,13 @@ Instead of hardcoding the workspace ID directly in the script, this tutorial use
 
 Prior to running this script, you'll need to create an environment variable named `FABRIC_WORKSPACE_ID`.
 
-#### Set the environment variable using Windows PowerShell
+#### Set the environment variable in Windows environments
 
-Run the following in PowerShell:
+On Windows, you can set the variable from any terminal that supports environment variables—PowerShell, Windows PowerShell, the PowerShell or Command Prompt windows built into Visual Studio and Visual Studio Code, Windows Terminal, and most other shells. Whichever you choose, the variable exists only inside **that single terminal session**: it isn't shared with other terminal windows, with a different shell type, or with processes launched outside that terminal—including scripts started from VS Code's run button, which often spawns its own terminal. If the script can't find the variable, it fails with `Set FABRIC_WORKSPACE_ID environment variable before running the script`.
+
+To avoid this, either run the script from the **same terminal window** where you set the variable, or define it as a **persistent user variable** (see [Set a persistent environment variable (Windows)](#set-a-persistent-environment-variable-windows)) so it's available to every new terminal session automatically.
+
+Run the following in PowerShell or VS terminal:
 
 ```powershell
 $env:FABRIC_WORKSPACE_ID="<WORKSPACE_ID>"
@@ -240,7 +244,7 @@ To confirm the variable is set:
 echo $env:FABRIC_WORKSPACE_ID
 ```
 
-This sets the variable for the current terminal session only. 
+This sets the variable for the current terminal session only.
 
 ##### Set a persistent environment variable (Windows)
 
@@ -253,10 +257,14 @@ To make the variable available in future sessions:
 1. Enter:
     - Name: FABRIC_WORKSPACE_ID
     -Value: your workspace ID
-1. Select OK to save
+1. Select **OK** to save
 1. Close and reopen your terminal before running the script again.
 
 #### Set the environment variable in macOS or Linux
+
+On macOS and Linux, you can set the variable from any shell that supports `export`—Bash, Zsh (the default on modern macOS), Fish (with a slightly different syntax), and the integrated terminals in Visual Studio Code and other editors. As on Windows, the variable exists only inside **that single shell session**: it isn't shared with other terminal tabs or windows, with a different shell, or with processes launched outside that shell—including scripts started from VS Code's run button, which often spawns its own terminal. If the script can't find the variable, it fails with `Set FABRIC_WORKSPACE_ID environment variable before running the script`.
+
+To avoid this, either run the script from the **same shell session** where you set the variable, or add `export` to your shell profile (see [Set a persistent environment variable (macOS or Linux)](#set-a-persistent-environment-variable-macos-or-linux)) so it's available to every new shell session automatically.
 
 Run:
 
@@ -264,13 +272,23 @@ Run:
 export FABRIC_WORKSPACE_ID="<WORKSPACE_ID>"
 ```
 
-To make it persistent, add the same line to your shell profile (for example, ~/.bashrc or ~/.zshrc).
-
 To confirm the variable is set:
 
 ```
 echo $FABRIC_WORKSPACE_ID
 ```
+
+This sets the variable for the current shell session only.
+
+##### Set a persistent environment variable (macOS or Linux)
+
+To make the variable available in future sessions, add the `export` line to your shell profile:
+
+- **Zsh** (default on macOS): `~/.zshrc`
+- **Bash**: `~/.bashrc` (Linux) or `~/.bash_profile` (macOS)
+- **Fish**: run `set -Ux FABRIC_WORKSPACE_ID "<WORKSPACE_ID>"` instead of editing a file
+
+After updating the profile, either open a new terminal or run `source ~/.zshrc` (or the appropriate file) so the change takes effect.
 
 ## Step 4—Add helper functions
 
@@ -280,9 +298,9 @@ This step adds reusable helper functions that keep the "end-to-end flow" readabl
 - **FabricClient**: lightweight wrapper for consistent API calls
 - **LRO handler**: poll long-running operations using `Location` / `x-ms-operation-id` / `Retry-After`, including 200-with-Running responses and Power BI cluster endpoints
 - **Definition payload helper**: base64 encode map.json for inline definitions
-- **Resolve Eventhouse ID**: retrieves or reuses an Eventhouse resource
-- **Resolve Eventstream ID**: retrieves an Eventstream ID after asynchronous creation
-- **Eventstream connection helper**: prompts for the Custom endpoint connection string
+- **Resolve eventhouse ID**: retrieves or reuses an eventhouse resource
+- **Resolve eventstream ID**: retrieves an eventstream ID after asynchronous creation
+- **Eventstream connection helper**: prompts for the custom  endpoint connection string
 - **Seed helper**: sends initial events with retry logic to ensure ingestion succeeds
 - **KQL database readiness helper**: waits for the KQL database to become available to Fabric Maps
 - **Map ID resolver**: resolves the map ID after asynchronous creation
@@ -363,7 +381,7 @@ def _pbi_headers() -> dict[str, str]:
 
 ### Create an LRO helper function
 
-Several Fabric REST APIs used in this tutorial, such as creating an Eventhouse and creating a Map, support **long-running operations (LROs)**.
+Several Fabric REST APIs used in this tutorial, such as creating an eventhouse and creating a map, support **long-running operations (LROs)**.
 
 These APIs can return a **`202 Accepted`** response, along with headers such as `Location`, `x-ms-operation-id`, and `Retry-After`, which indicate that the request is being processed asynchronously.
 
@@ -492,7 +510,7 @@ def _handle_lro(
 
 ### Definition payload helper
 
-When you create a Map with a **public definition**, you send map.json as payloadType: `InlineBase64`. The Create Map API examples show using `InlineBase64` in definition.parts.
+When you create a map with a **public definition**, you send map.json as payloadType: `InlineBase64`. The Create Map API examples show using `InlineBase64` in definition.parts.
 
 Add beneath the _LRO_ helper functions:
 
@@ -514,16 +532,16 @@ def _json_to_b64(obj: dict) -> str:
 
 ```
 
-### Create helper function to retrieve the Eventhouse ID once created
+### Create helper function to retrieve the eventhouse ID once created
 
-When you create an Eventhouse by using the Fabric REST API, the API can return a response that doesn't immediately include the Eventhouse ID. This can occur when:
+When you create an eventhouse by using the Fabric REST API, the API can return a response that doesn't immediately include the eventhouse ID. This can occur when:
 
 - The creation request is processed asynchronously as a long-running operation (LRO)  
 - The requested display name already exists and the API returns a conflict response (`ItemDisplayNameAlreadyInUse`)  
 
-In these cases, your script must determine whether an Eventhouse already exists or wait until the newly created Eventhouse becomes available.
+In these cases, your script must determine whether an eventhouse already exists or wait until the newly created eventhouse becomes available.
 
-This helper function retrieves the Eventhouse ID by querying the list of Eventhouses and matching the `displayName`. It retries multiple times to account for propagation delays and ensures that a valid Eventhouse ID is returned before the workflow continues.
+This helper function retrieves the eventhouse ID by querying the list of eventhouses and matching the `displayName`. It retries multiple times to account for propagation delays and ensures that a valid eventhouse ID is returned before the workflow continues.
 
 This approach enables more resilient and repeatable automation by:
 
@@ -535,12 +553,12 @@ Add the following code after the _definition payload_ helper function (`_json_to
 
 ```python
 # ===============================================================================
-# Helper: Resolve Eventhouse ID (when create Eventhouse returns 202 without id)
+# Helper: Resolve eventhouse ID (when create eventhouse returns 202 without id)
 # ===============================================================================
 
 def resolve_eventhouse_id(client, list_url, headers, eventhouse_name, max_attempts=10, delay=3):
     """
-    Resolve an Eventhouse ID by listing eventhouses and matching displayName.
+    Resolve an eventhouse ID by listing eventhouses and matching displayName.
 
     Used when:
     - Create fails with ItemDisplayNameAlreadyInUse
@@ -561,24 +579,24 @@ def resolve_eventhouse_id(client, list_url, headers, eventhouse_name, max_attemp
     raise RuntimeError(f"Eventhouse named {eventhouse_name!r} was not found after retries.")
 ```
 
-### Create helper function to retrieve the Eventstream ID once created
+### Create helper function to retrieve the eventstream ID once created
 
-When you create an Eventstream by using the Fabric REST API, the resource may not be immediately discoverable. Even if the creation request succeeds, the Eventstream might not appear right away when calling the List Eventstreams API due to backend propagation delays.
+When you create an eventstream by using the Fabric REST API, the resource may not be immediately discoverable. Even if the creation request succeeds, the eventstream might not appear right away when calling the List Eventstreams API due to backend propagation delays.
 
-As a result, the Eventstream ID may not be returned directly during creation, or it may not be reliably available for immediate use in subsequent API calls.
+As a result, the eventstream ID may not be returned directly during creation, or it may not be reliably available for immediate use in subsequent API calls.
 
-To reliably obtain the Eventstream ID, you must query the list of Eventstreams and retry until the newly created Eventstream becomes visible. The following helper function implements this retry pattern and ensures your automation flow is resilient to asynchronous provisioning and consistency delays, and is only required if you need the Eventstream ID.
+To reliably obtain the eventstream ID, you must query the list of eventstreams and retry until the newly created eventstream becomes visible. The following helper function implements this retry pattern and ensures your automation flow is resilient to asynchronous provisioning and consistency delays, and is only required if you need the eventstream ID.
 
 Add the following code after the `resolve_eventhouse_id()` function:
 
 ```python
 # ===============================================================================
-# Helper: Resolve Eventstream ID (when create Eventstream returns 202 without id)
+# Helper: Resolve eventstream ID (when create eventstream returns 202 without id)
 # ===============================================================================
 
 def resolve_eventstream_id(client, list_url, headers, eventstream_name, max_attempts=10, delay=5):
     """
-    Resolve a newly created Eventstream ID by listing eventstreams and matching displayName.
+    Resolve a newly created eventstream ID by listing eventstreams and matching displayName.
 
     Why this exists:
     - Eventstream creation can return 202 Accepted (async provisioning).
@@ -605,13 +623,13 @@ def resolve_eventstream_id(client, list_url, headers, eventstream_name, max_atte
 
 ```
 
-### Create helper to provide Eventstream connection string
+### Create helper to provide eventstream connection string
 
-To send events into Eventstream, you need a **connection string** for the Custom endpoint.
+To send events into Eventstream, you need a **connection string** for the custom  endpoint.
 
-Unlike Fabric REST APIs (used to create and manage resources), Eventstream ingestion uses a **data-plane endpoint** based on the Event Hub protocol. This endpoint requires a connection string for authentication.
+Unlike Fabric REST APIs (used to create and manage resources), eventstream ingestion uses a **data-plane endpoint** based on the Event Hub protocol. This endpoint requires a connection string for authentication.
 
-The connection string is generated when the Eventstream is created and published, and must be retrieved from the Fabric portal.
+The connection string is generated when the eventstream is created and published, and must be retrieved from the Fabric portal.
 
 This helper function prompts you to provide the connection string at runtime, ensuring that the script remains fully automated up to that point without requiring preconfigured values.
 
@@ -620,10 +638,10 @@ Add the following code after the `resolve_eventstream_id()` function:
 ```python
 def get_eventhub_connection_string_interactive(cfg: Config) -> str:
     """
-    Prompt for Eventstream Custom endpoint connection string.
+    Prompt for eventstream custom endpoint connection string.
 
     Why this function is needed:
-    - The Eventstream connection string is generated only after the Eventstream is created.
+    - The eventstream connection string is generated only after the eventstream is created.
     - It is not available via the Fabric REST API.
     - It is required to send events using the EventHub protocol.
 
@@ -637,8 +655,8 @@ def get_eventhub_connection_string_interactive(cfg: Config) -> str:
 
     print("\n=== Eventstream connection string required ===")
     print("In the Fabric portal:")
-    print("  1) Open the Eventstream you just created")
-    print("  2) Select the Custom endpoint source")
+    print("  1) Open the eventstream you just created")
+    print("  2) Select the custom  endpoint source")
     print("  3) Select 'SAS Key Authentication'")
     print("  4) Copy 'Connection string-primary key'\n")
 
@@ -653,17 +671,17 @@ def get_eventhub_connection_string_interactive(cfg: Config) -> str:
 
 > [!NOTE]
 > The connection string is separate from the Microsoft Entra access token used for Fabric REST APIs.
-> The REST API token is used for resource management, whereas the Eventstream connection string is used for streaming data ingestion.
+> The REST API token is used for resource management, whereas the eventstream connection string is used for streaming data ingestion.
 
 ### Create helper to seed initial events from CSV
 
-To ensure the map displays data immediately after it's created, the script sends a small set of **seed events** into the Eventstream before creating the map.
+To ensure the map displays data immediately after it's created, the script sends a small set of **seed events** into the eventstream before creating the map.
 
 Without this step, the Eventhouse table may not yet contain any data, and the map could appear empty on first load.
 
-This helper function reads data from a local CSV file and sends each row as a JSON event to the Eventstream using the EventHub protocol.
+This helper function reads data from a local CSV file and sends each row as a JSON event to the eventstream using the EventHub protocol.
 
-Because Eventstream resources are provisioned asynchronously, the Custom endpoint may not be immediately ready to accept events after creation. To handle this, the helper function includes built-in retry logic that automatically attempts to send events until the endpoint is available. This ensures the initialization process is reliable and repeatable and doesn't require manual timing adjustments.
+Because Eventstream resources are provisioned asynchronously, the custom  endpoint may not be immediately ready to accept events after creation. To handle this, the helper function includes built-in retry logic that automatically attempts to send events until the endpoint is available. This ensures the initialization process is reliable and repeatable and doesn't require manual timing adjustments.
 
 This approach mirrors real-world ingestion patterns:
 
@@ -682,10 +700,10 @@ Add the following code after the `get_eventhub_connection_string_interactive()` 
 ```python
 def seed_eventstream_from_csv(cfg: Config, max_attempts: int = 10, delay: int = 3) -> int:
     """
-    Send seed events with retry logic to handle Eventstream readiness delay.
+    Send seed events with retry logic to handle eventstream readiness delay.
 
     Why this exists:
-    - Eventstream Custom endpoint may not be immediately ready after creation.
+    - Eventstream custom  endpoint may not be immediately ready after creation.
     - Initial sends can fail or silently drop.
     - This function retries until ingestion succeeds.
     """
@@ -857,30 +875,30 @@ def resolve_map_id(client, list_url, headers, map_name, max_attempts=10, delay=5
 
 Next, create the primary functions that define the workflow. These will all be called from `main()`.
 
-The primary functions are added in the order they're defined in code. `main()` calls them in a slightly different order so the table exists before the Eventstream binds to it and so seeded data is available before verification runs.
+The primary functions are added in the order they're defined in code. `main()` calls them in a slightly different order so the table exists before the eventstream binds to it and so seeded data is available before verification runs.
 
-1. Create an Eventhouse
-1. Create the Eventhouse table
+1. Create an eventhouse
+1. Create the eventhouse table
 1. Verify ingestion (called after seeding)
-1. Create an Eventstream
+1. Create an eventstream
 1. Create a KQL function
 1. Build map definition (map.json)
 1. Build platform metadata (.platform)
 1. Create the map
 
-### Create an Eventhouse
+### Create an eventhouse
 
-When you create an Eventhouse by using the Fabric REST API, the request can return different response patterns depending on the state of the request and the availability of the resource.
+When you create an eventhouse by using the Fabric REST API, the request can return different response patterns depending on the state of the request and the availability of the resource.
 
-In some cases, the API returns a `201 Created` response with the Eventhouse ID immediately available. In other cases, it can return a `202 Accepted`, indicating that the Eventhouse is being provisioned asynchronously as a long-running operation (LRO). Additionally, the API can return a `409` response with an error such as `ItemDisplayNameNotAvailableYet` if the requested name is temporarily reserved.
+In some cases, the API returns a `201 Created` response with the eventhouse ID immediately available. In other cases, it can return a `202 Accepted`, indicating that the eventhouse is being provisioned asynchronously as a long-running operation (LRO). Additionally, the API can return a `409` response with an error such as `ItemDisplayNameNotAvailableYet` if the requested name is temporarily reserved.
 
 To handle these variations reliably, the helper function implements logic to:
 
-- Detect whether the Eventhouse was created synchronously or requires LRO polling  
+- Detect whether the eventhouse was created synchronously or requires LRO polling  
 - Handle transient name availability conflicts using the `Retry-After` header  
-- Ensure a valid Eventhouse ID is returned regardless of the response pattern  
+- Ensure a valid eventhouse ID is returned regardless of the response pattern  
 
-This approach ensures your automation flow is resilient to asynchronous provisioning behavior and temporary service conditions when creating Eventhouse resources.
+This approach ensures your automation flow is resilient to asynchronous provisioning behavior and temporary service conditions when creating eventhouse resources.
 
 Add the following after the `resolve_map_id()` function:
 
@@ -948,13 +966,13 @@ def create_eventhouse(client: httpx.Client, fabric: FabricClient, cfg: Config) -
 
 #### Create KQL table
 
-Before sending events into Eventstream, ensure that the destination table exists in the Eventhouse.
+Before sending events into the eventstream, ensure that the destination table exists in the eventhouse.
 
 Although Eventhouse can create tables automatically during ingestion in some scenarios, this behavior isn't guaranteed when using REST APIs. If the destination table doesn't exist, ingestion can fail silently or events may not be written as expected.
 
 To ensure reliable and repeatable automation, this step explicitly creates (or merges) the table schema using the Kusto management API. This guarantees that:
 
-- The Eventstream destination can bind to a valid table
+- The eventstream destination can bind to a valid table
 - Ingestion succeeds consistently
 - Downstream queries and map layers return data as expected
 
@@ -1007,13 +1025,13 @@ def create_kql_table_if_missing(client: httpx.Client, fabric: FabricClient, cfg:
 
 #### Verify data ingestion
 
-After the seeding step (run later from `main()` once the Eventstream exists), this helper verifies that data has been successfully ingested into the Eventhouse table.
+After the seeding step (run later from `main()` once the eventstream exists), this helper verifies that data has been successfully ingested into the eventhouse table.
 
-It's defined here, next to the table-creation helper, because both operate on the same Eventhouse and KQL database. It's called from `main()` *after* `seed_eventstream_from_csv` to confirm the pipeline is working.
+It's defined here, next to the table-creation helper, because both operate on the same eventhouse and KQL database. It's called from `main()` *after* `seed_eventstream_from_csv` to confirm the pipeline is working.
 
 This step executes a simple count query against the table and returns the result. It helps validate that:
 
-- The Eventstream is correctly configured
+- The eventstream is correctly configured
 - Events are being written to the table
 - The ingestion pipeline is functioning end-to-end
 
@@ -1028,7 +1046,7 @@ Add the following after the `create_kql_table_if_missing()` function:
 
 def verify_eventhouse_data(client: httpx.Client, fabric: FabricClient, cfg: Config, eventhouse_id: str):
     """
-    Verify that data has been ingested into the Eventhouse table.
+    Verify that data has been ingested into the eventhouse table.
 
     Why this exists:
     - Eventstream ingestion can silently fail if misconfigured
@@ -1044,7 +1062,7 @@ def verify_eventhouse_data(client: httpx.Client, fabric: FabricClient, cfg: Conf
     query_service_uri = props.get("queryServiceUri")
 
     if not db_ids or not query_service_uri:
-        raise RuntimeError("Missing Eventhouse properties for verification")
+        raise RuntimeError("Missing eventhouse properties for verification")
 
     db_id = db_ids[0]
 
@@ -1068,34 +1086,34 @@ def verify_eventhouse_data(client: httpx.Client, fabric: FabricClient, cfg: Conf
     print("Data verification result:", resp.text)
 ```
 
-### Create Eventstream with definition
+### Create eventstream with definition
 
-When you create an Eventstream by using the Fabric REST API with a definition payload, the request provisions both the Eventstream resource and its associated configuration. Depending on the request and backend processing, the API can return different response patterns.
+When you create an eventstream by using the Fabric REST API with a definition payload, the request provisions both the eventstream resource and its associated configuration. Depending on the request and backend processing, the API can return different response patterns.
 
-In many cases, the API returns a `202 Accepted` response, indicating that the Eventstream is being created asynchronously as a long-running operation (LRO). The response may not include the Eventstream ID directly, and the LRO completion endpoint might not return a usable result. Additionally, even after the operation completes, the newly created Eventstream might not be immediately available when calling the List Eventstreams API due to backend propagation delays.
+In many cases, the API returns a `202 Accepted` response, indicating that the eventstream is being created asynchronously as a long-running operation (LRO). The response may not include the eventstream ID directly, and the LRO completion endpoint might not return a usable result. Additionally, even after the operation completes, the newly created eventstream might not be immediately available when calling the List Eventstreams API due to backend propagation delays.
 
 To handle this behavior reliably, the helper function implements logic to:
 
 - Handle asynchronous provisioning using LRO polling when required  
-- Retrieve the Eventstream ID after creation by querying the list of Eventstreams  
-- Retry until the Eventstream becomes available for downstream operations  
+- Retrieve the eventstream ID after creation by querying the list of eventstreams  
+- Retry until the eventstream becomes available for downstream operations  
 
-This approach ensures your automation flow is resilient to asynchronous provisioning and eventual consistency delays when creating Eventstream resources with definitions.
+This approach ensures your automation flow is resilient to asynchronous provisioning and eventual consistency delays when creating eventstream resources with definitions.
 
 Add the following after the `verify_eventhouse_data()` function:
 
 ```python
 # =========================================================
-# Step 2: Create Eventstream (with definition)
+# Step 2: Create eventstream (with definition)
 # =========================================================
 
 def create_eventstream_with_definition(client: httpx.Client, fabric: FabricClient, cfg: Config, eventhouse_id: str) -> str:
     """
-    Create an Eventstream using a public definition and return its item ID.
+    Create an eventstream using a public definition and return its item ID.
 
     Teaching note:
     - Eventstream definition is graph-like (sources, destinations, operators, streams).
-    - We create: CustomEndpoint source -> DefaultStream -> Eventhouse destination.
+    - We create: custom Endpoint source -> DefaultStream -> Eventhouse destination.
     """
     eventstream_url = f"https://api.fabric.microsoft.com/v1/workspaces/{cfg.workspace_id}/eventstreams"
 
@@ -1204,7 +1222,7 @@ def create_eventstream_with_definition(client: httpx.Client, fabric: FabricClien
 
 ### Create KQL function
 
-When you create a KQL function in an Eventhouse by using the Kusto management REST API, the request executes a control command against the KQL database rather than a standard Fabric item API. As a result, the call behaves differently from other resource creation operations.
+When you create a KQL function in an eventhouse by using the Kusto management REST API, the request executes a control command against the KQL database rather than a standard Fabric item API. As a result, the call behaves differently from other resource creation operations.
 
 The request is sent to the Kusto management endpoint (`/v1/rest/mgmt`) and typically returns a `200 OK` response when successful. However, the command can fail if the referenced table or schema isn't yet available, which is common in streaming scenarios where tables are created automatically upon first data ingestion.
 
@@ -1232,7 +1250,7 @@ def create_kql_function(client: httpx.Client, fabric: FabricClient, cfg: Config,
     - Map layers must be backed by supported Kusto entities (functions).
     - We use the Eventhouse queryServiceUri + Kusto mgmt endpoint to run a .create-or-alter command.
     """
-    # Get Eventhouse properties (queryServiceUri + databasesItemIds)
+    # Get eventhouse properties (queryServiceUri + databasesItemIds)
     get_eventhouse_url = f"https://api.fabric.microsoft.com/v1/workspaces/{cfg.workspace_id}/eventhouses/{eventhouse_id}"
     eh = fabric.request("GET", get_eventhouse_url)
     eh.raise_for_status()
@@ -1291,18 +1309,18 @@ def create_kql_function(client: httpx.Client, fabric: FabricClient, cfg: Config,
 
 ### Build map.json
 
-When you create a Map by using the Fabric REST API with an inline definition, the map configuration is provided as a JSON payload (commonly referred to as `map.json`). This definition includes details such as data sources, layers, styling, and refresh behavior.
+When you create a map by using the Fabric REST API with an inline definition, the map configuration is provided as a JSON payload (commonly referred to as `map.json`). This definition includes details such as data sources, layers, styling, and refresh behavior.
 
-In this tutorial, the map definition includes a **Kusto function–based data layer** that queries the Eventhouse and returns geospatial data to be visualized on the map. This layer must reference the correct Eventhouse item, KQL database, and function name, and be structured according to the Fabric Maps schema.
+In this tutorial, the map definition includes a **Kusto function–based data layer** that queries the eventhouse and returns geospatial data to be visualized on the map. This layer must reference the correct eventhouse item, KQL database, and function name, and be structured according to the Fabric Maps schema.
 
 To ensure the definition is generated correctly and consistently, the helper function builds the `map.json` payload dynamically. It implements logic to:
 
 - Define a data layer that references a KQL function as its data source  
 - Configure the layer with appropriate fields for latitude and longitude  
 - Enable periodic refresh to support real-time updates  
-- Inject the correct resource identifiers (such as Eventhouse ID and function name)  
+- Inject the correct resource identifiers (such as eventhouse ID and function name)  
 
-This approach ensures the map definition is valid, reusable, and aligned with the resources created earlier in the automation flow, allowing the map to visualize streaming data from the Eventhouse.
+This approach ensures the map definition is valid, reusable, and aligned with the resources created earlier in the automation flow, allowing the map to visualize streaming data from the eventhouse.
 
 Add the following after the `create_kql_function()` function:
 
@@ -1379,7 +1397,7 @@ def build_map_json(cfg: Config, kql_database_item_id: str) -> dict:
 
 ### Build .platform (platform metadata)
 
-When creating a Fabric Map with an inline definition, you must include a `.platform` definition that describes the item metadata.
+When creating a Fabric map with an inline definition, you must include a `.platform` definition that describes the item metadata.
 
 This metadata includes:
 
@@ -1417,7 +1435,7 @@ def build_platform_json(cfg: Config) -> dict:
     }
 ```
 
-### Create Map with inline definition
+### Create a map with inline definition
 
 When creating a map with an inline definition, the definition must include multiple parts to fully configure the map and its data layers.
 
@@ -1430,16 +1448,16 @@ The query file binds the map layer to the KQL function and ensures that the laye
 
 By including all required definition parts in a single request, this step provisions the map and its data layer atomically, eliminating the need for follow-up update operations.
 
-Depending on the request and backend processing, the API can return different response patterns. In many cases, the API returns a `202 Accepted` response, indicating that the Map is being provisioned asynchronously as a long-running operation (LRO). The response may not include the Map ID directly, and the LRO completion endpoint might not return a usable result. Additionally, even after the operation completes, the newly created Map might not be immediately visible when calling the List Maps API due to backend propagation delays.
+Depending on the request and backend processing, the API can return different response patterns. In many cases, the API returns a `202 Accepted` response, indicating that the map is being provisioned asynchronously as a long-running operation (LRO). The response may not include the map ID directly, and the LRO completion endpoint might not return a usable result. Additionally, even after the operation completes, the newly created map might not be immediately visible when calling the List Maps API due to backend propagation delays.
 
 To handle this behavior reliably, the helper function implements logic to:
 
-- Submit an inline Map definition that references Eventhouse data  
+- Submit an inline map definition that references eventhouse data  
 - Handle asynchronous provisioning using LRO polling when required  
-- Retrieve the Map ID after creation by querying the list of Maps  
-- Retry until the Map becomes available for downstream operations  
+- Retrieve the map ID after creation by querying the list of maps  
+- Retry until the map becomes available for downstream operations  
 
-This approach ensures your automation flow is resilient to asynchronous provisioning and eventual consistency delays when creating Maps with inline definitions.
+This approach ensures your automation flow is resilient to asynchronous provisioning and eventual consistency delays when creating maps with inline definitions.
 
 Add the following after the `build_platform_json()` function:
 
@@ -1513,12 +1531,12 @@ Rather than performing a single operation, this function executes the full seque
 
 To manage this workflow reliably, the orchestration function implements logic to:
 
-- Create an Eventhouse and associated KQL database with a table
-- Create and resolve an Eventstream for data ingestion
-- Seed initial events into Eventstream and validate ingestion works
+- Create an eventhouse and associated KQL database with a table
+- Create and resolve an eventstream for data ingestion
+- Seed initial events into the eventstream and validate ingestion works
 - Create a KQL function to transform and query streaming data
 - Build the map definition (`map.json` and `.platform`)
-- Create the Map using an inline definition and a Kusto function–based layer
+- Create the map using an inline definition and a Kusto function–based layer
 - Ensure all resources are available before proceeding to the next step  
 
 By coordinating these operations, the orchestration function provides a single entry point for the automation flow and ensures that dependencies are handled correctly, enabling a complete, repeatable, and end-to-end real-time mapping scenario.
@@ -1595,17 +1613,17 @@ if __name__ == "__main__":
 
 ## Run the application
 
-During script execution, you are prompted to paste the Eventstream connection string.
+During script execution, you are prompted to paste the eventstream connection string.
 
 To retrieve this value:
 
 1. Open your Fabric workspace  
-2. Open the Eventstream created by the script  
+2. Open the eventstream created by the script  
 3. Select the **Custom endpoint source**  
 4. Open **SAS Key Authentication**  
 5. Copy **Connection string-primary key**
 
-:::image type="content" source="media/tutorials/create-real-time-map-using-rest-apis/connection-string-primary-key.png" alt-text="A screenshot of a Microsoft Fabric workspace with SAS Key Authentication panel open. The panel displays the Connection string-primary key field ready to be copied for Eventstream authentication.":::
+:::image type="content" source="media/tutorials/create-real-time-map-using-rest-apis/connection-string-primary-key.png" alt-text="A screenshot of a Microsoft Fabric workspace with SAS Key Authentication panel open. The panel displays the Connection string-primary key field ready to be copied for eventstream authentication.":::
 
 Paste the value into the console when prompted.
 
@@ -1624,7 +1642,7 @@ Verify that all items were created:
 
 At this point, all resources are created and configured.
 
-To simulate continuous streaming and watch the map update in near real time, continue with the follow-up [Tutorial: Simulate real-time data ingestion into a Fabric map](tutorial-simulate-real-time-data-ingestion.md). It builds directly on this tutorial and reuses the Eventhouse, Eventstream, KQL function, and Map you created.
+To simulate continuous streaming and watch the map update in near real time, continue with the follow-up [Tutorial: Simulate real-time data ingestion into a Fabric map](tutorial-simulate-real-time-data-ingestion.md). It builds directly on this tutorial and reuses the eventhouse, eventstream, KQL function, and map you created.
 
 ## Summary
 
@@ -1632,11 +1650,11 @@ In this tutorial, you provisioned the resources needed for a real-time geospatia
 
 You accomplished the following:
 
-- Created an **Eventhouse and KQL database** using the Fabric REST API
-- Created an **Eventstream with a Custom endpoint** for ingesting streaming events
+- Created an **eventhouse and KQL database** using the Fabric REST API
+- Created an **eventstream with a custom  endpoint** for ingesting streaming events
 - Defined a **KQL function** to query and shape real-time data for map visualization
-- Built and deployed a **Fabric Map with an inline definition** referencing Eventhouse data
-- Seeded the Eventstream with initial events so the map displayed data immediately
+- Built and deployed a **Fabric map with an inline definition** referencing eventhouse data
+- Seeded the eventstream with initial events so the map displayed data immediately
 
 This architecture demonstrates a common real-time analytics pattern in Fabric:
 
