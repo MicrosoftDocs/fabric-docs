@@ -3,7 +3,7 @@ title: Refresh Materialized Lake Views in a Lakehouse
 description: Learn how to refresh a materialized lake view in a lakehouse in Microsoft Fabric.
 ms.reviewer: abhishjain
 ms.topic: how-to
-ms.date: 04/28/2026
+ms.date: 05/21/2026
 # customer intent: As a data engineer, I want to refresh materialized lake views in a lakehouse so that I can ensure that the data is up to date and optimize query performance.
 ---
 
@@ -37,7 +37,10 @@ The following table describes the refresh strategies that optimal refresh can se
 |Full refresh | Recomputes the entire materialized lake view from the full source dataset. This strategy is used when unsupported expressions are detected, when changes can't be processed incrementally, or when the source dataset is small enough that a full recompute is faster than incremental processing.|
 
 > [!IMPORTANT]
-> Incremental refresh requires the delta change data feed (CDF) property (`delta.enableChangeDataFeed=true`) on all source tables referenced in the materialized lake view definition. Without CDF enabled, optimal refresh can only choose between no refresh and full refresh. For more information, see [Enable incremental refresh](#enable-incremental-refresh).
+> Incremental refresh applies only when both of the following are true:
+>
+> - **Source data is append-only for the refresh cycle.** If a refresh cycle detects deletes or updates on a source table, the engine falls back to full refresh — even when CDF is enabled and the query uses only supported SQL constructs. For more details, see [Incremental refresh and append-only data](#incremental-refresh-and-append-only-data).
+> - **Delta change data feed (CDF) is enabled** (`delta.enableChangeDataFeed=true`) on all source tables referenced in the materialized lake view definition. Without CDF, optimal refresh can only choose between no refresh and full refresh. For more information, see [Enable incremental refresh](#enable-incremental-refresh).
 
 ## Set up optimal refresh
 
@@ -52,6 +55,16 @@ By default, optimal refresh mode is enabled for a materialized lake view lineage
    
    :::image type="content" source="./media/refresh-materialized-lake-view/enable-optimal-refresh-option.png" alt-text="Screenshot that shows toggle to enable optimal refresh mode." border="true" lightbox="./media/refresh-materialized-lake-view/enable-optimal-refresh-option.png":::
 
+### Incremental refresh and append-only data
+
+Today, incremental refresh applies only when source data is **append-only** between refreshes. If any source table records a delete or update, Fabric falls back to full refresh—even with CDF enabled and a query that uses only [supported SQL constructs](#sql-constructs-supported-by-incremental-refresh).
+
+Deletes and updates are harder to process incrementally. The engine needs a reliable way to identify rows, such as a unique key. Without that signal, a full refresh is the only safe choice.
+
+***What's changing***:
+
+- **Incremental support for deletes and updates is in active development.** The plan is to introduce a **refresh hint** mechanism for supplying metadata—such as a unique key—so the engine can apply deletes and updates incrementally instead of falling back to a full refresh.
+  
 ### Enable incremental refresh
 
 To use incremental refresh, you need to enable the delta change data feed (CDF) property on all source tables or materialized lake views referenced in the materialized lake view definition. CDF lets Fabric read only the rows that changed since the last refresh, instead of reprocessing the full dataset.
@@ -74,8 +87,7 @@ To enable CDF directly from the banner:
 
 
 > [!NOTE]
-> * Incremental refresh is supported for append-only data. If the source data includes deletions or updates, Fabric performs a full refresh.
-> * Enabling CDF on your source tables has no measurable storage or performance effect for append-only workloads, which is the scenario that incremental refresh supports. CDF is a standard Delta Lake table property that other Fabric features can also benefit from. For more information about how CDF works, see [Use Delta Lake change data feed](/azure/databricks/delta/delta-change-data-feed).
+> Enabling CDF on your source tables has no measurable storage or performance effect for append-only workloads, which is the scenario that incremental refresh supports. CDF is a standard Delta Lake table property that other Fabric features can also benefit from. For more information about how CDF works, see [Use Delta Lake change data feed](/azure/databricks/delta/delta-change-data-feed).
 
 You can enable CDF at creation time by including `TBLPROPERTIES` in the `CREATE` statement:
 
