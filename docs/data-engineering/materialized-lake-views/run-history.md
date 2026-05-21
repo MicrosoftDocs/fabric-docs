@@ -31,14 +31,14 @@ The following table describes each status:
 | **Completed** | All views refreshed successfully. |
 | **Failed** | One or more views encountered an error. Fabric marks child views of a failed view as **Skipped**. |
 | **Skipped** | Fabric skipped this run because another active run was already refreshing the same view. |
-| **Cancelled** | A user cancelled the run. |
+| **Canceled** | A user Canceled the run. |
 
 ## Find a specific run
 
 When the table grows long, use these options to find a specific run:
 
 - **Search**: Type a keyword in the search box to filter by Run ID or run name.
-- **Filters**: Select **Filters** to filter by status (Completed, Failed, Cancelled, In progress, Skipped) or other criteria.
+- **Filters**: Select **Filters** to filter by status (Completed, Failed, Canceled, In progress, Skipped) or other criteria.
 - **Column Options**: Show or hide columns. Select **Apply** to save the selection, or select **Reset to default** to restore the original layout.
 
 > [!TIP]
