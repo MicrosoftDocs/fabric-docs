@@ -20,12 +20,14 @@ Operations agents help organizations operationalize clear business goals by cont
 
 - **Eventhouse column descriptions**: If a column's purpose is unclear from its name, add a plain-language description by using the description field in your KQL table schema. This helps the agent interpret data values correctly.
 
+- **Ingestion time column**: The operations agent defaults to using the ingestion time of the table to identify when records arrived. This is used when the agent queries for latest data, and to calculate changes in the data over time. Make sure that the ingestion time is populated.
+
 - **Business object identification**: If the agent needs to monitor a specific business object such as a station, sensor, or personnel record, identify the column that uniquely identifies the object (for example, "StationID" or "SensorID"). If using a KQL database source, specify which table it belongs to. If using an ontology source, specify the entity that the agent should use.
 
 - **Field name quoting**: If a rule references column or property names that contain special characters, such as underscores or hyphens, enclose the column name in quotation marks (""). This practice ensures that the agent identifies it correctly.
 
-- **Quantifiable conditions**: If a rule uses qualitative language such as "low availability" or "high temperature," replace it with a specific numeric threshold. For example, use a phrase like "fewer than 3 bikes available" or "temperature exceeds 80."
-
+- **Quantifiable conditions**: If a rule uses qualitative language such as "low availability" or "high temperature," replace it with a specific numeric threshold. For example, use a phrase like "fewer than 3 bikes available" or "temperature exceeds 80". The agent will use the default LLM knowledge to suggest thresholds for common terms e.g. "acidic conditions" means pH <7.
+ 
 - **Rule separation**: If you define multiple rules, describe each rule on a separate line or bullet point. Don't combine conditions from different rules in the same sentence.
 
 - **Rule order**: If the agent needs to prioritize certain rules, list higher-priority rules first. Large language models (LLMs) might interpret information differently based on its position in the prompt.
@@ -57,11 +59,12 @@ Here's an example of how you can lay out your instructions to the agent to be cl
 
 - Currently, only regular Eventhouse tables are supported. Shortcut tables, functions, and materialized views are not supported.
 
-- If you are using a Fabric Ontology for the agent's data source, it needs to be located in the same workspace as the operations agent.
+- If you are using a Fabric Ontology for the agent's data source:
+    - The ontology needs to be located in the same workspace as the operations agent.
 
-- Ontology entities that you want the agent to monitor must have at least one static property to use as the identifier for entities. Timeseries properties should be bound to eventhouse fields.
+    - Ontology entities that you want the agent to monitor must have at least one static property to use as the identifier for entities. Timeseries properties should be bound to eventhouse fields.
 
-- Ontology monitoring is limited to basic property values only. Any aggregation such as an average, minimum, or maximum value is not supported. Monitoring that requires an 'AND' condition (e.g. braking index for a runway is over 0.8 and the surface temp is < 40) is not supported.
+    - Ontology monitoring is limited to basic property values only. Any aggregation such as an average, minimum, or maximum value is not supported. Monitoring that requires an 'AND' condition (e.g. braking index for a runway is over 0.8 and the surface temp is < 40) is not supported.
 
 - While system guardrails are in place, heavy usage might result in throttling, which limits the number of messages the agent can send. In such cases, you might receive simplified, non-LLM-generated messages through Microsoft Teams.
 
@@ -79,4 +82,4 @@ Here's an example of how you can lay out your instructions to the agent to be cl
 
 - Operations agent is available in Microsoft Fabric regions, excluding South Central US and East US.
 
-- If your Fabric tenant and capacity are in different regions, you might have errors when you configure Power Automate actions. Until a fix is available, to use the operations agent, ensure your workspace capacity is in the same region as your Fabric tenant.
+- Operations agent is not currently supported in workspaces encrypted with [Customer-managed keys for Fabric workspaces](../security/workspace-customer-managed-keys).
