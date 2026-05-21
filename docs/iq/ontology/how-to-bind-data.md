@@ -52,15 +52,15 @@ First, bind static data to entity types in your ontology (preview) item. This no
 
     On the **Configure** page, select **Manage property bindings > Add binding and properties**, or **Add properties from data** in the **Properties** section if the entity type has no properties yet.
 
-    :::image type="content" source="media/how-to-bind-data/bind-data-configuration.png" alt-text="Screenshot of adding a new data binding to the entity type." lightbox="media/how-to-bind-data/bind-data-configuration.png":::
+    :::image type="content" source="media/how-to-bind-data/bind-data-add.png" alt-text="Screenshot of adding a new data binding to the entity type." lightbox="media/how-to-bind-data/bind-data-add.png":::
 
 1. On the binding page, select **Add data binding** and choose the type of OneLake data source that contains the data for the entity.
 
-    :::image type="content" source="media/how-to-bind-data/bind-data-2.png" alt-text="Screenshot of the data binding page and data source selection.":::
+    :::image type="content" source="media/how-to-bind-data/bind-data-add-data-binding.png" alt-text="Screenshot of the data binding page and data source selection.":::
 
 1. Choose your data source and table from the OneLake catalog.
 
-    :::image type="content" source="media/how-to-bind-data/bind-data-3.png" alt-text="Screenshot of the data source selection." lightbox="media/how-to-bind-data/bind-data-3.png":::
+    :::image type="content" source="media/how-to-bind-data/bind-data-select-table.png" alt-text="Screenshot of the data source selection." lightbox="media/how-to-bind-data/bind-data-select-table.png":::
 
 1. Fields from the source table populate the data binding configuration. Observe the sections of the configuration page:
     * **Entity type key**: Identifies the field (or fields) that can be used to uniquely identify each record of ingested data.
@@ -68,7 +68,7 @@ First, bind static data to entity types in your ontology (preview) item. This no
     * **Entity type key mapping**: Identifies the column(s) in the source data table that map to the entity type key property. You can select string and integer columns from your source data as the entity type key. Together, the columns you select uniquely identify a record.
     * **Properties**: Lists the columns from the source data and corresponding properties on the entity type. The **Source column** side populates automatically with the columns from the table, and the **Property name** side lists their corresponding property names on the entity type within ontology. 
 
-    :::image type="content" source="media/how-to-bind-data/bind-data-4.png" alt-text="Screenshot of the configuration." lightbox="media/how-to-bind-data/bind-data-4.png":::
+    :::image type="content" source="media/how-to-bind-data/bind-data-configuration.png" alt-text="Screenshot of the configuration." lightbox="media/how-to-bind-data/bind-data-configuration.png":::
 
 1. In the **Properties** section, add, rename, or delete properties as needed. Property names can match the source column names or be different. If you have existing properties defined on the entity type, you can select their names from the dropdown menu.
 
@@ -76,14 +76,14 @@ First, bind static data to entity types in your ontology (preview) item. This no
 
 1. Select **Define entity type key** at the top of the configuration. Select the property or set of properties that uniquely identifies each record in your data and **Save**.
 
-    :::image type="content" source="media/how-to-bind-data/bind-data-5-key.png" alt-text="Screenshot of adding an entity type key." lightbox="media/how-to-bind-data/bind-data-5-key.png":::
+    :::image type="content" source="media/how-to-bind-data/bind-data-key.png" alt-text="Screenshot of adding an entity type key." lightbox="media/how-to-bind-data/bind-data-key.png":::
 
 1. Select **Save** to save your static data binding. You see a confirmation message indicating that the entity type was updated successfully.
 1. From here, you can continue on to [add a time series binding](#add-time-series-data-after-binding-static-data) on this page, or you can close the binding page by selecting **Cancel**. Closing the binding page returns you to the **Configure** page.
 
 1. In the **Configure** page, verify the bindings by reviewing the properties in the **Properties** pane and confirming that they're bound to the correct data sources.
 
-    :::image type="content" source="media/how-to-bind-data/bind-data-6.png" alt-text="Screenshot of the data bindings in the Configure page." lightbox="media/how-to-bind-data/bind-data-6.png":::
+    :::image type="content" source="media/how-to-bind-data/bind-data-complete.png" alt-text="Screenshot of the data bindings in the Configure page." lightbox="media/how-to-bind-data/bind-data-complete.png":::
 
 1. Optionally, select a property modeled on your entity type to use as the **display name property**. This step provides a friendly name for entity instances in downstream experiences.
 
@@ -105,13 +105,13 @@ Next, bind time series data to entity types in your ontology (preview) item.
 
 1. A **Timeseries data** section appears in the configuration. Select the source data **Timestamp column** that contains the timestamp values.
 
-    :::image type="content" source="media/how-to-bind-data/bind-data-time-series-1.png" alt-text="Screenshot of selecting the timestamp column." lightbox="media/how-to-bind-data/bind-data-time-series-1.png":::
+    :::image type="content" source="media/how-to-bind-data/bind-data-time-series-configure.png" alt-text="Screenshot of selecting the timestamp column." lightbox="media/how-to-bind-data/bind-data-time-series-configure.png":::
 
 1. In the **Properties** section, add, rename, or delete properties as needed. 
 1. **Save** the data binding. Confirm that the entity type updated successfully, then select **Cancel** to close the configuration options.
 1. Back in the **Configure** page, verify the new properties and their binding to the data source.
 
-    :::image type="content" source="media/how-to-bind-data/bind-data-time-series-2.png" alt-text="Screenshot of all the data bindings in the Configure page." lightbox="media/how-to-bind-data/bind-data-time-series-2.png":::
+    :::image type="content" source="media/how-to-bind-data/bind-data-time-series-complete.png" alt-text="Screenshot of all the data bindings in the Configure page." lightbox="media/how-to-bind-data/bind-data-time-series-complete.png":::
 
 ## Edit or delete data binding
 
