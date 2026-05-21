@@ -129,6 +129,25 @@ If your Oracle user doesn't have direct ALTER DATABASE and ALTER TABLE permissio
    ALTER TABLE {schemaName}.{tableName} ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;
    ```
 
+## Invalid Decimal Precision or Scale for Oracle NUMBER columns
+#### Issue
+If an Oracle column is defined as NUMBER without precision and scale (that is, no (p,s) specified), mirroring to Fabric may fail with the following error:
+Invalid Decimal Precision or Scale. Precision: 38 Scale: 127
+#### Cause
+This issue can occur due to an outdated Oracle client/ODP driver used by the On-premises Data Gateway, which does not correctly interpret Oracle NUMBER types without explicit precision and scale.
+#### Resolution
+Upgrade the Oracle client tools used by the gateway and restart the mirroring process by following these steps:
+1. Stop mirroring for the affected database
+   * If stopping mirroring impacts downstream consumers, alternatively stop the On-premises Data Gateway.
+1. Update Oracle client tools
+   * On the VM hosting the On-premises Data Gateway, Install the latest version of [Oracle Client for Microsoft Tools (ODP driver)](https://www.oracle.com/database/technologies/appdev/ocmt.html).
+1. Restart gateway services
+   * Open services.msc
+   * Restart the On-Premises Data Gateway service
+1. Restart mirroring
+   * Return to the Fabric portal
+   * Restart the mirror
+
 ## Set up your gateway
 
 Currently, we only support connecting to Oracle using an On-Premises Data Gateway (OPDG). You need to install and configure the gateway on a machine that can connect to your Oracle server.
