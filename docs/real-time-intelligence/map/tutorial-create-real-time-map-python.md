@@ -1603,6 +1603,8 @@ To retrieve this value:
 4. Open **SAS Key Authentication**  
 5. Copy **Connection string-primary key**
 
+:::image type="content" source="media/tutorials/create-real-time-map-using-rest-apis/connection-string-primary-key.png" alt-text="A screenshot of a Microsoft Fabric workspace with SAS Key Authentication panel open. The panel displays the Connection string-primary key field ready to be copied for Eventstream authentication.":::
+
 Paste the value into the console when prompted.
 
 > [!IMPORTANT]
@@ -1616,7 +1618,7 @@ python create_realtime_map.py
 
 Verify that all items were created:
 
-:::image type="content" source="media/tutorials/create-real-time-map-using-rest-apis/workspace-items-created.png" alt-text="A screenshot of the Microsoft Fabric workspace showing successfully created items for the real-time map tutorial. The workspace panel displays four items: eh_realtime_locations (Eventhouse), eh_realtime_locations (KQL Database), es_realtime_locations (Eventstream), and My Real-Time Fabric Map (Map).":::
+:::image type="content" source="media/tutorials/create-real-time-map-using-rest-apis/real-time-map.png" alt-text="A screenshot of a Seattle street map with multiple blue location markers clustered in downtown and surrounding neighborhoods. A data layers panel on the left shows Live Locations layer enabled. The map displays streets, neighborhood names, and control buttons on the right side for navigation and layer management.":::
 
 At this point, all resources are created and configured.
 
