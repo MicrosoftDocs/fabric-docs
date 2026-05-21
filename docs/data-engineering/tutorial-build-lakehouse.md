@@ -40,7 +40,7 @@ You need OneDrive for this tutorial because the data ingestion process relies on
 The ingestion step doesn't work if you don't have OneDrive configured, because Fabric can't access the uploaded file. If you already have the data available in your lakehouse or another supported location, OneDrive isn't required.
 
 > [!NOTE]
-> If you already have data in your lakehouse, you can use that data instead of the sample CSV file. To check if data is already associated with your lakehouse, use the Lakehouse Explorer or the SQL analytics endpoint to browse tables, files, and folders. For more information about how to check, see [Lakehouse overview](lakehouse-overview.md) and [Query lakehouse tables with SQL analytics endpoint](../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md).
+> If you already have data in your lakehouse, you can use that data instead of the sample CSV file. To check if data is already associated with your lakehouse, use the Lakehouse Explorer or the SQL analytics endpoint to browse tables, files, and folders. For more information about how to check, see [Lakehouse overview](lakehouse-overview.md) and [Lakehouse SQL analytics endpoint use cases](lakehouse-sql-analytics-endpoint-use-cases.md).
 
 ## Create a lakehouse
 
