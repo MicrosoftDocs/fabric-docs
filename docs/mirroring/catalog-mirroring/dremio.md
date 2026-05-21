@@ -17,7 +17,7 @@ For a tutorial on configuring your Dremio environment for Dremio catalog mirrori
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
-When you mirror a Dremio catalog, there is no data movement or data replication. Only the Dremio catalog structure is mirrored to Fabric, and the underlying catalog data is accessed through shortcuts. Changes to the underlying data may not appear in Fabric immediately. Propagation can take anywhere from a few seconds to several minutes, as described in the [SQL Analytics Endpoint Performance documentation](../../data-warehouse/sql-analytics-endpoint-performance.md).
+When you mirror a Dremio catalog, there is no data movement or data replication. Only the Dremio catalog structure is mirrored to Fabric, and the underlying catalog data is accessed through shortcuts. Changes to the underlying data may not appear in Fabric immediately. Propagation can take anywhere from a few seconds to several minutes, as described in the [SQL analytics endpoint performance documentation](../../data-engineering/sql-analytics-endpoint-performance.md).
 
 ## What analytics experiences are built in
 
@@ -26,7 +26,7 @@ Mirrored catalogs are items in Fabric distinct from other items such as Lakehous
 When you mirror a Dremio catalog, Fabric creates these items:
 
 - Mirrored Dremio catalog item
-- A [SQL analytics endpoint](../../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md) for this item
+- A [SQL analytics endpoint](../../data-engineering/lakehouse-sql-analytics-endpoint.md) for this item
 
 You can access your mirrored Dremio catalog data multiple ways:
 
