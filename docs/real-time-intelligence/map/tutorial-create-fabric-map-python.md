@@ -1,40 +1,58 @@
 ---
-title: Create a Microsoft Fabric Map using the REST API with Python
+title: Create a map using REST API with Python
 description: Learn how to create a Microsoft Fabric Map programmatically using Python and Fabric Maps REST API.
-author: stevemunk
-ms.author: sipa
+ms.reviewer: smunk, sipa
 ms.service: fabric
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 04/16/2026
+ms.date: 05/19/2026
+ms.search.form: Create a map using REST API with Python
 ---
 
-# Tutorial: Create a map using GeoJSON as a data layer using REST API
+# Tutorial: Create a map using REST API with Python
 
-Fabric Maps are defined by a **public definition** (a map.json payload) that describes the basemap, data sources, layer sources, and layer rendering settings. The most reliable way to automate map creation is to **create the Map with a public definition inline**, so the map is ready to render layers immediately after creation. The Map definition structure is documented in the [Map item definition](/rest/api/fabric/articles/item-management/definitions/map-definition) article.
+Fabric Maps are defined by a **public definition** (`map.json`) that describes the basemap, data sources, layer sources, and rendering behavior.
 
-In this tutorial, you build a Python app from scratch that:
+<!--This tutorial demonstrates a **static data scenario** using files stored in a Lakehouse. For real-time streaming scenarios using Eventstream and Eventhouse, see [Tutorial: Create a real-time map from Eventhouse data using REST APIs](tutorial-real-time-map-python.md).-->
 
-* Creates a **Lakehouse** in your Fabric workspace using the Lakehouse REST API (supports LRO).
-* Uploads a **GeoJSON** file to the Lakehouse Files/ area via OneLake DFS APIs (GUID addressing).
-* Uploads a **custom SVG marker** to the same Lakehouse and references it from the map definition (iconSources).
-* Creates a **Map** with a fully formed map.json definition inline using the Create Map API (supports creating with public definition and supports LRO).
+The most reliable way to automate map creation is to create the map with its definition provided inline, so the map is fully configured and ready to render immediately after creation.
+
+For more information about the map definition structure, see [Map item definition](/rest/api/fabric/articles/item-management/definitions/map-definition).
+
+In this tutorial, you build a Python application that:
+
+- Creates a **Lakehouse** in your Fabric workspace using the Lakehouse REST API (supports LRO).
+- Uploads a **GeoJSON** file to the Lakehouse Files area via OneLake DFS APIs (GUID addressing).
+- Uploads a **custom SVG marker** to the same Lakehouse and references it from the map definition (iconSources).
+- Creates a **Map** with a fully formed map.json definition inline using the Create Map REST API (supports creating with public definition and supports LRO).
 
 > [!div class="checklist"]
 >
-> * Create a Lakehouse using the Fabric REST API
-> * Upload a GeoJSON file to OneLake
-> * Upload a custom SVG marker icon to OneLake
-> * Build a map.json definition that references Lakehouse data
-> * Create a Fabric Map with the definition provided inline
+> - Create a Lakehouse using the Fabric REST API
+> - Upload a GeoJSON file to OneLake
+> - Upload a custom SVG marker icon to OneLake
+> - Build a map.json definition that references Lakehouse data
+> - Create a Fabric Map with the definition provided inline
+
+This tutorial follows a common automation pattern in Fabric: create infrastructure → upload data → define visualization → render map.
+
+## When to use this approach
+
+This pattern is best for:
+
+- Static geospatial datasets
+- Reference layers (for example, points of interest, boundaries)
+- Historical or batch-processed data
+
+For scenarios that require continuously updating data (for example, live tracking or telemetry), see the real-time streaming tutorial.
 
 ## Prerequisites
 
-* Python 3.9 or later
-* Azure cli
-* Fabric workspace ID
-* Microsoft Entra access token with:
-  * `Item.ReadWrite.All`
+- Python 3.9 or later
+- Azure CLI
+- Fabric workspace ID
+- Permissions to call Fabric REST APIs, such as:
+  - `Item.ReadWrite.All`
 
 ## Authentication
 
@@ -51,8 +69,8 @@ az login
 
 `DefaultAzureCredential` can use your signed-in identity to acquire access tokens for:
 
-* Fabric REST APIs (resource: `https://api.fabric.microsoft.com/.default`)
-* OneLake access via ADLS-compatible endpoints (OneLake supports existing ADLS/Blob tools and SDKs). OneLake supports browsing and reading/writing data using ADLS Gen2 APIs and SDKs, including GUID-based addressing for workspaces and items.
+- Fabric REST APIs (resource: `https://api.fabric.microsoft.com/.default`)
+- OneLake access via ADLS-compatible endpoints (OneLake supports existing ADLS/Blob tools and SDKs). OneLake supports browsing and reading/writing data using ADLS Gen2 APIs and SDKs. This includes support for GUID-based addressing for workspaces and items.
 
 > [!TIP]
 > About `https://api.fabric.microsoft.com/.default`
@@ -74,18 +92,18 @@ Signing in ensures that your Fabric identity, workspace role membership, and cap
 
 This step is especially helpful if:
 
-* You're new to Microsoft Fabric
-* The workspace was recently created
-* Your role assignment was added recently
+- You're new to Microsoft Fabric
+- The workspace was recently created
+- Your role assignment was added recently
 
 > [!NOTE]
 > This tutorial authenticates using Microsoft Entra ID via `DefaultAzureCredential`. Fabric REST APIs don't require a browser session, but signing in to the Fabric web experience can prevent first‑run authorization issues caused by delayed role provisioning. 
 
 ## Create the GeoJSON file
 
-The GeoJSON file is used in the creation of the map item data layer. Once you create the file, update the `local_geojson_path` variable to reflect the correct path.
+The GeoJSON file in this tutorial is used as the map's data layer. Once you create the file, update the `local_geojson_path` variable to reflect the correct path.
 
-Copy the following GeoJSON and paste into a blank text file and save it as `starbucks-seattle.geojson`:
+Copy the following GeoJSON into a blank text file, and save the file as `starbucks-seattle.geojson`:
 
 ```json
 {
@@ -195,6 +213,9 @@ Copy the following GeoJSON and paste into a blank text file and save it as `star
 }
 ```
 
+> [!IMPORTANT]
+> Make sure the file path used in `local_geojson_path` matches where you saved the file on your machine.
+
 ## Step 1—Create a new Python project file
 
 In this step, you create a blank Python file that you'll build up section-by-section.
@@ -221,9 +242,9 @@ pip install httpx azure-identity azure-storage-file-datalake
 
 #### What each library is for
 
-* **httpx**: makes HTTP requests to the Fabric REST APIs.
-* **azure-identity**: provides DefaultAzureCredential for Microsoft Entra authentication.
-* **azure-storage-file-datalake**: uploads files to OneLake using ADLS Gen2-compatible APIs (OneLake supports these APIs).
+- **httpx**: makes HTTP requests to the Fabric REST APIs.
+- **azure-identity**: provides DefaultAzureCredential for Microsoft Entra authentication.
+- **azure-storage-file-datalake**: uploads files to OneLake using ADLS Gen2-compatible APIs (OneLake supports these APIs).
 
 ### Add import statements to your .py file
 
@@ -245,42 +266,44 @@ from azure.storage.filedatalake import DataLakeServiceClient
 
 In this step, you define the variables your application uses, including workspace ID, file paths, and feature toggles.
 
-Add the following below the import statements:
+> [!TIP]
+> Using a centralized configuration object simplifies automation scenarios by keeping environment-specific values (such as workspace IDs and file paths) separate from application logic.
+
+Add the following below the [import](#add-import-statements-to-your-py-file) statements:
 
 ```python
-# ---------------------------------------------------------
-# Configuration
-# ---------------------------------------------------------
+# =========================================================
+# Configuration (centralized)
+# =========================================================
 
-# Your Fabric workspace ID (GUID)
-workspace_id = "YOUR-WORKSPACE-ID"
+class Config:
+    """
+    Central configuration object for the tutorial.
 
-# Local GeoJSON file to upload to OneLake. Update as needed.
-local_geojson_path = Path(
-    r"C:\starbucks-seattle.geojson"
-)
+    Why this exists:
+    - Keeps all "things you might change" in one place (workspace ID, file paths, toggles).
+    - Lets step functions accept a single cfg object rather than many parameters.
+    - Makes the tutorial easier to teach: you introduce Config once, then build functions.
 
-# Where the GeoJSON file will be stored inside the Lakehouse Files area
-geojson_relative_path = "Files/vector/starbucks-seattle.geojson"
+    Tip:
+    - In real projects, you might load these values from env vars or a JSON file.
+    - For tutorial clarity, we keep them explicit and readable.
+    """
+    def __init__(self):
+        # Workspace
+        self.workspace_id = "YOUR-WORKSPACE-ID"
 
-# Where the custom SVG icon will be stored inside the Lakehouse Files area
-svg_relative_path = "Files/icons/starbucks-marker.svg"
+        # Local file (source) and OneLake destination paths (inside Lakehouse Files/)
+        self.local_geojson_path = Path(r"C:\tutorial\starbucks-seattle.geojson")
+        self.geojson_relative_path = "Files/vector/starbucks-seattle.geojson"
 
-# Toggle whether to use a custom SVG marker (recommended) or a built-in icon name (fallback)
-USE_CUSTOM_SVG_MARKER = True
+        # Optional SVG marker settings
+        self.svg_relative_path = "Files/icons/starbucks-marker.svg"
+        self.use_custom_svg_marker = True
+        self.builtin_icon_name_fallback = "BuildingShop"
 
-# If you disable custom SVG markers, the map will try to use this built-in icon name.
-# Built-in icon names are environment/UI dependent, so consider this a fallback only.
-BUILTIN_ICON_NAME_FALLBACK = "Coffee"
-```
-
-### Add the SVG marker constant
-
-In the same section, add:
-
-```python
-# A small SVG marker icon (kept < 1 MB) that can scale cleanly.
-STARBUCKS_MARKER_SVG = """\
+        # SVG content (kept < 1 MB, scales cleanly)
+        self.starbucks_marker_svg = """\
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
   <path d="M32 2C20.4 2 11 11.4 11 23c0 15.6 18.7 36.6 19.5 37.5a2 2 0 0 0 3 0C34.3 59.6 53 38.6 53 23 53 11.4 43.6 2 32 2z"
         fill="#006241" stroke="#ffffff" stroke-width="2"/>
@@ -288,23 +311,41 @@ STARBUCKS_MARKER_SVG = """\
   <path d="M26 20h12v10c0 3-2.5 5-6 5s-6-2-6-5V20z" fill="#006241"/>
 </svg>
 """
+
+        # Resource display names / descriptions
+        self.lakehouse_display_name = "lh_starbucks_seattle"
+        self.lakehouse_description = "Stores Starbucks Seattle GeoJSON + marker icon for a Fabric Maps tutorial"
+
+        self.map_display_name = "My Fabric Map"
+        self.map_description = "Created using Fabric Maps REST API"
+
+
 ```
 
-> [!TIP]
-> SVG is typically a strong choice for markers because it scales cleanly at different zoom levels and screen DPIs.
+> [!NOTE]
+> The `geojson_relative_path` and `svg_relative_path` values define the location inside the Lakehouse Files area. These paths are relative to the Lakehouse root and are used both for uploading files and referencing them in the map definition.
 
 ## Step 4—Add helper functions
 
 This step adds reusable helper functions that keep the "end-to-end flow" readable:
 
-* **Auth helpers**: build headers for Fabric REST calls
-* **LRO handler**: poll 202 Accepted operations using Location and Retry-After
-* **Definition payload helper**: base64 encode map.json for inline definitions
-* **OneLake upload helpers**: upload GeoJSON/SVG to Lakehouse Files via OneLake
+- **Auth helpers**: build headers for Fabric REST APIs
+- **FabricClient**: lightweight wrapper for consistent API calls
+- **LRO handler**: poll 202 Accepted operations using Location and Retry-After
+- **Definition payload helper**: base64 encode map.json for inline definitions
+- **OneLake upload helpers**: upload GeoJSON and SVG files to Lakehouse Files
+
+> [!NOTE]
+> This tutorial uses two types of operations:
+>
+> - **Control plane** (Fabric REST APIs): create Lakehouse and Map items
+> - **Data plane** (OneLake DFS): upload files into the Lakehouse
+>
+> Both are required to fully set up the map.
 
 ### Create auth helper functions
 
-Fabric REST calls require a bearer token. The Create Map and Create Lakehouse APIs require delegated scopes such as `Item.ReadWrite.All`/`Lakehouse.ReadWrite.All` (depending on the API) and authenticate via Microsoft Entra.
+Fabric REST APIs require a Microsoft Entra access token (bearer token) for authentication. The Create Map and Create Lakehouse APIs require delegated scopes such as `Item.ReadWrite.All`/`Lakehouse.ReadWrite.All` (depending on the API) and authenticate via Microsoft Entra.
 
 Add this block below your configuration section:
 
@@ -336,11 +377,39 @@ def _fabric_headers() -> dict[str, str]:
     }
 ```
 
+### Create FabricClient helper function
+
+A small wrapper around httpx.Client so you don't need to repeat headers everywhere.
+
+```python
+# =========================================================
+# FabricClient (minimal wrapper so call sites stay clean)
+# =========================================================
+
+class FabricClient:
+    """
+    Small wrapper around httpx.Client so we don't repeat headers everywhere.
+
+    Keeps the tutorial behavior:
+    - request() returns the raw httpx.Response so the caller can handle 201 vs 202.
+    """
+    def __init__(self, http_client: httpx.Client):
+        self._http = http_client
+
+    def request(self, method: str, url: str, *, json_body=None) -> httpx.Response:
+        return self._http.request(method, url, headers=_fabric_headers(), json=json_body)
+
+```
+
 ### Create LRO helper function
 
-Create Lakehouse and Create Map both support **long running operations** and can return **202 Accepted** with `Location` and ``Retry-After``.
+Fabric REST APIs used in this tutorial, such as creating a Lakehouse and creating a Map, support long-running operations (LROs). 
 
-Add this block:
+These APIs can return a `202 Accepted` response, along with headers such as `Location` and `Retry-After`, which indicate that the request is being processed asynchronously.
+
+To handle these responses consistently, you create a helper function that polls the operation until it completes and returns the created resource ID.
+
+Add this block after the FabricClient helper function:
 
 ```python
 # ---------------------------------------------------------
@@ -354,6 +423,8 @@ def _handle_lro(
     list_url: str | None = None,
     match_display_name: str | None = None,
     id_field: str = "id",
+    max_attempts: int = 10,
+    delay: int = 5,
 ) -> str:
     """
     Poll a Fabric long-running operation (LRO) until completion and return the created resource id.
@@ -363,14 +434,13 @@ def _handle_lro(
     - Some LRO completion payloads are status-only and do NOT include the created resource id.
       When that happens, we resolve the created resource by listing resources and matching displayName.
 
-    Parameters:
-    - list_url: The endpoint to list resources of the same type (e.g. .../maps).
-    - match_display_name: The displayName used in the create call; used to locate the created item.
-
-    Returns:
-    - The created resource id as a string.
+    FIX included:
+    - The operation endpoint can return HTTP 200 while still "Running".
+      In that case, continue polling instead of treating it as complete.
     """
+
     op_url = initial_response.headers.get("Location")
+
     if not op_url:
         raise RuntimeError("Missing LRO Location header.")
 
@@ -378,9 +448,9 @@ def _handle_lro(
 
     while True:
         time.sleep(retry_after)
-        poll = client.get(op_url)
+        poll = client.get(op_url, headers=_fabric_headers())
 
-        # Still running
+        # Still running (202 pattern)
         if poll.status_code == 202:
             retry_after = int(poll.headers.get("Retry-After", "5"))
             continue
@@ -388,33 +458,56 @@ def _handle_lro(
         poll.raise_for_status()
         body = poll.json() if poll.content else {}
 
+        # --- FIX: handle 200 with status=Running ---
+        status = (body.get("status") if isinstance(body, dict) else None)
+
+        if status in ("Running", "NotStarted"):
+            retry_after = int(poll.headers.get("Retry-After", "5"))
+            continue
+
+        if status == "Failed":
+            raise RuntimeError(f"LRO failed. Body: {body}")
+        # --- END FIX ---
+
         # Case A: Operation returns the created resource id directly.
         if isinstance(body, dict) and id_field in body and body[id_field]:
             return body[id_field]
 
         # Case B: Status-only completion payload; resolve by listing.
-        status = (body.get("status") if isinstance(body, dict) else None)
         if status == "Succeeded" and list_url and match_display_name:
-            r = client.get(list_url)
-            r.raise_for_status()
-
-            items = r.json().get("value", [])
-            match = next((i for i in items if i.get("displayName") == match_display_name), None)
-            if match and match.get(id_field):
-                return match[id_field]
-
+            for attempt in range(max_attempts):
+                print(f"Resolving resource (attempt {attempt + 1}/{max_attempts})...")
+        
+                r = client.get(list_url, headers=_fabric_headers())
+                r.raise_for_status()
+        
+                items = r.json().get("value", [])
+                match = next((i for i in items if i.get("displayName") == match_display_name), None)
+        
+                if match and match.get(id_field):
+                    print("✅ Resource found!")
+                    return match[id_field]
+        
+                print("⏳ Resource not visible yet. Retrying...")
+                time.sleep(delay)
+        
             raise RuntimeError(
-                f"LRO succeeded but could not resolve created resource by name. "
+                f"LRO succeeded but resource not visible after retries. "
                 f"match_display_name={match_display_name!r}"
             )
 
         # Anything else is unexpected
         raise RuntimeError(f"LRO completed but no resource id was returned. Body: {body}")
+
+
 ```
+
+> [!NOTE]
+> Newly created resources might not appear immediately when calling list APIs due to backend propagation delays. The helper function in this tutorial automatically retries until the resource becomes visible.
 
 ### Definition payload helper
 
-When you create a Map with a **public definition**, you send map.json as payloadType: `InlineBase64`. The Create Map API examples show using `InlineBase64` in definition.parts.
+When you create a Map with a **public definition**, you send map.json as payloadType: `InlineBase64`. The Create Map REST API examples show using `InlineBase64` in definition.parts.
 
 Add:
 
@@ -425,8 +518,15 @@ Add:
 # ---------------------------------------------------------
 
 def _json_to_b64(obj: dict) -> str:
-    """Encode a JSON object as base64 string (InlineBase64 payload)."""
+    """
+    Convert a Python dict to base64-encoded JSON text.
+
+    Fabric Map "Create Map with definition inline" requires:
+    - definition.parts[].payloadType = InlineBase64
+    - definition.parts[].payload     = base64(json(map_json))
+    """
     return base64.b64encode(json.dumps(obj).encode("utf-8")).decode("utf-8")
+
 ```
 
 ### OneLake upload helpers
@@ -446,6 +546,13 @@ Add:
 # -----------------------------------------------------------------------------------------------
 
 def _onelake_client() -> DataLakeServiceClient:
+    """
+    Create a DataLakeServiceClient for OneLake.
+
+    Why this exists:
+    - OneLake supports ADLS Gen2-compatible endpoints and SDKs.
+    - We upload files to Lakehouse Files/ through OneLake DFS APIs.
+    """
     return DataLakeServiceClient(
         account_url="https://onelake.dfs.fabric.microsoft.com",
         credential=DefaultAzureCredential()
@@ -461,12 +568,19 @@ def _upload_with_retry(
 ) -> None:
     """
     Upload bytes into OneLake under the Lakehouse item.
-    New Lakehouses can take a short time before the Files folder is ready, so retry.
+
+    Why retries matter:
+    - Newly created Lakehouses may take a short time before Files/ is ready.
+    - Retrying avoids "first-run flakiness".
+
+    GUID addressing model:
+    - File system = workspace GUID
+    - Path begins with item GUID (the lakehouse id)
+    - Then the relative path under Files/
     """
     service = _onelake_client()
     fs = service.get_file_system_client(file_system=workspace_guid)
 
-    # GUID-based addressing: item GUID is the first path segment 
     dest_path = f"{item_guid}/{dest_relative_path}".replace("\\", "/")
 
     last_exc = None
@@ -479,176 +593,174 @@ def _upload_with_retry(
             time.sleep(2 + i)
 
     raise RuntimeError(f"Upload failed after {attempts} attempts: {last_exc}")
+
+
 ```
 
-### Create helper function to retrieve the map ID once created
+> [!TIP]
+> You can verify the file was uploaded successfully by browsing to the Lakehouse Files area in the Fabric portal.
 
-When you create a map by using the Fabric REST API, the request can return a 202 Accepted response. This indicates that the map is being provisioned asynchronously as a long-running operation (LRO), rather than being created immediately. In this case, the response doesn't include the map ID, and the LRO completion endpoint may not return a usable result. Additionally, even after the operation completes, the newly created map might not appear immediately when calling the List Maps API due to backend propagation.
+## Create primary functions
 
-To reliably obtain the map ID, you must query the list of maps and retry until the new map becomes visible. The following helper function implements this retry pattern and ensures your automation flow is resilient to asynchronous provisioning delays, and is only required if you need the map ID.
+Next, create the five primary functions that define the workflow. These will all be called from main().
+
+1. Create a Lakehouse
+2. Upload GeoJSON to the Lakehouse
+3. Upload a custom SVG marker (optional)
+4. Build the map definition (map.json)
+5. Create the map with its definition inline
+
+### Create a Lakehouse
+
+This step creates a Lakehouse in your Fabric workspace using the REST API. The Lakehouse stores the GeoJSON file and optional SVG marker used later by the map.
+
+This function:
+
+- Sends a POST request to create the Lakehouse
+- Handles both synchronous (201) and asynchronous (202/LRO) responses
+- Returns the Lakehouse ID for use in later steps
 
 Add the following code next:
 
 ```python
-# ---------------------------------------------------------
-# Get Map ID
-# ---------------------------------------------------------
+# =========================================================
+# Step 1: Create a Lakehouse
+# =========================================================
 
-def resolve_map_id(client, list_url, headers, map_name, max_attempts=10, delay=5):
+def create_lakehouse(client: httpx.Client, fabric: FabricClient, cfg: Config) -> str:
     """
-    Resolve the ID of a newly created Fabric map.
-
-    Why this function is needed:
-    - Creating a map may return HTTP 202 (Accepted), indicating an asynchronous
-      long-running operation (LRO) rather than immediate creation.
-    - LRO responses for map creation don't always return a resource ID.
-    - Even after the operation completes, the new map may not be immediately
-      visible in the List Maps API due to backend propagation delays.
-
-    What this function does:
-    - Repeatedly calls the List Maps API.
-    - Searches for a map matching the provided display name.
-    - Retries for a configurable number of attempts with a delay between calls.
-
-    Parameters:
-        client        : Authenticated HTTP client
-        list_url      : Maps list endpoint
-        headers       : Authorization headers for Fabric API
-        map_name      : Display name of the map to locate
-        max_attempts  : Maximum number of retry attempts
-        delay         : Delay (seconds) between retries
-
-    Returns:
-        The map ID (string) once the map becomes visible.
-
-    Raises:
-        RuntimeError if the map is not found after all retry attempts.
+    Create a Lakehouse and return its item ID.
     """
-
-    for attempt in range(max_attempts):
-        print(f"Resolving map (attempt {attempt + 1}/{max_attempts})...")
-
-        resp = client.get(list_url, headers=headers)
-        resp.raise_for_status()
-
-        items = resp.json().get("value", [])
-
-        match = next(
-            (m for m in items if m.get("displayName") == map_name),
-            None
-        )
-
-        if match:
-            print("✅ Map found!")
-            return match["id"]
-
-        print("⏳ Map not visible yet. Retrying...")
-        time.sleep(delay)
-
-    raise RuntimeError("Map created but still not visible after retries")
-```
-
-## Create the end to end flow
-
-In this step, you add the application logic that runs the workflow end-to-end. You build it in steps:
-
-1. Create the Lakehouse
-1. Upload GeoJSON
-1. Upload custom SVG (optional)
-1. Build map.json
-1. Create the Map with the definition inline
-
-Add this block at the bottom of your file:
-
-```python
-# ---------------------------------------------------------
-# END-TO-END FLOW
-# ---------------------------------------------------------
-with httpx.Client(timeout=60) as client:
-    # Code will be added in the following sections
-
-    pass
-```
-
-In the next section, you'll replace `pass`.
-
-### Create Lakehouse
-
-The Lakehouse is used as the durable storage layer (OneLake Files). The Lakehouse create API supports LRO responses.
-
-Replace `pass` with:
-
-```python
-# 1) Create Lakehouse (201 or 202/LRO)
-    lakehouse_url = f"https://api.fabric.microsoft.com/v1/workspaces/{workspace_id}/lakehouses"
+    lakehouse_url = f"https://api.fabric.microsoft.com/v1/workspaces/{cfg.workspace_id}/lakehouses"
     lakehouse_payload = {
-        "displayName": "lh_starbucks_seattle",
-        "description": "Stores Starbucks Seattle GeoJSON + marker icon for a Fabric Maps tutorial"
+        "displayName": cfg.lakehouse_display_name,
+        "description": cfg.lakehouse_description
     }
 
-    lh_resp = client.post(lakehouse_url, headers=_fabric_headers(), json=lakehouse_payload)
+    lh_resp = fabric.request("POST", lakehouse_url, json_body=lakehouse_payload)
 
     if lh_resp.status_code == 201:
         lakehouse_id = lh_resp.json()["id"]
-    elif lh_resp.status_code == 202:
-        lakehouse_id = _handle_lro(client, lh_resp)
     else:
-        raise RuntimeError(f"Failed to create lakehouse: {lh_resp.status_code} {lh_resp.text}")
+        lakehouse_id = _handle_lro(
+            client,
+            lh_resp,
+            list_url=lakehouse_url,
+            match_display_name=cfg.lakehouse_display_name
+        )
 
     print("Lakehouse created. Lakehouse ID:", lakehouse_id)
+    return lakehouse_id
 
 ```
 
-### Upload GeoJSON into the Lakehouse Files area (OneLake)
+### Upload GeoJSON to the Lakehouse
 
-Fabric Maps can reference files stored in OneLake via a Lakehouse data source in dataSources, and a file-backed layer source in `layerSources` (for example, geojson).
+Uploads the local GeoJSON file into the Lakehouse Files area using OneLake (ADLS Gen2 API).
 
-Add this code immediately after the Lakehouse creation block:
-
-```python
-# 2) Upload GeoJSON into the Lakehouse Files area (OneLake)
-    _upload_with_retry(
-        workspace_guid=workspace_id,
-        item_guid=lakehouse_id,
-        dest_relative_path=geojson_relative_path,
-        content=local_geojson_path.read_bytes()
-    )
-    print("Uploaded GeoJSON to:", geojson_relative_path)
-```
-
-### Upload custom SVG marker icon (OneLake) if enabled
-
-Marker layers can use custom icons; the map definition schema includes an `IconSource` object (`iconSources`) that points at a file.
-
-Add:
-
-```python
-# 3) Upload custom SVG marker icon (OneLake) if enabled
-    if USE_CUSTOM_SVG_MARKER:
-        _upload_with_retry(
-            workspace_guid=workspace_id,
-            item_guid=lakehouse_id,
-            dest_relative_path=svg_relative_path,
-            content=STARBUCKS_MARKER_SVG.encode("utf-8")
-        )
-        print("Uploaded custom SVG marker to:", svg_relative_path)
-```
-
-### Build map.json
-
-`map.json` is the required part of a **Map public definition**. It contains arrays for `dataSources`, `iconSources`, `layerSources`, and `layerSettings`.
+The uploaded file becomes the spatial data source for the map.
 
 Add the following code next:
 
 ```python
-# 4) Build map.json with:
-    #    - dataSources includes the lakehouse
-    #    - iconSources references the SVG (custom marker icon source)
-    #    - layerSources references the GeoJSON file in the lakehouse
-    #    - layerSettings renders points as markers via pointLayerType + markerOptions
+# =========================================================
+# Step 2: Upload GeoJSON to the Lakehouse
+# =========================================================
+
+def upload_geojson(cfg: Config, lakehouse_id: str) -> None:
+    """
+    Upload the local GeoJSON file to the Lakehouse Files area.
+
+    Teaching note:
+    - This is the first time the tutorial crosses from "control plane" (Fabric REST)
+      into "data plane" (OneLake DFS upload).
+    """
+    _upload_with_retry(
+        workspace_guid=cfg.workspace_id,
+        item_guid=lakehouse_id,
+        dest_relative_path=cfg.geojson_relative_path,
+        content=cfg.local_geojson_path.read_bytes()
+    )
+    print("Uploaded GeoJSON to:", cfg.geojson_relative_path)
+
+```
+
+### Upload a custom SVG marker
+
+Uploads a custom SVG marker into the Lakehouse so the map can render each point using a custom icon.
+
+This step is optional and controlled by the `use_custom_svg_marker` configuration setting.
+
+Add the following code next:
+
+```python
+# =========================================================
+# Step 3: Upload a custom SVG marker (optional)
+# =========================================================
+
+def upload_svg_marker(cfg: Config, lakehouse_id: str) -> None:
+    """
+    Upload a custom SVG marker icon (if enabled).
+
+    Teaching note:
+    - Keeping this in its own function helps you document "optional customization"
+      without cluttering the main workflow.
+    """
+    if not cfg.use_custom_svg_marker:
+        return
+
+    _upload_with_retry(
+        workspace_guid=cfg.workspace_id,
+        item_guid=lakehouse_id,
+        dest_relative_path=cfg.svg_relative_path,
+        content=cfg.starbucks_marker_svg.encode("utf-8")
+    )
+    print("Uploaded custom SVG marker to:", cfg.svg_relative_path)
+
+```
+
+> [!TIP]
+> SVG is typically a strong choice for markers because it scales cleanly at different zoom levels and screen DPIs.
+
+### Build the map definition (map.json)
+
+Constructs the map.json definition used to configure the Fabric Map.
+
+A map definition is declarative and describes:
+
+- Data sources (Lakehouse)
+- Layer sources (GeoJSON file)
+- Rendering settings (marker configuration)
+
+> [!TIP]
+> The `map.json` definition is declarative. It describes **what the map should render**, not how to render it procedurally.
+
+For more information on the map definition REST API, see [Map item definition](/rest/api/fabric/articles/item-management/definitions/map-definition).
+
+For an example of a map.json, see [MapDetails example](/rest/api/fabric/articles/item-management/definitions/map-definition#mapdetails-example)
+
+Add the following code next:
+
+```python
+# =========================================================
+# Step 4: Build the map definition (map.json)
+# =========================================================
+
+def build_map_json(cfg: Config, lakehouse_id: str) -> dict:
+    """
+    Build the map.json payload (map public definition).
+
+    Teaching note:
+    - This function is ideal for a tutorial section where you walk readers through:
+      * dataSources
+      * iconSources (optional)
+      * layerSources (GeoJSON file)
+      * layerSettings (marker rendering)
+    """
     layer_source_id = str(uuid.uuid4())
     layer_setting_id = str(uuid.uuid4())
     icon_source_id = str(uuid.uuid4())
+
     custom_svg_marker = f"{layer_setting_id}:{icon_source_id}"
     icon_source_name = "Starbucks Marker"
 
@@ -657,7 +769,7 @@ Add the following code next:
         "basemap": {},
 
         "dataSources": [
-            {"itemType": "Lakehouse", "workspaceId": workspace_id, "itemId": lakehouse_id}
+            {"itemType": "Lakehouse", "workspaceId": cfg.workspace_id, "itemId": lakehouse_id}
         ],
 
         "iconSources": (
@@ -667,9 +779,9 @@ Add the following code next:
                     "name": icon_source_name,
                     "type": "svg",
                     "itemId": lakehouse_id,
-                    "relativePath": svg_relative_path
+                    "relativePath": cfg.svg_relative_path
                 }
-            ] if USE_CUSTOM_SVG_MARKER else []
+            ] if cfg.use_custom_svg_marker else []
         ),
 
         "layerSources": [
@@ -678,7 +790,7 @@ Add the following code next:
                 "name": "starbucks_seattle_geojson",
                 "type": "geojson",
                 "itemId": lakehouse_id,
-                "relativePath": geojson_relative_path,
+                "relativePath": cfg.geojson_relative_path,
                 "refreshIntervalMs": 0
             }
         ],
@@ -692,12 +804,9 @@ Add the following code next:
                     "type": "vector",
                     "visible": True,
                     "tooltipKeys": ["name"],
-
-                    # Render as marker layer
                     "pointLayerType": "marker",
 
                     "markerOptions": (
-                        # Custom SVG marker path:
                         {
                             "iconOptions": {
                                 "image": custom_svg_marker,
@@ -708,18 +817,18 @@ Add the following code next:
                                 "rotationAlignment": "viewport",
                                 "pitchAlignment": "viewport"
                             },
-                                "icon": icon_source_id
+                            "icon": icon_source_id
                         }
-                        if USE_CUSTOM_SVG_MARKER
-                        # Built-in fallback path:
+                        if cfg.use_custom_svg_marker
                         else
                         {
                             "size": 22,
                             "fillColor": "#006241",
                             "strokeColor": "#FFFFFF",
                             "strokeWidth": 2,
-                            "icon": BUILTIN_ICON_NAME_FALLBACK,
+                            "icon": cfg.builtin_icon_name_fallback,
                             "iconOptions": {
+                                "image": f"{layer_setting_id}:{cfg.builtin_icon_name_fallback}",
                                 "anchor": "bottom",
                                 "opacity": 1.0,
                                 "rotation": 0,
@@ -734,24 +843,47 @@ Add the following code next:
         ]
     }
 
+    return map_json
+
+
 ```
 
-> [!NOTE]
-> The map definition schema describes `IconSource`, `LayerSource`, and `LayerSettingOptions` (including marker layer settings) as part of the `map.json` structure.
+> [!TIP]
+> Tips related to the map definition:
+>
+> - The `image` property uses a composite key in the format `<layerSettingId>:<iconId>` to reference the icon for the layer. This associates the marker rendering configuration with the icon source defined earlier in the map definition.
+> - Setting `refreshIntervalMs` to `0` disables automatic refresh. This is appropriate for static GeoJSON files stored in a Lakehouse.
 
-### Create the Map WITH definition inline
+### Create the map (with inline definition)
 
-The Create Map API supports sending a public definition inline (`definition.parts`) and returns `201` or `202` (LRO).
+Create a Fabric Map by sending the map.json definition inline using base64 encoding.
 
-Add:
+In some cases, the create operation completes without returning the map ID directly. The helper function handles this by resolving the map via the List Maps API and retrying until it becomes visible.
+
+This approach ensures the map is fully configured at creation time.
+
+For more information on creating map items, see [Fabric Maps item model](about-rest-api.md#fabric-maps-item-model)
+
+Add the following code next:
 
 ```python
-    # 5) Create the Map WITH definition inline (so no getDefinition/updateDefinition needed)
-    map_name = "My Fabric Map"
-    create_map_url = f"https://api.fabric.microsoft.com/v1/workspaces/{workspace_id}/maps"
+# =========================================================
+# Step 5: Create the map with its definition inline
+# =========================================================
+
+def create_map(client: httpx.Client, fabric: FabricClient, cfg: Config, map_json: dict) -> str:
+    """
+    Create the Fabric Map with its definition inline.
+
+    Teaching note:
+    - This step shows the "create-with-definition" pattern, which avoids
+      getDefinition/updateDefinition calls.
+    """
+    create_map_url = f"https://api.fabric.microsoft.com/v1/workspaces/{cfg.workspace_id}/maps"
+
     create_map_payload = {
-        "displayName": map_name,
-        "description": "Created using Fabric Maps REST API",
+        "displayName": cfg.map_display_name,
+        "description": cfg.map_description,
         "definition": {
             "parts": [
                 {
@@ -762,28 +894,85 @@ Add:
             ]
         }
     }
-    
-    map_resp = client.post(create_map_url, headers=_fabric_headers(), json=create_map_payload)
-    
-    if map_resp.status_code == 201:
-        map_id = map_resp.json()["id"]
-    elif map_resp.status_code == 202:
-        print("LRO completed via 202. Resolving map by name...")
-        map_id = resolve_map_id(
-            client,
-            create_map_url,
-            _fabric_headers(),
-            map_name
-        )  
-    else:
-        raise RuntimeError(f"Create map failed: {map_resp.status_code} {map_resp.text}")
 
-    print("Map created successfully. Map ID:", map_id)
-    print("GeoJSON layer path:", geojson_relative_path)
-    if USE_CUSTOM_SVG_MARKER:
-        print("Custom SVG marker path:", svg_relative_path)
+    map_resp = fabric.request("POST", create_map_url, json_body=create_map_payload)
+
+    if map_resp.status_code == 201:
+        return map_resp.json()["id"]
+
+    if map_resp.status_code == 202:
+        print("Map creation is running asynchronously. Waiting for completion...")
+        return _handle_lro(
+            client,
+            map_resp,
+            list_url=create_map_url,
+            match_display_name=cfg.map_display_name
+        )
+
+    raise RuntimeError(f"Create map failed: {map_resp.status_code} {map_resp.text}")
+
 
 ```
+
+## Orchestrate the workflow
+
+The main() function orchestrates the entire workflow by calling each step in sequence.
+
+```python
+# =========================================================
+# main(): orchestrates the full workflow
+# =========================================================
+
+def main():
+    """
+    Orchestrate the tutorial workflow.
+
+    1) Create a Lakehouse
+    2) Upload GeoJSON to the Lakehouse
+    3) Upload a custom SVG marker (optional)
+    4) Build the map definition (map.json)
+    5) Create the map with its definition inline
+
+    Teaching note:
+    - main() is intentionally small and readable so readers can see the full flow.
+    """
+    cfg = Config()
+
+    print("Initializing clients...")
+    with httpx.Client(timeout=60) as client:
+        fabric = FabricClient(client)
+
+        # Step 1
+        lakehouse_id = create_lakehouse(client, fabric, cfg)
+
+        # Step 2
+        upload_geojson(cfg, lakehouse_id)
+
+        # Step 3 (optional)
+        upload_svg_marker(cfg, lakehouse_id)
+
+        # Step 4
+        map_json = build_map_json(cfg, lakehouse_id)
+
+        # Step 5
+        map_id = create_map(client, fabric, cfg, map_json)
+
+        print("\n✅ DONE")
+        print("Lakehouse ID:", lakehouse_id)
+        print("Map ID:", map_id)
+        print("GeoJSON layer path:", cfg.geojson_relative_path)
+        if cfg.use_custom_svg_marker:
+            print("Custom SVG marker path:", cfg.svg_relative_path)
+
+
+if __name__ == "__main__":
+    main()
+
+```
+
+At this point, all configuration and code have been defined.
+
+In the next step, you run the script to create the Lakehouse, upload data, and generate the map.
 
 ## Run the application
 
@@ -793,25 +982,63 @@ Run the script:
 python create_map_from_geojson.py
 ```
 
-If successful, you see output similar to:
+If the script runs successfully, you see output similar to:
 
-* Lakehouse created. Lakehouse ID: `<Lakehouse ID>`
-* Uploaded GeoJSON to: Files/vector/starbucks-seattle.geojson
-* Uploaded custom SVG marker to: Files/icons/starbucks-marker.svg
-* Map created successfully. Map ID: `<Map ID>`
-* GeoJSON layer path: Files/vector/starbucks-seattle.geojson
-* Custom SVG marker path: Files/icons/starbucks-marker.svg
+> ✅ DONE
+> Lakehouse ID: *Lakehouse ID*
+> Map ID: *Map ID*
+> GeoJSON layer path: Files/vector/starbucks-seattle.geojson
+> Custom SVG marker path: Files/icons/starbucks-marker.svg
 
 In Microsoft Fabric, your map should look similar to this:
 
 :::image type="content" source="media/tutorials/tutorial-create-fabric-map-python/map-seattle.png" lightbox="media/tutorials/tutorial-create-fabric-map-python/map-seattle.png" alt-text="A screenshot of Microsoft Fabric Maps displaying Seattle with multiple green Starbucks marker icons clustered in the downtown area. The map shows streets and water features with a light gray background. The Data layers panel on the left displays the Starbucks (Seattle) layer. The map centers on downtown Seattle including Elliott Bay waterfront with markers indicating individual Starbucks locations referenced in the tutorial GeoJSON file.":::
 
+> [!TIP]
+> If the map doesn't appear immediately, refresh the workspace or wait a few seconds for backend propagation to complete.
+
+## Summary
+
+In this tutorial, you built an automated geospatial solution using Microsoft Fabric Maps and Lakehouse data.
+
+You used Fabric REST APIs and Python to provision and configure all required resources, then visualized spatial data stored in OneLake.
+
+You accomplished the following:
+
+- Uploaded spatial data to a **Lakehouse**  
+- Configured a dataset for geospatial visualization  
+- Built a **Fabric Map with an inline definition**  
+- Connected the map to Lakehouse data  
+- Configured map layers to render spatial features  
+
+This architecture demonstrates a common batch and historical spatial analytics pattern in Fabric:
+
+- Data is stored in OneLake (Lakehouse)  
+- Maps query and render spatial datasets  
+- Layers provide visual insights into geographic data  
+
+By automating resource creation using Python and REST APIs, you now have a repeatable approach for building geospatial applications based on static or historical datasets.
+
 ## Next steps
 
-Learn how the Map public definition is structured (map.json, optional .platform, and optional query parts).
+Now that you understand how to visualize spatial data from a Lakehouse, you can extend this solution:
+
+- Combine multiple datasets for richer geospatial analysis  
+- Apply styling and filtering to highlight trends and patterns  
+- Add reference layers such as boundaries or routes  
+- Integrate data pipelines to refresh datasets automatically  
+- Explore real-time streaming scenarios using Eventstream and Eventhouse  
+
+For more information about working with spatial data and maps in Fabric, see:
 
 > [!div class="nextstepaction"]
-> [Create a map](create-map.md)
+> [Fabric Maps overview](about-fabric-maps.md)  
 
 > [!div class="nextstepaction"]
-> [Change Map settings](customize-map.md#change-map-settings)
+> [Create a map in Fabric](create-map.md)  
+<!------------------------------------------------------------------------------
+For a tutorial that demonstrates creating a real-time map using REST APIs, see:
+
+> [!div class="nextstepaction"]
+> [Tutorial: Create a real-time map from Eventhouse data using REST APIs](tutorial-real-time-map-python.md)
+------------------------------------------------------------------------------>
