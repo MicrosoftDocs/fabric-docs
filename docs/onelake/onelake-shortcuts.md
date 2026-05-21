@@ -193,7 +193,7 @@ When you create shortcuts between multiple Fabric items within a workspace, you 
 * Lineage for shortcuts to Data Warehouses and Semantic Models isn't currently available.
 * A Fabric shortcut syncs with the source almost instantly, but propagation time might vary due to data source performance, cached views, or network connectivity issues.
 * It might take up to a minute for the Table API to recognize new shortcuts.
-* Schema shortcuts can only be created in [schema-enabled lakehouses](https://learn.microsoft.com/fabric/data-engineering/lakehouse-schemas).
+* Schema shortcuts can only be created in [schema-enabled lakehouses](/fabric/data-engineering/lakehouse-schemas).
 
 ## Related content
 
