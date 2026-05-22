@@ -24,6 +24,9 @@ This article shows you how to:
 
 ## Prerequisites
 
+> [!IMPORTANT]
+> Connectivity between Snowflake and OneLake occurs over the public network. On-premises data gateway connections aren't supported, and your Snowflake account must be accessible over the public network.
+
 1. Because this feature is in a Preview state, you first need to enable this setting at the **tenant** or **capacity** level.
    - Your tenant admin can enable the setting tenant-wide using the **"Enable Snowflake database item (preview)"** setting seen in the [Admin portal](../../admin/about-tenant-settings.md#how-to-get-to-the-tenant-settings).
    - Alternatively, your capacity admin can enable this delegated tenant setting in the [capacity settings area](../../admin/capacity-settings.md#view-your-capacity).
