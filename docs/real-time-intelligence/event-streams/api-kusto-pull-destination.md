@@ -8,7 +8,7 @@ ms.search.form: Eventstream REST API
 ai-usage: ai-assisted
 ---
 
-# Create an Eventstream with an Eventhouse DirectIngestion destination by using APIs
+# Create an eventstream with an eventhouse direct ingestion destination by using APIs
 
 This article provides a step-by-step guide to create an Eventstream with an Eventhouse DirectIngestion destination by using APIs.
 
@@ -205,7 +205,7 @@ The topology defines three components:
 |-----------|----------|
 | `sources` | Input data source (in this example, a sample stock market data feed) |
 | `streams` | Pipeline that routes data from sources to destinations, including default and derived streams |
-| `destinations` | Output target where data flows (in this case, the Eventhouse in DirectIngestion mode) |
+| `destinations` | Output target where data flows (in this case, the eventhouse in direct ingestion mode) |
 
 Make sure the `itemId` and `workspaceId` in your destination match the Eventhouse from Step 1, and the `tableName` and `mappingRuleName` match what you created in Step 2.
 
