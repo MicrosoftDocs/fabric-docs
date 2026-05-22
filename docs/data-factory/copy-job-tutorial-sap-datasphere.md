@@ -89,12 +89,12 @@ This section explains how to create a Copy job to replicate data from SAP via SA
 
 1. Select the SAP Datasphereo outbound for ADLS Gen2, Amazon S3 or Google Cloud Storage, and set up the connection details.
 
-    :::image type="content" source="media/copy-job/copy-job-sap-datasphere-adls-gen2-connections.png" alt-text="Screenshot of configuring the SAP Datasphereo outbound for ADLS Gen2 connection." lightbox="media/copy-job/copy-job-sap-datasphere-adls-gen2-connections.png":::
+    :::image type="content" source="media/copy-job/copy-job-sap-datasphere-adls-gen2-connections.png" alt-text="Screenshot of configuring the SAP Datasphere outbound for ADLS Gen2 connection." lightbox="media/copy-job/copy-job-sap-datasphere-adls-gen2-connections.png":::
 
 1. Select the folders where your SAP Datasphere outbound data is stored and that you want to move to your destinations.
 
     > [!TIP]
-    > If you want to copy all the tables under the specified parent folder, enable the **Map items individually** option under the advanced settings. To copy only selecive tables under the folder, keep the option unchecked.
+    > If you want to copy all the tables under the specified parent folder, enable the **Map items individually** option under the advanced settings. To copy only selective tables under the folder, keep the option unchecked.
 
     :::image type="content" source="media/copy-job/copy-job-sap-datasphere-tables-selection.png" alt-text="Screenshot of browsing the lakehouse and selecting the path." lightbox="media/copy-job/copy-job-sap-datasphere-tables-selection.png":::
    
