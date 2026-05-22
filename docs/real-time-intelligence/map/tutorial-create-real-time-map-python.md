@@ -1623,7 +1623,7 @@ To retrieve this value:
 4. Open **SAS Key Authentication**  
 5. Copy **Connection string-primary key**
 
-:::image type="content" source="media/tutorials/create-real-time-map-using-rest-apis/connection-string-primary-key.png" alt-text="A screenshot of a Microsoft Fabric workspace with SAS Key Authentication panel open. The panel displays the Connection string-primary key field ready to be copied for eventstream authentication.":::
+:::image type="content" source="media/tutorials/create-real-time-map-using-rest-apis/connection-string-primary-key.png" lightbox="media/tutorials/create-real-time-map-using-rest-apis/connection-string-primary-key.png" alt-text="A screenshot of a Microsoft Fabric workspace with SAS Key Authentication panel open. The panel displays the Connection string-primary key field ready to be copied for eventstream authentication.":::
 
 Paste the value into the console when prompted.
 
@@ -1638,7 +1638,7 @@ python create_realtime_map.py
 
 Verify that all items were created:
 
-:::image type="content" source="media/tutorials/create-real-time-map-using-rest-apis/real-time-map.png" alt-text="A screenshot of a Seattle street map with multiple blue location markers clustered in downtown and surrounding neighborhoods. A data layers panel on the left shows Live Locations layer enabled. The map displays streets, neighborhood names, and control buttons on the right side for navigation and layer management.":::
+:::image type="content" source="media/tutorials/create-real-time-map-using-rest-apis/real-time-map.png"  lightbox="media/tutorials/create-real-time-map-using-rest-apis/real-time-map.png" alt-text="A screenshot of a Seattle street map with multiple blue location markers clustered in downtown and surrounding neighborhoods. A data layers panel on the left shows Live Locations layer enabled. The map displays streets, neighborhood names, and control buttons on the right side for navigation and layer management.":::
 
 At this point, all resources are created and configured.
 
