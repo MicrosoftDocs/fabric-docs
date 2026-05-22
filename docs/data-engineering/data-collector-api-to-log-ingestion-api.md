@@ -144,9 +144,9 @@ Create a custom table in your Log Analytics workspace with the Log Ingestion API
 
    :::image type="content" source="media\data-collector-api-to-log-ingestion-api\monitoring-metrics-publisher-role.png" alt-text="Screenshot showing the Monitoring Metrics Publisher role assignment." lightbox="media\data-collector-api-to-log-ingestion-api\monitoring-metrics-publisher-role.png":::
 
-1. Retrieve the **stream name** and **DCR ID**. Open Data collection rule -> Overview -> JSON View
+1. Retrieve the **stream name** and **DCR ID**. Open Data collection rule -> Overview -> JSON View.
 
-   :::image type="content" source="media\data-collector-api-to-log-ingestion-api\stream-name.png" alt-text="Screenshot showing the retrieve the stream name and DCR ID" lightbox="media\data-collector-api-to-log-ingestion-api\stream-name.png":::
+   :::image type="content" source="media\data-collector-api-to-log-ingestion-api\stream-name.png" alt-text="Screenshot showing the retrieve the stream name and DCR ID." lightbox="media\data-collector-api-to-log-ingestion-api\stream-name.png":::
 
 ### Step 6. Configure Spark properties
 
