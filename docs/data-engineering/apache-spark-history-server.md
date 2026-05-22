@@ -80,6 +80,8 @@ You can use this view to:
 - Review task distribution and shuffle metrics
 - Identify bottlenecks such as skewed data or expensive operations
 
+:::image type="content" source="media\apache-spark-history-server\stage-tab.png" alt-text="Screenshot showing stage tab." lightbox="media\apache-spark-history-server\stage-tab.png":::
+
 #### Stage number limit
 
 For performance consideration, by default the graph is only available when the Spark application has fewer than 500 stages. If there are too many stages, it will fail with an error like this:
@@ -129,6 +131,8 @@ You can use this view to:
 - Replay job execution to observe how tasks progress over time
 
 This tab is particularly useful for understanding execution flow and identifying high-level performance bottlenecks.
+
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-color-skip.png" alt-text="Screenshot showing graph." lightbox="media\apache-spark-history-server\spark-ui-graph-color-skip.png":::
 
 ### Diagnosis tab
 
