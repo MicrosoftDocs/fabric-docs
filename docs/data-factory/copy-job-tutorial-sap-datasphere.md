@@ -87,7 +87,7 @@ This section explains how to create a Copy job to replicate data from SAP via SA
 
 1. In your workspace, select **New item** and find **Copy job**.
 
-1. Select the SAP Datasphereo outbound for ADLS Gen2, Amazon S3 or Google Cloud Storage, and set up the connection details.
+1. Select the SAP Datasphere outbound for ADLS Gen2, Amazon S3 or Google Cloud Storage, and set up the connection details.
 
     :::image type="content" source="media/copy-job/copy-job-sap-datasphere-adls-gen2-connections.png" alt-text="Screenshot of configuring the SAP Datasphere outbound for ADLS Gen2 connection." lightbox="media/copy-job/copy-job-sap-datasphere-adls-gen2-connections.png":::
 
