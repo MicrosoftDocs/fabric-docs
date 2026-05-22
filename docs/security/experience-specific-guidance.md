@@ -422,7 +422,7 @@ To recover operations agents items in the new region:
 
 1. Re-establish any active chat sessions. Users need to initiate new conversations with their agents.
 
-To minimize the impact of a regional disaster, use [Fabric Git integration](../cicd/git-integration/intro-to-git-integration) to synchronize your workspace with an Azure DevOps repository. This approach enables quick reconstruction of agent configurations in a new workspace if needed.
+To minimize the impact of a regional disaster, use [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md) to synchronize your workspace with an Azure DevOps repository. This approach enables quick reconstruction of agent configurations in a new workspace if needed.
 
 ## Transactional database
 
