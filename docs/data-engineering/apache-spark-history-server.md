@@ -177,7 +177,7 @@ This feature has been deprecated in Fabric now. If you still want to use this as
 
    :::image type="content" source="media\apache-spark-history-server\modify-path.png" alt-text="Screenshot showing how to modify the url." lightbox="media\apache-spark-history-server\modify-path.png":::
 
-### SQL tab (if applicable)
+### SQL/DataFrame tab
 For workloads using Spark SQL, the **SQL** tab provides query-level insights.
 
 You can use this view to:
