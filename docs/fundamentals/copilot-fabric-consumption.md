@@ -1,60 +1,59 @@
 ---
-title: Copilot consumption
-description: Information on how Fabric Copilot usage affects your CU consumption.
+title: Copilot Usage and Billing
+description: Learn how Copilot in Microsoft Fabric consumes capacity units (CUs), including token-based billing rates, usage monitoring, and cross-region processing.
 author: SnehaGunda
 ms.author: sngun
-ms.topic: how-to
-ms.date: 01/23/2025
+ms.topic: concept-article
+ms.date: 05/22/2026
 ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
+ai-usage: ai-assisted
+
+#customer intent: As a Fabric capacity administrator, I want to understand how Copilot consumes capacity units so that I can plan and monitor my organization's Copilot usage.
 ---
 
-# Copilot in Fabric consumption
+# Copilot in Fabric consumption rates and billing
 
-This page contains information on how the Fabric Copilot usage is billed and reported. Copilot usage is measured by the number of tokens processed. Tokens can be thought of as pieces of words. Approximately 1,000 tokens are about 750 words. Prices are calculated per 1,000 tokens, and input and output tokens are consumed at different rates.
+Copilot in Fabric consumption is the billing model that measures how Copilot requests use Fabric Capacity Units (CUs). Each Copilot interaction is metered by the number of tokens processed—approximately 1,000 tokens equal 750 words. Input and output tokens are consumed at different rates, and prices are calculated per 1,000 tokens.
 
-> [!NOTE]
-> The Copilot for Fabric billing will become effective on March 1st, 2024, as part of your existing Power BI Premium or Fabric Capacity.
+## Copilot in Fabric consumption rate per token
 
+Requests to Copilot in Fabric consume Fabric capacity units (CUs). The following table defines how many CUs are consumed per 1,000 tokens for input prompts and output completions. These rates apply across all Copilot experiences, including [Copilot for Power BI](/power-bi/create-reports/copilot-introduction), [Copilot for Data Factory](../fundamentals/copilot-fabric-data-factory.md), and [Copilot for Data Engineering and Data Science](../data-engineering/copilot-notebooks-overview.md).
 
-## Consumption rate
-Requests to Copilot consume Fabric Capacity Units. This table defines how many capacity units (CU) are consumed when Copilot is used. For example, when user using [Copilot for Power BI](/power-bi/create-reports/copilot-introduction), [Copilot for Data Factory](../fundamentals/copilot-fabric-data-factory.md), or [Copilot for Data Engineering and Data Science](../data-engineering/copilot-notebooks-overview.md).
-
-| **Operation in Metrics App** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
+| Operation in Metrics App | Description | Operation Unit of Measure | Consumption rate |
 |---|---|---|---|
-|Copilot in Fabric |The input prompt |Per 1,000 Tokens |100 CU seconds|
-|Copilot in Fabric |The output completion |Per 1,000 Tokens|400 CU seconds|
+| Copilot in Fabric | The input prompt | Per 1,000 Tokens | 100 CU seconds |
+| Copilot in Fabric | The output completion | Per 1,000 Tokens | 400 CU seconds |
 
+## Monitor Copilot in Fabric usage
 
-## Monitor the usage  
-The [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for Copilot operations under the name "Copilot in Fabric." Additionally, Copilot users are able to view a summary of their billing charges for Copilot usage under the invoicing item "Copilot in Fabric."
+The [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for Copilot operations under the operation name **Copilot in Fabric**. Copilot users can also view a summary of their billing charges under the invoicing item **Copilot in Fabric**.
 
-:::image type="content" border="true" source="./media/copilot-consumption/capacity-metrics-app.png" alt-text="Screenshot of Fabric Capacity Metrics.":::
+:::image type="content" border="true" source="./media/copilot-consumption/capacity-metrics-app.png" alt-text="Screenshot of the Fabric Capacity Metrics app showing Copilot in Fabric usage.":::
 
+## Background job classification and throttling
 
-## Capacity utilization type 
+Copilot in Fabric operations are classified as **background jobs**, which allows Fabric to handle a higher volume of Copilot requests during peak hours.
 
-Fabric Copilots are classified as "background jobs" to handle a higher volume of Copilot requests during peak hours.
-
-Fabric is designed to provide lightning-fast performance by allowing operations to access more CU (Capacity Units) resources than are allocated to capacity. Fabric smooths or averages the CU usage of an "interactive job" over a minimum of 5 minutes and a "background job" over a 24-hour period. According to the Fabric throttling policy, the first phase of throttling begins when a capacity has consumed all its available CU resources for the next 10 minutes.
+Fabric allows operations to access more CU resources than are allocated to a capacity. Fabric smooths CU usage of an interactive job over a minimum of 5 minutes and a background job over a 24-hour period. According to the [Fabric throttling policy](../enterprise/throttling.md), the first phase of throttling begins when a capacity has consumed all its available CU resources for the next 10 minutes.
 
 For example, assume each Copilot request has 2,000 input tokens and 500 output tokens. The price for one Copilot request is calculated as follows: (2,000 × 100 + 500 × 400) / 1,000 = 400.00 CU seconds = 6.67 CU minutes.
 
-Since Copilot is a background job, each Copilot request (~6.67 CU minute job) consumes only one CU minute of each hour of a capacity. For a customer on F64 who has 64 * 24 CU Hours (1,536) in a day, and each Copilot job consumes (6.67 CU mins / 60 mins) = 0.11 CU Hours, customers can run over 13,824 requests before they exhaust the capacity. However, once the capacity is exhausted, all operations will shut down.
+Since Copilot in Fabric is a background job, each request (~6.67 CU minute job) consumes only one CU minute of each hour of a capacity. For example, a customer on an F64 SKU has 64 × 24 = 1,536 CU hours in a day. Each Copilot request consumes 6.67 / 60 = 0.11 CU hours, so customers can run over 13,824 Copilot requests per day before they exhaust the capacity. Once the capacity is exhausted, all operations are throttled.
 
-## Region mapping 
+## Cross-region data processing for Copilot in Fabric
 
-Fabric Copilot is powered by Azure OpenAI large language models that are currently deployed to [limited data centers](../data-science/ai-services/ai-services-overview.md#available-regions). However, customers can [enable cross-geo process tenant settings](../admin/service-admin-portal-copilot.md) to use Copilots by processing their data in another region where Azure OpenAI Service is available. This region could be outside of the user's geographic region, compliance boundary, or national cloud instance. While performing region mapping, we prioritize data residency as the foremost consideration and attempt to map to a region within the same geographic area whenever feasible. 
+Copilot in Fabric is powered by Azure OpenAI large language models that are deployed to [limited data centers](../data-science/ai-services/ai-services-overview.md#available-regions). Customers can [enable cross-geo processing in tenant settings](../admin/service-admin-portal-copilot.md) to use Copilot in Fabric by processing data in another region where Azure OpenAI Service is available. This region could be outside the user's geographic region, compliance boundary, or national cloud instance. Region mapping prioritizes data residency and attempts to map to a region within the same geographic area whenever feasible.
 
-The cost of Fabric Capacity Units can vary depending on the region. Regardless of the consumption region where GPU capacity is utilized, customers are billed based on the Fabric Capacity Units pricing in their billing region. For example, if a customer's requests are mapped from `region 1` to `region 2`, with `region 1` being the billing region and `region 2` being the consumption region, the customer is charged based on the pricing in `region 1`.
+The cost of Fabric capacity units can vary by region. Regardless of the consumption region where GPU capacity is used, customers are billed based on the capacity unit pricing in their billing region. For example, if a customer's requests are mapped from `region 1` to `region 2`, the customer is charged based on the pricing in `region 1` (the billing region).
 
 ## Changes to Copilot in Fabric consumption rate
 
-Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft’s Release Notes or Microsoft Fabric Blog. If any change to a Copilot in Fabric Consumption Rate materially increases the Capacity Units (CU) required to use Copilot in Fabric, customers can use the cancellation options available for the chosen payment method.
+Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email or through in-product notification. Changes are effective on the date stated in Microsoft's Release Notes or the Microsoft Fabric Blog. If any change to Copilot in Fabric consumption rates materially increases the capacity units (CU) required to use Copilot in Fabric, customers can use the cancellation options available for the chosen payment method.
 
 ## Related content
 
-- [Overview of Copilot in Fabric](../fundamentals/copilot-fabric-overview.md)
-- [Copilot in Fabric: FAQ](../fundamentals/copilot-faq-fabric.yml)
+- [Overview of Copilot in Fabric](copilot-fabric-overview.md)
+- [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)
 - [Foundry Tools in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)

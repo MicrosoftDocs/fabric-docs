@@ -1,40 +1,46 @@
 ---
-title: "Privacy, security, and responsible use of Copilot for Data Factory"
-description: Learn about privacy, security, and responsible use of Copilot for Data Factory in Microsoft Fabric.
+title: "Copilot Data Factory Privacy"
+description: Learn how Copilot for Data Factory in Microsoft Fabric keeps your data secure, adheres to privacy requirements, and supports responsible AI use.
 author: snehagunda
 ms.author: sngun
 ms.reviewer: guptamaya
 ms.topic: concept-article
-ms.date: 06/02/2024
+ms.date: 05/22/2026
 ms.update-cycle: 180-days
+ai-usage: ai-assisted
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
+
+#customer intent: As a Fabric administrator or data engineer, I want to understand how Copilot for Data Factory handles my data so that I can ensure compliance with my organization's privacy and security requirements.
 ---
 
-# Privacy, security, and responsible use of Copilot in Fabric in the Data Factory workload
+# Privacy, security, and responsible use of Copilot for Data Factory
 
-In this article, learn how [Copilot for Data Factory overview](copilot-fabric-data-factory.md) works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. For an overview of these topics for Copilot in Fabric, see [Privacy, security, and responsible use for Copilot](copilot-privacy-security.md).
+This article describes how [Copilot for Data Factory](../data-factory/copilot-fabric-data-factory.md) handles your business data, adheres to privacy requirements, and supports responsible use of generative AI. For an overview of these topics for Copilot in Fabric, see [Privacy, security, and responsible use for Copilot](copilot-privacy-security.md).
 
-With Copilot for Data Factory in Microsoft Fabric and other generative AI features, Microsoft Fabric brings a new way to transform and analyze data, generate insights, and create visualizations and reports in Data Science and the other workloads.
+For considerations and limitations, see [Limitations of Copilot for Data Factory](../data-factory/copilot-fabric-data-factory.md#limitations).
 
-For considerations and limitations, see [Limitations of Copilot for Data Factory](copilot-fabric-data-factory.md#limitations-of-copilot-for-data-factory).
+## Data that Copilot for Data Factory can access
 
-## Data use of Copilot for Data Factory
+Copilot for Data Factory can only access data that meets both of the following conditions:
 
-- Copilot can only access data that is accessible to the user's current Gen2 dataflow session, and that is configured and imported into the data preview grid. Learn more about getting data in Power Query.
+- The data is accessible to your current Dataflow Gen2 session.
+- The data is configured and imported into the Power Query data preview grid.
 
-## Evaluation of Copilot for Data Factory
+Copilot doesn't access data outside your active Dataflow Gen2 session or data that hasn't been loaded into the preview grid.
 
-- The product team has tested Copilot to see how well the system performs within the context of Gen2 dataflows, and whether AI responses are insightful and useful. 
-- The team also invested in other harms mitigations, including technological approaches to focusing Copilot's output on topics related to data integration. 
+## How Copilot for Data Factory is evaluated
+
+- The product team tested Copilot for Data Factory to validate the accuracy and usefulness of AI-generated responses within Dataflow Gen2.
+- The team applied harms mitigations, including content filters that focus Copilot output on data integration topics and reduce off-topic or harmful responses.
 
 ## Tips for working with Copilot for Data Factory
 
-- Copilot is best equipped to handle data integration topics, so it's best to limit your questions to this area. 
-- If you include descriptions such as query names, column names, and values in the input, Copilot is more likely to generate useful outputs. 
-- Try breaking complex inputs into more granular tasks. This helps Copilot better understand your requirements and generate a more accurate output.
+- **Limit prompts to data integration topics.** Copilot for Data Factory is optimized for data integration tasks in Dataflow Gen2 and produces the best results in that area.
+- **Include specific data details in your prompts.** Provide query names, column names, and data values so Copilot can generate more accurate and relevant outputs.
+- **Break complex requests into smaller tasks.** Splitting a complex transformation into individual steps helps Copilot better understand your requirements and produce more accurate results.
 
 ## Related content
 
-- [Copilot for Data Factory overview](copilot-fabric-data-factory.md)
+- [Copilot for Data Factory overview](../data-factory/copilot-fabric-data-factory.md)
 - [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)
