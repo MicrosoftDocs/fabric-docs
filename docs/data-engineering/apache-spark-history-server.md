@@ -38,6 +38,23 @@ For an Apache Spark application whose status is ended, the ended status can be *
 
 :::image type="content" source="media\apache-spark-history-server\ended-spark-history-server.png" alt-text="Screenshot showing the button displays the spark ui in the ended state." lightbox="media\apache-spark-history-server\ended-spark-history-server.png":::
 
+## Snapshot-Based Loading for Large Event Logs
+
+A new snapshot-based loading method has been introduced for the Spark History Server, optimized for large event log scenarios.
+
+With this enhancement, the Spark UI progressively reveals available data instead of waiting for the full replay to complete. When the event log size is **6 GB** or **larger**, a loading message is displayed to indicate that additional loading time (typically a few minutes) may be required.
+
+As soon as a partial snapshot is available, the UI renders using that data. A message bar at the top indicates that data is still being processed in the background. Once the full replay completes, the message bar is automatically removed, and the full view is displayed.
+
+With this experience, you can:
+- See a clear loading message for large event logs (≥ 6 GB), so you know the system is actively processing rather than unresponsive
+- Browse a partial snapshot early through a clearly labeled preview banner, allowing you to investigate jobs and stages without waiting for the full replay
+- Refresh the page later to load the complete dataset once processing has finished
+
+When the Spark History data is fully loaded, the partial loading message bar disappears and the full experience is available.
+
+:::image type="content" source="media\apache-spark-history-server\large-event-logs.png" alt-text="Screenshot showing the button displays the snapshot-based loading for large event logs." lightbox="media\apache-spark-history-server\large-event-logs.png":::
+
 ## Graph tab in Apache Spark history server
 
 Select the Job ID for the job you want to view. Then, select **Graph** on the tool menu to get the job graph view.
