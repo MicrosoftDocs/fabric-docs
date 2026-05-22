@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 05/22/2026
 ---
 
 # Experience-specific disaster recovery guidance
@@ -407,6 +407,22 @@ During recovery, once the new region and capacity in Fabric are set up, you can 
 
 > [!NOTE]
 > If the original Ontology item has a lakehouse configured, refer to the [Lakehouse section](#lakehouse) to recover the lakehouse first. After those dependencies are taken care of, connect the newly recovered lakehouse to the newly recovered Ontology item.
+
+### Operations agents
+
+During a regional disaster, customers can't access operations agents items from the primary region. OneLake stores agent configurations, settings, behavior models, and activity logs, and it replicates these items to the secondary region when disaster recovery is enabled for the capacity. Any in-progress operations or active chat sessions at the time of the disaster are not preserved. After failover, restarting an agent in the new region begins monitoring from that point forward. Previously ingested events used for monitoring are not carried over.
+
+To recover operations agents items in the new region:
+
+1. After Fabric fails over to the paired region, verify that your agent items appear in your workspace. OneLake replication automatically makes agent configurations, behavior models, and activity logs available.
+
+1. If your agents reference Eventhouse (KQL) databases or other region-specific data sources, verify that the paired region has those dependencies. For recovery steps, see the [KQL Database/Queryset](#kql-databasequeryset) section. Update any agent configurations that reference region-specific endpoints, if necessary.
+
+1. Restart any operations or workflows that were in progress at the time of the disaster. Review the activity logs to determine which operations were interrupted.
+
+1. Re-establish any active chat sessions. Users need to initiate new conversations with their agents.
+
+To minimize the impact of a regional disaster, use [Fabric Git integration](../cicd/git-integration/intro-to-git-integration) to synchronize your workspace with an Azure DevOps repository. This approach enables quick reconstruction of agent configurations in a new workspace if needed.
 
 ## Transactional database
 
