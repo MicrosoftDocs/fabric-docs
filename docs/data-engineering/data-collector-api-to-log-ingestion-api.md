@@ -60,8 +60,10 @@ If you don't have one, [create a Log Analytics workspace in the Azure portal](ht
 
 ### Step 2. Create a Data Collection Endpoint (DCE)
 
-Create a Data Collection Endpoint (DCE) in the Azure portal. The DCE provides the endpoint URI that you configure in Spark properties for Log Ingestion API. The region of the DCE must be the same as the region of your Log Analytics workspace.
+Create a Data Collection Endpoint (DCE) in the Azure portal. The DCE provides the endpoint URI that you configure in Spark properties for Log Ingestion API. The region of the DCE must be the same as the region of your Log Analytics workspace. 
 
+Users can optionally create one or more table types (`logs`, `events`, `metrics`, `metadata`) depending on their scenario, and each table type has its own corresponding DCR configuration and stream name. Only create and configure the table types you actually need.
+ 
 1. In the [**Azure portal**](https://portal.azure.com/#home), go to **Monitor** in the left navigation pane.
 1. Under **Settings**, select **Data collection endpoints**, and then select **Create**.
 
@@ -144,7 +146,12 @@ Create a custom table in your Log Analytics workspace with the Log Ingestion API
 
    :::image type="content" source="media\data-collector-api-to-log-ingestion-api\monitoring-metrics-publisher-role.png" alt-text="Screenshot showing the Monitoring Metrics Publisher role assignment." lightbox="media\data-collector-api-to-log-ingestion-api\monitoring-metrics-publisher-role.png":::
 
-1. Retrieve the **stream name** and **DCR ID**. Open Data collection rule -> Overview -> JSON View.
+1. Retrieve the **stream name** and **DCR ID**. You can retrieve the **DCR ID** and **stream name** for each table you created from the **Data Collection Rule (DCR)** resource **JSON** view in the Azure portal. 
+
+   The stream name format is always: `Custom-<Log Analytics table name>`.
+   For example, if your table name is `AppLogs_CL`, the stream name will be: `Custom-AppLogs_CL`.
+   
+   In the next step, you will configure the corresponding `logStream`, `eventStream`, `metricStream`, or `metaStream` values and logDcr , eventDcr, metricDcr, metaDcr values in the Spark configuration using these stream names. 
 
    :::image type="content" source="media\data-collector-api-to-log-ingestion-api\stream-name.png" alt-text="Screenshot showing the retrieve the stream name and DCR ID." lightbox="media\data-collector-api-to-log-ingestion-api\stream-name.png":::
 
