@@ -63,45 +63,30 @@ For troubleshooting, see:
     - `box`
     - `cidr`
     - `circle`
+    - `daterange`
     - `inet`
+    - `interval`
     - `interval [ fields ] [ (p) ]`
+    - `int4range`
+    - `int8range`
     - `json`
     - `jsonb`
     - `line`
     - `lseg`
     - `macaddr`
     - `macaddr8`
+    - `numrange`
     - `path`
     - `pg_lsn`
     - `pg_snapshot`
     - `point`
     - `polygon`
     - `tsquery`
+    - `tsrange`
+    - `tstzrange`
     - `tsvector`
     - `txid_snapshot`
     - `xml`
-    - `json`
-    - `jsonb`
-    - `inet`
-    - `cidr`
-    - `macaddr`
-    - `macaddr8` 
-    - `tsvector`
-    - `tsquery`
-    - `int4range`
-    - `int8range`
-    - `numrange`
-    - `tsrange` 
-    - `tstzrange`
-    - `daterange`
-    - `circle`
-    - `line`
-    - `lseg`
-    - `box`
-    - `path`
-    - `point`
-    - `polygon`
-    - `interval`
 
 - Mirroring supports replicating columns containing spaces or special characters in names (such as  `,` `;` `{` `}` `(` `)` `\n` `\t` `=`). For tables under replication before this feature enabled, you need to update the mirrored database settings or restart mirroring to include those columns. Learn more from [Delta column mapping support](troubleshooting.md#delta-column-mapping-support).
 
