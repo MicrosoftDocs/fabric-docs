@@ -31,6 +31,15 @@ This article covers the tenant settings, delegated capacity configuration, and w
 > [!NOTE]
 > You don't need to enable Fabric to use Copilot in Power BI. You can enable Copilot for the Power BI workload without enabling the other Fabric workloads — for instance, if you have a P SKU.
 
+After you meet the prerequisites, complete the following steps to enable Copilot. Select a link in the **Step** column for detailed instructions.
+
+| **Step** | **Where** | **Description** |
+|---|---|---|
+| 1. [Enable Copilot tenant settings](#enable-copilot-tenant-settings) | Fabric admin portal | Enable the Copilot tenant settings and scope them to specific security groups. |
+| 1. [Configure delegated capacity settings](#configure-delegated-capacity-settings) | Fabric admin portal | If tenant settings are delegated, enable Copilot in the capacity-level settings. |
+| 1. [Assign workspaces and provision access](#assign-workspaces-and-provision-access) | Workspace settings | Assign a workspace to a Copilot-enabled capacity and grant access to users. |
+| 1. [Enable Copilot in Power BI Desktop](#enable-copilot-in-power-bi-desktop) (optional) | Power BI Desktop | If you use Power BI Desktop, select a Copilot-enabled workspace as your active workspace. |
+
 ## Enable Copilot tenant settings
 
 Copilot in Fabric is rolling out gradually to all tenants with paid Fabric capacities (F2 or higher). It automatically appears as a new setting in the [Fabric admin portal](https://app.fabric.microsoft.com/admin-portal) when available for your tenant.
