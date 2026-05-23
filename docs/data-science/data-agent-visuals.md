@@ -16,8 +16,7 @@ ai-usage: ai-assisted
 
 The Fabric data agent can return interactive visual responses, such as charts and graphs, in addition to text and table-based answers. Visual responses help you quickly identify trends, patterns, and outliers in your data without leaving the conversational interface.
 
-> [!IMPORTANT]
-> This feature is in [preview](../fundamentals/preview.md).
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)].
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
@@ -28,11 +27,6 @@ The Fabric data agent can generate a visualization as part of its response in th
 2. The user implicitly requests a visual (for example, "show me sales by region")
 3. The agent infers the user would benefit from a visual based on the data or query (for example, "what are the sales trends over the past year?")
 
-:::image type="content" source="media/data-agent-visuals/data-agent-visual.png" lightbox="media/data-agent-visuals/data-agent-visual.png" alt-text="Screenshot of a Data Agent chat interface. The user prompt reads 'Show revenue and profit by customer segment.' The agent provides a text response along with a multi-column bar chart.":::
-
-> [!TIP]
-> Hover over the chart to view tooltips with additional information.
-
 ### Example questions to generate visuals
 
 - "Show me a chart of monthly sales for 2025."
@@ -42,8 +36,10 @@ The Fabric data agent can generate a visualization as part of its response in th
 
 The agent determines the most appropriate chart type based on your question and the data returned. If you want a specific chart type, include it in your question (for example, "as a line chart" or "as a bar chart").
 
+:::image type="content" source="media/data-agent-visuals/data-agent-visual.png" lightbox="media/data-agent-visuals/data-agent-visual.png" alt-text="Screenshot of a Data Agent chat interface. The user prompt reads 'Show revenue and profit by customer segment.' The agent provides a text response along with a multi-column bar chart.":::
+
 > [!TIP]
-> Visuals are enabled by default. To avoid generating visuals or specify the behavior, you can use agent instructions. For example, you can instruct the agent to always include a visual for certain types of questions, to prefer specific chart types for certain data patterns, or to avoid using visuals. For more details on agent instructions, see [Best practices for configuring data agents](data-agent-configuration-best-practices.md).
+> Hover over the chart to view tooltips with additional information.
 
 ## Supported data sources
 
@@ -66,6 +62,9 @@ The following visual types are currently supported:
 Agent instructions can be used to guide the agent's use of visuals. For example, you can instruct the agent to always include a visual for certain types of questions, or to prefer specific chart types for certain data patterns. For more details on agent instructions, see [Best practices for configuring data agents](data-agent-configuration-best-practices.md).
 
 The colors, font sizes, title, and labels are preset and currently cannot be customized.
+
+> [!TIP]
+> Visuals are enabled by default. To avoid generating visuals or specify the behavior, you can use agent instructions to instruct the agent to avoid using visuals. For more details on agent instructions, see [Best practices for configuring data agents](data-agent-configuration-best-practices.md).
 
 ## Limitations
 
