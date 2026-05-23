@@ -208,6 +208,8 @@ Most users don't need to change these defaults.
 
 ## Performance results
 
+:::image type="content" source="media/efficient-scaledown/compute-cost-savings.jpg" alt-text="Chart showing compute cost savings with efficient scaledown enabled versus disabled on a TPC-DS benchmark, demonstrating 54 percent cost reduction." lightbox="media/efficient-scaledown/compute-cost-savings.jpg":::
+
 ### Compute cost savings (TPC-DS benchmark)
 
 | Metric | Without efficient scaledown | With efficient scaledown |
