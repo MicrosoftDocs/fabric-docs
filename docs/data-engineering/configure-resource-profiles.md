@@ -92,40 +92,72 @@ Choose **Task based** if your workload doesn't follow the medallion pattern or i
 
 ## Auto-update resource profiles
 
-Resource profiles support an auto-update capability that keeps your Spark compute configuration aligned with the latest optimizations from Fabric. When auto-update is enabled, Fabric periodically evaluates your workload patterns and updates the resource profile configuration to reflect improved recommendations, without requiring manual intervention.
+Resource profiles support an auto-update capability that keeps your Spark compute configuration aligned with the latest optimizations from Fabric. When auto-update is enabled, Fabric applies workload-specific Spark properties based on your resource profile type, without requiring manual tuning.
 
-### Enable auto-update via Spark configuration
+### Auto-update configurations
 
-Set the following Spark configuration to enable auto-update for your resource profile:
+Fabric provides three auto-update profiles, each tuned for a specific workload pattern:
 
-```python
-spark.conf.set("spark.fabric.resourceProfile.autoUpdate.enabled", "true")
+#### Read-heavy for Spark workloads
+
+Set via `spark.fabric.resourceProfile.readHeavyForSparkAutoUpdate`:
+
+```json
+{
+    "spark.databricks.delta.optimizeWrite.enabled": "true",
+    "spark.databricks.delta.optimizeWrite.partitioned.enabled": "true",
+    "spark.databricks.delta.optimizeWrite.binSize": "128"
+}
 ```
 
-You can also set this property in your environment Spark properties or at the workspace level:
+Use this profile when your workload is dominated by Spark reads with moderate write optimization needs.
 
-| Setting | Default | What it controls |
-|---|---|---|
-| `spark.fabric.resourceProfile.autoUpdate.enabled` | `false` | When set to `true`, Fabric automatically updates the resource profile configuration based on latest optimizations and workload patterns. |
+#### Read-heavy for Power BI workloads
+
+Set via `spark.fabric.resourceProfile.readHeavyForPBIAutoUpdate`:
+
+```json
+{
+    "spark.sql.parquet.vorder.default": "true",
+    "spark.databricks.delta.optimizeWrite.enabled": "true",
+    "spark.databricks.delta.optimizeWrite.binSize": "1g"
+}
+```
+
+Use this profile when your data is primarily consumed by Power BI. V-Order is enabled for optimal DirectLake performance, and a larger bin size produces fewer, larger files suited to analytical reads.
+
+#### Write-heavy workloads
+
+Set via `spark.fabric.resourceProfile.writeHeavyAutoUpdate`:
+
+```json
+{
+    "spark.sql.parquet.vorder.default": "false",
+    "spark.databricks.delta.optimizeWrite.binSize": "128",
+    "spark.databricks.delta.optimizeWrite.partitioned.enabled": "true"
+}
+```
+
+Use this profile when your workload is write-intensive (for example, high-volume ingestion or ETL). V-Order is disabled to reduce write overhead, and optimized write with partitioning is enabled for efficient file layout.
 
 ### How auto-update works
 
-When auto-update is enabled:
+When a resource profile with auto-update is applied:
 
-1. Fabric monitors your workload characteristics over time.
-1. When improved configurations are available (based on updated best practices or new runtime capabilities), the resource profile is automatically refreshed.
-1. Updated settings apply to new Spark sessions. Active sessions aren't affected until they restart.
+1. Fabric selects the appropriate auto-update configuration based on your primary use case and workload type.
+1. The Spark properties are applied automatically to new sessions in the workspace.
+1. Active sessions aren't affected until they restart.
 
 > [!NOTE]
-> Auto-update doesn't change your primary use case or data volume selections. It optimizes the compute configuration (node sizes, autoscale parameters, and Spark properties) within the boundaries of your original profile inputs.
+> Auto-update configurations optimize Delta Lake write behavior and file layout within the boundaries of your original profile inputs. They don't change your pool size, node configuration, or autoscale settings.
 
-### Disable auto-update
+### Configuration reference
 
-To disable auto-update and keep your resource profile configuration static:
-
-```python
-spark.conf.set("spark.fabric.resourceProfile.autoUpdate.enabled", "false")
-```
+| Setting | Applied properties | When to use |
+|---|---|---|
+| `spark.fabric.resourceProfile.readHeavyForSparkAutoUpdate` | Optimize write enabled, partitioned write, 128 MB bin size | Read-heavy Spark analytics |
+| `spark.fabric.resourceProfile.readHeavyForPBIAutoUpdate` | V-Order enabled, optimize write, 1 GB bin size | Read-heavy Power BI/DirectLake |
+| `spark.fabric.resourceProfile.writeHeavyAutoUpdate` | V-Order disabled, optimize write, 128 MB bin size, partitioned | Write-heavy ingestion and ETL |
 
 ## Related content
 
