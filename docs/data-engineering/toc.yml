@@ -366,6 +366,10 @@ items:
     items:
     - name: Native execution engine overview
       href: native-execution-engine-overview.md
+    - name: Python UDFs, Scala UDFs, and complex data types
+      href: native-execution-engine-udf-complex-types.md
+    - name: Efficient scaledown and remote shuffle manager
+      href: efficient-scaledown-remote-shuffle-manager.md
   - name: Spark job definition (SJD)
     items:
     - name: What is a Spark job definition?

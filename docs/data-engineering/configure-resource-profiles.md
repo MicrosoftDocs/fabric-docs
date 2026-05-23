@@ -90,6 +90,43 @@ Choose **Task based** if your workload doesn't follow the medallion pattern or i
 | **Read optimized** | Frequent reads and queries, interactive notebooks |
 | **Write optimized** | High-volume ingestion, ETL pipelines, streaming |
 
+## Auto-update resource profiles
+
+Resource profiles support an auto-update capability that keeps your Spark compute configuration aligned with the latest optimizations from Fabric. When auto-update is enabled, Fabric periodically evaluates your workload patterns and updates the resource profile configuration to reflect improved recommendations, without requiring manual intervention.
+
+### Enable auto-update via Spark configuration
+
+Set the following Spark configuration to enable auto-update for your resource profile:
+
+```python
+spark.conf.set("spark.fabric.resourceProfile.autoUpdate.enabled", "true")
+```
+
+You can also set this property in your environment Spark properties or at the workspace level:
+
+| Setting | Default | What it controls |
+|---|---|---|
+| `spark.fabric.resourceProfile.autoUpdate.enabled` | `false` | When set to `true`, Fabric automatically updates the resource profile configuration based on latest optimizations and workload patterns. |
+
+### How auto-update works
+
+When auto-update is enabled:
+
+1. Fabric monitors your workload characteristics over time.
+1. When improved configurations are available (based on updated best practices or new runtime capabilities), the resource profile is automatically refreshed.
+1. Updated settings apply to new Spark sessions. Active sessions aren't affected until they restart.
+
+> [!NOTE]
+> Auto-update doesn't change your primary use case or data volume selections. It optimizes the compute configuration (node sizes, autoscale parameters, and Spark properties) within the boundaries of your original profile inputs.
+
+### Disable auto-update
+
+To disable auto-update and keep your resource profile configuration static:
+
+```python
+spark.conf.set("spark.fabric.resourceProfile.autoUpdate.enabled", "false")
+```
+
 ## Related content
 
 - [Spark compute](spark-compute.md)
