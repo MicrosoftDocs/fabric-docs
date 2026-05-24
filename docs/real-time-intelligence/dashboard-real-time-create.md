@@ -3,7 +3,7 @@ title: Create a Real-Time Dashboard
 description: Learn how to create and customize Real-Time Dashboards to visualize data effectively using KQL queries and Copilot for seamless insights.
 ms.reviewer: mbar
 ms.topic: how-to
-ms.date: 05/14/2026
+ms.date: 05/24/2026
 author: spelluru
 ms.author: spelluru
 ms.subservice: rti-dashboard
@@ -173,11 +173,11 @@ Describe the insight you’re looking for. Start with a broad question and refin
 
 1. To edit an existing tile, select the pencil icon or open the tile options and select **Edit**.
 
-1. In the Copilot pane, enter a description of the tile in natural language. For example, "View the most available bike points including neighborhood, street name, and number of bikes at the station."
+1. In the Copilot pane, enter a description of the tile in natural language. For example, "Compare security screening lane volumes."
 
     :::image type="content" source="media/real-time-dashboard/new-tile-copilot-response.png" alt-text="Screenshot of the copilot pane with the results displayed in a table." lightbox="media/real-time-dashboard/new-tile-copilot-response.png":::
 
-1. View the result. Refine the result by asking Copilot a follow-up request. In this example, ask Copilot to "Change the visual to a map and show the 10 locations with the most bikes."
+1. View the result. Refine the result by asking Copilot a follow-up request. In this example, ask Copilot to "Create a line chart comparing the top 5 security screening lanes."
 
      :::image type="content" source="media/real-time-dashboard/new-tile-copilot-response-refined.png" alt-text="Screenshot of the copilot pane with the refined results displayed in a table." lightbox="media/real-time-dashboard/new-tile-copilot-response-refined.png":::
 
@@ -188,8 +188,6 @@ Describe the insight you’re looking for. Start with a broad question and refin
     For more information on how to customize the visual, see [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md).
 
 1. Select **Apply**. You can now view and edit the underlying KQL query or continue with Copilot. The query is generated based on your natural language description and any follow-up refinements you made in Copilot.
-
-    :::image type="content" source="media/real-time-dashboard/new-tile-copilot-apply.png" alt-text="Screenshot of the tile editor after selecting apply in copilot. " lightbox="media/real-time-dashboard/new-tile-copilot-apply.png":::
 
 1. To add the tile to the dashboard, select **Done**.
 
