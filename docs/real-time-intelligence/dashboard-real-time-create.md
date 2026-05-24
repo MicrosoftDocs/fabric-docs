@@ -177,7 +177,7 @@ Describe the insight you’re looking for. Start with a broad question and refin
 
     :::image type="content" source="media/real-time-dashboard/new-tile-copilot-response.png" alt-text="Screenshot of the copilot pane with the results displayed in a table." lightbox="media/real-time-dashboard/new-tile-copilot-response.png":::
 
-1. View the result. Refine the result by asking Copilot a follow-up request. In this example, ask Copilot to "Create a line chart comparing the top 5 security screening lanes."
+1. View the result. Refine the result by asking Copilot a follow-up request. In this example, ask Copilot to "Create a time chart comparing the top 5 security screening lanes."
 
      :::image type="content" source="media/real-time-dashboard/new-tile-copilot-response-refined.png" alt-text="Screenshot of the copilot pane with the refined results displayed in a table." lightbox="media/real-time-dashboard/new-tile-copilot-response-refined.png":::
 
