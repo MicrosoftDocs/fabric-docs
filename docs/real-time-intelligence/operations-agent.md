@@ -3,11 +3,7 @@ title: Create and Configure Operations Agents
 description: Learn how to use operations agents in Fabric Real-Time Intelligence.
 ms.reviewer: willthom, v-hzargari
 ms.topic: how-to
-<<<<<<< HEAD
-ms.date: 05/13/2026
-=======
 ms.date: 05/14/2026
->>>>>>> upstream/main
 ms.search.form: Operations Agent
 ai-usage: ai-assisted
 ---
@@ -59,20 +55,12 @@ On **Agent setup**, configure the operations agent and adjust it to your data by
 
 1. Provide specific instructions to guide the agent's behavior and decision-making process. For example, you can tell the agent to send you an alert when it detects a condition that matches your business goals.
 
-<<<<<<< HEAD
-    <!-- TODO: Update agent-instructions.png to show "send me an alert..." instructions instead of the current "tell the technicians..." example. -->
-    :::image type="content" source="media/operations-agent/agent-instructions.png" alt-text="Screenshot of the instructions section on the setup page." lightbox="media/operations-agent/agent-instructions.png":::
-=======
     :::image type="content" source="media/operations-agent/agent-instruction.png" alt-text="Screenshot of the instructions section on the setup page." lightbox="media/operations-agent/agent-instruction.png":::
->>>>>>> upstream/main
 
 1. Choose a relevant data source that the agent can analyze and monitor. This choice ensures the agent has access to accurate and up-to-date information for generating insights.
 
     :::image type="content" source="media/operations-agent/knowledge-source.png" alt-text="Screenshot of the knowledge source section on the setup page." lightbox="media/operations-agent/knowledge-source.png":::
 
-<<<<<<< HEAD
-By default, the operations agent can send you alerts in Microsoft Teams when it detects conditions that match your business goals. You don't need to configure any extra actions for the agent to send these messages. To learn how to receive these alerts and to define custom actions (such as triggering a Power Automate flow), see [Operations agent actions](operations-agent-actions.md).
-=======
 1. Define the actions that the agent can take based on the insights it generates. Name the action and provide a description to clarify its purpose. Optionally, list the parameters that the action requires, such as a specific value. The agent can always send you notifications in Teams without defining additional actions.
 
     :::image type="content" source="media/operations-agent/actions.png" alt-text="Screenshot of the actions section on the setup page." lightbox="media/operations-agent/actions.png":::
@@ -96,7 +84,6 @@ By default, the operations agent can send you alerts in Microsoft Teams when it 
             :::image type="content" source="media/operations-agent/activator.png" alt-text="Screenshot of the flow builder with the connection string." lightbox="media/operations-agent/activator.png":::
 
       1. To use the values passed through the parameters to the flow, access them through dynamic content as described in [Trigger custom actions (Power Automate flows)](data-activator/activator-trigger-power-automate-flows.md#use-dynamic-content-in-your-flow).
->>>>>>> upstream/main
 
 When you finish the configuration, save the agent to generate its playbook. The playbook outlines the goals, instructions, data, and actions you defined, providing the agent with a clear understanding of its tasks.
 
