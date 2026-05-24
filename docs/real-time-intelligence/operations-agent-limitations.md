@@ -3,7 +3,7 @@ title: Operations Agent Best Practices and Limitations
 description: Learn about the best practices and limitations of using operations agents in Real-Time Intelligence.
 ms.reviewer: willthom, v-hzargari
 ms.topic: how-to
-ms.date: 24/05/2026
+ms.date: 05/24/2026
 ms.search.form: Operations Agent Limitations, Best Practices
 ai-usage: ai-assisted
 ---
