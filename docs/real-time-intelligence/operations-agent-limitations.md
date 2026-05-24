@@ -22,15 +22,20 @@ Operations agents help organizations operationalize clear business goals by cont
 
 - **Ingestion time column**: The operations agent defaults to using the ingestion time of the table to identify when records arrived. The agent uses this value when it queries for latest data and to calculate changes in the data over time. Make sure that the ingestion time is populated.
 
-- **Business object identification**: If the agent needs to monitor a specific business object such as a station, sensor, or personnel record, identify the column that uniquely identifies the object (for example, "StationID" or "SensorID"). If you're using a KQL database source, specify which table it belongs to. If you're using an ontology source, specify the entity that the agent should use.
+- **Business object identification**: If the agent needs to monitor a specific business object such as a station, sensor, or personnel record, identify the column that uniquely identifies the object (for example, `StationID` or `SensorID`). If you're using a KQL database source, specify which table it belongs to. If you're using an ontology source, specify the entity that the agent should use.
 
 - **Field name quoting**: If a rule references column or property names that contain special characters, such as underscores or hyphens, enclose the column name in quotation marks (""). This practice ensures that the agent identifies it correctly.
 
-- **Quantifiable conditions**: If a rule uses qualitative language such as "low availability" or "high temperature," replace it with a specific numeric threshold. For example, use a phrase like "fewer than 3 bikes available" or "temperature exceeds 80". The agent uses the default LLM knowledge to suggest thresholds for common terms, such as "acidic conditions" means pH <7.
+- **Quantifiable conditions**: If a rule uses qualitative language such as "low availability" or "high temperature," replace it with a specific numeric threshold. 
+  - For example, use a phrase like "fewer than 3 bikes available" or "temperature exceeds 80". The agent uses the default LLM knowledge to suggest thresholds for common terms, such as "acidic conditions" means pH <7.
  
 - **Rule separation**: If you define multiple rules, describe each rule on a separate line or bullet point. Don't combine conditions from different rules in the same sentence.
 
-- **Rule order**: If the agent needs to prioritize certain rules, list higher-priority rules first. Large language models (LLMs) might interpret information differently based on its position in the prompt.
+- **Rule order**: If the agent needs to prioritize certain rules, list higher-priority rules first. LLMs might interpret information differently based on its position in the prompt.
+
+- **Track agent queries and data access:** Review the data sources and queries the agent uses by checking the monitored Eventhouse or KQL database. Use the Query insights tab to view executed queries and validate the generated KQL.
+
+   :::image type="content" source="media/operations-agent/query-insights.png" alt-text="Screenshot of the Query insights tab in the KQL database.":::
 
 ## Sample instructions
 
@@ -51,35 +56,41 @@ Here's an example of how you can lay out your instructions to the agent to be cl
 
 ## Limitations
 
-- Operations agents rely on a large language model (LLM) to create the playbook and rules the agent follows, and to reason about and generate messages for actions and recommendations. Because LLM-based AI services are probabilistic and can be fallible, it's important to carefully review the results and recommendations they provide. For more information, see [Privacy, security, and responsible use of Copilot for Real-Time Intelligence](../fundamentals/copilot-real-time-intelligence-privacy-security.md).
+Operations agents have functional, platform, and behavioral limitations that you should consider when designing rules and monitoring scenarios.
 
-   To track what queries and data the agent accesses, you can check the eventhouse and KQL database it monitors. On the **Query insights** tab, you see the queries that it runs and can validate the KQL it uses.
+### Data source limitations
 
-   :::image type="content" source="media/operations-agent/query-insights.png" alt-text="Screenshot of the Query insights tab in the KQL database.":::
+- Currently, operations agents only support monitoring data in regular Eventhouse tables. Shortcut tables, functions, and materialized views aren't supported.
+- When using a Fabric Ontology as the agent's data source:
+  - The ontology must be in the same workspace as the operations agent.
+  - Ontology entities that you want the agent to monitor must have at least one static property to use as the identifier for entities. Timeseries properties should be bound to eventhouse fields.
 
-- Currently, only regular Eventhouse tables are supported. Shortcut tables, functions, and materialized views aren't supported.
+### Monitoring and rule limitations
 
-- If you use a Fabric Ontology for the agent's data source:
-    - You need to locate the ontology in the same workspace as the operations agent.
+- Ontology monitoring supports basic property values only. Aggregations such as an average, minimum, or maximum value aren't supported.
+- Rules that require 'AND' conditions aren't supported (for example, braking index for a runway is over 0.8 and the surface temp is < 40).
 
-    - Ontology entities that you want the agent to monitor must have at least one static property to use as the identifier for entities. Timeseries properties should be bound to eventhouse fields.
+### Language and model behavior limitations
 
-    - Ontology monitoring is limited to basic property values only. It doesn't support any aggregation such as an average, minimum, or maximum value. Monitoring that requires an 'AND' condition (for example, braking index for a runway is over 0.8 and the surface temp is < 40) isn't supported.
+- Operations agents rely on a large language model (LLM). Outputs are probabilistic and can be incorrect, it's important to carefully review the results and recommendations they provide. For more information, see [Privacy, security, and responsible use of Copilot for Real-Time Intelligence](../fundamentals/copilot-real-time-intelligence-privacy-security.md).
+- Currently, operations agents only support English language for instructions and business goals.
 
-- While system guardrails are in place, heavy usage might result in throttling, which limits the number of messages the agent can send. In such cases, you might receive simplified, non-LLM-generated messages through Microsoft Teams.
+### Runtime limitations
 
-- At present, the agent and LLM support only English instructions and goals.
+- The agent runs queries every five minutes when active.
+- Operations expire if no action is taken within three days. After expiration, actions can no longer be approved.
+
+### Permissions and access limitations
 
 - The agent operates by using the delegated identity and permissions of its creator. This means:
-
-  - Queries, data access, and actions run based on the creator's credentials.
-  
+  - Queries and actions use the creator’s credentials.
   - By default, the creator receives recommendation messages. Changing the recipient doesn't change the credentials used for queries and actions.
 
-- The agent runs data queries every five minutes when it's active.
+### Messaging and throttling limitations
 
-- When the agent detects data matching its rules, it tracks the recommended actions and the user's response as an *operation*. If the user doesn't respond (approve or reject) within three days, the operation is automatically canceled. After this period, you can't interact with or approve the action.
+- Heavy usage can result in message throttling. In these cases, simplified non-LLM-generated messages might be sent in Microsoft Teams.
+
+### Regional and workspace limitations
 
 - Operations agent is available in Microsoft Fabric regions, excluding South Central US and East US.
-
 - Operations agent isn't currently supported in workspaces encrypted with [Customer-managed keys for Fabric workspaces](../security/workspace-customer-managed-keys.md).
