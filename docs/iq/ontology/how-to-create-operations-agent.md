@@ -1,5 +1,5 @@
 ---
-title: Create an operations agent to use with ontology
+title: Create an Operations Agent to Use with Ontology
 description: Create an operations agent that monitors an ontology (preview) item by using business rules in natural language.
 ms.date: 04/28/2026
 ms.topic: how-to
