@@ -3,7 +3,7 @@ title: Create and Configure Operations Agents
 description: Learn how to use operations agents in Fabric Real-Time Intelligence.
 ms.reviewer: willthom, v-hzargari
 ms.topic: how-to
-ms.date: 05/14/2026
+ms.date: 24/05/2026
 ms.search.form: Operations Agent
 ai-usage: ai-assisted
 ---
@@ -22,7 +22,7 @@ In this article, you learn how to create and use an AI operations agent in Real-
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity). Trial capacities aren't supported.
 * An [eventhouse](create-eventhouse.md) or [ontology](../iq/ontology/overview.md) in your workspace.
-* A [KQL database](create-database.md) in your eventhouse, if you are using an eventhouse.
+* A [KQL database](create-database.md) in your eventhouse, if you're using an eventhouse.
 * A Microsoft Teams account.
 * Fabric admin permissions enabled for operations agent preview, and Microsoft Copilot and Azure OpenAI.
 * The cross-geo processing and storage for AI as per [data agent tenant settings](../data-science/data-agent-tenant-settings.md). This prerequisite only applies if your Fabric capacity isn't provisioned in US or EU regions.  
@@ -98,7 +98,7 @@ The playbook displays the concepts the agent monitors and the rules or condition
 
 ## Receive messages from an operations agent
 
-Once the agent has been started, it will monitor the data covered by its playbook and rules. 
+After you start the agent, it monitors the data covered by its playbook and rules. 
 
 ## Related content
 
