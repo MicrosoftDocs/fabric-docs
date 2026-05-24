@@ -4,7 +4,7 @@ description: Learn about production deployment recommendations for reliability, 
 ms.reviewer: smorshtein
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
-ms.date: 05/17/2026
+ms.date: 05/24/2026
 ai-usage: ai-assisted
 ---
 
@@ -36,10 +36,10 @@ Deploy eventhouse resources into a single Azure region. If that region becomes u
 
 Implement a customer-managed multiregional resiliency approach:
 
-* Deploy separate eventhouse instances in multiple regions.
-* Replicate data into both regions (for example, by double-ingesting from an upstream source).
-* Prepare application traffic failover procedures (for example, connection string or DNS switch).
-* Define operational runbooks for region failover and failback.
+1. Deploy separate eventhouse instances in multiple regions.
+1. Replicate data into both regions (for example, by double-ingesting from an upstream source).
+1. Prepare application traffic failover procedures (for example, connection string or DNS switch).
+1. Define operational runbooks for region failover and failback.
 
 ### Design for backup and recovery
 
