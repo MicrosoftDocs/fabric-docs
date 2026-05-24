@@ -37,7 +37,7 @@ It fits into a reactive, event-driven architecture where data flows continuously
 
     When a rule condition is satisfied, Activator can trigger:
 
-  - pipelines, notebooks, dataflows, User Data Functions (UDFs) (preview), or spark job definitions in Fabric.
+  - pipelines, notebooks, dataflows, User Data Functions (UDFs), or spark job definitions in Fabric.
   
   - External actions via Power Automate.
   
@@ -69,7 +69,7 @@ Deploy activator instances for each workspace and bind them to specific data sou
 | Fabric events        | Supplies events that are happening within Fabric like refreshing of a semantic model or failing of a pipeline.​ |
 | Notebooks            | Activator can trigger notebook execution. |
 | Spark Job Definition | Activator can trigger spark job execution. |
-| User Data Function   | Activator can trigger User Data Function (UDF) execution (preview). |
+| User Data Function   | Activator can trigger User Data Function (UDF) execution. |
 | Dataflow             | Activator can trigger dataflow execution when a rule condition is met. |
 
 ### Activator as an orchestrator
@@ -148,7 +148,7 @@ When a rule’s conditions are met and an action is initiated, the rule is activ
 - Fabric notebooks (for machine-learning scoring, diagnostics).
 - Fabric spark jobs (for batch/streaming jobs).
 - Fabric dataflows (for data movement and transformation).
-- Fabric User Data Functions (preview) (for custom business logic with code).
+- Fabric User Data Functions (for custom business logic with code).
 - Power Automate flows (for business process integration).
 - Teams notifications (using template-based messaging).
 - Email notifications.
@@ -214,6 +214,7 @@ Here are a few real-world scenarios where you can use Fabric Activator:
 ## Related content
 
 - [Tutorial: Create and activate a Fabric Activator rule](activator-tutorial.md)
+- [Tutorial: Create an end-to-end Activator rule using agentic AI](activator-agentic-tutorial.md)
 - [Activator rules overview](activator-rules-overview.md)
 - [Trigger Fabric items from an Activator rule](activator-trigger-fabric-items.md)
 - [Detection conditions in Activator](activator-detection-conditions.md)

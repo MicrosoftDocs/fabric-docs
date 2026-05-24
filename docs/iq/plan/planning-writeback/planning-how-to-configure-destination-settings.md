@@ -1,5 +1,5 @@
 ---
-title: Configure destination settings for writeback
+title: Configure Destination Settings for Writeback
 description: Learn how to manage writeback destinations and reset writeback data when filters change.
 ms.date: 05/04/2026
 ms.topic: how-to

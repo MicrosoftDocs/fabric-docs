@@ -5,9 +5,10 @@ ms.author: jburchel
 author: jonburchel
 ms.reviewer: amjafari
 ms.topic: how-to
-ms.date: 08/20/2025
+ms.date: 05/12/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
+ai-usage: ai-assisted
 #customer intent: As an Analyst, I want to consume a Fabric data agent within Microsoft Copilot Studio.
 ---
 
@@ -35,7 +36,7 @@ Before you can connect a Fabric data agent to Microsoft Copilot Studio, ensure t
 1. **Authentication**: Sign in to both Microsoft Fabric and Microsoft Copilot Studio with the same account that has access to the data agent.
 
 1. **Permissions**: Ensure you have the following permissions:
-   - At least read access to the Fabric data agent. Read [here](../data-science/data-agent-sharing.md?tabs=azure-devops) about different permissions to the Fabric data agent.
+   - At least read access to the Fabric data agent. For more information about the different permissions for a Fabric data agent, see [Fabric data agent sharing and permission management](./data-agent-sharing.md).
    - Permission to create and modify agents in Microsoft Copilot Studio
    - Access to the underlying data sources used by the Fabric data agent
 
@@ -113,11 +114,11 @@ Before you can connect a Fabric data agent to Microsoft Copilot Studio, ensure t
    > [!NOTE]
    > Using a custom agent with a connected Fabric data agent isn't currently supported in Microsoft 365 Copilot. Copilot Studio agent with a connected Fabric data agent is only validated for Microsoft Teams. Other channels may also work but haven't been formally tested.
 
-1. To publish to Teams, select Teams and Microsoft 365 Copilot from the list of channels. This opens the window on left. Select **Add channel** to enable this channel. Once done, the **See agent in Teams** are active. You can select it, which prompts you to open Microsoft Teams.
+1. To publish to Teams and Microsoft 365 Copilot, select Teams and Microsoft 365 Copilot from the list of channels. This opens the window on left. Select **Add channel** to enable this channel. Once done, the **See agent in Teams** option is active. You can select it, which prompts you to open Microsoft Teams.
 
    > [!NOTE]
    > If you share your custom AI agent with others, they must have at least read access to the Fabric data agent and the necessary permissions for all underlying data sources.
 
    :::image type="content" source="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-teams-channels.png" alt-text="Screenshot showing the publish process to Teams." lightbox="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-teams-channels.png":::
 
-1. This will then launch Microsoft Teams where you can ask questions from the custom AI agent and get answers.
+1. This launches Microsoft Teams where you can ask questions from the custom AI agent and get answers.

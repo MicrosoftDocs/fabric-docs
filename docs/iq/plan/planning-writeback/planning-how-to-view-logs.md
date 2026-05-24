@@ -1,5 +1,5 @@
 ---
-title: View and analyze writeback logs
+title: View and Analyze Writeback Logs
 description: Learn how to filter, view, and analyze writeback execution logs to monitor status and troubleshoot errors.
 ms.date: 05/04/2026
 ms.topic: how-to

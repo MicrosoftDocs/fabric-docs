@@ -4,7 +4,7 @@ description: Discover how Real-Time Intelligence in Microsoft Fabric empowers or
 #customer intent: As a data analyst, I want to understand how to use Real-Time Intelligence so that I can extract insights from streaming data.
 ms.reviewer: tzgitlin
 ms.topic: overview
-ms.date: 04/20/2026
+ms.date: 05/11/2026
 ms.subservice: rti-core
 ms.search.form: Overview
 ai-usage: ai-assisted
@@ -108,8 +108,10 @@ aggregations that can be shared to consumers in Real-Time hub.
 
 Eventhouses are the ideal analytics engine to process data in motion. They're tailored to time-based, streaming events with structured, semi structured, and unstructured data. Your data is automatically organized based on when it arrived, so you can run fast, detailed queries even on large amounts of data. Data stored in eventhouses can be made available in OneLake for consumption by other Fabric experiences.
 
-The indexed, partitioned data stored in eventhouses is ready for lightning-fast query using various code, low-code, or no-code options in Fabric. Data can be queried in native KQL (Kusto Query Language) or using T-SQL in the KQL queryset. The Kusto copilot, along with the no-code query exploration experience, streamlines the process
+The indexed, partitioned data stored in eventhouses is ready for lightning-fast query using various code, low-code, or no-code options in Fabric. You can query Eventhouse data in native KQL (Kusto Query Language) and through a managed [SQL analytics endpoint](eventhouse-analyze-data-with.md) for T-SQL analytics, in addition to T-SQL access in the KQL queryset where applicable. The SQL analytics endpoint is managed, discoverable, and governed within Fabric and is aligned with the Eventhouse data model, providing a first-class T-SQL surface for connecting BI and analytics tools to Eventhouse data. The Kusto copilot, along with the no-code query exploration experience, streamlines the process
 of analyzing data for both experienced KQL users and citizen data scientists. KQL is a simple, yet powerful language to query structured, semi-structured, and unstructured data. The language is expressive, easy to read and understand the query intent, and optimized for authoring experiences.
+
+Eventhouse also includes native [anomaly detection](anomaly-detection.md) that runs directly on live time-series and event datasets. Detection executes in place against streaming data without copying or exporting it, which speeds up issue identification and investigation and complements dashboards and KQL analytics.
 
 For AI and agentic application scenarios, low-latency KQL queries over safety and telemetry events enable near-real-time dashboards and anomaly detection in agent conversations. The time-series organization of eventhouse data is well suited for correlating content safety signals with session metadata, so you can rapidly triage issues and identify trends across your generative AI workloads.
 
@@ -143,6 +145,8 @@ For generative AI applications, you can set up content safety remediation workfl
 [!INCLUDE [fabric-activator](includes/fabric-activator.md)] turns your event-driven insights into actionable business
 advantages. Activator also integrates with the Power BI service to notify users when specified conditions occur in published reports, such as when a new row appears in a table visual.
 
+Real-Time Intelligence integrates with [Fabric data agents](../data-science/concept-data-agent.md) that can reason over live and historical Eventhouse data to automate actions and workflows. This integration complements alert-driven automation in Activator with conversational analytics and orchestration over the same Eventhouse data.
+
 ## Integrate with other Fabric experiences
 
 - [Route events from eventstreams to Fabric item destinations](event-streams/route-events-based-on-content.md)
@@ -152,7 +156,7 @@ advantages. Activator also integrates with the Power BI service to notify users 
   - [Data from OneLake can be loaded into Real-Time Intelligence](get-data-onelake.md)
   - [Data loaded into Real-Time Intelligence is reflected in OneLake as one logical copy](one-logical-copy.md)
 - [Use the data loaded into Real-Time Intelligence as the underlying data for visualization in a Power BI report](create-powerbi-report.md)
-- [Use the data loaded into Real-Time Intelligence for analysis in Fabric Notebooks in Data Engineering](notebooks.md)
+- [Use the data loaded into Real-Time Intelligence for analysis in Fabric notebooks](notebooks.md). Notebooks work directly over Eventhouse data without data movement, supporting KQL, T-SQL, Python, and Spark for unified exploration, transformations, and machine learning.
 
 ## Related content
 

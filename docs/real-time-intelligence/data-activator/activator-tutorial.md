@@ -112,7 +112,7 @@ The Explorer pane displays objects, like eventstreams, for this activator. **Del
         :::image type="content" source="media/activator-tutorial/action.png" alt-text="Screenshot showing the Action section of the Definition pane." lightbox="media/activator-tutorial/action.png":::
 
     1. **Run Fabric activities:** To configure the alert to launch a Fabric pipeline, Dataflow, Spark job, notebook, or User Data Function when the condition is met, follow these steps:
-        1. For **Select action**, select **Run Pipeline**, **Run Dataflow**, **Run Spark job**, **Run Notebook**, or **Run User Data Function (preview)**.
+        1. For **Select action**, select **Run Pipeline**, **Run Dataflow**, **Run Spark job**, **Run Notebook**, or **Run User Data Function**.
         1. On **Select Fabric item to run**, select the Fabric item (pipeline, dataflow, notebook, Spark job, or function) from the list.
         1. Select **Add parameter** and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter. You can pass parameters from the alert data by typing @ or by selecting the button next to the text box. For example, @BikepointID.
 
@@ -210,6 +210,7 @@ When you finish with the rules you created as part of the tutorial, stop them. I
 
 ## Related content
 
+* [Tutorial: Create an end-to-end Activator rule using agentic AI](activator-agentic-tutorial.md)
 * [What is Fabric Activator?](activator-introduction.md)
 
 To learn more about Microsoft Fabric, see:

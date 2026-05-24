@@ -3,14 +3,18 @@ title: Create and Configure Operations Agents
 description: Learn how to use operations agents in Fabric Real-Time Intelligence.
 ms.reviewer: willthom, v-hzargari
 ms.topic: how-to
+<<<<<<< HEAD
 ms.date: 05/13/2026
+=======
+ms.date: 05/14/2026
+>>>>>>> upstream/main
 ms.search.form: Operations Agent
 ai-usage: ai-assisted
 ---
 
 # Create and configure operations agents
 
-Operations agents in Fabric Real-Time Intelligence help organizations turn real-time data into immediate, actionable decisions. Instead of relying on manual monitoring and intervention, you can use agents to track key metrics continuously, surface insights, and recommend targeted actions. They enable teams to respond quickly and optimize operations at scale. Each operations agent is a dedicated Fabric item, designed for a specific business process.
+Operations agents in Fabric Real-Time Intelligence help organizations turn real-time data into immediate, actionable decisions. Instead of relying on manual monitoring and intervention, use agents to track key metrics continuously, surface insights, and recommend targeted actions. They enable teams to respond quickly and optimize operations at scale. Each operations agent is a dedicated Fabric item, designed for a specific business process.
 
 By configuring agents with clear goals, instructions, and data sources, you can deploy multiple agents as virtual experts across your organization. This modular approach ensures that every critical process is monitored and dynamically improved, with recommended actions always aligned to your strategic objectives.
 
@@ -35,11 +39,11 @@ In this article, you learn how to create and use an AI operations agent in Real-
 
     :::image type="content" source="media/operations-agent/create.png" alt-text="Screenshot of the ellipsis icon and Create option.":::
 
-1. On the **Create** pane, go to the **Real-Time Intelligence** section, and select **Operations agent**.
+1. On **Create**, go to the **Real-Time Intelligence** section, and select **Operations agent**.
 
     :::image type="content" source="media/operations-agent/operational-agents.png" alt-text="Screenshot of the option for creating an operations agent.":::
 
-1. On the **New Operations agent** pane, enter a name for your agent and select the workspace where you want to create it.
+1. On **New Operations agent**, enter a name for your agent and select the workspace where you want to create it.
 
     :::image type="content" source="media/operations-agent/new-agent.png" alt-text="Screenshot of the pane for a new operations agent." lightbox="media/operations-agent/new-agent.png":::
 
@@ -47,7 +51,7 @@ In this article, you learn how to create and use an AI operations agent in Real-
 
 ## Configure an operations agent
 
-On the **Agent setup** page, you can configure the operations agent and adjust it to your data by providing the following information:
+On **Agent setup**, configure the operations agent and adjust it to your data by providing the following information:
 
 1. Define the business goals that the agent should focus on. This information helps the agent understand the context and objectives of your operations.
 
@@ -55,14 +59,44 @@ On the **Agent setup** page, you can configure the operations agent and adjust i
 
 1. Provide specific instructions to guide the agent's behavior and decision-making process. For example, you can tell the agent to send you an alert when it detects a condition that matches your business goals.
 
+<<<<<<< HEAD
     <!-- TODO: Update agent-instructions.png to show "send me an alert..." instructions instead of the current "tell the technicians..." example. -->
     :::image type="content" source="media/operations-agent/agent-instructions.png" alt-text="Screenshot of the instructions section on the setup page." lightbox="media/operations-agent/agent-instructions.png":::
+=======
+    :::image type="content" source="media/operations-agent/agent-instruction.png" alt-text="Screenshot of the instructions section on the setup page." lightbox="media/operations-agent/agent-instruction.png":::
+>>>>>>> upstream/main
 
 1. Choose a relevant data source that the agent can analyze and monitor. This choice ensures the agent has access to accurate and up-to-date information for generating insights.
 
     :::image type="content" source="media/operations-agent/knowledge-source.png" alt-text="Screenshot of the knowledge source section on the setup page." lightbox="media/operations-agent/knowledge-source.png":::
 
+<<<<<<< HEAD
 By default, the operations agent can send you alerts in Microsoft Teams when it detects conditions that match your business goals. You don't need to configure any extra actions for the agent to send these messages. To learn how to receive these alerts and to define custom actions (such as triggering a Power Automate flow), see [Operations agent actions](operations-agent-actions.md).
+=======
+1. Define the actions that the agent can take based on the insights it generates. Name the action and provide a description to clarify its purpose. Optionally, list the parameters that the action requires, such as a specific value. The agent can always send you notifications in Teams without defining additional actions.
+
+    :::image type="content" source="media/operations-agent/actions.png" alt-text="Screenshot of the actions section on the setup page." lightbox="media/operations-agent/actions.png":::
+
+    After you create an action, configure it:
+  
+      1. Select the action you want to configure.
+
+            :::image type="content" source="media/operations-agent/action-needs-configuration.png" alt-text="Screenshot of the action needing configuration." lightbox="media/operations-agent/action-needs-configuration.png":::
+
+      1. On **Configure custom action**, select the workspace and the activator item, and then create a connection.
+
+            :::image type="content" source="media/operations-agent/create-connection.png" alt-text="Screenshot of the pane for configuring a custom action." lightbox="media/operations-agent/create-connection.png":::
+
+      1. Select **Copy** to copy the connection string, and select **Open flow builder** to create a flow that gets triggered by the action.
+
+            :::image type="content" source="media/operations-agent/connector.png" alt-text="Screenshot of copying the connection string." lightbox="media/operations-agent/connector.png":::
+
+      1. In the **Flow builder**, paste the connection string in the **Connection string** field and select **Save**.
+
+            :::image type="content" source="media/operations-agent/activator.png" alt-text="Screenshot of the flow builder with the connection string." lightbox="media/operations-agent/activator.png":::
+
+      1. To use the values passed through the parameters to the flow, access them through dynamic content as described in [Trigger custom actions (Power Automate flows)](data-activator/activator-trigger-power-automate-flows.md#use-dynamic-content-in-your-flow).
+>>>>>>> upstream/main
 
 When you finish the configuration, save the agent to generate its playbook. The playbook outlines the goals, instructions, data, and actions you defined, providing the agent with a clear understanding of its tasks.
 
