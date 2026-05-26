@@ -62,9 +62,8 @@ With the SQL analytics endpoint, T-SQL commands can define and query data object
 
 To get started with the [!INCLUDE [fabric-se](includes/fabric-se.md)], see:
 
-- [Better together: the lakehouse and warehouse in Microsoft Fabric](get-started-lakehouse-sql-analytics-endpoint.md)
-- [SQL analytics endpoint performance considerations](sql-analytics-endpoint-performance.md)
 - [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
+- [Lakehouse SQL analytics endpoint use cases](../data-engineering/lakehouse-sql-analytics-endpoint-use-cases.md)
 
 ## Warehouse or lakehouse
 
@@ -90,7 +89,7 @@ For migration guidance across Microsoft Fabric, review the tools and links in [M
 
 ## Related content
 
-- [Better together: the lakehouse and warehouse](get-started-lakehouse-sql-analytics-endpoint.md)
+- [Lakehouse SQL analytics endpoint use cases](../data-engineering/lakehouse-sql-analytics-endpoint-use-cases.md)
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
 - [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md)
 - [Create reports on data warehousing in Microsoft Fabric](create-reports.md)
