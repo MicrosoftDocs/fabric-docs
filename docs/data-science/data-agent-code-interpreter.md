@@ -1,6 +1,6 @@
 ---
 title: Enable the code interpreter tool (preview) for your data agent
-description: Learn some best practices for how to configure and instruct your data agent.
+description: Learn how to add the code interpreter tool to your Fabric data agent so it can run Python to analyze data, perform calculations, and generate visualizations.
 ms.author: midesa
 author: midesa
 ms.reviewer: jonburchel
