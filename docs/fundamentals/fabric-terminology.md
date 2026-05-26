@@ -35,6 +35,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Direct Lake:** Direct Lake is a storage mode in Fabric that lets semantic models read Delta tables directly from OneLake without importing data or using DirectQuery. Direct Lake combines the performance of import mode with the data freshness of DirectQuery. For more information, see [Direct Lake overview](direct-lake-overview.md).
 
+<a id="synapse-data-engineering"></a>
 ## Fabric Data Engineering
 
 - **Lakehouse:** A lakehouse is a database built over a data lake, containing files, folders, and tables. It is used by the Apache Spark engine and SQL engine for big data processing. Lakehouses support ACID transactions when using the open-source Delta formatted tables. The lakehouse item is hosted within a unique workspace folder in [Microsoft OneLake](../onelake/onelake-overview.md). It contains files in various formats (structured and unstructured) organized in folders and subfolders. For more information, see [What is a lakehouse?](../data-engineering/lakehouse-overview.md)
