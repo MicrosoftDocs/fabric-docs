@@ -35,20 +35,6 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Direct Lake:** Direct Lake is a storage mode in Fabric that lets semantic models read Delta tables directly from OneLake without importing data or using DirectQuery. Direct Lake combines the performance of import mode with the data freshness of DirectQuery. For more information, see [Direct Lake overview](direct-lake-overview.md).
 
-## Power BI
-
-- **Report:** A report is an interactive visualization item in Power BI that displays data from a semantic model using visuals, filters, and pages. You can create reports in the Fabric portal or in Power BI Desktop. For more information, see [Reports in Power BI](/power-bi/consumer/end-user-reports).
-
-- **Dashboard:** A dashboard is a single-page canvas in Power BI that displays tiles pinned from one or more reports for an at-a-glance view of key metrics. For more information, see [Dashboards in Power BI](/power-bi/consumer/end-user-dashboards).
-
-- **Paginated report:** A paginated report is a report type optimized for printing, PDF export, and pixel-perfect formatting with multi-page table layouts. For more information, see [What are paginated reports?](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi).
-
-## Databases
-
-- **SQL database in Fabric:** A SQL database in Fabric is a transactional database based on Azure SQL Database. It automatically mirrors data to OneLake for analytics through its built-in SQL analytics endpoint. For more information, see [SQL database in Microsoft Fabric](../database/sql/overview.md).
-
-<a id="synapse-data-engineering"></a>
-
 ## Fabric Data Engineering
 
 - **Lakehouse:** A lakehouse is a database built over a data lake, containing files, folders, and tables. It is used by the Apache Spark engine and SQL engine for big data processing. Lakehouses support ACID transactions when using the open-source Delta formatted tables. The lakehouse item is hosted within a unique workspace folder in [Microsoft OneLake](../onelake/onelake-overview.md). It contains files in various formats (structured and unstructured) organized in folders and subfolders. For more information, see [What is a lakehouse?](../data-engineering/lakehouse-overview.md)
