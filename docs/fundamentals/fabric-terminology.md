@@ -25,6 +25,28 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Workspace:** A workspace is a collection of items that brings together different functionality in a single environment designed for collaboration. It acts as a container that uses capacity for the work that is executed, and provides controls for who can access the items in it. For example, in a workspace, users create reports, notebooks, semantic models, etc. For more information, see [Workspaces](workspaces.md) article.
 
+- **Delta Lake:** Delta Lake is the standard table format across all Fabric workloads. When you ingest data into Fabric, it's stored as Delta tables by default. For more information, see [Delta Lake table format interoperability](delta-lake-interoperability.md).
+
+- **Domain:** A domain lets your organization group workspaces into logical business areas, such as "Finance" or "Marketing." Domains help Fabric administrators delegate management and apply governance policies above the workspace level. For more information, see [Domains](../governance/domains.md).
+
+- **Capacity units (CUs):** Capacity units are the unit of compute measurement in Fabric. All workloads and operations consume capacity units from your available Fabric capacity. Consumption is classified as interactive or background operations. For more information, see [Fabric operations](../enterprise/fabric-operations.md).
+
+- **Semantic model:** A semantic model is a metadata layer in Fabric that defines tables, relationships, measures, and data connections. Semantic models are the data source for Power BI reports, dashboards, and other analytics experiences in Fabric. For more information, see [Create and manage semantic models](/power-bi/connect-data/service-datasets-understand).
+
+- **Direct Lake:** Direct Lake is a storage mode in Fabric that lets semantic models read Delta tables directly from OneLake without importing data or using DirectQuery. Direct Lake combines the performance of import mode with the data freshness of DirectQuery. For more information, see [Direct Lake overview](direct-lake-overview.md).
+
+## Power BI
+
+- **Report:** A report is an interactive visualization item in Power BI that displays data from a semantic model using visuals, filters, and pages. You can create reports in the Fabric portal or in Power BI Desktop. For more information, see [Reports in Power BI](/power-bi/consumer/end-user-reports).
+
+- **Dashboard:** A dashboard is a single-page canvas in Power BI that displays tiles pinned from one or more reports for an at-a-glance view of key metrics. For more information, see [Dashboards in Power BI](/power-bi/consumer/end-user-dashboards).
+
+- **Paginated report:** A paginated report is a report type optimized for printing, PDF export, and pixel-perfect formatting with multi-page table layouts. For more information, see [What are paginated reports?](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi).
+
+## Databases
+
+- **SQL database in Fabric:** A SQL database in Fabric is a transactional database based on Azure SQL Database. It automatically mirrors data to OneLake for analytics through its built-in SQL analytics endpoint. For more information, see [SQL database in Microsoft Fabric](../database/sql/overview.md).
+
 <a id="synapse-data-engineering"></a>
 
 ## Fabric Data Engineering
