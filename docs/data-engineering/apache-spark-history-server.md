@@ -38,99 +38,51 @@ For an Apache Spark application whose status is ended, the ended status can be *
 
 :::image type="content" source="media\apache-spark-history-server\ended-spark-history-server.png" alt-text="Screenshot showing the button displays the spark ui in the ended state." lightbox="media\apache-spark-history-server\ended-spark-history-server.png":::
 
-## Graph tab in Apache Spark history server
+## Snapshot-Based Loading for Large Event Logs
 
-Select the Job ID for the job you want to view. Then, select **Graph** on the tool menu to get the job graph view.
+A new snapshot-based loading method has been introduced for the Spark History Server, optimized for large event log scenarios.
 
-### Overview
+With this enhancement, the Spark UI progressively reveals available data instead of waiting for the full replay to complete. When the event log size is **6 GB** or **larger**, a loading message is displayed to indicate that additional loading time (typically a few minutes) may be required.
 
-You can see an overview of your job in the generated job graph. By default, the graph shows all jobs. You can filter this view by **Job ID**.
+As soon as a partial snapshot is available, the UI renders using that data. A message bar at the top indicates that data is still being processed in the background. Once the full replay completes, the message bar is automatically removed, and the full view is displayed.
 
-:::image type="content" source="media\apache-spark-history-server\apache-spark-graph-job-id.png" alt-text="Screenshot showing spark application and job graph job ID." lightbox="media\apache-spark-history-server\apache-spark-graph-job-id.png":::
+With this experience, you can:
+- See a clear loading message for large event logs (≥ 6 GB), so you know the system is actively processing rather than unresponsive
+- Browse a partial snapshot early through a clearly labeled preview banner, allowing you to investigate jobs and stages without waiting for the full replay
+- Refresh the page later to load the complete dataset once processing has finished
 
-### Display
+When the Spark History data is fully loaded, the partial loading message bar disappears and the full experience is available.
 
-By default, the **Progress** display is selected. You can check the data flow by selecting **Read** or **Written** in the **Display** dropdown list.
+:::image type="content" source="media\apache-spark-history-server\large-event-logs.png" alt-text="Screenshot showing the button displays the snapshot-based loading for large event logs." lightbox="media\apache-spark-history-server\large-event-logs.png":::
 
-:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-display.png" alt-text="Screenshot showing spark application and job graph display." lightbox="media\apache-spark-history-server\spark-ui-graph-display.png":::
 
-The graph node displays the colors shown in the heatmap legend.
+## Explore Apache Spark History Server
 
-:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-heatmap.png" alt-text="Screenshot showing spark application and job graph heatmap." lightbox="media\apache-spark-history-server\spark-ui-graph-heatmap.png":::
+The Apache Spark History Server provides a web-based user interface (UI) that reconstructs Spark application execution details from event logs. It enables users to analyze completed or running applications beyond their runtime lifecycle.
 
-### Playback
+The History Server UI consists of multiple tabs, each offering a different perspective for understanding application behavior, performance, and resource utilization.
 
-To play back the job, select **Playback**. You can select **Stop** at any time to stop. The task colors show different statuses when playing back:
+### Jobs tab
 
-|Color|Meaning|
-|-|-|
-|Green|Succeeded: The job has completed successfully.|
-|Orange|Retried: Instances of tasks that failed but don't affect the final result of the job. These tasks had duplicate or retry instances that may succeed later.|
-|Blue|Running: The task is running.|
-|White|Waiting or skipped: The task is waiting to run, or the stage has skipped.|
-|Red|Failed: The task has failed.|
+The **Jobs** tab provides a high-level overview of all jobs within a Spark application.
 
-The following image shows green, orange, and blue status colors.
+You can use this view to:
+- Monitor job status (running, succeeded, or failed)
+- Compare job durations
+- Quickly identify failed or slow-running jobs
 
-:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-color-running.png" alt-text="Screenshot showing spark application and job graph color sample, running." lightbox="media\apache-spark-history-server\spark-ui-graph-color-running.png":::
+### Stages tab
 
-The following image shows green and white status colors.
+The **Stages** tab shows detailed execution information for each stage.
 
-:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-color-skip.png" alt-text="Screenshot showing spark application and job graph color sample, skip." lightbox="media\apache-spark-history-server\spark-ui-graph-color-skip.png":::
+You can use this view to:
+- Analyze stage-level performance
+- Review task distribution and shuffle metrics
+- Identify bottlenecks such as skewed data or expensive operations
 
-The following image shows red and green status colors.
+:::image type="content" source="media\apache-spark-history-server\stage-tab.png" alt-text="Screenshot showing stage tab." lightbox="media\apache-spark-history-server\stage-tab.png":::
 
-:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-color-failed.png" alt-text="Screenshot showing spark application and job graph color sample, failed." lightbox="media\apache-spark-history-server\spark-ui-graph-color-failed.png":::
-
-> [!NOTE]
-> The Apache Spark history server allows playback for each completed job (but does not allow playback for incomplete jobs).
-
-### Zoom
-
-Use your mouse scroll to zoom in and out on the job graph, or select **Zoom to fit** to make it fit to screen.
-
-:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-zoom-to-fit.png" alt-text="Screenshot showing spark application and job graph zoom to fit." lightbox="media\apache-spark-history-server\spark-ui-graph-zoom-to-fit.png":::
-
-### Tooltips
-
-Hover on graph node to see the tooltip when there are failed tasks, and select a stage to open its stage page.
-
-:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-tooltip.png" alt-text="Screenshot showing spark application and job graph tooltip." lightbox="media\apache-spark-history-server\spark-ui-graph-tooltip.png":::
-
-On the job graph tab, stages have a tooltip and a small icon displayed if they have tasks that meet the following conditions:
-
-|Condition|Description|
-|-|-|
-|Data skew|Data read size > average data read size of all tasks inside this stage * 2 and data read size > 10 MB.|
-|Time skew|Execution time > average execution time of all tasks inside this stage * 2 and execution time > 2 minutes.|
-
-:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-skew-icon.png" alt-text="Screenshot showing spark application and job graph skew icon." lightbox="media\apache-spark-history-server\spark-ui-graph-skew-icon.png":::
-
-### Graph node description
-
-The job graph node displays the following information of each stage:
-
-* ID
-* Name or description
-* Total task number
-* Data read: the sum of input size and shuffle read size
-* Data write: the sum of output size and shuffle writes size
-* Execution time: the time between start time of the first attempt and completion time of the last attempt
-* Row count: the sum of input records, output records, shuffle read records and shuffle write records
-* Progress
-
-> [!NOTE]
-> By default, the job graph node displays information from the last attempt of each stage (except for stage execution time). However, during playback, the graph node shows information of each attempt.
->
-> The data size of read and write is 1MB = 1000 KB = 1000 * 1000 bytes.
-
-### Provide feedback
-
-Send feedback with issues by selecting **Provide us feedback**.
-
-:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-feedback.png" alt-text="Screenshot showing spark application and job graph feedback." lightbox="media\apache-spark-history-server\spark-ui-graph-feedback.png":::
-
-### Stage number limit
+#### Stage number limit
 
 For performance consideration, by default the graph is only available when the Spark application has fewer than 500 stages. If there are too many stages, it will fail with an error like this:
 
@@ -142,15 +94,60 @@ As a workaround, before starting a Spark application, please apply this Spark co
 
 But please notice that this may cause bad performance of the page and the API, because the content can be too large for browser to fetch and render.
 
-## Explore the Diagnosis tab in Apache Spark history server
+### Storage tab
 
-To access the Diagnosis tab, select a job ID. Then select **Diagnosis** on the tool menu to get the job Diagnosis view. The diagnosis tab includes **Data Skew**, **Time Skew**, and **Executor Usage Analysis**.
+The **Storage** tab shows information about cached data.
+
+You can use this view to:
+- Understand memory and disk usage for cached datasets
+- Verify whether caching is effective
+
+### Environment tab
+
+The **Environment** tab lists runtime configuration and environment details.
+
+You can use this view to:
+- Inspect Spark configuration settings
+- Verify environment variables and dependencies
+- Troubleshoot configuration-related issues
+
+### Executors tab
+
+The **Executors** tab displays resource utilization across executors.
+
+You can use this view to:
+- Monitor CPU and memory usage
+- Analyze task distribution across executors
+- Identify executor failures or imbalances
+
+### Graph tab
+
+The **Graph** tab visualizes the execution of a Spark job as a directed acyclic graph (DAG), representing the relationships between stages.
+
+You can use this view to:
+- Understand how a job is broken down into stages and their dependencies
+- Identify critical paths that determine overall job duration
+- Detect failed or retried stages
+- Replay job execution to observe how tasks progress over time
+
+This tab is particularly useful for understanding execution flow and identifying high-level performance bottlenecks.
+
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-color-skip.png" alt-text="Screenshot showing graph." lightbox="media\apache-spark-history-server\spark-ui-graph-color-skip.png":::
+
+### Diagnosis tab
+
+The **Diagnosis** tab provides advanced analysis capabilities, including:
+- Data skew detection
+- Time skew analysis
+- Executor Usage Analysis
 
 Check the **Data Skew**, **Time Skew**, and **Executor Usage Analysis** by selecting the tabs respectively.
 
 :::image type="content" source="media\apache-spark-history-server\spark-ui-diagnosis-tabs.png" alt-text="Screenshot showing sparkUI diagnosis data skew tab again." lightbox="media\apache-spark-history-server\spark-ui-diagnosis-tabs.png":::
 
-### Data Skew
+This tab helps identify performance bottlenecks and inefficiencies in job execution.
+
+#### Data Skew
 
 When you select the **Data Skew** tab, the corresponding skewed tasks are displayed based on the specified parameters.
 
@@ -164,7 +161,7 @@ When you select the **Data Skew** tab, the corresponding skewed tasks are displa
 
    :::image type="content" source="media\apache-spark-history-server\spark-ui-diagnosis-dataskew-section-3.png" alt-text="Screenshot showing spark ui skew chart for stage 10." lightbox="media\apache-spark-history-server\spark-ui-diagnosis-dataskew-section-3.png":::
 
-### Time Skew
+#### Time Skew
 
 The **Time Skew** tab displays skewed tasks based on task execution time.
 
@@ -174,11 +171,21 @@ The **Time Skew** tab displays skewed tasks based on task execution time.
 
    :::image type="content" source="media\apache-spark-history-server\spark-ui-diagnosis-timeskew-section-2.png" alt-text="Screenshot showing spark ui diagnosis time skew section." lightbox="media\apache-spark-history-server\spark-ui-diagnosis-timeskew-section-2.png":::
 
-### Executor Usage Analysis
+#### Executor Usage Analysis
 
 This feature has been deprecated in Fabric now. If you still want to use this as a workaround, please access the page by explicitly adding "/executorusage" behind path "/diagnostic" in the URL, like this:
 
    :::image type="content" source="media\apache-spark-history-server\modify-path.png" alt-text="Screenshot showing how to modify the url." lightbox="media\apache-spark-history-server\modify-path.png":::
+
+### SQL/DataFrame tab
+For workloads using Spark SQL, the **SQL** tab provides query-level insights.
+
+You can use this view to:
+- Analyze query execution plans
+- Review query duration and performance
+
+> [!NOTE]
+> The availability of certain tabs depends on the workload type and enabled Spark features.
 
 ## Spark Executor Rolling Logs: Easier Access for Large and Long Jobs
 
