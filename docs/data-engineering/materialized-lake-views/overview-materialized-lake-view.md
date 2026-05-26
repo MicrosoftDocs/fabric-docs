@@ -28,7 +28,7 @@ Materialized lake views aren't the right choice for every scenario. Consider alt
 
 - **One-time or rarely accessed queries** that don't benefit from precomputed results
 - **Non-SQL logic** such as ML inference, API calls, or complex Python processing — use Spark notebooks instead
-- **High-frequency streaming data** that requires sub-second updates — consider [Real-Time Intelligence](../../real-time-intelligence/overview.md) instead
+- **High-frequency streaming data** that requires subsecond updates — consider [Real-Time Intelligence](../../real-time-intelligence/overview.md) instead
 
 > [!NOTE]
 > This feature is currently not available in South Central US region.
@@ -39,7 +39,7 @@ To create materialized lake view in Microsoft Fabric, see [Get started with mate
 
 ## How do materialized lake views work?
 
-Materialized lake views use declarative approach: Write a SQL query to define the transformation, and let Fabric handle execution, storage, and refresh. The result is persisted as a Delta table in your lakehouse, so that the downstream consumers can query it directly without re-running the transformation.
+Materialized lake views use declarative approach: Write a SQL query to define the transformation, and let Fabric handle execution, storage, and refresh. The result is persisted as a Delta table in your lakehouse, so that the downstream consumers can query it directly without running the transformation again.
 
 The lifecycle of a materialized lake view follows four stages:
 
