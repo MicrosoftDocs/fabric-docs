@@ -252,6 +252,7 @@ At the top of **create_map_from_geojson.py**, add:
 
 ```python
 import base64
+import os
 import json
 import time
 import uuid
@@ -291,7 +292,9 @@ class Config:
     """
     def __init__(self):
         # Workspace
-        self.workspace_id = "YOUR-WORKSPACE-ID"
+        self.workspace_id = os.environ.get("FABRIC_WORKSPACE_ID", "")
+        if not self.workspace_id:
+            raise RuntimeError("Set FABRIC_WORKSPACE_ID environment variable before running the script.")
 
         # Local file (source) and OneLake destination paths (inside Lakehouse Files/)
         self.local_geojson_path = Path(r"C:\tutorial\starbucks-seattle.geojson")
@@ -321,6 +324,76 @@ class Config:
 
 
 ```
+
+### Set the workspace ID using an environment variable
+
+Instead of hardcoding the workspace ID directly in the script, this tutorial uses an environment variable. This approach improves security and makes it easier to reuse the script across environments without modifying the code.
+
+Prior to running this script, you'll need to create an environment variable named `FABRIC_WORKSPACE_ID`.
+
+#### Set the environment variable in Windows environments
+
+On Windows, you can set the variable from any terminal that supports environment variables—PowerShell, Windows PowerShell, the PowerShell or Command Prompt windows built into Visual Studio and Visual Studio Code, Windows Terminal, and most other shells. Whichever you choose, the variable exists only inside **that single terminal session**: it isn't shared with other terminal windows, with a different shell type, or with processes launched outside that terminal—including scripts started from VS Code's run button, which often spawns its own terminal. If the script can't find the variable, it fails with `Set FABRIC_WORKSPACE_ID environment variable before running the script`.
+
+To avoid this, either run the script from the **same terminal window** where you set the variable, or define it as a **persistent user variable** (see [Set a persistent environment variable (Windows)](#set-a-persistent-environment-variable-windows)) so it's available to every new terminal session automatically.
+
+Run the following in PowerShell or VS terminal:
+
+```powershell
+$env:FABRIC_WORKSPACE_ID="<WORKSPACE_ID>"
+```
+
+To confirm the variable is set:
+
+```powershell
+echo $env:FABRIC_WORKSPACE_ID
+```
+
+This sets the variable for the current terminal session only.
+
+##### Set a persistent environment variable (Windows)
+
+To make the variable available in future sessions:
+
+1. Open **System Properties**
+1. Select **Advanced system settings**
+1. Choose **Environment Variables**
+1. Under **User variables**, select **New**
+1. Enter:
+    - Name: FABRIC_WORKSPACE_ID
+    -Value: your workspace ID
+1. Select **OK** to save
+1. Close and reopen your terminal before running the script again.
+
+#### Set the environment variable in macOS or Linux
+
+On macOS and Linux, you can set the variable from any shell that supports `export`—Bash, Zsh (the default on modern macOS), Fish (with a slightly different syntax), and the integrated terminals in Visual Studio Code and other editors. As on Windows, the variable exists only inside **that single shell session**: it isn't shared with other terminal tabs or windows, with a different shell, or with processes launched outside that shell—including scripts started from VS Code's run button, which often spawns its own terminal. If the script can't find the variable, it fails with `Set FABRIC_WORKSPACE_ID environment variable before running the script`.
+
+To avoid this, either run the script from the **same shell session** where you set the variable, or add `export` to your shell profile (see [Set a persistent environment variable (macOS or Linux)](#set-a-persistent-environment-variable-macos-or-linux)) so it's available to every new shell session automatically.
+
+Run:
+
+```
+export FABRIC_WORKSPACE_ID="<WORKSPACE_ID>"
+```
+
+To confirm the variable is set:
+
+```
+echo $FABRIC_WORKSPACE_ID
+```
+
+This sets the variable for the current shell session only.
+
+##### Set a persistent environment variable (macOS or Linux)
+
+To make the variable available in future sessions, add the `export` line to your shell profile:
+
+- **Zsh** (default on macOS): `~/.zshrc`
+- **Bash**: `~/.bashrc` (Linux) or `~/.bash_profile` (macOS)
+- **Fish**: run `set -Ux FABRIC_WORKSPACE_ID "<WORKSPACE_ID>"` instead of editing a file
+
+After updating the profile, either open a new terminal or run `source ~/.zshrc` (or the appropriate file) so the change takes effect.
 
 > [!NOTE]
 > The `geojson_relative_path` and `svg_relative_path` values define the location inside the Lakehouse Files area. These paths are relative to the Lakehouse root and are used both for uploading files and referencing them in the map definition.
@@ -375,7 +448,21 @@ def _fabric_headers() -> dict[str, str]:
         "Authorization": f"Bearer {_tokens.get('https://api.fabric.microsoft.com/.default')}",
         "Content-Type": "application/json"
     }
+
+
+def _pbi_headers() -> dict[str, str]:
+    """
+    Auth headers for polling Trident/Power BI cluster LRO endpoints
+    (e.g., df-*.analysis.windows.net) that require a Power BI audience token.
+    """
+    return {
+        "Authorization": f"Bearer {_tokens.get('https://analysis.windows.net/powerbi/api/.default')}",
+        "Content-Type": "application/json"
+    }
 ```
+
+> [!NOTE]
+> Some Fabric long-running operations (LROs) are hosted on Power BI cluster endpoints (`*.analysis.windows.net`) rather than on `api.fabric.microsoft.com`. Those endpoints require a Power BI audience token, so the LRO helper switches to `_pbi_headers()` automatically when it detects that polling URL.
 
 ### Create FabricClient helper function
 
@@ -403,11 +490,23 @@ class FabricClient:
 
 ### Create LRO helper function
 
-Fabric REST APIs used in this tutorial, such as creating a Lakehouse and creating a Map, support long-running operations (LROs). 
+Fabric REST APIs used in this tutorial, such as creating a Lakehouse and creating a Map, support long-running operations (LROs).
 
-These APIs can return a `202 Accepted` response, along with headers such as `Location` and `Retry-After`, which indicate that the request is being processed asynchronously.
+These APIs can return responses in several patterns:
 
-To handle these responses consistently, you create a helper function that polls the operation until it completes and returns the created resource ID.
+- **`201 Created`** with the resource body inline (synchronous)
+- **`202 Accepted`** with a `Location` header pointing at an operation status URL (asynchronous)
+- **`202 Accepted`** with an `x-ms-operation-id` header instead of `Location` (asynchronous, alternate form)
+- **`200 OK`** with `status: "Running"` or `status: "NotStarted"` while polling (still in progress)
+- **`200 OK`** with `status: "Succeeded"` but no resource ID in the body (succeeded; resolve by listing and matching `displayName`)
+
+To handle all of these consistently, you create a single helper function that:
+
+1. Returns the resource ID immediately if the initial response already contains it.
+1. Otherwise polls the operation URL (built from either `Location` or `x-ms-operation-id`) using `Retry-After`.
+1. Treats `200 OK` with `status: "Running"` / `"NotStarted"` as still in progress and continues polling.
+1. On success, returns the resource ID from the body, or falls back to listing resources and matching by `displayName` (with retries) when the body is status-only.
+1. Uses `_pbi_headers()` when the polling URL is on a Power BI cluster (`*.analysis.windows.net`), and Fabric headers otherwise.
 
 Add this block after the FabricClient helper function:
 
@@ -426,80 +525,70 @@ def _handle_lro(
     max_attempts: int = 10,
     delay: int = 5,
 ) -> str:
-    """
-    Poll a Fabric long-running operation (LRO) until completion and return the created resource id.
+    # Sync 200/201 with body: return the id immediately.
+    if initial_response.status_code in (200, 201):
+        try:
+            body = initial_response.json() if initial_response.content else {}
+        except ValueError:
+            body = {}
+        if isinstance(body, dict) and body.get(id_field):
+            return body[id_field]
 
-    Why this function exists:
-    - Many Fabric create APIs return HTTP 202 + Location header for async creation.
-    - Some LRO completion payloads are status-only and do NOT include the created resource id.
-      When that happens, we resolve the created resource by listing resources and matching displayName.
-
-    FIX included:
-    - The operation endpoint can return HTTP 200 while still "Running".
-      In that case, continue polling instead of treating it as complete.
-    """
-
+    # Location header, with x-ms-operation-id fallback.
     op_url = initial_response.headers.get("Location")
-
     if not op_url:
-        raise RuntimeError("Missing LRO Location header.")
+        op_id = initial_response.headers.get("x-ms-operation-id")
+        if op_id:
+            op_url = f"https://api.fabric.microsoft.com/v1/operations/{op_id}"
+        else:
+            raise RuntimeError(
+                f"Missing LRO Location/x-ms-operation-id. "
+                f"status={initial_response.status_code} body={initial_response.text[:500]!r}"
+            )
 
+    # Audience-aware polling: Power BI cluster endpoints need a different token.
+    poll_headers = _pbi_headers() if "analysis.windows.net" in op_url else _fabric_headers()
     retry_after = int(initial_response.headers.get("Retry-After", "5"))
 
     while True:
         time.sleep(retry_after)
-        poll = client.get(op_url, headers=_fabric_headers())
+        poll = client.get(op_url, headers=poll_headers)
 
-        # Still running (202 pattern)
         if poll.status_code == 202:
             retry_after = int(poll.headers.get("Retry-After", "5"))
             continue
 
         poll.raise_for_status()
         body = poll.json() if poll.content else {}
-
-        # --- FIX: handle 200 with status=Running ---
-        status = (body.get("status") if isinstance(body, dict) else None)
+        status = body.get("status") if isinstance(body, dict) else None
 
         if status in ("Running", "NotStarted"):
             retry_after = int(poll.headers.get("Retry-After", "5"))
             continue
-
         if status == "Failed":
             raise RuntimeError(f"LRO failed. Body: {body}")
-        # --- END FIX ---
 
-        # Case A: Operation returns the created resource id directly.
-        if isinstance(body, dict) and id_field in body and body[id_field]:
+        if isinstance(body, dict) and body.get(id_field):
             return body[id_field]
 
-        # Case B: Status-only completion payload; resolve by listing.
+        # Status-only success: list and match by displayName, with retries.
         if status == "Succeeded" and list_url and match_display_name:
             for attempt in range(max_attempts):
-                print(f"Resolving resource (attempt {attempt + 1}/{max_attempts})...")
-        
                 r = client.get(list_url, headers=_fabric_headers())
                 r.raise_for_status()
-        
-                items = r.json().get("value", [])
-                match = next((i for i in items if i.get("displayName") == match_display_name), None)
-        
+                match = next(
+                    (i for i in r.json().get("value", []) if i.get("displayName") == match_display_name),
+                    None,
+                )
                 if match and match.get(id_field):
-                    print("✅ Resource found!")
                     return match[id_field]
-        
-                print("⏳ Resource not visible yet. Retrying...")
                 time.sleep(delay)
-        
             raise RuntimeError(
                 f"LRO succeeded but resource not visible after retries. "
                 f"match_display_name={match_display_name!r}"
             )
 
-        # Anything else is unexpected
         raise RuntimeError(f"LRO completed but no resource id was returned. Body: {body}")
-
-
 ```
 
 > [!NOTE]
@@ -617,7 +706,7 @@ This step creates a Lakehouse in your Fabric workspace using the REST API. The L
 This function:
 
 - Sends a POST request to create the Lakehouse
-- Handles both synchronous (201) and asynchronous (202/LRO) responses
+- Passes the response straight to `_handle_lro`, which handles synchronous (201) and asynchronous (202/LRO) responses uniformly
 - Returns the Lakehouse ID for use in later steps
 
 Add the following code next:
@@ -639,19 +728,15 @@ def create_lakehouse(client: httpx.Client, fabric: FabricClient, cfg: Config) ->
 
     lh_resp = fabric.request("POST", lakehouse_url, json_body=lakehouse_payload)
 
-    if lh_resp.status_code == 201:
-        lakehouse_id = lh_resp.json()["id"]
-    else:
-        lakehouse_id = _handle_lro(
-            client,
-            lh_resp,
-            list_url=lakehouse_url,
-            match_display_name=cfg.lakehouse_display_name
-        )
+    lakehouse_id = _handle_lro(
+        client,
+        lh_resp,
+        list_url=lakehouse_url,
+        match_display_name=cfg.lakehouse_display_name,
+    )
 
     print("Lakehouse created. Lakehouse ID:", lakehouse_id)
     return lakehouse_id
-
 ```
 
 ### Upload GeoJSON to the Lakehouse
