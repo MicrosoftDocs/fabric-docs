@@ -1,7 +1,8 @@
 ---
 title: Train and evaluate a time series forecasting model
 description: This is an AI sample for training and evaluating a time series forecasting model; we develop a program to forecast time series data that has seasonal cycles.
-ms.reviewer: lagayhar, amjafari
+ms.author: lagayhar
+ms.reviewer: ruxu
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 ms.date: 02/28/2026

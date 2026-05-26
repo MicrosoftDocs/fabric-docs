@@ -1,11 +1,11 @@
 ---
-title: Manage and monitor an Eventhouse
+title: Manage and Monitor an Eventhouse
 description: Learn how to manage and monitor an eventhouse and gain insights from the system information in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.subservice: rti-eventhouse
-ms.date: 02/12/2026
+ms.date: 05/11/2026
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.
 ---
@@ -15,7 +15,10 @@ An Eventhouse is a scalable environment for processing and analyzing large volum
 
 In this article, you learn about how to manage and gain insights about an eventhouse in Real-Time Intelligence.
 
-For advanced analytic insights, see [View Workspace monitoring](#view-workspace-monitoring) and [Eventhouse monitoring overview](monitor-eventhouse.md).
+For more monitoring insights, see the following articles:
+
+* [Workspace Monitoring Overview](../fundamentals/workspace-monitoring-overview.md) - Learn about workspace-level monitoring capabilities.
+* [Eventhouse Monitoring Overview](monitor-eventhouse.md) - Explore comprehensive insights into eventhouse usage and performance.
 
 ## Prerequisites
 
@@ -42,7 +45,9 @@ D. **Details area**: The [details area](#view-eventhouse-details) provides addit
 
 ## Eventhouse ribbon
 
-The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh your main view, [schedule the capacity planner](eventhouse-smart-capacity-control.md), add databases, add plugins, and collapse or expand the details area.
+<!--The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh your main view, [schedule the capacity planner](eventhouse-smart-capacity-control.md), add databases, add plugins, and collapse or expand the details area. -->
+
+The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh your main view, toggle always-on, add databases, add plugins, and collapse or expand the details area.
 
 ## Explorer pane
 

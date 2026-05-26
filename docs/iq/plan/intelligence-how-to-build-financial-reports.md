@@ -1,24 +1,25 @@
 ---
-title: Build financial reports
-description: Learn how to format financial data in Intelligence sheets with structured layouts, custom number formatting, templates, totals, subtotals, and calculations.
+title: Build Financial Reports
+description: Learn how to format financial data in intelligence sheets with structured layouts, custom number formatting, templates, totals, subtotals, and calculations.
 ms.date: 03/11/2026
 ms.topic: how-to
-#customer intent: As a user, I want to create financial reports in Intelligence sheets
+ai-usage: ai-assisted
+#customer intent: As a user, I want to create financial reports in intelligence sheets
 ---
 
-# Financial data reporting in Intelligence sheets
+# Build financial reports with intelligence sheets
 
-Intelligence sheets bring built-features that make it easy to present financial data in a clear format. You can organize metrics into a structured layout that supports both on-screen analysis and formatted exports.
+Intelligence sheets include built-in features that can present financial data in a clear format. You can organize metrics into a structured layout that supports both on-screen analysis and formatted exports.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 You can apply custom number formatting and scaling, apply single-click templates, display totals and subtotals, and insert calculations. Together, these capabilities help you create presentation-ready financial reports that support planning, analysis, and decision-making.
 
-This article provides a basic overview of how to create financial reports with Intelligence sheets.
+This article provides a basic overview of how to create financial reports with intelligence sheets.
 
 ## Format numeric data
 
-1. Select the decimal icons in the **Number** section to increase or decrease the number of decimal places displayed. This setting applies to all measures in the report.
+1. Select **Number** > **Decimal icons** to increase or decrease the number of decimal places displayed. This setting applies to all measures in the report.
 1. To adjust decimal places for a specific measure, select the measure and use the increase or decrease decimal buttons.
 
     :::image type="content" source="media/intelligence-how-to-build-financial-reports/decimal-places.png" alt-text="Screenshot of the decimal place button that added a decimal place to every value in the column." lightbox="media/intelligence-how-to-build-financial-reports/decimal-places.png":::
@@ -43,7 +44,10 @@ This article provides a basic overview of how to create financial reports with I
 
 ## Apply and customize built-in templates
 
-Out-of-the-box report templates provide a quick starting point for creating reports. They reduce the time and effort required to build reports from scratch.
+Built-in report templates provide a quick starting point for creating reports. They reduce the time and effort required to build reports from scratch.
+
+> [!TIP]  
+> Use built-in templates to save time and ensure consistency across reports.
 
 1. Select the template you want to apply to the report.
 

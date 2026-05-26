@@ -33,7 +33,7 @@ Follow these steps to switch to the code editor and start querying your graph by
 
 1. Select **Run query** to execute the query.
 
-This query finds all nodes with the `Order` label, counts them, and returns the total as `num_orders`. It's a simple way to confirm your graph has data. The following image shows the result of the query:
+This query finds all nodes with the `Order` label, counts them, and returns the total as `num_orders`. It's a simple way to confirm your graph has data and that the count matches the number of order rows you loaded. The following image shows the result of the query:
 
 :::image type="content" source="./media/tutorial/code-editor-query-results-1.png" alt-text="Screenshot showing the result of running a GQL query to count all orders." lightbox="./media/tutorial/code-editor-query-results-1.png":::
 

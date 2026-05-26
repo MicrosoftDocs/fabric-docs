@@ -9,7 +9,7 @@ metadata:
   ms.subservice: data-warehouse
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
-  ms.date: 02/11/2026
+  ms.date: 05/18/2026
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -22,8 +22,6 @@ landingContent:
         links:
           - text: Overview
             url: data-warehousing.md
-          - text: Better together - the lakehouse and warehouse
-            url: get-started-lakehouse-sql-analytics-endpoint.md
           - text: Architecture
             url: architecture.md
 
@@ -77,6 +75,8 @@ landingContent:
             url: ingest-data-tsql.md
           - text: Ingest data using Copy
             url: ingest-data-copy.md
+          - text: Troubleshoot ingestion errors
+            url: troubleshoot-ingestion-errors.md
       - linkListType: concept
         links:
           - text: Mirroring 
@@ -192,8 +192,6 @@ landingContent:
         links:
           - text: Data Warehouse performance
             url: guidelines-warehouse-performance.md
-          - text: SQL analytics endpoint performance
-            url: sql-analytics-endpoint-performance.md
           - text: Security
             url: security.md
           - text: Ingest data

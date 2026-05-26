@@ -2,7 +2,7 @@
 title: "Tutorial: Create a graph model in Microsoft Fabric"
 description: Learn how to create a new graph model in Microsoft Fabric, including loading data from OneLake and configuring graph properties.
 ms.topic: tutorial
-ms.date: 03/24/2026
+ms.date: 04/14/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Create a graph
 ai-usage: ai-assisted
@@ -43,11 +43,11 @@ To load data into your graph from OneLake, follow these steps:
 1. In the **Choose data** pane, select your lakehouse (for example, *AdventureWorksLakehouse*) to automatically select all tables under it.
 1. Select **Load**.
 
-You should now see the data available for use in your graph.
+You should now see the eight tables from your lakehouse listed in the data pane, available for use in your graph.
 
    :::image type="content" source="./media/quickstart/graph-data-view.png" alt-text="Screenshot showing the data view in the graph model." lightbox="./media/quickstart/graph-data-view.png":::
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Add nodes to your graph](tutorial-model-nodes.md)
+> [Add node types to your graph](tutorial-model-nodes.md)

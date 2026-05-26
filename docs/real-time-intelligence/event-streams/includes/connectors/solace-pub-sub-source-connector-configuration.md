@@ -1,0 +1,43 @@
+---
+title: Solace PubSub+ connector for Fabric event streams
+description: The include file has the common content for configuring a Solace PubSub+ connector for Fabric event streams and Real-Time hub. 
+ms.reviewer: xujiang1
+ms.topic: include
+ms.date: 04/03/2026
+---
+
+
+1. On the **Connect** page, select **New connection**.
+
+    :::image type="content" source="./media/solace-pub-sub-source-connector/new-connection-button.png" alt-text="Screenshot that shows the Connect page the New connection link highlighted." lightbox="./media/solace-pub-sub-source-connector/new-connection-button.png":::     
+
+    If there's an existing connection to your Solace PubSub+ source, select that existing connection. 
+1. In the **Connection settings** section, follow these steps:
+    1. For Solace PubSub+ broker URL, enter the Solace Message Format (SMF) URI, starting with `tcps://`. 
+
+        > [!NOTE]
+        > The Solace PubSub+ source supports TLS/SSL-secured SMF connections between your Solace broker and Eventstream.
+        > TLS/SSL connections are only supported if the server certificate is signed by a Certificate Authority (CA) included in the [trusted CA list](https://github.com/microsoft/fabric-event-streams/blob/main/References/certificate-authority-list/trusted-ca-list.txt).
+    1. For **Connection name**, enter a name for the connection to the Solace PubSub+. 
+    1. Enter the **Username** and **Password** for the Solace PubSub+ client. 
+
+        :::image type="content" source="./media/solace-pub-sub-source-connector/connection-settings.png" alt-text="Screenshot that shows the Connection settings section.":::  
+    1. Select **Connect**. 
+1. Now, on the Connect page of the wizard, select a **Solace PubSub+ Type**: **Queue** or **Topic**.
+    - If you selected **Queue** as the Solace PubSub+ type, make sure the queue exists, and enter the **Queue name**. 
+    
+        > [!NOTE]
+        > If you aren't the owner of the queue, ensure you have the appropriate permission, specifically Consume, Modify Topic and Delete are valid, while No Access and Read Only don't work. 
+    - If you selected **Topic**, enter the **Topic name**. You can enter multiple topic names separated by commas.  
+1. Enter the **Message vpn name**. Ensure you have appropriate permissions on the Message VPN.
+
+### Stream or source details
+
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
+
+### Review and connect
+
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
+
+
+

@@ -2,7 +2,7 @@
 title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From Azure SQL Managed Instance"
 description: Learn how to configure a mirrored database from Azure SQL Managed Instance in Microsoft Fabric.
 ms.reviewer: lazartimotic, jingwang, nzagorac, wiassaf
-ms.date: 12/04/2025
+ms.date: 04/03/2026
 ms.topic: tutorial
 ---
 
@@ -21,10 +21,12 @@ ms.topic: tutorial
     - [Service principals can use Fabric APIs](../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
     - [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings)
 - You need to have a member or admin role in your workspace when you create a mirrored database from the Fabric portal. During creation, the managed identity of Azure SQL Managed Instance is automatically granted "Read and write" permission on the mirrored database. Users with the contributor role don't have the Reshare permission necessary to complete this step.
-- Check the networking requirements for Fabric to access your Azure SQL Managed Instance:
-  - If your Azure SQL Managed Instance is not publicly accessible, [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. Make sure the Azure Virtual Network or gateway server's network can connect to the Azure SQL Managed Instance via [a private endpoint](/azure/azure-sql/managed-instance/private-endpoint-overview?view=azuresql-mi&preserve-view=true).
-  - If you want to connect to Azure SQL Managed Instance's public endpoint without data gateway, you need to allow inbound traffic from Power BI and Data Factory service tags or from Azure Cloud service tag in the network security group. Learn more from [Configure public endpoints in Azure SQL Managed Instance](/azure/azure-sql/managed-instance/public-endpoint-configure).
-- Check the networking requirements for Fabric: If you want to use workspace-level private link, follow the instructions to [create the private link service in Azure](../security/security-workspace-level-private-links-set-up.md#step-2-create-the-private-link-service-in-azure) and [create a private endpoint](../security/security-workspace-level-private-links-set-up.md#step-5-create-a-private-endpoint) from Azure SQL Managed Instance's virtual network and subnet.
+- SQL managed instances with the [SQL Server 2022 update policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true) should use Fabric Mirroring for SQL Server 2016-2022, which uses CDC instead of the change feed. For more information, see [Tutorial: Configure Microsoft Fabric Mirroring from SQL Server](sql-server-tutorial.md?tabs=sql201622).
+- Networking requirements:
+    - If your Azure SQL Managed Instance is not publicly accessible, or if you are using the [SQL Server 2022 update policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true) of Azure SQL Managed Instance, you need a data gateway.
+        - You can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [on-premises data gateway](/data-integration/gateway/service-gateway-onprem). Make sure the Azure Virtual Network or gateway server's network can connect to the Azure SQL Managed Instance via [a private endpoint](/azure/azure-sql/managed-instance/private-endpoint-overview?view=azuresql-mi&preserve-view=true).
+    - For an Azure SQL Managed Instance using the [Always up to date update policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true) or SQL Server 2025 update policy, you can use network security group tags. If you want to connect to Azure SQL Managed Instance's public endpoint without data gateway, you must allow inbound traffic from Power BI and Data Factory service tags or from Azure Cloud service tag in the network security group. For more information, see [Configure public endpoints in Azure SQL Managed Instance](/azure/azure-sql/managed-instance/public-endpoint-configure).
+    - If you want to use workspace-level private link, follow the instructions to [create the private link service in Azure](../security/security-workspace-level-private-links-set-up.md#step-2-create-the-private-link-service-in-azure) and [create a private endpoint](../security/security-workspace-level-private-links-set-up.md#step-5-create-a-private-endpoint) from Azure SQL Managed Instance's virtual network and subnet.
 
 ### Enable System Assigned Managed Identity (SAMI) of your Azure SQL Managed Instance
 

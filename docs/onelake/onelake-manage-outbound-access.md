@@ -1,7 +1,9 @@
 ---
 title: Manage outbound access from OneLake with outbound access protection
 description: Outbound access protection in Fabric protects data by limiting outbound requests. 
-ms.reviewer: eloldag, mabasile
+ms.reviewer: eloldag, mabasile # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article
 ms.date: 01/20/2026
 #customer intent: As a data admin, I want to learn how to protect my data by limiting outbound requests. As a data engineer, I want to learn how to work with my data, even when outbound access protection is turned on. 
@@ -27,7 +29,7 @@ Shortcuts are objects in OneLake that point to other storage locations, which ca
   
 Outbound access protection doesn't restrict shortcuts with a source and target within the same workspace, because all OneLake calls remain within the boundary of the workspace.
 
-:::image type="content" source="media/onelake-manage-outbound-access/outbound-access-protection-connector-diagram.png" alt-text="Diagram of a shortcut between workspaces using managed private endpoint and Private Link service." lightbox="media/onelake-manage-outbound-access/outbound-access-protection-connector-diagram.png" border="false":::
+:::image type="content" source="media/onelake-manage-outbound-access/outbound-access-protection-connector-diagram.png" alt-text="Diagram of a shortcut between workspaces using managed private endpoint and Private Link service." lightbox="media/onelake-manage-outbound-access/outbound-access-protection-connector-diagram.png":::
 
 ## Copying data within OneLake 
 

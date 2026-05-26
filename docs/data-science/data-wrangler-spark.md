@@ -3,7 +3,8 @@ title: Explore and transform Spark data with Data Wrangler
 description: Learn how to explore and transform Spark DataFrames with Data Wrangler, generating PySpark code in real time.
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: erenorbey
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 09/29/2025
@@ -141,4 +142,4 @@ The toolbar above the Data Wrangler display grid provides options to save the ge
 
 - For an overview of Data Wrangler, visit [this companion article](data-wrangler.md)
 - To try out Data Wrangler in Visual Studio Code, head to [Data Wrangler in VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.datawrangler)
-- Did we miss a feature you need? Let us know! Suggest it at the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/)
+- Did we miss a feature you need? Let us know! Suggest it at the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas)

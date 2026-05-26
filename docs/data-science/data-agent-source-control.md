@@ -1,6 +1,8 @@
 ---
 title: "Source Control, CI/CD, and ALM for Fabric Data Agent"
 description: "Learn how to use source control, CI/CD, and ALM with Microsoft Fabric data agent."
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: amjafari
 ms.topic: concept-article
 ms.date: 08/8/2025
@@ -8,7 +10,7 @@ ms.date: 08/8/2025
 
 # Source Control, CI/CD, and ALM for Fabric data agent
 
-This article describes how to manage Fabric data agents using Git integration and deployment pipelines as part of Microsoft Fabric’s Application Lifecycle Management (ALM) capabilities. You learn how to connect a workspace to a Git repository. You’ll also learn how to track and version data agent configurations. Finally, you’ll learn how to promote updates across development, test, and production environments. Git integration and deployment pipelines enable continuous integration and continuous deployment (CI/CD) of data agent changes, allowing updates to be tested and promoted automatically as part of your ALM workflow. Source control for Fabric data agents is currently in preview.
+This article describes how to manage Fabric data agents using Git integration and deployment pipelines as part of Microsoft Fabric's Application Lifecycle Management (ALM) capabilities. You learn how to connect a workspace to a Git repository. You'll also learn how to track and version data agent configurations. Finally, you'll learn how to promote updates across development, test, and production environments. Git integration and deployment pipelines enable continuous integration and continuous deployment (CI/CD) of data agent changes, allowing updates to be tested and promoted automatically as part of your ALM workflow. Source control for Fabric data agents is currently in preview.
 
 You can use two complementary approaches to support ALM for Fabric data agents:
 
@@ -28,6 +30,10 @@ Microsoft Fabric Git integration synchronizes a Fabric workspace with a Git repo
 - Data agent configurations (schema selection, AI instructions, data source instructions, example queries) are stored in structured files in dedicated folders
 - Ability to view differences, review history, and revert to prior states via history for different workspace items including data agents
 - Branch-based collaboration (feature branches, main)
+
+### Latest Git integration enhancements
+
+Fabric Git integration now supports selective branching, letting you switch the connected branch at the workspace level to align with feature branch workflows. The **Source control** pane also provides a built-in diff experience for item changes, so you can review exactly what changed before committing or pulling updates. Branched workspaces are more clearly indicated in the Fabric UI, making it easier to identify which branch each workspace is connected to.
 
 For more information on the Git integration process, you can refer to the following resources.
 
@@ -49,7 +55,7 @@ You can connect your Fabric workspace to a Git repository from the **Workspace s
 
 :::image type="content" source="./media/data-agent-cicd/git-repo.png" alt-text="Screenshot showing the git repository." lightbox="./media/data-agent-cicd/git-repo.png":::
 
-4. When you make modifications to the Fabric data agent in a Git-connected workspace, the changes are detected and the data agent’s status in the Source control pane changes to Uncommitted changes. These modifications can include:
+4. When you make modifications to the Fabric data agent in a Git-connected workspace, the changes are detected and the data agent's status in the Source control pane changes to Uncommitted changes. These modifications can include:
 
     - Changing the schema selection.
     - Updating AI instructions or data source instructions.
@@ -66,7 +72,7 @@ Any change—whether functional or descriptive—causes the data agent to become
 
 ### Folder and file structure in the Git repository
 
-In the following, you review the structure of how a data agent’s configuration is stored in a Git repository. Understanding this structure is important for managing changes and following best practices.
+In the following, you review the structure of how a data agent's configuration is stored in a Git repository. Understanding this structure is important for managing changes and following best practices. When using feature branches, make changes in the branch tied to the workspace, review diffs in the **Source control** pane, and merge via pull requests for controlled promotion. The files and config structure for data agents remains the same across branches.
 
 #### Root structure
 
@@ -106,7 +112,7 @@ The **datasource.json** defines the configuration for that data source, includin
 - `displayName`, which shows the name of the data source.
 - `elements`, which refers to the schema map and includes a complete list of tables and columns from the data source.
   - Each table has an `is_selected` property. If `true`, the table is included and if `false`, it means the table isn't selected and won't be used by the data agent.
-  - Column entries also show `is_selected`, but column-level selection isn’t currently supported. If a table is selected, all of its columns are included regardless of the column `is_selected` value. If a table isn't selected (`is_selected`: `false` at the table level), none of the columns are considered despite that `is_selected` is set to `true` at the column level.
+  - Column entries also show `is_selected`, but column-level selection isn't currently supported. If a table is selected, all of its columns are included regardless of the column `is_selected` value. If a table isn't selected (`is_selected`: `false` at the table level), none of the columns are considered despite that `is_selected` is set to `true` at the column level.
 - Type conventions:
 
   - If the type is a data source, it's simply the data source type (for example: `"type": "lakehouse_tables"`).
@@ -136,7 +142,7 @@ Deployment pipelines provide a controlled way to move data agents between worksp
 
 :::image type="content" source="./media/data-agent-cicd/select-deployment-pipeline.png" alt-text="Screenshot showing the deployment pipeline setup." lightbox="./media/data-agent-cicd/select-deployment-pipeline.png":::
 
-Before deploying, you need to assign a workspace to each stage in the deployment pipeline: development, test, and production. If you don’t assign a workspace to the test or production stage, the workspaces are automatically created. The automatically created workspaces are named after the development workspace, with [test] or [prod] appended.
+Before deploying, you need to assign a workspace to each stage in the deployment pipeline: development, test, and production. If you don't assign a workspace to the test or production stage, the workspaces are automatically created. The automatically created workspaces are named after the development workspace, with [test] or [prod] appended.
 
 :::image type="content" source="./media/data-agent-cicd/test-workspace.png" alt-text="Screenshot showing the dev to test." lightbox="./media/data-agent-cicd/test-workspace.png":::
 
@@ -148,6 +154,14 @@ To deploy changes:
 :::image type="content" source="./media/data-agent-cicd/deployment-test.png" alt-text="Screenshot showing the deployment from dev to test was successful." lightbox="./media/data-agent-cicd/deployment-test.png":::
 
 You can review a deployment plan before applying changes, ensuring that only intended updates are promoted. For more information, see [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md?tabs=from-fabric%2Cnew-ui).
+
+#### Automate CI/CD with Azure DevOps Pipelines
+
+The [Azure DevOps Pipelines extension for Fabric](https://marketplace.visualstudio.com/items?itemName=ms-fabric.fabric-devops-pipelines) provides native tasks that run [Fabric CLI](https://go.microsoft.com/fwlink/?linkid=2313665) commands in Azure DevOps pipeline jobs. Teams can orchestrate CI/CD for data agent updates using Azure DevOps (with the CLI) alongside or instead of Fabric deployment pipelines. To get started, install the extension from the Visual Studio Marketplace, set up a service connection in your Azure DevOps project, and add Fabric CLI tasks to your pipeline definition.
+
+#### Bulk synchronization via batch APIs (preview)
+
+The Import/Export Item Definitions Batch APIs (preview) provide an option for large-scale synchronization of item definitions, including data agent configurations. You can export and import data agent definitions in batch to streamline promotion across environments. For more information, see the [Fabric REST API documentation](/rest/api/fabric/).
 
 > [!NOTE]
 > Service principals are supported in the Fabric data agent **only** as part of ALM scenarios. This support is limited to enabling ALM operations (such as Git integration and deployment pipelines) and doesn't extend to other Fabric data agent features. If you need to interact with a data agent outside of ALM workflows, service principal isn't supported.
@@ -168,6 +182,7 @@ This approach supports both the functional requirement of enabling consumption a
 - Test data agent changes in the test workspace before promoting to production.
 - Use descriptive commit messages to make history easier to understand.
 - Don't directly make changes to the published folder in the Git repository.
+- Use environment-agnostic configuration patterns (for example, connection references via Variable Library where supported) to avoid hardcoding environment-specific values in data agent data source configurations. This practice facilitates smoother branch merges and deployments across development, test, and production.
 
 ### Limitations and considerations
 

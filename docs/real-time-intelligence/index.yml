@@ -10,7 +10,7 @@ metadata:
   ms.custom:
   ms.topic: landing-page
   ms.collection: collection
-  ms.date: 01/22/2025
+  ms.date: 05/18/2026
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -31,7 +31,7 @@ landingContent:
         links:
           - text: Activator
             url: data-activator/activator-introduction.md
-          - text: Eventhouse 
+          - text: Eventhouse
             url: eventhouse.md
           - text: Real-Time hub
             url: ../real-time-hub/real-time-hub-overview.md
@@ -48,7 +48,7 @@ landingContent:
           - text: Bring your data to Real-Time hub
             url: ../real-time-hub/get-started-real-time-hub.md
           - text: Explore streams
-            url: ../real-time-hub/explore-data-streams.md
+            url: ../real-time-hub/explore-all-data-streams.md
           - text: Set alerts on streams
             url: ../real-time-hub/set-alerts-data-streams.md
 
@@ -74,7 +74,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Create and manage eventstreams
-            url:  event-streams/create-manage-an-eventstream.md
+            url: event-streams/create-manage-an-eventstream.md
           - text: Create eventstreams for discrete events
             url: event-streams/create-eventstreams-discrete-events.md
           - text: Route data streams based on content
@@ -163,7 +163,7 @@ landingContent:
         - linkListType: how-to-guide
           links:
           - text: Query data in a KQL queryset
-            url:  kusto-query-set.md
+            url: kusto-query-set.md
           - text: Customize results in the KQL Queryset results grid
             url: customize-results.md
           - text: Use example queries
@@ -206,14 +206,58 @@ landingContent:
               url: monitor-logs-query.md
   
   # Card
-  - title: Build AI agents
+  - title: Build and use AI agents
     linkLists:
         - linkListType: overview
           links:
-            - text: Real-Time Intelligence MCP Server (preview)
-              url: mcp-overview.md 
+            - text: Real-Time Intelligence operations agents
+              url: operations-agent.md
+            - text: Real-Time Intelligence Model Context Protocol (MCP) servers
+              url: mcp-overview.md
         - linkListType: how-to-guide
           links:
-          - text: Use MCP with Eventhouse
-            url:  mcp-remote-eventhouse.md
-              
+          - text: Get started with operations agents
+            url: operations-agent.md
+          - text: Implement the local Real-Time Intelligence MCP server
+            url: mcp-local-server.md
+          - text: Use a remote MCP server to interact with Eventhouse
+            url: mcp-remote-eventhouse.md
+          - text: Use a remote MCP server to interact with Activator
+            url: mcp-remote-activator.md
+
+  # Card
+  - title: Copilot in Real-Time Intelligence
+    linkLists:
+        - linkListType: overview
+          links:
+            - text: Copilot in Real-Time Intelligence overview
+              url: copilot-real-time-intelligence.md
+        - linkListType: how-to-guide
+          links:
+            - text: Use Copilot to write KQL queries
+              url: copilot-writing-queries.md
+            - text: Use Copilot to generate a Real-Time dashboard
+              url: copilot-generate-dashboard.md
+            - text: Explore Real-Time dashboard data with Copilot
+              url: dashboard-explore-data.md
+
+ # Card
+  - title: Reference architectures
+    linkLists:
+        - linkListType: reference
+          links:
+            - text: Automotive and mobility
+              url: architectures/connected-fleet.md
+            - text: Energy and resources
+              url: architectures/wind-farm-maintenance.md
+            - text: Industrials and manufacturing
+              url: architectures/connected-factory.md
+            - text: Retail and consumer goods
+              url: architectures/grocery-store-operations.md
+            - text: Healthcare and life sciences
+              url: architectures/healthcare-billing-system.md
+            - text: Financial services
+              url: architectures/fraud-detection.md
+            - text: Telecommunications and media
+              url: architectures/internet-service-provider-analytics.md
+                             

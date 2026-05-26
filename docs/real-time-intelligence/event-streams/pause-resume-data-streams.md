@@ -63,11 +63,11 @@ Here's a detailed table of the nodes that support pause and resume functionality
 |-----------------------------------------------------------|---------------|---------------------------|---------------------------------------------|
 | Azure Data Explorer Database (preview)                    | Source        | YES                       | - When streaming was last stopped           |
 | Azure Event Hubs                                          | Source        | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
-| Azure Event Grid Namespace (preview)                      | Source        | NO                        |                                             |
+| Azure Event Grid Namespace                       | Source        | NO                        |                                             |
 | Azure Service Bus (preview)                               | Source        | YES                       | - When streaming was last stopped           |
 | Azure IoT Hub                                             | Source        | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
 | Sample Data                                               | Source        | YES                       | - Now                                       |
-| Real-time weather (preview)                               | Source        | YES                       | - When streaming was last stopped           |
+| Real-time weather                                | Source        | YES                       | - When streaming was last stopped           |
 | Azure SQL Database CDC                                    | Source        | YES                       | - When streaming was last stopped           |
 | PostgreSQL Database CDC                                   | Source        | YES                       | - When streaming was last stopped           |
 | MongoDB CDC (preview)                                     | Source        | YES                       | - When streaming was last stopped           |

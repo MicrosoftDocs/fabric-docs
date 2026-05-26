@@ -9,7 +9,9 @@ items:
         href: real-time-intelligence-compare.md
       - name: Implement medallion architecture
         href: architecture-medallion.md
-      - name: End to end sample
+      - name: Multitenant solutions
+        href: multitenant.md
+      - name: End to end sample RTI solution
         href: sample-end-to-end.md
   - name: Tutorials
     items:
@@ -73,6 +75,8 @@ items:
         href: event-streams/monitor-capacity-consumption.md
       - name: Supported data formats
         href: event-streams/data-formats.md
+      - name: DeltaFlow output transformation (Preview)
+        href: event-streams/delta-flow-output-transformation.md
       - name: Create eventstreams
         items:
           - name: Create an eventstream
@@ -89,72 +93,76 @@ items:
         items:
           - name: Add and manage an event source
             href: event-streams/add-manage-eventstream-sources.md
-          - name: Azure Data Explorer
-            href: event-streams/add-source-azure-data-explorer-database.md
-          - name: Azure Event Hubs
-            href: event-streams/add-source-azure-event-hubs.md
-          - name: Azure Event Grid
-            href: event-streams/add-source-azure-event-grid.md
-          - name: Azure Service Bus
-            href: event-streams/add-source-azure-service-bus.md
-          - name: Azure IoT Hub
-            href: event-streams/add-source-azure-iot-hub.md
-          - name: Anomaly Detection events
-            href: event-streams/add-source-anomaly-events.md
-          - name: Custom endpoint
-            href: event-streams/add-source-custom-app.md
-          - name: Sample data
-            href: event-streams/add-source-sample-data.md
-          - name: Real-time weather
-            href: event-streams/add-source-real-time-weather.md
-          - name: Azure SQL Database Change Data Capture (CDC)
-            href: event-streams/add-source-azure-sql-database-change-data-capture.md
-          - name: PostgreSQL Database CDC
-            href: event-streams/add-source-postgresql-database-change-data-capture.md
-          - name: MongoDB CDC
-            href: event-streams/add-source-mongodb-change-data-capture.md
-          - name: MySQL Database CDC
-            href: event-streams/add-source-mysql-database-change-data-capture.md
-          - name: Azure Cosmos DB CDC
-            href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
-          - name: SQL Server on virtual machine database CDC
-            href: event-streams/add-source-sql-server-change-data-capture.md
-          - name: Azure SQL Managed Instance CDC
-            href: event-streams/add-source-azure-sql-managed-instance-change-data-capture.md
-          - name: DeltaFlow output transformation (Preview)
-            href: event-streams/delta-flow-output-transformation.md
-          - name: Google Cloud Pub/Sub
-            href: event-streams/add-source-google-cloud-pub-sub.md
           - name: Amazon Kinesis Data Streams
             href: event-streams/add-source-amazon-kinesis-data-streams.md
-          - name: Confluent Cloud for Apache Kafka
-            href: event-streams/add-source-confluent-kafka.md
-          - name: Apache Kafka
-            href: event-streams/add-source-apache-kafka.md
           - name: Amazon Managed Streaming for Apache Kafka
             href: event-streams/add-source-amazon-managed-streaming-for-apache-kafka.md
-          - name: Fabric Workspace Item events
-            href: event-streams/add-source-fabric-workspace.md
-          - name: Fabric OneLake events
-            href: event-streams/add-source-fabric-onelake.md
-          - name: Fabric Job events
-            href: event-streams/add-source-fabric-job.md
-          - name: Fabric capacity overview events
-            href: event-streams/add-source-fabric-capacity-overview-events.md
+          - name: Anomaly Detection events
+            href: event-streams/add-source-anomaly-events.md
+          - name: Apache Kafka
+            href: event-streams/add-source-apache-kafka.md
           - name: Azure Blob Storage events
             href: event-streams/add-source-azure-blob-storage.md
+          - name: Azure Cosmos DB Change Data Capture (CDC)
+            href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
+          - name: Azure Data Explorer Database
+            href: event-streams/add-source-azure-data-explorer-database.md
+          - name: Azure Event Grid
+            href: event-streams/add-source-azure-event-grid.md
+          - name: Azure Event Hubs
+            href: event-streams/add-source-azure-event-hubs.md
+          - name: Azure IoT Hub
+            href: event-streams/add-source-azure-iot-hub.md
+          - name: Azure Service Bus
+            href: event-streams/add-source-azure-service-bus.md
+          - name: Azure SQL Database CDC
+            href: event-streams/add-source-azure-sql-database-change-data-capture.md
+          - name: Azure SQL Managed Instance CDC
+            href: event-streams/add-source-azure-sql-managed-instance-change-data-capture.md
+          - name: Confluent Cloud for Apache Kafka
+            href: event-streams/add-source-confluent-kafka.md
+          - name: Cribl
+            href: event-streams/add-source-cribl.md
+          - name: Custom endpoint
+            href: event-streams/add-source-custom-app.md
+          - name: Fabric capacity overview events
+            href: event-streams/add-source-fabric-capacity-overview-events.md
+          - name: Fabric job events
+            href: event-streams/add-source-fabric-job.md
+          - name: Fabric OneLake events
+            href: event-streams/add-source-fabric-onelake.md
+          - name: Fabric workspace item events
+            href: event-streams/add-source-fabric-workspace.md
+          - name: Google Cloud Pub/Sub
+            href: event-streams/add-source-google-cloud-pub-sub.md
           - name: HTTP
             href: event-streams/add-source-http.md
           - name: Message Queuing Telemetry Transport (MQTT)
             href: event-streams/add-source-mqtt.md
-          - name: Cribl
-            href: event-streams/add-source-cribl.md
+          - name: MongoDB CDC
+            href: event-streams/add-source-mongodb-change-data-capture.md
+          - name: MySQL Database CDC
+            href: event-streams/add-source-mysql-database-change-data-capture.md
+          - name: PostgreSQL Database CDC
+            href: event-streams/add-source-postgresql-database-change-data-capture.md
+          - name: Real-time weather
+            href: event-streams/add-source-real-time-weather.md
+          - name: Sample data
+            href: event-streams/add-source-sample-data.md
           - name: Solace PubSub+
             href: event-streams/add-source-solace-pub-sub.md
+          - name: SQL Server on virtual machine database CDC
+            href: event-streams/add-source-sql-server-change-data-capture.md
       - name: Add destination connectors to eventstreams
         items:
           - name: Add and manage a destination
             href: event-streams/add-manage-eventstream-destinations.md
+          - name: Activator
+            href: event-streams/add-destination-activator.md
+          - name: Business Events
+            href: event-streams/add-destination-business-events.md
+          - name: Custom endpoint
+            href: event-streams/add-destination-custom-app.md
           - name: Derived stream
             href: event-streams/add-destination-derived-stream.md
           - name: Eventhouse
@@ -162,11 +170,7 @@ items:
           - name: Lakehouse
             href: event-streams/add-destination-lakehouse.md
           - name: Spark Notebook
-            href: event-streams/add-destination-spark-notebook.md            
-          - name: Activator
-            href: event-streams/add-destination-activator.md
-          - name: Custom endpoint
-            href: event-streams/add-destination-custom-app.md
+            href: event-streams/add-destination-spark-notebook.md
       - name: Process events
         items:
           - name: Process events using event processor
@@ -175,6 +179,8 @@ items:
             href: event-streams/process-events-with-multiple-schemas.md
           - name: Process events using SQL code editor
             href: event-streams/process-events-using-sql-code-editor.md
+          - name: Extract event metadata with eventstream
+            href: event-streams/extract-event-metadata-with-eventstream.md
       - name: Preview data
         href: event-streams/preview-data.md
       - name: Manage eventstreams
@@ -187,8 +193,22 @@ items:
             href: event-streams/pause-resume-data-streams.md
           - name: Set alerts on eventstreams
             href: event-streams/set-alerts-event-stream.md
-      - name: Monitor status and performance of eventstreams
-        href: event-streams/monitor.md
+      - name: Monitor eventstreams
+        items:
+          - name: Fabric workspace monitoring
+            items:
+              - name: Monitor eventstreams with workspace monitoring
+                href: event-streams/fabric-workspace-monitoring.md
+              - name: Enable workspace monitoring for eventstreams
+                href: event-streams/enable-fabric-workspace-monitoring.md
+              - name: Eventstream monitoring tables
+                href: event-streams/fabric-workspace-monitoring-tables.md
+              - name: Query eventstream monitoring data
+                href: event-streams/query-fabric-workspace-monitoring-data.md
+              - name: Known limitations
+                href: event-streams/fabric-workspace-monitoring-known-limitations.md
+          - name: Monitor status and performance of eventstreams
+            href: event-streams/monitor.md
       - name: Integrate with other Fabric items
         href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
       - name: Develop
@@ -205,6 +225,8 @@ items:
                 href: event-streams/api-get-eventstream-definition.md
               - name: Update Eventstream Definition
                 href: event-streams/api-update-eventstream-definition.md
+              - name: Create an Eventstream with Eventhouse DirectIngestion by using APIs
+                href: event-streams/api-kusto-pull-destination.md
       - name: Security
         items:
           - name: Choose the right network security feature
@@ -229,6 +251,8 @@ items:
         items:
           - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
             href: event-streams/stream-consume-events-use-kafka-endpoint.md
+          - name: Stream SQL Change Events to Eventstream for Real-Time Processing
+            href: event-streams/stream-sql-change-events-to-eventstream.md
           - name: Replicate SAP Datasphere Data to Eventstream Kafka Endpoint with SAP Replication Flow
             href: event-streams/replicate-data-with-replication-flow.md
           - name: Stream Oracle CDC data to Eventstream Kafka endpoint with GoldenGate
@@ -241,13 +265,13 @@ items:
             href: event-streams/stream-events-from-power-automate.md
           - name: Build a Power BI report by streaming data from Azure IoT Hub
             href: event-streams/build-report-from-iot-hub.md
-          - name: Explore Sample streaming Stock Market data using Eventstream and Spark Structured Streaming 
-            href: event-streams/explore-sample-stock-market-data-with-spark.md               
+          - name: Explore Sample streaming Stock Market data using Eventstream and Spark Structured Streaming
+            href: event-streams/explore-sample-stock-market-data-with-spark.md
           - name: Explore and transform bike-sharing data for KQL database integration
             href: event-streams/transform-sample-data-and-route-to-kql.md
       - name: Eventstream Query Language Reference
         items:
-          - name: Common query patterns 
+          - name: Common query patterns
             href: /azure/stream-analytics/stream-analytics-stream-analytics-query-patterns?context=/fabric/context/context-rti&pivots=fabric
           - name: Built-in Functions
             items:
@@ -535,6 +559,8 @@ items:
         href: schema-sets/create-manage-event-schemas-real-time-hub.md
       - name: Use schemas in eventstreams
         href: schema-sets/use-event-schemas.md
+      - name: Schema Registry region availability
+        href: schema-sets/schema-registry-region-availability.md
       - name: Known limitations
         href: schema-sets/schema-registry-limitations.md
   - name: Eventhouse
@@ -547,19 +573,19 @@ items:
         href: eventhouse-deploy-with-fabric-api.md
       - name: Manage and monitor an eventhouse
         href: manage-monitor-eventhouse.md
-      - name: Eventhouse capacity 
+      - name: Reliability in Eventhouse
+        href: eventhouse-reliability.md
+      - name: Eventhouse endpoint for Lakehouse and Warehouse
+        href: eventhouse-as-endpoint.md
+      - name: Eventhouse capacity
         items:
           - name: Resource consumption
             href: real-time-intelligence-consumption.md
-          - name: Smart capacity control
-            href: eventhouse-smart-capacity-control.md
             displayName: consumption, CU, metrics app, monitor, billing, usage
           - name: Understand Eventhouse compute usage
             href: eventhouse-compute-observability.md
           - name: Eventhouse Cost per GB Ingested
             href: pricing-cost-drivers.md
-          - name: Query cold data with hot windows
-            href: query-cold-data-hot-windows.md   
       - name: Migrate
         items:
           - name: Migrate from Azure Data Explorer
@@ -663,6 +689,10 @@ items:
                 href: /azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rti&pivots=fabric
               - name: Telegraf
                 href: get-data-telegraf.md
+      - name: Security
+        items:
+          - name: Eventhouse CMK
+            href: eventhouse-encryption.md
       - name: KQL Database
         items:
           - name: Create a KQL database
@@ -670,6 +700,8 @@ items:
           - name: Access an existing KQL database
             href: access-database-copy-uri.md
             displayName: copy URI, copy query URI, copy ingestion URI
+          - name: Analyze data in a KQL database
+            href: eventhouse-analyze-data-with.md
           - name: Manage and monitor a KQL database
             href: manage-monitor-database.md
           - name: Create a database shortcut
@@ -680,53 +712,53 @@ items:
             href: edit-table-schema.md
           - name: Manage and monitor tables
             href: manage-monitor-table.md
-          - name: Notebooks
+      - name: Notebooks
+        items:
+          - name: Use Fabric notebooks with data from a KQL database
+            href: notebooks.md
+          - name: Use a notebook with Apache Spark to query a KQL database
+            href: spark-connector.md
+          - name: Use a notebook with Kqlmagic to query a KQL database
+            href: notebook-kql-magic.md
+      - name: Data management
+        items:
+          - name: Data management overview
+            href: data-management.md
+            displayName: managed identity, data policies, table update policy, materialized view, stored function, python plugin
+          - name: Entity diagram view in KQL database
+            href: database-entity-diagram.md
+          - name: Change data policies
+            href: data-policies.md
+          - name: Create a table update policy
+            href: table-update-policy.md
+          - name: Create materialized views
+            href: materialized-view.md
+          - name: Create and manage functions
+            href: create-functions.md
+          - name: Enable Python plugin
+            href: python-plugin.md
+          - name: Query cold data with hot windows
+            href: query-cold-data-hot-windows.md
+      - name: Management commands
+        href: kusto-tocs/management/toc.yml
+      - name: API
+        href: kusto-tocs/api/toc.yml
+      - name: OneLake
+        items:
+          - name: Eventhouse OneLake availability
+            href: event-house-onelake-availability.md
+          - name: Create OneLake shortcuts in a KQL database
+            href: onelake-shortcuts.md
+          - name: Query acceleration over OneLake shortcuts
             items:
-              - name: Use Fabric notebooks with data from a KQL database
-                href: notebooks.md
-              - name: Use a notebook with Apache Spark to query a KQL database
-                href: spark-connector.md
-              - name: Use a notebook with Kqlmagic to query a KQL database
-                href: notebook-kql-magic.md
-          - name: Data management
+              - name: Accelerate queries over OneLake shortcuts - overview
+                href: query-acceleration-overview.md
+              - name: Accelerate queries over OneLake shortcuts
+                href: query-acceleration.md
+          - name: External tools
             items:
-              - name: Data management overview
-                href: data-management.md
-                displayName: managed identity, data policies, table update policy, materialized view, stored function, python plugin
-              - name: Entity diagram view in KQL database
-                href: database-entity-diagram.md
-              - name: Change data policies
-                href: data-policies.md
-              - name: Create a table update policy
-                href: table-update-policy.md
-              - name: Create materialized views
-                href: materialized-view.md
-              - name: Create and manage functions
-                href: create-functions.md
-              - name: Enable Python plugin
-                href: python-plugin.md
-          - name: Management commands
-            href: kusto-tocs/management/toc.yml
-          - name: API
-            href: kusto-tocs/api/toc.yml
-          - name: OneLake
-            items:
-              - name: Eventhouse OneLake availability
-                href: event-house-onelake-availability.md
-              - name: Create OneLake shortcuts in a KQL database
-                href: onelake-shortcuts.md
-              - name: Query acceleration over OneLake shortcuts
-                items:
-                  - name: Accelerate queries over OneLake shortcuts - overview
-                    href: query-acceleration-overview.md
-                  - name: Accelerate queries over OneLake shortcuts
-                    href: query-acceleration.md
-              - name: Eventhouse endpoint for Lakehouse and Warehouse
-                href: eventhouse-as-endpoint.md
-              - name: External tools
-                items:
-                  - name: Query Fabric OneLake Delta tables from Snowflake
-                    href: query-onelake-from-snowflake.md    
+              - name: Query Fabric OneLake Delta tables from Snowflake
+                href: query-onelake-from-snowflake.md
   - name: KQL Queryset
     items:
       - name: Copilot for Writing KQL Queries
@@ -758,8 +790,6 @@ items:
         href: real-time-dashboards-overview.md
       - name: Create a Real-Time Dashboard
         href: dashboard-real-time-create.md
-      - name: Generate Real-Time Dashboard Using Copilot
-        href: copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric
       - name: Real-Time Dashboard permissions
         href: dashboard-permissions.md
       - name: Explore data in Real-Time Dashboard Using Copilot
@@ -789,8 +819,12 @@ items:
         items:
           - name: Create and activate an Activator rule
             href: data-activator/activator-tutorial.md
+          - name: Create an end-to-end Activator rule using agentic AI
+            href: data-activator/activator-agentic-tutorial.md
       - name: Concepts
         items:
+          - name: Trigger modeling
+            href: data-activator/activator-trigger-model.md
           - name: Activator rules
             href: data-activator/activator-rules-overview.md
           - name: Detection conditions for Activator
@@ -806,6 +840,12 @@ items:
             href: data-activator/activator-throttling-effects.md
       - name: Create alerts
         items:
+          - name: Create rules and activations
+            href: data-activator/activator-create-activators.md
+          - name: Configure actions for Activator rules
+            href: data-activator/rule-actions.md
+          - name: Assign data to Activator objects
+            href: data-activator/activator-assign-data-objects.md            
           - name: Create alerts from a Real-Time Dashboard
             href: data-activator/activator-get-data-real-time-dashboard.md
           - name: Create alerts from a KQL Queryset
@@ -825,13 +865,9 @@ items:
           - name: Create alerts on ontology
             href: ../iq/ontology/how-to-use-rules.md
           - name: Create alert on a Warehouse SQL query
-            href: data-activator/set-alerts-warehouse-sql-query.md            
+            href: data-activator/set-alerts-warehouse-sql-query.md
           - name: Get data from eventstreams
             href: event-streams/add-destination-activator.md
-          - name: Create rules and activations
-            href: data-activator/activator-create-activators.md
-          - name: Assign data to Activator objects
-            href: data-activator/activator-assign-data-objects.md
           - name: Trigger Fabric items
             href: data-activator/activator-trigger-fabric-items.md
           - name: Use custom actions to trigger Power Automate flows
@@ -863,10 +899,10 @@ items:
             href: data-activator/alert-stop-events.md
           - name: Reduce cost of rules on streaming data
             items:
-            - name: Apply summarizations
-              href: data-activator/reduce-cost-rules-apply-summarizations.md
-            - name: Apply filters
-              href: data-activator/reduce-cost-rules-apply-filters.md
+              - name: Apply summarizations
+                href: data-activator/reduce-cost-rules-apply-summarizations.md
+              - name: Apply filters
+                href: data-activator/reduce-cost-rules-apply-filters.md
       - name: Troubleshoot errors
         href: data-activator/activator-troubleshooting.md
   - name: Digital Twin Builder
@@ -961,6 +997,12 @@ items:
         items:
           - name: Build real-time work order routing
             href: map/tutorial-real-time-work-order-routing-application.md
+          - name: Create a map using the REST API with Python
+            href: map/tutorial-create-fabric-map-python.md
+          - name: Automate the creation of a real-time map using REST APIs
+            href: map/tutorial-create-real-time-map-python.md
+          - name: Simulate real-time data ingestion into a map
+            href: map/tutorial-simulate-real-time-data-ingestion.md
       - name: Concepts
         items:
           - name: Map items
@@ -985,54 +1027,75 @@ items:
             href: map/sharing-maps.md
           - name: Permissions in Fabric Maps
             href: map/about-map-permissions.md
+          - name: Automation with REST APIs
+            items:
+              - name: Automate Fabric Maps with the REST API
+                href: map/about-rest-api.md
+              - name: Handle Errors in Fabric Maps Automation
+                href: map/rest-api-error-handling-best-practices.md
       - name: How-to guides
         items:
-        - name: Create a map
-          href: map/create-map.md
-        - name: Layers
-          items:
-            - name: Create layers from lakehouse data 
-              href: map/add-lakehouse-layer.md
-            - name: Create layers from Kusto data 
-              href: map/create-layers-using-kusto-data.md
-            - name: Create layers from WMS or WMTS imagery data
-              href: map/add-external-sourced-imagery-layer.md
-            - name: Get the WMTS endpoint URL from the MPC Pro geocatalog
-              href: map/get-mpc-pro-wmts-endpoint.md
-            - name: Add an ontology layer to a map
-              href: map/add-ontology-layer.md
-            - name: Data layer management
-              href: map/data-layer-management.md
-            - name: Filter data
-              href: map/filter-data.md
-            - name: Migrate KQL Queryset to a Kusto function
-              href: map/migrate-kusto-query-layer.md
-        - name: Customize a map
-          href: map/customize-map.md
-        - name: Create a tileset
-          href: map/create-tile-sets.md
-        - name: Map sharing
-          items:
-            - name: Share maps directly
-              href: map/share-map-direct.md
-            - name: Share maps with org apps
-              href: map/share-map-org-apps.md
-        - name: Manage Map permissions
-          href: map/manage-map-permissions.md
-  - name: AI agents and MCP servers
-    displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
+          - name: Create a map
+            href: map/create-map.md
+          - name: Layers
+            items:
+              - name: Create layers from lakehouse data
+                href: map/add-lakehouse-layer.md
+              - name: Create layers from Kusto data
+                href: map/create-layers-using-kusto-data.md
+              - name: Create layers from WMS or WMTS imagery data
+                href: map/add-external-sourced-imagery-layer.md
+              - name: Get the WMTS endpoint URL from the MPC Pro geocatalog
+                href: map/get-mpc-pro-wmts-endpoint.md
+              - name: Add an ontology layer to a map
+                href: map/add-ontology-layer.md
+              - name: Data layer management
+                href: map/data-layer-management.md
+              - name: Filter data
+                href: map/filter-data.md
+              - name: Migrate KQL Queryset to a Kusto function
+                href: map/migrate-kusto-query-layer.md
+          - name: Customize a map
+            href: map/customize-map.md
+          - name: Create a tileset
+            href: map/create-tile-sets.md
+          - name: Map sharing
+            items:
+              - name: Share maps directly
+                href: map/share-map-direct.md
+              - name: Share maps with org apps
+                href: map/share-map-org-apps.md
+          - name: Manage Map permissions
+            href: map/manage-map-permissions.md
+          - name: Create and Configure a Fabric Map with REST APIs
+            href: map/create-configure-map-using-rest-api.md
+  - name: Copilot
     items:
-      - name: Operations agents
-        href: operations-agent-tocs/toc.yml
+      - name: Copilot for Real-Time Intelligence
+        href: copilot-real-time-intelligence.md
+      - name: Copilot for Writing KQL Queries
+        href: copilot-writing-queries.md
+      - name: Explore data in Real-Time Dashboard Using Copilot
+        href: dashboard-explore-data.md
+  - name: Operations agents
+    href: operations-agent-tocs/toc.yml
+    displayName: AI agents, AI, agents, Operation agents
+  - name: Build AI agents
+    displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source, skills
+    items:
+      - name: Overview
+        href: ai-agents-eventhouse.md
       - name: MCP servers
         items:
-          - name: Fabric RTI MCP local server
+          - name: Overview
             href: mcp-overview.md
-          - name: Remote MCP Integrations
+          - name: Local RTI MCP server
+            href: mcp-local-server.md
+          - name: Remote MCP servers
             items:
-              - name: Get started with Eventhouse MCP remote Server
+              - name: Remote MCP for Eventhouse
                 href: mcp-remote-eventhouse.md
-              - name: Get started with Activator MCP remote Server
+              - name: Remote MCP for Activator
                 href: mcp-remote-activator.md
   - name: Git integration and deployment pipelines
     displayName: alm, application lifecycle management, cicd, devops
@@ -1055,59 +1118,59 @@ items:
     href: kusto-tocs/query/toc.yml
   - name: Reference architectures
     items:
-    - name: Automative and mobile
-      items:
-      - name: Connected fleet data analytics
-        href: architectures/connected-fleet.md
-      - name: Airline - flight operations   
-        href: architectures/airline-flight-operations.md
-      - name: Fleet management
-        href: architectures/fleet-management.md
-      - name: E-mobility charging network analytics
-        href: architectures/electric-mobility.md
-    - name: Energy and resources
-      items:
-      - name: Wind farm maintenance
-        href: architectures/wind-farm-maintenance.md
-      - name: Energy grid management
-        href: architectures/energy-grid-management.md
-      - name: Energy trading management
-        href: architectures/energy-trading.md
-      - name: Carbon emissions management
-        href: architectures/carbon-emissions.md
-      - name: Smart meter insights
-        href: architectures/smart-meter-insights.md
-    - name: Industrials and manufacturing
-      items:
-      - name: Connected Factory
-        href: architectures/connected-factory.md
-      - name: Predictive maintenance
-        href: architectures/predictive-maintenance.md
-      - name: Product embedded Analytics
-        href: architectures/product-embedded-analytics.md
-      - name: Supply chain
-        href: architectures/supply-chain.md
-    - name: Retail and consumer goods
-      items:
-      - name: Grocery store operations
-        href: architectures/grocery-store-operations.md
-    - name: Healthcare and life sciences
-      items:
-      - name: Healthcare billing system
-        href: architectures/healthcare-billing-system.md
-      - name: Hospital operations
-        href: architectures/hospital-operations.md
-    - name: Financial services
-      items:
-      - name: Fraud detection
-        href: architectures/fraud-detection.md
-    - name: Telecommunications and media
-      items:
-      - name: Internet service provider analytics
-        href: architectures/internet-service-provider-analytics.md    
-      - name: Law enforcement
-        href: architectures/law-enforcement.md
-      - name: Call detail or event data records analytics
-        href: architectures/call-event-data-records-analytics.md
-      - name: Customer churn analytics
-        href: architectures/customer-churn.md        
+      - name: Automotive and Mobility
+        items:
+          - name: Connected fleet data analytics
+            href: architectures/connected-fleet.md
+          - name: Airline - flight operations
+            href: architectures/airline-flight-operations.md
+          - name: Fleet management
+            href: architectures/fleet-management.md
+          - name: E-mobility charging network analytics
+            href: architectures/electric-mobility.md
+      - name: Energy and resources
+        items:
+          - name: Wind farm maintenance
+            href: architectures/wind-farm-maintenance.md
+          - name: Energy grid management
+            href: architectures/energy-grid-management.md
+          - name: Energy trading management
+            href: architectures/energy-trading.md
+          - name: Carbon emissions management
+            href: architectures/carbon-emissions.md
+          - name: Smart meter insights
+            href: architectures/smart-meter-insights.md
+      - name: Industrials and manufacturing
+        items:
+          - name: Connected Factory
+            href: architectures/connected-factory.md
+          - name: Predictive maintenance
+            href: architectures/predictive-maintenance.md
+          - name: Product embedded Analytics
+            href: architectures/product-embedded-analytics.md
+          - name: Supply chain
+            href: architectures/supply-chain.md
+      - name: Retail and consumer goods
+        items:
+          - name: Grocery store operations
+            href: architectures/grocery-store-operations.md
+      - name: Healthcare and life sciences
+        items:
+          - name: Healthcare billing system
+            href: architectures/healthcare-billing-system.md
+          - name: Hospital operations
+            href: architectures/hospital-operations.md
+      - name: Financial services
+        items:
+          - name: Fraud detection
+            href: architectures/fraud-detection.md
+      - name: Telecommunications and media
+        items:
+          - name: Internet service provider analytics
+            href: architectures/internet-service-provider-analytics.md
+          - name: Law enforcement
+            href: architectures/law-enforcement.md
+          - name: Call detail or event data records analytics
+            href: architectures/call-event-data-records-analytics.md
+          - name: Customer churn analytics
+            href: architectures/customer-churn.md

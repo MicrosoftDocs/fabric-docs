@@ -3,12 +3,12 @@ title: Use Foundry Tools in Fabric
 description: Overview of using Foundry Tools in Fabric.
 ms.author: lagayhar
 author: lgayhardt
-ms.reviewer: vimeland
-reviewer: virginiaroman
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: overview
 ms.custom:
   - references_regions
-ms.date: 01/16/2026
+ms.date: 05/12/2026
 ms.update-cycle: 180-days
 ms.search.form: 
 no-loc: [Copilot]
@@ -27,7 +27,7 @@ Fabric provides two options to use Foundry Tools:
 
     Fabric seamlessly integrates with Foundry Tools, allowing you to enrich your data with prebuilt AI models without any prerequisite. We recommend this option because you can use your Fabric authentication to access Foundry Tools, and all usages are billed against your Fabric capacity. This option is currently in public preview, with limited Microsoft Foundry tools available.
 
-    Fabric offers [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure Translator in Foundry Tools](https://azure.microsoft.com/products/ai-services/translator/) by default, with support for both SynapseML and the RESTful API. You can also use the [OpenAI Python Library](https://platform.openai.com/docs/api-reference?lang=python) to access Azure OpenAI service in Fabric. For more information about available models, visit [prebuilt AI models in Fabric](./ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
+    Fabric offers [Azure OpenAI Service](/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure?tabs=global-standard-aoai%2Cglobal-standard&pivots=azure-openai), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure Translator in Foundry Tools](https://azure.microsoft.com/products/ai-services/translator/) by default, with support for both SynapseML and the RESTful API. You can also use the [OpenAI Python Library](https://platform.openai.com/docs/api-reference?lang=python) to access Azure OpenAI service in Fabric. For more information about available models, visit [prebuilt AI models in Fabric](./ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
 
 - **Bring your own key (BYOK)**
 
@@ -37,11 +37,11 @@ Fabric provides two options to use Foundry Tools:
 
 ## Prebuilt AI models in Fabric (preview)
 
-### [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/)
+### [Azure OpenAI Service](/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure?tabs=global-standard-aoai%2Cglobal-standard&pivots=azure-openai)
 
 [REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-python-sdk.md), [SynapseML](how-to-use-openai-synapse-ml.md), [AI Functions](how-to-use-openai-ai-functions.md)
 
-- Language Models: `gpt-5`, `gpt-4.1`, and `gpt-4.1-mini` are hosted. [See table for details](#consumption-rate-for-openai-language-models)
+- Language Models: `gpt-5.1`, `gpt-5`, `gpt-5-mini`, `gpt-4.1`, and `gpt-4.1-mini` are hosted. [See table for details](#consumption-rate-for-openai-language-models)
 - Text Embedding Model: `text-embedding-ada-002` is hosted. [See table for details](#consumption-rate-for-openai-embedding-models)
 
 ### [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) 
@@ -87,9 +87,11 @@ To determine your Fabric home region, visit [Find your Fabric home region](../..
 
 | **Model** | **Deployment Name** | **Context Window (Tokens)** | **Input (Per 1,000 Tokens)** | **Cached Input (Per 1,000 Tokens)**  | **Output (Per 1,000 Tokens)** | **Retirement Date** |
 |---|---|---|---|---|---|---|
-| gpt-5-2025-08-07 | `gpt-5` | 400,000<br> Max output: 128,000 |  42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds | TBD |
-| gpt-4.1-2025-04-14 | `gpt-4.1` | 128,000<br>Max output: 32,768 | 67.23 CU seconds | 16.81 CU seconds | 268.91 CU seconds | TBD |
-| gpt-4.1-mini-2025-04-14 | `gpt-4.1-mini` | 128,000<br>Max output: 32,768 | 13.45 CU seconds | 3.36 CU seconds | 53.78 CU seconds | TBD |
+| gpt-5.1-2025-11-13 | `gpt-5.1` | 400,000<br> Max output: 128,000 | 42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds | |
+| gpt-5-2025-08-07 | `gpt-5` | 400,000<br> Max output: 128,000 |  42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds | May 30, 2026 |
+| gpt-5-mini-2025-08-07 | `gpt-5-mini` | 400,000<br> Max output: 128,000 | 8.40 CU seconds | 0.84 CU seconds | 67.23 CU seconds | |
+| gpt-4.1-2025-04-14 | `gpt-4.1` | 128,000<br>Max output: 32,768 | 67.23 CU seconds | 16.81 CU seconds | 268.91 CU seconds | May 30, 2026 |
+| gpt-4.1-mini-2025-04-14 | `gpt-4.1-mini` | 128,000<br>Max output: 32,768 | 13.45 CU seconds | 3.36 CU seconds | 53.78 CU seconds | Jun 15, 2026 |
 
 ### Consumption rate for OpenAI embedding models
 

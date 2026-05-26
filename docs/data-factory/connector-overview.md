@@ -32,16 +32,16 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | Acterys: Model Automation & Planning (Beta) | ✓/− |  |  |
 | Actian (Beta) | ✓/− |  |  |
 | [Active Directory](/power-query/connectors/active-directory#connect-to-active-directory-from-power-query-online) | ✓/− |  |  |
-| [Adobe Analytics](/power-query/connectors/adobe-analytics) | ✓/− |  |  |
+| [Adobe Analytics](connector-adobe-analytics-overview.md) | ✓/− |  |  |
 | [ADPAnalytics (Beta)](/power-query/connectors/adp-analytics) | ✓/− |  |  |
-| [Amazon Athena](/power-query/connectors/amazon-athena) | ✓/− |  |  |
+| [Amazon Athena](connector-amazon-athena-overview.md) | ✓/− |  |  |
 | [Amazon OpenSearch Service (Beta)](/power-query/connectors/amazon-opensearch-service) | ✓/− |  |  |
 | [Amazon RDS For Oracle](connector-amazon-rds-for-oracle-overview.md) |  | ✓/− | ✓/− |
 | [Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-overview.md) |  | ✓/− | ✓/− |
 | [Amazon Redshift](connector-amazon-redshift-overview.md) | ✓/− | ✓/− |  |
 | [Amazon S3](connector-amazon-s3-overview.md) |  | ✓/✓ | ✓/✓ |
 | [Amazon S3 Compatible](connector-amazon-s3-compatible-overview.md) |  | ✓/✓ | ✓/✓ |
-| [Anaplan](/power-query/connectors/anaplan) | ✓/− |  |  |
+| [Anaplan](connector-anaplan-overview.md) | ✓/− |  |  |
 | Asana | ✓/− |  |  |
 | [Assemble Views](/power-query/connectors/assemble-views) | ✓/− |  |  |
 | AtScale cubes | ✓/− |  |  |
@@ -78,18 +78,17 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [CData Connect Cloud](/power-query/connectors/cdata-connect-cloud) | ✓/− |  |  |
 | [Celonis EMS](/power-query/connectors/celonis-ems) | ✓/− |  |  |
 | Cherwell (Beta) | ✓/− |  |  |
-| [ClickHouse](/power-query/connectors/clickhouse#connect-to-clickhouse-from-power-query-online) | ✓/− |  |  |
+| [ClickHouse](connector-clickhouse-overview.md) | ✓/− |  |  |
 | [CloudBluePSA (Beta)](connector-cloudbluepsa-overview.md) | ✓/− |  |  |
 | [Cognite Data Fusion (OData)](/power-query/connectors/cognite-data-fusion-(odata)#connect-to-cognite-data-fusion-from-power-query-online) | ✓/− |  |  |
-| Cognite Data Fusion (Rest API) (Beta) | ✓/− |  |  |
+| [Cognite Data Fusion (Rest API) (Beta)](/power-query/connectors/cognite-data-fusion-(rest-api)) | ✓/− |  |  |
 | [Common Data Service (legacy)](connector-common-data-service-legacy-overview.md) | ✓/− |  |  |
 | Data Virtuality LDW | ✓/− |  |  |
 | [Databricks](connector-databricks-overview.md) | ✓/− |  |  |
 | [Dataflow](connector-dataflows-overview.md) | ✓/− |  |  |
-| Datamarts (Beta) | ✓/− |  |  |
 | [Dataverse](connector-dataverse-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
-| [Delta Sharing](/power-query/connectors/delta-sharing) | ✓/− |  |  |
-| [Denodo](/power-query/connectors/denodo) | ✓/− |  |  |
+| [Delta Sharing](connector-delta-sharing-overview.md) | ✓/− |  |  |
+| [Denodo](connector-denodo-overview.md) | ✓/− |  |  |
 | Dremio Cloud | ✓/− |  |  |
 | Dremio Software | ✓/− |  |  |
 | Dynamics 365 Business Central | ✓/− |  |  |
@@ -97,8 +96,8 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | Dynamics 365 | | ✓/✓ | ✓/✓ |
 | [Dynamics AX](connector-dynamics-ax-overview.md) |  | ✓/− | ✓/− |
 | [Dynamics CRM](connector-dynamics-crm-overview.md) |  | ✓/✓ |✓/✓  |
-| Dynatrace Grail DQL (Beta) | ✓/− |  |  |
-| [Eduframe (Beta)](/power-query/connectors/eduframe) | ✓/− |  |  |
+| [Dynatrace Grail DQL (Beta)](/power-query/connectors/dynatrace-grail-dql) | ✓/− |  |  |
+| [Eduframe (Beta)](connector-eduframe-overview.md) | ✓/− |  |  |
 | Emigo Data Source | ✓/− |  |  |
 | Entersoft Business Suite | ✓/− |  |  |
 | [EQuIS](/power-query/connectors/equis) | ✓/− |  |  |
@@ -111,16 +110,16 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Fabric Lakehouse](connector-lakehouse-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
 | [Fabric SQL database (Beta)](connector-sql-database-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
 | FactSet Analytics | ✓/− |  |  |
-| [FactSet RMS (Beta)](/power-query/connectors/factset-rms) | ✓/− |  |  |
+| FactSet RMS (Beta) | ✓/− |  |  |
 | [FHIR](connector-fhir-overview.md) | ✓/− |  |  |
 | [Folder](connector-folder-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [FTP](connector-ftp-overview.md) |  | ✓/− | ✓/− |
-| [Funnel](/power-query/connectors/funnel) | ✓/− |  |  |
+| [Funnel](connector-funnel-overview.md) | ✓/− |  |  |
 | [Google Analytics](connector-google-analytics-overview.md) | ✓/− |  |  |
 | [Google BigQuery](connector-google-bigquery-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [Google BigQuery (Microsoft Entra ID)](/power-query/connectors/google-bigquery-aad#connect-to-google-bigquery-microsoft-entra-id-data-from-power-query-online) | ✓/− |  |  |
 | [Google Cloud Storage](connector-google-cloud-storage-overview.md) |  | ✓/✓ | ✓/✓ |
-| [Google Sheets](/power-query/connectors/google-sheets) | ✓/− |  |  |
+| [Google Sheets](connector-google-sheets-overview.md) | ✓/− |  |  |
 | [Greenplum for Pipeline](connector-greenplum-for-pipeline-overview.md) |  | ✓/− | ✓/− |
 | [Hadoop Distributed File System (Hdfs)](connector-hdfs-for-pipeline-overview.md) |  | ✓/− | ✓/− |
 | HDInsight Interactive Query | ✓/− |  |  |
@@ -128,7 +127,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Hive LLAP](connector-hive-llap-overview.md) | ✓/− |  |  |
 | [HTTP](connector-http-overview.md) |  | ✓/− | ✓/− |
 | [IBM Db2 database](connector-ibm-db2-database-overview.md) | ✓/− | ✓/− | ✓/− |
-| IBM Netezza | ✓/− |  |  |
+| [IBM Netezza](/power-query/connectors/ibm-netezza-database) | ✓/− |  |  |
 | [Impala](connector-impala-overview.md) | ✓/− |  |  |
 | [Informix For Pipeline](connector-informix-for-pipeline-overview.md) |  | ✓/✓ | ✓/✓ |
 | Indexima | ✓/− |  |  |
@@ -153,14 +152,14 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Microsoft Access](connector-microsoft-access-overview.md) |  | ✓/✓ | ✓/✓ |
 | Microsoft Azure Data Manager for Energy | ✓/− |  |  |
 | [Microsoft Exchange Online](connector-microsoft-exchange-online-overview.md) | ✓/− |  |  |
-| Strategy for Power BI | ✓/− |  |  |
+| [MicroStrategy for Power BI](/power-query/connectors/microstrategy-for-power-bi) | ✓/− |  |  |
 | [MongoDB Atlas for Pipelines](connector-mongodb-atlas-overview.md) |  | ✓/✓ | ✓/✓ |
 | [MongoDB Atlas SQL](connector-mongodb-atlas-sql-overview.md) | ✓/− |  |  |
 | [MongoDB for Pipeline](connector-mongodb-overview.md) |  | ✓/✓ |✓/✓  |
 | [MySQL database](connector-mysql-database-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [OData](connector-odata-overview.md) | ✓/− | ✓/− | ✓/− |
 | [Odbc](connector-odbc-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
-| [OneStream](/power-query/connectors/onestream) | ✓/− |  |  |
+| [OneStream](connector-onestream-overview.md) | ✓/− |  |  |
 | [OpenSearch Project (Beta)](/power-query/connectors/opensearch-project) | ✓/− |  |  |
 | [Oracle Cloud Storage](connector-oracle-cloud-storage-overview.md) |  | ✓/− | ✓/−  |
 | [Oracle database](connector-oracle-database-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
@@ -177,7 +176,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | Power BI dataflows (Legacy) | ✓/− |  |  |
 | [Presto](connector-presto-overview.md) |  | ✓/− | ✓/− |
 | Product Insights (Beta) | ✓/− |  |  |
-| [Profisee](/power-query/connectors/profisee) | ✓/− |  |  |
+| [Profisee](connector-profisee-overview.md) | ✓/− |  |  |
 | QubolePresto (Beta) | ✓/− |  |  |
 | Quickbase | ✓/− |  |  |
 | [REST](connector-rest-overview.md) |  | ✓/✓ | ✓/✓ |
@@ -202,7 +201,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [SingleStore Direct Query Connector](/power-query/connectors/singlestore) | ✓/− |  |  |
 | [SIS-CC SDMX (Beta)](/power-query/connectors/sis-cc-sdmx) | ✓/− |  |  |
 | Siteimprove | ✓/− |  |  |
-| [Smartsheet](/power-query/connectors/smartsheet) | ✓/− |  |  |
+| [Smartsheet](connector-smartsheet-overview.md) | ✓/− |  |  |
 | [Snowflake](connector-snowflake-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [SoftOne BI (Beta)](/power-query/connectors/softone-bi) | ✓/− |  |  |
 | [SolarWinds Service Desk](/power-query/connectors/solarwinds-service-desk) | ✓/− |  |  |
@@ -213,7 +212,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | Starburst secured by Entra ID | ✓/− |  |  |
 | [SumTotal](/power-query/connectors/sumtotal) | ✓/− |  |  |
 | [Supermetrics](/power-query/connectors/supermetrics) | ✓/− |  |  |
-| SurveryMonkey | ✓/− |  |  |
+| SurveyMonkey | ✓/− |  |  |
 | [Sybase database](/power-query/connectors/sybase-database#connect-to-a-sybase-database-from-power-query-online) | ✓/− |  |  |
 | TeamDesk (Beta) | ✓/− |  |  |
 | Tenforce (Smart)List | ✓/− |  |  |
@@ -235,7 +234,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Wolters Kluwer CCH Tagetik](/power-query/connectors/wolters-kluwer-cch-tagetik) | ✓/− |  |  |
 | Wrike (Beta) | ✓/− |  |  |
 | [XML](/power-query/connectors/xml#load-a-local-xml-file-from-power-query-online) | ✓/− |  |  |
-| [Zendesk](/power-query/connectors/zendesk) | ✓/− |  |  |
+| [Zendesk](/power-query/connectors/zendesk-data) | ✓/− |  |  |
 | Zoho Creator | ✓/− |  |  |
 | Zucchetti HR Infinity (Beta) | ✓/− |  |  |
 
@@ -245,7 +244,6 @@ Transport Layer Security (TLS) is a widely adopted security protocol that's desi
 
 | Connector | Dataflow Gen2 | Copy activity | Copy job |
 |:--|:-:|:-:|:-:|
-|[Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-copy-activity.md)| | ✓ | ✓ |
 |[Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-copy-activity.md)| | ✓ | ✓ |
 |[Azure Blobs](connector-azure-blob-storage-copy-activity.md)| | ✓ | ✓ |
 |[Azure Data Explorer (Kusto)](connector-azure-data-explorer-copy-activity.md)| | ✓ | ✓ |

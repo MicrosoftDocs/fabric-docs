@@ -3,11 +3,12 @@ title: Accelerate Data Prep with Data Wrangler
 description: Learn how to use Data Wrangler in Microsoft Fabric to explore data and generate transformation code. Launch from notebooks, apply cleaning operations, and export pandas functions.
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: erenorbey
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 12/09/2025
-
+ms.date: 04/22/2026
+ai-usage: ai-assisted
 ms.search.form: Data Wrangler
 ---
 
@@ -53,6 +54,49 @@ In the notebook ribbon "Home" tab, use the Data Wrangler dropdown to browse the 
 > You can't open Data Wrangler while the notebook kernel is busy. An executing cell must finish before Data Wrangler can launch, as shown in this screenshot:
 
 :::image type="content" source="media/data-wrangler/launch-data-wrangler.png" alt-text="Screenshot showing a Fabric notebook with the Data Wrangler dropdown prompt." lightbox="media/data-wrangler/launch-data-wrangler.png":::
+
+## Launch Data Wrangler from a cell
+
+You can also open Data Wrangler directly from a notebook cell, without navigating to the ribbon. This inline entry point surfaces Data Wrangler right where you work with DataFrames.
+
+When you run a cell that outputs a DataFrame, a Data Wrangler prompt appears at the cell level. Select the prompt to open that DataFrame in Data Wrangler. Supported commands include:
+
+- `df.head()` or `df.head(n)`
+- `df.tail()` or `df.tail(n)`
+- `df.show()` or `df.show(n)`
+
+1. Run a cell that outputs a DataFrame:
+
+   ```python
+   import pandas as pd
+
+   df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/titanic.csv")
+   df.head()
+   ```
+
+1. After the cell finishes running, a Data Wrangler prompt appears at the cell. Select **Open in Data Wrangler** to launch Data Wrangler with the `df` DataFrame.
+
+   :::image type="content" source="media/data-wrangler/launch-from-cell-single.png" alt-text="Screenshot showing the Data Wrangler prompt at the cell level for a single DataFrame." lightbox="media/data-wrangler/launch-from-cell-single.png":::
+
+When a cell defines multiple DataFrames, the prompt provides a submenu that lists all DataFrames in the cell. You can open any of them in Data Wrangler—even ones you didn't explicitly print.
+
+1. Run a cell that defines multiple DataFrames:
+
+   ```python
+   import pandas as pd
+
+   titanic_df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/titanic.csv")
+   iris_df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/iris-data.csv")
+   titanic_df.head()
+   iris_df.head()
+   ```
+
+1. After the cell finishes running, select the Data Wrangler prompt at the cell. A submenu lists all DataFrames defined in the cell. Select the one you want to explore.
+
+   :::image type="content" source="media/data-wrangler/launch-from-cell-multiple.png" alt-text="Screenshot showing the Data Wrangler submenu at the cell level listing multiple DataFrames." lightbox="media/data-wrangler/launch-from-cell-multiple.png":::
+
+> [!TIP]
+> The submenu lists DataFrames defined in the current cell. To open a DataFrame from a previous cell, run a new cell that references it—or use the Data Wrangler dropdown in the **Home** ribbon tab to browse all active DataFrames.
 
 ## Choosing custom samples
 
@@ -150,4 +194,4 @@ Now that you know how to use Data Wrangler with pandas DataFrames, explore these
 - [Watch a live demo](https://www.youtube.com/watch?v=Ge0VWZMa50I) - See Data Wrangler in action with Guy in a Cube
 - [Try Data Wrangler in VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.datawrangler) - Use Data Wrangler in Visual Studio Code
 
-**Have feedback?** Share your ideas in the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
+**Have feedback?** Share your ideas in the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

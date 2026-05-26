@@ -84,7 +84,6 @@ Currently the following supported data sources are exposed through the Fabric AP
   - Snowflake
   - Open mirrored databases
 - Azure SQL database
-- Datamart
 
 ## Features
 

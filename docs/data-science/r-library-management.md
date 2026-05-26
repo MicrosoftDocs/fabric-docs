@@ -1,7 +1,8 @@
 ---
 title: R library management
 description: How to manage R libraries.
-ms.reviewer: lagayhar, sgilley
+ms.author: lagayhar
+ms.reviewer: ruxu
 ms.topic: how-to
 ms.date: 02/28/2026
 ms.search.form: R Language
@@ -28,6 +29,15 @@ There are two levels of packages installed on [!INCLUDE [product-name](../includ
 
 - **Session** : A session-level installation creates an environment for a specific notebook session. The change of session-level libraries isn't persisted between sessions. 
 
+### Environment publishing modes (Quick vs Full)
+
+When you install libraries in a Fabric environment, you choose a publishing mode:
+
+- **Quick mode** publishes in about 5 seconds. Libraries install when a notebook session starts. Quick mode is best for rapid iteration during development.
+- **Full mode** creates a stable, reproducible library snapshot. Publishing typically takes 3 to 6 minutes, and session startup adds 1 to 3 minutes for dependency deployment.
+
+These modes apply to environment-level R libraries. Session-level R libraries that you install through inline commands (such as `install.packages()`) or from the Resources folder are per-session and per-notebook; they aren't affected by environment publishing modes. For details, see [Manage libraries in Fabric environments](../data-engineering/environment-manage-library.md#select-publish-mode-for-libraries).
+
 The following table summarizes the current available R library management behaviors: 
 
 |Library Type |Environment installation |Session-level installation |
@@ -48,7 +58,7 @@ When you do interactive data analysis or machine learning, you might try newer p
 - When you install session-scoped libraries, only the current notebook has access to the specified libraries.
 - These libraries don't impact other sessions or jobs that use the same Spark pool.
 - These libraries install on top of the base runtime and pool level libraries.
-- Notebook libraries take the highest precedence.
+- Notebook libraries take the highest precedence. The precedence order is: notebook/session-scoped libraries > environment-applied libraries > base runtime libraries.
 - Session-scoped R libraries don't persist across sessions. These libraries install at the start of each session when the related installation commands are executed.
 - Session-scoped R libraries automatically install across both the driver and worker nodes.
 
@@ -93,13 +103,13 @@ Currently, the following `devtools` functions are supported within [!INCLUDE [pr
 
 |Command|Description|
 |---------------|----------------|
-|install_github()	|Installs an R package from GitHub|
-|install_gitlab()	|Installs an R package from GitLab|
-|install_bitbucket()	|Installs an R package from BitBucket|
-|install_url()	|Installs an R package from an arbitrary URL|
-|install_git()	|Installs from an arbitrary git repository|
-|install_local()	|Installs from a local file on disk|
-|install_version()	|Installs from a specific version on CRAN|
+|install_github()    |Installs an R package from GitHub|
+|install_gitlab()    |Installs an R package from GitLab|
+|install_bitbucket()    |Installs an R package from BitBucket|
+|install_url()    |Installs an R package from an arbitrary URL|
+|install_git()    |Installs from an arbitrary git repository|
+|install_local()    |Installs from a local file on disk|
+|install_version()    |Installs from a specific version on CRAN|
 
 ### Install R custom libraries
 
@@ -116,6 +126,9 @@ To use a session-level custom library, first upload it to an attached Lakehouse.
     ```R
     install.packages("filepath/filename.tar.gz", repos = NULL, type = "source")
     ```
+
+> [!NOTE]
+> Inline installation and Resources folder approaches for R libraries are per-session and per-notebook. They aren't affected by environment publishing modes.
 
 ### View installed libraries
 
@@ -196,6 +209,7 @@ sdf_len(sc, 5) %>%
 ## Related content
 
 - [Create, configure, and use an environment in Microsoft Fabric](../data-engineering/create-and-use-environment.md)
+- [Manage libraries in Fabric environments (Quick and Full modes)](../data-engineering/environment-manage-library.md)
 
 Learn more about the R functionalities:
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Use AutoML (interface)
 description: Use the low-code AutoML interface in Fabric to automate the ML workflow
 ms.topic: overview
@@ -6,8 +6,8 @@ ms.custom: sfi-image-nochange
 ms.author: scottpolly
 author: s-polly
 ms.date: 03/02/2026
-reviewer: midesa
-ms.reviewer: midesa
+reviewer: ruixinxu
+ms.reviewer: ruxu
 ---
 
 # Use the low-code AutoML interface in Fabric
@@ -57,7 +57,7 @@ Selecting the right ML task and AutoML mode ensures that the AutoML wizard align
 
 ### Set up training data
 
-In this step, you configure the training data that AutoML will use to build your model. Start by selecting the **prediction column**—this is the target column that your model will be trained to predict.
+In this step, you configure the training data that AutoML will use to build your model. Start by selecting the **prediction column**�this is the target column that your model will be trained to predict.
 
 :::image type="content" source="media/automl/setup-training-data.png" alt-text="Screenshot of setting up training data for AutoML." lightbox="media/automl/setup-training-data.png":::
 

@@ -4,7 +4,8 @@ description: Build LightGBM classification, regression, and ranking models with 
 ms.topic: how-to
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: JessicaXYWang
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.date: 07/30/2025
 ---
 

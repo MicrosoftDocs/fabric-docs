@@ -1,7 +1,8 @@
 ---
 title: How to Use Fabric for Retrieval Augmented Generation
 description: Learn how to build a Retrieval Augmented Generation (RAG) application in Microsoft Fabric using Azure AI Search and OpenAI for enhanced data-driven insights.
-ms.reviewer: alsavelv
+ms.author: lagayhar
+ms.reviewer: ruxu
 ms.date: 10/01/2025
 ms.topic: concept-article
 ai.usage: ai-assisted

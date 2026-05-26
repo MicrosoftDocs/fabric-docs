@@ -2,7 +2,7 @@
 title: Spark SQL Reference for Materialized Lake Views
 description: Learn about the Spark SQL syntax for activities related to materialized lake views in Microsoft Fabric.
 ms.topic: concept-article
-ms.reviewer: abhishjain
+ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.date: 03/18/2026
 #customer intent: As a data engineer, I want to understand the Spark SQL syntax for creating, listing, updating, and deleting materialized lake views in Microsoft Fabric so that I can manage them effectively.
 ---
@@ -21,10 +21,10 @@ You can define a materialized lake view from any table or from another materiali
 ### Syntax
 
 ```sql
-CREATE [OR REPLACE] MATERIALIZED LAKE VIEW [IF NOT EXISTS][workspace.lakehouse.schema].MLV_Identifier 
+CREATE [OR REPLACE] MATERIALIZED LAKE VIEW [IF NOT EXISTS] [workspace.lakehouse.schema].MLV_Identifier 
 [( 
-    CONSTRAINT constraint_name1 CHECK (condition expression1)[ON MISMATCH DROP | FAIL],  
-    CONSTRAINT constraint_name2 CHECK (condition expression2)[ON MISMATCH DROP | FAIL] 
+    CONSTRAINT constraint_name1 CHECK (condition expression1) [ON MISMATCH DROP | FAIL],  
+    CONSTRAINT constraint_name2 CHECK (condition expression2) [ON MISMATCH DROP | FAIL] 
 )] 
 [PARTITIONED BY (col1, col2, ... )] 
 [COMMENT "description or comment"] 

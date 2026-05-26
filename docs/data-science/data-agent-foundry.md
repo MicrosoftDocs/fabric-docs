@@ -1,11 +1,14 @@
 ---
 title: Consume a data agent in Microsoft Foundry (preview)
 description: Learn how to consume a data agent in Microsoft Foundry (preview).
+ms.author: jburchel
+author: jonburchel
 ms.topic: how-to
 ms.reviewer: scottpolly
-ms.date: 12/05/2025
+ms.date: 05/12/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
+ai-usage: ai-assisted
 #customer intent: As an Analyst, I want to consume Fabric data agent within Foundry Agent Service in Microsoft Foundry.
 ---
 
@@ -13,8 +16,8 @@ ms.collection: ce-skilling-ai-copilot
 
 Data agent in Microsoft Fabric transforms enterprise data into conversational Q&A systems. It enables users to interact with their data through chat, to uncover actionable insights. One way to consume Fabric data agent is through Foundry Agent Service, a core component of Microsoft Foundry. Through integration of Fabric data agents with Foundry, your Azure AI agents can directly tap into the rich, structured, and semantic data available in Microsoft Fabric OneLake. This integration provides immediate access to high-quality enterprise data, and it empowers your Azure AI agents to generate actionable insights and streamline analytical workflows. Organizations can then enhance data-driven decision-making with Fabric data agent as a powerful knowledge source within their Azure AI environments.
 
-> [!IMPORTANT]  
-> This feature is in [preview](../fundamentals/preview.md). Use the latest beta or preview version of the [Azure AI Agents Python SDK](https://pypi.org/project/azure-ai-agents/1.1.0b3/).
+> [!IMPORTANT]
+> This feature is in [preview](../fundamentals/preview.md). Use the latest preview release of the [azure-ai-projects](https://pypi.org/project/azure-ai-projects/) Python SDK.
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 - Developers and end users in Foundry must at least have the `AI Developer` Role-Based Access Control (RBAC) role.
@@ -67,9 +70,7 @@ The **Create a new Microsoft Fabric connection** window opens, as shown in the f
 
 :::image type="content" source="./media/how-to-consume-data-agent/create-connection.png" alt-text="Screenshot showing creating a connection." lightbox="./media/how-to-consume-data-agent/create-connection.png":::
 
-When you set up the connection, provide the Fabric data agent `workspace-id` and `artifact-id` values as custom keys. You can find the `workspace-id` and `artifact-id` values in the published Fabric data agent endpoint. Your Fabric data agent endpoint has this format:
-
-https://fabric.microsoft.com/groups/<**workspace_id**>/aiskills/<**artifact-id**>, and select the **Is Secret** checkbox
+When you set up the connection, provide the Fabric data agent `workspace-id` and `artifact-id` values as custom keys. You can find the `workspace-id` and `artifact-id` values in the published Fabric data agent endpoint. Your Fabric data agent endpoint has this format: `https://fabric.microsoft.com/groups/<workspace_id>/aiskills/<artifact-id>`. Select the **Is Secret** checkbox.
 
 Finally, assign a name to your connection, and choose whether to make it available to all projects in Foundry or to restrict it to the current project.
 
@@ -83,9 +84,20 @@ You can also adjust the deployment model, add Actions, or change Model settings 
 
 **Add Fabric data agent programmatically**: The following steps describe how to add a Fabric data agent programmatically to your Azure AI agent in Python. For other languages (C#, JavaScript), see [this](https://aka.ms/AgentFabricDoc) resource.
 
-#### Step 1: Create a project client
+#### Step 1: Set up environment variables and import the SDK
 
-Create a client object that contains the connection string that connects to your AI project and other resources.
+Set the following environment variables before you run the code:
+
+- `PROJECT_ENDPOINT`: The Foundry project endpoint, found on the Overview page of your Foundry project.
+- `MODEL_DEPLOYMENT_NAME`: The model deployment name, as listed under **Models + endpoints** in your Foundry project.
+- `FABRIC_CONNECTION_NAME`: The name of the Microsoft Fabric connection, as it appears in your Foundry **Connected resources**.
+
+Install the preview SDKs and import the modules:
+
+```bash
+pip install azure-identity
+pip install --pre azure-ai-projects
+```
 
 ```python
 import os
@@ -94,71 +106,72 @@ from azure.identity import DefaultAzureCredential
 from azure.ai.agents.models import FabricTool, ListSortOrder
 ```
 
-#### Step 2: Create an Agent with the Microsoft Fabric tool enabled
+#### Step 2: Create an agent with the Microsoft Fabric tool enabled
 
-To make the Fabric data agent tool available to your Azure AI agent, use a connection to initialize the tool and attach it to the agent. You can find your connection in the **connected resources** section of your project in the Foundry portal.
+To make the Fabric data agent tool available to your Azure AI agent, retrieve the connection ID from the named connection in your Foundry project, then pass it to `FabricTool`:
 
 ```python
-# The Fabric connection ID can be found in the Foundry project as a property of the Fabric tool
-# Your connection ID is in the format /subscriptions/<your-subscription-id>/resourceGroups/<your-resource-group>/providers/Microsoft.MachineLearningServices/workspaces/<your-project-name>/connections/<your-fabric-connection-name>
-conn_id = "your-connection-id"
-
-# Initialize the AI project client
 project_client = AIProjectClient(
     endpoint=os.environ["PROJECT_ENDPOINT"],
     credential=DefaultAzureCredential(),
 )
 
-# Initialize agent Fabric tool and add the connection ID
+# Look up the Fabric connection by name
+conn_id = project_client.connections.get(os.environ["FABRIC_CONNECTION_NAME"]).id
+
+# Initialize the Fabric tool with the connection ID
 fabric = FabricTool(connection_id=conn_id)
 
-# Create agent with the Fabric tool and process assistant run
 with project_client:
-    agent = project_client.agents.create_agent(
-        model="gpt-4o",
-        name="my-assistant",
-        instructions="You are a helpful assistant",
+    agents_client = project_client.agents
+
+    agent = agents_client.create_agent(
+        model=os.environ["MODEL_DEPLOYMENT_NAME"],
+        name="my-agent",
+        instructions="You are a helpful agent",
         tools=fabric.definitions,
-        headers={"x-ms-enable-preview": "true"},
     )
     print(f"Created agent, ID: {agent.id}")
 ```
-#### Step 3: Create a thread
 
+#### Step 3: Create a thread and send a message
 
 ```python
-# Create thread for communication
-thread = project_client.agents.create_thread()
-print(f"Created thread, ID: {thread.id}")
+    # Create a thread for communication
+    thread = agents_client.threads.create()
+    print(f"Created thread, ID: {thread.id}")
 
-# Create message to thread
-# Remember to update the message with your data
-message = project_client.agents.create_message(
-    thread_id=thread.id,
-    role="user",
-    content="what is top sold product in Contoso last month?",
-)
-print(f"Created message, ID: {message.id}")
+    # Add a message to the thread
+    message = agents_client.messages.create(
+        thread_id=thread.id,
+        role="user",
+        content="What is the top sold product in Contoso last month?",
+    )
+    print(f"Created message, ID: {message.id}")
 ```
-#### Step 4: Create a run and check the output
 
-Create a run, and observe that the model uses the Fabric data agent tool to provide a response to the user's question.
+#### Step 4: Run the agent and read the output
+
+Process the run, then iterate the messages to read the agent's response:
 
 ```python
-# Create and process agent run in thread with tools
-run = project_client.agents.create_and_process_run(thread_id=thread.id, assistant_id=agent.id)
-print(f"Run finished with status: {run.status}")
+    # Create and process the run with the Fabric tool
+    run = agents_client.runs.create_and_process(thread_id=thread.id, agent_id=agent.id)
+    print(f"Run finished with status: {run.status}")
 
-if run.status == "failed":
-    print(f"Run failed: {run.last_error}")
+    if run.status == "failed":
+        print(f"Run failed: {run.last_error}")
 
-# Delete the assistant when done
-project_client.agents.delete_agent(agent.id)
-print("Deleted agent")
+    # Delete the agent when finished
+    agents_client.delete_agent(agent.id)
+    print("Deleted agent")
 
-# Fetch and log all messages
-messages = project_client.agents.list_messages(thread_id=thread.id)
-print(f"Messages: {messages}")
+    # Fetch and print all messages in the thread
+    messages = agents_client.messages.list(thread_id=thread.id, order=ListSortOrder.ASCENDING)
+    for msg in messages:
+        if msg.text_messages:
+            last_text = msg.text_messages[-1]
+            print(f"{msg.role}: {last_text.text.value}")
 ```
 
 ## Related content

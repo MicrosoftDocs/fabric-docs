@@ -71,7 +71,7 @@ Certain table configurations and data types have limitations when mirroring to F
 
 The SQL analytics endpoint for mirrored databases has the same limitations as the Lakehouse SQL analytics endpoint.
 
-- The SQL analytics endpoint is the same as [the Lakehouse SQL analytics endpoint](../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It's the same read-only experience. For more information, see [SQL analytics endpoint limitations](../data-warehouse/limitations.md#limitations-of-the-sql-analytics-endpoint).
+- The SQL analytics endpoint is the same as [the Lakehouse SQL analytics endpoint](../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It's the same read-only experience. For more information, see [SQL analytics endpoint limitations](../data-engineering/lakehouse-sql-analytics-endpoint.md#limitations).
 
 ## Supported regions
 

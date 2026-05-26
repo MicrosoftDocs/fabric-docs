@@ -3,7 +3,8 @@ title: Use AI in Data Wrangler
 description: Learn how to use AI functions and other AI-powered features in Data Wrangler to further accelerate data preparation
 author: s-polly
 ms.author: scottpolly
-ms.reviewer: vimeland
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: how-to
 ms.date: 09/04/2025
 ---
@@ -69,4 +70,4 @@ To use Copilot in Data Wrangler, select the Copilot text box above the code cell
 - To get started with Data Wrangler, visit [this article](data-wrangler.md)
 - For a live-action demo of Data Wrangler in Fabric, watch [this video from our friends at Guy in a Cube](https://www.youtube.com/watch?v=Ge0VWZMa50I)
 - To try out Data Wrangler in Visual Studio Code, go to [Data Wrangler in VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.datawrangler)
-- Did we miss a feature you need? Let us know! Suggest it in the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/)
+- Did we miss a feature you need? Let us know! Suggest it in the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas)

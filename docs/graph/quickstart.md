@@ -20,6 +20,7 @@ For a comprehensive tutorial that covers the full Adventure Works data model and
 
 Before you start this quickstart, verify that:
 
+1. You have access to a Microsoft Fabric capacity (F2 or higher) or a [Fabric trial](../fundamentals/fabric-trial.md).
 1. [Graph is available in your region](overview.md#region-availability).
 1. A Fabric administrator enabled graph in your Fabric tenant. They enable this setting in the [admin portal](../admin/admin-center.md).
 
@@ -29,6 +30,9 @@ Before you start this quickstart, verify that:
 
     > [!IMPORTANT]
     > Access management of the graph is restricted to the workspace that hosts it. Users outside of the workspace can't access the graph. Users within the workspace who have access to the underlying data in the lakehouse can model and query the graph.
+
+> [!TIP]
+> If you don't see **Graph model (preview)** in the **+ New item** menu, ask your Fabric administrator to enable graph in the [admin portal](../admin/admin-center.md).
 
 ## Load sample data
 
@@ -55,7 +59,7 @@ To create your graph, first load sample data into a lakehouse in your Fabric wor
 1. Enter a name (for example, "AdventureWorksLakehouse"), clear the **Lakehouse schemas** option, and select **Create**.
 
     > [!IMPORTANT]
-    > Graph doesn't currently support lakehouses with [lakehouse schema (preview) enabled](../data-engineering/lakehouse-schemas.md).
+    > Graph doesn't currently support lakehouses with [lakehouse schemas enabled](../data-engineering/lakehouse-schemas.md).
 
 ### Load the data into tables
 
@@ -85,9 +89,9 @@ For this quickstart, you only need two tables: *adventureworks_customers* and *a
 
 After creating the graph model, you're taken to the graph view where you can see the default mode is set to **Model** with **Save**, **Get data**, **Add node**, and **Add edge** buttons at the top.
 
-## Create a graph
+## Add data to your graph model
 
-To create a graph in Microsoft Fabric, follow these steps in graph view:
+To add data to your graph model, follow these steps in graph view:
 
 1. Select **Get data**.
 1. From the OneLake catalog, select your lakehouse with the Adventure Works data.
@@ -132,7 +136,7 @@ Now that your data is loaded, define your graph's structure by adding nodes and 
     :::image type="content" source="./media/quickstart/edge-add-purchases.png" alt-text="Screenshot showing the add edge dialog." lightbox="./media/quickstart/edge-add-purchases.png":::
 
 1. Select **Confirm**.
-1. Select **Save** to load the graph.
+1. Select **Save** to load the graph. Loading might take a few moments. When the graph loads successfully, you see the node and edge labels in the graph view canvas.
 
 ## Query your graph
 
@@ -153,7 +157,7 @@ Run a GQL query to find the top five customers by order count.
     LIMIT 5
     ```
 
-1. Select **Run query** to see the top five customers by order count.
+1. Select **Run query**. You should see five rows listing customer names and their order counts, sorted from most to fewest orders.
 
 The following image shows the GQL query and its results:
 

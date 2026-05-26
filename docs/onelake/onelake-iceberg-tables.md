@@ -1,7 +1,9 @@
 ---
 title: Use Iceberg tables with OneLake
 description: Discover how to leverage table format virtualization in OneLake to seamlessly read Delta Lake tables as Iceberg or create shortcuts to Iceberg tables in storage. Explore how OneLake automatically virtualizes Iceberg tables into the Delta Lake format for use across Fabric workloads, and Delta Lake tables into the Iceberg format for compatibility with Iceberg readers.
-ms.reviewer: mahi
+ms.reviewer: mahi # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.date: 7/1/2025
 #customer intent: As a OneLake user, I want to learn how to use table format virtualization to read Iceberg tables across Fabric workloads, or read Fabric (Delta Lake) tables using Apache Iceberg readers.
@@ -167,6 +169,16 @@ If you see this error, have your Fabric tenant admin double-check that you've en
 ## Limitations and considerations
 
 Keep in mind the following temporary limitations when you use this feature: 
+
+* **Supported Apache Iceberg version**
+
+  The table format virtualization feature currently supports [**Apache Iceberg V2**](https://iceberg.apache.org/spec/#version-2-row-level-deletes) today. This means when a Delta Lake table is read by this feature, Iceberg V2 metadata is generated. Original Iceberg tables provided to this feature must be Iceberg V2 in order for conversion to Delta Lake format to occur.
+
+  We're working on support for reading [Iceberg V3 tables](https://iceberg.apache.org/spec/#version-3-extended-types-and-capabilities). Stay tuned!
+
+* **Latest metadata version converted**
+
+  The table format virtualization feature currently converts the latest table metadata version in the original table format. If multiple versions are written to the original table format, only the most recent table metadata version will be converted to the virtual table format.
 
 * **Supported data types**
   

@@ -2,17 +2,15 @@
 title: Manage Fabric materialized lake views with public APIs
 description: Learn how to use Fabric REST APIs to schedule, run, and manage materialized lake view refresh jobs using the Job Scheduler.
 ms.topic: reference
-ms.reviewer: rkottackal, nijelsf
-ms.date: 03/18/2026
+ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
+ms.date: 05/26/2026
 ai-usage: ai-assisted
 ms.search.form: MLV REST API
 ---
 
 # Manage and refresh materialized lake views in Fabric with APIs
 
-Microsoft Fabric REST APIs provide service endpoints to manage Fabric items. This article describes the public REST APIs available for materialized lake views and how to use them.
-
-With materialized lake view APIs, data engineers and citizen developers can automate lineage operations and integrate them with other tools and systems.
+Microsoft Fabric REST APIs provide service endpoints to manage Fabric items. This article describes the public REST APIs available for materialized lake views and how to use them. With materialized lake view APIs, data engineers and citizen developers can automate lineage operations and integrate them with other tools and systems.
 
 The following **job scheduler** actions are available for materialized lake views with user authentication.
 
@@ -38,7 +36,7 @@ For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler) w
 Before you use the materialized lake views REST APIs, complete these prerequisites:
 - To use Fabric REST APIs, [register an application with Microsoft Entra ID and get a Microsoft Entra token for Fabric](/rest/api/fabric/articles/get-started/fabric-api-quickstart). Use that token in the authorization header.
 - Fabric REST APIs for MLV support [Microsoft Entra users](/fabric/admin/service-admin-portal-developer#service-principals-can-call-fabric-public-apis). Choose authorization method and [scope](/rest/api/fabric/articles/scopes#specific-fabric-rest-apis-scopes) based on how your app accesses the APIs.
-- Fabric REST API uses a unified endpoint model for lineage operations. Replace placeholders such as `{WORKSPACE_ID}`, `{LAKEHOUSE_ID}`, and payload values in the examples before calling the APIs.
+- Fabric REST APIs use a unified endpoint model for lineage operations. Replace placeholders such as `{WORKSPACE_ID}`, `{LAKEHOUSE_ID}`, and payload values in the examples before calling the APIs.
 
 ## Examples of REST API usage with materialized lake views
 
@@ -46,7 +44,7 @@ Use the following Fabric REST APIs to schedule, run, retrieve, and manage refres
 
 ### Create Schedule for MLV in Lakehouse
 
-Create a new schedule to periodically refresh materialized lake views lineage in a lakehouse. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule?tabs=HTTP). Currently, materialized lake views support only one active refresh schedule per lineage. Use [Update Schedule](#update-schedule-for-mlv-in-lakehouse) to update an existing schedule.
+Create a new schedule to periodically refresh materialized lake views lineage in a lakehouse. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule?tabs=HTTP). 
 
 **Sample request**:
 
@@ -373,14 +371,11 @@ Retry-After: 60
 
 The following limitations apply to the materialized lake views REST APIs:
 
-- *Service principal authentication:* Materialized lake views (MLV) don't support authentication through service principals.
 - *Schedule limits per lakehouse:* The [job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule) enforces limits on how many schedules can be configured per lakehouse.
-- *Single schedule per lineage:* MLV supports only one active refresh schedule per lineage. Creating more than one refresh schedule for a lineage might cause UI instability.
-- *Job status display:* The status returned by [list item job instances](#list-job-instances-for-mlv-in-lakehouse) and [get item job instance](#get-job-instance-details-for-mlv-in-lakehouse) reflects Monitoring hub status. It might differ from materialized lake views [run history](./run-history.md#run-states-in-lineage-view) status (for example, **Skipped** can appear as **Canceled** in Monitoring hub).
+- *Job status display:* The status returned by [list item job instances](#list-job-instances-for-mlv-in-lakehouse) and [get item job instance](#get-job-instance-details-for-mlv-in-lakehouse) reflects Monitoring hub status. It might differ from materialized lake views [run history](./run-history.md#view-recent-refreshes) status (for example, **Skipped** can appear as **Canceled** in Monitoring hub).
 - *Entity display limits:* The [job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP#limitations) interface displays a limited number of completed and active jobs, which can affect visibility into historical or concurrent executions.
 
 ## Related content
 
 - [Microsoft Fabric REST API](/rest/api/fabric/articles/)
 - [Job Scheduler APIs in Fabric](/rest/api/fabric/core/job-scheduler)
-

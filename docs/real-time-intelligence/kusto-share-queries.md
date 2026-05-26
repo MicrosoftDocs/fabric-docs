@@ -23,7 +23,7 @@ To save a query to a dashboard for continuous monitoring, follow these steps:
 
 1. Select **Save to dashboard**.
 
-    :::image type="content" source="media/real-time-dashboard/pin-to-dashboard.png" alt-text="Screenshot of the pin to dashboard button.":::
+    :::image type="content" source="media/real-time-dashboard/save-to-dashboard.png" alt-text="Screenshot of the pin to dashboard button.":::
 
 1. In the **Save query to dashboard** pane:
     1. Select an existing dashboard or create a new dashboard.
@@ -31,7 +31,7 @@ To save a query to a dashboard for continuous monitoring, follow these steps:
     1. Optionally, select **Open dashboard after tile creation** to view your dashboard immediately after creation.
     1. Select **Create**.
 
-        :::image type="content" source="media/real-time-dashboard/pin-to-dashboard.png" alt-text="Screenshot of the Pin query to dashboard window.":::
+        :::image type="content" source="media/real-time-dashboard/save-to-dashboard.png" alt-text="Screenshot of the Pin query to dashboard window.":::
 
 ## Copy query
 

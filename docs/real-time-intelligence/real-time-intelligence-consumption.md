@@ -5,13 +5,13 @@ ms.reviewer: bwatts
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
 ms.custom:
-ms.date: 02/23/2026
+ms.date: 05/11/2026
 ms.search.form: Eventhouse,KQL Database, Overview
 ai-usage: ai-assisted
 ---
 # Eventhouse and KQL Database consumption
 
-[Eventhouses](create-eventhouse.md) and [KQL databases](create-database.md) operate on a fully managed engine. With an Eventhouse or KQL database, you can expect available compute for your analytics within 5 to 10 seconds. The compute resources grow with your data analytic needs. This article explains compute usage reporting of the KQL databases in Microsoft Fabric, including [Eventhouse UpTime](#eventhouse uptime) and [storage](#monitor-onelake-storage).
+[Eventhouses](create-eventhouse.md) and [KQL databases](create-database.md) operate on a fully managed engine. With an Eventhouse or KQL database, you can expect available compute for your analytics within 5 to 10 seconds. The compute resources grow with your data analytic needs. This article explains compute usage reporting of the KQL databases in Microsoft Fabric, including [Eventhouse UpTime](#eventhouse-uptime) and [storage](#monitor-onelake-storage).
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, visit [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md).
 
@@ -91,8 +91,10 @@ Storage is billed separately from your Fabric or Power BI Premium Capacity units
 
 * **OneLake Cache Storage** is premium storage that is utilized to provide the fastest query response times. When you set the [cache policy](/azure/data-explorer/kusto/management/cachepolicy?context=/fabric/context/context-rti&pivots=fabric), you affect this storage tier. For instance, if you typically query back seven days then you can set the cache retention to seven days for best performance. This storage tier is comparable to the Azure ADLS (Azure Data Lake Storage) premium tier.
 
+<!-- // hide until capacity planner is released
 > [!NOTE]
 > Enabling the [Capacity Planner](eventhouse-smart-capacity-control.md) means that you aren't charged for *OneLake Cache Storage*. When minimum capacity is set, the eventhouse is always active resulting in 100% Eventhouse UpTime. You can then use the capacity planner scheduler to set minimum capacity values for specific times, without needing to worry about cache storage costs as it's included in the capacity charges. For more information, see [Schedule smart Eventhouse capacity control](eventhouse-smart-capacity-control.md).
+-->
 
 * **OneLake Standard Storage** is standard storage that is used to persist and store all queryable data. When you set the [retention policy](data-policies.md#data-retention-policy), you affect this storage tier. For instance, if you need to maintain 365 days of queryable data you can set the retention to 365 days. This storage tier is comparable to the Azure ADLS (Azure Data Lake Storage) hot tier.
 

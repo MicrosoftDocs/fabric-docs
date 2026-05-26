@@ -123,6 +123,7 @@ When a capacity is overloaded, a capacity admin can use the Fabric capacity metr
 2. The *Throttling* charts on the *Compute* page show when smoothed usage exceeds one of the throttling limits.
 
 ## How to stop throttling when it occurs
+
 Capacities are self-healing, so you can always wait until the overload state is over before submitting new requests.
 
 However, to stop throttling faster, you can use the strategies listed below.
@@ -130,6 +131,7 @@ However, to stop throttling faster, you can use the strategies listed below.
 When using F SKU capacities, to stop throttling:
 - Temporarily increase the SKU. By increasing your SKU, you burndown carryforward faster because each timepoint has more idle capacity. 
 - Pause and then resume your capacity. Pausing a capacity results in a billing event for the accumulated future capacity usage. When a capacity starts or resumes, it has zero future capacity usage so it can accept new operations right away.
+- Capacity overage billing can also stop throttling from occurring; however, it's charged at 3x the normal capacity rate. For more details, see [Enable capacity overage](enable-capacity-overage.md).
 
 When using P SKU capacities, to stop throttling:
 * Enable [Autoscale](/power-bi/enterprise/service-premium-auto-scale) for the P capacity.

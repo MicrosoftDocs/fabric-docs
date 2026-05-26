@@ -1,7 +1,8 @@
 ---
 title: Use SparkR
 description: How to use SparkR, a light-weight frontend to use Apache Spark from R.
-ms.reviewer: lagayhar, sgilley
+ms.author: lagayhar
+ms.reviewer: ruxu
 ms.topic: how-to
 ms.date: 06/30/2025
 ms.search.form: R Language
@@ -191,7 +192,7 @@ head(ldf, 3)
 
 #### `gapply`
 
-Apply a function to each group of a `SparkDataFrame`. The function is to be applied to each group of the `SparkDataFrame` and should have only two parameters: grouping key and R `data.frame` corresponding to that key. The groups are chosen from `SparkDataFrames` column(s). The output of the function should be a `data.frame`. Schema specifies the row format of the resulting `SparkDataFrame`. It must represent R function’s output schema from Spark [data types](https://spark.apache.org/docs/latest/sparkr.html#data-type-mapping-between-r-and-spark). The column names of the returned `data.frame` are set by user.
+Apply a function to each group of a `SparkDataFrame`. The function is to be applied to each group of the `SparkDataFrame` and should have only two parameters: grouping key and R `data.frame` corresponding to that key. The groups are chosen from `SparkDataFrames` column(s). The output of the function should be a `data.frame`. Schema specifies the row format of the resulting `SparkDataFrame`. It must represent R function's output schema from Spark [data types](https://spark.apache.org/docs/latest/sparkr.html#data-type-mapping-between-r-and-spark). The column names of the returned `data.frame` are set by user.
 
 ```R
 # determine six waiting times with the largest eruption time in minutes.

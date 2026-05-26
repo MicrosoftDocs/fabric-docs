@@ -10,42 +10,7 @@ ms.date: 01/14/2026
 
 This article describes how to add Azure SQL Managed Instance CDC as an event source in Fabric Real-Time hub.
 
-The Azure SQL Managed Instance CDC source connector allows you to capture a snapshot of the current data in a SQL Managed Instance database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
-
-
-
-## Prerequisites 
-
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-- A running Azure SQL Managed Instance database. 
-- Your Azure SQL Managed Instance must enable public endpoint and not be behind a firewall or secured in a virtual network. 
-- CDC enabled in your Azure SQL Managed Instance by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server). 
-
-## Enable public endpoint in your Azure SQL managed instance 
-
-Go to the Azure portal, open your Azure SQL managed instance, select **Networking**, and enable public endpoint.
-
-:::image type="content" source="./media/add-source-azure-sql-managed-instance-cdc/enable-public-endpoint.png" alt-text="Screenshot that shows the Networking page with Public endpoint option enabled." lightbox="./media/add-source-azure-sql-managed-instance-cdc/enable-public-endpoint.png" :::
-
-
-## Enable CDC in your Azure SQL managed instance
-
-1. Enable CDC for the database.     
-        
-   ```sql
-   EXEC sys.sp_cdc_enable_db; 
-   ```
-2. Enable CDC for a table using a gating role option. In this example, `MyTable` is the name of the SQL table. 
-
-    ```sql            
-    EXEC sys.sp_cdc_enable_table 
-       @source_schema = N'dbo', 
-       @source_name   = N'MyTable', 
-       @role_name     = NULL 
-    GO 
-    ```
-
-    After the query executes successfully, you enabled CDC in your Azure SQL managed instance.
+[!INCLUDE [azure-sql-managed-instance-cdc-source-connector-prerequisites](../real-time-intelligence/event-streams/includes/connectors/azure-sql-managed-instance-cdc-source-connector-prerequisites.md)]
 
 ## Data sources page
 
@@ -59,7 +24,7 @@ Go to the Azure portal, open your Azure SQL managed instance, select **Network
 
 ## Add Azure SQL Managed Instance CDC as a source
 
-[!INCLUDE [azure-sql-managed-instance-cdc-source-connector](../real-time-intelligence/event-streams/includes/azure-sql-managed-instance-cdc-source-connector.md)]
+[!INCLUDE [azure-sql-managed-instance-cdc-source-connector-configuration](../real-time-intelligence/event-streams/includes/connectors/azure-sql-managed-instance-cdc-source-connector-configuration.md)]
 
 ## View data stream details
 

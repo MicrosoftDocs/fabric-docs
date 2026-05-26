@@ -32,15 +32,15 @@ Before you start, make sure you:
 
 ## Create a Dataflow Gen2 with CI/CD and Git integration
 
-Creating a Dataflow Gen2 with CI/CD and Git integration allows you to manage your dataflows efficiently within a connected Git repository. Follow these steps to get started:
+All new Dataflow Gen2 items are created with CI/CD and Git integration support by default. Follow these steps to get started:
 
 1. In the Fabric workspace, select **Create new item**, then select **Dataflow Gen2**.
 
    :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/new-dataflow-gen2-item.png" alt-text="Screenshot of the New item window with the Dataflow Gen2 item emphasized.":::
 
-1. Name your dataflow, enable Git integration, and select **Create**.
+1. Name your dataflow and select **Create**. Git integration is enabled by default for all new Dataflow Gen2 items.
 
-   :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/new-dataflow-gen2-item-set-name.png" alt-text="Screenshot of the New Dataflow Gen2 window with the dataflow name set and Git integration emphasized and selected.":::
+   :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/new-dataflow-gen2-item-set-name.png" alt-text="Screenshot of the New Dataflow Gen2 (CI/CD) dialog with the Name field and Create button.":::
 
    The dataflow opens in the authoring canvas, where you can start creating your dataflow.
 

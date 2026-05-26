@@ -3,8 +3,8 @@ title: Use Azure OpenAI with AI Functions
 description: Learn when to use AI functions with Azure OpenAI in Fabric and where to find complete guidance.
 ms.author: lagayhar
 author: lgayhardt
-ms.reviewer: vimeland
-reviewer: virginiaroman
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: how-to
 ms.custom:
 ms.date: 01/16/2026
@@ -17,7 +17,10 @@ ai-usage: ai-assisted
 
 Use AI functions when you want the fastest way to apply Azure OpenAI to large tabular datasets in Fabric. AI functions are optimized for scale, with a default concurrency of 200 and configurable concurrency settings so you can process rows in parallel for higher throughput.
 
-Another key advantage is prebuilt LLM-based transformations exposed as DataFrame methods, including sentiment analysis, classification, extraction, summarization, translation, embeddings, similarity scoring, and custom response generation. You can use these functions in pandas and PySpark with minimal code while Fabric handles core tasks such as authentication and request orchestration.
+Another key advantage is prebuilt LLM-based transformations exposed as DataFrame methods, including sentiment analysis, classification, extraction, summarization, translation, embeddings, similarity scoring, and custom response generation. Extraction supports schema-driven output via `ExtractLabel`, where you can supply a JSON Schema to enforce structure (typed fields, enums, arrays, nullable fields, required properties, and disallowing additional properties) so LLM output conforms to a strict contract. You can also author schemas as Pydantic models and convert them to JSON Schema before use with `ai.extract`. You can use these functions in pandas and PySpark with minimal code while Fabric handles core tasks such as authentication and request orchestration.
+
+> [!NOTE]
+> Import paths differ by engine: use `synapse.ml.aifunc` for pandas DataFrames and `synapse.ml.spark.aifunc` for PySpark. PySpark AI Functions distribute across the Fabric Spark cluster for parallel execution, while pandas execution runs on a single node. Choose PySpark when you need to process large-scale datasets.
 
 For setup steps, supported functions, model and provider options, and end-to-end examples, see [Transform and enrich data with AI functions](../ai-functions/overview.md), which is the main AI functions reference in Fabric. If you need low-level API control or custom orchestration beyond built-in AI functions, use [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) or [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md).
 

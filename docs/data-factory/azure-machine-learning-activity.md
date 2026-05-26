@@ -1,6 +1,6 @@
 ---
 title: Azure Machine Learning activity
-description: Learn how to add an Azure Batch activity to a pipeline and use it to connect to an Azure Machine Learning instance and run a command.
+description: Learn how to add an Azure Machine Learning activity to a pipeline and use it to connect to an Azure Machine Learning instance and run a command.
 ms.reviewer: xupxhou, abnarain
 ms.topic: how-to
 ms.custom: pipelines
@@ -31,7 +31,7 @@ To use an Azure Machine Learning activity in a pipeline, complete the following 
 
    :::image type="content" source="media/azure-machine-learning-activity/add-azure-machine-learning-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and Azure Machine Learning activity highlighted.":::
 
-1. Select the new Azure Batch activity on the pipeline editor canvas if it isn't already selected.
+1. Select the new Azure Machine Learning activity on the pipeline editor canvas if it isn't already selected.
 
    :::image type="content" source="media/azure-machine-learning-activity/azure-machine-learning-activity-general-settings.png" alt-text="Screenshot showing the General settings tab of the Azure Machine Learning activity.":::
 
@@ -50,9 +50,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 [!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
 ## Known issues
-- The WI option in connections settings does not surface in some instances. This is a bug that a fix is being worked on at the moment.
 - Using Service Principal to run a notebook that contains Semantic Link code has functional limitations and supports only a subset of semantic link features. See the [supported semantic link functions](../data-science/semantic-link-service-principal-support.md#supported-semantic-link-functions) for details. To use other capabilities, you're recommended to [manually authenticate semantic link with a service principal](../data-science/semantic-link-service-principal-support.md#manually-authenticate-semantic-link-with-a-service-principal).
-- Some customers may not see the Workspace Identity (WI) dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix is currently being worked on.
+- Azure Machine Learning (AML) activity may fail in some configurations due to a missing dual‑token audience during authentication. The fix is currently being worked on.
 
 ## Related content
 

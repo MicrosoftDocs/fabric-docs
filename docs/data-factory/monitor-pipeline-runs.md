@@ -104,6 +104,10 @@ Use KQL queries in the Monitoring Eventhouse to analyze:
 - Performance metrics
 - Error details for troubleshooting
 
+## Monitor capacity utilization
+
+Fabric capacity admins can use the [Microsoft Fabric Capacity Metrics](../enterprise/metrics-app-install.md?tabs=1st) app to gain visibility into capacity resources. This app shows how much CPU utilization, processing time, and memory are consumed by pipelines, dataflows, and other items in capacity-enabled workspaces. Use it to identify overload causes, peak demand times, and the most resource-intensive items.
+
 ## Related content
 
 - [Quickstart: Create your first pipeline to copy data](create-first-pipeline-with-sample-data.md)

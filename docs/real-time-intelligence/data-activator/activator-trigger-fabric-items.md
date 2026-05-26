@@ -9,9 +9,9 @@ ms.search.form: Data Activator Fabric Item
 
 # Trigger Fabric items
 
-You can use Fabric Pipelines, Dataflows (preview), Notebooks, Spark Job Definition, and User Data Function (preview) to load, transform, and analyze data in Microsoft Fabric. Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules can take an action that starts jobs on Fabric items. Use this feature in the following scenarios:
+You can use Fabric Pipelines, Dataflows, Notebooks, Spark Job Definition, and User Data Functions to load, transform, and analyze data in Microsoft Fabric. Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules can take an action that starts jobs on Fabric items. Use this feature in the following scenarios:
 
-* Run Pipelines and Dataflows (preview) when new files are loaded to Azure storage accounts, to load files into OneLake. To learn more, see [Azure Storage events](/azure/storage/blobs/storage-blob-event-overview).
+* Run Pipelines and Dataflows when new files are loaded to Azure storage accounts, to load files into OneLake. To learn more, see [Azure Storage events](/azure/storage/blobs/storage-blob-event-overview).
 
 * Run Notebooks when issues with data quality are found using Power BI reports. To learn more, see [getting data from Power BI](activator-get-data-power-bi.md).
 

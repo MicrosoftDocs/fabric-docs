@@ -24,6 +24,24 @@ Fabric Runtime 2.0 incorporates the following components and upgrades designed t
 - Delta Lake: 4.0
 - R: 4.5.2
 
+> [!IMPORTANT]
+> Fabric Runtime 2.0 is being updated to Spark 4.1. The Fabric Runtime version displayed in the portal (Workspace settings and Runtime option in Environment UX) doesn't change however following components will be upgraded.
+>
+> | Component | Current version | Updated version |
+> |---|---|---|
+> | Spark | 4.0 | 4.1 |
+> | Delta Lake | 4.0 | 4.1 |
+> | Python | 3.12 | 3.13 |
+>
+> :::image type="content" source="media/runtime/runtime-2-0-upgrade.png" alt-text="Screenshot showing the Runtime 2.0 version change from Spark 4.0, Delta 4.0 to Spark 4.1, Delta 4.1." lightbox="media/runtime/runtime-2-0-upgrade.png":::
+>
+> **Breaking change:** The Python upgrade requires you to re-publish every Environment that has libraries. Until you re-publish, the **Public libraries** and **Custom libraries** tabs appear empty, and Spark jobs that target the affected Environment fail with "No module found" or "Class not found" errors.
+>
+> **Required actions**
+>
+> - Before the upgrade, record or export your library list from each Environment.
+> - After the upgrade, re-add the libraries and select **Publish** to rebuild them against Spark 4.1.
+
 > [!TIP]
 > Fabric Runtime 2.0 includes support for [the Native Execution Engine](./native-execution-engine-overview.md), which can significantly enhance performance without more costs. You can enable the native execution engine at the environment level so that all jobs and notebooks automatically inherit the enhanced performance capabilities.
 
@@ -58,6 +76,9 @@ To use Runtime 2.0 with specific notebooks or Spark job definitions:
 
 You can now start experimenting with the newest improvements and functionalities introduced in Fabric Runtime 2.0 (Spark 4.0 and Delta Lake 4.0).
 
+> [!TIP]
+> Initial Spark session startup for Runtime 2.0 may take a few minutes during public preview. To reduce cold-start delays, use Custom Live Pools (preview) to pre-warm Spark pools, or configure Resource Profiles to allocate resources in advance.
+
 > [!NOTE]
 > The WASB protocol for General Purpose v2 (GPv2) Azure Storage accounts is deprecated. You should use the latest ABFS protocol instead for reading from and writing to GPv2 storage accounts.
 
@@ -69,6 +90,17 @@ The Fabric Runtime 2.0 public preview stage gives you access to new features and
 > For up-to-date information, a detailed list of changes, and specific release notes for Fabric runtimes, check and subscribe [Spark Runtimes Releases and Updates](https://github.com/microsoft/synapse-spark-runtime).
 
 ## Key highlights
+
+### Performance and execution engine enhancements
+
+Fabric Runtime 2.0 includes the [Native Execution Engine](./native-execution-engine-overview.md), which provides significant performance improvements over open-source Spark. The engine uses vectorized processing to accelerate Spark queries on lakehouse infrastructure without requiring code changes.
+
+Key performance features in Runtime 2.0:
+
+- **Up to six times faster**: Benchmarks show up to six times faster performance compared to open-source Spark on TPC-DS workloads.
+- **Vectorized CSV parsing**: The native execution engine includes a vectorized CSV parser that accelerates CSV ingestion and query workloads. Vectorized JSON parsing and Spark Structured Streaming support are planned for future updates.
+
+To enable the native execution engine, see [Native execution engine for Fabric Data Engineering](./native-execution-engine-overview.md).
 
 ### Apache Spark 4.0
 
@@ -89,8 +121,29 @@ You can check the full list and detailed changes introduced with Delta Lake 3.3 
 [https://github.com/delta-io/delta/releases/tag/v3.3.0](https://github.com/delta-io/delta/releases/tag/v3.3.0).
 [https://github.com/delta-io/delta/releases/tag/v4.0.0](https://github.com/delta-io/delta/releases/tag/v4.0.0).
 
+### Data layout and optimization
+
+Runtime 2.0 supports data layout and optimization features for Delta tables:
+
+- **Z-ordering**: Organize data within Delta table files by specified columns to improve query performance for filtered queries.
+- **Liquid Clustering**: A flexible clustering approach that automatically optimizes data layout without manual maintenance.
+- **Parallel Delta snapshot loading**: The native execution engine loads Delta table snapshots in parallel, reducing query startup time for large tables.
+
 > [!IMPORTANT]
 > Delta Lake 4.0 specific features are experimental and only work on Spark experiences, such as Notebooks and Spark Job Definitions. If you need to use the same Delta Lake tables across multiple Microsoft Fabric workloads, don't enable those features. To learn more about which protocol versions and features are compatible across all Microsoft Fabric experiences, read [Delta Lake table format interoperability](../fundamentals/delta-lake-interoperability.md).
+
+## Compute management in Runtime 2.0
+
+Runtime 2.0 supports the following compute management features:
+
+- **Resource profiles**: Configure predefined resource allocations for Spark sessions to match workload requirements and control costs.
+- **Custom live pools (preview)**: Create dedicated, pre-warmed Spark pools that reduce session startup time. Custom live pools are available in preview for Runtime 2.0 workloads.
+
+## Limitations and notes
+
+- Delta Lake 4.0 specific features are experimental and only work on Spark experiences, such as notebooks and Spark job definitions. If you need to use the same Delta Lake tables across multiple Fabric workloads, don't enable those features. For more information, see [Delta Lake table format interoperability](../fundamentals/delta-lake-interoperability.md).
+- Runtime 2.0 is in public preview. Some features and APIs may change before general availability.
+- The VS Code extension for Fabric Spark supports Runtime 2.0 for notebook and Spark job definition development.
 
 ## Related content
 

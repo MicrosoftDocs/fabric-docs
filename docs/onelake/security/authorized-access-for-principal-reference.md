@@ -1,9 +1,9 @@
 ---
 title: Get authorized access for a principal
 description: Learn the API details for the get authorized access for a principal API.
-ms.reviewer: eloldag
-ms.author: aamerril
-author: aamerril
+ms.reviewer: aamerril # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.custom:
 ms.date: 02/11/2026

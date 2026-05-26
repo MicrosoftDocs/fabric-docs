@@ -16,6 +16,11 @@ If you don't have access to a work account, you can still start a Microsoft Fabr
 
 This article walks you through creating or using an Azure account with your personal email, setting up a user in Microsoft Entra ID, signing in to Fabric, and activating the free trial.
 
+> [!NOTE]
+> **Share your feedback as a new Fabric user**
+>
+> Your honest take on what works and what doesn't will directly shape product improvements. [Sign up to participate](https://microsoft.qualtrics.com/jfe/form/SV_1MTHk3TXzSUfEXA) and help drive Fabric's future.
+
 ## Prerequisites
 
 Before you begin, make sure you have the required information and tools ready.

@@ -2,17 +2,14 @@
 title: Get events from Azure Event Grid namespace
 description: This article describes how to get events from an Azure Event Grid namespace into Fabric Real-Time hub. 
 ms.topic: how-to
-ms.date: 01/14/2026
+ms.date: 04/01/2026
 ---
 
 # Get events from Azure Event Grid namespace into Fabric Real-Time hub
 This article describes how to get events from an Azure Event Grid namespace into Fabric Real-Time hub.
 
-## Prerequisites
+[!INCLUDE [azure-event-grid-source-connector-prerequisites](../real-time-intelligence/event-streams/includes/connectors/azure-event-grid-source-connector-prerequisites.md)]
 
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-- Enable [managed identity](/azure/event-grid/event-grid-namespace-managed-identity) on the Event Grid namespace. 
-- Enable [MQTT](/azure/event-grid/mqtt-publish-and-subscribe-portal) and [routing](/azure/event-grid/mqtt-routing) on the Event Grid namespace, if you want to receive Message Queueing Telemetry Transport (MQTT) data.  
 
 ## Get events from an Azure Event Grid namespace
 
@@ -43,7 +40,7 @@ You can get events from an Azure Event Grid namespace into Real-Time hub in one 
     :::image type="content" source="./media/add-source-azure-event-grid/select-azure-event-grid.png" alt-text="Screenshot that shows the selection of Azure Event Grid namespace as the source type in the Data sources page.":::
 
 ## Configure and connect to the Event Grid namespace
-[!INCLUDE [azure-event-grid-source-connector](../real-time-intelligence/event-streams/includes/azure-event-grid-source-connector.md)]
+[!INCLUDE [azure-event-grid-source-connector](../real-time-intelligence/event-streams/includes/connectors/azure-event-grid-source-connector-configuration.md)]
 
 ## View data stream details
 1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Event Grid namespace as a source. To close the wizard, select **Finish** at the bottom of the page.

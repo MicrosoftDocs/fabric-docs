@@ -1,7 +1,8 @@
 ---
 title: "Tutorial: Visualize predictions with a Power BI report"
 description: In this fifth part of the tutorial series, learn how to get set up to create reports and how to create various visuals to analyze data.
-ms.reviewer: amjafari, lagayhar
+ms.author: lagayhar
+ms.reviewer: ruxu
 ms.topic: tutorial
 ms.date: 04/25/2025
 #CustomerIntent: As a data scientist, I want to create a Power BI report to visualize the predictions data.

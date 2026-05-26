@@ -178,5 +178,5 @@ For more information about limitations when using the Azure Cosmos DB v2 connect
 
 - [Get started with Power BI](/power-bi/fundamentals/service-get-started)
 - [Power BI data refresh](/power-bi/connect-data/refresh-data)
-- [Edit tables for Direct Lake semantic models](../../fundamentals/direct-lake-edit-tables.md)
+- [Develop Direct Lake semantic models](../../fundamentals/direct-lake-develop.md)
 - [Access data from Lakehouse](how-to-access-data-lakehouse.md)

@@ -1,9 +1,9 @@
 ---
 title: Refresh Materialized Lake Views in a Lakehouse
 description: Learn how to refresh a materialized lake view in a lakehouse in Microsoft Fabric.
-ms.reviewer: abhishjain
+ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 05/21/2026
 # customer intent: As a data engineer, I want to refresh materialized lake views in a lakehouse so that I can ensure that the data is up to date and optimize query performance.
 ---
 
@@ -15,7 +15,7 @@ This article explains how optimal refresh works, what each strategy does, and ho
 
 > [!NOTE]
 > Optimal refresh isn't supported in the following scenarios:
-> - **PySpark definitions**: Materialized lake views must be defined with Spark SQL. PySpark isn't currently supported.
+> - **PySpark definitions**: Optimal refresh applies only to MLVs defined with Spark SQL. PySpark-defined MLVs always use full refresh.
 > - **Non-Delta source tables**: Materialized lake views that use non-Delta tables as a source always perform a full refresh. Incremental and no-refresh strategies require Delta table sources.
 
 ## Benefits of optimal refresh
@@ -37,7 +37,10 @@ The following table describes the refresh strategies that optimal refresh can se
 |Full refresh | Recomputes the entire materialized lake view from the full source dataset. This strategy is used when unsupported expressions are detected, when changes can't be processed incrementally, or when the source dataset is small enough that a full recompute is faster than incremental processing.|
 
 > [!IMPORTANT]
-> Incremental refresh requires the delta change data feed (CDF) property (`delta.enableChangeDataFeed=true`) on all source tables referenced in the materialized lake view definition. Without CDF enabled, optimal refresh can only choose between no refresh and full refresh. For more information, see [Enable incremental refresh](#enable-incremental-refresh).
+> Incremental refresh applies only when both of the following are true:
+>
+> - **Source data is append-only for the refresh cycle.** If a refresh cycle detects deletes or updates on a source table, the engine falls back to full refresh — even when CDF is enabled and the query uses only supported SQL constructs. For more details, see [Incremental refresh and append-only data](#incremental-refresh-and-append-only-data).
+> - **Delta change data feed (CDF) is enabled** (`delta.enableChangeDataFeed=true`) on all source tables referenced in the materialized lake view definition. Without CDF, optimal refresh can only choose between no refresh and full refresh. For more information, see [Enable incremental refresh](#enable-incremental-refresh).
 
 ## Set up optimal refresh
 
@@ -52,16 +55,35 @@ By default, optimal refresh mode is enabled for a materialized lake view lineage
    
    :::image type="content" source="./media/refresh-materialized-lake-view/enable-optimal-refresh-option.png" alt-text="Screenshot that shows toggle to enable optimal refresh mode." border="true" lightbox="./media/refresh-materialized-lake-view/enable-optimal-refresh-option.png":::
 
+### Incremental refresh and append-only data
+
+Today, incremental refresh applies only when source data is **append-only** between refreshes. If any source table records a delete or update, Fabric falls back to full refresh—even with CDF enabled and a query that uses only [supported SQL constructs](#sql-constructs-supported-by-incremental-refresh).
+ 
+The engine needs a reliable way to identify deleted rows. To improve efficiency, users can now supply refresh hints. We are piloting this with select customers.
+  
 ### Enable incremental refresh
 
 To use incremental refresh, you need to enable the delta change data feed (CDF) property on all source tables or materialized lake views referenced in the materialized lake view definition. CDF lets Fabric read only the rows that changed since the last refresh, instead of reprocessing the full dataset.
 
 Without CDF enabled, optimal refresh can only choose between no refresh and full refresh.
 
-Incremental refresh is supported for append-only data. If the source data includes deletions or updates, Fabric performs a full refresh.
+> [!TIP]
+> To help you identify refresh optimization opportunities, Fabric surfaces a banner that lists materialized lake views eligible for incremental refresh but blocked because CDF isn't enabled on one or more source tables. The banner appears in the **lineage view**, on the **recent runs** details, and at the **individual node** level, so you can spot the gap from whichever entry point you use.
+
+:::image type="content" source="./media/refresh-materialized-lake-view/change-data-feed-warning-banner-lineage.png" alt-text="Screenshot that shows the Save refresh and cost banner on the Materialized lake views page with the Activate CDF button." border="true" lightbox="./media/refresh-materialized-lake-view/change-data-feed-warning-banner-lineage.png":::
+
+To enable CDF directly from the banner:
+
+1. In the banner, select **Activate CDF**.
+1. In the **Enable Change Data Feed** dialog, review the list of materialized lake views and the source tables where CDF will be enabled.
+  
+   :::image type="content" source="./media/refresh-materialized-lake-view/enable-change-data-feed-dialog.png" alt-text="Screenshot of the Enable Change Data Feed dialog listing materialized lake views and the source tables where CDF will be enabled." border="true" lightbox="./media/refresh-materialized-lake-view/enable-change-data-feed-dialog.png":::
+
+1. Select **Enable**. The next refresh reflects the updated CDF status.
+
 
 > [!NOTE]
-> Enabling CDF on your source tables has no measurable storage or performance affect for append-only workloads, which is the scenario that incremental refresh supports. CDF is a standard Delta Lake table property that other Fabric features can also benefit from. For more information about how CDF works, see [Use Delta Lake change data feed](/azure/databricks/delta/delta-change-data-feed).
+> Enabling CDF on your source tables has no measurable storage or performance effect for append-only workloads, which is the scenario that incremental refresh supports. CDF is a standard Delta Lake table property that other Fabric features can also benefit from. For more information about how CDF works, see [Use Delta Lake change data feed](/azure/databricks/delta/delta-change-data-feed).
 
 You can enable CDF at creation time by including `TBLPROPERTIES` in the `CREATE` statement:
 
@@ -97,18 +119,19 @@ ALTER TABLE bronze.orders SET TBLPROPERTIES (delta.enableChangeDataFeed = true);
 
 ## SQL constructs supported by incremental refresh
 
-Incremental refresh works when your materialized lake view definition uses only the SQL constructs described here. If your query includes constructs not in this table—such as `LEFT JOIN` or nondeterministic functions—Fabric still refreshes your data, but falls back to a full refresh instead.
+Incremental refresh works when your materialized lake view definition uses only the SQL constructs described here. If your query includes unsupported constructs—such as window functions or non-deterministic functions—Fabric still refreshes your data, but falls back to a full refresh.
 
 | SQL Construct | Remark |
 |---|---|
-| SELECT expression | Supports expressions with deterministic built-in functions. The following constructs lead to full refresh: **unsupported aggregate functions** (`SUM()`, `COUNT()`, `AVG()`, `MIN()`, `MAX()`, `STDDEV()`, etc.), **`GROUP BY`**, **`DISTINCT`**, **window functions** (`ROW_NUMBER()`, `RANK()`, `LAG()`, `LEAD()`, etc.), and **non-deterministic functions** (`rand()`, `uuid()`, `current_timestamp()`, `current_date()`, etc.). |
-| FROM | |
+| SELECT expression | Deterministic built-in functions and expressions are supported. Not supported for incremental refresh: aggregate functions (`SUM()`, `COUNT()`, `AVG()`, `MIN()`, `MAX()`, `STDDEV()`, etc.), `GROUP BY`, `DISTINCT`, window functions, and non-deterministic functions such as `rand()`, `uuid()`, `current_timestamp()`. |
+| FROM | Supports Delta tables and materialized lake views. Subqueries and CTEs work if they use only the supported clauses. |
 | WHERE | Only deterministic built-in functions are supported. |
-| INNER JOIN | |
-| UNION ALL | |
+| INNER JOIN | Supported. |
+| LEFT OUTER JOIN / LEFT SEMI JOIN | Supported. Incremental refresh works only if the right-side table remains unchanged during the refresh cycle. Any change to the right-side table triggers a full refresh. |
+| UNION ALL | Supported. |
+| WITH | Common table expressions (CTEs) if they use only supported clauses. |
+| Subqueries in expressions | Subqueries within SELECT or WHERE expressions (such as scalar subqueries or `EXISTS`) trigger a full refresh if any referenced table has changes. |
 | Data quality constraints | Only deterministic built-in functions are supported in constraints. |
-| Subquery | Subqueries in expressions (SELECT, WHERE) lead to full refresh. | 
-| WITH | Common table expressions are supported. |
 
 
 > [!NOTE]

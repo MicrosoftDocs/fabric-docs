@@ -62,9 +62,8 @@ With the SQL analytics endpoint, T-SQL commands can define and query data object
 
 To get started with the [!INCLUDE [fabric-se](includes/fabric-se.md)], see:
 
-- [Better together: the lakehouse and warehouse in Microsoft Fabric](get-started-lakehouse-sql-analytics-endpoint.md)
-- [SQL analytics endpoint performance considerations](sql-analytics-endpoint-performance.md)
 - [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
+- [Lakehouse SQL analytics endpoint use cases](../data-engineering/lakehouse-sql-analytics-endpoint-use-cases.md)
 
 ## Warehouse or lakehouse
 
@@ -78,6 +77,10 @@ You always have the opportunity to add one or the other at a later point should 
 
 For more detailed decision guidance, see [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md).
 
+### Analyze data in the Lakehouse, Warehouse, or Eventhouse
+
+[!INCLUDE [analyze-data-with-menu](../includes/analyze-data-with-menu.md)]
+
 ## Migration
 
 Use [the Fabric Migration Assistant for Data Warehouse](migration-assistant.md) to migrate from Azure Synapse Analytics, SQL Server, and other SQL Database Engine platforms. Review [Migration​ planning](migration-synapse-dedicated-sql-pool-warehouse.md) and [Migration​ methods for ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-methods.md).
@@ -86,7 +89,7 @@ For migration guidance across Microsoft Fabric, review the tools and links in [M
 
 ## Related content
 
-- [Better together: the lakehouse and warehouse](get-started-lakehouse-sql-analytics-endpoint.md)
+- [Lakehouse SQL analytics endpoint use cases](../data-engineering/lakehouse-sql-analytics-endpoint-use-cases.md)
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
 - [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md)
 - [Create reports on data warehousing in Microsoft Fabric](create-reports.md)

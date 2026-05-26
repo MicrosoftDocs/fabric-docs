@@ -113,6 +113,11 @@ Once you successfully created and configured your gateway, it appears under the 
 
 :::image type="content" source="media/functions-activity/create-new-connection-with-data-gateway-azure-function.png" alt-text="Screenshot showing the data gateway connection dialog for the Azure Function activity.":::
 
+## Authentication requirements
+**Fabric user data functions** run using Fabric‑managed identity and workspace permissions.
+
+**Azure Functions** require an authenticated Azure Function connection and any function‑specific headers or keys, with optional gateway support for private or network‑restricted endpoints.
+
 ## Save and run or schedule the pipeline
 
 [!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]

@@ -1,10 +1,10 @@
 ---
-title: Workspace monitoring overview
+title: Workspace Monitoring Overview
 description: Understand what is workspace monitoring in Microsoft Fabric and how it can help you to gain insights into the usage and performance of your workspace.
 author: SnehaGunda
 ms.author: sngun
 ms.topic: overview
-ms.date: 12/09/2025
+ms.date: 04/27/2026
 #customer intent: As a workspace admin I want to monitor my workspace to gain insights into the usage and performance of my workspace so that I can optimize my workspace and improve the user experience.
 ---
 
@@ -14,7 +14,7 @@ Workspace monitoring is a Microsoft Fabric database that collects and organizes 
 
 ## Monitoring
 
-Workspace monitoring creates an [Eventhouse](../real-time-intelligence/eventhouse.md) database in your workspace that collects and organizes logs and metrics from the Fabric items in the workspace. Workspace contributors can query the database to learn more about the performance of their Fabric items.
+Workspace monitoring creates an [Eventhouse](../real-time-intelligence/eventhouse.md) database in your workspace that collects and organizes logs and metrics from the Fabric items in the workspace. To learn how to manage and monitor the Eventhouse created for workspace monitoring, see [Manage and Monitor an Eventhouse](../real-time-intelligence/manage-monitor-eventhouse.md). Workspace contributors can query the database to learn more about the performance of their Fabric items.
 
 * **Security** - Workspace monitoring is a secure read-only database that is accessible only to workspace users with at least a contributor role.
 

@@ -17,7 +17,12 @@
       },
       {
         "source_path_from_root": "/docs/data-warehouse/get-started-lakehouse-sql-endpoint.md",
-        "redirect_url": "/fabric/data-warehouse/get-started-lakehouse-sql-analytics-endpoint",
+        "redirect_url": "/fabric/data-engineering/lakehouse-sql-analytics-endpoint-use-cases",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md",
+        "redirect_url": "/fabric/data-engineering/lakehouse-sql-analytics-endpoint-use-cases",
         "redirect_document_id": true
       },
       {
@@ -74,7 +79,21 @@
         "source_path_from_root": "/docs/data-warehouse/migrate-with-migration-assistant.md",
         "redirect_url": "/fabric/data-warehouse/migration-assistant",
         "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-warehouse/datamart-upgrade-to-warehouse.md",
+        "redirect_url": "/fabric/data-warehouse/data-warehousing",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-warehouse/query-activity.md",
+        "redirect_url": "/fabric/data-warehouse/monitor",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-warehouse/sql-analytics-endpoint-performance.md",
+        "redirect_url": "/fabric/data-engineering/sql-analytics-endpoint-performance",
+        "redirect_document_id": false
       }
-
     ]
 }

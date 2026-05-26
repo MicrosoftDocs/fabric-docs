@@ -24,6 +24,13 @@ To delete the graph model you created:
 1. Select **Delete**.
 1. Confirm the deletion.
 
+## Delete other tutorial items
+
+If you want to keep your workspace but remove items created during the tutorial, repeat the deletion steps for:
+
+- The lakehouse (for example, "AdventureWorksLakehouse")
+- Any querysets you saved (for example, "CarlaAdams_Purchases")
+
 ## Delete the workspace
 
 If you created a new workspace specifically for this tutorial and you no longer need it, delete the entire workspace:

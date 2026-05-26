@@ -1,8 +1,8 @@
 ---
 title: "Learn About Editing Semantic Models in Direct Lake in Power BI Desktop"
 description: Describes using Power BI Desktop to edit semantic models in Power BI Desktop.
-author: SnehaGunda
-ms.author: sngun
+author: kgremban
+ms.author: kgremban
 ms.reviewer: zoedouglas
 ms.date: 08/01/2025
 ms.service: powerbi
@@ -112,7 +112,7 @@ The schema refresh checks the tables definitions in the model and compares it to
 
 Changing a table or column name at the data source removes the table or column on the next schema refresh. You can use [TMDL view](/power-bi/transform-model/desktop-tmdl-view) to see the SourceLineageTag property and update it to the new name to avoid the semantic model removing it on schema refresh.
 
-Another way to perform a schema refresh is to return to [Edit tables](direct-lake-edit-tables.md) and select **OK**. Go to **Transform data** dropdown list then **Data source settings** and select **Edit tables**.
+Another way to perform a schema refresh is to go to the **Transform data** dropdown list, then **Data source settings**, and select **Edit tables**.
 
 Scheduled refresh in the Fabric workspace only reframe the Direct Lake tables without a schema refresh. Learn more about [refresh in Power BI](/power-bi/connect-data/refresh-data).
 

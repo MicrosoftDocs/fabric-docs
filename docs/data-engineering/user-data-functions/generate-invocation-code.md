@@ -53,7 +53,7 @@ When integrating with Fabric items, use this option to call your functions from 
 
 1. Run the cell to invoke your function.
 
-For more information, see [Fabric Notebook User Data Functions utilities](../notebook-utilities.md#user-data-function-udf-utilities).
+For more information, see [Fabric Notebook User Data Functions utilities](../notebookutils/notebookutils-user-data-function.md).
 
 ## Generate code for client applications
 
@@ -158,6 +158,6 @@ Once you've generated your invocation code, you can use it to integrate your fun
 ## Related content
 
 - [Invoke User Data Functions from a Python application](./tutorial-invoke-from-python-app.md) - Complete walkthrough for calling functions from external Python apps
-- [Fabric Notebook utilities](../notebook-utilities.md#user-data-function-udf-utilities) - Reference for calling functions from notebooks
+- [Fabric Notebook utilities](../notebookutils/notebookutils-user-data-function.md) - Reference for calling functions from notebooks
 - [Integration with Fabric pipelines](./create-functions-activity-data-pipelines.md) - Use functions in data pipelines
 - [Python programming model](./python-programming-model.md) - Learn how to write functions with proper docstrings

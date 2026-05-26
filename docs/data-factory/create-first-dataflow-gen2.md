@@ -24,9 +24,10 @@ The following prerequisites are required before you start:
 
 In this section, you're creating your first dataflow.
 
-1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
+> [!NOTE]
+> As of April 2026, all new Dataflow Gen2 items are created with CI/CD and Git integration support by default. The option to create Dataflow Gen2 items without CI/CD support is no longer available. Existing non-CI/CD dataflows continue to work.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace." lightbox="media/create-first-dataflow-gen2/navigate-to-workspace.png":::
+1. Navigate to your Microsoft Fabric workspace by navigating to the [Microsoft Fabric portal](https://msit.powerbi.com/home?experience=fabric-developer), select **Workspaces** from the left-hand navigation pane, and then select your workspace from the list.
 
 1. Select **+New item**, and then select **Dataflow Gen2**.
 
@@ -160,8 +161,6 @@ You transform the data in the Power Query editor. You can find a detailed overvi
 If you're not going to continue to use this dataflow, delete the dataflow using the following steps:
 
 1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
-
-   :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
 
 1. Select the vertical ellipsis next to the name of your dataflow and then select **Delete**.
 

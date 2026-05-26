@@ -3,7 +3,7 @@ title: Configure MongoDB in a copy activity
 description: This article explains how to copy data using MongoDB.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 08/06/2025
+ms.date: 05/06/2026
 ms.custom:
   - pipelines
   - template-how-to
@@ -76,11 +76,28 @@ Under **Advanced**, you can specify the following fields:
 
 - **Write batch size**: This property controls the size of documents to write in each batch. You can try increasing the value to improve performance and decreasing the value if your document size being large.
 
+> [!TIP]
+> To import JSON documents as-is, refer to [Import or export JSON documents](#import-and-export-json-documents) section; to copy from tabular-shaped data, refer to [Schema mapping](#data-type-mapping-for-mongodb).
+
 ### Mapping
 
 For **Mapping** tab configuration, see [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab). Mapping is not supported when both source and destination are hierarchical data.
 
-#### Data type mapping for MongoDB
+### Settings
+
+For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+
+## Import and export JSON documents
+
+You can use this MongoDB connector to easily:
+
+- Copy documents between two MongoDB collections as-is.
+- Import JSON documents from various sources to MongoDB, including from Azure Cosmos DB, Azure Blob storage, Azure Data Lake Store, and other supported file-based stores.
+- Export JSON documents from a MongoDB collection to various file-based stores.
+
+To achieve such schema-agnostic copy, skip the schema mapping in copy activity.
+
+## Data type mapping for MongoDB
 
 When copying data from MongoDB, the following mappings are used from MongoDB data types to interim data types used by the service internally. 
 
@@ -102,18 +119,13 @@ When copying data from MongoDB, the following mappings are used from MongoDB dat
 | Max key              | String                                                     | Int64                                       |
 | Binary               | GUID (when SubType is "04" )<br>String                     | String                                      |
 
-### Settings
-
-For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
-
-### Differences between MongoDB versions
+## Differences between MongoDB versions
 
 The table below shows the feature differences between various versions.
 
 | Version 1.1 | Version 1.0 |
 |-------------|-------------|
 | The following mappings are used from MongoDB data types to interim service data types.<br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String | The following mappings are used from MongoDB data types to interim service data types.<br><br>Date -> Int64<br>TimeStamp (the most significant 32 bits) -> Int64<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String |
-
 
 ## Table summary
 

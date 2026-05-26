@@ -1,7 +1,9 @@
 ---
 title: OneLake Disaster Recovery and Data Protection
 description: Get information on how to plan for disaster recovery and ensure OneLake data protection in Microsoft Fabric.
-ms.reviewer: eloldag
+ms.reviewer: eloldag # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.date: 3/11/2026
 #customer intent: As a OneLake user, I want to understand disaster recovery and data protection options so that I can help ensure the safety and availability of my data.
@@ -23,10 +25,13 @@ This article provides guidance on how to further protect your data from rare reg
 
 You can enable or disable disaster recovery (DR) for a specific capacity through the [capacity admin portal](/azure/reliability/reliability-fabric#disaster-recovery-capacity-setting). If your capacity has DR enabled, your data is duplicated and stored in two geographic regions so that it's geo-redundant. The standard region pairings in Azure determine the choice of the secondary region. You can't modify the secondary region.
 
+> [!IMPORTANT]
+> Enabling disaster recovery may encounter issues in East US 2, Japan East, and Japan West. To check status, go to **capacity settings** and review **Workspaces assigned to this capacity**. The **OneLake Geo-replication** column shows the enablement status for each workspace.
+
 If a disaster makes the primary region unrecoverable, OneLake might initiate a regional failover. After the failover finishes, you can use the OneLake APIs through the [global endpoint](onelake-access-api.md) to read and write data in the secondary region. Data replication to the secondary region is asynchronous, so any data not copied during the disaster is lost. After a failover, the new primary datacenter has local redundancy only.
 
 > [!NOTE]
-> Keep in mind that this approach applies only when the secondary region supports Fabric.
+> This recovery guidance applies only when the primary region has an Azure‑paired secondary region and Fabric is supported in the paired region.
 
 For a comprehensive understanding of the end-to-end experience, see [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric).
 

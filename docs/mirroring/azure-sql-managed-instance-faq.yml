@@ -5,7 +5,7 @@ metadata:
   ms.reviewer: lazartimotic, jingwang, nzagorac , wiassaf
   ms.subservice: data-warehouse
   ms.topic: faq
-  ms.date: 08/11/2025
+  ms.date: 04/03/2026
 title: "Frequently asked questions for Mirroring Azure SQL Managed Instance in Microsoft Fabric"
 summary: |
   This article answers frequently asked questions about Mirroring Azure SQL Managed Instance in Microsoft Fabric.
@@ -32,7 +32,7 @@ sections:
       - question: |
          Does mirroring work without exposing my Azure SQL Managed Instance to the internet?
         answer:
-          Yes. If your Azure SQL Managed Instance is not publicly accessible, you can use virtual network data gateway or on-premises data gateway to mirror the data. Make sure the Azure Virtual Network or gateway server's network can connect to the Azure SQL Managed Instance via a private endpoint. Learn more from the [Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md).
+          Yes. If your Azure SQL Managed Instance is not publicly accessible, you can use virtual network data gateway or on-premises data gateway to mirror the data. Make sure the Azure Virtual Network or gateway server's network can connect to the Azure SQL Managed Instance via a private endpoint. For more information, see [Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md).
       - question: |
           How do I manage connections? 
         answer: 
@@ -42,6 +42,11 @@ sections:
           Can Power BI reports on mirrored data use direct lake mode?
         answer: 
           Yes, since tables are all v-ordered delta tables.
+
+      - question: | 
+          Does it matter what update policy I use for my Azure SQL Managed Instance?
+        answer:
+          Yes. For an Azure SQL Managed Instance using the [Always up to date update policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true) or SQL Server 2025 update policy, use the [Azure SQL Managed Instance Mirroring to Fabric  tutorial](azure-sql-managed-instance-tutorial.md). For an Azure SQL Managed Instance with the [SQL Server 2022 update policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true), use the [SQL Server Mirroring to Fabric tutorial](sql-server-tutorial.md). 
 
   - name: Self-help for Mirroring Azure SQL Managed Instance in Microsoft Fabric
     questions:
@@ -104,6 +109,10 @@ sections:
         answer: 
           No. Data isn't staged outside of customer environment, it's staged in the customer's OneLake.
 
+      - question: |
+          Does Mirroring for Azure SQL Managed Instance require a data gateway?
+        answer:
+          If your Azure SQL Managed Instance is not publicly accessible, or if you are using the [SQL Server 2022 update policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true) of Azure SQL Managed Instance, you need a data gateway. You can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [on-premises data gateway](/data-integration/gateway/service-gateway-onprem). Make sure the Azure Virtual Network or gateway server's network can connect to the Azure SQL Managed Instance via [a private endpoint](/azure/azure-sql/managed-instance/private-endpoint-overview?view=azuresql-mi&preserve-view=true).
   - name: Cost Management 
     questions:
       - question: |

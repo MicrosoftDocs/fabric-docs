@@ -31,7 +31,14 @@ When you use a starter pool **without any extra library dependencies or custom S
 
 However, there are several scenarios where your session might take longer to start.
 
-**Custom libraries or Spark properties**: If you've configured libraries or custom settings in your environment, Spark has to personalize the session once it's created. This process can add around **30 seconds to 5 minutes** to your startup time, depending on the number and size of your library dependencies.
+**Custom libraries or Spark properties**: If you've configured libraries or custom settings in your environment, Spark has to personalize the session once it's created. The additional time depends on your library publishing mode:
+
+- **Quick mode**: Libraries install at session start. Expect an additional 30 seconds to 5 minutes, depending on the number and size of your dependencies.
+- **Full mode**: The environment snapshot deploys at session start, typically adding 1 to 3 minutes.
+- **Full mode with a custom live pool**: The snapshot is already preinstalled on hydrated clusters, so library personalization adds minimal overhead and sessions can start in approximately 5 seconds.
+
+> [!NOTE]
+> The notebook Resources folder and inline library installation commands (such as `%pip install`) are manual, per-session approaches. They aren't affected by environment publishing and always install during the active session.
 
 **Starter pools in your region are fully used**: In rare cases, a region's starter pools might be temporarily exhausted due to high traffic. When that happens, Fabric spins up a **new cluster** to accommodate your request, which takes about **2 to 5 minutes**. Once the new cluster is available, your session starts. If you also have custom libraries to install, add the additional **30 seconds to 5 minutes** required for personalization.
 
@@ -59,7 +66,7 @@ For example, if you submit a notebook job to a starter pool, you're billed only 
 
 A Spark pool is a way of telling Spark what kind of resources you need for your data analysis tasks. You can give your Spark pool a name, and choose how many and how large the nodes (the machines that do the work) are. You can also tell Spark how to adjust the number of nodes depending on how much work you have. Creating a Spark pool is free; you only pay when you run a Spark job on the pool, and then Spark sets up the nodes for you.
 
-If you don't use your Spark pool for 2 minutes after your session expires, your Spark pool will be deallocated. This default session expiration time period is set to 20 minutes, and you can change it if you want. If you're a workspace admin, you can also create custom Spark pools for your workspace, and make them the default option for other users. This way, you can save time and avoid setting up a new Spark pool every time you run a notebook or a Spark job. Custom Spark pools take about three minutes to start, because Spark must get the nodes from Azure.
+If you don't use your Spark pool for 2 minutes after your session expires, your Spark pool will be deallocated. This default session expiration time period is set to 20 minutes, and you can change it if you want. If you're a workspace admin, you can also create custom Spark pools for your workspace, and make them the default option for other users. This way, you can save time and avoid setting up a new Spark pool every time you run a notebook or a Spark job. Custom Spark pools take about three minutes to start, because Spark must get the nodes from Azure. The exception is when you use a custom Spark pool configured as a [custom live pool](custom-live-pools-overview.md) with a Full mode environment; in that case, sessions can start in approximately 5 seconds because the cluster is already hydrated with your library snapshot.
 
 You can even create single node Spark pools, by setting the minimum number of nodes to one, so the driver and executor run in a single node that comes with restorable HA and is suited for small workloads.
 

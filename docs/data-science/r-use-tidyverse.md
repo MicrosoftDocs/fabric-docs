@@ -1,7 +1,8 @@
 ---
 title: Use Tidyverse
 description: How to use Tidyverse, a collection of R packages designed for data science.
-ms.reviewer: lagayhar, sgilley
+ms.author: lagayhar
+ms.reviewer: ruxu
 ms.topic: how-to
 ms.date: 06/30/2025
 ms.search.form: R Language
@@ -84,7 +85,7 @@ stocksL
 
 ## Functional programming
 
-`purrr` is an R package that enhances R’s functional programming toolkit by providing a complete and consistent set of tools for working with functions and vectors. The best place to start with `purrr` is the family of `map()` functions that allow you to replace many for loops with code that is both more succinct and easier to read. Here’s an example of using `map()` to apply a function to each element of a list:
+`purrr` is an R package that enhances R's functional programming toolkit by providing a complete and consistent set of tools for working with functions and vectors. The best place to start with `purrr` is the family of `map()` functions that allow you to replace many for loops with code that is both more succinct and easier to read. Here's an example of using `map()` to apply a function to each element of a list:
 
 ```R
 # double the stock values using purrr

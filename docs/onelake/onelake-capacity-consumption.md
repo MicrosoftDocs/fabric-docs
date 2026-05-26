@@ -1,9 +1,12 @@
 ---
 title: OneLake capacity consumption example
 description: Information on how OneLake uses Fabric capacity and how storage is billed with capacity consumption examples.
-ms.reviewer: eloldag
+ms.reviewer: eloldag # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
-ms.date: 02/02/2026
+ms.date: 05/20/2026
+ai-usage: ai-assisted
 #customer intent: As a capacity admin, I want to understand how OneLake consumes storage and compute so that I can effectively manage my capacity and optimize costs.
 ---
 
@@ -11,7 +14,7 @@ ms.date: 02/02/2026
 
 You only need one capacity to drive all your Microsoft Fabric experiences, including Microsoft OneLake. This article provides a detailed example of how OneLake consumes storage and compute.
 
-With OneLake, you pay for the data stored, similar to services like Azure Data Lake Storage (ADLS) Gen2 or Amazon S3. However, unlike other services, OneLake doesn't include a separate charge for transactions (for example, reads, writes) to your data. Instead, transactions consume from existing [Fabric capacity](../enterprise/licenses.md) that you also use to run your other Fabric experiences. For information about pricing, see [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+With OneLake, you pay for the data stored, similar to services like Azure Data Lake Storage (ADLS) or Amazon S3. However, unlike other services, OneLake doesn't include a separate charge for transactions (for example, reads, writes) to your data. Instead, transactions consume from existing [Fabric capacity](../enterprise/licenses.md) that you also use to run your other Fabric experiences. For information about pricing, see [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 
 To illustrate, let's walk through an example.
 
@@ -25,13 +28,13 @@ Now, let's dive into each of these dimensions.
 
 OneLake storage uses a pay-as-you-go model. Your bill shows a separate charge for "OneLake Storage" for the data stored.
 
-If you're a capacity admin, you can view your storage consumption in the [Fabric Capacity Metrics app](../enterprise/metrics-app-storage-page.md). In the Fabric Capacity Metrics app, open the **Storage** tab and use the **Experience** drop-down menu to select **lake** to see the cost of OneLake storage. If you have multiple workspaces in the capacity, you can see the storage per workspace.
+If you're a capacity admin, you can view your storage consumption in the [Fabric Capacity Metrics app](../enterprise/metrics-app-storage-page.md). In the Fabric Capacity Metrics app, open the **Storage** tab and use the **Experience** drop-down menu to select **lake** to see the cost of OneLake storage. If you have multiple workspaces in the capacity, you can see the storage per workspace. For item-level storage attribution within a workspace, workspace administrators can use the [OneLake storage report](how-to-get-item-size.md) in **Workspace settings** > **OneLake** > **Storage report**, which shows per-item usage including visible items, hidden system data, and soft-deleted data.
 
 :::image type="content" source="media\onelake-capacity-consumption\onelake-storage.png" alt-text="Screenshot showing how OneLake storage is viewed in Fabric Metrics app." lightbox="media\onelake-capacity-consumption\onelake-storage.png":::
 
 The workspace details table includes two columns: **Current storage** and **Billable storage**. Billable storage reflects cumulative data usage over the month. The total charge for data stored isn't taken on one day of the month, but on a pro-rated basis throughout the month. You can estimate the monthly price as the billable storage (GB) multiplied by the price per GB per month.
 
-For example, storing 1 TB of data on day 1, adds to 33 GB daily billable storage. On day one it's 1 TB / 30 days = 33 GB and every day adds 33 GB until the month ends. [OneLake soft delete](soft-delete.md) protects individual files from accidental deletion by retaining files for seven days before permanent removal. Soft-deleted data is billed at the same rate as active data.
+For example, storing 1 TB of data on day 1, adds to 33 GB daily billable storage. On day one it's 1 TB / 30 days = 33 GB and every day adds 33 GB until the month ends. [OneLake soft delete](soft-delete.md) protects individual files from accidental deletion by retaining files for seven days before permanent removal. Soft-deleted data is billed at the same rate as active data. If you notice discrepancies between what you see in items and your billed storage totals, [OneLake item-size reporting](how-to-get-item-size.md) can help by surfacing soft-deleted and hidden system data as separate contributors to storage usage.
 
 :::image type="content" source="media\onelake-capacity-consumption\storage.png" alt-text="Diagram shows billable and current storage difference." lightbox="media\onelake-capacity-consumption\storage.png":::
 
@@ -39,15 +42,18 @@ For more information, see [Understand the metrics app storage page](../enterpris
 
 ## OneLake compute
 
-Requests to OneLake (such as read, write, or list) consume Fabric capacity. OneLake maps APIs to operations like ADLS [maps each REST operation to a price](/azure/storage/blobs/map-rest-apis-transaction-categories). 
+Requests to OneLake (such as read, write, or list) consume Fabric capacity. OneLake maps APIs to operations like ADLS [maps each REST operation to a price](/azure/storage/blobs/map-rest-apis-transaction-categories).
 
 You can see capacity usage for each operation in the Fabric Capacity Metrics app. In the Fabric Capacity Metrics app, open the **Compute** tab. Hover over the item that you want to view operation details for.
 
-:::image type="content" source="media\onelake-capacity-consumption\onelake-compute.png" alt-text="Screenshot showing how OneLake compute is viewed in Fabric Metrics app." lightbox="media\onelake-capacity-consumption\onelake-compute.png":::
+> [!IMPORTANT]
+> As of May 2026, the Fabric Capacity Metrics app reports OneLake compute operations at the workspace level under a single **OneLake** item, rather than by individual Fabric items. For item-level detail, use [OneLake diagnostics](../onelake/onelake-diagnostics-overview.md).
 
-In the preceding example, the file upload results in a write transaction that consumes CU seconds. The **Compute** tab of the Fabric Capacity Metrics app reports this consumption as **OneLake Write via Proxy** under the operation name column.
+:::image type="content" source="media\onelake-capacity-consumption\onelake-operations.png" alt-text="Screenshot showing how OneLake compute is viewed in Fabric Metrics app." lightbox="media\onelake-capacity-consumption\onelake-operations.png":::
 
-However, if you read this data by using a notebook, you consume CU seconds of read transactions. The metrics app reports this consumption as **OneLake Read via Redirect**. To learn how each type of operation consumes capacity units, see [OneLake consumption page](../onelake/onelake-consumption.md).
+In the preceding example, the file upload results in a write transaction that consumes CU seconds. The **Compute** tab of the Fabric Capacity Metrics app reports this consumption as **OneLake Write (Hot)** under the operation name column.
+
+However, if you read this data by using a notebook, you consume CU seconds of read transactions. The metrics app reports this consumption as **OneLake Read (Hot)**. To learn how each type of operation consumes capacity units, see [OneLake consumption page](../onelake/onelake-consumption.md).
 
 To understand more about the various terminologies on the metrics app, see [Understand the metrics app compute page - Microsoft Fabric](../enterprise/metrics-app-compute-page.md).
 
@@ -63,4 +69,4 @@ In the preceding example, both storage and compute are billed to Capacity1. Now,
 
 If your CU consumption exceeds the capacity limit, [throttling](../enterprise/throttling.md) might occur, which causes transactions to be delayed or rejected temporarily.
 
-Start Fabric's 60-day free trial to explore OneLake and other features, and visit the [Fabric forum](https://community.fabric.microsoft.com/t5/Forums/ct-p/ac_forums) for questions.
+Start Fabric's free trial to explore OneLake and other features, and visit the [Fabric forum](https://community.fabric.microsoft.com/t5/Forums/ct-p/ac_forums) for questions.

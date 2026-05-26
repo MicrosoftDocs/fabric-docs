@@ -5,8 +5,8 @@ ms.topic: overview
 ms.custom: 
 ms.author: lagayhar
 author: lgayhardt
-ms.reviewer: vimeland
-reviewer: virginiaroman
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.date: 01/16/2026
 ai-usage: ai-assisted
 ms.update-cycle: 180-days
@@ -20,7 +20,7 @@ ms.collection: ce-skilling-ai-copilot
 [Foundry Tools](https://azure.microsoft.com/products/ai-services/) is a suite of APIs, SDKs, and services that you use to add AI features to your apps. Foundry Tools helps you build apps that see, hear, speak, understand, and reason. It includes five capabilities: vision, speech, language, web search, and decision. Fabric uses SynapseML to provide access to these services.
 
 > [!NOTE]
-> Fabric integrates with Foundry Tools to enrich your data with [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure Translator in Foundry Tools](https://azure.microsoft.com/products/ai-services/translator/). This integration is in public preview. Learn more in [Foundry Tools in Fabric](./ai-services-overview.md).
+> Fabric integrates with Foundry Tools to enrich your data with [Azure OpenAI Service](/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure?tabs=global-standard-aoai%2Cglobal-standard&pivots=azure-openai), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure Translator in Foundry Tools](https://azure.microsoft.com/products/ai-services/translator/). This integration is in public preview. Learn more in [Foundry Tools in Fabric](./ai-services-overview.md).
 >
 > For Azure OpenAI specifically, Fabric also provides [AI Functions](how-to-use-openai-ai-functions.md) for simple DataFrame operations. For distributed processing, see [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md).
 
