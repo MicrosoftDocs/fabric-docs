@@ -17,7 +17,7 @@ In this tutorial, you set up a basic development environment and deploy a lakeho
 - **Python SDK** — Use the `fabric-cicd` Python library to publish items programmatically.
 - **Fabric CLI** — Use the `fab deploy` command with a YAML configuration file. No Python code required.
 
-Both approaches use the same underlying deployment engine. Choose the one that fits your workflow.
+The Fabric CLI `fab deploy` command uses the `fabric-cicd` library under the hood. Choose the approach that fits your workflow.
 
 ## Prerequisites
 
