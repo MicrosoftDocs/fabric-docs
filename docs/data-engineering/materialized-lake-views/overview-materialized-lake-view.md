@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 
 # What are materialized lake views in Microsoft Fabric?
 
-Materialized lake views turn complex lakehouse transformations into fast, reusable, query‑ready assets that accelerate analytics and reduce compute usage. Results are persisted as Delta files in OneLake and refreshed automatically via schedules or event triggers, delivering dependable, up‑to‑date data. Major advantages include declarative pipelines for predictable deployments, optimal refresh for performance and cost, built‑in data quality, and intuitive monitoring for visibility and trust.
+A materialized lake view in Fabric is a persisted, automatically refreshed view defined in Spark SQL or PySpark. It simplifies multi-stage Lakehouse transformations — typically the bronze-to-silver-to-gold medallion architecture — by expressing them as declarative statements rather than custom Spark jobs. Once materialized, an MLV behaves like a standard Lakehouse table in terms of storage, access patterns, and security — can be queried through any Fabric engine with the same permissions and governance model. Fabric tracks dependencies between MLVs, orchestrates refreshes in the correct order, and enforces data quality constraints at every stage. This enables data engineers to build reliable, maintainable pipelines with less code and operational overhead.
 
 ## When to use materialized lake views
 
@@ -27,7 +27,6 @@ Materialized lake views are a good fit when you have:
 Materialized lake views aren't the right choice for every scenario. Consider alternatives when you have:
 
 - **One-time or rarely accessed queries** that don't benefit from precomputed results
-- **Simple transformations** that already run quickly without optimization
 - **Non-SQL logic** such as ML inference, API calls, or complex Python processing — use Spark notebooks instead
 - **High-frequency streaming data** that requires sub-second updates — consider [Real-Time Intelligence](../../real-time-intelligence/overview.md) instead
 
@@ -104,68 +103,9 @@ Fabric provides built-in tools to track the health and performance of your mater
 - View data quality metrics and violation counts in lineage
 - Monitor job instances and refresh history
 
-## Common use cases
-
-The following examples show how materialized lake views simplify common data engineering tasks that would otherwise require notebook code and pipeline orchestration.
-
-### Sales reporting dashboard
-
-Aggregate order data into a daily summary by region. Instead of scheduling a notebook to rebuild this table, the materialized lake view refreshes automatically when the source `orders` table changes.
-
-```sql
--- Daily sales summary that refreshes automatically
-CREATE MATERIALIZED LAKE VIEW daily_sales AS
-SELECT 
-    DATE(order_date) as sale_date,
-    region,
-    SUM(amount) as total_sales,
-    COUNT(*) as order_count
-FROM orders 
-GROUP BY DATE(order_date), region;
-```
-
-### Data quality validation
-
-Clean and normalize customer records while enforcing data quality rules. The `ON MISMATCH DROP` clause in the constraint automatically drops rows where the email is null, so downstream consumers only see valid data.
-
-```sql
--- Clean customer data with quality rules
-CREATE MATERIALIZED LAKE VIEW clean_customers (
-    CONSTRAINT valid_email CHECK (email IS NOT NULL) ON MISMATCH DROP
-) AS
-SELECT 
-    customer_id,
-    TRIM(customer_name) as customer_name,
-    LOWER(email) as email
-FROM raw_customers
-WHERE customer_name IS NOT NULL;
-```
-
-### Medallion architecture
-
-Transform raw bronze data into a curated silver layer by casting types, filtering invalid records, and selecting relevant columns. Materialized lake views handle dependency ordering automatically, so you can chain bronze → silver → gold views without managing execution sequence.
-
-```sql
--- Bronze → Silver transformation
-CREATE MATERIALIZED LAKE VIEW silver_products AS
-SELECT 
-    product_id,
-    product_name,
-    category,
-    CAST(price as DECIMAL(10,2)) as price
-FROM bronze_products
-WHERE price > 0;
-```
-
 ### Security
 
-You can use private links to connect to materialized lake views (preview).  Read more at [Security](../../security/security-inbound-overview.md).
-
-## Current limitations
-
-The following feature is currently not available for materialized lake views in Microsoft Fabric:
-
-* Cross-lakehouse lineage and execution features.
+Fabric materialized lake views follows all security and governance measures of Lakehouse tables. You can also use MLVs in private link enabled lakehouses. Read more about private link in Fabric at [Security](../../security/security-inbound-overview.md).
 
 ## Related content
 
