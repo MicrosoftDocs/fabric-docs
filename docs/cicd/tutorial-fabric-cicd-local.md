@@ -181,26 +181,3 @@ The CLI publishes all items found in the repository directory to the target work
 Once the deployment completes, check your Fabric workspace. You should see the new lakehouse and notebook. Congrats you're done!
 
  :::image type="content" source="media/tutorial-fabric-cicd-local/demo-3.png" alt-text="Screenshot of the Fabric workspace with new items." lightbox="media/tutorial-fabric-cicd-local/demo-3.png":::
-
-## Debugging
-
-### [Python SDK](#tab/python-sdk)
-
-If an error arises, or you want to have full transparency to all calls being made outside the library, enable debugging. Enabling debugging writes all API calls to the terminal. The logs can also be found in the `fabric_cicd.error.log` file.
-
-```python
-from fabric_cicd import change_log_level
-change_log_level("DEBUG")
-```
-
-For comprehensive debugging information, including how to use the error log file and debug scripts, see the [Troubleshooting Guide](https://microsoft.github.io/fabric-cicd/0.1.34/how_to/troubleshooting/).
-
-### [Fabric CLI](#tab/fabric-cli)
-
-If an error arises, run the deploy command with the `--verbose` flag for detailed output.
-
-```bash
-fab deploy --config config.yml --verbose
-```
-
----
