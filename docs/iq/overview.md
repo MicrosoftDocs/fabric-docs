@@ -1,7 +1,7 @@
 ---
 title: What is Fabric IQ?
 description: Learn about Fabric IQ, part of Microsoft IQ and a workload in Microsoft Fabric.
-ms.date: 05/18/2026
+ms.date: 05/26/2026
 ms.topic: overview
 ai-usage: ai-assisted
 ---
@@ -59,56 +59,21 @@ Within Microsoft Fabric, the *IQ (preview)* [workload](../fundamentals/fabric-te
 
 Fabric items can be part of multiple workloads. Several of the items in the IQ workload are shared with other Fabric workloads like Real-Time Intelligence and Power BI, since they are relevant to the intent of multiple workload scenarios.
 
-The items that are grouped in the IQ workload are:
-* [Ontology (preview)](ontology/overview.md)
-* [Plan (preview)](plan/overview.md)
-* [Graph (preview)](../graph/overview.md)
-* [Data agent](../data-science/concept-data-agent.md)
-* [Operations agent (preview)](../real-time-intelligence/operations-agent.md)
-* [Power BI semantic models](../data-warehouse/semantic-models.md)
-* [Digital twin builder](../real-time-intelligence/digital-twin-builder/overview.md)
+The IQ (preview) workload contains the following items. 
+
+| Fabric item | Details | Learn more |
+| --- | --- | --- |
+| Ontology (preview) | An item for the enterprise vocabulary and semantic layer that unifies meaning across domains and OneLake sources. It defines entity types, relationships, properties, and condition–action rules (through Fabric Activator). Then, the ontology binds all of these definitions to real data so that downstream tools share the same language. Ontologies are the core item for defining a common language in the IQ workload. <br><br>Use when you need cross-domain consistency, governance, and AI/agent grounding, and you want to reason across processes. | [What is ontology (preview)?](ontology/overview.md) |
+| Plan (preview) | Allows you to integrate planning, visualization, analytics, and data management on a single platform. Plan is a unified no-code platform for collaborative planning, reporting, analytics, data integration, and management. It enables organizations to work from a consistent data foundation, allowing business users to plan, analyze, and report without switching between multiple tools. | [What is plan (preview)?](plan/overview.md) |
+| Graph (preview) | Offers native graph storage and compute for nodes, edges, and traversals over connected data. It's good for path finding, dependency analysis, and graph algorithms. Graph is integrated with the ontology item and brings a visual representation of your business concepts and relationships to the IQ workload. <br><br>Use when relationship-heavy questions (like impact chains, communities, and shortest paths) dominate your decision making, and you need graph-native performance. Graph supports GQL-style pattern matching and shortest-path queries for relationship-heavy questions. <br><br>*This item is also part of the Real-Time Intelligence workload.* | [Graph in Microsoft Fabric overview (preview)](../graph/overview.md) |
+| Data agent | Custom agents that act as virtual analysts over your data. They connect to multiple Fabric data sources, including structured and unstructured data, and provide a tailored natural language experience for a specific domain or scenario. Creators can add instructions, example queries, and business context to guide how the agent interprets questions and grounds responses. Data agents can connect to semantic models and ontologies to reason over business concepts and trusted definitions, and can be published across Microsoft 365, Foundry, Copilot Studio, custom applications, and more. <br><br>*This item is also part of the Data Science workload.* | [Fabric data agent concepts](../data-science/concept-data-agent.md) |
+| Operations agent (preview) | Lets you create an AI agent to monitor real-time data and recommend business actions. It supports the Fabric IQ vision of intelligent agents that can reason across business concepts while being aware of terminology. <br><br>*This item is also part of the Real-Time Intelligence workload.* | [Create and configure operations agents](../real-time-intelligence/operations-agent.md) |
+| Power BI semantic model | A curated analytics model that's optimized for reporting and interactive analysis with measures, scorecard hierarchies, and relationships for visuals and DAX. Semantic models are another way to represent the structure, language, and relationships of your business data, and ontologies can be generated directly from them to keep that language consistent across Fabric experiences. <br><br>Use when business users need trusted KPIs and fast visuals with dimensional modeling, calculations, and governed datasets for self-service BI. <br><br>*This item is also part of the Power BI workload.* | [Power BI semantic models  in Microsoft Fabric](../data-warehouse/semantic-models.md) |
 
 >[!NOTE]
 > OneLake is the data foundation for all Microsoft Fabric items. Though OneLake isn't explicitly included as an item in the IQ workload, all items in the workload rely on OneLake data tables and interact with them natively.
 
-For more information about the role of each item in the IQ workload, see the section [Items in IQ (preview) workload](#items-in-iq-workload).
-
-### Where the IQ workload fits in Fabric
-
-Here's how the IQ (preview) workload implements key Fabric capabilities:
-
-* **Ingest and store:** Builds on data from lakehouse tables, eventhouse streams, and existing [Power BI semantic models](../data-warehouse/semantic-models.md). Fabric IQ scenarios can also consume data shared across organizational boundaries through [OneLake external data sharing](../governance/external-data-sharing-overview.md), extending visibility to governed data in other tenants. The [plan (preview)](plan/overview.md) item uses [OneLake mirroring](../database/mirrored-database/overview.md) and [OneLake shortcuts](../onelake/onelake-shortcuts.md) to integrate data sources while minimizing ETL, keeping data in place and preserving governance.
-* **Model and represent semantics:** [Power BI semantic models](../data-warehouse/semantic-models.md) provide a logical description of an analytical domain. Choose which tables to add from a lakehouse or warehouse, and use the semantic model to represent your domain within Fabric. Semantic models can also be exported to [ontology (preview)](ontology/overview.md), which offers modeling capabilities by defining entity types, properties on entity types, and relationship types. Optionally bootstrap an ontology structure from existing data sources and models, or create your own. Then, bind ontology features to data sources, and explore them in a navigable graph that is built automatically.
-* **Analyze and visualize:** Use [Power BI semantic models](../data-warehouse/semantic-models.md) as the basis for [reports in Power BI](../data-warehouse/reports-power-bi-service.md). You can also visualize data in [ontology (preview)](ontology/overview.md) and [graph (preview)](../graph/overview.md), which work together to provide a visual graph and query experience based on your business concepts. Use ontologies based on your Power BI semantic models to keep the same terminology for analysis across items, or use ontologies to inform power domain aware agents.
-* **Operate and govern:** You can version, validate, and govern your ontology definitions. Governance, lineage tracking, and auditing apply consistently across all data sources, including data accessed through [OneLake shortcuts](../onelake/onelake-shortcuts.md) and [cross-tenant shares](../governance/external-data-sharing-overview.md). You can also monitor ontology health through Fabric monitoring tools. Plan (preview) adds workflow approvals and detailed audit trails for writeback operations and plan revisions.
-
-### Items in IQ workload
-
-The IQ (preview) workload contains the following items. Some of these items are shared with other Fabric workloads, and items can work together to accomplish the shared Fabric IQ vision of unified data and semantics.
-
-* *[Ontology (preview)](ontology/overview.md)* is an item for the enterprise vocabulary and semantic layer that unifies meaning across domains and OneLake sources. It defines entity types, relationships, properties, and condition–action rules (through Fabric Activator). Then, the ontology binds all of these definitions to real data so that downstream tools share the same language. Ontologies are the core item for defining a common language in the IQ workload.
-* *[Plan (preview)](plan/overview.md)* allows you to integrate planning, visualization, analytics, and data management on a single platform. Plan is a unified no-code platform for collaborative planning, reporting, analytics, data integration, and management. It enables organizations to work from a consistent data foundation, allowing business users to plan, analyze, and report without switching between multiple tools.
-* *[Graph (preview)](../graph/overview.md)* offers native graph storage and compute for nodes, edges, and traversals over connected data. It's good for path finding, dependency analysis, and graph algorithms. Graph is integrated with the ontology item and brings a visual representation of your business concepts and relationships to the IQ workload.
-    * This item is also part of the Real-Time Intelligence workload.
-* *[Data agents](../data-science/concept-data-agent.md)* are custom agents that act as virtual analysts over your data. They connect to multiple Fabric data sources, including structured and unstructured data, and provide a tailored natural language experience for a specific domain or scenario. Creators can add instructions, example queries, and business context to guide how the agent interprets questions and grounds responses. Data agents can connect to semantic models and ontologies to reason over business concepts and trusted definitions, and can be published across Microsoft 365, Foundry, Copilot Studio, custom applications, and more.
-    * This item is also part of the Data Science workload.
-* *[Operations agent (preview)](../real-time-intelligence/operations-agent.md)* lets you create an AI agent to monitor real-time data and recommend business actions. It supports the Fabric IQ vision of intelligent agents that can reason across business concepts while being aware of terminology.
-    * This item is also part of the Real-Time Intelligence workload.
-* *[Power BI semantic model](../data-warehouse/semantic-models.md)* is a curated analytics model that's optimized for reporting and interactive analysis with measures, scorecard hierarchies, and relationships for visuals and DAX. Semantic models are another way to represent the structure, language, and relationships of your business data, and ontologies can be generated directly from them to keep that language consistent across Fabric experiences.
-    * This item is also part of the Power BI workload.
-
-#### Choose the right item
-
-This section contains guidance for choosing the right tools for your scenario from the modeling options in Fabric. The following table includes modeling-related items from the IQ workload and Real-Time Intelligence.
-
-| Item | When to use | 
-| --- | --- |
-| [Ontology (preview)](ontology/overview.md) in IQ workload | Use when you need cross-domain consistency, governance, and AI/agent grounding, and you want to reason across processes. |
-| [Graph (preview)](../graph/overview.md) | Use when relationship-heavy questions (like impact chains, communities, and shortest paths) dominate your decision making, and you need graph-native performance. Graph supports GQL-style pattern matching and shortest-path queries for relationship-heavy questions. |
-| [Power BI semantic model](../data-warehouse/semantic-models.md) | Use when business users need trusted KPIs and fast visuals with dimensional modeling, calculations, and governed datasets for self-service BI. |
-| [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) in Real-Time Intelligence | Use when you need operational context, stateful twins, scenario analysis, or what-if simulation tied to real assets and signals. |
-
-#### Item relationships
+### Item relationships
 
 This section describes how items work together or relate to one another.
 
@@ -127,7 +92,7 @@ Learn about the other workloads in Microsoft IQ:
 Learn about the Fabric items in the IQ workload:
 * [What is ontology (preview)?](ontology/overview.md)
 * [What is plan (preview)?](plan/overview.md)
-* [What is Fabric Graph (preview)?](../graph/overview.md)
-* [What is the Fabric data agent?](../data-science/concept-data-agent.md)
+* [Graph in Microsoft Fabric overview (preview)](../graph/overview.md)
+* [Fabric data agent concepts](../data-science/concept-data-agent.md)
 * [Create and configure operations agents](../real-time-intelligence/operations-agent.md)
-* [Semantic models](../data-warehouse/semantic-models.md)
+* [Power BI semantic models in Microsoft Fabric](../data-warehouse/semantic-models.md)
