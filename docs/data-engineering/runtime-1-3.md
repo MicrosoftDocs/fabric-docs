@@ -43,9 +43,6 @@ Use the following instructions to integrate runtime 1.3 into your workspace and 
 
 You can now start working with the newest improvements and functionalities introduced in Fabric runtime 1.3 (Spark 3.5 and Delta Lake 3.2).
 
-> [!IMPORTANT]
-> The early access release channel of Runtime 1.3 includes an upgraded operating system from Mariner 2.0 (Azure Linux 2.0) to Mariner 3.0 (Azure Linux 3.0). Use the [early access release channel](./release-channels.md) to test your workloads against this change before it becomes the default. This validation is critical, especially if your workloads have dependencies on OS-level packages.
-
 ## Learn about Apache Spark 3.5
 
 [Apache Spark 3.5.0](https://spark.apache.org/releases/spark-release-3-5-0.html) is the sixth version in the 3.x series. This version is a product of extensive collaboration within the open-source community, addressing more than 1,300 issues as recorded in Jira.

@@ -145,7 +145,7 @@ Runtime 2.0 supports the following compute management features:
 
 ## Limitations and notes
 
-- Delta Lake 4.0 specific features are experimental and only work on Spark experiences, such as notebooks and Spark job definitions. If you need to use the same Delta Lake tables across multiple Fabric workloads, don't enable those features. For more information, see [Delta Lake table format interoperability](../fundamentals/delta-lake-interoperability.md).
+- Delta Lake 4.x specific features are experimental and only work on Spark experiences, such as notebooks and Spark job definitions. If you need to use the same Delta Lake tables across multiple Fabric workloads, don't enable those features. For more information, see [Delta Lake table format interoperability](../fundamentals/delta-lake-interoperability.md).
 - Runtime 2.0 is in public preview. Some features and APIs may change before general availability.
 - The VS Code extension for Fabric Spark supports Runtime 2.0 for notebook and Spark job definition development.
 
