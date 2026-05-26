@@ -47,19 +47,7 @@ The diagram illustrates the following key points about workspace-level private l
 
 * You use a workspace-level private link to establish a private link connection to a specific workspace. You can't use it to connect to another workspace. In the configuration shown in the diagram, a connection to Workspace 2 from VNet A isn't allowed. On the other hand, connections to Workspaces 3 and 4 from VNet A are possible if VNet A allows outbound public access in the client network settings.
 
-## Connect to workspaces
-
-When connecting to a workspace, use the workspace fully qualified domain name (FQDN). The workspace FQDN is based on the workspace ID and the first two characters of the workspace object ID. The following formats show the workspace FQDN. The *workspaceid* is the workspace object ID without dashes, and *xy* represents the first two characters of the workspace object ID. You can find the workspace object ID in the URL after `group` when you open the workspace page from the Fabric portal. You can also get the workspace FQDN by running the List workspace API or Get workspace API. 
-
-* `https://{workspaceid}.z{xy}.w.api.fabric.microsoft.com`
-* `https://{workspaceid}.z{xy}.c.fabric.microsoft.com`
-* `https://{workspaceid}.z{xy}.onelake.fabric.microsoft.com` 
-* `https://{workspaceid}.z{xy}.dfs.fabric.microsoft.com`
-* `https://{workspaceid}.z{xy}.blob.fabric.microsoft.com`
-
-For data warehouse connection strings, use `https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com`. Add `z{xy}` to the regular warehouse connection string found under SQL connection string. The GUIDs in the FQDN correspond to Tenant GUID in Base32 and Workspace GUID in Base32 respectively. *This FQDN isn't available as part of the DNS configurations for the private endpoint.*
-
-## Connect to workspaces
+## Connecting to workspaces
 
 To connect to a workspace by using a private link, use the workspace’s fully qualified domain name (FQDN).
 
@@ -85,7 +73,7 @@ In this example:
 - `1234567890abcdef1234567890abcdef` is the workspace ID (without dashes)
 - `12` corresponds to the first two characters of the workspace ID
 
-### Connect to a data warehouse
+### How to connect to a data warehouse
 
 When connecting to a data warehouse, the connection string format is slightly different. You need to add `z{xy}` to the regular warehouse connection string found under SQL connection string. The FQDN for a data warehouse connection is as follows:
 
@@ -97,7 +85,7 @@ Where:
 
 This FQDN isn't available as part of the DNS configurations for the private endpoint.
 
-### Find the workspace ID
+### How to find the workspace ID
 
 You can find the workspace ID in either of the following ways:
 
