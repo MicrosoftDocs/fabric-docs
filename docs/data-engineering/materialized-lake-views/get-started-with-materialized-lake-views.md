@@ -129,7 +129,7 @@ In this quickstart, you will be guided to create source tables in a Microsoft Fa
 
    :::image type="content" source="./media/get-started-with-materialized-lake-views/schedule-lineage-run.png" alt-text="Screenshot of the pane for scheduling lineage." border="true" lightbox="./media/get-started-with-materialized-lake-views/schedule-lineage-run.png":::
 
-1. Select the desired frequency from the **Repeat** drop-down (by the minute, hourly, daily, weekly, or monthly) and specify the recurring interval. Select **Apply**.
+1. Select the desired frequency from the **Repeat** drop-down (by the minute, hourly, daily, weekly, or monthly) and specify the recurring interval. Select **Save**.
 
    :::image type="content" source="./media/get-started-with-materialized-lake-views/schedule-lineage-run-extended-screen.png" alt-text="Screenshot of the pane for scheduling lineage with more options." border="true" lightbox="./media/get-started-with-materialized-lake-views/schedule-lineage-run-extended-screen.png":::
 
@@ -141,7 +141,7 @@ In this quickstart, you will be guided to create source tables in a Microsoft Fa
 
    :::image type="content" source="./media/get-started-with-materialized-lake-views/ongoing-run-progress-extended-screen.png" alt-text="Screenshot that shows the progress of an ongoing run." border="true" lightbox="./media/get-started-with-materialized-lake-views/ongoing-run-progress-extended-screen.png":::
 
-1. After the run succeeds, the lineage status shows **Completed**.
+1. Once the run is completed, the lineage status will be updated.
 
    :::image type="content" source="./media/get-started-with-materialized-lake-views/completed-lineage-run.png" alt-text="Screenshot that shows a completed lineage run." border="true" lightbox="./media/get-started-with-materialized-lake-views/completed-lineage-run.png":::
 
