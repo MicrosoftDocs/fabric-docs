@@ -41,6 +41,8 @@ A *workload* is a collection of capabilities targeted to a specific functionalit
 
 A *workspace* is a collection of items that brings together different functionality in a single environment designed for collaboration. It acts as a container that uses capacity for the work that is executed, and provides controls for who can access the items in it. For example, in a workspace, users create reports, notebooks, and semantic models. For more information, see [Workspaces](workspaces.md).
 
+---
+
 <a id="synapse-data-engineering"></a>
 
 ## Data Engineering
@@ -71,6 +73,8 @@ A *Spark application* is a program written by a user using one of Spark's API la
 
 *V-order* is a write optimization to the parquet file format that enables fast reads and provides cost efficiency and better performance. All the Fabric engines write v-ordered parquet files by default.
 
+---
+
 ## Data Factory
 
 Data Factory provides data integration and orchestration capabilities, including pipelines, dataflows, and connectors for moving and transforming data.
@@ -90,6 +94,8 @@ A *pipeline* is an item in Data Factory used for orchestrating data movement and
 #### Trigger
 
 A *trigger* is an automation capability in Data Factory that initiates pipelines based on specific conditions, such as schedules or data availability.
+
+---
 
 <a id="synapse-data-science"></a>
 
@@ -113,6 +119,8 @@ A *model* is a machine learning file trained to recognize certain types of patte
 
 A *run* corresponds to a single execution of model code. In [MLflow](https://mlflow.org/), tracking is based on experiments and runs.
 
+---
+
 <a id="synapse-data-warehouse"></a>
 
 ## Data Warehouse
@@ -127,6 +135,8 @@ A *warehouse* is an item that functions as a traditional data warehouse and supp
 
 A *SQL analytics endpoint* is a feature that you use to run T-SQL queries against your data for analysis and insights. SQL analytics endpoints are available for lakehouses, mirrored databases, and SQL databases in Fabric. For more information, see [SQL analytics endpoint](../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse).
 
+---
+
 ## Databases
 
 Databases provides transactional database capabilities within Fabric, including SQL database in Fabric and Cosmos DB in Fabric.
@@ -134,6 +144,8 @@ Databases provides transactional database capabilities within Fabric, including 
 #### SQL database in Fabric
 
 A *SQL database in Fabric* is a transactional database based on Azure SQL Database that you use to create your operational database in Fabric. For more information, see [SQL database in Microsoft Fabric](../database/sql/overview.md).
+
+---
 
 ## Fabric IQ
 
@@ -146,6 +158,8 @@ An *ontology* (preview) is an item where you can define entity types, relationsh
 #### Plan
 
 A *plan* (preview) is a unified no-code platform for collaborative planning, reporting, analytics, data integration, and management. For more information, see [What is plan (preview)?](../iq/plan/overview.md)
+
+---
 
 ## Real-Time Intelligence
 
@@ -175,6 +189,8 @@ A *KQL database* is an item that holds data in a format that you can execute KQL
 
 A *KQL queryset* is the item used to run queries, view results, and manipulate query results on data from your Data Explorer database. The queryset includes the databases and tables, the queries, and the results. The KQL queryset allows you to save queries for future use, or export and share queries with others. For more information, see [Query data in the KQL Queryset](../real-time-intelligence/kusto-query-set.md).
 
+---
+
 ## Real-Time hub
 
 Real-Time hub is the centralized location in Fabric for discovering and managing real-time data streams across your organization.
@@ -183,13 +199,19 @@ Real-Time hub is the centralized location in Fabric for discovering and managing
 
 *Real-Time hub* is the single place for all data-in-motion across your entire organization. Every Microsoft Fabric tenant automatically includes the hub. For more information, see [Real-Time hub overview](../real-time-hub/real-time-hub-overview.md).
 
+---
+
 ## Power BI
 
 Power BI provides business intelligence capabilities for creating interactive reports, dashboards, and data visualizations.
 
+---
+
 ## Workload Development Kit
 
 The Workload Development Kit (WDK) enables partners and developers to build, validate, and publish custom workloads that extend the Fabric platform.
+
+---
 
 ## OneLake
 
@@ -206,6 +228,8 @@ OneLake is Fabric's unified, multicloud data lake that serves as the single stor
 #### Shortcut
 
 A *shortcut* is an embedded reference within OneLake that points to another file store location. They enable access to external operational data sources without copying data or building ETL pipelines. You can combine shortcuts with OneLake data sharing for cross-tenant governed access to shared datasets. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
+
+---
 
 ## Related content
 
