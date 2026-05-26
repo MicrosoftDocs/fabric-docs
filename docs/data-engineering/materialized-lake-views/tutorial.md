@@ -113,12 +113,11 @@ In this section, you create the bronze layer by uploading the contents of the do
 1. Select **Schedule** on the ribbon, and then select **New schedule** in the schedules pane.
 
 1. Turn on the schedule, provide a name, and select the materialized lake views to refresh.
+   :::image type="content" source="./media/tutorial/create-schedule.png" alt-text="Screenshot showing schedule creation." border="true" lightbox="./media/tutorial/create-schedule.png":::
 
 1. Set the schedule frequency, and then select **Apply**.
 
-1. To run the schedule immediately, select **Run** on the created schedule.
-   
-   :::image type="content" source="./media/tutorial/create-schedule.png" alt-text="Screenshot showing schedule creation." border="true" lightbox="./media/tutorial/create-schedule.png":::
+1. To run the schedule immediately, select **Run** on the created schedule from schedule pane.
 
 ## Monitoring and troubleshooting
 
