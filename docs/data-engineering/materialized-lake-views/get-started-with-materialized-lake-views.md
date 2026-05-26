@@ -9,7 +9,7 @@ ms.date: 04/02/2026
 
 # Get started with materialized lake views
 
-In this quickstart, you create source tables in a Microsoft Fabric Lakehouse, define materialized lake views that transform the data, and schedule automatic refresh. By the end, you have a working bronze-to-gold pipeline with lineage tracking.
+In this quickstart, you will be guided to create source tables in a Microsoft Fabric Lakehouse, define materialized lake views to transform raw data through progressive stages, and set up refresh schedules. By the end, you have a fully working bronze-to-gold pipeline with dependency-aware orchestration and lineage tracking.
 
 ## Prerequisites
 
