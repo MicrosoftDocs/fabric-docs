@@ -70,7 +70,7 @@ The following table compares Azure Synapse Spark and Fabric Spark pools.
 | Intelligent cache | Yes | Yes |
 | API/SDK support | Yes | Yes |
 
-- **Runtime**: Fabric doesn't support Spark 3.3 and earlier versions. Fabric Spark supports Spark 3.4 with Delta 2.4 within [Runtime 1.2](runtime-1-2.md), Spark 3.5 with Delta 3.1 within [Runtime 1.3](runtime-1-3.md), and Spark 4.0 with Delta 4.0 within [Runtime 2.0](runtime-2-0.md).
+- **Runtime**: Fabric doesn't support Spark 3.4 and earlier versions. Fabric Spark supports Spark 3.5 with Delta 3.1 within [Runtime 1.3](runtime-1-3.md), and Spark 4.1 with Delta 4.1 within [Runtime 2.0](runtime-2-0.md).
 
 **When to choose**: Use Fabric Spark pools for fast startup (starter pools), single-node jobs, high concurrency sessions, and V-Order optimization. Use Azure Synapse pools when you need GPU acceleration or fixed scaling up to 200 nodes.
 
