@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Local deployment with fabric-cicd
+title: Tutorial - Local deployment
 description: This article provides a tutorial on deploying Fabric items locally using the fabric-cicd Python library or the Fabric CLI deploy command.
 author: billmath
 ms.author: billmath
@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 ---
 
 
-# Tutorial - Local deployment with fabric-cicd
+# Tutorial - Local deployment
 In this tutorial, you set up a basic development environment and deploy a lakehouse and notebook to a Microsoft Fabric workspace from your local dev workstation. You can choose between two approaches:
 
 - **Python SDK** — Use the `fabric-cicd` Python library to publish items programmatically.
