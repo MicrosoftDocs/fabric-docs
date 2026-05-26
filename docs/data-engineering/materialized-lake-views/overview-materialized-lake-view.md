@@ -14,8 +14,6 @@ A materialized lake view in Fabric is a persisted, automatically refreshed view 
 
 ## When to use materialized lake views
 
-When you already have a lakehouse and run Spark notebooks to transform data into Delta tables — then schedule those notebooks via pipelines — materialized lake views can simplify that workflow. Instead of managing refresh logic, execution order, and scheduling yourself, you define SQL transformations and let Fabric handle the rest.
-
 Materialized lake views are a good fit when you have:
 
 - **Frequently accessed aggregations** (daily sales totals, monthly metrics) where precomputed results improve performance over running expensive queries repeatedly
