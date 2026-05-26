@@ -1,8 +1,7 @@
 ---
 title: Recent runs of materialized lake views
 description: Monitor materialized lake view refreshes in Microsoft Fabric. Check run status, review errors, and find specific runs.
-ms.reviewer: sairamyeturi
-ms.author: rkottackal
+ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: how-to
 ms.custom: []
 ms.date: 02/16/2026
