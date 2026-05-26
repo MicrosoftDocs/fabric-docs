@@ -33,17 +33,17 @@ Below, you find a comprehensive comparison of key components, including Apache S
 > [!TIP]
 > Always use the most recent, generally available (GA) runtime version for your production workload, which currently is [Runtime 1.3](./runtime-1-3.md).
 
-| Component | [Runtime 1.2](./runtime-1-2.md) | [Runtime 1.3](./runtime-1-3.md) | [Runtime 2.0](./runtime-2-0.md) |
-|--|--|--|--|
-| **Release Stage** | EOSA | GA | Public Preview |
-| **Apache Spark version** | 3.4.1 | 3.5.5 | 4.1 |
-| **Operating System** | Mariner 2.0 | Mariner 2.0 | Mariner 3.0 |
-| **Java version** | 11 | 11 | 21 |
-| **Scala version** | 2.12.17 | 2.12.17 | 2.13.16 |
-| **Python version** | 3.10 | 3.11 | 3.13 |
-| **Delta Lake version** | 2.4.0 | 3.2 | 4.1 |
+| Component | [Runtime 1.3](./runtime-1-3.md) | [Runtime 2.0](./runtime-2-0.md) |
+|--|--|--|
+| **Release Stage** | GA | Public Preview |
+| **Apache Spark version** | 3.5.5 | 4.1 |
+| **Operating System** | Mariner 2.0 | Mariner 3.0 |
+| **Java version** | 11 | 21 |
+| **Scala version** | 2.12.17 | 2.13.16 |
+| **Python version** | 3.11 | 3.13 |
+| **Delta Lake version** | 3.2 | 4.1 |
 
-Visit [Runtime 1.2](./runtime-1-2.md), [Runtime 1.3](./runtime-1-3.md) or [Runtime 2.0](./runtime-2-0.md) to explore details, new features, improvements, and migration scenarios for the specific runtime version.
+Visit [Runtime 1.3](./runtime-1-3.md) or [Runtime 2.0](./runtime-2-0.md) to explore details, new features, improvements, and migration scenarios for the specific runtime version.
 
 ## Fabric optimizations
 
@@ -116,5 +116,4 @@ Additionally, users should verify that all current and future production workloa
 
 - [Runtime 2.0 (Spark 4.1, Java 21, Python 3.13, Delta Lake 4.1)](./runtime-2-0.md)
 - [Runtime 1.3 (Spark 3.5, Java 11, Python 3.11, Delta Lake 3.2)](./runtime-1-3.md)
-- [Runtime 1.2 (Spark 3.4, Java 11, Python 3.10, Delta Lake 2.4)](./runtime-1-2.md)
 
