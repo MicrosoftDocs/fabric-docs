@@ -121,6 +121,7 @@ Users must access secured tables through the lakehouse table name (for example `
 For RLS and CLS to be enforced with Spark, the OneLake Spark Catalog must be enabled for the Spark session. This is done by job service based on the default lakehouse set for the Spark session. OneLake Spark Catalog will be enabled if:
 * The default lakehouse for the Spark session is schema enabled, or
 * There is no default lakehouse set for the Spark session.
+
 For those cases, when the default lakehouse must be non-schema enabled, OneLake Spark Catalog can be enabled through Spark property in Environment. Set Spark property 'spark.sql.fabric.catalog.enable-schemaless-lakehouses' to 'true' and select that environment when running the Spark job or notebook.
 
 ## Limitations
