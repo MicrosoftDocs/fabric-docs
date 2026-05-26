@@ -9,7 +9,7 @@ ms.date: 04/02/2026
 
 # Get started with materialized lake views
 
-In this quickstart, you will be guided to create source tables in a Microsoft Fabric Lakehouse, define materialized lake views to transform raw data through progressive stages, and set up refresh schedules. By the end, you have a fully working bronze-to-gold pipeline with dependency-aware orchestration and lineage tracking.
+In this quickstart, you'll be guided to create source tables in a Microsoft Fabric Lakehouse, define materialized lake views to transform raw data through progressive stages, and set up refresh schedules. By the end, you have a fully working bronze-to-gold pipeline with dependency-aware orchestration and lineage tracking.
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ In this quickstart, you will be guided to create source tables in a Microsoft Fa
    A new notebook opens with a template to create a materialized lake view.
 
    > [!NOTE]
-   > If you are using a Fabric Data Warehouse table as a source for a materialized lake view, you are required to create a table shortcut in your Lakehouse.
+   > If you're using a Fabric Data Warehouse table as a source for a materialized lake view, you're required to create a table shortcut in your Lakehouse.
 
 1. Create the source tables `products` and `orders`. Enter the following SQL command into the existing notebook cell and run it:
 
@@ -141,7 +141,7 @@ In this quickstart, you will be guided to create source tables in a Microsoft Fa
 
    :::image type="content" source="./media/get-started-with-materialized-lake-views/ongoing-run-progress-extended-screen.png" alt-text="Screenshot that shows the progress of an ongoing run." border="true" lightbox="./media/get-started-with-materialized-lake-views/ongoing-run-progress-extended-screen.png":::
 
-1. Once the run is completed, the lineage status will be updated.
+1. Once the run is completed, the lineage status is updated.
 
    :::image type="content" source="./media/get-started-with-materialized-lake-views/completed-lineage-run.png" alt-text="Screenshot that shows a completed lineage run." border="true" lightbox="./media/get-started-with-materialized-lake-views/completed-lineage-run.png":::
 
