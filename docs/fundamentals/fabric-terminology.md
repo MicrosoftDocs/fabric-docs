@@ -43,11 +43,18 @@ A *workspace* is a collection of items that brings together different functional
 
 ---
 
+- **Delta Lake:** Delta Lake is the standard table format across all Fabric workloads. When you ingest data into Fabric, it's stored as Delta tables by default. For more information, see [Delta Lake table format interoperability](delta-lake-interoperability.md).
+
+- **Domain:** A domain lets your organization group workspaces into logical business areas, such as "Finance" or "Marketing." Domains help Fabric administrators delegate management and apply governance policies above the workspace level. For more information, see [Domains](../governance/domains.md).
+
+- **Capacity units (CUs):** Capacity units are the unit of compute measurement in Fabric. All workloads and operations consume capacity units from your available Fabric capacity. Consumption is classified as interactive or background operations. For more information, see [Fabric operations](../enterprise/fabric-operations.md).
+
+- **Semantic model:** A semantic model is a metadata layer in Fabric that defines tables, relationships, measures, and data connections. Semantic models are the data source for Power BI reports, dashboards, and other analytics experiences in Fabric. For more information, see [Create and manage semantic models](/power-bi/connect-data/service-datasets-understand).
+
+- **Direct Lake:** Direct Lake is a storage mode in Fabric that lets semantic models read Delta tables directly from OneLake without importing data or using DirectQuery. Direct Lake combines the performance of import mode with the data freshness of DirectQuery. For more information, see [Direct Lake overview](direct-lake-overview.md).
+
 <a id="synapse-data-engineering"></a>
-
-## Data Engineering
-
-Data Engineering provides tools for large-scale data transformation and preparation, including lakehouses, notebooks, and Apache Spark job definitions.
+## Fabric Data Engineering
 
 #### Apache Spark job
 
