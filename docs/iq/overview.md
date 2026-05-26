@@ -88,11 +88,3 @@ This section describes how items work together or relate to one another.
 Learn about the other workloads in Microsoft IQ:
 * [Work IQ](/microsoft-365/copilot/extensibility/work-iq)
 * [Foundry IQ](/azure/foundry/agents/concepts/what-is-foundry-iq)
-
-Learn about the Fabric items in the IQ workload:
-* [What is ontology (preview)?](ontology/overview.md)
-* [What is plan (preview)?](plan/overview.md)
-* [Graph in Microsoft Fabric overview (preview)](../graph/overview.md)
-* [Fabric data agent concepts](../data-science/concept-data-agent.md)
-* [Create and configure operations agents](../real-time-intelligence/operations-agent.md)
-* [Power BI semantic models in Microsoft Fabric](../data-warehouse/semantic-models.md)
