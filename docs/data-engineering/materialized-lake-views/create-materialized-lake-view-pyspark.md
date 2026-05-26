@@ -2,7 +2,7 @@
 title: PySpark Reference for Materialized Lake Views (Preview)
 description: Learn about the PySpark semantics for activities related to materialized lake views in Microsoft Fabric.
 ms.topic: concept-article
-ms.reviewer: bsankaran, sairamyeturi, naijelsf, hgowrisankar
+ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.date: 03/19/2026
 #customer intent: As a data engineer, I want to create materialized lake views in a lakehouse so that I can optimize query performance and manage data quality.
 ---

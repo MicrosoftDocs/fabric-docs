@@ -1,7 +1,7 @@
 ---
 title: "Implement medallion architecture with materialized lake views"
 description: This tutorial outlines the steps and considerations for implementing a medallion architecture for a sales analytics pipeline using materialized lake views.
-ms.reviewer: bsankaran, sairamyeturi, naijelsf, hgowrisankar
+ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: tutorial
 ms.date: 03/18/2026
 #customer intent: As a data engineer, I want to implement a medallion architecture using materialized lake views in Microsoft Fabric so that I can automate data transformation workflows and gain actionable insights into sales analytics.

@@ -1,7 +1,7 @@
 ---
 title: "Data Quality in Materialized Lake Views in a Lakehouse in Microsoft Fabric"
 description: Learn about data quality in materialized lake views in a lakehouse in Microsoft Fabric
-ms.reviewer: bsankaran, sairamyeturi, naijelsf, hgowrisankar
+ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: concept-article
 ms.date: 03/18/2026
 ai-usage: ai-assisted
