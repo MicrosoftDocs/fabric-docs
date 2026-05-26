@@ -60,12 +60,6 @@ Using the terminal from within VS Code, install the fabric-cicd python library.
 pip install fabric-cicd
 ```
 
->[!NOTE]
-> Fabric-cicd requires python versions 3.9 to 3.12. If you're using python 3.13 or greater, you can bypass the python requirement check with the following:
->
-> `pip install fabric-cicd --ignore-requires-python`
->
-
 ### [Fabric CLI](#tab/fabric-cli)
 
 Using the terminal, install the Fabric CLI.
@@ -113,7 +107,7 @@ publish_all_items(workspace) # 👈 call the function
 
 ### [Fabric CLI](#tab/fabric-cli)
 
-Navigate to the **fabric-cicd-local** files that you cloned down in step 1. Create a `config.yml` file in the root of the folder with the following content, replacing `<YOUR_WORKSPACE_ID>` with your workspace ID.
+Navigate to the **fabric-cicd-local/fabric_items** folder that you cloned down in step 1. Create a `config.yml` file in the root of the folder with the following content, replacing `<YOUR_WORKSPACE_ID>` with your workspace ID.
 
 ```yaml
 core:
@@ -171,7 +165,7 @@ Run the `fab deploy` command from the terminal, pointing to your configuration f
 fab deploy --config config.yml
 ```
 
-When no target environment is specified, the CLI prompts for confirmation: *"Are you sure you want to deploy without a target environment using the specified configuration file?"*. Type `y` to confirm and proceed with the deployment.
+When prompted to confirm the deployment, type `y` to proceed.
 
 The CLI publishes all items found in the repository directory to the target workspace and unpublishes any items that no longer exist in the source.
 
