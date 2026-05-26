@@ -126,7 +126,7 @@ When using the REST API to retrieve the connection string use, the `privateLinkT
 
 ---
 
-To use the warehouse connection string with a workspace-level private link, add information to the placeholders z{xy} to the regular warehouse connection string, as described in [Private links for Fabric workspaces](security-workspace-level-private-links-overview.md#connecting-to-workspaces). For example:
+To use the warehouse connection string with a workspace-level private link, add information to the placeholders z{xy} to the regular warehouse connection string, as described in [Private links for Fabric workspaces](security-workspace-level-private-links-overview.md#connecting-to-workspaces). The `z` is a literal inclusion in the connection string, and the brackets are not included, so for example `zab` or `z44`. For example:
 
 ```url
 {GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com
@@ -138,7 +138,7 @@ Using the warehouse connection string, you can also access a warehouse via the S
 
 ### SQL analytics endpoint support
 
-To use the warehouse connection string with a workspace-level private link, add information to the placeholders z{xy} to the regular warehouse connection string, as described in [Private links for Fabric workspaces](security-workspace-level-private-links-overview.md#connecting-to-workspaces). For example:
+To use the warehouse connection string with a workspace-level private link, add information to the placeholders z{xy} to the regular warehouse connection string, as described in [Private links for Fabric workspaces](security-workspace-level-private-links-overview.md#connecting-to-workspaces). The `z` is a literal inclusion in the connection string, and the brackets are not included, so for example `zab` or `z44`. For example:
 
 ```url
 {GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com
