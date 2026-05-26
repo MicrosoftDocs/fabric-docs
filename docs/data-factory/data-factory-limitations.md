@@ -32,7 +32,7 @@ The following table describes the resource limitations for pipelines in Data Fac
 
 | Pipeline Resource | Default limit | Maximum limit |
 |---|---|---|
-| Total number of pipelines within a [workspace](/fabric/fundamentals/workspaces) | 5,000 | 5,000 |
+| Total number of pipelines within a [workspace](/fabric/fundamentals/workspaces) | 1,000 | 1,000 |
 | Concurrent pipeline runs per [workspace](/fabric/fundamentals/workspaces) that's shared among all pipelines in [workspace](/fabric/fundamentals/workspaces)  | 10,000 | 10,000 |
 | Concurrent external activities like stored procedure, Web, Web Hook, and others per [workspace](/fabric/fundamentals/workspaces) | 100 | 100 |
 | Concurrent pipeline activities execution for Lookup, GetMetadata, and Delete per [workspace](/fabric/fundamentals/workspaces) | 100 | 100 |
