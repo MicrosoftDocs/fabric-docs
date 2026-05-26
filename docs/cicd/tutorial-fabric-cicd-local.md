@@ -74,6 +74,12 @@ Using the terminal, install the Fabric CLI.
 pip install ms-fabric-cli
 ```
 
+>[!TIP]
+> If you already have the Fabric CLI installed, upgrade to the latest version to ensure the `deploy` command is available:
+>
+> `pip install --upgrade ms-fabric-cli`
+>
+
 Verify the installation:
 
 ```bash
@@ -164,6 +170,8 @@ Run the `fab deploy` command from the terminal, pointing to your configuration f
 ```bash
 fab deploy --config config.yml
 ```
+
+When no target environment is specified, the CLI prompts for confirmation: *"Are you sure you want to deploy without a target environment using the specified configuration file?"*. Type `y` to confirm and proceed with the deployment.
 
 The CLI publishes all items found in the repository directory to the target workspace and unpublishes any items that no longer exist in the source.
 
