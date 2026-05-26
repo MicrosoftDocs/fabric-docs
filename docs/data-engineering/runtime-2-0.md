@@ -76,9 +76,6 @@ To use Runtime 2.0 with specific notebooks or Spark job definitions:
 
 You can now start experimenting with the newest improvements and functionalities introduced in Fabric Runtime 2.0 (Spark 4.1 and Delta Lake 4.1).
 
-> [!TIP]
-> Initial Spark session startup for Runtime 2.0 may take a few minutes during public preview. To reduce cold-start delays, use Custom Live Pools (preview) to pre-warm Spark pools, or configure Resource Profiles to allocate resources in advance.
-
 > [!NOTE]
 > The WASB protocol for General Purpose v2 (GPv2) Azure Storage accounts is deprecated. You should use the latest ABFS protocol instead for reading from and writing to GPv2 storage accounts.
 

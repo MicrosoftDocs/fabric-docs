@@ -35,7 +35,7 @@ For information on the operators and functions supported by the native execution
 To use the full capabilities of the native execution engine during the preview phase, specific configurations are necessary. The following procedures show how to activate this feature for notebooks, Spark job definitions, and entire environments.
 
 > [!IMPORTANT]
-> The native execution engine supports [Runtime 1.3 (Apache Spark 3.5, Delta Lake 3.2)](./runtime-1-3.md) and [Runtime 2.0 (Apache Spark 4.1, Delta Lake 4.1)](./runtime-2-0.md). With the release of the native execution engine in Runtime 1.3, support for the previous version, [Runtime 1.2 (Apache Spark 3.4, Delta Lake 2.4)](./runtime-1-2.md), is discontinued. We encourage all customers to upgrade to the latest Runtime 1.3. If you're using the Native Execution Engine on Runtime 1.2, native acceleration will be disabled.
+> The native execution engine supports [Runtime 1.3 (Apache Spark 3.5, Delta Lake 3.2)](./runtime-1-3.md) and [Runtime 2.0 (Apache Spark 4.1, Delta Lake 4.1)](./runtime-2-0.md).
 
 ### Enable at the environment level
 
