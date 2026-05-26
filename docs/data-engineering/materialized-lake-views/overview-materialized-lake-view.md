@@ -3,7 +3,7 @@ title: Overview of Materialized Lake Views
 description: Learn about the features, availability, and limitations of materialized lake views in Microsoft Fabric.
 ms.reviewer: nijelsf
 ms.topic: overview
-ms.date: 04/14/2026
+ms.date: 05/26/2026
 ai-usage: ai-assisted
 # customer intent: As a data engineer, I want to understand what materialized lake views are in Microsoft Fabric so that I can use them for building a medallion architecture.
 ---
@@ -14,7 +14,7 @@ A materialized lake view in Fabric is a persisted, automatically refreshed view 
 
 ## When to use materialized lake views
 
-When you already have a lakehouse and run Spark notebooks to transform data into Delta tables—then schedule those notebooks via pipelines—materialized lake views can simplify that workflow. Instead of managing refresh logic, execution order, and scheduling yourself, you define SQL transformations and let Fabric handle the rest.
+When you already have a lakehouse and run Spark notebooks to transform data into Delta tables — then schedule those notebooks via pipelines — materialized lake views can simplify that workflow. Instead of managing refresh logic, execution order, and scheduling yourself, you define SQL transformations and let Fabric handle the rest.
 
 Materialized lake views are a good fit when you have:
 
@@ -35,11 +35,11 @@ Materialized lake views aren't the right choice for every scenario. Consider alt
 
 ## Get started with materialized lake views
 
-To create your first materialized lake view in Microsoft Fabric, see [Get started with materialized lake views](get-started-with-materialized-lake-views.md). For a complete walkthrough that builds a medallion architecture, see [Tutorial: Build a medallion architecture with materialized lake views](tutorial.md).
+To create materialized lake view in Microsoft Fabric, see [Get started with materialized lake views](get-started-with-materialized-lake-views.md). For a complete walkthrough that builds a medallion architecture, see [Tutorial: Build a medallion architecture with materialized lake views](tutorial.md).
 
 ## How do materialized lake views work?
 
-Materialized lake views use a declarative approach: you write a SQL query that defines the transformation you want, and Fabric handles execution, storage, and refresh. The result is persisted as a Delta table in your lakehouse, so downstream consumers can query it directly without re-running the transformation.
+Materialized lake views use declarative approach: Write a SQL query to define the transformation, and let Fabric handle execution, storage, and refresh. The result is persisted as a Delta table in your lakehouse, so that the downstream consumers can query it directly without re-running the transformation.
 
 The lifecycle of a materialized lake view follows four stages:
 
