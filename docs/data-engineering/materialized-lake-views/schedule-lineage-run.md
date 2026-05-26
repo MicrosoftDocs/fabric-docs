@@ -2,7 +2,7 @@
 title: "Schedule a Materialized Lake View Refresh"
 description: Learn how to schedule a materialized lake view refresh
 ms.topic: how-to
-ms.reviewer: sairamyeturi
+ms.reviewer: bsankaran, sairamyeturi, naijelsf, hgowrisankar
 ms.date: 05/06/2026
 ai-usage: ai-assisted
 ---
