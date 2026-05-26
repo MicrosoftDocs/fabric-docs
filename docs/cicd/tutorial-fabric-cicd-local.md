@@ -36,7 +36,6 @@ Both approaches use the same underlying deployment engine. Choose the one that f
 - Admin permissions on the Fabric workspace.
 - A GitHub account (required to access demo files)
 - **Python** [Install python](https://www.python.org/downloads/)
-- **Azure CLI** (used only for authentication): [Install Azure CLI](/cli/azure/install-azure-cli)
 
 ---
 
@@ -45,7 +44,7 @@ Both approaches use the same underlying deployment engine. Choose the one that f
 1. Fork the [Fabric-cicd repository](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/cicd/fabric-cicd-local) to your GitHub account.
 1. Clone your fork to your local machine:
 
-```pwsh
+```
 git clone https://github.com/<your-account>/fabric-samples/tree/main/docs-samples/cicd/fabric-cicd-local.git
 cd fabric-samples
 ```
@@ -120,7 +119,9 @@ For more configuration options, including environment-specific settings, item ty
 
 ---
 
-## Step 4. Sign in to Azure
+## Step 4. Sign in
+
+### [Python SDK](#tab/python-sdk)
 
 Using the terminal, sign in using az login.
 
@@ -134,6 +135,18 @@ az login
 >
 
  :::image type="content" source="media/tutorial-fabric-cicd-local/demo-1.png" alt-text="Screenshot of running az login in VS Code." lightbox="media/tutorial-fabric-cicd-local/demo-1.png":::
+
+### [Fabric CLI](#tab/fabric-cli)
+
+Using the terminal, sign in using the Fabric CLI.
+
+```bash
+fab auth login
+```
+
+Follow the prompts to authenticate with your Microsoft Entra ID credentials.
+
+---
 
 
 ## Step 5. Run the deployment
