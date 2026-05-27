@@ -1,5 +1,5 @@
 ---
-title: Microsoft Fabric terminology
+title: Microsoft Fabric Terminology
 description: Learn the definitions of terms used in Microsoft Fabric, including terms specific to Fabric Data Engineering, Fabric Data Factory, Fabric Data Science, Fabric Data Warehouse, Fabric IQ, Fabric Real-Time Intelligence, and Power BI.
 author: SnehaGunda
 ms.author: sngun
@@ -16,6 +16,8 @@ ai-usage: ai-assisted
 Learn the definitions of terms used in Microsoft Fabric, including terms specific to each Fabric workload.
 
 ## General terms
+
+The following terms apply across all Fabric workloads.
 
 #### Capacity
 
@@ -63,18 +65,11 @@ Direct Lake is a storage mode in Fabric that lets semantic models read Delta tab
 
 ---
 
-- **Delta Lake:** Delta Lake is the standard table format across all Fabric workloads. When you ingest data into Fabric, it's stored as Delta tables by default. For more information, see [Delta Lake table format interoperability](delta-lake-interoperability.md).
-
-- **Domain:** A domain lets your organization group workspaces into logical business areas, such as "Finance" or "Marketing." Domains help Fabric administrators delegate management and apply governance policies above the workspace level. For more information, see [Domains](../governance/domains.md).
-
-- **Capacity units (CUs):** Capacity units are the unit of compute measurement in Fabric. All workloads and operations consume capacity units from your available Fabric capacity. Consumption is classified as interactive or background operations. For more information, see [Fabric operations](../enterprise/fabric-operations.md).
-
-- **Semantic model:** A semantic model is a metadata layer in Fabric that defines tables, relationships, measures, and data connections. Semantic models are the data source for Power BI reports, dashboards, and other analytics experiences in Fabric. For more information, see [Create and manage semantic models](/power-bi/connect-data/service-datasets-understand).
-
-- **Direct Lake:** Direct Lake is a storage mode in Fabric that lets semantic models read Delta tables directly from OneLake without importing data or using DirectQuery. Direct Lake combines the performance of import mode with the data freshness of DirectQuery. For more information, see [Direct Lake overview](direct-lake-overview.md).
-
 <a id="synapse-data-engineering"></a>
+
 ## Fabric Data Engineering
+
+Data Engineering provides tools for large-scale data processing and transformation by using Apache Spark.
 
 #### Apache Spark job
 
@@ -254,7 +249,7 @@ OneLake is Fabric's unified, multicloud data lake that serves as the single stor
 
 #### Shortcut
 
-A *shortcut* is an embedded reference within OneLake that points to another file store location. They enable access to external operational data sources without copying data or building ETL pipelines. You can combine shortcuts with OneLake data sharing for cross-tenant governed access to shared datasets. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
+A *shortcut* is an embedded reference within OneLake that points to another file store location. Shortcuts enable access to external operational data sources without copying data or building ETL pipelines. You can combine shortcuts with OneLake data sharing for cross-tenant governed access to shared datasets. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
 ---
 
@@ -262,5 +257,3 @@ A *shortcut* is an embedded reference within OneLake that points to another file
 
 - [Navigate to your items from Microsoft Fabric Home page](fabric-home.md)
 - [End-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md)
-
-
