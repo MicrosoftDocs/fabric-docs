@@ -85,6 +85,9 @@ The tables below lists examples of the data that is shared with Microsoft 365 se
 |ActorID|Microsoft Entra ID for the user who acted on the item|aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee|
 |StartTime/EndTime|Date/Time the user performed the action on the content|2011-06-30T23:32:46Z|
 
+> [!NOTE]
+> Power BI reports shared using organization-wide (“org-wide”) links are not discoverable in Microsoft 365 experiences (such as search) for users who only have access via those links even when the “Share Fabric data with your M365 Microsoft Services” setting is enabled. This is expected behavior; users can still access the report directly through the link, but it will not appear in discovery surfaces unless shared through other access methods.
+> 
 ## Related content
 
 - [About tenant settings](tenant-settings-index.md)
