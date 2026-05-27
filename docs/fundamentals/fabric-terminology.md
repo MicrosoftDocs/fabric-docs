@@ -171,7 +171,11 @@ A *SQL database in Fabric* is a transactional database based on Azure SQL Databa
 
 ## Fabric IQ
 
-The Fabric IQ (preview) workload provides tools for defining and managing business semantics across data, models, and systems.
+*Fabric IQ* is part of Microsoft IQ, a set of capabilities that form the enterprise intelligence layer of the Microsoft stack. In Microsoft IQ, Fabric IQ works alongside Work IQ and Foundry IQ to provide context for a complete view of your organization. The Fabric IQ piece provides context on business entities and data.
+
+As workload in Fabric, IQ (preview) groups items related to unifying business semantics across data, models, and systems to power intelligent agents and decisions. 
+
+For more information about Fabric IQ, see [Fabric IQ overview](../iq/overview.md).
 
 #### Ontology
 
