@@ -2,6 +2,8 @@
 items:
 - name: Getting started with operations agents
   href: ../operations-agent.md
+- name: Operations agent actions
+  href: ../operations-agent-actions.md
 - name: Operations agents billing
   href: ../operations-agent-billing.md
 - name: Operations agents limitations
