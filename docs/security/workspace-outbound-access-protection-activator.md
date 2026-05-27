@@ -15,7 +15,7 @@ Workspace outbound access protection helps safeguard your data by controlling ou
 > [!IMPORTANT]
 > Support for Activator with workspace outbound access protection is currently in preview.
 
-### Understanding outbound access protection with Activator
+## Understanding outbound access protection with Activator
 
 Activator triggers actions when conditions in your data are met. These actions can target Fabric items, Microsoft Teams, email recipients, and Power Automate flows. When you enable outbound access protection, each action target is handled as follows:
 
@@ -26,7 +26,7 @@ Activator triggers actions when conditions in your data are met. These actions c
 | **Email** | Blocked by default. Email notifications are restricted to recipients within the same tenant.|
 | **Power Automate** | Blocked. Power Automate flows triggered from Activator are blocked and can't be configured through data connection rules at this time. |
 
-### Configuring outbound access protection for Activator
+## Configuring outbound access protection for Activator
 
 You can only create an allow list by using data connection rules; managed private endpoints aren't supported for Activator. To configure outbound access protection for Activator:
 
@@ -36,13 +36,14 @@ You can only create an allow list by using data connection rules; managed privat
 
 When you configure these settings, Activator can only send actions to the destinations specified in the data connection rules, while all other outbound connections remain blocked.
 
-### Considerations and limitations
+## Considerations and limitations
 
 - **Fabric item actions**: Actions targeting Fabric items in the same workspace are always allowed. Actions targeting Fabric items in other workspaces require explicit approval through data connection rules.
 - **Teams actions**: Teams notifications are limited to your tenant. Use the **MicrosoftTeams** connection kind in data connection rules to allow or block Teams notifications.
 - **Email actions**: Email notifications are limited to recipients within the same tenant. Email is blocked by default when outbound access protection is enabled. A dedicated email connector for workspace-level control is planned for a future release.
 - **Power Automate actions**: Power Automate flows triggered by Activator are blocked when outbound access protection is enabled. Workspace-level control for Power Automate is planned for a future release.
 - For other limitations, refer to [Workspace outbound access protection overview](/fabric/security/workspace-outbound-access-protection-overview#considerations-and-limitations).
+
 ## Next steps
 
 - [Create an allow list with managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md)

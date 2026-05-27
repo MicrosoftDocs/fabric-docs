@@ -21,6 +21,7 @@ This article describes how outbound access protection applies to Real-Time Intel
 
 Workspace outbound access protection applies to the following Real-Time Intelligence items: 
 
+- Activator, see [Outbound access protection for Activator](workspace-outbound-access-protection-activator.md)
 - Eventhouse
 - Eventstream, see [Outbound access protection for Eventstream](workspace-outbound-access-protection-eventstream.md)
 
