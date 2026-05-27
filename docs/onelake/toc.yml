@@ -7,7 +7,7 @@ items:
     href: onelake-overview.md
 - name: Get started
   items:
-  - name: "Quickstart: Get data in OneLake"
+  - name: Get data into OneLake
     href: quickstart-get-data.md
   - name: Transform with Apache Spark and query data with SQL
     href: onelake-onecopy-quickstart.md

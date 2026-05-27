@@ -1,5 +1,5 @@
 ---
-title: "Quickstart: Get data in OneLake"
+title: "Quickstart: Get data into OneLake"
 description: Learn how to bring data into OneLake by uploading a sample CSV file to a lakehouse and by creating a OneLake shortcut to reuse that data from a second lakehouse.
 ms.topic: quickstart
 ms.date: 05/27/2026
@@ -7,7 +7,7 @@ ai-usage: ai-assisted
 #customer intent: As a Fabric user, I want to add data to OneLake quickly so that I can explore it from any Fabric engine.
 ---
 
-# Quickstart: Get data in OneLake
+# Quickstart: Get data into OneLake
 
 OneLake is the single, unified data lake for Microsoft Fabric. Every Fabric workload, including Data Engineering, Data Warehouse, Data Science, Real-Time Intelligence, and Power BI, reads and writes data through OneLake, so you only need to load data once to use it everywhere. You can bring data into OneLake in several ways:
 
