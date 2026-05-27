@@ -37,7 +37,7 @@ An *item* is an object that users create in Fabric, such as a lakehouse, noteboo
 
 #### Tenant
 
-A *tenant* is a single instance of Fabric for an organization, aligned with a Microsoft Entra ID.
+A *tenant* is a single instance of Fabric for an organization, aligned with a Microsoft Entra tenant.
 
 #### Workload
 
