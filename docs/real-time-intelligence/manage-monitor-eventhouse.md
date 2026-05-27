@@ -13,20 +13,11 @@ ms.search.form: Eventhouse
 
 An Eventhouse is a scalable environment for processing and analyzing large volumes of real-time data. It supports structured streaming for continuous data ingestion and analysis, and uses Kusto Query Language (KQL) to easily gain insights from your data. The Eventhouse page serves as the central hub for all your interactions within the Eventhouse environment. It's your gateway to seamlessly manage and monitor an eventhouse, navigate through databases, and perform various Eventhouse-related actions.
 
-## Prerequisites
+## Eventhouse home page
 
-* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* An [eventhouse](create-eventhouse.md) in your workspace.
+The eventhouse home page is where you can manage and monitor your eventhouse. From here, you can view the system overview, browse databases, and access monitoring features. The system overview provides insights into the health, performance, and activity of your eventhouse, including storage usage, compute usage, ingestion rates, and more. You can also view advisory findings that proactively alert you to potential capacity issues.
 
-## View eventhouse home page
-
-1. Browse to your workspace in the Real-Time Intelligence workload.
-
-1. Select an eventhouse from the list of items in the workspace.
-
-    :::image type="content" source="media/eventhouse/event-house-page.png" alt-text="Screenshot showing the main Eventhouse page." lightbox="media/eventhouse/event-house-page.png":::
-
-This page is divided into the following sections:
+:::image type="content" source="media/eventhouse/event-house-page.png" alt-text="Screenshot showing the main Eventhouse page." lightbox="media/eventhouse/event-house-page.png":::
 
 * **A: Eventhouse ribbon**: The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh the eventhouse page, enable always-on, add databases, add plugins, and collapse or expand the details area.
 
@@ -43,7 +34,7 @@ This page is divided into the following sections:
 
 An eventhouse can have multiple **Related elements**, such as KQL databases, real-time dashboards, activators, and more. You can easily navigate to these related elements from the eventhouse details area.
 
-## View system overview
+## System overview
 
 The eventhouse **System overview** provides insights into the eventhouse's health, performance, and activity, including storage usage, compute usage, ingestion rates, and more. <!--You can also view advisory findings that proactively alert you to potential capacity issues.-->
 
@@ -152,7 +143,7 @@ Highlights database owners and recent eventhouse events, such as the following o
 * Create, alter, or delete a function
 * Alter a caching policy, retention policy, or table update policy
 
-### View databases overview
+### View databases
 
 The databases overview page provides a summary of all the databases in the eventhouse.
 
@@ -176,25 +167,12 @@ The databases overview page provides a summary of all the databases in the event
 
 1. To add a new database or database shortcut to the eventhouse, select **+ New database** at the top of the page. For more information, see [Create a KQL database](create-database.md) and [Create a database shortcut](database-shortcut.md).
 
-## Workspace monitoring
+## View monitoring eventhouse
 
-Workspace monitoring is provided as a set of read-only tables, inside a monitoring KQL database. You can query the tables to get insights into the usage and performance of your eventhouse. For more information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
+Eventhouse workspace monitoring is a feature that lets you track the health and performance of the eventhouse using Fabric workspace monitoring.
+When you enable workspace monitoring, Fabric automatically creates an eventhouse in your workspace that collects metrics from your eventhouse. You can then query this data using KQL (Kusto Query Language) to troubleshoot issues, analyze trends, and build custom dashboards.
 
-1. From the **Eventhouse** explorer, select **Monitoring**.
-
-    :::image type="content" source="media/eventhouse/monitor-eventhouse.png" alt-text="Screenshot of an eventhouse pane with Monitoring highlighted in a red box.":::
-
-1. From the **Monitoring** section of the Workspace settings, add a monitoring Eventhouse by selecting **+ Eventhouse**.
-
-1. Wait for the success message confirming that the monitoring eventhouse was added to your workspace. Workspace activity loggging is now enabled. 
-
-1. Select the **Monitoring database** link to open the **Monitoring Eventhouse** in a new window.
-
-1. In the **Monitoring KQL database** overview page, view the query insights and query the data.
-
-    :::image type="content" source="media/eventhouse/monitor-eventhouse-details.png" alt-text="Screenshot of a monitoring eventhouse showing the monitoring KQL database overview page.":::
-
-    For information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
+The mointoring eventhouse is provided as a set of read-only tables, inside a monitoring KQL database. You can query the tables to get insights into the usage and performance of your eventhouse. For more information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
 
 For more monitoring insights, see the following articles:
 
