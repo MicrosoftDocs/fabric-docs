@@ -62,8 +62,13 @@ The following table summarizes the supported workloads and item types that can b
 | Data Science | Not applicable | <ul><li>Machine Learning Experiments</li><li>Machine Learning Models</li></ul> | [Workspace outbound access protection for Data Science](workspace-outbound-access-protection-data-science.md) |
 | Data Warehouse | Not applicable | <ul><li>Warehouses</li><li>SQL analytics endpoints</li></ul> | [Workspace outbound access protection for data warehouse workloads](workspace-outbound-access-protection-data-warehouse.md) |
 | Fabric IQ | Data connection rules | <ul><li>Graph</li></ul> | [Workspace outbound access protection for Fabric IQ](workspace-outbound-access-protection-iq.md) |
+<<<<<<< HEAD
 | Real-Time Intelligence | Data connection rules | <ul>><li>Activator</li><li>Eventstream</li><li>Eventhouse</li></ul> | Workspace outbound access protection for Real-Time Intelligence: [Activator](workspace-outbound-access-protection-activator.md), [Eventstream](workspace-outbound-access-protection-eventstream.md), and [Eventhouse](workspace-outbound-access-protection-eventhouse.md) |
 | Mirrored databases | Data connection rules | Microsoft Fabric mirrored databases from:<ul><li>Azure SQL Database</li><li>Snowflake</li><li>Mirrored Database</li><li>Azure Cosmos DB</li><li>Azure SQL Managed Instance</li><li>Azure Database for PostgreSQL</li><li>SQL Server</li><li>Oracle</li><li>Google Big Query</li><li>SAP</li><li>Azure Database for MySQL</li></ul> | [Workspace outbound access protection for mirrored databases](workspace-outbound-access-protection-mirrored-databases.md) |
+=======
+| Real-Time Intelligence | Data connection rules | <ul><li>Eventhouse</li><li>Eventstream</li></ul> | [Workspace outbound access protection for Eventhouse](workspace-outbound-access-protection-eventhouse.md) <br>[Workspace outbound access protection for Eventstream](workspace-outbound-access-protection-event-stream.md) |
+| Mirrored databases | Data connection rules | <ul><li>Mirrored databases</li></ul> | [Workspace outbound access protection for mirrored databases](workspace-outbound-access-protection-mirrored-databases.md) |
+>>>>>>> 313b2cfd40e5a8ba20ea1fd73d08fe5f6cb6ab0c
 | OneLake | Managed private endpoints | <ul><li>OneLake shortcuts</li></ul> | [Workspace outbound access protection for OneLake](workspace-outbound-access-protection-onelake.md) |
 | Power BI | Data connection rules | <ul><li>Semantic models</li></ul> | [Workspace outbound access protection for semantic models](workspace-outbound-access-protection-semantic-models.md) |
 

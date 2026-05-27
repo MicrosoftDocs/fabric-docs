@@ -28,17 +28,18 @@ To configure outbound access protection for mirrored databases, follow the steps
 
 Outbound access protection applies to the following Microsoft Fabric mirrored database sources:
 
-- Azure SQL Database
-- Snowflake
-- Open mirroring database
 - Azure Cosmos DB
-- Azure SQL Managed Instance
-- Azure Database for PostgreSQL
-- SQL Server
-- Oracle
-- Google Big Query
-- SAP
 - Azure Database for MySQL
+- Azure Database for PostgreSQL
+- Azure SQL Database
+- Azure SQL Managed Instance
+- Google BigQuery
+- Oracle
+- SAP
+- SharePoint List
+- Snowflake
+- SQL Server
+- Open mirroring
 
 > [!NOTE]
 > Mirrored databases follow data connection rules for mirroring. Only allowed sources can be mirrored. Connections to other sources for mirroring are blocked.
