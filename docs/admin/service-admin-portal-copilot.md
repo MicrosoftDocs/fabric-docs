@@ -41,6 +41,9 @@ When this setting is enabled, users can access the features powered by Azure Ope
 
 This setting can be managed at both the tenant and the capacity levels. When this setting is enabled, the service may execute background jobs at no charge to the tenant capacity to support end user experiences. For more information, see [Overview of Copilot in Fabric](../fundamentals/copilot-fabric-overview.md).
 
+> [!IMPORTANT]
+> Users may configure Fabric data agents to be consumed from other services such as Microsoft Foundry, Microsoft Copilot Studio, M365 Copilot or as an MCP server ("Non-Fabric Services"). When users connect to these Non-Fabric services, responses returned by Fabric data agents may be sent outside of Fabric's compliance boundary or geographic region and processed and/or stored according to the Non-Fabric service(s) applicable terms and data handling policies.
+
 **Default:** Enabled
 
 ## Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance
