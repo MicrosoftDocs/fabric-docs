@@ -1,5 +1,5 @@
 ---
-title: Microsoft Fabric terminology
+title: Microsoft Fabric Terminology
 description: Learn the definitions of terms used in Microsoft Fabric, including terms specific to Fabric Data Engineering, Fabric Data Factory, Fabric Data Science, Fabric Data Warehouse, Fabric IQ, Fabric Real-Time Intelligence, and Power BI.
 author: SnehaGunda
 ms.author: sngun
@@ -17,9 +17,15 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 ## General terms
 
+The following terms apply across all Fabric workloads.
+
 #### Capacity
 
 A *capacity* is a dedicated set of resources that you can use at a given time. Capacity defines the ability of a resource to perform an activity or to produce output. Different items consume different capacity at a certain time. Fabric offers capacity through the Fabric SKU and Trials. For more information, see [What is capacity?](../enterprise/licenses.md#capacity)
+
+#### Capacity units (CUs)
+
+Capacity units are the unit of compute measurement in Fabric. All workloads and operations consume capacity units from your available Fabric capacity. Consumption is classified as interactive or background operations. For more information, see [Fabric operations](../enterprise/fabric-operations.md).
 
 #### Item
 
@@ -31,7 +37,7 @@ An *item* is an object that users create in Fabric, such as a lakehouse, noteboo
 
 #### Tenant
 
-A *tenant* is a single instance of Fabric for an organization, aligned with a Microsoft Entra ID.
+A *tenant* is a single instance of Fabric for an organization, aligned with a Microsoft Entra tenant.
 
 #### Workload
 
@@ -41,13 +47,29 @@ A *workload* is a collection of capabilities targeted to a specific functionalit
 
 A *workspace* is a collection of items that brings together different functionality in a single environment designed for collaboration. It acts as a container that uses capacity for the work that is executed, and provides controls for who can access the items in it. For example, in a workspace, users create reports, notebooks, and semantic models. For more information, see [Workspaces](workspaces.md).
 
+#### Delta Lake
+
+A Delta Lake is the standard table format across all Fabric workloads. When you ingest data into Fabric, it's stored as Delta tables by default. For more information, see [Delta Lake table format interoperability](delta-lake-interoperability.md).
+
+#### Domain
+
+A domain lets your organization group workspaces into logical business areas, such as "Finance" or "Marketing." Domains help Fabric administrators delegate management and apply governance policies above the workspace level. For more information, see [Domains](../governance/domains.md).
+
+#### Semantic model
+
+A semantic model is a metadata layer in Fabric that defines tables, relationships, measures, and data connections. Semantic models are the data source for Power BI reports, dashboards, and other analytics experiences in Fabric. For more information, see [Create and manage semantic models](/power-bi/connect-data/service-datasets-understand).
+
+#### Direct Lake
+
+Direct Lake is a storage mode in Fabric that lets semantic models read Delta tables directly from OneLake without importing data or using DirectQuery. Direct Lake combines the performance of import mode with the data freshness of DirectQuery. For more information, see [Direct Lake overview](direct-lake-overview.md).
+
 ---
 
 <a id="synapse-data-engineering"></a>
 
-## Data Engineering
+## Fabric Data Engineering
 
-Data Engineering provides tools for large-scale data transformation and preparation, including lakehouses, notebooks, and Apache Spark job definitions.
+Data Engineering provides tools for large-scale data processing and transformation by using Apache Spark.
 
 #### Apache Spark job
 
@@ -227,7 +249,7 @@ OneLake is Fabric's unified, multicloud data lake that serves as the single stor
 
 #### Shortcut
 
-A *shortcut* is an embedded reference within OneLake that points to another file store location. They enable access to external operational data sources without copying data or building ETL pipelines. You can combine shortcuts with OneLake data sharing for cross-tenant governed access to shared datasets. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
+A *shortcut* is an embedded reference within OneLake that points to another file store location. Shortcuts enable access to external operational data sources without copying data or building ETL pipelines. You can combine shortcuts with OneLake data sharing for cross-tenant governed access to shared datasets. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
 ---
 
@@ -235,5 +257,3 @@ A *shortcut* is an embedded reference within OneLake that points to another file
 
 - [Navigate to your items from Microsoft Fabric Home page](fabric-home.md)
 - [End-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md)
-
-
