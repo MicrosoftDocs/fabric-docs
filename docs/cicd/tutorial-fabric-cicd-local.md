@@ -41,12 +41,12 @@ The Fabric CLI `fab deploy` command uses the `fabric-cicd` library under the hoo
 
 ## Step 1. Download the source files
 
-1. Fork the [Fabric-cicd repository](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/cicd/fabric-cicd-local) to your GitHub account.
-1. Clone your fork to your local machine:
+1. Fork the [fabric-samples repository](https://github.com/microsoft/fabric-samples) to your GitHub account.
+1. Clone your fork and navigate to the sample folder:
 
-```
-git clone https://github.com/<your-account>/fabric-samples/tree/main/docs-samples/cicd/fabric-cicd-local.git
-cd fabric-samples
+```bash
+git clone https://github.com/<your-account>/fabric-samples.git
+cd fabric-samples/docs-samples/cicd/fabric-cicd-local
 ```
 
 
