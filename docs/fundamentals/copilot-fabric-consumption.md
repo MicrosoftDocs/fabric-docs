@@ -1,5 +1,5 @@
 ---
-title: Copilot Usage and Billing
+title: Copilot in Fabric consumption, usage, and billing
 description: Learn how Copilot in Microsoft Fabric consumes capacity units (CUs), including token-based billing rates, usage monitoring, and cross-region processing.
 author: SnehaGunda
 ms.author: sngun
@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 #customer intent: As a Fabric capacity administrator, I want to understand how Copilot consumes capacity units so that I can plan and monitor my organization's Copilot usage.
 ---
 
-# Copilot in Fabric consumption rates and billing
+# Consumption rates and billing for Copilot in Fabric
 
 Copilot in Fabric consumption is the billing model that measures how Copilot requests use Fabric Capacity Units (CUs). Each Copilot interaction is metered by the number of tokens processed—approximately 1,000 tokens equal 750 words. Input and output tokens are consumed at different rates, and prices are calculated per 1,000 tokens.
 
