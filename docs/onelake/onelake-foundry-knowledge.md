@@ -16,7 +16,7 @@ Use Microsoft OneLake as a knowledge source for Microsoft Foundry. You can conne
 With this integration, you can ground your agents on the same enterprise data that already lives in OneLake, instead of creating new copies of files in separate AI specific stores. Permissions and governance are enforced through the same OneLake and Fabric controls that you use for analytics workloads.
 
 > [!IMPORTANT]
-> When you connect Microsoft OneLake as a knowledge source for Microsoft Foundry, data may be sent outside of Fabric's compliance boundary or geographic region and processed and/or stored according to the Foundry Service(s) applicable terms and data handling policies.
+> When you connect Microsoft OneLake as a knowledge source for Microsoft Foundry, data may be sent outside of Fabric's compliance boundary or geographic region and processed, and/or stored according to the Foundry Service(s) applicable terms and data handling policies.
 
 ## Prerequisites
 

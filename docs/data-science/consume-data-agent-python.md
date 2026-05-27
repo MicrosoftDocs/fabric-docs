@@ -15,7 +15,7 @@ This article shows how to use the Python client SDK to add a Fabric data agent t
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 > [!IMPORTANT]
-> When you use Python client SDK to add a Fabric data agent to web apps or other clients, responses returned by Fabric data agents may be sent outside of Fabric's compliance boundary or geographic region and processed and/or stored according to the applicable web app or client's terms and data handling policies.
+> When you use Python client SDK to add a Fabric data agent to web apps or other clients, responses returned by Fabric data agents may be sent outside of Fabric's compliance boundary or geographic region, and processed and/or stored according to the applicable web app or client's terms and data handling policies.
 
 [!INCLUDE [data-agent-prerequisites](includes/data-agent-prerequisites.md)]
 

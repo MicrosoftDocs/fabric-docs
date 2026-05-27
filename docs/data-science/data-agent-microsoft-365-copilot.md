@@ -20,13 +20,12 @@ Microsoft 365 provides a comprehensive set of productivity tools that help organ
 > This feature is in [preview](../fundamentals/preview.md).
 
 > [!IMPORTANT]
-> When you configure Fabric data agents to be consumed within Microsoft 365, responses returned by Fabric data agents may be sent outside of Fabric's compliance boundary or geographic region and processed and/or stored according to the Microsoft 365's terms and data handling policies.
+> When you configure Fabric data agents to be consumed within Microsoft 365, responses returned by Fabric data agents may be sent outside of Fabric's compliance boundary or geographic region, and processed and/or stored according to the Microsoft 365's terms and data handling policies.
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 - Microsoft 365 Copilot license or Office 365 commercial subscription
 - User licenses for each individual using Fabric data agent in Microsoft 365 Copilot. 
 - Both the Fabric data agent and Microsoft 365 Copilot must be on the same tenant and must sign in to both with the same account.
-
 
 ## How it works
 

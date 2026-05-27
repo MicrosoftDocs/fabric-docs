@@ -21,7 +21,7 @@ One of the ways to consume a Fabric data agent is by adding it to a custom AI ag
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 > [!IMPORTANT]
-> When you configure Fabric data agents to be consumed within Microsoft Copilot Studio, responses returned by Fabric data agents may be sent outside of Fabric's compliance boundary or geographic region and processed and/or stored according to the Microsoft Copilot Studio(s) applicable terms and data handling policies.
+> When you configure Fabric data agents to be consumed within Microsoft Copilot Studio, responses returned by Fabric data agents may be sent outside of Fabric's compliance boundary or geographic region, and processed and/or stored according to the Microsoft Copilot Studio(s) applicable terms and data handling policies.
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 - Microsoft 365 Copilot license and a user license for each individual who builds and manages custom agents.

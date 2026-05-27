@@ -32,6 +32,9 @@ For information about how to get to the Fabric tenant settings, see [About tenan
 * [Users can access a standalone, cross-item Power BI Copilot experience (preview)](#stand-alone-experience)
 * [Only show approved items in the standalone Copilot in Power BI experience (preview)](#limit-to-approved)
 
+> [!IMPORTANT]
+> Users may configure Fabric data agents to be consumed from other services such as Microsoft Foundry, Microsoft Copilot Studio, M365 Copilot or as an MCP server ("non-Fabric services"). When users connect to these non-Fabric services, responses returned by Fabric data agents may be sent outside of Fabric's compliance boundary or geographic region, and processed and/or stored according to the non-Fabric service(s) applicable terms and data handling policies.
+
 <a id="copilot-with-openai"></a> 
 ## Users can use Copilot and other features powered by Azure OpenAI
 
@@ -40,9 +43,6 @@ When this setting is enabled, users can access the features powered by Azure Ope
 :::image type="content" source="./media/service-admin-portal-copilot/enable-copilot.png" alt-text="Screenshot showing the tenant setting where copilot can be enabled and disabled." lightbox="./media/service-admin-portal-copilot/enable-copilot.png":::
 
 This setting can be managed at both the tenant and the capacity levels. When this setting is enabled, the service may execute background jobs at no charge to the tenant capacity to support end user experiences. For more information, see [Overview of Copilot in Fabric](../fundamentals/copilot-fabric-overview.md).
-
-> [!IMPORTANT]
-> Users may configure Fabric data agents to be consumed from other services such as Microsoft Foundry, Microsoft Copilot Studio, M365 Copilot or as an MCP server ("Non-Fabric Services"). When users connect to these Non-Fabric services, responses returned by Fabric data agents may be sent outside of Fabric's compliance boundary or geographic region and processed and/or stored according to the Non-Fabric service(s) applicable terms and data handling policies.
 
 **Default:** Enabled
 
