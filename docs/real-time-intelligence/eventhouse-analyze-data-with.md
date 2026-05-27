@@ -4,7 +4,7 @@ description: Learn how to analyze data in a KQL database with an SQL analytics e
 ms.reviewer: tzgitlin
 ms.topic: how-to
 ms.subservice: rti-eventhouse
-ms.date: 05/04/2026
+ms.date: 05/27/2026
 ms.search.form: KQL Database
 ---
 # Analyze data in a KQL database
@@ -24,7 +24,7 @@ This integration provides a consistent experience regardless of where your data 
 > See [Explore your KQL database with the embedded KQL queryset](create-database.md#explore-your-kql-database-with-the-embedded-kql-queryset).
 
 > [!NOTE]
-> The **Analyze data with** menu is not available for read-only [monitoring eventhouses](manage-monitor-eventhouse.md##view-monitoring-eventhouse).
+> The **Analyze data with** menu is not available for read-only [monitoring eventhouses](manage-monitor-eventhouse.md#view-monitoring-eventhouse).
 
 ## Prerequisites
 
