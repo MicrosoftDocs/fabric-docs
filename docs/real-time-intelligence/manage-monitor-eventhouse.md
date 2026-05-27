@@ -157,11 +157,11 @@ The databases overview page provides a summary of all the databases in the event
 
 1. From the tile, you can open the database in a new tab, query the data, get data from a list of sources, or delete the database if you have the required permissions.
 
-    :::image type="content" source="media/eventhouse/eventhouse-databases-more-menu.png" alt-text="Screenshot showing the eventhouse details page with the tile and list view buttons surrounded by a red box." lightbox="media/eventhouse/eventhouse-databases-more-menu.png":::
+    :::image type="content" source="media/eventhouse/eventhouse-databases-more-menu.png" alt-text="Screenshot showing the database more menu options." lightbox="media/eventhouse/eventhouse-databases-more-menu.png":::
 
 1. Toggle between list and tile view using the buttons on the top right of the page.
 
-    :::image type="content" source="media/eventhouse/browse-all-databases.png" alt-text="Screenshot of database view in an eventhouse in Real-Time Intelligence." lightbox="media/eventhouse/browse-all-databases.png":::
+    :::image type="content" source="media/eventhouse/browse-all-databases.png" alt-text="Screenshot showing the eventhouse details page with the tile and list view buttons highlighted." lightbox="media/eventhouse/browse-all-databases.png":::
 
 1. To explore a specific database, select the name of this database from the list.
 

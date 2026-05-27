@@ -24,7 +24,7 @@ This integration provides a consistent experience regardless of where your data 
 > See [Explore your KQL database with the embedded KQL queryset](create-database.md#explore-your-kql-database-with-the-embedded-kql-queryset).
 
 > [!NOTE]
-> The **Analyze data with** menu is not available for read-only [monitoring eventhouses](manage-monitor-eventhouse.md#view-workspace-monitoring).
+> The **Analyze data with** menu is not available for read-only [monitoring eventhouses](manage-monitor-eventhouse.md##view-monitoring-eventhouse).
 
 ## Prerequisites
 

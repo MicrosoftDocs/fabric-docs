@@ -3,7 +3,7 @@ title: Eventhouse monitoring overview
 description: Understand Eventhouse monitoring in Fabric and how it can help you to gain insights into the usage and performance.
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
-ms.date: 11/16/2025
+ms.date: 05/27/2026
 #customer intent: As a admin I want to monitor my eventhouse to gain insights into the usage and performance that I can optimize my eventhouse and improve the user experience.
 ---
 
