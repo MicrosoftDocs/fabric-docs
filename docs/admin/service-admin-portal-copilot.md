@@ -1,6 +1,6 @@
 ---
-title: Copilot admin settings
-description: Learn how administrators can configure Copilot admin settings in Fabric.
+title: Copilot and Agent admin settings
+description: Learn how administrators can configure Copilot and Agent admin settings in Fabric.
 author: snehagunda
 ms.author: sngun
 ms.reviewer: guptamaya
@@ -14,9 +14,9 @@ no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
 
-# Copilot tenant settings
+# Copilot and Agent tenant settings
 
-Fabric Copilot settings are controlled by the **Copilot and Azure OpenAI Service** tenant settings group.​ There are multiple settings governing user access and data processing policies, and some of them are enabled by default whereas others require the Fabric administrator to enable them.
+Fabric Copilot and Agent settings are controlled by the **Copilot and Azure OpenAI Service** tenant settings group.​ There are multiple settings governing user access and data processing policies, and some of them are enabled by default whereas others require the Fabric administrator to enable them.
 
 For information about how to get to the Fabric tenant settings, see [About tenant settings - How to get to the tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings).
 
@@ -38,7 +38,7 @@ For information about how to get to the Fabric tenant settings, see [About tenan
 <a id="copilot-with-openai"></a> 
 ## Users can use Copilot and other features powered by Azure OpenAI
 
-When this setting is enabled, users can access the features powered by Azure OpenAI, including Copilot, as shown in the following screenshot:
+When this setting is enabled, users can access the features powered by Azure OpenAI, including Copilot and Agents, as shown in the following screenshot:
 
 :::image type="content" source="./media/service-admin-portal-copilot/enable-copilot.png" alt-text="Screenshot showing the tenant setting where copilot can be enabled and disabled." lightbox="./media/service-admin-portal-copilot/enable-copilot.png":::
 
