@@ -225,6 +225,8 @@ items:
                 href: event-streams/api-get-eventstream-definition.md
               - name: Update Eventstream Definition
                 href: event-streams/api-update-eventstream-definition.md
+              - name: Create an Eventstream with Eventhouse DirectIngestion by using APIs
+                href: event-streams/api-kusto-pull-destination.md
       - name: Security
         items:
           - name: Choose the right network security feature
@@ -571,6 +573,8 @@ items:
         href: eventhouse-deploy-with-fabric-api.md
       - name: Manage and monitor an eventhouse
         href: manage-monitor-eventhouse.md
+      - name: Reliability in Eventhouse
+        href: eventhouse-reliability.md
       - name: Eventhouse endpoint for Lakehouse and Warehouse
         href: eventhouse-as-endpoint.md
       - name: Eventhouse capacity
@@ -786,8 +790,6 @@ items:
         href: real-time-dashboards-overview.md
       - name: Create a Real-Time Dashboard
         href: dashboard-real-time-create.md
-      - name: Generate Real-Time Dashboard Using Copilot
-        href: copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric
       - name: Real-Time Dashboard permissions
         href: dashboard-permissions.md
       - name: Explore data in Real-Time Dashboard Using Copilot
@@ -997,6 +999,10 @@ items:
             href: map/tutorial-real-time-work-order-routing-application.md
           - name: Create a map using the REST API with Python
             href: map/tutorial-create-fabric-map-python.md
+          - name: Automate the creation of a real-time map using REST APIs
+            href: map/tutorial-create-real-time-map-python.md
+          - name: Simulate real-time data ingestion into a map
+            href: map/tutorial-simulate-real-time-data-ingestion.md
       - name: Concepts
         items:
           - name: Map items

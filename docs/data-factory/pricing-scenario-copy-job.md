@@ -30,16 +30,11 @@ To accomplish this scenario, you need to create a Copy job with the following co
 3. Upload an additional 1 GB CSV file to the same ADLS Gen2 account.
 4. Run the Copy Job again, and it will automatically detect and copy only this new file.
 
-### Cost estimation using the Fabric Metrics App
-
-The first run of the Copy Job performs an initial full copy, while subsequent runs only copy new or changed files using incremental copy.
-
-:::image type="content" source="media/pricing-scenarios/fabric-metrics-app-copy-job.png" alt-text="Screenshot showing the duration and CU consumption of the copy job in the Fabric Metrics App.":::
-
+The first run of the Copy job performs an initial full copy, while subsequent runs only copy new or changed files using incremental copy.
 
 #### Initial full copy
 
-The initial full copy with data movement – incremental copy operation utilized 506,880 CU seconds with a 626.64 second duration.
+From the cost estimation using the Fabric Metrics App, you can see the initial full copy with data movement – incremental copy operation utilized 506,880 CU seconds with a 626.64 second duration.
 
 The pricing is based on the used intelligent throughput optimization. For more information, see this [article](copy-activity-performance-and-scalability-guide.md#intelligent-throughput-optimization). In this example, the used intelligent throughput optimization is 256.
 
