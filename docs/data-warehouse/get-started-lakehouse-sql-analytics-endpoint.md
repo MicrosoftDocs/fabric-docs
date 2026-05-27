@@ -141,7 +141,7 @@ For more information and examples on querying external data, see [Query external
 
 - [What is a lakehouse in Microsoft Fabric?](../data-engineering/lakehouse-overview.md)
 - [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md)
-- [Bring your data to OneLake with Lakehouse](../onelake/create-lakehouse-onelake.md)
+- [Get started with OneLake data](../onelake/quickstart-get-data.md)
 - [Power BI semantic models in Microsoft Fabric](semantic-models.md)
 - [Options to get data into the Fabric Lakehouse](../data-engineering/load-data-lakehouse.md)
 - [How to copy data using copy activity](../data-factory/copy-data-activity.md)

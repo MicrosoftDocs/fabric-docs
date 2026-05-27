@@ -98,7 +98,7 @@
         {
             "source_path_from_root": "/docs/onelake/create-lakehouse-onelake.md",
             "redirect_url": "/fabric/onelake/quickstart-get-data",
-            "redirect_document_id": true
+            "redirect_document_id": false
         }
     ]
 }

@@ -22,7 +22,7 @@ GCS shortcuts can take advantage of file caching to reduce egress costs associat
 
 ## Prerequisites
 
-- If you don't have a lakehouse, create one by following these steps: [Creating a lakehouse with OneLake](create-lakehouse-onelake.md).
+- If you don't have a lakehouse, create one by following these steps: [Create a lakehouse](../data-engineering/create-lakehouse.md).
 
 - Ensure your chosen GCS bucket and user meet the [access](#access) and [authorization](#authorization) requirements for GCS shortcuts.
 
