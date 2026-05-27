@@ -59,19 +59,21 @@ The following table shows the support status for each Fabric item. A check mark 
 | **Industry Solutions** | Healthcare data solutions | - | ✓ | - |
 |  | Sustainability Solution | - | ✓ | - |
 |  | Retail Solution | - | ✓ | - |
-| **Mirroring** | Mirrored Azure SQL Database | - | ✓ | ✓ |
-|  | Mirrored Azure SQL Managed Instance | ✓ | ✓ | ✓ |
-|  | Open Mirroring | ✓ | ✓ | ✓ |
-|  | Mirrored Azure Databricks Catalog | - | - | - |
-|  | Mirrored Snowflake | - | ✓ | ✓ |
-|  | Mirrored SQL Server 2025 (Windows/Linux on-premises) | ✓ | ✓ | ✓ |
-|  | Mirrored SQL Server 2016-2022 | - | - | - |
-|  | Mirrored Dataverse | - | - | - |
-|  | Mirrored SAP | - | ✓ | ✓ |
-|  | Mirrored Azure Cosmos DB | ✓ | ✓ | ✓ |
+| **Mirroring** | Mirrored Azure Cosmos DB | ✓ | ✓ | ✓ |
+|  | Mirrored Azure Database for MySQL | - | ✓ | ✓ |
 |  | Mirrored Azure Database for PostgreSQL | - | ✓ | ✓ |
+|  | Mirrored Azure Databricks Catalog | - | - | - |
+|  | Mirrored Azure SQL Database | ✓ | ✓ | ✓ |
+|  | Mirrored Azure SQL Managed Instance | ✓ | ✓ | ✓ |
+|  | Mirrored Dataverse | - | - | - |
 |  | Mirrored Google Bigquery | - | ✓ | ✓ |
-|  | Mirrored Oracle |  | ✓ | ✓ |
+|  | Mirrored Oracle | - | ✓ | ✓ |
+|  | Mirrored SAP | ✓ | ✓ | ✓ |
+|  | Mirrored SharePoint List | ✓ | ✓ | ✓ |
+|  | Mirrored Snowflake | - | ✓ | ✓ |
+|  | Mirrored SQL Server 2016-2022 | - | ✓ | ✓ |
+|  | Mirrored SQL Server 2025 | ✓ | ✓ | ✓ |
+|  | Open Mirroring | ✓ | ✓ | ✓ |
 | **Fabric Databases** | SQL database in Fabric |  | ✓ | - |
 |  | Cosmos DB |  |  | - |
 |  | Snowflake database | - | - | - |
