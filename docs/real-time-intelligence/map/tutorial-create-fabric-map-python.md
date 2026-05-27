@@ -13,18 +13,18 @@ ms.search.form: Create a map using REST API with Python
 
 Fabric Maps are defined by a **public definition** (`map.json`) that describes the basemap, data sources, layer sources, and rendering behavior.
 
-<!--This tutorial demonstrates a **static data scenario** using files stored in a Lakehouse. For real-time streaming scenarios using Eventstream and Eventhouse, see [Tutorial: Create a real-time map from Eventhouse data using REST APIs](tutorial-real-time-map-python.md).-->
+This tutorial demonstrates a **static data scenario** using files stored in a Lakehouse. For real-time streaming scenarios using Eventstream and Eventhouse, see [Automate the creation of a real-time map using REST APIs](tutorial-create-real-time-map-python.md).
 
-The most reliable way to automate map creation is to create the map with its definition provided inline, so the map is fully configured and ready to render immediately after creation.
+The most reliable way to automate map creation is to provide the map definition inline, so the map is fully configured and ready to render on creation.
 
 For more information about the map definition structure, see [Map item definition](/rest/api/fabric/articles/item-management/definitions/map-definition).
 
 In this tutorial, you build a Python application that:
 
-- Creates a **Lakehouse** in your Fabric workspace using the Lakehouse REST API (supports LRO).
-- Uploads a **GeoJSON** file to the Lakehouse Files area via OneLake DFS APIs (GUID addressing).
-- Uploads a **custom SVG marker** to the same Lakehouse and references it from the map definition (iconSources).
-- Creates a **Map** with a fully formed map.json definition inline using the Create Map REST API (supports creating with public definition and supports LRO).
+- Creates a **Lakehouse** in your Fabric workspace using the Lakehouse REST API.
+- Uploads a **GeoJSON** file to the Lakehouse Files area via OneLake DFS APIs.
+- Uploads a **custom SVG marker** to the same Lakehouse and references it from the map definition.
+- Creates a **Map** with a fully formed `map.json` definition provided inline using the Create Map REST API.
 
 > [!div class="checklist"]
 >
@@ -44,7 +44,7 @@ This pattern is best for:
 - Reference layers (for example, points of interest, boundaries)
 - Historical or batch-processed data
 
-For scenarios that require continuously updating data (for example, live tracking or telemetry), see the real-time streaming tutorial.
+For scenarios that require continuously updating data (for example, live tracking or telemetry), see [Automate the creation of a real-time map using REST APIs](tutorial-create-real-time-map-python.md).
 
 ## Prerequisites
 
@@ -70,7 +70,7 @@ az login
 `DefaultAzureCredential` can use your signed-in identity to acquire access tokens for:
 
 - Fabric REST APIs (resource: `https://api.fabric.microsoft.com/.default`)
-- OneLake access via ADLS-compatible endpoints (OneLake supports existing ADLS/Blob tools and SDKs). OneLake supports browsing and reading/writing data using ADLS Gen2 APIs and SDKs. This includes support for GUID-based addressing for workspaces and items.
+- OneLake access via ADLS Gen2 APIs and SDKs, including GUID-based addressing for workspaces and items.
 
 > [!TIP]
 > About `https://api.fabric.microsoft.com/.default`
@@ -244,7 +244,7 @@ pip install httpx azure-identity azure-storage-file-datalake
 
 - **httpx**: makes HTTP requests to the Fabric REST APIs.
 - **azure-identity**: provides DefaultAzureCredential for Microsoft Entra authentication.
-- **azure-storage-file-datalake**: uploads files to OneLake using ADLS Gen2-compatible APIs (OneLake supports these APIs).
+- **azure-storage-file-datalake**: uploads files to OneLake using ADLS Gen2-compatible APIs.
 
 ### Add import statements to your .py file
 
@@ -252,8 +252,8 @@ At the top of **create_map_from_geojson.py**, add:
 
 ```python
 import base64
-import os
 import json
+import os
 import time
 import uuid
 from pathlib import Path
@@ -265,10 +265,13 @@ from azure.storage.filedatalake import DataLakeServiceClient
 
 ## Step 3—Add a configuration section
 
-In this step, you define the variables your application uses, including workspace ID, file paths, and feature toggles.
+In this step, you define the variables your application uses, including the workspace ID, file paths, and feature toggles.
 
-> [!TIP]
-> Using a centralized configuration object simplifies automation scenarios by keeping environment-specific values (such as workspace IDs and file paths) separate from application logic.
+Centralizing configuration in a single `Config` class — rather than scattering hard-coded values across functions — gives you three concrete advantages:
+
+- **Environment portability**: Workspace IDs, file paths, and resource names live in one place, so you can rerun the script against a different workspace or machine by changing a few lines (or an environment variable) instead of hunting through the code.
+- **Cleaner function signatures**: Step functions accept a single `cfg` object instead of long parameter lists, which keeps the orchestration in `main()` easy to read.
+- **Safer secrets handling**: Sensitive values such as the workspace ID are loaded from environment variables, so they're never committed alongside the script.
 
 Add the following below the [import](#add-import-statements-to-your-py-file) statements:
 
@@ -327,17 +330,20 @@ class Config:
 
 ### Set the workspace ID using an environment variable
 
-Instead of hardcoding the workspace ID directly in the script, this tutorial uses an environment variable. This approach improves security and makes it easier to reuse the script across environments without modifying the code.
+Instead of hardcoding the workspace ID directly in the script, this tutorial reads it from an environment variable. This keeps environment-specific values out of source code and lets you reuse the script across workspaces or machines without editing it.
 
-Prior to running this script, you'll need to create an environment variable named `FABRIC_WORKSPACE_ID`.
+Before running the script, create an environment variable named `FABRIC_WORKSPACE_ID`.
 
-#### Set the environment variable in Windows environments
+> [!IMPORTANT]
+> An environment variable set from a terminal exists only inside **that single terminal session**. It isn't shared with other terminal windows, with a different shell type, or with processes launched outside that terminal—including scripts started from VS Code's run button, which often spawns its own terminal. If the script can't find the variable, it fails with `Set FABRIC_WORKSPACE_ID environment variable before running the script`.
+>
+> To avoid this, either run the script from the **same terminal session** where you set the variable, or set it persistently (see the Windows and macOS/Linux sections that follow) so every new terminal session picks it up automatically.
 
-On Windows, you can set the variable from any terminal that supports environment variables—PowerShell, Windows PowerShell, the PowerShell or Command Prompt windows built into Visual Studio and Visual Studio Code, Windows Terminal, and most other shells. Whichever you choose, the variable exists only inside **that single terminal session**: it isn't shared with other terminal windows, with a different shell type, or with processes launched outside that terminal—including scripts started from VS Code's run button, which often spawns its own terminal. If the script can't find the variable, it fails with `Set FABRIC_WORKSPACE_ID environment variable before running the script`.
+#### Set the environment variable on Windows
 
-To avoid this, either run the script from the **same terminal window** where you set the variable, or define it as a **persistent user variable** (see [Set a persistent environment variable (Windows)](#set-a-persistent-environment-variable-windows)) so it's available to every new terminal session automatically.
+On Windows, you can set the variable from any terminal that supports environment variables—PowerShell, Windows PowerShell, the PowerShell or Command Prompt windows built into Visual Studio and Visual Studio Code, Windows Terminal, and most other shells.
 
-Run the following in PowerShell or VS terminal:
+Run the following in PowerShell or the VS Code integrated terminal:
 
 ```powershell
 $env:FABRIC_WORKSPACE_ID="<WORKSPACE_ID>"
@@ -353,33 +359,33 @@ This sets the variable for the current terminal session only.
 
 ##### Set a persistent environment variable (Windows)
 
-To make the variable available in future sessions:
+To make the variable available in future sessions, use either of the following:
 
-1. Open **System Properties**
-1. Select **Advanced system settings**
-1. Choose **Environment Variables**
-1. Under **User variables**, select **New**
-1. Enter:
-    - Name: FABRIC_WORKSPACE_ID
-    -Value: your workspace ID
-1. Select **OK** to save
-1. Close and reopen your terminal before running the script again.
+- **PowerShell (one-liner)**: Run `setx FABRIC_WORKSPACE_ID "<WORKSPACE_ID>"`. The `setx` command writes to the user environment but doesn't update the current terminal—close and reopen the terminal (or open a new one) before running the script.
+- **GUI**:
+  1. Open **System Properties**.
+  1. Select **Advanced system settings**.
+  1. Choose **Environment Variables**.
+  1. Under **User variables**, select **New**.
+  1. Enter:
+     - Name: `FABRIC_WORKSPACE_ID`
+     - Value: your workspace ID
+  1. Select **OK** to save.
+  1. Close and reopen your terminal before running the script again.
 
-#### Set the environment variable in macOS or Linux
+#### Set the environment variable on macOS or Linux
 
-On macOS and Linux, you can set the variable from any shell that supports `export`—Bash, Zsh (the default on modern macOS), Fish (with a slightly different syntax), and the integrated terminals in Visual Studio Code and other editors. As on Windows, the variable exists only inside **that single shell session**: it isn't shared with other terminal tabs or windows, with a different shell, or with processes launched outside that shell—including scripts started from VS Code's run button, which often spawns its own terminal. If the script can't find the variable, it fails with `Set FABRIC_WORKSPACE_ID environment variable before running the script`.
-
-To avoid this, either run the script from the **same shell session** where you set the variable, or add `export` to your shell profile (see [Set a persistent environment variable (macOS or Linux)](#set-a-persistent-environment-variable-macos-or-linux)) so it's available to every new shell session automatically.
+On macOS and Linux, you can set the variable from any shell that supports `export`—Bash, Zsh (the default on modern macOS), Fish (with a slightly different syntax), and the integrated terminals in Visual Studio Code and other editors.
 
 Run:
 
-```
+```bash
 export FABRIC_WORKSPACE_ID="<WORKSPACE_ID>"
 ```
 
 To confirm the variable is set:
 
-```
+```bash
 echo $FABRIC_WORKSPACE_ID
 ```
 
@@ -400,38 +406,63 @@ After updating the profile, either open a new terminal or run `source ~/.zshrc` 
 
 ## Step 4—Add helper functions
 
-This step adds reusable helper functions that keep the "end-to-end flow" readable:
+In this step, you factor out cross-cutting concerns—authentication, header construction, long-running operation polling, and retryable data-plane uploads—into a small set of reusable helpers that every step function can call.
 
-- **Auth helpers**: build headers for Fabric REST APIs
+Centralizing these concerns in helpers — rather than inlining them at every call site — gives you three concrete advantages:
+
+- **Single source of truth for cross-cutting concerns**: Authentication, headers, and LRO polling are needed by nearly every API call. Centralizing them keeps each step function focused on its own resource instead of re-implementing token acquisition and retry logic.
+- **Resilience without clutter**: Helpers absorb transient conditions—asynchronous provisioning, backend propagation delay, retryable upload failures—so step functions stay short and read like a checklist.
+- **Easier to teach and modify**: Each helper is introduced once and reused. If Fabric changes an LRO pattern or an auth scope, you fix it in one place.
+
+The helpers you add in this step are:
+
+- **Auth helpers**: build headers for Fabric REST APIs (and Power BI cluster LRO endpoints)
 - **FabricClient**: lightweight wrapper for consistent API calls
-- **LRO handler**: poll 202 Accepted operations using Location and Retry-After
-- **Definition payload helper**: base64 encode map.json for inline definitions
-- **OneLake upload helpers**: upload GeoJSON and SVG files to Lakehouse Files
+- **LRO handler**: poll long-running operations using `Location` / `x-ms-operation-id` / `Retry-After`, including `200`-with-`Running` responses, Power BI cluster endpoints, and status-only completion payloads (resolves by `displayName`)
+- **Definition payload helper**: base64-encode `map.json` for inline definitions
+- **OneLake upload helpers**: upload GeoJSON and SVG files to Lakehouse Files with retry
 
 > [!NOTE]
-> This tutorial uses two types of operations:
+> This tutorial spans two planes:
 >
 > - **Control plane** (Fabric REST APIs): create Lakehouse and Map items
 > - **Data plane** (OneLake DFS): upload files into the Lakehouse
 >
 > Both are required to fully set up the map.
 
-### Create auth helper functions
+### Create authentication helper functions
 
-Fabric REST APIs require a Microsoft Entra access token (bearer token) for authentication. The Create Map and Create Lakehouse APIs require delegated scopes such as `Item.ReadWrite.All`/`Lakehouse.ReadWrite.All` (depending on the API) and authenticate via Microsoft Entra.
+Every Fabric REST call this tutorial makes carries a Microsoft Entra access token (bearer token) in the `Authorization` header. Rather than acquiring tokens ad hoc, this step wraps `DefaultAzureCredential` in a small `TokenProvider` and exposes an audience-specific header builder for each endpoint family the script calls.
 
-Add this block below your configuration section:
+Centralizing token acquisition and header construction in helpers — rather than acquiring tokens at every call site — gives you three concrete advantages:
+
+- **Centralized credential**: A single `DefaultAzureCredential` is wrapped in `TokenProvider` and reused for every API call, so identity discovery (Azure CLI, VS Code, managed identity, etc.) happens once.
+- **Audience-aware tokens**: Fabric REST APIs and Power BI cluster LRO endpoints require tokens issued for different audiences. A separate header builder per audience keeps the correct scope right next to the call site, so it's obvious which endpoint each function is targeting.
+- **Fresh on every request**: Header builders construct the `Authorization` header on demand rather than caching the token themselves. The underlying credential refreshes transparently, so call sites never have to think about expiry.
+
+This tutorial calls Fabric REST APIs using delegated scopes such as `Item.ReadWrite.All` (or `Lakehouse.ReadWrite.All` for Lakehouse-specific operations).
+
+Add the following after the `Config` class:
 
 ```python
-# ---------------------------------------------------------------------------
+# =========================================================
 # Auth helpers
 #
 # Authentication utilities built on DefaultAzureCredential that acquire and
 # construct Authorization headers for calling Fabric REST APIs.
-# ---------------------------------------------------------------------------
+# =========================================================
 
 class TokenProvider:
-    """Thin wrapper around DefaultAzureCredential that acquires Entra tokens."""
+    """
+    Thin wrapper around DefaultAzureCredential that acquires Entra tokens.
+
+    Why this exists:
+    - Keeps token acquisition in one place.
+    - Lets _fabric_headers() build a fresh Authorization header when needed.
+
+    Note:
+    - DefaultAzureCredential can use several sources (Azure CLI login, VS Code login, etc.).
+    """
     def __init__(self):
         self._cred = DefaultAzureCredential()
 
@@ -443,7 +474,11 @@ _tokens = TokenProvider()
 
 
 def _fabric_headers() -> dict[str, str]:
-    """Auth headers for Fabric REST API calls."""
+    """
+    Build headers for Fabric REST API calls.
+
+    This function is called each time we make a Fabric REST call so the token is fresh.
+    """
     return {
         "Authorization": f"Bearer {_tokens.get('https://api.fabric.microsoft.com/.default')}",
         "Content-Type": "application/json"
@@ -452,7 +487,7 @@ def _fabric_headers() -> dict[str, str]:
 
 def _pbi_headers() -> dict[str, str]:
     """
-    Auth headers for polling Trident/Power BI cluster LRO endpoints
+    Build headers for polling Power BI cluster LRO endpoints
     (e.g., df-*.analysis.windows.net) that require a Power BI audience token.
     """
     return {
@@ -464,9 +499,16 @@ def _pbi_headers() -> dict[str, str]:
 > [!NOTE]
 > Some Fabric long-running operations (LROs) are hosted on Power BI cluster endpoints (`*.analysis.windows.net`) rather than on `api.fabric.microsoft.com`. Those endpoints require a Power BI audience token, so the LRO helper switches to `_pbi_headers()` automatically when it detects that polling URL.
 
-### Create FabricClient helper function
+### Create a Fabric client wrapper
 
-A small wrapper around httpx.Client so you don't need to repeat headers everywhere.
+Most Fabric REST calls in this tutorial send the same `Authorization` and `Content-Type` headers. Rather than repeating them at every call site, this tutorial wraps `httpx.Client` in a small `FabricClient` that attaches the headers automatically while still returning the raw `httpx.Response` so each caller can inspect status codes (for example, to distinguish `201` from `202`).
+
+Wrapping `httpx.Client` like this — rather than passing `headers=_fabric_headers()` at every call site — gives you two concrete advantages:
+
+- **Headers in one place**: Every call site picks up the latest `_fabric_headers()` automatically, so a new request can't accidentally be sent without the `Authorization` header.
+- **Status codes stay visible**: `request()` returns the raw `httpx.Response` instead of decoded JSON, so call sites can still branch on status (`201` vs `202`) and inspect headers like `Location` or `Retry-After` for LRO handling.
+
+Add the following after the authentication helper functions:
 
 ```python
 # =========================================================
@@ -488,9 +530,9 @@ class FabricClient:
 
 ```
 
-### Create LRO helper function
+### Create an LRO helper function
 
-Fabric REST APIs used in this tutorial, such as creating a Lakehouse and creating a Map, support long-running operations (LROs).
+Several Fabric REST APIs used in this tutorial — such as Create Lakehouse and Create Map — support **long-running operations (LROs)**.
 
 These APIs can return responses in several patterns:
 
@@ -508,12 +550,14 @@ To handle all of these consistently, you create a single helper function that:
 1. On success, returns the resource ID from the body, or falls back to listing resources and matching by `displayName` (with retries) when the body is status-only.
 1. Uses `_pbi_headers()` when the polling URL is on a Power BI cluster (`*.analysis.windows.net`), and Fabric headers otherwise.
 
-Add this block after the FabricClient helper function:
+This single helper replaces the need for per-resource "resolve by name" helpers — every `create_*` function in this tutorial calls `_handle_lro` with the appropriate `list_url` and `match_display_name`.
+
+Add the following after the `FabricClient` class:
 
 ```python
-# ---------------------------------------------------------
-# LRO HANDLER
-# ---------------------------------------------------------
+# =========================================================
+# LRO handler 
+# =========================================================
 
 def _handle_lro(
     client: httpx.Client,
@@ -525,6 +569,18 @@ def _handle_lro(
     max_attempts: int = 10,
     delay: int = 5,
 ) -> str:
+    """
+    Handle a Fabric long-running operation (LRO) and return the resource id.
+
+    Supports the response patterns used by Fabric REST APIs:
+    - 200/201 with the resource body inline (synchronous).
+    - 202 with a `Location` header or `x-ms-operation-id` (asynchronous).
+    - 200 with `status: "Running"` / `"NotStarted"` while polling.
+    - 200 with `status: "Succeeded"` but no id (resolve by listing and matching `displayName`).
+
+    Polling uses `Retry-After` and switches to a Power BI audience token when
+    the operation URL is on `*.analysis.windows.net`.
+    """
     # Sync 200/201 with body: return the id immediately.
     if initial_response.status_code in (200, 201):
         try:
@@ -592,19 +648,20 @@ def _handle_lro(
 ```
 
 > [!NOTE]
-> Newly created resources might not appear immediately when calling list APIs due to backend propagation delays. The helper function in this tutorial automatically retries until the resource becomes visible.
+> Newly created resources might not appear immediately when calling list APIs because of backend propagation delays. The helper function automatically retries until the resource becomes visible.
 
 ### Definition payload helper
 
-When you create a Map with a **public definition**, you send map.json as payloadType: `InlineBase64`. The Create Map REST API examples show using `InlineBase64` in definition.parts.
+When you create a Map with a **public definition**, the Create Map REST API expects each part in `definition.parts` to carry a base64-encoded payload with `"payloadType": "InlineBase64"`. The `_json_to_b64` helper encodes a Python `dict` (your `map.json`) into that format so `create_map` can drop it straight into the request body.
 
-Add:
+Add the following after the `_handle_lro` function:
 
 ```python
-# ---------------------------------------------------------
-# DEFINITION PAYLOAD HELPER
-# - Create Map can include a public definition inline (map.json as InlineBase64). 
-# ---------------------------------------------------------
+# =========================================================
+# Definition payload helper
+#
+# Encodes map.json as base64 for inline Create Map payloads.
+# =========================================================
 
 def _json_to_b64(obj: dict) -> str:
     """
@@ -627,12 +684,12 @@ OneLake supports ADLS/Blob APIs and allows GUID-based addressing for workspaces 
 Add:
 
 ```python
-# -----------------------------------------------------------------------------------------------
+# ===============================================================================================
 # ONE LAKE UPLOAD HELPERS
 # OneLake supports GUID-based addressing:
 #   https://onelake.dfs.fabric.microsoft.com/<workspaceGUID>/<itemGUID>/<path>/<fileName> 
 # We use the ADLS Gen2 SDK (DataLakeServiceClient) to upload files into the Lakehouse Files area.
-# -----------------------------------------------------------------------------------------------
+# ===============================================================================================
 
 def _onelake_client() -> DataLakeServiceClient:
     """
@@ -691,13 +748,13 @@ def _upload_with_retry(
 
 ## Create primary functions
 
-Next, create the five primary functions that define the workflow. These will all be called from main().
+Next, you add the primary functions that define the workflow. These are all called from `main()`.
 
 1. Create a Lakehouse
-2. Upload GeoJSON to the Lakehouse
-3. Upload a custom SVG marker (optional)
-4. Build the map definition (map.json)
-5. Create the map with its definition inline
+1. Upload GeoJSON to the Lakehouse
+1. Upload a custom SVG marker (optional)
+1. Build the map definition (`map.json`)
+1. Create the map with its definition inline
 
 ### Create a Lakehouse
 
@@ -807,40 +864,35 @@ def upload_svg_marker(cfg: Config, lakehouse_id: str) -> None:
 > [!TIP]
 > SVG is typically a strong choice for markers because it scales cleanly at different zoom levels and screen DPIs.
 
-### Build the map definition (map.json)
+### Build map.json
 
-Constructs the map.json definition used to configure the Fabric Map.
+`build_map_json` builds and returns the `map.json` payload that defines the Fabric Map's contents. The payload follows the Map item definition schema and is composed of four sections: `dataSources` (where data comes from), `iconSources` (optional custom markers), `layerSources` (what is read and how often), and `layerSettings` (how the result is rendered on the map).
 
-A map definition is declarative and describes:
+For this tutorial, `dataSources` points at the Lakehouse (`itemType: "Lakehouse"`) created earlier, and the single entry in `layerSources` is a GeoJSON file layer (`type: "geojson"`) that reads the file you uploaded via `relativePath`. `refreshIntervalMs` is set to `0` because the source file is static — the map renders the file once and doesn't poll for changes.
 
-- Data sources (Lakehouse)
-- Layer sources (GeoJSON file)
-- Rendering settings (marker configuration)
+The matching `layerSettings` entry renders each feature as a `marker` and surfaces the GeoJSON `name` property in tooltips. When `cfg.use_custom_svg_marker` is `True`, an `iconSources` entry is added that references the SVG you uploaded, and the layer's `iconOptions.image` uses the composite key `<layerSettingId>:<iconId>` to bind the marker to that icon. When it's `False`, the layer falls back to a built-in marker (`cfg.builtin_icon_name_fallback`) styled with a Starbucks-green fill.
 
-> [!TIP]
-> The `map.json` definition is declarative. It describes **what the map should render**, not how to render it procedurally.
+For more information on the map definition REST API, see [Map item definition](/rest/api/fabric/articles/item-management/definitions/map-definition). For an example of a `map.json`, see [MapDetails example](/rest/api/fabric/articles/item-management/definitions/map-definition#mapdetails-example).
 
-For more information on the map definition REST API, see [Map item definition](/rest/api/fabric/articles/item-management/definitions/map-definition).
-
-For an example of a map.json, see [MapDetails example](/rest/api/fabric/articles/item-management/definitions/map-definition#mapdetails-example)
-
-Add the following code next:
+Add the following after the `upload_svg_marker` function:
 
 ```python
 # =========================================================
-# Step 4: Build the map definition (map.json)
+# Step 4: Build map.json
 # =========================================================
 
 def build_map_json(cfg: Config, lakehouse_id: str) -> dict:
     """
-    Build the map.json payload (map public definition).
+    Build and return the map.json payload for the Fabric Map.
 
-    Teaching note:
-    - This function is ideal for a tutorial section where you walk readers through:
-      * dataSources
-      * iconSources (optional)
-      * layerSources (GeoJSON file)
-      * layerSettings (marker rendering)
+    Wires `dataSources` to the Lakehouse created earlier, defines a
+    single GeoJSON layer in `layerSources` that reads the uploaded file
+    via `cfg.geojson_relative_path` with `refreshIntervalMs: 0` (the
+    source is static), and configures `layerSettings` to render each
+    feature as a marker. When `cfg.use_custom_svg_marker` is True, adds
+    an `iconSources` entry for the uploaded SVG and binds the layer to
+    it via a `<layerSettingId>:<iconId>` composite key; otherwise falls
+    back to a built-in marker.
     """
     layer_source_id = str(uuid.uuid4())
     layer_setting_id = str(uuid.uuid4())
@@ -939,30 +991,32 @@ def build_map_json(cfg: Config, lakehouse_id: str) -> dict:
 > - The `image` property uses a composite key in the format `<layerSettingId>:<iconId>` to reference the icon for the layer. This associates the marker rendering configuration with the icon source defined earlier in the map definition.
 > - Setting `refreshIntervalMs` to `0` disables automatic refresh. This is appropriate for static GeoJSON files stored in a Lakehouse.
 
-### Create the map (with inline definition)
+### Create a map with inline definition
 
-Create a Fabric Map by sending the map.json definition inline using base64 encoding.
+`create_map` creates the Fabric Map by POSTing the inline definition you've assembled and returns the new Map's item ID. For this tutorial the request carries a single base64-encoded part — `map.json` — wrapped as `payloadType: "InlineBase64"` and encoded through `_json_to_b64`. The `map.json` payload already references the Lakehouse data source and, when present, the SVG icon by `relativePath`, so the layer is fully wired by the Create Map call without a follow-up `updateDefinition` round trip. If you wanted to set non-default item metadata or pin a Git-friendly `logicalId`, you'd add a `.platform` part to the same `parts` array; Fabric applies default metadata when `.platform` is omitted, which is what this tutorial does.
 
-In some cases, the create operation completes without returning the map ID directly. The helper function handles this by resolving the map via the List Maps API and retrying until it becomes visible.
+The Create Map REST API can answer with `201 Created` (synchronous, ID inline), `202 Accepted` (asynchronous LRO via `Location` or `x-ms-operation-id`), or `200 OK` with a status-only completion payload where the Map isn't yet visible in List Maps because of backend propagation delay. `_handle_lro` covers all of these cases — including listing and matching by `displayName` — so this function delegates the full response handling to it in a single call.
 
-This approach ensures the map is fully configured at creation time.
+For more information, see [Map item definition](/rest/api/fabric/articles/item-management/definitions/map-definition).
 
-For more information on creating map items, see [Fabric Maps item model](about-rest-api.md#fabric-maps-item-model)
-
-Add the following code next:
+Add the following after the `build_map_json` function:
 
 ```python
 # =========================================================
-# Step 5: Create the map with its definition inline
+# Step 5: Create a map with inline definition
 # =========================================================
 
 def create_map(client: httpx.Client, fabric: FabricClient, cfg: Config, map_json: dict) -> str:
     """
-    Create the Fabric Map with its definition inline.
+    Create the Fabric Map with its definition inline and return its item ID.
 
-    Teaching note:
-    - This step shows the "create-with-definition" pattern, which avoids
-      getDefinition/updateDefinition calls.
+    Sends a single Create Map request whose `parts` array carries one
+    base64-encoded payload, `map.json`. The map definition already
+    references the Lakehouse data source (and, when present, the SVG
+    icon) by `relativePath`, so the layer is wired by the Create Map
+    call without a follow-up update. Delegates response handling to
+    `_handle_lro`, which covers synchronous, asynchronous, and
+    status-only completions.
     """
     create_map_url = f"https://api.fabric.microsoft.com/v1/workspaces/{cfg.workspace_id}/maps"
 
@@ -982,26 +1036,21 @@ def create_map(client: httpx.Client, fabric: FabricClient, cfg: Config, map_json
 
     map_resp = fabric.request("POST", create_map_url, json_body=create_map_payload)
 
-    if map_resp.status_code == 201:
-        return map_resp.json()["id"]
-
-    if map_resp.status_code == 202:
-        print("Map creation is running asynchronously. Waiting for completion...")
-        return _handle_lro(
-            client,
-            map_resp,
-            list_url=create_map_url,
-            match_display_name=cfg.map_display_name
-        )
-
-    raise RuntimeError(f"Create map failed: {map_resp.status_code} {map_resp.text}")
-
+    return _handle_lro(
+        client, map_resp,
+        list_url=create_map_url,
+        match_display_name=cfg.map_display_name,
+    )
 
 ```
 
 ## Orchestrate the workflow
 
-The main() function orchestrates the entire workflow by calling each step in sequence.
+`main` is the single entry point that runs the tutorial end-to-end. It instantiates `Config`, opens one `httpx.Client` reused across every helper, wraps it in a `FabricClient`, then calls each step function in dependency order: `create_lakehouse` → `upload_geojson` (writes the GeoJSON to OneLake under the new Lakehouse) → `upload_svg_marker` (optional; only runs when `cfg.use_custom_svg_marker` is set) → `build_map_json` → `create_map`.
+
+Ordering matters because each step consumes something created by an earlier step — `upload_geojson` and `upload_svg_marker` need the Lakehouse item ID, and `build_map_json` references both uploads by `relativePath` so Create Map can resolve them at render time. The final `print` block surfaces the Lakehouse ID, Map ID, and the relative paths of the uploaded assets so you can find them in the Fabric portal.
+
+Add the following after the `create_map` function:
 
 ```python
 # =========================================================
@@ -1017,9 +1066,6 @@ def main():
     3) Upload a custom SVG marker (optional)
     4) Build the map definition (map.json)
     5) Create the map with its definition inline
-
-    Teaching note:
-    - main() is intentionally small and readable so readers can see the full flow.
     """
     cfg = Config()
 
@@ -1042,7 +1088,7 @@ def main():
         # Step 5
         map_id = create_map(client, fabric, cfg, map_json)
 
-        print("\n✅ DONE")
+        print("\nDONE")
         print("Lakehouse ID:", lakehouse_id)
         print("Map ID:", map_id)
         print("GeoJSON layer path:", cfg.geojson_relative_path)
@@ -1069,7 +1115,7 @@ python create_map_from_geojson.py
 
 If the script runs successfully, you see output similar to:
 
-> ✅ DONE
+> DONE
 > Lakehouse ID: *Lakehouse ID*
 > Map ID: *Map ID*
 > GeoJSON layer path: Files/vector/starbucks-seattle.geojson
