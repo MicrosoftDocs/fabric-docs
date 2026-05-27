@@ -56,11 +56,14 @@ This tutorial follows a common automation pattern in Fabric: create infrastructu
 
 ## Prerequisites
 
-- Python 3.9 or later
+- Python 3.10 or later
 - Azure CLI
 - Fabric workspace ID
 - Permissions to call Fabric REST APIs, such as:
   - `Item.ReadWrite.All`
+
+> [!NOTE]
+> Delegated scopes such as `Item.ReadWrite.All` are granted to the signed-in identity through its **workspace role**. Make sure the identity you use with `az login` is assigned the **Contributor**, **Member**, or **Admin** role on the target Fabric workspace before running the script.
 
 ## Authentication
 
@@ -193,16 +196,9 @@ Add the following below the [import](#add-import-statements-to-your-py-file) sta
 
 class Config:
     """
-    Central configuration object for the tutorial.
-
-    Why this exists:
-    - Keeps all "things you might change" in one place (workspace ID, names, toggles).
-    - Lets step functions accept a single cfg object rather than many parameters.
-    - Makes the tutorial easier to teach: you introduce Config once, then build functions.
-
-    Tip:
-    - In real projects, you might load these values from env vars or a JSON file.
-    - For tutorial clarity, we keep them explicit and readable.
+    Central configuration: workspace ID, resource display names, and
+    ingestion settings. A single instance is built in main() and passed
+    to each step function.
     """
     def __init__(self):
         # Workspace
@@ -356,14 +352,10 @@ Add the following after the `Config` class:
 
 class TokenProvider:
     """
-    Thin wrapper around DefaultAzureCredential that acquires Entra tokens.
-
-    Why this exists:
-    - Keeps token acquisition in one place.
-    - Lets _fabric_headers() build a fresh Authorization header when needed.
-
-    Note:
-    - DefaultAzureCredential can use several sources (Azure CLI login, VS Code login, etc.).
+    Thin wrapper around DefaultAzureCredential that acquires Entra access
+    tokens. `_fabric_headers()` and `_pbi_headers()` call `get()` per
+    request so the Authorization header is always fresh; the underlying
+    credential refreshes transparently.
     """
     def __init__(self):
         self._cred = DefaultAzureCredential()
@@ -1481,15 +1473,18 @@ if __name__ == "__main__":
 
 ## Run the application
 
+> [!NOTE]
+> Eventhouse, eventstream, KQL database, and map display names must be unique within a workspace. Before re-running the script, either delete the items created on the previous run from the Fabric workspace, or change the corresponding display names in `Config`. Otherwise the create calls fail with `409 ItemDisplayNameAlreadyInUse`.
+
 During script execution, you are prompted to paste the eventstream connection string.
 
 To retrieve this value:
 
 1. Open your Fabric workspace  
-2. Open the eventstream created by the script  
-3. Select the **Custom endpoint source**  
-4. Open **SAS Key Authentication**  
-5. Copy **Connection string-primary key**
+1. Open the eventstream created by the script  
+1. Select the **Custom endpoint source**  
+1. Open **SAS Key Authentication**  
+1. Copy **Connection string-primary key**
 
 :::image type="content" source="media/tutorials/create-real-time-map-using-rest-apis/connection-string-primary-key.png" lightbox="media/tutorials/create-real-time-map-using-rest-apis/connection-string-primary-key.png" alt-text="A screenshot of a Microsoft Fabric workspace with SAS Key Authentication panel open. The panel displays the Connection string-primary key field ready to be copied for eventstream authentication.":::
 
@@ -1506,7 +1501,7 @@ python create_realtime_map.py
 
 Verify that all items were created:
 
-:::image type="content" source="media/tutorials/create-real-time-map-using-rest-apis/real-time-map.png"  lightbox="media/tutorials/create-real-time-map-using-rest-apis/real-time-map.png" alt-text="A screenshot of a Seattle street map with multiple blue location markers clustered in downtown and surrounding neighborhoods. A data layers panel on the left shows Live Locations layer enabled. The map displays streets, neighborhood names, and control buttons on the right side for navigation and layer management.":::
+:::image type="content" source="media/tutorials/create-real-time-map-using-rest-apis/real-time-map.png" lightbox="media/tutorials/create-real-time-map-using-rest-apis/real-time-map.png" alt-text="A screenshot of a Seattle street map with multiple blue location markers clustered in downtown and surrounding neighborhoods. A data layers panel on the left shows Live Locations layer enabled. The map displays streets, neighborhood names, and control buttons on the right side for navigation and layer management.":::
 
 At this point, all resources are created and configured.
 

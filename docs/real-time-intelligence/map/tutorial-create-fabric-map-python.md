@@ -48,11 +48,14 @@ For scenarios that require continuously updating data (for example, live trackin
 
 ## Prerequisites
 
-- Python 3.9 or later
+- Python 3.10 or later
 - Azure CLI
 - Fabric workspace ID
 - Permissions to call Fabric REST APIs, such as:
   - `Item.ReadWrite.All`
+
+> [!NOTE]
+> Delegated scopes such as `Item.ReadWrite.All` are granted to the signed-in identity through its **workspace role**. Make sure the identity you use with `az login` is assigned the **Contributor**, **Member**, or **Admin** role on the target Fabric workspace before running the script.
 
 ## Authentication
 
@@ -282,16 +285,9 @@ Add the following below the [import](#add-import-statements-to-your-py-file) sta
 
 class Config:
     """
-    Central configuration object for the tutorial.
-
-    Why this exists:
-    - Keeps all "things you might change" in one place (workspace ID, file paths, toggles).
-    - Lets step functions accept a single cfg object rather than many parameters.
-    - Makes the tutorial easier to teach: you introduce Config once, then build functions.
-
-    Tip:
-    - In real projects, you might load these values from env vars or a JSON file.
-    - For tutorial clarity, we keep them explicit and readable.
+    Central configuration: workspace ID, file paths, resource names, and
+    toggles for the optional custom SVG marker. A single instance is built
+    in main() and passed to each step function.
     """
     def __init__(self):
         # Workspace
@@ -454,14 +450,10 @@ Add the following after the `Config` class:
 
 class TokenProvider:
     """
-    Thin wrapper around DefaultAzureCredential that acquires Entra tokens.
-
-    Why this exists:
-    - Keeps token acquisition in one place.
-    - Lets _fabric_headers() build a fresh Authorization header when needed.
-
-    Note:
-    - DefaultAzureCredential can use several sources (Azure CLI login, VS Code login, etc.).
+    Thin wrapper around DefaultAzureCredential that acquires Entra access
+    tokens. `_fabric_headers()` and `_pbi_headers()` call `get()` per
+    request so the Authorization header is always fresh; the underlying
+    credential refreshes transparently.
     """
     def __init__(self):
         self._cred = DefaultAzureCredential()
@@ -693,11 +685,9 @@ Add:
 
 def _onelake_client() -> DataLakeServiceClient:
     """
-    Create a DataLakeServiceClient for OneLake.
-
-    Why this exists:
-    - OneLake supports ADLS Gen2-compatible endpoints and SDKs.
-    - We upload files to Lakehouse Files/ through OneLake DFS APIs.
+    Build a DataLakeServiceClient against the OneLake DFS endpoint,
+    authenticated with DefaultAzureCredential. Used by `_upload_with_retry`
+    to write files into the Lakehouse Files area.
     """
     return DataLakeServiceClient(
         account_url="https://onelake.dfs.fabric.microsoft.com",
@@ -713,16 +703,9 @@ def _upload_with_retry(
     attempts: int = 6
 ) -> None:
     """
-    Upload bytes into OneLake under the Lakehouse item.
-
-    Why retries matter:
-    - Newly created Lakehouses may take a short time before Files/ is ready.
-    - Retrying avoids "first-run flakiness".
-
-    GUID addressing model:
-    - File system = workspace GUID
-    - Path begins with item GUID (the lakehouse id)
-    - Then the relative path under Files/
+    Upload bytes into OneLake at `<workspace GUID>/<item GUID>/<relative path>`.
+    Retries with linear backoff because a newly created Lakehouse can
+    briefly return errors before its `Files/` area is provisioned.
     """
     service = _onelake_client()
     fs = service.get_file_system_client(file_system=workspace_guid)
@@ -758,15 +741,15 @@ Next, you add the primary functions that define the workflow. These are all call
 
 ### Create a Lakehouse
 
-This step creates a Lakehouse in your Fabric workspace using the REST API. The Lakehouse stores the GeoJSON file and optional SVG marker used later by the map.
+`create_lakehouse` creates the Lakehouse that stores the GeoJSON file and the optional SVG marker used by the map.
 
 This function:
 
-- Sends a POST request to create the Lakehouse
-- Passes the response straight to `_handle_lro`, which handles synchronous (201) and asynchronous (202/LRO) responses uniformly
+- Sends a POST to the Lakehouse REST endpoint with `displayName` and `description` from your config
+- Passes the response to `_handle_lro`, which handles synchronous (201), asynchronous (202/LRO), and status-only responses uniformly
 - Returns the Lakehouse ID for use in later steps
 
-Add the following code next:
+Add the following after the `_upload_with_retry` function:
 
 ```python
 # =========================================================
@@ -798,11 +781,11 @@ def create_lakehouse(client: httpx.Client, fabric: FabricClient, cfg: Config) ->
 
 ### Upload GeoJSON to the Lakehouse
 
-Uploads the local GeoJSON file into the Lakehouse Files area using OneLake (ADLS Gen2 API).
+`upload_geojson` uploads the local GeoJSON file into the Lakehouse `Files` area, where it becomes the spatial data source the map reads at render time.
 
-The uploaded file becomes the spatial data source for the map.
+This is the first step that crosses from the Fabric control plane (REST) into the OneLake data plane (ADLS Gen2). The function reads the local file into memory and delegates to `_upload_with_retry`, which performs the chunked DFS upload and retries on transient errors.
 
-Add the following code next:
+Add the following after the `create_lakehouse` function:
 
 ```python
 # =========================================================
@@ -811,11 +794,8 @@ Add the following code next:
 
 def upload_geojson(cfg: Config, lakehouse_id: str) -> None:
     """
-    Upload the local GeoJSON file to the Lakehouse Files area.
-
-    Teaching note:
-    - This is the first time the tutorial crosses from "control plane" (Fabric REST)
-      into "data plane" (OneLake DFS upload).
+    Upload the local GeoJSON file to the Lakehouse Files area at
+    `cfg.geojson_relative_path` using the OneLake DFS endpoint.
     """
     _upload_with_retry(
         workspace_guid=cfg.workspace_id,
@@ -829,11 +809,11 @@ def upload_geojson(cfg: Config, lakehouse_id: str) -> None:
 
 ### Upload a custom SVG marker
 
-Uploads a custom SVG marker into the Lakehouse so the map can render each point using a custom icon.
+`upload_svg_marker` uploads a custom SVG icon into the same Lakehouse so the map can render each feature with that marker instead of a built-in one. The step is optional and gated by `cfg.use_custom_svg_marker` — when the flag is `False`, the function returns immediately and the map falls back to a built-in marker.
 
-This step is optional and controlled by the `use_custom_svg_marker` configuration setting.
+Like `upload_geojson`, this function delegates the actual upload to `_upload_with_retry`.
 
-Add the following code next:
+Add the following after the `upload_geojson` function:
 
 ```python
 # =========================================================
@@ -842,11 +822,9 @@ Add the following code next:
 
 def upload_svg_marker(cfg: Config, lakehouse_id: str) -> None:
     """
-    Upload a custom SVG marker icon (if enabled).
-
-    Teaching note:
-    - Keeping this in its own function helps you document "optional customization"
-      without cluttering the main workflow.
+    Upload a custom SVG marker to the Lakehouse at
+    `cfg.svg_relative_path` when `cfg.use_custom_svg_marker` is True;
+    otherwise return without uploading.
     """
     if not cfg.use_custom_svg_marker:
         return
@@ -862,7 +840,7 @@ def upload_svg_marker(cfg: Config, lakehouse_id: str) -> None:
 ```
 
 > [!TIP]
-> SVG is typically a strong choice for markers because it scales cleanly at different zoom levels and screen DPIs.
+> SVG markers scale cleanly across zoom levels and screen DPIs, which makes them a good fit for map icons.
 
 ### Build map.json
 
@@ -1107,19 +1085,24 @@ In the next step, you run the script to create the Lakehouse, upload data, and g
 
 ## Run the application
 
+> [!NOTE]
+> Lakehouse and Map display names must be unique within a workspace. Before re-running the script, either delete the items created on the previous run from the Fabric workspace, or change `lakehouse_display_name` / `map_display_name` in `Config`. Otherwise the create calls fail with `409 ItemDisplayNameAlreadyInUse`.
+
 Run the script:
 
-```python
+```
 python create_map_from_geojson.py
 ```
 
 If the script runs successfully, you see output similar to:
 
-> DONE
-> Lakehouse ID: *Lakehouse ID*
-> Map ID: *Map ID*
-> GeoJSON layer path: Files/vector/starbucks-seattle.geojson
-> Custom SVG marker path: Files/icons/starbucks-marker.svg
+```
+DONE
+Lakehouse ID: <Lakehouse ID>
+Map ID: <Map ID>
+GeoJSON layer path: Files/vector/starbucks-seattle.geojson
+Custom SVG marker path: Files/icons/starbucks-marker.svg
+```
 
 In Microsoft Fabric, your map should look similar to this:
 
