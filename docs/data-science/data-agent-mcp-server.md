@@ -26,6 +26,9 @@ Together, the client and server make it easy to connect AI systems with real dat
 > [!IMPORTANT]  
 > This feature is in [preview](../fundamentals/preview.md).
 
+> [!IMPORTANT]
+> When you consume Fabric data agent as an MCP server, responses returned by Fabric data agents may be sent outside of Fabric's compliance boundary or geographic region and processed and/or stored according to your MCP client's applicable terms and data handling policies.
+
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
 ## How it works
