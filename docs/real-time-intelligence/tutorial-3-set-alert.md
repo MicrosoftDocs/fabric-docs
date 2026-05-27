@@ -17,7 +17,7 @@ In this part of the tutorial, you set an Activator alert on your eventstream to 
 
 ## Set an alert on the eventstream
 
-Here you configure the rules for the alert. Your starting point is the eventstream details page for the eventstream you created in the previous tutorial. To get there, follow one of these two paths:
+Here you configure the rules for the alert. Your starting point is the eventstream details page for the eventstream you created in the previous tutorial. 
 
 1. From the left navigation bar, select **Real-Time**.
 
