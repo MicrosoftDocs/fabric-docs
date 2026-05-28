@@ -24,7 +24,7 @@ Eventhouse monitoring in Fabric offers comprehensive insights into the usage and
 
     You can also access the monitoring eventhouse from the workspace where your eventhouse is located.  From the workspace where your eventhouse is located, select **Workspace Settings** and select the **Monitoring** tab.
 
-1. Select **+ Eventhouse** amd wait for the success message confirming that the monitoring eventhouse was added to your workspace.
+1. Select **+ Eventhouse** and wait for the success message confirming that the monitoring eventhouse was added to your workspace.
 
     Workspace activity loggging is automatically enabled.
 
