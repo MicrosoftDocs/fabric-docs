@@ -26,7 +26,7 @@ Eventhouse monitoring in Fabric offers comprehensive insights into the usage and
 
 1. Select **+ Eventhouse** and wait for the success message confirming that the monitoring eventhouse was added to your workspace.
 
-    Workspace activity loggging is automatically enabled.
+    Workspace activity logging is automatically enabled.
 
 1. Select the **Monitoring database** link to open the **Monitoring Eventhouse** in a new tab.
 
