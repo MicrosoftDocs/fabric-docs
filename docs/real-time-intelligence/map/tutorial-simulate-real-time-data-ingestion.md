@@ -53,13 +53,7 @@ az login
 
 The simulator slots into the same pipeline you built in the previous tutorial:
 
-```mermaid
-flowchart LR
-    A[Simulator notebook] --> B[Eventstream custom endpoint]
-    B --> C[Eventhouse table]
-    C --> D[KQL function<br/>latest per vehicle]
-    D --> E[Fabric map<br/>auto-refresh]
-```
+:::image type="content" source="media/tutorial-simulate-real-time-data-ingestion/simulator-architecture.png" alt-text="Flowchart showing the simulator notebook sending events to an eventstream custom endpoint, which writes to an eventhouse table, which is queried by a KQL function that returns the latest row per vehicle, which feeds an auto-refreshing map.":::
 
 > [!IMPORTANT]
 > The field names used by the **seed events**, **simulator events**, **KQL function output**, and **map layer bindings** must match exactly, including casing.

@@ -1149,5 +1149,5 @@ For more information about working with spatial data and maps in Fabric, see:
 For a tutorial that demonstrates creating a real-time map using REST APIs, see:
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a real-time map using REST APIs and Python](tutorial-real-time-map-python.md)
+> [Tutorial: Create a real-time map using REST APIs and Python](tutorial-create-real-time-map-python.md)
 
