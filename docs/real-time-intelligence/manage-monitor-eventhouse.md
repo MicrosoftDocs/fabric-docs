@@ -15,7 +15,7 @@ An Eventhouse is a scalable environment for processing and analyzing large volum
 
 ## Eventhouse home page
 
-The eventhouse home page is where you can manage and monitor your eventhouse. From here, you can view the system overview, browse databases, and access monitoring features. The system overview provides insights into the health, performance, and activity of your eventhouse, including storage usage, compute usage, ingestion rates, and more. You can also view advisory findings that proactively alert you to potential capacity issues.
+The eventhouse home page is where you can manage and monitor your eventhouse. From here, you can view the [system overview](#system-overview), browse databases, and access monitoring features.
 
 :::image type="content" source="media/eventhouse/event-house-page.png" alt-text="Screenshot showing the main Eventhouse page." lightbox="media/eventhouse/event-house-page.png":::
 
@@ -23,14 +23,15 @@ The eventhouse home page is where you can manage and monitor your eventhouse. Fr
 
 * **B: Explorer pane**: The explorer provides an intuitive interface for navigating between eventhouse views, working with databases, and navigating to the monitoring eventhouse.
 
-* **C: Main pane**: The main view area displays a variety of eventhouse system overview information or database overview information, depending on what you select in the explorer pane.
+* **C: Main pane**: The main view area displays various eventhouse system overview information or database overview information, depending on what you select in the explorer pane.
 
-* **D: Eventhouse details**: The eventhouse details area displays the region, last ingestion date, minimum consumption setting, and plugins. You can expand or collapse the details area using the button, or from the ribbon.  In the details area, you can copy the following eventhouse URI values:
+* **D: Eventhouse details**: The eventhouse details area displays the region, last ingestion date, minimum consumption setting, and plugins. You can expand or collapse the details area using the button, or from the ribbon. 
 
-| URI type | Usage |
-|--|--|
-| Query URI | URI that can be used to [add database shortcuts](database-shortcut.md) or by [connectors](event-house-connectors.md) and APIs to run queries or management commands. |
-| Ingestion URI | URI that is for use by connectors and APIs to ingest data. |
+  In the details area, you can copy the following eventhouse URI values:
+
+  * **Query URI**: URI that can be used to [add database shortcuts](database-shortcut.md) or by [connectors](event-house-connectors.md) and APIs to run queries or management commands.
+
+  * **Ingestion URI**: URI that is for use by connectors and APIs to ingest data.
 
 An eventhouse can have multiple **Related elements**, such as KQL databases, real-time dashboards, activators, and more. You can easily navigate to these related elements from the eventhouse details area.
 
@@ -38,7 +39,16 @@ An eventhouse can have multiple **Related elements**, such as KQL databases, rea
 
 The eventhouse **System overview** provides insights into the eventhouse's health, performance, and activity, including storage usage, compute usage, ingestion rates, and more. <!--You can also view advisory findings that proactively alert you to potential capacity issues.-->
 
-For each tile in the system overview you can select a tab at the top to filter the time range. You can to filter by one hour (1H), one day (1D), one week (7D), one month (30D).
+* [Running state](#running-state)
+* [Eventhouse storage](#eventhouse-storage)
+* [Storage resources](#storage-resources)
+* [Time range filter](#time-range-filter)
+* [Activity in minutes](#activity-in-minutes)
+* [Ingestion](#ingestion)
+* [Top 10 queried databases](#top-10-queried-databases)
+* [Top 10 ingested databases](#top-10-ingested-databases)
+* [Activity in minutes - top 5 users](#activity-in-minutes---top-5-users)
+* [What's new - Last 7 days](#whats-new---last-7-days)
 
 ### Running state
 
@@ -68,13 +78,19 @@ Shows the storage capacity of the eventhouse. The storage capacity is divided in
 
 Shows a snapshot of the storage breakdown by database. You can drill down into each database from the bar to see the details. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
 
+### Time range filter
+
+For the tiles in the system overview page with a time range filter, you can filter by one hour (1H), one day (1D), one week (7D), or one month (30D). To set all the tiles to the same time range, open the ellipsis menu on any of the tiles and select **Apply [time range] for all**.
+
+:::image type="content" source="media/eventhouse/time-frame-apply-all.png" alt-text="Imaage of the time frame drop-down menu with the apply to all option selected.":::
+
 ### Activity in minutes
 
  Shows the duration in minutes to run compute operations such as queries and commands. It's important to note that compute minutes don't directly correspond to compute units, which represent the actual processing time consumed by these operations.
 
 For example, if two users execute queries at the same time, one taking 3 minutes and the other 5 minutes, the total compute minutes would be 8. But since these queries ran together, the actual compute units used are just 5 minutes.
 
-In the case where 78 queries and 173 ingest operations run at the same time and total 183 compute minutes, if they all finish within a 5-minute period, the actual compute units used is still only 5 minutes.
+In the case where 78 queries and 173 ingest operations that run at the same time and total 183 compute minutes, if they all finish within a 5-minute period, the actual compute units that is used is still only 5 minutes.
 
 The tile also allows users to open the underlying KQL query by selecting **Open query** in the ellipsis menu.
 
@@ -143,7 +159,7 @@ Highlights database owners and recent eventhouse events, such as the following o
 * Create, alter, or delete a function
 * Alter a caching policy, retention policy, or table update policy
 
-### View databases
+## View databases
 
 The databases overview page provides a summary of all the databases in the eventhouse.
 
@@ -172,7 +188,7 @@ The databases overview page provides a summary of all the databases in the event
 Eventhouse workspace monitoring is a feature that lets you track the health and performance of the eventhouse using Fabric workspace monitoring.
 When you enable workspace monitoring, Fabric automatically creates an eventhouse in your workspace that collects metrics from your eventhouse. You can then query this data using KQL (Kusto Query Language) to troubleshoot issues, analyze trends, and build custom dashboards.
 
-The mointoring eventhouse is provided as a set of read-only tables, inside a monitoring KQL database. You can query the tables to get insights into the usage and performance of your eventhouse. For more information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
+The monitoring eventhouse is provided as a set of read-only tables, inside a monitoring KQL database. You can query the tables to get insights into the usage and performance of your eventhouse. For more information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
 
 For more monitoring insights, see the following articles:
 
