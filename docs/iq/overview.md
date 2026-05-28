@@ -12,11 +12,11 @@ ai-usage: ai-assisted
 
 Fabric IQ provides context on the state of your business. It is grounded in all the analytical, real-time, and operational data about your business, but data alone is not enough. Fabric IQ elevates that data up to the language of your business. With that richer context, people and agents can correctly interpret the data and reason and make decisions in terms of business concepts and objectives.
 
-## Pillars of Fabric IQ
+## Layers of Fabric IQ
 
-Fabric IQ brings three pillars of business context into Microsoft IQ: [unified data](#unified-data-with-onelake), [business intelligence](#business-intelligence-with-power-bi-semantic-models), and [operational intelligence](#operational-intelligence-with-ontologies). These pillars are delivered through two core [items](#iq-as-a-workload-in-fabric) in the Fabric IQ workload, ontology and semantic model, creating shared context over business data in OneLake.
+Fabric IQ brings three layers of business context into Microsoft IQ: [unified data](#unified-data-with-onelake), [business intelligence](#business-intelligence-with-power-bi-semantic-models), and [operational intelligence](#operational-intelligence-with-ontologies). These layers are delivered through two core [items](#iq-as-a-workload-in-fabric) in the Fabric IQ workload, ontology and semantic model, creating shared context over business data in OneLake.
 
-:::image type="content" source="media/overview/fabric-iq-pillars.png" alt-text="Diagram showing the Fabric IQ pillars." lightbox="media/overview/fabric-iq-pillars.png":::
+:::image type="content" source="media/overview/fabric-iq-layers.png" alt-text="Diagram showing the Fabric IQ layers." lightbox="media/overview/fabric-iq-layers.png":::
 
 ### Unified data with OneLake
 
@@ -44,7 +44,7 @@ Using the Fabric IQ framework enables these benefits:
 * **Faster onboarding.** New dashboards and AI experiences get consistent business meaning because business concepts only need to be declared once.
 * **Governance and trust.** Reduced duplication and inconsistent definitions across teams by enforcing clear semantics, while constraints improve data quality.
 
-Fabric IQ's three pillars ensure that every agent starts with the same understanding of the business and can apply it correctly across workflows. However, frontier organizations cannot start at the IQ layer. Building this capability requires a unified data foundation. Microsoft Fabric delivers this through four core capabilities:
+Fabric IQ's [three layers](#layers-of-fabric-iq) ensure that every agent starts with the same understanding of the business and can apply it correctly across workflows. However, frontier organizations cannot start at the IQ layer. Building this capability requires a unified data foundation. Microsoft Fabric delivers this through four core capabilities:
 
 :::image type="content" source="media/overview/fabric-iq-framework.png" alt-text="Diagram showing the Fabric IQ framework." lightbox="media/overview/fabric-iq-framework.png":::
 
