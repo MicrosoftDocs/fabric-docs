@@ -14,7 +14,7 @@ LocalizationGroup: Admin
 
 This article is aimed at Fabric administrators and decision makers who need to know how and where Fabric metadata is being used.
 
-Fabric metadata sharing with Microsoft 365 services is a feature that allows metadata from Fabric to be shared with Microsoft 365 services (typically via [Microsoft Graph](/graph/overview)) and combined with data from across Microsoft 365, Windows, and Enterprise Mobility + Security (EMS) to build apps for organizations and consumers that interact with millions of users. The feature is enabled by default when your Fabric home tenant and Microsoft 365 tenant are in the same geographical region.
+Fabric metadata sharing with Microsoft 365 services is a feature that allows metadata from Fabric to be shared with Microsoft 365 services typically via [Microsoft Graph](/graph/overview). This metadata can then be combined with data from across Microsoft 365, Windows, and Enterprise Mobility + Security (EMS) to build apps for organizations and consumers that interact with millions of users. The feature is enabled by default when your Fabric home tenant and Microsoft 365 tenant are in the same geographical region.
 
 When shared with Microsoft 365 services, Fabric content will be listed in the Quick Access list on the Office.com home page. The Fabric content affected includes reports, dashboards, apps, workbooks, paginated reports, and workspaces. The information required by the Quick Access functionality includes:
 
@@ -62,7 +62,7 @@ The tables below lists examples of the data that is shared with Microsoft 365 se
 |TenantID|Microsoft Entra tenant Identifier|aaaabbbb-0000-cccc-1111-dddd2222eeee|
 |ItemType|Fabric category for the item |Report|
 |DisplayName|Display name for the item |Retail Analysis Sample|
-|Description|Content description in the servics (e.g. [Report settings](/power-bi/create-reports/power-bi-report-settings?tabs=powerbi-desktop))|Sample containing retail sales data|
+|Description|Content description in the services (e.g. [Report settings](/power-bi/create-reports/power-bi-report-settings?tabs=powerbi-desktop))|Sample containing retail sales data|
 |URL|Content Item URL for the item|https://powerbi-df.analysis-df.windows.net/groups/8b5ac04e-89c1-4fc6-a364-e8411dfd8d17/reports/aaaabbbb-0000-cccc-1111-dddd2222eeee/ReportSection2|
 |ACL|Access Control List with permissions and Microsoft Entra user, Security Group and Distribution List Identifiers|{"accessType": "grant", "id" : "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "type" : "read" }|
 |WorkspaceName|Workspace name as per [Create a workspace](/power-bi/collaborate-share/service-create-the-new-workspaces) |Retail workspace|
@@ -86,8 +86,8 @@ The tables below lists examples of the data that is shared with Microsoft 365 se
 |StartTime/EndTime|Date/Time the user performed the action on the content|2011-06-30T23:32:46Z|
 
 > [!NOTE]
-> Power BI reports shared using organization-wide (“org-wide”) links are not discoverable in Microsoft 365 experiences (such as search) for users who only have access via those links even when the “Share Fabric data with your M365 Microsoft Services” setting is enabled. This is expected behavior; users can still access the report directly through the link, but it will not appear in discovery surfaces unless shared through other access methods.
-> 
+> Power BI reports shared using organization-wide (“org-wide”) links are not discoverable in Microsoft 365 experiences (such as search) for users who only have access through those links, even when the “Share Fabric data with your M365 Microsoft Services” setting is enabled. This is expected behavior: users can still access the report directly via the link, but it will not appear in discovery surfaces unless the report is shared using another access method.
+
 ## Related content
 
 - [About tenant settings](tenant-settings-index.md)
