@@ -99,7 +99,7 @@ When a column mapping is configured, Copy job always honors and follows it.
 When no column mapping is configured, Copy job follows the below.
 
 - **New column added at the source**: Runs continue to succeed, and the new column isn't synced to the destination.
-- **Column deleted at the source**: The deleted column is no longer synced. Existing data for that column in the destination isn't removed, and runs continue to succeed without any new data from that column moved. 
+- **Column deleted at the source**: The deleted column is no longer synced. Existing data for that column in the destination isn't removed, and runs continue to succeed without transferring any new data for that column. 
 - **Source data type changes**: Runtime type compatibility handling applies. The source data type must be castable to the destination data type. If the updated source type can't be cast to the destination type, the run fails.
 
 ## How to get started
