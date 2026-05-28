@@ -65,7 +65,7 @@ Each Fabric Workspace can have up to 10 graph instances.
 
 ### Size of graph
 
-Creating graphs with more than 500 million nodes and edges might result in unstable performance.
+Creating graphs with more than 1 billion nodes and edges might result in unstable performance.
 
 ### Multitasking UI
 
