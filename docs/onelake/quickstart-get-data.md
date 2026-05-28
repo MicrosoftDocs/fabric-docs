@@ -9,7 +9,7 @@ ai-usage: ai-assisted
 
 # Quickstart: Get data into OneLake
 
-OneLake is the single, unified data lake for Microsoft Fabric. Every Fabric workload, including Data Engineering, Data Warehouse, Data Science, Real-Time Intelligence, and Power BI, reads and writes data through OneLake, so you only need to load data once to use it everywhere. You can bring data into OneLake in several ways:
+OneLake is the single, unified data lake for Microsoft Fabric. Every Fabric workload reads and writes data through OneLake, so you only need to load data once to use it everywhere. You can bring data into OneLake in several ways:
 
 - Upload files directly to a lakehouse or warehouse.
 - Ingest data by using pipelines, dataflows, or streaming experiences.
@@ -22,16 +22,9 @@ In this quickstart, you bring data into OneLake two ways: you upload a CSV file 
 - A [Fabric license](../enterprise/licenses.md). Or, sign up for a free [Fabric trial](../fundamentals/fabric-trial.md).
 - A [Fabric workspace](../fundamentals/create-workspaces.md).
 
-## Download the sample data
-
-Before you can put data into OneLake, you need something to put there. In this quickstart, you use `Dim_Products.csv` from a publicly available Fabric sample dataset. It's a small product dimension table from a coffee retail scenario.
-
-1. Open a browser and go to <https://fabrictutorialdata.blob.core.windows.net/sampledata/Coffee/Dim_Products.csv>.
-1. When prompted, save the file as `Dim_Products.csv` to a folder on your computer.
-
 ## Create a lakehouse
 
-You don't write to OneLake directly. Instead, you create a Fabric item, such as a lakehouse, warehouse, or eventhouse, and that item provisions storage in OneLake on your behalf. A lakehouse is the most common starting point because it gives you both a file area (**Files**) for unstructured or semi-structured data and a Delta table area (**Tables**) for structured, queryable data. Everything you put in either area is stored in OneLake and immediately accessible to other Fabric workloads.
+When you create a Fabric item, such as a lakehouse, warehouse, or eventhouse, that item provisions storage in OneLake on your behalf. In this quickstart, you make a lakehouse, which gives you both a file area (**Files**) for unstructured or semi-structured data and a Delta table area (**Tables**) for structured, queryable data. Everything you put in either area is stored in OneLake and immediately accessible to other Fabric workloads.
 
 1. Sign in to the [Fabric portal](https://app.fabric.microsoft.com) and select your workspace.
 1. Select **New item**.
@@ -40,9 +33,14 @@ You don't write to OneLake directly. Instead, you create a Fabric item, such as 
 
    The lakehouse opens to the **Explorer** view, which shows empty **Tables** and **Files** sections. Both sections are already backed by OneLake and are ready for content.
 
-## Upload the sample file
+## Upload sample data
 
-The **Files** area of a lakehouse is a general-purpose storage zone in OneLake. Think of it as the landing zone for raw data in whatever format it arrives. You can drop in CSV, JSON, Parquet, images, logs, or anything else without having to define a schema first. In this section, you upload `Dim_Products.csv` to **Files** so that you have raw source data sitting in OneLake.
+In this quickstart, you use `Dim_Products.csv` from a publicly available Fabric sample dataset. It's a small table of product information from a sample coffee retailer.
+
+1. Open a browser and go to <https://fabrictutorialdata.blob.core.windows.net/sampledata/Coffee/Dim_Products.csv>.
+1. When prompted, save the file as `Dim_Products.csv` to a folder on your computer.
+
+In this section, you upload `Dim_Products.csv` to **Files** so that you have raw source data sitting in OneLake. The **Files** area of a lakehouse is a general-purpose storage zone in OneLake. Think of it as the landing zone for raw data in whatever format it arrives. You can drop in CSV, JSON, Parquet, images, logs, or anything else without having to define a schema first.
 
 1. In the lakehouse Explorer, hover over **Files**, select the more options (**...**) menu, and then select **Upload** > **Upload files**.
 1. In the **Upload files** pane, select the folder icon and browse to `Dim_Products.csv` on your computer.
@@ -73,7 +71,7 @@ Fabric standardizes on Delta Lake as the table format in OneLake. When you load 
 
 Uploading and loading is one way to get data into OneLake. The other key pattern is to reference data that already exists somewhere else, without duplicating it. That's what a shortcut is: a pointer in OneLake that references data stored in another lakehouse, in another Fabric workspace, or in supported sources outside of Fabric like Azure Data Lake Storage or Amazon S3. The data isn't copied; it stays in the source location, but you can read it through OneLake as if it were local. Any updates to the source are immediately visible through the shortcut, so you don't have to maintain copies of the data.
 
-In this section, you create a second lakehouse and add a shortcut from it back to the `dim_products` table in your first lakehouse. This simulates a common real-world setup, where one team owns the curated data and other teams or projects consume it through shortcuts in their own workspaces.
+In this section, you create a second lakehouse and add a shortcut from it back to the `dim_products` table in your first lakehouse. This reflects how teams typically work, where one team owns the curated data and other teams or projects consume it through shortcuts in their own workspaces.
 
 1. In your workspace, select **New item**.
 1. In the **New item** pane, search for and select **Lakehouse**.
