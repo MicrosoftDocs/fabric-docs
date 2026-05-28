@@ -1,6 +1,6 @@
 ---
 title: Create a static map using REST APIs and Python
-description: Learn how to create a Microsoft Fabric Map programmatically using Python and Fabric Maps REST APIs.
+description: Learn how to create a Microsoft Fabric Maps item programmatically using Python and Fabric Maps REST APIs.
 ms.reviewer: smunk, sipa
 ms.service: fabric
 ms.topic: tutorial
@@ -27,7 +27,7 @@ For more information about the map definition structure, see [Map item definitio
 > - Upload a GeoJSON file to OneLake
 > - Upload a custom SVG marker icon to OneLake
 > - Build a map.json definition that references Lakehouse data
-> - Create a Fabric Map with the definition provided inline
+> - Create a map with the definition provided inline
 
 This tutorial follows a common automation pattern in Fabric: create infrastructure → upload data → define visualization → render map.
 
@@ -639,7 +639,7 @@ def _handle_lro(
 
 ### Definition payload helper
 
-When you create a Map with a **public definition**, the Create Map REST API expects each part in `definition.parts` to carry a base64-encoded payload with `"payloadType": "InlineBase64"`. The `_json_to_b64` helper encodes a Python `dict` (your `map.json`) into that format so `create_map` can drop it straight into the request body.
+When you create a map with a **public definition**, the create map REST API expects each part in `definition.parts` to carry a base64-encoded payload with `"payloadType": "InlineBase64"`. The `_json_to_b64` helper encodes a Python `dict` (your `map.json`) into that format so `create_map` can drop it straight into the request body.
 
 Add the following after the `_handle_lro` function:
 
@@ -647,14 +647,14 @@ Add the following after the `_handle_lro` function:
 # =========================================================
 # Definition payload helper
 #
-# Encodes map.json as base64 for inline Create Map payloads.
+# Encodes map.json as base64 for inline Create map payloads.
 # =========================================================
 
 def _json_to_b64(obj: dict) -> str:
     """
     Convert a Python dict to base64-encoded JSON text.
 
-    Fabric Map "Create Map with definition inline" requires:
+    Fabric Map "Create map with definition inline" requires:
     - definition.parts[].payloadType = InlineBase64
     - definition.parts[].payload     = base64(json(map_json))
     """
@@ -839,7 +839,7 @@ def upload_svg_marker(cfg: Config, lakehouse_id: str) -> None:
 
 ### Build map.json
 
-`build_map_json` builds and returns the `map.json` payload that defines the Fabric Map's contents. The payload follows the Map item definition schema and is composed of four sections: `dataSources` (where data comes from), `iconSources` (optional custom markers), `layerSources` (what is read and how often), and `layerSettings` (how the result is rendered on the map).
+`build_map_json` builds and returns the `map.json` payload that defines the Fabric Map's contents. The payload follows the map item definition schema and is composed of four sections: `dataSources` (where data comes from), `iconSources` (optional custom markers), `layerSources` (what is read and how often), and `layerSettings` (how the result is rendered on the map).
 
 For this tutorial, `dataSources` points at the Lakehouse (`itemType: "Lakehouse"`) created earlier, and the single entry in `layerSources` is a GeoJSON file layer (`type: "geojson"`) that reads the file you uploaded via `relativePath`. `refreshIntervalMs` is set to `0` because the source file is static — the map renders the file once and doesn't poll for changes.
 
@@ -966,9 +966,9 @@ def build_map_json(cfg: Config, lakehouse_id: str) -> dict:
 
 ### Create a map with inline definition
 
-`create_map` creates the Fabric Map by POSTing the inline definition you've assembled and returns the new Map's item ID. For this tutorial the request carries a single base64-encoded part — `map.json` — wrapped as `payloadType: "InlineBase64"` and encoded through `_json_to_b64`. The `map.json` payload already references the Lakehouse data source and, when present, the SVG icon by `relativePath`, so the layer is fully wired by the Create Map call without a follow-up `updateDefinition` round trip. If you wanted to set non-default item metadata or pin a Git-friendly `logicalId`, you'd add a `.platform` part to the same `parts` array; Fabric applies default metadata when `.platform` is omitted, which is what this tutorial does.
+`create_map` creates the map by POSTing the inline definition you've assembled and returns the new Map's item ID. For this tutorial the request carries a single base64-encoded part — `map.json` — wrapped as `payloadType: "InlineBase64"` and encoded through `_json_to_b64`. The `map.json` payload already references the Lakehouse data source and, when present, the SVG icon by `relativePath`, so the layer is fully wired by the Create Map call without a follow-up `updateDefinition` round trip. If you wanted to set non-default item metadata or pin a Git-friendly `logicalId`, you'd add a `.platform` part to the same `parts` array; Fabric applies default metadata when `.platform` is omitted, which is what this tutorial does.
 
-The Create Map REST API can answer with `201 Created` (synchronous, ID inline), `202 Accepted` (asynchronous LRO via `Location` or `x-ms-operation-id`), or `200 OK` with a status-only completion payload where the Map isn't yet visible in List Maps because of backend propagation delay. `_handle_lro` covers all of these cases — including listing and matching by `displayName` — so this function delegates the full response handling to it in a single call.
+The Create map REST API can answer with `201 Created` (synchronous, ID inline), `202 Accepted` (asynchronous LRO via `Location` or `x-ms-operation-id`), or `200 OK` with a status-only completion payload where the map isn't yet visible in List Maps because of backend propagation delay. `_handle_lro` covers all of these cases — including listing and matching by `displayName` — so this function delegates the full response handling to it in a single call.
 
 For more information, see [Map item definition](/rest/api/fabric/articles/item-management/definitions/map-definition).
 
@@ -981,9 +981,9 @@ Add the following after the `build_map_json` function:
 
 def create_map(client: httpx.Client, fabric: FabricClient, cfg: Config, map_json: dict) -> str:
     """
-    Create the Fabric Map with its definition inline and return its item ID.
+    Create the Fabric map with its definition inline and return its item ID.
 
-    Sends a single Create Map request whose `parts` array carries one
+    Sends a single Create map request whose `parts` array carries one
     base64-encoded payload, `map.json`. The map definition already
     references the Lakehouse data source (and, when present, the SVG
     icon) by `relativePath`, so the layer is wired by the Create Map
@@ -1021,7 +1021,7 @@ def create_map(client: httpx.Client, fabric: FabricClient, cfg: Config, map_json
 
 `main` is the single entry point that runs the tutorial end-to-end. It instantiates `Config`, opens one `httpx.Client` reused across every helper, wraps it in a `FabricClient`, then calls each step function in dependency order: `create_lakehouse` → `upload_geojson` (writes the GeoJSON to OneLake under the new Lakehouse) → `upload_svg_marker` (optional; only runs when `cfg.use_custom_svg_marker` is set) → `build_map_json` → `create_map`.
 
-Ordering matters because each step consumes something created by an earlier step — `upload_geojson` and `upload_svg_marker` need the Lakehouse item ID, and `build_map_json` references both uploads by `relativePath` so Create Map can resolve them at render time. The final `print` block surfaces the Lakehouse ID, Map ID, and the relative paths of the uploaded assets so you can find them in the Fabric portal.
+Ordering matters because each step consumes something created by an earlier step — `upload_geojson` and `upload_svg_marker` need the Lakehouse item ID, and `build_map_json` references both uploads by `relativePath` so Create map can resolve them at render time. The final `print` block surfaces the Lakehouse ID, map ID, and the relative paths of the uploaded assets so you can find them in the Fabric portal.
 
 Add the following after the `create_map` function:
 
@@ -1081,7 +1081,7 @@ In the next step, you run the script to create the Lakehouse, upload data, and g
 ## Run the application
 
 > [!NOTE]
-> Lakehouse and Map display names must be unique within a workspace. Before re-running the script, either delete the items created on the previous run from the Fabric workspace, or change `lakehouse_display_name` / `map_display_name` in `Config`. Otherwise the create calls fail with `409 ItemDisplayNameAlreadyInUse`.
+> Lakehouse and map display names must be unique within a workspace. Before re-running the script, either delete the items created on the previous run from the Fabric workspace, or change `lakehouse_display_name` / `map_display_name` in `Config`. Otherwise the create calls fail with `409 ItemDisplayNameAlreadyInUse`.
 
 Run the script:
 
@@ -1116,7 +1116,7 @@ You accomplished the following:
 
 - Uploaded spatial data to a **Lakehouse**  
 - Configured a dataset for geospatial visualization  
-- Built a **Fabric Map with an inline definition**  
+- Built a **Fabric map with an inline definition**  
 - Connected the map to Lakehouse data  
 - Configured map layers to render spatial features  
 

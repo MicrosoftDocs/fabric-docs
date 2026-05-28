@@ -557,7 +557,7 @@ def _handle_lro(
 
 ### Definition payload helper
 
-When you create a Map with a **public definition**, the Create Map REST API expects each part in `definition.parts` to carry a base64-encoded payload with `"payloadType": "InlineBase64"`. The `_json_to_b64` helper encodes a Python `dict` (your `map.json`) into that format so `create_map` can drop it straight into the request body.
+When you create a map with a **public definition**, the Create map REST API expects each part in `definition.parts` to carry a base64-encoded payload with `"payloadType": "InlineBase64"`. The `_json_to_b64` helper encodes a Python `dict` (your `map.json`) into that format so `create_map` can drop it straight into the request body.
 
 Add the following after the `_handle_lro` function:
 
@@ -565,7 +565,7 @@ Add the following after the `_handle_lro` function:
 # =========================================================
 # Definition payload helper
 #
-# Encodes map.json as base64 for inline Create Map payloads.
+# Encodes map.json as base64 for inline Create map payloads.
 # =========================================================
 
 def _json_to_b64(obj: dict) -> str:
@@ -1195,7 +1195,7 @@ def create_kql_function(client: httpx.Client, fabric: FabricClient, cfg: Config,
 
 ### Build map.json
 
-`build_map_json` builds and returns the `map.json` payload that defines the Fabric Map's contents. The payload follows the Map item definition schema and is composed of four sections: `dataSources` (where data comes from), `iconSources` (optional custom markers), `layerSources` (what is queried and how often), and `layerSettings` (how the result is rendered on the map).
+`build_map_json` builds and returns the `map.json` payload that defines the Fabric Map's contents. The payload follows the map item definition schema and is composed of four sections: `dataSources` (where data comes from), `iconSources` (optional custom markers), `layerSources` (what is queried and how often), and `layerSettings` (how the result is rendered on the map).
 
 For this tutorial, `dataSources` points at the KQL database (`itemType: "KqlDatabase"`) created earlier, and the single entry in `layerSources` is a Kusto-backed layer (`type: "kusto"`, `queryType: "function"`) whose `query` calls the stored function `LatestVehicleLocations()`. `refreshIntervalMs` is read from `cfg.refresh_interval_ms` (5000 ms by default), so the layer re-runs the function on a timer and the map reflects new ingestion in near real time.
 
@@ -1298,7 +1298,7 @@ def build_platform_json(cfg: Config) -> dict:
     """
     Build and return the optional .platform payload for a Fabric Map item.
 
-    The Map definition supports an optional .platform part alongside
+    The map definition supports an optional .platform part alongside
     map.json that carries non-default item metadata: the item type,
     display name and description, and a `logicalId` used for
     deterministic updates. Fabric applies defaults when the part is
@@ -1324,11 +1324,11 @@ def build_platform_json(cfg: Config) -> dict:
 
 ### Create a map with inline definition
 
-`create_map` creates the Fabric Map by POSTing the inline definition you've assembled and returns the new Map's item ID. The request carries three base64-encoded parts under `payloadType: "InlineBase64"`: `map.json` (the required core definition), the optional `.platform` metadata you built in the previous step, and a Kusto query file named `queries/layerSource-<layerSourceId>.kql` that contains the call to the stored KQL function. Bundling all three parts in a single call provisions the Map and wires its data layer to the KQL function atomically, so no follow-up `getDefinition` / `updateDefinition` round trip is needed.
+`create_map` creates the map by POSTing the inline definition you've assembled and returns the new Map's item ID. The request carries three base64-encoded parts under `payloadType: "InlineBase64"`: `map.json` (the required core definition), the optional `.platform` metadata you built in the previous step, and a Kusto query file named `queries/layerSource-<layerSourceId>.kql` that contains the call to the stored KQL function. Bundling all three parts in a single call provisions the map and wires its data layer to the KQL function atomically, so no follow-up `getDefinition` / `updateDefinition` round trip is needed.
 
 The query file's name matters: Fabric resolves a layer's query by matching `queries/layerSource-<layerSourceId>.kql` against the `id` of the corresponding entry in `layerSources`, so the function pulls the layer source ID out of `map_json["layerSources"][0]["id"]` to construct the path. `map.json` and `.platform` are base64-encoded through `_json_to_b64`; the query text is base64-encoded directly because it's a string rather than a `dict`.
 
-The Create Map REST API can answer with `201 Created` (synchronous, ID inline), `202 Accepted` (asynchronous LRO via `Location` or `x-ms-operation-id`), or `200 OK` with a status-only completion payload where the Map isn't yet visible in List Maps because of backend propagation delay. `_handle_lro` covers all of these cases — including listing and matching by `displayName` — so this function delegates the full response handling to it in a single call.
+The Create Map REST API can answer with `201 Created` (synchronous, ID inline), `202 Accepted` (asynchronous LRO via `Location` or `x-ms-operation-id`), or `200 OK` with a status-only completion payload where the map isn't yet visible in List Maps because of backend propagation delay. `_handle_lro` covers all of these cases — including listing and matching by `displayName` — so this function delegates the full response handling to it in a single call.
 
 For more information, see [Map item definition](/rest/api/fabric/articles/item-management/definitions/map-definition).
 
