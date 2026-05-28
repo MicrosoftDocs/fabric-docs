@@ -1,17 +1,17 @@
 ---
-title: Simulate real-time data ingestion for a map using REST APIs
+title: Simulate real-time data ingestion for a map using REST APIs and Python
 description: Learn how to create a Fabric notebook programmatically that continuously streams vehicle location updates into the eventstream, driving real-time refreshes of a Fabric map.
 ms.reviewer: smunk, sipa
 ms.service: fabric
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 05/29/2026
-ms.search.form: Stream real-time data into a map using REST APIs and Python
+ms.search.form: Simulate real-time data ingestion for a map using REST APIs and Python
 ---
 
 # Tutorial: Simulate real-time data ingestion for a map using REST APIs and Python
 
-In the previous tutorial, you provisioned an eventhouse, eventstream, KQL function, and map. The provisioning script also sent a small set of **seed events** so the map wasn't empty on first open.
+In [Tutorial: Create a real-time map using REST APIs and Python](tutorial-create-real-time-map-python.md), you provisioned an eventhouse, eventstream, KQL function, and map. The provisioning script also sent a small set of **seed events** so the map wasn't empty on first open.
 
 In this tutorial, you build on that by creating a **real-time simulator notebook** programmatically using the Fabric REST API. When run, the notebook continuously sends updated vehicle locations into the eventstream custom endpoint. As events flow into the eventhouse, the map refreshes automatically.
 
@@ -24,30 +24,41 @@ In this tutorial, you build on that by creating a **real-time simulator notebook
 > - Run the notebook in Fabric to stream vehicle location updates into the eventstream
 > - Observe the map refresh in near real time as new events are ingested
 
+This tutorial follows a common automation pattern in Fabric: build notebook definition → create notebook in Fabric → stream events → observe live refresh.
+
 ## Prerequisites
 
 - Complete [Tutorial: Create a real-time map using REST APIs and Python](tutorial-create-real-time-map-python.md). This tutorial reuses the eventhouse, eventstream, KQL function, and map that the provisioning tutorial created.
 - Python 3.10 or later, with `httpx` and `azure-identity` installed. The same environment from the previous tutorial works.
-- The `FABRIC_WORKSPACE_ID` environment variable set to the same workspace ID you used in the previous tutorial.
+- Azure CLI
+- Fabric workspace ID (the same one used in the previous tutorial), available through the `FABRIC_WORKSPACE_ID` environment variable.
 - The **eventstream custom endpoint connection string** from the previous tutorial. To retrieve it, see [Run the application](tutorial-create-real-time-map-python.md#run-the-application).
-- A valid `DefaultAzureCredential` sign-in. If your session has expired, run:
+- Permissions to call Fabric REST APIs, such as:
+  - `Item.ReadWrite.All`
 
-  ```azurecli
-  az login
-  ```
+> [!NOTE]
+> Delegated scopes such as `Item.ReadWrite.All` are granted to the signed-in identity through its **workspace role**. Make sure the identity you use with `az login` is assigned the **Contributor**, **Member**, or **Admin** role on the target Fabric workspace before running the script.
+
+## Authentication
+
+This tutorial uses the same `DefaultAzureCredential` flow as the previous tutorial. For full details — including the `az login` step, the `.default` token-scope explanation, and the recommendation to sign in to the Fabric web experience at least once — see [Authentication](tutorial-create-real-time-map-python.md#authentication) in the previous tutorial.
+
+If your sign-in session has expired, refresh it:
+
+```azurecli
+az login
+```
 
 ## How the simulator fits the architecture
 
 The simulator slots into the same pipeline you built in the previous tutorial:
 
-```
-Simulator notebook  -->  eventstream custom endpoint  -->  eventhouse table
-                                                                |
-                                                                v
-                                                  KQL function (latest per vehicle)
-                                                                |
-                                                                v
-                                                       Fabric map (auto-refresh)
+```mermaid
+flowchart LR
+    A[Simulator notebook] --> B[Eventstream custom endpoint]
+    B --> C[Eventhouse table]
+    C --> D[KQL function<br/>latest per vehicle]
+    D --> E[Fabric map<br/>auto-refresh]
 ```
 
 > [!IMPORTANT]
@@ -71,7 +82,7 @@ Simulator notebook  -->  eventstream custom endpoint  -->  eventhouse table
 
 In the same folder you used for the provisioning script, create a new file named:
 
-```
+```text
 create_simulator_notebook.py
 ```
 
@@ -79,7 +90,7 @@ create_simulator_notebook.py
 
 If you reuse the virtual environment from the previous tutorial, the required packages are already installed. Otherwise, run:
 
-```
+```bash
 pip install httpx azure-identity
 ```
 
@@ -480,13 +491,13 @@ if __name__ == "__main__":
 
 ### Run the script
 
-```
+```bash
 python create_simulator_notebook.py
 ```
 
 When the script completes successfully, you see output similar to:
 
-```
+```output
 DONE
 Notebook ID: 11111111-2222-3333-4444-555555555555
 ```

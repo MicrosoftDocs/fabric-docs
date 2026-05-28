@@ -1,12 +1,12 @@
 ---
 title: Create a static map using REST APIs and Python
-description: Learn how to create a Microsoft Fabric Map programmatically using Python and Fabric Maps REST API.
+description: Learn how to create a Microsoft Fabric Map programmatically using Python and Fabric Maps REST APIs.
 ms.reviewer: smunk, sipa
 ms.service: fabric
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 05/29/2026
-ms.search.form: Create a static map using REST API with Python
+ms.search.form: Create a static map using REST APIs and Python
 ---
 
 # Tutorial: Create a static map using REST APIs and Python
@@ -19,14 +19,9 @@ The most reliable way to automate map creation is to provide the map definition 
 
 For more information about the map definition structure, see [Map item definition](/rest/api/fabric/articles/item-management/definitions/map-definition).
 
-In this tutorial, you build a Python application that:
-
-- Creates a **Lakehouse** in your Fabric workspace using the Lakehouse REST API.
-- Uploads a **GeoJSON** file to the Lakehouse Files area via OneLake DFS APIs.
-- Uploads a **custom SVG marker** to the same Lakehouse and references it from the map definition.
-- Creates a **Map** with a fully formed `map.json` definition provided inline using the Create Map REST API.
-
 > [!div class="checklist"]
+>
+> Using the Fabric REST API, you:
 >
 > - Create a Lakehouse using the Fabric REST API
 > - Upload a GeoJSON file to OneLake
@@ -225,7 +220,7 @@ In this step, you create a blank Python file that you'll build up section-by-sec
 
 Create a new file named:
 
-```
+```text
 create_map_from_geojson.py
 ```
 
@@ -239,7 +234,7 @@ In this step, you install the dependencies and add the imports your script uses.
 
 Run:
 
-```
+```bash
 pip install httpx azure-identity azure-storage-file-datalake
 ```
 
@@ -1090,13 +1085,13 @@ In the next step, you run the script to create the Lakehouse, upload data, and g
 
 Run the script:
 
-```
+```bash
 python create_map_from_geojson.py
 ```
 
 If the script runs successfully, you see output similar to:
 
-```
+```output
 DONE
 Lakehouse ID: <Lakehouse ID>
 Map ID: <Map ID>

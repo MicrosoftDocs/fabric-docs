@@ -1,12 +1,12 @@
 ---
 title: Create a real-time map using REST APIs and Python
-description: Learn how to automate the creation of a real-time map that uses an eventstream and eventhouse with the Fabric REST API and Python.
+description: Learn how to automate the creation of a real-time map that uses an eventstream and eventhouse with Fabric REST APIs and Python.
 ms.reviewer: smunk, sipa
 ms.service: fabric
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 05/29/2026
-ms.search.form: Create a real-time map using REST API with Python
+ms.search.form: Create a real-time map using REST APIs and Python
 ---
 
 # Tutorial: Create a real-time map using REST APIs and Python
@@ -33,7 +33,7 @@ In this tutorial, you learn how to build and automate a real-time geospatial sol
 > - Configure a map layer with periodic refresh for real-time updates
 > - Seed initial events so the map displays data immediately
 
-To simulate continuous streaming and watch the map update in near real time, complete this tutorial first, then continue with the follow-up [Tutorial: Simulate real-time data ingestion into a Fabric map](tutorial-simulate-real-time-data-ingestion.md), which builds directly on the eventhouse, eventstream, KQL function, and map you create here.
+To simulate continuous streaming and watch the map update in near real time, complete this tutorial first, then continue with the follow-up [Tutorial: Simulate real-time data ingestion for a map using REST APIs and Python](tutorial-simulate-real-time-data-ingestion.md), which builds directly on the eventhouse, eventstream, KQL function, and map you create here.
 
 ## Scenario overview: Real-time asset tracking
 
@@ -119,7 +119,7 @@ To ensure the map displays data immediately after provisioning, the script sends
 1. Create a new file in the same directory as your Python script: **vehicle_locations_seed.csv**
 1. Paste the following content:
 
-```
+```csv
 VehicleId,Latitude,Longitude,EventTime
 V-001,47.6101,-122.3344,2026-01-01T10:00:00Z
 V-002,47.6150,-122.3200,2026-01-01T10:00:00Z
@@ -133,7 +133,7 @@ In this step, you create a blank Python file that you build up section-by-sectio
 
 Create a new file named:
 
-```
+```text
 create_realtime_map.py
 ```
 
@@ -147,7 +147,7 @@ In this step, you install the dependencies and add the imports your script uses.
 
 In the terminal window you just opened, run the following command:
 
-```
+```bash
 pip install httpx azure-identity azure-eventhub
 ```
 
@@ -1496,7 +1496,7 @@ Paste the value into the console when prompted.
 
 **Run the script:**
 
-```
+```bash
 python create_realtime_map.py
 ```
 
@@ -1506,7 +1506,7 @@ Verify that all items were created:
 
 At this point, all resources are created and configured.
 
-To simulate continuous streaming and watch the map update in near real time, continue with the follow-up [Tutorial: Simulate real-time data ingestion into a Fabric map](tutorial-simulate-real-time-data-ingestion.md). It builds directly on this tutorial and reuses the eventhouse, eventstream, KQL function, and map you created.
+To simulate continuous streaming and watch the map update in near real time, continue with the follow-up [Tutorial: Simulate real-time data ingestion for a map using REST APIs and Python](tutorial-simulate-real-time-data-ingestion.md). It builds directly on this tutorial and reuses the eventhouse, eventstream, KQL function, and map you created.
 
 ## Summary
 
