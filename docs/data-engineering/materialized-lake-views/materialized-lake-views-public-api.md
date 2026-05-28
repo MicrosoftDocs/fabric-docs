@@ -2,7 +2,7 @@
 title: Manage Fabric materialized lake views with public APIs
 description: Learn how to use Fabric REST APIs to schedule, run, and manage materialized lake view refresh jobs using the Job Scheduler.
 ms.topic: reference
-ms.reviewer: rkottackal, nijelsf
+ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.date: 05/26/2026
 ai-usage: ai-assisted
 ms.search.form: MLV REST API

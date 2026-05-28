@@ -1,7 +1,7 @@
 ---
 title: Overview of Materialized Lake Views
 description: Learn about the features, availability, and limitations of materialized lake views in Microsoft Fabric.
-ms.reviewer: nijelsf
+ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: overview
 ms.date: 05/26/2026
 ai-usage: ai-assisted
