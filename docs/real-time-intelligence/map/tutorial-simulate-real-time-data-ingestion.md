@@ -53,7 +53,7 @@ az login
 
 The simulator slots into the same pipeline you built in the previous tutorial:
 
-:::image type="content" source="media/tutorial-simulate-real-time-data-ingestion/simulator-architecture.png" alt-text="Flowchart showing the simulator notebook sending events to an eventstream custom endpoint, which writes to an eventhouse table, which is queried by a KQL function that returns the latest row per vehicle, which feeds an auto-refreshing map.":::
+:::image type="content" source="media\tutorials\tutorial-simulate-real-time-data-ingestion\simulator-architecture.png" alt-text="Flowchart showing the simulator notebook sending events to an eventstream custom endpoint, which writes to an eventhouse table, which is queried by a KQL function that returns the latest row per vehicle, which feeds an auto-refreshing map.":::
 
 > [!IMPORTANT]
 > The field names used by the **seed events**, **simulator events**, **KQL function output**, and **map layer bindings** must match exactly, including casing.
