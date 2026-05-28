@@ -91,6 +91,26 @@ To get started with CDC in Copy job, see the following tutorials for step-by-ste
 - [Change data capture from Snowflake using Copy job](cdc-copy-job-snowflake.md)
 - [Change data capture from Oracle database using Copy job](cdc-copy-job-oracle.md)
 
+## Schema changes and source data type changes
+
+Copy job handles source schema changes based on whether column mapping is configured.
+
+### When column mapping is configured
+
+When a column mapping is configured, Copy job always honors and follows it.
+
+- **New column added at the source**: Copy job ignores the new column because it isn't part of the column mapping. Runs continue to succeed, and the new column isn't synced to the destination.
+- **Column deleted at the source**: If a source column that was never part of the column mapping is deleted, there's no impact. Runs continue to succeed because the dropped column was never synced. If a source column that's defined in the column mapping is deleted or renamed, the run fails because the mapped source column can no longer be found.
+- **Source data type changes**: Copy job honors the data types specified in the column mapping, and runtime type compatibility handling applies. The source data type must be castable to the destination data type. If the updated source type can't be cast to the destination type, the run fails.
+
+### When column mapping isn't configured
+
+When no column mapping is configured, Copy job follows the current source schema and propagates changes to the destination based on the destination's capabilities.
+
+- **New column added at the source**: Copy job picks up the new column and syncs it to the destination, as long as the destination supports adding the new column. Otherwise, the run fails.
+- **Column deleted at the source**: The deleted column is no longer synced. Existing data for that column in the destination isn't removed, and runs continue to succeed.
+- **Source data type changes**: Runtime type compatibility handling applies. The source data type must be castable to the destination data type. If the updated source type can't be cast to the destination type, the run fails.
+
 ## Known limitations
 - When both CDC-enabled and non-CDC-enabled source tables are selected in a Copy Job, it treats all tables as watermark-based incremental copy.
 - Net change capture only (full change capture coming later).
