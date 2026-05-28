@@ -82,7 +82,7 @@ Shows a snapshot of the storage breakdown by database. You can drill down into e
 
 For the tiles in the system overview page with a time range filter, you can filter by one hour (1H), one day (1D), one week (7D), or one month (30D). To set all the tiles to the same time range, open the ellipsis menu on any of the tiles and select **Apply [time range] for all**.
 
-:::image type="content" source="media/eventhouse/time-frame-apply-all.png" alt-text="Imaage of the time frame drop-down menu with the apply to all option selected.":::
+:::image type="content" source="media/eventhouse/time-frame-apply-all.png" alt-text="Screenshot of the time frame drop-down menu with the apply to all option selected.":::
 
 ### Activity in minutes
 
