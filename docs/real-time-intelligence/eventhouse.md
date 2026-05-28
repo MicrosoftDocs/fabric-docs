@@ -32,9 +32,9 @@ The system overview page of an eventhouse shows you the following information:
 * Ingestion rate
 * Top queried databases
 * Top ingested databases
-* What's new
+* Eventhouse schema changes
 
-For more information, see [View system overview details for an eventhouse](manage-monitor-eventhouse.md#system-overview).
+For more information, see [System overview details](manage-monitor-eventhouse.md#system-overview).
 
 The databases page of an eventhouse shows you database information either in list or tile view. The following information about each database is displayed in tile view:
 

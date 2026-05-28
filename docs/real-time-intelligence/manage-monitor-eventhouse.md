@@ -48,7 +48,7 @@ The eventhouse **System overview** provides insights into the eventhouse's healt
 * [Top 10 queried databases](#top-10-queried-databases)
 * [Top 10 ingested databases](#top-10-ingested-databases)
 * [Activity in minutes - top 5 users](#activity-in-minutes---top-5-users)
-* [What's new - Last 7 days](#whats-new---last-7-days)
+* [Eventhouse schema changes](#eventhouse-schema-changes)
 
 ### Running state
 
@@ -148,7 +148,7 @@ This provides full visibility into the top 5 users and their compute minutes.
 
 :::image type="content" source="media/eventhouse/eventhouse-users-kql.png" alt-text="Screenshot of the Activity in minutes - Top 5 users KQL query.":::
 
-### What's new - Last 7 days**
+### Eventhouse schema changes
 
 Highlights database owners and recent eventhouse events, such as the following operations:
 
