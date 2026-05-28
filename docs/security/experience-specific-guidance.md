@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: how-to
-ms.date: 05/22/2026
+ms.date: 05/28/2026
 ---
 
 # Experience-specific disaster recovery guidance
@@ -410,7 +410,7 @@ During recovery, once the new region and capacity in Fabric are set up, you can 
 
 ### Operations agents
 
-During a regional disaster, customers can't access operations agents items from the primary region. OneLake stores agent configurations, settings, behavior models, and activity logs, and it replicates these items to the secondary region when disaster recovery is enabled for the capacity. Any in-progress operations or active chat sessions at the time of the disaster are not preserved. After failover, restarting an agent in the new region begins monitoring from that point forward. Previously ingested events used for monitoring are not carried over.
+Operations agent users can take measures to recover items after a regional disaster. If disaster recovery is enabled for the capacity, OneLake automatically stores and replicates agent configurations, settings, behavior models, and activity logs to the secondary region. However, operations agents from the primary region remain unavailable during a regional disaster. After failover, you can restart an agent in the new region to resume monitoring. Note that any in-progress operations, active chat sessions, and previously ingested events at the time of the disaster aren't preserved.
 
 To recover operations agents items in the new region:
 
