@@ -100,9 +100,15 @@ A job can be capped at the base core limit (for example, 128 Spark VCores for F6
 |F1024|-|2048|6144|1024|
 |F2048|-|4096|12288|2048|
 |Trial Capacity|P1|128|128|Not available|
+|FTL4|-|4|8|8|Not available|
+
+
+> [!TIP]
+> For workloads using smaller trial capacity like FTL4, users are recommended to use a small size compute pool and use high concurrency based session sharing approach to optimize for concurrency.
 
 > [!IMPORTANT]
 > This table applies only to Spark jobs running on Fabric capacity. With autoscale billing enabled, Spark jobs run separately from Fabric capacity and don't use bursting or smoothing. Total Spark VCores are two times the maximum capacity units set in autoscale settings.
+
 
 ### Example calculation
 

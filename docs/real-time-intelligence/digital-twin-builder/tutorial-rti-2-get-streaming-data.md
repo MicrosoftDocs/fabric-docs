@@ -149,7 +149,7 @@ To run the transformation queries, follow these steps.
     >
     > :::image type="content" source="media/tutorial-rti/enable-onelake-availability.png" alt-text="Screenshot of enabling OneLake availability in the UI.":::
     >
-    > With the UI option, the default latency is 15 minutes to several hours, depending on the volume of data. To reduce the latency to five minutes, use the [.alter-merge table](../event-house-onelake-availability.md#adaptive-behavior) command as shown in the previous code block.
+    > With the UI option, the default latency is 15 minutes to several hours, depending on the volume of data. To reduce the latency to five minutes, use the [.alter-merge table](../event-house-onelake-availability.md#adaptive-behavior-for-parquet-file-batching) command as shown in the previous code block.
 
 1. Optionally, rename the query tab to *Bus data processing* so you can identify it later.
 1. After running the queries, a new table is created in your database called *bus_data_processed*. After a short wait, it begins to populate with the processed bus data.

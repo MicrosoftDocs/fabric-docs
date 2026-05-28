@@ -133,12 +133,16 @@ items:
                 href: workspace-outbound-access-protection-mirrored-databases.md
               - name: OneLake (preview)
                 href: workspace-outbound-access-protection-onelake.md
+              - name: Semantic models (preview)
+                href: workspace-outbound-access-protection-semantic-models.md
               - name: Real-Time Intelligence (preview)
                 items:
+                  - name: Activator
+                    href: workspace-outbound-access-protection-activator.md
                   - name: Eventhouse
                     href: workspace-outbound-access-protection-eventhouse.md
                   - name: Eventstream
-                    href: workspace-outbound-access-protection-event-stream.md
+                    href: workspace-outbound-access-protection-eventstream.md
       - name: Trusted workspace access
         href: security-trusted-workspace-access.md
 - name: Data security

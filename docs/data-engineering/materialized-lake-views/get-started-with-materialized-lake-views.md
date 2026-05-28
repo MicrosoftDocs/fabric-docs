@@ -2,14 +2,14 @@
 title: Get Started with Materialized Lake Views in a Microsoft Fabric Lakehouse
 description: Learn how to create your first materialized lake view in a Microsoft Fabric Lakehouse.
 ms.topic: quickstart
-ms.reviewer: abhishjain
+ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.date: 04/02/2026
 #customer intent: As a data engineer, I want to create materialized lake views in a Microsoft Fabric Lakehouse so that I can optimize query performance and manage data quality.
 ---
 
 # Get started with materialized lake views
 
-In this quickstart, you create source tables in a Microsoft Fabric Lakehouse, define materialized lake views that transform the data, and schedule automatic refresh. By the end, you have a working bronze-to-gold pipeline with lineage tracking.
+In this quickstart, you'll be guided to create source tables in a Microsoft Fabric Lakehouse, define materialized lake views to transform raw data through progressive stages, and set up refresh schedules. By the end, you have a fully working bronze-to-gold pipeline with dependency-aware orchestration and lineage tracking.
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ In this quickstart, you create source tables in a Microsoft Fabric Lakehouse, de
    A new notebook opens with a template to create a materialized lake view.
 
    > [!NOTE]
-   > If you are using a Fabric Data Warehouse table as a source for a materialized lake view, you are required to create a table shortcut in your Lakehouse.
+   > If you're using a Fabric Data Warehouse table as a source for a materialized lake view, you're required to create a table shortcut in your Lakehouse.
 
 1. Create the source tables `products` and `orders`. Enter the following SQL command into the existing notebook cell and run it:
 
@@ -129,7 +129,7 @@ In this quickstart, you create source tables in a Microsoft Fabric Lakehouse, de
 
    :::image type="content" source="./media/get-started-with-materialized-lake-views/schedule-lineage-run.png" alt-text="Screenshot of the pane for scheduling lineage." border="true" lightbox="./media/get-started-with-materialized-lake-views/schedule-lineage-run.png":::
 
-1. Select the desired frequency from the **Repeat** drop-down (by the minute, hourly, daily, weekly, or monthly) and specify the recurring interval. Select **Apply**.
+1. Select the desired frequency from the **Repeat** drop-down (by the minute, hourly, daily, weekly, or monthly) and specify the recurring interval. Select **Save**.
 
    :::image type="content" source="./media/get-started-with-materialized-lake-views/schedule-lineage-run-extended-screen.png" alt-text="Screenshot of the pane for scheduling lineage with more options." border="true" lightbox="./media/get-started-with-materialized-lake-views/schedule-lineage-run-extended-screen.png":::
 
@@ -141,7 +141,7 @@ In this quickstart, you create source tables in a Microsoft Fabric Lakehouse, de
 
    :::image type="content" source="./media/get-started-with-materialized-lake-views/ongoing-run-progress-extended-screen.png" alt-text="Screenshot that shows the progress of an ongoing run." border="true" lightbox="./media/get-started-with-materialized-lake-views/ongoing-run-progress-extended-screen.png":::
 
-1. After the run succeeds, the lineage status shows **Completed**.
+1. Once the run is completed, the lineage status is updated.
 
    :::image type="content" source="./media/get-started-with-materialized-lake-views/completed-lineage-run.png" alt-text="Screenshot that shows a completed lineage run." border="true" lightbox="./media/get-started-with-materialized-lake-views/completed-lineage-run.png":::
 
