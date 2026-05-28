@@ -1,19 +1,19 @@
 ---
-title: Create a map using REST API with Python
+title: Create a static map using REST APIs and Python
 description: Learn how to create a Microsoft Fabric Map programmatically using Python and Fabric Maps REST API.
 ms.reviewer: smunk, sipa
 ms.service: fabric
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 05/19/2026
-ms.search.form: Create a map using REST API with Python
+ms.date: 05/29/2026
+ms.search.form: Create a static map using REST API with Python
 ---
 
-# Tutorial: Create a map using REST API with Python
+# Tutorial: Create a static map using REST APIs and Python
 
 Fabric Maps are defined by a **public definition** (`map.json`) that describes the basemap, data sources, layer sources, and rendering behavior.
 
-This tutorial demonstrates a **static data scenario** using files stored in a Lakehouse. For real-time streaming scenarios using Eventstream and Eventhouse, see [Automate the creation of a real-time map using REST APIs](tutorial-create-real-time-map-python.md).
+This tutorial demonstrates a **static data scenario** using files stored in a Lakehouse. For real-time streaming scenarios using Eventstream and Eventhouse, see [Create a real-time map using REST APIs and Python](tutorial-create-real-time-map-python.md).
 
 The most reliable way to automate map creation is to provide the map definition inline, so the map is fully configured and ready to render on creation.
 
@@ -44,7 +44,7 @@ This pattern is best for:
 - Reference layers (for example, points of interest, boundaries)
 - Historical or batch-processed data
 
-For scenarios that require continuously updating data (for example, live tracking or telemetry), see [Automate the creation of a real-time map using REST APIs](tutorial-create-real-time-map-python.md).
+For scenarios that require continuously updating data (for example, live tracking or telemetry), see [Create a real-time map using REST APIs and Python](tutorial-create-real-time-map-python.md).
 
 ## Prerequisites
 
@@ -1150,9 +1150,9 @@ For more information about working with spatial data and maps in Fabric, see:
 
 > [!div class="nextstepaction"]
 > [Create a map in Fabric](create-map.md)  
-<!------------------------------------------------------------------------------
+
 For a tutorial that demonstrates creating a real-time map using REST APIs, see:
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a real-time map from Eventhouse data using REST APIs](tutorial-real-time-map-python.md)
------------------------------------------------------------------------------->
+> [Tutorial: Create a real-time map using REST APIs and Python](tutorial-real-time-map-python.md)
+

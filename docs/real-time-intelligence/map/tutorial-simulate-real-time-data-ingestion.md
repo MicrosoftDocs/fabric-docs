@@ -1,14 +1,15 @@
 ---
-title: Simulate real-time data ingestion for a Fabric map using REST APIs
+title: Simulate real-time data ingestion for a map using REST APIs
 description: Learn how to create a Fabric notebook programmatically that continuously streams vehicle location updates into the eventstream, driving real-time refreshes of a Fabric map.
 ms.reviewer: smunk, sipa
 ms.service: fabric
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 05/25/2026
+ms.date: 05/29/2026
+ms.search.form: Stream real-time data into a map using REST APIs and Python
 ---
 
-# Tutorial: Simulate real-time data ingestion into a Fabric map
+# Tutorial: Simulate real-time data ingestion for a map using REST APIs and Python
 
 In the previous tutorial, you provisioned an eventhouse, eventstream, KQL function, and map. The provisioning script also sent a small set of **seed events** so the map wasn't empty on first open.
 
@@ -25,7 +26,7 @@ In this tutorial, you build on that by creating a **real-time simulator notebook
 
 ## Prerequisites
 
-- Complete [Tutorial: Automate the creation of a real-time map using REST APIs](tutorial-create-real-time-map-python.md). This tutorial reuses the eventhouse, eventstream, KQL function, and map that the provisioning tutorial created.
+- Complete [Tutorial: Create a real-time map using REST APIs and Python](tutorial-create-real-time-map-python.md). This tutorial reuses the eventhouse, eventstream, KQL function, and map that the provisioning tutorial created.
 - Python 3.10 or later, with `httpx` and `azure-identity` installed. The same environment from the previous tutorial works.
 - The `FABRIC_WORKSPACE_ID` environment variable set to the same workspace ID you used in the previous tutorial.
 - The **eventstream custom endpoint connection string** from the previous tutorial. To retrieve it, see [Run the application](tutorial-create-real-time-map-python.md#run-the-application).

@@ -1,14 +1,15 @@
 ---
-title: Automate the creation of a real-time map using REST APIs
+title: Create a real-time map using REST APIs and Python
 description: Learn how to automate the creation of a real-time map that uses an eventstream and eventhouse with the Fabric REST API and Python.
 ms.reviewer: smunk, sipa
 ms.service: fabric
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 05/25/2026
+ms.date: 05/29/2026
+ms.search.form: Create a real-time map using REST API with Python
 ---
 
-# Tutorial: Automate the creation of a real-time map using REST APIs
+# Tutorial: Create a real-time map using REST APIs and Python
 
 Fabric Maps can visualize **real-time geospatial data** by connecting to **eventhouse datasets** that are continuously updated through Eventstream ingestion.
 
@@ -18,7 +19,7 @@ Unlike static scenarios that use files stored in a Lakehouse, this tutorial demo
 - Data is queried using Kusto Query Language (KQL)
 - A map dynamically refreshes as new data arrives
 
-This tutorial focuses on **automating the end-to-end workflow** using Fabric REST APIs and Python, so you can provision resources and configure a real-time map experience programmatically. For static data scenarios using Lakehouse files, see [Create a map using REST API with Python](tutorial-create-fabric-map-python.md).
+This tutorial focuses on **automating the end-to-end workflow** using Fabric REST APIs and Python, so you can provision resources and configure a real-time map experience programmatically. For static data scenarios using Lakehouse files, see [Create a static map using REST APIs and Python](tutorial-create-fabric-map-python.md).
 
 In this tutorial, you learn how to build and automate a real-time geospatial solution in Microsoft Fabric using Eventstream, Eventhouse, and KQL.
 
@@ -1535,4 +1536,4 @@ Now that you understand the end-to-end flow, you can extend this solution to inc
 For a tutorial that demonstrates creating a real-time simulator for the map you just created using REST APIs, see:
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a real-time data simulator using REST API with Python](tutorial-simulate-real-time-data-ingestion.md)
+> [Tutorial: Simulate real-time data ingestion for a map using REST APIs and Python](tutorial-simulate-real-time-data-ingestion.md)
