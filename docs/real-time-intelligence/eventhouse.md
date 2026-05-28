@@ -5,7 +5,7 @@ ms.reviewer: sharmaanshul
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
 ms.custom:
-ms.date: 04/29/2026
+ms.date: 05/28/2026
 ms.search.form: Eventhouse
 ---
 # Eventhouse overview
