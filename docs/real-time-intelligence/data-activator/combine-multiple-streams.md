@@ -6,6 +6,7 @@ ms.reviewer: janettseng
 ms.subservice: rti-activator
 ms.date: 12/15/2025
 ms.topic: how-to
+ai-usage: ai-assisted
 ---
 
 # How to combine multiple streams in an Activator rule
@@ -22,7 +23,9 @@ In this example, you can track the health of your water pumps (machines) by moni
 Machines monitoring data flows into two eventstreams:
 
 -  **MachineHeartbeat** eventstream contains *MachineId* column identifying a machine and *MachineRunning* column that indicates if machine is running (1) or not (0). An event is emitted every time a machine state changes.
--  **MachineSensorsReadings** eventstream contains a *MachineId* column together with *FlowRate* and *Vibration* columns. Every machine emits sensors readings every few seconds.
+-  **MachineSensorsReadings** eventstream contains a *MachineNumber* column together with *FlowRate* and *Vibration* columns. Every machine emits sensors readings every few seconds.
+
+Notice that the two eventstreams identify a machine by using different columns: *MachineId* in **MachineHeartbeat** and *MachineNumber* in **MachineSensorsReadings**. Both columns hold the same machine identifier values.
 
 In this scenario, you want to raise an alert when **all** these conditions are true:
 
@@ -33,6 +36,9 @@ In this scenario, you want to raise an alert when **all** these conditions are t
 Activator rules support complex conditions based on multiple eventstreams. You can create computed properties based on event columns and combine them in the rule condition.
 
 In this scenario, you bring two eventstreams together by creating an *object* that feeds from both streams. When you add an eventstream to the object, you specify which column in the events uniquely identifies the instance of an object.
+
+> [!NOTE]
+> Activator supports joining eventstreams that identify the same object by using different unique identifier columns. In this scenario, **MachineHeartbeat** uses *MachineId* and **MachineSensorsReadings** uses *MachineNumber*, and Activator combines them into a single object.
 
 Then, you create a property that computes average(*FlowRate*), another one for max(*Vibration*), and combine them with *IsRunning* property. When evaluating the rule, Activator computes property values according to their definitions and maintains the last computed value of every property. These values are used when evaluating the condition.
 
@@ -66,9 +72,9 @@ The condition drives the rule as illustrated in the following picture:
 
     :::image type="content" source="media/combine-multiple-streams/build-object-machine-id-assign.png" alt-text="Screenshot of the Build object pane with MachineId selected as the unique identifier and relevant columns selected." lightbox="media/combine-multiple-streams/build-object-machine-id-assign.png":::
 
-1.  Select another eventstream, select **New object**, and then select **Add to existing object** in the **Build object** pane. Choose *MachineId* column as unique identifier. Select **Assign**. Now the two streams are combined in one object.
+1.  Select another eventstream, select **New object**, and then select **Add to existing object** in the **Build object** pane. Choose the *MachineNumber* column as unique identifier. Select **Assign**. Now the two streams are combined in one object, even though each stream uses a different identifier column.
 
-    :::image type="content" source="media/combine-multiple-streams/build-object-computed-property.png" alt-text="Screenshot of the Build object pane with Add to existing object option selected and MachineId as the unique identifier." lightbox="media/combine-multiple-streams/build-object-computed-property.png":::
+    :::image type="content" source="media/combine-multiple-streams/build-object-computed-property.png" alt-text="Screenshot of the Build object pane with Add to existing object option selected and MachineNumber as the unique identifier." lightbox="media/combine-multiple-streams/build-object-computed-property.png":::
 
 1.  Now you can define the computed property. Create an attribute for computing average of *FlowRate* in the last 10 min. Select *FlowRate* attribute and select **Edit details**.
 
