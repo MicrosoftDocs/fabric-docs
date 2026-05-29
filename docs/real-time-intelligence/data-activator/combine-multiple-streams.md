@@ -22,10 +22,10 @@ In this example, you can track the health of your water pumps (machines) by moni
 
 Machines monitoring data flows into two eventstreams:
 
--  **MachineHeartbeat** eventstream contains *MachineId* column identifying a machine and *MachineRunning* column that indicates if machine is running (1) or not (0). An event is emitted every time a machine state changes.
--  **MachineSensorsReadings** eventstream contains a *MachineNumber* column together with *FlowRate* and *Vibration* columns. Every machine emits sensors readings every few seconds.
+-  **MachineHeartbeat** eventstream contains *MachineNumber* column identifying a machine and *MachineRunning* column that indicates if machine is running (1) or not (0). An event is emitted every time a machine state changes.
+-  **MachineSensorsReadings** eventstream contains a *MachineId* column together with *FlowRate* and *Vibration* columns. Every machine emits sensors readings every few seconds.
 
-Notice that the two eventstreams identify a machine by using different columns: *MachineId* in **MachineHeartbeat** and *MachineNumber* in **MachineSensorsReadings**. Both columns hold the same machine identifier values.
+Notice that the two eventstreams identify a machine by using different columns: *MachineId* in **MachineSensorsReadings** and *MachineNumber* in **MachineHeartbeat**. Both columns hold the same machine identifier values.
 
 In this scenario, you want to raise an alert when **all** these conditions are true:
 
@@ -38,7 +38,7 @@ Activator rules support complex conditions based on multiple eventstreams. You c
 In this scenario, you bring two eventstreams together by creating an *object* that feeds from both streams. When you add an eventstream to the object, you specify which column in the events uniquely identifies the instance of an object.
 
 > [!NOTE]
-> Activator supports joining eventstreams that identify the same object by using different unique identifier columns. In this scenario, **MachineHeartbeat** uses *MachineId* and **MachineSensorsReadings** uses *MachineNumber*, and Activator combines them into a single object.
+> Activator supports joining eventstreams that identify the same object by using different unique identifier columns. In this scenario, **MachineSensorsReadings** uses *MachineId* and **MachineHeartbeat** uses *MachineNumber*, and Activator combines them into a single object.
 
 Then, you create a property that computes average(*FlowRate*), another one for max(*Vibration*), and combine them with *IsRunning* property. When evaluating the rule, Activator computes property values according to their definitions and maintains the last computed value of every property. These values are used when evaluating the condition.
 
