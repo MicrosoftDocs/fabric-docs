@@ -22,6 +22,9 @@ This article shows you how to:
 
 ## Prerequisites
 
+> [!IMPORTANT]
+> Connectivity between Snowflake and OneLake occurs over the public network. On-premises data gateway connections aren't supported, and your Snowflake account must be accessible over the public network.
+
 1. Select (or create) a Fabric workspace for the Snowflake database item.
    - To keep things simple, use alphanumeric characters only for your workspace name. 
    - If workspace name has special characters, copy the workspace ID from the browser URL seen when the workspace is open.  
