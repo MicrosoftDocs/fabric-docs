@@ -68,7 +68,7 @@ This tutorial follows a common automation pattern in Fabric: create infrastructu
 
 ## Authentication
 
-This tutorial uses DefaultAzureCredential, which can authenticate using several local/dev credentials sources. For first-time readers, the simplest approach is Azure CLI sign-in.
+This tutorial uses `DefaultAzureCredential`, which can authenticate using several local/dev credentials sources. For first-time readers, the simplest approach is Azure CLI sign-in.
 
 ### Authenticate locally (recommended for first run)
 
@@ -154,7 +154,7 @@ pip install httpx azure-identity azure-eventhub
 #### What each library is for
 
 - **httpx**: makes HTTP requests to the Fabric REST APIs.
-- **azure-identity**: provides DefaultAzureCredential for Microsoft Entra authentication.
+- **azure-identity**: provides `DefaultAzureCredential` for Microsoft Entra authentication.
 - **azure-eventhub**: sends seed events to the Eventstream's Event Hub-compatible endpoint to populate the eventhouse.
 
 ### Add import statements to your .py file
@@ -347,13 +347,13 @@ Add the following after the `Config` class:
 # =========================================================
 # Auth helpers
 #
-# Authentication utilities built on DefaultAzureCredential that acquire and
+# Authentication utilities built on `DefaultAzureCredential` that acquire and
 # construct Authorization headers for calling Fabric REST APIs.
 # =========================================================
 
 class TokenProvider:
     """
-    Thin wrapper around DefaultAzureCredential that acquires Entra access
+    Thin wrapper around `DefaultAzureCredential` that acquires Entra access
     tokens. `_fabric_headers()` and `_pbi_headers()` call `get()` per
     request so the Authorization header is always fresh; the underlying
     credential refreshes transparently.
