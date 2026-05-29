@@ -17,7 +17,7 @@ ai-usage: ai-assisted
 #customer intent: As a Fabric administrator, I want to configure Copilot and Azure OpenAI Service tenant settings so that I can control how users in my organization access Copilot features and how data is processed.
 ---
 
-# Copilot and Azure OpenAI Service tenant settings
+# Copilot and agent admin settings
 
 The **Copilot and Azure OpenAI Service** tenant settings group controls Copilot features in Microsoft Fabric. These settings govern user access and data processing policies. Some settings are enabled by default, while others require Fabric administrators to enable them.
 
