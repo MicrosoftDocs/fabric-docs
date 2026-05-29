@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: how-to
-ms.date: 05/28/2026
+ms.date: 05/29/2026
 ---
 
 # Experience-specific disaster recovery guidance
@@ -410,19 +410,17 @@ During recovery, once the new region and capacity in Fabric are set up, you can 
 
 ### Operations agents
 
-Operations agent users can take measures to recover items after a regional disaster. If disaster recovery is enabled for the capacity, OneLake automatically stores and replicates agent configurations, settings, behavior models, and activity logs to the secondary region. However, operations agents from the primary region remain unavailable during a regional disaster. After failover, you can restart an agent in the new region to resume monitoring. Note that any in-progress operations, active chat sessions, and previously ingested events at the time of the disaster aren't preserved.
+Operations agent users should take proactive steps to prepare for regional disaster recovery. Following the approach described in this section helps ensure that your agents can be restored quickly after a regional outage.
 
-To recover operations agents items in the new region:
+Use Fabric Git integration to synchronize your workspace with a repository. This approach enables you to reconstruct agent configurations in a new workspace if the service fails over to another region.
 
-1. After Fabric fails over to the paired region, verify that your agent items appear in your workspace. OneLake replication automatically makes agent configurations, behavior models, and activity logs available.
+Operations agent items in the primary region are unavailable during a regional disaster. Agent configurations, behavior models, and activity logs aren't replicated to the secondary region. In-progress operations, active chat sessions, and previously ingested events at the time of the disaster are also lost.
 
-1. If your agents reference Eventhouse (KQL) databases or other region-specific data sources, verify that the paired region has those dependencies. For recovery steps, see the [KQL Database/Queryset](#kql-databasequeryset) section. Update any agent configurations that reference region-specific endpoints, if necessary.
+To prepare for recovery, configure Fabric Git integration and synchronize your agent items with your ADO repository before a disaster occurs.
 
-1. Restart any operations or workflows that were in progress at the time of the disaster. Review the activity logs to determine which operations were interrupted.
+When recovering, set up your new region and capacity in Fabric, then use the synchronized repository to restore agent configurations into a fresh workspace. Git sync pulls the stored contents from the repository into the empty workspace, recreating your agent items.
 
-1. Re-establish any active chat sessions. Users need to initiate new conversations with their agents.
-
-To minimize the impact of a regional disaster, use [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md) to synchronize your workspace with an Azure DevOps repository. This approach enables quick reconstruction of agent configurations in a new workspace if needed.
+Once configurations are restored, confirm that any referenced Eventhouse (KQL) databases or region-specific data sources are accessible in the new region. Update endpoint references in agent configurations as needed. Finally, restart your agents and have users initiate new chat sessions. Previous conversations can't be resumed.
 
 ## Transactional database
 
