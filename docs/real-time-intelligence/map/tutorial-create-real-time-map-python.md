@@ -758,14 +758,14 @@ Next, you add the primary functions that define the workflow. These are all call
 
 The functions are added in the order they're defined in code. `main()` calls them in a slightly different order so the KQL table exists before the eventstream binds to it, and so seeded data is available before verification runs.
 
-1. Create an eventhouse
-1. Create the KQL table
-1. Verify ingestion (called after seeding)
-1. Create an eventstream
-1. Create a KQL function
-1. Build the map definition (`map.json`)
-1. Build the platform metadata (`.platform`)
-1. Create the map
+- Create an eventhouse
+- Create the KQL table
+- Verify ingestion (called after seeding)
+- Create an eventstream
+- Create a KQL function
+- Build the map definition (`map.json`)
+- Build the platform metadata (`.platform`)
+- Create the map
 
 ### Create an eventhouse
 
@@ -786,7 +786,7 @@ Add the following after the `wait_for_kql_database_ready` function:
 
 ```python
 # =========================================================
-# Step 1: Create an eventhouse
+# Create an eventhouse
 # =========================================================
 
 def create_eventhouse(client: httpx.Client, fabric: FabricClient, cfg: Config) -> str:
@@ -878,7 +878,7 @@ Add the following after the `create_eventhouse` function:
 
 ```python
 # =========================================================
-# Step 2: Create the KQL table (idempotent)
+# Create the KQL table (idempotent)
 # =========================================================
 
 def create_kql_table_if_missing(client: httpx.Client, fabric: FabricClient, cfg: Config, eventhouse_id: str) -> None:
@@ -942,7 +942,7 @@ Add the following after the `create_kql_table_if_missing` function:
 
 ```python
 # =========================================================
-# Step 5: Verify data ingestion (called after seeding)
+# Verify data ingestion (called after seeding)
 # =========================================================
 
 def verify_eventhouse_data(client: httpx.Client, fabric: FabricClient, cfg: Config, eventhouse_id: str):
@@ -1001,7 +1001,7 @@ Add the following after the `verify_eventhouse_data` function:
 
 ```python
 # =========================================================
-# Step 3: Create eventstream with definition
+# Create eventstream with definition
 # =========================================================
 
 def create_eventstream_with_definition(client: httpx.Client, fabric: FabricClient, cfg: Config, eventhouse_id: str) -> str:
@@ -1121,7 +1121,7 @@ Add the following after the `create_eventstream_with_definition` function:
 
 ```python
 # =========================================================
-# Step 6: Create KQL function
+# Create KQL function
 # =========================================================
 
 def create_kql_function(client: httpx.Client, fabric: FabricClient, cfg: Config, eventhouse_id: str) -> str:
@@ -1207,7 +1207,7 @@ Add the following after the `create_kql_function` function:
 
 ```python
 # =========================================================
-# Step 8: Build map.json
+# Build map.json
 # =========================================================
 
 def build_map_json(cfg: Config, kql_database_item_id: str) -> dict:
@@ -1291,7 +1291,7 @@ Add the following after the `build_map_json` function:
 
 ```python
 # =========================================================
-# Step 9: Build .platform (platform metadata)
+# Build .platform (platform metadata)
 # =========================================================
 
 def build_platform_json(cfg: Config) -> dict:
@@ -1336,7 +1336,7 @@ Add the following after the `build_platform_json` function:
 
 ```python
 # =========================================================
-# Step 10: Create a map with inline definition
+# Create a map with inline definition
 # =========================================================
 
 
