@@ -2,7 +2,7 @@
 title: "Open Mirroring Partner Ecosystem"
 description: Learn about the open mirrored databases partner ecosystem in Microsoft Fabric.
 ms.reviewer: tinglee, sbahadur, ulrichchrist, maraki-ketema
-ms.date: 12/10/2025
+ms.date: 05/29/2026
 ms.topic: partner-tools
 ms.search.form: Fabric Mirroring
 ai-usage: ai-assisted
@@ -98,6 +98,18 @@ For more information, see [Simplement integration into open mirroring in Microso
 SNP Glue is a data integration solution certified for various SAP source systems including SAP S/4HANA (on-premises and Private Cloud Edition). With release 2502, it supports open mirroring for near real-time data integration into Microsoft Fabric. For more information, see [SNP Glue release note](https://aka.ms/mirroring/snp-mirroring-doc).
 
 For more information on SNP Glue, see the [SNP Glue documentation](https://aka.ms/mirroring/snp-overview).
+
+## Stelo Data
+
+[Stelo Data](https://www.stelodata.com/) now supports streaming real-time data into Microsoft Fabric, giving organizations a direct, low-friction path to unlock the full value of their existing data across Fabric's unified analytics platform.
+
+With Stelo, teams can connect enterprise databases including IBM Db2 for iSeries (Linux and Windows), Informix, Oracle, and SQL Server to Microsoft Fabric without rebuilding pipelines, introducing additional tools, or impacting source systems. Change data is captured and streamed continuously, delivering near real-time pipelines that keep Fabric workloads current and responsive.
+
+Tunable streaming capabilities put control in your hands to balance compute usage as your Fabric initiatives grow and evolve.
+
+*"Our approach is to move data into Microsoft Fabric without introducing additional layers or complexity,"* said Erik Lundqvist, Chief Technical Officer at Stelo. *"We capture and stream change data efficiently, allowing teams to deliver near real-time pipelines while maintaining low impact on production systems."*
+
+Available through the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/stelodata.sqdr_plus), Stelo offers a no-code Virtual Machine deployment that gets teams up and running the same day with no dedicated engineers, no complex configuration, and no disruption to mission-critical operations. Be sure to join the [Stelo community](https://community.fabric.microsoft.com/t5/Open-Mirroring-Stelo/gh-p/OpenMirroringStelo), and stay tuned for all updates, future releases, and the latest from Stelo's growing Microsoft Fabric partnership.
 
 ## Striim
 
