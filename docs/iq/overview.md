@@ -20,7 +20,7 @@ Fabric IQ brings three layers of business context into Microsoft IQ: [unified da
 
 ### Unified data with OneLake
 
-[OneLake](../onelake/onelake-overview.md) is the foundation of Fabric IQ, unifying enterprise data across clouds and on-premises data into a single, governed source of truth. Through shortcuts, mirroring, and the OneLake catalog, it eliminates fragmentation and creates a multi-cloud, unified data lake that Fabric IQ uses to securely discover and access relevant context. It also serves as the distribution layer for that data, making it consistently available to Fabric workloads, Foundry, and Copilot Studio so all intelligence from semantic models, ontology, and agents is grounded in the same trusted, organization-wide data.
+[OneLake](../onelake/onelake-overview.md) is the foundation of Fabric IQ, unifying enterprise data across clouds and on-premises data into a single, governed source of truth. Through shortcuts, mirroring, and the OneLake catalog, it eliminates fragmentation and creates a multicloud, unified data lake that Fabric IQ uses to securely discover and access relevant context. It also serves as the distribution layer for that data, making it consistently available to Fabric workloads, Foundry, and Copilot Studio so all intelligence from semantic models, ontology, and agents is grounded in the same trusted, organization-wide data.
 
 ### Business intelligence with Power BI semantic models
 
