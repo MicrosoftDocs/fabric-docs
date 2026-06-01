@@ -1,21 +1,21 @@
 ---
-title: Use multimodal input with AI functions
-description: Learn how to use file-based multimodal input, such as images, PDFs, and text files, with AI functions in Microsoft Fabric.
+title: Use multimodal input with AI Functions
+description: Learn how to use file-based multimodal input, such as images, PDFs, and text files, with AI Functions in Microsoft Fabric.
 ms.reviewer: singhrana
 reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 05/12/2026
-ms.search.form: AI functions
+ms.search.form: AI Functions
 ai-usage: ai-assisted
 ---
 
-# Use multimodal input with AI functions (Preview)
+# Use multimodal input with AI Functions (Preview)
 
 [!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
-AI functions can process files—images, PDFs, and text files—in addition to text. With multimodal input, you can classify documents, summarize PDFs, extract information from images, and more, all with the same AI function interface you already use for text.
+AI Functions can process files—images, PDFs, and text files—in addition to text. With multimodal input, you can classify documents, summarize PDFs, extract information from images, and more, all with the same AI function interface you already use for text.
 
-Multimodal input works with these existing AI functions:
+Multimodal input works with these existing AI Functions:
 
 - [`ai.analyze_sentiment`](#detect-sentiment-from-files-with-aianalyze_sentiment)
 - [`ai.classify`](#classify-files-with-aiclassify)
@@ -33,7 +33,7 @@ Multimodal input also introduces three new functions:
 
 ## Supported file types
 
-Multimodal AI functions support the following file types:
+Multimodal AI Functions support the following file types:
 
 - **Images**: jpg, jpeg, png, static gif, webp
 - **Documents**: pdf
@@ -41,7 +41,7 @@ Multimodal AI functions support the following file types:
 
 > [!NOTE]
 > - Office file formats (such as .docx, .pptx, and .xlsx) aren't currently supported.
-> - You can convert .docx and .pptx files to PDF and .xlsx files to CSV before using them with multimodal AI functions.
+> - You can convert .docx and .pptx files to PDF and .xlsx files to CSV before using them with multimodal AI Functions.
 > - Each input file is limited to 50 MB in size.
 
 ## Supported URL protocols
@@ -55,14 +55,14 @@ Multimodal inputs are provided as string with one of the following URL protocols
 
 ## Prerequisites
 
-Multimodal AI functions share the same prerequisites as text-based AI functions. For the full list, see [Prerequisites](./overview.md#prerequisites).
+Multimodal AI Functions share the same prerequisites as text-based AI Functions. For the full list, see [Prerequisites](./overview.md#prerequisites).
 
 ## Set up your files
 
 Organize your files in a folder that can be referenced by a path or a glob-style string.
 
 > [!TIP]
-> Use the [AI Functions Starter Notebooks](https://aka.ms/fabric-aifunctions-starter-notebooks) for end-to-end AI functions examples that use all AI functions. The starter notebooks include one notebook for pandas and one notebook for PySpark.
+> Use the [AI Functions Starter Notebooks](https://aka.ms/fabric-aifunctions-starter-notebooks) for end-to-end AI Functions examples that use all AI Functions. The starter notebooks include one notebook for pandas and one notebook for PySpark.
 
 ### Example
 You can store files in a Lakehouse attached to your notebook.
@@ -84,7 +84,7 @@ folder_path = "Files"
 ---
 
 ## Load your files
-To use AI functions with multimodal input, you may either load the file contents into a structured table or reference the file paths directly in your DataFrame. The following examples show both approaches.
+To use AI Functions with multimodal input, you may either load the file contents into a structured table or reference the file paths directly in your DataFrame. The following examples show both approaches.
 
 ### Load files into a table
 Use the `aifunc.load` function to read files from a folder and generate a structured table. The function can infer the table structure on its own, or you can provide a prompt to guide the extraction, or a schema for consistent structure. This approach is useful when you want the AI to extract specific information from the files and present it in a structured format.
@@ -110,10 +110,10 @@ display(df)
 ---
 
 ### Load file paths into a column
-Alternatively, you can use `aifunc.list_file_paths` to get a list of file paths from a folder and load them into a DataFrame column. This approach is useful when you want to run AI functions across each file.
+Alternatively, you can use `aifunc.list_file_paths` to get a list of file paths from a folder and load them into a DataFrame column. This approach is useful when you want to run AI Functions across each file.
 
 > [!NOTE]
-> Most AI functions accept file-path inputs via `column_type="path"` (pandas) or `input_col_type`/`col_types="path"` (PySpark). This applies uniformly across all the multimodal functions listed in this article.
+> Most AI Functions accept file-path inputs via `column_type="path"` (pandas) or `input_col_type`/`col_types="path"` (PySpark). This applies uniformly across all the multimodal functions listed in this article.
 
 # [pandas](#tab/pandas)
 
@@ -136,13 +136,13 @@ display(df)
 
 # [pandas](#tab/pandas)
 
-For **Series-level** AI functions (operating on a single column), set the `column_type` parameter:
+For **Series-level** AI Functions (operating on a single column), set the `column_type` parameter:
 
 ```python
 df["result"] = df["file_path"].ai.analyze_sentiment(column_type="path")
 ```
 
-For **DataFrame-level** AI functions (operating on multiple columns), use the `column_type_dict` parameter:
+For **DataFrame-level** AI Functions (operating on multiple columns), use the `column_type_dict` parameter:
 
 ```python
 df["result"] = df.ai.generate_response(
@@ -156,13 +156,13 @@ df["result"] = df.ai.generate_response(
 
 # [PySpark](#tab/pyspark)
 
-For **single-column** AI functions, set the `input_col_type` parameter:
+For **single-column** AI Functions, set the `input_col_type` parameter:
 
 ```python
 results = df.ai.analyze_sentiment(input_col="file_path", input_col_type="path", output_col="sentiment")
 ```
 
-For **DataFrame-level** AI functions (operating on multiple columns), use the `col_types` parameter:
+For **DataFrame-level** AI Functions (operating on multiple columns), use the `col_types` parameter:
 
 ```python
 results = df.ai.generate_response(
@@ -284,7 +284,7 @@ file_path_df = aifunc.list_file_paths(folder_path)
 
 # [pandas](#tab/pandas)
 
-A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) of `yarl.URL` objects, indexed by their string representations. These `yarl.URL` objects are automatically treated as file paths by AI functions, so you don't need to specify `column_type="path"`.
+A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) of `yarl.URL` objects, indexed by their string representations. These `yarl.URL` objects are automatically treated as file paths by AI Functions, so you don't need to specify `column_type="path"`.
 
 # [PySpark](#tab/pyspark)
 
@@ -394,9 +394,9 @@ display(extracted_df)
 
 ---
 
-## Use multimodal input with existing AI functions
+## Use multimodal input with existing AI Functions
 
-The following examples show how to use multimodal input with each of the supported AI functions.
+The following examples show how to use multimodal input with each of the supported AI Functions.
 
 ### Detect sentiment from files with ai.analyze_sentiment
 
@@ -710,19 +710,19 @@ Use the [AI Functions Eval Notebooks](https://aka.ms/fabric-aifunctions-eval-not
 
 ## Monitor cost and capacity usage
 
-AI functions include a configurable progress bar cost calculator that displays real-time token estimates and Fabric capacity units while operations run in notebooks. You can configure the cost calculator in three modes:
+AI Functions include a configurable progress bar cost calculator that displays real-time token estimates and Fabric capacity units while operations run in notebooks. You can configure the cost calculator in three modes:
 
 - **basic**: Shows a summary of estimated tokens and capacity units consumed.
 - **stats**: Shows detailed per-call statistics, including input and output token counts.
 - **disable**: Turns off the progress bar cost display.
 
-For details on configuring these modes, see [Configure AI functions](./pandas/configuration.md).
+For details on configuring these modes, see [Configure AI Functions](./pandas/configuration.md).
 
-The Fabric Capacity Metrics App also includes a dedicated **AI Functions** operation that separates AI functions usage from Spark and Dataflow Gen2. You can use this view to track multimodal AI functions consumption and identify capacity impact. For more information, see [What is the Microsoft Fabric Capacity Metrics app?](../../enterprise/metrics-app.md).
+The Fabric Capacity Metrics App also includes a dedicated **AI Functions** operation that separates AI Functions usage from Spark and Dataflow Gen2. You can use this view to track multimodal AI Functions consumption and identify capacity impact. For more information, see [What is the Microsoft Fabric Capacity Metrics app?](../../enterprise/metrics-app.md).
 
 ## Related content
 
-- Learn more about the [full set of AI functions](./overview.md).
+- Learn more about the [full set of AI Functions](./overview.md).
 - Try the [AI Functions Starter Notebooks](https://aka.ms/fabric-aifunctions-starter-notebooks).
 - Evaluate output quality with the [AI Functions Eval Notebooks](https://aka.ms/fabric-aifunctions-eval-notebooks).
 - Detect sentiment with [`ai.analyze_sentiment` in pandas](./pandas/analyze-sentiment.md) or [`ai.analyze_sentiment` in PySpark](./pyspark/analyze-sentiment.md).
@@ -732,5 +732,5 @@ The Fabric Capacity Metrics App also includes a dedicated **AI Functions** opera
 - Answer custom user prompts with [`ai.generate_response` in pandas](./pandas/generate-response.md) or [`ai.generate_response` in PySpark](./pyspark/generate-response.md).
 - Summarize text with [`ai.summarize` in pandas](./pandas/summarize.md) or [`ai.summarize` in PySpark](./pyspark/summarize.md).
 - Translate text with [`ai.translate` in pandas](./pandas/translate.md) or [`ai.translate` in PySpark](./pyspark/translate.md).
-- Customize the [configuration of AI functions in pandas](./pandas/configuration.md) or the [configuration of AI functions in PySpark](./pyspark/configuration.md).
+- Customize the [configuration of AI Functions in pandas](./pandas/configuration.md) or the [configuration of AI Functions in PySpark](./pyspark/configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

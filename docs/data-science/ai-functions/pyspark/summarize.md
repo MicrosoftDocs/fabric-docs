@@ -5,7 +5,7 @@ ms.reviewer: singhrana
 reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 05/12/2026
-ms.search.form: AI functions
+ms.search.form: AI Functions
 ai-usage: ai-assisted
 ---
 
@@ -16,8 +16,8 @@ The `ai.summarize` function uses generative AI to produce summaries of input tex
 
 > [!NOTE]
 > - This article covers using *ai.summarize* with PySpark. To use *ai.summarize* with pandas, see [this article](../pandas/summarize.md).
-> - See other AI functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI functions](./configuration.md).
+> - See other AI Functions in [this overview article](../overview.md).
+> - Learn how to customize the [configuration of AI Functions](./configuration.md).
 
 ## Overview
 
@@ -147,7 +147,7 @@ display(summaries)
 
 ## Multimodal input
 
-The `ai.summarize` function supports file-based multimodal input. This capability is part of multimodal AI functions, which process images, PDFs, and text files alongside text data. You can summarize file content by setting `input_col_type="path"` for single-column mode, or `col_types` for DataFrame-level mode. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+The `ai.summarize` function supports file-based multimodal input. This capability is part of multimodal AI Functions, which process images, PDFs, and text files alongside text data. You can summarize file content by setting `input_col_type="path"` for single-column mode, or `col_types` for DataFrame-level mode. For more information about supported file types and setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
 
 ```python
 # This code uses AI. Always review output for mistakes.
@@ -186,7 +186,7 @@ display(results)
 - Calculate similarity with [ai.similarity](./similarity.md).
 - Translate text with [ai.translate](./translate.md).
 
-- Learn more about the [full set of AI functions](../overview.md).
-- Use [multimodal input with AI functions](../multimodal-overview.md).
-- Customize the [configuration of AI functions](./configuration.md).
+- Learn more about the [full set of AI Functions](../overview.md).
+- Use [multimodal input with AI Functions](../multimodal-overview.md).
+- Customize the [configuration of AI Functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

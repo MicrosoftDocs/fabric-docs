@@ -5,7 +5,7 @@ ms.reviewer: singhrana
 reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
-ms.search.form: AI functions
+ms.search.form: AI Functions
 ---
 
 # Use ai.extract with PySpark
@@ -14,8 +14,8 @@ The `ai.extract` function uses generative AI to scan input text and extract spec
 
 > [!NOTE]
 > - This article covers using *ai.extract* with PySpark. To use *ai.extract* with pandas, see [this article](../pandas/extract.md).
-> - See other AI functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI functions](./configuration.md).
+> - See other AI Functions in [this overview article](../overview.md).
+> - Learn how to customize the [configuration of AI Functions](./configuration.md).
 
 ## Overview
 The `ai.extract` function is available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). You must specify the name of an existing input column as a parameter, along with a list of entity types to extract from each row of text.
@@ -178,7 +178,7 @@ The resulting DataFrame enforces the types and structure defined in the schema. 
 
 ## Multimodal input
 
-The `ai.extract` function supports file-based multimodal input. You can extract entities from images, PDFs, and text files by setting `input_col_type="path"`. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+The `ai.extract` function supports file-based multimodal input. You can extract entities from images, PDFs, and text files by setting `input_col_type="path"`. For more information about supported file types and setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
 
 ```python
 # This code uses AI. Always review output for mistakes.
@@ -216,7 +216,7 @@ display(extracted)
 - Summarize text with [ai.summarize](./summarize.md).
 - Translate text with [ai.translate](./translate.md).
 
-- Learn more about the [full set of AI functions](../overview.md).
-- Use [multimodal input with AI functions](../multimodal-overview.md).
-- Customize the [configuration of AI functions](./configuration.md).
+- Learn more about the [full set of AI Functions](../overview.md).
+- Use [multimodal input with AI Functions](../multimodal-overview.md).
+- Customize the [configuration of AI Functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

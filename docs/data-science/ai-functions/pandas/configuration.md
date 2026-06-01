@@ -1,42 +1,42 @@
 ---
-title: Customize AI functions with pandas
-description: Learn how to configure AI functions in Fabric for custom use. For example, modifying the underlying LLM or other related settings with pandas.
+title: Customize AI Functions with pandas
+description: Learn how to configure AI Functions in Fabric for custom use. For example, modifying the underlying LLM or other related settings with pandas.
 ms.reviewer: singhrana
 reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
-ms.search.form: AI functions
+ms.search.form: AI Functions
 ---
 
-# Customize AI functions with pandas
+# Customize AI Functions with pandas
 
-AI functions are designed to work out of the box, with the underlying model and settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
+AI Functions are designed to work out of the box, with the underlying model and settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
 
 > [!IMPORTANT]
-> - AI functions are for use in [Fabric Runtime 1.3 (Spark 3.5), (Python 3.11)](../../../data-engineering/runtime-1-3.md) and later.
-> - Review the prerequisites in [this overview article](../overview.md), including the [library installations](../overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
-> - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
+> - AI Functions are for use in [Fabric Runtime 1.3 (Spark 3.5), (Python 3.11)](../../../data-engineering/runtime-1-3.md) and later.
+> - Review the prerequisites in [this overview article](../overview.md), including the [library installations](../overview.md#getting-started-with-ai-functions) that are temporarily required to use AI Functions.
+> - Although the underlying model can handle several languages, most of the AI Functions are optimized for use on English-language texts.
 
 > [!NOTE]
-> - This article covers customizing AI functions with pandas. To customize AI functions with PySpark, see [this article](../pyspark/configuration.md).
-> - See all AI functions in [this overview article](../overview.md).
+> - This article covers customizing AI Functions with pandas. To customize AI Functions with PySpark, see [this article](../pyspark/configuration.md).
+> - See all AI Functions in [this overview article](../overview.md).
 
 ## Configurations
 
-By default, AI functions are powered by the built-in AI endpoint in Fabric. The large language model (LLM) settings are globally configured in the `aifunc.Conf` class. If you work with AI functions in pandas, you can use the `aifunc.Conf` class to modify some or all of these settings:
+By default, AI Functions are powered by the built-in AI endpoint in Fabric. The large language model (LLM) settings are globally configured in the `aifunc.Conf` class. If you work with AI Functions in pandas, you can use the `aifunc.Conf` class to modify some or all of these settings:
 
 | Parameter | Description | Default |
 |---|---|---|
 | `api_type` | A [string](https://docs.python.org/3/library/stdtypes.html#str) value that designates the type of API to call on the underlying model. The default value is `responses`, which is compatible with OpenAI models. You may set this value to `chat_completions` to use LLMs compatible with the chat completions API, such as non-OpenAI models hosted on Microsoft Foundry. | `responses` |
 | `concurrency` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. | `200` |
-| `embedding_deployment_name` | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the embedding model deployment that powers AI functions. | `text-embedding-ada-002` |
-| `model_deployment_name` | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the language model deployment that powers AI functions. You can choose from the [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service). | `gpt-4.1-mini` |
+| `embedding_deployment_name` | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the embedding model deployment that powers AI Functions. | `text-embedding-ada-002` |
+| `model_deployment_name` | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the language model deployment that powers AI Functions. You can choose from the [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service). | `gpt-4.1-mini` |
 | `reasoning_effort` | A [string](https://docs.python.org/3/library/stdtypes.html#str) used by gpt-5 series models for number of reasoning tokens they should use. Can be set to `openai.NOT_GIVEN` or a string value of "minimal", "low", "medium", or "high". | `openai.NOT_GIVEN` |
 | `seed` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the seed to use for the response of the underlying model. The default behavior randomly picks a seed value for each row. The choice of a constant value improves the reproducibility of your experiments. | `openai.NOT_GIVEN` |
 | `temperature` | A [float](https://docs.python.org/3/library/functions.html#float) between `0.0` and `1.0` that designates the temperature of the underlying model. Higher temperatures increase the randomness or creativity of the model's outputs. | `0.0` |
 | `timeout` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the number of seconds before an AI function raises a time-out error. By default, there's no timeout. | None |
 | `top_p` | A [float](https://docs.python.org/3/library/functions.html#float) between 0 and 1. A lower value (for example, 0.1) restricts the model to consider only the most probable tokens, making the output more deterministic. A higher value (for example, 0.9) allows for more diverse and creative outputs by including a broader range of tokens. | `openai.NOT_GIVEN` |
-| `progress_bar_mode`<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) which controls the progress bar display mode as pandas AI Function transforms rows. Set to `"basic"` for clean tqdm based progress tracking, `"stats"` for custom tqdm progress bar with live token metrics and CU cost of running AI functions along with their predicted estimates, or `"disable"` to turn off the progress display. See [Progress bar modes](#progress-bar-modes) for details. Enhanced version of deprecated parameter `use_progress_bar` | `"basic"` |
+| `progress_bar_mode`<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) which controls the progress bar display mode as pandas AI Function transforms rows. Set to `"basic"` for clean tqdm based progress tracking, `"stats"` for custom tqdm progress bar with live token metrics and CU cost of running AI Functions along with their predicted estimates, or `"disable"` to turn off the progress display. See [Progress bar modes](#progress-bar-modes) for details. Enhanced version of deprecated parameter `use_progress_bar` | `"basic"` |
 | `verbosity`<br> Optional | Used by gpt-5 series models for output length. Can be set to `openai.NOT_GIVEN` or a string value of "low", "medium", or "high". | 
 
 > [!TIP]
@@ -162,7 +162,7 @@ Select one of the [models supported by Fabric](../../ai-services/ai-services-ove
 
 ### Configure a custom model endpoint
 
-By default, AI functions use the Fabric LLM endpoint API for unified billing and easy setup.
+By default, AI Functions use the Fabric LLM endpoint API for unified billing and easy setup.
 You may choose to use your own model endpoint by setting up an Azure OpenAI or OpenAI-compatible client with your endpoint and key. The following example shows how to bring your own Microsoft Foundry (formerly Azure OpenAI) resource using `aifunc.setup`:
 
 ```python
@@ -186,7 +186,7 @@ The following code sample uses placeholder values to show you how to override th
 > [!IMPORTANT]
 > - Support for Foundry models is limited to  models that support `Chat Completions` API and accept `response_format` parameter with JSON schema
 > - Output may vary depending on the behavior of the selected AI model. Please explore the capabilities of other models with appropriate caution
-> - The embedding based AI functions `ai.embed` and `ai.similarity` aren't supported when using a Foundry resource
+> - The embedding based AI Functions `ai.embed` and `ai.similarity` aren't supported when using a Foundry resource
 
 ```python
 from openai import OpenAI
@@ -204,7 +204,7 @@ aifunc.default_conf.model_deployment_name = "grok-4-fast-non-reasoning"
 
 ## Related content
 
-- Customize [AI functions configurations with PySpark](../pyspark/configuration.md).
+- Customize [AI Functions configurations with PySpark](../pyspark/configuration.md).
 - Detect sentiment with [`ai.analyze_sentiment`](./analyze-sentiment.md).
 - Categorize text with [`ai.classify`](./classify.md).
 - Extract entities with [`ai_extract`](./extract.md).
@@ -214,5 +214,5 @@ aifunc.default_conf.model_deployment_name = "grok-4-fast-non-reasoning"
 - Summarize text with [`ai.summarize`](./summarize.md).
 - Translate text with [`ai.translate`](./translate.md).
 
-- Learn more about the [full set of AI functions](../overview.md).
+- Learn more about the [full set of AI Functions](../overview.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

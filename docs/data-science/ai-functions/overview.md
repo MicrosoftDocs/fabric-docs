@@ -1,19 +1,19 @@
 ---
 title: Transform and Enrich Data with AI Functions
-description: Learn how to transform and enrich data with lightweight, LLM-powered code by using AI functions in Microsoft Fabric.
+description: Learn how to transform and enrich data with lightweight, LLM-powered code by using AI Functions in Microsoft Fabric.
 ms.reviewer: singhrana
 reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 05/12/2026
-ms.search.form: AI functions
+ms.search.form: AI Functions
 ai-usage: ai-assisted
 ---
 
-# Transform and enrich data with AI functions
+# Transform and enrich data with AI Functions
 
 Microsoft Fabric AI Functions enable all business professionals (from developers to analysts) to transform and enrich their enterprise data using generative AI.
 
-AI functions use industry-leading large language models (LLMs) for summarization, classification, text generation, and more. With a single line of code, you can:
+AI Functions use industry-leading large language models (LLMs) for summarization, classification, text generation, and more. With a single line of code, you can:
 
 - [`ai.analyze_sentiment`](#detect-sentiment-with-aianalyze_sentiment): Detect the emotional state of input text.
 - [`ai.classify`](#categorize-text-with-aiclassify): Categorize input text according to your labels.
@@ -25,49 +25,49 @@ AI functions use industry-leading large language models (LLMs) for summarization
 - [`ai.summarize`](#summarize-text-with-aisummarize): Get summaries of input text.
 - [`ai.translate`](#translate-text-with-aitranslate): Translate input text into another language.
 
-You can incorporate these functions as part of data science and data engineering workflows, whether you're working with pandas or Spark. You can also use AI functions in SQL queries and Dataflow Gen2. There's no detailed configuration and no complex infrastructure management. You don't need any specific technical expertise.
+You can incorporate these functions as part of data science and data engineering workflows, whether you're working with pandas or Spark. You can also use AI Functions in SQL queries and Dataflow Gen2. There's no detailed configuration and no complex infrastructure management. You don't need any specific technical expertise.
 
-## Use AI functions across Fabric experiences
+## Use AI Functions across Fabric experiences
 
-AI functions are available in multiple Fabric experiences:
+AI Functions are available in multiple Fabric experiences:
 
 - **Notebooks**: Use the pandas and PySpark APIs in this article to enrich DataFrames from data science and data engineering workflows.
-- **Warehouse and SQL analytics endpoint**: Use [AI functions in a warehouse or SQL analytics endpoint](../../data-warehouse/ai-functions.md) to call SQL-flavored functions such as `ai_summarize`, `ai_classify`, and `ai_generate_response` directly in T-SQL queries.
+- **Warehouse and SQL analytics endpoint**: Use [AI Functions in a warehouse or SQL analytics endpoint](../../data-warehouse/ai-functions.md) to call SQL-flavored functions such as `ai_summarize`, `ai_classify`, and `ai_generate_response` directly in T-SQL queries.
 - **Dataflow Gen2**: Use [Fabric AI Prompt in Dataflow Gen2](../../data-factory/dataflow-gen2-ai-functions.md) to add AI-generated columns in Power Query.
 
-## Use multimodal AI functions
+## Use multimodal AI Functions
 
-Multimodal AI functions process images, PDFs, and text files alongside text data. Use them to summarize PDFs, classify images, extract fields from documents, and generate responses grounded in file content.
+Multimodal AI Functions process images, PDFs, and text files alongside text data. Use them to summarize PDFs, classify images, extract fields from documents, and generate responses grounded in file content.
 
-Supported file types include JPG/JPEG, PNG, static GIF, WebP, PDF, MD, TXT, CSV, TSV, JSON, XML, PY, and other text files. Most AI functions can process file-path inputs when you set `column_type="path"` in pandas, or `input_col_type` or `col_types` in PySpark. For setup, examples, and helper functions, see [Use multimodal input with AI functions](./multimodal-overview.md).
+Supported file types include JPG/JPEG, PNG, static GIF, WebP, PDF, MD, TXT, CSV, TSV, JSON, XML, PY, and other text files. Most AI Functions can process file-path inputs when you set `column_type="path"` in pandas, or `input_col_type` or `col_types` in PySpark. For setup, examples, and helper functions, see [Use multimodal input with AI Functions](./multimodal-overview.md).
 
 ## Prerequisites
 
-- To use AI functions with the built-in AI endpoint in Fabric, your administrator needs to enable [the tenant switch for Copilot and other features that are powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
+- To use AI Functions with the built-in AI endpoint in Fabric, your administrator needs to enable [the tenant switch for Copilot and other features that are powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
 - Depending on your location, you might need to enable a tenant setting for cross-geo processing. Learn more about [available regions for Azure OpenAI Service](../../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
 - You need a paid Fabric capacity (F2 or higher, or any P edition).
 
 > [!NOTE]
-> - AI functions are supported in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
-> - Unless you configure a different model, AI functions default to *gpt-4.1-mini*. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
-> - Although the underlying model can handle several languages, most AI functions are optimized for English-language text.
+> - AI Functions are supported in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
+> - Unless you configure a different model, AI Functions default to *gpt-4.1-mini*. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
+> - Although the underlying model can handle several languages, most AI Functions are optimized for English-language text.
 
 ### Models and providers
 
-AI functions support broader models and providers beyond the default Azure OpenAI models. You can configure AI functions to use any LLM which supports the chat_completions or responses API:
+AI Functions support broader models and providers beyond the default Azure OpenAI models. You can configure AI Functions to use any LLM which supports the chat_completions or responses API:
 
 - Azure OpenAI models
 - Microsoft Foundry models such as Qwen, Kimi, Grok, LLaMA, Mistral, any many more.
 
-Model and provider selection is configurable through the AI functions configuration. For details on how to set up and configure different models and providers, see the configuration documentation for [pandas](./pandas/configuration.md) and [PySpark](./pyspark/configuration.md).
+Model and provider selection is configurable through the AI Functions configuration. For details on how to set up and configure different models and providers, see the configuration documentation for [pandas](./pandas/configuration.md) and [PySpark](./pyspark/configuration.md).
 
-## Getting started with AI functions
+## Getting started with AI Functions
 
-AI functions can be used with pandas (Python and PySpark runtimes), and with PySpark (PySpark runtime). The required installation and import steps for each are outlined in the following section, followed by the corresponding commands.
+AI Functions can be used with pandas (Python and PySpark runtimes), and with PySpark (PySpark runtime). The required installation and import steps for each are outlined in the following section, followed by the corresponding commands.
 
 ### Performance and concurrency
 
-AI functions execute with a default concurrency of 200, allowing for faster parallel processing of AI operations. You can tune concurrency settings per workload to optimize performance based on your specific requirements. For more information on configuring concurrency and other performance-related settings, see the configuration documentation for [pandas](./pandas/configuration.md) and [PySpark](./pyspark/configuration.md).
+AI Functions execute with a default concurrency of 200, allowing for faster parallel processing of AI operations. You can tune concurrency settings per workload to optimize performance based on your specific requirements. For more information on configuring concurrency and other performance-related settings, see the configuration documentation for [pandas](./pandas/configuration.md) and [PySpark](./pyspark/configuration.md).
 
 ### Install dependencies
 
@@ -82,18 +82,18 @@ AI functions execute with a default concurrency of 200, allowing for faster para
 # [pandas (PySpark runtime)](#tab/pandas-pyspark)
 
 ```python
-# The pandas AI functions package requires OpenAI version 1.99.5 or later
+# The pandas AI Functions package requires OpenAI version 1.99.5 or later
 %pip install -q openai 2>/dev/null
 ```
 
 # [pandas (Python runtime)](#tab/pandas-python)
 
 ```python
-# Install latest versions of AI functions library whl
+# Install latest versions of AI Functions library whl
 !wget -q https://aka.ms/fabric-aifunctions-whl -O synapseml_internal-latest-py3-none-any.whl
 !wget -q https://aka.ms/fabric-synapseml-core-whl -O synapseml_core-latest-py3-none-any.whl
 
-# The pandas AI functions package requires OpenAI version 1.99.5 or later
+# The pandas AI Functions package requires OpenAI version 1.99.5 or later
 %pip install -q openai synapseml_internal-latest-py3-none-any.whl synapseml_core-latest-py3-none-any.whl
 ```
 
@@ -101,7 +101,7 @@ AI functions execute with a default concurrency of 200, allowing for faster para
 
 ### Import required libraries
 
-The following code cell imports the AI functions library and its dependencies.
+The following code cell imports the AI Functions library and its dependencies.
 
 # [pandas](#tab/pandas)
 
@@ -123,23 +123,23 @@ import synapse.ml.spark.aifunc as aifunc
 
 ### Helper functions for file ingestion and schema
 
-AI functions include helper functions that streamline multimodal workflows by simplifying file ingestion and schema management:
+AI Functions include helper functions that streamline multimodal workflows by simplifying file ingestion and schema management:
 
 - **`aifunc.load`**: Ingest files from a folder into a structured table. You can optionally provide a prompt to guide extraction or a schema for consistent structure.
 - **`aifunc.list_file_paths`**: Enumerate file URLs and paths from a folder for use as input to any AI function.
 - **`ai.infer_schema`**: Infer an extraction schema from file contents. The inferred schema is compatible with `ai.extract`, so you can pass it directly for structured data extraction.
 
-For detailed syntax and examples, see [Use multimodal input with AI functions](./multimodal-overview.md).
+For detailed syntax and examples, see [Use multimodal input with AI Functions](./multimodal-overview.md).
 
-## Apply AI functions
+## Apply AI Functions
 
-Each of the following functions allows you to invoke the built-in AI endpoint in Fabric to transform and enrich data with a single line of code. You can use AI functions to analyze pandas DataFrames or Spark DataFrames. PySpark AI function calls (including `ai.extract`) run distributed across Fabric Spark clusters, enabling scalable processing of large datasets. For performance tuning options, see the [PySpark configuration](./pyspark/configuration.md) documentation.
+Each of the following functions allows you to invoke the built-in AI endpoint in Fabric to transform and enrich data with a single line of code. You can use AI Functions to analyze pandas DataFrames or Spark DataFrames. PySpark AI function calls (including `ai.extract`) run distributed across Fabric Spark clusters, enabling scalable processing of large datasets. For performance tuning options, see the [PySpark configuration](./pyspark/configuration.md) documentation.
 
 > [!NOTE]
-> Most AI functions support file-path inputs via `column_type="path"` (pandas) or `input_col_type`/`col_types="path"` (PySpark). This enables direct processing of images and PDFs without loading raw bytes. For usage patterns, see [Use multimodal input with AI functions](./multimodal-overview.md).
+> Most AI Functions support file-path inputs via `column_type="path"` (pandas) or `input_col_type`/`col_types="path"` (PySpark). This enables direct processing of images and PDFs without loading raw bytes. For usage patterns, see [Use multimodal input with AI Functions](./multimodal-overview.md).
 
 > [!TIP]
-> Learn how to [customize the configuration](./pandas/configuration.md) of AI functions.
+> Learn how to [customize the configuration](./pandas/configuration.md) of AI Functions.
 > 
 > **Advanced configuration**: When using gpt-5 family models, you can configure advanced options such as `reasoning_effort` and `verbosity`. See the configuration pages for [pandas](./pandas/configuration.md) and [PySpark](./pyspark/configuration.md) for details on how to set these options.
 
@@ -524,7 +524,7 @@ display(translations)
 
 ## View usage statistics with ai.stats
 
-Fabric AI functions provide a built-in way to inspect usage and execution statistics for any AI-generated Series or DataFrame. You can access these metrics by calling `ai.stats` on the result returned by an AI function.
+Fabric AI Functions provide a built-in way to inspect usage and execution statistics for any AI-generated Series or DataFrame. You can access these metrics by calling `ai.stats` on the result returned by an AI function.
 
 `ai.stats` returns a DataFrame with the following columns:
 
@@ -540,7 +540,7 @@ Fabric AI functions provide a built-in way to inspect usage and execution statis
 
 ### Cost transparency
 
-AI functions include a configurable progress bar cost calculator that shows real-time token estimates and capacity units during execution. You can set the calculator to one of three modes:
+AI Functions include a configurable progress bar cost calculator that shows real-time token estimates and capacity units during execution. You can set the calculator to one of three modes:
 
 - **basic**: Displays a summary of estimated tokens and capacity units consumed.
 - **stats**: Displays detailed per-call statistics, including input and output token counts.
@@ -548,11 +548,11 @@ AI functions include a configurable progress bar cost calculator that shows real
 
 For details on configuring these modes, see the configuration documentation for [pandas](./pandas/configuration.md) and [PySpark](./pyspark/configuration.md).
 
-The Fabric Capacity Metrics App includes a dedicated **AI Functions** operation that separates AI functions usage from Spark and Dataflow Gen2, giving you clearer monitoring of AI-related capacity consumption. For more information, see [What is the Microsoft Fabric Capacity Metrics app?](../../enterprise/metrics-app.md).
+The Fabric Capacity Metrics App includes a dedicated **AI Functions** operation that separates AI Functions usage from Spark and Dataflow Gen2, giving you clearer monitoring of AI-related capacity consumption. For more information, see [What is the Microsoft Fabric Capacity Metrics app?](../../enterprise/metrics-app.md).
 
 ## Evaluate and accelerate
 
-Use the [AI Functions Starter Notebooks](https://aka.ms/fabric-aifunctions-starter-notebooks) for end-to-end AI functions examples that use all AI functions. The starter notebooks include one notebook for pandas and one notebook for PySpark. Use the [AI Functions Eval Notebooks](https://aka.ms/fabric-aifunctions-eval-notebooks) to assess output quality with LLM-as-a-Judge metrics such as accuracy, precision, recall, F1, coherence, consistency, and relevance before you deploy to production.
+Use the [AI Functions Starter Notebooks](https://aka.ms/fabric-aifunctions-starter-notebooks) for end-to-end AI Functions examples that use all AI Functions. The starter notebooks include one notebook for pandas and one notebook for PySpark. Use the [AI Functions Eval Notebooks](https://aka.ms/fabric-aifunctions-eval-notebooks) to assess output quality with LLM-as-a-Judge metrics such as accuracy, precision, recall, F1, coherence, consistency, and relevance before you deploy to production.
 
 ## Related content
 
@@ -565,10 +565,10 @@ Use the [AI Functions Starter Notebooks](https://aka.ms/fabric-aifunctions-start
 - Calculate similarity with [`ai.similarity in pandas`](./pandas/similarity.md) or [`ai.similarity in PySpark`](./pyspark/similarity.md).
 - Summarize text with [`ai.summarize in pandas`](./pandas/summarize.md) or [`ai.summarize in PySpark`](./pyspark/summarize.md).
 - Translate text with [`ai.translate in pandas`](./pandas/translate.md) or [`ai.translate in PySpark`](./pyspark/translate.md).
-- Customize the [configuration of AI functions in pandas](./pandas/configuration.md) or the [configuration of AI functions in PySpark](./pyspark/configuration.md).
-- Use [multimodal input with AI functions](./multimodal-overview.md) to process images, PDFs, and text files.
+- Customize the [configuration of AI Functions in pandas](./pandas/configuration.md) or the [configuration of AI Functions in PySpark](./pyspark/configuration.md).
+- Use [multimodal input with AI Functions](./multimodal-overview.md) to process images, PDFs, and text files.
 - Try the [AI Functions Starter Notebooks](https://aka.ms/fabric-aifunctions-starter-notebooks).
 - Evaluate output quality with the [AI Functions Eval Notebooks](https://aka.ms/fabric-aifunctions-eval-notebooks).
-- Use [AI functions in a warehouse or SQL analytics endpoint](../../data-warehouse/ai-functions.md).
+- Use [AI Functions in a warehouse or SQL analytics endpoint](../../data-warehouse/ai-functions.md).
 - Use [Fabric AI Prompt in Dataflow Gen2](../../data-factory/dataflow-gen2-ai-functions.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).
