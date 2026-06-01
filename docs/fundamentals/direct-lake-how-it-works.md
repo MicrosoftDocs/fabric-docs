@@ -87,7 +87,7 @@ Direct Lake on OneLake does not support DirectQuery fallback and operates only i
 
 ### When Direct Lake mode is used
 
-In Automatic mode, queries use Direct Lake mode only when *all* of the following conditions are satisfied:
+Queries use Direct Lake mode only when *all* of the following conditions are satisfied:
 
 - No tables referenced by the semantic model have SQL [row-level security (RLS)](direct-lake-security-integration.md) defined at the SQL analytics endpoint.
 - No tables referenced by the semantic model have SQL dynamic data masking (DDM) defined at the SQL analytics endpoint.
