@@ -84,6 +84,6 @@ The following table lists all the items contained in the IQ (preview) workload:
 
 ## Next steps
 
-Learn about the other workloads in Microsoft IQ:
+Learn about the other capabilities in Microsoft IQ:
 * [Work IQ](/microsoft-365/copilot/extensibility/work-iq)
 * [Foundry IQ](/azure/foundry/agents/concepts/what-is-foundry-iq)
