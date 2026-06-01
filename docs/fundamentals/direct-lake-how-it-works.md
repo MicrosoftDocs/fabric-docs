@@ -89,9 +89,16 @@ Direct Lake on OneLake does not support DirectQuery fallback and operates only i
 
 In Automatic mode, queries use Direct Lake mode only when *all* of the following conditions are satisfied:
 
-- No tables referenced by the semantic model have [SQL row-level security (RLS), dynamic data masking (DDM), or object-level security (OLS)](direct-lake-develop.md) defined at the SQL analytics endpoint.
+- No tables referenced by the semantic model have SQL [row-level security (RLS)](direct-lake-security-integration.md) defined at the SQL analytics endpoint.
+- No tables referenced by the semantic model have SQL dynamic data masking (DDM) defined at the SQL analytics endpoint.
+- No tables referenced by the semantic model have SQL [object-level security (OLS)](direct-lake-security-integration.md) defined at the SQL analytics endpoint.
 - The semantic model does not reference any tables based on unmaterialized SQL views.
-- No single table exceeds guardrail limits for parquet files, row groups, or rows. For limits by SKU, see [Fabric capacity requirements](direct-lake-overview.md#fabric-capacity-requirements).
+- No single table in the semantic model exceeds guardrail limits:
+    - Number of Parquet files is within limit
+    - Number of row groups is within limit
+    - Number of rows is within limit
+
+  For limits by SKU, see [Fabric capacity requirements](direct-lake-overview.md#fabric-capacity-requirements).
 - The semantic model has been refreshed (framed) since the underlying Delta tables were created or modified.
 - The capacity is not under memory pressure.
 
