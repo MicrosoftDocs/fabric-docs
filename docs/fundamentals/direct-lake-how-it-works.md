@@ -6,6 +6,7 @@ ms.author: kgremban
 ms.date: 09/22/2025
 ms.topic: concept-article
 ms.custom: fabric-cat
+ai-usage: ai-assisted
 ---
 
 # How Direct Lake works
@@ -77,14 +78,90 @@ There's a semantic model-level setting to automatically update Direct Lake table
 
 ## DirectQuery fallback
 
-When using Direct Lake on SQL endpoints, a query sent to a Direct Lake semantic model can fall back to [DirectQuery mode](/power-bi/connect-data/service-dataset-modes-understand) in which case the table no longer operates in Direct Lake mode. It retrieves data directly from the SQL analytics endpoint of the lakehouse or warehouse. Such queries always return the latest data because they're not constrained to the point in time of the last framing operation.
-
-When DirectQuery fallback occurs, a query no longer uses Direct Lake mode. A query *can't* leverage Direct Lake mode when the semantic model queries a view in the SQL analytics endpoint, or a table in the SQL analytics endpoint that [enforces row-level security (RLS)](/fabric/fundamentals/direct-lake-develop). Also, a query *can't* leverage Direct Lake mode when a Delta table [exceeds the guardrails of the capacity](/fabric/fundamentals/direct-lake-overview).
+When using Direct Lake on SQL endpoints, a query sent to a Direct Lake semantic model can fall back to [DirectQuery mode](/power-bi/connect-data/service-dataset-modes-understand) in which case the table no longer operates in Direct Lake mode. It retrieves data directly from the SQL analytics endpoint of the lakehouse or warehouse. Such queries always return the latest data because they're not constrained to the point in time of the last framing operation. However, fallback operations might result in slower query performance.
 
 > [!IMPORTANT]
 > If possible, you should always design your solution—or size your capacity—to avoid DirectQuery fallback. That's because it might result in slower query performance.
 
-You can control fallback of your Direct Lake semantic models by setting its _DirectLakeBehavior_ property. This setting only applies to Direct Lake on SQL endpoints. Direct Lake on OneLake doesn't support DirectQuery fallback. For more information, see [Model.DirectLakeBehavior Property](/dotnet/api/microsoft.analysisservices.tabular.model.directlakebehavior).
+Direct Lake on OneLake does not support DirectQuery fallback and operates only in DirectLakeOnly mode. If you need to avoid fallback entirely, consider using Direct Lake on OneLake. Direct Lake on Onelake is the recommended Direct Lake flavor for new semantic model applications.
+
+### When Direct Lake mode is used
+
+In Automatic mode, queries use Direct Lake mode only when *all* of the following conditions are satisfied:
+
+- No tables referenced by the semantic model have [SQL row-level security (RLS), dynamic data masking (DDM), or object-level security (OLS)](direct-lake-develop.md) defined at the SQL analytics endpoint.
+- The semantic model does not reference any tables based on unmaterialized SQL views.
+- No single table exceeds guardrail limits for parquet files, row groups, or rows. For limits by SKU, see [Fabric capacity requirements](direct-lake-overview.md#fabric-capacity-requirements).
+- The semantic model has been refreshed (framed) since the underlying Delta tables were created or modified.
+- The capacity is not under memory pressure.
+
+A single table exceeding any guardrail can prevent Direct Lake mode for the entire model.
+
+### What happens when conditions are not met
+
+The behavior depends on the **DirectLakeBehavior** setting:
+
+- **Automatic** (default): The query silently falls back to DirectQuery mode. Reports continue to work, but performance might be slower.
+- **DirectLakeOnly**: The query fails with an error. 
+
+Use DirectLakeOnly mode during development to surface these errors early and fix the root cause before users encounter silent performance degradation.
+
+### Control fallback with DirectLakeBehavior
+
+You can control fallback of your Direct Lake semantic models by setting the **DirectLakeBehavior** property. This setting only applies to Direct Lake on SQL endpoints.
+
+| Value | Description |
+| --- | --- |
+| **Automatic** | (Default) Falls back to DirectQuery mode silently when conditions are not met. |
+| **DirectLakeOnly** | Errors out instead of falling back. Use during development. |
+| **DirectQueryOnly** | Always uses DirectQuery mode. Use to measure fallback performance. |
+
+#### Set DirectLakeBehavior
+
+In the **Model** view, open the **Properties** pane for the semantic model and change the **Direct Lake behavior** setting.
+
+:::image type="content" source="media/direct-lake-how-it-works/direct-lake-behavior-setting.png" alt-text="Screenshot showing the Direct Lake behavior dropdown with Automatic, Direct Lake Only, and DirectQuery Only options.":::
+
+#### Set DirectLakeBehavior programmatically
+
+You can also configure the **DirectLakeBehavior** property by using Tabular Object Model (TOM) or Tabular Model Scripting Language (TMSL).
+
+The following example specifies all queries use Direct Lake mode only:
+
+```csharp
+// Disable fallback to DirectQuery mode.
+database.Model.DirectLakeBehavior = DirectLakeBehavior.DirectLakeOnly;
+database.Model.SaveChanges();
+```
+
+For more information, see [Model.DirectLakeBehavior Property](/dotnet/api/microsoft.analysisservices.tabular.model.directlakebehavior).
+
+### Diagnose fallback
+
+To identify which tables are falling back and why, run the following DAX query:
+
+```dax
+EVALUATE TABLETRAITS()
+```
+
+The `[DirectLakeFallbackInfo]` column shows the fallback reason for each table. A value of `None` means the table is using Direct Lake mode.
+
+### Fix common fallback causes
+
+Use this table to identify the fix for each fallback scenario:
+
+| Fallback cause | How to fix |
+| --- | --- |
+| Table is not framed | Refresh the semantic model to frame the tables. After adding tables programmatically via TOM or TMSL, always refresh before querying. |
+| Table is based on a SQL view | Materialize the view as a delta table, or accept DirectQuery performance for that table. |
+| Table does not exist | Verify the delta table exists in the lakehouse or warehouse. Check for schema drift or deleted tables. |
+| Transient error | Retry the query. If persistent, check capacity health and refresh the semantic model. |
+| OLS defined at SQL endpoint | Move object-level security to the semantic model, or accept DirectQuery fallback. |
+| RLS or DDM defined at SQL endpoint | Move row-level security to the semantic model, or accept DirectQuery fallback. |
+| Delta table exceeds guardrails | Run `OPTIMIZE` and `VACUUM` on the delta table to reduce parquet files and row groups. If the table still exceeds limits, upgrade to a higher Fabric SKU. |
+| Capacity under memory pressure | Reduce concurrent workloads, optimize other models, or upgrade the capacity SKU. |
+
+For detailed query-level analysis using Performance Analyzer or SQL Server Profiler, see [Analyze query processing for Direct Lake semantic models](direct-lake-analyze-query-processing.md).
 
 ## Related content
 
