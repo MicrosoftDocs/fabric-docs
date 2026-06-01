@@ -1,7 +1,7 @@
 ---
 title: Add Semantic Enrichment with Metadata
 description: Learn how to add metadata, descriptions, synonyms, and additional metadata key-value pairs to ontology objects to improve semantic accuracy and agent performance.
-ms.date: 05/21/2026
+ms.date: 6/1/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -18,7 +18,7 @@ Semantic enrichment helps AI agents and downstream systems better understand you
 * **Synonyms** that capture alternative names and terms for entity types
 * **Additional metadata** that add domain-specific metadata as key-value pairs
 
-This metadata improves agent answer correctness, especially for prompts that depend on contextual information like units of measurement, sensitivity levels, or business definitions.
+This metadata improves agent answer correctness, especially for prompts that depend on contextual information like units of measurement, sensitivity levels, or business definitions. For an example of data agent responses before and after semantic enrichment, see the [Example with data agent](#example-with-data-agent) section.
 
 ## Prerequisites
 
@@ -113,6 +113,42 @@ You can modify or remove metadata attributes from entity types, properties, and 
 1. Make updates to the metadata as needed and select **Update**.
 
 1. Only custom metadata attributes can be deleted.
+
+## Example with data agent
+
+This section shows how semantic enrichment can improve the performance of a data agent.
+
+Consider the Lakeshore Retail example scenario used in the [Ontology (preview) tutorial](tutorial-0-introduction.md). Lakeshore is a retail ice cream seller that keeps data on sales and freezer streaming data. The tutorial ontology contains entity types *Store*, *Freezer*, *Products*, and *SaleEvent*. [Part 4 of the tutorial](#tutorial-4-create-data-agent.md) shows how to create a data agent that uses this ontology as a data source.
+
+With the basic set of information, the data agent is unable to answer the following question:
+
+*Which ice cream shops performed best this month and sold the most frozen desserts?*
+
+:::image type="content" source="media/how-to-add-semantic-enrichment/data-agent-before.png" alt-text="Screenshot of data agent responses before semantic enrichment. The data agent can't retrieve the requested information." lightbox="media/how-to-add-semantic-enrichment/data-agent-before.png":::
+
+To help the agent better understand and process the data, semantic enrichment lets you add details to the following parts of the ontology:
+
+* **Products (entity type)**
+    - Synonyms: `frozen desserts`, `ice cream items`, `desserts`, `menu items`, `treats`, and `products sold`.
+    - Additional metadata key value pairs: `seasonality: summer`, `shelfPlacement: frozen`, `requiresFreezerTruck: true`.
+    
+    :::image type="content" source="media/how-to-add-semantic-enrichment/example-products.png" alt-text="Screenshot of adding the listed semantic enrichment details to the Products entity type." lightbox="media/how-to-add-semantic-enrichment/example-products.png":::
+
+* **Category (property on Products entity type)**:
+    - Description: `Represents the high-level group or classification`.
+    - Additional metadata key value pairs: `supportSalesReporting: true`, `promotionPriority: high`.
+
+    :::image type="content" source="media/how-to-add-semantic-enrichment/example-category.png" alt-text="Screenshot of adding the listed semantic enrichment details to the Category property." lightbox="media/how-to-add-semantic-enrichment/example-category.png":::
+
+* **Sold (relationship)**:
+    - Description: `Represents products purchased by customers at a retail store location`.
+    - Additional metadata key value pairs: `AgentUsageHint: Use to connect products with store sales performance`, `ExampleQuestion: Which stores sold the most frozen desserts?`.
+
+    :::image type="content" source="media/how-to-add-semantic-enrichment/example-sold.png" alt-text="Screenshot of adding the listed semantic enrichment details to the Sold relationship." lightbox="media/how-to-add-semantic-enrichment/example-sold.png":::
+
+After adding these semantic enrichment details, the data agent is better able to relate the terms in the question to data in the ontology, enabling it to answer the question.
+
+:::image type="content" source="media/how-to-add-semantic-enrichment/data-agent-after.png" alt-text="Screenshot of data agent responses after semantic enrichment. The data agent's response is improved." lightbox="media/how-to-add-semantic-enrichment/data-agent-after.png":::
 
 ## Best practices for semantic enrichment
 
