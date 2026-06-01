@@ -1,6 +1,6 @@
 ---
 title: Add Semantic Enrichment with Metadata
-description: Learn how to add metadata, descriptions, synonyms, and custom attributes to ontology objects to improve semantic accuracy and agent performance.
+description: Learn how to add metadata, descriptions, synonyms, and additional metadata key-value pairs to ontology objects to improve semantic accuracy and agent performance.
 ms.date: 05/21/2026
 ms.topic: how-to
 ai-usage: ai-assisted
@@ -16,7 +16,7 @@ Semantic enrichment helps AI agents and downstream systems better understand you
 
 * **Descriptions** that explain the purpose and meaning of entity types, properties, and relationship types
 * **Synonyms** that capture alternative names and terms for entity types
-* **Custom attributes** that add domain-specific metadata as key-value pairs
+* **Additional metadata** that add domain-specific metadata as key-value pairs
 
 This metadata improves agent answer correctness, especially for prompts that depend on contextual information like units of measurement, sensitivity levels, or business definitions.
 
@@ -51,14 +51,14 @@ Entity types support descriptions, synonyms, and custom metadata attributes. Fol
 
 1. To add **Synonyms**, enter alternative names or terms that refer to the same entity type. Synonyms improve discoverability and help agents understand different ways users might reference the entity.
 
-1. To add custom attributes, enter key-value pairs under **Semantic properties**. Custom attributes let you add domain-specific metadata such as:
-    * Units of measurement
-    * Sensitivity classification
-    * Business owner information
-    * Data quality indicators
+1. To add additional metadata, enter key-value pairs under **Semantic properties**. Additional metadata lets you add key-value pairs to represent domain-specific metadata, like:
+    * Units of measurement (example: `Unit of measurement: cm`)
+    * Sensitivity classification (example: `Sensitivity: Confidential`)
+    * Business owner information (example: `Business owner: Elaheh Mansouri`)
+    * Data quality indicators (example: `Data quality: Incomplete`)
 
     > [!IMPORTANT]
-    > Custom attribute keys must be unique within each entity type. You can't use duplicate key names on the same entity type.
+    > Additional metadata keys must be unique within each entity type. You can't use duplicate key names on the same entity type.
 
 1. Select **Update** to apply your metadata changes.
 
@@ -76,10 +76,10 @@ Properties support descriptions and custom metadata attributes, but not synonyms
 
 1. Add a **Description** that explains what the property represents and how to interpret it.
 
-1. To add custom attributes, enter key-value pairs under **Semantic properties**.
+1. To add additional metadata, enter key-value pairs under **Semantic properties**.
 
     > [!IMPORTANT]
-    > Custom attribute keys must be unique within each property. You can't use duplicate key names on the same property.
+    > Additional metadata keys must be unique within each property. You can't use duplicate key names on the same property.
 
 1. Select **Update** to apply your changes.
 
@@ -93,10 +93,10 @@ Relationship types support descriptions and custom metadata attributes, but not 
 
 1. Add a **Description** that explains the nature of the relationship and when it applies.
 
-1. To add custom attributes, enter key-value pairs under **Semantic properties**.
+1. To add additional metadata, enter key-value pairs under **Semantic properties**.
 
     > [!IMPORTANT]
-    > Custom attribute keys must be unique within each relationship type. You can't use duplicate key names on the same relationship type.
+    > Additional metadata keys must be unique within each relationship type. You can't use duplicate key names on the same relationship type.
 
 1. Select **Update** to apply your metadata changes.
 
@@ -132,11 +132,11 @@ Follow these best practices to maximize the value of semantic enrichment:
 * Consider regional variations in terminology
 * Include both formal and informal terms that users might search for
 
-### Design meaningful custom attributes
+### Design meaningful key-value pairs for additional metadata
 
 * Use consistent key naming conventions across your ontology
 * Choose keys that are self-explanatory (for example, `unit`, `sensitivity`, `owner`)
-* Document your custom attribute standards for your team
+* Document your key-value additional metadata standards for your team
 * Consider how agents and downstream systems consume the attributes
 
 ### Optimize for agent performance
@@ -150,15 +150,15 @@ Follow these best practices to maximize the value of semantic enrichment:
 
 * Review and update descriptions when business logic changes
 * Add synonyms as new terminology emerges in your organization
-* Remove outdated custom attributes that are no longer relevant
+* Remove outdated additional metadata key-value pairs that are no longer relevant
 * Version your ontology to track metadata changes over time
 
 ## Limitations and considerations
 
-* **Duplicate keys**: Custom attribute keys must be unique within each entity type, property, or relationship type. If you add duplicate keys, you get an error.
+* **Duplicate keys**: Keys for additional metadata must be unique within each entity type, property, or relationship type. If you add duplicate keys, you get an error.
 * **Predefined metadata**: Description and Synonym fields are predefined. You can edit them or leave them empty, but you can't delete them.
 * **Synonyms**: Only entity types support synonyms. Properties and relationship types don't support synonyms.
-* **Object size limits**: Entity type objects have a maximum size limit. Consider this limit when you add large numbers of custom attributes.
+* **Object size limits**: Entity type objects have a maximum size limit. Consider this limit when you add large numbers of key-value pairs for additional metadata.
 
 ## Related content
 
