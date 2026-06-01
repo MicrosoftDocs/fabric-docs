@@ -93,12 +93,10 @@ In Automatic mode, queries use Direct Lake mode only when *all* of the following
 - No tables referenced by the semantic model have SQL dynamic data masking (DDM) defined at the SQL analytics endpoint.
 - No tables referenced by the semantic model have SQL [object-level security (OLS)](direct-lake-security-integration.md) defined at the SQL analytics endpoint.
 - The semantic model does not reference any tables based on unmaterialized SQL views.
-- No single table in the semantic model exceeds guardrail limits:
-    - Number of Parquet files is within limit
-    - Number of row groups is within limit
-    - Number of rows is within limit
-
-  For limits by SKU, see [Fabric capacity requirements](direct-lake-overview.md#fabric-capacity-requirements).
+- No single table in the semantic model exceeds guardrail limits as defined in [Fabric capacity requirements](direct-lake-overview.md#fabric-capacity-requirements):
+  - Number of Parquet files is within limit
+  - Number of row groups is within limit
+  - Number of rows is within limit
 - The semantic model has been refreshed (framed) since the underlying Delta tables were created or modified.
 - The capacity is not under memory pressure.
 
