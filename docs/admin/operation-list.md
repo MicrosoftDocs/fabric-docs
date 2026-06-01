@@ -774,8 +774,8 @@ The following operations are available in the audit logs.
 | Disable workspace inbound access protection | :::no-loc text="DisableWorkspaceInboundAccessProtection"::: | Disable workspace inbound access protection |
 | Update workspace outbound access protection connection rules | :::no-loc text="UpdateWorkspaceOutboundConnections"::: | Update workspace outbound access protection connection rules |
 | Update workspace outbound access protection gateway rules | :::no-loc text="UpdateWorkspaceOutboundGateways"::: | Update workspace outbound access protection gateway rules |
-| Enable git for workspace with restricted outbound access | :::no-loc text="EnableGitForWorkspaceWithRestrictedOutboundAccess"::: | Enable git for workspace with restricted outbound access |
-| Disable git for workspace with restricted outbound access | :::no-loc text="DisableGitForWorkspaceWithRestrictedOutboundAccess"::: | Disable git for workspace with restricted outbound access |
+| Enable Git for workspace with restricted outbound access | :::no-loc text="EnableGitForWorkspaceWithRestrictedOutboundAccess"::: | Enable Git for workspace with restricted outbound access |
+| Disable Git for workspace with restricted outbound access | :::no-loc text="DisableGitForWorkspaceWithRestrictedOutboundAccess"::: | Disable Git for workspace with restricted outbound access |
 | Get workspace IP firewall rules | :::no-loc text="GetFolderFirewallRules"::: | Get workspace IP firewall rules |
 | Update workspace IP firewall rules | :::no-loc text="SetFolderFirewallRules"::: | Update workspace IP firewall rules |
 
