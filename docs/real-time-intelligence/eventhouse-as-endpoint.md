@@ -5,6 +5,7 @@ ms.reviewer: tzgitlin, salilkanade, wiassaf
 ms.subservice: rti-eventhouse
 ms.topic: how-to
 ms.date: 05/04/2026
+ai-usage: ai-assisted
 ---
 
 # Enable Eventhouse endpoint for lakehouse and warehouse
@@ -177,6 +178,14 @@ The Eventhouse endpoint syncs source tables and schema changes within seconds. T
 
 * You can't enable the Eventhouse endpoint from within an open Lakehouse.
 * Changes to the source table schema don't appear at the Eventhouse endpoint.
+* When creating an Eventhouse endpoint, some shortcut tables may fail to be created. If one or more tables fail, an advisor banner appears at the top of the endpoint with the failure reason and the affected table names. The banner isn't dismissible. Common failure reasons include:
+
+  * **Source table not reachable** — The underlying OneLake table is inaccessible, for example, due to insufficient permissions (403 error). Verify that you have read access to the source table and retry.
+  * **Source table not in Delta format** — Shortcut creation requires the source table to be in Delta format. Convert the source table to Delta format and recreate the endpoint.
+  * **Unsupported Delta features** — The source table uses Delta features that aren't currently supported. Unsupported features include:
+    * Timestamp columns without timezone
+    * V2 checkpoints
+    * Catalog-managed tables
 
 ## Related content
 
