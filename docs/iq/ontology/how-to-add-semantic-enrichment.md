@@ -118,7 +118,7 @@ You can modify or remove metadata attributes from entity types, properties, and 
 
 This section shows how semantic enrichment can improve the performance of a data agent.
 
-Consider the Lakeshore Retail example scenario used in the [Ontology (preview) tutorial](tutorial-0-introduction.md). Lakeshore is a retail ice cream seller that keeps data on sales and freezer streaming data. The tutorial ontology contains entity types *Store*, *Freezer*, *Products*, and *SaleEvent*. [Part 4 of the tutorial](#tutorial-4-create-data-agent.md) shows how to create a data agent that uses this ontology as a data source.
+Consider the Lakeshore Retail example scenario used in the [Ontology (preview) tutorial](tutorial-0-introduction.md). Lakeshore is a retail ice cream seller that keeps data on sales and freezer streaming data. The tutorial ontology contains entity types *Store*, *Freezer*, *Products*, and *SaleEvent*. [Part 4 of the tutorial](tutorial-4-create-data-agent.md) shows how to create a data agent that uses this ontology as a data source.
 
 With the basic set of information, the data agent is unable to answer the following question:
 
