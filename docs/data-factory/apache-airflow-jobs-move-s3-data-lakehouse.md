@@ -81,7 +81,7 @@ The `apache-airflow-microsoft-fabric-plugin` is preinstalled in Fabric Apache Ai
 
 ```python
 from airflow import DAG
-from apache_airflow_microsoft_fabric_plugin.operators.fabric import FabricRunItemOperator
+from airflow.providers.microsoft.fabric.operators.run_item import MSFabricRunJobOperator
 from datetime import datetime
 
 with DAG(
