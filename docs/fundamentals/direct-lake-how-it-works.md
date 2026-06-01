@@ -102,24 +102,17 @@ Queries use Direct Lake mode only when *all* of the following conditions are sat
 
 A single table exceeding any guardrail can prevent Direct Lake mode for the entire model.
 
-### What happens when conditions are not met
-
-The behavior depends on the **DirectLakeBehavior** setting:
-
-- **Automatic** (default): The query silently falls back to DirectQuery mode. Reports continue to work, but performance might be slower.
-- **DirectLakeOnly**: The query fails with an error. 
-
-Use DirectLakeOnly mode during development to surface these errors early and fix the root cause before users encounter silent performance degradation.
-
 ### Control fallback with DirectLakeBehavior
 
-You can control fallback of your Direct Lake semantic models by setting the **DirectLakeBehavior** property. This setting only applies to Direct Lake on SQL endpoints.
+When Direct Lake conditions aren't met, the behavior of your semantic models depends on the **DirectLakeBehavior** setting. This setting only applies to Direct Lake on SQL endpoints.
+
+You can set the **DirectLakeBehavior** property to the following three values:
 
 | Value | Description |
 | --- | --- |
-| **Automatic** | (Default) Falls back to DirectQuery mode silently when conditions are not met. |
-| **DirectLakeOnly** | Errors out instead of falling back. Use during development. |
-| **DirectQueryOnly** | Always uses DirectQuery mode. Use to measure fallback performance. |
+| **Automatic** | (Default) If conditions aren't met, the query silently falls back to DirectQuery mode. Reports continue to work, but performance might be slower. Use this mode in production to preserve functionality for your users. |
+| **DirectLakeOnly** | If conditions aren't met, the query fails with an error. Use this mode during development to identify and resolve errors. |
+| **DirectQueryOnly** | The query always uses DirectQuery mode. Use to this mode during development to measure fallback performance. |
 
 #### Set DirectLakeBehavior
 
