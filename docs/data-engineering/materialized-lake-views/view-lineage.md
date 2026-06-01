@@ -55,7 +55,7 @@ The lineage page includes these actions:
 
 - **Search in lineage**: Search for a specific materialized lake view or table by name within the lineage graph.
 
-:::image type="content" source="./media/view-lineage/view-refresh.png" alt-text="Screenshot showing how to refresh a lineage UI." border="true" lightbox="./media/view-lineage/search-filter.png":::
+:::image type="content" source="./media/view-lineage/search-filter.png" alt-text="Screenshot showing how to refresh a lineage UI." border="true" lightbox="./media/view-lineage/search-filter.png":::
 
 - **New materialized lake view**: Opens a notebook where you can create or modify MLVs.
 
