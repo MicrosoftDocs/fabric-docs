@@ -1,7 +1,8 @@
 ---
 title: Use ai.similarity with PySpark
 description: Learn how to compare string values and calculate semantic similarity scores by using the ai.similarity function with PySpark.
-ms.reviewer: vimeland
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions

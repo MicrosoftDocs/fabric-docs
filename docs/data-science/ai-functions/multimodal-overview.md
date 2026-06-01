@@ -1,9 +1,10 @@
 ---
 title: Use multimodal input with AI functions
 description: Learn how to use file-based multimodal input, such as images, PDFs, and text files, with AI functions in Microsoft Fabric.
-ms.reviewer: vimeland
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: how-to
-ms.date: 02/18/2026
+ms.date: 05/12/2026
 ms.search.form: AI functions
 ai-usage: ai-assisted
 ---
@@ -61,7 +62,7 @@ Multimodal AI functions share the same prerequisites as text-based AI functions.
 Organize your files in a folder that can be referenced by a path or a glob-style string.
 
 > [!TIP]
-> Starter notebooks are available in Fabric that demonstrate end-to-end multimodal scenarios, including image, PDF, and text ingestion, schema inference, and extraction. Look for the AI functions starter notebooks in your Fabric workspace to accelerate setup and usage.
+> Use the [AI Functions Starter Notebooks](https://aka.ms/fabric-aifunctions-starter-notebooks) for end-to-end AI functions examples that use all AI functions. The starter notebooks include one notebook for pandas and one notebook for PySpark.
 
 ### Example
 You can store files in a Lakehouse attached to your notebook.
@@ -621,7 +622,7 @@ For more information about `ai.summarize`, see the detailed documentation for [p
 
 # Summarize file content from a single column
 custom_df["summary"] = custom_df["file_path"].ai.summarize(
-    instructions="Talk like a pirate! You only have one minute",
+    instructions="Summarize this file in one sentence for a support analyst.",
     column_type="path",
 )
 display(custom_df)
@@ -634,7 +635,7 @@ display(custom_df)
 
 # Summarize file content from a single column
 results = custom_df.ai.summarize(
-    instructions="Talk like a pirate! You only have one minute",
+    instructions="Summarize this file in one sentence for a support analyst.",
     input_col="file_path",
     input_col_type="path",
     output_col="summary",
@@ -644,7 +645,7 @@ display(results)
 
 ---
 
-You may summarize values across all columns in a DataFrame by omitting the input column and specifying file path columns with `column_type_dict` (pandas) or `col_types` (PySpark):
+You can summarize values across all columns in a DataFrame by omitting the input column and specifying file path columns with `column_type_dict` (pandas) or `col_types` (PySpark):
 
 # [pandas](#tab/pandas)
 
@@ -705,7 +706,7 @@ display(results)
 
 ## Evaluate output quality
 
-Evaluation notebooks (Eval) are available for AI functions. These notebooks provide structured workflows that use LLM-as-a-Judge to assess multimodal outputs and compute metrics such as accuracy, precision, recall, F1, coherence, consistency, and relevance. You can use these workflows to validate the quality of classification, extraction, summarization, and other AI function results before moving to production.
+Use the [AI Functions Eval Notebooks](https://aka.ms/fabric-aifunctions-eval-notebooks) for structured workflows that use LLM-as-a-Judge to assess multimodal outputs and compute metrics such as accuracy, precision, recall, F1, coherence, consistency, and relevance. You can use these workflows to validate the quality of classification, extraction, summarization, and other AI function results before moving to production.
 
 ## Monitor cost and capacity usage
 
@@ -717,11 +718,13 @@ AI functions include a configurable progress bar cost calculator that displays r
 
 For details on configuring these modes, see [Configure AI functions](./pandas/configuration.md).
 
-The Fabric Capacity Metrics App also includes a dedicated **AI Functions** operation that separates AI functions usage from Spark and Dataflows Gen2. You can use this view to track multimodal AI functions consumption and identify capacity impact. For more information, see [What is the Microsoft Fabric Capacity Metrics app?](../../enterprise/metrics-app.md).
+The Fabric Capacity Metrics App also includes a dedicated **AI Functions** operation that separates AI functions usage from Spark and Dataflow Gen2. You can use this view to track multimodal AI functions consumption and identify capacity impact. For more information, see [What is the Microsoft Fabric Capacity Metrics app?](../../enterprise/metrics-app.md).
 
 ## Related content
 
 - Learn more about the [full set of AI functions](./overview.md).
+- Try the [AI Functions Starter Notebooks](https://aka.ms/fabric-aifunctions-starter-notebooks).
+- Evaluate output quality with the [AI Functions Eval Notebooks](https://aka.ms/fabric-aifunctions-eval-notebooks).
 - Detect sentiment with [`ai.analyze_sentiment` in pandas](./pandas/analyze-sentiment.md) or [`ai.analyze_sentiment` in PySpark](./pyspark/analyze-sentiment.md).
 - Categorize text with [`ai.classify` in pandas](./pandas/classify.md) or [`ai.classify` in PySpark](./pyspark/classify.md).
 - Extract entities with [`ai.extract` in pandas](./pandas/extract.md) or [`ai.extract` in PySpark](./pyspark/extract.md).

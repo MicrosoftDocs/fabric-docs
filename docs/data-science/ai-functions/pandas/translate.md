@@ -1,7 +1,8 @@
 ---
 title: Use ai.translate with pandas
 description: Learn how to use the ai.translate function to translate input text into a new language of your choice with pandas.
-ms.reviewer: vimeland
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions

@@ -1,7 +1,8 @@
 ---
 title: Customize AI functions with pandas
 description: Learn how to configure AI functions in Fabric for custom use. For example, modifying the underlying LLM or other related settings with pandas.
-ms.reviewer: nareshvenkat, singhrana
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions

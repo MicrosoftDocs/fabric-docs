@@ -1,7 +1,8 @@
 ---
 title: Use ai.fix_grammar with pandas
 description: Learn how to correct the spelling, grammar, and punctuation of input text by using the ai.fix_grammar function with pandas.
-ms.reviewer: vimeland
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions

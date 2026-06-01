@@ -1,10 +1,12 @@
 ---
 title: Use ai.summarize with PySpark
-description: Learn how to to produce summaries of input text by using the ai.summarize function with PySpark.
-ms.reviewer: vimeland
+description: Learn how to produce summaries of input text by using the ai.summarize function with PySpark.
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: how-to
-ms.date: 11/13/2025
+ms.date: 05/12/2026
 ms.search.form: AI functions
+ai-usage: ai-assisted
 ---
 
 # Use ai.summarize with PySpark
@@ -112,16 +114,47 @@ This example code cell provides the following output:
 
 ---
 
+## Customize summaries with instructions
+
+Use the `instructions` parameter to control the tone, length, audience, or focus of generated summaries without changing the source text.
+
+# [Summarize for an executive audience](#tab/pyspark-instructions-column)
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+summaries = df.ai.summarize(
+    input_col="description",
+    output_col="executive_summary",
+    instructions="Write one concise sentence for a business executive. Focus on product value and avoid marketing language.",
+)
+display(summaries)
+```
+
+# [Summarize across all columns](#tab/pyspark-instructions-dataframe)
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+summaries = df.ai.summarize(
+    output_col="release_note",
+    instructions="Write one sentence that includes the product name, release year, and main customer benefit.",
+)
+display(summaries)
+```
+
+---
+
 ## Multimodal input
 
-The `ai.summarize` function supports file-based multimodal input. You can summarize the content of images, PDFs, and text files by setting `input_col_type="path"` for single-column mode, or `col_types` for DataFrame-level mode. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+The `ai.summarize` function supports file-based multimodal input. This capability is part of multimodal AI functions, which process images, PDFs, and text files alongside text data. You can summarize file content by setting `input_col_type="path"` for single-column mode, or `col_types` for DataFrame-level mode. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
 
 ```python
 # This code uses AI. Always review output for mistakes.
 
 # Summarize file content from a single column
 results = custom_df.ai.summarize(
-    instructions="Talk like a pirate! You only have one minute",
+    instructions="Summarize this file in one sentence for a support analyst.",
     input_col="file_path",
     input_col_type="path",
     output_col="summary",
@@ -147,7 +180,7 @@ display(results)
 - Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
 - Categorize text with [ai.classify](./classify.md).
 - Generate vector embeddings with [ai.embed](./embed.md).
-- Extract entities with [ai_extract](./extract.md).
+- Extract entities with [ai.extract](./extract.md).
 - Fix grammar with [ai.fix_grammar](./fix-grammar.md).
 - Answer custom user prompts with [ai.generate_response](./generate-response.md).
 - Calculate similarity with [ai.similarity](./similarity.md).

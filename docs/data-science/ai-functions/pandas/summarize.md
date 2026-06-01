@@ -1,10 +1,12 @@
 ---
 title: Use ai.summarize with pandas
-description: Learn how to to produce summaries of input text by using the ai.summarize function with pandas.
-ms.reviewer: vimeland
+description: Learn how to produce summaries of input text by using the ai.summarize function with pandas.
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: how-to
-ms.date: 11/13/2025
+ms.date: 05/12/2026
 ms.search.form: AI functions
+ai-usage: ai-assisted
 ---
 
 # Use ai.summarize with pandas
@@ -42,7 +44,7 @@ df["summaries"] = df.ai.summarize()
 
 | Name | Description |
 |---|---|
-| `instructions` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains more context for the AI model, such as specifying output length, tone, or more. More precise instructions will yield better results. |
+| `instructions` <br> Optional | A string that provides more context for the AI model, such as output length, tone, audience, or focus. More precise instructions produce better results. |
 
 ## Returns
 
@@ -108,15 +110,43 @@ This example code cell provides the following output:
 
 ---
 
+## Customize summaries with instructions
+
+Use the `instructions` parameter to control the tone, length, audience, or focus of generated summaries without changing the source text.
+
+# [Summarize for an executive audience](#tab/pandas-instructions-column)
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+df["executive_summary"] = df["description"].ai.summarize(
+    instructions="Write one concise sentence for a business executive. Focus on product value and avoid marketing language."
+)
+display(df)
+```
+
+# [Summarize across all columns](#tab/pandas-instructions-dataframe)
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+df["release_note"] = df.ai.summarize(
+    instructions="Write one sentence that includes the product name, release year, and main customer benefit."
+)
+display(df)
+```
+
+---
+
 ## Multimodal input
 
-The `ai.summarize` function supports file-based multimodal input. You can summarize the content of images, PDFs, and text files by setting `column_type="path"` when your column contains file path strings. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+The `ai.summarize` function supports file-based multimodal input. This capability is part of multimodal AI functions, which process images, PDFs, and text files alongside text data. You can summarize file content by setting `column_type="path"` when your column contains file path strings. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
 
 ```python
 # This code uses AI. Always review output for mistakes.
 
 custom_df["summary"] = custom_df["file_path"].ai.summarize(
-    instructions="Talk like a pirate! You only have one minute",
+    instructions="Summarize this file in one sentence for a support analyst.",
     column_type="path",
 )
 display(custom_df)
@@ -128,7 +158,7 @@ display(custom_df)
 - Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
 - Categorize text with [ai.classify](./classify.md).
 - Generate vector embeddings with [ai.embed](./embed.md).
-- Extract entities with [ai_extract](./extract.md).
+- Extract entities with [ai.extract](./extract.md).
 - Fix grammar with [ai.fix_grammar](./fix-grammar.md).
 - Answer custom user prompts with [ai.generate_response](./generate-response.md).
 - Calculate similarity with [ai.similarity](./similarity.md).

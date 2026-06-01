@@ -1,7 +1,8 @@
 ---
 title: Use ai.embed with PySpark
 description: Learn how to convert text into numeric vectors that capture its meaning and context by using the ai.embed function with PySpark.
-ms.reviewer: vimeland
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions
