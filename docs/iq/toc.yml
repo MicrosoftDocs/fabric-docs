@@ -39,6 +39,8 @@ items:
       href: ontology/how-to-bind-data.md
     - name: Add relationship types
       href: ontology/how-to-create-relationship-types.md
+    - name: Add semantic enrichment
+      href: ontology/how-to-add-semantic-enrichment.md
     - name: View entity type details
       href: ontology/how-to-view-entity-type-details.md
     - name: Use rules
