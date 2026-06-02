@@ -8,7 +8,7 @@ ai-usage: ai-assisted
 
 # What is Fabric IQ?
 
-*Fabric IQ* is part of Microsoft IQ, a set of capabilities that form the enterprise intelligence layer of the Microsoft stack. In Microsoft IQ, Fabric IQ works alongside [Work IQ](/microsoft-365/copilot/extensibility/work-iq), [Foundry IQ](/azure/foundry/agents/concepts/what-is-foundry-iq), and [Web IQ](https://aka.ms/WebIQNew) to provide context for a complete view of your organization. Work IQ provides context on how employees work, Foundry IQ provides context on an organization's policies and authoritative documents, Web IQ provides context from the web, and Fabric IQ provides context on business entities and data.
+*Fabric IQ* is part of [Microsoft IQ](/microsoft-iq), a set of capabilities that form the enterprise intelligence layer of the Microsoft stack. In Microsoft IQ, Fabric IQ works alongside [Work IQ](/microsoft-365/copilot/extensibility/work-iq), [Foundry IQ](/azure/foundry/agents/concepts/what-is-foundry-iq), and [Web IQ](https://aka.ms/WebIQNew) to provide context for a complete view of your organization. Work IQ provides context on how employees work, Foundry IQ provides context on an organization's policies and authoritative documents, Web IQ provides context from the web, and Fabric IQ provides context on business entities and data.
 
 Fabric IQ provides context on the state of your business. It is grounded in all the analytical, real-time, and operational data about your business, but data alone is not enough. Fabric IQ elevates that data up to the language of your business. With that richer context, people and agents can correctly interpret the data and reason and make decisions in terms of business concepts and objectives.
 
