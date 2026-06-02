@@ -978,11 +978,11 @@ Updates Apache Airflow workspace settings.
 }
 ```
 
-## Service Principal Name (SPN) Support
+## Service Principal Name (SPN) and workspace identity support
 
-Service Principal Name (SPN) is supported for Apache Airflow Jobs in Fabric Data Factory.
+Apache Airflow Jobs in Fabric Data Factory support two authentication methods for outbound API calls: service principals (SPN) and [workspace identity](apache-airflow-jobs-workspace-identity.md). Workspace identity uses the managed identity associated with the workspace, eliminating the need to manage credentials manually. For Fabric-to-Fabric scenarios, workspace identity is the recommended approach.
 
-- **Authentication**: Airflow uses a service principal to authenticate outbound API calls (for example, to Azure services or other secured endpoints). This allows DAGs to run unattended while ensuring only approved identities can access downstream resources.
+- **Authentication**: Airflow uses a service principal or workspace identity to authenticate outbound API calls (for example, to Azure services or other secured endpoints). This allows DAGs to run unattended while ensuring only approved identities can access downstream resources.
 - **Configuration**: To use an SPN with Airflow, create a service principal in Azure Active Directory and grant it the required permissions for the target service. For example, if your Airflow DAG reads from or writes to Azure Data Lake Storage, the service principal must be assigned the appropriate storage roles (such as Storage Blob Data Reader or Contributor).
 - **Connection**: When configuring Airflow connections in Fabric Data Factory, you can reference a service principal by providing its tenant ID, client ID, and client secret. These credentials are then used by Airflow operators and hooks when making authenticated API calls.
 - **Security**: Using SPNs avoids embedding user credentials directly in DAG code or configuration files. It also simplifies credential rotation, access auditing, and access revocation without requiring changes to Airflow DAG logic.

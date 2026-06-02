@@ -44,6 +44,8 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 
 ## Security limitations
 
+- Mirroring doesn't support customer managed keys (CMK) on OneLake.
+
 - Azure Cosmos DB read-write account keys and Microsoft Entra ID authentication with role-based access control are the only supported mechanisms to connect to the source account. Read-only account keys and managed identities aren't supported.
 
   - For Microsoft Entra ID authentication, the following role-based access control permissions are required:
