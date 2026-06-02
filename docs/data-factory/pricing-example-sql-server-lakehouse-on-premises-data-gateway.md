@@ -32,9 +32,9 @@ This scenario uses the following resources:
 
 ## Cost estimation using the Fabric Metrics App
 
-The Copy job consumes the **Data Movement** meter for the full copy and the **Data Movement – Incremental copy** meter for incremental runs, just like cloud-based sources. The gateway only affects data connectivity and doesn't affect pricing meters.
+The Copy job consumes the **Data Movement** meter for the full copy and the **Data Movement – Incremental copy** meter for incremental copy, just like cloud-based sources. The gateway only affects data connectivity and doesn't affect pricing meters.
 
-### Full copy (initial load)
+### Full copy
 
 In this example, the copy job uses:
 
@@ -47,48 +47,29 @@ For a copy job, each unit of intelligent throughput optimization consumes **1.5 
 
 128 × 1.5 × (9 / 60) = 28.8 CU hours
 
-**Convert to CU seconds:**
+At **$0.18 per CU hour**:
 
-28.8 × 3600 = 103,680 CU seconds
+Total cost = 28.8 × $0.18 = $5.18
 
-### Incremental copy (daily load)
 
-In this example, the daily incremental load copies **5 GB** of new data with:
+### Incremental copy (initial full load and subsequent runs)
 
-- Intelligent throughput optimization: **4**
-- Duration: **~1 minute**
+In this example, the Copy job starts with an initial full load lasting 9 minutes, followed by daily incremental runs that each take 1 minute：
+
+- Intelligent throughput optimization for initial ful load: **128**
+- Intelligent throughput optimization for subsequent runs: **4**
 
 For a copy job, each unit of intelligent throughput optimization consumes **3 CU hours per hour** for incremental copy.
 
 **Utilized CU hours:**
 
-4 × 3 × (1 / 60) = 0.2 CU hours
+128 × 3 × (9 / 60) + 4 × 3 × 1 / 60 = 57.8 CU hours
 
-**Convert to CU seconds:**
-
-0.2 × 3600 = 720 CU seconds
-
-## Total cost estimate
-
-| **Metric**                              | **Consumption**  |
-|-----------------------------------------|------------------|
-| Data movement CU seconds (full copy)    | 103,680          |
-| Data movement – incremental CU seconds  | 720              |
-
-**Total CU hours:**
-
-(103,680 + 720) / 3,600 = 29 CU hours
 
 At **$0.18 per CU hour**:
 
-Total cost = 29 × $0.18 = $5.22
+Total cost = 57.8 × $0.18 = $10.4
 
-This cost covers:
-
-- One-time initial load of 500 GB from on-premises
-- Plus one incremental load of 5 GB
-
-Daily incremental loads incur only the incremental copy cost.
 
 ## Key takeaways for on-premises scenarios
 

@@ -2,7 +2,7 @@
 title: "SQL database Overview"
 description: Learn about SQL database in Microsoft Fabric.
 ms.reviewer: antho, sukkaur
-ms.date: 02/23/2026
+ms.date: 05/19/2026
 ms.topic: overview
 ms.search.form: product-databases, SQL database Overview, Databases Overview
 ---
@@ -25,7 +25,6 @@ SQL database in Fabric is:
 - Set up for analytics by automatically replicating the data into OneLake near real time
 - Ready for AI development scenarios with features like semantic search and retrieval-augmented generation (RAG)
 - Integrated with development frameworks and analytics
-- Based on the underlying technology of [Mirroring in Fabric](../../mirroring/overview.md)
 - Easy to manage, with intelligent performance features enabled by default, like [Automatic index creation with Automatic Tuning](/azure/azure-sql/database/automatic-tuning-overview?view=azuresql-db&preserve-view=true)
 - Queried in all the same ways as [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), plus a [web-based editor in the Fabric portal](query-editor.md).
 

@@ -3,7 +3,7 @@ title: What is Copy job in Data Factory
 description: This article explains the concept of the Copy job and the benefits it provides.
 ms.reviewer: yexu
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 04/24/2026
 ms.search.form: copy-job-tutorials 
 ms.custom: copy-job
 ai-usage: ai-assisted
@@ -50,6 +50,16 @@ See more details in:
 
 - [Incremental copy in Copy job](incremental-copy-job.md).
 - [Change data capture (CDC) in Copy Job](/fabric/data-factory/cdc-copy-job).
+
+### Full and incremental copy of data subsets with database queries
+
+You can copy subsets of data from your tables using database queries, which unlocks a wide range of data ingestion scenarios. For example:
+
+- Copy only data for a specific region from a table that has a region column to meet compliance requirements for data ingestion.
+- Copy only the top N rows for testing or sampling.
+- Project a column to a supported type (for example, cast a numeric `varchar` column to an integer) so you can use it as the incremental column. For more information, see [Incremental copy in Copy job](incremental-copy-job.md#use-an-unsupported-column-type-as-a-watermark-by-casting-with-query).
+
+This capability supports both full and incremental copies on table subsets based on your custom queries, which lets you flexibly select and filter data before loading. Your data ingestion becomes more efficient, precise, and tailored to your needs.
 
 ### Update methods (Append, Overwrite, Merge, SCD Type 2) 
 
@@ -100,7 +110,7 @@ Copy job automatically optimizes copy performance based on the data volume, so y
 
 When copying data from large tables, you can also optionally enable **auto-partitioning (Preview)**. With auto-partitioning, Copy job analyzes the source schema and data characteristics to determine the optimal partitioning strategy. It automatically selects the right partition column, computes balanced boundaries, and executes parallel reads — all without any user input. This can dramatically increase throughput for large datasets. You can turn on the auto-partitioning toggle under **Advanced settings** in your Copy job.
 
-Auto-partitioning is supported for watermark-based incremental copy including both initial full copy and incremental copy, on the following connectors: Amazon RDS for SQL Server, Azure SQL Database, Azure Synapse Analytics (SQL Pool), Fabric Data Warehouse, SQL database in Fabric, SQL Server, and Azure SQL Managed Instance.
+Auto-partitioning is supported for watermark-based incremental copy including both initial full copy and incremental copy, on the following connectors: Amazon RDS for SQL Server, Azure SQL Database, Azure Synapse Analytics (SQL Pool), Fabric Data Warehouse, SQL database in Fabric, SQL Server, Azure SQL Managed Instance, Oracle, SAP HANA, and Fabric Lakehouse tables.
 
 ### Run options (Run, Schedule, Event Trigger)
 
@@ -128,18 +138,6 @@ Additionally, with Variable library support, you can parameterize connections in
 
 See more details in [CI/CD for Copy job](/fabric/data-factory/cicd-copy-job).
 
-### Observability
-
-See more details in [How to monitor a Copy job](monitor-copy-job.md) and [Workspace monitoring for Copy job](copy-job-workspace-monitoring.md)
-
-
-## Region availability
-
-Copy job has the same [regional availability as Fabric](../admin/region-availability.md).
-
-## Pricing
-
-You can get the details in [**pricing Copy job**](pricing-copy-job.md).
 
 ## Supported connectors
 
@@ -155,6 +153,19 @@ Submit your feedback on [Fabric Ideas](https://community.fabric.microsoft.com/t5
 ## Data type mapping
 
 [!INCLUDE [data-type-mapping-data-movement](includes/data-type-mapping-data-movement.md)]
+
+### Observability
+
+See more details in [How to monitor a Copy job](monitor-copy-job.md) and [Workspace monitoring for Copy job](copy-job-workspace-monitoring.md)
+
+
+## Region availability
+
+Copy job has the same [regional availability as Fabric](../admin/region-availability.md).
+
+## Pricing
+
+You can get the details in [**pricing Copy job**](pricing-copy-job.md).
 
 ## Related content
 

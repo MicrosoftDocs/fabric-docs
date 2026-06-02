@@ -21,7 +21,7 @@ For architecture and destination selection across the Fabric Apache Spark Diagno
 
 ## Migrate from the Data Collector API
 
-If you're currently using HTTP Data Collector API, migrate to Log Ingestion API to align with current Azure Monitor ingestion patterns.
+The [HTTP Data Collector API](/azure/azure-monitor/logs/data-collector-api) is deprecated. [Migrate to Log Ingestion API](/azure/azure-monitor/logs/custom-logs-migrate) to avoid disruption and align with current Azure Monitor ingestion patterns.
 
 Key changes in the new model:
 
@@ -60,8 +60,10 @@ If you don't have one, [create a Log Analytics workspace in the Azure portal](ht
 
 ### Step 2. Create a Data Collection Endpoint (DCE)
 
-Create a Data Collection Endpoint (DCE) in the Azure portal. The DCE provides the endpoint URI that you configure in Spark properties for Log Ingestion API. The region of the DCE must be the same as the region of your Log Analytics workspace.
+Create a Data Collection Endpoint (DCE) in the Azure portal. The DCE provides the endpoint URI that you configure in Spark properties for Log Ingestion API. The region of the DCE must be the same as the region of your Log Analytics workspace. 
 
+Users can optionally create one or more table types (`logs`, `events`, `metrics`, `metadata`) depending on their scenario, and each table type has its own corresponding DCR configuration and stream name. Only create and configure the table types you actually need.
+ 
 1. In the [**Azure portal**](https://portal.azure.com/#home), go to **Monitor** in the left navigation pane.
 1. Under **Settings**, select **Data collection endpoints**, and then select **Create**.
 
@@ -75,10 +77,10 @@ When creating custom log tables, you must configure a Data Collection Rule (DCR)
 
 The following predefined JSON schema samples each map to a specific data type. Download the sample that fits your scenario, and upload it when you create the associated custom table and DCR.
 
-- Spark event logs - [Event table JSON schema sample](https://raw.githubusercontent.com/microsoft/fabric-samples/refs/heads/main/docs-samples/data-engineering/SparkMonitoring/TableSchemaSamples/fabric-sample-table-event-schema.json)
-- Spark driver and executor logs - [Log table JSON schema sample](https://raw.githubusercontent.com/microsoft/fabric-samples/refs/heads/main/docs-samples/data-engineering/SparkMonitoring/TableSchemaSamples/fabric-sample-table-log-schema.json)
-- Spark metrics - [Metric table JSON schema sample](https://raw.githubusercontent.com/microsoft/fabric-samples/refs/heads/main/docs-samples/data-engineering/SparkMonitoring/TableSchemaSamples/fabric-sample-table-metric-schema.json)
-- Platform metadata - [Platform metadata table JSON schema sample](https://raw.githubusercontent.com/microsoft/fabric-samples/refs/heads/main/docs-samples/data-engineering/SparkMonitoring/TableSchemaSamples/fabric-sample-table-metadata-schema.json)
+- Spark event logs - [Event table JSON schema sample](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/fabric-sample-table-event-schema.json)
+- Spark driver and executor logs - [Log table JSON schema sample](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/fabric-sample-table-log-schema.json)
+- Spark metrics - [Metric table JSON schema sample](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/fabric-sample-table-metric-schema.json)
+- Platform metadata - [Platform metadata table JSON schema sample](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/fabric-sample-table-metadata-schema.json)
 
 Here's an example log table JSON schema sample for Spark driver and executor logs in Azure Log Analytics. Use this schema as a reference when creating your custom tables and DCRs for log ingestion.
 
@@ -143,6 +145,15 @@ Create a custom table in your Log Analytics workspace with the Log Ingestion API
 1. Grant the app the [**Monitoring Metrics Publisher**](/azure/role-based-access-control/built-in-roles/monitor#monitoring-metrics-publisher) role on each table's DCR resource. For role assignment steps, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
 
    :::image type="content" source="media\data-collector-api-to-log-ingestion-api\monitoring-metrics-publisher-role.png" alt-text="Screenshot showing the Monitoring Metrics Publisher role assignment." lightbox="media\data-collector-api-to-log-ingestion-api\monitoring-metrics-publisher-role.png":::
+
+1. Retrieve the **stream name** and **DCR ID**. You can retrieve the **DCR ID** and **stream name** for each table you created from the **Data Collection Rule (DCR)** resource **JSON** view in the Azure portal. 
+
+   The stream name format is always: `Custom-<Log Analytics table name>`.
+   For example, if your table name is `AppLogs_CL`, the stream name will be: `Custom-AppLogs_CL`.
+   
+   In the next step, you will configure the corresponding `logStream`, `eventStream`, `metricStream`, or `metaStream` values and logDcr , eventDcr, metricDcr, metaDcr values in the Spark configuration using these stream names. 
+
+   :::image type="content" source="media\data-collector-api-to-log-ingestion-api\stream-name.png" alt-text="Screenshot showing the retrieve the stream name and DCR ID." lightbox="media\data-collector-api-to-log-ingestion-api\stream-name.png":::
 
 ### Step 6. Configure Spark properties
 

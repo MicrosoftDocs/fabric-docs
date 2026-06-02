@@ -19,7 +19,7 @@ You can create a Direct Lake semantic model in [Power BI Desktop](direct-lake-po
 
 There are two forms of Direct Lake storage mode, summarized here. See the [Key concepts and terminology](direct-lake-overview.md#key-concepts-and-terminology) section for more information.
 
-- Use **Direct Lake on OneLake** for compatibility with [OneLake security](../onelake/security/get-started-security.md#onelake-security-preview), more modeling features, and faster query performance.
+- Use **Direct Lake on OneLake** for compatibility with [OneLake security](../onelake/security/get-started-security.md#onelake-security), more modeling features, and faster query performance.
 - Use **Direct Lake on SQL** when you depend on security rules defined in the SQL analytics endpoint with [delegated identity mode](../onelake/security/sql-analytics-endpoint-onelake-security.md#access-modes-in-sql-analytics-endpoint), or you need fallback to DirectQuery.
 
 The following table shows the most common creation methods for each type of Direct Lake semantic model.

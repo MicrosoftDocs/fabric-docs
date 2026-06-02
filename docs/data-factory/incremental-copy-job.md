@@ -3,7 +3,7 @@ title: Incremental copy in Copy job
 description: Learn how incremental copy works in Copy job, including supported watermark column types, how NULL watermark values are handled, and how to reset incremental copy.
 ms.reviewer: yexu
 ms.topic: how-to
-ms.date: 04/23/2026
+ms.date: 04/24/2026
 ms.search.form: copy-job-tutorials
 ms.custom: copy-job
 ai-usage: ai-assisted
@@ -79,6 +79,26 @@ Copy job supports the following watermark column types for watermark-based incre
 - **Date**: Date-only columns such as `LastUpdatedDate`. Because date values don’t include a time component, Copy job automatically applies delayed extraction from the last day to ensure there’s no data loss or overlap between runs, safely managing incremental windows. Date is suitable for daily batch processes.
 - **String (interpreted as datetime)**: String columns whose values can be interpreted as datetime. This lets you use incremental copy even when timestamps are stored as strings, with no need to cast or transform columns or make schema changes in the source.
 - **Integer**: An increasing number that tracks row changes.
+
+### Use an unsupported column type as a watermark by casting with Query
+
+If the column you want to use as a watermark isn't one of the supported types, but its values are actually comparable, you can still use it for incremental copy by casting it to a supported type in the **Query** feature of Copy job. For example, a `varchar` column that only stores numeric values like `"1001"`, `"1002"`, and so on can be cast to an integer.
+
+When you configure the source, use the **Query** option to project the column as a supported type (for example, cast a numeric `varchar` to an integer). Copy job then treats the projected column as the supported type, so you can select it as the incremental column.
+
+For example, if `CustomerID` is a `varchar` column that stores integer values, you can use a query similar to the following to make it available as an integer watermark column:
+
+```sql
+SELECT
+    CAST(CustomerID AS INT) AS CustomerID,
+    Name,
+    LastUpdated
+FROM dbo.Customers
+```
+
+Then select the projected `CustomerID` column as the incremental column.
+
+This approach only works when the underlying values are comparable, such as numeric values or dates stored as strings. Truly alphanumeric values, such as IDs that mix letters and numbers in arbitrary order, can't be used as a watermark column because their values aren't comparable in a way that reliably identifies new or changed rows.
 
 ### How NULL values in a watermark column are handled
 

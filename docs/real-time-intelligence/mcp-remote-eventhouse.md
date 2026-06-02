@@ -2,11 +2,11 @@
 title: Get Started With the Remote MCP Server for Eventhouse (Preview)
 description: Learn how to set up and use the remote Eventhouse MCP server to enable AI agents to query real-time data with natural language and KQL integration.
 ms.topic: how-to
-ms.date: 04/13/2026
+ms.date: 05/24/2026
 ms.search.form: MCP, RTI, AI, Eventhouse
 ms.reviewer: sharmaanshul
 ms.subservice: rti-eventhouse
-ms.collection: not-ai
+ms.collection: ce-skilling-ai-copilot
 
 #CustomerIntent: As a Fabric RTI AI developer, I want to get started and use the RTI MCP server to create AI agents and AI applications that use Eventhouse and KQL databases to query and analyze real-time data.
 ---
@@ -82,10 +82,22 @@ The Eventhouse MCP server acts as an **HTTP-based MCP endpoint**. Add the remote
     "eventhouse-remote": {
       "type": "http",
       "url": "https://api.fabric.microsoft.com/v1/mcp/dataPlane/workspaces/11112222-bbbb-3333-cccc-4444dddd5555/items/b1b1b1b1-cccc-dddd-eeee-f2f2f2f2f2f2/kqlEndpoint"
+    },
+    "kql-global": {
+      "type": "http",
+      "url": "https://api.fabric.microsoft.com/v1/mcp/dataPlane/kqlEndpoint"
     }
   }
 }
 ```
+
+## Available tools
+
+The Eventhouse MCP server exposes a set of tools that AI agents can use to interact with the Eventhouse and its KQL databases. These tools allow agents to discover KQL database schemas, generate KQL queries from natural language, execute queries, and sample data.
+
+When using the global endpoint (as shown in the `kql-global` example above), provide both `workspaceId` and `itemId` in each tool call.
+
+Tools in Public MCP Server support optional `clusterUrl` and `databaseName` parameters. When both parameters are provided, the request runs against the specified Azure Data Explorer cluster and database, and the Fabric item is used only to meter AI usage against your Fabric capacity.
 
 ## Test the connection
 
@@ -110,10 +122,6 @@ Once configured, verify that the setup is working.
    - *Analyze the data in the StormEvents table and show the most damaging storm events*
 
 1. Review the response returned by Copilot.
-
-## Available tools
-
-The Eventhouse MCP server exposes a set of tools that AI agents can use to interact with the Eventhouse and its KQL databases. These tools allow agents to discover KQL database schemas, generate KQL queries from natural language, execute queries, and sample data.
 
 ## Troubleshoot
 

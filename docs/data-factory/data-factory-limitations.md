@@ -3,7 +3,7 @@ title: Data Factory limitations overview
 description: Identifies limitations that affect Data Factory in Microsoft Fabric features.
 ms.reviewer: susabat
 ms.topic: troubleshooting
-ms.date: 3/23/2026
+ms.date: 4/29/2026
 ms.custom: configuration
 ---
 
@@ -32,7 +32,7 @@ The following table describes the resource limitations for pipelines in Data Fac
 
 | Pipeline Resource | Default limit | Maximum limit |
 |---|---|---|
-| Total number of pipelines within a [workspace](/fabric/fundamentals/workspaces) | 5,000 | 5,000 |
+| Total number of pipelines within a [workspace](/fabric/fundamentals/workspaces) | 1,000 | 1,000 |
 | Concurrent pipeline runs per [workspace](/fabric/fundamentals/workspaces) that's shared among all pipelines in [workspace](/fabric/fundamentals/workspaces)  | 10,000 | 10,000 |
 | Concurrent external activities like stored procedure, Web, Web Hook, and others per [workspace](/fabric/fundamentals/workspaces) | 100 | 100 |
 | Concurrent pipeline activities execution for Lookup, GetMetadata, and Delete per [workspace](/fabric/fundamentals/workspaces) | 100 | 100 |
@@ -81,6 +81,7 @@ The following list describes the limitations for Dataflow Gen2 in Data Factory i
 - Dataflow Gen2 doesn't support for guest users in the tenant to connect to the data sources and destinations in the tenant the user is guest. Use a native user in the tenant to connect to the data sources and destinations.
 - Consuming data from a dataflow gen2 with the dataflow connector requires Admin, Member or Contributor permissions. Viewer permission isn't sufficient and isn't supported for consuming data from the dataflow.
 - When you don't access staging items with your dataflow for more than 90 days, you need to re-authendicate to ensure the dataflow is able to access the staging items. You can do this by creating a new dataflow gen2 within the same workspace. 
+- Staging lakehouses are visible in **My Workspace**. In shared workspaces, staging lakehouses created by Dataflow Gen2 are hidden from the workspace item list. In **My Workspace**, however, these staging lakehouses are visible due to a platform-side difference in how hidden items are filtered. Don't modify, rename, or delete these staging lakehouses, they're managed by Dataflow Gen2 and used internally for query staging and destination writes. 
 - When downstream items such as semantic models or other dataflows consume data from a Dataflow Gen2 using the Dataflows connector, the data is retrieved through an internal API. This API can experience intermittent timeouts, which may result in refresh failures for the consuming items. The error message shown in these cases can be misleading, for example: "The key didn't match any rows in the table." This error doesn't indicate a problem with your data; it means the backend service was temporarily unable to return the dataflow results. To mitigate this issue, configure a [data destination](dataflow-gen2-data-destinations-and-managed-settings.md) (such as Lakehouse or Warehouse) for each source dataflow, and update downstream items to read from that destination using the Lakehouse or Warehouse connector instead of the Dataflows connector. This approach bypasses the internal API entirely and typically improves overall refresh reliability and performance.
 
 * **Supported gateway required**: Dataflow Gen2 requires a currently supported data gateway. At minimum, the last six released gateway versions are supported.
@@ -96,7 +97,6 @@ The following list describes the limitations for Dataflow Gen2 in Data Factory i
 * **Required permissions to consume dataflows**: Consuming data from a Dataflow Gen2 requires Admin, Member, or Contributor permissions. Viewer permission isn’t supported.
 
 * **Staging authentication expiration**: If staging items aren’t accessed for more than 90 days, re‑authentication is required. This can be done by creating a new Dataflow Gen2 in the same workspace.
-* **Relative references not supported with gateways**: Relative references for Fabric connectors ([Lakehouse](connector-lakehouse.md), [Warehouse](connector-data-warehouse.md), [SQL database](connector-sql-database.md)) aren't yet supported when a gateway is used.
 
 ## Related content
 

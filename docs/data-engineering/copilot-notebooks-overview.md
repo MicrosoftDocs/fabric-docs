@@ -129,26 +129,13 @@ Use the table below to identify the cause and take appropriate action.
 | # | Reason | User / Admin action |
 |---|--------|---------------------|
 | 1 | Tenant admin has not enabled Copilot. The "Users can use Copilot and other features powered by Azure OpenAI" tenant setting is turned off. | Contact your Fabric/Power BI tenant admin → **Admin Portal** → **Tenant settings** → Enable **"Copilot and Azure OpenAI Service"**. |
-| 2 | Capacity SKU does not meet the minimum requirement. Copilot requires F64 or higher Fabric capacity (or P1+ for Power BI Premium). Trial capacities are also supported. | Upgrade your capacity to F64+ or start a Fabric trial at [Fabric Trial](https://www.microsoft.com/microsoft-fabric/getting-started). |
+| 2 | Capacity SKU does not meet the minimum requirement. Copilot requires a paid Fabric capacity (F2 or higher) or Power BI Premium (P1 or higher). Trial capacities are also supported. | Upgrade your capacity to F2+ or start a Fabric trial at [Fabric Trial](https://www.microsoft.com/microsoft-fabric/getting-started). |
 | 3 | Cross-geo data processing not enabled. Your capacity is in a region where Azure OpenAI is not natively available, and the cross-geo setting is off. | **Admin Portal** → **Tenant settings** → Enable **"Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance"**. |
-| 4 | Workspace not assigned to an eligible capacity. The workspace containing the notebook is not attached to a capacity that supports Copilot. | Move the workspace to an eligible capacity (F64+ / P1+ / Trial). |
+| 4 | Workspace not assigned to an eligible capacity. The workspace containing the notebook is not attached to a capacity that supports Copilot. | Move the workspace to an eligible capacity (F2+ / P1+ / Trial). |
 | 5 | Copilot not yet available in your region. Azure OpenAI regional availability may limit Copilot in certain geos. | Check [Copilot available regions](/fabric/get-started/copilot-fabric-overview#available-regions) and consider enabling cross-geo processing. |
 
 > [!TIP]
 > If you're unsure which setting is causing the issue, start by contacting your tenant administrator, as most Copilot requirements are controlled at the organization level.
-
-## Known issues
-
-### Copilot might not use the latest cell error output when troubleshooting
-
-In some cases, Copilot might not fully incorporate the most recent error output from a notebook cell when diagnosing issues. This can lead to incomplete or less relevant troubleshooting guidance.
-
-**Workaround:**
-
-To improve response quality, explicitly reference or include the latest error message in your prompt when asking Copilot for help.
-
-> [!NOTE]
-> These are known issues that may occur in production environments. A fix is in progress and will be rolled out in an upcoming update.
 
 ## Related content
 

@@ -50,7 +50,7 @@ The following are core tenets of Mirroring:
 Mirroring creates these items in your Fabric workspace:
 
 - A process that manages the replication of data and metadata into [OneLake](../onelake/onelake-overview.md) and conversion to Parquet, in an analytics-ready format. This process enables downstream scenarios like data engineering, data science, and more.
-- A [SQL analytics endpoint](../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md)
+- A [SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md)
 
 In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling including [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), and even GitHub Copilot.
 
@@ -74,6 +74,7 @@ Currently, the following external databases are available:
 | [Microsoft Fabric mirrored databases from Azure Database for MySQL (preview)](azure-database-mysql.md) | Yes | Database mirroring | [Tutorial: Azure Database for MySQL (preview)](azure-database-mysql-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database.md) | Yes | Database mirroring | [Tutorial: Azure SQL Database](azure-sql-database-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure SQL Managed Instance](azure-sql-managed-instance.md) | Yes | Database mirroring | [Tutorial: Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md) |
+| [Microsoft Fabric mirrored catalogs from Dremio](catalog-mirroring/dremio.md) | Yes | Metadata mirroring | [Tutorial: Dremio](catalog-mirroring/dremio-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Google BigQuery (preview)](google-bigquery.md) | Yes | Database mirroring | [Tutorial: Google BigQuery](google-bigquery-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Oracle](oracle.md) | Yes | Database mirroring | [Tutorial: Oracle](oracle-tutorial.md) |
 | [Microsoft Fabric mirrored databases from SAP](sap.md) | Yes | Database mirroring | [Tutorial: SAP](sap-datasphere-tutorial.md) |

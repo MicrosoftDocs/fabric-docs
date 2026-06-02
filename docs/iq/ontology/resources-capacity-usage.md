@@ -1,5 +1,5 @@
 ---
-title: Billing and capacity usage
+title: Billing and Capacity Usage
 description: Learn how ontology (preview) capacity usage is billed and reported.
 ms.date: 03/20/2026
 ms.topic: concept-article
@@ -24,7 +24,7 @@ The following table defines how many capacity units (CU) are consumed when an on
 | Ontology Modeling | Ontology Modeling | Measures the usage of ontology definitions (including entity types, relationships, properties, and data bindings). | Per ontology definition usage <br><br>*Usage is defined by intervals of at minimum 30 minutes, each time the API is triggered by Create/Update/Delete (CUD) operations to entity types, properties, relationship types, or bindings.* | 0.0039 CU per hour |
 | Ontology Logic and Operations​ | Ontology Logic and Operations​ | Measures the usage for ontology operations, including visualizations, logic, graph creation, ontology exploration, and querying and analyzing with query endpoints (including API and SQL endpoints) | Per min | 0.666667 CU per min <br><br>*This meter is not currently in effect.* |
 | Ontology AI | Ontology AI Operations | Measures the usage of AI for context driven reasoning and query over ontology | (Input) Per 1,000 Tokens <br><br>(Output) Per 1,000 Tokens | (Input) 400 CU seconds <br><br>(Output) 1,600 CU seconds |
-| OneLake Cache | Graph cache storage | Use of graph incurs [graph cache storage](../../graph/overview.md#pricing-and-capacity-units), which is billed at the same rate as [OneLake Cache](https://azure.microsoft.com/pricing/details/microsoft-fabric/). | [OneLake Cache usage per month](https://azure.microsoft.com/pricing/details/microsoft-fabric/) | *n/a* |
+| OneLake Cache | Graph cache storage | Use of graph incurs [graph cache storage](../../graph/overview.md#pricing-and-capacity-units), which is billed at the same rate as [OneLake Cache](https://azure.microsoft.com/pricing/details/microsoft-fabric/). | [OneLake Cache usage per month](https://azure.microsoft.com/pricing/details/microsoft-fabric/) |  [OneLake Cache usage per month](https://azure.microsoft.com/pricing/details/microsoft-fabric/) |
 
 ## Capacity usage examples
 
@@ -78,7 +78,7 @@ Consider the following factors that could potentially affect cost:
 * **Ontology logic and operations:** Charges for running queries and associated compute. Operations like indexing, refresh rates, and idle time can affect CU usage.
 * **AI reasoning and query:** Charges for advanced reasoning and natural language queries powered by AI, based on the number of tokens used.
 * **Associated Fabric items:** Charges from associated Fabric items that are being used through ontology, like [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) and [Fabric Activator](../../real-time-intelligence/data-activator/activator-capacity-usage.md).
-* **Graph refresh:** The [Graph in Microsoft Fabric](../../graph/overview.md) child item of your ontology (preview) item can be set to refresh automatically on a set schedule, and these refreshes contributes to capacity usage. If capacity usage is too high, you can edit or disable the Graph item schedule in your workspace. For more information, see [Refresh the graph model](how-to-use-preview-experience.md#refresh-the-graph-model). 
+* **Graph refresh:** The [Graph in Microsoft Fabric](../../graph/overview.md) child item of your ontology (preview) item can be set to refresh automatically on a set schedule, and these refreshes contributes to capacity usage. If capacity usage is too high, you can edit or disable the Graph item schedule in your workspace. For more information, see [Refresh the graph model](how-to-view-entity-type-details.md#refresh-the-graph-model). 
 
 ### Subject to changes in Microsoft Fabric workload consumption rate
 

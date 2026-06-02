@@ -1,13 +1,13 @@
 ---
-title: Create forecasts using predictions and historical data
-description: Learn how to create and manage forecasts in a Planning sheet. Create forecast models, manage forecast periods, and streamline planning and forecasting workflows.
+title: Create Forecasts Using Predictions and Historical Data
+description: Learn how to create and manage forecasts in a planning sheet. Create forecast models, manage forecast periods, and streamline planning and forecasting workflows.
 ms.date: 04/26/2026
 ms.topic: how-to
 ---
 
 # Forecast data to predict future trends
 
-Forecasting capabilities in the Planning sheet enable organizations to move beyond static annual plans and adopt agile planning methods, such as rolling forecasts and periodic reforecasting. Use forecasting to project revenue, expenses, and other metrics for upcoming periods based on historical data.
+Forecasting capabilities in the planning sheet enable organizations to move beyond static annual plans and adopt agile planning methods, such as rolling forecasts and periodic reforecasting. Use forecasting to project revenue, expenses, and other metrics for upcoming periods based on historical data.
 
 Create dynamic forecasts directly on semantic models and update them as new actuals become available. Forecasts can be generated using multiple approaches, such as copying historical values, applying averages, or manually adjusting projections.
 
@@ -34,9 +34,51 @@ The first step in configuring a forecast is to set the time frame for which the 
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/closed-forecast.png" alt-text="Screenshot of closed forecasts." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/closed-forecast.png":::
 
+## Options to populate open forecasts
+
+Generate open forecasts by setting **Open Period** to one of these methods:
+
+* **Measure**: If measure values exist for an open period, use those values to populate the forecast. This setting is read-only.
+* **Formula**: If measure values exist for an open period, use a formula based on those values to populate the forecast. This setting is read-only.
+* **Data Input**: Allow users to enter forecasts. This setting allows users to override prepopulated forecasts.
+
+:::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/forecast-open-period-options.png" alt-text="Screenshot of options to populate open forecasts.":::
+
+When open forecast measures are configured with the **Data Input** method, you can initialize the forecast using historical or current data from the source. If the source data contains blank values, configure a default value using one of the options shown.
+
+:::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/open-forecast-default-value.png" alt-text="Screenshot of default value for forecasts when open period is set to data input.":::
+
+> [!TIP]
+> When a measure or formula is selected as the default value, ensure that data is available for the forecast period.
+
+## Populate open forecasts from the data source
+
+If forecast values are already available for future periods in the data source, you can populate open periods using the native forecast measure or a formula that references it.
+
+To initialize the open forecast from a measure in the planning sheet, set **Open Period** to **Measure**, then select the measure from **Linked Measure**.
+
+:::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/open-forecast-measure-formula.png" alt-text="Screenshot of configuring an open forecast from a measure.":::
+
+To set forecast values based on a formula, set **Open Period** to **Formula** and enter the formula.
+
+Consider a business case where the revenue projections are available for the forecast period 2026.
+
+:::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/revenue-projections.png" alt-text="Screenshot of revenue projections." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/revenue-projections.png":::
+
+To create a forecast based on a formula, set **Open Period** to **Formula** and enter the formula.
+
+:::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/forecast-formula.png" alt-text="Screenshot of forecasting using a formula." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/forecast-formula.png":::
+
+Create and save the forecast.
+
+:::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/formula-based-forecast-created.png" alt-text="Forecast created using a formula." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/formula-based-forecast-created.png":::
+
 ## Initialize a forecast using historical or current data
 
 Prepopulate future forecast periods using existing historical or current data. These initial values can then be manually adjusted by selecting and editing the cell.
+
+> [!NOTE]
+> This option is only available when [**Open Period**](#options-to-populate-open-forecasts) is set to **Data Input**.
 
 1. Set **Open Period** to **Data Input** and **Default Value** to **None**.
 
@@ -79,6 +121,9 @@ You can set the time period used to initialize the forecast in two ways:
 
 Split a forecast period into multiple ranges and initialize each range using a different method, such as average values or data from a prior period.
 
+> [!NOTE]
+> This option is only available when [**Open Period**](#options-to-populate-open-forecasts) is set to **Data Input**.
+
 1. Configure the initial forecast settings, then go to **Period Setup**.
 1. Set the **Target Period** to January–March 2026, **Copy Source** to the Revenue measure, **Apply Operation** to **Single Period**, and **Source Periods** to December 2025.
 
@@ -109,16 +154,6 @@ The 2026 forecast is split into multiple ranges based on the period setup config
     :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/split-forecast-period-range.png" alt-text="Screenshot of splitting a forecast with period range." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/split-forecast-period-range.png":::
 
 * The forecast values for September through December 2026 are blank because no initial value is configured in the Period Setup.
-
-## Populate open forecasts from the data source
-
-If forecast values are already available for future periods in the data source, you can populate open periods using the native forecast measure or a formula that references it.
-
-To initialize the open forecast from a measure in the planning sheet, set **Open Period** to **Measure**, then select the measure from **Linked Measure**.
-
-To set forecast values based on a formula, set **Open Period** to **Formula** and enter the formula.
-
-:::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/open-forecast-measure-formula.png" alt-text="Screenshot of configuring an open forecast from a measure.":::
 
 ## Update open forecasts
 

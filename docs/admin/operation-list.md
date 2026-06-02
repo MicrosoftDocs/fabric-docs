@@ -28,6 +28,7 @@ The following operations are available in the audit logs.
 | Added data source to Power BI gateway  |  :::no-loc text="AddDatasourceToGateway":::  |    |
 | Added external resource  |  :::no-loc text="AddExternalResource":::  | Registers or connects an external resource in the Fabric workspace.   |
 | Added link to external resource  |  :::no-loc text="AddLinkToExternalResource":::  | Links a Fabric item to an external resource for reference or integration.    |
+| Added runtime lineage event subscription  |  :::no-loc text="AddedRuntimeLineageEventSubscription":::  |   |
 | Added user to Power BI gateway cluster  |  :::no-loc text="AddUsersToGatewayCluster":::  |  Not currently used  |
 | Added user to Power BI gateway cluster datasource  |  :::no-loc text="AddUsersToGatewayClusterDatasource":::  |    |
 | Admin Get Artifacts Byuser Id | :::no-loc text="AdminGetArtifactsByuserId"::: |   |
@@ -169,7 +170,7 @@ The following operations are available in the audit logs.
 | Dataflow permissions removed | :::no-loc text="DataflowPermissionsRemoved"::: | Not currently used  |
 | Delete Alm Pipeline Access As Admin | :::no-loc text="DeleteAlmPipelineAccessAsAdmin"::: |   |
 | Delete Alm Pipeline Access | :::no-loc text="DeleteAlmPipelineAccess"::: |   |
-| Delete Artifact | :::no-loc text="DeleteArtifact"::: |   |
+| Delete Artifact | :::no-loc text="DeleteArtifact"::: | Generated when an item is deleted. When [item recovery](item-recovery.md) is **disabled** in tenant admin settings, this operation is logged at the time the user deletes the item. When item recovery is **enabled**, this operation is logged when the item is permanently deleted (after the soft-delete retention period expires or when the item is manually purged from the recycle bin); the initial user action is logged as `ArtifactSoftDeleted`.  |
 | Delete Capacity Delegation settings | :::no-loc text="DeleteCapacityTenantSettingDelegation"::: | Delete Capacity delegation settings.  |
 | Delete Datamart | :::no-loc text="DeleteDatamart"::: |   |
 | Delete Domain | :::no-loc text="DeleteDataDomainAsAdmin"::: | Delete Domain  |
@@ -248,6 +249,7 @@ The following operations are available in the audit logs.
 | Deleted link to external resource | :::no-loc text="DeleteLinkToExternalResource"::: |   |
 | Deleted member of Power BI gateway cluster | :::no-loc text="DeleteGatewayClusterMember"::: |   |
 | Deleted organizational Power BI content pack | :::no-loc text="DeleteOrgApp"::: |   |
+| Deleted runtime lineage event subscription | :::no-loc text="DeletedRuntimeLineageEventSubscription"::: |   |
 | Deleted sensitivity label from Power BI item | :::no-loc text="SensitivityLabelRemoved"::: |   |
 | Deleted snapshot for user in Power BI tenant | :::no-loc text="DeleteSnapshot"::: | Generated when a user deletes a snapshot that describes a semantic model  |
 | Deleted workload assignment using admin api | :::no-loc text="ExtensibilityDeletedWorkloadAssignmentAdminApi"::: |   |
@@ -459,6 +461,7 @@ The following operations are available in the audit logs.
 | Pin Report To Teams Channel | :::no-loc text="PinReportToTeamsChannel"::: |   |
 | Pin Tile | :::no-loc text="PinTile"::: |   |
 | Pin Widget Tile | :::no-loc text="PinWidgetTile"::: |   |
+| Planning Session Upgraded| :::no-loc text="PlanningSessionUpgraded"::: | Session type is upgraded in planning workload.|
 | Post Dataset Rows | :::no-loc text="PostDatasetRows"::: |   |
 | Post Notebook Comment | :::no-loc text="PostNotebookComment"::: |   |
 | Post configure credentials | :::no-loc text="PostGitProviderCredentials"::: | Configure git provider credentials for a specific user |
@@ -482,6 +485,7 @@ The following operations are available in the audit logs.
 | ReadDataflow | :::no-loc text="ReadDataflow"::: | Read Dataflow  |
 | Rebind Report | :::no-loc text="RebindReport"::: |   |
 | Received Power BI dataflow secret from Key Vault | :::no-loc text="ReceiveDataflowSecretFromKeyVault"::: |   |
+| Recovered an item (Preview) | :::no-loc text="ArtifactRecovered"::: | Generated when a soft-deleted item is recovered. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
 | Refresh Datamart | :::no-loc text="RefreshDatamart"::: |   |
 | Refresh Goal Current Value Rollup | :::no-loc text="RefreshGoalCurrentValueRollup"::: |   |
 | Refresh Goal Target Value Rollup | :::no-loc text="RefreshGoalTargetValueRollup"::: |   |
@@ -610,6 +614,7 @@ The following operations are available in the audit logs.
 | Set file properties | :::no-loc text="SetFileProperties"::: | OneLake operation. Set user-defined properties for a file. |
 | Set scheduled refresh on Power BI dataflow | :::no-loc text="SetScheduledRefreshOnDataflow"::: |   |
 | Set scheduled refresh on Power BI semantic model | :::no-loc text="SetScheduledRefresh"::: |   |
+| Set warehouse hardware acceleration|:::no-loc text="SetWarehouseHardwarePlatform":::|Changed the current hardware acceleration settings for warehouses in a workspace.|
 | Share Artifact | :::no-loc text="ShareArtifact"::: |   |
 | Share Datamart | :::no-loc text="ShareDatamart"::: |   |
 | Share Lakehouse Table | :::no-loc text="ShareLakehouseTable"::: |   |
@@ -617,6 +622,7 @@ The following operations are available in the audit logs.
 | Shared Power BI dashboard | :::no-loc text="ShareDashboard"::: |   |
 | Shared Power BI report | :::no-loc text="ShareReport"::: |   |
 | Shared Power BI semantic model | :::no-loc text="ShareDataset"::: |   |
+| Soft-deleted an item (Preview) | :::no-loc text="ArtifactSoftDeleted"::: | Generated when an item is soft-deleted and moved to the recycle bin. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
 | Start Notebook Session | :::no-loc text="StartNotebookSession"::: |   |
 | Start Publish Environment | :::no-loc text="StartPublishEnvironment"::: | Start publish environment |
 | Started Power BI extended trial | :::no-loc text="OptInForExtendedProTrial"::: | Not currently used  |
