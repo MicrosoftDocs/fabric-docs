@@ -1,7 +1,8 @@
 ---
 title: Paused event configurations in Real-Time hub
 description: Learn about the paused state for Azure and Fabric event configurations in Real-Time hub, including common reasons, how to discover paused configurations, and mitigation steps.
-ms.reviewer: geguirgu
+author: george-guirguis
+ms.author: geguirgu
 ms.topic: concept-article
 ms.date: 04/06/2026
 ai-usage: ai-assisted
@@ -33,7 +34,7 @@ The following table lists the reasons a configuration can be paused and the step
 
 
 > [!NOTE]
-> For tenant-level private links, when the **Block Public Internet Access** setting is enabled, Azure events (such as Azure Blob Storage events) aren't paused — the events are dropped at the Azure source and never reach Fabric. To discover dropped events in this scenario, investigate the metrics and logs for the Azure resource (such as the Azure Storage account) in the Azure portal. For more information, see [Private links for Azure and Fabric Events](private-links-real-time-events.md).
+> For tenant-level private links, when the **Block Public Internet Access** setting is enabled, Azure events (such as Azure Blob Storage events) aren't paused — the events are dropped at the Azure source and never reach Fabric. To discover dropped events in this scenario, investigate the [metrics](/azure/event-grid/monitor-event-delivery) and [diagnostic logs](/azure/event-grid/enable-diagnostic-logs-topic) for the Azure resource (such as the Azure Storage account) in the Azure portal. For more information, see [Private links for Azure and Fabric Events](private-links-real-time-events.md).
 
 ## Related content
 
