@@ -82,6 +82,26 @@ Currently, CDC in Copy job supports the following source and destination data st
 
 For SAP Datasphere Outbound, please go to [Change Data Capture from SAP via SAP Datasphere Outbound in Copy job](copy-job-tutorial-sap-datasphere.md) to learn more details.
 
+## Schema changes and source data type changes
+
+Copy job handles source schema changes based on whether column mapping is configured.
+
+### When column mapping is configured
+
+When a column mapping is configured, Copy job always honors and follows it.
+
+- **New column added at the source**: Copy job ignores the new column because it isn't part of the column mapping. Runs continue to succeed, and the new column isn't synced to the destination.
+- **Column deleted at the source**: If a source column that was never part of the column mapping is deleted, there's no impact. Runs continue to succeed because the dropped column was never synced. If a source column that's defined in the column mapping is deleted or renamed, the run fails because the mapped source column can no longer be found.
+- **Source data type changes**: Copy job honors the data types specified in the column mapping, and runtime type compatibility handling applies. The source data type must be castable to the destination data type. If the updated source type can't be cast to the destination type, the run fails.
+
+### When column mapping isn't configured
+
+When no column mapping is configured, Copy job follows the below.
+
+- **New column added at the source**: Runs continue to succeed, and the new column isn't synced to the destination.
+- **Column deleted at the source**: The deleted column is no longer synced. Existing data for that column in the destination isn't removed, and runs continue to succeed without transferring any new data for that column. 
+- **Source data type changes**: Runtime type compatibility handling applies. The source data type must be castable to the destination data type. If the updated source type can't be cast to the destination type, the run fails.
+
 ## How to get started
 
 To get started with CDC in Copy job, see the following tutorials for step-by-step guidance on specific sources:
@@ -90,6 +110,7 @@ To get started with CDC in Copy job, see the following tutorials for step-by-ste
 - [Change Data Capture from SAP via SAP Datasphere Outbound in Copy job](copy-job-tutorial-sap-datasphere.md)
 - [Change data capture from Snowflake using Copy job](cdc-copy-job-snowflake.md)
 - [Change data capture from Oracle database using Copy job](cdc-copy-job-oracle.md)
+
 
 ## Known limitations
 - When both CDC-enabled and non-CDC-enabled source tables are selected in a Copy Job, it treats all tables as watermark-based incremental copy.

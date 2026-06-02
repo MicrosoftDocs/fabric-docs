@@ -1,10 +1,11 @@
 ---
 title: Use ai.embed with PySpark
 description: Learn how to convert text into numeric vectors that capture its meaning and context by using the ai.embed function with PySpark.
-ms.reviewer: vimeland
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
-ms.search.form: AI functions
+ms.search.form: AI Functions
 ---
 
 # Use ai.embed with PySpark
@@ -13,8 +14,8 @@ The `ai.embed` function uses generative AI to convert text into vector embedding
 
 > [!NOTE]
 > - This article covers using *ai.embed* with PySpark. To use *ai.embed* with pandas, see [this article](../pandas/embed.md).
-> - See other AI functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI functions](./configuration.md).
+> - See other AI Functions in [this overview article](../overview.md).
+> - Learn how to customize the [configuration of AI Functions](./configuration.md).
 
 ## Overview
 
@@ -40,7 +41,7 @@ df.ai.embed(input_col="col1", output_col="embed")
 
 The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) that includes a new column that contains generated embeddings for each input text row.
 Embeddings are of the type [pyspark.ml.linalg.DenseVector])https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.ml.linalg.DenseVector.html#densevector).
-The number of elements in the DenseVector depends on the embedding model's dimensions, which are [configurable in AI functions](./configuration.md)
+The number of elements in the DenseVector depends on the embedding model's dimensions, which are [configurable in AI Functions](./configuration.md)
 
 ## Example
 
@@ -74,6 +75,6 @@ This example code cell provides the following output:
 - Summarize text with [ai.summarize](./summarize.md).
 - Translate text with [ai.translate](./translate.md).
 
-- Learn more about the [full set of AI functions](../overview.md).
-- Customize the [configuration of AI functions](./configuration.md).
+- Learn more about the [full set of AI Functions](../overview.md).
+- Customize the [configuration of AI Functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

@@ -58,7 +58,7 @@ Before you create a schedule, consider what drives your refresh timing:
 
     > [!NOTE]
     > A run fails if it exceeds 24 hours.
-    > If a new refresh starts while another refresh is in progress, Fabric skips the later refresh. See [run history](./run-history.md) for details.
+    > If a new refresh starts while another refresh is in progress, Fabric skips the later refresh. See [Recent runs](./run-history.md) for details.
 
 ## Run a schedule on demand
 

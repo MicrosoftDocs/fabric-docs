@@ -34,7 +34,7 @@ Before you begin, make sure you have the following:
 - **The Fabric runtime YML file** — Download the Python YML file for your runtime version from the [Fabric runtime GitHub repo](https://github.com/microsoft/synapse-spark-runtime/tree/main/Fabric):
   - Runtime 1.2 (Spark 3.4): `Fabric-Python310-CPU.yml` (Python 3.10)
   - Runtime 1.3 (Spark 3.5): `Fabric-Python311-CPU.yml` (Python 3.11)
-  - Runtime 2.0 (Spark 4.0): `Fabric-Python313-CPU.yml` (Python 3.12)
+  - Runtime 2.0 (Spark 4.1): `Fabric-Python313-CPU.yml` (Python 3.13)
 
 :::image type="content" source="media\environment-library-management\outbound-access-protection-runtime-setup.png" alt-text="Screenshot that shows the example of runtime setup file." lightbox="media\environment-library-management\outbound-access-protection-runtime-setup.png":::
 
