@@ -114,6 +114,9 @@ Here's an example log table JSON schema sample for Spark driver and executor log
   }
 ]
 ```
+> [!NOTE]
+>
+> The `ExtraFields` column is a placeholder for forward compatibility - sample values are provided only so the generated table schema treats it as a dynamic column. The emitter does not populate this column today; at query time it appears as {}.
 
 ### Step 4. Create custom table (Direct Ingest)
 
