@@ -1,6 +1,6 @@
 ---
 title: Use AI in Data Wrangler
-description: Learn how to use AI functions and other AI-powered features in Data Wrangler to further accelerate data preparation
+description: Learn how to use AI Functions and other AI-powered features in Data Wrangler to further accelerate data preparation
 author: s-polly
 ms.author: scottpolly
 ms.reviewer: ruxu
@@ -10,20 +10,20 @@ ms.date: 09/04/2025
 ---
 
 # How to use AI in Data Wrangler to enhance data preparation
-[Data Wrangler](data-wrangler.md) is an interactive interface in Fabric notebooks that helps you prepare data quickly and visually, with real-time previews before applying changes. It now includes several built-in AI capabilities for even faster data transformation, including AI functions, rule-based AI suggestions, and code generation with Copilot. For information on getting started with Data Wrangler, see [Accelerate data prep with Data Wrangler](data-wrangler.md).
+[Data Wrangler](data-wrangler.md) is an interactive interface in Fabric notebooks that helps you prepare data quickly and visually, with real-time previews before applying changes. It now includes several built-in AI capabilities for even faster data transformation, including AI Functions, rule-based AI suggestions, and code generation with Copilot. For information on getting started with Data Wrangler, see [Accelerate data prep with Data Wrangler](data-wrangler.md).
 
 ## Prerequisites
-### AI functions and Copilot in Data Wrangler 
-- To use AI functions and Copilot in Data Wrangler with the built-in AI endpoint in Fabric, your administrator needs to enable [the tenant switch for Copilot and other features that are powered by Azure OpenAI](../admin/service-admin-portal-copilot.md).
+### AI Functions and Copilot in Data Wrangler
+- To use AI Functions and Copilot in Data Wrangler with the built-in AI endpoint in Fabric, your administrator needs to enable [the tenant switch for Copilot and other features that are powered by Azure OpenAI](../admin/service-admin-portal-copilot.md).
 - Depending on your location, you might need to enable a tenant setting for cross-geo processing. Learn more about [available regions for Azure OpenAI Service](../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
 - You also need an F2 or later edition or a P edition. If you use a trial edition, you can bring your own Azure OpenAI resource.
-### AI functions in Data Wrangler
-To use AI functions in Data Wrangler, you will also need to install OpenAI in your notebook. The following code cell has the necessary installation commands:
+### AI Functions in Data Wrangler
+To use AI Functions in Data Wrangler, you will also need to install OpenAI in your notebook. The following code cell has the necessary installation commands:
 
 # [PySpark environment](#tab/pandas-pyspark)
 
 ```python
-# The pandas AI functions package requires OpenAI version 1.99.5 or later.
+# The pandas AI Functions package requires OpenAI version 1.99.5 or later.
 %pip install -q openai 2>/dev/null
 ```
 
@@ -36,14 +36,14 @@ To use AI functions in Data Wrangler, you will also need to install OpenAI in yo
 # Install the latest version of SynapseML-core.
 %pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.12-spark3.5/synapseml_core-1.0.12.dev1-py2.py3-none-any.whl 2>/dev/null
 
-# Install SynapseML-Internal .whl with the AI functions library from blob storage:
+# Install SynapseML-Internal .whl with the AI Functions library from blob storage:
 %pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.12.2-spark3.5/synapseml_internal-1.0.12.2.dev1-py2.py3-none-any.whl 2>/dev/null
 ```
 
 ---
 
 ## Apply AI Functions in Data Wrangler (preview)
-[Fabric AI functions](ai-functions/overview.md) allow you to perform tasks such as text summarization, classification, translation, sentiment analysis, grammar correction, your own prompt, and more, without writing complex code. To apply AI functions in Data Wrangler, open Data Wrangler, navigate to "Operations" on the left pane, expand 'AI enrichments', and select the function you would like to use.
+[Fabric AI Functions](ai-functions/overview.md) allow you to perform tasks such as text summarization, classification, translation, sentiment analysis, grammar correction, your own prompt, and more, without writing complex code. To apply AI Functions in Data Wrangler, open Data Wrangler, navigate to "Operations" on the left pane, expand 'AI enrichments', and select the function you would like to use.
 
 :::image type="content" source="media/data-wrangler-ai/ai-functions-data-wrangler-step-1.png" alt-text="Screenshot showing Data Wrangler and highlighting the 'Operations' and 'AI enrichments' sections." lightbox="media/data-wrangler-ai/ai-functions-data-wrangler-step-1.png":::
 

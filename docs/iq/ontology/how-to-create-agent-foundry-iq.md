@@ -32,13 +32,7 @@ Before you begin, make sure you have:
 
 ## Step 1: Create the knowledge source and knowledge base
 
-1. First, open the Foundry portal and enable the Fabric IQ knowledge source feature. Start with your Foundry project URL and append the flight query parameter `?flight=ks_fabric_iq`. The completed URL looks like this:
-
-   ```
-   https://<your-foundry-portal-url>/?flight=ks_fabric_iq
-   ```
-
-   Keep this querystring parameter on the URL for the rest of the session. Closing the tab or removing the parameter hides the Fabric IQ option.
+1. Open the Foundry portal.
 
 1. Start a new knowledge base. In the left navigation pane of your Foundry project, go to **Knowledge** > **Knowledge bases**, then choose **+ New knowledge base**.
 
