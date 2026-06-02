@@ -3,14 +3,12 @@ title: Monitor Graph Performance
 description: Monitor graph performance in Microsoft Fabric. Learn what factors affect refresh and query speed, how to identify bottlenecks, and what actions to take.
 #customer intent: As a Fabric user, I want to understand graph performance characteristics so that I can identify bottlenecks and keep my graph workloads running efficiently.
 ms.topic: how-to
-ms.date: 04/14/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ai-usage: ai-assisted
 ---
 
 # Monitor graph performance in Microsoft Fabric
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 Graph performance in Microsoft Fabric depends on graph size, model complexity, query patterns, and capacity availability. Learn what to monitor, how to identify bottlenecks, and what actions to take when refresh jobs are slow or queries don't return results as expected.
 
@@ -73,7 +71,7 @@ For more troubleshooting information, see [Troubleshooting and FAQ](troubleshoot
 
 ## Monitor query performance
 
-During preview, individual GQL query metrics aren't available in the Monitoring hub. Instead, use these approaches to understand and improve query performance.
+Individual GQL query metrics aren't currently available in the Monitoring hub. Instead, use these approaches to understand and improve query performance.
 
 ### Observe query behavior in the Code Editor
 

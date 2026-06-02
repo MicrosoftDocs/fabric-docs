@@ -17,6 +17,8 @@ This tutorial shows how to automate Power BI semantic model refreshes using Apac
 
 To get started, you must complete the following prerequisites:
 
+- To authenticate your DAGs with Fabric APIs, use either a service principal or [workspace identity](apache-airflow-jobs-workspace-identity.md). If you use workspace identity, you can skip the service principal prerequisites and go directly to [Add Apache Airflow requirement](#add-apache-airflow-requirement). If you use a service principal, continue with the following steps.
+
 - Your tenant-level admin must enable ["Service principals can call Fabric public APIs"](../admin/service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis):
 
   1. Go to the Admin Portal of Microsoft Fabric and navigate to Tenant Settings.
@@ -90,7 +92,7 @@ with DAG(
 
 ```
 
-3. Select on "Save," to save the file.
+3. Select **Save** to save the file.
 
    :::image type="content" source="media/apache-airflow-jobs/click-on-save-icon.png" lightbox="media/apache-airflow-jobs/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
 

@@ -3,14 +3,12 @@ title: How graph in Microsoft Fabric works
 description: Learn how data flows through graph in Microsoft Fabric, from data ingestion and storage in OneLake to graph modeling, querying, and returning results.
 #customer intent: As a data analyst or engineer, I want to understand how graph in Microsoft Fabric processes and queries data so that I can evaluate whether it fits my analytical needs.
 ms.topic: concept-article
-ms.date: 04/20/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ai-usage: ai-assisted
 ---
 
 # How graph in Microsoft Fabric works
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 Graph in Microsoft Fabric transforms structured data stored in OneLake into a modeled, queryable graph. Query the graph by using visual or GQL-based tools that run through a common engine to produce visual, tabular, or programmatic results.
 

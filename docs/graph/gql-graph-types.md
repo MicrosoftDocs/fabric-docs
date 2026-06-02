@@ -2,13 +2,11 @@
 title: GQL Graph Types Reference for graph in Microsoft Fabric
 description: Complete reference for defining graph types in GQL for graph in Microsoft Fabric, including node types, edge types, constraints, and inheritance.
 ms.topic: reference
-ms.date: 03/12/2026
+ms.date: 05/20/2026
 ms.reviewer: splantikow
 ---
 
 # GQL graph types
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 A graph type defines the structure of a graph by specifying which nodes and edges can exist, their labels and properties, and how they connect to each other. Think of a graph type as a schema or blueprint - similar to how an ER (entity-relationship) diagram describes tables and foreign key relationships in a relational database.
 
