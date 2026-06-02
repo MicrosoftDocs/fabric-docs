@@ -195,7 +195,7 @@ While the Native Execution Engine (NEE) in Microsoft Fabric significantly boosts
 
 ### Existing limitations
 
-- **Incompatible Spark features**: Native execution engine doesn't currently support user-defined functions (UDFs), the `array_contains` function, or structured streaming. If these functions or unsupported features are used either directly or through imported libraries, Spark will revert to its default engine.
+- **Incompatible Spark features**: Native execution engine doesn't currently support structured streaming. If unsupported features are used either directly or through imported libraries, Spark reverts to its default engine. Python UDFs, Scala UDFs, and complex data types (arrays, maps, structs) are now supported. For more information, see [Python UDFs, Scala UDFs, and complex data types in native execution engine](native-execution-engine-udf-complex-types.md).
 
 - **Unsupported file formats**: Queries against `JSON` and `XML` formats aren't accelerated by native execution engine. These default back to the regular Spark JVM engine for execution. CSV is now supported through the vectorized CSV parser.
 
@@ -235,6 +235,8 @@ While the Native Execution Engine (NEE) in Microsoft Fabric significantly boosts
 
 ## Related content
 
+- [Python UDFs, Scala UDFs, and complex data types in native execution engine](native-execution-engine-udf-complex-types.md)
+- [Efficient scaledown and remote shuffle manager](efficient-scaledown-remote-shuffle-manager.md)
 - [Apache Spark Runtimes in Fabric](./runtime.md)
 - [What is autotune for Apache Spark configurations in Fabric?](./autotune.md)
 
