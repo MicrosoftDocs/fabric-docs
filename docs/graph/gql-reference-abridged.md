@@ -2,14 +2,12 @@
 title: GQL Quick Reference for graph in Microsoft Fabric
 description: Quick reference for GQL syntax, statements, graph patterns, expressions, and functions supported by graph in Microsoft Fabric, with examples.
 ms.topic: reference
-ms.date: 04/23/2026
+ms.date: 05/20/2026
 ms.reviewer: splantikow
 ms.search.form: GQL Quick Reference
 ---
 
 # GQL quick reference
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 This article is a quick reference for GQL (Graph Query Language) syntax for graph in Microsoft Fabric. For detailed explanations, see the [GQL language guide](gql-language-guide.md).
 

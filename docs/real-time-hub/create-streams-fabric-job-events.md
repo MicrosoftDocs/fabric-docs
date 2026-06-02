@@ -12,7 +12,30 @@ This article describes how to get Job events as an eventstream in Fabric Real-Ti
 
 Real-Time hub allows you to discover and subscribe to changes produced when Fabric runs a job. For example, you can react to changes when refreshing a semantic model, running a scheduled pipeline, or running a notebook. Each of these activities can generate a corresponding job, which in turn generates a set of corresponding job events. 
 
-[!INCLUDE [fabric-job-source-connector-prerequisites](../real-time-intelligence/event-streams/includes/connectors/fabric-job-source-connector-prerequisites.md)]
+Job events allow you to monitor job results in time and set up alerts using Activator alerting capabilities. For example, when the scheduler triggers a new job, or a job fails, you can receive an email alert. This way, even if you aren't in front of the computer, you can still get the information you care about. 
+
+With Fabric event streams, you can capture these Job events, transform them, and route them to various destinations in Fabric for further analysis. This seamless integration of Job events within Fabric event streams gives you greater flexibility for monitoring and analyzing activities in your Job.
+
+## Event types
+
+| Event type name | Description |
+| --------------- | ----------- |
+| Microsoft.Fabric.ItemJobCreated | Raised when the Fabric platform creates or triggers a job, manually or scheduled. |
+| Microsoft.Fabric.ItemJobStatusChanged | Raised when the job status changes to another non-terminal state. <p>This event isn't raised if the workload doesn't push when the status changes. The job status might change from created to completed soon. 
+| Microsoft.Fabric.ItemJobSucceeded | Raised when the job completes. |     
+| Microsoft.Fabric.ItemJobFailed | Raised when the job fails, including job getting stuck or canceled. |
+
+For more information, see [Explore Job events](explore-fabric-Job-events.md).
+
+[!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
+
+[!INCLUDE [outbound-access-protection-note](./includes/outbound-access-protection-note.md)]
+
+[!INCLUDE [workspace-private-links-note](./includes/workspace-private-links-note.md)]
+
+## Prerequisites
+
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
 
 ## Create streams for Job events
 
