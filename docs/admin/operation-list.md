@@ -4,7 +4,7 @@ description: This article provides a list of all the operations available in Fab
 author: msmimart
 ms.author: mimart
 ms.topic: reference
-ms.date: 05/22/2025
+ms.date: 06/02/2026
 ---
 # Operation list
 
@@ -411,6 +411,7 @@ The following operations are available in the audit logs.
 | Goals Delete Role | :::no-loc text="GoalsDeleteRole"::: |   |
 | Goals Get Role | :::no-loc text="GoalsGetRole"::: |   |
 | Goals Update Role | :::no-loc text="GoalsUpdateRole"::: |   |
+| Hard-deleted a folder by cleanup scheduler (Preview) | :::no-loc text="HardDeletedSubfolderByCleanupScheduler"::: | Generated when the cleanup scheduler hard-deletes a soft-deleted folder after the retention period expires. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
 | Import Package For Solution | :::no-loc text="ImportPackageForSolution"::: |   |
 | Import file to Power BI ended | :::no-loc text="ImportArtifactEnd"::: | Generated when importing Power BI Desktop files (.pbix). ImportSource indicates Power BI or OneDriveSharePoint. ImportType tells you if the file is new (Publish) or is being updated (Republish).  |
 | Import file to Power BI started | :::no-loc text="ImportArtifactStart"::: | Generated when importing Power BI Desktop files (.pbix). When ImportSource is PowerBI, the file import originated from a Power BI client or API. When ImportSource is OneDriveSharePoint, the file import originated from OneDrive or a SharePoint document library.  |
@@ -486,6 +487,7 @@ The following operations are available in the audit logs.
 | Rebind Report | :::no-loc text="RebindReport"::: |   |
 | Received Power BI dataflow secret from Key Vault | :::no-loc text="ReceiveDataflowSecretFromKeyVault"::: |   |
 | Recovered an item (Preview) | :::no-loc text="ArtifactRecovered"::: | Generated when a soft-deleted item is recovered. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
+| Recovered folder (Preview) | :::no-loc text="RecoveredSubfolder"::: | Generated when one or more soft-deleted folders are recovered as part of artifact recovery. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
 | Refresh Datamart | :::no-loc text="RefreshDatamart"::: |   |
 | Refresh Goal Current Value Rollup | :::no-loc text="RefreshGoalCurrentValueRollup"::: |   |
 | Refresh Goal Target Value Rollup | :::no-loc text="RefreshGoalTargetValueRollup"::: |   |
