@@ -39,7 +39,7 @@ Semantic enrichment uses the following ontology (preview) concepts. For definiti
 
 ## Add metadata to entity types
 
-Entity types support descriptions, synonyms, and custom metadata attributes. Follow these steps to add semantic enrichment to entity types.
+Entity types support descriptions, synonyms, and additional metadata key-value pairs. Follow these steps to add semantic enrichment to entity types.
 
 1. In the **Explorer** pane of the Home configuration canvas, select the entity type that you want to enrich. Select **View Entity Type details** from the top ribbon.
 
@@ -64,7 +64,7 @@ Entity types support descriptions, synonyms, and custom metadata attributes. Fol
 
 ## Add metadata to properties
 
-Properties support descriptions and custom metadata attributes, but not synonyms. Follow these steps to add semantic enrichment to properties.
+Properties support descriptions and additional metadata key-value pairs, but not synonyms. Follow these steps to add semantic enrichment to properties.
 
 1. From the **Configure** tab of the entity type details, open the [data binding configuration](how-to-bind-data.md) for an entity type.
 
@@ -85,7 +85,7 @@ Properties support descriptions and custom metadata attributes, but not synonyms
 
 ## Add metadata to relationship types
 
-Relationship types support descriptions and custom metadata attributes, but not synonyms. Follow these steps to add semantic enrichment to relationship types.
+Relationship types support descriptions and additional metadata key-value pairs, but not synonyms. Follow these steps to add semantic enrichment to relationship types.
 
 1. From the **Configure** tab of the entity type details, open the [relationship type configuration](how-to-create-relationship-types.md#create-relationship-type).
 
@@ -111,8 +111,6 @@ You can modify or remove metadata attributes from entity types, properties, and 
     :::image type="content" source="media/how-to-add-semantic-enrichment/edit-metadata.png" alt-text="Screenshot of editing metadata attributes." lightbox="media/how-to-add-semantic-enrichment/edit-metadata.png":::
 
 1. Make updates to the metadata as needed and select **Update**.
-
-1. Only custom metadata attributes can be deleted.
 
 ## Example with data agent
 
@@ -192,9 +190,7 @@ Follow these best practices to maximize the value of semantic enrichment:
 ## Limitations and considerations
 
 * **Duplicate keys**: Keys for additional metadata must be unique within each entity type, property, or relationship type. If you add duplicate keys, you get an error.
-* **Predefined metadata**: Description and Synonym fields are predefined. You can edit them or leave them empty, but you can't delete them.
 * **Synonyms**: Only entity types support synonyms. Properties and relationship types don't support synonyms.
-* **Object size limits**: Entity type objects have a maximum size limit. Consider this limit when you add large numbers of key-value pairs for additional metadata.
 
 ## Related content
 
