@@ -1,5 +1,5 @@
 ---
-title: Train regression models using explainable boosting machines (preview)
+title: Train regression models using explainable boosting machines
 description: Learn how to train regression models using explainable boosting machines
 ms.author: scottpolly
 author: s-polly
@@ -9,13 +9,12 @@ ms.topic: how-to
 ms.date: 05/13/2026
 ---
 
-# Train explainable boosting machines - regression (preview)
+# Train explainable boosting machines - regression
 
 This article explains how to use explainable boosting machines (EBM) in Microsoft Fabric to train regression models. An EBM is a machine learning technique that combines the power of gradient boosting with an emphasis on model interpretability. An EBM creates a blend of decision trees, similar to gradient boosting, but with a unique focus on generating human-readable models. EBMs provide both accurate predictions and clear, intuitive explanations for those predictions. EBMs are well-suited for applications that involve healthcare, finance, and regulatory compliance, where understanding the underlying factors that drive model decisions is essential.
 
-In SynapseML, you can use a scalable implementation of explainable boosting machines - powered by Apache Spark - to train new models. This tutorial describes how to use Apache Spark to apply the scalability and interpretability of explainable boosting machines within Microsoft Fabric. Use of explainable boosting machines with Microsoft Fabric is currently in preview.
+In SynapseML, you can use a scalable implementation of explainable boosting machines - powered by Apache Spark - to train new models. This tutorial describes how to use Apache Spark to apply the scalability and interpretability of explainable boosting machines within Microsoft Fabric. 
 
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 ## Benefits of explainable boosting machines
 
