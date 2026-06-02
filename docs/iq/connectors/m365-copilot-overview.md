@@ -63,7 +63,7 @@ The **Share Fabric data with your Microsoft 365 services** setting controls whet
 
 For more information, see [Share data with your Microsoft 365 services](/fabric/admin/admin-share-power-bi-metadata-microsoft-365-services).
 
-## Limitations and known issues
+## Considerations and limitations
 
 ### Scope of answers
 
@@ -73,15 +73,15 @@ When you attach an item, Copilot uses that item as context for your question but
 
 Not all Power BI content types are supported:
 
-| Content type | Supported |
-|---|---|
-| Power BI reports | Yes |
-| Reports in workspace apps | Yes |
-| Reports in org apps | No |
-| Semantic models (explicit attachment) | No, but answers from reports can use the full semantic model |
-| Paginated reports (RDL) | No |
-| Dashboards | No |
-| Apps (top-level) | No |
+| Content type | Supported | Notes |
+|---|---|---|
+| Power BI reports | Yes | Full support for link paste, item attachment, and name search |
+| Reports in workspace apps | Yes | Same capabilities as standalone reports |
+| Reports in org apps | Partial | Reports in org apps appear in the item attachment menu but link copy-paste doesn't work for these reports. Use the attachment menu or name the report in your prompt. |
+| Semantic models (explicit attachment) | No | You can't attach a semantic model directly, but answers from reports can use the full underlying semantic model |
+| Paginated reports (RDL) | No | — |
+| Dashboards | No | — |
+| Apps (top-level) | No | — |
 
 ### Link handling
 
@@ -94,6 +94,22 @@ Search for Power BI content is still a work in progress. If you can't find a rep
 ### Fabric data agents and ontologies
 
 Fabric data agents and ontologies can't answer questions in Copilot Chat without an explicitly published Microsoft 365 agent. For more information about publishing data agents, see [Use a Fabric data agent in Microsoft 365 Copilot](/fabric/data-science/data-agent-microsoft-365-copilot).
+
+### Row-level and object-level security
+
+Copilot respects row-level security (RLS) and object-level security (OLS) applied to the underlying semantic model. If your access is restricted by RLS or OLS rules, Copilot answers only reflect the data you have permission to see.
+
+### Data freshness
+
+Answers reflect the data from the last refresh of the semantic model, not real-time data. If a report's data source refreshes on a schedule, Copilot answers are only as current as the most recent successful refresh.
+
+### Response latency
+
+The first query against a report might take longer than subsequent queries as Copilot indexes the content. Follow-up questions about the same report are typically faster.
+
+### Language support
+
+Questions must be in a language that Copilot supports. For the current list of supported languages, see [Supported languages in Microsoft 365 Copilot](/microsoft-365-copilot/microsoft-365-copilot-supported-languages).
 
 ## Share feedback
 
