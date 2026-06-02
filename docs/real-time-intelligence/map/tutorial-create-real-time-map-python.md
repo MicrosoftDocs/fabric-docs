@@ -932,7 +932,7 @@ def create_kql_table_if_missing(client: httpx.Client, fabric: FabricClient, cfg:
 
 ### Verify data ingestion
 
-`verify_eventhouse_data` confirms that events seeded into the eventstream actually landed in the eventhouse table. It runs a `<table> | count` query against the eventhouse's Kusto **query** endpoint (`queryServiceUri` + `/v1/rest/query`) and prints the raw response body so the count is visible in the run log.
+`verify_eventhouse_data` confirms that events seeded into the eventstream actually landed in the eventhouse table. It polls a `<table> | count` query against the eventhouse's Kusto **query** endpoint (`queryServiceUri` + `/v1/rest/query`) until the returned count is greater than zero, or fails after a timeout. Eventstream ingestion takes a few seconds to flow from the custom endpoint into the table, so polling — rather than a single query — is what gives a confident pass/fail signal.
 
 It's defined next to `create_kql_table_if_missing` because both helpers look up the same eventhouse properties (`queryServiceUri`, `databasesItemIds`) and resolve the KQL database's `displayName`. It's called from `main()` *after* `seed_eventstream_from_csv` so the seeded events have a chance to flow through the eventstream and reach the table before the count runs.
 
@@ -947,13 +947,15 @@ Add the following after the `create_kql_table_if_missing` function:
 
 def verify_eventhouse_data(client: httpx.Client, fabric: FabricClient, cfg: Config, eventhouse_id: str):
     """
-    Run a count query against the eventhouse table and print the response.
+    Poll a count query against the eventhouse table until rows arrive.
 
     Reads the eventhouse properties to get `queryServiceUri` and the KQL
-    database item ID, resolves the database's `displayName`, then posts
-    `<table> | count` to the Kusto query endpoint
-    (`queryServiceUri` + `/v1/rest/query`). The full JSON response is
-    printed so the count is visible in the run log.
+    database item ID, resolves the database's `displayName`, then polls
+    `<table> | count` against the Kusto query endpoint
+    (`queryServiceUri` + `/v1/rest/query`) until the count is greater than
+    zero or the timeout elapses. Eventstream ingestion is asynchronous, so
+    polling avoids a false negative when the query runs before seeded
+    events have landed in the table.
     """
 
     # Reuse your existing pattern to get KQL DB info
@@ -976,17 +978,36 @@ def verify_eventhouse_data(client: httpx.Client, fabric: FabricClient, cfg: Conf
 
     # Simple count query
     csl = f"{cfg.eventhouse_table_name} | count"
+    query_url = f"{query_service_uri}/v1/rest/query"
 
-    resp = client.post(
-        f"{query_service_uri}/v1/rest/query",
-        headers=_kusto_headers(),
-        json={"db": db_name, "csl": csl}
+    max_attempts = 12
+    delay_seconds = 5
+
+    for attempt in range(1, max_attempts + 1):
+        resp = client.post(
+            query_url,
+            headers=_kusto_headers(),
+            json={"db": db_name, "csl": csl}
+        )
+
+        if resp.status_code >= 400:
+            raise RuntimeError(f"Verification query failed: {resp.text}")
+
+        # Kusto v1 query response: Tables[0].Rows[0][0] holds the count.
+        count = resp.json()["Tables"][0]["Rows"][0][0]
+        print(f"Data verification attempt {attempt}/{max_attempts}: count = {count}")
+
+        if count > 0:
+            print(f"Data ingestion verified: {count} row(s) in {cfg.eventhouse_table_name}")
+            return
+
+        if attempt < max_attempts:
+            time.sleep(delay_seconds)
+
+    raise RuntimeError(
+        f"Data verification failed: no rows in {cfg.eventhouse_table_name} after "
+        f"{max_attempts * delay_seconds}s"
     )
-
-    if resp.status_code >= 400:
-        raise RuntimeError(f"Verification query failed: {resp.text}")
-
-    print("Data verification result:", resp.text)
 ```
 
 ### Create eventstream with definition
