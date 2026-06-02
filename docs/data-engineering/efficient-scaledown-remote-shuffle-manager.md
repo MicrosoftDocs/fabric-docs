@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Efficient scaledown is a feature in Microsoft Fabric Spark that decouples Spark shuffle data from executor lifetime. Instead of pinning shuffle output to local executor disks, Fabric Spark routes shuffle data to Azure Blob Storage (or migrates it there on demand) and lets Adaptive Query Execution (AQE) shape the write itself. The result is faster cluster scaledown, lower compute cost, and more resilient jobs — with no changes to your queries, notebooks, or pipelines.
+Efficient scaledown is a feature in Microsoft Fabric Spark that decouples Spark shuffle data from executor lifetime. Instead of pinning shuffle output to local executor disks, Fabric Spark routes shuffle data to Azure Blob Storage (or migrates it there on demand) and lets Adaptive Query Execution (AQE) shape the write itself. The result is faster cluster scaledown, lower compute cost, and more resilient jobs—with no changes to your queries, notebooks, or pipelines.
 
 ## Overview
 
@@ -32,7 +32,7 @@ Efficient scaledown is built from four cooperating capabilities:
 
 ## How it works
 
-When Spark processes a query, it often redistributes data between stages — a *shuffle*. Normally, shuffle data is stored on each executor's local disk, which ties executors to that data. They can't be released until every consumer has finished reading. That coupling is the single biggest reason clusters can't scale down quickly and why losing an executor causes expensive stage retries.
+When Spark processes a query, it often redistributes data between stages—a *shuffle*. Normally, shuffle data is stored on each executor's local disk, which ties executors to that data. They can't be released until every consumer has finished reading. That coupling is the single biggest reason clusters can't scale down quickly and why losing an executor causes expensive stage retries.
 
 Efficient scaledown breaks this coupling:
 
@@ -71,7 +71,7 @@ Routing is automatic and requires no user input. The recommended granularity is 
 
 ## Key benefits
 
-### Lower costs — pay only for the compute you use
+### Lower costs: Pay only for the compute you use
 
 With efficient scaledown, executors are released as soon as their work is done. They no longer sit idle holding shuffle data that downstream tasks might eventually read.
 
@@ -104,7 +104,7 @@ The autoscaler can freely remove idle nodes and resize the cluster in response t
 
 ### Better performance on skewed and large shuffles
 
-AQE Shuffle Write lets Adaptive Query Execution shape the shuffle write itself — choosing partitioning that downstream AQE consumes without re-coalescing, and producing fewer, better-sized blocks for remote storage. Combined with the Decision Layer, you get faster wall-clock time on large/skewed queries and unchanged latency for small ones.
+AQE Shuffle Write lets Adaptive Query Execution shape the shuffle write itself—choosing partitioning that downstream AQE consumes without re-coalescing, and producing fewer, better-sized blocks for remote storage. Combined with the Decision Layer, you get faster wall-clock time on large/skewed queries and unchanged latency for small ones.
 
 ## Get started
 
@@ -158,7 +158,7 @@ No code changes are required. You can also set these in your environment Spark p
 
 | Setting | Recommended | What it controls |
 |---|---|---|
-| `spark.storage.decommission.shuffleBlocks.enabled` | `true` | Migrates shuffle blocks off an executor that is decommissioning, instead of dropping them. |
+| `spark.storage.decommission.shuffleBlocks.enabled` | `true` | Migrates shuffle blocks off an executor that's decommissioning, instead of dropping them. |
 | `spark.storage.decommission.shuffleBlocks.cleanup` | `true` | Cleans up shuffle blocks on the source executor after a successful migration. |
 | `spark.storage.decommission.shuffleBlocks.migrateToFallbackStorage` | `true` | If no peer executor can accept the blocks, migrates them to fallback storage (Azure Blob Storage). |
 | `spark.storage.decommission.fallbackStorage.cleanUp` | `true` | Removes shuffle blocks from fallback storage once they're no longer needed, bounding storage cost. |
