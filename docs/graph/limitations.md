@@ -19,7 +19,6 @@ For help with common problems, see [Troubleshooting graph](troubleshooting-and-f
 - OneLake parquet and CSV files are the only data sources currently supported.
 - Support for Power BI semantic models as data sources is under development.
 - Support for column- and row-level [OneLake security](../onelake/security/get-started-security.md#onelake-security) is under development.
-- Support for [Lakehouse with schema](../data-engineering/lakehouse-schemas.md) is under development.
 
 ### Data types
 
@@ -64,7 +63,7 @@ Each Fabric Workspace can have up to 10 graph instances.
 
 ### Size of graph
 
-Creating graphs with more than 500 million nodes and edges might result in unstable performance.
+Creating graphs with more than 1 billion nodes and edges might result in unstable performance.
 
 ### Multitasking UI
 
