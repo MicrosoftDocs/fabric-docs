@@ -1,9 +1,9 @@
 ---
 title: "Fabric IQ in Microsoft 365 Copilot Chat (Frontier)"
 description: Learn how to ask Microsoft 365 Copilot questions grounded in your Power BI data using Fabric IQ.
-author: TBD
-ms.author: TBD
-ms.reviewer: TBD
+author: svredevoogd
+ms.author: svredevoogd
+ms.reviewer: svredevoogd
 ms.topic: concept-article
 ms.date: 05/28/2026
 ---
