@@ -14,7 +14,7 @@ Fabric IQ brings Power BI data answers directly into Microsoft 365 Copilot Chat,
 
 ## How it works
 
-When a user asks Microsoft 365 Copilot a data question, Copilot uses the user's existing permissions to access the relevant Power BI report and underlying semantic model. No background metadata sharing is required—this capability works independently of the **Share Fabric data with your Microsoft 365 services** tenant setting.
+When a user asks Microsoft 365 Copilot a data question, Copilot uses the user's existing permissions to access the relevant Power BI report and underlying semantic model. No background metadata sharing is required—this capability works independently of the **Share Fabric data with your Microsoft 365 services** tenant setting. For more information about that setting, see [Share data with your Microsoft 365 services](/fabric/admin/admin-share-power-bi-metadata-microsoft-365-services).
 
 However, the **Share Fabric data with your Microsoft 365 services** setting does affect discoverability: Power BI content only appears in the item-attachment menu (the **+** button) if that setting is enabled. Users can still reference Power BI content by pasting a link or naming a report in their prompt, regardless of that setting.
 
@@ -76,7 +76,8 @@ Not all Power BI content is supported:
 | Content type | Supported |
 |---|---|
 | Power BI reports | Yes |
-| Reports within apps | Yes |
+| Reports in workspace apps | Yes |
+| Reports in org apps | No |
 | Semantic models (explicit attachment) | No (but answers from reports can use the full semantic model) |
 | Paginated reports (RDL) | No |
 | Dashboards | No |
