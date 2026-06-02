@@ -4,6 +4,8 @@ description: Learn about how you can use an Eventhouse to store and query vector
 ms.reviewer: sharmaanshul
 ms.topic: tutorial
 ms.date: 08/19/2025
+ms.collection: ce-skilling-ai-copilot
+ms.update-cycle: 180-days
 ms.subservice: rti-eventhouse
 ms.search.form: Eventhouse
 ---

@@ -4,6 +4,8 @@ description: Explore KQL tables in Real-time Hub with Copilot. This guide shows 
 ms.reviewer: mibar
 ms.topic: how-to
 ms.date: 06/01/2026
+ms.collection: ce-skilling-ai-copilot
+ms.update-cycle: 180-days
 ---
 
 # Explore KQL table data with Copilot
