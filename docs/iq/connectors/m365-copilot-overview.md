@@ -1,7 +1,7 @@
 ---
 title: "Fabric IQ in Microsoft 365 Copilot Chat (Frontier)"
 description: Learn how to ask Microsoft 365 Copilot questions grounded in your Power BI data using Fabric IQ.
-author: svredevoogd
+author: PM-Sara
 ms.author: svredevoogd
 ms.reviewer: svredevoogd
 ms.topic: concept-article
@@ -109,7 +109,7 @@ The first query against a report might take longer than subsequent queries as Co
 
 ### Language support
 
-Questions must be in a language that Copilot supports. For the current list of supported languages, see [Supported languages in Microsoft 365 Copilot](/microsoft-365-copilot/microsoft-365-copilot-supported-languages).
+Questions must be in a language that Copilot supports. For the current list of supported languages, see [Microsoft 365 Copilot setup: language support](/microsoft-365-copilot/microsoft-365-copilot-setup#language-support).
 
 ## Share feedback
 
