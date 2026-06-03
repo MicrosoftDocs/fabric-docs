@@ -23,7 +23,7 @@ In the SQL query editor of a Warehouse SQL query, enter and run a SQL query, and
 
 Continue to the next section to start creating a rule. 
 
-[!INCLUDE [rule-details](../../real-time-hub/includes/rule-details.md)]
+[!INCLUDE [rule-details](../../real-time-intelligence/data-activator/includes/rule-details.md)]
 
 ## Monitor section
 
@@ -37,16 +37,27 @@ Continue to the next section to start creating a rule.
 
 For the **Check** field, confirm that **On each event** is selected. This setting means that the alert is evaluated every time the query runs.
 
-[!INCLUDE [rule-action](../../real-time-hub/includes/rule-action.md)]
+[!INCLUDE [rule-action](../../real-time-intelligence/data-activator/includes/rule-action.md)]
 
-[!INCLUDE [rule-save-location](../../real-time-hub/includes/rule-save-location.md)]
+[!INCLUDE [rule-save-location](../../real-time-intelligence/data-activator/includes/rule-save-location.md)]
 
 ## Create the rule
 
-On the **Add rule** page, select **Create** to create the rule. After the rule creation is successful, it runs based on the frequency you set in the **Run query every** field. If the query returns results, the rule triggers the actions you set.
+1. On the **Add rule** page, select **Create** to create the rule. After the rule creation is successful, it runs based on the frequency you set in the **Run query every** field. If the query returns results, the rule triggers the actions you set. 
+1. You see the rule in the **Rules** pane. You can select the rule to view its details, edit it, or delete it or open it in Activator. 
 
+### Rules pane
 
-[!INCLUDE [rules-pane](../../real-time-hub/includes/rules-pane.md)]
+In the **Rules** pane, you can perform the following tasks:
+
+- Use the toggle button to start or stop the rule. When the rule is stopped, it doesn't run, and no alerts are sent. Once you see a couple of sample alerts, stop the rule to avoid sending too many alerts. You can start the rule again when you want to receive alerts.
+- Use the **Edit** button to edit the rule without leaving the SQL query editor page. You can edit the rule's details, conditions, actions, and save location.
+- Use the **Delete** button to delete the rule. 
+- Select **View in Activator** to open the rule in Activator. You can view the rule's details, edit it, or delete it in Activator. When you view in Activator, you can also see the rule's history, including when it was triggered and the alerts that were sent. 
+
+    In the Activator page, select the **event name**, and select **Manage source** to view the SQL query that triggered the alert. If you select the query link, you navigate back to the SQL query editor page.
+
+    :::image type="content" source="./media/set-alerts-warehouse-sql-query/warehouse-link.png" alt-text="Screenshot of the Sample warehouse event page with a link to the sample warehouse." lightbox="./media/set-alerts-warehouse-sql-query/warehouse-link.png" border="true":::
 
 ## Sample alert
 

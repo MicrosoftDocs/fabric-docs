@@ -2,15 +2,13 @@
 title: "Quickstart: Create your first graph in Microsoft Fabric"
 description: Create a basic graph with two nodes and one edge in Microsoft Fabric in just a few minutes using the visual graph modeling experience.
 ms.topic: quickstart
-ms.date: 03/24/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ms.search.form: Quickstart - Create your first graph in Microsoft Fabric
 ai-usage: ai-assisted
 ---
 
 # Quickstart: Create your first graph in Microsoft Fabric
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 In this quickstart, you use graph in Microsoft Fabric to create a basic graph with two nodes and one edge, and then run a query. This process takes about 15 minutes.
 
@@ -32,7 +30,7 @@ Before you start this quickstart, verify that:
     > Access management of the graph is restricted to the workspace that hosts it. Users outside of the workspace can't access the graph. Users within the workspace who have access to the underlying data in the lakehouse can model and query the graph.
 
 > [!TIP]
-> If you don't see **Graph model (preview)** in the **+ New item** menu, ask your Fabric administrator to enable graph in the [admin portal](../admin/admin-center.md).
+> If you don't see **Graph model** in the **+ New item** menu, ask your Fabric administrator to enable graph in the [admin portal](../admin/admin-center.md).
 
 ## Load sample data
 
@@ -78,9 +76,9 @@ For this quickstart, you only need two tables: *adventureworks_customers* and *a
 ## Create a graph model
 
 1. In your [Microsoft Fabric workspace](https://fabric.microsoft.com/), select **+ New item**.
-1. Select **Analyze and train data** > **Graph model (preview)**.
+1. Select **Analyze and train data** > **Graph model**.
 
-    :::image type="content" source="./media/quickstart/new-item-graph-model.png" alt-text="Screenshot showing the new item menu with the option to select Graph model (preview)." lightbox="./media/quickstart/new-item-graph-model.png":::
+    :::image type="content" source="./media/quickstart/new-item-graph-model.png" alt-text="Screenshot showing the new item menu with the option to select Graph model." lightbox="./media/quickstart/new-item-graph-model.png":::
 
     > [!TIP]
     > Alternatively, enter "graph" in the search box and press **Enter** to search for graph items.

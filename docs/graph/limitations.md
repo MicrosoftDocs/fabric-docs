@@ -2,15 +2,13 @@
 title: Current Limitations of graph in Microsoft Fabric
 description: Understand the current limitations of graph in Microsoft Fabric, including data types, graph size, query constraints, and GQL language support.
 ms.topic: reference
-ms.date: 05/04/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ---
 
 # Current limitations of graph in Microsoft Fabric
 
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
-
-While graph in Microsoft Fabric is in preview, the service has certain functional and performance limitations. This article highlights some key limitations but isn't an exhaustive list. Check back regularly for updates.
+Graph in Microsoft Fabric has certain functional and performance limitations. This article highlights some key limitations but isn't an exhaustive list. Check back regularly for updates.
 
 For help with common problems, see [Troubleshooting graph](troubleshooting-and-faq.md).
 
@@ -21,7 +19,6 @@ For help with common problems, see [Troubleshooting graph](troubleshooting-and-f
 - OneLake parquet and CSV files are the only data sources currently supported.
 - Support for Power BI semantic models as data sources is under development.
 - Support for column- and row-level [OneLake security](../onelake/security/get-started-security.md#onelake-security) is under development.
-- Support for [Lakehouse with schema](../data-engineering/lakehouse-schemas.md) is under development.
 
 ### Data types
 
@@ -66,7 +63,7 @@ Each Fabric Workspace can have up to 10 graph instances.
 
 ### Size of graph
 
-Creating graphs with more than 500 million nodes and edges might result in unstable performance.
+Creating graphs with more than 1 billion nodes and edges might result in unstable performance.
 
 ### Multitasking UI
 

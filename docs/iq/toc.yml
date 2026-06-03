@@ -1,12 +1,10 @@
 items:
 - name: Fabric IQ documentation
   href: index.yml
-- name: What is Fabric IQ?
-  href: overview.md
-- name: Connectors
+- name: Overview
   items:
-  - name: Cowork (Frontier)
-    href: connectors/cowork-overview.md
+  - name: What is Fabric IQ?
+    href: overview.md
 - name: Ontology
   items:
   - name: Overview
@@ -25,7 +23,7 @@ items:
       href: ontology/tutorial-2-enrich-ontology.md
     - name: 3- View the ontology
       href: ontology/tutorial-3-preview-ontology.md
-    - name: 4- Create data agent
+    - name: 4- Consume ontology from agents
       href: ontology/tutorial-4-create-data-agent.md
     - name: 5- Conclude and clean up resources
       href: ontology/tutorial-5-conclusion.md
@@ -41,6 +39,8 @@ items:
       href: ontology/how-to-bind-data.md
     - name: Add relationship types
       href: ontology/how-to-create-relationship-types.md
+    - name: Add semantic enrichment
+      href: ontology/how-to-add-semantic-enrichment.md
     - name: View entity type details
       href: ontology/how-to-view-entity-type-details.md
     - name: Use rules
@@ -49,6 +49,10 @@ items:
       href: ontology/how-to-use-resource-links.md
     - name: Connect an operations agent
       href: ontology/how-to-create-operations-agent.md
+    - name: Create a Foundry IQ agent
+      href: ontology/how-to-create-agent-foundry-iq.md
+    - name: Create a Copilot Studio agent
+      href: ontology/how-to-create-agent-copilot-studio.md
     - name: Use ontology MCP server
       href: ontology/how-to-use-ontology-mcp-server.md
   - name: Resources
@@ -149,6 +153,22 @@ items:
           href: plan/planning-how-to-export-data.md
         - name: Pivot data
           href: plan/planning-how-to-pivot-data.md
+        - name: Conditional formatting
+          items:
+              - name: Conditional formatting overview
+                href: plan/planning-conditional-formatting/concept-conditional-formatting.md
+              - name: Create rules
+                href: plan/planning-conditional-formatting/how-to-create-rules.md
+              - name: Format by rules
+                href: plan/planning-conditional-formatting/how-to-format-if.md
+              - name: Format by color scales
+                href: plan/planning-conditional-formatting/how-to-format-color-scales.md
+              - name: Format by classification
+                href: plan/planning-conditional-formatting/how-to-format-classification.md
+              - name: Apply quick formatting
+                href: plan/planning-conditional-formatting/how-to-apply-quick-formatting.md
+              - name: Manage rules
+                href: plan/planning-conditional-formatting/how-to-manage-rules.md
         - name: Use forecasting
           items: 
               - name: Configure forecasts
@@ -247,3 +267,7 @@ items:
   href: ../real-time-intelligence/operations-agent-tocs/toc.yml
 - name: Power BI semantic model
   href: ../data-warehouse/semantic-model-toc/toc.yml
+- name: Integrations
+  items:
+  - name: Cowork (Frontier)
+    href: connectors/cowork-overview.md

@@ -31,3 +31,30 @@ This document outlines the known limitations of Fabric notebooks to help you und
 - The statement depth for ```%run``` is up to **5**, with a total of **1000** referenced cells.
 - Notebook job history is retained for **60 days**.
 - To personalize your Spark session in ```%%configure```, set the same value for "DriverMemory" and "ExecutorMemory". The "driverCores" and "executorCores" values should also be the same. Choose an executor size from the following options: **(4, 28g)**, **(8, 56g)**, **(16, 112g)**, **(32, 224g)** or **(64, 400g)**. Furthermore, use this formula to make sure capacity stays within limits: (NumExecutors + 1) * ExecutorCores.
+
+### Running notebooks via API or pipeline with inline %pip installs
+
+Inline installation commands (%pip install) are disabled by default in pipeline runs.
+
+To enable inline installs, pass the following request payload when triggering the notebook via API, pipeline, or CLI (for example, using `--config` in Fabric CLI).
+
+The `value` must be a boolean (`true`), not a string (`"true"`).
+
+```json
+{
+  "parameters": [
+    {
+      "name": "_inlineInstallationEnabled",
+      "value": true,
+      "type": "Boolean"
+    }
+  ]
+}
+```
+**Limitations**
+
+- Not supported in reference runs (`notebookutils.notebook.run()`)
+- Not supported in High Concurrency mode
+- Libraries installed via `%pip` are not retained across runs
+- Dependency versions may change between runs, leading to inconsistent results
+
