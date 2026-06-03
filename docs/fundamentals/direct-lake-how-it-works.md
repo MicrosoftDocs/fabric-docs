@@ -83,11 +83,11 @@ When using Direct Lake on SQL endpoints, a query sent to a Direct Lake semantic 
 > [!IMPORTANT]
 > If possible, you should always design your solution—or size your capacity—to avoid DirectQuery fallback. That's because it might result in slower query performance.
 
-Direct Lake on OneLake does not support DirectQuery fallback and operates only in DirectLakeOnly mode. If you need to avoid fallback entirely, consider using Direct Lake on OneLake. Direct Lake on Onelake is the recommended Direct Lake flavor for new semantic model applications.
+Direct Lake on OneLake runs exclusively in DirectLakeOnly mode and doesn't support DirectQuery fallback. For new semantic models, it's the recommended Direct Lake option.
 
 ### When Direct Lake mode is used
 
-Queries use Direct Lake mode only when *all* of the following conditions are satisfied:
+Queries remain in Direct Lake mode (avoiding DirectQuery fallback) only when *all* of the following conditions are satisfied:
 
 - No tables referenced by the semantic model have SQL [row-level security (RLS)](direct-lake-security-integration.md) defined at the SQL analytics endpoint.
 - No tables referenced by the semantic model have SQL dynamic data masking (DDM) defined at the SQL analytics endpoint.
@@ -98,7 +98,6 @@ Queries use Direct Lake mode only when *all* of the following conditions are sat
   - Number of row groups is within limit
   - Number of rows is within limit
 - The semantic model has been refreshed (framed) since the underlying Delta tables were created or modified.
-- The capacity is not under memory pressure.
 
 A single table exceeding any guardrail can prevent Direct Lake mode for the entire model.
 
