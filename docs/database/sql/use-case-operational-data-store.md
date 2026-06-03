@@ -63,8 +63,14 @@ By using SQL database in Microsoft Fabric, you can create end-to-end workflows f
 - Power BI
 - All with streamlined DevOps by using Git-based CI/CD
 
-## Related content
+## Fabric SQL database use case stories
+
+To learn more about the best use cases for Fabric SQL database, see:
 
 - [Use SQL database in reverse ETL](use-case-reverse-etl.md)
 - [Use SQL database as the source for translytical applications](use-case-translytical-applications.md)
+- [Use SQL database in AI applications](use-case-ai-application.md)
+
+## Related content
+
 - [Intelligent applications and AI](/sql/sql-server/ai/artificial-intelligence-intelligent-applications?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true)

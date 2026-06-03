@@ -392,6 +392,12 @@ For older updates, review the [Microsoft Fabric What's New archive](whats-new-ar
 |May 2026|**Pipelines are evolving beyond ETL**|This perspective post discusses how [pipelines in Fabric are evolving from traditional ETL into end-to-end workflows](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Pipelines-are-evolving-beyond-ETL/ba-p/5177527) that orchestrate work across systems, pause for human input through the new Approval activity (Preview), and observe long-running runs with workflow-aware monitoring. For more information, see [Business Process Management in pipelines documentation](https://aka.ms/BPMDocs).|
 |March 2026|**dbt + Microsoft Fabric strategic investment**|Learn about [first-class dbt core adapters for Warehouse and Lakehouse](https://blog.fabric.microsoft.com/blog/dbt-microsoft-fabric-a-strategic-investment-in-the-modern-analytics-stack?ft=All), and dbt Jobs enhancements (public packages, GitHub support, OneLake logging, pipeline activity, and API support). For more information, see [dbt job in Microsoft Fabric (preview)](../data-factory/dbt-job-overview.md).|
 
+## Fabric Apps (Preview)
+
+### May 2026
+
+[Fabric Apps (preview)](../apps/index.yml) helps you build data-driven applications on Microsoft Fabric by combining data models, generated APIs, authentication, and hosting in one development workflow. You define your data models in TypeScript, and Fabric Apps uses them to generate the backend pieces your app needs. Fabric Apps supports TypeScript as the language for data models, client code, and application logic.
+
 <a id="synapse-data-engineering-in-microsoft-fabric"></a>
 
 ## Fabric Data Engineering
