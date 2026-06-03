@@ -64,45 +64,45 @@ To support reuse and consistency, you can adopt a pipeline-based composition pat
 
 1. Create a reusable email pipeline
 
-Define a pipeline that encapsulates all email-related behavior:
+   Define a pipeline that encapsulates all email-related behavior:
 
-- Configure the Office 365 Email activity
-- Establish the required connection
-- Validate the pipeline independently
+   - Configure the Office 365 Email activity
+   - Establish the required connection
+   - Validate the pipeline independently
 
-This pipeline acts as a reusable service for email delivery.
+   This pipeline acts as a reusable service for email delivery.
 
-:::image type="content" source="media/outlook-activity/reusable-email.png" alt-text="Screenshot showing the Settings tab and setting up a reusable Office 365 Outlook activity.":::
+   :::image type="content" source="media/outlook-activity/reusable-email.png" alt-text="Screenshot showing the Settings tab and setting up a reusable Office 365 Outlook activity.":::
 
 1. Enable shared access through a pipeline connection
 
-Create and configure a pipeline connection that can be used by multiple users to invoke the email pipeline via the **Manage Connections and Gateways** portal in Fabric.
+   Create and configure a pipeline connection that can be used by multiple users to invoke the email pipeline via the **Manage Connections and Gateways** portal in Fabric.
 
-- Grant access to developers or teams who need to send emails
-- Ensure permissions align with your organization’s security policies
+   - Grant access to developers or teams who need to send emails
+   - Ensure permissions align with your organization’s security policies
 
-:::image type="content" source="media/outlook-activity/sharing-pipeline-connection.png" alt-text="Screenshot showing how to share a Pipeline connection.":::
+   :::image type="content" source="media/outlook-activity/sharing-pipeline-connection.png" alt-text="Screenshot showing how to share a Pipeline connection.":::
 
 1. Invoke the email pipeline from other pipelines
 
-In downstream pipelines:
-- Add an Invoke Pipeline activity
-- Select the shared connection
-- Reference the reusable email pipeline
+   In downstream pipelines:
+   - Add an Invoke Pipeline activity
+   - Select the shared connection
+   - Reference the reusable email pipeline
 
-This allows pipelines to trigger email sending without managing their own connections.
+   This allows pipelines to trigger email sending without managing their own connections.
 
-:::image type="content" source="media/outlook-activity/invoke-email-activity.png" alt-text="Screenshot showing an invoke pipeline activity for the previously created email activity.":::
+   :::image type="content" source="media/outlook-activity/invoke-email-activity.png" alt-text="Screenshot showing an invoke pipeline activity for the previously created email activity.":::
 
 1. Parameterize for flexibility
 
-To support different use cases, define parameters in the email pipeline such as:
-- Subject
-- Message body
-- Recipients
-- Dynamic content inputs
+   To support different use cases, define parameters in the email pipeline such as:
+   - Subject
+   - Message body
+   - Recipients
+   - Dynamic content inputs
 
-Passing parameters at runtime enables reuse while preserving customization.
+   Passing parameters at runtime enables reuse while preserving customization.
 
 ### Limitations
 
