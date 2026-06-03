@@ -263,5 +263,7 @@ items:
   href: ../data-warehouse/semantic-model-toc/toc.yml
 - name: Integrations
   items:
+  - name: Microsoft 365 Copilot Chat (Frontier)
+    href: connectors/microsoft-365-copilot-overview.md
   - name: Cowork (Frontier)
     href: connectors/cowork-overview.md

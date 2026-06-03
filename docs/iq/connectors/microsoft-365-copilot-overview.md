@@ -30,11 +30,11 @@ Copilot grounds answers in your Power BI data, but the answers don't stop there.
 
 Users can ground their Copilot questions in Power BI data in three ways:
 
-1. **Paste a report link:** Copy a link from Power BI and paste it directly into the Copilot Chat pane to reference a specific report.
+- **Paste a report link:** Copy a link from Power BI and paste it directly into the Copilot Chat pane to reference a specific report.
 
-1. **Use the attachment menu:** Select the **+** button in Copilot Chat, then look under the **Other** category to find Power BI reports you viewed recently.
+- **Use the attachment menu:** Select the **+** button in Copilot Chat, then look under the **Other** category to find Power BI reports you viewed recently.
 
-1. **Name a report in your prompt:** Mention a Power BI report by name in your question. Copilot uses fuzzy matching to find the right report, even if you don't type the name exactly right. This method works less well when many reports have similar names.
+- **Name a report in your prompt:** Mention a Power BI report by name in your question. Copilot uses fuzzy matching to find the right report, even if you don't type the name exactly right. This method works less well when many reports have similar names.
 
 ### Types of questions you can ask
 
