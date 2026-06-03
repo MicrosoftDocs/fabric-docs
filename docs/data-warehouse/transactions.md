@@ -49,7 +49,7 @@ Fabric Data Warehouse supports executing the following inside an explicit transa
 - `ALTER TABLE` add or drop `PRIMARY KEY`, `UNIQUE`, and `FOREIGN KEY` constraints with the `NOT ENFORCED` keyword
 - Multiple `ALTER TABLE` statements
 - `ALTER TABLE` on distributed temporary tables
-- Supported `ALTER COLUMN` operations [ALTER COLUMN](https://learn.microsoft.com/en-us/sql/t-sql/statements/alter-table-transact-sql?view=fabric#alter-column)
+- Supported [ALTER COLUMN](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true#alter-column) operations
 
 ### Cross-database query transaction support
 
