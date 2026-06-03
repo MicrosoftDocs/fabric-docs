@@ -2,7 +2,7 @@
 title: "Tutorial: Copy job with SAP ABAP Add-On (Preview)"
 description: Learn how to use SAP ABAP Add-On to copy data from SAP systems in Copy Job.
 ms.reviewer: jingwang
-ms.date: 05/26/2026
+ms.date: 06/03/2026
 ms.topic: tutorial
 ---
 
@@ -32,13 +32,16 @@ You need:
 
 ### Set up on-premises data gateway
 
-1. [Install the latest on-premises data gateway](/data-integration/gateway/service-gateway-install). The minimal supported version is May 2026 (version 3000.318.9).
+1. [Install the latest on-premises data gateway](/data-integration/gateway/service-gateway-install). The minimal supported version is May 2026.
 1. Download the 64-bit [SAP Connector for Microsoft .NET](https://support.sap.com/en/product/connectors/msnet.html?anchorId=section_512604546) from SAP website, and install it on the on-premises data gateway machine.
 1. Ensure your gateway machine allows outbound HTTPS communication to Fabric OneLake (`*.onelake.fabric.microsoft.com`). The gateway connects to OneLake during copy job execution.
 
 ### Set up SAP system
 
 1. [Download the Microsoft Data Integration ABAP Add-On](https://aka.ms/sap-copyjob-abap-download). Share these transport files with your SAP admin for installation in your SAP ECC or SAP S/4HANA system.
+
+    > [!NOTE]
+    > Follow the README.md file in the download package to rename the transport files properly before importing them into the SAP systems.
 
 1. Ensure your SAP system's firewall allows:
 
