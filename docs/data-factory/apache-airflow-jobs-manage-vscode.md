@@ -5,7 +5,7 @@ author: makromer
 ms.author: makromer
 ms.topic: how-to
 ms.date: 06/01/2026
-ms.service: microsoft-fabric
+ms.service: fabric
 ms.subservice: data-factory
 ms.custom: build-2026
 ms.collection: ce-skilling-ai-copilot
