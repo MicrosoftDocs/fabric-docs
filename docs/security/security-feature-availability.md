@@ -89,7 +89,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Exploration | - | - | - |
 |  | Org App | - | - | - |
 |  | Metric Set | - | - | - |
-| **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | - |
+| **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | Preview |
 |  | Activator | ✓ | - | Preview |
 |  | Eventhouse/KQL DB | ✓ | Preview | Preview |
 |  | Eventstream | ✓ |  | Preview |
