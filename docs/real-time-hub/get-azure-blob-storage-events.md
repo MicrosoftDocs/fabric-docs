@@ -12,8 +12,36 @@ This article describes how to get Azure Blob Storage events into Fabric Real-Tim
 
 An event is the smallest amount of information that fully describes that something happened in a system. Azure Blob Storage events are triggered when a client creates, replaces, deletes a blob, etc. By using the Real-Time hub, you can convert these events into continuous data streams and transform them before routing them to various destinations in Fabric.
 
-[!INCLUDE [azure-blob-storage-source-connector-prerequisites](../real-time-intelligence/event-streams/includes/connectors/azure-blob-storage-source-connector-prerequisites.md)]
+|Event name|Description|
+|-------|------------|
+|Microsoft.Storage.BlobCreated|Triggered when a blob is created or updated.|
+|Microsoft.Storage.BlobDeleted                    |Triggered when a blob is deleted.|
+|Microsoft.Storage.BlobRenamed                    |Triggered when a blob is renamed.|
+|Microsoft.Storage.BlobTierChanged                |Triggered when the blob access tier is changed.|
+|Microsoft.Storage.DirectoryCreated               |Triggered when a directory is created.|
+|Microsoft.Storage.DirectoryRenamed               |Triggered when a directory is renamed.|
+|Microsoft.Storage.AsyncOperationInitiated        |Triggered when an operation involving moving or copying data from the archive to hot or cool tiers is initiated.|
+|Microsoft.Storage.DirectoryDeleted               |Triggered when a directory is deleted.|
+|Microsoft.Storage.BlobInventoryPolicyCompleted   |Triggered when the inventory run completes for a rule that defines an inventory policy.|
+|Microsoft.Storage.LifecyclePolicyCompleted       |Triggered when the actions defined by a lifecycle management policy are done.|
 
+For more information about available event types, see [Azure Blob Storage as Event Grid source](/azure/event-grid/event-schema-blob-storage).
+
+[!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
+
+[!INCLUDE [outbound-access-protection-note](./includes/outbound-access-protection-note.md)]
+
+[!INCLUDE [tenant-private-links-note](./includes/tenant-private-links-note.md)]
+
+[!INCLUDE [workspace-private-links-note](./includes/workspace-private-links-note.md)]
+
+> [!NOTE]
+> Azure Blob Storage events connector is **not supported** in the following workspace capacity regions: Central US, Germany West Central, South-Central US, West US2, West US3, West India.
+
+## Prerequisites
+
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
+- An Azure Blob Storage account of kind **StorageV2** (general purpose v2), Block Blob Storage, or Blob Storage. General purpose v1 storage accounts aren't supported.
 
 ## Create streams for Azure Blob Storage events
 

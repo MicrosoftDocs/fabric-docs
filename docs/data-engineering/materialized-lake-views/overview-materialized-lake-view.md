@@ -1,7 +1,7 @@
 ---
 title: Overview of Materialized Lake Views
 description: Learn about the features, availability, and limitations of materialized lake views in Microsoft Fabric.
-ms.reviewer: nijelsf
+ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: overview
 ms.date: 05/26/2026
 ai-usage: ai-assisted
@@ -89,7 +89,7 @@ CONSTRAINT valid_sales CHECK (sales_amount > 0) ON MISMATCH DROP
 
 When materialized lake views reference other materialized lake views or tables, Fabric automatically detects those relationships and manages execution order for you.
 
-- Visualize how your materialized lake views depend on each other
+- Visualize how your materialized lake views depend on each other, across lakehouses
 - Automatic refresh ordering based on dependencies
 - Processing follows the dependency chain to ensure data consistency
 
@@ -99,7 +99,7 @@ Fabric provides built-in tools to track the health and performance of your mater
 
 - Track refresh performance and execution status for each materialized lake view
 - View data quality metrics and violation counts in lineage
-- Monitor job instances and refresh history
+- Monitor job instances and refresh history in recent runs view
 
 ### Security
 

@@ -35,7 +35,7 @@ landingContent:
             url: ontology/tutorial-2-enrich-ontology.md
           - text: 3- Preview the ontology
             url: ontology/tutorial-3-preview-ontology.md
-          - text: 4- Create data agent
+          - text: 4- Consume ontology from agents
             url: ontology/tutorial-4-create-data-agent.md
           - text: 5- Conclude and clean up resources
             url: ontology/tutorial-5-conclusion.md

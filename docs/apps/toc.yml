@@ -1,0 +1,53 @@
+items:
+- name: Fabric Apps documentation
+  href: index.yml
+- name: Overview
+  items:
+  - name: What is Fabric Apps?
+    href: overview.md
+  - name: Pricing
+    href: pricing.md
+- name: Get started
+  items:
+  - name: Create your first app
+    href: create-app.md
+  - name: Create an app connected to a semantic model
+    href: data-apps-template.md
+  - name: Create and deploy your first app with the CLI
+    href: create-app-with-cli.md
+- name: Concepts
+  items:
+  - name: Understand the project structure
+    href: project-structure.md
+  - name: Programming model (SDK)
+    href: programming-model.md
+  - name: Authentication overview
+    href: authentication.md
+- name: How-to guides
+  items:
+  - name: Configure hosting
+    href: hosting.md
+  - name: Define data models
+    href: data-models.md
+  - name: Define data permissions
+    href: data-permissions.md
+  - name: Read and write data
+    href: read-write-data-graphql.md
+  - name: Configure Fabric SSO
+    href: fabric-authentication.md
+  - name: Deploy to Fabric
+    href: deploy-app.md
+  - name: Deploy using GitHub Actions
+    href: deploy-github-actions.md
+  - name: Manage dev and prod environments
+    href: dev-prod-workflow.md
+- name: Reference
+  items:
+  - name: CLI command reference
+    href: cli-reference.md
+  - name: JavaScript SDK reference
+    href: /javascript/api/fabric-apps-sdk-javascript/fabric-apps-overview?context=/fabric/apps/context/context
+  - name: Troubleshooting
+    href: troubleshooting.md
+  - name: FAQ
+    href: faq.md

@@ -12,6 +12,9 @@ ai-usage: ai-assisted
 
 A pipeline run occurs when a pipeline is started and the activities are executed.
 
+> [!TIP]
+> Learn how to visually author and navigate your pipelines on the canvas. To learn more, see [Pipeline canvas](pipeline-canvas-experience.md#updated-canvas-experience).
+
 You can start a pipeline run in three ways:
 
 - [**On-demand runs**](#on-demand-pipeline-run): Select **Run** in the pipeline editor to trigger an immediate run. You'll need to save any changes before the pipeline starts.
@@ -92,6 +95,20 @@ If you have an interval-based schedule configured, you will see 2 new parameters
 
 > [!NOTE]
 > Time slice monitoring and backfill capabilities are not yet available for Interval-based schedules.
+
+### Schedule a pipeline run with parameters
+
+You can schedule a pipeline to run at specified times and pass parameter values to the pipeline at each scheduled execution. The parameter names you configure in the schedule must match the parameter names defined in the pipeline.
+
+:::image type="content" source="media/pipeline-runs/pipeline-scheduler-parameter.png" alt-text="Screenshot showing the schedule configuration with parameters section where you can add parameter names and values.":::
+
+When you create or edit a schedule for a pipeline that has parameters defined, you can specify the values to pass at runtime. You have two options for providing parameter values:
+
+- **Direct value** – Enter a static value directly in the schedule configuration.
+- **Variable library** – Reference a value from a variable library to centralize configuration and simplify environment promotion.
+
+> [!NOTE]
+> Parameter names in the schedule must exactly match the parameter names defined in the pipeline. Mismatched names are ignored at runtime.
 
 ### Manage scheduled runs
 

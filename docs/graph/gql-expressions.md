@@ -2,13 +2,11 @@
 title: GQL Expressions, Predicates, and Functions
 description: Learn about GQL expressions, predicates, and built-in functions for data processing, filtering, and analysis in graph in Microsoft Fabric queries.
 ms.topic: reference
-ms.date: 04/23/2026
+ms.date: 05/20/2026
 ms.reviewer: splantikow
 ---
 
 # GQL expressions, predicates, and functions
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 This article provides a comprehensive reference for GQL expressions, predicates, and built-in functions available in graph in Microsoft Fabric queries. Use this reference to understand how to perform calculations, filter results, and transform data in your graph queries.
 

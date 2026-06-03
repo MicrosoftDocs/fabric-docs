@@ -4,7 +4,7 @@ description: Learn how to set up and configure anomaly detection for your real-t
 ms.reviewer: tessarhurr, v-hzargari
 ms.topic: how-to
 ms.subservice: rti-anomaly-detector
-ms.date: 05/11/2026
+ms.date: 05/28/2026
 ms.search.form: Anomaly Detection How To
 ---
 
@@ -147,7 +147,7 @@ After the analysis finishes, review the results and explore the detected anomali
     - Options include low, medium, and high confidence levels.
     - Experiment with these settings to balance between detecting more anomalies and reducing false positives.
 
-1. Interact with the visuals and tables to gain deeper insights into the detected anomalies and understand the patterns in your data. You can also open the anomaly analysis context in a Fabric notebook to further explore data and detected anomalies by using KQL, T-SQL, Python, or Spark, which enables advanced transformations and machine learning on the same data foundation.
+1. Interact with the visuals and tables to gain deeper insights into the detected anomalies and understand the patterns in your data.
 
 1. **Save** the anomaly detector to preserve your configuration and revisit it later.
 
@@ -175,12 +175,6 @@ For more information, see:
 
 - [Explore anomaly detection events](../real-time-hub/explore-anomaly-detection.md)
 - [Set alerts on anomaly detection events](../real-time-hub/set-alerts-anomaly-detection.md)
-
-Anomaly events can also be connected to [Fabric data agents](../data-science/concept-data-agent.md) to enable automated reasoning and actions across both live and historical event data. Agents can consume anomaly events from Eventhouse and orchestrate downstream workflows, complementing Activator-based alerts with conversational analytics over the same data.
-
-### Query anomaly results with the SQL analytics endpoint
-
-Eventhouse provides a managed [SQL analytics endpoint](eventhouse-analyze-data-with.md) aligned with the Eventhouse data model and Fabric governance. You can use the endpoint to query anomaly detector outputs and related tables or views with T-SQL for downstream analytics and integration with BI or reporting tools. To find the connection details, open the Eventhouse item in your workspace and select **Analyze data with** > **SQL analytics endpoint**.
 
 ## Limitations and considerations
 

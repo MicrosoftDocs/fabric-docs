@@ -116,5 +116,5 @@ You can also access any Delta table on OneLake via a SQL analytics endpoint. A S
 
 ## Related content
 
-- [Connect to ADLS using a OneLake shortcut](onelake-shortcuts-adb-quickstart.md)
+- [Create an Azure Data Lake Storage Gen2 shortcut](create-adls-shortcut.md)
 

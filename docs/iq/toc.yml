@@ -23,7 +23,7 @@ items:
       href: ontology/tutorial-2-enrich-ontology.md
     - name: 3- View the ontology
       href: ontology/tutorial-3-preview-ontology.md
-    - name: 4- Create data agent
+    - name: 4- Consume ontology from agents
       href: ontology/tutorial-4-create-data-agent.md
     - name: 5- Conclude and clean up resources
       href: ontology/tutorial-5-conclusion.md
@@ -39,6 +39,8 @@ items:
       href: ontology/how-to-bind-data.md
     - name: Add relationship types
       href: ontology/how-to-create-relationship-types.md
+    - name: Add semantic enrichment
+      href: ontology/how-to-add-semantic-enrichment.md
     - name: View entity type details
       href: ontology/how-to-view-entity-type-details.md
     - name: Use rules
@@ -47,6 +49,10 @@ items:
       href: ontology/how-to-use-resource-links.md
     - name: Connect an operations agent
       href: ontology/how-to-create-operations-agent.md
+    - name: Create a Foundry IQ agent
+      href: ontology/how-to-create-agent-foundry-iq.md
+    - name: Create a Copilot Studio agent
+      href: ontology/how-to-create-agent-copilot-studio.md
     - name: Use ontology MCP server
       href: ontology/how-to-use-ontology-mcp-server.md
   - name: Resources

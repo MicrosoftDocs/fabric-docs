@@ -96,7 +96,7 @@ The Eventhouse endpoint has these characteristics:
 
   :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png" alt-text="Screenshot of the KQL queryset with a get table schema query." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png":::
 
-* **System Overview**: Shows sync status, storage and activity statistics, and more [details](manage-monitor-eventhouse.md#view-system-overview) including a link to the source lakehouse or warehouse.
+* **System Overview**: Shows sync status, storage and activity statistics, and more [details](manage-monitor-eventhouse.md#system-overview) including a link to the source lakehouse or warehouse.
 
 * **KQL database**: The database is named **<Lakehouse_Name or Warehouse_Name>_EventhouseEndpoint**. As the **Eventhouse endpoint** is read-only, create database and add table capabilities are disabled. Run KQL queries, create [visualizations](dashboard-real-time-create.md) in a real-time dashboard, and perform advanced analytics with KQL or SQL.
 
