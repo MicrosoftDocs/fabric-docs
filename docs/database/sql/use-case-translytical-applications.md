@@ -49,8 +49,14 @@ Building a translytical task flow involves these main tasks:
 1. Creating a Power BI semantic model to use this data.
 1. Building a Power BI report with interactive elements to capture the user's input and call the function.
 
-## Related content
+## Fabric SQL database use case stories
+
+To learn more about the best use cases for Fabric SQL database, see:
 
 - [Use SQL database in reverse ETL](use-case-reverse-etl.md)
 - [Use SQL database as an operational data store](use-case-operational-data-store.md)
+- [Use SQL database in AI applications](use-case-ai-application.md)
+
+## Related content
+
 - [Intelligent applications and AI](/sql/sql-server/ai/artificial-intelligence-intelligent-applications?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true)

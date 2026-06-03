@@ -107,11 +107,11 @@ In the **Add Rule** side pane, follow these steps to define your alert condition
         :::image type="content" source="media/activator-alert-queryset/action-teams.png" alt-text="Screenshot of the Send Microsoft Teams notification section in the Add Rule side pane.":::
 
     - **Run Fabric activities**:
-        To configure the alert to launch a Fabric pipeline, Dataflow, Spark job, notebook, or User Data Function when the condition is met, follow these steps:
+        To configure the alert to launch a Fabric pipeline, Dataflow, Spark job, notebook, User Data Function, Copy job (preview), or publish a business event (preview) when the condition is met, follow these steps:
         1. For **Select action**, select the appropriate Fabric item type within the **Run Fabric Activities** section.
         1. On **Select Fabric item to run**, select the Fabric item from the list.
         1. Select **Add parameter** and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter.
-        You can pass parameters from the alert data by typing `@` or by selecting the button next to the text box. For example, `@BikepointID`.
+        You can pass parameters from the alert data by typing `@` or by selecting the button next to the text box. For example, `@BikepointID`. Copy jobs (preview) don't accept parameters, so this step doesn't apply to them.
             :::image type="content" source="media/activator-alert-queryset/fabric-activities.png" alt-text="Screenshot of the Run Fabric activities section in the Add Rule side pane.":::
     - **Custom actions**:
         To configure the alert to call a custom action when the condition is met, follow these steps:
@@ -151,7 +151,7 @@ SampleTable
 
 ### Example 2 - Create a single result with an array of several values
 
-In the following example, the query returns an alert if the number of bicycles in any neighborhood is above the given threshold. To get a single alert for all neighborhoods where the number is above the threshold, the query returns a single record (meaning, a single alert) by using the [make_list() operator](/kusto/query/make-list-aggregation-function?view=microsoft-fabric&preserve-view=true). To edit the alert to contain the list of the neighborhoods that reached the threshold, see [Optional: Edit your rule in Activator](#optional-edit-your-rule-in-activator).
+In the following example, the query returns an alert if the number of bicycles in any neighborhood is above the given threshold. To get a single alert for all neighborhoods where the number is above the threshold, the query returns a single record (meaning, a single alert) by using the [make_list() operator](/kusto/query/make-list-aggregation-function?view=microsoft-fabric&preserve-view=true). 
 
 ```kusto
 TableForReflex
@@ -209,11 +209,11 @@ In the **Add Rule** side pane, follow these steps to define your alert condition
         :::image type="content" source="media/activator-alert-queryset/action-teams.png" alt-text="Screenshot of the Send Microsoft Teams notification section in the Add Rule side pane.":::
 
     - **Run Fabric activities**:
-        To configure the alert to launch a Fabric pipeline, Dataflow, Spark job, notebook, or User Data Function when the condition is met, follow these steps:
+        To configure the alert to launch a Fabric pipeline, Dataflow, Spark job, notebook, User Data Function, Copy job (preview), or publish a business event (preview) when the condition is met, follow these steps:
         1. For **Select action**, select the appropriate Fabric item type within the **Run Fabric Activities** section.
         1. On **Select Fabric item to run**, select the Fabric item from the list.
         1. Select **Add parameter** and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter.
-        You can pass parameters from the alert data by typing `@` or by selecting the button next to the text box. For example, `@BikepointID`.
+        You can pass parameters from the alert data by typing `@` or by selecting the button next to the text box. For example, `@BikepointID`. Copy jobs (preview) don't accept parameters, so this step doesn't apply to them.
             :::image type="content" source="media/activator-alert-queryset/fabric-activities.png" alt-text="Screenshot of the Run Fabric activities section in the Add Rule side pane.":::
     - **Custom actions**:
         To configure the alert to call a custom action when the condition is met, follow these steps:
@@ -226,37 +226,21 @@ In the **Add Rule** side pane, follow these steps to define your alert condition
 
 1. In **Save location**, specify where to save your Activator alert. Choose an existing workspace, and save either in an existing activator or a new one.
 
-:::image type="content" source="media/activator-alert-queryset/save-location.png" alt-text="Screenshot of the Save location section in the Add Rule side pane.":::
+    :::image type="content" source="media/activator-alert-queryset/save-location.png" alt-text="Screenshot of the Save location section in the Add Rule side pane.":::
 
-1. Select **Create** to create your Activator rule.
+1. Select **Create** to create your Activator rule. You see the rule in the **Rules** pane of the KQL Queryset.
 
 ---
 
-## Optional: Edit your rule in Activator
+[!INCLUDE [rules-pane](./includes/rules-pane.md)]
 
-When you save your activator, the side pane displays a link to your item. Select the link to further edit in Activator. This step can be useful if you want to do one of the following actions:
+## View queryset associated with the alert
 
-- Add other recipients to your alert.
-- Change the content of the alert to reflect the specific data that triggered the alert.
-- Define a more complex alert condition than is possible in the Set alert pane.
+1. In the **Rules** pane, select **...**, and then select **View in Activator** to view the rule in the Activator page.
 
-For information on how to edit rules in Activator, see [Create Activator rules](activator-create-activators.md).
+1. In the Activator page, select the **event name**, and then select **Manage source** to view the KQL Queryset that triggers the alert. If you select the queryset link, you navigate back to the KQL Queryset page.
 
-In the activator itself, you can also view the history of the query results and the history of the rule activations. For more information, see [Create Activator rules](activator-create-activators.md).
-
-<!-- ## Limitations on query result set that returns a time chart with a time axis
-
-If you have a result set with a chart that has a time axis, Activator reads the measure value exactly once for each point on the time axis. For more information, see [Limitations on charts with a time axis](data-activator-get-data-real-time-dashboard.md#limitations-on-charts-with-a-time-axis).
-
-To work around this limitation, you can add a line to the query so that the end time of the time filter ends at 'one bin before,' and the last bin does not change. 
-
-```kusto
-TableForReflex
-| extend ingestionTime = ingestion_time()
-| where ingestionTime between (startTime..bin(endTime, 10min))
-| summarize count = count() by  bin(ingestionTime, 10min)
-```
--->
+:::image type="content" source="media/activator-alert-queryset/activator-source-link.png" alt-text="Screenshot of the sample event page with a link to the KQL Queryset." lightbox="media/activator-alert-queryset/activator-source-link.png":::
 
 ## Related content
 

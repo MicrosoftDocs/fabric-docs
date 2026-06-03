@@ -21,7 +21,7 @@ With a Python notebook, you can get:
 
 - **Lakehouse & Resources are natively available**: The Fabric Lakehouse together with Notebook built-in Resources full functionality are available in Python notebook. This feature enables users to easily bring the data to python notebook, just try drag & drop to get the code snippet.  
 
-- **Mix programming with T-SQL**: Python notebook offers an easy way to interact with Data Warehouse and SQL endpoints in explorer, by using notebookutils data connector, you can easily execute the T-SQL scripts under the context of python.  
+- **Mix programming with T-SQL**: Python notebook offers an easy way to interact with Data Warehouse and SQL analytics endpoints in explorer, by using notebookutils data connector, you can easily execute the T-SQL scripts under the context of Python.  
 
 - **Support for Popular Data Analytic libraries**: Python notebooks come with pre-installed libraries such as DuckDB, Polars, and Scikit-learn, providing a comprehensive toolkit for data manipulation, analysis, and machine learning.
 
@@ -64,7 +64,7 @@ You can monitor the Python notebook job run details on the ribbon tab **Run** ->
 
 ## Data interaction
 
-You can interact with Lakehouse, Warehouses, SQL endpoints, and built-in resources folders on Python notebook.
+You can interact with Lakehouse, Warehouses, SQL analytics endpoints, and built-in resources folders on Python notebook.
 
  > [!NOTE]
  > The Python Notebook runtime comes pre-installed with [delta‑rs](https://delta-io.github.io/delta-rs/) and [duckdb](https://duckdb.org/) libraries to support both reading and writing Delta Lake data. However, note that some Delta Lake features may not be fully supported at this time. For more details and the latest updates, refer to the [delta‑rs](https://github.com/delta-io/delta-rs) and [DuckDB](https://duckdb.org/) documentation.
@@ -84,12 +84,12 @@ You can find the write Lakehouse operation in **Browse code snippet** -> **Write
 
 ### Warehouse interaction and mix programming with T-SQL
 
-You can add Data Warehouses or SQL endpoints from the Warehouse explorer of Notebook. Similarly, you can drag and drop the tables into the notebook canvas, or use the shortcut operations in the table dropdown menu. Notebook automatically generates code snippet for you. You can use the [`notebookutils.data` utilities](#data-utilities) to establish a connection with Warehouses and query the data using T-SQL statement in the context of Python.
+You can add warehouses or SQL analytics endpoints from the Warehouse explorer of Notebook. Similarly, you can drag and drop the tables into the notebook canvas, or use the shortcut operations in the table dropdown menu. Notebook automatically generates code snippet for you. You can use the [`notebookutils.data` utilities](#data-utilities) to establish a connection with Warehouses and query the data using T-SQL statements in the context of Python.
 
    :::image type="content" source="media\use-python-experience-on-notebook\warehouse-shortcuts.png" alt-text="Screenshot showing warehouse table shortcuts." lightbox="media\use-python-experience-on-notebook\warehouse-shortcuts.png":::
 
 > [!NOTE]
-> SQL endpoints are read-only here.
+> SQL analytics endpoints are read-only.
 
 ### Notebook resources folder
 
@@ -120,14 +120,14 @@ To better understand and use similar commands clearly, refer to the table below.
 
 | **Command/Syntax** | **Main purpose** | **How it works in Jupyter Notebook** | **Typical use case** | **Notes**|
 |---|---|---|---|---|
-| ```%pip install package``` | Install Python packages | Runs pip in the notebook’s Python kernel | Recommended way to install packages | In Python Notebook, same as ```!pip```; does **not** restart kernel automatically |
+| ```%pip install package``` | Install Python packages | Runs pip in the notebook's Python kernel | Recommended way to install packages | In Python Notebook, same as ```!pip```; does **not** restart kernel automatically |
 | ```!pip install package``` | Install Python packages via shell | Runs pip as a shell command | Alternative way to install packages | In Python Notebook, same as ```%pip```; does **not** restart kernel automatically |
 | ```import sys; sys.exit(0)``` | Restart the notebook kernel | Immediately restarts the kernel | Programmatically restart the kernel | Clears all variables and states; **not recommended** to use directly |
 | ```notebookutils.session.restartPython()``` | Restart the notebook kernel | Calls ```sys.exit(0)``` internally | Recommended way to restart the kernel | Official API, safer and more compatible than using ```sys.exit(0)``` directly |
 
 
 > [!NOTE]
-> - In Python Notebook, ```%pip``` and ```!pip``` have the **same behavior**: both install packages into the current kernel’s environment, and neither will automatically restart the kernel after installation.
+> - In Python Notebook, ```%pip``` and ```!pip``` have the **same behavior**: both install packages into the current kernel's environment, and neither will automatically restart the kernel after installation.
 > - If you need to restart the kernel (for example, after installing certain packages), it is **recommended** to use ```notebookutils.session.restartPython()``` instead of ```import sys; sys.exit(0)```.
 >   - ```notebookutils.session.restartPython()``` is an official API that wraps ```sys.exit(0)``` , and it is safer and more compatible in notebook environments.
 > - It is **not recommended** to use ```sys.exit(0)``` directly unless necessary.

@@ -2,14 +2,12 @@
 title: GQL Language Guide for graph in Microsoft Fabric
 description: Learn how to write GQL queries for graph in Microsoft Fabric, including pattern matching, filtering, aggregation, sorting, and subqueries with examples.
 ms.topic: reference
-ms.date: 04/27/2026
+ms.date: 05/20/2026
 ms.reviewer: splantikow
 ms.search.form: GQL Language Guide
 ---
 
 # GQL language guide for graph in Microsoft Fabric
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 GQL (Graph Query Language) is the ISO-standardized query language for graph databases. Use GQL to query, analyze, and work with graph data efficiently with graph in Microsoft Fabric.
 

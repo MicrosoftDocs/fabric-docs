@@ -124,7 +124,7 @@ df = %tsql SELECT TOP({count}) * FROM [dw1].[dbo].[Geography];
 To see the full syntax, use the `%tsql?` command. This command displays the help information for the T-SQL magic command, including the available parameters and their descriptions.
 
 > [!NOTE]
-> You can run the full DML and DDL commands against the data warehouse or SQL database, but only read-only query against the lakehouse sql endpoint.
+> You can run the full DML and DDL commands against a warehouse or SQL database, but can run only read-only queries against the lakehouse SQL analytics endpoint.
 
 ## Related content
 

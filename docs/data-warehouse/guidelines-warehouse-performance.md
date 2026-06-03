@@ -138,7 +138,7 @@ In these cases, users can receive a warning message "One or more non-scalable op
 
 You can use the SQL analytics endpoint to query Lakehouse tables that were populated with Spark SQL, without copying or ingesting data into the Warehouse.
 
-Following best practices apply to querying warehouse data in the Lakehouse via the SQL analytics endpoint. For more information on SQL analytics endpoint performance, see [SQL analytics endpoint performance considerations](sql-analytics-endpoint-performance.md).
+Following best practices apply to querying warehouse data in the Lakehouse via the SQL analytics endpoint. For more information on SQL analytics endpoint performance, see [SQL analytics endpoint performance considerations](../data-engineering/sql-analytics-endpoint-performance.md).
 
 > [!TIP]
 > The following best practices apply to using Spark to process data into a lakehouse that can be queried by the SQL analytics endpoint.

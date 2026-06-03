@@ -2,7 +2,7 @@
 title: Pricing for Dataflow Gen2
 description: This article provides details of the pricing model of Dataflow Gen2 for Data Factory in Microsoft Fabric.
 ms.topic: concept-article
-ms.date: 12/18/2024
+ms.date: 06/02/2026
 ms.reviewer: susabat
 ms.custom:
   - dataflows
@@ -21,7 +21,7 @@ The diagram captures components of the Data Factory Dataflow Gen2 architecture, 
 
 When you refresh or publish a Dataflow Gen2 item, Fabric Capacity Units are consumed for the following engines:
 
-- Standard Compute: You're charged for it based on the query evaluation time across all your Dataflow queries that run through the Mashup engine.  
+- Standard Compute: You're charged for it based on the query evaluation time across all your Dataflow queries that run through the Mashup engine.
 - High Scale Dataflow Compute: You're charged when staging is enabled, based on Lakehouse (Staging storage) and Warehouse (Storage Compute) SQL engine consumption duration.
 - Fast Copy: You're charged when fast copy connectors are enabled and can be used in the Dataflow, based on copy job duration.
 
@@ -45,22 +45,22 @@ At the end of each run, Dataflow Gen2 adds up the CU usage from each engine and 
 
 ### CU Rate Table
 
-|Dataflow Gen2 Engine Type  |Consumption Meters  |Fabric CU consumption rate  |Consumption reporting granularity      |
+|Dataflow Gen2 Engine Type |Consumption Meters |Fabric CU consumption rate |Consumption reporting granularity |
 |---------|---------|---------|---------|
 |Standard Compute  (Dataflow Gen2 (CI/CD))   | Based on each mashup engine query execution duration in seconds. Standard Compute has two tier pricing depending on the query duration.       | -  For every second up to 10 minutes, 12 CU<br>-  For every second beyond 10 minutes, 1.5 CU      | Per Dataflow Gen2 item        |
 |Standard Compute  (non CI/CD)   | Based on each mashup engine query execution duration in seconds.      | 16 CU| Per Dataflow Gen2 item        |
 |High Scale Dataflows Compute     | Based on Lakehouse/Warehouse SQL engine execution (with staging enabled) duration in seconds.         | 6 CU         | Per workspace        |
 |Data movement     | Based on Fast Copy run duration in seconds and the used intelligent optimization throughput resources.         | 1.5 CU         | Per Dataflow Gen2 item        |
 
-## Virtual Network Data Gateway Pricing with Dataflow Gen2 
+## Virtual Network Data Gateway Pricing with Dataflow Gen2
 
 The Virtual Network (VNET) Data Gateway is billed as an additive infrastructure charge, associated with a Fabric capacity. This means that it has its own meter and incurs a bill that is consistent across and extra to all Fabric item runs.
 
-The total bill for running Dataflow Gen2 through the VNET Data Gateway is calculated as: Dataflow Gen2 Charge + VNET Data Gateway Charge.
+The total bill for running Dataflow Gen2 through the Virtual Network Data Gateway is calculated as: Dataflow Gen2 Charge + Virtual Network Data Gateway Charge.
 
-The VNET Data Gateway Charge is proportional to your usage of the VNET Data Gateway, where usage is defined as uptime, or anytime the VNET Data Gateway is on.
+The Virtual Network Data Gateway Charge is proportional to your usage of the Virtual Network Data Gateway, where usage is defined as uptime, or anytime the Virtual Network Data Gateway is on.
 
-VNET Data Gateway CU consumption rate: 4 CU
+Virtual Network Data Gateway CU consumption rate: 4 CU
 
 Learn more at [Virtual Network Data Gateways Pricing and Billing](/data-integration/vnet/data-gateway-business-model).
 
@@ -76,7 +76,7 @@ These exercises show you how to validate costs for both CI/CD and non CI/CD data
 
 ### Exercise 1: Standard compute for a CI/CD Dataflow
 
-The following dataflow has two queries involving transformation, and staging is disabled. 
+The following dataflow has two queries involving transformation, and staging is disabled.
 
 :::image type="content" source="media/pricing-dataflows-gen2/dataflows-query-details.png" alt-text="Screenshot showing Dataflow Gen2 with two queries.":::
 
