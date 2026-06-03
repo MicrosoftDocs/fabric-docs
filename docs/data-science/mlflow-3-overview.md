@@ -12,9 +12,9 @@ ai-usage: ai-assisted
 
 # MLflow 3 in Fabric Data Science
 
-Microsoft Fabric supports MLflow 3, the latest major version of the open-source machine learning tracking platform. MLflow 3 introduces two capabilities that change how you track and inspect machine learning and generative AI workloads in Fabric:
+Microsoft Fabric supports MLflow up to version 3.1, the open-source machine learning tracking platform. With this support, you can use the following capabilities to track and inspect machine learning and generative AI workloads in Fabric:
 
-- **LoggedModel** as a first-class entity that links each model to its source run, code, configuration, parameters, metrics, and datasets.
+- **LoggedModel**, introduced in MLflow 3, as a first-class entity that links each model to its source run, code, configuration, parameters, metrics, and datasets.
 - **Traces** that capture prompts, responses, tool calls, latency, and token usage from large language model (LLM) and generative AI applications.
 
 This article explains what changes in MLflow 3, how to use the new features in Fabric, and how to migrate from MLflow 2.x.
@@ -26,12 +26,13 @@ This article explains what changes in MLflow 3, how to use the new features in F
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
 - A workspace upgraded to the latest machine learning tracking experience. To check eligibility and upgrade, see [Upgrade your machine learning tracking system](mlflow-upgrade.md).
-- `mlflow` version 3.0 or later. Fabric notebooks include a compatible version by default.
-- For cross-workspace and outside-Fabric scenarios, install the upgraded `synapseml-mlflow` package:
+- `mlflow` version 3.0 or later. Fabric notebooks ship with MLflow 2.x by default, so you need to upgrade to MLflow 3 by running the following command in your notebook:
 
   ```python
   %pip install "synapseml-mlflow[online-notebook]>=2.0.3" "mlflow-skinny==3.1.0" "opentelemetry-api<=1.40.0"
   ```
+
+  The same command also installs the upgraded `synapseml-mlflow` package for cross-workspace and outside-Fabric scenarios.
 
 ## What changes in MLflow 3
 
@@ -224,8 +225,6 @@ To view traces:
 
 :::image type="content" source="media/mlflow-3/view-trace.png" alt-text="Screenshot of an opened trace showing execution details, properties, and trace details with inputs and outputs." lightbox="media/mlflow-3/view-trace.png":::
 
-The trace list shows trace ID, input, output, duration, start time, and status (Completed, Failed, or Running). You can search and filter traces by user, status, or run name.
-
 The trace detail view shows:
 
 - A **span tree** with hierarchical breakdown of the request.
@@ -234,6 +233,10 @@ The trace detail view shows:
 - **Latency, token usage, and model metadata** (name, version, parameters).
 - **Tool and function calls** with their inputs, outputs, and document IDs.
 - **Failed traces** with exception type, message, and stack trace.
+
+The trace list shows trace ID, input, output, duration, start time, and status (Completed, Failed, or Running). You can filter traces by user, status, or start time.
+
+:::image type="content" source="media/mlflow-3/view-trace-list.png" alt-text="Screenshot of an opened trace list showing trace ID, input, output, duration, start time, and status." lightbox="media/mlflow-3/view-trace-list.png":::
 
 Traces produced by a run also appear on the run detail page under the **Traces** tab.
 
