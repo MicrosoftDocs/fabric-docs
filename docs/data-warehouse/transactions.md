@@ -2,7 +2,7 @@
 title: Transactions in Fabric Data Warehouse
 description: Learn how to use transactions and how to insert and modify data in Warehouse tables in Microsoft Fabric.
 ms.reviewer: twcyril
-ms.date: 4/7/2026
+ms.date: 6/3/2026
 ms.topic: how-to
 ms.search.form: Warehouse design and development
 ---
@@ -49,6 +49,7 @@ Fabric Data Warehouse supports executing the following inside an explicit transa
 - `ALTER TABLE` add or drop `PRIMARY KEY`, `UNIQUE`, and `FOREIGN KEY` constraints with the `NOT ENFORCED` keyword
 - Multiple `ALTER TABLE` statements
 - `ALTER TABLE` on distributed temporary tables
+- Supported `ALTER COLUMN` operations [ALTER COLUMN](https://learn.microsoft.com/en-us/sql/t-sql/statements/alter-table-transact-sql?view=fabric#alter-column)
 
 ### Cross-database query transaction support
 
