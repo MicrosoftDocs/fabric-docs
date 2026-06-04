@@ -3,7 +3,7 @@ title: Eventhouse monitoring overview
 description: Understand Eventhouse monitoring in Fabric and how it can help you to gain insights into the usage and performance.
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
-ms.date: 05/27/2026
+ms.date: 06/04/2026
 #customer intent: As a admin I want to monitor my eventhouse to gain insights into the usage and performance that I can optimize my eventhouse and improve the user experience.
 ---
 
@@ -33,6 +33,9 @@ Eventhouse monitoring in Fabric offers comprehensive insights into the usage and
 1. In the **Monitoring KQL database** overview page, view the query insights and query the data.
 
     :::image type="content" source="media/eventhouse/monitor-eventhouse-details.png" alt-text="Screenshot of a monitoring eventhouse showing the monitoring KQL database overview page.":::
+
+    > [!TIP]
+    > You can also [analyze data with](eventhouse-analyze-data-with.md) an SQL analytics endpoint or notebook, or create a standalone [KQL queryset](create-query-set.md) to analyze the monitoring data.
 
 ## Eventhouse monitoring tables
 
