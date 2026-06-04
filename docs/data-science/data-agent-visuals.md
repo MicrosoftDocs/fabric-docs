@@ -16,7 +16,7 @@ ai-usage: ai-assisted
 
 The Fabric data agent can return interactive visual responses, such as charts and graphs, in addition to text and table-based answers. Visual responses help you quickly identify trends, patterns, and outliers in your data without leaving the conversational interface.
 
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)].
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
@@ -69,11 +69,11 @@ The colors, font sizes, title, and labels are preset and currently cannot be cus
 ## Limitations
 
 - The quality and type of visualization depends on the nature of the data returned by the underlying query.
-- Query result sets that exceed 200 rows are truncated before being charted; the chart reflects the truncated result.
-- Supported chart types are limited to a core set (line chart, multi-line chart, column chart, stacked column chart, pie chart, scatter plot, area chart, stacked area chart).
+- Visuals currentlysupport up to 200 rows of data. Queries returning more than 200 rows are truncated prior to charting.
+- Supported chart types are currently limited to a core set (line chart, multi-line chart, column chart, stacked column chart, pie chart, scatter plot, area chart, stacked area chart).
 - The colors, font sizes, title, and labels are preset and currently cannot be customized.
 - These visuals are currently only supported in the data agent experience in Fabric and not in other clients like SDK, M365 Copilot, Teams or Foundry.
-    - When you consume a Fabric data agent through Microsoft 365 Copilot, you can use code interpreter to generate visualizations from the results returned by the data agent. This enables you to explore insights visually and interactively, helping you understand trends, patterns, and metrics directly within Teams.
+    - When you consume a Fabric data agent through Microsoft 365 Copilot, you can use code interpreter to generate visualizations from the results returned by the data agent. This enables you to explore insights visually and interactively, helping you understand trends, patterns, and metrics directly within M365 or Teams.
 
 ## Related content
 
