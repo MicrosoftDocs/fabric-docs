@@ -43,6 +43,9 @@ Activator background capacity consumption is calculated based on the following o
 | Activator event analytics                       | event computations    | per computation | 0.00000278                     |
 | n/a                                             | storage               | per GB per hour | 0.00177                        |
 
+> [!NOTE]
+> When you create an Activator that subscribes to Azure, Fabric, or Business events surfaced in Real-Time Hub, the subscription is owned by the Activator, and the related capacity consumption is attributed to the Activator item. As a result, you might see **Event listener** and **Event operations** consumption reported against your Activator, even though these meters are governed by the Azure, Fabric, and Business events consumption rates rather than the Activator operations listed in the previous table. For more information, see [Azure, Fabric, and Business events capacity consumption](../../real-time-hub/fabric-events-capacity-consumption.md).
+
 ### Interactive consumption
 
 You pay for interactive capacity consumption activities at a fraction of the background operation cost. Interactive capacity consumption includes activities like exploring the data, reviewing events, viewing visualized activations, and performing other data-related activities to define rules for the Activator.

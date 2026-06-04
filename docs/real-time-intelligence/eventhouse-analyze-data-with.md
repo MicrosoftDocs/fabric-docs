@@ -4,7 +4,7 @@ description: Learn how to analyze data in a KQL database with an SQL analytics e
 ms.reviewer: tzgitlin
 ms.topic: how-to
 ms.subservice: rti-eventhouse
-ms.date: 05/27/2026
+ms.date: 06/04/2026
 ms.search.form: KQL Database
 ---
 # Analyze data in a KQL database
@@ -46,6 +46,18 @@ This integration provides a consistent experience regardless of where your data 
    You can see Eventhouse in the explorer pane, where the KQL database is listed.
 
 1. [Query the SQL analytics endpoint](../data-warehouse/query-warehouse.md#run-a-new-query-in-sql-query-editor) and analyze the data in your KQL database by using T-SQL.
+
+## Delete the SQL analytics endpoint connection
+
+When you analyze data from a KQL database using the SQL analytics endpoint, a new connection is created in the SQL analytics endpoint explorer pane. If you no longer need this connection, you can delete it without impacting your original KQL database or eventhouse.
+
+1. Browse to the *Worskpace > Eventhouse > KQL database*. This is the KQL database that you connected to the SQL analytics endpoint.
+
+1. Open the KQL database more actions menu, and right-click **Settings**.
+
+1. From the KQL database settings, select **SQL analytics endpoint**. This shows you that the SQL analytics endpoint connection is enabled.
+
+1. Turn the **SQL analytics endpoint** toggle off.
 
 ## Related content
 

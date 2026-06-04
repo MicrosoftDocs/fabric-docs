@@ -5,8 +5,8 @@ ai-usage: ai-assisted
 ms.reviewer: mjbrown
 ms.topic: how-to
 ms.date: 03/16/2026
-author: Jcardif
-ms.author: jndemenge
+author: seesharprun
+ms.author: sidandrews
 ---
 
 # How to build translytical task flows with Cosmos DB in Microsoft Fabric
