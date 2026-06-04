@@ -1,27 +1,31 @@
 ---
 title: Consume a data agent from Microsoft 365 Copilot (preview)
 description: Learn how to consume a data agent from Microsoft 365 Copilot.
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: amjafari
 ms.topic: how-to
-ms.date: 10/11/2025
+ms.date: 05/12/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
 #customer intent: As an Analyst, I want to consume a Fabric data agent from Microsoft 365 Copilot.
 ---
 
-# Consume Fabric Data Agent in Microsoft 365 Copilot
+# Consume Fabric data agent in Microsoft 365 Copilot
 
 Microsoft 365 provides a comprehensive set of productivity tools that help organizations collaborate, communicate, and make data-driven decisions. With Teams at the center of communication and collaboration, users can access their organization's knowledge and insights in one unified workspace. Therefore, Microsoft 365 isn't just a suite of applications, but a platform that connects people to the information they need to act confidently.
 
 > [!IMPORTANT]  
 > This feature is in [preview](../fundamentals/preview.md).
 
+> [!IMPORTANT]
+> When you configure Fabric data agents to be consumed within Microsoft 365, responses returned by Fabric data agents may be sent outside of Fabric's compliance boundary or geographic region, and processed and/or stored according to the Microsoft 365's terms and data handling policies.
+
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 - Microsoft 365 Copilot license or Office 365 commercial subscription
 - User licenses for each individual using Fabric data agent in Microsoft 365 Copilot. 
 - Both the Fabric data agent and Microsoft 365 Copilot must be on the same tenant and must sign in to both with the same account.
-
 
 ## How it works
 

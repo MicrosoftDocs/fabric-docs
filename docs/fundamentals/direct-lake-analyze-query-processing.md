@@ -21,7 +21,7 @@ Performance analyzer can provide a quick and easy look into how a visual queries
 
 1. Select **Get Data** from the ribbon, then select **Power BI semantic models**.
 
-1. In the **OneLake data hub** page, select the Direct Lake semantic model you want to connect to, and then select **Connect**.
+1. In the **OneLake catalog** page, select the Direct Lake semantic model you want to connect to, and then select **Connect**.
 
 1. Place a card visual on the report canvas, select a data column to create a basic report, and then on the **View** menu, select **Performance analyzer**.
 

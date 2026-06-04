@@ -3,8 +3,9 @@ title: Lakehouse git integration and deployment pipelines
 description: Learn what lakehouse metadata is tracked in git-connected workspaces and deployment pipelines in Microsoft Fabric.
 ms.reviewer: dacoelho
 ms.topic: concept-article
-ms.date: 02/24/2026
+ms.date: 05/08/2026
 ms.search.form: lakehouse git deployment pipelines alm ci cd
+ai-usage: ai-assisted
 ---
 
 # Lakehouse git integration and deployment pipelines
@@ -95,25 +96,26 @@ Shortcut definitions are synced across deployment pipeline stages:
 - If a shortcut needs to point to different locations in different stages (for example, an Amazon S3 folder in development and an ADLS Gen2 folder in production), use variables in the shortcut definition. For more information, see [What is a Variable library? (preview)](../cicd/variable-library/variable-library-overview.md). Alternatively, update the shortcut definition manually after deployment, either in the Fabric portal or by using OneLake APIs.
 
 > [!IMPORTANT]
-> A deployment overrides the state of shortcuts in the target workspace. All shortcuts in the target lakehouse are updated or deleted based on the source lakehouse, and new shortcuts are created. Always select **Review changes** to understand the changes before deploying.
+> A deployment overrides the state of shortcuts in the target workspace. All shortcuts in the lakehouse in the target workspace are updated or deleted based on the source lakehouse, and new shortcuts are created. Always select **Review changes** to understand the changes before deploying.
 
-## OneLake security data access roles
+## OneLake security data access roles (DAR)
 
-Data access role (DAR) definitions are stored in `data-access-roles.json` under the lakehouse folder in git. Addition, deletion, and updates of data access roles are tracked automatically. You can also edit this file directly in the repository and apply changes back to the workspace.
+Data Access Roles (DAR) definitions are stored in `data-access-roles.json` under the lakehouse folder in git. Addition, deletion, and updates of DAR are tracked automatically. You can also edit this file directly in the repository and apply changes back to the workspace.
 
 > [!IMPORTANT]
-> Only users with the Admin or Member workspace role can synchronize data access role definitions to git or deployment pipelines.
+> Only users with the Admin or Member workspace role can synchronize data access roles definitions to git or deployment pipelines.
 
-When the source workspace has DAR tracking and opt-in enabled, the sync behavior depends on the target workspace:
+When the source workspace has Data Access Roles tracking and opt-in enabled, the sync behavior depends on the target workspace:
 
 | Target workspace | Git integration | Deployment pipeline |
 |---|---|---|
 | New (no lakehouse) | ✅ DAR tracking enabled automatically | ✅ DAR tracking enabled automatically |
 | DAR tracking disabled | ✅ Both DAR tracking and opt-in enabled | ✅ Both DAR tracking and opt-in enabled |
-| DAR enabled, opt-in disabled | ⚠️ Prompts to enable opt-in (override or cancel) | ❌ Error <sup>1</sup> |
+| DAR enabled, opt-in disabled | ⚠️ Prompts to enable opt-in (override or cancel) | ❌ Error |
 | DAR + opt-in enabled | ✅ Normal sync | ✅ Normal sync |
 
-<sup>1</sup> When a deployment pipeline shows an error, manually enable DAR tracking and opt-in on the target workspace and reconcile the roles before retrying the deployment.
+> [!NOTE]
+> If a deployment pipeline or `updateDefinition` API call returns the error code `LakehouseImportUserActionNeededForObjectOverwrite`, the lakehouse in the target workspace has DAR enabled but isn't opted in for ALM tracking. This safeguard prevents CI/CD from overwriting existing OneLake security roles when DAR tracking changes from disabled to enabled. To fix the error, manually enable DAR tracking and opt-in on the lakehouse in the target workspace, reconcile the roles, and retry the deployment. For automated provisioning, enable DAR tracking and opt-in when you create the lakehouse.
 
 > [!IMPORTANT]
 > Microsoft Entra member IDs aren't tracked in git for security reasons. During git and deployment pipeline operations, members are preserved between workspaces only if role names match exactly. Use caution when renaming roles that have members assigned to them.

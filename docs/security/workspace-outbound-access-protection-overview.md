@@ -62,9 +62,10 @@ The following table summarizes the supported workloads and item types that can b
 | Data Science | Not applicable | <ul><li>Machine Learning Experiments</li><li>Machine Learning Models</li></ul> | [Workspace outbound access protection for Data Science](workspace-outbound-access-protection-data-science.md) |
 | Data Warehouse | Not applicable | <ul><li>Warehouses</li><li>SQL analytics endpoints</li></ul> | [Workspace outbound access protection for data warehouse workloads](workspace-outbound-access-protection-data-warehouse.md) |
 | Fabric IQ | Data connection rules | <ul><li>Graph</li></ul> | [Workspace outbound access protection for Fabric IQ](workspace-outbound-access-protection-iq.md) |
-| Real-Time Intelligence | Data connection rules | <ul><li>Eventstream</li></ul> | [Workspace outbound access protection for Real-Time Intelligence](workspace-outbound-access-protection-real-time-intelligence.md) |
-| Mirrored databases | Data connection rules | Microsoft Fabric mirrored databases from:<ul><li>Azure SQL Database</li><li>Snowflake</li><li>Mirrored Database</li><li>Azure Cosmos DB</li><li>Azure SQL Managed Instance</li><li>Azure Database for PostgreSQL</li><li>SQL Server</li><li>Oracle</li><li>Google Big Query</li><li>SAP</li><li>Azure Database for MySQL</li></ul> | [Workspace outbound access protection for mirrored databases](workspace-outbound-access-protection-mirrored-databases.md) |
+| Real-Time Intelligence | Data connection rules | <ul>><li>Activator</li><li>Eventstream</li><li>Eventhouse</li></ul> | Workspace outbound access protection for Real-Time Intelligence: [Activator](workspace-outbound-access-protection-activator.md), [Eventstream](workspace-outbound-access-protection-eventstream.md), and [Eventhouse](workspace-outbound-access-protection-eventhouse.md) |
+| Mirrored databases | Data connection rules | <ul><li>Mirrored databases</li></ul> | [Workspace outbound access protection for mirrored databases](workspace-outbound-access-protection-mirrored-databases.md) |
 | OneLake | Managed private endpoints | <ul><li>OneLake shortcuts</li></ul> | [Workspace outbound access protection for OneLake](workspace-outbound-access-protection-onelake.md) |
+| Power BI | Data connection rules | <ul><li>Semantic models</li></ul> | [Workspace outbound access protection for semantic models](workspace-outbound-access-protection-semantic-models.md) |
 
 ## Considerations and limitations
 
@@ -88,13 +89,13 @@ This section outlines important considerations and limitations when using worksp
 
 ### General limitations
 
-* Workspace outbound access protection isn't supported for existing workspaces that already contain a semantic model in a lakehouse.
-
 * In workspaces with outbound access protection enabled, querying data warehouse file paths from notebooks using the `dbo` schema isn't supported, because access to schema-based paths isn't supported. To query the warehouse from notebooks, use the T-SQL option instead.
 
 * Workspace outbound access protection isn't currently compatible with [OneLake Diagnostics](/fabric/onelake/onelake-diagnostics-overview). If you require OneLake diagnostics and outbound access protection to work together, you must select a lakehouse in the same workspace.
 
 * Workspace outbound access protection isn't currently compatible with [Fabric external data sharing](/fabric/governance/external-data-sharing-overview). Cross-tenant allow lists aren't supported with workspace outbound access protection. 
+
+* Power BI items other than semantic models don't yet support outbound access protection. These items can't be created in workspaces with outbound access protection enabled. If these items already exist in a workspace, outbound access protection can't be enabled on that workspace.
 
 ### Data connection rules
 
@@ -116,6 +117,8 @@ Workspace admins can specify which workspaces are allowed as destinations for ce
 * Fabric SQL Database
 * Lakehouse
 * Warehouse
+* Notebook
+* Spark Job Definition
 
 Other Fabric connection types, such as Datamarts, KQL Database, Fabric Data Pipelines, and CopyJob, don't support workspace-level granularity. For these connection types, admins can't specify individual workspaces in the allow list.
 

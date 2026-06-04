@@ -1,5 +1,5 @@
 ---
-title: Generate forms
+title: Generate Forms
 description: Learn how to generate forms to collect user inputs using PowerTable sheets.
 ms.date: 03/11/2026
 ms.topic: how-to

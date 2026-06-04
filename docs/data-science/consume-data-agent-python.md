@@ -1,6 +1,8 @@
 ---
 title: Consume Fabric data agent from external applications with Python client SDK
 description: Learn how to use Python client SDK to use Microsoft Fabric data agent in VS Code.
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: amjafari 
 ms.topic: how-to
 ms.date: 08/8/2025
@@ -11,6 +13,10 @@ ms.date: 08/8/2025
 This article shows how to use the Python client SDK to add a Fabric data agent to web apps and other clients by using interactive browser authentication. You sign in through a browser with your Microsoft Entra ID credentials, and the data agent runs with your permissions. Adding the data agent to external apps lets you build custom interfaces, embed insights in existing workflows, automate reports, and let users run natural language data queries. This approach gives you data agent capabilities while you keep full control of the user experience and app architecture.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+
+> [!IMPORTANT]
+> When you use Python client SDK to add a Fabric data agent to web apps or other clients, responses returned by Fabric data agents may be sent outside of Fabric's compliance boundary or geographic region, and processed and/or stored according to the applicable web app or client's terms and data handling policies.
+
 [!INCLUDE [data-agent-prerequisites](includes/data-agent-prerequisites.md)]
 
 ## Set up your environment in VS Code

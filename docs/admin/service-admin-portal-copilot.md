@@ -1,6 +1,6 @@
 ---
-title: Copilot admin settings
-description: Learn how administrators can configure Copilot admin settings in Fabric.
+title: Copilot and Agent admin settings
+description: Learn how administrators can configure Copilot and Agent admin settings in Fabric.
 author: snehagunda
 ms.author: sngun
 ms.reviewer: guptamaya
@@ -14,9 +14,9 @@ no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
 
-# Copilot tenant settings
+# Copilot and Agent tenant settings
 
-Fabric Copilot settings are controlled by the **Copilot and Azure OpenAI Service** tenant settings group.​ There are multiple settings governing user access and data processing policies, and some of them are enabled by default whereas others require the Fabric administrator to enable them.
+Fabric Copilot and Agent settings are controlled by the **Copilot and Azure OpenAI Service** tenant settings group.​ There are multiple settings governing user access and data processing policies, and some of them are enabled by default whereas others require the Fabric administrator to enable them.
 
 For information about how to get to the Fabric tenant settings, see [About tenant settings - How to get to the tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings).
 
@@ -32,10 +32,13 @@ For information about how to get to the Fabric tenant settings, see [About tenan
 * [Users can access a standalone, cross-item Power BI Copilot experience (preview)](#stand-alone-experience)
 * [Only show approved items in the standalone Copilot in Power BI experience (preview)](#limit-to-approved)
 
+> [!IMPORTANT]
+> Users may configure Fabric data agents to be consumed from other services such as Microsoft Foundry, Microsoft Copilot Studio, M365 Copilot or as an MCP server ("non-Fabric services"). When users connect to these non-Fabric services, responses returned by Fabric data agents may be sent outside of Fabric's compliance boundary or geographic region, and processed and/or stored according to the non-Fabric service(s) applicable terms and data handling policies.
+
 <a id="copilot-with-openai"></a> 
 ## Users can use Copilot and other features powered by Azure OpenAI
 
-When this setting is enabled, users can access the features powered by Azure OpenAI, including Copilot, as shown in the following screenshot:
+When this setting is enabled, users can access the features powered by Azure OpenAI, including Copilot and Agents, as shown in the following screenshot:
 
 :::image type="content" source="./media/service-admin-portal-copilot/enable-copilot.png" alt-text="Screenshot showing the tenant setting where copilot can be enabled and disabled." lightbox="./media/service-admin-portal-copilot/enable-copilot.png":::
 

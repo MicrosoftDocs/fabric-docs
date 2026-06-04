@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 
 # Connect to your data with the get data experience for pipelines
 
-The modern get data experience for pipelines helps you connect to data by browsing Fabric items through the OneLake data hub. You can move data from various sources to your preferred destinations.
+The modern get data experience for pipelines helps you connect to data by browsing Fabric items through the OneLake catalog. You can move data from various sources to your preferred destinations.
 
 ## Prerequisites
 
@@ -26,15 +26,15 @@ To get started, you need:
 
    :::image type="content" source="media/modern-get-data-experience-pipeline/use-copy-data-assistant.png" lightbox="media/modern-get-data-experience-pipeline/use-copy-data-assistant.png" alt-text="Screenshot that shows how to start the Copy data assistant from either the Copy data assistant card or the Use copy assistant menu option.":::
 
-1. On the **Choose data source** page of the **Copy data assistant**, you'll see several tabs. The **Home** tab is selected by default. The interface helps you discover your data and connect to it for any supported data source. Recent and recommended documents from your OneLake data hub appear here.
+1. On the **Choose data source** page of the **Copy data assistant**, you'll see several tabs. The **Home** tab is selected by default. The interface helps you discover your data and connect to it for any supported data source. Recent and recommended documents from your OneLake catalog appear here.
 
    :::image type="content" source="media/modern-get-data-experience-pipeline/copy-data-assistant-home-tab-recent.png" lightbox="media/modern-get-data-experience-pipeline/copy-data-assistant-home-tab-recent.png" alt-text="Screenshot that shows the recent items in the Copy data assistant Home tab.":::
 
-1. Type part of your data source type or name in the filter at the top of the tab. This shows all the matching data source types and items in your OneLake data hub.
+1. Type part of your data source type or name in the filter at the top of the tab. This shows all the matching data source types and items in your OneLake catalog.
 
    :::image type="content" source="media/modern-get-data-experience-pipeline/copy-data-assistant-home-tab-azure-blob.png" lightbox="media/modern-get-data-experience-pipeline/copy-data-assistant-home-tab-azure-blob.png" alt-text="Screenshot that shows the Home tab of the Copy data assistant with the filter set to blob.":::
 
-1. Select the **OneLake data hub** tab at the top to access and filter existing data connections in your OneLake data hub.
+1. Select the **OneLake catalog** tab at the top to access and filter existing data connections in your OneLake catalog.
 
 1. Select the **Sample data** tab to choose from several sample data connections with data of varying size and type. You can use sample data to test features or scenarios. For this demonstration, choose the **Diabetes** dataset.
 

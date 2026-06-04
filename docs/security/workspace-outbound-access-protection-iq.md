@@ -26,7 +26,7 @@ The following table summarizes the supported sources and destinations for graph:
 | **Supported sources** | Cloud |
 | **Supported destinations** | Lakehouse |
 
-When outbound access protection is enabled, all outbound connections are blocked by default. The workspace admin must then configure data connection rules for cloud or gateway connection policies to specify which external sources graph can connect to. Once these policies are set, graph can connect only to the approved sources and the lakehouse that is set as the destination. All other outbound connections, include mirrored databases, are blocked.
+When outbound access protection is enabled, all outbound connections are blocked by default. The workspace admin must then configure data connection rules for cloud or gateway connection policies to specify which external sources graph can connect to. Once these policies are set, graph can connect only to the approved sources and the lakehouse that is set as the destination. All other outbound connections, including mirrored databases, are blocked.
 
 ### Configuring outbound access protection for graph
 

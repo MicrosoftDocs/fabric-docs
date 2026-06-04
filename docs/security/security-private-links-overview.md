@@ -181,7 +181,7 @@ To enable these capabilities in Desktop, admins can configure [service tags](/az
 
 ### Mirrored database
 
-Private link is supported for [open mirroring](/fabric/mirroring/open-mirroring), [Azure Cosmos DB mirroring](/fabric/mirroring/azure-cosmos-db), [Azure SQL Managed Instance mirroring](/fabric/mirroring/azure-sql-managed-instance) and [SQL Server 2025 mirroring](/fabric/mirroring/sql-server). For other types of database mirroring, if the **Block public Internet access** tenant setting is **enabled**, active mirrored databases enter a paused state, and mirroring can't be started.
+Private link is supported for [open mirroring](/fabric/mirroring/open-mirroring), [Azure Cosmos DB mirroring](/fabric/mirroring/azure-cosmos-db), [Azure SQL Managed Instance mirroring](/fabric/mirroring/azure-sql-managed-instance), [SAP mirroring](/fabric/mirroring/sap), [SharePoint List mirroring](/fabric/mirroring/sharepoint-list), and [SQL Server 2025 mirroring](/fabric/mirroring/sql-server).For other types of database mirroring, if the **Block public Internet access** tenant setting is **enabled**, active mirrored databases enter a paused state, and mirroring can't be started.
 
 For open mirroring, when the **Block public Internet access** tenant setting is **enabled**, ensure the publisher writes data into the OneLake landing zone via a private link.
 
@@ -228,6 +228,8 @@ There are several considerations to keep in mind while working with private endp
 * The OneLake Catalog - Govern tab isn't available when Private Link is activated.
   
 * Private links resource REST APIs don't support tags.
+  
+* Plan (preview) items in Fabric IQ (preview) aren't supported in workspaces or tenants that use private links.
 
 * The following URLs must be accessible from the client browser:
 

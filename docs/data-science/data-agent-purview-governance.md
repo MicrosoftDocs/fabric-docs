@@ -1,6 +1,8 @@
 ---
 title: Auditing data agent interactions in Microsoft Purview (preview)
 description: Learn how to use DSPM for AI to govern AI interactions in Data Agent.
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: mayurjain
 ms.topic: how-to
 ms.date: 04/28/2026
@@ -21,19 +23,20 @@ Ensure the following configurations are enabled before using audit logging:
 
 ### 1. Enable Purview Audit
 - From DSPM for AI (classic) > Overview, in the Get Started section, look to see if auditing is on for your tenant. If not, select Activate Microsoft Purview Audit.
+For information on enabling audit, see [Enable Audit Log](https://learn.microsoft.com/purview/audit-log-enable-disable)
 
 ### 2. Enable DSPM for AI Policy
 - In Microsoft Purview:
   - Enable the policy:
     **DSPM for AI – Capture interactions for Copilot experiences**
-For more information about one-click policies, see [Considerations for DSPM for AI](https://learn.microsoft.com/purview/dspm-for-ai-considerations#one-click-policies-from-data-security-posture-management-for-ai)
+For more information about one-click policies, see [Considerations for DSPM for AI](/purview/dspm-for-ai-considerations#one-click-policies-from-data-security-posture-management-for-ai)
 
 ### 3. Enable Fabric Tenant Setting
 - In the Fabric Admin Portal:
   - Turn on:
     **Allow Microsoft Purview to secure AI interactions** 
 
-For more information about this option, see [Tenant settings index](https://learn.microsoft.com/fabric/admin/tenant-settings-index#information-protection).
+For more information about this option, see [Tenant settings index](/fabric/admin/tenant-settings-index#information-protection).
 
 ---
 
@@ -77,7 +80,7 @@ Use Activity Explorer filters to locate specific interactions:
   Isolate interactions from `Fabric-Data Agent`
 
 ### User Prompt 
-For each interaction, Microsoft Purview captures and logs the full text of the user’s prompt.
+For each interaction, Microsoft Purview captures and logs the full text of the user's prompt.
 
 :::image type="content" source="./media/data-agent-governance/purview-da-prompt.png" alt-text="Screenshot showing user prompt in Fabric data agent." lightbox="./media/data-agent-governance/purview-da-prompt.png":::
 

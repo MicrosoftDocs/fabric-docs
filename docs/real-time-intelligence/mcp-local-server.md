@@ -3,10 +3,11 @@ title: Get started with the local MCP server for Real-Time Intelligence
 description: Learn how to set up and use the local Model Context Protocol (MCP) server for Real-Time Intelligence. The server enables AI agents to interact with RTI components like Eventhouse.
 ms.reviewer: sharmaanshul
 ms.topic: how-to
-ms.date: 04/13/2026
+ms.date: 06/03/2026
 ms.search.form: MCP, RTI, AI
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
+ms.update-cycle: 90-days
 
 #CustomerIntent: As a Fabric RTI AI developer, I want to use the RTI MCP server to create AI agents and AI applications.
 ---
@@ -32,7 +33,6 @@ The local RTI MCP Server acts as a bridge between AI-powered applications and yo
 The architecture follows the MCP client-server model:
 
 - **MCP Host**: The application where AI interactions happen. For example, Visual Studio Code with GitHub Copilot, Claude Desktop, Cline. The host contains the AI model connection, a tool orchestrator, and one or more MCP clients.
-- **MCP Client**: A protocol component inside the host that communicates with MCP servers. When the AI model decides it needs data, the host's orchestrator invokes tools through the MCP client.
 - **MCP Server**: A lightweight service that exposes specific capabilities as structured tools. The RTI MCP server exposes tools like "execute query," "list databases," and "list tables" that translate into Eventhouse operations.
 
 Any application that supports MCP can connect to the local RTI MCP server using the same protocol. This can be an interactive product like GitHub Copilot or a programmatic AI agent framework.

@@ -2,14 +2,12 @@
 title: GQL Standard Conformance for Graph in Microsoft Fabric
 description: Detailed GQL standard conformance mapping for graph in Microsoft Fabric. Use this reference to evaluate GQL coverage, compare with other implementations, or identify gaps when migrating from another GQL database.
 ms.topic: reference
-ms.date: 04/23/2026
+ms.date: 05/20/2026
 ms.reviewer: splantikow
 ms.search.form: GQL Conformance
 ---
 
 # GQL standard conformance for graph in Microsoft Fabric
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 Graph in Microsoft Fabric implements the [ISO/IEC 39075:2024 — Information technology — Database languages — GQL](https://www.iso.org/standard/76120.html) standard. This article maps graph's current support against the minimum conformance and optional feature groups defined in the standard. Check back for updates as features are added.
 
@@ -42,11 +40,11 @@ Graph implements the [labeled property graph](graph-data-models.md) model. The f
 | GG20 | Explicit element type names | Yes | Node and edge types are identified by label names defined in the graph type. |
 | GG23 | Optional element type key label sets | Yes | The key label set of an element type is its element type name. |
 | GH02 | Undirected edges | No | All edges are directed. |
-| GV11, GV12, GV24, GV31 | Property value types | Yes | Supported types: `BOOL`, `INT`/`INT64`, `UINT64`, `FLOAT64`/`DOUBLE`, `STRING`. For the full type reference, see [GQL values and value types](gql-values-and-value-types.md). GV08, GV21, GV40, and GV07 have nuances — see the [GV section](#gv--value-type-features). |
+| GV11, GV12, GV24, GV31 | Property value types | Yes | Supported types: `BOOL`, `INT`/`INT64`, `UINT64`, `FLOAT64`/`DOUBLE`, `STRING`. For the full type reference, see [GQL values and value types](gql-values-and-value-types.md). GV08, GV21, GV40, and GV07 have nuances - see the [GV section](#gv--value-type-features). |
 
 ## Minimum conformance
 
-The GQL standard (Subclause 5.3.7) defines minimum conformance as support for all mandatory functionality — the full language syntax and semantics not gated by an optional Feature ID. The standard's informative Annex H documents mandatory functionality. On top of minimum conformance, an implementation can claim support for zero or more **optional features** identified by Feature IDs in the standard's Annex D.
+The GQL standard (Subclause 5.3.7) defines minimum conformance as support for all mandatory functionality - the full language syntax and semantics not gated by an optional Feature ID. The standard's informative Annex H documents mandatory functionality. On top of minimum conformance, an implementation can claim support for zero or more **optional features** identified by Feature IDs in the standard's Annex D.
 
 In addition to the mandatory functionality, Subclause 24.2 requires that a minimum conformance claim include:
 
@@ -107,9 +105,9 @@ The following tables summarize the current state of graph's support for mandator
 | Subclause | Capability | Supported | Notes |
 | ---------- | ------- | --------- | ----- |
 | 19.3 | Comparison predicate | Yes | [Comparison operators](gql-expressions.md#comparison-predicates): `=`, `<>`, `<`, `>`, `<=`, `>=`. |
-| 19.4 | `EXISTS` predicate | No | `EXISTS` with graph patterns, parenthesized patterns, and nested queries isn't currently supported. |
+| 19.4 | `EXISTS` predicate | Yes | `EXISTS` predicate with graph patterns is supported. |
 | 19.5 | `NULL` predicate | Yes | [`IS NULL` and `IS NOT NULL`](gql-expressions.md#property-existence-predicates). |
-| 19.7 | `NORMALIZED` predicate | No | Unicode normalization functions aren't currently supported. |
+| 19.7 | `NORMALIZED` predicate | No | The `IS [NOT] NORMALIZED` predicate isn't currently supported. The `NORMALIZE()` function is supported — see Subclause 20.24. |
 
 ### Value expressions and functions (Subclause 20)
 
@@ -125,10 +123,10 @@ The following tables summarize the current state of graph's support for mandator
 | 20.21 | Numeric value expression | Yes | [Arithmetic operators](gql-expressions.md#arithmetic-expressions): `+`, `-`, `*`, `/`. |
 | 20.22 | Numeric value function | Partial | [`char_length`](gql-expressions.md#string-functions) is supported. `CHARACTER_LENGTH` alias isn't currently supported. |
 | 20.23 | String value expression | Yes | String concatenation with the `\|\|` operator. |
-| 20.24 | Character string function | Partial | [`upper`](gql-expressions.md#string-functions), `lower`, `trim` are supported. Unicode case mapping isn't fully supported. `LEFT`/`RIGHT` substring functions and `NORMALIZE` aren't currently supported. |
+| 20.24 | Character string function | Partial | [`upper`](gql-expressions.md#string-functions), `lower`, `trim`, `LEFT`/`RIGHT` substring functions, and `NORMALIZE` are supported. Unicode case mapping isn't fully supported. |
 | 20.25 | Byte string function | No | Byte string types aren't supported. |
 | 20.27 | Datetime value function | Yes | `CURRENT_DATETIME` is supported. See [zoned datetime values](gql-values-and-value-types.md#zoned-datetime-values). |
-| 20.29 | Duration value function | No | |
+| 20.29 | Duration value function | Yes | Duration value functions are supported. |
 
 ### Value types (Subclause 24.2)
 
@@ -192,7 +190,7 @@ A Feature ID identifies optional features. It starts with "G" followed by a grou
 | G080 | Simplified path pattern expression: basic defaulting | No | |
 | G081 | Simplified path pattern expression: full overrides | No | |
 | G082 | Simplified path pattern expression: basic overrides | No | |
-| G100 | `ELEMENT_ID` function | No | |
+| G100 | `ELEMENT_ID` function | Yes | `ELEMENT_ID` returns the unique identifier of a node or edge element. |
 | G110 | `IS DIRECTED` predicate | No | |
 | G111 | `IS LABELED` predicate | No | |
 | G112 | `IS SOURCE` and `IS DESTINATION` predicate | No | |
@@ -208,7 +206,7 @@ A Feature ID identifies optional features. It starts with "G" followed by a grou
 | GA03 | Explicit ordering of nulls | No | `NULL` sorts as the smallest value in [`ORDER BY`](gql-language-guide.md#order-by-statement), but explicit `NULLS FIRST`/`NULLS LAST` keywords aren't currently supported. |
 | GA04 | Universal comparison | No | |
 | GA05 | Cast specification | Partial | `CAST(value AS target_type)` is supported. Unicode type casting isn't currently supported. See [type conversions](gql-values-and-value-types.md#type-conversions-and-casting). |
-| GA06 | Value type predicate | No | |
+| GA06 | Value type predicate | Yes | Value type predicates are supported. |
 | GA07 | Ordering by discarded binding variables | No | |
 | GA08 | GQL-status objects with diagnostic records | Partial | Status objects with GQLSTATUS codes, messages, diagnostic records, and cause chains are supported. See [status codes reference](gql-reference-status-codes.md) and the [Query API status object](gql-query-api.md#status-object). Full GQL status code coverage isn't yet complete. |
 | GA09 | Comparison of paths | No | |
@@ -265,7 +263,7 @@ A Feature ID identifies optional features. It starts with "G" followed by a grou
 | GF05 | Multi-character `TRIM` function | No | |
 | GF06 | Explicit `TRIM` function | No | `TRIM` with trim specification syntax (for example, `TRIM('_' FROM '_x')`) isn't supported. Basic `trim(string)` is supported as a mandatory capability. |
 | GF07 | Byte string `TRIM` function | No | Byte string types aren't supported. |
-| GF10 | Advanced aggregate functions: general set functions | Partial | [`collect_list`](gql-expressions.md#aggregate-functions) is supported. `stddev_pop`, `stddev_samp`, and `product` aren't currently supported. |
+| GF10 | Advanced aggregate functions: general set functions | Partial | [`collect_list`](gql-expressions.md#aggregate-functions) and `collect_any` are supported. `stddev_pop`, `stddev_samp`, and `product` aren't currently supported. |
 | GF11 | Advanced aggregate functions: binary set functions | No | `percentile_cont` and `percentile_disc` aren't currently supported. |
 | GF12 | `CARDINALITY` function | No | Use [`size(list)`](gql-expressions.md#list-functions) instead. |
 | GF13 | `SIZE` function | Yes | [`size(list)`](gql-expressions.md#list-functions) returns the number of elements in a list. |
@@ -307,7 +305,7 @@ A Feature ID identifies optional features. It starts with "G" followed by a grou
 
 ### GP — Procedure features
 
-Procedure features (GP01–GP18) aren't currently supported. This support includes `CALL` inline procedures, `CALL` named procedures, procedure-local variable definitions, and procedure arguments.
+The `CALL` inline procedure statement (GP01) is supported. Other procedure features (GP02–GP18) aren't currently supported, including `CALL` named procedures, procedure-local variable definitions, and procedure arguments.
 
 ### GQ — Query composition features
 
@@ -322,7 +320,7 @@ Procedure features (GP01–GP18) aren't currently supported. This support includ
 | GQ07 | Composite query: `INTERSECT ALL` | No | |
 | GQ08 | `FILTER` statement | Yes | [`FILTER`](gql-language-guide.md#filter-statement) with `WHERE` keyword. |
 | GQ09 | `LET` statement | Yes | [`LET`](gql-language-guide.md#let-statement) for computed variables. |
-| GQ10 | `FOR` statement: list value support | No | |
+| GQ10 | `FOR` statement: list value support | Yes | Regular `FOR` statement with list value support. |
 | GQ11 | `FOR` statement: `WITH ORDINALITY` | No | |
 | GQ12 | `ORDER BY` and page statement: `OFFSET` clause | Yes | [`OFFSET`](gql-language-guide.md#offset-and-limit-statements) (also aliased as `SKIP`). |
 | GQ13 | `ORDER BY` and page statement: `LIMIT` clause | Yes | [`LIMIT`](gql-language-guide.md#offset-and-limit-statements). |
@@ -385,17 +383,17 @@ GQL transaction management features (GT01–GT03) aren't currently supported.
 | GV38 | Specified byte string fixed length | No | |
 | GV39 | Temporal types: date, local datetime, and local time | No | `DATE`, `LOCAL DATETIME`, and `LOCAL TIME` aren't supported. Only `ZONED DATETIME` is supported. |
 | GV40 | Temporal types: zoned datetime and zoned time | Partial | [`ZONED DATETIME`](gql-values-and-value-types.md#zoned-datetime-values) is supported. `ZONED TIME` isn't currently supported. |
-| GV41 | Temporal types: duration | No | |
-| GV45 | Record types | No | |
+| GV41 | Temporal types: duration | Yes | Duration type is supported. |
+| GV45 | Record types | Yes | Record constructor syntax is supported. |
 | GV46 | Closed record types | No | |
-| GV47 | Open record types | No | |
+| GV47 | Open record types | Yes | Open record types are supported. |
 | GV48 | Nested record types | No | |
-| GV50 | List value types | Yes | [`LIST<element_type>`](gql-values-and-value-types.md#list-values). Lists can't contain mixed types. |
+| GV50 | List value types | Yes | [`LIST<element_type>`](gql-values-and-value-types.md#list-values). Nested list types (`LIST<LIST<type>>`) are supported. Lists can't contain mixed types. |
 | GV55 | Path value types | Yes | [`PATH`](gql-values-and-value-types.md#path-values) type for matched paths. |
 | GV60 | Graph reference value types | No | |
 | GV61 | Binding table reference value types | No | |
 | GV65 | Dynamic union types | No | |
-| GV66 | Open dynamic union types | No | |
+| GV66 | Open dynamic union types | Yes | `ANY` value type is supported. |
 | GV67 | Closed dynamic union types | No | |
 | GV68 | Dynamic property value types | No | |
 | GV70 | Immaterial value types | Yes | [`NULL`](gql-values-and-value-types.md#null-values) and [`NOTHING`](gql-values-and-value-types.md#nothing-type) types. |
@@ -414,10 +412,7 @@ GQL transaction management features (GT01–GT03) aren't currently supported.
 
 The following notable features aren't currently supported. For the full list, see any row marked **No** in the tables.
 
-- `EXISTS` predicate (Subclause 19.4)
 - `SELECT` statement (Subclause 14.12) — use `RETURN` instead
-- `CALL` inline procedure / subqueries (GP01)
-- `FOR` statement (GQ10)
 - `NEXT` keyword for advanced linear composition (GQ20)
 - `UNION DISTINCT` statement (GQ03) — `UNION ALL` is supported
 - Unbounded graph pattern quantifiers: `{m,}`, `*`, `+` (G061)

@@ -1,5 +1,5 @@
 ---
-title: Create a driver model
+title: Create a Driver Model
 description: Learn how to create a driver model by using the model builder.
 ms.date: 04/28/2026
 ms.topic: how-to
@@ -9,6 +9,8 @@ ms.topic: how-to
 # Create a driver model by using the model builder
 
 This article explains how to create a driver-based model.
+
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
 A [*driver model*](planning-concept-driver-model.md) is a type of model in which outputs are determined by key input variables called *drivers*. Examples include units sold, price per unit, headcount, production volume, and so on. These inputs are linked to outputs such as revenue, costs, or demand through defined formulas or proportional logic.
 
@@ -58,17 +60,17 @@ The following steps describe how to add another input driver, **Price Growth %**
 
     :::image type="content" source="../media/planning-driver-model/planning-how-to-create-driver-model/configure-driver-method.png" alt-text="Screenshot of configuring driver row and driver method." lightbox="../media/planning-driver-model/planning-how-to-create-driver-model/configure-driver-method.png":::
 
-1. Go back to the Planning sheet and select the driver icon. Then, enter the price growth % values in the **Driver Input** table that appears. You can enter driver input at either the total or leaf levels.
+1. Go back to the planning sheet and select the driver icon. Then, enter the price growth % values in the **Driver Input** table that appears. You can enter driver input at either the total or leaf levels.
 
-    :::image type="content" source="../media/planning-driver-model/planning-how-to-create-driver-model/enter-driver-input.png" alt-text="Screenshot of entering driver input in Planning sheet.":::
+    :::image type="content" source="../media/planning-driver-model/planning-how-to-create-driver-model/enter-driver-input.png" alt-text="Screenshot of entering driver input in planning sheet.":::
 
 1. After you enter the *Price Growth %* values, the **Final Gross Revenue** row updates automatically based on the selected driver method (10% growth in gross revenue).
 1. Enter different driver inputs to calculate the change in gross revenue, the net revenue, and gross profit as price growth changes roll up to the top.
 
-    :::image type="content" source="../media/planning-driver-model/planning-how-to-create-driver-model/result-driver-input.png" alt-text="Screenshot of results after entering driver input in Planning sheet.":::
+    :::image type="content" source="../media/planning-driver-model/planning-how-to-create-driver-model/result-driver-input.png" alt-text="Screenshot of results after entering driver input in planning sheet.":::
 
 This example shows how driver-based modeling helps you find outcomes based on key assumptions so you can test different driver inputs without changing the core model.
 
-Changes automatically roll up to top-level results and distribute across periods, allowing you to perform fast, flexible what-if analysis directly in the Planning sheet.
+Changes automatically roll up to top-level results and distribute across periods, allowing you to perform fast, flexible what-if analysis directly in the planning sheet.
 
 You can also modify the distribution method while creating a driver model. For more information, see [Distribution](planning-how-to-configure-model-row-properties.md#distribution).

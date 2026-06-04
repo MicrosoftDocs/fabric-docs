@@ -1,5 +1,5 @@
 ---
-title: Connect PowerTable sheet to a semantic model
+title: Connect PowerTable Sheet to a Semantic Model
 description: Learn how to connect a PowerTable sheet to a semantic model and build collaborative table apps with live data synchronization.
 ms.date: 04/13/2026
 ms.topic: how-to

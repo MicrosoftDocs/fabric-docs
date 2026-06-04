@@ -1,6 +1,8 @@
 ---
 title: Configure Fabric data agent tenant settings
 description: Learn how to configure Fabric data agent tenant settings.
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: amjafari
 ms.topic: how-to
 ms.date: 04/20/2026
@@ -12,6 +14,9 @@ ai-usage: ai-assisted
 # Configure Fabric data agent tenant settings
 
 To use a data agent in Microsoft Fabric, configure the required tenant settings. This guide walks you through the necessary configurations for a seamless setup.
+
+> [!IMPORTANT]
+> Users may configure Fabric data agents to be consumed from other services such as Microsoft Foundry, Microsoft Copilot Studio, M365 Copilot or as an MCP server ("non-Fabric services"). When users connect to these non-Fabric services, responses returned by Fabric data agents may be sent outside of Fabric's compliance boundary or geographic region, and processed and/or stored according to the non-Fabric service(s) applicable terms and data handling policies.
 
 ## Access tenant settings
 

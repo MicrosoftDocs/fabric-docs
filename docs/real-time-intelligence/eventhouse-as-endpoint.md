@@ -2,11 +2,14 @@
 title: Eventhouse Endpoint for Lakehouse and Data Warehouse
 description: Use an eventhouse endpoint to query Lakehouse or Warehouse tables with enhanced performance and flexibility in Real-Time Intelligence.
 ms.reviewer: tzgitlin, salilkanade, wiassaf
+ms.reviewer: tzgitlin, salilkanade, wiassaf
 ms.subservice: rti-eventhouse
 ms.topic: how-to
 ms.date: 05/04/2026
+ms.date: 05/04/2026
 ---
 
+# Enable Eventhouse endpoint for lakehouse and warehouse
 # Enable Eventhouse endpoint for lakehouse and warehouse
 
 The Eventhouse endpoint is a powerful capability in Microsoft Fabric that lets you query tables with exceptional speed and ease. Use the Eventhouse endpoint to query lakehouse or warehouse data, discover real-time insights across your data estate, and streamline the analysis of structured, semi-structured, and unstructured data.
@@ -95,7 +98,7 @@ The Eventhouse endpoint has these characteristics:
 
   :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png" alt-text="Screenshot of the KQL queryset with a get table schema query." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png":::
 
-* **System Overview**: Shows sync status, storage and activity statistics, and more [details](manage-monitor-eventhouse.md#view-system-overview) including a link to the source lakehouse or warehouse.
+* **System Overview**: Shows sync status, storage and activity statistics, and more [details](manage-monitor-eventhouse.md#system-overview) including a link to the source lakehouse or warehouse.
 
 * **KQL database**: The database is named **<Lakehouse_Name or Warehouse_Name>_EventhouseEndpoint**. As the **Eventhouse endpoint** is read-only, create database and add table capabilities are disabled. Run KQL queries, create [visualizations](dashboard-real-time-create.md) in a real-time dashboard, and perform advanced analytics with KQL or SQL.
 

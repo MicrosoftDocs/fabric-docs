@@ -1,16 +1,14 @@
 ---
 title: Current Limitations of graph in Microsoft Fabric
-description: Understand the current limitations of graph in Microsoft Fabric, including data types, graph size, query constraints, and GQL (Graph Query Language) conformance.
+description: Understand the current limitations of graph in Microsoft Fabric, including data types, graph size, query constraints, and GQL language support.
 ms.topic: reference
-ms.date: 04/23/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ---
 
 # Current limitations of graph in Microsoft Fabric
 
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
-
-While graph in Microsoft Fabric is in preview, the service has certain functional and performance limitations. This article highlights some key limitations but isn't an exhaustive list. Check back regularly for updates.
+Graph in Microsoft Fabric has certain functional and performance limitations. This article highlights some key limitations but isn't an exhaustive list. Check back regularly for updates.
 
 For help with common problems, see [Troubleshooting graph](troubleshooting-and-faq.md).
 
@@ -20,8 +18,7 @@ For help with common problems, see [Troubleshooting graph](troubleshooting-and-f
 
 - OneLake parquet and CSV files are the only data sources currently supported.
 - Support for Power BI semantic models as data sources is under development.
-- Support for column- and row-level [OneLake security](../onelake/security/get-started-security.md#onelake-security-preview) is under development.
-- Support for [Lakehouse with schema](../data-engineering/lakehouse-schemas.md) is under development.
+- Support for column- and row-level [OneLake security](../onelake/security/get-started-security.md#onelake-security) is under development.
 
 ### Data types
 
@@ -32,6 +29,7 @@ Graph currently supports the following data types:
 - Integer (values are 64-bit signed integers)
 - String (values are Unicode character strings)
 - Zoned DateTime (values are timestamps together with a timeshift for the time zone)
+- Duration (values are ISO 8601 duration intervals)
 
 The following OneLake types are supported:
 
@@ -65,7 +63,7 @@ Each Fabric Workspace can have up to 10 graph instances.
 
 ### Size of graph
 
-Creating graphs with more than 500 million nodes and edges might result in unstable performance.
+Creating graphs with more than 1 billion nodes and edges might result in unstable performance.
 
 ### Multitasking UI
 
@@ -100,127 +98,20 @@ Queries time out if they take more than 20 minutes.
 
 For a detailed mapping of supported GQL features against the ISO/IEC 39075:2024 standard, including minimum conformance, optional features by group, and features not yet supported, see [GQL standard conformance](gql-conformance.md).
 
-Graph supports the following query features from the GQL standard:
-
-- FILTER statement
-- LET statement
-- Basic linear statement chaining
-- Full linear statement chaining
-- MATCH statement
-- OPTIONAL MATCH statement
-- Simple RETURN statement
-- Conjunction and disjunction
-- Negation
-- Local pattern predicates
-- Pattern property specifications
-- Simple anonymous patterns
-- Simple named edge patterns
-- Path patterns
-- Disconnected path patterns
-- Joined path patterns
-- Case mapping (US ASCII only)
-- STRING_JOIN function
-- COALESCE function
-- CASE expression
-- NULLIF expression
-- Property reference
-- Variable reference
-- Approximate numbers
-- Booleans
-- Character strings with escaping
-- Exact numbers
-- Arithmetic operators
-- Boolean conjunction
-- Boolean disjunction
-- Boolean negation
-- Boolean strict disjunction (XOR)
-- STARTS WITH predicate
-- Value comparison
-- Value equality
-- BOOL value type
-- EDGE reference value type
-- INT value type
-- INT64 value type
-- FLOAT value type
-- FLOAT64 value type
-- NODE reference value type
-- STRING value type
-- UINT value type
-- UINT64 value type
-- Explicit value type nullability (NOT NULL)
-- Character string concatenation
-- COUNT aggregate function
-- MAX aggregate function
-- MIN aggregate function
-- OFFSET and LIMIT statements
-- CREATE GRAPH statement
-- Closed graph type support
-- ORDER BY statement
-- RETURN statement with GROUP BY
-- RETURN statement with GROUP BY and slicing
-- List indexing
-- List value TRIM function
-- Character string length function
-- SIZE
-- Collection membership
-- Simple LIST value type
-- Null type and empty type
-- AVG aggregate function
-- COLLECT_LIST aggregate function
-- SUM aggregate function
-- CURRENT_DATETIME function
-- ZONED DATETIME value type
-- UNION ALL statement
-- Bounded graph pattern quantifiers
-- Group variables
-- Horizontal aggregation
-- LABELS function
-- ELEMENTS function
-- Basic GQL status codes
-- Formatting and parsing of GQL values
-- Statements with DISTINCT
-- Grouping
-- WALK path mode
-- TRAIL path mode
-- SIMPLE path mode
-- ACYCLIC path mode
-- Abbreviated edge patterns
-- Path binding
-- Path value constructor
-- Simple TRIM function
-- EDGES function
-- NODES function
-- Null
-- Path length function
-- CONTAINS predicate
-- ENDS WITH predicate
-- Null test predicate
-- PATH value type
-- Multiple node labels
-- Orderedness and Distinctness
-- Return type
-- Unicode validation
-- TO_JSON_STRING function
-
 Conformance to GQL standards is still in progress for:
 
 - Correct GQL status codes
-- CALL inline procedure statement
 - FOR statement with index
-- Regular FOR statement
 - NEXT
 - UNION DISTINCT statement
 - Unbounded graph pattern quantifiers
 - ALL SHORTEST path search
 - ANY path search
 - ANY SHORTEST path search
-- Substring functions
-- Unicode normalization functions
 - Data conversion
 - Scalar subqueries
 - PROPERTIES function
 - RANGE function
-- Record constructor
 - Enhanced numeric functions
 - Logarithmic functions
 - Trigonometric functions
@@ -228,24 +119,20 @@ Conformance to GQL standards is still in progress for:
 - Label test predicate
 - Normalized predicate
 - Source/destination predicate
-- Value type predicate
 - INT32 value type
 - FLOAT32 value type
-- RECORD value type
+- Closed RECORD value type
 - UINT32 value type
-- DURATION
 - ZONED TIME value type
 - DATE value type
 - Parameter passing
 - Undirected edges
 - GQL-preamble
 - Nonlocal pattern predicates
-- Undirected edge patterns
 - IS DIRECTED predicate
 - REGEXP_CONTAINS predicate
 - Dynamic parameter specification
 - Session user
-- ANY value type
 - BYTES value type
 - DECIMAL value type
 - LOCAL DATETIME value type
@@ -268,7 +155,7 @@ Conformance to GQL standards is still in progress for:
 - Byte string concatenation
 - Byte string TRIM function
 - Simple TRIM function with TRIM specification
-- Multi-character TRIM function
+- Multicharacter TRIM function
 - Byte string length function
 - CARDINALITY
 - ALL_DIFFERENT predicate

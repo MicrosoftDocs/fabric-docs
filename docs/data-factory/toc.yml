@@ -11,12 +11,6 @@
         href: guided-lab-experience.md
       - name: Data Factory training
         href: /training/paths/get-started-fabric
-      - name: Copilot in Fabric in the Data Factory workload
-        items: 
-          - name: What is Copilot in Fabric in the Data Factory workload? 
-            href: copilot-fabric-data-factory.md
-          - name: Get started with Copilot in Fabric in the Data Factory workload
-            href: copilot-fabric-data-factory-get-started.md
       - name: Pricing in Data Factory
         items: 
           - name: Pricing overview
@@ -87,6 +81,12 @@
         href: create-first-dataflow-gen2.md
       - name: Operationalize Data Factory
         href: transform-data.md
+  - name: Copilot in Data Factory
+    items: 
+      - name: What is Copilot in Data Factory? 
+        href: copilot-fabric-data-factory.md
+      - name: Get started with Copilot in Data Factory
+        href: copilot-fabric-data-factory-get-started.md
   - name: Migrate to Fabric
     items:
     - name: Compare Azure Data Factory to Data Factory in Fabric
@@ -142,6 +142,8 @@
         items:
           - name: Service principal support
             href: service-principals.md
+          - name: Workspace identity support
+            href: workspace-identity.md
           - name: Access database
             items: 
               - name: Access database - Overview
@@ -981,6 +983,8 @@
                 href: cdc-copy-job-bigquery.md
               - name: Change data capture from Oracle database
                 href: cdc-copy-job-oracle.md
+              - name: Copy job for SAP via ABAP Add-On 
+                href: copy-job-tutorial-sap-abap.md                
       - name: Copy activity
         href: copy-data-activity.md
         items:
@@ -1048,6 +1052,8 @@
             href: create-first-dataflow-gen2.md
           - name: Get data in dataflows
             href: get-data-dataflow-gen2.md
+          - name: My Queries (Preview)
+            href: dataflow-gen2-my-queries.md
           - name: Use a dataflow in a pipeline
             href: tutorial-dataflows-gen2-pipeline-activity.md
           - name: Save a draft of your dataflow
@@ -1077,6 +1083,8 @@
                 href: dataflow-gen2-preview-only-step.md
               - name: Partitioned compute (Preview)
                 href: dataflow-gen2-partitioned-compute.md
+              - name: Staged data options (Preview)
+                href: dataflow-gen2-staged-data-options.md
               - name: Relative references with Fabric connectors
                 href: dataflow-gen2-relative-references.md
               - name: Public parameters in Dataflow Gen2
@@ -1140,6 +1148,10 @@
           href: dbt-job-how-to.md
         - name: Configure a dbt job
           href: dbt-job-configure.md
+        - name: Run dbt projects from GitHub
+          href: dbt-run-github.md
+        - name: dbt job logs with OneLake
+          href: dbt-job-onelake-logs.md
         - name: dbt job activity in a pipeline
           href: dbt-job-activity.md
         - name: dbt job pricing
@@ -1154,14 +1166,20 @@
         href: create-first-pipeline-with-sample-data.md
       - name: Get data for pipelines
         href: modern-get-data-experience-pipeline.md
+      - name: Pipeline canvas
+        href: pipeline-canvas-experience.md
       - name: Activities in pipelines
         href: activity-overview.md 
+      - name: Business workflow management
+        href: business-workflow-management.md
       - name: CI/CD for pipelines
         href: cicd-pipelines.md
       - name: Control flow activities
         items: 
           - name: Append Variable activity
             href: append-variable-activity.md
+          - name: Approval activity
+            href: approval-activity.md
           - name: Azure Batch activity
             href: azure-batch-activity.md
           - name: Azure Databricks activity
@@ -1190,6 +1208,8 @@
             href: lookup-activity.md
           - name: Office 365 Outlook activity
             href: outlook-activity.md
+          - name: Refresh Materialized Lake View activity
+            href: refresh-materialized-lake-view-activity.md
           - name: Refresh SQL Endpoint activity
             href: refresh-sql-endpoint-activity.md
           - name: Semantic model refresh activity
@@ -1210,6 +1230,8 @@
             href: webhook-activity.md
       - name: Run, schedule, or trigger pipelines
         href: pipeline-runs.md
+      - name: CI/CD for pipelines
+        href: cicd-pipelines.md
       - name: Expressions and functions
         href: expression-language.md
       - name: Pipeline sample templates
@@ -1269,6 +1291,8 @@
             href: apache-airflow-jobs-api-capabilities.md
           - name: Apache Airflow Job workspace settings
             href: apache-airflow-jobs-workspace-settings.md
+          - name: Use workspace identity
+            href: apache-airflow-jobs-workspace-identity.md
           - name: Install a private package
             href: apache-airflow-jobs-install-private-package.md
           - name: Enable Azure Key Vault as Secret Backend
@@ -1285,7 +1309,7 @@
             href: access-apache-airflow-job-logs.md
           - name: CI/CD for Apache Airflow Jobs
             href: cicd-apache-airflow-jobs.md
-  - name: FAQ and Troubleshooting
+  - name: Troubleshoot
     items: 
       - name: Keyboard shortcuts
         href: keyboard-shortcuts.md

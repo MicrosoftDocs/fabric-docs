@@ -4,7 +4,7 @@ description: OneLake shortcuts provide a way to connect to existing data without
 ms.reviewer: eloldag
 ms.search.form: Shortcuts
 ms.topic: concept-article
-ms.date: 01/08/2026
+ms.date: 05/21/2026
 #customer intent: As a data engineer, I want to learn how to use OneLake shortcuts so that I can unify data sources and have OneLake manage the permissions.
 ---
 
@@ -127,7 +127,7 @@ For detailed instructions to create a specific shortcut type, select an article 
 * [Amazon S3 shortcuts](./create-s3-shortcut.md)
 * [Amazon S3 compatible shortcuts](./create-s3-compatible-shortcut.md)
 * [Azure Data Lake Storage (ADLS) Gen 2 shortcuts](./create-adls-shortcut.md)
-* [Azure Blob Storage shortcuts](./create-blob-shortcut.md)
+* [Azure Blob Storage shortcuts](./shortcuts/create-blob-shortcut.md)
 * [Dataverse shortcuts](./create-dataverse-shortcut.md)
 * [Google Cloud Storage shortcuts](./create-gcs-shortcut.md)
 * [Iceberg shortcuts](./onelake-iceberg-tables.md)
@@ -168,6 +168,12 @@ If you delete `MyLakehouse\Files\MyShortcut`, you delete the **MyShortcut** shor
 
 If you delete `MyLakehouse\Files\MyShortcut\Foo\Bar`, and you have write permissions in the ADLS Gen2 account, you delete the **Bar** directory from the ADLS Gen2 account.
 
+As another example, consider a schema-enabled lakehouse with the following path in it: `MyLakehouse\Tables\MySchemaShortcut\Dir1`. **MySchemaShortcut** is a schema shortcut that points to an ADLS Gen2 account that contains the *Dir1* directory.
+
+If you delete `MyLakehouse\Tables\MySchemaShortcut`, you delete the **MySchemaShortcut** schema shortcut from the lakehouse but the files and directories in the ADLS Gen2 account *Dir1* stay unaffected.
+
+If you delete `MyLakehouse\Tables\MySchemaShortcut\Dir1`, and you have write permissions in the ADLS Gen2 account, you delete the **Dir1** directory from the ADLS Gen2 account.
+
 ## Workspace lineage view
 
 When you create shortcuts between multiple Fabric items within a workspace, you can visualize the shortcut relationships through the workspace lineage view. Select the **Lineage view** button (:::image type="icon" source="media\onelake-shortcuts\lineage-view-button.png":::) in the upper right corner of the Workspace explorer.
@@ -187,6 +193,7 @@ When you create shortcuts between multiple Fabric items within a workspace, you 
 * Lineage for shortcuts to Data Warehouses and Semantic Models isn't currently available.
 * A Fabric shortcut syncs with the source almost instantly, but propagation time might vary due to data source performance, cached views, or network connectivity issues.
 * It might take up to a minute for the Table API to recognize new shortcuts.
+* Schema shortcuts can only be created in [schema-enabled lakehouses](/fabric/data-engineering/lakehouse-schemas).
 
 ## Related content
 

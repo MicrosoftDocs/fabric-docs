@@ -12,6 +12,10 @@ This article describes how to set alerts on OneLake events in Real-Time hub.
 
 [!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
 
+[!INCLUDE [outbound-access-protection-note](./includes/outbound-access-protection-note.md)]
+
+[!INCLUDE [workspace-private-links-note](./includes/workspace-private-links-note.md)]
+
 ## Navigate to Real-Time hub
 
 [!INCLUDE [navigate-to-real-time-hub](./includes/navigate-to-real-time-hub.md)]
@@ -41,7 +45,7 @@ Do steps from one of the following sections, which opens a side panel where you 
 
     :::image type="content" source="./media/set-alerts-fabric-onelake-events/detail-view.png" alt-text="Screenshot that shows the OneLake events detail page with Set alert button selected." lightbox="./media/set-alerts-fabric-onelake-events/detail-view.png":::
 
-[!INCLUDE [rule-details](./includes/rule-details.md)]
+[!INCLUDE [rule-details](../real-time-intelligence/data-activator/includes/rule-details.md)]
 
 ## Monitor section
 
@@ -80,11 +84,11 @@ Do steps from one of the following sections, which opens a side panel where you 
     
         :::image type="content" source="./media/set-alerts-fabric-onelake-events/review-create-page.png" alt-text="Screenshot that shows the Add source wizard Review and create page for OneLake events.":::        
 
-[!INCLUDE [rule-condition-events](./includes/rule-condition-events.md)]
+[!INCLUDE [rule-condition-events](../real-time-intelligence/data-activator/includes/rule-condition-events.md)]
 
-[!INCLUDE [rule-action](./includes/rule-action.md)]
+[!INCLUDE [rule-action](../real-time-intelligence/data-activator/includes/rule-action.md)]
 
-[!INCLUDE [rule-save-location](./includes/rule-save-location.md)]
+[!INCLUDE [rule-save-location](../real-time-intelligence/data-activator/includes/rule-save-location.md)]
 
 ## Create alert
 
