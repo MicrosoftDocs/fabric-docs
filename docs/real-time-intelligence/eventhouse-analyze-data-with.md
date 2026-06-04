@@ -14,6 +14,7 @@ Microsoft Fabric provides a unified **Analyze data with** menu that gives you a 
 From a KQL database in Eventhouse, the **Analyze data with** action lets you:
 
 - Analyze data using SQL analytics endpoint, when OneLake availability and sync are enabled.
+- Open a new or existing notebook with the database automatically added to the notebook environment.
 - Launch analysis actions from a single location, without switching contexts or reconfiguring access.
 
 This integration provides a consistent experience regardless of where your data lives. The same **Analyze data with** menu is available in Lakehouse, Warehouse, and Eventhouse, so the way you analyze data looks and feels the same across all workloads. Whether you're doing exploratory analysis, advanced transformations, or experimentation, you can get started quickly from a familiar starting point.
@@ -58,6 +59,28 @@ When you analyze data from a KQL database using the SQL analytics endpoint, a ne
 1. From the KQL database settings, select **SQL analytics endpoint**. This shows you that the SQL analytics endpoint connection is enabled.
 
 1. Turn the **SQL analytics endpoint** toggle off.
+
+## Analyze data by using a notebook
+
+1. In your Fabric workspace, go to your **KQL database**.
+
+1. Select **Analyze data with** > **Notebook**.
+
+   :::image type="content" source="media/eventhouse/database-analyze-data-notebook.png" alt-text="Screenshot of the *analyze data with* button expanded with the notebook option highlighted.":::
+
+1. Select **New Notebook** or **Existing Notebook**.
+
+   If you select **New Notebook**, a new notebook opens with the KQL database automatically added to your notebook environment.
+
+   If you select **Existing Notebook**, the OneLake catalog opens with a list of your existing notebooks. Select the notebook you want to use for data analysis.
+
+1. The notebook opens with the KQL database automatically added to your notebook environment.
+
+   You can see the Eventhouse connection in the explorer pane, where the KQL database is listed.
+
+1. Use the notebook to query and analyze the data in your KQL database by using your preferred language (Python, Spark SQL, or Scala).
+
+1. (Optional) Add additional KQL databases or data sources to your notebook environment, such as a Lakehouse or Warehouse, to combine data from multiple sources in your analysis.
 
 ## Related content
 
