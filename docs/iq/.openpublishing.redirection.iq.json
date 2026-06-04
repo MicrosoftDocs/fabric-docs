@@ -7,7 +7,7 @@
     },
         {
       "source_path_from_root": "/docs/iq/ontology/how-to-add-semantic-enrichment.md",
-      "redirect_url": "/fabric/iq/ontology/how-to-bind-data.md",
+      "redirect_url": "/fabric/iq/ontology/how-to-bind-data",
       "redirect_document_id": false
     },
     {
