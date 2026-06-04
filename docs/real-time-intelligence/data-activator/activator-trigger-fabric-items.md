@@ -26,7 +26,7 @@ You can use Fabric Pipelines, Dataflows, Notebooks, Spark Job Definition, User D
 
 Start by selecting an existing Activator rule or [creating a rule](activator-create-activators.md).
 
-In the rule definition pane on the right side of the screen, find the **Action** section to define the action when the chosen condition is met. Select an action type and select a specific Fabric item from the [OneLake Data Hub](../../governance/onelake-catalog-overview.md) pop-up window.
+In the rule definition pane on the right side of the screen, find the **Action** section to define the action when the chosen condition is met. Select an action type and select a specific Fabric item from the [OneLake catalog](../../governance/onelake-catalog-overview.md) pop-up window.
 
 ## Test, start, or stop an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule
 
