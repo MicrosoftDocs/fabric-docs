@@ -23,7 +23,7 @@ In this article, you learn how to create a new KQL database. Once your KQL datab
 
 1. To create a new KQL database, in the Eventhouse explorer either:
 
-    * Select **Eventhouse** then **New database +**
+    * Select **Eventhouse** then **+ Database +**
     * Under **KQL Databases** select **+**  
 
       :::image type="content" source="media/create-database/create-database.png" alt-text="Screenshot showing the eventhouse KQL Databases section.":::
@@ -41,6 +41,9 @@ The KQL database is created within the context of the selected eventhouse. You c
 
 When you create a new KQL database, the portal automatically creates an attached environment. Use this environment to explore and manage the KQL database by using [KQL queries](/kusto/query/).
 
+> [!TIP]
+> You can also [analyze data with](eventhouse-analyze-data-with.md) an SQL analytics endpoint or notebook, or create a standalone [KQL queryset](create-query-set.md).
+
 1. To access the embedded KQL queryset, select the *KQLdatabasename_queryset* item from your KQL database object tree.
 
     :::image type="content" source="media/create-database/attached-queryset.png" alt-text="Screenshot of the new embedded KQL queryset item within the database explorer pane." lightbox="media/create-database/attached-queryset.png":::
@@ -48,9 +51,6 @@ When you create a new KQL database, the portal automatically creates an attached
 1. To rename the query environment, select the **Pencil icon** next to its name, and enter a new name.
 
     :::image type="content" source="media/create-database/rename-queryset.png" alt-text="Screenshot of the Rename queryset window showing the queryset name and the Pencil icon." lightbox="media/create-database/rename-queryset.png":::
-
-> [!TIP]
-> You can also [analyze data with](eventhouse-analyze-data-with.md) an SQL analytics endpoint or create a standalone [KQL queryset](create-query-set.md).
 
 ## Related content
 
