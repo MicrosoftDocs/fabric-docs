@@ -2,7 +2,7 @@
 title: "SQL database Overview"
 description: Learn about SQL database in Microsoft Fabric.
 ms.reviewer: antho, sukkaur
-ms.date: 02/23/2026
+ms.date: 05/19/2026
 ms.topic: overview
 ms.search.form: product-databases, SQL database Overview, Databases Overview
 ---
@@ -25,7 +25,6 @@ SQL database in Fabric is:
 - Set up for analytics by automatically replicating the data into OneLake near real time
 - Ready for AI development scenarios with features like semantic search and retrieval-augmented generation (RAG)
 - Integrated with development frameworks and analytics
-- Based on the underlying technology of [Mirroring in Fabric](../../mirroring/overview.md)
 - Easy to manage, with intelligent performance features enabled by default, like [Automatic index creation with Automatic Tuning](/azure/azure-sql/database/automatic-tuning-overview?view=azuresql-db&preserve-view=true)
 - Queried in all the same ways as [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), plus a [web-based editor in the Fabric portal](query-editor.md).
 
@@ -71,7 +70,7 @@ For information on how to grant a Microsoft Entra identity access to a Fabric wo
 
 SQL database in Fabric is designed to support a variety of modern data patterns that bridge operational and analytical workloads:
 
-- **Intelligent applications and AI**: Develop AI-powered applications using Azure OpenAI, vector embeddings, and Retrieval Augmented Generation (RAG) patterns. SQL database supports vector data types and integration with frameworks like LangChain and Semantic Kernel for building intelligent experiences. For more information on all the AI SQL features, see [Intelligent applications and AI](/sql/sql-server/ai/artificial-intelligence-intelligent-applications?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true).
+- **Intelligent applications and AI**: Develop AI-powered applications using Azure OpenAI, vector embeddings, and Retrieval Augmented Generation (RAG) patterns. SQL database supports vector data types and integration with frameworks like LangChain and Semantic Kernel for building intelligent experiences. For more information, see [Use SQL database in AI applications](use-case-ai-application.md) and [Intelligent applications and AI](/sql/sql-server/ai/artificial-intelligence-intelligent-applications?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true).
 - **Reverse ETL**: Use SQL database as the target for pushing curated analytical data from warehouses or lakehouses back into operational systems. This enables applications, APIs, and GraphQL endpoints to access transformed business intelligence in real time for operational decision-making. For more information, see [Use SQL database in reverse ETL](use-case-reverse-etl.md).
 - **Operational Data Store (ODS)**: Consolidate data from multiple operational systems into a normalized, near real-time store that supports operational reporting and lightweight analytics. SQL database serves as the "hot, harmonized truth" between source systems and analytical platforms. For more information, see [Use SQL database as an operational data store](use-case-operational-data-store.md).
 - **Translytical applications**: Build applications that require both transactional and analytical access to the same data. Automatic replication to OneLake creates a SQL analytics endpoint that enables analytical queries without impacting transactional performance. For more information, see [Use SQL database as the source for translytical applications](use-case-translytical-applications.md).

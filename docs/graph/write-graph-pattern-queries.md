@@ -2,14 +2,12 @@
 title: Write graph pattern queries in Microsoft Fabric
 description: Learn how to write GQL graph pattern queries in Microsoft Fabric, including multi-hop traversal, path modes, variable reuse, and optional matching with examples.
 ms.topic: how-to
-ms.date: 04/27/2026
+ms.date: 05/20/2026
 ms.reviewer: splantikow
 ai-usage: ai-assisted
 ---
 
 # Write graph pattern queries in Microsoft Fabric
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 Graph pattern matching lets you describe the structure of the data you want to find using intuitive, visual syntax. Instead of joining tables, you write patterns that look like the relationships themselves - nodes connected by edges. This article shows you how to write GQL pattern queries for common scenarios in graph in Microsoft Fabric.
 

@@ -11,7 +11,7 @@ ms.date: 03/21/2026
 
 The relationship (link) between a *Branched workspace* and its source workspace is established when the user performs branch-out. For Fabric developers, branch-out creates a new Git branch from the latest commit of the source workspace’s currently connected branch. The user can then either create a new workspace connected to that new branch, or use an existing workspace by switching its Git connection to the newly created branch.
 
-## Branched Workspace
+## Branched Workspace (Preview)
 The *Branched workspace* relationship has several visual representations in the Fabric UI:
 - Workspace tree: Represents the source workspace as the parent of the branched workspace
 

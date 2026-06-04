@@ -614,6 +614,7 @@ The following operations are available in the audit logs.
 | Set file properties | :::no-loc text="SetFileProperties"::: | OneLake operation. Set user-defined properties for a file. |
 | Set scheduled refresh on Power BI dataflow | :::no-loc text="SetScheduledRefreshOnDataflow"::: |   |
 | Set scheduled refresh on Power BI semantic model | :::no-loc text="SetScheduledRefresh"::: |   |
+| Set warehouse hardware acceleration|:::no-loc text="SetWarehouseHardwarePlatform":::|Changed the current hardware acceleration settings for warehouses in a workspace.|
 | Share Artifact | :::no-loc text="ShareArtifact"::: |   |
 | Share Datamart | :::no-loc text="ShareDatamart"::: |   |
 | Share Lakehouse Table | :::no-loc text="ShareLakehouseTable"::: |   |
@@ -769,6 +770,15 @@ The following operations are available in the audit logs.
 | Enable Workspace Outbound Access Protection | :::no-loc text="EnableWorkspaceOutboundAccessProtection"::: | Outbound Access Protection Enabled on Workspace |
 | Get Workspace Resource Instance Rules | :::no-loc text="GetWorkspaceResourceInstanceRules"::: | |
 | Set Workspace Resource Instance Rules | :::no-loc text="SetWorkspaceResourceInstanceRules"::: | |
+| Enable workspace inbound access protection | :::no-loc text="EnableWorkspaceInboundAccessProtection"::: | Enable workspace inbound access protection |
+| Disable workspace inbound access protection | :::no-loc text="DisableWorkspaceInboundAccessProtection"::: | Disable workspace inbound access protection |
+| Update workspace outbound access protection connection rules | :::no-loc text="UpdateWorkspaceOutboundConnections"::: | Update workspace outbound access protection connection rules |
+| Update workspace outbound access protection gateway rules | :::no-loc text="UpdateWorkspaceOutboundGateways"::: | Update workspace outbound access protection gateway rules |
+| Enable Git for workspace with restricted outbound access | :::no-loc text="EnableGitForWorkspaceWithRestrictedOutboundAccess"::: | Enable Git for workspace with restricted outbound access |
+| Disable Git for workspace with restricted outbound access | :::no-loc text="DisableGitForWorkspaceWithRestrictedOutboundAccess"::: | Disable Git for workspace with restricted outbound access |
+| Get workspace IP firewall rules | :::no-loc text="GetFolderFirewallRules"::: | Get workspace IP firewall rules |
+| Update workspace IP firewall rules | :::no-loc text="SetFolderFirewallRules"::: | Update workspace IP firewall rules |
+
 
 ## Considerations and limitations
 

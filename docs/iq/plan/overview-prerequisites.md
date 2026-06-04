@@ -25,6 +25,8 @@ This article lists all the required prerequisites, tenant settings, and capacity
 
 1. Under [Developer settings](../../admin/tenant-settings-index.md#developer-settings), enable **Embed content in apps**.
 
+   :::image type="content" source="media/overview-prerequisites/embed-content-in-apps.png" alt-text="Screenshot of enabling embed content in apps.":::
+
 ## Capacity settings
 
 * Semantic models used in plan must be hosted on supported capacities, such as

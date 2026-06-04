@@ -43,6 +43,6 @@ The following tutorials walk you through scenarios within specific Fabric experi
 ## Related content
 
 * [Create a workspace](../fundamentals/create-workspaces.md)
-* Discover data items in the [OneLake data hub](../governance/onelake-catalog-overview.md)
+* Discover data items in the [OneLake catalog](../governance/onelake-catalog-overview.md)
 
 
