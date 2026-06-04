@@ -43,7 +43,7 @@ The agent determines the most appropriate chart type based on your question and 
 
 ## Supported data sources
 
-The Fabric data agent supports visual responses for data from all supported data source types, including lakehouses, warehouses, Power BI semantic models, KQL databases, and more.
+The Fabric data agent supports visual responses for data from all supported data source types, including lakehouses, warehouses, Power BI semantic models, and more.
 
 ## Supported visual types
 
@@ -59,21 +59,21 @@ The following visual types are currently supported:
    - Stacked area chart
 
 ## Customization
-Agent instructions can be used to guide the agent's use of visuals. For example, you can instruct the agent to always include a visual for certain types of questions, or to prefer specific chart types for certain data patterns. For more details on agent instructions, see [Best practices for configuring data agents](data-agent-configuration-best-practices.md).
+Agent instructions can be used to guide the agent's use of visuals. For example, you can instruct the agent to always include a visual for certain types of questions, or to prefer specific chart types for certain data patterns. For more information on agent instructions, see [Best practices for configuring data agents](data-agent-configuration-best-practices.md).
 
-The colors, font sizes, title, and labels are preset and currently cannot be customized.
+The colors, font sizes, title, and labels are preset and currently can't be customized.
 
 > [!TIP]
-> Visuals are enabled by default. To avoid generating visuals or specify the behavior, you can use agent instructions to instruct the agent to avoid using visuals. For more details on agent instructions, see [Best practices for configuring data agents](data-agent-configuration-best-practices.md).
+> Visuals are enabled by default. To avoid generating visuals or specify the behavior, you can use agent instructions to instruct the agent to avoid using visuals. For more information on agent instructions, see [Best practices for configuring data agents](data-agent-configuration-best-practices.md).
 
 ## Limitations
 
 - The quality and type of visualization depends on the nature of the data returned by the underlying query.
-- Visuals currentlysupport up to 200 rows of data. Queries returning more than 200 rows are truncated prior to charting.
-- Supported chart types are currently limited to a core set (line chart, multi-line chart, column chart, stacked column chart, pie chart, scatter plot, area chart, stacked area chart).
-- The colors, font sizes, title, and labels are preset and currently cannot be customized.
-- These visuals are currently only supported in the data agent experience in Fabric and not in other clients like SDK, M365 Copilot, Teams or Foundry.
-    - When you consume a Fabric data agent through Microsoft 365 Copilot, you can use code interpreter to generate visualizations from the results returned by the data agent. This enables you to explore insights visually and interactively, helping you understand trends, patterns, and metrics directly within M365 or Teams.
+- Visuals currently support up to 200 rows of data. When a query returns more than 200 rows, only the first 200 are charted, so the visualization represents a truncated result set.
+- Chart types are limited to the [Supported visual types](#supported-visual-types).
+- The colors, font sizes, title, and labels are preset and currently can't be customized.
+- These visuals are currently only supported in the data agent experience in Fabric and not in other clients like SDK, M365 Copilot, Teams, or Foundry.
+    - When you consume a Fabric data agent through Microsoft 365 Copilot, you can use code interpreter to generate visualizations from the results returned by the data agent.
 
 ## Related content
 
