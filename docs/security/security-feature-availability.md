@@ -54,8 +54,8 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Variable Library | ✓ | - | ✓ |
 | **Governance and Security** | Sensitivity Label | - | - | - |
 |  | Share item | - | - | - |
-| **Fabric IQ** | Graph model  | - | - | - |
-|  | Graph queryset | - | - | - |
+| **Fabric IQ** | Graph model  | - | - | Preview |
+|  | Graph queryset | - | - | Preview |
 | **Industry Solutions** | Healthcare data solutions | - | ✓ | - |
 |  | Sustainability Solution | - | ✓ | - |
 |  | Retail Solution | - | ✓ | - |
@@ -81,7 +81,7 @@ The following table shows the support status for each Fabric item. A check mark 
 | **Power BI** | Power BI Report | - | - | - |
 |  | Dashboard | - | - | - |
 |  | Scorecard | - | - | - |
-|  | Semantic Model | - | - | - |
+|  | Semantic Model | - | - | Preview |
 |  | Streaming dataflow | - | - | - |
 |  | Streaming dataset | - | - | - |
 |  | Paginated Report | - | - | - |
@@ -89,11 +89,11 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Exploration | - | - | - |
 |  | Org App | - | - | - |
 |  | Metric Set | - | - | - |
-| **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | - |
-|  | Activator | ✓ | - | - |
-|  | Eventhouse/KQL DB | ✓ | Preview | - |
+| **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | Preview |
+|  | Activator | ✓ | - | Preview |
+|  | Eventhouse/KQL DB | ✓ | Preview | Preview |
 |  | Eventstream | ✓ |  | Preview |
-|  | Real-Time Dashboard | ✓ | Preview | - |
+|  | Real-Time Dashboard | ✓ | Preview | Preview |
 |  | Anomaly detector  | - | - | - |
 |  | Digital Twin Builder | - | - | - | 
 |  | Event Schema Set  | - | - | - |

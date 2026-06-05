@@ -2,11 +2,12 @@
 title: Get Started With the Activator Remote MCP Server (Preview)
 description: Learn how to set up and use the Activator remote MCP server to enable AI agents to interact with Fabric Activator using natural language to create monitoring rules, manage alerts, and trigger actions.
 ms.topic: how-to
-ms.date: 05/24/2026
+ms.date: 06/03/2026
 ms.search.form: MCP, RTI, AI, product-reflex
 ms.reviewer: sharmaanshul; miquelmartin
 ms.subservice: rti-eventhouse
 ms.collection: ce-skilling-ai-copilot
+ms.update-cycle: 90-days
 
 #CustomerIntent: As a Fabric RTI AI developer, I want to get started and use the RTI MCP server to create AI agents and AI applications that use Activator using natural language to create monitoring rules, mange alrets, and trigger actions.
 ---

@@ -4,13 +4,11 @@ description: Learn how the Labeled Property Graph (LPG) model in graph in Micros
 #customer intent: As a data professional, I want to understand the labeled property graph model used by graph in Microsoft Fabric so that I can effectively model my connected data.
 ai-usage: ai-assisted
 ms.topic: concept-article
-ms.date: 04/14/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ---
 
 # Labeled property graphs in graph in Microsoft Fabric
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 A labeled property graph (LPG) is a data model that represents entities as nodes and connections as edges, with labels and properties on both. Graph in Microsoft Fabric uses the LPG model to deliver fast traversal and query performance for analytics and connected data.
 
