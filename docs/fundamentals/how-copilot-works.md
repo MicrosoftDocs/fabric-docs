@@ -366,7 +366,7 @@ The following sections explain more about how you should understand and manage C
 Copilot consumes your available Fabric CUs, also commonly referred to as *capacity*, *compute*, or *resources*. The consumption is determined by the input and output tokens when you use it. To review, you can understand input and output tokens as a result of tokenizing the following:
 
 - *Input tokens:* Tokenization of your written prompt and grounding data.
-- *Output tokens:* Tokenization of the Azure OpenAI response, based on the input. Output tokens are [three times more expensive than input tokens](copilot-fabric-consumption.md#copilot-in-fabric-consumption-rate-per-token).
+- *Output tokens:* Tokenization of the Azure OpenAI response, based on the input. Output tokens are [three times more expensive than input tokens](copilot-fabric-consumption.md#copilot-consumption-rate-per-token).
 
 You can limit the number of input tokens by using shorter prompts, but you can't control what grounding data Copilot uses for preprocessing, or the number of output tokens that the LLM in Azure OpenAI returns. For instance, you can expect that the [report creation experience](/power-bi/create-reports/copilot-create-desktop-report) for Copilot in Power BI will have a high consumption rate, since it might use grounding data (like your model schema) and might produce a verbose output (report metadata).
 
