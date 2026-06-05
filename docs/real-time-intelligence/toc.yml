@@ -225,6 +225,8 @@ items:
                 href: event-streams/api-get-eventstream-definition.md
               - name: Update Eventstream Definition
                 href: event-streams/api-update-eventstream-definition.md
+              - name: Create an Eventstream with Eventhouse DirectIngestion by using APIs
+                href: event-streams/api-kusto-pull-destination.md
       - name: Security
         items:
           - name: Choose the right network security feature
@@ -639,10 +641,10 @@ items:
             href: get-data-real-time-hub.md
           - name: Get data from other sources
             href: get-data-other-sources.md
+          - name: Get business events into Eventhouse
+            href: ../real-time-hub/business-events/business-events-eventhouse.md?context=/fabric/context/context-rti&pivots=fabric
           - name: Configure KQL Database in a pipeline
             href: ../data-factory/connector-kql-database-copy-activity.md
-          - name: Connect to KQL Database in dataflows
-            href: ../data-factory/connector-kusto-dataflows.md
           - name: Eventhouse data connectors
             items:
               - name: Eventhouse data connectors overview
@@ -788,8 +790,6 @@ items:
         href: real-time-dashboards-overview.md
       - name: Create a Real-Time Dashboard
         href: dashboard-real-time-create.md
-      - name: Generate Real-Time Dashboard Using Copilot
-        href: copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric
       - name: Real-Time Dashboard permissions
         href: dashboard-permissions.md
       - name: Explore data in Real-Time Dashboard Using Copilot
@@ -866,6 +866,8 @@ items:
             href: ../iq/ontology/how-to-use-rules.md
           - name: Create alert on a Warehouse SQL query
             href: data-activator/set-alerts-warehouse-sql-query.md
+          - name: Create rules for OneLake items
+            href: data-activator/create-manage-rules-onelake.md
           - name: Get data from eventstreams
             href: event-streams/add-destination-activator.md
           - name: Trigger Fabric items
@@ -997,8 +999,12 @@ items:
         items:
           - name: Build real-time work order routing
             href: map/tutorial-real-time-work-order-routing-application.md
-          - name: Create a map using the REST API with Python
+          - name: Create a static map using REST APIs and Python
             href: map/tutorial-create-fabric-map-python.md
+          - name: Create a real-time map using REST APIs and Python
+            href: map/tutorial-create-real-time-map-python.md
+          - name: Simulate real-time data ingestion for a map using REST APIs and Python
+            href: map/tutorial-simulate-real-time-data-ingestion.md
       - name: Concepts
         items:
           - name: Map items

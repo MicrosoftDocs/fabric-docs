@@ -13,8 +13,8 @@ ai-usage: ai-assisted
 
 In this quickstart, you'll build a pipeline that moves a sample dataset into a Lakehouse. It's a simple way to see how pipeline copy activities work and how to load data into a Lakehouse.
 
->[!TIP]
->You can also use a [Copy job](quickstart-copy-job.md) to move data from one place to another. Check out [this decision guide](../fundamentals/decision-guide-pipeline-dataflow-spark.md) to help you pick the right tool.
+> [!TIP]
+> Learn how to visually author and navigate your pipelines on the [pipeline canvas](pipeline-canvas-experience.md#updated-canvas-experience). You can also use a [Copy job](quickstart-copy-job.md) to move data from one place to another. Check out [this decision guide](../fundamentals/decision-guide-pipeline-dataflow-spark.md) to help you pick the right tool.
 
 ## Prerequisites
 

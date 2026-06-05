@@ -29,24 +29,26 @@ To get started, you must complete the following prerequisites:
 
    :::image type="content" source="media/apache-airflow-jobs/enable-triggerers.png" lightbox="media/apache-airflow-jobs/enable-triggerers.png" alt-text="Screenshot to enable triggers.":::
 
-- In Fabric, select **Settings**, **Admin portal**, **Tenant Settings**, and enable service principals to call Fabric public APIs on your fabric tenant.
+- To authenticate your DAGs with Fabric APIs, use either a [service principal](#set-up-apache-airflow-connection) by following these steps:
 
-    :::image type="content" source="media/apache-airflow-jobs/enable-service-principals.png" lightbox="media/apache-airflow-jobs/enable-service-principals.png" alt-text="Screenshot of the Microsoft Fabric Admin portal settings with service principals enabled to call Fabric public APIs.":::
-
-- In Microsoft Entra ID, [create a service principal](/entra/identity-platform/howto-create-service-principal-portal#register-an-application-with-microsoft-entra-id-and-create-a-service-principal). Save these values to use later for your Apache Airflow credential:
-
-  - Tenant ID
-  - Client ID
-  - Secret
-
-- Grant your service principal appropriate permissions:
-
-    1. In Microsoft Entra ID, find your service principal under **App registrations**.
-    1. Select **Manage** from the menu, then **API permissions**.
-    1. Select **Add a permission**, then select **Power BI Service**
-    1. Select **Delegated permissions**.  
-    1. Add **Item.Read.All** and **Item.Execute.All**. (Alternatively you can also add the read and execute permissions based on the item type, like DataPipeline.Execute.All, DataPipeline.Read.All, Notebook.Read.All or Notebook.Execute.All.)
-    1. Finally, [add the service principal as a contributor in the workspace](/fabric/fundamentals/give-access-workspaces) where the item you'll use Airflow to run is located.
+    - In Fabric, select **Settings**, **Admin portal**, **Tenant Settings**, and enable service principals to call Fabric public APIs on your fabric tenant.
+    
+       :::image type="content" source="media/apache-airflow-jobs/enable-service-principals.png" lightbox="media/apache-airflow-jobs/enable-service-principals.png" alt-text="Screenshot of the Microsoft Fabric Admin portal settings with service principals enabled to call Fabric public APIs.":::
+    
+    - In Microsoft Entra ID, [create a service principal](/entra/identity-platform/howto-create-service-principal-portal#register-an-application-with-microsoft-entra-id-and-create-a-service-principal). Save these values to use later for your Apache Airflow credential:
+    
+    - Tenant ID
+    - Client ID
+    - Secret
+    
+    - Grant your service principal appropriate permissions:
+    
+       1. In Microsoft Entra ID, find your service principal under **App registrations**.
+       1. Select **Manage** from the menu, then **API permissions**.
+       1. Select **Add a permission**, then select **Power BI Service**
+       1. Select **Delegated permissions**.  
+       1. Add **Item.Read.All** and **Item.Execute.All**. (Alternatively you can also add the read and execute permissions based on the item type, like DataPipeline.Execute.All, DataPipeline.Read.All, Notebook.Read.All or Notebook.Execute.All.)
+       1. Finally, [add the service principal as a contributor in the workspace](/fabric/fundamentals/give-access-workspaces) where the item you'll use Airflow to run is located.
 
 > [!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=a32354a9-4a7b-4c2a-81ad-901cc5f2a63f]
 
@@ -63,7 +65,7 @@ Apache Airflow connection is used to store the credentials required to authent
 
     :::image type="content" source="media/apache-airflow-jobs/add-apache-airflow-connection.png" lightbox="media/apache-airflow-jobs/add-apache-airflow-connection.png" alt-text="Screenshot to add an Apache Airflow connection.":::
 
-1. A pop-up opens to help you set up your Apache airflow Fabric connection. Follow the instructions and add the following details:
+1. A pop-up opens to help you set up your Apache airflow Fabric connection. In this tutorial, we're using a service principal. Follow the instructions and add the following details:
 
     - **Connection ID:** Name of the Connection ID.
     - **Description:** Description of the connection

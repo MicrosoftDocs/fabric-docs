@@ -4,7 +4,7 @@ description: Learn what a SQL analytics endpoint is in Microsoft Fabric, how it 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rakrish, anphil
-ms.date: 05/21/2026
+ms.date: 05/29/2026
 ms.topic: concept-article
 ---
 
@@ -50,7 +50,7 @@ You can enable the new metadata sync on workspaces by going to **Warehouse setti
 
 :::image type="content" source="media/sql-analytics-endpoint-metadata-sync/workspace-settings-new-metadata-sync.png" alt-text="Screenshot from the Fabric portal, Workspace settings page, showing the Warehouse New metadata sync option and the New metadata sync (preview) pane." lightbox="media/sql-analytics-endpoint-metadata-sync/workspace-settings-new-metadata-sync.png" :::
 
-When you enable the new metadata sync, new SQL analytics endpoints in the workspace sync faster when refreshing changes from underlying tables. Existing SQL analytics endpoints aren't affected.
+When you enable the new metadata sync, new SQL analytics endpoints in the workspace sync faster when refreshing changes from underlying tables. Currently, existing SQL analytics endpoints in that workspace remain on the legacy version of metadata sync. 
 
 ### Find when the metadata was last updated
 
@@ -65,7 +65,8 @@ For more information, see [sys.dm_db_external_tables_log_status](/sql/relational
 
 #### Limitations of the new metadata sync
 
-- The new metadata sync doesn't support multi-part checkpoint, a deprecated delta feature. If your lakehouse tables contain multi-part checkpoints, they fail to update in the new metadata sync.
+- The new metadata sync doesn't support multi-part checkpoint, a deprecated delta feature. If your lakehouse tables contain multi-part checkpoints, they will fail to update in the new metadata sync.
+- If your workspace is using workspace private link, currently the new metadata sync cannot be enabled.
 
 ## Manual refresh
 

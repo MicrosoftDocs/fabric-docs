@@ -12,6 +12,10 @@ This article describes how to set alerts on Fabric capacity overview events in R
 
 [!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
 
+[!INCLUDE [outbound-access-protection-note](./includes/outbound-access-protection-note.md)]
+
+[!INCLUDE [workspace-private-links-note](./includes/workspace-private-links-note.md)]
+
 ## Navigate to Real-Time hub
 
 [!INCLUDE [navigate-to-real-time-hub](./includes/navigate-to-real-time-hub.md)]
@@ -38,7 +42,7 @@ Do steps from one of the following sections, which opens a side panel where you 
 1. Select **Capacity overview events** from the list see the detail page.
 1. On the detail page, select **Set alert** button at the top of page.
 
-[!INCLUDE [rule-details](./includes/rule-details.md)]
+[!INCLUDE [rule-details](../real-time-intelligence/data-activator/includes/rule-details.md)]
 
 ## Monitor section
 
@@ -70,9 +74,9 @@ After you connect the data source, configure the condition so that Fabric [!INCL
 1. For the condition, select one of the **numeric change** conditions.
 1. Fill out the remaining fields with threshold values appropriate for your numeric change condition.
 
-[!INCLUDE [rule-action](./includes/rule-action.md)]
+[!INCLUDE [rule-action](../real-time-intelligence/data-activator/includes/rule-action.md)]
 
-[!INCLUDE [rule-save-location](./includes/rule-save-location.md)]
+[!INCLUDE [rule-save-location](../real-time-intelligence/data-activator/includes/rule-save-location.md)]
        
 
 ## Create alert

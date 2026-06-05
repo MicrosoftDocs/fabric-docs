@@ -5,7 +5,7 @@ author: ruixinxu
 ms.author: ruxu
 ms.reviewer: mopeez
 ms.topic: how-to
-ms.date: 04/08/2026
+ms.date: 05/15/2026
 ms.search.form: ML Experiment, ML Model, MLflow, cross workspace
 ai-usage: ai-assisted
 ---
@@ -38,15 +38,15 @@ For Fabric notebook scenarios, create a new notebook and attach a lakehouse befo
 
 The `synapseml-mlflow` package enables cross-workspace logging by providing the Fabric MLflow tracking plugin. Choose the install command based on your environment.
 
-> [!IMPORTANT]
-> MLflow 3 isn't currently supported. You must pin `mlflow-skinny` to version 2.22.2 or earlier.
+> [!NOTE]
+> The `synapseml-mlflow` package now supports MLflow 3. You no longer need to pin `mlflow-skinny` to version 2.22.2. For an overview of MLflow 3 features in Fabric, see [MLflow 3 in Fabric Data Science](mlflow-3-overview.md).
 
 ### [Fabric notebook](#tab/fabric-notebook)
 
 For a Fabric notebook, use this command to install the package with online notebook dependencies:
 
 ```python
-%pip install -U "synapseml-mlflow[online-notebook]" "mlflow-skinny<=2.22.2"
+%pip install -U "synapseml-mlflow[online-notebook]"
 ```
 
 ### [Outside Fabric workspace](#tab/local)
@@ -54,7 +54,7 @@ For a Fabric notebook, use this command to install the package with online noteb
 In any environment outside Fabric, such as a local machine (Visual Studio Code, Jupyter), Azure Databricks, Azure Machine Learning, or any other platform that supports Python and MLflow, use this command:
 
 ```bash
-pip install -U "synapseml-mlflow" "mlflow-skinny<=2.22.2"
+pip install -U "synapseml-mlflow"
 ```
 
 ---

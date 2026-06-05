@@ -91,7 +91,7 @@ To determine your Fabric home region, visit [Find your Fabric home region](../..
 | gpt-5-2025-08-07 | `gpt-5` | 400,000<br> Max output: 128,000 |  42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds | May 30, 2026 |
 | gpt-5-mini-2025-08-07 | `gpt-5-mini` | 400,000<br> Max output: 128,000 | 8.40 CU seconds | 0.84 CU seconds | 67.23 CU seconds | |
 | gpt-4.1-2025-04-14 | `gpt-4.1` | 128,000<br>Max output: 32,768 | 67.23 CU seconds | 16.81 CU seconds | 268.91 CU seconds | May 30, 2026 |
-| gpt-4.1-mini-2025-04-14 | `gpt-4.1-mini` | 128,000<br>Max output: 32,768 | 13.45 CU seconds | 3.36 CU seconds | 53.78 CU seconds | Jun 15, 2026 |
+| gpt-4.1-mini-2025-04-14 | `gpt-4.1-mini` | 128,000<br>Max output: 32,768 | 13.45 CU seconds | 3.36 CU seconds | 53.78 CU seconds | Jun 30, 2026 |
 
 ### Consumption rate for OpenAI embedding models
 
@@ -134,11 +134,11 @@ You can monitor AI services usage using the [Microsoft Fabric Capacity Metrics a
 > [!NOTE]
 > Starting March 17, 2026, the Capacity Metrics app shows AI Functions and AI Services as separate operations. This is a reporting-only change; underlying consumption rates are unchanged.
 > 
-> Prebuilt AI services and AI functions usage is reported under the Copilot and AI meter.
+> Prebuilt AI services and AI Functions usage is reported under the Copilot and AI meter.
 > This is separate from the Spark compute used to run your notebook or Spark job, which continues to be reported under the Spark billing meter. For more information on Spark compute usage, see [Spark compute usage reporting](../../data-engineering/spark-compute.md).
 
 ### Example
-A data analyst uses [Fabric AI functions](../ai-functions/overview.md) in a Fabric PySpark notebook to leverage LLM to classify millions of customer reviews into product categories. The notebook runs on Spark compute and calls [`ai.classify`](../ai-functions/pyspark/classify.md) for each row.
+A data analyst uses [Fabric AI Functions](../ai-functions/overview.md) in a Fabric PySpark notebook to leverage LLM to classify millions of customer reviews into product categories. The notebook runs on Spark compute and calls [`ai.classify`](../ai-functions/pyspark/classify.md) for each row.
 
 - The CU consumption for running the notebook (cluster time, data processing) is reported under the Spark billing meter.
 - The CU consumption for the AI function calls (token usage for classification) is reported as AI Functions under the Copilot and AI billing meter.

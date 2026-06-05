@@ -237,6 +237,9 @@ The access mode determines how data access is authenticated and enforced when qu
 
     * **RLS in user identity mode**: When Row-Level Security (RLS) is configured in user identity mode, the defined security rules are enforced for all users, including those in Admin, Member, and Contributor roles.
 
+* **Schema visibility in object metadata**: The SQL analytics endpoint always returns **all schema names** in object metadata, regardless of the user's table-level permissions. Tables for which the user has no permission are filtered out and do not appear in the listing.
+
+  * As a result, users may see schemas that contain no visible tables in the object explorer or in `INFORMATION_SCHEMA`/`sys` catalog queries.
 * **Security synchronization dependency**: In user identity mode, OneLake security roles are synchronized to the SQL analytics endpoint through the security sync process. Until synchronization completes, SQL may temporarily evaluate access using the existing SQL permission state. Once synchronization finishes, the SQL endpoint reflects the OneLake security configuration.
 
 * **Shortcut boundary awareness**: The SQL analytics endpoint may initially evaluate shortcut-backed tables using standard SQL object semantics. After security synchronization occurs, OneLake security policies are applied to ensure that access enforcement aligns with artifact and workspace boundaries.

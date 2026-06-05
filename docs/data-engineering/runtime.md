@@ -18,7 +18,7 @@ Major components of Fabric Runtime:
 
 - **Delta Lake** - an open-source storage layer that brings ACID transactions and other data reliability features to Apache Spark. Integrated within Fabric Runtime, Delta Lake enhances data processing capabilities and ensures data consistency across multiple concurrent operations.
 
-- **[The Native Execution Engine](./native-execution-engine-overview.md)** - is a transformative enhancement for Apache Spark workloads, offering significant performance gains by directly executing Spark queries on lakehouse infrastructure. Integrated seamlessly, it requires no code changes and avoids vendor lock-in, supporting both Parquet and Delta formats across Apache Spark APIs in Runtime 1.3 (Spark 3.5) and Runtime 2.0 (Spark 4.0).
+- **[The Native Execution Engine](./native-execution-engine-overview.md)** - is a transformative enhancement for Apache Spark workloads, offering significant performance gains by directly executing Spark queries on lakehouse infrastructure. Integrated seamlessly, it requires no code changes and avoids vendor lock-in, supporting both Parquet and Delta formats across Apache Spark APIs in Runtime 1.3 (Spark 3.5) and Runtime 2.0 (Spark 4.1).
 
   Supported operators are offloaded from JVM-based Spark to a vectorized C++ execution path via Apache Gluten and Velox, providing columnar, SIMD-accelerated processing with native support for Parquet and Delta formats. When an operator isn't supported, execution automatically falls back to JVM-based Spark. In representative benchmarks (TPC-DS at scale factor 1000 using Delta), the engine achieved up to six times faster performance compared to open-source Spark, translating to approximately 83% compute-cost savings on a fixed-size Fabric cluster.
 
@@ -33,17 +33,17 @@ Below, you find a comprehensive comparison of key components, including Apache S
 > [!TIP]
 > Always use the most recent, generally available (GA) runtime version for your production workload, which currently is [Runtime 1.3](./runtime-1-3.md).
 
-| Component | [Runtime 1.2](./runtime-1-2.md) | [Runtime 1.3](./runtime-1-3.md) | [Runtime 2.0](./runtime-2-0.md) |
-|--|--|--|--|
-| **Release Stage** | EOSA | GA | Public Preview |
-| **Apache Spark version** | 3.4.1 | 3.5.5 | 4.0.0 |
-| **Operating System** | Mariner 2.0 | Mariner 2.0 | Mariner 3.0 |
-| **Java version** | 11 | 11 | 21 |
-| **Scala version** | 2.12.17 | 2.12.17 | 2.13.16 |
-| **Python version** | 3.10 | 3.11 | 3.12.11 |
-| **Delta Lake version** | 2.4.0 | 3.2 | 4.0.0 |
+| Component | [Runtime 1.3](./runtime-1-3.md) | [Runtime 2.0](./runtime-2-0.md) |
+|--|--|--|
+| **Release Stage** | GA | Public Preview |
+| **Apache Spark version** | 3.5.5 | 4.1 |
+| **Operating System** | Mariner 2.0 | Mariner 3.0 |
+| **Java version** | 11 | 21 |
+| **Scala version** | 2.12.17 | 2.13.16 |
+| **Python version** | 3.11 | 3.13 |
+| **Delta Lake version** | 3.2 | 4.1 |
 
-Visit [Runtime 1.2](./runtime-1-2.md), [Runtime 1.3](./runtime-1-3.md) or [Runtime 2.0](./runtime-2-0.md) to explore details, new features, improvements, and migration scenarios for the specific runtime version.
+Visit [Runtime 1.3](./runtime-1-3.md) or [Runtime 2.0](./runtime-2-0.md) to explore details, new features, improvements, and migration scenarios for the specific runtime version.
 
 ## Fabric optimizations
 
@@ -114,7 +114,6 @@ Additionally, users should verify that all current and future production workloa
 
 ## Related content
 
-- [Runtime 2.0 (Spark 4.0, Java 21, Python 3.12, Delta Lake 4.0)](./runtime-2-0.md)
+- [Runtime 2.0 (Spark 4.1, Java 21, Python 3.13, Delta Lake 4.1)](./runtime-2-0.md)
 - [Runtime 1.3 (Spark 3.5, Java 11, Python 3.11, Delta Lake 3.2)](./runtime-1-3.md)
-- [Runtime 1.2 (Spark 3.4, Java 11, Python 3.10, Delta Lake 2.4)](./runtime-1-2.md)
 

@@ -116,6 +116,9 @@ The following tables show what specific information Fabric sends to Microsoft 36
 |ActorID|Microsoft Entra ID of the user who acted on the item|aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee|
 |StartTime/EndTime|Date and time the user performed the action|2011-06-30T23:32:46Z|
 
+> [!NOTE]
+> Power BI reports shared using organization-wide (“org-wide”) links are not discoverable in Microsoft 365 experiences (such as search) for users who only have access through those links, even when the “Share Fabric data with your M365 Microsoft Services” setting is enabled. This is expected behavior: users can still access the report directly via the link, but it will not appear in discovery surfaces unless the report is shared using another access method.
+
 ## Related content
 
 - [About tenant settings](tenant-settings-index.md)
