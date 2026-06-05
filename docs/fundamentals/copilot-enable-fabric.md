@@ -25,24 +25,24 @@ This article covers the tenant settings, delegated capacity configuration, and w
 ## Prerequisites
 
 - A paid Fabric capacity (F2 or higher) or a Power BI Premium capacity (P1 or higher). Pro and PPU workspaces don't directly support Copilot features. To use Copilot in these workspaces, enable a [Fabric Copilot capacity](../enterprise/fabric-copilot-capacity.md) and assign the workspace to that capacity.
-- A Fabric capacity [in a supported region](../admin/region-availability.md).
-- One or more [security groups](/power-platform/admin/control-user-access#create-a-security-group-and-add-members-to-the-security-group) to scope which users can use Copilot. Security groups let you limit rollout to specific users, for example, after they complete prerequisite training.
+- A Fabric capacity [in a supported region](../admin/region-availability.md). You can [buy a Fabric capacity](../enterprise/capacity-overage-overview.md) from the Azure portal.
+- One or more [security groups](/power-platform/admin/control-user-access#create-a-security-group-and-add-members-to-the-security-group) to scope which users can use Copilot. Security groups let you limit rollout to specific users, for example, after they complete prerequisite training. You can create and manage security groups from the Microsoft 365 admin center.
 
 > [!NOTE]
 > You don't need to enable Fabric to use Copilot in Power BI. You can enable Copilot for the Power BI workload without enabling the other Fabric workloads — for instance, if you have a P SKU.
 
-After you meet the prerequisites, complete the following steps to enable Copilot. Select a link in the **Step** column for detailed instructions.
+After you meet the prerequisites, complete the following steps to enable Copilot. Select a link in the *Step* column for detailed instructions.
 
 | **Step** | **Where** | **Description** |
 |---|---|---|
 | 1. [Enable Copilot tenant settings](#enable-copilot-tenant-settings) | Fabric admin portal | Enable the Copilot tenant settings and scope them to specific security groups. |
-| 1. [Configure delegated capacity settings](#configure-delegated-capacity-settings) | Fabric admin portal | If tenant settings are delegated, enable Copilot in the capacity-level settings. |
-| 1. [Assign workspaces and provision access](#assign-workspaces-and-provision-access) | Workspace settings | Assign a workspace to a Copilot-enabled capacity and grant access to users. |
-| 1. [Enable Copilot in Power BI Desktop](#enable-copilot-in-power-bi-desktop) (optional) | Power BI Desktop | If you use Power BI Desktop, select a Copilot-enabled workspace as your active workspace. |
+| 2. [Configure delegated capacity settings](#configure-delegated-capacity-settings) | Fabric admin portal | If tenant settings are delegated, enable Copilot in the capacity-level settings. |
+| 3. [Assign workspaces and provision access](#assign-workspaces-and-provision-access) | Workspace settings | Assign a workspace to a Copilot-enabled capacity and grant access to users. |
+| 4. [Enable Copilot in Power BI Desktop](#enable-copilot-in-power-bi-desktop) (optional) | Power BI Desktop | If you use Power BI Desktop, select a Copilot-enabled workspace as your active workspace. |
 
 ## Enable Copilot tenant settings
 
-Copilot in Fabric is rolling out gradually to all tenants with paid Fabric capacities (F2 or higher). It automatically appears as a new setting in the [Fabric admin portal](https://app.fabric.microsoft.com/admin-portal) when available for your tenant.
+You can choose to enable Copilot for only select security groups. Copilot in Fabric is enabled by default for the entire tenant.
 
 > [!WARNING]
 > Enabling Copilot for your entire tenant without proper planning can lead to higher capacity utilization and other potential risks. Consider enabling Copilot for specific security groups and workspaces only after you prepare.
@@ -53,9 +53,9 @@ Copilot in Fabric is rolling out gradually to all tenants with paid Fabric capac
 
 1. Select **Tenant settings**.
 
-1. Enable the [Users can use Copilot and other features powered by Azure OpenAI](../admin/service-admin-portal-copilot.md#users-can-use-copilot-and-other-features-powered-by-azure-openai) setting.
+   * Enable the [Users can use Copilot and other features powered by Azure OpenAI](../admin/service-admin-portal-copilot.md#users-can-use-copilot-and-other-features-powered-by-azure-openai) setting.
 
-1. Enable the [Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance](../admin/service-admin-portal-copilot.md#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance) setting.
+   * Enable the [Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance](../admin/service-admin-portal-copilot.md#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance) setting.
 
 1. Optionally, apply each setting to specific security groups rather than the entire organization.
 
