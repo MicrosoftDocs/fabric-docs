@@ -37,7 +37,7 @@ For information about how to get to the Fabric tenant settings, see [About tenan
 * [Only show approved items in the standalone Copilot in Power BI experience (preview)](#limit-to-approved)
 
 > [!IMPORTANT]
-> Users may configure Fabric data agents to be consumed from other services such as Microsoft Foundry, Microsoft Copilot Studio, Microsot 365 Copilot or as an MCP server ("non-Fabric services"). When users connect to these non-Fabric services, responses returned by Fabric data agents may be sent outside of Fabric's compliance boundary or geographic region, and processed and/or stored according to the non-Fabric service(s) applicable terms and data handling policies.
+> Users may configure Fabric data agents to be consumed from other services such as Microsoft Foundry, Microsoft Copilot Studio, Microsoft 365 Copilot or as an MCP server ("non-Fabric services"). When users connect to these non-Fabric services, responses returned by Fabric data agents may be sent outside of Fabric's compliance boundary or geographic region, and processed and/or stored according to the non-Fabric service(s) applicable terms and data handling policies.
 
 <a id="copilot-with-openai"></a> 
 ## Users can use Copilot and other features powered by Azure OpenAI
