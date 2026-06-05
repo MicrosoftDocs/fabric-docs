@@ -79,28 +79,28 @@ The `apache-airflow-microsoft-fabric-plugin` is preinstalled in Fabric Apache Ai
 1. Create a new file named `s3_to_lakehouse.py`.
 1. Paste the following code:
 
-```python
-from airflow import DAG
-from airflow.providers.microsoft.fabric.operators.run_item import MSFabricRunJobOperator
-from datetime import datetime
-
-with DAG(
-    dag_id="s3_to_fabric_lakehouse",
-    start_date=datetime(2026, 1, 1),
-    schedule="@daily",
-    catchup=False,
-) as dag:
-
-    copy_s3_to_lakehouse = FabricRunItemOperator(
-        task_id="copy_s3_to_lakehouse",
-        fabric_conn_id="fabric_conn",
-        workspace_id="<your-workspace-id>",
-        item_id="<your-copy-job-id>",
-        job_type="CopyJob",
-        wait_for_termination=True,
-        deferrable=True,
-    )
-```
+    ```python
+    from airflow import DAG
+    from apache_airflow_microsoft_fabric_plugin.operators.fabric import FabricRunItemOperator
+    from datetime import datetime
+    
+    with DAG(
+        dag_id="s3_to_fabric_lakehouse",
+        start_date=datetime(2026, 1, 1),
+        schedule="@daily",
+        catchup=False,
+    ) as dag:
+    
+        copy_s3_to_lakehouse = FabricRunItemOperator(
+            task_id="copy_s3_to_lakehouse",
+            fabric_conn_id="fabric_conn",
+            workspace_id="<your-workspace-id>",
+            item_id="<your-copy-job-id>",
+            job_type="CopyJob",
+            wait_for_termination=True,
+            deferrable=True,
+        )
+    ```
 
 1. Replace `<your-workspace-id>` and `<your-copy-job-id>` with the values from Step 2.
 
