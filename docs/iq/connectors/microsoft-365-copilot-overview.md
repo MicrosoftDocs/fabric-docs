@@ -54,6 +54,8 @@ The **Fabric data available in M365 Copilot** setting in the Microsoft Admin Cen
 
 When an admin turns off this setting, users don't see any Fabric context in Copilot responses.
 
+For more information, see [Use Power BI data in Microsoft 365 Copilot Chat](/microsoft-365/copilot/copilot-powerbi-copilot-chat).
+
 ### Share Fabric data with your Microsoft 365 services (Fabric Admin Portal)
 
 The **Share Fabric data with your Microsoft 365 services** setting controls whether Fabric proactively shares metadata without user action. This sharing enables Power BI content to be suggested based on user activity. When only this setting is turned off:
