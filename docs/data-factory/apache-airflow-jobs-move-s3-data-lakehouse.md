@@ -27,7 +27,7 @@ In this tutorial, you learn how to:
 
 - A Microsoft Fabric workspace with an assigned capacity. Free and Premium Per User (PPU) workspaces don't support Apache Airflow Jobs.
 - An Apache Airflow Job item in your Fabric workspace. See [Create an Apache Airflow Job](create-apache-airflow-jobs.md).
-- Triggerers enabled in your Airflow Job. In the Airflow Job settings, select **Environment configuration**, then enable **Enable triggers in data workflows**.
+- Triggers enabled in your Airflow Job. In the Airflow Job settings, select **Environment configuration**, then enable **Enable triggers in data workflows**.
 - An Amazon S3 bucket with source data and AWS credentials (`s3:GetObject` and `s3:ListBucket` permissions).
 - A service principal in Microsoft Entra ID with `Item.Execute.All` and `Item.Read.All` API permissions and contributor access to your Fabric workspace. See [Set up an Apache Airflow connection](apache-airflow-jobs-run-fabric-item-job.md#set-up-apache-airflow-connection) for setup instructions.
 
