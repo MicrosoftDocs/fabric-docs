@@ -1296,7 +1296,7 @@
           - name: CI/CD for Apache Airflow Jobs
             href: cicd-apache-airflow-jobs.md
           - name: Manage Airflow Jobs from Visual Studio Code
-            href: apache-airflow-jobs-manage-vscode.md
+            href: apache-airflow-jobs-manage-vs-code.md
   - name: Troubleshoot
     items: 
       - name: Keyboard shortcuts
