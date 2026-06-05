@@ -18,8 +18,8 @@ For most scenarios, Delta Lake works transparently in the background—you don't
 
 [Delta Lake](https://delta.io/) is an open-source storage layer that brings reliability and performance to data lakes. At its core, Delta Lake combines two elements:
 
-1. **Parquet files** — An efficient columnar storage format for analytics.
-1. **Transaction log** — A record of all changes to the data that enables ACID guarantees.
+- **Parquet files** — An efficient columnar storage format for analytics.
+- **Transaction log** — A record of all changes to the data that enables ACID guarantees.
 
 This combination provides capabilities that traditional file-based storage can't offer:
 
