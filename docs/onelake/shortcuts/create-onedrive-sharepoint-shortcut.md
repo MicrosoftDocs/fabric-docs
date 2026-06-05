@@ -18,7 +18,7 @@ For an overview of shortcuts, see [OneLake shortcuts](../onelake-shortcuts.md). 
 
 ## Prerequisites
 
-* A lakehouse in Microsoft Fabric. If you don't have a lakehouse, create one by following these steps: [Create a lakehouse with OneLake](../create-lakehouse-onelake.md).
+* A lakehouse in Microsoft Fabric. If you don't have a lakehouse, create one by following these steps: [Create a lakehouse](../../data-engineering/create-lakehouse.md).
 * Data in a OneDrive or SharePoint folder.
 
 ## Create a shortcut

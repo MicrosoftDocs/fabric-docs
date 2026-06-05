@@ -244,6 +244,7 @@ DeltaTable.createOrReplace(spark)\
 
 ## Related content
 
+- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
 - [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
 - [Delta table maintenance overview](delta-lake-table-maintenance.md)
 - [Table compaction](table-compaction.md)

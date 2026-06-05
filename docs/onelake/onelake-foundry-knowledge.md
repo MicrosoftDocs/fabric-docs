@@ -20,7 +20,7 @@ With this integration, you can ground your agents on the same enterprise data th
 
 ## Prerequisites
 
-* A lakehouse in Fabric. If you don't have a lakehouse, follow the steps in [Create a lakehouse with OneLake](./create-lakehouse-onelake.md).
+* A lakehouse in Fabric. If you don't have a lakehouse, follow the steps in [Create a lakehouse](../data-engineering/create-lakehouse.md).
 
   * Files in the **Files** folder of the lakehouse.
 
