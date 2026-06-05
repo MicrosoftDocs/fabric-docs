@@ -304,6 +304,7 @@ These metrics help you confirm that compaction reduced file counts and produced 
 
 ## Related content
 
+- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
 - [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
 - [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md)
 - [Tune file size](./tune-file-size.md)
