@@ -107,7 +107,7 @@ For more information, see [Plan for disaster recovery and data protection](onela
 Ready to start using OneLake? Here's how to get started:
 
 > [!div class="nextstepaction"]
-> [Create your first lakehouse with OneLake](create-lakehouse-onelake.md)
+> [Get started with OneLake data](quickstart-get-data.md)
 
 ### Related content
 
