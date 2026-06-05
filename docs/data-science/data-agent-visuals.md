@@ -23,9 +23,9 @@ The Fabric data agent can return interactive visual responses, such as charts an
 ## How to generate visuals
 
 The Fabric data agent can generate a visualization as part of its response in the following scenarios:
-1. The user explicitly requests a visual (for example, "create a bar chart of sales by region")
-2. The user implicitly requests a visual (for example, "show me sales by region")
-3. The agent infers the user would benefit from a visual based on the data or query (for example, "what are the sales trends over the past year?")
+- The user explicitly requests a visual (for example, "create a bar chart of sales by region")
+- The user implicitly requests a visual (for example, "show me sales by region")
+- The agent infers the user would benefit from a visual based on the data or query (for example, "what are the sales trends over the past year?")
 
 ### Example questions to generate visuals
 
