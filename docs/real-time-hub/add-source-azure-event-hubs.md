@@ -25,6 +25,9 @@ On the **Add data**, you can connect to an Azure event hub using the **All sourc
 
 ## Use the Azure tab to connect to an event hub (recommended)
 
+
+::: zone pivot="basic-features"  
+
 1. On the **Add data** page, switch to the **Azure** tab. 
 
     :::image type="content" source="./media/switch-to-azure-tab-add-data/switch-to-azure-tab.png" alt-text="Screenshot that shows how to switch to the Azure tab on the Add data page.":::
@@ -33,8 +36,6 @@ On the **Add data**, you can connect to an Azure event hub using the **All sourc
     Use the search bar to quickly find your Event Hubs namespace if you have many Azure resources (or) use filters to filter the list by source type (Azure Event Hubs namespace), subscription, resource group, or region.
 
     :::image type="content" source="./media/add-source-azure-event-hubs/connect-button.png" alt-text="Screenshot that shows how to connect to an Azure Event Hubs namespace from the Add data page." lightbox="./media/add-source-azure-event-hubs/connect-button.png":::
-
-::: zone pivot="basic-features"  
 
 1. In the **Connect data source** wizard, on the **Configure** page, follow these steps:
     1. Select an event hub from the dropdown list. The dropdown is populated with event hubs from the selected Azure Event Hubs namespace.
@@ -58,6 +59,15 @@ On the **Add data**, you can connect to an Azure event hub using the **All sourc
 ::: zone-end
         
 ::: zone pivot="extended-features"
+
+1. On the **Add data** page, switch to the **Azure** tab. 
+
+    :::image type="content" source="./media/switch-to-azure-tab-add-data/switch-to-azure-tab.png" alt-text="Screenshot that shows how to switch to the Azure tab on the Add data page.":::
+1. Hover the mouse over your Azure Event Hubs namespace in the list, and select the **Connect** button that appears. Alternatively, you can select **...** and then **Connect** from the dropdown menu. 
+
+    Use the search bar to quickly find your Event Hubs namespace if you have many Azure resources (or) use filters to filter the list by source type (Azure Event Hubs namespace), subscription, resource group, or region.
+
+    :::image type="content" source="./media/add-source-azure-event-hubs/connect-button.png" alt-text="Screenshot that shows how to connect to an Azure Event Hubs namespace from the Add data page." lightbox="./media/add-source-azure-event-hubs/connect-button.png":::
 
 1. In the **Connect data source** wizard, on the **Configure** page, follow these steps:
     1. Select an event hub from the dropdown list. The dropdown is populated with event hubs from the selected Azure Event Hubs namespace.
