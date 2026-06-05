@@ -198,7 +198,7 @@ Microsoft hosts the OpenAI models in Microsoft's Azure environment and the servi
 
 #### Understand tokenization
 
-It's essential that you understand tokenization since [the cost of Copilot in Fabric (which is how much Fabric capacity Copilot consumes) is determined by the number of tokens](/fabric/get-started/copilot-fabric-consumption#copilot-in-fabric-consumption-rate-per-token) produced by your Copilot inputs and outputs.
+It's essential that you understand tokenization since [the cost of Copilot in Fabric (which is how much Fabric capacity Copilot consumes) is determined by the number of tokens](/fabric/get-started/copilot-fabric-consumption#copilot-consumption-rate-per-token) produced by your Copilot inputs and outputs.
 
 To process the text input from Copilot, Azure OpenAI must first convert that input into a numerical representation. A key step in this process is *tokenization*, which is the partitioning of input text into different, smaller parts, called *tokens*. A token is a set of co-occurring characters, and it's the smallest unit of information that an LLM uses to produce its output. Each token has a corresponding numerical ID, which becomes the vocabulary of the LLM to encode and use text as numbers. There are different ways to tokenize text, and different LLMs tokenize input text in different ways. Azure OpenAI uses [*Byte-Pair Encoding (BPE)*](/dotnet/ai/conceptual/understanding-tokens#common-tokenization-methods), which is a method of sub-word tokenization.
 
@@ -208,7 +208,7 @@ To better understand what a token is and how a prompt becomes tokens, consider t
 
 In the example, each differently colored highlight indicates a single token. As mentioned previously, Azure OpenAI uses *subword* tokenization, so a token isn't a word, but it also isn't a character, or a fixed number of characters. For instance *"report"* is a single token, but *"."* is, too.
 
-To reiterate, you should understand what a token is because [the cost of Copilot (or its Fabric capacity consumption rate) is determined by tokens](copilot-fabric-consumption.md#copilot-in-fabric-consumption-rate-per-token). Therefore, understanding what a token is and how input and output tokens are created helps you understand and anticipate how Copilot usage results in consumption of Fabric CUs. For more information about the [cost of Copilot in Fabric](#cost-of-copilot-in-fabric), see the appropriate section later in this article.
+To reiterate, you should understand what a token is because [the cost of Copilot (or its Fabric capacity consumption rate) is determined by tokens](copilot-fabric-consumption.md#copilot-consumption-rate-per-token). Therefore, understanding what a token is and how input and output tokens are created helps you understand and anticipate how Copilot usage results in consumption of Fabric CUs. For more information about the [cost of Copilot in Fabric](#cost-of-copilot-in-fabric), see the appropriate section later in this article.
 
 Copilot in Fabric uses both input and output tokens, as depicted in the following diagram.
 
