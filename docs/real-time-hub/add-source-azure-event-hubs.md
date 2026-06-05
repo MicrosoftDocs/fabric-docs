@@ -121,6 +121,7 @@ On the **Add data**, you can connect to an Azure event hub using the **All sourc
     :::image type="content" source="./media/add-source-azure-event-hubs/verify-data-stream.png" alt-text="Screenshot that shows the Real-Time hub All data streams page with the stream you just created." lightbox="./media/add-source-azure-event-hubs/verify-data-stream.png":::
 
 ## Use All sources tab to connect to an event hub
+You can also use the **All sources** tab on the **Add data** page to connect to an Azure event hub. However, using the **Azure** tab is recommended as it provides a more streamlined experience with better guidance and filtering options.
 
 On the **Add data** page, select the **Microsoft** category at the top, and then select **Azure Event Hubs**. 
 
