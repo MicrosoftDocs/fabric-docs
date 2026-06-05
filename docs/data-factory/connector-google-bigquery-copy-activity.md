@@ -3,7 +3,7 @@ title: Configure Google BigQuery in a copy activity
 description: This article explains how to copy data using Google BigQuery.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 03/09/2026
+ms.date: 05/09/2026
 ms.custom:
   - pipelines
   - template-how-to
@@ -20,7 +20,7 @@ For the configuration of each tab under copy activity, go to the following secti
 
 - [General](#general)  
 - [Source](#source)
-- [Destination (Preview)](#destination)
+- [Destination](#destination)
 - [Mapping](#mapping)
 - [Settings](#settings)
 
@@ -51,7 +51,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
-### <a name="destination"></a>Destination (Preview)
+### <a name="destination"></a>Destination
 
 The following properties are supported for Google BigQuery under the Destination tab of a copy activity.
 
@@ -135,7 +135,7 @@ The following tables contain more information about the copy activity in Google 
 |  |  |  |  |  |
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
-### <a name="destination-information"></a>Destination information (Preview)
+### <a name="destination-information"></a>Destination information
 
 | Name | Description | Value | Required | JSON script property |
 |---|---|---|---|---|

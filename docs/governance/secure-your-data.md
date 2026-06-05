@@ -28,6 +28,21 @@ On the **View users** page, you can see all of the users with access to selected
 1. Use the **All users by** filter at the top to limit your selection to specific types of user, workspace roles, or workspaces.
 1. Use the **search** control to find a specific user or group and verify their permissions.
 
+### Manage workspace permissions
+
+Using the ribbon on the **View uers** page, you can manage workspace role assignments across multiple workspaces from a single experience.
+
+- **Add users**: Select this option to add one or more users to the same workspace role across one or more workspaces. For example, you can onboard all new hires to the Viewer role across all relevant workspaces.
+- **Manage access**: Select this to choose between editing roles and removing roles. Like with **add users**, you can perform these actions in bulk across multiple users and workspaces. For example, removing all summer interns from their relevant workspaces.
+
+To manage workspace permissions, select the **Add users** or **Manage access** option you want.
+
+- Under **Workspaces**, select one or more workspaces where you want the user to be updated. Note that you must have Admin or Member permissions on a workspace for the update to apply.
+- For **Members**, search for the users or groups you want to update.
+- Select the **Role** you are granting or updating them to. This option is not present for removing access.
+- Select **Update**.
+- To cancel the changes, select **Discard**.
+
 ## View security roles
 
 On the **View security roles** page, you can see all of the OneLake security roles across the selected workspaces. Each item that has a OneLake security role in those workspaces appears in the list. You can view existing roles, edit roles, delete roles, or create new ones from this page.

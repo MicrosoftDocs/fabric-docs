@@ -50,14 +50,14 @@ deltaTable.optimize().executeCompaction()
 
 | Property | Description | Default value | Session config |
 |----------|-------------|---------------|----------------|
-| **minFileSize** | Files that are smaller than this threshold are grouped together and rewritten as larger files. | 1073741824 (1g) | spark.databricks.delta.optimize.minFileSize |
-| **maxFileSize** | Target file size produced by the `OPTIMIZE` command. | 1073741824 (1g) | spark.databricks.delta.optimize.maxFileSize |
+| **minFileSize** | Files that are smaller than this threshold are grouped together and rewritten as larger files. | 1073741824 (1 GB) | spark.databricks.delta.optimize.minFileSize |
+| **maxFileSize** | Target file size produced by the `OPTIMIZE` command. | 1073741824 (1 GB) | spark.databricks.delta.optimize.maxFileSize |
 
-`OPTIMIZE` is idempotent, but an oversized `minFileSize` can increase write amplification. For example, with `minFileSize` set to 1 GB, a 900 MB file might be rewritten after a small additional write. For automatic file-size management guidance, see [adaptive target file size](./tune-file-size.md#adaptive-target-file-size).
+`OPTIMIZE` is idempotent, but an oversized `minFileSize` can increase write amplification. For example, with `minFileSize` set to 1 GB, a 900 MB file might be rewritten after a small extra write. For automatic file-size management guidance, see [adaptive target file size](./tune-file-size.md#adaptive-target-file-size).
 
 #### `OPTIMIZE` with Z-Order
 
-When you use the `ZORDER BY` clause, `OPTIMIZE` rewrites active files so rows with similar values are colocated in the same files. This improves file skipping for selective filters. Use Z-Order when:
+When you use the `ZORDER BY` clause, `OPTIMIZE` rewrites active files so rows with similar values are colocated in the same files. The colocated layout improves file skipping for selective filters. Use Z-Order when:
 - Your queries frequently filter on two or more columns together (for example, date + customer_id), and
 - Those predicates are selective enough that file-level skipping reduces the number of files scanned.
 
@@ -72,6 +72,19 @@ The `VORDER` clause results in the files scoped for compaction having the V-Orde
 ```sql
 OPTIMIZE dbo.table_name VORDER
 ```
+
+You can combine Z-Order and V-Order in a single command. Spark applies the operations in this order: bin compaction → Z-Order → V-Order.
+
+```sql
+OPTIMIZE dbo.table_name ZORDER BY (column1, column2) VORDER
+```
+
+V-Order behavior during `OPTIMIZE` depends on how you invoke the command:
+
+| Invocation | Behavior |
+|---|---|
+| `OPTIMIZE table VORDER` | Forces V-Order on rewritten files, regardless of session or table settings. |
+| `OPTIMIZE table` (no `VORDER` keyword) | Inherits V-Order behavior from `TBLPROPERTIES("delta.parquet.vorder.enabled")` if set, otherwise falls back to the session config `spark.sql.parquet.vorder.default`. |
 
 #### `OPTIMIZE` with liquid clustering
 
@@ -114,7 +127,7 @@ Fast optimize can be fine tuned based on your compaction expectations:
 | **parquetCoefficient** | Multiplied by the optimize context minimum file size to determine the minimum amount of small file data that must exist in a bin for the bin to be included in the scope of compaction. | 1.3 | spark.microsoft.delta.optimize.fast.parquetCoefficient |
 
 > [!NOTE]
-> The `parquetCoefficient` results in the target size of a bin being larger than the minimum target file size of the optimize context. This coefficient accounts for the reality that combining multiple small parquet files result in better compression, and thus less data than the sum of small files. This value can be increased to be more conservative in how often fast optimize will skip bins, or decreased to allow more permissive bin skipping.
+> The `parquetCoefficient` results in the target size of a bin being larger than the minimum target file size of the optimize context. This coefficient accounts for the reality that combining multiple small parquet files result in better compression, and thus less data than the sum of small files. Increase the value to be more conservative in how often fast optimize skips bins, or decrease the value to allow more permissive bin skipping.
 
 ##### How it works
 
@@ -123,7 +136,7 @@ Fast optimize introduces extra checks before bins are compacted. For each candid
 - Whether combining the small files is estimated to produce a file meeting the configured minimum target size
 - Whether the bin contains at least the configured minimum number of small files
 
-Fast optimize evaluates each bin of small files and only compacts the small files that are likely to reach the minimum target size or exceed the minimum file count. Bins that don't meet these thresholds are skipped or partially compacted. Skipping suboptimal bins reduces unnecessary rewrites, lowers write amplification, and makes OPTIMIZE jobs more idempotent.
+Fast optimize evaluates each bin of small files and compacts only the bins likely to reach the minimum target size or exceed the minimum file count. Bins that don't meet these thresholds are skipped or partially compacted. Skipping suboptimal bins reduces unnecessary rewrites, lowers write amplification, and makes OPTIMIZE jobs more idempotent.
 
 :::image type="content" source="media\table-compaction\fast-optimize-logic.png" alt-text="Screenshot showing how fast optimize evaluates if a bin is compacted." lightbox="media\table-compaction\fast-optimize-logic.png":::
 > [!NOTE]
@@ -217,6 +230,27 @@ ALTER TABLE dbo.table_name
 SET TBLPROPERTIES ('delta.autoOptimize.autoCompact' = 'true')
 ```
 
+#### Reduce evaluation overhead
+Starting in Fabric Spark runtime 2.0 (Delta 4.1), you can enable the `onCheckpointOnly` auto compaction mode. By default, auto compaction evaluates file metadata after every write operation to determine whether a table has too many small files. With `onCheckpointOnly`, the evaluation is deferred to log checkpointing operations (typically every 10 commits). At checkpoint time, the table snapshot is already fully reconstructed, so the evaluation reads from metadata that is already in memory rather than requiring an extra scan. The deferred evaluation reduces per-commit overhead while still ensuring tables are periodically compacted.
+
+# [Spark SQL](#tab/sparksql)
+
+```sql
+SET spark.microsoft.delta.autoCompact.onCheckpointOnly.enabled = TRUE
+```
+
+# [PySpark](#tab/pyspark)
+
+```python
+spark.conf.set('spark.microsoft.delta.autoCompact.onCheckpointOnly.enabled', True)
+```
+
+# [Scala](#tab/scala)
+
+```scala
+spark.conf.set("spark.microsoft.delta.autoCompact.onCheckpointOnly.enabled", "true")
+```
+
 #### Tune auto compaction thresholds
 
 Tune auto compaction behavior by setting these Spark session configurations:
@@ -237,7 +271,7 @@ Use compaction together with small-file prevention features such as optimize wri
 
 ### Lakehouse table maintenance
 
-You can run ad hoc maintenance operations such as `OPTIMIZE` from Lakehouse Explorer. For more information, see [Lakehouse table maintenance](./lakehouse-table-maintenance.md).
+You can run maintenance operations such as `OPTIMIZE` from Lakehouse Explorer. For more information, see [Lakehouse table maintenance](./lakehouse-table-maintenance.md).
 
 ## Summary of best practices
 
@@ -248,7 +282,25 @@ Use these recommendations to balance write cost, read performance, and maintenan
 - **Schedule full-table `OPTIMIZE` during quiet windows** when you need to rewrite many partitions or apply Z-Order.
 - **Enable fast optimize** to reduce write amplification and make `OPTIMIZE` more idempotent.
 - **Enable file-level compaction targets** to reduce unnecessary recompaction as target file sizes increase over time.
-- **Use optimize write in suitable ingestion paths** because pre-write compaction is often less costly than post-write compaction. For guidance, see [Optimize write](./tune-file-size.md#optimize-write).
+- **Use optimize write in suitable ingestion paths** because prewrite compaction is often less costly than post-write compaction. For guidance, see [Optimize write](./tune-file-size.md#optimize-write).
+
+## OPTIMIZE output metrics
+
+`OPTIMIZE` returns operation metrics that summarize what was rewritten. You can also view these metrics later in Delta table history via `DESCRIBE HISTORY`. Typical metric fields include:
+
+| Metric | Description |
+|--------|-------------|
+| `numFilesAdded` | Number of new compacted files written. |
+| `numFilesRemoved` | Number of small files replaced by compaction. |
+| `numAddedBytes` | Total bytes in the new compacted files. |
+| `numRemovedBytes` | Total bytes in the files that were replaced. |
+| `minFileSize` | Smallest file size after compaction. |
+| `p25FileSize` | 25th percentile file size after compaction. |
+| `p50FileSize` | Median file size after compaction. |
+| `p75FileSize` | 75th percentile file size after compaction. |
+| `maxFileSize` | Largest file size after compaction. |
+
+These metrics help you confirm that compaction reduced file counts and produced healthier file sizes.
 
 ## Related content
 
@@ -257,3 +309,5 @@ Use these recommendations to balance write cost, read performance, and maintenan
 - [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md)
 - [Tune file size](./tune-file-size.md)
 - [Lakehouse table maintenance](./lakehouse-table-maintenance.md)
+- [Liquid clustering](liquid-clustering.md)
+- [Z-Order](delta-lake-z-order.md)

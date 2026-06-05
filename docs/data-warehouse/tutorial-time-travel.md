@@ -2,13 +2,15 @@
 title: "Data Warehouse Tutorial: Time Travel with T-SQL in a Warehouse"
 description: "In this tutorial, learn how to use T-SQL statements to time travel in a warehouse table."
 ms.reviewer: ajagadish
-ms.date: 04/06/2025
+ms.date: 05/19/2026
 ms.topic: how-to
 ---
 
-# Tutorial: Time travel with T-SQL in a Warehouse
+# Tutorial: Time travel with T-SQL in a warehouse
 
-In this tutorial, learn how to use T-SQL statements to _[time travel](time-travel.md)_ in a warehouse table. Time travel means to query data as it existed at a specific point in time, which is made automatically possible by Fabric Warehouse [data retention](time-travel.md#data-retention).
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
+
+In this tutorial, learn how to use T-SQL statements to [time travel](time-travel.md) in a warehouse table. Time travel means to query data as it existed at a specific point in time.
 
 > [!NOTE]
 > This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:

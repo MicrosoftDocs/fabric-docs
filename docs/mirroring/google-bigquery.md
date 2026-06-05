@@ -10,7 +10,7 @@ no-loc: [Copilot]
 
 # Mirroring Google BigQuery in Microsoft Fabric (Preview)
 
-[Mirroring in Fabric](overview.md) offers a simple way to avoid complex ETL (Extract, Transform, Load) processes and seamlessly integrate your existing Google BigQuery warehouse data with the rest of your data in Fabric. You can continuously replicate your Google BigQuery data directly into Fabric’s OneLake. Once in Fabric, you can take advantage of powerful capabilities for business intelligence, AI, data engineering, data science, and data sharing.
+[Mirroring in Fabric](overview.md) offers a simple way to avoid complex ETL (Extract, Transform, Load) processes and seamlessly integrate your existing Google BigQuery warehouse data with the rest of your data in Fabric. You can continuously replicate your Google BigQuery data directly into Fabric's OneLake. Once in Fabric, you can take advantage of powerful capabilities for business intelligence, AI, data engineering, data science, and data sharing.
 
 For a tutorial on configuring your Google BigQuery database for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Google BigQuery](google-bigquery-tutorial.md).
 
@@ -26,11 +26,11 @@ Mirroring in Microsoft Fabric removes the complexity of stitching together tools
 Mirroring creates two items in your Fabric workspace:
 
 - The mirrored database item. Mirroring manages the replication of data into [OneLake](../onelake/onelake-overview.md) and conversion to Parquet, in an analytics-ready format. Mirroring enables downstream scenarios like data engineering, data science, and more. Mirrored databases are distinct from warehouse and SQL analytics endpoint items.
-- A [SQL analytics endpoint](../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md)
+- A [SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md)
 
 :::image type="content" source="media/google-bigquery/google-bigquery.png" alt-text="Diagram of Fabric database mirroring for Google BigQuery.":::
 
-From each Mirrored database, a **SQL analytics endpoint** delivers a read-only analytical experience on top of the Delta tables created during mirroring. This endpoint supports T-SQL syntax for defining and querying data objects, but it doesn’t allow direct data changes since the data is read-only.  
+From each Mirrored database, a **SQL analytics endpoint** delivers a read-only analytical experience on top of the Delta tables created during mirroring. This endpoint supports T-SQL syntax for defining and querying data objects, but it doesn't allow direct data changes since the data is read-only.  
 
 With the SQL analytics endpoint, you can:  
 

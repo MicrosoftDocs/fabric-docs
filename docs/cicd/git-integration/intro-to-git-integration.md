@@ -87,7 +87,7 @@ The following items currently support Git integration:
   * [KQL Queryset](../../real-time-intelligence/git-deployment-pipelines.md)
   * [Real-time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md)
   * [Event Schema Set](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md) *(preview)*
-  * [Maps](/azure/azure-maps/) *(preview)*
+  * [Maps](../../real-time-intelligence/map/about-fabric-maps.md)
   * [Anomaly detection](../../real-time-intelligence/multivariate-anomaly-overview.md) *(preview)*
 
 * Data Warehouse items:

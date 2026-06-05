@@ -13,15 +13,15 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 2: Get data in the Real-Time hub](tutorial-2-get-real-time-events.md).
 
-In this part of the tutorial, you set an Activator alert on your eventstream to receive a notification in Teams when the number of bikes falls below a certain threshold.
+In this part of the tutorial, you set an Activator alert on your eventstream to receive a notification in Teams when the number of bikes in a bike station decreases to zero.
 
 ## Set an alert on the eventstream
 
-Here you configure the rules for the alert. Your starting point is the eventstream details page for the eventstream you created in the previous tutorial. To get there, follow one of these two paths:
+Here you configure the rules for the alert. Your starting point is the eventstream details page for the eventstream you created in the previous tutorial. 
 
 1. From the left navigation bar, select **Real-Time**.
 
-1. In the list of recent Select the **TutorialEventstream** eventstream you created in the previous tutorial. The eventstream details page opens.
+1. In the list of recent data streams, select the **TutorialEventstream** eventstream you created in the previous tutorial. The eventstream details page opens.
 
     :::image type="content" source="media/tutorial/set-alert.png" alt-text="Screenshot of eventstreams details page and set alert selected." lightbox="media/tutorial/set-alert.png":::
 
@@ -29,15 +29,17 @@ Here you configure the rules for the alert. Your starting point is the eventstre
 
 1. In the **Add rule** page, follow these steps:
 
-    1. In the **Details** section, for **Rule name**, enter **TutorialRule**.
+    1. In the **Details** section, for **Rule name**, enter **No bikes available in bike station**.
 
     1. In the **Condition** section, follow these steps to set the condition for the alert:
 
         1. For **Check**, select **On each event when**.
 
+        1. For **Grouping field**, select **BikepointID**.
+
         1. For **When**, select **No_Bikes**.
 
-        1. For **Condition**, select **Is equal to**.
+        1. For **Condition**, select **Decreases to or below**.
 
         1. For **Value**, enter **0**.
 

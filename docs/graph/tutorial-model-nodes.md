@@ -2,15 +2,13 @@
 title: "Tutorial: Add node types to your graph"
 description: Learn how to add node types to your graph model in Microsoft Fabric by mapping source tables and configuring node properties.
 ms.topic: tutorial
-ms.date: 04/14/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Add nodes to your graph
 ai-usage: ai-assisted
 ---
 
 # Tutorial: Add node types to your graph
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 In this tutorial step, you add node types to your graph model. Node types represent entities in your data, such as customers, products, or orders. Later, you connect these node types with edge types to define relationships between them.
 

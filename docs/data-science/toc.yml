@@ -29,9 +29,9 @@ items:
     href: ../data-engineering/copilot-notebooks-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Use the Copilot chat panel
     href: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
-- name: AI functions
+- name: AI Functions
   items: 
-  - name: Transform and enrich data with AI functions
+  - name: Transform and enrich data with AI Functions
     href: ./ai-functions/overview.md
   - name: Multimodal AI Functions
     href: ./ai-functions/multimodal-overview.md
@@ -161,7 +161,7 @@ items:
   items:
   - name: Read and write data with Pandas
     href: read-write-pandas.md
-  - name: Transform and enrich data seamlessly with AI functions
+  - name: Transform and enrich data seamlessly with AI Functions
     href: ./ai-functions/overview.md
   - name: Accelerate data prep with Data Wrangler
     href: data-wrangler.md
@@ -221,6 +221,8 @@ items:
       href: machine-learning-experiment.md
     - name: Machine learning model
       href: machine-learning-model.md
+    - name: MLflow 3 in Fabric Data Science
+      href: mlflow-3-overview.md
     - name: Machine learning tracking upgrade
       href: mlflow-upgrade.md
     - name: Fabric autologging

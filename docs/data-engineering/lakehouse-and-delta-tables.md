@@ -57,9 +57,11 @@ For a broader comparison across Spark pools, configurations, libraries, notebook
 |Apache Spark configuration|Microsoft Fabric value|Azure Synapse Analytics value|Notes|
 |---------|---------|---------|---------|
 |spark.sql.sources.default|delta|parquet|Default table format|
-|spark.sql.parquet.vorder.default|true|N/A|V-Order writer|
+|spark.sql.parquet.vorder.default|false*|N/A|V-Order writer|
 |spark.sql.parquet.vorder.dictionaryPageSize|2 GB|N/A|Dictionary page size limit for V-Order|
-|spark.databricks.delta.optimizeWrite.enabled|true|unset (false)|Optimize Write|
+|spark.databricks.delta.optimizeWrite.enabled|unset (false)*|unset (false)|Optimize Write|
+
+_* Fabric workspaces created before April, 2025 have V-Order and Optimize write enabled by default. Newer workspaces have the features disabled in Fabric Spark runtime 1.3. In runtime 2.0 Optimize Write is `UNSET` by default._
 
 These optimizations are designed to provide better performance out-of-the-box in Fabric. Advanced users can modify these configurations if needed for specific scenarios.
 

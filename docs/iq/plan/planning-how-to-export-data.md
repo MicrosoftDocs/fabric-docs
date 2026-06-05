@@ -1,18 +1,18 @@
 ---
-title: Export data from Planning sheets
-description: Learn how to export Planning sheets to Excel or PDF in Fabric plan (preview). Explore Excel export modes, PDF settings, headers, formatting, and advanced configuration options.
+title: Export Data from Planning Sheets
+description: Learn how to export planning sheets to Excel or PDF in Fabric plan (preview). Explore Excel export modes, PDF settings, headers, formatting, and advanced configuration options.
 ms.date: 05/04/2026
 ms.topic: how-to
-#customer intent: As a user, I want to understand how to export planning sheets to Excel or PDF in Fabric Plan.
+#customer intent: As a user, I want to understand how to export planning sheets to Excel or PDF in Fabric plan.
 ---
 
-# Export data from Planning sheets to Excel and PDF
+# Export data from planning sheets to Excel and PDF
 
 Planning sheets allow you to export reports to PDF and Excel formats while preserving formatting, layout, and data context. You can export complete sheets or select specific data.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-Exported Planning sheets retain key elements like:
+Exported planning sheets retain key elements like:
 
 * Planning sheet layout and structure
 * Cell values and number formatting
@@ -22,13 +22,13 @@ Exported Planning sheets retain key elements like:
 
 ## Prerequisite
 
-You have access to the Planning sheets to be exported.
+You have access to the planning sheets to be exported.
 
-## Export a Planning sheet to PDF
+## Export a planning sheet to PDF
 
 Use the PDF export capability to generate formatted, paginated sheets.
 
-1. In the Planning sheet, select **Planning** and **Export** from the toolbar.
+1. In the planning sheet, select **Planning** and **Export** from the toolbar.
 1. Select **PDF** as the format.
 
      :::image type="content" source="media/planning-how-to-export-data/export-pdf.jpg" alt-text="Screenshot of exporting to pdf." lightbox="media/planning-how-to-export-data/export-pdf.jpg":::
@@ -88,11 +88,11 @@ The **Formatting** tab contains these options to customize formatting:
   
 Select **Apply** to save your changes, or select **Reset** to clear all changes.
 
-## Export a Planning sheet to Excel
+## Export a planning sheet to Excel
 
 Use the Excel export capability for further analysis and data manipulation.
 
-1. In the Planning sheet, select **Planning** and **Export** from the toolbar.
+1. In the planning sheet, select **Planning** and **Export** from the toolbar.
 1. Select **Excel** as the format.
 1. Under **Export mode**, select one of the following:
     * **Fully expanded**: Exports all hierarchy levels in an expanded view.
@@ -118,7 +118,7 @@ The advanced **Excel Settings** are presented in three tabs, described in the se
 
 Planning sheets support exporting header elements such as dates and symbols to Excel. Use header settings to control and preview which header lines are included in the export.
 
-::image type="content" source="media/planning-how-to-export-data/header-settings.png" alt-text="Screenshot of configuring header settings in the exported excel." lightbox="media/planning-how-to-export-data/header-settings.png":::
+:::image type="content" source="media/planning-how-to-export-data/header-settings.png" alt-text="Screenshot of configuring header settings in the exported excel." lightbox="media/planning-how-to-export-data/header-settings.png":::
 
 #### Footer Settings
 

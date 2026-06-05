@@ -28,6 +28,7 @@ The following operations are available in the audit logs.
 | Added data source to Power BI gateway  |  :::no-loc text="AddDatasourceToGateway":::  |    |
 | Added external resource  |  :::no-loc text="AddExternalResource":::  | Registers or connects an external resource in the Fabric workspace.   |
 | Added link to external resource  |  :::no-loc text="AddLinkToExternalResource":::  | Links a Fabric item to an external resource for reference or integration.    |
+| Added runtime lineage event subscription  |  :::no-loc text="AddedRuntimeLineageEventSubscription":::  |   |
 | Added user to Power BI gateway cluster  |  :::no-loc text="AddUsersToGatewayCluster":::  |  Not currently used  |
 | Added user to Power BI gateway cluster datasource  |  :::no-loc text="AddUsersToGatewayClusterDatasource":::  |    |
 | Admin Get Artifacts Byuser Id | :::no-loc text="AdminGetArtifactsByuserId"::: |   |
@@ -248,6 +249,7 @@ The following operations are available in the audit logs.
 | Deleted link to external resource | :::no-loc text="DeleteLinkToExternalResource"::: |   |
 | Deleted member of Power BI gateway cluster | :::no-loc text="DeleteGatewayClusterMember"::: |   |
 | Deleted organizational Power BI content pack | :::no-loc text="DeleteOrgApp"::: |   |
+| Deleted runtime lineage event subscription | :::no-loc text="DeletedRuntimeLineageEventSubscription"::: |   |
 | Deleted sensitivity label from Power BI item | :::no-loc text="SensitivityLabelRemoved"::: |   |
 | Deleted snapshot for user in Power BI tenant | :::no-loc text="DeleteSnapshot"::: | Generated when a user deletes a snapshot that describes a semantic model  |
 | Deleted workload assignment using admin api | :::no-loc text="ExtensibilityDeletedWorkloadAssignmentAdminApi"::: |   |
@@ -518,6 +520,7 @@ The following operations are available in the audit logs.
 | Requested Power BI semantic model refresh | :::no-loc text="RefreshDataset"::: |   |
 | Requested SAS token for Power BI storage | :::no-loc text="AcquireStorageSASFromExternalApplication"::: |   |
 | Requested account key for Power BI storage | :::no-loc text="AcquireStorageAccountKey"::: |   |
+| Reserve workload name | :::no-loc text="ExtensibilityNameReserved"::: | Reserves a workload name |
 | Restore container | :::no-loc text="RestoreContainer"::: | OneLake operation. |
 | Restore deleted workspace | :::no-loc text="RestoreWorkspaceViaAdminApi"::: | Restores the deleted workspace |
 | Restored Power BI workspace | :::no-loc text="RestoreWorkspace"::: |   |
@@ -612,6 +615,7 @@ The following operations are available in the audit logs.
 | Set file properties | :::no-loc text="SetFileProperties"::: | OneLake operation. Set user-defined properties for a file. |
 | Set scheduled refresh on Power BI dataflow | :::no-loc text="SetScheduledRefreshOnDataflow"::: |   |
 | Set scheduled refresh on Power BI semantic model | :::no-loc text="SetScheduledRefresh"::: |   |
+| Set warehouse hardware acceleration|:::no-loc text="SetWarehouseHardwarePlatform":::|Changed the current hardware acceleration settings for warehouses in a workspace.|
 | Share Artifact | :::no-loc text="ShareArtifact"::: |   |
 | Share Datamart | :::no-loc text="ShareDatamart"::: |   |
 | Share Lakehouse Table | :::no-loc text="ShareLakehouseTable"::: |   |
@@ -767,6 +771,15 @@ The following operations are available in the audit logs.
 | Enable Workspace Outbound Access Protection | :::no-loc text="EnableWorkspaceOutboundAccessProtection"::: | Outbound Access Protection Enabled on Workspace |
 | Get Workspace Resource Instance Rules | :::no-loc text="GetWorkspaceResourceInstanceRules"::: | |
 | Set Workspace Resource Instance Rules | :::no-loc text="SetWorkspaceResourceInstanceRules"::: | |
+| Enable workspace inbound access protection | :::no-loc text="EnableWorkspaceInboundAccessProtection"::: | Enable workspace inbound access protection |
+| Disable workspace inbound access protection | :::no-loc text="DisableWorkspaceInboundAccessProtection"::: | Disable workspace inbound access protection |
+| Update workspace outbound access protection connection rules | :::no-loc text="UpdateWorkspaceOutboundConnections"::: | Update workspace outbound access protection connection rules |
+| Update workspace outbound access protection gateway rules | :::no-loc text="UpdateWorkspaceOutboundGateways"::: | Update workspace outbound access protection gateway rules |
+| Enable Git for workspace with restricted outbound access | :::no-loc text="EnableGitForWorkspaceWithRestrictedOutboundAccess"::: | Enable Git for workspace with restricted outbound access |
+| Disable Git for workspace with restricted outbound access | :::no-loc text="DisableGitForWorkspaceWithRestrictedOutboundAccess"::: | Disable Git for workspace with restricted outbound access |
+| Get workspace IP firewall rules | :::no-loc text="GetFolderFirewallRules"::: | Get workspace IP firewall rules |
+| Update workspace IP firewall rules | :::no-loc text="SetFolderFirewallRules"::: | Update workspace IP firewall rules |
+
 
 ## Considerations and limitations
 

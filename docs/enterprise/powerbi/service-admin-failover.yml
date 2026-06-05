@@ -5,7 +5,7 @@ metadata:
   ms.service: powerbi
   ms.subservice: powerbi-admin
   ms.topic: faq
-  ms.date: 11/01/2023
+  ms.date: 06/02/2026
   LocalizationGroup: Administration
 title: Power BI high availability, failover, and disaster recovery FAQ
 summary: This article explains how the Power BI service delivers high availability and provides business continuity and disaster recovery to its users. After reading this article, you should have a better understanding of how high availability is achieved, under what circumstances Power BI performs a failover, and what to expect from the service when it fails over.
@@ -100,3 +100,10 @@ sections:
           If there's an extreme disaster in a primary region that prevents you from restoring a gateway for a considerable duration, the failed-over primary region allows read and write operations, so you can redeploy and configure a gateway against the new region.
           
           You can choose to install a new gateway on a different machine or take over an existing gateway. Taking over the existing gateway should be simpler, because all the data sources associated with the old gateway are carried over to the new one.
+          
+      - question: |
+          Can I export or back up semantic models during failover?
+        answer: |
+          No. After a failover, export and backup operations don't work because Power BI runs in read-only disaster recovery (DR) mode. You can use REST APIs only to retrieve semantic model properties and model definitions.
+          
+          To recover, you can redeploy the model definitions and refresh the models in a new tenant in the new region. By performing a refresh, you reload the data in a semantic model.

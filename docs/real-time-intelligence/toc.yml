@@ -9,6 +9,8 @@ items:
         href: real-time-intelligence-compare.md
       - name: Implement medallion architecture
         href: architecture-medallion.md
+      - name: Multitenant solutions
+        href: multitenant.md
       - name: End to end sample RTI solution
         href: sample-end-to-end.md
   - name: Tutorials
@@ -157,6 +159,8 @@ items:
             href: event-streams/add-manage-eventstream-destinations.md
           - name: Activator
             href: event-streams/add-destination-activator.md
+          - name: Business Events
+            href: event-streams/add-destination-business-events.md
           - name: Custom endpoint
             href: event-streams/add-destination-custom-app.md
           - name: Derived stream
@@ -175,6 +179,8 @@ items:
             href: event-streams/process-events-with-multiple-schemas.md
           - name: Process events using SQL code editor
             href: event-streams/process-events-using-sql-code-editor.md
+          - name: Extract event metadata with eventstream
+            href: event-streams/extract-event-metadata-with-eventstream.md
       - name: Preview data
         href: event-streams/preview-data.md
       - name: Manage eventstreams
@@ -219,6 +225,8 @@ items:
                 href: event-streams/api-get-eventstream-definition.md
               - name: Update Eventstream Definition
                 href: event-streams/api-update-eventstream-definition.md
+              - name: Create an Eventstream with Eventhouse DirectIngestion by using APIs
+                href: event-streams/api-kusto-pull-destination.md
       - name: Security
         items:
           - name: Choose the right network security feature
@@ -565,14 +573,14 @@ items:
         href: eventhouse-deploy-with-fabric-api.md
       - name: Manage and monitor an eventhouse
         href: manage-monitor-eventhouse.md
+      - name: Reliability in Eventhouse
+        href: eventhouse-reliability.md
       - name: Eventhouse endpoint for Lakehouse and Warehouse
         href: eventhouse-as-endpoint.md
       - name: Eventhouse capacity
         items:
           - name: Resource consumption
             href: real-time-intelligence-consumption.md
-          - name: Smart capacity control
-            href: eventhouse-smart-capacity-control.md
             displayName: consumption, CU, metrics app, monitor, billing, usage
           - name: Understand Eventhouse compute usage
             href: eventhouse-compute-observability.md
@@ -633,10 +641,10 @@ items:
             href: get-data-real-time-hub.md
           - name: Get data from other sources
             href: get-data-other-sources.md
+          - name: Get business events into Eventhouse
+            href: ../real-time-hub/business-events/business-events-eventhouse.md?context=/fabric/context/context-rti&pivots=fabric
           - name: Configure KQL Database in a pipeline
             href: ../data-factory/connector-kql-database-copy-activity.md
-          - name: Connect to KQL Database in dataflows
-            href: ../data-factory/connector-kusto-dataflows.md
           - name: Eventhouse data connectors
             items:
               - name: Eventhouse data connectors overview
@@ -692,6 +700,8 @@ items:
           - name: Access an existing KQL database
             href: access-database-copy-uri.md
             displayName: copy URI, copy query URI, copy ingestion URI
+          - name: Analyze data in a KQL database
+            href: eventhouse-analyze-data-with.md
           - name: Manage and monitor a KQL database
             href: manage-monitor-database.md
           - name: Create a database shortcut
@@ -780,8 +790,6 @@ items:
         href: real-time-dashboards-overview.md
       - name: Create a Real-Time Dashboard
         href: dashboard-real-time-create.md
-      - name: Generate Real-Time Dashboard Using Copilot
-        href: copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric
       - name: Real-Time Dashboard permissions
         href: dashboard-permissions.md
       - name: Explore data in Real-Time Dashboard Using Copilot
@@ -811,6 +819,8 @@ items:
         items:
           - name: Create and activate an Activator rule
             href: data-activator/activator-tutorial.md
+          - name: Create an end-to-end Activator rule using agentic AI
+            href: data-activator/activator-agentic-tutorial.md
       - name: Concepts
         items:
           - name: Trigger modeling
@@ -830,6 +840,12 @@ items:
             href: data-activator/activator-throttling-effects.md
       - name: Create alerts
         items:
+          - name: Create rules and activations
+            href: data-activator/activator-create-activators.md
+          - name: Configure actions for Activator rules
+            href: data-activator/rule-actions.md
+          - name: Assign data to Activator objects
+            href: data-activator/activator-assign-data-objects.md            
           - name: Create alerts from a Real-Time Dashboard
             href: data-activator/activator-get-data-real-time-dashboard.md
           - name: Create alerts from a KQL Queryset
@@ -850,12 +866,10 @@ items:
             href: ../iq/ontology/how-to-use-rules.md
           - name: Create alert on a Warehouse SQL query
             href: data-activator/set-alerts-warehouse-sql-query.md
+          - name: Create rules for OneLake items
+            href: data-activator/create-manage-rules-onelake.md
           - name: Get data from eventstreams
             href: event-streams/add-destination-activator.md
-          - name: Create rules and activations
-            href: data-activator/activator-create-activators.md
-          - name: Assign data to Activator objects
-            href: data-activator/activator-assign-data-objects.md
           - name: Trigger Fabric items
             href: data-activator/activator-trigger-fabric-items.md
           - name: Use custom actions to trigger Power Automate flows
@@ -985,8 +999,12 @@ items:
         items:
           - name: Build real-time work order routing
             href: map/tutorial-real-time-work-order-routing-application.md
-          - name: Create a map using the REST API with Python
+          - name: Create a static map using REST APIs and Python
             href: map/tutorial-create-fabric-map-python.md
+          - name: Create a real-time map using REST APIs and Python
+            href: map/tutorial-create-real-time-map-python.md
+          - name: Simulate real-time data ingestion for a map using REST APIs and Python
+            href: map/tutorial-simulate-real-time-data-ingestion.md
       - name: Concepts
         items:
           - name: Map items

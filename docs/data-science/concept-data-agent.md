@@ -5,7 +5,7 @@ ms.author: jburchel
 author: jonburchel
 ms.reviewer: amjafari
 ms.topic: concept-article
-ms.date: 01/06/2026
+ms.date: 05/11/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ms.search.form: Fabric data agent Concepts
@@ -38,13 +38,13 @@ Here's how it works in detail:
 
 **Enforcement mechanisms**: The Fabric data agent applies several layers of protection during processing. It uses the requesting user's credentials and permissions to enforce least-privilege access, ensuring that each interaction only reaches data the user is authorized to view. The agent evaluates requests against tenant and workspace policy settings before executing any action. Guardrails constrain tool invocation and outputs to scoped data sources, preventing queries from reaching resources outside the configured scope. You can optionally integrate [Azure AI Content Safety](/azure/ai-services/content-safety/overview) to apply content risk controls that help reduce harmful or out-of-policy responses.
 
-**Data source identification**: The Fabric data agent uses the user's credentials to access the schema of the data source. This approach ensures that the system fetches data structure information that the user has permission to view. The agent then evaluates the user's question against all available data sources, including relational databases (Lakehouse and Warehouse), Power BI datasets (Semantic Models), KQL databases, ontologies, and Microsoft Graph. It might also reference user-provided data agent instructions to determine the most relevant data source. For Power BI semantic models, the agent uses the user's Read permission on the model to retrieve schema and metadata for query generation; Build permission isn't required for agent-driven queries.
+**Data source identification**: The Fabric data agent uses the user's credentials to access the schema of the data source. This approach ensures that the system fetches data structure information that the user has permission to view. The agent then evaluates the user's question against all available data sources, including relational databases (Lakehouse and Warehouse), Power BI datasets (Semantic Models), KQL databases (including Eventhouse), ontologies, and Microsoft Graph. It might also reference user-provided data agent instructions to determine the most relevant data source. For Power BI semantic models, the agent uses the user's Read permission on the model to retrieve schema and metadata for query generation; Build permission isn't required for agent-driven queries.
 
 **Tool invocation and query generation**: Once the correct data source or sources are identified, the Fabric data agent rephrases the question for clarity and structure, and then invokes the corresponding tool to generate a structured query:
 
 - Natural language to SQL (NL2SQL) for relational databases (Lakehouse/Warehouse).
 - Natural language to DAX (NL2DAX) for Power BI datasets (Semantic Models).
-- Natural language to KQL (NL2KQL) for KQL databases. NL2KQL can use KQL user-defined functions (UDFs) when they're available in the selected databases.
+- Natural language to KQL (NL2KQL) for KQL databases. NL2KQL can use KQL user-defined functions (UDFs) when they're available in the selected databases. NL2KQL can run against Eventhouse KQL databases for both live and historical event or time-series data, and standard KQL time filters and time-series patterns are supported.
 - Microsoft Graph queries for organizational data accessible through Microsoft Graph.
 
 The selected tool generates a query based on the provided schema, metadata, and context that the agent underlying the Fabric data agent then passes.
@@ -70,9 +70,9 @@ For more information about how Microsoft Purview integrates with Fabric, see [Us
 
 Configuring a Fabric data agent is similar to building a Power BI report—you start by designing and refining it to ensure it meets your needs, then publish and share it with colleagues so they can interact with the data. Setting up a Fabric data agent involves:
 
-**Selecting data sources**: A Fabric data agent supports up to five data sources in any combination, including lakehouses, warehouses, KQL databases, Power BI semantic models, ontologies, and Microsoft Graph. For example, a configured Fabric data agent could include five Power BI semantic models. It could include a mix of two Power BI semantic models, one lakehouse, and one KQL database. You have many available options.
+**Selecting data sources**: A Fabric data agent supports up to five data sources in any combination, including lakehouses, warehouses, KQL databases, Power BI semantic models, ontologies, and Microsoft Graph. For example, a configured Fabric data agent could include five Power BI semantic models. It could include a mix of two Power BI semantic models, one lakehouse, and one KQL database. You have many available options. Eventhouse KQL databases are supported as KQL data sources for data agents; agents query Eventhouse data in place without data movement.
 
-**Choosing Relevant Tables**: After you select the data sources, add them one at a time, and define the specific tables from each source that the Fabric data agent uses. This step ensures that the Fabric data agent retrieves accurate results by focusing only on relevant data. For lakehouses, this step means selecting lakehouse tables (not individual lakehouse files). If your data starts as files (for example, CSV or JSON), make it available to the agent by ingesting it into tables or otherwise exposing it through tables.
+**Choosing Relevant Tables**: After you select the data sources, add them one at a time, and define the specific tables from each source that the Fabric data agent uses. This step ensures that the Fabric data agent retrieves accurate results by focusing only on relevant data. For lakehouses, this step means selecting lakehouse tables (not individual lakehouse files). If your data starts as files (for example, CSV or JSON), make it available to the agent by ingesting it into tables or otherwise exposing it through tables. For KQL databases backed by Eventhouse, select only the tables most relevant to typical questions, and encourage users to include time filters when querying high-volume time-series or event data to keep responses fast.
 
 **Adding Context**: To improve the Fabric data agent accuracy, provide more context through Fabric data agent instructions and example queries. As the underlying agent for the Fabric data agent, the context helps the Azure OpenAI Assistant API make more informed decisions about how to process user questions, and determine which data source is best suited to answer them.
 
@@ -158,6 +158,7 @@ To maintain ongoing quality and policy alignment, consider these operational pra
 - Assets that are marked as sensitive by Purview policies might be inaccessible to the agent, which can result in incomplete answers or an inability to query certain data sources.
 - Agent interactions might be logged and discoverable through Microsoft Purview Audit and eDiscovery. Organizations should consider these governance controls when deploying agents for sensitive workloads.
 - Access to Power BI semantic models through a data agent is governed by Read permission on the model and doesn't require workspace-level access. Row-Level Security (RLS) and Column-Level Security (CLS) still apply.
+- Although Eventhouse integrates with anomaly detection, the SQL analytics endpoint, and notebooks, Fabric data agents remain read-only and don't trigger anomaly detection jobs, notebooks, or other write or action workflows in Eventhouse.
 
 ## Related content
 
