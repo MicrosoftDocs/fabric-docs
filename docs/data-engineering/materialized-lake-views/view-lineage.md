@@ -1,7 +1,7 @@
 ---
 title: "Manage Fabric Materialized Lake Views Lineage"
 description: Learn how to view and manage materialized lake views lineage in Microsoft Fabric, including the lineage interface and custom Spark environments.
-ms.reviewer: sairamyeturi
+ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: how-to
 ms.date: 05/06/2026
 ai-usage: ai-assisted
@@ -54,6 +54,8 @@ The lineage page includes these actions:
 
 
 - **Search in lineage**: Search for a specific materialized lake view or table by name within the lineage graph.
+
+:::image type="content" source="./media/view-lineage/search-filter.png" alt-text="Screenshot showing how to search within lineage UI." border="true" lightbox="./media/view-lineage/search-filter.png":::
 
 - **New materialized lake view**: Opens a notebook where you can create or modify MLVs.
 

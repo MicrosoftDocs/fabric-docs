@@ -36,7 +36,7 @@ Select the tab that corresponds with your desired data source type.
 
 1. In the **OneLake catalog** window, select a KQL database to connect to your KQL queryset, and then select **Connect**. 
 
-    Alternatively, close the **OneLake data hub** window and use the **+ Add data source** menu to connect to a different data source.
+    Alternatively, close the **OneLake catalog** window and use the **+ Add data source** menu to connect to a different data source.
 
 ## [Azure Data Explorer](#tab/azure-data-explorer-cluster)
 

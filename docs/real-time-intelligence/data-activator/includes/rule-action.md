@@ -57,6 +57,8 @@ An Activator rule can run a Fabric activity defined in one of the following Fabr
 - Spark job
 - Notebook
 - Function
+- Copy job (preview)
+- Publish business event (preview)
 
 To configure your rule to launch a Fabric activity, follow these steps:
 
@@ -64,17 +66,31 @@ To configure your rule to launch a Fabric activity, follow these steps:
 
     :::image type="content" source="./media/set-details-conditions-actions-rule/action-fabric-item.png" alt-text="Screenshot of the Run Fabric items option.":::            
 1. On **Select Fabric item to run**, select the Fabric item from the list. 
-1. For the **Pipeline**, **Dataflow**, **Notebook**, and **Spark job** types, select **Add parameter** and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter. 
+1. For the **Pipeline**, **Dataflow**, **Notebook**, **Spark job**, **Publish business event (preview)** types, select **Add parameter** and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter. The **Copy job (preview)** type doesn't accept parameters.
 
     :::image type="content" source="./media/set-details-conditions-actions-rule/fabric-item-parameters.png" alt-text="Screenshot of the Add rule pane with parameters for a Fabric item specified.":::            
 
-    If you selected **Run function** option, follow these steps:
-    1. For **Function**, select a **function** from the list.
-    1. For parameters to the function, specify values for each of the parameters defined for the function as shown in the following example:
-    
-        :::image type="content" source="./media/set-details-conditions-actions-rule/run-function-parameters.png" alt-text="Screenshot of the Add rule pane with parameters for a Function specified.":::
+#### Run function
+  
+If you select **Run function**, follow these steps to select the function and specify parameters for it:
 
-        You can use properties from the data by typing `@` or by selecting the button next to the text boxes. For example, `@BikepointID`.
+1. For **Function**, select a **function** from the list.
+1. For parameters to the function, specify values for each of the parameters defined for the function as shown in the following example:
+
+    :::image type="content" source="./media/set-details-conditions-actions-rule/run-function-parameters.png" alt-text="Screenshot of the Add rule pane with parameters for a Function specified." lightbox="./media/set-details-conditions-actions-rule/run-function-parameters.png":::
+
+    You can use properties from the data by typing `@` or by selecting the button next to the text boxes. For example, `@BikepointID`.
+
+#### Publish business event (preview)
+
+If you select **Publish business event (preview)**, follow these steps to select a business event schema from the schema registry, and specify parameters for it:
+
+1. When you select **Publish business event (preview)**, you see the **Select a business event** window.
+1. In this window, select a business event schema from the list of schemas that are registered in the schema registry. You can also search for a schema by typing its name in the search box.
+
+    :::image type="content" source="./media/set-details-conditions-actions-rule/select-business-event-schema.png" alt-text="Screenshot of the Select a business event window." lightbox="./media/set-details-conditions-actions-rule/select-business-event-schema.png":::
+
+1. For parameters to the business event, specify values for each of the parameters defined for the schema as shown in the following example:
 
 ### Custom action
 

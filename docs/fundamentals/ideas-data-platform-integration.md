@@ -108,7 +108,7 @@ As the Fabric product group improves telemetry and log data, we'll incorporate r
 
 ## Enabling interactive analytics with Fabric
 
-Data users often start with Power BI reports but quickly need deeper exploration beyond the reporting layer. Fabric offers two powerful options for interactive analysis: Fabric Spark and the SQL analytics endpoint, enabling users to explore data in the Silver and Gold layers of the Unified Data Model (UDM). The OneLake Data Hub, Lakehouse Explorer, and Lineage View provide quick access to data dependencies and upstream sources. However, as data complexity and size increase from Gold to Bronze, querying becomes more challenging.
+Data users often start with Power BI reports but quickly need deeper exploration beyond the reporting layer. Fabric offers two powerful options for interactive analysis: Fabric Spark and the SQL analytics endpoint, enabling users to explore data in the Silver and Gold layers of the Unified Data Model (UDM). The OneLake catalog, Lakehouse Explorer, and Lineage View provide quick access to data dependencies and upstream sources. However, as data complexity and size increase from Gold to Bronze, querying becomes more challenging.
 
 To build a scalable data platform and prevent fragmentation, IDEAS implemented a federation strategy for key UDM Silver layer assets, serving as authoritative sources of truth. This allowed partner teams to extend these assets with domain-specific attributes. A robust governance process that encompasses review, extension design refinement, data interface definition, and exposure control, ensures data integrity and compliance.
 

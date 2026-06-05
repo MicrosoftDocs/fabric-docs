@@ -9,7 +9,7 @@ ms.search.form: Data Activator Fabric Item
 
 # Trigger Fabric items
 
-You can use Fabric Pipelines, Dataflows, Notebooks, Spark Job Definition, and User Data Functions to load, transform, and analyze data in Microsoft Fabric. Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules can take an action that starts jobs on Fabric items. Use this feature in the following scenarios:
+You can use Fabric Pipelines, Dataflows, Notebooks, Spark Job Definition, User Data Functions, Copy jobs (preview), or Publish business event (preview) to load, transform, and analyze data in Microsoft Fabric. Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules can take an action that starts jobs on Fabric items. Use this feature in the following scenarios:
 
 * Run Pipelines and Dataflows when new files are loaded to Azure storage accounts, to load files into OneLake. To learn more, see [Azure Storage events](/azure/storage/blobs/storage-blob-event-overview).
 
@@ -19,11 +19,14 @@ You can use Fabric Pipelines, Dataflows, Notebooks, Spark Job Definition, and Us
 
 * Run Functions to execute custom business logic to analyze and process data by using code.
 
+* Run Copy jobs (preview) to copy data between supported sources and destinations. To learn more, see [What is Copy job in Data Factory](../../data-factory/what-is-copy-job.md).
+* Publish business events (preview) to trigger downstream processes that consume business events, such as event-driven architectures, real-time analytics, and integration with external systems.
+
 ## How to trigger a job on Fabric items
 
 Start by selecting an existing Activator rule or [creating a rule](activator-create-activators.md).
 
-In the rule definition pane on the right side of the screen, find the **Action** section to define the action when the chosen condition is met. Select an action type and select a specific Fabric item from the [OneLake Data Hub](../../governance/onelake-catalog-overview.md) pop-up window.
+In the rule definition pane on the right side of the screen, find the **Action** section to define the action when the chosen condition is met. Select an action type and select a specific Fabric item from the [OneLake catalog](../../governance/onelake-catalog-overview.md) pop-up window.
 
 ## Test, start, or stop an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule
 
@@ -32,6 +35,9 @@ After you enter all of the required information, select **Save** to save the [!I
 ## Pass parameter values to Fabric items (Preview)
 
 You can now pass values to the parameters defined in the activated Fabric item. To pass parameter values in Activator portal, select **Edit action**, enter the parameter name and type exactly as they're defined in the Fabric item. Enter the parameter values manually or by selecting dynamic properties from the data source.
+
+> [!NOTE]
+> Copy jobs (preview) don't accept parameters.
 
 :::image type="content" border="true" source="media/activator-trigger-fabric-items/pass-parameter.png" alt-text="Screenshot showing Activator card with a parameter.":::
 

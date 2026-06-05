@@ -2,7 +2,7 @@
 title: "Open Mirroring Partner Ecosystem"
 description: Learn about the open mirrored databases partner ecosystem in Microsoft Fabric.
 ms.reviewer: tinglee, sbahadur, ulrichchrist, maraki-ketema
-ms.date: 12/10/2025
+ms.date: 05/29/2026
 ms.topic: partner-tools
 ms.search.form: Fabric Mirroring
 ai-usage: ai-assisted
@@ -98,6 +98,12 @@ For more information, see [Simplement integration into open mirroring in Microso
 SNP Glue is a data integration solution certified for various SAP source systems including SAP S/4HANA (on-premises and Private Cloud Edition). With release 2502, it supports open mirroring for near real-time data integration into Microsoft Fabric. For more information, see [SNP Glue release note](https://aka.ms/mirroring/snp-mirroring-doc).
 
 For more information on SNP Glue, see the [SNP Glue documentation](https://aka.ms/mirroring/snp-overview).
+
+## Stelo Data
+
+[Stelo Data](https://www.stelodata.com/) supports streaming real-time change data from enterprise databases including IBM Db2 for iSeries (Linux and Windows), Informix, Oracle, and SQL Server into Microsoft Fabric via open mirroring. Change data is captured and streamed continuously, delivering near real-time pipelines that keep Fabric workloads current and responsive without rebuilding pipelines or impacting source systems.
+
+For more information, see [Stelo Data in the Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/stelodata.sqdr_plus).
 
 ## Striim
 

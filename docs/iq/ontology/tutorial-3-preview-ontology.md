@@ -110,6 +110,6 @@ This process allows you to inspect the paths that connect operational issues (li
 
 In this step, you viewed the instances connected to your ontology and explored the data they contain. Next, create a data agent to explore the data further by using natural language queries. 
 
-Continue to [Create data agent](tutorial-4-create-data-agent.md).
+Continue to [Consume ontology from agents](tutorial-4-create-data-agent.md).
 
 
