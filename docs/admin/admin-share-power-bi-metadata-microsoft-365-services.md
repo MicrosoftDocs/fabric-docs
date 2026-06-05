@@ -33,6 +33,9 @@ Power BI also shares information about how users interact with content when this
 
 For the complete list of shared properties, see [Data that is shared with Microsoft 365](#data-that-is-shared-with-microsoft-365).
 
+> [!NOTE]
+> Power BI reports shared using organization-wide ("org-wide") links are not discoverable in Microsoft 365 experiences (such as search) for users who only have access through those links, even when this setting is enabled. Users can still access the report directly through the link, but the report doesn't appear in discovery surfaces unless it's shared using another access method.
+
 ### What this setting doesn't control
 
 Turning off this setting doesn't block Fabric content from appearing in Microsoft 365. Users who have access to Fabric content can still take explicit action to use that content in Microsoft 365 products. The following experiences continue to work even when this setting is turned off, because they depend on a user actively doing something:
