@@ -163,4 +163,5 @@ To estimate the storage impact of a retention period change, consider:
 
 ## Related content
 
+- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
 - [Restore in-place of a warehouse in Microsoft Fabric](restore-in-place.md)
