@@ -19,9 +19,9 @@ This setting is **required** to create ontology (preview) items: *Enable Ontolog
 
 If you don't enable this setting, you get errors when creating a new ontology item.
 
-## Graph (preview)
+## Graph
 
-This setting is **required** to enable the graphs associated with ontology (preview): *User can create Graph (preview)*.
+This setting is **required** to enable the graphs associated with ontology (preview): *User can create Graph*.
 
 :::image type="content" source="media/overview-tenant-settings/prerequisite-graph.png" alt-text="Screenshot of enabling graph in the admin portal.":::
 
