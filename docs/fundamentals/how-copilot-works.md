@@ -119,7 +119,7 @@ Here are several ways to improve prompts that you submit to Copilot:
   - *Expectations:* What you expect the output will look like.
   - *Source:* What data or fields Copilot should use.
 
-- **Use verbs:** Refer explicitly to specific actions that you want Copilot to take, such as "*create* a report page" or "*filter* to customer key accounts".
+- **Use verbs:** Refer explicitly to specific actions that you want Copilot to take, such as "*create* a report page" or "*filter* to Customer Key accounts".
 
 - **Use correct and relevant terminology:** Refer explicitly to the appropriate terms in your prompt, like function, field, or table names, visual types, or technical terminology. Avoid misspellings, acronyms, or abbreviations, as well as superfluous grammar, or atypical characters like Unicode characters or emojis.
 
