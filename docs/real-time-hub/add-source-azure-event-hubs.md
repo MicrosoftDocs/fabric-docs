@@ -54,6 +54,8 @@ On the **Add data**, you can connect to an Azure event hub using the **All sourc
 1. Review the details on the **Review + connect** page, and then select **Connect**.
 
     :::image type="content" source="./media/add-source-azure-event-hubs/review-connect.png" alt-text="Screenshot that shows the Review + connect page." lightbox="./media/add-source-azure-event-hubs/review-connect.png":::     
+
+::: zone-end
         
 ::: zone pivot="extended-features"
 
@@ -84,7 +86,7 @@ On the **Add data**, you can connect to an Azure event hub using the **All sourc
 
     :::image type="content" source="../real-time-intelligence/event-streams/includes/connectors/media/azure-event-hubs-source-connector/extended-schema-handling-page.png" alt-text="Screenshot that shows the page for schema handling, with the option for extended features selected." lightbox="../real-time-intelligence/event-streams/includes/connectors/media/azure-event-hubs-source-connector/extended-schema-handling-page.png":::
 
-1. Choose schemas by selecting the **Add more schema(s)** dropdown menu and then choosing one or more existing schemas from the event schema registry. If you don't have schemas to choose from, you can create new schemas from this view. To learn how to define a new event schema, see [Create and manage event schemas in schema sets](../../../schema-sets/create-manage-event-schemas.md).
+1. Choose schemas by selecting the **Add more schema(s)** dropdown menu and then choosing one or more existing schemas from the event schema registry. If you don't have schemas to choose from, you can create new schemas from this view. To learn how to define a new event schema, see [Create and manage event schemas in schema sets](../real-time-intelligence/schema-sets/create-manage-event-schemas.md).
 
     :::image type="content" source="../real-time-intelligence/event-streams/includes/connectors/media/azure-event-hubs-source-connector/extended-fixed-schema-option.png" alt-text="Screenshot that shows the area for adding schemas, with the fixed schema option selected." lightbox="../real-time-intelligence/event-streams/includes/connectors/media/azure-event-hubs-source-connector/extended-fixed-schema-option.png":::
 
