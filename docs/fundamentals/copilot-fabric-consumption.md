@@ -32,6 +32,8 @@ The [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) dis
 
 :::image type="content" border="true" source="./media/copilot-consumption/capacity-metrics-app.png" alt-text="Screenshot of the Fabric Capacity Metrics app showing Copilot in Fabric usage.":::
 
+Consider an incremental approach to Copilot adoption. Before you deploy AI-powered features broadly such as rolling out subscription summaries to hundreds of users or embedding AI narrative visuals on high-traffic dashboards, enable them for a small pilot group first. Use the [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) to measure consumption for each scenario, then extrapolate before you scale. Deploying broadly without validating consumption patterns can quickly exhaust your capacity.
+
 ## Background job classification and throttling
 
 Copilot operations in Fabric are classified as **background jobs**, which allows Fabric to handle a higher volume of Copilot requests during peak hours.
