@@ -115,7 +115,7 @@ Questions must be in a language that Copilot supports. For the current list of s
 
 ### Embedded capacities
 
-Semantic models in workspaces that use Embedded capacities (A or EM SKUs) are not supported. The workspace must use a Fabric or Power BI Premium capacity.
+Semantic models in workspaces that use Embedded capacities (A or EM SKUs) are not supported.
 
 ### Region availability
 
