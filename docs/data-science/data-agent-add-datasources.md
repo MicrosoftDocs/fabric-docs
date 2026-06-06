@@ -1,6 +1,6 @@
 ---
-title: Add a datasource to Data Agent
-description: Get started with Data Agent by adding your Fabric datasources, and learn about how data agents allow you to curate an expert over your data. 
+title: Add a data source to Data Agent
+description: Get started with Data Agent by adding your Fabric data sources, and learn about how data agents allow you to curate an expert over your data. 
 ms.author: jburchel
 author: jonburchel
 ms.reviewer: shradha
@@ -11,7 +11,7 @@ ms.search.form: Data Agent
 ai-usage: ai-assisted
 ---
 
-# Add and configure datasources in Fabric data agent
+# Add and configure data sources in Fabric data agent
 
 Data Agent in Microsoft Fabric enables organizations to build conversational experiences over their enterprise data. By connecting Fabric artifacts to a Data Agent, users can translate natural language questions into precise queries, empowering stakeholders, from analysts to executives, to unlock insights without writing a single line of code. This article walks through every data source that Data Agent supports today and the configuration capabilities available for each data source.
 
@@ -97,7 +97,7 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 
 ---
 
-## Configure Your Datasource
+## Configure Your Data Source
 
 # [SQL](#tab/sql)
 ### SQL Sources Supported Configurations
@@ -105,8 +105,8 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 |---|---|---|
 | Schema Selection | ✅ Yes | Select specific **Tables**, **Views**, and **Functions** to scope the agent. |
 | Agent Instructions | ✅ Yes | Guide the agent on when and how to route questions to this source. |
-| Datasource Instructions | ✅ Yes | Provide table descriptions, join logic, key column details, and business terminology to NL2SQL. |
-| Datasource Description | ✅ Yes | Description that helps the agent determine whether this data source is relevant to the user's question. |
+| Data Source Instructions | ✅ Yes | Provide table descriptions, join logic, key column details, and business terminology to NL2SQL. |
+| Data Source Description | ✅ Yes | Description that helps the agent determine whether this data source is relevant to the user's question. |
 | Example Queries | ✅ Yes | Supply natural-language/SQL pairs so the agent can learn complex query patterns. Top examples are automatically retrieved via vector similarity. |
 
 # [Eventhouse](#tab/kql)
@@ -115,8 +115,8 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 |---|---|---|
 | Schema Selection | ✅ Yes | Select specific **Tables**, **Materialized Views**, **Functions**, and **Shortcuts** to scope the agent. |
 | Agent Instructions | ✅ Yes | Guide the agent on when and how to route questions to this source. |
-| Datasource Instructions | ✅ Yes | Provide context about tables, MVs, Functions, and Shortcuts to NL2KQL. |
-| Datasource Description | ✅ Yes | Description that helps the agent determine whether this data source is relevant to the user's question. |
+| Data Source Instructions | ✅ Yes | Provide context about tables, MVs, Functions, and Shortcuts to NL2KQL. |
+| Data Source Description | ✅ Yes | Description that helps the agent determine whether this data source is relevant to the user's question. |
 | Example Queries | ✅ Yes | Supply natural-language/KQL pairs to teach the agent complex aggregation and join patterns. |
 
 
@@ -126,8 +126,8 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 |---|---|---|
 | Schema Selection | ✅ Yes* | Select tables to expose. Column-level control is available when **Prep for AI** is configured in Power BI. |
 | Agent Instructions | ✅ Yes | Guide the agent on when to choose the semantic model to answer questions. |
-| Datasource Instructions | ❌ No* | Instructions are managed through **Prep for AI** (AI Instructions and Verified Answers) on the semantic model side. Data Agent honors them when present. |
-| Datasource Description | ❌ No | Semantic Models do not support data source descriptions. |
+| Data Source Instructions | ❌ No* | Instructions are managed through **Prep for AI** (AI Instructions and Verified Answers) on the semantic model side. Data Agent honors them when present. |
+| Data Source Description | ❌ No | Semantic Models do not support data source descriptions. |
 | Example Queries | ❌ No* | Not currently supported for semantic models. Use Verified Answers in Prep for AI to include example DAX queries. |
 
 *\*Semantic models are primarily configured through [Prep for AI in Power BI](/power-bi/create-reports/copilot-prepare-data-ai), which offers AI Data Schemas, AI Instructions, and Verified Answers.*
@@ -139,8 +139,8 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 |---|---|---|
 | Schema Selection | ❌ No | Graph doesn't allow a user to scope their Agent on specific nodes and edges. |
 | Agent Instructions | ✅ Yes | Guide the agent on when and how to route questions to this source. |
-| Datasource Instructions | ✅ Yes | Passed to the NL2GQL engine to guide query generation. |
-| Datasource Description | ✅ Yes | Description that helps the agent determine whether this data source is relevant to the user's question. |
+| Data Source Instructions | ✅ Yes | Passed to the NL2GQL engine to guide query generation. |
+| Data Source Description | ✅ Yes | Description that helps the agent determine whether this data source is relevant to the user's question. |
 | Example Queries | ✅ Yes | Passed to NL2GQL to teach complex graph traversal patterns. |
 
 # [Ontology](#tab/Ontology)
@@ -150,8 +150,8 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 |---|---|---|
 | Schema Selection | ❌ No | Not supported for ontology data sources. |
 | Agent Instructions | ✅ Yes | Guide the agent on when to choose the semantic model to answer questions. |
-| Datasource Instructions | ❌ No | Not supported for ontology data sources. |
-| Datasource Description | ✅ Yes | Description that helps the agent determine whether this data source is relevant to the user's question. |
+| Data Source Instructions | ❌ No | Not supported for ontology data sources. |
+| Data Source Description | ✅ Yes | Description that helps the agent determine whether this data source is relevant to the user's question. |
 | Example Queries | ❌ No | Not supported for ontology data sources. |
 
 # [Unstructured Data](#tab/unstructured-data)

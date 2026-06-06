@@ -40,7 +40,7 @@ Customer-managed keys are currently supported for the following Fabric items:
 * SQL Database
 * Mirrored Database
 * Eventhouse (preview)
-* Graph (preview)
+* Graph
 
 This feature can't be enabled for a workspace that contains unsupported items. When customer-managed key encryption for a Fabric workspace is enabled, only supported items can be created in that workspace. To use unsupported items, create them in a different workspace that doesn't have this feature enabled.
 
@@ -134,10 +134,10 @@ To reinstate access, restore access to the customer-managed key in the Key Vault
 
 ## Disable the encryption
 
-To disable encrypting the workspace using a customer-managed key, go to *Workspace settings* disable **Apply customer-managed keys**. The workspace remains encrypted using Microsoft Managed keys.
+To disable encrypting the workspace using a customer-managed key, go to *Workspace settings* disable **Apply customer-managed keys**. The workspace remains encrypted using Microsoft Managed keys. Disabling CMK setting on your workspace is not recommended, as it limits the ability to add a new BYOK key to your tenant.
 
 > [!NOTE]
-> You can't disable customer-managed keys while encryption for any of the Fabric items in your workspace is in progress.
+> You can't disable customer-managed keys while encryption for any of the Fabric items in your workspace is in progress. 
 
 ## Monitoring
 
@@ -169,7 +169,7 @@ Before you configure your Fabric workspace with a customer-managed key, consider
 
 * CMK can be enabled using the Fabric portal and doesn't have API support.
 
-* CMK can be enabled and disabled for the workspace while the tenant level encryption setting is on. Once the tenant setting is turned off, you can no longer enable CMK for workspaces in that tenant or disable CMK for workspaces that already have CMK turned on in that tenant. Data in workspaces that enabled CMK before the tenant setting was turned off remains encrypted with the customer managed key. Keep the associated key active to be able to unwrap data in that workspace.
+* CMK can be enabled and disabled for the workspace while the tenant level encryption setting is on. Once the tenant setting is turned off, you can no longer enable CMK for workspaces in that tenant or disable CMK for workspaces that already have CMK turned on in that tenant. Data in workspaces that enabled CMK before the tenant setting was turned off remains encrypted with the customer managed key. Keep the associated key active to be able to unwrap data in that workspace. Disabling CMK setting on your workspace also limits the ability to add a new BYOK key to your tenant.
 
 ## Related content
 

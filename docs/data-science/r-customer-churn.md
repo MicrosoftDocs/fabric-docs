@@ -594,7 +594,7 @@ cat(paste0("Spark DataFrame saved to delta table: ", table_name))
 
 Access your saved table in Power BI:
 
-1. On the left, select **OneLake data hub**
+1. On the left, select **OneLake catalog**
 1. Select the lakehouse that you added to this notebook
 1. In the **Open this Lakehouse** section, select **Open**
 1. On the ribbon, select **New semantic model**. Select `df_pred_results`, and then select **Continue** to create a new Power BI semantic model linked to the predictions

@@ -46,7 +46,7 @@ Do steps from one of the following sections, which opens a side panel where you 
     :::image type="content" source="./media/set-alerts-business-events/set-alert-from-detail-page.png" alt-text="Screenshot of the Azure blob storage events detail page with Set alert button selected." lightbox="./media/set-alerts-business-events/set-alert-from-detail-page.png":::
 
 
-[!INCLUDE [rule-details](../includes/rule-details.md)]
+[!INCLUDE [rule-details](../../real-time-intelligence/data-activator/includes/rule-details.md)]
 
 ## Monitor section
 
@@ -86,11 +86,11 @@ Do steps from one of the following sections, which opens a side panel where you 
     
     :::image type="content" source="./media/set-alerts-business-events/review-connect.png" alt-text="Screenshot of the Review + connect page of the Connect data source wizard." lightbox="./media/set-alerts-business-events/review-connect.png":::    
 
-[!INCLUDE [rule-condition-events](../includes/rule-condition-events.md)]
+[!INCLUDE [rule-condition-events](../../real-time-intelligence/data-activator/includes/rule-condition-events.md)]
 
-[!INCLUDE [rule-action](../includes/rule-action.md)]
+[!INCLUDE [rule-action](../../real-time-intelligence/data-activator/includes/rule-action.md)]
 
-[!INCLUDE [rule-save-location](../includes/rule-save-location.md)]
+[!INCLUDE [rule-save-location](../../real-time-intelligence/data-activator/includes/rule-save-location.md)]
 
 ## Create alert
 

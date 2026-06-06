@@ -397,4 +397,5 @@ The following tables contain more information about a copy activity in Lakehouse
 
 ## Related content
 
+- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
 - [Lakehouse connector overview](connector-lakehouse-overview.md)

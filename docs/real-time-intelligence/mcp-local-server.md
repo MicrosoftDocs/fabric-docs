@@ -3,10 +3,11 @@ title: Get started with the local MCP server for Real-Time Intelligence
 description: Learn how to set up and use the local Model Context Protocol (MCP) server for Real-Time Intelligence. The server enables AI agents to interact with RTI components like Eventhouse.
 ms.reviewer: sharmaanshul
 ms.topic: how-to
-ms.date: 04/13/2026
+ms.date: 06/03/2026
 ms.search.form: MCP, RTI, AI
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
+ms.update-cycle: 90-days
 
 #CustomerIntent: As a Fabric RTI AI developer, I want to use the RTI MCP server to create AI agents and AI applications.
 ---

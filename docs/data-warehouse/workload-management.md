@@ -2,7 +2,7 @@
 title: Workload Management
 description: Learn how Microsoft manages data warehouse compute resources to service workloads.
 ms.reviewer: brmyers, sosivara
-ms.date: 03/11/2026
+ms.date: 05/26/2026
 ms.topic: concept-article
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
@@ -64,7 +64,7 @@ Each pool scales independently based on query demand but never exceeds 50% of th
 
 ## Sessions
 
-The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] have a user session limit of 724 per workspace. When this limit is reached an error will be returned: `The user session limit for the workspace is 724 and has been reached`.
+The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] have a user session limit of 2048 per workspace. When this limit is reached an error will be returned: `The user session limit for the workspace is 2048 and has been reached`.
 
 > [!NOTE]
 > As Microsoft Fabric is a SaaS platform, there are many system connections that run to continuously optimize the environment. DMVs show both system and user sessions. For more information, see [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md).
