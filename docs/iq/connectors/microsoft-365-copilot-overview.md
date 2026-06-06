@@ -54,6 +54,8 @@ The **Fabric data available in M365 Copilot** setting in the Microsoft Admin Cen
 
 When an admin turns off this setting, users don't see any Fabric context in Copilot responses.
 
+For more information, see [Use Power BI data in Microsoft 365 Copilot Chat](/microsoft-365/copilot/copilot-powerbi-copilot-chat).
+
 ### Share Fabric data with your Microsoft 365 services (Fabric Admin Portal)
 
 The **Share Fabric data with your Microsoft 365 services** setting controls whether Fabric proactively shares metadata without user action. This sharing enables Power BI content to be suggested based on user activity. When only this setting is turned off:
@@ -110,6 +112,14 @@ The first query against a report might take longer than subsequent queries as Co
 ### Language support
 
 Questions must be in a language that Copilot supports. For the current list of supported languages, see [Microsoft 365 Copilot setup: language support](/microsoft-365-copilot/microsoft-365-copilot-setup#language-support).
+
+### Embedded capacities
+
+Semantic models in workspaces that use Embedded capacities (A or EM SKUs) are not supported. Pro, Premium Per User (PPU), Premium, and Fabric capacities are all supported.
+
+### Region availability
+
+This feature is supported in all regions with broad Fabric support. Regions where Power BI is the only available Fabric workload are not supported. For the current list of supported regions, see [Fabric region availability](/fabric/admin/region-availability).
 
 ## Share feedback
 
