@@ -113,6 +113,14 @@ The first query against a report might take longer than subsequent queries as Co
 
 Questions must be in a language that Copilot supports. For the current list of supported languages, see [Microsoft 365 Copilot setup: language support](/microsoft-365-copilot/microsoft-365-copilot-setup#language-support).
 
+### Embedded capacities
+
+Semantic models in workspaces that use Embedded capacities (A or EM SKUs) are not supported. The workspace must use a Fabric or Power BI Premium capacity.
+
+### Region availability
+
+This feature is supported in all regions with broad Fabric support. Regions where Power BI is the only available Fabric workload are not supported. For the current list of supported regions, see [Fabric region availability](/fabric/admin/region-availability).
+
 ## Share feedback
 
 Your feedback helps improve this experience. Submit feedback when:
