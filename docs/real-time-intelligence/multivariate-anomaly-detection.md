@@ -165,7 +165,7 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** pa
 
     ```python
     sliding_window = 200
-    param   s = {"sliding_window": sliding_window}
+    params = {"sliding_window": sliding_window}
     ```
 
     ```python
@@ -230,14 +230,15 @@ For general information, see [Create a KQL queryset](create-query-set.md).
             import os
             import shutil
             import mlflow
-            model_dir = 'C:/Temp/mvad_model'
+            work_dir = os.environ.get("UPLOAD_PATH")
+            model_dir = work_dir + '/mvad_model'
             model_data_dir = model_dir + '/data'
             os.mkdir(model_dir)
-            shutil.move('C:/Temp/MLmodel', model_dir)
-            shutil.move('C:/Temp/conda.yaml', model_dir)
-            shutil.move('C:/Temp/requirements.txt', model_dir)
-            shutil.move('C:/Temp/python_env.yaml', model_dir)
-            shutil.move('C:/Temp/python_model.pkl', model_dir)
+            shutil.move(work_dir + '/MLmodel', model_dir)
+            shutil.move(work_dir + '/conda.yaml', model_dir)
+            shutil.move(work_dir + '/requirements.txt', model_dir)
+            shutil.move(work_dir + '/python_env.yaml', model_dir)
+            shutil.move(work_dir + '/python_model.pkl', model_dir)
             features_cols = kargs["features_cols"]
             trim_result = kargs["trim_result"]
             test_data = df[features_cols]
