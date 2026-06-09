@@ -65,6 +65,10 @@ Storage mode is a property of a table in the semantic model. When a semantic mod
 
 * **Direct Lake on SQL** can use the data from a single Fabric data source with Delta tables. The SQL analytics endpoint is used for Delta table and SQL view discovery and permission checks. Direct Lake on SQL endpoints fall back to DirectQuery table storage mode when it can't load the data directly from a Delta table, such as when the data source is a SQL view or when the warehouse uses SQL-based granular access control. The semantic model property, **Direct Lake behavior**, controls the fallback behavior.
 
+## Choose between Direct Lake on OneLake and Direct Lake on SQL
+
+Use the following decision matrix to choose the option that best fits your data architecture, security model, and modeling requirements.
+
 ## Comparison of storage modes
 
 The following table compares Direct Lake storage mode to Import and DirectQuery storage modes.
