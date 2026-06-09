@@ -28,6 +28,9 @@ To enable Customer Lockbox for [!INCLUDE [product-name](../includes/product-name
 
 ## Microsoft access request
 
+> [!NOTE]
+> To ensure the request is visible, the user must have an active Global Administrator role in Entra ID before the lockbox request is initiated by Microsoft.
+
 In cases where the Microsoft engineer can't troubleshoot your issue by using standard tools, elevated permissions are requested using the [Just-In-Time](/azure/azure-resource-manager/managed-applications/request-just-in-time-access) (JIT) access service. The request can come from the original support engineer, or from a different engineer.
 
 After the access request is submitted, the JIT service evaluates the request, considering factors such as:
