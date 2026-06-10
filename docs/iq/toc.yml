@@ -205,6 +205,22 @@ items:
               href: plan/planning-reference-formulas/conditional-statements.md
             - name: Logical functions
               href: plan/planning-reference-formulas/logical-functions.md
+            - name: Math functions
+              items: 
+                - name: Aggregation and statistical
+                  href: plan/planning-reference-formulas/math-functions/aggregation-statistical-functions.md
+                - name: Arithmetic
+                  href: plan/planning-reference-formulas/math-functions/arithmetic-functions.md
+                - name: Exponential and logarithmic
+                  href: plan/planning-reference-formulas/math-functions/exponential-logarithmic-functions.md
+                - name: Financial
+                  href: plan/planning-reference-formulas/math-functions/financial-functions.md
+                - name: Random and lookup
+                  href: plan/planning-reference-formulas/math-functions/random-lookup-functions.md
+                - name: Rounding and formatting
+                  href: plan/planning-reference-formulas/math-functions/rounding-formatting-functions.md
+            - name: Text formatting functions
+              href: plan/planning-reference-formulas/text-functions.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
