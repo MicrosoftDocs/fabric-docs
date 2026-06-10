@@ -17,10 +17,11 @@ This article describes design topics relevant to developing Direct Lake semantic
 
 You can create a Direct Lake semantic model in [Power BI Desktop](direct-lake-power-bi-desktop.md) or from many Fabric items in the browser. For example, from an open Lakehouse you can choose **New semantic model** to create a new semantic model in Direct Lake storage mode.
 
-There are two forms of Direct Lake storage mode, summarized here. See the [Key concepts and terminology](direct-lake-overview.md#key-concepts-and-terminology) section for more information.
+Direct Lake storage mode has two forms. Use the following table to choose the Direct Lake type that best fits your scenario. For more information, see [full comparison of storage modes](direct-lake-overview.md#key-concepts-and-terminology).
 
-- Use **Direct Lake on OneLake** for compatibility with [OneLake security](../onelake/security/get-started-security.md#onelake-security), more modeling features, and faster query performance.
-- Use **Direct Lake on SQL** when you depend on security rules defined in the SQL analytics endpoint with [delegated identity mode](../onelake/security/sql-analytics-endpoint-onelake-security.md#access-modes-in-sql-analytics-endpoint), or you need fallback to DirectQuery.
+| Use **Direct Lake on OneLake** when...| Use **Direct Lake on SQL** when... |
+| -- | -- |
+| &bull; You need faster query performance. <br> &bull; You use Delta tables from any Fabric data source, not just a lakehouse or warehouse.<br>&bull; You need composite modeling with Import or DirectQuery tables.<br>&bull; You want to use [OneLake security](../onelake/security/get-started-security.md#onelake-security).<br>&bull; You need modeling features like calculated columns or calculated tables that reference Direct Lake tables (preview).<br>&bull; You want consistent Direct Lake behavior without DirectQuery fallback (`DirectLakeOnly` mode). | &bull; You depend on security rules defined in the SQL analytics endpoint with [delegated identity mode](../onelake/security/sql-analytics-endpoint-onelake-security): RLS, CLS, OLS. <br>&bull; Your model is based on SQL analytics endpoint tables or views from a single lakehouse or warehouse.<br>&bull; Unsupported Direct Lake queries should fall back to DirectQuery (for example, queries against SQL views). <br><br><br> |
 
 The following table shows the most common creation methods for each type of Direct Lake semantic model.
 
