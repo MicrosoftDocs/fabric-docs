@@ -35,7 +35,7 @@ This table lists regions where all Fabric workloads are available.
 | Central US <sup>6</sup>                     | Germany West Central <sup>8</sup> |        |                    | East Asia                           |
 | East US <sup>4, 5, 8</sup>                  | Italy North <sup>6</sup>     |             |                    | Indonesia Central <sup>1, 8</sup>   |
 | East US 2 <sup>5, 8</sup>                   | Norway East                  |             |                    | Israel Central <sup>3, 6, 8</sup>   |
-| Mexico Central <sup>6, 8</sup>              | Poland Central <sup>6, 8</sup> |           |                    | Japan East <sup>8</sup>                         |
+| Mexico Central <sup>6, 8</sup>              | Poland Central <sup>6, 8</sup> |           |                    | Japan East                          |
 | North Central US                            | Spain Central <sup>6, 8</sup> |            |                    | Japan West <sup>3, 5, 6, 8</sup>    |
 | South Central US <sup>1, 2, 3, 4, 5, 6, 8</sup> | Sweden Central <sup>7</sup> |            |                    | Korea Central                       |
 | West US                                     | Switzerland North            |             |                    | Malaysia West <sup>1, 8</sup>       |
@@ -52,7 +52,7 @@ This table lists regions where all Fabric workloads are available.
 <sup>5</sup> [Plan (preview)](../iq/plan/overview.md) isn't available in these regions.
 <sup>6</sup> [Schema Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) isn't available in these regions.
 <sup>7</sup> [Business Continuity Disaster Recovery (BCDR)](/azure/reliability/reliability-fabric#cross-region-disaster-recovery-and-business-continuity) for Power BI isn't available by default in this region. Power BI is supported in this region but not in its paired region.
-<sup>8</sup> [Fabric App](../apps/overview.md) isn't available in these regions.
+<sup>8</sup> [Fabric App (preview)](../apps/overview.md) isn't available in these regions.
 
 ### Power BI
 
