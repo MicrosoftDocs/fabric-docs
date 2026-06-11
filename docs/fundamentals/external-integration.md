@@ -97,9 +97,11 @@ By using these open file formats and APIs, OneLake ensures that data stored in O
 
 The OneLake and Azure Databricks integration provides a foundation for unified analytics and AI. This integration combines OneLake's governed, open data estate with Databricks' data engineering and machine learning capabilities. The bidirectional integration between OneLake and Azure Databricks takes the following forms:
 
-- **[Catalog mirroring](../mirroring/azure-databricks.md)**: Mirrors Unity Catalog tables into OneLake as shortcuts, enabling Fabric workloads to access Databricks-managed data.
+- **[Catalog mirroring](../mirroring/azure-databricks.md)**: Mirrors Unity Catalog tables into OneLake as shortcuts, enabling Fabric workloads to discover and access Databricks-managed data. Use catalog mirroring when you want to bring Databricks datasets into Fabric for analysis with Fabric compute engines.
 
-- **[Databricks access to OneLake](../onelake/onelake-azure-databricks.md)**: Databricks can read and write OneLake data by using Delta Lake compatibility and ADLS Gen2 APIs.
+- **[OneLake catalog federation](/azure/databricks/query-federation/onelake)**: Connects Unity Catalog to a OneLake catalog, automatically synchronizing schemas and tables so that Fabric lakehouse items appear in Unity Catalog alongside Databricks assets. Queries run on Azure Databricks compute while reading data from OneLake without copying (zero-copy). Governance remains centralized in OneLake. Use catalog federation when you want Azure Databricks to discover and query OneLake data with governed, table-level access and schema synchronization.
+
+- **[Direct access to OneLake](../onelake/onelake-azure-databricks.md)**: Databricks can read and write OneLake data directly by using Delta Lake compatibility and ADLS Gen2 APIs. While direct access provides file-level read/write operations, catalog federation provides governed, table-level discovery and schema synchronization within Unity Catalog. Use direct access for operational read/write scenarios where file-level control is needed.
 
 #### Snowflake integration
 

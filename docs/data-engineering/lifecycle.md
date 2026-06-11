@@ -23,9 +23,8 @@ The following table lists the runtime name, and release dates for supported Azur
 
 | Runtime name                                              | Release stage | End of Support date |
 |-----------------------------------------------------------|---------------|---------------------|
-| [Runtime 2.0 based on Apache Spark 4.0](./runtime-2-0.md) | Public Preview | Not Applicable      |
+| [Runtime 2.0 based on Apache Spark 4.1](./runtime-2-0.md) | Public Preview | Not Applicable      |
 | [Runtime 1.3 based on Apache Spark 3.5](./runtime-1-3.md) | GA            | September 30, 2026**  |
-| [Runtime 1.2 based on Apache Spark 3.4](./runtime-1-2.md) | EOSA          | March 31, 2026      |
 
 ** Runtime 1.3 will enter Long Term Support (LTS) on October 1, 2026, for a period of six months, extending support through March 2027.
 
@@ -51,11 +50,10 @@ _* The expected duration of runtime in each stage. These timelines are provided 
 ## Versioning
 
 Our runtime version numbering, while closely related to Semantic Versioning, follows a slightly different approach. The
-runtime major version corresponds to the Apache Spark major version. Therefore, Runtime 1 corresponds to Spark version 3. Similarly, the  Runtime 2 aligns with Spark 4.0. It's essential to note that between the current runtimes, changes may occur, including the addition or removal of different libraries. Additionally, our platform offers [a library management feature](./library-management.md) that empowers users to install any desired libraries.
+runtime major version corresponds to the Apache Spark major version. Therefore, Runtime 1 corresponds to Spark version 3. Similarly, Runtime 2 aligns with Spark 4.1. It's essential to note that between the current runtimes, changes may occur, including the addition or removal of different libraries. Additionally, our platform offers [a library management feature](./library-management.md) that empowers users to install any desired libraries.
 
 ## Related content
 
 - [Apache Spark Runtimes in Fabric - Overview, Versioning, and Multiple Runtimes Support](./runtime.md)
-- [Runtime 2.0 (Spark 4.0, Java 21, Python 3.12, Delta Lake 4.0)](./runtime-2-0.md)
+- [Runtime 2.0 (Spark 4.1, Java 21, Python 3.13, Delta Lake 4.1)](./runtime-2-0.md)
 - [Runtime 1.3 (Spark 3.5, Java 11, Python 3.11, Delta Lake 3.2)](./runtime-1-3.md)
-- [Runtime 1.2 (Spark 3.4, Java 11, Python 3.10, Delta Lake 2.4)](./runtime-1-2.md)

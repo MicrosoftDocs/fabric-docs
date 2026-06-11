@@ -186,13 +186,14 @@ Currently, the connector:
 
 * Supports data retrieval or read from Fabric warehouses and SQL analytics endpoints of lakehouse items.
 * Supports writing data to a warehouse table using different save modes - this is only available with the latest GA runtime, i.e., [Runtime 1.3](runtime-1-3.md). 
-* With `Private Link` enabled at tenant level write operation is not supported and with `Private Link` enabled at workspace level, both read and write operations are not supported. 
+* With `Private Link` enabled, read and write operations are supported at both tenant and workspace levels. Writes use JDBC batch insert strategies. For more information, see [Private Link support for the Spark connector](spark-data-warehouse-connector-private-link.md).
 * Fabric DW now supports `Time Travel` however this connector doesn't work for a query with time travel syntax. 
 * Retains the usage signature like the one shipped with Apache Spark for Azure Synapse Analytics for consistency. However, it's not backward compatible to connect and work with a dedicated SQL pool in Azure Synapse Analytics.
 * Column names with special characters will be handled by adding escape character before the query, based on 3 part table/view name, is submitted. In a custom or passthrough-query based read, users are required to escape column names that would contain special characters.
 
 ## Related content
 
+* [Private link support for the Spark connector](spark-data-warehouse-connector-private-link.md)
 * [Apache Spark runtimes in Fabric](runtime.md)
 * [Apache Spark monitoring overview](spark-monitoring-overview.md)
 * [Security for data warehousing in Fabric](../data-warehouse/security.md)

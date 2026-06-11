@@ -96,11 +96,11 @@ In the **Action** section, select one of the following actions to take when the 
     :::image type="content" source="media/activator-get-data/action-teams.png" alt-text="Screenshot of the Send Microsoft Teams notification section in the Add Rule side pane.":::
 
 * **Run Fabric activities**:
-    To configure the alert to launch a Fabric pipeline, Dataflow, Spark job, notebook, or User Data Function when the condition is met, follow these steps:
-    1. For **Select action**, select **Run Pipeline**, **Run Dataflow**, **Run Spark job**, **Run Notebook**, or **Run User Data Function (preview)**.
-    1. On Select Fabric item to run, select the Fabric item (pipeline, dataflow, notebook, Spark job, or function) from the list.
+    To configure the alert to launch a Fabric pipeline, Dataflow, Spark job, notebook, User Data Function, Copy job (preview), or publish a business event (preview) when the condition is met, follow these steps:
+    1. For **Select action**, select **Run Pipeline**, **Run Dataflow**, **Run Spark job**, **Run Notebook**, **Run User Data Function**, **Run Copy job (preview)**, or **Publish business event (preview)**.
+    1. On Select Fabric item to run, select the Fabric item (pipeline, dataflow, notebook, Spark job, function, copy job, or publish a business event (preview)) from the list.
     1. Select Add parameter and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter.
-    You can pass parameters from the alert data by typing `@` or by selecting the button next to the text box. For example, `@BikepointID`.
+    You can pass parameters from the alert data by typing `@` or by selecting the button next to the text box. For example, `@BikepointID`. Copy jobs (preview) don't accept parameters, so this step doesn't apply to them.
         :::image type="content" source="media/activator-get-data/fabric-activities.png" alt-text="Screenshot of the Run Fabric activities section in the Add Rule side pane.":::
   * **Custom actions**:
       To configure the alert to call a custom action when the condition is met, follow these steps:

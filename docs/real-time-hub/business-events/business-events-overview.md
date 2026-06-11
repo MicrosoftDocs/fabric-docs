@@ -12,10 +12,11 @@ ms.topic: overview
 
 You can generate business events from the following sources:
 
+- Activator (from Power BI reports, Real-Time Dashboards, KQL queries, and Fabric Warehouse SQL queries)
 - Spark notebooks
 - User data functions (UDFs)
  
-Once published, these events are available in Real-Time hub, where you can set up alerts to take actions such as the following ones:
+Once published, these events are available in Real-Time hub, where you can take actions such as the following ones:
 
 - Alert and automate downstream processes (Activator – Email, Teams)
 - Execute custom logic (User Data Functions)
@@ -24,6 +25,8 @@ Once published, these events are available in Real-Time hub, where you can set u
 - Run distributed processing (Spark Jobs)
 - Prepare and move data (Dataflows Gen2)
 - Automate business processes (Power Automate)
+- [Query and analyze historical events (Eventhouse)](business-events-eventhouse.md)
+- [Visualize live events (Real-Time Dashboard)](business-events-eventhouse.md)
 
 The following diagram shows how a manufacturing system detects abnormal vibration using a Spark Notebook, analyzes it, and publishes a `VibrationCriticalDetected` business event that triggers custom business logic in a User Data Function (UDF) through Activator.
 
@@ -78,8 +81,9 @@ Business Events enable a fully **decoupled architecture** where publishers and c
 
 In Microsoft Fabric:
 
-- **Eventstream**, **Notebook**, and **User Data Function (UDF)** act as publishers, emitting business events into the real-time ecosystem.
+- **Activator**, **Eventstream**, **Notebook**, and **User Data Function (UDF)** act as publishers, emitting business events into the real-time ecosystem.
 - **Activator** runs as a consumer, subscribing to events and triggering automated workflows, actions, or downstream processes.
+- **Eventhouse** automatically stores every published business event, enabling [KQL queries, historical analysis, and Real-Time Dashboards](business-events-eventhouse.md).
 
 This model lets you add new consumers - such as analytics flows, pipelines, automations, or external integrations - without changing or coordinating with the original publisher. New consumers can subscribe to existing events at any time, and the architecture supports scalable, parallel processing so multiple consumers can act on the same event simultaneously without affecting publisher code.
 
@@ -94,7 +98,7 @@ The [Schema Registry](../../real-time-intelligence/schema-sets/schema-registry-o
 When you use the Schema Registry as the single source of truth, every Fabric component, whether producing or consuming events, rely on the **same contract**:
 
 - **Publishers** such as Eventstream, Notebook, and User Data Functions choose the appropriate schema from the registry when publishing a business event.
-- **Consumers** such as Activator can subscribe with the confidence that field names, data types, structure, and semantics are always aligned.
+- **Consumers** such as Activator and eventhouse can subscribe with the confidence that field names, data types, structure, and semantics are always aligned.
 
 This usage of the Schema Registry eliminates the most common integration problems: 
 
@@ -120,7 +124,7 @@ This level of consistency scales across the organization, enabling publishers an
 
 By ensuring every event adheres to the same business-aligned schema: 
 
-- Analytics teams get clean, structured, and predictable data. 
+- Analytics teams get clean, structured, and predictable data in their [eventhouse tables and Real-Time Dashboards](business-events-eventhouse.md). 
 
 - Activator trigger actions are based on well formed and standardized payloads with full business context. 
 
@@ -136,4 +140,5 @@ End-to-end observability ensures users can inspect business events - from what p
 - [Business Events concepts and terminology](business-events-concepts.md) - Explore the core concepts of business events in Microsoft Fabric, including what they are, why they matter, and the key terminology that underpins this powerful real-time capability.
 - [Tutorial: Publish business events from a Spark Notebook and subscribe to them using Activator](tutorial-business-events-notebook-user-data-function-activator.md) - Learn how to publish business events using Spark Notebook and react to them using User Data Function (UDF) through Activator.
 - [Tutorial: Publish business events from a User Data Function and subscribe to them using Activator](tutorial-business-events-user-data-function-activation-email.md) - Learn how to publish business events using User Data Function (UDF) and get notified via email using Activator.
+- [Eventhouse and Real-Time Dashboard integration](business-events-eventhouse.md) - Query, analyze, and visualize your business events using eventhouse and Real-Time Dashboards.
     

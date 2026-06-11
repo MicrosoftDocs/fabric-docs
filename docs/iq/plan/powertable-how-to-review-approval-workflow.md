@@ -1,5 +1,5 @@
 ---
-title: Review changes in approval workflow
+title: Review Changes in Approval Workflow
 description: Learn how to review and approve pending data changes in a PowerTable approval workflow to ensure controlled and governed data updates.
 ms.date: 03/11/2026
 ms.topic: how-to

@@ -3,13 +3,11 @@ title: Graph and Relational Database Comparison
 description: Compare graph databases and relational databases, highlighting key differences, data model comparisons, use cases, and advantages in analytics.
 #customer intent: As a data professional, I want to understand the differences between graph databases and relational databases so that I can choose the right approach for my data workload.
 ms.topic: concept-article
-ms.date: 03/31/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ---
 
 # Graph and relational database comparison
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 A [**graph database**](graph-database.md) stores and queries data as a network of nodes (entities) and edges (relationships). This approach differs from the tables-and-rows format of relational databases. Graph databases excel at modeling and analyzing highly connected data, such as social networks, knowledge graphs, recommendation systems, and fraud detection.
 

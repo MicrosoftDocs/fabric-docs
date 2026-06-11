@@ -33,9 +33,9 @@ For **Condition**, select one of the following options:
     :::image type="content" source="./media/set-alerts-data-streams/event-condition.png" alt-text="Screenshot that shows the condition for an alert." lightbox="./media/set-alerts-data-streams/event-condition.png":::
 - To monitor events grouped by, select **On each event grouped by**, select a grouping field, a field for filtering, condition, and a value to be checked against. 
 
-[!INCLUDE [rule-action](./includes/rule-action.md)]
+[!INCLUDE [rule-action](../real-time-intelligence/data-activator/includes/rule-action.md)]
 
-[!INCLUDE [rule-save-location](./includes/rule-save-location.md)]
+[!INCLUDE [rule-save-location](../real-time-intelligence/data-activator/includes/rule-save-location.md)]
 
 ## Create alert
 

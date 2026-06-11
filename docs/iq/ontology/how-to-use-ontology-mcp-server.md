@@ -1,5 +1,5 @@
 ---
-title: Use ontology MCP server
+title: Use Ontology MCP Server
 description: Learn how to consume ontology (preview) as a Model Context Protocol (MCP) server.
 ms.date: 04/14/2026
 ms.topic: how-to

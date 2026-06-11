@@ -15,6 +15,9 @@ Dataflows enable you to connect to, transform, combine, and load data to storage
 
 A dataflow refresh can be triggered in one of two ways, either on-demand or by setting up a refresh schedule. A scheduled refresh is run based on the specific days and times you specify.
 
+> [!NOTE]
+> If at least one query of a Dataflow Gen2 is configured to use a gateway, then all queries of this dataflow will use that gateway for data movement. 
+
 ## Prerequisites
 
 Here are the prerequisites for refreshing a dataflow:

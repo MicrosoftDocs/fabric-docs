@@ -4,6 +4,8 @@ description: Learn about how you can use an Eventhouse to store and query vector
 ms.reviewer: sharmaanshul
 ms.topic: tutorial
 ms.date: 08/19/2025
+ms.collection: ce-skilling-ai-copilot
+ms.update-cycle: 180-days
 ms.subservice: rti-eventhouse
 ms.search.form: Eventhouse
 ---
@@ -121,7 +123,7 @@ The following steps are used to import the embedded Wikipedia data and write it 
     article_df.head()
     ```
 
-1. To write to the eventhouse, enter your Cluster URI, which can be found on the [system overview page](manage-monitor-eventhouse.md#view-system-overview), and the name of the database. The table is created in the notebook and later referenced in the query.
+1. To write to the eventhouse, enter your Cluster URI, which can be found on the [system overview page](manage-monitor-eventhouse.md#system-overview), and the name of the database. The table is created in the notebook and later referenced in the query.
 
     ```python
     # replace with your Eventhouse Cluster URI, Database name, and Table name

@@ -15,8 +15,29 @@ This article describes how to get OneLake events as an eventstream in Fabric Rea
 Real-Time hub allows you to discover and subscribe to changes in files and folders in OneLake, and then react to those changes in real-time. For example, you can react to changes in files and folders in Lakehouse and use Activator alerting capabilities to set up alerts based on conditions and specify actions to take when the conditions are met. This article explains how to explore OneLake events in Real-Time hub.
 
 
-[!INCLUDE [fabric-onelake-source-connector-prerequisites](../real-time-intelligence/event-streams/includes/connectors/fabric-onelake-source-connector-prerequisites.md)]
+Here are the supported OneLake events:
+
+| Event type name | Description |
+| --------------- | ----------- |
+| Microsoft.Fabric.OneLake.FileCreated | Raised when a file is created or replaced in OneLake. |
+| Microsoft.Fabric.OneLake.FileDeleted | Raised when a file is deleted in OneLake. |
+| Microsoft.Fabric.OneLake.FileRenamed | Raised when a file is renamed in OneLake. |
+| Microsoft.Fabric.OneLake.FolderCreated | Raised when a folder is created in OneLake. |
+| Microsoft.Fabric.OneLake.FolderDeleted | Raised when a folder is deleted in OneLake. |
+| Microsoft.Fabric.OneLake.FolderRenamed | Raised when a folder is renamed in OneLake. |
+
 For more information, see [Explore OneLake events](explore-fabric-onelake-events.md).
+
+[!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
+
+[!INCLUDE [outbound-access-protection-note](./includes/outbound-access-protection-note.md)]
+
+[!INCLUDE [workspace-private-links-note](./includes/workspace-private-links-note.md)]
+
+## Prerequisites
+
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
+- SubscribeOneLakeEvent permission on the data sources.
 
 ## Create streams for OneLake events
 You can create streams for OneLake events in Real-Time hub using one of the ways:

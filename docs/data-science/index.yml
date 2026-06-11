@@ -73,7 +73,7 @@ landingContent:
             url: models-experiments-rbac.md
           - text: Machine learning models
             url: machine-learning-model.md 
-          - text: AI functions
+          - text: AI Functions
             url: ./ai-functions/overview.md
           - text: What is semantic link?
             url: semantic-link-overview.md

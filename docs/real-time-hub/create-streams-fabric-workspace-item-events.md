@@ -13,8 +13,32 @@ ms.author: spelluru
 
 This article describes how to get Fabric workspace item events as an eventstream in Fabric Real-Time hub.
 
-[!INCLUDE [fabric-workspace-source-connector-prerequisites](../real-time-intelligence//event-streams/includes/connectors/fabric-workspace-source-connector-prerequisites.md)]
+Fabric workspace item events are discrete Fabric events that occur when contents of your Fabric Workspace is changed. These changes include creating, updating, or deleting of Fabric items except for the item types listed in the following note.
+[!INCLUDE [unsupported-itemtypes-in-workspaceevents](../real-time-intelligence/event-streams/includes/connectors/unsupported-itemtypes-in-workspaceevents.md)]
 
+With Fabric eventstreams, you can capture these Fabric workspace events, transform them, and route them to various destinations in Fabric for further analysis. This seamless integration of Fabric workspace events within Fabric eventstreams gives you greater flexibility for monitoring and analyzing activities in your Fabric workspace.
+
+Here are the supported Fabric workspace events:
+
+- Microsoft.Fabric.ItemCreateSucceeded
+- Microsoft.Fabric.ItemCreateFailed
+- Microsoft.Fabric.ItemUpdateSucceeded
+- Microsoft.Fabric.ItemUpdateFailed
+- Microsoft.Fabric.ItemDeleteSucceeded
+- Microsoft.Fabric.ItemDeleteFailed
+
+[!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
+
+[!INCLUDE [outbound-access-protection-note](./includes/outbound-access-protection-note.md)]
+
+[!INCLUDE [workspace-private-links-note](./includes/workspace-private-links-note.md)]
+
+[!INCLUDE [deprecated-fabric-workspace-events](../real-time-intelligence/event-streams/includes/connectors/deprecated-fabric-workspace-events.md)]
+
+## Prerequisites
+
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
+- A Fabric workspace with events you want to track.
 
 ## Create streams for Fabric workspace item events
 
@@ -44,7 +68,7 @@ You can create streams for Fabric workspace item events in Real-Time hub using o
 
 ## Configure and create an eventstream
 
-[!INCLUDE [fabric-workspace-source-connector-configuration](../real-time-intelligence//event-streams/includes/connectors/fabric-workspace-source-connector-configuration.md)]
+[!INCLUDE [fabric-workspace-source-connector-configuration](../real-time-intelligence/event-streams/includes/connectors/fabric-workspace-source-connector-configuration.md)]
 
 
 ## View stream from the Real-Time hub page

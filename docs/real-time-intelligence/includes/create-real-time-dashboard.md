@@ -2,7 +2,7 @@
 title: Include file for creating a new Real-Time Dashboard
 description: Include file with the steps for creating a new Real-Time Dashboard in Microsoft Fabric.
 ms.topic: include
-ms.date: 12/12/2025
+ms.date: 05/20/2026
 ---
 
 The Real-Time Dashboard exists within the context of a workspace. A new Real-Time dashboard is always associated with the workspace you're using when you create it.

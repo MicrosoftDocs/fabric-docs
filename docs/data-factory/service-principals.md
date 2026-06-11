@@ -24,7 +24,6 @@ The SPN authentication type currently supports these data sources:
 * Azure Synapse Analytics
 * Azure SQL Database
 * Dataverse
-* SharePoint online
 * Web
 
 > [!NOTE]

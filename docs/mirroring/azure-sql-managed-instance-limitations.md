@@ -121,7 +121,7 @@ For troubleshooting, see:
 
 ## SQL analytics endpoint limitations
 
-- The SQL analytics endpoint is the same as [the Lakehouse SQL analytics endpoint](../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It's the same read-only experience. See [SQL analytics endpoint limitations](../data-warehouse/limitations.md#limitations-of-the-sql-analytics-endpoint).
+- The SQL analytics endpoint is the same as [the Lakehouse SQL analytics endpoint](../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It's the same read-only experience. See [SQL analytics endpoint limitations](../data-engineering/lakehouse-sql-analytics-endpoint.md#limitations).
 - Source schema hierarchy is replicated to the mirrored database. For mirrored databases created before this feature enabled, the source schema is flattened, and schema name is encoded into the table name. If you want to reorganize tables with schemas, recreate your mirrored database. For more information, see [Replicate source schema hierarchy](troubleshooting.md#replicate-source-schema-hierarchy).
 
 ## Supported regions

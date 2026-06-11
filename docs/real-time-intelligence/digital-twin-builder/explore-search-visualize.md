@@ -1,5 +1,5 @@
 ---
-title: Search and visualize your modeled data
+title: Search and Visualize Your Modeled Data
 description: Learn about ways to explore your data in digital twin builder (preview).
 ms.date: 07/01/2025
 ms.topic: how-to

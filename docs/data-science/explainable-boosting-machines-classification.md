@@ -1,5 +1,5 @@
 ---
-title: Train classification models using explainable boosting machines (preview)
+title: Train classification models using explainable boosting machines
 description: Learn how to train classification models using explainable boosting machines
 ms.author: scottpolly
 author: s-polly
@@ -9,13 +9,11 @@ ms.topic: how-to
 ms.date: 06/30/2025
 ---
 
-# Train explainable boosting machines - classification (preview)
+# Train explainable boosting machines - classification
 
 In this article, you learn how to train classification models using explainable boosting machines (EBM). An explainable boosting machine is a machine learning technique that combines the power of gradient boosting with an emphasis on model interpretability. It creates an ensemble of decision trees, similar to gradient boosting, but with a unique focus on generating human-readable models. EBMs not only provide accurate predictions but also offer clear and intuitive explanations for those predictions. They're well-suited for applications where understanding the underlying factors driving model decisions is essential, such as healthcare, finance, and regulatory compliance.
 
 In SynapseML, you can use a scalable implementation of an EBM, powered by Apache Spark, for training new models. This article guides you through the process of applying the scalability and interpretability of EBMs within Microsoft Fabric by utilizing Apache Spark. 
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 In this article, you walk through the process of acquiring and preprocessing data from Azure Open Datasets that records NYC Yellow Taxi trips. Then you train a predictive model with the ultimate objective of determining whether a given trip will occur or not.
 

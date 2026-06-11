@@ -80,7 +80,7 @@ This section explains how to create the mirrored SAP database in Fabric.
 
 1. Open the [Fabric portal](https://fabric.microsoft.com).
 
-1. [Create a lakehouse](../onelake/create-lakehouse-onelake.md) or reuse an existing lakehouse.
+1. [Create a lakehouse](../data-engineering/create-lakehouse.md) or reuse an existing lakehouse.
 
 1. In your lakehouse, [create an Azure Data Lake Storage Gen2 shortcut](../onelake/create-adls-shortcut.md) to the storage container where SAP Datasphere replicates the source SAP data. Make sure you select the whole storage container when creating the shortcut:
 

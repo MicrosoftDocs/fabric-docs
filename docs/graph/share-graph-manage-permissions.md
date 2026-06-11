@@ -2,14 +2,12 @@
 title: Share a Graph and Manage Permissions in Microsoft Fabric
 description: Learn how to share a graph model or queryset in Microsoft Fabric and manage user permissions for downstream consumption.
 ms.topic: how-to
-ms.date: 03/30/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ai-usage: ai-assisted
 ---
 
 # Share a graph and manage permissions
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 Sharing is a convenient way to give users read access to your graph model or queryset for downstream consumption. When you share, the recipient gets item-level access without needing a workspace role. You can customize the permissions that the shared recipient receives.
 
@@ -108,7 +106,6 @@ Graph models read data from tables in a lakehouse. The following considerations 
 - Permission changes can take up to two hours to take effect if the user is currently signed in. The changes appear in **Manage permissions** immediately.
 - Sharing is available through the Fabric user experience only. Programmatic sharing through APIs isn't currently supported.
 - Shared recipients receive access only to the specific item shared, not to other items in the workspace.
-- During preview, sharing options and available permissions might change as new capabilities are added.
 
 ## Related content
 

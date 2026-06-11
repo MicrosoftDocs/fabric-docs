@@ -1,5 +1,5 @@
 ---
-title: Create a multi-dimensional planning cube
+title: Create a Multi-Dimensional Planning Cube
 description: Learn how to configure and allocate plans across dimensions with a planning cube
 ms.date: 04/12/2026
 ms.topic: how-to

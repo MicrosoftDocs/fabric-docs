@@ -90,6 +90,75 @@ Choose **Task based** if your workload doesn't follow the medallion pattern or i
 | **Read optimized** | Frequent reads and queries, interactive notebooks |
 | **Write optimized** | High-volume ingestion, ETL pipelines, streaming |
 
+## Auto-update resource profiles
+
+Resource profiles support an auto-update capability that keeps your Spark compute configuration aligned with the latest optimizations from Fabric. When auto-update is enabled, Fabric applies workload-specific Spark properties based on your resource profile type, without requiring manual tuning.
+
+### Auto-update configurations
+
+Fabric provides three auto-update profiles, each tuned for a specific workload pattern:
+
+#### Read-heavy for Spark workloads
+
+Set via `spark.fabric.resourceProfile.readHeavyForSparkAutoUpdate`:
+
+```json
+{
+    "spark.databricks.delta.optimizeWrite.enabled": "true",
+    "spark.databricks.delta.optimizeWrite.partitioned.enabled": "true",
+    "spark.databricks.delta.optimizeWrite.binSize": "128"
+}
+```
+
+Use this profile when your workload is dominated by Spark reads with moderate write optimization needs.
+
+#### Read-heavy for Power BI workloads
+
+Set via `spark.fabric.resourceProfile.readHeavyForPBIAutoUpdate`:
+
+```json
+{
+    "spark.sql.parquet.vorder.default": "true",
+    "spark.databricks.delta.optimizeWrite.enabled": "true",
+    "spark.databricks.delta.optimizeWrite.binSize": "1g"
+}
+```
+
+Use this profile when your data is primarily consumed by Power BI. V-Order is enabled for optimal DirectLake performance, and a larger bin size produces fewer, larger files suited to analytical reads.
+
+#### Write-heavy workloads
+
+Set via `spark.fabric.resourceProfile.writeHeavyAutoUpdate`:
+
+```json
+{
+    "spark.sql.parquet.vorder.default": "false",
+    "spark.databricks.delta.optimizeWrite.binSize": "128",
+    "spark.databricks.delta.optimizeWrite.partitioned.enabled": "true"
+}
+```
+
+Use this profile when your workload is write-intensive (for example, high-volume ingestion or ETL). V-Order is disabled to reduce write overhead, and optimized write with partitioning is enabled for efficient file layout.
+
+### How auto-update works
+
+When a resource profile with auto-update is applied:
+
+1. Fabric selects the appropriate auto-update configuration based on your primary use case and workload type.
+1. The Spark properties are applied automatically to new sessions in the workspace.
+1. Active sessions aren't affected until they restart.
+
+> [!NOTE]
+> Auto-update configurations optimize Delta Lake write behavior and file layout within the boundaries of your original profile inputs. They don't change your pool size, node configuration, or autoscale settings.
+
+### Configuration reference
+
+| Setting | Applied properties | When to use |
+|---|---|---|
+| `spark.fabric.resourceProfile.readHeavyForSparkAutoUpdate` | Optimize write enabled, partitioned write, 128 MB bin size | Read-heavy Spark analytics |
+| `spark.fabric.resourceProfile.readHeavyForPBIAutoUpdate` | V-Order enabled, optimize write, 1 GB bin size | Read-heavy Power BI/DirectLake |
+| `spark.fabric.resourceProfile.writeHeavyAutoUpdate` | V-Order disabled, optimize write, 128 MB bin size, partitioned | Write-heavy ingestion and ETL |
+
 ## Related content
 
 - [Spark compute](spark-compute.md)

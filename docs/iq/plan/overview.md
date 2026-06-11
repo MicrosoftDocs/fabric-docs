@@ -1,5 +1,5 @@
 ---
-title: What is plan (preview)?
+title: What Is Plan (Preview)?
 description: Learn about the plan (preview) item, including its components, core features, and use cases.
 ms.date: 04/16/2026
 ms.topic: overview
@@ -25,7 +25,7 @@ By combining historical data, real-time signals, and future projections in a sin
 To learn which regions support plan during preview, see [Region availability for plan (preview)](overview-regions.md).
 
 > [!NOTE]
-> The preview of plan in Fabric IQ is now accessible to organizations worldwide in Microsoft Fabric as part of the Microsoft Fabric SKU, and new meters have been created. Meters are currently available but are not currently billed. To learn about Planning sheet limitations, see [Known limitations](overview-limitations.md).
+> The preview of plan in Fabric IQ is now accessible to organizations worldwide in Microsoft Fabric as part of the Microsoft Fabric SKU, and new meters have been created. Meters are currently available but are not currently billed. To learn about planning sheet limitations, see [Known limitations](overview-limitations.md).
 
 ## Why use plan?
 
@@ -104,13 +104,9 @@ InfoBridge connects and integrates data across systems, ensuring planning data s
 
 Plan extends Microsoft Fabric beyond analytics into enterprise decision intelligence. By embedding planning directly into Fabric, organizations can unify data, analytics, and planning in a single platform, reducing manual effort, improving alignment, and enabling proactive, AI-assisted decision-making.
 
-## Enable required tenant setting
+## Prerequisites for plan (preview)
 
-This setting is **required** to create plan (preview) items: *Users can create Plan (preview) items*.
-
-:::image type="content" source="media/overview/prerequisite-plan.png" alt-text="Screenshot of enabling plan in the admin portal." lightbox="media/overview/prerequisite-plan.png":::
-
-If you don't enable this setting, you get errors when creating a new plan item.
+For more information about prerequisites for using plan (preview), see [Prerequisites for plan (preview)](overview-prerequisites.md). Prerequisites include tenant settings, capacity settings, semantic model connection owner permissions, and database connections.
 
 ## Next steps
 

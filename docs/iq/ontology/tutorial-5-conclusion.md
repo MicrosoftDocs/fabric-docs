@@ -1,5 +1,5 @@
 ---
-title: "Tutorial part 5: Conclude and clean up resources"
+title: "Tutorial Part 5: Conclude and Clean Up Resources"
 description: Finish the tutorial and clean up resources. Part 5 of the ontology (preview) tutorial.
 ms.date: 12/03/2025
 ms.topic: tutorial

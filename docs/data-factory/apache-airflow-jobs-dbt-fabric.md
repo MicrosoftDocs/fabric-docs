@@ -22,7 +22,7 @@ This tutorial shows you how to create an Apache Airflow DAG that uses dbt to tra
 
 Before you begin, complete these prerequisites:
 
-- [Create the Service Principal](/entra/identity-platform/howto-create-service-principal-portal). Add the service principal as the `Contributor` in the workspace where you create data warehouse.
+- To authenticate with Fabric Data Warehouse, use either a [service principal](/entra/identity-platform/howto-create-service-principal-portal) or [workspace identity](apache-airflow-jobs-workspace-identity.md). If you use a service principal, add it as the `Contributor` in the workspace where you create data warehouse.
 
 - If you don't have one, [Create a Fabric warehouse](../data-warehouse/create-warehouse.md). Ingest the sample data into the warehouse using a pipeline. For this tutorial, we use the **NYC Taxi-Green** sample.
 

@@ -1,6 +1,6 @@
 ### YamlMime:TOC
 items:
-  - name: Overview
+  - name: What is Azure Cosmos DB in Fabric?
     href: overview.md
   - name: FAQ
     displayName: Frequently asked questions

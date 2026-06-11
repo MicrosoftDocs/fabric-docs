@@ -8,8 +8,11 @@ ms.custom: references_regions
 ---
 # Legacy HTTP Data Collector API path for Azure Log Analytics
 
-> [!IMPORTANT]
-> Instead of following this article, go to [Collect logs and metrics with Azure Log Analytics](data-collector-api-to-log-ingestion-api.md) for new setups and migrations. This article is for the legacy HTTP Data Collector API path and is kept for reference only.
+> [!Warning]
+>
+> The instructions in this document rely on the Azure Monitor HTTP Data Collector API to emit Spark logs and metrics. This API is being deprecated, and support for the legacy version will end on September 14, 2026. For more details, see [Azure Monitor HTTP Data Collector API](/previous-versions/azure/azure-monitor/logs/data-collector-api).
+>
+> If you used this document to configure your emitters, we recommend updating your log emitter configuration to use the new Azure Monitor API for data ingestion as soon as possible. For guidance on migrating your setup, refer to [Collect logs and metrics with Azure Log Analytics](./data-collector-api-to-log-ingestion-api.md).
 
 The Fabric Apache Spark diagnostic emitter extension is a library that enables Apache Spark applications to emit logs, event logs, and metrics to multiple destinations, including Azure log analytics, Azure storage, and Azure event hubs.
 

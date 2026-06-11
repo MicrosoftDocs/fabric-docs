@@ -1,5 +1,5 @@
 ---
-title: 'Digital twin builder (preview) tutorial part 1: Set up resources'
+title: 'Digital Twin Builder (Preview) Tutorial Part 1: Set Up Resources'
 description: Prepare your environment for the tutorial scenario and create a digital twin builder item. Part 1 of the digital twin builder (preview) tutorial.
 ms.date: 05/01/2025
 ms.topic: tutorial

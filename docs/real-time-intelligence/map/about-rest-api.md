@@ -187,4 +187,4 @@ Learn how to create and configure a Fabric Map using Python.
 Tutorial that creates a map using GeoJSON as a data layer using REST API.
 
 > [!div class="nextstepaction"]
-> [Create a map using GeoJSON as a data layer using REST API](tutorial-create-fabric-map-python.md)
+> [Tutorial: Create a map using REST API with Python](tutorial-create-fabric-map-python.md)

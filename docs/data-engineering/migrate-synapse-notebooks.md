@@ -12,16 +12,21 @@ ms.date: 11/15/2023
 
 Azure Synapse and Fabric support notebooks. Migrating a notebook from Azure Synapse to Fabric can be done in two different ways:
 
-* Option 1: you can export notebooks from Azure Synapse (.ipynb) and import them to Fabric (manually).
-* Option 2: you can use a script to export notebooks from Azure Synapse and import them to Fabric using the API.
+* Option 1: you can use the migration assistant to migrate notebooks from Azure Synapse to Fabric using a more guided and streamlined experience.
+* Option 2: you can export notebooks from Azure Synapse (.ipynb) and import them to Fabric (manually).
+* Option 3: you can use a script to export notebooks from Azure Synapse and import them to Fabric using the API.
 
 For notebook considerations, refer to [differences between Azure Synapse Spark and Fabric](comparison-between-fabric-and-azure-synapse-spark.md).
 
 ## Prerequisites
 
-If you don’t have one already, create a [Fabric workspace](../fundamentals/create-workspaces.md) in your tenant.
+If you don't have one already, create a [Fabric workspace](../fundamentals/create-workspaces.md) in your tenant.
 
-## Option 1: Export and import notebook manually
+## Option 1: Use migration assistant
+
+You can use the [**migration assistant**](./synapse-to-fabric-spark-migration-assistant.md) for migration from Azure Synapse to Fabric. It is designed to provide a guided and streamlined experience for migrating notebooks and related resources.
+
+## Option 2: Export and import notebook manually
 
 To export a notebook from Azure Synapse:
 
@@ -51,7 +56,7 @@ Once the notebook is imported, validate notebook dependencies:
 * If a notebook is using pool specific libraries and configurations, you need to import those libraries and/or configurations as well.
 * Linked services, data source connections, and mount points.
 
-## Option 2: Use the Fabric API
+## Option 3: Use the Fabric API
 
 Follow these key steps for migration:
 * Prerequisites.
@@ -62,7 +67,7 @@ Follow these key steps for migration:
 The prerequisites include actions you need to consider before starting notebook migration to Fabric.
 
 * A Fabric workspace.
-* If you don’t have one already, create a [Fabric lakehouse](tutorial-build-lakehouse.md) in your workspace. 
+* If you don't have one already, create a [Fabric lakehouse](tutorial-build-lakehouse.md) in your workspace. 
 
 ### Step 1: Export notebooks from Azure Synapse workspace
 
@@ -105,3 +110,4 @@ Step 2 is when notebooks are imported from intermediate storage into the Fabric 
 - [Migrate Spark pools](migrate-synapse-spark-pools.md)
 - [Migrate Spark job definition](migrate-synapse-spark-job-definition.md)
 - [Migrate data and pipelines](migrate-synapse-data-pipelines.md)
+- [Migrate Azure Synapse notebooks to Fabric](./synapse-to-fabric-spark-migration-assistant.md)

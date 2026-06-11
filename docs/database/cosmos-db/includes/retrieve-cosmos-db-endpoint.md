@@ -1,8 +1,6 @@
 ---
 ms.topic: include
 ms.date: 03/16/2026
-author: Jcardif
-ms.author: jndemenge
 ms.service: Microsoft Fabric
 ms.subservice: Cosmos DB
 ---

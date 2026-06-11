@@ -19,9 +19,9 @@ This setting is **required** to create ontology (preview) items: *Enable Ontolog
 
 If you don't enable this setting, you get errors when creating a new ontology item.
 
-## Graph (preview)
+## Graph
 
-This setting is **required** to enable the graphs associated with ontology (preview): *User can create Graph (preview)*.
+This setting is **required** to enable the graphs associated with ontology (preview): *User can create Graph*.
 
 :::image type="content" source="media/overview-tenant-settings/prerequisite-graph.png" alt-text="Screenshot of enabling graph in the admin portal.":::
 
@@ -34,6 +34,12 @@ If you don't enable this setting, you get errors when accessing a newly created 
 If you want to use ontology (preview) with a Fabric data agent, make sure to configure the required [Fabric data agent tenant settings](../../data-science/data-agent-tenant-settings.md).
 
 If you don't enable this setting, you might see errors when creating a new data agent item.
+
+## Operations agent tenant settings
+
+If you want to use ontology (preview) with a Fabric operations agent, make sure to configure the tenant settings listed in the [Fabric operations agent prerequisites](../../real-time-intelligence/operations-agent.md#prerequisites).
+
+If you don't enable this setting, you might see errors when creating a new operations agent item.
 
 ## Next steps
 

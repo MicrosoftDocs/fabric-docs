@@ -32,7 +32,7 @@ The following directories are created in the Git repository:
 
 :::image type="content" source="./media/source-code-format/item-directory-names-git.png" alt-text="Screenshot of names of the Git directories containing the Fabric items.":::
 
-- Once created, Git integration never changes the name of a directory. Even if you change the name of the item, the directory name stays the same.
+- Once created, the item name in Git and the workspace stay in sync. If you manually change the directory name in Git, the names will no longer sync automatically. See more about [changing item names](#platform-file).
 - If you manually change the name of an item directory, make sure to take the item's dependencies into account. For example, if you change a semantic model's directory then you should make sure to update the path of the semantic model in the report's dependency file. Keep in mind that dependency locations vary between different Fabric experiences. Changing the directory name *doesn't* cause an incoming change in the workspace.
 
 ## Directory content

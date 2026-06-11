@@ -3,7 +3,7 @@ title: Dataflow activity
 description: Learn how to add a Dataflow activity to a pipeline and use it to run a Dataflow Gen2.
 ms.reviewer: xupxhou, miescobar
 ms.topic: how-to
-ms.date: 04/01/2026
+ms.date: 5/21/2026
 ms.custom:
   - pipelines
   - dataflows
@@ -56,9 +56,6 @@ Required parameters are shown with an asterisk next to their name, whereas optio
 You can select the refresh button to request the latest parameter information from your dataflow.
 
 Inside the Dataflow parameters section you're able to enter the name of the parameter that you wish to pass and the type and value that you wish to pass.
-
->[!NOTE]
->Parameterizing the DataflowId in the dataflow pipeline activity settings will only support the legacy Dataflow Gen2 version without CI/CD support. That is,  you can't invoke dataflows with CI/CD support using parameterization of the DataflowId.
 
 ## Save and run or schedule the pipeline
 

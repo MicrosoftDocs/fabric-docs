@@ -1,6 +1,6 @@
 ---
-title: Set up a scenario
-description: Learn how to simulate business outcomes in Planning sheets by using scenarios. Simulate business outcomes for effective planning decisions.
+title: Set Up a Scenario
+description: Learn how to simulate business outcomes in planning sheets by using scenarios. Simulate business outcomes for effective planning decisions.
 ms.date: 04/22/2026
 ms.topic: how-to
 #customer intent: As a user, I want to understand and use Scenarios effectively.
@@ -8,7 +8,7 @@ ms.topic: how-to
 
 # Analyze planning outcomes with scenarios
 
-Scenarios let you create multiple planning versions within a Planning sheet to evaluate different business outcomes. Use scenarios to compare budgets, forecasts, and alternative business assumptions without affecting the base data.
+Scenarios let you create multiple planning versions within a planning sheet to evaluate different business outcomes. Use scenarios to compare budgets, forecasts, and alternative business assumptions without affecting the base data.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -16,7 +16,7 @@ Scenarios let you create multiple planning versions within a Planning sheet to e
 
 Before you create a scenario, make sure that you have the following prerequisites in place:
 
-* You have access to the Planning sheet.
+* You have access to the planning sheet.
 * Required fields and dimensions are added.
 * The planning model includes a scenario dimension.
 * You have permission to edit planning data.
@@ -38,11 +38,11 @@ Before you create a scenario, make sure that you have the following prerequisite
 
     :::image type="content" source="media/planning-how-to-set-up-scenarios/save-add.png" alt-text="Screenshot of adding another scenario and saving the report." lightbox="media/planning-how-to-set-up-scenarios/save-add.png":::
 
-The new scenario is added to the Planning sheet and is available for planning and analysis.
+The new scenario is added to the planning sheet and is available for planning and analysis.
 
 ## Scenario toolbar
 
-Use the **Scenario** tab to create, manage, and analyze scenarios in the Planning sheet.
+Use the **Scenario** tab to create, manage, and analyze scenarios in the planning sheet.
 
 :::image type="content" source="media/planning-how-to-set-up-scenarios/scenario-toolbar.png" alt-text="Screenshot showing the  scenario toolbar." lightbox="media/planning-how-to-set-up-scenarios/scenario-toolbar.png":::
 
@@ -104,7 +104,7 @@ Update scenario settings such as the name, included measures, and lock status in
 
 ## Configure input method
 
-Use the **Input Method** to simulate and adjust values directly in the Planning sheet.
+Use the **Input Method** to simulate and adjust values directly in the planning sheet.
 
 :::image type="content" source="media/planning-how-to-set-up-scenarios/configure-input.png" alt-text="Screenshot for configuring the input in scenario.":::
 
@@ -191,7 +191,7 @@ Use **Bulk edit** to apply changes to multiple values in a scenario at once. Use
    * **Column dimensions**: Select the required columns or time periods.
 
 > [!NOTE]
-> As you select dimensions, the Planning sheet updates to reflect the filtered data.
+> As you select dimensions, the planning sheet updates to reflect the filtered data.
 
 ### Apply bulk changes
 

@@ -3,13 +3,11 @@ title: Graph Database Overview
 description: Discover what a graph database is, how it stores relationships as edges, and when to choose a graph database for connected data workloads in Microsoft Fabric.
 #customer intent: As a data professional, I want to understand what a graph database is and how it compares to standalone graph database deployments so that I can decide whether graph in Microsoft Fabric fits my workload.
 ms.topic: concept-article
-ms.date: 04/20/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ---
 
 # What is a graph database?
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 A graph database is a type of database that represents information as nodes (entities) and edges (relationships) instead of tables and rows. This structure makes it straightforward to explore complex connections and patterns across your data.
 

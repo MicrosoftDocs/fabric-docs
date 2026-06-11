@@ -61,6 +61,8 @@
             "author": {
                 "admin/**/*.md": "msmimart",
                 "admin/**/*.yml": "msmimart",
+                "apps/**/*.md": "eric-urban",
+                "apps/**/*.yml": "eric-urban",
                 "cicd/**/*.md": "billmath",
                 "cicd/**/*.yml": "billmath",
                 "data-engineering/**/*.md": "eric-urban",
@@ -109,6 +111,8 @@
             "ms.author": {
                 "admin/**/*.md": "mimart",
                 "admin/**/*.yml": "mimart",
+                "apps/**/*.md": "eur",
+                "apps/**/*.yml": "eur",
                 "cicd/**/*.md": "billmath",
                 "cicd/**/*.yml": "billmath",
                 "data-engineering/**/*.md": "eur",
@@ -157,6 +161,8 @@
             "ms.subservice": {
                 "admin/**/*.md": "admin",
                 "admin/**/*.yml": "admin",
+                "apps/**/*.md": "data-engineering",
+                "apps/**/*.yml": "data-engineering",
                 "cicd/**/*.md": "cicd",
                 "cicd/**/*.yml": "cicd",
                 "data-engineering/**/*.md": "data-engineering",
@@ -215,6 +221,8 @@
             "feedback_product_url": {
                 "admin/**/*.md": "https://ideas.fabric.microsoft.com/?forum=bbb1936d-44f9-ed11-8849-000d3a4ef41d&category=023c0612-44be-ed11-83ff-00224827e905",
                 "admin/**/*.yml": "https://ideas.fabric.microsoft.com/?forum=bbb1936d-44f9-ed11-8849-000d3a4ef41d&category=023c0612-44be-ed11-83ff-00224827e905",
+                "apps/**/*.md": "https://ideas.fabric.microsoft.com/",
+                "apps/**/*.yml": "https://ideas.fabric.microsoft.com/",
                 "cicd/**/*.md": "https://ideas.fabric.microsoft.com/?forum=bbb1936d-44f9-ed11-8849-000d3a4ef41d&category=0872ebd4-45f9-ed11-8849-000d3a4ef41d",
                 "cicd/**/*.yml": "https://ideas.fabric.microsoft.com/?forum=bbb1936d-44f9-ed11-8849-000d3a4ef41d&category=0872ebd4-45f9-ed11-8849-000d3a4ef41d",
                 "database/**/*.md": "https://ideas.fabric.microsoft.com/?forum=5b63d32a-7ca6-ef11-8a6a-6045bddb73b3&category=72943ba8-7ca6-ef11-8a6a-6045bddb73b3&currentSelected=5b63d32a-7ca6-ef11-8a6a-6045bddb73b3",
@@ -247,6 +255,8 @@
             "feedback_help_link_url": {
                 "admin/**/*.md": "https://community.fabric.microsoft.com/powerbi",
                 "admin/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
+                "apps/**/*.md": "https://community.fabric.microsoft.com/powerbi",
+                "apps/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
                 "cicd/**/*.md": "https://community.fabric.microsoft.com/powerbi",
                 "cicd/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
                 "database/**/*.md": "https://community.fabric.microsoft.com/databases",
@@ -270,7 +280,7 @@
                 "onelake/**/*.md": "https://community.fabric.microsoft.com/powerbi",
                 "onelake/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
                 "real-time-hub/**/*.md": "https://community.fabric.microsoft.com/t5/Eventstream/bd-p/da_eventstream",
-                "real-time-hub/**/*.yml": "community.fabric.microsoft.com/t5/Eventstream/bd-p/da_eventstream",
+                "real-time-hub/**/*.yml": "https://community.fabric.microsoft.com/t5/Eventstream/bd-p/da_eventstream",
                 "real-time-intelligence/**/*.md": "https://community.fabric.microsoft.com/t5/Real-Time-Intelligence-forums/ct-p/dataactivator",
                 "real-time-intelligence/**/*.yml": "https://community.fabric.microsoft.com/t5/Real-Time-Intelligence-forums/ct-p/dataactivator",
                 "security/**/*.md": "https://community.fabric.microsoft.com/powerbi",

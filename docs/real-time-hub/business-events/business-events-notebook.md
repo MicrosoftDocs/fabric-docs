@@ -39,7 +39,7 @@ A notebook publishes a business event by providing:
 
 * **eventSchemaSetWorkspace**: The Workspace where the Event Schema Set is stored. 
 
-* **eventSchemaSetName**: The Event Schema Set name.
+* **eventSchemaSet**: The Event Schema Set name.
 
 * **eventTypeName**: The business event name.
 
@@ -48,7 +48,7 @@ A notebook publishes a business event by providing:
 * **dataVersion**: The version of the business event schema.
 
 > [!NOTE]
-> The properties `eventSchemaSetWorkspace` and `eventSchemaSetName` support both Fabric item names and Fabric item IDs.
+> The properties `eventSchemaSetWorkspace` and `eventSchemaSet` support both Fabric item names and Fabric item IDs.
 
 For example, a simple event for delayed orders might look like: 
 
@@ -57,7 +57,7 @@ For example, a simple event for delayed orders might look like:
     
     eventSchemaSetWorkspace="my-workspace-id", 
     
-    eventSchemaSetName="OrderEvents", 
+    eventSchemaSet="OrderEvents", 
     
     eventTypeName="OrderDelayed", 
     
@@ -80,7 +80,7 @@ notebookutils.businessEvents.publish(
 
     eventSchemaSetWorkspace="ContosoWorkspace", 
 
-    eventSchemaSetName="ManufacturingEquipmentHealth", 
+    eventSchemaSet="ManufacturingEquipmentHealth", 
 
     eventTypeName="VibrationCriticalDetected", 
 

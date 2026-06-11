@@ -2,7 +2,7 @@
 title: Apache Airflow compute in Fabric
 description: Learn about Apache Airflow pools in Microsoft Fabric, including node sizes, autoscaling, and how to pick the right capacity SKU for your needs.
 ms.reviewer: seanmirabile
-ms.date: 10/17/2025
+ms.date: 05/12/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 ---
@@ -18,7 +18,7 @@ Microsoft Fabric offers two types of Apache Airflow pools:
 - **Starter pools**: Good for development, testing, or jobs that run occasionally.
 - **Custom pools**: Designed for production workloads that need to run all the time.
 
-**Starter pools** use large nodes (about 4 vCPUs and 16-GB RAM) and start up quickly when you need them. They shut down automatically after 20 minutes of inactivity, so you don't pay for idle time. This makes them a good fit for dev/test or jobs that run infrequently.
+**Starter pools** use small nodes about 2 vCPUs, 8-GB RAM) and start up quickly when you need them. They shut down automatically after 20 minutes of inactivity, so you don't pay for idle time. This makes them a good fit for dev/test or jobs that run infrequently.
 
 **Custom pools** stay on all the time, so jobs start right away. You can pick small nodes (about 2 vCPUs, 8-GB RAM) or large nodes (about 4 vCPUs, 16-GB RAM), and you can add extra nodes or turn on autoscaling for more parallel processing.
 

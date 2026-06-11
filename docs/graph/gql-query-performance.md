@@ -2,13 +2,11 @@
 title: Optimize GQL Query Performance for graph in Microsoft Fabric
 description: Learn how to write efficient GQL queries for graph in Microsoft Fabric. Apply filtering, traversal, and key constraint strategies to improve query performance.
 ms.topic: how-to
-ms.date: 04/10/2026
+ms.date: 05/20/2026
 ms.reviewer: splantikow
 ---
 
 # Optimize GQL query performance for graph in Microsoft Fabric
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 This article provides guidance for writing GQL (Graph Query Language) queries that perform predictably and efficiently when working with graph in Microsoft Fabric. The recommendations are based on current platform behavior and documented constraints.
 

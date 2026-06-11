@@ -30,7 +30,7 @@ For Amazon S3 shortcuts to VPC-protected buckets, you can combine the on-premise
 
 ## Prerequisites
 
-* A Fabric lakehouse where you want to create the shortcut. If you don't have one, see [Create a lakehouse with OneLake](create-lakehouse-onelake.md).
+* A Fabric lakehouse where you want to create the shortcut. If you don't have one, see [Create a lakehouse](../data-engineering/create-lakehouse.md).
 * A [standard on-premises data gateway](/data-integration/gateway/service-gateway-install#download-and-install-a-standard-gateway) installed on a machine that has network connectivity to your storage endpoint. Be sure to install the latest version.
 * If your storage endpoint uses a self-signed certificate for HTTPS connections, trust this certificate on the machine hosting your gateway.
 

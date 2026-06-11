@@ -24,6 +24,11 @@
             "source_path_from_root": "/docs/governance/use-microsoft-purview-hub-data-owners.md",
             "redirect_url": "/fabric/governance/onelake-catalog-govern",
             "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/governance/use-microsoft-purview-hub.md",
+            "redirect_url": "/fabric/governance/onelake-catalog-govern",
+            "redirect_document_id": false
         }
     ]
 }

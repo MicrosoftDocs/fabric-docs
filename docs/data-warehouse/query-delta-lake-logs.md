@@ -106,6 +106,7 @@ SELECT [name], [DATA_LAKE_LOG_PUBLISHING_DESC] FROM sys.databases
 
 ## Related content
 
+- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
 - [Query the Warehouse](query-warehouse.md)
 - [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md)
 - [OneLake overview](../onelake/onelake-overview.md)

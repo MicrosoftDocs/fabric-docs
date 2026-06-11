@@ -3,7 +3,8 @@ title: Navigate the Fabric Lakehouse explorer
 description: Browse tables and files, preview data, and manage lakehouse objects in the Fabric portal.
 ms.reviewer: avinandac
 ms.topic: concept-article
-ms.date: 02/24/2026
+ms.date: 05/07/2026
+ai-usage: ai-assisted
 ms.search.form: Lakehouse Explorer
 ---
 
@@ -119,11 +120,17 @@ To enable file downloads:
 The ribbon across the top of the Lakehouse explorer provides quick access to common actions: refresh your lakehouse, access item settings, load data, create or open notebooks, create semantic models, and more.
 
 > [!NOTE]
-> Ribbon actions apply to the primary lakehouse. They are grayed out when you select a non-primary lakehouse. Any lakehouse in the explorer pane — including a [reference lakehouse](#reference-lakehouses) — can be set as the primary lakehouse.
+> Ribbon actions apply to the primary lakehouse. They are grayed out when you select a non-primary lakehouse. Go to the [reference lakehouse](#reference-lakehouses) section for more information.
 
-### SQL analytics endpoint
+### Analyze your lakehouse data with the engine of your choice
 
-You can access the [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) directly from the dropdown in the top-right area of the ribbon. This opens the T-SQL editor, where you can query your Delta tables with SQL to prepare them for reporting.
+The **Analyze data with** dropdown in the top-right area of the ribbon lists the different engines available to query your lakehouse data. Select the dropdown to choose from the following options:
+
+:::image type="content" source="media\lakehouse-overview\lakehouse-analyze-data.png" alt-text="Screenshot showing the Analyze data with dropdown in the lakehouse ribbon." lightbox="media\lakehouse-overview\lakehouse-analyze-data.png":::
+
+- **SQL analytics endpoint** — Opens the [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) T-SQL editor, where you can query your Delta tables with SQL to prepare them for reporting.
+- **Eventhouse endpoint** — Opens the [eventhouse endpoint](../real-time-intelligence/eventhouse-as-endpoint.md), where you can use KQL to query your lakehouse data with high-performance, real-time analytics capabilities.
+- **Notebook** — Opens a Spark notebook connected to your lakehouse. Choose **New** to create a notebook, or **Existing** to open a notebook that's already in your workspace. For more information, see [Explore data with a lakehouse notebook](lakehouse-notebook-explore.md).
 
 ## Related content
 

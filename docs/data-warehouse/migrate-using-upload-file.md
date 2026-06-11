@@ -1,23 +1,21 @@
 ---
-title: Migrate with a DACPAC File
-description: This tutorial provides a step-by-step guide for the Migration Assistant for Fabric Data Warehouse using a DACPAC file upload.
+title: Migrate with a DACPAC File or SQL Files
+description: This tutorial provides a step-by-step guide for the Migration Assistant for Fabric Data Warehouse using a DACPAC file or a zip of .sql files.
 ms.reviewer: anphil, pvenkat, prlangad
-ms.date: 03/12/2026
+ms.date: 05/21/2026
 ms.topic: how-to
 ms.search.form: Migration Assistant
 ai-usage: ai-assisted
 ---
-# Migrate with a DACPAC file
+# Migrate with a DACPAC file or SQL files
 
 **Applies to**: [!INCLUDE [fabric-dw](../data-warehouse/includes/applies-to-version/fabric-dw.md)]
 
-The Fabric Migration Assistant is a migration experience that you can use to copy dedicated SQL pools in Azure Synapse Analytics, databases in SQL Server, and databases from other SQL Database Engine platforms seamlessly into Fabric Data Warehouse.
+The [Fabric Migration Assistant for Data Warehouse](migration-assistant.md) is a migration experience that you can use to copy dedicated SQL pools in Azure Synapse Analytics, databases in SQL Server, and databases from other SQL Database Engine platforms seamlessly into Fabric Data Warehouse.
 
-This guide walks you through the steps to migrate from an Azure Synapse Analytics dedicated SQL pool to Fabric warehouse by using a DACPAC file. 
+This guide walks you through the steps to migrate to Fabric Data Warehouse by using a DACPAC file or a zip of .sql files.
 
 > [!TIP]
-> For more information on the Migration Assistant's features and capabilities, see [Fabric Migration Assistant for Data Warehouse](migration-assistant.md).
->
 > For more information on strategy and planning your migration, see [Migration​ planning: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-warehouse.md).
 
 ## Prerequisites
@@ -26,9 +24,18 @@ Before you begin, make sure you have the following items ready:
 
 - A Fabric workspace with an active capacity or trial capacity.
 - [Create a workspace](../fundamentals/create-workspaces.md) or select an existing workspace you want to migrate into. The Migration Assistant creates a new warehouse for you.
-- DACPAC file extracted from Azure Synapse Analytics dedicated SQL pool. A [DACPAC](/sql/tools/sql-database-projects/concepts/data-tier-applications/overview#dacpac-operations) (data-tier application package) file is built from SQL database projects and contains the metadata of database objects, including the schema of tables, views, stored procedures, functions, and more. 
-    - To create a DAC in Visual Studio 2022 with SQL Server Data Tools, see [Extract a Data-tier Application (DAC) from an Azure Synapse dedicated SQL pool in Visual Studio 2022](extract-data-tier-application-synapse-dedicated-sql-pool.md).
-    - You can also use [SDK-style database projects](/dotnet/core/project-sdk/overview) with VS Code or the [SqlPackage command-line utility](/sql/tools/sqlpackage/sqlpackage-extract).
+- A file that contains the metadata of database objects, including the schema of tables, views, stored procedures, functions, and more. 
+   
+   You have multiple options for the source file:
+   
+   - DACPAC file extracted from your existing warehouse. A [DACPAC](/sql/tools/sql-database-projects/concepts/data-tier-applications/overview#dacpac-operations) (data-tier application package) file is built from SQL database projects. 
+     - You can use [SDK-style database projects](/dotnet/core/project-sdk/overview) with [Visual Studio Code](https://code.visualstudio.com/docs) or the [SqlPackage command-line utility](/sql/tools/sqlpackage/sqlpackage-extract). 
+     - To create a DAC in Visual Studio 2022 from Azure Synapse Analytics with SQL Server Data Tools, see [Extract a Data-tier Application (DAC) from an Azure Synapse dedicated SQL pool in Visual Studio 2022](extract-data-tier-application-synapse-dedicated-sql-pool.md).
+   - A compressed zip of .sql files containing database object definitions. There are multiple ways in which you can extract .sql files.
+      - To generate scripts in SSMS, you can use [Generate Scripts Wizard](/ssms/scripting/generate-and-publish-scripts-wizard).
+      - You can also use [SqlPackage Script](/sql/tools/sqlpackage/sqlpackage-script).
+   - A compressed zip of SQL database project. 
+      - To create a SQL database project in Visual Studio Code, see [SQL Database Projects](/sql/tools/visual-studio-code-extensions/sql-database-projects/sql-database-projects-extension).
 
 To use the AI-assisted migration features of the Migration Assistant to fix migration problems, you need to activate Copilot:
 
@@ -48,16 +55,13 @@ To use the AI-assisted migration features of the Migration Assistant to fix migr
 
 1. On the **Choose your method** page, select **Upload a file with the source metadata** and select **Next**.
 
-1. Select **Choose file** and upload the DACPAC file of your source data warehouse. When the upload finishes, select **Next**.
+1. Select **Choose file** and upload the DACPAC file of your source data warehouse or a zip of .sql files extracted from your source data warehouse. When the upload finishes, select **Next**.
 
    :::image type="content" source="media/migrate-using-upload-file/upload-dacpac-choose-file.png" alt-text="Screenshot from the Fabric portal of the Upload DACPAC file step in the Migration Assistant." lightbox="media/migrate-using-upload-file/upload-dacpac-choose-file.png":::
 
-1. In the **Set the destination** page, enter the name of the new Fabric workspace and new warehouse item you want to migrate into. Select **Next**.
+1. In the **Set the destination** page, enter the name of the new Fabric workspace, the new warehouse item you want to migrate into, and select the collation. Select **Next**.
 
 1. Review your inputs and select **Migrate**. The Migration Assistant creates a new warehouse item and starts the metadata migration.
-
-   > [!NOTE]
-   > When you use the Migration Assistant, the new warehouse has **case insensitive collation**, regardless of the [default warehouse collation setting](collation.md).
 
    :::image type="content" source="media/migrate-using-upload-file/review-upload-dacpac.png" alt-text="Screenshot from the Fabric portal of the Review page of the Migration Assistant. The source is a DACPAC file and the Destination is a new warehouse item named AdventureWorks." lightbox="media/migrate-using-upload-file/review-upload-dacpac.png":::
 
@@ -122,7 +126,7 @@ Copy data helps with migrating data used by the objects you migrate. You can use
 1. Select the **Copy data** step in the Migration Assistant.
 1. Select **Use a copy job** button.
 1. Enter a name for the new job, and then select **Create**. 
-1. On **Connect to data source** page, enter **Connection credentials** for the source Azure Synapse Analytics (SQL DW) dedicated SQL pool. Select **Next**.
+1. On **Connect to data source** page, enter **Connection credentials** for the source warehouse. Select **Next**.
 1. In the **Choose data** page, select the tables you want to migrate. The object metadata should already exist in the target warehouse. Select **Next**.
 
    :::image type="content" source="media/migrate-using-upload-file/choose-data.png" alt-text="Screenshot from the Fabric portal of the Choose data pane, with some tables selected." lightbox="media/migrate-using-upload-file/choose-data.png":::
@@ -138,8 +142,21 @@ Copy data helps with migrating data used by the objects you migrate. You can use
 In the final step, reconnect the data loading and reporting platforms so that their connections point to your new Fabric warehouse.
 
 1. Identify connections on your existing source warehouse. 
+   - On a SQL Server instance, you can use dynamic management views, for example:
 
-   - For example, in Azure Synapse Analytics dedicated SQL pools, you can find session information including source application, who is connected, where the connection is coming from, and if it's using Microsoft Entra or SQL authentication:  
+   ```sql
+   SELECT 
+       s.program_name
+   , s.login_name
+   , c.client_net_address
+   FROM sys.dm_exec_sessions AS s 
+   INNER JOIN sys.dm_exec_connections AS c 
+   ON s.session_id = c.session_id
+   WHERE s.session_id >= 50 --retrieve only user spids
+   and s.session_id <> @@SPID; --ignore myself
+   ```
+   
+   - In Azure Synapse Analytics dedicated SQL pools, you can find session information including source application, who is connected, where the connection is coming from, and if it's using Microsoft Entra or SQL authentication:  
 
    ```sql
    SELECT DISTINCT CASE 
@@ -157,6 +174,7 @@ In the final step, reconnect the data loading and reporting platforms so that th
         FROM sys.dm_pdw_exec_sessions
         ) AS a;
    ```
+
 1. Update the connections to your reporting platforms to point to your Fabric warehouse. 
 1. Test the Fabric warehouse with some reporting before rerouting. Perform comparison and data validation tests in your reporting platforms.
 1. Update the connections for data loading (ETL/ELT) platforms to point to your Fabric warehouse.

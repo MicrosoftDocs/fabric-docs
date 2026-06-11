@@ -1,5 +1,5 @@
 ---
-title: Export data and visuals
+title: Export Data and Visuals
 description: Learn how to export tables and charts in my reports to PDF, PNG, or Excel files.
 ms.date: 03/11/2026
 ms.topic: how-to

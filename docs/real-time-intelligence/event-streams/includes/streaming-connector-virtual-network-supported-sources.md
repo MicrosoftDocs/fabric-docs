@@ -18,6 +18,7 @@ This feature applies to Eventstream sources that use streaming connectors to ret
 - Azure Cosmos DB CDC
 - Azure Data Explorer (ADX)
 - Azure Event Hubs (Extended features mode)
+- Azure IoT Hub (Extended features mode)
 - Amazon Managed Streaming for Apache Kafka
 - Apache Kafka
 - Amazon Kinesis Data Streams

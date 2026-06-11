@@ -205,7 +205,7 @@ FROM OPENROWSET(BULK 'https://onelake.dfs.fabric.microsoft.com/{workspaceId}/{la
 WHERE data.filepath(1) = '2023'
 ```
 
-This example builds on the previous one that reads data from Azure Data Lake Storage. Use this approach when you need to transform source data, for example, converting values, joining with other tables, or reading specific partitions. In such cases, using `INSERT ... SELECT` provides the flexibility to apply transformations during data ingestion.
+This example builds on the previous one that reads data from Azure Data Lake Storage. Use this approach when you need to transform source data, for example, by converting values, by joining with other tables, or by reading specific partitions. In such cases, using `INSERT ... SELECT` provides the flexibility to apply transformations during data ingestion.
 
 <a id="ingesting-data-from-tables-on-different-warehouses-and-lakehouses"></a>
 
@@ -232,7 +232,7 @@ To learn more about cross-warehouse queries, see [Write a cross-database SQL Que
 
 ## Audit and monitor T-SQL ingestion
 
-Both `CTAS` and `INSERT ... SELECT` operations executed via T-SQL appear in the [warehouse query history/activity](query-activity.md), and can be monitored alongside other warehouse operations.
+Both `CTAS` and `INSERT ... SELECT` operations executed via T-SQL appear in the [warehouse query history/activity](monitor.md), and can be monitored alongside other warehouse operations.
 
 ## Data ingestion options
 

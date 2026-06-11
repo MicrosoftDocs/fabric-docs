@@ -9,7 +9,7 @@ ai-usage: ai-assisted
 
 # Native execution engine for Fabric Data Engineering
 
-The native execution engine is a groundbreaking enhancement for Apache Spark job executions in Microsoft Fabric. This vectorized engine optimizes the performance and efficiency of your Spark queries by running them directly on your lakehouse infrastructure. The engine's seamless integration means it requires no code modifications and avoids vendor lock-in. It supports Apache Spark APIs and is compatible with **[Runtime 1.3 (Apache Spark 3.5)](./runtime-1-3.md)** and **[Runtime 2.0 (Apache Spark 4.0)](./runtime-2-0.md)**, and works with Parquet, Delta, and CSV formats. Regardless of your data's location within OneLake, or if you access data via shortcuts, the native execution engine maximizes efficiency and performance.
+The native execution engine is a groundbreaking enhancement for Apache Spark job executions in Microsoft Fabric. This vectorized engine optimizes the performance and efficiency of your Spark queries by running them directly on your lakehouse infrastructure. The engine's seamless integration means it requires no code modifications and avoids vendor lock-in. It supports Apache Spark APIs and is compatible with **[Runtime 1.3 (Apache Spark 3.5)](./runtime-1-3.md)** and **[Runtime 2.0 (Apache Spark 4.1)](./runtime-2-0.md)**, and works with Parquet, Delta, and CSV formats. Regardless of your data's location within OneLake, or if you access data via shortcuts, the native execution engine maximizes efficiency and performance.
 
 The native execution engine significantly elevates query performance while minimizing operational costs. Actual results vary by workload characteristics and configuration. The engine is adept at managing a wide array of data processing scenarios, ranging from routine data ingestion, batch jobs, and ETL (extract, transform, load) tasks, to complex data science analytics and responsive interactive queries. Users benefit from accelerated processing times, heightened throughput, and optimized resource utilization.
 
@@ -35,7 +35,7 @@ For information on the operators and functions supported by the native execution
 To use the full capabilities of the native execution engine during the preview phase, specific configurations are necessary. The following procedures show how to activate this feature for notebooks, Spark job definitions, and entire environments.
 
 > [!IMPORTANT]
-> The native execution engine supports [Runtime 1.3 (Apache Spark 3.5, Delta Lake 3.2)](./runtime-1-3.md) and [Runtime 2.0 (Apache Spark 4.0, Delta Lake 4.0)](./runtime-2-0.md). With the release of the native execution engine in Runtime 1.3, support for the previous version, [Runtime 1.2 (Apache Spark 3.4, Delta Lake 2.4)](./runtime-1-2.md), is discontinued. We encourage all customers to upgrade to the latest Runtime 1.3. If you're using the Native Execution Engine on Runtime 1.2, native acceleration will be disabled.
+> The native execution engine supports [Runtime 1.3 (Apache Spark 3.5, Delta Lake 3.2)](./runtime-1-3.md) and [Runtime 2.0 (Apache Spark 4.1, Delta Lake 4.1)](./runtime-2-0.md).
 
 ### Enable at the environment level
 
@@ -195,7 +195,7 @@ While the Native Execution Engine (NEE) in Microsoft Fabric significantly boosts
 
 ### Existing limitations
 
-- **Incompatible Spark features**: Native execution engine doesn't currently support user-defined functions (UDFs), the `array_contains` function, or structured streaming. If these functions or unsupported features are used either directly or through imported libraries, Spark will revert to its default engine.
+- **Incompatible Spark features**: Native execution engine doesn't currently support structured streaming. If unsupported features are used either directly or through imported libraries, Spark reverts to its default engine. Python UDFs, Scala UDFs, and complex data types (arrays, maps, structs) are now supported. For more information, see [Python UDFs, Scala UDFs, and complex data types in native execution engine](native-execution-engine-udf-complex-types.md).
 
 - **Unsupported file formats**: Queries against `JSON` and `XML` formats aren't accelerated by native execution engine. These default back to the regular Spark JVM engine for execution. CSV is now supported through the vectorized CSV parser.
 
@@ -235,6 +235,9 @@ While the Native Execution Engine (NEE) in Microsoft Fabric significantly boosts
 
 ## Related content
 
+- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
+- [Python UDFs, Scala UDFs, and complex data types in native execution engine](native-execution-engine-udf-complex-types.md)
+- [Efficient scaledown and remote shuffle manager](efficient-scaledown-remote-shuffle-manager.md)
 - [Apache Spark Runtimes in Fabric](./runtime.md)
 - [What is autotune for Apache Spark configurations in Fabric?](./autotune.md)
 

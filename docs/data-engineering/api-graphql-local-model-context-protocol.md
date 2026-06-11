@@ -6,6 +6,8 @@ ms.topic: how-to
 ms.custom: freshness-kr
 ms.search.form: Local MCP server connecting with API for GraphQL
 ms.date: 01/21/2026
+ms.collection: ce-skilling-ai-copilot
+ms.update-cycle: 180-days
 ---
 
 # Connect AI Agents to Fabric API for GraphQL with a local Model Context Protocol (MCP) server

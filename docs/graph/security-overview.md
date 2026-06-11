@@ -3,13 +3,11 @@ title: Graph Security Overview
 description: Manage security for graph in Microsoft Fabric. Understand workspace roles, permissions, and access control for graph models and QuerySets.
 #customer intent: As a Fabric user, I want to understand the security model for graph in Microsoft Fabric so that I can manage access control for my graph data.
 ms.topic: concept-article
-ms.date: 03/31/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ---
 
 # Security overview for graph in Microsoft Fabric
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 Security for graph in Microsoft Fabric is a set of platform-wide controls that manage who can create, modify, view, and share graph models and QuerySets. Graph follows the security requirements of Microsoft Fabric's platform-wide security model.
 

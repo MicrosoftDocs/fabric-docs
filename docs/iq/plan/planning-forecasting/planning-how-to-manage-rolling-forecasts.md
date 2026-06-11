@@ -1,5 +1,5 @@
 ---
-title: Create rolling forecasts
+title: Create Rolling Forecasts
 description: Learn close forecasts when actuals are available and how to extend the forecast period.
 ms.date: 04/26/2026
 ms.topic: how-to

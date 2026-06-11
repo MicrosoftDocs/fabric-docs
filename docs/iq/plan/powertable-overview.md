@@ -1,5 +1,5 @@
 ---
-title: PowerTable sheets in plan (preview)
+title: PowerTable Sheets in Plan (Preview)
 description: Learn about the PowerTable sheets component of the plan (preview) item, including its core features and business use cases.
 ms.date: 03/27/2026
 ms.topic: overview

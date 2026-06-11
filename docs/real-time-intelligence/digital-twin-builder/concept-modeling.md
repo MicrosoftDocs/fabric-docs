@@ -1,5 +1,5 @@
 ---
-title: Modeling data in digital twin builder (preview)
+title: Modeling Data in Digital Twin Builder (Preview)
 description: Understand how data modeling works in digital twin builder (preview).
 ms.date: 06/27/2025
 ms.topic: concept-article

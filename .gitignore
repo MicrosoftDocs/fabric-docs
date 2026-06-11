@@ -17,7 +17,6 @@ media/.DS_Store
 
 
 .github/
-
 .squad/
 
 # Added by Content Mentor for backward compatibility
@@ -30,3 +29,14 @@ media/.DS_Store
 .documenor-session.json
 .content-mentor-open-file.json
 *.code-workspace
+# Doc-Kit workspace files
+.github/AGENTS.md
+.github/agents/
+.github/instructions/
+.github/prompts/
+.github/skills/
+.vscode/settings.json
+.dockit/
+.env
+.env.example
+requirements.txt

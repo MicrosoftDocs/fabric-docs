@@ -2,7 +2,7 @@
 title: How to Connect
 description: Follow steps to connect SSMS to a warehouse item in your Microsoft Fabric workspace.
 ms.reviewer: fresantos, salilkanade
-ms.date: 03/03/2026
+ms.date: 05/13/2026
 ms.topic: how-to
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ms.custom: sfi-image-nochange
@@ -23,7 +23,7 @@ To find the server name of your warehouse item:
 1. Open the **Settings** of your warehouse or SQL analytics endpoint.
 1. In the **Settings** window, select the **SQL endpoint** page.
 1. Copy the **SQL connection string** and use it to connect externally to the item from Power BI desktop, applications, or client tools. This is the server name of your warehouse.
-1. Always provide the warehouse item name as the **Initial Catalog** or **Database name** when you connect.
+1. You should provide the warehouse item name as the **Initial Catalog** or **Database name** when you connect. If you don't provide [the `InitialCatalog` connection string property](connectivity.md#connection-behavior-for-initialcatalog), your initial connection context will be to the `master` warehouse.
 
    :::image type="content" source="media/how-to-connect/connection-string.png" alt-text="Screenshot from the Fabric portal of the Settings window, SQL endpoint page.":::
 

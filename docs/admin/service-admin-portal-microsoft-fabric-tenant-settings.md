@@ -25,7 +25,7 @@ Users can create ontologies to unify enterprise semantics across data, models, a
 
 For more information, see [Ontology item overview](https://aka.ms/ontologyitem-overview).
 
-## User can create Graph (preview)
+## User can create Graph
 
 Users can visualize data with Graph to drive deeper insights and reveal richer context.
 

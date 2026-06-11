@@ -5,13 +5,16 @@ ms.reviewer: harmeetgill # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
-ms.date: 03/03/2026
+ms.date: 04/28/2026
+ai-usage: ai-assisted
 #customer intent: As a OneLake user, I want to learn how to install and use the OneLake file explorer client app for Windows so that I can seamlessly access and sync my OneLake data with Windows File Explorer.
 ---
 
 # Use OneLake file explorer to access Fabric data
 
-The OneLake file explorer application seamlessly integrates OneLake with Windows File Explorer. This application automatically syncs all OneLake items that you have access to in Windows File Explorer. "Sync" refers to pulling up-to-date metadata on files and folders, and sending changes made locally to the OneLake service. Syncing doesn't download the data, it creates placeholders. You must double-click on a file to download the data locally.
+The OneLake file explorer application seamlessly integrates OneLake with Windows File Explorer. You can upload local files—such as CSV, Excel, and Parquet—directly into OneLake by dragging and dropping them, without using portals or scripts. Files placed in OneLake are immediately available to Fabric Data Factory pipelines, Fabric notebooks, and semantic models.
+
+This application automatically syncs all OneLake items that you have access to in Windows File Explorer. "Sync" refers to pulling up-to-date metadata on files and folders, and sending changes made locally to the OneLake service. Syncing doesn't download the data, it creates placeholders. You must double-click on a file to download the data locally.
 
 :::image type="content" source="media\onelake-file-explorer\onelake-file-explorer-screen.png" alt-text="Screenshot of OneLake files integrated in the Windows File Explorer screen." lightbox="media\onelake-file-explorer\onelake-file-explorer-screen.png":::
 
@@ -29,7 +32,7 @@ To install:
 
    The storage location on your PC for the placeholders and any downloaded content is `%USERPROFILE%\OneLake - Microsoft\`.
 
-Once the application is installed and running, you can see your OneLake data in Windows File Explorer.
+Once the application is installed and running, you can see your OneLake data in Windows File Explorer. OneLake appears as a unified node within Windows File Explorer, showing your accessible workspaces and items in a consolidated view.
 
 Starting in version 1.0.13, the OneLake file explorer app notifies you when a new update is available. When a new version becomes available, you receive a Windows notification and the OneLake icon changes. Right-click on the OneLake icon in the Windows notification area. Select **Update Available** and follow steps to update.
 
@@ -115,7 +118,17 @@ If you select **No**, the local changes aren't sent to the OneLake service. You 
 
 ### Copy or move files
 
-Copy files to, from, and within your items by using standard keyboard shortcuts like Ctrl+C and Ctrl+V. Move files by dragging and dropping them.
+Copy files to, from, and within your items by using standard keyboard shortcuts like Ctrl+C and Ctrl+V. Move files by dragging and dropping them. You can drag files from any local folder into a OneLake workspace or item folder to upload them to OneLake. Commonly used file formats such as CSV, Excel (.xlsx), and Parquet are supported, and the original file structure and formats are preserved in OneLake.
+
+### Use with Fabric experiences
+
+Once files are in OneLake, they can be immediately referenced by other Fabric experiences without separate ingestion steps. For example:
+
+- **Data Factory pipelines** can use OneLake files as a data source for orchestration and transformation.
+- **Fabric notebooks** can open and process files directly from the item folder path in OneLake shown in File Explorer.
+- **Semantic models** (including Direct Lake) can include OneLake files for reporting and analytics.
+
+Use the workspace and item folder structure visible in OneLake file explorer to place files in the correct location for downstream processing.
 
 ### Support for large files and a large number of files
 

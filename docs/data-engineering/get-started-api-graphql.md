@@ -88,7 +88,7 @@ To connect a data source and build your schema:
 
 1. From the OneLake catalog, choose the data source you want to connect to. Select **Filter** to see only specific types of Fabric data sources, or search by a specific keyword. When you're ready, select **Connect**.
 
-   :::image type="content" source="media/get-started-api-graphql/data-hub-choose-connect.png" alt-text="Screenshot of the OneLake data hub, showing available data source options for a workspace." lightbox="media/get-started-api-graphql/data-hub-choose-connect.png":::
+   :::image type="content" source="media/get-started-api-graphql/data-hub-choose-connect.png" alt-text="Screenshot of the OneLake catalog, showing available data source options for a workspace." lightbox="media/get-started-api-graphql/data-hub-choose-connect.png":::
 
     In this example, we chose a SQL analytics endpoint linked to a mirrored database that contains the AdventureWorks sample data.
 

@@ -22,9 +22,9 @@ Fabric provides a set of tools to help you:
 
 The Microsoft Fabric Capacity Metrics app provides visibility into capacity usage of each warehouse allowing you to see the compute charges for all user-generated and system-generated T-SQL statements within a warehouse and SQL analytics endpoint. For more information on monitoring capacity usage, see [Billing and utilization reporting in Fabric Data Warehouse](usage-reporting.md).
 
-## Query activity
+## Data Warehouse Monitor
 
-Users are provided a one-stop view of their running and completed queries in an easy-to-use interface, without having to run T-SQL. For more information, see [Monitor your running and completed T-SQL queries using Query activity](query-activity.md).  
+Users are provided a one-stop view of their running and completed queries in an easy-to-use interface, without having to run T-SQL. For more information, see [Monitor your running and completed T-SQL queries using Data Warehouse Monitor](monitor.md).  
 
 ## Query insights
 
@@ -37,7 +37,7 @@ Users can get insights about their live connections, sessions, and requests by q
 ## Related content
 
 - [Billing and utilization reporting in Fabric Data Warehouse](usage-reporting.md)
-- [Monitor your running and completed T-SQL queries using Query activity](query-activity.md)
+- [Monitor your running and completed T-SQL queries using Data Warehouse Monitor](monitor.md)
 - [Query insights in Fabric data warehousing](query-insights.md)
 - [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md)
 

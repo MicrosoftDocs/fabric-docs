@@ -1,9 +1,9 @@
 ---
 title: Intelligent cache in Microsoft Fabric
 description: Learn about the intelligent cache feature in Fabric, including when to use it and how to enable and disable it in a session.
-ms.reviewer: arali
+ms.reviewer: saravi
 ms.topic: concept-article
-ms.date: 11/15/2023
+ms.date: 05/18/2026
 ---
 
 # Intelligent cache in Microsoft Fabric
@@ -18,7 +18,7 @@ Intelligent cache is a single cache per node. If you're using a medium-sized nod
 
 ## How it works
 
-In Microsoft Fabric (Runtime 1.1 and 1.2), intelligent caching is enabled by default for all the Spark pools for all workspaces with cache size with 50%. The actual size of the available storage and the cache size on each node depends on the node family and node size.
+In Microsoft Fabric, intelligent caching is enabled by default for all Spark pools with a 50% cache size. The actual size of the available storage and the cache size on each node depends on the node family and node size.
 
 ## When to use intelligent cache
 
@@ -34,13 +34,52 @@ You don't see the benefit of intelligent cache if:
 
 - Your workload requires large amounts of shuffle. Disabling the intelligent cache frees up available space to prevent your job from failing due to insufficient storage space.
 
-## Enable and disable the intelligent cache 
+## Configure the intelligent cache 
 
 You can disable or enable the intelligent cache within a session by running the following code in your notebook or setting this configuration at the workspace or _Environment_ item level.
 
-```scala
-spark.conf.set("spark.synapse.vegas.useCache", "false/true") 
+# [Spark SQL](#tab/sparksql)
+
+```sql
+SET spark.synapse.vegas.useCache = TRUE
 ```
+
+# [PySpark](#tab/pyspark)
+
+```python
+spark.conf.set('spark.synapse.vegas.useCache', True)
+```
+
+# [Scala](#tab/scala)
+
+```scala
+spark.conf.set("spark.synapse.vegas.useCache", "true")
+```
+
+---
+
+The percentage of disc space that the intelligent cache can use defaults to 50%:
+
+# [Spark SQL](#tab/sparksql)
+
+```sql
+SET spark.synapse.vegas.cacheSize = 50
+```
+
+# [PySpark](#tab/pyspark)
+
+```python
+spark.conf.set('spark.synapse.vegas.cacheSize', 50)
+```
+
+# [Scala](#tab/scala)
+
+```scala
+spark.conf.set("spark.synapse.vegas.cacheSize", 50)
+```
+
+---
+
 
 ## Related content
 

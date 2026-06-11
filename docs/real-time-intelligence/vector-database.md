@@ -4,6 +4,8 @@ description: Learn about what vector databases are and how you can use Eventhous
 ms.reviewer: sharmaanshul
 ms.topic: concept-article
 ms.date: 04/20/2026
+ms.collection: ce-skilling-ai-copilot
+ms.update-cycle: 180-days
 ms.subservice: rti-eventhouse
 ms.search.form: Eventhouse
 ---

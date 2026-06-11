@@ -118,7 +118,7 @@ Activator items don't currently work with Microsoft Fabric’s lifecycle managem
 
 * Power BI as data source
 
-* Fabric User Data Functions as action (preview)
+* Fabric User Data Functions as action
 
 If you include an Activator item with one of these sources or actions in a deployment pipeline or a Git-integrated workspace, you see an error when you try to deploy or commit the Activator item.
 

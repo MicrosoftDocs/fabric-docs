@@ -13,7 +13,7 @@ Sensitivity labels can be applied to paginated reports hosted in the Power BI se
 
 When you export data from a labeled paginated report to a supported file type (Excel, PDF, PPTX, and Word), the sensitivity label on the paginated report is applied to the exported file.
 
-Sensitivity labels on paginated reports are included in the Purview hub report (as part of the count of sensitivity labels on reports), and can be audited (label-change audits only) and modified by public APIs, just like labels on regular Power BI reports.
+Sensitivity labels on paginated reports are included in the [OneLake catalog insights](onelake-catalog-govern.md), and can be audited (label-change audits only) and modified by public APIs, just like labels on regular Power BI reports.
 
 ## Considerations and limitations
 

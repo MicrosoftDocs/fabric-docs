@@ -358,6 +358,8 @@ Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehous
 
 * Spark notebooks require that the environment be 3.5 or higher and using Fabric runtime 1.3.
 
+* Data preview for RLS and CLS secured tables is not supported for non-schema lakehouses. We recommend using schema-enabled lakehouses with OneLake security.
+
 * OneLake security does not work with Azure Data Share or Purview Data Share. For more information, see [Azure Data Share](/azure/data-share/overview).
 
 * The following table provides the limitations of OneLake data access roles.

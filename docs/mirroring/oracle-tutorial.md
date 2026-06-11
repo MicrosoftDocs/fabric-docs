@@ -21,6 +21,8 @@ You need:
   * Oracle OCI
   * Oracle Database@Azure
   * Exadata
+ 
+ Mirroring for Oracle can only support databases in write mode. LogMiner doesn't work on read mode databases.
 
 >[!NOTE]
 >* LogMiner needs to be enabled on your Oracle server. This tool helps track changes in your Oracle database for real-time mirroring.

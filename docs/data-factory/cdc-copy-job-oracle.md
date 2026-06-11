@@ -145,14 +145,12 @@ Create a dedicated database user for LogMiner CDC operations and grant the requi
 
    ```sql
    GRANT CREATE SESSION TO <logminer_user>;
-   GRANT SELECT ON V_$DATABASE TO <logminer_user>;
-   GRANT SELECT ON V_$LOG TO <logminer_user>;
-   GRANT SELECT ON V_$LOGFILE TO <logminer_user>;
-   GRANT SELECT ON V_$ARCHIVED_LOG TO <logminer_user>;
-   GRANT SELECT ON V_$LOGMNR_CONTENTS TO <logminer_user>;
-   GRANT SELECT ON V_$LOGMNR_LOGS TO <logminer_user>;
-   GRANT EXECUTE ON DBMS_LOGMNR TO <logminer_user>;
-   GRANT EXECUTE ON DBMS_LOGMNR_D TO <logminer_user>;
+   GRANT SELECT_CATALOG_ROLE TO <logminer_user>;
+   GRANT CONNECT, RESOURCE TO <logminer_user>;
+   GRANT EXECUTE_CATALOG_ROLE TO <logminer_user>;
+   GRANT FLASHBACK ANY TABLE TO <logminer_user>;
+   GRANT SELECT ANY DICTIONARY TO <logminer_user>;
+   GRANT SELECT ANY TABLE TO <logminer_user>;
    GRANT LOGMINING TO <logminer_user>;
    ```
 
@@ -168,6 +166,21 @@ Create a dedicated database user for LogMiner CDC operations and grant the requi
    ```
 
    Repeat this command for each source table.
+
+1. Verify that the user that the Oracle connection uses has the `FLASHBACK ANY TABLE` privilege. The Copy job requires this privilege to capture a consistent snapshot during the initial full load.
+
+   ```sql
+   SELECT GRANTEE, PRIVILEGE
+   FROM DBA_SYS_PRIVS
+   WHERE PRIVILEGE LIKE 'FLASHBACK%'
+   ORDER BY GRANTEE, PRIVILEGE;
+   ```
+
+   The `GRANTEE` column should include the user name configured in the Oracle connection. If the `FLASHBACK ANY TABLE` privilege isn't listed for that user, grant it:
+
+   ```sql
+   GRANT FLASHBACK ANY TABLE TO <logminer_user>;
+   ```
 
 > [!NOTE]
 > - LogMiner reads redo log files to capture INSERT, UPDATE, and DELETE operations.

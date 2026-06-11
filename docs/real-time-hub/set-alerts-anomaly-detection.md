@@ -13,6 +13,10 @@ This article walks you through how to configure alerts for anomaly detection eve
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
+[!INCLUDE [outbound-access-protection-note](./includes/outbound-access-protection-note.md)]
+
+[!INCLUDE [workspace-private-links-note](./includes/workspace-private-links-note.md)]
+
 ## How to set alerts on anomaly detection events
 
 ### Launch the Set alert page
@@ -29,7 +33,7 @@ This article walks you through how to configure alerts for anomaly detection eve
 
     :::image type="content" source="media/set-alerts-anomaly-detection/set-alert.png" alt-text="Screenshot that shows the Anomaly Detection events in the Fabric events list.":::
 
-[!INCLUDE [rule-details](./includes/rule-details.md)]
+[!INCLUDE [rule-details](../real-time-intelligence/data-activator/includes/rule-details.md)]
 
 ## Monitor section
 
@@ -59,11 +63,11 @@ In the **Add rule** side panel, configure the following settings:
 
         :::image type="content" source="media/set-alerts-anomaly-detection/finish-configure.png" alt-text="Screenshot of the Review + connect page in the Configure connection settings dialog." lightbox="media/set-alerts-anomaly-detection/finish-configure.png":::
 
-[!INCLUDE [rule-condition-events](./includes/rule-condition-events.md)]
+[!INCLUDE [rule-condition-events](../real-time-intelligence/data-activator/includes/rule-condition-events.md)]
 
-[!INCLUDE [rule-action](./includes/rule-action.md)]
+[!INCLUDE [rule-action](../real-time-intelligence/data-activator/includes/rule-action.md)]
 
-[!INCLUDE [rule-save-location](./includes/rule-save-location.md)]
+[!INCLUDE [rule-save-location](../real-time-intelligence/data-activator/includes/rule-save-location.md)]
 
 
 ## Create alert

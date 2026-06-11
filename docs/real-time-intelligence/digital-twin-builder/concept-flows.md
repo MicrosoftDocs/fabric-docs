@@ -1,5 +1,5 @@
 ---
-title: Digital twin builder (preview) flow
+title: Digital Twin Builder (Preview) Flow
 description: Understand how digital twin builder (preview) flow items work.
 ms.date: 06/17/2025
 ms.topic: concept-article

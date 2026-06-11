@@ -1,5 +1,5 @@
 ---
-title: Include file for configuring PowerTable columns
+title: Include File for Configuring PowerTable Columns
 description: Include file for configuring PowerTable columns
 ms.topic: include
 ms.date: 04/13/2026

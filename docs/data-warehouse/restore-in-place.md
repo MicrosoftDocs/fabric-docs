@@ -2,7 +2,7 @@
 title: Restore In-Place of a Warehouse from a Restore Point
 description: Learn about how to perform a restore in-place of a warehouse in Microsoft Fabric.
 ms.reviewer: ajagadish, sosivara
-ms.date: 04/06/2025
+ms.date: 04/30/2026
 ms.topic: concept-article
 ms.search.form: Warehouse Restore # This article's title should not change. If so, contact engineering.
 ---
@@ -10,41 +10,39 @@ ms.search.form: Warehouse Restore # This article's title should not change. If s
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-[!INCLUDE [product-name](../includes/product-name.md)] offers the capability to restore a warehouse to a prior point-in-time, from a restore point.
+[!INCLUDE [product-name](../includes/product-name.md)] provides the capability to restore a warehouse to a prior point in time from a restore point. Learn more about restore points and restore in-place operations in this article.
 
-- Restore in-place can be used to restore the warehouse to a known good state in the event of accidental corruption, minimizing downtime and data loss.
-- Restore in-place can be helpful to reset the warehouse to a known good state for development and testing purposes.
-- Restore in-place helps to quickly roll back the changes to prior state, due failed database release or migration.
+A restore in-place operation overwrites the existing warehouse by using restore points from the existing warehouse.
 
-Restore in-place is an essential part of data recovery that allows restoration of the warehouse to a prior known good state. A restore overwrites the existing warehouse, using restore points from the existing warehouse.
+- Restore in-place operation restores the warehouse to a known good state in the event of accidental corruption, minimizing downtime and data loss.
+- Restore in-place can reset the warehouse to a known good state for development and testing purposes.
+- Restore in-place helps quickly roll back the changes to a prior state due to a failed database release or migration.
 
-You can also query data in a warehouse as it appeared in the past, using the T-SQL `OPTION` syntax. For more information, see [Query data as it existed in the past](time-travel.md).
+You can also query data in a warehouse as it appeared in the past by using the T-SQL `OPTION` syntax. For more information, see [Query data as it existed in the past](time-travel.md).
 
 ## What are restore points?
 
-Restore points are recovery points of the warehouse created by copying only the metadata, while referencing the data files in OneLake. The metadata is copied while the underlying data of the warehouse stored as parquet files aren't copied. These restore points can be used to recover the warehouse as of prior point in time.
+Restore points are recovery points of the warehouse created by copying only the metadata while referencing the data files in OneLake. The restore process copies the metadata but doesn't copy the underlying data of the warehouse stored as parquet files.
 
-To view all restore points for your warehouse, in the Fabric portal go to **Settings** -> **Restore points**.
+[Fabric automatically creates warehouse restore points](#system-created-restore-points), and you can create [user-defined restore points](#user-defined-restore-points). To view all restore points for your warehouse, in the Fabric portal go to **Settings** > **Restore points**.
 
 ### System-created restore points
 
-The creation of the system-created restore points is a built-in feature in [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. However, the warehouse should be in an **Active** state for automatic system-created restore point creation.
+Fabric automatically creates system-created restore points. However, the warehouse must be in an **Active** state for Fabric to create system-created restore points automatically.  
 
-System-generated restore points are created throughout the day, and are available for thirty days. System-generated restore points are created automatically every eight hours. A system-created restore point might not be available immediately for a new warehouse. If one is not yet available, [create a user-defined restore point](restore-in-place-portal.md).
+The system-created restore points are created automatically every eight hours when the warehouse is active and the capacity is not paused. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports an eight-hour recovery point objective (RPO). 
 
-There can be up to 180 system-generated restore points at any given point in time.
+A system-created restore point might not be available immediately for a new warehouse. If one isn't available, [create a user-defined restore point](restore-in-place-portal.md).
 
-[!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports an eight-hour recovery point objective (RPO).
-
-If the warehouse is paused, system-created restore points can't be created unless and until the warehouse is resumed. You should create a [user-defined restore point](#user-defined-restore-points) before pausing the warehouse. Before a warehouse is dropped, a system-created restore point isn't automatically created.
+If you pause the warehouse, the system can't create restore points until you resume the warehouse. You should create a [user-defined restore point](#user-defined-restore-points) before pausing the warehouse. Before you drop a warehouse, the system doesn't automatically create a restore point.
 
 System-created restore points can't be deleted, as the restore points are used to maintain service level agreements (SLAs) for recovery.
 
 ### User-defined restore points
 
-[!INCLUDE [fabric-dw](includes/fabric-dw.md)] enables the workspace administrators to manually create restore points before and after large modifications made to the warehouse. This ensures that the restore points are logically consistent, providing data protection and quick recovery time in case of any workload interruptions or user errors.
+[!INCLUDE [fabric-dw](includes/fabric-dw.md)] enables workspace administrators to manually create restore points before and after large modifications made to the warehouse. This process ensures that the restore points are logically consistent, providing data protection and quick recovery time in case of any workload interruptions or user errors.
 
-Any number of user-defined restore points aligned with your specific business or organizational recovery strategy can be created. User-defined restore points are available for thirty calendar days and are automatically deleted on your behalf after the expiry of the retention period.
+You can create any number of user-defined restore points aligned with your recovery strategy. User-defined restore points are available for the configured retention period and are automatically deleted after the expiry of the retention period.
 
 For more information about creating and managing restore points, see [Restore in-place in the Fabric portal](restore-in-place-portal.md).
 
@@ -52,28 +50,54 @@ For more information about creating and managing restore points, see [Restore in
 
 Details for restore point retention periods:
 
-- [!INCLUDE [fabric-dw](includes/fabric-dw.md)] deletes both the system-created and user-defined restore point at the expiry of the 30 calendar day retention period.
+Fabric maintains a minimum number of warehouse restore points to ensure that sufficient restore points are always available.
+
+- Fabric deletes both system-created and user-defined warehouse restore points at the expiry of the [configured retention period](data-retention.md). The default retention period is 30 calendar days, and by default Fabric retains a minimum of 20 system-created or user-defined restore points.
 - The age of a restore point is measured by the absolute calendar days from the time the restore point is taken, including when the [!INCLUDE [product-name](../includes/product-name.md)] capacity is paused.
-- System-created and user-generated restore points can't be created when the [!INCLUDE [product-name](../includes/product-name.md)] capacity is paused. The creation of a restore point fails when the fabric capacity gets paused while the restore point creation is in progress.
-- If a restore point is generated and then the capacity remains paused for more than 30 days before being resumed, the restore point remains in existence until a total of 180 system-created restore points are reached.
-- At any point in time, [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is guaranteed to be able to store up to 180 system-generated restore points as long as these restore points haven't reached the thirty day retention period.
-- All the user-defined restore points that are created for the warehouse are guaranteed to be stored until the default retention period of 30 calendar days.
+- You can't create system-created and user-generated restore points when the [!INCLUDE [product-name](../includes/product-name.md)] capacity is paused. The creation of a restore point fails when the Fabric capacity gets paused while the restore point creation is in progress.
+- If you generate a restore point and then pause the capacity for more than the configured retention period before resuming it, the restore point remains.
+
+#### Configurable retention
+
+The restore point retention period defaults to 30 days and is configurable. For more information, see [Data retention in Fabric Data Warehouse](data-retention.md).
+
+- With the default retention period of 30 days, the warehouse guarantees a minimum of 20 restore points, even if some system-created restore points fall outside the configured retention period. You can configure the data retention period to be 1 to 120 days.
+- Fabric stores all the user-defined restore points that you create until the configured retention period.
+
+#### Minimum restore point retention
+
+If your warehouse is inactive or capacity is paused, restore points are not actively generated. However, Fabric Data Warehouse still guarantees a minimum of 20 restore points — even if all of them fall outside the configured retention window. Even after months of inactivity, you always have at least 20 restore points available to recover from.
+
+The minimum number of restore points is 20 for the default retention period of 30 days, or for custom retention periods longer than 30 days. The minimum number of restore points is lower than 20 for customer retention periods under 30. For example:
+
+| Retention (Days) | Minimum restore points |
+|:--|:--|
+| **1** | 1 |
+| **7** | 5 |
+| **20** | 14 |
+| **30+** | 20 |
+
+### Restore point cleanup
+
+When the minimum restore point threshold is met, the garbage collection process automatically removes restore points that fall outside the retention period. 
+
+The minimum restore point guarantee ensures recoverability even when workload patterns prevent the system from generating new restore points at regular intervals.
 
 ## Recovery point and restore costs
 
 ### Storage billing
 
-The creation of both system-created and user-defined restore points consume storage. The storage cost of restore points in OneLake includes the data files stored in parquet format. There are no storage charges incurred during the process of restore.
+Both system-generated and user-defined restore points consume storage. The storage cost of restore points in OneLake includes the metadata files. The restore process doesn't incur any storage charges.
 
 ### Compute billing
 
-Compute charges are incurred during the creation and restore of restore points, and consume the [!INCLUDE [product-name](../includes/product-name.md)] capacity.
+Compute charges occur during the creation and restoration of restore points, and they consume the [!INCLUDE [product-name](../includes/product-name.md)] capacity.
 
 ## Restore in-place of a warehouse
 
 Use [the Fabric portal to restore a warehouse in-place](restore-in-place-portal.md).
 
-When you restore, the current warehouse is *replaced* with the restored warehouse. The name of the warehouse remains the same, and the old warehouse is overwritten. All components, including objects in the **Explorer**, modeling, Query Insights, and semantic models are restored as they existed when the restore point was created.
+When you restore, you *replace* the current warehouse with the restored warehouse. The warehouse name stays the same, and the old warehouse is overwritten. All components, including objects in the **Explorer**, modeling, Query Insights, and semantic models are restored exactly as they were when the restore point was created.
 
 Each restore point references a UTC timestamp when the restore point was created.
 
@@ -85,12 +109,12 @@ If you encounter Error 5064 after requesting a restore, resubmit the restore aga
 
 - Any user that has the [workspace roles](workspace-roles.md) of a Workspace Administrator, Member, Contributor, or Viewer can see the list of system-created and user-defined restore points.
 
-- A data warehouse can be restored only by user that has [workspace roles](workspace-roles.md) of a Workspace Administrator, from a system-created or user-defined restore point.
+- Members of the Workspace Administrator [workspace role](workspace-roles.md) can restore a warehouse from a system-created or user-defined restore point.
 
 ## Limitations
 
-- A recovery point can't be restored to create a new warehouse with a different name, either within or across the [!INCLUDE [product-name](../includes/product-name.md)] workspaces.
-- Restore points can't be retained beyond the default thirty calendar day retention period. This retention period isn't currently configurable.
+- You can't restore a recovery point to create a new warehouse with a different name, either within or across the [!INCLUDE [product-name](../includes/product-name.md)] workspaces.
+- You can't retain restore points beyond the configured retention period. For more information, see [Configurable data retention](data-retention.md).
 
 ## Next step
 
@@ -102,4 +126,5 @@ If you encounter Error 5064 after requesting a restore, resubmit the restore aga
 - [Restore in-place in the Fabric portal](restore-in-place-portal.md)
 - [Clone table in Microsoft Fabric](clone-table.md)
 - [Query data as it existed in the past](time-travel.md)
+- [Configurable data retention](data-retention.md)
 - [Microsoft Fabric disaster recovery guide](../security/disaster-recovery-guide.md)

@@ -151,6 +151,8 @@ This section lists the limitations for the deployment rules.
   * Parameter rules aren't supported for paginated reports.
   * Adding data source rules for semantic models and dataflows gen1 on data sources which are parametrized.
 
+* Power Query Online (PQO) data source rules aren't supported for paginated reports. Data source rules are only supported for paginated reports that use non-PQO connection types, such as direct connection strings. If your paginated report uses a PQO-based data source, you can't override it with a deployment rule.
+
 ## Related content
 
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)

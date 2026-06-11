@@ -1,17 +1,20 @@
 ---
 title: Activity overview
 description: Learn about activities.
-ms.reviewer: pennyzhou-msft
+ms.reviewer: n0elleli
 ms.topic: overview
-ms.date: 07/25/2025
-ms.custom: pipelines
-ms.search.form: Pipeline Activity Overview
+ms.date: 06/07/2026
+ms.custom: pipelines 
+ms.search.form: Pipeline Activity Overview 
 ai-usage: ai-assisted
----
+--- 
 
 # Activity overview
 
 Activities are the building blocks that help you create end-to-end data workflows in [!INCLUDE [product-name](../includes/product-name.md)]. Think of them as the tasks that move and transform your data to meet your business needs. You might use a copy activity to move data from SQL Server to Azure Blob Storage. Then you could add a Dataflow activity or Notebook activity to process and transform that data before loading it into Azure Synapse Analytics for reporting.
+
+> [!TIP]
+> Learn how to visually author and navigate your pipelines on the canvas. To learn more, see [Pipeline canvas](pipeline-canvas-experience.md#updated-canvas-experience).
 
 Activities are grouped together in pipelines to accomplish specific goals. For example, you might create a pipeline that:
 
@@ -62,6 +65,7 @@ These activities help you control how your pipeline runs:
 Control activity | Description
 ---------------- | -----------
 [Append variable](append-variable-activity.md) | Add a value to an existing array variable.
+[Approval activity](approval-activity.md) | Pauses pipeline execution and requests an approve or reject decision from designated reviewers.
 [Azure Batch activity](azure-batch-activity.md) | Runs an Azure Batch script.
 [Azure Databricks activity](azure-databricks-activity.md) | Runs an Azure Databricks job (Notebook, Jar, Python).
 [Azure Machine Learning activity](azure-machine-learning-activity.md) | Runs an Azure Machine Learning job.
@@ -76,6 +80,7 @@ Control activity | Description
 [KQL activity](kql-activity.md) | Executes a KQL script against a Kusto instance.
 [Lakehouse maintenance activity](lakehouse-maintenance-activity.md) | Perform routine table maintenance on a Lakehouse from a Microsoft Fabric pipeline.
 [Lookup Activity](lookup-activity.md) | Lookup Activity can be used to read or look up a record/ table name/ value from any external source. This output can further be referenced by succeeding activities.
+[Refresh Materialized Lake View activity](refresh-materialized-lake-view-activity.md) | Refreshes a materialized lake view in a Lakehouse to reflect the latest data.
 [Refresh SQL Endpoint activity](refresh-sql-endpoint-activity.md) | Refreshes a Lakehouse SQL endpoint to reflect the latest data.
 [Set Variable](set-variable-activity.md) | Set the value of an existing variable.
 [Switch activity](switch-activity.md) | Implements a switch expression that allows multiple subsequent activities for each potential result of the expression.
@@ -107,13 +112,60 @@ Every activity includes **Name** and **Description** fields in the general setti
 Setting | Description
 ---------|----------
 Timeout | How long an activity can run before timing out. The default is 12 hours, and the maximum is seven days. Use the format D.HH:MM:SS.
-Retry | How many times to retry if the activity fails.
-(Advanced properties) Retry interval (sec) | How many seconds to wait between retry attempts.
+Enable retries | When selected,  the activity automatically retries if it fails.
+Retry | How many times to retry if the activity fails. Defaults to 1.
+Retry conditions (preview) | Configure specific error conditions that trigger a retry.
+Retry interval (sec) | How many seconds to wait between retry attempts. The default is 30 seconds.
 (Advanced properties) Secure output | When selected, activity output won't appear in logs.
 (Advanced properties) Secure input | When selected, activity input won't appear in logs.
 
 > [!NOTE]
 > By default, you can have up to 120 activities per pipeline. This includes inner activities for containers.
+
+## Retry an activity
+
+When an activity fails during pipeline execution, you can configure it to automatically retry before marking the run as failed. This feature is useful for handling transient errors like network timeouts, temporary service unavailability, or intermittent connection issues.
+
+### Configure retry settings
+
+To set up retry behavior for an activity:
+
+1. Select the activity on the pipeline canvas.
+1. In the **General** tab of the properties pane, select the **Enable retries** checkbox to turn on retry functionality.
+1. Set the **Retry** field to the number of retry attempts. Enter a value between 1 and 1000. Default value is 1. 
+1. Optionally, configure **Retry conditions (preview)** to control when retries occur based on specific error criteria.
+1. Set the **Retry interval (sec)** field to determine how many seconds to wait between retry attempts. The default is 30 seconds.
+
+:::image type="content" source="media/activity-overview/activity-retry-settings.png" alt-text="Screenshot showing the retry settings in the General tab of an activity's properties pane, including Enable retries, Retry count, Retry conditions, and Retry interval.":::
+
+### Configure retry conditions (preview)
+
+By default, an activity retries on any failure. Use **Retry conditions** to specify exactly which errors should trigger a retry. This helps you avoid wasting retries on errors that won't resolve, such as authentication failures.
+
+To add a retry condition:
+
+1. In the **Retry conditions (preview)** section, select the **+** button to add a new condition row.
+1. Choose a **Field** to evaluate:
+   - **Error message**: The text content of the error message.
+   - **Failure type**: The category of failure (for example, User error, System error).
+   - **Error code**: The specific error code returned (for example, 429 for rate limiting).
+1. Select an **Operator** to define the match type (for example, **Contains**).
+1. Enter a **Value** to match against.
+1. Use the **And/Or** column to combine multiple conditions. Select **And** to require all conditions to match, or **Or** to retry when any condition matches.
+
+For example, to retry only on rate limiting errors, add a condition with **Field** set to `Error code`, **Operator** set to `Contains`, and **Value** set to `429`.
+
+> [!IMPORTANT]
+> The retry interval runs *before* the condition is evaluated. For example, if you set a 1-hour retry interval and the retry condition isn't met, the pipeline still waits the full hour before proceeding to the next activity or ending the pipeline run.
+
+> [!TIP]
+> When no retry conditions are specified, the activity retries on all failures. Add conditions to be more selective about which errors trigger retries.
+
+### Known retry limitations
+
+- **Activity support**: Conditional retries are supported for specific activity types, including Copy data, Notebook, Dataflow, and Stored procedure activities.
+- **Error properties**: Retry conditions can match on error code, error message, and failure type. Not all connector-specific error fields are available for matching.
+
 
 ## Deactivate an activity
 

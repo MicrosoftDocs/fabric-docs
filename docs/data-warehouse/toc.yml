@@ -69,7 +69,7 @@ items:
 - name: Design
   items:
   - name: Better together - the lakehouse and warehouse
-    href: get-started-lakehouse-sql-analytics-endpoint.md
+    href: ../data-engineering/lakehouse-sql-analytics-endpoint-use-cases.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: Data types
     href: data-types.md
   - name: IDENTITY column
@@ -149,125 +149,114 @@ items:
 
 - name: Create models and build Power BI reports
   href: semantic-model-toc/toc.yml
-- name: Collaborate, share, and manage security
+- name: Security
   items:
-  - name: Data warehousing security
-    href: security.md
-  - name: Entra ID authentication
-    href: entra-id-authentication.md
-  - name: Service principals
-    href: service-principals.md
-    displayName: SPN
-  - name: SQL Audit Logs
-    href: sql-audit-logs.md
-  - name: Workspace roles
-    href: workspace-roles.md
-  - name: How to
+  - name: Collaborate, share, and manage security
     items:
-    - name: Share your data
-      href: share-warehouse-manage-permissions.md    
-    - name: Manage SQL granular permissions
-      href: sql-granular-permissions.md
-    - name: Configure SQL Audit Logs
-      href: configure-sql-audit-logs.md 
-    - name: Query Delta Lake logs
-      href: query-delta-lake-logs.md
-- name: Encryption and data protection
+    - name: Data warehousing security
+      href: security.md
+    - name: Entra ID authentication
+      href: entra-id-authentication.md
+    - name: Service principals
+      href: service-principals.md
+      displayName: SPN
+    - name: SQL Audit Logs
+      href: sql-audit-logs.md
+    - name: Workspace roles
+      href: workspace-roles.md
+    - name: How to
+      items:
+      - name: Share your data
+        href: share-warehouse-manage-permissions.md
+      - name: Manage SQL granular permissions
+        href: sql-granular-permissions.md
+      - name: Configure SQL Audit Logs
+        href: configure-sql-audit-logs.md
+      - name: Query Delta Lake logs
+        href: query-delta-lake-logs.md
+  - name: Encryption and data protection
+    items:
+    - name: Encryption
+      displayName: CMK encryption
+      href: encryption.md
+    - name: Column-level security
+      href: column-level-security.md
+    - name: Row-level security
+      href: row-level-security.md
+    - name: Dynamic data masking
+      href: dynamic-data-masking.md
+    - name: How to
+      items:
+      - name: Implement column-level security
+        href: tutorial-column-level-security.md
+      - name: Implement row-level security
+        href: tutorial-row-level-security.md
+      - name: Implement dynamic data masking
+        href: howto-dynamic-data-masking.md
+- name: Query data
   items:
-  - name: Encryption
-    displayName: CMK encryption
-    href: encryption.md
-  - name: Column-level security
-    href: column-level-security.md
-  - name: Row-level security
-    href: row-level-security.md
-  - name: Dynamic data masking
-    href: dynamic-data-masking.md
-  - name: How to
-    items: 
-    - name: Implement column-level security
-      href: tutorial-column-level-security.md    
-    - name: Implement row-level security
-      href: tutorial-row-level-security.md
-    - name: Implement dynamic data masking
-      href: howto-dynamic-data-masking.md
-- name: Query tools 
-  items:
-  - name: Query using Visual Query editor
-    href: visual-query-editor.md
-  - name: Query using SQL Query editor
-    href: sql-query-editor.md    
-  - name: View data in the Data preview
-    href: data-preview.md
-  - name: Query data with a T-SQL notebook
-    href: ../data-engineering/author-tsql-notebook.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
-- name: Query external data
-  items:
-  - name: Query external data lake files
-    href: query-external-data-lake-files.md
-  - name: Query delimited files
-    href: query-delimited-files.md
-  - name: Query JSON files
-    href: query-json-files.md
-  - name: Query Parquet files
-    href: query-parquet-files.md
-- name: Time travel
-  items:
-  - name: Query data as it existed in the past
-    href: time-travel.md
-  - name: "How to: Query using time travel"
-    href: how-to-query-using-time-travel.md
-    displayName: Query using time travel
+  - name: Query tools
+    items:
+    - name: Query using Visual Query editor
+      href: visual-query-editor.md
+    - name: Query using SQL Query editor
+      href: sql-query-editor.md
+    - name: View data in the Data preview
+      href: data-preview.md
+    - name: Query data with a T-SQL notebook
+      href: ../data-engineering/author-tsql-notebook.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+  - name: Query external data
+    items:
+    - name: Query external data lake files
+      href: query-external-data-lake-files.md
+    - name: Query delimited files
+      href: query-delimited-files.md
+    - name: Query JSON files
+      href: query-json-files.md
+    - name: Query Parquet files
+      href: query-parquet-files.md
+  - name: Time travel
+    items:
+    - name: Query data as it existed in the past
+      href: time-travel.md
+    - name: "How to: Query using time travel"
+      href: how-to-query-using-time-travel.md
+      displayName: Query using time travel
 
-- name: Data recovery
+- name: Monitor and manage
   items:
-  - name: Restore in-place
-    href: restore-in-place.md
-  - name: Restore in-place in the Fabric portal
-    href: restore-in-place-portal.md
-    displayName: Restore
-  - name: Clone tables
-    href: clone-table.md
-  - name: Clone tables in the Fabric portal
-    href: tutorial-clone-table-portal.md
-- name: Manage performance
-  items:
-  - name: Data clustering
-    href: data-clustering.md
-  - name: In-memory and disk caching
-    href: caching.md
-  - name: Performance guidelines
-    displayName: Warehouse performance
-    href: guidelines-warehouse-performance.md
-  - name: Result set caching
-    href: result-set-caching.md
-    displayName: result set caching
-  - name: SQL analytics endpoint performance
-    href: sql-analytics-endpoint-performance.md
-  - name: Statistics
-    href: statistics.md
-  - name: V-Order 
-    href: v-order.md
-  - name: How to
-    items:    
+  - name: Manage performance
+    items:
+    - name: Data clustering
+      href: data-clustering.md
+    - name: In-memory and disk caching
+      href: caching.md
+    - name: Performance guidelines
+      displayName: Warehouse performance
+      href: guidelines-warehouse-performance.md
+    - name: Result set caching
+      href: result-set-caching.md
+      displayName: result set caching
+    - name: SQL analytics endpoint performance
+      href: ../data-engineering/sql-analytics-endpoint-performance.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+    - name: Statistics
+      href: statistics.md
+    - name: V-Order
+      href: v-order.md
+    - name: How to
+      items:
       - name: Use data clustering in Fabric Data Warehouse
         href: tutorial-data-clustering.md
-- name: Mirroring databases
-  items:
-    - name: Mirroring overview
-      href: /fabric/mirroring/overview?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
-    - name: Mirroring documentation
-      href: /fabric/mirroring/
-- name: Monitor the warehouse
-  items:
-  - name: Monitoring overview
-    href: monitoring-overview.md
-  - name: Query activity
-    href: query-activity.md
-  - name: Query insights
-    href: query-insights.md
-  - name: How to
-    items:    
+  - name: Monitor the warehouse
+    items:
+    - name: Monitoring overview
+      href: monitoring-overview.md
+    - name: Monitor
+      href: monitor.md
+    - name: Query insights
+      href: query-insights.md
+    - name: How to
+      items:
       - name: Monitor using Capacity Metrics app
         href: usage-reporting.md
         displayName: Billing, usage reporting
@@ -275,26 +264,50 @@ items:
         href: monitor-using-dmv.md
       - name: Observe utilization trends
         href: how-to-observe-utilization.md
-- name: Warehouse capacity
+  - name: Warehouse capacity
+    items:
+    - name: Burstable capacity
+      href: burstable-capacity.md
+    - name: Capacity pause and resume
+      href: pause-resume.md
+      displayName: pause, warehouse
+    - name: Custom SQL pools
+      href: custom-sql-pools.md
+    - name: Smoothing and throttling
+      href: compute-capacity-smoothing-throttling.md
+      displayName: Smoothing, throttling
+    - name: Workload Management
+      href: workload-management.md
+    - name: How to
+      items:
+      - name: Configure custom SQL pools in Fabric portal
+        href: configure-custom-sql-pools-portal.md
+      - name: Configure custom SQL pools with REST API
+        href: configure-custom-sql-pools-api.md
+  - name: Data recovery
+    items:
+    - name: Clone tables
+      href: clone-table.md
+    - name: Configurable data retention
+      href: data-retention.md
+      displayName: Data retention, retention period
+    - name: Restore in-place
+      href: restore-in-place.md
+    - name: How to
+      items:
+      - name: Configure retention
+        href: how-to-configure-retention.md
+      - name: Clone tables in the Fabric portal
+        href: tutorial-clone-table-portal.md
+      - name: Restore in-place in the Fabric portal
+        href: restore-in-place-portal.md
+        displayName: Restore
+- name: Mirroring databases
   items:
-  - name: Burstable capacity
-    href: burstable-capacity.md
-  - name: Capacity pause and resume
-    href: pause-resume.md
-    displayName: pause, warehouse
-  - name: Custom SQL pools
-    href: custom-sql-pools.md
-  - name: Smoothing and throttling
-    href: compute-capacity-smoothing-throttling.md
-    displayName: Smoothing, throttling
-  - name: Workload Management
-    href: workload-management.md
-  - name: How to
-    items:    
-    - name: Configure custom SQL pools in Fabric portal
-      href: configure-custom-sql-pools-portal.md
-    - name: Configure custom SQL pools with REST API
-      href: configure-custom-sql-pools-api.md
+  - name: Mirroring overview
+    href: /fabric/mirroring/overview?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+  - name: Mirroring documentation
+    href: /fabric/mirroring/
 - name: Migrate
   items:
   - name: Migration Assistant
@@ -315,7 +328,7 @@ items:
       href: migrate-identity-columns.md
 - name: Troubleshoot
   items:
-  - name: Troubleshooting your Warehouse
+  - name: Troubleshoot your warehouse
     href: troubleshoot-fabric-data-warehouse.md
   - name: Limitations
     href: limitations.md      

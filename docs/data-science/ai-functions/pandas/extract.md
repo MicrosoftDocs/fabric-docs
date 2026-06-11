@@ -1,10 +1,11 @@
 ---
 title: Use ai.extract with pandas
 description: Learn how to scan input text and extract information by using the ai.extract function with pandas.
-ms.reviewer: vimeland
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
-ms.search.form: AI functions
+ms.search.form: AI Functions
 ---
 
 # Use ai.extract with pandas
@@ -13,14 +14,14 @@ The `ai.extract` function uses generative AI to scan input text and extract spec
 
 > [!NOTE]
 > - This article covers using *ai.extract* with pandas. To use *ai.extract* with PySpark, see [this article](../pyspark/extract.md).
-> - See other AI functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI functions](./configuration.md).
+> - See other AI Functions in [this overview article](../overview.md).
+> - Learn how to customize the [configuration of AI Functions](./configuration.md).
 
 ## Overview
 
 The `ai.extract` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. To extract custom entity types from each row of input, call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column.
 
-Unlike other AI functions, `ai.extract` returns a pandas DataFrame, instead of a Series, with a separate column for each specified entity type that contains extracted values for each input row.
+Unlike other AI Functions, `ai.extract` returns a pandas DataFrame, instead of a Series, with a separate column for each specified entity type that contains extracted values for each input row.
 
 ## Syntax
 
@@ -46,7 +47,7 @@ df_entities = df["text"].ai.extract("entity1", "entity2", "entity3")
 | `raw_col` <br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that sets the column name for the raw LLM response. The raw response provides a list of dictionary pairs for every entity label, including "reason" and "extraction_text". |
 
 > [!TIP]
-> You can use `ai.infer_schema` to automatically infer a label schema compatible with `ai.extract`. The inferred schema returns a list of `aifunc.ExtractLabel` objects that you can pass directly to `ai.extract` for structured data extraction. For more information, see [Use multimodal input with AI functions](../multimodal-overview.md).
+> You can use `ai.infer_schema` to automatically infer a label schema compatible with `ai.extract`. The inferred schema returns a list of `aifunc.ExtractLabel` objects that you can pass directly to `ai.extract` for structured data extraction. For more information, see [Use multimodal input with AI Functions](../multimodal-overview.md).
 
 ## Returns
 
@@ -104,7 +105,7 @@ This example code cell provides the following output:
 
 The `ai.extract` function supports file-based multimodal input. You can extract entities from images, PDFs, and text files. Supported file types include JPG/JPEG, PNG, GIF, WebP (images), PDF (documents), and common text formats such as MD, TXT, CSV, JSON, and XML.
 
-Columns containing plain string URLs must set `column_type="path"` so that `ai.extract` treats the values as file paths. When you use `aifunc.list_file_paths()`, the returned `yarl.URL` objects are automatically detected as file paths, so you don't need to specify `column_type="path"` in that case. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+Columns containing plain string URLs must set `column_type="path"` so that `ai.extract` treats the values as file paths. When you use `aifunc.list_file_paths()`, the returned `yarl.URL` objects are automatically detected as file paths, so you don't need to specify `column_type="path"` in that case. For more information about supported file types and setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
 
 ```python
 # This code uses AI. Always review output for mistakes.
@@ -139,7 +140,7 @@ display(extracted)
 - Summarize text with [ai.summarize](./summarize.md).
 - Translate text with [ai.translate](./translate.md).
 
-- Learn more about the [full set of AI functions](../overview.md).
-- Use [multimodal input with AI functions](../multimodal-overview.md).
-- Customize the [configuration of AI functions](./configuration.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
+- Learn more about the [full set of AI Functions](../overview.md).
+- Use [multimodal input with AI Functions](../multimodal-overview.md).
+- Customize the [configuration of AI Functions](./configuration.md).
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

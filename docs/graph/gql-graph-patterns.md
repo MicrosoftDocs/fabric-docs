@@ -2,13 +2,11 @@
 title: GQL Graph Patterns for graph in Microsoft Fabric
 description: Learn about GQL graph pattern syntax for matching nodes, edges, and paths in graph queries. Includes examples and pattern composition rules.
 ms.topic: reference
-ms.date: 04/27/2026
+ms.date: 05/20/2026
 ms.reviewer: splantikow
 ---
 
 # GQL graph patterns
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 Graph patterns are core building blocks of your GQL queries in graph in Microsoft Fabric. They describe the structures you're looking for in the graph using nodes and edges in an intuitive, visual way. Think of graph patterns as templates that the query engine tries to match against the actual data in your graph.
 

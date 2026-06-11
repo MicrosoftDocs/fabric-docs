@@ -65,7 +65,7 @@ In this task, learn how to clone a table within the same schema in the warehouse
    ```
 
     > [!IMPORTANT]
-    > You should replace the timestamp with a past date that is within 30 days of today, but after the date and time (in Coordinated Universal Time—UTC) that you completed the [Ingest data into a Warehouse](tutorial-ingest-data.md) tutorial.
+    > Replace the timestamp with a past date that is within the configured retention period for the current warehouse, and after the date and time (in Coordinated Universal Time—UTC) that you completed the [Ingest data into a Warehouse](tutorial-ingest-data.md) tutorial. Clone table history retention is 30 days by default, and is configurable. For more information, see [Data retention in Fabric Data Warehouse](data-retention.md).
 
 1. Run the query.
 
@@ -106,9 +106,8 @@ In this task, learn how to clone a table across schemas within the same warehous
     --Create a clone of the dbo.fact_sale table in the dbo1 schema.
     CREATE TABLE [dbo1].[fact_sale2] AS CLONE OF [dbo].[fact_sale] AT '2025-01-01T10:00:00.000';
    ```
-
     > [!IMPORTANT]
-    > You should replace the timestamp with a past date that is within 30 days of today, but after the date and time (in UTC) that you completed the [Ingest data into a Warehouse](tutorial-ingest-data.md) tutorial.
+    > Replace the timestamp with a past date that is within the configured retention period for the current warehouse, and after the date and time (in Coordinated Universal Time—UTC) that you completed the [Ingest data into a Warehouse](tutorial-ingest-data.md) tutorial. Clone table history retention is 30 days by default, and is configurable. For more information, see [Data retention in Fabric Data Warehouse](data-retention.md).
 
 1. Run the query.
 

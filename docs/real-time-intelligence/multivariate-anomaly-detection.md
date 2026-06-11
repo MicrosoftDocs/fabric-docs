@@ -208,7 +208,7 @@ For general information, see [Create a KQL queryset](create-query-set.md).
 
 1. From your workspace, select **+New item** > **KQL Queryset**.
 1. Enter the name *MultivariateAnomalyDetectionTutorial*, and then select **Create**.
-1. In the **OneLake data hub** window, select the KQL database where you stored the data.
+1. In the **OneLake catalog** window, select the KQL database where you stored the data.
 1. Select **Connect**.
 
 ## Part 9- Predict anomalies in the KQL queryset

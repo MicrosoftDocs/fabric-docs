@@ -1,5 +1,5 @@
 ---
-title: Include file for creating a PowerTable sheet
+title: Include File for Creating a PowerTable Sheet
 description: Include file for creating a new PowerTable sheet
 ms.topic: include
 ms.date: 03/30/2026

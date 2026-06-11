@@ -1,5 +1,5 @@
 ---
-title: What is ontology (preview)?
+title: What Is Ontology (Preview)?
 description: Learn about core concepts and features of the ontology (preview) item.
 ms.date: 10/06/2025
 ms.topic: overview
@@ -10,7 +10,7 @@ ms.search.form: Ontology Overview
 
 The *ontology (preview)* item (part of the [Fabric IQ (preview) workload](../overview.md)) digitally represents the enterprise vocabulary and semantic layer that unifies meaning across domains and OneLake sources. It defines enterprise concepts as *entity types* (like *Customer*), *properties* (like a Customer's *name* and *email*), and *relationships* (like *Customer places Order*), while clarifying the constraints of these terms. After defining your ontology, bind the entity type definitions to real data, so downstream tools can share the same language. Both humans and AI agents can use this language for cross-domain reasoning and decision-ready actions.
 
-Ontology provides a scaled, secure, and governed shared business model used across teams, agents, and workflows in Fabric IQ. It provides a shared context layer that can be consumed by Fabric Data Agents and Real-Time Intelligence components for consistent reasoning and actions. Ontology works well in situations where you need cross-domain consistency, governance, or AI agent grounding, and you want to reason across processes.
+Ontology provides a scaled, secure, and governed shared business model used across teams, agents, and workflows in Fabric IQ. It provides a shared context layer that can be consumed by Fabric agents and Real-Time Intelligence components for consistent reasoning and actions. Ontology works well in situations where you need cross-domain consistency, governance, or AI agent grounding, and you want to reason across processes.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -60,13 +60,13 @@ After you define an ontology, you can [bind it to your data](how-to-bind-data.md
 >[!IMPORTANT]
 >Ontology's graph feature relies on [Graph in Microsoft Fabric](../../graph/overview.md), so you must enable the Graph setting for your tenant. For more information, see [Ontology (preview) required tenant settings](overview-tenant-settings.md).
 
-The *ontology graph* is a queryable instance graph built from your data bindings and relationship definitions. You can see it from the [ontology preview experience](how-to-use-preview-experience.md). In the graph, nodes are entity instances, and edges are links (either asserted or derived) with metadata attributes. Each node or edge keeps data source lineage and follows a scheduled data refresh. Graphs enable visual exploration of business context, execution of graph algorithms (like paths, centrality, and communities), and rule‑driven inferences. Graphs improve semantics by making relationships first‑class, so context is explicit, queryable, and governed (not buried in join logic).
+The *ontology graph* is a queryable instance graph built from your data bindings and relationship definitions. You can see it in the [entity type details](how-to-view-entity-type-details.md). In the graph, nodes are entity instances, and edges are links (either asserted or derived) with metadata attributes. Each node or edge keeps data source lineage and follows a scheduled data refresh. Graphs enable visual exploration of business context, execution of graph algorithms (like paths, centrality, and communities), and rule‑driven inferences. Graphs improve semantics by making relationships first‑class, so context is explicit, queryable, and governed (not buried in join logic).
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
 
 ### Querying your ontology
 
-*Ontology querying* lets you ask business-level questions over bound data sources through ontology terminology. Queries start with entity types and allow filtering by properties, traversing relationships, aggregating by time, and other constraints. The ontology layer automatically sends your queries to the most efficient system to get results quickly (such as GQL for Graph in Microsoft Fabric and KQL for Eventhouse). It also includes an Natural Language to Ontology (NL2Ontology) query layer, which converts your natural language questions into structured queries and returns relevant results. This enables you to ask questions using business terms, instead of needing to know the details of how your data is stored in different systems. NL2Ontology queries ensure that filters, joins, units, and validity windows align with the definitions that are published in your ontology.
+*Ontology querying* lets you ask business-level questions over bound data sources through ontology terminology. Queries start with entity types and allow filtering by properties, traversing relationships, aggregating by time, and other constraints. The ontology layer automatically sends your queries to the most efficient system to get results quickly (such as GQL for Graph in Microsoft Fabric and KQL for Eventhouse). It also includes a Natural Language to Ontology (NL2Ontology) query layer, which converts your natural language questions into structured queries and returns relevant results. This enables you to ask questions using business terms, instead of needing to know the details of how your data is stored in different systems. NL2Ontology queries ensure that filters, joins, units, and validity windows align with the definitions that are published in your ontology.
 
 ## Next steps
 

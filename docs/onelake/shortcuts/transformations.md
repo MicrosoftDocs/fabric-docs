@@ -5,7 +5,7 @@ ms.reviewer: preshah # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
-ms.date: 04/10/2026
+ms.date: 05/26/2026
 ai-usage: ai-assisted
 ---
 
@@ -152,15 +152,10 @@ The following limitations currently apply to shortcut transformations.
 
 ### CSV limitations
 
-* **Unsupported data types:** Mixed data type columns, Timestamp_Nanos, Complex logical types - MAP/LIST/STRUCT, Raw binary.
-
-### Parquet limitations
-
-* **Unsupported data types:** Timestamp_nanos, Decimal with INT32/INT64, INT96, Unassigned integer types - UINT_8/UINT_16/UINT_64, Complex logical types - MAP/LIST/STRUCT.
+* **Unsupported data types:** Complex logical types - MAP/LIST/STRUCT, Raw binary.
 
 ### JSON limitations
 
-* **Unsupported data types:** Mixed data types in an array, Raw binary blobs inside JSON, Timestamp_Nanos.
 * **Flattening of array data type:** The array data type is retained in the Delta table and is accessible with Spark SQL and PySpark. For further transformations, use Fabric Materialized Lake Views for the silver layer.
 * **Flattening depth:** Nested structures are flattened up to five levels deep. Deeper nesting requires preprocessing.
 

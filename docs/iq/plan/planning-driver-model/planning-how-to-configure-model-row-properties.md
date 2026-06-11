@@ -1,5 +1,5 @@
 ---
-title: Configure row properties
+title: Configure Row Properties
 description: Learn how to configure row properties for a model.
 ms.date: 04/26/2026
 ms.topic: how-to
@@ -9,6 +9,8 @@ ms.topic: how-to
 # Configure row properties in a model
 
 This article explains row properties and how to configure them in a model.
+
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
 ## Hybrid row configuration
 
@@ -104,9 +106,9 @@ You can specify the aggregation and distribution methods for Driver Input rows.
 
 :::image type="content" source="../media/planning-driver-model/planning-how-to-configure-model-row-properties/driver-input.png" alt-text="Screenshot of driver input row." lightbox="../media/planning-driver-model/planning-how-to-configure-model-row-properties/driver-input.png":::
 
-Based on the inputs entered in the Planning sheet, this row is automatically calculated using the selected driver configuration. To learn more, refer to this section: [Create a driver model](planning-how-to-create-driver-model.md).
+Based on the inputs entered in the planning sheet, this row is automatically calculated using the selected driver configuration. To learn more, refer to this section: [Create a driver model](planning-how-to-create-driver-model.md).
 
-:::image type="content" source="../media/planning-driver-model/planning-how-to-configure-model-row-properties/driver-input-in-planning-sheet.png" alt-text="Screenshot of driver input entered in the Planning sheet." lightbox="../media/planning-driver-model/planning-how-to-configure-model-row-properties/driver-input-in-planning-sheet.png":::
+:::image type="content" source="../media/planning-driver-model/planning-how-to-configure-model-row-properties/driver-input-in-planning-sheet.png" alt-text="Screenshot of driver input entered in the planning sheet." lightbox="../media/planning-driver-model/planning-how-to-configure-model-row-properties/driver-input-in-planning-sheet.png":::
 
 ### Distribution
 
@@ -120,7 +122,7 @@ If you select **Copy**, choose how values are copied:
 * Copy with trend by value
 * Copy with trend by percentage, and specify the trend values
 
-Enter the total in the Planning sheet. The values are distributed or copied accordingly based on the selected method.
+Enter the total in the planning sheet. The values are distributed or copied accordingly based on the selected method.
 
 :::image type="content" source="../media/planning-driver-model/planning-how-to-configure-model-row-properties/distribution-row.png" alt-text="Screenshot of distribution type row." lightbox="../media/planning-driver-model/planning-how-to-configure-model-row-properties/distribution-row.png":::
 

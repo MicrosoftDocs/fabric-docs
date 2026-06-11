@@ -24,17 +24,11 @@ Extended capabilities in mirroring for Microsoft Fabric are optional and billed 
 | Consumption meter | Data movement - incremental replication | Data movement - incremental replication |
 | Fabric Capacity Unit (CU) consumption rate | 3 CU-hours | 3 CU-hours |
 | Runtime model | Continuous, iteration-based | Continuous, incremental view processing |
-| Granularity | Per-second billing granularity | Per-capability reporting per mirrored database item |
+| Granularity | Per-second billing granularity | Per-second billing granularity for views only |
 | Empty runs | Not charged (initially) | Not applicable (views reflect source-defined projections) |
-| Reporting granularity | Per mirrored database item | Per mirrored database item |
+| Reporting granularity | Per mirrored database item | Per views in a mirrored database item |
 
 Extended capabilities are billed by actual replication work, using the same pricing approach as [Incremental Copy in Copy Job](/fabric/data-factory/pricing-copy-job). Charges map to Fabric Capacity Units (CUs), and billing is based on usage.
-
-Currently:
-
-- Billing is based on actual replication work performed.
-- Core mirroring compute remains free.
-- Extended capabilities are billed as one unified charge per mirror.
 
 ## Pricing details
 
@@ -42,7 +36,7 @@ Extended capabilities use the DataMovementIncrementalCopy meter and follow the s
 
 | What you're billed for | What you're not billed for |
 |---|---|
-| Incremental replication work when changes occur.<br>Compute used to process inserts, updates, and deletes.<br>Iterations that fail due to user errors. | Core mirroring compute.<br>Storage for mirrored data.<br>Idle time with no changes.<br>Empty iterations.<br>Iterations that fail due to system errors. |
+| Incremental replication work when changes occur.<br>Compute used to process inserts, updates, and deletes.<br>Iterations that fail due to user errors. | Any mirror with CDF or Views not enabled.<br>Storage for mirrored data.<br>Idle time with no changes.<br>Empty iterations.<br>Iterations that fail due to system errors. |
 
 ## Billing scope and metering
 

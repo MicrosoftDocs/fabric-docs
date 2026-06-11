@@ -1,10 +1,11 @@
 ---
 title: Use ai.fix_grammar with pandas
 description: Learn how to correct the spelling, grammar, and punctuation of input text by using the ai.fix_grammar function with pandas.
-ms.reviewer: vimeland
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
-ms.search.form: AI functions
+ms.search.form: AI Functions
 ---
 
 # Use ai.fix_grammar with pandas
@@ -14,8 +15,8 @@ The `ai.fix_grammar` function uses generative AI to correct the spelling, gramma
 
 > [!NOTE]
 > - This article covers using *ai.fix_grammar* with pandas. To use *ai.fix_grammar* with PySpark, see [this article](../pyspark/fix-grammar.md).
-> - See other AI functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI functions](./configuration.md).
+> - See other AI Functions in [this overview article](../overview.md).
+> - Learn how to customize the [configuration of AI Functions](./configuration.md).
 
 ## Overview
 
@@ -58,7 +59,7 @@ This example code cell provides the following output:
 
 ## Multimodal input
 
-The `ai.fix_grammar` function supports file-based multimodal input. You can fix grammar in the content of PDFs and text files by setting `column_type="path"` when your column contains file path strings. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+The `ai.fix_grammar` function supports file-based multimodal input. You can fix grammar in the content of PDFs and text files by setting `column_type="path"` when your column contains file path strings. For more information about supported file types and setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
 
 ```python
 # This code uses AI. Always review output for mistakes.
@@ -79,7 +80,7 @@ display(custom_df)
 - Summarize text with [ai.summarize](./summarize.md).
 - Translate text with [ai.translate](./translate.md).
 
-- Learn more about the [full set of AI functions](../overview.md).
-- Use [multimodal input with AI functions](../multimodal-overview.md).
-- Customize the [configuration of AI functions](./configuration.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
+- Learn more about the [full set of AI Functions](../overview.md).
+- Use [multimodal input with AI Functions](../multimodal-overview.md).
+- Customize the [configuration of AI Functions](./configuration.md).
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

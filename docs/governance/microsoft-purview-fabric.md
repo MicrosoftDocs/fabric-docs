@@ -44,15 +44,10 @@ Microsoft Purview works with Microsoft Fabric so users can discover and manage M
 
 Microsoft Purview and Microsoft Fabric will continue to work more closely together. Soon you'll be able to use more solutions to monitor and manage Microsoft Fabric as well.
 
-## Microsoft Purview Hub
+## OneLake catalog
 
-The Microsoft Purview Hub allows you to see insights about your Fabric data inside Fabric itself! It also acts as a gateway between Fabric and Microsoft Purview so you can govern the rest of your data estate as well.
-
-[You can follow this link to the Microsoft Purview Hub documentation.](use-microsoft-purview-hub.md)
-
-> [!NOTE]
-> Purview Hub insights are now available in the OneLake catalog on the **Govern** tab. For more information, see [Govern Fabric data](onelake-catalog-govern.md).
+The security insights previously available in the Microsoft Purview Hub are now available in the OneLake catalog. The Govern tab in the OneLake catalog provides a centralized view of your Fabric data and its governance state directly within Fabric. For more information, see [Govern Fabric data](onelake-catalog-govern.md).
 
 ## Learn more
 
-- How to use the [Microsoft Purview Hub](use-microsoft-purview-hub.md)
+- How to use the [OneLake catalog](onelake-catalog-govern.md)

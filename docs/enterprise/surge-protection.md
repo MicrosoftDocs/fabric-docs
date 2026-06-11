@@ -5,13 +5,13 @@ author: dknappettmsft
 ms.author: daknappe
 ms.reviewer: pankar
 ms.topic: how-to
-ms.date: 02/02/2026
+ms.date: 05/27/2026
 ---
 
 # Surge protection
 
 Surge protection allows capacity administrators to proactively throttle certain activities, ensuring sufficient resources remain available for other workloads to run efficiently.
- 
+
 Capacity level surge protection allows admins to engage background rejection sooner than the standard system limits, helping prevent capacities from entering deep throttling states. Workspace-level surge protection extends these capabilities by enabling the following:
 
 * Set a maximum capacity unit (CU) spend per workspace, expressed as a percentage, within a rolling 24-hour window. This limit applies to all workspaces unless excluded by tagging them as *Mission Critical*.
@@ -85,6 +85,7 @@ When capacity-level surge protection is active, background requests are rejected
 
 ## Considerations and limitations for capacity-level surge protection
 
+- Surge protection is supported only for Fabric SKUs, not for any other SKU types.
 - When capacity-level surge protection is active, background jobs are rejected. This means there's still broad impact across your capacity even when surge protection is enabled. By using surge protection, you're tuning your capacity to stay within a specific range of usage. However, while surge protection is enabled, background operations might be rejected, and this can impact performance. To fully protect critical solutions, we recommend isolating them in a designated capacity.
 - Capacity-level surge protection doesn't guarantee that interactive requests aren't delayed or rejected. As a capacity admin, you need to use the Microsoft Fabric Capacity Metrics app to review data in the throttling charts and then adjust the surge protection background rejection threshold as needed.
 - Some requests initiated from Fabric UI are billed as background operations or depend on background operations to complete. These requests are rejected when surge protection is active.

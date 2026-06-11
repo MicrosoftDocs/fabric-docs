@@ -4,18 +4,19 @@ description: Reduce costs of Activator rules by filtering event volume in Events
 #customer intent: As a data analyst, I want to reduce the cost of processing high-volume event streams so that I can optimize resource usage in Activator.
 ms.topic: how-to
 ms.subservice: rti-activator
-ms.date: 01/15/2025
+ms.date: 05/20/2026
+ai-usage: ai-assisted
 ---
 
 # Reduce cost of Activator rules by applying filters
 
-This article shows you how to reduce the cost of Activator rules on streaming data by filtering the volume of data ingested into Activator from Eventstream. By applying filters upstream, you can significantly decrease Fabric capacity unit consumption while still receiving the alerts you need.
+This article shows you how to reduce the cost of Activator rules on streaming data by filtering the volume of data ingested into Activator from Eventstream. Activator charges for each event ingested, so filtering data in Eventstream before it reaches Activator directly reduces the number of billable event ingestion operations. For details on how costs are calculated, see [Activator capacity consumption](activator-capacity-usage.md).
 
 In this example, you track the stock price of a company you're investing in. The goal is to receive automatic alerts when the stock price crosses above a threshold so you can take action, such as selling stock.
 
 ## Prerequisites
 
-- A [Fabric workspace](../../get-started/create-workspaces.md) with an active capacity or trial capacity
+- A [Fabric workspace](../../get-started/create-workspaces.md) with a Fabric capacity
 - Familiarity with [Eventstream](../event-streams/overview.md) and [Activator](activator-introduction.md)
 
 ## Set up Eventstream with sample data
@@ -67,5 +68,6 @@ With the filtered data flowing into Activator, you can now create a rule to moni
 ## Related content
 
 - [What is Activator?](activator-introduction.md)
-- [Get data for Activator from Eventstream](activator-get-data-eventstreams.md)
+- [Add an Activator destination to an eventstream](../event-streams/add-destination-activator.md)
 - [Create Activator rules](activator-create-activators.md)
+- [Reduce cost of Activator rules by applying summarizations](reduce-cost-rules-apply-summarizations.md)

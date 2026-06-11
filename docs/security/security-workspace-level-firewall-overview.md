@@ -60,7 +60,7 @@ Use workspace-level IP firewall rules to control access to the following Fabric 
 - Warehouses
 - Dataflows Gen2 (CI/CD)
 - Variable Libraries
-- Mirrored Databases (Open Mirroring, Cosmos DB)
+- Mirrored Databases
 - Eventstreams
 - Eventhouses
 

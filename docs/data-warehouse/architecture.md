@@ -86,5 +86,6 @@ Building on this foundation, Fabric Data Warehouse is designed to deliver optima
 
 ## Related content
 
+- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
 - [Performance guidelines in Fabric Data Warehouse](guidelines-warehouse-performance.md)
 - [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)

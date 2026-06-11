@@ -1,6 +1,6 @@
 ---
-title: Insert template rows in a Planning sheet
-description: Learn how to insert and configure template rows in a Planning sheet. 
+title: Insert Template Rows in a Planning Sheet
+description: Learn how to insert and configure template rows in a planning sheet. 
 ms.date: 05/05/2026
 ms.topic: how-to
 #customer intent: As a user, I want to understand how to insert and configure template rows.

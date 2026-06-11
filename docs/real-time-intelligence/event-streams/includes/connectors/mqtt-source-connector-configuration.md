@@ -1,9 +1,9 @@
 ---
 title: MQTT connector for Fabric event streams
-description: The include files has the common content for configuring an Message Queuing Telemetry Transport (MQTT) connector for Fabric event streams and Real-Time hub. 
+description: The include files has the common content for configuring a Message Queuing Telemetry Transport (MQTT) connector for Fabric event streams and Real-Time hub. 
 ms.reviewer: zhenxilin
 ms.topic: include
-ms.date: 04/02/2026
+ms.date: 04/23/2026
 ---
 
 
@@ -28,6 +28,13 @@ ms.date: 04/02/2026
 
 1. For **Topic name**, enter the MQTT topic to subscribe to. The connector supports only a single topic.
 1. For **Version**, select either **V5** or **V3** based on your MQTT broker's protocol version.
+1. If your MQTT broker requires mTLS, expand **TLS/mTLS settings** and configure the following options as needed.
+
+    [!INCLUDE [secure-connection-settings-common](./secure-connection-settings-common.md)]
+
+    :::image type="content" source="./media/mqtt-source-connector/next.png" alt-text="Screenshot that shows the Configure connection settings page." lightbox="./media/mqtt-source-connector/next.png"::: 
+
+[!INCLUDE [secure-certificate-requirements](./secure-certificate-requirements.md)]
 
 ### Stream or source details
 

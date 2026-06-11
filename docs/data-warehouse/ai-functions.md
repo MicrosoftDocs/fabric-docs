@@ -3,7 +3,7 @@ title: AI Functions (Preview)
 description: This tutorial explains how to use AI functions to perform advanced text processing without leaving warehouse in Microsoft Fabric.
 ms.reviewer: jovanpop-msft
 ms.date: 03/17/2026
-ms.topic: how-to
+ms.topic: how-to 
 ai-usage: ai-assisted
 ---
 
@@ -34,7 +34,7 @@ These functions call external AI APIs to process text, which can affect query pe
 
 Typical processing speed of AI functions is 20-100 rows per second. If you experience slower performance, report the problematic query as an issue.
 
-Check the [AI functions prerequisites](../data-science/ai-functions/overview.md#prerequisites) for enabling AI functions in your workspace. [AI functions for Azure OpenAI Service are available in some regions](../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
+Check the [AI functions prerequisites](../data-science/ai-functions/overview.md#prerequisites) for enabling AI functions in your workspace. [AI functions for Azure OpenAI Service are available in some regions](../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service). 
 
 ## Analyze sentiment
 

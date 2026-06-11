@@ -2,15 +2,13 @@
 title: "Tutorial: Create Node and Edge Types from One Mapping Table"
 description: Learn how to create multiple node types and edge types from a single mapping table in your graph model in Microsoft Fabric.
 ms.topic: tutorial
-ms.date: 04/10/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Add nodes and edges from one mapping table
 ai-usage: ai-assisted
 ---
 
 # Tutorial: Add multiple node and edge types from one mapping table
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 In the previous tutorial steps, each source table mapped to exactly one node type or one edge type. However, relational tables often contain embedded entities. For example, the **Employees** table includes a `Country` column. Rather than storing the country as just a property on `Employee` nodes, you can extract it into its own `Country` node type and connect it with a `livesIn` edge. This approach creates a richer graph model that lets you query relationships between employees and countries directly.
 

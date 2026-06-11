@@ -3,7 +3,7 @@ title: Configure PostgreSQL in a copy activity
 description: This article explains how to copy data using PostgreSQL.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 04/22/2026
+ms.date: 05/12/2026
 ms.custom: 
   - pipelines
   - template-how-to
@@ -21,7 +21,7 @@ For the configuration of each tab under copy activity, go to the following secti
 
 - [General](#general)  
 - [Source](#source)
-- [Destination (Preview)](#destination-preview)
+- [Destination](#destination)
 - [Mapping](#mapping)
 - [Settings](#settings)
 
@@ -58,14 +58,14 @@ Under **Advanced**, you can specify the following fields:
 - **Query timeout (minutes)**: Specify the wait time before terminating the attempt to execute a command and generating an error, default is 120 minutes. If parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes). For more information, see [CommandTimeout](https://www.npgsql.org/doc/api/Npgsql.NpgsqlCommand.html#Npgsql_NpgsqlCommand_CommandTimeout).
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
-### Destination (Preview)
+### Destination
 
 The following properties are supported for PostgreSQL under the Destination tab of a copy activity.
 
 The following properties are **required**:
 
 - **Connection**: Select a PostgreSQL connection from the connection list.
-- **Connection type**: Select **PostgreSQL (Preview)**.
+- **Connection type**: Select **PostgreSQL**.
 - **Table**: Specify the name of the table to write data. Select the table from the drop-down list or select **Enter manually** to enter the schema and table name.
 
 Under **Advanced**, you can specify the following fields:
@@ -172,7 +172,7 @@ The following table contains more information about the copy activity in Postgre
 |**Query timeout (minutes)** | The wait time before terminating the attempt to execute a command and generating an error, default is 120 minutes. If parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes). For more information, see [CommandTimeout](https://www.npgsql.org/doc/api/Npgsql.NpgsqlCommand.html#Npgsql_NpgsqlCommand_CommandTimeout). |timespan |No |queryTimeout|
 |**Additional columns**|Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|• Name<br>• Value|No|additionalColumns:<br>• name<br>• value|
 
-### Destination information (Preview)
+### Destination information
 
 | Name | Description | Value | Required | JSON script property |
 |---|---|---|---|---|

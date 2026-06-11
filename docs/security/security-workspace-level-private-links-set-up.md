@@ -13,7 +13,7 @@ ms.date: 02/04/2026
 
 # Set up and use workspace-level private links
 
-Private links improve security by routing traffic through Azure Private Link and private endpoints, ensuring data stays on Microsoft’s private network rather than the public internet. Microsoft Fabric offers private links at two scopes: tenant-level and workspace-level. [Tenant-level private links](./security-private-links-overview.md) secure all workspaces within a tenant, while [workspace-level private links](./security-workspace-level-private-links-overview.md) allow you to manage network access for specific workspaces individually. 
+Private links improve security by routing traffic through Azure Private Link and private endpoints, ensuring data stays on Microsoft's private network rather than the public internet. Microsoft Fabric offers private links at two scopes: tenant-level and workspace-level. [Tenant-level private links](./security-private-links-overview.md) secure all workspaces within a tenant, while [workspace-level private links](./security-workspace-level-private-links-overview.md) allow you to manage network access for specific workspaces individually. 
 
 This article provides instructions for setting up workspace-level private links in Fabric.
 
@@ -122,14 +122,14 @@ Create a private endpoint in the virtual network you created in step 3, and poin
     |Setting       |Value    |
     |---------------|---------|
     |**Virtual network**|Select virtual network name you created earlier (for example *vnet-1*). |
-    |**Subnet**	|Select the subnet name you created earlier (for example *subnet-1*). |
+    |**Subnet**    |Select the subnet name you created earlier (for example *subnet-1*). |
 
 1. Select **Next: DNS**. Under **Private DNS Integration**, enter or select the following information.
 
-    |Setting |	Value |
+    |Setting |    Value |
     |-------------------|---------|
     |**Integrate with private DNS zone**| Select **Yes**. |
-    |**Private DNS Zone**	|Select <br> *(New)privatelink.fabric.microsoft.com* <br> |
+    |**Private DNS Zone**    |Select <br> *(New)privatelink.fabric.microsoft.com* <br> |
 
       :::image type="content" source="media/security-workspace-level-private-links-set-up/create-endpoint-dns-tab.png" alt-text="Screenshot of the DNS tab in Create a private endpoint.":::
 
@@ -155,7 +155,7 @@ Next, access Fabric privately from the virtual machine you created in the previo
 
    `nslookup {workspaceid}.z{xy}.w.api.fabric.microsoft.com`
 
-   where *workspaceid* is the workspace object ID without dashes, and *xy* represents the first two characters of the workspace object ID.
+   where *workspaceid* is the workspace object ID without dashes, and *xy* represents the first two characters of the workspace object ID. The `z` is a literal inclusion in the connection string, and the brackets are not included, so for example `zab` or `z44`. 
 
 1. The private IP address is returned.
 

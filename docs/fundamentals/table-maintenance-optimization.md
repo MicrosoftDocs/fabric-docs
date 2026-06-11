@@ -483,6 +483,6 @@ For specific scenarios, use the following recommendations:
 - [Table compaction](../data-engineering/table-compaction.md)
 - [Tune file size](../data-engineering/tune-file-size.md)
 - [Lakehouse table maintenance](../data-engineering/lakehouse-table-maintenance.md)
-- [SQL analytics endpoint performance considerations](../data-warehouse/sql-analytics-endpoint-performance.md)
+- [SQL analytics endpoint performance considerations](../data-engineering/sql-analytics-endpoint-performance.md)
 - [Performance guidelines in Fabric Data Warehouse](../data-warehouse/guidelines-warehouse-performance.md)
 - [Understand Direct Lake query performance](direct-lake-understand-storage.md)

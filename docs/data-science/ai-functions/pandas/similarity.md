@@ -1,10 +1,11 @@
 ---
 title: Use ai.similarity with pandas
 description: Learn how to compare string values and calculate semantic similarity scores by using the ai.similarity function with pandas.
-ms.reviewer: vimeland
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
-ms.search.form: AI functions
+ms.search.form: AI Functions
 ---
 
 # Use ai.similarity with pandas
@@ -14,8 +15,8 @@ The `ai.similarity` function uses generative AI to compare two string expression
 
 > [!NOTE]
 > - This article covers using *ai.similarity* with pandas. To use *ai.similarity* with PySpark, see [this article](../pyspark/similarity.md).
-> - See other AI functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI functions](./configuration.md).
+> - See other AI Functions in [this overview article](../overview.md).
+> - Learn how to customize the [configuration of AI Functions](./configuration.md).
 
 ## Overview
 
@@ -105,6 +106,6 @@ This example code cell provides the following output:
 - Summarize text with [ai.summarize](./summarize.md).
 - Translate text with [ai.translate](./translate.md).
 
-- Learn more about the [full set of AI functions](../overview.md).
-- Customize the [configuration of AI functions](./configuration.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
+- Learn more about the [full set of AI Functions](../overview.md).
+- Customize the [configuration of AI Functions](./configuration.md).
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

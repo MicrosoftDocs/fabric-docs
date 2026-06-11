@@ -67,7 +67,7 @@ Shortcuts in Microsoft OneLake allow you to unify your data across domains, clou
 
 ### Data sharing
 
-Data Sharing allows Fabric users to share data across different Fabric tenants without duplicating it. This feature enhances collaboration by enabling data to be shared "in-place" from OneLake storage locations. The data is shared as read-only, accessible through various Fabric computation engines, including SQL, Spark, KQL, and semantic models. To use this feature, Fabric admins must enable it in both the sharing and receiving tenants. The process includes selecting data within the OneLake data hub or workspace, configuring sharing settings, and sending an invitation to the intended recipient.
+Data Sharing allows Fabric users to share data across different Fabric tenants without duplicating it. This feature enhances collaboration by enabling data to be shared "in-place" from OneLake storage locations. The data is shared as read-only, accessible through various Fabric computation engines, including SQL, Spark, KQL, and semantic models. To use this feature, Fabric admins must enable it in both the sharing and receiving tenants. The process includes selecting data within the OneLake catalog or workspace, configuring sharing settings, and sending an invitation to the intended recipient.
 
 - [Learn more about Data Sharing](../../governance/external-data-sharing-overview.md)
 

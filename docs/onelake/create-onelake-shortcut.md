@@ -18,7 +18,7 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To 
 
 ## Prerequisite
 
-A lakehouse or KQL database in OneLake. If you don't have one of these, create a test lakehouse by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).
+A lakehouse or KQL database in OneLake. If you don't have one of these, create a test lakehouse by following these steps: [Create a lakehouse](../data-engineering/create-lakehouse.md).
 
 ## Create a shortcut
 

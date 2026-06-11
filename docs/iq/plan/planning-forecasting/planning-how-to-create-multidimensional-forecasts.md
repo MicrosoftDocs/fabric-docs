@@ -1,5 +1,5 @@
 ---
-title: Create multidimensional forecasts with cubes
+title: Create Multidimensional Forecasts with Cubes
 description: Learn how to create forecast cubes and allocate forecasts across dimensions.
 ms.date: 04/22/2026
 ms.topic: how-to

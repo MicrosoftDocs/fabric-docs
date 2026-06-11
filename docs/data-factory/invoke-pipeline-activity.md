@@ -74,7 +74,7 @@ Select the **Settings** tab and configure your activity.
   
 :::image type="content" source="media/invoke-pipeline-activity/invoke-pipeline-settings.png" alt-text="Screenshot showing the Invoke pipeline activity settings tab, highlighting ADF and Synapse.":::
 
-#### Using Fabric Workspace Identity (WI) in the Notebook activity
+#### Using Fabric Workspace Identity (WI) in the Invoke Pipeline activity
 
 1. **Create the Workspace Identity**
 
@@ -90,7 +90,7 @@ Select the **Settings** tab and configure your activity.
 
 1. **Grant workspace permissions to the Workspace Identity**
 
-   Open the workspace, select Manage access, and assign permissions to the Workspace Identity. Contributor access is sufficient for most scenarios. If your Notebook is not in the same workspace as your Pipeline, you'll need to assign the WI you created in your Pipeline's workspace at least Contributor access to your Notebook's workspace.
+   Open the workspace, select Manage access, and assign permissions to the Workspace Identity. Contributor access is sufficient for most scenarios. If your Pipeline (that you are invoking) is not in the same workspace as your Pipeline, you'll need to assign the WI you created in your Pipeline's workspace at least Contributor access to your Pipeline's workspace.
 
    Check out the docs on [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
 

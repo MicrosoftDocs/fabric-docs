@@ -88,10 +88,8 @@ landingContent:
         links:
           - text: Monitor
             url: ../admin/monitoring-workspace.md
-          - text: Data insights for admins
-            url:  use-microsoft-purview-hub.md?tabs=admin-view
-          - text: Data insights for creators
-            url:  use-microsoft-purview-hub.md?tabs=data-owner-view
+          - text: Data insights
+            url:  onelake-catalog-govern.md
       - linkListType: overview
         links:            
           - text: Automate 

@@ -1,5 +1,5 @@
 ---
-title: Use predictions for statistical forecasts.
+title: Use Predictions for Statistical Forecasts
 description: Learn how to generate statistical forecasts using Predict by analyzing historical data. Configure confidence intervals, seasonality, and growth factors.
 ms.date: 04/26/2026
 ms.topic: how-to

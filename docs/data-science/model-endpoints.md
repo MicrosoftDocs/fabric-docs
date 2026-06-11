@@ -144,5 +144,5 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 - Call model endpoints from [Dataflow Gen2](../data-factory/dataflow-gen2-machine-learning-model-endpoints.md) for real-time data enrichment.
 - Generate batch predictions with the [`PREDICT` function](./model-scoring-predict.md) in Fabric notebooks.
 - Learn more about [model training and experimentation](./model-training-overview.md) in Fabric.
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).
 

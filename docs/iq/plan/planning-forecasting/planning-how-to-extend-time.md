@@ -1,5 +1,5 @@
 ---
-title: Extend time for data input measures
+title: Extend Time for Data Input Measures
 description: Learn how to extend time beyond source data horizons for data input measures.
 ms.date: 04/22/2026
 ms.topic: how-to
@@ -10,6 +10,8 @@ ms.topic: how-to
 Data input fields are essential for planning. Use them to enter targets, adjustments, and key drivers that define budgets, forecasts, and scenarios. Use data input to enter values for current and historical periods available in the source data.
 
 The **Extend Time** feature combines data input and forecasting to enable data entry beyond the periods available in the source data.
+
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 

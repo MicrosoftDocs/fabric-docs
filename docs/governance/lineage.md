@@ -29,7 +29,7 @@ Lineage is accessible from multiple locations. Typically, you can get to it
 
     :::image type="content" source="./media/lineage/lineage-workspace.png" alt-text="Screenshot of lineage view option in workspace menu.":::
 
-* From an item's option menu (for instance, in the OneLake data hub)
+* From an item's option menu (for instance, in the OneLake catalog)
 
     :::image type="content" source="./media/lineage/lineage-options-menu.png" alt-text="Screenshot of lineage view option in options menu.":::
 

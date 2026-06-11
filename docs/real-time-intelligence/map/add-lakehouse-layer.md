@@ -23,6 +23,13 @@ Before you begin, ensure that:
 - You have permission to view the target lakehouse and create or edit maps in the workspace.
 - Your lakehouse contains supported geospatial data (for example, GeoJSON, PMTiles, or COG files).
 
+## Limitations
+
+The following limitations apply when creating layers from lakehouse data in Fabric Maps:
+
+- **GeoJSON**: Supports up to 100,000 features per file.
+- **PMTiles**: No defined limitations at this time.
+
 ## Connect a map to a lakehouse
 
 1. Open your map in Edit mode.
@@ -42,6 +49,9 @@ Fabric Maps lists the available tables and files from the selected lakehouse.
 ### Add a GeoJSON file
 
 GeoJSON is an open standard format for representing vector geospatial data such as points, lines, and polygons. Fabric Maps automatically detects geometry types and attributes when you add a GeoJSON file. For more information, see [GeoJSON](https://geojson.org/).
+
+> [!NOTE]
+> GeoJSON layers support up to 100,000 features. For larger datasets, consider using [PMTiles](#add-a-pmtiles-file).
 
 1. In the OneLake catalog, expand the **Files** section of your lakehouse.
 1. Select a **GeoJSON** file.

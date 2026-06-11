@@ -2,14 +2,12 @@
 title: Write common GQL queries in Microsoft Fabric
 description: Learn how to write common GQL queries in Microsoft Fabric, including neighbor queries, multi-hop traversal, shared connection patterns, and entity existence checks.
 ms.topic: how-to
-ms.date: 04/27/2026
+ms.date: 05/20/2026
 ms.reviewer: splantikow
 ai-usage: ai-assisted
 ---
 
 # Write common GQL queries in Microsoft Fabric
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 This article provides practical GQL query patterns for common graph tasks in Microsoft Fabric: finding neighbors, traversing multihop connections, identifying shared connections, counting relationships, and finding entities with no connections.
 

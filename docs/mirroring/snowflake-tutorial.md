@@ -49,7 +49,7 @@ You can use an existing workspace (not My Workspace) or create a new workspace.
 
     | Connection setting | Description |
     | :-- |:--|
-    | **Server** | You can find your server name by navigating to the accounts on the resource menu in Snowflake. Hover your mouse over the account name, you can copy the server name to the clipboard. **Remove the `https://` from the server name.**|
+    | **Server** | You can find your server name by navigating to the accounts on the resource menu in Snowflake. Hover your mouse over the account name, you can copy the server name to the clipboard. **Remove the `https://` from the server name and use all lowercase.**|
     | **Warehouse** | From the **Warehouses** section from the resource menu in Snowflake, select **Warehouses**. The warehouse is the Snowflake Warehouse (Compute) and not the database.|
     | **Connection** | Create new connection. |
     | **Connection name** | Should be automatically filled out. Change it to a name that you would like to use. |

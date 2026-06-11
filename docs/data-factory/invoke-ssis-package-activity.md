@@ -121,7 +121,7 @@ The following table shows a breakdown of the pricing model for the Invoke SSIS P
 
 | Operation | Consumption Meter | Fabric Capacity Units (CU) consumption rate |
 |---|---|---|
-| SQL Server Integration Services uptime | SSIS in Fabric | 1.5 CU hours per VCore|
+| SQL Server Integration Services uptime | SSIS in Fabric | 1.35 CU hours per VCore|
 
 Billing for the Invoke SSIS Package activity is based on SQL Server Integration Services (SSIS) uptime within your workspace. Uptime begins when the first Invoke SSIS Package activity in the workspace starts running, and continues as long as at least one activity is in progress. After the last activity completes, the SSIS runtime remains available for a fixed Time-To-Live (TTL) period of **30 minutes** to efficiently handle subsequent runs without a cold-start delay. If no new Invoke SSIS Package activity starts within the TTL window, the runtime shuts down and billing stops.
 

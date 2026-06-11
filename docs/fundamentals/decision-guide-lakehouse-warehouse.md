@@ -185,4 +185,5 @@ Full DQL, No DML, limited DDL T-SQL Support such as SQL Views and TVFs
 
 ## Related content
 
+- [Delta Lake in Microsoft Fabric overview](delta-lake-overview.md)
 - [Microsoft Fabric decision guide: choose a data store](../fundamentals/decision-guide-data-store.md)

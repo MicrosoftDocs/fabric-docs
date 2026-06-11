@@ -2,13 +2,11 @@
 title: Troubleshooting and FAQ for graph in Microsoft Fabric
 description: Find solutions for common graph in Microsoft Fabric issues like model loading errors and queryset problems, plus frequently asked questions and best practices.
 ms.topic: reference
-ms.date: 03/12/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ---
 
 # Troubleshooting and FAQ for graph in Microsoft Fabric
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 This article provides troubleshooting guidance and answers to frequently asked questions about graph in Microsoft Fabric. For known limitations that might impact your experience, see [Current limitations of graph](limitations.md).
 

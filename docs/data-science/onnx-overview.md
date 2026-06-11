@@ -1,41 +1,52 @@
 ---
-title: ONNX - Inference on Spark
-description: Use SynapseML to build a LightGBM model, convert it to ONNX format, then perform inference.
+title: ONNX inference on Spark
+description: Use SynapseML to build a LightGBM model, convert it to ONNX format, and then perform inference on Spark in Microsoft Fabric.
 ms.topic: how-to
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: ruxu
 reviewer: ruixinxu
-ms.date: 04/08/2025
+ms.date: 05/13/2026
+ai-usage: ai-assisted
 ---
 
 # ONNX inference on Spark
 
-In this example, you train a LightGBM model, and convert that model to the [ONNX](https://onnx.ai/) format. Once converted, you use the model to infer some test data on Spark.
+[ONNX](https://onnx.ai/) (Open Neural Network Exchange) provides a portable, hardware-optimized runtime for machine learning models. By converting a model to ONNX format, you can run batch inference on Spark with lower latency and without depending on the original training framework at prediction time.
 
-This example uses these Python packages and versions:
-
-- `onnxmltools==1.7.0`
-- `lightgbm==3.2.1`
+In this article, you train a LightGBM model with SynapseML, convert it to ONNX format, and then use the ONNX model to perform inference on Spark in Microsoft Fabric.
 
 ## Prerequisites
 
-- Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
-- You might need to install `onnxmltools`. To do this, add `!pip install onnxmltools==1.7.0` in a notebook code cell, and then run that cell.
-- You might need to install `lightgbm`. To do this, add `!pip install lightgbm==3.2.1` in a notebook code cell, and then run that cell.
+[!INCLUDE [prerequisites](includes/prerequisites.md)]
+
+- Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create one.
+- Fabric Runtime 1.2 or later.
+
+### Install required packages
+
+Run the following cell in your notebook to install the required packages. The `onnxmltools` package isn't pre-installed in the Fabric runtime.
+
+```python
+%pip install onnxmltools --quiet
+```
+
+After the install completes, verify the packages are available:
+
+```python
+import onnxmltools
+import lightgbm
+print(f"onnxmltools version: {onnxmltools.__version__}")
+print(f"lightgbm version: {lightgbm.__version__}")
+```
+
+
+> [!NOTE]
+> The `lightgbm` package is pre-installed in Fabric Runtime 1.2 and later. You only need to install `onnxmltools`.
 
 ## Load the example data
 
-To load the example data, add these code examples to cells in your notebook, and then run those cells:
-
-```python
-from pyspark.sql import SparkSession
-
-# Bootstrap Spark Session
-spark = SparkSession.builder.getOrCreate()
-
-from synapse.ml.core.platform import *
-```
+Load the bankruptcy prediction dataset from public Azure Blob Storage:
 
 ```python
 df = (
@@ -47,18 +58,21 @@ df = (
     )
 )
 
-display(df)
+print(f"Rows: {df.count()}, Columns: {len(df.columns)}")
+display(df.limit(5))
 ```
 
-The output should look similar to the following table. The specific columns shown, the number of rows, and the actual values in the table might differ:
 
-| Interest Coverage Ratio | Net Income Flag | Equity to Liability |
-| ----- | ----- | ----- |
-| 0.5641 | 1.0 | 0.0165 |
-| 0.5702 | 1.0 | 0.0208 |
-| 0.5673 | 1.0 | 0.0165 |
+The displayed table includes columns such as:
 
-## Use LightGBM to train a model
+| Bankrupt? | Net Income Flag | Equity to Liability |
+|---|---|---|
+| 0 | 1.0 | 0.0165 |
+| 0 | 1.0 | 0.0208 |
+
+## Train a LightGBM model
+
+Use the `VectorAssembler` to combine feature columns, then train a `LightGBMClassifier`:
 
 ```python
 from pyspark.ml.feature import VectorAssembler
@@ -70,7 +84,8 @@ featurizer = VectorAssembler(inputCols=feature_cols, outputCol="features")
 train_data = featurizer.transform(df)["Bankrupt?", "features"]
 
 model = (
-    LightGBMClassifier(featuresCol="features", labelCol="Bankrupt?", dataTransferMode="bulk")
+    LightGBMClassifier(featuresCol="features", labelCol="Bankrupt?")
+    .setDataTransferMode("bulk")
     .setEarlyStoppingRound(300)
     .setLambdaL1(0.5)
     .setNumIterations(1000)
@@ -90,32 +105,53 @@ model = (
 model = model.fit(train_data)
 ```
 
+Verify the model trained successfully:
+
+```python
+print(f"Model type: {type(model).__name__}")
+print(f"Number of features: {len(feature_cols)}")
+```
+
 ## Convert the model to ONNX format
 
-The following code exports the trained model to a LightGBM booster, and then converts the model to the ONNX format:
+Export the trained model to a LightGBM booster, then convert it to ONNX:
 
 ```python
 import lightgbm as lgb
+from typing import Union
 from lightgbm import Booster, LGBMClassifier
+from onnxmltools.convert import convert_lightgbm
+from onnxmltools.convert.common.data_types import FloatTensorType
 
 
-def convertModel(lgbm_model: LGBMClassifier or Booster, input_size: int) -> bytes:
-    from onnxmltools.convert import convert_lightgbm
-    from onnxconverter_common.data_types import FloatTensorType
-
+def convert_to_onnx(lgbm_model: Union[LGBMClassifier, Booster], input_size: int) -> bytes:
     initial_types = [("input", FloatTensorType([-1, input_size]))]
     onnx_model = convert_lightgbm(
-        lgbm_model, initial_types=initial_types, target_opset=9
+        lgbm_model, initial_types=initial_types, target_opset=13
     )
     return onnx_model.SerializeToString()
 
 
 booster_model_str = model.getLightGBMBooster().modelStr().get()
 booster = lgb.Booster(model_str=booster_model_str)
-model_payload_ml = convertModel(booster, len(feature_cols))
+model_payload_ml = convert_to_onnx(booster, len(feature_cols))
 ```
 
-After conversion, load the ONNX payload into an `ONNXModel`, and inspect the model inputs and outputs:
+Verify the ONNX conversion succeeded:
+
+```python
+print(f"ONNX model payload size: {len(model_payload_ml)} bytes")
+assert len(model_payload_ml) > 0, "ONNX conversion failed: empty payload"
+```
+
+The output shows the ONNX model payload size in bytes (typically around 800,000 bytes).
+
+> [!IMPORTANT]
+> Use `from onnxmltools.convert.common.data_types import FloatTensorType` for the type definition. The older import path `from onnxconverter_common.data_types import FloatTensorType` is incompatible with current versions of `onnxmltools`.
+
+## Load and configure the ONNX model
+
+Load the ONNX payload into a SynapseML `ONNXModel` and inspect the model inputs and outputs:
 
 ```python
 from synapse.ml.onnx import ONNXModel
@@ -126,7 +162,9 @@ print("Model inputs:" + str(onnx_ml.getModelInputs()))
 print("Model outputs:" + str(onnx_ml.getModelOutputs()))
 ```
 
-Map the model input to the column name (FeedDict) of the input dataframe, and map the column names of the output dataframe to the model outputs (FetchDict):
+The output lists the model's input and output nodes. 
+
+Configure the model by mapping input and output columns. The `FeedDict` maps ONNX model input names to DataFrame column names. The `FetchDict` maps desired output column names to ONNX model output names:
 
 ```python
 onnx_ml = (
@@ -137,22 +175,22 @@ onnx_ml = (
 )
 ```
 
-## Use the model for inference
+## Run inference
 
-To perform inference with the model, the following code creates test data, and transforms the data through the ONNX model:
+Create test data and transform it through the ONNX model:
 
 ```python
 from pyspark.ml.feature import VectorAssembler
 import pandas as pd
 import numpy as np
 
-n = 1000 * 1000
+n = 10000
 m = 95
 test = np.random.rand(n, m)
 testPdf = pd.DataFrame(test)
 cols = list(map(str, testPdf.columns))
 testDf = spark.createDataFrame(testPdf)
-testDf = testDf.union(testDf).repartition(200)
+testDf = testDf.repartition(4)
 testDf = (
     VectorAssembler()
     .setInputCols(cols)
@@ -165,15 +203,49 @@ testDf = (
 display(onnx_ml.transform(testDf))
 ```
 
-The output should look similar to the following table, though the values and number of rows might differ:
+> [!NOTE]
+> Because the test data is randomly generated, the prediction values don't represent real-world results. This section demonstrates that the ONNX model runs correctly on Spark.
 
-| Index | Features | Prediction | Probability |
-| ----- | ----- | ----- | ----- |
-| 1 | `"{"type":1,"values":[0.105...` | 0 | `"{"0":0.835...` |
-| 2 | `"{"type":1,"values":[0.814...` | 0 | `"{"0":0.658...` |
+The output should contain columns for `features`, `prediction`, and `probability`:
+
+| Features | prediction | probability |
+|---|---|---|
+| `{"type":1,"values":[0.105...` | 0 | `{"0":0.835...` |
+| `{"type":1,"values":[0.814...` | 0 | `{"0":0.658...` |
+
+Verify the inference produced results:
+
+```python
+results = onnx_ml.transform(testDf)
+print(f"Result count: {results.count()}")
+print(f"Output columns: {results.columns}")
+assert "prediction" in results.columns, "Missing prediction column"
+assert "probability" in results.columns, "Missing probability column"
+```
+
+The output confirms that all test rows were scored and the result DataFrame contains the `features`, `prediction`, and `probability` columns.
+
+## Troubleshooting
+
+| Issue | Cause | Resolution |
+|---|---|---|
+| `ModuleNotFoundError: No module named 'onnxmltools'` | Package isn't pre-installed in Fabric runtime. | Run `%pip install onnxmltools --quiet` and restart the Python kernel. |
+| `RuntimeError: Operator LgbmClassifier got an input with a wrong type` | Wrong import path for `FloatTensorType`. | Use `from onnxmltools.convert.common.data_types import FloatTensorType` instead of importing from `onnxconverter_common.data_types`. |
+| `ModuleNotFoundError: No module named 'onnx.mapping'` | Incompatible `onnxmltools` version 1.7.0 or earlier with the current `onnx` package. | Run `%pip install onnxmltools --upgrade --quiet` to install a compatible version. |
+| `ONNX conversion returns empty payload` | Booster model string extraction failed. | Verify that `model.getLightGBMBooster().modelStr().get()` returns a non-empty string before conversion. |
+| `Feature (Column_) appears more than one time` during `model.fit()` | Dataset columns with special characters produce duplicate names after LightGBM sanitization. | Add `.setDataTransferMode("bulk")` to the `LightGBMClassifier` configuration. Bulk mode uses Apache Arrow and avoids the column name sanitization issue. |
+| `AssertionError` on SparkContext in `ONNXModel()` | Spark session isn't initialized. | Run this code in a Fabric notebook with a lakehouse attached. The `spark` variable is pre-initialized by the runtime. |
+
+## Clean up resources
+
+If you no longer need the cached test DataFrame, unpersist it to free cluster memory:
+
+```python
+testDf.unpersist()
+```
 
 ## Related content
 
 - [How to use Kernel SHAP to explain a tabular classification model](tabular-shap-explainer.md)
 - [How to use SynapseML for multivariate anomaly detection](isolation-forest-multivariate-anomaly-detection.md)
-- [How to Build a Search Engine with SynapseML](create-a-multilingual-search-engine-from-forms.md)
+- [How to build a search engine with SynapseML](create-a-multilingual-search-engine-from-forms.md)

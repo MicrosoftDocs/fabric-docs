@@ -6,13 +6,13 @@ ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 12/05/2025
 ms.search.form: Source and Destination
+zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
+zone_pivot_groups: iot-hub-capabilities
 ---
 
 # Add Azure IoT Hub source to an eventstream
 
 This article shows you how to add an Azure IoT Hub source to a Microsoft Fabric eventstream.
-
-[!INCLUDE [select-view](./includes/select-view.md)]
 
 [!INCLUDE [azure-iot-hub-source-connector-prerequisites](./includes/connectors/azure-iot-hub-source-connector-prerequisites.md)]
 - An eventstream. If you don't have an eventstream, [create one](create-manage-an-eventstream.md).

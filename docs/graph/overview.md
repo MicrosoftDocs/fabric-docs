@@ -2,15 +2,13 @@
 title: What is graph in Microsoft Fabric?
 description: Learn about the core purpose, architecture, and benefits of graph in Microsoft Fabric, including integration and feature highlights.
 ms.topic: overview
-ms.date: 04/20/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ms.custom: references_regions
 ms.search.form: graph overview
 ---
 
-# Graph in Microsoft Fabric overview (preview)
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
+# Graph in Microsoft Fabric overview
 
 Graph in Microsoft Fabric helps you model, visualize, and analyze complex relationships within your data. It's a scalable, enterprise-grade solution that turns disconnected data into AI-powered insights. By using graph, you can uncover hidden connections within your data and enhance decision-making capabilities.
 
@@ -79,7 +77,7 @@ This integration is suited for scenarios like multi-hop question answering, know
 | --- | --- | --- |
 | Data gravity | graph operates directly on OneLake, so you don't have to perform ETL or duplicate data. | Standalone graph databases require you to move or duplicate your data into a separate graph database instance, which can add complexity and overhead. |
 | Scalability | The service is designed for large-scale graphs and uses scale-out sharding across multiple machines to handle big data workloads efficiently. | Most standalone graph databases rely on scale-up architectures or clusters that might be limited by the vendor or edition, which can restrict scalability. |
-| Language | graph is compatible with the new GQL standard (preview) and includes built-in graph analytics algorithms. | Standalone graph databases often use vendor-specific query languages and separate analytics frameworks. Support for algorithms can vary widely. |
+| Language | graph is compatible with the new GQL standard and includes built-in graph analytics algorithms. | Standalone graph databases often use vendor-specific query languages and separate analytics frameworks. Support for algorithms can vary widely. |
 | User experience | Users benefit from a unified Microsoft Fabric interface for modeling, querying, business intelligence (BI), artificial intelligence (AI) integration, and low/no-code exploration. Specialized graph engineering skills aren't required. | Standalone graph databases are primarily developer-focused, with consoles and SDKs that often require specialized skills. Visualization and low-code tools can be separate and might require extra setup. |
 | Operations & cost | graph uses your existing Fabric capacity and automatically reduces resources when not in use, helping you save costs. | Standalone graph databases require separate clusters or licenses, custom scaling and monitoring, and often incur idle capacity charges. They increase operational complexity and cost. |
 | Governance & security | Microsoft Fabric provides native OneLake governance, lineage tracking, and workspace role-based access control (RBAC). It integrates with Fabric compliance standards for security and auditing. | Standalone graph databases have separate security and governance models that you must configure and audit independently. They can increase risk and administrative burden. |

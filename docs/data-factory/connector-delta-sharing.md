@@ -58,4 +58,5 @@ Data Factory in Microsoft Fabric doesn't currently support Delta Sharing in pipe
 
 ## Related content
 
+- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
 - [For more information about this connector, see the Delta Sharing connector documentation.](/power-query/connectors/delta-sharing)

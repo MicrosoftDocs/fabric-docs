@@ -2,14 +2,12 @@
 title: Filter and aggregate graph data in Microsoft Fabric
 description: Learn how to filter and aggregate graph data in Microsoft Fabric using GQL FILTER, WHERE, GROUP BY, and aggregate functions with practical examples.
 ms.topic: how-to
-ms.date: 04/27/2026
+ms.date: 05/20/2026
 ms.reviewer: splantikow
 ai-usage: ai-assisted
 ---
 
 # Filter and aggregate graph data in Microsoft Fabric
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 Filtering narrows your results to the rows that matter. Aggregation summarizes those rows into counts, totals, and averages. This article shows you how to apply both techniques in GQL queries against graph in Microsoft Fabric.
 

@@ -5,7 +5,7 @@ ms.author: jburchel
 author: jonburchel
 ms.reviewer: amjafari
 ms.topic: concept-article
-ms.date: 09/17/2025
+ms.date: 05/12/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
@@ -65,6 +65,7 @@ For a user to successfully query through a Fabric data agent, they need the mini
 | Warehouse | Read (SELECT on relevant tables) | Higher permissions only for DML/DDL operations. |
 | KQL database | Reader role on the database | Higher roles only for management commands. |
 | Ontology | Read on the ontology item, and Read on the underlying semantic model, lakehouse, or KQL database bound to the ontology |  |
+| Microsoft Graph in Fabric | Read on the graph item and the underlying data |  |
 | Other supported sources | Query/read-level access | Must allow metadata + data retrieval. |
 
 > [!IMPORTANT]

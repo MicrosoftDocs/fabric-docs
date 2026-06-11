@@ -4,7 +4,7 @@ description: Learn about how to use Variable library with pipelines.
 ms.reviewer: noelleli
 ms.topic: concept-article
 ms.custom: pipelines
-ms.date: 10/16/2025
+ms.date: 05/11/2026
 ---
 
 # Variable library integration with pipelines
@@ -94,7 +94,6 @@ The [Variable library](../cicd/variable-library/variable-library-overview.md) is
 The following known limitations apply to the integration of Variable library in pipelines in Data Factory in Microsoft Fabric:
 
 - The Variable library supports Boolean, Datetime, Guid, Integer, Number, and String as data types. In your pipeline, you see Boolean as Bool type, Datetime as String type, Guid as String type, Integer as Int type, and String as String type. Number types aren't supported in pipelines. 
-- External connection parameterization is supported by using the variable library integrated with pipelines. However, you must look up the GUID for your connection from **Settings** | **Manage connections and gateways**. You find the GUID for your connection by selecting **Settings** next to your connection name.
 
 ## Related content
 

@@ -65,5 +65,6 @@ For more information, see the following articles:
 - [Explore Fabric OneLake events](explore-fabric-onelake-events.md).</br>
 - [Explore Fabric workspace item events](explore-fabric-workspace-item-events.md).</br>
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md).
+- [Private links for Azure and Fabric Events](/fabric/real-time-hub/private-links-real-time-events)
 
 

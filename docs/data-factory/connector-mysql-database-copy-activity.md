@@ -3,7 +3,7 @@ title: Configure MySQL in a copy activity
 description: This article explains how to copy data using MySQL.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 04/23/2026
+ms.date: 05/12/2026
 ai-usage: ai-assisted
 ms.custom: 
   - pipelines
@@ -23,7 +23,7 @@ For the configuration of each tab under copy activity, go to the following secti
 
 - [General](#general)  
 - [Source](#source)
-- [Destination (Preview)](#destination)
+- [Destination](#destination)
 - [Mapping](#mapping)
 - [Settings](#settings)
 
@@ -53,7 +53,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
-### <a name="destination"></a> Destination (Preview)
+### <a name="destination"></a> Destination
 
 The following properties are supported for MySQL under the Destination tab of a copy activity.
 
@@ -165,7 +165,7 @@ The following tables contain more information about the copy activity in MySQL.
 | **Query** | Use the custom SQL query to read data. For example: `SELECT * FROM MyTable`. | < SQL queries > | No | query |
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
-### <a name="destination-information"></a>Destination information (Preview)
+### <a name="destination-information"></a>Destination information
 
 | Name | Description | Value | Required | JSON script property |
 |---|---|---|---|---|

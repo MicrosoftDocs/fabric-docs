@@ -1,12 +1,12 @@
 ---
-title: "Tutorial: Copy job with SAP Datasphere Outbound (Preview)"
+title: "Tutorial: Copy job with SAP Datasphere Outbound"
 description: Learn how to configure Copy job for SAP Datasphere Outbound.
 ms.reviewer: jingwang
-ms.date: 01/28/2026
+ms.date: 05/22/2026
 ms.topic: tutorial
 ---
 
-# Change Data Capture from SAP via SAP Datasphere Outbound in Copy job (Preview)  
+# Change Data Capture from SAP via SAP Datasphere Outbound in Copy job 
 
 This tutorial introduces how to set up CDC replication in Copy job from SAP via SAP Datasphere Outbound. For a CDC overview in Copy job, refer to [Change data capture (CDC) in Copy job](cdc-copy-job.md).
 
@@ -87,11 +87,16 @@ This section explains how to create a Copy job to replicate data from SAP via SA
 
 1. In your workspace, select **New item** and find **Copy job**.
 
-1. Select the SAP Datasphereo outbound for ADLS Gen2, Amazon S3 or Google Cloud Storage, and set up the connection details.
+1. Select the SAP Datasphere outbound for ADLS Gen2, Amazon S3 or Google Cloud Storage, and set up the connection details.
 
-    :::image type="content" source="media/copy-job/copy-job-sap-datasphere-adls-gen2-connections.png" alt-text="Screenshot of browsing the lakehouse and selecting the path." lightbox="media/copy-job/copy-job-sap-datasphere-adls-gen2-connections.png":::
+    :::image type="content" source="media/copy-job/copy-job-sap-datasphere-adls-gen2-connections.png" alt-text="Screenshot of configuring the SAP Datasphere outbound for ADLS Gen2 connection." lightbox="media/copy-job/copy-job-sap-datasphere-adls-gen2-connections.png":::
 
-1. Specify the folders where your SAP Datasphere outbound data is stored and that you want to move to your destinations.
+1. Select the folders where your SAP Datasphere outbound data is stored and that you want to move to your destinations.
+
+    > [!TIP]
+    > If you want to copy all the tables under the specified parent folder, enable the **Map items individually** option under the advanced settings. To copy only selective tables under the folder, keep the option unchecked.
+
+    :::image type="content" source="media/copy-job/copy-job-sap-datasphere-tables-selection.png" alt-text="Screenshot of browsing the lakehouse and selecting the path." lightbox="media/copy-job/copy-job-sap-datasphere-tables-selection.png":::
    
 1. The remaining steps are the same as CDC replication for any other CDC-enabled source.
 

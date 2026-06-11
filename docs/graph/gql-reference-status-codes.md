@@ -2,13 +2,11 @@
 title: GQL status codes reference for graph in Microsoft Fabric
 description: Review the complete reference of GQL status codes returned by graph in Microsoft Fabric queries, including success, warning, and error condition codes.
 ms.topic: reference
-ms.date: 03/12/2026
+ms.date: 05/20/2026
 ms.reviewer: splantikow
 ---
 
 # GQL status codes reference
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 When you run GQL queries in Microsoft Fabric, you receive status information along with your results. This article lists all GQLSTATUS codes used by graph in Microsoft Fabric.
 

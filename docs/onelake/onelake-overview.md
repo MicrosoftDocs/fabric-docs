@@ -53,7 +53,7 @@ For examples of OneLake integrations with Azure, see:
 
 * [Azure Synapse Analytics](onelake-azure-synapse-analytics.md)
 * [Azure storage explorer](onelake-azure-storage-explorer.md)
-* [Azure Databricks](onelake-azure-databricks.md)
+* [Azure Databricks](onelake-azure-databricks.md), including [OneLake catalog federation via Unity Catalog](/azure/databricks/query-federation/onelake)
 * [Use OneLake files in Microsoft Foundry](onelake-foundry-knowledge.md)
 
 ### OneLake file explorer for Windows
@@ -107,7 +107,7 @@ For more information, see [Plan for disaster recovery and data protection](onela
 Ready to start using OneLake? Here's how to get started:
 
 > [!div class="nextstepaction"]
-> [Create your first lakehouse with OneLake](create-lakehouse-onelake.md)
+> [Get started with OneLake data](quickstart-get-data.md)
 
 ### Related content
 

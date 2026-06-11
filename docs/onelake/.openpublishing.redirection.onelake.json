@@ -94,6 +94,16 @@
             "source_path_from_root": "/docs/onelake/onelake-unity-catalog.md",
             "redirect_url": "/fabric/mirroring/azure-databricks",
             "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/create-lakehouse-onelake.md",
+            "redirect_url": "/fabric/onelake/quickstart-get-data",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/onelake-shortcuts-adb-quickstart.md",
+            "redirect_url": "/fabric/onelake/create-adls-shortcut",
+            "redirect_document_id": false
         }
     ]
 }

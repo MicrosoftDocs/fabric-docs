@@ -116,13 +116,15 @@ To learn more, see [Google BigQuery (Azure AD)](/power-query/connectors/google-b
 
 ## Microsoft Entra single sign-on (SSO) for Gateway
 
-This setting enables Microsoft Entra SSO through on-premises data gateways to cloud data sources that rely on Microsoft Entra ID-based authentication. It gives seamless Microsoft Entra SSO connectivity to Azure-based data sources, such as Azure Synapse Analytics (SQL DW), Azure Data Explorer, Snowflake on Azure, and Azure Databricks through an on-premises data gateway.
+This setting enables Microsoft Entra SSO through gateways to cloud data sources that rely on Microsoft Entra ID-based authentication. It gives seamless Microsoft Entra SSO connectivity to Azure-based data sources, such as Azure Synapse Analytics (SQL DW), Azure Data Explorer, Snowflake on Azure, and Azure Databricks through an on-premises data gateway.
 
 This feature is important for users who work with reports that require SSO connectivity in DirectQuery mode to data sources deployed in an Azure virtual network (Azure VNet). When you configure SSO for an applicable data source, queries execute under the Microsoft Entra identity of the user that interacts with the Power BI report.
 
 An important security-related consideration is that gateway owners have full control over their on-premises data gateways. This means that it's theoretically possible for a malicious gateway owner to intercept Microsoft Entra SSO tokens as they flow through an on-premises data gateway (this isn't a concern for VNet data gateways because they're maintained by Microsoft).
 
-Because of this possible threat, the Microsoft Entra SSO feature is disabled by default for on-premises data gateways. As a Fabric admin, you must enable the **Microsoft Entra single sign-on (SSO) for Gateway** tenant setting in the Fabric admin portal before data sources can be enabled for Microsoft Entra SSO on an on-premises data gateway. Before enabling the feature, make sure to restrict the ability to deploy on-premises data gateways in your organization to appropriate administrators.  
+A related consideration applies to VNet data gateways, although through a different vector. While VNet data gateways themselves are maintained by Microsoft (so the OPDG interception vector doesn't apply), a VNet gateway operates within the network perimeter of a VNet owned by the customer. As a result, a malicious VNet owner could theoretically intercept SSO tokens at the network layer — traffic flowing in and out of the gateway is subject to the network security posture of the hosting VNet. Customers should ensure their VNet network controls (NSGs, route tables, peering, and monitoring) follow least-privilege and zero-trust principles to mitigate this risk.
+
+Because of this possible threat, the Microsoft Entra SSO feature is disabled by default for on-premises data gateways. As a Fabric admin, you must enable the **Microsoft Entra single sign-on (SSO) for Gateway** tenant setting in the Fabric admin portal before data sources can be enabled for Microsoft Entra SSO on an on-premises data gateway or VNet gateway. Before enabling the feature, make sure to restrict the ability to deploy on-premises data gateways in your organization to appropriate administrators, and apply equivalent governance to who can deploy VNet data gateways and manage the underlying VNets.  
 
 To learn more, see [Microsoft Entra SSO](/power-bi/connect-data/service-gateway-azure-active-directory-sso).
 

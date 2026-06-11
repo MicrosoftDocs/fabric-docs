@@ -1,7 +1,7 @@
 ---
 title: Add a derived stream destination to an eventstream
 description: Learn how to add a derived stream destination to an eventstream.
-ms.reviewer: anboisve
+ms.reviewer: xujiang1
 ms.topic: how-to
 ms.date: 11/10/2025
 ms.search.form: Source and Destination

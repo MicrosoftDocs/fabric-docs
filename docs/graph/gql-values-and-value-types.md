@@ -2,13 +2,11 @@
 title: GQL Values and Value Types for graph in Microsoft Fabric
 description: Learn about GQL values and value types in graph in Microsoft Fabric, including literals, comparison rules, type conversions and the type system hierarchy.
 ms.topic: reference
-ms.date: 03/12/2026
+ms.date: 05/20/2026
 ms.reviewer: splantikow
 ---
 
 # GQL values and value types
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 This article provides a comprehensive reference for GQL values and value types in graph in Microsoft Fabric.
 

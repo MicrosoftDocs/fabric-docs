@@ -1,5 +1,5 @@
 ---
-title: "Generating an ontology (preview) from a semantic model"
+title: Generating an Ontology (Preview) from a Semantic Model
 description: Learn about generating an ontology (preview) item from a Power BI semantic model.
 ms.date: 01/20/2026
 ms.topic: concept-article

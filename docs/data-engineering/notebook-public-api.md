@@ -65,17 +65,13 @@ The following example shows how to submit a notebook run and retrieve its status
 Use the **Run on demand Item Job** endpoint to start a notebook run:
 
 ```http
-POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{notebookId}/jobs/instances?jobType=RunNotebook
+POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks/{notebookId}/jobs/execute/instances?jobType=RunNotebook
 ```
-
-The response returns `202 Accepted` with a `Location` header containing the URL of the job instance you use to monitor the run.
 
 ### Step 2: Retrieve run status and exit value
 
-Use the URL from the `Location` header to check status and read the exit value after the run completes:
-
 ```http
-GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{notebookId}/jobs/instances/{jobInstanceId}
+GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks/{notebookId}/jobs/execute/instances/{jobInstanceId}?beta=true
 ```
 
 Example response (abbreviated):

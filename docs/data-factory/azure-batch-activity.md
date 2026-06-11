@@ -41,7 +41,29 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 Select the **Settings** tab, then you can choose an existing or create a new **Azure Batch connection**, provide a **Command** to be executed, and a **Resource connection** to a storage account. You can also specify a specific **Folder path** within the storage account and a **Retention time in days** for data to be retained there, as well as add extended properties of your own.
 
+The Azure Batch activity supports WI, SPN, and OAuth connection types.
+
 :::image type="content" source="media/azure-batch-activity/azure-batch-activity-settings.png" alt-text="Screenshot showing the Settings tab of the Azure Batch activity.":::
+
+#### Using Fabric Workspace Identity (WI) in the Azure Batch activity
+
+1. **Create the Workspace Identity**
+
+   You must enable WI in your workspace (this may take a moment to load). Create a Workspace Identity in your Fabric workspace. Note that the WI should be created in the same workspace as your Pipeline.
+   
+   Check out the docs on [Workspace Identity](../security/workspace-identity.md).
+
+1. **Enable tenant-level settings**
+
+   Enable the following tenant setting (it's disabled by default): _Service principals can call Fabric public APIs._
+
+   You can enable this setting in the [Fabric admin portal](/fabric/admin/admin-center#how-to-get-to-the-admin-portal). For more information about this setting, see [the enable service principal authentication for admin APIs article](../admin/enable-service-principal-admin-apis.md).
+
+1. **Grant workspace permissions to the Workspace Identity**
+
+   Open the workspace, select Manage access, and assign permissions to the Workspace Identity. Contributor access is sufficient for most scenarios.
+
+   Check out the docs on [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
 
 ## Save and run or schedule the pipeline
 

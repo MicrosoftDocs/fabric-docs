@@ -3,7 +3,7 @@ title: Overview of Fabric workload authentication JavaScript API
 description: Learn how to use JavaScript APIs to authenticate a customized Fabric workload.
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 04/29/2026
+ms.date: 05/08/2026
 ---
 
 # Authentication JavaScript API

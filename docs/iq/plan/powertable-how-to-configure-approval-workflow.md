@@ -1,5 +1,5 @@
 ---
-title: Configure approval workflow
+title: Configure Approval Workflow
 description: Learn how to configure single-level and multi-level approval workflows in PowerTable sheets.
 ms.date: 03/27/2026
 ms.topic: how-to

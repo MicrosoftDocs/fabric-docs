@@ -1,5 +1,5 @@
 ---
-title: Integrating with Fabric tools
+title: Integrating with Fabric Tools
 description: Learn about integrating digital twin builder (preview) with other Fabric tools.
 ms.date: 04/28/2025
 ms.topic: concept-article

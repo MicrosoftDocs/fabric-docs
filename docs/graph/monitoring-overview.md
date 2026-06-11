@@ -2,13 +2,11 @@
 title: Monitor graph workloads in Microsoft Fabric
 description: Learn how to monitor graph in Microsoft Fabric workloads and troubleshoot performance issues in Microsoft Fabric using the Monitoring hub.
 ms.topic: how-to
-ms.date: 03/12/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ---
 
 # Monitor graph workloads in Microsoft Fabric
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 This article shows you how to monitor your graph workloads in Microsoft Fabric by using the [Monitoring hub](../admin/monitoring-hub.md). Use monitoring data to track activities, view historical activity, and gain insights into the performance and usage of your graph workloads. The data helps administrators and users troubleshoot problems and optimize resource usage.
 
