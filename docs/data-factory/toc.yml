@@ -101,6 +101,8 @@
         href: /azure/data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
       - name: Upgrade Azure Synapse Analytics pipelines to Fabric
         href: /azure/data-factory/how-to-upgrade-your-azure-synapse-analytics-pipelines-to-fabric-data-factory?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
+      - name: Upgrade Mapping Data Flows pipelines to Fabric
+        href: dataflow-gen2-mapping-data-flows-transforms-upgrade.md
       - name: Upgrade pipelines with PowerShell
         items:
         - name: Pipeline upgrade with PowerShell overview
@@ -1091,6 +1093,8 @@
                 href: dataflow-parameters.md
               - name: Variable libraries in Dataflow Gen2
                 href: dataflow-gen2-variable-library-integration.md    
+          - name: Mapping data flow transforms (Preview)
+            href: dataflow-gen2-mapping-data-flows-transforms.md
           - name: Dataflow refresh
             href: dataflow-gen2-refresh.md
             items:
