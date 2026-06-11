@@ -41,7 +41,7 @@ The following diagram shows how Power BI reports and translytical taskflows comb
 
 ## Monitor and analyze real-time data
 
-Real-Time Intelligence with Eventhouse provides a unified analytics surface spanning KQL and SQL (via the SQL Endpoint) and notebooks, enabling end-to-end real-time to historical analysis without data movement.
+Real-Time Intelligence with eventhouse provides a unified analytics surface spanning KQL queries and SQL queries (via the SQL Endpoint) and notebooks, enabling end-to-end real-time to historical analysis without data movement.
 
 The Real-Time Intelligence workload in Microsoft Fabric enables you to ingest, process, analyze, and act on streaming data with minimal latency. It combines capabilities from the following services:
 

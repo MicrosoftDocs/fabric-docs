@@ -20,7 +20,7 @@ Key capabilities include:
 - **Continuous monitoring**: Set up real-time anomaly detection with automated notifications.
 - **Reanalysis with new data**: Update your models as new data arrives to improve accuracy.
 
-Anomaly detection runs natively on Eventhouse tables without copying data, operating directly over live datasets for real-time analysis. Analysis and continuous monitoring execute in place within Eventhouse, minimizing data movement.
+Anomaly detection runs natively on eventhouse tables without copying data, operating directly over live datasets for real-time analysis. Analysis and continuous monitoring execute in place within Eventhouse, minimizing data movement.
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 

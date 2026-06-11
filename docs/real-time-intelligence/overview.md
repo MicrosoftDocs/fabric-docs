@@ -163,5 +163,7 @@ advantages. Activator also integrates with the Power BI service to notify users 
 - [End-to-end tutorial](tutorial-introduction.md)
 - [What is Real-Time hub](../real-time-hub/real-time-hub-overview.md)
 - [What is Fabric eventstreams](event-streams/overview.md)
+- [What is an eventhouse?] (eventhouse.md)
+
 - [What is [!INCLUDE [fabric-activator](includes/fabric-activator.md)]?](data-activator/activator-introduction.md)
 - [User flows](user-flow-1.md)
