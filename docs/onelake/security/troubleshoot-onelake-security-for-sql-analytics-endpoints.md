@@ -39,7 +39,7 @@ The one-to-one identity mapping requirement means the user must have explicit Re
 
 ### Step 2: Confirm the user's Object ID matches exactly at producer and consumer
 
-Nested or effective group membership isn't resolved across the producer → consumer boundary.
+Nested or effective group membership isn't resolved across the producer → consumer boundary. Cases of mis-matched object IDs will result in an error message like "The SELECT permission or external policy action 'Microsoft.Sql/Sqlservers/Databases/Schemas/Tables/Rows/Select' was denied on the object '{tableName}', database '{itemName}', schema '{schemaName}'.
 
 - If the OneLake security role references a **user** (for example, user@contoso.com), that same user must be directly granted Fabric Read on the consumer lakehouse.
 - If the OneLake security role references a **group**, that same group must be directly granted Fabric Read on the consumer lakehouse. Granting the permission to an individual member of the group doesn't satisfy the match.

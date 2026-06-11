@@ -3,6 +3,7 @@ title: Planning Sheets in Plan (Preview)
 description: Learn about the planning sheets component of the plan (preview) item for budgeting and forecasting.
 ms.date: 03/27/2026
 ms.topic: overview
+ms.search.form: Fabric Planning Sheets Overview
 #customer intent: As a user, I want to understand and use planning sheets effectively.
 ---
 

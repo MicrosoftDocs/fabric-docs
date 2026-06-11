@@ -4,7 +4,7 @@ metadata:
   description: This article answers frequently asked questions about SQL database in Microsoft Fabric.
   ms.reviewer: nzagorac, antho, sukkaur, amapatil
   ms.topic: faq
-  ms.date: 05/15/2026
+  ms.date: 05/20/2026
   ms.search.form: SQL database Overview
 
 title: "Frequently asked questions for SQL database in Fabric"
@@ -65,7 +65,7 @@ sections:
       - question: |
           How to stop/disable replication of data from SQL database in Fabric to OneLake?  
         answer: |
-          For SQL database in Fabric, the replication of data to OneLake can't be disabled. 
+          You can [stop and start SQL database mirroring with the Fabric REST API](start-stop-mirroring-api.md).
 
       - question: | 
           Are system objects such as system views and dynamic management views the same as Fabric database mirroring?

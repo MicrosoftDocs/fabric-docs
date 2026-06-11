@@ -2,15 +2,13 @@
 title: "Tutorial: Create a graph model in Microsoft Fabric"
 description: Learn how to create a new graph model in Microsoft Fabric, including loading data from OneLake and configuring graph properties.
 ms.topic: tutorial
-ms.date: 04/14/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Create a graph
 ai-usage: ai-assisted
 ---
 
 # Tutorial: Create a graph
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 In this tutorial step, you create a graph model and load data from OneLake. A graph model is the foundation for building your graph and defines the structure of your nodes and edges.
 
@@ -20,9 +18,9 @@ This step assumes you already [loaded the sample data](tutorial-load-data.md) in
 
 1. In [Microsoft Fabric](https://fabric.microsoft.com/), select the workspace where you want to create the graph model (for example, *My workspace*).
 1. Select **+ New item**.
-1. Select **Analyze and train data** > **Graph model (preview)**.
+1. Select **Analyze and train data** > **Graph model**.
 
-    :::image type="content" source="./media/quickstart/new-item-graph-model.png" alt-text="Screenshot showing the new item menu with the option to select Graph model (preview)." lightbox="./media/quickstart/new-item-graph-model.png":::
+    :::image type="content" source="./media/quickstart/new-item-graph-model.png" alt-text="Screenshot showing the new item menu with the option to select Graph model." lightbox="./media/quickstart/new-item-graph-model.png":::
 
     > [!TIP]
     > Alternatively, enter "graph" in the search box and press **Enter** to search for graph items.

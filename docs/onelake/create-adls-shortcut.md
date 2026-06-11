@@ -18,7 +18,7 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To 
 
 ## Prerequisites
 
-- A lakehouse. If you don't have one, create one by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).
+- A lakehouse. If you don't have one, create one by following these steps: [Create a lakehouse](../data-engineering/create-lakehouse.md).
 - You must enable Hierarchical Namespaces on your ADLS Gen2 storage account.
 
 ## Create a shortcut

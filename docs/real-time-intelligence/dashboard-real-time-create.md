@@ -3,7 +3,7 @@ title: Create a Real-Time Dashboard
 description: Learn how to create and customize Real-Time Dashboards to visualize data effectively using KQL queries and Copilot for seamless insights.
 ms.reviewer: mbar
 ms.topic: how-to
-ms.date: 04/09/2026
+ms.date: 05/24/2026
 author: spelluru
 ms.author: spelluru
 ms.subservice: rti-dashboard
@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 
 A dashboard is a collection of tiles, optionally organized in pages, where each tile has an underlying query and a visual representation. You can natively export Kusto Query Language (KQL) queries to a dashboard as visuals and later modify their underlying queries and visual formatting as needed. In addition to ease of data exploration, this fully integrated dashboard experience provides improved query and visualization performance. Copilot integration in the dashboard editing experience lets you use natural language to create and modify visuals directly, no KQL expertise required.
 
-In this article, you learn how to create a new Real-Time Dashboard, add data sources, add edit tiles in the dashboard - manually or using copilot. You also learn how to enable auto refresh, use parameters, and export dashboards.
+In this article, you learn how to create a new Real-Time Dashboard, add data sources, add and edit tiles in the dashboard - manually or using Copilot. You also learn how to enable auto refresh, use parameters, and export dashboards.
 
 > [!IMPORTANT]
 > Your data is secure. Dashboards and dashboard-related metadata about users are encrypted at rest using Microsoft-managed keys.
@@ -50,7 +50,7 @@ For detailed instructions, see [Generate Real-Time Dashboard Using Copilot](../f
 
 1. Select **Save to dashboard** > **To a new Dashboard**.
 
-    :::image type="content" source="media/real-time-dashboard/save-to-dashboard.png" alt-text="Screenshot of the save query to dashboard button in a queryset query."  lightbox="media/real-time-dashboard/save-to-dashboard.png":::
+    :::image type="content" source="media/real-time-dashboard/save-to-dashboard-existing.png" alt-text="Screenshot of the save query to dashboard button in a queryset query."  lightbox="media/real-time-dashboard/save-to-dashboard-existing.png":::
 
 1. On the **New Real-Time Dashboard** popup, enter a name and workspace location for the dashboard, and select **Create**.
 
@@ -60,13 +60,11 @@ For detailed instructions, see [Generate Real-Time Dashboard Using Copilot](../f
 
 1. To give the tile a name, open the tile options and select **Rename**.
 
-    :::image type="content" source="media/real-time-dashboard/rename-new-tile.png" alt-text="Screenshot of the Rename tile option in the tile menu." lightbox="media/real-time-dashboard/rename-new-tile.png":::
-
 ### [Replacing the file](#tab/replacing-file)
 
 Select the **Manage** tab, then choose **Replace with file**. Select the file you want to use to create a new dashboard, update an existing one, restore a previous version, or use a file received from another user.
 
-:::image type="content" source="media/real-time-dashboard/replace-file.png" alt-text="Screenshot of the Replace with file option." lightbox="media/real-time-dashboard/replace-file.png":::
+:::image type="content" source="media/real-time-dashboard/replace-with-file-button.png" alt-text="Screenshot of the Replace with file option." lightbox="media/real-time-dashboard/replace-with-file-button.png":::
 
 ----
 
@@ -143,11 +141,11 @@ To switch to edit mode, select **Editing** in the top-right corner.
 
 :::image type="content" source="media/real-time-dashboard/edit-mode.png" alt-text="Screenshot showing the selection of the editing view." lightbox="media/real-time-dashboard/edit-mode.png":::
 
-[adding new tiles](#add-or-edit-tile)
+Under the Home tab, you can add new visuals, markdown boxes, alerts, data sources, and parameters. You can also save and manually refresh the dashboard.
 
 :::image type="content" source="media/real-time-dashboard/home-tab.png" alt-text="Screenshot of the toolbar options under the Home tab." lightbox="media/real-time-dashboard/home-tab.png":::
 
-Under the Manage tab, you can manage data sources, [parameters](dashboard-parameters.md), and configure settings for [Auto refresh](#enable-auto-refresh).
+Under the Manage tab, you can manage [parameters](dashboard-parameters.md), base queries, configure [Refresh setting](#enable-auto-refresh) and manage data sources.
 
 :::image type="content" source="media/real-time-dashboard/manage-tab.png" alt-text="Screenshot of the toolbar options under the Manage tab." lightbox="media/real-time-dashboard/manage-tab.png":::
 
@@ -161,49 +159,51 @@ Dashboard tiles use Kusto Query Language (KQL) queries to fetch data and generat
 
 You can switch between the two options at any time.
 
-:::image type="content" source="media/real-time-dashboard/tile-editing-panes.png" alt-text="Screenshot of the three panes in the tile editing window: Explorer, Run query, and Copilot.":::
+:::image type="content" source="media/real-time-dashboard/tile-editing-panes.png" alt-text="Screenshot of the three panes in the tile editing window: Explorer, Run query, and Copilot." lightbox = "media/real-time-dashboard/tile-editing-panes.png":::
 
 ### [Use Copilot to add/edit tile (preview)](#tab/new-tile-copilot)
 
 Describe the insight you’re looking for. Start with a broad question and refine based on the results. You might begin with “Show me all error events” and follow up with “Filter to critical errors only” or “Group by error type.” Copilot maintains context within the conversation, so each follow-up builds on your previous requests. For more information, see [Use Copilot for writing KQL queries](copilot-writing-queries.md).
 
-1. In your dashboard, switch to [edit mode](#edit-mode).
+1. In your dashboard, switch to [**Editing mode**](#edit-mode).
 
-1. Select **Add tile** from the dashboard canvas or **New tile** from the top menu bar.
+1. Select the visual type you want to create from the dashboard canvas or **New visual** from the top menu bar.
 
    :::image type="content" source="media/real-time-dashboard/add-tile-button.png" alt-text="Screenshot showing the selection of the Add tile button." lightbox="media/real-time-dashboard/add-tile-button.png":::
 
-1. If you're editing an existing tile, open the tile options and select **Edit**.
+1. To edit an existing tile, select the pencil icon or open the tile options and select **Edit**.
 
-1. In the Copilot pane, enter a description of the tile in natural language. For example, "View the most available bike points including neighborhood, street name, and number of bikes at the station."
+1. In the Copilot pane, enter a description of the tile in natural language. For example, "Compare security screening lane volumes."
 
     :::image type="content" source="media/real-time-dashboard/new-tile-copilot-response.png" alt-text="Screenshot of the copilot pane with the results displayed in a table." lightbox="media/real-time-dashboard/new-tile-copilot-response.png":::
 
-1. View the result. Refine the result by asking Copilot a follow-up request. In this example, ask Copilot to "Change the visual to a map and show the 10 locations with the most bikes."
+1. View the result. Refine the result by asking Copilot a follow-up request. In this example, ask Copilot to "Create a time chart comparing the top 5 security screening lanes."
 
      :::image type="content" source="media/real-time-dashboard/new-tile-copilot-response-refined.png" alt-text="Screenshot of the copilot pane with the refined results displayed in a table." lightbox="media/real-time-dashboard/new-tile-copilot-response-refined.png":::
 
+1. In the **Visual formatting** tab you can configure the remaining options.    
+
+    :::image type="content" source="media/real-time-dashboard/visual-formatting.png" alt-text="Screenshot of visual formatting pane in Real-Time Dashboards." lightbox="media/real-time-dashboard/visual-formatting.png":::    
+
+    For more information on how to customize the visual, see [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md).
+
 1. Select **Apply**. You can now view and edit the underlying KQL query or continue with Copilot. The query is generated based on your natural language description and any follow-up refinements you made in Copilot.
 
-    :::image type="content" source="media/real-time-dashboard/new-tile-copilot-apply.png" alt-text="Screenshot of the tile editor after selecting apply in copilot. " lightbox="media/real-time-dashboard/new-tile-copilot-apply.png":::
+1. To add the tile to the dashboard, select **Done**.
 
-1. To add the tile to the dashboard, select **Apply changes**.
-
-1. In the dashboard toolbar, select **Save** to save the dashboard with the new or edited tile.
-
-    :::image type="content" source="media/real-time-dashboard/save-button.png" alt-text="Screenshot showing the selection of the Save button on the ribbon." lightbox="media/real-time-dashboard/save-button.png":::
+1. In the dashboard toolbar, select the **Save** icon to save the dashboard with the new or edited visual.
 
 ### [Use query editor to add/edit tile](#tab/new-tile-query-editor)
 
 Here you can manually author or edit the KQL query and visual in the tile editing pane.
 
-1. In your dashboard, switch to [edit mode](#edit-mode).
+1. In your dashboard, switch to [**Editing mode**](#edit-mode).
 
-1. Select **Add tile** from the dashboard canvas or **New tile** from the top menu bar.
+1. Select the visual type you want to create from the dashboard canvas or **New visual** from the top menu bar.
 
-   :::image type="content" source="media/real-time-dashboard/add-tile-button.png" alt-text="Screenshot showing the selection of the Add tile button."lightbox="media/real-time-dashboard/add-tile-button.png"::::::
+   :::image type="content" source="media/real-time-dashboard/add-tile-button.png" alt-text="Screenshot showing the selection of the Add tile button." lightbox="media/real-time-dashboard/add-tile-button.png"::::::
 
-1. If you're editing an existing tile, open the tile options and select **Edit**.
+1. To edit an existing tile, select the pencil icon or open the tile options and select **Edit**.
 
 1. Type a new KQL query, or edit the existing KQL query, and select **Run**.
 
@@ -215,19 +215,15 @@ Here you can manually author or edit the KQL query and visual in the tile editin
     > You can also use Copilot to edit the query with natural language. Copilot can generate a new query, replace the current query, or refine it without leaving the tile editor.
 
 
-1. To create a visual tile, open the visual formatting editor. Select **+ Add Visual** on the lower ribbon, or select the **Visual formatting** icon on the horizontal tab.
+1. In the **Visual formatting** tab, select a **Visual type** and configure the remaining options.    
 
-    :::image type="content" source="media/real-time-dashboard/new-tile-visual-formatting.png" alt-text="Screenshot of tile query in Real-Time Dashboards." lightbox="media/real-time-dashboard/new-tile-visual-formatting.png":::
+    :::image type="content" source="media/real-time-dashboard/visual-formatting.png" alt-text="Screenshot of visual formatting pane in Real-Time Dashboards." lightbox="media/real-time-dashboard/visual-formatting.png":::    
 
-1. In the **Visual formatting** tab, select a **Visual type** and configure the remaining options. For more information on how to customize the visual, see [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md).
+    For more information on how to customize the visual, see [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md).
 
-1. Select **Apply changes** to add the visual to the dashboard.
+1. Select **Done** to add the visual to the dashboard.
 
-    :::image type="content" source="media/real-time-dashboard/visual-formatting.png" alt-text="Screenshot of visual formatting pane in Real-Time Dashboards." lightbox="media/real-time-dashboard/visual-formatting.png":::
-
-1. In the dashboard toolbar, select **Save**.
-
-    :::image type="content" source="media/real-time-dashboard/save-button.png" alt-text="Screenshot showing the selection of the Save button on the ribbon." lightbox="media/real-time-dashboard/save-button.png":::
+1. In the dashboard toolbar, select the **Save** icon to save the dashboard with the new or edited visual.
 
 ----
 
@@ -290,7 +286,7 @@ The **Up** and **Down** arrows navigate through the list in the following ways:
 
 :::image type="content" source="media/real-time-dashboard/interactive-legend.png" alt-text="Screenshot showing the buttons to use the legend to interact with your data." lightbox="media/real-time-dashboard/interactive-legend.png":::
 
-## View query
+## View or edit query
 
 You can view the query in either viewing or editing mode.
 
@@ -298,7 +294,7 @@ You can view the query in either viewing or editing mode.
 
     :::image type="content" source="media/real-time-dashboard/view-query-menu.png" alt-text="Screenshot of the View query menu for a tile on the dashboard." lightbox="media/real-time-dashboard/view-query-menu.png":::
 
-1. Select **Edit query**.
+1. Select **Edit in Queryset**.
 
 1. Choose either **Existing KQL Queryset** or **New KQL Queryset**. Proceed to edit the query in the [KQL Queryset](kusto-query-set.md).
 
@@ -330,11 +326,14 @@ To share the dashboard link:
 
 1. Select **Share** in the top-right corner of the dashboard.
 
-    :::image type="content" source="media/real-time-dashboard/share-link.png" alt-text="Screenshot that shows the Share button." lightbox="media/real-time-dashboard/share-link.png":::
+    :::image type="content" source="media/real-time-dashboard/share-button.png" alt-text="Screenshot showing the Share button on the dashboard." lightbox="media/real-time-dashboard/share-button.png":::
+
 1. In the **Create and send link** window, you can do the following steps:
     - To see a link to the dashboard and copy it to the clipboard, select **Copy link**.
     - To share a link to the dashboard via email, select **by Email**.
     - To share a link to the dashboard via Teams, select **by Teams**.
+
+    :::image type="content" source="media/real-time-dashboard/share-link.png" alt-text="Screenshot that shows the pop-up window for sharing the dashboard." lightbox="media/real-time-dashboard/share-link.png":::
 
 ## Export dashboards
 

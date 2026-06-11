@@ -5,7 +5,8 @@ ms.reviewer: eloldag # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
-ms.date: 05/12/2026
+ms.date: 05/20/2026
+ai-usage: ai-assisted
 #customer intent: As a capacity admin, I want to understand how OneLake consumes storage and compute so that I can effectively manage my capacity and optimize costs.
 ---
 
@@ -27,13 +28,13 @@ Now, let's dive into each of these dimensions.
 
 OneLake storage uses a pay-as-you-go model. Your bill shows a separate charge for "OneLake Storage" for the data stored.
 
-If you're a capacity admin, you can view your storage consumption in the [Fabric Capacity Metrics app](../enterprise/metrics-app-storage-page.md). In the Fabric Capacity Metrics app, open the **Storage** tab and use the **Experience** drop-down menu to select **lake** to see the cost of OneLake storage. If you have multiple workspaces in the capacity, you can see the storage per workspace.
+If you're a capacity admin, you can view your storage consumption in the [Fabric Capacity Metrics app](../enterprise/metrics-app-storage-page.md). In the Fabric Capacity Metrics app, open the **Storage** tab and use the **Experience** drop-down menu to select **lake** to see the cost of OneLake storage. If you have multiple workspaces in the capacity, you can see the storage per workspace. For item-level storage attribution within a workspace, workspace administrators can use the [OneLake storage report](how-to-get-item-size.md) in **Workspace settings** > **OneLake** > **Storage report**, which shows per-item usage including visible items, hidden system data, and soft-deleted data.
 
 :::image type="content" source="media\onelake-capacity-consumption\onelake-storage.png" alt-text="Screenshot showing how OneLake storage is viewed in Fabric Metrics app." lightbox="media\onelake-capacity-consumption\onelake-storage.png":::
 
 The workspace details table includes two columns: **Current storage** and **Billable storage**. Billable storage reflects cumulative data usage over the month. The total charge for data stored isn't taken on one day of the month, but on a pro-rated basis throughout the month. You can estimate the monthly price as the billable storage (GB) multiplied by the price per GB per month.
 
-For example, storing 1 TB of data on day 1, adds to 33 GB daily billable storage. On day one it's 1 TB / 30 days = 33 GB and every day adds 33 GB until the month ends. [OneLake soft delete](soft-delete.md) protects individual files from accidental deletion by retaining files for seven days before permanent removal. Soft-deleted data is billed at the same rate as active data.
+For example, storing 1 TB of data on day 1, adds to 33 GB daily billable storage. On day one it's 1 TB / 30 days = 33 GB and every day adds 33 GB until the month ends. [OneLake soft delete](soft-delete.md) protects individual files from accidental deletion by retaining files for seven days before permanent removal. Soft-deleted data is billed at the same rate as active data. If you notice discrepancies between what you see in items and your billed storage totals, [OneLake item-size reporting](how-to-get-item-size.md) can help by surfacing soft-deleted and hidden system data as separate contributors to storage usage.
 
 :::image type="content" source="media\onelake-capacity-consumption\storage.png" alt-text="Diagram shows billable and current storage difference." lightbox="media\onelake-capacity-consumption\storage.png":::
 

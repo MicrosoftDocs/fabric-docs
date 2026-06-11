@@ -6,7 +6,7 @@ ms.reviewer: sharmaanshul
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
 ms.custom:
-ms.date: 04/29/2026
+ms.date: 05/28/2026
 ms.search.form: Eventhouse
 ---
 # Eventhouse overview
@@ -42,9 +42,9 @@ The system overview page of an eventhouse shows you the following information:
 * Ingestion rate
 * Top queried databases
 * Top ingested databases
-* What's new
+* Eventhouse schema changes
 
-For more information, see [View system overview details for an eventhouse](manage-monitor-eventhouse.md#view-system-overview).
+For more information, see [System overview details](manage-monitor-eventhouse.md#system-overview).
 
 You can also launch a new or existing Spark notebook from **Analyze data with** > **Notebook** on a Lakehouse, Data Warehouse, Eventhouse, or KQL database item. The notebook opens with the corresponding database context attached automatically.
 

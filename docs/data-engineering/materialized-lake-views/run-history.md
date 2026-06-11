@@ -1,77 +1,75 @@
 ---
-title: Run History of Microsoft Fabric Materialized Lake Views
-description: Learn how to check the recent runs of materialized lake views in Microsoft Fabric.
-ms.reviewer: rkottackal
+title: Recent runs of materialized lake views
+description: Monitor materialized lake view refreshes in Microsoft Fabric. Check run status, review errors, and find specific runs.
+ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: how-to
-ms.date: 03/01/2026
-#customer intent: As a data engineer, I want to check the run history of materialized lake views in Microsoft Fabric so that I can monitor and troubleshoot the runs.
+ms.custom: []
+ms.date: 02/16/2026
+#customer intent: As a data engineer, I want to check the recent runs of materialized lake views in Microsoft Fabric so that I can monitor and troubleshoot the runs.
 ---
 
 # Recent runs of materialized lake views
 
-Use the **Recent runs** page to monitor materialized lake view refreshes in one place. You can confirm data freshness, identify failed runs, and open run details to troubleshoot quickly.
+Fabric records the result each time materialized lake views refresh, whether from a schedule, a manual trigger, or an API call. The **Recent runs** page provides a single place to confirm data freshness, identify problems, and review details.
 
-This article explains how to read run states, find specific runs, and investigate failures.
+## View recent refreshes
 
-Each row in the table is a single refresh. You can see at a glance which schedule or action triggered it (**Run(s)** column), whether it succeeded or failed (**Status**), how many views were refreshed (**Materialized lake views**), and how long it took (**Duration**).
+Select the **Materialized lake views** tab in the ribbon, then select **Recent run(s)**.
 
-The following screenshot shows the **Recent runs** table.
+:::image type="content" source="./media/materialized-lake-view-run-history/recent-runs-table.png" alt-text="Screenshot showing the Recent runs tab with columns for Run ID, Run(s), Status, and Start time." border="true" lightbox="./media/materialized-lake-view-run-history/recent-runs-table.png":::
 
-:::image type="content" source="./media/materialized-lake-view-run-history/recent-runs-table.png" alt-text="Screenshot showing the Recent runs page for materialized lake views with a table of all runs." border="true" lightbox="./media/materialized-lake-view-run-history/recent-runs-table.png":::
+Each row represents a single refresh operation on the Lakehouse. The default columns are **Run ID**, **Run(s)**, **Status**, and **Start time**. To show more columns, select **Column Options**. Additional columns include **Refreshed materialized lake views**, **End time**, **Duration**, **Scheduled by**, and **Run type**.
 
-The **Run(s)** column shows what triggered the refresh - typically a schedule name. For the lineage formed by all the MLVs in the Lakehouse and for ad-hoc runs, the Lakehouse name is used as the default run name. Run names must be unique within a Lakehouse, so give your schedules and ad-hoc runs distinct names to keep the history easy to follow.
+The **Run(s)** column displays the name of the schedule or run that triggered the refresh. For scheduled runs, the column shows the schedule name. For on-demand runs, it shows the name you entered when you started the run.
 
-## Run states in lineage view
+The following table describes each status:
 
-Here's what each status means:
-
-| Status | What it means |
+| Status | Description |
 |---|---|
-| **In progress** | The refresh is currently running. |
-| **Success** | All views refreshed successfully - your data is fresh. |
-| **Failed** | One or more views hit an error. A run is marked as Failed if any view in that run fails. Child views of a failed view are automatically marked as **Skipped**. |
-| **Skipped** | This run was skipped because the same view was already being refreshed by another active run. |
-| **Canceled** | The run was manually canceled from the monitor hub. |
+| **In progress** | The refresh is running. |
+| **Completed** | All views refreshed successfully. |
+| **Failed** | One or more views encountered an error. Fabric marks child views of a failed view as **Skipped**. |
+| **Skipped** | Fabric skipped this run because another active run was already refreshing the same view. |
+| **Canceled** | A user Canceled the run. |
 
 ## Find a specific run
 
-When the table grows long, you can quickly narrow it down:
+When the table grows long, use these options to find a specific run:
 
-- **Filter by keyword** - Type in the search box to instantly filter the table.
-- **Filters** - Narrow by run state, start date, or a specific schedule/run name.
-- **Column Options** - Show or hide columns so you see only what matters. Select **Apply** to save, or **Reset to default** to restore the original layout.
+- **Search**: Type a keyword in the search box to filter by Run ID or run name.
+- **Filters**: Select **Filters** to filter by status (Completed, Failed, Canceled, In progress, Skipped) or other criteria.
+- **Column Options**: Show or hide columns. Select **Apply** to save the selection, or select **Reset to default** to restore the original layout.
 
 > [!TIP]
 > If you run multiple schedules on the same Lakehouse, filter by the **Run(s)** column to isolate a specific schedule's history.
 
 ## Investigate why a run failed
 
-When you see a failed run, here's how to find out what went wrong:
+When you see a failed run, follow these steps to diagnose the problem:
 
-1. **Select the Run ID** to open the run details page. At the top you see the **lineage graph** - source tables on the left, materialized lake views on the right, with each node showing whether it completed or failed. This tells you immediately which part of the lineage was affected.
+1. **Open the run.** Select the **Run ID** to open the run details page. The **lineage graph** at the top shows source tables on the left and materialized lake views on the right. Each view is color-coded by status.
 
-1. Review the **Run details** panel on the right. It shows the **Job instance ID** (same as the Run ID), start and end times, duration, refresh mode (**Optimal** or **Full**), the run name, and the overall status. Below it, the **Settings** section shows the Spark **Environment** and **Refresh concurrency** that were in effect.
+1. **Check the run summary.** The **Run details** panel shows start time, end time, duration, refresh mode (**Optimal** or **Full**), run name, and overall status. The **Settings** section shows the Spark **Environment** that Fabric used.
 
-1. Scroll down to the **Activities** table. This lists every individual view in the run with its status and duration. Use the **Failed** tab to jump straight to the views that need attention.
+1. **Find the failed views.** Scroll to the **Activities** panel, which lists every view in the run with its status and duration. Select the **Failed** tab to see only the views that failed.
 
-1. **Select a failed view** - either in the lineage graph or the Activities table - to open the **Materialized lake view details** panel. This shows the view's name, type, timing, and status. 
+1. **Inspect a view.** Select any materialized lake view to see its name, type, timing, status, and ABFS source path.
 
-    :::image type="content" source="./media/materialized-lake-view-run-history/failed-runs.png" alt-text="Screenshot showing the run details." border="true" lightbox="./media/materialized-lake-view-run-history/failed-runs.png":::
-
-    For failed views, you can also see:
-    - **Error log** with the **Error Code** and **Message** explaining what went wrong.
-    - **Copy all to clipboard** button to easily share the error with your team.
-    - **Detailed logs** section with a **More details** link for deeper investigation.
+1. **Read the error.** Select a failed view in the lineage graph to see:
+   - **Error Code** and **Message** that describe the failure
+   - **Copy all to clipboard** to share the error with the team
+   - **Detailed logs** with a **More details** link for more information
 
 ## Review a successful run
 
-For runs that completed successfully, the same drill-down is available - select the **Run ID** to see the lineage graph, run details, settings, and per-view timing in the Activities table. This is useful when you want to check how long individual views took or verify that the correct refresh mode was used.
+For runs that completed successfully, select the **Run ID** to view the lineage graph, run details, settings, and per-view timing. Use the Activities panel to check how long each view took or to verify the refresh mode.
 
 > [!NOTE]
-> - The run history keeps the last 25 runs or the runs from the last seven days, whichever comes first.
-> - Environment details appear only if you have access to the environment and it still exists.
+> - The recent runs page retains runs from the last 30 days.
+> - Environment details appear only if you have access to the environment and the environment still exists.
 
-## Related content
+## Related articles
 
-- [Microsoft Fabric materialized lake views tutorial](./tutorial.md)
-- [Manage Fabric materialized lake views lineage](./view-lineage.md)
+* [Microsoft Fabric materialized lake views tutorial](./tutorial.md)
+* [Manage Fabric materialized lake views lineage](./view-lineage.md)
+* [Schedule a materialized lake view refresh](./schedule-lineage-run.md)
