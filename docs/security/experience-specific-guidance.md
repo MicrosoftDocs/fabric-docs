@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 06/11/2026
 ---
 
 # Experience-specific disaster recovery guidance
@@ -407,6 +407,20 @@ During recovery, once the new region and capacity in Fabric are set up, you can 
 
 > [!NOTE]
 > If the original Ontology item has a lakehouse configured, refer to the [Lakehouse section](#lakehouse) to recover the lakehouse first. After those dependencies are taken care of, connect the newly recovered lakehouse to the newly recovered Ontology item.
+
+### Operations agents
+
+Operations agent users should take proactive steps to prepare for regional disaster recovery. Following the approach described in this section helps ensure that your agents can be restored quickly after a regional outage.
+
+Use Fabric Git integration to synchronize your workspace with a repository. This approach enables you to reconstruct agent configurations in a new workspace if the service fails over to another region.
+
+Operations agent items in the primary region are unavailable during a regional disaster. Agent configurations, behavior models, and activity logs aren't replicated to the secondary region. In-progress operations, active chat sessions, and previously ingested events at the time of the disaster are also lost.
+
+To prepare for recovery, configure Fabric Git integration and synchronize your agent items with your ADO repository before a disaster occurs.
+
+When recovering, set up your new region and capacity in Fabric, then use the synchronized repository to restore agent configurations into a fresh workspace. Git sync pulls the stored contents from the repository into the empty workspace, recreating your agent items.
+
+Once configurations are restored, confirm that any referenced Eventhouse (KQL) databases or region-specific data sources are accessible in the new region. Update endpoint references in agent configurations as needed. Finally, restart your agents and have users initiate new chat sessions. Previous conversations can't be resumed.
 
 ## Transactional database
 

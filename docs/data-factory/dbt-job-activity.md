@@ -30,6 +30,7 @@ Before you begin, make sure you have the following prerequisites:
 - A Microsoft Fabric tenant account with an active subscription. [Create a free account](https://www.microsoft.com/microsoft-fabric).
 - A Microsoft Fabric enabled workspace. [Create a workspace](/fabric/fundamentals/create-workspaces).
 - [Permission and access](dbt-job-overview.md#required-permissions-and-access) for dbt jobs in Microsoft Fabric.
+- The dbt job activity supports multiple authentication methods including OAuth (user-based), Service Principal (SPN), and Managed Identity (Workload Identity). Ensure the required permissions are configured for the selected authentication method.
 
 ## Add a dbt job activity to a pipeline
 
@@ -43,6 +44,32 @@ Before you begin, make sure you have the following prerequisites:
 
 1. Select the **workspace** and **dbt job** item to orchestrate in your pipeline. If you don't have a dbt job item, create one by selecting the **+ New** button in the dbt job settings within the activity.
 
+## Configure authentication for dbt job activity
+
+The dbt job activity supports multiple authentication mechanisms to securely connect and execute dbt jobs within a pipeline. You can choose an authentication method based on your deployment scenario and security requirements.
+
+Supported authentication types:
+
+- **OAuth (user-based)** - Uses your user identity to authenticate. This method is best suited for development and interactive scenarios.
+- **Service Principal (SPN)** - Uses an application identity (client ID and client secret or certificate) to authenticate. This method is recommended for production pipelines and automation scenarios, as it enables non-interactive and secure execution.
+- **Managed Identity (Workload Identity)** - Uses a managed identity associated with the Fabric environment to authenticate. This eliminates the need to manage credentials and is recommended for enterprise scenarios requiring centralized identity management.
+
+### Configure authentication in a dbt job connection
+
+Follow these steps to configure authentication when creating or updating a dbt job connection:
+
+1. In the dbt job activity, go to the **Settings** tab.
+1. Under **Connection**, select an existing connection or select **Browse all** to create a new one.
+1. To create a new connection, select **DataBuildTool Job** from new sources.
+
+   :::image type="content" source="./media/dbt-job-activity/select-data-build-tool-job.png" alt-text="Screenshot of the databuildtool Job source.":::
+
+1. Select the connection drop down under **connection credentials** and select **Create new connection**.
+1. Under **Authentication kind**, select the [authentication type](#configure-authentication-for-dbt-job-activity) you want to use and provide the required details.
+
+   :::image type="content" source="./media/dbt-job-activity/authentication-type.png" alt-text="Screenshot of the authentication window for the connection.":::
+   
+1. Save the connection and select it for your dbt job activity.
 
 ## Configure parameters in a dbt job activity
 
