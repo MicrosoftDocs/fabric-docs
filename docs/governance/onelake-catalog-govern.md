@@ -132,11 +132,11 @@ If you wish to customize the report, either create a copy of the report and then
 The following are some considerations and limitations when using the Govern tab:
 
 * **Subitems** - Subitems such as tables aren't supported and don't appear in insights.
-* **Cross tenant** - The Govern tab doesn't support cross-tenant scenarios or guest users
+* **Cross tenant** - The Govern tab doesn't support cross-tenant scenarios or guest users.
 * **Private Link** - The Govern tab isn't available when Private Link is activated.
 * ***View more* reports** - 
   * Copilot functionality depends on organizational setup and the capacity the workspace is assigned with. The workspace (*admin monitoring workspace* for the admin view and *My workspaces* for the data owners view) should be allocated to the appropriate capacity in order to activate the Copilot button.
-  * Items of Third-party workloads are not included in the charts
+  * Items of Third-party workloads are not included in the charts.
 * **Data refresh** - Because admin insights, recommended actions, and *view more* reports are based on admin monitoring storage that refreshes once a day, there could be gaps between the data reflected and the actual state. It takes a day to get an updated view of all the changes made in the organization.
 * ***Admin monitoring* workspace** - 
   * If *Admin monitoring* workspace or *My workspace* are reassigned to another capacity, users could get an error when accessing the Govern tab in the OneLake Catalog. In such cases, ensure the newly assigned capacity has enough resources to run the semantic models and reports.
