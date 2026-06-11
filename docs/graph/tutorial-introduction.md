@@ -2,15 +2,13 @@
 title: "Tutorial: Introduction to graph in Microsoft Fabric"
 description: Learn how to build a complete graph model in Microsoft Fabric, from loading data and creating a graph model to querying your data with GQL.
 ms.topic: tutorial
-ms.date: 03/24/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Introduction to graph in Microsoft Fabric
 ai-usage: ai-assisted
 ---
 
 # Tutorial: Introduction to graph in Microsoft Fabric
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 This tutorial walks you through an end-to-end graph scenario in Microsoft Fabric. You take sample data, model it as a graph, and query it for insights — building a working understanding of the graph experience along the way.
 

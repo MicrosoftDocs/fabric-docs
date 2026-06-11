@@ -1,6 +1,16 @@
 {
   "redirections": [
     {
+      "source_path_from_root": "/docs/iq/connectors/m365-copilot-overview.md",
+      "redirect_url": "/fabric/iq/connectors/microsoft-365-copilot-overview",
+      "redirect_document_id": true
+    },
+        {
+      "source_path_from_root": "/docs/iq/ontology/how-to-add-semantic-enrichment.md",
+      "redirect_url": "/fabric/iq/ontology/how-to-bind-data",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/iq/ontology/frequently-asked-questions.md",
       "redirect_url": "/fabric/iq/ontology/resources-frequently-asked-questions",
       "redirect_document_id": true

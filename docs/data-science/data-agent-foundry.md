@@ -19,6 +19,9 @@ Data agent in Microsoft Fabric transforms enterprise data into conversational Q&
 > [!IMPORTANT]
 > This feature is in [preview](../fundamentals/preview.md). Use the latest preview release of the [azure-ai-projects](https://pypi.org/project/azure-ai-projects/) Python SDK.
 
+> [!IMPORTANT]
+> When you configure Fabric data agents to be consumed in Microsoft Foundry Service, responses returned by Fabric data agents may be sent outside of Fabric's compliance boundary or geographic region, and processed and/or stored according to the Microsoft Foundry Service(s) applicable terms and data handling policies.
+
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 - Developers and end users in Foundry must at least have the `AI Developer` Role-Based Access Control (RBAC) role.
 

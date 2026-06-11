@@ -24,7 +24,7 @@ The example scenario for this tutorial is a fictional company called Lakeshore R
 * A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity). Use this workspace for all resources you create in the tutorial.
 * Required settings for ontology (preview) and data agent must be enabled on your tenant. A [Fabric administrator](../../admin/roles.md) should enable the following settings in the [tenant settings](../../admin/tenant-settings-index.md) page of the [admin portal](../../admin/admin-center.md):
     * *Enable Ontology item (preview)*
-    * *User can create Graph (preview)*
+    * *User can create Graph*
     * *Users can create and share Data agent item types (preview)*
     * *Users can use Copilot and other features powered by Azure OpenAI*
     * *Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance*
@@ -38,7 +38,7 @@ The example scenario for this tutorial is a fictional company called Lakeshore R
 * A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity). Use this workspace for all resources you create in the tutorial.
 * Required settings for ontology (preview) and data agent must be enabled on your tenant. A [Fabric administrator](../../admin/roles.md) should enable the following settings in the [tenant settings](../../admin/tenant-settings-index.md) page of the [admin portal](../../admin/admin-center.md):
     * *Enable Ontology item (preview)*
-    * *User can create Graph (preview)*
+    * *User can create Graph*
     * *Users can create and share Data agent item types (preview)*
     * *Users can use Copilot and other features powered by Azure OpenAI*
     * *Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance*

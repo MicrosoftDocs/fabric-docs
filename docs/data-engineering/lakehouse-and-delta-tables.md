@@ -107,6 +107,7 @@ For detailed guidance on table optimization, see [Delta Lake table optimization 
 
 ## Related content
 
+- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
 - [Delta Lake overview](/azure/synapse-analytics/spark/apache-spark-delta-lake-overview?pivots=programming-language-python)
 - [Shortcuts](lakehouse-shortcuts.md)

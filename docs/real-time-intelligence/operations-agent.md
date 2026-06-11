@@ -3,8 +3,9 @@ title: Create and Configure Operations Agents
 description: Learn how to use operations agents in Fabric Real-Time Intelligence.
 ms.reviewer: willthom, v-hzargari
 ms.topic: how-to
-ms.date: 05/14/2026
+ms.date: 05/24/2026
 ms.search.form: Operations Agent
+ai-usage: ai-assisted
 ---
 
 # Create and configure operations agents
@@ -21,12 +22,15 @@ In this article, you learn how to create and use an AI operations agent in Real-
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity). Trial capacities aren't supported.
 * An [eventhouse](create-eventhouse.md) or [ontology](../iq/ontology/overview.md) in your workspace.
-* A [KQL database](create-database.md) in your eventhouse, if you are using an eventhouse.
+* A [KQL database](create-database.md) in your eventhouse, if you're using an eventhouse.
 * A Microsoft Teams account.
 * Fabric admin permissions enabled for operations agent preview, and Microsoft Copilot and Azure OpenAI.
 * The cross-geo processing and storage for AI as per [data agent tenant settings](../data-science/data-agent-tenant-settings.md). This prerequisite only applies if your Fabric capacity isn't provisioned in US or EU regions.  
 
     :::image type="content" source="media/operations-agent/admin.png" alt-text="Screenshot of the Admin portal to enable permissions.":::
+
+> [!NOTE]
+> If you want to try operations agent on sample data, please set up the [Real-time Intelligence end to end sample](../real-time-intelligence/sample-end-to-end.md). The included Eventhouse can be monitored by your operations agent.
 
 ## Create an operations agent
 
@@ -52,7 +56,7 @@ On **Agent setup**, configure the operations agent and adjust it to your data by
 
     :::image type="content" source="media/operations-agent/business-goals.png" alt-text="Screenshot of the business goals section on the setup page." lightbox="media/operations-agent/business-goals.png":::
 
-1. Provide specific instructions to guide the agent's behavior and decision-making process.
+1. Provide specific instructions to guide the agent's behavior and decision-making process. For example, you can tell the agent to send you an alert when it detects a condition that matches your business goals.
 
     :::image type="content" source="media/operations-agent/agent-instruction.png" alt-text="Screenshot of the instructions section on the setup page." lightbox="media/operations-agent/agent-instruction.png":::
 
@@ -92,25 +96,14 @@ You can see properties and the fields that they're mapped to from the underlying
 
 The playbook displays the concepts the agent monitors and the rules or conditions it evaluates. To adjust the agent's behavior, update the goals or instructions and save the agent again. When you're satisfied with the configuration, select **Start** in the toolbar to start the agent. Select **Stop** to stop it.
 
-## Receive messages from an operations agent
-
-To enable the agent to contact you proactively when it identifies data that matches the defined rules, install the Fabric Operations Agent Teams app. If the app isn't installed automatically, you can find it by searching for Fabric Operations Agent in the Teams app store.
-
-:::image type="content" source="media/operations-agent/teams-app.png" alt-text="Screenshot of the Fabric Operations Agent in the Teams app." lightbox="media/operations-agent/teams-app.png":::
-
-After you install the app, the agent can send messages in Teams when it identifies data that matches the specified conditions. These messages include a summary of the insights and recommended actions. You can update the recipients of these messages in the agent's configuration settings. Recipients must belong to your organization and have write permissions for the agent item in Fabric. You can find this setting under **Agent behavior**.
-
-:::image type="content" source="media/operations-agent/agent-behavior.png" alt-text="Screenshot of the option for agent behavior in the Fabric Operations Agent settings." lightbox="media/operations-agent/agent-behavior.png":::
-
 > [!IMPORTANT]
 > The agent operates by using the delegated identity and permissions of its creator. When a recipient approves a recommendation, the agent executes the action on behalf of the creator, using the creator's permissions.
 
-When the agent makes a recommendation, you receive a message containing context about the data that triggered the condition it was monitoring. You also receive a suggestion from the agent about the best action to take in response.
+## Receive messages from an operations agent
 
-:::image type="content" source="media/operations-agent/example-message.png" alt-text="Screenshot of an example message from the operations agent in Teams." lightbox="media/operations-agent/example-message.png":::
-
-Select **Yes** to approve or **No** to reject the recommendation. The message displays the values for any parameters the agent identifies. You can adjust these parameters if needed before providing final approval for the agent to take action.
+After you start the agent, it monitors the data covered by its playbook and rules. 
 
 ## Related content
 
+* [Operations agent actions](operations-agent-actions.md)
 * [Operations agent limitations](operations-agent-limitations.md)

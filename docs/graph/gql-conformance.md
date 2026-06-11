@@ -2,14 +2,12 @@
 title: GQL Standard Conformance for Graph in Microsoft Fabric
 description: Detailed GQL standard conformance mapping for graph in Microsoft Fabric. Use this reference to evaluate GQL coverage, compare with other implementations, or identify gaps when migrating from another GQL database.
 ms.topic: reference
-ms.date: 05/04/2026
+ms.date: 05/20/2026
 ms.reviewer: splantikow
 ms.search.form: GQL Conformance
 ---
 
 # GQL standard conformance for graph in Microsoft Fabric
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 Graph in Microsoft Fabric implements the [ISO/IEC 39075:2024 — Information technology — Database languages — GQL](https://www.iso.org/standard/76120.html) standard. This article maps graph's current support against the minimum conformance and optional feature groups defined in the standard. Check back for updates as features are added.
 

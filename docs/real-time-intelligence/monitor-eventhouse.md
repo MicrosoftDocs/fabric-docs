@@ -3,13 +3,39 @@ title: Eventhouse monitoring overview
 description: Understand Eventhouse monitoring in Fabric and how it can help you to gain insights into the usage and performance.
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
-ms.date: 11/16/2025
+ms.date: 06/04/2026
 #customer intent: As a admin I want to monitor my eventhouse to gain insights into the usage and performance that I can optimize my eventhouse and improve the user experience.
 ---
 
 # Eventhouse monitoring
 
 Eventhouse monitoring in Fabric offers comprehensive insights into the usage and performance of your eventhouse by collecting end-to-end metrics and logs for all aspects of an Eventhouse. It's part of [workspace monitoring](../fundamentals/workspace-monitoring-overview.md) that allows you to monitor Fabric items in your workspace. Eventhouse monitoring provides a set of tables that you can query to get insights into the usage and performance of your eventhouse. Use these queries to optimize your eventhouse and improve the user experience.
+
+## Prerequisites
+
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* An [eventhouse](create-eventhouse.md) in your workspace.
+
+## Enable Eventhouse monitoring
+
+1. From the **Eventhouse** explorer pane, select **Monitoring**.
+
+    :::image type="content" source="media/eventhouse/monitor-eventhouse.png" alt-text="Screenshot of an eventhouse pane with Monitoring highlighted in a red box.":::
+
+    You can also access the monitoring eventhouse from the workspace where your eventhouse is located.  From the workspace where your eventhouse is located, select **Workspace Settings** and select the **Monitoring** tab.
+
+1. Select **+ Eventhouse** and wait for the success message confirming that the monitoring eventhouse was added to your workspace.
+
+    Workspace activity logging is automatically enabled.
+
+1. Select the **Monitoring database** link to open the **Monitoring Eventhouse** in a new tab.
+
+1. In the **Monitoring KQL database** overview page, view the query insights and query the data.
+
+    :::image type="content" source="media/eventhouse/monitor-eventhouse-details.png" alt-text="Screenshot of a monitoring eventhouse showing the monitoring KQL database overview page.":::
+
+    > [!TIP]
+    > You can also [analyze data with](eventhouse-analyze-data-with.md) an SQL analytics endpoint or notebook, or create a standalone [KQL queryset](create-query-set.md) to analyze the monitoring data.
 
 ## Eventhouse monitoring tables
 
@@ -25,7 +51,7 @@ When monitoring your eventhouse, you can query the following tables:
 
 You can find sample queries in the [workspace-monitoring](https://github.com/microsoft/fabric-samples/tree/main/workspace-monitoring) folder of the *fabric-samples* GitHub repository.
 
-## Eventhouse monitoring templates
+## Monitoring built-in templates
 
 The templates let you create monitoring dashboards that track workspace activities in real-time by connecting directly to the underlying monitoring Eventhouse. In the dashboard, you can monitor semantic models, KQL database queries, and ingestions.
 

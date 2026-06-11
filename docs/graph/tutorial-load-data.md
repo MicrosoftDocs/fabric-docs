@@ -2,15 +2,13 @@
 title: "Tutorial: Load Sample Data for graph in Microsoft Fabric"
 description: Learn how to load the Adventure Works sample data into a lakehouse for use with graph in Microsoft Fabric, including uploading CSV files and verifying data.
 ms.topic: tutorial
-ms.date: 04/14/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Load sample data
 ai-usage: ai-assisted
 ---
 
 # Tutorial: Load data
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 In this tutorial step, you download the Adventure Works sample data from GitHub and load it into a lakehouse. If you already have a lakehouse with data (for example, from your own organization), you can skip this step.
 
@@ -38,10 +36,7 @@ If you don't already have a lakehouse, create one to store the sample data:
 1. Select **Store data** > **Lakehouse**.
 1. Enter a name for your lakehouse (for example, "AdventureWorksLakehouse"), clear the **Lakehouse schemas** option, and then select **Create**.
 
-    > [!IMPORTANT]
-    > Make sure you clear the lakehouse schema option. Graph doesn't currently support lakehouses with [lakehouse schemas enabled](../data-engineering/lakehouse-schemas.md).
-
-For more detailed instructions, see [Create a lakehouse with OneLake](../onelake/create-lakehouse-onelake.md).
+For more detailed instructions, see [Create a lakehouse](../data-engineering/create-lakehouse.md).
 
 ## Upload the sample data to the lakehouse
 
