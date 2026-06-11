@@ -131,7 +131,7 @@ If you wish to customize the report, either create a copy of the report and then
 
 The following are some considerations and limitations when using the Govern tab:
 
-* **Subitems** - such as tables, aren't supported and don't surface into the insights.
+* **Subitems** - Subitems such as tables aren't supported and don't appear in insights.
 * **Cross tenant** - The Govern tab doesn't support cross-tenant scenarios or guest users
 * **Private Link** - The Govern tab isn't available when Private Link is activated.
 * ***View more* reports** - 
