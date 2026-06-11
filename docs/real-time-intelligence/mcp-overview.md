@@ -3,7 +3,7 @@ title: What is MCP in Real-Time Intelligence?
 description: Learn about Model Context Protocol (MCP) in Real-Time Intelligence. MCP enables AI agents to interact with RTI components like Eventhouse and Activator using natural language.
 ms.reviewer: sharmaanshul
 ms.topic: overview 
-ms.date: 06/03/2026
+ms.date: 06/07/2026
 ms.search.form: MCP, RTI, AI
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
@@ -35,16 +35,16 @@ For detailed information, see [Get started with the local MCP server](mcp-local-
 
 ## Remote MCP servers
 
-Remote MCP servers are hosted by Microsoft and are available as HTTP endpoints. You configure your MCP client to connect to these servers without installing or managing any software.
+Microsoft hosts remote MCP servers and exposes them as HTTP endpoints. You configure your MCP client to connect to these servers without installing or managing any software.
 
 | Server | Description | Capabilities |
-|--------|-------------|--------------|
+|--|--|--|
 | **Eventhouse MCP server** | Enables AI agents to query Eventhouse using natural language | Schema discovery, KQL query generation, data sampling, natural language to KQL translation |
 | **Activator MCP server** | Enables AI agents to interact with Fabric Activator | Create monitoring rules, manage alerts, trigger actions |
 
-* **MCP Host**: The environment where the AI model (like GPT-4, Claude, or Gemini) runs.
-* **MCP Client**: An intermediary service forwards the AI model's requests to MCP servers, like GitHub Copilot, Cline, or Claude Desktop.
-* **MCP Server**: Small applications that make specific features accessible to AI models, such as running database queries. For example, Fabric RTI MCP server can execute KQL queries for real-time data retrieval from KQL databases.
+- **MCP Host**: The environment where the AI model (like GPT-4, Claude, or Gemini) runs.
+- **MCP Client**: An intermediary service forwards the AI model's requests to MCP servers, like GitHub Copilot, Cline, or Claude Desktop.
+- **MCP Server**: Small applications that make specific features accessible to AI models, such as running database queries. For example, Fabric RTI MCP server can execute KQL queries for real-time data retrieval from KQL databases.
 
 - [Get started with the remote MCP server for Eventhouse](mcp-remote-eventhouse.md)
 - [Get started with the remote MCP server for Activator](mcp-remote-activator.md)
@@ -74,9 +74,25 @@ Both local and remote MCP servers work with popular AI clients:
 >
 > You can also use the Fabric RTI MCP Server to run KQL queries against the clusters in your [Azure Data Explorer](/azure/data-explorer/) backend.
 
+## Considerations and Limitations
+
+### Security
+
+MCP as a phenomenon is very novel and cutting-edge. As with all new technology standards, consider doing a security review to ensure any systems that integrate with MCP servers follow all regulations, and standards your system is expected to adhere to. This review includes not only the RTI MCP servers, but any MCP client/agent that you choose to implement down to the model provider.
+
+You should follow Microsoft security guidance for MCP servers, including enabling Entra ID authentication, secure token management, and network isolation. Refer to [Microsoft Security Documentation](/azure/api-management/secure-mcp-servers) for details.
+
+### Permissions and Risk
+
+MCP clients can invoke operations based on the user’s Fabric Role-Based Access Control (RBAC) permission. Autonomous or misconfigured clients may perform destructive actions. You should review and apply least-privilege RBAC roles and implement safeguards before deployment. Certain safeguards, such as flags to prevent destructive operations, are not standardized in the MCP specification and may not be supported by all clients.
+
+### Compliance Responsibility
+
+This MCP server may be installed, used and share data with clients and services, such as third party LLMs, AI agents or services that operate outside Fabric’s compliance boundaries. You are responsible for ensuring that any integration complies with applicable organizational, regulatory, and contractual requirements.
+
 ## Related content
 
-* [Get started with the local MCP server](mcp-local-server.md)
-* [Get started with the Eventhouse remote MCP](mcp-remote-eventhouse.md)
-* [Get started with the Activator remote MCP](mcp-remote-activator.md)
-* [Model Context Protocol (MCP) overview](https://modelcontextprotocol.io/introduction)
+- [Get started with the local MCP server](mcp-local-server.md)
+- [Get started with the Eventhouse remote MCP](mcp-remote-eventhouse.md)
+- [Get started with the Activator remote MCP](mcp-remote-activator.md)
+- [Model Context Protocol (MCP) overview](https://modelcontextprotocol.io/introduction)

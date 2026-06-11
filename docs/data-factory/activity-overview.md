@@ -3,11 +3,11 @@ title: Activity overview
 description: Learn about activities.
 ms.reviewer: n0elleli
 ms.topic: overview
-ms.date: 05/11/2026
-ms.custom: pipelines
-ms.search.form: Pipeline Activity Overview
+ms.date: 06/07/2026
+ms.custom: pipelines 
+ms.search.form: Pipeline Activity Overview 
 ai-usage: ai-assisted
----
+--- 
 
 # Activity overview
 
