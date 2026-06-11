@@ -1259,6 +1259,8 @@
             href: script-activity-email-output.md
           - name: Use AI to turn sketches into pipelines
             href: image-to-pipeline-with-ai.md
+          - name: Manage pipelines from Visual Studio Code
+            href: pipelines-manage-vs-code.md
       - name: Variable library integration
         href: variable-library-integration-with-data-pipelines.md
   - name: Orchestrate workflows with Apache Airflow
