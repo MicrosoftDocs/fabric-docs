@@ -275,7 +275,7 @@ For current limitations and recommended workarounds, see:
 If the issue persists:
 
 1. Review the [Fabric Apps documentation](overview.md).
-1. Check the [GitHub repository](https://github.com/microsoft/project-rayfin) for known issues.
+1. Check the [GitHub repository](https://github.com/microsoft/rayfin) for known issues.
 1. File a bug report with detailed logs and reproduction steps.
 
 ## Related content
