@@ -79,4 +79,4 @@ With the Delta table ready, create a semantic model and then build a report from
 ## Related content
 
 - [Load to Delta Lake tables](load-to-tables.md)
-- [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
+- [Delta Lake in Microsoft Fabric overview](delta-lake-overview.md)
