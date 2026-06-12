@@ -179,4 +179,5 @@ The `ai_extract` function applies fuzzy contextual rules to identify and extract
 ## Related content
 
 - [Transform and enrich data with AI functions](../data-science/ai-functions/overview.md)
+- [Billing for AI Functions](../data-science/ai-functions/billing.md)
 - [Use Azure OpenAI in Fabric with AI Functions (preview)](../data-science/ai-services/how-to-use-openai-ai-functions.md)

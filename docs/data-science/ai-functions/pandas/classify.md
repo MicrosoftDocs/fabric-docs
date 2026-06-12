@@ -93,9 +93,6 @@ display(df)
 
 When you use `aifunc.load`, the file-path column contains `yarl.URL` objects that are automatically detected. For plain string URLs, set `column_type="path"`.
 
-> [!TIP]
-> The AI Functions progress bar cost calculator can be configured with modes such as `basic`, `stats`, or `disable` to provide real-time token and capacity usage estimates when running `ai.classify` in notebooks. For details, see [Configure AI Functions](./configuration.md).
-
 ## Related content
 
 - Use [ai.classify with PySpark](../pyspark/classify.md).
@@ -111,4 +108,5 @@ When you use `aifunc.load`, the file-path column contains `yarl.URL` objects tha
 - Learn more about the [full set of AI Functions](../overview.md).
 - Use [multimodal input with AI Functions](../multimodal-overview.md).
 - Customize the [configuration of AI Functions](./configuration.md).
+- Understand [billing for AI Functions](../billing.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).
