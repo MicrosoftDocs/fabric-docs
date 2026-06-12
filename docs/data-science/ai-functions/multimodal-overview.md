@@ -4,7 +4,7 @@ description: Learn how to use file-based multimodal input, such as images, PDFs,
 ms.reviewer: singhrana
 reviewer: ranadeepsingh
 ms.topic: how-to
-ms.date: 05/12/2026
+ms.date: 06/10/2026
 ms.search.form: AI Functions
 ai-usage: ai-assisted
 ---
@@ -40,6 +40,8 @@ Multimodal AI Functions support the following file types:
 - **Text files**: md, txt, csv, tsv, json, xml, py, and other text files
 
 > [!NOTE]
+>
+> - Multimodal calls with file-path inputs work with the `responses` API, which is the default. Don't set `api_type` to `chat_completions` for file-path inputs.
 > - Office file formats (such as .docx, .pptx, and .xlsx) aren't currently supported.
 > - You can convert .docx and .pptx files to PDF and .xlsx files to CSV before using them with multimodal AI Functions.
 > - Each input file is limited to 50 MB in size.
@@ -84,9 +86,11 @@ folder_path = "Files"
 ---
 
 ## Load your files
-To use AI Functions with multimodal input, you may either load the file contents into a structured table or reference the file paths directly in your DataFrame. The following examples show both approaches.
+
+To use AI Functions with multimodal input, you can either load the file contents into a structured table or reference the file paths directly in your DataFrame. The following examples show both approaches.
 
 ### Load files into a table
+
 Use the `aifunc.load` function to read files from a folder and generate a structured table. The function can infer the table structure on its own, or you can provide a prompt to guide the extraction, or a schema for consistent structure. This approach is useful when you want the AI to extract specific information from the files and present it in a structured format.
 
 # [pandas](#tab/pandas)
@@ -110,6 +114,7 @@ display(df)
 ---
 
 ### Load file paths into a column
+
 Alternatively, you can use `aifunc.list_file_paths` to get a list of file paths from a folder and load them into a DataFrame column. This approach is useful when you want to run AI Functions across each file.
 
 > [!NOTE]
@@ -710,20 +715,13 @@ Use the [AI Functions Eval Notebooks](https://aka.ms/fabric-aifunctions-eval-not
 
 ## Monitor cost and capacity usage
 
-AI Functions include a configurable progress bar cost calculator that displays real-time token estimates and Fabric capacity units while operations run in notebooks. You can configure the cost calculator in three modes:
-
-- **basic**: Shows a summary of estimated tokens and capacity units consumed.
-- **stats**: Shows detailed per-call statistics, including input and output token counts.
-- **disable**: Turns off the progress bar cost display.
-
-For details on configuring these modes, see [Configure AI Functions](./pandas/configuration.md).
-
-The Fabric Capacity Metrics App also includes a dedicated **AI Functions** operation that separates AI Functions usage from Spark and Dataflow Gen2. You can use this view to track multimodal AI Functions consumption and identify capacity impact. For more information, see [What is the Microsoft Fabric Capacity Metrics app?](../../enterprise/metrics-app.md).
+Use [Billing for AI Functions](./billing.md) to understand costs, runtime usage, and capacity monitoring.
 
 ## Related content
 
 - Learn more about the [full set of AI Functions](./overview.md).
 - Try the [AI Functions Starter Notebooks](https://aka.ms/fabric-aifunctions-starter-notebooks).
+- Understand [billing for AI Functions](./billing.md).
 - Evaluate output quality with the [AI Functions Eval Notebooks](https://aka.ms/fabric-aifunctions-eval-notebooks).
 - Detect sentiment with [`ai.analyze_sentiment` in pandas](./pandas/analyze-sentiment.md) or [`ai.analyze_sentiment` in PySpark](./pyspark/analyze-sentiment.md).
 - Categorize text with [`ai.classify` in pandas](./pandas/classify.md) or [`ai.classify` in PySpark](./pyspark/classify.md).

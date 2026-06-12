@@ -22,7 +22,7 @@ The `ai.generate_response` function uses generative AI to generate custom text r
 
 The `ai.generate_response` function can extend the [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) class and the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class.
 
-You may either call this function on a pandas series or an entire pandas DataFrame.
+You can call this function on a pandas series or an entire pandas DataFrame.
 
 If calling the function on an entire pandas DataFrame, your prompt can be a literal string, and the function considers all columns of the DataFrame while generating responses. Your prompt can also be a format string, where the function considers only those column values that appear between curly braces in the prompt.
 
@@ -30,7 +30,7 @@ The function returns a pandas Series that contains custom text responses for eac
 
 > [!TIP]
 >
-> Learn how to craft more effective prompts to get higher-quality responses by following [OpenAI's prompting tips for gpt-4.1](https://cookbook.openai.com/examples/gpt4-1_prompting_guide#2-long-context).
+> Learn how to craft more effective prompts to get higher-quality responses by following the [OpenAI prompt engineering guide](https://platform.openai.com/docs/guides/prompt-engineering).
 
 ## Syntax
 
@@ -75,7 +75,7 @@ The `response_format` parameter accepts different formats to control how the LLM
 | `"text"` or `{"type": "text"}` | Forces plain text responses for all rows. |
 | `"json_object"` or `{"type": "json_object"}` | Returns a JSON dictionary in text form where the LLM decides the fields. Requires the word "json" in your prompt. |
 | `{"type": "json_schema", ...}` | Returns a JSON dictionary that conforms to your custom [JSON Schema](https://json-schema.org/). Provides precise control over response structure. |
-| Class based on [Pydantic's `BaseModel`](https://docs.pydantic.dev/latest/concepts/models/) | Returns a JSON string that conforms to your Pydantic model definition. Pydantic is a dependency of the openai package. Under the hood, the Pydantic BaseModel is automatically converted to a JSON schema and functions equivalently to the `json_schema` option. |
+| Class based on [Pydantic's `BaseModel`](https://docs.pydantic.dev/latest/concepts/models/) | Returns a JSON string that conforms to your Pydantic model definition. Pydantic is a dependency of the OpenAI package. Under the hood, the Pydantic BaseModel is automatically converted to a JSON schema and functions equivalently to the `json_schema` option. |
 
 > [!NOTE]
 > The `json_schema` and Pydantic `BaseModel` options are functionally equivalent. The Pydantic BaseModel approach provides better developer experience with Python's type system and validation, while being automatically converted to the verbose JSON schema under the hood.
@@ -173,8 +173,8 @@ df["card_json_schema"] = df.ai.generate_response(
     },
 )
 
-# Pydantic is a dependency of the openai package, so it's available when openai is installed.
-# Pydantic may also be installed via `%pip install pydantic` if not already present.
+# Pydantic is a dependency of the OpenAI package, so it's available when openai is installed.
+# You can also install Pydantic via `%pip install pydantic` if it's not already present.
 from pydantic import BaseModel, Field
 
 class PlayerCardSchema(BaseModel):
@@ -249,4 +249,5 @@ display(animal_df)
 - Learn more about the [full set of AI Functions](../overview.md).
 - Use [multimodal input with AI Functions](../multimodal-overview.md).
 - Customize the [configuration of AI Functions](./configuration.md).
+- Understand [billing for AI Functions](../billing.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).
