@@ -79,4 +79,4 @@ With the Delta table ready, create a semantic model and then build a report from
 ## Related content
 
 - [Load to Delta Lake tables](load-to-tables.md)
-- [Delta Lake in Microsoft Fabric overview](delta-lake-overview.md)
+- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
