@@ -2,7 +2,7 @@
 title: Known Limitations in Plan (Preview)
 description: This article lists known issues and limitations present in plan (preview).
 ms.topic: concept-article
-ms.date: 05/13/2026
+ms.date: 06/05/2026
 #customer intent: As a user, I want to know the limitation present in plan.
 ---
 
@@ -24,7 +24,7 @@ Plan items aren’t supported in workspaces or tenants that use [private links](
 
 * You must have *Admin* or *Build* permissions on the semantic model.
 * Semantic models in Direct Lake mode require [additional configuration](planning-how-to-create-semantic-model-connection.md#connect-to-a-direct-lake-semantic-model).
-* Only OAuth-based semantic model connections are supported. 
+* Semantic model connections only support OAuth-based and service principal-based authentication. 
 * Semantic models published in *My workspace* aren't supported.
 
 ## Capacities supported

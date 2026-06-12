@@ -1,7 +1,7 @@
 ---
 title: Create a Semantic Model Connection in a Plan (Preview)
 description: Learn how to create and share a cloud connection of a semantic model in a plan (preview).
-ms.date: 04/30/2026
+ms.date: 06/05/2026
 ms.topic: how-to
 ---
 
@@ -33,13 +33,16 @@ Use this connection to connect to your semantic models when you create a plan. A
 
 1. For **Connection type**, select **Power BI Semantic Model**.
 
-1. For **Authentication method**, select **OAuth2.0**.
+1. Select an **Authentication method**.
+   
+    * **OAuth 2.0**: Select **Edit credentials**, then sign in with your Microsoft account.
+    * **Service principal**: Enter the **Tenant ID**, **Service Principal ID**, and **Service Principal Key**.
 
-1. Select **Edit credentials**, and then sign in with your Microsoft account.
+    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/authentication-method.png" alt-text="Screenshot of authentication method options in new semantic model connection.":::
 
 1. Select **Create**.
 
-:::image type="content" source="media/planning-how-to-create-semantic-model-connection/new-semantic-connection.png" alt-text="Screenshot of new semantic model connection.":::
+:::image type="content" source="media/planning-how-to-create-semantic-model-connection/new-semantic-connection.png" alt-text="Screenshot of creating a new semantic model connection.":::
 
 ## Share the semantic model connection
 
@@ -79,17 +82,31 @@ If you want to connect to a Direct Lake semantic model, follow these steps. An *
 
 1. From the connection list, select **Create a connection**.
 
-    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/connection.png" alt-text="Screenshot of the settings for managing connection gateways.":::
+    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/connection-direct-lake.png" alt-text="Screenshot of the settings for managing connection gateways.":::
 
-1. Enter the new connection name. For **Authentication method**, select **OAuth 2.0**.
+1. Enter the new connection name.
+  
+1. Select an **Authentication method**:
+
+    * **OAuth 2.0**: Select **Edit credentials**, then sign in with your Microsoft account.
+    * **Service principal**: Enter the **Tenant ID**, **Service Principal ID**, and **Service Principal Key**.
+
+    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/authentication-method.png" alt-text="Screenshot of authentication method options in new semantic model connection.":::
 
 1. Select **Create**.
 
-    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/new-connection.png" alt-text="Screenshot of creating a new Direct Lake connection.":::
+    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/new-direct-lake.png" alt-text="Screenshot of creating a new Direct Lake connection.":::
 
 1. Select the newly created Direct Lake semantic model connection from the list, and then select **Apply**.
 
-    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/apply-connection.png" alt-text="Screenshot of applying the created connection.":::
+    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/apply-direct-lake.png" alt-text="Screenshot of applying the created connection.":::
+
+## Conditions for Continuous Integration and Continuous Deployment
+
+To enable Continuous Integration (CI) and Continuous Deployment (CD), ensure the following conditions are met:
+
+* The semantic model connection must be created using **Service Principal** authentication.
+* The service principal must have the required access across all environments. This ensures the same semantic model connection can be reused seamlessly in different environments during deployment.
 
 ## Related content
 
