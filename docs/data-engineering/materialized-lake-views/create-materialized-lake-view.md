@@ -2,8 +2,8 @@
 title: Spark SQL Reference for Materialized Lake Views
 description: Learn about the Spark SQL syntax for activities related to materialized lake views in Microsoft Fabric.
 ms.topic: concept-article
-ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
-ms.date: 03/18/2026
+ms.reviewer: abhishjain
+ms.date: 06/12/2026
 #customer intent: As a data engineer, I want to understand the Spark SQL syntax for creating, listing, updating, and deleting materialized lake views in Microsoft Fabric so that I can manage them effectively.
 ---
 
@@ -87,6 +87,16 @@ SELECT
 FROM bronze.products p LEFT JOIN bronze.orders o 
 ON p.productID = o.productID
 ```
+
+> [!TIP]
+> **Manage materialized lake view refresh from your lakehouse**
+>
+> After you create your materialized lake views, don't orchestrate their refresh from a notebook. Instead, use the two built-in capabilities on the lakehouse:
+>
+> * **[Lineage](./view-lineage.md)**: Fabric derives the dependency order between your materialized lake views from their definitions. To open the lineage view, select the **Materialized lake views** tab in the ribbon, then select **Manage**. From there, you can follow a run in progress and inspect upstream and downstream dependencies for each view.
+> * **[Scheduled refresh](./schedule-lineage-run.md)**: From the same **Manage** view, create one or more schedules to refresh all materialized lake views or a selected subset. Each schedule runs independently and refreshes views in dependency order, so downstream views always read fresh data from their upstream views. Fabric retries transient failures for you.
+>
+> Use notebooks to author and iterate on your materialized lake view definitions. Let lineage and scheduled refresh handle ordering, execution, and retries — for reliable, repeatable data with less code to maintain.
 
 ## Get a list of materialized lake views
 
