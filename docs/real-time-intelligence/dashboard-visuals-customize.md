@@ -182,3 +182,4 @@ For more information on image syntax in GitHub Flavored Markdown, see [Images](h
 ## Related content
 
 * [Apply conditional formatting to Real-Time Dashboard visuals](dashboard-conditional-formatting.md)
+* [Troubleshoot Real-Time Dashboard visual errors](troubleshoot-dashboard-tile-error.md)
