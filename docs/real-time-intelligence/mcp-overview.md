@@ -22,13 +22,13 @@ Fabric's Real-Time Intelligence provides two types of MCP servers: local and rem
 
 ## Local MCP server for RTI
 
-The local MCP server for Fabric Real-Time Intelligence is an open-source server that you install, host, and manage yourself. It runs on your local machine and provides read-only access to Fabric RTI and Azure Data Explorer (ADX) resources.
+The local MCP server for Fabric Real-Time Intelligence is an open-source server that you install, host, and manage yourself. It runs on your local machine and provides access to Fabric RTI and Azure Data Explorer (ADX) resources.
 
 Key characteristics:
 
 - **Deployment**: Self-hosted on your local machine
 - **Source**: [Open-source on GitHub](https://github.com/microsoft/fabric-rti-mcp/)
-- **Access**: Read-only queries to Eventhouse, Eventstream, Map, and Azure Data Explorer (ADX) clusters.
+- **Access**: Queries to Eventhouse, Eventstream, Map, and Azure Data Explorer (ADX) clusters.
 - **Management**: You manage installation, updates, and maintenance
 
 For detailed information, see [Get started with the local MCP server](mcp-local-server.md).
