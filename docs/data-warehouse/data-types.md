@@ -2,7 +2,7 @@
 title: Data Types in Fabric Data Warehouse
 description: Learn about the T-SQL data types supported by the SQL analytics endpoint and Fabric Data Warehouse in Microsoft Fabric.
 ms.reviewer: jovanpop, procha
-ms.date: 03/13/2026
+ms.date: 06/11/2026
 ms.topic: concept-article
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
@@ -58,6 +58,7 @@ For T-SQL data types that aren't currently supported, some alternatives are avai
 | **json** | Use **varchar**. |
 | **xml** | No equivalent. |
 | **User-defined type (CLR)** | No equivalent. |
+| **Vector** | No equivalent, consider [AI functions in Fabric Data Warehouse (preview)](ai-functions.md). |
 
 Unsupported data types can still be used in T-SQL code for variables, parameters or outputs of functions and stored procedures, or any in-memory use in session. Creating tables or views that persist data on disk with any of these types isn't allowed.
 

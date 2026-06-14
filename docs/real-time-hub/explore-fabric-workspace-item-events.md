@@ -89,7 +89,7 @@ The `data` object has the following properties:
 | `itemName` | string | The item/artifact name. | `Test Notebook` |
 | `workspaceId` | guid | Unique identifier for the workspace. | `00000000-0000-0000-0000-000000000000` |
 | `workspaceName` | string | The name of the workspace. | `Test Workspace` |
-| `principalId` | guid | Unique identifier for the user. | `00000000-0000-0000-0000-000000000000` |
+| `executingPrincipalId` | guid | Unique identifier for the user. | `00000000-0000-0000-0000-000000000000` |
 | `executingPrincipalType` | string | The kind of user. | `User` |
 
 [!INCLUDE [unsupported-itemtypes-in-workspaceevents](../real-time-intelligence/event-streams/includes/connectors/unsupported-itemtypes-in-workspaceevents.md)]
