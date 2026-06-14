@@ -85,6 +85,8 @@ For example
 KILL '101'
 ```
 
+For a step-by-step guide to diagnosing and resolving query blocking, see [Troubleshoot query blocking in Fabric Data Warehouse](troubleshoot-query-blocking.md).
+
 ## Permissions
 
 - An Admin has permissions to execute all three DMVs (`sys.dm_exec_connections`, `sys.dm_exec_sessions`, `sys.dm_exec_requests`) to see their own and others' information within a workspace.
