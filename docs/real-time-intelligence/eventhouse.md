@@ -6,7 +6,7 @@ ms.reviewer: sharmaanshul
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
 ms.custom:
-ms.date: 05/28/2026
+ms.date: 06/15/2026
 ms.search.form: Eventhouse
 ---
 # Eventhouse overview
@@ -35,10 +35,11 @@ When you enable the Eventhouse endpoint from a Lakehouse or Data Warehouse, Fabr
 The system overview page of an eventhouse shows you the following information:
 
 * Eventhouse details
+* Advisory findings
 * Eventhouse storage
 * System resources
 * Compute usage
-* Top user activity in minutes
+* Activity in minutes by application
 * Ingestion rate
 * Top queried databases
 * Top ingested databases
@@ -59,13 +60,11 @@ The databases page of an eventhouse shows you database information either in lis
 
 For more information, see [Database details](manage-monitor-database.md#database-details).
 
-<!-- hide until this is in preview or GA 
 ## Capacity Planner
 
 Your eventhouse is designed to optimize cost by suspending the service when not in use. When reactivating the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can't tolerate this latency, enable the [Capacity Planner mode](eventhouse-smart-capacity-control.md#enable-capacity-planner). This setting enables the service to be always available. With Always-On enabled, you see 100% eventHouse UpTime and you don't pay for cache storage as it's included in the capacity charges.
 
 As part of the always-on capacity planner feature, you can additionally [schedule and configure your minimum capacity](eventhouse-smart-capacity-control.md#schedule-minimum-capacity). This step is useful in scenarios where you have unpredictable query or ingestion loads and need to ensure adequate performance during sudden high loads. This setting allows you to prevent our autoscale mechanism from scaling below a certain size, while still allowing it to scale to a larger size if the workload requires it. A limited amount of premium storage is included in the service, and if your cache utilization approaches this limit, autoscale adjusts to the next larger size.
--->
 
 ## Share an eventhouse
 
