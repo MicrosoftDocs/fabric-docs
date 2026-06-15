@@ -3,7 +3,7 @@ title: Collect logs and metrics with Azure Log Analytics
 description: This article shows how to collect and ingest Apache Spark diagnostics to Azure Log Analytics by using the Log Ingestion API in Microsoft Fabric.
 ms.reviewer: jejiang
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 06/15/2026
 ---
 
 # Collect logs and metrics with Azure Log Analytics

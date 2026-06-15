@@ -724,3 +724,5 @@ items:
     href: troubleshoot-lakehouse.md
   - name: Notebook errors
     href: ../data-science/fabric-notebooks-troubleshooting-guide.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/breadcrumb/toc.json
+  - name: Spark job errors
+    href: troubleshoot-spark.md
