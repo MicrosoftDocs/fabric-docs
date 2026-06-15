@@ -64,31 +64,9 @@ On **Agent setup**, configure the operations agent and adjust it to your data by
 
     :::image type="content" source="media/operations-agent/knowledge-source.png" alt-text="Screenshot of the knowledge source section on the setup page." lightbox="media/operations-agent/knowledge-source.png":::
 
-1. Define the actions that the agent can take based on the insights it generates. Name the action and provide a description to clarify its purpose. Optionally, list the parameters that the action requires, such as a specific value. The agent can always send you notifications in Teams without defining additional actions.
+1. By default, operations agents can send you messages via Teams when conditions it is monitoring for are met. Optionally you can also configure additional actions that it can recommend and take. See [Operations agent actions](operations-agent-actions.md) for more details.
 
-    :::image type="content" source="media/operations-agent/actions.png" alt-text="Screenshot of the actions section on the setup page." lightbox="media/operations-agent/actions.png":::
-
-    After you create an action, configure it:
-  
-      1. Select the action you want to configure.
-
-            :::image type="content" source="media/operations-agent/action-needs-configuration.png" alt-text="Screenshot of the action needing configuration." lightbox="media/operations-agent/action-needs-configuration.png":::
-
-      1. On **Configure custom action**, select the workspace and the activator item, and then create a connection.
-
-            :::image type="content" source="media/operations-agent/create-connection.png" alt-text="Screenshot of the pane for configuring a custom action." lightbox="media/operations-agent/create-connection.png":::
-
-      1. Select **Copy** to copy the connection string, and select **Open flow builder** to create a flow that gets triggered by the action.
-
-            :::image type="content" source="media/operations-agent/connector.png" alt-text="Screenshot of copying the connection string." lightbox="media/operations-agent/connector.png":::
-
-      1. In the **Flow builder**, paste the connection string in the **Connection string** field and select **Save**.
-
-            :::image type="content" source="media/operations-agent/activator.png" alt-text="Screenshot of the flow builder with the connection string." lightbox="media/operations-agent/activator.png":::
-
-      1. To use the values passed through the parameters to the flow, access them through dynamic content as described in [Trigger custom actions (Power Automate flows)](data-activator/activator-trigger-power-automate-flows.md#use-dynamic-content-in-your-flow).
-
-When you finish the configuration, save the agent to generate its playbook. The playbook outlines the goals, instructions, data, and actions you defined, providing the agent with a clear understanding of its tasks.
+When you finish the configuration, save the agent and select Generate Playbook. The playbook outlines the goals, instructions, data, and actions you defined, providing the agent with a clear understanding of its tasks.
 
 You can see properties and the fields that they're mapped to from the underlying data. When you review the rules, you might see it refer to the name of the property rather than the underlying column. Take care to confirm the model and rules match your requirements.
 
@@ -99,9 +77,6 @@ The playbook displays the concepts the agent monitors and the rules or condition
 > [!IMPORTANT]
 > The agent operates by using the delegated identity and permissions of its creator. When a recipient approves a recommendation, the agent executes the action on behalf of the creator, using the creator's permissions.
 
-## Receive messages from an operations agent
-
-After you start the agent, it monitors the data covered by its playbook and rules. 
 
 ## Related content
 

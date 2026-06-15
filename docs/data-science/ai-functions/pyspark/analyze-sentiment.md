@@ -6,20 +6,21 @@ reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI Functions
+ai-usage: ai-assisted
 ---
 
 # Use ai.analyze_sentiment with PySpark
 
-The `ai.analyze_sentiment` function uses generative AI to detect the emotional state of the input text, with a single line of code. It can detect whether the emotional state of the input is positive, negative, mixed, or neutral. It can also detect the emotional state according to your specified labels. If the function can't determine the sentiment, it leaves the output blank.
+The `ai.analyze_sentiment` function labels each input row as positive, negative, mixed, or neutral. You can also provide custom labels. If the function can't determine sentiment, it leaves the output blank.
 
 > [!NOTE]
-> - This article covers using *ai.analyze_sentiment* with PySpark. To use *ai.analyze_sentiment* with pandas, see [this article](../pandas/analyze-sentiment.md).
-> - See other AI Functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI Functions](./configuration.md).
+> - This article covers `ai.analyze_sentiment` with PySpark. For pandas, see [Use ai.analyze_sentiment with pandas](../pandas/analyze-sentiment.md).
+> - For all AI Functions and prerequisites, see [AI Functions overview](../overview.md).
+> - Change default configuration for [AI Functions with PySpark](./configuration.md).
 
 ## Overview
 
-The `ai.analyze_sentiment` function is  available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). You must specify the name of an existing input column as a parameter.
+The `ai.analyze_sentiment` function is available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). Specify the input column name and, optionally, the output column name.
 
 The function returns a new DataFrame, with sentiment labels for each input text row stored in an output column.
 
@@ -62,13 +63,13 @@ sentiment = df.ai.analyze_sentiment(input_col="reviews", output_col="sentiment")
 display(sentiment)
 ```
 
-This example code cell provides the following output:
+Output:
 
 :::image type="content" source="../../media/ai-functions/analyze-sentiment-example-output.png" alt-text="Screenshot of a data frame with 'reviews' and 'sentiment' columns. The 'sentiment' column includes 'negative', 'positive', 'mixed', and 'neutral'." lightbox="../../media/ai-functions/analyze-sentiment-example-output.png":::
 
 ## Multimodal input
 
-The `ai.analyze_sentiment` function supports file-based multimodal input. You can analyze the sentiment of images, PDFs, and text files by setting `input_col_type="path"`. For more information about supported file types and setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
+To analyze sentiment in images, PDFs, or text files, set `input_col_type="path"`. For setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
 
 ```python
 # This code uses AI. Always review output for mistakes.
@@ -90,18 +91,8 @@ display(results)
 
 ## Related content
 
-- Use [`ai.analyze_sentiment` with pandas](../pandas/analyze-sentiment.md).
-- Categorize text with [`ai.classify`](./classify.md).
-- Generate vector embeddings with [ai.embed](./embed.md).
-- Extract entities with [`ai_extract`](./extract.md).
-- Fix grammar with [`ai.fix_grammar`](./fix-grammar.md).
-- Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
-- Calculate similarity with [`ai.similarity`](./similarity.md).
-- Summarize text with [`ai.summarize`](./summarize.md).
-- Translate text with [`ai.translate`](./translate.md).
-
-- Learn more about the [full set of AI Functions](../overview.md).
+- Use [ai.analyze_sentiment with pandas](../pandas/analyze-sentiment.md).
+- Learn more about [AI Functions](../overview.md).
 - Use [multimodal input with AI Functions](../multimodal-overview.md).
-- Customize the [configuration of AI Functions](./configuration.md).
+- Change default configuration for [AI Functions with PySpark](./configuration.md).
 - Understand [billing for AI Functions](../billing.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

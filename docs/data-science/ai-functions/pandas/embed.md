@@ -6,16 +6,17 @@ reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI Functions
+ai-usage: ai-assisted
 ---
 
 # Use ai.embed with pandas
 
-The `ai.embed` function uses generative AI to convert text into vector embeddings. These vectors let AI understand relationships between texts, so you can search, group, and compare content based on meaning rather than exact wording. With a single line of code, you can generate vector embeddings from a column in a DataFrame.
+The `ai.embed` function converts text into vector embeddings that represent meaning. Use embeddings to search, group, and compare content by meaning instead of exact wording.
 
 > [!NOTE]
-> - This article covers using *ai.embed* with pandas. To use *ai.embed* with PySpark, see [this article](../pyspark/embed.md).
-> - See other AI Functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI Functions](./configuration.md).
+> - This article covers `ai.embed` with pandas. For PySpark, see [Use ai.embed with PySpark](../pyspark/embed.md).
+> - For all AI Functions and prerequisites, see [AI Functions overview](../overview.md).
+> - Change default configuration for [AI Functions with pandas](./configuration.md).
 
 ## Overview
 
@@ -37,8 +38,7 @@ None.
 
 ## Returns
 
-The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains embeddings as [numpy array of float-32](https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.float32) for each input text row.
-The number of elements in array depends on the embedding model's dimensions, which are [configurable in AI Functions](./configuration.md)
+The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains embeddings as [numpy array of float-32](https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.float32) values for each input row. The array size depends on the embedding model dimensions, which are [configurable in AI Functions](./configuration.md).
 
 ## Example
 
@@ -55,23 +55,13 @@ df["embed"] = df["descriptions"].ai.embed()
 display(df)
 ```
 
-This example code cell provides the following output:
+Output:
 
 :::image type="content" source="../../media/ai-functions/embed-example-output.png" alt-text="Screenshot of a data frame with columns 'descriptions' and 'embed'. The 'embed' column contains embeddings for the descriptions." lightbox="../../media/ai-functions/embed-example-output.png":::
 
 ## Related content
 
 - Use [ai.embed with PySpark](../pyspark/embed.md).
-- Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
-- Categorize text with [ai.classify](./classify.md).
-- Extract entities with [ai_extract](./extract.md).
-- Fix grammar with [ai.fix_grammar](./fix-grammar.md).
-- Answer custom user prompts with [ai.generate_response](./generate-response.md).
-- Calculate similarity with [ai.similarity](./similarity.md).
-- Summarize text with [ai.summarize](./summarize.md).
-- Translate text with [ai.translate](./translate.md).
-
-- Learn more about the [full set of AI Functions](../overview.md).
-- Customize the [configuration of AI Functions](./configuration.md).
+- Learn more about [AI Functions](../overview.md).
+- Change default configuration for [AI Functions with pandas](./configuration.md).
 - Understand [billing for AI Functions](../billing.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).
