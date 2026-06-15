@@ -24,7 +24,7 @@ When **OneLake availability** and schema synchronization are enabled, you can al
 
 You can turn on **OneLake availability** at the database or table level. When enabled at the database level, all new tables and their data are made available in OneLake. When turning on the feature, you can also choose to apply this option to existing tables by selecting the *Apply to existing tables* option, to include historic backfill. Turning on at the table level makes only that table and its data available in OneLake. The [Data retention policy](data-policies.md#data-retention-policy) of your KQL database is also applied to the data in OneLake. Data removed from your KQL database at the end of the retention period is also removed from OneLake. If you turn off **OneLake availability**, data is soft deleted from OneLake.
 
-Backend schema synchronization keeps the Delta Lake representation aligned with the KQL database, enabling near-real-time querying through the SQL endpoint and notebooks. For expected latency and batching behavior, see [Adaptive behavior](#adaptive-behavior).
+Backend schema synchronization keeps the Delta Lake representation aligned with the KQL database, enabling near-real-time querying through the SQL endpoint and notebooks. For expected latency and batching behavior, see [Adaptive behavior](#adaptive-behavior-for-parquet-file-batching).
 
 While **OneLake availability** is turned on, you can't do the following tasks:
 
