@@ -59,7 +59,7 @@ Use the following steps to enable OneLake diagnostics:
 
 You can make OneLake diagnostic events immutable, which means that no one can tamper with or delete the JSON files that contain diagnostic events during the immutability retention period. OneLake diagnostics immutability is built on the immutable storage for Azure Blob Storage capability. For more information, see [Store business-critical blob data with immutable storage in a write once, read many (WORM) state](/azure/storage/blobs/immutable-storage-overview).
 
-Immutability doesn't introduce additional charges, but it does affect how long diagnostic data remains in storage. Because files can't be deleted during the immutability period, storage costs grow as new diagnostic events are written.
+Immutability doesn't introduce additional charges, but it does affect how long diagnostic data remains in storage. Because files can't be deleted during the immutability period, storage costs grow as new diagnostic events are written. To control storage growth, plan a cleanup process that removes files once the immutability period has elapsed. For more information, see [Manage diagnostic log retention](#manage-diagnostic-log-retention).
 
 :::image type="content" source="./media/onelake-diagnostics/onelake-diagnostics-immutability.png" lightbox="./media/onelake-diagnostics/onelake-diagnostics-immutability.png" alt-text="Screenshot that shows configuring the immutability period for OneLake diagnostics.":::
 
@@ -70,6 +70,25 @@ You configure the immutability period on the workspace that contains the diagnos
 
 > [!NOTE]
 > After you apply the immutability policy, you can't modify or delete the files until the immutability retention period passes. Use caution when applying the policy as it can't be changed once set.
+
+> [!NOTE]
+> When the immutability retention period elapses for a given file, the file becomes editable and deletable again, so you can include it in your own retention process. For more information, see [Manage diagnostic log retention](#manage-diagnostic-log-retention).
+
+### Manage diagnostic log retention
+
+To cap the storage footprint of your diagnostic logs, run a scheduled cleanup job that deletes files older than your retention requirement.
+
+Any tool that can authenticate to OneLake works. For example:
+
+- A scheduled Fabric notebook (PySpark or Python) that enumerates the `Files/DiagnosticLogs/OneLake/Workspaces/<WorkspaceId>/y=YYYY/m=MM/d=DD/...` path and deletes folders older than your retention period.
+- A data pipeline that uses **Get Metadata** and **Delete** activities over the same folder structure.
+- A custom job that calls the ADLS Gen2 or OneLake APIs directly.
+
+When immutable diagnostic logs are enabled, your cleanup job needs to avoid deleting files that are still within their immutability window. Three patterns work well:
+
+- **Align retention with the immutability period.** The immutability period is fixed for all files in the workspace, and the folder path (`y=YYYY/m=MM/d=DD/h=HH/m=00`) tells you each file's age. If you set your retention period to be longer than the immutability period and delete by folder age, you never touch a file that's still immutable.
+- **Check the immutability expiry on the blob.** `Get Blob Properties` returns `x-ms-immutability-policy-until-date` (and `x-ms-immutability-policy-mode`) when a policy is set on the blob. Skip any file whose until-date is still in the future.
+- **Make the job tolerant of errors.** Attempting to delete a file that's still within its immutability window fails with HTTP 409 Conflict and the error code `BlobImmutableDueToPolicy`. Catch the failure, log the file, and continue. The next scheduled run picks the file up once it's mutable.
 
 ### Change the OneLake diagnostic lakehouse
 
@@ -104,6 +123,8 @@ If you enable immutable diagnostic logs, also consider these practices:
 
 - **Align the immutability retention period with organizational policies.** Choose an immutability period that fits your audit, compliance, legal, and investigation requirements. Since immutability can't be shortened or reversed once applied, ensure the retention window reflects your true obligations.
 
+- **Plan for log cleanup after immutability expires.** Schedule a cleanup job (Fabric notebook, data pipeline, or API-based tooling) that deletes files older than your retention policy, taking care to skip files still within their immutability window. For more information, see [Manage diagnostic log retention](#manage-diagnostic-log-retention).
+
 ## Frequently asked questions (FAQ)
 
 ### What happens if the destination lakehouse is deleted?
@@ -123,6 +144,10 @@ If the lakehouse selected for diagnostics is deleted:
 
 - When you move a workspace to a different capacity, diagnostic logging is disabled.
 - To re-enable diagnostics, select a new lakehouse within the new capacity.
+
+### How do I delete diagnostic logs after the immutability period expires?
+
+Once the immutability period elapses, the files become editable and deletable, so you can include them in your own retention process. For recommended cleanup approaches, see [Manage diagnostic log retention](#manage-diagnostic-log-retention).
 
 ### What happens when I enable BCDR for the workspace?
 

@@ -47,7 +47,7 @@ The diagram consists of the following parts and processes:
 | **1** | The user provides an input to Copilot in Fabric, Power BI Desktop, or the Power BI mobile app. The input can be a written prompt or another interaction that generates a prompt. All interactions with Copilot are user-specific. |
 | **2** | The input contains information that includes the prompt, the user's token, and context like the user's Copilot session chat history and a meta-prompt with system metadata, including where the user is and what they're doing in Fabric or Power BI Desktop. |
 | **3** | Copilot handles preprocessing and postprocessing of user inputs and large language model (LLM) responses, respectively. Certain specific steps done during preprocessing and postprocessing depend on which Copilot experience an individual is using. Copilot must be enabled by a Fabric administrator in the tenant settings to use it. |
-| **4** | During preprocessing, Copilot performs grounding to retrieve additional contextual information to improve the specificity and usefulness of the eventual LLM response. Grounding data might include metadata (such as the schema from a lakehouse or semantic model) or data points from items in a workspace, or the chat history from the current Copilot session. Copilot only retrieves grounding data that a user has access to. |
+| **4** | During preprocessing, Copilot performs grounding to retrieve more contextual information to improve the specificity and usefulness of the eventual LLM response. Grounding data might include metadata (such as the schema from a lakehouse or semantic model) or data points from items in a workspace, or the chat history from the current Copilot session. Copilot only retrieves grounding data that a user has access to. |
 | **5** | Preprocessing results in the final inputs: a final prompt and grounding data. Which data is sent depends on the specific Copilot experience and what the user is asking for. |
 | **6** | Copilot sends the input to the Azure OpenAI Service. This service is managed by Microsoft and isn't configurable by the user. Azure OpenAI doesn't train models with your data. If Azure OpenAI isn't available in your geographical area and you've enabled the tenant setting [*Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance*](../admin/service-admin-portal-copilot.md#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance), then Copilot might send your data outside of these geographical areas. |
 | **7** | Azure OpenAI hosts LLMs like the GPT series of models. Azure OpenAI doesn't use the public services or APIs of OpenAI, and OpenAI doesn't have access to your data. These LLMs tokenize the input and use embeddings from their training data to process the inputs into a response. LLMs are limited in the scope and scale of their training data.<br><br>Azure OpenAI contains configuration that determines how the LLM processes the input and which response it returns. It's not possible for customers to view or change this configuration. The call to the OpenAI Service is done via Azure, and not over the public internet. |
@@ -69,18 +69,18 @@ With many Copilot experiences in Fabric, you can extend a Copilot chat panel to 
 
 The following image shows an example of using the Copilot chat panel to ask a data question about a Power BI report.
 
-:::image type="content" source="media/how-copilot-works/copilot-chat-panel-prompt.svg" alt-text="Screenshot showing user prompt and response in Copilot chat panel.":::
+:::image type="content" source="media/how-copilot-works/copilot-chat-panel-prompt.svg" alt-text="Screenshot of a user prompt and response in the Copilot chat panel.":::
 
 > [!NOTE]
-> If you use the Microsoft Edge browser, you might also have access to Copilot there. [Copilot in Edge](/copilot/edge) can also open a Copilot chat panel (or sidebar) in your browser. The Copilot in Edge can't interact with or use any of the Copilot experiences in Fabric. While both Copilots have a similar user experience, Copilot in Edge is completely separate from Copilot in Fabric.
+> If you use the Microsoft Edge browser, you might also have access to Copilot there. [Copilot in Microsoft Edge](/copilot/edge) can also open a Copilot chat panel (or sidebar) in your browser. The Copilot in Microsoft Edge can't interact with or use any of the Copilot experiences in Fabric. While both Copilots have a similar user experience, Copilot in Microsoft Edge is separate from Copilot in Fabric.
 
 #### Input via context-dependent pop-up windows
 
-In certain experiences, you can select the Copilot icon to trigger a pop-up window to interact with Copilot. Examples include when you use Copilot in the DAX query view or in the TMDL scripting view of Power BI Desktop. This pop-up window contains an area for you to enter a natural language prompt (similar to the Copilot chat panel) as well as context-specific buttons that can generate a prompt for you. This window might also contain output information, such as explanations about DAX queries or concepts when using Copilot in the DAX query view.
+In certain experiences, you can select the Copilot icon to trigger a pop-up window to interact with Copilot. Examples include when you use Copilot in the DAX query view or in the TMDL scripting view of Power BI Desktop. This pop-up window contains an area for you to enter a natural language prompt (similar to the Copilot chat panel) and context-specific buttons that can generate a prompt for you. This window might also contain output information, such as explanations about DAX queries or concepts when using Copilot in the DAX query view.
 
 The following image shows an example of someone using the Copilot experience in the DAX query view to explain a query that they generated by using Copilot in Power BI.
 
-:::image type="content" source="media/how-copilot-works/copilot-prompt-dax-output.svg" alt-text="Screenshot showing output from Copilot in the Power BI Desktop DAX query view in response to user prompt.":::
+:::image type="content" source="media/how-copilot-works/copilot-prompt-dax-output.svg" alt-text="Screenshot of output from Copilot in the Power BI Desktop DAX query view in response to a user prompt.":::
 
 #### Types of user inputs
 
@@ -116,19 +116,19 @@ Here are several ways to improve prompts that you submit to Copilot:
 - **Provide context:** Where necessary, provide relevant context for your prompt, including what you intend to do or what question you want to answer with an output. For instance, the key components for a good prompt could include:
   - *Goal:* What output you want Copilot to achieve.
   - *Context:* What you intend to do with that particular output and why.
-  - *Expectations:* What you expect the output will look like.
+  - *Expectations:* What you expect the output looks like.
   - *Source:* What data or fields Copilot should use.
 
-- **Use verbs:** Refer explicitly to specific actions that you want Copilot to take, such as "*create* a report page" or "*filter* to customer key accounts".
+- **Use verbs:** Refer explicitly to specific actions that you want Copilot to take, such as "*create* a report page" or "*filter* to Customer Key accounts".
 
-- **Use correct and relevant terminology:** Refer explicitly to the appropriate terms in your prompt, like function, field, or table names, visual types, or technical terminology. Avoid misspellings, acronyms, or abbreviations, as well as superfluous grammar, or atypical characters like Unicode characters or emojis.
+- **Use correct and relevant terminology:** Refer explicitly to the appropriate terms in your prompt, like function, field, or table names, visual types, or technical terminology. Avoid misspellings, acronyms, or abbreviations, and superfluous grammar, or atypical characters like Unicode characters or emojis.
 
-- **Iterate and troubleshoot:** When you don't get the expected result, try to adjust your prompt and re-submit it to see if this improves the output. Some Copilot experiences also provide a *Retry* button to re-submit the same prompt and check for a different result.
+- **Iterate and troubleshoot:** When you don't get the expected result, try to adjust your prompt and resubmit it to see if this improves the output. Some Copilot experiences also provide a *Retry* button to resubmit the same prompt and check for a different result.
 
 > [!IMPORTANT]
 > Consider training users to write good prompts before you enable Copilot for them. Ensure that users understand the difference between a clear prompt that can produce useful results, and a vague prompt that doesn't.
 >
-> Also, Copilot and many other LLM tools are *non-deterministic*. This means that  two users submitting the same prompt that uses the same grounding data can obtain different results. This non-determinism is inherent to the underlying technology of generative AI, and is an important consideration when you expect or need deterministic results, such as an answer to a data question, like *"What are the sales in August 2021?"*
+> Also, Copilot and many other LLM tools are *nondeterministic*. This means that  two users submitting the same prompt that uses the same grounding data can obtain different results. This non-determinism is inherent to the underlying technology of generative AI, and is an important consideration when you expect or need deterministic results, such as an answer to a data question, like *"What are the sales in August 2021?"*
 
 #### Other input information that Copilot uses in preprocessing
 
@@ -138,7 +138,7 @@ Aside from input that a user provides, Copilot also retrieves additional informa
 
 - **The Copilot session chat history for the current session.** For chat experiences or the Copilot chat panel, Copilot always provides the Chat history for use in preprocessing as part of the grounding data context. Copilot doesn't remember or use chat history from previous sessions.
 
-- **Meta-prompt with system metadata.** A meta-prompt provides additional context about where the user is and what they're doing in Fabric or Power BI Desktop. This meta-prompt information is used during preprocessing to determine which skill or tool Copilot should use to answer the user's question.
+- **Meta-prompt with system metadata.** A meta-prompt provides more context about where the user is and what they're doing in Fabric or Power BI Desktop. This meta-prompt information is used during preprocessing to determine which skill or tool Copilot should use to answer the user's question.
 
 Once a user submits their input, Copilot proceeds to the next step.
 
@@ -167,7 +167,7 @@ After receiving user input, Copilot performs preprocessing, which involves the f
 
 - **Caching:** In certain scenarios, Copilot caches your prompt and the grounding data for 48 hours. Caching the prompt ensures that repeated prompts return the same results while cached, that they return these results faster, and that you aren’t consuming Fabric capacity just for repeating a prompt in the same context. Caching occurs in two different places:
   - The browser cache of the user.
-  - The first back-end cache in the home region of the tenant, where it's stored for auditing purposes. No data is cached in the Azure OpenAI Service or the location of the GPUs. For more information about caching in Fabric, refer to the [Microsoft Fabric security whitepaper](../security/white-paper-landing-page.md).
+  - The first back-end cache in the home region of the tenant, where it's stored for auditing purposes. No data is cached in the Azure OpenAI Service or the location of the GPUs. For more information about caching in Fabric, see the [Microsoft Fabric security whitepaper](../security/white-paper-landing-page.md).
 
 - **Sending input to Azure OpenAI:** Copilot sends the augmented prompt and the relevant grounding data to the Azure OpenAI Service.
 
@@ -185,7 +185,7 @@ All Copilot experiences are powered by the Azure OpenAI Service.
 
 Copilot uses Azure OpenAI—not OpenAI's publicly available services—to process all data and return a response. As mentioned earlier, this response is produced by an *LLM*. LLMs are a specific approach to "narrow" AI that focus on using deep learning to find and reproduce patterns in unstructured data; specifically, text. Text in this context includes natural language, metadata, code, and any other semantically meaningful arrangement of characters.
 
-Copilot currently uses a combination of GPT models, including the Generative Pre-trained Transformer (GPT) series of models from OpenAI.
+Copilot currently uses a combination of GPT models, including the Generative Pretrained Transformer (GPT) series of models from OpenAI.
 
 > [!NOTE]
 > You can't choose or change the models Copilot uses, including using other foundation models or your own models. Copilot in Fabric uses various models. It's also not possible for you to alter or configure the Azure OpenAI Service to behave differently with Copilot in Fabric; this service is managed by Microsoft.
@@ -198,21 +198,21 @@ Microsoft hosts the OpenAI models in Microsoft's Azure environment and the servi
 
 #### Understand tokenization
 
-It's essential that you understand tokenization since [the cost of Copilot in Fabric (which is how much Fabric capacity Copilot consumes) is determined by the number of tokens](/fabric/get-started/copilot-fabric-consumption#consumption-rate) produced by your Copilot inputs and outputs.
+It's essential that you understand tokenization since [the cost of Copilot in Fabric (which is how much Fabric capacity Copilot consumes) is determined by the number of tokens](/fabric/get-started/copilot-fabric-consumption#copilot-consumption-rate-per-token) produced by your Copilot inputs and outputs.
 
 To process the text input from Copilot, Azure OpenAI must first convert that input into a numerical representation. A key step in this process is *tokenization*, which is the partitioning of input text into different, smaller parts, called *tokens*. A token is a set of co-occurring characters, and it's the smallest unit of information that an LLM uses to produce its output. Each token has a corresponding numerical ID, which becomes the vocabulary of the LLM to encode and use text as numbers. There are different ways to tokenize text, and different LLMs tokenize input text in different ways. Azure OpenAI uses [*Byte-Pair Encoding (BPE)*](/dotnet/ai/conceptual/understanding-tokens#common-tokenization-methods), which is a method of sub-word tokenization.
 
-To better understand what a token is and how a prompt becomes tokens, consider the following example. This example shows an input prompt and its tokens, estimated using the [OpenAI Platform tokenizer](https://platform.openai.com/tokenizer)(for GPT4). Beneath the highlighted tokens in the prompt text is an array (or list) of the numerical token IDs.
+To better understand what a token is and how a prompt becomes tokens, consider the following example. This example shows an input prompt and its tokens, estimated using the [OpenAI Platform tokenizer](https://platform.openai.com/tokenizer)(for GPT4). Beneath the highlighted tokens in the prompt text are an array (or list) of the numerical token IDs.
 
-:::image type="content" source="media/how-copilot-works/copilot-input-prompt-tokens.svg" alt-text="Screenshot showing an example of tokenization for a prompt consisting of 7 tokens and 27 characters.":::
+:::image type="content" source="media/how-copilot-works/copilot-input-prompt-tokens.svg" alt-text="Screenshot of an example of tokenization for a prompt consisting of 7 tokens and 27 characters.":::
 
 In the example, each differently colored highlight indicates a single token. As mentioned previously, Azure OpenAI uses *subword* tokenization, so a token isn't a word, but it also isn't a character, or a fixed number of characters. For instance *"report"* is a single token, but *"."* is, too.
 
-To reiterate, you should understand what a token is because [the cost of Copilot (or its Fabric capacity consumption rate) is determined by tokens](copilot-fabric-consumption.md#consumption-rate). Therefore, understanding what a token is and how input and output tokens are created helps you understand and anticipate how Copilot usage results in consumption of Fabric CUs. For more information about the [cost of Copilot in Fabric](#cost-of-copilot-in-fabric), see the appropriate section later in this article.
+To reiterate, you should understand what a token is because [the cost of Copilot (or its Fabric capacity consumption rate) is determined by tokens](copilot-fabric-consumption.md#copilot-consumption-rate-per-token). Therefore, understanding what a token is and how input and output tokens are created helps you understand and anticipate how Copilot usage results in consumption of Fabric CUs. For more information about the [cost of Copilot in Fabric](#cost-of-copilot-in-fabric), see the appropriate section later in this article.
 
 Copilot in Fabric uses both input and output tokens, as depicted in the following diagram.
 
-:::image type="content" source="media/how-copilot-works/copilot-input-output-tokens.svg" alt-text="Screenshot showing how Copilot consumes input tokens from prompts and grounding data, and output tokens from the LLM response.":::
+:::image type="content" source="media/how-copilot-works/copilot-input-output-tokens.svg" alt-text="Diagram that shows how Copilot consumes input tokens from prompts and grounding data, and output tokens from the LLM response.":::
 
 Copilot creates two different kinds of tokens:
 
@@ -231,7 +231,7 @@ It's important that you understand how an LLM in Azure OpenAI processes your dat
 > [!NOTE]
 > This article provides a simple, high-level overview of how the LLMs that Copilot uses (like GPTs) work. For technical details and a deeper understanding of how GPT models process input to produce a response, or about their architecture, read the research papers [*Attention Is All You Need*](https://arxiv.org/pdf/1706.03762v2) (2017) by Ashish Vaswani and others, and [*Language Models are Few-Shot Learners*](https://arxiv.org/abs/2005.14165) (2020) by Tom Brown and others.
 
-The purpose of Copilot (and LLMs in general) is to provide a context-appropriate, useful output, based on the input that a user provides and other relevant grounding data. An LLM does this by interpreting the meaning of tokens in a similar context, as seen in their training data. To get a meaningful semantic understanding of tokens, LLMs have been trained on massive datasets thought to [comprise both copyrighted and public domain information](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4963711). However, this training data is limited in terms of content freshness, quality, and scope, which creates limitations for LLMs and the tools that use them, such as Copilot. For more information about these limitations, see [Understand the limitations of Copilot and LLMs](#understand-the-limitations-of-copilot-and-llms) later in this article.
+The purpose of Copilot (and LLMs in general) is to provide a context-appropriate, useful output, based on the input that a user provides an other relevant grounding data. An LLM does this by interpreting the meaning of tokens in a similar context, as seen in their training data. To get a meaningful semantic understanding of tokens, LLMs have been trained on massive datasets thought to [comprise both copyrighted and public domain information](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4963711). However, this training data is limited in terms of content freshness, quality, and scope, which creates limitations for LLMs and the tools that use them, such as Copilot. For more information about these limitations, see [Understand the limitations of Copilot and LLMs](#understand-the-limitations-of-copilot-and-llms) later in this article.
 
 The semantic meaning of a token is captured in a mathematical construct referred to as an [*embedding*](/dotnet/ai/conceptual/embeddings), which turns tokens into dense vectors of real numbers. In simpler terms, embeddings provide LLMs with the semantic meaning of a given token, based on the other tokens around it. This meaning depends on the LLM training data. Think of tokens like unique building blocks, while embeddings help an LLM know what block to use when.
 
@@ -255,12 +255,12 @@ It's important to keep the following considerations in mind when you use Copilot
 
 - **Copilot has no understanding of "accuracy" or "truthfulness":** The outputs that Copilot provides don't provide an indication of trustworthiness, reliability, or similar sentiments. The underlying technology involves pattern recognition and is unable to evaluate the quality or usefulness of its outputs. Users should critically evaluate outputs before they use these outputs in other work or decision-making.
 
-- **Copilot can't reason, understand your intent, or know context beyond its input:** While the grounding process of Copilot ensures that outputs are more specific, grounding alone can't give Copilot all the information that it needs to answer your questions. For instance, if you use Copilot to generate code, Copilot still doesn't know what you'll do with that code. This means that the code might work in one context, but not another, and users must either modify the output or their prompt to address this.
+- **Copilot can't reason, understand your intent, or know context beyond its input:** While the grounding process of Copilot ensures that outputs are more specific, grounding alone can't give Copilot all the information that it needs to answer your questions. For instance, if you use Copilot to generate code, Copilot still doesn't know what you do with that code. This means that the code might work in one context, but not another, and users must either modify the output or their prompt to address this.
 
 - **Copilot outputs are limited by the training data of the LLMs it uses:** In certain Copilot experiences, such as those where you generate code, you might want Copilot to generate code with a newly released function or pattern. However, Copilot won't be able to do this effectively if there are no examples of that in the training data of the GPT models it uses, which has a cutoff in the past. This also happens when you try to apply Copilot to contexts that are sparse in its training data, like when using Copilot with the TMDL editor in Power BI Desktop. In these scenarios, you should be particularly vigilant and critical of low-quality or inaccurate outputs.
 
 > [!WARNING]
-> To mitigate the risks of these limitations and considerations, and the fact that Copilot, LLMs, and generative AI are nascent technology, you *should not* use Copilot in Fabric for autonomous, high-risk, or business-critical processes and decision-making.
+> To mitigate the risks of these limitations and considerations, and the fact that Copilot, LLMs, and generative AI are nascent technology, you *shouldn't* use Copilot in Fabric for autonomous, high-risk, or business-critical processes and decision-making.
 
 For more information, see [Security guidance for LLMs](/ai/playbook/technology-guidance/generative-ai/mlops-in-openai/security/security-plan-llm-application).
 
@@ -322,9 +322,9 @@ Sometimes, as part of the output, Copilot might also suggest an additional, foll
 
 Copilot has no way to evaluate or indicate the usefulness or accuracy of its outputs. As such, it's important that users evaluate this themselves whenever they use Copilot.
 
-To mitigate risks or challenges from LLM hallucinations in Copilot, consider the following advice:
+To mitigate risks or challenges from LLMs producing content that isn't grounded in fact, consider the following advice:
 
-- Train users to use Copilot and other similar tools that leverage LLMs. Consider training them on the following topics:
+- Train users to use Copilot and other similar tools that use LLMs. Consider training them on the following topics:
   - What Copilot can and can't do.
   - When to use Copilot and when not to use it.
   - How to write better prompts.
@@ -354,7 +354,7 @@ For an overview specifically for each Fabric workload, see the following article
 
 Unlike other Microsoft Copilots, Copilot in Fabric doesn't require additional per-user or per-capacity licenses. Rather, Copilot in Fabric consumes from your available Fabric capacity units (CUs). The consumption rate of Copilot is determined by the number of tokens in your inputs and outputs when you use it across the various experiences in Fabric.
 
-If you have a Fabric capacity, you're using either a [pay-as-you-go or reserved instance](../enterprise/buy-subscription.md#sku-types). In both cases, Copilot consumption works the same. In a pay-as-you-go scenario, you're billed per second that your capacity is active until you pause your capacity. Billing rates have no relationship to the usage of your Fabric CUs; you pay the same amount if your capacity is fully utilized or completely unused. As such, Copilot doesn't have a direct cost or impact on your Azure billing. Rather, Copilot consumes from the available CUs which other Fabric workloads and items also use, and if you use too much, users will experience reduced performance and [throttling](../enterprise/throttling.md). It's also possible to enter a state of CU debt called *carryforward*. For more information about throttling and carryforward, see [Throttle triggers and throttle stages](../enterprise/throttling.md#throttle-triggers-and-throttle-stages).
+If you have a Fabric capacity, you're using either a [pay-as-you-go or reserved instance](../enterprise/buy-subscription.md#sku-types). In both cases, Copilot consumption works the same. In a pay-as-you-go scenario, you're billed per second that your capacity is active until you pause your capacity. Billing rates have no relationship to the usage of your Fabric CUs; you pay the same amount if your capacity is fully utilized or unused. As such, Copilot doesn't have a direct cost or impact on your Azure billing. Rather, Copilot consumes from the available CUs, which other Fabric workloads and items also use, and if you use too much, users experience reduced performance and [throttling](../enterprise/throttling.md). It's also possible to enter a state of CU debt called *carryforward*. For more information about throttling and carryforward, see [Throttle triggers and throttle stages](../enterprise/throttling.md#throttle-triggers-and-throttle-stages).
 
 The following sections explain more about how you should understand and manage Copilot consumption in Fabric.
 
@@ -366,9 +366,9 @@ The following sections explain more about how you should understand and manage C
 Copilot consumes your available Fabric CUs, also commonly referred to as *capacity*, *compute*, or *resources*. The consumption is determined by the input and output tokens when you use it. To review, you can understand input and output tokens as a result of tokenizing the following:
 
 - *Input tokens:* Tokenization of your written prompt and grounding data.
-- *Output tokens:* Tokenization of the Azure OpenAI response, based on the input. Output tokens are [three times more expensive than input tokens](copilot-fabric-consumption.md#consumption-rate).
+- *Output tokens:* Tokenization of the Azure OpenAI response, based on the input. Output tokens are [three times more expensive than input tokens](copilot-fabric-consumption.md#copilot-consumption-rate-per-token).
 
-You can limit the number of input tokens by using shorter prompts, but you can't control what grounding data Copilot uses for preprocessing, or the number of output tokens that the LLM in Azure OpenAI returns. For instance, you can expect that the [report creation experience](/power-bi/create-reports/copilot-create-desktop-report) for Copilot in Power BI will have a high consumption rate, since it might use grounding data (like your model schema) and might produce a verbose output (report metadata).
+You can limit the number of input tokens by using shorter prompts, but you can't control what grounding data Copilot uses for preprocessing, or the number of output tokens that the LLM in Azure OpenAI returns. For instance, you can expect that the [report creation experience](/power-bi/create-reports/copilot-create-desktop-report) for Copilot in Power BI has a high consumption rate, since it might use grounding data (like your model schema) and might produce a verbose output (report metadata).
 
 #### Inputs, outputs, and grounding data are converted to tokens
 
@@ -389,7 +389,7 @@ Additionally, there are various user optimizations that you can implement to lim
 - **Hiding report pages or visuals:** Similarly, any hidden report pages or visuals hidden behind a report bookmark are also not considered by Copilot.
 
 > [!TIP]
-> User optimizations are mainly effective for improving the usefulness of Copilot outputs, rather than optimizing Copilot cost. For more information, see articles specific to the various workloads and Copilot experiences.
+> User optimizations are effective for improving the usefulness of Copilot outputs, rather than optimizing Copilot cost. For more information, see articles specific to the various workloads and Copilot experiences.
 
 You have no visibility on the tokenization process, and you can only minimally impact the input and output tokens. As such, the most effective way for you to manage Copilot consumption and avoid [throttling](../enterprise/throttling.md) is by managing Copilot usage.
 
@@ -428,7 +428,7 @@ Copilot consumes Fabric CUs, and even with smoothing, you might encounter situat
 
 An important way to ensure effective adoption of any tool is to equip users with sufficient mentoring and training, and to gradually roll out access as people complete such training. Effective training is a preventative measure to avoid high utilization and throttling preemptively, by educating users about how to use Copilot effectively and on what not to do.
 
-You can best control who can use Copilot in Fabric by creating an *allowlist* of users with access to the feature from the Fabric tenant settings. This means that you enable Copilot in Fabric only for users who belong to specific security groups. If necessary, you might create separate security groups for each of the Fabric workloads where you can enable Copilot to obtain finer grain control over who can use which Copilot experiences. For more information about creating security groups, see [Create, edit, or delete a security group](/microsoft-365/admin/email/create-edit-or-delete-a-security-group).
+You can best control who can use Copilot in Fabric by creating an *allow list* of users with access to the feature from the Fabric tenant settings. This means that you enable Copilot in Fabric only for users who belong to specific security groups. If necessary, you might create separate security groups for each of the Fabric workloads where you can enable Copilot to obtain finer grain control over who can use which Copilot experiences. For more information about creating security groups, see [Create, edit, or delete a security group](/microsoft-365/admin/email/create-edit-or-delete-a-security-group).
 
 Once you add specific security groups to the Copilot tenant settings, you can put together onboarding training for users. A Copilot training course should cover basic topics, such as the following.
 
@@ -448,14 +448,14 @@ Once you add specific security groups to the Copilot tenant settings, you can pu
 - **Risks and limitations of LLMs and generative AI:** You should explain key risks and limitations of Copilot, LLMs, and generative AI, such as those mentioned in this article:
   - They're non-deterministic.
   - They provide no indication or guarantees of accuracy, reliability, or truthfulness.
-  - They can hallucinate and produce inaccurate or low-quality outputs.
+  - They can produce inaccurate or low-quality outputs.
   - They can't generate information that spans outside the scope of their training data.
 
 - **Where to find Copilot in Fabric:** Provide A a high-level overview of the different workloads, items, and Copilot experiences that someone might use.
 
 #### Scale your capacity
 
-When you experience throttling in Fabric due to Copilot consumption or other operations, you can [temporarily scale (or resize) your capacity](../enterprise/scale-capacity.md) to a higher SKU. This is a reactive measure that temporarily elevates your cost to alleviate short-term issues due to throttling or carryforward. This is particularly helpful when you experience throttling primarily due to background operations, since the consumption (and thus the impact) might be spread over a 24-hour window.
+When you experience throttling in Fabric due to Copilot consumption or other operations, you can [temporarily scale (or resize) your capacity](../enterprise/scale-capacity.md) to a higher SKU. This is a reactive measure that temporarily elevates your cost to alleviate short-term issues due to throttling or carryforward. This is helpful when you experience throttling primarily due to background operations, since the consumption (and thus the impact) might be spread over a 24-hour window.
 
 #### Split-capacity strategies
 
@@ -468,7 +468,7 @@ The following diagram depicts an example of a split-capacity strategy to isolate
 
 :::image type="content" source="media/how-copilot-works/copilot-split-capacity-strategy.svg" alt-text="Diagram depicting strategy to manage Copilot consumption by delegating a separate Fabric Copilot capacity for Copilot consumption.":::
 
-You can also use a split-capacity solution by [assigning Copilot consumption to a separate capacity](https://www.microsoft.com/microsoft-fabric/blog/2024/11/19/accelerate-app-innovation-with-an-ai-powered-data-platform/#:~:text=Fabric%20billing%20and%20consumption%20updates). Assigning Copilot consumption to a separate capacity ensures that high utilization of Copilot doesn't impact your other Fabric workloads and the business-critical processes that depend on them. Of course, using any split-capacity strategy requires that you already have two or more F64 or higher SKUs. As such, this strategy might not be manageable for smaller organizations or organizations with a limited budget to spend on their data platforms.
+You can also use a split-capacity solution by [assigning Copilot consumption to a separate capacity](https://www.microsoft.com/microsoft-fabric/blog/2024/11/19/accelerate-app-innovation-with-an-ai-powered-data-platform/#:~:text=Fabric%20billing%20and%20consumption%20updates). Assigning Copilot consumption to a separate capacity ensures that high utilization of Copilot doesn't impact your other Fabric workloads and the business-critical processes that depend on them. Using any split-capacity strategy requires that you already have two or more F64 or higher SKUs. As such, this strategy might not be manageable for smaller organizations or organizations with a limited budget to spend on their data platforms.
 
 Irrespective of how you choose to manage Copilot, what's most important is that you monitor Copilot consumption in your Fabric capacity.
 

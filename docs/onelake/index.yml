@@ -38,8 +38,8 @@ landingContent:
             url: onelake-medallion-lakehouse-architecture.md
       - linkListType: get-started
         links:
-          - text: Create a lakehouse with OneLake
-            url: create-lakehouse-onelake.md
+          - text: "Quickstart: Get data in OneLake"
+            url: quickstart-get-data.md
           - text: OneLake file explorer
             url: onelake-file-explorer.md
           - text: Find data in the OneLake catalog
@@ -70,9 +70,9 @@ landingContent:
         links:
           - text: Integrate OneLake with Azure Databricks
             url: onelake-azure-databricks.md
-          - text: Integrate OneLake with Azure HDInsight
-            url: onelake-azure-hdinsight.md
           - text: Integrate OneLake with Azure Storage Explorer
             url: onelake-azure-storage-explorer.md
           - text: Integrate OneLake with Azure Synapse Analytics
             url: onelake-azure-synapse-analytics.md
+          - text: Use OneLake files in Microsoft Foundry
+            url: onelake-foundry-knowledge.md

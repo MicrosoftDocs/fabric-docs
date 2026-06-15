@@ -1,12 +1,14 @@
 ﻿---
 title: Create a Fabric data agent
 description: Learn how to create a Fabric data agent.
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: amjafari
 ms.topic: how-to
-ms.date: 09/17/2025
+ms.date: 05/20/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
-ai.usage: ai-assisted
+ai-usage: ai-assisted
 #customer intent: As an Analyst, I want to create a Fabric data agent that relies on generative AI, that my colleagues and I can use to have conversations about our data.
 ---
 
@@ -18,11 +20,11 @@ With a data agent in Microsoft Fabric, you can create conversational AI experien
 
 ## Authentication and tokens
 
-You don't need to create or supply an Azure OpenAI key or an access token to use a Fabric data agent. Fabric uses a Microsoft-managed Azure OpenAI Assistant and handles authentication for you.
+You don't need to create or supply an Azure OpenAI key or an access token to use a Fabric data agent. Fabric uses a Microsoft-managed Azure OpenAI Assistant and handles authentication for you. When [Workspace outbound access protection](../security/workspace-outbound-access-protection-data-agent.md) is enabled on the workspace, the data agent's outbound calls to external data sources are governed by the workspace's data connection rules; the Microsoft-managed Azure OpenAI service that the data agent uses isn't subject to outbound access protection.
 
 - Data access runs under your Microsoft Entra ID user identity and your workspace/data permissions. The agent reads schemas and runs SQL/DAX/KQL only if you have access. While most data sources respect workspace permissions, Power BI semantic model interactions via data agents are governed by model-level Read permission and don't require workspace role membership.
 - To add a Power BI semantic model as a data source, you need Read permission on that model (Write isn't required). Read access is also sufficient to ask questions against sources you can access.
-	For more about semantic model permissions, see [Dataset and semantic model security](../admin/service-admin-portal-dataset-security.md). In data agent usage, Read permission is sufficient for querying; Write is required only for modifying the semantic model or enabling features such as Prep for AI.
+    For more about semantic model permissions, see [Dataset and semantic model security](../admin/service-admin-portal-dataset-security.md). In data agent usage, Read permission is sufficient for querying; Write is required only for modifying the semantic model or enabling features such as Prep for AI.
 - If your organization uses a Power BI Premium per capacity (P1 or higher) capacity instead of an F SKU, make sure [Microsoft Fabric is enabled](../admin/fabric-switch.md) on that capacity.
 - Service principals and API tokens aren't required for the in-product chat experience. Any automation with service principals is a separate scenario and isn't covered here.
 
@@ -30,7 +32,9 @@ You don't need to create or supply an Azure OpenAI key or an access token to use
 
 Fabric data agents honor Microsoft Purview governance policies. When Purview policies restrict access to a data source (for example, through access controls or sensitivity labels), the agent respects those restrictions when processing user queries.
 
-Expanded outbound access protection applies to agent operations. Outbound connections from agents are subject to the tenant's network and access rules configured in the Fabric admin portal. Administrators can control which external endpoints agents are permitted to reach.
+Workspace outbound access protection applies to data agent outbound requests and is enforced at the workspace level. When enabled, outbound requests from data agents are subject to the workspace's data connection rules, and administrators control which external endpoints agents are permitted to reach. For more information, see [Workspace outbound access protection for Data Agent](../security/workspace-outbound-access-protection-data-agent.md) (preview).
+
+When workspace outbound access protection is enabled, data agent capabilities that depend on calling supported data sources outside the workspace require those connections to be allowed by administrators through data connection rules. If a required connection isn't on the allow list, queries that depend on it might fail to execute. The Microsoft-managed Azure OpenAI service that the data agent uses isn't subject to workspace outbound access protection and remains available.
 
 ### Permissions for semantic models via data agents
 
@@ -129,7 +133,7 @@ The agent analyzes the constructed prompt, and decides which tool to invoke to r
 - Natural Language to SQL (NL2SQL): Used to generate SQL queries when the data resides in a lakehouse or warehouse
 - Natural Language to DAX (NL2DAX): Used to create DAX queries to interact with semantic models in Power BI data sources
 - Natural Language to KQL (NL2KQL): Used to construct KQL queries to query data in KQL databases. NL2KQL can use KQL user-defined functions (UDFs) when they're available in the selected databases.
-- Microsoft Graph: Used to query organizational data accessible through Microsoft Graph
+- Microsoft Graph: Used to query organizational data accessible through Microsoft Graph (when workspace outbound access protection is enabled, requests to Microsoft Graph are subject to your workspace's data connection rules and must be allowed by administrators)
 
 The selected tool generates a query using the schema, metadata, and context that the agent underlying the Fabric data agent provides. Then the tool validates the query, to ensure proper formatting and compliance with its security protocols, and its own Responsible AI (RAI) policies.
 

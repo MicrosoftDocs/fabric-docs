@@ -2,7 +2,7 @@
 title: "Open Mirroring Partner Ecosystem"
 description: Learn about the open mirrored databases partner ecosystem in Microsoft Fabric.
 ms.reviewer: tinglee, sbahadur, ulrichchrist, maraki-ketema
-ms.date: 12/10/2025
+ms.date: 05/29/2026
 ms.topic: partner-tools
 ms.search.form: Fabric Mirroring
 ai-usage: ai-assisted
@@ -50,6 +50,13 @@ For an overview of dab Nexus, see [Effortless SAP Data Integration in Microsoft 
 
 For the technical documentation of dab Nexus, see [Quickstart Guide Managed App - dab:Help](https://aka.ms/mirroring/dab-mirroring-doc).
 
+## Informatica
+
+Open mirroring with Informatica enables near real-time replication to a mirrored database in Microsoft Fabric OneLake. Mirroring ensures that changes in the source system are quickly reflected in Microsoft Fabric to keep the mirrored data continuously up-to-date and ready for timely analysis and reporting.
+
+For more information on Informatica, see [Using open mirroring to replicate data to Microsoft Fabric OneLake](https://docs.informatica.com/integration-cloud/data-ingestion-and-replication/current-version/database-ingestion-and-replication/database-ingestion-and-replication-targets---preparation-and-usa/microsoft-fabric-onelake-targets/using-open-mirroring-to-replicate-data-to-microsoft-fabric-onela.html).
+
+
 ## MongoDB
 
 MongoDB integrated with open mirroring for a solution to bring operational data from MongoDB Atlas to Microsoft Fabric for Big data analytics, AI and BI, combining it with the rest of the data estate of the enterprise. Once mirroring is enabled for a MongoDB Atlas collection, the corresponding table in OneLake is kept in sync with the changes in source MongoDB Atlas collection, unlocking opportunities of varied analytics and AI and BI in near real-time.
@@ -61,6 +68,12 @@ For more information, see [MongoDB integration into open mirroring in Microsoft 
 Oracle GoldenGate 23ai integration into Microsoft Fabric via open mirroring. Any supported Oracle GoldenGate source including Oracle Database@Azure can replicate data into a Mirrored Database in Microsoft Fabric. This powerful combination unlocks real-time data integration, continuously synchronizing data across your hybrid and multicloud environments. Mirrored Database in Microsoft Fabric as a destination is available through the GoldenGate for Distributed Applications and Analytics 23ai product.
 
 For more information, see [Oracle GoldenGate 23ai integration into open mirroring in Microsoft Fabric](https://aka.ms/mirroring/oracle-goldengate-23ai-docs).
+
+## Profisee
+
+Profisee is a modern, cloud-native master data management platform that enables organizations to create a single, trusted view of their most critical business data across domains such as customer, product, supplier and location. By integrating with Open Mirroring, Profisee continuously delivers governed, high-quality master data into Microsoft OneLake, ensuring that AI, BI and analytics workloads in Microsoft Fabric are built on a reliable and governed data foundation. With built-in AI-powered automation and deep integration with the Microsoft ecosystem, Profisee helps organizations accelerate time to value from their data.
+
+For more information on Profisee for Microsoft Fabric, see [Profisee and Microsoft Fabric](https://profisee.com/solutions/microsoft-enterprise/microsoft-fabric/).
 
 ## Qlik
 
@@ -85,6 +98,12 @@ For more information, see [Simplement integration into open mirroring in Microso
 SNP Glue is a data integration solution certified for various SAP source systems including SAP S/4HANA (on-premises and Private Cloud Edition). With release 2502, it supports open mirroring for near real-time data integration into Microsoft Fabric. For more information, see [SNP Glue release note](https://aka.ms/mirroring/snp-mirroring-doc).
 
 For more information on SNP Glue, see the [SNP Glue documentation](https://aka.ms/mirroring/snp-overview).
+
+## Stelo Data
+
+[Stelo Data](https://www.stelodata.com/) supports streaming real-time change data from enterprise databases including IBM Db2 for iSeries (Linux and Windows), Informix, Oracle, and SQL Server into Microsoft Fabric via open mirroring. Change data is captured and streamed continuously, delivering near real-time pipelines that keep Fabric workloads current and responsive without rebuilding pipelines or impacting source systems.
+
+For more information, see [Stelo Data in the Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/stelodata.sqdr_plus).
 
 ## Striim
 

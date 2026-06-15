@@ -2,13 +2,11 @@
 title: GQL Graph Patterns for graph in Microsoft Fabric
 description: Learn about GQL graph pattern syntax for matching nodes, edges, and paths in graph queries. Includes examples and pattern composition rules.
 ms.topic: reference
-ms.date: 03/12/2026
+ms.date: 05/20/2026
 ms.reviewer: splantikow
 ---
 
 # GQL graph patterns
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 Graph patterns are core building blocks of your GQL queries in graph in Microsoft Fabric. They describe the structures you're looking for in the graph using nodes and edges in an intuitive, visual way. Think of graph patterns as templates that the query engine tries to match against the actual data in your graph.
 
@@ -39,7 +37,7 @@ This pattern matches all nodes that have **both** the `Place` and `City` labels 
 - **Flexible ("covariant") matching**: Matched nodes can have more labels and properties beyond the ones specified.
 
 > [!NOTE]
-> graph models with multiple element labels aren't yet supported (known issue).
+> Nodes can have multiple labels, but edge types with multiple labels aren't yet supported.
 
 ### Simple edge patterns
 
@@ -392,6 +390,8 @@ Both forms are equivalent and match chains of at least 2 `knows` relationships.
 
 ## Related content
 
+- [Write graph pattern queries](write-graph-pattern-queries.md)
+- [Write common GQL queries](write-common-gql-queries.md)
 - [GQL language guide](gql-language-guide.md)
 - [Social network schema example](gql-schema-example.md)
 - [GQL graph types](gql-graph-types.md)

@@ -2,7 +2,7 @@
 title: Fabric workload communication
 description: Learn how to create communication between the backend and the frontend of a Microsoft Fabric extension.
 ms.topic: how-to
-ms.date: 05/21/2024
+ms.date: 04/29/2026
 #customer intent: As a developer, I want to understand how communication between a Microsoft Fabric backend and frontend works so that I can create customized user experiences.
 ---
 

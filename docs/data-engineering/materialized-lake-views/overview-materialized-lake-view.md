@@ -1,19 +1,18 @@
 ---
 title: Overview of Materialized Lake Views
 description: Learn about the features, availability, and limitations of materialized lake views in Microsoft Fabric.
-ms.reviewer: nijelsf
+ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: overview
-ms.date: 04/14/2026
+ms.date: 05/26/2026
+ai-usage: ai-assisted
 # customer intent: As a data engineer, I want to understand what materialized lake views are in Microsoft Fabric so that I can use them for building a medallion architecture.
 ---
 
 # What are materialized lake views in Microsoft Fabric?
 
-Materialized lake views turn complex lakehouse transformations into fast, reusable, query‑ready assets that accelerate analytics and reduce compute usage. Results are persisted as Delta files in OneLake and refreshed automatically via schedules or event triggers, delivering dependable, up‑to‑date data. Major advantages include declarative pipelines for predictable deployments, optimal refresh for performance and cost, built‑in data quality, and intuitive monitoring for visibility and trust.
+A materialized lake view in Fabric is a persisted, automatically refreshed view defined in Spark SQL or PySpark. It simplifies multi-stage Lakehouse transformations — typically the bronze-to-silver-to-gold medallion architecture — by expressing them as declarative statements rather than custom Spark jobs. Once materialized, an MLV behaves like a standard Lakehouse table in terms of storage, access patterns, and security — can be queried through any Fabric engine with the same permissions and governance model. Fabric tracks dependencies between MLVs, orchestrates refreshes in the correct order, and enforces data quality constraints at every stage. This enables data engineers to build reliable, maintainable pipelines with less code and operational overhead.
 
 ## When to use materialized lake views
-
-When you already have a lakehouse and run Spark notebooks to transform data into Delta tables—then schedule those notebooks via pipelines—materialized lake views can simplify that workflow. Instead of managing refresh logic, execution order, and scheduling yourself, you define SQL transformations and let Fabric handle the rest.
 
 Materialized lake views are a good fit when you have:
 
@@ -26,20 +25,19 @@ Materialized lake views are a good fit when you have:
 Materialized lake views aren't the right choice for every scenario. Consider alternatives when you have:
 
 - **One-time or rarely accessed queries** that don't benefit from precomputed results
-- **Simple transformations** that already run quickly without optimization
 - **Non-SQL logic** such as ML inference, API calls, or complex Python processing — use Spark notebooks instead
-- **High-frequency streaming data** that requires sub-second updates — consider [Real-Time Intelligence](../../real-time-intelligence/overview.md) instead
+- **High-frequency streaming data** that requires subsecond updates — consider [Real-Time Intelligence](../../real-time-intelligence/overview.md) instead
 
 > [!NOTE]
 > This feature is currently not available in South Central US region.
 
 ## Get started with materialized lake views
 
-To create your first materialized lake view in Microsoft Fabric, see [Get started with materialized lake views](get-started-with-materialized-lake-views.md). For a complete walkthrough that builds a medallion architecture, see [Tutorial: Build a medallion architecture with materialized lake views](tutorial.md).
+To create materialized lake view in Microsoft Fabric, see [Get started with materialized lake views](get-started-with-materialized-lake-views.md). For a complete walkthrough that builds a medallion architecture, see [Tutorial: Build a medallion architecture with materialized lake views](tutorial.md).
 
 ## How do materialized lake views work?
 
-Materialized lake views use a declarative approach: you write a SQL query that defines the transformation you want, and Fabric handles execution, storage, and refresh. The result is persisted as a Delta table in your lakehouse, so downstream consumers can query it directly without re-running the transformation.
+Materialized lake views use declarative approach: Write a SQL query to define the transformation, and let Fabric handle execution, storage, and refresh. The result is persisted as a Delta table in your lakehouse, so that the downstream consumers can query it directly without running the transformation again.
 
 The lifecycle of a materialized lake view follows four stages:
 
@@ -48,16 +46,36 @@ The lifecycle of a materialized lake view follows four stages:
 - **Query**: Applications and reports query the materialized lake view like any other Delta table, with no awareness of the underlying transformation logic.
 - **Monitor**: Track refresh history, execution status, data quality metrics, and dependency lineage through built-in Fabric tools.
 
+### Authoring options
+
+Materialized lake views support two authoring approaches:
+
+- **SQL authoring**: Define views using standard SQL CREATE MATERIALIZED LAKE VIEW statements directly in the Fabric lakehouse editor.
+- **PySpark authoring (Preview)**: Create, refresh, and replace views from Fabric notebooks using DataFrameWriter. PySpark-authored views support:
+  - Data quality constraints
+  - Table properties
+  - Scheduled refreshes
+
+  > [!NOTE]
+  > PySpark-authored views currently perform full refresh only.
+
 ## Key capabilities
 
 Materialized lake views include built-in features that handle the operational complexity you'd otherwise manage yourself in notebooks and pipelines.
 
 ### Automatic refresh optimization
 
-Fabric automatically determines when and how to refresh your materialized lake views:
+Fabric automatically determines when and how to refresh your materialized lake views. A decision engine selects the most efficient refresh strategy, and source data changes are detected by default through Change Data Feed:
+
 - **Incremental refresh**: Only processes new or changed data
 - **Full refresh**: Rebuilds the entire materialized lake view when needed  
 - **Skip refresh**: No refresh needed when source data hasn't changed
+
+Optimal refresh supports a range of common query patterns, including:
+
+- Aggregations with GROUP BY
+- Left outer and semi joins
+- Common table expressions (CTEs)
 
 ### Built-in data quality
 
@@ -71,7 +89,7 @@ CONSTRAINT valid_sales CHECK (sales_amount > 0) ON MISMATCH DROP
 
 When materialized lake views reference other materialized lake views or tables, Fabric automatically detects those relationships and manages execution order for you.
 
-- Visualize how your materialized lake views depend on each other
+- Visualize how your materialized lake views depend on each other, across lakehouses
 - Automatic refresh ordering based on dependencies
 - Processing follows the dependency chain to ensure data consistency
 
@@ -81,70 +99,11 @@ Fabric provides built-in tools to track the health and performance of your mater
 
 - Track refresh performance and execution status for each materialized lake view
 - View data quality metrics and violation counts in lineage
-- Monitor job instances and refresh history
-
-## Common use cases
-
-The following examples show how materialized lake views simplify common data engineering tasks that would otherwise require notebook code and pipeline orchestration.
-
-### Sales reporting dashboard
-
-Aggregate order data into a daily summary by region. Instead of scheduling a notebook to rebuild this table, the materialized lake view refreshes automatically when the source `orders` table changes.
-
-```sql
--- Daily sales summary that refreshes automatically
-CREATE MATERIALIZED LAKE VIEW daily_sales AS
-SELECT 
-    DATE(order_date) as sale_date,
-    region,
-    SUM(amount) as total_sales,
-    COUNT(*) as order_count
-FROM orders 
-GROUP BY DATE(order_date), region;
-```
-
-### Data quality validation
-
-Clean and normalize customer records while enforcing data quality rules. The `ON MISMATCH DROP` clause in the constraint automatically drops rows where the email is null, so downstream consumers only see valid data.
-
-```sql
--- Clean customer data with quality rules
-CREATE MATERIALIZED LAKE VIEW clean_customers (
-    CONSTRAINT valid_email CHECK (email IS NOT NULL) ON MISMATCH DROP
-) AS
-SELECT 
-    customer_id,
-    TRIM(customer_name) as customer_name,
-    LOWER(email) as email
-FROM raw_customers
-WHERE customer_name IS NOT NULL;
-```
-
-### Medallion architecture
-
-Transform raw bronze data into a curated silver layer by casting types, filtering invalid records, and selecting relevant columns. Materialized lake views handle dependency ordering automatically, so you can chain bronze → silver → gold views without managing execution sequence.
-
-```sql
--- Bronze → Silver transformation
-CREATE MATERIALIZED LAKE VIEW silver_products AS
-SELECT 
-    product_id,
-    product_name,
-    category,
-    CAST(price as DECIMAL(10,2)) as price
-FROM bronze_products
-WHERE price > 0;
-```
+- Monitor job instances and refresh history in recent runs view
 
 ### Security
 
-You can use private links to connect to materialized lake views (preview).  Read more at [Security](../../security/security-inbound-overview.md).
-
-## Current limitations
-
-The following feature is currently not available for materialized lake views in Microsoft Fabric:
-
-* Cross-lakehouse lineage and execution features.
+Fabric materialized lake views follows all security and governance measures of Lakehouse tables. You can also use MLVs in private link enabled lakehouses. Read more about private link in Fabric at [Security](../../security/security-inbound-overview.md).
 
 ## Related content
 

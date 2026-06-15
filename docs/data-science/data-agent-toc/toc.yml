@@ -8,24 +8,38 @@ items:
     href: ../how-to-create-data-agent.md
   - name: Fabric data agent SDK
     href: ../fabric-data-agent-sdk.md
-  - name: Evaluate a Fabric data agent
-    href: ../evaluate-data-agent.md
+  - name: Add data sources to a Fabric data agent
+    items:
+      - name: Add a data source to a data agent
+        href: ../data-agent-add-datasources.md
+      - name: SQL sources
+        href: ../data-agent-sql-sources.md
+      - name: Connect to a Foundry Search Index
+        href: ../data-agent-ai-search-index.md
+      - name: Semantic model sources
+        href: ../semantic-model-best-practices.md
   - name: Configure your Fabric data agent
     items:
       - name: Data agent configurations
         href: ../data-agent-configurations.md
-      - name: Semantic model best practices
-        href: ../semantic-model-best-practices.md
       - name: Example queries
         href: ../data-agent-example-queries.md
       - name: Best practices for configuring data agents
         href: ../data-agent-configuration-best-practices.md
       - name: How to configure a data agent
         href: ../develop-iterative-process-data-agent.md
-      - name: Connect to a Foundry Search Index
-        href: ../data-agent-ai-search-index.md
+      - name: Improve data source routing
+        href: ../data-agent-routing.md
+      - name: Add code interpreter
+        href: ../data-agent-code-interpreter.md
+      - name: Fabric data agent runtime
+        href: ../data-agent-runtime.md
+  - name: Evaluate a Fabric data agent
+    href: ../evaluate-data-agent.md
   - name: How to consume a Fabric data agent
     items:
+      - name: Get visual responses from a data agent (preview)
+        href: ../data-agent-visuals.md
       - name: Consume a data agent from Microsoft Foundry (preview)
         href: ../data-agent-foundry.md
       - name: Consume a data agent from Copilot in Power BI (preview)
@@ -40,6 +54,8 @@ items:
         href: ../data-agent-mcp-server.md
   - name: Source Control, CI/CD, and ALM for Fabric data agent
     href: ../data-agent-source-control.md
+  - name: Service Principal for Fabric data agent
+    href: ../data-agent-service-principal.md
   - name: Fabric data agent end-to-end tutorial
     href: ../data-agent-end-to-end-tutorial.md
   - name: Fabric data agent sharing

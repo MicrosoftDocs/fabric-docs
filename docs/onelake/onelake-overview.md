@@ -15,17 +15,17 @@ OneLake is a single, unified, logical data lake for your whole organization. Lik
 
 OneLake brings customers:
 
-- **One data lake** for the entire organization
-- **One copy of data** for use with multiple analytical engines
-- **Built-in data protection** with automatic soft delete and disaster recovery options
+* **One data lake** for the entire organization
+* **One copy of data** for use with multiple analytical engines
+* **Built-in data protection** with automatic soft delete and disaster recovery options
 
 ## One data lake for the entire organization
 
 Before OneLake, many organizations created multiple lakes for different business groups, which led to extra overhead for managing multiple resources. OneLake removes these challenges by improving collaboration:
 
-- Every Fabric tenant automatically gets one OneLake
-- You can't create multiple OneLakes or delete your OneLake
-- No extra resources to provision or manage
+* Every Fabric tenant automatically gets one OneLake
+* You can't create multiple OneLakes or delete your OneLake
+* No extra resources to provision or manage
 
 This simplicity helps your organization collaborate on a single, unified data lake.
 
@@ -47,7 +47,14 @@ OneLake supports the same ADLS Gen2 APIs and SDKs to be compatible with existing
 
 :::image type="content" source="media\onelake-overview\access-onelake-data-other-tools.png" alt-text="Diagram showing how you can access OneLake data with APIs and SDKs." lightbox="media\onelake-overview\access-onelake-data-other-tools.png":::
 
-For more information on APIs and endpoints, see [OneLake access and APIs](onelake-access-api.md). For examples of OneLake integrations with Azure, see [Azure Synapse Analytics](onelake-azure-synapse-analytics.md), [Azure storage explorer](onelake-azure-storage-explorer.md), [Azure Databricks](onelake-azure-databricks.md), and [Azure HDInsight](onelake-azure-hdinsight.md) articles.
+For more information on APIs and endpoints, see [OneLake access and APIs](onelake-access-api.md).
+
+For examples of OneLake integrations with Azure, see:
+
+* [Azure Synapse Analytics](onelake-azure-synapse-analytics.md)
+* [Azure storage explorer](onelake-azure-storage-explorer.md)
+* [Azure Databricks](onelake-azure-databricks.md), including [OneLake catalog federation via Unity Catalog](/azure/databricks/query-federation/onelake)
+* [Use OneLake files in Microsoft Foundry](onelake-foundry-knowledge.md)
 
 ### OneLake file explorer for Windows
 
@@ -100,11 +107,11 @@ For more information, see [Plan for disaster recovery and data protection](onela
 Ready to start using OneLake? Here's how to get started:
 
 > [!div class="nextstepaction"]
-> [Create your first lakehouse with OneLake](create-lakehouse-onelake.md)
+> [Get started with OneLake data](quickstart-get-data.md)
 
 ### Related content
 
-- [OneLake file explorer for Windows](onelake-file-explorer.md)
-- [OneLake shortcuts](onelake-shortcuts.md)
-- [Recover deleted files in OneLake](soft-delete.md)
-- [OneLake access and APIs](onelake-access-api.md)
+* [OneLake file explorer for Windows](onelake-file-explorer.md)
+* [OneLake shortcuts](onelake-shortcuts.md)
+* [Recover deleted files in OneLake](soft-delete.md)
+* [OneLake access and APIs](onelake-access-api.md)

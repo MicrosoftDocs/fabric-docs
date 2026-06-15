@@ -1,10 +1,11 @@
 ---
 title: Use ai.generate_response with PySpark
 description: Learn how to generate custom text responses based on your own instruction by using the ai.generate_response function with PySpark.
-ms.reviewer: vimeland
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
-ms.search.form: AI functions
+ms.search.form: AI Functions
 ---
 
 # Use ai.generate_response with PySpark
@@ -13,8 +14,8 @@ The `ai.generate_response` function uses generative AI to generate custom text r
 
 > [!NOTE]
 > - This article covers using *ai.generate_response* with PySpark. To use *ai.generate_response* with pandas, see [this article](../pandas/generate-response.md).
-> - See other AI functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI functions](./configuration.md).
+> - See other AI Functions in [this overview article](../overview.md).
+> - Learn how to customize the [configuration of AI Functions](./configuration.md).
 
 ## Overview
 
@@ -26,7 +27,7 @@ The function returns a new DataFrame, with custom responses for each input text 
 
 > [!TIP]
 >
-> Learn how to craft more effective prompts to get higher-quality responses by following [OpenAI's prompting tips for gpt-4.1](https://cookbook.openai.com/examples/gpt4-1_prompting_guide#2-long-context).
+> Learn how to craft more effective prompts to get higher-quality responses by following the [OpenAI prompt engineering guide](https://platform.openai.com/docs/guides/prompt-engineering).
 
 ## Syntax
 
@@ -74,7 +75,7 @@ The `response_format` parameter accepts different formats to control how the LLM
 | `"text"` or `{"type": "text"}` | Forces plain text responses for all rows. |
 | `"json_object"` or `{"type": "json_object"}` | Returns a JSON dictionary in text form where the LLM decides the fields. Requires the word "json" in your prompt. |
 | `{"type": "json_schema", ...}` | Returns a JSON dictionary that conforms to your custom [JSON Schema](https://json-schema.org/). Provides precise control over response structure. |
-| Class based on [Pydantic's `BaseModel`](https://docs.pydantic.dev/latest/concepts/models/) | Returns a JSON string that conforms to your Pydantic model definition. Pydantic is a dependency of the openai package. Under the hood, the Pydantic BaseModel is automatically converted to a JSON schema and functions equivalently to the `json_schema` option. |
+| Class based on [Pydantic's `BaseModel`](https://docs.pydantic.dev/latest/concepts/models/) | Returns a JSON string that conforms to your Pydantic model definition. Pydantic is a dependency of the OpenAI package. Under the hood, the Pydantic BaseModel is automatically converted to a JSON schema and functions equivalently to the `json_schema` option. |
 
 > [!NOTE]
 > The `json_schema` and Pydantic `BaseModel` options are functionally equivalent. The Pydantic BaseModel approach provides better developer experience with Python's type system and validation, while being automatically converted to the verbose JSON schema under the hood.
@@ -184,8 +185,8 @@ df_card_json_schema = df.ai.generate_response(
 )
 display(df_card_json_schema)
 
-# Pydantic is a dependency of the openai package, so it's available when openai is installed.
-# Pydantic may also be installed via `%pip install pydantic` if not already present.
+# Pydantic is a dependency of the OpenAI package, so it's available when openai is installed.
+# You can also install Pydantic via `%pip install pydantic` if it's not already present.
 from pydantic import BaseModel, Field
 
 class PlayerCardSchema(BaseModel):
@@ -212,7 +213,7 @@ This example code cell provides the following output:
 
 ## Multimodal input
 
-The `ai.generate_response` function supports file-based multimodal input. You can generate responses based on images, PDFs, and text files by using `col_types` to specify which columns contain file paths. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+The `ai.generate_response` function supports file-based multimodal input. You can generate responses based on images, PDFs, and text files by using `col_types` to specify which columns contain file paths. For more information about supported file types and setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
 
 ```python
 # This code uses AI. Always review output for mistakes.
@@ -256,7 +257,8 @@ display(results)
 - Summarize text with [ai.summarize](./summarize.md).
 - Translate text with [ai.translate](./translate.md).
 
-- Learn more about the [full set of AI functions](../overview.md).
-- Use [multimodal input with AI functions](../multimodal-overview.md).
-- Customize the [configuration of AI functions](./configuration.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
+- Learn more about the [full set of AI Functions](../overview.md).
+- Use [multimodal input with AI Functions](../multimodal-overview.md).
+- Customize the [configuration of AI Functions](./configuration.md).
+- Understand [billing for AI Functions](../billing.md).
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

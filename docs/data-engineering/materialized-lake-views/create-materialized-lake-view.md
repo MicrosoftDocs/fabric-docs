@@ -2,8 +2,8 @@
 title: Spark SQL Reference for Materialized Lake Views
 description: Learn about the Spark SQL syntax for activities related to materialized lake views in Microsoft Fabric.
 ms.topic: concept-article
-ms.reviewer: abhishjain
-ms.date: 03/18/2026
+ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
+ms.date: 06/12/2026
 #customer intent: As a data engineer, I want to understand the Spark SQL syntax for creating, listing, updating, and deleting materialized lake views in Microsoft Fabric so that I can manage them effectively.
 ---
 
@@ -88,6 +88,16 @@ FROM bronze.products p LEFT JOIN bronze.orders o
 ON p.productID = o.productID
 ```
 
+> [!TIP]
+> **Manage materialized lake view refresh from your lakehouse**
+>
+> After you create your materialized lake views, don't orchestrate their refresh from a notebook. Instead, use the two built-in capabilities on the lakehouse:
+>
+> * **[Lineage](./view-lineage.md)**: Fabric derives the dependency order between your materialized lake views from their definitions. To open the lineage view, select the **Materialized lake views** tab in the ribbon, then select **Manage**. From there, you can follow a run in progress and inspect upstream and downstream dependencies for each view.
+> * **[Scheduled refresh](./schedule-lineage-run.md)**: From the same **Manage** view, create one or more schedules to refresh all materialized lake views or a selected subset. Each schedule runs independently and refreshes views in dependency order, so downstream views always read fresh data from their upstream views. Fabric retries transient failures for you.
+>
+> Use notebooks to author and iterate on your materialized lake view definitions. Let lineage and scheduled refresh handle ordering, execution, and retries — for reliable, repeatable data with less code to maintain.
+
 ## Get a list of materialized lake views
 
 To get the list of all materialized lake views in a schema, use the following syntax:
@@ -118,20 +128,24 @@ SHOW CREATE MATERIALIZED LAKE VIEW products_with_sales;
 
 ## Update a materialized lake view
 
-You can't directly update the definition of a materialized lake view. To change the `SELECT` query, constraints, or partitioning, [delete](#delete-a-materialized-lake-view) the existing view and [create](#create-a-materialized-lake-view) a new one.
+To modify the definition of a materialized lake view (such as the `SELECT` query, constraints, or partitioning), use the [CREATE OR REPLACE](#create-a-materialized-lake-view) command. Alternatively, you can [delete](#delete-a-materialized-lake-view) the existing view and recreate it.
 
-The only property you can update (via `ALTER`) on an existing materialized lake view is its name. The syntax is:
+## Rename a materialized lake view
+
+To rename an existing materialized lake view, use the `ALTER MATERIALIZED LAKE VIEW` command. The syntax is:
 
 ```sql
 ALTER MATERIALIZED LAKE VIEW MLV_Identifier RENAME TO MLV_Identifier_New;
 ```
-
 For example, to rename `products_with_sales`:
 
 ```sql
 ALTER MATERIALIZED LAKE VIEW products_with_sales RENAME TO products_with_sales_v2;
 ```
 
+> [!NOTE]
+> The `ALTER MATERIALIZED LAKE VIEW` command is supported only for renaming. To modify the definition or other properties (such as the `SELECT` query, constraints, or partitioning), see [Update a materialized lake view](#update-a-materialized-lake-view).
+ 
 ## Delete a materialized lake view
 
 You can delete a materialized lake view by using the **Delete** option in the lakehouse object explorer or by running a `DROP` command. The syntax is:

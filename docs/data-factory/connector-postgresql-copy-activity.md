@@ -3,7 +3,7 @@ title: Configure PostgreSQL in a copy activity
 description: This article explains how to copy data using PostgreSQL.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 02/14/2026
+ms.date: 05/12/2026
 ms.custom: 
   - pipelines
   - template-how-to
@@ -21,7 +21,7 @@ For the configuration of each tab under copy activity, go to the following secti
 
 - [General](#general)  
 - [Source](#source)
-- [Destination (Preview)](#destination-preview)
+- [Destination](#destination)
 - [Mapping](#mapping)
 - [Settings](#settings)
 
@@ -58,14 +58,14 @@ Under **Advanced**, you can specify the following fields:
 - **Query timeout (minutes)**: Specify the wait time before terminating the attempt to execute a command and generating an error, default is 120 minutes. If parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes). For more information, see [CommandTimeout](https://www.npgsql.org/doc/api/Npgsql.NpgsqlCommand.html#Npgsql_NpgsqlCommand_CommandTimeout).
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
-### Destination (Preview)
+### Destination
 
 The following properties are supported for PostgreSQL under the Destination tab of a copy activity.
 
 The following properties are **required**:
 
 - **Connection**: Select a PostgreSQL connection from the connection list.
-- **Connection type**: Select **PostgreSQL (Preview)**.
+- **Connection type**: Select **PostgreSQL**.
 - **Table**: Specify the name of the table to write data. Select the table from the drop-down list or select **Enter manually** to enter the schema and table name.
 
 Under **Advanced**, you can specify the following fields:
@@ -89,55 +89,74 @@ When copying data from PostgreSQL, the following mappings are used from PostgreS
 
 | PostgreSQL data type | Interim service data type |
 |:--- |:--- |
-|SmallInt|Int16|
-|Integer|Int32|
-|BigInt|Int64|
-|Decimal (Precision <= 28)|Decimal|
-|Decimal (Precision > 28)|Unsupported |
-|Numeric|Decimal|
-|Real|Single|
-|Double|Double|
-|SmallSerial|Int16|
-|Serial|Int32|
-|BigSerial|Int64|
-|Money|Decimal|
-|Char|String|
-|Varchar|String|
-|Text|String|
-|Bytea|Byte[]|
-|Timestamp|DateTime|
-|Timestamp with time zone|DateTime|
-|Date|DateTime|
-|Time|TimeSpan|
-|Time with time zone|DateTimeOffset|
-|Interval|TimeSpan|
-|Boolean|Boolean|
-|Point|String|
-|Line|String|
-|Iseg|String|
-|Box|String|
-|Path|String|
-|Polygon|String|
-|Circle|String|
-|Cidr|String|
-|Inet|String|
-|Macaddr|String|
-|Macaddr8|String|
-|Tsvector|String|
-|Tsquery|String|
-|UUID|Guid|
-|Json|String|
-|Jsonb|String|
-|Array|String|
-|Bit|Byte[]|
-|Bit varying|Byte[]|
-|XML|String|
-|IntArray|String|
-|TextArray|String|
-|NumericArray|String|
-|DateArray|String|
-|Range|String|
-|Bpchar|String|
+|smallint|Int16|
+|integer|Int32|
+|bigint|Int64|
+|decimal (precision <= 28)|Decimal|
+|decimal (precision > 28)|Unsupported |
+|numeric|Decimal|
+|real|Single|
+|double|Double|
+|smallserial|Int16|
+|serial|Int32|
+|bigserial|Int64|
+|money|Decimal|
+|char(n)|String|
+|varchar(n)|String|
+|text|String|
+|bytea|Byte[]|
+|timestamp|DateTime|
+|timestamp with time zone|DateTime|
+|date|DateTime|
+|time|TimeSpan|
+|time with time zone|DateTimeOffset|
+|interval|TimeSpan|
+|boolean|Boolean|
+|point|String|
+|line|String|
+|lseg|String|
+|box|String|
+|path|String|
+|polygon|String|
+|circle|String|
+|cidr|String|
+|inet|String|
+|macaddr|String|
+|macaddr8|String|
+|tsvector|String|
+|tsquery|String|
+|uuid|Guid|
+|json|String|
+|jsonb|String|
+|array|String|
+|bit|Byte[]|
+|bit varying|Byte[]|
+|xml|String|
+|integer[]|String|
+|text[]|String|
+|numeric[]|String|
+|date[]|String|
+|range|String|
+|bpchar|String|
+
+When copying data to PostgreSQL, the following mappings are used from interim data types used by the service internally to PostgreSQL data types.
+
+| Interim data type | PostgreSQL data type |
+|:---|:---|
+| Int16 | smallint |
+| Int32 | integer |
+| Int64 | bigint |
+| Single | real |
+| Double | double precision |
+| Decimal | numeric, money |
+| Boolean | boolean |
+| String | text, char(n), varchar(n), name, citext, json,jsonb, xml, inet, cidr, macaddr, tsvector, tsquery, point, line, lseg, box, path, polygon, circle, int4range, int8range, numrange, daterange, tsrange, tstzrange, integer[] |
+| Byte array | bytea, bit(n), varbit |
+| Date | date |
+| TimeSpan | time, interval |
+| DateTimeOffset | timetz, timestamptz |
+| DateTime | timestamp |
+| GUID | uuid |
 
 ## Table summary
 
@@ -153,7 +172,7 @@ The following table contains more information about the copy activity in Postgre
 |**Query timeout (minutes)** | The wait time before terminating the attempt to execute a command and generating an error, default is 120 minutes. If parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes). For more information, see [CommandTimeout](https://www.npgsql.org/doc/api/Npgsql.NpgsqlCommand.html#Npgsql_NpgsqlCommand_CommandTimeout). |timespan |No |queryTimeout|
 |**Additional columns**|Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|• Name<br>• Value|No|additionalColumns:<br>• name<br>• value|
 
-### Destination information (Preview)
+### Destination information
 
 | Name | Description | Value | Required | JSON script property |
 |---|---|---|---|---|

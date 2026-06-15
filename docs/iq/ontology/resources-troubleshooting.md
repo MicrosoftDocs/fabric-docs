@@ -27,6 +27,7 @@ The following table describes common issues when generating a new ontology (prev
 |---|---|
 | The ontology item fails to generate | Make sure you've enabled all [required tenant settings](overview-tenant-settings.md) for generating an ontology from a semantic model. <br><br>Make sure the semantic model is in a different workspace than **My workspace** (ontology generation isn't supported in **My workspace**). |
 | The ontology item is created but there are no entity types | Make sure your semantic model is published, the tables in the semantic model are visible (not hidden), and relationships are defined. |
+| The ontology item is created but some entity types are missing | Make sure the data tables in the semantic model meet the [data requirements for semantic model generation](concepts-generate.md#data-requirements). For example, property names can only be duplicated across entities for properties of the same type (you can't have one entity type with a string `ID` property and another entity type with an integer `ID` property, but you can have two entity types that both have a string `ID` property). Resolve data issues and regenerate the ontology. |
 | The ontology item is created but entity types have no data bindings | Ontology data binding is [not supported](concepts-generate.md#support-for-semantic-model-modes) for source semantic models in **Import mode**, or semantic models in **Direct Lake mode** while the backing lakehouse is in a workspace with **inbound public access disabled**. Try changing these settings and regenerating the ontology. |
 | Queries return null values for `Decimal` properties | Fabric Graph doesn't currently support the `Decimal` type. As a result, if you generate an ontology from a semantic model with tables that include `Decimal` type columns, you see null values returned for those properties on all queries. `Double` type is supported, however, so recreating the property as a `Double` type in ontology and binding it to the source data allows the data to show up in queries. |
 | General troubleshooting | Make sure the ontology operation you're trying to complete is [supported for your semantic model mode](concepts-generate.md#support-for-semantic-model-modes). |
@@ -37,7 +38,7 @@ The following table describes common capacity issues with an ontology (preview) 
 
 | Issue | Recommendation |
 |---|---|
-| The canvas and entity type list are unable to load and you see a message that *Your organization's Fabric compute capacity has exceeded its limits*. | Refreshes of ontology (preview)'s underlying [Graph in Microsoft Fabric](../../graph/overview.md) child item contribute to your capacity usage. If you have set a Graph refresh schedule and capacity usage becomes too high, you can reduce or disable the Graph item schedule in your workspace. For more information, see [Refresh the graph model](how-to-use-preview-experience.md#refresh-the-graph-model). |
+| The canvas and entity type list are unable to load and you see a message that *Your organization's Fabric compute capacity has exceeded its limits*. | Refreshes of ontology (preview)'s underlying [Graph in Microsoft Fabric](../../graph/overview.md) child item contribute to your capacity usage. If you have set a Graph refresh schedule and capacity usage becomes too high, you can reduce or disable the Graph item schedule in your workspace. For more information, see [Refresh the graph model](how-to-view-entity-type-details.md#refresh-the-graph-model). |
 
 ## Troubleshoot data binding
 
@@ -48,22 +49,22 @@ The following table describes common issues when binding data to an ontology (pr
 | Lakehouse not available as data source when creating a binding | Check to make sure **OneLake security** isn't enabled on your lakehouse. Lakehouses with OneLake security enabled aren't supported as data sources for bindings. |
 | Issue with keys while binding relationship types | If you don't see any keys for an entity type, make sure your source and target entity types have keys defined. | 
 
-## Troubleshoot preview experience
+## Troubleshoot entity type details
 
-The following table describes common issues when using the preview experience of an ontology (preview) item.
+The following table describes common issues when using the entity type details view of an ontology (preview) item.
 
 | Issue | Recommendation |
 |---|---|
-| Preview experience shows error `403 Forbidden` | This error might indicate that you don't have access to the lakehouse that contains the source data for the ontology's data bindings. Contact your administrator to obtain access to the lakehouse. |
-| Preview experience graph doesn't load | This error indicates an issue with the underlying graph. One possible cause is having column mapping enabled on the underlying delta tables, which isn't supported. Column mapping can be enabled manually, or it's enabled automatically on lakehouse tables where column names have certain special characters, including `,`, `;`, `{}`, `()`, `\n`, `\t`, `=`, and space. It also happens automatically on the delta tables that store data for import mode semantic model tables. | 
-| Preview experience shows no data | This error might happen because your ontology instance can't access the underlying Fabric Graph. Ontology only supports **managed** lakehouse tables (located in the same OneLake directory as the lakehouse), not **external** tables that show in the lakehouse but reside in a different location. Changing the table name after mappings are created might also break the connection relied on by the preview experience. |
+| Entity type details shows error `403 Forbidden` | This error might indicate that you don't have access to the lakehouse that contains the source data for the ontology's data bindings. Contact your administrator to obtain access to the lakehouse. |
+| Entity type details graph doesn't load | This error indicates an issue with the underlying graph. One possible cause is having column mapping enabled on the underlying delta tables, which isn't supported. Column mapping can be enabled manually, or it's enabled automatically on lakehouse tables where column names have certain special characters, including `,`, `;`, `{}`, `()`, `\n`, `\t`, `=`, and space. It also happens automatically on the delta tables that store data for import mode semantic model tables. | 
+| Entity type details shows no data | This error might happen because your ontology instance can't access the underlying Fabric Graph. Ontology only supports **managed** lakehouse tables (located in the same OneLake directory as the lakehouse), not **external** tables that show in the lakehouse but reside in a different location. Changing the table name after mappings are created might also break the connection relied on by the entity type details. |
 | No entity instances shown | This behavior indicates an error accessing the data bindings. Confirm that the source data tables exist in OneLake with matching column names, and that your Fabric identity has data access. |
 | Graph is sparse or missing data | Check that entity type keys are defined for each entity type, and verify that the source data is properly bound to those keys. |
 | Preview page becomes unresponsive | This issue might occur when you have insufficient permissions to Fabric resources. Ensure that you have at least **Contributor** access (not just **Viewer**) in your Fabric workspace, and at least **read** access to the data source used for bindings in the ontology. |
 
 ## Troubleshoot ontology as data agent source
 
-The following table describes common issues when using ontology (preview) as a source for [Fabric data agent (preview)](../../data-science/concept-data-agent.md).
+The following table describes common issues when using ontology (preview) as a source for [Fabric data agent](../../data-science/concept-data-agent.md).
 
 | Issue | Recommendation |
 |---|---|

@@ -2,7 +2,7 @@
 title: Warehouse Connectivity
 description: Learn about connecting to Fabric Data Warehouse, including authentication and best practices.
 ms.reviewer: fresantos, salilkanade, pvenkat
-ms.date: 01/23/2026
+ms.date: 05/13/2026
 ms.topic: concept-article
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ms.custom: sfi-image-nochange
@@ -12,7 +12,7 @@ ms.custom: sfi-image-nochange
 
 **Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-In [!INCLUDE [product-name](../includes/product-name.md)], users access a [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] through a Tabular Data Stream (TDS) endpoint. This endpoint is familiar to all modern web applications that interact with [a SQL Server TDS endpoint](/sql/relational-databases/security/networking/tds-8). Within [!INCLUDE [product-name](../includes/product-name.md)] settings, this endpoint is labeled as the **SQL connection string**.
+In [!INCLUDE [product-name](../includes/product-name.md)], users access a [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] through a Tabular Data Stream (TDS) endpoint. Modern web applications interact with [a SQL Server TDS endpoint](/sql/relational-databases/security/networking/tds-8). Within [!INCLUDE [product-name](../includes/product-name.md)] settings, this endpoint is labeled as the **SQL connection string**.
 
 > [!TIP]
 > For a tutorial on connecting with common tools, see [Connect to Fabric Data Warehouse](how-to-connect.md).
@@ -39,7 +39,7 @@ Add retries to your applications and ETL jobs to make them more resilient. For m
 - [Step 4: Connect resiliently to SQL with ADO.NET - ADO.NET Provider for SQL Server](/sql/connect/ado-net/step-4-connect-resiliently-sql-ado-net?view=fabric&preserve-view=true)
 - [Step 4: Connect resiliently to SQL with PHP - PHP drivers for SQL Server](/sql/connect/php/step-4-connect-resiliently-to-sql-with-php?view=fabric&preserve-view=true)
 - Use service tags for firewall clearance, as described in the following section.
-- Always specify the **Initial Catalog** or **Database** property when connecting to your Fabric Data Warehouse. For more information, see [Initial catalog required](#initial-catalog-required).
+- You should provide the warehouse item name as the **Initial Catalog** or **Database name** when you connect. If you don't provide [the `InitialCatalog` connection string property](#connection-behavior-for-initialcatalog), your initial connection context will be to the `master` warehouse.
 
 <a id="allow-power-bi-service-tags-through-firewall"></a>
 
@@ -53,21 +53,41 @@ You can't use the Fully Qualified Domain Name (FQDN) of the TDS Endpoint alone.
 
 - SQL Authentication isn't supported.
 - Multiple Active Result Sets (MARS) isn't supported for [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. MARS is disabled by default. If `MultipleActiveResultSets` is included in the connection string, remove it or set it to false.
-- If you receive the error "Couldn't complete the operation because we reached a system limit", it's due to the system token size reaching its limit. This error can occur if the workspace has too many warehouses or SQL analytics endpoints, if the user is part of too many Microsoft Entra groups, or a combination of these two factors. To prevent this error, limit the number of warehouses and SQL analytics endpoints per workspace to 40 or fewer. If the error persists, contact support.
 - If you receive error code 24804 with the message "Couldn't complete the operation due to a system update. Close out this connection, sign in again, and retry the operation" or error code 6005 with the message "SHUTDOWN is in progress. Execution fail against sql server. Please contact SQL Server team if you need further support.", it's due to temporary connection loss, likely because of a system deployment or reconfiguration. To resolve this issue, sign in again and retry. To learn how to build resiliency and retries in your application, see [Best Practices](#best-practices).
 - Linked server connections from SQL Server aren't supported.
 
-### Initial catalog required
+### Connection behavior for InitialCatalog
 
-When you connect to Fabric Data Warehouse using any client tools (such as SSMS, Visual Studio Code, Visual Studio, JDBC/ODBC/SqlClient clients, or custom applications), you must provide a valid warehouse name in the connection string's **Initial Catalog** or **Database** property.
+In May 2026, Microsoft updated the connection behavior for Fabric Data Warehouse and SQL analytics endpoint to make [the `InitialCatalog` connection string property](/dotnet/api/microsoft.data.sqlclient.sqlconnectionstringbuilder.initialcatalog) optional. Currently, users connect to the `master` system database when the `InitialCatalog` property isn't provided. In Fabric Data Warehouse, you can only connect to the `master` database, you can't modify the `master` database, and you can't create, alter, or drop user objects in the `master` database. 
 
-If the specified warehouse name is incorrect, the connection attempt fails even if authentication succeeds. Users will see the following error: "Login failed for user '\<token-identified principal\>'. Reason: Authentication was successful, but the database was not found, or you have insufficient permissions to connect to it."
+You can use the `USE` Transact-SQL syntax to change your connection warehouse context once connected to `master`, and the `DB_NAME()` function to determine your current warehouse. For example:
 
-The valid warehouse name does not include the `<unique identifier>.datawarehouse.fabric.microsoft.com` needed for the **Server name**. If your warehouse name is `NYC Taxi`, your **Initial Catalog** is `NYC Taxi`.
+```sql
+SELECT DB_NAME(); --returns name of current warehouse context
+GO
+USE [ContosoWarehouse];
+GO
+SELECT DB_NAME(); --returns name of current warehouse context
+GO
+```
 
-The following screenshot shows the error as it appears in SSMS when an invalid warehouse name is provided as the **Initial Catalog**:
+The following table outlines the updated connection behavior for Fabric Data Warehouse and SQL analytics endpoint when you specify or omit the `InitialCatalog` property in connection strings.
 
-:::image type="content" source="media/connectivity/login-failed-for-user.png" alt-text="Screenshot of the SSMS error message when a valid initial catalog is not provided.":::
+| Input Scenario | Prior to May 2026 | Current behavior |
+|----------------|------------------|--------------|
+| Existing warehouse name provided | Connects to the specified warehouse | *No change* - connects to the specified warehouse |
+| Existing warehouse ID provided | Connects to the specified warehouse | *No change* - connects to the specified warehouse |
+| `InitialCatalog` property not provided | Connects to a nondeterminant warehouse in the workspace | Connects to `master` |
+| `InitialCatalog = master` | Connects to a nondeterminant warehouse in the workspace | Connects to `master` |
+| Warehouse in `InitialCatalog` property doesn't exist | Connects to a nondeterminant warehouse in the workspace | Throws an error indicating no warehouse exists |
+
+#### Error handling
+
+If no warehouses exist in the workspace and a connection is attempted without specifying a valid warehouse, users will see the following error: "Login failed for user '\<token-identified principal\>'. Reason: Authentication was successful, but the database was not found, or you have insufficient permissions to connect to it."
+
+The following screenshot shows the error as it appears in SSMS when an invalid warehouse name is provided as the `InitialCatalog`:
+
+   :::image type="content" source="media/connectivity/login-failed-user.png" alt-text="Screenshot of the SSMS error message when a valid initial catalog isn't provided.":::
 
 ## Next step
 

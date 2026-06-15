@@ -4,7 +4,7 @@ description: Learn about available options to get data in an Eventhouse in Real-
 ms.reviewer: tzgitlin
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
-ms.date: 01/19/2026
+ms.date: 06/07/2026
 #customer intent: As a customer, I want to learn about the different sources I can use to get data into an Eventhouse in Real-Time Intelligence.
 ---
 # Get data overview
@@ -26,6 +26,7 @@ The following list shows data ingestion sources:
 * [Amazon S3](get-data-amazon-s3.md)
 * [Data Factory pipeline copy](../data-factory/connector-kql-database-copy-activity.md)
 * [Data Factory dataflows](../data-factory/connector-azure-data-explorer.md)
+* [Eventhouse and Real-Time Dashboard business events](../real-time-hub/business-events/business-events-eventhouse.md)
 
 Or get data from a wide range of data sources and connectors in the Real-Time Hub. Bring data into an Eventstream and later into your Eventhouse without leaving the get data workflow. In this case, select the [Connect more data sources](get-data-other-sources.md) option.
 

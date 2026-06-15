@@ -1,12 +1,14 @@
 ---
 title: Connect Azure Search Index
 description: Connect Data Agents to your Azure Search Index in Microsoft Foundry.
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: midesa
 ms.topic: how-to
 ms.date: 12/9/2025
 ---
 
-# Connect Data Agents to your Azure Search Index in Microsoft Foundry
+# Connect Data Agents to your Azure Search Index in Microsoft Foundry (preview)
 
 Data Agent creators can now connect their agents directly to Azure AI Search indexes built in Microsoft Foundry, unlocking powerful unstructured data scenarios. Using the resource URL, you can securely connect to your index—Data Agents fully respect the permissions of your Azure AI resources. In Foundry, you can craft rich AI Search indexes with custom enrichments, preprocessing logic, and tailored schemas for PDFs, text files, and more. Once connected, Data Agents can reason over that unstructured content and even join insights from your index with your structured data sources, giving you a unified, intelligent view across all your data.
 

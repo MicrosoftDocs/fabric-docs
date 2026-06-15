@@ -3,17 +3,18 @@ title: Query data in a KQL queryset
 description: Learn how to use the KQL queryset to query the data in your KQL database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: how-to
-ms.date: 05/19/2025
+ms.date: 06/10/2026
 ms.subservice: rti-kql-query
 ms.search.form: KQL Queryset
+
+#customer intent: As a Fabric user, I want to query data using a KQL queryset so that I can analyze data from different sources like Eventhouse, Azure Data Explorer, and Azure Monitor.
+
 ---
 # Query data in a KQL queryset
 
-In this article, you learn how to use a KQL queryset. The KQL queryset is the item used to run queries, view, and customize query results on data from different data sources, such as Eventhouse, KQL database, and more.
+Use a KQL queryset to run queries, view results, and analyze data from multiple sources—including Eventhouse, KQL databases, Azure Data Explorer clusters, and Azure Monitor. You can also perform cross-service queries with data from Log Analytics workspaces or Application Insights resources.
 
-You can also use a KQL queryset to perform cross-service queries with data from an Azure Monitor [Log Analytics workspace](/azure/azure-monitor/logs/data-platform-logs) or from an [Application Insights resource](/azure/azure-monitor/app/app-insights-overview).
-
-The KQL Queryset uses the Kusto Query Language for creating queries, and also supports many SQL functions. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
+The KQL queryset uses Kusto Query Language (KQL) and also supports many SQL functions. For more information, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 
 ## Prerequisites
 
@@ -36,7 +37,7 @@ Select the tab that corresponds with your desired data source type.
 
 1. In the **OneLake catalog** window, select a KQL database to connect to your KQL queryset, and then select **Connect**. 
 
-    Alternatively, close the **OneLake data hub** window and use the **+ Add data source** menu to connect to a different data source.
+    Alternatively, close the **OneLake catalog** window and use the **+ Add data source** menu to connect to a different data source.
 
 ## [Azure Data Explorer](#tab/azure-data-explorer-cluster)
 
@@ -48,7 +49,7 @@ Select the tab that corresponds with your desired data source type.
 
 1. Under **Connection URI**, enter the cluster URI.
 
-    To find the connection URI, go to your cluster resource in the [Azure portal](https://portal.azure.com/#home). The connection URI is the URI found in the Overview. 
+    To find the connection URI, go to your cluster resource in the [Azure portal](https://portal.azure.com/#home). The connection URI appears on the **Overview** tab. 
 
     :::image type="content" source="media/kusto-query-set/connect-to-cluster.png" alt-text="Screenshot of the connection window showing an Azure Data Explorer cluster URI. The Connect button is highlighted.":::
 
@@ -86,7 +87,8 @@ Select the tab that corresponds with your desired data source type.
 
     1. Select **Connection URI** and enter your Connection URI in this format:
 
-    > Replace \<subscription-id\>, \<resource-group-name\> and \<ai-app-name\> with your own values.
+    > [!NOTE]
+    > Replace `<subscription-id>`, `<resource-group-name>`, and `<ai-app-name>` with your own values.
 
     For Log Analytics: `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>`
 
@@ -102,20 +104,20 @@ Select the tab that corresponds with your desired data source type.
 
 ## Write a query
 
-Now that you're connected to your data source, you can run queries on this data. The KQL Queryset uses the Kusto Query Language (KQL) to query data from any of the data sources you have access to. To learn more about KQL, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
+Now that you're connected to your data source, you can run queries on this data. The KQL queryset uses Kusto Query Language (KQL) to query data from any of the data sources you have access to. To learn more about KQL, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 
-The following examples use data that is publicly available at [https://kustosamples.blob.core.windows.net/samplefiles/StormEvents.csv](https://kustosamples.blob.core.windows.net/samplefiles/StormEvents.csv).
+The following examples use data that's publicly available at [https://kustosamples.blob.core.windows.net/samplefiles/StormEvents.csv](https://kustosamples.blob.core.windows.net/samplefiles/StormEvents.csv).
 
 1. Write or copy a query in the top pane of the KQL queryset.
 
-1. Select the **Run** button, or press **Shift**+**Enter** to run the query.
+1. Select the **Run** button, or press <kbd>Shift</kbd>+<kbd>Enter</kbd> to run the query.
 
-    The resulting query output is displayed in the results grid, which appears below the query pane. Notice the green check indicating that the query completed successfully, and the time used to compute the query results.
+    The query results appear in the results grid below the query pane. Notice the green check indicating that the query completed successfully, and the time used to compute the query results.
 
-    :::image type="content" source="media/kusto-query-set/query-window.png" alt-text="Screenshot of the KQL Queryset showing the results of a query. Both the query and the results pane are highlighted."  lightbox="media/kusto-query-set/query-window.png":::
+    :::image type="content" source="media/kusto-query-set/query-window.png" alt-text="Screenshot of the KQL queryset showing the results of a query. Both the query and the results pane are highlighted."  lightbox="media/kusto-query-set/query-window.png":::
 
 > [!NOTE]
-> You can also use Copilot to help you write queries. For more information, see [Copilot for Writing KQL Queries](../fundamentals/copilot-for-writing-queries.md).
+> You can also use Copilot to help you write queries. For more information, see [Copilot for writing KQL queries](copilot-writing-queries.md).
 
 ## Interact with data sources
 
@@ -127,18 +129,18 @@ At the top of the data source explorer pane, under **Explorer** you can use the 
 
 The data source explorer pane has two sections. The upper section lists all the items in the data source, and the lower section shows all available data sources in the queryset.
 
-### Items in the data source
+### View items in the data source
 
-The upper section of the data source explorer shows all the items that are included in the data source you're using.
+The upper section of the data source explorer shows all items in the data source you're using.
 
 * Tables
 * Materialized Views
 * Shortcuts
 * Functions
 
-Select the arrow **>** to the left of the item you want to expand. You can drill down to show more details by selecting the arrow **>** to the left of items in subsequent list levels. For example, under **Tables**, select the arrow **>** to the left of a table to show the list of the columns in that table.
+Select the arrow **>** to the left of the item you want to expand. You can drill down to show more details by selecting the arrow **>** to the left of items in subsequent list levels. For example, under **Tables**, select the arrow **>** to the left of a table to show the columns in that table.
 
-To open the action menu, hover over an item in the expanded list and select the **More menu** [**...**]. The menu shows the following options:
+To open the action menu, hover over an item in the expanded list and select **More menu (...)** . The menu shows the following options:
 
 * Refresh database
 * View data profile
@@ -152,11 +154,11 @@ Different actions are available for different item types.
 
 :::image type="content" source="media/kusto-query-set/explorer-pane-more-actions.png" alt-text="Screenshot showing the explorer pane, how to expand the list of items in your data source and where to find the More actions menu." lightbox="media/kusto-query-set/explorer-pane-more-actions.png":::
 
-### Available data sources
+### Browse available data sources
 
 The lower section of the data source explorer shows all the available data sources that were added to the queryset.
 
-To open the action menu, hover over the data source name and select the **More menu** [**...**]. The menu shows the following options:
+To open the action menu, hover over the data source name and select **More menu (...)** . The menu shows the following options:
 
 * Refresh database
 * Use this database: switch to use this data source in the current tab
@@ -179,7 +181,7 @@ You can manage your tabs in the following ways:
 * **More actions**: On the right side of the command bar, there's a tab menu with more actions to manage the multiple tabs in your queryset.
 * **Change tab positions**: Use drag and drop gestures.
 
-:::image type="content" source="media/kusto-query-set/multiple-tabs-menu-1.png" alt-text="Screenshot of the multiple tabs menu for managing multiple tabs in the KQL Queryset." lightbox="media/kusto-query-set/multiple-tabs-menu-1.png":::
+:::image type="content" source="media/kusto-query-set/multiple-tabs-menu-1.png" alt-text="Screenshot of the multiple tabs menu for managing multiple tabs in the KQL queryset." lightbox="media/kusto-query-set/multiple-tabs-menu-1.png":::
 
 ## Delete KQL queryset
 

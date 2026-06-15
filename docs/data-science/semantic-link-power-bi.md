@@ -47,6 +47,10 @@ SemPy also extends pandas DataFrames with added metadata propagated from the Pow
 
 ## Data connectivity through semantic link Spark native connector
 
+> [!IMPORTANT]
+> The Spark native connector for Semantic Link is in deprecation mode as of October 2025 and will be fully retired by **October 2028**. No major versions of the Spark native connector will be released after **October 1, 2025**. The connector is only compatible with Spark runtime versions up to 3.5 and does not support Spark runtime version 4.0 or later.
+> To ensure continued support and access to new features, please migrate to the [Semantic Link Python SDK](/python/api/semantic-link/overview-semantic-link).
+
 The semantic link Spark native connector lets Spark users access Power BI tables and measures. The connector is language-agnostic and supports PySpark, Spark SQL, R, and Scala.
 
 To use the Spark native connector, you represent semantic models as Spark namespaces and transparently expose Power BI tables as Spark tables.

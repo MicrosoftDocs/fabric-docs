@@ -4,25 +4,25 @@ description: Learn how to create a OneLake shortcut in a KQL database to query d
 ms.reviewer: tzgitlin
 ms.topic: how-to
 ms.subservice: rti-eventhouse
-ms.date: 11/19/2024
+ms.date: 06/15/2026
 ---
 
 # Create OneLake shortcuts in a KQL database
 
-OneLake is a single, unified, logical data lake for Microsoft Fabric to store lakehouses, warehouses, KQL databases, and other items. Shortcuts are embedded references within OneLake that point to other files' store locations without moving the original data. The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location. Shortcuts can be updated or removed from your items, but these changes don't affect the original data and its source.
+OneLake is a single, unified, logical data lake for Microsoft Fabric to store lakehouses, warehouses, KQL databases, and other items. Shortcuts are embedded references within OneLake that point to other files' store locations without moving the original data. The embedded reference makes it appear as though the files and folders are stored locally but in reality, they exist in another storage location. You can update or remove shortcuts from your items, but these changes don't affect the original data and its source.
 
-In this article, you learn how to create a OneLake shortcut in a KQL database that points to internal Fabric or external sources. This kind of shortcut is later accessed for query in KQL querysets by using the [`external_table()` function](/azure/data-explorer/kusto/query/externaltablefunction?context=/fabric/context/context). Shortcuts created in a KQL database can't be renamed, and only one shortcut can be created at a time.
+In this article, you learn how to create a OneLake shortcut in a KQL database that points to internal Fabric or external sources. You access this kind of shortcut for query in KQL querysets by using the [`external_table()` function](/azure/data-explorer/kusto/query/externaltablefunction?context=/fabric/context/context). You can't rename shortcuts created in a KQL database, and you can only create one shortcut at a time.
 
-In addition to creating shortcuts from a KQL database, shortcuts can also be created from other Fabric items. These shortcuts also point to data stored in internal Fabric or external sources, but have different limitations and are accessed differently. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
+In addition to creating shortcuts from a KQL database, you can also create shortcuts from other Fabric items. These shortcuts also point to data stored in internal Fabric or external sources, but they have different limitations and are accessed differently. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
 > [!NOTE]
 > To accelerate queries over OneLake shortcuts, see [Accelerate queries over OneLake shortcuts](query-acceleration.md).
 
 ## Prerequisites
 
-* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md) with editing permissions
-* A [Lakehouse](../data-engineering/create-lakehouse.md)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
+* A [KQL database](create-database.md) with editing permissions.
+* A [Lakehouse](../data-engineering/create-lakehouse.md).
 
 To access the data in your KQL database in other [!INCLUDE [product-name](../includes/product-name.md)] experiences, see [One logical copy](one-logical-copy.md).
 
@@ -36,19 +36,41 @@ To access the data in your KQL database in other [!INCLUDE [product-name](../inc
 
 ## Select a source
 
-OneLake supports shortcuts to both internal OneLake resources (like KQL databases, lakehouses, and warehouses) and external resources (like Azure Data Lake Storage, Amazon S3, or Google Cloud Storage). For a list of all supported shortcut types and links to their specific configuration instructions, see [OneLake shortcuts > Types of shortcuts](../onelake/onelake-shortcuts.md#types-of-shortcuts).
+OneLake supports shortcuts to both internal OneLake resources, such as KQL databases, lakehouses, and warehouses, and external resources, such as Azure Data Lake Storage, Amazon S3, or Google Cloud Storage. For a list of all supported shortcut types and links to their specific configuration instructions, see [OneLake shortcuts > Types of shortcuts](../onelake/onelake-shortcuts.md#types-of-shortcuts).
 
 Shortcuts in KQL databases support [query acceleration](./query-acceleration-overview.md). To enable query acceleration on a new shortcut, toggle the **Accelerate** button to **On**.
 
 :::image type="content" source="media/onelake-shortcuts/accelerate.png" alt-text="Screenshot of the New shortcut window showing the shortcut details. The Accelerate toggle is highlighted."  lightbox="media/onelake-shortcuts/accelerate.png":::
 
 > [!NOTE]
-> 1. You can only connect to one subfolder or table per shortcut. To connect to more data, create additional shortcuts.
-> 2. You can't create a shortcut over a table that has an asterisk (`*`) in **any** column name. Rename the column(s) before creating the shortcut.
+>
+> * You can only connect to one subfolder or table per shortcut. To connect to more data, create additional shortcuts.
+> * You can't create a shortcut over a table that has an asterisk (`*`) in **any** column name. Rename the columns before creating the shortcut.
 
 After you create a shortcut, the database refreshes automatically. The shortcut appears under **Shortcuts** in the **Explorer** pane. You can now query this data.
 
 :::image type="content" source="media/onelake-shortcuts/data-tree.png" alt-text="Screenshot of the Explorer pane showing the new shortcut.":::
+
+### Organize shortcuts with folders
+
+To create a subfolder or move to an existing folder:
+
+1. In the explorer pane, either:
+    * Right-click on the shortcut and select **Move to folder** > **+ New folder**.    
+    :::image type="content" source="media/onelake-shortcuts/create-shortcut-folder.png" alt-text="Screenshot of the pop-up menu showing the option to create a new folder for the shortcut.":::    
+    * Or, select the ellipsis (...) next to the specific shortcut and select **Move to folder** > **+ New folder** or choose an existing folder.    
+    :::image type="content" source="media/onelake-shortcuts/create-specific-shortcut-folder.png" alt-text="Screenshot of the pop-up menu showing the option to move the shortcut to an existing folder or create a new one.":::    
+1. To create a folder, enter a name for the folder and select **Create**. The shortcut is moved to the new folder.    
+    :::image type="content" source="media/onelake-shortcuts/shortcuts-folder-pop-up.png" alt-text="Screenshot of the new folder being created.":::    
+1. To move more than one shortcut, either enter another folder name or select the dropdown menu and check the boxes next to the shortcuts you want to move to the same folder.    
+    :::image type="content" source="media/onelake-shortcuts/shortcuts-list.png" alt-text="Screenshot of the pop-up menu showing the option to move multiple shortcuts to the same folder.":::    
+1. You can also move shortcuts to an existing folder. To do so, select **Move to folder** and then select the folder you want to move the shortcut to, or drag and drop the shortcut into the folder.
+
+> [!NOTE]
+>
+> * If you delete a subfolder, the shortcuts within the folder aren't deleted but are moved back to the parent folder.
+> * A subfolder is automatically deleted when there are no shortcuts within the folder.
+> * Folders can be created per asset type and the name must be unique per asset type. For example, you can have a table folder and a shortcuts folder with the same name, but you can't have two shortcuts folders with the same name.
 
 ## Query data
 
@@ -64,7 +86,7 @@ To query data from the OneLake shortcut, use the [`external_table()` function](/
 
 ### Delta parquet to Eventhouse data types mapping
 
- Delta primitive data types are mapped to Eventhouse scalar data types using the following rules. For more information on Eventhouse data types, see [Scalar data types](/azure/data-explorer/kusto/query/scalar-data-types/index?context=/fabric/context/context-rta&pivots=fabric).
+ Delta primitive data types map to Eventhouse scalar data types by using the following rules. For more information on Eventhouse data types, see [Scalar data types](/azure/data-explorer/kusto/query/scalar-data-types/index?context=/fabric/context/context-rta&pivots=fabric).
 
 | Delta Type | Eventhouse Scalar Data Type 
 | --------------- | ----------------- 

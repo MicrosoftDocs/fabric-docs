@@ -2,13 +2,11 @@
 title: GQL Values and Value Types for graph in Microsoft Fabric
 description: Learn about GQL values and value types in graph in Microsoft Fabric, including literals, comparison rules, type conversions and the type system hierarchy.
 ms.topic: reference
-ms.date: 03/12/2026
+ms.date: 05/20/2026
 ms.reviewer: splantikow
 ---
 
 # GQL values and value types
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 This article provides a comprehensive reference for GQL values and value types in graph in Microsoft Fabric.
 
@@ -464,8 +462,7 @@ A path consists of:
 - Contains at least one node (minimum path length is zero edges).
 
 > [!NOTE]
-> Currently, literal syntax for paths isn't supported.
-> Instead, use `MATCH pathVar=...path pattern...` to bind paths.
+> You can construct path values with the `PATH [node, edge, node]` syntax or bind paths with `MATCH pathVar=...path pattern...`.
 
 **How comparison works:**
 

@@ -1,10 +1,11 @@
 ---
 title: Use ai.classify with PySpark
 description: Learn how to categorize input text according to custom labels by using the ai.classify function with PySpark.
-ms.reviewer: vimeland
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
-ms.search.form: AI functions
+ms.search.form: AI Functions
 ---
 
 # Use ai.classify with PySpark
@@ -14,8 +15,8 @@ The `ai.classify` function uses generative AI to categorize input text according
 
 > [!NOTE]
 > - This article covers using *ai.classify* with PySpark. To use *ai.classify* with pandas, see [this article](../pandas/classify.md).
-> - See other AI functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI functions](./configuration.md).
+> - See other AI Functions in [this overview article](../overview.md).
+> - Learn how to customize the [configuration of AI Functions](./configuration.md).
 
 ## Overview
 
@@ -63,7 +64,7 @@ This example code cell provides the following output:
 
 ## Multimodal input
 
-The `ai.classify` function supports file-based multimodal input. You can classify images, PDFs, and text files by setting `input_col_type="path"`. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+The `ai.classify` function supports file-based multimodal input. You can classify images, PDFs, and text files by setting `input_col_type="path"`. For more information about supported file types and setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
 
 ```python
 # This code uses AI. Always review output for mistakes.
@@ -89,7 +90,8 @@ display(results)
 - Summarize text with [ai.summarize](./summarize.md).
 - Translate text with [ai.translate](./translate.md).
 
-- Learn more about the [full set of AI functions](../overview.md).
-- Use [multimodal input with AI functions](../multimodal-overview.md).
-- Customize the [configuration of AI functions](./configuration.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
+- Learn more about the [full set of AI Functions](../overview.md).
+- Use [multimodal input with AI Functions](../multimodal-overview.md).
+- Customize the [configuration of AI Functions](./configuration.md).
+- Understand [billing for AI Functions](../billing.md).
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

@@ -4,20 +4,20 @@ description: Learn to refresh Power BI semantic model with Apache Airflow Job.
 ms.reviewer: abnarain
 ms.topic: tutorial
 ms.custom: airflows, sfi-image-nochange
-ms.date: 12/18/2024
+ms.date: 04/24/2026
 ---
 
 # Tutorial: Refresh Power BI Semantic Model with Apache Airflow Job
 
 [!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
-In today's data-driven world, maintaining up-to-date and accurate data models is crucial for informed business decisions. As data evolves, it's essential to refresh these models regularly to ensure that reports and dashboards reflect the most current information. Manual refreshes can be time-consuming and prone to errors, which is where Apache Airflow's orchestration, scheduling, and monitoring capabilities come into play. By leveraging Airflow, organizations can automate the refresh process of Power BI semantic models, ensuring timely and accurate data updates with minimal manual intervention.
-
-This article talks about the integration of Apache Airflow with Power BI to automate semantic model refreshes using Data Workflows. It provides a step-by-step guide to setting up the environment, configuring connections, and creating workflows to seamlessly update Power BI semantic models.
+This tutorial shows how to automate Power BI semantic model refreshes using Apache Airflow in Data Factory in Microsoft Fabric. You configure a connection, create a DAG (Directed Acyclic Graph), and schedule automatic refreshes so your reports and dashboards always reflect current data.
 
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:
+
+- To authenticate your DAGs with Fabric APIs, use either a service principal or [workspace identity](apache-airflow-jobs-workspace-identity.md). If you use workspace identity, you can skip the service principal prerequisites and go directly to [Add Apache Airflow requirement](#add-apache-airflow-requirement). If you use a service principal, continue with the following steps.
 
 - Your tenant-level admin must enable ["Service principals can call Fabric public APIs"](../admin/service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis):
 
@@ -42,19 +42,19 @@ To get started, you must complete the following prerequisites:
 
    :::image type="content" source="media/apache-airflow-jobs/configure-airflow-environment.png" lightbox="media/apache-airflow-jobs/configure-airflow-environment.png" alt-text="Screenshot to Add Airflow requirement.":::
 
-## Create an Apache Airflow connection to connect with Power BI workspace
+## Create an Apache Airflow connection to Power BI
 
-1. Select on the "View Airflow connections" to see a list of all the connections are configured.
+1. Select **View Airflow connections** to see all configured connections.
 
    :::image type="content" source="media/apache-airflow-jobs/view-apache-airflow-connection.png" lightbox="media/apache-airflow-jobs/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
 
 2. Add the new connection. You may use `Generic` connection type. Store the following fields:
 
-   - <strong>Connection ID:</strong> The Connection ID.
-   - <strong>Connection Type:</strong>Generic
-   - <strong>Login:</strong>The Client ID of your service principal.
-   - <strong>Password:</strong>The Client secret of your service principal.
-   - <strong>Extra:</strong>{"tenantId": The Tenant ID of your service principal.}
+   - **Connection ID**: The Connection ID.
+   - **Connection Type**: Generic
+   - **Login**: The Client ID of your service principal.
+   - **Password**: The Client secret of your service principal.
+   - **Extra**: `{"tenantId": "<your-tenant-id>"}`
 
 3. Select Save.
 
@@ -92,7 +92,7 @@ with DAG(
 
 ```
 
-3. Select on "Save," to save the file.
+3. Select **Save** to save the file.
 
    :::image type="content" source="media/apache-airflow-jobs/click-on-save-icon.png" lightbox="media/apache-airflow-jobs/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
 

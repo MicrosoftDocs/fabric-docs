@@ -3,7 +3,7 @@ items:
   href: index.yml
 - name: SQL database in Fabric
   items:
-  - name: Overview
+  - name: What is SQL database in Fabric?
     href: sql/overview.md
   - name: Frequently asked questions
     href: sql/faq.yml
@@ -15,10 +15,12 @@ items:
     href: ../data-factory/decision-guide-data-movement.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
   - name: Best use cases
     items: 
-    - name: Reverse ETL
-      href: sql/use-case-reverse-etl.md
+    - name: AI applications
+      href: sql/use-case-ai-application.md
     - name: Operational data store
       href: sql/use-case-operational-data-store.md
+    - name: Reverse ETL
+      href: sql/use-case-reverse-etl.md
     - name: Translytical applications
       href: sql/use-case-translytical-applications.md
   - name: AI

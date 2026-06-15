@@ -262,9 +262,47 @@ If you already have a warehouse as a destination and try to disable staging, a w
 
 ### Schema support for Lakehouse, Warehouse and SQL databases
 
-Lakehouse, Warehouse, and SQL databases in Microsoft Fabric all support the ability to create a schema for your data. This means you can structure your data in a way that makes it easier to manage and query. In order to be able to write to schemas in these destinations you need to enable the **Navigate using full hierarchy** option under **advanced options** when you set up your connection. If you don't enable this option, you won't be able to select or view the schemas in the destination. A preview limitation for enabling Navigate using full hierarchy is that fast copy may not work properly. To use this feature in combination with a gateway we require at least 3000.290 version of the gateway.
+Lakehouse, Warehouse, and SQL databases in Microsoft Fabric all support the ability to create a schema for your data. This means you can structure your data in a way that makes it easier to manage and query. In order to be able to write to schemas in these destinations you need to enable the **Navigate using full hierarchy** option under **advanced options** when you set up your connection. If you don't enable this option, you won't be able to select or view the schemas in the destination. A preview limitation for enabling Navigate using full hierarchy is that fast copy may not work properly. To use this feature in combination with a gateway we require at least 3000.310 version of the gateway.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-schema-support.png" alt-text="Screenshot highlighting the Enable schema support option.":::
+
+### Automatic SQL analytics endpoint metadata sync for Lakehouse destinations
+
+When a Dataflow Gen2 refresh writes data to a Lakehouse table destination, the SQL analytics endpoint metadata is automatically synchronized as part of the refresh. This means your data is immediately queryable through the SQL analytics endpoint after a successful refresh, with no additional action or separate API call required.
+
+This behavior is controlled by the **Synchronize SQL Analytics Endpoint metadata** option, which lives under **Advanced options** in the Lakehouse connection settings (visible when you create or edit a Lakehouse data destination connection). The option is set to **True** by default.
+
+In most scenarios, you should leave this option enabled so downstream consumers (Power BI semantic models, notebooks, SQL queries) always see the latest data after a dataflow refresh.
+
+You can set this option to **False** in edge cases where:
+
+* You don't query the Lakehouse through the SQL analytics endpoint and don't need the metadata sync.
+* You see significantly longer refresh times caused by a large delta log backlog on the destination Lakehouse, and you want to skip the synchronization step until the backlog is addressed (for example, through table maintenance and vacuuming).
+
+When the option is set to **False**, the SQL analytics endpoint metadata isn't refreshed by the dataflow, and downstream SQL endpoint consumers may see stale data until the next sync (manual or scheduled) occurs.
+
+### Enable V-Order compression on a Lakehouse destination
+
+> [!NOTE]
+> This advanced option is currently in preview.
+
+When a Dataflow Gen2 refresh writes data to a Fabric Lakehouse table destination, you can control whether the data is written using V-Order compression. V-Order is a write-time optimization for the Parquet file format that improves read performance for downstream Fabric engines such as the SQL analytics endpoint, Direct Lake semantic models, and Spark, at the cost of additional CPU during the write. For background and cross-engine guidance, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md) and [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
+
+This behavior is controlled by the **Enable use of V-Order compression** option, which lives under **Advanced options** in the Lakehouse connection settings (visible when you create or edit a Lakehouse data destination connection). The option is set to **True** by default.
+
+:::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-vorder-compression.png" alt-text="Screenshot of the Connect to data destination dialog for Lakehouse with the Enable use of V-Order compression advanced option highlighted.":::
+
+#### When to turn V-Order on or off for the destination
+
+Choose your setting based on how the destination Lakehouse table will be consumed:
+
+* **Turn V-Order off (improved write performance)** when the table is read only a small number of times. This is typical for intermediate tables in a medallion architecture (for example, a bronze table that's transformed once into a silver table) or for tables that are consumed primarily through Spark, which doesn't benefit from V-Order. Skipping V-Order reduces write-time CPU and shortens refresh duration, especially for large writes.
+* **Turn V-Order on (improved read performance)** when the table is read multiple times, or when it's consumed by Fabric engines that benefit from V-Order, such as Power BI Direct Lake semantic models or Fabric Warehouse. V-Order improves read performance by roughly 10% for the SQL analytics endpoint and Warehouse, and is the recommended write format for Direct Lake consumption.
+
+If you're unsure, the rule of thumb is: data read once benefits more from V-Order being off, and data read many times benefits more from V-Order being on. For a detailed matrix of write methods and read engines, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
+
+> [!NOTE]
+> The destination-level **Enable use of V-Order compression** option controls writes to the destination Lakehouse. To control V-Order compression for the staging Lakehouse used during dataflow execution, use the dataflow-level **Enable V-Order compression** option on the Scale tab. For more information, see [Staged data options for Dataflow Gen2](dataflow-gen2-staged-data-options.md).
 
 ### Vacuuming your Lakehouse data destination
 

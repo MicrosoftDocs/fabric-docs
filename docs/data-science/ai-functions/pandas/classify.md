@@ -1,10 +1,11 @@
 ---
 title: Use ai.classify with pandas
 description: Learn how to categorize input text according to custom labels by using the ai.classify function with pandas.
-ms.reviewer: vimeland
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
-ms.search.form: AI functions
+ms.search.form: AI Functions
 ---
 
 # Use ai.classify with pandas
@@ -14,8 +15,8 @@ The `ai.classify` function uses generative AI to categorize input text according
 
 > [!NOTE]
 > - This article covers using *ai.classify* with pandas. To use *ai.classify* with PySpark, see [this article](../pyspark/classify.md).
-> - See other AI functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI functions](./configuration.md).
+> - See other AI Functions in [this overview article](../overview.md).
+> - Learn how to customize the [configuration of AI Functions](./configuration.md).
 
 ## Overview
 
@@ -63,7 +64,7 @@ This example code cell provides the following output:
 
 ## Multimodal input
 
-The `ai.classify` function supports file-based multimodal input. You can classify images, PDFs, and text files by setting `column_type="path"` when your column contains file path strings. Supported file types for `column_type="path"` include JPG/JPEG, PNG, GIF, WebP (images), PDF (documents), and common text formats such as MD, TXT, CSV, JSON, and XML. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+The `ai.classify` function supports file-based multimodal input. You can classify images, PDFs, and text files by setting `column_type="path"` when your column contains file path strings. Supported file types for `column_type="path"` include JPG/JPEG, PNG, GIF, WebP (images), PDF (documents), and common text formats such as MD, TXT, CSV, JSON, and XML. For more information about supported file types and setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
 
 ```python
 # This code uses AI. Always review output for mistakes.
@@ -92,9 +93,6 @@ display(df)
 
 When you use `aifunc.load`, the file-path column contains `yarl.URL` objects that are automatically detected. For plain string URLs, set `column_type="path"`.
 
-> [!TIP]
-> The AI functions progress bar cost calculator can be configured with modes such as `basic`, `stats`, or `disable` to provide real-time token and capacity usage estimates when running `ai.classify` in notebooks. For details, see [Configure AI functions](./configuration.md).
-
 ## Related content
 
 - Use [ai.classify with PySpark](../pyspark/classify.md).
@@ -107,7 +105,8 @@ When you use `aifunc.load`, the file-path column contains `yarl.URL` objects tha
 - Summarize text with [ai.summarize](./summarize.md).
 - Translate text with [ai.translate](./translate.md).
 
-- Learn more about the [full set of AI functions](../overview.md).
-- Use [multimodal input with AI functions](../multimodal-overview.md).
-- Customize the [configuration of AI functions](./configuration.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
+- Learn more about the [full set of AI Functions](../overview.md).
+- Use [multimodal input with AI Functions](../multimodal-overview.md).
+- Customize the [configuration of AI Functions](./configuration.md).
+- Understand [billing for AI Functions](../billing.md).
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

@@ -66,7 +66,7 @@ To add a custom endpoint source to your eventstream:
 
    :::image type="content" source="media/stream-consume-events-using-kafka-endpoint/kafka-keys-sample-code.png" lightbox="media/stream-consume-events-using-kafka-endpoint/kafka-keys-sample-code.png" alt-text="Screenshot that shows Kafka keys and sample code.":::
 
-   For more information about the **SAS Key Authentication** and **Sample code** pages, see [Kafka endpoint details](./add-source-custom-app.md?pivots=enhanced-capabilities#kafka).
+   For more information about the **SAS Key Authentication** and **Sample code** pages, see [Kafka endpoint details](./add-source-custom-app.md?pivots=enhanced-capabilities#apache-kafka-protocol-connection-details).
 
 ## Send events with a Kafka application
 

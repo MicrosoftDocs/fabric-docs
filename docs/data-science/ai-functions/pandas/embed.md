@@ -1,10 +1,11 @@
 ---
 title: Use ai.embed with pandas
 description: Learn how to convert text into numeric vectors that capture its meaning and context by using the ai.embed function with pandas.
-ms.reviewer: vimeland
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
-ms.search.form: AI functions
+ms.search.form: AI Functions
 ---
 
 # Use ai.embed with pandas
@@ -13,8 +14,8 @@ The `ai.embed` function uses generative AI to convert text into vector embedding
 
 > [!NOTE]
 > - This article covers using *ai.embed* with pandas. To use *ai.embed* with PySpark, see [this article](../pyspark/embed.md).
-> - See other AI functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI functions](./configuration.md).
+> - See other AI Functions in [this overview article](../overview.md).
+> - Learn how to customize the [configuration of AI Functions](./configuration.md).
 
 ## Overview
 
@@ -37,7 +38,7 @@ None.
 ## Returns
 
 The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains embeddings as [numpy array of float-32](https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.float32) for each input text row.
-The number of elements in array depends on the embedding model's dimensions, which are [configurable in AI functions](./configuration.md)
+The number of elements in array depends on the embedding model's dimensions, which are [configurable in AI Functions](./configuration.md)
 
 ## Example
 
@@ -70,6 +71,7 @@ This example code cell provides the following output:
 - Summarize text with [ai.summarize](./summarize.md).
 - Translate text with [ai.translate](./translate.md).
 
-- Learn more about the [full set of AI functions](../overview.md).
-- Customize the [configuration of AI functions](./configuration.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
+- Learn more about the [full set of AI Functions](../overview.md).
+- Customize the [configuration of AI Functions](./configuration.md).
+- Understand [billing for AI Functions](../billing.md).
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

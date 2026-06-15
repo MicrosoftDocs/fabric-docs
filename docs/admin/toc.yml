@@ -4,15 +4,7 @@ items:
 - name: Overview
   items:
   - name: Administration overview
-    href: admin-overview.md          
-  - name: What is Microsoft Fabric admin?
-    href: microsoft-fabric-admin.md
-  - name: What is the admin portal?
-    href: admin-center.md   
-  - name: Governance and compliance documentation
-    href: ../governance/index.yml      
-  - name: Security documentation
-    href: ../security/index.yml         
+    href: admin-overview.md
 - name: Get started
   items:
   - name: Enable Fabric for your organization
@@ -173,7 +165,7 @@ items:
     - name: User experience experiments
       href: service-admin-portal-user-experience-experiments.md
     - name: Share data with your Microsoft 365 services
-      href: admin-share-power-bi-metadata-microsoft-365-services.md#how-to-turn-sharing-with-microsoft-365-services-on-and-off
+      href: admin-share-power-bi-metadata-microsoft-365-services.md
     - name: Insights settings
       href: service-admin-portal-insights.md
     - name: Datamart settings

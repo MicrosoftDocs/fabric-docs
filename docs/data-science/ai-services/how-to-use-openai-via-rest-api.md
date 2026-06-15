@@ -6,7 +6,7 @@ author: lgayhardt
 ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
-ms.date: 01/16/2026
+ms.date: 06/10/2026
 ms.update-cycle: 180-days
 ms.search.form: 
 ms.collection: ce-skilling-ai-copilot
@@ -60,7 +60,7 @@ def print_chat_result(messages, response_code, response):
         print(response.content)
     print("=" * 90)
 
-deployment_name = "gpt-4.1"
+deployment_name = "gpt-5.1"
 
 openai_url = (
     f"{fabric_env_config.ml_workload_endpoint}cognitive/openai/openai/deployments/"

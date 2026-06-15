@@ -18,6 +18,7 @@ Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is subject
 
 * Creating alerts for a report using Dynamic M parameters isn't supported.
 * Creating alerts from the Fabric or Power BI Capacity Metrics app isn't supported.
+* Creating alerts from a SQL analytics endpoint isn't currently supported.
 
 ## Activator item migration from Preview to GA
 
@@ -117,7 +118,7 @@ Activator items don't currently work with Microsoft Fabric’s lifecycle managem
 
 * Power BI as data source
 
-* Fabric User Data Functions as action (preview)
+* Fabric User Data Functions as action
 
 If you include an Activator item with one of these sources or actions in a deployment pipeline or a Git-integrated workspace, you see an error when you try to deploy or commit the Activator item.
 

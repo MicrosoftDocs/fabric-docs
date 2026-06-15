@@ -1,7 +1,7 @@
 ---
-title: Connect digital twin builder (preview) data to Real-Time Dashboard
+title: Connect Digital Twin Builder (Preview) Data to Real-Time Dashboard
 description: Learn how to prepare your digital twin builder (preview) data to be accessible from a Real-Time Dashboard.
-ms.date: 05/02/2025
+ms.date: 6/15/2026
 ms.topic: how-to
 ---
 
@@ -117,7 +117,7 @@ You can also create a new dashboard from scratch, and use the functions you crea
 
 Once your dashboard is set up, consider the following actions:
 
-* Set up [refresh intervals](../dashboard-real-time-create.md#enable-auto-refresh) for real-time updates
+* Set up [Live refresh](../dashboard-real-time-create.md#enable-live-refresh) for real-time updates
 * [Create alerts](../data-activator/activator-get-data-real-time-dashboard.md) based on specific conditions
 * [Share your dashboard](../dashboard-real-time-create.md#share-the-dashboard) with team members
 * Explore more advanced [KQL queries](/kusto/query/) to derive insights from your digital twin builder (preview) data
