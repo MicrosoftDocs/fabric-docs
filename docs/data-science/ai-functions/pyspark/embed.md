@@ -6,16 +6,17 @@ reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI Functions
+ai-usage: ai-assisted
 ---
 
 # Use ai.embed with PySpark
 
-The `ai.embed` function uses generative AI to convert text into vector embeddings. These vectors let AI understand relationships between texts, so you can search, group, and compare content based on meaning rather than exact wording. With a single line of code, you can generate vector embeddings from a column in a DataFrame.
+The `ai.embed` function converts text into vector embeddings that represent meaning. Use embeddings to search, group, and compare content by meaning instead of exact wording.
 
 > [!NOTE]
-> - This article covers using *ai.embed* with PySpark. To use *ai.embed* with pandas, see [this article](../pandas/embed.md).
-> - See other AI Functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI Functions](./configuration.md).
+> - This article covers `ai.embed` with PySpark. For pandas, see [Use ai.embed with pandas](../pandas/embed.md).
+> - For all AI Functions and prerequisites, see [AI Functions overview](../overview.md).
+> - Change default configuration for [AI Functions with PySpark](./configuration.md).
 
 ## Overview
 
@@ -39,9 +40,7 @@ df.ai.embed(input_col="col1", output_col="embed")
 
 ## Returns
 
-The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) that includes a new column that contains generated embeddings for each input text row.
-Embeddings are of the type [pyspark.ml.linalg.DenseVector])https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.ml.linalg.DenseVector.html#densevector).
-The number of elements in the DenseVector depends on the embedding model's dimensions, which are [configurable in AI Functions](./configuration.md)
+The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column that contains generated embeddings for each input row. Embeddings are [`pyspark.ml.linalg.DenseVector`](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.ml.linalg.DenseVector.html#densevector) values. Vector size depends on the embedding model dimensions, which are [configurable in AI Functions](./configuration.md).
 
 ## Example
 
@@ -59,23 +58,13 @@ embed = df.ai.embed(input_col="descriptions", output_col="embed")
 display(embed)
 ```
 
-This example code cell provides the following output:
+Output:
 
 :::image type="content" source="../../media/ai-functions/embed-example-output.png" alt-text="Screenshot of a data frame with columns 'descriptions' and 'embed'. The 'embed' column contains embeddings for the descriptions." lightbox="../../media/ai-functions/embed-example-output.png":::
 
 ## Related content
 
 - Use [ai.embed with pandas](../pandas/embed.md).
-- Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
-- Categorize text with [ai.classify](./classify.md).
-- Extract entities with [ai_extract](./extract.md).
-- Fix grammar with [ai.fix_grammar](./fix-grammar.md).
-- Answer custom user prompts with [ai.generate_response](./generate-response.md).
-- Calculate similarity with [ai.similarity](./similarity.md).
-- Summarize text with [ai.summarize](./summarize.md).
-- Translate text with [ai.translate](./translate.md).
-
-- Learn more about the [full set of AI Functions](../overview.md).
-- Customize the [configuration of AI Functions](./configuration.md).
+- Learn more about [AI Functions](../overview.md).
+- Change default configuration for [AI Functions with PySpark](./configuration.md).
 - Understand [billing for AI Functions](../billing.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

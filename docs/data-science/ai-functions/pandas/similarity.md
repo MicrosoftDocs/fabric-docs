@@ -6,17 +6,17 @@ reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI Functions
+ai-usage: ai-assisted
 ---
 
 # Use ai.similarity with pandas
 
-
-The `ai.similarity` function uses generative AI to compare two string expressions and then calculate a semantic similarity score. It uses only a single line of code. You can compare text values from one column of a DataFrame with a single common text value or with pairwise text values in another column.
+The `ai.similarity` function compares text by meaning. Compare one column with a single reference value or with pairwise values in another column.
 
 > [!NOTE]
-> - This article covers using *ai.similarity* with pandas. To use *ai.similarity* with PySpark, see [this article](../pyspark/similarity.md).
-> - See other AI Functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI Functions](./configuration.md).
+> - This article covers `ai.similarity` with pandas. For PySpark, see [Use ai.similarity with PySpark](../pyspark/similarity.md).
+> - For all AI Functions and prerequisites, see [AI Functions overview](../overview.md).
+> - Change default configuration for [AI Functions with pandas](./configuration.md).
 
 ## Overview
 
@@ -50,7 +50,7 @@ df["similarity"] = df["col1"].ai.similarity(df["col2"])
 
 ## Returns
 
-The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains similarity scores for each input text row. The output similarity scores are relative, and they're best used for ranking. Score values can range from `-1` (opposites) to `1*` (identical). A score value of `0` indicates that the values are unrelated in meaning.
+The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains similarity scores for each input text row. The output similarity scores are relative, and they're best used for ranking. Score values can range from `-1` (opposites) to `1` (identical). A score value of `0` indicates that the values are unrelated in meaning.
 
 ## Example
 
@@ -69,7 +69,7 @@ df["similarity"] = df["name"].ai.similarity("Microsoft")
 display(df)
 ```
 
-This example code cell provides the following output:
+Output:
 
 :::image type="content" source="../../media/ai-functions/similarity-single-example-output.png" alt-text="Screenshot of a data frame with columns 'name' and 'similarity'. The 'similarity' column contains similarity scores for the names and input word." lightbox="../../media/ai-functions/similarity-single-example-output.png":::
 
@@ -88,7 +88,7 @@ df["similarity"] = df["names"].ai.similarity(df["industries"])
 display(df)
 ```
 
-This example code cell provides the following output:
+Output:
 
 :::image type="content" source="../../media/ai-functions/similarity-pairwise-example-output.png" alt-text="Screenshot of a data frame with columns 'names', 'industries', and 'similarity'. The 'similarity' column has similarity scores for name and industry." lightbox="../../media/ai-functions/similarity-pairwise-example-output.png":::
 
@@ -97,16 +97,6 @@ This example code cell provides the following output:
 ## Related content
 
 - Use [ai.similarity with PySpark](../pyspark/similarity.md).
-- Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
-- Categorize text with [ai.classify](./classify.md).
-- Generate vector embeddings with [ai.embed](./embed.md).
-- Extract entities with [ai_extract](./extract.md).
-- Fix grammar with [ai.fix_grammar](./fix-grammar.md).
-- Answer custom user prompts with [ai.generate_response](./generate-response.md).
-- Summarize text with [ai.summarize](./summarize.md).
-- Translate text with [ai.translate](./translate.md).
-
-- Learn more about the [full set of AI Functions](../overview.md).
-- Customize the [configuration of AI Functions](./configuration.md).
+- Learn more about [AI Functions](../overview.md).
+- Change default configuration for [AI Functions with pandas](./configuration.md).
 - Understand [billing for AI Functions](../billing.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

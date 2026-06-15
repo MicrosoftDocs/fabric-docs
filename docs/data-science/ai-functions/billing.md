@@ -67,6 +67,12 @@ display(results.ai.stats)
 
 ---
 
+The output might look like this table:
+
+| num_successful | num_exceptions | num_unevaluated | num_harmful | cached_tokens | input_tokens | output_tokens | reasoning_tokens | client_type | input_types | model |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2 | 0 | 0 | 0 | 0 | 555 | 4 | 0 | fabric_llm_endpoint | `{"text": 2}` | gpt-5-mini |
+
 In pandas notebooks, set `progress_bar_mode="stats"` to show real-time token and capacity unit estimates while the function runs:
 
 ```python
@@ -75,7 +81,7 @@ import synapse.ml.aifunc as aifunc
 aifunc.default_conf.progress_bar_mode = "stats"
 ```
 
-The progress bar shows live and projected cached input, input, output, and capacity unit estimates, then shows final values when the operation completes. For more information, see [Progress bar modes](./pandas/configuration.md#progress-bar-modes) and [Customize AI Functions with PySpark](./pyspark/configuration.md).
+The progress bar shows live and projected cached input, input, output, and capacity unit estimates, then shows final values when the operation completes. See [Progress bar modes](./pandas/configuration.md#progress-bar-modes) and [Customize AI Functions with PySpark](./pyspark/configuration.md).
 
 ## Consumption rates
 

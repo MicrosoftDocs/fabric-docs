@@ -11,12 +11,12 @@ ai-usage: ai-assisted
 
 # Customize AI Functions with PySpark
 
-AI Functions are designed to work out of the box, with the underlying model and settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
+AI Functions work out of the box with default model settings. Use these settings to change models, concurrency, chaining, stats, or endpoint configuration for PySpark.
 
 > [!NOTE]
 >
-> - This article covers customizing AI Functions with PySpark. To customize AI Functions with pandas, see [this article](../pandas/configuration.md).
-> - See all AI Functions in [this overview article](../overview.md).
+> - This article covers PySpark. For pandas, see [Customize AI Functions with pandas](../pandas/configuration.md).
+> - For all AI Functions, see [AI Functions overview](../overview.md).
 
 ## Configurations
 
@@ -179,16 +179,6 @@ aifunc.default_conf.set_deployment_name("grok-4-fast-non-reasoning")
 
 ## Related content
 
-- Customize [AI Functions configurations with pandas](../pandas/configuration.md).
-- Detect sentiment with [`ai.analyze_sentiment`](./analyze-sentiment.md).
-- Categorize text with [`ai.classify`](./classify.md).
-- Extract entities with [`ai_extract`](./extract.md).
-- Fix grammar with [`ai.fix_grammar`](./fix-grammar.md).
-- Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
-- Calculate similarity with [`ai.similarity`](./similarity.md).
-- Summarize text with [`ai.summarize`](./summarize.md).
-- Translate text with [`ai.translate`](./translate.md).
-
-- Learn more about the [full set of AI Functions](../overview.md).
+- Customize [AI Functions with pandas](../pandas/configuration.md).
+- Learn more about [AI Functions](../overview.md).
 - Understand [billing for AI Functions](../billing.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).
