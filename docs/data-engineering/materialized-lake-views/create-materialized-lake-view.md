@@ -128,20 +128,24 @@ SHOW CREATE MATERIALIZED LAKE VIEW products_with_sales;
 
 ## Update a materialized lake view
 
-You can't directly update the definition of a materialized lake view. To change the `SELECT` query, constraints, or partitioning, [delete](#delete-a-materialized-lake-view) the existing view and [create](#create-a-materialized-lake-view) a new one.
+To modify the definition of a materialized lake view (such as the `SELECT` query, constraints, or partitioning), use the [CREATE OR REPLACE](#create-a-materialized-lake-view) command. Alternatively, you can [delete](#delete-a-materialized-lake-view) the existing view and recreate it.
 
-The only property you can update (via `ALTER`) on an existing materialized lake view is its name. The syntax is:
+## Rename a materialized lake view
+
+To rename an existing materialized lake view, use the `ALTER MATERIALIZED LAKE VIEW` command. The syntax is:
 
 ```sql
 ALTER MATERIALIZED LAKE VIEW MLV_Identifier RENAME TO MLV_Identifier_New;
 ```
-
 For example, to rename `products_with_sales`:
 
 ```sql
 ALTER MATERIALIZED LAKE VIEW products_with_sales RENAME TO products_with_sales_v2;
 ```
 
+> [!NOTE]
+> The `ALTER MATERIALIZED LAKE VIEW` command is supported only for renaming. To modify the definition or other properties (such as the `SELECT` query, constraints, or partitioning), see [Update a materialized lake view](#update-a-materialized-lake-view).
+ 
 ## Delete a materialized lake view
 
 You can delete a materialized lake view by using the **Delete** option in the lakehouse object explorer or by running a `DROP` command. The syntax is:
