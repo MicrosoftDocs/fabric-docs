@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: overview
-ms.date: 05/18/2026
+ms.date: 06/11/2026
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -55,8 +55,12 @@ The following item types aren't currently supported in workspaces enabled with w
 
    Tenant-level [private links](security-private-links-overview.md) are available for SQL database, but currently, workspace-level private links are not available in SQL database.
 
-> [!NOTE]
-> Default semantic models used to block workspace-level private links for workspaces with lakehouses, warehouses, or mirrored databases. This is no longer an issue. Default semantic models stopped being created automatically on September 5, 2025, and existing ones were decoupled from their parent items by November 30, 2025. For more information, see [Power BI semantic models in Microsoft Fabric](../data-warehouse/semantic-models.md).
+* **Semantic models**
+
+   Power BI semantic models aren't supported in workspaces with workspace-level private links enabled. If a workspace contains any Power BI semantic models, you can't enable workspace-level private links for that workspace.
+
+   > [!NOTE]
+   > Default semantic models were previously created for workspaces with lakehouses, warehouses, or mirrored databases, and they would block creation of workspace-level private links. This issue no longer occurs because default semantic models stopped being created automatically as of September 5, 2025, and existing default semantic models were decoupled from their parent items as of November 30, 2025. For more information, see [Power BI semantic models in Microsoft Fabric](../data-warehouse/semantic-models.md).
 
 ## Management options for supported item types
 
@@ -365,6 +369,9 @@ Current limitations:
    - Queued ingestion via OneLake isn't currently available.
 - The **OneLake Catalog - Govern** tab isn't available when Private Link is activated.
 - Workspace monitoring isn't currently supported when a workspace-level private link is enabled for a workspace.
+- Power BI semantic models aren't supported in workspaces with workspace-level private links enabled.
+   - Semantic model creation may be disabled.
+   - Creation attempts may fail in restricted workspaces.
 
 ## Azure role-based access control (RBAC) and workspace-level private links
 

@@ -4,7 +4,7 @@ description: Learn how to transform and enrich data with lightweight, LLM-powere
 ms.reviewer: singhrana
 reviewer: ranadeepsingh
 ms.topic: how-to
-ms.date: 05/12/2026
+ms.date: 06/10/2026
 ms.search.form: AI Functions
 ai-usage: ai-assisted
 ---
@@ -48,22 +48,25 @@ Supported file types include JPG/JPEG, PNG, static GIF, WebP, PDF, MD, TXT, CSV,
 - You need a paid Fabric capacity (F2 or higher, or any P edition).
 
 > [!NOTE]
+>
 > - AI Functions are supported in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
-> - Unless you configure a different model, AI Functions default to *gpt-4.1-mini*. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
+> - Python AI Functions for pandas and PySpark now default to `gpt-5-mini` with `reasoning_effort` set to `low`. Learn more about [billing and consumption rates](./billing.md).
+> - AI Functions in Dataflow Gen2 and warehouse will receive the same model upgrade by the end of June 2026.
 > - Although the underlying model can handle several languages, most AI Functions are optimized for English-language text.
+> - AI Functions do not log or store user prompts, input data, outputs.
 
 ### Models and providers
 
-AI Functions support broader models and providers beyond the default Azure OpenAI models. You can configure AI Functions to use any LLM which supports the chat_completions or responses API:
+AI Functions support broader models and providers beyond the default Azure OpenAI models. You can configure AI Functions to use any LLM that supports the `chat_completions` or `responses` API:
 
 - Azure OpenAI models
-- Microsoft Foundry models such as Qwen, Kimi, Grok, LLaMA, Mistral, any many more.
+- Microsoft Foundry models such as Qwen, Kimi, Grok, LLaMA, Mistral, and many more.
 
 Model and provider selection is configurable through the AI Functions configuration. For details on how to set up and configure different models and providers, see the configuration documentation for [pandas](./pandas/configuration.md) and [PySpark](./pyspark/configuration.md).
 
 ## Getting started with AI Functions
 
-AI Functions can be used with pandas (Python and PySpark runtimes), and with PySpark (PySpark runtime). The required installation and import steps for each are outlined in the following section, followed by the corresponding commands.
+AI Functions can be used with pandas (Python and PySpark runtimes), and with PySpark (PySpark runtime). The current production update uses SynapseML 1.1.3 and SynapseML-Internal 1.1.3.1 for AI Functions. The installation and import steps for each runtime are outlined in the following section.
 
 ### Performance and concurrency
 
@@ -72,17 +75,17 @@ AI Functions execute with a default concurrency of 200, allowing for faster para
 ### Install dependencies
 
 - Pandas (Python runtime)
-  - `synapseml_internal` and `synapseml_core` whl files installation required (commands provided in the following code cell)
-  - `openai` package installation required (command provided in the following code cell)
+  - `synapseml_internal` and `synapseml_core` whl files are required.
+  - The `openai` package isn't required for most pandas AI Functions usage. For the best pandas developer experience, you can install `openai` version 1.99.5 or later to use SDK-native client behavior and Pydantic response-format examples.
 - Pandas (PySpark runtime)
-  - `openai` package installation required (command provided in the following code cell)
+  - No installation is required for most usage. You can optionally install `openai` version 1.99.5 or later to use SDK-native client behavior and Pydantic response-format examples.
 - PySpark (PySpark runtime)
   - No installation required
 
 # [pandas (PySpark runtime)](#tab/pandas-pyspark)
 
 ```python
-# The pandas AI Functions package requires OpenAI version 1.99.5 or later
+# Optional: install openai version 1.99.5 or later for SDK-native client behavior.
 %pip install -q openai 2>/dev/null
 ```
 
@@ -93,7 +96,8 @@ AI Functions execute with a default concurrency of 200, allowing for faster para
 !wget -q https://aka.ms/fabric-aifunctions-whl -O synapseml_internal-latest-py3-none-any.whl
 !wget -q https://aka.ms/fabric-synapseml-core-whl -O synapseml_core-latest-py3-none-any.whl
 
-# The pandas AI Functions package requires OpenAI version 1.99.5 or later
+# openai version 1.99.5 or later is included for SDK-native client behavior.
+# To keep the environment lightweight, remove "openai" from the install command.
 %pip install -q openai synapseml_internal-latest-py3-none-any.whl synapseml_core-latest-py3-none-any.whl
 ```
 
@@ -140,8 +144,8 @@ Each of the following functions allows you to invoke the built-in AI endpoint in
 
 > [!TIP]
 > Learn how to [customize the configuration](./pandas/configuration.md) of AI Functions.
-> 
-> **Advanced configuration**: When using gpt-5 family models, you can configure advanced options such as `reasoning_effort` and `verbosity`. See the configuration pages for [pandas](./pandas/configuration.md) and [PySpark](./pyspark/configuration.md) for details on how to set these options.
+>
+> **Advanced configuration**: The default Python AI Functions model uses `gpt-5-mini` with `reasoning_effort="low"` and leaves `temperature` unset (`NOT_GIVEN`). For more sophisticated transformations, you can configure `gpt-5.1` or tune `reasoning_effort`. See the configuration pages for [pandas](./pandas/configuration.md) and [PySpark](./pyspark/configuration.md) for details on how to set these options.
 
 ### Detect sentiment with ai.analyze_sentiment
 
@@ -522,33 +526,55 @@ display(translations)
 
 :::image type="content" source="../media/ai-functions/translate-example-output.png" alt-text="Screenshot of a data frame with columns 'text' and 'translations'. The 'translations' column contains the text translated to Spanish." lightbox="../media/ai-functions/translate-example-output.png":::
 
+## Chain PySpark AI Functions
+
+PySpark AI Functions return DataFrames that keep the `df.ai` accessor bound to the result schema. You can chain AI transformations without materializing an intermediate DataFrame between calls.
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+output = (
+    df
+    .ai.summarize(input_col="review_text", output_col="summary")
+    .ai.classify(
+        labels=["service", "cleanliness", "location", "other"],
+        input_col="summary",
+        output_col="category",
+    )
+)
+display(output)
+```
+
 ## View usage statistics with ai.stats
 
-Fabric AI Functions provide a built-in way to inspect usage and execution statistics for any AI-generated Series or DataFrame. You can access these metrics by calling `ai.stats` on the result returned by an AI function.
+Fabric AI Functions provide a built-in way to inspect usage and execution statistics for any AI-generated Series or DataFrame. You can access these metrics through `ai.stats` on the result returned by an AI function.
 
-`ai.stats` returns a DataFrame with the following columns:
+`ai.stats` returns a DataFrame with statistics such as:
 
-- num_successful – Number of rows processed successfully by the AI function.
-- num_exceptions – Number of rows that encountered an exception during execution. These rows are represented as instances of `aifunc.ExceptionResult`.
-- num_unevaluated – Number of rows that were not processed because an earlier exception made it impossible to continue evaluation. These rows are instances of aifunc.NotEvaluatedResult.
-- num_harmful – Number of rows blocked by the Azure OpenAI content filter. These rows are instances of `aifunc.FilterResult`.
-- prompt_tokens – Total number of input tokens used for the AI function call.
-- completion_tokens – Total number of output tokens generated by the model.
+- `num_successful`: Number of rows processed successfully by the AI function.
+- `num_exceptions`: Number of rows that encountered an exception during execution. These rows are represented as instances of `aifunc.ExceptionResult`.
+- `num_unevaluated`: Number of rows that weren't processed because an earlier exception made it impossible to continue evaluation. These rows are represented as instances of `aifunc.NotEvaluatedResult`.
+- `num_harmful`: Number of rows blocked by the Azure OpenAI content filter. These rows are represented as instances of `aifunc.FilterResult`.
+- `cached_tokens`: Total number of cached input tokens.
+- `input_tokens`: Total number of input tokens used for the AI function call.
+- `output_tokens`: Total number of output tokens generated by the model.
+- `reasoning_tokens`: Total number of reasoning tokens used by reasoning models.
+- `model`: Model deployment name used for the AI function call.
 
 > [!TIP]
-> You can call `ai.stats` on any Series or DataFrame returned by an AI function. This can help you track usage, understand error patterns, and monitor token consumption.
+> You can access `ai.stats` on any Series or DataFrame returned by an AI function. This can help you track usage, understand error patterns, and monitor token consumption.
+
+Rows that hit capacity limits are surfaced as instances of `aifunc.CapacityExceededResult`. In pandas workflows, use `aifunc.split_results` to separate successful outputs from nonresults, so you can inspect capacity-limited rows and retry them after capacity is available or the limit is addressed.
 
 ### Cost transparency
 
-AI Functions include a configurable progress bar cost calculator that shows real-time token estimates and capacity units during execution. You can set the calculator to one of three modes:
+pandas AI Functions include a configurable progress bar. Set `progress_bar_mode="stats"` to show detailed token counts and capacity unit estimates during execution.
 
-- **basic**: Displays a summary of estimated tokens and capacity units consumed.
-- **stats**: Displays detailed per-call statistics, including input and output token counts.
-- **disable**: Turns off the progress bar cost display.
+For PySpark AI Functions, use `df.ai.stats` on the result DataFrame to view token usage and execution statistics, including reasoning token counts.
 
-For details on configuring these modes, see the configuration documentation for [pandas](./pandas/configuration.md) and [PySpark](./pyspark/configuration.md).
+For details, see the configuration documentation for [pandas](./pandas/configuration.md) and [PySpark](./pyspark/configuration.md).
 
-The Fabric Capacity Metrics App includes a dedicated **AI Functions** operation that separates AI Functions usage from Spark and Dataflow Gen2, giving you clearer monitoring of AI-related capacity consumption. For more information, see [What is the Microsoft Fabric Capacity Metrics app?](../../enterprise/metrics-app.md).
+The Fabric Capacity Metrics app includes a dedicated **AI Functions** operation that separates AI Functions usage from Spark and Dataflow Gen2, giving you clearer monitoring of AI-related capacity consumption. For more information, see [Billing for AI Functions](./billing.md).
 
 ## Evaluate and accelerate
 
@@ -566,6 +592,7 @@ Use the [AI Functions Starter Notebooks](https://aka.ms/fabric-aifunctions-start
 - Summarize text with [`ai.summarize in pandas`](./pandas/summarize.md) or [`ai.summarize in PySpark`](./pyspark/summarize.md).
 - Translate text with [`ai.translate in pandas`](./pandas/translate.md) or [`ai.translate in PySpark`](./pyspark/translate.md).
 - Customize the [configuration of AI Functions in pandas](./pandas/configuration.md) or the [configuration of AI Functions in PySpark](./pyspark/configuration.md).
+- Understand [billing for AI Functions](./billing.md).
 - Use [multimodal input with AI Functions](./multimodal-overview.md) to process images, PDFs, and text files.
 - Try the [AI Functions Starter Notebooks](https://aka.ms/fabric-aifunctions-starter-notebooks).
 - Evaluate output quality with the [AI Functions Eval Notebooks](https://aka.ms/fabric-aifunctions-eval-notebooks).

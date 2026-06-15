@@ -83,4 +83,5 @@ display(custom_df)
 - Learn more about the [full set of AI Functions](../overview.md).
 - Use [multimodal input with AI Functions](../multimodal-overview.md).
 - Customize the [configuration of AI Functions](./configuration.md).
+- Understand [billing for AI Functions](../billing.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).

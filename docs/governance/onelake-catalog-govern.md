@@ -123,22 +123,25 @@ If you wish to customize the report, either create a copy of the report and then
 
 ## Troubleshooting
 
-If *admin monitoring workspace* or *My workspaces* are reassigned to another capacity, users could get an error when accessing the Govern tab in the OneLake Catalog. In such cases, ensure the newly assigned capacity has enough resources to run the semantic models and reports or try to reallocate the workspaces to another capacity.
+- If *admin monitoring workspace* or *My workspaces* are reassigned to another capacity, users could get an error when accessing the Govern tab in the OneLake Catalog. In such cases, ensure the newly assigned capacity has enough resources to run the semantic models and reports or try to reallocate the workspaces to another capacity.
 
-For the *My items* view, if the data isn't refreshing as expected, check the notifications pane and the Monitor page to see if you can identify the cause. If refresh fails repeatedly, or if you can't figure out what's causing it to fail, try regenerating the report. To do so, close the Govern tab, and delete the OneLake catalog governance report and its associated semantic model from your My workspaces. Then reopen the Govern tab.
+- For the *My items* view, if the data isn't refreshing as expected, check the notifications pane and the Monitor page to see if you can identify the cause. If refresh fails repeatedly, or if you can't figure out what's causing it to fail, try regenerating the report. To do so, close the Govern tab, and delete the OneLake catalog governance report and its associated semantic model from your My workspaces. Then reopen the Govern tab.
 
 ## Considerations and limitations
 
 The following are some considerations and limitations when using the Govern tab:
 
-* Subitems, such as tables, aren't supported and don't surface into the insights.
-* The Govern tab doesn't support cross-tenant scenarios or guest users
-* The Govern tab isn't available when Private Link is activated.
-* Copilot functionality depends on organizational setup and the capacity the workspace is assigned with. The workspace (*admin monitoring workspace* for the admin view and *My workspaces* for the data owners view) should be allocated to the appropriate capacity in order to activate the Copilot button.
-* Because admin insights, recommended actions, and view more reports are based on admin monitoring storage that refreshes once a day, there could be gaps between the data reflected and the actual state. It takes a day to get an updated view of all the changes made in the organization.
-* If *admin monitoring workspace* or *My workspaces* are reassigned to another capacity, users could get an error when accessing the Govern tab in the OneLake Catalog. In such cases, ensure the newly assigned capacity has enough resources to run the semantic models and reports.
-* All users viewing content in the admin monitoring workspace, including the admins report, must have a Power BI Pro license, unless the workspace is assigned to a capacity.
-* The admins semantic model is read-only and can't be used with Fabric data agents.
+* **Subitems** - Subitems such as tables aren't supported and don't appear in insights.
+* **Cross tenant** - The Govern tab doesn't support cross-tenant scenarios or guest users.
+* **Private Link** - The Govern tab isn't available when Private Link is activated.
+* ***View more* reports** - 
+  * Copilot functionality depends on organizational setup and the capacity the workspace is assigned with. The workspace (*admin monitoring workspace* for the admin view and *My workspaces* for the data owners view) should be allocated to the appropriate capacity in order to activate the Copilot button.
+  * Items of Third-party workloads are not included in the charts.
+* **Data refresh** - Because admin insights, recommended actions, and *view more* reports are based on admin monitoring storage that refreshes once a day, there could be gaps between the data reflected and the actual state. It takes a day to get an updated view of all the changes made in the organization.
+* ***Admin monitoring* workspace** - 
+  * If *Admin monitoring* workspace or *My workspace* are reassigned to another capacity, users could get an error when accessing the Govern tab in the OneLake Catalog. In such cases, ensure the newly assigned capacity has enough resources to run the semantic models and reports.
+  * All users viewing content in the admin monitoring workspace, including the admins report, must have a Power BI Pro license, unless the workspace is assigned to a capacity.
+  * The admins semantic model is read-only and can't be used with Fabric data agents.
 
 ## Related content
 
