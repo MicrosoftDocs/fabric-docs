@@ -145,7 +145,7 @@ Under the Home tab, you can add new visuals, markdown boxes, alerts, data source
 
 :::image type="content" source="media/real-time-dashboard/home-tab.png" alt-text="Screenshot of the toolbar options under the Home tab." lightbox="media/real-time-dashboard/home-tab.png":::
 
-Under the Manage tab, you can manage [parameters](dashboard-parameters.md), base queries, configure [Refresh setting](#enable-auto-refresh) and manage data sources.
+Under the Manage tab, you can manage [parameters](dashboard-parameters.md), base queries, configure [Refresh setting](#enable-live-refresh) and manage data sources.
 
 :::image type="content" source="media/real-time-dashboard/manage-tab.png" alt-text="Screenshot of the toolbar options under the Manage tab." lightbox="media/real-time-dashboard/manage-tab.png":::
 

@@ -3,7 +3,7 @@ title: What is Real-Time Dashboard?
 description: Learn about Real-Time Dashboard in Microsoft Fabric.
 ms.reviewer: mibar, v-hzargari
 ms.topic: overview
-ms.date: 01/08/2026
+ms.date: 06/15/2026
 ms.search.form: Overview
 ai-usage: ai-assisted
 ---
@@ -18,7 +18,7 @@ This overview explains how Real-Time Dashboard works, highlights its key feature
 
 ## Key features
 
-* **Live data monitoring:** Dashboards update continuously or at [refresh intervals](dashboard-real-time-create.md#enable-auto-refresh) as low as 10 seconds, ensuring continuous access to the most current data.
+* **Live data monitoring:** Dashboards update continuously or at [Live refresh intervals](dashboard-real-time-create.md#enable-live-refresh) as low as 10 seconds, ensuring continuous access to the most current data.
 * **Interactive exploration:** Engage with real-time data through interactive dashboards that allow you to:
     * Slice and dice by time other custom dimensions to focus on key metrics.
     * Apply [filters](dashboard-parameters.md#interact-with-your-data-using-cross-filter) or [drill down](dashboard-parameters.md#use-drillthroughs-as-dashboard-parameters) on chart elements to refine other visuals or dive deeper into the data.
