@@ -322,6 +322,8 @@ This setting gives authors control over how frequently dashboards can refresh, h
 
 ## Share the dashboard
 
+Real-Time Dashboards can be shared with others to provide access to insights and visualizations without requiring direct interaction with the underlying data sources. Sharing enables collaboration across teams by allowing users to view and interact with dashboard content through a link, making it easier to distribute monitoring views and analytical results. For more information about managing permissions related to Real-Time Dashboards, see [Real-Time Dashboard permissions](dashboard-permissions.md).
+
 To share the dashboard link:
 
 1. Select **Share** in the top-right corner of the dashboard.

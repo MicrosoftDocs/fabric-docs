@@ -29,6 +29,9 @@ In this article, you learn how to create and use an AI operations agent in Real-
 
     :::image type="content" source="media/operations-agent/admin.png" alt-text="Screenshot of the Admin portal to enable permissions.":::
 
+> [!NOTE]
+> If you want to try operations agent on sample data, please set up the [Real-time Intelligence end to end sample](../real-time-intelligence/sample-end-to-end.md). The included Eventhouse can be monitored by your operations agent.
+
 ## Create an operations agent
 
 1. On the Fabric home page, select the ellipsis (**...**) icon, and then select **Create**.

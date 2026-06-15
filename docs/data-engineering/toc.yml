@@ -590,6 +590,8 @@ items:
       href: api-graphql-local-model-context-protocol.md
     - name: Authorizer User data functions
       href: api-graphql-authorizer-function.md
+    - name: Role-based access control
+      href: api-graphql-rbac.md
   - name: Monitoring
     items:
     - name: Monitoring dashboard and logging (preview)

@@ -80,6 +80,8 @@ You can query locks currently held with the dynamic management view (DMV) [sys.d
 
 For more information about locks, lock escalation, and lock compatibility, see [Transaction locking and row versioning guide](/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide?view=fabric&preserve-view=true).
 
+If queries appear stuck or are taking longer than expected because of locks, see [Troubleshoot query blocking in Fabric Data Warehouse](troubleshoot-query-blocking.md).
+
 ### Snapshot isolation
 
 Fabric Data Warehouse enforces snapshot isolation on all transactions. Snapshot isolation is a row-based isolation level that provides transaction-level consistency for data, and uses row versions stored in `tempdb` to select rows to update. The transaction uses the data row versions that exist when the transaction begins. This ensures that each transaction operates on a consistent snapshot of the data as it existed at the start of the transaction. 

@@ -90,7 +90,6 @@ The following special characters are either reserved or not compatible with at l
 
 - [Delta Lake in Microsoft Fabric overview](delta-lake-overview.md)
 - [Cross-workload table maintenance and optimization in Microsoft Fabric](table-maintenance-optimization.md)
-- [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
 - [Lakehouse and Delta Lake tables](../data-engineering/lakehouse-and-delta-tables.md)
 - [Direct Lake overview](direct-lake-overview.md)
 - [Querying tables from the Warehouse through its published Delta Lake Logs](../data-warehouse/query-delta-lake-logs.md)
