@@ -3,7 +3,7 @@ title: Create a Real-Time Dashboard
 description: Learn how to create and customize Real-Time Dashboards to visualize data effectively using KQL queries and Copilot for seamless insights.
 ms.reviewer: mbar
 ms.topic: how-to
-ms.date: 05/24/2026
+ms.date: 06/15/2026
 author: spelluru
 ms.author: spelluru
 ms.subservice: rti-dashboard
@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 
 A dashboard is a collection of tiles, optionally organized in pages, where each tile has an underlying query and a visual representation. You can natively export Kusto Query Language (KQL) queries to a dashboard as visuals and later modify their underlying queries and visual formatting as needed. In addition to ease of data exploration, this fully integrated dashboard experience provides improved query and visualization performance. Copilot integration in the dashboard editing experience lets you use natural language to create and modify visuals directly, no KQL expertise required.
 
-In this article, you learn how to create a new Real-Time Dashboard, add data sources, add and edit tiles in the dashboard - manually or using Copilot. You also learn how to enable auto refresh, use parameters, and export dashboards.
+In this article, you learn how to create a new Real-Time Dashboard, add data sources, add and edit tiles in the dashboard - manually or using Copilot. You also learn how to enable Live refresh, use parameters, and export dashboards.
 
 > [!IMPORTANT]
 > Your data is secure. Dashboards and dashboard-related metadata about users are encrypted at rest using Microsoft-managed keys.
@@ -145,7 +145,7 @@ Under the Home tab, you can add new visuals, markdown boxes, alerts, data source
 
 :::image type="content" source="media/real-time-dashboard/home-tab.png" alt-text="Screenshot of the toolbar options under the Home tab." lightbox="media/real-time-dashboard/home-tab.png":::
 
-Under the Manage tab, you can manage [parameters](dashboard-parameters.md), base queries, configure [Refresh setting](#enable-auto-refresh) and manage data sources.
+Under the Manage tab, you can manage [parameters](dashboard-parameters.md), base queries, configure [Refresh setting](#enable-live-refresh) and manage data sources.
 
 :::image type="content" source="media/real-time-dashboard/manage-tab.png" alt-text="Screenshot of the toolbar options under the Manage tab." lightbox="media/real-time-dashboard/manage-tab.png":::
 
@@ -303,22 +303,20 @@ You can view the query in either viewing or editing mode.
     > [!NOTE]
     > Any edits made to the query using this flow won't be reflected in the original Real-Time Dashboard.
 
-## Enable auto refresh
+## Enable Live refresh
 
-Auto refresh is a feature that allows you to automatically update the data on a dashboard without manually reloading the page or clicking a refresh button.
+Live refresh is a feature that updates dashboard visuals when new data is ingested into the underlying source, without manually reloading the page or clicking a refresh button.
 
-Dashboard authors can configure autorefresh settings for other viewers. By default, the refresh rate is set using the **Default refresh rate**, but viewers can adjust this rate for their own sessions.
+To enable Live refresh for your dashboard:
 
-The **Minimum time interval** defines the fastest refresh rate allowed and acts as a lower limit. For example, if the author sets the default refresh rate to 1 hour and the minimum time interval to 30 minutes, viewers can choose a refresh rate between 30 minutes and 1 hour, but not lower than 30 minutes.
+1. Select the **Manage** tab > **Refresh settings**.
+1. Select **Live refresh** to enable it.
+1. Select values for **Refresh rate limit** and **Fixed rate for non-supporting visuals**.
+1. Select **Done** and then **Save** the dashboard.
 
-This setting gives authors control over how frequently dashboards can refresh, helping to manage system load and performance.
+    :::image type="content" source="media/dashboard-live-refresh/live-refresh-settings.png" alt-text="Screenshot of the Live refresh settings pane." lightbox="media/dashboard-live-refresh/live-refresh-settings.png":::
 
-1. Select the **Manage** tab > **Auto refresh**.
-1. Toggle the option so auto refresh is **Enabled**.
-1. Select values for **Minimum time interval** and **Default refresh rate**.
-1. Select **Apply** and then **Save** the dashboard.
-
-    :::image type="content" source="media/real-time-dashboard/auto-refresh.png" alt-text="Screenshot of auto refresh pane in Real-Time Dashboards." lightbox="media/real-time-dashboard/auto-refresh.png":::
+For more information about Live refresh, see [Live refresh in Real-Time Dashboards](dashboard-live-refresh.md).
 
 ## Share the dashboard
 

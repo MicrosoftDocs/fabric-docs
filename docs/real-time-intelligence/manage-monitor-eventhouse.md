@@ -5,13 +5,13 @@ ms.reviewer: tzgitlin
 ms.topic: concept-article
 ms.custom: sfi-image-nochange
 ms.subservice: rti-eventhouse
-ms.date: 05/26/2026
+ms.date: 06/15/2026
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.
 ---
 # Manage and monitor an eventhouse
 
-An Eventhouse is a scalable environment for processing and analyzing large volumes of real-time data. It supports structured streaming for continuous data ingestion and analysis, and uses Kusto Query Language (KQL) to easily gain insights from your data. The Eventhouse page serves as the central hub for all your interactions within the Eventhouse environment. It's your gateway to seamlessly manage and monitor an eventhouse, navigate through databases, and perform various Eventhouse-related actions.
+An eventhouse is a scalable environment for processing and analyzing large volumes of real-time data. It supports structured streaming for continuous data ingestion and analysis, and uses Kusto Query Language (KQL) to easily gain insights from your data. The eventhouse page serves as the central hub for all your interactions within the eventhouse environment. It's your gateway to seamlessly manage and monitor an eventhouse, navigate through databases, and perform various eventhouse-related actions.
 
 ## Eventhouse home page
 
@@ -90,7 +90,7 @@ For the tiles in the system overview page with a time range filter, you can filt
 
 For example, if two users execute queries at the same time, one taking 3 minutes and the other 5 minutes, the total compute minutes would be 8. But since these queries ran together, the actual compute units used are just 5 minutes.
 
-In the case where 78 queries and 173 ingest operations that run at the same time and total 183 compute minutes, if they all finish within a 5-minute period, the actual compute units that is used is still only 5 minutes.
+In the case where 78 queries and 173 ingest operations that run at the same time and total 183 compute minutes, if they all finish within a 5-minute period, the actual compute units that are used is still only 5 minutes.
 
 The tile also allows users to open the underlying KQL query by selecting **Open query** in the ellipsis menu.
 
@@ -182,6 +182,14 @@ The databases overview page provides a summary of all the databases in the event
 1. To explore a specific database, select the name of this database from the list.
 
 1. To add a new database or database shortcut to the eventhouse, select **+ New database** at the top of the page. For more information, see [Create a KQL database](create-database.md) and [Create a database shortcut](database-shortcut.md).
+
+### View database assets
+
+The explorer pane provides an interface to view the assets within a database, such as tables, functions, and materialized views. It supports organizing assets such as [tables](manage-monitor-table.md#organize-tables-with-folders), [shortcuts](onelake-shortcuts.md#organize-shortcuts-with-folders), [materialized views](materialized-view.md#organize-materialized-views-in-folders), and [functions](create-functions.md#organize-functions-with-folders) into folders for easier navigation and grouping.
+
+Example of table organization into a subfolder:
+
+:::image type="content" source="media/manage-monitor-table/subfolder.png" alt-text="Screenshot of the explorer pane showing a subfolder with tables organized inside.":::
 
 ## View monitoring eventhouse
 
