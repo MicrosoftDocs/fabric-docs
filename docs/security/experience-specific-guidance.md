@@ -332,9 +332,9 @@ This guide walks you through the recovery procedures for the Real-Time Intellige
 
 ### Activator
 
-Activator users must take proactive steps to prepare for regional disaster recovery. Activator items from the primary region remain unavailable to customers, and Activator trigger definitions aren't replicated to the secondary region. 
+Activator items from the primary region remain unavailable to customers, and Activator trigger definitions aren't replicated to the secondary region. Activator users must take proactive steps to prepare for regional disaster recovery.
 
-To recover Activator items, set up [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md) to back up trigger definitions and restore them in a workspace in another region.
+To ensure that you can recover Activator items in the event of a regional disaster, set up [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md) to back up trigger definitions and restore them in a workspace in another region.
 
 1. Configure Fabric Git integration for the workspace that contains your Activator item, and [synchronize](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) your trigger definitions with your Git repository.
 1. Keep your Activator trigger definitions committed and synced regularly.
