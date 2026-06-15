@@ -3,7 +3,7 @@ title: Create an empty table
 description: Learn how to create an empty table in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: how-to
-ms.date: 04/29/2025
+ms.date: 05/04/2026
 ms.subservice: rti-eventhouse
 ms.search.form: Create a table
 ---
@@ -61,6 +61,8 @@ If you have a data source or a sample file prepared, you can use **Get data** to
    * Select **Get Data** to start the ingestion process. For more information, see [Get data overview](get-data-overview.md).
 
     :::image type="content" source="media/empty-table/table-success.png" alt-text="Screenshot of the success message.":::
+
+1. After the table is created, it appears in the list of tables in your database. You can move the table to a folder, or keep it in the root directory. To learn how to create folders and organize your tables, see [Organize tables with folders](manage-monitor-table.md#organize-tables-with-folders).
 
 ## Command viewer
 
