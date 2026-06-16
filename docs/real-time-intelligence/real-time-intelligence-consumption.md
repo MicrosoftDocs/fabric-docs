@@ -5,7 +5,7 @@ ms.reviewer: bwatts
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
 ms.custom:
-ms.date: 05/11/2026
+ms.date: 05/24/2026
 ms.search.form: Eventhouse,KQL Database, Overview
 ai-usage: ai-assisted
 ---
@@ -26,6 +26,10 @@ Based on the Capacity Stock Keeping Unit (SKU) that was purchased in Fabric, you
 
 Capacity is a dedicated set of resources that's available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different resources consume CUs at different times. The amount of capacity that used by a KQL database is based on the **Eventhouse UpTime** operation.
 
+### Scheduled minimum capacity (Capacity Scheduler)
+
+Eventhouse supports a 7-day recurring schedule in 60-minute blocks where you can set a minimum capacity per block or no minimum, while autoscale remains enabled. This aligns guaranteed capacity with your workload patterns—for example, ensuring higher baseline compute during peak business hours and allowing the eventhouse to scale freely during quieter periods. When a minimum is set for a time window, Eventhouse UpTime reflects at least the scheduled baseline for the duration of that window. For more information, see [Configure Capacity Scheduler](eventhouse-smart-capacity-control.md#schedule-minimum-capacity).
+
 ## Throttling
 
 When capacity limits are reached, the eventhouse applies throttling to protect system stability. There are three levels of throttling:
@@ -35,6 +39,8 @@ When capacity limits are reached, the eventhouse applies throttling to protect s
 - **Extreme reactive** – ingestion and queries are paused, data is held for a period, but data might be lost after a certain period.
 
 When an eventhouse enters proactive, capacity is reduced to maintain availability for an extended period for modest actions (proactive and reactive), maintaining eventhouse availability with reduced performance.
+
+Configuring scheduled minimum capacity can reduce the likelihood of proactive or reactive throttling during anticipated peaks by ensuring a baseline compute is available. However, throttling can still occur if actual demand exceeds the scheduled baseline and available capacity.
 
 ## Workspace-level surge protection
 
@@ -63,6 +69,8 @@ For information on Fabric capcity-level surge protection, see [Surge protection]
 > [!NOTE]
 > If your KQL database is a subitem of an eventhouse, the Eventhouse UpTime is reflected in the eventhouse item and the database item isn't shown in the list.
 
+When scheduled minimum capacity is configured, UpTime accrues at least at the scheduled baseline for the duration of scheduled windows. Outside scheduled windows, UpTime reflects elastic usage driven by autoscale. This distinction helps you interpret consumption reports accurately.
+
 ### Monitor Eventhouse UpTime
 
 You can monitor **Eventhouse UpTime** with the [Microsoft Fabric Capacity Metric app](../enterprise/metrics-app.md). Learn how to understand the Metrics app compute page in [Understand the metrics app compute page](../enterprise/metrics-app-compute-page.md). This example shows information specific to monitoring **Eventhouse UpTime**.
@@ -85,16 +93,16 @@ Here are some insights you can take from the example:
 > [!NOTE]
 > To better understand your Eventhouse compute size, see [Understand Eventhouse compute usage](eventhouse-compute-observability.md).
 
+When Capacity Scheduler is configured, the Fabric Capacity Metrics app may show a higher baseline CU usage during scheduled windows. Correlate the scheduled windows with the utilization graph to accurately interpret capacity consumption.
+
 ## Storage billing
 
 Storage is billed separately from your Fabric or Power BI Premium Capacity units. Data ingested into a KQL database is stored in two tiers of storage: OneLake Cache Storage, and OneLake Standard Storage.
 
 * **OneLake Cache Storage** is premium storage that is utilized to provide the fastest query response times. When you set the [cache policy](/azure/data-explorer/kusto/management/cachepolicy?context=/fabric/context/context-rti&pivots=fabric), you affect this storage tier. For instance, if you typically query back seven days then you can set the cache retention to seven days for best performance. This storage tier is comparable to the Azure ADLS (Azure Data Lake Storage) premium tier.
 
-<!-- // hide until capacity planner is released
-> [!NOTE]
-> Enabling the [Capacity Planner](eventhouse-smart-capacity-control.md) means that you aren't charged for *OneLake Cache Storage*. When minimum capacity is set, the eventhouse is always active resulting in 100% Eventhouse UpTime. You can then use the capacity planner scheduler to set minimum capacity values for specific times, without needing to worry about cache storage costs as it's included in the capacity charges. For more information, see [Schedule smart Eventhouse capacity control](eventhouse-smart-capacity-control.md).
--->
+    > [!NOTE]
+    > Enabling the [Capacity Scheduler](eventhouse-smart-capacity-control.md) means that you aren't charged for *OneLake Cache Storage*. When a scheduled minimum is configured, the eventhouse maintains a guaranteed baseline during those windows, while remaining elastic with autoscale outside of them. Cache storage costs are included in the capacity charges. For more information, see [Configure Capacity Scheduler](eventhouse-smart-capacity-control.md).
 
 * **OneLake Standard Storage** is standard storage that is used to persist and store all queryable data. When you set the [retention policy](data-policies.md#data-retention-policy), you affect this storage tier. For instance, if you need to maintain 365 days of queryable data you can set the retention to 365 days. This storage tier is comparable to the Azure ADLS (Azure Data Lake Storage) hot tier.
 
