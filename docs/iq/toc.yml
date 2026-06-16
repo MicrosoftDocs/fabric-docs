@@ -225,6 +225,10 @@ items:
     items:
     - name: PowerTable sheets overview
       href: plan/powertable-overview.md
+    - name: Concepts
+      items:
+        - name: Slowly changing dimensions
+          href: plan/powertable-concept-slowly-changing-dimensions.md
     - name: How-tos
       items:
         - name: Create a table app
@@ -242,7 +246,9 @@ items:
         - name: Configure approval workflow
           href: plan/powertable-how-to-configure-approval-workflow.md
         - name: Review changes in approval workflow
-          href: plan/powertable-how-to-review-approval-workflow.md      
+          href: plan/powertable-how-to-review-approval-workflow.md 
+        - name: Configure slowly changing dimensions
+          href: plan/powertable-how-to-create-slowly-changing-dimension.md     
   - name: Intelligence sheets
     items:
     - name: Intelligence sheets overview
