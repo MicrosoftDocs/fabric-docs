@@ -320,9 +320,11 @@ For more information about Live refresh, see [Live refresh in Real-Time Dashboar
 
 ## Share the dashboard
 
-Real-Time Dashboards can be shared with others to provide access to insights and visualizations without requiring direct interaction with the underlying data sources. Sharing enables collaboration across teams by allowing users to view and interact with dashboard content through a link, making it easier to distribute monitoring views and analytical results. For more information about managing permissions related to Real-Time Dashboards, see [Real-Time Dashboard permissions](dashboard-permissions.md).
+Real-Time Dashboards can be shared with others to provide access to insights and visualizations without requiring direct interaction with the underlying data sources. Sharing enables collaboration across teams by allowing users to view and interact with dashboard content through a link, making it easier to distribute monitoring views and analytical results. To successfully share Real-Time Dashboards, make sure the recipients have the necessary [Real-Time Dashboard permissions](dashboard-permissions.md).
 
-To share the dashboard link:
+You can share an entire Real-Time Dashboard, or a specific visual.
+
+To share the entire dashboard:
 
 1. Select **Share** in the top-right corner of the dashboard.
 
@@ -334,6 +336,15 @@ To share the dashboard link:
     - To share a link to the dashboard via Teams, select **by Teams**.
 
     :::image type="content" source="media/real-time-dashboard/share-link.png" alt-text="Screenshot that shows the pop-up window for sharing the dashboard." lightbox="media/real-time-dashboard/share-link.png":::
+
+To share a specific visual:
+1. In the top right corner of a visual, select **...** to open the visual's context menu.
+1. Select **Share visual**.
+
+    :::image type="content" source="media/real-time-dashboard/share-visual.png" alt-text="Screenshot that shows the Share visual option in the visual's context menu.":::
+
+1. Using the multi-select checkboxes, choose whether the shareable link should include the **Link** to open the visual in Fabric, the **Visualization** itself, and the **Query** that supports the visual.
+1. Select **Copy** to copy the link to your clipboard.
 
 ## Export dashboards
 
