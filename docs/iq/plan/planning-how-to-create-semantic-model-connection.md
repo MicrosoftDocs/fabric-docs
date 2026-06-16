@@ -1,7 +1,7 @@
 ---
 title: Create a Semantic Model Connection in a Plan (Preview)
 description: Learn how to create and share a cloud connection of a semantic model in a plan (preview).
-ms.date: 06/05/2026
+ms.date: 06/15/2026
 ms.topic: how-to
 ---
 
@@ -101,12 +101,15 @@ If you want to connect to a Direct Lake semantic model, follow these steps. An *
 
     :::image type="content" source="media/planning-how-to-create-semantic-model-connection/apply-direct-lake.png" alt-text="Screenshot of applying the created connection.":::
 
-## Conditions for Continuous Integration and Continuous Deployment
+## Recommended configuration for Continuous Integration and Continuous Deployment (CI/CD)
 
-To enable Continuous Integration (CI) and Continuous Deployment (CD), ensure the following conditions are met:
+For an optimal Continuous Integration (CI) and Continuous Deployment (CD), consider the following recommendations:
 
-* The semantic model connection must be created using **Service Principal** authentication.
-* The service principal must have the required access across all environments. This ensures the same semantic model connection can be reused seamlessly in different environments during deployment.
+* Create the semantic model connection using **Service Principal** authentication.
+* Grant the service principal the required access across all environments. This access allows the same semantic model connection to be reused across environments during deployment, simplifying CI/CD workflows.
+
+>[!NOTE]
+>For service principal-based authentication, enable [Service principals can call Fabric public APIs](../../admin/service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis) under **Developer settings** in the admin portal.
 
 ## Related content
 
