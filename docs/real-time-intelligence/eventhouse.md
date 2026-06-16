@@ -1,13 +1,13 @@
 ---
 title: Eventhouse overview
 description: Learn about eventhouse data storage in Real-Time Intelligence.
-ai-usage: ai-assisted
 ms.reviewer: sharmaanshul
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
 ms.custom:
 ms.date: 06/15/2026
 ms.search.form: Eventhouse
+ai-usage: ai-assisted
 ---
 # Eventhouse overview
 
@@ -62,9 +62,13 @@ For more information, see [Database details](manage-monitor-database.md#database
 
 ## Capacity Planner
 
-Your eventhouse is designed to optimize cost by suspending the service when not in use. When reactivating the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can't tolerate this latency, enable the [Capacity Planner mode](eventhouse-smart-capacity-control.md#enable-capacity-planner). This setting enables the service to be always available. With Always-On enabled, you see 100% eventHouse UpTime and you don't pay for cache storage as it's included in the capacity charges.
+Your eventhouse is designed to optimize cost by suspending the service when not in use. When reactivating the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can't tolerate this latency, configure [Capacity Planner](eventhouse-smart-capacity-control.md#enable-capacity-planner). When enabled, the eventhouse is always active, so you get 100% uptime without extra premium storage costs.
 
-As part of the always-on capacity planner feature, you can additionally [schedule and configure your minimum capacity](eventhouse-smart-capacity-control.md#schedule-minimum-capacity). This step is useful in scenarios where you have unpredictable query or ingestion loads and need to ensure adequate performance during sudden high loads. This setting allows you to prevent our autoscale mechanism from scaling below a certain size, while still allowing it to scale to a larger size if the workload requires it. A limited amount of premium storage is included in the service, and if your cache utilization approaches this limit, autoscale adjusts to the next larger size.
+With Capacity Planner, you can also configure a 7-day recurring schedule in 60-minute blocks, setting a minimum capacity per block or no minimum, with autoscale remaining enabled. Eventhouse maintains the guaranteed baseline only during the scheduled windows and stays fully elastic at other times.
+
+You can [configure a minimum capacity schedule](eventhouse-smart-capacity-control.md#schedule-minimum-capacity) for scenarios where you have unpredictable query or ingestion loads and need to ensure adequate performance during sudden high loads. Scheduled minimums prevent autoscale from scaling below the set baseline during those windows, but autoscale can still scale up as needed. If no minimum is set, the default minimum is 2 CUs.
+
+The UI provides a weekly schedule view and surfaces warnings if scheduled minimums exceed available capacity, with an overview banner summarizing the next 24 hours. For detailed configuration steps, see [Configure Capacity Planner](eventhouse-smart-capacity-control.md#schedule-minimum-capacity).
 
 ## Share an eventhouse
 
@@ -74,6 +78,5 @@ Individual KQL databases can be shared independently, although users with databa
 
 ## Related content
 
-> [Create an eventhouse](create-eventhouse.md)
-> [Manage and monitor an eventhouse](manage-monitor-eventhouse.md)
-> [Eventhouse OneLake Availability](event-house-onelake-availability.md)
+* [Create an eventhouse](create-eventhouse.md)
+* [Manage and monitor an eventhouse](manage-monitor-eventhouse.md)
