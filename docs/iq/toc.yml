@@ -273,6 +273,10 @@ items:
           href: plan/infobridge-how-to-share-measures.md
         - name: Write back data
           href: plan/infobridge-how-to-write-back-data.md
+        - name: Transform data
+          items:
+            - name: Group by transformations
+              href: plan/infobridge-transformations/infobridge-how-to-group-by.md
 - name: Graph
   href: ../graph/toc.yml
 - name: Data agent

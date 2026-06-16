@@ -3,7 +3,7 @@ title: What is MCP in Real-Time Intelligence?
 description: Learn about Model Context Protocol (MCP) in Real-Time Intelligence. MCP enables AI agents to interact with RTI components like Eventhouse and Activator using natural language.
 ms.reviewer: sharmaanshul
 ms.topic: overview 
-ms.date: 06/07/2026
+ms.date: 06/14/2026
 ms.search.form: MCP, RTI, AI
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
@@ -22,13 +22,13 @@ Fabric's Real-Time Intelligence provides two types of MCP servers: local and rem
 
 ## Local MCP server for RTI
 
-The local MCP server for Fabric Real-Time Intelligence is an open-source server that you install, host, and manage yourself. It runs on your local machine and provides read-only access to Fabric RTI and Azure Data Explorer (ADX) resources.
+The local MCP server for Fabric Real-Time Intelligence is an open-source server that you install, host, and manage yourself. It runs on your local machine and provides access to Fabric RTI and Azure Data Explorer (ADX) resources.
 
 Key characteristics:
 
 - **Deployment**: Self-hosted on your local machine
 - **Source**: [Open-source on GitHub](https://github.com/microsoft/fabric-rti-mcp/)
-- **Access**: Read-only queries to Eventhouse, Eventstream, Map, and Azure Data Explorer (ADX) clusters.
+- **Access**: Query and manage Eventhouse, Eventstream, Activator, Map, and Azure Data Explorer (ADX) resources.
 - **Management**: You manage installation, updates, and maintenance
 
 For detailed information, see [Get started with the local MCP server](mcp-local-server.md).
@@ -73,6 +73,12 @@ Both local and remote MCP servers work with popular AI clients:
 > [!NOTE]
 >
 > You can also use the Fabric RTI MCP Server to run KQL queries against the clusters in your [Azure Data Explorer](/azure/data-explorer/) backend.
+
+**Eventstreams** - Query and manage [Eventstreams](event-streams/overview.md) to analyze streaming data and get real-time insights. You can list eventstreams in your workspace, get details and definitions, create new eventstreams, and more.
+
+**Activator** - Interact with Fabric [Activator](data-activator/activator-introduction.md) to list Activator artifacts in your workspace, create trigger actions, and set up notifications.
+
+**Map** - Query and manage [Map](map/about-fabric-maps.md) resources to visualize geospatial data. You can list maps in your workspace, get details and definitions, create new maps, and more.
 
 ## Considerations and Limitations
 

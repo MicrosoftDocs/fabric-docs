@@ -2,7 +2,7 @@
 title: Prerequisites for Plan (Preview)
 description: This article lists the prerequisites for using plan (preview).
 ms.topic: overview
-ms.date: 05/14/2026
+ms.date: 06/13/2026
 ai-usage: ai-assisted
 #customer intent: As a user, I want to know the prerequisites for using Plan.
 ---
@@ -23,9 +23,13 @@ This article lists all the required prerequisites, tenant settings, and capacity
 
    :::image type="content" source="media/overview-prerequisites/allow-xmla-endpoints.png" alt-text="Screenshot of enabling allow xmla endpoints and analyze in excel with on-premises semantic models.":::
 
-1. Under [Developer settings](../../admin/tenant-settings-index.md#developer-settings), enable **Embed content in apps**.
+1. Under **Developer settings**, enable [Embed content in apps](../../admin/service-admin-portal-developer.md#embed-content-in-apps).
 
    :::image type="content" source="media/overview-prerequisites/embed-content-in-apps.png" alt-text="Screenshot of enabling embed content in apps.":::
+
+1. For service principal-based authentication, enable [Service principals can call Fabric public APIs](../../admin/service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis) under **Developer settings**.
+
+   :::image type="content" source="media/overview-prerequisites/service-principal-calls.png" alt-text="Screenshot of enabling service principals can call Fabric public APIs option." lightbox="media/overview-prerequisites/service-principal-calls.png":::
 
 ## Capacity settings
 
