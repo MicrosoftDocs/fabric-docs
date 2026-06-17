@@ -21,7 +21,7 @@ This overview explains how Real-Time Dashboard works, highlights its key feature
 * **Live data monitoring:** Dashboards update continuously or at [Live refresh intervals](dashboard-real-time-create.md#enable-live-refresh) as low as 10 seconds, ensuring continuous access to the most current data.
 * **Interactive exploration:** Engage with real-time data through interactive dashboards that allow you to:
     * Slice and dice by time other custom dimensions to focus on key metrics.
-    * Apply [filters](dashboard-parameters.md#interact-with-your-data-using-cross-filter) or [drill down](dashboard-parameters.md#use-drillthroughs-as-dashboard-parameters) on chart elements to refine other visuals or dive deeper into the data.
+    * Apply [filters](dashboard-parameters.md#interact-with-your-data-by-using-cross-filter) or [drill down](dashboard-parameters.md#use-drillthroughs-as-dashboard-parameters) on chart elements to refine other visuals or dive deeper into the data.
 * **No-code experience:** Empower users to create dashboards and explore their underlying data through an intuitive, no-code interface. This includes:
     * Quickly build [dashboards](../fundamentals/copilot-generate-dashboard.md) with Copilot assistance.
     * [Create KQL queries using Copilot](copilot-writing-queries.md) to retrieve and visualize data without needing deep technical expertise. Copilot is available in the Real-Time Dashboard tile editing pane, where you can use natural language prompts to generate, replace, and refine tile queries.

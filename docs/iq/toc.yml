@@ -283,6 +283,8 @@ items:
           items:
             - name: Group by transformations
               href: plan/infobridge-transformations/infobridge-how-to-group-by.md
+            - name: Pivot data
+              href: plan/infobridge-transformations/infobridge-how-to-pivot-table.md
 - name: Graph
   href: ../graph/toc.yml
 - name: Data agent
