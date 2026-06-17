@@ -779,7 +779,8 @@ The following operations are available in the audit logs.
 | Disable Git for workspace with restricted outbound access | :::no-loc text="DisableGitForWorkspaceWithRestrictedOutboundAccess"::: | Disable Git for workspace with restricted outbound access |
 | Get workspace IP firewall rules | :::no-loc text="GetFolderFirewallRules"::: | Get workspace IP firewall rules |
 | Update workspace IP firewall rules | :::no-loc text="SetFolderFirewallRules"::: | Update workspace IP firewall rules |
-
+| Enabled external data share access for inbound access restricted workspaces | :::no-loc text="ExternalDataSharesBypassForWorkspaceEnabled"::: | |
+| Disabled external data share access for inbound access restricted workspaces | :::no-loc text="ExternalDataSharesBypassForWorkspaceDisabled"::: | |
 
 ## Considerations and limitations
 
