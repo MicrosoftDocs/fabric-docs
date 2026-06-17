@@ -1,7 +1,7 @@
 ---
 title: Create a Semantic Model Connection in a Plan (Preview)
 description: Learn how to create and share a cloud connection of a semantic model in a plan (preview).
-ms.date: 06/15/2026
+ms.date: 06/17/2026
 ms.topic: how-to
 ---
 
@@ -36,7 +36,7 @@ Use this connection to connect to your semantic models when you create a plan. A
 1. Select an **Authentication method**.
    
     * **OAuth 2.0**: Select **Edit credentials**, then sign in with your Microsoft account.
-    * **Service principal**: Enter the **Tenant ID**, **Service Principal ID**, and **Service Principal Key**.
+    * **Service principal**: Enter the **Tenant ID**, **Service Principal ID**, and **Service Principal Key**. For service principal-based authentication, enable [Service principals can call Fabric public APIs](../../admin/service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis) under **Developer settings** in the admin portal.
 
     :::image type="content" source="media/planning-how-to-create-semantic-model-connection/authentication-method.png" alt-text="Screenshot of authentication method options in new semantic model connection.":::
 
@@ -89,7 +89,7 @@ If you want to connect to a Direct Lake semantic model, follow these steps. An *
 1. Select an **Authentication method**:
 
     * **OAuth 2.0**: Select **Edit credentials**, then sign in with your Microsoft account.
-    * **Service principal**: Enter the **Tenant ID**, **Service Principal ID**, and **Service Principal Key**.
+    * **Service principal**: Enter the **Tenant ID**, **Service Principal ID**, and **Service Principal Key**. For service principal-based authentication, enable [Service principals can call Fabric public APIs](../../admin/service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis) under **Developer settings** in the admin portal.
 
     :::image type="content" source="media/planning-how-to-create-semantic-model-connection/authentication-method.png" alt-text="Screenshot of authentication method options in new semantic model connection.":::
 
