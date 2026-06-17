@@ -25,9 +25,6 @@ Before you start this quickstart, verify that:
     > [!IMPORTANT]
     > Access management of the graph is restricted to the workspace that hosts it. Users outside of the workspace can't access the graph. Users within the workspace who have access to the underlying data in the lakehouse can model and query the graph.
 
-> [!TIP]
-> If you don't see **Graph model** in the **+ New item** menu, ask your Fabric administrator to enable graph in the [admin portal](../admin/admin-center.md).
-
 ## Load sample data
 
 To create your graph, first load sample data into a lakehouse in your Fabric workspace.
