@@ -20,10 +20,6 @@ Before you start this quickstart, verify that:
 
 1. You have access to a Microsoft Fabric capacity (F2 or higher) or a [Fabric trial](../fundamentals/fabric-trial.md).
 1. [Graph is available in your region](overview.md#region-availability).
-1. A Fabric administrator enabled graph in your Fabric tenant. They enable this setting in the [admin portal](../admin/admin-center.md).
-
-   :::image type="content" source="./media/quickstart/tenant-enable-graph.png" alt-text="Screenshot of the admin portal showing the toggle to enable graph in your Fabric tenant." lightbox="./media/quickstart/tenant-enable-graph.png":::
-
 1. You're a member of a Fabric workspace or have permission to create items in the workspace. For more information, see [Workspaces in Microsoft Fabric](../admin/portal-workspaces.md).
 
     > [!IMPORTANT]
