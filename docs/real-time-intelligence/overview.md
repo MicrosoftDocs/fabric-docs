@@ -70,6 +70,8 @@ motion using visual tools, Natural Language, and Copilot.
 
 - These insights can be turned into actions with Fabric [!INCLUDE [fabric-activator](includes/fabric-activator.md)], as you set up alerts from various parts of Fabric to react to data patterns or conditions in real-time.
 
+- Real-Time Intelligence also integrates data agents that can reason over live and historical Eventhouse data to automate actions and workflows, complementing alert-driven automations with Activator.
+
 ## How do I interact with the components of Real-Time Intelligence?
 
 ### Discover streaming data
@@ -108,12 +110,14 @@ aggregations that can be shared to consumers in Real-Time hub.
 
 Eventhouses are the ideal analytics engine to process data in motion. They're tailored to time-based, streaming events with structured, semi structured, and unstructured data. Your data is automatically organized based on when it arrived, so you can run fast, detailed queries even on large amounts of data. Data stored in eventhouses can be made available in OneLake for consumption by other Fabric experiences.
 
-The indexed, partitioned data stored in eventhouses is ready for lightning-fast query using various code, low-code, or no-code options in Fabric. You can query Eventhouse data in native KQL (Kusto Query Language) and through a managed [SQL analytics endpoint](eventhouse-analyze-data-with.md) for T-SQL analytics, in addition to T-SQL access in the KQL queryset where applicable. The SQL analytics endpoint is managed, discoverable, and governed within Fabric and is aligned with the Eventhouse data model, providing a first-class T-SQL surface for connecting BI and analytics tools to Eventhouse data. The Kusto copilot, along with the no-code query exploration experience, streamlines the process
+The indexed, partitioned data stored in eventhouses is ready for lightning-fast query using various code, low-code, or no-code options in Fabric. Data can be queried in native KQL (Kusto Query Language) or using T-SQL in the KQL queryset. The Kusto copilot, along with the no-code query exploration experience, streamlines the process
 of analyzing data for both experienced KQL users and citizen data scientists. KQL is a simple, yet powerful language to query structured, semi-structured, and unstructured data. The language is expressive, easy to read and understand the query intent, and optimized for authoring experiences.
 
 Eventhouse also includes native [anomaly detection](anomaly-detection.md) that runs directly on live time-series and event datasets. Detection executes in place against streaming data without copying or exporting it, which speeds up issue identification and investigation and complements dashboards and KQL analytics.
 
 For AI and agentic application scenarios, low-latency KQL queries over safety and telemetry events enable near-real-time dashboards and anomaly detection in agent conversations. The time-series organization of eventhouse data is well suited for correlating content safety signals with session metadata, so you can rapidly triage issues and identify trends across your generative AI workloads.
+
+Eventhouse also includes native anomaly detection that runs directly on live, time-series and event datasets. This capability enables faster identification and investigation of issues without data movement, complementing dashboards and KQL analytics.
 
 ### Model data
 
@@ -163,5 +167,6 @@ Real-Time Intelligence integrates with [Fabric data agents](../data-science/conc
 - [End-to-end tutorial](tutorial-introduction.md)
 - [What is Real-Time hub](../real-time-hub/real-time-hub-overview.md)
 - [What is Fabric eventstreams](event-streams/overview.md)
+- [What is an eventhouse?](eventhouse.md)
 - [What is [!INCLUDE [fabric-activator](includes/fabric-activator.md)]?](data-activator/activator-introduction.md)
 - [User flows](user-flow-1.md)
