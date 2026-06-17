@@ -11,7 +11,7 @@ Organizations often maintain forecasts separately by region, product, or other b
 
 This article explains how to configure and use a cube for multi-dimensional forecasting. For more information about using cubes, see [Plan across multiple dimensions with cubes](../planning-how-to-create-cube.md).
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/fabric-new-user-research.md)]
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 

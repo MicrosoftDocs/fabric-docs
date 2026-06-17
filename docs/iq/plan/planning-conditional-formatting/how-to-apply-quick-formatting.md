@@ -10,6 +10,8 @@ ms.topic: how-to
 
 Quick formatting options offer a convenient way to apply conditional formatting to the planning sheet without manually creating advanced rules from scratch. After creating a quick rule, you can further customize the rule based on your reporting requirements. These options help you highlight trends, variances, classifications, and value distributions using predefined formatting styles.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 Quick formatting is useful for quickly visualizing data and improving report readability with minimal configuration.
 
 ## Apply quick formatting

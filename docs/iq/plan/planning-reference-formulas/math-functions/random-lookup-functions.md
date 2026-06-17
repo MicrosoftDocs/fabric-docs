@@ -11,6 +11,8 @@ ms.search.form: Random and lookup functions
 
 Random functions let you generate random numbers and lookup functions retrieve positional values in reports. These functions are commonly used to create sample data, generate randomized results, and identify the position of values within a list.
 
+[!INCLUDE [Fabric feature-preview-note](../../../../includes/feature-preview-note.md)]
+
 In plan (preview), these functions help you create calculations in simulations, testing, dynamic analysis, and positional data evaluation.
 
 ## INDEXOF

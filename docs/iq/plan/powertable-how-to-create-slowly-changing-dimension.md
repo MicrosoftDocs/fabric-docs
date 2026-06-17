@@ -9,6 +9,8 @@ ms.topic: how-to
 
 Use Type 2 and Type 3 slowly changing dimensions (SCDs) to track changes to dimension data. In this article, you learn how to configure each SCD type and understand how they preserve historical and current attribute values. For more information about SCDs, see [Slowly Changing Dimensions](powertable-concept-slowly-changing-dimensions.md).
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Prerequisites
 
 The source data used to populate a Type 2 slowly changing dimension must have the following columns:

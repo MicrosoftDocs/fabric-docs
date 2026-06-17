@@ -10,6 +10,8 @@ ms.topic: concept-article
 
 Conditional formatting allows you to apply dynamic formatting to data in the planning sheet based on specified conditions, thresholds, or value ranges. It helps improve data visualization by automatically highlighting important values, trends, exceptions, and performance indicators.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 You can use conditional formatting to apply different formatting styles such as background colors, font colors, data bars, bubble charts, heat maps, classifications, icons, and action indicators.
 
 Conditional formatting helps users quickly analyze data and identify patterns without manually reviewing individual values.

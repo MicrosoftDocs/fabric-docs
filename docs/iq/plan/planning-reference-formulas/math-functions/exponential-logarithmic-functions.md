@@ -11,6 +11,8 @@ ms.search.form: Exponential and logarithmic functions
 
 Exponential and logarithmic functions let you perform exponential growth, logarithmic, and root calculations in reports. These functions are commonly used to calculate powers, logarithms, and square roots for mathematical and analytical operations.
 
+[!INCLUDE [Fabric feature-preview-note](../../../../includes/feature-preview-note.md)]
+
 In plan (preview), exponential and logarithmic functions help you create calculations for scenarios such as growth analysis, scientific calculations, trend modeling, and advanced business computations.
 
 ## EXP

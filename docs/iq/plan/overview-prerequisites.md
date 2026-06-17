@@ -11,6 +11,8 @@ ai-usage: ai-assisted
 
 This article lists all the required prerequisites, tenant settings, and capacity settings that must be configured to use plan (preview).
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Tenant settings
 
 [Fabric administrators](../../admin/roles.md) can grant access to these settings in the [admin portal](../../admin/admin-center.md) under [Tenant settings](../../admin/tenant-settings-index.md).

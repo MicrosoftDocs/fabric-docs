@@ -11,6 +11,8 @@ ms.search.form: Arithmetic functions
 
 Arithmetic functions let you perform common mathematical operations and numerical calculations in reports. These functions are commonly used to calculate totals, percentages, remainders, powers, and differences between values.
 
+[!INCLUDE [Fabric feature-preview-note](../../../../includes/feature-preview-note.md)]
+
 In plan (preview), arithmetic functions help you create calculations for scenarios such as variance analysis, percentage calculations, aggregations, and other day-to-day business computations.
 
 ## ABS

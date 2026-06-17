@@ -11,6 +11,8 @@ ms.search.form: Text formatting functions
 
 In plan (preview), text formatting functions help you manipulate, format, and transform text values in the planning sheet. These functions can be used to combine text, extract characters, change letter casing, format values as text, clean text data, and create dynamic text-based calculations for reports and business scenarios.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 > [!Note]
 >
 >* When configuring the formula column, set the appropriate data type for the column (Number, Text, Boolean, or Date) based on the expected output.
