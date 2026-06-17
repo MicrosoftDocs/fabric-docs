@@ -3,7 +3,7 @@ title: Sources Supported by Fabric Eventstreams (Enhanced)
 description: This file has the list of sources supported by Fabric eventstreams with enhanced capabilities.
 ms.reviewer: xujiang1
 ms.topic: include
-ms.date: 08/26/2025
+ms.date: 05/25/2026
 ---
 
 | Source          | Description |
@@ -19,6 +19,7 @@ ms.date: 08/26/2025
 | [Sample data](../add-source-sample-data.md) | You can choose **Bicycles**, **Yellow Taxi**, **Stock Market**, **Buses**, **S&P 500 companies stocks**, or **Semantic Model Logs** as a sample data source to test the data ingestion while setting up an eventstream. |
 | [Real-time weather](../add-source-real-time-weather.md) | You can add a real-time weather source to an eventstream to stream real-time weather data from various locations. |
 | [Azure SQL Database Change Data Capture (CDC)](../add-source-azure-sql-database-change-data-capture.md) | You can use the Azure SQL Database CDC source connector to capture a snapshot of the current data in an Azure SQL database. The connector then monitors and records any future row-level changes to this data. With DeltaFlow (Preview), you can transform raw CDC events into analytics-ready streams. |
+| [Oracle Database CDC (preview)](../add-source-oracle-database-change-data-capture.md) | You can use the Oracle Database CDC source connector to capture a snapshot of the current data in an Oracle database. The connector then monitors and records any future row-level changes to this data. |
 | [PostgreSQL Database CDC](../add-source-postgresql-database-change-data-capture.md) | You can use the PostgreSQL CDC source connector to capture a snapshot of the current data in a PostgreSQL database. The connector then monitors and records any future row-level changes to this data. With DeltaFlow (Preview), you can transform raw CDC events into analytics-ready streams. |
 | [HTTP (preview)](../add-source-http.md) | You can use the HTTP connector to stream data from external platforms into an eventstream by using standard HTTP requests. It also offers predefined public data feeds with autofilled headers and parameters, so you can start quickly without complex setup. |
 | [MongoDB CDC (preview)](../add-source-mongodb-change-data-capture.md) | The MongoDB CDC source connector for Fabric eventstreams captures an initial snapshot of data from MongoDB. You can specify the collections to monitor, and the eventstream tracks and records real-time changes to documents in selected databases and collections. |

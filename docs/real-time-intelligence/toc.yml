@@ -149,6 +149,8 @@ items:
             href: event-streams/add-source-mongodb-change-data-capture.md
           - name: MySQL Database CDC
             href: event-streams/add-source-mysql-database-change-data-capture.md
+          - name: Oracle Database CDC
+            href: event-streams/add-source-oracle-database-change-data-capture.md
           - name: PostgreSQL Database CDC
             href: event-streams/add-source-postgresql-database-change-data-capture.md
           - name: Real-time weather
