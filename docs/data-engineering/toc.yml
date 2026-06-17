@@ -165,7 +165,7 @@ items:
       href: author-execute-notebook.md  
     - name: Use Python experience in notebooks
       href: using-python-experience-on-notebook.md  
-    - name: Python vs. PySpark notebooks
+    - name: Python vs. PySpark notebook kernel
       href: fabric-notebook-selection-guide.md
     - name: Author and run T-SQL in notebooks
       href: author-tsql-notebook.md

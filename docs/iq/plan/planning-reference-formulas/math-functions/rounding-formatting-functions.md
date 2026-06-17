@@ -11,6 +11,8 @@ ms.search.form: Rounding and formatting functions
 
 Rounding and formatting functions let you round numbers, control numeric precision, and format numeric values in reports. These functions are commonly used to standardize calculations, adjust decimal precision, and round values to specified multiples or whole numbers.
 
+[!INCLUDE [Fabric feature-preview-note](../../../../includes/feature-preview-note.md)]
+
 In plan (preview), rounding and formatting functions help you create calculations for scenarios such as financial reporting, data standardization, pricing analysis, and formatted business calculations.
 
 ## CEILING

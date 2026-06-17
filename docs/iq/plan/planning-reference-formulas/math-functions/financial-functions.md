@@ -11,6 +11,8 @@ ms.search.form: Financial functions
 
 Financial functions let you perform financial calculations in reports. These functions are commonly used to calculate loan payments, evaluate financial scenarios, and support budgeting and forecasting activities.
 
+[!INCLUDE [Fabric feature-preview-note](../../../../includes/feature-preview-note.md)]
+
 ## PMT
 
 The *PMT* function calculates the periodic payment amount for a loan based on a constant interest rate and a fixed payment schedule. It determines the amount to be paid in each period to repay a loan or investment over time. This function is commonly used in financial planning, loan analysis, and investment calculations.

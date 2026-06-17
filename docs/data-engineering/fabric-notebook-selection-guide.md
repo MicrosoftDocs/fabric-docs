@@ -1,147 +1,208 @@
 ---
-title: Choosing Between Python and PySpark Notebooks in Microsoft Fabric
-description: Learn more about choosing between python and pyspark notebooks in Microsoft Fabric.
+title: Choosing a notebook kernel in Microsoft Fabric
+description: Compare the Python, Spark, and T-SQL notebook kernels in Microsoft Fabric based on compute cost, performance, and Delta Lake support.
 ms.reviewer: jejiang
-ms.topic: tutorial
-ms.date: 05/26/2025
+ms.topic: concept-article
+ms.date: 06/17/2025
 ai-usage: ai-assisted
 ---
 
-# Choosing between Python and PySpark Notebooks in Microsoft Fabric
+# Choosing a notebook kernel in Microsoft Fabric
 
-With the introduction of lightweight Python Notebooks in Microsoft Fabric, customers now have two robust options for building and scaling analytics workflows: Python Notebooks and PySpark Notebooks. While both provide a familiar Notebook interface, they differ significantly in how they manage compute resources, scalability, and cost-efficiency. 
- 
-Fabric simplifies the process of selecting or transitioning between notebook types, enabling data professionals to optimize for agility, performance, and budget. This guide is designed to help you evaluate which Notebook is best suited for your current needs-and how to evolve your approach as your workloads grow in complexity and scale. The 'starter pool' provides a pre-warmed compute container that enables near-instant startup for Python or PySpark notebooks. 
+Notebooks in Microsoft Fabric support three kernel types: **Python**, **Spark**, and **T-SQL**. The Spark kernel supports four languages—PySpark, SparkSQL, Scala, and SparkR—all backed by the same Spark compute. This guide focuses on the decision between the Python kernel and the Spark kernel, as these kernels are the most common choices for data engineering workloads. Both run in the same notebook experience but differ in compute model, scalability, engine capabilities, and Delta Lake compatibility. This guide provides a balanced evaluation to help you choose the right kernel—and avoid common misconceptions about cost and performance.
 
-## Quick Decision Matrix - Choose Fast
+> [!IMPORTANT]
+> The choice of notebook kernel isn't simply about cost or data size. Compute configuration, Delta Lake feature requirements, engine maturity, and expected data growth all play important roles in making the right decision.
 
-Best for quick selection based on workload type. 
+## Understand your compute options
 
-Use this high-level reference to quickly determine the most suitable notebook type for common workload patterns. This table is best for early-stage planning and architecture reviews. 
+A common misconception is that the Python kernel is always cheaper than the Spark kernel for small data workloads. In reality, cost depends on how you configure compute for each kernel.
 
-| Scenario | Recommended Notebook |
-|--- |---|
-| Includes pre-installed DuckDB and Polars libraries | Python Notebooks |
-| Small to medium data (fits in memory)  | Python Notebooks (or PySpark on single-node Spark cluster) |
-| Rapid exploration & prototyping | Python Notebooks (or PySpark on single-node Spark cluster) |
-| Large datasets (10GB+) exceeding memory | PySpark Notebooks |
-| Complex data workflows or ETL pipelines | PySpark Notebooks |
-| High-concurrency or parallel execution | PySpark Notebooks |
-| Needs Spark-native APIs (MLlib, SQL, Streaming) | PySpark Notebooks |
+### Python kernel compute
 
-## Quick Summary of Key Scenarios - Compare Deeply
+The Python kernel runs on a single-node machine that defaults to **2 vCores** (1 CU) and can be configured to start at up to **64 vCores** (32 CU). This environment has no distributed execution. The starter pool initializes in approximately 5 seconds, making it fast for interactive work.
 
-Use this structured comparison table to understand the architectural and operational trade-offs between notebook types. Best suited for engineering evaluations or implementation planning. 
+### Spark kernel compute
 
-### **Execution & Performance**
+The Spark kernel uses Spark pools with several configuration options:
 
-| Scenario | Python Notebooks (2-core VM) | PySpark Notebooks (Spark Compute) |
-| --- | --- | --- |
-| Startup Time | The built-in starter pool initializes in approximately 5 seconds, while the on-demand pool takes around 3 minutes. | Start-up ranges from ~5 seconds (starter pool) to several minutes (on-demand Spark clusters). |
-| Quick Transformations & API Calls | Ideal for small to medium sized datasets (up to 1GB) | Optimized for large datasets using vectorized execution. |
-| Moderate Workloads | Not optimized for data sizes nearing memory saturation | Efficient at scaling via distributed compute. |
-| Handling of Large Datasets | Limited by single-node memory. May struggle with scaling. | Distributed processing ensures scalable handling of multi-GB to TB workloads. |
-| High-Concurrency Execution | Manual FIFO-style parallelism per notebook | System-managed concurrency with support for parallel execution. |
-| Resource Customization & Scaling | Fixed compute (2-core VM); does not auto scale. Users can manually scale out using %%config within the notebook. | Flexible resource allocation; supports autoscaling and custom Spark configurations. |
+| Cluster configuration | vCores available to executors | Session start time | CUs consumed after session start | 
+|---|---|---|---|
+| Starter pool (default) | 8-core worker nodes, autoscale enabled; starts as a single node and proactively scales to one dedicated worker within minutes of the session starting | ~5 seconds | 8 CUs (minimum, post proactive scale up) |
+| Single-node*, 8-vCore (via Starter pool) | 8-core executor and driver share the same node | ~5 seconds (with prewarmed pool) | 4 CUs |
+| Single-node*, 4-vCore custom pool | 4-core executor and driver share the same node | Requires a custom pool; session start is typically between 3-5 minutes | 2 CUs |
+| Multi-node custom pool | Scales with cluster size | Session start is typically between 3-5 minutes | Varies |
 
-### **Workflow & Orchestration**
+When using the starter pool, a single-node 8-vCore Spark session starts in approximately 5 seconds—comparable to the Python kernel. A single-node Spark cluster keeps costs similar to the Python kernel while providing access to all Spark-native capabilities, including the Native Execution Engine (NEE).
 
-| Scenario | Python Notebooks (2-core VM) | PySpark Notebooks (Spark Compute) |
-| --- | --- | --- |
-| API Orchestration | Effective for lightweight orchestration and control flows, especially REST/gRPC-based integrations | Less optimal for basic orchestration tasks due to longer start-up and distributed overhead. |
-| Complex ETL DAGs | Limited to sequential (FlFO) task execution on a single node, lacking support for parallel processing. | Supports concurrent task execution within DAGs using FlFO or FAlR scheduling, enabling efficient parallel processing for complex ETL workflows. |
+> [!NOTE]
+> There's two ways to configure single-node Spark pools. For most workloads, it's typically recommended to use the first method, _Overprovisioned single-node_. The second method, _Classic single-node_ is better when there's driver heavy processes but constrains the amount of resources usable by Spark executors.
+> 
+> - **Overprovisioned single-node**: start with a Spark Pool (that is, Starter Pool) configured with _autoscale_ and _dynamic allocation_ enabled with _autoscale_ set to 1 to > 1 nodes. Create an Environment item referencing the Spark Pool and set the number of executors to 1. Notebooks using this Environment provision with a single-node Spark cluster where both the driver and executor share all resources.
+> - **Classic single-node**: create a Spark Pool with the maximum number of nodes set to 1. This configuration works with _autoscale_ and _dynamic allocation_ enabled or disabled, as the selection has no effect on the provisioning strategy. Notebooks using this Spark Pool have 50% of v-cores allocated to the driver and 50% allocated as executors.
 
-### **Platform & Library Support**
+## Performance by workload scale
 
-| Scenario | Python Notebooks (2-core VM) | PySpark Notebooks (Spark Compute) |
-| --- | --- | --- |
-|  Library Access | Strong Python library support across multiple runtimes; however, limited access to Spark-native libraries may require manual integration. | Fully supports MLlib, Spark SQL, PySpark, and Spark Streaming. |
-| Delta Lake Handling | The Python Notebook runtime comes with pre-installed [deltas](https://delta-io.github.io/delta-rs/) and [duckdb](https://duckdb.org/) libraries, enabling both reading and writing of Delta Lake data. However, some Delta Lake features may still be unsupported. | Fully supported with native compatibility. |
+Benchmarks comparing Fabric Spark with the Native Execution Engine against single-machine Python engines (like Pandas, DuckDB, or Polars) across end-to-end ELT workloads show clear patterns based on data scale:
 
-### **Production & Enterprise Readiness**
+| Data scale (compressed) | Engine advantage |
+|---|---|
+| Ultra-small (< ~140 MB) | Single-machine Python engines (DuckDB, Polars) are faster. |
+| Small (~1–2 GB) | Python engines still have an advantage, but Fabric Spark with NEE becomes competitive as the number of cores available for each engine is increased, particularly for write-heavy operations. |
+| Small-medium (~10–13 GB) | Fabric Spark with the Native Execution Engine is competitive with or faster than most single-machine engines. Single-machine Python engines can run into out-of-memory (OOM) errors at lower vCore counts. |
+| Medium and above (~100 GB+) | For most workloads, Fabric Spark with the Native Execution Engine is the fastest and most reliable engine. |
 
-| Scenario | Python Notebooks (2-core VM) | PySpark Notebooks (Spark Compute) |
-| --- | --- | --- |
-| Production Management | Limited production features; Does not support environment vars. | Support for production workflows with environment variables, library management through environment items, and item-based deployment. |
 
-### **Cost Considerations**
+### Scaling beyond small data
 
-| Scenario | Python Notebooks (2-core VM) | PySpark Notebooks (Spark Compute) |
-| --- | --- | --- |
-| Cost Profile | Lower initial cost (minimum 2 vCores); best suited for lightweight, ad hoc workloads. | Higher initial cost (minimum 4 vCores); designed for scalable, enterprise-grade workloads. Autoscaling can reduce costs, potentially resulting in a lower total cost of ownership (TCO). |
+Consider the rate of data growth when selecting an engine. Non-distributed Python engines work well for truly small data, but migrating your code when data exceeds their limits is costly. Starting with Spark on a single-node configuration lets you scale out seamlessly to a multi-node configuration without rewriting your data engineering pipelines.
 
-## When to Use Python vs. PySpark Notebooks
+## Delta Lake compatibility
 
-Fabric Notebooks offer flexibility for a wide range of users and workloads. This section helps you assess which notebook type aligns best with your current and future needs. 
+Delta Lake compatibility is a critical consideration when selecting an engine. Fabric Spark has native, full-featured Delta Lake support, while Python engines may have meaningful gaps:
 
-Use **Python Notebooks** for fast iteration, cost-effective analysis, and interactive development. They are ideal for smaller datasets and include native support for libraries like DuckDB and Polars. 
+> [!IMPORTANT]
+> The following feature support table reflects the state of each engine as of June 2026 and is based on direct testing against Fabric Spark Runtime 1.3 and 2.0. The open-source software (OSS) Python ecosystem for Delta Lake is moving fast—delta-rs, DuckDB, and Polars all ship frequent releases that periodically add expanded support for Delta protocol. Always verify against the current documentation and release notes for each engine before relying on a specific feature in production:
+> - **delta-rs**: [https://delta-io.github.io/delta-rs/](https://delta-io.github.io/delta-rs/)
+> - **DuckDB Delta extension**: [https://duckdb.org/docs/extensions/delta](https://duckdb.org/docs/extensions/delta)
+> - **Polars**: [https://docs.pola.rs/](https://docs.pola.rs/)
+> - **Delta Lake protocol**: [https://github.com/delta-io/delta/blob/master/PROTOCOL.md](https://github.com/delta-io/delta/blob/master/PROTOCOL.md)
 
-Use **PySpark Notebooks** for distributed computing, production-grade ETL workflows, or scenarios where high concurrency and Spark-native APIs are essential. 
 
-### **Choose Python Notebooks When:**
+| Delta Lake feature | Fabric Spark | delta-rs (Python) | DuckDB | Polars |
+|---|---|---|---|---|
+| **Read Delta tables** | ✅ | ✅ | ✅ | ✅ |
+| **Write Delta tables** | ✅ | ✅ Append, overwrite (incl. predicate-based), UPDATE, DELETE, MERGE | ⚠️ INSERT only (requires `ATTACH ... (TYPE delta, READ_WRITE)`); no UPDATE/DELETE/MERGE; use delta-rs for other write operations | ⚠️ Append, overwrite (incl. predicate-based), merge only; no UPDATE/DELETE |
+| **ACID guarantees / Optimistic Concurrency Control** | ✅ | ✅ | ⚠️ INSERT is append-only; no native conflict detection; use delta-rs with version pinning for read-then-write isolation | ⚠️ OCC on writes; Polars reads are outside the transaction boundary—requires explicit version pinning for read-then-write isolation |
+| **Schema evolution on write** | ✅ | ✅ | ❌ No schema evolution on INSERT | ✅ |
+| **Column mapping** | ✅ | ❌ | ✅ | ❌ |
+| **Deletion vectors (read)** | ✅ | ❌ | ✅ | ✅ |
+| **Deletion vectors (write)** | ✅ | ❌ | ❌ | ❌ |
+| **Type widening (read)** | ✅ | ❌ | ✅ | ❌ |
+| **Type widening (write)** | ✅ | ❌ | ❌ | ❌ |
+| **File skipping** | ✅ | ✅ | ✅ | ✅ |
+| **Partitioned writes** | ✅ | ✅ | ❌ Use delta-rs to write with partitioning | ✅ |
+| **Liquid Clustering (write)** | ✅ | ❌ | ❌ | ❌ |
+| **Time travel** | ✅ | ✅ | ✅ | ✅ |
+| **RESTORE** | ✅ | ✅ | ❌ Use delta-rs to restore tables | ❌ Use delta-rs to restore tables |
+| **Shallow clone (create)** | ✅ | ❌ | ❌ | ❌ |
+| **Shallow clone (read)** | ✅ | ❌ | ❌ | ❌ |
+| **Row tracking** | ✅ | ⚠️ Reads and writes succeed but row tracking `_metadata` isn't accessible; pipelines relying on row_id for deduplication or change data capture (CDC) must use Spark to read | ⚠️ Reads and writes succeed but row tracking `_metadata` isn't accessible; pipelines relying on row_id for deduplication or CDC must use Spark to read | ⚠️ Reads and writes succeed but row tracking `_metadata` isn't accessible; pipelines relying on row_id for deduplication or CDC must use Spark to read |
+| **Identity columns (read)** | ✅ | ✅ | ✅ | ✅ |
+| **Identity columns (write)** | ✅ | ❌ | ❌ | ❌ |
+| **Generated columns (read)** | ✅ | ✅ | ✅ | ✅ |
+| **Generated columns (write)** | ✅ | ❌ | ❌ | ❌ |
+| **Change Data Feed (read)** | ✅ | ✅ | ❌ Use delta-rs to read change data feed | ❌ Use delta-rs to read change data feed |
+| **Change Data Feed (write)** | ✅ | ❌ | ❌ | ❌ |
+| **V2 checkpoints (read)** | ✅ | ❌ | ✅ | ❌ |
+| **V2 checkpoints (write)** | ✅ | ❌ | ❌ | ❌ |
+| **Checkpoint interval** | ✅ Configurable (default 10) | ⚠️ Configurable (default 100) | ❌ INSERT doesn't write checkpoints; log grows unbounded without external maintenance via delta-rs | ⚠️ Configurable (default 100) |
+| **OPTIMIZE** | ✅ | ✅ | ❌ Use delta-rs to optimize | ❌ Use delta-rs to optimize |
+| **Auto compaction** | ✅ | ❌ | ❌ | ❌ |
+| **VACUUM** | ✅ | ❌ Risk: accumulating orphaned files | ❌ Risk: accumulating orphaned files | ❌ Risk: accumulating orphaned files |
+| **VACUUM LITE** | ✅ | ✅ | ⚠️ Use delta-rs to vacuum lite | ⚠️ Use delta-rs to vacuum lite |
 
-- You need fast start-up (typically within seconds) on a lightweight 2-core container. 
-- If minimizing compute cost is a priority - for interactive analysis or scheduled micro-jobs. 
-- You want immediate access to pip-installable libraries and pre-installed DuckDB and Polars. 
-- You need to test across different Python runtime versions. 
-- Your data comfortably fits in the memory of a single node. 
 
-### **Choose PySpark Notebooks When:**
+Key implications:
 
-- Your workloads exceed the memory or compute limits of a single node. 
-- You require high-concurrency pools to run parallel jobs across Notebooks. 
-- You're orchestrating complex ETL pipelines with FAIR or FIFO scheduling. 
-- You rely on Spark-native APIs such as MLlib, Spark SQL, or Spark Streaming. 
-- You need production-grade features like environment variables and item-based library management. 
+- **Newer Delta features**: Support for newer Delta Lake features—including type widening, v2 checkpoints, liquid clustering, identity columns, Change Data Feed writes, and shallow clone reads—is inconsistent or absent across OSS Python engines. If your data pipeline depends on any of these features, use Fabric Spark. Treat Python engines as a complement to Spark for specific workloads (lightweight reads, local development, simple appends) rather than a general-purpose replacement.
 
-## Key Differences at a glance - reference concisely
+- **Deletion vectors**: Deletion vectors are a best practice for Delta tables (enabled by default starting in Fabric Spark Runtime 2.0) as they greatly improve the performance of MERGE, UPDATE, and DELETE operations via a _merge-on-read_ strategy. No Python engine (delta-rs, DuckDB, or Polars) supports writing deletion vectors. If you use any Python engine to write to tables that have deletion vectors enabled, you encounter compatibility errors.
 
-See Glossary at the end of this guide for definitions of terms like VORDER, NEE, and Items-Based Library Management. 
+- **ACID guarantees**: Not all Python engines provide native ACID guarantees. Delta-rs supports optimistic concurrency control (OCC) for merge, update, and delete operations. However, cross-engine pipelines where DuckDB or Polars performs the read and delta-rs performs the write require explicit version pinning on both sides to maintain read-write isolation. DuckDB INSERT is an append-only operation with no conflict detection.
 
-This section provides a quick reference for the fundamental technical and architectural differences between Python and PySpark Notebooks. 
+- **Checkpointing**: Not all Python engines write checkpoints, and those engines that do default to every 100 commits rather than Spark's default of every 10 commits. DuckDB INSERT never writes checkpoints, causing the Delta transaction log to grow unbounded. Consider setting a lower checkpoint interval in delta-rs and Polars, and run periodic delta-rs maintenance for tables written by DuckDB.
 
-| Category | Python Notebooks | PySpark Notebooks |
-| -------- | ---------------- | ----------------- |
-| Compute Runtime | Lightweight container (2-core VM) | Spark cluster (single-node or high-concurrency pool) |
-| Start-up Time  | Instant start-up (seconds via starter pool) | Start-up ranges from ~5 seconds (via starter pool) to several minutes (when using on-demand Spark clusters). |
-| Cost Profile | Lower cost; ideal for short tasks and prototyping | Higher cost; suited for scalable, long-running workloads |
-| Python/Spark Versioning | Multiple Python versions available | Tied to specific Spark runtime version |
-| Custom Libraries | pip install + resource folders | pip install + resource folders + environments item |
-| Fabric Spark Capabilities | Limited access to Spark engine features | Full access: NEE, Autotune, VORDER, Vegas Cache |
-| Delta Lake Compatibility | Partially compatible; potential performance issues | Fully supported and optimized |
+- **Row tracking**: All Python engines can read from and write to tables with row tracking enabled, but the `_metadata` column containing `row_id` and `row_commit_version` isn't accessible outside Spark. Pipelines that rely on `row_id` for deduplication or CDC must use Spark to read.
 
-## Evolving your workload: from Python to PySpark
+- **OPTIMIZE and VACUUM**: Python engines rely on the `deltalake` library for compaction and vacuum. While delta-rs can be fast for these operations, this approach introduces extra dependency management and the operations aren't natively orchestrated the way they are in Spark. Tables written exclusively via Python engines accumulate small files and unbounded transaction logs without explicit maintenance.
 
-Fabric Notebooks are designed to grow with your workload complexity. This section outlines how you can scale your Notebook strategy from simple exploration to distributed data processing. 
+- **Shallow clones**: Python engines don't support reading tables created via shallow clone due to absolute path resolution limitations. No Python engine supports creating shallow clones.
 
-| Stage | Recommended Notebook | Trigger Condition |
-| -------- | ---------------- | ----------------- |
-| **Start** | Python Notebooks (2-core) | Small, interactive workloads |
-| **Scale Up** | Python Notebooks _(Manual switch to larger VM)_ | Approaching memory or CPU limits  |
-| **Scale Out** | PySpark Notebooks _(Manual switch to Spark pool)_ | Need for distributed compute or parallel execution |
+## Engine maturity and Microsoft support
 
-> [!TIP] 
-> As you transition to PySpark, ensure your code uses Spark-compatible syntax. Validate your workloads in the Spark environment before deploying to production.
+### Fabric Spark support
 
-## Summary
+Fabric Spark is Microsoft's own fork of open-source Apache Spark. Microsoft maintains and ships the runtime, meaning:
 
-Python Notebooks support kernel operations such as interrupting and restarting the kernel, which accelerates interactive development. They are ideal for rapid, cost-efficient analysis of small to medium-sized datasets and excel at prototyping, experimentation, and lightweight scheduled tasks.  
+- Microsoft supports Spark and Delta Lake internals end-to-end, including the Native Execution Engine (NEE), which is built on Velox and Apache Gluten.
+- You can open support tickets for Spark behavior, query plans, memory issues, and engine bugs.
+- Performance improvements are continuously shipped as part of Fabric runtime updates—your existing code gets faster without code changes.
 
-As data volume and complexity increase, PySpark Notebooks offer the distributed computing power and production-grade features needed for large-scale enterprise analytics. Choosing the right Notebook is an evolving process. Start with the simplest option that meets your current needs and scale as your data landscape grows. 
+### Python engine support
 
-Refer to the Glossary on the final page for explanations of terms such as NEE, VORDER, and Vegas Cache. 
+Microsoft doesn't maintain a fork of OSS Python engines like DuckDB or Polars. Support is limited to issues in the OneLake integrations shipped as part of the Fabric runtime, such as authentication or file system access. If you encounter a performance regression, an engine bug, or a broken API between library versions, you need to engage directly with the open-source communities for those libraries.
 
-## Glossary of terms
+### Operational maturity
 
-- Item-Based Library Management: Manages versioned packages and production libraries within the Environment item. 
-- Delta Lake Compatibility: Cross-environment support for Delta tables; fully supported in PySpark. 
-- FAIR Scheduling: A scheduling policy that allocates resources fairly across concurrent Spark jobs. 
-- FIFO Scheduling: First-In-First-Out execution order for job scheduling. 
-- NEE (Native Execution Engine): An optimized query engine unique to Fabric Spark. 
-- Spark Pool: A shared compute resource for running distributed Spark workloads. 
-- VORDER: Fabric optimization for vectorized query execution paths. 
-- Vectorized Acceleration: Processes data in batches using vector operations for faster performance. 
-- Vegas Cache: An in-memory cache that speeds up repeated Spark data access. 
+Real-world experience building end-to-end ELT benchmarks with these engines highlights meaningful differences in operational maturity:
+
+- **Spark**: Code written for one runtime version runs without modification on newer versions and performs faster due to continuous Microsoft engineering investment. The Spark UI and Fabric telemetry provide live monitoring with full visibility into active queries, execution plans, and historical job runs.
+- **DuckDB and Polars**: API and behavior changes between versions can require code refactoring as engines mature and APIs evolve. Both engines lack live monitoring—when a job runs longer than expected, there's no equivalent to the Spark UI to understand what's happening. Authentication to OneLake can require version-specific workarounds.
+- **Composable data stack overhead**: Using DuckDB or Polars for a full ELT workflow typically means stitching together multiple libraries (for example, DuckDB for data scan and transformation, `delta-rs` for writes and maintenance). Library compatibility needs to be maintained between the components and should be considered anytime the version of the library is upgraded beyond what ships in the runtime.
+
+## Decision guidance
+
+### Use the Python kernel when
+
+- Your data is small—under approximately 1 GB compressed—and raw performance on single-machine engines matters most.
+- You're building lightweight API orchestration, REST/gRPC integrations, or control-flow automation where distributed compute adds unnecessary overhead.
+- You're doing rapid interactive exploration of small datasets where ad-hoc query latency is the priority.
+- Your workload requires an older Python version than what ships in the current Fabric Spark runtime.
+- You understand and accept the Delta Lake feature limitations of the Python engine you're using.
+
+### Use the Spark kernel when
+
+- Your data is 1 GB or larger in compressed form, or you expect data to grow to that scale.
+- You need full Delta Lake compatibility, including deletion vectors, column mapping, type widening, OPTIMIZE, VACUUM, and ACID guarantees.
+- You require production-grade features such as environment variables, item-based library management, high-concurrency, and FAIR or first-in, first-out (FIFO) job scheduling.
+- You need live monitoring and full operational visibility into running jobs.
+- You rely on Spark-native APIs such as MLlib, Spark SQL, or Spark Streaming.
+- You want Microsoft end-to-end support for your data processing engine.
+- You want the ability to scale from single-node to multi-node compute without rewriting code.
+- You need to author notebooks in PySpark, SparkSQL, Scala, or SparkR.
+
+> [!TIP]
+> For workloads at or above the 1 GB compressed scale, consider starting with a single-node 8-vCore Spark cluster using the starter pool. You get near-instant session start times, full Fabric Spark capabilities including NEE, and the ability to scale to multi-node when needed—all while operating on just a single node like the Python kernel.
+
+## Key differences at a glance
+
+| Category | Python kernel | Spark kernel |
+|---|---|---|
+| Default compute | 2-vCore single-node virtual machine (VM) (scalable up to 64 vCores) | Starter pool: 8-vCore worker nodes with autoscale |
+| Minimum single-node config | 2 vCores | 8 vCores (starter pool, ~5 sec start); 4 vCores (custom pool, longer start) |
+| Startup time | ~5 seconds | ~5 seconds (starter pool); longer for custom pools |
+| Distributed execution | No | Yes |
+| Supported languages | Python | PySpark, SparkSQL, Scala, SparkR |
+| Python version | Multiple versions available | Tied to Fabric Spark runtime version |
+| Delta Lake (full feature support) | No | Yes |
+| Live monitoring | Limited | Full (Job monitoring page + Spark UI) |
+| Microsoft engine support | OneLake integrations only | Full runtime support |
+| Python library access | Broad; pip installable | pip install + environment items |
+| Spark-native APIs (MLlib, Streaming) | No | Yes |
+| Production features (env vars, environments) | Limited | Full |
+| High-concurrency support | No | Yes |
+| V-Order for fast Direct Lake Semantic Models | No | Yes |
+| Intelligent cache enabling accelerate repeat reads | No | Yes |
+| Scales to multi-node | No | Yes |
+
+## Glossary
+
+- **ACID transactions**: A set of properties (Atomicity, Consistency, Isolation, Durability) that guarantee database operations are processed reliably. Delta Lake implements ACID semantics using optimistic concurrency control and transaction logs.
+- **Optimistic Concurrency Control (OCC)**: A concurrency strategy where transactions proceed without locking, then verify at commit time that no conflicting changes occurred. Delta Lake uses OCC; cross-engine pipelines (for example, Polars reads followed by delta-rs writes) require explicit version pinning to maintain isolation.
+- **Auto compaction**: A Delta Lake feature in the Fabric Spark runtime that automatically merges small files into larger ones after write operations, reducing file fragmentation without a separate OPTIMIZE step.
+- **Change Data Feed (CDF)**: A Delta Lake feature that records row-level changes (insert, update, delete) in a table, enabling incremental data processing and CDC pipelines. Only Fabric Spark supports writing Change Data Feed (CDF) metadata; OSS Python engines can read but not produce it.
+- **Column mapping**: A Delta Lake feature that allows columns to be renamed or dropped without rewriting the underlying Parquet files. Supported by Fabric Spark; not supported by delta-rs or Polars.
+- **delta-rs**: An open-source Rust implementation of the Delta Lake protocol with Python bindings (the `deltalake` PyPI package). Provides Delta read/write support in OSS Python environments but has narrower feature coverage than `delta-spark` which back the Fabric Spark runtime.
+- **Deletion vectors**: A Delta Lake optimization that uses merge-on-read to reduce the amount of data rewritten during MERGE, UPDATE, and DELETE operations. Enabled by default in Fabric Spark Runtime 2.0; not supported for writes by any OSS Python engine.
+- **FAIR scheduling**: A Spark scheduling policy that allocates cluster resources fairly across concurrent jobs, ensuring no single job monopolizes the cluster.
+- **FIFO scheduling**: A Spark scheduling policy that executes jobs in First-In-First-Out order, giving priority to the first submitted job.
+- **Liquid Clustering**: A Delta Lake feature that incrementally reorganizes data for optimal query performance without requiring explicit partitioning. Only supported by Fabric Spark.
+- **NEE (Native Execution Engine)**: A vectorized C++ query engine built on Velox and Apache Gluten that accelerates Fabric Spark workloads. NEE is available at no extra compute cost and requires no code changes.
+- **Row tracking**: A Delta Lake feature that assigns a stable `row_id` and `row_commit_version` to each row via a `_metadata` column. All engines can read from and write to tables with row tracking enabled, but only Fabric Spark can access the `_metadata` column contents.
+- **Spark pool**: A shared compute resource for running distributed Spark workloads. The starter pool provides prewarmed nodes for near-instant session start times (~5 seconds) with autoscaling enabled by default.
+- **V-Order**: A Fabric write optimization that sorts and compresses Parquet data in a way that improves read performance for Power BI Direct Lake semantic models and other Fabric read paths.
+- **Intelligent cache**: An intelligent disk cache in Fabric Spark that speeds up repeated reads of the same Delta table files by caching file data locally on the executor nodes.
 
 ## Related content
 
@@ -149,3 +210,9 @@ Refer to the Glossary on the final page for explanations of terms such as NEE, V
 - [Use Python experience on Notebook](using-python-experience-on-notebook.md)
 - [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md)
 - [Introduction of Fabric NotebookUtils](notebook-utilities.md)
+- [Native execution engine for Fabric Data Engineering](native-execution-engine-overview.md)
+- [Configure and manage starter pools in Fabric Spark](configure-starter-pools.md)
+- [Apache Spark compute for Data Engineering and Data Science](spark-compute.md)
+- [Delta table maintenance in Microsoft Fabric](delta-lake-table-maintenance.md)
+- [Deletion vectors for Delta tables](delta-lake-deletion-vectors.md)
+- [Concurrency control for Delta tables](delta-lake-concurrency-control.md)

@@ -70,6 +70,7 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Real-time weather                                | Source        | YES                       | - When streaming was last stopped           |
 | Azure SQL Database CDC                                    | Source        | YES                       | - When streaming was last stopped           |
 | PostgreSQL Database CDC                                   | Source        | YES                       | - When streaming was last stopped           |
+| Oracle Database CDC (preview)                             | Source        | YES                       | - When streaming was last stopped           |
 | MongoDB CDC (preview)                                     | Source        | YES                       | - When streaming was last stopped           |
 | HTTP (preview)                                     | Source        | YES                       | - When streaming was last stopped           |
 | MySQL Database CDC                                        | Source        | YES                       | - When streaming was last stopped           |
