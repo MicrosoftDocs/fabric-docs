@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: overview
-ms.date: 06/11/2026
+ms.date: 06/16/2026
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -80,6 +80,7 @@ Admin APIs remain accessible even for restricted workspaces, because the tenant-
 * [OneLake Shortcuts - REST API (Core)](/rest/api/fabric/core/onelake-shortcuts)
     * From a restricted workspace, you can create shortcuts to other data sources such as external storage, or through trusted access.
     * When you create a shortcut to another restricted workspace, you need to create a managed private endpoint and get approval from the target workspace private link service owner in Azure. For more information, see [Cross-workspace communication](security-cross-workspace-communication.md).
+    * Cross-region shortcuts aren't supported using managed private endpoints on private link-enabled workspaces.
     * Shortcut transforms aren't currently supported in restricted workspaces.
 * [Tags - REST API (Core)](/rest/api/fabric/core/tags)
 * [Workspaces - REST API (Core)](/rest/api/fabric/core/workspaces)
