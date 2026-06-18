@@ -9,6 +9,8 @@ ms.topic: how-to
 
 A bridge provides a unified workspace for integrating data sources such as planning sheets, PowerTable sheets, or file-based sources. Use the bridge editor to transform and prepare data for planning. Bridges support data consolidation, real-time planning, and collaboration.
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Create a bridge
 
 Consolidate planning sheets across dimensions with varying granularities using bridges.
