@@ -1,14 +1,14 @@
 ---
-title: Write Back InfoBridge Data
+title: Write Back Infobridge Data
 description: Learn how to integrate and transform plans, budgets, and forecasts from multiple data sources and write data back easily to a unified data integration platform.
 ms.date: 03/11/2026
 ms.topic: how-to
-#customer intent: As a user, I want to know how to write back transformed data from InfoBridge to a Fabric SQL destination.
+#customer intent: As a user, I want to know how to write back transformed data from Infobridge to a Fabric SQL destination.
 ---
 
-# Write back transformed data from InfoBridge
+# Write back transformed data from Infobridge
 
-InfoBridge in plan (preview) not only transforms and integrates data from multiple sources but also enables direct writeback to a Microsoft Fabric SQL database. This process allows the transformed dataset produced in a bridge to become a governed dataset stored in the enterprise data platform.
+Infobridge in plan (preview) not only transforms and integrates data from multiple sources but also enables direct writeback to a Microsoft Fabric SQL database. This process allows the transformed dataset produced in a bridge to become a governed dataset stored in the enterprise data platform.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -16,7 +16,7 @@ This section explains how to write back the output of a bridge to a Fabric SQL d
 
 ## Writeback overview
 
-In the following example, a sample bridge is created using **InfoBridge** that merges two data sources:
+In the following example, a sample bridge is created using **Infobridge** that merges two data sources:
 
 * **Query 1**: A planning sheet containing actual revenue from 2026
 * **Query 2**: An external Excel file containing forecast and projected revenue
@@ -27,7 +27,7 @@ Once the transformation is complete, the merged dataset can be written back to a
 
 Here's an example of transformed data:
 
-:::image type="content" source="media/infobridge-how-to-write-back-data/transformed-data.png" alt-text="Screenshot of the data that InfoBridge transformed." lightbox="media/infobridge-how-to-write-back-data/transformed-data.png":::
+:::image type="content" source="media/infobridge-how-to-write-back-data/transformed-data.png" alt-text="Screenshot of the data that Infobridge transformed." lightbox="media/infobridge-how-to-write-back-data/transformed-data.png":::
 
 ## Add new destination
 

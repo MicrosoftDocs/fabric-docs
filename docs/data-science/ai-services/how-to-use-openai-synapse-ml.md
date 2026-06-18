@@ -7,10 +7,11 @@ ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
 ms.custom:
-ms.date: 01/16/2026
+ms.date: 06/10/2026
 ms.update-cycle: 180-days
 ms.search.form:
 ms.collection: ce-skilling-ai-copilot
+ai.usage: ai-assisted
 ---
 
 # Use Azure OpenAI in Fabric with SynapseML (preview)
@@ -36,9 +37,9 @@ import synapse.ml.core
 from synapse.ml.services.openai import *
 ```
 
-The `OpenAIPrompt` transformer provides more flexibility, including support for the Chat Completions or Responses API, usage tracking, and structured output. For finer control use `OpenAIChatCompletions` or `OpenAIResponses` transformers directly. See more details on [SynapseML GitHub Example Notebook](https://github.com/microsoft/SynapseML/blob/master/docs/Explore%20Algorithms/OpenAI/OpenAI.ipynb)
+The `OpenAIPrompt` transformer provides more flexibility, including support for the chat completions or responses API, usage tracking, and structured output. For finer control, use `OpenAIChatCompletions` or `OpenAIResponses` transformers directly. For more information, see the [SynapseML GitHub example notebook](https://github.com/microsoft/SynapseML/blob/master/docs/Explore%20Algorithms/OpenAI/OpenAI.ipynb).
 
-### Using Chat Completions API
+### Use the chat completions API
 
 ```python
 from synapse.ml.services.openai import OpenAIPrompt
@@ -53,7 +54,7 @@ df = spark.createDataFrame([
 # Configure OpenAIPrompt with chat_completions API
 prompt_completion = (
     OpenAIPrompt()
-    .setDeploymentName("gpt-4.1")
+    .setDeploymentName("gpt-5.1")
     .setApiType("chat_completions")  # Accepts "chat_completions" or "responses"
     .setPromptCol("prompt")
     .setUsageCol("usage")  # Track token usage
@@ -64,7 +65,7 @@ prompt_completion = (
 display(prompt_completion.transform(df).select("prompt", "completions", "usage"))
 ```
 
-### Using Responses API
+### Use the responses API
 
 The Responses API provides improved response quality and better handling of structured outputs.
 
@@ -74,7 +75,7 @@ from synapse.ml.services.openai import OpenAIPrompt
 # Configure OpenAIPrompt with responses API
 prompt_responses = (
     OpenAIPrompt()
-    .setDeploymentName("gpt-4.1")
+    .setDeploymentName("gpt-5.1")
     .setApiType("responses")
     .setPromptCol("prompt")
     .setUsageCol("usage")  # Track token usage
@@ -111,7 +112,7 @@ df = spark.createDataFrame([
 # Configure OpenAIPrompt with JSON response format
 prompt_json = (
     OpenAIPrompt()
-    .setDeploymentName("gpt-4.1")
+    .setDeploymentName("gpt-5.1")
     .setApiType("chat_completions")
     .setPromptCol("prompt")
     .setUsageCol("usage")

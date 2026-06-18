@@ -66,6 +66,22 @@ For example, if your private package sits at `/dags/test/private.whl` in your Gi
 
 :::image type="content" source="media/apache-airflow-jobs/private-package.png" lightbox="media/apache-airflow-jobs/private-package.png" alt-text="Screenshot showing private package added as requirement.":::
 
+## Install a private library from the dags/libs folder
+
+If you don't use a connected Git repository, you can upload a wheel file directly to your Apache Airflow job's `dags/libs` folder and reference it as a requirement. This approach doesn't require an external repository.
+
+1. Upload your `.whl` file to the `dags/libs` folder in your Apache Airflow job's file storage.
+
+1. Add the wheel file as a requirement using the relative path format `dags/libs/<your-wheel-file>.whl`.
+
+   For example:
+
+   ```
+   dags/libs/apache_airflow_providers_microsoft_fabric-0.1.0-py3-none-any.whl
+   ```
+
+1. Restart your Apache Airflow job for the requirement to take effect.
+
 ## Related Content
 
 [Quickstart: Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)

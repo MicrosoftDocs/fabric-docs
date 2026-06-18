@@ -10,6 +10,8 @@ ms.topic: how-to
 
 Conditional formatting helps you highlight important data points in a planning sheet by applying visual cues such as colors, icons, and styles based on defined rules. This formatting improves readability and directs attention to key performance indicators in high-density tabular reports.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Prerequisite
 
 * You have access to the Planning sheet with the required dataset.

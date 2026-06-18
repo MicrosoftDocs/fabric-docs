@@ -3,7 +3,7 @@ title: Connector Capability Comparison Between Azure Data Factory and Data Facto
 description: This documentation provides an in-depth comparison of connector availability between Azure Data Factory (ADF) and Data Factory in Fabric.
 ms.reviewer: lle
 ms.topic: how-to
-ms.date: 05/09/2026
+ms.date: 05/21/2026
 ms.custom:
   - template-how-to
   - connectors
@@ -248,7 +248,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 | **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |--------------------|---------------------|------------------------|------------------------|------------------------|--------------------------|------------------------|
-| [HTTP](connector-http-overview.md)               | ✓/-                | Anonymous             | Support `enableServerCertificateValidation` and `authHeaders`. | ✓/-                   | Anonymous               | `enableServerCertificateValidation` and `authHeaders` are not supported. |
+| [HTTP](connector-http-overview.md)               | ✓/-                | Anonymous             | Support `enableServerCertificateValidation`. <br><br> Support `authHeaders`. | ✓/-                   | Anonymous               | Support Disable server certificate validation. <br><br> `authHeaders` is not supported. |
 | | | Basic | | | Basic | |
 | | | Digest | | | | |
 | | | Windows | | | | |
@@ -260,7 +260,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | | | Service principal with Cert | | | | |
 | [ODBC](connector-odbc-overview.md)               | ✓/✓                | Anonymous             | Support `credential`. | ✓/✓                   | Anonymous               | `credential` is not supported.<br><br>Support SQL statement. |
 | | | Basic | | | Basic | |
-| [REST](connector-rest-overview.md)               | ✓/✓                | Anonymous             | Support `enableServerCertificateValidation` and `authHeaders`. | ✓/✓                   | Anonymous               | `enableServerCertificateValidation` and `authHeaders` are not supported.<br><br>Support Token Audience Uri. |
+| [REST](connector-rest-overview.md)               | ✓/✓                | Anonymous             | Support `enableServerCertificateValidation`. <br><br> Support `authHeaders`. | ✓/✓                   | Anonymous               |  Support Disable server certificate validation.<br><br>Support Token Audience Uri.<br><br> `authHeaders` is not supported. |
 | | | Basic | | | Basic | |
 | | | Service principal | | | Service principal | |
 | | | OAuth 2.0 Client Credential | | | Organizational account | |

@@ -1,6 +1,7 @@
 ---
 title: Eventhouse Endpoint for Lakehouse and Data Warehouse
 description: Use an eventhouse endpoint to query Lakehouse or Warehouse tables with enhanced performance and flexibility in Real-Time Intelligence.
+ai-usage: ai-assisted
 ms.reviewer: tzgitlin, salilkanade, wiassaf
 ms.subservice: rti-eventhouse
 ms.topic: how-to
@@ -17,9 +18,9 @@ When you enable the Eventhouse endpoint, you get:
 
 * **Instant schema sync**: The endpoint syncs tables and schema changes within seconds without manual setup. See the list of [sync statuses](#sync-statuses).
 * **Mirrored schema**: Access current and future lakehouse and warehouse data through a mirrored schema in a dedicated KQL database view.
-* **Rich consumption and visualization options**: Use Copilot, NL2KQL, dashboards, embedded queries, and visual data exploration.
+* **Rich consumption and visualization options**: Use a unified **Analyze data with** entry point across Lakehouse, Data Warehouse, Eventhouse, and KQL database items to improve tool discoverability, including **SQL endpoint** and **Notebook** where applicable, along with Copilot, NL2KQL, dashboards, embedded queries, and visual data exploration.
 * **Reflected in Workspace and OneLake catalog trees**: The Eventhouse endpoint and database appear as new branches in your lakehouse tree.
-* **Fast, scalable queries**: Run analytics in KQL or SQL using advanced table operators and commands.
+* **Fast, scalable queries**: Run analytics in KQL or SQL using advanced table operators and commands. For Eventhouse and KQL database items, **SQL endpoint** in **Analyze data with** appears when OneLake availability and schema synchronization are enabled.
 * **Advanced insights**: Run time series analysis, detect anomalies, and use Python for advanced processing.
 
 After you enable the endpoint, it tracks the source data and optimizes it for Eventhouse performance and flexibility. Each lakehouse or warehouse table attaches to a [OneLake shortcut](onelake-shortcuts.md) in the Eventhouse endpoint with [Query acceleration policies](query-acceleration-overview.md) that optimize the source data. <!-- Eventhouse shortcuts update automatically as the source lakehouse schema changes.-->
@@ -73,6 +74,13 @@ You can enable the Eventhouse endpoint using any of these three methods:
 
    :::image type="content" source="../includes/media/analyze-data-with.png" alt-text="Screenshot of the **Analyze data with** button expanded to see the SQL analytics endpoint, eventhouse endpoint, and notebook options.":::
 
+## Analyze data with menu
+
+Microsoft Fabric provides a unified **Analyze data with** menu across Lakehouse, Data Warehouse, Eventhouse, and KQL database items.
+
+* From Lakehouse and Data Warehouse items, the menu includes **Eventhouse endpoint**.
+* From Eventhouse and KQL database items, the menu includes **SQL endpoint** (when OneLake availability and schema synchronization are enabled) and **Notebook**.
+
 ### Complete the setup
 
 After using any of the above methods:
@@ -98,8 +106,12 @@ The Eventhouse endpoint has these characteristics:
 * **System Overview**: Shows sync status, storage and activity statistics, and more [details](manage-monitor-eventhouse.md#system-overview) including a link to the source lakehouse or warehouse.
 
 * **KQL database**: The database is named **<Lakehouse_Name or Warehouse_Name>_EventhouseEndpoint**. As the **Eventhouse endpoint** is read-only, create database and add table capabilities are disabled. Run KQL queries, create [visualizations](dashboard-real-time-create.md) in a real-time dashboard, and perform advanced analytics with KQL or SQL.
+  The **Analyze data with** > **SQL endpoint** option appears for this database only when OneLake availability and schema synchronization are enabled.
 
 * **Shortcuts**: reference OneLake tables that you can query directly using the table function or using natural language via Copilot. If the source has multiple schemas, the schema name shows in each shortcut name. For example, if the schemas are `sales` and `marketing` and each has a table named `customers`, the shortcuts are `sales_customers` and `marketing_customers`.
+
+> [!NOTE]
+> Select **Analyze data with** > **Notebook** to launch a new or existing Spark notebook that automatically attaches to the selected Lakehouse, Data Warehouse, Eventhouse, or KQL database context.
 
 ## Update the data policy
 
@@ -176,7 +188,7 @@ The Eventhouse endpoint syncs source tables and schema changes within seconds. T
 ## Considerations and limitations
 
 * You can't enable the Eventhouse endpoint from within an open Lakehouse.
-* Changes to the source table schema don't appear at the Eventhouse endpoint.
+* Source table and schema changes are mirrored to the Eventhouse endpoint within seconds (near real time), with possible brief delays while synchronization is in progress.
 
 ## Related content
 

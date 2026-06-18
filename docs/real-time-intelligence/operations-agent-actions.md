@@ -10,9 +10,9 @@ ai-usage: ai-assisted
 
 # Operations agent actions
 
-Operations agents in Microsoft Fabric Real-Time Intelligence respond to the conditions they monitor by taking *actions*. By default, an operations agent sends a message in Microsoft Teams to the user who created the agent whenever it detects a condition that matches its business goals. You don't need to configure anything extra to receive these messages.
+Operations agents in Microsoft Fabric Real-Time Intelligence respond to the conditions they monitor by taking *actions*. By default, an operations agent can send a message in Microsoft Teams to the user who created the agent whenever it detects a condition that matches its business goals. You don't need to configure anything extra to receive these messages.
 
-You can also extend the agent with *custom actions*, such as triggering a Power Automate flow, so the agent can do more than send a notification.
+You can also extend the agent with further actions, such as running a Fabric notebook or triggering a Power Automate flow, so the agent can do more than send a notification.
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
@@ -23,6 +23,8 @@ To enable the agent to contact you proactively when it identifies data that matc
 :::image type="content" source="media/operations-agent/teams-app.png" alt-text="Screenshot of the Fabric Operations Agent in the Teams app." lightbox="media/operations-agent/teams-app.png":::
 
 After you install the app, the agent can send messages in Teams when it identifies data that matches the specified conditions. These messages include a summary of the insights and recommended actions. You can update the recipients of these messages in the agent's configuration settings. Recipients must belong to your organization and have write permissions for the agent item in Fabric. You can find this in the operations agent item settings under **Agent behavior**.
+
+Select **Edit** and choose from sending a direct message to an individual user, or posting in a Teams channel.
 
 :::image type="content" source="media/operations-agent/agent-behavior.png" alt-text="Screenshot of the option for agent behavior in the Fabric Operations Agent settings." lightbox="media/operations-agent/agent-behavior.png":::
 
@@ -37,28 +39,33 @@ Select **Yes** to approve or **No** to reject the recommendation. The message di
 
 <!-- TODO (GA): Add a section that explains how to send messages to a Teams channel instead of a 1:1 chat once the feature ships. Include configuration steps and a screenshot of the channel target picker. -->
 
-## Create custom actions
+## Configure agent actions
 
-In addition to Teams messages, you can define custom actions that the agent can take when it detects a condition. Each action has a name, a description that clarifies its purpose, and an optional list of parameters (such as a specific value) that the agent passes when it invokes the action.
+In addition to Teams messages, you can provide actions that the agent can take when it detects a condition. Each action has a name, a description that clarifies its purpose, and an optional list of parameters (such as a specific value) that the agent passes when it invokes the action. Select **Add action** in the Agent setup to define an action.
 
-<!-- TODO (GA): Replace the screenshots in this section when the new action wizard ships. The new wizard changes the layout of the actions pane, the configuration pane, and the connection step. -->
-<!-- TODO (GA): Add subsections for the new built-in action types (for example, run a Fabric notebook, run a Fabric pipeline) once they're available. Each new action type needs a short description, configuration steps, and a screenshot. -->
+Choose the type of action. Fabric item allows you to run notebooks, pipelines, user-defined functions and other Fabric items. Choose Power Automate to create a new flow in Power Automate and link this agent to it.
 
-:::image type="content" source="media/operations-agent/actions.png" alt-text="Screenshot of the actions section on the setup page." lightbox="media/operations-agent/actions.png":::
+:::image type="content" source="media/operations-agent/create-actions.png" alt-text="Screenshot of the action selection." lightbox="media/operations-agent/create-actions.png":::
 
-After you create an action, configure it:
+### Configure a Fabric item action
 
-1. Select the action you want to configure.
+1. If you choose Fabric item, browse to the item and select the appropriate function. Fill in the **Action name** and **Action description** - the agent uses this information to decide which action is appropriate when conditions are met.
 
-    :::image type="content" source="media/operations-agent/action-needs-configuration.png" alt-text="Screenshot of the action needing configuration." lightbox="media/operations-agent/action-needs-configuration.png":::
+    :::image type="content" source="media/operations-agent/new-action.png" alt-text="Screenshot of defining a new action." lightbox="media/operations-agent/new-action.png":::
 
-1. On the **Configure custom action** pane, select the workspace and the activator item, and then create a connection.
+1. The completed action shows in the agent setup pane. You can select edit to reconfigure the action.
 
-    :::image type="content" source="media/operations-agent/create-connection.png" alt-text="Screenshot of the pane for configuring a custom action." lightbox="media/operations-agent/create-connection.png":::
+   :::image type="content" source="media/operations-agent/created-action.png" alt-text="Screenshot of the configured action." lightbox="media/operations-agent/created-action.png":::
 
-1. Select **Copy** to copy the connection string, and select **Open flow builder** to create a flow that gets triggered by the action.
+### Configure a Power Automate action
 
-    :::image type="content" source="media/operations-agent/connector.png" alt-text="Screenshot of copying the connection string." lightbox="media/operations-agent/connector.png":::
+1. If you choose a Power Automate action, specify the Action name and Action description. These are used by the agent to decide on appropriate actions when conditions are met.
+
+    :::image type="content" source="media/operations-agent/create-actions.png" alt-text="Screenshot of the dialog for configuring a custom action." lightbox="media/operations-agent/create-actions.png":::
+
+1. Select the workspace and Activator item to save the Power Automate connection in. This item is used only for saving the connection details. Then, select **Copy** to copy the connection string, and select **Open flow builder** to create a flow that gets triggered by the action.
+
+    :::image type="content" source="media/operations-agent/configure-custom-action.png" alt-text="Screenshot of copying the connection string." lightbox="media/operations-agent/configure-custom-action.png":::
 
 1. In the **Flow builder**, paste the connection string in the **Connection string** field and select **Save**.
 

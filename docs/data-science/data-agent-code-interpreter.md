@@ -6,7 +6,6 @@ author: midesa
 ms.reviewer: jonburchel
 ms.topic: how-to
 ms.date: 05/26/2026
-ai-usage: ai-assisted
 ---
 
 # Enable the code interpreter tool (preview) for your data agent
@@ -32,6 +31,36 @@ To add the code interpreter tool to your data agent:
    :::image type="content" source="media/data-agent-code-interpreter/data-agent-code-interpreter-confirmation.png" alt-text="Screenshot of the confirmation dialog for adding the code interpreter tool to the data agent." lightbox="media/data-agent-code-interpreter/data-agent-code-interpreter-confirmation.png":::
 
 The code interpreter tool is now added to your data agent and ready to use.
+
+> [!WARNING]
+> The first time you use the code interpreter in an existing data agent chat, you may need to clear the thread before the agent picks up the new tool. Start a new chat or clear the existing thread to ensure the code interpreter is available.
+
+## Enable the code interpreter tool with the SDK
+
+You can also enable the code interpreter tool programmatically by using the [Fabric data agent Python SDK](fabric-data-agent-sdk.md). This option is useful when you want to script the setup of your data agent or include it as part of an automated deployment.
+
+```python
+from fabric.dataagent.client import (
+    FabricDataAgentManagement,
+    create_data_agent,
+    delete_data_agent,
+)
+
+# Define the name for the data agent
+data_agent_name = "<data agent name>"
+
+# Create a new data agent (run this once)
+data_agent = create_data_agent(
+    data_agent_name,
+)
+
+# If the data agent already exists, use this instead to connect:
+# data_agent = FabricDataAgentManagement(data_agent_name)
+
+conf = data_agent._client.get_configuration()
+conf.value["experimental"] = {"codeInterpreterEnabled": True}
+data_agent._client.set_configuration(conf)
+```
 
 ## Ask questions
 
