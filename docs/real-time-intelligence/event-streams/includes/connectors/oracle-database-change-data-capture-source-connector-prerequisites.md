@@ -14,4 +14,4 @@ ms.date: 05/25/2026
 - Your Oracle database should be publicly accessible and not behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector virtual network injection](../../streaming-connector-private-network-support-guide.md).
 - Oracle LogMiner enabled on your database for CDC capture.
 - A database user with the required permissions for CDC operations.
-- If you don't have an eventstream, [create an eventstream](../../create-manage-an-eventstream.md).
+
