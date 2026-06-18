@@ -16,6 +16,7 @@ This article shows you how to add an Oracle Database Change Data Capture (CDC) s
 The Oracle Database CDC source connector for Microsoft Fabric eventstream allows you to capture a snapshot of the current data in an Oracle database. The connector then monitors and records any future row-level changes to this data. After the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis. The connector supports Oracle databases whether they're on-premises or in the cloud.
 
 [!INCLUDE [oracle-database-cdc-connector-prerequisites](./includes/connectors/oracle-database-change-data-capture-source-connector-prerequisites.md)]
+- If you don't have an eventstream, [create an eventstream](./create-manage-an-eventstream.md).
 
 ## Supported Oracle versions
 
