@@ -3,7 +3,7 @@ title: Get started with the local MCP server for Real-Time Intelligence
 description: Learn how to set up and use the local Model Context Protocol (MCP) server for Real-Time Intelligence. The server enables AI agents to interact with RTI components like Eventhouse.
 ms.reviewer: sharmaanshul
 ms.topic: how-to
-ms.date: 06/03/2026
+ms.date: 06/14/2026
 ms.search.form: MCP, RTI, AI
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
@@ -24,11 +24,11 @@ The most common scenario for using the local RTI MCP Server is to connect to it 
 
 ## Architecture
 
-The local RTI MCP Server is at the core of the system and acts as a bridge between AI agents and data sources. Agents send requests to the MCP server, which translates them into Eventhouse queries. The RTI MCP server runs locally and provides read‑only access to Fabric.
+The local RTI MCP Server is at the core of the system and acts as a bridge between AI agents and data sources. Agents send requests to the MCP server, which translates them into RTI operations. The RTI MCP server runs locally and provides access to Fabric RTI resources.
 
 :::image type="content" source="media/mcp/model-context-protocol-server-architecture.png" alt-text="Diagram that shows the local MCP server architecture.":::
 
-The local RTI MCP Server acts as a bridge between AI-powered applications and your data in Fabric. It runs locally and provides read-only access to Eventhouse databases.
+The local RTI MCP Server acts as a bridge between AI-powered applications and your data in Fabric. It runs locally and provides access to Eventhouse, Eventstream, Activator, and Map resources.
 
 The architecture follows the MCP client-server model:
 

@@ -25,12 +25,6 @@ Users can create ontologies to unify enterprise semantics across data, models, a
 
 For more information, see [Ontology item overview](https://aka.ms/ontologyitem-overview).
 
-## User can create Graph
-
-Users can visualize data with Graph to drive deeper insights and reveal richer context.
-
-For more information, see [Graph in Fabric](https://go.microsoft.com/fwlink/?linkid=2282471).
-
 ## Users can create Digital Twin Builder (preview) items
 
 Users can create digital twin builder items to build comprehensive digital twins of real-world environments and processes and support broad operational analysis.

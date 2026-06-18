@@ -7,7 +7,7 @@ ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
 ms.custom:
-ms.date: 02/28/2026
+ms.date: 06/10/2026
 ms.update-cycle: 180-days
 ms.search.form:
 ms.collection: ce-skilling-ai-copilot
@@ -46,7 +46,7 @@ The example presented here showcases simple chat completion operations. For comp
 
 ```python
 response = client.chat.completions.create(
-    model="gpt-4.1",
+    model="gpt-5.1",
     messages=[
         {
             "role": "user",
@@ -76,7 +76,7 @@ The Responses API is the recommended approach by OpenAI for new implementations.
 
 ```python
 response = client.responses.create(
-    model="gpt-4.1",
+    model="gpt-5.1",
     input=[
         {
             "role": "user",

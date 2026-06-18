@@ -10,6 +10,8 @@ ms.topic: how-to
 
 The **Manage rules** options allow you to view, edit, reorder, enable, disable, or delete existing conditional formatting rules in the planning sheet.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 Use the **Manage rules** pane to organize and control how multiple conditional formatting rules are applied to your data.
 
 ## Open Manage rules

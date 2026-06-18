@@ -6,17 +6,17 @@ reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI Functions
+ai-usage: ai-assisted
 ---
 
 # Use ai.fix_grammar with PySpark
 
-
-The `ai.fix_grammar` function uses generative AI to correct the spelling, grammar, and punctuation of input text, with a single line of code.
+The `ai.fix_grammar` function corrects spelling, grammar, and punctuation in each input row.
 
 > [!NOTE]
-> - This article covers using *ai.fix_grammar* with PySpark. To use *ai.fix_grammar* with pandas, see [this article](../pandas/fix-grammar.md).
-> - See other AI Functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI Functions](./configuration.md).
+> - This article covers `ai.fix_grammar` with PySpark. For pandas, see [Use ai.fix_grammar with pandas](../pandas/fix-grammar.md).
+> - For all AI Functions and prerequisites, see [AI Functions overview](../overview.md).
+> - Change default configuration for [AI Functions with PySpark](./configuration.md).
 
 ## Overview
 
@@ -57,13 +57,13 @@ results = df.ai.fix_grammar(input_col="text", output_col="corrections")
 display(results)
 ```
 
-This example code cell provides the following output:
+Output:
 
 :::image type="content" source="../../media/ai-functions/fix-grammar-example-output.png" alt-text="Screenshot showing a  data frame with a 'text' column and a 'corrections' column, which has the text from the text column with corrected grammar." lightbox="../../media/ai-functions/fix-grammar-example-output.png":::
 
 ## Multimodal input
 
-The `ai.fix_grammar` function supports file-based multimodal input. You can fix grammar in the content of PDFs and text files by setting `input_col_type="path"`. For more information about supported file types and setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
+To fix grammar in PDFs or text files, set `input_col_type="path"`. For setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
 
 ```python
 # This code uses AI. Always review output for mistakes.
@@ -79,17 +79,7 @@ display(results)
 ## Related content
 
 - Use [ai.fix_grammar with pandas](../pandas/fix-grammar.md).
-- Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
-- Categorize text with [ai.classify](./classify.md).
-- Generate vector embeddings with [ai.embed](./embed.md).
-- Extract entities with [ai_extract](./extract.md).
-- Fix grammar with [ai.fix_grammar](./fix-grammar.md).
-- Answer custom user prompts with [ai.generate_response](./generate-response.md).
-- Calculate similarity with [ai.similarity](./similarity.md).
-- Summarize text with [ai.summarize](./summarize.md).
-- Translate text with [ai.translate](./translate.md).
-
-- Learn more about the [full set of AI Functions](../overview.md).
+- Learn more about [AI Functions](../overview.md).
 - Use [multimodal input with AI Functions](../multimodal-overview.md).
-- Customize the [configuration of AI Functions](./configuration.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).
+- Change default configuration for [AI Functions with PySpark](./configuration.md).
+- Understand [billing for AI Functions](../billing.md).

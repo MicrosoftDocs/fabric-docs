@@ -18,9 +18,9 @@ This step assumes you already [loaded the sample data](tutorial-load-data.md) in
 
 1. In [Microsoft Fabric](https://fabric.microsoft.com/), select the workspace where you want to create the graph model (for example, *My workspace*).
 1. Select **+ New item**.
-1. Select **Analyze and train data** > **Graph model**.
+1. Select **Analyze and train data** > **Graph Instance**.
 
-    :::image type="content" source="./media/quickstart/new-item-graph-model.png" alt-text="Screenshot showing the new item menu with the option to select Graph model." lightbox="./media/quickstart/new-item-graph-model.png":::
+    :::image type="content" source="./media/quickstart/new-item-graph-model.png" alt-text="Screenshot showing the new item menu with the option to select Graph Instance." lightbox="./media/quickstart/new-item-graph-model.png":::
 
     > [!TIP]
     > Alternatively, enter "graph" in the search box and press **Enter** to search for graph items.

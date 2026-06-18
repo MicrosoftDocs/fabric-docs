@@ -36,7 +36,7 @@ Follow these steps to create a new operations agent that monitors an ontology (p
 
 ## Receive notifications in Teams
 
-Install the **Fabric Operations Agent** Teams app so the agent can contact you when it detects matching conditions in your ontology data. For more information, see [Receive messages from an operations agent](../../real-time-intelligence/operations-agent.md#receive-messages-from-an-operations-agent).
+Install the **Fabric Operations Agent** Teams app so the agent can contact you when it detects matching conditions in your ontology data. For more information, see [Receive messages from an operations agent](../../real-time-intelligence/operations-agent-actions.md#receive-messages-from-an-operations-agent).
 
 When a recommendation arrives, review the context (which references ontology entity types, not raw tables), adjust any action parameters if needed, then select **Yes** to approve or **No** to reject.
 

@@ -165,7 +165,7 @@ items:
       href: author-execute-notebook.md  
     - name: Use Python experience in notebooks
       href: using-python-experience-on-notebook.md  
-    - name: Python vs. PySpark notebooks
+    - name: Python vs. PySpark notebook kernel
       href: fabric-notebook-selection-guide.md
     - name: Author and run T-SQL in notebooks
       href: author-tsql-notebook.md
@@ -590,6 +590,8 @@ items:
       href: api-graphql-local-model-context-protocol.md
     - name: Authorizer User data functions
       href: api-graphql-authorizer-function.md
+    - name: Role-based access control
+      href: api-graphql-rbac.md
   - name: Monitoring
     items:
     - name: Monitoring dashboard and logging (preview)
@@ -722,3 +724,5 @@ items:
     href: troubleshoot-lakehouse.md
   - name: Notebook errors
     href: ../data-science/fabric-notebooks-troubleshooting-guide.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/breadcrumb/toc.json
+  - name: Spark job errors
+    href: troubleshoot-spark.md

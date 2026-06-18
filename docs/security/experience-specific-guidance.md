@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 06/15/2026
 ---
 
 # Experience-specific disaster recovery guidance
@@ -330,6 +330,22 @@ Here are the steps to achieve this:
 
 This guide walks you through the recovery procedures for the Real-Time Intelligence experience. It covers KQL databases/querysets and eventstreams.
 
+### Activator
+
+Activator items from the primary region remain unavailable to customers, and Activator trigger definitions aren't replicated to the secondary region. Activator users must take proactive steps to prepare for regional disaster recovery.
+
+To ensure that you can recover Activator items in the event of a regional disaster, set up [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md) to back up trigger definitions and restore them in a workspace in another region.
+
+1. Configure Fabric Git integration for the workspace that contains your Activator item, and [synchronize](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) your trigger definitions with your Git repository.
+1. Keep your Activator trigger definitions committed and synced regularly.
+1. During recovery, create a new workspace in the target region (C2.W2), connect it to the same repository, and sync to restore the trigger definitions.
+1. Reconfigure and validate all Activator data sources and dependencies in the new workspace.
+
+> [!NOTE]
+> The standard Fabric failover process doesn't apply to Activator items. Recovery is limited to Git-based backup and restore of trigger definitions.
+
+For more information about Git integration, see [Introduction to Git integration](../cicd/git-integration/intro-to-git-integration.md).
+
 ### Graph Model/Queryset
 
 Graph Model and Graph Queryset items from the primary region remain unavailable to customers, and these items aren't replicated to the secondary region. To recover, create or use a capacity in a different region and recreate the Graph Model and Graph Queryset items there.
@@ -407,6 +423,20 @@ During recovery, once the new region and capacity in Fabric are set up, you can 
 
 > [!NOTE]
 > If the original Ontology item has a lakehouse configured, refer to the [Lakehouse section](#lakehouse) to recover the lakehouse first. After those dependencies are taken care of, connect the newly recovered lakehouse to the newly recovered Ontology item.
+
+### Operations agents
+
+Operations agent users should take proactive steps to prepare for regional disaster recovery. Following the approach described in this section helps ensure that your agents can be restored quickly after a regional outage.
+
+Use Fabric Git integration to synchronize your workspace with a repository. This approach enables you to reconstruct agent configurations in a new workspace if the service fails over to another region.
+
+Operations agent items in the primary region are unavailable during a regional disaster. Agent configurations, behavior models, and activity logs aren't replicated to the secondary region. In-progress operations, active chat sessions, and previously ingested events at the time of the disaster are also lost.
+
+To prepare for recovery, configure Fabric Git integration and synchronize your agent items with your ADO repository before a disaster occurs.
+
+When recovering, set up your new region and capacity in Fabric, then use the synchronized repository to restore agent configurations into a fresh workspace. Git sync pulls the stored contents from the repository into the empty workspace, recreating your agent items.
+
+Once configurations are restored, confirm that any referenced Eventhouse (KQL) databases or region-specific data sources are accessible in the new region. Update endpoint references in agent configurations as needed. Finally, restart your agents and have users initiate new chat sessions. Previous conversations can't be resumed.
 
 ## Transactional database
 

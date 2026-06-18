@@ -273,7 +273,7 @@ Column level security also follows a more strict behavior in SQL Endpoint by ope
 
 The ReadWrite permission gives read-only users the ability to perform write operations to specific items. ReadWrite permission is only applicable for Viewers or users with the Read permission on an item. Assigning ReadWrite access to an Admin, Member, or Contributor has no effect as those roles already have that permission implicitly.
 
-ReadWrite access enables users to perform write operations through Spark notebooks, the OneLake file explorer, or OneLake APIs. Write operations through the Lakehouse UX for viewers is not supported.
+ReadWrite access enables users to perform write operations through Spark notebooks, the OneLake file explorer, or OneLake APIs.
 
 The ReadWrite permission operates in the following ways:
 

@@ -180,6 +180,10 @@ Keep in mind the following temporary limitations when you use this feature:
 
   The table format virtualization feature currently converts the latest table metadata version in the original table format. If multiple versions are written to the original table format, only the most recent table metadata version will be converted to the virtual table format.
 
+* **Conversion latency and update frequency**
+
+  Generation of table format metadata can take between 5 seconds and 2 minutes. Make sure the updates you make to your source table are less frequent than once per 2 minutes. Otherwise, you may see an inconsistent view of the output table format.
+
 * **Supported data types**
   
   The following Iceberg column data types map to their corresponding Delta Lake types using this feature.

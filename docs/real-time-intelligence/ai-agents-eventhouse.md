@@ -3,7 +3,7 @@ title: Develop AI agents for Real-Time Intelligence (preview)
 description: Learn about the tools and resources available for building AI agents that interact with Eventhouse and other Real-Time Intelligence components, including MCP servers and skills.
 ms.reviewer: sharmaanshul
 ms.topic: overview
-ms.date: 05/04/2026
+ms.date: 06/14/2026
 ms.search.form: MCP, RTI, AI, skills, agents
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
@@ -21,7 +21,7 @@ The [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP)
 
 | Server | Deployment | Key capabilities |
 |--------|------------|-----------------|
-| **Local MCP server** | Self-hosted, open-source | Read-only queries to Eventhouse, Eventstream, Map, and ADX clusters |
+| **Local MCP server** | Self-hosted, open-source | Query and manage Eventhouse, Eventstream, Activator, Map, and ADX resources |
 | **Remote Eventhouse MCP** | Microsoft-hosted HTTP endpoint | Schema discovery, KQL query generation, data sampling, natural language to KQL |
 | **Remote Activator MCP** | Microsoft-hosted HTTP endpoint | Create monitoring rules, manage alerts, trigger actions |
 
