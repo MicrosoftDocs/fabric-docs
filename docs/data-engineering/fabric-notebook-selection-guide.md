@@ -100,7 +100,7 @@ Delta Lake compatibility is a critical consideration when selecting an engine. F
 | **OPTIMIZE** | ✅ | ✅ | ❌ Use delta-rs to optimize | ❌ Use delta-rs to optimize |
 | **Auto compaction** | ✅ | ❌ | ❌ | ❌ |
 | **VACUUM** | ✅ | ❌ Risk: accumulating orphaned files | ❌ Risk: accumulating orphaned files | ❌ Risk: accumulating orphaned files |
-| **VACUUM LITE** | ✅ | ✅ | ⚠️ Use delta-rs to vacuum lite | ⚠️ Use delta-rs to vacuum lite |
+| **VACUUM LITE** | ✅ | ✅ | ❌ Use delta-rs to vacuum lite | ❌ Use delta-rs to vacuum lite |
 
 
 Key implications:
@@ -178,12 +178,12 @@ Real-world experience building end-to-end ELT benchmarks with these engines high
 | Delta Lake (full feature support) | No | Yes |
 | Live monitoring | Limited | Full (Job monitoring page + Spark UI) |
 | Microsoft engine support | OneLake integrations only | Full runtime support |
-| Python library access | Broad; pip installable | pip install + environment items |
+| Python library access | pip install | pip install + environment items |
 | Spark-native APIs (MLlib, Streaming) | No | Yes |
 | Production features (env vars, environments) | Limited | Full |
 | High-concurrency support | No | Yes |
 | V-Order for fast Direct Lake Semantic Models | No | Yes |
-| Intelligent cache enabling accelerate repeat reads | No | Yes |
+| Object store cache enabling accelerate repeat reads | Engine dependent (DuckDB has built-in caching but is not default, Polars doesn't support built-in caching) | Yes ([Intelligent cache](intelligent-cache.md)) |
 | Scales to multi-node | No | Yes |
 
 ## Glossary
