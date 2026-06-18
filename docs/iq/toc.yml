@@ -115,6 +115,12 @@ items:
                 href: plan/planning-how-to-insert-rows-blank.md
               - name: Manage inserted rows
                 href: plan/planning-how-to-manage-inserted-rows.md
+        - name: Insert columns
+          items:
+              - name: Insert data input columns
+                href: plan/planning-how-to-insert-columns/how-to-insert-data-input-columns.md
+              - name: Insert number columns
+                href: plan/planning-how-to-insert-columns/how-to-insert-number-columns.md
         - name: Bulk edit data
           href: plan/planning-how-to-bulk-edit.md
         - name: Set up scenarios
