@@ -1387,8 +1387,8 @@
         href: ../get-started/fabric-known-issues.md?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
   - name: Community
     items:
-    - name: Data factory blog
-      href: https://blog.fabric.microsoft.com/blog/category/data-factory
+    - name: Fabric blog
+      href: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/bg-p/fbc_fabricupdatesblogs
     - name: Data factory forums
       href: https://community.fabric.microsoft.com/t5/Data-Factory-forums/ct-p/datafactory
     - name: Data factory video channel
