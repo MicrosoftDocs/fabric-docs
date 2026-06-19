@@ -283,6 +283,8 @@ items:
       items:
         - name: Create bridge
           href: plan/infobridge-how-to-create-bridge.md
+        - name: Manage query operations
+          href: plan/infobridge-how-to-manage-queries.md     
         - name: Share measures
           href: plan/infobridge-how-to-share-measures.md
         - name: Write back data
