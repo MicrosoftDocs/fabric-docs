@@ -4,7 +4,7 @@ description: Learn how to buy a Microsoft Fabric subscription so that you can st
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: concept-article
-ms.date: 05/06/2025
+ms.date: 06/19/2026
 ai-usage: ai-assisted
 
 #customer intent: As an administrator or an executive, I want to learn how to but a Microsoft Fabric subscription so that I can start working in the Microsoft Fabric platform.
@@ -97,7 +97,7 @@ To buy an Azure SKU, follow these steps:
 
 In addition to purchasing Microsoft Fabric directly through the Azure portal, you can also purchase Fabric capacities through a Cloud Solution Provider (CSP). A CSP is a Microsoft-authorized partner who can provision and manage cloud subscriptions (such as Azure) on your organization's behalf, and provide consolidated billing and support.
 
-Your selected partner helps you set up an Azure subscription (if you don't already have one) and purchase the appropriate Fabric F SKU capacity for your organization. After the capacity is created in your tenant, you can assign your Fabric workspaces (including those on trial capacities) to the newly purchased capacity.
+Your selected partner helps you set up an Azure subscription if you don't already have one and purchase the appropriate Fabric F SKU capacity for your organization. After the capacity is created in your tenant, you can assign your Fabric workspaces (including those on trial capacities) to the newly purchased capacity.
 
 Purchasing through a CSP doesn't change how Fabric works. After the capacity is available in your tenant, you manage and use it the same way as a capacity purchased directly through Azure. If you need help finding a CSP partner, search the [Microsoft AppSource partner directory](https://appsource.microsoft.com/marketplace/partner-dir).
 
