@@ -183,7 +183,7 @@ Real-world experience building end-to-end ELT benchmarks with these engines high
 | Production features (env vars, environments) | Limited | Full |
 | High-concurrency support | No | Yes |
 | V-Order for fast Direct Lake Semantic Models | No | Yes |
-| Object store cache enabling accelerate repeat reads | Engine dependent (DuckDB has built-in caching but is not default, Polars doesn't support built-in caching) | Yes ([Intelligent cache](intelligent-cache.md)) |
+| Object store cache enabling accelerate repeat reads | Engine dependent (DuckDB has built-in caching, Polars doesn't) | Yes ([Intelligent cache](intelligent-cache.md)) |
 | Scales to multi-node | No | Yes |
 
 ## Glossary
