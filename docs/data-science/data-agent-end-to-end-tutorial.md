@@ -229,7 +229,7 @@ If you haven't published the Fabric data agent before, you can publish it follow
 %pip install pandas tqdm  # Skip if already available in the Fabric runtime
 ```
 > [!IMPORTANT]
-> The code below uses the OpenAI Assistants API (`beta.assistants`, `beta.threads`, `beta.threads.runs`), which [OpenAI has deprecated with a shutdown date of August 26, 2026](https://platform.openai.com/docs/assistants/migration). Fabric will migrate this programmatic interface to the [Responses API](https://platform.openai.com/docs/guides/migrate-to-responses) in a future update. The current code continues to work, but plan for a migration when the updated sample becomes available.
+> The code below uses the OpenAI Assistants API (`beta.assistants`, `beta.threads`, `beta.threads.runs`), which [OpenAI has deprecated with a shutdown date of August 26, 2026](https://platform.openai.com/docs/assistants/migration). The current code continues to work until **August 26, 2026** but plan for migrating to [MCP endpoint](data-agent-mcp-server.md) before this date.
 
 ```python
 import typing as t
