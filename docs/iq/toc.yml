@@ -77,6 +77,8 @@ items:
       href: plan/overview-regions.md
     - name: Prerequisites
       href: plan/overview-prerequisites.md
+    - name: Roles
+      href: plan/overview-roles.md 
     - name: Known limitations
       href: plan/overview-limitations.md
   - name: Planning sheets
