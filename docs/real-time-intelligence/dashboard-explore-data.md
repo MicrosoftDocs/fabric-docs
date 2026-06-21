@@ -34,10 +34,10 @@ Each time you explore the data with Copilot, you can view the data updates in Co
 
 1. In your Fabric workspace, select a real-time dashboard, or [create](dashboard-real-time-create.md) a new dashboard, and ensure you're in **Viewing** mode.
 
-    By default, the Copilot pane opens in the context of the entire dashboard. You can ask questions and explore insights based on the entire dashboard data. You can also explore data in the [context of a specific visual](#contextual-copilot-data-exploration).
-
-    :::image type="content" source="media/dashboard-explore-copilot/dashboard-explore-copilot.png" alt-text="Screenshot of a real-time dashboard showing the Explore Data Copilot icon highlighted." lightbox="media/dashboard-explore-copilot/dashboard-explore-copilot.png":::
-
+        By default, the Copilot pane opens in the context of the entire dashboard. You can ask questions and explore insights based on the entire dashboard data. You can also explore data in the [context of a specific visual](#contextual-copilot-data-exploration).
+    
+        :::image type="content" source="media/dashboard-explore-copilot/dashboard-explore-copilot.png" alt-text="Screenshot of a real-time dashboard showing the Explore Data Copilot icon highlighted." lightbox="media/dashboard-explore-copilot/dashboard-explore-copilot.png":::
+    
 [!INCLUDE [copilot-explore-data](../includes/copilot-explore-data.md)]
 
 ## Contextual Copilot data exploration
