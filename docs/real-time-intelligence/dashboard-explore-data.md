@@ -5,7 +5,7 @@ ms.reviewer: mibar
 ms.topic: how-to
 ms.collection: ce-skilling-ai-copilot
 ms.subservice: rti-dashboard
-ms.date: 04/26/2026
+ms.date: 06/21/2026
 ai-usage: ai-assisted
 ---
 
@@ -32,13 +32,15 @@ Use Copilot to explore data in the context of the entire dashboard or of a speci
 For example, you can change the time frame, filter by a column or value, calculate an average or total, or group by a column. 
 Each time you explore the data with Copilot, you can view the data updates in Copilot, and when ready you can save the insights as a new visual in the dashboard or [share them with others](#share-copilot-exploration-insights).
 
-1. In your Fabric workspace, select a real-time dashboard, or [create](dashboard-real-time-create.md) a new dashboard, and ensure you're in **Viewing** mode.
+:::image type="content" source="media/dashboard-explore-copilot/dashboard-explore-copilot.png" alt-text="Screenshot of a real-time dashboard showing the Explore Data Copilot icon highlighted." lightbox="media/dashboard-explore-copilot/dashboard-explore-copilot.png":::
 
-    By default, the Copilot pane opens in the context of the entire dashboard. You can ask questions and explore insights based on the entire dashboard data. You can also explore data in the [context of a specific visual](#contextual-copilot-data-exploration).
-
-    :::image type="content" source="media/dashboard-explore-copilot/dashboard-explore-copilot.png" alt-text="Screenshot of a real-time dashboard showing the Explore Data Copilot icon highlighted." lightbox="media/dashboard-explore-copilot/dashboard-explore-copilot.png":::
+In your Fabric workspace, select a real-time dashboard, or [create](dashboard-real-time-create.md) a new dashboard, and ensure you're in **Viewing** mode.
+Use the following steps to explore your data with Copilot:
 
 [!INCLUDE [copilot-explore-data](../includes/copilot-explore-data.md)]
+
+> [!NOTE]
+> By default, the Copilot pane opens in the context of the entire dashboard. You can ask questions and explore insights based on the entire dashboard data. You can also explore data in the [context of a specific visual](#contextual-copilot-data-exploration).
 
 ## Contextual Copilot data exploration
 
