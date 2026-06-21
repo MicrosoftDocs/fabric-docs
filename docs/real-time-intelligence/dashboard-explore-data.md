@@ -34,7 +34,8 @@ Each time you explore the data with Copilot, you can view the data updates in Co
 
 :::image type="content" source="media/dashboard-explore-copilot/dashboard-explore-copilot.png" alt-text="Screenshot of a real-time dashboard showing the Explore Data Copilot icon highlighted." lightbox="media/dashboard-explore-copilot/dashboard-explore-copilot.png":::
 
-1. In your Fabric workspace, select a real-time dashboard, or [create](dashboard-real-time-create.md) a new dashboard, and ensure you're in **Viewing** mode.
+In your Fabric workspace, select a real-time dashboard, or [create](dashboard-real-time-create.md) a new dashboard, and ensure you're in **Viewing** mode.
+Use the following steps to explore your data with Copilot:
 
 [!INCLUDE [copilot-explore-data](../includes/copilot-explore-data.md)]
 
