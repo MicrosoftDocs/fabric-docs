@@ -3,7 +3,7 @@ title: Troubleshoot Real-Time Dashboard Tile Errors
 description: Learn how to troubleshoot errors in your Real-Time Dashboard tiles.
 ms.reviewer: naor-biton_microsoft, tzgitlin
 ms.topic: concept-article
-ms.date: 05/03/2026
+ms.date: 06/21/2026
 #customer intent: I want to learn how to troubleshoot errors in my dashboard tiles in Real-Time Intelligence.
 ---
 
@@ -51,14 +51,14 @@ The query is syntactically valid but uses invalid references or logic. This erro
 
 ### Network error
 
-The connection between the dashboard and backend services failed. This error occurs due to temporary connectivity issues or service interruptions.
+The connection between the dashboard and backend services failed. This error occurs due to temporary connectivity problems or service interruptions.
 
 **What to do:**
 
 - Check your network connection.
 - Refresh the dashboard.
 - Retry after a short time if the issue is transient.
-- If persistent, check service health or contact support.
+- If the problem persists, check service health or contact support.
 
 ### Visual formatting issue
 
@@ -73,18 +73,18 @@ The tile can't render the visual due to configuration or formatting problems. Th
 
 ### An error occurred
 
-A general error occurred that doesn't fit the above categories. This catch-all error can occur for various reasons, such as unexpected exceptions or unhandled cases.
+A general error occurred that doesn't fit the preceding categories. This catch-all error can occur for various reasons, such as unexpected exceptions or unhandled cases.
 
 **What to do:**
 
-- Check for more details in the error message.
+- Check the error message for more details.
 - Review recent changes to the tile, query, or data source.
 - Try refreshing the dashboard.
 - If the problem persists, contact support with the error details.
 
 ## Get more details from error messages
 
-When a tile error occurs, hover over the tile to expose the **details** button. Select this button to get more information about the error, including error codes and messages that can help identify the root cause.
+When a tile error occurs, hover over the tile to expose the **Details** button. Select this button to get more information about the error, including error codes and messages that can help identify the root cause.
 
 For example:
 
