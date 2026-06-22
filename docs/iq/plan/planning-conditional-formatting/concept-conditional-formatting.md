@@ -1,5 +1,5 @@
 ---
-title: Conditional formatting
+title: Conditional Formatting
 description: Learn how to apply conditional formatting in planning sheets using color scales, classifications, data bars, bubble charts, icons, and action indicators to visualize and analyze data effectively.
 ms.date: 05/14/2026
 ms.topic: concept-article

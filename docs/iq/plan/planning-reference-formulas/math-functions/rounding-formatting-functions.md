@@ -1,5 +1,5 @@
 ---
-title: Rounding and formatting functions
+title: Rounding and Formatting Functions
 description: Learn about rounding and formatting functions in plan (preview) and how to use them to round, format, and control numeric precision in calculations.
 ms.date: 06/01/2026
 ms.topic: reference

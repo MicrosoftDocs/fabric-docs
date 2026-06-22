@@ -1,5 +1,5 @@
 ---
-title: Text formatting functions
+title: Text Formatting Functions
 description: Learn about text formatting functions in plan (preview) and how to use them to manipulate, format, and transform text values in sheet.
 ms.date: 06/03/2026
 ms.topic: reference

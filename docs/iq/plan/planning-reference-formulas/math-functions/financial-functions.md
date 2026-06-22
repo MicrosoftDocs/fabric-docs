@@ -1,5 +1,5 @@
 ---
-title: Financial functions
+title: Financial Functions
 description: Learn about financial functions in plan (preview) and how to use them to perform financial calculations.
 ms.date: 06/04/2026
 ms.topic: reference
