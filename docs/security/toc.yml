@@ -137,6 +137,8 @@ items:
                 href: workspace-outbound-access-protection-onelake.md
               - name: Semantic models (preview)
                 href: workspace-outbound-access-protection-semantic-models.md
+              - name: Power BI reports (preview)
+                href: workspace-outbound-access-protection-power-bi-reports.md
               - name: Real-Time Intelligence (preview)
                 items:
                   - name: Activator

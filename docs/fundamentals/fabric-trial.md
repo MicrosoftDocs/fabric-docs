@@ -66,8 +66,8 @@ Read more about [ending your trial](#end-a-fabric-trial).
 > - To check your trial status or trial expiration date, go to **Admin portal > Capacity settings > Trial**.
 >
 > - If you need to request a trial extension, contact your Microsoft sales representative or contact the [Azure sales team](https://azure.microsoft.com/contact/?msockid=02d2195e72356be10cc60cb5738d6afb) for assistance.
-
-If you’re ready to continue using Fabric, visit the [Purchase Fabric page](../enterprise/buy-subscription.md) to explore your options.
+>
+> - If you’re ready to continue using Fabric, visit the [Purchase Fabric page](../enterprise/buy-subscription.md) to explore your options.
 
 To learn more about limitations and get answers to frequently asked questions about the Fabric trial, see [the FAQ](#frequently-asked-questions).
 
