@@ -75,6 +75,9 @@ Do steps from one of the following sections, which opens a side panel where you 
         1. Select one or more values to match. 
  
             :::image type="content" source="./media/set-alerts-fabric-onelake-events/set-filters.png" alt-text="Screenshot that shows the addition of a filter." lightbox="./media/set-alerts-fabric-onelake-events/set-filters.png":::                 
+
+        > [!NOTE]
+        > File uploads through the Fabric portal might generate storage events with `contentLength = 0`. Don't filter events using `contentLength > 0`, as this might exclude valid events.
     1. Select **Next** at the bottom of the page. 
     1. On the **Review + connect** page, review the settings, and select **Save**.
     
