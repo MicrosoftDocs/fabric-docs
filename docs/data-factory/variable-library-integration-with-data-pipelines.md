@@ -96,7 +96,7 @@ The [Variable library](../cicd/variable-library/variable-library-overview.md) is
 
 The following known limitations apply to the integration of Variable library in pipelines in Data Factory in Microsoft Fabric:
 
-- The Variable library supports Boolean, Datetime, Guid, Integer, Number, and String as data types. In your pipeline, you see Boolean as Bool type, Datetime as String type, Guid as String type, Integer as Int type, and String as String type. Number types aren't supported in pipelines.
+- The Variable library supports Boolean, Datetime, Guid, Integer, Number, and String as data types. In your pipeline, you see Boolean as `Bool` type, Datetime as `String` type, Guid as `String` type, Integer as `Int` type, and String as `String` type. Number types aren't supported in pipelines.
 
 ## Related content
 
