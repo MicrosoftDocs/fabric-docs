@@ -1,7 +1,7 @@
 ---
 title: Python UDFs, Scala UDFs, and complex data types in native execution engine
 description: Learn how the native execution engine in Microsoft Fabric accelerates Python UDFs, Scala UDFs, and complex data types like arrays, maps, and structs for faster Spark processing.
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: sfi-image-nochange
 ms.date: 05/23/2026
 ai-usage: ai-assisted
