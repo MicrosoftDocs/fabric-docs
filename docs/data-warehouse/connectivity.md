@@ -54,6 +54,7 @@ You can't use the Fully Qualified Domain Name (FQDN) of the TDS Endpoint alone.
 - SQL Authentication isn't supported.
 - Multiple Active Result Sets (MARS) isn't supported for [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. MARS is disabled by default. If `MultipleActiveResultSets` is included in the connection string, remove it or set it to false.
 - If you receive error code 24804 with the message "Couldn't complete the operation due to a system update. Close out this connection, sign in again, and retry the operation" or error code 6005 with the message "SHUTDOWN is in progress. Execution fail against sql server. Please contact SQL Server team if you need further support.", it's due to temporary connection loss, likely because of a system deployment or reconfiguration. To resolve this issue, sign in again and retry. To learn how to build resiliency and retries in your application, see [Best Practices](#best-practices).
+- If you receive error code 6008 with the message "Workspace is temporarily unavailable. This may be due to system maintenance or an internal operation. Please reestablish your connection." this error indicates a temporary connection interruption. To resolve this issue, reestablish your connection, sign in again, and retry the operation. This condition is transient and doesn't indicate a failure in your query or application.
 - Linked server connections from SQL Server aren't supported.
 
 ### Connection behavior for InitialCatalog
