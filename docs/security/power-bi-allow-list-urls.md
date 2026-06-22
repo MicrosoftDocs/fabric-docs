@@ -41,6 +41,7 @@ For the general use of Power BI, you must be able to connect to the endpoints an
 
 | Purpose | Destination | Port |
 | --- | --- | --- |
+| **Required:** Azure Blob Storage | *.blob.core.windows.net | TCP 443 |
 | **Required:** Backend APIs | api.powerbi.com | TCP 443 |
 | **Required:** Backend APIs | *.analysis.windows.net | TCP 443 |
 | **Required:** Backend APIs | *.pbidedicated.windows.net | TCP 443 |
