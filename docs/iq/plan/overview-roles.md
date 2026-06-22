@@ -1,5 +1,5 @@
 ---
-title: User roles in plan (preview)
+title: User Roles in Plan (Preview)
 description: Learn about user roles and actions in plan (preview), including capabilities of each role and how to upgrade roles.
 ms.date: 05/05/2026
 ms.topic: overview

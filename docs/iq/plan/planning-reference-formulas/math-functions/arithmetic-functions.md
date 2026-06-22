@@ -1,5 +1,5 @@
 ---
-title: Arithmetic functions
+title: Arithmetic Functions
 description: Learn about arithmetic functions in plan (preview) and how to use them to perform common arithmetic operations and calculations.
 ms.date: 06/04/2026
 ms.topic: reference

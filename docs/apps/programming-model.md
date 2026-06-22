@@ -2,7 +2,7 @@
 title: Programming model overview
 description: Learn about the Fabric Apps programming model, including TypeScript decorators, schema generation, and how data models become production-ready APIs.
 ms.reviewer: mksuni
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 06/02/2026
 ai-usage: ai-assisted
 ---
