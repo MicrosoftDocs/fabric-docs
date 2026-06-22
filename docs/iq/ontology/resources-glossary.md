@@ -1,5 +1,5 @@
 ---
-title: Ontology (preview) glossary
+title: Ontology (Preview) Glossary
 description: This article defines key ontology (preview) terminology.
 ms.date: 01/05/2025
 ms.topic: concept-article

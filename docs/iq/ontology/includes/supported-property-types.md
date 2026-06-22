@@ -1,5 +1,5 @@
 ---
-title: Include file for supported property types
+title: Include File for Supported Property Types
 description: Include file for supported property types for ontology (preview) data binding
 ms.topic: include
 ms.date: 03/31/2025

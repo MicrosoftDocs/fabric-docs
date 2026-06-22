@@ -1,5 +1,5 @@
 ---
-title: Ontology (preview) required tenant settings
+title: Ontology (Preview) Required Tenant Settings
 description: Enable settings on your Fabric tenant before using ontology (preview) features.
 ms.date: 04/30/2026
 ms.topic: concept-article
