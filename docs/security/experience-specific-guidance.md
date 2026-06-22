@@ -398,6 +398,43 @@ Customers can also achieve geo-redundancy by deploying identical Eventstream wor
 
 1. Add identical destinations for each eventstream in different regions.
 
+### Business Events, Fabric Events, and Azure Events
+
+Although Business Events, Fabric Events, and Azure Events share the same Real-Time hub infrastructure in Microsoft Fabric, they have distinct origins, behaviors, and recovery requirements that must be understood before planning for disaster recovery:
+
+- **Fabric Events** are event subscriptions that react to activity produced by Fabric resources themselves, including workspace item lifecycle changes (such as creating, updating, or deleting lakehouses, notebooks, or warehouses), job executions (such as pipeline runs or notebook executions), and OneLake file and folder operations. These subscriptions are push-based and ephemeral. The subscriptions are not replicated to the secondary region.
+
+- **Azure Events** are event subscriptions to activity produced by Azure Blob Storage accounts. These Azure resources exist independently of any Fabric capacity or region. Although the Azure Blob Storage resource itself may remain available during a Fabric regional outage, the subscriptions configured in Real-Time hub are not replicated to the secondary region and must be recreated.
+
+- **Business Events** are a distinct capability in Fabric Real-Time Intelligence that allows teams to define, publish, and act on meaningful business signals. Business events are generated from within Fabric through Activator, Spark notebooks, or User Data Functions, then published to Real-Time hub where downstream consumers such as Activator, Eventhouse, or Power Automate can react to them. Event schemas are governed centrally through the Schema Registry. Eventhouse automatically stores every published business event, so its recovery directly affects the availability of business event history. None of the publisher or consumer configurations, schema definitions, or subscriptions are replicated to the secondary region.
+
+Use the following steps to restore Business Events, Fabric Events, and Azure Events in the new workspace in the recovery region.
+
+**For Business Events:**
+
+1. Recreate the business event used by publishers and consumers by following the article [Create Business Events in Fabric Real-Time Hub](../real-time-hub/business-events/create-business-events.md). During the creation of the business event, you create the Event Schema Set resource. The Eventhouse resource is optional depending on the scenario.
+
+1. Recreate any publisher items that generate business events, such as Spark notebooks or User Data Functions, in the new workspace by following the publisher articles: [Use User Data Function as a Business Events Publisher](../real-time-hub/business-events/business-events-user-data-function.md), [Use Activator as a Business Events Publisher](../real-time-hub/business-events/business-events-activator.md), [Use Notebook as a Business Events Publisher](../real-time-hub/business-events/business-events-notebook.md), and [Use Eventstream as a Business Events Publisher](../real-time-hub/business-events/business-events-event-stream-publisher.md).
+
+1. Recreate the consumer subscriptions in Real-Time hub (for example, Activator rules, notebook triggers, or Power Automate flows) that were originally reacting to business events in the affected region by following the articles [Eventhouse and Real-Time Dashboard Integration with Business Events](../real-time-hub/business-events/business-events-eventhouse.md) and [Consume Business Events from Activator](../real-time-hub/business-events/consume-business-events-from-activator.md).
+
+1. Validate that events are flowing end-to-end by verifying that subscriptions are active and that data is arriving at the expected destinations in the recovery region.
+
+**For Fabric Events:**
+
+1. Recreate the subscriptions in Real-Time hub pointing to the workspace items, jobs, or OneLake paths that were restored in the recovery region by following the article [Explore Fabric events in Fabric Real-Time hub](../real-time-hub/explore-fabric-events.md).
+
+1. Validate that events are flowing end-to-end by verifying that subscriptions are active and that data is arriving at the expected destinations in the recovery region.
+
+**For Azure Events:**
+
+1. Azure Blob Storage accounts are not affected by a Fabric regional outage. Recreate the event subscriptions in Real-Time hub pointing to the same Azure Blob Storage accounts by following the article [Set alerts on Azure Blob Storage events in Real-Time hub](../real-time-hub/set-alerts-azure-blob-storage-events.md).
+
+1. Validate that events are flowing end-to-end by verifying that subscriptions are active and that data is arriving at the expected destinations in the recovery region.
+
+> [!NOTE]
+> Event history for Business Events depends on Eventhouse recovery. Business Events, Fabric Events, and Azure Events are push-based and ephemeral, so no historical event data is recoverable for those types. Only events produced after recovery is complete are available in the new region.
+
 ### Map
 
 Map items from the primary region remain unavailable to customers and the Map items aren't replicated to the secondary region.
