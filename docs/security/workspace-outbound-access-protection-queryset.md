@@ -1,7 +1,7 @@
 ---
 title: Workspace outbound access protection for KQL queryset (preview)
 description: Learn how workspace outbound access protection applies to KQL queryset experiences and which KQL queryset outbound scenarios are supported or blocked.
-ms.topic: conceptual
+ms.topic: concept-article
 ms.reviewer: Gabilehner
 ms.date: 05/31/2026
 ---

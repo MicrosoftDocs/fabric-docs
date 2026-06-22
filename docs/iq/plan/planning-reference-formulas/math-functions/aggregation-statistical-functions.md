@@ -1,5 +1,5 @@
 ---
-title: Aggregation and statistical functions
+title: Aggregation and Statistical Functions
 description: Learn about aggregation and statistical functions in plan (preview) and how to use them to aggregate values and perform statistical calculations.
 ms.date: 06/03/2026
 ms.topic: reference
