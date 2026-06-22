@@ -1,5 +1,5 @@
 ---
-title: Pivot data in a planning sheet
+title: Pivot Data in a Planning Sheet
 description: Learn how to pivot dimensions and measures, configure aggregations, and concatenate text values in a planning sheet.
 ms.date: 06/16/2026
 ms.topic: how-to
