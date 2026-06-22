@@ -75,7 +75,7 @@ The [Variable library](../cicd/variable-library/variable-library-overview.md) is
 
     :::image type="content" source="media/variable-library-integration-with-data-pipelines/add-expression-final.png" lightbox="media/variable-library-integration-with-data-pipelines/add-expression-final.png" alt-text="Screenshot showing the expression set in the expression builder.":::
 
-> [Note]
+> [!NOTE]
 > If you are using a Connection reference or Item reference type, you will need to add a '.' to get the variable properties after you add the variable to the expression builder. This will allow you to use values like connection id, item id, or item workspace. 
 
 1. You see that the dynamic content is added to your activity setting.
