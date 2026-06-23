@@ -12,7 +12,7 @@ ms.date: 10/01/2025
 
 # OneLake shortcut security
 
-OneLake shortcuts serve as pointers to data residing in various storage accounts, whether within OneLake itself or in external systems like Azure Data Lake Storage (ADLS). This article looks at the permissions required to create shortcuts and access data using them.
+Shortcuts in OneLake serve as pointers to data residing in various storage accounts, whether within OneLake itself or in external systems like Azure Data Lake Storage (ADLS). This article looks at the permissions required to create shortcuts and access data using them.
 
 To ensure clarity around the components of a shortcut this document uses the following terms:
 
@@ -48,7 +48,7 @@ This table shows the permissions needed for each shortcut action.
 <sup>2</sup> Alternatively, OneLake security with ReadWrite permission on the shortcut path.
 
 > [!IMPORTANT]
-> <sup>3</sup> **Exception to identity passthrough:** While OneLake security typically passes through the calling user's identity to enforce permissions, certain query engines operate differently. When accessing shortcut data through **Power BI semantic models using DirectLake over SQL** or **T-SQL engines configured for Delegated identity mode**, these engines don't pass through the calling user's identity to the shortcut target. Instead, they use the **item owner's identity** to access the data, and then apply OneLake security roles to filter what the calling user can see.
+> <sup>3</sup> **Exception to identity passthrough:** While OneLake security typically passes through the calling user's identity to enforce permissions, certain query engines operate differently. When accessing shortcut data through **Power BI semantic models using Direct Lake over SQL** or **T-SQL engines configured for Delegated identity mode**, these engines don't pass through the calling user's identity to the shortcut target. Instead, they use the **item owner's identity** to access the data, and then apply OneLake security roles to filter what the calling user can see.
 >
 > This means:
 > - The shortcut target is accessed using the item owner's permissions (not the end user's)
@@ -81,7 +81,7 @@ Shortcuts use two authentication models with OneLake security: passthrough and d
 
 In the passthrough model, the shortcut accesses data in the target location by 'passing' the user’s identity to the target system. This ensures that any user accessing the shortcut is only able to see whatever they have access to in the target.
 
-With OneLake to OneLake shortcuts, only passthrough mode is supported. This design ensures that the source system retains full control over its data. Organizations benefit from enhanced security because there’s no need to replicate or redefine access controls for the shortcut. However, it’s important to understand that security for OneLake shortcuts can't be modified directly from the downstream item. Any changes to access permissions must be made at the source location.
+With OneLake-to-OneLake shortcuts, only passthrough mode is supported. This design ensures that the source system retains full control over its data. Organizations benefit from enhanced security because there’s no need to replicate or redefine access controls for the shortcut. However, it’s important to understand that security for shortcuts in OneLake can't be modified directly from the downstream item. Any changes to access permissions must be made at the source location.
 
 :::image type="content" source=".\media\onelake-shortcut-security\passthrough-mode.png" alt-text="Diagram showing the user identity getting passed along the shortcut to the target path." lightbox=".\media\onelake-shortcut-security\passthrough-mode.png":::
 

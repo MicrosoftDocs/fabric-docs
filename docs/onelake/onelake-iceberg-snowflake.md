@@ -11,7 +11,7 @@ ms.date: 6/30/2025
 
 # Use Snowflake with Iceberg tables in OneLake
 
-Microsoft OneLake can be used with Snowflake for storage and access of Apache Iceberg tables.
+OneLake can be used with Snowflake for storage and access of Apache Iceberg tables.
 
 Follow this guide to use Snowflake on Azure to: 
 * write Iceberg tables directly to OneLake
