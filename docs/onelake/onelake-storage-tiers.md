@@ -19,7 +19,7 @@ All data in OneLake lands in the hot tier by default.
 
 ### Hot tier
 
-Use the hot tier for data you access frequently, such as active projects, dashboards, or datasets that refresh often.
+Use the hot tier for data you access frequently, such as active projects, dashboards, or semantic models that refresh often.
 
 - Optimized for frequent reads and writes.
 - Highest storage cost per GB.
@@ -141,7 +141,7 @@ As of May 2026, OneLake compute operations reporting in the Fabric Capacity Metr
 ## Limitations
 
 - OneLake transactions resulting from Oracle and Microsoft SQL database mirroring will consume CUs, which previously they didn't. Other mirroring types aren't impacted.
-- You can only change the tier of block blobs. OneLake stores all files in block blobs by defaults, except for [OneLake diagnostics](/fabric/onelake/onelake-diagnostics-overview) data, which is stored as append blobs. To convert your diagnostics data to block blobs for long-term storage, see [convert append blobs to block blobs](/azure/storage/blobs/convert-append-and-page-blobs-to-block-blobs?tabs=azure-powershell).
+- You can only change the tier of block blobs. OneLake stores all files in block blobs by defaults, except for [OneLake diagnostics](./onelake-diagnostics-overview.md) data, which is stored as append blobs. To convert your diagnostics data to block blobs for long-term storage, see [convert append blobs to block blobs](/azure/storage/blobs/convert-append-and-page-blobs-to-block-blobs?tabs=azure-powershell).
 - The first time you use lifecycle management or storage tiers, it might take up to 24 hours to view cool and cold compute and storage operations. 
 
 ## Related content

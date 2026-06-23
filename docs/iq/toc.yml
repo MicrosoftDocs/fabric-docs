@@ -293,12 +293,14 @@ items:
           href: plan/infobridge-how-to-write-back-data.md
         - name: Transform data
           items:
-            - name: Pivot data
+            - name: Use pivot table
               href: plan/infobridge-transformations/infobridge-how-to-pivot-table.md            
             - name: Group by transformations
               href: plan/infobridge-transformations/infobridge-how-to-group-by.md
             - name: Add columns
               href: plan/infobridge-transformations/infobridge-how-to-add-column.md
+            - name: Pivot and unpivot columns
+              href: plan/infobridge-transformations/infobridge-how-to-pivot-column.md
 - name: Graph
   href: ../graph/toc.yml
 - name: Data agent
