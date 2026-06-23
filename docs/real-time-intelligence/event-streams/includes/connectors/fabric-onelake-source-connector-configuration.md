@@ -30,6 +30,9 @@ ms.date: 04/02/2026
  
         :::image type="content" source="./media/fabric-onelake-source-connector/set-filters.png" alt-text="Screenshot that shows the addition of a filter." lightbox="./media/fabric-onelake-source-connector/set-filters.png":::       
 
+    > [!NOTE]
+    > File uploads through the Fabric portal might generate storage events with `contentLength = 0`. Don't filter events by using `contentLength > 0`, as this condition might exclude valid events.
+
 ### Stream or source details
 
 [!INCLUDE [stream-source-details](./stream-source-details.md)]

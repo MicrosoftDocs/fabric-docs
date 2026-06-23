@@ -299,6 +299,8 @@ items:
               href: plan/infobridge-transformations/infobridge-how-to-group-by.md
             - name: Add columns
               href: plan/infobridge-transformations/infobridge-how-to-add-column.md
+            - name: Find and replace
+              href: plan/infobridge-transformations/infobridge-how-to-find-replace.md
             - name: Pivot and unpivot columns
               href: plan/infobridge-transformations/infobridge-how-to-pivot-column.md
 - name: Graph

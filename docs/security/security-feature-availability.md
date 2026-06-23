@@ -24,7 +24,6 @@ The following table shows the support status for each Fabric item. A check mark 
 | Workload | Item type | Workspace private links | Customer managed keys | Outbound access protection |
 |--|--|:--:|:--:|:--:|
 | **Data Engineering** | Lakehouse | ✓ | ✓ | ✓ |
-|  | Lakehouse Shortcut | ✓ | - | Preview |
 |  | Lakehouse SQL Endpoint | ✓ | ✓ | ✓ |
 |  | Notebook | ✓ | ✓ | ✓ |
 |  | Spark Job Definition | ✓ | ✓ | ✓ |
@@ -75,9 +74,9 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Mirrored SQL Server 2025 | ✓ | ✓ | ✓ |
 |  | Open Mirroring | ✓ | ✓ | ✓ |
 | **Fabric Databases** | SQL database in Fabric |  | ✓ | - |
-|  | Cosmos DB |  |  | - |
+|  | Cosmos DB |  | - | - |
 |  | Snowflake database | - | - | - |
-| **OneLake** | Shortcut | ✓ | - | Preview |
+| **OneLake** | Shortcut | ✓ | ✓ | Preview |
 | **Power BI** | Power BI Report | - | - | - |
 |  | Dashboard | - | - | - |
 |  | Scorecard | - | - | - |
@@ -92,7 +91,7 @@ The following table shows the support status for each Fabric item. A check mark 
 | **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | Preview |
 |  | Activator | ✓ | - | Preview |
 |  | Eventhouse/KQL DB | ✓ | Preview | Preview |
-|  | Eventstream | ✓ |  | Preview |
+|  | Eventstream | ✓ | - | Preview |
 |  | Real-Time Dashboard | ✓ | Preview | Preview |
 |  | Anomaly detector  | - | - | - |
 |  | Digital Twin Builder | - | - | - | 
