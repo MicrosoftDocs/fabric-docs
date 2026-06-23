@@ -196,21 +196,21 @@ For details about Azure Storage Explorer, see [Integrate OneLake with Azure Stor
 
 ### GraphQL
 
-GraphQL items from the primary region remain unavailable after a regional disaster, and GraphQL definitions and configurations are not replicated to the secondary region. Please follow one of the approaches listed below to recover GraphQL in a new region. 
+GraphQL items from the primary region remain unavailable after a regional disaster, and GraphQL definitions and configurations aren't replicated to the secondary region. To recover GraphQL in a new region, use one of the following approaches.
 
 #### Approach 1: User-managed redundancy with Git integration (in public preview)
 
-The best way to make this easy and quick is to use Fabric Git integration, then synchronize your GraphQL with your ADO repo. After the service fails over to another region, you can use the repo to rebuild the graphql in the new workspace you created.  
+The best way to make this process easy and quick is to use Fabric Git integration, and then synchronize your GraphQL with your ADO repo. After the service fails over to another region, you can use the repo to rebuild the GraphQL in the new workspace you created.
 
-1. Create a new workspace in the target capacity and region. 
+1. Create a new workspace in the target capacity and region.
 
-1. Recover all dependent data sources, such as Lakehouse, Warehouse, or SQL databases, by following their respective recovery steps. 
+1. Recover all dependent data sources, such as Lakehouse, Warehouse, or SQL databases, by following their respective recovery steps.
 
-1. Update the GraphQL definition to point to the newly recovered resources by modifying environment-specific references such as source workspace IDs, source artifact IDs, and connection details. This ensures correct binding at deployment time. 
+1. Update the GraphQL definition to point to the newly recovered resources by modifying environment-specific references such as source workspace IDs, source artifact IDs, and connection details. This step ensures correct binding at deployment time.
 
-1. Redeploy GraphQL artifacts from the Git repository into the new workspace. This step recreates the API structure and configuration using the updated definitions. 
+1. Redeploy GraphQL artifacts from the Git repository into the new workspace. This step recreates the API structure and configuration by using the updated definitions.
 
-1. Reapply artifact settings, including roles, access controls, and authentication configuration. 
+1. Reapply artifact settings, including roles, access controls, and authentication configuration.
 
 1. Reapply endpoint references by updating any applications or integrations to use the newly created GraphQL endpoint.
 
@@ -222,29 +222,29 @@ The best way to make this easy and quick is to use Fabric Git integration, then 
 
 If you don't take the Git integration approach, you can use the following manual approach to recover GraphQL.
 
-1. Create a new workspace in the target capacity and region. 
+1. Create a new workspace in the target capacity and region.
 
-1. Recover all dependent data sources, such as Lakehouse, Warehouse, or SQL databases. 
+1. Recover all dependent data sources, such as Lakehouse, Warehouse, or SQL databases.
 
-1. Recreate the GraphQL API manually in the new workspace, including schema definitions, data source connections, and relationships. 
+1. Recreate the GraphQL API manually in the new workspace, including schema definitions, data source connections, and relationships.
 
-1. Reapply artifact settings, including roles, access controls, and authentication configuration. 
+1. Reapply artifact settings, including roles, access controls, and authentication configuration.
 
-1. Reapply endpoint references by updating any applications or integrations to use the newly created GraphQL endpoint. 
+1. Reapply endpoint references by updating any applications or integrations to use the newly created GraphQL endpoint.
 
 1. Update any existing deployment pipelines that were pointing to the old workspace to reference the newly created workspace.
    
-1. Validate end-to-end functionality of the API. 
+1. Validate end-to-end functionality of the API.
 
 #### Important considerations
 
-- GraphQL relies on external dependencies (such as Lakehouse, Warehouse, and SQL), which must be recovered prior to GraphQL deployment. 
+1. GraphQL relies on external dependencies (such as Lakehouse, Warehouse, and SQL), which you must recover prior to GraphQL deployment.
 
-- GraphQL API definitions include environment-specific references (such as sourceWorkspaceId and sourceItemId). When recovering in a new region, these references may become invalid and should be updated to point to newly provisioned resources. 
+1. GraphQL API definitions include environment-specific references (such as `sourceWorkspaceId` and `sourceItemId`). When recovering in a new region, these references might become invalid. Update them to point to newly provisioned resources.
 
-- Automatic rebinding of data sources is not guaranteed in disaster recovery scenarios, especially when using saved credentials or cross-workspace connections. 
+1. Automatic rebinding of data sources isn't guaranteed in disaster recovery scenarios, especially when using saved credentials or cross-workspace connections.
 
-- Other artifact settings such as monitoring, authorization, rbac, introspection etc do not carry over after failover and must be re-established in the new region. 
+1. Other artifact settings such as monitoring, authorization, RBAC, introspection, and more don't carry over after failover. You must re-establish these settings in the new region.
 
 #### References
 
