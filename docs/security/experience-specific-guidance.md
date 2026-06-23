@@ -218,7 +218,7 @@ The best way to make this easy and quick is to use Fabric Git integration, then 
 
 1. Validate end-to-end functionality of the API.
 
-#### Approach 2: Manual approach.
+#### Approach 2: Manual approach
 
 If you don't take the Git integration approach, you can use the following manual approach to recover GraphQL.
 
@@ -238,19 +238,19 @@ If you don't take the Git integration approach, you can use the following manual
 
 #### Important considerations
 
-1. GraphQL relies on external dependencies (such as Lakehouse, Warehouse, and SQL), which must be recovered prior to GraphQL deployment. 
+- GraphQL relies on external dependencies (such as Lakehouse, Warehouse, and SQL), which must be recovered prior to GraphQL deployment. 
 
-1. GraphQL API definitions include environment-specific references (such as sourceWorkspaceId and sourceItemId). When recovering in a new region, these references may become invalid and should be updated to point to newly provisioned resources. 
+- GraphQL API definitions include environment-specific references (such as sourceWorkspaceId and sourceItemId). When recovering in a new region, these references may become invalid and should be updated to point to newly provisioned resources. 
 
-1. Automatic rebinding of data sources is not guaranteed in disaster recovery scenarios, especially when using saved credentials or cross-workspace connections. 
+- Automatic rebinding of data sources is not guaranteed in disaster recovery scenarios, especially when using saved credentials or cross-workspace connections. 
 
-1. Other artifact settings such as monitoring, authorization, rbac, introspection etc do not carry over after failover and must be re-established in the new region. 
+- Other artifact settings such as monitoring, authorization, rbac, introspection etc do not carry over after failover and must be re-established in the new region. 
 
-1. References
+#### References
 
-   1. [Overview of Fabric Git integration - Microsoft Fabric | Microsoft Learn](/fabric/cicd/git-integration/intro-to-git-integration)
+   - [Overview of Fabric Git integration - Microsoft Fabric | Microsoft Learn](/fabric/cicd/git-integration/intro-to-git-integration)
    
-   1. [Source control and deployment pipelines in API for GraphQL - Microsoft Fabric | Microsoft Learn](/fabric/data-engineering/graphql-source-control-and-deployment) 
+   - [Source control and deployment pipelines in API for GraphQL - Microsoft Fabric | Microsoft Learn](/fabric/data-engineering/graphql-source-control-and-deployment) 
    
 ## Data Science
 
