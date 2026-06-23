@@ -24,13 +24,13 @@ You can integrate Microsoft Entra with AWS S3 using the Service Principal Name (
 
 ## Architecture
 
-The Entra-AWS integration is built on a federated identity model that uses OpenID Connect (OIDC) to enable secure, temporary access to AWS resources. The architecture consists of the following three main components that work together to establish trust, authenticate users, and authorize access to Amazon S3 from Microsoft Fabric:
+The Entra-AWS integration is built on a federated identity model that uses OpenID Connect (OIDC) to enable secure, temporary access to AWS resources. The architecture consists of the following three main components that work together to establish trust, authenticate users, and authorize access to Amazon S3 from Fabric:
 
 1. A **Service Principal (SPN)** registered in Microsoft Entra.
 2. An **OIDC trust relationship** between AWS and Microsoft Entra.
 3. A **Fabric connection** that uses temporary credentials from AWS Security Token Service (STS).
 
-In the following sections you'll configure Microsoft Entra ID, AWS IAM, and Microsoft Fabric for secure access to Amazon S3 using the service principal-based integration. This setup establishes the necessary trust relationships and connection details required for the integration to work.
+In the following sections you'll configure Microsoft Entra ID, AWS IAM, and Fabric for secure access to Amazon S3 using the service principal-based integration. This setup establishes the necessary trust relationships and connection details required for the integration to work.
 
 > [!NOTE]
 > Only key or secret authentication is supported for S3-compatible sources; Entra-based OAuth, Service Principal, and RoleArn are not supported.

@@ -29,13 +29,13 @@ Shortcut transformations stay *always in sync* with the source data. **Fabric Sp
 
 | Requirement | Details |
 | ----------- | ------- |
-| Microsoft Fabric SKU | Capacity or trial that supports **Lakehouse** workloads. |
+| Fabric SKU | Capacity or trial that supports **Lakehouse** workloads. |
 | Source data | A folder that contains homogeneous CSV, Parquet, JSON, or Excel files. |
 | Workspace role | **Contributor** or higher. |
 
 ## Supported file formats
 
-Shortcut transformations work with folders from any data source supported by OneLake shortcuts.
+Shortcut transformations work with folders from any data source supported by shortcuts in OneLake.
 
 | Source file format | Supported extensions | Supported compression types | Supported shortcut type | Notes |
 | ------------------ | -------------------- | --------------------------- | ----------------------- | ----- |
@@ -180,10 +180,10 @@ The following limitations currently apply to shortcut transformations.
 * Selective include or exclude of specific subfolders isn't supported.
 * Nested folders don't work with SharePoint shortcuts.
 
-Use the [Fabric Roadmap](https://roadmap.fabric.microsoft.com/?product=onelake) and [Fabric Updates Blog](https://blog.fabric.microsoft.com/blog/category/onelake/) to learn about new features and releases.
+Use the [Fabric Roadmap](https://roadmap.fabric.microsoft.com/?product=onelake) and [Fabric Updates Blog](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/bg-p/fbc_fabricupdatesblogs) to learn about new features and releases.
 
 ## Clean up
 
-To stop synchronization, delete the shortcut transformation from Lakehouse Explorer.  
+To stop synchronization, delete the shortcut transformation from Lakehouse explorer.  
 
 Deleting the transformation doesn't remove the underlying files.
