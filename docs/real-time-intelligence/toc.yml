@@ -627,7 +627,10 @@ items:
         items:
           - name: Eventhouse as a vector database overview
             href: vector-database.md
-          - name: "Tutorial: Use an eventhouse as a vector database"
+            displayName: SLM, LLM, vector database, vector search, embeddings
+          - name: "Tutorial: Use an eventhouse as a vector database with SLM embeddings"
+            href: vector-database-eventhouse-small-lang-model.md
+          - name: "Tutorial: Use an eventhouse as a vector database with LLM embeddings"
             href: vector-database-eventhouse.md
       - name: Get data in an eventhouse
         items:
@@ -861,7 +864,7 @@ items:
           - name: Configure actions for Activator rules
             href: data-activator/rule-actions.md
           - name: Assign data to Activator objects
-            href: data-activator/activator-assign-data-objects.md            
+            href: data-activator/activator-assign-data-objects.md
           - name: Create alerts from a Real-Time Dashboard
             href: data-activator/activator-get-data-real-time-dashboard.md
           - name: Create alerts from a KQL Queryset
