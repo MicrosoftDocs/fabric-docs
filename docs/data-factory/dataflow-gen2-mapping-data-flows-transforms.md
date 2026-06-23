@@ -2,7 +2,7 @@
 title: Mapping Data Flow Transforms in Dataflow Gen2 (Preview)
 description: Learn about mapping data flow transforms in Dataflow Gen2, which enable you to author, execute, and monitor Spark-based data transformations in Data Factory in Microsoft Fabric.
 ms.topic: concept-article
-ms.date: 06/04/2026
+ms.date: 06/23/2026
 ms.reviewer: krirukm
 ms.search.form: DataflowGen2
 ms.custom: dataflows
@@ -101,23 +101,23 @@ MDF transforms support most commonly used source and sink connectors available i
 
 The following connectors are currently supported:
 
-| Category | Data store | MDF transforms in dataflow gen2 (source/sink) |
-| --- | --- | --- |
-| **Azure** | Azure Blob Storage | ✓/✓ |
-| | Azure Cosmos DB for NoSQL | ✓/✓ |
-| | Azure Data Explorer | ✓/✓ |
-| | Azure Data Lake Storage Gen1 | ✓/✓ |
-| | Azure Data Lake Storage Gen2 | ✓/✓ |
-| | Azure Database for MySQL | ✓/✓ |
-| | Azure Database for PostgreSQL | ✓/✓ |
-| | Azure Databricks Delta Lake | ✓/✓ Use [delta format](/azure/data-factory/format-delta) |
-| | Azure SQL Database | ✓/✓ |
-| | Azure SQL Managed Instance | ✓/✓ |
-| | Azure Synapse Analytics | ✓/✓ |
-| **Database** | Snowflake | ✓/✓ |
-| **File** | Amazon S3 | ✓/✓ |
-| | SFTP | ✓/✓ |
-| | Generic REST | ✓/✓ |
+| Category | Data store | MDF transforms in dataflow gen2 (source/sink) | Supported Authentication Types |
+| --- | --- | --- | --- |
+| **Azure** | Azure Blob Storage | ✓/✓ | Basic, Managed Identity / Workspace Identity, Service Principal |
+| | Azure Cosmos DB for NoSQL | ✓/✓ | Basic |
+| | Azure Data Explorer | ✓/✓ | Managed Identity / Workspace Identity |
+| | Azure Data Lake Storage Gen1 | ✓/✓ | Basic, Managed Identity / Workspace Identity, Service Principal |
+| | Azure Data Lake Storage Gen2 | ✓/✓ | Basic, Managed Identity / Workspace Identity, Service Principal |
+| | Azure Database for MySQL | ✓/✓ | Basic |
+| | Azure Database for PostgreSQL | ✓/✓ | Basic |
+| | Azure Databricks Delta Lake | ✓/✓ Use [delta format](/azure/data-factory/format-delta) | Basic |
+| | Azure SQL Database | ✓/✓ | Basic, Managed Identity / Workspace Identity, Service Principal |
+| | Azure SQL Managed Instance | ✓/✓ | Basic, Managed Identity / Workspace Identity, Service Principal |
+| | Azure Synapse Analytics | ✓/✓ | Basic |
+| **Database** | Snowflake | ✓/✓ | Basic |
+| **File** | Amazon S3 | ✓/✓ | Basic |
+| | SFTP | ✓/✓ | Basic |
+| | Generic REST | ✓/✓ | Basic, Service Principal |
 
 During authoring:
 
