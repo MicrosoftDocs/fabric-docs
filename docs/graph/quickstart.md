@@ -20,17 +20,10 @@ Before you start this quickstart, verify that:
 
 1. You have access to a Microsoft Fabric capacity (F2 or higher) or a [Fabric trial](../fundamentals/fabric-trial.md).
 1. [Graph is available in your region](overview.md#region-availability).
-1. A Fabric administrator enabled graph in your Fabric tenant. They enable this setting in the [admin portal](../admin/admin-center.md).
-
-   :::image type="content" source="./media/quickstart/tenant-enable-graph.png" alt-text="Screenshot of the admin portal showing the toggle to enable graph in your Fabric tenant." lightbox="./media/quickstart/tenant-enable-graph.png":::
-
 1. You're a member of a Fabric workspace or have permission to create items in the workspace. For more information, see [Workspaces in Microsoft Fabric](../admin/portal-workspaces.md).
 
     > [!IMPORTANT]
     > Access management of the graph is restricted to the workspace that hosts it. Users outside of the workspace can't access the graph. Users within the workspace who have access to the underlying data in the lakehouse can model and query the graph.
-
-> [!TIP]
-> If you don't see **Graph model** in the **+ New item** menu, ask your Fabric administrator to enable graph in the [admin portal](../admin/admin-center.md).
 
 ## Load sample data
 

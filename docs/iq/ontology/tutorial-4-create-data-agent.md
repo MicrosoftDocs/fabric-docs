@@ -1,7 +1,7 @@
 ---
 title: "Tutorial Part 4: Consume Ontology from Agents"
 description: Create a data agent that queries the ontology (preview) in natural language. Part 4 of the ontology (preview) tutorial.
-ms.date: 05/13/2026
+ms.date: 06/16/2026
 ms.topic: tutorial
 ---
 
@@ -15,10 +15,11 @@ In this tutorial step, learn about consuming ontology (preview) from agents to a
 
 AI agents can help users move from static analysis to interactive, goal-oriented workflows by understanding natural language, planning steps, calling tools, and taking action on behalf of the user. When agents use an ontology as context, they gain a governed understanding of the business: key entities, relationships, definitions, rules, metrics, and source mappings. This helps agents produce responses that are more grounded, explainable, and consistent across systems instead of relying only on raw data or prompts.
 
-There are three ways to build agents that consume ontology context:
+There are multiple ways to build agents that consume ontology context:
 * [Foundry IQ](/azure/foundry/what-is-foundry): Azure AI Foundry agents help developers build more advanced, customizable agents that can reason over ontology context, call tools, and integrate with enterprise systems. For more information about building an ontology agent with Foundry IQ, see [Create an ontology agent with Foundry IQ](how-to-create-agent-foundry-iq.md).
 * [Copilot Studio](/microsoft-copilot-studio/fundamentals-what-is-copilot-studio): Copilot Studio helps business and low-code makers quickly create conversational agents that use ontology context to answer business questions and automate workflows. For more information about building an ontology agent with Copilot Studio, see [Create an ontology agent with Copilot Studio](how-to-create-agent-copilot-studio.md).
 * [Fabric data agent](../../data-science/concept-data-agent.md): Fabric data agents help users create data-grounded agents directly in Fabric that can answer business questions using governed enterprise data, with ontology context adding richer business meaning, relationships, and consistency.
+* [Fabric operations agent](../../real-time-intelligence/operations-agent.md): Fabric operations agents continuously monitor your ontology, surface insights against your business goals, and recommend actions—all grounded within the ontology's entity types and relationships. For more information about building an operations agent with ontology, see [Create an operations agent connected to ontology](how-to-create-operations-agent.md).
 
 This article uses Fabric data agent.
 

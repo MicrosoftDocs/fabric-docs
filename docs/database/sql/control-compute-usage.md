@@ -2,7 +2,7 @@
 title: Control Compute Usage
 description: Learn how to control compute usage in SQL database in Fabric.
 ms.reviewer: amapatil
-ms.date: 03/11/2026
+ms.date: 06/09/2026
 ms.topic: concept-article
 ms.custom: sfi-image-nochange
 ---
@@ -17,10 +17,10 @@ In this article, you learn how to control and monitor compute usage for a SQL da
 
 This setting defines an upper bound on the [Fabric capacity units (CUs)](../../enterprise/plan-capacity.md) a database can consume while autoscaling. The following table summarizes the maximum vCore limits and corresponding resources. 
 
-| Max vCores  | 4 vCores |  32 vCores (default) |
-| :-- | :-- | :-- |
-| Max memory  | 12 GB    | 96 GB |
-| Max storage | 756 GB   | 4 TB  |
+| Max vCores | 2 vCores | 4 vCores | 32 vCores (default) |
+| :-- | :-- | :-- | :-- |
+| Max memory  | 6 GB | 12 GB | 96 GB |
+| Max storage | 512 GB | 756 GB | 4 TB |
 
 In SQL database in Fabric, autoscaling dynamically scales compute based on demand, but it will never exceed the configured maximum vCore limit or corresponding memory limit. 
 

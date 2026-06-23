@@ -108,7 +108,7 @@ Instead, use MSAL to acquire an OAuth token and the Python `deltalake` library t
    from deltalake import DeltaTable, write_deltalake
    ```
 
-1. Declare variables for Microsoft Entra tenant including application ID. Use the tenant ID of the tenant where Microsoft Fabric is deployed.
+1. Declare variables for Microsoft Entra tenant including application ID. Use the tenant ID of the tenant where Fabric is deployed.
 
    ```python
    # Fetch from Databricks secrets.

@@ -32,7 +32,7 @@ The following sections cover dedicated operations, usage categories, and the pau
 
 Operations agent consumes capacity based on the following factors:
 
-- **Background usage**: Refers to all operations, including direct interactions, with the operations agent. Copilot in Fabric and AI operations are treated as background tasks. For more information, see [Copilot in Fabric Consumption](../fundamentals/copilot-fabric-consumption.md#capacity-utilization-type). These operations are throttled only if the capacity exceeds its resource limits for 24 hours. In this case, background tasks are rejected, and the agent's processing halts. For details, see [Throttle triggers and throttle stages](../enterprise/throttling.md#throttle-triggers-and-throttle-stages).
+- **Background usage**: Refers to all operations, including direct interactions, with the operations agent. Copilot in Fabric and AI operations are treated as background tasks. For more information, see [Copilot in Fabric Consumption](../fundamentals/copilot-fabric-consumption.md#background-job-classification-and-throttling). These operations are throttled only if the capacity exceeds its resource limits for 24 hours. In this case, background tasks are rejected, and the agent's processing halts. For details, see [Throttle triggers and throttle stages](../enterprise/throttling.md#throttle-triggers-and-throttle-stages).
 
     | Azure metric name | Fabric operation name | Capacity unit rate |
     | ----------------------- | ----------------------------------------------------- | ---------------------- |

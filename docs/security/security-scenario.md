@@ -4,7 +4,7 @@ description: "Learn about Microsoft Fabric security concepts and features that c
 author: msmimart
 ms.author: mimart
 ms.reviewer: vparasuraman, amasingh
-ms.date: 04/23/2026
+ms.date: 06/12/2026
 ms.topic: concept-article
 ms.custom: fabric-cat, security-guidance
 ---
@@ -137,6 +137,19 @@ There are some considerations for using this pattern:
 - Enable [audit](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview) for Microsoft Fabric to keep track of activities.
 - In Microsoft Fabric, Power BI uses [Bring your own encryption keys (BYOK)](/power-bi/enterprise/service-encryption-byok) to encrypt Power BI semantic models at the capacity level, while workspace-level CMK encrypts other Fabric items at the workspace level. Together, these capabilities enable layered encryption controls tailored to your security architecture.
 - Disable the [shortcut caching](../onelake/onelake-shortcuts.md#caching) feature for S3, GCS, and S3-compatible shortcuts, as the cached data is persisted on OneLake.
+
+### Microsoft Fabric and malware scanning
+
+For enterprises that require malware scanning before data is processed by Microsoft Fabric, use Azure Storage (ADLS or Blob) with Defender for Storage enabled.
+
+> [!NOTE]
+> Native OneLake malware scanning is on the roadmap - see the [Fabric public roadmap](https://roadmap.fabric.microsoft.com/?product=onelake) for timelines.
+
+This pattern leverages Azure Storage's native integration with [Microsoft Defender](/azure/defender-for-cloud/defender-for-storage-introduction) and Microsoft Fabric.
+
+Files are first written to Azure Storage, where Microsoft Defender for Storage performs malware scanning upon upload. After the scan, Fabric workloads can access the scanned files through ADLS or Blob shortcuts. Alternatively, you can use data pipelines in Fabric to ingest data into OneLake for further processing.
+
+:::image type="content" source="media/security-scenario/malware-scan.png" lightbox="media/security-scenario/malware-scan.png" alt-text="Diagram of Fabric reading from Azure Storage integrated with Microsoft Defender" border="false":::
 
 ## Data residency
 

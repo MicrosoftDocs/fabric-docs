@@ -24,9 +24,9 @@ Data Agent supports the following data source categories:
 | **SQL** | Lakehouse, Data Warehouse, SQL Database, Mirrored Databases | T-SQL | Structured analytics over relational and Delta Lake data |
 | **Eventhouse** | Eventhouse KQL Database | KQL | Real-time intelligence and time-series analytics |
 | **Semantic Model** | Power BI Semantic Models | DAX | Business logic, calculated measures, and curated metrics |
-| **Graph** | Graph Model | GQL | Relationship-rich data exploration and graph analytics |
-| **Ontology** | Fabric Ontology | Ontology-native | Domain knowledge and semantic context for data integration |
-| **Azure AI Search** | Azure AI Search Index | Natural language + search | Unstructured data retrieval (PDFs, text, enriched content) |
+| **Graph (preview)** | Graph Model | GQL | Relationship-rich data exploration and graph analytics |
+| **Ontology (preview)** | Fabric Ontology | Ontology-native | Domain knowledge and semantic context for data integration |
+| **Azure AI Search (preview)** | Azure AI Search Index | Natural language + search | Unstructured data retrieval (PDFs, text, enriched content) |
 
 > [!TIP]
 > A single Data Agent can combine up to five data sources in any combination, letting you blend structured, real-time, semantic, and unstructured data in one conversational experience.
@@ -69,7 +69,7 @@ Every semantic model in Fabric exposes an **XMLA Endpoint**, which Data Agent us
 2. Validates the query against the selected schema.
 3. Executes via the XMLA Endpoint and returns formatted results.
 
-# [GQL](#tab/gql)
+# [GQL (preview)](#tab/gql)
 
 ### Supported Artifacts
 
@@ -79,7 +79,7 @@ Graph Data Agent can run **GQL queries** and surface insights from your graph da
 
 When the data agent runs GQL against a graph data source, the underlying Fabric Graph artifact will perform the query execution, incurring [graph operation](../graph/overview.md#pricing-and-capacity-units) consumption.
 
-# [Ontology](#tab/Ontology)
+# [Ontology (preview)](#tab/Ontology)
 ### Supported Artifacts
 
 - **Fabric Ontology**—A semantic layer that captures domain knowledge, entity definitions, and relationships.
@@ -87,7 +87,7 @@ When the data agent runs GQL against a graph data source, the underlying Fabric 
 After an ontology is configured in Fabric, it can be added as a data source to Data Agent. The agent uses the ontology to understand domain context and answer questions grounded in your organization's knowledge model.
 
 
-# [Unstructured Data](#tab/unstructured-data)
+# [Unstructured Data (preview)](#tab/unstructured-data)
 ### Supported Artifacts
 
 - **Azure AI Search Index**—Indexes built in Azure AI Foundry over unstructured content such as PDFs, text files, and other enriched documents.
@@ -132,7 +132,7 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 
 *\*Semantic models are primarily configured through [Prep for AI in Power BI](/power-bi/create-reports/copilot-prepare-data-ai), which offers AI Data Schemas, AI Instructions, and Verified Answers.*
 
-# [GQL](#tab/gql)
+# [GQL (preview)](#tab/gql)
 ### Graph Model Supported Configurations
 
 | Configuration | Supported | Details |
@@ -143,7 +143,7 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 | Data Source Description | ✅ Yes | Description that helps the agent determine whether this data source is relevant to the user's question. |
 | Example Queries | ✅ Yes | Passed to NL2GQL to teach complex graph traversal patterns. |
 
-# [Ontology](#tab/Ontology)
+# [Ontology (preview)](#tab/Ontology)
 ### Ontology Supported Configurations
 
 | Configuration | Supported | Details |
@@ -154,7 +154,7 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 | Data Source Description | ✅ Yes | Description that helps the agent determine whether this data source is relevant to the user's question. |
 | Example Queries | ❌ No | Not supported for ontology data sources. |
 
-# [Unstructured Data](#tab/unstructured-data)
+# [Unstructured Data (preview)](#tab/unstructured-data)
 ### Unstructured Data Configurations
 | Setting | Details |
 |---|---|

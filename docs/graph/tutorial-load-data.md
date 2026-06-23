@@ -36,10 +36,7 @@ If you don't already have a lakehouse, create one to store the sample data:
 1. Select **Store data** > **Lakehouse**.
 1. Enter a name for your lakehouse (for example, "AdventureWorksLakehouse"), clear the **Lakehouse schemas** option, and then select **Create**.
 
-    > [!IMPORTANT]
-    > Make sure you clear the lakehouse schema option. Graph doesn't currently support lakehouses with [lakehouse schemas enabled](../data-engineering/lakehouse-schemas.md).
-
-For more detailed instructions, see [Create a lakehouse with OneLake](../onelake/create-lakehouse-onelake.md).
+For more detailed instructions, see [Create a lakehouse](../data-engineering/create-lakehouse.md).
 
 ## Upload the sample data to the lakehouse
 

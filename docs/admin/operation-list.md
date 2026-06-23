@@ -520,6 +520,7 @@ The following operations are available in the audit logs.
 | Requested Power BI semantic model refresh | :::no-loc text="RefreshDataset"::: |   |
 | Requested SAS token for Power BI storage | :::no-loc text="AcquireStorageSASFromExternalApplication"::: |   |
 | Requested account key for Power BI storage | :::no-loc text="AcquireStorageAccountKey"::: |   |
+| Reserve workload name | :::no-loc text="ExtensibilityNameReserved"::: | Reserves a workload name |
 | Restore container | :::no-loc text="RestoreContainer"::: | OneLake operation. |
 | Restore deleted workspace | :::no-loc text="RestoreWorkspaceViaAdminApi"::: | Restores the deleted workspace |
 | Restored Power BI workspace | :::no-loc text="RestoreWorkspace"::: |   |
@@ -778,7 +779,8 @@ The following operations are available in the audit logs.
 | Disable Git for workspace with restricted outbound access | :::no-loc text="DisableGitForWorkspaceWithRestrictedOutboundAccess"::: | Disable Git for workspace with restricted outbound access |
 | Get workspace IP firewall rules | :::no-loc text="GetFolderFirewallRules"::: | Get workspace IP firewall rules |
 | Update workspace IP firewall rules | :::no-loc text="SetFolderFirewallRules"::: | Update workspace IP firewall rules |
-
+| Enabled external data share access for inbound access restricted workspaces | :::no-loc text="ExternalDataSharesBypassForWorkspaceEnabled"::: | |
+| Disabled external data share access for inbound access restricted workspaces | :::no-loc text="ExternalDataSharesBypassForWorkspaceDisabled"::: | |
 
 ## Considerations and limitations
 

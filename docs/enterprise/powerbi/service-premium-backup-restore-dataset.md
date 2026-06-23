@@ -40,7 +40,7 @@ With an ADLS Gen2 storage account associated with a workspace, workspace admins 
 
 To *restore* an existing semantic model, users who have write or admin permission to the dataset can conduct a *restore* operation. To *restore* a new semantic model, the user must be an admin of the workspace.
 
-To *browse the backup/restore filesystem* using Azure Storage Explorer (the *Browse...* button in SSMS), a user must be an admin, or a member or contributor of the workspace.
+To *browse the backup/restore filesystem* using Azure Storage Explorer (the *Browse...* button in SSMS), a user must be an admin of the workspace.
 
 Power BI associates workspaces with their backup directories based on the workspace name. With owner permissions at the storage account level, you can download backup files or copy them from their original location to the backup directory of a different workspace, and restore them there if you're a workspace admin in the target workspace as well.
 

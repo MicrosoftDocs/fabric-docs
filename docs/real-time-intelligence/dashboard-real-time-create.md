@@ -3,7 +3,7 @@ title: Create a Real-Time Dashboard
 description: Learn how to create and customize Real-Time Dashboards to visualize data effectively using KQL queries and Copilot for seamless insights.
 ms.reviewer: mbar
 ms.topic: how-to
-ms.date: 05/24/2026
+ms.date: 06/15/2026
 author: spelluru
 ms.author: spelluru
 ms.subservice: rti-dashboard
@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 
 A dashboard is a collection of tiles, optionally organized in pages, where each tile has an underlying query and a visual representation. You can natively export Kusto Query Language (KQL) queries to a dashboard as visuals and later modify their underlying queries and visual formatting as needed. In addition to ease of data exploration, this fully integrated dashboard experience provides improved query and visualization performance. Copilot integration in the dashboard editing experience lets you use natural language to create and modify visuals directly, no KQL expertise required.
 
-In this article, you learn how to create a new Real-Time Dashboard, add data sources, add and edit tiles in the dashboard - manually or using Copilot. You also learn how to enable auto refresh, use parameters, and export dashboards.
+In this article, you learn how to create a new Real-Time Dashboard, add data sources, add and edit tiles in the dashboard - manually or using Copilot. You also learn how to enable Live refresh, use parameters, and export dashboards.
 
 > [!IMPORTANT]
 > Your data is secure. Dashboards and dashboard-related metadata about users are encrypted at rest using Microsoft-managed keys.
@@ -145,7 +145,7 @@ Under the Home tab, you can add new visuals, markdown boxes, alerts, data source
 
 :::image type="content" source="media/real-time-dashboard/home-tab.png" alt-text="Screenshot of the toolbar options under the Home tab." lightbox="media/real-time-dashboard/home-tab.png":::
 
-Under the Manage tab, you can manage [parameters](dashboard-parameters.md), base queries, configure [Refresh setting](#enable-auto-refresh) and manage data sources.
+Under the Manage tab, you can manage [parameters](dashboard-parameters.md), base queries, configure [Refresh setting](#enable-live-refresh) and manage data sources.
 
 :::image type="content" source="media/real-time-dashboard/manage-tab.png" alt-text="Screenshot of the toolbar options under the Manage tab." lightbox="media/real-time-dashboard/manage-tab.png":::
 
@@ -303,26 +303,28 @@ You can view the query in either viewing or editing mode.
     > [!NOTE]
     > Any edits made to the query using this flow won't be reflected in the original Real-Time Dashboard.
 
-## Enable auto refresh
+## Enable Live refresh
 
-Auto refresh is a feature that allows you to automatically update the data on a dashboard without manually reloading the page or clicking a refresh button.
+Live refresh is a feature that updates dashboard visuals when new data is ingested into the underlying source, without manually reloading the page or clicking a refresh button.
 
-Dashboard authors can configure autorefresh settings for other viewers. By default, the refresh rate is set using the **Default refresh rate**, but viewers can adjust this rate for their own sessions.
+To enable Live refresh for your dashboard:
 
-The **Minimum time interval** defines the fastest refresh rate allowed and acts as a lower limit. For example, if the author sets the default refresh rate to 1 hour and the minimum time interval to 30 minutes, viewers can choose a refresh rate between 30 minutes and 1 hour, but not lower than 30 minutes.
+1. Select the **Manage** tab > **Refresh settings**.
+1. Select **Live refresh** to enable it.
+1. Select values for **Refresh rate limit** and **Fixed rate for non-supporting visuals**.
+1. Select **Done** and then **Save** the dashboard.
 
-This setting gives authors control over how frequently dashboards can refresh, helping to manage system load and performance.
+    :::image type="content" source="media/dashboard-live-refresh/live-refresh-settings.png" alt-text="Screenshot of the Live refresh settings pane." lightbox="media/dashboard-live-refresh/live-refresh-settings.png":::
 
-1. Select the **Manage** tab > **Auto refresh**.
-1. Toggle the option so auto refresh is **Enabled**.
-1. Select values for **Minimum time interval** and **Default refresh rate**.
-1. Select **Apply** and then **Save** the dashboard.
-
-    :::image type="content" source="media/real-time-dashboard/auto-refresh.png" alt-text="Screenshot of auto refresh pane in Real-Time Dashboards." lightbox="media/real-time-dashboard/auto-refresh.png":::
+For more information about Live refresh, see [Live refresh in Real-Time Dashboards](dashboard-live-refresh.md).
 
 ## Share the dashboard
 
-To share the dashboard link:
+Real-Time Dashboards can be shared with others to provide access to insights and visualizations without requiring direct interaction with the underlying data sources. Sharing enables collaboration across teams by allowing users to view and interact with dashboard content through a link, making it easier to distribute monitoring views and analytical results. To successfully share Real-Time Dashboards, make sure the recipients have the necessary [Real-Time Dashboard permissions](dashboard-permissions.md).
+
+You can share an entire Real-Time Dashboard, or a specific visual.
+
+To share the entire dashboard:
 
 1. Select **Share** in the top-right corner of the dashboard.
 
@@ -334,6 +336,15 @@ To share the dashboard link:
     - To share a link to the dashboard via Teams, select **by Teams**.
 
     :::image type="content" source="media/real-time-dashboard/share-link.png" alt-text="Screenshot that shows the pop-up window for sharing the dashboard." lightbox="media/real-time-dashboard/share-link.png":::
+
+To share a specific visual:
+1. In the top right corner of a visual, select **...** to open the visual's context menu.
+1. Select **Share visual**.
+
+    :::image type="content" source="media/real-time-dashboard/share-visual.png" alt-text="Screenshot that shows the Share visual option in the visual's context menu.":::
+
+1. Using the multi-select checkboxes, choose whether the shareable link should include the **Link** to open the visual in Fabric, the **Visualization** itself, and the **Query** that supports the visual.
+1. Select **Copy** to copy the link to your clipboard.
 
 ## Export dashboards
 

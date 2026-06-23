@@ -19,7 +19,7 @@ items:
         items:
           - name: End to end tutorial - Introduction
             href: tutorial-introduction.md
-          - name: 1 - Set up Eventhouse
+          - name: 1 - Set up eventhouse
             href: tutorial-1-resources.md
           - name: 2 - Get data in the Real-Time hub
             href: tutorial-2-get-real-time-events.md
@@ -31,7 +31,7 @@ items:
             href: tutorial-5-query-data.md
           - name: 6 - Create a Real-Time dashboard
             href: tutorial-6-create-dashboard.md
-          - name: 7 - Detect anomalies on an Eventhouse table
+          - name: 7 - Detect anomalies on an eventhouse table
             href: tutorial-7-create-anomaly-detection.md
           - name: 8 - Create a map using geospatial data
             href: tutorial-8-create-map.md
@@ -47,7 +47,7 @@ items:
             href: digital-twin-builder/tutorial-rti-2-get-streaming-data.md
           - name: 3 - Build the ontology
             href: digital-twin-builder/tutorial-rti-3-build-ontology.md
-          - name: 4 - Project to Eventhouse
+          - name: 4 - Project to eventhouse
             href: digital-twin-builder/tutorial-rti-4-project-eventhouse.md
           - name: 5 - Query and visualize data
             href: digital-twin-builder/tutorial-rti-5-query-and-visualize.md
@@ -119,6 +119,12 @@ items:
             href: event-streams/add-source-azure-sql-database-change-data-capture.md
           - name: Azure SQL Managed Instance CDC
             href: event-streams/add-source-azure-sql-managed-instance-change-data-capture.md
+          - name: Mirrored Database Change Feed
+            href: event-streams/add-source-mirrored-database-change-feed.md
+          - name: DeltaFlow output transformation (Preview)
+            href: event-streams/delta-flow-output-transformation.md
+          - name: Amazon Kinesis Data Streams
+            href: event-streams/add-source-amazon-kinesis-data-streams.md
           - name: Confluent Cloud for Apache Kafka
             href: event-streams/add-source-confluent-kafka.md
           - name: Cribl
@@ -143,6 +149,8 @@ items:
             href: event-streams/add-source-mongodb-change-data-capture.md
           - name: MySQL Database CDC
             href: event-streams/add-source-mysql-database-change-data-capture.md
+          - name: Oracle Database CDC
+            href: event-streams/add-source-oracle-database-change-data-capture.md
           - name: PostgreSQL Database CDC
             href: event-streams/add-source-postgresql-database-change-data-capture.md
           - name: Real-time weather
@@ -573,18 +581,20 @@ items:
         href: eventhouse-deploy-with-fabric-api.md
       - name: Manage and monitor an eventhouse
         href: manage-monitor-eventhouse.md
-      - name: Reliability in Eventhouse
+      - name: Reliability in eventhouse
         href: eventhouse-reliability.md
-      - name: Eventhouse endpoint for Lakehouse and Warehouse
+      - name: Eventhouse endpoint for lakehouse and warehouse
         href: eventhouse-as-endpoint.md
       - name: Eventhouse capacity
         items:
           - name: Resource consumption
             href: real-time-intelligence-consumption.md
             displayName: consumption, CU, metrics app, monitor, billing, usage
-          - name: Understand Eventhouse compute usage
+          - name: Smart capacity control
+            href: eventhouse-smart-capacity-control.md
+          - name: Understand eventhouse compute usage
             href: eventhouse-compute-observability.md
-          - name: Eventhouse Cost per GB Ingested
+          - name: Eventhouse cost per GB Ingested
             href: pricing-cost-drivers.md
       - name: Migrate
         items:
@@ -595,12 +605,14 @@ items:
             items:
               - name: Validate migration using REST API endpoints
                 href: migrate-api-validate-synapse-data-explorer.md
-              - name: Migrate to Eventhouse
+              - name: Migrate to eventhouse
                 href: migrate-api-to-eventhouse.md
       - name: Monitor
         items:
           - name: Eventhouse monitoring
             href: monitor-eventhouse.md
+          - name: Monitor activity by application
+            href: monitor-eventhouse-activity-by-application.md
           - name: Metrics
             href: monitor-metrics.md
           - name: Command logs
@@ -615,9 +627,12 @@ items:
         items:
           - name: Eventhouse as a vector database overview
             href: vector-database.md
-          - name: "Tutorial: Use an Eventhouse as a vector database"
+            displayName: SLM, LLM, vector database, vector search, embeddings
+          - name: "Tutorial: Use an eventhouse as a vector database with SLM embeddings"
+            href: vector-database-eventhouse-small-lang-model.md
+          - name: "Tutorial: Use an eventhouse as a vector database with LLM embeddings"
             href: vector-database-eventhouse.md
-      - name: Get data in an Eventhouse
+      - name: Get data in an eventhouse
         items:
           - name: Get data overview
             href: get-data-overview.md
@@ -641,7 +656,7 @@ items:
             href: get-data-real-time-hub.md
           - name: Get data from other sources
             href: get-data-other-sources.md
-          - name: Get business events into Eventhouse
+          - name: Get business events into eventhouse
             href: ../real-time-hub/business-events/business-events-eventhouse.md?context=/fabric/context/context-rti&pivots=fabric
           - name: Configure KQL Database in a pipeline
             href: ../data-factory/connector-kql-database-copy-activity.md
@@ -802,9 +817,13 @@ items:
         href: dashboard-parameters.md
       - name: Real-Time Dashboard-specific visuals
         href: dashboard-visuals.md
+      - name: Troubleshoot Real-Time Dashboard visual errors
+        href: troubleshoot-dashboard-tile-error.md
       - name: Create alerts from a Real-Time Dashboard
         href: ./data-activator/activator-get-data-real-time-dashboard.md
         displayName: trigger, activator, reflex
+      - name: Live refresh in Real-Time Dashboards
+        href: dashboard-live-refresh.md
       - name: Visualize data in Power BI
         items:
           - name: Visualize data in a Power BI report
@@ -845,7 +864,7 @@ items:
           - name: Configure actions for Activator rules
             href: data-activator/rule-actions.md
           - name: Assign data to Activator objects
-            href: data-activator/activator-assign-data-objects.md            
+            href: data-activator/activator-assign-data-objects.md
           - name: Create alerts from a Real-Time Dashboard
             href: data-activator/activator-get-data-real-time-dashboard.md
           - name: Create alerts from a KQL Queryset
@@ -1075,13 +1094,13 @@ items:
     items:
       - name: Copilot for Real-Time Intelligence
         href: copilot-real-time-intelligence.md
-      - name: Copilot for Writing KQL Queries
+      - name: Copilot for writing KQL queries
         href: copilot-writing-queries.md
       - name: Explore data in Real-Time Dashboard Using Copilot
         href: dashboard-explore-data.md
   - name: Operations agents
     href: operations-agent-tocs/toc.yml
-    displayName: AI agents, AI, agents, Operation agents
+    displayName: AI agents, AI, agents, operation agents
   - name: Build AI agents
     displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source, skills
     items:
@@ -1095,7 +1114,7 @@ items:
             href: mcp-local-server.md
           - name: Remote MCP servers
             items:
-              - name: Remote MCP for Eventhouse
+              - name: Remote MCP for eventhouse
                 href: mcp-remote-eventhouse.md
               - name: Remote MCP for Activator
                 href: mcp-remote-activator.md

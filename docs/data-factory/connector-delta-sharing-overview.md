@@ -21,4 +21,6 @@ The Delta Sharing connector is supported in Data Factory for [!INCLUDE [product-
 
 ## Related content
 
+- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
+
 For information on how to connect to Delta Sharing, go to [Set up your Delta Sharing connection](connector-delta-sharing.md).

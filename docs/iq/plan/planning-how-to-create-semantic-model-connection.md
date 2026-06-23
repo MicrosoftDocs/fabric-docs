@@ -1,7 +1,7 @@
 ---
 title: Create a Semantic Model Connection in a Plan (Preview)
 description: Learn how to create and share a cloud connection of a semantic model in a plan (preview).
-ms.date: 04/30/2026
+ms.date: 06/17/2026
 ms.topic: how-to
 ---
 
@@ -33,13 +33,16 @@ Use this connection to connect to your semantic models when you create a plan. A
 
 1. For **Connection type**, select **Power BI Semantic Model**.
 
-1. For **Authentication method**, select **OAuth2.0**.
+1. Select an **Authentication method**.
+   
+    * **OAuth 2.0**: Select **Edit credentials**, then sign in with your Microsoft account.
+    * **Service principal**: Enter the **Tenant ID**, **Service Principal ID**, and **Service Principal Key**. For service principal-based authentication, enable [Service principals can call Fabric public APIs](../../admin/service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis) under **Developer settings** in the admin portal.
 
-1. Select **Edit credentials**, and then sign in with your Microsoft account.
+    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/authentication-method.png" alt-text="Screenshot of authentication method options in new semantic model connection.":::
 
 1. Select **Create**.
 
-:::image type="content" source="media/planning-how-to-create-semantic-model-connection/new-semantic-connection.png" alt-text="Screenshot of new semantic model connection.":::
+:::image type="content" source="media/planning-how-to-create-semantic-model-connection/new-semantic-connection.png" alt-text="Screenshot of creating a new semantic model connection.":::
 
 ## Share the semantic model connection
 
@@ -79,17 +82,34 @@ If you want to connect to a Direct Lake semantic model, follow these steps. An *
 
 1. From the connection list, select **Create a connection**.
 
-    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/connection.png" alt-text="Screenshot of the settings for managing connection gateways.":::
+    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/connection-direct-lake.png" alt-text="Screenshot of the settings for managing connection gateways.":::
 
-1. Enter the new connection name. For **Authentication method**, select **OAuth 2.0**.
+1. Enter the new connection name.
+  
+1. Select an **Authentication method**:
+
+    * **OAuth 2.0**: Select **Edit credentials**, then sign in with your Microsoft account.
+    * **Service principal**: Enter the **Tenant ID**, **Service Principal ID**, and **Service Principal Key**. For service principal-based authentication, enable [Service principals can call Fabric public APIs](../../admin/service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis) under **Developer settings** in the admin portal.
+
+    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/authentication-method.png" alt-text="Screenshot of authentication method options in new semantic model connection.":::
 
 1. Select **Create**.
 
-    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/new-connection.png" alt-text="Screenshot of creating a new Direct Lake connection.":::
+    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/new-direct-lake.png" alt-text="Screenshot of creating a new Direct Lake connection.":::
 
 1. Select the newly created Direct Lake semantic model connection from the list, and then select **Apply**.
 
-    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/apply-connection.png" alt-text="Screenshot of applying the created connection.":::
+    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/apply-direct-lake.png" alt-text="Screenshot of applying the created connection.":::
+
+## Recommended configuration for Continuous Integration and Continuous Deployment (CI/CD)
+
+For an optimal Continuous Integration (CI) and Continuous Deployment (CD), consider the following recommendations:
+
+* Create the semantic model connection using **Service Principal** authentication.
+* Grant the service principal the required access across all environments. This access allows the same semantic model connection to be reused across environments during deployment, simplifying CI/CD workflows.
+
+>[!NOTE]
+>For service principal-based authentication, enable [Service principals can call Fabric public APIs](../../admin/service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis) under **Developer settings** in the admin portal.
 
 ## Related content
 
