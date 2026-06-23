@@ -246,11 +246,11 @@ If you don't take the Git integration approach, you can use the following manual
 
 1. Other artifact settings such as monitoring, authorization, RBAC, introspection, and more don't carry over after failover. You must re-establish these settings in the new region.
 
-1. References
+#### References
 
-   1. [Overview of Fabric Git integration - Microsoft Fabric | Microsoft Learn](/fabric/cicd/git-integration/intro-to-git-integration)
+   - [Overview of Fabric Git integration - Microsoft Fabric | Microsoft Learn](/fabric/cicd/git-integration/intro-to-git-integration)
    
-   1. [Source control and deployment pipelines in API for GraphQL - Microsoft Fabric | Microsoft Learn](/fabric/data-engineering/graphql-source-control-and-deployment)
+   - [Source control and deployment pipelines in API for GraphQL - Microsoft Fabric | Microsoft Learn](/fabric/data-engineering/graphql-source-control-and-deployment) 
    
 ## Data Science
 
