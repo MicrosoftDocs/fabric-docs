@@ -257,6 +257,8 @@ The access mode determines how data access is authenticated and enforced when qu
 
 * **Cross-artifact access enforcement timing**: Access to tables backed by OneLake shortcuts that reference data from other artifacts is enforced through synchronized OneLake security roles. Until synchronization occurs, SQL authorization may temporarily reflect the previous permission state.
 
+* **Semantic model shortcuts**: The SQL analytics endpoint doesn't support shortcuts from semantic models when OneLake security is enabled. Queries against those shortcuts fail.
+
 * **Ownership changes on shortcut-backed tables**: Shortcut-backed tables are represented as SQL objects in the SQL analytics endpoint and therefore support standard SQL ownership operations. Administrative commands such as `ALTER AUTHORIZATION` can change the owner of a shortcut-backed table. In certain scenarios, this may allow ownership chaining behavior that bypasses OneLake security policies and grants unintended access to the underlying data. Until additional enforcement mechanisms are introduced, administrators should avoid modifying ownership on shortcut-backed tables.
 
 * **Target validation downtime**: When a shortcut target changes (for example, rename or URL update), the database briefly enters *single-user mode* while the system validates the new target. During this period, queries are blocked. These operations are typically fast but, depending on internal processes, can take up to 5 minutes to synchronize.
