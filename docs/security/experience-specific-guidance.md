@@ -212,7 +212,9 @@ The best way to make this easy and quick is to use Fabric Git integration, then 
 
 1. Reapply artifact settings, including roles, access controls, and authentication configuration. 
 
-1. Reapply endpoint references by updating any applications or integrations to use the newly created GraphQL endpoint. 
+1. Reapply endpoint references by updating any applications or integrations to use the newly created GraphQL endpoint.
+
+1. Update any existing deployment pipelines that were pointing to the old workspace to reference the newly created workspace.
 
 1. Validate end-to-end functionality of the API.
 
@@ -230,6 +232,8 @@ If you don't take the Git integration approach, you can use the following manual
 
 1. Reapply endpoint references by updating any applications or integrations to use the newly created GraphQL endpoint. 
 
+1. Update any existing deployment pipelines that were pointing to the old workspace to reference the newly created workspace.
+   
 1. Validate end-to-end functionality of the API. 
 
 #### Important considerations
