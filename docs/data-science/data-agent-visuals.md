@@ -1,8 +1,8 @@
 ---
 title: Get visual responses from a Fabric data agent (preview)
 description: Learn how to get visual responses such as charts and graphs from a Fabric data agent.
-ms.author: jburchel
-author: jonburchel
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: vimeland
 ms.topic: how-to
 ms.date: 05/08/2026
