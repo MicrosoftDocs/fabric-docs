@@ -41,7 +41,7 @@ With audit columns enabled, you can answer the following questions for any row i
 No custom code or expression authoring is required. Add as many audit columns as you want, and every row in every table your Copy job writes includes this metadata automatically.
 
 > [!NOTE]
-> Audit columns are supported on all Copy job connectors except Snowflake, Office 365, and Databricks Delta Lake.
+> Audit columns are supported on all Copy job connectors except Office 365, and Databricks Delta Lake.
 
 ## Why audit columns matter
 
