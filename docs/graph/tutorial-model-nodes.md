@@ -43,7 +43,7 @@ To add node types to your graph, follow these steps:
 
    > [!TIP]
    > You can set compound keys (IDs consisting of multiple columns). After you select a mapping table, choose one ID from the **ID** dropdown, then use the dropdown again to add another.
-
+1. Select **+ Add property**, **Add all columns**, and **Apply**. This step makes all columns in this source table available as properties for the node.
 1. Select **Confirm** to add the node type to your graph.
 1. Repeat the process for all remaining node types listed in the [Adventure Works node mappings](#adventure-works-node-mappings) table.
 
@@ -53,7 +53,7 @@ To add node types to your graph, follow these steps:
 
 ## Understand node properties
 
-When you add a node type, every column in the mapping table automatically becomes a **property** on that node type. You don't need to add properties manually. To see the properties for a node type, double-click it in the graph model editor to open the **Edit node schema** dialog.
+When you add a node type, add columns from the mapping table as **properties** on that node type to make them available for queries. To see the properties for a node type, double-click it in the graph model editor to open the **Edit node schema** dialog.
 
 :::image type="content" source="./media/tutorial/edit-node-schema-properties.png" alt-text="Screenshot showing the Edit node schema dialog for the Employee node type with all 10 properties listed, each with a delete icon." lightbox="./media/tutorial/edit-node-schema-properties.png":::
 

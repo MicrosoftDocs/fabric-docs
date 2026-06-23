@@ -1,8 +1,8 @@
 ---
-title: "Quickstart: Create your first graph in Microsoft Fabric"
+title: "Quickstart: Create Your First Graph in Microsoft Fabric"
 description: Create a basic graph with two nodes and one edge in Microsoft Fabric in just a few minutes using the visual graph modeling experience.
 ms.topic: quickstart
-ms.date: 05/20/2026
+ms.date: 06/23/2026
 ms.reviewer: wangwilliam
 ms.search.form: Quickstart - Create your first graph in Microsoft Fabric
 ai-usage: ai-assisted
@@ -31,60 +31,48 @@ To create your graph, first load sample data into a lakehouse in your Fabric wor
 
 ### Download the sample data
 
-1. Go to the [graph GQL example datasets](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/graph) on GitHub.
-1. Select the *adventureworks_docs_sample.zip* file and download it to your local machine.
-
-    > [!TIP]
-    > To download a file from GitHub, select the file, and then select the **Download raw file** icon.
-
-1. Extract the downloaded *adventureworks_docs_sample.zip* file to a folder on your local machine.
-
-   > [!TIP]
-   > In File Explorer, right-click the zip file and select **Extract All**, then choose a destination folder.
+[!INCLUDE [download sample data](includes/sample-data-download.md)]
 
 ### Create a lakehouse
 
-1. In [Microsoft Fabric](https://fabric.microsoft.com/), select your workspace.
-1. Select **+ New item**.
-1. Select **Store data** > **Lakehouse**.
-1. Enter a name (for example, "AdventureWorksLakehouse"), clear the **Lakehouse schemas** option, and select **Create**.
-
-    > [!IMPORTANT]
-    > Graph doesn't currently support lakehouses with [lakehouse schemas enabled](../data-engineering/lakehouse-schemas.md).
+[!INCLUDE [create a lakehouse](includes/sample-data-lakehouse.md)]
 
 ### Load the data into tables
 
 For this quickstart, you only need two tables: *adventureworks_customers* and *adventureworks_orders*. Upload the full sample data folder, and then load just these two tables.
 
 > [!NOTE]
-> You can upload the entire folder if you plan on doing the full tutorial later or want to explore the additional data.
+> The full set of sample files is used in the [full graph tutorial](tutorial-introduction.md). You can also use them to explore additional data on your own.
 
 1. In your lakehouse, hover over **Files**, select the ellipsis (...), and then select **Upload** > **Upload folder**.
 1. Browse to the extracted folder and upload it. This action uploads all the sample data files to your lakehouse.
 1. Expand **Files** and the uploaded folder to see the subfolders. For this quickstart, you only need to load two of them as tables.
 1. Hover over the *adventureworks_customers* subfolder, select the ellipsis (...), and choose **Load to Tables** > **New table**.
-1. Set the file type to Parquet and select **Load**.
+1. Set the file type to **parquet** and select **Load**.
 1. Repeat steps 4-5 for the *adventureworks_orders* subfolder.
+
+When you finish, you see the two tables under **Tables** in the lakehouse Explorer panel.
+
+:::image type="content" source="./media/quickstart/tables.png" alt-text="Screenshot showing the adventureworks_customers and adventureworks_orders tables." lightbox="./media/quickstart/tables.png":::
 
 ## Create a graph model
 
 1. In your [Microsoft Fabric workspace](https://fabric.microsoft.com/), select **+ New item**.
-1. Select **Analyze and train data** > **Graph model**.
+1. Enter *graph* in the search box, press **Enter** to search for graph items, and select **Graph model**. Alternatively, scroll down to **Analyze and train data** > **Graph model**.
 
     :::image type="content" source="./media/quickstart/new-item-graph-model.png" alt-text="Screenshot showing the new item menu with the option to select Graph model." lightbox="./media/quickstart/new-item-graph-model.png":::
 
-    > [!TIP]
-    > Alternatively, enter "graph" in the search box and press **Enter** to search for graph items.
-
 1. Enter a name (for example, "MyFirstGraph") and select **Create**.
 
-After creating the graph model, you're taken to the graph view where you can see the default mode is set to **Model** with **Save**, **Get data**, **Add node**, and **Add edge** buttons at the top.
+After creating the graph model, you're taken to the graph view where you can see the default mode is set to **Model**. Across the top ribbons, you see buttons for **Save**, **Get data**, **Add node**, **Add edge**, and **Delete**.
+
+:::image type="content" source="./media/quickstart/default-view.png" alt-text="Screenshot showing the default view of the graph model." lightbox="./media/quickstart/default-view.png":::
 
 ## Add data to your graph model
 
 To add data to your graph model, follow these steps in graph view:
 
-1. Select **Get data**.
+1. In the top ribbon, select **Get data**.
 1. From the OneLake catalog, select your lakehouse with the Adventure Works data.
 1. Select **Add**.
 1. Select the *adventureworks_customers* and *adventureworks_orders* tables, and then select **Load**.
@@ -97,47 +85,65 @@ Now that your data is loaded, define your graph's structure by adding nodes and 
 
 ### Add two nodes
 
-1. Select **Add node**.
+1. In the top ribbon, select **Add node**.
 1. Configure the first node:
-   - **Label**: `Customer`
-   - **Mapping table**: adventureworks_customers
-   - **ID of mapping column**: CustomerID_K
+   - **Node label**: `Customer`
+   - **Source table**: adventureworks_customers
+   - **Key**: CustomerID_K
 
     :::image type="content" source="./media/quickstart/node-add-customer.png" alt-text="Screenshot showing the add node to graph dialog." lightbox="./media/quickstart/node-add-customer.png":::
 
-1. Select **Confirm**.
+1. Select **+ Add property**, **Add all columns**, and **Apply**. This step makes all columns in this source table available as properties for the node.
+
+    :::image type="content" source="./media/quickstart/node-add-customer-properties.png" alt-text="Screenshot showing the add node to graph dialog with four properties." lightbox="./media/quickstart/node-add-customer-properties.png":::
+
+1. Select **Create**. You see a node for `Customer` appear on the graph canvas.
 1. Select **Add node** again.
 1. Configure the second node:
-   - **Label**: `Order`
-   - **Mapping table**: adventureworks_orders
-   - **ID of mapping column**: SalesOrderDetailID_K
-1. Select **Confirm**.
+   - **Node label**: `Order`
+   - **Source table**: adventureworks_orders
+   - **Key**: SalesOrderDetailID_K
+1. Select **+ Add property**, **Add all columns**, and **Apply**. This step makes all columns in this source table available as properties for the node.
+1. Select **Create**. 
+
+You now have two nodes, `Customer` and `Order`, visible on the graph canvas.
+
+:::image type="content" source="./media/quickstart/nodes.png" alt-text="Screenshot showing two new nodes on the canvas.":::
 
 ### Add one edge
 
-1. Select **Add edge**.
+1. In the top ribbon, select **Add edge**.
 1. Configure the edge:
-   - **Label**: `purchases`
-   - **Mapping table**: adventureworks_orders
-   - **Source node**: `Customer`
-   - **Source mapping column**: CustomerID_FK
+   - **Edge label**: `purchases`
+   - **Source table**: adventureworks_orders
+   - **Origin node**: `Customer`
+   - **Origin key**: CustomerID_FK
    - **Target node**: `Order`
-   - **Target mapping column**: SalesOrderDetailID_K
+   - **Target key**: SalesOrderDetailID_K
 
     :::image type="content" source="./media/quickstart/edge-add-purchases.png" alt-text="Screenshot showing the add edge dialog." lightbox="./media/quickstart/edge-add-purchases.png":::
+1. Select **+ Add property**, **Add all columns**, and **Apply**. This step makes all columns in this source table available as properties for the edge.
+1. Select **Create**.
+1. In the top ribbon, select **Save**.
 
-1. Select **Confirm**.
-1. Select **Save** to load the graph. Loading might take a few moments. When the graph loads successfully, you see the node and edge labels in the graph view canvas.
+You see the node and edge labels in the graph view canvas.
+
+:::image type="content" source="./media/quickstart/nodes-edge.png" alt-text="Screenshot showing the new edge between the two nodes on the canvas.":::
+
+The data might take a few minutes to finish loading. Wait for the *Data load is in progress* label to show *Data load completed...* before proceeding to the next section.
+
+:::image type="content" source="./media/quickstart/data-load-completed.png" alt-text="Screenshot showing the confirmation message that data load completed." lightbox="./media/quickstart/data-load-completed.png":::
 
 ## Query your graph
 
 Run a GQL query to find the top five customers by order count.
 
-1. Select  **Query** mode.
+1. In the **Modes** panel, select  **Query** mode.
+
+1. In the top ribbon, select **Query builder > Code editor**.
 
    :::image type="content" source="./media/quickstart/query-mode-code-editor.png" alt-text="Screenshot showing how to select query mode and the code editor." lightbox="./media/quickstart/query-mode-code-editor.png":::
 
-1. Select **Code editor** from the top menu.
 1. Enter the following GQL query in the input box:
 
     ```gql
@@ -148,16 +154,14 @@ Run a GQL query to find the top five customers by order count.
     LIMIT 5
     ```
 
-1. Select **Run query**. You should see five rows listing customer names and their order counts, sorted from most to fewest orders.
+1. In the top ribbon, select **Run query**. You see five rows listing customer names and their order counts, sorted from most to fewest orders.
 
-The following image shows the GQL query and its results:
-
-:::image type="content" source="./media/quickstart/code-editor-query-and-results.png" alt-text="Screenshot showing the result of running a GQL query." lightbox="./media/quickstart/code-editor-query-and-results.png":::
+    :::image type="content" source="./media/quickstart/code-editor-query-and-results.png" alt-text="Screenshot showing the result of running a GQL query." lightbox="./media/quickstart/code-editor-query-and-results.png":::
 
 Congratulations! You created your first graph in Microsoft Fabric and ran a query against it.
 
 ## Next steps
 
-- [Graph tutorial](tutorial-introduction.md) - Build a complete graph with multiple nodes, edges, and queries.
-- [GQL language guide](gql-language-guide.md) - Learn GQL syntax.
-- [What is graph in Microsoft Fabric?](overview.md) - Learn about graph concepts.
+- [Graph tutorial](tutorial-introduction.md): Build a complete graph with multiple nodes, edges, and queries.
+- [GQL language guide](gql-language-guide.md): Learn GQL syntax.
+- [What is graph in Microsoft Fabric?](overview.md): Learn about graph concepts.

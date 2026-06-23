@@ -92,7 +92,7 @@ Follow these guidelines:
 
 ### Add properties to edge types
 
-Unlike node types, edge types start with no properties. You can optionally add properties when the data describes the relationship itself rather than either endpoint. Edge properties are most useful when you write GQL queries that need to filter, aggregate, or return data about the relationship itself.
+Edge types start with no properties. You can optionally add properties when the data describes the relationship itself rather than either endpoint. Edge properties are most useful when you write GQL queries that need to filter, aggregate, or return data about the relationship itself.
 
 To add a property, double-click an edge type in the graph model editor to open the **Edit edge schema** dialog, select **Add property**, and then choose a column from the mapping table.
 
@@ -105,10 +105,7 @@ To add a property, double-click an edge type in the graph model editor to open t
 
 ## Remove unnecessary properties
 
-When you create a node type from a mapping table, every column in the table becomes a property by default. Excessive properties increase storage, slow queries, and make the graph harder to maintain. For these reasons, remove properties that you don't need for queries or analysis.
-
-> [!NOTE]
-> Edge types work differently - they start with no properties. You manually add only the properties you need by using the **Add property** button in the **Edit edge schema** dialog.
+When you create a node type from a mapping table, you might not want to add every column in the table as a property. Excessive properties increase storage, slow queries, and make the graph harder to maintain. For these reasons, remove properties that you don't need for queries or analysis.
 
 For each node type, keep only properties that are:
 
