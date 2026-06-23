@@ -91,7 +91,7 @@ To manually upgrade:
 
 After approval, plan creates a new role session with the corresponding permissions.
 
-:::image type="content" source="media/overview-roles/role-upgrade-option.png" alt-text="Screenshot of option to upgrade roles.":::
+:::image type="content" source="media/overview-roles/stakeholder-upgrade-notification.png" alt-text="Screenshot of option to upgrade roles.":::
 
 ### Upgrade prompts
 
