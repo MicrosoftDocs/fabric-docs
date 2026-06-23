@@ -1,8 +1,8 @@
 ---
 title: Fabric data agent creation
 description: Learn how to create a Fabric data agent that can answer questions about data.
-ms.author: jburchel
-author: jonburchel
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: amjafari
 ms.topic: concept-article
 ms.date: 05/11/2026
