@@ -1,7 +1,7 @@
 ---
 title: User Roles in Plan (Preview)
 description: Learn about user roles and actions in plan (preview), including capabilities of each role and how to upgrade roles.
-ms.date: 05/05/2026
+ms.date: 06/23/2026
 ms.topic: overview
 ---
 
@@ -56,66 +56,6 @@ Examples:
 | Edit planning items or perform authoring operations                     | Planner                 |
 
 With this dynamic model, administrators don't need to manually manage role assignments.
-
-## Upgrade roles
-
-Upgrade your planning role by performing an action that requires Planner or Stakeholder permissions, or upgrade the role manually.
-
-### Check current role
-
-The planning toolbar displays your assigned role. Select the role indicator to display additional information, including:
-
-* Current session type
-* Session expiration details
-* Available upgrade options
-* Capabilities of higher privilege levels
-
-:::image type="content" source="media/overview-roles/check-role.png" alt-text="Screenshot of how to check role.":::
-
-### Role sessions
-
-Planning roles operate through time-bound sessions. Plan creates a session when you perform a planning action, such as opening a planning sheet.
-Each session remains active for 30 days. When you perform an action that requires a higher privilege level, plan automatically creates a new session for the upgraded role.
-Role sessions help organizations implement least-privilege access while letting users transition between planning responsibilities.
-
-### Manual role upgrades
-
-Although plan assigns roles automatically based on user actions, users can also manually upgrade their role.
-
-To manually upgrade:
-
-1. Select the current role indicator.
-1. Review the capabilities available in the higher role.
-1. Select the desired upgrade option.
-1. Confirm the upgrade request.
-
-After approval, plan creates a new role session with the corresponding permissions.
-
-:::image type="content" source="media/overview-roles/stakeholder-upgrade-notification.png" alt-text="Screenshot of option to upgrade roles.":::
-
-### Upgrade prompts
-
-Administrators can control whether plan prompts users before a role upgrade occurs. To display upgrade notifications, in **Workspace settings**, go to **Plan**, and enable **Prompt on Session Upgrade**.
-
-> [!NOTE]
-> Creating a new plan workload automatically upgrades your session to Planner. Since workload creation requires Planner capabilities, no warning or confirmation prompt appears.
-
-* **Prompt enabled**: When enabled, users receive a notification before plan upgrades the role and can choose whether to proceed.
-* **Prompt disabled**: When disabled, role upgrades occur automatically when you perform a qualifying action. Upgrade prompts are disabled by default.
-
-### Role lifecycle
-
-1. **Role upgrades:** Plan assigns roles dynamically based on user actions through time‑bound sessions. Role upgrades occur when you perform valid plan actions or apply a manual upgrade. You can upgrade roles only to a higher privilege level:
-
-    * A Viewer can be upgraded to a Stakeholder.
-    * A Stakeholder can be upgraded to a Planner.
-
-1. **Role downgrades:** Plan doesn't support manual downgrades within an active session.
-
-1. **Session expiry:** Each session automatically expires after 30 days. After the 30-day session expires, a new session begins only when the user performs a new action on a plan item. The persona for the new session is determined based on the first successful action performed:
-    * If you only open and view a plan item, the new session starts as a Viewer session.
-    * If you perform a Planner-level action (for example, creating a new plan item or entering edit mode on a valid item), the new session starts as a Planner session.
-    Each new session inherits its role from your first successful activity.
 
 ## Capabilities by role
 
