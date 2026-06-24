@@ -13,7 +13,8 @@ The following operations are available in the audit logs.
 | Friendly name | Operation name | Notes |
 |---|---|---|
 | Abort copy blob operation | :::no-loc text="AbortCopyBlob"::: | OneLake operation. Stops a pending Copy Blob operation, and leaves a destination blob with zero length and full metadata.  |
-| Accept an invitation to   external data share | :::no-loc text="AcceptExternalDataShare"::: | Accept an invitation to external data share |
+| Accept an invitation to   external data share | :::no-loc text="AcceptExternalDataShare"::: | Whether a custom live pool activation suceeded or not. |
+| Activated Spark Custom Live Pool | :::no-loc text="ActivatedSparkCustomLivePool"::: | Accept an invitation to external data share |
 | Add Admin Personal Workspace Access  |  :::no-loc text="AddAdminPersonalWorkspaceAccess":::  |    |
 | Add Artifact To Pipeline  |  :::no-loc text="AddArtifactToPipeline":::  |    |
 | Add Experiment Run  |  :::no-loc text="AddExperimentRun":::  |    |
