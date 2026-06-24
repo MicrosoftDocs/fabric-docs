@@ -4,7 +4,7 @@ description: Learn how to optimize Delta tables for different consumption scenar
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: dacoelho, milescole
-ms.date: 02/12/2026
+ms.date: 06/15/2026
 ms.topic: concept-article
 ms.custom:
   - fabric-cat
@@ -146,7 +146,8 @@ OPTIMIZE schema_name.table_name ZORDER BY (column1, column2)
 ```
 
 > [!IMPORTANT]
-> The `OPTIMIZE` command is a Spark SQL command. You must run it in Spark environments such as notebooks, Spark job definitions, or the Lakehouse Maintenance interface. The SQL analytics endpoint and Warehouse SQL query editor don't support this command.
+> The `OPTIMIZE` command is a Spark SQL command. You must run it in Spark environments such as notebooks, Spark job definitions, or the Lakehouse Maintenance interface. The SQL analytics endpoint and Warehouse SQL query editor don't support this command. 
+> For a tutorial on using a data pipeline and the `sys.sp_get_table_health_metrics` T-SQL stored procedure to determine when a table needs the `OPTIMIZE` command, see [Optimize Lakehouse tables based on health checks](../data-warehouse/tutorial-conditional-lakehouse-optimization.md).
 
 For more information, see [Table compaction](../data-engineering/table-compaction.md).
 
