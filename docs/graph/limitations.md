@@ -57,9 +57,9 @@ Up to once a week, a graph model might encounter a timeout if the graph creation
 
 However, users can reinitiate graph creation or update.
 
-### Total number of graph instances
+### Total number of graph models
 
-Each Fabric Workspace can have up to 10 graph instances.
+Each Fabric Workspace can have up to 10 graph models.
 
 ### Size of graph
 

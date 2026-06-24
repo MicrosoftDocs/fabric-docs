@@ -45,7 +45,7 @@ For more detailed instructions, see [Create a lakehouse](../data-engineering/cre
 
 ## Load the data into tables
 
-After you upload the files, load them into tables. Tables are the source data from a lakehouse that you use to create node types and edge types in your graph instance.
+After you upload the files, load them into tables. Tables are the source data from a lakehouse that you use to create node types and edge types in your graph model.
 
 For each subfolder in the uploaded *AdventureWorks_Data* folder, follow these steps to load the data into tables:
 
