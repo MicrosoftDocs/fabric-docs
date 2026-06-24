@@ -1,8 +1,8 @@
 ---
-title: "Tutorial: Load Sample Data for graph in Microsoft Fabric"
+title: "Tutorial: Load Sample Data for Graph in Microsoft Fabric"
 description: Learn how to load the Adventure Works sample data into a lakehouse for use with graph in Microsoft Fabric, including uploading CSV files and verifying data.
 ms.topic: tutorial
-ms.date: 05/20/2026
+ms.date: 06/23/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Load sample data
 ai-usage: ai-assisted
@@ -16,25 +16,13 @@ The dataset contains tables in Parquet format. The tables represent various enti
 
 ## Download the sample data
 
-1. Go to the [graph in Microsoft Fabric GQL example datasets](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/graph) on GitHub.
-1. Select the *adventureworks_docs_sample.zip* file and download it to your local machine.
-
-    > [!TIP]
-    > To download a file from GitHub, select the file, and then select the **Download raw file** icon.
-
-1. Extract the downloaded *adventureworks_docs_sample.zip* file to a folder on your local machine.
-
-   > [!TIP]
-   > In File Explorer, right-click the zip file and select **Extract All**. Then choose a destination folder such as `c:\Downloads\AdventureWorks_Data`.
+[!INCLUDE [download sample data](includes/sample-data-download.md)]
 
 ## Create a lakehouse
 
 If you don't already have a lakehouse, create one to store the sample data:
 
-1. In [Microsoft Fabric](https://fabric.microsoft.com/), select the workspace where you want to create the lakehouse.
-1. Select **+ New item**.
-1. Select **Store data** > **Lakehouse**.
-1. Enter a name for your lakehouse (for example, "AdventureWorksLakehouse"), clear the **Lakehouse schemas** option, and then select **Create**.
+[!INCLUDE [create a lakehouse](includes/sample-data-lakehouse.md)]
 
 For more detailed instructions, see [Create a lakehouse](../data-engineering/create-lakehouse.md).
 
@@ -43,11 +31,13 @@ For more detailed instructions, see [Create a lakehouse](../data-engineering/cre
 1. In your lakehouse Explorer, hover over **Files**. Select the triple ellipsis (...) that appears, and then select **Upload** > **Upload folder**.
 
    > [!NOTE]
-   > You can't upload a folder by using **Upload files**.
+   > You can't upload an entire folder by using **Upload files**.
 
    :::image type="content" source="./media/tutorial/upload-lakehouse-data.png" alt-text="Screenshot showing Lakehouse Explorer interface with Upload->Upload folder selected after hovering over File's triple ellipsis (not shown after Upload is selected)." lightbox="./media/tutorial/upload-lakehouse-data.png":::
 
-1. In the **Upload folder** dialog, browse to where you extracted the folder and select it. Then select **Upload**. A pop-up window might appear asking you to confirm the number of files to upload: select **Upload** in that pop-up, and then select **Upload** in the **Upload folder** dialog.
+1. In the **Upload folder** dialog, browse to where you extracted the folder and select it. Then select **Upload**. 
+
+    A pop-up window might appear asking you to confirm the number of files to upload. Select **Upload** in that pop-up, and then select **Upload** in the **Upload folder** dialog.
 
    Your lakehouse should now contain the uploaded *AdventureWorks_Data* folder with the data files.
 
@@ -55,15 +45,15 @@ For more detailed instructions, see [Create a lakehouse](../data-engineering/cre
 
 ## Load the data into tables
 
-After you upload the files, load them into tables. Tables are the source data from a lakehouse that you use to create node types and edge types in your graph model.
+After you upload the files, load them into tables. Tables are the source data from a lakehouse that you use to create node types and edge types in your graph instance.
 
 For each subfolder in the uploaded *AdventureWorks_Data* folder, follow these steps to load the data into tables:
 
 1. Drag and drop the subfolder (for example, *adventureworks_customers*) from the **Files** section to the **Tables** section in the lakehouse Explorer.
 
-1. In the **Load folder to new table** dialog, enter a table name (the default is the folder name), set the file type to Parquet, and then select **Load**.
+1. In the **Load folder to new table** dialog, enter a table name (the default is the folder name), set the file type to **parquet**, and then select **Load**.
 
-After you load all the tables, your Lakehouse Explorer shows eight tables. The lakehouse in your workspace is now ready with the Adventure Works sample data. In the next step, you create a graph model that uses this data.
+After you load all the tables, your Lakehouse Explorer shows eight tables. The lakehouse in your workspace is now ready with the Adventure Works sample data. In the next step, you create a graph that uses this data.
 
 :::image type="content" source="./media/tutorial/lakehouse-with-tables.png" alt-text="Screenshot showing the loaded tables in the lakehouse Explorer." lightbox="./media/tutorial/lakehouse-with-tables.png":::
 

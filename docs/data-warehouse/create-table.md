@@ -2,7 +2,7 @@
 title: Create Tables in the Warehouse
 description: Learn how to create tables in your warehouse in Microsoft Fabric.
 ms.reviewer: jovanpop, procha, salilkanade
-ms.date: 01/06/2026
+ms.date: 06/23/2026
 ms.topic: how-to
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
@@ -64,7 +64,7 @@ You can also create a table directly from an external parquet file that you have
 ```sql
 CREATE TABLE dbo.bing_covid AS
 SELECT *
-FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet');
+FROM OPENROWSET(BULK 'https://<storage account>.blob.core.windows.net/public/<subfolder>/<file name>.parquet');
 ```
 
 The **CTAS** (Create Table As Select) statement creates a new table and populates it with data retrieved from the specified source file, streamlining the process of both defining and loading the table in a single step. You can find more ingestion options in [Ingest data with T-SQL](ingest-data-tsql.md) page.

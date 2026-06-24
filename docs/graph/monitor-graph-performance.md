@@ -34,7 +34,7 @@ Several interconnected factors affect graph performance. Diagnose slow refreshes
 ### Source data characteristics
 
 - Graph reads directly from lakehouse tables in OneLake. Large source tables with many columns take longer to ingest.
-- If your source tables include columns you don't need in the graph, remove those node type properties during graph modeling. Each property adds to the data read during refresh and the memory footprint of the queryable graph. Edge type properties are added manually, so only add the ones you need.
+- If your source tables include columns you don't need in the graph, don't add those node type properties during graph modeling. Each property adds to the data read during refresh and the memory footprint of the queryable graph. Both node and edge type properties are added manually, so only add the ones you need.
 
 ### Query patterns
 
@@ -105,7 +105,7 @@ For more information, see [Install the Microsoft Fabric Capacity Metrics app](..
 
 ## Performance best practices summary
 
-- **Right-size your model**: Remove node types, edge types, and properties you don't need. Smaller models refresh faster and use less memory.
+- **Right-size your model**: Avoid adding node types, edge types, and properties you don't need. Smaller models refresh faster and use less memory.
 - **Filter early, project narrowly**: Use pattern-level `WHERE` clauses and return only the properties you need. Avoid `RETURN *`.
 - **Bound your results**: Apply `LIMIT` to high-cardinality queries. Keep results well under the 64-MB truncation threshold.
 - **Keep traversals shallow**: Use the tightest hop range your scenario allows. Use `TRAIL` to prevent redundant paths in dense graphs.
