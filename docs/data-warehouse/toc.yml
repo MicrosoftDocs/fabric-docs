@@ -246,6 +246,8 @@ items:
             items:
               - name: Use data clustering in Fabric Data Warehouse
                 href: tutorial-data-clustering.md
+              - name: Optimize Lakehouse tables based on health checks
+                href: tutorial-conditional-lakehouse-optimization.md                
       - name: Monitor the warehouse
         items:
           - name: Monitoring overview
