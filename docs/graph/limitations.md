@@ -63,7 +63,7 @@ The current generally available SKU configurations can process about 2 billion g
 
 ### Total number of graph models
 
-Each Fabric Workspace can have up to 10 graph models.
+Each Fabric workspace can have up to 10 graph models.
 
 ### Multitasking UI
 
