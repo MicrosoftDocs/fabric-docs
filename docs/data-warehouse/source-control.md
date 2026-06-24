@@ -2,7 +2,7 @@
 title: "Source Control with Fabric Data Warehouse (Preview)"
 description: "Learn how to use source control with Microsoft Fabric Warehouse."
 ms.reviewer: salilkanade, pvenkat
-ms.date: 05/19/2026
+ms.date: 06/24/2026
 ms.topic: concept-article
 ---
 
