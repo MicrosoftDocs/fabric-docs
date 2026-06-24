@@ -265,6 +265,8 @@ items:
       items:
         - name: Get started with intelligence sheets
           href: plan/intelligence-how-to-get-started.md
+        - name: Apply and customize themes
+          href: plan/intelligence-how-to-apply-themes.md
         - name: Build financial reports
           href: plan/intelligence-how-to-build-financial-reports.md
         - name: Comment and collaborate
