@@ -305,6 +305,8 @@ items:
               href: plan/infobridge-transformations/infobridge-how-to-find-replace.md
             - name: Pivot and unpivot columns
               href: plan/infobridge-transformations/infobridge-how-to-pivot-column.md
+            - name: Filter rows
+              href: plan/infobridge-transformations/infobridge-how-to-filter-rows.md
 - name: Graph
   href: ../graph/toc.yml
 - name: Data agent
