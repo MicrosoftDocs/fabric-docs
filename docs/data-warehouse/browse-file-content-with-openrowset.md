@@ -2,7 +2,7 @@
 title: "Browse File Content Before Ingestion with the OPENROWSET function"
 description: Learn how to browse the contents of files and discover their schema using the OPENROWSET function before ingesting them into a Warehouse in Microsoft Fabric.
 ms.reviewer: jovanpop
-ms.date: 09/08/2025
+ms.date: 06/23/2026
 ms.topic: how-to
 ms.search.form: Ingesting data
 ---
@@ -26,30 +26,27 @@ Once you understand your data, you can create the tables that will be used to st
 
 In the first example, we inspect data from a Parquet source.
 
-Use the following code to read sample data from a file using the [OPENROWSET(BULK) function](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric&preserve-view=true) with a Parquet source:
+Use the following code to read sample data from a public file using the [OPENROWSET(BULK) function](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric&preserve-view=true) with a Parquet source:
 
 ```sql
 SELECT TOP 10 * 
-FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
+FROM OPENROWSET(BULK 'https://<storage account>.blob.core.windows.net/public/<subfolder>/<file name>.parquet') AS data
 ```
 
 Since this data is publicly available and doesn't require authentication, you can easily copy this query into your Fabric warehouse and execute it without any changes.
-
-No authentication details are needed.
 
 You don't need to specify the `FORMAT` option, as the `OPENROWSET` function assumes you're reading the Parquet format based on the `.parquet` file extension in the URI.
 
 ## Browse CSV files using the OPENROWSET function
 
-In the second example, we inspect data from a CSV file. 
-Use the following code to read sample data from a CSV file using the OPENROWSET(BULK) function:
+In the second example, you inspect data from a CSV file. Use the following code to read sample data from a CSV file by using the `OPENROWSET(BULK)` function:
 
 ```sql
 SELECT TOP 10 * 
-FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.csv') AS data
+FROM OPENROWSET(BULK 'https://<storage account>.blob.core.windows.net/public/<subfolder>/<file name>.csv') AS data
 ```
 
-Since this data is publicly available and doesn't require authentication, you can easily copy this query into your Fabric warehouse and execute it without any changes. No authentication details are needed.
+Because this data is publicly available and doesn't require authentication, you can easily copy this query into your Fabric warehouse and execute it without any changes. 
 
 You don't need to specify the `FORMAT` option, as the `OPENROWSET` function assumes you're reading the `CSV` format based on the `.csv` file extension in the URI.
 
@@ -62,7 +59,7 @@ The `OPENROWSET(BULK)` function enables you to browse the JSON files in line-del
 
 ```sql
 SELECT TOP 10 * 
-FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.jsonl') AS data
+FROM OPENROWSET(BULK 'https://<storage account>.blob.core.windows.net/public/<subfolder>/<file name>.jsonl') AS data
 ```
 
 If the file contains line-delimited text where each line represents a valid JSON document, the `OPENROWSET` function can be used to read it directly.
@@ -75,7 +72,7 @@ The `OPENROWSET(BULK)` function enables you to read the files stored in Fabric O
 
 ```sql
 SELECT TOP 10 * 
-FROM OPENROWSET(BULK 'https://onelake.dfs.fabric.microsoft.com/<workspaceId>/<lakehouseId>/Files/latest/bing_covid-19_data.jsonl') AS data
+FROM OPENROWSET(BULK 'https://onelake.dfs.fabric.microsoft.com/<workspaceId>/<lakehouseId>/Files/latest/<file name>.jsonl') AS data
 ```
 
 Replace `<workspaceId>` and `<lakehouseId>` with the workspace and lakehouse GUIDs that you can find in the Fabric workspace URI. Make sure that you are referencing the files in the `/Files` section of a lakehouse.
@@ -90,7 +87,7 @@ For example, you can specify values for `ROWTERMINATOR` and `FIELDTERMINATOR` to
 
 ```sql
 select *
-from OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.csv',
+from OPENROWSET(BULK 'https://<storage account>.blob.core.windows.net/public/<subfolder>/<file name>.csv',
                 FORMAT='CSV',
                 HEADER_ROW=True,
                 ROWTERMINATOR='\n',
@@ -107,7 +104,7 @@ With the `OPENROWSET` function, you can easily view the file columns and their t
 ```sql
 EXEC sp_describe_first_result_set 
 N'SELECT TOP 0 * 
-FROM OPENROWSET(BULK ''https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet'') AS data';
+FROM OPENROWSET(BULK ''https://<storage account>.blob.core.windows.net/public/<subfolder>/<file name>.parquet'') AS data';
 ```
 
 In this example, the `sp_describe_first_result_set` procedure executes the query with the `OPENROWSET` function, which doesn't returns any rows. 
@@ -124,11 +121,11 @@ The `OPENROWSET(BULK)` function returns estimated column types based on a sample
 
 If the sample isn't representative, you might get unexpected types or their sizes.
 
-If you know the column types in your files, you can explicitly define the schema of the columns using the WITH clause:
+If you know the column types in your files, you can explicitly define the schema of the columns by using the `WITH` clause:
 
 ```sql
 SELECT TOP 10 * 
-FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.csv') AS data
+FROM OPENROWSET(BULK 'https://<storage account>.blob.core.windows.net/public/<subfolder>/<file name>.csv') AS data
 WITH (updated date,
       load_time datetime2,
       deaths_change smallint,

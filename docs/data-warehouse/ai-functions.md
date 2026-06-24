@@ -1,7 +1,7 @@
 ---
 title: AI Functions (Preview)
 description: This tutorial explains how to use AI functions to perform advanced text processing without leaving warehouse in Microsoft Fabric.
-ms.reviewer: jovanpop-msft
+ms.reviewer: jovanpop
 ms.date: 06/10/2026
 ms.topic: how-to 
 ai-usage: ai-assisted
