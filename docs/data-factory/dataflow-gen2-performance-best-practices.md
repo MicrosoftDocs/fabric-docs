@@ -3,7 +3,7 @@ title: "Best practices for getting the best performance with Dataflow Gen2 in Fa
 description: "This article provides best practices for optimizing the performance of Dataflow Gen2 in Fabric Data Factory. By following these guidelines, you can enhance the efficiency and speed of your data integration processes."
 ms.reviewer: dougklo, jeluitwi
 ms.topic: concept-article
-ms.date: 07/29/2025
+ms.date: 06/24/2026
 ms.custom: dataflow
 ---
 
@@ -86,13 +86,15 @@ If you now look at the folding indicators in the dataflow editor, the transforma
 
 To learn more about how to optimize your dataflow transformations and ensure that they are being pushed down to the source system, go to [Query folding](/power-query/query-folding-basics).
 
-### Consideration 3: The impact on staging on data movement when using Lakehouse as a destination
+### Consideration 3: Optimize staging-to-Lakehouse data movement for a Lakehouse destination
 
-In this scenario, you're using a Lakehouse destination for your dataflow, and you have enabled staging to perform transformations before writing the final output. However, you notice that the overall refresh time is longer than expected, and you want to optimize the performance of this process.
+In this scenario, you're using a Lakehouse destination for your dataflow, and you have enabled staging to run transformations before writing the final output. You want to make sure the step that moves staged data to the Lakehouse doesn't add unnecessary overhead to the overall refresh time.
 
-In this case, the data movement from the staging Warehouse to the Lakehouse destination can be a bottleneck. To improve performance, consider changing the destination to a Warehouse instead of a Lakehouse. This change allows you to use the compute resources of the staging Warehouse for transformations and write the final output directly to the Warehouse destination. The path of data movement becomes more efficient, as it avoids the additional overhead of writing to a Lakehouse. If a Lakehouse destination is necessary, consider disabling staging for the query that writes to the Lakehouse. This action allows you to write the final output directly to the Lakehouse without the additional overhead of staging, which can significantly improve performance. However, be aware that disabling staging means that you won't be able to perform transformations in the staging area, so ensure that your transformations are designed to fold to the source system whenever possible. This scenario highlights the importance of understanding the data movement path and optimizing it for better performance. Observe the difference in execution time when using a Warehouse destination compared to a Lakehouse destination with staging disabled. By carefully considering the destination and staging options, you can enhance the efficiency of your dataflow and reduce overall refresh time.
+A Lakehouse is a fully supported, high-performance destination for this pattern. The data movement from the staging Warehouse to the Lakehouse destination is optimized, so you no longer need to switch your destination to a Warehouse to get good performance. The recommended approach is the ELT pattern: use [Fast Copy](./dataflows-gen2-fast-copy.md) to land the data quickly, run your transformations on the staged data using the Fabric staging compute, and write the final output to the Lakehouse. For large datasets, Fast Copy remains the recommended way to move the data efficiently.
 
-If you need to keep both staging and a Lakehouse destination (for example, because your transformations rely on the staging compute), you can also turn on the **Optimized copy to Lakehouse (Preview)** option on the Scale tab. This setting routes the staged data to the Lakehouse destination through a faster copy path, reducing the overhead introduced by the staging-to-Lakehouse hop. For more information, see [Staged data options for Dataflow Gen2 with CI/CD](dataflow-gen2-staged-data-options.md).
+To get the most out of this pattern today, separate the Fast Copy and the transformation work into two queries: one query that performs the Fast Copy data movement, and a second query that applies the transformations on the staged data before writing to the Lakehouse destination. Combining a Fast Copy operation with non-folding transformations in the same query disables Fast Copy, so keeping them in separate queries is the main thing to watch for. If your transformations fully fold to the source, you can also write directly to the Lakehouse with staging disabled.
+
+When you stage data and write to a Lakehouse destination, turn on the **Optimized copy to Lakehouse (Preview)** option on the Scale tab to route the staged data to the Lakehouse through the faster copy path, which reduces the overhead of the staging-to-Lakehouse hop. For more information, see [Staged data options for Dataflow Gen2](dataflow-gen2-staged-data-options.md).
 
 ### Consideration 4: Large data previews during design-time
 
