@@ -49,10 +49,10 @@ The following table shows the adapters supported in dbt jobs, along with the run
 
 | Adapter | dbt job runtime version | Adapter version | Supported dbt version | Python version |
 |---|---|---|---|---|
+| Azure SQL Database | V1.0 | 1.8.5 | dbt Core 1.9 | 3.12 |
 | Fabric Data Warehouse | V1.0 | 1.9.0 | dbt Core 1.9 | 3.12 |
 | PostgreSQL database | V1.0 | 1.9.0 | dbt Core 1.9 | 3.12 |
 | Snowflake | V1.0 | 1.9.0 | dbt Core 1.9 | 3.12 |
-| Azure SQL Database | V1.0 | 1.8.5 | dbt Core 1.9 | 3.12 |
 
 > [!NOTE]
 > This matrix reflects versions available in the Fabric-managed dbt job runtime. 
