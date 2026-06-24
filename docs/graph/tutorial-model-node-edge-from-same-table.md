@@ -16,7 +16,6 @@ In this tutorial step, you create the following graph entities from the **Employ
 
 - A `Country` **node type** (new)
 - A `livesIn` **edge type** connecting `Employee` to `Country` (new)
-- Modifications to the existing `Employee` **node type** to remove redundant properties
 
 `Employee` --*livesIn*--> `Country`
 
@@ -46,7 +45,7 @@ The following table shows how these columns map to graph entities:
 > [!NOTE]
 > In the preceding table, `Country` refers to both the source column in the **Employees** table and the new node type in the graph. They share the same name, but the column is raw data in the table while the node type is an entity in your graph model.
 
-When you create a node type from a mapping table, each column in the table becomes a **property** on that node type by default. Since the Employees table has 10 columns, both the `Employee` and `Country` node types initially get all 10 columns as properties. In the following steps, you remove properties that aren't relevant to each node type.
+When you create a node type from a mapping table, add columns from the table as **properties** on that node type. Since the Employees table has 10 columns, both the `Employee` and `Country` node types can have all 10 columns as properties. In the following steps, you don't add properties that aren't relevant to each node type.
 
 ## Create a `Country` node type
 
@@ -62,7 +61,7 @@ To create the `Country` node type, follow these steps:
 
    :::image type="content" source="./media/tutorial/country-node-properties-original.png" alt-text="Screenshot showing the properties of the Country node type." lightbox="./media/tutorial/country-node-properties-original.png":::
 
-1. All 10 columns from the **Employees** table become properties by default. Delete the ones that aren't relevant to a country. Specifically, remove `EmployeeID_K`, `ManagerID`, `EmployeeFullName`, `JobTitle`, `OrganizationLevel`, `MaritalStatus`, `Gender`, `Territory`, and `Group`. Only the `Country` property should remain.
+1. All 10 columns from the **Employees** table are available to select. Add only the `Country` property (ignoring `EmployeeID_K`, `ManagerID`, `EmployeeFullName`, `JobTitle`, `OrganizationLevel`, `MaritalStatus`, `Gender`, `Territory`, and `Group`).
 
    :::image type="content" source="./media/tutorial/country-node-properties-updated.png" alt-text="Screenshot showing the properties of the Country node type after removing irrelevant properties." lightbox="./media/tutorial/country-node-properties-updated.png":::
 
@@ -71,10 +70,10 @@ To create the `Country` node type, follow these steps:
 You created the `Employee` node type in a [previous tutorial step](tutorial-model-nodes.md). Now that `Country` is its own node type connected by the `livesIn` edge, the `Country` column is redundant as an `Employee` property.
 
 1. Double-click the `Employee` node type to view its properties.
-1. Remove `Territory`, `Country`, and `Group` if you don't need them for your queries or analyses.
+1. Ignore the `Territory`, `Country`, and `Group` properties, unless you need them for your own queries or analyses.
 
 > [!TIP]
-> Excessive properties make your graph harder to maintain and use. For all node types, remove properties that are:
+> Excessive properties make your graph harder to maintain and use. For all node types, don't add properties that are:
 >
 > - Not required for the uniqueness of the nodes
 > - Not necessary for your queries or analyses
