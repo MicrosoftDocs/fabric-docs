@@ -13,5 +13,3 @@ ms.topic: include
 
    > [!TIP]
    > In File Explorer, right-click the zip file and select **Extract All**, then choose a destination folder.
-
-
