@@ -43,7 +43,7 @@ To add node types to your graph, follow these steps:
 
    > [!TIP]
    > You can set compound keys (IDs consisting of multiple columns). After you select a mapping table, choose one ID from the **ID** dropdown, then use the dropdown again to add another.
-
+1. Select **+ Add property**, **Add all columns**, and **Apply**. This step makes all columns in this source table available as properties for the node.
 1. Select **Confirm** to add the node type to your graph.
 1. Repeat the process for all remaining node types listed in the [Adventure Works node mappings](#adventure-works-node-mappings) table.
 
@@ -53,11 +53,11 @@ To add node types to your graph, follow these steps:
 
 ## Understand node properties
 
-When you add a node type, every column in the mapping table automatically becomes a **property** on that node type. You don't need to add properties manually. To see the properties for a node type, double-click it in the graph model editor to open the **Edit node schema** dialog.
+When you add a node type, manually add columns from the mapping table as **properties** on that node type to make them available for queries, especially properties for which OneLake Security access rules have been applied to the underlying source table. To see the property options for a node type, double-click it in the graph model editor to open the **Edit node schema** dialog.
 
-:::image type="content" source="./media/tutorial/edit-node-schema-properties.png" alt-text="Screenshot showing the Edit node schema dialog for the Employee node type with all 10 properties listed, each with a delete icon." lightbox="./media/tutorial/edit-node-schema-properties.png":::
+:::image type="content" source="./media/tutorial/edit-node-schema-properties.png" alt-text="Screenshot showing the Edit node schema dialog for the Employee node type with all 10 properties listed." lightbox="./media/tutorial/edit-node-schema-properties.png":::
 
-For this tutorial, keep all properties on every node type. In a later step, you extract a column into its own node type and remove redundant properties. For details, see [Model a node and edge from the same table](tutorial-model-node-edge-from-same-table.md). For general guidance on choosing which properties to keep or remove, see [Remove unnecessary properties](design-graph-schema.md#remove-unnecessary-properties).
+For this tutorial, add all properties on every node type. In a later step, you extract a column into its own node type. For details, see [Model a node and edge from the same table](tutorial-model-node-edge-from-same-table.md). For general guidance on choosing which properties to keep or ignore, see [Add node properties](design-graph-schema.md#add-node-properties).
 
 After you add node types to your graph, add edge types to define the relationships between them.
 

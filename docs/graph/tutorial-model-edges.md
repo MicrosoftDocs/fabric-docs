@@ -58,7 +58,7 @@ To add edges to your graph, follow these steps:
 1. Repeat the process for all remaining edge types listed in the [Adventure Works edge mappings](#adventure-works-edge-mappings) table.
 
 > [!TIP]
-> Unlike node types, edge types don't get properties automatically. You can add properties when the data describes the relationship itself - for example, quantity or price on a `contains` edge. Edge properties are most useful when you write GQL queries that filter, aggregate, or return relationship-level data. For this tutorial, you don't need to add edge properties. For guidance, see [Add properties to edge types](design-graph-schema.md#add-properties-to-edge-types).
+> Properties are not added to nodes or edge types automatically. You can add properties when the data describes the relationship itself—for example, quantity or price on a `contains` edge. Edge properties are most useful when you write GQL queries that filter, aggregate, or return relationship-level data. For this tutorial, you don't need to add edge properties. For guidance, see [Add properties to edge types](design-graph-schema.md#add-properties-to-edge-types).
 
 You should see all the edge types represented in your graph.
 

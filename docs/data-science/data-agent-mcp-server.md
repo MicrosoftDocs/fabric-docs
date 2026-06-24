@@ -1,8 +1,8 @@
 ---
 title: Data agent as Model Context Protocol server (preview)
 description: Learn how to consume a data agent as MCP server.
-ms.author: jburchel
-author: jonburchel
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: amjafari
 ms.topic: how-to
 ms.date: 12/18/2025
