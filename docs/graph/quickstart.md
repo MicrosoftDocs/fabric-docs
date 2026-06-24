@@ -55,25 +55,16 @@ When you finish, you see the two tables under **Tables** in the lakehouse Explor
 
 :::image type="content" source="./media/quickstart/tables.png" alt-text="Screenshot showing the adventureworks_customers and adventureworks_orders tables." lightbox="./media/quickstart/tables.png":::
 
-## Create a graph instance
+## Create a graph model
 
-1. In your [Microsoft Fabric workspace](https://fabric.microsoft.com/), select **+ New item**.
-1. Enter *graph* in the search box, press **Enter** to search for graph items, and select **Graph instance**. Alternatively, scroll down to **Analyze and train data** > **Graph instance**.
-
-    :::image type="content" source="./media/quickstart/new-item-graph-model.png" alt-text="Screenshot showing the new item menu with the option to select Graph instance." lightbox="./media/quickstart/new-item-graph-model.png":::
-
-1. Enter a name (for example, "MyFirstGraph") and select **Create**.
-
-After creating the graph instance, you're taken to the graph view where you can see the default mode is set to **Model**. Across the top ribbons, you see buttons for **Save**, **Get data**, **Add node**, **Add edge**, and **Delete**.
-
-:::image type="content" source="./media/quickstart/default-view.png" alt-text="Screenshot showing the default view of the graph instance." lightbox="./media/quickstart/default-view.png":::
+[!INCLUDE [create a graph model](includes/create-model.md)]
 
 ## Add data to your graph
 
 To add data to your graph, follow these steps in graph view:
 
 1. In the top ribbon, select **Get data**.
-1. From the OneLake catalog, select your lakehouse with the Adventure Works data.
+1. From the **OneLake catalog**, select your lakehouse with the Adventure Works data.
 1. Select **Add**.
 1. Select the *adventureworks_customers* and *adventureworks_orders* tables, and then select **Load**.
 
