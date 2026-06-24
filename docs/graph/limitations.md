@@ -57,13 +57,13 @@ Up to once a week, a graph model might encounter a timeout if the graph creation
 
 However, users can reinitiate graph creation or update.
 
+### Graph size
+
+The current generally available SKU configurations can process about 2 billion graph elements (nodes and edges). For larger graphs with a higher number of elements or a larger property payload per element, please reach out to the product team.
+
 ### Total number of graph models
 
 Each Fabric Workspace can have up to 10 graph models.
-
-### Size of graph
-
-Creating graphs with more than 1 billion nodes and edges might result in unstable performance.
 
 ### Multitasking UI
 
