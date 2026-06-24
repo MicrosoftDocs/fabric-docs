@@ -2,7 +2,7 @@
 title: "Source Control with Fabric Data Warehouse (Preview)"
 description: "Learn how to use source control with Microsoft Fabric Warehouse."
 ms.reviewer: salilkanade, pvenkat
-ms.date: 05/19/2026
+ms.date: 06/24/2026
 ms.topic: concept-article
 ---
 
@@ -79,14 +79,12 @@ For more information about the Fabric deployment pipelines process, see [Introdu
     - Delete the old table.
     - Rename the new table to the name of the old table by using [sp_rename](/sql/relational-databases/system-stored-procedures/sp-rename-transact-sql?view=fabric&preserve-view=true).
     - Modify the definition of the old table in the SQL database project in the *exact* same way. The SQL database project of the warehouse in source control and the live warehouse should now match.
-- Currently, don't create a Dataflow Gen2 with an output destination to the warehouse. A new item named `DataflowsStagingWarehouse` appears in the repository and blocks committing and updating from Git.
 - Fabric Git integration doesn't support the SQL analytics endpoint item.
 - Cross item dependencies, item sequencing, and synchronization gaps between the SQL analytics endpoint and warehouse impact the "branching out to a new or existing workspace" and "switching to a different branch" workflows during development and continuous integration.
 
 #### Limitations for deployment pipelines
 
 - Currently, if you use `ALTER TABLE` to add a constraint or column in the database project, the deployment process drops and recreates the table, which results in data loss.
-- Currently, don't create a Dataflow Gen2 with an output destination to the warehouse. A new item named `DataflowsStagingWarehouse` appears in the deployment pipeline and blocks deployment.
 - Fabric Deployment pipelines don't support the SQL analytics endpoint item.
 - Cross item dependencies, item sequencing, and synchronization gaps between the SQL analytics endpoint and warehouse impact Fabric Deployment Pipelines workflows.
 

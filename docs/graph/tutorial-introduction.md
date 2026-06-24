@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Introduction to Graph in Microsoft Fabric"
-description: Learn how to build a complete graph instance in Microsoft Fabric, from loading data and creating a graph instance to querying your data with GQL.
+description: Learn how to build a complete graph model in Microsoft Fabric, from loading data and creating a graph model to querying your data with GQL.
 ms.topic: tutorial
 ms.date: 06/23/2026
 ms.reviewer: wangwilliam
@@ -25,10 +25,10 @@ Before you start this tutorial, verify that:
 
 ## Graph end-to-end scenario
 
-In this tutorial, you take on the role of a data analyst at the fictional Adventure Works company. You build a graph instance to represent the relationships between customers, orders, employees, products, and vendors. Then, you query the graph to uncover insights about customer purchasing behavior and product performance. Follow these steps:
+In this tutorial, you take on the role of a data analyst at the fictional Adventure Works company. You build a graph model to represent the relationships between customers, orders, employees, products, and vendors. Then, you query the graph to uncover insights about customer purchasing behavior and product performance. Follow these steps:
 
 1. [Load sample data](tutorial-load-data.md) into a lakehouse.
-1. [Create a graph](tutorial-create-graph.md) by creating a graph instance and loading data from OneLake.
+1. [Create a graph](tutorial-create-graph.md) by creating a graph model and loading data from OneLake.
 1. [Add nodes to your graph](tutorial-model-nodes.md) for each entity in the data model.
 1. [Add edges to your graph](tutorial-model-edges.md) to define relationships between nodes.
 1. [Add multiple node and edge types from one table](tutorial-model-node-edge-from-same-table.md) to create a richer graph.
