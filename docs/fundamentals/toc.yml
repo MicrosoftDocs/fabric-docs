@@ -186,6 +186,15 @@ items:
     - name: Review Data agent usage and billing
       href: data-agent-consumption.md
 
+- name: Use Skills for Fabric
+  items:
+  - name: Skills for Fabric overview
+    href: skills-for-fabric-overview.md
+  - name: Install Skills for Fabric
+    href: skills-for-fabric-install.md
+  - name: Discover available skills
+    href: skills-for-fabric-discover.md
+
 - name: Implement task flows
   items:
   - name: Understand task flows
