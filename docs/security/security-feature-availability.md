@@ -77,7 +77,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Cosmos DB |  | - | - |
 |  | Snowflake database | - | - | - |
 | **OneLake** | Shortcut | ✓ | ✓ | Preview |
-| **Power BI** | Power BI Report | - | - | - |
+| **Power BI** | Power BI Report | - | - | Preview |
 |  | Dashboard | - | - | - |
 |  | Scorecard | - | - | - |
 |  | Semantic Model | - | - | Preview |
