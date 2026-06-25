@@ -14,7 +14,7 @@ A graph schema is the collection of node types, edge types, and their properties
 Use these guidelines before you start modeling in the graph model editor. For step-by-step instructions on creating nodes and edges, see the [graph tutorial](tutorial-introduction.md). Examples in this article use the [Adventure Works sample dataset](sample-datasets.md).
 
 > [!IMPORTANT]
-> Graph currently doesn't support schema evolution. After you create a graph model and load data, the structure of nodes, edges, and properties is fixed. Structural changes, such as adding or modifying node types, edge types, and properties, require you to create a new graph model and reload all data. This process takes time and consumes capacity, so plan your schema thoroughly before you start modeling.
+> Graph currently doesn't support schema evolution. After you create a graph model and load its data, any structural changes, such as adding or removing node types, edge types, and properties, require you to reload all data before querying the updated structure. To reload the data, select **Save** in the top ribbon. This data reload process takes time and consumes capacity, so plan your schema thoroughly before you start modeling.
 
 ## Prerequisites
 
