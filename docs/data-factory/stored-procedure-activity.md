@@ -1,17 +1,18 @@
 ---
-title: How to use the Stored procedure activity
-description: Learn how to use the Stored procedure activity to execute a SQL stored procedure with Microsoft Fabric.
+title: Use the Stored Procedure Activity
+description: Learn how to use the Stored procedure activity to run a SQL stored procedure with Microsoft Fabric.
 ms.reviewer: xupzhou
+ms.date: 06/19/2026
 ms.topic: how-to
-ms.custom: pipelines
-ms.date: 12/18/2024
+ms.custom:
+  - pipelines
 ---
 
-# How to use Stored procedure activity
+# Use the stored procedure activity
 
 In this article, you learn how to add a new Stored procedure activity to a pipeline, add a new connection, and configure the activity to run.
 
-You can use the Stored Procedure Activity to invoke a stored procedure in one of the following data stores:
+Use the Stored procedure activity to run a stored procedure in one of the following data stores:
 - [Fabric SQL database](/fabric/data-factory/connector-sql-database-overview)
 - [Fabric Data Warehouse](/fabric/data-factory/connector-data-warehouse-overview)
 - [Azure SQL Database](/fabric/data-factory/connector-azure-sql-database-overview)
@@ -22,7 +23,7 @@ You can use the Stored Procedure Activity to invoke a stored procedure in one of
 
 ## Prerequisites
 
-To get started, you must complete the following prerequisites:  
+To get started, complete the following prerequisites:
 
 - A tenant account with an active subscription. Create an account for free.
 - A workspace is created.
@@ -38,21 +39,21 @@ To get started, you must complete the following prerequisites:
 
 1. Select the **Settings** tab. Select **New** to create a new connection.
 
-   :::image type="content" source="media/stored-procedure-activity/stored-procedure-activity-settings.png" alt-text="Screenshot showing where to select New in the settings tab." lightbox="media/script-activity/script-activity-settings.png":::
+   :::image type="content" source="media/stored-procedure-activity/stored-procedure-activity-settings.png" alt-text="Screenshot showing where to select New in the settings tab." lightbox="media/stored-procedure-activity/stored-procedure-activity-settings.png":::
 
-2. In the new popup window, choose the target SQL source type, then select **Continue**. The Stored procedure activity in Fabric currently supports Azure SQL and Azure SQL Managed instances.
+1. In the new popup window, select the target SQL source type, and then select **Continue**. The Stored procedure activity supports all data stores listed in the introduction. In the connection dialog, select the target SQL source type.
 
    :::image type="content" source="media/stored-procedure-activity/new-connection.png" alt-text="Screenshot showing where to choose the target source type." lightbox="media/stored-procedure-activity/new-connection.png":::
 
-3. Provide the connection details for the new connection and select **Create**.
+1. Enter the connection details for the new connection and select **Create**.
 
    :::image type="content" source="media/stored-procedure-activity/new-connection-details.png" lightbox="media/stored-procedure-activity/new-connection-details.png" alt-text="Screenshot showing the details on the New connection screen.":::
 
 ## Step 3: Choose a stored procedure and configure parameters
 
-Select a stored procedure, and optionally import its parameters or manually add parameters. Select the **Import** button to import the parameters from the stored procedure as it is stored in the data source, or add them manually by selecting the **+ New** button for each parameter, then providing its name and data type, and nullability setting. Provide a value for each parameter, either by entering text directly, or by using a [custom expression](expression-language.md) to populate the value. 
+Select a stored procedure, and optionally import its parameters or manually add parameters. Select the **Import** button to import the parameters from the stored procedure as it's stored in the data source, or add them manually by selecting the **+ New** button for each parameter, and then providing its name, data type, and nullability setting. Provide a value for each parameter, either by entering text directly or by using a [custom expression](expression-language.md) to populate the value.
 
-:::image type="content" source="media/stored-procedure-activity/select-procedure.png" alt-text="Screenshot showing where to select the stored procedure to execute and optionally configure its parameters.":::
+:::image type="content" source="media/stored-procedure-activity/select-procedure.png" alt-text="Screenshot showing where to select the stored procedure and optionally configure its parameters.":::
 
 ## Step 4: Save and run or schedule the pipeline
 
@@ -62,4 +63,4 @@ Switch to the **Home** tab at the top of the pipeline editor, and select the sav
 
 ## Related content
 
-- [Monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
