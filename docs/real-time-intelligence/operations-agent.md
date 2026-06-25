@@ -106,16 +106,17 @@ For example, **Is above** is met on every evaluation while a value stays over th
 
 The following table describes the available conditions:
 
-| Condition | Type | When it's met |
-|-----------|------|---------------|
-| Is above | State | Met any time the property is above the value. |
-| Crosses above | Transition | Met when the property changes from below to above the value (or from null to above the value). |
-| Is below | State | Met any time the property is below the value. |
-| Crosses below | Transition | Met when the property changes from above to below the value (or from null to below the value). |
-| Enters range | Transition | Met any time the property changes from outside to inside the range. |
-| Exits range | Transition | Met any time the property changes from inside to outside the range. |
-| Is | State | Met any time the property matches the value. |
-| Becomes | Transition | Met when the property changes to the value from a different value (or null). |
+## Monitor agent activity
+
+The agent's activity log provides a detailed record of its actions, including the conditions it evaluated, the recommendations it made, and the responses it received. This information helps you understand the agent's decision-making process and identify areas for improvement.
+
+To access the activity log, select **Activity log** in the side navigation pane. The log displays a chronological list of events, including timestamps, event types, and relevant details. Select an event to view more information about it.
+
+:::image type="content" source="media/operations-agent/activity-log.png" alt-text="Screenshot of the activity log." lightbox="media/operations-agent/activity-log.png":::
+
+In the **Operation details page** you can view the operation details and status.
+
+:::image type="content" source="media/operations-agent/activity-log-details.png" alt-text="Screenshot of the operation details page." lightbox="media/operations-agent/activity-log-details.png":::
 
 ## Related content
 
