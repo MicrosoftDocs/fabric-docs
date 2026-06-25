@@ -64,8 +64,8 @@ Map each relationship path to a directed edge type.
 | Relational element | Graph mapping | Example |
 | ------------------ | ------------- | ------- |
 | Foreign-key relationship | Edge type | `purchases` |
-| Referencing table | Edge mapping table | `adventureworks_orders` |
-| Parent/child join columns | Source and target mappings | `CustomerID_FK` -> `CustomerID_K` |
+| Referencing table | Edge source table | `adventureworks_orders` |
+| Parent/child join columns | Origin and target mappings | `CustomerID_FK` -> `CustomerID_K` |
 
 Choose edge labels as verb phrases that read clearly in queries, such as `purchases`, `contains`, and `belongsTo`.
 
@@ -77,7 +77,7 @@ Use these patterns during conversion, then follow the linked guides for detailed
 
 - **One-to-many**: A child table references a parent key (for example, Orders referencing Customers). See [Tutorial: Add edge types to your graph](tutorial-model-edges.md).
 - **Many-to-many**: A junction table links two entities (for example, a SalesOrderDetail table linking Products and Orders). See [Tutorial: Add edge types to your graph](tutorial-model-edges.md).
-- **Embedded entity**: A column value should become a traversable node type (for example, promoting `Country` to a `Country` node type). See [Tutorial: Add multiple node and edge types from one mapping table](tutorial-model-node-edge-from-same-table.md).
+- **Embedded entity**: A column value should become a traversable node type (for example, promoting `Country` to a `Country` node type). See [Tutorial: Add multiple node and edge types from one source table](tutorial-model-node-edge-from-same-table.md).
 - **Hierarchy**: Parent-child chains span multiple levels (for example, an employee reporting structure). See [Tutorial: Add edge types to your graph](tutorial-model-edges.md).
 
 ## Step 5: Build and validate the graph model
@@ -85,7 +85,7 @@ Use these patterns during conversion, then follow the linked guides for detailed
 After you finish the mappings, build and validate the graph model in the editor:
 
 1. Add node types and configure IDs from key columns.
-1. Add edge types and map source and target columns.
+1. Add edge types and map origin and target columns.
 1. Select **Save** to verify the model and load data.
 1. Confirm that expected node type and edge type labels appear in the canvas.
 1. Run validation queries to confirm relationships and cardinality. For example:
@@ -98,11 +98,11 @@ After you finish the mappings, build and validate the graph model in the editor:
 
    Update the labels to match your schema. Confirm that each edge type returns results and that counts look right.
 
-If expected edges are missing, verify join-column values and data types in your mapping tables.
+If expected edges are missing, verify join-column values and data types in your source tables.
 
 ## Troubleshoot common conversion issues
 
-- No edges created: Confirm source and target mapping columns match node key values and data types.
+- No edges created: Confirm origin and target mapping columns match node key values and data types.
 - Duplicate nodes: Confirm node key columns are unique or switch to a compound key.
 - Over-modeled graph: Keep descriptive fields as properties unless you need to traverse them as entities.
 - Under-modeled graph: Extract shared columns to node types when you need relationship-based analysis.
@@ -113,5 +113,5 @@ If expected edges are missing, verify join-column values and data types in your 
 - [Tutorial: Introduction to graph](tutorial-introduction.md)
 - [Tutorial: Add node types to your graph](tutorial-model-nodes.md)
 - [Tutorial: Add edge types to your graph](tutorial-model-edges.md)
-- [Tutorial: Add multiple node and edge types from one mapping table](tutorial-model-node-edge-from-same-table.md)
+- [Tutorial: Add multiple node and edge types from one source table](tutorial-model-node-edge-from-same-table.md)
 - [Current limitations](limitations.md)

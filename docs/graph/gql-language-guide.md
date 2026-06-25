@@ -108,7 +108,7 @@ Every graph element has these characteristics:
 
 ### How graphs are structured
 
-Each edge connects exactly two nodes: a source and a destination. This connection creates the graph's structure and shows how entities relate to each other. The direction of edges matters - a `Person` who `follows` another `Person` creates a directed relationship.
+Each edge connects exactly two nodes: an origin and a target. This connection creates the graph's structure and shows how entities relate to each other. The direction of edges matters—a `Person` who `follows` another `Person` creates a directed relationship.
 
 > [!NOTE]
 > graph currently doesn't support undirected edges.

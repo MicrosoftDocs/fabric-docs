@@ -1,23 +1,21 @@
 ---
-title: "Tutorial: Create Node and Edge Types from One Mapping Table"
-description: Learn how to create multiple node types and edge types from a single mapping table in your graph model in Microsoft Fabric.
+title: "Tutorial: Create Node and Edge Types from One Source Table"
+description: Learn how to create multiple node types and edge types from a single source table in your graph model in Microsoft Fabric.
 ms.topic: tutorial
-ms.date: 05/20/2026
+ms.date: 06/25/2026
 ms.reviewer: wangwilliam
-ms.search.form: Tutorial - Add nodes and edges from one mapping table
+ms.search.form: Tutorial - Add nodes and edges from one source table
 ai-usage: ai-assisted
 ---
 
-# Tutorial: Add multiple node and edge types from one mapping table
+# Tutorial: Add multiple node and edge types from one source table
 
 In the previous tutorial steps, each source table mapped to exactly one node type or one edge type. However, relational tables often contain embedded entities. For example, the **Employees** table includes a `Country` column. Rather than storing the country as just a property on `Employee` nodes, you can extract it into its own `Country` node type and connect it with a `livesIn` edge. This approach creates a richer graph model that lets you query relationships between employees and countries directly.
 
-In this tutorial step, you create the following graph entities from the **Employees** mapping table:
+In this tutorial step, you create the following graph entities from the **Employees** source table:
 
-- A `Country` **node type** (new)
-- A `livesIn` **edge type** connecting `Employee` to `Country` (new)
-
-`Employee` --*livesIn*--> `Country`
+- A `Country` node type (new)
+- A `livesIn` edge type connecting `Employee` to `Country` (new). This edge indicates that `Employee livesIn Country`.
 
 ## Adventure Works Employee table
 
@@ -45,70 +43,74 @@ The following table shows how these columns map to graph entities:
 > [!NOTE]
 > In the preceding table, `Country` refers to both the source column in the **Employees** table and the new node type in the graph. They share the same name, but the column is raw data in the table while the node type is an entity in your graph model.
 
-When you create a node type from a mapping table, add columns from the table as **properties** on that node type. Since the Employees table has 10 columns, both the `Employee` and `Country` node types can have all 10 columns as properties. In the following steps, you don't add properties that aren't relevant to each node type.
+When you create a node type from a source table, you manually add relevant columns from the table as **properties** on that node type. Since the Employees table has 10 columns, both the `Employee` and `Country` node types have all 10 of these columns available to add as properties. In this article, you only add properties to `Country` that are relevant for the node type.
 
 ## Create a `Country` node type
 
 To create the `Country` node type, follow these steps:
 
-1. In your graph model, select **Add node**.
-1. In the **Add node to graph** dialog, enter the following values:
-   - **Label**: `Country`
-   - **Mapping table**: *adventureworks_employees*
-   - **ID** of the mapping column: `Country`
-1. Select **Confirm** to add the node type to your graph.
-1. Double-click the `Country` node type to view its properties.
+1. In the top ribbon of your graph model, select **Add node**.
+1. In **Create a node**, enter the following values:
+   - **Node label**: `Country`
+   - **Source table**: *adventureworks_employees*
+   - **Key**: `Country`. Selecting `Country` as the key column adds it as a property on the node type.
+1. Don't add any other properties.
+1. Select **Create** to add the node type to your graph.
 
-   :::image type="content" source="./media/tutorial/country-node-properties-original.png" alt-text="Screenshot showing the properties of the Country node type." lightbox="./media/tutorial/country-node-properties-original.png":::
+   :::image type="content" source="./media/tutorial/create-node-country.png" alt-text="Screenshot showing the Country node type with one property." lightbox="./media/tutorial/create-node-country.png":::
 
-1. All 10 columns from the **Employees** table are available to select. Add only the `Country` property (ignoring `EmployeeID_K`, `ManagerID`, `EmployeeFullName`, `JobTitle`, `OrganizationLevel`, `MaritalStatus`, `Gender`, `Territory`, and `Group`).
+You see the `Country` node type added to your graph.
 
-   :::image type="content" source="./media/tutorial/country-node-properties-updated.png" alt-text="Screenshot showing the properties of the Country node type after removing irrelevant properties." lightbox="./media/tutorial/country-node-properties-updated.png":::
+## Create a `livesIn` edge
+
+The `Employee` node type is already in your graph from a [previous tutorial step](tutorial-model-nodes.md). Connect the new `Country` node to the `Employee` node with a new `livesIn` edge.
+
+To create the `livesIn` edge type, follow these steps:
+
+1. In the top ribbon, select **Add edge**.
+1. In the **Create an edge** dialog, enter the following values:
+   - **Edge label**: `livesIn`
+   - **Source table**: *adventureworks_employees*
+   - **Origin node**: `Employee`
+   - **Origin key**: `EmployeeID_K`
+   - **Target node**: `Country`
+   - **Target key**: `Country`
+1. Select **Create** to add the edge to your graph.
+
+You see the `livesIn` edge type added to your graph between the `Employee` and `Country` nodes.
 
 ## Modify the `Employee` node type
 
-You created the `Employee` node type in a [previous tutorial step](tutorial-model-nodes.md). Now that `Country` is its own node type connected by the `livesIn` edge, the `Country` column is redundant as an `Employee` property.
+Now that `Country` is its own node type connected to `Employee` by the `livesIn` edge, the `Country` column is redundant as an `Employee` property. Edit the `Employee` node type to remove the `Country` property.
 
 1. Double-click the `Employee` node type to view its properties.
-1. Ignore the `Territory`, `Country`, and `Group` properties, unless you need them for your own queries or analyses.
+1. Select **Edit definition**.
+1. Uncheck the `Country` property to remove it from the node.
+1. Select **Save**.
 
 > [!TIP]
-> Excessive properties make your graph harder to maintain and use. For all node types, don't add properties that are:
+> Excessive properties make your graph harder to maintain and use. For all node types, avoid having properties that are:
 >
 > - Not required for the uniqueness of the nodes
 > - Not necessary for your queries or analyses
 
-## Create a `livesIn` edge
-
-To create the `livesIn` edge type, follow these steps:
-
-1. Select **Add edge**.
-1. In the **Add edge** dialog, enter the following values:
-   - **Label**: `livesIn`
-   - **Mapping table**: *adventureworks_employees*
-   - **Source node**: `Employee`
-   - **Mapping table column to be linked to source node key**: `EmployeeID_K`
-   - **Target node**: `Country`
-   - **Mapping table column to be linked to target node key**: `Country`
-1. Select **Confirm** to add the edge to your graph.
-
 ## Load the graph
 
-After you configure all node types and edge types, load the graph:
+After you configure all node types and edge types, reload the graph. Reload is required after making structural changes to the graph.
 
-- Select **Save** to verify the graph model, load data from OneLake, construct the graph, and make it ready for querying. Be patient, as this process might take some time depending on the size of your data.
+In the top ribbon, select **Save**. This action verifies the graph model, loads data from OneLake, constructs the graph, and makes it ready for querying. Be patient, as this process might take some time depending on the size of your data.
 
 :::image type="content" source="./media/tutorial/employee-country-graph.png" alt-text="Screenshot showing the graph with Employee and Country nodes connected by livesIn edges." lightbox="./media/tutorial/employee-country-graph.png":::
 
-The graph now includes the new `Country` node type and `livesIn` edge type. You can query relationships between employees and their countries directly.
+The graph now includes the new `Country` node type and `livesIn` edge type. This structure allows you to query relationships between employees and their countries directly.
 
-## Recap
+## Review
 
-In this tutorial step, you derived two node types and one edge type from the single **Employees** mapping table:
+In this tutorial step, you worked with two node types and one edge type from the single **Employees** source table:
 
 - `Employee` node (created in a previous step, refined here)
 - `Country` node (new, extracted from the `Country` column)
-- `livesIn` edge (new, connecting `Employee` → `Country`)
+- `livesIn` edge (new, connecting `Employee` to `Country`)
 
 This pattern is useful whenever a relational table contains embedded entities that you want to represent as separate nodes in your graph. Look for columns that represent distinct real-world entities, such as countries, cities, or departments, as candidates for extraction into their own node types.
 
