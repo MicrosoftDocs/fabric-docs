@@ -1,7 +1,7 @@
 ---
 title: Set Up Access Control
 description: Learn how to configure row and column permissions in PowerTable to control data security and secure access to table apps.
-ms.date: 03/27/2026
+ms.date: 06/24/2026
 ms.topic: how-to
 #customer intent: As a user, I want to configure row and column access control in PowerTable so that I can restrict who can view, edit or delete specific data in a table app.
 ---
@@ -68,9 +68,13 @@ In the **Delete** section, you can specify which workspace users can delete rows
 
 :::image type="content" source="media/powertable-how-to-set-up-access-control/delete-rows.png" alt-text="Screenshot of setting which users can delete existing rows." lightbox="media/powertable-how-to-set-up-access-control/delete-rows.png":::
 
-#### Delete type
+#### Configure the delete type
 
-With the **Delete Type** option, you can configure whether users can delete rows permanently or do a soft delete.
+Choose whether users can delete rows permanently or perform a soft delete.
+
+Go to **Setup** > **Table Settings** > **Delete settings**.
+
+:::image type="content" source="media/powertable-how-to-set-up-access-control/delete-settings.png" alt-text="Screenshot of accessing the delete settings menu." lightbox="media/powertable-how-to-set-up-access-control/delete-settings.png":::
 
 * **Permanent (Hard Delete)**: If you select this option, the deleted rows are removed from the database permanently.
 * **Mark as Deleted (Soft Delete)**: If you select this option, the deleted rows remain in the database but are marked as deleted. When a row is deleted, a specific value is assigned to an existing table column.
@@ -83,8 +87,8 @@ Deleting a row doesn't remove the row. Instead, it marks it as deleted.
 
 :::image type="content" source="media/powertable-how-to-set-up-access-control/deleted-row.png" alt-text="Screenshot showing a row with a Status of DELETED." lightbox="media/powertable-how-to-set-up-access-control/deleted-row.png":::
 
->[!NOTE]
->In this example, a new column called **Status** was created using **Add Database Column** to track deleted rows.
+> [!NOTE]
+> In this example, a new column called **Status** was created using **Add Database Column** to track deleted rows.
 
 #### Show deleted rows
 
