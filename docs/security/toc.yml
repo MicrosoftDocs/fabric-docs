@@ -151,6 +151,8 @@ items:
                     href: workspace-outbound-access-protection-queryset.md
                   - name: Real-Time Dashboard
                     href: workspace-outbound-access-protection-dashboard.md
+                  - name: Fabric Maps
+                    href: workspace-outbound-access-protection-fabric-maps.md
       - name: Trusted workspace access
         href: security-trusted-workspace-access.md
 - name: Data security
