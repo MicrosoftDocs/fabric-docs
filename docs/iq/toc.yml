@@ -309,6 +309,8 @@ items:
               href: plan/infobridge-transformations/infobridge-how-to-find-replace.md
             - name: Filter rows
               href: plan/infobridge-transformations/infobridge-how-to-filter-rows.md
+            - name: Sort data
+              href: plan/infobridge-transformations/infobridge-how-to-sort.md
 - name: Graph
   href: ../graph/toc.yml
 - name: Data agent
