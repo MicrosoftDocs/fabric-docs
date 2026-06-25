@@ -1,9 +1,9 @@
 ---
 title: Pricing for Dataflow Gen2
 description: This article provides details of the pricing model of Dataflow Gen2 for Data Factory in Microsoft Fabric.
-ms.topic: concept-article
-ms.date: 06/04/2026
 ms.reviewer: susabat
+ms.date: 06/19/2026
+ms.topic: concept-article
 ms.custom:
   - dataflows
 ---
@@ -12,11 +12,13 @@ ms.custom:
 
 Dataflow Gen2 helps you shape and transform data with ease. It offers a low-code interface and over 300 built-in data and AI transformations, all powered by the familiar Power Query experience you'll find in Excel, Power BI, Power Platform, and Dynamics 365. Dataflow Gen2 also supports Spark-backed transformation execution through mapping data flow (MDF) transforms for native and migrated workloads.
 
+This pricing applies to all Fabric capacity SKUs (F2 and above). Pricing doesn't apply to Fabric trial capacities.
+
 When you publish a dataflow, it creates a definition that runs during refresh. The Dataflow Gen2 engine uses that definition to plan and manage how queries run-across data sources, gateways, and compute engines. It builds tables in staging storage or sends them to your chosen destination, so you get reliable results without the heavy lifting.
 
 :::image type="content" source="media/pricing-dataflows-gen2/dataflows-gen2-pricing-diagram.png" alt-text="Diagram of the Dataflow Gen2 architecture.":::
 
-The diagram captures components of the Data Factory Dataflow Gen2 architecture, including the Lakehouse used to stage data being ingested, and Warehouse item used as a compute engine to write results to staging or output faster. When Warehouse compute can't be used, or when staging is disabled for a query, the Mashup Engine will extract, transform, or load the data to staging or data destinations. You can learn more about how Dataflow Gen2 works in this blog: [Data Factory Spotlight: Dataflow Gen2](https://blog.fabric.microsoft.com/blog/data-factory-spotlight-dataflows-gen2?ft=All).
+The diagram shows components of the Data Factory Dataflow Gen2 architecture, including the Lakehouse used to stage data being ingested, and Warehouse item used as a compute engine to write results to staging or output faster. When you can't use Warehouse compute, or when you disable staging for a query, the Mashup Engine extracts, transforms, or loads the data to staging or data destinations. To learn more about how Dataflow Gen2 works, see [Data Factory Spotlight: Dataflow Gen2](https://blog.fabric.microsoft.com/blog/data-factory-spotlight-dataflows-gen2?ft=All).
 
 Dataflow Gen2 can execute workloads using either the Mashup Engine or Spark Engine. When MDF transforms are used inside Dataflow Gen2, Spark-backed compute is used for transformation execution and data processing.
 
@@ -29,7 +31,7 @@ When you refresh or publish a Dataflow Gen2 item, Fabric Capacity Units are cons
 
 ## Dataflow Gen2 pricing model
 
-### How Pricing Rates are determined
+### How pricing rates are determined
 
 Dataflow Gen2 pricing depends on how each query uses compute. For standard compute, queries run on the mashup engine. Depending on whether your Dataflow is Dataflow Gen2 (CI/CD), the rating varies.
 
@@ -48,7 +50,7 @@ For MDF transform workloads, you're charged 1.5 CU per Spark core-hour based on 
 
 At the end of each run, Dataflow Gen2 adds up the CU usage from each engine and bills it based on the Fabric capacity pricing in your region.
 
-### CU Rate Table
+### CU rate table
 
 | Dataflow Gen2 Engine Type | Consumption Meters | Fabric CU consumption rate | Consumption reporting granularity |
 | --- | --- | --- | --- |
@@ -58,7 +60,7 @@ At the end of each run, Dataflow Gen2 adds up the CU usage from each engine and 
 | Data movement | Based on Fast Copy run duration in seconds and the used intelligent optimization throughput resources. | 1.5 CU | Per Dataflow Gen2 item |
 | Mapping Data Flow Transforms Compute (Preview) | Based on MDF transform execution duration in seconds using Spark-backed compute within Dataflow Gen2. | 1.5 CU per Spark core-hour<br /><br />Example: An 8-core Spark cluster consumes 12 CU for each hour of execution (8 × 1.5 CU). | Per Dataflow Gen2 item |
 
-## Virtual Network Data Gateway Pricing with Dataflow Gen2
+## Virtual network data gateway pricing with Dataflow Gen2
 
 The Virtual Network (VNET) Data Gateway is billed as an additive infrastructure charge, associated with a Fabric capacity. This means that it has its own meter and incurs a bill that is consistent across and extra to all Fabric item runs.
 
@@ -74,13 +76,13 @@ Learn more at [Virtual Network Data Gateways Pricing and Billing](/data-integrat
 
 Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email and in-product notification. Changes are effective on the date stated in the [Release Notes](https://aka.ms/fabricrm) and the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers can use the cancellation options available for the chosen payment method.
 
-## Compute estimated costs using the Fabric Metrics App and Dataflow Refresh History
+## Compute estimated costs using the Fabric Metrics app and dataflow refresh history
 
 The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provides visibility into capacity usage for all Fabric workspaces tied to a capacity. It's used by capacity administrators to monitor the performance of workloads and their usage compared to purchased capacity. Using the Metrics app is the most accurate way to estimate the costs of Dataflow Gen2 refresh runs. To understand how the tiered pricing affected your standard compute costs, you also need to use Dataflow refresh history.
 
-These exercises show you how to validate costs for both CI/CD and non CI/CD dataflows. For the CI/CD dataflow with standard compute, we'll use an example, and we'll provide instructions for all other scenarios.
+These exercises show you how to validate costs for both CI/CD and non CI/CD dataflows. For the CI/CD dataflow with standard compute, a worked example is provided, followed by instructions for all other scenarios.
 
-### Exercise 1: Standard compute for a CI/CD Dataflow
+### Exercise 1: Standard compute for a CI/CD dataflow
 
 The following dataflow has two queries involving transformation, and staging is disabled.
 
@@ -88,7 +90,7 @@ The following dataflow has two queries involving transformation, and staging is 
 
 :::image type="content" source="media/pricing-dataflows-gen2/staging-disabled.png" alt-text="Screenshot showing Dataflow Gen2 with Staging Disabled.":::
 
-Dataflow Gen2 will only use the Standard Compute.
+Dataflow Gen2 only uses the standard compute.
 
 For each query, access the query duration from Refresh history and apply the following formula to compute the CU consumption per query.
 
@@ -108,9 +110,9 @@ Aggregate the Capacity Consumption in CU seconds and validate the consumption in
 
 :::image type="content" source="media/pricing-dataflows-gen2/fabric-capacity-metrics-app-dataflow.png" alt-text="Screenshot showing Fabric Capacity Metrics App showing Dataflow consumption.":::
 
-### Exercise 2: Standard compute for a non-CI/CD Dataflow
+### Exercise 2: Standard compute for a non-CI/CD dataflow
 
-When your dataflow involves transformation, and staging is disabled, Dataflow Gen2 will only use the Standard Compute.
+When your dataflow involves transformation and staging is disabled, Dataflow Gen2 uses only the standard compute.  
 
 For each query, access the query duration from Refresh history and apply the following formula to compute the CU consumption per query.
 
@@ -118,7 +120,7 @@ For each query, access the query duration from Refresh history and apply the fol
 
 Aggregate the Capacity Consumption in CU seconds and validate the consumption in the Fabric capacity metrics app.
 
-### Exercise 3: Understanding High Scale Compute Consumption (both CI/CD and non CI/CD dataflows)
+### Exercise 3: Understanding high scale compute consumption (both CI/CD and non CI/CD dataflows)
 
 If your dataflow uses staging, to find out how much High Scale compute you used, open the Fabric Capacity Metrics App and filter by your Dataflow's name. Right-click the name, look for High Scale compute in the list of operations, and check the duration.
 
@@ -126,7 +128,7 @@ If your dataflow uses staging, to find out how much High Scale compute you used,
 HighScaleComputeCapacityConsumptionInCUSeconds = QueryDurationInSeconds x 6
 ```
 
-### Exercise 4: Understanding Fast Copy Compute Consumption (both CI/CD and non-CI/CD dataflows)
+### Exercise 4: Understanding fast copy compute consumption (both CI/CD and non-CI/CD dataflows)
 
 If your dataflow uses fast copy, to find out how much Data Movement compute you used, open the Fabric Capacity Metrics App and filter by your Dataflow's name. Right-click the name, look for Data Movement in the list of operations, and check the duration.
 

@@ -21,14 +21,12 @@ Fabric workloads and features are available in most Azure public cloud regions, 
 
 ### Home region and Fabric availability
 
-Your [home region](find-fabric-home-region.md) is associated with your tenant. If you want to access all Fabric features in regions where they're not yet available, you can create a capacity in a region where Fabric is available. For more information, see [Multi-Geo support for Fabric](service-admin-premium-multi-geo.md).
-
-The following tables show Fabric workload availability by tenant region.
+Your [home region](find-fabric-home-region.md) is associated with your tenant. Fabric workload availability varies by tenant region, as shown in the next section. If you want to access all Fabric features in regions where they're not yet available, you can create a capacity in a region where Fabric is available. For more information, see [Multi-Geo support for Fabric](service-admin-premium-multi-geo.md).
 
 <a id="all-workloads"></a>
 ### Regional Fabric and Power BI workload availability
 
-The following table lists all Azure regions where Fabric is available. Some regions support only Power BI, while others support all Fabric workloads. Unavailable features are noted where applicable.
+The following table lists all Azure regions where Power BI or Fabric is available. Some regions support only Power BI, while others support all Fabric workloads. Unavailable features are noted where applicable.
 
 | Geography    | Region               | Power BI | All Fabric<br> workloads | Unavailable Fabric features |
 |--|--|:--:|:--:|--|
