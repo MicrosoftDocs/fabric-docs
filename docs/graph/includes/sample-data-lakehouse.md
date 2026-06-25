@@ -10,5 +10,3 @@ ms.topic: include
 
     > [!IMPORTANT]
     > Graph doesn't currently support lakehouses with [lakehouse schemas enabled](../../data-engineering/lakehouse-schemas.md).
-
-

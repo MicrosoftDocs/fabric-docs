@@ -1,10 +1,11 @@
 ---
-title: Pricing for pipelines
+title: Pricing for Pipelines
 description: This article provides details of the pricing model of pipelines for Data Factory in Microsoft Fabric.
 ms.reviewer: makromer
+ms.date: 06/19/2026
 ms.topic: concept-article
-ms.custom: pipelines
-ms.date: 11/29/2024
+ms.custom:
+  - pipelines
 ---
 
 # Pipelines pricing for Data Factory in Microsoft Fabric
@@ -16,9 +17,11 @@ Pipelines enable you to apply rich out-of-the-box data orchestration capabilitie
 When you run a pipeline with Data Factory in Microsoft Fabric, Fabric Capacity Units are consumed for the following services:
 
 - Pipeline services for orchestration of _activity runs_: Your charge is based on the number of activity runs that are orchestrated.
-- Data Movement service for Copy activity runs. You are charged based on the Capacity Units consumed during the Copy activity execution duration.
+- Data Movement service for Copy activity runs: You pay based on the Capacity Units consumed during the Copy activity execution duration.
 
-## Pricing model
+<a id="pricing-model"></a>
+
+## Price model
 
 The following table shows a breakdown of the pricing model for pipelines within Data Factory in Microsoft Fabric:
 
@@ -26,16 +29,16 @@ The following table shows a breakdown of the pricing model for pipelines within 
 |---------|---------|---------|
 |Data movement    | Based on Copy activity run duration in hours and the used intelligent optimization throughput resources        | 1.5 CU hours   |
 |Data orchestration     |  Incorporates orchestration activity runs and activity integration runtime charges       | 0.0056 CU hours for each non-copy activity run |
-|SQL Server Integration Services | Based on SQL Server Integration Services uptime used by Invoke SSIS package activity | 1.35 CU hours per VCore
+|SQL Server Integration Services | Based on SQL Server Integration Services uptime used by Invoke SSIS package activity | 1.35 CU hours per VCore |
 
-It indicates that for each intelligent optimization throughput resource usage in a pipeline execution, 1.5 CU hours are consumed for data movement Copy activities. Secondly, each orchestration activity run consumes 0.0056 CU hours. At the end of each pipeline run, the CU consumption for each engine type is summed and is billed as per the translated price of the Fabric Capacity in the region where the capacity is deployed.  
+The pricing model shows that for each intelligent optimization throughput resource usage in a pipeline execution, you consume 1.5 CU hours for data movement Copy activities. Each orchestration activity run consumes 0.0056 CU hours. At the end of each pipeline run, the CU consumption for each engine type is summed and billed as per the translated price of the Fabric Capacity in the region where the capacity is deployed.
 
-> [!NOTE]
+> [!NOTE]  
 > Whenever a pipeline orchestration activity triggers other Fabric items to run (for example, Notebook or Dataflow Gen2), the consumption for those items needs to be taken into account as well.
 
 ## Changes to Microsoft Fabric workload consumption rate
 
-Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email and in-product notification. Changes are effective on the date stated in the [Release Notes](https://aka.ms/fabricrm) and the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers can use the cancellation options available for the chosen payment method.  
+Microsoft can change consumption rates at any time. Microsoft uses reasonable efforts to provide notice through email and in-product notification. Changes take effect on the date stated in the [Release Notes](https://aka.ms/fabricrm) and the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/blog/). If a change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, you can use the cancellation options available for the chosen payment method.
 
 ## Compute estimated costs using the Fabric Metrics App
 
@@ -54,4 +57,4 @@ The following table can be used as a template to compute estimated costs using F
 ## Related content
 
 - [Pricing example scenarios](pricing-overview.md#pricing-examples)
-- [Pricing Dataflow Gen2](pricing-dataflows-gen2.md)
+- [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
