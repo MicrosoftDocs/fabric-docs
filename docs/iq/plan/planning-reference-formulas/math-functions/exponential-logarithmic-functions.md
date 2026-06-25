@@ -1,5 +1,5 @@
 ---
-title: Exponential and logarithmic functions
+title: Exponential and Logarithmic Functions
 description: Learn about exponential and logarithmic functions in plan (preview) and how to use them to perform exponential, logarithmic, and root calculations.
 ms.date: 06/04/2026
 ms.topic: reference

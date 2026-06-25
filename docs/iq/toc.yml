@@ -77,6 +77,8 @@ items:
       href: plan/overview-regions.md
     - name: Prerequisites
       href: plan/overview-prerequisites.md
+    - name: Roles
+      href: plan/overview-roles.md 
     - name: Known limitations
       href: plan/overview-limitations.md
   - name: Planning sheets
@@ -239,12 +241,12 @@ items:
       items:
         - name: Create a table app
           href: plan/powertable-how-to-create-table-app.md
-        - name: Enter table data manually
-          href: plan/powertable-how-to-enter-table-data-manually.md
-        - name: Connect to a database
-          href: plan/powertable-how-to-connect-existing-database.md
         - name: Connect to a semantic model
           href: plan/powertable-how-to-connect-semantic-model.md
+        - name: Connect to a database
+          href: plan/powertable-how-to-connect-existing-database.md
+        - name: Enter table data manually
+          href: plan/powertable-how-to-enter-table-data-manually.md    
         - name: Set up access control
           href: plan/powertable-how-to-set-up-access-control.md  
         - name: Generate forms
@@ -263,6 +265,8 @@ items:
       items:
         - name: Get started with intelligence sheets
           href: plan/intelligence-how-to-get-started.md
+        - name: Apply and customize themes
+          href: plan/intelligence-how-to-apply-themes.md
         - name: Build financial reports
           href: plan/intelligence-how-to-build-financial-reports.md
         - name: Comment and collaborate
@@ -291,12 +295,22 @@ items:
           href: plan/infobridge-how-to-write-back-data.md
         - name: Transform data
           items:
-            - name: Pivot data
+            - name: Use pivot table
               href: plan/infobridge-transformations/infobridge-how-to-pivot-table.md            
             - name: Group by transformations
               href: plan/infobridge-transformations/infobridge-how-to-group-by.md
             - name: Add columns
               href: plan/infobridge-transformations/infobridge-how-to-add-column.md
+            - name: Manage columns
+              href: plan/infobridge-transformations/infobridge-how-to-manage-columns.md
+            - name: Pivot and unpivot columns
+              href: plan/infobridge-transformations/infobridge-how-to-pivot-column.md
+            - name: Find and replace
+              href: plan/infobridge-transformations/infobridge-how-to-find-replace.md
+            - name: Filter rows
+              href: plan/infobridge-transformations/infobridge-how-to-filter-rows.md
+            - name: Sort data
+              href: plan/infobridge-transformations/infobridge-how-to-sort.md
 - name: Graph
   href: ../graph/toc.yml
 - name: Data agent

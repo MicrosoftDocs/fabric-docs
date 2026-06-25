@@ -2,7 +2,7 @@
 title: dbt job in Microsoft Fabric (preview)
 description: Learn how to use dbt job in Microsoft Fabric to transform your data with SQL.
 ms.reviewer: akurnala
-ms.date: 01/16/2026
+ms.date: 06/11/2025
 ms.topic: overview
 ms.custom:
   - dbt
@@ -39,25 +39,32 @@ This approach combines the flexibility of code-first development with the simpli
 - For the target Fabric Data Warehouse, you need [read/write permissions](/fabric/data-warehouse/share-warehouse-manage-permissions#manage-permissions) to run dbt transformations.
 - You need both build and read/write access to linked datasets and connections.
 
-## Supported adapters
+## Supported adapters and runtime
 
-You can connect a dbt job to multiple data sources by using supported adapters. This feature enables dbt models to run transformations directly on your chosen platform. Here are the currently supported adapters:
+You can connect a dbt job to multiple data sources by using supported adapters. An adapter is a connector that allows dbt to work with a specific data platform by handling connections, running SQL transformations, and managing platform-specific behavior.
 
-- Fabric Warehouse
-- Snowflake
-- PostgreSQL
-- Azure SQL Server
+In Fabric, a dbt job runtime is a managed execution environment that provides a consistent and secure way to run dbt jobs. It simplifies execution by offering a versioned environment that includes dbt capabilities, ensuring reliability and performance across workloads. Currently, when you create a dbt job, it uses **dbt job runtime V1.0** by default.
 
-## dbt job runtime
+The following table shows the adapters supported in dbt jobs, along with the runtime and adapter versions available in the managed execution environment.
 
-In Fabric, a dbt Job Runtime is a managed execution environment that provides a consistent and secure way to run dbt jobs. It simplifies execution by offering a versioned environment that includes dbt capabilities, ensuring reliability and performance across workloads. 
+| Adapter | dbt job runtime version | Adapter version | Supported dbt version | Python version |
+|---|---|---|---|---|
+| Azure SQL Database | V1.0 | 1.8.5 | dbt Core 1.9 | 3.12 |
+| Fabric Data Warehouse | V1.0 | 1.9.0 | dbt Core 1.9 | 3.12 |
+| PostgreSQL database | V1.0 | 1.9.0 | dbt Core 1.9 | 3.12 |
+| Snowflake | V1.0 | 1.9.0 | dbt Core 1.9 | 3.12 |
 
-Currently, when you create a dbt job, it uses **dtbjob runtime v1.0** by default. This runtime supports **dbt Core v1.9** and includes adapters for **Fabric Warehouse**, **Azure SQL Database**, **PostgreSQL**, and **Snowflake**.
+> [!NOTE]
+> This matrix reflects versions available in the Fabric-managed dbt job runtime. 
+>
+> V1.0 is the latest dbt job runtime version in Fabric.
+>
+> Adapter versions and dbt versions are updated regularly to include new features, performance improvements, and platform compatibility updates. For adapter configuration and setup, refer to [Configure a dbt job](dbt-job-configure.md).
 
 ## Limitations
 
 - **No build caching**: Currently, preview only supports compiling and executing a project fresh from the source. dbt artifacts produced from previous runs aren't available for recompilation.
-- **Adapter constraints**: Some partner adapters aren't yet supported in Fabric. See [the current supported adapters](#supported-adapters).
+- **Adapter constraints**: Some partner adapters aren't yet supported in Fabric. See [the current supported adapters](#supported-adapters-and-runtime).
 
 ## Related content
 

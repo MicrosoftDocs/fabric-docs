@@ -14,7 +14,7 @@ A graph schema is the collection of node types, edge types, and their properties
 Use these guidelines before you start modeling in the graph model editor. For step-by-step instructions on creating nodes and edges, see the [graph tutorial](tutorial-introduction.md). Examples in this article use the [Adventure Works sample dataset](sample-datasets.md).
 
 > [!IMPORTANT]
-> Graph currently doesn't support schema evolution. After you model your data, the structure of nodes, edges, and properties is fixed. Structural changes, such as adding properties, modifying labels, or changing relationship types, require you to create a new graph model and reload all data. This process takes time and consumes capacity, so plan your schema thoroughly before you start modeling.
+> Graph currently doesn't support schema evolution. After you create a graph model and load its data, any structural changes, such as adding or removing node types, edge types, and properties, require you to reload all data before querying the updated structure. To reload the data, select **Save** in the top ribbon. This data reload process takes time and consumes capacity, so plan your schema thoroughly before you start modeling.
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ A **node type** defines a kind of entity in your graph, such as a customer, prod
 - A **key column** that uniquely identifies each node (labeled **ID** in the graph model editor). For example, `CustomerID_K`.
 - **Properties**, which are columns from the table that become attributes on each node. For example, `FirstName`, `LastName`, and `EmailAddress`.
 
-A **node** is an individual instance of a node type - one row in the mapping table. For example, each row in *adventureworks_customers* becomes a `Customer` node.
+A **node** is an individual instance of a node type—one row in the mapping table. For example, each row in *adventureworks_customers* becomes a `Customer` node.
 
 An **edge type** defines a kind of relationship between two node types. It consists of:
 
@@ -41,7 +41,7 @@ An **edge type** defines a kind of relationship between two node types. It consi
 - A **mapping table** that contains the relationship data between the source and target nodes. For example, the *adventureworks_orders* table.
 - A **source node type** and a **target node type** that the edge connects. For example, `Customer` as the source and `Order` as the target.
 
-An **edge** is an individual instance of an edge type - one row in the mapping table that connects two specific nodes.
+An **edge** is an individual instance of an edge type—one row in the mapping table that connects two specific nodes.
 
 > [!NOTE]
 > In the graph model editor, the **Add node** and **Add edge** buttons create node types and edge types, not individual nodes or edges.
@@ -80,6 +80,32 @@ Every node type requires a key column (or compound key) that uniquely identifies
 > [!TIP]
 > Define [node key constraints](gql-graph-types.md#set-up-node-key-constraints) to enable the query engine to perform direct lookups on key properties. This optimization speeds up queries that look up specific nodes by key.
 
+## Add node properties
+
+When you create a node type, choose what properties from the source table to include as properties in the node type, especially properties for which OneLake Security access rules have been applied to the underlying source table.
+
+Add properties during node creation with the **+ Add property** button. Alternatively, add properties to an existing node by double-clicking the node type in the graph model editor to open the **Edit node schema** dialog, selecting **Add property**, and then choosing a column from the mapping table.
+
+You might not want to add every column in the table as a property. Excessive properties increase storage, slow queries, and make the graph harder to maintain. For these reasons, avoid adding properties that you don't need for queries or analysis.
+
+For each node type, keep only properties that are:
+
+- Required for the uniqueness of the node (key columns)
+- Used in `WHERE` filters or `RETURN` projections in your queries
+- Needed for downstream analysis or visualization
+
+For more information on how property count affects query performance, see [Return only the properties you need](gql-query-performance.md#return-only-the-properties-you-need).
+
+### Choose data types
+
+Select the most specific data type for each property. The right types improve both storage efficiency and query performance:
+
+- Use `INT` or `UINT64` for numeric identifiers and counts. Numeric comparisons are faster than string comparisons.
+- Use `ZONED DATETIME` for timestamps instead of string-formatted dates.
+- Use `BOOLEAN` for true/false flags instead of string values like `"yes"` or `"no"`.
+
+For the full list of supported types, see [Current limitations — Data types](limitations.md#data-types).
+
 ## Choose edge types
 
 Edge types define the relationships between node types. Each edge type connects a source node type to a target node type through a mapping table.
@@ -92,41 +118,16 @@ Follow these guidelines:
 
 ### Add properties to edge types
 
-Unlike node types, edge types start with no properties. You can optionally add properties when the data describes the relationship itself rather than either endpoint. Edge properties are most useful when you write GQL queries that need to filter, aggregate, or return data about the relationship itself.
+Like nodes, edge types start with no properties. You can optionally add properties when the data describes the relationship itself rather than either endpoint. Edge properties are most useful when you write GQL queries that need to filter, aggregate, or return data about the relationship itself.
 
 To add a property, double-click an edge type in the graph model editor to open the **Edit edge schema** dialog, select **Add property**, and then choose a column from the mapping table.
 
-**When to add edge properties:** If a column answers "how much?", "when?", or "in what way?" about the connection between two nodes, it belongs on the edge - not on either node.
+**When to add edge properties:** If a column answers "how much?", "when?", or "in what way?" about the connection between two nodes, it belongs on the edge—not on either node.
 
-**Example:** In the Adventure Works dataset, the `contains` edge connects `Order` to `Product` through the *adventureworks_orders* table. Columns like `OrderQty`, `UnitPrice`, and `LineTotal` describe the relationship - how many of a product were in a specific order, at what price. Columns like `OrderDate` or `ShipDate` describe the order itself and belong on the `Order` node type, not on the edge.
+**Example:** In the Adventure Works dataset, the `contains` edge connects `Order` to `Product` through the *adventureworks_orders* table. Columns like `OrderQty`, `UnitPrice`, and `LineTotal` describe the relationship—how many of a product were in a specific order, at what price. Columns like `OrderDate` or `ShipDate` describe the order itself and belong on the `Order` node type, not on the edge.
 
 > [!IMPORTANT]
 > The mapping table for an edge must contain columns that match the key columns of both the source and target node types in values and data type. Tables that you use to create node types can also serve as edge mapping tables if they meet this requirement.
-
-## Remove unnecessary properties
-
-When you create a node type from a mapping table, every column in the table becomes a property by default. Excessive properties increase storage, slow queries, and make the graph harder to maintain. For these reasons, remove properties that you don't need for queries or analysis.
-
-> [!NOTE]
-> Edge types work differently - they start with no properties. You manually add only the properties you need by using the **Add property** button in the **Edit edge schema** dialog.
-
-For each node type, keep only properties that are:
-
-- Required for the uniqueness of the node (key columns)
-- Used in `WHERE` filters or `RETURN` projections in your queries
-- Needed for downstream analysis or visualization
-
-For more information on how property count affects query performance, see [Return only the properties you need](gql-query-performance.md#return-only-the-properties-you-need).
-
-## Choose data types
-
-Select the most specific data type for each property. The right types improve both storage efficiency and query performance:
-
-- Use `INT` or `UINT64` for numeric identifiers and counts. Numeric comparisons are faster than string comparisons.
-- Use `ZONED DATETIME` for timestamps instead of string-formatted dates.
-- Use `BOOLEAN` for true/false flags instead of string values like `"yes"` or `"no"`.
-
-For the full list of supported types, see [Current limitations — Data types](limitations.md#data-types).
 
 ## Common tabular-to-graph patterns
 
@@ -143,7 +144,7 @@ For a step-by-step walkthrough of the embedded entity pattern, see [Add multiple
 
 ## Change your graph schema
 
-Graph doesn't support schema evolution. After you save a graph model, the structure of node types, edge types, and their properties is fixed. To make structural changes - such as adding a property to a node type, removing an edge type, or changing a key column - you must create a new graph model and reload your data.
+Graph doesn't support schema evolution. After you save a graph model, the structure of node types, edge types, and their properties is fixed. To make structural changes—such as adding a property to a node type, removing an edge type, or changing a key column—you must create a new graph model and reload your data.
 
 To change your graph schema:
 

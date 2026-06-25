@@ -56,7 +56,7 @@ The storage report contains the following fields:
 | Billing     | The billing status of the item. Non-billable items aren't charged for OneLake storage. Partially billable items aren't charged up to a limit.   |
 | Total       | The total amount of data stored in the item, including system and soft-deleted data.                                                            |
 | Soft-delete | Deleted data within the seven day retention window. For more information, see [Recover deleted files in OneLake](soft-delete.md).                                              |
-| System      | Workload data such as internal metadata, logs, and temporary files that aren't directly accessible but count toward storage usage.             |
+| System      | Workload data such as internal metadata, logs, and temporary files that aren't directly accessible but count toward storage consumption.             |
 
 You can generate a similar report programmatically by using tools like PowerShell. However, the OneLake storage report doesn't require external tools and scans all your data, including data you don't have access to, such as system data. System folders are used by workloads across Fabric for metadata, temporary files, or other use-cases.
 

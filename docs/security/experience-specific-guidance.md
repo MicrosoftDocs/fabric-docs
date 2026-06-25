@@ -194,6 +194,64 @@ Now you can run or schedule your newly recovered SJD.
 
 For details about Azure Storage Explorer, see [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md).
 
+### GraphQL
+
+GraphQL items from the primary region aren't available after a regional disaster, and GraphQL definitions and configurations aren't replicated to the secondary region. To recover GraphQL in a new region, use one of the following approaches.
+
+#### Approach 1: User-managed redundancy with Git integration (in public preview)
+
+The best way to make this process easy and quick is to use Fabric Git integration, and then synchronize your GraphQL with your ADO repo. After the service fails over to another region, you can use the repo to rebuild the GraphQL in the new workspace you created.
+
+1. Create a new workspace in the target capacity and region.
+
+1. Recover all dependent data sources, such as Lakehouse, Warehouse, or SQL databases, by following their respective recovery steps.
+
+1. Update the GraphQL definition to point to the newly recovered resources by modifying environment-specific references such as source workspace IDs, source artifact IDs, and connection details. This step ensures correct binding at deployment time.
+
+1. Redeploy GraphQL artifacts from the Git repository into the new workspace. This step recreates the API structure and configuration by using the updated definitions.
+
+1. Reapply artifact settings, including roles, access controls, and authentication configuration.
+
+1. Reapply endpoint references by updating any applications or integrations to use the newly created GraphQL endpoint.
+
+1. Update any existing deployment pipelines that were pointing to the old workspace to reference the newly created workspace.
+
+1. Validate end-to-end functionality of the API.
+
+#### Approach 2: Manual approach
+
+If you don't take the Git integration approach, you can use the following manual approach to recover GraphQL.
+
+1. Create a new workspace in the target capacity and region.
+
+1. Recover all dependent data sources, such as Lakehouse, Warehouse, or SQL databases.
+
+1. Recreate the GraphQL API manually in the new workspace, including schema definitions, data source connections, and relationships.
+
+1. Reapply artifact settings, including roles, access controls, and authentication configuration.
+
+1. Reapply endpoint references by updating any applications or integrations to use the newly created GraphQL endpoint.
+
+1. Update any existing deployment pipelines that were pointing to the old workspace to reference the newly created workspace.
+   
+1. Validate end-to-end functionality of the API.
+
+#### Important considerations
+
+1. GraphQL relies on external dependencies (such as Lakehouse, Warehouse, and SQL), which you must recover prior to GraphQL deployment.
+
+1. GraphQL API definitions include environment-specific references (such as `sourceWorkspaceId` and `sourceItemId`). When recovering in a new region, these references might become invalid. Update them to point to newly provisioned resources.
+
+1. Automatic rebinding of data sources isn't guaranteed in disaster recovery scenarios, especially when using saved credentials or cross-workspace connections.
+
+1. Other artifact settings such as monitoring, authorization, RBAC, introspection, and more don't carry over after failover. You must re-establish these settings in the new region.
+
+#### References
+
+   - [Overview of Fabric Git integration - Microsoft Fabric | Microsoft Learn](/fabric/cicd/git-integration/intro-to-git-integration)
+   
+   - [Source control and deployment pipelines in API for GraphQL - Microsoft Fabric | Microsoft Learn](/fabric/data-engineering/graphql-source-control-and-deployment) 
+   
 ## Data Science
 
 This guide walks you through the recovery procedures for the Data Science experience. It covers ML models and experiments.
@@ -461,6 +519,58 @@ During recovery, once the new region and capacity in Fabric are set up, you can 
 > [!NOTE]
 > If the original Ontology item has a lakehouse configured, refer to the [Lakehouse section](#lakehouse) to recover the lakehouse first. After those dependencies are taken care of, connect the newly recovered lakehouse to the newly recovered Ontology item.
 
+### Plan
+
+This article describes the recovery procedures for the Plan experience in IQ. It outlines the steps required to restore key components, including Planning, PowerTable, Intelligence, InfoBridge, and related data assets.
+
+#### Git integration to restore plan items
+
+The preferred approach is to synchronize all plan items with an Azure DevOps (ADO) or GitHub repository by using [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md). After a failover, use the repository to restore the items in the new workspace.
+
+Predisaster (proactive steps):
+
+1. In workspace W1, go to **Workspace Settings** and configure Git integration.
+
+1. Select **Connect and sync** with your ADO or GitHub repository.
+
+1. Select the plan items to upload to the repository and select **Commit**.
+
+    :::image type="content" source="media/experience-specific-guidance/upload-plan-git.png" alt-text="Screenshot of uploading plan items from the Fabric workspace to a Git repository.":::
+
+1. Confirm that the **Git status** of plan items is *Synced*.
+
+1. Establish a commit discipline - commit after every significant change to a plan definition so the repository always reflects the latest state.
+
+Recovery steps:
+
+1. Create a new workspace W2 inside capacity C2 in the healthy region.
+
+1. In workspace W2, go to **Workspace Settings** and reconnect to the same ADO/GitHub repository.
+
+1. Select **Source Control**. Select the relevant repository branch and select **Update All**. All plan items are downloaded to W2.
+
+> [!IMPORTANT]
+> Only the planning sheet structure and settings are recovered by using Git integration.
+> Data entered in the planning sheet such as input values, notes, and comments aren't automatically restored. It requires Fabric SQL restore.
+> Semantic model data also needs to be recovered separately.
+
+The following components are restored after recovery:
+
+* **PowerTable sheets:** Source table settings, column configuration, row access, visual properties (layout, formats, and more), row identification, comment settings, slowly changing dimensions (SCD), approvals, automations, and forms.
+* **Planning sheets:** Sheet properties (formatting, conditional formatting, and more), comment settings, writeback settings, data input columns, data input rows, scenarios, and bookmarks.
+* **InfoBridge:** InfoBridge sources, InfoBridge queries, transformation steps, writeback destinations, writeback settings, linked query mappings, query groups, visual properties (blend). These items can't be recovered: file-based sources (CSV, Excel), cross-workload sheets that use file-based sources.
+* **Intelligence:** All charts and matrices.
+
+#### Fabric SQL restore for plan
+
+Data entered in planning sheets, tables used in PowerTable, and writeback data are stored in SQL databases and must be considered as part of your disaster recovery strategy. To recover SQL databases, see the [SQL database](#sql-database) section.
+
+* **Restore plan metadata**: Each plan item is associated with a \_\_fabric\_plan\_sys database that stores metadata for planning features, including comments, scenarios, data inputs, and writeback configuration. The \_\_fabric\_plan\_sys database isn't restored automatically and must be explicitly recovered.
+
+* **Restore writeback databases**: If your plan uses SQL writeback destinations, you must also recover the associated databases manually. Configured SQL writeback destinations aren't restored automatically.
+
+* **Restore tables used in PowerTable**: Any tables created by using PowerTable are stored in a Fabric SQL database. You must also recover these tables during DR.
+
 ### Operations agents
 
 Operations agent users should take proactive steps to prepare for regional disaster recovery. Following the approach described in this section helps ensure that your agents can be restored quickly after a regional outage.
@@ -515,6 +625,16 @@ Microsoft Fabric Variable libraries enable developers to customize and share ite
 ### Customer-managed keys for Fabric workspaces
 
 You can use customer-managed keys (CMK) stored in Azure Key Vault to add an additional layer of encryption on top of Microsoft-managed keys for data at rest. In the event that Fabric becomes inaccessible or inoperable in a region, its components will fail over to a backup instance. During failover, the CMK feature supports read-only operations. As long as the Azure Key Vault service remains healthy and permissions to the vault are intact, Fabric will continue to connect to your key and allow you to read data normally. This means the following operations aren't supported during failover: enabling and disabling the workspace CMK setting and updating the key. 
+
+## OneLake
+
+This section walks you through the recovery procedures for OneLake features. For more information on disaster recovery for OneLake data, see [OneLake disaster recovery](/fabric/onelake/onelake-disaster-recovery).
+
+### Lifecycle management policies
+
+In the event that Fabric becomes inaccessible or inoperable in a region, your OneLake lifecycle policy can still be read and updated during failover. Any data moved to the cool or cold tier will remain in that tier. You can follow these steps to apply your existing policy to your new recovery workspace: 
+1. Call Export Policy on your original workspace and save the entire lifecycle policy. 
+2. Call Import Policy on your recovered workspace, with your exported lifecycle policy as the request body. 
 
 ## Related information
 

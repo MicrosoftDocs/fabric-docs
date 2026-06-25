@@ -33,7 +33,7 @@ If a disaster makes the primary region unrecoverable, OneLake might initiate a r
 > [!NOTE]
 > This recovery guidance applies only when the primary region has an Azure‑paired secondary region and Fabric is supported in the paired region.
 
-For a comprehensive understanding of the end-to-end experience, see [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric).
+For a comprehensive understanding of the end-to-end experience, see [Reliability in Fabric](/azure/reliability/reliability-fabric).
 
 ## Soft delete for OneLake files
 

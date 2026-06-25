@@ -2,7 +2,7 @@
 title: Troubleshoot connectors
 description: Learn how to troubleshoot connector issues with Data Factory in Fabric.
 ms.topic: troubleshooting
-ms.date: 08/21/2025
+ms.date: 06/17/2026
 ms.reviewer: jianleishen
 ms.custom: connectors
 ai-usage: ai-assisted
@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 
 # Troubleshoot connector issues with Data Factory in Fabric
 
-Need help with connector issues in Data Factory? You're in the right place. Let's walk through common problems and their solutions.
+Need help with connector issues in Data Factory? You're in the right place. This article walks through common problems and their solutions.
 
 ## Connector specific problems
 
@@ -19,6 +19,7 @@ Each connector has its own troubleshooting guide with specific issues, causes, a
 - [Azure Blob Storage](connector-troubleshoot-azure-blob-storage.md)
 - [Azure Cosmos DB](connector-troubleshoot-azure-cosmos-db.md)
 - [DB2](connector-troubleshoot-db2.md)
+- [Data Warehouse](connector-troubleshoot-data-warehouse.md)
 - [Azure Data Explorer](connector-troubleshoot-azure-data-explorer.md)
 - [Azure Data Lake Storage](connector-troubleshoot-azure-data-lake-storage.md)
 - [Azure Database for PostgreSQL](connector-troubleshoot-azure-database-for-postgresql.md)
@@ -31,10 +32,11 @@ Each connector has its own troubleshooting guide with specific issues, causes, a
 - [Oracle](connector-troubleshoot-oracle.md)
 - [Snowflake](connector-troubleshoot-snowflake.md)
 - [FTP-SFTP-HTTP](connector-troubleshoot-ftp-sftp-http.md)
+- [Lakehouse](connector-troubleshoot-lakehouse.md)
 - [REST](connector-troubleshoot-rest.md)
 - [Sharepoint Online list](connector-troubleshoot-sharepoint-online-list.md)
 
-We also have guides for different file formats:
+Guides are also available for different file formats:
 
 - [Delimited text](connector-troubleshoot-delimited-text.md)
 - [ORC](connector-troubleshoot-orc-format.md)
@@ -76,7 +78,7 @@ Here are common errors you might see when using Copy activity with any connector
 
 - **Symptoms**: Copy activity fails on a FIPS-enabled gateway machine with the following error message: `This implementation is not part of the Windows Platform FIPS validated cryptographic algorithms.` 
 
-- **Cause**: This error might occur when you copy data with connectors such as Azure Blob, SFTP, and so on. Federal Information Processing Standards (FIPS) defines a certain set of cryptographic algorithms that are allowed to be used. When FIPS mode is enabled on the machine, some cryptographic classes that copy activity depends on are blocked in some scenarios.
+- **Cause**: This error might occur when you copy data with connectors such as Azure Blob and SFTP. Federal Information Processing Standards (FIPS) defines a certain set of cryptographic algorithms that are allowed to be used. When FIPS mode is enabled on the machine, some cryptographic classes that copy activity depends on are blocked in some scenarios.
 
 - **Resolution**: Learn [why we’re not recommending "FIPS Mode" anymore](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/why-we-8217-re-not-recommending-8220-fips-mode-8221-anymore/ba-p/701037), and evaluate whether you can disable FIPS on your gateway machine.
 
@@ -124,9 +126,9 @@ Here are common errors you might see when using Copy activity with any connector
 
 #### Error code: 20523
 
-- **Message**: `Managed identity credential is not supported in this version ('%version;') of on-premises data gateway (ODPG).`
+- **Message**: `Managed identity credential is not supported in this version ('%version;') of on-premises data gateway (OPDG).`
 
-- **Recommendation**: Check the supported version and upgrade the gateway to a higher version.
+- **Recommendation**: Check the supported version and upgrade the gateway to a later version.
 
 #### Error code: 20551
 
@@ -150,7 +152,7 @@ Here are common errors you might see when using Copy activity with any connector
 
 - **Message**: `Failed to retrieve source file ('%name;') metadata to validate data consistency.`
 
-- **Cause**: There's a transient issue on the sink data store, or retrieving metadata from the sink data store isn't allowed.
+- **Cause**: There's a transient issue on the data store, or retrieving metadata from the data store isn't allowed.
 
 #### Error code: 20703
 
@@ -168,9 +170,9 @@ Here are common errors you might see when using Copy activity with any connector
 
 #### Error code: 20705
 
-- **Message**: `'validateDataConsistency' is not supported in this version ('%version;') of on-premises data gateway (ODPG).`
+- **Message**: `'validateDataConsistency' is not supported in this version ('%version;') of on-premises data gateway (OPDG).`
 
-- **Recommendation**: Check the supported gateway version and upgrade it to a higher version, or remove the 'validateDataConsistency' property from copy activities.
+- **Recommendation**: Check the supported gateway version and upgrade it to a later version, or remove the 'validateDataConsistency' property from copy activities.
 
 #### Error code: 20741
 
@@ -222,7 +224,7 @@ Here are common errors you might see when using Copy activity with any connector
 
 #### Error code: 20771
 
-- **Message**: `'deleteFilesAfterCompletion' is not support in current copy activity settings, it's only supported with direct binary copy.`
+- **Message**: `'deleteFilesAfterCompletion' is not supported in current copy activity settings, it's only supported with direct binary copy.`
 
 - **Recommendation**: Remove the 'deleteFilesAfterCompletion' setting or use direct binary copy.
 
@@ -262,6 +264,6 @@ Here are common errors you might see when using Copy activity with any connector
 
 Check out these other resources:
 
-- [Data Factory blog](https://blog.fabric.microsoft.com/blog/category/data-factory)
+- [Fabric blog](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/bg-p/fbc_fabricupdatesblogs)
 - [Data Factory community](https://community.fabric.microsoft.com/t5/Data-Factory-preview-Community/ct-p/datafactory)
 - [Share your feature ideas](https://ideas.fabric.microsoft.com/)

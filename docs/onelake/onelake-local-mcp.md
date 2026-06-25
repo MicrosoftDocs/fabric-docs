@@ -16,7 +16,7 @@ Fabric items use open formats to store their data in OneLake — from lakehouses
 
 ## Prerequisites
 
-- A [Microsoft Fabric workspace](/fabric/get-started/workspaces) with at least one item that stores data in OneLake.
+- A [Fabric workspace](../fundamentals/workspaces.md) with at least one item that stores data in OneLake.
 - [Azure CLI](/cli/azure/install-azure-cli) installed and signed in (`az login`).
 - [Visual Studio Code](https://code.visualstudio.com/) with an MCP-compatible AI extension (such as [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)).
 
@@ -42,9 +42,9 @@ The tools cover three areas of OneLake:
 
 | Category | What you can do | OneLake APIs used |
 |----------|----------------|-------------------|
-| **Workspace and item discovery** | List workspaces, list items within a workspace, create new items (lakehouses, notebooks, SQL databases, and more). | [OneLake data plane API](/fabric/onelake/onelake-access-api) and [Fabric REST API](/rest/api/fabric/articles/) |
-| **File and directory operations** | Browse, read, write, upload, download, and delete files and directories. Both DFS and Blob Storage endpoints are available. | [OneLake file system APIs](/fabric/onelake/onelake-access-api) |
-| **Table operations** | Get table API configuration, list namespaces (schemas), list tables, and retrieve full table definitions with column names, types, and metadata. | [OneLake table APIs](/fabric/onelake/table-apis/table-apis-overview) |
+| **Workspace and item discovery** | List workspaces, list items within a workspace, create new items (lakehouses, notebooks, SQL databases, and more). | [OneLake data plane API](./onelake-access-api.md) and [Fabric REST API](/rest/api/fabric/articles/) |
+| **File and directory operations** | Browse, read, write, upload, download, and delete files and directories. Both DFS and Blob Storage endpoints are available. | [OneLake file system APIs](./onelake-access-api.md) |
+| **Table operations** | Get table API configuration, list namespaces (schemas), list tables, and retrieve full table definitions with column names, types, and metadata. | [OneLake table APIs](./table-apis/table-apis-overview.md) |
 
 The tools include 19 commands. Most commands accept friendly names as well as GUIDs — for example, you can reference an item as `SalesLakehouse.lakehouse` instead of a GUID.
 

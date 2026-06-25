@@ -1,5 +1,5 @@
 ---
-title: Random and lookup functions
+title: Random and Lookup Functions
 description: Learn about random and lookup functions in plan (preview) and how to use them to generate random numbers and retrieve positional values.
 ms.date: 06/04/2026
 ms.topic: reference

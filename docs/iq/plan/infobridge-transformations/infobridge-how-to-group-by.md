@@ -1,5 +1,5 @@
 ---
-title: Configure Group by transformations
+title: Configure Group By Transformations
 description: Learn how to aggregate and summarize data by using Group by transformations.
 ms.date: 06/15/2026
 ms.topic: how-to

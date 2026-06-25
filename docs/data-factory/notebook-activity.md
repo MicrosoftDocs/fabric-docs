@@ -61,6 +61,34 @@ Select an existing notebook from the **Notebook** dropdown, and optionally speci
 
    Check out the docs on [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
 
+### Auto-populate base parameters for Notebook activity
+
+**Auto-populate base parameters** automatically discovers parameters defined in a notebook and populates them into the Notebook activity during pipeline authoring.
+This feature reduces manual configuration, prevents errors, and keeps pipelines aligned with notebook logic.
+
+#### Prerequisites
+- Your notebook must include a **parameter cell**.
+- Only variables defined in this cell are detected as parameters.
+
+:::image type="content" source="media/notebook-activity/notebook-parameters-set-up.png" alt-text="Screenshot showing Notebook and the parameter cell in a Notebook.":::
+
+#### How it works
+When you select a notebook in a Notebook activity:
+- The system automatically retrieves parameters from the notebook when you toggle into **Base parameters**  in **Settings**.
+- The **Base parameters** section is populated with:
+  - Names  
+  - Types  
+  - Default values
+
+:::image type="content" source="media/notebook-activity/notebook-base-parameters.png" alt-text="Screenshot showing the base parameters on the Notebook activity auto-populated.":::
+
+You can review auto-populated parameters and (optionally) override parameter values. 
+
+#### Key behaviors
+- Parameters auto-populate when you select a notebook.
+- Changing notebooks refreshes the parameter list.
+- No parameter cell → no parameters populated.
+
 ### Set session tag
 
 In order to minimize the amount of time it takes to execute your notebook job, you could optionally set a session tag. Setting the session tag instructs Spark to reuse any existing Spark session, minimizing the startup time. Any arbitrary string value can be used for the session tag. If no session exists, a new one would be created using the tag value.

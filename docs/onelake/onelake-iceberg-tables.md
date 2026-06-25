@@ -11,7 +11,7 @@ ms.date: 7/1/2025
 
 # Use Iceberg tables with OneLake
 
-In Microsoft OneLake, you can seamlessly work with tables in both Delta Lake and Apache Iceberg formats. 
+In OneLake, you can seamlessly work with tables in both Delta Lake and Apache Iceberg formats. 
 
 This flexibility is enabled through **metadata virtualization**, a feature that allows Iceberg tables to be interpreted as Delta Lake tables, and vice versa. You can directly write Iceberg tables or create shortcuts to them, making these tables accessible across various Fabric workloads. Similarly, Fabric tables written in the Delta Lake format can be read using Iceberg readers.
 
@@ -261,7 +261,7 @@ Keep in mind the following temporary limitations when you use this feature:
     
     **Workaround:**
 
-    Workspaces attached to Fabric capacities in other regions can use this feature. [See the full list of regions where Microsoft Fabric is available.](../admin/region-availability.md)
+    Workspaces attached to Fabric capacities in other regions can use this feature. [See the full list of regions where Fabric is available.](../admin/region-availability.md)
 
 * **Private links not supported**
 

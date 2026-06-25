@@ -1,10 +1,8 @@
 ---
 title: Query Parquet Files Using Fabric Data Warehouse or SQL analytics endpoint
 description: Learn how to query parquet files in data lake storage using the Fabric Data Warehouse or SQL analytics endpoint.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: jovanpop
-ms.date: 02/13/2026
+ms.date: 06/23/2026
 ms.topic: how-to
 ms.search.form: Query external parquet files
 ---
@@ -36,16 +34,12 @@ To ensure a predictable and deterministic schema, define the column names and da
 
 The simplest way to view the contents of a Parquet file is to provide the file URL directly to the `OPENROWSET` function.
 
-The datasets used in these examples are:
-- [Bing Covid 19](/azure/open-datasets/dataset-bing-covid-19)
-- [NYC Yellow Taxi](/azure/open-datasets/dataset-taxi-yellow)
-
 The following example shows how to read a Parquet file by specifying its full URL in the `OPENROWSET` statement:
 
 ```sql
 SELECT TOP 10 *
 FROM OPENROWSET(
-    BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/ecdc_cases/latest/ecdc_cases.parquet'
+    BULK 'https://<storage account>.blob.core.windows.net/public/<subfolder>/<file name>.parquet'
 );
 ```
 
@@ -64,11 +58,11 @@ The previous examples specified the full URL to the file directly in the `OPENRO
 
 Using an external data source simplifies queries, improves readability, and lets you centrally manage the storage location. If the storage endpoint changes, you only need to update the data source definition, not every query that references it.
 
-The following example creates an external data source that points to a folder containing COVID-19 data:
+The following example creates an external data source that points to a folder containing data files:
 
 ```sql
-CREATE EXTERNAL DATA SOURCE covid
-WITH ( LOCATION = 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/ecdc_cases' );
+CREATE EXTERNAL DATA SOURCE sample_data_source
+WITH ( LOCATION = 'https://<storage account>.blob.core.windows.net/public/<subfolder>' );
 ```
 
 After you create the external data source, reference it in the `OPENROWSET` function and specify a path relative to the data source location:
@@ -76,8 +70,8 @@ After you create the external data source, reference it in the `OPENROWSET` func
 ```sql
 SELECT TOP 10 *
 FROM OPENROWSET(
-        BULK 'latest/ecdc_cases.parquet',
-        DATA_SOURCE = 'covid'
+        BULK '<subfolder>/<file name>.parquet',
+        DATA_SOURCE = 'sample_data_source'
     ) as rows;
 ```
 
@@ -96,8 +90,8 @@ The following example demonstrates how to explicitly define a schema when readin
 ```sql
 SELECT TOP 10 *
 FROM OPENROWSET(
-        BULK 'latest/ecdc_cases.parquet',
-        DATA_SOURCE = 'covid'
+        BULK '<subfolder>/<file name>.parquet',
+        DATA_SOURCE = 'sample_data_source'
     ) WITH ( date_rep date, cases int, geo_id varchar(6) );
 ```
 
