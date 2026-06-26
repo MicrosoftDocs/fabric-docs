@@ -638,7 +638,7 @@ In the event that Fabric becomes inaccessible or inoperable in a region, your On
 
 ### Resource instance rules
 
-Resource instance rules allow you to securely control access to data in OneLake using trusted Azure resource identities. During regional failover, existing rules continue to be enforced for read access. However, creating, updating, or deleting resource instance rules isn’t supported until the workspace returns to a writable state.
+Resource instance rules help you securely control access to data in OneLake by using trusted Azure resource identities. During regional failover, the system continues to enforce existing rules for read access. However, you can't create, update, or delete resource instance rules until the workspace returns to a writable state.
 
 ## Related information
 
