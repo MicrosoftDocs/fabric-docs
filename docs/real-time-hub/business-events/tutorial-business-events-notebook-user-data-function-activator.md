@@ -151,7 +151,7 @@ This tutorial guides you through the full workflow of reacting to your own busin
     ```
 
     > [!NOTE]
-    > The properties `eventSchemaSetWorkspace` and `eventSchemaSetName` support both Fabric item names and Fabric item identifiers (IDs).
+    > The properties `eventSchemaSetWorkspace` and `eventSchemaSet` support both Fabric item names and Fabric item identifiers (IDs).
 
     :::image type="content" source="media/tutorial-business-events-notebook-user-data-function-activator/run-python-code-cell.png" alt-text="Screenshot of the Spark notebook cell with the Python code." lightbox="media/tutorial-business-events-notebook-user-data-function-activator/run-python-code-cell.png":::
 
