@@ -10,9 +10,6 @@ ms.topic: reference
 
 Use this page to understand the key Business Events limits that can affect how you design, test, and operate event-driven solutions in Fabric.
 
-> [!IMPORTANT]
-> This feature is in [preview](../../../fundamentals/preview.md).
-
 ## At a glance
 
 | Limit | Value |
