@@ -11,7 +11,7 @@ ms.search.form: WMS, WMTS, WMS and WMTS imagery sources, Microsoft Planetary Com
 
 # Add a WMS or WMTS imagery layer to a map
 
-This how-to article shows you how to add external raster imagery to Fabric Maps using Web Map Service (WMS) and Web Map Tile Service (WMTS) endpoints. Learn how to create and manage Fabric Maps cloud connections, authenticate to external imagery services, and render WMS or WMTS layers—including Microsoft Planetary Computer Pro imagery—directly on a map. By connecting to external imagery sources, you can enrich your maps with authoritative raster data such as satellite imagery, elevation models, or thematic overlays without copying or storing the imagery in Fabric.
+This how-to article shows you how to add external raster imagery to Fabric Maps using Web Map Service (WMS) and Web Map Tile Service (WMTS) endpoints. Learn how to create and manage Geospatial Web Services connections, authenticate to external imagery services, and render WMS or WMTS layers—including Microsoft Planetary Computer Pro imagery—directly on a map. By connecting to external imagery sources, you can enrich your maps with authoritative raster data such as satellite imagery, elevation models, or thematic overlays without copying or storing the imagery in Fabric.
 
 For more information on WMS or WMTS imagery, see [Create layers using WMS and WMTS imagery sources in Fabric Maps](about-external-sourced-imagery.md)
 
@@ -22,14 +22,14 @@ For more information on WMS or WMTS imagery, see [Create layers using WMS and WM
 Before you begin, make sure you have:
 
 - Access to a WMS or WMTS endpoint
-- Permission to create or use Fabric Maps cloud connections
+- Permission to create or use Geospatial Web Services connections
 - Credentials for the service, if authentication is required
 
 ## Use WMS or WMTS imagery
 
-To use a WMS or WMTS service in Fabric Maps, first create a **Fabric Maps cloud connection** and then add the imagery layer to your map.
+To use a WMS or WMTS service in Fabric Maps, first create a **Geospatial Web Services connection** and then add the imagery layer to your map.
 
-### Step 1: Create a Fabric Maps cloud connection
+### Step 1: Create a Geospatial Web Services connection
 
 > [!TIP]
 > Create one connection per imagery service and reuse it across maps to avoid re‑entering credentials.
@@ -43,9 +43,9 @@ To use a WMS or WMTS service in Fabric Maps, first create a **Fabric Maps cloud 
 
     :::image type="content" source="media/layers/new-connection.png" alt-text="A screenshot of the Microsoft Fabric Maps interface showing the Manage Connections and Gateways page. The New button in the upper left is highlighted.":::
 
-1. For **Connection type**, select **Fabric Maps**.
+1. For **Connection type**, select **Geospatial Web Services**.
 
-    :::image type="content" source="media/layers/fabric-maps-connection-type.png" alt-text="Screenshot of the New connection dialog in Microsoft Fabric Maps. The Cloud option is selected among connection types, and the Connection type dropdown is expanded, highlighting Fabric Maps as an option.":::
+    :::image type="content" source="media/layers/fabric-maps-connection-type.png" alt-text="Screenshot of the New connection dialog in Microsoft Fabric Maps. The Cloud option is selected among connection types, and the Connection type dropdown is expanded, highlighting Geospatial Web Services as an option.":::
 
 1. Enter a descriptive name for the connection.
 1. Configure the connection:
@@ -54,7 +54,7 @@ To use a WMS or WMTS service in Fabric Maps, first create a **Fabric Maps cloud 
     - **Authentication method**: Anonymous, Basic authentication, or API key.
     - **Privacy level**: None, Private, Organizational, Public.
 
-    :::image type="content" source="media/layers/fabric-maps-connection-settings.png" alt-text="A screenshot that shows the New connection dialog in Microsoft Fabric Maps showing fields for configuring a Fabric Maps cloud connection. The form includes dropdowns and input fields for connection type set to Fabric Maps, base URL, protocol, API key name, authentication method, and privacy level set to Organizational. There are checkboxes for allowing code-first artifacts and gateway utilization.":::
+    :::image type="content" source="media/layers/fabric-maps-connection-settings.png" alt-text="A screenshot that shows the New connection dialog in Microsoft Fabric Maps showing fields for configuring a Geospatial Web Services connection. The form includes dropdowns and input fields for connection type set to Geospatial Web Services, base URL, protocol, API key name, authentication method, and privacy level set to Organizational. There are checkboxes for allowing code-first artifacts and gateway utilization.":::
 
 1. Select **Create**.
 
@@ -73,7 +73,7 @@ The connection becomes available for use in Fabric Maps.
 If other users need access to the same imagery source, you can share the connection.
 
 1. Open **Manage connections and gateways**.
-1. Locate the Fabric Maps connection.
+1. Locate the **Geospatial Web Services** connection.
 1. Select **More options**, and then choose **Manage users**.
 
     :::image type="content" source="media/layers/manage-users.png" alt-text="A screenshot showing the Manage Connections and Gateways interface in Microsoft Fabric Maps with the context menu open showing options: Settings, Manage users (highlighted), and Remove. The wider environment displays a list of connections with columns for Name, Connection type, Users, Status, and Gateway cluster name.":::
@@ -85,7 +85,7 @@ Shared connections allow teams to use the same imagery source without embedding 
 
 ### Step 3: Add the imagery layer to a map
 
-Once Fabric Maps cloud connections are created, you can add one or more to your map instance as an external source for a new map layer.
+Once Geospatial Web Services connections are created, you can add one or more to your map instance as an external source for a new map layer.
 
 1. Open an existing map or create a new map in Fabric Maps.
 1. Open the **External sources** tab.
