@@ -52,7 +52,7 @@ The dataset contains tables for 14 node types and 23 edge types, following this 
 - `ldbc_snb_node_XXX` — Node table for `:XXX` nodes
 - `ldbc_snb_edge_FROM_XXX_TO` — Edge table for `:XXX` edges from `:FROM` to `:TO` nodes
 
-Every row in a node table is uniquely identified by the `id` column. Edge tables use `src_XXX_id` and `dst_YYY_id` columns to link source and destination nodes.
+Every row in a node table is uniquely identified by the `id` column. Edge tables use `src_XXX_id` and `dst_YYY_id` columns to link origin and target nodes.
 
 For the complete GQL schema definition with all node and edge types, see [GQL schema example: Social network](gql-schema-example.md).
 

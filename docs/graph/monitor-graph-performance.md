@@ -65,7 +65,7 @@ Graph refresh jobs can fail when they exceed the 20-minute timeout. For large gr
 1. Open the Monitoring hub and locate the failed refresh job.
 1. Select the job to view error details and timing information.
 1. If the failure was a timeout, try again - the next refresh typically succeeds. If timeouts happen repeatedly, reduce the graph size by removing unused node types, edge types, or properties.
-1. If the failure was caused by a configuration error, open your graph model and verify that node and edge type mappings, ID columns, and foreign key columns are correct.
+1. If the failure was caused by a configuration error, open your graph model and verify that node and edge type mappings, key columns, and foreign key columns are correct.
 
 For more troubleshooting information, see [Troubleshooting and FAQ](troubleshooting-and-faq.md).
 

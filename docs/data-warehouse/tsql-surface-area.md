@@ -44,7 +44,7 @@ Fabric Data Warehouse supports T-SQL tables, views, stored procedures, functions
 
 At this time, the following list of commands is NOT currently supported. Don't try to use these commands. Even though they might appear to succeed, they could cause issues to your warehouse.
 
-- `BULK LOAD`
+- `BULK LOAD`, though `bcp` is supported as a preview feature.
 - `CREATE USER`
 - `FOR JSON` must be the last operator in the query, and so is not allowed inside subqueries
 - Manually created multi-column stats
