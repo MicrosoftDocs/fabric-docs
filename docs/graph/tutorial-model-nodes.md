@@ -42,7 +42,7 @@ To add node types to your graph, follow these steps:
     - **Key** of the mapping column: `CustomerID_K`
 
    > [!TIP]
-   > You can set compound keys (IDs consisting of multiple columns). After you select a mapping table, choose the first key value from the **Key** dropdown menu. Then, use the dropdown menu again to add another key.
+   > You can set compound keys (IDs consisting of multiple columns). After you select a source table, choose the first key value from the **Key** dropdown menu. Then, use the dropdown menu again to add another key.
 
 1. Select **+ Add property**, **Add all columns**, and **Apply**. This step makes all columns in this source table available as properties for the node.
 1. Select **Create** to add the node type to your graph.
@@ -54,11 +54,11 @@ To add node types to your graph, follow these steps:
 
 ## Understand node properties
 
-When you add a node type, determine what columns from the mapping table should be added as **properties** on that node type to make them available for queries, especially properties for which OneLake Security access rules have been applied to the underlying source table. Properties are added manually during node creation. In this tutorial, you added all properties on every node type. For general guidance on choosing which properties to keep or ignore, see [Add node properties](design-graph-schema.md#add-node-properties).
+When you add a node type, determine what columns from the source table should be added as **properties** on that node type to make them available for queries, especially properties for which OneLake Security access rules have been applied to the underlying source table. Properties are added manually during node creation. In this tutorial, you added all properties on every node type. For general guidance on choosing which properties to keep or ignore, see [Add node properties](design-graph-schema.md#add-node-properties).
 
-To view or edit the properties for a node type, double-click it in the graph model editor to open the node details.
+To view or edit the properties for a node type, double-click it in the graph model editor to open the node details. Later in the tutorial, you edit a node to remove a redundant property.
 
-:::image type="content" source="./media/tutorial/edit-node-schema-properties.png" alt-text="Screenshot showing the Edit node schema dialog for the Employee node type with all 10 properties listed." lightbox="./media/tutorial/edit-node-schema-properties.png":::
+:::image type="content" source="./media/tutorial/edit-node-schema-properties.png" alt-text="Screenshot showing the edit node dialog for the Employee node type with all 10 properties listed." lightbox="./media/tutorial/edit-node-schema-properties.png":::
 
 > [!IMPORTANT]
 > Graph currently doesn't support schema evolution. After you create a graph model and load its data, any structural changes, such as adding or removing node types, edge types, and properties, require you to reload all data before querying the updated structure. To reload the data, select **Save** in the top ribbon. This data reload process takes time and consumes capacity, so plan your schema thoroughly before you start modeling.

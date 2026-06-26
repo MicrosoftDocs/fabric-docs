@@ -49,16 +49,18 @@ Currently, there's no UI option to manually refresh a queryset's connection to a
 
 Yes, you can create a separate node type from any column in your table. For each of these node types, don't add properties that you don't need in queries or analysis, because excessive properties make your graph harder to maintain and use.
 
-You can also use that same table as the edge mapping table for edge types connected to these node types.
+You can also use that same table as the edge source table for edge types connected to these node types.
 
 ### How do I change which property appears as the node label?
 
-By default, nodes display their ID as the label. To change the display label:
+By default, nodes display their name as the label. To change the display label:
 
 1. Open the query view.
-1. On the right side, find the **Components** panel.
-1. Select the ellipses (...) next to the node type.
+1. On the right side, select the **Components** icon (shaped like a puzzle piece).
+1. Select the ellipses (...) next to the node type and select **Display property**.
 1. Choose the property you want to appear as the node label.
+
+:::image type="content" source="./media/troubleshooting/change-display-property.png" alt-text="Screenshot of changing a display property in the Components panel." lightbox="./media/troubleshooting/change-display-property.png":::
 
 ## Best practices
 

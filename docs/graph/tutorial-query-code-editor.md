@@ -1,8 +1,8 @@
 ---
-title: "Tutorial: Query the graph with GQL"
+title: "Tutorial: Query the Graph with GQL"
 description: Learn how to query your graph using GQL (Graph Query Language) in the code editor, including pattern matching and filtering examples.
 ms.topic: tutorial
-ms.date: 05/20/2026
+ms.date: 06/25/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Query the graph with GQL
 ai-usage: ai-assisted
@@ -16,8 +16,8 @@ In this tutorial step, you query your graph by using GQL (Graph Query Language) 
 
 Follow these steps to switch to the code editor and start querying your graph by using GQL:
 
-1. Go to your graph's home page.
-1. Select **Code editor** from the top menu.
+1. Go to the **Query** mode for your graph.
+1. In the top ribbon, select **Query builder > Code editor**.
 
     :::image type="content" source="./media/tutorial/select-code-editor.png" alt-text="Screenshot showing result of selecting Code editor." lightbox="./media/tutorial/select-code-editor.png":::
 

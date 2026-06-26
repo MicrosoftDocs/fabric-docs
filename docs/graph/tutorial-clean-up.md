@@ -1,8 +1,8 @@
 ---
-title: "Tutorial: Clean up graph tutorial resources"
+title: "Tutorial: Clean up Graph Tutorial Resources"
 description: Learn how to clean up the lakehouse, graph model, and workspace resources created during the graph in Microsoft Fabric tutorial series.
 ms.topic: tutorial
-ms.date: 05/20/2026
+ms.date: 06/25/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Clean up graph tutorial resources
 ai-usage: ai-assisted
