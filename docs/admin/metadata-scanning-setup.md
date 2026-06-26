@@ -20,6 +20,8 @@ Service principal is an authentication method that can be used to let a Microsof
 
 To see how to enable service principal access to read-only Admin APIs, see [Enable service principal authentication for read-only admin APIs](./enable-service-principal-admin-apis.md).
 
+The same service principal setup is also used for Fabric data risk assessments in Microsoft Purview Data Security Posture Management (DSPM) for AI.
+
 If you don't want to enable service principal authentication, metadata scanning can be performed with standard delegated admin access token authentication.
 
 ## Enable tenant settings for metadata scanning

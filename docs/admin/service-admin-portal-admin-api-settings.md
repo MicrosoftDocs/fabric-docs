@@ -6,7 +6,7 @@ ms.author: mimart
 ms.custom:
   - tenant-setting
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 06/26/2026
 LocalizationGroup: Administration
 ---
 
@@ -21,6 +21,14 @@ Web apps registered in Microsoft Entra ID use an assigned service principal to a
 :::image type="content" source="media/tenant-settings/allow-service-principals-tenant-setting.png" alt-text="Screenshot of allow service principals tenant setting.":::
 
 To learn more, see [Allow service principals to use read-only admin APIs](/power-bi/enterprise/read-only-apis-service-principal-authentication)
+
+For the complete Fabric configuration steps, including Microsoft Purview Data Security Posture Management (DSPM) for AI prerequisites, see [Enable service principal authentication for admin APIs](enable-service-principal-admin-apis.md).
+
+## Service principals can access admin APIs used for updates
+
+Web apps registered in Microsoft Entra ID use an assigned service principal to access Fabric admin APIs used for updates without a signed-in user. To allow an app to use service principal authentication, its service principal must be included in an allowed security group.
+
+For the complete Fabric configuration steps, including Microsoft Purview Data Security Posture Management (DSPM) for AI prerequisites, see [Enable service principal authentication for admin APIs](enable-service-principal-admin-apis.md).
 
 ## Enhance admin APIs responses with detailed metadata
 

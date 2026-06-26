@@ -13,6 +13,8 @@ ms.date: 06/26/2026
 
 This article shows how to enable service principal authentication for [Power BI *read-only* admin APIs](#supported-power-bi-admin-apis-for-read-only) and [Microsoft Fabric *update* admin APIs](#supported-fabric-admin-apis-for-updates).
 
+If you're configuring prerequisites for Fabric data risk assessments in Microsoft Purview Data Security Posture Management (DSPM) for AI, complete these steps before you select **Set config** in DSPM for AI.
+
 Service principal is an authentication method that can be used to let a Microsoft Entra application access Microsoft Fabric content and APIs.
 
 When you create a Microsoft Entra app, a [service principal object](/entra/identity-platform/app-objects-and-service-principals#service-principal-object) is created. The service principal object, also known simply as the service principal, allows Microsoft Entra ID to authenticate your app. Once authenticated, the app can access Microsoft Entra tenant resources.
@@ -22,6 +24,8 @@ When you create a Microsoft Entra app, a [service principal object](/entra/ident
 To enable service principal authentication for Fabric APIs, follow these steps:
 
 1. [Create a Microsoft Entra app](/entra/identity-platform/howto-create-service-principal-portal). You can skip this step if you already have a Microsoft Entra app you want to use. Take note of the app ID, which you need in later steps.
+
+   For DSPM for AI, you can authenticate the app with federated credentials (recommended) or a client secret. To learn more, see [Overview of federated identity credentials in Microsoft Entra ID](/graph/api/resources/federatedidentitycredentials-overview) and [Create a new client secret](/entra/identity-platform/howto-create-service-principal-portal#option-3-create-a-new-client-secret).
 
    >[!IMPORTANT]
    > Make sure the app you use doesn't have any admin-consent required permissions for Fabric set on it in the Azure portal. [See how to check whether your app has any such permissions](#how-to-check-if-your-app-has-admin-consent-required-permissions).
@@ -43,7 +47,7 @@ To enable service principal authentication for Fabric APIs, follow these steps:
         * **Service principals can access admin APIs used for updates** (see [supported Fabric admin APIs](#supported-fabric-admin-apis-for-updates))
 
          > [!NOTE]
-         > These settings might be necessary to run data risk assessments in Microsoft Purview Data Security Posture Management (DSPM) for AI. For more information, see [DSPM for AI considerations](/purview/dspm-for-ai-considerations).
+         > These settings are required to run Fabric data risk assessments in Microsoft Purview Data Security Posture Management (DSPM) for AI. For more information, see [DSPM for AI considerations](/purview/dspm-for-ai-considerations#prerequisites-for-fabric-data-risk-assessments).
 
 1. Set the toggle to **Enabled**.
 
@@ -116,6 +120,8 @@ An app using service principal authentication that calls read-only admin APIs **
 
 The **Service principals can access admin APIs used for updates** setting applies to Fabric admin APIs, such as the [Workspaces - Restore Workspace API](/rest/api/fabric/admin/workspaces/restore-workspace?tabs=HTTP). 
 
+For DSPM for AI Fabric data risk assessments, this setting must be enabled.
+
 To find out if a specific Fabric admin API supports service principal authentication, check the API's documentation in the [Fabric REST API reference](/rest/api/fabric/articles/using-fabric-apis). Look for the "Microsoft Entra supported identities" section, which indicates whether service principal authentication is supported.
 
 ## Considerations and limitations
@@ -127,6 +133,7 @@ To find out if a specific Fabric admin API supports service principal authentica
 ## Related content
 
 * [Fabric REST API reference](/rest/api/fabric/articles/using-fabric-apis)
+* [DSPM for AI considerations](/purview/dspm-for-ai-considerations#prerequisites-for-fabric-data-risk-assessments)
 * [Metadata scanning overview](../governance/metadata-scanning-overview.md)
 * [Set up metadata scanning](./metadata-scanning-setup.md)
 * [Run metadata scanning](../governance/metadata-scanning-run.md)
