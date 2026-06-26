@@ -246,7 +246,9 @@ items:
         - name: Connect to a database
           href: plan/powertable-how-to-connect-existing-database.md
         - name: Enter table data manually
-          href: plan/powertable-how-to-enter-table-data-manually.md    
+          href: plan/powertable-how-to-enter-table-data-manually.md
+        - name: Update table data
+          href: plan/powertable-how-to-bulk-edit-data.md
         - name: Set up access control
           href: plan/powertable-how-to-set-up-access-control.md  
         - name: Generate forms

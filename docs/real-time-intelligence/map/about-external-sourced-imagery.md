@@ -24,9 +24,9 @@ This feature also supports **Microsoft Planetary Computer (MPC) Pro** imagery th
 
 ## How WMS and WMTS imagery works in Fabric Maps
 
-When you add a WMS or WMTS source to a map, Fabric Maps:
+When you add a WMS or WMTS source to a map in Fabric:
 
-- Connects to the external imagery endpoint through a Fabric Maps cloud connection.
+- Connects to an external imagery endpoint using a **Geospatial Web Services** connection.
 - Lists the imagery layers published by the WMS or WMTS service.
 - Renders selected layers as imagery layers on the map canvas.
 
