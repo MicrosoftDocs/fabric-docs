@@ -150,9 +150,9 @@ This edge type defines all edges with:
 
 - The (key) label `knows`.
 - A `creationDate` property that holds `ZONED DATETIME` values (timestamps together with a timezone offset).
-- Source and destination endpoints that must both be `Person` nodes.
+- Origin and target endpoints that must both be `Person` nodes.
 
-The arrow `->` indicates the direction of the edge, from source to destination. This directional information is crucial for understanding your graph's semantics.
+The arrow `->` indicates the direction of the edge, from origin to target. This directional information is crucial for understanding your graph's semantics.
 
 Here are more examples of edge types:
 

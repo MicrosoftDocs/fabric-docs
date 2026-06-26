@@ -71,7 +71,7 @@ The graph model might disappear or become empty when you switch between tabs or 
 
 ### Node property selection
 
-When you add a node or edge type to your graph model, manually select columns from the source table to be added as properties. Both nodes and edges start with no properties, and you add only the ones you need. Choosing a custom display label (for example, displaying a name instead of an ID) isn't yet supported.
+When you add a node or edge type to your graph model, manually select columns from the source table to be added as properties. Both nodes and edges start with no properties, and you add only the ones you need.
 
 ## Querying
 
