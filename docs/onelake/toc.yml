@@ -75,6 +75,8 @@ items:
     href: mount-onelake-with-blobfuse.md
 - name: Integrate with other services
   items:
+  - name: Azure Machine Learning
+    href: onelake-azure-machine-learning.md
   - name: Azure Synapse Analytics
     href: onelake-azure-synapse-analytics.md
   - name: Azure Storage Explorer
