@@ -367,7 +367,6 @@ After configuring your mirrored database, verify that the connection is working 
 When using virtual networks or private endpoints with Azure Cosmos DB mirroring, be aware of these limitations:
 
 - The target Fabric workspace region must be the same as the source Azure Cosmos DB Account region.
-- The user configuring private networks for Cosmos DB Mirroring should either be an Azure subscription owner or have Contributor permissions on the Cosmos DB account with RBAC assignment permissions on the subscription. To learn how to assign this role to a user, see [Assign a user as an administrator of an Azure subscription with conditions](/azure/role-based-access-control/role-assignments-portal-subscription-admin).
 - Private network support for Cosmos DB mirroring is only available for OAuth-based authentication.
 - When using Microsoft Entra ID authentication, ensure that the required RBAC permissions are configured. For more information, see [security limitations](azure-cosmos-db-limitations.md#security-limitations).
 - The `EnableFabricNetworkAclBypass` capability must be enabled on your Cosmos DB account before configuring the Network ACL.
