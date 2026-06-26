@@ -14,7 +14,7 @@ When someone invites you to share OneLake data from their organization, you rece
 
 ## Prerequisites
 
-To be able to accept and use an external data share, you need standard Fabric write permissions on the lakehouse item where you want to create the shortcut to the shared data.
+To accept and use an external data share, you need standard Fabric write permissions on the lakehouse item where you want to create the shortcut to the shared data.
 
 ## Accept a share
 
