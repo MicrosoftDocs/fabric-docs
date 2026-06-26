@@ -6,7 +6,6 @@ ms.reviewer: aamerril # Product team ms alias(es)
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article
 ms.custom:
-- onelake-data-access-public-preview-april-2024
 - sfi-image-nochange
 ms.date: 09/05/2025
 #customer intent: As a OneLake user, I want to understand how OneLake secures data with role-based access control and the interaction with Fabric permissions so that I can protect data stored and accessed in OneLake.
