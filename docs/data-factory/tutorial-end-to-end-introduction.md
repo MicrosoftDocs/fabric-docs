@@ -41,7 +41,7 @@ You'll explore all three key features as you complete an end-to-end data integra
 
 The scenario includes three modules:
 
-1. [Ingest data with a Copy job](tutorial-end-to-end-pipeline.md): Create a standalone Copy job to ingest raw data from Blob storage into a [bronze](/azure/databricks/lakehouse/medallion#bronze) table in a Lakehouse.
+1. [Ingest data with a Copy job](tutorial-end-to-end-pipeline.md): Create a standalone Copy job to ingest sample data into a [bronze](/azure/databricks/lakehouse/medallion#bronze) table in a Lakehouse.
 1. [Transform data with a dataflow](tutorial-end-to-end-dataflow.md): Process the raw data from your [bronze](/azure/databricks/lakehouse/medallion#bronze) table and move it to a [gold](/azure/databricks/lakehouse/medallion#gold) table.
 1. [Orchestrate and automate with a pipeline](tutorial-end-to-end-integration.md): Create a pipeline to orchestrate the Copy job and dataflow, send an email notification, and schedule the entire flow.
 
