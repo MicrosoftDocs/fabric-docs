@@ -229,7 +229,7 @@ If you're going to disable the Private Link setting, it's recommended to do so d
 
 ## Disable Private Link for Tenant Migration
 
-If you have tenant-level private link, it needs to be fully cleaned up before [tenant migration](https://learn.microsoft.com/en-us/power-bi/support/service-admin-region-move). Please follow the below steps:
+If you have tenant-level private link, it needs to be fully cleaned up before tenant migration. Please follow the below steps:
 
 1. **Fabric portal** - Enable public internet access: `Power BI => Admin portal => Tenant settings => Public Internet Access`
 2. **Azure portal** - Delete all associated private endpoints you created
