@@ -18,7 +18,7 @@ S3 compatible shortcuts can take advantage of file caching to reduce egress cost
 
 ## Prerequisites
 
-- If you don't have a lakehouse, create one by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).
+- If you don't have a lakehouse, create one by following these steps: [Create a lakehouse](../data-engineering/create-lakehouse.md).
 
 - Ensure your chosen S3 compatible bucket and secret key credentials meet the [access and authorization requirements for S3 shortcuts](./create-s3-shortcut.md#access).
 

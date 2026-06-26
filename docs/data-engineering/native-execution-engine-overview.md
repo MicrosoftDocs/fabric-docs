@@ -235,6 +235,7 @@ While the Native Execution Engine (NEE) in Microsoft Fabric significantly boosts
 
 ## Related content
 
+- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
 - [Python UDFs, Scala UDFs, and complex data types in native execution engine](native-execution-engine-udf-complex-types.md)
 - [Efficient scaledown and remote shuffle manager](efficient-scaledown-remote-shuffle-manager.md)
 - [Apache Spark Runtimes in Fabric](./runtime.md)

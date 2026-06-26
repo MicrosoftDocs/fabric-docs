@@ -88,6 +88,8 @@ items:
     href: apply-sensitivity-labels.md
   - name: Schedule recurring jobs
     href: job-scheduler.md
+  - name: Delta Lake in Microsoft Fabric overview
+    href: delta-lake-overview.md
   - name: Use Delta Lake interoperability
     href: delta-lake-interoperability.md
   - name: Optimize table maintenance across workloads
@@ -183,6 +185,15 @@ items:
       href: copilot-fabric-consumption.md
     - name: Review Data agent usage and billing
       href: data-agent-consumption.md
+
+- name: Use Skills for Fabric
+  items:
+  - name: Skills for Fabric overview
+    href: skills-for-fabric-overview.md
+  - name: Install Skills for Fabric
+    href: skills-for-fabric-install.md
+  - name: Discover available skills
+    href: skills-for-fabric-discover.md
 
 - name: Implement task flows
   items:

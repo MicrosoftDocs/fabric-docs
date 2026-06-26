@@ -1,8 +1,8 @@
-﻿---
+---
 title: Fabric data agent scenario (preview)
 description: Learn how to configure a Fabric data agent on the AdventureWorks dataset.
-ms.author: jburchel
-author: jonburchel
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: amjafari
 ms.topic: tutorial
 ms.date: 05/12/2026
@@ -228,6 +228,8 @@ If you haven't published the Fabric data agent before, you can publish it follow
 %pip install "synapseml==1.0.5"  # Required for synapse.ml.mlflow (update version as needed)
 %pip install pandas tqdm  # Skip if already available in the Fabric runtime
 ```
+> [!IMPORTANT]
+> The code below uses the OpenAI Assistants API (`beta.assistants`, `beta.threads`, `beta.threads.runs`), which [OpenAI has deprecated with a shutdown date of August 26, 2026](https://platform.openai.com/docs/assistants/migration). The current code continues to work until **August 26, 2026** but plan for migrating to [MCP endpoint](data-agent-mcp-server.md) before this date.
 
 ```python
 import typing as t

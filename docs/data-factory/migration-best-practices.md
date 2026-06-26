@@ -144,12 +144,7 @@ For more information, see [Use Copilot in Data Factory](copilot-fabric-data-fact
 
 ## Migration paths
 
-Migration paths depend on your ADF assets and their feature parity. Options include:
-
-- [Mounting ADF items in Fabric for continuity.](migrate-pipelines-azure-data-factory-item.md)
-- [Use the built-in upgrade experience to assess, migrate, and validate pipelines incrementally.](/azure/data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory) - Assess pipeline readiness directly in Azure Data Factory, review compatibility results, and migrate supported pipelines to a Fabric workspace using a guided UX.
-- [Using the PowerShell conversion tool for scripted or bulk migrations.](migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md) - An alternative for automated, script-driven scenarios.
-- Replatforming to adopt native Fabric patterns.
+For detailed guidance on migration path options (including mounting ADF items for continuity, using the built-in upgrade experience, PowerShell conversion, and replatforming strategies), see [Migration paths in the migration planning guide](migrate-planning-azure-data-factory.md#migration-paths).
 
 ## Related content
 

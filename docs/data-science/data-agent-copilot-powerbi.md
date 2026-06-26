@@ -1,8 +1,8 @@
-﻿---
+---
 title: Consume a data agent from Copilot in Power BI (preview)
 description: Learn how to consume a data agent from Copilot in Power BI.
-ms.author: jburchel
-author: jonburchel
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: amjafari
 ms.topic: how-to
 ms.date: 02/02/2026

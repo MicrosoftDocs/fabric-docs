@@ -12,13 +12,13 @@ ms.date: 01/14/2026
 
 # Create an Azure Data Lake Storage Gen2 shortcut
 
-In this article, you learn how to create an Azure Data Lake Storage (ADLS) Gen2 shortcut inside a Microsoft Fabric lakehouse. When you create shortcuts to Azure Data Lake Storage (ADLS) Gen2 storage accounts, the target path can point to any folder within the hierarchical namespace. At a minimum, the target path must include a container name.
+In this article, you learn how to create an Azure Data Lake Storage (ADLS) Gen2 shortcut inside a Fabric lakehouse. When you create shortcuts to Azure Data Lake Storage (ADLS) Gen2 storage accounts, the target path can point to any folder within the hierarchical namespace. At a minimum, the target path must include a container name.
 
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To create shortcuts programmatically, see [OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md).
 
 ## Prerequisites
 
-- A lakehouse. If you don't have one, create one by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).
+- A lakehouse. If you don't have one, create one by following these steps: [Create a lakehouse](../data-engineering/create-lakehouse.md).
 - You must enable Hierarchical Namespaces on your ADLS Gen2 storage account.
 
 ## Create a shortcut
@@ -107,4 +107,4 @@ The following limitations apply to ADLS shortcuts:
 
 - [Create a OneLake shortcut](create-onelake-shortcut.md)
 - [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)
-- [External data sharing in Microsoft Fabric](../governance/external-data-sharing-overview.md)
+- [External data sharing in Fabric](../governance/external-data-sharing-overview.md)

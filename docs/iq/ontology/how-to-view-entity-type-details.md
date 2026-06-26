@@ -1,5 +1,5 @@
 ---
-title: View entity type details
+title: View Entity Type Details
 description: Learn about the entity type details view in ontology (preview).
 ms.date: 04/24/2026
 ms.topic: how-to
@@ -20,7 +20,7 @@ When your ontology (preview) item is created, a [Graph in Microsoft Fabric](../.
 Before viewing entity type details, make sure you have the following prerequisites:
 
 * A [Fabric workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-* **Ontology item (preview)** and **Graph (preview)** enabled on your tenant.
+* **Ontology item (preview)** and **Graph** enabled on your tenant.
 * An ontology (preview) item with [data binding](how-to-bind-data.md) completed.
 
 ## Key concepts

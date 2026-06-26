@@ -15,7 +15,7 @@ Existing inbound protection options like IP firewall rules and Private Links are
 
 Resource Instance Rules offer a simpler alternative — admins add a trusted Azure resource by its resource ID, and Fabric verifies the resource identity on each inbound request. This approach works alongside existing Fabric inbound protection features.
 
-This article explains how Resource Instance Rules work for OneLake and when to use them. To learn about other inbound protection options, see [Inbound network protection in Microsoft Fabric](../security/security-inbound-overview.md).
+This article explains how Resource Instance Rules work for OneLake and when to use them. To learn about other inbound protection options, see [Inbound network protection in Fabric](../security/security-inbound-overview.md).
 
 > [!NOTE]
 > Resource Instance Rules for OneLake are currently in **public preview**. Features and behavior might change before general availability.
@@ -169,4 +169,4 @@ Only Azure resources that can authenticate using a verifiable resource identity 
 
 - [Limit inbound requests with inbound access protection](onelake-manage-inbound-access.md)
 - [Protect workspaces by using IP firewall rules](../security/security-workspace-level-firewall-overview.md)
-- [Inbound network protection in Microsoft Fabric](../security/security-inbound-overview.md)
+- [Inbound network protection in Fabric](../security/security-inbound-overview.md)

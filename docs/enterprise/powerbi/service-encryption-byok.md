@@ -134,7 +134,7 @@ Before you enable BYOK, keep the following considerations in mind:
 
 - At this time, you can't disable BYOK after you enable it. Depending on how you specify parameters for `Add-PowerBIEncryptionKey`, you can control how you use BYOK for one or more of your capacities. However, you can't undo the introduction of keys to your tenant. For more information, see [Enable BYOK](#enable-byok).
 - You can't *directly* move a workspace that uses BYOK from a capacity in Power BI Premium to a shared capacity. You must first move the workspace to a capacity that doesn't have BYOK enabled.
-- If you move a workspace that uses BYOK from a capacity in Power BI Premium to a shared capacity, reports and semantic models become inaccessible since they're encrypted with the Key. To avoid this situation, you must first move the workspace to a capacity that doesnâ€™t have BYOK enabled.
+- If you move a workspace that uses BYOK from a capacity in Power BI Premium to a shared capacity, reports and semantic models become inaccessible since they're encrypted with the Key. To avoid this situation, you must first move the workspace to a capacity that doesn't have BYOK enabled.
 
 ### Enable BYOK
 

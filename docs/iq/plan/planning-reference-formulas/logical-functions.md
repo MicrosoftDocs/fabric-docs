@@ -11,6 +11,8 @@ ms.search.form: Logical functions
 
 Apply logical functions to test conditions and return *TRUE* or *FALSE* results. These functions are commonly used to evaluate expressions, validate data, and build conditional logic in reports.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## AND
 
 The *AND* function returns *TRUE* only if all specified conditions are *TRUE*. If any condition evaluates to *FALSE*, the function returns *FALSE*. It is commonly used with [IF](conditional-statements.md#if) and other conditional functions to evaluate multiple criteria.

@@ -6,17 +6,17 @@ reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI Functions
+ai-usage: ai-assisted
 ---
 
 # Use ai.classify with pandas
 
-
-The `ai.classify` function uses generative AI to categorize input text according to custom labels you choose, with a single line of code.
+The `ai.classify` function categorizes each input row by using the labels you provide.
 
 > [!NOTE]
-> - This article covers using *ai.classify* with pandas. To use *ai.classify* with PySpark, see [this article](../pyspark/classify.md).
-> - See other AI Functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI Functions](./configuration.md).
+> - This article covers `ai.classify` with pandas. For PySpark, see [Use ai.classify with PySpark](../pyspark/classify.md).
+> - For all AI Functions and prerequisites, see [AI Functions overview](../overview.md).
+> - Change default configuration for [AI Functions with pandas](./configuration.md).
 
 ## Overview
 
@@ -58,13 +58,13 @@ df["category"] = df['descriptions'].ai.classify("kitchen", "bedroom", "garage", 
 display(df)
 ```
 
-This example code cell provides the following output:
+Output:
 
 :::image type="content" source="../../media/ai-functions/classify-example-output.png" alt-text="Screenshot of a data frame with 'descriptions' and 'category' columns. The 'category' column lists each description’s category name." lightbox="../../media/ai-functions/classify-example-output.png":::
 
 ## Multimodal input
 
-The `ai.classify` function supports file-based multimodal input. You can classify images, PDFs, and text files by setting `column_type="path"` when your column contains file path strings. Supported file types for `column_type="path"` include JPG/JPEG, PNG, GIF, WebP (images), PDF (documents), and common text formats such as MD, TXT, CSV, JSON, and XML. For more information about supported file types and setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
+To classify images, PDFs, or text files, set `column_type="path"` when the input column contains file path strings. For supported file types and setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
 
 ```python
 # This code uses AI. Always review output for mistakes.
@@ -81,7 +81,7 @@ display(custom_df)
 > [!NOTE]
 > When you use `aifunc.list_file_paths()` to create your file path column, the returned `yarl.URL` objects are automatically detected as file paths. You only need to specify `column_type="path"` when your column contains plain string URLs.
 
-You can also use `aifunc.load` to ingest files from a folder into a DataFrame, then classify the resulting file-path column:
+You can also use `aifunc.load` to ingest files into a DataFrame, then classify the file-path column:
 
 ```python
 # This code uses AI. Always review output for mistakes.
@@ -93,22 +93,10 @@ display(df)
 
 When you use `aifunc.load`, the file-path column contains `yarl.URL` objects that are automatically detected. For plain string URLs, set `column_type="path"`.
 
-> [!TIP]
-> The AI Functions progress bar cost calculator can be configured with modes such as `basic`, `stats`, or `disable` to provide real-time token and capacity usage estimates when running `ai.classify` in notebooks. For details, see [Configure AI Functions](./configuration.md).
-
 ## Related content
 
 - Use [ai.classify with PySpark](../pyspark/classify.md).
-- Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
-- Generate vector embeddings with [ai.embed](./embed.md).
-- Extract entities with [ai_extract](./extract.md).
-- Fix grammar with [ai.fix_grammar](./fix-grammar.md).
-- Answer custom user prompts with [ai.generate_response](./generate-response.md).
-- Calculate similarity with [ai.similarity](./similarity.md).
-- Summarize text with [ai.summarize](./summarize.md).
-- Translate text with [ai.translate](./translate.md).
-
-- Learn more about the [full set of AI Functions](../overview.md).
+- Learn more about [AI Functions](../overview.md).
 - Use [multimodal input with AI Functions](../multimodal-overview.md).
-- Customize the [configuration of AI Functions](./configuration.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).
+- Change default configuration for [AI Functions with pandas](./configuration.md).
+- Understand [billing for AI Functions](../billing.md).

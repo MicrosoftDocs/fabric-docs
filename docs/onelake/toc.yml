@@ -7,8 +7,8 @@ items:
     href: onelake-overview.md
 - name: Get started
   items:
-  - name: Bring your data to OneLake with Lakehouse
-    href: create-lakehouse-onelake.md
+  - name: Get data into OneLake
+    href: quickstart-get-data.md
   - name: Transform with Apache Spark and query data with SQL
     href: onelake-onecopy-quickstart.md
   - name: Ingest data and analyze with Azure Databricks
@@ -75,6 +75,8 @@ items:
     href: mount-onelake-with-blobfuse.md
 - name: Integrate with other services
   items:
+  - name: Azure Machine Learning
+    href: onelake-azure-machine-learning.md
   - name: Azure Synapse Analytics
     href: onelake-azure-synapse-analytics.md
   - name: Azure Storage Explorer

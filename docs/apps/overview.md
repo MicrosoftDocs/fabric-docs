@@ -24,6 +24,8 @@ Fabric Apps provides these capabilities:
 - **Static hosting** – Build and serve your frontend application alongside your backend APIs with a single deployment command.
 - **Local development** – Run the full stack locally with Docker for rapid iteration, then deploy to Microsoft Fabric when ready for production. Scaffold projects, develop with GitHub Copilot, and deploy to Fabric using Rayfin CLI.
 
+## Regions supported 
+Fabric Apps are not avaiable in all regions yet. See [supported regions for Fabric App](../admin/region-availability.md) to learn more.
 ## Prerequisites
 
 ### Fabric capacity

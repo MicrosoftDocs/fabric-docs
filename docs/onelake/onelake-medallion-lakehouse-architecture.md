@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 #customer intent: As a data engineer, I want to understand medallion lakehouse architecture and learn how to implement a lakehouse so that I can optimally structure and store my organization's data.
 ---
 
-# Understand medallion lakehouse architecture for Microsoft Fabric with OneLake
+# Understand medallion lakehouse architecture for Fabric with OneLake
 
 The medallion lakehouse architecture, commonly known as _medallion architecture_, is a design pattern that's used to organize data in a lakehouse. It's the recommended design approach for Fabric. Since OneLake is the data lake for Fabric, medallion architecture is implemented by creating lakehouses in OneLake.
 
@@ -24,7 +24,7 @@ For more information, see [What is the medallion lakehouse architecture?](/azure
 
 ## Audience
 
-This article introduces medallion lake architecture and describes how you can implement the design pattern in Microsoft Fabric. It's targeted at multiple audiences:
+This article introduces medallion lake architecture and describes how you can implement the design pattern in Fabric. It's targeted at multiple audiences:
 
 - **Data engineers:** Technical staff who design, build, and maintain infrastructures and systems that enable their organization to collect, store, process, and analyze large volumes of data.
 - **Center of Excellence, IT, and BI teams:** The teams that are responsible for overseeing analytics throughout the organization.
@@ -38,7 +38,7 @@ The goal of medallion architecture is to incrementally improve the structure and
 1. **Silver (Enriched)**: Fix errors, standardize formats, and remove duplicates.
 1. **Gold (Curated)**: Organize for reports and dashboards.
 
-Keep each layer separated in its own lakehouse or data warehouse in OneLake, with data moving between the layers as it's transformed and refined.
+Keep each layer separated in its own lakehouse or warehouse in OneLake, with data moving between the layers as it's transformed and refined.
 
 :::image type="content" source="media/onelake-medallion-lakehouse-architecture/onelake-medallion-lakehouse-architecture-example.png" alt-text="Diagram of OneLake medallion architecture that shows data sources, prepare and transform with three layers, and analysis with SQL and Power BI." lightbox="media/onelake-medallion-lakehouse-architecture/onelake-medallion-lakehouse-architecture-example.png":::
 
@@ -69,11 +69,11 @@ Consider the following example of an e-commerce company that applies medallion a
 
 ## Medallion architecture in OneLake
 
-The basis of a modern data warehouse is a data lake. Microsoft OneLake is a single, unified, logical data lake for your entire organization. It comes automatically provisioned with every Fabric tenant, and it's the single location for all your analytics data.
+The basis of a modern data warehouse is a data lake. OneLake is a single, unified, logical data lake for your entire organization. It comes automatically provisioned with every Fabric tenant, and it's the single location for all your analytics data.
 
 To store data in OneLake, you create a _lakehouse_ in Fabric. A lakehouse is a data architecture platform for storing, managing, and analyzing structured and unstructured data in a single location. It can scale to large data volumes of all file types and sizes, and because the data is stored in a single location, it can be shared and reused across the organization.
 
-For more information, see [What is a lakehouse in Microsoft Fabric?](../data-engineering/lakehouse-overview.md).
+For more information, see [What is a lakehouse in Fabric?](../data-engineering/lakehouse-overview.md).
 
 ### Tables and files
 
@@ -86,7 +86,7 @@ In the bronze layer, you store data in its original format, which might be eithe
 
 In the silver and gold layers, you typically store data in Delta tables. However, you can also store data in Parquet or CSV files. If you do that, you must explicitly create a shortcut or an external table with a location that points to the unmanaged folder that contains the Delta Lake files in Apache Spark.
 
-In Microsoft Fabric, the [Lakehouse explorer](../data-engineering/navigate-lakehouse-explorer.md) provides a unified graphical representation of the whole Lakehouse for users to navigate, access, and update their data.
+In Fabric, the [Lakehouse explorer](../data-engineering/navigate-lakehouse-explorer.md) provides a unified graphical representation of the whole lakehouse for users to navigate, access, and update their data.
 
 ### Delta Lake storage
 
@@ -107,7 +107,7 @@ Fabric standardizes storage file format with Delta Lake. By default, every workl
 
 ## Deployment model
 
-To implement medallion architecture in Fabric, you can either use lakehouses (one for each layer), a data warehouse, or combination of both. Your decision should be based on your preference and the expertise of your team. With Fabric, you can use different analytic engines that work on the one copy of your data in OneLake.
+To implement medallion architecture in Fabric, you can either use lakehouses (one for each layer), a warehouse, or combination of both. Your decision should be based on your preference and the expertise of your team. With Fabric, you can use different analytic engines that work on the one copy of your data in OneLake.
 
 Here are two patterns to consider:
 
@@ -118,7 +118,7 @@ While you can create all lakehouses in a single [Fabric workspace](../fundamenta
 
 For the bronze layer, we recommend that you store the data in its original format, or use Parquet or Delta Lake. Whenever possible, keep the data in its original format. If the source data is from OneLake, Azure Data Lake Store Gen2 (ADLS Gen2), Amazon S3, or Google, create a [shortcut](onelake-shortcuts.md) in the bronze layer instead of copying the data across.
 
-For the silver and gold layers, we recommend that you use Delta tables because of the extra capabilities and performance enhancements they provide. Fabric standardizes on Delta Lake format, and by default every engine in Fabric writes data in this format. Further, these engines use V-Order write-time optimization to the Parquet file format. That optimization enables fast reads by Fabric compute engines, such as Power BI, SQL, Apache Spark, and others. For more information, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).
+For the silver and gold layers, we recommend that you use Delta tables because of the extra capabilities and performance enhancements they provide. Fabric standardizes on Delta Lake format, and by default every engine in Fabric writes data in this format. Further, these engines use V-order write-time optimization to the Parquet file format. That optimization enables fast reads by Fabric compute engines, such as Power BI, SQL, Apache Spark, and others. For more information, see [Delta Lake table optimization and V-order](../data-engineering/delta-optimization-and-v-order.md).
 
 Lastly, today many organizations face massive growth in data volumes, together with an increasing need to organize and manage that data in a logical way while facilitating more targeted and efficient use and governance. That can lead you to establish and manage a decentralized or federated data organization with governance. To meet this objective, consider implementing a _data mesh architecture_. [Data mesh](/azure/cloud-adoption-framework/scenarios/cloud-scale-analytics/architectures/what-is-data-mesh) is an architectural pattern that focuses on creating data domains that offer data as a product.
 
@@ -126,7 +126,7 @@ You can create a data mesh architecture for your data estate in Fabric by creati
 
 ### Use materialized lake views for medallion architecture
 
-[Materialized lake views](../data-engineering/materialized-lake-views/overview-materialized-lake-view.md) in Microsoft Fabric help you to implement medallion architecture in your lakehouse. Rather than building complex pipelines to transform data between bronze, silver, and gold layers, you can define materialized lake views that automatically manage the transformations.
+[Materialized lake views](../data-engineering/materialized-lake-views/overview-materialized-lake-view.md) in Fabric help you to implement medallion architecture in your lakehouse. Rather than building complex pipelines to transform data between bronze, silver, and gold layers, you can define materialized lake views that automatically manage the transformations.
 
 Key benefits of using materialized lake views for medallion architecture include:
 
@@ -167,7 +167,7 @@ Typically, you append data to your target table as new data arrives. However, in
 You should plan and control who needs access to specific data in the lakehouse. You should also understand the various transaction patterns they're going to use while accessing this data for each layer.
 
 > [!TIP]
-> Each medallion layer has different optimization requirements. For comprehensive guidance on table maintenance strategies for bronze, silver, and gold layers, including when to enable V-Order and optimal file sizes, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md#medallion-architecture-recommendations).
+> Each medallion layer has different optimization requirements. For comprehensive guidance on table maintenance strategies for bronze, silver, and gold layers, including when to enable V-order and optimal file sizes, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md#medallion-architecture-recommendations).
 
 ## Related content
 
@@ -178,7 +178,7 @@ For more information about implementing medallion lakehouse architecture, see th
 - [Tutorial: Lakehouse end-to-end scenario](../data-engineering/tutorial-lakehouse-introduction.md)
 - [Tutorial: Implement medallion architecture with materialized lake views](../data-engineering/materialized-lake-views/tutorial.md)
 - [Lakehouse and Delta Lake tables](../data-engineering/lakehouse-and-delta-tables.md)
-- [Microsoft Fabric decision guide: choose a data store](../fundamentals/decision-guide-data-store.md)
+- [Fabric decision guide: choose a data store](../fundamentals/decision-guide-data-store.md)
 - [The need for optimize write on Apache Spark](/azure/synapse-analytics/spark/optimize-write-for-apache-spark)
 - Questions? Try asking the [Fabric community](https://community.fabric.microsoft.com/).
 - Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com/).

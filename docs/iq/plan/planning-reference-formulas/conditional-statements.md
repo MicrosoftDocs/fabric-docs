@@ -11,6 +11,8 @@ ms.search.form: Conditional statements
 
 Conditional statements let you perform calculations based on specified conditions. These functions evaluate expressions and return different values depending on whether the conditions are true or false. They are commonly used to apply business logic, categorize data, filter results, and handle exceptions.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 In plan (preview), conditional statements help you create dynamic calculations that adapt to different scenarios, such as applying thresholds, categorizing data, or managing error conditions.
 
 ## AVERAGEIF

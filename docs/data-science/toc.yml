@@ -33,6 +33,8 @@ items:
   items: 
   - name: Transform and enrich data with AI Functions
     href: ./ai-functions/overview.md
+  - name: Billing
+    href: ./ai-functions/billing.md
   - name: Multimodal AI Functions
     href: ./ai-functions/multimodal-overview.md
   - name: pandas
@@ -221,6 +223,8 @@ items:
       href: machine-learning-experiment.md
     - name: Machine learning model
       href: machine-learning-model.md
+    - name: MLflow 3 in Fabric Data Science
+      href: mlflow-3-overview.md
     - name: Machine learning tracking upgrade
       href: mlflow-upgrade.md
     - name: Fabric autologging
