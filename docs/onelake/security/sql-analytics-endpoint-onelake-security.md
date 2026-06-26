@@ -260,7 +260,7 @@ The access mode determines how data access is authenticated and enforced when qu
 
 * **Row-Level Security (RLS) constraints**:
 
-  * Only single-expression tables are supported. Dynamic RLS and Multi-Table RLS are not available.
+  * Only single-expression tables are supported. Dynamic RLS and Multi-Table RLS aren't available.
 
   * Dropping a column used in a filter expression stalls metadata synchronization until the RLS is fixed in the OneLake security panel.
 
