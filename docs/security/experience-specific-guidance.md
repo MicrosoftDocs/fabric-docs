@@ -636,6 +636,10 @@ In the event that Fabric becomes inaccessible or inoperable in a region, your On
 1. Call Export Policy on your original workspace and save the entire lifecycle policy. 
 2. Call Import Policy on your recovered workspace, with your exported lifecycle policy as the request body. 
 
+### Resource instance rules
+
+Resource instance rules allow you to securely control access to data in OneLake using trusted Azure resource identities. During regional failover, existing rules continue to be enforced for read access. However, creating, updating, or deleting resource instance rules isn’t supported until the workspace returns to a writable state.
+
 ## Related information
 
 * [Microsoft Fabric disaster recovery guide](./disaster-recovery-guide.md)
