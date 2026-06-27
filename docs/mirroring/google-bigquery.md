@@ -21,26 +21,16 @@ For a tutorial on configuring your Google BigQuery database for Mirroring in Fab
 
 Mirroring in Microsoft Fabric removes the complexity of stitching together tools from different providers. No need to migrate your data. Connect to your Google BigQuery data in near real-time to use Fabric's array of analytics tools. Fabric also works seamlessly with Microsoft products, Google BigQuery, and a wide range of technologies that support the open-source Delta Lake table format.
 
+
 ## What analytics experiences are built in?
 
-Mirroring creates two items in your Fabric workspace:
-
-- The mirrored database item. Mirroring manages the replication of data into [OneLake](../onelake/onelake-overview.md) and conversion to Parquet, in an analytics-ready format. Mirroring enables downstream scenarios like data engineering, data science, and more. Mirrored databases are distinct from warehouse and SQL analytics endpoint items.
-- A [SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md)
+Mirroring creates a mirrored database and a SQL analytics endpoint in your Fabric workspace. The mirrored database manages replication of data into [OneLake](../onelake/onelake-overview.md) and conversion to Parquet, enabling downstream scenarios like data engineering, data science, and more.
 
 :::image type="content" source="media/google-bigquery/google-bigquery.png" alt-text="Diagram of Fabric database mirroring for Google BigQuery.":::
 
-From each Mirrored database, a **SQL analytics endpoint** delivers a read-only analytical experience on top of the Delta tables created during mirroring. This endpoint supports T-SQL syntax for defining and querying data objects, but it doesn't allow direct data changes since the data is read-only.  
+The **SQL analytics endpoint** provides a read-only analytical experience on top of the Delta tables created during mirroring. You can browse mirrored tables, build no-code queries and views, create SQL views and stored procedures, and query data across warehouses and lakehouses in the same workspace.
 
-With the SQL analytics endpoint, you can:  
-
-- Browse tables that reference your Delta Lake data mirrored from BigQuery.  
-- Build no-code queries and views, and explore data visually—no SQL required.  
-- Create SQL views, inline table-valued functions (TVFs), and stored procedures to layer in business logic with T-SQL.  
-- Set and manage permissions on objects.  
-- Query data in other Warehouses and Lakehouses within the same workspace.  
-
-In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling that can query the SQL analytics endpoint, including [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), and even GitHub Copilot. 
+For more information on analytics capabilities and compatible tooling, see [Mirroring objects](overview.md#mirroring-objects).
 
 ## Security considerations
 
