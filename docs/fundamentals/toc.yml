@@ -94,6 +94,8 @@ items:
     href: delta-lake-interoperability.md
   - name: Optimize table maintenance across workloads
     href: table-maintenance-optimization.md
+  - name: Understand best practices with Fabric CI/CD
+    href: understand-best-practices-fabric-cicd.md
 
 - name: Use Direct Lake
   items:

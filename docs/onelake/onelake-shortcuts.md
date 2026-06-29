@@ -1,16 +1,16 @@
 ---
-title: Unify data sources with OneLake shortcuts
+title: Unify Data Sources With OneLake Shortcuts
 description: OneLake shortcuts provide a way to connect to existing data without having to directly copy it. Learn how to use them.
-ms.reviewer: eloldag
+ms.reviewer: eloldag, oronkaiser-MSFT-nonEMU
 ms.search.form: Shortcuts
 ms.topic: concept-article
-ms.date: 05/21/2026
+ms.date: 06/28/2026
 #customer intent: As a data engineer, I want to learn how to use OneLake shortcuts so that I can unify data sources and have OneLake manage the permissions.
 ---
 
 # OneLake shortcuts
 
-Shortcuts in OneLake unify your data across domains, clouds, and accounts by making OneLake the single virtual data lake for your entire enterprise. Fabric experiences and analytical engines can connect to your existing data sources including Azure, Amazon Web Services (AWS), and OneLake through a unified namespace. OneLake manages all permissions and credentials, so you don't need to separately configure each Fabric workload to connect to each data source. Additionally, you can use shortcuts to eliminate edge copies of data and reduce process latency associated with data copies and staging.
+Shortcuts in Microsoft OneLake unify your data across domains, clouds, and accounts by making OneLake the single virtual data lake for your entire enterprise. Fabric experiences and analytical engines can connect to your existing data sources, including Azure, Amazon Web Services (AWS), and OneLake through a unified namespace. OneLake manages all permissions and credentials, so you don't need to separately configure each Fabric workload to connect to each data source. Additionally, you can use shortcuts to eliminate edge copies of data and reduce process latency associated with data copies and staging. Shortcuts also maintain synchronization with the source data, including automatic schema updates for shortcut tables.
 
 ## What are shortcuts?
 
@@ -30,7 +30,10 @@ You can use the Fabric portal to create shortcuts interactively, and you can use
 
 When creating shortcuts in a lakehouse, you must understand the folder structure of the item. Lakehouses have two top-level folders: the **Tables** folder and the **Files** folder. The tables folder is for structured datasets. The files folder is for unstructured or semi-structured data.
 
-In the tables folder, you can create shortcuts only at the top level. OneLake doesn't support shortcuts in subdirectories of the tables folder. Shortcuts in the tables section typically point to internal sources within OneLake or link to other data assets that conform to the Delta table format. If the target of the shortcut contains data in the Delta Parquet format, the lakehouse automatically synchronizes the metadata and recognizes the folder as a table. Shortcuts in the tables section can link to either a single table or a schema, which is a parent folder for multiple tables.
+In the **Tables** folder, you can create shortcuts only at the top level. OneLake doesn't support shortcuts in subdirectories of the **Tables** folder. Shortcuts in the **Tables** section typically point to internal sources within OneLake or link to other data assets that conform to the Delta table format. 
+If the target of the shortcut contains data in a supported table format (such as Delta), the lakehouse automatically synchronizes table metadata and recognizes the folder as a table.
+
+Table schemas are synchronized automatically for all shortcut tables, including both new and existing tables. This synchronization ensures that schema changes in the source are reflected in the shortcut without requiring manual updates. Shortcuts in the **Tables** section can link to either a single table or a schema, which is a parent folder for multiple tables.
 
 > [!NOTE]
 > The Delta format doesn't support tables with space characters in the name. OneLake doesn't recognize any shortcut containing a space in the name as a Delta table in the lakehouse.
@@ -44,6 +47,60 @@ In the files folder, there are no restrictions on where you can create shortcuts
 When you create a shortcut in a KQL database, it appears in the **Shortcuts** folder of the database. The KQL database treats shortcuts like external tables. To query the shortcut, use the `external_table` function of the Kusto Query Language.
 
 :::image type="content" source="media\onelake-shortcuts\shortcut-kql-database.png" alt-text="Screenshot of shortcuts inside a KQL database.":::
+
+### Eventhouse database shortcuts
+
+When you create a database shortcut in an eventhouse, you can choose to include all subitems from the source database or select specific subitems to share. This table-level sharing capability enables secure, controlled data sharing without exposing entire databases.
+
+#### Select specific subitems
+
+When creating a new database shortcut, you can select from the following subitem types:
+
+- **Tables** - Regular tables from the source database
+- **Shortcut tables** - Tables that are themselves shortcuts
+- **Materialized views** - Precomputed views for optimized queries
+- **Functions** - Stored functions for reusable query logic
+
+:::image type="content" source="media\onelake-shortcuts\entities.png" alt-text="Screenshot of selecting specific subitems in an eventhouse database.":::
+
+To select specific subitems:
+
+1. In an eventhouse, select **+ New** > **Database shortcut**.
+1. Choose a method for identifying the source database:
+   - **OneLake catalog** - Browse and select a database from Fabric.
+   - **Cluster URI** - Enter an Azure Data Explorer cluster URI and database name manually.
+   - **Invitation token** - Paste a token issued by the data producer. The subitem selection is predefined by the producer.
+1. In the **Subitems to include** section, select **Include all subitems** (default) or **Select specific subitems**.
+1. If you select specific subitems, use the inline picker to filter by type and search by name.
+1. Select **Create** to create the shortcut.
+
+> [!NOTE]
+> You can only see and select subitems you have permission to share. Subitems you don't have permission to share are hidden.
+
+#### Automatic schema sync
+
+When you create a database shortcut, table schemas sync automatically. This sync includes all table types, both new and existing tables. Consumers of a table-level share can only query and view subitems explicitly included in the share. Names of nonshared subitems aren't visible to consumers.
+
+To disable automatic schema sync, run the following command in the source database:
+
+```kql
+.create-or-alter external table ExternalTable
+kind=delta
+(
+   h@'https://storageaccount.blob.core.windows.net/container1;secretKey'
+) with (AutoUpdateSchema=false)
+```
+
+#### Subitem dependencies
+
+When you select subitems, the system automatically handles dependencies:
+
+- When you select a materialized view or function, the referred tables are automatically selected.
+- When you deselect a materialized view or function, the referred tables remain selected.
+- When you deselect a table, any materialized views or functions that depend on it are automatically deselected.
+
+> [!NOTE]
+> When you access a shortcut table, you can only query the table and view its metadata if you have permissions for both the followed database and the source data of the shortcut table. The same permission requirements apply to functions and materialized views that refer to shortcut tables.
 
 ## Where can I access shortcuts?
 
@@ -191,7 +248,7 @@ When you create shortcuts between multiple Fabric items within a workspace, you 
 * Shortcut names, parent paths, and target paths can't contain "%" or "+" characters.
 * Shortcuts don't support non-Latin characters.
 * Lineage for shortcuts to warehouses and semantic models isn't currently available.
-* A Fabric shortcut syncs with the source almost instantly, but propagation time might vary due to data source performance, cached views, or network connectivity issues.
+* A Fabric shortcut synchronizes with the source automatically. Schema and metadata updates are applied without manual intervention, but propagation time might vary due to data source performance, cached views, or network connectivity.
 * It might take up to a minute for the Table API to recognize new shortcuts.
 * Schema shortcuts can only be created in [schema-enabled lakehouses](../data-engineering/lakehouse-schemas.md).
 
