@@ -30,7 +30,7 @@ Before setting up custom live pools, ensure you have:
 First, create a custom Spark pool. You enable live pool compute on this pool in a later step.
 
 1. Navigate to your Fabric workspace.
-2. Select **Workspace settings** from the workspace home ribbon.
+1. Select **Workspace settings** from the workspace home ribbon.
 1. Expand **Data Engineering/Science** and select **Spark settings**.
 1. Select the **Pool** tab.
 1. From the **Default pool for workspace** dropdown, select **New Pool**.
