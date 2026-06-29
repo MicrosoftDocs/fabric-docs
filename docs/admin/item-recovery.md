@@ -1,5 +1,5 @@
 ---
-title: Recover or permanently delete items (preview)
+title: Recover or permanently delete items
 description: Learn how to set up item retention, recover deleted items, and permanently delete items by using the REST API as an administrator.
 author: dknappettmsft
 ms.author: daknappe
@@ -10,17 +10,13 @@ ms.date: 03/06/2026
 ai-usage: ai-assisted
 ---
 
-# Recover or permanently delete items (preview)
+# Recover or permanently delete items
 
 Fabric supports soft delete and recovery for individual items within workspaces. When you delete a [supported item](retention-recovery.md#supported-item-types), it enters a retention period during which workspace contributors, members, and admins can recover it. This protection helps prevent accidental data loss by giving you an opportunity to restore items before they're permanently removed.
 
 In this article, you learn how to set up item retention, recover deleted items, and permanently delete items before the retention period expires.
 
 For an overview of how retention works for workspaces and items, see [Retention and recovery in Fabric](retention-recovery.md).
-
-> [!IMPORTANT]
-> Item-level soft delete and recovery is currently in PREVIEW.
-> This information relates to a prerelease product that might be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 

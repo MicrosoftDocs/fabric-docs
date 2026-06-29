@@ -7,7 +7,7 @@ items:
     href: real-time-hub-overview.md
   - name: What are Azure and Fabric Events?
     href: fabric-events-overview.md
-  - name: What are business events?
+  - name: What are Business Events?
     href: business-events/business-events-overview.md
 - name: Get started
   items:
@@ -37,6 +37,8 @@ items:
       href: business-events/create-business-events.md
     - name: Manage data access for business events
       href: business-events/manage-business-events-data-access.md
+    - name: Business Events limits
+      href: business-events/business-events-limits.md
     - name: Publish business events using Activator
       href: business-events/business-events-activator.md
     - name: Publish business events using Notebook

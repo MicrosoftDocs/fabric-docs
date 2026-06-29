@@ -55,7 +55,11 @@ The following image and table describe the condition categories available in the
 | **Logical change** | Conditions that activate when a boolean value changes state. **Becomes true** activates when a value changes from false to true. **Becomes false** activates when a value changes from true to false. |
 | **Logical state** | Conditions that activate for each event where a boolean value matches the specified state. **Is equal to** and **Is not equal to** compare the value against true or false. |
 | **Common change** | Activates when an attribute value changes. The **Changes** condition applies across data types and has no specific threshold or target value. |
-| **Heartbeat** | Conditions based on event arrival. **No presence of data** activates when no new events arrive within a specified time. **Object first appearance** activates the first time a given object ID appears in the event stream. |
+| **Heartbeat** | Conditions based on event arrival. **No presence of data** activates when no new events arrive within a specified time. **Object first appearance** activates the first time a given object ID appears in the eventstream. |
+
+For any condition that has a **Value** field, the value can either be a literal that you type in or a reference to another attribute or property on the same data. To reference another attribute, select the tag button on the right of the **Value** field or type `@`, and then pick the attribute or property from the list. Only items of a matching type appear in the list. Use a reference instead of a literal when the value you're comparing against isn't fixed — for example, when each package has its own maximum-allowed temperature.
+
+:::image type="content" source="media/activator-detection-conditions/data-activator-condition-dynamic-reference.png" alt-text="Screenshot of the Definition pane of a rule monitoring Humidity, with the Condition section highlighted. The Value field of the Is equal to condition shows the Humidity attribute selected as the threshold, with a tag button on the right side of the field that opens an attribute picker." lightbox="media/activator-detection-conditions/data-activator-condition-dynamic-reference.png":::
 
 ### Occurrence
 

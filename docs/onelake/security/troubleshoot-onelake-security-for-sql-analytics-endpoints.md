@@ -81,7 +81,7 @@ Use this procedure when the same data returns different results between engines.
 
 ### Step 1: Identify the access mode of the SQL analytics endpoint
 
-Open the SQL analytics endpoint and navigate to the **Security** tab. Select **View data access mode (preview)** to identify whether the access mode is delegated identity or user identity.
+Open the SQL analytics endpoint and go to the **Security** tab. Select **View data access mode** to identify whether the access mode is delegated identity or user identity.
 
 :::image type="content" source="./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/view-data-access-mode.png" alt-text="Screenshot that shows selecting 'View data access mode' in the 'Security' tab to check the access mode.":::
 
@@ -362,6 +362,6 @@ No. When switching to user identity mode, existing SQL roles are deleted and can
 
 ## Related content
 
-- [OneLake security for SQL analytics endpoints (Preview)](./sql-analytics-endpoint-onelake-security.md)
+- [OneLake security for SQL analytics endpoints](./sql-analytics-endpoint-onelake-security.md)
 - [Best practices to secure data in OneLake](./best-practices-secure-data-in-onelake.md)
 - [OneLake security access control model](./data-access-control-model.md)

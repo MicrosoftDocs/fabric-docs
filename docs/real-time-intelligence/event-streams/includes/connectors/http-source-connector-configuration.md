@@ -3,7 +3,8 @@ title: HTTP connector for Fabric event streams
 description: This file has the common content for configuring an HTTP connector for Fabric event streams and Real-Time hub. 
 ms.reviewer: zhenxilin
 ms.topic: include
-ms.date: 04/02/2026
+ms.date: 06/29/2026
+ai-usage: ai-assisted
 ---
 
 You can select one of the **Example public APIs** to get started quickly with predefined headers and parameters, or select **Exit** to configure your own custom HTTP connector.
@@ -67,6 +68,58 @@ Follow the steps to configure your own HTTP source without an example API.
    Some status codes are always retried, such as unauthorized, timeouts, and too many requests.
 
    :::image type="content" source="media/http-connector/configure-connection-settings.png" alt-text="Screenshot that shows the configured settings." lightbox="media/http-connector/configure-connection-settings.png":::
+
+### Handle paginated APIs
+
+Some REST APIs return data in multiple pages instead of a single response. For example, an API might return 100 records in each response and require additional requests to retrieve the remaining records. The HTTP connector supports pagination so that it can retrieve data across multiple pages in a polling cycle.
+
+#### Supported pagination types
+
+The HTTP connector supports these pagination patterns:
+
+- **Page-based pagination**: The request includes a page parameter, such as `page=1` or `page=2`. The connector increments the page number to request the next page.
+- **Cursor-based pagination**: The API response includes a cursor or continuation token, such as `continuationToken` or `nextPageToken`. The connector uses this value to request the next page.
+
+#### Configure pagination
+
+To use pagination, configure these settings in the HTTP connector:
+
+- **Pagination enabled**: Turns on pagination handling.
+- **Pagination mode**: Specifies the pagination type. Supported values are **Page** and **Cursor**.
+- **Response data JSON pointer**: Specifies the location of the data array in the API response, such as `/value`, `/items`, or `/articles`.
+
+#### Page-based pagination example
+
+For a page-based API, the first request might be `GET /api/data?page=1`.
+
+Example configuration:
+
+- **Pagination enabled**: `true`.
+- **Pagination mode**: **Page**.
+
+The connector sends requests for subsequent pages, such as `page=2` and `page=3`. Pagination stops when the API response indicates that no more data is available, such as by returning an empty array.
+
+#### Cursor-based pagination example
+
+For a cursor-based API, the response might include a continuation token, such as `"continuationToken": "ABC123"`.
+
+The connector extracts the continuation token and uses it in the next request, such as `GET /api/data?continuationToken=ABC123`. Pagination stops when the response doesn't include another token or the token value is null.
+
+#### When pagination stops
+
+The connector stops requesting additional pages when one of the following conditions is met:
+
+- The API returns an empty response.
+- The response doesn't include a next page token.
+- The API indicates that no more pages are available.
+
+#### Considerations
+
+- Each polling cycle starts from the first page.
+- Confirm that the API supports pagination before you enable this feature.
+- Incorrect pagination configuration or JSON pointer settings might cause missing or duplicated data.
+
+Use pagination when an API limits the number of records returned in each request.
 
 ### Stream or source details
 

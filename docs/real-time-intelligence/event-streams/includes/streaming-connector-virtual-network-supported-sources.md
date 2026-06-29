@@ -14,6 +14,7 @@ This feature applies to Eventstream sources that use streaming connectors to ret
 
 - Azure SQL Database Change Data Capture (CDC)
 - Azure SQL Managed Instance CDC
+- Oracle Database CDC
 - Azure Service Bus
 - Azure Cosmos DB CDC
 - Azure Data Explorer (ADX)

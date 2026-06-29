@@ -7,6 +7,3 @@ ms.topic: include
 1. Select **+ New item**.
 1. Select **Store data** > **Lakehouse**.
 1. Enter a name (for example, "AdventureWorksLakehouse"), clear the **Lakehouse schemas** option, and select **Create**.
-
-    > [!IMPORTANT]
-    > Graph doesn't currently support lakehouses with [lakehouse schemas enabled](../../data-engineering/lakehouse-schemas.md).
