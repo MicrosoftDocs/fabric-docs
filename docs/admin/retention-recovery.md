@@ -20,7 +20,7 @@ This article explains how retention and recovery work at both the workspace and 
 
 The following table compares workspace retention and item-level soft-delete and recovery:
 
-| Feature | Collaborative workspace retention | My workspace retention | Item retention (preview) |
+| Feature | Collaborative workspace retention | My workspace retention | Item retention |
 | --- | --- | --- | --- |
 | **Applies when** | User deletes a collaborative workspace | *My workspace* is deleted | User deletes a [supported item](#supported-item-types) |
 | **Default retention state** | Enabled | Enabled | Disabled |
@@ -41,11 +41,7 @@ The default retention period for collaborative workspaces is seven days. You can
 
 During the retention period, you can restore a deleted workspace or permanently delete it before the retention period expires. For step-by-step instructions, see [Set up and manage workspace retention](workspace-retention.md).
 
-## Item soft-delete and recovery (preview)
-
-> [!IMPORTANT]
-> Item-level soft-delete and recovery is currently in PREVIEW.
-> This information relates to a prerelease product that might be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+## Item soft-delete and recovery
 
 Fabric supports soft-delete and recovery for individual items within workspaces. When you delete a supported item, it enters a retention period during which workspace contributors, members, and admins can recover it. This feature provides an additional layer of data protection at the item level.
 
