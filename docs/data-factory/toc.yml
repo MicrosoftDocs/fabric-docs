@@ -1337,6 +1337,8 @@
             href: connector-troubleshoot-azure-cosmos-db.md
           - name: Data Warehouse
             href: connector-troubleshoot-data-warehouse.md
+          - name: Databricks and Azure Databricks
+            href: connector-troubleshoot-databricks.md
           - name: DB2
             href: connector-troubleshoot-db2.md
           - name: Azure Data Explorer
