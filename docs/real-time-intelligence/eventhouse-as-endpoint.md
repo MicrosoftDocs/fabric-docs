@@ -191,7 +191,7 @@ The Eventhouse endpoint syncs source tables and schema changes within seconds. T
 
 * Source table and schema changes are mirrored to the Eventhouse endpoint within seconds (near real time), with possible brief delays while synchronization is in progress.
 
-* **Advisor banner:** When creating an Eventhouse endpoint, some shortcut tables may fail to be created. If one or more tables fail, an advisor banner appears at the top of the endpoint with the failure reason and the affected table names. The banner isn't dismissible. Common failure reasons include:
+* **Advisor banner:** When creating an Eventhouse endpoint, some shortcut tables might not be created. If one or more tables aren't created, an advisor banner appears at the top of the endpoint with the failure reason and the affected table names. You can't dismiss the banner. Common failure reasons include:
 
   | Failure reason | Description |
   |----------------|-------------|
