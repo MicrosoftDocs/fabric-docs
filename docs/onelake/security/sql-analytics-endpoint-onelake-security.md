@@ -1,6 +1,6 @@
 ---
 title: "OneLake Security for SQL analytics endpoints"
-description: Learn how Microsoft Fabric's OneLake security enhances data access control with centralized governance or granular SQL-based permissions.
+description: Learn how OneLake security enhances data access control with centralized governance or granular SQL-based permissions.
 ms.reviewer: aamerril
 ms.date: 04/20/2026
 ms.topic: concept-article
@@ -8,7 +8,7 @@ ms.topic: concept-article
 
 # OneLake security for SQL analytics endpoints
 
-With OneLake security, Microsoft Fabric is expanding how organizations can manage and enforce data access across workloads. This security framework gives administrators greater flexibility to configure permissions. Administrators can choose between **centralized governance through OneLake** or **granular SQL-based control** within the SQL analytics endpoint.
+With OneLake security, Fabric is expanding how organizations can manage and enforce data access across workloads. This security framework gives administrators greater flexibility to configure permissions. Administrators can choose between **centralized governance through OneLake** or **granular SQL-based control** within the SQL analytics endpoint.
 
 ## Access modes in SQL analytics endpoint
 
@@ -110,7 +110,7 @@ As a result:
 
 * When designing applications or views that reference shortcuts, ensure that role assignments are properly configured on **both ends** of the shortcut relationship.
 
-This design preserves security integrity across Lakehouse boundaries, but it introduces scenarios where access failures might occur if cross-Lakehouse roles aren't aligned.
+This design preserves security integrity across lakehouse boundaries, but it introduces scenarios where access failures might occur if cross-lakehouse roles aren't aligned.
 
 ## Delegated mode in OneLake security
 
@@ -223,7 +223,7 @@ The access mode determines how data access is authenticated and enforced when qu
 * **Warehouse SQL security and shortcuts**: Security policies defined using SQL constructs in a Warehouse—such as Row-Level Security (RLS), Column-Level Security (CLS), or Object-Level Security (OLS)—are enforced only within the SQL execution context of the warehouse (TDS endpoint).
 
 > [!IMPORTANT]
-> When data from a Warehouse is accessed through OneLake shortcuts, these SQL security semantics are not translated into OneLake security policies. As a result, users accessing the data through a shortcut may see the full dataset, regardless of SQL security policies configured in the source warehouse.
+> When data from a warehouse is accessed through shortcuts in OneLake, these SQL security semantics are not translated into OneLake security policies. As a result, users accessing the data through a shortcut may see the full semantic model, regardless of SQL security policies configured in the source warehouse.
 
 ## Limitations
 
@@ -260,7 +260,7 @@ The access mode determines how data access is authenticated and enforced when qu
 
 * **Row-Level Security (RLS) constraints**:
 
-  * For Public Preview, only single-expression tables are supported. Dynamic RLS and Multi-Table RLS are not available.
+  * Only single-expression tables are supported. Dynamic RLS and Multi-Table RLS aren't available.
 
   * Dropping a column used in a filter expression stalls metadata synchronization until the RLS is fixed in the OneLake security panel.
 

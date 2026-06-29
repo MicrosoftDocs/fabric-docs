@@ -129,5 +129,4 @@ Use the following checks when driver mode snapshot doesn't behave as expected.
 ## Related content
 
 - [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md)
-- [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
 - [Run Delta table maintenance in Lakehouse](lakehouse-table-maintenance.md)

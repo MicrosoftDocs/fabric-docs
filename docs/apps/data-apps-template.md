@@ -33,7 +33,7 @@ Encoding these patterns directly into the template improves reliability, produce
 - Access to Microsoft Fabric.
 - A Fabric workspace where you have contributor or admin permissions.
 - The Fabric Apps workload enabled in your tenant. See [Enable Fabric app in tenant admin settings](create-app.md#enable-fabric-app-in-tenant-admin-settings).
-- The Dataset Execute Queries REST API tenant setting enabled. Data apps use the [Execute DAX Queries API](/rest/api/power-bi/datasets/execute-dax-queries) to query semantic models. In the Fabric admin portal, navigate to **Integration settings** and enable the **Dataset Execute Queries REST API** setting.
+- The Semantic Model Execute Queries REST API tenant setting enabled. Data apps use the [Execute DAX Queries API](/rest/api/power-bi/datasets/execute-dax-queries) to query semantic models. In the Fabric admin portal, navigate to **Integration settings** and enable the **Semantic Model Execute Queries REST API** setting.
 - Build and Read permissions on the semantic model you want to connect to.
 - A semantic model hosted on a Fabric or Power BI capacity.
 

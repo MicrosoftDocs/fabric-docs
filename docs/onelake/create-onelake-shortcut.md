@@ -18,7 +18,7 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To 
 
 ## Prerequisite
 
-A lakehouse or KQL database in OneLake. If you don't have one of these, create a test lakehouse by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).
+A lakehouse or KQL database in OneLake. If you don't have one of these, create a test lakehouse by following these steps: [Create a lakehouse](../data-engineering/create-lakehouse.md).
 
 ## Create a shortcut
 
@@ -50,7 +50,7 @@ A lakehouse or KQL database in OneLake. If you don't have one of these, create a
 
 1. Select one or more subfolders to connect to, then select **Next**.
 
-   You can select up to 50 subfolders when creating OneLake shortcuts.
+   You can select up to 50 subfolders when creating shortcuts in OneLake.
 
    :::image type="content" source="media/create-onelake-shortcut/create-shortcut.png" alt-text="Screenshot of the New shortcut window showing the data in the lakehouse.":::
 

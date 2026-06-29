@@ -1,8 +1,8 @@
 ---
 title: Ingest Data into Your Warehouse Using the COPY Statement
 description: Follow steps to ingest data into a Warehouse with the COPY statement in Microsoft Fabric.
-ms.reviewer: procha, jovanpop-msft
-ms.date: 03/13/2026
+ms.reviewer: procha, jovanpop
+ms.date: 06/23/2026
 ms.topic: how-to
 ms.search.form: Ingesting data
 ---
@@ -11,9 +11,9 @@ ms.search.form: Ingesting data
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-The COPY statement is the primary way to ingest data into [!INCLUDE [fabric-dw](includes/fabric-dw.md)] tables. COPY performs high high-throughput data ingestion from an external Azure storage account, with the flexibility to configure source file format options, a location to store rejected rows, skipping header rows, and other options. 
+The COPY statement is the primary way to ingest data into [!INCLUDE [fabric-dw](includes/fabric-dw.md)] tables. COPY performs high-throughput data ingestion from an external Azure storage account. You can configure source file format options, specify a location to store rejected rows, skip header rows, and set other options. 
 
-This tutorial shows data ingestion examples for a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] table using the T-SQL `COPY` statement. It uses the Bing COVID-19 sample data from the Azure Open Datasets. For details about this data, including its schema and usage rights, see [Bing COVID-19](/azure/open-datasets/dataset-bing-covid-19?tabs=azure-storage).
+This tutorial shows data ingestion examples for a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] table by using the T-SQL `COPY` statement.
 
 > [!NOTE]
 > [!INCLUDE [fabric-dw](includes/fabric-dw.md)] also enables you to use [BULK INSERT](/sql/t-sql/statements/bulk-insert-transact-sql?view=fabric&preserve-view=true) statement for data ingestion. The `COPY INTO` statement is the recommended statement for the new ingestion code, while the `BULK INSERT` statement enables you to reuse the code that you are using in SQL Server or Azure SQL Database.

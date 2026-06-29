@@ -6,17 +6,17 @@ reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI Functions
+ai-usage: ai-assisted
 ---
 
 # Use ai.translate with PySpark
 
-
-The `ai.translate` function uses generative AI to translate input text into a new language (of your choice), with a single line of code.
+The `ai.translate` function translates each input row into the target language you choose.
 
 > [!NOTE]
-> - This article covers using *ai.translate* with PySpark. To use *ai.translate* with pandas, see [this article](../pandas/translate.md).
-> - See other AI Functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI Functions](./configuration.md).
+> - This article covers `ai.translate` with PySpark. For pandas, see [Use ai.translate with pandas](../pandas/translate.md).
+> - For all AI Functions and prerequisites, see [AI Functions overview](../overview.md).
+> - Change default configuration for [AI Functions with PySpark](./configuration.md).
 
 ## Overview
 
@@ -58,13 +58,13 @@ translations = df.ai.translate(to_lang="spanish", input_col="text", output_col="
 display(translations)
 ```
 
-This example code cell provides the following output:
+Output:
 
 :::image type="content" source="../../media/ai-functions/translate-example-output.png" alt-text="Screenshot of a data frame with columns 'text' and 'translations'. The 'translations' column contains the text translated to Spanish." lightbox="../../media/ai-functions/translate-example-output.png":::
 
 ## Multimodal input
 
-The `ai.translate` function supports file-based multimodal input. You can translate the content of images, PDFs, and text files by setting `input_col_type="path"`. For more information about supported file types and setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
+To translate images, PDFs, or text files, set `input_col_type="path"`. For setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
 
 ```python
 # This code uses AI. Always review output for mistakes.
@@ -81,16 +81,7 @@ display(results)
 ## Related content
 
 - Use [ai.translate with pandas](../pandas/translate.md).
-- Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
-- Categorize text with [ai.classify](./classify.md).
-- Generate vector embeddings with [ai.embed](./embed.md).
-- Extract entities with [ai_extract](./extract.md).
-- Fix grammar with [ai.fix_grammar](./fix-grammar.md).
-- Answer custom user prompts with [ai.generate_response](./generate-response.md).
-- Calculate similarity with [ai.similarity](./similarity.md).
-- Summarize text with [ai.summarize](./summarize.md).
-
-- Learn more about the [full set of AI Functions](../overview.md).
+- Learn more about [AI Functions](../overview.md).
 - Use [multimodal input with AI Functions](../multimodal-overview.md).
-- Customize the [configuration of AI Functions](./configuration.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).
+- Change default configuration for [AI Functions with PySpark](./configuration.md).
+- Understand [billing for AI Functions](../billing.md).

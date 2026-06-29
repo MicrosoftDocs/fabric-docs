@@ -27,7 +27,7 @@ Before you begin, you must:
 
 - Download and install [OneLake file explorer](onelake-file-explorer.md).
 
-- Create a workspace with a Lakehouse item.
+- Create a workspace with a lakehouse item.
 
 - Download the WideWorldImportersDW dataset. You can use [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) to connect to `https://fabrictutorialdata.blob.core.windows.net/sampledata/WideWorldImportersDW/csv/full/dimension_city` and download the set of csv files. Or you can use your own csv data and update the details as required.
 

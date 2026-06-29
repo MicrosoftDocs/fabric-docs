@@ -79,6 +79,8 @@ items:
       href: plan/overview-regions.md
     - name: Prerequisites
       href: plan/overview-prerequisites.md
+    - name: Roles
+      href: plan/overview-roles.md 
     - name: Known limitations
       href: plan/overview-limitations.md
   - name: Planning sheets
@@ -117,6 +119,12 @@ items:
                 href: plan/planning-how-to-insert-rows-blank.md
               - name: Manage inserted rows
                 href: plan/planning-how-to-manage-inserted-rows.md
+        - name: Insert columns
+          items:
+              - name: Insert data input columns
+                href: plan/planning-how-to-insert-columns/how-to-insert-data-input-columns.md
+              - name: Insert number columns
+                href: plan/planning-how-to-insert-columns/how-to-insert-number-columns.md
         - name: Bulk edit data
           href: plan/planning-how-to-bulk-edit.md
         - name: Set up scenarios
@@ -207,20 +215,46 @@ items:
               href: plan/planning-reference-formulas/conditional-statements.md
             - name: Logical functions
               href: plan/planning-reference-formulas/logical-functions.md
+            - name: Math functions
+              items: 
+                - name: Aggregation and statistical
+                  href: plan/planning-reference-formulas/math-functions/aggregation-statistical-functions.md
+                - name: Arithmetic
+                  href: plan/planning-reference-formulas/math-functions/arithmetic-functions.md
+                - name: Exponential and logarithmic
+                  href: plan/planning-reference-formulas/math-functions/exponential-logarithmic-functions.md
+                - name: Financial
+                  href: plan/planning-reference-formulas/math-functions/financial-functions.md
+                - name: Random and lookup
+                  href: plan/planning-reference-formulas/math-functions/random-lookup-functions.md
+                - name: Rounding and formatting
+                  href: plan/planning-reference-formulas/math-functions/rounding-formatting-functions.md
+            - name: Text formatting functions
+              href: plan/planning-reference-formulas/text-functions.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
       href: plan/powertable-overview.md
+    - name: Concepts
+      items:
+        - name: Slowly changing dimensions
+          href: plan/powertable-concept-slowly-changing-dimensions.md
     - name: How-tos
       items:
         - name: Create a table app
-          href: plan/powertable-how-to-create-table-app.md
-        - name: Enter table data manually
-          href: plan/powertable-how-to-enter-table-data-manually.md
-        - name: Connect to a database
-          href: plan/powertable-how-to-connect-existing-database.md
-        - name: Connect to a semantic model
-          href: plan/powertable-how-to-connect-semantic-model.md
+          items:
+            - name: Import Excel or CSV file
+              href: plan/powertable-how-to-create-table-app.md
+            - name: Connect to a semantic model
+              href: plan/powertable-how-to-connect-semantic-model.md
+            - name: Connect to a database
+              href: plan/powertable-how-to-connect-existing-database.md
+            - name: Enter table data manually
+              href: plan/powertable-how-to-enter-table-data-manually.md
+        - name: Update table data
+          href: plan/powertable-how-to-bulk-edit-data.md
+        - name: Insert and manage rows
+          href: plan/powertable-how-to-insert-rows-import-data.md
         - name: Set up access control
           href: plan/powertable-how-to-set-up-access-control.md  
         - name: Generate forms
@@ -228,7 +262,9 @@ items:
         - name: Configure approval workflow
           href: plan/powertable-how-to-configure-approval-workflow.md
         - name: Review changes in approval workflow
-          href: plan/powertable-how-to-review-approval-workflow.md      
+          href: plan/powertable-how-to-review-approval-workflow.md 
+        - name: Configure slowly changing dimensions
+          href: plan/powertable-how-to-create-slowly-changing-dimension.md     
   - name: Intelligence sheets
     items:
     - name: Intelligence sheets overview
@@ -237,6 +273,8 @@ items:
       items:
         - name: Get started with intelligence sheets
           href: plan/intelligence-how-to-get-started.md
+        - name: Apply and customize themes
+          href: plan/intelligence-how-to-apply-themes.md
         - name: Build financial reports
           href: plan/intelligence-how-to-build-financial-reports.md
         - name: Comment and collaborate
@@ -249,16 +287,38 @@ items:
           href: plan/intelligence-how-to-visualize-planning-data.md
         - name: Plan projects with Gantt charts
           href: plan/intelligence-how-to-create-gantt-chart.md
-  - name: InfoBridge
+  - name: Infobridge
     items:
-    - name: InfoBridge overview
+    - name: Infobridge overview
       href: plan/infobridge-overview.md
     - name: How-tos
       items:
+        - name: Create bridge
+          href: plan/infobridge-how-to-create-bridge.md
+        - name: Manage query operations
+          href: plan/infobridge-how-to-manage-queries.md     
         - name: Share measures
           href: plan/infobridge-how-to-share-measures.md
         - name: Write back data
           href: plan/infobridge-how-to-write-back-data.md
+        - name: Transform data
+          items:
+            - name: Use pivot table
+              href: plan/infobridge-transformations/infobridge-how-to-pivot-table.md            
+            - name: Group by transformations
+              href: plan/infobridge-transformations/infobridge-how-to-group-by.md
+            - name: Add columns
+              href: plan/infobridge-transformations/infobridge-how-to-add-column.md
+            - name: Manage columns
+              href: plan/infobridge-transformations/infobridge-how-to-manage-columns.md
+            - name: Pivot and unpivot columns
+              href: plan/infobridge-transformations/infobridge-how-to-pivot-column.md
+            - name: Find and replace
+              href: plan/infobridge-transformations/infobridge-how-to-find-replace.md
+            - name: Filter rows
+              href: plan/infobridge-transformations/infobridge-how-to-filter-rows.md
+            - name: Sort data
+              href: plan/infobridge-transformations/infobridge-how-to-sort.md
 - name: Graph
   href: ../graph/toc.yml
 - name: Data agent
@@ -269,5 +329,7 @@ items:
   href: ../data-warehouse/semantic-model-toc/toc.yml
 - name: Integrations
   items:
+  - name: Microsoft 365 Copilot Chat (Frontier)
+    href: connectors/microsoft-365-copilot-overview.md
   - name: Cowork (Frontier)
     href: connectors/cowork-overview.md

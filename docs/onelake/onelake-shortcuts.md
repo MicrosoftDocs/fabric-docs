@@ -10,7 +10,7 @@ ms.date: 05/21/2026
 
 # OneLake shortcuts
 
-Shortcuts in Microsoft OneLake unify your data across domains, clouds, and accounts by making OneLake the single virtual data lake for your entire enterprise. Fabric experiences and analytical engines can connect to your existing data sources including Azure, Amazon Web Services (AWS), and OneLake through a unified namespace. OneLake manages all permissions and credentials, so you don't need to separately configure each Fabric workload to connect to each data source. Additionally, you can use shortcuts to eliminate edge copies of data and reduce process latency associated with data copies and staging.
+Shortcuts in OneLake unify your data across domains, clouds, and accounts by making OneLake the single virtual data lake for your entire enterprise. Fabric experiences and analytical engines can connect to your existing data sources including Azure, Amazon Web Services (AWS), and OneLake through a unified namespace. OneLake manages all permissions and credentials, so you don't need to separately configure each Fabric workload to connect to each data source. Additionally, you can use shortcuts to eliminate edge copies of data and reduce process latency associated with data copies and staging.
 
 ## What are shortcuts?
 
@@ -39,7 +39,7 @@ In the files folder, there are no restrictions on where you can create shortcuts
 
 :::image type="content" source="media\onelake-shortcuts\lake-view-table-view.png" alt-text="Diagram showing the Files view and the Tables view side by side.":::
 
-### KQL Database
+### KQL database
 
 When you create a shortcut in a KQL database, it appears in the **Shortcuts** folder of the database. The KQL database treats shortcuts like external tables. To query the shortcut, use the `external_table` function of the Kusto Query Language.
 
@@ -95,7 +95,7 @@ https://onelake.dfs.fabric.microsoft.com/MyWorkspace/MyLakhouse/Tables/MyShortcu
 
 ## Types of shortcuts
 
-OneLake shortcuts support multiple filesystem data sources. These sources include internal OneLake locations and external or non-Microsoft sources.
+Shortcuts in OneLake support multiple filesystem data sources. These sources include internal OneLake locations and external or non-Microsoft sources.
 
 You can also [create shortcuts to on-premises or network-restricted locations](create-on-premises-shortcut.md) by using the Fabric on-premises data gateway (OPDG).
 
@@ -113,12 +113,12 @@ Use internal OneLake shortcuts to reference data within existing Fabric items, i
 
 For instructions to create an internal shortcut, see [Create an internal OneLake shortcut](./create-onelake-shortcut.md).
 
-The shortcut can point to a folder location within the same item, across items within the same workspace, or even across items in different workspaces. When you create a shortcut across items, the item types don't need to match. For example, you can create a shortcut in a lakehouse that points to data in a data warehouse.
+The shortcut can point to a folder location within the same item, across items within the same workspace, or even across items in different workspaces. When you create a shortcut across items, the item types don't need to match. For example, you can create a shortcut in a lakehouse that points to data in a warehouse.
 
 When a user accesses data from another OneLake location through a shortcut, OneLake uses the identity of the calling user to authorize access to the data. This user must have permissions in the target location to read the data.
 
 > [!IMPORTANT]
-> When users access shortcuts through Power BI semantic models using **DirectLake over SQL** or T-SQL engines in **Delegated identity mode**, the calling user's identity isn't passed through to the shortcut target. Instead, the calling item's owner's identity is passed, which delegates access to the calling user. To resolve this limitation, use Power BI semantic models in **DirectLake over OneLake** mode or T-SQL in **User identity mode**.
+> When users access shortcuts through Power BI semantic models using **Direct Lake over SQL** or T-SQL engines in **Delegated identity mode**, the calling user's identity isn't passed through to the shortcut target. Instead, the calling item's owner's identity is passed, which delegates access to the calling user. To resolve this limitation, use Power BI semantic models in **Direct Lake over OneLake** mode or T-SQL in **User identity mode**.
 
 ### External OneLake shortcuts
 
@@ -188,12 +188,12 @@ When you create shortcuts between multiple Fabric items within a workspace, you 
 * Each Fabric item supports up to 100,000 shortcuts. In this context, the term item refers to apps, lakehouses, warehouses, reports, and more.
 * A single OneLake path supports up to 10 shortcuts.
 * The maximum number of direct shortcuts to shortcut links is 5.
-* OneLake shortcut names, parent paths, and target paths can't contain "%" or "+" characters.
+* Shortcut names, parent paths, and target paths can't contain "%" or "+" characters.
 * Shortcuts don't support non-Latin characters.
-* Lineage for shortcuts to Data Warehouses and Semantic Models isn't currently available.
+* Lineage for shortcuts to warehouses and semantic models isn't currently available.
 * A Fabric shortcut syncs with the source almost instantly, but propagation time might vary due to data source performance, cached views, or network connectivity issues.
 * It might take up to a minute for the Table API to recognize new shortcuts.
-* Schema shortcuts can only be created in [schema-enabled lakehouses](/fabric/data-engineering/lakehouse-schemas).
+* Schema shortcuts can only be created in [schema-enabled lakehouses](../data-engineering/lakehouse-schemas.md).
 
 ## Related content
 

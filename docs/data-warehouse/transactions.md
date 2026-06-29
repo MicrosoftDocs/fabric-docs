@@ -2,7 +2,7 @@
 title: Transactions in Fabric Data Warehouse
 description: Learn how to use transactions and how to insert and modify data in Warehouse tables in Microsoft Fabric.
 ms.reviewer: twcyril
-ms.date: 4/7/2026
+ms.date: 6/3/2026
 ms.topic: how-to
 ms.search.form: Warehouse design and development
 ---
@@ -49,6 +49,7 @@ Fabric Data Warehouse supports executing the following inside an explicit transa
 - `ALTER TABLE` add or drop `PRIMARY KEY`, `UNIQUE`, and `FOREIGN KEY` constraints with the `NOT ENFORCED` keyword
 - Multiple `ALTER TABLE` statements
 - `ALTER TABLE` on distributed temporary tables
+- Supported [ALTER COLUMN](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true#alter-column) operations
 
 ### Cross-database query transaction support
 
@@ -78,6 +79,8 @@ Fabric Data Warehouse uses table-level locking, regardless of whether a query to
 You can query locks currently held with the dynamic management view (DMV) [sys.dm_tran_locks](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-locks-transact-sql).
 
 For more information about locks, lock escalation, and lock compatibility, see [Transaction locking and row versioning guide](/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide?view=fabric&preserve-view=true).
+
+If queries appear stuck or are taking longer than expected because of locks, see [Troubleshoot query blocking in Fabric Data Warehouse](troubleshoot-query-blocking.md).
 
 ### Snapshot isolation
 

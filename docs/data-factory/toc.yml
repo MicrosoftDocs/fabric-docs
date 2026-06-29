@@ -101,6 +101,8 @@
         href: /azure/data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
       - name: Upgrade Azure Synapse Analytics pipelines to Fabric
         href: /azure/data-factory/how-to-upgrade-your-azure-synapse-analytics-pipelines-to-fabric-data-factory?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
+      - name: Upgrade Mapping Data Flows pipelines to Fabric
+        href: dataflow-gen2-mapping-data-flows-transforms-upgrade.md
       - name: Upgrade pipelines with PowerShell
         items:
         - name: Pipeline upgrade with PowerShell overview
@@ -1083,12 +1085,16 @@
                 href: dataflow-gen2-preview-only-step.md
               - name: Partitioned compute (Preview)
                 href: dataflow-gen2-partitioned-compute.md
+              - name: Staged data options (Preview)
+                href: dataflow-gen2-staged-data-options.md
               - name: Relative references with Fabric connectors
                 href: dataflow-gen2-relative-references.md
               - name: Public parameters in Dataflow Gen2
                 href: dataflow-parameters.md
               - name: Variable libraries in Dataflow Gen2
                 href: dataflow-gen2-variable-library-integration.md    
+          - name: Mapping data flow transforms (Preview)
+            href: dataflow-gen2-mapping-data-flows-transforms.md
           - name: Dataflow refresh
             href: dataflow-gen2-refresh.md
             items:
@@ -1164,8 +1170,6 @@
         href: create-first-pipeline-with-sample-data.md
       - name: Get data for pipelines
         href: modern-get-data-experience-pipeline.md
-      - name: Pipeline canvas
-        href: pipeline-canvas-experience.md
       - name: Activities in pipelines
         href: activity-overview.md 
       - name: Business workflow management
@@ -1257,6 +1261,8 @@
             href: script-activity-email-output.md
           - name: Use AI to turn sketches into pipelines
             href: image-to-pipeline-with-ai.md
+          - name: Manage pipelines from Visual Studio Code
+            href: pipelines-manage-vs-code.md
       - name: Variable library integration
         href: variable-library-integration-with-data-pipelines.md
   - name: Orchestrate workflows with Apache Airflow
@@ -1281,6 +1287,8 @@
             href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
           - name: Transform data using dbt
             href: apache-airflow-jobs-dbt-fabric.md
+          - name: Move data from Amazon S3 to a Lakehouse
+            href: apache-airflow-jobs-move-s3-data-lakehouse.md
       - name: How-to
         items:
           - name: Synchronize your code from an existing Git repo
@@ -1307,6 +1315,8 @@
             href: access-apache-airflow-job-logs.md
           - name: CI/CD for Apache Airflow Jobs
             href: cicd-apache-airflow-jobs.md
+          - name: Manage Airflow Jobs from Visual Studio Code
+            href: apache-airflow-jobs-manage-vs-code.md
   - name: Troubleshoot
     items: 
       - name: Keyboard shortcuts
@@ -1375,8 +1385,8 @@
         href: ../get-started/fabric-known-issues.md?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
   - name: Community
     items:
-    - name: Data factory blog
-      href: https://blog.fabric.microsoft.com/blog/category/data-factory
+    - name: Fabric blog
+      href: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/bg-p/fbc_fabricupdatesblogs
     - name: Data factory forums
       href: https://community.fabric.microsoft.com/t5/Data-Factory-forums/ct-p/datafactory
     - name: Data factory video channel

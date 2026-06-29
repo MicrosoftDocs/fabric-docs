@@ -39,7 +39,7 @@ The one-to-one identity mapping requirement means the user must have explicit Re
 
 ### Step 2: Confirm the user's Object ID matches exactly at producer and consumer
 
-Nested or effective group membership isn't resolved across the producer → consumer boundary.
+Nested or effective group membership isn't resolved across the producer → consumer boundary. Cases of mis-matched object IDs will result in an error message like "The SELECT permission or external policy action 'Microsoft.Sql/Sqlservers/Databases/Schemas/Tables/Rows/Select' was denied on the object '{tableName}', database '{itemName}', schema '{schemaName}'.
 
 - If the OneLake security role references a **user** (for example, user@contoso.com), that same user must be directly granted Fabric Read on the consumer lakehouse.
 - If the OneLake security role references a **group**, that same group must be directly granted Fabric Read on the consumer lakehouse. Granting the permission to an individual member of the group doesn't satisfy the match.
@@ -81,7 +81,7 @@ Use this procedure when the same data returns different results between engines.
 
 ### Step 1: Identify the access mode of the SQL analytics endpoint
 
-Open the SQL analytics endpoint and navigate to the **Security** tab. Select **View data access mode (preview)** to identify whether the access mode is delegated identity or user identity.
+Open the SQL analytics endpoint and go to the **Security** tab. Select **View data access mode** to identify whether the access mode is delegated identity or user identity.
 
 :::image type="content" source="./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/view-data-access-mode.png" alt-text="Screenshot that shows selecting 'View data access mode' in the 'Security' tab to check the access mode.":::
 
@@ -134,7 +134,7 @@ In delegated mode, shortcuts are blocked when the source table has any Row-Level
 If the source table has no OneLake security rules but the query still fails, verify that the item owner of the SQL analytics endpoint has sufficient OneLake access to read the source.
 
 - Check the owner of the lakehouse or SQL analytics endpoint.
-- Confirm that the owner has Fabric Read permission on both the source and destination artifacts.
+- Confirm that the owner has Fabric Read permission on both the source and destination items.
 - The owner can't be a service principal. If it is, reassign ownership to a user or group account.
 
    :::image type="content" source="./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/delegated-identity.png" alt-text="Screenshot that shows that an item is in delegated identity access mode and that the delegated identity is a user account.":::
@@ -212,7 +212,7 @@ If you can't wait for the token to expire, you can trigger a faster refresh by e
 
 **Q: A user is in a OneLake security role but gets "no permission on the artifact" errors. Why?**
 
-The user must have Fabric Read permission on the consumer artifact using the same Object ID that is referenced in the OneLake security role. Add the user (or group) directly to the lakehouse permissions. Nested group membership doesn't count.
+The user must have Fabric Read permission on the consumer item using the same Object ID that is referenced in the OneLake security role. Add the user (or group) directly to the lakehouse permissions. Nested group membership doesn't count.
 
 **Q: I added a user to a group that already has access. Why can't they query?**
 
@@ -260,7 +260,7 @@ No. In user identity mode, table access is governed entirely by OneLake security
 
 **Q: Can I write data through the SQL analytics endpoint in user identity mode?**
 
-No. Write operations aren't supported at the SQL analytics endpoint in user identity mode. All writes must go through the Lakehouse page in the Fabric portal and are governed by workspace roles.
+No. Write operations aren't supported at the SQL analytics endpoint in user identity mode. All writes must go through the lakehouse page in the Fabric portal and are governed by workspace roles.
 
 ### Shortcuts
 
@@ -280,7 +280,7 @@ Active queries might be automatically canceled if a shortcut configuration chang
 
 **Q: Data from a warehouse accessed through a OneLake shortcut ignores my SQL RLS/CLS policies. Why?**
 
-Warehouse SQL security constructs (RLS, CLS, OLS) are only enforced in the SQL execution context of the warehouse (TDS endpoint). When data is accessed through a OneLake shortcut, these SQL semantics aren't translated into OneLake security policies, so users accessing through the shortcut might see the full dataset.
+Warehouse SQL security constructs (RLS, CLS, OLS) are only enforced in the SQL execution context of the warehouse (TDS endpoint). When data is accessed through a shortcut in OneLake, these SQL semantics aren't translated into OneLake security policies, so users accessing through the shortcut might see the full semantic model.
 
 *Workaround:* Apply equivalent OneLake security rules at the source lakehouse, or restrict access to the shortcut consumer.
 
@@ -334,7 +334,7 @@ CLS maintains a strict allow list of columns. If an allowed column is renamed or
 
 **Q: My complex role with many RLS intersections fails to sync. Why?**
 
-Highly complex roles with numerous intersections and union semantics can exceed security sync's processing capacity and fail. A failed sync blocks metadata synchronization for the affected artifact.
+Highly complex roles with numerous intersections and union semantics can exceed security sync's processing capacity and fail. A failed sync blocks metadata synchronization for the affected item.
 
 *Workaround:* Simplify the role. Split a single complex role into multiple smaller roles with narrower scope. Reduce the number of overlapping or nested expressions.
 
@@ -362,6 +362,6 @@ No. When switching to user identity mode, existing SQL roles are deleted and can
 
 ## Related content
 
-- [OneLake security for SQL analytics endpoints (Preview)](./sql-analytics-endpoint-onelake-security.md)
+- [OneLake security for SQL analytics endpoints](./sql-analytics-endpoint-onelake-security.md)
 - [Best practices to secure data in OneLake](./best-practices-secure-data-in-onelake.md)
 - [OneLake security access control model](./data-access-control-model.md)

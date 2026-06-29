@@ -130,3 +130,4 @@ For more information on destination table management, see the DeltaFlow capabili
 - [Add Azure SQL Managed Instance CDC source](./add-source-azure-sql-managed-instance-change-data-capture.md)
 - [Add SQL Server on VM CDC source](./add-source-sql-server-change-data-capture.md)
 - [Add PostgreSQL Database CDC source](./add-source-postgresql-database-change-data-capture.md)
+- [Add Mirrored Database Change Feed source](./add-source-mirrored-database-change-feed.md)

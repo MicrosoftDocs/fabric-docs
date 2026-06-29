@@ -2,7 +2,7 @@
 title: Use SQL database as the Source Data Engine for Translytical Applications
 description: Learn how to use SQL database in translytical applications, which combine transactional data and aggregate data, for a single pane of business intelligence.
 ms.reviewer: pamela, imotiwala, antho
-ms.date: 04/20/2026
+ms.date: 06/16/2026
 ms.topic: solution-overview
 ai-usage: ai-assisted
 ---
@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 This article describes how to use SQL database in Microsoft Fabric as the operational backbone for translytical apps - apps that require both transactional and analytical access to the same data.
 
-The goal is to enable transactional workloads, operational APIs, and immediate analytical data in a single database, within the governed, secure **Microsoft Fabric** platform.
+The goal is to enable transactional workloads, operational APIs, and immediate analytical data in a single database, within the governed, secure **Microsoft Fabric** platform. With a SQL database as the foundation, you can automate end-user actions like updating records, adding annotations, or creating workflows that trigger actions in other systems. For more information, see [Understand translytical task flows in Power BI](/power-bi/create-reports/translytical-task-flow-overview).
 
 ## SQL analytics endpoint
 

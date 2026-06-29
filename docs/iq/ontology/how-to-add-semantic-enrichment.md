@@ -1,7 +1,7 @@
 ---
 title: Add Semantic Enrichment with Metadata
 description: Learn how to add metadata, descriptions, synonyms, and additional metadata key-value pairs to ontology objects to improve semantic accuracy and agent performance.
-ms.date: 6/1/2026
+ms.date: 6/25/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -16,7 +16,7 @@ Semantic enrichment helps AI agents and downstream systems better understand you
 
 * **Descriptions** that explain the purpose and meaning of entity types, properties, and relationship types
 * **Synonyms** that capture alternative names and terms for entity types
-* **Additional metadata** that add domain-specific metadata as key-value pairs
+* **Additional metadata** that captures domain-specific attributes as key-value pairs
 
 This metadata improves agent answer correctness, especially for prompts that depend on contextual information like units of measurement, sensitivity levels, or business definitions. For an example of data agent responses before and after semantic enrichment, see the [Example with data agent](#example-with-data-agent) section.
 
@@ -41,7 +41,7 @@ Semantic enrichment uses the following ontology (preview) concepts. For definiti
 
 Entity types support descriptions, synonyms, and additional metadata key-value pairs. Follow these steps to add semantic enrichment to entity types.
 
-1. In the **Explorer** pane of the Home configuration canvas, select the entity type that you want to enrich. Select **View Entity Type details** from the top ribbon.
+1. In the **Explorer** pane of the Home configuration canvas, select the entity type to enrich. Select **View Entity Type details** from the top ribbon.
 
 1. In the **Metadata** section, select the **Edit** button to open the metadata configuration.
 
@@ -51,14 +51,14 @@ Entity types support descriptions, synonyms, and additional metadata key-value p
 
 1. To add **Synonyms**, enter alternative names or terms that refer to the same entity type. Synonyms improve discoverability and help agents understand different ways users might reference the entity.
 
-1. To add additional metadata, enter key-value pairs under **Semantic properties**. Additional metadata lets you add key-value pairs to represent domain-specific metadata, like:
+1. To add **Additional metadata**, enter key-value pairs for domain-specific metadata, such as:
     * Units of measurement (example: `Unit of measurement: cm`)
     * Sensitivity classification (example: `Sensitivity: Confidential`)
     * Business owner information (example: `Business owner: Elaheh Mansouri`)
     * Data quality indicators (example: `Data quality: Incomplete`)
 
     > [!IMPORTANT]
-    > Additional metadata keys must be unique within each entity type. You can't use duplicate key names on the same entity type.
+    > Additional metadata keys must be unique within each entity type. You can't use duplicate key names.
 
 1. Select **Update** to apply your metadata changes.
 
@@ -76,7 +76,7 @@ Properties support descriptions and additional metadata key-value pairs, but not
 
 1. Add a **Description** that explains what the property represents and how to interpret it.
 
-1. To add additional metadata, enter key-value pairs under **Semantic properties**.
+1. To add **Additional metadata**, enter key-value pairs.
 
     > [!IMPORTANT]
     > Additional metadata keys must be unique within each property. You can't use duplicate key names on the same property.
@@ -89,14 +89,14 @@ Relationship types support descriptions and additional metadata key-value pairs,
 
 1. From the **Configure** tab of the entity type details, open the [relationship type configuration](how-to-create-relationship-types.md#create-relationship-type).
 
-1. In the **Metadata** section, the **Edit** button to open the metadata configuration.
+1. In the **Metadata** section, select **Edit** to open the metadata configuration.
 
 1. Add a **Description** that explains the nature of the relationship and when it applies.
 
-1. To add additional metadata, enter key-value pairs under **Semantic properties**.
+1. To add **Additional metadata**, enter key-value pairs.
 
     > [!IMPORTANT]
-    > Additional metadata keys must be unique within each relationship type. You can't use duplicate key names on the same relationship type.
+    > Additional metadata keys must be unique within each relationship type. You can't reuse the same key name.
 
 1. Select **Update** to apply your metadata changes.
 
@@ -110,21 +110,21 @@ You can modify or remove metadata attributes from entity types, properties, and 
 
     :::image type="content" source="media/how-to-add-semantic-enrichment/edit-metadata.png" alt-text="Screenshot of editing metadata attributes." lightbox="media/how-to-add-semantic-enrichment/edit-metadata.png":::
 
-1. Make updates to the metadata as needed and select **Update**.
+1. Edit the metadata as needed and select **Update**.
 
 ## Example with data agent
 
-This section shows how semantic enrichment can improve the performance of a data agent.
+This section shows how semantic enrichment improves a data agent's performance.
 
 Consider the Lakeshore Retail example scenario used in the [Ontology (preview) tutorial](tutorial-0-introduction.md). Lakeshore Retail is a retail ice cream seller that keeps data on sales and freezer streaming data. The tutorial ontology contains entity types *Store*, *Freezer*, *Products*, and *SaleEvent*. [Part 4 of the tutorial](tutorial-4-create-data-agent.md) shows how to create a data agent that uses this ontology as a data source.
 
-With the basic set of information, the data agent is unable to answer the following question:
+With the basic set of information, the data agent can't answer the following question:
 
 *Which ice cream shops performed best this month and sold the most frozen desserts?*
 
 :::image type="content" source="media/how-to-add-semantic-enrichment/data-agent-before.png" alt-text="Screenshot of data agent responses before semantic enrichment. The data agent can't retrieve the requested information." lightbox="media/how-to-add-semantic-enrichment/data-agent-before.png":::
 
-To help the agent better understand and process the data, semantic enrichment lets you add details to the following parts of the ontology:
+To help the agent better understand and process the data, use semantic enrichment to add the following details to the ontology:
 
 * **Products (entity type)**
     - Synonyms: `frozen desserts`, `ice cream items`, `desserts`, `menu items`, `treats`, and `products sold`.
@@ -138,15 +138,19 @@ To help the agent better understand and process the data, semantic enrichment le
 
     :::image type="content" source="media/how-to-add-semantic-enrichment/example-category.png" alt-text="Screenshot of adding the listed semantic enrichment details to the Category property." lightbox="media/how-to-add-semantic-enrichment/example-category.png":::
 
-* **Sold (relationship)**:
-    - Description: `Represents products purchased by customers at a retail store location`.
-    - Additional metadata key value pairs: `AgentUsageHint: Use to connect products with store sales performance`, `ExampleQuestion: Which stores sold the most frozen desserts?`.
-
-    :::image type="content" source="media/how-to-add-semantic-enrichment/example-sold.png" alt-text="Screenshot of adding the listed semantic enrichment details to the Sold relationship." lightbox="media/how-to-add-semantic-enrichment/example-sold.png":::
-
-After adding these semantic enrichment details, the data agent is better able to relate the terms in the question to data in the ontology, enabling it to answer the question.
+After you add these semantic enrichment details, the data agent better relates the terms in the question to data in the ontology and can answer the question.
 
 :::image type="content" source="media/how-to-add-semantic-enrichment/data-agent-after.png" alt-text="Screenshot of data agent responses after semantic enrichment. The data agent's response is improved." lightbox="media/how-to-add-semantic-enrichment/data-agent-after.png":::
+
+### Data agent limitations
+
+Semantic enrichment improves schema understanding but doesn't currently influence all stages of the Fabric data agent pipeline. When you use a data agent with ontology semantic enrichment, keep the following limitations in mind:
+
+* Entity and property descriptions, synonyms, and custom attributes can help the data agent understand ontology concepts during schema exploration and reasoning.
+* Ontology query generation doesn't directly use the metadata. Any benefit comes from the data agent interpreting the ontology schema before query generation.
+
+> [!NOTE]
+> Semantic enrichment helps AI experiences understand ontology metadata and business meaning. It doesn't currently modify the ontology query generation process itself, and publicly available data agent experiences don't currently use relationship-level enrichment.
 
 ## Best practices for semantic enrichment
 
@@ -154,42 +158,40 @@ Follow these best practices to maximize the value of semantic enrichment:
 
 ### Write clear descriptions
 
-* Start descriptions with what the entity type, property, or relationship represents
-* Include the business context and purpose
-* Mention key characteristics or constraints
-* Keep descriptions concise but informative (one to three sentences)
+* Start descriptions with what the entity type, property, or relationship represents.
+* Include the business context and purpose.
+* Mention key characteristics or constraints.
+* Keep descriptions concise but informative (one to three sentences).
 
 ### Use effective synonyms
 
-* Include common abbreviations and acronyms
-* Add industry-specific terminology
-* Consider regional variations in terminology
-* Include both formal and informal terms that users might search for
+* Include common abbreviations and acronyms.
+* Add industry-specific terminology.
+* Consider regional variations in terminology.
+* Include both formal and informal terms that users might search for.
 
 ### Design meaningful key-value pairs for additional metadata
 
-* Use consistent key naming conventions across your ontology
-* Choose keys that are self-explanatory (for example, `unit`, `sensitivity`, `owner`)
-* Document your key-value additional metadata standards for your team
-* Consider how agents and downstream systems consume the attributes
+* Use consistent key naming conventions across your ontology.
+* Document your key-value additional metadata standards for your team.
+* Consider how agents and downstream systems consume the attributes.
 
 ### Optimize for agent performance
 
-* Add unit information for numeric properties (for example, `unit: celsius`, `unit: USD`)
-* Include sensitivity classifications for properties containing personal or sensitive data
-* Provide context about valid ranges or formats
-* Use descriptions that explain relationships between entities
+* Add unit information for numeric properties, such as `unit: celsius` or `unit: USD`.
+* Include sensitivity classifications for properties that contain personal or sensitive data.
+* Provide context about valid ranges or formats.
+* Use descriptions that explain relationships between entities.
 
 ### Maintain metadata over time
 
-* Review and update descriptions when business logic changes
-* Add synonyms as new terminology emerges in your organization
-* Remove outdated additional metadata key-value pairs that are no longer relevant
-* Version your ontology to track metadata changes over time
+* Review and update descriptions when business logic changes.
+* Add synonyms as new terminology emerges in your organization.
+* Remove outdated additional metadata key-value pairs.
 
 ## Limitations and considerations
 
-* **Duplicate keys**: Keys for additional metadata must be unique within each entity type, property, or relationship type. If you add duplicate keys, you get an error.
+* **Duplicate keys**: Each entity type, property, and relationship type must have unique keys for additional metadata. If you add duplicate keys, you get an error.
 * **Synonyms**: Only entity types support synonyms. Properties and relationship types don't support synonyms.
 
 ## Related content
