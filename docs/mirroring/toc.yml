@@ -252,8 +252,12 @@ items:
     href: explore-onelake-shortcut.md
 - name: Extended capabilities
   items:
-  - name: Extended capabilities
+  - name: Extended capabilities overview
     href: extended-capabilities.md
+  - name: Delta change data feed (Preview)
+    href: extended-capabilities-delta-change-data-feed.md
+  - name: Mirroring views (Preview)
+    href: extended-capabilities-views.md
   - name: Pricing for extended capabilities
     href: extended-capabilities-billing.md
 - name: Mirroring REST API
