@@ -20,6 +20,7 @@ Each connector has its own troubleshooting guide with specific issues, causes, a
 - [Azure Cosmos DB](connector-troubleshoot-azure-cosmos-db.md)
 - [DB2](connector-troubleshoot-db2.md)
 - [Data Warehouse](connector-troubleshoot-data-warehouse.md)
+- [Databricks and Azure Databricks](connector-troubleshoot-databricks.md)
 - [Azure Data Explorer](connector-troubleshoot-azure-data-explorer.md)
 - [Azure Data Lake Storage](connector-troubleshoot-azure-data-lake-storage.md)
 - [Azure Database for PostgreSQL](connector-troubleshoot-azure-database-for-postgresql.md)

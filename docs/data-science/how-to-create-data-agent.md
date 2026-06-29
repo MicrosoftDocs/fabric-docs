@@ -30,8 +30,6 @@ You don't need to create or supply an Azure OpenAI key or an access token to use
 
 ## Security and governance
 
-Fabric data agents honor Microsoft Purview governance policies. When Purview policies restrict access to a data source (for example, through access controls or sensitivity labels), the agent respects those restrictions when processing user queries.
-
 Workspace outbound access protection applies to data agent outbound requests and is enforced at the workspace level. When enabled, outbound requests from data agents are subject to the workspace's data connection rules, and administrators control which external endpoints agents are permitted to reach. For more information, see [Workspace outbound access protection for Data Agent](../security/workspace-outbound-access-protection-data-agent.md) (preview).
 
 When workspace outbound access protection is enabled, data agent capabilities that depend on calling supported data sources outside the workspace require those connections to be allowed by administrators through data connection rules. If a required connection isn't on the allow list, queries that depend on it might fail to execute. The Microsoft-managed Azure OpenAI service that the data agent uses isn't subject to workspace outbound access protection and remains available.

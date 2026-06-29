@@ -212,6 +212,9 @@ The access mode determines how data access is authenticated and enforced when qu
 
   * **Schema validation**: Renaming columns without updating security policies triggers UI errors stating that the column "does not exist" until the configuration is synchronized.
 
+  > [!NOTE]
+  > In the SQL analytics endpoint, OneLake security is enforced for data access, while schema metadata continues to follow SQL engine behavior. Users might see columns in Object Explorer or `sys.columns` even when Column-Level Security prevents them from reading those columns. This behavior is expected and by design.
+
 * **Role propagation and synchronization (SLA)**:
 
   * **OneLake security sync**: When a OneLake security role changes in user identity mode, the update is not immediate. While usually fast, it can take up to **5 minutes** to synchronize with the SQL analytics endpoint.
