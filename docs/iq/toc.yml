@@ -242,15 +242,19 @@ items:
     - name: How-tos
       items:
         - name: Create a table app
-          href: plan/powertable-how-to-create-table-app.md
-        - name: Connect to a semantic model
-          href: plan/powertable-how-to-connect-semantic-model.md
-        - name: Connect to a database
-          href: plan/powertable-how-to-connect-existing-database.md
-        - name: Enter table data manually
-          href: plan/powertable-how-to-enter-table-data-manually.md
+          items:
+            - name: Import Excel or CSV file
+              href: plan/powertable-how-to-create-table-app.md
+            - name: Connect to a semantic model
+              href: plan/powertable-how-to-connect-semantic-model.md
+            - name: Connect to a database
+              href: plan/powertable-how-to-connect-existing-database.md
+            - name: Enter table data manually
+              href: plan/powertable-how-to-enter-table-data-manually.md
         - name: Update table data
           href: plan/powertable-how-to-bulk-edit-data.md
+        - name: Insert and manage rows
+          href: plan/powertable-how-to-insert-rows-import-data.md
         - name: Set up access control
           href: plan/powertable-how-to-set-up-access-control.md  
         - name: Generate forms

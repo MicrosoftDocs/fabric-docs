@@ -64,7 +64,7 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Azure Data Explorer Database (preview)                    | Source        | YES                       | - When streaming was last stopped           |
 | Azure Event Hubs                                          | Source        | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
 | Azure Event Grid Namespace                       | Source        | NO                        |                                             |
-| Azure Service Bus (preview)                               | Source        | YES                       | - When streaming was last stopped           |
+| Azure Service Bus                                         | Source        | YES                       | - When streaming was last stopped           |
 | Azure IoT Hub                                             | Source        | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
 | Sample Data                                               | Source        | YES                       | - Now                                       |
 | Real-time weather                                | Source        | YES                       | - When streaming was last stopped           |
@@ -80,7 +80,7 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Google Cloud Pub/Sub                                      | Source        | YES                       | - When streaming was last stopped           |
 | Amazon Kinesis Data Streams                               | Source        | YES                       | - When streaming was last stopped           |
 | Confluent Kafka                                           | Source        | YES                       | - When streaming was last stopped           |
-| Apache Kafka (preview)                                            | Source        | YES                       | - When streaming was last stopped           |
+| Apache Kafka                                              | Source        | YES                       | - When streaming was last stopped           |
 | Amazon MSK Kafka                                          | Source        | YES                       | - When streaming was last stopped           |
 | Custom endpoint (i.e., Custom App in standard capability) | Source        | NO                        |                                             |
 | Fabric Workspace events source                            | Source        | NO                        |                                             |

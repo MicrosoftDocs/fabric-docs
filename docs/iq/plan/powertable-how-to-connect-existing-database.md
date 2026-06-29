@@ -6,7 +6,7 @@ ms.topic: how-to
 #customer intent: As a user, I want step-by-step instructions to connect PowerTable sheet to an existing database table.
 ---
 
-# Connect to a database
+# Create table app by connecting to a database table
 
 Connect your existing database tables to PowerTable to manage both transactional and master data in one place. After establishing the connection, you can edit data, insert rows and columns, set up workflows, and write back changes directly to the connected database.
 
