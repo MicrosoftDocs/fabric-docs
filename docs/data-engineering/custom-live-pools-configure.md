@@ -34,10 +34,10 @@ First, create a custom Spark pool. You enable live pool compute on this pool in 
 1. Expand **Data Engineering/Science** and select **Spark settings**.
 1. Select the **Pool** tab.
 1. From the **Default pool for workspace** dropdown, select **New Pool**.
-1. Enter a name for the pool. This is a unique identifier for the pool (for example, "dev-team-pool" or "prod-daily-analytics")
+1. Enter a name for the pool. This name is a unique identifier for the pool, such as `dev-team-pool` or `prod-daily-analytics`.
 1. Select a **Node family** and **Node size** for your workload.
 1. Select the **Autoscale** checkbox to enable autoscaling for the pool.
-1. Set the minimum nodes to at least **2**.
+
 
 ## Configure a live pool
 
