@@ -1,15 +1,15 @@
 ---
 title: Add Apache Kafka source to a Fabric eventstream
-description: Learn how to add an Apache Kafka topic as a source to an eventstream. This feature is currently in preview.
+description: Learn how to add an Apache Kafka topic as a source to an eventstream.
 ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.date: 03/04/2026
+ms.date: 06/01/2026
 ms.search.form: Source and Destination
 ms.custom: references_regions
 #customer intent: I want to learn how to add an Apache Kafka topic as an event source to a Fabric eventstream. 
 ---
 
-# Add Apache Kafka source to a Fabric eventstream (preview)
+# Add Apache Kafka source to a Fabric eventstream
 This article shows you how to add Apache Kafka source to a Fabric eventstream. 
 
 Apache Kafka is an open-source, distributed platform for building scalable, real-time data systems. By integrating Apache Kafka as a source within your eventstream, you can seamlessly bring real-time events from your Apache Kafka and process them before routing to multiple destinations within Fabric.
