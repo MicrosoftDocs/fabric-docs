@@ -4,7 +4,7 @@ description: Learn how to enable service principal authentication to permit use 
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.date: 03/03/2026
+ms.date: 06/26/2026
 
 #customer intent: As a developer, learn how to enable service principal authentication to permit use of read-only and update admin APIs.
 ---
@@ -13,9 +13,9 @@ ms.date: 03/03/2026
 
 This article shows how to enable service principal authentication for [Power BI *read-only* admin APIs](#supported-power-bi-admin-apis-for-read-only) and [Microsoft Fabric *update* admin APIs](#supported-fabric-admin-apis-for-updates).
 
-Service principal is an authentication method that can be used to let a Microsoft Entra application access Microsoft Fabric content and APIs.
+Service principal is an authentication method that you can use to let a Microsoft Entra application access Microsoft Fabric content and APIs. When you create a Microsoft Entra app, the process creates a [service principal object](/entra/identity-platform/app-objects-and-service-principals#service-principal-object). The service principal object, also known simply as the service principal, enables Microsoft Entra ID to authenticate your app. Once authenticated, the app can access Microsoft Entra tenant resources.
 
-When you create a Microsoft Entra app, a [service principal object](/entra/identity-platform/app-objects-and-service-principals#service-principal-object) is created. The service principal object, also known simply as the service principal, allows Microsoft Entra ID to authenticate your app. Once authenticated, the app can access Microsoft Entra tenant resources.
+An example is the app that runs metadata scanning and Fabric data risk assessments in [Microsoft Purview Data Security Posture Management (DSPM) for AI](/purview/dspm-for-ai-considerations#prerequisites-for-fabric-data-risk-assessments). This app uses service principal authentication to access Fabric admin APIs. You configure this app to authenticate with federated credentials (recommended) or a client secret.
 
 ## Enable service principal authentication
 
@@ -41,6 +41,9 @@ To enable service principal authentication for Fabric APIs, follow these steps:
 
         * **Service principals can access read-only admin APIs** (see [supported Power BI admin APIs](#supported-power-bi-admin-apis-for-read-only))
         * **Service principals can access admin APIs used for updates** (see [supported Fabric admin APIs](#supported-fabric-admin-apis-for-updates))
+
+         > [!NOTE]
+         > These settings are required to run Fabric data risk assessments in Microsoft Purview DSPM for AI. For more information, see [DSPM for AI considerations](/purview/dspm-for-ai-considerations#prerequisites-for-fabric-data-risk-assessments).
 
 1. Set the toggle to **Enabled**.
 
@@ -117,13 +120,14 @@ To find out if a specific Fabric admin API supports service principal authentica
 
 ## Considerations and limitations
 
-* The service principal can make rest API calls, but you can't open Fabric with service principal credentials.
+* The service principal can make REST API calls, but you can't open Fabric with service principal credentials.
 
 * Fabric admin rights are required to enable service principal in the Admin API settings in the Fabric admin portal.
 
 ## Related content
 
 * [Fabric REST API reference](/rest/api/fabric/articles/using-fabric-apis)
+* [DSPM for AI considerations](/purview/dspm-for-ai-considerations#prerequisites-for-fabric-data-risk-assessments)
 * [Metadata scanning overview](../governance/metadata-scanning-overview.md)
 * [Set up metadata scanning](./metadata-scanning-setup.md)
 * [Run metadata scanning](../governance/metadata-scanning-run.md)
