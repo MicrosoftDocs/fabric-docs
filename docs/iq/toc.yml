@@ -264,7 +264,11 @@ items:
         - name: Review changes in approval workflow
           href: plan/powertable-how-to-review-approval-workflow.md 
         - name: Configure slowly changing dimensions
-          href: plan/powertable-how-to-create-slowly-changing-dimension.md     
+          href: plan/powertable-how-to-create-slowly-changing-dimension.md
+    - name: Reference
+      items:
+        - name: Supported column and input types
+          href: plan/powertable-reference-supported-column-input-types.md
   - name: Intelligence sheets
     items:
     - name: Intelligence sheets overview
