@@ -12,7 +12,9 @@ ms.date: 08/8/2025
 
 This article shows how to use the Python client SDK to add a Fabric data agent to web apps and other clients by using interactive browser authentication. You sign in through a browser with your Microsoft Entra ID credentials, and the data agent runs with your permissions. By adding the data agent to external apps, you can build custom interfaces, embed insights in existing workflows, automate reports, and let users run natural language data queries. This approach gives you data agent capabilities while you keep full control of the user experience and app architecture.
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+> [!IMPORTANT]
+> The code in this document and the [Fabric Data Agent External Client repository](https://github.com/microsoft/fabric_data_agent_client/tree/main) use the OpenAI Assistants API (`beta.assistants`, `beta.threads`, `beta.threads.runs`), which [OpenAI deprecated with a shutdown date of August 26, 2026](https://platform.openai.com/docs/assistants/migration). The current code continues to work until **August 26, 2026** but plan for migrating to the [MCP endpoint](data-agent-mcp-server.md) before this date.
+
 
 > [!IMPORTANT]
 > When you use Python client SDK to add a Fabric data agent to web apps or other clients, responses returned by Fabric data agents might be sent outside of Fabric's compliance boundary or geographic region. The applicable web app or client's terms and data handling policies govern how these responses are processed and stored.
@@ -21,8 +23,6 @@ This article shows how to use the Python client SDK to add a Fabric data agent t
 
 ## Set up your environment in VS Code
 
-> [!IMPORTANT]
-> The code in this document and the [Fabric Data Agent External Client repository](https://github.com/microsoft/fabric_data_agent_client/tree/main) use the OpenAI Assistants API (`beta.assistants`, `beta.threads`, `beta.threads.runs`), which [OpenAI deprecated with a shutdown date of August 26, 2026](https://platform.openai.com/docs/assistants/migration). The current code continues to work until **August 26, 2026** but plan for migrating to the [MCP endpoint](data-agent-mcp-server.md) before this date.
 
 1. Clone or download the [Fabric Data Agent External Client repository](https://github.com/microsoft/fabric_data_agent_client/tree/main). Then open it in VS Code and run the sample client.
 
