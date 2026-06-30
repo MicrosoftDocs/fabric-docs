@@ -15,7 +15,7 @@ This article shows how to enable service principal authentication for [Power BI 
 
 Service principal is an authentication method that can be used to let a Microsoft Entra application access Microsoft Fabric content and APIs. When you create a Microsoft Entra app, a [service principal object](/entra/identity-platform/app-objects-and-service-principals#service-principal-object) is created. The service principal object, also known simply as the service principal, allows Microsoft Entra ID to authenticate your app. Once authenticated, the app can access Microsoft Entra tenant resources.
 
-An example of a Microsoft Entra app is a web application that uses service principal authentication to access Microsoft Fabric admin APIs. The app can call the APIs without a signed-in user, and it can be used to run metadata scanning and Fabric data risk assessments in [Microsoft Purview Data Security Posture Management (DSPM) for AI](/purview/dspm-for-ai-considerations#prerequisites-for-fabric-data-risk-assessments). For DSPM for AI, you can authenticate the app with federated credentials (recommended) or a client secret.
+An example is a web application that runs metadata scanning and Fabric data risk assessments in [Microsoft Purview Data Security Posture Management (DSPM) for AI](/purview/dspm-for-ai-considerations#prerequisites-for-fabric-data-risk-assessments). This application uses service principal authentication to access Microsoft Fabric admin APIs. For DSPM for AI, configure this app to authenticate with federated credentials (recommended) or a client secret.
 
 ## Enable service principal authentication
 
