@@ -89,7 +89,7 @@ Skills for Fabric work with the following AI coding tools:
 
 ## Agent specializations
 
-Skills for Fabric also includes experimental *agent specializations* focused teammates that combine prompts and tool selections for specific workflows. Examples include agents focused on data engineering (`FabricDataEngineer`), administration (`FabricAdmin`), and app development (`FabricAppDev`) and more.
+Skills for Fabric also includes experimental *agent specializations* focused teammates that combine prompts and tool selections for specific workflows. Examples include agents focused on data engineering (`FabricDataEngineer`), administration (`FabricAdmin`), app development (`FabricAppDev`), and more.
 
 To use an agent specialization in GitHub Copilot CLI, reference it in your prompt:
 
