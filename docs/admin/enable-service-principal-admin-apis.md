@@ -15,7 +15,7 @@ This article shows how to enable service principal authentication for [Power BI 
 
 Service principal is an authentication method that can be used to let a Microsoft Entra application access Microsoft Fabric content and APIs. When you create a Microsoft Entra app, a [service principal object](/entra/identity-platform/app-objects-and-service-principals#service-principal-object) is created. The service principal object, also known simply as the service principal, allows Microsoft Entra ID to authenticate your app. Once authenticated, the app can access Microsoft Entra tenant resources.
 
-An example is a web application that runs metadata scanning and Fabric data risk assessments in [Microsoft Purview Data Security Posture Management (DSPM) for AI](/purview/dspm-for-ai-considerations#prerequisites-for-fabric-data-risk-assessments). This application uses service principal authentication to access Microsoft Fabric admin APIs. For DSPM for AI, configure this app to authenticate with federated credentials (recommended) or a client secret.
+An example is a web application that runs metadata scanning and Fabric data risk assessments in [Microsoft Purview Data Security Posture Management (DSPM) for AI](/purview/dspm-for-ai-considerations#prerequisites-for-fabric-data-risk-assessments). This application uses service principal authentication to access Microsoft Fabric admin APIs. You configure this app to authenticate with federated credentials (recommended) or a client secret.
 
 ## Enable service principal authentication
 
@@ -43,7 +43,7 @@ To enable service principal authentication for Fabric APIs, follow these steps:
         * **Service principals can access admin APIs used for updates** (see [supported Fabric admin APIs](#supported-fabric-admin-apis-for-updates))
 
          > [!NOTE]
-         > These settings are required to run Fabric data risk assessments in Microsoft Purview Data Security Posture Management (DSPM) for AI. For more information, see [DSPM for AI considerations](/purview/dspm-for-ai-considerations#prerequisites-for-fabric-data-risk-assessments).
+         > These settings are required to run Fabric data risk assessments in Microsoft Purview DSPM for AI. For more information, see [DSPM for AI considerations](/purview/dspm-for-ai-considerations#prerequisites-for-fabric-data-risk-assessments).
 
 1. Set the toggle to **Enabled**.
 
@@ -115,8 +115,6 @@ An app using service principal authentication that calls read-only admin APIs **
 ## Supported Fabric admin APIs for updates
 
 The **Service principals can access admin APIs used for updates** setting applies to Fabric admin APIs, such as the [Workspaces - Restore Workspace API](/rest/api/fabric/admin/workspaces/restore-workspace?tabs=HTTP). 
-
-For DSPM for AI Fabric data risk assessments, you must enable this setting.
 
 To find out if a specific Fabric admin API supports service principal authentication, check the API's documentation in the [Fabric REST API reference](/rest/api/fabric/articles/using-fabric-apis). Look for the "Microsoft Entra supported identities" section, which indicates whether service principal authentication is supported.
 
