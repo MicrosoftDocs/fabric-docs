@@ -1,7 +1,7 @@
 ---
 title: Fabric Job Events Source in Eventstream
 description: Fabric job events let you capture and route job activity in real time. Learn how to add a Fabric job event source to an eventstream and start streaming.
-ms.reviewer: robece
+ms.reviewer: xujiang1
 ms.topic: how-to
 ms.date: 04/02/2026
 author: spelluru
