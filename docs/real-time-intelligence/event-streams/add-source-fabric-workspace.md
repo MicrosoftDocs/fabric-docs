@@ -1,7 +1,7 @@
 ---
 title: Add Fabric workspace item event source to an eventstream
 description: Learn how to add Fabric workspace item event source to an eventstream. This feature is currently in preview.
-ms.reviewer: zhenxilin
+ms.reviewer: xujiang1
 ms.topic: how-to
 ms.date: 03/18/2025
 ms.search.form: Source and Destination

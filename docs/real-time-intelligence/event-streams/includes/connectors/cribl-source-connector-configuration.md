@@ -3,7 +3,7 @@ title: Cribl connector for Fabric event streams
 description: This file has the common content for configuring a Cribl connector for Fabric event streams and Real-Time hub. 
 ms.reviewer: zhenxilin
 ms.topic: include
-ms.date: 04/06/2026
+ms.date: 06/22/2026
 author: spelluru
 ms.author: spelluru
 ms.service: fabric
@@ -72,9 +72,9 @@ ms.subservice: rti-eventstream
 
    ### [PLAIN](#tab/plain)
 
-   - In the Eventstream Cribl source's details pane, under **SASL mechanism**, select the **Plain** tab. Then copy the **SASL JASS password-primary** value into the **SASL JASS password** field on the Authentication page.
+   - In the Eventstream Cribl source's details pane, under **SASL mechanism**, select the **Plain** tab. Then copy the **SASL JAAS password-primary** value into the **SASL JAAS password** field on the Authentication page.
 
-      :::image type="content" source="media/cribl-source-connector/configure-cribl-jass-password.png" alt-text="Screenshot that shows how to get JASS password in eventstream." lightbox="media/cribl-source-connector/configure-cribl-jass-password.png":::
+      :::image type="content" source="media/cribl-source-connector/configure-source-authentication-password.png" alt-text="Screenshot that shows how to get authentication password in eventstream." lightbox="media/cribl-source-connector/configure-source-authentication-password.png":::
 
 1. Select **Save**, and use the Cribl QuickConnect to connect to your Cribl source in Cribl service portal, and then **Commit & Deploy**.
 1. After you complete these steps, you can preview the data in your eventstream that is from your Cribl.
