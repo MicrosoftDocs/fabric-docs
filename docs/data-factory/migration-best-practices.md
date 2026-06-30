@@ -3,16 +3,14 @@ title: Migration Best Practices for Azure Data Factory to Fabric Data Factory
 description: Discover best practices for ADF-to-Fabric migrations, including inventorying assets, assessing feature parity, and choosing the right migration path.
 #customer intent: As an Azure Data Factory customer I want to explore best practices for migrating to Fabric Data Factory, so I can improve my data integration strategy and ensure a smooth and efficient transition.
 ms.reviewer: makromer
-ms.date: 09/22/2025
+ms.date: 06/11/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 ---
 
 # Migration best practices for Azure Data Factory to Fabric Data Factory
 
-Microsoft Fabric unifies Microsoft’s analytics tools into a single SaaS platform, offering robust capabilities for workflow orchestration, data movement, replication, and transformation at scale. Fabric Data Factory builds on Azure Data Factory (ADF), making it an ideal choice for modernizing data integration solutions.
-
-This guide explores migration strategies, considerations, and approaches to help you upgrade from Azure Data Factory to Fabric Data Factory.
+This article provides implementation-level best practices for each component of an Azure Data Factory (ADF) to Fabric Data Factory migration: connections, integration runtimes, activities, dataflows, global parameters, and tooling. For high-level migration planning, including choosing a migration path and prioritizing pipelines, see [Plan your migration from Azure Data Factory to Fabric](migrate-planning-azure-data-factory.md).
 
 ## Considerations before migrating
 
@@ -24,13 +22,13 @@ Before migrating, evaluate what to reuse, translate, or redesign. Follow these s
 1. Compare ADF features with their Fabric counterparts, noting any gaps like SSIS or data flows.
 1. Define nonfunctional targets, such as SLAs, throughput, cost limits, and observability.
 1. Build a test scenario with sample datasets and expected outputs to objectively compare ADF and Fabric runs.
-1. Plan for secrets rotation, naming conventions, and workspace taxonomy so your migration improves—not just reproduces—your current data integration strategy.
+1. Plan for secrets rotation, naming conventions, and workspace taxonomy so your migration improves - not just reproduces - your current data integration strategy.
 
 A phased approach with side-by-side validation and rollback plans minimizes risk while enabling faster execution, centralized monitoring, and deeper integration with Microsoft Fabric.
 
 For large migrations, consider working with certified Microsoft partners or your Microsoft account team for guidance.
 
-## Connections, linked services, and datasets
+## Best practices for migrating ADF linked services and datasets to Fabric connections
 
 In Azure Data Factory (ADF), linked services and datasets define connections and data structures. In Fabric, these map to **connections** and **activity settings**, with a stronger focus on workspace-level reuse and managed identity. Here’s how to adapt your ADF assets:
 
@@ -71,7 +69,7 @@ When migrating:
 - Recreate SHIRs as OPDGs.
 - Replace VNet-enabled Azure IRs with Virtual Network Data Gateways.
 
-## Pipeline activity differences
+## Best practices for migrating ADF pipeline activities to Fabric
 
 All core activities in Azure Data Factory (ADF), such as Copy, Lookup, Stored Procedure/SQL Script, Web, and Control flow, have direct equivalents in Fabric. However, there are some differences in properties, expression syntax, and limits. When migrating, review the following:
 
@@ -124,7 +122,7 @@ These solutions are especially helpful if you have:
 
 Partner tools standardize mapping rules, generate conversion reports, and run parallel validation tests. This allows you to compare row counts, checksums, and performance between your old and new environments. Even if you don’t use a partner for the entire migration, their discovery and assessment modules can help you start your internal planning and reduce uncertainties.
 
-## Use AI tools
+## Use Copilot and AI tools to accelerate ADF-to-Fabric migration
 
 Large language models (LLMs) like Microsoft Copilot, ChatGPT, and Claude can speed up migration tasks. These tools are useful for:
 
@@ -138,7 +136,7 @@ You can also use them to create documentation, such as runbooks, data dictionari
 
 - Avoid pasting sensitive information into AI tools.
 - Validate all items in a development environment.
-- Use automated tests like row counts, schema comparisons, and business-rule checks—to catch subtle issues, such as type mismatches or locale-specific date parsing.
+- Use automated tests like row counts, schema comparisons, and business-rule checks to catch subtle issues, such as type mismatches or locale-specific date parsing.
 
 For more information, see [Use Copilot in Data Factory](copilot-fabric-data-factory.md) and [AI in Microsoft Fabric](../fundamentals/copilot-fabric-overview.md).
 

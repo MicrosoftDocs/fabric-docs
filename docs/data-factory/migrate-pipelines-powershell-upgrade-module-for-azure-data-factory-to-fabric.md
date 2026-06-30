@@ -4,14 +4,14 @@ description: Use the **Microsoft.FabricPipelineUpgrade** PowerShell module to up
 ms.reviewer: ssrinivasara
 ms.topic: how-to
 ms.custom: pipelines
-ms.date: 02/02/2026
+ms.date: 06/11/2026
 ai-usage: ai-assisted
 ---
 
 # Upgrade Azure Data Factory and Synapse pipelines to Microsoft Fabric using PowerShell
 
 > [!TIP]
-> For most migrations, we recommend the [built-in upgrade experience](/azure/data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory), which lets you assess pipeline readiness, review compatibility, and migrate supported pipelines to Fabric directly from the Azure Data Factory UX — without scripts or custom tooling. Use the PowerShell module described in this article for scripted, bulk, or CI/CD-driven migration scenarios.
+> For most migrations, use the [built-in upgrade experience](/azure/data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory). It lets you assess pipeline readiness, review compatibility, and migrate supported pipelines to Fabric directly from the Azure Data Factory UX - without scripts or custom tooling. Use the PowerShell module described in this article for scripted, bulk, or CI/CD-driven migration scenarios.
 
 You can migrate your Azure Data Factory (ADF) and Synapse pipelines to Microsoft Fabric using the **Microsoft.FabricPipelineUpgrade** PowerShell module. This guide outlines all the steps to perform the migration. For a detailed tutorial with screenshots, examples, and troubleshooting see [the PowerShell migration tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md).
 
@@ -27,11 +27,7 @@ To migrate your pipelines to Fabric using PowerShell, you:
 
 To get started, you must complete the following prerequisites:
 
-- **Tenant**: Your ADF and Fabric workspace must be in the same Microsoft Entra ID tenant.
-- **Fabric**: A tenant account with an active Fabric subscription - [Create an account for free](../fundamentals/fabric-trial.md).
-- **Fabric workspace recommendations** (Optional): We recommend using a new [Fabric workspace](../fundamentals/workspaces.md) in the same region as your ADF for upgrades for best performance.
-- **Permissions**: [Read access to the ADF workspace and items](/azure/data-factory/concepts-roles-permissions#scope-of-the-data-factory-contributor-role) you’ll migrate and [Contributor or higher rights in the Fabric workspace](../security/permission-model.md#workspace-roles) you’ll write to.
-- **Network and auth**: Make sure you can sign in to both Azure and Fabric from your machine (interactive or service principal).
+[!INCLUDE [migration-powershell-prerequisites](includes/migration-powershell-prerequisites.md)]
 
 > [!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=46afe4ed-f186-4937-b09f-326dd63bbf5b]
 
@@ -149,7 +145,7 @@ Run test executions with safe sample inputs and compare outputs to your source A
 
 Fix any gaps (for example, [activities that don’t have a direct Fabric equivalent yet](compare-fabric-data-factory-and-azure-data-factory.md)).
 
-## Step‑by‑step tutorial
+## Step-by-step tutorial
 
 For a detailed tutorial with screenshots, examples, and troubleshooting see [the PowerShell migration tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md).
 
