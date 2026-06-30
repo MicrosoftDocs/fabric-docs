@@ -22,13 +22,15 @@ Web apps registered in Microsoft Entra ID use an assigned service principal to a
 
 To learn more, see [Allow service principals to use read-only admin APIs](/power-bi/enterprise/read-only-apis-service-principal-authentication)
 
-For the complete Fabric configuration steps, including Microsoft Purview Data Security Posture Management (DSPM) for AI prerequisites, see [Enable service principal authentication for admin APIs](enable-service-principal-admin-apis.md).
+> [!NOTE]
+> This setting is also required to run Fabric data risk assessments in [Microsoft Purview Data Security Posture Management (DSPM) for AI](/purview/dspm-for-ai-considerations#prerequisites-for-fabric-data-risk-assessments).
 
 ## Service principals can access admin APIs used for updates
 
 Web apps registered in Microsoft Entra ID use an assigned service principal to access Fabric admin APIs used for updates without a signed-in user. To allow an app to use service principal authentication, include its service principal in an allowed security group.
 
-For the complete Fabric configuration steps, including Microsoft Purview Data Security Posture Management (DSPM) for AI prerequisites, see [Enable service principal authentication for admin APIs](enable-service-principal-admin-apis.md).
+> [!NOTE]
+> This setting is also required to run Fabric data risk assessments in [Microsoft Purview Data Security Posture Management (DSPM) for AI](/purview/dspm-for-ai-considerations#prerequisites-for-fabric-data-risk-assessments).
 
 ## Enhance admin APIs responses with detailed metadata
 
