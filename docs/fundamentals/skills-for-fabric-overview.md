@@ -89,7 +89,21 @@ Skills for Fabric work with the following AI coding tools:
 
 ## Agent specializations
 
-Skills for Fabric also includes experimental *agent specializations* &mdash; focused teammates that combine prompts and tool selections for specific workflows. Because the available agents evolve frequently, this article doesn't list them. Browse the [agents folder on GitHub](https://github.com/microsoft/skills-for-fabric/tree/main/agents) for the current set, and use the `/agent` command in GitHub Copilot CLI to display installed agents.
+Skills for Fabric also includes experimental *agent specializations* focused teammates that combine prompts and tool selections for specific workflows. Examples include agents focused on data engineering (`FabricDataEngineer`), administration (`FabricAdmin`), and app development (`FabricAppDev`) and more.
+
+To use an agent specialization in GitHub Copilot CLI, reference it in your prompt:
+
+```copilot-prompt
+Using FabricAdmin, document my Workspace FabricCLIDemo
+```
+
+You can also invoke an agent from GitHub Copilot CLI by prefixing your prompt with the agent name, for example:
+
+```bash
+@FabricDataEngineer help me design a medallion architecture for my lakehouse
+```
+
+The available agents evolve frequently. Browse the [agents folder on GitHub](https://github.com/microsoft/skills-for-fabric/tree/main/agents) for the current set, and use the `/agent` command in GitHub Copilot CLI to display installed agents.
 
 ## MCP server integration with Skills for Fabric
 
