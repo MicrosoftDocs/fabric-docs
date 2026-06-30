@@ -13,9 +13,9 @@ ms.date: 06/26/2026
 
 This article shows how to enable service principal authentication for [Power BI *read-only* admin APIs](#supported-power-bi-admin-apis-for-read-only) and [Microsoft Fabric *update* admin APIs](#supported-fabric-admin-apis-for-updates).
 
-Service principal is an authentication method that can be used to let a Microsoft Entra application access Microsoft Fabric content and APIs. When you create a Microsoft Entra app, a [service principal object](/entra/identity-platform/app-objects-and-service-principals#service-principal-object) is created. The service principal object, also known simply as the service principal, allows Microsoft Entra ID to authenticate your app. Once authenticated, the app can access Microsoft Entra tenant resources.
+Service principal is an authentication method that you can use to let a Microsoft Entra application access Microsoft Fabric content and APIs. When you create a Microsoft Entra app, the process creates a [service principal object](/entra/identity-platform/app-objects-and-service-principals#service-principal-object). The service principal object, also known simply as the service principal, enables Microsoft Entra ID to authenticate your app. Once authenticated, the app can access Microsoft Entra tenant resources.
 
-An example is a web application that runs metadata scanning and Fabric data risk assessments in [Microsoft Purview Data Security Posture Management (DSPM) for AI](/purview/dspm-for-ai-considerations#prerequisites-for-fabric-data-risk-assessments). This application uses service principal authentication to access Microsoft Fabric admin APIs. You configure this app to authenticate with federated credentials (recommended) or a client secret.
+An example is the app that runs metadata scanning and Fabric data risk assessments in [Microsoft Purview Data Security Posture Management (DSPM) for AI](/purview/dspm-for-ai-considerations#prerequisites-for-fabric-data-risk-assessments). This app uses service principal authentication to access Fabric admin APIs. You configure this app to authenticate with federated credentials (recommended) or a client secret.
 
 ## Enable service principal authentication
 
