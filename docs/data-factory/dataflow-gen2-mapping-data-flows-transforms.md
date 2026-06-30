@@ -2,7 +2,7 @@
 title: Mapping Data Flow Transforms in Dataflow Gen2 (Preview)
 description: Learn about mapping data flow transforms in Dataflow Gen2, which enable you to author, execute, and monitor Spark-based data transformations in Data Factory in Microsoft Fabric.
 ms.topic: concept-article
-ms.date: 06/23/2026
+ms.date: 06/30/2026
 ms.reviewer: krirukm
 ms.search.form: DataflowGen2
 ms.custom: dataflows
@@ -298,6 +298,7 @@ To view monitoring details:
 ## Related content
 
 - [What is dataflow gen2?](dataflows-gen2-overview.md)
+- [Upgrade Azure Data Factory mapping data flows pipelines to Fabric](dataflow-gen2-mapping-data-flows-transforms-upgrade.md)
 - [A guide to Fabric dataflows for Azure Data Factory Mapping Data Flow users](guide-to-dataflows-for-mapping-data-flow-users.md)
 - [Use a dataflow in a pipeline](tutorial-dataflows-gen2-pipeline-activity.md)
 - [Monitor your dataflows](dataflows-gen2-monitor.md)

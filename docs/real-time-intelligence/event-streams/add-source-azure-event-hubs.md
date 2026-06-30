@@ -2,7 +2,7 @@
 title: Add an Azure Event Hubs Source to an Eventstream
 description: Add an Azure Event Hubs source to your Microsoft Fabric eventstream with this how-to guide. Configure the connector, preview data, and publish in minutes.
 #customer intent: As a data engineer, I want to add an Azure Event Hubs source to my Microsoft Fabric eventstream so that I can ingest real-time event data into my streaming pipeline.
-ms.reviewer: zhenxilin
+ms.reviewer: xujiang1
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 04/01/2026

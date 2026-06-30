@@ -32,6 +32,8 @@ items:
         href: ../data-agent-routing.md
       - name: Add code interpreter
         href: ../data-agent-code-interpreter.md
+      - name: Configure a data agent with ai
+        href: ../data-agent-creator-agent-overview.md
       - name: Fabric data agent runtime
         href: ../data-agent-runtime.md
   - name: Evaluate a Fabric data agent

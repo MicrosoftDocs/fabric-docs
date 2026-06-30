@@ -1,10 +1,10 @@
 ---
 title: Add an Azure IoT Hub Source to an Eventstream
 description: Learn how to add an Azure IoT Hub source to an eventstream.
-ms.reviewer: zhenxilin
+ms.reviewer: xujiang1
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 12/05/2025
+ms.date: 6/29/2026
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: iot-hub-capabilities

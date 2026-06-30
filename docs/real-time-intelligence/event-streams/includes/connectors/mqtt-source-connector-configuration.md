@@ -20,7 +20,7 @@ ms.date: 04/23/2026
 
         > [!NOTE]
         > The MQTT source supports Transport Layer Security (TLS) or Secure Sockets Layer (SSL) secured MQTT connections between your MQTT broker and Eventstream.
-        > TLS or SSL connections are only supported if the server certificate is signed by a Certificate Authority (CA) included in the [trusted CA list](https://github.com/microsoft/fabric-event-streams/blob/main/References/certificate-authority-list/trusted-ca-list.txt).
+        > If the server certificate isn't signed by a Certificate Authority (CA) included in the [trusted CA list](https://github.com/microsoft/fabric-event-streams/blob/main/References/certificate-authority-list/trusted-ca-list.txt), you can provide a custom certificate under **TLS/mTLS settings**.
 
     1. **Connection name**: enter a name for the connection to the MQTT.
     1. Enter the **Username** and **Password** of your MQTT broker.
