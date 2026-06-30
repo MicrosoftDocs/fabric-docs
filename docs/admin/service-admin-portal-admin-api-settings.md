@@ -26,7 +26,7 @@ For the complete Fabric configuration steps, including Microsoft Purview Data Se
 
 ## Service principals can access admin APIs used for updates
 
-Web apps registered in Microsoft Entra ID use an assigned service principal to access Fabric admin APIs used for updates without a signed-in user. To allow an app to use service principal authentication, its service principal must be included in an allowed security group.
+Web apps registered in Microsoft Entra ID use an assigned service principal to access Fabric admin APIs used for updates without a signed-in user. To allow an app to use service principal authentication, include its service principal in an allowed security group.
 
 For the complete Fabric configuration steps, including Microsoft Purview Data Security Posture Management (DSPM) for AI prerequisites, see [Enable service principal authentication for admin APIs](enable-service-principal-admin-apis.md).
 

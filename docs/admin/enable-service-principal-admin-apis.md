@@ -120,7 +120,7 @@ An app using service principal authentication that calls read-only admin APIs **
 
 The **Service principals can access admin APIs used for updates** setting applies to Fabric admin APIs, such as the [Workspaces - Restore Workspace API](/rest/api/fabric/admin/workspaces/restore-workspace?tabs=HTTP). 
 
-For DSPM for AI Fabric data risk assessments, this setting must be enabled.
+For DSPM for AI Fabric data risk assessments, you must enable this setting.
 
 To find out if a specific Fabric admin API supports service principal authentication, check the API's documentation in the [Fabric REST API reference](/rest/api/fabric/articles/using-fabric-apis). Look for the "Microsoft Entra supported identities" section, which indicates whether service principal authentication is supported.
 
