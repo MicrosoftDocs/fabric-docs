@@ -2,7 +2,7 @@
 title: Limitations of Fabric Data Warehouse
 description: Review current limitations for warehouse and SQL analytics endpoint items in Microsoft Fabric Data Warehouse.
 ms.reviewer: joanpo, ajagadish, anphil, fresantos, pvenkat
-ms.date: 06/25/2026
+ms.date: 06/30/2026
 ms.topic: limits-and-quotas
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ai-usage: ai-assisted
@@ -12,8 +12,6 @@ ai-usage: ai-assisted
 **Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 This article lists current limitations for warehouse and SQL analytics endpoint items in [!INCLUDE [product-name](../includes/product-name.md)]. For limitations of SQL database in Fabric, see [Limitations in SQL database in Microsoft Fabric (preview)](../database/sql/limitations.md).
-
-These limitations apply only to warehouse and SQL analytics endpoint items in Fabric Data Warehouse. For limitations of SQL database in Fabric, see [Limitations in SQL database in Microsoft Fabric (preview)](../database/sql/limitations.md).
 
 ## Limitations
 
