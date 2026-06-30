@@ -10,20 +10,23 @@ ms.date: 08/8/2025
 
 # Consume a Fabric data agent with the Python client SDK (preview)
 
-This article shows how to use the Python client SDK to add a Fabric data agent to web apps and other clients by using interactive browser authentication. You sign in through a browser with your Microsoft Entra ID credentials, and the data agent runs with your permissions. Adding the data agent to external apps lets you build custom interfaces, embed insights in existing workflows, automate reports, and let users run natural language data queries. This approach gives you data agent capabilities while you keep full control of the user experience and app architecture.
+This article shows how to use the Python client SDK to add a Fabric data agent to web apps and other clients by using interactive browser authentication. You sign in through a browser with your Microsoft Entra ID credentials, and the data agent runs with your permissions. By adding the data agent to external apps, you can build custom interfaces, embed insights in existing workflows, automate reports, and let users run natural language data queries. This approach gives you data agent capabilities while you keep full control of the user experience and app architecture.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 > [!IMPORTANT]
-> When you use Python client SDK to add a Fabric data agent to web apps or other clients, responses returned by Fabric data agents may be sent outside of Fabric's compliance boundary or geographic region, and processed and/or stored according to the applicable web app or client's terms and data handling policies.
+> When you use Python client SDK to add a Fabric data agent to web apps or other clients, responses returned by Fabric data agents might be sent outside of Fabric's compliance boundary or geographic region. The applicable web app or client's terms and data handling policies govern how these responses are processed and stored.
 
 [!INCLUDE [data-agent-prerequisites](includes/data-agent-prerequisites.md)]
 
 ## Set up your environment in VS Code
 
-1. Clone or download the [Fabric Data Agent External Client repository](https://github.com/microsoft/fabric_data_agent_client/tree/main), then open it in VS Code and run the sample client.
+> [!IMPORTANT]
+> The code in this document and the [Fabric Data Agent External Client repository](https://github.com/microsoft/fabric_data_agent_client/tree/main) use the OpenAI Assistants API (`beta.assistants`, `beta.threads`, `beta.threads.runs`), which [OpenAI deprecated with a shutdown date of August 26, 2026](https://platform.openai.com/docs/assistants/migration). The current code continues to work until **August 26, 2026** but plan for migrating to the [MCP endpoint](data-agent-mcp-server.md) before this date.
 
-1. Create and activate a Python virtual environment (recommended), then install the required dependencies.
+1. Clone or download the [Fabric Data Agent External Client repository](https://github.com/microsoft/fabric_data_agent_client/tree/main). Then open it in VS Code and run the sample client.
+
+1. Create and activate a Python virtual environment (recommended), and install the required dependencies.
 
       ```bash
    python -m venv .venv
@@ -47,7 +50,7 @@ This article shows how to use the Python client SDK to add a Fabric data agent t
 
 ## Install dependencies
 
-Run this command to install dependencies:
+Run the following command to install dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -55,7 +58,7 @@ pip install -r requirements.txt
 
 > [!NOTE]
 > - The `azure-identity` package included in `requirements.txt` lets you authenticate with Microsoft Entra ID.
-> - `InteractiveBrowserCredential` from the `azure-identity` package opens a browser so the user can sign in with a Microsoft Entra ID account. Use it for local development or apps that allow interactive sign-in.
+> - `InteractiveBrowserCredential` from the `azure-identity` package opens a browser so you can sign in with a Microsoft Entra ID account. Use it for local development or apps that allow interactive sign-in.
 
 ## Configure the client 
 
