@@ -4,7 +4,7 @@ description: Use the Microsoft.FabricPipelineUpgrade PowerShell module to upgrad
 ms.reviewer: ssrinivasara
 ms.topic: tutorial
 ms.custom: pipelines
-ms.date: 09/17/2025
+ms.date: 06/11/2026
 ai-usage: ai-assisted
 ---
 
@@ -22,13 +22,7 @@ You can migrate your Azure Data Factory (ADF) pipelines to Microsoft Fabric usin
 
 ## Prerequisites
 
-To get started, be sure you have the following prerequisites:
-
-- **Tenant**: Your ADF and Fabric workspace must be in the same Microsoft Entra ID tenant.
-- **Fabric**: A tenant account with an active Fabric subscription - [Create an account for free](../fundamentals/fabric-trial.md).
-- **Fabric workspace recommendations** (Optional): We recommend using a new [Fabric workspace](../fundamentals/workspaces.md) in the same region as your ADF for upgrades for best performance.
-- **Permissions**: [Read access to the ADF workspace and items](/azure/data-factory/concepts-roles-permissions#scope-of-the-data-factory-contributor-role) you’ll migrate and [Contributor or higher rights in the Fabric workspace](../security/permission-model.md#workspace-roles) you’ll write to.
-- **Network and auth**: Make sure you can sign in to both Azure and Fabric from your machine (interactive or service principal).
+[!INCLUDE [migration-powershell-prerequisites](includes/migration-powershell-prerequisites.md)]
 
 > [!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=46afe4ed-f186-4937-b09f-326dd63bbf5b]
 
@@ -296,7 +290,7 @@ The **Pipeline** section has similar steps:
 
 These `resolve` steps are instructions for you to map your ADF Linked services to the activities' **source** and **sink** with the corresponding Fabric Connection ID.
 
-### Why does this happen?  
+### Why does this happen?
 
 The upgrader can’t know the Fabric resource ID for a connection or pipeline until those resources exist. So, it provides a tip on how to create the necessary resources and fill out your resolution file.
 
@@ -340,7 +334,7 @@ The upgrader can’t know the Fabric resource ID for a connection or pipeline un
 
 The error says we need to **“add a connection’s ID to your resolutions.”**
 
-### What went wrong?  
+### What went wrong?
 
 The Fabric Upgrader can’t create Fabric connections on its own. You need to help by creating a Fabric connection manually and then telling the upgrader when to use it.
 

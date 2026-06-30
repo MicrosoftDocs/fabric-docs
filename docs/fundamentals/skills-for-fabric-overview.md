@@ -3,7 +3,7 @@ title: Skills for Fabric overview
 description: Learn about Skills for Fabric, a collection of reusable AI agent skills that help AI coding tools author, query, operate, and govern Microsoft Fabric workloads.
 ms.reviewer: bocrivat
 ms.topic: concept-article
-ms.date: 06/19/2026
+ms.date: 06/29/2026
 ms.search.form: skills, AI, agents, Copilot CLI, MCP
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
@@ -56,7 +56,7 @@ Skills differ from [Model Context Protocol (MCP)](../real-time-intelligence/mcp-
 | **Example** | "How to query a warehouse" | "Execute this SQL query" |
 
 > [!NOTE]
-> Skills produce Fabric item definitions and data-movement code, but they don't currently render finished Power BI reports. For visualizations, use a local Python dashboard through the `FabricAppDev` agent, export results as a PDF, or build Power BI reports manually on top of the semantic models that the skills generate.
+> Skills produce Fabric item definitions and data-movement code, but they don't currently render finished Power BI reports. For visualizations, use a local Python dashboard, export results as a PDF, or build Power BI reports manually on top of the semantic models that the skills generate.
 
 ## Common scenarios
 
@@ -89,14 +89,7 @@ Skills for Fabric work with the following AI coding tools:
 
 ## Agent specializations
 
-Skills for Fabric includes experimental agent specializations that act like focused teammates. Agents combine prompts and tool selections unique to specific workflows. The following agents are available:
-
-| Agent | Description |
-|-------|-------------|
-| **FabricDataEngineer** | Focused on data engineering tasks, such as building end-to-end Medallion architectures. |
-| **FabricAdmin** | Focused on workspace administration tasks, such as documenting all items in a workspace. |
-| **FabricAppDev** | Builds local applications that connect to Fabric, such as Python dashboards that use ODBC to refresh from warehouse data. |
-| **FabricMigrationEngineer** | Orchestrates end-to-end workload migrations from Azure Synapse Analytics, Azure HDInsight, or Databricks to Microsoft Fabric. Handles migration assessment, phased execution planning, and cross-platform coordination. |
+Skills for Fabric also includes experimental *agent specializations* focused teammates that combine prompts and tool selections for specific workflows. Examples include agents focused on data engineering (`FabricDataEngineer`), administration (`FabricAdmin`), app development (`FabricAppDev`), and more.
 
 To use an agent specialization in GitHub Copilot CLI, reference it in your prompt:
 
@@ -104,7 +97,13 @@ To use an agent specialization in GitHub Copilot CLI, reference it in your promp
 Using FabricAdmin, document my Workspace FabricCLIDemo
 ```
 
-Or use the Copilot CLI command `/agent` to display and select from installed agents before entering your prompt.
+You can also invoke an agent from GitHub Copilot CLI by prefixing your prompt with the agent name, for example:
+
+```bash
+@FabricDataEngineer help me design a medallion architecture for my lakehouse
+```
+
+The available agents evolve frequently. Browse the [agents folder on GitHub](https://github.com/microsoft/skills-for-fabric/tree/main/agents) for the current set, and use the `/agent` command in GitHub Copilot CLI to display installed agents.
 
 ## MCP server integration with Skills for Fabric
 
