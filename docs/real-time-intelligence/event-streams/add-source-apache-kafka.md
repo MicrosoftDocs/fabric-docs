@@ -1,9 +1,9 @@
 ---
 title: Add Apache Kafka source to a Fabric eventstream
 description: Learn how to add an Apache Kafka topic as a source to an eventstream.
-ms.reviewer: zhenxilin
+ms.reviewer: xujiang1
 ms.topic: how-to
-ms.date: 06/01/2026
+ms.date: 06/29/2026
 ms.search.form: Source and Destination
 ms.custom: references_regions
 #customer intent: I want to learn how to add an Apache Kafka topic as an event source to a Fabric eventstream. 
