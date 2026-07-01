@@ -10,7 +10,7 @@ ms.custom:
 ms.date: 01/27/2026
 ---
 
-This feature applies to Eventstream sources that use streaming connectors to retrieve data from external sources, that is, outbound requests are made to those external systems. It supports the following features: 
+This applies to Eventstream sources that use streaming connectors to retrieve data from external sources. These connectors make outbound requests to those external systems. It supports the following sources: 
 
 - Azure SQL Database Change Data Capture (CDC)
 - Azure SQL Managed Instance CDC
