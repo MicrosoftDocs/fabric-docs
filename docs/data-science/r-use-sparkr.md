@@ -12,7 +12,7 @@ ms.search.form: R Language
 
 
 
-[SparkR](https://spark.apache.org/docs/latest/sqldf.html) is an R package that provides a light-weight frontend to use Apache Spark from R. SparkR provides a distributed data frame implementation that supports operations like selection, filtering, aggregation, and more. SparkR also supports distributed machine learning using MLlib.
+[SparkR](https://spark.apache.org/docs/latest/sparkr.html) is an R package that provides a light-weight frontend to use Apache Spark from R. SparkR provides a distributed data frame implementation that supports operations like selection, filtering, aggregation, and more. SparkR also supports distributed machine learning using MLlib.
 
 
 
