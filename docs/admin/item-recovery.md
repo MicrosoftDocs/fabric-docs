@@ -91,7 +91,7 @@ curl --request POST \
 
 While a deleted item is in its retention period, you can permanently delete it if you have workspace admin permissions.
 
-### Use the Workspace recycle bin to permanently delete an item
+### Use the workspace recycle bin to permanently delete an item
 
 1. Open the workspace that contained the deleted item.
 1. Select **Recycle bin** from the workspace navigation.
@@ -103,7 +103,7 @@ You're asked to confirm the permanent deletion.
 > [!CAUTION]
 > After you confirm permanent deletion, the item and its contents are no longer recoverable.
 >
-> After you permanently delete an item, Microsoft OneLake retains the data for an additional seven days. You can't restore data during this period. The deletion is final and can't be reversed.
+> After you permanently delete an item, OneLake retains the data for an additional seven days. You can't restore data during this period. The deletion is final and can't be reversed.
 
 ### Use the REST API to permanently delete an item
 
@@ -131,7 +131,7 @@ curl --request DELETE \
 > [!CAUTION]
 > After you confirm permanent deletion, the item and its contents are no longer recoverable.
 >
-> After you permanently delete an item, Microsoft OneLake retains the data for an additional seven days. You can't restore data during this period. The deletion is final and can't be reversed.
+> After you permanently delete an item, OneLake retains the data for an additional seven days. You can't restore data during this period. The deletion is final and can't be reversed.
 
 ## Related content
 

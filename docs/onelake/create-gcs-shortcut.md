@@ -34,7 +34,7 @@ GCS shortcuts can take advantage of file caching to reduce egress costs associat
 
 1. Select **New shortcut**.
 
-   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot of right click context menu showing where to select New shortcut from the Lake view." lightbox="media\create-onelake-shortcut\new-shortcut-lake-view.png":::
+   :::image type="content" source="shortcuts/media/create-onelake-shortcut/new-shortcut-lake-view.png" alt-text="Screenshot of right click context menu showing where to select New shortcut from the Lake view." lightbox="shortcuts/media/create-onelake-shortcut/new-shortcut-lake-view.png":::
 
 ## Select a source
 
@@ -107,6 +107,6 @@ The following limitations apply to Google Cloud Storage shortcuts:
 
 ## Related content
 
-- [Create a OneLake shortcut](create-onelake-shortcut.md)
+- [Create a OneLake shortcut](shortcuts/create-onelake-shortcut.md)
 - [Create an Azure Data Lake Storage Gen2 shortcut](create-adls-shortcut.md)
 - [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)

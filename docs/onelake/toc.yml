@@ -22,7 +22,7 @@ items:
   - name: Create shortcuts
     items:
     - name: OneLake shortcut
-      href: create-onelake-shortcut.md
+      href: shortcuts/create-onelake-shortcut.md
     - name: ADLS Gen2 shortcut
       href: create-adls-shortcut.md
     - name: Blob Storage shortcut
@@ -43,6 +43,8 @@ items:
       href: create-on-premises-shortcut.md
   - name: Manage shortcuts
     items:
+    - name: Edit or delete a shortcut
+      href: ./shortcuts/edit-delete-shortcut.md
     - name: Shortcut security
       href: onelake-shortcut-security.md
     - name: S3 shortcut Entra integration

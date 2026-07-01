@@ -81,7 +81,7 @@ A bundle is a preconfigured group of skills packaged for the plugin marketplace.
 | `fabric-authoring` | Developer skills for REST APIs, CLI automation, notebooks, T-SQL, KQL, Dataflows Gen2, Eventstreams, and semantic models | `/plugin install fabric-authoring@fabric-collection` |
 | `fabric-consumption` | Read-only exploration and query skills across all Fabric workloads | `/plugin install fabric-consumption@fabric-collection` |
 | `fabric-operations` | Performance and health diagnostics | `/plugin install fabric-operations@fabric-collection` |
-| `powerbi-authoring` | Power BI plug-in: semantic model authoring, report planning, design, authoring, management, and PBIP workflows. Install separately from `fabric-skills`. | `/plugin install powerbi-authoring@fabric-collection` |
+| `powerbi-authoring` | Power BI plug-in: semantic model authoring, report planning, design, authoring, management, and PBIP workflows. Install separately from `fabric-skills`. For an example of an included skill, see the [Power BI Report Authoring skill](/power-bi/developer/agentic/power-bi-report-authoring-skill-overview). | `/plugin install powerbi-authoring@fabric-collection` |
 
 You can filter the full bundle by workload in GitHub Copilot CLI or Claude Code using the following commands:
 

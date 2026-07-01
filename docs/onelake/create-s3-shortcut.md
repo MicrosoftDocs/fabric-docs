@@ -34,7 +34,7 @@ S3 shortcuts can take advantage of file caching to reduce egress costs associate
 
 1. Select **New shortcut**.
 
-   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot of right click context menu showing where to select New shortcut from the Lake view.":::
+   :::image type="content" source="shortcuts/media/create-onelake-shortcut/new-shortcut-lake-view.png" alt-text="Screenshot of right click context menu showing where to select New shortcut from the Lake view.":::
 
 1. Under **External sources**, select **Amazon S3**.
 
@@ -77,7 +77,7 @@ S3 shortcuts can take advantage of file caching to reduce egress costs associate
 1. Select **Create**.
    The lakehouse automatically refreshes. The shortcut appears in the left **Explorer** pane under the **Tables** section.
 
-   :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::
+   :::image type="content" source="shortcuts/media/create-onelake-shortcut/folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::
 
 ## Access
 
@@ -113,5 +113,5 @@ The following limitations apply to S3 shortcuts:
 
 ## Related content
 
-- [Create a OneLake shortcut](create-onelake-shortcut.md)
+- [Create a OneLake shortcut](shortcuts/create-onelake-shortcut.md)
 - [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)

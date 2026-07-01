@@ -1,4 +1,4 @@
----
+﻿---
 title: Fabric region availability
 description: Learn about Microsoft Fabric region availability, including details about the workloads and features supported in each region and how home region impacts access.
 author: msmimart
@@ -11,9 +11,9 @@ ms.date: 06/19/2026
 
 # Fabric region availability
 
-This article lists the region availability of the Microsoft Fabric [F SKUs](../enterprise/licenses.md#capacity), which are available in the [Azure public cloud regions](https://azure.microsoft.com/explore/global-infrastructure/geographies/). Some of the Fabric workloads might not be immediately available in new regions, or regions where data centers become constrained.
+This article lists the region availability of the Fabric [F SKUs](../enterprise/licenses.md#capacity), which are available in the [Azure public cloud regions](https://azure.microsoft.com/explore/global-infrastructure/geographies/). Some of the Fabric workloads might not be immediately available in new regions, or regions where data centers become constrained.
 
-For details about purchasing a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
+For details about purchasing a Fabric subscription, see [Buy a Fabric subscription](../enterprise/buy-subscription.md).
 
 ## Fabric workload and feature availability
 
@@ -87,5 +87,5 @@ The following table lists all Azure regions where Power BI or Fabric is availabl
 
 ## Related content
 
-* [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md)
+* [Buy a Fabric subscription](../enterprise/buy-subscription.md)
 * [Find your Fabric home region](./find-fabric-home-region.md)

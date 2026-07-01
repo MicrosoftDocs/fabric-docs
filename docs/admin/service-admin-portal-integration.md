@@ -1,4 +1,4 @@
----
+﻿---
 title: Integration admin settings
 description: Learn how to configure integration admin settings in Fabric.
 author: msmimart
@@ -166,7 +166,7 @@ For more information, see [Refresh from OneDrive or SharePoint](/power-bi/connec
 
 ## ArcGIS GeoAnalytics for Fabric Runtime
 
-Users in your organization can use Esri's ArcGIS GeoAnalytics for Fabric Runtime in Microsoft Fabric Spark Runtime.
+Users in your organization can use Esri's ArcGIS GeoAnalytics for Fabric Runtime in Fabric Spark Runtime.
 
 For more information, see [ArcGIS GeoAnalytics for Fabric Runtime](https://go.microsoft.com/fwlink/?linkid=2281344).
 
