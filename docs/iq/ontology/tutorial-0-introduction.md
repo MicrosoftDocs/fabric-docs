@@ -26,7 +26,6 @@ The example scenario for this tutorial is a fictional company called Lakeshore R
     * *Enable Ontology item (preview)*
     * *Users can use Copilot and other features powered by Azure OpenAI (required for data agent)*
     * *Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance (required for data agent)*
-    * *Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance  (required for data agent)*
 
     :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal." lightbox="media/tutorial-0-introduction/prerequisite-ontology.png":::
 
