@@ -136,7 +136,7 @@ After drilling through, you see the following information for the selected item 
 
 * **Item name** - The display name of the item
 
-* **Item type** - The type of item such as report, dataset, app, and so on
+* **Item type** - The type of item such as report, semantic model, app, and so on
 
 * **Modified by** - The ID of the user that last modified the item
 

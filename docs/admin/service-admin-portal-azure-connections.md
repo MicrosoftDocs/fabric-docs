@@ -16,7 +16,7 @@ The Azure connections admin settings connect Azure services to Fabric. Using the
 
 The Azure connections admin settings have the following options:
 
-* [Tenant-level storage](#tenant-level-storage) - Use to store dataflows in your organizations tenant settings. This setting can be configured if you want a central Data Lake storage place, or as a default storage place in addition to workspace level storage.
+* [Tenant-level storage](#tenant-level-storage) - Use to store dataflows in your organizations tenant settings. This setting can be configured if you want a central data lake storage place, or as a default storage place in addition to workspace level storage.
 
 * [Workspace-level storage permissions](#workspace-level-storage-permissions) - Use to store dataflows in specific ADLS Gen 2 accounts, organized per workspace.
 

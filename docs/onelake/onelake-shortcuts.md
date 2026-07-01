@@ -168,7 +168,7 @@ Use internal OneLake shortcuts to reference data within existing Fabric items, i
 * SQL databases
 * Warehouses
 
-For instructions to create an internal shortcut, see [Create an internal OneLake shortcut](./create-onelake-shortcut.md).
+For instructions to create an internal shortcut, see [Create an internal OneLake shortcut](./shortcuts/create-onelake-shortcut.md).
 
 The shortcut can point to a folder location within the same item, across items within the same workspace, or even across items in different workspaces. When you create a shortcut across items, the item types don't need to match. For example, you can create a shortcut in a lakehouse that points to data in a warehouse.
 
@@ -254,5 +254,5 @@ When you create shortcuts between multiple Fabric items within a workspace, you 
 
 ## Related content
 
-- [Create a OneLake shortcut](create-onelake-shortcut.md)
+- [Create a OneLake shortcut](shortcuts/create-onelake-shortcut.md)
 - [Use OneLake shortcuts REST APIs](/rest/api/fabric/core/onelake-shortcuts)

@@ -26,6 +26,6 @@ To find your Fabric home region, follow these steps:
 
 ## Related content
 
-* [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md)
+* [Buy a Fabric subscription](../enterprise/buy-subscription.md)
 * [Region availability](./region-availability.md)
 * [Azure public cloud geographies and regions](https://azure.microsoft.com/explore/global-infrastructure/geographies/)
