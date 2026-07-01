@@ -71,13 +71,57 @@ ms.date: 04/01/2026
 
 1. In the **Connection credentials** section, follow these steps:
 
+    Select the appropriate tab below and follow the steps for your required **Authentication kind**.
+
+    #### [Shared access key](#tab/shared-access-key)
+
     1. For **Connection name**, enter a name for the connection to the event hub.
     1. For **Authentication kind**, confirm that **Shared Access Key** is selected.
     1. For **Shared Access Key Name**, enter the name of the shared access key. For instructions on getting an access key, see [Get an Azure Event Hubs connection string](/azure/event-hubs/event-hubs-get-connection-string#azure-portal).
     1. For **Shared Access Key**, enter the value of the shared access key.
     1. Select **Connect**.
 
-        :::image type="content" source="./media/azure-event-hubs-source-connector/connect-page-1.png" alt-text="Screenshot that shows entered credentials for an Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/connect-page-1.png":::
+        :::image type="content" source="./media/azure-event-hubs-source-connector/connect-page-1.png" alt-text="Screenshot that shows entered credentials for an Azure Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/connect-page-1.png":::
+
+    #### [Workspace identity](#tab/workspace-identity)
+    
+    If you want to use **workspace identity** for authentication, complete the following steps before configuring the connection:
+
+    1. Check whether your workspace has workspace identity enabled. If not, go to **Workspace settings > Workspace identity**, and enable Workspace identity.
+
+        :::image type="content" source="../../media/streaming-connector-virtual-network-on-premises-support/enable-workspace-identity.png" alt-text="Screenshot of showing where to enable workspace identity." lightbox="../../media/streaming-connector-virtual-network-on-premises-support/enable-workspace-identity.png":::
+
+    1. Copy the workspace identity **ID** from **Workspace settings → Workspace identity**.
+
+        :::image type="content" source="../../media/streaming-connector-virtual-network-on-premises-support/copy.png" alt-text="Screenshot of showing where to copy workspace identity ID." lightbox="../../media/streaming-connector-virtual-network-on-premises-support/copy.png":::
+
+    1. In your Azure Event Hub, open **Access control (IAM)** and select **Add role assignment**.
+
+        :::image type="content" source="./media/azure-event-hubs-source-connector/add-role-assignment.png" alt-text="Screenshot that shows where to add a role assignment in Azure Event Hub access control." lightbox="./media/azure-event-hubs-source-connector/add-role-assignment.png":::
+    
+    1. Search for and select the **Azure Event Hubs Data Receiver** role, then select **Next**.
+
+        :::image type="content" source="./media/azure-event-hubs-source-connector/data-receiver.png" alt-text="Screenshot that shows selecting the Azure Event Hubs Data Receiver role and choosing Next." lightbox="./media/azure-event-hubs-source-connector/data-receiver.png":::
+
+    1. Under **Assign access to**, choose **User, group, or service principal**.
+    1. Select **Members**, and then enter your workspace name or paste the **ID** you copied to find your workspace. Select **Next**.
+
+        :::image type="content" source="./media/azure-event-hubs-source-connector/add-members.png" alt-text="Screenshot that shows selecting Members and locating the workspace by name or ID." lightbox="./media/azure-event-hubs-source-connector/add-members.png":::
+
+    After completing these steps, return to the connection configuration page and continue:
+
+    1. For **Connection name**, enter a name for the connection to the event hub.
+    1. For **Data gateway**, select the appropriate option based on your Event Hub network configuration:
+        - If your event hub is public, select **none**.
+        - If your event hub is under a private network and you want to connect through a streaming virtual network data gateway, select the streaming vNet data gateway (prefixed with **[Streaming VNET]**). You can select the refresh icon to get the newly created gateway listed.
+
+        > [!NOTE]
+        > If a data gateway is selected, skip the test connection step in this connection creation wizard.
+    1. For **Authentication kind**, confirm that **workspace identity** is selected.
+
+        :::image type="content" source="./media/azure-event-hubs-source-connector/workspace-identity.png" alt-text="Screenshot that shows entered credentials for an Azure Event Hubs connector via workspace identity." lightbox="./media/azure-event-hubs-source-connector/workspace-identity.png":::
+
+    ---
 
 1. For **Consumer group**, enter the name of the consumer group. The default consumer group for the event hub is **$Default**.
 
