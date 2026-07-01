@@ -67,7 +67,7 @@ For example, if your private package sits at `/dags/test/private.whl` in your Gi
 :::image type="content" source="media/apache-airflow-jobs/private-package.png" lightbox="media/apache-airflow-jobs/private-package.png" alt-text="Screenshot showing private package added as requirement.":::
 
 > [!NOTE]
-> Be sure to use the `plugins` folder and not the dags folder for hosting your own packages.
+> Be sure to use the `plugins` folder and not the `dags` folder for hosting your own packages.
 
 ## Install a private library from the plugins/libs folder
 
