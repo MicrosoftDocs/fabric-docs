@@ -174,8 +174,8 @@ Use the following flowchart and decision matrix to determine the right network s
 | Public feeds    | Weather                                                      | Internal  | Secure by default        | -                |
 | Fabric events   | Fabric Workspace item, Fabric OneLake events, Fabric Job events, etc. | Internal  | Secure by default        | -                |
 | Azure streaming sources   | Azure Event Hubs (Basic feature level), Azure IoT Hub                               | Outbound  | Managed Private Endpoint | GA  |
-| External        | Confluent Cloud for Apache Kafka, Amazon Kinesis, Google Pub/Sub, MQTT, etc. [Full list](./streaming-connector-private-network-support-overview.md#supported-sources)        | Outbound  | Connector virtual network injection           | PuPr  |
-| Database CDC    | PostgreSQL, MySQL, SQL Server, etc. [Full list](./streaming-connector-private-network-support-overview.md#supported-sources)                                | Outbound  | Connector virtual network injection           | PuPr |
+| External        | Confluent Cloud for Apache Kafka, Amazon Kinesis, Google Pub/Sub, MQTT, etc. [Full list](./streaming-connector-private-network-support-overview.md#supported-sources)        | Outbound  | Connector virtual network injection           | GA  |
+| Database CDC    | PostgreSQL, MySQL, SQL Server, etc. [Full list](./streaming-connector-private-network-support-overview.md#supported-sources)                                | Outbound  | Connector virtual network injection           | GA |
 
 #### Destinations
 
