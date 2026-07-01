@@ -4,7 +4,7 @@ description: How to use prebuilt text analytics in Fabric with REST API
 ms.author: lagayhar
 ms.reviewer: ruxu
 ms.topic: how-to
-ms.date: 08/20/2025
+ms.date: 06/30/2026
 ms.update-cycle: 180-days
 ms.search.form: 
 ms.collection: ce-skilling-ai-copilot
@@ -115,7 +115,7 @@ from pyspark.sql.functions import col
 
 # [Rest API](#tab/rest)
 
-The Sentiment Analysis feature provides a way for detecting the sentiment labels (such as "negative," "neutral" and "positive") and confidence scores at the sentence and document-level. This feature also returns confidence scores between 0 and 1 for each document and sentences within it for positive, neutral, and negative sentiment. See the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support) for the list of enabled languages.
+The Sentiment Analysis feature provides a way to detect the sentiment labels (such as "negative," "neutral," and "positive") and confidence scores at the sentence and document level. This feature also returns confidence scores between 0 and 1 for each document and sentences within it for positive, neutral, and negative sentiment. For the list of enabled languages, see the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support).
 
 ### Analyze sentiment of text
 
@@ -466,7 +466,7 @@ display(result.select("text", "keyPhrases"))
 
 # [Rest API](#tab/rest)
 
-Named Entity Recognition (NER) is the ability to identify different entities in text and categorize them into predefined classes or types such as: person, location, event, product, and organization. See the [NER language support](/azure/ai-services/language-service/named-entity-recognition/language-support?tabs=ga-api) for the list of enabled languages.
+Named Entity Recognition (NER) is the ability to identify different entities in text and categorize them into predefined classes or types such as person, location, event, product, and organization. See the [NER language support](/azure/ai-services/language-service/named-entity-recognition/language-support?tabs=ga-api) for the list of enabled languages.
 
 ``` python
 payload = {
@@ -540,7 +540,7 @@ print_response(response)
 
 
 Named Entity Recognition (NER) is the ability to identify different entities in text and categorize them into predefined classes or types
-such as: person, location, event, product, and organization. See the [NER language support](/azure/ai-services/language-service/named-entity-recognition/language-support?tabs=ga-api) for the list of enabled languages.
+such as person, location, event, product, and organization. See the [NER language support](/azure/ai-services/language-service/named-entity-recognition/language-support?tabs=ga-api) for the list of enabled languages.
 
 
 ``` Python
@@ -573,7 +573,7 @@ No steps for REST API in this section.
 # [SynapseML](#tab/synapseml)
 
 Entity linking identifies and disambiguates the identity of entities found in text. For example, in the sentence "We went to Seattle last
-week.", the word "Seattle" would be identified, with a link to more information on Wikipedia. See [Supported languages for entity linking](/azure/ai-services/language-service/entity-linking/language-support) for the list of enabled languages.
+week.", the word "Seattle" is identified, with a link to more information on Wikipedia. See [Supported languages for entity linking](/azure/ai-services/language-service/entity-linking/language-support) for the list of enabled languages.
 
 
 ``` Python
