@@ -52,7 +52,7 @@ When using the Microsoft Fabric Chargeback app, be aware of the following consid
 
 - The Fabric Chargeback Report data isn't real-time; it's refreshed daily. Users can manually trigger a refresh by navigating to the workspace where the app is installed.
 - If an operation isn't associated with a user, or if the operation is initiated by a service principal, the report displays the username as "Power BI Service".
-- When the [Show user data in the Fabric Capacity Metrics app and reports](../admin/service-admin-portal-audit-usage.md#show-user-data-in-the-fabric-capacity-metrics-app-and-reports) setting is disabled, the username is shown as "Masked user" for nonservice operations, and the user count considers all masked users as a single user.
+- When the [Show user data in the Fabric Capacity Metrics app and reports](../admin/service-admin-portal-audit-usage.md#show-user-data-in-the-microsoft-fabric-capacity-metrics-app-and-reports) setting is disabled, the username is shown as "Masked user" for nonservice operations, and the user count considers all masked users as a single user.
 - Visuals on the **Export** page may fail to render properly when too many drill-downs are applied due to memory limitations in Power BI. To avoid this, either apply filters to reduce the data volume or avoid expanding multiple capacities to the lower granularity level (such as item name) during export.
 - The semantic model used by the Microsoft Fabric Chargeback application is only supported for use by the reports provided in the application. Any consumption from, usage of, or modification of the semantic model is not supported.
 

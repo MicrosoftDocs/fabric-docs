@@ -1,4 +1,4 @@
----
+﻿---
 title: Microsoft Fabric tenant settings
 description: Learn how to configure Microsoft Fabric tenant settings in Fabric.
 author: msmimart
@@ -11,13 +11,13 @@ ms.date: 04/08/2026
 
 # Microsoft Fabric tenant settings
 
-Microsoft Fabric tenant settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
+Fabric tenant settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Users can create Fabric items
 
 Users can use production-ready features to create Fabric items. Turning off this setting doesn't affect users' ability to create Power BI items. This setting can be managed at both the tenant and the capacity levels.
 
-For more information, see [Enable Microsoft Fabric for your organization](./fabric-switch.md).
+For more information, see [Enable Fabric for your organization](./fabric-switch.md).
 
 ## Users can create Ontology (preview) items
 
@@ -25,7 +25,7 @@ Users can create ontologies to unify enterprise semantics across data, models, a
 
 For more information, see [Ontology item overview](https://aka.ms/ontologyitem-overview).
 
-## Users can create Digital Twin Builder (preview) items
+## Users can create digital twin builder (preview) items
 
 Users can create digital twin builder items to build comprehensive digital twins of real-world environments and processes and support broad operational analysis.
 
@@ -39,13 +39,13 @@ For more information, see [Get started with org apps (preview)](/power-bi/consum
 
 ## Product Feedback
 
-This setting allows Microsoft to prompt users for feedback through in-product surveys within Microsoft Fabric and Power BI. User participation is voluntary.
+This setting allows Microsoft to prompt users for feedback through in-product surveys within Fabric and Power BI. User participation is voluntary.
 
-For more information, see [Learn about Microsoft Fabric feedback](../fundamentals/feedback.md).
+For more information, see [Learn about Fabric feedback](../fundamentals/feedback.md).
 
 ## Users can be informed of upcoming conferences featuring Microsoft Fabric when they are logged in to Fabric
 
-When this setting is enabled, signed-in users in your organization can receive in-product notifications about upcoming conferences that feature Microsoft Fabric.
+When this setting is enabled, signed-in users in your organization can receive in-product notifications about upcoming conferences that feature Fabric.
 
 ## ML models can serve real-time predictions from API endpoints (preview)
 
@@ -86,4 +86,4 @@ For more information, see [Planning in Fabric](https://aka.ms/planningdocs).
 ## Related content
 
 * [About tenant settings](tenant-settings-index.md)
-* [Enable Microsoft Fabric for your organization](fabric-switch.md)
+* [Enable Fabric for your organization](fabric-switch.md)

@@ -1,4 +1,4 @@
----
+﻿---
 title: Retention and recovery in Fabric
 description: Learn how retention and recovery work for deleted workspaces and items in Fabric, including retention periods and what gets restored.
 author: dknappettmsft
@@ -73,7 +73,7 @@ The following item types support soft-delete and recovery:
 - Notebook
 - Ontology *(preview)*
 - Operational agent *(preview)*
-- Real-time dashboard
+- Real-Time Dashboard
 - Spark job definition
 - SQL database *(preview)*
 - User data function
@@ -101,9 +101,9 @@ The following table shows the permissions required to recover or permanently del
 
 When you recover an item, Fabric restores it to its original state before deletion. The recovery process preserves all properties, configurations, and relationships except shared item permissions.
 
-### OneLake Catalog
+### OneLake catalog
 
-Soft-deleted items don't appear in the catalog. After recovery, items reappear in the catalog with full functionality. The actions menu, edit capabilities, and hover cards work normally. Fabric restores Data Loss Prevention icons and policy tips. Favorite status and parent-child relationships are preserved. For more information, see [OneLake Catalog overview](../governance/onelake-catalog-overview.md).
+Soft-deleted items don't appear in the catalog. After recovery, items reappear in the catalog with full functionality. The actions menu, edit capabilities, and hover cards work normally. Fabric restores Data Loss Prevention icons and policy tips. Favorite status and parent-child relationships are preserved. For more information, see [OneLake catalog overview](../governance/onelake-catalog-overview.md).
 
 ### Lineage and relations
 
