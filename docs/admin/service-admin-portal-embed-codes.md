@@ -1,4 +1,4 @@
----
+﻿---
 title: Manage embed codes
 description: Learn how to manage Power BI embed codes.
 author: msmimart
@@ -19,7 +19,7 @@ As a Fabric administrator, you can view the embed codes that are generated for s
 
 To access the **Embed codes** page in the Admin portal:
 
-1. Sign in to [Microsoft Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-admin-admin-center) using your admin account credentials.
+1. Sign in to [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-admin-admin-center) using your admin account credentials.
 
 1. Select the **Settings** (gear) icon, and then select **Admin portal**.
 
@@ -41,7 +41,7 @@ Embed codes are linked directly to the publisher who creates them. This means th
 
 To change ownership from the Admin portal, follow these steps:
 
-1. Sign in to [Microsoft Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-admin-admin-center) using your admin account credentials.
+1. Sign in to [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-admin-admin-center) using your admin account credentials.
 
 1. Select the **Settings** (gear) icon, select **Admin portal**, and then select **Embed Codes**.
 

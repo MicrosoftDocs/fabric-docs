@@ -19,7 +19,7 @@ The following operations are available in the audit logs.
 | Add Experiment Run  |  :::no-loc text="AddExperimentRun":::  |    |
 | Add Model Version  |  :::no-loc text="AddModelVersion":::  |    |
 | Add Tenant Key  |  :::no-loc text="AddTenantKey":::  |    |
-| Add Tile  |  :::no-loc text="AddTile":::  |  Add Tile is dashboard activity, which is generated on adding visuals as tiles to a Power BI Dashboard  |
+| Add Tile  |  :::no-loc text="AddTile":::  |  Add Tile is dashboard activity, which is generated on adding visuals as tiles to a Power BI dashboard  |
 | Add workload in a tenant or   capacity | :::no-loc text="ExtensibilityActivationDynamic"::: | Add a workload in a tenant or capacity from Workloads Hub |
 | Add workload version in a   tenant | :::no-loc text="ExtensibilityActivationStatic"::: | Add a specific version of a workload in a tenant |
 | Add workspace role | :::no-loc text="AddWorkspaceRoleViaAdminApi"::: | Add workspace role |
@@ -204,7 +204,7 @@ The following operations are available in the audit logs.
 | Delete Service Principal Profile As Admin | :::no-loc text="DeleteServicePrincipalProfileAsAdmin"::: |   |
 | Delete Service Principal Profile | :::no-loc text="DeleteServicePrincipalProfile"::: |   |
 | Delete Template App Package | :::no-loc text="DeleteTemplateAppPackage"::: | Delete Template App Package is an app activity, which is generated on deletion of a Template App package  |
-| Delete Tile | :::no-loc text="DeleteTile"::: | Delete Tile is a dashboard activity, which is generated on deletion of tiles from a Power BI Dashboard  |
+| Delete Tile | :::no-loc text="DeleteTile"::: | Delete Tile is a dashboard activity, which is generated on deletion of tiles from a Power BI dashboard  |
 | Delete Warehouse | :::no-loc text="DeleteWarehouse"::: |   |
 | Delete Workspace Via Admin Api | :::no-loc text="DeleteWorkspaceViaAdminApi"::: |   |
 | Delete a shortcut | :::no-loc text="DeleteShortcut"::: | OneLake operation. Part of Shortcut Controller |
@@ -216,13 +216,13 @@ The following operations are available in the audit logs.
 | Delete container | :::no-loc text="DeleteContainer"::: | OneLake operation. Deletes a workspace. |
 | Delete file system | :::no-loc text="DeleteFileSystem"::: | OneLake operation. Deletes a workspace. |
 | Delete file | :::no-loc text="DeleteFileOrBlob"::: | OneLake operation. Deletes a folder or file. |
-| Delete source in GraphQL artifact | :::no-loc text="DeleteSourceGraphQL"::: | Delete source in graphql artifact  |
+| Delete source in GraphQL artifact | :::no-loc text="DeleteSourceGraphQL"::: | Delete source in graphql item  |
 | Delete subfolder | :::no-loc text="DeleteSubfolder"::: |   |
 | Delete usage metrics v2 package via lockbox | :::no-loc text="DeleteUsageMetricsv2PackageViaLockbox"::: |   |
 | Delete virtual network data   gateway proxy | :::no-loc text="DeleteVirtualNetworkDataGatewayProxy"::: | Delete HTTP proxy for virtual network data gateway |
 | Delete workload package | :::no-loc text="ExtensibilityDeletePackage"::: | Delete a workload package |
 | Delete workspace role | :::no-loc text="DeleteWorkspaceRoleViaAdminApi"::: | Delete workspace role |
-| DeleteDelete Workspace Delegation settings | :::no-loc text="DeleteWorkspaceTenantSettingDelegation"::: | Delete Workspace Delegation settings.  |
+| Delete Workspace Delegation settings | :::no-loc text="DeleteWorkspaceTenantSettingDelegation"::: | Delete workspace delegation settings.  |
 | Deleted Power BI comment | :::no-loc text="DeleteComment"::: |   |
 | Deleted Power BI dashboard | :::no-loc text="DeleteDashboard"::: |   |
 | Deleted Power BI dataflow | :::no-loc text="DeleteDataflow"::: |   |
@@ -241,8 +241,8 @@ The following operations are available in the audit logs.
 | Deleted Power BI semantic model | :::no-loc text="DeleteDataset"::: |   |
 | Deleted Power BI template app or a workspace for a template app | :::no-loc text="DeleteTemplateApp"::: |   |
 | Deleted Publish to Web Embed Code | :::no-loc text="DeleteEmbedCode"::: |   |
-| Deleted a SQL query from a SQL analytics endpoint | :::no-loc text="DeleteSqlQueryFromSqlAnalyticsEndpointLakehouse"::: | This audit event covers both deleting SQL and visual queries from the SQL analytics endpoint of the Lakehouse  |
-| Deleted SQL query from a Warehouse | :::no-loc text="DeleteSqlQueryFromWarehouse"::: | Covers both deleting SQL and visual queries from the Warehouse  |
+| Deleted a SQL query from a SQL analytics endpoint | :::no-loc text="DeleteSqlQueryFromSqlAnalyticsEndpointLakehouse"::: | This audit event covers both deleting SQL and visual queries from the SQL analytics endpoint of the lakehouse  |
+| Deleted SQL query from a Warehouse | :::no-loc text="DeleteSqlQueryFromWarehouse"::: | Covers both deleting SQL and visual queries from the warehouse  |
 | Deleted an organizational custom visual | :::no-loc text="DeleteOrganizationalGalleryItem"::: |   |
 | Deleted current value connection of Power BI metric | :::no-loc text="DeleteGoalCurrentValueConnection"::: |   |
 | Deleted deployment pipeline | :::no-loc text="DeleteAlmPipeline"::: |   |
@@ -254,7 +254,7 @@ The following operations are available in the audit logs.
 | Deleted snapshot for user in Power BI tenant | :::no-loc text="DeleteSnapshot"::: | Generated when a user deletes a snapshot that describes a semantic model  |
 | Deleted workload assignment using admin api | :::no-loc text="ExtensibilityDeletedWorkloadAssignmentAdminApi"::: |   |
 | Deploy Model Version | :::no-loc text="DeployModelVersion"::: |   |
-| Deploy user application in FunctionSet | :::no-loc text="DeployUserAppFunctionSet"::: | Deploy user application through FunctionSet artifact  |
+| Deploy user application in FunctionSet | :::no-loc text="DeployUserAppFunctionSet"::: | Deploy user application through FunctionSet item  |
 | Deployed to a pipeline stage | :::no-loc text="DeployAlmPipeline"::: |   |
 | Detect Customizations For Solution | :::no-loc text="DetectCustomizationsForSolution"::: |   |
 | Determine if the user can share a datasource | :::no-loc text="DeterminePrincipalCanShareDatasource"::: | Get the policy decision for the user to share a datasource  |
@@ -272,7 +272,7 @@ The following operations are available in the audit logs.
 | Edit Artifact Endorsement | :::no-loc text="EditArtifactEndorsement"::: |   |
 | Edit Report Description | :::no-loc text="EditReportDescription"::: |   |
 | Edit Sql Analytics Endpoint Lakehouse Endorsement | :::no-loc text="EditSqlAnalyticsEndpointLakehouseEndorsement"::: | Edited a lakehouse SQL analytics endpoint endorsement  |
-| Edit Tile | :::no-loc text="EditTile"::: | Edit Tile is a dashboard activity, which is generated on changes or edits to settings for tiles in a Power BI Dashboard  |
+| Edit Tile | :::no-loc text="EditTile"::: | Edit Tile is a dashboard activity, which is generated on changes or edits to settings for tiles in a Power BI dashboard  |
 | Edit Warehouse Endorsement | :::no-loc text="EditWarehouseEndorsement"::: |   |
 | Edit Widget Tile | :::no-loc text="EditWidgetTile"::: |   |
 | Edit mounted warehouse endorsements | :::no-loc text="EditMountedWarehouseEndorsement"::: | Generated when mounted warehouse endorsements are edited  |
@@ -301,7 +301,7 @@ The following operations are available in the audit logs.
 | Exported Power BI item to another file format | :::no-loc text="ExportArtifact"::: |   |
 | Exported Power BI report to another file format or exported report visual data | :::no-loc text="ExportReport"::: |   |
 | Exported Power BI tile data | :::no-loc text="ExportTile"::: |   |
-| Extract Template App Package | :::no-loc text="ExtractTemplateAppPackage"::: | Extract Template App Package is an app activity, which is generated when users extract an existing Template App into another Power BI Template App Workspace  |
+| Extract Template App Package | :::no-loc text="ExtractTemplateAppPackage"::: | Extract Template App Package is an app activity, which is generated when users extract an existing template app into another Power BI template app workspace  |
 | Fetch a shortcut's metadata | :::no-loc text="GetShortcut"::: | OneLake operation. Part of Shortcut Controller |
 | Finish Publish Environment | :::no-loc text="FinishPublishEnvironment"::: | Finish publish environment |
 | Flush data to file | :::no-loc text="FlushDataToFile"::: | OneLake operation. Proxy calls |
@@ -326,16 +326,16 @@ The following operations are available in the audit logs.
 | Get Dashboards In Group As Admin | :::no-loc text="GetDashboardsInGroupAsAdmin"::: |   |
 | Get Dataflow Users As Admin | :::no-loc text="GetDataflowUsersAsAdmin"::: |   |
 | Get Dataflows In Group As Admin | :::no-loc text="GetDataflowsInGroupAsAdmin"::: |   |
-| Get Dataset Info | :::no-loc text="GetDatasetInfo"::: | Get the info of the dataset  |
-| Get Dataset Query Scale-Out Sync Status | :::no-loc text="GetDatasetQueryScaleOutSyncStatus"::: | Get Dataset Query Scale-Out Sync Status is a dataset activity, which is generated when users request the sync status of a scale out-enabled Power BI dataset.  |
+| Get Dataset Info | :::no-loc text="GetDatasetInfo"::: | Get the info of the semantic model  |
+| Get Dataset Query Scale-Out Sync Status | :::no-loc text="GetDatasetQueryScaleOutSyncStatus"::: | Get Dataset Query Scale-Out Sync Status is a semantic model activity, which is generated when users request the sync status of a scale out-enabled Power BI semantic model.  |
 | Get Dataset Users As Admin | :::no-loc text="GetDatasetUsersAsAdmin"::: |   |
 | Get Datasets In Group As Admin | :::no-loc text="GetDatasetsInGroupAsAdmin"::: |   |
 | Get Datasource Details With Credentials Async | :::no-loc text="GetDatasourceDetailsWithCredentialsAsync"::: |   |
 | Get Dax Capabilities | :::no-loc text="GetDaxCapabilities"::: |   |
 | Get Default Scorecard View | :::no-loc text="GetDefaultScorecardView"::: |   |
 | Get Domain Delegation settings | :::no-loc text="DeleteDomainTenantSettingDelegation"::: | Delete Domain Delegation settings.  |
-| Get Fabric Identity Token for   Workspace | :::no-loc text="GetWorkspaceIdentityTokenViaApi"::: | Get a Fabric identity token for a workspace |
-| Get Fabric Identity for   Workspace | :::no-loc text="GetWorkspaceIdentityViaApi"::: | Get  a Fabric identity   for a  workspace |
+| Get Fabric Identity Token for   workspace | :::no-loc text="GetworkspaceIdentityTokenViaApi"::: | Get a Fabric identity token for a workspace |
+| Get Fabric Identity for Workspace | :::no-loc text="GetWorkspaceIdentityViaApi"::: | Get a Fabric identity for a workspace |
 | Get Followed Goals | :::no-loc text="GetFollowedGoals"::: |   |
 | Get Gateway Cluster | :::no-loc text="GetGatewayCluster"::: |   |
 | Get Gateway Clusters With Role Options | :::no-loc text="GetGatewayClustersWithRoleOptions"::: |   |
@@ -413,8 +413,8 @@ The following operations are available in the audit logs.
 | Goals Update Role | :::no-loc text="GoalsUpdateRole"::: |   |
 | Hard-deleted a folder by cleanup scheduler (Preview) | :::no-loc text="HardDeletedSubfolderByCleanupScheduler"::: | Generated when the cleanup scheduler hard-deletes a soft-deleted folder after the retention period expires. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
 | Import Package For Solution | :::no-loc text="ImportPackageForSolution"::: |   |
-| Import file to Power BI ended | :::no-loc text="ImportArtifactEnd"::: | Generated when importing Power BI Desktop files (.pbix). ImportSource indicates Power BI or OneDriveSharePoint. ImportType tells you if the file is new (Publish) or is being updated (Republish).  |
-| Import file to Power BI started | :::no-loc text="ImportArtifactStart"::: | Generated when importing Power BI Desktop files (.pbix). When ImportSource is PowerBI, the file import originated from a Power BI client or API. When ImportSource is OneDriveSharePoint, the file import originated from OneDrive or a SharePoint document library.  |
+| Import file to Power BI ended | :::no-loc text="ImportArtifactEnd"::: | Generated when importing Power BI Desktop files (.pbix). `ImportSource` indicates `PowerBI` or `OneDriveSharePoint`. `ImportType` tells you if the file is new (`Publish`) or is being updated (`Republish`).  |
+| Import file to Power BI started | :::no-loc text="ImportArtifactStart"::: | Generated when importing Power BI Desktop files (.pbix). When `ImportSource` is `PowerBI`, the file import originated from a Power BI client or API. When `ImportSource` is `OneDriveSharePoint`, the file import originated from OneDrive or a SharePoint document library.  |
 | Imported file to Power BI | :::no-loc text="Import"::: |   |
 | Imported OneLake lifecycle policy | :::no-loc text="ImportedLifecyclePolicy"::: |   |
 | Initiate Cloud O Auth Login | :::no-loc text="InitiateCloudOAuthLogin"::: |   |
@@ -632,7 +632,7 @@ The following operations are available in the audit logs.
 | Started Power BI trial | :::no-loc text="OptInForProTrial"::: |   |
 | Stop Notebook Session | :::no-loc text="StopNotebookSession"::: |   |
 | Switch Branch Git | :::no-loc text="SwitchBranchInGit"::: | Switch Branch Git is a workspace activity, which is generated when the user changes what git branch is connected to the workspace.  |
-| Sync Dataset Query Scale-Out Replicas | :::no-loc text="SyncDatasetQueryScaleOutReplicas"::: | Sync Dataset Query Scale-Out Replicas is a dataset activity, which is generated when users request a synchronization of the read replicas of a scale out-enabled Power BI dataset with its read/write replica.  |
+| Sync Dataset Query Scale-Out Replicas | :::no-loc text="SyncDatasetQueryScaleOutReplicas"::: | Sync Dataset Query Scale-Out Replicas is a semantic model activity, which is generated when users request a synchronization of the read replicas of a scale out-enabled Power BI semantic model with its read/write replica.  |
 | Take Over Email Subscription | :::no-loc text="TakeOverEmailSubscription"::: |   |
 | Tested Power BI gateway datasource connection with single sign-on | :::no-loc text="GatewayClusterDatasourceSSOTestConnection"::: |   |
 | Took over Power BI semantic model | :::no-loc text="TakeOverDataset"::: |   |
@@ -642,7 +642,7 @@ The following operations are available in the audit logs.
 | Trial License Extension | :::no-loc text="TrialLicenseExtension"::: | Extend user trials by user list or tenant  |
 | Unassign Workspace From Alm Pipeline | :::no-loc text="UnassignWorkspaceFromAlmPipeline"::: |   |
 | Undelete blob | :::no-loc text="UndeleteBlob"::: | OneLake operation. Restore a soft deleted blob. |
-| Undo Git | :::no-loc text="UndoGit"::: | Undo Git is an artifact activity, which is generated when users undo changes done to artifact.  |
+| Undo Git | :::no-loc text="UndoGit"::: | Undo Git is an item activity, which is generated when users undo changes done to item.  |
 | Unfollow Goal | :::no-loc text="UnfollowGoal"::: |   |
 | Unpublished Power BI app | :::no-loc text="UnpublishApp"::: |   |
 | Update Alm Pipeline Access As Admin | :::no-loc text="UpdateAlmPipelineAccessAsAdmin"::: |   |
@@ -654,8 +654,8 @@ The following operations are available in the audit logs.
 | Update Datamart Metadata | :::no-loc text="UpdateDatamartMetadata"::: |   |
 | Update Datamart Settings | :::no-loc text="UpdateDatamartSettings"::: |   |
 | Update Datamart | :::no-loc text="UpdateDatamart"::: |   |
-| Update Dataset Parameters | :::no-loc text="UpdateDatasetParametersForSolution"::: | Update Dataset Parameters is a dataset activity, which is generated when updates are made to a Power BI Dataset parameters  |
-| Update Dataset | :::no-loc text="UpdateDataset"::: | Update Dataset is a dataset activity, which is generated when users updated the properties of a Power BI dataset.  |
+| Update Dataset Parameters | :::no-loc text="UpdateDatasetParametersForSolution"::: | Update Dataset Parameters is a semantic model activity, which is generated when updates are made to a Power BI semantic model parameters  |
+| Update Dataset | :::no-loc text="UpdateDataset"::: | Update Dataset is a semantic model activity, which is generated when users updated the properties of a Power BI semantic model.  |
 | Update Default Domain | :::no-loc text="UpdateDefaultDataDomainAsAdmin"::: | Update Default Domain  |
 | Update Default Personal Workspace Capacity | :::no-loc text="UpdateDefaultPersonalWorkspaceCapacity"::: |   |
 | Update Domain Access Permissions | :::no-loc text="UpdateDataDomainAccessAsAdmin"::: | Update Data Domain Access Permissions  |
@@ -670,7 +670,7 @@ The following operations are available in the audit logs.
 | Update Experiment Run | :::no-loc text="UpdateExperimentRun"::: |   |
 | Update Folder Access | :::no-loc text="UpdateFolderAccess"::: | Indicates an update to workspace access settings   |
 | Update Folder | :::no-loc text="UpdateFolder"::: | Indicates a workspace update   |
-| Update From Git | :::no-loc text="UpdateFromGit"::: | Update From Git is an artifact activity, which is generated when users update artifact from Git.  |
+| Update From Git | :::no-loc text="UpdateFromGit"::: | Update From Git is an item activity, which is generated when users update item from Git.  |
 | Update Gateway Cluster Member | :::no-loc text="UpdateGatewayClusterMember"::: |   |
 | Update Gateway Installer Principals | :::no-loc text="UpdateGatewayInstallerPrincipals"::: |   |
 | Update Gateway Tenant Policy | :::no-loc text="UpdateGatewayTenantPolicy"::: |   |
@@ -707,7 +707,7 @@ The following operations are available in the audit logs.
 | Update list of users part of the datasource share policy | :::no-loc text="UpdateDatasourceSharePrincipalsPolicy"::: | Set the datasource share principals that are part of policy set by the tenant |
 | Update mounted warehouse settings | :::no-loc text="UpdateMountedWarehouseSettings"::: | Generated when mounted warehouse settings are updated |
 | Update mounted warehouse | :::no-loc text="UpdateMountedWarehouse"::: | Generated when mounted warehouse is updated |
-| Update source in GraphQL artifact | :::no-loc text="UpdateSourceGraphQL"::: | Update source in GraphQL artifact |
+| Update source in GraphQL artifact | :::no-loc text="UpdateSourceGraphQL"::: | Update source in GraphQL item |
 | Update subfolder | :::no-loc text="UpdateSubfolder"::: |  |
 | Update task flow | :::no-loc text="UpdateTaskFlow"::: |  |
 | Update the current set of DLP policies applied on the Tenant | :::no-loc text="UpdateTenantDlpPolicies"::: | Update the current set of DLP policies applied on the Tenant |
@@ -766,7 +766,7 @@ The following operations are available in the audit logs.
 | Viewed Power BI report | :::no-loc text="ViewReport"::: | A report is also generated per page when exporting a report. Some fields such as CapacityID and CapacityName, will return null if the report or dashboard is viewed from a Power BI app, rather than a Power BI workspace. |
 | Viewed Power BI tile | :::no-loc text="ViewTile"::: |  |
 | Viewed Power BI usage metrics | :::no-loc text="ViewUsageMetrics"::: |  |
-| View or modify CMK encryption settings | :::no-loc text="GetWorkspaceEncryption"::: | Logged when the encryption settings page is opened in the portal, modified, or applied to artifacts |
+| View or modify CMK encryption settings | :::no-loc text="GetWorkspaceEncryption"::: | Logged when the encryption settings page is opened in the portal, modified, or applied to items. |
 | disable workspace | :::no-loc text="DisableWorkspaceViaAdminApi"::: | Disables the workspace |
 | Disable CMK encryption for your workspace | :::no-loc text="DisableWorkspaceEncryption"::: | Triggered when CMK encryption is disabled for a workspace |
 | Disable Workspace Outbound Access Protection | :::no-loc text="DisableWorkspaceOutboundAccessProtection"::: | Outbound Access Protection Disabled on Workspace |
@@ -789,7 +789,7 @@ The following operations are available in the audit logs.
 When capacity ID and capacity name aren't available in the audit logs, you can view them in the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md).
 
 > [!IMPORTANT]
-> **Starting July 7, 2025**, As part of our ongoing efforts to simplify audit logging and ensure consistency across Microsoft Fabric, we're **standardizing redundant artifact operations** into a single set of unified operations. This migration aligns Datamart, Warehouse, and SQL Analytics Endpoint Lakehouse actions under common names used across the Fabric platform.
+> **Starting July 7, 2025**, As part of our ongoing efforts to simplify audit logging and ensure consistency across Fabric, we're **standardizing redundant item operations** into a single set of unified operations. This migration aligns warehouse, warehouse, and SQL Analytics Endpoint lakehouse actions under common names used across the Fabric platform.
 
 ### What’s Changing?
 
@@ -818,4 +818,4 @@ When capacity ID and capacity name aren't available in the audit logs, you can v
 
 ## Related content
 
-[Track user activities in Microsoft Fabric](track-user-activities.md)
+[Track user activities in Fabric](track-user-activities.md)

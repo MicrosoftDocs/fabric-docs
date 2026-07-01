@@ -10,7 +10,7 @@ ms.date: 03/17/2026
 
 # Use the monitoring hub to track Fabric activity
 
-The Microsoft Fabric **Monitor** feature opens the monitoring hub, which provides a centralized view of job execution health, progress, and outcomes. You can quickly identify problems and take action. Use the monitoring hub to answer these questions:
+The Fabric **Monitor** feature opens the monitoring hub, which provides a centralized view of job execution health, progress, and outcomes. You can quickly identify problems and take action. Use the monitoring hub to answer these questions:
 
 - What is the current status of a job—running, succeeded, or failed?
 - Where did it fail, and what error details are available?
@@ -50,7 +50,7 @@ The monitoring hub provides the following features to help you track and investi
    * User data function
 
 > [!NOTE]
-> For Spark Notebook jobs with jobType "NotebookInteractiveRun," all terminated notebooks display as "Stopped" in the monitoring hub. This temporary UI-only change has the following limitations:
+> For Spark notebook jobs with jobType "NotebookInteractiveRun," all terminated notebooks display as "Stopped" in the monitoring hub. This temporary UI-only change has the following limitations:
 > * You can't filter by the "Stopped" status.
 > * Status might be inconsistent between the monitoring hub table, the Public Job Status API, and job events.
 
@@ -175,4 +175,4 @@ For details about what the notification email includes, see [Notification conten
 
 * [Feature usage and adoption report](feature-usage-adoption.md)
 
-* [Job scheduler in Microsoft Fabric](../fundamentals/job-scheduler.md)
+* [Job scheduler in Fabric](../fundamentals/job-scheduler.md)
