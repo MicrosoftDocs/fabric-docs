@@ -47,7 +47,7 @@ Follow these steps to start using the build agent with AI mode with your data ag
 
 1. **Create a data agent** and add a supported data source with the relevant tables selected.
 
-1. Start by selecting **Build agent with AI** in the ribbon of your data agent.
+1. Select **Build agent with AI** in the ribbon of your data agent.
 
    - **Build agent with AI** opens the creator assistant chat experience.
    - **Test data agent** switches to the standard data agent test mode.
