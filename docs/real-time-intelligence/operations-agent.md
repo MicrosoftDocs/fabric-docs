@@ -16,8 +16,6 @@ By configuring agents with clear instructions, and data sources, you can deploy 
 
 In this article, you learn how to create and use an AI operations agent in Real-Time Intelligence. The operations agent monitors real-time data and suggests actionable decisions.
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
-
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity). Trial capacities aren't supported.
@@ -106,19 +104,11 @@ For example, **Is above** is met on every evaluation while a value stays over th
 
 The following table describes the available conditions:
 
-## Monitor agent activity
-
-The agent's activity log provides a detailed record of its actions, including the conditions it evaluated, the recommendations it made, and the responses it received. This information helps you understand the agent's decision-making process and identify areas for improvement.
-
-To access the activity log, select **Activity log** in the side navigation pane. The log displays a chronological list of events, including timestamps, event types, and relevant details. Select an event to view more information about it.
-
-:::image type="content" source="media/operations-agent/activity-log.png" alt-text="Screenshot of the activity log." lightbox="media/operations-agent/activity-log.png":::
-
-In the **Operation details page** you can view the operation details and status.
-
-:::image type="content" source="media/operations-agent/activity-log-details.png" alt-text="Screenshot of the operation details page." lightbox="media/operations-agent/activity-log-details.png":::
+> [!div class="nextstepaction"]
+> [Configure operations agent actions](operations-agent-actions.md)
 
 ## Related content
 
-* [Operations agent actions](operations-agent-actions.md)
+* [Operations agent billing](operations-agent-billing.md)
 * [Operations agent limitations](operations-agent-limitations.md)
+* [Operations agent transparency note](operations-agent-transparency-note.md)
