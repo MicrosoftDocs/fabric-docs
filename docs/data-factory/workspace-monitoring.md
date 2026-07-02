@@ -27,6 +27,10 @@ Workspace monitoring gives you log-level visibility for all items in a workspace
 
     :::image type="content" source="media/monitor-pipeline-runs/pipeline-workspace-monitoring.png" alt-text="Screenshot of the pipeline workspace monitoring table." lightbox="media/monitor-pipeline-runs/pipeline-workspace-monitoring.png":::
 
+## Troubleshooting missing monitoring tables
+
+When new workspace monitoring tables become available and you don't see them in your existing monitoring eventhouse, recreate workspace monitoring for the workspace by deleting the previous eventhouse and re-adding it to your workspace. Recreating the monitoring eventhouse provisions the latest monitoring schema and ensures newly available tables are visible. Be sure to save any custom Kql queries before removing the existing monitoring eventhouse. The monitoring experience is backed by a monitoring eventhouse and monitoring Kql database that are created when workspace monitoring is enabled.
+
 ## Review logged data
 
 The **ItemJobEventLogs** table includes pipeline-level (L1 across Data Factory items) execution data:
