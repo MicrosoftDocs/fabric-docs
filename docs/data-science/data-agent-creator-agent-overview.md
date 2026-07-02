@@ -22,7 +22,7 @@ Use the **Build agent with AI** mode to explore your connected data source, disc
 
 ## Prerequisites
 
-Before using build agent with AI, make sure you have the following items:
+Before using **Build agent with AI**, make sure you have the following items:
 
 - A Fabric capacity (an F SKU or a trial capacity) that hosts your data agent.
 - The data agent tenant setting enabled by your Fabric administrator. For more information, see [Configure Fabric data agent tenant settings](data-agent-tenant-settings.md).
