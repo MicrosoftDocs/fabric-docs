@@ -167,7 +167,7 @@ Before you configure your Fabric workspace with a customer-managed key, consider
 
 * You can turn on CMK for workspaces hosted in BYOK capacities. The same or separate keys can be used to protect both items in a CMK‑enabled workspace and semantic models residing on the BYOK capacity. (preview)
 
-* CMK can be enabled using the Fabric portal or APIs (preview).
+* You can enable CMK by using the Fabric portal or APIs (preview).
 
 * CMK can be enabled and disabled for the workspace while the tenant level encryption setting is on. Once the tenant setting is turned off, you can no longer enable CMK for workspaces in that tenant or disable CMK for workspaces that already have CMK turned on in that tenant. Data in workspaces that enabled CMK before the tenant setting was turned off remains encrypted with the customer managed key. Keep the associated key active to be able to unwrap data in that workspace. Disabling CMK setting on your workspace also limits the ability to add a new BYOK key to your tenant.
 
