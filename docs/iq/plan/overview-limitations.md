@@ -2,8 +2,8 @@
 title: Known Limitations in Plan (Preview)
 description: This article lists known issues and limitations present in plan (preview).
 ms.topic: concept-article
-ms.date: 06/05/2026
-#customer intent: As a user, I want to know the limitation present in plan.
+ms.date: 07/02/2026
+#customer intent: As a user, I want to know the limitations present in plan.
 ---
 
 # Known limitations in plan (preview)
@@ -35,3 +35,7 @@ Power BI Pro and Power BI Premium Per User (PPU) aren't supported for Plan scena
 
 * Users with the *Contributor* role can't create or share cloud connections.
 * Users with lower-level workspace roles, such as *Contributor*, can't create Plan artifacts that require embed token generation.
+
+## Database-level Row-Level Security (RLS) support
+
+PowerTable does not support user-specific database-level Row-Level Security (RLS) when connecting to Fabric SQL tables through a database connection. As a result, users might see rows that differ from the expected RLS-filtered results. This limitation exists because PowerTable executes all database queries using the identity associated with the database connection configured by the user during sheet creation, rather than the identity of the signed-in PowerTable user.
