@@ -32,7 +32,7 @@ Before using **Build agent with AI**, make sure you have the following items:
 
 ## Configuration types
 
-Build agent with AI mode helps you generate and manage four types of configuration artifacts that drive data agent quality:
+**Build agent with AI** helps you generate and manage four types of configuration artifacts that drive data agent quality:
 
 | Configuration | Description |
 |---|---|
