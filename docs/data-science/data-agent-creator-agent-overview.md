@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 # Build agent with AI for data agent 
 
-Build agent with AI mode is a specialized AI assistant that helps you quickly build and refine the configurations that determine how a data agent behaves when answering questions over your data. Build agent with AI mode guides you through generating and improving the core configurations: **Agent Instructions**, **Data Source Instructions**, **Data Source Descriptions**, and **Example Queries**.
+**Build agent with AI** mode is a specialized AI assistant that helps you quickly build and refine the configurations that determine how a data agent behaves when answering questions over your data. **Build agent with AI** guides you through generating and improving the core configurations: **Agent Instructions**, **Data Source Instructions**, **Data Source Descriptions**, and **Example Queries**.
 
 Use the **Build agent with AI mode** to explore your connected data source, discuss the types of questions you want your data agent to answer, and review recommended configuration updates. When you're ready, accept the suggestions to apply them, then switch to **Test mode** to validate the improvements.
 
