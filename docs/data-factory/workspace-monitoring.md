@@ -29,7 +29,7 @@ Workspace monitoring gives you log-level visibility for all items in a workspace
 
 ## Troubleshooting missing monitoring tables
 
-When new Workspace Monitoring tables become available and you don't see them in your existing monitoring Eventhouse, recreate Workspace Monitoring for the workspace by deleting the previous Eventhouse and readd it to your workspace. Recreating the monitoring Eventhouse provisions the latest monitoring schema and ensures newly available tables are visible. Be sure to save any custom KQL queries before removing the existing monitoring Eventhouse. The monitoring experience is backed by a monitoring Eventhouse and monitoring KQL database that are created when Workspace Monitoring is enabled.
+When new workspace monitoring tables become available and you don't see them in your existing monitoring eventhouse, recreate workspace monitoring for the workspace by deleting the previous eventhouse and re-adding it to your workspace. Recreating the monitoring eventhouse provisions the latest monitoring schema and ensures newly available tables are visible. Be sure to save any custom Kql queries before removing the existing monitoring eventhouse. The monitoring experience is backed by a monitoring eventhouse and monitoring Kql database that are created when workspace monitoring is enabled.
 
 ## Review logged data
 
