@@ -54,9 +54,13 @@ You can use an existing workspace (not My Workspace) or create a new workspace.
     | **Connection** | Create new connection. |
     | **Connection name** | Should be automatically filled out. Change it to a name that you would like to use. |
     | **Data Gateway** | Select the default (None) or the name of virtual network data gateway or on-premises data gateway, according to your scenario. |
-    | **Authentication kind** | Snowflake |
+    | **Authentication kind** | Select the authentication method for your Snowflake connection. Supported options: Snowflake (username and password), Microsoft Entra ID (single sign-on via Entra ID), or Key Pair (RSA key pair authentication for service account scenarios). |
     | **Username** | Your Snowflake username that you created to sign into Snowflake.com. |
     | **Password** | Your Snowflake password that you created when you created your login information into Snowflake.com. |
+
+    > [!IMPORTANT]
+    > All Snowflake identifiers - including server name, warehouse name, database name, schema name, table names, and view names - are case sensitive. The casing you enter in the Fabric connection settings must match exactly what is configured in Snowflake.
+    > For example, if your Snowflake warehouse is named ANALYTICS_WH, you must enter ANALYTICS_WH (not analytics_wh or Analytics_Wh). Mismatched casing causes connection failures or replication errors with no descriptive error message. 
 
 1. Select database from dropdown list.
 
@@ -71,9 +75,11 @@ You can use an existing workspace (not My Workspace) or create a new workspace.
     <!--  -->
 
     > [!NOTE]
-    > If you choose to mirror any Iceberg tables, you will need to know how to connect to the underlying storage of the Iceberg tables. One storage connection will be required, so be sure to only select Iceberg tables that are reachable via the same storage connection.
+    > If you choose to mirror any Iceberg tables, you must provide a storage connection to the underlying storage that contains the Iceberg table data. Keep the following points in mind: 
     > 
-    > To find the storage associated with an Iceberg table in Snowflake, run the [`SYSTEM$GET_ICEBERG_TABLE_INFORMATION`](https://docs.snowflake.com/en/sql-reference/functions/system_get_iceberg_table_information) system function in Snowflake.
+    > 1. One storage connection per mirrored database: All Iceberg tables you select must be reachable through the same storage connection. If your Iceberg tables span multiple storage accounts, you need separate mirrored databases.
+    > 1. Finding the storage location: To find the storage associated with an Iceberg table in Snowflake, run the [`SYSTEM$GET_ICEBERG_TABLE_INFORMATION`](https://docs.snowflake.com/en/sql-reference/functions/system_get_iceberg_table_information) system function in Snowflake.
+    > 1. Mixing table types: You can choose to mirror all managed and Iceberg tables, or just all managed tables (skipping any new Iceberg tables). Use the **Mirror all data** toggle to control this behavior. 
 
     For this tutorial, we select the **Mirror all data** option.
 
