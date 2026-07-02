@@ -143,7 +143,7 @@ The build agent with AI mode proposes configuration changes through the chat exp
 
 ## Unsupported configurations (preview)
 
-During the current preview, Build agent with AI mode doesn't generate or manage the following configurations:
+**Build agent with AI** doesn't generate or manage the following configurations:
 
 - Data source selection (you must already attach a supported data source).
 - Schema selection.
