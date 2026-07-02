@@ -97,6 +97,8 @@ items:
         href: develop-warehouse-project.md
       - name: Source control with Warehouse
         href: source-control.md
+      - name: Pre- and post-deployment scripts
+        href: pre-post-deployment-scripts.md
   - name: Develop
     items:
       - name: AI functions

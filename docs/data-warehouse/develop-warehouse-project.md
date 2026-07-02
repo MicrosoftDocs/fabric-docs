@@ -204,7 +204,7 @@ When deploying database projects to Fabric Data Warehouse, several settings cont
     - **Recommendation:** Use in dev/test environments to clean up leftover objects.
     - **Caution:** Using `DropObjectsNotInSource` in production can **delete important objects and data**. Double-check before enabling.
     
- -  `Pre-Deployment Scripts`
+ -  `Predeploy` for the [pre-deployment script](pre-post-deployment-scripts.md#sql-project-file-structure-and-syntax)
     
     - **What it does:** Executes custom SQL scripts **before** the schema deployment.  
     - **Common uses:**  
@@ -216,7 +216,7 @@ When deploying database projects to Fabric Data Warehouse, several settings cont
 > [!TIP]
 > When a deployment process is **idempotent**, it can be run multiple times without causing issues, and you can deploy to multiple databases without needing to predetermine their status.
 
- -  `Post-Deployment Scripts`
+ -  `Postdeploy` for the [post-deployment script](pre-post-deployment-scripts.md#sql-project-file-structure-and-syntax)
     
     - **What it does:** Executes custom SQL scripts **after** the schema deployment.  
     - **Common uses:**  
@@ -226,7 +226,7 @@ When deploying database projects to Fabric Data Warehouse, several settings cont
     - **Caution:** Avoid heavy operations on large tables in production; ensure scripts can safely run multiple times if needed.
 
 > [!IMPORTANT] 
-> Always review deployment scripts and settings before publishing. Test in dev/test environments first to prevent unintended data loss.
+> Always review deployment scripts and settings before publishing. Test in dev or test environments first to prevent unintended data loss. For more information and examples, see [Pre-deployment and post-deployment scripts for Fabric Data Warehouse](pre-post-deployment-scripts.md).
     
 ## Verify publish
 
