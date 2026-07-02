@@ -38,4 +38,4 @@ Power BI Pro and Power BI Premium Per User (PPU) aren't supported for Plan scena
 
 ## Database-level Row-Level Security (RLS) support
 
-PowerTable does not support user-specific database-level Row-Level Security (RLS) when connecting to Fabric SQL tables through a database connection. As a result, users might see rows that differ from the expected RLS-filtered results. This limitation exists because PowerTable executes all database queries using the identity associated with the database connection configured by the user during sheet creation, rather than the identity of the signed-in PowerTable user.
+PowerTable doesn't support user-specific database-level Row-Level Security (RLS) when connecting to Fabric SQL tables through a database connection. As a result, users might see rows that differ from the expected RLS-filtered results. This limitation exists because PowerTable executes all database queries by using the identity associated with the database connection that the user configures during sheet creation, rather than the identity of the signed-in PowerTable user.
