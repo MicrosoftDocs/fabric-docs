@@ -43,7 +43,7 @@ Before using **Build agent with AI**, make sure you have the following items:
 
 ## Get started
 
-Follow these steps to start using the build agent with AI mode with your data agent:
+Follow these steps to start using the **Build agent with AI** mode with your data agent:
 
 1. **Create a data agent** and add a supported data source with the relevant tables selected.
 
