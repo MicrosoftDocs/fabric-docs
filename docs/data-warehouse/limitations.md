@@ -2,7 +2,7 @@
 title: Limitations of Fabric Data Warehouse
 description: Review current limitations for warehouse and SQL analytics endpoint items in Microsoft Fabric Data Warehouse.
 ms.reviewer: joanpo, ajagadish, anphil, fresantos, pvenkat
-ms.date: 06/30/2026
+ms.date: 07/02/2026
 ms.topic: limits-and-quotas
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ai-usage: ai-assisted
@@ -16,6 +16,10 @@ This article lists current limitations for warehouse and SQL analytics endpoint 
 ## Limitations
 
 This article lists current general product limitations for data warehousing in Microsoft Fabric. Feature level limitations are called out in the corresponding feature article. For more information on the future of Microsoft Fabric, see [Fabric Roadmap](https://blog.fabric.microsoft.com/blog/announcing-the-fabric-roadmap?ft=All).
+
+### T-SQL syntax support
+
+Fabric Data Warehouse doesn't support every [Transact-SQL statement available in SQL Server](tsql-surface-area.md). 
 
 ### Cross-region connections aren't supported
 
