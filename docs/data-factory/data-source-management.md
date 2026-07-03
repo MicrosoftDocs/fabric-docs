@@ -235,7 +235,7 @@ Control who can share connections in your organization. By default, users can sh
 Connection sharing helps teams collaborate while keeping credentials secure. Shared connections only work within Fabric.
 
 > [!NOTE]
-> Guest users may experience limitations sharing connections in Fabric if the organization's Microsoft Entra [B2B guest user properties](/entra/external-id/user-properties#guest-user-permissions) block user discoverability and sharing permissions.
+> Guest users might face limitations when sharing connections in Fabric if the organization's Microsoft Entra [B2B guest user properties](/entra/external-id/user-properties#guest-user-permissions) block user discoverability and sharing permissions.
 
 ### Restrict connection sharing
 
