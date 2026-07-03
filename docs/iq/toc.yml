@@ -121,10 +121,16 @@ items:
                 href: plan/planning-how-to-manage-inserted-rows.md
         - name: Insert columns
           items:
-              - name: Insert data input columns
+              - name: Insert data input column
                 href: plan/planning-how-to-insert-columns/how-to-insert-data-input-columns.md
-              - name: Insert number columns
+              - name: Insert number column
                 href: plan/planning-how-to-insert-columns/how-to-insert-number-columns.md
+              - name: Insert list column
+                href: plan/planning-how-to-insert-columns/how-to-insert-dropdown-columns.md
+              - name: Insert person column
+                href: plan/planning-how-to-insert-columns/how-to-insert-person-columns.md
+              - name: Insert formula column
+                href: plan/planning-how-to-insert-columns/how-to-insert-formula-columns.md
         - name: Bulk edit data
           href: plan/planning-how-to-bulk-edit.md
         - name: Set up scenarios
