@@ -12,7 +12,8 @@ ms.date: 06/22/2026
 
 # Integrate OneLake with Azure Machine Learning
 
-OneLake is Fabric’s open lake storage layer with Azure Storage-compatible access. It exposes Fabric data through `onelake.dfs.fabric.microsoft.com` for ADLS Gen2/DFS access and `onelake.blob.fabric.microsoft.com` for Blob API access. This document describes how Azure Machine Learning can use these surfaces through AML datastores, batch endpoint inputs and outputs, and direct `abfss://` access from notebooks or scripts.
+OneLake is Fabric’s open lake storage layer with Azure Storage-compatible access. It exposes Fabric data through `onelake.dfs.fabric.microsoft.com` for ADLS Gen2/DFS access and `onelake.blob.fabric.microsoft.com` for Blob API access. This article describes how Azure Machine Learning can use these surfaces through AML datastores, batch endpoint inputs and outputs, and direct `abfss://` access from notebooks or scripts.
+
 
 Azure Machine Learning provides three primary integration points with OneLake:
 
