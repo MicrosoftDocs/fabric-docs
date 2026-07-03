@@ -329,6 +329,8 @@ items:
               href: plan/infobridge-transformations/infobridge-how-to-filter-rows.md
             - name: Sort data
               href: plan/infobridge-transformations/infobridge-how-to-sort.md
+            - name: Unnest
+              href: plan/infobridge-transformations/infobridge-how-to-unnest.md
             - name: Text functions
               href: plan/infobridge-transformations/infobridge-how-to-text-functions.md
 - name: Graph
