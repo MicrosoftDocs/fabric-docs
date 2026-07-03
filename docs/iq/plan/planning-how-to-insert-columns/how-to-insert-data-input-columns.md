@@ -27,8 +27,8 @@ The following table describes the available data input column types.
 | [Number](./how-to-insert-number-columns.md) | Double-click and start typing values directly into a cell. |
 | Text | Enter text with multi-line support and word wrapping. |
 | Checkbox | Capture binary values such as Yes/No or True/False. |
-| Person | Select users from your organization. |
-| List | Use predefined values or create your own list of values. Supports both single-select and multi-select options. |
+| [Person](./how-to-insert-person-columns.md) | Select users from your organization. |
+| [List](./how-to-insert-dropdown-columns.md) | Use predefined values or create your own list of values. Supports both single-select and multi-select options. |
 | Date | Select a date using the date picker. |
 
 <!-- Add links to table when available --> 
@@ -124,7 +124,6 @@ To configure access:
 
     * **Read Access**: Provides view-only access to the data input column.
     * **Read + Write Access**: Provides permissions to view and edit the column.
-
 
 ## Other considerations
 
