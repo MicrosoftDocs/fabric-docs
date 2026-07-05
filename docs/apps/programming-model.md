@@ -9,7 +9,7 @@ ai-usage: ai-assisted
 
 # Programming model overview
 
-[Rayfin SDK](./javascript/api/fabric-apps-sdk-javascript/rayfin-overview?view=fabric-apps-sdk-javascript-latest) uses a decorator-driven programming model where you define your data schema once in TypeScript and automatically receive production-ready APIs, type-safe clients, and infrastructure.
+[Rayfin SDK](./javascript/api/fabric-apps-sdk-javascript/rayfin-overview) uses a decorator-driven programming model where you define your data schema once in TypeScript and automatically receive production-ready APIs, type-safe clients, and infrastructure.
 
 ## Key concepts
 
