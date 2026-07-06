@@ -1,5 +1,5 @@
 ---
-title: Create a Table App using PowerTable by Importing Excel or CSV Files
+title: Create a Table App Using PowerTable by Importing Excel or CSV Files
 description: Learn how to create a no-code table app with PowerTable sheets, by importing Excel sheets to build collaborative data apps with live synchronization.
 ms.date: 06/28/2026
 ms.topic: how-to
