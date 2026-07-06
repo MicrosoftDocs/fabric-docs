@@ -4,7 +4,7 @@ ms.topic: include
 ---
 
 1. In your [Microsoft Fabric workspace](https://fabric.microsoft.com/), select **+ New item**.
-1. Enter *graph* in the search box, press **Enter** to search for graph items, and select **Graph instance**. Alternatively, scroll down to **Analyze and train data** > **Graph instance**.
+1. Enter *graph* in the search box, press **Enter** to search for graph items, and select **Graph model**. Alternatively, scroll down to **Analyze and train data** > **Graph model**.
 
     :::image type="content" source="../media/quickstart/new-item-graph-model.png" alt-text="Screenshot showing the new item menu with the option to select Graph model." lightbox="../media/quickstart/new-item-graph-model.png":::
 
