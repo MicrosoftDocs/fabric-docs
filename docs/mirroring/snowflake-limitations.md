@@ -1,7 +1,7 @@
 ---
 title: "Limitations for Microsoft Fabric Mirrored Databases From Snowflake"
 description: Learn about the limitations of mirrored databases from Snowflake in Microsoft Fabric.
-ms.reviewer: imotiwala, sbahadur
+ms.reviewer: sbahadur, sbahadur
 ms.date: 02/26/2026
 ms.topic: limits-and-quotas
 ---

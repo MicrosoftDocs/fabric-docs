@@ -1,7 +1,7 @@
 ---
 title: "Modeling Fact Tables in Warehouse"
 description: "Learn about fact tables in Microsoft Fabric Warehouse."
-ms.reviewer: drubiolo, chweb
+ms.reviewer: drubiolo, salilkanade, pvenkat
 ms.date: 04/06/2025
 ms.topic: concept-article
 ms.custom:

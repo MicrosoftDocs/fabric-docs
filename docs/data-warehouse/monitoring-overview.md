@@ -1,7 +1,7 @@
 ---
 title: Monitoring in Fabric Data Warehouse Overview
 description: Learn about the solutions and methods to monitor query activity in your Fabric warehouse.
-ms.reviewer: jacindaeng
+ms.reviewer: rakrish75
 ms.date: 04/06/2025
 ms.topic: overview
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.

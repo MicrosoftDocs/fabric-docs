@@ -2,7 +2,7 @@
 title: Monitor Connections, Sessions, and Requests Using DMVs
 description: Learn how to use dynamic management views (DMVs) to monitor connections, sessions, and requests in Fabric Data Warehouse.
 ai-usage: ai-assisted
-ms.reviewer: jacindaeng
+ms.reviewer: rakrish75
 ms.date: 06/25/2026
 ms.topic: how-to
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.

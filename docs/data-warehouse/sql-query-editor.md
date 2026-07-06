@@ -1,7 +1,7 @@
 ---
 title: Query Using the SQL Query Editor
 description: Learn how to use the SQL query editor.
-ms.reviewer: prlangad, jacindaeng, pradeepsrikakolapu
+ms.reviewer: prlangad, rakrish75, pvenkat
 ms.date: 01/08/2026
 ms.topic: how-to
 ms.custom:
