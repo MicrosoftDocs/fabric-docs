@@ -10,7 +10,7 @@ ms.search.form: Fabric Apps overview
 
 # What is Fabric Apps (Preview)?
 
-Fabric Apps (preview) helps you build data-driven applications on Microsoft Fabric by combining data models, generated APIs, authentication, and hosting in one development workflow. You define your data models in TypeScript, and Fabric Apps uses them to generate the backend pieces your app needs. Fabric Apps supports **TypeScript** as the language for data models, client code, and application logic.
+Fabric Apps (preview) is built on the Rayfin SDK and enables developers to create data-driven applications on Microsoft Fabric using a unified development workflow. Developers define data models in TypeScript, and Fabric Apps automatically generates APIs, handles authentication, provides hosting, and integrates with Fabric services. Fabric Apps supports TypeScript for data models, client code, and application logic. Learn more in the [Rayfin SDK overview](/javascript/api/fabric-apps-sdk-javascript/rayfin-overview).
 
 [!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
 

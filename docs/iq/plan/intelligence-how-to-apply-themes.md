@@ -1,5 +1,5 @@
 ---
-title: "Apply and customize themes"
+title: Apply and Customize Themes
 description: "Learn to apply and customize dashboard themes to standardize colors, fonts, and styling across all your intelligence dashboards and visual elements."
 ms.topic: how-to
 ms.date: 06/21/2026
