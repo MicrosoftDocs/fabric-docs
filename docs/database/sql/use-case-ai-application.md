@@ -1,7 +1,7 @@
 ---
 title: Use SQL Database in AI Applications
 description: Learn how to use SQL database in Fabric to build AI-powered applications with vector search, RAG patterns, and integration with LangChain and Semantic Kernel.
-ms.reviewer: pamela, imotiwala, antho, yoleichen
+ms.reviewer: pamela, antho, yoleichen
 ms.date: 05/29/2026
 ms.topic: solution-overview
 ai-usage: ai-assisted

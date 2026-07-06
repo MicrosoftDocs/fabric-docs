@@ -19,15 +19,7 @@ Also, with Apache Kafka endpoints available for eventstreams, you can send or co
 
 Eventstreams provide you with source connectors to fetch event data from the various sources. More sources are available when you enable **Enhanced capabilities** at the time of creating an eventstream.
 
-# [Enhanced capabilities](#tab/enhancedcapabilities)
-
 [!INCLUDE [supported-sources-enhanced](./includes/supported-sources-enhanced.md)]
-
-# [Standard capabilities](#tab/standardcapabilities)
-
-[!INCLUDE [supported-sources](./includes/supported-sources-standard.md)]
-
----
 
 ## Process events
 
@@ -45,23 +37,12 @@ If you enabled **Enhanced capabilities** while creating an eventstream, the tran
 
 The Fabric eventstreams feature supports sending data to the following supported destinations.
 
-# [Enhanced capabilities](#tab/enhancedcapabilities)
-
 [!INCLUDE [supported-destinations-enhanced](./includes/supported-destinations-enhanced.md)]
 
 You can attach multiple destinations in an eventstream to simultaneously receive data from your eventstreams without the eventstreams interfering with each other.
 
 :::image type="content" source="./media/overview/multiple-destinations-enhanced.png" alt-text="Screenshot that shows an overview of an eventstream item with enhanced capabilities." lightbox="./media/overview/multiple-destinations-enhanced.png" :::
 
-# [Standard capabilities](#tab/standardcapabilities)
-
-[!INCLUDE [supported-destinations](./includes/supported-destinations-standard.md)]
-
-You can attach multiple destinations in an eventstream to simultaneously receive data from your eventstreams without the eventstreams interfering with each other.
-
-:::image type="content" source="./media/overview/eventstream-overview.png" alt-text="Screenshot that shows an overview of an eventstream item." lightbox="./media/overview/eventstream-overview.png" :::
-
----
 
 ## Schema management
 

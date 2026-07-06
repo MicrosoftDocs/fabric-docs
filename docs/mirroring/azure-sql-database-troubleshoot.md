@@ -1,7 +1,7 @@
 ---
 title: "Troubleshoot Fabric Mirrored Databases From Azure SQL Database"
 description: Troubleshooting mirrored databases from Azure SQL Database in Microsoft Fabric.
-ms.reviewer: imotiwala, ajayj, wiassaf, atodalbagi
+ms.reviewer: nanikolic, wiassaf, atodalbagi
 ms.date: 11/25/2025
 ms.topic: troubleshooting
 ms.custom:

@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Configure a Microsoft Fabric Mirrored Database From Snowflake"
 description: Learn how to configure a mirrored database from Snowflake in Microsoft Fabric.
-ms.reviewer: imotiwala, maprycem, cynotebo, sbahadur
+ms.reviewer: sbahadur, maprycem
 ms.date: 04/24/2025
 ms.topic: tutorial
 ---
