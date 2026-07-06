@@ -50,7 +50,7 @@ In some cases, you might want to get more detailed logs of your refresh. To get 
 
 In this zipped file, you find multiple log files from the mashup engine that provide you with more detailed information about the refresh. These logs are especially useful when you need to troubleshoot issues with your dataflow refresh or when you're in contact with Microsoft support. You can download these logs a few minutes after the refresh is completed and up to 28 days after the refresh. You need at least viewer permissions to the workspace to download the detailed logs. 
 
-In order to be able to download the detailed logs for dataflows that are refreshed using a gateway, you will need to enable the [Admin consent for gateway diagnostics](data-integration/gateway/service-gateway-log-files.md) feature first, both on the tenant level and on the gateway level.
+To download the detailed logs for dataflows that are refreshed using a gateway, you need to enable the [Admin consent for gateway diagnostics](data-integration/gateway/service-gateway-log-files.md) feature first, both on the tenant level and on the gateway level.
 
 ### Reviewing your dataflow refresh from the UI
 
