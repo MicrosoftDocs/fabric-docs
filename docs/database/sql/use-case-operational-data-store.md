@@ -1,7 +1,7 @@
 ---
 title: Use SQL database as an Operational Data Store
 description: This article outlines how to implement an operational data store (ODS) using SQL database in Microsoft Fabric.
-ms.reviewer: pamela, imotiwala, antho
+ms.reviewer: pamela, antho
 ms.date: 01/07/2026
 ms.topic: solution-overview
 ---

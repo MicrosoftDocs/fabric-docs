@@ -1,7 +1,7 @@
 ---
 title: "Load Tables in a Dimensional Model"
 description: "Learn about loading tables in a dimensional model in Microsoft Fabric Warehouse."
-ms.reviewer: drubiolo, chweb
+ms.reviewer: drubiolo, salilkanade, pvenkat
 ms.date: 04/06/2025
 ms.topic: concept-article
 ms.custom:
