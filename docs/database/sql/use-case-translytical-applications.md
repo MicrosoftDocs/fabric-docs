@@ -1,7 +1,7 @@
 ---
 title: Use SQL database as the Source Data Engine for Translytical Applications
 description: Learn how to use SQL database in translytical applications, which combine transactional data and aggregate data, for a single pane of business intelligence.
-ms.reviewer: pamela, imotiwala, antho
+ms.reviewer: pamela, antho
 ms.date: 06/16/2026
 ms.topic: solution-overview
 ai-usage: ai-assisted

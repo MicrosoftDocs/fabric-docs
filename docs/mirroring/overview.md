@@ -1,7 +1,7 @@
 ---
 title: Mirroring
 description: Learn about mirrored databases in Microsoft Fabric.
-ms.reviewer: imotiwala, chweb, maprycem, cynotebo, tinglee, sbahadur
+ms.reviewer: sbahadur, maprycem, tinglee
 ms.date: 03/18/2026
 ms.topic: overview
 ms.search.form: Fabric Mirroring
