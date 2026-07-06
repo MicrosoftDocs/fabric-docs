@@ -1,5 +1,5 @@
 ---
-title: Text functions in Infobridge
+title: Text Functions in Infobridge
 description: Learn how to use text functions in Infobridge to extract, split, format, trim, and add prefixes or suffixes to text fields.
 ms.date: 06/29/2026
 ms.topic: how-to
