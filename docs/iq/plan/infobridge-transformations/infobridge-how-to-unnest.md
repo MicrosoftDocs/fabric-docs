@@ -1,5 +1,5 @@
 ---
-title: Use the unnest transformation in Infobridge
+title: Use the Unnest Transformation in Infobridge
 description: Learn how to use the unnest transformation in Infobridge to split delimited text values into separate rows for data preparation and analysis.
 ms.date: 07/03/2026
 ms.topic: how-to
