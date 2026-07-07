@@ -41,8 +41,6 @@ items:
     href: tutorial-lakehouse-build-report.md
   - name: 7 Clean up resources
     href: tutorial-lakehouse-clean-up.md
-- name: Lakehouse
-  items:
   - name: Overview
     items:
     - name: What is a lakehouse?
@@ -51,6 +49,8 @@ items:
       href: create-lakehouse.md
     - name: Navigate the lakehouse explorer
       href: navigate-lakehouse-explorer.md
+    - name: Query data with the Lakehouse query explorer
+      href: lakehouse-query-explorer.md
     - name: Lakehouse table maintenance
       href: lakehouse-table-maintenance.md
     - name: High concurrency for table load and preview

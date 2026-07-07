@@ -19,8 +19,6 @@ Activator is the event detection and rules engine at the heart of the Fabric Rea
 
 It fits into a reactive, event-driven architecture where data flows continuously, and Activator makes decisions based on stateful evaluations of event data in near real-time.
 
-:::image type="content" source="./media/activator-introduction/activator.png" alt-text="Diagram that shows the architecture of Fabric Activator.":::
-
 - **Event sources**
 
     Activator connects directly to eventstreams, which ingest data from various producers (Azure Event Hubs, IoT devices, custom endpoints, and other sources). These streams serve as the source of events, and Activator can subscribe to one or more eventstreams to observe data changes. Other event sources could be Fabric or Azure events or an Activator listening to a Power BI report or a Real-Time dashboard.
