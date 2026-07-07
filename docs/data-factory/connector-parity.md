@@ -11,9 +11,9 @@ ms.custom:
 
 # Connector capability comparison between Azure Data Factory and Data Factory in Fabric
 
-This documentation provides an in-depth comparison of connector availability between Azure Data Factory (ADF) and Data Factory in Fabric. Connectors play a pivotal role in data integration, enabling the seamless flow of data between various data sources and destinations. Understanding the connector continuity between these two platforms is essential for planning your data workflows.
+This article provides an in-depth comparison of connector availability between Azure Data Factory (ADF) and Data Factory in Fabric. Connectors are essential for data integration, enabling data to flow between various sources and destinations. Understanding connector continuity between these two platforms helps you plan your data workflows.
 
-With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich set of data sources. See below for the lists of connectors available in Azure Data Factory and Data Factory in Fabric:
+With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich set of data sources. The following connectors are available in Azure Data Factory and Data Factory in Fabric:
 
 - [Azure connectors](#azure-connectors)
 - [Microsoft Fabric & data warehouse connectors](#microsoft-fabric--data-warehouse-connectors)
@@ -29,7 +29,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 | **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |--------------------|---------------------|------------------------|------------------------|-------------------------------|---------------------------|---------------------------|
-| [Azure Blob Storage](connector-azure-blob-storage-overview.md) | ✓/✓ | Anonymous | Service principal authentication type supports `azureCloudType`, `accountKind`, `servicePrincipalCredentialType` and `servicePrincipalCert`. | ✓/✓ | Anonymous | `azureCloudType`, `accountKind`, `servicePrincipalCredentialType` and `servicePrincipalCert` are not supported for service principal authentication type. |
+| [Azure Blob Storage](connector-azure-blob-storage-overview.md) | ✓/✓ | Anonymous | Service principal authentication type supports `azureCloudType`, `accountKind`, `servicePrincipalCredentialType`, and `servicePrincipalCert`. | ✓/✓ | Anonymous | `azureCloudType`, `accountKind`, `servicePrincipalCredentialType`, and `servicePrincipalCert` aren't supported for service principal authentication type. |
 |  |  | Account key |  |  | Account key |  |
 |  |  | Shared Access Signature (SAS) |  |  | Shared Access Signature (SAS) |  |
 |  |  | Service principal |  |  | Service principal |  |
@@ -42,18 +42,18 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |  |  | System-assigned managed identity |  |  | Workspace identity |  |
 |  |  | User-assigned managed identity |  |  |  |  |
 |  |  |  |  |  | Organizational account |  |
-| [Azure Cosmos DB for MongoDB](connector-azure-cosmos-db-for-mongodb-overview.md) | ✓/✓ | Basic | Version 1.1 is not supported. Differences are in the data type mapping: <br><br>Date -> Int64<br>TimeStamp (the most significant 32 bits) -> Int64<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String  | ✓/✓ | Basic | Support version 1.1. Differences are in the data type mapping: <br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String  |
+| [Azure Cosmos DB for MongoDB](connector-azure-cosmos-db-for-mongodb-overview.md) | ✓/✓ | Basic | Version 1.1 isn't supported. Differences are in the data type mapping: <br><br>Date -> Int64<br>TimeStamp (the most significant 32 bits) -> Int64<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String  | ✓/✓ | Basic | Support version 1.1. Differences are in the data type mapping: <br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String  |
 | [Azure Data Explorer](connector-azure-data-explorer-overview.md) | ✓/✓ | Service principal |  | ✓/✓ |  |  |
 |  |  | System-assigned managed identity |  |  | Workspace identity |  |
 |  |  | User-assigned managed identity |  |  |  |  |
 |  |  |  |  |  | Organizational account |  |
-| [ADLS Gen2](connector-azure-data-lake-storage-gen2-overview.md) | ✓/✓ | Account key | Service principal authentication type supports `azureCloudType`, `servicePrincipalCredentialType` and `servicePrincipalCert`. | ✓/✓ | Account key | `azureCloudType`, `servicePrincipalCredentialType` and `servicePrincipalCert` are not supported for service principal authentication type. |
+| [ADLS Gen2](connector-azure-data-lake-storage-gen2-overview.md) | ✓/✓ | Account key | Service principal authentication type supports `azureCloudType`, `servicePrincipalCredentialType`, and `servicePrincipalCert`. | ✓/✓ | Account key | `azureCloudType`, `servicePrincipalCredentialType`, and `servicePrincipalCert` aren't supported for service principal authentication type. |
 |  |  | Service principal |  |  | Service principal |  |
 |  |  | Shared Access Signature (SAS) |  |  | Shared Access Signature (SAS) |  |
 |  |  | System-assigned managed identity |  |  | Workspace identity |  |
 |  |  | User-assigned managed identity |  |  |  |  |
 |  |  |  |  |  | Organizational account |  |
-| [Azure Database for MySQL](connector-azure-database-for-mysql-overview.md) | ✓/✓ | Basic | Support `SSLMode` and `UseSystemTrustStore`. | ✓/✓ | Basic | `SSLMode` and `UseSystemTrustStore` are not supported. |
+| [Azure Database for MySQL](connector-azure-database-for-mysql-overview.md) | ✓/✓ | Basic | Support `SSLMode` and `UseSystemTrustStore`. | ✓/✓ | Basic | `SSLMode` and `UseSystemTrustStore` aren't supported. |
 | Azure Databricks Delta Lake | ✓/✓ | Access token | Support `domain` and `clusterId`. | ✓/✓ | Personal Access Token | Support Server Hostname, HTTP Path.  |
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  |  |  |
@@ -61,7 +61,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |  |  | Shared access signature |  |  |  |  |
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  |  |  |
-| [Azure Database for PostgreSQL](connector-azure-database-for-postgresql-overview.md) | ✓/✓ | Basic | Support `sslMode`. <br>Support additional connection properties: `schema`, `pooling`, `connectionTimeout`, `commandTimeout`, `trustServerCertificate`, `readBufferSize`, `timezone`, `encoding`. | ✓/✓ | Basic | `sslMode` is not supported.  <br> Additional connection properties are not supported.|
+| [Azure Database for PostgreSQL](connector-azure-database-for-postgresql-overview.md) | ✓/✓ | Basic | Support `sslMode`. <br>Support additional connection properties: `schema`, `pooling`, `connectionTimeout`, `commandTimeout`, `trustServerCertificate`, `readBufferSize`, `timezone`, `encoding`. | ✓/✓ | Basic | `sslMode` isn't supported.  <br> Additional connection properties aren't supported.|
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  |  |  |
 |  |  | Service principal |  |  |  |  |
@@ -69,17 +69,17 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |  |  | Shared access signature |  |  |  |  |
 |  |  | System-assigned managed identity |  |  | Workspace identity |  |
 |  |  | User-assigned managed identity |  |  |  |  |
-| [Azure SQL Database](connector-azure-sql-database-overview.md) | ✓/✓ | SQL | Support `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate` and `hostNameInCertificate`. <br>Support additional connection properties: `applicationIntent`, `connectTimeout`, `connectRetryCount`, `connectRetryInterval`, `loadBalanceTimeout`, `commandTimeout`, `integratedSecurity`, `failoverPartner`, `maxPoolSize`, `minPoolSize`, `multipleActiveResultSets`, `multiSubnetFailover`, `packetSize`, `pooling`. | ✓/✓ | Basic | `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate` and `hostNameInCertificate` are not supported. <br>Additional connection properties are not supported. |
+| [Azure SQL Database](connector-azure-sql-database-overview.md) | ✓/✓ | SQL | Support `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate`, and `hostNameInCertificate`. <br>Support additional connection properties: `applicationIntent`, `connectTimeout`, `connectRetryCount`, `connectRetryInterval`, `loadBalanceTimeout`, `commandTimeout`, `integratedSecurity`, `failoverPartner`, `maxPoolSize`, `minPoolSize`, `multipleActiveResultSets`, `multiSubnetFailover`, `packetSize`, `pooling`. | ✓/✓ | Basic | `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate`, and `hostNameInCertificate` aren't supported. <br>Additional connection properties aren't supported. |
 |  |  | Service principal |  |  | Service principal |  |
 |  |  | System-assigned managed identity |  |  | Workspace identity |  |
 |  |  | User-assigned managed identity |  |  |  |  |
 |  |  |  |  |  | Organizational account |  |
-| [Azure SQL Managed Instance](connector-azure-sql-managed-instance-overview.md) | ✓/✓ | SQL | Support `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate` and `hostNameInCertificate`. <br>Support additional connection properties: `applicationIntent`, `connectTimeout`, `connectRetryCount`, `connectRetryInterval`, `loadBalanceTimeout`, `commandTimeout`, `integratedSecurity`, `failoverPartner`, `maxPoolSize`, `minPoolSize`, `multipleActiveResultSets`, `multiSubnetFailover`, `packetSize`, `pooling`. | ✓/✓ | Basic |  `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate` and `hostNameInCertificate` are not supported. <br>Additional connection properties are not supported. |
+| [Azure SQL Managed Instance](connector-azure-sql-managed-instance-overview.md) | ✓/✓ | SQL | Support `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate`, and `hostNameInCertificate`. <br>Support additional connection properties: `applicationIntent`, `connectTimeout`, `connectRetryCount`, `connectRetryInterval`, `loadBalanceTimeout`, `commandTimeout`, `integratedSecurity`, `failoverPartner`, `maxPoolSize`, `minPoolSize`, `multipleActiveResultSets`, `multiSubnetFailover`, `packetSize`, `pooling`. | ✓/✓ | Basic |  `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate`, and `hostNameInCertificate` aren't supported. <br>Additional connection properties aren't supported. |
 |  |  | Service principal |  |  | Service principal |  |
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  |  |  |
 |  |  |  |  |  | Organizational account |  |
-| [Azure Synapse Analytics](connector-azure-synapse-analytics-overview.md) | ✓/✓ | SQL | Support `encrypt`, `trustServerCertificate` and `hostNameInCertificate`. <br>Support additional connection properties: `applicationIntent`, `connectTimeout`, `connectRetryCount`, `connectRetryInterval`, `loadBalanceTimeout`, `commandTimeout`, `integratedSecurity`, `failoverPartner`, `maxPoolSize`, `minPoolSize`, `multipleActiveResultSets`, `multiSubnetFailover`, `packetSize`, `pooling`. | ✓/✓ | Basic | `encrypt`, `trustServerCertificate` and `hostNameInCertificate` are not supported. <br>Additional connection properties are not supported. |
+| [Azure Synapse Analytics](connector-azure-synapse-analytics-overview.md) | ✓/✓ | SQL | Support `encrypt`, `trustServerCertificate`, and `hostNameInCertificate`. <br>Support additional connection properties: `applicationIntent`, `connectTimeout`, `connectRetryCount`, `connectRetryInterval`, `loadBalanceTimeout`, `commandTimeout`, `integratedSecurity`, `failoverPartner`, `maxPoolSize`, `minPoolSize`, `multipleActiveResultSets`, `multiSubnetFailover`, `packetSize`, `pooling`. | ✓/✓ | Basic | `encrypt`, `trustServerCertificate`, and `hostNameInCertificate` aren't supported. <br>Additional connection properties aren't supported. |
 |  |  | Service principal |  |  | Service principal |  |
 |  |  | System-assigned managed identity |  |  | Workspace identity |  |
 |  |  | User-assigned managed identity |  |  |  |  |
@@ -90,12 +90,12 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |  |  | User-assigned managed identity |  |  |  |  |
 
 
-## Microsoft Fabric & data warehouse connectors
+## Microsoft Fabric and data warehouse connectors
 
 
 | **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |--------------------|---------------------|-------------------------|-------------------------|-------------------------------|----------------------------|----------------------------|
-| [Microsoft Fabric Lakehouse](connector-lakehouse-overview.md) | ✓/✓ | Service principal |Upsert for Table is not supported| ✓/✓ | | Support Upsert for Table|
+| [Microsoft Fabric Lakehouse](connector-lakehouse-overview.md) | ✓/✓ | Service principal |Upsert for Table isn't supported| ✓/✓ | | Support Upsert for Table|
 |                    |                     | System-assigned managed identity | |                       |                            | |
 |                    |                     | User-assigned managed identity   | |                       |                            | |
 |                    |                     |                                 | |                       | Organizational account      | |
@@ -184,7 +184,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |--------------------|---------------------|-------------------------|-------------------------------|----------------------------|
 | AVRO               | ✓/✓                 |                         | ✓/✓                           |                            |
 | Binary             | ✓/✓                 |                         | ✓/✓                           |                            |
-| Delimited Text     | ✓/✓                 |  Support skipLineCount                       | ✓/✓                           |   skipLineCount is not supported                        |
+| Delimited Text     | ✓/✓                 |  Support skipLineCount                       | ✓/✓                           |   skipLineCount isn't supported                        |
 | Excel              | ✓/-                 |                         | ✓/-                           |                            |
 | JSON               | ✓/✓                 |                         | ✓/✓                           |                            |
 | ORC                | ✓/✓                 |                         | ✓/✓                           |                            |
@@ -199,25 +199,25 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |--------------------|---------------------|------------------------|-------------------------|-------------------------------|---------------------------|----------------------------|
 | [Cassandra](connector-cassandra-overview.md) | ✓/- | Anonymous | | ✓/- | Anonymous | |
 | | | Basic | | | Basic | |
-| [MongoDB](connector-mongodb-overview.md) | ✓/✓ | Basic | Version 1.1 is not supported. Differences are in the data type mapping:<br><br>Date -> Int64<br>TimeStamp (the most significant 32 bits) -> Int64<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String <br><br>Support `connectionString` and `database`. | ✓/✓ | Basic | Support version 1.1. Differences are in the data type mapping: <br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String <br><br>Support server. |
-| [MongoDB Atlas](connector-mongodb-atlas-overview.md) | ✓/✓ | Basic |Version 1.1 is not supported. Differences are in the data type mapping:<br><br>Date -> String<br>TimeStamp (the most significant 32 bits) -> Int64<br>TimeStamp (the least significant 32 bits) -> Int64<br>Double -> String<br>Int32 -> String<br>Int64 -> String<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String  <br><br>Support `connectionString` and `database`.| ✓/✓ | Basic |Support version 1.1. Differences are in the data type mapping:<br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>TimeStamp (the least significant 32 bits) -> Int32<br>Double -> Double<br>Int32 -> Int32<br>Int64 -> Int64<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String <br><br>Support Server and Cluster. |
+| [MongoDB](connector-mongodb-overview.md) | ✓/✓ | Basic | Version 1.1 isn't supported. Differences are in the data type mapping:<br><br>Date -> Int64<br>TimeStamp (the most significant 32 bits) -> Int64<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String <br><br>Support `connectionString` and `database`. | ✓/✓ | Basic | Support version 1.1. Differences are in the data type mapping: <br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String <br><br>Support server. |
+| [MongoDB Atlas](connector-mongodb-atlas-overview.md) | ✓/✓ | Basic |Version 1.1 isn't supported. Differences are in the data type mapping:<br><br>Date -> String<br>TimeStamp (the most significant 32 bits) -> Int64<br>TimeStamp (the least significant 32 bits) -> Int64<br>Double -> String<br>Int32 -> String<br>Int64 -> String<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String  <br><br>Support `connectionString` and `database`.| ✓/✓ | Basic |Support version 1.1. Differences are in the data type mapping:<br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>TimeStamp (the least significant 32 bits) -> Int32<br>Double -> Double<br>Int32 -> Int32<br>Int64 -> Int64<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String <br><br>Support Server and Cluster. |
 
-## Services & apps connectors
+## Services and apps connectors
 
 | **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |--------------------|---------------------|------------------------|------------------|-------------------------------|---------------------------|---------------------|
-| [Dataverse](connector-dataverse-overview.md)          | ✓/✓                | Microsoft Entra service principal | Support `deploymentType`, `serviceUri`, `servicePrincipalCredentialType` and `credentials`. | ✓/✓                   | Service principal       | `deploymentType`, `serviceUri`, `servicePrincipalCredentialType` and `credentials` are not supported.<br><br>Support Environment domain. |
+| [Dataverse](connector-dataverse-overview.md)          | ✓/✓                | Microsoft Entra service principal | Support `deploymentType`, `serviceUri`, `servicePrincipalCredentialType`, and `credentials`. | ✓/✓                   | Service principal       | `deploymentType`, `serviceUri`, `servicePrincipalCredentialType`, and `credentials` aren't supported.<br><br>Support Environment domain. |
 |  | | Office 365 | | | | |
 |  | | User-assigned managed identity | | | | |
 |  | | | |  | Workspace identity | |
 |  | | | |  | Organizational account      | |
-| Dynamics 365       | ✓/✓                | Service principal | Support `deploymentType`, `serviceUri`, `servicePrincipalCredentialType` and `credentials`. | ✓/✓                      | Service principal                         | `deploymentType`, `serviceUri`, `servicePrincipalCredentialType` and `credentials` are not supported.<br><br>Support Environment domain. |
+| Dynamics 365       | ✓/✓                | Service principal | Support `deploymentType`, `serviceUri`, `servicePrincipalCredentialType`, and `credentials`. | ✓/✓                      | Service principal                         | `deploymentType`, `serviceUri`, `servicePrincipalCredentialType`, and `credentials` aren't supported.<br><br>Support Environment domain. |
 | | | Office 365 | | | | |
 | | | User-assigned managed identity | | | | |
 |  | | | |  | Workspace identity | |
-| [Dynamics AX](connector-dynamics-ax-overview.md)        | ✓/-                | OData protocol with Service Principal | Support `aadResourceId`. | ✓/-                      | Service principal                         | `aadResourceId` is not supported. |
+| [Dynamics AX](connector-dynamics-ax-overview.md)        | ✓/-                | OData protocol with Service Principal | Support `aadResourceId`. | ✓/-                      | Service principal                         | `aadResourceId` isn't supported. |
 | | | | | | Workspace identity | |
-| [Dynamics CRM](connector-dynamics-crm-overview.md)       | ✓/✓                | Microsoft Entra service principal | Support `deploymentType`, `serviceUri`, `servicePrincipalCredentialType` and `credentials`. | ✓/✓                   | Service principal       | `deploymentType`, `serviceUri`, `servicePrincipalCredentialType` and `credentials` are not supported.<br><br>Support Environment domain. |
+| [Dynamics CRM](connector-dynamics-crm-overview.md)       | ✓/✓                | Microsoft Entra service principal | Support `deploymentType`, `serviceUri`, `servicePrincipalCredentialType`, and `credentials`. | ✓/✓                   | Service principal       | `deploymentType`, `serviceUri`, `servicePrincipalCredentialType`, and `credentials` aren't supported.<br><br>Support Environment domain. |
 | | | Office 365 | | | | |
 | | | User-assigned managed identity| | | | |
 | | | | | | Workspace identity | |
@@ -227,15 +227,15 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | Jira               | ✓/-                | Basic                 | | N                      |                          | |
 | [Microsoft 365](connector-microsoft-365-overview.md)      | ✓/-                | Service principal     | | ✓/-                   | Service principal       | |
 | QuickBooks         | ✓/-                | OAuth 2.0             | | N                      |                          | |
-| [Salesforce](connector-salesforce-objects-overview.md)         | ✓/✓                | OAuth2ClientCredentials | Support `clientId`, `clientSecret` and `apiVersion`. | ✓/✓                   | Organizational account  | `clientId`, `clientSecret` and `apiVersion` are not supported. |
+| [Salesforce](connector-salesforce-objects-overview.md)         | ✓/✓                | OAuth2ClientCredentials | Support `clientId`, `clientSecret`, and `apiVersion`. | ✓/✓                   | Organizational account  | `clientId`, `clientSecret`, and `apiVersion` aren't supported. |
 | [Salesforce Service Cloud](connector-salesforce-service-cloud-overview.md) | ✓/✓         | OAuth2ClientCredentials | | ✓/✓                   | Organizational account  | |
 | SAP Cloud for Customer (C4C) | ✓/✓         | Basic                 | | N                      |                          | |
 | SAP ECC            | ✓/-                | Basic                 | | N                      |                          | |
-| [ServiceNow](connector-servicenow-overview.md)         | ✓/-                | Basic                 | Support pageSize | ✓/-                   | Basic                   |  pageSize is not supported|
+| [ServiceNow](connector-servicenow-overview.md)         | ✓/-                | Basic                 | Support pageSize | ✓/-                   | Basic                   |  pageSize isn't supported|
 | | | OAuth2 | | | | |
 | [SharePoint Online File](connector-sharepoint-online-file-overview.md) | N                |                          |  | ✓/✓                           | Organizational account                    |  |
 |                      |                     |                 |                        |                               | Workspace identity                          |                           |
-| [SharePoint Online List](connector-sharepoint-online-list-overview.md) | ✓/-                | Service principal     | Support `servicePrincipalCredentialType`, `ServicePrincipalCert`, `servicePrincipalEmbeddedCert` and `servicePrincipalEmbeddedCertPassword`. | ✓/-                   |     | `servicePrincipalCredentialType`, `ServicePrincipalCert`, `servicePrincipalEmbeddedCert` and `servicePrincipalEmbeddedCertPassword` are not supported.<br><br>Support Implementation and View mode. |
+| [SharePoint Online List](connector-sharepoint-online-list-overview.md) | ✓/-                | Service principal     | Support `servicePrincipalCredentialType`, `ServicePrincipalCert`, `servicePrincipalEmbeddedCert`, and `servicePrincipalEmbeddedCertPassword`. | ✓/-                   |     | `servicePrincipalCredentialType`, `ServicePrincipalCert`, `servicePrincipalEmbeddedCert`, and `servicePrincipalEmbeddedCertPassword` aren't supported.<br><br>Support Implementation and View mode. |
 | | | | | | Organizational account | |
 | | | | | | Workspace identity | |
 | Shopify            | ✓/-                | Access token          | | N                      |                          | |
@@ -269,4 +269,4 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 ## Conclusion
 
-To learn how to use the connectors available in Data Factory in Fabric, refer to [Connector overview](connector-overview.md).
+To learn how to use the connectors available in Data Factory in Fabric, see [Connector overview](connector-overview.md).
