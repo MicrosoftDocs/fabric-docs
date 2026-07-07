@@ -261,6 +261,8 @@ items:
           href: plan/powertable-how-to-bulk-edit-data.md
         - name: Insert and manage rows
           href: plan/powertable-how-to-insert-rows-import-data.md
+        - name: Manage columns
+          href: plan/powertable-how-to-manage-columns.md
         - name: Set up access control
           href: plan/powertable-how-to-set-up-access-control.md  
         - name: Generate forms
