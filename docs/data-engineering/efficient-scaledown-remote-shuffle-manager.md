@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Efficient scaledown is a feature in Microsoft Fabric Spark that decouples Spark shuffle data from executor lifetime. Instead of pinning shuffle output to local executor disks, Fabric Spark routes shuffle data to Azure Blob Storage (or migrates it there on demand) and lets Adaptive Query Execution (AQE) shape the write itself. The result is faster cluster scaledown, lower compute cost, and more resilient jobs—with no changes to your queries, notebooks, or pipelines.
+Efficient scaledown is a feature in Microsoft Fabric Spark that decouples Spark shuffle data from executor lifetime. Instead of pinning shuffle output to local executor disks, Fabric Spark routes shuffle data to Azure Blob Storage (or migrates it there on demand) and lets Adaptive Query Execution (AQE) shape the write itself. The result is faster cluster scaledown, lower compute cost, and more resilient jobs - with no changes to your queries, notebooks, or pipelines.
 
 ## Overview
 
@@ -20,30 +20,30 @@ Efficient scaledown is built from four cooperating capabilities:
 | Capability | What it does |
 |---|---|
 | **Remote Shuffle Manager (RSM)** | Writes and reads shuffle data to Azure Blob Storage instead of executor local disks. |
-| **Shuffle Migration** | Moves shuffle blocks off an executor before it's decommissioned, instead of dropping them. |
-| **Decision Layer** | Per-stage runtime routing that keeps small shuffles local and offloads large shuffles to remote storage. |
+| **Shuffle migration** | Moves shuffle blocks off an executor before it's decommissioned, instead of dropping them. |
+| **Decision layer** | Per-stage runtime routing that keeps small shuffles local and offloads large shuffles to remote storage. |
 | **AQE Shuffle Write** | Lets Adaptive Query Execution participate in the shuffle write phase so partitioning is right the first time. |
 
 ## Prerequisites
 
-- Native Execution Engine (NEE) must be enabled.
-- Autoscale enabled (recommended). Efficient scaledown also works without autoscale via the Spark configurations below.
+- Enable Native Execution Engine (NEE).
+- Enable autoscale (recommended). Efficient scaledown also works without autoscale via the Spark configurations described later in this article.
 - [Runtime 1.3 (Apache Spark 3.5)](./runtime-1-3.md) or later.
 
 ## How it works
 
-When Spark processes a query, it often redistributes data between stages—a *shuffle*. Normally, shuffle data is stored on each executor's local disk, which ties executors to that data. They can't be released until every consumer has finished reading. That coupling is the single biggest reason clusters can't scale down quickly and why losing an executor causes expensive stage retries.
+When Spark processes a query, it often redistributes data between stages - a *shuffle*. Normally, each executor stores shuffle data on its local disk, which ties the executors to that data. The executors can't be released until every consumer finishes reading. This coupling is the single biggest reason clusters can't scale down quickly and why losing an executor causes expensive stage retries.
 
 Efficient scaledown breaks this coupling:
 
 - **Large shuffles** go directly to Azure Blob Storage via the Remote Shuffle Manager.
-- **Small shuffles** stay on local disk for speed. If their executor later needs to be released, Shuffle Migration moves the blocks to peers or to fallback storage in the background.
-- The **Decision Layer** picks the right path per stage at runtime.
+- **Small shuffles** stay on local disk for speed. If their executor later needs to be released, shuffle migration moves the blocks to peers or to fallback storage in the background.
+- The **decision layer** picks the right path per stage at runtime.
 - **AQE Shuffle Write** ensures the writer produces partitioning that downstream AQE consumes without re-coalescing, avoiding wasted I/O.
 
 ```
                 ┌───────────────────────────┐
-   Query  ───►  │   AQE + Decision Layer    │   per-stage choice
+   Query  ───►  │   AQE + decision layer    │   per-stage choice
                 └─────────────┬─────────────┘
                               │
                 ┌─────────────▼─────────────┐
@@ -53,21 +53,21 @@ Efficient scaledown breaks this coupling:
               local   ▼                 ▼   remote
         ┌────────────────────┐   ┌──────────────────┐
         │  Local disk +      │   │  RSM → Azure     │
-        │  Shuffle Migration │   │  Blob Storage    │
+        │  shuffle migration │   │  Blob Storage    │
         └─────────┬──────────┘   └─────────┬────────┘
                   │ on decommission        │
                   ▼                        ▼
         fallback storage   Remote shuffle store
 ```
 
-### Smart routing (Decision Layer)
+### Smart routing (decision layer)
 
-The Decision Layer evaluates each shuffle exchange and decides:
+The decision layer evaluates each shuffle exchange and decides:
 
 - **Large shuffles → Azure Blob Storage.** Maximum scaledown and fault-tolerance benefit.
-- **Small shuffles → local disk.** No cloud I/O overhead for tiny transfers. If the executor later decommissions, Shuffle Migration takes over.
+- **Small shuffles → local disk.** No cloud I/O overhead for tiny transfers. If the executor later decommissions, shuffle migration takes over.
 
-Routing is automatic and requires no user input. The recommended granularity is per-stage.
+The decision layer routes shuffle data automatically and requires no input from you. The recommended granularity is per-stage.
 
 ## Key benefits
 
@@ -91,7 +91,7 @@ When shuffle data lives only on local disk, an executor crash means that data is
 | Graceful decommission | Shuffle dropped on shutdown | Blocks migrated to peer or fallback storage |
 | Network blips during fetch | Cascading `FetchFailedException` | Reads come from storage, unaffected |
 
-This eliminates the most common cause of `FetchFailedException` in production.
+This design eliminates the most common cause of `FetchFailedException` in production.
 
 ### Faster, truly elastic scaling
 
@@ -104,7 +104,7 @@ The autoscaler can freely remove idle nodes and resize the cluster in response t
 
 ### Better performance on skewed and large shuffles
 
-AQE Shuffle Write lets Adaptive Query Execution shape the shuffle write itself—choosing partitioning that downstream AQE consumes without re-coalescing, and producing fewer, better-sized blocks for remote storage. Combined with the Decision Layer, you get faster wall-clock time on large/skewed queries and unchanged latency for small ones.
+AQE Shuffle Write lets Adaptive Query Execution shape the shuffle write itself - choosing partitioning that downstream AQE consumes without re-coalescing, and producing fewer, better-sized blocks for remote storage. Combined with the decision layer, you get faster wall-clock time on large/skewed queries and unchanged latency for small ones.
 
 ## Get started
 
@@ -116,13 +116,13 @@ Apply this configuration to enable the full efficient scaledown stack:
 # Remote Shuffle Manager
 spark.conf.set("spark.remote.shuffle.enabled", "true")
 
-# Decision Layer — per-stage routing of local vs. remote shuffle
+# Decision layer — per-stage routing of local vs. remote shuffle
 spark.conf.set("spark.sql.rsm.decisionlayer.enabled.level", "stage")
 
 # AQE participates in shuffle write
 spark.conf.set("spark.sql.adaptive.shuffleWrite.enabled", "true")
 
-# Shuffle Migration on executor decommission
+# Shuffle migration on executor decommission
 spark.conf.set("spark.storage.decommission.shuffleBlocks.enabled", "true")
 spark.conf.set("spark.storage.decommission.shuffleBlocks.cleanup", "true")
 spark.conf.set("spark.storage.decommission.shuffleBlocks.migrateToFallbackStorage", "true")
@@ -139,11 +139,11 @@ No code changes are required. You can also set these in your environment Spark p
 |---|---|---|
 | `spark.remote.shuffle.enabled` | `true` | Turns efficient scaledown on. Shuffle data goes to Azure Blob Storage instead of executor local disks. |
 
-### Decision Layer
+### Decision layer
 
 | Setting | Recommended | What it controls |
 |---|---|---|
-| `spark.sql.rsm.decisionlayer.enabled.level` | `stage` | Granularity at which the Decision Layer routes shuffle. `stage` evaluates each Spark stage independently. |
+| `spark.sql.rsm.decisionlayer.enabled.level` | `stage` | Granularity at which the decision layer routes shuffle. `stage` evaluates each Spark stage independently. |
 
 ### AQE Shuffle Write
 
@@ -154,7 +154,7 @@ No code changes are required. You can also set these in your environment Spark p
 > [!NOTE]
 > AQE itself (`spark.sql.adaptive.enabled`) must be on. It's on by default in Fabric Spark.
 
-### Shuffle Migration on decommission
+### Shuffle migration on decommission
 
 | Setting | Recommended | What it controls |
 |---|---|---|
@@ -215,20 +215,20 @@ Most users don't need to change these defaults.
 | Metric | Without efficient scaledown | With efficient scaledown |
 |---|---|---|
 | **Total Compute (VM-Minutes)** | 14,952 | 6,880 |
-| **Cost Reduction** | — | **54%** |
+| **Cost Reduction** | — | 54% |
 
 The total job runtime might be longer (autoscale uses fewer concurrent executors), but billed compute is cut by more than half.
 
-### Decision Layer performance (TPC-DS, RSM on)
+### Decision layer performance (TPC-DS, RSM on)
 
-Routing small shuffles to local disk and only large shuffles to remote storage delivers up to **57% runtime improvement** versus routing every shuffle remotely, with the same scaledown benefit.
+Routing small shuffles to local disk and only large shuffles to remote storage delivers up to 57% runtime improvement versus routing every shuffle remotely, with the same scaledown benefit.
 
 ## Limitations
 
 - **NEE required.** Efficient scaledown depends on the Native Execution Engine.
 - **Azure Blob Storage only.** Standard `BlockBlobStorage` with HNS disabled. Azure Data Lake Gen2 / HNS-enabled accounts aren't supported as the remote shuffle store.
 - **Not supported with Azure Private Link.** Environments using private link networking aren't currently compatible.
-- **Decision Layer granularity** is currently per-stage. Per-task or per-partition routing isn't in scope.
+- **Decision layer granularity** is currently per-stage. Per-task or per-partition routing isn't in scope.
 - **Cache behavior change.** With `preventShutdownExecutorWithCache=false`, executors holding `cache()`/`persist()` data might be scaled down. Workloads that depend heavily on executor-local cache for hot data should validate.
 
 ## Related content
