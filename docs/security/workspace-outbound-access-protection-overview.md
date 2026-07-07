@@ -65,7 +65,8 @@ The following table summarizes the supported workloads and item types that can b
 | Real-Time Intelligence | Data connection rules | <ul>><li>Activator</li><li>Eventstream</li><li>Eventhouse</li></ul> | Workspace outbound access protection for Real-Time Intelligence: [Activator](workspace-outbound-access-protection-activator.md), [Eventstream](workspace-outbound-access-protection-eventstream.md), and [Eventhouse](workspace-outbound-access-protection-eventhouse.md) |
 | Mirrored databases | Data connection rules | <ul><li>Mirrored databases</li></ul> | [Workspace outbound access protection for mirrored databases](workspace-outbound-access-protection-mirrored-databases.md) |
 | OneLake | Managed private endpoints | <ul><li>OneLake shortcuts</li></ul> | [Workspace outbound access protection for OneLake](workspace-outbound-access-protection-onelake.md) |
-| Power BI | Data connection rules | <ul><li>Semantic models</li><li>Reports (preview)</li></ul> | Workspace outbound access protection for: [semantic models](workspace-outbound-access-protection-semantic-models.md) and [Power BI reports](workspace-outbound-access-protection-power-bi-reports.md) |
+| Real-Time Events (preview) | Data connection rules | <ul><li>Azure and Fabric events</li></ul> | [Workspace outbound access protection for Real-Time Events](workspace-outbound-access-protection-real-time-events.md) |
+| Power BI | Data connection rules | <ul><li>Semantic models</li></ul> | [Workspace outbound access protection for semantic models](workspace-outbound-access-protection-semantic-models.md) |
 
 ## Considerations and limitations
 
@@ -95,7 +96,7 @@ This section outlines important considerations and limitations when using worksp
 
 * Workspace outbound access protection isn't currently compatible with [Fabric external data sharing](/fabric/governance/external-data-sharing-overview). Cross-tenant allow lists aren't supported with workspace outbound access protection. 
 
-* Power BI support is limited to semantic models and interactive Power BI reports (`.pbix`). Reports in a protected workspace can only consume semantic models in the same workspace. Paginated reports, dashboards, and scorecards aren't supported. Unsupported items can't be created in a protected workspace, and outbound access protection can't be enabled on a workspace that already contains them.
+* Power BI items other than semantic models don't yet support outbound access protection. You can't create these items in workspaces with outbound access protection enabled. If these items already exist in a workspace, you can't enable outbound access protection on that workspace.
 
 ### Data connection rules
 
