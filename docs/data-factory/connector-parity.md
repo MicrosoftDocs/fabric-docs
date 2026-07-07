@@ -16,12 +16,12 @@ This article provides an in-depth comparison of connector availability between A
 With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich set of data sources. The following connectors are available in Azure Data Factory and Data Factory in Fabric:
 
 - [Azure connectors](#azure-connectors)
-- [Microsoft Fabric & data warehouse connectors](#microsoft-fabric--data-warehouse-connectors)
+- [Microsoft Fabric & data warehouse connectors](#microsoft-fabric-and-data-warehouse-connectors)
 - [Database connectors](#database-connectors)
 - [File connectors](#file-connectors)
 - [File format connectors](#file-format-connectors)
 - [NoSQL connectors](#nosql-connectors)
-- [Services and apps connectors](#services--apps-connectors)
+- [Services and apps connectors](#services-and-apps-connectors)
 - [Generic connectors](#generic-connectors)
 
 ## Azure connectors
