@@ -1,18 +1,18 @@
 ---
-title: "Data Security in Microsoft Fabric Mirrored Databases From Snowflake"
+title: "Data Security in Microsoft Fabric Mirrored Databases from Snowflake"
 description: Learn about data security in mirrored databases from Snowflake in Microsoft Fabric.
 ms.reviewer: sbahadur, maprycem
 ms.date: 11/19/2024
 ms.topic: how-to
 ---
 
-# How to: Secure data Microsoft Fabric mirrored databases from Snowflake
+# Secure data in Microsoft Fabric mirrored databases from Snowflake
 
-This guide helps you establish data security in your mirrored Snowflake in Microsoft Fabric.
+This guide helps you establish data security in your mirrored Snowflake database in Microsoft Fabric.
 
 ## Security considerations
 
-To enable Fabric mirroring, you will need user permissions for your Snowflake database that contains the following permissions:
+To enable Fabric mirroring, you need user permissions for your Snowflake database that include the following:
 
   - `CREATE STREAM`
   - `SELECT table`
