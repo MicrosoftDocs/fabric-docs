@@ -10,7 +10,7 @@ ms.search.form: Fabric Apps overview
 
 # What is Fabric Apps (Preview)?
 
-Fabric Apps (preview) is built on the Rayfin SDK and enables developers to create data-driven applications on Microsoft Fabric using a unified development workflow. Developers define data models in TypeScript, and Fabric Apps automatically generates APIs, handles authentication, provides hosting, and integrates with Fabric services. Fabric Apps supports TypeScript for data models, client code, and application logic. Learn more in the [Rayfin SDK overview](/javascript/api/fabric-apps-sdk-javascript/rayfin-overview).
+Fabric Apps (preview) is built on the Rayfin SDK and enables developers to create data-driven applications on Fabric using a unified development workflow. Developers define data models in TypeScript, and Fabric Apps automatically generates APIs, handles authentication, provides hosting, and integrates with Fabric services. Fabric Apps supports TypeScript for data models, client code, and application logic. Learn more in the [Rayfin SDK overview](/javascript/api/fabric-apps-sdk-javascript/rayfin-overview).
 
 [!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
 
@@ -22,7 +22,7 @@ Fabric Apps provides these capabilities:
 - **Type-safe clients** – The client SDK validates queries and mutations before they reach the backend, catching errors during development.
 - **Built-in authentication** – Session management, token handling, and authentication flows are included. Configure Fabric SSO for deployed applications or use email and password during local development.
 - **Static hosting** – Build and serve your frontend application alongside your backend APIs with a single deployment command.
-- **Local development** – Run the full stack locally with Docker for rapid iteration, then deploy to Microsoft Fabric when ready for production. Scaffold projects, develop with GitHub Copilot, and deploy to Fabric using Rayfin CLI.
+- **Local development** – Run the full stack locally with Docker for rapid iteration, then deploy to Fabric when ready for production. Scaffold projects, develop with GitHub Copilot, and deploy to Fabric using Rayfin CLI.
 
 ## Regions supported 
 Fabric Apps are not avaiable in all regions yet. See [supported regions for Fabric App](../admin/region-availability.md) to learn more.
@@ -46,7 +46,7 @@ Changes might take a few minutes to propagate.
 
 ## How it works
 
-A Fabric app runs as a managed service in Microsoft Fabric with suite of services that define the backend such as app hosting, database, GraphQL APIs, and authentication. Fabric manages the hosting, networking, and scaling. Authentication uses Fabric SSO (Microsoft Entra ID single sign-on) exclusively—no other authentication providers are available after deployment.
+A Fabric app runs as a managed service in Fabric with suite of services that define the backend such as app hosting, database, GraphQL APIs, and authentication. Fabric manages the hosting, networking, and scaling. Authentication uses Fabric SSO (Microsoft Entra ID single sign-on) exclusively—no other authentication providers are available after deployment.
 
 :::image type="content" source="media\overview\fabric-app-overview.png" alt-text="Screenshot showing Fabric app managed service and components." lightbox="media\overview\fabric-app-overview.png" border="true":::
 
@@ -182,5 +182,5 @@ Fabric Apps might not be suitable for:
 
 - [Create your first Fabric Apps project](create-app.md)
 - [Define data models with decorators](data-models.md)
-- [Deploy to Microsoft Fabric](deploy-app.md)
+- [Deploy to Fabric](deploy-app.md)
 - [Configure authentication](authentication.md)
