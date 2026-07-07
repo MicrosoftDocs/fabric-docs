@@ -9,7 +9,7 @@ ai-usage: ai-generated
 
 # Fabric Apps frequently asked questions (FAQ)
 
-This article answers common questions about Microsoft Fabric Apps.
+This article answers common questions about Fabric Apps.
 
 ## General
 

@@ -10,19 +10,19 @@ ms.search.form: Create and deploy a Fabric app with Rayfin CLI
 
 # Create a Fabric app with the Rayfin CLI
 
-This tutorial shows you how to use the Rayfin CLI to create a project, run it locally, and deploy it to Microsoft Fabric. You use the same CLI workflow for new apps and for later updates to your schema or frontend.
+This tutorial shows you how to use the Rayfin CLI to create a project, run it locally, and deploy it to Fabric. You use the same CLI workflow for new apps and for later updates to your schema or frontend.
 
 In this tutorial, you:
 
 - Create a Fabric Apps project from a template.
 - Start the app locally.
-- Sign in to Microsoft Fabric from the CLI.
+- Sign in to Fabric from the CLI.
 - Deploy the app to a Fabric workspace.
 - Verify the deployment status.
 
 ## Prerequisites
 
-- Access to Microsoft Fabric.
+- Access to Fabric.
 - A Fabric workspace where you have Contributor, Member, or Admin permissions.
 - The Fabric Apps workload enabled in your tenant.
 - Node.js and npm installed.
