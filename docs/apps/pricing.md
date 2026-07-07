@@ -13,7 +13,7 @@ Understand how a Fabric app consumes Fabric capacity and which platform features
 
 ## How billing works
 
-Fabric apps run on Fabric capacity. Every operation performed by a Fabric app child service consumes CUs from the Fabric capacity assigned to your workspace.
+Fabric apps run on Fabric capacity. Every operation that a Fabric app child service performs consumes CUs from the Fabric capacity assigned to your workspace.
 
 Your workspace must have Fabric capacity assigned.
 CU consumption is tracked in the [Microsoft Fabric Capacity Metrics app](/fabric/enterprise/metrics-app) where you can monitor usage per item and per operation.
@@ -32,7 +32,7 @@ The SQL Database child item consumes CUs for compute and storage.
 
 | Operation | What it covers | Billing meter | Type |
 | --- | --- | --- | --- |
-| **SQL Usage** | Compute for all SQL queries, modifications, and data processing — includes queries from your application's GraphQL API and any queries you run in the Fabric portal query editor. | SQL database in Fabric Capacity Usage CU | Interactive |
+| **SQL Usage** | Compute for all SQL queries, modifications, and data processing - includes queries from your application's GraphQL API and any queries you run in the Fabric portal query editor. | SQL database in Fabric Capacity Usage CU | Interactive |
 | **Allocated SQL Storage** | Dynamically allocated storage for tables, indexes, transaction logs, and metadata. Fully integrated with OneLake. | SQL Storage Data Stored | Background |
 
 One Fabric CU equals 0.383 SQL database vCores.

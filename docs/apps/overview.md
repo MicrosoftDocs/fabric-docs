@@ -46,7 +46,7 @@ Changes might take a few minutes to propagate.
 
 ## How it works
 
-A Fabric app runs as a managed service in Fabric with suite of services that define the backend such as app hosting, database, GraphQL APIs, and authentication. Fabric manages the hosting, networking, and scaling. Authentication uses Fabric SSO (Microsoft Entra ID single sign-on) exclusively—no other authentication providers are available after deployment.
+A Fabric app runs as a managed service in Fabric with a suite of services that define the backend such as app hosting, database, GraphQL APIs, and authentication. Fabric manages the hosting, networking, and scaling. Authentication uses Fabric SSO (Microsoft Entra ID single sign-on) exclusively - no other authentication providers are available after deployment.
 
 :::image type="content" source="media\overview\fabric-app-overview.png" alt-text="Screenshot showing Fabric app managed service and components." lightbox="media\overview\fabric-app-overview.png" border="true":::
 
