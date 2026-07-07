@@ -75,7 +75,7 @@ The following table summarizes the information protection capabilities in Fabric
 
 ## Monitor and govern sensitivity label adoption
 
-Beyond applying sensitivity labels, Fabric provides governance experiences that help administrators and data owners understand how labels are being used across their data estate. Using [governance experiences in OneLake catalog](https://learn.microsoft.com/fabric/governance/governance-compliance-overview), organizations can:
+Beyond applying sensitivity labels, Fabric provides governance experiences that help administrators and data owners understand how labels are being used across their data estate. Using [governance experiences in OneLake catalog](governance-compliance-overview.md), organizations can:
 * Identify labeled and unlabeled assets.
 * Understand sensitivity label coverage across Fabric items.
 * Discover assets associated with specific sensitivity labels.
