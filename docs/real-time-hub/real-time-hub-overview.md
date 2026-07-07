@@ -54,8 +54,6 @@ Real-Time hub allows you to create streams for the supported sources. After you 
 - To **analyze** a stream, you open the eventstream associated with the data stream, add a KQL Database destination to send the data to a KQL table, and then open KQL database and run queries against the KQL table. To analyze a table in  Real-Time hub, you open the parent KQL database and run queries against the KQL table.
 - To **act** on streams or Fabric events, you set alerts based on conditions and specify actions to take when the conditions are met.
 
-    :::image type="content" source="./media/real-time-hub-overview/real-time-hub.png" alt-text="Screenshot that shows the conceptual image of Real-Time hub architecture." lightbox="./media/real-time-hub-overview/real-time-hub.png" :::
-
 ## Related content
 
 See [Get started with Real-Time hub.](get-started-real-time-hub.md)
