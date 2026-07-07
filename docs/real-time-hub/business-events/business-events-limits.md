@@ -12,15 +12,13 @@ Use this page to understand the key Business Events limits that can affect how y
 
 ## At a glance
 
-| Limit | Value |
-|-------|-------|
-| Maximum event size | 1 MB |
-| Retry window | 24 hours |
-| Filters per event consumer | 25 |
-| Preview data (recent events shown) | 30 events from the last 24 hours |
-| Event types per listener | 25 |
+- Each event can be up to 1 MB.
+- If delivery fails, the service can retry for up to 24 hours.
+- You can set up to 25 filters for each event listener.
+- Preview shows up to 30 recent events from the last 24 hours for each publisher or consumer.
+- Each event listener can subscribe to up to 25 event types.
 
-When working with larger payloads, many event types, or complex filtering, considering these limits early can help you optimize your design over time.
+When you work with larger payloads, many event types, or complex filtering, considering these limits early can help you optimize your design over time.
 
 ## What each limit means for you
 
@@ -30,15 +28,15 @@ Each event can be up to 1 MB in size. For larger payloads, consider splitting th
 
 ### Retry window: up to 24 hours
 
-If delivery doesn't succeed on the first attempt, Business Events can retry for up to 24 hours. This helps handle temporary issues, after which the event is no longer retried.
+If delivery doesn't succeed on the first attempt, Business Events can retry for up to 24 hours. This behavior helps handle temporary issues, after which the event is no longer retried.
 
 ### Filters per consumer: up to 25
 
-Each event consumer can define up to 25 filters to control which events it receives. This allows for flexible routing based on your scenario.
+Each event consumer can define up to 25 filters to control which events it receives. This limit gives you flexible routing based on your scenario.
 
 ### Preview data: up to 30 recent events
 
-Preview shows up to 30 recent events from the last 24 hours for each publisher or consumer, providing a quick way to validate event flow.
+Preview shows up to 30 recent events from the last 24 hours for each publisher or consumer, which provides a quick way to validate event flow.
 
 ### Event types per listener: up to 25
 
@@ -46,6 +44,6 @@ A listener can subscribe to up to 25 event types. For broader scenarios, you can
 
 ## Related content
 
-- [Business Events overview](business-events-overview.md)
-- [Business Events concepts and terminology](business-events-concepts.md)
+- [Business events overview](business-events-overview.md)
+- [Business events in Fabric Real-Time hub - Key concepts and terminology](business-events-concepts.md)
 - [Create and manage business events](create-business-events.md)
