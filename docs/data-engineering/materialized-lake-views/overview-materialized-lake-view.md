@@ -3,7 +3,7 @@ title: Overview of Materialized Lake Views
 description: Learn about the features, availability, and limitations of materialized lake views in Microsoft Fabric.
 ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: overview
-ms.date: 05/26/2026
+ms.date: 07/08/2026
 ai-usage: ai-assisted
 # customer intent: As a data engineer, I want to understand what materialized lake views are in Microsoft Fabric so that I can use them for building a medallion architecture.
 ---
@@ -65,11 +65,13 @@ Materialized lake views include built-in features that handle the operational co
 
 ### Automatic refresh optimization
 
-Fabric automatically determines when and how to refresh your materialized lake views. A decision engine selects the most efficient refresh strategy, and source data changes are detected by default through Change Data Feed:
+Fabric automatically determines when and how to refresh your materialized lake views. A decision engine selects the most efficient refresh strategy:
 
 - **Incremental refresh**: Only processes new or changed data
 - **Full refresh**: Rebuilds the entire materialized lake view when needed  
 - **Skip refresh**: No refresh needed when source data hasn't changed
+
+To unlock incremental refresh, you must enable Delta change data feed (CDF) on the source tables referenced by the materialized lake view. Without CDF enabled, the decision engine chooses between skip refresh and full refresh only. For more information, see [Optimal refresh for materialized lake views in a lakehouse](refresh-materialized-lake-view.md).
 
 Optimal refresh supports a range of common query patterns, including:
 
