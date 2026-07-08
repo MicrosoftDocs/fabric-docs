@@ -88,7 +88,7 @@ To learn more about how to optimize your dataflow transformations and ensure tha
 
 ### Consideration 3: Optimize staging-to-Lakehouse data movement for a Lakehouse destination
 
-In this scenario, you're using a Lakehouse destination for your dataflow, and you have enabled staging to run transformations before writing the final output. You want to make sure the step that moves staged data to the Lakehouse doesn't add unnecessary overhead to the overall refresh time.
+In this scenario, use a Lakehouse destination for your dataflow, and enable staging to run transformations before writing the final output. Make sure the step that moves staged data to the Lakehouse doesn't add unnecessary overhead to the overall refresh time.
 
 A Lakehouse is a fully supported, high-performance destination for this pattern. The data movement from the staging Warehouse to the Lakehouse destination is optimized, so you no longer need to switch your destination to a Warehouse to get good performance. The recommended approach is the ELT pattern: use [Fast Copy](./dataflows-gen2-fast-copy.md) to land the data quickly, run your transformations on the staged data by using the Fabric staging compute, and write the final output to the Lakehouse. For large datasets, Fast Copy remains the recommended way to move the data efficiently.
 
