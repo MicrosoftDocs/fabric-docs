@@ -245,6 +245,8 @@ items:
       items:
         - name: Slowly changing dimensions
           href: plan/powertable-concept-slowly-changing-dimensions.md
+        - name: Automation
+          href: plan/powertable-concept-automation.md
     - name: How-tos
       items:
         - name: Create a table app
@@ -279,6 +281,8 @@ items:
           href: plan/powertable-how-to-review-approval-workflow.md 
         - name: Configure slowly changing dimensions
           href: plan/powertable-how-to-create-slowly-changing-dimension.md
+        - name: Export to Excel
+          href: plan/powertable-how-to-export-to-excel.md
     - name: Reference
       items:
         - name: Supported column and input types
@@ -337,10 +341,14 @@ items:
               href: plan/infobridge-transformations/infobridge-how-to-filter-rows.md
             - name: Sort data
               href: plan/infobridge-transformations/infobridge-how-to-sort.md
+            - name: Round transformation
+              href: plan/infobridge-transformations/infobridge-how-to-round.md
             - name: Unnest
               href: plan/infobridge-transformations/infobridge-how-to-unnest.md
             - name: Text functions
               href: plan/infobridge-transformations/infobridge-how-to-text-functions.md
+            - name: Extract comments
+              href: plan/infobridge-transformations/infobridge-how-to-extract-comments.md
 - name: Graph
   href: ../graph/toc.yml
 - name: Data agent
