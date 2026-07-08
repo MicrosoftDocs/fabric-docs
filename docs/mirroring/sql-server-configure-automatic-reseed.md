@@ -11,11 +11,11 @@ ms.custom:
 
 This article covers automatic reseeding for mirroring a database from a SQL Server instance.
 
-In certain situations, delays in mirroring to Fabric can lead to increased transaction log file usage. This increase occurs because the transaction log can't be truncated until after committed changes are replicated to the mirrored database. After the transaction log size reaches its maximum defined limit, writes to the database fail. To safeguard operational databases from write failures for critical OLTP transactions, you can set up an autoreseed mechanism that allows the transaction log to be truncated and reinitializes the database mirroring to Fabric.
+In certain situations, delays in mirroring to Microsoft Fabric can lead to increased transaction log file usage. This increase occurs because the transaction log can't be truncated until after committed changes are replicated to the mirrored database. After the transaction log size reaches its maximum defined limit, writes to the database fail. To safeguard operational databases from write failures for critical OLTP transactions, you can set up an autoreseed mechanism that allows the transaction log to be truncated and reinitializes the database mirroring to Fabric.
 
-A reseed stops the flow of transactions to Microsoft Fabric from the mirrored database and reinitializes the mirroring at the present state. This process involves generating a new initial snapshot of the tables configured for mirroring, and replicating that snapshot to Microsoft Fabric. After the snapshot, incremental changes are replicated. 
+A reseed stops the flow of transactions to Fabric from the mirrored database and reinitializes the mirroring at the present state. This process involves generating a new initial snapshot of the tables configured for mirroring, and replicating that snapshot to Fabric. After the snapshot, incremental changes are replicated. 
 
-During reseed, the mirrored database item in Microsoft Fabric is available but doesn't receive incremental changes until the reseed is completed. The `reseed_state` column in `sys.sp_help_change_feed_settings` indicates the reseed state.
+During reseed, the mirrored database item in Fabric is available but doesn't receive incremental changes until the reseed is completed. The `reseed_state` column in `sys.sp_help_change_feed_settings` indicates the reseed state.
 
 The autoreseed feature is disabled by default in SQL Server 2025. To enable it, see [Enable autoreseed](#enable-autoreseed). In Azure SQL Database and Azure SQL Managed Instance, this feature is enabled, and you can't manage or disable it.
 
@@ -27,7 +27,7 @@ In Fabric Mirroring, the source SQL database transaction log is monitored. An au
 
 ## Diagnose
 
-To identify if Fabric mirroring is preventing log truncation for a mirrored database, check the `log_reuse_wait_desc` column in the `sys.databases` system catalog view to determine whether the reason is `REPLICATION`. For more information on the log reuse wait types, see [Factors that delay transaction log truncation](/sql/relational-databases/logs/the-transaction-log-sql-server#FactorsThatDelayTruncation). For example:
+To identify if Fabric Mirroring is preventing log truncation for a mirrored database, check the `log_reuse_wait_desc` column in the `sys.databases` system catalog view to determine whether the reason is `REPLICATION`. For more information on the log reuse wait types, see [Factors that delay transaction log truncation](/sql/relational-databases/logs/the-transaction-log-sql-server#FactorsThatDelayTruncation). For example:
 
 ```sql
 SELECT [name], log_reuse_wait_desc 
@@ -35,7 +35,7 @@ FROM sys.databases
 WHERE is_data_lake_replication_enabled = 1;
 ```
 
-If the query shows `REPLICATION` log reuse wait type, then due to Fabric mirroring the transaction log can't empty out committed transactions and continues to fill.
+If the query shows `REPLICATION` log reuse wait type, then due to Fabric Mirroring the transaction log can't empty out committed transactions and continues to fill.
 
 Use the following T-SQL script to check total log space, and current log usage and available space:
 
