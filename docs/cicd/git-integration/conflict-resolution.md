@@ -3,7 +3,7 @@ title: Resolve conflicts with Git integration
 description: Learn how to resolve conflicts when using Fabric's Git integration tools, including selecting versions, reverting states, and resolving conflicts in Git.
 ms.reviewer: NimrodShalit
 ms.topic: how-to
-ms.date: 12/15/2025
+ms.date: 06/15/2026
 #customer intent: As a developer, I want to know how to resolve conflicts when using Fabric's Git integration tools.
 ---
 
@@ -53,7 +53,7 @@ To revert to the prior synced state, do *one* of the following actions:
 If you're not sure what changes were made and which version to choose and don’t want to revert to a previous state, you can try resolving the conflict in the Git repo by creating a new branch, resolving the conflict in that branch, and syncing it with the current one.
 
 >[!NOTE]
->Only a workspace admin can reconnect the workspace to the new branch.
+>By default, switching a connected workspace's Git branch (or checking out a new branch) is restricted to workspace Admins. However, a workspace Admin can enable the per-workspace setting **Allow users with at least Contributor role to change Git branch** to delegate branch-switching capabilities to Contributors or Members. For more information, see [Connect a workspace to a Git repo](git-get-started.md#connect-a-workspace-to-a-git-repo).
 
 1. From the **Source control** panel, check out a new branch using the last synced branch ID shown on bottom of screen
 
