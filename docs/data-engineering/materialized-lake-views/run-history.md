@@ -1,75 +1,121 @@
 ---
+ms.service: fabric
+ms.subservice: data-engineering
+ms.custom: fmlv, materialized-lake-views
+ms.date: 07/01/2026
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: sairamyeturi, bsankaran, nijelsf, hgowrisankar
 title: Recent runs of materialized lake views
-description: Monitor materialized lake view refreshes in Microsoft Fabric. Check run status, review errors, and find specific runs.
-ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
+description: Monitor materialized lake view refreshes in Microsoft Fabric. Read the KPI strip, inspect the runs grid, and switch to the Analytics tab for trend, top errors, and refresh-policy distribution charts.
 ms.topic: how-to
-ms.custom: []
-ms.date: 02/16/2026
-#customer intent: As a data engineer, I want to check the recent runs of materialized lake views in Microsoft Fabric so that I can monitor and troubleshoot the runs.
 ---
 
 # Recent runs of materialized lake views
 
-Fabric records the result each time materialized lake views refresh, whether from a schedule, a manual trigger, or an API call. The **Recent runs** page provides a single place to confirm data freshness, identify problems, and review details.
+The **Recent runs** page is a single place to confirm data freshness, identify problems, and review details for every materialized lake view refresh in the lakehouse. Use the runs grid for row-level detail, or switch to the sibling **Analytics** tab for trends, top errors, and refresh-policy distribution as charts.
+
+## Prerequisites
+
+- A lakehouse with one or more materialized lake views.
+
+- **Read** permission on the workspace.
+
+## Open the Recent runs page
+
+1. Open the lakehouse in your workspace.
+
+1. Select **Materialized lake views** in the ribbon.
+
+1. Select the **Recent run(s)** tab.
+
+The page opens with the **Last 7 days** date filter and the **Grid** view active. The **Analytics** and **Insights** sibling tabs share the same KPI strip, filter bar, and date pills.
+
+:::image type="content" source="media/materialized-lake-view-run-history/recent-runs-page-with-tabs.png" alt-text="Screenshot of the recent runs page showing the Materialized lake views tabs and the proactive Save refresh and cost banner at the top." lightbox="media/materialized-lake-view-run-history/recent-runs-page-with-tabs.png":::
+
+## KPI strip
+
+Four cards summarize the runs in the selected period. Each card shows the period value and a trend arrow that compares it to the prior period of the same length.
+
+| Card | What it shows |
+| --- | --- |
+| **Total runs** | Number of materialized lake view runs in the selected period, excluding skipped and in-progress runs. |
+| **Success rate** | Percentage of runs that completed successfully in the selected period. |
+| **Average duration** | Average end-to-end duration of completed runs, displayed as `{N} min`. |
+| **Failed runs** | Number of runs that ended in failure in the selected period. |
+
+All four cards use the same arrow colors: **up arrow (green)** when the value increases, **down arrow (red)** when it decreases. A card shows no arrow in the first period after the feature turns on, because there's no prior-period baseline yet. Select the **i** icon next to a card label to read its full tooltip definition.
+
+## Filters
+
+### Filter by date
+
+Use the date pills above the page header:
+
+- **Anytime**, **Last 24 hours**, **Last 7 days**, **Last 30 days**.
+
+- **Customize** to set a `Custom date range` with `Start date`, `End date`, and `Time zone`. The window must be **30 days** or shorter.
+
+The default is `Last 7 days`. The selection persists for the session.
+
+### Filter by status, run, start date, or keyword
+
+Select **Filters** to open the filter dropdown:
+
+| Accordion | Use |
+| --- | --- |
+| **Run(s)** | Limit to one or more materialized lake view runs. |
+| **Status** | Filter by `Completed`, `Failed`, `Canceled`, `Skipped`, or `In progress`. |
+| **Start date** | Narrow further by run start time. |
+
+Type in the keyword box to filter by **Run ID** or **Run(s)** name. Active filters appear as removable chips below the bar. Select **Clear all** to reset.
 
 ## View recent refreshes
 
-Select the **Materialized lake views** tab in the ribbon, then select **Recent run(s)**.
-
-:::image type="content" source="./media/materialized-lake-view-run-history/recent-runs-table.png" alt-text="Screenshot showing the Recent runs tab with columns for Run ID, Run(s), Status, and Start time." border="true" lightbox="./media/materialized-lake-view-run-history/recent-runs-table.png":::
-
-Each row represents a single refresh operation on the Lakehouse. The default columns are **Run ID**, **Run(s)**, **Status**, and **Start time**. To show more columns, select **Column Options**. Additional columns include **Refreshed materialized lake views**, **End time**, **Duration**, **Scheduled by**, and **Run type**.
+Grid view is the default. Each row represents one refresh operation on the lakehouse. The default columns are **Run ID**, **Run(s)**, **Status**, and **Start time**. Select **Column Options** to add **Refreshed materialized lake views**, **End time**, **Duration**, **Scheduled by**, and **Run type**.
 
 The **Run(s)** column displays the name of the schedule or run that triggered the refresh. For scheduled runs, the column shows the schedule name. For on-demand runs, it shows the name you entered when you started the run.
 
-The following table describes each status:
+Each row's status:
 
 | Status | Description |
-|---|---|
+| --- | --- |
 | **In progress** | The refresh is running. |
-| **Completed** | All views refreshed successfully. |
-| **Failed** | One or more views encountered an error. Fabric marks child views of a failed view as **Skipped**. |
-| **Skipped** | Fabric skipped this run because another active run was already refreshing the same view. |
-| **Canceled** | A user Canceled the run. |
+| **Completed** | All views refresh successfully. |
+| **Failed** | One or more views encounter an error. Fabric marks child views of a failed view as **Skipped**. |
+| **Skipped** | Fabric skips this run when another active run refreshes the same view. |
+| **Canceled** | A user cancels the run. |
 
-## Find a specific run
+### Investigate why a run failed
 
-When the table grows long, use these options to find a specific run:
+1. In the Grid, select the failed run row to open the run detail page.
+
+1. Scroll to the **Activities** panel. Select the **Failed** sub-tab to see only the views that failed in this run.
+
+1. Select a failed view in the lineage graph to see the **Error Code**, **Message**, and **Detailed logs** with a **More details** link.
+
+1. Use **Copy all to clipboard** to share the error with the team.
+
+1. Select **Open Spark UI** in the Activities row's **Spark link** column when the error message alone isn't enough to diagnose driver or executor failures.
+
+### Find a specific run
 
 - **Search**: Type a keyword in the search box to filter by Run ID or run name.
-- **Filters**: Select **Filters** to filter by status (Completed, Failed, Canceled, In progress, Skipped) or other criteria.
+
+- **Filters**: Filter by status, run, or start date.
+
 - **Column Options**: Show or hide columns. Select **Apply** to save the selection, or select **Reset to default** to restore the original layout.
 
-> [!TIP]
-> If you run multiple schedules on the same Lakehouse, filter by the **Run(s)** column to isolate a specific schedule's history.
-
-## Investigate why a run failed
-
-When you see a failed run, follow these steps to diagnose the problem:
-
-1. **Open the run.** Select the **Run ID** to open the run details page. The **lineage graph** at the top shows source tables on the left and materialized lake views on the right. Each view is color-coded by status.
-
-1. **Check the run summary.** The **Run details** panel shows start time, end time, duration, refresh mode (**Optimal** or **Full**), run name, and overall status. The **Settings** section shows the Spark **Environment** that Fabric used.
-
-1. **Find the failed views.** Scroll to the **Activities** panel, which lists every view in the run with its status and duration. Select the **Failed** tab to see only the views that failed.
-
-1. **Inspect a view.** Select any materialized lake view to see its name, type, timing, status, and ABFS source path.
-
-1. **Read the error.** Select a failed view in the lineage graph to see:
-   - **Error Code** and **Message** that describe the failure
-   - **Copy all to clipboard** to share the error with the team
-   - **Detailed logs** with a **More details** link for more information
-
-## Review a successful run
-
-For runs that completed successfully, select the **Run ID** to view the lineage graph, run details, settings, and per-view timing. Use the Activities panel to check how long each view took or to verify the refresh mode.
+To see the same runs as charts (trends, top error codes, and refresh-policy distribution), select the **Analytics** sibling tab. For details, see [View analytics for materialized lake view runs](analytics.md).
 
 > [!NOTE]
-> - The recent runs page retains runs from the last 30 days.
-> - Environment details appear only if you have access to the environment and the environment still exists.
+> - The **Recent runs** grid keeps runs from the last **30 days**.
+> - Environment details appear only if you have access to the environment and it still exists.
 
-## Related articles
+## Related content
 
-* [Microsoft Fabric materialized lake views tutorial](./tutorial.md)
-* [Manage Fabric materialized lake views lineage](./view-lineage.md)
-* [Schedule a materialized lake view refresh](./schedule-lineage-run.md)
+- [View analytics for materialized lake view runs](analytics.md)
+
+- [Insights for materialized lake view runs](insights.md)
+
+- [Overview of materialized lake views](overview-materialized-lake-view.md)

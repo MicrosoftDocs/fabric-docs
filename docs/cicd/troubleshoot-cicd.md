@@ -4,7 +4,7 @@ description: Troubleshoot problems with deployment pipelines, the Fabric Applica
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.custom: sfi-image-nochange
-ms.date: 02/17/2026
+ms.date: 06/15/2026
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -106,6 +106,12 @@ To understand the considerations and limitations of various lifecycle management
 **Description of problem**: When branching out to a new workspace, I’m navigated to the new workspace but Git integration isn’t enabled there.
 **Cause**: The [Git integration switch](../admin/git-integration-admin-settings.md) might be enabled for your source workspace, but not for the whole tenant as the tenant admin can delegate control of the switch to workspace admins. If this is the case, your new workspace won't have Git integration enabled and you'll need to manually enable it from the workspace settings before syncing the workspace with Git.
 **Solution**: Enable Git integration from the workspace settings of your new workspace.
+
+#### Switch branch or Checkout new branch is unavailable for a contributor or member
+
+**Description of problem**: As a Contributor or Member (non-admin), I can't switch branches or check out a new branch from the **Source control** panel.  
+**Cause**: By default, branch switching and new-branch creation are restricted to workspace admins. A Contributor can perform these actions only when the workspace-level **Allow users with at least Contributor role to change Git branch** setting is enabled, the workspace has an active Git connection, and the Contributor has write access to all items in the workspace.  
+**Solution**: Ask a workspace admin to enable the **Allow users with at least Contributor role to change Git branch** setting in the workspace settings. For more information, see [Allow Contributors and Members to switch branches](./git-integration/git-get-started.md#allow-contributors-and-members-to-switch-branches)
 
 ### Connect folder issues
 
