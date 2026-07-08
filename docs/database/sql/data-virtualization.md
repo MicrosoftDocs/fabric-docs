@@ -5,6 +5,7 @@ ms.reviewer: hudequei
 ms.date: 10/22/2025
 ms.topic: concept-article
 ms.update-cycle: 180-days
+ms.search.form: Ingesting data into SQL database
 ---
 # Data virtualization (preview)
 
