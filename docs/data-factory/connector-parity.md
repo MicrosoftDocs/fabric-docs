@@ -4,8 +4,6 @@ description: This documentation provides an in-depth comparison of connector ava
 ms.reviewer: lle
 ms.topic: how-to
 ms.date: 07/08/2026
-author: v-albemi
-ms.author: v-albemi
 ms.custom:
   - template-how-to
   - connectors
