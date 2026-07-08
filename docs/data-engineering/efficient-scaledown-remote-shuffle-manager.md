@@ -1,6 +1,6 @@
 ---
 title: Efficient scaledown and remote shuffle manager
-description: Learn how efficient scaledown with the remote shuffle manager decouples shuffle data from executor lifetime for faster cluster scaledown, lower compute cost, and more resilient Spark jobs in Microsoft Fabric.
+description: Learn how efficient scaledown with the remote shuffle manager decouples shuffle data from executor lifetime in Microsoft Fabric.
 ms.topic: concept-article
 ms.custom: sfi-image-nochange
 ms.date: 07/08/2026
