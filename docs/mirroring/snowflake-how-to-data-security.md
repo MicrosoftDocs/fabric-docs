@@ -1,7 +1,7 @@
 ---
 title: "Data Security in Microsoft Fabric Mirrored Databases From Snowflake"
 description: Learn about data security in mirrored databases from Snowflake in Microsoft Fabric.
-ms.reviewer: imotiwala, maprycem
+ms.reviewer: sbahadur, maprycem
 ms.date: 11/19/2024
 ms.topic: how-to
 ---
@@ -24,6 +24,17 @@ For more information, see Snowflake documentation on [Access Control Privileges 
 > [!IMPORTANT]
 > Any granular security established in the source Snowflake database must be re-configured in the mirrored database in Microsoft Fabric.
 > For more information, see [SQL granular permissions in Microsoft Fabric](../data-warehouse/sql-granular-permissions.md).
+
+## Supported authentication methods
+
+The following table lists which authentication methods are supported for mirroring for Snowflake:
+
+| Authentication method | Supported | Notes |
+|---|---|---|
+| Username and password | Yes | Snowflake native authentication |
+| Microsoft Entra ID (SSO) | Yes | Single sign-on via Entra ID |
+| Key pair authentication | Yes | RSA key pair for service account scenarios |
+| Workspace identity | No | Not currently supported for Snowflake |
 
 ## Data protection features
 

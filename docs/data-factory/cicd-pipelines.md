@@ -4,7 +4,7 @@ title: CI/CD for pipelines in Data Factory
 description: This article describes how to set up continuous integration and delivery (CI/CD) for pipelines in Data Factory for Microsoft Fabric.
 ms.reviewer: conxu
 ms.topic: how-to
-ms.date: 11/14/2025
+ms.date: 06/10/2025
 ms.custom: pipelines
 ai-usage: ai-assisted
 ---
@@ -93,18 +93,7 @@ Take the following steps to set up Git integration for your pipelines in Data Fa
 
 To access Git with your Microsoft Fabric workspace, ensure the following prerequisites for both Fabric and Git.
 
-- Either a [Power BI Premium license](/power-bi/enterprise/service-premium-what-is) or [Fabric capacity](../enterprise/licenses.md#capacity).
-- Enabled the following tenant switches from the admin portal:
-  - [Users can create Fabric items](../admin/fabric-switch.md)
-  - [Users can synchronize workspace items with their Git repositories](../admin/git-integration-admin-settings.md#users-can-synchronize-workspace-items-with-their-git-repositories)
-  - (For GitHub users only) [Users can synchronize workspace items with GitHub repositories](../admin/git-integration-admin-settings.md#users-can-sync-workspace-items-with-github-repositories)
-- Either an Azure DevOps or GitHub account.
-  - For an Azure DevOps organization:
-    - An active Azure account registered to the same user that's using the Fabric workspace. [Create a free account](https://azure.microsoft.com/products/devops/).
-    - Access to an existing repository
-  - For a GitHub account:
-    - An active GitHub account. [Create a free account](https://github.com/).
-    - Either a [fine grained token](https://github.com/settings/personal-access-tokens/new) with _read_ and _write_ permissions for _Contents_, under repository permissions, or a [GitHub classic token](https://github.com/settings/tokens/new) with repo scopes enabled.
+[!INCLUDE [cicd-git-prerequisites](includes/cicd-git-prerequisites.md)]
 
 ### Step 1: Connect to a Git repository
 

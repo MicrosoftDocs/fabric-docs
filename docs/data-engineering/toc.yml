@@ -41,8 +41,6 @@ items:
     href: tutorial-lakehouse-build-report.md
   - name: 7 Clean up resources
     href: tutorial-lakehouse-clean-up.md
-- name: Lakehouse
-  items:
   - name: Overview
     items:
     - name: What is a lakehouse?
@@ -51,6 +49,8 @@ items:
       href: create-lakehouse.md
     - name: Navigate the lakehouse explorer
       href: navigate-lakehouse-explorer.md
+    - name: Query data with the Lakehouse query explorer
+      href: lakehouse-query-explorer.md
     - name: Lakehouse table maintenance
       href: lakehouse-table-maintenance.md
     - name: High concurrency for table load and preview
@@ -356,6 +356,8 @@ items:
       href: runtime.md
     - name: Runtime lifecycle
       href: lifecycle.md
+    - name: Release channels
+      href: release-channels.md  
     - name: Runtime 2.0 (Spark 4.1)
       href: runtime-2-0.md
     - name: Runtime 1.3 (Spark 3.5)
@@ -676,12 +678,16 @@ items:
       href: ./materialized-lake-views/view-lineage.md
     - name: Schedule materialized lake views
       href: ./materialized-lake-views/schedule-lineage-run.md
-    - name: Run history of materialized lake views
-      href: ./materialized-lake-views/run-history.md
     - name: REST APIs for materialized lake views
       href: ./materialized-lake-views/materialized-lake-views-public-api.md
   - name: Monitor
     items:  
+    - name: Recent runs of materialized lake views
+      href: ./materialized-lake-views/run-history.md
+    - name: View analytics for materialized lake view runs
+      href: ./materialized-lake-views/analytics.md
+    - name: View insights for materialized lake view runs
+      href: ./materialized-lake-views/insights.md
     - name: Monitor materialized lake views
       href: ./materialized-lake-views/monitor-materialized-lake-views.md
     - name: Data quality report

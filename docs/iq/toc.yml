@@ -39,6 +39,8 @@ items:
       href: ontology/how-to-bind-data.md
     - name: Add relationship types
       href: ontology/how-to-create-relationship-types.md
+    - name: Add semantic enrichment
+      href: ontology/how-to-add-semantic-enrichment.md
     - name: View entity type details
       href: ontology/how-to-view-entity-type-details.md
     - name: Use rules
@@ -119,10 +121,16 @@ items:
                 href: plan/planning-how-to-manage-inserted-rows.md
         - name: Insert columns
           items:
-              - name: Insert data input columns
+              - name: Insert data input column
                 href: plan/planning-how-to-insert-columns/how-to-insert-data-input-columns.md
-              - name: Insert number columns
+              - name: Insert number column
                 href: plan/planning-how-to-insert-columns/how-to-insert-number-columns.md
+              - name: Insert list column
+                href: plan/planning-how-to-insert-columns/how-to-insert-dropdown-columns.md
+              - name: Insert person column
+                href: plan/planning-how-to-insert-columns/how-to-insert-person-columns.md
+              - name: Insert formula column
+                href: plan/planning-how-to-insert-columns/how-to-insert-formula-columns.md
         - name: Bulk edit data
           href: plan/planning-how-to-bulk-edit.md
         - name: Set up scenarios
@@ -237,16 +245,32 @@ items:
       items:
         - name: Slowly changing dimensions
           href: plan/powertable-concept-slowly-changing-dimensions.md
+        - name: Automation
+          href: plan/powertable-concept-automation.md
     - name: How-tos
       items:
         - name: Create a table app
-          href: plan/powertable-how-to-create-table-app.md
-        - name: Enter table data manually
-          href: plan/powertable-how-to-enter-table-data-manually.md
-        - name: Connect to a database
-          href: plan/powertable-how-to-connect-existing-database.md
-        - name: Connect to a semantic model
-          href: plan/powertable-how-to-connect-semantic-model.md
+          items:
+            - name: Import Excel or CSV file
+              href: plan/powertable-how-to-create-table-app.md
+            - name: Connect to a semantic model
+              href: plan/powertable-how-to-connect-semantic-model.md
+            - name: Connect to a database
+              href: plan/powertable-how-to-connect-existing-database.md
+            - name: Enter table data manually
+              href: plan/powertable-how-to-enter-table-data-manually.md
+        - name: Update table data
+          href: plan/powertable-how-to-bulk-edit-data.md
+        - name: Insert and manage rows
+          href: plan/powertable-how-to-insert-rows-import-data.md
+        - name: Configure column properties
+          items:
+            - name: Configure general properties
+              href: plan/powertable-how-to-configure-columns/how-to-configure-general-column-properties.md
+            - name: Configure single select column
+              href: plan/powertable-how-to-configure-columns/how-to-configure-lookup-relation-columns.md
+        - name: Manage columns
+          href: plan/powertable-how-to-manage-columns.md
         - name: Set up access control
           href: plan/powertable-how-to-set-up-access-control.md  
         - name: Generate forms
@@ -256,7 +280,13 @@ items:
         - name: Review changes in approval workflow
           href: plan/powertable-how-to-review-approval-workflow.md 
         - name: Configure slowly changing dimensions
-          href: plan/powertable-how-to-create-slowly-changing-dimension.md     
+          href: plan/powertable-how-to-create-slowly-changing-dimension.md
+        - name: Export to Excel
+          href: plan/powertable-how-to-export-to-excel.md
+    - name: Reference
+      items:
+        - name: Supported column and input types
+          href: plan/powertable-reference-supported-column-input-types.md
   - name: Intelligence sheets
     items:
     - name: Intelligence sheets overview
@@ -265,6 +295,10 @@ items:
       items:
         - name: Get started with intelligence sheets
           href: plan/intelligence-how-to-get-started.md
+        - name: Get started with reporting
+          href: plan/intelligence-how-to-get-started-reporting.md
+        - name: Apply and customize themes
+          href: plan/intelligence-how-to-apply-themes.md
         - name: Build financial reports
           href: plan/intelligence-how-to-build-financial-reports.md
         - name: Comment and collaborate
@@ -299,10 +333,24 @@ items:
               href: plan/infobridge-transformations/infobridge-how-to-group-by.md
             - name: Add columns
               href: plan/infobridge-transformations/infobridge-how-to-add-column.md
-            - name: Find and replace
-              href: plan/infobridge-transformations/infobridge-how-to-find-replace.md
+            - name: Manage columns
+              href: plan/infobridge-transformations/infobridge-how-to-manage-columns.md
             - name: Pivot and unpivot columns
               href: plan/infobridge-transformations/infobridge-how-to-pivot-column.md
+            - name: Find and replace
+              href: plan/infobridge-transformations/infobridge-how-to-find-replace.md
+            - name: Filter rows
+              href: plan/infobridge-transformations/infobridge-how-to-filter-rows.md
+            - name: Sort data
+              href: plan/infobridge-transformations/infobridge-how-to-sort.md
+            - name: Round transformation
+              href: plan/infobridge-transformations/infobridge-how-to-round.md
+            - name: Unnest
+              href: plan/infobridge-transformations/infobridge-how-to-unnest.md
+            - name: Text functions
+              href: plan/infobridge-transformations/infobridge-how-to-text-functions.md
+            - name: Extract comments
+              href: plan/infobridge-transformations/infobridge-how-to-extract-comments.md
 - name: Graph
   href: ../graph/toc.yml
 - name: Data agent

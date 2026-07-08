@@ -16,8 +16,6 @@ By configuring agents with clear instructions, and data sources, you can deploy 
 
 In this article, you learn how to create and use an AI operations agent in Real-Time Intelligence. The operations agent monitors real-time data and suggests actionable decisions.
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
-
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity). Trial capacities aren't supported.
@@ -106,18 +104,11 @@ For example, **Is above** is met on every evaluation while a value stays over th
 
 The following table describes the available conditions:
 
-| Condition | Type | When it's met |
-|-----------|------|---------------|
-| Is above | State | Met any time the property is above the value. |
-| Crosses above | Transition | Met when the property changes from below to above the value (or from null to above the value). |
-| Is below | State | Met any time the property is below the value. |
-| Crosses below | Transition | Met when the property changes from above to below the value (or from null to below the value). |
-| Enters range | Transition | Met any time the property changes from outside to inside the range. |
-| Exits range | Transition | Met any time the property changes from inside to outside the range. |
-| Is | State | Met any time the property matches the value. |
-| Becomes | Transition | Met when the property changes to the value from a different value (or null). |
+> [!div class="nextstepaction"]
+> [Configure operations agent actions](operations-agent-actions.md)
 
 ## Related content
 
-* [Operations agent actions](operations-agent-actions.md)
+* [Operations agent billing](operations-agent-billing.md)
 * [Operations agent limitations](operations-agent-limitations.md)
+* [Operations agent transparency note](operations-agent-transparency-note.md)

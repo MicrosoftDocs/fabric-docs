@@ -26,6 +26,9 @@ Starter pools have Apache Spark clusters with sessions that are always on and re
 
 When you use a starter pool **without any extra library dependencies or custom Spark properties**, your session typically starts in **5 to 10 seconds**. This fast startup is possible because the cluster is already running and doesn't require provisioning time.
 
+> [!IMPORTANT]
+> Starter pools are a Microsoft-managed, best-effort optimization that reduces Spark startup time by using prewarmed capacity. Starter pool capacity isn't guaranteed for every run. When prewarmed capacity is available, sessions can typically start in seconds. When it isn't, Fabric starts the session by using standard on-demand capacity, which can take longer. For workloads that need consistent, predictable session start, use a [custom live pool](custom-live-pools-overview.md).
+
 > [!NOTE]
 > Starter pools support only Medium node size. If you select a different node size or customize compute configurations, Fabric uses on-demand session startup, which can take 2 to 5 minutes.
 
@@ -43,6 +46,9 @@ However, there are several scenarios where your session might take longer to sta
 **Starter pools in your region are fully used**: In rare cases, a region's starter pools might be temporarily exhausted due to high traffic. When that happens, Fabric spins up a **new cluster** to accommodate your request, which takes about **2 to 5 minutes**. Once the new cluster is available, your session starts. If you also have custom libraries to install, add the additional **30 seconds to 5 minutes** required for personalization.
 
 **Advanced networking or security features (Private Links or Managed VNets)**: When your workspace has networking features such as **Tenant Private Links** or **Managed VNets**, starter pools aren't supported. In this situation, Fabric must create a cluster on demand, which adds **2 to 5 minutes** to your session start time. If you also have library dependencies, that personalization step can add another **30 seconds to 5 minutes**.
+
+> [!TIP]
+> When you need predictable, fast session starts - for example, for scheduled Spark job definitions or other latency-sensitive workloads - use a [custom live pool](custom-live-pools-overview.md) instead of relying on starter pool capacity. Custom live pools keep dedicated clusters warm on a schedule that you define (the active window), so sessions start consistently in approximately **5 seconds** during that window. Because the clusters are hydrated in advance, your environment libraries are already preinstalled on the cluster, which removes the per-session library personalization time.
 
 Here are a few example scenarios to illustrate potential start times:
 

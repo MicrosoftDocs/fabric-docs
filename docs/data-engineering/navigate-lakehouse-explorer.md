@@ -4,7 +4,6 @@ description: Browse tables and files, preview data, and manage lakehouse objects
 ms.reviewer: avinandac
 ms.topic: concept-article
 ms.date: 05/07/2026
-ai-usage: ai-assisted
 ms.search.form: Lakehouse Explorer
 ---
 
@@ -132,8 +131,13 @@ The **Analyze data with** dropdown in the top-right area of the ribbon lists the
 - **Eventhouse endpoint** — Opens the [eventhouse endpoint](../real-time-intelligence/eventhouse-as-endpoint.md), where you can use KQL to query your lakehouse data with high-performance, real-time analytics capabilities.
 - **Notebook** — Opens a Spark notebook connected to your lakehouse. Choose **New** to create a notebook, or **Existing** to open a notebook that's already in your workspace. For more information, see [Explore data with a lakehouse notebook](lakehouse-notebook-explore.md).
 
+## Spark SQL query explorer
+
+The Lakehouse explorer includes a built-in Spark SQL query editor that you can use to query data without leaving the explorer. Select **New SparkSQL Query** in the ribbon, or right-click a table and select **New SparkSQL Query** to open a query tab with a prepopulated SELECT statement. The query explorer supports IntelliSense, dynamic tabs, cross-schema and cross-lakehouse querying, inline charts, result export, and view creation - all powered by Spark SQL. For details, see [Query data with the Spark SQL query explorer](lakehouse-query-explorer.md).
+
 ## Related content
 
 - [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md)
 - [What are lakehouse schemas?](lakehouse-schemas.md)
+- [Query data with the Spark SQL query explorer](lakehouse-query-explorer.md)
 - [Lakehouse overview](lakehouse-overview.md)

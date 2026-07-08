@@ -2,7 +2,7 @@
 metadata:
   title: "Frequently asked questions for Mirroring Snowflake in Microsoft Fabric"
   description: This article answers frequently asked questions about Mirroring Snowflake in Microsoft Fabric.
-  ms.reviewer: imotiwala, maprycem
+  ms.reviewer: sbahadur, maprycem
   ms.subservice: data-warehouse
   ms.topic: faq
   ms.date: 09/30/2024
@@ -18,20 +18,31 @@ sections:
       answer: 
         For Snowflake, we do use a landing zone to store both the snapshot and change data into OneLake, to improve performance as we're converting these files in the landing zones into delta vertiparquet.
     - question: |
-        Can views, transient or external tables be replicated?
+        What Snowflake object types can be replicated? 
       answer:
-        Currently, only replicating regular tables are supported.
+        Managed tables, Iceberg tables, and views are supported for replication. External, transient, temporary, and dynamic tables are not supported. For Iceberg tables, a storage connection to the underlying Iceberg table storage is required during configuration. For details on known issues with views (such as data type mapping), see Limitations. 
     - question: |
         How do I manage connections?
       answer: 
         Select the settings cog, then select on **Manage connection and gateways**. You can also delete existing connections from this page.
+    - question: |
+        What authentication methods are supported for Snowflake mirroring?
+      answer: |
+        The following authentication methods are supported:
+    
+        - Username and password — Snowflake native authentication
+        - Microsoft Entra ID (SSO) — Single sign-on via Entra ID
+        - Key pair authentication — RSA key pair for service account scenarios
 
   - name: Cost efficiency
     questions: 
     - question: | 
-        What should I do to avoid or reduce Snowflake costs?
+        How can I reduce Snowflake compute costs from mirroring? 
       answer: 
-        Implement Snowflake budgets, use limits on credits, or use dedicated a smaller Snowflake instance based on requirements.
+        1. Reuse an existing warehouse. Configure mirroring to use the same Snowflake warehouse that your applications already use to update the source tables. This avoids the overhead of waking up a separate, dedicated mirroring warehouse. When your application updates a table, the mirroring replicator picks up changes almost immediately while the warehouse is still active. 
+        2. Mirror only the tables you need. Avoid mirroring an entire database when you only need a subset of tables. Large-scale mirroring can cause significant Snowflake consumption and Fabric capacity spikes. 
+        3. Monitor for unexpected reseeds. A reseed re-reads the full table and incurs compute cost proportional to its size. Check the Mirroring Status page for tables that repeatedly show initial-copy behavior. 
+        4. Use Snowflake budgets and credit limits. Set Snowflake resource monitors and budgets to cap mirroring-related compute costs. 
     - question: |
         How are ingress fees handled?
       answer: 
@@ -40,6 +51,10 @@ sections:
         How are egress fees handled?
       answer: 
         If hosted outside of Azure, refer to Snowflake and your cloud documentation for egress costs. If hosted in Azure but in a different region from your Fabric capacity, data egress will be charged. If hosted in Azure in the same region, there is no data egress.
+    - question: |
+        Does mirroring support scheduling or replication windows? 
+      answer: No. Mirroring runs continuously and does not currently support configuring replication schedules or time-based windows. The replicator polls for changes on an ongoing basis, which generates continuous Snowflake compute usage. If you need to limit compute during certain periods, you can manually stop and restart mirroring — but note that restarting triggers a full reseed of all mirrored tables. 
+        
   - name: Performance
     questions:
     - question: |  
@@ -64,7 +79,7 @@ sections:
       - question: |
           Can Snowflake Mirroring be accessed through the Power BI Gateway or behind a firewall? 
         answer: 
-          Currently, access through the Power BI Gateway or behind a firewall is unsupported.
+          Yes, we support mirroring through an On-premises data gateway and through a Virtual Network (VNet) Data Gateway.
       - question: |
           What does starting the Mirroring do?
         answer: 
@@ -85,6 +100,26 @@ sections:
           Can I Mirror specific tables from my source database?
         answer: 
           Yes, specific tables can be selected during Mirroring configuration.
+      - question: |
+          What triggers a full reseed?
+        answer: |
+          A reseed (full data reload) is triggered by any of the following:
+      
+          - DDL changes that modify the DDL timestamp of a table, for example, `ALTER TABLE` operations that add or drop columns.
+          - Schema modification tools such as dbt that drop and recreate tables on a schedule.
+          - Stopping and restarting mirroring through the Fabric portal or API.
+          - An extended capacity pause. If Fabric capacity is paused for a long period, mirroring might reseed when resumed.
+      
+      - question: |
+          How do I troubleshoot unexpected or continuous reseeding?
+        answer: |
+          If you see tables repeatedly going through initial copy (reseed) instead of incremental sync:
+      
+          1. Check for upstream schema changes. Verify whether a tool such as dbt is modifying table definitions on a recurring schedule. Even minor DDL changes can trigger a reseed.
+          1. Review the Mirroring Status page. Look for tables that show repeated initial-copy timestamps at regular intervals.
+          1. Pause schema changes during active mirroring. If dbt runs are the cause, schedule them during maintenance windows, or pause mirroring before running schema changes.
+          1. Monitor Snowflake warehouse usage. Check Snowflake account usage views to see whether mirroring-related queries are dominating compute.
+          1. Remember that each reseed processes the full table data and incurs Snowflake compute cost proportional to table size. proportional to the table size. 
 
   - name: Data governance
     questions:

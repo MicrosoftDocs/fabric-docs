@@ -29,7 +29,7 @@ For an overview of shortcuts, see [OneLake shortcuts](../onelake-shortcuts.md). 
 
 1. Select **New shortcut**.
 
-   :::image type="content" source="..\media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot that shows selecting 'new shortcut' from a directory menu.":::
+   :::image type="content" source="media/create-onelake-shortcut/new-shortcut-lake-view.png" alt-text="Screenshot that shows selecting 'new shortcut' from a directory menu.":::
 
 ## Select a source
 
@@ -87,6 +87,6 @@ Blob storage shortcuts use a delegated authorization model. In this model, the s
 
 ## Related content
 
-- [Create a OneLake shortcut](../create-onelake-shortcut.md)
+- [Create a OneLake shortcut](../shortcuts/create-onelake-shortcut.md)
 - [Create an Amazon S3 shortcut](../create-s3-shortcut.md)
 - [Use OneLake shortcuts REST APIs](../onelake-shortcuts-rest-api.md)

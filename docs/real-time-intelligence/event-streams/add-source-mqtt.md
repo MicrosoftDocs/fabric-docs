@@ -2,9 +2,9 @@
 title: MQTT Source in Fabric Eventstream
 description: Learn how to add a Message Queuing Telemetry Transport (MQTT) source to an eventstream. This feature is currently in preview.
 #customer intent: As a data engineer, I want to add an MQTT source to an eventstream so that I can ingest IoT device data into Fabric Real-Time Intelligence for processing and routing.
-ms.reviewer: zhenxilin
+ms.reviewer: xujiang1
 ms.topic: how-to
-ms.date: 04/02/2026
+ms.date: 06/29/2026
 author: spelluru
 ms.author: spelluru
 ms.search.form: Source and Destination

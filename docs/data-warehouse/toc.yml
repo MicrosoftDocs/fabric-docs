@@ -53,7 +53,7 @@ items:
     items:
       - name: Connectivity
         href: connectivity.md
-      - name: How to Connect
+      - name: How to connect
         href: how-to-connect.md
   - name: Copilot in Fabric in Data Warehouse
     items:
@@ -97,6 +97,8 @@ items:
         href: develop-warehouse-project.md
       - name: Source control with Warehouse
         href: source-control.md
+      - name: Pre- and post-deployment scripts
+        href: pre-post-deployment-scripts.md
   - name: Develop
     items:
       - name: AI functions
@@ -135,14 +137,16 @@ items:
     items:
       - name: Explore file content with OPENROWSET
         href: browse-file-content-with-openrowset.md
-      - name: Ingesting data into the warehouse
+      - name: Ingest data into the warehouse
         href: ingest-data.md
       - name: Ingest data with the COPY statement
         href: ingest-data-copy.md
       - name: Ingest data with pipelines
         href: ingest-data-pipelines.md
-      - name: Ingest data with TSQL
+      - name: Ingest data with T-SQL
         href: ingest-data-tsql.md
+      - name: Ingest data with BCP API (Preview)
+        href: ingest-data-bulk-copy.md
       - name: Troubleshoot ingestion errors
         href: troubleshoot-ingestion-errors.md
       - name: Use dbt with data warehouse
@@ -246,6 +250,8 @@ items:
             items:
               - name: Use data clustering in Fabric Data Warehouse
                 href: tutorial-data-clustering.md
+              - name: Optimize Lakehouse tables based on health checks
+                href: tutorial-conditional-lakehouse-optimization.md                
       - name: Monitor the warehouse
         items:
           - name: Monitoring overview

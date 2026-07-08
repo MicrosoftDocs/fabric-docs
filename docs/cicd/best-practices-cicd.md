@@ -3,7 +3,7 @@ title: Best practices for lifecycle management in Fabric
 description: Learn about the best practices for Git integration and deployment pipelines in the Microsoft Fabric lifecycle management tool.
 ms.reviewer: NimrodShalit
 ms.topic: best-practice
-ms.date: 12/15/2025
+ms.date: 06/15/2026
 ms.custom:
   - intro-deployment
 ms.search.form: Best practices for deployment pipelines, Create deployment pipeline, Introduction to Deployment pipelines, Best practices for Deployment pipelines
@@ -11,7 +11,7 @@ ms.search.form: Best practices for deployment pipelines, Create deployment pipel
 
 # Best practices for lifecycle management in Fabric
 
-This article provides guidance for data & analytics creators who are managing their content throughout its lifecycle in Microsoft Fabric. The article focuses on the use of [Git integration](./git-integration/intro-to-git-integration.md) for source control and [deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md) as a release tool. For a general guidance on Enterprise content publishing, [Enterprise content publishing](/power-bi/guidance/powerbi-implementation-planning-usage-scenario-enterprise-content-publishing).
+This article provides guidance for data & analytics creators who are managing their content throughout its lifecycle in Microsoft Fabric. The article focuses on the use of [Git integration](git-integration/intro-to-git-integration.md) for source control and [deployment pipelines](deployment-pipelines/intro-to-deployment-pipelines.md) as a release tool. For a general guidance on Enterprise content publishing, [Enterprise content publishing](/power-bi/guidance/powerbi-implementation-planning-usage-scenario-enterprise-content-publishing).
 
 The article is divided into four sections:
 
@@ -37,7 +37,7 @@ Different teams in the org usually have different expertise, ownership, and meth
 
 ### Plan your permission model
 
-Both Git integration and deployment pipelines require different permissions than just the workspace permissions. Read about the permission requirements for [Git integration](./git-integration/git-integration-process.md#permissions) and [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#permissions).
+Both Git integration and deployment pipelines require different permissions than just the workspace permissions. Read about the permission requirements for [Git integration](git-integration/git-integration-process.md#permissions) and [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#permissions).
 
 To implement a secure and easy workflow, plan who gets access to each part of the environments being used, both the Git repository and the dev/test/prod stages in a pipeline. Some of the considerations to take into account are:
 
@@ -67,7 +67,7 @@ A production database should always be stable and available. It's best not to ov
 
 ### Use parameters for configurations that will change between stages
 
-Whenever possible, add [parameters](./deployment-pipelines/understand-the-deployment-process.md#autobinding-and-parameters) to any definition that might change between dev/test/prod stages. Using parameters helps you change the definitions easily when you move your changes to production.  
+Whenever possible, add [parameters](deployment-pipelines/understand-the-deployment-process.md#autobinding-and-parameters) to any definition that might change between dev/test/prod stages. Using parameters helps you change the definitions easily when you move your changes to production.  
 Parameters have different uses, such as defining connections to data sources, or to internal items in Fabric. They can also be used to make changes to queries, filters, and the text displayed to users.  
 In deployment pipelines, you can configure parameter rules to set different values for each deployment stage.
 
@@ -81,7 +81,7 @@ With Git integration, any developer can back up their work by committing it into
 
 * Make sure you have an isolated environment to work in, so others don’t override your work before it gets committed. This means working in a Desktop tool (such as [VS Code](https://code.visualstudio.com/), [Power BI Desktop](https://powerbi.microsoft.com/desktop/) or others), or in a separate workspace that other users can’t access.
 
-* Commit to a branch that you created and no other developer is using. If you’re using a workspace as an authoring environment, read about [working with branches](./git-integration/manage-branches.md).
+* Commit to a branch that you created and no other developer is using. If you’re using a workspace as an authoring environment, read about [working with branches](git-integration/manage-branches.md).
 
 * Commit together changes that must be deployed together. This advice applies for a single item, or multiple items that are related to the same change. Committing all related changes together can help you later when deploying to other stages, creating pull requests, or reverting changes back.
 
@@ -91,7 +91,7 @@ With Git integration, any developer can back up their work by committing it into
 
 After you back up your work, there might be cases where you want to revert to a previous version and restore it in the workspace. There are a few ways to revert to a previous version:
 
-* **Undo button**: The *Undo* operation is an easy and fast way to revert the immediate changes you made, as long as they aren't committed yet. You can also undo each item separately. Read more about the [undo](./git-integration/git-get-started.md?tabs=undo-save#commit-changes-to-git) operation.
+* **Undo button**: The *Undo* operation is an easy and fast way to revert the immediate changes you made, as long as they aren't committed yet. You can also undo each item separately. Read more about the [undo](git-integration/git-get-started.md?tabs=undo-save#commit-changes-to-git) operation.
 
 * **Reverting to older commits**: There’s no direct way to go back to a previous commit in the UI. The best option is to promote an older commit to be the HEAD using [git revert](https://git-scm.com/docs/git-revert) or [git reset](https://git-scm.com/docs/git-reset). Doing this shows that there’s an update in the source control pane, and you can update the workspace with that new commit.
 
@@ -99,11 +99,14 @@ Since data isn’t stored in Git, keep in mind that reverting a data item to an 
 
 ### Working with a 'private' workspace
 
-When you want to work in isolation, use a separate workspace as an isolated environment. Read more about isolating your work environment in [working with branches](./git-integration/manage-branches.md). For an optimal workflow for you and the team, consider the following points:
+When you want to work in isolation, use a separate workspace as an isolated environment. Read more about isolating your work environment in [working with branches](git-integration/manage-branches.md). For an optimal workflow for you and the team, consider the following points:
 
 * **Setting up the workspace**: Before you start, make sure you can create a new workspace (if you don’t already have one), that you can assign it to a [Fabric capacity](../enterprise/licenses.md#capacity), and that you have access to data to work in your workspace.
 
 * **Creating a new branch**: Create a new branch from the *main* branch, so you have the most up-to-date version of your content. Also make sure you connect to the correct folder in the branch, so you can pull the right content into the workspace.
+
+  > [!NOTE]
+  > By default, switching a connected workspace's Git branch (or checking out a new branch) is restricted to workspace Admins. However, a workspace Admin can enable the per-workspace setting **Allow users with at least Contributor role to change Git branch** to delegate branch-switching capabilities to Contributors or Members. For more information, see [Allow Contributors and Members to switch branches](./git-integration/git-get-started.md#allow-contributors-and-members-to-switch-branches).
 
 * **Small, frequent changes**: It's a Git best practice to make small incremental changes that are easy to merge and less likely to get into conflicts. If that’s not possible, make sure to update your branch from main so you can resolve conflicts on your own first.
 
@@ -111,7 +114,7 @@ When you want to work in isolation, use a separate workspace as an isolated envi
 
 ### Use Client tools to edit your work
 
-For items and tools that support it, it might be easier to work with client tools for authoring, such as [Power BI Desktop](https://powerbi.microsoft.com/desktop/) for semantic models and reports, [VS Code](https://code.visualstudio.com/) for Notebooks etc. These tools can be your local development environment. After you complete your work, push the changes into the remote repo, and sync the workspace to upload the changes. Just make sure you're working with the [supported structure](./git-integration/source-code-format.md) of the item you're authoring. If you’re not sure, first clone a repo with content already synced to a workspace, then start authoring from there, where the structure is already in place.
+For items and tools that support it, it might be easier to work with client tools for authoring, such as [Power BI Desktop](https://powerbi.microsoft.com/desktop/) for semantic models and reports, [VS Code](https://code.visualstudio.com/) for Notebooks etc. These tools can be your local development environment. After you complete your work, push the changes into the remote repo, and sync the workspace to upload the changes. Just make sure you're working with the [supported structure](git-integration/source-code-format.md) of the item you're authoring. If you’re not sure, first clone a repo with content already synced to a workspace, then start authoring from there, where the structure is already in place.
 
 ### Managing workspaces and branches
 
@@ -191,7 +194,7 @@ This section provides guidance to the deployment pipelines production stage.
 
 ### Manage who can deploy to production
 
-Because deploying to production should be handled carefully, it's good practice to let only specific people manage this sensitive operation. However, you probably want all BI creators for a specific workspace to have access to the pipeline. Use production [workspace permissions](./deployment-pipelines/understand-the-deployment-process.md#permissions) to manage access permissions. Other users can have a production workspace *viewer* role to see content in the workspace but not make changes from Git or deployment pipelines.
+Because deploying to production should be handled carefully, it's good practice to let only specific people manage this sensitive operation. However, you probably want all BI creators for a specific workspace to have access to the pipeline. Use production [workspace permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) to manage access permissions. Other users can have a production workspace *viewer* role to see content in the workspace but not make changes from Git or deployment pipelines.
 
 In addition, limit access to the repo or pipeline by only enabling permissions to users that are part of the content creation process.
 
@@ -203,7 +206,7 @@ Make sure that you set production deployment rules for data sources and paramete
 
 ### Update the production app
 
-Deployment in a pipeline through the UI updates the workspace content. To update the associated app, use the [deployment pipelines API](./deployment-pipelines/pipeline-automation.md). It's not possible to update the app through the UI. If you use an app for content distribution, don’t forget to update the app after deploying to production so that end users are immediately able to use the latest version.
+Deployment in a pipeline through the UI updates the workspace content. To update the associated app, use the [deployment pipelines API](deployment-pipelines/pipeline-automation.md). It's not possible to update the app through the UI. If you use an app for content distribution, don’t forget to update the app after deploying to production so that end users are immediately able to use the latest version.
 
 ### Deploying into production using Git branches
 
@@ -223,6 +226,6 @@ If you're using deployment from Git, we recommend following the practices descri
 
 ## Related content
 
-* [End to end lifecycle management tutorial](./cicd-tutorial.md)
+* [End to end lifecycle management tutorial](cicd-tutorial.md)
 * [Get started with Git integration](git-integration/git-get-started.md)
 * [Get started with deployment pipelines](deployment-pipelines/get-started-with-deployment-pipelines.md)

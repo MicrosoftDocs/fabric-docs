@@ -57,13 +57,13 @@ Up to once a week, a graph model might encounter a timeout if the graph creation
 
 However, users can reinitiate graph creation or update.
 
-### Total number of graph instances
+### Graph size
 
-Each Fabric Workspace can have up to 10 graph instances.
+The current generally available SKU configurations can process about 2 billion graph elements (nodes and edges). For larger graphs with a higher number of elements or a larger property payload per element, please reach out to the product team.
 
-### Size of graph
+### Total number of graph models
 
-Creating graphs with more than 1 billion nodes and edges might result in unstable performance.
+Each Fabric workspace can have up to 10 graph models.
 
 ### Multitasking UI
 
@@ -71,7 +71,7 @@ The graph model might disappear or become empty when you switch between tabs or 
 
 ### Node property selection
 
-When you add a node type to your graph model, all columns from the source table are added as properties by default. You can remove properties by selecting the trashcan icon. Edge types work differently - they start with no properties, and you add only the ones you need. Choosing a custom display label (for example, displaying a name instead of an ID) isn't yet supported.
+When you add a node or edge type to your graph model, manually select columns from the source table to be added as properties. Both nodes and edges start with no properties, and you add only the ones you need.
 
 ## Querying
 

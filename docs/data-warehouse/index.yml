@@ -108,10 +108,12 @@ landingContent:
             url: development-deployment.md
           - text: Warehouse projects in Visual Studio Code
             url: develop-warehouse-project.md
-          - text: Semantic models
-            url: semantic-models.md            
+          - text: Pre- and post-deployment scripts
+            url: pre-post-deployment-scripts.md
           - text: Reports in the Power BI service
             url: reports-power-bi-service.md   
+          - text: Semantic models
+            url: semantic-models.md            
   # Card
   - title: Query
     linkLists: 

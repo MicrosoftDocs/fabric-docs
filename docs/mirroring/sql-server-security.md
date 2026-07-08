@@ -1,7 +1,7 @@
 ---
 title: "Secure Data in Microsoft Fabric Mirrored Databases From SQL Server"
 description: Learn about how to secure data in mirrored databases From SQL Server in Microsoft Fabric.
-ms.reviewer: ajayj
+ms.reviewer: nanikolic, wiassaf
 ms.date: 11/18/2025
 ms.topic: how-to
 ---

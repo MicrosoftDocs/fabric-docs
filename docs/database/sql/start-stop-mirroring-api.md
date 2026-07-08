@@ -1,7 +1,7 @@
 ---
 title: Start and Stop SQL Database Mirroring with the Fabric REST API
 description: Learn how to start and stop SQL database mirroring to OneLake with the Fabric REST API.
-ms.reviewer: imotiwala
+ms.reviewer: sukkaur, antho
 ms.date: 10/28/2025
 ms.topic: how-to
 ---

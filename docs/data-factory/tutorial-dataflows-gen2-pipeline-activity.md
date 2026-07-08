@@ -1,12 +1,12 @@
 ---
-title: Use a dataflow in a pipeline
+title: Use a Dataflow in a Pipeline
 description: This article describes how to use a dataflow in a pipeline.
-ms.topic: tutorial
-ms.date: 12/18/2024   
 ms.reviewer: jeluitwi
+ms.date: 06/19/2026
+ms.topic: tutorial
 ms.custom:
-    - dataflows
-    - pipelines
+  - dataflows
+  - pipelines
 ---
 
 # Use a dataflow in a pipeline
@@ -17,13 +17,13 @@ In this tutorial, you build a pipeline to move OData from a Northwind source to 
 
 To get started, you must complete the following prerequisites:
 
-- Make sure you have a [[!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](../fundamentals/create-workspaces.md) that isn't the default My Workspace.
+- Make sure you have a [[!INCLUDE [product-name](../includes/product-name.md)]-enabled workspace](../fundamentals/create-workspaces.md) that isn't the default My Workspace.
 
-## Create a Lakehouse
+## Create a lakehouse
 
 To start, you first need to create a lakehouse. A lakehouse is a data lake that is optimized for analytics. In this tutorial, you create a lakehouse that's used as a destination for the dataflow.
 
-1. Go to your Fabric enabled workspace.
+1. Go to your Fabric-enabled workspace.
 
    :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/go-to-workspace.png" alt-text="Screenshot of the Fabric enabled workspace emphasized.":::
 
@@ -38,9 +38,9 @@ Now you've created a lakehouse and you can now set up the dataflow.
 
 ## Create a dataflow
 
-A dataflow is a reusable data transformation that can be used in a pipeline. In this tutorial, you create a dataflow that gets data from an OData source and writes the data to a lakehouse destination.  
+A dataflow is a reusable data transformation that you can use in a pipeline. In this tutorial, you create a dataflow that gets data from an OData source and writes the data to a lakehouse destination.
 
-1. Go to your Fabric enabled workspace.
+1. Go to your Fabric-enabled workspace.
 
    :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/go-to-workspace.png" alt-text="Screenshot of the Fabric enabled workspace.":::
 
@@ -90,7 +90,7 @@ To ingest the data to the lakehouse destination:
 
 1. Publish the dataflow.
 
-    > [!IMPORTANT]
+    > [!IMPORTANT]  
     > When the first Dataflow Gen2 is created in a workspace, Lakehouse and Warehouse items are provisioned along with their related SQL analytics endpoint and semantic models. These items are shared by all dataflows in the workspace and are required for Dataflow Gen2 to operate, shouldn't be deleted, and aren't intended to be used directly by users. The items are an implementation detail of Dataflow Gen2. The items aren't visible in the workspace, but might be accessible in other experiences such as the Notebook, SQL-endpoint, Lakehouse, and Warehouse experiences. You can recognize the items by their prefix in the name. The prefix of the items is `DataflowsStaging'.
 
 Now that you've ingested the data to the lakehouse destination, you can set up your pipeline.
@@ -127,7 +127,7 @@ A pipeline is a workflow that can be used to automate data processing. In this t
 
 ## Run and schedule the pipeline
 
-In this section, you run and schedule the pipeline. This schedule allows you to run the pipeline on a schedule.
+In this section, you run and schedule the pipeline.
 
 1. Go to your workspace.
 1. Open the dropdown menu of the pipeline that you created in the previous procedure, and then select **Schedule**.
@@ -152,14 +152,4 @@ You've now created a pipeline that runs on a schedule, refreshes the data in the
 
 ## Related content
 
-This sample shows you how to use a dataflow in a pipeline with Data Factory in Microsoft Fabric.  You learned how to:
-
-> [!div class="checklist"]
-> - Create a dataflow.
-> - Create a pipeline invoking your dataflow.
-> - Run and schedule your pipeline.
-
-Next, advance to learn more about monitoring your pipeline runs.
-
-> [!div class="nextstepaction"]
-> [How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)

@@ -27,17 +27,28 @@ Workspace monitoring gives you log-level visibility for all items in a workspace
 
     :::image type="content" source="media/monitor-pipeline-runs/pipeline-workspace-monitoring.png" alt-text="Screenshot of the pipeline workspace monitoring table." lightbox="media/monitor-pipeline-runs/pipeline-workspace-monitoring.png":::
 
+## Troubleshooting missing monitoring tables
+
+When new workspace monitoring tables become available and you don't see them in your existing monitoring eventhouse, recreate workspace monitoring for the workspace by deleting the previous eventhouse and re-adding it to your workspace. Recreating the monitoring eventhouse provisions the latest monitoring schema and ensures newly available tables are visible. Be sure to save any custom Kql queries before removing the existing monitoring eventhouse. The monitoring experience is backed by a monitoring eventhouse and monitoring Kql database that are created when workspace monitoring is enabled.
+
 ## Review logged data
 
-The **ItemJobEventLogs** table includes:
+The **ItemJobEventLogs** table includes pipeline-level (L1 across Data Factory items) execution data:
+- Pipeline name  
+- Run status (Success/Failed)  
+- Start and end timestamps  
+- System diagnostics  
 
-- Pipeline name
-- Run status (Success/Failed)
-- Start and end timestamps
-- System diagnostics
+For pipeline activity-level (L2) monitoring, you can find more logs in the **FabricDataPipelineActivityRunsLogs** table:
 
-> [!NOTE]
-> Currently, workspace monitoring supports L1 monitoring (pipeline-level). Activity-level (L2) monitoring isn't available yet.
+- Pipeline name and run identifier  
+- Activity name and type  
+- Activity status (In Progress, Succeeded, Failed)  
+- Activity start and end timestamps  
+- Execution duration  
+- Failure type
+
+:::image type="content" source="media/monitor-pipeline-runs/pipeline-activity-workspace-monitoring.png" alt-text="Screenshot of the pipeline L2 workspace monitoring table.":::
 
 ## Query logs
 
@@ -69,7 +80,7 @@ ItemJobEventLogs
 
 ### ItemJobEventLogs schema
 
-The following table describes the schema of `ItemJobEventLogs`:
+The following table describes the schema of `ItemJobEventLogs` (item-level, L2):
 
 | **Column name** | **Column type** | **Description** |
 |----|----|----|
@@ -93,10 +104,50 @@ The following table describes the schema of `ItemJobEventLogs`:
 | JobStartTime | datetime | Actual job start time. |
 | JobEndTime | datetime | Actual job end time. |
 
+### FabricDataPipelineActivityRunsLogs schema
+
+The following table describes the schema of `FabricDataPipelineActivityRunsLogs` (activity-level, L2):
+
+| **Column name** | **Column type** | **Description** |
+|----|----|----|
+| Timestamp | datetime | The timestamp (UTC) when the log entry was generated. |
+| OperationName | string | The name of the operation executed for the activity. |
+| ItemId | string | Unique ID of the pipeline associated with the activity. |
+| ItemKind | string | Type of item generating the log (for example, Pipeline). |
+| ItemName | string | The name of the pipeline that contains the activity. |
+| WorkspaceId | string | Unique identifier of the Fabric workspace that contains the pipeline. |
+| WorkspaceName | string | The name of the workspace that contains the pipeline. |
+| CapacityId | string | Unique identifier of the capacity that hosts the pipeline execution. |
+| CapacityName | string | The name of the capacity that hosts the pipeline execution. |
+| CorrelationId | string | Identifier used to correlate related operations across pipeline and activity runs. |
+| OperationId | string | Unique identifier of the activity-level operation. |
+| Region | string | The region where the activity execution occurred. |
+| Identity | string | Identifier of the user or service principal associated with the operation. |
+| CustomerTenantId | string | Unique identifier of the customer tenant. |
+| WorkspaceMonitoringTableName | string | The name of the table where records belong. |
+| DurationMs | long | Amount of time in milliseconds taken by the operation. |
+| Status | string | Status of the activity operation (for example, Succeeded or Failed). |
+| PipelineRunId | string | Unique identifier of the pipeline run associated with the activity. |
+| ActivityIterationCount | int | The iteration count for activities that execute multiple times (for example, loop activities). |
+| ActivityName | string | The name of the activity. |
+| ActivityType | string | Type of activity (for example, Copy, Notebook, Dataflow). |
+| OperationStartTime | datetime | Actual start time of the activity execution. |
+| OperationEndTime | datetime | Actual end time of the activity execution. |
+| FailureType | string | Type of failure encountered during execution (if applicable). |
+| GatewayType | string | Type of gateway used for the activity execution (if applicable). |
+| PremiumCapacitySku | string | The SKU of the premium capacity used for execution. |
+| CpuCoreMs | long | CPU usage for the activity execution in core milliseconds. |
+| IngestionTime | datetime | The time at which the log record was ingested into the monitoring system. |
+
+
 ## Best practices
 
 - Use workspace monitoring for deep analysis and custom reporting.
 - Combine workspace monitoring with the monitoring hub for quick operational checks across workspaces.
+
+## Known limitations
+
+- Error details and diagnostics aren't supported.
 
 ## Related content
 

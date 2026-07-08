@@ -32,8 +32,8 @@ Your trial is configured as either an F4 [capacity](../enterprise/licenses.md#ca
 
 With your trial capacity, you can:
 
-- Use all Fabric workloads, including **Data Factory**, **Synapse Data Engineering**, **Real-Time Analytics**, and **Power BI**.
-- Create **semantic models**, **pipelines**, **notebooks**, **reports**, and more.
+- Use all Fabric workloads, including **Data Factory**, **Data Science**, **Data Engineering**, **Real-Time Analytics**, and **Power BI**.
+- Create **pipelines**, **notebooks**, and more.
 - Collaborate in **workspaces** and monitor usage with the **Microsoft Fabric Capacity Metrics app**.
 - Store up to **1 TB of data** in OneLake.
 

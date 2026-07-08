@@ -75,12 +75,12 @@ The **change adapter** control at the top-left of the dbt configurations page le
 
 Each adapter supports different authentication methods based on the target platform's capabilities. The following table shows the supported authentication types for each adapter.
 
-| Adapter | Supported authentication types |
-|---|---|
-| Fabric Data Warehouse | Microsoft Entra (OAuth) |
-| Azure SQL Database | Basic, Service Principal (SPN) |
-| Snowflake | Snowflake authentication |
-| PostgreSQL database | Basic authentication |
+| Adapter | Supported authentication types | Adapter version|
+|---|---|---|
+| Azure SQL Database | Basic, Service Principal (SPN) | 1.8.5 | 
+| Fabric Data Warehouse | Microsoft Entra (OAuth) | 1.9.0 |
+| PostgreSQL database | Basic authentication | 1.9.0 |
+| Snowflake | Snowflake authentication |  1.9.0 |
 
 For adapter versions and runtime details, see [Supported adapters and runtime](dbt-job-overview.md#supported-adapters-and-runtime).
 
