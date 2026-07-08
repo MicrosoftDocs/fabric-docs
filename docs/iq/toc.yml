@@ -345,6 +345,8 @@ items:
               href: plan/infobridge-transformations/infobridge-how-to-unnest.md
             - name: Text functions
               href: plan/infobridge-transformations/infobridge-how-to-text-functions.md
+            - name: Extract comments
+              href: plan/infobridge-transformations/infobridge-how-to-extract-comments.md
 - name: Graph
   href: ../graph/toc.yml
 - name: Data agent
