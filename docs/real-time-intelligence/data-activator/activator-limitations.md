@@ -133,6 +133,13 @@ If the metric owner loses access to the metric, or if you update the Power BI in
 
 To continue using the ingestion under a different user, the ingestion and associated rules need to be recreated in the new user context.
 
+## Maximum rules per Activator item
+
+Each Data [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item supports a maximum of 500 rules. This limit applies per [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item (artifact), regardless of the data source used to create the rules (Power BI reports, eventstreams, KQL querysets, or Real-Time Dashboards). If you reach this limit, create additional rules in a separate [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item.
+
+> [!NOTE]
+> This limit applies to Data [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules and is separate from Power BI dashboard data alerts.
+
 ## Related content
 
 * [Detection conditions in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-detection-conditions.md)
