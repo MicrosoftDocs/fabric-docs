@@ -3,7 +3,7 @@ title: Best practices for lifecycle management in Fabric
 description: Learn about the best practices for Git integration and deployment pipelines in the Microsoft Fabric lifecycle management tool.
 ms.reviewer: NimrodShalit
 ms.topic: best-practice
-ms.date: 12/15/2025
+ms.date: 06/15/2026
 ms.custom:
   - intro-deployment
 ms.search.form: Best practices for deployment pipelines, Create deployment pipeline, Introduction to Deployment pipelines, Best practices for Deployment pipelines
@@ -104,6 +104,9 @@ When you want to work in isolation, use a separate workspace as an isolated envi
 * **Setting up the workspace**: Before you start, make sure you can create a new workspace (if you don’t already have one), that you can assign it to a [Fabric capacity](../enterprise/licenses.md#capacity), and that you have access to data to work in your workspace.
 
 * **Creating a new branch**: Create a new branch from the *main* branch, so you have the most up-to-date version of your content. Also make sure you connect to the correct folder in the branch, so you can pull the right content into the workspace.
+
+  > [!NOTE]
+  > By default, switching a connected workspace's Git branch (or checking out a new branch) is restricted to workspace Admins. However, a workspace Admin can enable the per-workspace setting **Allow users with at least Contributor role to change Git branch** to delegate branch-switching capabilities to Contributors or Members. For more information, see [Allow Contributors and Members to switch branches](./git-integration/git-get-started.md#allow-contributors-and-members-to-switch-branches).
 
 * **Small, frequent changes**: It's a Git best practice to make small incremental changes that are easy to merge and less likely to get into conflicts. If that’s not possible, make sure to update your branch from main so you can resolve conflicts on your own first.
 
