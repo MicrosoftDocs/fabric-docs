@@ -129,7 +129,7 @@ By default, branch operations such as **Switch branch** and **Checkout to new br
 
  :::image type="content" source="./media/git-integration-process/change-branch-1.png" alt-text="Screenshot of Allow users to change Git branch.":::
 
-This delegation setting:
+This setting:
 
 - Is configured per-workspace (there's no tenant-level switch to disable it).
 - Requires an active Git connection on the workspace.

@@ -73,6 +73,17 @@ The following table summarizes the information protection capabilities in Fabric
 |Inheritance from data sources| When a Fabric item ingests data from a data source that has a sensitivity label, that label is applied to the Fabric item. The label then propagates downstream to the child items of that Fabric item via downstream inheritance.| [Currently supported for Power BI semantic models only](#inheritance-from-data-sources).|
 |Export| When a user exports data from an item that has a sensitivity label, the sensitivity label moves with it to the exported format. |[Currently supported for Power BI items in supported export paths](#export). |
 
+## Monitor and govern sensitivity label adoption
+
+Beyond applying sensitivity labels, Fabric provides governance experiences that help administrators and data owners understand how labels are being used across their data estate. Using [governance experiences in OneLake catalog](governance-compliance-overview.md), organizations can:
+* Identify labeled and unlabeled assets.
+* Understand sensitivity label coverage across Fabric items.
+* Discover assets associated with specific sensitivity labels.
+* Monitor adoption of information protection practices.
+* Prioritize remediation of unlabeled or incorrectly classified content.
+
+These insights help organizations improve information protection posture and achieve broader label coverage across their Fabric environment.  
+
 ## Considerations and limitations
 
 ### Manual labeling
