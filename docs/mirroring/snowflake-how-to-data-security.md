@@ -1,8 +1,8 @@
 ---
-title: "Data Security in Microsoft Fabric Mirrored Databases from Snowflake"
-description: Learn about data security in mirrored databases from Snowflake in Microsoft Fabric.
+title: Data Security in Microsoft Fabric Mirrored Databases from Snowflake
+description: Learn how to establish data security in your mirrored Snowflake database in Microsoft Fabric. Includes secuity considerations and supported authentication methods.
 ms.reviewer: sbahadur, maprycem
-ms.date: 11/19/2024
+ms.date: 07/08/2026
 ms.topic: how-to
 ---
 
