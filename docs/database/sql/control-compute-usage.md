@@ -5,6 +5,7 @@ ms.reviewer: amapatil
 ms.date: 06/09/2026
 ms.topic: concept-article
 ms.custom: sfi-image-nochange
+ms.search.form: Performance monitoring in SQL database
 ---
 
 # Control compute usage

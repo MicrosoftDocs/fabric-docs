@@ -4,7 +4,7 @@ description: Learn how to work with your SQL database with Fabric's git integrat
 ms.reviewer: antho, sukkaur, drskwier
 ms.date: 02/27/2026
 ms.topic: how-to
-ms.search.form:
+ms.search.form: SQL Database source control
 ---
 # SQL database source control integration in Microsoft Fabric
 

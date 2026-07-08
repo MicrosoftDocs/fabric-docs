@@ -4,6 +4,7 @@ description: Learn how to query your SQL database in Fabric.
 ms.reviewer: dlevy
 ms.date: 11/01/2024
 ms.topic: how-to
+ms.search.form: SQL Database query editor
 ---
 # Query your SQL database in Fabric
 
