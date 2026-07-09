@@ -826,6 +826,8 @@ items:
         displayName: trigger, activator, reflex
       - name: Live refresh in Real-Time Dashboards
         href: dashboard-live-refresh.md
+      - name: Embed Real-Time Dashboards in other applications
+        href: ../embed/quickstart-embed-fabric-item.md
       - name: Visualize data in Power BI
         items:
           - name: Visualize data in a Power BI report
