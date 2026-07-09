@@ -351,6 +351,8 @@ items:
               href: plan/infobridge-transformations/infobridge-how-to-text-functions.md
             - name: Extract comments
               href: plan/infobridge-transformations/infobridge-how-to-extract-comments.md
+            - name: Import and export transformation steps
+              href: plan/infobridge-transformations/infobridge-how-to-import-export.md
 - name: Graph
   href: ../graph/toc.yml
 - name: Data agent
