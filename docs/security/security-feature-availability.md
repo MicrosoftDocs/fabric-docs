@@ -5,7 +5,7 @@ description: Learn about the support status of the Fabric security features Work
 author: msmimart
 ms.author: mimart
 ms.reviewer: mimart
-ms.date: 02/19/2026
+ms.date: 07/08/2026
 ms.topic: concept-article
 ---
 
@@ -97,7 +97,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Digital Twin Builder | - | - | - | 
 |  | Event Schema Set  | - | - | - |
 |  | Map | - | - | - |
-| **Uncategorized**  | Operations Agent | - | - | - |
+|  | Operations Agent | - | - | Preview |
 
 ## Related links
 

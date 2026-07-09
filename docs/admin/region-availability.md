@@ -6,7 +6,7 @@ ms.author: mimart
 ms.custom:
   - references_regions
 ms.topic: overview
-ms.date: 06/19/2026
+ms.date: 07/08/2026
 ---
 
 # Fabric region availability
@@ -39,7 +39,7 @@ The following table lists all Azure regions where Power BI or Fabric is availabl
 | Americas     | US - East US         | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md)<br> [Operations agent (preview)](../real-time-intelligence/operations-agent.md)<br> [Plan (preview)](../iq/plan/overview.md) |
 | Americas     | US - East US 2       | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md)<br> [Plan (preview)](../iq/plan/overview.md) |
 | Americas     | US - North Central US| ✅ | ✅ |  |
-| Americas     | US - South Central US| ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Fabric App (preview)](../apps/overview.md) <br> [Healthcare Solutions](/industry/healthcare/healthcare-data-solutions/overview) <br> [Ontology (preview)](../iq/ontology/overview.md) <br> [Operations agent (preview)](../real-time-intelligence/operations-agent.md) <br> [Plan (preview)](../iq/plan/overview.md) <br> [Schema  Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) |
+| Americas     | US - South Central US| ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Fabric App (preview)](../apps/overview.md) <br> [Healthcare Solutions](/industry/healthcare/healthcare-data-solutions/overview) <br> [Ontology (preview)](../iq/ontology/overview.md) <br> [Operations agent](../real-time-intelligence/operations-agent.md) <br> [Plan (preview)](../iq/plan/overview.md) <br> [Schema  Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) |
 | Americas     | US - West US         | ✅ | ✅ |  |
 | Americas     | US - West US 2       | ✅ | ✅ |  |
 | Americas     | US - West US 3       | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) <br> [Schema Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) |
