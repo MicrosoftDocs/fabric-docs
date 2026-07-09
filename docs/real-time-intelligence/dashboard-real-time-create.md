@@ -1,9 +1,9 @@
 ---
 title: Create a Real-Time Dashboard
 description: Learn how to create and customize Real-Time Dashboards to visualize data effectively using KQL queries and Copilot for seamless insights.
-ms.reviewer: mbar
+ms.reviewer: mibar
 ms.topic: how-to
-ms.date: 06/15/2026
+ms.date: 07/09/2026
 author: spelluru
 ms.author: spelluru
 ms.subservice: rti-dashboard
@@ -78,7 +78,7 @@ Select the tab that corresponds with your desired data source type.
 
 1. Open your Real-Time dashboard.
 
-1. In the upper tool bar, select **Add data source** > **KQL Database**.
+1. In the upper toolbar, select **Add data source** > **KQL Database**.
 
     :::image type="content" source="media/real-time-dashboard/kusto-query-dataset.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with eventhouse/kql database highlighted." lightbox="media/real-time-dashboard/kusto-query-dataset.png":::
 
@@ -90,7 +90,7 @@ Select the tab that corresponds with your desired data source type.
 
 1. Open your Real-Time dashboard.
 
-1. In the upper tool bar, select **Add data source** > **Azure Data Explorer**.
+1. In the upper toolbar, select **Add data source** > **Azure Data Explorer**.
 
     :::image type="content" source="media/real-time-dashboard/azure-data.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with Azure data explorer highlighted." lightbox="media/real-time-dashboard/azure-data.png":::
 
@@ -98,7 +98,7 @@ Select the tab that corresponds with your desired data source type.
 
 1. Open your Real-Time dashboard.
 
-1. In the upper tool bar, select **Add data source** > **Azure Monitor** and select either **Application Insights** or **Log Analytics**.
+1. In the upper toolbar, select **Add data source** > **Azure Monitor** and select either **Application Insights** or **Log Analytics**.
 
     :::image type="content" source="media/real-time-dashboard/azure-monitor.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with Azure monitor highlighted." lightbox="media/real-time-dashboard/azure-monitor.png":::
 
@@ -303,20 +303,20 @@ You can view the query in either viewing or editing mode.
     > [!NOTE]
     > Any edits made to the query using this flow won't be reflected in the original Real-Time Dashboard.
 
-## Enable Live refresh
+## Enable live refresh
 
 Live refresh is a feature that updates dashboard visuals when new data is ingested into the underlying source, without manually reloading the page or clicking a refresh button.
 
-To enable Live refresh for your dashboard:
+To enable live refresh for your dashboard:
 
 1. Select the **Manage** tab > **Refresh settings**.
 1. Select **Live refresh** to enable it.
 1. Select values for **Refresh rate limit** and **Fixed rate for non-supporting visuals**.
 1. Select **Done** and then **Save** the dashboard.
 
-    :::image type="content" source="media/dashboard-live-refresh/live-refresh-settings.png" alt-text="Screenshot of the Live refresh settings pane." lightbox="media/dashboard-live-refresh/live-refresh-settings.png":::
+    :::image type="content" source="media/dashboard-live-refresh/live-refresh-settings.png" alt-text="Screenshot of the live refresh settings pane." lightbox="media/dashboard-live-refresh/live-refresh-settings.png":::
 
-For more information about Live refresh, see [Live refresh in Real-Time Dashboards](dashboard-live-refresh.md).
+For more information about live refresh, see [Live refresh in Real-Time Dashboards](dashboard-live-refresh.md).
 
 ## Share the dashboard
 
@@ -343,8 +343,14 @@ To share a specific visual:
 
     :::image type="content" source="media/real-time-dashboard/share-visual.png" alt-text="Screenshot that shows the Share visual option in the visual's context menu.":::
 
-1. Using the multi-select checkboxes, choose whether the shareable link should include the **Link** to open the visual in Fabric, the **Visualization** itself, and the **Query** that supports the visual.
+1. Using the multiselect checkboxes, choose whether the shareable link should include the **Link** to open the visual in Fabric, the **Visualization** itself, and the **Query** that supports the visual.
 1. Select **Copy** to copy the link to your clipboard.
+
+### Use dashboards in custom applications
+
+In addition to sharing dashboards through links or collaboration tools, you can embed a Real-Time Dashboard in your own web application by using Fabric Embedded. This approach allows you to integrate real-time insights directly into your application, portal, or workflow.
+
+For more information, see [Fabric Embedded](../embed/what-is-fabric-embed.md) and [Embedding quickstart](../embed/quickstart-embed-fabric-item.md).
 
 ## Export dashboards
 

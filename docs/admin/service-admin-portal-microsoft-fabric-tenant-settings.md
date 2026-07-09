@@ -65,7 +65,7 @@ Users can import, author, and execute dbt projects directly within Fabric, enabl
 
 For more information, see [dbt job items in Fabric](https://aka.ms/dbtjob_docs).
 
-## Enable Operations Agents (Preview)
+## Enable operations agents
 
 Users can create operations agents that use Azure OpenAI to create operations plans and recommend actions in response to real-time data. By turning on this setting, you agree to the preview terms for this feature. This setting can be managed at both the tenant and the capacity levels.
 
