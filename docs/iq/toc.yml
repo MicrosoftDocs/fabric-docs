@@ -265,8 +265,12 @@ items:
           href: plan/powertable-how-to-insert-rows-import-data.md
         - name: Configure column properties
           items:
+            - name: Column properties summary
+              href: plan/powertable-how-to-configure-columns/how-to-configure-column-properties-summary.md
             - name: Configure general properties
               href: plan/powertable-how-to-configure-columns/how-to-configure-general-column-properties.md
+            - name: Configure display properties
+              href: plan/powertable-how-to-configure-columns/how-to-configure-display-column-properties.md
             - name: Configure single select column
               href: plan/powertable-how-to-configure-columns/how-to-configure-lookup-relation-columns.md
         - name: Manage columns
