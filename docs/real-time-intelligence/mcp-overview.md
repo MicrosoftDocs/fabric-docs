@@ -3,7 +3,7 @@ title: What Is MCP in Real-Time Intelligence?
 description: Learn about Model Context Protocol (MCP) in Real-Time Intelligence. MCP enables AI agents to interact with eventhouses and Activator by using natural language.
 ms.reviewer: sharmaanshul
 ms.topic: overview 
-ms.date: 06/14/2026
+ms.date: 07/08/2026
 ms.search.form: MCP, RTI, AI
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
@@ -41,6 +41,7 @@ Microsoft hosts remote MCP servers and exposes them as HTTP endpoints. You confi
 | ------ | ----------- | ------------ |
 | **Eventhouse MCP server** | Enables AI agents to query eventhouses by using natural language | Schema discovery, KQL query generation, data sampling, translation of natural language to KQL (the *NL2KQL* framework) |
 | **Activator MCP server** | Enables AI agents to interact with Fabric Activator | Creation of monitoring rules, management of alerts, triggered actions |
+| **Operations agent MCP server** | Enables AI agents to configure and operate an operations agent by using natural language | Goal configuration, playbook generation, monitoring management |
 
 - **MCP host**: The environment where the AI model (like GPT-4, Claude, or Gemini) runs.
 - **MCP client**: An intermediary service that forwards the AI model's requests to MCP servers, like GitHub Copilot, Cline, or Claude Desktop.
@@ -50,6 +51,7 @@ For more information, see:
 
 - [Get started with the remote MCP server for eventhouses](mcp-remote-eventhouse.md)
 - [Get started with the remote MCP server for Activator](mcp-remote-activator.md)
+- [Get started with the remote MCP server for operations agents](mcp-remote-operations-agent.md)
 
 ## When to use local vs. remote servers
 
@@ -60,6 +62,7 @@ Ask questions in plain English or other languages, and the system turns them int
 | Query eventhouse or Azure Data Explorer data with full control over the server | Local MCP server |
 | Query an eventhouse without managing server infrastructure | Remote MCP server for eventhouses |
 | Create monitoring rules and alerts in Activator | Remote MCP server for Activator |
+| Configure instructions, generate playbooks, and manage monitoring for an operations agent | Remote MCP server for operations agents |
 | Use in cloud agent platforms like Microsoft Copilot Studio or Microsoft Foundry | Remote MCP servers |
 | Need offline or air-gapped access | Local MCP server |
 | Want automatic updates and maintenance | Remote MCP servers |
@@ -78,6 +81,8 @@ Both local and remote MCP servers work with popular AI clients.
 **Eventstreams**: Query and manage [eventstreams](event-streams/overview.md) to analyze streaming data and get real-time insights. You can list eventstreams in your workspace, get details and definitions, create new eventstreams, and more.
 
 **Activator**: Interact with Fabric [Activator](data-activator/activator-introduction.md) to list Activator artifacts in your workspace, create trigger actions, and set up notifications.
+
+**Operations agents**: Create and manage [operations agents](operations-agent.md) to monitor and act on changing data. You can find and configure agents, start and stop them, and find the history of their operations.
 
 **Map**: Query and manage [map](map/about-fabric-maps.md) resources to visualize geospatial data. You can list maps in your workspace, get details and definitions, create new maps, and more.
 
@@ -104,4 +109,5 @@ The MCP server might be installed with, be used with, and share data with client
 - [Get started with the local MCP server for Real-Time Intelligence](mcp-local-server.md)
 - [Get started with the remote MCP server for eventhouses](mcp-remote-eventhouse.md)
 - [Get started with the remote MCP server for Activator](mcp-remote-activator.md)
+- [Get started with the remote MCP server for operations agents](mcp-remote-operations-agent.md)
 - [Model Context Protocol (MCP) overview](https://modelcontextprotocol.io/introduction)
