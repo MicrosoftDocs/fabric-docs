@@ -5,7 +5,7 @@ ms.reviewer: gabil, mbar
 ms.topic: how-to
 ms.subservice: rti-dashboard
 ms.custom:
-ms.date: 05/25/2026
+ms.date: 07/08/2026
 ---
 
 # Customize Real-Time Dashboard visuals
@@ -13,6 +13,9 @@ ms.date: 05/25/2026
 Real-Time Dashboards are a collection of tiles that feature a visual representation supported by an underlying Kusto Query Language (KQL) query. This article explains how to edit the visualizations and queries of a Real-Time Dashboard tile. It also provides an overview of customization properties specific to each visualization type.
 
 Real-Time Dashboards support all visualizations that you can create in the context of the [render operator](/azure/data-explorer/kusto/query/renderoperator?context=/fabric/context/context-rta&pivots=fabric#visualizations), along with the [dashboard-specific visuals](dashboard-visuals.md).
+
+> [!TIP]
+> You can embed Real-Time Dashboard visuals in your own web application by using [Fabric Embedded](../embed/what-is-fabric-embed.md).
 
 ## Prerequisites
 

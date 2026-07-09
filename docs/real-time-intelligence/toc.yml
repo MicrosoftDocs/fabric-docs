@@ -826,6 +826,8 @@ items:
         displayName: trigger, activator, reflex
       - name: Live refresh in Real-Time Dashboards
         href: dashboard-live-refresh.md
+      - name: Embed Real-Time Dashboards in other applications
+        href: ../embed/quickstart-embed-fabric-item.md
       - name: Visualize data in Power BI
         items:
           - name: Visualize data in a Power BI report
@@ -1120,6 +1122,8 @@ items:
                 href: mcp-remote-eventhouse.md
               - name: Remote MCP for Activator
                 href: mcp-remote-activator.md
+              - name: Remote MCP for operations agents
+                href: mcp-remote-operations-agent.md
   - name: Git integration and deployment pipelines
     displayName: alm, application lifecycle management, cicd, devops
     items:
