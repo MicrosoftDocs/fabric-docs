@@ -82,6 +82,7 @@ The following is a list of items that are currently supported using item referen
 - [Shortcut for a lakehouse ](../../onelake/assign-variables-to-shortcuts.md)
 - [User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md)
 - Notebook, through [NotebookUtils](../../data-engineering/notebookutils/notebookutils-variable-library.md)
+- Pipelines
  
 
 >[!NOTE]
