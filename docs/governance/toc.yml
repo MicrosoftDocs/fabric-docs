@@ -116,6 +116,8 @@ items:
     href: external-data-sharing-manage.md
   - name: "Admins: Enable external data sharing"
     href: external-data-sharing-enable.md
+  - name: Support for private link enabled workspaces
+    href: support-for-private-link.md
 - name: Metadata scanning
   items:
   - name: Metadata scanning overview
