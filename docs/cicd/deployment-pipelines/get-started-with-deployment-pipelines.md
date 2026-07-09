@@ -11,7 +11,7 @@ ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introd
 
 # Get started with deployment pipelines
 
-This article walks you through the basic settings required for using deployment pipelines in Fabric. We recommend reading the [deployment pipelines introduction](intro-to-deployment-pipelines.md) and understanding [which items can be deployed](./intro-to-deployment-pipelines.md#supported-items) before you proceed.
+This article walks you through the basic settings required for using deployment pipelines in Fabric. Before you proceed, read the [deployment pipelines introduction](intro-to-deployment-pipelines.md) and understand [which items can be deployed](./intro-to-deployment-pipelines.md#supported-items).
 
 > [!NOTE]
 >
@@ -26,7 +26,7 @@ In a deployment pipeline, one Premium workspace is assigned to each stage. Befor
 
 To access the deployment pipelines feature, you must meet the following conditions:
 
-* You have a [Fabric subscription](../../enterprise/licenses.md)
+* You have a [Fabric subscription](../../enterprise/licenses.md).
 
 * You're an admin of a Fabric [workspace](../../fundamentals/create-workspaces.md)
 

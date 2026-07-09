@@ -9,7 +9,7 @@ ms.search.form: Deployment pipelines UI
 
 # New deployment pipelines user interface
 
-The user interface for Fabric's Deployment pipelines is undergoing a change to improve the user experience. The new UI is designed to be more focused, easier to navigate, and have a smoother flow. The functionality has stayed the same, and anything you can do with the original UI you can do with the new UI.
+The user interface for Fabric's Deployment pipelines is changing to improve the user experience. The new UI is more focused, easier to navigate, and has a smoother flow. The functionality stays the same, and you can do everything in the new UI that you can do in the original UI.
 
 > [!NOTE]
 > The new UI is currently in preview and is available to all users. The old UI is still available and can be accessed by using the [toggle switch](#begin-using-the-new-ui) in the upper right corner of the page.

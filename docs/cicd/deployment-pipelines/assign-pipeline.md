@@ -196,7 +196,7 @@ If two or more items in the workspace to be paired have the same name, type and 
 
   * The workspace doesn't have a template app installed.
 
-* When a Direct Lake semantic model is deployed, it doesn't automatically bind to items in the target stage. For example, if a lakehouse is a source for a Direct Lake semantic model and they're both deployed to the next stage, the Direct Lake semantic model in the target stage will be bound to the lakehouse in the source stage. Use datasource rules to bind it to an item in the target stage. Other types of semantic models are automatically bound to the paired item in the target stage.
+* When you deploy a Direct Lake semantic model, it doesn't automatically bind to items in the target stage. For example, if a lakehouse is a source for a Direct Lake semantic model and they're both deployed to the next stage, the Direct Lake semantic model in the target stage binds to the lakehouse in the source stage. Use datasource rules to bind it to an item in the target stage. Other types of semantic models automatically bind to the paired item in the target stage.
 
 ## Related content
 
