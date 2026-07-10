@@ -94,6 +94,11 @@
         "source_path_from_root": "/docs/data-warehouse/sql-analytics-endpoint-performance.md",
         "redirect_url": "/fabric/data-engineering/sql-analytics-endpoint-performance",
         "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-warehouse/pre-post-deployment-scripts.md",
+        "redirect_url": "/fabric/data-warehouse/development-deployment",
+        "redirect_document_id": false
       }
     ]
 }
