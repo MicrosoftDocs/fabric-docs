@@ -4,7 +4,7 @@ description: Learn how to work with pure Python notebooks for data exploration, 
 ms.reviewer: jingzh
 ms.topic: how-to
 ms.search.form: Create and use notebooks
-ms.date: 04/24/2026
+ms.date: 07/10/2026
 ai-usage: ai-assisted
 ---
 
@@ -15,7 +15,7 @@ The Python notebook is a new experience built on top of Fabric notebook. It is a
 
 With a Python notebook, you can get:
 
-- **Multiple built-in python kernels**: Python notebooks offer a pure Python coding environment without Spark, with two versions of Python kernel - Python 3.10 and 3.11 available by default, and the native ipython features supported such as iPyWidget, magic commands.
+- **Multiple built-in python kernels**: Python notebooks offer a pure Python coding environment without Spark, with three built-in Python kernel versions: Python 3.10, Python 3.11, and Python 3.12. Native IPython features such as iPyWidget and magic commands are supported.
 
 - **Cost effective**: The new Python notebook offers cost-saving benefits by running on a single node cluster with 2vCores/16GB memory by default. This setup ensures efficient resource utilization for data exploration projects with smaller data size.
 
@@ -97,7 +97,7 @@ The [Notebook resources](how-to-use-notebook.md#notebook-resources) built-in res
 
 ## Kernel operations
 
-Python notebook support two built-in kernels right now, they are *Python 3.10* and *Python 3.11*, the default selected kernel is *Python 3.11*. you can easily switch between them.
+Python notebooks support three built-in kernels: *Python 3.10*, *Python 3.11*, and *Python 3.12*. The default selected kernel is *Python 3.12*. You can easily switch between them.
 
 You can interrupt, restart, or switch kernel on the **Home** tab of the ribbon. Interrupting kernel in Python notebooks is same as canceling cell in Spark notebook.
 
