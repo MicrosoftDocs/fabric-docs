@@ -3,7 +3,7 @@ title: "Direct Lake overview"
 description: "Learn about Direct Lake storage mode in Microsoft Fabric and when you should use it."
 author: kgremban
 ms.author: kgremban
-ms.date: 04/02/2026
+ms.date: 06/15/2026
 ms.topic: concept-article
 ms.custom: fabric-cat
 ai-usage: ai-assisted
@@ -119,6 +119,8 @@ Direct Lake semantic models require a [Fabric capacity license](../enterprise/li
 |F512/P4|10,000|10,000|12,000|Unlimited|200|
 |F1024/P5|10,000|10,000|24,000|Unlimited|400|
 |F2048|10,000|10,000|24,000|Unlimited|400|
+|F4096|10,000|10,000|24,000|Unlimited|400|
+|F8192|10,000|10,000|24,000|Unlimited|400|
 
 <sup>1</sup> For Direct Lake semantic models, _Max Memory_ represents the upper memory resource limit for how much data can be paged in. For this reason, it's not a guardrail; however, it can have a performance impact if the amount of data is large enough to cause excessive paging in and out of the model data from the OneLake data.
 
