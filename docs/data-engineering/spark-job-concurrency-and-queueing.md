@@ -3,7 +3,7 @@ title: Concurrency limits and queueing in Apache Spark for Fabric
 description: Learn about the job concurrency limits and queueing for notebooks, Apache Spark job definitions, and lakehouse jobs in Fabric.
 ms.reviewer: saravi
 ms.topic: concept-article
-ms.date: 03/05/2026
+ms.date: 06/15/2026
 ai-usage: ai-assisted
 ---
 
@@ -99,8 +99,10 @@ A job can be capped at the base core limit (for example, 128 Spark VCores for F6
 |F512|P4|1024|3072|512|
 |F1024|-|2048|6144|1024|
 |F2048|-|4096|12288|2048|
+|F4096|-|8192|24576|4096|
+|F8192|-|16384|49152|8192|
 |Trial Capacity|P1|128|128|Not available|
-|FTL4|-|4|8|16|Not available|
+|FTL4|-|4|8|16|
 
 
 > [!TIP]
