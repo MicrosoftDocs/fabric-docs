@@ -1247,6 +1247,8 @@
             href: create-alerts-for-pipeline-runs.md
           - name: Workspace monitoring
             href: workspace-monitoring.md
+          - name: Operations Agent for Pipelines
+            href: operations-agent-for-pipelines.md
       - name: Parameterization
         items: 
           - name: Parameter usage
