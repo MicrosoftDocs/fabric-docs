@@ -4,7 +4,7 @@ description: Explore Microsoft Fabric licenses, tenants, capacities, and SKUs to
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: concept-article
-ms.date: 02/23/2026
+ms.date: 06/15/2026
 ai-usage: ai-assisted
 ---
 
@@ -85,6 +85,8 @@ The table lists the Microsoft Fabric SKUs. Capacity units (CUs) measure the comp
 | F512 | 512 | P4/A7 | 64 |
 | F1024 | 1024 | P5/A8 | 128 |
 | F2048 | 2048 | - | 256 |
+| F4096 | 4096 | - | 512 |
+| F8192 | 8192 | - | 1024 |
 
 <a id="embedded-scenarios"></a>
 

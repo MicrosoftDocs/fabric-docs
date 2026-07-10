@@ -6,7 +6,7 @@ ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: concept-article
-ms.date: 11/05/2025
+ms.date: 06/15/2026
 ms.custom: licensing support, intro-overview
 LocalizationGroup: Premium
 ai-usage: ai-assisted
@@ -69,6 +69,8 @@ With *Power BI Premium* and [Power BI Embedded](/power-bi/developer/embedded/emb
 | F512  | 200 | 200 | 10 - 20 | 240    | 20 |   320 | 12,000 | Unlimited |
 | F1024 | 400 | 200 | 12 - 24 | 480    | 40 |   640 | 24,000 | Unlimited |
 | F2048 | 400 | 200 | 12 - 24 | 960    | 40 | 1,280 | 24,000 | Unlimited |
+| F4096 | 400 | 200 | 12 - 24 | 960    | 40 | 1,280 | 24,000 | Unlimited |
+| F8192 | 400 | 200 | 12 - 24 | 960    | 40 | 1,280 | 24,000 | Unlimited |
 
 <sup>1</sup> The [Microsoft Fabric Capacity Metrics app](/fabric/enterprise/metrics-app) doesn't currently expose these metrics.
 
@@ -131,6 +133,8 @@ Each SKU can run a set number of Dataflows [parallel tasks](/power-query/dataflo
 | F512       | 64                           | 1536                         |
 | F1024      | 64                           | 1536                         |
 | F2048      | 64                           | 1536                         |
+| F4096      | 64                           | 1536                         |
+| F8192      | 64                           | 1536                         |
 
 To learn about Dataflow Gen2, see [Getting from Dataflow Generation 1 to Dataflow Generation 2](/fabric/data-factory/dataflows-gen2-overview).
 

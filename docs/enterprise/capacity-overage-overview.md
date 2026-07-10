@@ -5,7 +5,7 @@ author: SnehaGunda
 ms.author: sngun
 ms.reviewers: pankar
 ms.topic: concept-article
-ms.date: 03/11/2026
+ms.date: 06/15/2026
 ai-usage: ai-assisted
 ---
 
@@ -103,6 +103,8 @@ The following table shows the daily CU hours available for each capacity SKU to 
 | F512 | 512 | 12,288 |
 | F1024 | 1,024 | 24,576 |
 | F2048 | 2,048 | 49,152 |
+| F4096 | 4,096 | 98,304 |
+| F8192 | 8,192 | 196,608 |
 
 ## Considerations and limitations
 
