@@ -4,7 +4,7 @@ description: Learn how Activator works using sample data. Activator is a powerfu
 ms.reviewer: jtmsft
 ms.topic: tutorial
 ms.custom: FY25Q1-Linter, sfi-image-nochange
-ms.date: 04/17/2026
+ms.date: 07/12/2026
 ai-usage: ai-assisted
 ms.search.form: Data Activator Sample Tutorial
 #customer intent: As a Fabric user I want to learn more about Activator using a tutorial and sample data.
@@ -16,7 +16,7 @@ Fabric Activator in Microsoft Fabric enables you to take actions when it detects
 
 > [!div class="checklist"]
 >
-> * Review a sample activator
+> * Review a sample Activator item
 > * Explore the data
 > * Explore a rule
 > * Start the rule
@@ -27,26 +27,25 @@ Fabric Activator in Microsoft Fabric enables you to take actions when it detects
 
 Before you begin, you need a workspace with a Fabric capacity. To learn about Fabric workspaces, see the [Workspaces](../../fundamentals/workspaces.md) article. If you don't have Fabric, you're prompted to start a trial.
 
-## Create a sample activator
+## Create a sample Activator
 
-1. Go to the [Fabric portal](https://app.fabric.microsoft.com).
-1. On the left navigation pane, select the ellipses (**...**), and then select **Create**.
+1. On the Fabric homepage, in the left navigation pane, select the ellipsis (**...**), and then select **Create**.
 
     :::image type="content" source="media/activator-tutorial/create.png" alt-text="Screenshot showing the left navigation pane with Create selected." lightbox="media/activator-tutorial/create.png":::
 
-1. On **Create**, under the Real-Time Intelligence section, select **Data Activator**.
+1. On the **Create** page, under **Real-Time Intelligence**, select **Activator**.
 
-    :::image type="content" source="media/activator-tutorial/activator.png" alt-text="Screenshot showing the Create page with Data Activator selected." lightbox="media/activator-tutorial/activator.png":::
+    :::image type="content" source="media/activator-tutorial/activator.png" alt-text="Screenshot showing the Create page with Activator selected." lightbox="media/activator-tutorial/activator.png":::
 
-1. On **Activator**, select **Try sample**.
+1. On the **Activator** page, select **Try sample**.
 
     :::image type="content" source="media/activator-tutorial/try-sample.png" alt-text="Screenshot showing the option to add data or use the sample data." lightbox="media/activator-tutorial/try-sample.png":::
 
 ## Explore the data
 
-In this step, you explore the eventstream data that this sample is built on.
+In this step, you explore the eventstream data that the sample is built on.
 
-The new activator has an **Explorer** section. Scroll down and select the **Package delivery events** stream.
+The new Activator item has an **Explorer** section. Scroll down and select the **Package delivery events** stream.
 
 :::image type="content" source="media/activator-tutorial/explore-data.png" alt-text="Screenshot of Activator with the Package delivery events stream selected." lightbox="media/activator-tutorial/explore-data.png":::
 
@@ -64,15 +63,15 @@ The Explorer pane displays objects, like eventstreams, for this activator. **Del
 
     :::image type="content" source="media/activator-tutorial/explore-rule.png" alt-text="Screenshot showing Delivery events table and the temperature column." lightbox="media/activator-tutorial/explore-rule.png":::
 
-1. Notice that the **Events by object ID** section is organized by **Package ID**. **Package ID** is the column ID that uniquely identifies each package. Use this unique ID to assign the Package events to Package objects.
+1. Notice that the **Events by object ID** section is organized by **Package ID**. **Package ID** is the column ID that uniquely identifies each package. Use this unique ID to assign package events to package objects.
 
-    :::image type="content" source="media/activator-tutorial/id.png" alt-text="Screenshot showing the unique ID column in the Events by object ID screen."lightbox="media/activator-tutorial/id.png":::
+    :::image type="content" source="media/activator-tutorial/id.png" alt-text="Screenshot showing the unique ID column in the Events by object ID screen." lightbox="media/activator-tutorial/id.png":::
 
-1. Select the **Temperature** rule called **Too hot for medicine**. In the right-most pane, see the **Definition** pane to see how the rule works.
+1. Select the **Temperature** rule called **Too hot for medicine**. In the rightmost pane, view the **Definition** pane to see how the rule works.
 
-    :::image type="content" source="media/activator-tutorial/definition.png" alt-text="Screenshot showing the sample rule."lightbox="media/activator-tutorial/definition.png":::
+    :::image type="content" source="media/activator-tutorial/definition.png" alt-text="Screenshot showing the sample rule." lightbox="media/activator-tutorial/definition.png":::
 
-1. In the **Monitor** section, select **Temperature**. The temperature values come from the *Temperature* column in the **Delivery events** table. You can see the **Temperature** column in an earlier screenshot.
+1. In the **Monitor** section, select **Temperature**. The temperature values come from the **Temperature** column in the **Delivery events** table. You can see the **Temperature** column in an earlier screenshot.
 
     :::image type="content" source="media/activator-tutorial/monitor.png" alt-text="Screenshot showing the Monitor section of the Definition pane." lightbox="media/activator-tutorial/monitor.png":::
 
@@ -84,37 +83,37 @@ The Explorer pane displays objects, like eventstreams, for this activator. **Del
 
     :::image type="content" source="media/activator-tutorial/property-filter.png" alt-text="Screenshot showing the Property filter section of the Definition pane." lightbox="media/activator-tutorial/property-filter.png":::
 
-1. Lastly, scroll down to **Action**. Choose one of the following actions if the condition is met:
+1. Scroll down to **Action**. Choose one of the following actions to take when the condition is met:
     1. **Send email notification:** Sends an email to yourself or to others in your organization.
-        1. For Select action, select **Send email**.
-        1. For **To**, enter **email addresses** of receivers or use the drop-down list to select a property whose value is an email address. By default your email is populated here.
+        1. For **Select action**, select **Send email**.
+        1. For **To**, enter the **email addresses** of the recipients, or use the dropdown list to select a property whose value is an email address. Your email address is populated here by default.
         1. For **Subject**, enter the subject of the email notification.
         1. For **Headline**, enter the headline of the email notification.
         1. For **Notes**, enter notes for the email notification.
             > [!NOTE]
-            > When entering the subject, headline, or notes, you can refer to properties in the data by typing `@` or by selecting the button next to the text boxes. For example, `@BikepointID`.
-        1. For **Context**, select the values for the drop-down list you want to include in the email notification.
+            > When you enter the subject, headline, or notes, you can refer to properties in the data by typing `@` or by selecting the button next to the text boxes. For example, `@PackageId`.
+        1. For **Context**, select the values from the dropdown list that you want to include in the email notification.
 
         :::image type="content" source="media/activator-tutorial/action-email.png" alt-text="Screenshot showing the Action section of the Definition pane with email action selected." lightbox="media/activator-tutorial/action-email.png":::
 
     1. **Send Microsoft Teams notification:** Sends a Microsoft Teams notification to individuals, a group chat, or a channel. You can customize the title and message content.
-        1. For Select action, select **Teams** --> **Message to individuals** or **Group chat message**, or **Channel post**.
+        1. For **Select action**, select **Teams** > **Message to individuals**, **Group chat message**, or **Channel post**.
         1. Follow one of these steps depending on your selection:
-            * If you selected the **Message to individuals** option, enter **email addresses** of receivers or use the drop-down list to select a property whose value is an email address. When the condition is met, a Teams message is sent to the specified individuals.
-            * If you selected the **Group chat message** option, select a **group chat** from the drop-down list. When the condition is met, a message is posted to the group chat.
-            * If you selected the **Channel post** option, select a **team** and **channel** from the drop-down lists. When the condition is met, a message is posted to the selected channel.
+            * If you selected **Message to individuals**, enter the **email addresses** of the recipients, or use the dropdown list to select a property whose value is an email address. When the condition is met, Fabric Activator sends a Teams message to the specified individuals.
+            * If you selected **Group chat message**, select a **group chat** from the dropdown list. When the condition is met, Fabric Activator posts a message to the group chat.
+            * If you selected **Channel post**, select a **team** and **channel** from the dropdown lists. When the condition is met, Fabric Activator posts a message to the selected channel.
         1. For **Headline**, enter the headline of the Teams notification.
         1. For **Notes**, enter notes for the Teams notification.
             > [!NOTE]
-            > When entering the subject, headline, or notes, you can refer to properties in the data by typing `@` or by selecting the button next to the text boxes. For example, `@BikepointID`.
-        1. For **Context**, select the values for the drop-down list you want to include in the Teams notification.
+            > When you enter the subject, headline, or notes, you can refer to properties in the data by typing `@` or by selecting the button next to the text boxes. For example, `@PackageId`.
+        1. For **Context**, select the values from the dropdown list that you want to include in the Teams notification.
 
         :::image type="content" source="media/activator-tutorial/action.png" alt-text="Screenshot showing the Action section of the Definition pane." lightbox="media/activator-tutorial/action.png":::
 
-    1. **Run Fabric activities:** To configure the alert to launch a Fabric pipeline, Dataflow, Spark job, notebook, User Data Function, Copy job (preview), or Publish business event (preview) when the condition is met, follow these steps:
-        1. For **Select action**, select **Run Pipeline**, **Run Dataflow**, **Run Spark job**, **Run Notebook**, **Run User Data Function**, **Run Copy job (preview)**, or **Publish business event (preview)**.
+    1. **Run Fabric activities:** To configure the alert to launch a Fabric pipeline, Dataflow, Spark job, notebook, Function, Copy job (preview), or Publish business event (preview) when the condition is met, follow these steps:
+        1. For **Select action**, select **Run Pipeline**, **Run Dataflow**, **Run Spark job**, **Run Notebook**, **Run Function**, **Run Copy job (preview)**, or **Publish business event (preview)**.
         1. On **Select Fabric item to run**, select the Fabric item (pipeline, dataflow, notebook, Spark job, function, copy job, or publish business event (preview)) from the list.
-        1. Select **Add parameter** and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter. You can pass parameters from the alert data by typing @ or by selecting the button next to the text box. For example, @BikepointID. Copy jobs (preview) don't accept parameters, so this step doesn't apply to them.
+        1. Select **Add parameter**, and then specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter. You can pass parameters from the alert data by typing `@` or by selecting the button next to the text box. For example, `@PackageId`. Copy jobs (preview) don't accept parameters, so this step doesn't apply to them.
 
             :::image type="content" source="media/activator-tutorial/fabric-actions.png" alt-text="Screenshot showing the Action section of the Definition pane with pipeline action selected." lightbox="media/activator-tutorial/pipeline.png":::
 
@@ -123,13 +122,13 @@ The Explorer pane displays objects, like eventstreams, for this activator. **Del
 
             :::image type="content" source="media/activator-tutorial/custom-action.png" alt-text="Screenshot showing the Action section of the Definition pane with notebook action selected." lightbox="media/activator-tutorial/custom-action.png":::
 
-        1. As mentioned in the Action section, create the rule first, and then complete the custom action setup by following steps from [Trigger custom actions (Power Automate flows)](activator-trigger-power-automate-flows.md).
-        1. After you create the custom action, in the **Definition** pane, select your custom action from the **Select action** drop-down list.
-    1. Select **Create** to save your Activator rule.
+        1. First, create the rule. Then complete the custom action setup by following the steps in [Trigger custom actions (Power Automate flows)](activator-trigger-power-automate-flows.md).
+        1. After you create the custom action, in the **Definition** pane, select your custom action from the **Select action** dropdown list.
+1. After you configure your selected action, select **Create** to save your Activator rule.
 
-You created a Fabric Activator rule. The rule runs against the **Package delivery events** eventstream. The rule looks for packages that have medicine and checks to see if the temperature is now greater than 20 degrees Celsius. When the temperature becomes greater than 20 degrees Celsius, a Teams message is sent.
+You created a Fabric Activator rule. The rule runs against the **Package delivery events** eventstream. The rule looks for packages that contain medicine and checks whether the temperature is greater than 20 degrees Celsius. When the temperature exceeds 20 degrees Celsius, the rule sends a Teams message.
 
-Look at the other rules to learn how they work.
+This sample Activator item includes other rules. Explore them at your own pace to see how they work.
 
 ## Start the rule
 
@@ -151,7 +150,7 @@ Now that you're familiar with the events and objects used to create a rule, star
 
 ## Create an object
 
-Now it's time to create an object of your own. In this section, delete the *Package* object. Then, recreate it to track the status of packages in transit where the hours in delivery become greater than 25.
+Now create an object of your own. In this section, you delete the **Package** object and recreate it with the properties you'll use in the next section to build a rule.
 
 1. In the **Explorer** pane, right-click **Package**, and select **Delete**. On the **Delete item** window, select **Delete**.
 
@@ -167,16 +166,16 @@ Now it's time to create an object of your own. In this section, delete the *Pack
 
         :::image type="content" source="media/activator-tutorial/build-object-pane.png" alt-text="Screenshot showing the Build object pane." lightbox="media/activator-tutorial/build-object-pane.png":::
 
-## Create a new rule
+## Create a rule
 
-Create a rule that alerts you if the transit time in delivery exceeds a threshold.
+Create a rule that alerts you when average transit time exceeds 25 hours.
 
 1. Select your new **HoursInTransit** property. From the ribbon, select **New rule**.
 
     :::image type="content" source="media/activator-tutorial/new-rule-button.png" alt-text="Screenshot showing the New rule button on the ribbon." lightbox="media/activator-tutorial/new-rule-button.png":::
 1. In the **Definition** pane, follow these steps:
     1. For **Monitor**, choose the attribute to monitor and optionally add filters.
-    1. For **Condition**, select the type of condition and occurrence.
+    1. For **Condition**, set the condition to trigger when **HoursInTransit** is greater than **25**.
     1. For **Action**, select one of the options to send a message in Teams or email.
     1. Select **Save**.
 
@@ -200,7 +199,7 @@ Create a rule that alerts you if the transit time in delivery exceeds a threshol
 
     :::image type="content" source="media/activator-tutorial/start-rule.png" alt-text="Screenshot that shows the Start button on the ribbon selected." lightbox="media/activator-tutorial/start-rule.png":::
 
-    You created your first object and rule. As next steps, you might try setting up some other rules on the *Package2* object.
+    You created your first object and rule. As a next step, try setting up other rules on the **Package2** object.
 
     When you're ready to try using Fabric Activator on your own data, follow the steps in the [Get data for Fabric Activator](../event-streams/add-destination-activator.md) article.
 
