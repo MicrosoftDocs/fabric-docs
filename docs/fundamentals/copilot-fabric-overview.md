@@ -4,7 +4,7 @@ description: Learn about Copilot in Fabric and Power BI, which brings a new way 
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: daengli, guptamaya, maghan
-ms.date: 02/26/2026
+ms.date: 06/19/2026
 ms.update-cycle: 180-days
 ms.topic: overview
 ms.collection:
@@ -115,24 +115,7 @@ For more information, see [Copilot for Writing KQL Queries](../real-time-intelli
 
 ### Where to find the AI and Copilot experiences in Fabric
 
-The following table provides an overview of the various AI and Copilot experiences available in Fabric, and which workloads and items these experiences apply to. The links in the *Experience* column take you to the documentation describing how to set up and use these features.
-
-| **Fabric workload** | **Supported items** | **Experience** |
-| --- | --- | --- |
-| **Copilot for Data Engineering and Data Science** | Notebook (typically with lakehouses and other data items) | - [Copilot chat pane](../data-engineering/copilot-notebooks-chat-pane.md) in a notebook, with notebook-wide code generation, refactoring, and validation.<br />- [Generate code or markdown across notebook workflows (preview)](../data-engineering/copilot-notebooks-overview.md#what-you-can-accomplish-with-copilot).<br />- [Add comments, fix errors, or optimize notebook code (preview)](../data-engineering/copilot-notebooks-chat-pane.md#in-cell-copilot).<br />- [Analyze and visualize data](../data-engineering/copilot-notebooks-chat-pane.md).<br />- [Fix with Copilot (preview)](../data-engineering/copilot-notebooks-chat-pane.md#diagnose-notebook-failures): error summaries, root-cause analysis, and approval-based code fixes from the chat pane or in-cell Copilot. |
-| **AI Experiences in Fabric Data Science** | Data agent <br> AI functions <br> AI services | - [Create a Fabric Data agent](../data-science/how-to-create-data-agent.md). <br />- [Transform and enrich data seamlessly with AI functions](../data-science/ai-functions/overview.md).<br />- [Foundry Tools in Fabric](../data-science/ai-services/ai-services-overview.md#foundry-tools-in-fabric-preview). |
-| **Copilot for Data Factory** | Dataflows gen2 | - [Generate a new query](copilot-fabric-data-factory.md#get-started-with-copilot-for-dataflow-gen2). |
-| | Pipeline | - [Generate and run a pipeline](copilot-fabric-data-factory.md#generate-a-data-pipeline-with-copilot).<br />- [Summarize a pipeline](copilot-fabric-data-factory.md#summarize-a-data-pipeline-with-copilot).<br />- [Troubleshoot pipeline errors](copilot-fabric-data-factory.md#troubleshoot-pipeline-errors-with-copilot). |
-| **Copilot for Data Warehouse** | SQL Queries in Data Warehouse | - [Generate SQL queries (preview)](../data-warehouse/copilot-chat-pane.md).<br />- [Suggest SQL code completions (preview)](../data-warehouse/copilot-code-completion.md).<br />- [Fix code in SQL queries (preview)](../data-warehouse/copilot-quick-action.md).<br />- [Explain code in SQL queries (preview)](../data-warehouse/copilot-quick-action.md). |
-| **Copilot for SQL database** | SQL queries in SQL database (Fabric portal Query Editor, [SQL Server Management Studio (SSMS), MSSQL extension for Visual Studio Code | - [Generate SQL queries (preview)](../database/sql/copilot-chat-pane.md).<br />- [Suggest SQL code completions (preview)](../database/sql/copilot-code-completion.md).<br />- [Fix code in SQL queries (preview)](../database/sql/copilot-quick-actions.md).<br />- [Explain code in SQL queries (preview)](../database/sql/copilot-quick-actions.md).<br />- Inline T-SQL completions, chat-based code generation, and execution plan analysis when connected via [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [MSSQL extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql). |
-| **Copilot for Power BI** | Semantic models in Power BI Desktop or Power BI service | - [Suggest linguistic model synonyms](/power-bi/natural-language/q-and-a-copilot-enhancements).<br />- [Suggest measure descriptions](/power-bi/transform-model/desktop-measure-copilot-descriptions).<br />- [Write and explain DAX queries](/dax/dax-copilot).<br />- [Ask questions about your data (preview)](/power-bi/create-reports/copilot-ask-data-question).<br />- [AI Auto-Summary for semantic models (preview)](../governance/onelake-catalog-explore.md#create-ai-auto-summary-for-semantic-models-preview). |
-| | Reports (Power BI Desktop, service, or mobile app) | - Power BI home (announced).<br />- [Suggest a report page (preview)](/power-bi/create-reports/copilot-create-desktop-report).<br />- [Suggest a visual (preview)](/power-bi/create-reports/copilot-create-report-service).<br />- [Summarize data in a narrative visual](/power-bi/create-reports/copilot-create-narrative?tabs=powerbi-service).<br />- [Explain a report page or visual](/power-bi/create-reports/copilot-pane-summarize-content). |
-| **Copilot for Real-Time Intelligence** | KQL queryset | - [Generate KQL queries (preview)](../real-time-intelligence/copilot-writing-queries.md).<br />- [Modify or explore a previously generated KQL query (preview)](../real-time-intelligence/copilot-writing-queries.md).<br />- [Generate KQL for shortcuts (preview)](../real-time-intelligence/copilot-writing-queries.md). |
-| | Real-time dashboards | - [Generate a real-time dashboard](../real-time-intelligence/copilot-generate-dashboard.md).<br />- [Edit tile with Copilot (preview)](../real-time-intelligence/dashboard-real-time-create.md#add-or-edit-tile).<br />- [Author queries with Copilot (preview)](../real-time-intelligence/copilot-writing-queries.md). |
-> [!NOTE]  
-> Copilot's capabilities are evolving over time. More items and Copilot experiences will likely become available in the future.
->  
-> The Copilot experiences that are in *preview* are subject to separate [supplemental preview terms](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), and aren't meant for production use. For more information, see [Microsoft Fabric preview information](./preview.md). Use these preview experiences only to test and evaluate Copilot's capabilities.
+For an up-to-date list of the AI and Copilot experiences available across Fabric workloads, the supported items they apply to, and the release status of each capability, see [Release status of AI and Copilot experiences in Fabric](copilot-ai-feature-state.md).
 
 ## Create your own AI solution accelerators
 
