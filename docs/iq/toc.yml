@@ -309,6 +309,8 @@ items:
           href: plan/intelligence-how-to-get-started.md
         - name: Get started with reporting
           href: plan/intelligence-how-to-get-started-reporting.md
+        - name: Create dashboards
+          href: plan/intelligence-how-to-create-dashboards.md
         - name: Apply and customize themes
           href: plan/intelligence-how-to-apply-themes.md
         - name: Build financial reports
