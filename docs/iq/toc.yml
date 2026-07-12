@@ -263,6 +263,14 @@ items:
           href: plan/powertable-how-to-bulk-edit-data.md
         - name: Insert and manage rows
           href: plan/powertable-how-to-insert-rows-import-data.md
+        - name: Insert columns
+          items:
+            - name: Insert columns introduction
+              href: plan/powertable-how-to-insert-columns/how-to-insert-columns-introduction.md
+            - name: Insert visual columns introduction
+              href: plan/powertable-how-to-insert-columns/how-to-insert-visual-columns.md
+            - name: Insert database column
+              href: plan/powertable-how-to-insert-columns/how-to-insert-database-column.md
         - name: Configure column properties
           items:
             - name: Column properties summary
