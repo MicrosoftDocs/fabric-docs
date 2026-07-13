@@ -133,4 +133,5 @@ In the **Operation details page** you can view the operation details and status.
 
 * [Operations agent billing](operations-agent-billing.md)
 * [Operations agent limitations](operations-agent-limitations.md)
+* [Workspace outbound access protection for operations agent](../security/workspace-outbound-access-protection-operations-agent.md)
 * [Operations agent transparency note](operations-agent-transparency-note.md)

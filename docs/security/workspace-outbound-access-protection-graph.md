@@ -1,19 +1,19 @@
 ---
-title: Workspace outbound access protection for Fabric IQ
-description: Learn how to configure Workspace Outbound Access Protection to secure your Fabric IQ artifacts.
+title: Workspace outbound access protection for graph
+description: Learn how to configure Workspace Outbound Access Protection to secure your graph artifacts.
 #customer intent: As a workspace admin, I want to enable outbound access protection for my workspace so that I can secure Fabric IQ data connections to only approved destinations.
 author: msmimart
 ms.author: mimart
 ms.reviewer: wangwilliam
-ms.date: 04/27/2026
+ms.date: 06/17/2026
 ms.topic: how-to
 ---
 
-# Workspace outbound access protection for Fabric IQ (preview)
+# Workspace outbound access protection for graph (preview)
 
-Workspace outbound access protection helps safeguard your data by controlling outbound connections from Fabric IQ items in your workspace to external data sources. When this feature is enabled, items are restricted from making outbound connections unless access is explicitly granted through approved data connection rules. 
+Workspace outbound access protection helps safeguard your data by controlling outbound connections from graph in Microsoft Fabric items in your workspace to external data sources. When you enable this feature, items can't make outbound connections unless you explicitly grant access through approved data connection rules. 
 
-Workspace outbound access protection for Fabric IQ currently supports only graph.
+Workspace outbound access protection for Fabric IQ supports graph (described in this article) and [operations agent](workspace-outbound-access-protection-operations-agent.md).
 
 ## Understanding workspace outbound access protection for graph
 
