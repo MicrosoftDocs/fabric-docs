@@ -39,7 +39,7 @@ The **ItemJobEventLogs** table includes pipeline-level (L1 across Data Factory i
 - Start and end timestamps  
 - System diagnostics  
 
-For pipeline activity-level (L2) monitoring, you can find more logs in the **FabricDataPipelineActivityRunsLogs** table:
+For pipeline activity-level (L2) monitoring, you can find more logs in the **FabricDataPipelinesActivityRunsLogs** table:
 
 - Pipeline name and run identifier  
 - Activity name and type  
@@ -104,9 +104,9 @@ The following table describes the schema of `ItemJobEventLogs` (item-level, L2):
 | JobStartTime | datetime | Actual job start time. |
 | JobEndTime | datetime | Actual job end time. |
 
-### FabricDataPipelineActivityRunsLogs schema
+### FabricDataPipelinesActivityRunsLogs schema
 
-The following table describes the schema of `FabricDataPipelineActivityRunsLogs` (activity-level, L2):
+The following table describes the schema of `FabricDataPipelinesActivityRunsLogs` (activity-level, L2):
 
 | **Column name** | **Column type** | **Description** |
 |----|----|----|
