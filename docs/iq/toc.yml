@@ -269,6 +269,14 @@ items:
               href: plan/powertable-how-to-insert-columns/how-to-insert-columns-introduction.md
             - name: Insert visual columns introduction
               href: plan/powertable-how-to-insert-columns/how-to-insert-visual-columns.md
+            - name: Insert visual reference column
+              href: plan/powertable-how-to-insert-columns/how-to-insert-reference-columns.md
+            - name: Insert visual button column
+              href: plan/powertable-how-to-insert-columns/how-to-insert-button-columns.md
+            - name: Insert visual attachment column
+              href: plan/powertable-how-to-insert-columns/how-to-insert-attachment-columns.md
+            - name: Insert formula column
+              href: plan/powertable-how-to-insert-columns/how-to-insert-formula-columns.md
             - name: Insert database column
               href: plan/powertable-how-to-insert-columns/how-to-insert-database-column.md
         - name: Configure column properties
@@ -284,7 +292,11 @@ items:
         - name: Manage columns
           href: plan/powertable-how-to-manage-columns.md
         - name: Set up access control
-          href: plan/powertable-how-to-set-up-access-control.md  
+          href: plan/powertable-how-to-set-up-access-control.md
+        - name: Apply conditional formatting
+          href: plan/powertable-how-to-apply-conditional-formatting.md
+        - name: View audit logs
+          href: plan/powertable-how-to-view-audit-logs.md  
         - name: Generate forms
           href: plan/powertable-how-to-generate-forms.md  
         - name: Configure approval workflow
