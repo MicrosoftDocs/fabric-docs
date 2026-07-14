@@ -6,7 +6,7 @@ ms.topic: how-to
 #customer intent: As a user, I want to understand how to insert and configure data input number columns in a planning sheet.
 ---
 
-# Insert number columns
+# Insert number columns in planning sheet
 
 With plan (preview), you can enter and format numeric data in multiple ways. You can either create an empty column and enter numbers, or copy values from another series.
 
