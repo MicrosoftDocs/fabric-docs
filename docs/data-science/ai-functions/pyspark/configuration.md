@@ -4,7 +4,7 @@ description: Learn how to configure AI Functions in Fabric for custom use. For e
 ms.reviewer: singhrana
 reviewer: ranadeepsingh
 ms.topic: how-to
-ms.date: 06/10/2026
+ms.date: 07/14/2026
 ms.search.form: AI Functions
 ai-usage: ai-assisted
 ---
@@ -115,67 +115,104 @@ Set the `deployment_name` to one of the [models supported by Fabric](../../ai-se
 
 The older GPT-4.1 model series is being retired. If you pinned PySpark AI Functions pipelines to `gpt-4.1`, migrate them to `gpt-5.1`. If you pinned pipelines to `gpt-4.1-mini`, migrate them to `gpt-5-mini`.
 
-- Globally in the `OpenAIDefaults()` object:
+#### [Globally](#tab/llm-global-pyspark)
 
-    ```python
-    aifunc.default_conf.set_deployment_name("<model deployment name>")
-    ```
+Set the model globally in the `OpenAIDefaults()` object:
 
-- Individually in each AI function call:
+```python
+aifunc.default_conf.set_deployment_name("<model deployment name>")
+```
 
-    ```python
-    results = df.ai.translate(
-        to_lang="spanish",
-        input_col="text",
-        output_col="out",
-        error_col="error_col",
-        deploymentName="<model deployment name>",
-    )
-    ```
+#### [Per-function call](#tab/llm-individual-pyspark)
+
+Set the model individually in each AI function call:
+
+```python
+results = df.ai.translate(
+    to_lang="spanish",
+    input_col="text",
+    output_col="out",
+    error_col="error_col",
+    deploymentName="<model deployment name>",
+)
+```
+
+---
 
 ### Choose another supported embedding model
 
 Set the `embedding_deployment_name` to one of the [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service) when using `ai.embed` or `ai.similarity` functions.
 
-- Globally in the `OpenAIDefaults()` object:
+#### [Globally](#tab/embedding-global-pyspark)
 
-    ```python
-    aifunc.default_conf.set_embedding_deployment_name("<embedding deployment name>")
-    ```
+Set the embedding model globally in the `OpenAIDefaults()` object:
 
-- Individually in each AI function call:
+```python
+aifunc.default_conf.set_embedding_deployment_name("<embedding deployment name>")
+```
 
-    ```python
-    results = df.ai.embed(
-        input_col="english",
-        output_col="out",
-        deploymentName="<embedding deployment name>",
-    )
-    ```
+#### [Per-function call](#tab/embedding-individual-pyspark)
+
+Set the embedding model individually in each AI function call:
+
+```python
+results = df.ai.embed(
+    input_col="english",
+    output_col="out",
+    deploymentName="<embedding deployment name>",
+)
+```
+
+---
 
 ### Configure a custom model endpoint
 
 By default, AI Functions use the Fabric LLM endpoint API for unified billing and easy setup.
-You can use your own model endpoint by setting up an Azure OpenAI or AsyncOpenAI-compatible client with your endpoint and key. The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with your own Foundry or Azure OpenAI resource's model deployments:
+You can use your own model endpoint by setting up an Azure OpenAI or AsyncOpenAI-compatible client with your endpoint and key. Connect directly to your Microsoft Foundry or Azure OpenAI resource, or route requests through an [Azure API Management (APIM)](/azure/api-management/api-management-key-concepts) gateway.
+
+AI Functions call your model through one of two API styles, set with `api_type`:
+
+- **OpenAI models** work with the default `responses` API, so you don't need to change `api_type`.
+- **Non-OpenAI models** hosted on Microsoft Foundry (for example, Grok) are mostly compatible with the `chat_completions` API. Set `api_type` to `chat_completions` for these models.
+
+> [!IMPORTANT]
+>
+> - Foundry models must accept the `response_format` parameter with a JSON schema. These models are supported through either the `responses` or `chat_completions` API, depending on the model.
+> - Output might vary depending on the behavior of the selected AI model. Explore the capabilities of other models with appropriate caution.
+> - The embedding-based AI Functions `ai.embed` and `ai.similarity` aren't supported when using a custom Foundry resource.
+
+Select the tab that matches your setup:
+
+#### [Foundry: OpenAI model](#tab/foundry-openai-pyspark)
+
+Override the built-in Fabric AI endpoint with your own Foundry or Azure OpenAI resource for OpenAI models:
 
 ```python
 aifunc.default_conf.set_URL("https://<ai-foundry-resource>.openai.azure.com/")
 aifunc.default_conf.set_subscription_key("<API_KEY>")
 ```
 
-The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom Foundry resource to use models beyond OpenAI:
+#### [Foundry: non-OpenAI model](#tab/foundry-other-pyspark)
 
-> [!IMPORTANT]
->
-> - Support for Foundry models is limited to  models that support `Chat Completions` API and accept `response_format` parameter with JSON schema
-> - Output might vary depending on the behavior of the selected AI model. Explore the capabilities of other models with appropriate caution.
-> - The embedding based AI Functions `ai.embed` and `ai.similarity` aren't supported when using a Foundry resource
+Use a custom Foundry resource to run models beyond OpenAI, such as Grok:
 
 ```python
 aifunc.default_conf.set_URL("https://<ai-foundry-resource>.services.ai.azure.com")  # Use your Foundry Endpoint
 aifunc.default_conf.set_subscription_key("<API_KEY>")
-aifunc.default_conf.set_deployment_name("grok-4-fast-non-reasoning")
+aifunc.default_conf.set_deployment_name("<MODEL_DEPLOYMENT_NAME>")
+aifunc.default_conf.set_api_type("chat_completions")  # Non-OpenAI Foundry models use the chat completions API
 ```
+
+#### [APIM gateway](#tab/apim-pyspark)
+
+If your organization routes Foundry traffic through an APIM gateway, set the endpoint URL to your APIM resource and authenticate with the APIM subscription key instead of the Foundry resource key. To target a specific model deployment behind the gateway, also set the deployment name with `set_deployment_name`.
+
+```python
+aifunc.default_conf.set_URL("https://<APIM_RESOURCE>.azure-api.net")  # Use your APIM resource endpoint
+aifunc.default_conf.set_subscription_key("<APIM_KEY>")  # Use your APIM subscription key, not the Foundry resource key
+```
+
+---
 
 ## Related content
 
