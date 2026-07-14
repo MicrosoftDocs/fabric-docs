@@ -284,7 +284,11 @@ items:
         - name: Manage columns
           href: plan/powertable-how-to-manage-columns.md
         - name: Set up access control
-          href: plan/powertable-how-to-set-up-access-control.md  
+          href: plan/powertable-how-to-set-up-access-control.md
+        - name: Apply conditional formatting
+          href: plan/powertable-how-to-apply-conditional-formatting.md
+        - name: View audit logs
+          href: plan/powertable-how-to-view-audit-logs.md  
         - name: Generate forms
           href: plan/powertable-how-to-generate-forms.md  
         - name: Configure approval workflow
