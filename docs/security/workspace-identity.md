@@ -11,18 +11,18 @@ ms.date: 05/08/2026
 
 A Fabric workspace identity is an automatically managed service principal that can be associated with a Fabric workspace. Fabric workspaces with a workspace identity can securely read or write to firewall-enabled Azure Data Lake Storage Gen2 accounts through [trusted workspace access](../security/security-trusted-workspace-access.md) for OneLake shortcuts. Fabric items can use the identity when connecting to resources that support Microsoft Entra authentication. Fabric uses workspace identities to obtain Microsoft Entra tokens without the customer having to manage any credentials.
 
-Workspace identities can only be created in the workspace settings of workspaces associated with a Fabric F SKU capacity, other than My workspaces.
+Workspace identities can only be created in the workspace settings of any workspace except My workspaces.
 
 When you create a workspace identity, Fabric creates a service principal in Microsoft Entra ID to represent the identity. An accompanying app registration is also created. Fabric automatically manages the credentials associated with workspace identities, thereby preventing credential leaks and downtime due to improper credential handling.
 
 > [!NOTE]
-> Fabric workspace identity is **generally available**. You can create workspace identities only in workspaces associated with a Fabric F SKU capacity, other than **My workspaces**.
+> Fabric workspace identity is **generally available**. You can create a workspace identity in any workspace except **My workspace**.
 
 While Fabric workspace identities share some similarities with Azure managed identities, their lifecycle, administration, and governance are different. A workspace identity has an independent lifecycle that is managed entirely in Fabric. A Fabric workspace can optionally be associated with an identity. When the workspace is deleted, the identity gets deleted. The name of the workspace identity is always the same as the name of the workspace it's associated with.
 
 ## Create and manage a workspace identity
 
-You must be a workspace admin to be able to create and manage a workspace identity. The workspace you're creating the identity for must be associated with a Fabric F SKU capacity and can't be a **My Workspace**.
+You must be a workspace admin to be able to create and manage a workspace identity. The workspace you're creating the identity for can't be a **My Workspace**.
 
 1. Sign in to the [Microsoft Fabric portal](https://app.fabric.microsoft.com).
 1. Select **Workspaces**, and then select the workspace you want to create a workspace identity for.
@@ -146,7 +146,9 @@ When a workspace gets renamed, the workspace identity is also renamed to match t
 
 ## Considerations and limitations
 
-* Workspace identities can only be created in workspaces associated with a Fabric F SKU capacity, other than My workspaces.
+* A workspace identity can be created in any workspace except a My Workspace.
+
+* Trusted workspace access to firewall-enabled Storage accounts is supported in any F capacity.
 
 * If a workspace with a workspace identity is migrated to a non-Fabric capacity or to a non-F SKU Fabric capacity, the identity won't be disabled or deleted, but Fabric items relying on trusted workspace access will stop working.
 
