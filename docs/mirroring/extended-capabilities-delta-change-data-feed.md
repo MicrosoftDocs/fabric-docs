@@ -74,22 +74,6 @@ If you created your mirrored database before CDF became available, you can enabl
 
 After you update the definition, retrieve it again and confirm that `enableDeltaChangeDataFeed` is `true`.
 
-## Folder structure
-
-When CDF is enabled, each replicated table in OneLake contains a `_change_data` subfolder in addition to the standard Delta Lake `_delta_log` and data files.
-
-```
-Tables/
-└── <TableName>/
-    ├── _delta_log/
-    ├── _change_data/
-    │   ├── part-00000-<guid>.parquet
-    │   └── ...
-    └── part-00000-<guid>.parquet
-```
-
-The `_change_data` folder holds Parquet files with row-level change records, including metadata columns such as `_change_type` (`insert`, `update_preimage`, `update_postimage`, `delete`), `_commit_version`, and `_commit_timestamp`.
-
 ## Query change data
 
 > [!IMPORTANT]
