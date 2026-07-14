@@ -2,7 +2,7 @@
 title: Microsoft Entra Authentication in Fabric Data Warehouse
 description: Learn more about Microsoft Entra authentication, an alternative to SQL authentication in Microsoft Fabric.
 ms.reviewer: frnuson, kadejo, jaszymas
-ms.date: 04/06/2025
+ms.date: 07/14/2026
 ms.topic: how-to
 ms.custom:
 - fabric-cat
@@ -66,8 +66,6 @@ There are two means by which a User or SPN can be granted access:
     :::image type="content" source="media/entra-id-authentication/manage-permissions-grant-people-access.png" alt-text="Screenshot from the Fabric portal of the Grant people access page." lightbox="media/entra-id-authentication/manage-permissions-grant-people-access.png":::
 
 You can alter the default permissions given to the User or SPN by the system. Use the T-SQL [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true) and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true) commands to alter permissions as required, or [ALTER ROLE](/sql/t-sql/statements/alter-role-transact-sql?view=fabric&preserve-view=true) to add membership to roles.
-
-Currently, SPNs don't have the capability as user accounts for detailed permission configuration with `GRANT`/`DENY`.
 
 ## Support for user identities and service principal names (SPNs)
 

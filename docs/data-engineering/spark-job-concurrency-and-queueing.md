@@ -102,7 +102,7 @@ A job can be capped at the base core limit (for example, 128 Spark VCores for F6
 |F4096|-|8192|24576|4096|
 |F8192|-|16384|49152|8192|
 |Trial Capacity|P1|128|128|Not available|
-|FTL4|-|4|8|16|
+|FTL4|-|8|16|16|
 
 
 > [!TIP]
