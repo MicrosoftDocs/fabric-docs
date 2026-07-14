@@ -14,7 +14,7 @@ ROBOTS: NOINDEX
 -->
 
 > [!CAUTION]
-> The result set caching feature is currently disabled in Fabric Data Warehouse and SQL Analytics Endpoint. For more information, see the [Fabric Data Warehouse Known Issue](https://aka.ms/fabricdwrscki).
+> The result set caching feature is currently disabled in Fabric Data Warehouse and SQL analytics endpoint. For more information, see the [Fabric Data Warehouse Known Issue](https://aka.ms/fabricdwrscki).
 
 Result set caching is a built-in performance optimization for Fabric Data Warehouse and Lakehouse SQL analytics endpoints that improves read latency. 
 
