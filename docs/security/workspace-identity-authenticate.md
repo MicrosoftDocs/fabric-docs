@@ -28,7 +28,7 @@ The example below shows you the steps to enable Workspace identity authenticatio
 
 ### Step 1: Create the workspace identity
 
-You must be a workspace admin to be able to create and manage a workspace identity. The Workspace identity authentication option appears in connection and shortcut experiences only after a workspace identity has been created. For more information, see [Workspace identity](workspace-identity.md).
+You must be a workspace admin to create and manage a workspace identity. The **Workspace identity authentication** option appears in connection and shortcut experiences only after you create a workspace identity. For more information, see [Workspace identity](workspace-identity.md).
 
 1. Navigate to the workspace and open the workspace settings.
 
