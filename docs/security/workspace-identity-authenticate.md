@@ -105,7 +105,7 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 ## Considerations and limitations
 
-* Workspace identity can be created in any capacity (except for My workspaces).
+* You can create workspace identity in any capacity, except for My workspaces.
   
 * Workspace identity can be used for authentication in any capacity that supports OneLake shortcuts, pipelines, semantic models, or Dataflows Gen2.
 
