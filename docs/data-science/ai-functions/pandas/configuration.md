@@ -4,7 +4,7 @@ description: Learn how to configure AI Functions in Fabric for custom use. For e
 ms.reviewer: singhrana
 reviewer: ranadeepsingh
 ms.topic: how-to
-ms.date: 06/10/2026
+ms.date: 07/14/2026
 ms.search.form: AI Functions
 ai-usage: ai-assisted
 ---
@@ -14,11 +14,13 @@ ai-usage: ai-assisted
 AI Functions work out of the box with default model settings. Use these settings to change models, concurrency, progress reporting, or endpoint configuration for pandas.
 
 > [!IMPORTANT]
+>
 > - AI Functions are for use in [Fabric Runtime 1.3 (Spark 3.5), (Python 3.11)](../../../data-engineering/runtime-1-3.md) and later.
 > - Review the prerequisites and [setup steps](../overview.md#set-up-ai-functions) required for your runtime.
 > - Although the underlying model can handle several languages, most of the AI Functions are optimized for use on English-language texts.
 
 > [!NOTE]
+>
 > - This article covers pandas. For PySpark, see [Customize AI Functions with PySpark](../pyspark/configuration.md).
 > - For all AI Functions, see [AI Functions overview](../overview.md).
 
@@ -27,7 +29,7 @@ AI Functions work out of the box with default model settings. Use these settings
 By default, AI Functions are powered by the built-in AI endpoint in Fabric. The large language model (LLM) settings are globally configured in the `aifunc.Conf` class. If you work with AI Functions in pandas, you can use the `aifunc.Conf` class to modify some or all of these settings:
 
 | Parameter | Description | Default |
-|---|---|---|
+| --- | --- | --- |
 | `api_type` | A [string](https://docs.python.org/3/library/stdtypes.html#str) value that designates the type of API to call on the underlying model. The default value is `responses`, which is compatible with OpenAI models. Set this value to `chat_completions` to use LLMs compatible with the chat completions API, such as non-OpenAI models hosted on Microsoft Foundry. | `responses` |
 | `concurrency` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. | `200` |
 | `embedding_deployment_name` | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the embedding model deployment that powers AI Functions. | `text-embedding-ada-002` |
@@ -41,6 +43,7 @@ By default, AI Functions are powered by the built-in AI endpoint in Fabric. The 
 | `verbosity`<br> Optional | Used by GPT-5 series models for output length. Can be set to `aifunc.NOT_GIVEN` or a string value of `"low"`, `"medium"`, or `"high"`. | `aifunc.NOT_GIVEN` |
 
 > [!TIP]
+>
 > - If your model deployment capacity can accommodate more requests, setting a higher `concurrency` value can speed up processing time.
 
 ### Progress bar modes
@@ -55,19 +58,19 @@ The three modes are:
 
 - **`"basic"`** (default) — Clean progress tracking that shows completion percentage, item count, elapsed time, and processing speed:
 
-    ```
+    ```text
     ai.extract: 100%|██████████| 1000/1000 [00:10<00:00, 22.1it/s]
     ```
 
 - **`"stats"`** — Full metrics with token counts and CU prediction estimates. While the function is running, ranges are shown with arrows (`->`) to indicate the projected final values:
 
-    ```
+    ```text
     ai.extract:  67%|██████▋   | 670/1000 [00:06<00:04, 22.1it/s, cached=150.03k->250.50k, in=800.82k->1.21M, out=68.65K->101.06k, CU-h=3.60->5.33]
     ```
 
     When the function completes, the final values are shown without arrows:
 
-    ```
+    ```text
     ai.extract: 100%|██████████| 1000/1000 [00:10<00:00, 22.1it/s, cached=305.80k, in=1.21M, out=101.06k, CU-h=5.17]
     ```
 
@@ -128,80 +131,126 @@ To use an AI model other than the default, you can choose another model supporte
 
 Select one of the [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service) and configure it using the `model_deployment_name` parameter. You can do this configuration in one of two ways:
 
-- Globally in the `aifunc.Conf` class. Example:
+#### [Globally](#tab/llm-global-pandas)
 
-    ```python
-    aifunc.default_conf.model_deployment_name = "<model deployment name>"
-    ```
+Set the model globally in the `aifunc.Conf` class:
 
-- Individually in each AI function call:
+```python
+aifunc.default_conf.model_deployment_name = "<model deployment name>"
+```
 
-    ```python
-    df["translations"] = df["text"].ai.translate(
-        "spanish",
-        conf=Conf(model_deployment_name="<model deployment name>"),
-    )
-    ```
+#### [Per-function call](#tab/llm-individual-pandas)
+
+Set the model individually in each AI function call:
+
+```python
+df["translations"] = df["text"].ai.translate(
+    "spanish",
+    conf=Conf(model_deployment_name="<model deployment name>"),
+)
+```
+
+---
 
 ### Choose another supported embedding model
 
 Select one of the [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service) and configure it using the `embedding_deployment_name` parameter. You can do this configuration in one of two ways:
 
-- Globally in the `aifunc.Conf` class. Example:
+#### [Globally](#tab/embedding-global-pandas)
 
-    ```python
-    aifunc.default_conf.embedding_deployment_name = "<embedding deployment name>"
-    ```
+Set the embedding model globally in the `aifunc.Conf` class:
 
-- Individually in each AI function call. Example:
+```python
+aifunc.default_conf.embedding_deployment_name = "<embedding deployment name>"
+```
 
-    ```python
-    df["embedding"] = df["text"].ai.embed(
-        conf=Conf(embedding_deployment_name="<embedding deployment name>"),
-    )
-    ```
+#### [Per-function call](#tab/embedding-individual-pandas)
+
+Set the embedding model individually in each AI function call:
+
+```python
+df["embedding"] = df["text"].ai.embed(
+    conf=Conf(embedding_deployment_name="<embedding deployment name>"),
+)
+```
+
+---
 
 ### Configure a custom model endpoint
 
 By default, AI Functions use the Fabric LLM endpoint API for unified billing and easy setup.
-You can use your own model endpoint by setting up an Azure OpenAI or OpenAI-compatible client with your endpoint and key. The following example shows how to bring your own Microsoft Foundry (formerly Azure OpenAI) resource using `aifunc.setup`:
+You can use your own model endpoint by setting up an `OpenAI` client that targets the OpenAI-compatible `/openai/v1` endpoint of your resource. Connect directly to your Microsoft Foundry (formerly Azure OpenAI) resource, or route requests through an [Azure API Management (APIM)](/azure/api-management/api-management-key-concepts) gateway.
 
-```python
-from openai import AzureOpenAI
+AI Functions call your model through one of two API styles, set with `api_type`:
 
-# Example to create client for Foundry OpenAI models
-client = AzureOpenAI(
-    azure_endpoint="https://<ai-foundry-resource>.openai.azure.com/",
-    api_key="<API_KEY>",
-    api_version=aifunc.session.api_version,  # Default "2025-04-01-preview"
-    max_retries=aifunc.session.max_retries,  # Default: sys.maxsize ~= 9e18
-)
-aifunc.setup(client)  # Set the client for all functions.
-```
+- **OpenAI models** work with the default `responses` API, so you don't need to change `api_type`.
+- **Non-OpenAI models** hosted on Microsoft Foundry (for example, Grok) are mostly compatible with the `chat_completions` API. Set `api_type` to `chat_completions` for these models.
 
-> [!TIP]
-> - You can configure a custom Foundry resource to use models beyond OpenAI.
-
-The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom Foundry resource to use models beyond OpenAI:
+The following examples show how to bring your own resource using `aifunc.setup`.
 
 > [!IMPORTANT]
-> - Support for Foundry models is limited to  models that support `Chat Completions` API and accept `response_format` parameter with JSON schema
+>
+> - Foundry models must accept the `response_format` parameter with a JSON schema. These models are supported through either the `responses` or `chat_completions` API, depending on the model.
 > - Output might vary depending on the behavior of the selected AI model. Explore the capabilities of other models with appropriate caution.
-> - The embedding based AI Functions `ai.embed` and `ai.similarity` aren't supported when using a Foundry resource
+> - The embedding-based AI Functions `ai.embed` and `ai.similarity` aren't supported when using a custom Foundry resource.
+
+Select the tab that matches your setup:
+
+#### [Foundry: OpenAI model](#tab/foundry-openai-pandas)
+
+Bring your own Microsoft Foundry (formerly Azure OpenAI) resource for OpenAI models. Point the `OpenAI` client at the OpenAI-compatible `/openai/v1` endpoint:
 
 ```python
+import synapse.ml.aifunc as aifunc
 from openai import OpenAI
 
-# Example to create client for Foundry models
-client = OpenAI(
-    base_url="https://<ai-foundry-resource>.services.ai.azure.com/openai/v1/",
+# Foundry or Azure OpenAI model
+foundry_client = OpenAI(
+    base_url="https://<AI_FOUNDRY_RESOURCE>.openai.azure.com/openai/v1",
     api_key="<API_KEY>",
-    max_retries=aifunc.session.max_retries,  # Default: sys.maxsize ~= 9e18
+    max_retries=aifunc.DEFAULT_MAX_RETRIES,
 )
-aifunc.setup(client)  # Set the client for all functions.
+aifunc.setup(foundry_client)  # Set the client for all functions.
+```
+
+#### [Foundry: non-OpenAI model](#tab/foundry-other-pandas)
+
+Use a custom Foundry resource to run models beyond OpenAI, such as Grok. Point the client at your Foundry endpoint, then set the deployment name and the chat completions API:
+
+```python
+import synapse.ml.aifunc as aifunc
+from openai import OpenAI
+
+# Foundry model beyond OpenAI
+foundry_client = OpenAI(
+    base_url="https://<AI_FOUNDRY_RESOURCE>.services.ai.azure.com/openai/v1",
+    api_key="<API_KEY>",
+    max_retries=aifunc.DEFAULT_MAX_RETRIES,
+)
+aifunc.setup(foundry_client)  # Set the client for all functions.
 
 aifunc.default_conf.model_deployment_name = "grok-4-fast-non-reasoning"
+aifunc.default_conf.api_type = "chat_completions"  # Non-OpenAI Foundry models use the chat completions API
 ```
+
+#### [APIM gateway](#tab/apim-pandas)
+
+If your organization routes Foundry traffic through an APIM gateway, point the client at your APIM endpoint and authenticate with the APIM subscription key instead of the Foundry resource key:
+
+```python
+import synapse.ml.aifunc as aifunc
+from openai import OpenAI
+
+# APIM gateway
+apim_client = OpenAI(
+    base_url="https://<APIM_RESOURCE>.azure-api.net/openai/v1",
+    api_key="<APIM_KEY>",  # Use your APIM subscription key, not the Foundry resource key
+    max_retries=aifunc.DEFAULT_MAX_RETRIES,
+)
+aifunc.setup(apim_client)  # Set the client for all functions.
+```
+
+---
 
 ## Related content
 
