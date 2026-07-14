@@ -28,7 +28,7 @@ The example below shows you the steps to enable Workspace identity authenticatio
 
 ### Step 1: Create the workspace identity
 
-You must be a workspace admin to be able to create and manage a workspace identity. The Workspace identity authentication option appears in connection and shortcut experiences only after a workspace identity has been created; see [Workspace identity](workspace-identity.md) for details.
+You must be a workspace admin to be able to create and manage a workspace identity. The workspace must be associated with a Fabric F SKU capacity, and the Workspace identity authentication option appears in connection and shortcut experiences only after a workspace identity has been created. For more information, see [Workspace identity](workspace-identity.md).
 
 1. Navigate to the workspace and open the workspace settings.
 
@@ -105,7 +105,7 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 ## Considerations and limitations
 
-* Workspace identity can be created in workspaces associated with any capacity (except for My workspaces).
+* Workspace identity can only be created in workspaces associated with a Fabric F SKU capacity, other than My workspaces.
   
 * Workspace identity can be used for authentication in any capacity that supports OneLake shortcuts, pipelines, semantic models, or Dataflows Gen2.
 
