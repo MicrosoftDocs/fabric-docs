@@ -1,7 +1,7 @@
 items:
 - name: Application lifecycle management documentation
   href: index.yml
-- name: What is application lifecycle management? 
+- name: What is CI/CD in Microsoft Fabric?
   href: cicd-overview.md
 
 - name: "Tutorial: End to end application lifecycle management"
