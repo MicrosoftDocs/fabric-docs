@@ -15,54 +15,64 @@ items:
     href: onelake-open-access-quickstart.md
   - name: Understand medallion lakehouse architecture
     href: onelake-medallion-lakehouse-architecture.md
-- name: Shortcuts
+- name: Unify your data
   items:
-  - name: What are shortcuts?
-    href: onelake-shortcuts.md
-  - name: Create shortcuts
+  - name: Choose shortcuts or mirroring
+    href: unify-data.md
+  - name: Shortcuts
     items:
-    - name: OneLake shortcut
-      href: shortcuts/create-onelake-shortcut.md
-    - name: ADLS Gen2 shortcut
-      href: create-adls-shortcut.md
-    - name: Blob Storage shortcut
-      href: ./shortcuts/create-blob-shortcut.md
-    - name: Dataverse shortcut
-      href: create-dataverse-shortcut.md
-    - name: OneDrive or SharePoint shortcut
-      href: ./shortcuts/create-onedrive-sharepoint-shortcut.md
-    - name: Amazon S3 shortcut
-      href: create-s3-shortcut.md
-    - name: Amazon S3 compatible shortcut
-      href: create-s3-compatible-shortcut.md
-    - name: Google Cloud Storage shortcut
-      href: create-gcs-shortcut.md
-    - name: Iceberg table shortcut
-      href: onelake-iceberg-tables.md
-    - name: On-premises data shortcut
-      href: create-on-premises-shortcut.md
-  - name: Manage shortcuts
+    - name: What are shortcuts?
+      href: onelake-shortcuts.md
+    - name: Create shortcuts
+      items:
+      - name: OneLake shortcut
+        href: shortcuts/create-onelake-shortcut.md
+      - name: ADLS Gen2 shortcut
+        href: create-adls-shortcut.md
+      - name: Blob Storage shortcut
+        href: shortcuts/create-blob-shortcut.md
+      - name: Dataverse shortcut
+        href: create-dataverse-shortcut.md
+      - name: OneDrive or SharePoint shortcut
+        href: shortcuts/create-onedrive-sharepoint-shortcut.md
+      - name: Amazon S3 shortcut
+        href: create-s3-shortcut.md
+      - name: Amazon S3 compatible shortcut
+        href: create-s3-compatible-shortcut.md
+      - name: Google Cloud Storage shortcut
+        href: create-gcs-shortcut.md
+      - name: Iceberg table shortcut
+        href: onelake-iceberg-tables.md
+      - name: On-premises data shortcut
+        href: create-on-premises-shortcut.md
+    - name: Manage shortcuts
+      items:
+      - name: Edit or delete a shortcut
+        href: shortcuts/edit-delete-shortcut.md
+      - name: Shortcut security
+        href: onelake-shortcut-security.md
+      - name: S3 shortcut Entra integration
+        href: amazon-storage-shortcut-entra-integration.md  
+      - name: Manage cloud connections
+        href: manage-shortcut-connections.md
+      - name: Access OneLake shortcuts in an Apache Spark notebook
+        href: access-onelake-shortcuts.md
+      - name: Assign variables to shortcuts
+        href: assign-variables-to-shortcuts.md
+      - name: Use shortcuts REST API
+        href: /rest/api/fabric/core/onelake-shortcuts?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
+    - name: Shortcut transformations
+      items: 
+      - name: Transform structured data
+        href: ./shortcuts/transformations.md
+      - name: Transform unstructured data with AI
+        href: ./shortcuts/transformations-ai.md
+  - name: Mirroring
     items:
-    - name: Edit or delete a shortcut
-      href: ./shortcuts/edit-delete-shortcut.md
-    - name: Shortcut security
-      href: onelake-shortcut-security.md
-    - name: S3 shortcut Entra integration
-      href: amazon-storage-shortcut-entra-integration.md  
-    - name: Manage cloud connections
-      href: manage-shortcut-connections.md
-    - name: Access OneLake shortcuts in an Apache Spark notebook
-      href: access-onelake-shortcuts.md
-    - name: Assign variables to shortcuts
-      href: assign-variables-to-shortcuts.md
-    - name: Use shortcuts REST API
-      href: /rest/api/fabric/core/onelake-shortcuts?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
-  - name: Shortcut transformations
-    items: 
-    - name: Transform structured data
-      href: ./shortcuts/transformations.md
-    - name: Transform unstructured data with AI
-      href: ./shortcuts/transformations-ai.md
+    - name: What is mirroring?
+      href: ../mirroring/overview.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
+    - name: Mirroring documentation
+      href: ../mirroring/index.yml
 - name: Open access
   items:
   - name: How do I connect to OneLake?
