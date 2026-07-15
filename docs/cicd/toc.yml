@@ -113,6 +113,8 @@ items:
     href: variable-library/variable-library-troubleshoot.md
 - name: Lifecycle management best practices
   href: best-practices-cicd.md
+- name: Understand dependency binding in cross-workspace deployment
+  href: cross-workspace-dependency-binding.md
 - name: Network security and CI/CD
   href: cicd-security.md
 - name: Frequently asked questions
