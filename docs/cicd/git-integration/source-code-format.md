@@ -213,4 +213,5 @@ The logicalId connects an item in a workspace with its corresponding item in a G
 
 ## Related content
 
-[Get started with Git integration.](./git-get-started.md)
+- [Get started with Git integration](./git-get-started.md)
+- [Understand dependency binding in cross-workspace deployment](../cross-workspace-dependency-binding.md)
