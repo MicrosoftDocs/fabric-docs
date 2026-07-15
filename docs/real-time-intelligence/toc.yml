@@ -535,8 +535,6 @@ items:
                 href: /stream-analytics-query/match-recognize-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: NULLIF
                 href: /stream-analytics-query/nullif-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
-              - name: Reference Data JOIN
-                href: /stream-analytics-query/reference-data-join-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: SELECT
                 href: /stream-analytics-query/select-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: UNION
