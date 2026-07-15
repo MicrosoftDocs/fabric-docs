@@ -31,7 +31,7 @@ Before you begin, make sure you have:
 * Ensure that the AI Search resource has the *Search Index Data Contributor* role for the Foundry Project. To assign this role, go to the [Azure portal](https://portal.azure.com) and open IAM for the AI Search resource. Follow the [Assign roles for development](/azure/search/search-security-rbac?tabs=roles-portal-admin%2Croles-portal%2Croles-portal-query%2Ctest-portal%2Ccustom-role-portal#assign-roles-for-development) instructions to assign the *Search Index Data Contributor* role to the managed identity of your Foundry project.
 
     >[!IMPORTANT]
-    >If you don't assign this role, the agent will not be able to access the ontology and you'll see a 403 error in the Foundry agent.
+    >If you don't assign this role, the agent can't access the ontology and you see a 403 error in the Foundry agent.
 
 * An Edge or Chrome browser, signed in with the same identity that has access to both the Foundry project and the Fabric workspace.
 
