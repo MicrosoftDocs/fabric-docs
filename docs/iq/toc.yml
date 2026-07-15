@@ -325,6 +325,12 @@ items:
           href: plan/intelligence-how-to-create-dashboards.md
         - name: Apply and customize themes
           href: plan/intelligence-how-to-apply-themes.md
+        - name: IBCS templates
+          items:
+          - name: IBCS overview
+            href: plan/intelligence-ibcs/how-to-apply-ibcs-formatting.md
+          - name: IBCS column and bar charts
+            href: plan/intelligence-ibcs/how-to-configure-ibcs-column-bar-charts.md            
         - name: Build financial reports
           href: plan/intelligence-how-to-build-financial-reports.md
         - name: Comment and collaborate
