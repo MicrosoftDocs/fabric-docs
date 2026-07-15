@@ -4,7 +4,7 @@ description: Learn how to set up and configure anomaly detection for your real-t
 ms.reviewer: tessarhurr, v-hzargari
 ms.topic: how-to
 ms.subservice: rti-anomaly-detector
-ms.date: 05/28/2026
+ms.date: 07/06/2026
 ms.search.form: Anomaly Detection How To
 ai-usage: ai-assisted
 ---
@@ -35,6 +35,11 @@ Anomaly detection runs natively on Eventhouse tables without copying data, opera
   1. Select the Python 3.11.7 DL plugin and select **Done**.
   
     :::image type="content" source="media/anomaly-detection/python.png" alt-text="Screenshot of enabling the Python plugin in Eventhouse." lightbox="media/anomaly-detection/python.png":::
+- Detect anomalies in Real-Time Intelligence enabled in your workspace.
+  1. To enable anomaly detection, go to your workspace.
+  1. Upgrade to a free Microsoft Fabric trial or ensure your workspace has a Microsoft Fabric license.
+  1. Either reach out to your admin to enable the preview feature switch or go to the **Admin portal** and enable **Detect anomalies in Real-Time Intelligence (Preview)**.
+      :::image type="content" source="media/anomaly-detection/admin-portal-anomaly-detection.png" alt-text="Screenshot of enabling Detect anomalies in Real-Time Intelligence (Preview) in the Admin portal.":::    
 
 > [!NOTE]
 > * Ensure your Eventhouse table contains sufficient historical data to improve model recommendations and anomaly detection accuracy. For example, datasets with one data point per day require a few months of data, while datasets with one data point per second might only need a few days.
