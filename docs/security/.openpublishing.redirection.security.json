@@ -44,6 +44,11 @@
             "source_path_from_root": "/docs/security/workspace-outbound-access-protection-iq.md",
             "redirect_url": "/fabric/security/workspace-outbound-access-protection-graph",
             "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/security/workspace-outbound-access-protection-operations-agent.md",
+            "redirect_url": "/fabric/security/workspace-outbound-access-protection-overview",
+            "redirect_document_id": false
         }
     ]
 }

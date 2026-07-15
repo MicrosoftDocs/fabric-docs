@@ -1,7 +1,7 @@
 ---
 title: Create an Ontology Agent with Foundry IQ
 description: Learn how to create a Foundry IQ agent that is grounded in an ontology (preview). The agent can answer natural-language questions using the ontology as a single source of truth.
-ms.date: 05/13/2026
+ms.date: 07/15/2026
 ms.topic: how-to
 ---
 
@@ -28,6 +28,11 @@ Before you begin, make sure you have:
 * An active Azure subscription with permission to create Foundry resources.
 * A Microsoft Fabric workspace that contains at least one ontology (preview) item. For more information, see [Create ontology (preview) item](tutorial-1-create-ontology.md#create-ontology-preview-item).
 * Complete the [Foundry quickstart](/azure/foundry/quickstarts/get-started-code) to provision a Foundry project and a sample agent. The steps in this article assume that project already exists.
+* Ensure that the AI Search resource has the *Search Index Data Contributor* role for the Foundry Project. To assign this role, go to the [Azure portal](https://portal.azure.com) and open IAM for the AI Search resource. Follow the [Assign roles for development](/azure/search/search-security-rbac?tabs=roles-portal-admin%2Croles-portal%2Croles-portal-query%2Ctest-portal%2Ccustom-role-portal#assign-roles-for-development) instructions to assign the *Search Index Data Contributor* role to the managed identity of your Foundry project.
+
+    >[!IMPORTANT]
+    >If you don't assign this role, the agent can't access the ontology and you see a 403 error in the Foundry agent.
+
 * An Edge or Chrome browser, signed in with the same identity that has access to both the Foundry project and the Fabric workspace.
 
 ## Step 1: Create the knowledge source and knowledge base
