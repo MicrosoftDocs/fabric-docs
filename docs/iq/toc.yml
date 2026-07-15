@@ -263,6 +263,22 @@ items:
           href: plan/powertable-how-to-bulk-edit-data.md
         - name: Insert and manage rows
           href: plan/powertable-how-to-insert-rows-import-data.md
+        - name: Insert columns
+          items:
+            - name: Insert columns introduction
+              href: plan/powertable-how-to-insert-columns/how-to-insert-columns-introduction.md
+            - name: Insert visual columns introduction
+              href: plan/powertable-how-to-insert-columns/how-to-insert-visual-columns.md
+            - name: Insert visual reference column
+              href: plan/powertable-how-to-insert-columns/how-to-insert-reference-columns.md
+            - name: Insert visual button column
+              href: plan/powertable-how-to-insert-columns/how-to-insert-button-columns.md
+            - name: Insert visual attachment column
+              href: plan/powertable-how-to-insert-columns/how-to-insert-attachment-columns.md
+            - name: Insert formula column
+              href: plan/powertable-how-to-insert-columns/how-to-insert-formula-columns.md
+            - name: Insert database column
+              href: plan/powertable-how-to-insert-columns/how-to-insert-database-column.md
         - name: Configure column properties
           items:
             - name: Column properties summary
@@ -276,7 +292,11 @@ items:
         - name: Manage columns
           href: plan/powertable-how-to-manage-columns.md
         - name: Set up access control
-          href: plan/powertable-how-to-set-up-access-control.md  
+          href: plan/powertable-how-to-set-up-access-control.md
+        - name: Apply conditional formatting
+          href: plan/powertable-how-to-apply-conditional-formatting.md
+        - name: View audit logs
+          href: plan/powertable-how-to-view-audit-logs.md  
         - name: Generate forms
           href: plan/powertable-how-to-generate-forms.md  
         - name: Configure approval workflow
@@ -301,8 +321,16 @@ items:
           href: plan/intelligence-how-to-get-started.md
         - name: Get started with reporting
           href: plan/intelligence-how-to-get-started-reporting.md
+        - name: Create dashboards
+          href: plan/intelligence-how-to-create-dashboards.md
         - name: Apply and customize themes
           href: plan/intelligence-how-to-apply-themes.md
+        - name: IBCS templates
+          items:
+          - name: IBCS overview
+            href: plan/intelligence-ibcs/how-to-apply-ibcs-formatting.md
+          - name: IBCS column and bar charts
+            href: plan/intelligence-ibcs/how-to-configure-ibcs-column-bar-charts.md            
         - name: Build financial reports
           href: plan/intelligence-how-to-build-financial-reports.md
         - name: Comment and collaborate

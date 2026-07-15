@@ -6,7 +6,7 @@ ms.topic: how-to
 #customer intent: As a user, I want to understand how to insert and configure data input person-type columns in a planning sheet.
 ---
 
-# Insert person column
+# Insert person columns in planning sheet
 
 In plan (preview), use the **Person** input column to assign users to specific rows in the planning sheet.
 
