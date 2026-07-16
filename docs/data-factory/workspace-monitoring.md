@@ -1,5 +1,5 @@
 ---
-title: Enable Workspace Monitoring in Microsoft Fabric
+title: Enable Workspace Monitoring (Preview) in Microsoft Fabric
 description: Discover how Workspace Monitoring helps you track pipeline runs, analyze logs with KQL, and optimize performance with detailed diagnostics.
 ms.reviewer: conxu-ms
 ms.date: 12/09/2025
@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 Workspace monitoring gives you log-level visibility for all items in a workspace, including pipelines. It stores execution logs in a monitoring eventhouse so you can query and analyze them using KQL (Kusto Query Language).
 
-## Enable workspace monitoring
+## Enable workspace monitoring (Preview)
 
 1. In your Fabric workspace, select **Workspace Settings**, then select the **Monitoring** tab.
 

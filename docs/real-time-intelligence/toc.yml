@@ -11,10 +11,12 @@ items:
         href: architecture-medallion.md
       - name: Multitenant solutions
         href: multitenant.md
-      - name: End to end sample RTI solution
-        href: sample-end-to-end.md
-  - name: Tutorials
+  - name: Get started
     items:
+      - name: Get started with Real-Time Intelligence
+        href: get-started-with-real-time-intelligence.md
+      - name: End to end sample
+        href: sample-end-to-end.md
       - name: End to end tutorial
         items:
           - name: End to end tutorial - Introduction
@@ -37,22 +39,6 @@ items:
             href: tutorial-8-create-map.md
           - name: 9 - Clean up resources
             href: tutorial-9-clean-up-resources.md
-      - name: Digital twin builder tutorial
-        items:
-          - name: Digital twin builder tutorial - Introduction
-            href: digital-twin-builder/tutorial-rti-0-introduction.md
-          - name: 1 - Upload contextual data
-            href: digital-twin-builder/tutorial-rti-1-upload-contextual-data.md
-          - name: 2 - Get and process streaming data
-            href: digital-twin-builder/tutorial-rti-2-get-streaming-data.md
-          - name: 3 - Build the ontology
-            href: digital-twin-builder/tutorial-rti-3-build-ontology.md
-          - name: 4 - Project to eventhouse
-            href: digital-twin-builder/tutorial-rti-4-project-eventhouse.md
-          - name: 5 - Query and visualize data
-            href: digital-twin-builder/tutorial-rti-5-query-and-visualize.md
-          - name: 6 - Clean up resources
-            href: digital-twin-builder/tutorial-rti-6-clean-up-resources.md
   - name: User flows
     items:
       - name: Discover and respond to events
