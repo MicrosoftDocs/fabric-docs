@@ -357,6 +357,10 @@ items:
           href: plan/infobridge-how-to-share-measures.md
         - name: Write back data
           href: plan/infobridge-how-to-write-back-data.md
+        - name: Transform queries
+          items:
+          - name: Append queries
+            href: plan/infobridge-transform-queries/how-to-append-query.md
         - name: Transform data
           items:
             - name: Use pivot table
