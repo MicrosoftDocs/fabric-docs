@@ -3,6 +3,7 @@ title: "Configure SQL Audit Logs in Fabric Data Warehouse"
 description: Step-by-step instructions to enable and configure SQL audit logs on Fabric Data Warehouse.
 ms.reviewer: fresantos
 ms.date: 03/13/2026
+ai-usage: ai-assisted
 ms.topic: how-to
 ms.search.form: Warehouse SQL Audit Logs # This article's title should not change. If so, contact engineering.
 ---
@@ -41,6 +42,10 @@ You can configure SQL audit logs using the **Fabric portal** or via **REST API**
 1. Specify a desired **log retention** period in **Years**, **Months**, and **Days**.
 
    :::image type="content" source="media/configure-sql-audit-logs/set-retention.png" alt-text="Screenshot from the Fabric portal of the Log retention options.":::
+
+1. Optionally, under **Predicate Expression**, enter a predicate expression to exclude specific events from being recorded, for example, `statement NOT LIKE '%select % from myTable'`. For more information about how predicate expressions work and their syntax, see [Filter audit events with predicate expressions](sql-audit-logs.md#filter-audit-events-with-predicate-expressions).
+
+   :::image type="content" source="media/configure-sql-audit-logs/predicate-expression.png" alt-text="Screenshot from the Fabric portal of the Recording and retention card, showing a configured Predicate Expression.":::
 
 1. Select **Save** to apply your settings.
 
@@ -132,6 +137,30 @@ SQL audit logs rely on predefined action groups that capture specific events wit
     Authorization: Bearer <BEARER_TOKEN>
     [  "DATABASE_OBJECT_PERMISSION_CHANGE_GROUP" ]
     ```
+
+1. Select **Send Request**.
+
+#### Configure a predicate expression with the REST API
+
+You can exclude specific events from being recorded by setting the `predicateExpression` property. For more information about how predicate expressions work and their syntax, see [Filter audit events with predicate expressions](sql-audit-logs.md#filter-audit-events-with-predicate-expressions).
+
+1. In VS Code, create a new text file in VS Code with the `.http` extension.
+1. Copy and paste the following request, providing your own `workspaceId`, `<warehouseId>`, and `<BEARER_TOKEN>`.
+
+    ```http
+    PATCH https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/warehouses/<warehouseId>/settings/sqlAudit
+    content-type: application/json
+    Authorization: ******
+
+    {
+      "predicateExpression": "([database_principal_name]<>'service_worker_4@contoso.com')"
+    }
+    ```
+
+    - Replace `<workspaceId>` and `<warehouseId>` with the corresponding Fabric workspace and warehouse IDs.
+    - The example expression excludes every event associated with the `service_worker_4@contoso.com` database principal, so events for that principal aren't recorded.
+    - Sending this request doesn't change any other existing audit settings, such as `state` or the configured audit action groups, unless you also include them in the request body.
+    - To remove a predicate expression and go back to recording every event, send a `PATCH` request with `predicateExpression` set to an empty string (`""`).
 
 1. Select **Send Request**.
 
