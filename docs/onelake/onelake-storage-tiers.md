@@ -1,5 +1,5 @@
 ---
-title: Storage tiers in OneLake (preview)
+title: Storage tiers in OneLake
 description: Manage your storage costs in OneLake by moving data between storage tiers.
 ms.reviewer: eloldag, mabasile
 ms.topic: concept-article
