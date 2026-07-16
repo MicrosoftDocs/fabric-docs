@@ -20,7 +20,7 @@ Tracking the size of your OneLake data helps you manage and plan storage costs. 
 
 Alternatively, capacity admins can use the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app-storage-page.md) to find the total size of OneLake data stored in a given capacity or workspace.
 
-## Use the OneLake storage report (preview)
+## Use the OneLake storage report
 
 The OneLake storage report is built directly in the Fabric portal and calculates the amount of data stored in each of your items. Use this tool to investigate which items in your workspace are contributing the most to your OneLake storage bill, so you can make informed decisions about maintaining your data.  
 
