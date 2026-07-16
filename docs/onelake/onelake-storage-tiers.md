@@ -1,5 +1,5 @@
 ---
-title: Storage tiers in OneLake (preview)
+title: Storage tiers in OneLake
 description: Manage your storage costs in OneLake by moving data between storage tiers.
 ms.reviewer: eloldag, mabasile
 ms.topic: concept-article
@@ -7,7 +7,7 @@ ms.date: 05/11/2026
 #customer intent: As a workspace admin, I want to lower my storage costs for data I must retain for long periods but is otherwise rarely accessed. 
 ---
 
-# OneLake storage tiers (preview)
+# OneLake storage tiers
 
 As data volumes continue to grow, it's essential for data admins to have ways to manage the costs of storing ever-increasing amounts of data. OneLake storage tiers let you make cost-effective tiering decisions based on data access patterns, keeping frequently accessed data in the hot tier and moving less active data to cool or cold storage to lower long-term data retention costs.  
 
@@ -140,7 +140,7 @@ As of May 2026, OneLake compute operations reporting in the Fabric Capacity Metr
 
 ## Limitations
 
-- OneLake transactions resulting from Oracle and Microsoft SQL database mirroring will consume CUs, which previously they didn't. Other mirroring types aren't impacted.
+- When using an on-premise data gateway version before June 2026, OneLake transactions resulting from Oracle and Microsoft SQL database mirroring will consume CUs, which previously they didn't. Upgrading to the [June 2026 OPDG version](https://learn.microsoft.com/data-integration/gateway/service-gateway-monthly-updates#june-2026-update-3000322) will stop CU consumption for those databases.  Other mirroring types aren't impacted.
 - You can only change the tier of block blobs. OneLake stores all files in block blobs by defaults, except for [OneLake diagnostics](./onelake-diagnostics-overview.md) data, which is stored as append blobs. To convert your diagnostics data to block blobs for long-term storage, see [convert append blobs to block blobs](/azure/storage/blobs/convert-append-and-page-blobs-to-block-blobs?tabs=azure-powershell).
 - The first time you use lifecycle management or storage tiers, it might take up to 24 hours to view cool and cold compute and storage operations. 
 
