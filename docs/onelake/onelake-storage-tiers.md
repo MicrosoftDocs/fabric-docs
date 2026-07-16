@@ -140,7 +140,7 @@ As of May 2026, OneLake compute operations reporting in the Fabric Capacity Metr
 
 ## Limitations
 
-- When using an on-premises data gateway version before June 2026, OneLake transactions resulting from Oracle and Microsoft SQL database mirroring will consume CUs, which previously they didn't. Upgrade to the [latest on-premises data gateway version](/data-integration/gateway/service-gateway-monthly-updates#june-2026-update-3000322) to stop CU consumption for these transactions. Other mirroring types aren't impacted.
+- When you use an on-premises data gateway version before June 2026, OneLake transactions resulting from Oracle and Microsoft SQL database mirroring consume CUs, which previously they didn't. Upgrade to the [latest on-premises data gateway version](/data-integration/gateway/service-gateway-monthly-updates#june-2026-update-3000322) to stop CU consumption for these transactions. Other mirroring types aren't impacted.
 - You can only change the tier of block blobs. OneLake stores all files in block blobs by defaults, except for [OneLake diagnostics](./onelake-diagnostics-overview.md) data, which is stored as append blobs. To convert your diagnostics data to block blobs for long-term storage, see [convert append blobs to block blobs](/azure/storage/blobs/convert-append-and-page-blobs-to-block-blobs?tabs=azure-powershell).
 - The first time you use lifecycle management or storage tiers, it might take up to 24 hours to view cool and cold compute and storage operations. 
 
