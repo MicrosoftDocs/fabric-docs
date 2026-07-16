@@ -146,4 +146,3 @@ You can view the amount of data stored by tier in the [Fabric Capacity Metrics a
 
 - [OneLake storage tiers](onelake-storage-tiers.md)
 - [OneLake compute and storage consumption](onelake-consumption.md)
-- 
