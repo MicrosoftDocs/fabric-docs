@@ -134,7 +134,7 @@ To reinstate access, restore access to the customer-managed key in the Key Vault
 
 ## Disable the encryption
 
-To disable encrypting the workspace using a customer-managed key, go to *Workspace settings* disable **Apply customer-managed keys**. The workspace remains encrypted using Microsoft Managed keys.
+To disable encrypting the workspace by using a customer-managed key, go to *Workspace settings* and disable **Apply customer-managed keys**. The workspace remains encrypted by using Microsoft managed keys.
 
 > [!NOTE]
 > You can't disable customer-managed keys while encryption for any of the Fabric items in your workspace is in progress. 
