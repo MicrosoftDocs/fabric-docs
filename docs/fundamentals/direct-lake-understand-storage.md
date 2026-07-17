@@ -12,12 +12,12 @@ ai-usage: ai-assisted
 
 # Understand Direct Lake query performance
 
-Apart from semantic model design and query complexity, Direct Lake performance specifically depends on well-tuned Delta tables for efficient and fast column loading (transcoding) and optimal query execution. Make sure you apply V-Order optimization. Also, keep the number of Parquet files small, use large row groups, and strive to minimize the effect of data updates on the Delta log. These are common best practices that can help to ensure fast query execution in cold, semiwarm, warm, and hot Direct Lake mode states.
+Apart from semantic model design and query complexity, Direct Lake performance specifically depends on well-tuned Delta tables for efficient and fast column loading (transcoding) and optimal query execution. Make sure you apply V-Order optimization. Also, keep the number of Parquet files small, use large row groups, and strive to minimize the effect of data updates on the Delta log. These common best practices help ensure fast query execution in cold, semiwarm, warm, and hot Direct Lake mode states.
 
 > [!TIP]
 > For comprehensive cross-workload guidance on optimizing Delta tables for Direct Lake consumption, including file size, V-Order, and row group recommendations based on medallion architecture layers, see [Cross-workload table maintenance and optimization](table-maintenance-optimization.md).
 
-This article explains how Direct Lake performance depends on Delta table health and efficient data updates. The storage decisions you make — file layout, update patterns, and maintenance routines — directly determine how quickly Direct Lake can load and query your data. The data layout in your Parquet files is as important for query performance as are a good semantic model design and well-tuned data analysis expression (DAX) measures.
+This article explains how Direct Lake performance depends on Delta table health and efficient data updates. The storage decisions you make - file layout, update patterns, and maintenance routines - directly determine how quickly Direct Lake can load and query your data. The data layout in your Parquet files is as important for query performance as a good semantic model design and well-tuned data analysis expression (DAX) measures.
 
 ## What you need to know
 
@@ -59,13 +59,13 @@ Direct Lake performs best in the warm or hot state, while cold states result in 
 After the initial semantic model load, no column data is resident in memory yet. Direct Lake is cold. When a client submits a DAX query to a Direct Lake semantic model in the cold state, Direct Lake must perform the following main tasks so that the DAX query can be processed and answered:
 
 - VertiPaq dictionary transcoding. Direct Lake must merge the local Parquet dictionaries for each column chunk to create a global VertiPaq dictionary for the column. This **merge** operation affects query response time.
-- Loading Parquet column chunks into column segments. In most cases, this is a direct remapping of Parquet data IDs to VertiPaq IDs when both sides can use RLE/Bit-Packing Hybrid encoding. If the Parquet dictionaries use plain encoding, VertiPaq must convert the values to RLE/Bit-Packing Hybrid encoding, which takes longer.
+- Loading Parquet column chunks into column segments. In most cases, this step is a direct remapping of Parquet data IDs to VertiPaq IDs when both sides can use RLE/Bit-Packing Hybrid encoding. If the Parquet dictionaries use plain encoding, VertiPaq must convert the values to RLE/Bit-Packing Hybrid encoding, which takes longer.
   - Direct Lake performance is optimal on V-Ordered Parquet files because V-Ordering increases the quality of RLE compression. Direct Lake can load tightly packed V-Ordered data faster than less compressed data.
 - Generating join indexes. If the DAX query accesses columns from multiple tables, Direct Lake must build join indexes according to the table relationships so that VertiScan can join the tables correctly. To build the join indexes, Direct Lake must load the dictionaries of the key columns participating in the relationship and the column segments of the primary key column (the column on the One side of the table relationship).
 - Applying Delta deletion vectors. If a source Delta table uses deletion vectors, Direct Lake must load these deletion vectors to ensure deleted data is excluded from query processing.
 
   > [!NOTE]
-  > The cold state can also be induced by sending a `processClear` followed by a `processFull` XMLA command to the model. The `ProcessClear` command removes all data and the association with the framed Delta table version. The `ProcessFull` XMLA command performs framing to bind the model to the latest available Delta commit version.
+  > You can also induce the cold state by sending a `processClear` followed by a `processFull` XMLA command to the model. The `ProcessClear` command removes all data and the association with the framed Delta table version. The `ProcessFull` XMLA command performs framing to bind the model to the latest available Delta commit version.
 
 ### Incremental framing
 
@@ -73,9 +73,9 @@ Direct Lake avoids a full cold-state reload by using *incremental framing*: when
 
 You can analyze incremental framing effectiveness by using the `INFO.STORAGETABLECOLUMNSEGMENTS()` DAX function, which wraps the `DISCOVER_STORAGE_TABLE_COLUMN_SEGMENTS` schema rowset. Follow these steps to ensure meaningful results:
 
-1. Query your Direct Lake semantic model to ensure it is in warm or hot state.
+1. Query your Direct Lake semantic model to ensure it's in warm or hot state.
 1. Update the Delta table you want to investigate and refresh the Direct Lake semantic model to perform framing.
-1. Run a DAX query to retrieve column segment information by using the `INFO.STORAGETABLECOLUMNSEGMENTS()` function, as in the following screenshot. The screenshot uses a small sample table for illustration purposes. Each column only has a single segment. The segments aren't resident in memory. This indicates a true cold state. If the model was warm before framing, this means that the Delta table was updated using a destructive data loading pattern, making it impossible to use incremental framing. Delta table update patterns are covered later in this article.
+1. Run a DAX query to retrieve column segment information by using the `INFO.STORAGETABLECOLUMNSEGMENTS()` function, as in the following screenshot. The screenshot uses a small sample table for illustration purposes. Each column only has a single segment. The segments aren't resident in memory. This condition indicates a true cold state. If the model was warm before framing, this condition means that the Delta table was updated using a destructive data loading pattern, making it impossible to use incremental framing. Delta table update patterns are covered later in this article.
 
 :::image type="content" source="media/direct-lake-query-performance/run-dax-query.png" alt-text="Screenshot showing the result of a DAX query using INFO.STORAGETABLECOLUMNSEGMENTS in a Direct Lake semantic model, highlighting column segment residency." lightbox="media/direct-lake-query-performance/run-dax-query.png":::
 
@@ -84,17 +84,17 @@ You can analyze incremental framing effectiveness by using the `INFO.STORAGETABL
 
 ### Full memory residency
 
-With dictionaries, column segments, and join indexes loaded, Direct Lake reaches the warm state with query performance on par with import mode. In both modes, the number and size of column segments play a crucial role in optimizing query performance.
+When Direct Lake loads dictionaries, column segments, and join indexes, it reaches the warm state with query performance that's on par with import mode. In both modes, the number and size of column segments play a crucial role in optimizing query performance.
 
 ## Delta table differences
 
-How you structure your Delta tables directly affects how efficiently Direct Lake can load columns and execute queries. Parquet files organize data by columns rather than rows. Direct Lake also organizes data by columns. The alignment facilitates seamless integration, yet there are important differences, specifically concerning row groups and dictionaries.
+How you structure your Delta tables directly affects how efficiently Direct Lake can load columns and execute queries. Parquet files organize data by columns rather than rows. Direct Lake also organizes data by columns. This alignment facilitates seamless integration, yet there are important differences, specifically concerning row groups and dictionaries.
 
 ### Row groups versus column segments
 
-A row group in a Parquet file consists of column chunks, and each chunk contains data for a specific column. A column segment in a semantic model, on the other hand, also contains a chunk of column data.
+A row group in a Parquet file consists of column chunks, and each chunk contains data for a specific column. A column segment in a semantic model also contains a chunk of column data.
 
-There's a direct relationship between the total row group count of a Delta table and the segment count for each column of the corresponding semantic model table. For example, if a Delta table across all its current Parquet files has three row groups in total, then the corresponding semantic model table has three segments per column, as illustrated in the following diagram. In other words, if a Delta table has a large number of tiny row groups, a corresponding semantic model table would also have a large number of tiny column segments. This would negatively affect query performance.
+There's a direct relationship between the total row group count of a Delta table and the segment count for each column of the corresponding semantic model table. For example, if a Delta table across all its current Parquet files has three row groups in total, the corresponding semantic model table has three segments per column, as illustrated in the following diagram. In other words, if a Delta table has a large number of tiny row groups, a corresponding semantic model table also has a large number of tiny column segments. This structure negatively affects query performance.
 
 :::image type="content" source="media/direct-lake-query-performance/delta-table-model-table.png" alt-text="Diagram showing the relationship between Delta table row groups and semantic model column segments in Direct Lake." lightbox="media/direct-lake-query-performance/delta-table-model-table.png":::
 
@@ -103,25 +103,25 @@ There's a direct relationship between the total row group count of a Delta table
 
 ### Local dictionaries versus global dictionary
 
-The total row group count of a Delta table also has direct effect on dictionary transcoding performance because Parquet files use local dictionaries while Direct Lake semantic models use a global dictionary for each column, as depicted in the following diagram. The higher the number of row groups, the higher the number of local dictionaries that Direct Lake must merge to create a global dictionary, and the longer it takes for transcoding to complete.
+The total row group count of a Delta table also directly affects dictionary transcoding performance because Parquet files use local dictionaries while Direct Lake semantic models use a global dictionary for each column, as depicted in the following diagram. The higher the number of row groups, the higher the number of local dictionaries that Direct Lake must merge to create a global dictionary, and the longer it takes for transcoding to complete.
 
 :::image type="content" source="media/direct-lake-query-performance/table-dictionary-transcoding.png" alt-text="Diagram illustrating the process of merging local Parquet dictionaries into a global dictionary for Direct Lake semantic models." lightbox="media/direct-lake-query-performance/table-dictionary-transcoding.png":::
 
 ## Delta table update patterns
 
-The method used to ingest data into a Delta table can greatly influence incremental framing efficiency, which in turn determines whether queries run at warm-state speed or suffer a full cold-state reload. For instance, using the **Overwrite** option when loading data into an existing table erases the Delta log with each load. This means Direct Lake can't use incremental framing and must reload all the data, dictionaries, and join indexes. The resulting cold-state reload increases query latency because every column segment must be retranscoded before the query can complete.
+The method you use to ingest data into a Delta table greatly influences incremental framing efficiency. This efficiency determines whether queries run at warm-state speed or suffer a full cold-state reload. For example, if you use the **Overwrite** option when loading data into an existing table, you erase the Delta log. This action means Direct Lake can't use incremental framing and must reload all the data, dictionaries, and join indexes. The resulting cold-state reload increases query latency because every column segment must be retranscoded before the query can complete.
 
 :::image type="content" source="media/direct-lake-query-performance/connect-data-destination.png" alt-text="Diagram showing data ingestion and update patterns for Delta tables in Direct Lake." lightbox="media/direct-lake-query-performance/connect-data-destination.png":::
 
-This section covers Delta table update patterns that enable Direct Lake to use incremental framing, preserving VertiPaq column store elements like dictionaries, column segments, and join indexes, to maximize transcoding efficiency and boost cold query performance.
+This section covers Delta table update patterns that enable Direct Lake to use incremental framing. These patterns preserve VertiPaq column store elements like dictionaries, column segments, and join indexes to maximize transcoding efficiency and boost cold query performance.
 
 ### Batch processing without partitioning
 
-This update pattern collects and processes data in large batches at scheduled intervals, such as on a weekly or monthly basis. As new data arrives, old data is often removed in a rolling or sliding window fashion to keep the table size under control. However, removing old data can be a challenge if the data is spread across most of the Parquet files. For example, removing one day out of 30 days might affect 95% of the Parquet files instead of 5%. In this case, Direct Lake would have to reload 95% of the data even for a relatively small **delete** operation. The same issue also applies to updates of existing rows because updates are combined deletes and appends. You can analyze the effect of **delete** and **update** operations by using Delta Analyzer, as explained later in this article.
+This update pattern collects and processes data in large batches at scheduled intervals, such as on a weekly or monthly basis. As new data arrives, the process often removes old data in a rolling or sliding window fashion to keep the table size under control. However, removing old data can be a challenge if the data is spread across most of the Parquet files. For example, removing one day out of 30 days might affect 95% of the Parquet files instead of 5%. In this case, Direct Lake must reload 95% of the data even for a relatively small **delete** operation. The same issue also applies to updates of existing rows because updates are combined deletes and appends. You can analyze the effect of **delete** and **update** operations by using Delta Analyzer, as explained later in this article.
 
 ### Batch processing with partitioning
 
-Delta table partitioning can help to reduce the effect of **delete** operations as the table is divided into smaller Parquet files stored in folders based on the distinct values in the partition column. Commonly used partition columns include date, region, or other dimensional categories. In the previous example of removing one day out of 30 days, a Delta table partitioned by date would constrain the deletes to only the Parquet files of the partition for that day. However, it's important to note that extensive partitioning could result in a substantially increased number of Parquet files and row groups, thereby causing an excessive increase in column segments within the Direct Lake semantic model, negatively affecting query performance. Choosing a low-cardinality partition column is crucial for query performance. As a best practice, the column should have fewer than 100-200 distinct values.
+Delta table partitioning can help reduce the effect of **delete** operations as the table is divided into smaller Parquet files stored in folders based on the distinct values in the partition column. Commonly used partition columns include date, region, or other dimensional categories. In the previous example of removing one day out of 30 days, a Delta table partitioned by date would constrain the deletes to only the Parquet files of the partition for that day. However, extensive partitioning can result in a substantially increased number of Parquet files and row groups, which causes an excessive increase in column segments within the Direct Lake semantic model and negatively affects query performance. Choosing a low-cardinality partition column is crucial for query performance. As a best practice, the column should have fewer than 100-200 distinct values.
 
 ### Incremental loading
 
@@ -132,32 +132,32 @@ With incremental loading, the update process only inserts new data into a Delta 
 Processing data near real-time, as it arrives, can cause a proliferation of small Parquet files and row groups, which can negatively affect Direct Lake performance. As with the incremental loading pattern, it isn't necessary to partition the Delta table. However, frequent table maintenance is essential to ensure that the number of Parquet files and row groups remains within the guardrail limits specified in the [Direct Lake overview article](direct-lake-overview.md). In other words, don't forget to run Spark Optimize regularly, such as daily or even more often. Spark Optimize is covered again in the next section.
 
   > [!NOTE]
-  > Actual real-time analysis is best implemented using Eventstreams, KQL databases, and Eventhouse. Refer to the [Real-Time Intelligence documentation in Microsoft Fabric](../real-time-intelligence/index.yml) for guidance.
+  > Actual real-time analysis is best implemented by using Eventstreams, KQL databases, and Eventhouse. For guidance, see the [Real-Time Intelligence documentation in Microsoft Fabric](../real-time-intelligence/index.yml).
 
 ## Delta table maintenance
 
-Key maintenance tasks include vacuuming and optimizing Delta tables. To automate maintenance operations, you can use the Lakehouse APIs as explained in the [Manage the Lakehouse with Microsoft Fabric REST API](../data-engineering/lakehouse-api.md) documentation.
+Key maintenance tasks include vacuuming and optimizing Delta tables. To automate maintenance operations, use the Lakehouse APIs as explained in the [Manage the Lakehouse with Microsoft Fabric REST API](../data-engineering/lakehouse-api.md) documentation.
 
 ### Vacuuming
 
-Vacuuming removes Parquet files no longer included in the current Delta commit version and older than a set retention threshold. Removing these Parquet files doesn't affect Direct Lake performance because Direct Lake only loads the Parquet files that are in the current commit version. If you run VACUUM daily with the default values, the Delta commit versions of the last seven days are retained for time travel.
+Vacuuming removes Parquet files that are no longer included in the current Delta commit version and are older than a set retention threshold. Removing these Parquet files doesn't affect Direct Lake performance because Direct Lake only loads the Parquet files that are in the current commit version. If you run VACUUM daily with the default values, the Delta commit versions of the last seven days are retained for time travel.
 
   > [!IMPORTANT]
   > Because a framed Direct Lake semantic model references a particular Delta commit version, you must ensure that the Delta table keeps this version until you refresh (frame) the model again to move it to the current version. Otherwise, users encounter query errors when the Direct Lake semantic model tries to access Parquet files that no longer exist.
 
 ### Spark Optimize
 
-Delta table optimization merges multiple small Parquet files into fewer large files. Running optimization replaces existing Parquet files, which invalidates the corresponding column segments in memory and forces Direct Lake to retranscode the affected data on the next query — a short-term cold-state penalty. However, the resulting fewer, larger, and more uniform segments improve long-term query performance. Balance these tradeoffs by optimizing infrequently, such as over weekends or at the end of the month. Optimize more often if small Parquet files accumulate quickly (high-frequency small updates) to ensure the Delta table stays within guardrail limits.
+Delta table optimization merges multiple small Parquet files into fewer large files. Running optimization replaces existing Parquet files, which invalidates the corresponding column segments in memory and forces Direct Lake to retranscode the affected data on the next query - a short-term cold-state penalty. However, the resulting fewer, larger, and more uniform segments improve long-term query performance. Balance these tradeoffs by optimizing infrequently, such as over weekends or at the end of the month. Optimize more often if small Parquet files accumulate quickly (high-frequency small updates) to ensure the Delta table stays within guardrail limits.
 
-Partitioning can help to minimize optimization effect on incremental framing because partitioning effectively collocates the data. For example, partitioning a large Delta table based on a low-cardinality date_key column would constrain weekly maintenance to a maximum of seven partitions. The Delta table would retain most of the existing Parquet files. Direct Lake would only have to reload seven days of data.
+Partitioning can help to minimize optimization effect on incremental framing because partitioning effectively collocates the data. For example, partitioning a large Delta table based on a low-cardinality date_key column constrains weekly maintenance to a maximum of seven partitions. The Delta table retains most of the existing Parquet files. Direct Lake only has to reload seven days of data.
 
 ## Analyzing Delta table updates
 
-Use Delta Analyzer or similar tools to study how Delta table updates affect Parquet files and row groups. Delta Analyzer lets you track the evolution of Parquet files, row groups, column chunks, and columns in response to **append**, **update**, and **delete** operations. Delta Analyzer is available as a [standalone Jupyter Notebook](https://github.com/microsoft/Analysis-Services/tree/master/DeltaAnalyzer). It's also available in the [semantic-link-labs library](https://github.com/microsoft/semantic-link-labs). The following sections use semantic-link-labs. This library is easy to install in a notebook using the `%pip install semantic-link-labs` command.
+Use Delta Analyzer or similar tools to study how Delta table updates affect Parquet files and row groups. Delta Analyzer lets you track the evolution of Parquet files, row groups, column chunks, and columns in response to **append**, **update**, and **delete** operations. Delta Analyzer is available as a [standalone Jupyter Notebook](https://github.com/microsoft/Analysis-Services/tree/master/DeltaAnalyzer). It's also available in the [semantic-link-labs library](https://github.com/microsoft/semantic-link-labs). The following sections use semantic-link-labs. This library is easy to install in a notebook by using the `%pip install semantic-link-labs` command.
 
 ### Row group size
 
-The ideal row-group size for Direct Lake semantic models is between 1 million and 16 million rows, yet Fabric might use larger row group sizes for large tables if the data is compressible. Generally, we don't recommend that you change the default row group size. It's best to let Fabric manage the Delta table layout. But it's also a good idea to double check.
+The ideal row group size for Direct Lake semantic models is between 1 million and 16 million rows, but Fabric might use larger row group sizes for large tables if the data is compressible. Generally, don't change the default row group size. Let Fabric manage the Delta table layout. However, it's a good idea to double check.
 
 The following Python code can serve as a starting point to analyze the row group sizes and other details of a Delta table in a Fabric notebook-connected lakehouse. The following table shows the output for a sample table with 1 billion rows.
 
@@ -200,13 +200,13 @@ display(HTML(html_table))
 | **Total size** | 7700808430 |
 | **Timestamp** | 2025-03-24 03:01:02.794979 |
 
-The Delta Analyzer summary shows an average row group size of approximately 40 million rows. This is larger than the recommended maximum row group size of 16 million rows. Fortunately, the larger row group size doesn't cause significant issues for Direct Lake. Larger row groups facilitate continuous segment jobs with minimal overhead in the Storage Engine. Conversely, small row groups, those significantly under 1 million rows, can cause performance issues.
+The Delta Analyzer summary shows an average row group size of approximately 40 million rows. This size is larger than the recommended maximum row group size of 16 million rows. Fortunately, the larger row group size doesn't cause significant problems for Direct Lake. Larger row groups facilitate continuous segment jobs with minimal overhead in the Storage Engine. Conversely, small row groups, those significantly under 1 million rows, can cause performance problems.
 
-More important in the previous example is that Fabric distributed the row groups across eight Parquet files. This aligns with the number of cores on the Fabric capacity to support efficient parallel **read** operations. Also important is that the individual row group sizes don't deviate too far from the average. Large variations can cause nonuniform VertiScan load, resulting in less optimal query performance.
+More important in the previous example is that Fabric distributed the row groups across eight Parquet files. This distribution aligns with the number of cores on the Fabric capacity to support efficient parallel **read** operations. Also important is that the individual row group sizes don't deviate too far from the average. Large variations can cause nonuniform VertiScan load, resulting in less optimal query performance.
 
 ### Rolling window updates
 
-For illustration purposes, the following Python code sample simulates a rolling window update. The code removes the rows with the oldest DateID from a sample Delta table. It then updates the DateID of these rows and inserts them back again into the sample table as the most recent rows.
+For illustration purposes, the following Python code sample simulates a rolling window update. The code removes the rows with the oldest DateID from a sample Delta table. It then updates the DateID of these rows and inserts them back into the sample table as the most recent rows.
 
 ```
 from pyspark.sql.functions import lit
@@ -300,7 +300,7 @@ delta_table.update(
 
 ### Partitioned rolling window updates
 
-Partitioning can help to reduce the effect of table updates. It might be tempting to use the date keys, but a quick cardinality check can reveal that this isn't the best choice. For example, the sample table discussed so far contains sales transactions for the last five years, equivalent to about 1800 distinct date values. This cardinality is too high. The partition column should have fewer than 200 distinct values.
+Partitioning can help reduce the effect of table updates. It might be tempting to use the date keys, but a quick cardinality check can reveal that this choice isn't the best. For example, the sample table discussed so far contains sales transactions for the last five years, equivalent to about 1,800 distinct date values. This cardinality is too high. The partition column should have fewer than 200 distinct values.
 
 ```
 column_name = 'DateID'
@@ -325,7 +325,7 @@ The 'DateID' column has 1825 distinct values.
 The cardinality of the 'DateID' column is possibly too high.
 ```
 
-If there's no suitable partition column, it can be created artificially by reducing the cardinality of an existing column. The following Python code adds a Month column by removing the last two digits of the DateID. This produces 60 distinct values. The sample code then saves the Delta table partitioned by the Month column.
+If there's no suitable partition column, create one artificially by reducing the cardinality of an existing column. The following Python code adds a Month column by removing the last two digits of the DateID. This process produces 60 distinct values. The sample code then saves the Delta table partitioned by the Month column.
 
 ```
 from pyspark.sql.functions import col, expr
@@ -422,15 +422,15 @@ The following output shows the Delta Analyzer history for a nonpartitioned table
 ||**Operation parameters** | {'mode': 'Overwrite', 'partitionBy': '[]'} | {'mode': 'Overwrite', 'partitionBy': '["Month"]'} |
 ||**Operation metrics** | {'numFiles': '8', 'numOutputRows': '1000000000', 'numOutputBytes': '7700855198'} | {'numFiles': '60', 'numOutputRows': '1000000000', 'numOutputBytes': '7447681467'} |
 
-Looking at the Operation Metrics of Version 8, it's worth pointing out that the **optimize** operation for the nonpartitioned tabled merged eight Parquet files affecting roughly 1 GB of data while the **optimize** operation of the partitioned table merged seven Parquet files affecting only about 25 MB of data. It follows that Direct Lake would perform better with the partitioned table.
+Looking at the operation metrics of version 8, the **optimize** operation for the nonpartitioned table merged eight Parquet files affecting roughly 1 GB of data while the **optimize** operation of the partitioned table merged seven Parquet files affecting only about 25 MB of data. It follows that Direct Lake performs better with the partitioned table.
 
 ## Considerations and limitations
 
-Considerations and limitations for optimizing Direct Lake performance are as follows:
+Considerations and limitations for optimizing Direct Lake performance include the following points:
 
 - Avoid destructive update patterns on large Delta tables to preserve incremental framing in Direct Lake.
-- Small Delta tables don't need to be optimized for incremental framing.
-- Aim for a row group size of between 1 million to 16 million rows to create column segments in Direct Lake with 1 million to 16 million rows. Direct Lake prefers large column segments.
+- You don't need to optimize small Delta tables for incremental framing.
+- Aim for a row group size between 1 million and 16 million rows to create column segments in Direct Lake with 1 million to 16 million rows. Direct Lake prefers large column segments.
 - Avoid high cardinality partition columns because Direct Lake transcoding is less efficient with many small Parquet files and row groups than with fewer large Parquet files and row groups.
-- Due to unforeseen demand for compute and memory resources, a semantic model might be reloaded onto another Fabric cluster node in cold state.
+- Due to unforeseen demand for compute and memory resources, a semantic model might reload onto another Fabric cluster node in cold state.
 - Direct Lake doesn't use delta\Parquet statistics for row group\file skipping to optimize data loading.
