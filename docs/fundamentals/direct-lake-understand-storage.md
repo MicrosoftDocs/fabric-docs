@@ -69,7 +69,7 @@ After the initial semantic model load, no column data is resident in memory yet.
 
 ### Incremental framing
 
-During framing, Direct Lake analyzes the Delta log of each Delta table and drops loaded column segments and join indexes only when the underlying data has changed. Dictionaries are retained to avoid unnecessary transcoding and new values are simply added to the existing dictionaries. This incremental framing approach reduces the reload burden and benefits cold query performance.
+Direct Lake avoids a full cold-state reload by using *incremental framing*: when only part of a Delta table changes, it reuses the in-memory data that's still valid instead of reloading everything. For a conceptual explanation of how framing analyzes the Delta log and updates the semantic model in place, see [Framing](direct-lake-how-it-works.md#framing). This section focuses on how to measure incremental framing effectiveness and how your Delta table update patterns affect it.
 
 You can analyze incremental framing effectiveness by using the `INFO.STORAGETABLECOLUMNSEGMENTS()` DAX function, which wraps the `DISCOVER_STORAGE_TABLE_COLUMN_SEGMENTS` schema rowset. Follow these steps to ensure meaningful results:
 
@@ -80,7 +80,7 @@ You can analyze incremental framing effectiveness by using the `INFO.STORAGETABL
 :::image type="content" source="media/direct-lake-query-performance/run-dax-query.png" alt-text="Screenshot showing the result of a DAX query using INFO.STORAGETABLECOLUMNSEGMENTS in a Direct Lake semantic model, highlighting column segment residency." lightbox="media/direct-lake-query-performance/run-dax-query.png":::
 
 > [!NOTE]
-> When a Delta table receives no updates, no reload is necessary for columns already resident in memory. When using nondestructive update patterns, queries show far less performance effect after framing because incremental framing essentially enables Direct Lake to update substantial portions of the existing in-memory data in place.
+> When a Delta table receives no updates, columns already resident in memory don't need to reload. Nondestructive update patterns preserve most of the in-memory data, so query performance stays close to warm-state speed after framing. Destructive patterns force a cold reload, as later sections in this article explain.
 
 ### Full memory residency
 
