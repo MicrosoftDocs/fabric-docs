@@ -100,7 +100,7 @@ Direct Lake over OneLake has different permission requirements because the SQL A
 Both OneLake Security and Direct Lake models support OLS and RLS. OLS enables artifact owners and admins to secure specific tables or columns. RLS can be used to restrict data access at the row level based on filters. You can define OLS and RLS in OneLake Security, in a Direct Lake model, or in both locations.
 
 > [!IMPORTANT]
-> Direct Lake doesn't support SQL Analytics Endpoint OLS/RLS. To return correct data, Direct Lake over SQL endpoints falls back to DirectQuery mode if a Fabric artifact uses OLS or RLS. If DirectQuery fallback is disabled, queries over SQL endpoints fail when OLS/RLS is defined at the SQL Analytics Endpoint. Direct Lake over OneLake avoids this limitation.
+> Direct Lake doesn't support SQL analytics endpoint OLS/RLS in memory. Direct Lake over SQL endpoints handles these restrictions differently depending on the type. If a query touches a table or column that's restricted by SQL analytics endpoint OLS or column-level security (CLS), the query returns an error. If a query references a table that enforces RLS or a view at the SQL analytics endpoint, the query falls back to DirectQuery mode. If DirectQuery fallback is disabled, queries that depend on RLS or views over SQL endpoints fail. Direct Lake over OneLake avoids these limitations. For details, see [How queries are evaluated in Direct Lake on SQL](#how-queries-are-evaluated-in-direct-lake-on-sql).
 
 ### Direct Lake on OneLake OLS/RLS with OneLake Security OLS/RLS
 
