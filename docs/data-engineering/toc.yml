@@ -394,6 +394,20 @@ items:
     items:
     - name: Spark utilities
       href: microsoft-spark-utilities.md
+  - name: Structured Streaming
+    items:
+    - name: Overview
+      href: structured-streaming-overview.md
+    - name: Triggers and output modes
+      href: structured-streaming-triggers-output-modes.md
+    - name: Stateful processing
+      href: structured-streaming-stateful-processing.md
+    - name: Real-time Mode
+      href: structured-streaming-real-time-mode.md
+    - name: Common patterns
+      href: structured-streaming-common-patterns.md
+    - name: Best practices
+      href: structured-streaming-best-practices.md
   - name: Spark administration settings
     items:
     - name: Capacity settings overview
