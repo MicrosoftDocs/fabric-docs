@@ -28,11 +28,11 @@ With Kusto integration, you can:
 
 ## Supported Kusto entities
 
-Fabric Maps supports the following Kusto [Entity types](/kusto/query/schema-entities?view=microsoft-fabric) as data sources:
+Fabric Maps supports the following Kusto [Entity types](/kusto/query/schema-entities?view=microsoft-fabric&preserve-view=true) as data sources:
 
-- **Tables** – Queryable datasets stored in a KQL database. For more information, see [Tables](/kusto/query/schema-entities/tables?view=microsoft-fabric).
-- **Functions** – KQL functions can be either built-in or user-defined. Fabric Maps supports **user-defined, stored functions** that return tabular results (table or view shape). Built-in functions and nontabular functions aren't supported. For more information, see [Function types](/kusto/query/functions/?view=microsoft-fabric) and [Stored functions](/kusto/query/schema-entities/stored-functions?view=microsoft-fabric).
-- **Materialized views** – Persisted query results optimized for fast, repeated access. For more information, see [Materialized views](/kusto/management/materialized-views/materialized-view-overview?view=microsoft-fabric)
+- **Tables** – Queryable datasets stored in a KQL database. For more information, see [Tables](/kusto/query/schema-entities/tables?view=microsoft-fabric&preserve-view=true).
+- **Functions** – KQL functions can be either built-in or user-defined. Fabric Maps supports **user-defined, stored functions** that return tabular results (table or view shape). Built-in functions and nontabular functions aren't supported. For more information, see [Function types](/kusto/query/functions/?view=microsoft-fabric&preserve-view=true) and [Stored functions](/kusto/query/schema-entities/stored-functions?view=microsoft-fabric&preserve-view=true).
+- **Materialized views** – Persisted query results optimized for fast, repeated access. For more information, see [Materialized views](/kusto/management/materialized-views/materialized-view-overview?view=microsoft-fabric&preserve-view=true)
 
 These entities appear as distinct nodes under a connected KQL database in the Explorer, making them discoverable and reusable across map layers.
 

@@ -77,7 +77,7 @@ The following limitations apply when creating layers from Kusto data in Fabric M
         > [!TIP]
         > **When to use dynamic geometry**
         >
-        > Use a dynamic geometry column when your Kusto function returns non‑point geometries—such as lines or polygons—or when geometry is represented as GeoJSON. Dynamic geometry is well suited for routes, boundaries, and areas where latitude and longitude columns aren't sufficient. For more information, see [The dynamic data type](/kusto/query/scalar-data-types/dynamic?view=microsoft-fabric)
+        > Use a dynamic geometry column when your Kusto function returns non‑point geometries—such as lines or polygons—or when geometry is represented as GeoJSON. Dynamic geometry is well suited for routes, boundaries, and areas where latitude and longitude columns aren't sufficient. For more information, see [The dynamic data type](/kusto/query/scalar-data-types/dynamic?view=microsoft-fabric&preserve-view=true)
 
 1. In the **Review and add to map** step, confirm the settings as expected. Once confirmed, select **Add to map**.
 
