@@ -158,12 +158,7 @@ Environment Resources Folder is a shared repository designed to streamline colla
 - You can also operate on the files/folders same with the Built-in resources folder. 
 - The Environment resource path is automatically mounted to the notebook cluster. You can use the relative path **/env** to access the environment resources.
 
-Fabric Environments support two library publishing modes that affect how libraries are delivered to your notebook sessions:
-
-- **Quick mode** publishes in about 5 seconds and installs libraries when your notebook session starts. Quick mode can override library versions published through Full mode, but only for the current session.
-- **Full mode** creates a stable, reproducible library snapshot. Publishing typically takes 3 to 6 minutes, and session startup adds 1 to 3 minutes for dependency deployment. Using Full mode with a [custom live pool](custom-live-pools-overview.md) can bring session start times back to approximately 5 seconds while maintaining the stable snapshot.
-
-For details on each mode, see [Manage libraries in Fabric environments](environment-manage-library.md#select-publish-mode-for-libraries).
+Fabric environments support two library publishing modes, Quick and Full, that affect how libraries are delivered to your notebook sessions. Quick mode installs libraries at session start for fast iteration, while Full mode creates a stable, reproducible snapshot. For details on each mode, including publish times, supported library sources, and how the modes interact, see [Manage libraries in Fabric environments](environment-manage-library.md#select-publish-mode-for-libraries).
 
 ### Use environment libraries in notebooks
 
@@ -171,7 +166,7 @@ Choose a library publishing mode based on your workflow:
 
 - **Quick mode for iterative development**: Use Quick mode when you're actively experimenting in notebooks and need fast library iteration. Libraries install at session start with minimal publish time.
 - **Full mode for reproducibility**: Use Full mode when you need consistent library versions across collaborators, scheduled runs, or pipeline jobs. The snapshot ensures every session starts with the same dependencies.
-- **Full mode with a custom live pool for fast and stable sessions**: When both fast session startup and reproducibility matter, configure Full mode with a [custom live pool](custom-live-pools-overview.md). This combination achieves approximately 5-second session starts while preserving the stable library snapshot.
+- **Full mode with a custom live pool for fast and stable sessions**: When both fast session startup and reproducibility matter, configure Full mode with a [custom live pool](custom-live-pools-overview.md). This combination gives you fast session starts while preserving the stable library snapshot.
 
 > [!NOTE]
 > Reading/writing with a relative path is not functioning in a [High concurrency session](../data-engineering/configure-high-concurrency-session-notebooks.md).
