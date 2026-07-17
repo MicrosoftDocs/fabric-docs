@@ -136,6 +136,19 @@ To understand the considerations and limitations of various lifecycle management
 
 **Solution**: To resolve the issue, [commit](./git-integration/git-get-started.md#commit-changes-to-git) changes to Git. If you can't make changes directly to the connected branch, we recommend using the [checkout branch](./git-integration/git-integration-process.md#handling-folder-changes-safely) option. For more information, see [Handling folder changes safely](./git-integration/git-integration-process.md#handling-folder-changes-safely).
 
+#### My workspace shows uncommitted changes on a report I didn't modify
+
+**Description of problem**: I notice uncommitted changes for a report in my workspace, even though I didn't manually modify any artifacts.
+
+**Cause**: This behavior can happen when a report name includes special characters such as `:`, `#`, `[`, or `]`, and the report has a dependency-by-path on a semantic model. Special characters in artifact names cause the system to autocorrect the dependency paths. These automatic adjustments are expected behavior and ensure the report stays correctly linked to its semantic model in the Git branch.
+
+**Solution**: Commit the changes so the Git branch stays aligned with the artifact's true state. If you want more certainty before committing, use the **Commit to new branch** option in the source control pane, and then compare the differences between:
+
+* the artifact currently stored in your Git branch
+* the newly generated artifact committed to the new branch
+
+Review the diff to confirm that only dependency paths were adjusted and that no unintended logic or structural changes were introduced. This workflow gives you a safe validation step before you merge the changes into your working branch.
+
 ### Commit issues
 
 #### The Commit button is disabled

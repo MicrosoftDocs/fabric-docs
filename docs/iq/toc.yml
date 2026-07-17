@@ -307,6 +307,8 @@ items:
           href: plan/powertable-how-to-create-slowly-changing-dimension.md
         - name: Export to Excel
           href: plan/powertable-how-to-export-to-excel.md
+        - name: Configure display and formatting settings
+          href: plan/powertable-how-to-configure-display-formatting-settings.md
     - name: Reference
       items:
         - name: Supported column and input types

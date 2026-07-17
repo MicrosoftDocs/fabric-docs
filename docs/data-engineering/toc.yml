@@ -652,6 +652,8 @@ items:
         href: ./user-data-functions/git-and-deployment-pipelines.md
       - name: Service details and limitations
         href: ./user-data-functions/user-data-functions-service-limits.md
+      - name: Schedule functions
+        href: ./user-data-functions/schedule-functions.md    
 - name: Materialized lake views
   items:
   - name: Overview
