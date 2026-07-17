@@ -137,6 +137,12 @@ items:
           href: delta-lake-change-data-feed.md
         - name: Schema evolution
           href: delta-lake-schema-evolution.md
+        - name: Generated columns
+          href: delta-lake-generated-columns.md
+        - name: Column mapping
+          href: delta-lake-column-mapping.md
+        - name: Variant data type
+          href: delta-lake-variant.md
     - name: Performance and optimization
       items:
         - name: File skipping
