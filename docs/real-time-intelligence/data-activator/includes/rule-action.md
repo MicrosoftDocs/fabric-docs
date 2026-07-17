@@ -57,7 +57,7 @@ An Activator rule can run a Fabric activity defined in one of the following Fabr
 - Spark job
 - Notebook
 - Function
-- Copy job (preview)
+- Copy job
 - Publish business event (preview)
 
 To configure your rule to launch a Fabric activity, follow these steps:
@@ -66,7 +66,7 @@ To configure your rule to launch a Fabric activity, follow these steps:
 
     :::image type="content" source="./media/set-details-conditions-actions-rule/action-fabric-item.png" alt-text="Screenshot of the Run Fabric items option.":::            
 1. On **Select Fabric item to run**, select the Fabric item from the list. 
-1. For the **Pipeline**, **Dataflow**, **Notebook**, **Spark job**, **Publish business event (preview)** types, select **Add parameter** and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter. The **Copy job (preview)** type doesn't accept parameters.
+1. For the **Pipeline**, **Dataflow**, **Notebook**, **Spark job**, and **Publish business event (preview)** types, select **Add parameter** and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter. The **Copy job** type doesn't accept parameters.
 
     :::image type="content" source="./media/set-details-conditions-actions-rule/fabric-item-parameters.png" alt-text="Screenshot of the Add rule pane with parameters for a Fabric item specified.":::            
 
