@@ -84,6 +84,12 @@ Configuration is iterative. After Copilot proposes rules, queries, and actions, 
 
 To adjust the agent's behavior, update the goals or instructions and save the agent again. When you're satisfied with the configuration, select **Start** in the toolbar to start the agent. Select **Stop** to stop it.
 
+## Operations agent identities
+
+Each operations agent has its own identity in Microsoft Entra, powered by [Microsoft Entra Agent ID](https://learn.microsoft.com/entra/agent-id). When you create an agent, Fabric provisions a dedicated agent identity (a specialized service principal) for it, so the agent appears as a first-class, governable entity in the Entra admin center rather than as an anonymous user session. This identity gives your organization tenant-wide visibility into which agents exist, keeps agent actions distinct from human actions for auditing, and decouples the agent from the lifecycle of the account that created it. Operations agents run in *delegated* mode: they use the creator's authorization through an On-Behalf-Of (OBO) flow, so they can access the same workspaces and items the creator can, while actions are attributed to the agent identity. You can view the Entra Agent ID in the status bar of the operations agent item.
+
+:::image type="content" source="media/operations-agent/entra-id.png" alt-text="Screenshot of the Entra Agent ID in the agent configuration screen." lightbox="media/operations-agent/entra-id.png":::
+
 > [!IMPORTANT]
 > The agent operates with the delegated identity and permissions of its creator. When a recipient approves a recommendation, the agent runs the action on behalf of the creator, using the creator's permissions.
 
