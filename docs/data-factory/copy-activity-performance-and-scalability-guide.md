@@ -1,15 +1,16 @@
 ---
-title: Copy activity performance and scalability guide
+title: Copy Activity Performance and Scalability Guide
 description: Learn about key factors that affect the performance of data movement in Microsoft Fabric when you use the copy activity.
 ms.reviewer: jianleishen
+ms.date: 06/19/2026
 ms.topic: how-to
-ms.custom: pipelines
-ms.date: 12/18/2024
+ms.custom:
+  - pipelines
 ---
 
 # Copy activity performance and scalability guide
 
-Sometimes you want to perform a large-scale data migration from data lake or enterprise data warehouse (EDW), to Fabric OneLake. Other times you want to ingest large amounts of data, from different sources into Fabric OneLake, for big data analytics. In each case, it is critical to achieve optimal performance and scalability.
+Sometimes you need to perform a large-scale data migration from a data lake or enterprise data warehouse (EDW) to Fabric OneLake. Other times, you want to ingest large amounts of data from different sources into Fabric OneLake for big data analytics. In each case, it's critical to achieve optimal performance and scalability.
 
 Data Factory pipelines provide a mechanism to ingest data, with the following advantages:
 
@@ -19,7 +20,7 @@ Data Factory pipelines provide a mechanism to ingest data, with the following ad
 
 These advantages are an excellent fit for data engineers who want to build scalable data ingestion pipelines that are highly performant.
 
-After reading this article, you will be able to answer the following questions:
+After reading this article, you can answer the following questions:
 
 - What level of performance and scalability can I achieve using copy activity for data migration and data ingestion scenarios?
 - What steps should I take to tune the performance of the copy activity?
@@ -55,7 +56,7 @@ The service provides the following performance optimization features:
 - [Intelligent throughput optimization](copy-activity-performance-and-scalability-guide.md#intelligent-throughput-optimization)
 - [Parallel copy](copy-activity-performance-and-scalability-guide.md#parallel-copy)
 
-### *Intelligent throughput optimization*
+### Intelligent throughput optimization
 
 Intelligent throughput optimization allows the service to optimize the throughput intelligently by combining the factors of CPU, memory, and network resource allocation and expected cost of running a single copy activity.  The allowed options to empower a copy activity run intelligently are **Auto, Standard, Balanced, Maximum**. You can also specify the value **between 4 and 256**.
 
@@ -68,7 +69,7 @@ The following table lists the recommended value in different copy scenarios:
 | **Balanced** | Allow the service to dynamically apply throughput optimization which balances the throughput and available compute resources based on your source-destination pair and data pattern. |
 |  **Maximum** | Allow the service to dynamically apply the throughput optimization by utilizing the maximum available compute resources based on your source-destination pair and data pattern. |
 
-### *Parallel copy*
+### Parallel copy
 
 You can set the 'Degree of copy parallelism' setting in the Settings tab of the Copy activity  to indicate the parallelism you want the copy activity to use. Think of this property as the maximum number of threads within the copy activity. The threads operate in parallel. The threads either read from your source or write to your destination data stores.
 

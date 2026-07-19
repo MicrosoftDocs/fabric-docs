@@ -5,7 +5,7 @@ description: Learn about the support status of the Fabric security features Work
 author: msmimart
 ms.author: mimart
 ms.reviewer: mimart
-ms.date: 02/19/2026
+ms.date: 07/08/2026
 ms.topic: concept-article
 ---
 
@@ -24,7 +24,6 @@ The following table shows the support status for each Fabric item. A check mark 
 | Workload | Item type | Workspace private links | Customer managed keys | Outbound access protection |
 |--|--|:--:|:--:|:--:|
 | **Data Engineering** | Lakehouse | ✓ | ✓ | ✓ |
-|  | Lakehouse Shortcut | ✓ | - | Preview |
 |  | Lakehouse SQL Endpoint | ✓ | ✓ | ✓ |
 |  | Notebook | ✓ | ✓ | ✓ |
 |  | Spark Job Definition | ✓ | ✓ | ✓ |
@@ -75,10 +74,10 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Mirrored SQL Server 2025 | ✓ | ✓ | ✓ |
 |  | Open Mirroring | ✓ | ✓ | ✓ |
 | **Fabric Databases** | SQL database in Fabric |  | ✓ | - |
-|  | Cosmos DB |  |  | - |
+|  | Cosmos DB |  | - | - |
 |  | Snowflake database | - | - | - |
-| **OneLake** | Shortcut | ✓ | - | Preview |
-| **Power BI** | Power BI Report | - | - | - |
+| **OneLake** | Shortcut | ✓ | ✓ | Preview |
+| **Power BI** | Power BI Report | - | - | Preview |
 |  | Dashboard | - | - | - |
 |  | Scorecard | - | - | - |
 |  | Semantic Model | - | - | Preview |
@@ -92,13 +91,13 @@ The following table shows the support status for each Fabric item. A check mark 
 | **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | Preview |
 |  | Activator | ✓ | - | Preview |
 |  | Eventhouse/KQL DB | ✓ | Preview | Preview |
-|  | Eventstream | ✓ |  | Preview |
+|  | Eventstream | ✓ | - | Preview |
 |  | Real-Time Dashboard | ✓ | Preview | Preview |
 |  | Anomaly detector  | - | - | - |
 |  | Digital Twin Builder | - | - | - | 
 |  | Event Schema Set  | - | - | - |
 |  | Map | - | - | - |
-| **Uncategorized**  | Operations Agent | - | - | - |
+|  | Operations Agent | - | - | Preview |
 
 ## Related links
 

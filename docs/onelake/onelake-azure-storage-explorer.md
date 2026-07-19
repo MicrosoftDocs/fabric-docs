@@ -31,7 +31,7 @@ This article shows how to integrate OneLake with Azure Storage Explorer, enablin
 
    :::image type="content" source="media\onelake-azure-storage-explorer\select-container-directory.png" alt-text="Screenshot showing where to select the Azure Data Lake Storage (ADLS) Gen2 container or directory option." lightbox="media\onelake-azure-storage-explorer\select-container-directory.png":::
 
-1. Enter URL details of the workspace or item you would like to connect to, in this format: `https://onelake.dfs.fabric.microsoft.com/{workspace-Name}/{itemName.itemType}/`. You can find the workspace name and item name in the **Properties** pane of a file in the Microsoft Fabric portal.
+1. Enter URL details of the workspace or item you would like to connect to, in this format: `https://onelake.dfs.fabric.microsoft.com/{workspace-Name}/{itemName.itemType}/`. You can find the workspace name and item name in the **Properties** pane of a file in the Fabric portal.
 
    You can choose a **Display name** for convenience, then select **Next**.
 

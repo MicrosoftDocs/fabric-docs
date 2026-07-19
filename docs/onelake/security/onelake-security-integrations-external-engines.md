@@ -20,7 +20,7 @@ This article describes how third-party engine developers can integrate with OneL
 
 ## Overview
 
-OneLake security defines fine-grained access control policies&mdash;including table-level, row-level, and column-level security&mdash;once in OneLake. Microsoft Fabric engines like Spark and the SQL analytics endpoint enforce these policies at query time. However, OneLake security guarantees enforcement of fine-grained access control policies regardless of how the data is accessed. As a result, unauthorized external requests to read files from OneLake are blocked to ensure data isn't leaked.
+OneLake security defines fine-grained access control policies&mdash;including table-level, row-level, and column-level security&mdash;once in OneLake. Fabric engines like Spark and the SQL analytics endpoint enforce these policies at query time. However, OneLake security guarantees enforcement of fine-grained access control policies regardless of how the data is accessed. As a result, unauthorized external requests to read files from OneLake are blocked to ensure data isn't leaked.
 
 The **authorized engine model** solves this problem. You register a dedicated identity (service principal or managed identity) that has full read access to the data and can also read the security metadata. Your engine uses this identity to:
 

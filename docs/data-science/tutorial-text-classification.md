@@ -43,9 +43,9 @@ You can set up a multi-class and multi-label text classification system orchestr
 To build your own text classifier, you need the following Fabric items:
 
 * Notebooks with SynapseML for LLM interaction.
-* OneLake for secure, schema-organized storage. To learn more, see [Organize your tables with lakehouse schemas and more](https://blog.fabric.microsoft.com/blog/organizing-your-tables-with-lakehouse-schemas-and-more-public-preview/).
+* OneLake for secure, schema-organized storage. To learn more, see [Organize your tables with lakehouse schemas and more](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Organizing-your-tables-with-lakehouse-schemas-and-more-Public/ba-p/5173094).
 * Pipelines for orchestration.
-* Fabric API calls to enable continuous integration and continuous delivery (CI/CD). To learn more, see [`fabric-cicd` Deployment Tool](https://blog.fabric.microsoft.com/blog/introducing-fabric-cicd-deployment-tool?ft=All).
+* Fabric API calls to enable continuous integration and continuous delivery (CI/CD). To learn more, see [`fabric-cicd` Deployment Tool](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Introducing-fabric-cicd-Deployment-Tool/ba-p/5172918).
 * Power BI for visualization, including Copilot-assisted narratives. This experience uses the new [Direct Lake mode](https://community.fabric.microsoft.com/t5/Data-Engineering-Community-Blog/Direct-Lake-Faster-Power-BI-No-Refreshes-Seamless-Fabric/ba-p/4401197) feature for easier integration.
   
 This tutorial focuses on notebooks, LLM interactions, and pipelines. To read more about the other items that you need, see the linked resources. The diagram illustrates an architecture that you might use to build your own text classifier.

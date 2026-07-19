@@ -1,5 +1,5 @@
 ---
-title: Arithmetic functions
+title: Arithmetic Functions
 description: Learn about arithmetic functions in plan (preview) and how to use them to perform common arithmetic operations and calculations.
 ms.date: 06/04/2026
 ms.topic: reference
@@ -10,6 +10,8 @@ ms.search.form: Arithmetic functions
 # Arithmetic functions
 
 Arithmetic functions let you perform common mathematical operations and numerical calculations in reports. These functions are commonly used to calculate totals, percentages, remainders, powers, and differences between values.
+
+[!INCLUDE [Fabric feature-preview-note](../../../../includes/feature-preview-note.md)]
 
 In plan (preview), arithmetic functions help you create calculations for scenarios such as variance analysis, percentage calculations, aggregations, and other day-to-day business computations.
 

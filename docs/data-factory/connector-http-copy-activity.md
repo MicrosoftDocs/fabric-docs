@@ -3,7 +3,7 @@ title: Configure HTTP in a copy activity
 description: This article explains how to copy data using HTTP.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 05/21/2026
 ms.custom:
   - pipelines
   - template-how-to
@@ -50,6 +50,11 @@ The following properties are supported for HTTP under the **Source** tab of a co
 The following three properties are **required**:
 
 - **Connection**:  Select an HTTP connection from the connection list. If no connection exists, then create a new HTTP connection by selecting **New**.
+    - **Additional connection properties**: Specify additional connection properties which will be used in HTTP connection to set advanced options. Additional connection properties are provided as a dictionary of key-value pairs.
+      - **Disable server certificate validation**: Specify whether to disable server TLS/SSL certificate validation when you connect to an HTTP endpoint. The allowed value is `true` or `false`. If your HTTPS server uses a self-signed certificate, set the value to `false`.
+    
+        :::image type="content" source="./media/connector-http/additional-connection-properties.png" alt-text="Screenshot showing additional connection properties for source.":::
+
 - **Connection type**: Select **HTTP**.
 - **Relative URL**: A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the connection definition is used. The HTTP connector copies data from the combined URL: `/[relative URL specified]`.
 - **File settings**: Select **File settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.

@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 # Fabric capacity and OneLake consumption
 
-You only need one capacity to drive all your Microsoft Fabric experiences, including Microsoft OneLake. This article provides a detailed example of how OneLake consumes storage and compute.
+You only need one capacity to drive all your Fabric experiences, including OneLake. This article provides a detailed example of how OneLake consumes storage and compute.
 
 With OneLake, you pay for the data stored, similar to services like Azure Data Lake Storage (ADLS) or Amazon S3. However, unlike other services, OneLake doesn't include a separate charge for transactions (for example, reads, writes) to your data. Instead, transactions consume from existing [Fabric capacity](../enterprise/licenses.md) that you also use to run your other Fabric experiences. For information about pricing, see [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 
@@ -55,7 +55,7 @@ In the preceding example, the file upload results in a write transaction that co
 
 However, if you read this data by using a notebook, you consume CU seconds of read transactions. The metrics app reports this consumption as **OneLake Read (Hot)**. To learn how each type of operation consumes capacity units, see [OneLake consumption page](../onelake/onelake-consumption.md).
 
-To understand more about the various terminologies on the metrics app, see [Understand the metrics app compute page - Microsoft Fabric](../enterprise/metrics-app-compute-page.md).
+To understand more about the various terminologies on the metrics app, see [Understand the metrics app compute page](../enterprise/metrics-app-compute-page.md).
 
 ## Shortcuts capacity usage
 

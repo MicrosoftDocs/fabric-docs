@@ -1,8 +1,8 @@
 ---
 title: Add a data source to Data Agent
 description: Get started with Data Agent by adding your Fabric data sources, and learn about how data agents allow you to curate an expert over your data. 
-ms.author: jburchel
-author: jonburchel
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: shradha
 reviewer: shradha
 ms.topic: how-to

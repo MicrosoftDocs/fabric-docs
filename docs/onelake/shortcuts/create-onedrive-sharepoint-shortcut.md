@@ -12,13 +12,13 @@ ms.date: 02/10/2026
 
 # Create a OneDrive or SharePoint shortcut
 
-In this article, you learn how to create a OneDrive or SharePoint shortcut inside a Microsoft Fabric lakehouse.
+In this article, you learn how to create a OneDrive or SharePoint shortcut inside a Fabric lakehouse.
 
 For an overview of shortcuts, see [OneLake shortcuts](../onelake-shortcuts.md). To create shortcuts programmatically, see [OneLake shortcuts REST APIs](../onelake-shortcuts-rest-api.md).
 
 ## Prerequisites
 
-* A lakehouse in Microsoft Fabric. If you don't have a lakehouse, create one by following these steps: [Create a lakehouse](../../data-engineering/create-lakehouse.md).
+* A lakehouse in Fabric. If you don't have a lakehouse, create one by following these steps: [Create a lakehouse](../../data-engineering/create-lakehouse.md).
 * Data in a OneDrive or SharePoint folder.
 
 ## Create a shortcut
@@ -29,7 +29,7 @@ For an overview of shortcuts, see [OneLake shortcuts](../onelake-shortcuts.md). 
 
 1. Select **New shortcut**.
 
-   :::image type="content" source="..\media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot that shows selecting 'new shortcut' from a directory menu.":::
+   :::image type="content" source="media/create-onelake-shortcut/new-shortcut-lake-view.png" alt-text="Screenshot that shows selecting 'new shortcut' from a directory menu.":::
 
 ## Select a source
 
@@ -229,6 +229,6 @@ The following limitations apply to SharePoint shortcuts:
 
 ## Related content
 
-* [Create a OneLake shortcut](../create-onelake-shortcut.md)
+* [Create a OneLake shortcut](../shortcuts/create-onelake-shortcut.md)
 
 * [Use OneLake shortcuts REST APIs](../onelake-shortcuts-rest-api.md)

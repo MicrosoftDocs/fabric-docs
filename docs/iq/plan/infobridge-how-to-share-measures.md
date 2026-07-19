@@ -6,9 +6,9 @@ ms.topic: how-to
 #customer intent: As a user, I want to create financial reports in Fabric
 ---
 
-# Import measures between planning sheets with InfoBridge
+# Import measures between planning sheets with Infobridge
 
-With InfoBridge in plan (preview), you can consolidate measures from different data sources like files and planning sheets into a target planning sheet (for example, integrating multiple regional forecasts into a single global forecast).
+With Infobridge in plan (preview), you can consolidate measures from different data sources like files and planning sheets into a target planning sheet (for example, integrating multiple regional forecasts into a single global forecast).
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -28,7 +28,7 @@ Sample reports used in this article:
 
     :::image type="content" source="media/infobridge-how-to-share-measures/sample-sales.png" alt-text="Screenshot of a sample quarterly sales planning sheet." lightbox="media/infobridge-how-to-share-measures/sample-sales.png":::
 
-In this article, you use InfoBridge to bring COGS projections into the Sales report.
+In this article, you use Infobridge to bring COGS projections into the Sales report.
 
 ## Create a bridge
 
@@ -43,7 +43,7 @@ In this article, you use InfoBridge to bring COGS projections into the Sales rep
     :::image type="content" source="media/infobridge-how-to-share-measures/new-bridge.png" alt-text="Screenshot of the newly created bridge with the imported measure." lightbox="media/infobridge-how-to-share-measures/new-bridge.png":::
 
 >[!NOTE]
->InfoBridge can be used to transform, cleanse, and change the structure of the data.
+>Infobridge can be used to transform, cleanse, and change the structure of the data.
 
 ## Import a measure
 
@@ -52,4 +52,4 @@ In this article, you use InfoBridge to bring COGS projections into the Sales rep
 
     :::image type="content" source="media/infobridge-how-to-share-measures/imported-measure.png" alt-text="Screenshot of the imported bridge in the target planning sheet." lightbox="media/infobridge-how-to-share-measures/imported-measure.png":::
 
-Measures from InfoBridge act like regular data source measures and can be used for calculations or included in other reports and visualizations.
+Measures from Infobridge act like regular data source measures and can be used for calculations or included in other reports and visualizations.

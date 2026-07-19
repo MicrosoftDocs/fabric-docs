@@ -21,11 +21,9 @@ In this guide, you will:
 
 Before you start, you must have:
 
-- A workspace with a Lakehouse item.
+- A workspace with a lakehouse item.
 
 - A premium Azure Databricks workspace. Only premium Azure Databricks workspaces support Microsoft Entra credential passthrough. When creating your cluster, enable Azure Data Lake Storage credential passthrough in the **Advanced Options**.
-
-- A sample dataset.
 
 ## Ingest data and modify the Delta table
 
@@ -51,7 +49,7 @@ Before you start, you must have:
 
    :::image type="content" source="media\onelake-open-access-quickstart\onelake-final-pipeline-review.png" alt-text="Screenshot showing how to enter table name.":::
 
-1. When the job is complete, navigate to your lakehouse and view the delta table listed under /Tables folder.
+1. When the job is complete, navigate to your lakehouse and view the Delta table listed under /Tables folder.
 
 1. Right-click on the created table name, select **Properties**, and copy the Azure Blob Filesystem (ABFS) path.
 

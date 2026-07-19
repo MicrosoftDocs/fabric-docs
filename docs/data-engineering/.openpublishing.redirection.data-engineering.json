@@ -26,6 +26,11 @@
         "redirect_document_id": false
        },
        {
+        "source_path_from_root": "/docs/data-engineering/api-graphql-rbac.md",
+        "redirect_url": "/fabric/data-engineering/api-graphql-overview",
+        "redirect_document_id": true
+       },
+       {
         "source_path_from_root": "/docs/data-engineering/get-started-shortcuts.md",
         "redirect_url": "/fabric/data-engineering/lakehouse-shortcuts",
         "redirect_document_id": true

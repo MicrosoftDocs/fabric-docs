@@ -28,6 +28,9 @@ To enable Customer Lockbox for [!INCLUDE [product-name](../includes/product-name
 
 ## Microsoft access request
 
+> [!NOTE]
+> To ensure the request is visible, the user must have an active Global Administrator role in Entra ID before the lockbox request is initiated by Microsoft.
+
 In cases where the Microsoft engineer can't troubleshoot your issue by using standard tools, elevated permissions are requested using the [Just-In-Time](/azure/azure-resource-manager/managed-applications/request-just-in-time-access) (JIT) access service. The request can come from the original support engineer, or from a different engineer.
 
 After the access request is submitted, the JIT service evaluates the request, considering factors such as:
@@ -74,7 +77,7 @@ Customer Lockbox has two type of logs:
 
     :::image type="content" source="media/security-lockbox/customer-lockbox-activity-logs-thumbnail.png" alt-text="Screenshot of the activity logs in Customer Lockbox for Microsoft Azure." lightbox="media/security-lockbox/customer-lockbox-activity-logs.png":::
 
-* **Audit logs** - Available from the Microsoft Purview compliance portal. You can see the audit logs in the [admin portal](/power-bi/admin/service-admin-portal-audit-logs).
+* **Audit logs** - Available from the Microsoft Purview portal. You can see the audit logs in the [admin portal](/power-bi/admin/service-admin-portal-audit-logs).
 
     Customer Lockbox for [!INCLUDE [product-name](../includes/product-name.md)] has four [audit logs](/power-bi/admin/service-admin-auditing):
 

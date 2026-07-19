@@ -4,7 +4,7 @@ title: CI/CD for Apache Airflow in Data Factory in Microsoft Fabric
 description: This article describes how to set up continuous integration and delivery (CI/CD) for Apache Airflow in Data Factory for Microsoft Fabric.
 ms.reviewer: conxu
 ms.topic: how-to
-ms.date: 08/20/2025
+ms.date: 06/10/2025
 ms.custom: airflows
 ai-usage: ai-assisted
 ---
@@ -28,18 +28,7 @@ Follow these steps to connect your Airflow in Data Factory to Git. Git helps you
 
 ### Prerequisites for Git integration
 
-- You need a [Power BI Premium license](/power-bi/enterprise/service-premium-what-is) or [Fabric capacity](../enterprise/licenses.md#capacity).
-- Make sure these admin settings are turned on:
-   - [Users can create Fabric items](../admin/fabric-switch.md)
-   - [Users can sync workspace items with their Git repositories](../admin/git-integration-admin-settings.md#users-can-synchronize-workspace-items-with-their-git-repositories)
-   - (For GitHub users) [Users can sync workspace items with GitHub repositories](../admin/git-integration-admin-settings.md#users-can-sync-workspace-items-with-github-repositories)
-- You need either an Azure DevOps organization or a GitHub account.
-   - For Azure DevOps:
-      - Sign up for a free [Azure account](https://azure.microsoft.com/products/devops/) if you don’t have one.
-      - Make sure you have access to a repository.
-   - For GitHub:
-      - Sign up for a free [GitHub account](https://github.com/) if you don’t have one.
-      - You need a [fine-grained token](https://github.com/settings/personal-access-tokens/new) with _read_ and _write_ permissions for _Contents_, or a [GitHub classic token](https://github.com/settings/tokens/new) with repo scopes enabled.
+[!INCLUDE [cicd-git-prerequisites](includes/cicd-git-prerequisites.md)]
 
 ### Step 1: Connect to a Git repository
 
@@ -92,55 +81,8 @@ Once you commit, those items disappear from the list, and your workspace points 
 
 ## Deployment pipelines
 
-Follow these steps to use deployment pipelines with your Fabric workspace:
+Deployment pipelines for Airflow jobs use the same workflow as other Fabric Data Factory items. For the full setup steps, including prerequisites, creating a pipeline, assigning workspaces, and deploying content between stages, see [Get started with deployment pipelines for Git](cicd-pipelines.md#get-started-with-deployment-pipelines-for-git).
 
-1. [Prerequisites](#prerequisites-for-deployment-pipelines)
-1. [Create a deployment pipeline](#step-1-create-a-deployment-pipeline)
-1. [Assign a workspace to the deployment pipeline](#step-2-assign-a-workspace-to-the-deployment-pipeline)
-1. [Deploy to an empty stage](#step-3-deploy-to-an-empty-stage)
-1. [Deploy content from one stage to another](#step-4-deploy-content-from-one-stage-to-another)
-
-### Prerequisites for deployment pipelines
-
-Before you get started, be sure to set up the following prerequisites:
-
-- An active [Microsoft Fabric subscription](../enterprise/licenses.md).
-- Admin access on a [Fabric workspace](../fundamentals/create-workspaces.md).
-
-### Step 1: Create a deployment pipeline
-
-1. In the **Workspaces** menu, select **Deployment pipelines**.
-2. When the **Create deployment pipeline** window opens, enter a name and description for your pipeline, then select **Next**.
-3. Choose how many stages you want in your pipeline. By default, you see three stages: _Development_, _Test_, and _Production_.
-
-### Step 2: Assign a workspace to the deployment pipeline
-
-After creating a deployment pipeline, you need to add content you want to manage to the deployment pipeline. Adding content to the deployment pipeline is done by assigning a workspace to any deployment pipeline stage:
-
-1. Open the deployment pipeline.
-
-2. In the stage you want to assign a workspace to, expand the dropdown titled **Add content to this stage**.
-
-3. Select the workspace you want to assign to this stage.
-
-    :::image type="content" source="../cicd/deployment-pipelines/media/assign-pipeline/assign-workspace-new.png" alt-text="A screenshot showing the assign workspace dropdown in a deployment pipelines empty stage in the new UI.":::
-
-4. Select Assign.
-
-### Step 3: Deploy to an empty stage
-
-When you're ready to move your content from one pipeline stage to the next, you can deploy it using one of these options:
-
-- **Full deployment**: Select this to deploy everything in the current stage to the next stage.
-- **Selective deployment**: Pick only the items you want to deploy.
-- **Backward deployment**: Move content from a later stage back to an earlier stage. You can only do this if the target stage is empty (no workspace assigned).
-
-After you choose your deployment option, you can [review the details and leave a note about the deployment if you'd like](../cicd/deployment-pipelines/deploy-content.md#review-your-deployment-and-leave-a-note).
-
-### Step 4: Deploy content from one stage to another
-
-1. Once you have content in a pipeline stage, you can deploy it to the next stage, even if the next stage workspace has content. [Paired items](../cicd/deployment-pipelines/assign-pipeline.md#item-pairing) are overwritten. You can learn more about this process, in the [Deploy content to an existing workspace](../cicd/deployment-pipelines/understand-the-deployment-process.md#deploy-content-from-one-stage-to-another) article
-2. You can also review the deployment history to see the last time content was deployed to each stage. To examine the differences between the two pipelines before you deploy, see [Compare content in different deployment stages](../cicd/deployment-pipelines/compare-pipeline-content.md).
 
 ## Known limitations
 

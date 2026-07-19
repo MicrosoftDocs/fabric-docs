@@ -1,9 +1,9 @@
 ---
 title: Add Amazon MSK Kafka source to an eventstream
 description: Provides information on adding an Amazon Managed Streaming for Apache Kafka (MSK) source to an eventstream.
-ms.reviewer: zhenxilin
+ms.reviewer: xujiang1
 ms.topic: how-to
-ms.date: 03/04/2026
+ms.date: 06/29/2026
 ms.search.form: Source and Destination
 ms.custom: references_regions
 #Customer intent: I want to learn how to bring events from an Amazon Managed Streaming for Apache Kafka source into Microsoft Fabric.

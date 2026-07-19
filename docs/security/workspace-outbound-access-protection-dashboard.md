@@ -1,7 +1,7 @@
 ---
 title: Workspace outbound access protection for Real-Time Dashboard (preview)
 description: Learn how workspace outbound access protection applies to Real-Time Dashboard experiences and which RTD outbound scenarios are supported or blocked.
-ms.topic: conceptual
+ms.topic: concept-article
 ms.reviewer: Gabilehner
 ms.date: 05/31/2026
 ---

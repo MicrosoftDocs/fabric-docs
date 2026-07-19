@@ -1,7 +1,7 @@
 ---
 title: "Explore Data in Your Mirrored Database Directly in OneLake"
 description: Learn how to access your mirrored database directly from OneLake in Delta format.
-ms.reviewer: imotiwala, chweb, anithaa
+ms.reviewer: sbahadur
 ms.date: 04/28/2026
 ai-usage: ai-assisted
 ms.topic: how-to

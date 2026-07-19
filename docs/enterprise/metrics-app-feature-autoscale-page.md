@@ -58,27 +58,7 @@ You can hover over any value in the visual to see operation level data. You can 
 
 ### Default fields
 
-The table in this section lists the default fields that are displayed in the matrix by item and operation visual. You can't remove default fields from the table.
-
-|Name      |Description  |
-|----------|--------------|
-|Workspace |The workspace the item belongs to |
-|Item kind |The item type |
-|Item name |The item name |
-|CU (s)    |Capacity Units (CU) processing time in seconds. Sort to view the top CUs that processed items over the past two weeks   |
-|Duration (s) |Processing time in seconds. Sort to view the items that needed the longest processing time during the past two weeks |
-|Users     |The number of users that used the item                                 |
-|<sup>*</sup>Billing type |Displays information if the item is billable or not     |
-
-<sup>*</sup> The billing type column displays the following values:
-
-* *Billable* - Indicates that operations for this item are billable.
-
-* *Non-Billable*  - Indicates that operations for this item are non-billable.
-
-* *Both* - There are two scenarios when an item can have both as billable type:
-        - If the item has both billable and non-billable operations.
-        - If the item has operations that are in transition period from non-billable to billable.
+[!INCLUDE [Metrics app matrix default fields](../includes/metrics-app-matrix-default-fields.md)]
 
 ### Optional fields
 

@@ -18,7 +18,7 @@ Shortcuts in OneLake use shared cloud connections to access the cloud resources 
 
 You can view and manage all existing cloud connections for shortcuts in a single lakehouse.
 
-1. In the [Microsoft Fabric portal](https://app.fabric.microsoft.com), navigate to your lakehouse.
+1. In the [Fabric portal](https://app.fabric.microsoft.com), navigate to your lakehouse.
 
 1. Select **Settings**.
 

@@ -27,6 +27,7 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
   | **API for Apache Cassandra (RU-based)** | No |
   | **Managed Instance for Apache Cassandra** | No |
   | **DocumentDB (vCore-based)** | No |
+  | **Sovereign Cloud (Azure Government and Azure China)** | No |
 
 ## Account and database limitations
 

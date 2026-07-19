@@ -1,7 +1,7 @@
 ---
 title: Connect Digital Twin Builder (Preview) Data to Real-Time Dashboard
 description: Learn how to prepare your digital twin builder (preview) data to be accessible from a Real-Time Dashboard.
-ms.date: 05/02/2025
+ms.date: 6/15/2026
 ms.topic: how-to
 ---
 
@@ -33,7 +33,7 @@ In order for the data to be accessible to KQL queries and a Real-Time Dashboard,
 So, in this section, you create a new Eventhouse and child KQL database. Then, you add the digital twin builder data tables to the database using [OneLake shortcuts](../onelake-shortcuts.md?tab=onelake-shortcut&tabs=onelake-shortcut). This process makes the digital twin builder data available to query in Eventhouse.
 
 1. Create a new eventhouse in your workspace (for detailed instructions, see [Create an eventhouse](../create-eventhouse.md#create-an-eventhouse)). The eventhouse is automatically created with a child KQL database with the same name.
-1. Add shortcuts for all tables in your digital twin builder data lakehouse by following the steps in [Create OneLake shortcuts in a KQL database](../onelake-shortcuts.md?tabs=onelake-shortcut#create-shortcut). 
+1. Add shortcuts for all tables in your digital twin builder data lakehouse by following the steps in [Create OneLake shortcuts in a KQL database](../onelake-shortcuts.md#create-a-shortcut). 
     * When selecting the data source, look for the lakehouse with a name that matches your digital twin builder item name followed by *dtdm*.
     * When selecting which tables to map, select them all. You can only add 10 tables at a time, so repeat the shortcut creation process until you have shortcuts for all the tables.
 
@@ -117,7 +117,7 @@ You can also create a new dashboard from scratch, and use the functions you crea
 
 Once your dashboard is set up, consider the following actions:
 
-* Set up [refresh intervals](../dashboard-real-time-create.md#enable-auto-refresh) for real-time updates
+* Set up [Live refresh](../dashboard-real-time-create.md#enable-live-refresh) for real-time updates
 * [Create alerts](../data-activator/activator-get-data-real-time-dashboard.md) based on specific conditions
 * [Share your dashboard](../dashboard-real-time-create.md#share-the-dashboard) with team members
 * Explore more advanced [KQL queries](/kusto/query/) to derive insights from your digital twin builder (preview) data

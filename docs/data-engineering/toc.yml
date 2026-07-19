@@ -51,6 +51,8 @@ items:
       href: create-lakehouse.md
     - name: Navigate the lakehouse explorer
       href: navigate-lakehouse-explorer.md
+    - name: Query data with the Lakehouse query explorer
+      href: lakehouse-query-explorer.md
     - name: Lakehouse table maintenance
       href: lakehouse-table-maintenance.md
     - name: High concurrency for table load and preview
@@ -135,6 +137,12 @@ items:
           href: delta-lake-change-data-feed.md
         - name: Schema evolution
           href: delta-lake-schema-evolution.md
+        - name: Generated columns
+          href: delta-lake-generated-columns.md
+        - name: Column mapping
+          href: delta-lake-column-mapping.md
+        - name: Variant data type
+          href: delta-lake-variant.md
     - name: Performance and optimization
       items:
         - name: File skipping
@@ -165,7 +173,7 @@ items:
       href: author-execute-notebook.md  
     - name: Use Python experience in notebooks
       href: using-python-experience-on-notebook.md  
-    - name: Python vs. PySpark notebooks
+    - name: Python vs. PySpark notebook kernel
       href: fabric-notebook-selection-guide.md
     - name: Author and run T-SQL in notebooks
       href: author-tsql-notebook.md
@@ -356,6 +364,8 @@ items:
       href: runtime.md
     - name: Runtime lifecycle
       href: lifecycle.md
+    - name: Release channels
+      href: release-channels.md  
     - name: Runtime 2.0 (Spark 4.1)
       href: runtime-2-0.md
     - name: Runtime 1.3 (Spark 3.5)
@@ -390,6 +400,20 @@ items:
     items:
     - name: Spark utilities
       href: microsoft-spark-utilities.md
+  - name: Structured Streaming
+    items:
+    - name: Overview
+      href: structured-streaming-overview.md
+    - name: Triggers and output modes
+      href: structured-streaming-triggers-output-modes.md
+    - name: Stateful processing
+      href: structured-streaming-stateful-processing.md
+    - name: Real-time Mode
+      href: structured-streaming-real-time-mode.md
+    - name: Common patterns
+      href: structured-streaming-common-patterns.md
+    - name: Best practices
+      href: structured-streaming-best-practices.md
   - name: Spark administration settings
     items:
     - name: Capacity settings overview
@@ -648,6 +672,8 @@ items:
         href: ./user-data-functions/git-and-deployment-pipelines.md
       - name: Service details and limitations
         href: ./user-data-functions/user-data-functions-service-limits.md
+      - name: Schedule functions
+        href: ./user-data-functions/schedule-functions.md    
 - name: Materialized lake views
   items:
   - name: Overview
@@ -674,12 +700,16 @@ items:
       href: ./materialized-lake-views/view-lineage.md
     - name: Schedule materialized lake views
       href: ./materialized-lake-views/schedule-lineage-run.md
-    - name: Run history of materialized lake views
-      href: ./materialized-lake-views/run-history.md
     - name: REST APIs for materialized lake views
       href: ./materialized-lake-views/materialized-lake-views-public-api.md
   - name: Monitor
     items:  
+    - name: Recent runs of materialized lake views
+      href: ./materialized-lake-views/run-history.md
+    - name: View analytics for materialized lake view runs
+      href: ./materialized-lake-views/analytics.md
+    - name: View insights for materialized lake view runs
+      href: ./materialized-lake-views/insights.md
     - name: Monitor materialized lake views
       href: ./materialized-lake-views/monitor-materialized-lake-views.md
     - name: Data quality report
@@ -722,3 +752,5 @@ items:
     href: troubleshoot-lakehouse.md
   - name: Notebook errors
     href: ../data-science/fabric-notebooks-troubleshooting-guide.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/breadcrumb/toc.json
+  - name: Spark job errors
+    href: troubleshoot-spark.md

@@ -11,7 +11,7 @@ ms.date: 08/12/2025
 
 # AzCopy
 
-AzCopy is a powerful command-line utility designed to facilitate the transfer of data between Azure Storage accounts. Because Microsoft OneLake supports the same APIs, SDKs, and tools as Azure Storage, you can also use AzCopy to load data to and from OneLake. This article helps you use AzCopy with OneLake, from copying data between artifacts to uploading or downloading data.  
+AzCopy is a powerful command-line utility designed to facilitate the transfer of data between Azure Storage accounts. Because OneLake supports the same APIs, SDKs, and tools as Azure Storage, you can also use AzCopy to load data to and from OneLake. This article helps you use AzCopy with OneLake, from copying data between items to uploading or downloading data.  
 
 ## Why use AzCopy and OneLake?
 
@@ -19,7 +19,7 @@ AzCopy is optimized for data plane operations at scale and large scale data move
 
 ## Trusted workspace access and AzCopy
 
-Trusted workspace access lets you access firewall-enabled Azure Storage accounts securely by configuring a resource instance rule on an Azure Storage account. This rule lets your specific Fabric workspace access the storage account's firewall from select Fabric experiences, like shortcuts, pipelines, and AzCopy. By configuring trusted workspace access, AzCopy can copy data from a firewall-enabled Azure Storage account into OneLake without affecting the firewall protections. Learn more at [trusted workspace access](/fabric/security/security-trusted-workspace-access).  
+Trusted workspace access lets you access firewall-enabled Azure Storage accounts securely by configuring a resource instance rule on an Azure Storage account. This rule lets your specific Fabric workspace access the storage account's firewall from select Fabric experiences, like shortcuts, pipelines, and AzCopy. By configuring trusted workspace access, AzCopy can copy data from a firewall-enabled Azure Storage account into OneLake without affecting the firewall protections. Learn more at [trusted workspace access](../security/security-trusted-workspace-access.md).  
 
 ## Getting Started
 
@@ -72,7 +72,7 @@ Since OneLake is a managed data lake, some operations aren't supported with AzCo
 
 ### Cross-tenant operations
 
-When attempting to perform operations directly between two Fabric tenants, you must use [external data sharing](/fabric/governance/external-data-sharing-overview).  This means you cannot currently use AzCopy to directly load data between two Fabric tenants, as that results in a direct cross-tenant operation.  Other methods to load data, such as downloading the data locally or to a Spark cluster and then re-uploading the data to the new tenant, will function.  
+When attempting to perform operations directly between two Fabric tenants, you must use [external data sharing](../governance/external-data-sharing-overview.md).  This means you cannot currently use AzCopy to directly load data between two Fabric tenants, as that results in a direct cross-tenant operation.  Other methods to load data, such as downloading the data locally or to a Spark cluster and then re-uploading the data to the new tenant, will function.  
 
 ## Related content
 

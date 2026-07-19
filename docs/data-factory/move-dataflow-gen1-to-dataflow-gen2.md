@@ -1,8 +1,8 @@
 ---
-title: Move queries from Dataflow Gen1 to Dataflow Gen2
+title: Move Queries from Dataflow Gen1 to Dataflow Gen2
 description: This article describes the procedure for moving Dataflow Gen1 queries to Dataflow Gen2 in Data Factory.
+ms.date: 06/19/2026
 ms.topic: how-to
-ms.date: 3/17/2025
 ms.custom:
   - template-how-to
   - dataflows
@@ -14,7 +14,7 @@ Dataflow Gen2 is the new generation of dataflows. However, many existing dataflo
 
 ## Use the export template feature
 
-Use the export template feature if you're aiming to copy all queries in a dataflow, or all queries from another PowerQuery host such as Power Platform Dataflow or Excel Workbook.  
+Use the export template feature if you want to copy all queries in a dataflow, or all queries from another PowerQuery host such as Power Platform Dataflow or Excel Workbook.
 
 To use the export template feature:
 
@@ -86,7 +86,7 @@ To copy existing Dataflow Gen1 queries:
 
 ## Save an existing Dataflow Gen1 As a new Dataflow Gen2 (CI/CD)
 
-Use the Save As feature if you’re aiming to upgrade an entire Dataflow Gen1 to Dataflow Gen2 (CI/CD), including its settings (for more information, go to [Known limitations](migrate-to-dataflow-gen2-using-save-as.md#known-limitations)) and queries.  
+Use the Save As feature if you're aiming to upgrade an entire Dataflow Gen1 to Dataflow Gen2 (CI/CD), including its settings (for more information, go to [Known limitations](migrate-to-dataflow-gen2-using-save-as.md#known-limitations)) and queries.
 
 To use the Save As feature:
 
@@ -94,5 +94,5 @@ To use the Save As feature:
 
 ## Related content
 
-- [Differences between Dataflow Gen1 and Gen2 in Microsoft Fabric](dataflows-gen2-overview.md)
+- [What is Dataflow Gen2?](dataflows-gen2-overview.md)
 - [Migrate to Dataflow Gen2 (CI/CD) using Save As](migrate-to-dataflow-gen2-using-save-as.md)

@@ -1,6 +1,6 @@
 ---
 title: Mount OneLake as a filesystem using BlobFuse2
-description: Learn how to use BlobFuse2 to mount Microsoft Fabric OneLake as a filesystem on Linux virtual machines.
+description: Learn how to use BlobFuse2 to mount Microsoft OneLake as a filesystem on Linux virtual machines.
 ms.reviewer: amasingh # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
@@ -30,13 +30,13 @@ This article provides a step-by-step guide for configuring BlobFuse2 and mountin
 - An Azure subscription to host a Linux-based Azure virtual machine.
 - A Fabric workspace with a minimum of workspace Contributor role.
 - An application registration in Microsoft Entra ID with the necessary permissions to access the Fabric workspace.
-- Network connectivity from the VM to Microsoft Fabric OneLake endpoints. The network where VM is hosted must allow outbound access to OneLake endpoints. If you are using private links for Microsoft Fabric, ensure that the VM can reach the private endpoint.
+- Network connectivity from the VM to OneLake endpoints. The network where VM is hosted must allow outbound access to OneLake endpoints. If you are using private links for Fabric, ensure that the VM can reach the private endpoint.
 
 ## Create an Azure Virtual Machine
 
 1. Create an [Azure Virtual Machine](/azure/virtual-machines/linux/quick-create-portal) with a Linux-based operating system. The instructions here use Ubuntu 24.04. 
 
-1. Configure the Network Security Group (NSG) rules to ensure the VM can connect to Microsoft Fabric OneLake endpoints. By default, outbound internet access is allowed. If your VM is in a restricted network, ensure that outbound access to the following endpoint is allowed:
+1. Configure the Network Security Group (NSG) rules to ensure the VM can connect to OneLake endpoints. By default, outbound internet access is allowed. If your VM is in a restricted network, ensure that outbound access to the following endpoint is allowed:
 
    - `onelake.dfs.fabric.microsoft.com` on port 443 (HTTPS)
 
@@ -63,14 +63,14 @@ You must grant access to OneLake for the identity who mounts a [Fabric workspace
 
 This document uses service principal to authenticate with OneLake. Follow these steps to configure service principal authentication:
 
-1. Create an application registration in Microsoft Entra ID in the same tenant where Microsoft Fabric is deployed.
+1. Create an application registration in Microsoft Entra ID in the same tenant where Fabric is deployed.
 
 1. Note the following values from your application registration:
    - **Tenant ID**
    - **Client ID** (Application ID)
    - **Client Secret**
 
-1. Switch to **Microsoft Fabric** and navigate to the workspace you want to mount to the Azure VM.
+1. Switch to **Fabric** and navigate to the workspace you want to mount to the Azure VM.
 
 1. Select **Manage Access** from the workspace settings.
 
@@ -134,8 +134,8 @@ This document uses service principal to authenticate with OneLake. Follow these 
    > BlobFuse2 achieves near-native performance through local file caching. Cache configuration and behavior differ based on access patterns, such as large sequential file streaming versus small, random file access. For more information on configuring caching, see [How to configure BlobFuse2](/azure/storage/blobs/blobfuse2-how-to-deploy).
 
 1. Replace the placeholder values in the configuration:
-   - `<replace-with-fabric-workspace-id>`: Fabric Workspace ID
-   - `<replace-with-fabric-lakehouse-id>`: Fabric Lakehouse ID
+   - `<replace-with-fabric-workspace-id>`: Fabric workspace ID
+   - `<replace-with-fabric-lakehouse-id>`: Fabric lakehouse ID
    - `<replace-with-tenant-id>`: Microsoft Entra Tenant ID
    - `<replace-with-client-id>`: Client ID
    - `<replace-with-client-secret>`: Client Secret
@@ -190,7 +190,7 @@ This document uses service principal to authenticate with OneLake. Follow these 
 
    This command writes 100 blocks of 1 MB each, creating a 100-MB file on OneLake.
 
-1. Verify the file appears in the Microsoft Fabric portal:
+1. Verify the file appears in the Fabric portal:
    - Navigate to your lakehouse in the Fabric portal
    - Go to the /Files directory
    - Confirm that the files are listed

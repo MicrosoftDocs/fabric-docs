@@ -20,7 +20,7 @@ items:
         href: tutorial-model-nodes.md
       - name: 4 - Add edges to your graph
         href: tutorial-model-edges.md
-      - name: 5 - Add multiple node types using one table
+      - name: 5 - Add multiple node types from one table
         href: tutorial-model-node-edge-from-same-table.md 
       - name: 6 - Query the graph with the query builder
         href: tutorial-query-builder.md

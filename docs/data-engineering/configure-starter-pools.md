@@ -3,7 +3,7 @@ title: Configure and manage starter pools in Fabric Spark
 description: Learn how to customize starter pools from your Fabric workspace settings for your analytics workloads.
 ms.reviewer: saravi
 ms.topic: how-to
-ms.date: 03/05/2026
+ms.date: 06/15/2026
 ai-usage: ai-assisted
 ---
 # Configure starter pools in Microsoft Fabric
@@ -11,6 +11,12 @@ ai-usage: ai-assisted
 Starter pools provide fast Spark session startup in Fabric. You can start Spark work quickly, instead of waiting for full cluster provisioning on each run.
 
 Starter pools use Medium nodes and support autoscaling based on workload demand. Default and maximum limits depend on your Fabric capacity SKU.
+
+> [!IMPORTANT]
+> Starter pools are a Microsoft-managed, best-effort optimization that reduces Spark startup time by using pre-warmed capacity. Starter pool capacity isn't guaranteed for every run. When pre-warmed capacity is available, sessions can typically start in seconds. When it isn't, Fabric starts the session using standard on-demand capacity, which can take longer.
+
+> [!TIP]
+> For workloads that need predictable, consistent session start - such as scheduled Spark job definitions or other latency-sensitive jobs - use a [custom live pool](custom-live-pools-overview.md). Custom live pools keep dedicated clusters warm on a schedule that you control (the active window), so sessions start consistently in approximately **5 seconds** during that window. Because the clusters are hydrated in advance, your environment libraries come preinstalled on the cluster, which removes per-session library personalization time.
 
 ## Prerequisites
 
@@ -66,6 +72,8 @@ The following table shows default and maximum starter pool node limits by SKU.
 | F512 | 512 | 1024 | Medium | 10 | 128 |
 | F1024 | 1024 | 2048 | Medium | 10 | 200 |
 | F2048 | 2048 | 4096 | Medium | 10 | 200 |
+| F4096 | 4096 | 8192 | Medium | 10 | 200 |
+| F8192 | 8192 | 16384 | Medium | 10 | 200 |
 
 ## Related content
 

@@ -29,6 +29,7 @@ For setup steps, supported functions, model and provider options, and end-to-end
 ### Fabric documentation
 
 - [Transform and enrich data with AI Functions](../ai-functions/overview.md) for setup, supported functions, and end-to-end examples
+- [Billing for AI Functions](../ai-functions/billing.md) for costs, spending, and runtime usage monitoring
 - [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) for fine-grained control over single API calls
 - [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) for distributed processing with Spark DataFrames
 - [Use Azure OpenAI with REST API](how-to-use-openai-via-rest-api.md) for direct REST API calls to the LLM endpoint

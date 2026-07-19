@@ -2,7 +2,7 @@
 title: Burstable Capacity
 description: Learn more about how burstable capacity is used and limited with SKU guardrails in Fabric Data Warehouse.
 ms.reviewer: brmyers
-ms.date: 03/11/2026
+ms.date: 06/15/2026
 ms.topic: concept-article
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
@@ -49,6 +49,8 @@ The limit (or guardrail) is a scale factor directly correlated to the [Fabric Ca
 | F512       | P4                     | 512                          | 1x - 12x               |
 | F1024      | P5                     | 1024                         | 1x - 12x               |
 | F2048      |                        | 2048                         | 1x - 12x               |
+| F4096      |                        | 4096                         | 1x - 6x                |
+| F8192      |                        | 8192                         | 1x - 3x                |
 
 Smaller SKU sizes are often used for dev/test scenarios or ad hoc workloads. The larger scale factor shown in the table gives more processing power that aligns with lower overall utilization typically found in those environments.
 

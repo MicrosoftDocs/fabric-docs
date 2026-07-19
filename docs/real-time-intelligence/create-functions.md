@@ -5,7 +5,7 @@ ms.reviewer: guregini
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
-ms.date: 02/25/2026
+ms.date: 06/15/2026
 ms.subservice: rti-eventhouse
 ms.search.form: product-kusto
 ---
@@ -62,6 +62,28 @@ The list includes:
 :::image type="content" source="media/create-functions/functions-list.png" alt-text="Screenshot of the list of stored functions." lightbox="media/create-functions/functions-list.png":::
 
 Left-clicking on a function in the list opens a read-only [preview version](#view-and-preview-a-stored-function) of the function. In the dropdown menu, you can also select **Show function** to open the preview version of the function, [edit, or delete](#edit-or-delete-a-stored-function) the function.
+
+## Organize functions with folders
+
+To create a subfolder or move to an existing folder:
+
+1. In the explorer pane, either:
+    * Right-click on the function and select **Move to folder** > **+ New folder**.    
+    :::image type="content" source="media/create-functions/create-function-folder.png" alt-text="Screenshot of the pop-up menu showing the option to create a new folder for the function.":::    
+    * Or, select the ellipsis (...) next to the specific function and select **Move to folder** > **+ New folder** or choose an existing folder.    
+    :::image type="content" source="media/create-functions/create-specific-function-folder.png" alt-text="Screenshot of the pop-up menu showing the option to move the function to an existing folder or create a new one.":::    
+1. To create a folder, enter a name for the folder and select **Create**. The function is moved to the new folder.    
+    :::image type="content" source="media/create-functions/functions-folder-pop-up.png" alt-text="Screenshot of the new folder being created.":::    
+1. To move more than one function, either enter another folder name or select the dropdown menu and check the boxes next to the functions you want to move to the same folder.    
+    :::image type="content" source="media/create-functions/multiple-functions-list.png" alt-text="Screenshot of the pop-up menu showing the option to move multiple functions to the same folder.":::    
+1. You can also move functions to an existing folder. To do so, select **Move to folder** and then select the folder you want to move the function to, or drag and drop the function into the folder.
+
+> [!NOTE]
+>
+> * If you delete a subfolder, the functions within the folder aren't deleted but are moved back to the parent folder.
+> * A subfolder is automatically deleted when there are no functions within the folder.
+> * Folders can be created per asset type and the name must be unique per asset type. For example, you can have a table folder and a functions folder with the same name, but you can't have two functions folders with the same name.
+
 
 ## View and preview a stored function
 

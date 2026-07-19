@@ -4,23 +4,23 @@ description: Learn about parameters for Data Factory in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.topic: concept-article
 ms.custom: pipelines
-ms.date: 12/18/2024
+ms.date: 06/17/2026
 ai-usage: ai-assisted
 ---
 
 # Parameters for Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
-This guide shows you how to use parameters in your Data Factory pipelines in Fabric. It’s a simple way to make your workflows more flexible and easier to manage.
+This article shows you how to use parameters in your Data Factory pipelines in Fabric so you can build flexible, reusable workflows.
 
-## How to use parameters, expressions, and functions in pipelines for Data Factory in Fabric
+## Use parameters, expressions, and functions in Data Factory pipelines
 
-This guide walks you through the basics of creating parameterized pipelines in Data Factory for Fabric, using clear examples along the way. By using parameters and dynamic expressions, you can save a lot of time and build flexible ETL (Extract, Transform, Load) or ELT (Extract, Load, Transform) solutions. These techniques cut down on hard coding and help you reuse objects and processes, which makes it easier to maintain your pipelines and roll out new features faster.
+This section walks you through the basics of creating parameterized pipelines in Data Factory for Fabric, using clear examples along the way. Parameters and dynamic expressions save time and let you build flexible Extract, Transform, Load (ETL) or Extract, Load, Transform (ELT) solutions. They reduce hard coding and let you reuse objects and processes, which makes pipelines easier to maintain and lets you ship new features faster.
 
 ## Parameter and expression concepts
 
-You can use parameters to pass external values into your pipelines. Once a parameter is set, it stays the same throughout the run and cannot be changed. By using parameters, you can reuse the same pipeline with different values each time. They can be used on their own or inside expressions, and those values can be either fixed or calculated when the pipeline runs.
+You can use parameters to pass external values into your pipelines. After you set a parameter, its value stays the same throughout the run. Parameters let you reuse the same pipeline with different values each time. You can use parameters on their own or inside expressions, with values that are either fixed or calculated when the pipeline runs.
 
-Expressions can go anywhere in a string value and always return another string value. For example, if you use @password, the pipeline treats password as a parameter. If the value is an expression, just remove the @ to get the actual content. And if you need a string that starts with @, just escape it by typing @@. Below are a few examples to show how this works in practice.
+Expressions can go anywhere in a string value and always return another string value. For example, if you use @password, the pipeline treats password as a parameter. If the value is an expression, remove the @ to get the actual content. To use a string that starts with @, escape it by typing @@. The following examples show how this works in practice.
 
 |Parameter value|Result|  
 |----------------|------------|  
@@ -29,11 +29,11 @@ Expressions can go anywhere in a string value and always return another string v
 |"\@\@"|A 1 character string that contains '\@' is returned.|  
 |" \@"|A 2 character string that contains ' \@' is returned.|
 
-Expressions can also appear inside strings, using a feature called *string interpolation* where expressions are wrapped in `@{ ... }`. For example, the following string includes parameter values and literal string values:
+Expressions can also appear inside strings through *string interpolation*, where you wrap expressions in `@{ ... }`. For example, the following string includes parameter values and literal string values:
 
 "First Name: @{pipeline().parameters.firstName} Last Name: @{pipeline().parameters.lastName}"
 
- Using string interpolation, the result is always a string. For example, if you defined `myNumber` as `42` and  `myString` as  `foo`:  
+ String interpolation always returns a string. For example, if you define `myNumber` as `42` and `myString` as `foo`:  
   
 |Parameter value|Result|  
 |----------------|------------|  
@@ -45,37 +45,37 @@ Expressions can also appear inside strings, using a feature called *string inter
 |"\@concat('Answer is: ', string(pipeline().parameters.myNumber))"| Returns the string `Answer is: 42`|  
 |"Answer is: \@\@{pipeline().parameters.myNumber}"| Returns the string `Answer is: @{pipeline().parameters.myNumber}`.|  
 
-## Examples of using parameters in expressions
+## Parameter expression examples
 
-### Creating and using parameters
+### Create and use parameters
 
-To create parameters, select the background of the pipeline editor canvas, and then the **Parameters** tab of the properties window at the bottom. Select the **+ New** button to add a new parameter to the pipeline, give it a name, a data type, and a default value:
+To create parameters, select the background of the pipeline editor canvas, and then select the **Parameters** tab of the properties window at the bottom. Select **+ New** to add a parameter to the pipeline, and give it a name, a data type, and a default value:
 
 :::image type="content" source="media/parameters/add-parameter.png" alt-text="Screenshot showing the Parameters editor on the properties pages for a pipeline.":::
 
-You can then use the parameter anywhere in your pipeline where dynamic content is supported. In this example, the parameter is used to dynamically provide the name of a Lakehouse data store on the **Source** tab of a copy activity's property pages.
+You can then use the parameter anywhere your pipeline supports dynamic content. In this example, the parameter dynamically provides the name of a lakehouse data store on the **Source** tab of a Copy activity's property pages.
 
 :::image type="content" source="media/parameters/use-dynamic-content.png" alt-text="Screenshot showing the Source tab of a copy activity's property pages, highlighting the Add dynamic content option.":::
 
-The **Add dynamic content** window is displayed, allowing you to specify any kind of dynamic content, including parameters, [system variables](expression-language.md#pipeline-scope-variables), [functions](expression-language.md#functions), or pipeline variables. In this example, the previously defined parameter is selected, and the dynamic content window is automatically populated with the correct expression to reference the parameter.
+The **Add dynamic content** window opens. Use it to specify any kind of dynamic content, including parameters, [system variables](expression-language.md#pipeline-scope-variables), [functions](expression-language.md#functions), or pipeline variables. In this example, you select the parameter you defined earlier, and the dynamic content window automatically populates with the correct expression to reference it.
 
 :::image type="content" source="media/parameters/select-pipeline-parameter.png" alt-text="Screenshot showing the Add dynamic content window with a pipeline parameter selected.":::
 
-### How to parameterize connections
+### Parameterize connections
 
-Parameterizing connections in pipelines requires use of the connection GUID that you wish to replace dynamically.
+To parameterize connections in pipelines, use the globally unique identifier (GUID) of the connection you want to replace dynamically.
 
 > [!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=90a72fa2-6dcd-4e4a-b046-68330ae95a8c]
 
-1. Before you can dynamically modify the connection in your pipeline, you must grab the GUID for the connection that you wish to set
-2. Go to Settings | Manage connections and gateways
-3. Find the name of the connection and click the ellipsis next to the connection name
-4. Select Settings and copy the Connection ID
-5. Use a string parameter to paste the GUID in that parameter for use in your dynamic expression
+1. Before you dynamically modify the connection in your pipeline, get the GUID of the connection you want to set.
+1. Go to **Settings** > **Manage connections and gateways**.
+1. Find the connection name and select the ellipsis (**...**) next to it.
+1. Select **Settings** and copy the **Connection ID**.
+1. Paste the GUID into a string parameter, and reference that parameter in your dynamic expression.
 
 ### Complex expression example
 
-The following example shows a complex example that references a deep subfield of activity output. To reference a pipeline parameter that evaluates to a subfield, use [] syntax instead of dot(.) operator (as with subfield1 and subfield2)
+The following expression references a deep subfield of activity output. To reference a pipeline parameter that evaluates to a subfield, use `[]` syntax instead of the dot (`.`) operator, as with `subfield1` and `subfield2`.
 
 `@activity('*activityName*').output.*subfield1*.*subfield2*[pipeline().parameters.*subfield3*].*subfield4*`
 
@@ -89,32 +89,32 @@ The dynamic content editor converts the previous content to the following expres
 
 `MYDATA`
 
-## Using functions and variables in expressions
+## Use functions and variables in expressions
 
 You can call functions and use variables within expressions. The following sections provide information about the functions that can be used in an expression.  
 
 ### Pipeline scope variables
 
-These system variables can be referenced anywhere in the pipeline JSON.
+You can reference these system variables anywhere in the pipeline JSON.
 
 | Variable Name | Description |
 | --- | --- |
-| @pipeline().DataFactory |Name of the data  or Synapse workspace the pipeline run is running in |
+| @pipeline().DataFactory |Name of the workspace where the pipeline run is running |
 | @pipeline().Pipeline |Name of the pipeline |
 | @pipeline().RunId |ID of the specific pipeline run |
 | @pipeline().TriggerId|ID of the trigger that invoked the pipeline |
 | @pipeline().TriggerName|Name of the trigger that invoked the pipeline |
-| @pipeline().TriggerTime|Time of the trigger run that invoked the pipeline. This is the time at which the trigger **actually** fired to invoke the pipeline run, and it may differ slightly from the trigger's scheduled time.  |
-| @pipeline().GroupId | ID of the group to which pipeline run belongs. In Microsoft Fabric, a 'group' refers to a collection of related resources that can be managed together. Groups are used to organize and control access to resources, making it easier to manage permissions and monitor activities across multiple pipelines. |
-| @pipeline()?.TriggeredByPipelineName | Name of the pipeline that triggers the pipeline run. Applicable when the pipeline run is triggered by an ExecutePipeline activity. Evaluate to _Null_ when used in other circumstances. Note the question mark after @pipeline() |
-| @pipeline()?.TriggeredByPipelineRunId | Run ID of the pipeline that triggers the pipeline run. Applicable when the pipeline run is triggered by an ExecutePipeline activity. Evaluate to _Null_ when used in other circumstances. Note the question mark after @pipeline() |
+| @pipeline().TriggerTime|Time of the trigger run that invoked the pipeline. This value is the time the trigger actually fired to invoke the pipeline run, and it might differ slightly from the trigger's scheduled time.  |
+| @pipeline().GroupId | ID of the group to which the pipeline run belongs. In Microsoft Fabric, a *group* is a collection of related resources that you manage together. Groups organize and control access to resources, which makes it easier to manage permissions and monitor activities across multiple pipelines. |
+| @pipeline()?.TriggeredByPipelineName | Name of the pipeline that triggers the pipeline run. Applies when an Execute Pipeline activity triggers the pipeline run. Evaluates to _Null_ in other cases. Note the question mark after `@pipeline()`. |
+| @pipeline()?.TriggeredByPipelineRunId | Run ID of the pipeline that triggers the pipeline run. Applies when an Execute Pipeline activity triggers the pipeline run. Evaluates to _Null_ in other cases. Note the question mark after `@pipeline()`. |
 
 >[!NOTE]
->Trigger-related date/time system variables (in both pipeline and trigger scopes) return UTC dates in ISO 8601 format, for example, `2017-06-01T22:20:00.4061448Z`.
+>Trigger-related date/time system variables (in both pipeline and trigger scopes) return Coordinated Universal Time (UTC) dates in ISO 8601 format, for example, `2017-06-01T22:20:00.4061448Z`.
 
-### String functions  
+### String functions
 
-To work with strings, you can use these string functions
+To work with strings, use these string functions
 and also some [collection functions](#collection-functions).
 String functions work only on strings.
 
@@ -135,8 +135,8 @@ String functions work only on strings.
 
 ### Collection functions
 
-To work with collections, generally arrays, strings,
-and sometimes, dictionaries, you can use these collection functions.
+To work with collections such as arrays, strings,
+and dictionaries, use these collection functions.
 
 | Collection function | Task |
 | ------------------- | ---- |
@@ -151,9 +151,9 @@ and sometimes, dictionaries, you can use these collection functions.
 | [take](expression-language.md#take) | Return items from the front of a collection. |
 | [union](expression-language.md#union) | Return a collection that has *all* the items from the specified collections. | 
 
-### Logical functions  
+### Logical functions
 
-These functions are useful inside conditions, they can be used to evaluate any type of logic.  
+Use these functions inside conditions to evaluate any type of logic.  
   
 | Logical comparison function | Task |
 | --------------------------- | ---- |
@@ -167,9 +167,9 @@ These functions are useful inside conditions, they can be used to evaluate any t
 | [not](expression-language.md#not) | Check whether an expression is false. |
 | [or](expression-language.md#or) | Check whether at least one expression is true. |
   
-### Conversion functions  
+### Conversion functions
 
- These functions are used to convert between each of the native types in the language:  
+ Use these functions to convert between each of the native types in the language:  
 -   string
 -   integer
 -   float
@@ -204,8 +204,8 @@ These functions are useful inside conditions, they can be used to evaluate any t
 | [xml](expression-language.md#xml) | Return the XML version for a string. |
 | [xpath](expression-language.md#xpath) | Check XML for nodes or values that match an XPath (XML Path Language) expression, and return the matching nodes or values. |
 
-### Math functions  
- These functions can be used for either types of numbers: **integers** and **floats**.  
+### Math functions
+ Use these functions with both types of numbers: **integers** and **floats**.  
 
 | Math function | Task |
 | ------------- | ---- |
@@ -219,7 +219,7 @@ These functions are useful inside conditions, they can be used to evaluate any t
 | [range](expression-language.md#range) | Return an integer array that starts from a specified integer. |
 | [sub](expression-language.md#sub) | Return the result from subtracting the second number from the first number. |
   
-### Date functions  
+### Date functions
 
 | Date or time function | Task |
 | --------------------- | ---- |
@@ -228,9 +228,9 @@ These functions are useful inside conditions, they can be used to evaluate any t
 | [addMinutes](expression-language.md#addMinutes) | Add a number of minutes to a timestamp. |
 | [addSeconds](expression-language.md#addSeconds) | Add a number of seconds to a timestamp. |
 | [addToTime](expression-language.md#addToTime) | Add a number of time units to a timestamp. See also [getFutureTime](expression-language.md#getFutureTime). |
-| [convertFromUtc](expression-language.md#convertFromUtc) | Convert a timestamp from Universal Time Coordinated (UTC) to the target time zone. |
+| [convertFromUtc](expression-language.md#convertFromUtc) | Convert a timestamp from Coordinated Universal Time (UTC) to the target time zone. |
 | [convertTimeZone](expression-language.md#convertTimeZone) | Convert a timestamp from the source time zone to the target time zone. |
-| [convertToUtc](expression-language.md#convertToUtc) | Convert a timestamp from the source time zone to Universal Time Coordinated (UTC). |
+| [convertToUtc](expression-language.md#convertToUtc) | Convert a timestamp from the source time zone to Coordinated Universal Time (UTC). |
 | [dayOfMonth](expression-language.md#dayOfMonth) | Return the day of the month component from a timestamp. |
 | [dayOfWeek](expression-language.md#dayOfWeek) | Return the day of the week component from a timestamp. |
 | [dayOfYear](expression-language.md#dayOfYear) | Return the day of the year component from a timestamp. |

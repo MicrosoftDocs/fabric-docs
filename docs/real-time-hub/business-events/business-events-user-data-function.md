@@ -162,13 +162,13 @@ def generate_sale_summary_event(
         "eventTimestamp": datetime.datetime.now(datetime.timezone.utc).isoformat() 
     } 
 
-    # Generate the business event 
+    # Publish the business event 
 
-    businessEventsClient.GenerateEvent( 
+    businessEventsClient.PublishEvent( 
 
-        type="sale.summary",  
+        type="Sales.SummaryGenerated",  
         event_data=event_data,  
-        version_id="V1" 
+        data_version="v1" 
     ) 
 
     # Close the connection 

@@ -45,14 +45,15 @@ For a detailed feature-by-feature comparison, see [Compare Azure Synapse Link an
 -->
 
 > [!IMPORTANT]
-> **Only the Azure Cosmos DB for NoSQL API has a migration path to Cosmos DB mirroring in Fabric.** The following APIs do not currently have a supported migration path:
+> **Only the Azure Cosmos DB for NoSQL API has a migration path to Cosmos DB mirroring in Fabric.** The following APIs and account types do not currently have a supported migration path:
 >
+> - Sovereign Cloud (Azure Government and Azure China)
 > - Azure Cosmos DB for MongoDB
 > - Azure Cosmos DB for Apache Gremlin
 > - Azure Cosmos DB for Table
 > - Azure Cosmos DB for Apache Cassandra
 >
-> If you use one of these APIs with Azure Synapse Link, there is no equivalent Cosmos DB mirroring experience available at this time. If you depend on Synapse Link for one of these APIs, continue using Azure Synapse Link until Cosmos DB mirroring support is announced.
+> If you use one of these APIs or account types with Azure Synapse Link, there is no equivalent Cosmos DB mirroring experience available at this time. If you depend on Synapse Link for one of these APIs, continue using Azure Synapse Link until Cosmos DB mirroring support is announced.
 
 ## Identify containers with Synapse Link enabled
 

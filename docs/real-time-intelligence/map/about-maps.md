@@ -4,7 +4,7 @@ description: Learn about map items in Fabric
 ms.reviewer: smunk
 author: sipa
 ms.author: sipa
-ms.date: 02/16/2025
+ms.date: 06/26/2026
 ms.topic: article
 ms.service: fabric
 ms.subservice: rti-core
@@ -38,6 +38,8 @@ Maps don't store data directly. Instead, they reference spatial data stored in o
 
 - **Lakehouses** for historical or batch spatial data (such as GeoJSON files)
 - **Eventhouses and KQL databases** for streaming or near‑real‑time data
+- **Ontology** for semantic map layers that bind spatial data to governed business entity types (such as customers, routes, or service areas)
+- **External geospatial web services** for raster imagery hosted outside Fabric (such as satellite imagery, elevation models, or weather overlays)
 
 This separation allows you to govern, secure, and reuse your data independently of how it's visualized.
 

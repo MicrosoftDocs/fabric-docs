@@ -22,7 +22,7 @@ Schema Registry in Fabric Real-Time Intelligence is currently in preview. This a
 
 - During preview, Schema Registry and the ability to create Event Schemasets is available in a limited set of regions. For the list of supported regions, see [Schema Registry region availability](schema-registry-region-availability.md).
 
-- You can't enable schema mode on existing eventstreams Schema support must be enabled when the Eventstream is created and can't be unset after creation. You can't retroactively add schema registration to an existing eventstream. To use registered schemas, you need to create a new Eventstream. You can't combine schema-enabled sources with nonschema sources in the same Eventstream
+- You can't enable schema mode on existing eventstreams. You must enable schema support when you create the Eventstream and can't unset it after creation. You can't retroactively add schema registration to an existing eventstream. To use registered schemas, you need to create a new Eventstream.
 - You can't combine schema-enabled sources with nonschema sources in the same Eventstream
 - A limited set of input sources are supported. During public preview, schema registration is only available for these input sources:
   - Custom Endpoint
@@ -34,6 +34,7 @@ Schema Registry in Fabric Real-Time Intelligence is currently in preview. This a
   - Derived Stream (another Eventstream)
 - No Schema Compatibility Enforcement. Schema compatibility isn't currently enforced. This means you can make changes to a schema that might break your pipelines. For now, you're responsible for ensuring schema updates don't negatively affect your data flows.
 - Only Avro Schema Format is Supported. Schema definitions can only be created using Avro schema format.
+- Decimal precision is limited to 28 digits. Messages containing decimal values with a precision greater than 28 digits are rejected during deserialization and aren't processed.
 - What Happens to Non-Conforming Events? When schema validation is enabled in Fabric Real-Time Intelligence (RTI), only events that conform to the registered schema are allowed to pass through. Events that don't match the expected schema, also called nonconforming events, are dropped to preserve data quality and integrity.
 
     During public preview, these nonconforming events aren't routed to a separate stream or storage location. Instead, errors related to dropped events are logged in Fabric Diagnostics, where you can monitor and investigate issues that arise.

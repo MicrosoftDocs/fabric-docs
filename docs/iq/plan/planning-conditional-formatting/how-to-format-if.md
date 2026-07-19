@@ -10,6 +10,8 @@ ms.topic: how-to
 
 When creating conditional formatting rules, you can choose from three **Format by** options that determine how formatting is applied. This article explains the configuration of rules in conditional formatting using IF conditions in detail.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Prerequisites
 
 * You have access to a planning sheet.

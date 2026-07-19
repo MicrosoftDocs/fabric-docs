@@ -61,7 +61,7 @@ spark.sql("""
 """)
 ```
 
-To maintain healthy file sizes, periodically run Delta optimization operations such as `OPTIMIZE`, especially for tables that receive frequent incremental inserts, updates, and deletes. These maintenance operations compact small files into appropriately sized ones, helping ensure the SQL analytics endpoint can process queries efficiently.
+To maintain healthy file sizes, periodically run Delta optimization operations such as `OPTIMIZE`, especially for tables that receive frequent incremental inserts, updates, and deletes. These maintenance operations compact small files into appropriately sized ones, helping ensure the SQL analytics endpoint can process queries efficiently. To optimize tables that need maintenance intelligently, use a data pipeline and the `sys.sp_get_table_health_metrics` T-SQL stored procedure to determine when a table needs the `OPTIMIZE` command. For a tutorial, see [Optimize Lakehouse tables based on health checks](../data-warehouse/tutorial-conditional-lakehouse-optimization.md).
 
 > [!NOTE]
 > For guidance on general maintenance of lakehouse tables, see [Run table maintenance from Lakehouse](../data-engineering/lakehouse-table-maintenance.md#run-table-maintenance-from-lakehouse).

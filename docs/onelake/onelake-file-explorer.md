@@ -47,9 +47,9 @@ Starting in version 1.0.13, the OneLake file explorer app notifies you when a ne
 - Windows File Explorer is case insensitive, while OneLake is case sensitive. You can create files with the same name but different cases in the OneLake service by using other tools, but Windows File Explorer only shows the oldest of these files.
 
 - If a file fails to sync due to a network issue, you have to trigger the sync to OneLake. To prompt the sync process, open the file and save it. Alternatively, you can trigger a modify event [using PowerShell](onelake-powershell.md) by executing this command: `(Get-Item -Path "<file_path>").LastWriteTimeUtc = Get-Date`
-- OneLake File Explorer doesn't support environments that require network proxy configurations. Attempts to launch or authenticate the application behind a proxy might result in connection failures or sign-in problems.
+- OneLake file explorer doesn't support environments that require network proxy configurations. Attempts to launch or authenticate the application behind a proxy might result in connection failures or sign-in problems.
   
-- OneLake File Explorer doesn't support syncing files marked as read-only. This limitation applies specifically to files that the user marks as read-only on their local machine. This behavior is by design to prevent conflicts with local file system permissions and to avoid unintended edits to protected content.
+- OneLake file explorer doesn't support syncing files marked as read-only. This limitation applies specifically to files that the user marks as read-only on their local machine. This behavior is by design to prevent conflicts with local file system permissions and to avoid unintended edits to protected content.
 
 ## Scenarios
 
@@ -156,7 +156,7 @@ To uninstall the app, search for OneLake in Windows. Select **Uninstall** in the
 
 ### Tenant setting enables access to OneLake file explorer
 
-Tenant admins can restrict access to OneLake file explorer for their organization in the [Microsoft Fabric admin portal](../admin/admin-center.md). When the setting is disabled, no one in your organization can start the OneLake file explorer app. If the application is already running and the tenant admin disables the setting, the application exits. Placeholders and any downloaded content remain on local machines, but users can't sync data to or from OneLake.
+Tenant admins can restrict access to OneLake file explorer for their organization in the [Fabric admin portal](../admin/admin-center.md). When the setting is disabled, no one in your organization can start the OneLake file explorer app. If the application is already running and the tenant admin disables the setting, the application exits. Placeholders and any downloaded content remain on local machines, but users can't sync data to or from OneLake.
 
 ## OneLake file explorer icons
 

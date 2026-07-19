@@ -1,5 +1,5 @@
 ---
-title: Troubleshoot Semantic Model Connection Issues in Plan (preview)
+title: Troubleshoot Semantic Model Connection Issues in Plan (Preview)
 description: Troubleshoot common semantic model connection issues in plan (preview).
 ms.date: 05/14/2026
 ms.topic: troubleshooting

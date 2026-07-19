@@ -1,4 +1,4 @@
----
+﻿---
 title: Audit and usage admin settings
 description: Learn how to configure Fabric audit and usage admin settings.
 author: msmimart
@@ -25,7 +25,7 @@ When this setting is enabled, content creator account information (such as user 
 
 Per-user data is enabled for usage metrics by default. 
 
-## Show user data in the Fabric Capacity Metrics app and reports
+## Show user data in the Microsoft Fabric Capacity Metrics app and reports
 
 When this setting is enabled, active user data, including names and email addresses, is displayed in the [Microsoft Fabric Capacity Metrics app and reports](../enterprise/metrics-app.md). This setting is enabled by default.
 

@@ -78,4 +78,5 @@ You can do this by:
 
 - [Conflict resolution](./conflict-resolution.md)
 - [Manually update after a failed update](./partial-update.md)
+- [Understand dependency binding in cross-workspace deployment](../cross-workspace-dependency-binding.md)
 - [Lifecycle management Frequently asked questions](../faq.yml)

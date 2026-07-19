@@ -10,7 +10,7 @@ ms.date: 01/27/2026
 ms.search.form: Eventstream connector private network support
 ---
 
-# Eventstream streaming connector virtual network and on-premises support guide (preview)
+# Eventstream streaming connector virtual network and on-premises support guide
 
 The streaming connector virtual network and on-premises support offers a secure, managed way for Eventstream to access streaming sources that are in private networks. This guide shows you how to use this feature to connect your private-network sources with Eventstream. You learn how to grant the necessary permissions, set up a virtual network, link your source network, create a data gateway for the streaming virtual network, and add your private network data source to Eventstream.
 
@@ -253,6 +253,7 @@ HTTP | Web v2
 Solace PubSub+ | Solace PubSub+
 SQL Server on VM CDC | SQL Server
 MySQL Database CDC | MySQL
+Oracle DB CDC | Oracle
 
 ## Finish the configuration and publish the eventstream
 

@@ -1,31 +1,32 @@
 ---
-title: What is Apache Airflow job?
+title: What is an Apache Airflow job?
 description: Learn about when to use Apache Airflow job, basic concepts, and supported regions.
 ms.topic: concept-article
-ms.custom: airflows
+ms.custom: airflows,references_regions
 ms.reviewer: noelleli
-ms.date: 10/06/2025
+ms.date: 06/17/2026
+ai-usage: ai-assisted
 ---
 
-# What is Apache Airflow Job?
+# What is an Apache Airflow job?
 
 [!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)] 
 
 Apache Airflow job is the next generation of Azure Data Factory's Workflow Orchestration Manager.
-It makes it easy to create and manage [Apache Airflow](https://airflow.apache.org) jobs, so you can run Directed Acyclic Graphs (DAGs) at scale without hassle. As part of Microsoft Fabric's Data Factory, it gives you a modern way to bring in, prepare, and transform data from all kinds of data sources—like databases, data warehouses, Lakehouse, real-time data, and more.
+It makes it easy to create and manage [Apache Airflow](https://airflow.apache.org) jobs, so you can run Directed Acyclic Graphs (DAGs) at scale without hassle. As part of Microsoft Fabric's Data Factory, it gives you a modern way to bring in, prepare, and transform data from all kinds of data sources, such as databases, data warehouses, Lakehouse, real-time data, and more.
 
 ## When to use Apache Airflow job?
 
-Apache Airflow jobs give you a managed service where you can build and run Python-based DAGs (Directed Acyclic Graphs) for workflow orchestration, without worrying about the setup behind the scenes. If you like working with Apache Airflow or prefer writing code, this option is a great fit. If you’d rather not write code, pipelines offer a simple, no-code way to handle data orchestration.
+Apache Airflow jobs give you a managed service where you can build and run Python-based DAGs for workflow orchestration, without worrying about the setup behind the scenes. If you like working with Apache Airflow or prefer writing code, this option is a great fit. If you'd rather not write code, pipelines offer a simple, no-code way to handle data orchestration.
 
-## Key Features
+## Key features
 
 Microsoft Fabric's hosted Apache Airflow job comes with various helpful features, including:
 
-| Key Features                                                                       | Apache Airflow Job in Fabric | Workflow Orchestration Manager in Azure Data Factory |
+| Key features                                                                       | Apache Airflow Job in Fabric | Workflow Orchestration Manager in Azure Data Factory |
 | ---------------------------------------------------------------------------------- | ------------------------ | ------------------------------------- |
 | Git sync                                                                           | Yes                      | Yes                                   |
-| Enable AKV (Azure Key Vault) as backend                                                              | Yes                      | Yes                                   |
+| Enable Azure Key Vault (AKV) as backend                                                              | Yes                      | Yes                                   |
 | Install private package as requirement                                             | Yes                      | Yes                                   |
 | Diagnostic logs and metrics                                                        | No                       | Yes                                   |
 | Blob Storage                                                                       | No                       | Yes                                   |
@@ -33,10 +34,10 @@ Microsoft Fabric's hosted Apache Airflow job comes with various helpful features
 | Autoscale for managing production workload execution spikes                       | Yes                      | Partial                               |
 | High Availability for mitigating outage/downtime                                   | Yes                      | No                                    |
 | Deferrable Operators for suspending idle operators and free up workers             | Yes                      | No                                    |
-| Pause and Resume TTL (Time to live)                                                               | Yes                      | No                                    |
-| SaaSified Experience - 10 secs to get started - Authoring DAGs - Fabric Free Trial | Yes                      | No                                    |
+| Pause and Resume time to live (TTL)                                                               | Yes                      | No                                    |
+| Managed SaaS experience - Fabric Free Trial | Yes                      | No                                    |
 
-## Region availability 
+## Region availability
 
 - Australia East
 - Australia Southeast
@@ -94,6 +95,6 @@ Microsoft Fabric's hosted Apache Airflow job comes with various helpful features
 > Changing the Apache Airflow version within an existing Apache Airflow job is currently not supported. If you need a different Apache Airflow version, create a new Apache Airflow job with the updated version you want. 
 
 
-## Related Content
+## Related content
 
 - Quickstart: [Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md).

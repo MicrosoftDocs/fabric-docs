@@ -1,8 +1,8 @@
-﻿---
+---
 title: Best practices for configuring your data agent
 description: Learn some best practices for how to configure and instruct your data agent.
-ms.author: jburchel
-author: jonburchel
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: midesa
 ms.topic: how-to
 ms.date: 08/15/2025

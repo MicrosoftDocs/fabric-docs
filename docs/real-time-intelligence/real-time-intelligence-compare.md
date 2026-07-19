@@ -3,7 +3,7 @@ title: Differences Between Real-Time Intelligence and Comparable Azure Solutions
 description: Discover the differences between Real-Time Intelligence and Azure solutions. Learn which streaming analytics platform best fits your needs.
 ms.reviewer: tzgitlin
 ms.topic: overview
-ms.date: 06/25/2025
+ms.date: 06/09/2026
 ms.update-cycle: 180-days
 ms.subservice: rti-core
 ms.collection: ce-skilling-ai-copilot
@@ -17,13 +17,13 @@ To get this value, organizations build real-time data streaming architectures th
 
 Real-Time Intelligence in Fabric gives organizations different ways to implement advanced analytics for streaming data. Microsoft Azure lets professional developers design and build architectures that need deep integration with other Azure services, end-to-end automation, and unified deployment. Real-Time Intelligence in Microsoft Fabric lets business users and citizen developers find data streams in their organization and build analytics solutions. With integration with Azure Event Hubs, Azure Event Grid, and Azure Data Explorer, Real-Time Intelligence extends Azure-based architectures into Microsoft Fabric and helps create new solutions with existing or new data sources. The following diagram shows both Azure platform as a service (PaaS) solution architecture and Real-Time Intelligence solution architecture for telemetry analytics in manufacturing and automotive organizations.
 
-Learn more about Real-Time Intelligence in [What is Real-Time Intelligence in Fabric?](overview.md).
+Learn more about Real-Time Intelligence in [What is Real-Time Intelligence in Fabric?](overview.md)
 
 :::image type="content" source="media/real-time-intelligence-compare/compare-azure-paas-real-time-intelligence-architecture.png" alt-text="Diagram that shows Azure PaaS solutions compared to Real-Time Intelligence architectures for telemetry analytics." lightbox="media/real-time-intelligence-compare/compare-azure-paas-real-time-intelligence-architecture.png":::
 
-In the past, organizations spent a lot of budget, time, and resources to develop, integrate, deploy, and manage disconnected cloud or on-premises products and isolated solutions. This led to complex architectures that are hard to operate and maintain. Many organizations hesitate to invest because of this complexity or because the costs seem too high for the return. Still, users consistently want real-time business insights from immediate, detailed data.
+In the past, organizations spent a lot of budget, time, and resources to develop, integrate, deploy, and manage disconnected cloud or on-premises products and isolated solutions. This approach led to complex architectures that are hard to operate and maintain. Many organizations hesitate to invest because of this complexity or because the costs seem too high for the return. Still, users consistently want real-time business insights from immediate, detailed data.
 
-Real-Time Intelligence changes this by using real-time capabilities in Fabric, so you get valuable, actionable insights from your first-party and third-party data right away. With Real-Time Intelligence, you get:
+Real-Time Intelligence changes this approach by using real-time capabilities in Fabric, so you get valuable, actionable insights from your first-party and third-party data right away. With Real-Time Intelligence, you get:
 
 - **A comprehensive SaaS offering**: A solution that helps you find insights from time-sensitive data, so you can ingest, process, query, visualize, and act on it in real time.
 - **A centralized hub for your dynamic data**: A unified place for all your event data in motion, making it easier to ingest, store, and curate detailed data from across your organization through the Real-Time Hub.

@@ -5,7 +5,7 @@ author: billmath
 ms.author: billmath
 ms.reviewer:
 ms.topic: how-to
-ms.date: 06/10/2025
+ms.date: 06/30/2026
 #customer intent: As a developer, I want to learn how to configure object-level security for imported semantic models, within the Power BI service, so that I can manage my content lifecycle.
 ---
 
@@ -15,8 +15,51 @@ Object-level security (OLS) enables model authors to secure specific tables or c
 
 ## Create a report that uses OLS
 
-Like row-level security (RLS), OLS is also defined within model roles. Currently, you can't create OLS definitions natively in Power BI Desktop.
-To create roles on **Power BI Desktop** semantic models, use [external tools](/power-bi/transform-model/desktop-external-tools) such as [Tabular Editor](https://tabulareditor.com).  
+Like row-level security (RLS), OLS is also defined within model roles. You can create OLS definitions using Tabular Model Definition Language (TMDL) view or external tools such as [Tabular Editor](https://tabulareditor.com).
+
+### Configure object-level security by using TMDL view
+
+TMDL view enables you to define OLS rules directly within your semantic model by using TMDL scripts, so you don't need external tools.
+
+1. Open TMDL view in your authoring environment.
+
+1. Create a new TMDL script tab and write a `createOrReplace` script that defines a role with the appropriate `metadataPermission` for the table or column you want to secure.
+
+   - **None**: OLS is enforced and the table or column is hidden from that role.
+   - **Read**: The table or column is visible to that role.
+
+To secure the entire table:
+
+```
+createOrReplace
+
+    role CategoriesOLS
+        modelPermission: read
+
+        tablePermission Customers
+            metadataPermission: none
+```
+
+To secure a specific column:
+
+```
+createOrReplace
+
+    role CategoriesOLS
+        modelPermission: read
+
+        tablePermission Customers
+            columnPermission Address
+                metadataPermission: none
+```
+
+1. Use the **Preview** button before applying to review the changes that are made to the semantic model.
+
+1. Select the **Apply** button to execute the TMDL script and apply the role definition to the semantic model.
+
+1. Publish your semantic model to the Power BI service.
+
+1. In the Power BI service, select the **More options (...)** menu for the semantic model. Select the **Security** page and assign members or groups to their appropriate roles.
 
 ### Configure object-level security using tabular editor
 

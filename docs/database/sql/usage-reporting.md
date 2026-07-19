@@ -2,7 +2,7 @@
 title: Billing and Utilization Reporting
 description: Understand what customers can expect from the metrics app experience for SQL database in Fabric.
 ms.reviewer: amapatil
-ms.date: 03/30/2026
+ms.date: 06/15/2026
 ms.topic: concept-article
 ms.search.form: SQL database Billing and Utilization, Databases Billing and Utilization
 ---
@@ -93,6 +93,8 @@ Reference this for Fabric SKU sizing estimations for SQL database in Fabric. For
 | F512   | 512     | 196.096  |
 | F1024  | 1024    | 392.192  |
 | F2048  | 2048    | 784.384  |
+| F4096  | 4096    | 1568.768 |
+| F8192  | 8192    | 3137.536 |
 
 ### Compute usage reporting
 

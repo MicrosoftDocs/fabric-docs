@@ -1,8 +1,8 @@
 ---
 title: Auditing data agent interactions in Microsoft Purview (preview)
 description: Learn how to use DSPM for AI to govern AI interactions in Data Agent.
-ms.author: jburchel
-author: jonburchel
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: mayurjain
 ms.topic: how-to
 ms.date: 04/28/2026
@@ -23,7 +23,7 @@ Ensure the following configurations are enabled before using audit logging:
 
 ### 1. Enable Purview Audit
 - From DSPM for AI (classic) > Overview, in the Get Started section, look to see if auditing is on for your tenant. If not, select Activate Microsoft Purview Audit.
-For information on enabling audit, see [Enable Audit Log](https://learn.microsoft.com/purview/audit-log-enable-disable)
+For information on enabling audit, see [Enable Audit Log](/purview/audit-log-enable-disable).
 
 ### 2. Enable DSPM for AI Policy
 - In Microsoft Purview:

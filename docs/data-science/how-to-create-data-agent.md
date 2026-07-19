@@ -1,8 +1,8 @@
-﻿---
+---
 title: Create a Fabric data agent
 description: Learn how to create a Fabric data agent.
-ms.author: jburchel
-author: jonburchel
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: amjafari
 ms.topic: how-to
 ms.date: 05/20/2026
@@ -29,8 +29,6 @@ You don't need to create or supply an Azure OpenAI key or an access token to use
 - Service principals and API tokens aren't required for the in-product chat experience. Any automation with service principals is a separate scenario and isn't covered here.
 
 ## Security and governance
-
-Fabric data agents honor Microsoft Purview governance policies. When Purview policies restrict access to a data source (for example, through access controls or sensitivity labels), the agent respects those restrictions when processing user queries.
 
 Workspace outbound access protection applies to data agent outbound requests and is enforced at the workspace level. When enabled, outbound requests from data agents are subject to the workspace's data connection rules, and administrators control which external endpoints agents are permitted to reach. For more information, see [Workspace outbound access protection for Data Agent](../security/workspace-outbound-access-protection-data-agent.md) (preview).
 

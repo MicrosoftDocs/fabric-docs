@@ -3,7 +3,7 @@ title: Rayfin CLI reference
 description: Complete command reference for the Rayfin CLI, including project scaffolding, remote deployment, and configuration management.
 ms.reviewer: mksuni
 ms.topic: reference
-ms.date: 06/02/2026
+ms.date: 06/06/2026
 ai-usage: ai-assisted
 ---
 
@@ -49,11 +49,11 @@ Use this table to find the right command quickly.
 
 | Command | Use it to |
 | --- | --- |
-| [`rayfin init [directory]`](#rayfin-init-directory) | Create or configure a Rayfin project. |
-| [`rayfin up`](#rayfin-up) | Deploy the app to Fabric and manage remote deployments. |
-| [`rayfin env`](#rayfin-env) | Generate framework-specific environment files from `rayfin/.env`. |
-| [`rayfin login`](#rayfin-login) | Sign in to the Rayfin platform. |
-| [`rayfin logout`](#rayfin-logout) | Sign out and clear cached credentials. |
+| [`npx rayfin init [directory]`](#rayfin-init-directory) | Create or configure a Rayfin project. |
+| [`npx rayfin up`](#rayfin-up) | Deploy the app to Fabric and manage remote deployments. |
+| [`npx rayfin env`](#rayfin-env) | Generate framework-specific environment files from `rayfin/.env`. |
+| [`npx rayfin login`](#rayfin-login) | Sign in to the Rayfin platform. |
+| [`npx rayfin logout`](#rayfin-logout) | Sign out and clear cached credentials. |
 
 ## Create or configure a project
 
@@ -139,11 +139,11 @@ npx rayfin up --workspace-id 00000000-0000-0000-0000-000000000000 --yes
 
 | Subcommand | Description |
 | --- | --- |
-| `rayfin up db apply` | Generate and apply DAB configuration to the remote Rayfin item workload endpoint. |
-| `rayfin up staticapp deploy` | Build, package, and deploy static content to the remote Rayfin item. |
-| `rayfin up status` | Show the current deployment status. |
-| `rayfin up list` | List all Fabric deployments recorded for the project. |
-| `rayfin up switch [workspace]` | Switch the active Fabric deployment and rewrite `rayfin/.env`. |
+| `npx rayfin up db apply` | Generate and apply DAB configuration to the remote Rayfin item workload endpoint. |
+| `npx rayfin up staticapp deploy` | Build, package, and deploy static content to the remote Rayfin item. |
+| `npx rayfin up status` | Show the current deployment status. |
+| `npx rayfin up list` | List all Fabric deployments recorded for the project. |
+| `npx rayfin up switch [workspace]` | Switch the active Fabric deployment and rewrite `rayfin/.env`. |
 
 ### `rayfin up db apply`
 
@@ -318,7 +318,7 @@ npx rayfin login --select
 
 | Subcommand | Description |
 | --- | --- |
-| `rayfin login status` | Display the current authentication status. |
+| `npx rayfin login status` | Display the current authentication status. |
 
 ### `rayfin login status`
 

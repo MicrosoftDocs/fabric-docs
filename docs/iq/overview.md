@@ -1,7 +1,7 @@
 ---
 title: What is Fabric IQ?
 description: Learn about Fabric IQ, part of Microsoft IQ and a workload in Microsoft Fabric.
-ms.date: 05/26/2026
+ms.date: 07/08/2026
 ms.topic: overview
 ai-usage: ai-assisted
 ---
@@ -69,7 +69,7 @@ The following table lists all the items contained in the IQ (preview) workload:
 | Plan (preview) | Collaborate on planning, forecasting, and reporting from a single data foundation without switching tools. Use plan to bring together business planning, analytics, and data management in one no-code experience. | [What is plan (preview)?](plan/overview.md) |
 | Graph | Store and query connected data with nodes, edges, and traversals. Use Graph when relationship-heavy questions (like impact chains, dependencies, and shortest paths) drive your decisions. Graph is integrated with the ontology (preview) item for a visual representation of business concepts. <br><br>*Also part of the Real-Time Intelligence workload.* | [Graph in Microsoft Fabric overview (preview)](../graph/overview.md) |
 | Data agent | Create virtual analysts that connect to your Fabric data sources and answer natural language questions for a specific domain. Use data agents to give users a tailored Q&A experience grounded in semantic models and ontologies, publishable across Microsoft 365, Foundry, Copilot Studio, and custom apps. <br><br>*Also part of the Data Science workload.* | [Fabric data agent concepts](../data-science/concept-data-agent.md) |
-| Operations agent (preview) | Monitor real-time data and recommend business actions with an AI agent that reasons across your business concepts. Use operations agents to detect anomalies and trigger governed responses on live data. <br><br>*Also part of the Real-Time Intelligence workload.* | [Create and configure operations agents](../real-time-intelligence/operations-agent.md) |
+| Operations agent | Monitor real-time data and recommend business actions with an AI agent that reasons across your business concepts. Use operations agents to detect anomalies and trigger governed responses on live data. <br><br>*Also part of the Real-Time Intelligence workload.* | [Create and configure operations agents](../real-time-intelligence/operations-agent.md) |
 
 >[!NOTE]
 > OneLake is the data foundation for all Microsoft Fabric items. Though OneLake isn't explicitly included as an item in the IQ workload, all items in the workload rely on OneLake data tables and interact with them natively.

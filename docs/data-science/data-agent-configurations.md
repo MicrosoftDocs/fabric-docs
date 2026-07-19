@@ -1,8 +1,8 @@
-﻿---
+---
 title: Data agent configurations
 description: Overview of the various configurations for the data agent.
-ms.author: jburchel
-author: jonburchel
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: midesa
 ms.topic: concept-article
 ms.date: 12/2/2025

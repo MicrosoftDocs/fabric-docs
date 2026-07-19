@@ -13,7 +13,7 @@ ms.reviewer:  # Product team ms alias(es)
 
 # Assign variables to shortcuts
 
-Fabric lifecycle management tools allow for the simple collaboration and continuous development of analytical solutions across multiple environments like testing and production. To lean more about these tools and processes see: [Introduction to CI/CD in Microsoft Fabric](../cicd/cicd-overview.md)
+Fabric lifecycle management tools allow for the simple collaboration and continuous development of analytical solutions across multiple environments like testing and production. To lean more about these tools and processes see: [Introduction to CI/CD in Fabric](../cicd/cicd-overview.md)
 
 When deploying solutions across environments, you may want to configure properties that are unique to each environment so your testing environment points to test data and your production environment points to production data. Workspace variables make this possible.
 

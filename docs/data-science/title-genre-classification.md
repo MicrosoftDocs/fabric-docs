@@ -5,13 +5,13 @@ ms.author: lagayhar
 ms.reviewer: ruxu
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
-ms.date: 04/16/2025
+ms.date: 06/30/2026
 #customer intent: As a data scientist, I want to build a text classification model so I can predict a category based on a single attribute.
 ---
 
 # Tutorial: Create, evaluate, and score a text classification model
 
-This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow for a text classification model, in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario uses both Word2vec natural language processing (NLP), and logistic regression, on Spark, to determine the genre of a book from the British Library book dataset. The determination is solely based on the title of the book.
+This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow for a text classification model, in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario uses both Word2vec natural language processing (NLP) and logistic regression on Spark to determine the genre of a book from the British Library book dataset. The determination is solely based on the title of the book.
 
 This tutorial covers these steps:
 

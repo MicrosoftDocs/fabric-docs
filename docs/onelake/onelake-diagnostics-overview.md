@@ -11,7 +11,7 @@ ms.date: 01/12/2026
 
 # OneLake diagnostics
 
-OneLake diagnostics provides end-to-end visibility into how data is accessed and used across your Microsoft Fabric environment. It enables organizations to answer critical questions like "who accessed what, when, and how," supporting data governance, operational insight, and compliance reporting.
+OneLake diagnostics provides end-to-end visibility into how data is accessed and used across your Fabric environment. It enables organizations to answer critical questions like "who accessed what, when, and how," supporting data governance, operational insight, and compliance reporting.
 
 When you enable OneLake diagnostics at the workspace level, it streams data access events as JSON logs into a lakehouse of your choice within the same capacity. You can transform these logs into analytics-ready Delta tables, so your teams can build dashboards and reports that track usage patterns, top-accessed items, and trends over time.
 
@@ -27,9 +27,9 @@ Diagnostic events are captured for both Fabric and non-Fabric sources. For acces
 
 ## Example scenarios supported by OneLake diagnostics
 
-- Security investigation: Track which users accessed sensitive datasets, when, and from where to identify unauthorized access attempts or unusual patterns.
+- Security investigation: Track which users accessed sensitive semantic models, when, and from where to identify unauthorized access attempts or unusual patterns.
 - Performance troubleshooting: Diagnose latency or failure issues by correlating diagnostic events with user actions or system interactions.
-- Usage analytics and optimization: Understand which datasets are most frequently accessed, by whom, and how often to support data governance and resource optimization.
+- Usage analytics and optimization: Understand which semantic models are most frequently accessed, by whom, and how often to support data governance and resource optimization.
 - Integration monitoring: Monitor external systems interacting with OneLake (via APIs or connectors), ensuring integrations are functioning as expected and diagnosing issues when they arise.
 
 ## Configure OneLake diagnostics

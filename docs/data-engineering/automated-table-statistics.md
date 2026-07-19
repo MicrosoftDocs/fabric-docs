@@ -97,6 +97,14 @@ spark.conf.set("spark.microsoft.delta.stats.injection.enabled", "false")
 > [!NOTE]
 > Delta log statistics collection (`spark.databricks.delta.stats.collect`) must also be enabled (default: true).
 
+> [!IMPORTANT]
+> If you enable [deletion vectors](delta-lake-deletion-vectors.md) on a table, disable statistics injection for that table. On tables that use deletion vectors with frequent updates or deletes, the extended statistics can become inaccurate and cause Spark to underestimate the table size. When this happens, the optimizer might choose a broadcast join that isn't appropriate, which can cause queries to fail. To prevent this behavior, disable statistics injection so the optimizer doesn't use the injected statistics:
+>
+> - Session scope: set `spark.microsoft.delta.stats.injection.enabled` to `false`.
+> - Table scope: set the `delta.stats.extended.inject` table property to `false`.
+>
+> You can keep statistics collection enabled. For tables that use deletion vectors, only disable injection into the optimizer.
+
 ### Table properties (override session config)
 
 Table properties let you control statistics collection on individual tables, overriding session settings.
@@ -270,6 +278,7 @@ It’s important to understand the current limitations of Fabric’s automated s
 - Updates from other engines aren't aggregated automatically.
 - Only the first 32 columns are included (including nested columns).
 - Deletes and updates can make statistics stale.
+- When deletion vectors are enabled, extended statistics can become inaccurate on tables with frequent updates or deletes, which might cause broadcast-join planning regressions. Disable statistics injection on these tables to avoid query failures.
 - Recompute requires a rewrite or statistics API operation.
 - Statistics injection doesn't apply to nested columns.
 - In some workloads, stale or incomplete stats can lead to regressions.

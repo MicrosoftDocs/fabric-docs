@@ -1,7 +1,7 @@
 ---
 title: "Create a SQL database with the REST API"
 description: Learn how to deploy a new SQL database in Microsoft Fabric with the REST API.
-ms.reviewer: dlevy, imotiwala
+ms.reviewer: dlevy, sukkaur
 ms.date: 02/19/2026
 ms.topic: how-to
 ms.search.form: Develop and run queries in SQL editor

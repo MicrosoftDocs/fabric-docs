@@ -3,7 +3,7 @@ title: Refresh Materialized Lake Views in a Lakehouse
 description: Learn how to refresh a materialized lake view in a lakehouse in Microsoft Fabric.
 ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: how-to
-ms.date: 05/21/2026
+ms.date: 06/08/2026
 # customer intent: As a data engineer, I want to refresh materialized lake views in a lakehouse so that I can ensure that the data is up to date and optimize query performance.
 ---
 
@@ -123,15 +123,17 @@ Incremental refresh works when your materialized lake view definition uses only 
 
 | SQL Construct | Remark |
 |---|---|
-| SELECT expression | Deterministic built-in functions and expressions are supported. Not supported for incremental refresh: aggregate functions (`SUM()`, `COUNT()`, `AVG()`, `MIN()`, `MAX()`, `STDDEV()`, etc.), `GROUP BY`, `DISTINCT`, window functions, and non-deterministic functions such as `rand()`, `uuid()`, `current_timestamp()`. |
+| SELECT expression | Deterministic built-in functions and expressions are supported. Non-deterministic functions such as `rand()`, `uuid()`, and `current_timestamp()` aren't supported. `DISTINCT` and window functions aren't supported.|
 | FROM | Supports Delta tables and materialized lake views. Subqueries and CTEs work if they use only the supported clauses. |
 | WHERE | Only deterministic built-in functions are supported. |
 | INNER JOIN | Supported. |
 | LEFT OUTER JOIN / LEFT SEMI JOIN | Supported. Incremental refresh works only if the right-side table remains unchanged during the refresh cycle. Any change to the right-side table triggers a full refresh. |
+| GROUP BY / aggregates | Supported with conditions. Use of **Aggregates** (`AVG()`, `MIN()`, `MAX()`, `STDDEV()`, etc.) require that every source table is partitioned and that partition column is included in the `GROUP BY` clause of the MLV query—this lets Fabric incrementally recompute only the affected partitions. **`SUM()` and `COUNT()` (without DISTINCT)** are a **special case**: they support incremental refresh without the partitioning requirement. <br> Mixing other aggregate functions with `SUM()`/`COUNT()` in the same query (for example, `SELECT SUM(amount), AVG(price) ...`) requires the partitioning condition for the whole query; otherwise Fabric falls back to full refresh. `GROUP BY` columns must appear in the `SELECT` list.|
 | UNION ALL | Supported. |
 | WITH | Common table expressions (CTEs) if they use only supported clauses. |
 | Subqueries in expressions | Subqueries within SELECT or WHERE expressions (such as scalar subqueries or `EXISTS`) trigger a full refresh if any referenced table has changes. |
 | Data quality constraints | Only deterministic built-in functions are supported in constraints. |
+
 
 
 > [!NOTE]

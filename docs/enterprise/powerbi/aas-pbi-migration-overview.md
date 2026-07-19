@@ -201,7 +201,7 @@ To undo the rebind and revert reports back to querying model data in Azure Analy
 
 After you've verified a successful migration, you can **pause** your Azure Analysis Services server either in the Azure portal or by using the Azure Analysis Services REST API.
 
-If your server remains started after youâ€™ve enabled server redirection, existing Azure Analysis Services models can still be queried by setting the **AsAzureRedirection** connection string property to **Disabled**.
+If your server remains started after you've enabled server redirection, existing Azure Analysis Services models can still be queried by setting the **AsAzureRedirection** connection string property to **Disabled**.
 
 ## Community
 

@@ -1,9 +1,7 @@
 ---
 title: "Troubleshoot Fabric Mirrored Databases From SQL Server"
 description: Troubleshooting mirrored databases From SQL Server in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: ajayj, anagha-todalbagi
+ms.reviewer: nanikolic, wiassaf, anagha-todalbagi
 ms.date: 04/06/2026
 ms.topic: troubleshooting
 ---

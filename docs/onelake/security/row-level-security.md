@@ -81,7 +81,7 @@ The maximum number of characters in a row-level security rule is 1000.
 
 | Placeholder | Description |
 | ----------- | ---------- |
-| {schema_name} | The name of the schema where {table_name} is located. If the artifact supports schemas, then {schema_name} is required. |
+| {schema_name} | The name of the schema where {table_name} is located. If the item supports schemas, then {schema_name} is required. |
 | {table_name} | The name of the table that the RLS predicate gets applied to. This value must be an exact match with the name of the table, or the RLS results in no rows being shown. |
 | {column_level_boolean} | A Boolean statement containing the following components:<br><br>* Column name: The name of a column in {table_name} as specified in the Delta log schema. Column names can be formatted either as {column_name} or {table_name}.{column_name}.<br>* Operator: One of the [Supported operators](#supported-operators) that evaluates the column name and value to a Boolean value.<br>* Value: A static value or set of values to be evaluated against.<br><br>You can have one or more Boolean statements separated by AND or OR. |
 

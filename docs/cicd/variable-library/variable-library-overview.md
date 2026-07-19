@@ -61,6 +61,7 @@ The following items support the variable library:
 - [Dataflow Gen 2](../../data-factory/dataflow-gen2-variable-library-integration.md)
 - [Copy job](../../data-factory/cicd-copy-job.md)
 - [User data functions](../../data-engineering/user-data-functions/python-programming-model.md#get-variables-from-fabric-variable-libraries)
+- [Plan (preview)](../../iq/plan/overview.md)
 
 ## Naming conventions
 The name of variable library item itself must follow these conventions:

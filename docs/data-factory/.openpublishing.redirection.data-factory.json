@@ -229,6 +229,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/pipeline-canvas-experience.md",
+        "redirect_url": "/fabric/data-factory/pipeline-overview",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/known-issue-failed-to-publish-dataflow-gen2.md",
         "redirect_url": "/fabric/get-started/known-issues/known-issue-598-failed-to-publish-dataflow-gen2",
         "redirect_document_id": false

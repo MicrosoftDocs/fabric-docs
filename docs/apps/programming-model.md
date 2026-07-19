@@ -2,14 +2,14 @@
 title: Programming model overview
 description: Learn about the Fabric Apps programming model, including TypeScript decorators, schema generation, and how data models become production-ready APIs.
 ms.reviewer: mksuni
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 06/02/2026
 ai-usage: ai-assisted
 ---
 
 # Programming model overview
 
-Rayfin SDK uses a decorator-driven programming model where you define your data schema once in TypeScript and automatically receive production-ready APIs, type-safe clients, and infrastructure.
+[Rayfin SDK](/javascript/api/fabric-apps-sdk-javascript/rayfin-overview) uses a decorator-driven programming model where you define your data schema once in TypeScript and automatically receive production-ready APIs, type-safe clients, and infrastructure.
 
 ## Key concepts
 

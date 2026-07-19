@@ -1,7 +1,7 @@
 ---
 title: Limitations of Mirroring for SQL database
 description: "Details on the limitations of mirroring for SQL database in Fabric."
-ms.reviewer: nzagorac, imotiwala, ajayj
+ms.reviewer: nzagorac, nanikolic
 ms.date: 02/24/2026
 ms.topic: concept-article
 ---

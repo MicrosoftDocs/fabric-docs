@@ -48,7 +48,7 @@ The Monitoring hub displays the following status values for graph refresh jobs:
 If your graph refresh fails or produces unexpected results, try the following steps:
 
 - **Verify source data**: Confirm that the source tables in your lakehouse contain data and are accessible.
-- **Check node and edge configurations**: Ensure that the mapping tables, ID columns, and foreign key columns are configured correctly in your graph model.
+- **Check node and edge configurations**: Ensure that the source tables, key columns, and foreign key columns are configured correctly in your graph model.
 - **Review permissions**: Confirm that you have the appropriate workspace permissions to access the underlying lakehouse data.
 - **Reload the graph**: Select **Save** in the graph model editor to reload the graph and apply any changes to the model or underlying data.
 

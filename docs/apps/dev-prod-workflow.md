@@ -23,7 +23,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- A Microsoft Fabric account
+- A Fabric account
 - Node.js installed locally.
 - The Rayfin CLI available through `npx rayfin`. For details, see the [Rayfin CLI reference](cli-reference.md).
 

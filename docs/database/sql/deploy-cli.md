@@ -1,7 +1,7 @@
 ---
 title: Create a SQL database with the Fabric CLI
 description: Learn how to deploy a new SQL database in Microsoft Fabric using Fabric CLI.
-ms.reviewer: sukkaur, imotiwala
+ms.reviewer: sukkaur
 ms.date: 02/19/2025
 ms.topic: how-to
 ms.search.form: Develop and run queries in SQL editor

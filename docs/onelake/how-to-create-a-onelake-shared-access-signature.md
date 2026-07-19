@@ -23,7 +23,7 @@ Creating a OneLake SAS is similar to creating an [Azure Storage user-delegated S
 
 ## Required permissions
 
-Requesting a user delegation key is a tenant-level operation in Microsoft Fabric. The user or security principal who requests a user delegation key must have at least read permissions in one workspace in the Fabric tenant. The requesting user's identity is used to authenticate the SAS, so the user must have permission to the data that they grant the SAS access to.  
+Requesting a user delegation key is a tenant-level operation in Fabric. The user or security principal who requests a user delegation key must have at least read permissions in one workspace in the Fabric tenant. The requesting user's identity is used to authenticate the SAS, so the user must have permission to the data that they grant the SAS access to.  
 
 ## Acquire an OAuth 2.0 token
 

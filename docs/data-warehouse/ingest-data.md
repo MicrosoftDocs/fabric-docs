@@ -1,8 +1,8 @@
 ---
 title: Ingest Data into the Warehouse
 description: Learn about the features and methods to ingest data into your warehouse in Microsoft Fabric.
-ms.reviewer: procha, fresantos
-ms.date: 05/01/2026
+ms.reviewer: procha, fresantos, jovanpop
+ms.date: 07/02/2026
 ms.topic: concept-article
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
 ---
@@ -12,17 +12,21 @@ ms.search.form: Ingesting data # This article's title should not change. If so, 
 
  [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] provides built-in data ingestion tools. Use these tools to ingest data into warehouses at scale by using code-free or code-rich experiences.
 
-### Choose a data ingestion tool
+## Choose a data ingestion tool
 
 Choose a data ingestion option based on the following criteria: 
 
 - Use the **COPY (Transact-SQL)** statement for code-rich data ingestion operations. It provides the highest data ingestion throughput. Use it when you need to add data ingestion as part of your Transact-SQL logic. 
     - To get started, see [Ingest data using the COPY statement](ingest-data-copy.md).
-    - The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] also supports the traditional `BULK INSERT` statement, which is a synonym for `COPY INTO` with classic loading options.
+    - The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] also supports the traditional `BULK INSERT` statement for compatibility. In Fabric Data Warehouse, this statement maps to `COPY INTO` behavior with classic loading options.
     - The `COPY` statement in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports data sources from Azure storage accounts and OneLake lakehouse folders.
+- Use **BCP API (Preview)** for direct client-side ingestion when data is in your application tier and you can't stage files first.
+   - To get started, see [Ingest data using BCP API (Preview)](ingest-data-bulk-copy.md).
+   - BCP API supports bcp.exe scripts and application APIs such as C# `SqlBulkCopy` and Java `SQLServerBulkCopy`.
+   - For highest-throughput file-based ingestion, prefer `COPY INTO` whenever staging is possible.
 - Use **pipelines** for code-free or low-code, robust data ingestion workflows that run repeatedly, on a schedule, or that involve large volumes of data. 
-    - To get started, see [Ingest data into your Warehouse using pipelines](ingest-data-pipelines.md).
-    - By using pipelines, you can orchestrate robust workflows for a full Extract, Transform, Load (ETL) experience. This experience includes activities to help prepare the destination environment, run custom Transact-SQL statements, perform lookups, or copy data from a source to a destination. 
+   - To get started, see [Ingest data into your warehouse using pipelines](ingest-data-pipelines.md).
+   - By using pipelines, you can orchestrate robust workflows for a full Extract, Transform, Load (ETL) experience. This experience includes activities to help prepare the destination environment, run custom Transact-SQL statements, perform lookups, or copy data from a source to a destination. 
 - Use **dataflows** for a code-free experience that allows custom transformations to source data before ingestion. 
     - To get started, see [Ingest data using a dataflow](../data-factory/create-first-dataflow-gen2.md).
     - These transformations include (but aren't limited to) changing data types, adding or removing columns, or using functions to produce calculated columns.
@@ -55,9 +59,11 @@ WHERE s.Region = 'West region';
 ```
 
 > [!NOTE]
-> Reading data with `OPENROWSET` can be slower than querying data from a table. If you plan to access the same external data repeatedly, consider ingesting it into a dedicated table to improve performance and query efficiency.
+> Reading data by using `OPENROWSET` can be slower than querying data from a table. If you plan to access the same external data repeatedly, consider ingesting it into a dedicated table to improve performance and query efficiency.
 
 The [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true) statement currently supports the CSV, JSONL, and PARQUET file formats. For data sources, currently Azure Data Lake Storage (ADLS) Gen2 and Azure Blob Storage are supported.
+
+For direct client-side ingestion scenarios, [BCP API (Preview)](ingest-data-bulk-copy.md) supports tools and APIs such as bcp.exe, C# `SqlBulkCopy`, and Java `SQLServerBulkCopy` over SQL connections without staging files first.
 
 **Pipelines** and **dataflows** support a wide variety of data sources and data formats. For more information, see [Pipelines](ingest-data-pipelines.md) and [Dataflows](../data-factory/dataflows-gen2-overview.md).
 
@@ -74,31 +80,31 @@ SELECT * FROM MyLakehouse.dbo.MyLakehouseTable;
 
 - Avoid ingesting data by using singleton `INSERT` statements, as this approach causes poor performance on queries and updates. If you use singleton `INSERT` statements for data ingestion consecutively, create a new table by using `CREATE TABLE AS SELECT (CTAS)` or `INSERT...SELECT` patterns, drop the original table, and then create your table again from the table you created by using `CREATE TABLE AS SELECT (CTAS)`.
   - Dropping your existing table impacts your semantic model, including any custom measures or customizations you might have made to the semantic model.
-- When working with external data on files, we recommend that files are at least 4 MB in size.
+- When working with external data on files, ensure files are at least 4 MB in size.
 - For large compressed CSV files, consider splitting your file into multiple files.
 - Azure Data Lake Storage (ADLS) Gen2 offers better performance than Azure Blob Storage (legacy). Consider using an ADLS Gen2 account whenever possible. 
 - For pipelines that run frequently, consider isolating your Azure storage account from other services that could access the same files at the same time.
 - Explicit transactions allow you to group multiple data changes together so that they're only visible when reading one or more tables when the transaction is fully committed. You also have the ability to roll back the transaction if any of the changes fail.
-- If a SELECT is within a transaction, and was preceded by data insertions, the [automatically generated statistics](statistics.md) can be inaccurate after a rollback. Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true) for the columns mentioned in your SELECT.
+- If a `SELECT` is within a transaction, and was preceded by data insertions, the [automatically generated statistics](statistics.md) can be inaccurate after a rollback. Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with `SELECT`s after a large `INSERT`, [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true) for the columns mentioned in your `SELECT`.
 
 > [!NOTE]
 > Regardless of how you ingest data into warehouses, the data ingestion task optimizes the parquet files it produces by using V-Order write optimization. V-Order optimizes parquet files to enable lightning-fast reads under the Microsoft Fabric compute engines such as Power BI, SQL, Spark, and others. Warehouse queries in general benefit from faster read times for queries with this optimization, while still ensuring the parquet files are 100% compliant to their open-source specification. Don't disable V-Order as it might affect read performance. For more information on V-Order, see [Understand and manage V-Order for Warehouse](v-order.md).
 
 ## Frequently asked questions about data ingestion for Fabric Data Warehouse
 
-#### What is the file splitting guidance for the COPY command loading compressed CSV files?
+### What is the file splitting guidance for the COPY command loading compressed CSV files?
 
 Consider splitting large CSV files, especially when the number of files is small, but keep files at a minimum of 4 MB each for better performance.
 
-#### What is the file splitting guidance for the COPY command loading Parquet files?
+### What is the file splitting guidance for the COPY command loading Parquet files?
 
 Consider splitting large Parquet files, especially when the number of files is small.
 
-#### Are there any limitations on the number or size of files?
+### Are there any limitations on the number or size of files?
 
 There are no limitations on the number or size of files. However, for best performance, use files that are at least 4 MB.
 
-#### What authentication method does the COPY command use if I don't specify a credential?
+### What authentication method does the COPY command use if I don't specify a credential?
 
 By default, `COPY INTO` uses the executing user's Microsoft Entra ID.
 

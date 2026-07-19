@@ -1,9 +1,9 @@
 ---
 title: Confluent Cloud for Apache Kafka Source in Fabric Eventstream
 description: Provides information on adding a Confluent Cloud for Apache Kafka source to an eventstream in Microsoft Fabric along with limitations.
-ms.reviewer: zhenxilin
+ms.reviewer: xujiang1
 ms.topic: how-to
-ms.date: 04/02/2026
+ms.date: 06/29/2026
 author: spelluru
 ms.author: spelluru
 ms.search.form: Source and Destination

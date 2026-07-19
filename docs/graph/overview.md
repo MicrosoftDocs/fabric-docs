@@ -42,9 +42,6 @@ By using graph, you can:
 
 - Create a labeled property graph over structured data in OneLake by defining its nodes and edges in terms of underlying tabular data. To learn how to load and refresh source data, see [Manage and refresh data](manage-data.md).
 
-    > [!IMPORTANT]
-    > Graph currently doesn't support schema evolution. After you ingest and model your data, the structure of nodes, relationships, and properties is fixed. If you need to make structural changes - such as adding new properties, modifying labels, or changing relationship types - you must reingest the updated source data into a new model. For guidance on planning your schema, see [Design a graph schema](design-graph-schema.md).
-
 - Query by using GQL (Graph Query Language), including pattern matching, path constructs, aggregations, and other features as they're released. The official International Standard for GQL is [ISO/IEC 39075 Information technology — Database languages — GQL](https://www.iso.org/standard/76120.html).
 
 - Power graph-based AI reasoning by adding [graph as a data source](../data-science/data-agent-add-datasources.md?tabs=gql) in Fabric Data Agent. For details on how NL2GQL works, see the [Graph-powered AI reasoning announcement](https://blog.fabric.microsoft.com/en-US/blog/graph-powered-ai-reasoning-preview/).

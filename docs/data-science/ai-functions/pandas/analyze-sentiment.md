@@ -6,16 +6,17 @@ reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI Functions
+ai-usage: ai-assisted
 ---
 
 # Use ai.analyze_sentiment with pandas
 
-The `ai.analyze_sentiment` function uses generative AI to detect the emotional state of the input text, with a single line of code. It can detect whether the emotional state of the input is positive, negative, mixed, or neutral. It can also detect the emotional state according to your specified labels. If the function can't determine the sentiment, it leaves the output blank.
+The `ai.analyze_sentiment` function labels each input row as positive, negative, mixed, or neutral. You can also provide custom labels. If the function can't determine sentiment, it leaves the output blank.
 
 > [!NOTE]
-> - This article covers using *ai.analyze_sentiment* with pandas. To use *ai.analyze_sentiment* with PySpark, see [this article](../pyspark/analyze-sentiment.md).
-> - See other AI Functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI Functions](./configuration.md).
+> - This article covers `ai.analyze_sentiment` with pandas. For PySpark, see [Use ai.analyze_sentiment with PySpark](../pyspark/analyze-sentiment.md).
+> - For all AI Functions and prerequisites, see [AI Functions overview](../overview.md).
+> - Change default configuration for [AI Functions with pandas](./configuration.md).
 
 ## Overview
 
@@ -59,13 +60,13 @@ df["sentiment"] = df["reviews"].ai.analyze_sentiment()
 display(df)
 ```
 
-This example code cell provides the following output:
+Output:
 
 :::image type="content" source="../../media/ai-functions/analyze-sentiment-example-output.png" alt-text="Screenshot of a data frame with 'reviews' and 'sentiment' columns. The 'sentiment' column includes 'negative', 'positive', 'mixed', and 'neutral'." lightbox="../../media/ai-functions/analyze-sentiment-example-output.png":::
 
 ## Multimodal input
 
-The `ai.analyze_sentiment` function supports file-based multimodal input. You can analyze the sentiment of images, PDFs, and text files by setting `column_type="path"` when your column contains file path strings. For more information about supported file types and setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
+To analyze sentiment in images, PDFs, or text files, set `column_type="path"` when the input column contains file path strings. For setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
 
 ```python
 # This code uses AI. Always review output for mistakes.
@@ -84,16 +85,7 @@ display(animal_df)
 ## Related content
 
 - Use [ai.analyze_sentiment with PySpark](../pyspark/analyze-sentiment.md).
-- Categorize text with [ai.classify](./classify.md).
-- Generate vector embeddings with [ai.embed](./embed.md).
-- Extract entities with [ai_extract](./extract.md).
-- Fix grammar with [ai.fix_grammar](./fix-grammar.md).
-- Answer custom user prompts with [ai.generate_response](./generate-response.md).
-- Calculate similarity with [ai.similarity](./similarity.md).
-- Summarize text with [ai.summarize](./summarize.md).
-- Translate text with [ai.translate](./translate.md).
-
-- Learn more about the [full set of AI Functions](../overview.md).
+- Learn more about [AI Functions](../overview.md).
 - Use [multimodal input with AI Functions](../multimodal-overview.md).
-- Customize the [configuration of AI Functions](./configuration.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).
+- Change default configuration for [AI Functions with pandas](./configuration.md).
+- Understand [billing for AI Functions](../billing.md).

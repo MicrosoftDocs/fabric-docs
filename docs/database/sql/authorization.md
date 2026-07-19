@@ -4,6 +4,7 @@ description: Learn about access control in SQL database in Fabric.
 ms.reviewer: jaszymas
 ms.date: 10/11/2024
 ms.topic: concept-article
+ms.search.form: SQL Database security
 ---
 # Authorization in SQL database in Microsoft Fabric
 

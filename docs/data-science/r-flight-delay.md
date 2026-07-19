@@ -4,14 +4,14 @@ description: This tutorial shows how to predict flight delay by using tidymodels
 ms.author: lagayhar
 ms.reviewer: ruxu
 ms.topic: tutorial
-ms.date: 04/10/2025
+ms.date: 06/30/2026
 ms.search.form: R Language
 #customer intent: As a data scientist, I want to build a machine learning model by using R so I can predict delays.
 ---
 
 # Tutorial: Use R to predict flight delay
 
-This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. It uses both the [nycflights13](https://github.com/hadley/nycflights13) data resource, and R, to predict whether or not a plane arrives more than 30 minutes late. It then uses the prediction results to build an interactive Power BI dashboard.
+This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. It uses both the [nycflights13](https://github.com/hadley/nycflights13) data resource and R to predict whether a plane arrives more than 30 minutes late. It then uses the prediction results to build an interactive Power BI dashboard.
 
 In this tutorial, you learn how to:
 
@@ -46,7 +46,7 @@ library(nycflights13)    # For flight data
 
 ## Explore the data
 
-The `nycflights13` data has information about 325,819 flights that arrived near New York City in 2013. First, examine the distribution of flight delays. The following code cell generates a graph showing that the arrival delay distribution is right skewed:
+The `nycflights13` data contains information about 325,819 flights that arrived near New York City in 2013. First, examine the distribution of flight delays. The following code cell generates a graph that shows the arrival delay distribution is right skewed:
 
 ```r
 ggplot(flights, aes(arr_delay)) + geom_histogram(color="blue", bins = 300)
@@ -82,15 +82,15 @@ flight_data <-
   mutate_if(is.character, as.factor)
 ```
 
-Before we build the model, consider a few specific variables that have importance for both preprocessing and modeling.
+Before you build the model, consider a few specific variables that are important for both preprocessing and modeling.
 
-The `arr_delay` variable is a factor variable. For logistic regression model training, it's important that the outcome variable is a factor variable.
+The `arr_delay` variable is a factor variable. For logistic regression model training, the outcome variable must be a factor variable.
 
 ```r
 glimpse(flight_data)
 ```
 
-About 16% of the flights in this dataset arrived more than 30 minutes late:
+About 16% of the flights in this dataset arrive more than 30 minutes late:
 
 ```r
 flight_data %>% 
@@ -236,9 +236,9 @@ glimpse(flights_aug)
 
 ## Evaluate the model
 
-We now have a tibble with the predicted class probabilities. In the first few rows, the model correctly predicted five on-time flights (values of `.pred_on_time` are `p > 0.50`). However, we need predictions for a total of 81,455 rows.
+You now have a tibble with the predicted class probabilities. In the first few rows, the model correctly predicted five on-time flights (values of `.pred_on_time` are `p > 0.50`). However, you need predictions for a total of 81,455 rows.
 
-We need a metric that tells how well the model predicted late arrivals, compared to the true status of the `arr_delay` outcome variable.
+You need a metric that tells how well the model predicted late arrivals, compared to the true status of the `arr_delay` outcome variable.
 
 Use the Area Under the Curve Receiver Operating Characteristic (AUC-ROC) as the metric. Compute it with `roc_curve()` and `roc_auc()`, from the `yardstick` package:
 
@@ -294,11 +294,11 @@ write.df(sparkdf, temp_delta ,source="delta", mode = "overwrite", header = "true
 
 Use the delta table to create a semantic model.
 
-1. In the left nav, select your workspace, and in the upper right textbox, enter the name of the lakehouse you attached to your notebook. The following screenshot shows that we selected **My Workspace**:
+1. In the left nav, select your workspace, and in the upper right textbox, enter the name of the lakehouse you attached to your notebook. The following screenshot shows that you selected **My Workspace**:
 
    :::image type="content" source="media/r-flight-delay/select-lakehouse.png" alt-text="Screenshot that shows the initial lakehouse selection steps." lightbox="media/r-flight-delay/select-lakehouse.png":::
 
-1. Enter the name of the lakehouse that you attached to your notebook. We enter **test_lakehouse1**, as shown in the following screenshot:
+1. Enter the name of the lakehouse that you attached to your notebook. Enter **test_lakehouse1**, as shown in the following screenshot:
 
    :::image type="content" source="media/r-flight-delay/open-lakehouse.png" alt-text="Screenshot that shows the selection of a specific lakehouse." lightbox="media/r-flight-delay/open-lakehouse.png":::
 
@@ -310,7 +310,7 @@ Use the delta table to create a semantic model.
 
    :::image type="content" source="media/r-flight-delay/new-semantic-model.png" alt-text="Screenshot that shows the creation of a new semantic model." lightbox="media/r-flight-delay/new-semantic-model.png":::
 
-1. At the New semantic model pane, enter a name for the new semantic model, select a workspace, and select the tables to use for that new model, then select **Confirm**, as shown in the following screenshot:
+1. At the New semantic model pane, enter a name for the new semantic model, select a workspace, and select the tables to use for that new model, and then select **Confirm**, as shown in the following screenshot:
 
    :::image type="content" source="media/r-flight-delay/new-semantic-model-parameters.png" alt-text="Screenshot that shows the parameters of a new semantic model." lightbox="media/r-flight-delay/new-semantic-model-parameters.png":::
 

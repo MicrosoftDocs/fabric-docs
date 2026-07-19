@@ -1,8 +1,8 @@
 ---
 title: T-SQL Surface Area in Fabric Data Warehouse
 description: T-SQL surface area of the SQL analytics endpoint and warehouse in Microsoft Fabric.
-ms.reviewer: cynotebo, jovanpop, twinklecyril, emtehran, prlangad
-ms.date: 05/05/2026
+ms.reviewer: jovanpop, twinklecyril, prlangad
+ms.date: 06/11/2026
 ms.topic: concept-article
 ms.search.form: T-SQL Surface area # This article's title should not change. If so, contact engineering.
 ---
@@ -38,13 +38,13 @@ Fabric Data Warehouse supports T-SQL tables, views, stored procedures, functions
    - `ALTER TABLE ... ALTER COLUMN` is in preview. For more information, see [ALTER COLUMN in Fabric Data Warehouse](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true#syntax-for-warehouse-in-fabric).
    - Supported `ALTER TABLE` statements can be executed inside an explicit user-defined transaction in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 - `MERGE` syntax is supported and is a generally available feature. For more information, see [MERGE T-SQL syntax](/sql/t-sql/statements/merge-transact-sql?view=fabric&preserve-view=true).
-- [AI functions (preview)](ai-functions.md) enable advanced text processing without leaving your warehouse.
+- While Fabric Data Warehouse supports many [AI functions (preview)](ai-functions.md) to enable advanced text processing without leaving your warehouse, the **vector** data type is not supported.
 
 ### Limitations
 
 At this time, the following list of commands is NOT currently supported. Don't try to use these commands. Even though they might appear to succeed, they could cause issues to your warehouse.
 
-- `BULK LOAD`
+- `BULK LOAD`, though `bcp` is supported as a preview feature.
 - `CREATE USER`
 - `FOR JSON` must be the last operator in the query, and so is not allowed inside subqueries
 - Manually created multi-column stats
@@ -59,6 +59,7 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - `sp_showspaceused`
 - Synonyms
 - Triggers
+- Vector data type and search functions
 
 ## Related content
 

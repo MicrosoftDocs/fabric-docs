@@ -1,7 +1,7 @@
 ---
 title: "Connect to Your SQL Database"
 description: Learn about options to connect to your SQL database in Microsoft Fabric.
-ms.reviewer: yoleichen, antho, sukkaurk, imotiwala, maghan
+ms.reviewer: yoleichen, antho, sukkaur, maghan
 ms.date: 03/03/2026
 ms.topic: how-to
 ms.search.form: product-databases, Connect to SQL database

@@ -171,7 +171,7 @@ This tutorial walks you through the end-to-end workflow of publishing business e
 
 1. Open another tab in your web browser, and go to your workspace.
 
-1. 1. Select **+ New item** and then search for **User data functions** and select it.
+1. Select **+ New item**, search for **User data functions**, and select it.
 
     :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/create-user-data-function.png" alt-text="Screenshot of creating a new user data function in the workspace." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/create-user-data-function.png":::
 
@@ -226,7 +226,7 @@ This tutorial walks you through the end-to-end workflow of publishing business e
     
         - bikepointID: 1234
         - street: Main Street
-        - neighborhood: Downtown   
+        - neighbourhood: Downtown   
     
     1.  Verify the output and the logs to confirm that the function is working as expected.
     
@@ -244,7 +244,7 @@ This tutorial walks you through the end-to-end workflow of publishing business e
 
 1. In the Real-Time hub, select **Business events** under the **Subscribe to** category.
 
-1. In the **Business events** list, locate `VibrationCriticalDetected` event. Select either the ⚡ lightning icon or the ⋯ (three dots) menu next to the event, and then select **Set alert**.
+1. In the **Business events** list, locate `StationFullDetected` event. Select either the ⚡ lightning icon or the ⋯ (three dots) menu next to the event, and then select **Set alert**.
 
     :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/set-alert-business-event.png" alt-text="Screenshot of selecting the Set alert option for a business event." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/set-alert-business-event.png":::
 
@@ -329,7 +329,7 @@ This tutorial walks you through the end-to-end workflow of publishing business e
  
 ### View business event in the activator run history
 
-1. Go to the workspace where you created the activator item, and open the activator item (for example, **VibrationCriticalDetected_Activator**) if it's not already open.
+1. Go to the workspace where you created the activator item, and open the activator item (for example, **StationFullDetected_Activator**) if it's not already open.
 
 1. In the activator item, select the **History** tab.
 
@@ -339,7 +339,7 @@ This tutorial walks you through the end-to-end workflow of publishing business e
 
 ### View logs for the user data function
 
-1. In the workspace, open the `ProcessVibrationCritical` user data function you created.
+1. In the workspace, open the `ProcessStationFull` user data function you created.
 
 1. Switch to **Run only** mode using the mode switcher.
 

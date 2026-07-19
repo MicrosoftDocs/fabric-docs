@@ -69,6 +69,7 @@ For more information, see [Best practices to avoid write-write conflicts](transa
 
 ## Related content
 
+- [Troubleshoot query blocking in Fabric Data Warehouse](troubleshoot-query-blocking.md)
 - [Query insights in Fabric data warehousing](query-insights.md)
 - [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md)
 - [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)

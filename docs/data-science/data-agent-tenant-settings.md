@@ -1,8 +1,8 @@
 ---
 title: Configure Fabric data agent tenant settings
 description: Learn how to configure Fabric data agent tenant settings.
-ms.author: jburchel
-author: jonburchel
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: amjafari
 ms.topic: how-to
 ms.date: 04/20/2026

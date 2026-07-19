@@ -4,7 +4,7 @@ description: Learn about how to use Variable library with pipelines.
 ms.reviewer: noelleli
 ms.topic: concept-article
 ms.custom: pipelines
-ms.date: 05/11/2026
+ms.date: 06/22/2026
 ---
 
 # Variable library integration with pipelines
@@ -75,6 +75,9 @@ The [Variable library](../cicd/variable-library/variable-library-overview.md) is
 
     :::image type="content" source="media/variable-library-integration-with-data-pipelines/add-expression-final.png" lightbox="media/variable-library-integration-with-data-pipelines/add-expression-final.png" alt-text="Screenshot showing the expression set in the expression builder.":::
 
+> [!NOTE]
+> If you're using a Connection reference or Item reference type, add a '.' to get the variable properties after you add the variable to the expression builder. This step lets you use values like connection ID, item ID, or item workspace. 
+
 1. You see that the dynamic content is added to your activity setting.
 
     :::image type="content" source="media/variable-library-integration-with-data-pipelines/dynamic-content-populated.png" lightbox="media/variable-library-integration-with-data-pipelines/dynamic-content-populated.png" alt-text="Screenshot showing the expression set as dynamic content in the Lookup activity settings.":::
@@ -93,7 +96,7 @@ The [Variable library](../cicd/variable-library/variable-library-overview.md) is
 
 The following known limitations apply to the integration of Variable library in pipelines in Data Factory in Microsoft Fabric:
 
-- The Variable library supports Boolean, Datetime, Guid, Integer, Number, and String as data types. In your pipeline, you see Boolean as Bool type, Datetime as String type, Guid as String type, Integer as Int type, and String as String type. Number types aren't supported in pipelines. 
+- The Variable library supports Boolean, Datetime, Guid, Integer, Number, and String as data types. In your pipeline, you see Boolean as `Bool` type, Datetime as `String` type, Guid as `String` type, Integer as `Int` type, and String as `String` type. Number types aren't supported in pipelines.
 
 ## Related content
 

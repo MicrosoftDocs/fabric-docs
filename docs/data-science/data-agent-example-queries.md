@@ -1,8 +1,8 @@
 ---
 title: Data Agent Example Queries
 description: Overview of data agent example queries.
-ms.author: jburchel
-author: jonburchel
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: midesa
 ms.topic: concept-article
 ms.date: 09/11/2025

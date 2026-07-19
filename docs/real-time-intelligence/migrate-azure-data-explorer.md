@@ -4,7 +4,7 @@ description: Migrate Azure Data Explorer workloads to Fabric and unlock advanced
 #customer intent: As a data engineer, I want to migrate my Azure Data Explorer workloads to Fabric so that I can use advanced analytics features.
 ms.reviewer: sharmaanshul
 ms.topic: how-to
-ms.date: 08/17/2025
+ms.date: 06/18/2026
 ms.custom:
   - ai-gen-docs-bap
   - ai-gen-title
@@ -14,6 +14,8 @@ ms.custom:
 
 # Migrate from Azure Data Explorer (ADX) to Fabric Real-Time intelligence (Eventhouse)
 This article shows you how to gradually transition your analytics workloads from Azure Data Explorer to Eventhouse in Fabric Real-Time intelligence without downtime. Start by using **Fabric as the query layer** while ADX continues ingesting data to explore Fabric’s features. When you're ready, **migrate fully** by moving schema and ingestion to Fabric.
+
+If you cannot wait for your data in ADX to age out and need to copy it to Eventhouse, consider open source tool [Kusto Copy](https://github.com/Azure/kusto-copy).
 
 > [!NOTE]
 > To learn about differences between Fabric Real-Time intelligence and comparable Azure solutions, see [Compare with Azure solutions](real-time-intelligence-compare.md).
@@ -50,7 +52,7 @@ The following sections give details about each step.
 
     Use the [Sync Kusto](/azure/data-explorer/sync-kusto) or export the schema from ADX database to recreate it in Fabric KQL database. SyncKusto is a dedicated tool that synchronizes Kusto database schemas (tables, functions, etc.) between environments.
 
-    Alternatively, you can run the KQL command: `.show database schema` in ADX, which generates a script of all table definitions, functions, and policies, and then run the generated script on KQL database in Fabric.
+    Alternatively, you can run the KQL command: `.show database schema as csl script` in ADX, which generates a script of all table definitions, functions, and policies, and then run the generated script on KQL database in Fabric using `.execute database script`.
 1. **Verify schema**
     
     Confirm all tables, columns, data types, and relevant policies (retention, caching, etc.) in KQL database match those in the ADX database. At this point, the Fabric KQL database is empty but ready to receive data, and you can also still query ADX using methods from the [Explore ADX data in Fabric](#consume-adx-data-in-fabric) section.

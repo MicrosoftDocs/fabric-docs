@@ -20,7 +20,7 @@ Tracking the size of your OneLake data helps you manage and plan storage costs. 
 
 Alternatively, capacity admins can use the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app-storage-page.md) to find the total size of OneLake data stored in a given capacity or workspace.
 
-## Use the OneLake storage report (preview)
+## Use the OneLake storage report
 
 The OneLake storage report is built directly in the Fabric portal and calculates the amount of data stored in each of your items. Use this tool to investigate which items in your workspace are contributing the most to your OneLake storage bill, so you can make informed decisions about maintaining your data.  
 
@@ -30,8 +30,6 @@ Use the storage report to:
 * Sort and search your items, including by data size
 * Break down storage costs across visible, hidden, and soft-deleted data
 
->[!NOTE]
->The OneLake storage report is currently in preview.
 
 ### Open the storage report
 
@@ -56,7 +54,7 @@ The storage report contains the following fields:
 | Billing     | The billing status of the item. Non-billable items aren't charged for OneLake storage. Partially billable items aren't charged up to a limit.   |
 | Total       | The total amount of data stored in the item, including system and soft-deleted data.                                                            |
 | Soft-delete | Deleted data within the seven day retention window. For more information, see [Recover deleted files in OneLake](soft-delete.md).                                              |
-| System      | Workload data such as internal metadata, logs, and temporary files that aren't directly accessible but count toward storage usage.             |
+| System      | Workload data such as internal metadata, logs, and temporary files that aren't directly accessible but count toward storage consumption.             |
 
 You can generate a similar report programmatically by using tools like PowerShell. However, the OneLake storage report doesn't require external tools and scans all your data, including data you don't have access to, such as system data. System folders are used by workloads across Fabric for metadata, temporary files, or other use-cases.
 

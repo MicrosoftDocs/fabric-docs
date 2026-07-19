@@ -14,7 +14,7 @@ LocalizationGroup: Admin
 
 This article helps Fabric administrators and decision makers understand how and where Fabric metadata is used.
 
-The **Share Fabric data with your Microsoft 365 services** tenant setting controls whether Power BI and Microsoft Fabric automatically send information about your organization's Fabric content to Microsoft 365. When an admin turns on this setting, Fabric sends details about your reports, dashboards, and other content to Microsoft 365 in the background. No user action is required for this sharing to occur. Microsoft 365 then uses this information to help users find and return to their Fabric content through search results, the Quick Access list on Office.com, and personalized recommendations.
+The **Share Fabric data with your Microsoft 365 services** tenant setting controls whether Power BI and Fabric automatically send information about your organization's Fabric content to Microsoft 365. When an admin turns on this setting, Fabric sends details about your reports, dashboards, and other content to Microsoft 365 in the background. No user action is required for this sharing to occur. Microsoft 365 then uses this information to help users find and return to their Fabric content through search results, the Quick Access list on Office.com, and personalized recommendations.
 
 This information flows through [Microsoft Graph](/graph/overview). The setting is turned on by default when your Fabric tenant and Microsoft 365 tenant are in the same geographic region.
 
@@ -103,7 +103,7 @@ The following tables show what specific information Fabric sends to Microsoft 36
 |LastModifiedUser|Microsoft Entra UPN of the last person who modified the content|user1@fourthcoffee.com|
 |LastModifiedDate|Last modified date for the content|2011-06-30T23:32:46Z|
 |PageNames|Display names for pages within the report|Sales Summary, Regional details, Returns|
-|ChartTitles|Display names for visualizations in the report layout|Regional sales over time|
+|ChartTitles|Display names for visuals in the report layout|Regional sales over time|
 |FieldNames|Names of columns and measures used in the report|revenue, date, product_category|
 
 **User activity (used to show recently accessed and recommended content on Office.com)**

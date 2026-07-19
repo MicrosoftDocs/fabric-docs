@@ -148,6 +148,8 @@ When a workspace gets renamed, the workspace identity is also renamed to match t
 
 * A workspace identity can be created in any workspace except a My Workspace.
 
+* Trusted workspace access to firewall-enabled Storage accounts is supported in any F capacity.
+
 * If a workspace with a workspace identity is migrated to a non-Fabric capacity or to a non-F SKU Fabric capacity, the identity won't be disabled or deleted, but Fabric items relying on trusted workspace access will stop working.
 
 * A default of 10,000 workspace identities can be created in a tenant. You can also specify your own maximum in the tenant settings, which becomes the upper limit for Fabric identity creation across your tenant. For more information, see [Define maximum number of Fabric identities in a tenant](../admin/service-admin-portal-developer.md#define-maximum-number-of-fabric-identities-in-a-tenant).

@@ -4,11 +4,12 @@ description: This article walks you through some of the most common factors that
 ms.reviewer: bwatts
 ms.topic: how-to
 ms.subservice: rti-eventhouse
-ms.date: 07/01/2025
+ms.date: 05/25/2026
+ai-usage: ai-assisted
 ---
 
 # Understand Eventhouse compute usage
-Microsoft Fabric Eventhouse is built to adjust the compute according to your usage patterns, which means that the capacity usage automatically scales to meet your workload requirements.
+Microsoft Fabric Eventhouse is built to adjust the compute according to your usage patterns, which means that the capacity usage automatically scales to meet your workload requirements. Eventhouse compute can be influenced by both reactive factors—such as cache utilization, ingestion load, and query load—and proactive controls, such as scheduled minimum capacity via the Capacity Scheduler. During scheduled windows, capacity may stay at a configured baseline even if workload temporarily subsides.
 
 This article walks you through some of the most common factors that determine the size of your eventhouse compute so that you can make the right decisions to optimize your eventhouse.
 
@@ -47,6 +48,12 @@ To understand where the hot cache is being consumed, drill down to specific tabl
 
 To adjust the caching policy at the table level, modify the [table-level caching policy](/kusto/management/cache-policy?view=microsoft-fabric&preserve-view=true).
 
+### Capacity Scheduler (scheduled minimum capacity)
+
+You can configure a 7-day recurring schedule with 60-minute blocks to set a minimum capacity per block (or no minimum) while autoscale remains enabled. This lets you align guaranteed capacity with workload patterns—for example, ensuring higher baseline compute during peak hours and lower costs during off-hours.
+
+Eventhouse maintains the guaranteed baseline only during the scheduled windows. Outside of scheduled windows, the eventhouse remains fully elastic with autoscale active. For more information, see [Configure Capacity Scheduler](eventhouse-smart-capacity-control.md#schedule-minimum-capacity).
+
 ## Ingestion capacity
 
 Another factor in the size of your eventhouse is the ingestion utilization. To ensure timely ingestion, Fabric monitors your ingestion load and adjusts the Eventhouse compute capacity to accommodate the data being ingested.
@@ -71,7 +78,7 @@ EventhouseMetrics
 This command shows the percentage of the ingestion capacity being used by the current eventhouse compute size. A few takeaways from this number:
 
 - If you're taking up consistently 70% or more of the ingestion capacity at the current size, the compute is sized based on ingestion. It means that unless the ingestion pattern changed, you continue to run at this compute size or larger, irrelevant of other activity.
-- If this percentage consistently drops below 70%, it means that the compute is sized based on other factors. They could be the minimum capacity settings, cache utilization, or query load on the eventhouse.
+- If this percentage consistently drops below 70%, it means that the compute is sized based on other factors. They could be cache utilization, query load, or scheduled minimum capacity via the Capacity Scheduler. If Capacity Scheduler is configured with a minimum for the current time block, the eventhouse maintains that baseline even when ingestion pressure is low.
 
 This setting is also available in the [Workspace Monitoring Dashboard](https://blog.fabric.microsoft.com/blog/introducing-template-dashboards-for-workspace-monitoring?ft=All) in the **EH | Table Ingestions** tab.
 
@@ -111,8 +118,17 @@ A couple of common issues that would be easy to spot using this dashboard:
 - Filter by Memory Peak to see what queries might be causing memory issues.
 - Using **Queries by status over Time** to see if you had a spike in queries.
 - Using the Throttled tile to see if the Fabric Capacity throttled any queries.
+
+> [!NOTE]
+> If you observe unexpected persistent sizing or autoscale behavior, check whether Capacity Scheduler has a scheduled minimum configured for the current time window. Check the Eventhouse overview banner and the schedule view to understand upcoming baseline commitments and whether scheduled minimums are governing the current compute size.
   
 Using this report, you can get down to the specific applications, users, and queries that might need your attention. This article doesn't cover query optimization but finding the actual query text that needs optimization lets you start that process.
+
+### Configure and validate scheduled capacity
+
+The Capacity Scheduler UI provides a weekly grid view where each cell represents a 60-minute block. You can enter a minimum CU value per cell, and the UI performs cell-level validation to ensure values are within the supported range. The overview banner in the Eventhouse UI evaluates and summarizes the total scheduled minimum capacity for the next 24 hours, helping you anticipate guaranteed baseline usage.
+
+If a scheduled minimum capacity exceeds the available capacity for your workspace or SKU, a warning appears in the UI. In that case, adjust either the schedule or your capacity SKU to avoid constraint violations. For more information on scheduling, see [Configure Capacity Scheduler](eventhouse-smart-capacity-control.md#schedule-minimum-capacity).
 
 ### Automate responses
 
@@ -128,6 +144,8 @@ It gives you the ability to set up actions from KQL querysets for the control co
 ## Summary
 
 Observability for your eventhouse compute is provided using Eventhouse Overview, Database Overview, KQL Database control commands, and the Workspace Monitoring database. In this article, you walked through the most common scenarios and how to use either KQL Database control commands or the Workspace Monitoring database to allow you to understand your compute usage.
+
+Eventhouse compute is influenced by both reactive factors—cache utilization, ingestion load, and query load—and proactive controls such as scheduled minimum capacity via the Capacity Scheduler. During scheduled windows, capacity may remain at a configured baseline even if workload temporarily subsides. Use the Eventhouse overview banner and Workspace Monitoring Dashboard together to get a complete picture of your capacity usage.
 
 
 

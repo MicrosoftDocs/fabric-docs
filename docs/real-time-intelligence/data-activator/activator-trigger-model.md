@@ -134,7 +134,7 @@ In the monitor step, you first select which property drives your trigger. Then y
 
 ### Condition step
 
-In your condition step, you choose what change detection to use. Activator supports change detection conditions such as IncreasesBy 10%, or BecomesLessThan 30. These conditions compare multiple points in the incoming event stream, rather than a simple point-by-point comparison. See [Detection conditions](activator-detection-conditions.md) for a full list of the condition options and an explanation of their behavior.
+In your condition step, you choose what change detection to use. Activator supports change detection conditions such as IncreasesBy 10%, or BecomesLessThan 30. These conditions compare multiple points in the incoming eventstream, rather than a simple point-by-point comparison. See [Detection conditions](activator-detection-conditions.md) for a full list of the condition options and an explanation of their behavior, including how to compare against another property on the same object instead of a fixed value.
 
 You might also want to pick an "Occurrence" option to modify the condition further. For example, you might want to fire when the temperature BecomesLessThan 30, and then stays that way for 10 minutes. The occurrence options are:
 

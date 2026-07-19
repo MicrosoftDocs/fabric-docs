@@ -1,5 +1,5 @@
 ---
-title: Troubleshooting ontology (preview)
+title: Troubleshooting Ontology (Preview)
 description: This article provides troubleshooting suggestions for ontology (preview).
 ms.date: 12/16/2025
 ms.topic: concept-article

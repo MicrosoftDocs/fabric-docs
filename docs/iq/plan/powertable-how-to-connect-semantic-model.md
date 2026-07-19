@@ -1,19 +1,20 @@
 ---
-title: Connect PowerTable Sheet to a Semantic Model
+title: Create a Table App by Connecting PowerTable Sheet to a Semantic Model
 description: Learn how to connect a PowerTable sheet to a semantic model and build collaborative table apps with live data synchronization.
-ms.date: 04/13/2026
+ms.date: 06/28/2026
 ms.topic: how-to
 #customer intent: As a user, I want to connect PowerTable sheets to a semantic model so that I can build a collaborative table app using governed data from my existing Power BI or Fabric semantic model.
 ---
 
-# Connect PowerTable sheet to a semantic model
+# Create table app by connecting to a semantic model
 
-In this article, you look at the steps to connect to a semantic model from a PowerTable sheet. Connect to an existing semantic model and create a table app. The data table, along with any changes or updates, is saved to your preferred destination database.
+This article describes how to create a table app by connecting the PowerTable sheet to a semantic model. You can save the data table, along with any changes or updates, to your preferred destination database. You can also write back subsequent changes to the same database table.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
->[!NOTE]
+> [!NOTE]
 > You can also create a table by uploading data from an Excel or CSV file. For more information, see [Create a table app with PowerTable sheets](powertable-how-to-create-table-app.md).
+> To connect an existing database table to a PowerTable sheet and create a table app, see [Connect to a database](./powertable-how-to-connect-existing-database.md).
 
 ## Prerequisites
 
@@ -35,8 +36,10 @@ Before you begin, make sure that you have the following prerequisites in place:
 
     :::image type="content" source="media/powertable-how-to-connect-semantic-model/new-table.png" alt-text="Screenshot of connecting to semantic model." lightbox="media/powertable-how-to-connect-semantic-model/new-table.png":::
     
-    >[!NOTE]
-    >Capacity workspaces with Pro licenses are not supported. Make sure to select a workspace of premium capacity.
+   > [!NOTE]
+   > Capacity workspaces with Pro licenses are not supported. Make sure to select a workspace of premium capacity.
+
+### Map data
 
 1. Map and assign your data to the table by selecting the required fields and corresponding values.
 
@@ -54,9 +57,21 @@ Before you begin, make sure that you have the following prerequisites in place:
 
     :::image type="content" source="media/powertable-how-to-connect-semantic-model/configured-semantic-model.png" alt-text="Screenshot of configured semantic model for the new table." lightbox="media/powertable-how-to-connect-semantic-model/configured-semantic-model.png":::
 
+### Configure table
+
+PowerTable sheets automatically detect column properties and rename any unsupported column names to match the supported format. You can review and modify them as needed.
+
+:::image type="content" source="media/powertable-how-to-connect-semantic-model/finish-table-from-model.jpg" alt-text="Screenshot of table configuration window after configuring the fields." lightbox="media/powertable-how-to-connect-semantic-model/finish-table-from-model.jpg":::
+
 [!INCLUDE [Configure PowerTable columns](includes/configure-columns.md)]
 
-:::image type="content" source="media/powertable-how-to-connect-semantic-model/finish-table-from-model.jpg" alt-text="Screenshot of selecting Finish." lightbox="media/powertable-how-to-connect-semantic-model/finish-table-from-model.jpg":::
+> [!NOTE]
+> In this step, you can **enable Slowly Changing Dimensions (SCDs)** by turning the toggle.
+> For a table, this is a one-time configuration that you can't modify later.
+
+### Finish
+
+Select **Finish**.
 
 The table app is created successfully in PowerTable with the configured columns and values. Select **Save** to save your table.
 

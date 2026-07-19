@@ -12,13 +12,13 @@ ms.date: 10/16/2025
 
 # Create an Azure Blob Storage shortcut
 
-In this article, you learn how to create an Azure Blob Storage shortcut inside a Microsoft Fabric lakehouse.
+In this article, you learn how to create an Azure Blob Storage shortcut inside a Fabric lakehouse.
 
 For an overview of shortcuts, see [OneLake shortcuts](../onelake-shortcuts.md). To create shortcuts programmatically, see [OneLake shortcuts REST APIs](../onelake-shortcuts-rest-api.md).
 
 ## Prerequisites
 
-- A lakehouse in Microsoft Fabric. If you don't have a lakehouse, create one by following these steps: [Create a lakehouse](../../data-engineering/create-lakehouse.md).
+- A lakehouse in Fabric. If you don't have a lakehouse, create one by following these steps: [Create a lakehouse](../../data-engineering/create-lakehouse.md).
 - An Azure Storage account with data in a container.
 
 ## Create a shortcut
@@ -29,7 +29,7 @@ For an overview of shortcuts, see [OneLake shortcuts](../onelake-shortcuts.md). 
 
 1. Select **New shortcut**.
 
-   :::image type="content" source="..\media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot that shows selecting 'new shortcut' from a directory menu.":::
+   :::image type="content" source="media/create-onelake-shortcut/new-shortcut-lake-view.png" alt-text="Screenshot that shows selecting 'new shortcut' from a directory menu.":::
 
 ## Select a source
 
@@ -87,6 +87,6 @@ Blob storage shortcuts use a delegated authorization model. In this model, the s
 
 ## Related content
 
-- [Create a OneLake shortcut](../create-onelake-shortcut.md)
+- [Create a OneLake shortcut](../shortcuts/create-onelake-shortcut.md)
 - [Create an Amazon S3 shortcut](../create-s3-shortcut.md)
 - [Use OneLake shortcuts REST APIs](../onelake-shortcuts-rest-api.md)

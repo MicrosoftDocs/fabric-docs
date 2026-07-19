@@ -33,6 +33,8 @@ items:
   items: 
   - name: Transform and enrich data with AI Functions
     href: ./ai-functions/overview.md
+  - name: Billing
+    href: ./ai-functions/billing.md
   - name: Multimodal AI Functions
     href: ./ai-functions/multimodal-overview.md
   - name: pandas

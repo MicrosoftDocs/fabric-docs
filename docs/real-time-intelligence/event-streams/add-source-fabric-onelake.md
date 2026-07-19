@@ -1,7 +1,7 @@
 ---
 title: Fabric OneLake Events Source in Eventstream
 description: Add Fabric OneLake events to an eventstream to capture real-time data changes. Follow this how-to guide to configure the source, publish, and transform your events.
-ms.reviewer: robece
+ms.reviewer: xujiang1
 ms.topic: how-to
 ms.date: 04/02/2026
 author: spelluru

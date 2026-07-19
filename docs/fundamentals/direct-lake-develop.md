@@ -3,6 +3,7 @@ title: "Develop Direct Lake semantic models"
 description: "Learn about how to develop Direct Lake semantic models."
 author: kgremban
 ms.author: kgremban
+ms.reviewer: monicacl
 ms.date: 04/23/2025
 ms.topic: concept-article
 ms.custom: fabric-cat
@@ -13,14 +14,28 @@ ai-usage: ai-assisted
 
 This article describes design topics relevant to developing Direct Lake semantic models.
 
+## Choose the right storage mode
+
+Direct Lake storage mode has two forms. Use the following guidance to choose the Direct Lake type that best fits your scenario. For more information, see [full comparison of storage modes](direct-lake-overview.md#key-concepts-and-terminology).
+
+Use **Direct Lake on OneLake** when...
+
+* You generally expect faster query performance.
+* You use Delta tables from other Fabric data sources, not just a lakehouse or warehouse.
+* You need composite modeling with Import or DirectQuery tables.
+* You want to use [OneLake security](../onelake/security/get-started-onelake-security.md).
+* You need modeling features like calculated columns or calculated tables that reference Direct Lake tables (preview).
+* You want consistent Direct Lake behavior without DirectQuery fallback (`DirectLakeOnly` mode). 
+
+Use **Direct Lake on SQL** when...
+
+* You depend on security rules defined in the SQL analytics endpoint with [delegated identity mode](../onelake/security/sql-analytics-endpoint-onelake-security.md): RLS, CLS, OLS.
+* Your model is based on SQL analytics endpoint tables or views from a single lakehouse or warehouse.
+* You need unsupported Direct Lake scenarios to [fall back to DirectQuery](./direct-lake-how-it-works.md#directquery-fallback) if fallback is enabled (for example, queries against SQL views).
+
 ## Create the model
 
 You can create a Direct Lake semantic model in [Power BI Desktop](direct-lake-power-bi-desktop.md) or from many Fabric items in the browser. For example, from an open Lakehouse you can choose **New semantic model** to create a new semantic model in Direct Lake storage mode.
-
-There are two forms of Direct Lake storage mode, summarized here. See the [Key concepts and terminology](direct-lake-overview.md#key-concepts-and-terminology) section for more information.
-
-- Use **Direct Lake on OneLake** for compatibility with [OneLake security](../onelake/security/get-started-security.md#onelake-security), more modeling features, and faster query performance.
-- Use **Direct Lake on SQL** when you depend on security rules defined in the SQL analytics endpoint with [delegated identity mode](../onelake/security/sql-analytics-endpoint-onelake-security.md#access-modes-in-sql-analytics-endpoint), or you need fallback to DirectQuery.
 
 The following table shows the most common creation methods for each type of Direct Lake semantic model.
 

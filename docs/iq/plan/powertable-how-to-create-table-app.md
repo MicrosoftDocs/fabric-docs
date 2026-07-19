@@ -1,15 +1,22 @@
 ---
-title: Create a Table App with PowerTable Sheets
-description: Learn how to create a no-code table app with PowerTable sheets, by importing Excel sheets or connecting to database tables and semantic models to build collaborative data apps with live synchronization.
-ms.date: 03/27/2026
+title: Create a Table App Using PowerTable by Importing Excel or CSV Files
+description: Learn how to create a no-code table app with PowerTable sheets, by importing Excel sheets to build collaborative data apps with live synchronization.
+ms.date: 06/28/2026
 ms.topic: how-to
 ms.search.form: Getting Started with PowerTable Sheet
-#customer intent: As a user, I want step-by-step instructions to build my first PowerTable data app.
+#customer intent: As a user, I want step-by-step instructions to build my first PowerTable data app by importing an Excel or CSV file.
 ---
 
-# Build a no-code table app with PowerTable sheets
+# Build a table app using PowerTable by importing an Excel file
 
-In this article, you learn how to create a table app with PowerTable sheets.
+To create a table app using PowerTable, use one of these four approaches:
+
+* Upload Excel or CSV file to import data
+* Connect to an existing database table
+* Enter data directly into the table app
+* Connect to a semantic model
+
+In this article, you learn how to create a table app by importing an Excel or CSV file.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -20,15 +27,6 @@ Before you begin, make sure that you have the following prerequisites in place:
 * Connections established to the [Fabric SQL database](planning-how-to-create-database-connection.md) and/or [semantic model](planning-how-to-create-semantic-model-connection.md) that contain the data for your PowerTable.
 * [A plan item](planning-how-to-get-started.md#create-plan-item) created in your Fabric workspace.
 
-## Ways to create a table
-
-You can use one of these four approaches to create a table:
-
-* Upload Excel or CSV file to import data
-* Connect to an existing database table
-* Enter data directly into the table app
-* Connect to a semantic model
-
 [!INCLUDE [new PowerTable sheet](includes/create-powertable.md)]
 
 ## Create a table
@@ -38,27 +36,45 @@ Select a table for the data to be stored in. There are two options:
 * Select **Existing Table** to connect to an existing table in the Fabric SQL database, OR
 * Select **New Table** to create a new table in the database. This option is shown in the next steps.
 
-To create a new table and import the CSV data, follow these steps:
+To create a new table and import the Excel or CSV data, follow these steps:
 
 1. Select **New Table**.
 1. Choose the database schema.
 1. Enter a **Table Name**.
 1. Select **Upload File** in the **Import Data** section.
 1. Select the space to upload the CSV or Excel file from your local system.
-    
+
     :::image type="content" source="media/powertable-how-to-create-table-app/upload-file.png" alt-text="Screenshot of uploading an Excel or CSV  file to PowerTable." lightbox="media/powertable-how-to-create-table-app/upload-file.png":::
 
-1. Preview the data and select **Next**.
+1. Select the sheet that contains the data you want to import.
+
+    * Enter a name for the table.
+    * Review and, if necessary, modify the start and end cell ranges that contain the data to import.
+    * Preview the imported data, and then select **Next**.
 
     :::image type="content" source="media/powertable-how-to-create-table-app/preview-data.png" alt-text="Screenshot of previewing data." lightbox="media/powertable-how-to-create-table-app/preview-data.png":::
-    
-    >[!NOTE]
-    >To import only the table structure, select **Exclude records and import table structure only**.
+
+   > [!NOTE]
+   > To import only the headers, toggle on **Import header only**.
+
+### Configure table
+
+PowerTable sheets automatically detect column properties and rename any unsupported column names to match the supported format. You can review and modify them as needed.
+
+:::image type="content" source="media/powertable-how-to-create-table-app/table-configuration.png" alt-text="Screenshot of the table configuration window with field names to configure their properties." lightbox="media/powertable-how-to-create-table-app/table-configuration.png":::
 
 [!INCLUDE [Configure PowerTable columns](includes/configure-columns.md)]
 
-:::image type="content" source="media/powertable-how-to-create-table-app/finish-table.png" alt-text="Screenshot of selecting Finish." lightbox="media/powertable-how-to-create-table-app/finish-table.png":::
-    
+:::image type="content" source="media/powertable-how-to-create-table-app/unique-combination.png" alt-text="Screenshot of selecting unique combination and choosing two fields." lightbox="media/powertable-how-to-create-table-app/unique-combination.png":::
+
+> [!NOTE]
+> In this step, you can **enable Slowly Changing Dimensions (SCDs)** by turning the toggle.
+> For a table, this setting is a one-time configuration that you can't change later.
+
+Select **Finish**.
+
+:::image type="content" source="media/powertable-how-to-create-table-app/finish-table.png" alt-text="Screenshot of selecting Finish to save table configuration." lightbox="media/powertable-how-to-create-table-app/finish-table.png":::
+
 The table app is created successfully in PowerTable with the configured columns and values. Select **Save** to save your table.
 
 :::image type="content" source="media/powertable-how-to-create-table-app/save-table.png" alt-text="Screenshot of saving the new table app." lightbox="media/powertable-how-to-create-table-app/save-table.png":::
@@ -79,9 +95,6 @@ You can update your data table and sync changes with the source database.
 
     :::image type="content" source="media/powertable-how-to-create-table-app/audit.png" alt-text="Screenshot of audit log." lightbox="media/powertable-how-to-create-table-app/audit.png":::
 
-    >[!NOTE]
-    >There are also [other ways to create a new table](#ways-to-create-a-table).
-
 ## Next steps
 
 After creating your first PowerTable application, explore these other features:
@@ -93,3 +106,9 @@ After creating your first PowerTable application, explore these other features:
 * **Collaborative data management**: Comments, threaded discussions, mentions, and notifications allow teams to collaborate directly within the data application.
 * **Productivity**: Use forms for structured data collection and insertion without coding. Use the master-detail view, cross-tab view, and resource layout for time management, task management, tracking, and resource planning.
 * **Connected planning**: Link PowerTable tables to plans so updates in PowerTable sheets become inputs for a plan. This process allows a change in your revenue forecast to automatically flow into headcount, cash flow, and operational plans.
+
+## Related content
+Other ways to create a table:
+* [Connect to a semantic model](./powertable-how-to-connect-semantic-model.md)
+* [Connect to a database table](./powertable-how-to-connect-existing-database.md)
+* [Enter data manually](./powertable-how-to-enter-table-data-manually.md)

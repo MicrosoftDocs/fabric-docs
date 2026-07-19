@@ -4,6 +4,7 @@ description: Learn how to share a SQL database item in Fabric with others and ma
 ms.reviewer: sukkaur, jaszymas, mesrivas
 ms.date: 04/06/2025
 ms.topic: how-to
+ms.search.form: SQL Database sharing
 ---
 # Share your SQL database and manage permissions
 

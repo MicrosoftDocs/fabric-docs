@@ -41,14 +41,14 @@ This pattern matches all nodes that have **both** the `Place` and `City` labels 
 
 ### Simple edge patterns
 
-Edge patterns are more complex than node patterns. They not only specify a filler but also connect a source node pattern to a destination node pattern. Edge patterns describe requirements on both the edge and its endpoints:
+Edge patterns are more complex than node patterns. They not only specify a filler but also connect an origin node pattern to a target node pattern. Edge patterns describe requirements on both the edge and its endpoints:
 
 <!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
 (:Person)-[:likes|knows { creationDate: ZONED_DATETIME("2010-08-31T13:16:54Z") }]->(:Comment)
 ```
 
-The arrow direction `-[...]->` is important—it determines `(:Person)` as the source node pattern and `(:Comment)` as the destination node pattern. Understanding edge direction is crucial for querying your graph correctly.
+The arrow direction `-[...]->` is important—it determines `(:Person)` as the origin node pattern and `(:Comment)` as the target node pattern. Understanding edge direction is crucial for querying your graph correctly.
 
 **Equivalent mirrored pattern:**
 
@@ -70,7 +70,7 @@ When the direction of a graph edge doesn't matter for your query, you can leave 
 (:Song)-[:inspired]-(:Movie)
 ```
 
-This pattern matches the same edges as `(:Song)-[:inspired]->(:Movie)` and `(:Movie)-[:inspired]->(:Song)` combined, regardless of which node is the source and which is the destination (this example isn't from the social network graph type).
+This pattern matches the same edges as `(:Song)-[:inspired]->(:Movie)` and `(:Movie)-[:inspired]->(:Song)` combined, regardless of which node is the origin and which is the target (this example isn't from the social network graph type).
 
 ### Graph edge pattern shortcuts
 

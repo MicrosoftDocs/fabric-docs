@@ -3,7 +3,7 @@ title: Differences between Data Factory in Fabric and Azure
 description: Compare Azure Data Factory and Fabric Data Factory features to choose the right data integration solution for your enterprise.
 ms.reviewer: makromer
 ms.topic: concept-article
-ms.date: 12/19/2025
+ms.date: 06/11/2026
 ms.custom:
   - template-concept
   - build-2023
@@ -14,15 +14,13 @@ ai-usage: ai-assisted
 
 # Differences between Azure Data Factory and Fabric Data Factory
 
-[Data Factory in Microsoft Fabric](data-factory-overview.md) is the next generation of [Azure Data Factory](/azure/data-factory/introduction), built to handle your most complex data integration challenges with a simpler, more powerful approach. With OneLake as the unified storage layer, Fabric Data Factory reduces infrastructure complexity and data movement by letting pipelines work directly with live data through [OneLake shortcuts](../onelake/onelake-shortcuts.md) and [cross-tenant sharing](../governance/external-data-sharing-overview.md).
+[Data Factory in Microsoft Fabric](data-factory-overview.md) (Fabric Data Factory) is the next generation of [Azure Data Factory](/azure/data-factory/introduction). By using OneLake as the unified storage layer, Fabric Data Factory reduces infrastructure complexity and data movement. Pipelines can work directly with live data through [OneLake shortcuts](../onelake/onelake-shortcuts.md) and [cross-tenant sharing](../governance/external-data-sharing-overview.md).
 
-This guide helps you understand the key differences between these two services, so you can make the right choice for your enterprise. We'll walk you through what's new, what's different, and what advantages Fabric brings to the table.
-
-Ready to explore your migration options? Check out our [migration guide](migrate-planning-azure-data-factory.md).
+This article compares the core features, activities, connectors, and infrastructure components of both services. To plan a migration, see the [migration planning guide](migrate-planning-azure-data-factory.md).
 
 ## Compare features side by side
 
-Here's how the core features stack up between Azure Data Factory and Fabric Data Factory. We've highlighted what's changed, what's new, and what stays the same.
+Here's how the core features stack up between Azure Data Factory and Fabric Data Factory. The table highlights what's changed, what's new, and what stays the same.
 
 |[Azure Data Factory](/azure/data-factory/introduction) |[Data Factory in Fabric](data-factory-overview.md) |What's different |
 |:---|:---|:---|
@@ -170,13 +168,13 @@ Use the table below to compare the main differences and choose the option that f
 | **Supported Services**        | Azure Data Factory & Synapse pipelines.                                                       | Microsoft Fabric Dataflow Gen2, Fabric data pipelines, Fabric Copy Job, Fabric Mirroring, Power BI semantic models, and Power BI paginated reports |
 | **VNET Ownership**            | Microsoft-managed virtual network (customer doesn’t control the network).                                 | Customer-managed virtual network (customer has full control).                                                     |
 | **Private Endpoints**         | Autocreated and managed by ADF for supported services (Azure Storage, SQL DB, etc.).          | Customers configure virtual network Gateway to connect Fabric workloads to resources inside their virtual network.           |
-| **Networking Control**        | Limited—customers can only allowlist virtual network integration runtime to private endpoints.          | Full control—customer configures firewall, NSG rules, routing in their own virtual network.                     |
+| **Networking Control**        | Limited - customers can only allowlist virtual network integration runtime to private endpoints.          | Full control - customer configures firewall, NSG rules, routing in their own virtual network.                     |
 | **Installation / Deployment** | No installation needed; fully managed by Microsoft inside a hidden virtual network.                       | Requires deployment of virtual network Data Gateway into the customer’s virtual network.                                     |
 | **High Availability**         | Microsoft-managed, autoscaled inside ADF’s virtual network. Switch to reserve mode when enabling TTL.     | Supports scaling and HA (node-based clusters), but runs inside customer-managed virtual network. Support up to 7 nodes. |
 
-## Key Features of Fabric Data Factory
+## Fabric Data Factory capabilities
 
-In Fabric Data Factory, building your pipeline, dataflows, and other Data Factory items is incredibly easy and fast because of native integration with Microsoft's game-changing AI feature Co-Pilot. With Copilot for Data Factory, you can use natural language to easily define your data integration projects.
+Fabric Data Factory includes [Copilot for Data Factory](copilot-fabric-data-factory.md), which uses natural language to help you create and manage pipelines, dataflows, and other Data Factory items.
 
 ### Native Lakehouse and Data Warehouse integration
 
@@ -186,31 +184,31 @@ One of the biggest advantages of Fabric Data Factory is how it connects with you
 
    :::image type="content" source="media/connector-differences/destination.png" alt-text="Screenshot showing lakehouse and data warehouse destination tab.":::
 
-### Smart email notifications with Office 365
+### Email notifications with Office 365
 
-Need to keep your team in the loop? The Office 365 Outlook activity lets you send customized email notifications about pipeline runs, activity status, and results—all with simple configuration. No more checking dashboards constantly or writing custom notification code.
+The [Office 365 Outlook activity](outlook-activity.md) sends customized email notifications about pipeline runs, activity status, and results.
 
 :::image type="content" source="media/connector-differences/office-365-run.png" alt-text="Screenshot showing that office 365 outlook activity.":::
 
 ### Streamlined data connection experience
 
-Fabric's modern **Get data** experience makes it quick to set up copy pipelines and create new connections. You'll spend less time configuring and more time getting your data where it needs to go.
+Fabric's **Get data** experience provides a guided setup for copy pipelines and new connections.
 
 :::image type="content" source="media/connector-differences/copy-data-source.png" alt-text="Screenshot showing that A modern and easy Get Data experience.":::
 
 :::image type="content" source="media/connector-differences/create-new-connection.png" alt-text="Screenshot showing that how to create a new connection.":::
 
-### Ease-of-use improvements in CI/CD experience
+### CI/CD experience
 
-In Fabric, the CI/CD experience is much easier and more flexible than in Azure Data Factory or Synapse. There's no connection between CI/CD and ARM templates in Fabric making it super-easy to cherry-pick individual parts of your Fabric workspace for check-in, check-out, validation, and collaboration. In ADF and Synapse, your only option for CI/CD is to use your own Git repo. However, in Fabric, you can optionally use the built-in deployment pipelines feature that doesn't require bringing your own external Git repo.
+Fabric decouples CI/CD from ARM templates, so you can cherry-pick individual workspace items for check-in, check-out, validation, and collaboration. In addition to external Git repo integration, Fabric offers built-in [deployment pipelines](cicd-pipelines.md) that don't require an external repo.
 
-### Next-level monitoring and insights
+### Monitoring hub and activity insights
 
-The monitoring experience in Fabric Data Factory is where you'll really see the difference. The monitoring hub gives you a complete view of all your workloads, and you can drill down into any activity for detailed insights. Cross-workspace analysis is built right in, so you can see the big picture across your entire organization.
+The Fabric Data Factory monitoring hub provides cross-workspace visibility into all workloads, with drill-down into individual activity runs.
 
 :::image type="content" source="./media/connector-differences/monitoring-hub.png" alt-text="Screenshot showing the monitoring hub and the items of Data Factory.":::
 
-When you're troubleshooting copy activities, you'll love the detailed breakdown view. Select the run details button (the glasses icon) to see exactly what happened. The Duration breakdown shows you how long each stage took, making performance optimization easier.
+For copy activities, select the run details button (the glasses icon) to view a duration breakdown that shows how long each stage took.
 
 :::image type="content" source="./media/connector-differences/details-of-copy-activity.png" alt-text="Screenshot showing the pipeline copy monitoring results provides breakdown detail of copy activity.":::
 
@@ -218,14 +216,14 @@ When you're troubleshooting copy activities, you'll love the detailed breakdown 
 
 ### Quick pipeline duplication
 
-Need to create a similar pipeline? The **Save as** feature lets you duplicate any existing pipeline in seconds. It's perfect for creating development versions, testing variations, or setting up similar workflows.
+Use the **Save as** feature to duplicate any existing pipeline. Use it to create development copies, test variations, or set up similar workflows.
 
 :::image type="content" source="./media/connector-differences/save-as-button.png" alt-text="Screenshot showing save as in Fabric pipeline.":::
 
 ## Related content
 
 > [!NOTE]
-> New features developed for Data Factory in Fabric are not backported to Azure Data Factory or Azure Synapse pipelines. The two platforms maintain separate roadmaps. Backport requests are evaluated based on community feedback.
+> New features developed for Data Factory in Fabric aren't backported to Azure Data Factory or Azure Synapse pipelines. The two platforms maintain separate roadmaps. The product teams evaluate backport requests based on community feedback.
 
 For more information, see the following resources:
 

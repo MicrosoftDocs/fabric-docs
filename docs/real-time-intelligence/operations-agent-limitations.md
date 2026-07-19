@@ -3,9 +3,10 @@ title: Operations Agent Best Practices and Limitations
 description: Learn about the best practices and limitations of using operations agents in Real-Time Intelligence.
 ms.reviewer: willthom, v-hzargari
 ms.topic: how-to
-ms.date: 05/24/2026
+ms.date: 06/04/2026
 ms.search.form: Operations Agent Limitations, Best Practices
 ai-usage: ai-assisted
+ms.custom: references_regions
 ---
 
 # Operations agent best practices and limitations
@@ -92,5 +93,6 @@ Operations agents have functional, platform, and behavioral limitations that you
 
 ### Regional and workspace limitations
 
-- Operations agent is available in Microsoft Fabric regions, excluding South Central US and East US.
+- Operations agent is available in Azure public cloud Microsoft Fabric regions, excluding South Central US and East US.
+- Operations agent isn't currently available in sovereign clouds, including GCC-High and Bleu.
 - Operations agent isn't currently supported in workspaces encrypted with [Customer-managed keys for Fabric workspaces](../security/workspace-customer-managed-keys.md).

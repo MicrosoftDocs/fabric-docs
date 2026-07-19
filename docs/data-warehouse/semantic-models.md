@@ -1,7 +1,7 @@
 ---
 title: Power BI Semantic Models
 description: Learn more about Power BI semantic models in Microsoft Fabric.
-ms.reviewer: chweb, salilkanade, pvenkat
+ms.reviewer: salilkanade, pvenkat
 ms.date: 12/05/2025
 ms.topic: concept-article
 ms.search.form: Default semantic model overview # This article's title should not change. If so, contact engineering.

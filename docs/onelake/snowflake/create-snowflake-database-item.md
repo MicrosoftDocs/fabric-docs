@@ -14,7 +14,7 @@ ms.search.form: Create new Snowflake database item
 
 ## Overview
 
-You can configure a new or existing Snowflake database to automatically store Iceberg tables in Microsoft OneLake. This feature creates a new data item in Microsoft Fabric, and Iceberg tables that you create in Snowflake are stored there by default. With this capability, both Microsoft Fabric and Snowflake can work with a single copy of Iceberg data without duplication or movement.
+You can configure a new or existing Snowflake database to automatically store Iceberg tables in OneLake. This feature creates a new data item in Fabric, and Iceberg tables that you create in Snowflake are stored there by default. With this capability, both Fabric and Snowflake can work with a single copy of Iceberg data without duplication or movement.
 
 This article shows you how to:
  - Allow connectivity between Snowflake and Fabric

@@ -100,7 +100,17 @@ Environment doesn't store credentials directly. Instead, you create a connection
 
     :::image type="content" source="media\environment-library-management\external-library-connector-new-cloud.png" alt-text="Screenshot that shows an example of creating a new cloud connection with Azure Artifact Feed (Preview) selected." lightbox="media\environment-library-management\external-library-connector-new-cloud.png":::
 
-1. Enter the feed URL and a personal access token (PAT) with **Packaging > Read** scope. 
+1. Enter the feed URL in either of these forms:
+
+    ```YAML
+    https://pkgs.dev.azure.com/{organization}/{project}/_packaging/{feed}/pypi/simple/
+    https://{organization}.pkgs.visualstudio.com/{project}/_packaging/{feed}/pypi/simple/
+    ```
+
+1. Grant access on the feed through **personal access token (PAT)** or through [workspace identity](/fabric/security/workspace-identity)
+    - For PAT token mode, generate a PAT (in ADO → User Settings → Personal Access Tokens) with **Packaging: Read** scope. Add the PAT-owner user to the feed with **Feed Reader** role under Feed → Settings → Permissions.
+    - For [workspace identity](/fabric/security/workspace-identity) mode, workspace admin enables Workspace Identity in Workspace settings → **Workspace identity** → **+ Workspace identity**. In the ADO feed, locate **Feed settings** → **Permissions** → **Add users/groups**, add the workspace identity (named the same as the workspace) with at least **Feed Reader** role.
+
 1. Select **Allow Code-First Artifacts like Notebooks to access this connection (Preview)**.
 
     :::image type="content" source="media\environment-library-management\external-library-connector-example.png" alt-text="Screenshot that shows an example of creating a new connector screen." lightbox="media\environment-library-management\external-library-connector-example.png":::

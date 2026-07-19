@@ -20,7 +20,7 @@ The app is updated often with new features and functionalities. It provides the 
 
 ## Install the app
 
-You must be a capacity admin to install and view the Microsoft Fabric Capacity Metrics app.
+You must be a capacity admin to install the Microsoft Fabric Capacity Metrics app. After the app is installed, a capacity admin can grant other users permission to view it by sharing the report. For more information, see [Share the Fabric Capacity Metrics report](#share-the-fabric-capacity-metrics-report).
 
 To install the app, follow the instructions in [Install the Microsoft Fabric Capacity Metrics app](metrics-app-install.md).
 
@@ -81,7 +81,7 @@ When using the Microsoft Fabric Capacity Metrics app, consider the following con
 
 - Data for new capacities isn't visible in the Metrics app until the next scheduled refresh. Data for new items and workspaces isn't visible until the next scheduled refresh after their first operation consuming CUs within the past 14 days. To view the data before the next scheduled refresh, initiate a manual refresh of the semantic model.
 
-- To hide user emails in the app, disable the [Show user data in the Fabric Capacity Metrics app and reports](../admin/service-admin-portal-audit-usage.md#show-user-data-in-the-fabric-capacity-metrics-app-and-reports) setting in the Admin portal.
+- To hide user emails in the app, disable the [Show user data in the Fabric Capacity Metrics app and reports](../admin/service-admin-portal-audit-usage.md#show-user-data-in-the-microsoft-fabric-capacity-metrics-app-and-reports) setting in the Admin portal.
 
 - Billable items and operations consume CU units from your capacity and are paid for by your organization. Non-billable items and operations reflect preview features that don't count towards your capacity limit and aren't paid for. They provide an indication of possible future impact on your capacity. When preview features become generally available, your organization starts paying for them and their impact on your capacity is taken into account.
 

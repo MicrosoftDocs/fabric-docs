@@ -20,7 +20,7 @@ For structured files like CSV, Parquet, or JSON, see [Shortcut transformations (
 
 ## Why use AI-powered shortcut transformations?
 
-Shortcut transformations in Microsoft Fabric include a set of built-in, AI-powered transformations that you can apply directly to `.txt` files referenced through shortcuts. The engine automatically keeps the output Delta table in sync with the source files.
+Shortcut transformations in Fabric include a set of built-in, AI-powered transformations that you can apply directly to `.txt` files referenced through shortcuts. The engine automatically keeps the output Delta table in sync with the source files.
 
 | Benefit | What it means for you |
 | --- | --- |
@@ -33,7 +33,7 @@ Shortcut transformations in Microsoft Fabric include a set of built-in, AI-power
 
 | Requirement | Details |
 | --- | --- |
-| Microsoft Fabric SKU | Capacity or trial that supports **Lakehouse** workloads. |
+| Fabric SKU | Capacity or trial that supports **Lakehouse** workloads. |
 | Source data | A folder that contains `.txt` files. |
 | Workspace role | **Contributor** or higher. |
 
@@ -55,7 +55,7 @@ For example, customer feedback stored in a data lake might contain sensitive det
 ## Create a shortcut with AI transformation
 
 1. **Create a shortcut**  
-   Reference a folder of `.txt` files in Azure Data Lake, Amazon S3, or another OneLake shortcuts source.
+   Reference a folder of `.txt` files in Azure Data Lake, Amazon S3, or another shortcut source.
 1. **Select an AI-powered transformation**  
    Pick one of the supported transformations during shortcut creation.
 1. **Configure subfolder processing**  

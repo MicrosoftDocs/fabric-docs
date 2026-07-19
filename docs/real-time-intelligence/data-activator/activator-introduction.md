@@ -19,8 +19,6 @@ Activator is the event detection and rules engine at the heart of the Fabric Rea
 
 It fits into a reactive, event-driven architecture where data flows continuously, and Activator makes decisions based on stateful evaluations of event data in near real-time.
 
-:::image type="content" source="./media/activator-introduction/activator.png" alt-text="Diagram that shows the architecture of Fabric Activator.":::
-
 - **Event sources**
 
     Activator connects directly to eventstreams, which ingest data from various producers (Azure Event Hubs, IoT devices, custom endpoints, and other sources). These streams serve as the source of events, and Activator can subscribe to one or more eventstreams to observe data changes. Other event sources could be Fabric or Azure events or an Activator listening to a Power BI report or a Real-Time dashboard.
@@ -37,7 +35,7 @@ It fits into a reactive, event-driven architecture where data flows continuously
 
     When a rule condition is satisfied, Activator can trigger:
 
-  - pipelines, notebooks, dataflows, User Data Functions (UDFs), spark job definitions, copy jobs (preview), or publish a business event (preview) in Fabric.
+  - pipelines, notebooks, dataflows, User Data Functions (UDFs), spark job definitions, copy jobs, or publish a business event (preview) in Fabric.
   
   - External actions via Power Automate.
   
@@ -71,7 +69,7 @@ Deploy activator instances for each workspace and bind them to specific data sou
 | Spark Job Definition | Activator can trigger spark job execution. |
 | User Data Function   | Activator can trigger User Data Function (UDF) execution. |
 | Dataflow             | Activator can trigger dataflow execution when a rule condition is met. |
-| Copy job (preview)   | Activator can trigger copy job execution when a rule condition is met. |
+| Copy job   | Activator can trigger copy job execution when a rule condition is met. |
 | Publish business event (preview) | Activator can trigger publishing of a business event when a rule condition is met. |
 
 ### Activator as an orchestrator
@@ -151,7 +149,7 @@ When a rule’s conditions are met and an action is initiated, the rule is activ
 - Fabric spark jobs (for batch/streaming jobs).
 - Fabric dataflows (for data movement and transformation).
 - Fabric User Data Functions (for custom business logic with code).
-- Fabric copy jobs (preview) (for copying data between sources and destinations).
+- Fabric copy jobs (for copying data between sources and destinations).
 - Publish business event (preview) (for triggering downstream processes that consume business events).
 - Power Automate flows (for business process integration).
 - Teams notifications (using template-based messaging).

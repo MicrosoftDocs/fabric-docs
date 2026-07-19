@@ -6,7 +6,7 @@ ms.author: sngun
 ms.reviewer: kgremban
 ms.topic: glossary
 ms.search.form: product-trident
-ms.date: 05/27/2026
+ms.date: 07/08/2026
 ai-usage: ai-assisted
 #customer intent: As a Microsoft Fabric user, I want to learn about Fabric terms so that I can understand and use Fabric workloads effectively.
 ---
@@ -273,7 +273,7 @@ A *map* is an item that visualizes real-time and historical location data in Fab
 
 #### Operations agent
 
-An *operations agent* is an item that monitors real-time data, tracks key metrics, and recommends actions based on defined business rules. Each operations agent is a dedicated Fabric item designed for a specific business process. For more information, see [Operations agent (preview)](../real-time-intelligence/operations-agent.md).
+An *operations agent* is an item that monitors real-time data, tracks key metrics, and recommends actions based on defined business rules. Each operations agent is a dedicated Fabric item designed for a specific business process. For more information, see [Operations agent](../real-time-intelligence/operations-agent.md).
 
 #### Real-time dashboard
 

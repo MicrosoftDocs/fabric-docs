@@ -94,7 +94,7 @@ notebookutils.businessEvents.publish(
 
         "ImpactAssessment": "Production slowdown risk", 
 
-        "RecommendedAction": "Schedule maintenance" 
+"RecommendationAction": "Schedule maintenance" 
 
     }, 
 

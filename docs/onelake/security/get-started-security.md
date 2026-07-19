@@ -47,7 +47,7 @@ The four different workspace roles grant different types of access. The followin
 
 \* You can give Viewers access to data by using OneLake security roles.
 
-Learn more about [Roles in workspaces in Microsoft Fabric](../../fundamentals/roles-workspaces.md).
+Learn more about [Roles in workspaces in Fabric](../../fundamentals/roles-workspaces.md).
 
 Simplify the management of Fabric workspace roles by assigning them to security groups. This method lets you control access by adding or removing members from the security group.
 
@@ -89,7 +89,7 @@ For more information, see [OneLake security integrations overview](./onelake-sec
 
 ## Shortcut security
 
-Shortcuts in Microsoft Fabric simplify data management. OneLake folder security applies to OneLake shortcuts based on roles defined in the lakehouse where the data is stored.
+Shortcuts in OneLake simplify data management. OneLake folder security applies to shortcuts based on roles defined in the lakehouse where the data is stored.
 
 For more information on shortcut security considerations, see [OneLake security access control model > Shortcuts](./data-access-control-model.md#shortcuts).
 
@@ -104,7 +104,7 @@ OneLake uses Microsoft Entra ID for authentication. Use it to give permissions t
 
 ## Audit logs
 
-To view your OneLake audit logs, follow the instructions in [Track user activities in Microsoft Fabric](/fabric/admin/track-user-activities). OneLake operation names correspond to [ADLS APIs](/rest/api/storageservices/data-lake-storage-gen2) such as CreateFile or DeleteFile. OneLake audit logs don't include read requests or requests made to OneLake via Fabric workloads.
+To view your OneLake audit logs, follow the instructions in [Track user activities in Fabric](../../admin/track-user-activities.md). OneLake operation names correspond to [ADLS APIs](/rest/api/storageservices/data-lake-storage-gen2) such as CreateFile or DeleteFile. OneLake audit logs don't include read requests or requests made to OneLake via Fabric workloads.
 
 ## Encryption and networking
 
@@ -122,7 +122,7 @@ Inbound OneLake communication also enforces TLS 1.2 and negotiates to TLS 1.3 wh
 
 ### Private links
 
-To configure private links in Fabric, see [Set up and use private links](/fabric/security/security-private-links-use).
+To configure private links in Fabric, see [Set up and use private links](../../security/security-private-links-use.md).
 
 ## Allow apps running outside of Fabric to access data via OneLake
 

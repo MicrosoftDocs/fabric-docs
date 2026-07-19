@@ -1,6 +1,7 @@
 ---
 title: Add an Azure Data Explorer Database as a Source
 description: Learn how to add an Azure Data Explorer database as a source to a Microsoft Fabric eventstream.
+ms.reviewer: xujiang1
 ms.topic: how-to
 ms.date: 04/01/2026
 ---
@@ -35,10 +36,6 @@ On the **Select a data source** page, search for **Azure Data Explorer DB**. On 
 
     > [!NOTE]
     > When the Azure Data Explorer DB streaming connector starts, it captures only new table changes. Historical table data isn't streamed into the eventstream.
-
-## Limitations
-
-The Azure Data Explorer streaming connector captures table changes by using a database cursor to query the differences between two ingestion times. However, each query result is limited to a maximum of 64 MB or 500,000 records. For details, see the [Azure Data Explorer query limits](/kusto/concepts/query-limits#limit-on-result-set-size-result-truncation). If your Azure Data Explorer database has a high ingestion rate that exceeds this limit, the connector might fail.
 
 ## Related content
 

@@ -48,7 +48,7 @@ Graph databases are a natural fit for AI reasoning because they encode the relat
 
 ## Graph data model and schema flexibility
 
-Graph data models are schema-optional: you can start with a flexible model and formalize it over time. In graph in Microsoft Fabric, structural changes — such as adding new properties, modifying labels, or changing relationship types — currently require reingesting data into a new model. This approach reduces the need for data duplication and lets teams unify data from multiple sources without heavy upfront redesign. For more information about the data model used in graph in Microsoft Fabric, see [Labeled property graphs](graph-data-models.md).
+Graph data models are schema-optional: you can start with a flexible model and formalize it over time. In graph in Microsoft Fabric, structural changes—such as adding new properties, modifying labels, or changing relationship types—currently require reingesting data into a new model. This approach reduces the need for data duplication and lets teams unify data from multiple sources without heavy upfront redesign. For more information about the data model used in graph in Microsoft Fabric, see [Labeled property graphs](graph-data-models.md).
 
 ## Common uses for graph databases
 

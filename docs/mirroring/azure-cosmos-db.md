@@ -19,7 +19,7 @@ You can use built-in Power BI capabilities to access data in OneLake in DirectLa
 In addition to Power BI, you can use T-SQL to run complex aggregate queries or use Spark for data exploration. You can seamlessly access the data in notebooks and use data science to build machine learning models.
 
 > [!IMPORTANT]
-> Currently, only Azure Cosmos DB for NoSQL accounts are supported.
+> Currently, only Azure Cosmos DB for NoSQL accounts are supported. Mirroring isn't available in sovereign clouds (Azure Government and Azure China).
 
 ## Why use mirroring in Fabric?
 

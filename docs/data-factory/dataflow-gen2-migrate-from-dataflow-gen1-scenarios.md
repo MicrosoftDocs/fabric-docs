@@ -3,7 +3,7 @@ title: "Migrate from Dataflow Gen1 to Dataflow Gen2: Migration scenarios"
 description: "Scenario-based guidance to help you determine the right architecture to choose when migrating to Dataflow Gen2 in Microsoft Fabric."
 ms.reviewer: mllopis, alpowers
 ms.topic: concept-article
-ms.date: 12/08/2024
+ms.date: 06/09/2026
 ms.custom: fabric-cat, intro-migration, dataflows
 ---
 
@@ -65,7 +65,14 @@ in
 > If you parameterize the `workspaceId` and `dataflowId` values in the semantic models, you can use the [Datasets - Update Parameter in Group](/rest/api/power-bi/datasets/update-parameters-in-group) REST API operation to programmatically update the mashup parameter details.
 
 > [!IMPORTANT]
-> While it's possible to _get data_ by using the dataflow connector, this approach isn't recommended when using Dataflow Gen2. Instead, we recommend that you use the data destination functionality to output all created tables from Dataflow Gen2 to Fabric items or other destinations, whenever possible. That's because the dataflow connector uses an underlying system implementation storage layer (called _DataflowsStagingLakehouse_), and it could change when new functionality or features are added.
+> Consuming Dataflow Gen2 tables through the dataflow connector, including as a source for Power BI semantic models, Excel, or other dataflows, is fully supported.
+>
+> Where possible, we still recommend using the [data destination](dataflow-gen2-data-destinations-and-managed-settings.md) functionality to output your tables to Fabric items (such as a Lakehouse or Warehouse) or other destinations, and connecting to those for downstream consumption. Destinations give you an explicit, governed copy of your data. This is a recommendation, not a requirement.
+>
+> Keep two things in mind:
+>
+> - Always consume the data through the dataflow connector, not by accessing the underlying staging storage (called _DataflowsStagingLakehouse_) directly. The connector is a stable contract, while the internal storage layer can change as new capabilities are added. For more information, see [Data in staging items](data-in-staging-items.md).
+> - Staging is used as a cache, not a system of record. It doesn't replace the need to keep a durable copy of any data that can't be recreated from your source systems.
 
 ### Migration scenario 2
 

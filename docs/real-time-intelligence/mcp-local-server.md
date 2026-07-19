@@ -1,74 +1,76 @@
 ---
-title: Get started with the local MCP server for Real-Time Intelligence
-description: Learn how to set up and use the local Model Context Protocol (MCP) server for Real-Time Intelligence. The server enables AI agents to interact with RTI components like Eventhouse.
+title: Get Started with the Local MCP Server for Real-Time Intelligence
+description: Learn how to set up and use the local Model Context Protocol (MCP) server for Real-Time Intelligence. The server enables AI agents to interact with eventhouses.
 ms.reviewer: sharmaanshul
-ms.topic: how-to
-ms.date: 06/03/2026
+ms.topic: get-started
+ms.date: 06/14/2026
 ms.search.form: MCP, RTI, AI
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
 ms.update-cycle: 90-days
 
-#CustomerIntent: As a Fabric RTI AI developer, I want to use the RTI MCP server to create AI agents and AI applications.
+#CustomerIntent: As an AI developer for Fabric Real-Time Intelligence, I want to use the Real-Time Intelligence MCP server to create AI agents and AI applications so that I can efficiently query and analyze data.
 ---
 
 # Get started with the local MCP server for Real-Time Intelligence (preview)
 
-The local RTI MCP server lets AI agents or AI applications interact with Real-Time Intelligence (RTI) or Azure Data Explorer (ADX) by providing tools through the MCP interface. RTI MCP makes it easy to query and analyze data.
+The local Model Context Protocol (MCP) server for Microsoft Fabric Real-Time Intelligence lets AI agents or AI applications interact with Real-Time Intelligence or Azure Data Explorer by providing tools through the MCP interface. MCP makes it easier for agents to query and analyze data.
 
-MCP support for RTI and ADX is a full open-source [MCP server](https://github.com/microsoft/fabric-rti-mcp/) implementation for Microsoft Fabric Real-Time Intelligence (RTI). Customers need to install, host, and manage the deployment.
+MCP support for Real-Time Intelligence and Azure Data Explorer is a full open-source [MCP server](https://github.com/microsoft/fabric-rti-mcp/) implementation for Real-Time Intelligence. Customers need to install, host, and manage the deployment.
 
 ## Scenarios
 
-The most common scenario for using the local RTI MCP Server is to connect to it from an existing AI client, such as Cline, Claude, and GitHub Copilot. The client can then use all the available tools to access and interact with RTI or ADX resources using natural language. For example, you could use GitHub Copilot agent mode with the RTI MCP Server to list KQL databases or ADX clusters or run natural language queries on RTI Eventhouses.
+The most common scenario for using the local MCP server for Real-Time Intelligence is to connect to it from an existing AI client, such as Cline, Claude, or GitHub Copilot. The client can then use all the available tools to access and interact with Real-Time Intelligence or Azure Data Explorer resources by using natural language.
+
+For example, you can use GitHub Copilot agent mode with the Real-Time Intelligence MCP server to:
+
+- List KQL databases or Azure Data Explorer clusters.
+- Run natural language queries on Real-Time Intelligence eventhouses.
 
 ## Architecture
 
-The local RTI MCP Server is at the core of the system and acts as a bridge between AI agents and data sources. Agents send requests to the MCP server, which translates them into Eventhouse queries. The RTI MCP server runs locally and provides read‑only access to Fabric.
+The local MCP server for Real-Time Intelligence is at the core of the system. It acts as a bridge between AI agents and data sources. It runs locally and provides access to eventhouse, eventstream, Activator, and map resources.
+
+Agents send requests to the Real-Time Intelligence MCP server. The MCP server translates the requests into Real-Time Intelligence operations.
 
 :::image type="content" source="media/mcp/model-context-protocol-server-architecture.png" alt-text="Diagram that shows the local MCP server architecture.":::
 
-The local RTI MCP Server acts as a bridge between AI-powered applications and your data in Fabric. It runs locally and provides read-only access to Eventhouse databases.
+The architecture follows the MCP client/server model:
 
-The architecture follows the MCP client-server model:
+- **MCP host**: The application where AI interactions happen. For example, Visual Studio Code can interact with GitHub Copilot, Claude Desktop, or Cline. The host contains the AI model connection, a tool orchestrator, and one or more MCP clients.
+- **MCP server**: A lightweight service that exposes specific capabilities as structured tools. The Real-Time Intelligence MCP server exposes tools like "execute query," "list databases," and "list tables" that translate into eventhouse operations.
 
-- **MCP Host**: The application where AI interactions happen. For example, Visual Studio Code with GitHub Copilot, Claude Desktop, Cline. The host contains the AI model connection, a tool orchestrator, and one or more MCP clients.
-- **MCP Server**: A lightweight service that exposes specific capabilities as structured tools. The RTI MCP server exposes tools like "execute query," "list databases," and "list tables" that translate into Eventhouse operations.
-
-Any application that supports MCP can connect to the local RTI MCP server using the same protocol. This can be an interactive product like GitHub Copilot or a programmatic AI agent framework.
+Any application that supports MCP can connect to the local MCP server for Real-Time Intelligence by using the same protocol. This application can be an interactive product like GitHub Copilot or a programmatic AI agent framework.
 
 ## Key features
 
-**Real-Time Data Access**: Retrieve data from KQL databases in seconds.
+**Real-time data access**: Retrieve data from KQL databases in seconds.
 
-**Natural Language Interfaces**: Ask questions in plain English or other languages, and the system turns them into optimized queries (NL2KQL).
+**Natural language interfaces**: Ask questions in plain English or other languages, and the system turns them into optimized queries. This translation of natural language to KQL is called the *NL2KQL* framework.
 
-**Schema Discovery**: Discover schema and metadata, so you can learn data structures dynamically.
+**Schema discovery**: Discover schema and metadata, so you can learn data structures dynamically.
 
-**Plug-and-Play Integration**: Connect MCP clients like GitHub Copilot, Claude, and Cline to RTI with minimal setup because of standardized APIs and discovery mechanisms.
+**Plug-and-play integration**: Connect MCP clients like GitHub Copilot, Claude, and Cline to Real-Time Intelligence with minimal setup because of standardized APIs and discovery mechanisms.
 
-**Local Language Inference**: Work with your data in your preferred language.
+**Local language inference**: Work with your data in your preferred language.
 
-## Supported RTI components
+## Supported Real-Time Intelligence components
 
-**Eventhouse** - Run KQL queries against the KQL databases in your [Eventhouse](eventhouse.md) backend. This unified interface lets AI agents query, reason, and act on real-time data.
+**Eventhouse**: Run KQL queries against the KQL databases in your [eventhouse](eventhouse.md) back end. This unified interface lets AI agents query, reason, and act on real-time data.
 
-**Eventstreams** - Query and manage [Eventstreams](event-streams/overview.md) to analyze streaming data and get real-time insights. You can list the eventstreams in your workspace, get details and definitions, create new eventstreams, and more.
+**Eventstreams**: Query and manage [eventstreams](event-streams/overview.md) to analyze streaming data and get real-time insights. You can list the eventstreams in your workspace, get details and definitions, create new eventstreams, and more.
 
-**Activator** - Interact with Fabric [Activator](data-activator/activator-introduction.md) to list Activator artifacts in your workspace, create trigger actions, and set up notifications.
+**Activator**: Interact with Fabric [Activator](data-activator/activator-introduction.md) to list Activator artifacts in your workspace, create trigger actions, and set up notifications.
 
-**Map** - Query and manage [Map](map/about-fabric-maps.md) resources to visualize data and create geospatial insights. You can list maps in your workspace, visualize data on maps, get details and definitions, create new maps, and more.
+**Map**: Query and manage [map](map/about-fabric-maps.md) resources to visualize data and create geospatial insights. You can list maps in your workspace, visualize data on maps, get details and definitions, create new maps, and more.
 
-> [!NOTE]
->
-> You can also use the Fabric RTI MCP Server to run KQL queries against the clusters in your [Azure Data Explorer](/azure/data-explorer/) backend.
+You can also use the Fabric Real-Time Intelligence MCP server to run KQL queries against the clusters in your [Azure Data Explorer](/azure/data-explorer/) back end.
 
-## Install
+## Installation
 
-To install the local RTI MCP server, follow the open source instructions in the [RTI MCP server](https://github.com/microsoft/fabric-rti-mcp/) repository. The repository includes documentation on installation, configuration, and usage of the MCP server with RTI.
+To install the local MCP server for Real-Time Intelligence, follow the open-source instructions in the [Real-Time Intelligence MCP server](https://github.com/microsoft/fabric-rti-mcp/) repository. The repository includes documentation on installation, configuration, and usage of the MCP server with Real-Time Intelligence.
 
 ## Related content
 
-* Implement the [RTI MCP server](https://github.com/microsoft/fabric-rti-mcp/)
-* [Model Context Protocol (MCP) overview](https://modelcontextprotocol.io/introduction)
-* [What is MCP in Real-Time Intelligence?](mcp-overview.md)
+- [Model Context Protocol (MCP) overview](https://modelcontextprotocol.io/introduction)
+- [What is MCP in Real-Time Intelligence?](mcp-overview.md)

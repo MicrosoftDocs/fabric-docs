@@ -1,13 +1,12 @@
 ---
-title: Practice with a sample dbt project in Microsoft Fabric (preview)
+title: Practice with a Sample Dbt Project in Microsoft Fabric (Preview)
 description: Learn how to create and run a dbt job using the sample Jaffle Shop project in Microsoft Fabric.
 ms.reviewer: akurnala
+ms.date: 06/19/2026
 ms.topic: tutorial
-ms.date: 12/02/2024
 ms.search.form: dbt-job-sample-project-tutorial
 ai-usage: ai-assisted
-
-#customer intent: As a data engineer, I want to practice with a sample dbt project so that I can learn how to use dbt jobs in Microsoft Fabric.
+# customer intent: As a data engineer, I want to practice with a sample dbt project so that I can learn how to use dbt jobs in Microsoft Fabric.
 ---
 
 # Tutorial: Practice with a sample dbt project in Microsoft Fabric (preview)
@@ -82,9 +81,9 @@ Execute the dbt transformations to build models, run tests, and create snapshots
 1. (Optional) Run or exclude specific models by using advanced selectors. Go to **Advanced Settings** in the top panel, select **Run Settings**, then select **Run with Advanced Selectors**.
 
     ```bash
-    dbt run --select my_model 
-    dbt build --select staging.* 
-    dbt build --exclude deprecated_models 
+    dbt run --select my_model
+    dbt build --select staging.*
+    dbt build --exclude deprecated_models
     ```
 
     Selectors let you target parts of your pipeline for faster iteration during development or testing.
@@ -128,7 +127,6 @@ When you finish the tutorial, delete the dbt job and warehouse to avoid extra co
 
 ## Related content
 
-* [dbt job in Microsoft Fabric overview](dbt-job-overview.md)
-* [How to create a new dbt job](dbt-job-how-to.md)
-* [How to configure a dbt job](dbt-job-configure.md)
-
+- [dbt job in Microsoft Fabric overview](dbt-job-overview.md)
+- [Learn how to create a new dbt job in Microsoft Fabric (preview)](dbt-job-how-to.md)
+- [Configure a dbt job in Microsoft Fabric](dbt-job-configure.md)

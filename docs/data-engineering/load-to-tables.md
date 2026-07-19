@@ -56,5 +56,4 @@ After required fields are set for your path, select **Load**.
 ## Related content
 
 - [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
-- [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
 - [CSV file upload to Delta tables for Power BI reporting](get-started-csv-upload.md)

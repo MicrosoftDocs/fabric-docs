@@ -3,7 +3,7 @@ title: Configure REST in a copy activity
 description: This article explains how to copy data using REST.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 05/21/2026
 ms.custom:
   - pipelines
   - template-how-to
@@ -41,6 +41,11 @@ The following properties are supported for REST under the **Source** tab of a co
 The following first three properties are **required**:
 
 - **Connection**:  Select an **REST** connection from the connection list. If no connection exists, then create a new REST connection by selecting **New**.
+    - **Additional connection properties**: Specify additional connection properties which will be used in REST connection to set advanced options. Additional connection properties are provided as a dictionary of key-value pairs.
+      - **Disable server certificate validation**: Specify whether to validate server-side TLS/SSL certificate when connecting to the endpoint. The allowed value is `true` or `false`.
+    
+        :::image type="content" source="./media/connector-rest/additional-connection-properties.png" alt-text="Screenshot showing additional connection properties for source.":::
+
 - **Connection type**: Select **REST**.
 - **Relative URL**: A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the connection definition is used. The HTTP connector copies data from the combined URL: `[URL specified in connection]/[relative URL specified]`.
 
@@ -64,13 +69,18 @@ Under **Advanced**, you can specify the following fields:
 
     :::image type="content" source="./media/connector-rest/additional-columns.png" alt-text="Screenshot showing additional columns.":::
 
-## Destination
+### Destination
 
 The following properties are supported for REST under the **Destination** tab of a copy activity.
 
 The following first three properties are **required**:
 
 - **Connection**:  Select a **REST** connection from the connection list. If no connection exists, then create a new REST connection by selecting **New**.
+    - **Additional connection properties**: Specify additional connection properties which will be used in REST connection to set advanced options. Additional connection properties are provided as a dictionary of key-value pairs.
+      - **Disable server certificate validation**: Specify whether to validate server-side TLS/SSL certificate when connecting to the endpoint. The allowed value is `true` or `false`.
+    
+        :::image type="content" source="./media/connector-rest/additional-connection-properties.png" alt-text="Screenshot showing additional connection properties for source.":::
+
 - **Connection type**: Select **REST**.
 - **Relative URL**: A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the connection definition is used. The HTTP connector copies data from the combined URL: `[URL specified in connection]/[relative URL specified]`.
 

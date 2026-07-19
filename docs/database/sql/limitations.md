@@ -1,7 +1,7 @@
 ---
 title: "Limitations for SQL database"
 description: A detailed list of limitations for SQL database in Microsoft Fabric.
-ms.reviewer: nzagorac, antho, sukkaur, imotiwala, drskwier, ajayj
+ms.reviewer: nzagorac, antho, sukkaur, drskwier, nanikolic
 ms.date: 05/15/2026
 ms.topic: concept-article
 ms.update-cycle: 180-days

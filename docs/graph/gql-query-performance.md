@@ -42,7 +42,7 @@ Both queries return the same results, but the first version lets the query engin
 
 Return only the node and edge properties your scenario requires. Avoid returning full nodes or using `RETURN *` when you need only a subset of properties.
 
-In graph, OneLake tables back node properties. Selecting unnecessary properties increases data read, serialization cost, and response size. During graph modeling, all columns from the source table are added as node type properties by default unless you remove them.
+In graph, OneLake tables back node properties. Selecting unnecessary properties increases data read, serialization cost, and response size. During graph modeling, manually select columns from the source table that you want to add as node type properties.
 
 **Recommended:** Narrow projection.
 
@@ -59,7 +59,7 @@ RETURN *
 ```
 
 > [!NOTE]
-> Remove unused node type properties during graph modeling by selecting the trashcan icon next to each property. Fewer properties per node reduce both storage and query overhead.
+> Only add node type properties during graph modeling when they are needed for queries or analysis. Fewer properties per node reduce both storage and query overhead.
 
 ## Limit result set size
 

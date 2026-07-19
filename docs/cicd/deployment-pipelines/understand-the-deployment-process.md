@@ -116,6 +116,9 @@ Autobinding works only with items that are supported by deployment pipelines and
 Deployment pipelines automatically binds items that are connected across pipelines, if they're in the same pipeline stage. When you deploy such items, deployment pipelines attempts to establish a new connection between the deployed item and the item connected to it in the other pipeline. For example, if you have a report in the test stage of pipeline *A* that's connected to a semantic model in the test stage of pipeline *B*, deployment pipelines recognizes this connection.
 
 >[!NOTE]
+> The phrase "same pipeline stage" refers to the numeric index of the stage in the deployment pipeline, not the display name. Items are matched by each stage's position in the pipeline - for example, the first stage or the second stage - not by the stage's display name. Stages in the same position are the same pipeline stage even when their names differ, and two stages that share a name aren't the same pipeline stage when they're in different positions.
+
+>[!NOTE]
 >Each pipeline must have the same number of stages. So for example, if pipeline *A* has 3 stages, then pipeline *B* must also have 3 stages.  Pipeline *A* cannot have 3 stages and pipeline *B* 5 stages for autobinding to succeed. 
 
 Here's an example with illustrations that to help demonstrate how autobinding across pipelines works:

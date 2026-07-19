@@ -4,7 +4,7 @@ description: Learn how to plan your Microsoft Fabric capacity size using the Mic
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: how-to
-ms.date: 05/14/2025
+ms.date: 06/15/2026
 ---
 
 # Plan your capacity size
@@ -28,6 +28,8 @@ The [capacity SKU](licenses.md#capacity) table shows the number of Capacity Unit
 | F512 | 512 | 15,360 |
 | F1024 | 1024 | 30,720 |
 | F2048 | 2048 | 61,440 |
+| F4096 | 4096 | 122,880 |
+| F8192 | 8192 | 245,760 |
 
 ## Estimate your capacity size
 

@@ -57,7 +57,7 @@ landingContent:
       - linkListType: get-started
         links:
           - text: Create a shortcut
-            url: create-onelake-shortcut.md
+            url: shortcuts/create-onelake-shortcut.md
       - linkListType: how-to-guide
         links:
           - text: Access shortcuts

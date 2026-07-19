@@ -12,7 +12,7 @@ ms.date: 01/14/2026
 
 # Create an Azure Data Lake Storage Gen2 shortcut
 
-In this article, you learn how to create an Azure Data Lake Storage (ADLS) Gen2 shortcut inside a Microsoft Fabric lakehouse. When you create shortcuts to Azure Data Lake Storage (ADLS) Gen2 storage accounts, the target path can point to any folder within the hierarchical namespace. At a minimum, the target path must include a container name.
+In this article, you learn how to create an Azure Data Lake Storage (ADLS) Gen2 shortcut inside a Fabric lakehouse. When you create shortcuts to Azure Data Lake Storage (ADLS) Gen2 storage accounts, the target path can point to any folder within the hierarchical namespace. At a minimum, the target path must include a container name.
 
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To create shortcuts programmatically, see [OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md).
 
@@ -29,7 +29,7 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To 
 
 1. Select **New shortcut**.
 
-   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="The same screenshot displayed earlier showing where to select New shortcut from the Lake view.":::
+   :::image type="content" source="shortcuts/media/create-onelake-shortcut/new-shortcut-lake-view.png" alt-text="The same screenshot displayed earlier showing where to select New shortcut from the Lake view.":::
 
 1. Under **External sources**, select **Azure Data Lake Storage Gen2**.
 
@@ -66,7 +66,7 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To 
 
 1. The lakehouse automatically refreshes. The shortcut appears in the left **Explorer** pane.
 
-   :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::
+   :::image type="content" source="shortcuts/media/create-onelake-shortcut/folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::
 
 ## Access
 
@@ -105,6 +105,6 @@ The following limitations apply to ADLS shortcuts:
 
 ## Related content
 
-- [Create a OneLake shortcut](create-onelake-shortcut.md)
+- [Create a OneLake shortcut](shortcuts/create-onelake-shortcut.md)
 - [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)
-- [External data sharing in Microsoft Fabric](../governance/external-data-sharing-overview.md)
+- [External data sharing in Fabric](../governance/external-data-sharing-overview.md)

@@ -11,13 +11,13 @@ ms.date: 05/18/2026
 
 # Connecting to Microsoft OneLake
 
-Microsoft OneLake provides open access to all of your Fabric items through existing Azure Data Lake Storage (ADLS) and Blob APIs and SDKs. You can access your data in OneLake through any API, SDK, or tool compatible with ADLS or Azure Blob Storage just by using a OneLake URI instead. You can upload data to a lakehouse through Azure Storage Explorer, or read a delta table through a shortcut from Azure Databricks.
+OneLake provides open access to all of your Fabric items through existing Azure Data Lake Storage (ADLS) and Blob APIs and SDKs. You can access your data in OneLake through any API, SDK, or tool compatible with ADLS or Azure Blob Storage just by using a OneLake URI instead. You can upload data to a lakehouse through Azure Storage Explorer, or read a Delta table through a shortcut from Azure Databricks.
 
 As OneLake is software as a service (SaaS), some operations, such as managing permissions or updating items, must be done through Fabric experiences, and can't be done via ADLS APIs. For a full list of changes to these APIs, see [OneLake API parity](onelake-api-parity.md).
 
 ## URI syntax
 
-Because OneLake exists across your entire Microsoft Fabric tenant, you can refer to anything in your tenant by its workspace, item, and path:
+Because OneLake exists across your entire Fabric tenant, you can refer to anything in your tenant by its workspace, item, and path:
 
 ```http
 https://onelake.dfs.fabric.microsoft.com/<workspace>/<item>.<itemtype>/<path>/<fileName>
@@ -72,7 +72,7 @@ OneLake regional endpoints all follow the same format: `https://<region>-onelake
 
 ## Additional OneLake endpoints
 
-To connect to your workspace over a private endpoint, you must use the workspace fully qualified domain name (FQDN) (`https://<wsid>.z<xy>.dfs.fabric.microsoft.com`). Learn more about how workspace FQDN behaves in [workspace level private links overview](/fabric/security/security-workspace-level-private-links-overview#connecting-to-workspaces).
+To connect to your workspace over a private endpoint, you must use the workspace fully qualified domain name (FQDN) (`https://<wsid>.z<xy>.dfs.fabric.microsoft.com`). Learn more about how workspace FQDN behaves in [workspace level private links overview](../security/security-workspace-level-private-links-overview.md#connecting-to-workspaces).
 
 OneLake also supports a general FQDN (`https://api.onelake.fabric.microsoft.com`) and regional variant (`https://<region>-api.onelake.fabric.microsoft.com`). These FQDNs work identically to the DFS and Blob OneLake FQDNs, but may be incompatible with some Azure Storage tooling which relies on the ".dfs" and ".blob" strings to map to the correct Azure Storage APIs.  
 

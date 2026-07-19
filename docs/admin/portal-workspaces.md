@@ -1,4 +1,4 @@
----
+﻿---
 title: Manage workspaces
 description: Learn how to view and understand info about workspaces and manage workspaces as an administrator.
 author: mimart
@@ -27,7 +27,7 @@ The following table describes the columns of the list of workspaces.
 | **State** | The state lets you know if the workspace is available for use. There are five states, **Active**, **Orphaned**, **Deleted**, **Removing**, and **Not found**. For more information, see [Workspace states](#workspace-states). |
 | **Capacity name** | Name given to the workspace's capacity. |
 | **Capacity SKU Tier** | The type of workspace type used for the workspace's capacity. Capacity SKU Tiers include **Power BI Premium** and **Power BI Premium Per-User (PPU)**. For more information about capacity tiers, see [Configure and manage capacities in Power BI Premium](/power-bi/enterprise/service-admin-premium-manage). |
-| **Upgrade status** | The upgrade status lets you know if the workspace is eligible for a Microsoft Fabric upgrade. |
+| **Upgrade status** | The upgrade status lets you know if the workspace is eligible for a Fabric upgrade. |
 
 The table columns on the **Workspaces** tab correspond to the properties returned by the [admin Rest API](/rest/api/power-bi/admin) for workspaces. Personal workspaces are of type **PersonalGroup** and all other workspaces are of type **Workspace**. For more information, see [Workspaces](../fundamentals/workspaces.md).
 
@@ -39,7 +39,7 @@ The following table describes the possible workspace states.
 |---------|---------|
 | **Active** | A normal workspace. It doesn't indicate anything about usage or what's inside, only that the workspace itself is "normal." |
 | **Orphaned** | A workspace with no admin user. You need to assign an admin. |
-| **Deleted** | A deleted workspace. When a workspace is deleted, it enters a retention period. During the retention period, a Microsoft Fabric administrator can restore the workspace. See [Retention and recovery](retention-recovery.md) for detail. When the retention period ends, the workspace enters the *Removing* state.|
+| **Deleted** | A deleted workspace. When a workspace is deleted, it enters a retention period. During the retention period, a Fabric administrator can restore the workspace. See [Retention and recovery](retention-recovery.md) for detail. When the retention period ends, the workspace enters the *Removing* state.|
 | **Removing** | At the end of a deleted workspace's retention period, it moves into the *Removing* state. During this state, the workspace is permanently removed. Permanently removing a workspace takes a short while, and depends on the service and folder content. |
 | **Not found** | If the customer's API request includes a workspace ID for a workspace that doesn't belong to the customer's tenant, "Not found" is returned as the status for that ID. |
 

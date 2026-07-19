@@ -11,7 +11,7 @@ ms.topic: how-to
 
 # Getting started with OneLake table APIs for Iceberg
 
-OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabric. This endpoint supports read-only metadata operations for Apache Iceberg tables in Fabric. These operations are compatible with [the Iceberg REST Catalog (IRC) API open standard](https://iceberg.apache.org/rest-catalog-spec/).
+OneLake offers a REST API endpoint for interacting with tables in Fabric. This endpoint supports read-only metadata operations for Apache Iceberg tables in Fabric. These operations are compatible with [the Iceberg REST Catalog (IRC) API open standard](https://iceberg.apache.org/rest-catalog-spec/).
 
 ## Prerequisites
 

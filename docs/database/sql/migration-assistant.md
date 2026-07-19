@@ -4,6 +4,7 @@ description: Learn how the Fabric Migration Assistant migrates schema and data f
 ms.reviewer: randolphwest, subasak, niball, antho
 ms.date: 04/07/2026
 ms.topic: concept-article
+ms.search.form: SQL Database migration assistant
 ---
 
 # Fabric Migration Assistant for SQL database (Preview)

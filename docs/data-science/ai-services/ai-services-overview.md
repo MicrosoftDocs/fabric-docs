@@ -8,11 +8,12 @@ reviewer: ranadeepsingh
 ms.topic: overview
 ms.custom:
   - references_regions
-ms.date: 05/12/2026
+ms.date: 06/10/2026
 ms.update-cycle: 180-days
 ms.search.form: 
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
+ai.usage: ai-assisted
 ---
 
 # Foundry Tools in Fabric (preview)
@@ -41,11 +42,13 @@ Fabric provides two options to use Foundry Tools:
 
 [REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-python-sdk.md), [SynapseML](how-to-use-openai-synapse-ml.md), [AI Functions](how-to-use-openai-ai-functions.md)
 
-- Language Models: `gpt-5.1`, `gpt-5`, `gpt-5-mini`, `gpt-4.1`, and `gpt-4.1-mini` are hosted. [See table for details](#consumption-rate-for-openai-language-models)
-- Text Embedding Model: `text-embedding-ada-002` is hosted. [See table for details](#consumption-rate-for-openai-embedding-models)
+- Language models: `gpt-5.1` and `gpt-5-mini` are hosted. The gpt-4.1 model series is listed in the consumption table for retirement and migration planning. [See table for details](#consumption-rate-for-openai-language-models)
+- Text embedding model: `text-embedding-ada-002` is hosted. [See table for details](#consumption-rate-for-openai-embedding-models)
 
-### [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) 
+### [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/)
+
 [REST API](how-to-use-text-analytics.md), [SynapseML](how-to-use-text-analytics.md)
+
 - Language detection: detects language of the input text
 - Sentiment analysis: returns a score between 0 and 1, to indicate the sentiment in the input text
 - Key phrase extraction: identifies the key talking points in the input text
@@ -53,8 +56,10 @@ Fabric provides two options to use Foundry Tools:
 - Named entity recognition: identifies known entities and general named entities in the input text
 - Entity linking: identifies and disambiguates the identity of entities found in text
 
-### [Translator](https://azure.microsoft.com/products/ai-services/translator/) 
+### [Translator](https://azure.microsoft.com/products/ai-services/translator/)
+
 [REST API](how-to-use-text-translator.md), [SynapseML](how-to-use-text-translator.md)
+
 - Translate: Translates text
 - Transliterate: Converts text in one language, in one script, to another script.
 
@@ -64,7 +69,8 @@ Fabric provides two options to use Foundry Tools:
 
 For the list of Azure regions where prebuilt Foundry Tools in Fabric are now available, visit the [Available regions](../../fundamentals/copilot-fabric-overview.md#available-regions) section of the **Overview of Copilot in Fabric and Power BI (preview)** article.
 
-### Available regions for Text Analytics and Translator 
+### Available regions for Text Analytics and Translator
+
 Prebuilt [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) and the [Translator](https://azure.microsoft.com/products/ai-services/translator/) in Fabric are now available for public preview in the Azure regions listed in this article. If you don't find your Microsoft Fabric home region in this article, you can still create a Microsoft Fabric capacity in a supported region. For more information, visit [Buy a Microsoft Fabric subscription](../../enterprise/buy-subscription.md).
 To determine your Fabric home region, visit [Find your Fabric home region](../../admin/find-fabric-home-region.md).
 
@@ -72,72 +78,75 @@ To determine your Fabric home region, visit [Find your Fabric home region](../..
 | -------- | ------- | ------- | ------- |
 | Australia East | North Europe | Brazil South | South Africa North |
 | Australia Southeast | West Europe | Canada Central | UAE North |
-|  Central Indian | France Central | Canada East |  |
-| East Asia | Norway East |  East US | |
-| Japan East | Switzerland North | East US 2 |  |
-|  Korea Central | Switzerland West | North Central US |  |
-| Southeast Asia | UK South | South Central US |  |
-|  South India | UK West | West US |  |
-| |  | West US 2 |  |
-|   |  | West US 3 |  |
+| Central Indian | France Central | Canada East | |
+| East Asia | Norway East | East US | |
+| Japan East | Switzerland North | East US 2 | |
+| Korea Central | Switzerland West | North Central US | |
+| Southeast Asia | UK South | South Central US | |
+| South India | UK West | West US | |
+| | | West US 2 | |
+| | | West US 3 | |
 
 ## Consumption rate
 
 ### Consumption rate for OpenAI language models
 
-| **Model** | **Deployment Name** | **Context Window (Tokens)** | **Input (Per 1,000 Tokens)** | **Cached Input (Per 1,000 Tokens)**  | **Output (Per 1,000 Tokens)** | **Retirement Date** |
-|---|---|---|---|---|---|---|
-| gpt-5.1-2025-11-13 | `gpt-5.1` | 400,000<br> Max output: 128,000 | 42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds | |
-| gpt-5-2025-08-07 | `gpt-5` | 400,000<br> Max output: 128,000 |  42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds | May 30, 2026 |
-| gpt-5-mini-2025-08-07 | `gpt-5-mini` | 400,000<br> Max output: 128,000 | 8.40 CU seconds | 0.84 CU seconds | 67.23 CU seconds | |
-| gpt-4.1-2025-04-14 | `gpt-4.1` | 128,000<br>Max output: 32,768 | 67.23 CU seconds | 16.81 CU seconds | 268.91 CU seconds | May 30, 2026 |
-| gpt-4.1-mini-2025-04-14 | `gpt-4.1-mini` | 128,000<br>Max output: 32,768 | 13.45 CU seconds | 3.36 CU seconds | 53.78 CU seconds | Jun 30, 2026 |
+| **Model** | **Deployment Name** | **Context Window (Tokens)** | **Input (Per 1,000 Tokens)** | **Cached Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** | **Retirement Date** |
+| --- | --- | --- | --- | --- | --- | --- |
+| gpt-5.1-2025-11-13 | `gpt-5.1` | 400,000<br>Max output: 128,000 | 42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds | |
+| gpt-5-mini-2025-08-07 | `gpt-5-mini` | 400,000<br>Max output: 128,000 | 8.40 CU seconds | 0.84 CU seconds | 67.23 CU seconds | |
+| gpt-4.1-mini-2025-04-14 | `gpt-4.1-mini` | 128,000<br>Max output: 32,768 | 13.45 CU seconds | 3.36 CU seconds | 53.78 CU seconds | June 30, 2026 |
+| gpt-5-2025-08-07 | `gpt-5` | 400,000<br>Max output: 128,000 | 42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds | June 11, 2026 |
+| gpt-4.1-2025-04-14 | `gpt-4.1` | 128,000<br>Max output: 32,768 | 67.23 CU seconds | 16.81 CU seconds | 268.91 CU seconds | June 11, 2026 |
 
 ### Consumption rate for OpenAI embedding models
 
 | **Models** | **Deployment Name** | **Context (Tokens)** | **Input (Per 1,000 Tokens)** |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Ada | `text-embedding-ada-002` | 8192 | 3.36 CU seconds |
 
 ### Consumption rate for Text Analytics
 
 | **Operation** | **Operation Unit of Measure** | **Consumption rate** |
-|---|---|---|
-|Language Detection | 1,000 text records | 33,613.45 CU seconds|
-|Sentiment Analysis | 1,000 text records | 33,613.45 CU seconds|
-|Key Phrase Extraction | 1,000 text records | 33,613.45 CU seconds|
-|Personally Identifying Information Entity Recognition | 1,000 text records| 33,613.45 CU seconds|
-|Named Entity Recognition | 1,000 text records | 33,613.45 CU seconds|
-|Entity Linking | 1,000 text records | 33,613.45 CU seconds|
-|Summarization | 1,000 text records | 67,226.89 CU seconds|
+| --- | --- | --- |
+| Language Detection | 1,000 text records | 33,613.45 CU seconds |
+| Sentiment Analysis | 1,000 text records | 33,613.45 CU seconds |
+| Key Phrase Extraction | 1,000 text records | 33,613.45 CU seconds |
+| Personally Identifying Information Entity Recognition | 1,000 text records | 33,613.45 CU seconds |
+| Named Entity Recognition | 1,000 text records | 33,613.45 CU seconds |
+| Entity Linking | 1,000 text records | 33,613.45 CU seconds |
+| Summarization | 1,000 text records | 67,226.89 CU seconds |
 
 ### Consumption rate for Text Translator
 
 | **Operation** | **Operation Unit of Measure** | **Consumption rate** |
-|---|---|---|
-|Translate | 1M Characters | 336,134.45 CU seconds|
-|Transliterate | 1M Characters | 336,134.45 CU seconds|
+| --- | --- | --- |
+| Translate | 1M Characters | 336,134.45 CU seconds |
+| Transliterate | 1M Characters | 336,134.45 CU seconds |
 
 ## Changes to Foundry Tools in Fabric consumption rate
 
 Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in the Microsoft Release Notes or the Microsoft Fabric Blog. If any change to an AI service in Fabric Consumption Rate materially increases the Capacity Units (CU) required to use, customers can use the cancellation options available for the chosen payment method.
 
-## Monitor the Usage
+## Monitor usage
 
 Prebuilt AI services in Fabric are billed against the Copilot and AI billing meter on your Fabric capacity. For current consumption rates, see [Consumption rate](#consumption-rate) earlier in this article.
+
+For Python AI Functions workloads in pandas and PySpark, the default model is `gpt-5-mini` with low reasoning. If you pinned pipelines to `gpt-4.1`, migrate them to `gpt-5.1`. If you pinned pipelines to `gpt-4.1-mini`, migrate them to `gpt-5-mini`.
 
 You can monitor AI services usage using the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md). To view AI-related usage:
 
 1. Install the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md#install-the-app) (requires capacity admin permissions for initial setup).
-2. In the app, look for usage reported under the Copilot and AI meter to see capacity consumption from AI Services and AI Functions operations.
+1. In the app, look for usage reported under the Copilot and AI meter to see capacity consumption from AI Services and AI Functions operations.
 
 > [!NOTE]
 > Starting March 17, 2026, the Capacity Metrics app shows AI Functions and AI Services as separate operations. This is a reporting-only change; underlying consumption rates are unchanged.
-> 
+>
 > Prebuilt AI services and AI Functions usage is reported under the Copilot and AI meter.
 > This is separate from the Spark compute used to run your notebook or Spark job, which continues to be reported under the Spark billing meter. For more information on Spark compute usage, see [Spark compute usage reporting](../../data-engineering/spark-compute.md).
 
 ### Example
+
 A data analyst uses [Fabric AI Functions](../ai-functions/overview.md) in a Fabric PySpark notebook to leverage LLM to classify millions of customer reviews into product categories. The notebook runs on Spark compute and calls [`ai.classify`](../ai-functions/pyspark/classify.md) for each row.
 
 - The CU consumption for running the notebook (cluster time, data processing) is reported under the Spark billing meter.

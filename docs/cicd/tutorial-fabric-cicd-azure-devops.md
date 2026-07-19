@@ -546,7 +546,7 @@ unpublish_all_orphan_items(target_workspace)
 >
 > However, if you are doing a **selective deployment** (e.g., deploying only Notebooks via a narrowed `items_in_scope`), be cautious with `unpublish_all_orphan_items()` — it would delete any Notebooks in the workspace that aren't in the branch, even if they are still valid and were simply not part of the selective release.
 
-> 💡 **Tip:** `unpublish_all_orphan_items()` supports excluding specific items from removal by passing a **regex pattern**. Any items whose names match the regex will be preserved in the workspace even if they aren't in the source branch. For more details and usage examples, see the [official API reference](https://microsoft.github.io/fabric-cicd/latest/code_reference/#fabric_cicd.unpublish_all_orphan_items).
+> 💡 **Tip:** `unpublish_all_orphan_items()` supports excluding specific items from removal by passing a **regex pattern**. Any items whose names match the regex will be preserved in the workspace even if they aren't in the source branch. For more details and usage examples, see the [official API reference](https://microsoft.github.io/fabric-cicd/latest/reference/code_reference/?h=unpublish#fabric_cicd.unpublish_all_orphan_items).
 
 ---
 

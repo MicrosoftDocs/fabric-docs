@@ -1,7 +1,7 @@
 ---
 title: "Microsoft Fabric Mirrored Databases From SQL Server"
 description: Learn about the mirrored databases From SQL Server in Microsoft Fabric.
-ms.reviewer: ajayj, rajpo, twright
+ms.reviewer: nanikolic, wiassaf, rajpo, twright
 ms.date: 11/05/2025
 ms.topic: concept-article
 ms.search.form: Fabric Mirroring

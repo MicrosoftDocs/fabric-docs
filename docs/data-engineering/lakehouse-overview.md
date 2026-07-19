@@ -4,8 +4,6 @@ description: A lakehouse in Microsoft Fabric combines data lake scalability with
 ms.reviewer: avinandac
 ms.topic: overview
 ms.date: 05/07/2026
-ai-usage: ai-assisted
-# customer intent: As a data engineer, I want to understand what a lakehouse is in Microsoft Fabric so that I can use it for big data processing and analytics.
 ms.search.form: Lakehouse Overview
 ---
 
@@ -40,9 +38,11 @@ You can load, transform, and query data in a lakehouse through several Fabric to
 
 - **OneLake shortcuts** — Access data from external sources (including other tenants through [cross-tenant data sharing](../governance/external-data-sharing-overview.md)) without copying it into the lakehouse. Shortcuts provide live, read-only references to operational and analytical data across OneLake. See [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
-- **Lakehouse explorer** — Browse tables and files, load data, and manage metadata directly in the browser. You can switch between table view and file view and add multiple lakehouses to the explorer. See [Navigate the Fabric Lakehouse explorer](navigate-lakehouse-explorer.md).
+- **Lakehouse object explorer** — Browse tables and files, load data, and manage metadata directly in the browser. You can switch between table view and file view and add multiple lakehouses to the explorer. See [Navigate the Fabric Lakehouse explorer](navigate-lakehouse-explorer.md).
 
   :::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Screencast of the Lakehouse explorer showing table view, file view, and adding lakehouses." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
+
+- **Spark SQL query explorer** — Run Spark SQL queries directly inside the Lakehouse explorer without leaving your working context. The query explorer supports IntelliSense, dynamic tabs, cross-schema and cross-lakehouse querying, inline chart visualization, and view creation. See [Query data with the Spark SQL query explorer](lakehouse-query-explorer.md).
 
 - **Notebooks** — Write Spark code (Python, Scala, SQL, R) to read, transform, and write data to lakehouse tables and folders. See [Explore data with a notebook](lakehouse-notebook-explore.md) and [Load data with a notebook](lakehouse-notebook-load-data.md).
 
@@ -122,6 +122,7 @@ The lakehouse supports assistive technologies and accessible interaction pattern
 - [Create a lakehouse in Microsoft Fabric](create-lakehouse.md)
 - [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md)
 - [Lakehouse SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md)
+- [Query data with the Spark SQL query explorer](lakehouse-query-explorer.md)
 - [Explore data with a lakehouse notebook](lakehouse-notebook-explore.md)
 - [Choose between Warehouse and Lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md)
 - [Recover deleted files in OneLake](../onelake/soft-delete.md)

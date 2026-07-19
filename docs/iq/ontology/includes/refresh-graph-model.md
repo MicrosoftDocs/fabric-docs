@@ -1,5 +1,5 @@
 ---
-title: Include file for refreshing graph model
+title: Include File for Refreshing Graph Model
 description: Include file for note about refreshing the graph model in an ontology (preview) item.
 ms.topic: include
 ms.date: 10/09/2025

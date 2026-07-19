@@ -23,7 +23,7 @@ This architecture demonstrates two complementary patterns:
 - **Pipeline metadata logging**: Record data quality checks, dataset profiles, and transform lineage in Cosmos DB by invoking User data functions during pipeline execution.
 
 > [!TIP]
-> For a complete sample of this architecture, find the sample assets and instructions in the [Azure Cosmos DB samples repository on GitHub](https://github.com/AzureCosmosDB/cosmos-fabric-samples/blob/main/data-pipelines/README.md§).
+> For a complete sample of this architecture, find the sample assets and instructions in the [Azure Cosmos DB samples repository on GitHub](https://github.com/AzureCosmosDB/cosmos-fabric-samples/blob/main/data-pipelines/README.md).
 
 ## Prerequisites
 

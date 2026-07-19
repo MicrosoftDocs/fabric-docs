@@ -4,7 +4,7 @@ description: Learn how to use file-based multimodal input, such as images, PDFs,
 ms.reviewer: singhrana
 reviewer: ranadeepsingh
 ms.topic: how-to
-ms.date: 05/12/2026
+ms.date: 06/10/2026
 ms.search.form: AI Functions
 ai-usage: ai-assisted
 ---
@@ -13,23 +13,22 @@ ai-usage: ai-assisted
 
 [!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
-AI Functions can process files—images, PDFs, and text files—in addition to text. With multimodal input, you can classify documents, summarize PDFs, extract information from images, and more, all with the same AI function interface you already use for text.
+AI Functions apply one-line, LLM-powered transformations to large pandas or PySpark DataFrames with high concurrency by default. With multimodal input, you can also process images, PDFs, and text files to classify documents, summarize PDFs, extract information from images, and more.
 
-Multimodal input works with these existing AI Functions:
+Use this table to jump to multimodal examples and detailed documentation.
 
-- [`ai.analyze_sentiment`](#detect-sentiment-from-files-with-aianalyze_sentiment)
-- [`ai.classify`](#classify-files-with-aiclassify)
-- [`ai.extract`](#extract-entities-from-files-with-aiextract)
-- [`ai.fix_grammar`](#fix-grammar-in-files-with-aifix_grammar)
-- [`ai.generate_response`](#answer-custom-prompts-from-files-with-aigenerate_response)
-- [`ai.summarize`](#summarize-files-with-aisummarize)
-- [`ai.translate`](#translate-files-with-aitranslate)
-
-Multimodal input also introduces three new functions:
-
-- [`aifunc.load`](#load-files-into-a-table-with-aifuncload): Load files from a folder and generate a structured table.
-- [`aifunc.list_file_paths`](#list-files-with-aifunclist_file_paths): Get a collection of file paths from a folder.
-- [`ai.infer_schema`](#infer-schema-from-files-with-aiinfer_schema): Infer a common schema from file contents.
+| Function | Description | Detailed documentation |
+| --- | --- | --- |
+| `ai.analyze_sentiment` | Detect sentiment in files. [Example](#multimodal-ai-analyze-sentiment). | [pandas](./pandas/analyze-sentiment.md), [PySpark](./pyspark/analyze-sentiment.md) |
+| `ai.classify` | Classify files by using your labels. [Example](#multimodal-ai-classify). | [pandas](./pandas/classify.md), [PySpark](./pyspark/classify.md) |
+| `ai.extract` | Extract fields from files. [Example](#multimodal-ai-extract). | [pandas](./pandas/extract.md), [PySpark](./pyspark/extract.md) |
+| `ai.fix_grammar` | Correct spelling, grammar, and punctuation in files. [Example](#multimodal-ai-fix-grammar). | [pandas](./pandas/fix-grammar.md), [PySpark](./pyspark/fix-grammar.md) |
+| `ai.generate_response` | Generate responses grounded in file content. [Example](#multimodal-ai-generate-response). | [pandas](./pandas/generate-response.md), [PySpark](./pyspark/generate-response.md) |
+| `ai.summarize` | Summarize file content. [Example](#multimodal-ai-summarize). | [pandas](./pandas/summarize.md), [PySpark](./pyspark/summarize.md) |
+| `ai.translate` | Translate file content. [Example](#multimodal-ai-translate). | [pandas](./pandas/translate.md), [PySpark](./pyspark/translate.md) |
+| `aifunc.load` | Load files from a folder into a structured table. [Example](#multimodal-aifunc-load). | [Syntax and parameters](#multimodal-aifunc-load) |
+| `aifunc.list_file_paths` | Get file paths from a folder. [Example](#multimodal-aifunc-list-file-paths). | [Syntax and parameters](#multimodal-aifunc-list-file-paths) |
+| `ai.infer_schema` | Infer an extraction schema from file contents. [Example](#multimodal-ai-infer-schema). | [Syntax and parameters](#multimodal-ai-infer-schema) |
 
 ## Supported file types
 
@@ -40,13 +39,15 @@ Multimodal AI Functions support the following file types:
 - **Text files**: md, txt, csv, tsv, json, xml, py, and other text files
 
 > [!NOTE]
+>
+> - Multimodal calls with file-path inputs work with the `responses` API, which is the default. Don't set `api_type` to `chat_completions` for file-path inputs.
 > - Office file formats (such as .docx, .pptx, and .xlsx) aren't currently supported.
 > - You can convert .docx and .pptx files to PDF and .xlsx files to CSV before using them with multimodal AI Functions.
 > - Each input file is limited to 50 MB in size.
 
 ## Supported URL protocols
 
-Multimodal inputs are provided as string with one of the following URL protocols:
+Multimodal inputs are strings that use one of these URL protocols:
 
 - local file paths
 - http(s)
@@ -84,9 +85,11 @@ folder_path = "Files"
 ---
 
 ## Load your files
-To use AI Functions with multimodal input, you may either load the file contents into a structured table or reference the file paths directly in your DataFrame. The following examples show both approaches.
+
+To use AI Functions with multimodal input, you can either load the file contents into a structured table or reference the file paths directly in your DataFrame. The following examples show both approaches.
 
 ### Load files into a table
+
 Use the `aifunc.load` function to read files from a folder and generate a structured table. The function can infer the table structure on its own, or you can provide a prompt to guide the extraction, or a schema for consistent structure. This approach is useful when you want the AI to extract specific information from the files and present it in a structured format.
 
 # [pandas](#tab/pandas)
@@ -110,10 +113,11 @@ display(df)
 ---
 
 ### Load file paths into a column
+
 Alternatively, you can use `aifunc.list_file_paths` to get a list of file paths from a folder and load them into a DataFrame column. This approach is useful when you want to run AI Functions across each file.
 
 > [!NOTE]
-> Most AI Functions accept file-path inputs via `column_type="path"` (pandas) or `input_col_type`/`col_types="path"` (PySpark). This applies uniformly across all the multimodal functions listed in this article.
+> Most multimodal functions accept file paths with `column_type="path"` in pandas or `input_col_type`/`col_types="path"` in PySpark.
 
 # [pandas](#tab/pandas)
 
@@ -176,7 +180,9 @@ results = df.ai.generate_response(
 
 ## New multimodal functions
 
-### Load files into a table with aifunc.load
+<a id="multimodal-aifunc-load"></a>
+
+### aifunc.load: Load files into a table
 
 The `aifunc.load` function reads all files from a folder path and generates a structured table from their contents. You can optionally provide a prompt to guide the extraction, or a schema for consistent structure.
 
@@ -199,10 +205,10 @@ df, schema = aifunc.load(folder_path, prompt=None, schema=None)
 #### Parameters
 
 | Name | Description |
-|---|---|
-| `folder_path` <br> Required | A string path to a folder or a glob-style pattern matching files. |
-| `prompt` <br> Optional | A string that guides the table generation process. Use it to specify which fields to extract from the files. |
-| `schema` <br> Optional | A schema object (returned by a previous `load` call) that defines the table structure. When provided, the function uses this schema directly. |
+| --- | --- |
+| `folder_path` (Required) | A string path to a folder or a glob-style pattern matching files. |
+| `prompt` (Optional) | A string that guides the table generation process. Use it to specify which fields to extract from the files. |
+| `schema` (Optional) | A schema object (returned by a previous `load` call) that defines the table structure. When provided, the function uses this schema directly. |
 
 #### Returns
 
@@ -254,7 +260,9 @@ display(guided_df)
 
 ---
 
-### List files with aifunc.list_file_paths
+<a id="multimodal-aifunc-list-file-paths"></a>
+
+### aifunc.list_file_paths: List files
 
 The `aifunc.list_file_paths` function fetches all valid file paths from a specified folder. You can use the returned file paths as input to any multimodal AI function. The function also supports glob-style patterns.
 
@@ -277,8 +285,8 @@ file_path_df = aifunc.list_file_paths(folder_path)
 #### Parameters
 
 | Name | Description |
-|---|---|
-| `folder_path` <br> Required | A string path to a folder or a glob-style pattern matching files. |
+| --- | --- |
+| `folder_path` (Required) | A string path to a folder or a glob-style pattern matching files. |
 
 #### Returns
 
@@ -315,7 +323,9 @@ display(custom_df)
 
 ---
 
-### Infer schema from files with ai.infer_schema
+<a id="multimodal-ai-infer-schema"></a>
+
+### ai.infer_schema: Infer schema from files
 
 The `ai.infer_schema` function infers a common schema from file contents. The inferred schema is represented as a list of `aifunc.ExtractLabel` objects that you can pass directly to `ai.extract` for structured data extraction.
 
@@ -340,19 +350,19 @@ schema = df.ai.infer_schema(input_col="file_path", input_col_type="path")
 # [pandas](#tab/pandas)
 
 | Name | Description |
-|---|---|
-| `prompt` <br> Optional | A string to guide schema inference. If not provided, the function infers the schema from the file contents alone. |
-| `n_samples` <br> Optional | An integer specifying how many items to sample for inference. Default is `3`. |
-| `column_type` <br> Optional | Set to `"path"` to treat column values as file paths. |
+| --- | --- |
+| `prompt` (Optional) | A string to guide schema inference. If not provided, the function infers the schema from the file contents alone. |
+| `n_samples` (Optional) | An integer specifying how many items to sample for inference. Default is `3`. |
+| `column_type` (Optional) | Set to `"path"` to treat column values as file paths. |
 
 # [PySpark](#tab/pyspark)
 
 | Name | Description |
-|---|---|
-| `input_col` <br> Required | A string that contains the name of the column with file path values. |
-| `input_col_type` <br> Optional | Set to `"path"` to treat column values as file paths. |
-| `prompt` <br> Optional | A string to guide schema inference. If not provided, the function infers the schema from the file contents alone. |
-| `n_samples` <br> Optional | An integer specifying how many items to sample for inference. Default is `3`. |
+| --- | --- |
+| `input_col` (Required) | A string that contains the name of the column with file path values. |
+| `input_col_type` (Optional) | Set to `"path"` to treat column values as file paths. |
+| `prompt` (Optional) | A string to guide schema inference. If not provided, the function infers the schema from the file contents alone. |
+| `n_samples` (Optional) | An integer specifying how many items to sample for inference. Default is `3`. |
 
 ---
 
@@ -398,9 +408,11 @@ display(extracted_df)
 
 The following examples show how to use multimodal input with each of the supported AI Functions.
 
-### Detect sentiment from files with ai.analyze_sentiment
+<a id="multimodal-ai-analyze-sentiment"></a>
 
-For more information about `ai.analyze_sentiment`, see the detailed documentation for [pandas](./pandas/analyze-sentiment.md) and [PySpark](./pyspark/analyze-sentiment.md).
+### ai.analyze_sentiment: Detect sentiment from files
+
+For full parameters, see [pandas](./pandas/analyze-sentiment.md) or [PySpark](./pyspark/analyze-sentiment.md).
 
 # [pandas](#tab/pandas)
 
@@ -440,9 +452,11 @@ display(results)
 
 ---
 
-### Classify files with ai.classify
+<a id="multimodal-ai-classify"></a>
 
-For more information about `ai.classify`, see the detailed documentation for [pandas](./pandas/classify.md) and [PySpark](./pyspark/classify.md).
+### ai.classify: Classify files
+
+For full parameters, see [pandas](./pandas/classify.md) or [PySpark](./pyspark/classify.md).
 
 # [pandas](#tab/pandas)
 
@@ -472,9 +486,11 @@ display(results)
 
 ---
 
-### Extract entities from files with ai.extract
+<a id="multimodal-ai-extract"></a>
 
-For more information about `ai.extract`, see the detailed documentation for [pandas](./pandas/extract.md) and [PySpark](./pyspark/extract.md).
+### ai.extract: Extract entities from files
+
+For full parameters, see [pandas](./pandas/extract.md) or [PySpark](./pyspark/extract.md).
 
 # [pandas](#tab/pandas)
 
@@ -527,9 +543,11 @@ display(extracted)
 
 ---
 
-### Fix grammar in files with ai.fix_grammar
+<a id="multimodal-ai-fix-grammar"></a>
 
-For more information about `ai.fix_grammar`, see the detailed documentation for [pandas](./pandas/fix-grammar.md) and [PySpark](./pyspark/fix-grammar.md).
+### ai.fix_grammar: Fix grammar in files
+
+For full parameters, see [pandas](./pandas/fix-grammar.md) or [PySpark](./pyspark/fix-grammar.md).
 
 # [pandas](#tab/pandas)
 
@@ -555,9 +573,11 @@ display(results)
 
 ---
 
-### Answer custom prompts from files with ai.generate_response
+<a id="multimodal-ai-generate-response"></a>
 
-For more information about `ai.generate_response`, see the detailed documentation for [pandas](./pandas/generate-response.md) and [PySpark](./pyspark/generate-response.md).
+### ai.generate_response: Apply custom prompts to files
+
+For full parameters, see [pandas](./pandas/generate-response.md) or [PySpark](./pyspark/generate-response.md).
 
 # [pandas](#tab/pandas)
 
@@ -611,9 +631,11 @@ display(results)
 
 ---
 
-### Summarize files with ai.summarize
+<a id="multimodal-ai-summarize"></a>
 
-For more information about `ai.summarize`, see the detailed documentation for [pandas](./pandas/summarize.md) and [PySpark](./pyspark/summarize.md).
+### ai.summarize: Summarize files
+
+For full parameters, see [pandas](./pandas/summarize.md) or [PySpark](./pyspark/summarize.md).
 
 # [pandas](#tab/pandas)
 
@@ -672,9 +694,11 @@ display(results)
 
 ---
 
-### Translate files with ai.translate
+<a id="multimodal-ai-translate"></a>
 
-For more information about `ai.translate`, see the detailed documentation for [pandas](./pandas/translate.md) and [PySpark](./pyspark/translate.md).
+### ai.translate: Translate files
+
+For full parameters, see [pandas](./pandas/translate.md) or [PySpark](./pyspark/translate.md).
 
 # [pandas](#tab/pandas)
 
@@ -710,27 +734,12 @@ Use the [AI Functions Eval Notebooks](https://aka.ms/fabric-aifunctions-eval-not
 
 ## Monitor cost and capacity usage
 
-AI Functions include a configurable progress bar cost calculator that displays real-time token estimates and Fabric capacity units while operations run in notebooks. You can configure the cost calculator in three modes:
-
-- **basic**: Shows a summary of estimated tokens and capacity units consumed.
-- **stats**: Shows detailed per-call statistics, including input and output token counts.
-- **disable**: Turns off the progress bar cost display.
-
-For details on configuring these modes, see [Configure AI Functions](./pandas/configuration.md).
-
-The Fabric Capacity Metrics App also includes a dedicated **AI Functions** operation that separates AI Functions usage from Spark and Dataflow Gen2. You can use this view to track multimodal AI Functions consumption and identify capacity impact. For more information, see [What is the Microsoft Fabric Capacity Metrics app?](../../enterprise/metrics-app.md).
+Use [Billing for AI Functions](./billing.md) to understand costs, runtime usage, and capacity monitoring.
 
 ## Related content
 
-- Learn more about the [full set of AI Functions](./overview.md).
+- Learn more about [AI Functions](./overview.md).
 - Try the [AI Functions Starter Notebooks](https://aka.ms/fabric-aifunctions-starter-notebooks).
 - Evaluate output quality with the [AI Functions Eval Notebooks](https://aka.ms/fabric-aifunctions-eval-notebooks).
-- Detect sentiment with [`ai.analyze_sentiment` in pandas](./pandas/analyze-sentiment.md) or [`ai.analyze_sentiment` in PySpark](./pyspark/analyze-sentiment.md).
-- Categorize text with [`ai.classify` in pandas](./pandas/classify.md) or [`ai.classify` in PySpark](./pyspark/classify.md).
-- Extract entities with [`ai.extract` in pandas](./pandas/extract.md) or [`ai.extract` in PySpark](./pyspark/extract.md).
-- Fix grammar with [`ai.fix_grammar` in pandas](./pandas/fix-grammar.md) or [`ai.fix_grammar` in PySpark](./pyspark/fix-grammar.md).
-- Answer custom user prompts with [`ai.generate_response` in pandas](./pandas/generate-response.md) or [`ai.generate_response` in PySpark](./pyspark/generate-response.md).
-- Summarize text with [`ai.summarize` in pandas](./pandas/summarize.md) or [`ai.summarize` in PySpark](./pyspark/summarize.md).
-- Translate text with [`ai.translate` in pandas](./pandas/translate.md) or [`ai.translate` in PySpark](./pyspark/translate.md).
-- Customize the [configuration of AI Functions in pandas](./pandas/configuration.md) or the [configuration of AI Functions in PySpark](./pyspark/configuration.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).
+- Customize AI Functions with [pandas](./pandas/configuration.md) or [PySpark](./pyspark/configuration.md).
+- Understand [billing for AI Functions](./billing.md).

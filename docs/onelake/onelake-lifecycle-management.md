@@ -1,5 +1,5 @@
 ---
-title: Creating a lifecycle management policy in OneLake (preview)
+title: Creating a lifecycle management policy in OneLake
 description: Automatically move data between storage tiers using a lifecycle management policy.
 ms.reviewer: eloldag, mabasile
 ms.topic: concept-article
@@ -7,7 +7,7 @@ ms.date: 05/11/2026
 #customer intent: As a workspace admin, I want to lower my storage costs for data I must retain for long periods but is otherwise rarely accessed. 
 ---
 
-# OneLake lifecycle management (preview)
+# OneLake lifecycle management
 
 OneLake storage tiers let you make cost-effective tiering decisions based on data access patterns, keeping frequently accessed data in the hot tier and moving less active data to cool or cold storage to lower long-term data retention costs. Lifecycle management policies simplify tiering by automatically moving less active data to cooler storage tiers based on when a file was created, last modified, or last accessed. For example, you can create policies to:
 
@@ -146,4 +146,3 @@ You can view the amount of data stored by tier in the [Fabric Capacity Metrics a
 
 - [OneLake storage tiers](onelake-storage-tiers.md)
 - [OneLake compute and storage consumption](onelake-consumption.md)
-- 

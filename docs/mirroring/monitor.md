@@ -1,7 +1,7 @@
 ---
 title: "Monitor Mirrored Database Replication"
 description: Learn about monitoring mirrored database replication in Microsoft Fabric.
-ms.reviewer: imotiwala, maprycem, cynotebo
+ms.reviewer: sbahadur, maprycem
 ms.date: 09/05/2025
 ms.topic: concept-article
 ms.custom: sfi-image-nochange
@@ -53,7 +53,7 @@ Then you have full access to an advanced monitoring experience for mirrored data
 
   :::image type="content" source="media/monitor/monitor-dashboard.png" alt-text="Screenshot from the Fabric portal of building dashboard to monitor mirrored database." lightbox="media/monitor/monitor-dashboard.png":::
 
-- **Set up alerting:** [Set up alerts](../real-time-intelligence/user-flow-6.md) based on the logs and metrics you’re tracking.
+- **Set up alerting:** [Set up alerts](../real-time-intelligence/user-flow-6.md) based on the logs and metrics you're tracking.
 
 ## Related content
 

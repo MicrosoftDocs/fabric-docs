@@ -1,7 +1,7 @@
 ---
 title: Query Using the SQL Query Editor
 description: Learn how to use the SQL query editor.
-ms.reviewer: prlangad, jacindaeng, pradeepsrikakolapu
+ms.reviewer: prlangad, rakrish75, pvenkat
 ms.date: 01/08/2026
 ms.topic: how-to
 ms.custom:
@@ -203,7 +203,7 @@ Keyboard shortcuts provide a quick way to navigate and work more efficiently in 
 
 - The following table summarizes the expected behavior that doesn't match with [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) or [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true):
 
-   | **Scenario** | **Supported in SSMS/ADS** | **Supported in SQL query editor in Fabric portal** |
+   | **Scenario** | **Supported in SSMS or Visual Studio Code** | **Supported in SQL query editor in Fabric portal** |
    |---|---|---|
    |Using [SET Statements (Transact-SQL)](/sql/t-sql/statements/set-statements-transact-sql?view=fabric&preserve-view=true) to set properties for session |Yes|No|
    |Using [sp_set_session_context (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sp-set-session-context-transact-sql?view=fabric&preserve-view=true) for multiple batch statements runs |Yes|No|

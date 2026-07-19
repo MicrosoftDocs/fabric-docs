@@ -1,0 +1,94 @@
+- name: Microsoft Fabric Embed documentation
+  href: index.yml
+  expanded: true
+  items:
+# =============================================================================
+# OVERVIEW (REQUIRED)
+# =============================================================================
+  - name: Overview
+    expanded: true
+    items:
+    - name: "What is Microsoft Fabric Embed?"
+      href: what-is-fabric-embed.md
+
+# =============================================================================
+# GET STARTED (REQUIRED)
+# =============================================================================
+  - name: Get started
+    expanded: true
+    items: 
+    - name: "Set up your environment for Microsoft Fabric Embed"
+      href: set-up-fabric-embed-environment.md
+    - name: "Quickstart to Microsoft Fabric Embed"
+      href: quickstart-embed-fabric-item.md
+
+# =============================================================================
+# EMBED CONTENT
+# =============================================================================
+
+# =============================================================================
+# TOKENS
+# =============================================================================
+
+# =============================================================================
+# EXPORT TO FILE
+# =============================================================================
+# =============================================================================
+# CAPACITIES AND SKUS
+# =============================================================================
+
+# =============================================================================
+# WORKSPACE SEPARATION AND MULTITENANCY
+# =============================================================================
+
+# =============================================================================
+# SECURITY
+# =============================================================================
+
+# =============================================================================
+# PARTNER SOLUTIONS
+# =============================================================================
+
+# =============================================================================
+# POWER BI MOBILE APP ADMINISTRATION
+# =============================================================================
+
+# =============================================================================
+# SUPPORT
+# =============================================================================
+  - name: Support
+    expanded: true
+    items:
+    - name: "Troubleshoot Microsoft Fabric Embed"
+      href: troubleshoot-fabric-embed.md
+
+# =============================================================================
+# REFERENCE
+# =============================================================================
+  - name: Reference
+    items:
+    - name: "Fabric Embed JavaScript SDK"
+      href: https://go.microsoft.com/fwlink/?linkid=2370290
+# =============================================================================
+# RESOURCES (don't change this - standardized with Fabric)
+# =============================================================================
+  - name: Resources
+    items:
+    - name: Contribute to Fabric docs
+      href: /contribute/
+    - name: Microsoft Q & A
+      href: /answers/
+    - name: Provide feedback
+      items:
+      - name: Fabric ideas
+        href: https://ideas.fabric.microsoft.com/
+      - name: Azure feedback
+        href: https://feedback.azure.com/
+    - name: Community
+      href: https://community.fabric.microsoft.com/
+    - name: Service updates
+      href: https://azure.microsoft.com/updates/
+    - name: Azure Status
+      href: https://azure.status.microsoft/
+    - name: Microsoft Learn training
+      href: /training/fabric/

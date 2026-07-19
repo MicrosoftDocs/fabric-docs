@@ -1,7 +1,7 @@
 ---
 title: What is the SQL analytics endpoint for SQL database in Fabric?
 description: Learn about the SQL analytics endpoint and how to run SQL queries directly on Fabric SQL database in Fabric tables.
-ms.reviewer: imotiwala
+ms.reviewer: antho, sukkaur
 ms.topic: concept-article
 ms.date: 08/14/2025
 ---

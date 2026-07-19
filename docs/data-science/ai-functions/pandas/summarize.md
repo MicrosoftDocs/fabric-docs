@@ -11,12 +11,12 @@ ai-usage: ai-assisted
 
 # Use ai.summarize with pandas
 
-The `ai.summarize` function uses generative AI to produce summaries of input text, with a single line of code. The function can either summarize values from one column of a DataFrame or values across all the columns.
+The `ai.summarize` function summarizes text from one column or across all columns in each row.
 
 > [!NOTE]
-> - This article covers using *ai.summarize* with pandas. To use *ai.summarize* with PySpark, see [this article](../pyspark/summarize.md).
-> - See other AI Functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI Functions](./configuration.md).
+> - This article covers `ai.summarize` with pandas. For PySpark, see [Use ai.summarize with PySpark](../pyspark/summarize.md).
+> - For all AI Functions and prerequisites, see [AI Functions overview](../overview.md).
+> - Change default configuration for [AI Functions with pandas](./configuration.md).
 
 ## Overview
 
@@ -76,7 +76,7 @@ df["summaries"] = df["description"].ai.summarize()
 display(df)
 ```
 
-This example code cell provides the following output:
+Output:
 
 :::image type="content" source="../../media/ai-functions/summarize-single-example-output.png" alt-text="Screenshot showing a data frame. The 'summaries' column has a summary of the 'description' column only, in the corresponding row." lightbox="../../media/ai-functions/summarize-single-example-output.png":::
 
@@ -104,7 +104,7 @@ df["summaries"] = df.ai.summarize()
 display(df)
 ```
 
-This example code cell provides the following output:
+Output:
 
 :::image type="content" source="../../media/ai-functions/summarize-all-example-output.png" alt-text="Screenshot showing a data frame. The 'summaries' column has a summary of the information across all the columns in the corresponding row." lightbox="../../media/ai-functions/summarize-all-example-output.png":::
 
@@ -140,7 +140,7 @@ display(df)
 
 ## Multimodal input
 
-The `ai.summarize` function supports file-based multimodal input. This capability is part of multimodal AI Functions, which process images, PDFs, and text files alongside text data. You can summarize file content by setting `column_type="path"` when your column contains file path strings. For more information about supported file types and setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
+To summarize images, PDFs, or text files, set `column_type="path"` when the input column contains file path strings. For setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
 
 ```python
 # This code uses AI. Always review output for mistakes.
@@ -155,16 +155,7 @@ display(custom_df)
 ## Related content
 
 - Use [ai.summarize with PySpark](../pyspark/summarize.md).
-- Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
-- Categorize text with [ai.classify](./classify.md).
-- Generate vector embeddings with [ai.embed](./embed.md).
-- Extract entities with [ai.extract](./extract.md).
-- Fix grammar with [ai.fix_grammar](./fix-grammar.md).
-- Answer custom user prompts with [ai.generate_response](./generate-response.md).
-- Calculate similarity with [ai.similarity](./similarity.md).
-- Translate text with [ai.translate](./translate.md).
-
-- Learn more about the [full set of AI Functions](../overview.md).
+- Learn more about [AI Functions](../overview.md).
 - Use [multimodal input with AI Functions](../multimodal-overview.md).
-- Customize the [configuration of AI Functions](./configuration.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).
+- Change default configuration for [AI Functions with pandas](./configuration.md).
+- Understand [billing for AI Functions](../billing.md).

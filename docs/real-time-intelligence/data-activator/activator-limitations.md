@@ -124,6 +124,15 @@ If you include an Activator item with one of these sources or actions in a deplo
 
 Support for these data sources and actions is planned for a future release.
 
+## Power BI ingestion limitations
+
+In Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], the metric created during Power BI ingestion setup is owned by the user who created the ingestion.
+Only this user (the metric owner) can query the metric.
+
+If the metric owner loses access to the metric, or if you update the Power BI ingestion to use a different user's credentials, data ingestion might stop and alerts might no longer trigger.
+
+To continue using the ingestion under a different user, the ingestion and associated rules need to be recreated in the new user context.
+
 ## Related content
 
 * [Detection conditions in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-detection-conditions.md)

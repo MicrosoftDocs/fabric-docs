@@ -3,7 +3,7 @@ title:  Fabric decision guide - choose a data store
 description: Review a reference table and scenarios to choose the most suitable data store for your Microsoft Fabric workloads, ensuring optimal performance.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: sngun, scbradl, chweb
+ms.reviewer: sngun, scbradl
 ms.topic: concept-article
 ms.date: 09/09/2025
 ms.custom:

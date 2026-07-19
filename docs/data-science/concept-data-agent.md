@@ -1,8 +1,8 @@
 ---
 title: Fabric data agent creation
 description: Learn how to create a Fabric data agent that can answer questions about data.
-ms.author: jburchel
-author: jonburchel
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: amjafari
 ms.topic: concept-article
 ms.date: 05/11/2026
@@ -145,7 +145,7 @@ To maintain ongoing quality and policy alignment, consider these operational pra
 
 ## Limitations
 
-- The Fabric data agent only generates SQL, DAX, and KQL "read" queries. It doesn't generate SQL, DAX, or KQL queries that create, update, or delete data.
+- The Fabric data agent only generates SQL, DAX, and KQL "read" queries. It doesn't generate SQL, DAX, or KQL queries that create, update, or delete data. Although Eventhouse integrates with anomaly detection, SQL Endpoint, and notebooks, Fabric data agents remain read-only and don't trigger anomaly detection jobs, notebooks, or other write or action workflows in Eventhouse.
 - The Fabric data agent doesn't support unstructured data, such as .pdf, .docx, or .txt files. You can't use the Fabric data agent to access unstructured data resources.
 - For lakehouse data sources, the Fabric data agent answers questions using the lakehouse tables you select. It doesn't directly read standalone lakehouse files (for example, CSV or JSON files) unless they're ingested or exposed as tables.
 - The Fabric data agent doesn't currently support non-English languages. For optimal performance, provide questions, instructions, and example queries in English.

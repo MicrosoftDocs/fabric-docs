@@ -1,33 +1,33 @@
 ---
-title: Manage and Monitor an Eventhouse
+title: Manage and monitor an eventhouse
 description: Learn how to manage and monitor an eventhouse and gain insights from the system information in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: concept-article
 ms.custom: sfi-image-nochange
 ms.subservice: rti-eventhouse
-ms.date: 05/26/2026
+ms.date: 06/15/2026
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.
 ---
 # Manage and monitor an eventhouse
 
-An Eventhouse is a scalable environment for processing and analyzing large volumes of real-time data. It supports structured streaming for continuous data ingestion and analysis, and uses Kusto Query Language (KQL) to easily gain insights from your data. The Eventhouse page serves as the central hub for all your interactions within the Eventhouse environment. It's your gateway to seamlessly manage and monitor an eventhouse, navigate through databases, and perform various Eventhouse-related actions.
+An eventhouse is a scalable environment for processing and analyzing large volumes of real-time data. It supports structured streaming for continuous data ingestion and analysis, and uses Kusto Query Language (KQL) to easily gain insights from your data. The eventhouse page serves as the central hub for all your interactions within the eventhouse environment. It's your gateway to seamlessly manage and monitor an eventhouse, navigate through databases, and perform various eventhouse-related actions.
 
 ## Eventhouse home page
 
 The eventhouse home page is where you can manage and monitor your eventhouse. From here, you can view the [system overview](#system-overview), browse databases, and access monitoring features.
 
-:::image type="content" source="media/eventhouse/event-house-page.png" alt-text="Screenshot showing the main Eventhouse page." lightbox="media/eventhouse/event-house-page.png":::
+:::image type="content" source="media/eventhouse/event-house-page.png" alt-text="Screenshot showing the main eventhouse page." lightbox="media/eventhouse/event-house-page.png":::
 
-* **A: Eventhouse ribbon**: The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh the eventhouse page, enable always-on, add databases, add plugins, and collapse or expand the details area.
+This page is divided into the following sections:
+
+* **A: Eventhouse ribbon**:  The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh the eventhouse page, [schedule the capacity planner](eventhouse-smart-capacity-control.md), add databases, add plugins, and collapse or expand the details area.
 
 * **B: Explorer pane**: The explorer provides an intuitive interface for navigating between eventhouse views, working with databases, and navigating to the monitoring eventhouse.
 
-* **C: Main pane**: The main view area displays various eventhouse system overview information or database overview information, depending on what you select in the explorer pane.
+* **C: Main pane**: The main view area displays a variety of eventhouse system overview information or database overview information, depending on what you select in the explorer pane.
 
-* **D: Eventhouse details**: The eventhouse details area displays the region, last ingestion date, minimum consumption setting, and plugins. You can expand or collapse the details area using the button, or from the ribbon. 
-
-  In the details area, you can copy the following eventhouse URI values:
+* **D: Eventhouse details**: The eventhouse details area displays the region, last ingestion date, minimum consumption setting, and plugins. You can expand or collapse the details area using the button, or from the ribbon. In the details area, you can copy the following eventhouse URI values:
 
   * **Query URI**: URI that can be used to [add database shortcuts](database-shortcut.md) or by [connectors](event-house-connectors.md) and APIs to run queries or management commands.
 
@@ -37,13 +37,12 @@ An eventhouse can have multiple **Related elements**, such as KQL databases, rea
 
 ## System overview
 
-The eventhouse **System overview** provides insights into the eventhouse's health, performance, and activity, including storage usage, compute usage, ingestion rates, and more. <!--You can also view advisory findings that proactively alert you to potential capacity issues.-->
+The eventhouse **System overview** provides insights into the eventhouse's health, performance, and activity, including storage usage, compute usage, ingestion rates, and more. You can also view advisory findings that proactively alert you to potential capacity issues.
 
 * [Running state](#running-state)
 * [Eventhouse storage](#eventhouse-storage)
 * [Storage resources](#storage-resources)
-* [Time range filter](#time-range-filter)
-* [Activity in minutes](#activity-in-minutes)
+* [Activity in minutes by application](#activity-in-minutes-by-application)
 * [Ingestion](#ingestion)
 * [Top 10 queried databases](#top-10-queried-databases)
 * [Top 10 ingested databases](#top-10-ingested-databases)
@@ -64,6 +63,12 @@ Shows the operational status of the eventhouse.
 | **Suspended capacity** | The capacity used for this eventhouse was suspended. To [reverse the suspension](../enterprise/pause-resume.md), contact your capacity admin. |
 | **Unknown** | For unknown reasons, the eventhouse is unavailable. |
 
+### Advisor findings
+
+When a specific application generates an unusually high volume of queries, an advisor banner appears on the system overview page. This banner proactively alerts you to potential capacity issues.
+
+For details about the trigger conditions and banner message, see [activity spike advisor](monitor-eventhouse-activity-by-application.md#activity-spike-advisor).
+
 ### Eventhouse storage
 
 Shows the storage capacity of the eventhouse. The storage capacity is divided into categories:
@@ -78,27 +83,13 @@ Shows the storage capacity of the eventhouse. The storage capacity is divided in
 
 Shows a snapshot of the storage breakdown by database. You can drill down into each database from the bar to see the details. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
 
-### Time range filter
+### Activity in minutes by application
 
-For the tiles in the system overview page with a time range filter, you can filter by one hour (1H), one day (1D), one week (7D), or one month (30D). To set all the tiles to the same time range, open the ellipsis menu on any of the tiles and select **Apply [time range] for all**.
+Shows the duration in minutes to run compute operations such as ingestion jobs, queries and commands, displayed as a stacked area chart broken down by application. The chart shows the top five applications by activity volume, with all remaining applications grouped under **Other**.
 
-:::image type="content" source="media/eventhouse/time-frame-apply-all.png" alt-text="Screenshot of the time frame drop-down menu with the apply to all option selected.":::
+:::image type="content" source="media/activity-by-application.png" alt-text="Screenshot of the activity in minutes by application tile in the system overview. The image shows the activity of 4 applications in the eventhouse over the last hour." lightbox="media/activity-by-application.png":::
 
-### Activity in minutes
-
- Shows the duration in minutes to run compute operations such as queries and commands. It's important to note that compute minutes don't directly correspond to compute units, which represent the actual processing time consumed by these operations.
-
-For example, if two users execute queries at the same time, one taking 3 minutes and the other 5 minutes, the total compute minutes would be 8. But since these queries ran together, the actual compute units used are just 5 minutes.
-
-In the case where 78 queries and 173 ingest operations that run at the same time and total 183 compute minutes, if they all finish within a 5-minute period, the actual compute units that is used is still only 5 minutes.
-
-The tile also allows users to open the underlying KQL query by selecting **Open query** in the ellipsis menu.
-
-:::image type="content" source="media/eventhouse/eventhouse-activity.png" alt-text="Screenshot of the Activity in minutes tile.":::
-
-This provides full visibility into how the compute minutes are calculated.
-
-:::image type="content" source="media/eventhouse/eventhouse-activity-kql.png" alt-text="Screenshot of the Activity in minutes KQL query.":::  
+For more information about application-level activity monitoring, a list of application types, and per-user application details, see [Monitor eventhouse activity by application](monitor-eventhouse-activity-by-application.md).  
 
 ### Ingestion
 
@@ -110,7 +101,7 @@ The tile also allows users to open the underlying KQL query by selecting **Open 
 
 This provides full visibility into how the number of ingested rows and the number of databases are calculated.
 
-:::image type="content" source="media/eventhouse/eventhouse-ingestion-kql.png" alt-text="Screenshot of the Ingestion details KQL query.":::
+:::image type="content" source="media/eventhouse/eventhouse-ingestion-kql.png" alt-text="Screenshot of the Ingestion details KQL query." lightbox="media/eventhouse/eventhouse-ingestion-kql.png":::
 
 ### Top 10 queried databases
 
@@ -122,7 +113,7 @@ The tile also allows users to open the underlying KQL query by selecting **Open 
 
 This provides full visibility into the top 10 queried databases and their metrics.
 
-:::image type="content" source="media/eventhouse/eventhouse-queries-kql.png" alt-text="Screenshot of the Top 10 queried databases KQL query.":::
+:::image type="content" source="media/eventhouse/eventhouse-queries-kql.png" alt-text="Screenshot of the Top 10 queried databases KQL query." lightbox="media/eventhouse/eventhouse-queries-kql.png":::
 
 ### Top 10 ingested databases
 
@@ -130,7 +121,7 @@ Highlights the number of ingested rows and ingestion errors for the databases wi
 
 The tile also allows users to open the underlying KQL query by selecting **Open query** in the ellipsis menu.
 
-:::image type="content" source="media/eventhouse/eventhouse-ingested-databases.png" alt-text="Screenshot of the Top 10 ingested databases tile":::
+:::image type="content" source="media/eventhouse/eventhouse-ingested-databases.png" alt-text="Screenshot of the Top 10 ingested databases tile.":::
 
 This provides full visibility into top 10 ingested databases and their metrics.
 
@@ -165,7 +156,7 @@ The databases overview page provides a summary of all the databases in the event
 
 1. From the **Eventhouse** explorer, select **Databases**.
 
-    :::image type="content" source="media/eventhouse/browse-databases.png" alt-text="Screenshot of an eventhouse pane with Browse all databases highlighted in a red box.":::'
+    :::image type="content" source="media/eventhouse/browse-databases.png" alt-text="Screenshot of an eventhouse pane with Browse all databases highlighted in a red box.":::
 
     A window opens with details about each database. Each tile represents a database.
 
@@ -182,6 +173,14 @@ The databases overview page provides a summary of all the databases in the event
 1. To explore a specific database, select the name of this database from the list.
 
 1. To add a new database or database shortcut to the eventhouse, select **+ New database** at the top of the page. For more information, see [Create a KQL database](create-database.md) and [Create a database shortcut](database-shortcut.md).
+
+### View database assets
+
+The explorer pane provides an interface to view the assets within a database, such as tables, functions, and materialized views. It supports organizing assets such as [tables](manage-monitor-table.md#organize-tables-with-folders), [shortcuts](onelake-shortcuts.md#organize-shortcuts-with-folders), [materialized views](materialized-view.md#organize-materialized-views-in-folders), and [functions](create-functions.md#organize-functions-with-folders) into folders for easier navigation and grouping.
+
+Example of table organization into a subfolder:
+
+:::image type="content" source="media/manage-monitor-table/subfolder.png" alt-text="Screenshot of the explorer pane showing a subfolder with tables organized inside.":::
 
 ## View monitoring eventhouse
 

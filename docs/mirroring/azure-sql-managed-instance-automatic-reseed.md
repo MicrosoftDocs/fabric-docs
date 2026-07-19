@@ -1,9 +1,7 @@
 ---
 title: "Automatic reseed for Fabric Mirrored Databases from Azure SQL Managed Instance"
 description: Learn more about automatic reseed for Fabric mirrored databases from Azure SQL Managed Instance.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: ajayj, anagha-todalbagi
+ms.reviewer: nanikolic, sbahadur, wiassaf, anagha-todalbagi
 ms.date: 10/15/2025
 ms.topic: troubleshooting
 ms.custom:

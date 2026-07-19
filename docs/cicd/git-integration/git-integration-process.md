@@ -3,7 +3,7 @@ title: Git integration process
 description: Understand how Microsoft Fabric interacts with Git on Azure Repos or GitHub, what permissions are needed, and how to sync.
 ms.reviewer: NimrodShalit
 ms.topic: concept-article
-ms.date: 03/18/2026
+ms.date: 06/15/2026
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
 
@@ -17,12 +17,14 @@ This article explains basic Git concepts and the process of integrating Git with
 - The tenant admin must [enable cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations) if the workspace and *Azure* repo are in two different regions. This restriction doesn't apply to GitHub.
 - The permissions you have in both the workspace and Git, as listed in the next sections, determine the actions you can take.
 
+
+
 ### Required Git permissions for popular actions
 
 The following list shows what different workspace roles can do depending on their permissions in their Git repo:
 
 - **Admin**: Can perform any operation on the workspace, limited only by their Git role.
-- **Member/Contributor**: Once they connect to a workspace, a member/contributor can commit and update changes, depending on their Git role. For actions related to the workspace connection (for example, connect, disconnect, or switch branches) seek help from an Admin.
+- **Member/Contributor**: Once they connect to a workspace, contributors or members can commit and update changes, depending on their Git role. Additionally, when the workspace-level **Allow users with at least Contributor role to change Git branch** setting is enabled, Contributors with write access to all items can switch branches and check out new branches. For other actions related to the workspace connection (for example, connect or disconnect) seek help from an Admin.
 - **Viewer**: Can't perform any actions. The viewer can't see any Git related information in the workspace.
 
 ### Required Fabric permissions for popular actions
@@ -36,13 +38,15 @@ The following table describes the permissions needed in the Fabric workspace to 
 | Connect workspace to Git repo                    | Admin                                           |
 | Sync workspace with Git repo                     | Admin                                           |
 | Disconnect workspace from Git repo                  | Admin                                           |
-| Switch branch in the workspace (or any change in connection setting) | Admin                                           |
+| Switch branch in the workspace (or any change in connection setting) | Admin (always);<br/>Member/Contributor with WRITE permission on all items (when workspace setting **Allow users with at least Contributor role to change Git branch** is ON) |
 | View Git connection details                     | Admin, Member, Contributor                                |
 | See workspace 'Git status'                      | Admin, Member, Contributor                                |
 | Update from Git                           | All of the following roles:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)  |
 | Commit workspace changes to Git                   | All of the following roles:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)  |
-| Create new Git branch from within Fabric               | Admin                                           |
+| Create new Git branch from within Fabric               | Admin (always);<br/>Member/Contributor with WRITE permission on all items (when workspace setting **Allow users with at least Contributor role to change Git branch** is ON) |
 | Branch out to another workspace                   | Admin, Member, Contributor                                |
+
+
 
 #### Git roles
 
@@ -89,19 +93,24 @@ The following table describes the Git permissions needed to perform various comm
 
 ## Connect and sync
 
-Only a workspace admin can connect a workspace to a Git Repos, but once connected, anyone with permissions can work in the workspace. If you're not an admin, ask your admin for help with connecting.
+
 
 When you [connect a workspace to Git](./git-get-started.md#connect-a-workspace-to-a-git-repo), Fabric syncs between the two locations so they have the same content. During this initial sync, if either the workspace or Git branch is empty while the other has content, the content is copied from the nonempty location to the empty one.
 If both the workspace and Git branch have content, you have to decide which direction the sync should go.
 
 - If you commit your workspace to the Git branch, all supported workspace content is exported to Git and overwrites the current Git content.
-- If you update the workspace with the Git content, the workspace content is overwritten, and you lose your workspace content. Since a Git branch can always be restored to a previous stage while a workspace can’t, if you choose this option, you're asked to confirm.
+- If you update the workspace with the Git content, the workspace content is overwritten, and you lose your workspace content. Since a Git branch can always be restored to a previous stage while a workspace can't, if you choose this option, you're asked to confirm.
 
 :::image type="content" source="./media/git-integration-process/git-sync-direction-2.png" alt-text="Screenshot of dialog asking which direction to sync if both Git and the workspace have content.":::
 
-If you don’t select which content to sync, you can’t continue to work.
+If you don't select which content to sync, you can't continue to work.
 
 :::image type="content" source="./media/git-integration-process/sync-direction-continue.png" alt-text="Screenshot notification that you can't continue working until workspace is synced.":::
+
+- Only a workspace admin can connect a workspace to a Git repo, but once connected, anyone with permissions can work in the workspace. If you're not an admin, ask your admin for help with connecting. 
+- Branch switching can also be performed by Contributors when the workspace-level **Allow users with at least Contributor role to change Git branch** setting is enabled (the setting requires an active Git connection and the Member/Contributor must have write access to all items in the workspace).
+
+:::image type="content" source="./media/git-integration-process/change-branch-2.png" alt-text="Screenshot of Allow users with at least Contributor role to change Git branch.":::
 
 ### Folders
 
@@ -154,7 +163,7 @@ Each item has one of the following statuses:
 
 ### Sync information
 
-As long as you’re connected, the following information appears at the bottom of your screen:
+As long as you're connected, the following information appears at the bottom of your screen:
 
 - Connected branch
 - Time of last sync
@@ -204,7 +213,7 @@ The Refresh button :::image type="icon" source="./media/git-integration-process/
 
 #### Update
 
-- Unlike *commit* and *undo*, the *Update* command always updates the entire branch and syncs to the most recent commit. You can’t select specific items to update.
+- Unlike *commit* and *undo*, the *Update* command always updates the entire branch and syncs to the most recent commit. You can't select specific items to update.
 - If changes were made in the workspace and in the Git branch *on the same item*, updates are disabled until the [conflict is resolved](./conflict-resolution.md).
 
 Read more about how to [commit](./git-get-started.md#commit-changes-to-git) and [update](./git-get-started.md#update-workspace-from-git).
@@ -216,7 +225,7 @@ The *Branches* tab of the Source control panel enables you to manage your branch
 
  - [*Branch out to another workspace*](./branched-workspace.md) (contributor and above): Creates a new branched workspace, or switches the connected branch of existing branched workspace to a new Git branch which created based on the last commit of the source workspace. 
  - [*Checkout new branch*](./conflict-resolution.md#resolve-conflict-in-git) (must be workspace admin): Creates a new branch based on the last synced commit in the workspace and changes the Git connection in the current workspace. It doesn't change the workspace content.
- - [*Switch branch*](./branched-workspace.md#switch-branches) (must be workspace admin): Syncs the workspace with another new or existing branch and overrides all items in the workspace with the content of the selected branch.
+ - [*Switch branch*](./branched-workspace.md#switch-branches) (workspace admin, or member/contributor with write access to all items when **Allow users with at least Contributor role to change Git branch** is enabled): Syncs the workspace with another new or existing branch and overrides all items in the workspace with the content of the selected branch.
 
  :::image type="content" source="./media/git-integration-process/branch-out.png" alt-text="Screenshot of the branch out tab in the source control panel.":::
 

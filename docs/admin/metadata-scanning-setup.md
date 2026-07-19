@@ -1,4 +1,4 @@
----
+﻿---
 title: Set up metadata scanning in an organization
 description: Learn how to set up and enable metadata scanning in your organization through the administrator settings.
 author: msmimart
@@ -9,7 +9,7 @@ ms.date: 11/02/2023
 
 # Set up metadata scanning in your organization
 
-Before metadata scanning can be run over an organization's Microsoft Fabric workspaces, it must be set up by a Fabric administrator. Setting up metadata scanning involves two steps:
+Before metadata scanning can be run over an organization's Fabric workspaces, it must be set up by a Fabric administrator. Setting up metadata scanning involves two steps:
 
 1. Enabling service principal authentication for read-only admin APIs.
 1. Enabling tenant settings for detailed semantic model metadata scanning.

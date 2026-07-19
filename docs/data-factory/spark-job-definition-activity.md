@@ -70,6 +70,53 @@ You can also parameterize these setting fields to orchestrate your Spark job def
 
 :::image type="content" source="media/spark-job-definition-activity/spark-job-definition-parameterized-expression.png" lightbox="media/spark-job-definition-activity/spark-job-definition-parameterized-expression.png" alt-text="Screenshot showing an expression set for a Main definition file under Advanced settings in the Spark Job Definition activity settings.":::
 
+Within the **Settings** tab, you can configure more settings under **Spark settings**.
+
+## Spark settings
+
+Use these settings to control the compute resources and execution behavior of your Spark job.
+
+### Spark driver core
+
+Specifies the number of CPU cores allocated to the **driver node**, which coordinates the Spark job, schedules tasks, and collects results.
+
+### Spark driver memory
+
+Defines the amount of memory available to the **driver node**.
+
+Increase this if your job requires more memory for coordination, metadata, or result aggregation.
+
+### Spark executor core
+
+Specifies the number of CPU cores allocated to each **executor**, which performs the actual data processing tasks.
+
+### Spark executor memory
+
+Defines the amount of memory allocated to each **executor**.
+
+Higher memory can improve performance for large or memory-intensive workloads.
+
+### Dynamic allocation
+
+Controls whether Spark automatically adjusts the number of executors at runtime based on workload demand.
+
+- **Enabled**: Spark dynamically scales executors up or down to optimize resource usage  
+- **Disabled**: The number of executors remains fixed (based on *Spark executor instances*)
+
+### Spark executor instances
+
+Specifies the **number of executors** to use when dynamic allocation is disabled.
+
+This directly controls the level of parallelism for your job.
+
+### Spark properties
+
+Allows you to provide **custom Spark configuration settings** as key-value pairs (for example, `spark.sql.shuffle.partitions`).
+
+Use this to fine-tune job behavior beyond the default settings.
+
+:::image type="content" source="media/spark-job-definition-activity/sjd-spark-settings.png" lightbox="media/spark-job-definition-activity/sjd-spark-settings.png" alt-text="Screenshot showing the options under the Spark settings in the Spark Job Definition activity settings.":::
+
 ## Known limitations
 
 Current limitations in the Spark Job Definition activity for Fabric Data Factory are listed here. This section is subject to change.

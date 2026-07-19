@@ -3,7 +3,7 @@ title: Configure Settings for a Fabric Eventstream
 description: This article describes how to configure sensitivity label, endorsement, retention, and throughput settings for an eventstream. 
 ms.reviewer: xujiang1
 ms.topic: how-to
-ms.date: 03/22/2026
+ms.date: 05/09/2026
 ms.search.form: Eventstreams Overview
 ---
 
@@ -41,9 +41,9 @@ Here's how different sources and destinations perform at each throughput level.
 > [!NOTE]
 > The throughput upper limits listed here are based on the results from lab testing under specific configurations. Results might vary with different configurations.
 
-### Azure Event Hubs source
+### Azure Event Hubs source (Basic features mode)
 
-For Azure Event Hubs sources, throughput depends on both the selected throughput level and the number of Azure Event Hubs source partitions. When the Azure Event Hubs source partition count is less than four, throughput is limited by the partition count, regardless of the selected throughput level. The throughput upper limits are as follows:
+For Azure Event Hubs sources (basic features mode), throughput depends on both the selected throughput level and the number of partitions. When the partition count is less than four, throughput is limited by the partition count, regardless of the selected throughput level. The throughput upper limits are as follows:
 
 | Partition Count | Approximate Throughput (up-to) |
 |-----------------|-----------------|
@@ -54,21 +54,16 @@ When the partition count is 4, 16, or 32, throughput depends on the selected lev
 
 ### Streaming connector sources
 
-The throughput for streaming connector sources is up to **30 MB/s**. If you need higher throughput (except for database CDC sources), contact the product group team through [this form](https://aka.ms/EventStreamsConnThroughputRequest).
+Streaming connector throughput depends on whether the source is partitioned.
 
-**Streaming connector sources include**:
-- Azure SQL Database Change Data Capture (CDC)
-- Azure Service Bus
-- PostgreSQL Database CDC
-- MySQL Database CDC
-- Azure Cosmos DB CDC
-- SQL Server on VM DB CDC
-- Azure SQL Managed Instance CDC
-- Google Cloud Pub/Sub
-- Amazon Kinesis Data Streams
-- Confluent Cloud Kafka
-- Apache Kafka
-- Amazon MSK Kafka
+For sources with partitions, such as Confluent Cloud for Apache Kafka, AWS Kinesis, and similar services, you can choose from the following throughput levels:
+- **Low**: < 10 MB/s  
+- **Medium**: 10–100 MB/s  
+- **High**: > 100 MB/s  
+
+For non-partitioned sources, such as database CDC sources, throughput is up to **30 MB/s**.
+
+[!INCLUDE [streaming-connector-vnet-supported-sources](./includes/streaming-connector-virtual-network-supported-sources.md)]
 
 ### Other eventstream sources and destinations
 The following table shows the approximate throughput upper limit for custom endpoint sources and different destinations, based on internal lab testing.
@@ -91,7 +86,6 @@ The following table shows the approximate throughput upper limit for custom endp
 >[!NOTE]
 > The throughput data was tested under the specific conditions described in the following list. Results might vary with different configurations.
 >- The source event sender, consumer, and Eventstream are in the same data center to ensure that network throughput isn't a bottleneck.
->- The source event sender, consumer, and eventstream are in the same data center to ensure that network throughput isn't a bottleneck.
 >- Events are in JSON format, each 1 KB in size. Events batch in groups of 100 before being sent or received.
 >- The test setup followed a 'One Source → One Eventstream → One Destination' structure. No processing operators were applied before data routed the Lakehouse or Eventhouse (using 'Event processing before ingestion' option) destinations. Eventhouse received data in batch mode.
 

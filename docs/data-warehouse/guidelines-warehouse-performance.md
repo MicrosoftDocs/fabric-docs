@@ -2,7 +2,7 @@
 title: Performance Guidelines
 description: Get performance guidelines for Microsoft Fabric Data Warehouse to optimize queries, ingestion, table design, statistics, caching, and more.
 ms.reviewer: xiaoyul, procha, fipopovi, twcyril
-ms.date: 01/14/2026
+ms.date: 06/15/2026
 ms.topic: best-practice
 ai-usage: ai-assisted
 ---
@@ -23,8 +23,8 @@ To monitor performance on your warehouse, see [Monitor Fabric Data warehouse](mo
 
 Statistics are persisted objects that represent data in your tables' columns. The Query Optimizer uses statistics to pick and estimate the cost of a query plan. Fabric Data Warehouse and Lakehouse SQL analytics endpoint use and automatically maintain histogram statistics, average column length statistics, and table cardinality statistics. For more information, see [Statistics in Fabric Data Warehouse](statistics.md).
 
-- The [CREATE STATISTICS](/sql/t-sql/statements/create-statistics-transact-sql?view=fabric&preserve-view=true) and [UPDATE STATISTICS](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true) T-SQL commands are supported for single-column histogram statistics. You can leverage these if there's a large enough window between your table transformations and your query workload, such as during a maintenance window or other downtime. This reduces the likelihood of your `SELECT` queries having to first update statistics.
-- Try to define table schema that maintains data type parity in common column comparisons. For example, if you know columns will be often compared to each other in a `WHERE` clause, or used as the `JOIN ... ON` predicate, make sure the data types match. If not possible to use exact same data types, use similar data types compatible for implicit conversion. Avoid explicit data conversions. For more information, see [Data type conversion](/sql/t-sql/data-types/data-type-conversion-database-engine?view=fabric&preserve-view=true).
+- The [CREATE STATISTICS](/sql/t-sql/statements/create-statistics-transact-sql?view=fabric&preserve-view=true) and [UPDATE STATISTICS](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true) T-SQL commands are supported for single-column histogram statistics. You can leverage these if there's a large enough window between your table transformations and your query workload, such as during a maintenance window or other downtime. This approach reduces the likelihood that your `SELECT` queries need to first update statistics.
+- Try to define table schema that maintains data type parity in common column comparisons. For example, if you know columns are often compared to each other in a `WHERE` clause, or used as the `JOIN ... ON` predicate, make sure the data types match. If it's not possible to use exact same data types, use similar data types compatible for implicit conversion. Avoid explicit data conversions. For more information, see [Data type conversion](/sql/t-sql/data-types/data-type-conversion-database-engine?view=fabric&preserve-view=true).
 
 > [!TIP]
 > For Lakehouse users, the ACE-Cardinality statistic can use information from your tables' Delta log files to be more accurate. Ensure your Spark generated Delta tables include table row-counts with: `spark.conf.set("spark.databricks.delta.stats.collect", "true")`. For more information, see [Configure and manage Automated Table Statistics in Fabric Spark](../data-engineering/automated-table-statistics.md).
@@ -33,25 +33,25 @@ When filtering lakehouse tables on timestamp column before Apache Spark runtime 
 
 ### Cold cache performance
 
-The *first execution* of a query in Fabric Data Warehouse can be unexpectedly slower than subsequent runs. This is known as a *cold start*, caused by system initialization or scaling activities that prepare the environment for processing. 
+The *first execution* of a query in Fabric Data Warehouse can be unexpectedly slower than subsequent runs. This slowdown is known as a *cold start*. A cold start happens because of system initialization or scaling activities that prepare the environment for processing. 
 
 Cold starts typically occur when: 
 
-- Data is loaded from OneLake into memory because it's being accessed for the first time, and isn't yet cached.
-- If data is accessed for the first time, query execution is delayed until the necessary [statistics](statistics.md) are automatically generated.
-- Fabric Data Warehouse automatically pauses nodes after some period of inactivity to reduce cost, and adds nodes as part of autoscaling. Resuming or creating nodes typically takes less than one second.
+- The system loads data from OneLake into memory because the query accesses data for the first time and the data isn't yet cached.
+- The system automatically generates necessary [statistics](statistics.md) because the query accesses data for the first time.
+- The system automatically pauses nodes after some period of inactivity to reduce cost, and adds nodes as part of autoscaling. Resuming or creating nodes typically takes less than one second.
 
-These operations can increase query duration. Cold starts can be partial. Some compute nodes, data, or statistics might already be available or cached in memory, while the query waits for others to come available. 
+These operations can increase query duration. Cold starts can be partial. Some compute nodes, data, or statistics might already be available or cached in memory, while the query waits for others to become available. 
 
 In-memory and disk caching in Fabric Data Warehouse is fully transparent and automatically enabled. Caching intelligently minimizes the need for remote storage reads by leveraging local caches. Fabric Data Warehouse employs refined access patterns to enhance data reads from storage and elevate query execution speed. For more information, see [Caching in Fabric data warehousing](caching.md).
 
 You can detect cold start effects caused by fetching data from remote storage into memory by querying the [queryinsights.exec_requests_history](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true) view. Check the `data_scanned_remote_storage_mb` column: 
 
-- The non-zero value in `data_scanned_remote_storage_mb` indicates a cold start. Data was fetched from OneLake during the query execution. Subsequent views should be provably faster in `queryinsights.exec_requests_history`.
-- A zero value in `data_scanned_remote_storage_mb` is the perfect state where all data is cached. No node changes or data from OneLake was needed to serve the query results.
+- A nonzero value in `data_scanned_remote_storage_mb` indicates a cold start. The query execution fetched data from OneLake. Subsequent views should be provably faster in `queryinsights.exec_requests_history`.
+- A zero value in `data_scanned_remote_storage_mb` is the perfect state where all data is cached. No node changes or data from OneLake were needed to serve the query results.
 
 > [!IMPORTANT]
-> Don't judge query performance based on the **first** execution. Always check `data_scanned_remote_storage_mb` to determine if the query was impacted by cold start. Subsequent executions are often significantly faster and are representative of actual performance, which will lower the average execution time. 
+> Don't judge query performance based on the **first** execution. Always check `data_scanned_remote_storage_mb` to determine if the query was impacted by cold start. Subsequent executions are often significantly faster and are representative of actual performance, which lowers the average execution time. 
 
 <!--
 #### Result set caching
@@ -63,7 +63,7 @@ For more information, see [Result set caching](result-set-caching.md).
 
 ### Queries on tables with string columns  
 
-Use the smallest string column length that can accommodate values. Fabric Warehouse is constantly improving; however, you might experience suboptimal performance if using large string data types, particularly large objects (LOBs). For example, for a `customer_name` column's data type, consider your business requirements and expected data, and use an appropriate length `n` when declaring `varchar(n)`, such as **varchar(100)**, instead of **varchar(8000)** or **varchar(max)**. Statistics and query cost estimation are more accurate when the data type length is more precise to the actual data.
+Use the smallest string column length that can accommodate values. Fabric Warehouse is constantly improving; however, you might experience suboptimal performance if you use large string data types, particularly large objects (LOBs). For example, for a `customer_name` column's data type, consider your business requirements and expected data, and use an appropriate length `n` when declaring `varchar(n)`, such as **varchar(100)**, instead of **varchar(8000)** or **varchar(max)**. Statistics and query cost estimation are more accurate when the data type length is more precise to the actual data.
 
 - In Fabric Data Warehouse T-SQL, see [guidance for choosing the appropriate length for string data types](#consider-when-to-use-varchar-over-char).
 - Lakehouse table string columns without defined length in Spark are recognized by Fabric Warehouse as **varchar(8000)**. For optimal performance, use the `CREATE TABLE` statement in SparkSQL to define string column as `varchar(n)`, where `n` is maximum column length that can accommodate values.
@@ -151,7 +151,8 @@ In Microsoft Fabric, the Warehouse automatically optimizes data layouts, and per
 
 Having many small files creates overhead for reading file metadata. Use the [OPTIMIZE command](../data-engineering/lakehouse-table-maintenance.md#run-table-maintenance-from-lakehouse) in the Fabric portal or a Notebook to combine small files into larger ones. Repeat this process when the number of files changes significantly.
 
-To optimize a table in a Fabric Lakehouse, open the Lakehouse in the Fabric portal. In the **Explorer**, right-click on the table, select **Maintenance**. Choose options from the **Run maintenance commands** page, then select **Run now**.
+- To manually optimize a table in a Fabric Lakehouse, open the Lakehouse in the Fabric portal. In the **Explorer**, right-click on the table, and select **Maintenance**. Choose options from the **Run maintenance commands** page, and then select **Run now**.
+- To intelligently optimize tables that need maintenance, use a data pipeline and the `sys.sp_get_table_health_metrics` T-SQL stored procedure to determine when a table needs the `OPTIMIZE` command. For a tutorial, see [Optimize Lakehouse tables based on health checks](tutorial-conditional-lakehouse-optimization.md).
 
 #### Query lakehouse tables or shortcuts located in the same region
 

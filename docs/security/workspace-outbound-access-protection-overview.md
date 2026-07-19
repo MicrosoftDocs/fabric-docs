@@ -61,10 +61,11 @@ The following table summarizes the supported workloads and item types that can b
 | Data Factory | Data connection rules | <ul><li>Data Flows Gen2 (with CICD)</li><li>Pipelines</li><li>Copy Jobs</li></ul> | [Workspace outbound access protection for Data Factory](workspace-outbound-access-protection-data-factory.md) |
 | Data Science | Not applicable | <ul><li>Machine Learning Experiments</li><li>Machine Learning Models</li></ul> | [Workspace outbound access protection for Data Science](workspace-outbound-access-protection-data-science.md) |
 | Data Warehouse | Not applicable | <ul><li>Warehouses</li><li>SQL analytics endpoints</li></ul> | [Workspace outbound access protection for data warehouse workloads](workspace-outbound-access-protection-data-warehouse.md) |
-| Fabric IQ | Data connection rules | <ul><li>Graph</li></ul> | [Workspace outbound access protection for Fabric IQ](workspace-outbound-access-protection-iq.md) |
-| Real-Time Intelligence | Data connection rules | <ul>><li>Activator</li><li>Eventstream</li><li>Eventhouse</li></ul> | Workspace outbound access protection for Real-Time Intelligence: [Activator](workspace-outbound-access-protection-activator.md), [Eventstream](workspace-outbound-access-protection-eventstream.md), and [Eventhouse](workspace-outbound-access-protection-eventhouse.md) |
+| Fabric IQ | Data connection rules | <ul><li>Graph</li><li>Operations agent</li></ul> | Workspace outbound access protection for Fabric IQ: [Graph](workspace-outbound-access-protection-graph.md) |
+| Real-Time Intelligence | Data connection rules | <ul><li>Activator</li><li>Eventstream</li><li>Eventhouse</li></ul> | Workspace outbound access protection for Real-Time Intelligence: [Activator](workspace-outbound-access-protection-activator.md), [Eventstream](workspace-outbound-access-protection-eventstream.md), and [Eventhouse](workspace-outbound-access-protection-eventhouse.md) |
 | Mirrored databases | Data connection rules | <ul><li>Mirrored databases</li></ul> | [Workspace outbound access protection for mirrored databases](workspace-outbound-access-protection-mirrored-databases.md) |
 | OneLake | Managed private endpoints | <ul><li>OneLake shortcuts</li></ul> | [Workspace outbound access protection for OneLake](workspace-outbound-access-protection-onelake.md) |
+| Real-Time Events (preview) | Data connection rules | <ul><li>Azure and Fabric events</li></ul> | [Workspace outbound access protection for Real-Time Events](workspace-outbound-access-protection-real-time-events.md) |
 | Power BI | Data connection rules | <ul><li>Semantic models</li></ul> | [Workspace outbound access protection for semantic models](workspace-outbound-access-protection-semantic-models.md) |
 
 ## Considerations and limitations
@@ -95,7 +96,7 @@ This section outlines important considerations and limitations when using worksp
 
 * Workspace outbound access protection isn't currently compatible with [Fabric external data sharing](/fabric/governance/external-data-sharing-overview). Cross-tenant allow lists aren't supported with workspace outbound access protection. 
 
-* Power BI items other than semantic models don't yet support outbound access protection. These items can't be created in workspaces with outbound access protection enabled. If these items already exist in a workspace, outbound access protection can't be enabled on that workspace.
+* Power BI items other than semantic models don't yet support outbound access protection. You can't create these items in workspaces with outbound access protection enabled. If these items already exist in a workspace, you can't enable outbound access protection on that workspace.
 
 ### Data connection rules
 

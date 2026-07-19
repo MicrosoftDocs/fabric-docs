@@ -7,7 +7,7 @@ ms.topic: how-to
 ---
 # Develop and deploy cross-warehouse dependencies
 
-In this article, you learn how to model and deploy cross-warehouse dependencies using SQL database projects in Visual Studio Code. You start from two existing warehouse projects and configure one-way dependencies between them using database references and, where necessary, pre-deployment and post-deployment scripts.
+In this article, you learn how to model and deploy cross-warehouse dependencies by using SQL database projects in Visual Studio Code. You start from two existing warehouse projects and configure one-way dependencies between them by using database references and, where necessary, pre-deployment and post-deployment scripts.
 
 This article builds on the concepts in [Develop warehouse projects in Visual Studio Code](develop-warehouse-project.md) and assumes you're already comfortable building and publishing a single warehouse project.
 
@@ -126,7 +126,7 @@ Because warehouse deployments are **full schema diff** operations (not partial p
 
 If Warehouse A and Warehouse B both need objects that depend on each other:
 - Keep the **core tables and core views** in each warehouse project.
-- Move **bridge views or utility objects** that create cycles into **pre- or post-deployment scripts** in one project.
+- Move **bridge views or utility objects** that create cycles into **pre- or post-deployment scripts** in one project. 
 - Ensure those scripts are **idempotent** and safe to rerun.
          
 Example patterns:

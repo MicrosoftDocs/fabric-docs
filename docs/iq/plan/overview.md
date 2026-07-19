@@ -98,9 +98,9 @@ PowerTable sheets enable structured planning at scale. They support large, dimen
 
 Intelligence sheets provide analytical insights and automated variance analysis over planning data. They help users understand variances, trends, and forward‑looking implications.
 
-### InfoBridge
+### Infobridge
 
-InfoBridge connects and integrates data across systems, ensuring planning data stays aligned with Fabric workloads and source systems.
+Infobridge connects and integrates data across systems, ensuring planning data stays aligned with Fabric workloads and source systems.
 
 Plan extends Microsoft Fabric beyond analytics into enterprise decision intelligence. By embedding planning directly into Fabric, organizations can unify data, analytics, and planning in a single platform, reducing manual effort, improving alignment, and enabling proactive, AI-assisted decision-making.
 
@@ -114,4 +114,4 @@ Explore the components of plan in more detail:
 * [Planning sheets](planning-overview.md)
 * [PowerTable sheets](powertable-overview.md)
 * [Intelligence sheets](intelligence-overview.md)
-* [InfoBridge](infobridge-overview.md)
+* [Infobridge](infobridge-overview.md)
