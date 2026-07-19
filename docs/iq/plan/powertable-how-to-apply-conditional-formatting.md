@@ -6,7 +6,7 @@ ms.topic: how-to
 #customer intent: As a user, I want to apply and manage conditional formatting rules in PowerTable sheets so that I can highlight important data and improve table readability.
 ---
 
-# Apply conditional formatting in PowerTable sheet
+# Apply conditional formatting in PowerTable
 
 The conditional formatting feature in PowerTable sheets helps highlight specific data based on defined conditions. Use conditional formatting to emphasize records with text styles, borders, icons, font colors, or background colors. This formatting makes it easier to identify trends, exceptions, outliers, and other important data points.
 
