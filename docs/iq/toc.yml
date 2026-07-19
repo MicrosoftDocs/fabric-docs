@@ -152,7 +152,7 @@ items:
               - name: Enable writeback in reading mode
                 href: plan/planning-writeback/planning-how-to-enable-writeback-reading-mode.md
               - name: Writeback FAQ
-                href: plan/planning-writeback/planning-writeback-faq.md
+                href: plan/planning-writeback/writeback-faq.md
         - name: Change layouts
           href: plan/planning-how-to-change-layouts.md
         - name: Create a cube
@@ -199,6 +199,8 @@ items:
                 href: plan/planning-forecasting/planning-how-to-configure-forecast-settings.md
               - name: Optimize input values
                 href: plan/planning-how-to-optimize-input-values.md
+              - name: Forecasting FAQ
+                href: plan/planning-forecasting/forecasting-faq.md
         - name: Use driver models
           items: 
               - name: Create a model
@@ -338,7 +340,9 @@ items:
           - name: IBCS overview
             href: plan/intelligence-ibcs/how-to-apply-ibcs-formatting.md
           - name: IBCS column and bar charts
-            href: plan/intelligence-ibcs/how-to-configure-ibcs-column-bar-charts.md            
+            href: plan/intelligence-ibcs/how-to-configure-ibcs-column-bar-charts.md
+          - name: IBCS waterfall charts
+            href: plan/intelligence-ibcs/how-to-configure-ibcs-waterfall-charts.md                      
         - name: Build financial reports
           href: plan/intelligence-how-to-build-financial-reports.md
         - name: Comment and collaborate
