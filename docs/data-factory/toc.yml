@@ -1152,6 +1152,8 @@
           href: dbt-job-how-to.md
         - name: Configure a dbt job
           href: dbt-job-configure.md
+        - name: Connect to Azure HorizonDB
+          href: dbt-connect-azure-horizondb.md
         - name: Run dbt projects from GitHub
           href: dbt-run-github.md
         - name: dbt job logs with OneLake
