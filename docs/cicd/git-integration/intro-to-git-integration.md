@@ -10,7 +10,7 @@ ms.search.form: Git integration supported items, Introduction to Git integration
 
 # What is Microsoft Fabric Git integration?
 
-This article explains to developers how to integrate Git version control with the Fabric Application lifecycle management (ALM) tool.
+This article explains how developers can integrate Git version control with the Fabric Application lifecycle management (ALM) tool.
 
 > [!NOTE]
 > Some of the items for Git integration are in preview. For more information, see the list of [supported items](#supported-items).
@@ -34,7 +34,7 @@ See the list of [supported items](#supported-items).
 
 
 ## Network security for Git integration
-Workspace-level security in Fabric provides granular control over data access and network connectivity by allowing administrators to configure both inbound and outbound protections for individual workspaces. These controls ensure that sensitive data remains within trusted network boundaries, and they integrate with CI/CD tools like Git integration.  For more information, see [Network security for continuous integration/continuous deployment](../cicd-security.md)
+Workspace-level security in Fabric provides granular control over data access and network connectivity by allowing administrators to configure both inbound and outbound protections for individual workspaces. These controls ensure that sensitive data remains within trusted network boundaries, and they integrate with CI/CD tools like Git integration. For more information, see [Network security for continuous integration/continuous deployment](../cicd-security.md).
 
 ## Privacy information
 

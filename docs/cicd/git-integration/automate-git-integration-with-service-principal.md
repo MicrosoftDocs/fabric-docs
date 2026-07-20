@@ -72,8 +72,8 @@ To complete the steps outlined, you need the following permissions:
 
 ## Connect a new workspace to Azure DevOps using Service Principal
 To connect a Fabric workspace to Azure DevOps using Service Principal programmatically, the following steps need to be followed:
-1. **Generate Service Principal access token:** Authenticates with Fabric using a service principal.
-2. **Create Azure DevOps cloud connection:** Creates a new connection resource in Fabric that stores the Azure DevOps repository credentials and configuration.
+1. **Generate service principal access token:** Authenticates with Fabric by using a service principal.
+1. **Create Azure DevOps cloud connection:** Creates a new connection resource in Fabric that stores the Azure DevOps repository credentials and configuration.
 3. **Connect workspace to git:** Links a specific Fabric workspace to the Azure DevOps repository using the connection created in step 2.
 4. **Initialize Connection:** Initializes the Git connection.
 
