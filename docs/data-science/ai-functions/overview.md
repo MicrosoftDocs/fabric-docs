@@ -9,7 +9,7 @@ ms.search.form: AI Functions
 ai-usage: ai-assisted
 ---
 
-# AI Functions: Transform data at scale with AI
+# AI Functions: Transform data at scale with LLMs
 
 AI Functions in Microsoft Fabric apply one-line, LLM-powered transformations to large pandas or PySpark DataFrames. They run with high concurrency by default, so you can enrich, classify, summarize, and extract data quickly at scale.
 
