@@ -4,14 +4,14 @@ description: Transform and enrich data at scale with lightweight, LLM-powered co
 ms.reviewer: singhrana
 reviewer: ranadeepsingh
 ms.topic: how-to
-ms.date: 07/14/2026
+ms.date: 07/15/2026
 ms.search.form: AI Functions
 ai-usage: ai-assisted
 ---
 
-# AI Functions: Transform data at scale with AI
+# AI Functions: Transform data at scale with LLMs
 
-AI Functions in Microsoft Fabric apply one-line, LLM-powered transformations to large pandas or PySpark DataFrames. They run with high concurrency by default, so you can enrich, classify, summarize, and extract data quickly at scale.
+AI Functions in Microsoft Fabric apply one-line, LLM-powered transformations to large pandas or PySpark DataFrames with one line of code `df.ai.<function_name>()`. They run with high concurrency by making hundreds of async inference calls while keeping row-level content isolation. This approach enables you to enrich, classify, summarize, and extract data quickly from unstructured text and documents at scale.
 
 Use this table to jump to examples in this overview or detailed pandas and PySpark documentation.
 
@@ -52,9 +52,7 @@ Supported file types include JPG/JPEG, PNG, static GIF, WebP, PDF, MD, TXT, CSV,
 > [!NOTE]
 >
 > - AI Functions are supported in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
-> - Python AI Functions for pandas and PySpark now default to `gpt-5-mini` with `reasoning_effort` set to `low`. This model has a 400,000-token context window and a 128,000-token maximum output. For model limits and rates, see the [language models table](./billing.md#language-models).
-> - AI Functions in Dataflow Gen2 and DataWarehouse SQL use the same base model`gpt-5-mini` with `reasoning_effort` set to `low`.
-> - Although the underlying model can handle several languages, most AI Functions are optimized for English-language text.
+> - AI Functions [pandas, PySpark, Dataflow Gen2, and Datawarehouse SQL] default to `gpt-5-mini` with `reasoning_effort` set to `low`. This model has a 400,000-token context window and a 128,000-token maximum output. For model limits and rates, see the [language models table](./billing.md#language-models).
 > - AI Functions don't log or store user prompts, input data, or outputs.
 
 ### Models and providers
@@ -70,19 +68,32 @@ For configuration options, see [Customize AI Functions with pandas](./pandas/con
 
 AI Functions support pandas in Python and PySpark runtimes, and PySpark in the PySpark runtime. Install only the packages your runtime needs.
 
-### Performance and concurrency
-
-AI Functions process up to 200 rows concurrently by default. Tune concurrency for your workload in [pandas](./pandas/configuration.md) or [PySpark](./pyspark/configuration.md).
-
 ### Install dependencies
 
 | Runtime | Dependencies |
 | --- | --- |
 | pandas (Python runtime) | Install the `synapseml_internal` and `synapseml_core` wheel files. Install `openai` version 1.99.5 or later only if you need SDK-native client behavior or Pydantic response-format examples. |
-| pandas (PySpark runtime) | No installation is required for most usage. Install `openai` version 1.99.5 or later only if you need SDK-native client behavior or Pydantic response-format examples. |
+| pandas (Fabric Runtime 2.1 with PySpark 4.1 and Python 3.13) | Temporarily install `nest_asyncio`. Install `openai` version 1.99.5 or later only if you need SDK-native client behavior or Pydantic response-format examples. |
+| pandas (other PySpark runtimes) | No installation is required for most usage. Install `openai` version 1.99.5 or later only if you need SDK-native client behavior or Pydantic response-format examples. |
 | PySpark (PySpark runtime) | No installation is required. |
 
-# [pandas (PySpark runtime)](#tab/pandas-pyspark)
+> [!NOTE]
+> - Installing `nest_asyncio` is a temporary compatibility patch for pandas AI Functions in Fabric Runtime 2.1. This requirement will be removed in a future update.
+> - PySpark AI Functions don't require any additional install steps in Fabric Spark runtimes.
+
+# [pandas (Fabric Runtime 2.1)](#tab/pandas-runtime-2-1)
+
+Fabric Runtime 2.1 (which is based off Python 3.13 and PySpark 4.1) doesn't natively include the `nest_asyncio` package. To use pandas AI Functions in this runtime, install `nest_asyncio` as a temporary compatibility patch. In future updates, this requirement will be removed as pandas AI Functions can use the newer `nest_asyncio2` package which is preinstalled in Fabric Runtime 2.1.
+
+```python
+# Temporary compatibility patch for Fabric Runtime 2.1.
+%pip install -q nest_asyncio 2>/dev/null
+
+# Optional: install openai version 1.99.5 or later for SDK-native client behavior.
+%pip install -q openai 2>/dev/null
+```
+
+# [pandas (other PySpark runtimes)](#tab/pandas-pyspark)
 
 ```python
 # Optional: install openai version 1.99.5 or later for SDK-native client behavior.
