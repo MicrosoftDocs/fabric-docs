@@ -5,7 +5,7 @@ ms.reviewer: drskwier, antho, sukkaur
 ms.date: 08/08/2025
 ms.topic: how-to
 ms.custom: sfi-image-nochange, sfi-ropc-nochange
-ms.search.form:
+ms.search.form: SQL Database source control
 ---
 # SqlPackage for SQL database in Microsoft Fabric
 

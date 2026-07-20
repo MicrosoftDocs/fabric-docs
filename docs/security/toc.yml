@@ -130,7 +130,9 @@ items:
               - name: Data Warehouse
                 href: workspace-outbound-access-protection-data-warehouse.md
               - name: Fabric IQ
-                href: workspace-outbound-access-protection-iq.md
+                items:
+                  - name: Graph
+                    href: workspace-outbound-access-protection-graph.md
               - name: Mirrored databases
                 href: workspace-outbound-access-protection-mirrored-databases.md
               - name: OneLake (preview)

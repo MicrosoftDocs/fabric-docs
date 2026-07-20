@@ -24,7 +24,7 @@ This article shows you how to:
 ## Prerequisites
 
 - A Fabric app project in a GitHub repository. If you don't have one yet, see [Create your first Fabric Apps project](create-app.md) and push your application code to repository.
-- A Microsoft Fabric workspace that the service principal can deploy to. For environment separation, see [Manage dev and prod environments](dev-prod-workflow.md).
+- A Fabric workspace that the service principal can deploy to. For environment separation, see [Manage dev and prod environments](dev-prod-workflow.md).
 - A Microsoft Entra ID service principal (app registration) with a client secret.
 - Permission to add **secrets** to the GitHub repository.
 

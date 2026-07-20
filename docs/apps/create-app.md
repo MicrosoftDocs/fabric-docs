@@ -14,7 +14,7 @@ Fabric apps helps you build and ship backend services faster by providing ready-
 
 ## Prerequisites
 
-- A Microsoft account with access to Microsoft Fabric.
+- A Microsoft account with access to Fabric.
 - A Fabric workspace where you have contributor or admin permissions.
 - Fabric app enabled by a tenant admin in settings. See [Enable Fabric app in tenant admin settings](#enable-fabric-app-in-tenant-admin-settings).
 
@@ -34,7 +34,7 @@ After the setting is enabled, users in the allowed scope can create Fabric apps 
 
 ## Step 1: Sign in to the Fabric portal
 
-Open [Microsoft Fabric](https://app.fabric.microsoft.com) in your browser and sign in with your Microsoft account.
+Open [Fabric](https://app.fabric.microsoft.com) in your browser and sign in with your Microsoft account.
 
 ## Step 2: Select a workspace
 
@@ -104,4 +104,4 @@ You can develop locally using [Rayfin CLI](https://www.npmjs.com/package/@micros
 
 - [Understand the project structure](project-structure.md)
 - [Define data models](data-models.md)
-- [Deploy to Microsoft Fabric](deploy-app.md)
+- [Deploy to Fabric](deploy-app.md)

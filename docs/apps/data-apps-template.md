@@ -30,7 +30,7 @@ Encoding these patterns directly into the template improves reliability, produce
 
 ## Prerequisites
 
-- Access to Microsoft Fabric.
+- Access to Fabric.
 - A Fabric workspace where you have contributor or admin permissions.
 - The Fabric Apps workload enabled in your tenant. See [Enable Fabric app in tenant admin settings](create-app.md#enable-fabric-app-in-tenant-admin-settings).
 - The Semantic Model Execute Queries REST API tenant setting enabled. Data apps use the [Execute DAX Queries API](/rest/api/power-bi/datasets/execute-dax-queries) to query semantic models. In the Fabric admin portal, navigate to **Integration settings** and enable the **Semantic Model Execute Queries REST API** setting.
@@ -52,7 +52,7 @@ To create an app connected to Fabric data using the data app template:
 1. Open your coding agent and paste the prompt in.
 
    We recommend either:
-   - Opening VS Code and opening the Copilot pane by clicking on the copilot chat icon on the right side of the search box at the top of the VS Code window
+   - Opening VS Code and opening the Copilot pane by clicking on the Copilot chat icon on the right side of the search box at the top of the VS Code window
    - Opening a terminal and typing `copilot` and then pressing enter.
 
    Both options open up GitHub Copilot, just in different interfaces (chat vs terminal). Use whichever you prefer!

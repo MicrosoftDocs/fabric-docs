@@ -4,7 +4,7 @@ description: Troubleshoot problems with deployment pipelines, the Fabric Applica
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.custom: sfi-image-nochange
-ms.date: 02/17/2026
+ms.date: 06/15/2026
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -107,6 +107,12 @@ To understand the considerations and limitations of various lifecycle management
 **Cause**: The [Git integration switch](../admin/git-integration-admin-settings.md) might be enabled for your source workspace, but not for the whole tenant as the tenant admin can delegate control of the switch to workspace admins. If this is the case, your new workspace won't have Git integration enabled and you'll need to manually enable it from the workspace settings before syncing the workspace with Git.
 **Solution**: Enable Git integration from the workspace settings of your new workspace.
 
+#### Switch branch or Checkout new branch is unavailable for a contributor or member
+
+**Description of problem**: As a Contributor or Member (non-admin), I can't switch branches or check out a new branch from the **Source control** panel.  
+**Cause**: By default, branch switching and new-branch creation are restricted to workspace admins. A Contributor can perform these actions only when the workspace-level **Allow users with at least Contributor role to change Git branch** setting is enabled, the workspace has an active Git connection, and the Contributor has write access to all items in the workspace.  
+**Solution**: Ask a workspace admin to enable the **Allow users with at least Contributor role to change Git branch** setting in the workspace settings. For more information, see [Allow Contributors and Members to switch branches](./git-integration/git-get-started.md#allow-contributors-and-members-to-switch-branches)
+
 ### Connect folder issues
 
 #### Connect failure: I am prompted to create a new folder when connecting to a Git branch.
@@ -129,6 +135,19 @@ To understand the considerations and limitations of various lifecycle management
 **Cause**: If your workspace has folders and the connected Git folder doesn't yet have subfolders, they are considered to be different. If your workspace has folders but the Git branch doesn't, you see the *uncommitted changes* message. If you try to update the workspace before committing the changes, you get a conflict. Once the Git folder has the same folder structure as the workspace, you won't get this message anymore.
 
 **Solution**: To resolve the issue, [commit](./git-integration/git-get-started.md#commit-changes-to-git) changes to Git. If you can't make changes directly to the connected branch, we recommend using the [checkout branch](./git-integration/git-integration-process.md#handling-folder-changes-safely) option. For more information, see [Handling folder changes safely](./git-integration/git-integration-process.md#handling-folder-changes-safely).
+
+#### My workspace shows uncommitted changes on a report I didn't modify
+
+**Description of problem**: I notice uncommitted changes for a report in my workspace, even though I didn't manually modify any artifacts.
+
+**Cause**: This behavior can happen when a report name includes special characters such as `:`, `#`, `[`, or `]`, and the report has a dependency-by-path on a semantic model. Special characters in artifact names cause the system to autocorrect the dependency paths. These automatic adjustments are expected behavior and ensure the report stays correctly linked to its semantic model in the Git branch.
+
+**Solution**: Commit the changes so the Git branch stays aligned with the artifact's true state. If you want more certainty before committing, use the **Commit to new branch** option in the source control pane, and then compare the differences between:
+
+* the artifact currently stored in your Git branch
+* the newly generated artifact committed to the new branch
+
+Review the diff to confirm that only dependency paths were adjusted and that no unintended logic or structural changes were introduced. This workflow gives you a safe validation step before you merge the changes into your working branch.
 
 ### Commit issues
 

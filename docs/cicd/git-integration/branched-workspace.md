@@ -9,7 +9,7 @@ ms.date: 03/21/2026
 # Development process using branched workspace
 *Branched workspace* is a workspace that is linked to a source workspace. It lets developers work on changes in an isolated environment, understand how their work relates to other workspaces, and promote changes back to the main workspace with confidence.
 
-The relationship (link) between a *Branched workspace* and its source workspace is established when the user performs branch-out. For Fabric developers, branch-out creates a new Git branch from the latest commit of the source workspace’s currently connected branch. The user can then either create a new workspace connected to that new branch, or use an existing workspace by switching its Git connection to the newly created branch.
+The relationship (link) between a *Branched workspace* and its source workspace is established when the user performs branch-out. For Fabric developers, branch-out creates a new Git branch from the latest commit of the source workspace's currently connected branch. The user can then either create a new workspace connected to that new branch, or use an existing workspace by switching its Git connection to the newly created branch.
 
 ## Branched Workspace (Preview)
 The *Branched workspace* relationship has several visual representations in the Fabric UI:
@@ -28,6 +28,8 @@ The *Branched workspace* relationship has several visual representations in the 
 ## Branch-Out Operation
 
 By default, when a branch‑out operation completes, all items from the source branch are included in the target workspace. This behavior can be changed by selecting **Select items individually (Preview)** during the branch‑out setup, allowing only chosen items to be included in the target workspace to allow faster time to code experience.
+
+
 
 As a Fabric developer, the branch-out flow would be as follows:
 
@@ -54,7 +56,7 @@ As a Fabric developer, the branch-out flow would be as follows:
 5. Select the items that you want for this workspace.
 6. Click **Create branch**.
  :::image type="content" source="media/branch-out/branch-4.png" alt-text="Screenshot of create branch." lightbox="media/branch-out/branch-4.png":::
-7. When you perform selective branching, all the item’s dependencies are required. You can use the **select related items** button for that purpose. If you don't select one of the dependencies, you see the following:
+7. When you perform selective branching, all the item's dependencies are required. You can use the **select related items** button for that purpose. If you don't select one of the dependencies, you see the following:
   :::image type="content" source="media/branch-out/branch-3.png" alt-text="Screenshot of dependency error." lightbox="media/branch-out/branch-3.png":::
 8. Once the branch is created, you can verify that you are in a selective branch by the icon in the bottom status bar (lower left corner). It says selective branch.
 :::image type="content" source="media/branch-out/branch-5.png" alt-text="Screenshot of selective branch icon." lightbox="media/branch-out/branch-5.png":::
@@ -88,6 +90,8 @@ When you switch branches, the workspace syncs with the new branch and all items 
 
 Perfroming switch branch doesn't affect the relationship (link) between a *branched workspace* and its source workspace. Branch switching is a Git state change. Thus, switching branches doesn't create or modify workspace relationships. If a workspace already has a relationship, then it is preserved.
 
+By default, switching a connected workspace's Git branch (or checking out a new branch) is restricted to workspace Admins. However, a workspace Admin can enable the per-workspace setting **Allow users with at least Contributor role to change Git branch** to delegate branch-switching capabilities to Members/Contributors. This setting is configured per-workspace and requires an active Git connection. For the full permissions matrix, see [Permissions](./git-integration-process.md#permissions).
+
 >[!NOTE]
 >When switching branches, if the workspace contains an item in the old branch but not the new one, the item is deleted. Additionally, in a workspace with selective branching, performing a switch operation resets the item selection, and all items from the switched branch are synchronized to the workspace.
 
@@ -107,6 +111,7 @@ You can't switch branches if you have any uncommitted changes in the workspace. 
 
 To connect the current workspace to a new branch while keeping the existing workspace status, select **Checkout new branch**. Learn more about checking out a new branch at [Resolve conflicts in Git](./conflict-resolution.md#resolve-conflict-in-git).
 
+
 ### Branching out limitations
 
 - Branch out requires permissions listed in [permissions table](./git-integration-process.md#permissions).
@@ -121,9 +126,10 @@ To connect the current workspace to a new branch while keeping the existing work
 - When deleting a workspace that has related *branched workspaces*, all branched workspace relationships are removed, and the branched workspaces become regular workspaces.
 - When branching out to an existing workspace:
   - The target workspace must support a Git connection.
-  - The user must be an admin of the target workspace.
+  - The user must be an admin of the target workspace or Member/Contributor on target workspace with the **Allow users with at least Contributor role to change Git branch** setting enabled.
   - The target workspace must have capacity.
   - The workspace can't have template apps.
-  - The target workspace can’t have any related *branched workspaces*.
+  - The target workspace can't have any related *branched workspaces*.
+
 
 - **Note that when you branch out to a workspace, any items that aren't saved to Git can get lost. We recommend that you [commit](./git-integration-process.md#commits-and-updates) any items you want to keep before branching out.**

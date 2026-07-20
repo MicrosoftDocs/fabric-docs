@@ -84,6 +84,12 @@ Configuration is iterative. After Copilot proposes rules, queries, and actions, 
 
 To adjust the agent's behavior, update the goals or instructions and save the agent again. When you're satisfied with the configuration, select **Start** in the toolbar to start the agent. Select **Stop** to stop it.
 
+## Operations agent identities
+
+Each operations agent has its own identity in Microsoft Entra, powered by [Microsoft Entra Agent ID](/entra/agent-id/). When you create an agent, Fabric provisions a dedicated agent identity (a specialized service principal) for it, so the agent appears as a first-class, governable entity in the Entra admin center rather than as an anonymous user session. This identity gives your organization tenant-wide visibility into which agents exist, keeps agent actions distinct from human actions for auditing, and decouples the agent from the lifecycle of the account that created it. Operations agents run in *delegated* mode: they use the creator's authorization through an On-Behalf-Of (OBO) flow, so they can access the same workspaces and items the creator can, while actions are attributed to the agent identity. You can view the Entra Agent ID in the status bar of the operations agent item.
+
+:::image type="content" source="media/operations-agent/entra-id.png" alt-text="Screenshot of the Entra Agent ID in the agent configuration screen." lightbox="media/operations-agent/entra-id.png":::
+..
 > [!IMPORTANT]
 > The agent operates with the delegated identity and permissions of its creator. When a recipient approves a recommendation, the agent runs the action on behalf of the creator, using the creator's permissions.
 
@@ -104,6 +110,28 @@ For example, **Is above** is met on every evaluation while a value stays over th
 
 The following table describes the available conditions:
 
+| Condition | Type | When it's met |
+|-----------|------|---------------|
+| Is above | State | Met any time the property is above the value. |
+| Crosses above | Transition | Met when the property changes from below to above the value (or from null to above the value). |
+| Is below | State | Met any time the property is below the value. |
+| Crosses below | Transition | Met when the property changes from above to below the value (or from null to below the value). |
+| Enters range | Transition | Met any time the property changes from outside to inside the range. |
+| Exits range | Transition | Met any time the property changes from inside to outside the range. |
+| Is | State | Met any time the property matches the value. |
+| Becomes | Transition | Met when the property changes to the value from a different value (or null). |
+
+## Monitor agent activity
+
+The agent's activity log provides a detailed record of its actions, including the conditions it evaluated, the recommendations it made, and the responses it received. This information helps you understand the agent's decision-making process and identify areas for improvement.
+
+To access the activity log, select **Activity log** in the side navigation pane. The log displays a chronological list of events, including timestamps, event types, and relevant details. Select an event to view more information about it.
+
+:::image type="content" source="media/operations-agent/activity-log.png" alt-text="Screenshot of the activity log." lightbox="media/operations-agent/activity-log.png":::
+
+In the **Operation details page** you can view the operation details and status.
+
+:::image type="content" source="media/operations-agent/activity-log-details.png" alt-text="Screenshot of the operation details page." lightbox="media/operations-agent/activity-log-details.png":::
 > [!div class="nextstepaction"]
 > [Configure operations agent actions](operations-agent-actions.md)
 

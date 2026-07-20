@@ -3,7 +3,7 @@ title: "Direct Lake overview"
 description: "Learn about Direct Lake storage mode in Microsoft Fabric and when you should use it."
 author: kgremban
 ms.author: kgremban
-ms.date: 04/02/2026
+ms.date: 06/15/2026
 ms.topic: concept-article
 ms.custom: fabric-cat
 ai-usage: ai-assisted
@@ -77,7 +77,7 @@ The following table compares Direct Lake storage mode to Import and DirectQuery 
 | Composite models | Yes - can combine with Import storage mode tables in Power BI web modeling and DirectQuery tables with XMLA tools. | No <sup>1</sup> | Yes – can combine with DirectQuery, Dual, and Direct Lake storage mode tables | Yes – can combine with import, Dual, and Direct Lake storage mode tables |
 | Single sign-on (SSO) | Yes | Yes | Not applicable | Yes |
 | Calculated tables | Yes (preview) – calculated tables are supported for Direct Lake on OneLake; see [considerations and limitations](#considerations-and-limitations). | No – except [calculation groups](/power-bi/transform-model/calculation-groups), [what-if parameters](/power-bi/transform-model/desktop-what-if), and [field parameters](/power-bi/create-reports/power-bi-field-parameters), which implicitly create calculated tables | Yes | No – calculated tables use Import storage mode even when they refer to other tables in DirectQuery mode |
-| Calculated columns | Yes (preview) – unmaterialized calculated columns with User Context Expression Context only | No | Yes | Yes |
+| Calculated columns | No (coming soon) | No | Yes | Yes |
 | Hybrid tables | No | No | Yes | Yes |
 | Model table partitions | No – however partitioning can be done at the Delta table level | No – however partitioning can be done at the Delta table level | Yes – either automatically created by incremental refresh, or [manually created](/power-bi/connect-data/incremental-refresh-xmla#partitions) by using the XMLA endpoint | No |
 | User-defined aggregations | No | No | Yes – Import aggregation tables on DirectQuery tables are supported | Yes |
@@ -119,6 +119,8 @@ Direct Lake semantic models require a [Fabric capacity license](../enterprise/li
 |F512/P4|10,000|10,000|12,000|Unlimited|200|
 |F1024/P5|10,000|10,000|24,000|Unlimited|400|
 |F2048|10,000|10,000|24,000|Unlimited|400|
+|F4096|10,000|10,000|24,000|Unlimited|400|
+|F8192|10,000|10,000|24,000|Unlimited|400|
 
 <sup>1</sup> For Direct Lake semantic models, _Max Memory_ represents the upper memory resource limit for how much data can be paged in. For this reason, it's not a guardrail; however, it can have a performance impact if the amount of data is large enough to cause excessive paging in and out of the model data from the OneLake data.
 

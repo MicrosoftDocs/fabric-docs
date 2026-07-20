@@ -4,7 +4,7 @@ description: Transform and enrich data at scale with lightweight, LLM-powered co
 ms.reviewer: singhrana
 reviewer: ranadeepsingh
 ms.topic: how-to
-ms.date: 06/10/2026
+ms.date: 07/14/2026
 ms.search.form: AI Functions
 ai-usage: ai-assisted
 ---
@@ -53,7 +53,7 @@ Supported file types include JPG/JPEG, PNG, static GIF, WebP, PDF, MD, TXT, CSV,
 >
 > - AI Functions are supported in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
 > - Python AI Functions for pandas and PySpark now default to `gpt-5-mini` with `reasoning_effort` set to `low`. This model has a 400,000-token context window and a 128,000-token maximum output. For model limits and rates, see the [language models table](./billing.md#language-models).
-> - AI Functions in Dataflow Gen2 and warehouse will receive the same model upgrade by the end of June 2026.
+> - AI Functions in Dataflow Gen2 and DataWarehouse SQL use the same base model`gpt-5-mini` with `reasoning_effort` set to `low`.
 > - Although the underlying model can handle several languages, most AI Functions are optimized for English-language text.
 > - AI Functions don't log or store user prompts, input data, or outputs.
 

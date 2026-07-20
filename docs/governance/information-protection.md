@@ -4,7 +4,7 @@ description: Learn about information protection in Fabric.
 author: msmimart
 ms.author: mimart
 ms.topic: concept-article
-ms.date: 01/23/2025
+ms.date: 07/13/2026
 ---
 
 # Information protection in Microsoft Fabric
@@ -26,7 +26,7 @@ This article describes Fabric and Power BI's information protection [capabilitie
 
 * Before enabling sensitivity labels on your tenant, make sure that sensitivity labels have been defined and published for relevant users and groups. See [Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels) for detail.
 
-* Customers in China must enable rights management for the tenant and add the Microsoft Purview Information Protection Sync Service service principle, as described in steps 1 and 2 under [Configure Azure Information Protection for customers in China](/microsoft-365/admin/services-in-china/parity-between-azure-information-protection?view=o365-21vianet&preserve-view=true#configure-aip-for-customers-in-china).
+* Customers in China must enable rights management for the tenant and add the Microsoft Purview Information Protection Sync Service service principal, as described in steps 1 and 2 under [Configure Azure Information Protection for customers in China](/microsoft-365/admin/services-in-china/parity-between-azure-information-protection?view=o365-21vianet&preserve-view=true#configure-aip-for-customers-in-china).
 
 * Using sensitivity labels in Power BI Desktop requires the Desktop December 2020 release or later.
 
@@ -71,7 +71,19 @@ The following table summarizes the information protection capabilities in Fabric
 |Downstream inheritance| When a sensitivity label is applied to an item, the label propagates downstream to all dependent items. |[Supported for all Fabric items, with limitations](#downstream-inheritance). |
 |Inheritance upon creation| When you create a new item from an existing item, the new item inherits the label of the existing item.| [Supported for all Power BI Fabric items. Supported for some non-Power BI Fabric items as described in the considerations and limitations](#inheritance-upon-creation).|
 |Inheritance from data sources| When a Fabric item ingests data from a data source that has a sensitivity label, that label is applied to the Fabric item. The label then propagates downstream to the child items of that Fabric item via downstream inheritance.| [Currently supported for Power BI semantic models only](#inheritance-from-data-sources).|
+|Inheritance upon update and relationship changes | When you modify an existing item, connect it to a new data source, or link it to other items through new lineage relationships, its sensitivity label is reevaluated and updated if necessary to ensure consistent protection as the item evolves. |[Supported for all Fabric items, with limitations](#sensitivity-label-inheritance-upon-update). |
 |Export| When a user exports data from an item that has a sensitivity label, the sensitivity label moves with it to the exported format. |[Currently supported for Power BI items in supported export paths](#export). |
+
+## Monitor and govern sensitivity label adoption
+
+Beyond applying sensitivity labels, Fabric provides governance experiences that help administrators and data owners understand how labels are being used across their data estate. Using [governance experiences in OneLake catalog](governance-compliance-overview.md), organizations can:
+* Identify labeled and unlabeled assets.
+* Understand sensitivity label coverage across Fabric items.
+* Discover assets associated with specific sensitivity labels.
+* Monitor adoption of information protection practices.
+* Prioritize remediation of unlabeled or incorrectly classified content.
+
+These insights help organizations improve information protection posture and achieve broader label coverage across their Fabric environment.  
 
 ## Considerations and limitations
 
@@ -136,6 +148,16 @@ For more information about downstream inheritance, see [Sensitivity label inheri
 ### Inheritance from data sources
 
 Inheritance from data sources is currently supported for Power BI semantic models only. For more information, see [Sensitivity label inheritance from data sources](service-security-sensitivity-label-inheritance-from-data-sources.md).
+
+### Sensitivity label inheritance upon update
+
+When you create a new Fabric item from a labeled item, the new item inherits the parent's sensitivity label at the moment of creation. But what happens when the relationship between items changes *after* creation? Label inheritance upon update ensures that sensitivity labels continue to propagate in the following scenarios:
+
+- **Item modification**: You update an existing item in a way that changes its data content or connections.
+- **New data source connections**: You connect an existing item to a new, labeled data source.
+- **New lineage relationships**: You establish a new lineage relationship for an existing item, such as when you connect a notebook to a lakehouse through the user interface (UI).    
+
+In each of these scenarios, Fabric evaluates the sensitivity labels of the related items and applies the appropriate label to ensure consistent data protection. For more information, see [Sensitivity label inheritance upon update and relationship changes](service-security-sensitivity-label-inheritance-upon-update.md).
 
 ### Export
 

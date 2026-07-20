@@ -3,7 +3,7 @@ title: What is Real-Time Dashboard?
 description: Learn about Real-Time Dashboard in Microsoft Fabric.
 ms.reviewer: mibar, v-hzargari
 ms.topic: overview
-ms.date: 06/24/2026
+ms.date: 07/08/2026
 ms.search.form: Overview
 ai-usage: ai-assisted
 ---
@@ -15,6 +15,8 @@ Real-Time Dashboard is Microsoft Fabric's solution for live monitoring and visua
 This overview explains what Real-Time Dashboard is, what it's used for, and the capabilities that make it useful for real-time decision-making.
 
 :::image type="content" source="media/tutorial/final-dashboard.png" alt-text="Screenshot of a real-time dashboard in Fabric displaying sample bike data." lightbox="media/tutorial/final-dashboard.png":::
+
+You can also embed a Real-Time Dashboard in your own web application by using Fabric Embedded. This approach lets users interact with live data directly within your application, while Microsoft Fabric continues to enforce authentication and permissions. For more information, see [Fabric Embedded](../embed/what-is-fabric-embed.md).
 
 ## Key features
 

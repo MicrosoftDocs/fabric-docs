@@ -55,5 +55,5 @@ runtime major version corresponds to the Apache Spark major version. Therefore, 
 ## Related content
 
 - [Apache Spark Runtimes in Fabric - Overview, Versioning, and Multiple Runtimes Support](./runtime.md)
-- [Runtime 2.0 (Spark 4.1, Java 21, Python 3.13, Delta Lake 4.1)](./runtime-2-0.md)
+- [Runtime 2.0 (Spark 4.1, Java 21, Python 3.13, Delta Lake 4.2)](./runtime-2-0.md)
 - [Runtime 1.3 (Spark 3.5, Java 11, Python 3.11, Delta Lake 3.2)](./runtime-1-3.md)

@@ -1,5 +1,5 @@
 ---
-title: Enable Workspace Monitoring in Microsoft Fabric
+title: Enable Workspace Monitoring (Preview) in Microsoft Fabric
 description: Discover how Workspace Monitoring helps you track pipeline runs, analyze logs with KQL, and optimize performance with detailed diagnostics.
 ms.reviewer: conxu-ms
 ms.date: 12/09/2025
@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 Workspace monitoring gives you log-level visibility for all items in a workspace, including pipelines. It stores execution logs in a monitoring eventhouse so you can query and analyze them using KQL (Kusto Query Language).
 
-## Enable workspace monitoring
+## Enable workspace monitoring (Preview)
 
 1. In your Fabric workspace, select **Workspace Settings**, then select the **Monitoring** tab.
 
@@ -39,7 +39,7 @@ The **ItemJobEventLogs** table includes pipeline-level (L1 across Data Factory i
 - Start and end timestamps  
 - System diagnostics  
 
-For pipeline activity-level (L2) monitoring, you can find more logs in the **FabricDataPipelineActivityRunsLogs** table:
+For pipeline activity-level (L2) monitoring, you can find more logs in the **FabricDataPipelinesActivityRunsLogs** table:
 
 - Pipeline name and run identifier  
 - Activity name and type  
@@ -104,9 +104,9 @@ The following table describes the schema of `ItemJobEventLogs` (item-level, L2):
 | JobStartTime | datetime | Actual job start time. |
 | JobEndTime | datetime | Actual job end time. |
 
-### FabricDataPipelineActivityRunsLogs schema
+### FabricDataPipelinesActivityRunsLogs schema
 
-The following table describes the schema of `FabricDataPipelineActivityRunsLogs` (activity-level, L2):
+The following table describes the schema of `FabricDataPipelinesActivityRunsLogs` (activity-level, L2):
 
 | **Column name** | **Column type** | **Description** |
 |----|----|----|

@@ -202,10 +202,10 @@ This query runs as follows:
 
 Now find people with specific characteristics. In this case, find everyone named Alice and show their names and birthdays.
 
-<!-- GQL Query: Checked 2025-11-17 -->
+<!-- GQL Query: Checked 2026-07-15 -->
 ```gql
 MATCH (p:Person)
-FILTER p.firstName = 'Annemarie'
+FILTER p.firstName = 'Alice'
 RETURN p.firstName, p.lastName, p.birthday
 ```
 
@@ -280,12 +280,12 @@ RETURN fullName, c.name AS companyName            -- Input: top 10 rows table
 
 This query runs as follows:
 
-1. **`MATCH`** finds people who work at companies with "Air" in their name.
+1. **`MATCH`** finds people who work at companies.
 1. **`LET`** creates full names by combining first and family names.
-1. **`FILTER`** keeps only Contoso employees.
+1. **`FILTER`** keeps only employees of companies with "Air" in their company name.
 1. **`ORDER BY`** sorts by full name.
 1. **`LIMIT`** takes the first 10 results.
-1. **`RETURN`** returns names and company locations.
+1. **`RETURN`** returns full names and company names.
 
 ### Variables connect your data
 
@@ -382,15 +382,15 @@ Start with basic relationship patterns:
 
 **Patterns with specific data:**
 
-<!-- GQL Pattern: Checked 2025-11-17 -->
+<!-- GQL Pattern: Checked 2026-07-15 -->
 ```gql
--- Find who works at Microsoft specifically
+-- Find employees named Alice
 (p:Person)-[:workAt]->(c:Company)
-WHERE p.firstName = 'Annemarie'
+WHERE p.firstName = 'Alice'
 
--- Find friends who are both young
+-- Find friends who both have birthdays after December 31, 1999
 (p:Person)-[:knows]->(f:Person)  
-WHERE p.birthday > 19950101 AND f.birthday > 19950101
+WHERE p.birthday > 19991231 AND f.birthday > 19991231
 ```
 
 **Label expressions for flexible entity selection:**

@@ -141,4 +141,5 @@ End-to-end observability ensures users can inspect business events - from what p
 - [Tutorial: Publish business events from a Spark Notebook and subscribe to them using Activator](tutorial-business-events-notebook-user-data-function-activator.md) - Learn how to publish business events using Spark Notebook and react to them using User Data Function (UDF) through Activator.
 - [Tutorial: Publish business events from a User Data Function and subscribe to them using Activator](tutorial-business-events-user-data-function-activation-email.md) - Learn how to publish business events using User Data Function (UDF) and get notified via email using Activator.
 - [Eventhouse and Real-Time Dashboard integration](business-events-eventhouse.md) - Query, analyze, and visualize your business events using eventhouse and Real-Time Dashboards.
+- [Fabric Events developer site](https://microsoft.github.io/fabric-events/home/) - Developer-focused guidance and resources for building with business events in Microsoft Fabric.
     
