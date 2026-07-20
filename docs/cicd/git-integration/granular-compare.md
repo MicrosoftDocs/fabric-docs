@@ -13,7 +13,7 @@ ms.date: 03/18/2026
 
 # Compare code changes in Fabric Git integration (Public Preview)
 
-Compare code changes is a feature of Microsoft Fabric Git integration that lets users review the exact changes that occur during Git operations—commit, undo, or update—before applying them.
+Compare code changes is a feature of Fabric Git integration that lets users review the exact changes that occur during Git operations—commit, undo, or update—before applying them.
 
 Instead of only showing which items are affected, Compare code changes displays a side‑by‑side or inline diff of every modified file within each workspace item. This diff gives developers clarity, confidence, and control over the changes moving between the Fabric workspace and the connected Git branch.
 
@@ -71,7 +71,7 @@ Hovering over the two options reveals the **Review changes** button. Click on it
  :::image type="content" source="media/granular-compare/compare-19.png" alt-text="Screenshot showing the workspace and git item in conflict." lightbox="media/granular-compare/compare-19.png":::
 
 ## System files and system level changes
-System files and platform changes participate in Git synchronization. So whenever Microsoft Fabric sees a difference in the underlying system files, metadata changes, version updates — it correctly marks the item as "modified." This reason is why the item appears in the Changes or Updates list.
+System files and platform changes participate in Git synchronization. So whenever Fabric sees a difference in the underlying system files, metadata changes, version updates — it correctly marks the item as "modified." This reason is why the item appears in the Changes or Updates list.
 
 System files are represented  by a "/" in the list of changes or updates. 
 

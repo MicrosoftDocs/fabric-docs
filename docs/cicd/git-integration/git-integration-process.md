@@ -9,7 +9,7 @@ ms.date: 06/15/2026
 
 # Basic concepts in Git integration
 
-This article explains basic Git concepts and the process of integrating Git with your Microsoft Fabric workspace.
+This article explains basic Git concepts and the process of integrating Git with your Fabric workspace.
 
 ## Permissions
 
