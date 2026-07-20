@@ -1,9 +1,7 @@
 ---
 title: Configure Folder in a copy activity
 description: This article explains how to configure Folder in a copy activity.
-author: jianleishen
-ms.author: jianleishen
-ms.reviewer: jianleishen
+ms.reviewer: tinglee
 ms.topic: how-to
 ms.date: 03/20/2026
 ai-usage: ai-assisted
