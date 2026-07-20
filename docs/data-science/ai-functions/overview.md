@@ -85,7 +85,7 @@ AI Functions process up to 200 rows concurrently by default. Tune concurrency fo
 
 > [!NOTE]
 > Installing `nest_asyncio` is a temporary compatibility patch for pandas AI Functions in Fabric Runtime 2.1. This requirement will be removed in a future update.
-> PySpark AI Functions do not require any additional install steps in Fabric Spark runtimes.
+> PySpark AI Functions don't require any additional install steps in Fabric Spark runtimes.
 
 # [pandas (Fabric Runtime 2.1)](#tab/pandas-runtime-2-1)
 
