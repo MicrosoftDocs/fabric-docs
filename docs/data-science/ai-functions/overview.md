@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 # AI Functions: Transform data at scale with LLMs
 
-AI Functions in Microsoft Fabric apply one-line, LLM-powered transformations to large pandas or PySpark DataFrames with one line of code `df.ai.<function_name>()`. They run with high concurrency by making hundreds of async inference calls while keeping row-level content isolation. This enables you to enrich, classify, summarize, and extract data quickly from unstructured text and documents at scale.
+AI Functions in Microsoft Fabric apply one-line, LLM-powered transformations to large pandas or PySpark DataFrames with one line of code `df.ai.<function_name>()`. They run with high concurrency by making hundreds of async inference calls while keeping row-level content isolation. This approach enables you to enrich, classify, summarize, and extract data quickly from unstructured text and documents at scale.
 
 Use this table to jump to examples in this overview or detailed pandas and PySpark documentation.
 
