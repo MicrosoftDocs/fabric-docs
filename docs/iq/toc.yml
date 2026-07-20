@@ -401,6 +401,10 @@ items:
               href: plan/infobridge-transformations/infobridge-how-to-extract-comments.md
             - name: Import and export transformation steps
               href: plan/infobridge-transformations/infobridge-how-to-import-export.md
+  - name: Resources
+    items:
+    - name: Plan general FAQ
+      href: plan/resources/frequently-asked-questions.md
 - name: Graph
   href: ../graph/toc.yml
 - name: Data agent
