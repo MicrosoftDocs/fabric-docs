@@ -10,5 +10,3 @@ items:
   href: ../operations-agent-limitations.md
 - name: Operations agent transparency note
   href: ../operations-agent-transparency-note.md
-- name: Workspace outbound access protection for operations agent
-  href: ../../security/workspace-outbound-access-protection-operations-agent.md

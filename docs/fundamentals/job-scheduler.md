@@ -80,7 +80,7 @@ You can receive email notifications when a job triggered by a **schedule** fails
 While configuring a schedule, add users or groups under **Failure notifications** to receive emails when a scheduled run fails.
 
 ### Important considerations
-- **Available for Fabric items that support scheduling**: Notifications are available across all Fabric items that support scheduling (for example, Pipelines, Notebooks, and Dataflows Gen2).
+- **Available for Fabric items that support scheduling**: Notifications are available across all Fabric items that support scheduling, such as Pipelines, Notebooks, User data functions, and Dataflows Gen2.
 - **Applies to all schedules**: Notifications are configured at the item level and the settings apply across all schedules for the item. 
 - **Scheduled runs only**: Notifications are sent only for failures from scheduled runs. Notifications aren't sent for manually triggered runs.
 - **Recipients**: Notifications can be sent to users or groups in your Microsoft Entra tenant, including internal users and B2B guest users. Direct external email addresses aren’t supported.

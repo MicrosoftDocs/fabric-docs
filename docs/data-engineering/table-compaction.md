@@ -93,6 +93,26 @@ Liquid clustering is specified as a table option; see [enable liquid clustering]
 > [!IMPORTANT] 
 > Data is only clustered when `OPTIMIZE` is run on liquid clustered enabled tables. Regular write operations do NOT cluster the data. Having a compaction strategy such as using auto compaction or manually scheduling optimize jobs is critical to ensure that the benefits of clustered data (that is, improved Delta file skipping) can be realized.
 
+#### `OPTIMIZE FULL`
+
+Standard `OPTIMIZE` doesn't recluster files that are already considered clustered. When you change the clustering keys or the clustering provider, existing files keep their previous clustering layout, so new queries don't benefit from the updated strategy.
+
+`OPTIMIZE FULL` forces a table-wide reclustering pass. It reclusters every file—including files that were previously clustered with different keys or a different provider—so the whole table reflects the latest clustering strategy.
+
+> [!NOTE]
+> `OPTIMIZE FULL` is available starting in Fabric Spark runtime 2.0 (Delta 4.2).
+
+Use `OPTIMIZE FULL` when you:
+
+- Change the clustering columns on a liquid clustered table.
+- Migrate a table between platforms or clustering providers.
+
+```sql
+OPTIMIZE dbo.table_name FULL
+```
+
+Because `OPTIMIZE FULL` can rewrite most or all of a large table, it can be substantially more expensive than a regular incremental `OPTIMIZE`. Run it deliberately, typically once after you change the clustering strategy, rather than as part of routine maintenance.
+
 #### Fast optimize
 
 Fast optimize intelligently analyzes Delta table files and skips compaction operations that aren't likely to improve performance meaningfully. 

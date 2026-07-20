@@ -1,7 +1,7 @@
 ---
 title: Create an Operations Agent to Use with Ontology
 description: Create an operations agent that monitors an ontology (preview) item by using business rules in natural language.
-ms.date: 07/08/2026
+ms.date: 07/17/2026
 ms.topic: how-to
 ---
 
@@ -23,11 +23,12 @@ Follow these steps to create a new operations agent that monitors an ontology (p
 
 1. On the **Agent setup** page, fill in the following:
 
-    * **Instructions**: Add guidance for the agent's behavior. For example, *Monitor the freezer temperature and keep the temperature below 20.*
-    * **Knowledge source**: Select **Add** and choose your ontology item.
+    * **Agent instructions**: Add guidance for the agent's behavior. For example, *Monitor the freezer temperature and keep the temperature below 20.*
+    * **Knowledge**: Select **Add data** and choose your ontology item.
     * **Actions** (optional): Define one or more actions the agent can recommend, such as *NotifyStoreOperations* with parameters like *StoreId* and *FreezerId*. If you add an action, configure it as described in [Configure an operations agent](../../real-time-intelligence/operations-agent-actions.md).
 
-1. Save the agent and select **Generate playbook**. Review the concepts and rules in the playbook and confirm they reference the expected ontology entity types (such as *Store*, *Product*, and *Freezer*) and properties.
+1. **Save** the agent.
+1. Select **Generate playbook**. Review the concepts and rules in the playbook and confirm they reference the expected ontology entity types (such as *Store*, *Product*, and *Freezer*) and properties.
 
 1. Select **Start** in the toolbar to start the agent.
 

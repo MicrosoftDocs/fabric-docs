@@ -3,7 +3,7 @@ title: Overview of Fabric Git integration
 description: An introduction to integrating Git version control with the Fabric Application lifecycle management (ALM) tool
 ms.reviewer: NimrodShalit
 ms.topic: overview
-ms.date: 06/15/2026
+ms.date: 07/17/2026
 ms.search.form: Git integration supported items, Introduction to Git integration
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
@@ -68,7 +68,7 @@ The following items currently support Git integration:
 * Data Science items:
   * [Machine learning experiments](../../data-science/machine-learning-artifacts-git-deployment-pipelines.md#machine-learning-experiments-and-models-git-integration) *(preview)*
   * [Machine learning models](../../data-science/machine-learning-artifacts-git-deployment-pipelines.md#machine-learning-experiments-and-models-git-integration) *(preview)*
-  * [Data Agents](../../data-science/how-to-create-data-agent.md) *(preview)*
+  * [Data Agents](../../data-science/how-to-create-data-agent.md)
 
 * Data Factory items:
 
@@ -78,17 +78,21 @@ The following items currently support Git integration:
   * [Mirrored database](../../mirroring/mirrored-database-cicd.md#mirrored-database-git-integration)
   * [Mount ADF](../../data-factory/tutorial-bring-azure-data-factory-to-fabric.md)
   * [Mirrored snowflake](../../mirroring/snowflake.md) *(preview)*
+  * [Airflow](../../data-factory/apache-airflow-jobs-concepts.md) *(preview)*
+  * [dbt Job](../../data-factory/dbt-job-overview.md) *(preview)*
+  * [Operations Agent](../../data-factory/operations-agent-for-pipelines.md) *(preview)*
 
 * Real-time Intelligence items:
 
-  * [Activator](../../real-time-intelligence/git-deployment-pipelines.md) *(preview)*
+  * [Activator](../../real-time-intelligence/git-deployment-pipelines.md)
   * [Eventhouse](../../real-time-intelligence/git-deployment-pipelines.md)
   * [EventStream](../../real-time-intelligence/git-deployment-pipelines.md)
   * [KQL database](../../real-time-intelligence/git-deployment-pipelines.md)
   * [KQL Queryset](../../real-time-intelligence/git-deployment-pipelines.md)
   * [Real-time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md)
-  * [Event Schema Set](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md) *(preview)*
   * [Maps](../../real-time-intelligence/map/about-fabric-maps.md)
+  * [Event Schema Set](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md) *(preview)*
+  * [Digital twin builder](../../real-time-intelligence/digital-twin-builder/overview.md) *(preview)*
   * [Anomaly detection](../../real-time-intelligence/multivariate-anomaly-overview.md) *(preview)*
 
 * Data Warehouse items:
@@ -110,7 +114,18 @@ The following items currently support Git integration:
   * [Cosmos database](../../database/cosmos-db/overview.md) *(preview)*
 
 * Graph:
-  * [Graph in Microsoft Fabric (preview)](../../graph/overview.md)
+  * [Graph Model](../../graph/overview.md)
+  * [Graph QuerySet](../../graph/overview.md)
+
+* CI/CD items:
+
+  * [Variable Library](../variable-library/variable-library-overview.md)
+
+* IQ (preview) items:
+
+  * [Ontology](../../iq/ontology/overview.md) *(preview)*
+  * [Plan](../../iq/plan/overview.md) *(preview)*
+
 * Industry solutions:
 
   * [Healthcare](/industry/healthcare/healthcare-data-solutions/application-lifecycle-management) *(preview)*
