@@ -253,6 +253,8 @@ Only a workspace admin can disconnect a workspace from a Git Repo. If you're not
 1. Select **Disconnect** again to confirm.
 
 
+## Permissions
+The actions you can take on a workspace depend on the permissions you have in both the workspace and the Git repo. For a more detailed discussion of permissions, see [Permissions](./git-integration-process.md#permissions).
 
 
 

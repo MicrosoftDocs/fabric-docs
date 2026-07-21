@@ -3,7 +3,7 @@ title: Overview of Fabric Git integration
 description: An introduction to integrating Git version control with the Fabric Application lifecycle management (ALM) tool
 ms.reviewer: NimrodShalit
 ms.topic: overview
-ms.date: 07/17/2026
+ms.date: 07/21/2026
 ms.search.form: Git integration supported items, Introduction to Git integration
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
@@ -132,6 +132,10 @@ The following items currently support Git integration:
   * HealthCare Cohort *(preview)*
 
 If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren't saved or synced, but they're not deleted either. They appear in the source control panel but you can't commit or update them.
+
+## Permissions
+
+The actions you can take on a workspace depend on the permissions you have in both the workspace and the Git repo. For a more detailed discussion of permissions, see [Permissions](./git-integration-process.md#permissions).
 
 ## Related content
 

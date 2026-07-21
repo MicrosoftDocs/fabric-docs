@@ -2,7 +2,7 @@
 title: Set up your PostgreSQL database connection
 description: This article provides information about how to create a PostgreSQL database connection in Microsoft Fabric.
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 07/21/2026
 ms.custom:
   - template-how-to
   - connectors
@@ -37,6 +37,9 @@ You can connect Dataflow Gen2 in Microsoft Fabric to PostgreSQL database using P
 ### Prerequisites
 
 [!INCLUDE [postgresql-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/postgresql/postgresql-prerequisites.md)]
+
+> [!IMPORTANT]
+> To use PostgreSQL as a Dataflow Gen2 data destination through an on-premises data gateway, install the [June 2026 gateway update (version 3000.322)](/data-integration/gateway/service-gateway-monthly-updates#june-2026-update-3000322) or later.
 
 ### Get data
 
