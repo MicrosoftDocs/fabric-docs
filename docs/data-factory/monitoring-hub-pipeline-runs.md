@@ -41,7 +41,7 @@ To search for specific pipelines, you can enter certain keywords in the search b
 
 ## Hierarchical view for pipelines
 
-The hierarchical view helps you navigate through different layers of jobs. Jobs are usually triggered automatically by programs; pipeline is the most common example of this. With this feature, you'll be able to search through a job to its upstream or downstream jobs.
+The hierarchical view helps you navigate through different layers of jobs. Programs usually trigger jobs automatically, and a pipeline is the most common example of this trigger. By using this feature, you can search through a job to its upstream or downstream jobs.
 
 In **Column Options** in Monitoring Hub, you can toggle on the options for **Upstream run** and **Downstream runs**.
 
