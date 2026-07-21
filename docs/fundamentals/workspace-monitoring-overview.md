@@ -29,12 +29,12 @@ After you enable [workspace monitoring](enable-workspace-monitoring.md), you can
 | Workload | Fabric artifact name | Supported events/logs |
 |---|---|---|
 | Real-Time hub | Job Events | [Job event logs](item-job-event-logs.md) |
-| Data Engineering | GraphQL API | <ul><li>[Graph QL metrics](../data-engineering/graphql-operations.md)</li><li>[Graph QL operation logs](../data-engineering/graphql-operations)</li></ul> |
+| Data Engineering | GraphQL API | <ul><li>[Graph QL metrics](../data-engineering/graphql-operations.md)</li><li>[Graph QL operation logs](../data-engineering/graphql-operations.md)</li></ul> |
 | Data Factory | Copy job | [Copy job activity run details logs](../data-factory/copy-job-workspace-monitoring.md) |
-| Data Factory | Pipeline activity logs | [Pipeline Activity Run Logs](../data-factory/workspace-monitoring) |
+| Data Factory | Pipeline activity logs | [Pipeline Activity Run Logs](../data-factory/workspace-monitoring.md) |
 | Real-Time hub | Eventhouse | <ul><li>[Metric operation logs](../real-time-intelligence/monitor-metrics.md)</li><li>[Command logs](../real-time-intelligence/monitor-logs-command.md)</li><li>[Data operation logs](../real-time-intelligence/monitor-logs-data-operation.md)</li><li>[Ingestion results logs](../real-time-intelligence/monitor-logs-ingestion-results.md)</li></ul> |
 | Mirroring | Mirrored database | [Mirrored database execution logs](../mirroring/monitor-logs.md) |
-| Power BI | Semantic models | [Semantic model operation logs](../powerbi/semantic-model-operations) |
+| Power BI | Semantic models | [Semantic model operation logs](../powerbi/semantic-model-operations.md) |
 
 ## Sample queries
 
