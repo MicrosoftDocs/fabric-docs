@@ -39,6 +39,20 @@ To search for specific pipelines, you can enter certain keywords in the search b
 
 :::image type="content" source="media\monitoring-hub-pipeline-runs\pipeline-monitoring-hub-search.png" alt-text="Screenshot showing the search pipelines." lightbox="media\monitoring-hub-pipeline-runs\pipeline-monitoring-hub-search.png":::
 
+## Hierarchical view for pipelines
+
+The hierarchical view helps you navigate through different layers of jobs. Jobs are usually triggered automatically by programs; pipeline is the most common example of this. With this feature, you'll be able to search through a job to its upstream or downstream jobs.
+
+In **Column Options** in Monitoring Hub, you can toggle on the options for **Upstream run** and **Downstream runs**.
+
+:::image type="content" source="media\monitoring-hub-pipeline-runs\hierarchical-view-column-options.png" alt-text="Screenshot showing a Column Options selecting Upstream run and Downstream runs." lightbox="media\monitoring-hub-pipeline-runs\hierarchical-view-column-options.png":::
+
+After applying your changes, you can track your upstream and downstream runs for your Pipelines.
+
+:::image type="content" source="media\monitoring-hub-pipeline-runs\hierarchical-view-pipelines.png" alt-text="Screenshot showing Upstream run and Downstream runs for Pipelines in Monitoring Hub." lightbox="media\monitoring-hub-pipeline-runs\hierarchical-view-pipelines.png":::
+
+It's worth noting that job hierarchy is different from the parent-child relationship of artifacts (which you can see from the workspace view).
+
 ## Manage a pipeline run
 
 When you hover over a pipeline run row, you can see various row-level actions that enable you to manage a particular pipeline run.
