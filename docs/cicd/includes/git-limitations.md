@@ -7,7 +7,15 @@ ms.date: 05/24/2026
 
 ### General Git integration limitations
 
+>[!NOTE]
+>Starting November 1, 2026, users without read-write permissions on workspace items can't use Git integration. This restriction can result in loss of access to certain items because of sensitivity labels and protection policies applied to those items. For more information, see [Information Protection in Microsoft Fabric](../../governance/information-protection.md).
+
 - The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Fabric must be at least as strong as the authentication method for Git. For example, if Git requires multifactor authentication, Fabric needs to require multifactor authentication as well.
+
+
+
+
+
 - Power BI Datasets connected to Analysis Services aren't supported at this time.
 - If you use a workspace identity in one artifact and commit it to Git, it can be updated (back to a fabric workspace) only in a workspace connected to the same identity. Be careful, as this also affects features like branch out.
 - Submodules aren't supported.
