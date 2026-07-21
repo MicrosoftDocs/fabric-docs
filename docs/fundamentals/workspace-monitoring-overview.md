@@ -46,7 +46,7 @@ You can create and explore workspace monitoring using Power BI reports and Real-
 
 ## Considerations and limitations
 
-* You can only enable either workspace monitoring or [log analytics](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure) in a workspace. You can't enable both at the same time. To enable workspace monitoring in a workspace that workspace that already has log analytics enabled, delete the log analytics configuration and wait for a few hours before enabling workspace monitoring.
+* You can only enable either workspace monitoring or [log analytics](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure) in a workspace. You can't enable both at the same time. To enable workspace monitoring in a workspace that already has log analytics enabled, delete the log analytics configuration and wait for a few hours before enabling workspace monitoring.
 
 * The workspace monitoring Eventhouse is a read-only item.
     * To delete the database, use the workspace settings. Before recreating a deleted database, wait about 15 minutes.
