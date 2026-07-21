@@ -12,6 +12,8 @@ Use the **Export** and **Import** commands to reuse transformation steps across 
 
 Reusing transformation steps helps maintain consistency across similar datasets and reduces the time required to recreate the same data preparation workflow.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 Find the **Import** and **Export** commands on the **Transform** tab.
 
 :::image type="content" source="../media/infobridge-transformations/infobridge-how-to-import-export/import-export-command.png" alt-text="Screenshot highlighting the Import and Export commands on the Transform tab and the Performed Steps pane." lightbox="../media/infobridge-transformations/infobridge-how-to-import-export/import-export-command.png":::

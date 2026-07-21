@@ -18,6 +18,8 @@ The **Round** transformation provides three rounding methods:
 
 You can find the **Round** transformation on the **Transform** tab.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Round numeric measures
 
 The following example demonstrates how to apply a rounding transformation to the **Actuals - ZAVA** measure.

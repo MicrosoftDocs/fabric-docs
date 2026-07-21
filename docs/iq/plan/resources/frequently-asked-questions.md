@@ -9,6 +9,8 @@ ms.date: 07/18/2026
 
 This FAQ addresses common questions and clarifications that arise while working with plan. It covers environment setup and interface navigation.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 For feature-specific FAQs, see the following articles:
 * [Writeback FAQ](../planning-writeback/writeback-faq.md)
 

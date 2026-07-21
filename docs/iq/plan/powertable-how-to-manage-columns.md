@@ -16,6 +16,8 @@ To open the **Manage Columns** panel, select **PowerTable** > **Manage Columns**
 
 The following options are available:
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Show or hide columns
 
 To show or hide columns:

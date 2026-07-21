@@ -10,6 +10,8 @@ ms.topic: how-to
 
 Add new columns to the source database directly through the PowerTable app. This feature removes the need to work with the database directly, enhancing security and efficiency.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 > [!NOTE]
 > Ensure you have the required permissions to the database you connect to, as you're adding a column directly to the source database.
 
