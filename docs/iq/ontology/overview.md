@@ -57,10 +57,9 @@ After you define an ontology, you can [bind it to your data](how-to-bind-data.md
 
 ### Ontology graph
 
->[!IMPORTANT]
->Ontology's graph feature relies on [Graph in Microsoft Fabric](../../graph/overview.md), so you must enable the Graph setting for your tenant. For more information, see [Ontology (preview) required tenant settings](overview-tenant-settings.md).
+The *ontology graph* is a queryable instance graph built from your data bindings and relationship definitions, provided within ontology by [Graph in Microsoft Fabric](../../graph/overview.md). You can see the graph in the [entity type details](how-to-view-entity-type-details.md). 
 
-The *ontology graph* is a queryable instance graph built from your data bindings and relationship definitions. You can see it in the [entity type details](how-to-view-entity-type-details.md). In the graph, nodes are entity instances, and edges are links (either asserted or derived) with metadata attributes. Each node or edge keeps data source lineage and follows a scheduled data refresh. Graphs enable visual exploration of business context, execution of graph algorithms (like paths, centrality, and communities), and rule‑driven inferences. Graphs improve semantics by making relationships first‑class, so context is explicit, queryable, and governed (not buried in join logic).
+In the graph, nodes are entity instances, and edges are links (either asserted or derived) with metadata attributes. Each node or edge keeps data source lineage and follows a scheduled data refresh. Graphs enable visual exploration of business context, execution of graph algorithms (like paths, centrality, and communities), and rule‑driven inferences. Graphs improve semantics by making relationships first‑class, so context is explicit, queryable, and governed (not buried in join logic).
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
 
