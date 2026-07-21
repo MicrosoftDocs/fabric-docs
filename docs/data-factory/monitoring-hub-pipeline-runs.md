@@ -51,7 +51,7 @@ After you apply your changes, you can track your upstream and downstream runs fo
 
 :::image type="content" source="media\monitoring-hub-pipeline-runs\hierarchical-view-pipelines.png" alt-text="Screenshot showing Upstream run and Downstream runs for Pipelines in Monitoring Hub." lightbox="media\monitoring-hub-pipeline-runs\hierarchical-view-pipelines.png":::
 
-It's worth noting that job hierarchy is different from the parent-child relationship of artifacts (which you can see from the workspace view).
+Job hierarchy is different from the parent-child relationship of artifacts, which you can see from the workspace view.
 
 ## Manage a pipeline run
 
