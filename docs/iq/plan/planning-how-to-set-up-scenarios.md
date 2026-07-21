@@ -266,3 +266,29 @@ Control who can access, manage, and interact with scenario using the **Security*
 1. Select **Save** to apply changes, or select **Cancel** to discard the changes.
 
     :::image type="content" source="media/planning-how-to-set-up-scenarios/scenario-access.png" alt-text="Screenshot for  scenario access." lightbox="media/planning-how-to-set-up-scenarios/scenario-access.png":::
+
+## FAQ
+
+### Is Base an editable scenario, or is it a fixed reference point?
+
+Base represents the current committed plan and acts as the reference point against which you compare other scenarios. You create scenarios like *Best Case* as separate simulation layers on top of Base rather than as direct edits to it.
+
+### After creating a scenario, do its values carry forward into new scenarios?
+
+No—each new scenario is its own separate simulation layer on top of the original Base figures. You don't build new scenarios on top of another scenario's adjusted values.
+
+### Can calculated measures that use native measures be simulated?
+
+You can't directly simulate calculated measures that reference native measures because they don't store independent values. Instead, their values come from the underlying native measures through a calculation or formula.
+
+### **How do simulated changes propagate through dependent measures?**
+
+When you apply a simulated change to a leaf-level value, the update automatically propagates through all dependent measures in the hierarchy. Parent measures that aggregate child values and calculated measures that reference those aggregations are recalculated in real time. This process ensures that every affected value across the hierarchy instantly reflects the simulated change, without requiring manual updates.
+
+### Can more than one scenario exist at the same time without one overwriting the other?
+
+Yes—different scenarios, such as *Best Case* and *Cost Restructuring*, can coexist. They're separate and independently referenceable.
+
+### Are scenario simulations permanent once created, or can I delete them without affecting the base scenario?
+
+Simulations exist within their scenario and don't alter Base or the underlying data source values. You can adjust or delete them without any permanent impact on the actual plan.

@@ -3,7 +3,7 @@ title: Connector overview
 description: Learn about the available data connectors for Data Factory in Microsoft Fabric.
 ms.reviewer: jianleishen
 ms.topic: overview
-ms.date: 02/27/2026
+ms.date: 07/21/2026
 ms.search.form: product-data-factory
 ms.custom: connectors
 ---
@@ -172,7 +172,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Planview OKR (Beta)](/power-query/connectors/planview-okr#load-data-from-planview-okr-in-power-query-online) | ✓/− |  |  |
 | Planview Portfolios | ✓/− |  |  |
 | Planview ProjectPlace | ✓/− |  |  |
-| [PostgreSQL database](connector-postgresql-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
+| [PostgreSQL database](connector-postgresql-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
 | Power BI dataflows (Legacy) | ✓/− |  |  |
 | [Presto](connector-presto-overview.md) |  | ✓/− | ✓/− |
 | Product Insights (Beta) | ✓/− |  |  |

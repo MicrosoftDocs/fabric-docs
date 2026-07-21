@@ -110,10 +110,10 @@ The Explorer pane displays objects, like eventstreams, for this activator. **Del
 
         :::image type="content" source="media/activator-tutorial/action.png" alt-text="Screenshot showing the Action section of the Definition pane." lightbox="media/activator-tutorial/action.png":::
 
-    1. **Run Fabric activities:** To configure the alert to launch a Fabric pipeline, Dataflow, Spark job, notebook, Function, Copy job (preview), or Publish business event (preview) when the condition is met, follow these steps:
-        1. For **Select action**, select **Run Pipeline**, **Run Dataflow**, **Run Spark job**, **Run Notebook**, **Run Function**, **Run Copy job (preview)**, or **Publish business event (preview)**.
+    1. **Run Fabric activities:** To configure the alert to launch a Fabric pipeline, Dataflow, Spark job, notebook, Function, Copy job, or Publish business event (preview) when the condition is met, follow these steps:
+        1. For **Select action**, select **Run Pipeline**, **Run Dataflow**, **Run Spark job**, **Run Notebook**, **Run Function**, **Run Copy job**, or **Publish business event (preview)**.
         1. On **Select Fabric item to run**, select the Fabric item (pipeline, dataflow, notebook, Spark job, function, copy job, or publish business event (preview)) from the list.
-        1. Select **Add parameter**, and then specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter. You can pass parameters from the alert data by typing `@` or by selecting the button next to the text box. For example, `@PackageId`. Copy jobs (preview) don't accept parameters, so this step doesn't apply to them.
+        1. Select **Add parameter**, and then specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter. You can pass parameters from the alert data by typing `@` or by selecting the button next to the text box. For example, `@PackageId`. Copy jobs don't accept parameters, so this step doesn't apply to them.
 
             :::image type="content" source="media/activator-tutorial/fabric-actions.png" alt-text="Screenshot showing the Action section of the Definition pane with pipeline action selected." lightbox="media/activator-tutorial/pipeline.png":::
 

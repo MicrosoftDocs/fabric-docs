@@ -2,7 +2,7 @@
 title: Overview of Fabric deployment pipelines
 description: An introduction to deployment pipelines in the Fabric Application lifecycle management (ALM) tool. Learn which items can be deployed, the structure of a pipeline, and how to pair items.
 ms.topic: overview
-ms.date: 12/15/2025
+ms.date: 07/17/2026
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 #customer intent: As a developer, I want to learn about deployment pipelines in the Fabric service so that I can manage my development process efficiently.
 ---
@@ -12,7 +12,7 @@ ms.search.form: Create deployment pipeline, View deployment pipeline, Introducti
 > [!NOTE]
 > The articles in this section describe how to deploy content to your app. For version control, see the [Git integration](../git-integration/intro-to-git-integration.md) documentation.
 
-Microsoft Fabric's deployment pipelines tool provides content creators with a production environment where they can collaborate with others to manage the lifecycle of organizational content. Deployment pipelines enable creators to develop and test content in the service before it reaches the users. See the full list of [Supported item types](#supported-items) that you can deploy.
+Fabric's deployment pipelines tool provides content creators with a production environment where they can collaborate with others to manage the lifecycle of organizational content. Deployment pipelines enable creators to develop and test content in the service before it reaches the users. See the full list of [Supported item types](#supported-items) that you can deploy.
 
 > [!NOTE]
 >
@@ -32,7 +32,7 @@ You can learn how to use the deployment pipelines tool by following these links.
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
 >[!IMPORTANT]
->Beginning February 12, 2026, Microsoft Fabric deployment pipelines will retire support for semantic models that have not been upgraded to Enhanced Metadata. For more information see [Retirement of semantic model support for deployment pipelines](../troubleshoot-cicd.md#retirement-of-semantic-model-support-for-deployment-pipelines).
+>Beginning February 12, 2026, Fabric deployment pipelines retire support for semantic models that aren't upgraded to Enhanced Metadata. For more information, see [Retirement of semantic model support for deployment pipelines](../troubleshoot-cicd.md#retirement-of-semantic-model-support-for-deployment-pipelines).
 
 * Data Engineering items:
 
@@ -46,7 +46,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * Data Science items:
   * [Machine learning experiments](../../data-science/machine-learning-artifacts-git-deployment-pipelines.md#machine-learning-experiments-and-models-in-deployment-pipelines) *(preview)*
   * [Machine learning models](../../data-science/machine-learning-artifacts-git-deployment-pipelines.md#machine-learning-experiments-and-models-in-deployment-pipelines) *(preview)*
-  * [Data Agents](../../data-science/how-to-create-data-agent.md) *(preview)*
+  * [Data Agents](../../data-science/how-to-create-data-agent.md)
 
 * Data Factory items:
 
@@ -56,24 +56,27 @@ When you deploy content from one pipeline stage to another, the copied content c
   * [Mirrored database](../../mirroring/mirrored-database-cicd.md#mirrored-database-in-deployment-pipelines)
   * [Mount ADF](../../data-factory/tutorial-bring-azure-data-factory-to-fabric.md)
   * [Mirrored snowflake](../../mirroring/snowflake.md) *(preview)*
+  * [Airflow](../../data-factory/apache-airflow-jobs-concepts.md) *(preview)*
+  * [dbt Job](../../data-factory/dbt-job-overview.md) *(preview)*
+  * [Operations Agent](../../data-factory/operations-agent-for-pipelines.md) *(preview)*
   
 
-* Real-time Intelligence items:
+* Real-Time Intelligence items:
 
-  * [Activator](../../real-time-intelligence/git-deployment-pipelines.md) *(preview)*
+  * [Activator](../../real-time-intelligence/git-deployment-pipelines.md)
   * [Digital twin builder](../../real-time-intelligence/digital-twin-builder/overview.md) *(preview)*
   * [Eventhouse](../../real-time-intelligence/git-deployment-pipelines.md)
-  * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another)
+  * [Eventstream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another)
   * [KQL database](../../real-time-intelligence/git-deployment-pipelines.md)
-  * [KQL Queryset](../../real-time-intelligence/git-deployment-pipelines.md)
-  * [Real-time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [KQL queryset](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [Real-Time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [Maps](../../real-time-intelligence/map/about-fabric-maps.md)
   * [Event Schema Set](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md) *(preview)*
-  * [Maps](/azure/azure-maps/) *(preview)*
   * [Anomaly detection](../../real-time-intelligence/multivariate-anomaly-overview.md) *(preview)*
 
 * Data Warehouse items:
 
-  * [Warehouse](../../data-warehouse/source-control.md#deployment-pipelines) *(preview)
+  * [Warehouse](../../data-warehouse/source-control.md#deployment-pipelines) *(preview)*
   * Mirrored Azure Databricks Catalog 
 
 
@@ -88,8 +91,16 @@ When you deploy content from one pipeline stage to another, the copied content c
 
 * Database items:
 
-  * [SQL database](../../database/sql/deployment-pipelines.md) *(preview)*
+  * [SQL database](../../database/sql/deployment-pipelines.md)
   * [Cosmos database](../../database/cosmos-db/overview.md) *(preview)*
+
+* Graph:
+  * [Graph Model](../../graph/overview.md)
+  * [Graph QuerySet](../../graph/overview.md)
+
+* CI/CD items:
+
+  * [Variable Library](../variable-library/variable-library-overview.md)
 
 * Industry solutions:
 
@@ -99,6 +110,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * IQ (preview) items:
 
   * [Ontology](../../iq/ontology/overview.md) *(preview)*
+  * [Plan](../../iq/plan/overview.md) *(preview)*
 
 ## Pipeline structure
 
@@ -162,7 +174,7 @@ Deployment pipelines provide content creators with a production environment wher
 
 The deployment pipeline is composed of stages.  You decide how many stages you want in your deployment pipeline. There can be anywhere from two to 10 stages. The default is 3.
 
-The deployment process lets you clone content from one stage in the deployment pipeline to another, typically from development to test, and from test to production. During deployment, Microsoft Fabric copies the content from the source stage to the target stage.
+The deployment process lets you clone content from one stage in the deployment pipeline to another, typically from development to test, and from test to production. During deployment, Fabric copies the content from the source stage to the target stage.
 
 Folders enable users to efficiently organize and manage workspace items in a familiar way. When you deploy content that contains folders to a different stage, the folder hierarchy of the applied items is automatically applied.
 
