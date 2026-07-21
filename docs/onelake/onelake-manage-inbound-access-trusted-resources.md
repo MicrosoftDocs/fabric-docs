@@ -49,7 +49,7 @@ The following scenarios describe how Resource Instance Rules work with commonly 
 
 ### Azure SQL Server writing to OneLake via mirroring
 
-Your Azure SQL Server writes data to OneLake through database mirroring or reads from OneLake shortcuts. The SQL Server's outbound IPs are dynamic and shared across Azure infrastructure, making IP firewall rules impractical. Add the SQL Server's resource ID to your workspace's resource instance rules so OneLake verifies the sql server's managed identity on each request — no IP tracking needed.
+Your Azure SQL Server writes data to OneLake through database mirroring. The SQL Server's outbound IPs are dynamic and shared across Azure infrastructure, making IP firewall rules impractical. Add the SQL Server's resource ID to your workspace's resource instance rules so OneLake verifies the sql server's managed identity on each request — no IP tracking needed.
 
 Resource ID format: `/subscriptions/{sub}/resourceGroups/{rg}/providers/Microsoft.Sql/servers/{serverName}`
 
