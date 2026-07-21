@@ -64,7 +64,7 @@ The **Schedule** page enables you to:
 
    Select how often the function should run and provide the scheduling details. The scheduler supports recurring executions such as every few minutes, hourly, daily, weekly, or monthly. For example, to run a function every 15 minutes, configure:
 
-1. Provide parameter for **FunctionName**. This is **required** to define the function that you are calling.
+1. Provide parameter for **FunctionName**. This parameter **is required** to define the function that you're calling.
    | Parameter name |Type |Value|
    |----------|-------------|-------------|
    | FunctionName | String| name of the functions, for example `hello_fabric`.|
