@@ -10,7 +10,7 @@ ms.search.form: Introduction to variable libraries, variable library types, vari
 
 # Variable types in variable libraries
 
-A variable library in Microsoft Fabric is a specialized item that centralizes the definition and management of variables, enabling scalable and automated configuration across workspaces and items. 
+A variable library in Fabric is a specialized item that centralizes the definition and management of variables, enabling scalable and automated configuration across workspaces and items. 
 
 Variables within a variable library can be a basic or advanced types, and each variable is uniquely identified by its name within the library item.
 
