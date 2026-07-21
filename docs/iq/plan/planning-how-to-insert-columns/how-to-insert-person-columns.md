@@ -10,6 +10,8 @@ ms.topic: how-to
 
 In plan (preview), use the **Person** input column to assign users to specific rows in the planning sheet.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Create a person input column
 
 1. Go to **Planning** > **Insert Column** > **Person**.

@@ -12,6 +12,8 @@ Use column management actions to update column names and remove columns you don'
 
 Managing columns helps improve query readability, maintain consistent business terminology, and focus analysis on the most relevant data.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Rename columns
 
 Use the **Rename Column** transformation to replace existing column names with names that better align with your business terminology and reporting requirements.

@@ -16,6 +16,8 @@ Exported Excel sheets preserve the data, sheet structure, and lookup labels, mak
 
 All layouts support export to Excel.
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Common use cases
 
 * Share PowerTable data with stakeholders who don't have access to it.

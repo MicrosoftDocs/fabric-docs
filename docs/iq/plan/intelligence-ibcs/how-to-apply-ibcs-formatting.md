@@ -9,6 +9,8 @@ ms.topic: how-to
 
 The intelligence sheet is International Business Communication Standards (IBCS) certified, so you can create standardized business reports on top of your semantic models without manually formatting visual elements.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 The visualization library includes a set of IBCS-compliant charts designed for business reporting. These charts present performance metrics using consistent layouts, colors, and notation. You can also apply IBCS table templates to present actual values and variances in a consistent, readable format.
 
 > [!TIP]

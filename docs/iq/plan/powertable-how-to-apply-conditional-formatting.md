@@ -12,6 +12,8 @@ The conditional formatting feature in PowerTable sheets helps highlight specific
 
 PowerTable automatically applies conditional formatting rules to table data when the data meets the specified conditions. You can create, manage, edit, and remove rules to customize how data appears and improve the readability of your sheets.
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 Common use cases for conditional formatting include:
 
 * Highlighting values that exceed or fall below a target threshold.

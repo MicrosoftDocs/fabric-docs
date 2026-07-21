@@ -10,6 +10,8 @@ ms.topic: how-to
 
 Use filters to focus on specific records and analyze only the data that meets your criteria. PowerTable provides basic filters, advanced filters, and Top N filtering options to help you quickly narrow down large datasets.
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Apply basic filters
 
 Use basic filters to directly select the values or categories you want to filter.

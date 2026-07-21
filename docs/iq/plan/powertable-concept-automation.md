@@ -13,6 +13,8 @@ Automation in PowerTable streamlines repetitive tasks and business processes by 
 
 Automation helps maintain data consistency across related tables, reduces manual effort, and ensures that business processes run consistently. Data changes, user actions, form submissions, and other events can trigger workflows, so PowerTable can respond automatically to changes in your data.
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Common use cases
 
 Use PowerTable automations to:

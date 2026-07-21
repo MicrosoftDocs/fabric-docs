@@ -12,6 +12,8 @@ A reference column is a type of [visual column](how-to-insert-visual-columns.md)
 
 This article explains the steps to insert a reference column that references data from another table by using a sample scenario.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Insert the reference columns with a sample scenario
 
 Consider the following example: You add a reference column to the *Products* table that references and shows order dates from the *Sales* table.

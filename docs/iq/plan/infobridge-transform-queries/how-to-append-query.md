@@ -10,6 +10,8 @@ ms.topic: how-to
 
 Use **Append Query** to combine rows from multiple queries into a single query. Append queries when the source tables have the same column structure and compatible data types.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Example scenario
 
 To illustrate how **Append Query** works, imagine a scenario where you store employee bonus data separately for the HR, IT, and Sales departments.

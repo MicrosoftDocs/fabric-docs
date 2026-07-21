@@ -9,6 +9,8 @@ ms.topic: how-to
 
 IBCS column and bar charts provide standardized visualizations for comparing business metrics across categories and time periods. Select the chart type that best fits your reporting scenario, such as comparing actual values, analyzing variances, or tracking performance over time.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## C01: Stacked column chart
 
 Use this chart to analyze business metrics such as revenue, profit, and expenses across months, quarters, or business units and identify differences in magnitude between categories.

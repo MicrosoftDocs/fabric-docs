@@ -12,6 +12,8 @@ Text functions in Infobridge help you prepare text fields for reporting, analysi
 
 You can find the text functions on the **Transform** tab in the **Text** group.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Extract text
 
 The **Extract** transformation creates a new column by extracting characters from a selected text column. You can extract characters by range, length, first characters, last characters, or delimiter.
