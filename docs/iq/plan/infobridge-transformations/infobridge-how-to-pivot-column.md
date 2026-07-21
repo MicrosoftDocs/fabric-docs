@@ -12,6 +12,8 @@ Use the **Pivot Column** and **Unpivot Column** transformations in Infobridge to
 
 Pivoting converts values from a selected column into multiple columns, while unpivoting converts multiple columns back into rows.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Pivot column
 
 The **Pivot Column** transformation converts values from a selected dimension into separate columns. This transformation lets you compare measures across categories more effectively.

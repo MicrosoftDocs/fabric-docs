@@ -1172,6 +1172,8 @@
         href: create-first-pipeline-with-sample-data.md
       - name: Get data for pipelines
         href: modern-get-data-experience-pipeline.md
+      - name: Pipeline canvas
+        href: pipeline-canvas-experience.md
       - name: Activities in pipelines
         href: activity-overview.md 
       - name: Business workflow management

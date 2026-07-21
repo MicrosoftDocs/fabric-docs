@@ -10,6 +10,8 @@ Use built-in themes or create custom themes to ensure consistent color schemes a
 
 In this article, you learn to apply ready-to-use themes in your dashboards, charts, and KPI cards. You also learn how to customize, import, and export themes.
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Apply dashboard themes
 
 Dashboard themes provide a faster way to apply colors, fonts, and styling across KPIs, tables, charts, and visual elements. By using single-click themes, instantly apply a color scheme without configuring each element separately.

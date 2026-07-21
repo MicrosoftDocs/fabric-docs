@@ -10,6 +10,8 @@ ai-usage: ai-assisted
 
 This FAQ addresses common questions and clarifications that arise while working with Forecasting. It covers rolling forecast concepts, statistical forecasting configuration, closing and extending the forecast horizon, reforecasting open periods, and writing the finalized forecast to the SQL database in Fabric.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## What is the difference between a closed period and an open period in a forecast measure?
 
 A closed period reads from an existing measure—typically actuals—so the forecast reflects what actually happened. An open period accepts data input, either manual entry or values copied from another measure during period setup. As time moves forward, you progressively close periods to replace forecast values with actuals, keeping the full-year view accurate.

@@ -9,6 +9,8 @@ ms.topic: how-to
 
 IBCS waterfall charts help explain how positive and negative values contribute to a net change between a starting and ending value. Use these charts to visualize business drivers such as revenue, costs, profit, and variances by using standardized IBCS layouts and semantic formatting.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## C05: Columns with waterfall
 
 Use an IBCS columns with waterfall chart to show how incremental increases and decreases contribute to a final value by using vertical columns. It's best suited for financial statements, profit and loss analysis, and budget-to-actual reconciliations.

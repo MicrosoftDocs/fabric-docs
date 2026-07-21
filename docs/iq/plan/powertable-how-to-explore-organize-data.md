@@ -12,6 +12,8 @@ PowerTable provides several options to help you search, organize, analyze, and c
 
 This article explains how to organize and analyze data in PowerTable. You learn how to search and sort records, reorder, show or hide, and pin columns, view column insights and column profiles, and clean up data.
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Search records
 
 Use the **Search** box to quickly locate records by entering text, numbers, or phrases.
