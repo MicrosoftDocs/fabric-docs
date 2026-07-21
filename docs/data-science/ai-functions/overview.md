@@ -4,7 +4,7 @@ description: Transform and enrich data at scale with lightweight, LLM-powered co
 ms.reviewer: singhrana
 reviewer: ranadeepsingh
 ms.topic: how-to
-ms.date: 07/15/2026
+ms.date: 07/21/2026
 ms.search.form: AI Functions
 ai-usage: ai-assisted
 ---
@@ -73,20 +73,20 @@ AI Functions support pandas in Python and PySpark runtimes, and PySpark in the P
 | Runtime | Dependencies |
 | --- | --- |
 | pandas (Python runtime) | Install the `synapseml_internal` and `synapseml_core` wheel files. Install `openai` version 1.99.5 or later only if you need SDK-native client behavior or Pydantic response-format examples. |
-| pandas (Fabric Runtime 2.1 with PySpark 4.1 and Python 3.13) | Temporarily install `nest_asyncio`. Install `openai` version 1.99.5 or later only if you need SDK-native client behavior or Pydantic response-format examples. |
+| pandas ([Fabric Runtime 2.0](../../data-engineering/runtime-2-0.md) with PySpark 4.1 and Python 3.13) | Temporarily install `nest_asyncio`. Install `openai` version 1.99.5 or later only if you need SDK-native client behavior or Pydantic response-format examples. |
 | pandas (other PySpark runtimes) | No installation is required for most usage. Install `openai` version 1.99.5 or later only if you need SDK-native client behavior or Pydantic response-format examples. |
 | PySpark (PySpark runtime) | No installation is required. |
 
 > [!NOTE]
-> - Installing `nest_asyncio` is a temporary compatibility patch for pandas AI Functions in Fabric Runtime 2.1. This requirement will be removed in a future update.
+> - Installing `nest_asyncio` is a temporary compatibility patch for pandas AI Functions in Fabric Runtime 2.0. This requirement will be removed in a future update.
 > - PySpark AI Functions don't require any additional install steps in Fabric Spark runtimes.
 
-# [pandas (Fabric Runtime 2.1)](#tab/pandas-runtime-2-1)
+# [pandas (Fabric Runtime 2.0)](#tab/pandas-runtime-2-0)
 
-Fabric Runtime 2.1 (which is based off Python 3.13 and PySpark 4.1) doesn't natively include the `nest_asyncio` package. To use pandas AI Functions in this runtime, install `nest_asyncio` as a temporary compatibility patch. In future updates, this requirement will be removed as pandas AI Functions can use the newer `nest_asyncio2` package which is preinstalled in Fabric Runtime 2.1.
+[Fabric Runtime 2.0](../../data-engineering/runtime-2-0.md), which is based on Python 3.13 and PySpark 4.1, doesn't natively include the `nest_asyncio` package. To use pandas AI Functions in this runtime, install `nest_asyncio` as a temporary compatibility patch. In future updates, this requirement will be removed because pandas AI Functions can use the newer `nest_asyncio2` package, which is preinstalled in Fabric Runtime 2.0.
 
 ```python
-# Temporary compatibility patch for Fabric Runtime 2.1.
+# Temporary compatibility patch for Fabric Runtime 2.0.
 %pip install -q nest_asyncio 2>/dev/null
 
 # Optional: install openai version 1.99.5 or later for SDK-native client behavior.
