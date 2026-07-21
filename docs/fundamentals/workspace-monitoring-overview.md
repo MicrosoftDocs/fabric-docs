@@ -22,28 +22,19 @@ Workspace monitoring creates an [Eventhouse](../real-time-intelligence/eventhous
 
 * **Access** - Access the monitoring database from the workspace. You can build and save query sets and dashboards to simplify data exploration.
 
-## Operation logs
+## Available events and logs
 
-After you install [workspace monitoring](enable-workspace-monitoring.md), you can query the following logs:
+After you enable [workspace monitoring](enable-workspace-monitoring.md), you can query the following events and logs:
 
-* All up Fabric
-  * [Item job events](item-job-event-logs.md) to monitor job performance and trends for Fabric items.
-
-* Data engineering (GraphQL)
-    * [GraphQL operations](../data-engineering/graphql-operations.md)
-
-* Eventhouse monitoring in Real-Time Intelligence
-    * [Command logs](../real-time-intelligence/monitor-logs-command.md)
-    * [Data operation logs](../real-time-intelligence/monitor-logs-data-operation.md)
-    * [Ingestion results logs](../real-time-intelligence/monitor-logs-ingestion-results.md)
-    * [Metrics](../real-time-intelligence/monitor-metrics.md)
-    * [Query logs](../real-time-intelligence/monitor-logs-query.md)
-
-* Mirrored database
-    * [Mirrored database logs](../mirroring/monitor-logs.md)
-
-* Power BI
-    * [Semantic models](/power-bi/enterprise/semantic-model-operations)
+| Workload | Fabric artifact name | Supported events/logs |
+|---|---|---|
+| Real-Time hub | Job Events | [Job event logs](item-job-event-logs.md) |
+| Data Engineering | GraphQL API | <ul><li>[Graph QL metrics](../data-engineering/graphql-operations.md)</li><li>[Graph QL operation logs](../data-engineering/graphql-operations.md)</li></ul> |
+| Data Factory | Copy job | [Copy job activity run details logs](../data-factory/copy-job-workspace-monitoring.md) |
+| Data Factory | Pipeline activity logs | [Pipeline Activity Run Logs](../data-factory/workspace-monitoring.md) |
+| Real-Time hub | Eventhouse | <ul><li>[Metric operation logs](../real-time-intelligence/monitor-metrics.md)</li><li>[Command logs](../real-time-intelligence/monitor-logs-command.md)</li><li>[Data operation logs](../real-time-intelligence/monitor-logs-data-operation.md)</li><li>[Ingestion results logs](../real-time-intelligence/monitor-logs-ingestion-results.md)</li></ul> |
+| Mirroring | Mirrored database | [Mirrored database execution logs](../mirroring/monitor-logs.md) |
+| Power BI | Semantic models | [Semantic model operation logs](../enterprise/powerbi/semantic-model-operations.md) |
 
 ## Sample queries
 
@@ -55,7 +46,7 @@ You can create and explore workspace monitoring using Power BI reports and Real-
 
 ## Considerations and limitations
 
-* You can only enable either workspace monitoring or [log analytics](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure) in a workspace. You can't enable both at the same time. To enable workspace monitoring in a workspace that workspace that already has log analytics enabled, delete the log analytics configuration and wait for a few hours before enabling workspace monitoring.
+* You can only enable either workspace monitoring or [log analytics](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure) in a workspace. You can't enable both at the same time. To enable workspace monitoring in a workspace that already has log analytics enabled, delete the log analytics configuration and wait for a few hours before enabling workspace monitoring.
 
 * The workspace monitoring Eventhouse is a read-only item.
     * To delete the database, use the workspace settings. Before recreating a deleted database, wait about 15 minutes.

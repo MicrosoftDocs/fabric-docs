@@ -11,6 +11,8 @@ ai-usage: ai-assisted
 
 This article lists the supported column types that you can add to a PowerTable sheet, the supported input types for database columns, and the supported attachment file types for attachment columns.
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Supported column types
 
 PowerTable supports the following column types to add to your table:

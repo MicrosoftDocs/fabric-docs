@@ -10,6 +10,8 @@ ms.topic: how-to
 
 The visual column type includes multiselect relationship columns, reference columns, relation columns, roll up, button, and attachment columns. Visual columns exist only within the PowerTable sheet. PowerTable doesn't add them to the source database.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Add a visual column
 
 To add a visual column, select **Insert Column** > **Visual Column** and then choose the required column type.

@@ -9,7 +9,7 @@ ms.date: 06/15/2026
 
 # Development process in Microsoft Fabric
 
-The goal of this article is to present developers with different developement process in Microsoft Fabric, based on common customer scenarios. This article focuses more on the *continuous integration (CI)* part of the CI/CD process. For a discussion of the continuous delivery (CD) part, see [Fabric deployment options](../manage-deployment.md).
+This article presents developers with different development processes in Fabric, based on common customer scenarios. It focuses more on the *continuous integration (CI)* part of the CI/CD process. For a discussion of the continuous delivery (CD) part, see [Fabric deployment options](../manage-deployment.md).
 
 This article outlines a few distinct integration options, but many organizations use a combination of them.  
 

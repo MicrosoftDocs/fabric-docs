@@ -10,6 +10,8 @@ ms.topic: how-to
 
 Use the **General** tab to set the data type, validation rules, constraints, and default value for a column.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Configure general properties
 
 To configure the general properties:

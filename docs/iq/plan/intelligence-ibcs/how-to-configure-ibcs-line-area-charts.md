@@ -9,6 +9,8 @@ ms.topic: how-to
 
 IBCS area and line charts help you visualize trends, patterns, and changes over time by using standardized layouts and semantic formatting. Use these charts to track business performance, compare actual and reference values, and communicate trends consistently across reports.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## C07: Line chart
 
 An IBCS line chart visualizes trends and changes across sequential time periods. It works best for tracking KPIs such as revenue, profit, expenses, or inventory over time. Use it to analyze growth patterns, seasonal trends, and changes in performance.

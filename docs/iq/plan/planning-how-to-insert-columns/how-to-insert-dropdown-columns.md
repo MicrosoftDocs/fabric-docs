@@ -15,6 +15,8 @@ You can create single select or multiselect dropdown columns by using a predefin
 
 For the single select type, you can define the list of options manually or select one from the available presets. For the multiselect type, you can configure the list of options.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Create a dropdown column
 
 To insert a dropdown column:

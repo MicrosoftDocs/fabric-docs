@@ -12,6 +12,8 @@ Formula columns are calculated columns that you create from your data to derive 
 
 Common use cases for formula columns include calculating profit margins, tracking performance metrics, creating planning and forecasting calculations, generating status indicators, and building custom KPIs from existing data.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Insert the formula column
 
 1. To insert formula columns, select **PowerTable** > **Insert Column** > **Formula Column**.

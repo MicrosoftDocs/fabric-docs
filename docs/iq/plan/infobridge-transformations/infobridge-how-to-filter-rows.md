@@ -12,6 +12,8 @@ Use the **Filter Rows** transformation to keep only rows that meet specified con
 
 Filtering rows reduces the amount of data in a query and ensures that only relevant records are available for analysis and reporting.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Filter rows
 
 The following example filters a query to keep only rows where **Country** is **United States of America** and **Sum of COGS** is greater than **500250**.
