@@ -239,6 +239,14 @@ items:
                   href: plan/planning-reference-formulas/math-functions/rounding-formatting-functions.md
             - name: Text formatting functions
               href: plan/planning-reference-formulas/text-functions.md
+            - name: Date functions
+              items:
+                - name: Create, format, and convert dates
+                  href: plan/planning-reference-formulas/date-functions/create-format-convert-dates.md
+                - name: Extract date components
+                  href: plan/planning-reference-formulas/date-functions/extract-components-start-end-dates.md
+                - name: Date calculations
+                  href: plan/planning-reference-formulas/date-functions/perform-date-calculations.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
@@ -342,7 +350,9 @@ items:
           - name: IBCS column and bar charts
             href: plan/intelligence-ibcs/how-to-configure-ibcs-column-bar-charts.md
           - name: IBCS waterfall charts
-            href: plan/intelligence-ibcs/how-to-configure-ibcs-waterfall-charts.md                      
+            href: plan/intelligence-ibcs/how-to-configure-ibcs-waterfall-charts.md
+          - name: IBCS line and area charts
+            href: plan/intelligence-ibcs/how-to-configure-ibcs-line-area-charts.md                
         - name: Build financial reports
           href: plan/intelligence-how-to-build-financial-reports.md
         - name: Comment and collaborate
