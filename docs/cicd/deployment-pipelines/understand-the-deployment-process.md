@@ -417,6 +417,9 @@ Permissions are required for the pipeline, and for the workspaces that are assig
 
 To deploy from one stage to another in the pipeline, you must be a pipeline admin, and either a contributor, member, or admin of the workspaces assigned to the stages involved. For example, a pipeline admin that isn't assigned a workspace role, can view the pipeline and share it with others. However, this user can't view the content of the workspace in the pipeline, or in the service, and can't perform deployments.
 
+>[!NOTE]
+>Starting November 1, 2026, users without read-write permissions on **ALL** workspace items can't deploy to the workspace through deployment pipelines. Also, they can't assign this workspace to certain stages. This restriction applies only to workspaces that contain items protected by sensitivity labels with protection policies. For more information, see [Information Protection in Microsoft Fabric](../../governance/information-protection.md).
+
 ### Permissions table
 
 This section describes the deployment pipeline permissions. The permissions listed in this section might have different applications in other Fabric features.
