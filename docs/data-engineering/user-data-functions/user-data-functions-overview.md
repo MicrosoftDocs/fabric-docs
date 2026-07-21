@@ -57,6 +57,11 @@ Your functions can securely access data from across the Fabric platform:
 - **[Warehouses](../../data-warehouse/create-warehouse.md)** - Read and write operations for structured data
 - **[Lakehouses](../lakehouse-overview.md)** - Read and write Lakehouse files; read-only access to SQL analytics endpoints
 - **[Mirrored databases](../../mirroring/overview.md)** - Read-only access to mirrored database data
+- **[Variable library](../../cicd/variable-library/variable-library-overview.md)** - Access centralized configuration settings as variables in your functions
+- **[Fabric Cosmos DB](../../database/cosmos-db/overview.md)** - Connect to Fabric Cosmos DB containers for NoSQL data operations
+- **Business events** - Detect changes in operational data and publish business events for downstream applications
+
+In addition to managed connections, User Data Functions support generic connections that allow you to connect to Fabric items or Azure resources using the item owner's identity. Generic connections generate a Microsoft Entra ID token with the owner's identity for a specified audience type, providing a flexible way to authenticate with services like Cosmos DB or Azure Key Vault without configuring individual managed connections. To learn more, see [Generic connections for Fabric items or Azure resources](./python-programming-model.md#generic-connections-for-fabric-items-or-azure-resources).
 
 Write-back from Power BI Translytical Task Flows is natively supported when invoking User Data Functions. User Data Functions can perform add, update, and delete operations against Fabric SQL Database, Fabric Data Warehouse, and Lakehouse files, making them the ideal integration point for task-flow-driven write-back scenarios.
 
