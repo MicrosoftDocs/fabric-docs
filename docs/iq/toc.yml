@@ -342,7 +342,9 @@ items:
           - name: IBCS column and bar charts
             href: plan/intelligence-ibcs/how-to-configure-ibcs-column-bar-charts.md
           - name: IBCS waterfall charts
-            href: plan/intelligence-ibcs/how-to-configure-ibcs-waterfall-charts.md                      
+            href: plan/intelligence-ibcs/how-to-configure-ibcs-waterfall-charts.md
+          - name: IBCS line and area charts
+            href: plan/intelligence-ibcs/how-to-configure-ibcs-line-area-charts.md                
         - name: Build financial reports
           href: plan/intelligence-how-to-build-financial-reports.md
         - name: Comment and collaborate
