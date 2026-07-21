@@ -17,6 +17,8 @@ This article explains basic Git concepts and the process of integrating Git with
 - The tenant admin must [enable cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations) if the workspace and *Azure* repo are in two different regions. This restriction doesn't apply to GitHub.
 - The permissions you have in both the workspace and Git, as listed in the next sections, determine the actions you can take.
 
+>[!NOTE]
+>Starting November 1, 2026, users without read-write permissions on workspace items can't use Git integration. This restriction can result in loss of access to certain items because of sensitivity labels and protection policies applied to those items. For more information, see [Information Protection in Microsoft Fabric](../../governance/information-protection.md).
 
 
 ### Required Git permissions for popular actions
@@ -266,14 +268,15 @@ GitHub account details include:
 
 :::image type="content" source="./media/git-integration-process/github-account-details.png" alt-text="Screenshot of accounts tab in Source control panel showing the Git details and repository and branch names.":::
 
-<!---
----
---->
+
 ## Considerations and limitations
 
 [!INCLUDE [limitations](../includes/git-limitations.md)]
+
+
 
 ## Related content
 
 - [Manage branches](./manage-branches.md)
 - [Resolve errors and conflicts](./conflict-resolution.md)
+

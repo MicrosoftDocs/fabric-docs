@@ -190,6 +190,8 @@ If two or more items in the workspace to be paired have the same name, type and 
 
   * You have at least [workspace contributor](understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. For more information, see [Why am I getting the *workspace contributor permissions needed* error message when I try to assign a workspace?](../troubleshoot-cicd.md#error-message-workspace-member-permissions-needed)
 
+  * If a user lacks read-write permissions on an item in the workspace because of a sensitivity label and protection policy applied to that item, Deployment pipeline stage and other operations are blocked for that user starting November 1, 2026. This restriction can result in the user losing access to certain items. This behavior is similar to the adjacent-stage contributor permissions requirement in the previous bullet. For more information, see [Protection policies in Microsoft Fabric](../../governance/protection-policies-overview.md).
+
   * The workspace doesn't contain [Power BI samples](/power-bi/create-reports/sample-datasets).
 
   * The workspace isn't a [template app](/power-bi/connect-data/service-template-apps-create#create-the-template-workspace) workspace.
