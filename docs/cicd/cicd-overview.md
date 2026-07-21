@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 
 # What is CI/CD in Microsoft Fabric?
 
-Continuous integration and continuous delivery (CI/CD) in Microsoft Fabric give development teams a standardized way to build, review, and release content with speed and reliability. Instead of manual updates, teams integrate changes frequently through source control and deliver them through automated pipelines, so new features and bug fixes reach production quickly and safely.
+Continuous integration and continuous delivery (CI/CD) in Microsoft Fabric provide development teams with a standardized way to build, review, and release content quickly and reliably. Instead of using manual updates, teams frequently integrate changes through source control and deliver them through automated pipelines. This approach ensures new features and bug fixes reach production quickly and safely.
 
 The Fabric CI/CD platform is built on the Fabric REST APIs and brings source control, delivery, configuration, and developer tooling together into a single, integrated experience. The rest of this article walks through the platform layer by layer.
 
@@ -29,7 +29,7 @@ The Fabric CI/CD platform spans several core capabilities, all built on the Fabr
 
 ## Reference architecture
 
-The following enterprise reference architecture shows how these layers fit together. Developer tools build on the Fabric REST API foundation layer. Content flows through the Fabric integration and delivery layer with the Variable library, Git integration, and deployment pipelines. Source control and CI automation run in GitHub or Azure DevOps with a CI/CD runner. The supporting Azure and Fabric tenant resources include Dev, Test, and Prod capacities, Azure Key Vault, a private network, tenant settings, connections, domains, and the parent and branch workspaces created through branch-out.
+The following enterprise reference architecture shows how these layers fit together. Developer tools build on the Fabric REST API foundation layer. Content flows through the Fabric integration and delivery layer with the variable library, Git integration, and deployment pipelines. Source control and CI automation run in GitHub or Azure DevOps with a CI/CD runner. The supporting Azure and Fabric tenant resources include Dev, Test, and Prod capacities, Azure Key Vault, a private network, tenant settings, connections, domains, and the parent and branch workspaces created through branch-out.
 
 :::image type="content" source="./media/cicd-overview/fabric-cicd-reference-architecture.png" alt-text="Enterprise reference architecture diagram showing developer control tools over the Fabric REST API foundation layer, the Fabric integration and delivery layer with Variable library, Git integration, and deployment pipelines, source control and CI automation with GitHub, Azure DevOps, and a CI/CD runner, and the Azure and Fabric tenant resource plan with Dev, Test, and Prod capacities, Azure Key Vault, a private network, and parent and branch workspaces." lightbox="./media/cicd-overview/fabric-cicd-reference-architecture.png":::
 
@@ -81,7 +81,7 @@ The [Fabric CLI](/rest/api/fabric/articles/fabric-command-line-interface) (`fab`
 
 ### Terraform and fabric-cicd
 
-For infrastructure as code, use the [Terraform provider for Microsoft Fabric](https://registry.terraform.io/providers/microsoft/fabric/latest/docs) to provision Fabric environments such as workspaces and capacities. Use [fabric-cicd](https://microsoft.github.io/fabric-cicd/), a Python library, to deploy item definitions from a source-controlled repository. fabric-cicd is the most widely adopted deployment tool for Fabric CI/CD.
+For infrastructure as code, use the [Terraform provider for Fabric](https://registry.terraform.io/providers/microsoft/fabric/latest/docs) to provision Fabric environments such as workspaces and capacities. Use [fabric-cicd](https://microsoft.github.io/fabric-cicd/), a Python library, to deploy item definitions from a source-controlled repository. fabric-cicd is the most widely adopted deployment tool for Fabric CI/CD.
 
 ## Related content
 
@@ -91,5 +91,5 @@ For infrastructure as code, use the [Terraform provider for Microsoft Fabric](ht
 * [Variable library](./variable-library/variable-library-overview.md)
 * [Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis)
 * [Fabric CLI](/rest/api/fabric/articles/fabric-command-line-interface)
-* [Terraform provider for Microsoft Fabric](https://registry.terraform.io/providers/microsoft/fabric/latest/docs)
+* [Terraform provider for Fabric](https://registry.terraform.io/providers/microsoft/fabric/latest/docs)
 * [fabric-cicd](https://microsoft.github.io/fabric-cicd/)
