@@ -1,85 +1,126 @@
 ---
-title: Create Paginated Reports
+title: Create Paginated Reports in Fabric Plan Intelligence Sheets
 description: Learn how to work with intelligence sheet pagination options for reports. Customize headers, footers, layout, and formatting to create structured, readable, and consistent reports.
-ms.date: 03/10/2026
+ms.date: 07/21/2026
 ms.topic: how-to
 #customer intent: As a user, I want to design and format paginated reports in intelligence sheets
 ---
 
-# Pagination and formatting for Reports
+# Pagination and formatting for reports
 
-Pagination options let you configure layout, context, presentation, and formatting. These capabilities help ensure paginated reports are well-structured, easy to read, and consistently formatted.
+Legacy enterprise reporting often requires precise control over pagination. Page breaks and page controls ensure content stays organized logically, headers and footers appear consistently, and reports retain their intended layout across print and export formats. Paginated reports are ideal for generating invoices, financial statements, operational reports, and other documents that require consistent formatting across pages and export formats.
+
+Use pagination to divide large reports into smaller pages for analysis and navigation. Control how report content appears by configuring the number of rows per page or enabling a single scrollable page. Choose the layout that best fits the report for navigation and presentation.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-The following sections describe how to use pagination options, such as customizing the header and footer, formatting cells, and creating visual hierarchies in your reports.
+The following sections describe how to use pagination options, such as number of rows per page, page breaks, choosing header and footer presets, customizing the header and footer, formatting cells, and entering annotations.
 
-## Configure pagination
+## Prerequisites
 
-1. Go to **Design** > **Header & Footer**.
-1. Select **Pagination Controls** and select the pagination style to apply.
+1. Create an intelligence sheet and select the **Matrix** visual. Assign dimensions and measures.
+1. Add a **Super Filter** visual from the **Visualizations** pane. Assign the dimensions to use for filtering, such as **Region**, **Year**, and **Business Unit**, to the **Category** data well.
 
-    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/pagination-controls.png" alt-text="Screenshot of the pagination control options in the report." lightbox="media/intelligence-how-to-create-paginated-reports/pagination-controls.png":::
+    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/create-sheet-add-super-filter.jpg" alt-text="Screenshot of an intelligence sheet with filters for year, business unit, and region dimensions." lightbox="media/intelligence-how-to-create-paginated-reports/create-sheet-add-super-filter.jpg":::
 
-1. Select the settings icon in the footer to configure the number of rows displayed per page.
+## Define the rows shown on each page
 
-    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/configure-rows.png" alt-text="Screenshot of configuring the number of rows displayed per page." lightbox="media/intelligence-how-to-create-paginated-reports/configure-rows.png":::
+By default, reports split content across multiple pages based on the total number of rows. You can go to the next page or the previous page, skip to the first or last page, or enter the page number to open a specific page in your report. Pagination controls appear in the bottom-right corner of the report in the status bar. Select the **Settings** icon to customize pagination.
 
-1. To show data for a specific dimension category on each page: set **Rows per page** to **Row Break**. Select the dimension category, such as **Region**. This displays data grouped by the selected dimension on separate pages.
+:::image type="content" source="media/intelligence-how-to-create-paginated-reports/pagination-controls-settings.png" alt-text="Screenshot of pagination controls to navigate between pages in a report." lightbox="media/intelligence-how-to-create-paginated-reports/pagination-controls-settings.png":::
 
-    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/row-break.png" alt-text="Screenshot of configuring row break based on Region." lightbox="media/intelligence-how-to-create-paginated-reports/row-break.png":::
+Set a fixed number of rows to show per page or dynamically add page breaks based on a dimension category.
 
-## Customize the report header
+* To show a fixed number of rows on each page, select the **Settings** icon and then specify the number of rows to show per page.
 
-1. Select **Header & Footer** in the **Design** ribbon.
-1. Choose from built-in header and footer presets.
+    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/set-fixed-rows-per-page.jpg" alt-text="Screenshot of setting to show a fixed number of rows per page." lightbox="media/intelligence-how-to-create-paginated-reports/set-fixed-rows-per-page.jpg":::
 
-    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/presets.png" alt-text="Screenshot of header and footer presets." lightbox="media/intelligence-how-to-create-paginated-reports/presets.png":::
+* To show the entire report on a single scrollable page, select **All**.
 
-1. Select the edit icon to enter custom header text.
+    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/single-page-scrollable-report.jpg" alt-text="Screenshot of a report with a single scrollable page." lightbox="media/intelligence-how-to-create-paginated-reports/single-page-scrollable-report.jpg":::
 
-    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/edit-header.png" alt-text="Screenshot of the edit icon for changing the header text." lightbox="media/intelligence-how-to-create-paginated-reports/edit-header.png":::
+* Use row breaks to combine rows from a specific level of the row hierarchy, such as region or product, on a dedicated page. This option groups related records together on a single page, making paginated reports easier to read. In the **Format** ribbon, select the **Page Break** icon, and then select the dimension to use for row breaks.
 
-1. Use the same icon to upload images to the header.
+    > [!NOTE]
+    > When you define page breaks based on row or column dimensions, the **Rows per Page** setting is unavailable because the selected dimension values determine page boundaries.
 
-    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/edit-header-image-1.png" alt-text="Screenshot of uploading an image to the header." lightbox="media/intelligence-how-to-create-paginated-reports/edit-header-image-1.png":::
+    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/page-break-dimension-based.png" alt-text="Screenshot of inserting page breaks based on the region row dimension categories." lightbox="media/intelligence-how-to-create-paginated-reports/page-break-dimension-based.png":::
 
-    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/edit-header-image-2.png" alt-text="Screenshot of the header with an image that was uploaded." lightbox="media/intelligence-how-to-create-paginated-reports/edit-header-image-2.png":::
+* Insert break rows to create custom page breaks at specific locations in the report. Use this option to separate key sections or logical groups, regardless of the underlying hierarchy or dimension structure.
 
-## Format cells and column headers
+  To insert a row break at a specific location in the report:
 
-1. Set the cell background and font color, apply text formatting (bold, italic, underline), and adjust the font type and size. Use **Format Painter** to copy formatting across multiple cells.
+  1. Select the row gripper for the row where you want to insert a new page.
 
-    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/format-painter.png" alt-text="Screenshot of cells displaying different fill and text colors with a highlight around the format painter button." lightbox="media/intelligence-how-to-create-paginated-reports/format-painter.png":::
+  1. Select **Insert** > **Add Break Row**.
 
-1. Use the column gripper to select **Select Header**, then apply the desired formatting.
+  1. In the **Format** ribbon, select the **Page Break** icon, and then select **Break rows**.
 
-    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/select-header.png" alt-text="Screenshot of the Select Header option from within a header cell." lightbox="media/intelligence-how-to-create-paginated-reports/select-header.png":::
+    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/insert-break-row.png" alt-text="Screenshot of using the row gripper to insert row breaks between data." lightbox="media/intelligence-how-to-create-paginated-reports/insert-break-row.png":::
 
-1. Apply banded rows to improve readability by highlighting even and odd rows with different colors.
+    This example inserts break rows to place APAC and EMEA on separate pages, and groups North America and Latin America on a single page. The following animation shows the resulting report structure after applying page breaks based on the break rows. The report now spans three pages, with APAC on page 1, EMEA on page 2, and North America and Latin America on page 3.
 
-    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/row-highlight.png" alt-text="Screenshot of the Row Highlight option in the Design tab of the menu ribbon." lightbox="media/intelligence-how-to-create-paginated-reports/row-highlight.png":::
+    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/page-breaks-break-rows.gif" alt-text="Animation showing custom page breaks created by inserting row breaks." lightbox="media/intelligence-how-to-create-paginated-reports/page-breaks-break-rows.gif":::
+
+## Add a report header and footer
+
+Headers and footers are particularly valuable in paginated reports, where content spans multiple pages and you frequently print or export reports to formats such as PDF, Word, or Excel. They ensure that important information repeats consistently on every page, even when you view pages independently.
+
+1. Hover over the header section and select **Edit** from the **More options (...)** menu. Alternatively, double-click the header to edit.
+
+    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/edit-header-option.png" alt-text="Screenshot of the option to edit the report header." lightbox="media/intelligence-how-to-create-paginated-reports/edit-header-option.png":::
+
+1. Create a custom header or apply a built-in preset to add a report header. In the **Header & Footer** ribbon, select **Presets** > **Header** and select the header template. The preset pre-formats and positions header elements such as company logos, titles, and summaries.
+1. Select the container with the *Your Logo* placeholder and upload your organization's logo. Hover over a container and use the drag handles to resize it.
+
+    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/upload-custom-logo.png" alt-text="Screenshot of uploading a custom logo in the report header." lightbox="media/intelligence-how-to-create-paginated-reports/upload-custom-logo.png":::
+
+1. Select the container that holds the title text. Delete the default title to insert custom text. Select the **Insert element** icon and select **Slicer** to show the slicer selections in the header.
+
+    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/insert-slicer-selection-header-option.jpg" alt-text="Screenshot of header option to show selected categories in the slicer." lightbox="media/intelligence-how-to-create-paginated-reports/insert-slicer-selection-header-option.jpg":::
+
+    The header captures the dimension categories that you select in the slicer:
+
+    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/capture-slicer-selection-header.png" alt-text="Screenshot showing the selected filter categories in the report header." lightbox="media/intelligence-how-to-create-paginated-reports/capture-slicer-selection-header.png":::
+
+1. Select **Close Editor** after you finish your changes.
+1. To insert a footer, select **Header & Footer** in the **Format** ribbon to enable the **Header & Footer** ribbon.
+1. Select **Presets** > **Footer** and select the preset.
+
+    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/footer-presets.png" alt-text="Screenshot of footer presets with pre-formatted and positioned elements like dates, logos, and symbols." lightbox="media/intelligence-how-to-create-paginated-reports/footer-presets.png":::
+
+1. To add a timestamp in the footer, select the **Insert element** icon, select **Date**, and then choose the required format.
+
+    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/show-timestamp-footer.png" alt-text="Screenshot of inserting a date and selecting the format in the report footer." lightbox="media/intelligence-how-to-create-paginated-reports/show-timestamp-footer.png":::
+
+1. Additionally, apply custom colors to the column and measure headers. Choose **Select Header** from the column gripper. Change the font and background color and apply customizations from the **Format** ribbon.
+
+    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/set-custom-measure-header-color.png" alt-text="Screenshot of setting a custom color for the measure and column headers." lightbox="media/intelligence-how-to-create-paginated-reports/set-custom-measure-header-color.png":::
 
 ## Add notes and annotations
 
-1. Select a row category, column header, or cell. Select **Notes** > **Add New Note**. Use the rich text editor to enter and format notes. Select Save.
+Adding notes to reports provides valuable context that helps readers understand the data beyond the numbers. Use notes to explain significant changes, highlight key insights, document assumptions, and communicate important business context without modifying the underlying data.
 
-    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/notes.png" alt-text="Screenshot of the Notes button in the Home tab of the menu ribbon." lightbox="media/intelligence-how-to-create-paginated-reports/notes.png":::
+In financial and operational reporting, notes are particularly useful for documenting budget variances, explaining forecast adjustments, justifying writebacks, recording approvals, and providing commentary on significant business events.
 
-1. Enable **Notes Column** to enter row-level notes.
+1. Select a row category, column header, or cell. In the **Intelligence** ribbon, select **Notes** > **Add New Note**. Use the rich text editor to enter and format notes. Select **Save**.
 
-    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/notes-column.png" alt-text="Screenshot of the Notes Column option expanded from the Notes button." lightbox="media/intelligence-how-to-create-paginated-reports/notes-column.png":::
+    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/add-new-note.png" alt-text="Screenshot of collaborating on reporting by adding context with notes." lightbox="media/intelligence-how-to-create-paginated-reports/add-new-note.png":::
 
-1. Enable **Footnotes** to view all cell, row, and column-level notes entered in the report.
+1. Enable **Footnotes** to view all cell, row, and column-level notes you entered in the report.
 
-    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/footnote.png" alt-text="Screenshot of the Footnote option expanded from the Notes button." lightbox="media/intelligence-how-to-create-paginated-reports/footnote.png":::
+    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/enable-footnotes-option.png" alt-text="Screenshot of showing all the notes entered in a report in the footnotes section." lightbox="media/intelligence-how-to-create-paginated-reports/enable-footnotes-option.png":::
 
-1. Go to **Notes** > **Report Summary** to enter annotations at the report level.
+## Export reports to Excel and PDF
 
-    :::image type="content" source="media/intelligence-how-to-create-paginated-reports/report-summary.png" alt-text="Screenshot of the Report Summary option expanded from the Notes button." lightbox="media/intelligence-how-to-create-paginated-reports/report-summary.png":::
+Select the **Export** icon in the **Matrix** ribbon to create fully formatted Excel and PDF exports for distribution. In PDF format, export all columns in the matrix or limit the export to selected columns. Excel exports preserve hierarchical data. Export them with expand and collapse buttons, fully expanded, or the current report state.
 
-## Reorder columns
+:::image type="content" source="media/intelligence-how-to-create-paginated-reports/export-pdf-excel-csv.png" alt-text="Screenshot of the export option in intelligence and support formats such as Excel, CSV, and PDF." lightbox="media/intelligence-how-to-create-paginated-reports/export-pdf-excel-csv.png":::
 
-To reorder columns in your report, hover over a column and drag the column gripper to the desired position.
+Sample screenshot of PDF export:
 
-:::image type="content" source="media/intelligence-how-to-create-paginated-reports/reorder-columns.png" alt-text="Screenshot of reordering a column in the report." lightbox="media/intelligence-how-to-create-paginated-reports/reorder-columns.png":::
+:::image type="content" source="media/intelligence-how-to-create-paginated-reports/sample-pdf-export.png" alt-text="Screenshot of the PDF export of a paginated report." lightbox="media/intelligence-how-to-create-paginated-reports/sample-pdf-export.png":::
+
+Sample screenshot of Excel export:
+
+:::image type="content" source="media/intelligence-how-to-create-paginated-reports/sample-excel-export.png" alt-text="Screenshot of the Excel export with expand and collapse capability for hierarchical row dimensions." lightbox="media/intelligence-how-to-create-paginated-reports/sample-excel-export.png":::
