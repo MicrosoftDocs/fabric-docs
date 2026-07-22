@@ -6,30 +6,30 @@ ms.author: scottpolly
 author: s-polly
 ms.reviewer: ruxu
 reviewer: ruixinxu
-ms.date: 07/21/2025
+ms.date: 07/22/2026
 ---
 
 # Create models with Automated ML
 
-Automated Machine Learning (AutoML) encompasses a set of techniques and tools designed to streamline the process of training and optimizing machine learning models with minimal human intervention. The primary objective of AutoML is to simplify and accelerate the selection of the most suitable machine learning model and hyperparameters for a given dataset, a task that typically demands considerable expertise and computational resources. Within the Fabric framework, data scientists can use the ```flaml.AutoML``` module to automate various aspects of their machine learning workflows.
+Automated Machine Learning (AutoML) includes techniques and tools that streamline the process of training and optimizing machine learning models with minimal human intervention. AutoML simplifies and accelerates the selection of the most suitable machine learning model and hyperparameters for a given dataset. This task typically requires considerable expertise and computational resources. Within the Fabric framework, data scientists can use the `flaml.AutoML` module to automate various aspects of their machine learning workflows.
 
-In this article, we delve into the process of generating AutoML trials directly from code using a Spark dataset. Additionally, we explore methods for converting this data into a Pandas dataframe and discuss techniques for parallelizing your experimentation trials.
+In this article, you learn how to generate AutoML trials directly from code by using a Spark dataset. You also learn how to convert this data into a Pandas dataframe and how to parallelize your experimentation trials.
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
-* Create a new [Fabric environment](../data-engineering/create-and-use-environment.md) or ensure you're running on the Fabric Runtime 1.2 (Spark 3.4 (or higher) and Delta 2.4)
+* Create a new [Fabric environment](../data-engineering/create-and-use-environment.md) or ensure you're running on [Fabric Runtime 1.3](../data-engineering/runtime-1-3.md) (Spark 3.5 and Delta 3.2) or higher. For the full list of supported runtimes, see [Apache Spark runtimes in Fabric](../data-engineering/runtime.md).
 * Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
 
 ## Load and prepare data
 
-In this section, we specify the download settings for the data and then save it to the lakehouse.
+In this section, you specify the download settings for the data and then save it to the lakehouse.
 
 ### Download data
 
-This code block downloads the data from a remote source and saves it to the lakehouse
+This code block downloads the data from a remote source and saves it to the lakehouse.
 
 ```python
 import os
@@ -78,15 +78,15 @@ df = (
 )
 ```
 
-This code assumes that the data file has been downloaded and is located in the specified path. It reads the CSV file into a Spark DataFrame, infers the schema, and caches it for faster access during subsequent operations.
+This code assumes that you downloaded the data file and that it's located in the specified path. It reads the CSV file into a Spark DataFrame, infers the schema, and caches it for faster access during subsequent operations.
 
 ### Prepare the data
 
-In this section, we perform data cleaning and feature engineering on the dataset.
+In this section, you clean the data and perform feature engineering on the dataset.
 
 #### Clean data
 
-First, we define a function to clean the data, which includes dropping rows with missing data, remove duplicate rows based on specific columns, and drop unnecessary columns.
+First, define a function to clean the data. The function drops rows with missing data, removes duplicate rows based on specific columns, and drops unnecessary columns.
 
 ```python
 # Define a function to clean the data
@@ -107,11 +107,11 @@ df_clean = clean_data(df_copy)
 
 ```
 
-The ```clean_data``` function helps ensure the dataset is free of missing values and duplicates while removing unnecessary columns.
+The `clean_data` function ensures the dataset is free of missing values and duplicates while removing unnecessary columns.
 
 #### Feature engineering
 
-Next, we perform feature engineering by creating dummy columns for the 'Geography' and 'Gender' columns using one-hot encoding.
+Next, perform feature engineering by creating dummy columns for the `Geography` and `Gender` columns using one-hot encoding.
 
 ```python
 # Import PySpark functions
@@ -132,11 +132,11 @@ df_clean = df_clean.drop("Geography", "Gender")
 
 ```
 
-Here, we use one-hot encoding to convert categorical columns into binary dummy columns, making them suitable for machine learning algorithms.
+Use one-hot encoding to convert categorical columns into binary dummy columns, making them suitable for machine learning algorithms.
 
 #### Display cleaned data
 
-Finally, we display the cleaned and feature-engineered dataset using the display function.
+Finally, display the cleaned and feature-engineered dataset by using the `display` function.
 
 ```python
 
@@ -144,11 +144,11 @@ display(df_clean)
 
 ```
 
-This step allows you to inspect the resulting DataFrame with the applied transformations.
+This step lets you inspect the resulting DataFrame with the applied transformations.
 
 ### Save to lakehouse
 
-Now, we save the cleaned and feature-engineered dataset to the lakehouse.
+Now, save the cleaned and feature-engineered dataset to the lakehouse.
 
 ```python
 # Create PySpark DataFrame from Pandas
@@ -156,13 +156,13 @@ df_clean.write.mode("overwrite").format("delta").save(f"Tables/churn_data_clean"
 print(f"Spark dataframe saved to delta table: churn_data_clean")
 ```
 
-Here, we take the cleaned and transformed PySpark DataFrame, ```df_clean```, and save it as a Delta table named "churn_data_clean" in the lakehouse. We use the Delta format for efficient versioning and management of the dataset. The ```mode("overwrite")``` ensures that any existing table with the same name is overwritten, and a new version of the table is created.
+Here, take the cleaned and transformed PySpark DataFrame, `df_clean`, and save it as a Delta table named `churn_data_clean` in the lakehouse. Use the Delta format for efficient versioning and management of the dataset. The `mode("overwrite")` option ensures that any existing table with the same name is overwritten, and a new version of the table is created.
 
 ### Create test and training datasets
 
-Next, we create the test and training datasets from the cleaned and feature-engineered data.
+Next, create the test and training datasets from the cleaned and feature-engineered data.
 
-In the provided code section, we load a cleaned and feature-engineered dataset from the lakehouse using Delta format, split it into training and testing sets with an 80-20 ratio, and prepare the data for machine learning. This preparation involves importing the ```VectorAssembler``` from PySpark ML to combine feature columns into a single "features" column. Later, we use the ```VectorAssembler``` to transform the training and testing datasets, resulting in ```train_data``` and ```test_data``` DataFrames that contain the target variable "Exited" and the feature vectors. These datasets are now ready for use in building and evaluating machine learning models.
+In the provided code section, load a cleaned and feature-engineered dataset from the lakehouse using Delta format, split it into training and testing sets with an 80-20 ratio, and prepare the data for machine learning. This preparation involves importing the `VectorAssembler` from PySpark ML to combine feature columns into a single "features" column. Later, use the `VectorAssembler` to transform the training and testing datasets, resulting in `train_data` and `test_data` DataFrames that contain the target variable "Exited" and the feature vectors. These datasets are now ready for use in building and evaluating machine learning models.
 
 ```python
 # Import the necessary library for feature vectorization
@@ -188,11 +188,11 @@ test_data = featurizer.transform(test_raw)["Exited", "features"]
 
 ## Train baseline model
 
-Using the featurized data, we train a baseline machine learning model, configure MLflow for experiment tracking, define a prediction function for metrics calculation, and finally, view and log the resulting ROC AUC score.
+Using the featurized data, train a baseline machine learning model, configure MLflow for experiment tracking, define a prediction function for metrics calculation, and finally, view and log the resulting ROC AUC score.
 
 ### Set logging level
 
-Here, we configure the logging level to suppress unnecessary output from the Synapse.ml library, keeping the logs cleaner.
+Here, configure the logging level to suppress unnecessary output from the Synapse.ml library, keeping the logs cleaner.
 
 ```python
 import logging
@@ -202,7 +202,7 @@ logging.getLogger('synapse.ml').setLevel(logging.ERROR)
 
 ### Configure MLflow
 
-In this section, we configure MLflow for experiment tracking. We set the experiment name to "automl_sample" to organize the runs. Additionally, we enable automatic logging, ensuring that model parameters, metrics, and artifacts are automatically logged to MLflow.
+In this section, configure MLflow for experiment tracking. Set the experiment name to "automl_sample" to organize the runs. Additionally, enable automatic logging, ensuring that model parameters, metrics, and artifacts are automatically logged to MLflow.
 
 ```python
 import mlflow
@@ -215,7 +215,7 @@ mlflow.autolog(exclusive=False)
 
 ### Train and evaluate the model
 
-Finally, we train a LightGBMClassifier model on the provided training data. The model is configured with the necessary settings for binary classification and imbalance handling. We then use this trained model to make predictions on the test data. We extract the predicted probabilities for the positive class and the true labels from the test data. Afterward, we calculate the ROC AUC score using sklearn's ```roc_auc_score``` function.
+Finally, train a LightGBMClassifier model on the provided training data. Configure the model with the necessary settings for binary classification and imbalance handling. Use this trained model to make predictions on the test data. Extract the predicted probabilities for the positive class and the true labels from the test data. Afterward, calculate the ROC AUC score by using sklearn's `roc_auc_score` function.
 
 ```python
 from synapse.ml.lightgbm import LightGBMClassifier
@@ -250,15 +250,15 @@ with mlflow.start_run(run_name="default") as run:
 
 ```
 
-From here, we can see that our resulting model achieves a ROC AUC score of 84%.
+From here, you can see that the resulting model achieves a ROC AUC score of 84%.
 
 ## Create an AutoML trial with FLAML
 
-In this section, we create an AutoML trial using the FLAML package, configure the trial settings, convert the Spark dataset to a Pandas on Spark dataset, run the AutoML trial, and view the resulting metrics.
+In this section, create an AutoML trial by using the FLAML package, configure the trial settings, convert the Spark dataset to a Pandas on Spark dataset, run the AutoML trial, and view the resulting metrics.
 
 ### Configure the AutoML trial
 
-Here, we import the necessary classes and modules from the FLAML package and create an instance of AutoML, which is used to automate the machine learning pipeline.
+Import the necessary classes and modules from the FLAML package and create an instance of AutoML. Use this instance to automate the machine learning pipeline.
 
 ```python
 # Import the AutoML class from the FLAML package
@@ -272,7 +272,7 @@ automl = AutoML()
 
 ### Configure settings
 
-In this section, we define the configuration settings for the AutoML trial.
+Define the configuration settings for the AutoML trial.
 
 ```python
 # Define AutoML settings
@@ -290,7 +290,7 @@ settings = {
 
 ### Convert to Pandas on Spark
 
-To run AutoML with a Spark-based dataset, we need to convert it to a Pandas on Spark dataset using the ```to_pandas_on_spark``` function. This enables FLAML to work with the data efficiently.
+To run AutoML with a Spark-based dataset, convert it to a Pandas on Spark dataset by using the `to_pandas_on_spark` function. This conversion enables FLAML to work with the data efficiently.
 
 ```python
 # Convert the Spark training dataset to a Pandas on Spark dataset
@@ -300,7 +300,7 @@ df_automl = to_pandas_on_spark(train_data)
 
 ### Run the AutoML trial
 
-Now, we execute the AutoML trial. We use a nested MLflow run to track the experiment within the existing MLflow run context. The AutoML trial is performed on the Pandas on Spark dataset (```df_automl```) with the target variable "```Exited``` and the defined settings are passed to the ```fit``` function for configuration.
+Now, run the AutoML trial. Use a nested MLflow run to track the experiment within the existing MLflow run context. The AutoML trial runs on the Pandas on Spark dataset (`df_automl`) with the target variable `Exited`. Pass the defined settings to the `fit` function for configuration.
 
 ```python
 '''The main flaml automl API'''
@@ -311,7 +311,7 @@ with mlflow.start_run(nested=True):
 
 ### View resulting metrics
 
-In this final section, we retrieve and display the results of the AutoML trial. These metrics provide insights into the performance and configuration of the AutoML model on the given dataset.
+In this final section, retrieve and display the results of the AutoML trial. These metrics provide insights into the performance and configuration of the AutoML model on the given dataset.
 
 ```python
 # Retrieve and display the best hyperparameter configuration and metrics
@@ -323,22 +323,22 @@ print('Training duration of the best run: {0:.4g} s'.format(automl.best_config_t
 
 ## Parallelize your AutoML trial with Apache Spark
 
-In scenarios where your dataset can fit into a single node and you want to use the power of Spark for running multiple parallel AutoML trials simultaneously, you can follow these steps:
+In scenarios where your dataset can fit into a single node and you want to use the power of Spark for running multiple parallel AutoML trials simultaneously, follow these steps:
 
 ### Convert to Pandas dataframe
 
-To enable parallelization, your data must first be converted into a Pandas DataFrame.
+To enable parallelization, first convert your data into a Pandas DataFrame.
 
 ```python
 pandas_df = train_raw.toPandas()
 
 ```
 
-Here, we convert the ```train_raw``` Spark DataFrame into a Pandas DataFrame named ```pandas_df``` to make it suitable for parallel processing.
+Here, convert the `train_raw` Spark DataFrame into a Pandas DataFrame named `pandas_df` to make it suitable for parallel processing.
 
 ### Configure parallelization settings
 
-Set ```use_spark``` to ```True``` to enable Spark-based parallelism. By default, FLAML launches one trial per executor. You can customize the number of concurrent trials by using the ```n_concurrent_trials``` argument.
+Set `use_spark` to `True` to enable Spark-based parallelism. By default, FLAML launches one trial per executor. You can customize the number of concurrent trials by using the `n_concurrent_trials` argument.
 
 ```python
 settings = {
@@ -353,13 +353,13 @@ settings = {
 
 }
 ```
-In these settings, we specify that we want to utilize Spark for parallelism by setting ```use_spark``` to ```True```. We also set the number of concurrent trials to 3, meaning that three trials run in parallel on Spark.
+In these settings, specify that you want to utilize Spark for parallelism by setting `use_spark` to `True`. Set the number of concurrent trials to 3, meaning that three trials run in parallel on Spark.
 
-To learn more about how to parallelize your AutoML trails, you can visit the [FLAML documentation for parallel Spark jobs](https://microsoft.github.io/FLAML/docs/Examples/Integrate%20-%20Spark#parallel-spark-jobs).
+To learn more about how to parallelize your AutoML trails, visit the [FLAML documentation for parallel Spark jobs](https://microsoft.github.io/FLAML/docs/Examples/Integrate%20-%20Spark#parallel-spark-jobs).
 
 ### Run the AutoML trial in parallel
 
-Now, we run the AutoML trial in parallel with the specified settings. We use a nested MLflow run to track the experiment within the existing MLflow run context.
+Now, run the AutoML trial in parallel with the specified settings. Use a nested MLflow run to track the experiment within the existing MLflow run context.
 
 ```python
 '''The main FLAML AutoML API'''
@@ -368,7 +368,7 @@ with mlflow.start_run(nested=True, run_name="parallel_trial"):
 
 ```
 
-This will now execute the AutoML trial with parallelization enabled. The ```dataframe``` argument is set to the Pandas DataFrame ```pandas_df```, and other settings are passed to the ```fit``` function for parallel execution.
+This process executes the AutoML trial with parallelization enabled. Set the `dataframe` argument to the Pandas DataFrame `pandas_df`, and pass other settings to the `fit` function for parallel execution.
 
 ### View metrics
 
