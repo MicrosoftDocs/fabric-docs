@@ -106,6 +106,7 @@ Delegated OneLake shortcuts use a configured connection identity instead of the 
 
 The following security considerations apply to delegated shortcuts:
 
+- A user can only be in a single OneLake security role with CLS on the consumer side, if the producer side also has RLS.
 - Column-level security (CLS) is supported for the shortcut target with delegated shortcuts. CLS works on both the target and the shortcut itself.
 - Row-level security (RLS) isn't supported for delegated shortcuts.
 - In addition to OneLake security access to the target path, accessing external shortcuts via Spark or direct API calls also requires read permissions on the item containing the external shortcut path.
