@@ -22,7 +22,6 @@ Key capabilities include:
 
 Anomaly detection runs natively on Eventhouse tables without copying data, operating directly over live datasets for real-time analysis. Analysis and continuous monitoring execute in place within Eventhouse, which minimizes data movement.
 
-Anomaly detection also supports Eventhouse shortcut tables, so you can analyze data without first copying or moving it into a dedicated Eventhouse table. You can create anomaly detectors directly on supported shortcut tables and use the same analysis, model recommendations, and continuous monitoring experiences available for native Eventhouse data sources. This support extends anomaly detection to external and federated data sources that are already connected through Eventhouse shortcuts, so you can move from connecting data to detecting issues with less setup and duplication.
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
