@@ -383,6 +383,8 @@ items:
           items:
           - name: Append queries
             href: plan/infobridge-transform-queries/how-to-append-query.md
+          - name: Join queries
+            href: plan/infobridge-transform-queries/how-to-join-query.md
         - name: Transform data
           items:
             - name: Use pivot table
