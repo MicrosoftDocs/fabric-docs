@@ -2,7 +2,7 @@
 title: Mirroring
 description: Learn about mirrored databases in Microsoft Fabric.
 ms.reviewer: sbahadur, maprycem, tinglee
-ms.date: 03/18/2026
+ms.date: 07/17/2026
 ms.topic: overview
 ms.search.form: Fabric Mirroring
 no-loc: Copilot
@@ -52,7 +52,7 @@ Mirroring creates these items in your Fabric workspace:
 - A process that manages the replication of data and metadata into [OneLake](../onelake/onelake-overview.md) and conversion to Parquet, in an analytics-ready format. This process enables downstream scenarios like data engineering, data science, and more.
 - A [SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md)
 
-In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling including [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), and even GitHub Copilot.
+In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling including [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), and even GitHub Copilot.
 
 [Sharing](#sharing) makes it easy to control access and manage permissions, so you can protect sensitive information. Sharing also enables secure and democratized decision-making across your organization.
 
@@ -66,22 +66,7 @@ Microsoft Fabric offers three different approaches for bringing data into OneLak
 
 Currently, the following external databases are available:
 
-| Platform | Near real-time replication | Type of mirroring | End-to-end tutorial |
-| :-- | :-- | :-- |
-| [Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db.md) | Yes | Database mirroring | [Tutorial: Azure Cosmos DB](azure-cosmos-db-tutorial.md) |
-| [Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks.md) | Yes | Metadata mirroring | [Tutorial: Azure Databricks](azure-databricks-tutorial.md) |
-| [Microsoft Fabric mirrored databases from Azure Database for PostgreSQL](azure-database-postgresql.md) | Yes | Database mirroring | [Tutorial: Azure Database for PostgreSQL](azure-database-postgresql-tutorial.md) |
-| [Microsoft Fabric mirrored databases from Azure Database for MySQL (preview)](azure-database-mysql.md) | Yes | Database mirroring | [Tutorial: Azure Database for MySQL (preview)](azure-database-mysql-tutorial.md) |
-| [Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database.md) | Yes | Database mirroring | [Tutorial: Azure SQL Database](azure-sql-database-tutorial.md) |
-| [Microsoft Fabric mirrored databases from Azure SQL Managed Instance](azure-sql-managed-instance.md) | Yes | Database mirroring | [Tutorial: Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md) |
-| [Microsoft Fabric mirrored catalogs from Dremio (preview)](catalog-mirroring/dremio.md) | Yes | Metadata mirroring | [Tutorial: Dremio (preview)](catalog-mirroring/dremio-tutorial.md) |
-| [Microsoft Fabric mirrored databases from Google BigQuery (preview)](google-bigquery.md) | Yes | Database mirroring | [Tutorial: Google BigQuery](google-bigquery-tutorial.md) |
-| [Microsoft Fabric mirrored databases from Oracle](oracle.md) | Yes | Database mirroring | [Tutorial: Oracle](oracle-tutorial.md) |
-| [Microsoft Fabric mirrored databases from SAP](sap.md) | Yes | Database mirroring | [Tutorial: SAP](sap-datasphere-tutorial.md) |
-| [Microsoft Fabric mirrored databases from Snowflake](snowflake.md) | Yes | Database mirroring | [Tutorial: Snowflake](snowflake-tutorial.md) |
-| [Microsoft Fabric mirrored databases from SQL Server](sql-server.md) | Yes | Database mirroring | [Tutorial: SQL Server](sql-server-tutorial.md) |
-| [Open mirrored databases](open-mirroring.md) | Yes | Open mirroring | [Tutorial: Open mirroring](open-mirroring-tutorial.md) |
-| [Microsoft Fabric mirrored databases from Fabric SQL database](../database/sql/overview.md) | Yes | Database mirroring | [Automatically configured](../database/sql/mirroring-overview.md) |
+[!INCLUDE [Mirrored data sources](includes/mirrored-sources-table.md)]
 
 ## Near real-time replication
 
@@ -94,7 +79,7 @@ For database mirroring and open mirroring, near real-time replication can depend
 - Network bandwidth and latency from source
 - Compute resources allocated to the on-premises data gateway
 
-> [!NOTE]
+> [!NOTE]  
 > Metadata mirroring doesn't replicate data. Instead, it relies on [OneLake shortcuts](../onelake/onelake-shortcuts.md) to reference source data in place. Latency for metadata mirroring reflects source system access time and shortcut performance rather than data replication speed.
 
 ## How does database mirroring work?
