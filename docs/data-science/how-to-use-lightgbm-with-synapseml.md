@@ -202,7 +202,7 @@ In this section, you use LightGBM to build a ranking model.
 1. Read the dataset.
 
     > [!NOTE]
-    > The datasets in this section are hosted in a public Azure Blob Storage account maintained by the SynapseML team. If the `wasbs://` paths return an authentication error, check the [SynapseML GitHub repository](https://github.com/microsoft/SynapseML) for updated dataset URLs, or upload the datasets manually to your lakehouse.
+    > The SynapseML team hosts the datasets in this section in a public Azure Blob Storage account. If the `wasbs://` paths return an authentication error, check the [SynapseML GitHub repository](https://github.com/microsoft/SynapseML) for updated dataset URLs, or upload the datasets manually to your lakehouse.
 
     ```python
     df = spark.read.format("parquet").load(
