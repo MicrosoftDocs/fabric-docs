@@ -83,11 +83,11 @@ In some cases, you might want to expedite your AutoML trial by using Apache Spar
 automl.fit(X_train, y_train, n_concurrent_trials=4, use_spark=True)
 ```
 
-To learn more about how to parallelize your AutoML trials, you can visit the [FLAML documentation for parallel Spark jobs](https://microsoft.github.io/FLAML/docs/Examples/Integrate%20-%20Spark#parallel-spark-jobs).
+To learn more about how to parallelize your AutoML trials, see the [FLAML documentation for parallel Spark jobs](https://microsoft.github.io/FLAML/docs/Examples/Integrate%20-%20Spark#parallel-spark-jobs).
 
 ## Track with MLflow
 
-You can also use the Fabric MLflow integration to capture the metrics, parameters, and models from the explored trials.
+Use the Fabric MLflow integration to capture the metrics, parameters, and models from the explored trials.
 
 ```python
 import mlflow
