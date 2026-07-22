@@ -172,7 +172,7 @@ items:
 - name: Reliability
   items:
   - name: Reliability in Microsoft Fabric
-    href: /azure/reliability/reliability-fabric?toc=/fabric/security/toc.json&bc=/fabric/breadcrumb/toc.json
+    href: reliability-fabric.md
   - name: Disaster recovery guides by experience
     href: experience-specific-guidance.md
 - name: Guidance
