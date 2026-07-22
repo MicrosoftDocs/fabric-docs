@@ -10,7 +10,7 @@ ms.date: 03/20/2025
 
 # Data agent in Fabric consumption
 
-This page contains information on how the Fabric Data agent usage is billed and reported. Data agent usage is measured by the number of tokens processed. When you query Data agent using natural language, Fabric generates tokens that represent the number of words in the query. For every 750 words, approximately 1,000 tokens are generated.
+This page contains information on how the Fabric Data agent usage is billed and reported. Data agent usage is measured by the number of tokens processed. When you query a Data Agent using natural language, Fabric generates tokens from your request and any supporting context used to process it. Your question typically represents only a portion of the total input tokens and resulting CU consumption. Additional context such as Data Agent Instructions, Data Source Instructions, Example Queries, and conversation history also contribute to token usage and consumption.
 
 ## Consumption rate
 The table below defines consumption in Capacity Units (CUs), when Data agent leverages Azure OpenAI models to process and generate responses.
@@ -18,6 +18,7 @@ The table below defines consumption in Capacity Units (CUs), when Data agent lev
 | **Metrics App Operation Name** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
 |---|---|---|---|
 |AI Query |The input prompt |Per 1,000 Tokens |100 CU seconds|
+|AI Query |The cached input prompt |Per 1,000 Tokens |10 CU seconds|
 |AI Query |The output completion |Per 1,000 Tokens|400 CU seconds|
 
 In addition to token consumption, the Data agent might generate and execute queries as part of answering user requests. The execution of these queries is billed separately to the corresponding query engine item. For example, if a query is generated for a Data Warehouse, its execution is billed through the SQL Query operation.

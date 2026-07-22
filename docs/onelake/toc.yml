@@ -2,9 +2,12 @@ items:
 - name: OneLake documentation
   href: index.yml
 - name: Overview
+  expanded: true
   items:
   - name: What is OneLake?
     href: onelake-overview.md
+  - name: Medallion lakehouse architecture
+    href: onelake-medallion-lakehouse-architecture.md
 - name: Get started
   items:
   - name: Get data into OneLake
@@ -13,8 +16,6 @@ items:
     href: onelake-onecopy-quickstart.md
   - name: Ingest data and analyze with Azure Databricks
     href: onelake-open-access-quickstart.md
-  - name: Understand medallion lakehouse architecture
-    href: onelake-medallion-lakehouse-architecture.md
 - name: Unify your data
   items:
   - name: Choose shortcuts or mirroring
@@ -73,59 +74,74 @@ items:
       href: ../mirroring/overview.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
     - name: Mirroring documentation
       href: ../mirroring/index.yml
-- name: Open access
+- name: Access and work with data
   items:
-  - name: How do I connect to OneLake?
-    href: onelake-access-api.md
-  - name: OneLake parity and integration
-    href: onelake-api-parity.md
-  - name: Use Python to manage OneLake
-    href: onelake-access-python.md
-  - name: OneLake Deep Dive ADLS and Blob APIs in Action
-    href: onelake-apis-in-action.md
-  - name: Mount OneLake as a file system
-    href: mount-onelake-with-blobfuse.md
-- name: Integrate with other services
-  items:
-  - name: Azure Machine Learning
-    href: onelake-azure-machine-learning.md
-  - name: Azure Synapse Analytics
-    href: onelake-azure-synapse-analytics.md
+  - name: File APIs
+    items:
+    - name: Connect with ADLS and Blob APIs
+      href: onelake-access-api.md
+    - name: Azure Storage API parity
+      href: onelake-api-parity.md
+    - name: Manage files with Python
+      href: onelake-access-python.md
+    - name: Mount OneLake as a file system
+      href: mount-onelake-with-blobfuse.md
+    - name: Stream Parquet data
+      href: onelake-apis-in-action.md
+  - name: Table APIs
+    items:
+    - name: What are table APIs?
+      href: ./table-apis/table-apis-overview.md
+    - name: Iceberg
+      items:
+      - name: Table APIs for Iceberg
+        href: ./table-apis/iceberg-table-apis-overview.md
+      - name: Get started with Iceberg table APIs
+        href: ./table-apis/iceberg-table-apis-get-started.md
+    - name: Delta
+      items:
+      - name: Table APIs for Delta
+        href: ./table-apis/delta-table-apis-overview.md
+      - name: Get started with Delta table APIs
+        href: ./table-apis/delta-table-apis-get-started.md
+  - name: OneLake file explorer for Windows
+    items:
+    - name: OneLake file explorer overview
+      href: onelake-file-explorer.md
+    - name: Release notes
+      displayName: OneLake file explorer
+      href: onelake-file-explorer-release-notes.md
   - name: Azure Storage Explorer
     href: onelake-azure-storage-explorer.md
+  - name: AzCopy
+    href: onelake-azcopy.md
+  - name: PowerShell
+    href: onelake-powershell.md
+- name: Integrate with other services
+  items:
   - name: Azure Databricks
     href: onelake-azure-databricks.md
+  - name: Azure Synapse Analytics
+    href: onelake-azure-synapse-analytics.md
+  - name: Azure Machine Learning
+    href: onelake-azure-machine-learning.md
   - name: Snowflake database item
     href: ./snowflake/create-snowflake-database-item.md
   - name: Use Snowflake with Iceberg tables
     href: onelake-iceberg-snowflake.md
+- name: Use data with AI agents
+  items:
   - name: Microsoft Foundry knowledge
     href: onelake-foundry-knowledge.md
-  - name: PowerShell
-    href: onelake-powershell.md
-  - name: AzCopy
-    href: onelake-azcopy.md
   - name: AI agents (MCP)
     href: onelake-local-mcp.md
-- name: OneLake table APIs
-  items:
-  - name: OneLake table APIs overview
-    href: ./table-apis/table-apis-overview.md
-  - name: OneLake table APIs for Iceberg
-    href: ./table-apis/iceberg-table-apis-overview.md
-  - name: Getting started with OneLake table APIs for Iceberg
-    href: ./table-apis/iceberg-table-apis-get-started.md
-  - name: OneLake table APIs for Delta
-    href: ./table-apis/delta-table-apis-overview.md
-  - name: Getting started with OneLake table APIs for Delta
-    href: ./table-apis/delta-table-apis-get-started.md
 - name: Secure data
   items:
-  - name: Overview
+  - name: Data security
     href: ./security/get-started-security.md
   - name: Configure data access
     items:
-    - name: OneLake security overview
+    - name: OneLake security
       href: ./security/get-started-onelake-security.md
     - name: Data access control model
       href: ./security/data-access-control-model.md
@@ -145,13 +161,13 @@ items:
         href: ./security/row-level-security.md
   - name: Integrate with OneLake security
     items:
-    - name: Overview of OneLake security integrations
+    - name: OneLake security integrations
       href: ./security/onelake-security-integrations-overview.md
-    - name: Using external engines with OneLake security
+    - name: Use external engines with OneLake security
       href: ./security/onelake-security-integrations-external-engines.md
   - name: Authorize with a shared access signature (SAS)
     items:
-    - name: OneLake SAS overview
+    - name: OneLake SAS
       href: onelake-shared-access-signature-overview.md
     - name: Create a OneLake SAS
       href: how-to-create-a-onelake-shared-access-signature.md
@@ -167,35 +183,21 @@ items:
     href: /fabric/security/workspace-customer-managed-keys?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
   - name: Best practices
     href: ./security/best-practices-secure-data-in-onelake.md
-- name: Manage and govern
+- name: Discover and manage data
   items:
-  - name: Get the size of OneLake items
-    href: how-to-get-item-size.md
-  - name: Storage tiers
-    href: onelake-storage-tiers.md
-  - name: Data lifecycle management
-    href: onelake-lifecycle-management.md
   - name: Discover data in the OneLake catalog
     href: ../governance/onelake-catalog-overview.md?toc=/fabric/onelake/TOC.json&bc=/fabric/onelake/breadcrumb/toc.json
   - name: OneLake diagnostics
     href: onelake-diagnostics-overview.md
+  - name: Data lifecycle management
+    href: onelake-lifecycle-management.md
+  - name: Storage tiers
+    href: onelake-storage-tiers.md
   - name: Recover deleted files
     href: soft-delete.md
   - name: Plan for disaster recovery
     href: onelake-disaster-recovery.md
-- name: OneLake file explorer for Windows
-  items:
-  - name: OneLake file explorer overview
-    href: onelake-file-explorer.md
-  - name: Release notes
-    href: onelake-file-explorer-release-notes.md
-- name: Billing and consumption
-  items:
-  - name: OneLake compute and storage consumption
-    href: onelake-consumption.md
-  - name: OneLake capacity consumption example
-    href: onelake-capacity-consumption.md
-- name: OneLake events
+- name: React to data changes
   items:
   - name: Explore OneLake events
     href: ../real-time-hub/explore-fabric-onelake-events.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
@@ -203,15 +205,21 @@ items:
     href: ../real-time-hub/create-streams-fabric-onelake-events.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
   - name: Set alerts on OneLake events
     href: ../real-time-hub/set-alerts-fabric-onelake-events.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
+- name: Billing and consumption
+  items:
+  - name: OneLake compute and storage consumption
+    href: onelake-consumption.md
+  - name: OneLake capacity consumption example
+    href: onelake-capacity-consumption.md
+  - name: Get the size of OneLake items
+    href: how-to-get-item-size.md
 - name: Reference
-  items: 
+  items:
   - name: OneLake shortcuts REST API
     href: /rest/api/fabric/core/onelake-shortcuts
   - name: OneLake data access roles REST API
     href: /rest/api/fabric/core/onelake-data-access-security
-  - name: OneLake security integration reference
-    items:
-    - name: OneLake security integrations reference
-      href: ./security/onelake-security-integrations-reference.md
-    - name: Authorized access for a principal API reference
-      href: ./security/authorized-access-for-principal-reference.md
+  - name: OneLake security integrations reference
+    href: ./security/onelake-security-integrations-reference.md
+  - name: Authorized access for a principal API reference
+    href: ./security/authorized-access-for-principal-reference.md
