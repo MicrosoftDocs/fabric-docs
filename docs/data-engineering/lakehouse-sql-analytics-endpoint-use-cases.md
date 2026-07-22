@@ -16,7 +16,7 @@ The SQL analytics endpoint enables you to query data in the Lakehouse by using T
 
 - The SQL analytics endpoint exposes Delta tables from the Lakehouse as SQL tables that you can query with T-SQL.
 - Every delta table from a Lakehouse is represented as one table. Data should be in delta format.
-- Every Lakehouse has one SQL analytics endpoint, and each workspace can have more than one Lakehouse. The number of SQL analytics endpoints in a workspace matches the number of Lakehouse items.
+- Every Lakehouse has one SQL analytics endpoint, and each workspace can have more than one Lakehouse. Warehouses, mirrored databases, and SQL databases in Fabric also each auto-provision their own SQL analytics endpoint, so a workspace can have more SQL analytics endpoints than Lakehouse items.
 
 You don't need to create a SQL analytics endpoint in Microsoft Fabric. A SQL analytics endpoint is automatically created for every lakehouse, database, or mirrored database. A SQL analytics endpoint acts as a lightweight data warehousing capability for their parent items, complementing the warehouse's lakehouse architecture. This architecture allows Spark or Fabric mirroring to control data in a folder structure in the lakehouse that the SQL analytics endpoint can view.
 
