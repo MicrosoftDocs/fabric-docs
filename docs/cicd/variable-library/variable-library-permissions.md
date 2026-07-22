@@ -14,7 +14,7 @@ This article explains who can access variable libraries and their values.
 
 ## Permissions for a variable library item
 
-The Microsoft Fabric variable library permissions are aligned with the Fabric workspace model. Permissions are according to your workspace role, or the variable library can be shared directly.
+Variable library permissions align with the Fabric workspace model. Permissions depend on your workspace role, or you can share the variable library directly.
 
 Workspace role | Permissions
 ---------------|------------
@@ -27,7 +27,7 @@ To share a variable library item, go to the item menu in the workspace, and then
 
 To set an item as a variable value in a variable library, you need to have at least read permission for that item. For example, if you want to set the value of a variable to be a lakehouse, you need read permission for the lakehouse.
 
-For more information about workspace roles, see [Roles in workspaces in Microsoft Fabric](../../get-started/roles-workspaces.md).
+For more information about workspace roles, see [Roles in workspaces in Fabric](../../get-started/roles-workspaces.md).
 
 
 >[!NOTE]
@@ -47,7 +47,7 @@ Using item reference variables involves two layers of permissions:
 ### Permissions enforcement
 
 1. During variable library item updates:
-When updating a variable library item, the Variable Library enforces the following permissions checks:
+When updating a variable library item, the variable library enforces the following permissions checks:
 
 - All referenced items in the active value set must exist.
 - The calling user must have **READ** permissions for each referenced item in the active value set.
@@ -71,7 +71,7 @@ Using connection reference variables involves two layers of permissions:
 ### Permissions enforcement
 
 1. During variable library item updates:
-When updating a variable library item, the Variable Library enforces the following permissions checks:
+When updating a variable library item, the variable library enforces the following permissions checks:
 
 - All referenced connections in the active value set must exist.
 - The calling user must have READ permissions for each referenced connection in the active value set.
@@ -93,4 +93,3 @@ If the caller lacks READ permissions or the connection doesn't exist, the variab
  * [Item reference variables](./item-reference-variable-type.md)
  * [Connection reference variables](./connection-reference-variable-type.md)
  * [Create and manage variable libraries](./get-started-variable-libraries.md)
- 
