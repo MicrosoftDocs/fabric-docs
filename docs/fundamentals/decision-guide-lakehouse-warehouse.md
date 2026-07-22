@@ -56,9 +56,9 @@ The **Lakehouse** item in Fabric Data Engineering is a data architecture platfor
 
 - Store, manage, and analyze structured and unstructured data in a single location to gain insights and make decisions faster and efficiently.​
 - Flexible and scalable solution that allows organizations to handle large volumes of data of all types and sizes.​
-- Easily ingest data from many different sources, which are converted into a unified Delta format ​
+- Easily ingest data from many different sources, which are converted into a unified Delta format.
 - Automatic table discovery and registration for a fully managed file-to-table experience for data engineers and data scientists. ​
-- Automatic SQL analytics endpoint and default dataset that allows T-SQL querying of delta tables in the lake
+- Automatic SQL analytics endpoint that allows T-SQL querying of delta tables in the lake.
 
 Both are included in Power BI Premium or Fabric capacities​.
 
