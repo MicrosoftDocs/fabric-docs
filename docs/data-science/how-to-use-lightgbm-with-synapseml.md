@@ -6,7 +6,7 @@ ms.author: scottpolly
 author: s-polly
 ms.reviewer: ruxu
 reviewer: ruixinxu
-ms.date: 07/30/2025
+ms.date: 07/22/2026
 ---
 
 # Use LightGBM models with SynapseML in Microsoft Fabric
@@ -14,7 +14,7 @@ ms.date: 07/30/2025
 The [LightGBM](https://github.com/Microsoft/LightGBM) framework specializes in creating high-quality and GPU-enabled decision tree algorithms for ranking, classification, and many other machine learning tasks. In this article, you use LightGBM to build classification, regression, and ranking models.
 
 LightGBM is an open-source, distributed, high-performance gradient boosting (GBDT, GBRT, GBM, or
-MART) framework. You can use LightGBM by using LightGBMClassifier, LightGBMRegressor, and LightGBMRanker. LightGBM comes with the advantages of being incorporated into existing SparkML pipelines and used for batch, streaming, and serving workloads. It also offers a wide array of tunable parameters, that one can use to customize their decision tree system. LightGBM on Spark also supports new types of problems such as quantile regression.
+MART) framework. You can use LightGBM by using LightGBMClassifier, LightGBMRegressor, and LightGBMRanker. LightGBM comes with the advantages of being incorporated into existing SparkML pipelines and used for batch, streaming, and serving workloads. It also offers a wide array of tunable parameters, that you can use to customize your decision tree system. LightGBM on Spark also supports new types of problems such as quantile regression.
 
 ## Prerequisites
 
@@ -23,6 +23,7 @@ MART) framework. You can use LightGBM by using LightGBMClassifier, LightGBMRegre
 * Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
 * Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
+* Fabric Runtime 1.3 or later. Runtime 1.3 is the current generally available (GA) version. For more information, see [Apache Spark Runtimes in Fabric](../data-engineering/runtime.md).
 
 ## Use `LightGBMClassifier` to train a classification model
 
@@ -30,14 +31,8 @@ In this section, you use LightGBM to build a classification model for predicting
 
 1. Read the dataset.
 
-    ```python
-    from pyspark.sql import SparkSession
-    
-    # Bootstrap Spark Session
-    spark = SparkSession.builder.getOrCreate()
-    
-    from synapse.ml.core.platform import *
-    ```
+    > [!NOTE]
+    > The SynapseML team hosts the dataset in this section in a public Azure Blob Storage account. If the `wasbs://` path returns an authentication error, check the [SynapseML GitHub repository](https://github.com/microsoft/SynapseML) for an updated dataset URL, or upload the dataset manually to your lakehouse.
 
     ```python
     df = (
@@ -95,7 +90,7 @@ In this section, you use LightGBM to build a classification model for predicting
     model = model.fit(train_data)
     ```
 
-1. Visualize feature importance
+1. Visualize feature importance.
 
     ```python
     import pandas as pd
@@ -123,7 +118,7 @@ In this section, you use LightGBM to build a classification model for predicting
     plt.show()
     ```
 
-1. Generate predictions with the model
+1. Generate predictions with the model.
 
     ```python
     predictions = model.transform(test_data)
@@ -146,6 +141,9 @@ In this section, you use LightGBM to build a classification model for predicting
 In this section, you use LightGBM to build a regression model for drug discovery.
 
 1. Read the dataset.
+
+    > [!NOTE]
+    > The SynapseML team hosts the dataset in this section in a public Azure Blob Storage account. If the `wasbs://` path returns an authentication error, check the [SynapseML GitHub repository](https://github.com/microsoft/SynapseML) for an updated dataset URL, or upload the dataset manually to your lakehouse.
 
     ```python
     triazines = spark.read.format("libsvm").load(
@@ -203,6 +201,9 @@ In this section, you use LightGBM to build a ranking model.
 
 1. Read the dataset.
 
+    > [!NOTE]
+    > The datasets in this section are hosted in a public Azure Blob Storage account maintained by the SynapseML team. If the `wasbs://` paths return an authentication error, check the [SynapseML GitHub repository](https://github.com/microsoft/SynapseML) for updated dataset URLs, or upload the datasets manually to your lakehouse.
+
     ```python
     df = spark.read.format("parquet").load(
         "wasbs://publicwasb@mmlspark.blob.core.windows.net/lightGBMRanker_train.parquet"
@@ -254,6 +255,6 @@ In this section, you use LightGBM to build a ranking model.
 
 ## Related content
 
-- [What is Foundry Tools in Azure Synapse Analytics?](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
+- [Foundry Tools in SynapseML with bring your own key](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
 - [How to use KNN model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)
