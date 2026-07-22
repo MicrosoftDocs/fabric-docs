@@ -401,7 +401,7 @@ This example assumes that you have one Data Lake Storage Gen2 account named *sto
 
 :::image type="content" source="media\microsoft-spark-utilities\mount-container-example.png" alt-text="Screenshot showing where to select a container to mount." lightbox="media\microsoft-spark-utilities\mount-container-example.png":::
 
-To mount the container called *mycontainer*, *mssparkutils* first needs to check whether you have the permission to access the container. Currently, Fabric supports two authentication methods for the trigger mount operation: *accountKey* and *sastoken*.
+To mount the container named *mycontainer*, *mssparkutils* first checks whether you have permission to access the container. Fabric supports three authentication methods for the trigger mount operation: *Microsoft Entra token* (default and recommended), *accountKey*, and *sastoken*. For more information about Microsoft Entra token authentication and the current `notebookutils` API, see [NotebookUtils file mount and unmount for Fabric](notebookutils/notebookutils-mount.md).
 
 ### Mount via shared access signature token or account key
 
