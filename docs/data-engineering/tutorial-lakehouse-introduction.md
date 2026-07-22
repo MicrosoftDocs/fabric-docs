@@ -90,4 +90,4 @@ The following image shows the source, destination, and data transformation:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Create a lakehouse](tutorial-lakehouse-get-started.md)
+> [Create a Fabric workspace](tutorial-lakehouse-get-started.md)

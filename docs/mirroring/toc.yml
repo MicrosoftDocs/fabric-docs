@@ -3,6 +3,8 @@ items:
   href: index.yml
 - name: Overview
   href: overview.md
+- name: Get started
+  href: get-started-with-mirroring.md
 - name: How to
   items:
   - name: Monitor mirrored databases
