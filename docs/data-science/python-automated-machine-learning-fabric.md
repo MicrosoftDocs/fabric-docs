@@ -6,12 +6,12 @@ ms.author: scottpolly
 author: s-polly
 ms.reviewer: ruxu
 reviewer: ruixinxu
-ms.date: 07/22/2025
+ms.date: 07/22/2026
 ---
 
 # Code-first AutoML in Fabric
 
-AutoML (Automated Machine Learning) is a collection of methods and tools that automate machine learning model training and optimization with little human involvement. The aim of AutoML is to simplify and speed up the process of choosing the best machine learning model and hyperparameters for a given dataset, which usually demands much skill and computing power.
+Automated machine learning (AutoML) is a collection of methods and tools that automate machine learning model training and optimization with little human involvement. The aim of AutoML is to simplify and speed up the process of choosing the best machine learning model and hyperparameters for a given dataset, which usually demands much skill and computing power.
 
 In Fabric, data scientists can use `flaml.AutoML` to automate their machine learning tasks.
 
@@ -24,17 +24,17 @@ AutoML can help ML professionals and developers from different sectors to:
 
 ## AutoML workflow
 
-`flaml.AutoML` is a class for AutoML based on the task. It can be used as a Scikit-learn style estimator with the usual fit and predict methods.
+`flaml.AutoML` is a class for AutoML based on the task. You can use it as a Scikit-learn style estimator with the usual `fit` and `predict` methods.
 
-To start an AutoML trial, users only need to provide the training data and the task type. With the integrated MLflow experiences in Fabric, users can also examine the different runs that were attempted in the trial to see how the final model was chosen.
+To start an AutoML trial, provide the training data and the task type. By using the integrated MLflow experiences in Fabric, you can also examine the different runs that were attempted in the trial to see how the final model was chosen.
 
 ## Training data
 
-In Fabric, users can pass the following input types to the AutoML `fit` function:
+In Fabric, pass the following input types to the AutoML `fit` function:
 
-- Numpy Array: When the input data is stored in a Numpy array, it's passed to `fit()` as X_train and y_train.
-- Pandas dataframe: When the input data is stored in a Pandas dataframe, it's passed to `fit()` either as X_train and y_train, or as dataframe and label.
-- Pandas on Spark dataframe: When the input data is stored as a Spark dataframe, it can be converted into a `Pandas` on `Spark` dataframe using `to_pandas_on_spark()` and then passed to `fit()` as a dataframe and label.
+- NumPy array: When the input data is stored in a NumPy array, pass it to `fit()` as `X_train` and `y_train`.
+- Pandas DataFrame: When the input data is stored in a Pandas DataFrame, pass it to `fit()` either as `X_train` and `y_train`, or as `dataframe` and `label`.
+- Pandas on Spark DataFrame: When the input data is stored as a Spark DataFrame, convert it into a `Pandas` on `Spark` DataFrame by using `to_pandas_on_spark()`. Then, pass it to `fit()` as a `dataframe` and `label`.
 
     ```python
     from flaml.automl.spark.utils import to_pandas_on_spark
@@ -83,11 +83,11 @@ In some cases, you might want to expedite your AutoML trial by using Apache Spar
 automl.fit(X_train, y_train, n_concurrent_trials=4, use_spark=True)
 ```
 
-To learn more about how to parallelize your AutoML trails, you can visit the [FLAML documentation for parallel Spark jobs](https://microsoft.github.io/FLAML/docs/Examples/Integrate%20-%20Spark#parallel-spark-jobs).
+To learn more about how to parallelize your AutoML trials, see the [FLAML documentation for parallel Spark jobs](https://microsoft.github.io/FLAML/docs/Examples/Integrate%20-%20Spark#parallel-spark-jobs).
 
 ## Track with MLflow
 
-You can also use the Fabric MLflow integration to capture the metrics, parameters, and metrics of the explored trails.
+Use the Fabric MLflow integration to capture the metrics, parameters, and models from the explored trials.
 
 ```python
 import mlflow
@@ -95,8 +95,13 @@ mlflow.autolog()
 
 with mlflow.start_run(nested=True):
     automl.fit(dataframe=pandas_df, label='Bankrupt?', mlflow_exp_name = "automl_spark_demo")
+```
 
-# You can also provide a run_name pre-fix for the child runs
+You can also provide a `run_name` prefix for child runs. The following example creates a new AutoML instance and runs a Spark-based regression trial with explicit settings:
+
+```python
+import flaml
+import mlflow
 
 automl_experiment = flaml.AutoML()
 automl_settings = {
@@ -112,9 +117,8 @@ automl_settings = {
         "xgb_limitdepth",
     ],  # catboost does not yet support mlflow autologging
 }
-with mlflow.start_run(run_name=f"automl_spark_trials"):
+with mlflow.start_run(run_name="automl_spark_trials"):
     automl_experiment.fit(X_train=train_x, y_train=train_y, **automl_settings)
-
 ```
 
 
