@@ -347,7 +347,7 @@ Lastly, each shortcut in a lakehouse generates a set of inferred roles that are 
 Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehouse roles.
 
 > [!IMPORTANT]
-> The same user in two or more roles with different allowed columns is not supported if any of the roles also has an RLS statement. for example: Role1 allows columns c1 and c2 with RLS, and Role2 allows columns c2 and c3.
+> The same user in two or more roles with different allowed columns isn't supported if any of the roles also has an RLS statement. For example, Role1 allows columns c1 and c2 with RLS, and Role2 allows columns c2 and c3.
 
 ## OneLake security limitations
 
