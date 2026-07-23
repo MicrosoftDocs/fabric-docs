@@ -70,7 +70,7 @@ Use the **Refresh** button in the web modeling ribbon to update import table dat
 
 ## Convert a Direct Lake table to Import storage mode
 
-You can convert an individual table in a Direct Lake on OneLake semantic model from Direct Lake storage mode to Import storage mode. Converting a table produces a composite model that combines Direct Lake and Import tables. This conversion is available only in Power BI web modeling. Power BI Desktop doesn't offer per-table conversion from Direct Lake to Import storage mode.
+You can convert an individual table in a Direct Lake on OneLake semantic model from Direct Lake storage mode to Import storage mode. Converting a table creates a composite model that combines Direct Lake and Import tables. You can perform this conversion only in Power BI web modeling. Power BI Desktop doesn't offer per-table conversion from Direct Lake to Import storage mode.
 
 > [!IMPORTANT]
 > Converting a table to Import storage mode is an irreversible operation. After you convert the table, you can't set the mode back to Direct Lake. The table's Power Query M connector is converted to a SQL connector, and the table uses the Fabric SQL analytics endpoint for the data source.
