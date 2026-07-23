@@ -79,7 +79,7 @@ To convert one or multiple tables:
 
 1. Open the semantic model in Power BI web modeling and switch to **editing** mode.
 1. Select one or multiple tables you want to convert.
-1. Open the **Properties** pane and change the **Storage mode** value from **Direct Lake** to **Import**, then select **Continue** in the confirmation dialog.
+1. Open the **Properties** pane and change the **Storage mode** value from **Direct Lake** to **Import**, and then select **Continue** in the confirmation dialog.
 1. In the Power Query online experience, select **Configure connection** and provide the connection details for the data source.
 1. Select **Save** to load the data.
 1. Return to web modeling and select **Refresh**.
