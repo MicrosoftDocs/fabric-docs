@@ -221,6 +221,8 @@ items:
     href: ../real-time-intelligence/schema-sets/create-manage-event-schemas-real-time-hub.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
   - name: Use schemas in eventstreams
     href: ../real-time-intelligence/schema-sets/use-event-schemas.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+  - name: Monitor event schema set operations
+    href: ../real-time-intelligence/schema-sets/event-schema-set-operation-logs.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
   - name: Known limitations
     href: ../real-time-intelligence/schema-sets/schema-registry-limitations.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json                  
 - name: User flows

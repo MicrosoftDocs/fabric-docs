@@ -33,6 +33,7 @@ After you enable [workspace monitoring](enable-workspace-monitoring.md), you can
 | Data Factory | Copy job | [Copy job activity run details logs](../data-factory/copy-job-workspace-monitoring.md) |
 | Data Factory | Pipeline activity logs | [Pipeline Activity Run Logs](../data-factory/workspace-monitoring.md) |
 | Real-Time hub | Eventhouse | <ul><li>[Metric operation logs](../real-time-intelligence/monitor-metrics.md)</li><li>[Command logs](../real-time-intelligence/monitor-logs-command.md)</li><li>[Data operation logs](../real-time-intelligence/monitor-logs-data-operation.md)</li><li>[Ingestion results logs](../real-time-intelligence/monitor-logs-ingestion-results.md)</li></ul> |
+| Real-Time hub | Event schema set | [Event schema set operation logs](../real-time-intelligence/schema-sets/event-schema-set-operation-logs.md) |
 | Mirroring | Mirrored database | [Mirrored database execution logs](../mirroring/monitor-logs.md) |
 | Power BI | Semantic models | [Semantic model operation logs](../enterprise/powerbi/semantic-model-operations.md) |
 
