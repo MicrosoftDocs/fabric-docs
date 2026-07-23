@@ -197,10 +197,14 @@ items:
                 href: plan/planning-forecasting/planning-how-to-extend-time.md
               - name: Edit forecast settings
                 href: plan/planning-forecasting/planning-how-to-configure-forecast-settings.md
-              - name: Optimize input values
-                href: plan/planning-how-to-optimize-input-values.md
               - name: Forecasting FAQ
                 href: plan/planning-forecasting/forecasting-faq.md
+        - name: Optimize input values
+          items: 
+              - name: Optimize fundamentals
+                href: plan/planning-optimize/optimizer-overview.md
+              - name: Target based optimization
+                href: plan/planning-optimize/planning-how-to-optimize-input-values.md
         - name: Use driver models
           items: 
               - name: Create a model
