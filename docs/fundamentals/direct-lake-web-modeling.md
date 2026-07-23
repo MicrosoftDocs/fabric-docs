@@ -68,6 +68,33 @@ Direct Lake on OneLake tables can be added to an existing semantic model with im
 
 Use the **Refresh** button in the web modeling ribbon to update import table data, reframe Direct Lake tables, and perform a schema sync on all tables to get the latest column information from the respective data sources.
 
+## Convert a Direct Lake table to Import storage mode
+
+You can convert an individual table in a Direct Lake on OneLake semantic model from Direct Lake storage mode to Import storage mode. Converting a table produces a composite model that combines Direct Lake and Import tables. This conversion is available only in Power BI web modeling. Power BI Desktop doesn't offer per-table conversion from Direct Lake to Import storage mode.
+
+> [!IMPORTANT]
+> Converting a table to Import storage mode is an irreversible operation. After you convert the table, you can't set the mode back to Direct Lake. The table's Power Query M connector is converted to a SQL connector, and the table uses the Fabric SQL analytics endpoint for the data source.
+
+To convert one or multiple tables:
+
+1. Open the semantic model in Power BI web modeling and switch to **editing** mode.
+1. Select one or multiple tables you want to convert.
+1. Open the **Properties** pane and change the **Storage mode** value from **Direct Lake** to **Import**, then select **Continue** in the confirmation dialog.
+1. In the Power Query online experience, select **Configure connection** and provide the connection details for the data source.
+1. Select **Save** to load the data.
+1. Return to web modeling and select **Refresh**.
+
+The tables are now in Import storage mode alongside your Direct Lake tables.
+
+The following behaviors apply when you convert a table:
+
+- **Measures are preserved.** Measures defined on the table are retained through the conversion.
+- **Calculated columns are preserved.** Calculated columns defined on the table are retained through the conversion.
+- **Table renames are preserved.** A table that you renamed keeps its new name after the conversion.
+- **Column renames and formats revert.** A renamed or reformatted column returns to its original name and format. Reapply these changes on the Import table if you need them.
+- **Relationships are preserved when both tables are converted together.** When you convert multiple tables at once and both sides of a relationship become Import, the relationship is preserved.
+- **Relationships are dropped when only one side is converted.** If a converted Import table is related to a table that remains Direct Lake, the relationship is removed. Recreate it after the conversion if needed.
+  
 ## Related content
 
 - [Edit data models in the Power BI service](/power-bi/transform-model/service-edit-data-models)
