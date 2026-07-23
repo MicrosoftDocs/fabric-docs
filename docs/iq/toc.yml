@@ -215,6 +215,8 @@ items:
                 href: plan/planning-driver-model/planning-how-to-create-templates.md
               - name: Create a driver model
                 href: plan/planning-driver-model/planning-how-to-create-driver-model.md
+        - name: Configure approval workflows
+          href: plan/planning-how-to-configure-approval-workflows.md
     - name: Troubleshoot
       items:
           - name: Troubleshoot semantic model connection
