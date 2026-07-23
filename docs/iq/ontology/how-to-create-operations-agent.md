@@ -1,11 +1,11 @@
 ---
-title: Create an Operations Agent to Use with Ontology
+title: Create an operations agent to use with ontology
 description: Create an operations agent that monitors an ontology (preview) item by using business rules in natural language.
 ms.date: 07/17/2026
 ms.topic: how-to
 ---
 
-# Create an operations agent connected to ontology
+# Create an operations agent grounded in an ontology
 
 Ontology (preview) integrates with [operations agent](../../real-time-intelligence/operations-agent.md) to continuously monitor your ontology, surface insights against your business goals, and recommend actions—all grounded in the ontology's entity types and relationships.
 
