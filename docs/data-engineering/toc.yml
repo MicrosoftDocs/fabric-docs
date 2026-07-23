@@ -596,10 +596,14 @@ items:
         href: autoscale-billing-for-spark-overview.md
       - name: Configure autoscale billing
         href: configure-autoscale-billing.md
-      - name: Resource profile configurations
-        href: configure-resource-profile-configurations.md
-      - name: Configure resource profiles
-        href: configure-resource-profiles.md
+      - name: Resource profiles
+        items:
+        - name: Overview
+          href: resource-profiles-overview.md
+        - name: Configure resource profiles
+          href: configure-resource-profiles.md
+        - name: Resource profile configurations
+          href: configure-resource-profile-configurations.md
     - name: Job operations and monitoring
       items:
       - name: Job admission and management
