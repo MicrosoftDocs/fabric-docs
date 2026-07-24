@@ -59,7 +59,7 @@ Once the trial expires:
 - Non Power BI Fabric items (like notebooks and pipelines) remain in your tenant, but they become inactive until reassigned to a valid capacity.
 - All content remains stored in OneLake for 7 days and can be reactivated by assigning the workspace to a paid Fabric F or Power BI Premium P capacity.
 
-Read more about [ending your trial](#end-a-fabric-trial).
+For more information, see [ending your trial](#end-a-fabric-trial). If Copilot becomes unavailable after your trial ends, see [Troubleshoot Copilot unavailability after a trial expires](troubleshoot-copilot-unavailable-after-trial.md).
 
 > [!TIP]
 >
