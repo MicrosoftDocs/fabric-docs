@@ -12,8 +12,8 @@ items:
   items:
   - name: Get data into OneLake
     href: quickstart-get-data.md
-  - name: Transform with Apache Spark and query data with SQL
-    href: onelake-onecopy-quickstart.md
+  - name: Use data across Fabric
+    href: quickstart-consume-data.md
   - name: Ingest data and analyze with Azure Databricks
     href: onelake-open-access-quickstart.md
 - name: Unify your data
