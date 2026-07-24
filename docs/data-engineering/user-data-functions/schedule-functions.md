@@ -70,7 +70,7 @@ The **Schedule** page enables you to:
    |----------|-------------|-------------|
    | FunctionName | String| name of the functions, for example `hello_fabric`.|
 
-1. Add more parameters for the function inputs. For example `hello_fabric(name:str)` you will add a parameter `name` of types string.
+1. Add more parameters for the function inputs. For example, for `hello_fabric(name:str)`, add a parameter `name` of type string. 
 
    | Parameter name |Type |
    |----------|-------------|
