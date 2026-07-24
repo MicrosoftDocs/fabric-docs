@@ -10,6 +10,8 @@ ms.topic: how-to
 
 Use the **Display** tab in the panel to control how column headers and values appear in the table.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 To configure display properties:
 
 1. Select **Setup** > **Columns**.

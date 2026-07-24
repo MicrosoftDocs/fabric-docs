@@ -12,6 +12,8 @@ Use the **Sort** transformation to arrange dimensions and measures in ascending 
 
 Sorting data helps improve readability and ensures that query results appear in the order required for analysis and reporting.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Sort data
 
 The following example sorts the **Market & Geography** column in ascending order.

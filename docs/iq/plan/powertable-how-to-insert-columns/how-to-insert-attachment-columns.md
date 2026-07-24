@@ -10,6 +10,8 @@ ms.topic: how-to
 
 An attachment column is a type of [visual column](how-to-insert-visual-columns.md) that you use to attach and manage files directly within table records. The record stores the attached files, so you can easily associate supporting documents, images, and other files with your data.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Highlights and use cases
 
 By combining attachments with PowerTable's commenting and approval workflows, you can centralize feedback, track changes, collaborate on assets, and manage review and approval processes from a single location.

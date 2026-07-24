@@ -10,6 +10,8 @@ ms.topic: how-to
 
 Use the **Group By** feature to organize records into logical groups based on shared values. Grouping makes large datasets easier to navigate and analyze. Expand or collapse individual groups to control the level of detail in the table.
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Group rows
 
 To group rows:

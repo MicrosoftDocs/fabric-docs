@@ -44,6 +44,11 @@
       "source_path_from_root": "/docs/iq/plan/planning-bulk-edit/planning-how-to-bulk-edit.md",
       "redirect_url": "/fabric/iq/plan/planning-how-to-bulk-edit",
       "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/iq/plan/planning-how-to-optimize-input-values.md",
+      "redirect_url": "/fabric/iq/plan/planning-optimize/planning-how-to-optimize-input-values",
+      "redirect_document_id": true
     }
   ]
 }

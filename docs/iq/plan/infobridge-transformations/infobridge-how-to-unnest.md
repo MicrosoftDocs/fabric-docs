@@ -12,6 +12,8 @@ Use the **Unnest** transformation to split delimited text values into separate r
 
 You can find the **Unnest** transformation on the **Transform** tab.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Flatten delimited values into separate rows
 
 The following example shows order data where the **Order Tags** column contains multiple comma-separated values.

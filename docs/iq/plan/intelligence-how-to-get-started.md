@@ -11,6 +11,8 @@ ms.search.form: Getting Started with Intelligence
 
 Intelligence sheets provide a no-code, end-to-end reporting experience that brings all your data visualization needs together on a single platform. Use intelligence sheets to build reports, create dashboards, and run ad hoc analysis directly on top of your semantic models or planning sheets. Intelligence sheets include a visualization library of more than 100 chart types, including advanced visualizations such as marimekko, boxplot, waterfalls, and radar/polar charts. This article guides you through creating your first intelligence sheet.
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Import data to visualize
 
 Intelligence sheets let you transform data from planning sheets, semantic models, and file-based sources such as Excel and Parquet files into interactive reports and dashboards. Create visualizations such as charts, tables, matrices, KPI cards, and filters to analyze performance, monitor key metrics, and share insights across your organization.

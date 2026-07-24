@@ -105,7 +105,7 @@ Let's connect this workspace to the main branch of your Git repo so all team mem
 
 1. Select **Connect and sync**.
 
-After you connect, the Workspace displays information about source control that allows you to view the connected branch, the status of each item in the branch and the time of the last sync. The Source control icon shows `0` because the items in the workspace Git repo are identical.
+After you connect, the workspace displays information about source control that you can use to view the connected branch, the status of each item in the branch, and the time of the last sync. The Source control icon shows `0` because the items in the workspace Git repo are identical.
 
 :::image type="content" source="./media/cicd-tutorial/git-sync-information.png" alt-text="Screenshot of source control icon and other Git information.":::
 

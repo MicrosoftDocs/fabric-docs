@@ -17,6 +17,8 @@ The Excel-like formula engine supports more than 50 functions, including logical
 
 In this article, you learn how to insert formula measures and columns and use the formula editor to perform the required calculations with an example.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Insert a formula measure
 
 In this example, consider sales data for two years (2024 and 2025) by quarter. You create a measure to calculate percentage variance by using the formula:

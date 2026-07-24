@@ -10,6 +10,8 @@ ms.topic: how-to
 
 Customize the appearance of your table by changing text formatting, spacing, row height, row highlighting, and gridline settings.
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Adjust row height
 
 Increase or decrease the height of table rows to improve readability or display more data.

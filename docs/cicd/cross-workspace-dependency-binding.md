@@ -9,7 +9,7 @@ ms.search.form: cross-workspace deployment, logical ID, object ID, Git integrati
 
 # Understand dependency binding in cross-workspace deployment
 
-When you deploy Microsoft Fabric items across workspaces (for example, from Development to Test to Production), dependencies between items can break. Some items store references to their dependencies as **object IDs** (workspace-specific GUIDs), while others use **logical IDs** (cross-workspace portable identifiers stored in the `.platform` file).
+When you deploy Fabric items across workspaces (for example, from Development to Test to Production), dependencies between items can break. Some items store references to their dependencies as **object IDs** (workspace-specific GUIDs), while others use **logical IDs** (cross-workspace portable identifiers stored in the `.platform` file).
 
 Items that use logical IDs in their definitions bind correctly to the corresponding item in the target workspace. Items that use object IDs remain pointed at the source workspace, which breaks the deployment.
 
@@ -72,17 +72,17 @@ The **Auto-bind in Git** column indicates:
 | Spark Job Definition | No | The SparkJobDefinition activity references the Spark Job Definition by object ID, not logical ID, so it stays pointed at the source item after deployment. You need to parameterize this value for cross-workspace deployment. |
 | Lakehouse | Yes | |
 | Semantic Model | No | PBISemanticModelRefresh activity references the semantic model by item ID, not logical ID. You need to parameterize this value for cross-workspace deployment. |
-| Warehouse | No | The Warehouse `artifactId` resolves through the logical ID and rebinds, but the `linkedService` also stores the source workspace's SQL `endpoint`, which isn't rewritten. Parameterize the `endpoint` for cross-workspace deployment. |
+| Warehouse | No | The warehouse `artifactId` resolves through the logical ID and rebinds, but the `linkedService` also stores the source workspace's SQL `endpoint`, which isn't rewritten. Parameterize the `endpoint` for cross-workspace deployment. |
 
 ### Semantic models
 
 | Dependency | Auto-bind in Git | Notes |
 |---|---|---|
-| Semantic Model | Partial | Chained or composite model references use connection strings by name. |
-| SQL Endpoint Analytics (Lakehouse) | No | The Direct Lake connection string in TMDL `expressions.tmdl` contains a workspace-specific endpoint URL and database GUID. You need to replace these parameters for cross-workspace deployment. |
-| KQL Database | No | The connection string with a cluster URI in TMDL expressions contains workspace-specific values. |
-| SQL Database | No | The connection string in TMDL expressions contains workspace-specific values. |
-| Warehouse | No | The connection to the Warehouse SQL endpoint uses a workspace-specific URL. |
+| Semantic model | Partial | Chained or composite model references use connection strings by name. |
+| SQL Analytics Endpoint (lakehouse) | No | The Direct Lake connection string in TMDL `expressions.tmdl` contains a workspace-specific endpoint URL and database GUID. You need to replace these parameters for cross-workspace deployment. |
+| KQL database | No | The connection string with a cluster URI in TMDL expressions contains workspace-specific values. |
+| SQL database | No | The connection string in TMDL expressions contains workspace-specific values. |
+| Warehouse | No | The connection to the warehouse SQL analytics endpoint uses a workspace-specific URL. |
 
 ### Lakehouses
 
@@ -121,7 +121,7 @@ By default, Dataflow Gen2 creates absolute references to Fabric items: the query
 | Dependency | Auto-bind in Git | Notes |
 |---|---|---|
 | Lakehouse | Yes | |
-| Warehouse | No | The Warehouse `artifactId` resolves through the logical ID and rebinds, but the `linkedService` also stores the source workspace's SQL `endPoint`, which isn't rewritten. Parameterize the `endPoint` for cross-workspace deployment. |
+| Warehouse | No | The warehouse `artifactId` resolves through the logical ID and rebinds, but the `linkedService` also stores the source workspace's SQL `endPoint`, which isn't rewritten. Parameterize the `endPoint` for cross-workspace deployment. |
 | SQL Database | Yes | |
 
 ### GraphQL APIs
@@ -146,9 +146,9 @@ For all GraphQL API data sources, you might need to reconfigure the connection a
 
 | Dependency | Auto-bind in Git | Notes |
 |---|---|---|
-| KQL Database to Eventhouse | Yes | The `parentEventhouseItemId` in `DatabaseProperties.json` is a logical ID and binds to the target Eventhouse. A KQL database deploys as a child of its parent Eventhouse. |
-| KQL Queryset to KQL Database | Partial | Resolves through `clusterUri` and `databaseName`, not the item ID. The definition includes a `databaseItemId`, but it's an object ID that doesn't rebind, so resolution depends on the URI across environments. |
-| Real-Time Dashboard to KQL Database | Partial | Uses a `dataSources` array with cluster URIs. Same pattern as KQL Queryset. |
+| KQL database to eventhouse | Yes | The `parentEventhouseItemId` in `DatabaseProperties.json` is a logical ID and binds to the target eventhouse. A KQL database deploys as a child of its parent eventhouse. |
+| KQL queryset to KQL database | Partial | Resolves through `clusterUri` and `databaseName`, not the item ID. The definition includes a `databaseItemId`, but it's an object ID that doesn't rebind, so resolution depends on the URI across environments. |
+| Real-Time Dashboard to KQL database | Partial | Uses a `dataSources` array with cluster URIs. Same pattern as KQL queryset. |
 
 ### Warehouses
 
@@ -169,7 +169,7 @@ The following items have no cross-workspace dependency binding concerns:
 
 - Environment
 - SQL Database
-- Eventhouse (container item; KQL Databases reference it)
+- Eventhouse (container item; KQL databases reference it)
 - Mirrored Database (external source configuration only)
 
 ## Summary

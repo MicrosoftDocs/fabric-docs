@@ -20,6 +20,8 @@ Use single select predefined options to maintain data consistency, simplify data
 
 The following sections describe how to configure each option source.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## Manual
 
 Use the **Manual** option to define dropdown values and labels directly.

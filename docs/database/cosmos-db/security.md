@@ -3,10 +3,10 @@ title: Secure Your Cosmos DB Database
 description: Review the fundamentals of securing Cosmos DB in Microsoft Fabric from the perspective of data security.
 ms.reviewer: mjbrown
 ms.topic: best-practice
-ms.date: 11/12/2025
+ms.date: 07/17/2026
 ms.custom: [security-horizontal-2025, horz-security]
 ms.search.form: Cosmos DB database security
-ai-usage: ai-generated
+ai-usage: ai-assisted
 ---
 
 # Secure your Cosmos DB in Microsoft Fabric database
@@ -29,9 +29,9 @@ This article provides guidance on how to best secure your Cosmos DB in Fabric de
 
 ## Execution context and identity considerations
 
-- **Understand notebook execution identity**: When working with notebooks in Fabric workspaces, be aware that Fabric artifacts always execute with the identity of the user who created them, regardless of who executes. This means that data access permissions and audit trails will reflect the notebook creator's identity, not the executor's identity. Plan your notebook creation and sharing strategy accordingly to ensure appropriate access controls.
+- **Understand notebook execution identity**: When working with notebooks in Fabric workspaces, be aware that the identity a notebook runs under depends on how it's triggered. An interactive run uses the security context of the current user, a pipeline activity runs under the pipeline's last modified user, and a scheduled run uses the identity of the user who created or last updated the schedule. Because data access permissions and audit trails reflect that identity, plan your notebook creation, sharing, and scheduling strategy accordingly. For more information, see [Security context of running notebook](../../data-engineering/how-to-use-notebook.md#security-context-of-running-notebook).
 
-- **Plan for workspace identity limitations**: Currently, Fabric does not support `run-as` functionality with Workspace Identity. Operations execute with the identity of the user that created them rather than a shared workspace identity. Consider this when designing multi-user scenarios and ensure that the appropriate users create artifacts that will be shared within the workspace.
+- **Plan for workspace identity limitations**: Currently, Fabric doesn't support `run-as` functionality with Workspace Identity. Operations execute with the triggering user's identity rather than a shared workspace identity. Consider this when you design multi-user scenarios and ensure that the appropriate users trigger artifacts that are shared within the workspace.
 
 ## Related content
 

@@ -6,9 +6,11 @@ ms.topic: how-to
 #customer intent: As a user, I want to append multiple queries so that I can combine rows from multiple data sources into a single query.
 ---
 
-# Append queries
+# Append queries in Infobridge
 
 Use **Append Query** to combine rows from multiple queries into a single query. Append queries when the source tables have the same column structure and compatible data types.
+
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
 ## Example scenario
 

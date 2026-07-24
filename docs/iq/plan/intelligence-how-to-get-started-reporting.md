@@ -9,6 +9,8 @@ ms.topic: how-to
 
 Create reports that present data in the format best suited to your audience. Use table visuals to show data as flat tables, matrix visuals to analyze data across rows and columns, and embed planning sheets and PowerTable sheets to include detailed planning and operational data directly in your reports.
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Show tabular and hierarchical data with tables and matrices
 
 Tables and matrices show detailed data in rows and columns so you can review, compare, and analyze individual records. Add tables and matrix visuals to show granular data alongside visualizations and KPIs.

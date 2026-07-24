@@ -4,7 +4,7 @@ description: Learn how to set up and configure anomaly detection for your real-t
 ms.reviewer: tessarhurr, hzargari-ms
 ms.topic: how-to
 ms.subservice: rti-anomaly-detector
-ms.date: 07/12/2026
+ms.date: 07/14/2026
 ms.search.form: Anomaly Detection How To
 ai-usage: ai-assisted
 ---
@@ -21,6 +21,7 @@ Key capabilities include:
 - **Reanalysis with new data**: Update your models as new data arrives to improve accuracy.
 
 Anomaly detection runs natively on Eventhouse tables without copying data, operating directly over live datasets for real-time analysis. Analysis and continuous monitoring execute in place within Eventhouse, which minimizes data movement.
+
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 

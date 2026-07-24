@@ -3,7 +3,7 @@ title: "Schedule a Materialized Lake View Refresh"
 description: Learn how to schedule a materialized lake view refresh
 ms.topic: how-to
 ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
-ms.date: 05/06/2026
+ms.date: 07/02/2026
 ai-usage: ai-assisted
 ---
 
@@ -13,7 +13,7 @@ As source data changes, materialized lake views (MLVs) in your Lakehouse need re
 
 ## View schedules
 
-To see all configured schedules for MLVs in a Lakehouse, select the **Materialized lake views** tab in the ribbon, then select **Manage**. In the lineage toolbar, select **Schedules**. The **Schedules** pane opens beside the lineage view.
+To see all configured schedules for MLVs in a Lakehouse, select the **Materialized lake views** tab in the ribbon, then select **Manage**. In the lineage toolbar, select **Manage schedules**. The **Manage schedules** pane opens beside the lineage view.
 
 :::image type="content" source="media/schedule-lineage-run/schedule-pane.png" alt-text="Screenshot showing the schedule pane." border="true" lightbox="media/schedule-lineage-run/schedule-pane.png":::
 
@@ -23,14 +23,15 @@ Before you create a schedule, consider what drives your refresh timing:
 
 | Question | Guidance |
 |---|---|
-| **How often does source data change?** | Match your schedule to your data arrival cadence. If bronze tables update hourly, refreshing gold views every 15 minutes wastes compute without improving freshness. |
-| **When do end users need fresh data?** | Align schedules with reporting SLAs — for example, schedule a refresh 30 minutes before a morning dashboard review. |
+| **How often does source data change?** | Match your time-based schedule to your data arrival cadence. If bronze tables update hourly, refreshing gold views every 15 minutes wastes compute without improving freshness. |
+| **Is your source data arrival unpredictable?** | If data lands on a variable cadence, use event-triggered refreshes instead of a fixed schedule. This approach avoids unnecessary refreshes when no new data arrives. |
+| **When do end users need fresh data?** | Align time-based schedules with reporting SLAs — for example, schedule a refresh 30 minutes before a morning dashboard review. |
 | **Do you have independent lineages?** | If your Lakehouse has materialized lake views with separate source tables, schedule them at different cadences so one doesn't block the other. |
-| **What is the current capacity load?** | Start with a longer interval and tighten it as you observe capacity usage in your capacity metrics app. |
+| **What is the current capacity load?** | Start with a longer interval on a time-based schedule and tighten it as you observe capacity usage in your capacity metrics app. |
 
-## Create a schedule
+## Create a refresh configuration
 
-1. Select **New schedule** in the **Schedules** pane.
+1. Select **New schedule** in the **Manage schedules** pane.
 
 1. Enter a **Name** for the schedule and optionally add a **Description**.
 
@@ -46,11 +47,24 @@ Before you create a schedule, consider what drives your refresh timing:
     > [!TIP]
     > You can select views at any level in the lineage.
 
-1. Configure the schedule:
+1. Under **Refresh type**, choose how the refresh is triggered:
+   - **Time-based**: refresh on a recurring cadence. Provide the following information:
 
-    - Set **Repeat** (minute, hourly, daily, weekly, or monthly).
-    - Add one or more **Time** slots.
-    - Set **Start date**, **End date**, and **Time zone**.
+        - Set **Repeat** (minute, hourly, daily, weekly, or monthly).
+        - Add one or more **Time** slots.
+        - Set **Start date**, **End date**, and **Time zone**.
+
+    - **Event-triggered** (Preview): refresh automatically when an event occurs. Provide the following information:
+
+        - Select the **Event source type**: **Job events** (Fabric Notebook or ADF pipeline completions) or **OneLake events** (data ingestion into OneLake).
+        - Select the **Event type** to subscribe to.
+        - Configure the event source.
+
+        [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+        
+        > [!NOTE]
+        > Only OneLake events and Notebook and Pipeline job events are supported as event sources.
+        > Event-triggered refreshes depend on the auto-created "FMLV Refresh" Notebook and Activator items. Modifying or deleting these items might cause event-triggered refreshes to stop working as expected.
 
 1. Select **Save**.
 
@@ -62,7 +76,7 @@ Before you create a schedule, consider what drives your refresh timing:
 
 ## Run a schedule on demand
 
-To trigger an immediate refresh without waiting for the next scheduled time, select **Run** next to any schedule in the **Schedules** pane. The run uses the same scope and settings as the schedule.
+To trigger an immediate refresh without waiting for the next scheduled time, select **Run** next to any schedule in the **Manage schedules** pane. The run uses the same scope and settings as the schedule.
 
 ## Run a single materialized lake view
 
@@ -95,7 +109,7 @@ If the Spark environment is deleted, the environment dropdown shows an error and
 
 ## Manage schedules
 
-From the **Schedules** pane, search by name or filter by **Active**/**Inactive** to find a schedule.
+From the **Manage schedules** pane, search by name or filter by **Active**/**Inactive** to find a schedule.
 
 - **Edit**: Select the pencil icon, update views, recurrence, or date range, and then select **Save**.
 - **Pause or resume**: Toggle the **On/Off** switch. Use this option during maintenance or while investigating issues.
@@ -109,7 +123,7 @@ This is useful when your data flows through multiple lakehouses. For example, a 
 
 ### Schedule a cross-lakehouse refresh
 
-1. Open the **Schedules** pane and select **New schedule** (or edit an existing one).
+1. Open the **Manage schedules** pane and select **New schedule** (or edit an existing one).
 
 1. Choose a refresh scope — **Refresh all materialized lake views** or **Refresh selected materialized lake view(s)**.
 
@@ -122,7 +136,7 @@ This is useful when your data flows through multiple lakehouses. For example, a 
     > [!TIP]
     > If you leave all lakehouses unselected, Fabric includes every lakehouse in the extended lineage by default.
 
-1. Configure the recurrence (**Repeat**, **Time**, **Start date**, **End date**, **Time zone**) and select **Save**.
+1. Configure the refresh for the refresh type of your choice and select **Save**.
 
 Fabric refreshes the materialized lake views across all included lakehouses in dependency order. The current lakehouse is always included — you don't need to select it explicitly.
 

@@ -1,16 +1,18 @@
 ---
 title: 'Tutorial: Use R to predict churn'
-description: This tutorial shows a data science work flow in R, with an end-to-end example of building a model to predict churn.
+description: This tutorial shows a data science workflow in R, with an end-to-end example of building a model to predict churn.
 ms.author: lagayhar
 ms.reviewer: ruxu
 ms.topic: tutorial
 ms.date: 07/11/2025
+ms.custom: dev-focus
+ai-usage: ai-assisted
 #customer intent: As a data scientist, I want to build a machine learning model by using R so I can predict customer churn.
 ---
 
 # Tutorial: Use R to create, evaluate, and score a churn prediction model
 
-This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario builds a model to predict whether or not bank customers churn. The churn rate, or the rate of attrition, involves the rate at which bank customers end their business with the bank.
+This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario builds a model to predict whether bank customers churn. The churn rate, or the rate of attrition, is the rate at which bank customers end their business with the bank.
 
 This tutorial covers these steps:
 
@@ -18,7 +20,7 @@ This tutorial covers these steps:
 > * Install custom libraries
 > * Load the data
 > * Understand and process the data through exploratory data analysis
-> * Use scikit-learn and LightGBM to train machine learning models
+> * Use randomForest and LightGBM to train machine learning models
 > * Evaluate and save the final machine learning model
 > * Show the model performance with Power BI visualizations
 
@@ -28,12 +30,15 @@ This tutorial covers these steps:
 
 * If necessary, create a Microsoft Fabric lakehouse as described in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
 
+> [!NOTE]
+> This tutorial requires **Fabric Runtime 1.3** (R 4.4.1, Apache Spark 3.5). Runtime 1.2 reached end of support on March 31, 2026. To upgrade, see [Apache Spark runtimes in Fabric](../data-engineering/runtime.md).
+
 ## Follow along in a notebook
 
-You can choose one of these options to follow along in a notebook:
+To follow along in a notebook, choose one of these options:
 
-- Open and run the built-in notebook in the Synapse Data Science experience.
-- Upload your notebook from GitHub to the Synapse Data Science experience.
+- Open and run the built-in notebook in the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] experience.
+- Upload your notebook from GitHub to the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] experience.
 
 ### Open the built-in notebook
 
@@ -53,16 +58,28 @@ The [AIsample - R Bank Customer Churn.ipynb](https://github.com/microsoft/fabric
 
 For machine learning model development or ad-hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. You have two options to install libraries.
 
-* Use inline installation resources, for example `install.packages` and `devtools::install_version`, to install in your current notebook only.
-* Alternatively, you can create a Fabric environment, install libraries from public sources or upload custom libraries to it, and then your workspace admin can attach the environment as the default for the workspace. All the libraries in the environment will then become available for use in any notebooks and Spark job definitions in the workspace. For more information on environments, see [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment).
+* Use inline installation resources, such as `install.packages` and `devtools::install_version`, to install in your current notebook only.
+* Alternatively, you can create a Fabric environment, install libraries from public sources or upload custom libraries to it, and then your workspace admin can attach the environment as the default for the workspace. All the libraries in the environment become available for use in any notebooks and Spark job definitions in the workspace. For more information on environments, see [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment).
 
-In this tutorial, use `install.packages()` to install the `imbalance` and `randomForest` libraries. Set `quiet` to `TRUE` to make the output more concise:
+In this tutorial, use `install.packages()` to install the required libraries. Set `quiet` to `TRUE` to make the output more concise:
 
 ```r
 # Install imbalance for SMOTE
 install.packages("imbalance", quiet = TRUE)
 # Install the random forest algorithm
-install.packages("randomForest", quiet=TRUE)
+install.packages("randomForest", quiet = TRUE)
+# Install additional packages required in Steps 4 and 5
+install.packages(c("caret", "pROC", "dplyr"), quiet = TRUE)
+```
+
+> [!NOTE]
+> The `lightgbm` and `smotefamily` packages are preinstalled in the Fabric Spark R environment. If you run this code outside of Fabric, also install them: `install.packages(c("lightgbm", "smotefamily"), quiet = TRUE)`.
+
+**Verify**: Confirm that the packages installed successfully:
+
+```r
+cat("randomForest:", as.character(packageVersion("randomForest")), "\n")
+cat("imbalance:", as.character(packageVersion("imbalance")), "\n")
 ```
 
 ## Step 2: Load the data
@@ -82,9 +99,9 @@ The dataset in *churn.csv* contains the churn status of 10,000 customers, along 
 
 The dataset also includes row number, customer ID, and customer surname columns. Values in these columns shouldn't influence a customer's decision to leave the bank.
 
-A customer bank account closure event defines the churn for that customer. The dataset `Exited` column refers to the customer's abandonment. Since we have little context about these attributes, we don't need background information about the dataset. We want to understand how these attributes contribute to the `Exited` status.
+A customer bank account closure event defines the churn for that customer. The dataset `Exited` column refers to the customer's abandonment. The tutorial explores how these attributes contribute to the `Exited` status.
 
-Out of the 10,000 customers, only 2037 customers (around 20%) left the bank. Because of the class imbalance ratio, we recommend generating synthetic data generation.
+Out of the 10,000 customers, only 2,037 customers (around 20%) left the bank. Because of the class imbalance ratio, the tutorial generates synthetic data to balance the training set.
 
 This table shows a preview sample of the `churn.csv` data:
 
@@ -93,10 +110,10 @@ This table shows a preview sample of the `churn.csv` data:
 |15634602|Hargrave|619|France|Female|42|2|0.00|1|1|1|101348.88|1|
 |15647311|Hill|608|Spain|Female|41|1|83807.86|1|0|1|112542.58|0|
 
-### Download the dataset and upload to the lakehouse
+### Download the dataset and upload it to the lakehouse
 
 > [!IMPORTANT]
-> [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before you run it. Failure to do so will result in an error.
+> Before running the notebook, [add a lakehouse](https://aka.ms/fabric/addlakehouse). If you don't add a lakehouse, an error occurs.
 
 This code downloads a publicly available version of the dataset, and then stores that data in a Fabric lakehouse:
 
@@ -104,22 +121,28 @@ This code downloads a publicly available version of the dataset, and then stores
 library(fs)
 library(httr)
 
-remote_url <- "https://synapseaisolutionsa.z13.web.core.windows.net/data/bankcustomerchurn/churn.csv"
+remote_url <- "https://synapseaisolutionsa.z13.web.core.windows.net/data/bankcustomerchurn"
 file_list <- c("churn.csv")
 download_path <- "/lakehouse/default/Files/churn/raw"
 
 if (!dir_exists("/lakehouse/default")) {
   stop("Default lakehouse not found, please add a lakehouse and restart the session.")
 }
-dir_create(download_path, recurse= TRUE)
+dir_create(download_path, recurse = TRUE)
 for (fname in file_list) {
   if (!file_exists(paste0(download_path, "/", fname))) {
     r <- GET(paste0(remote_url, "/", fname), timeout(30))
+    if (status_code(r) != 200) {
+      stop(paste0("Failed to download ", fname, ". HTTP status: ", status_code(r)))
+    }
     writeBin(content(r, "raw"), paste0(download_path, "/", fname))
   }
 }
-print("Downloaded demo data files into lakehouse.")
+cat("Downloaded demo data files into lakehouse.\n")
 ```
+
+> [!NOTE]
+> The `remote_url` variable points to the directory that contains the data file. Each filename in `file_list` is appended to form the full download URL.
 
 Start recording the time needed to run this notebook:
 
@@ -128,21 +151,33 @@ Start recording the time needed to run this notebook:
 ts <- as.numeric(Sys.time())
 ```
 
-### Read raw date data from the lakehouse
+### Read raw data from the lakehouse
 
 This code reads raw data from the **Files** section of the lakehouse:
 
 ```r
 fname <- "churn.csv"
 download_path <- "/lakehouse/default/Files/churn/raw"
-rdf <- readr::read_csv(paste0(download_path, "/", fname))
+rdf <- readr::read_csv(paste0(download_path, "/", fname), show_col_types = FALSE)
+```
+
+**Verify**: Confirm that the data loads with the expected dimensions:
+
+```r
+cat("Rows:", nrow(rdf), "  Columns:", ncol(rdf), "\n")
+```
+
+Expected output:
+
+```
+Rows: 10000   Columns: 14
 ```
 
 ## Step 3: Perform exploratory data analysis
 
 ### Display raw data
 
-Use the `head()` or `str()` commands to perform a preliminary exploration of the raw data:  
+Use the `head()` or `str()` commands to perform a preliminary exploration of the raw data.  
 
 ```r
 head(rdf)
@@ -150,11 +185,11 @@ head(rdf)
 
 ### Perform initial data cleaning
 
-You must convert the R DataFrame to a Spark DataFrame. These operations on the Spark DataFrame clean the raw dataset:
+Convert the R DataFrame to a Spark DataFrame. These operations on the Spark DataFrame clean the raw dataset:
 
-- Drop the rows that have missing data across all columns
-- Drop the duplicate rows across the columns `RowNumber` and `CustomerId`
-- Drop the columns `RowNumber`, `CustomerId`, and `Surname`
+- Drop the rows that have missing data across all columns.
+- Drop the duplicate rows across the columns `RowNumber` and `CustomerId`.
+- Drop the columns `RowNumber`, `CustomerId`, and `Surname`.
 
 ```r
 # Transform the R DataFrame to a Spark DataFrame
@@ -174,13 +209,13 @@ clean_data <- function(df) {
 df_clean <- clean_data(df)
 ```
 
-Explore the Spark DataFrame with the `display` command:
+Explore the Spark DataFrame with the `display` command.
 
 ```r
 display(df_clean)
 ```
 
-This code determines the categorical, numerical, and target attributes:
+This code determines the categorical, numerical, and target attributes.
 
 ```r
 # Determine the dependent (target) attribute
@@ -188,12 +223,14 @@ dependent_variable_name <- "Exited"
 print(dependent_variable_name)
 
 # Obtain the distinct values for each column
-exprs = lapply(names(df_clean), function(x) alias(countDistinct(df_clean[[x]]), x))
+exprs <- lapply(names(df_clean), function(x) alias(countDistinct(df_clean[[x]]), x))
 # Use do.call to splice the aggregation expressions to aggregate function
 distinct_value_number <- SparkR::collect(do.call(agg, c(x = df_clean, exprs)))
 
-# Determine the categorical attributes
-categorical_variables <- names(df_clean)[sapply(names(df_clean), function(col) col %in% c("0") || distinct_value_number[[col]] <= 5 && !(col %in% c(dependent_variable_name)))]
+# Determine the categorical attributes (5 or fewer distinct values, excluding target)
+categorical_variables <- names(df_clean)[sapply(names(df_clean), function(col) {
+  distinct_value_number[[col]] <= 5 && !(col %in% c(dependent_variable_name))
+})]
 print(categorical_variables)
 
 # Determine the numerical attributes
@@ -201,7 +238,7 @@ numeric_variables <- names(df_clean)[sapply(names(df_clean), function(col) colty
 print(numeric_variables)
 ```
 
-For easier processing and visualization, convert the cleaned Spark DataFrame to an R DataFrame:
+For easier processing and visualization, convert the cleaned Spark DataFrame to an R DataFrame.
 
 ```r
 # Transform the Spark DataFrame to an R DataFrame
@@ -341,7 +378,7 @@ for (item in numeric_variables[3:5]) {
 
 ### Perform feature engineering
 
-This feature engineering generates new attributes based on current attributes:
+This feature engineering process generates new attributes based on current attributes:
 
 ```r
 rdf_clean$NewTenure <- rdf_clean$Tenure / rdf_clean$Age
@@ -353,7 +390,7 @@ rdf_clean$NewEstSalaryScore <- as.numeric(cut(rdf_clean$EstimatedSalary, breaks=
 
 ### Perform one-hot encoding
 
-Use one-hot encoding to convert the categorical attributes to numerical attributes, to feed them into the machine learning model:
+Use one-hot encoding to convert the categorical attributes to numerical attributes, so you can feed them into the machine learning model:
 
 ```r
 rdf_clean <- cbind(rdf_clean, model.matrix(~Geography+Gender-1, data=rdf_clean))
@@ -373,11 +410,11 @@ cat(paste0("Spark DataFrame saved to delta table: ", table_name))
 ### Summary of observations from the exploratory data analysis
 
 - Most of the customers are from France. Spain has the lowest churn rate, compared to France and Germany.
-- Most customers have credit cards
-- Some customers are both over the age of 60 and have credit scores below 400. However, they can't be considered as outliers
-- Few customers have more than two bank products
-- Inactive customers have a higher churn rate
-- Gender and tenure years have little impact on a customer's decision to close a bank account
+- Most customers have credit cards.
+- Some customers are both over the age of 60 and have credit scores below 400. However, they aren't considered as outliers.
+- Few customers have more than two bank products.
+- Inactive customers have a higher churn rate.
+- Gender and tenure years have little impact on a customer's decision to close a bank account.
 
 ## Step 4: Perform model training
 
@@ -412,11 +449,25 @@ y_test <- y[!split]
 train_df <- cbind(X_train, y_train)
 ```
 
+**Verify**: Confirm the train/test split dimensions:
+
+```r
+cat("Training set:", nrow(X_train), "rows\n")
+cat("Test set:", nrow(X_test), "rows\n")
+```
+
+Expected output (approximate due to random split):
+
+```
+Training set: ~8000 rows
+Test set: ~2000 rows
+```
+
 ### Apply SMOTE to the training dataset
 
-Imbalanced classification has a problem, because it has too few examples of the minority class for a model to effectively learn the decision boundary. To handle this, Synthetic Minority Oversampling Technique (SMOTE) is the most widely used technique to synthesize new samples for the minority class. Access SMOTE with the `imblearn` library that you installed in step 1.
+Imbalanced classification has a problem: it has too few examples of the minority class for a model to effectively learn the decision boundary. To handle this problem, the most widely used technique is the Synthetic Minority Oversampling Technique (SMOTE), which synthesizes new samples for the minority class. Access SMOTE by using the `imbalance` library that you installed in step 1.
 
-Apply SMOTE only to the training dataset. You must leave the test dataset in its original imbalanced distribution, to get a valid approximation of model performance on the original data. This experiment represents the situation in production.
+Apply SMOTE only to the training dataset. Leave the test dataset in its original imbalanced distribution, so you get a valid approximation of model performance on the original data. This experiment represents the situation in production.
 
 First, show the distribution of classes in the dataset, to learn which class is the minority class. The ratio of minority class to majority class is defined as `imbalance Ratio` in the `imbalance` library.
 
@@ -457,9 +508,23 @@ Use the newly defined oversample function to perform oversampling on the trainin
 
 ```r
 library(dplyr)
-new_train_df <- binary_oversample(train_df, X_train, y_train, class_Attr="y_train")
+new_train_df <- binary_oversample(train_df, X_train, y_train, class_Attr = "y_train")
 smote_ratio <- imbalance::imbalanceRatio(new_train_df, classAttr = "y_train")
-message(sprintf("Imbalance ratio after using smote is %.2f%%\n", smote_ratio * 100))
+message(sprintf("Imbalance ratio after using SMOTE is %.2f%%\n", smote_ratio * 100))
+```
+
+**Verify**: Confirm that the training dataset is balanced:
+
+```r
+cat("Class 0 (Non-Exited):", sum(new_train_df$y_train == 0), "\n")
+cat("Class 1 (Exited):", sum(new_train_df$y_train == 1), "\n")
+```
+
+Expected output (approximate):
+
+```
+Class 0 (Non-Exited): ~6400
+Class 1 (Exited): ~6400
 ```
 
 ### Train the model
@@ -473,8 +538,11 @@ y_pred <- predict(rfc1_sm, X_test, type = "response")
 cr_rfc1_sm <- caret::confusionMatrix(y_pred, y_test)
 cm_rfc1_sm <- table(y_pred, y_test)
 roc_auc_rfc1_sm <- pROC::auc(pROC::roc(as.numeric(y_test), as.numeric(y_pred)))
-print(paste0("The auc is ", roc_auc_rfc1_sm))
+cat("Random Forest (mtry=4) AUC:", as.numeric(roc_auc_rfc1_sm), "\n")
 ```
+
+> [!NOTE]
+> The AUC should be greater than 0.7. A typical value for this dataset is around 0.73.
 
 Use random forest to train the model, with six features:
 
@@ -484,8 +552,11 @@ y_pred <- predict(rfc2_sm, X_test, type = "response")
 cr_rfc2_sm <- caret::confusionMatrix(y_pred, y_test)
 cm_rfc2_sm <- table(y_pred, y_test)
 roc_auc_rfc2_sm <- pROC::auc(pROC::roc(as.numeric(y_test), as.numeric(y_pred)))
-print(paste0("The auc is ", roc_auc_rfc2_sm))
+cat("Random Forest (mtry=6) AUC:", as.numeric(roc_auc_rfc2_sm), "\n")
 ```
+
+> [!NOTE]
+> The AUC should be greater than 0.7 and is typically slightly higher than the `mtry=4` model.
 
 Train the model with LightGBM:
 
@@ -494,14 +565,30 @@ set.seed(42)
 X_train <- new_train_df[, !(colnames(new_train_df) %in% c("y_train"))]
 y_train <- as.numeric(as.character(new_train_df$y_train))
 y_test <- as.numeric(as.character(y_test))
-lgbm_sm_model <- lgb.train(list(objective = "binary", learning_rate = 0.1, max_delta_step = 2, nrounds = 100, max_depth = 10, eval_metric = "logloss"), lgb.Dataset(as.matrix(X_train), label = as.vector(y_train)), valids = list(test = lgb.Dataset(as.matrix(X_test), label = as.vector(as.numeric(y_test)))))
+lgbm_params <- list(
+    objective      = "binary",
+    learning_rate  = 0.1,
+    max_delta_step = 2,
+    max_depth      = 10,
+    eval_metric    = "logloss"
+)
+
+lgbm_sm_model <- lgb.train(
+    params  = lgbm_params,
+    data    = lgb.Dataset(as.matrix(X_train), label = as.vector(y_train)),
+    nrounds = 100,
+    valids  = list(test = lgb.Dataset(as.matrix(X_test), label = as.vector(y_test)))
+)
 y_pred <- as.numeric(predict(lgbm_sm_model, as.matrix(X_test)) > 0.5)
 accuracy <- mean(y_pred == as.vector(y_test))
 cr_lgbm_sm <- caret::confusionMatrix(as.factor(y_pred), as.factor(as.vector(y_test)))
 cm_lgbm_sm <- table(y_pred, as.vector(y_test))
 roc_auc_lgbm_sm <- pROC::auc(pROC::roc(as.vector(y_test), y_pred))
-print(paste0("The auc is ", roc_auc_lgbm_sm))
+cat("LightGBM AUC:", as.numeric(roc_auc_lgbm_sm), "\n")
 ```
+
+> [!NOTE]
+> The AUC should be greater than 0.7. A typical accuracy is around 0.86.
 
 ## Step 5: Evaluate and save the final machine learning model
 
@@ -513,7 +600,7 @@ ypred_rfc2_sm <- predict(rfc2_sm, X_test, type = "response")
 ypred_lgbm1_sm <- as.numeric(predict(lgbm_sm_model, as.matrix(X_test)) > 0.5)
 ```
 
-Show true/false positives/negatives with a confusion matrix. Develop a script to plot the confusion matrix, to evaluate the classification accuracy:
+Show true and false positives and negatives with a confusion matrix. Develop a script to plot the confusion matrix, to evaluate the classification accuracy:
 
 ```r
 plot_confusion_matrix <- function(cm, classes, normalize=FALSE, title='Confusion matrix', cmap=heat.colors(10)) {
@@ -550,7 +637,7 @@ Create a confusion matrix for the random forest classifier, with six features:
 
 ```r
 cfm <- table(y_test, ypred_rfc2_sm)
-plot_confusion_matrix(cfm, classes=c('Non  Churn','Churn'), title='Random Forest with features of 6')
+plot_confusion_matrix(cfm, classes=c('Non Churn','Churn'), title='Random Forest with features of 6')
 tn <- cfm[1,1]
 fp <- cfm[1,2]
 fn <- cfm[2,1]
@@ -574,7 +661,7 @@ tp <- cfm[2,2]
 
 ### Save results for Power BI
 
-Save the delta frame to the lakehouse, to move the model prediction results to a Power BI visualization:
+Save the delta table to the lakehouse, to move the model prediction results to a Power BI visualization:
 
 ```r
 df_pred <- X_test
@@ -594,13 +681,13 @@ cat(paste0("Spark DataFrame saved to delta table: ", table_name))
 
 Access your saved table in Power BI:
 
-1. On the left, select **OneLake catalog**
-1. Select the lakehouse that you added to this notebook
-1. In the **Open this Lakehouse** section, select **Open**
-1. On the ribbon, select **New semantic model**. Select `df_pred_results`, and then select **Continue** to create a new Power BI semantic model linked to the predictions
+1. On the left, select **OneLake catalog**.
+1. Select the lakehouse that you added to this notebook.
+1. In the **Open this Lakehouse** section, select **Open**.
+1. On the ribbon, select **New semantic model**. Select `df_pred_results`, and then select **Continue** to create a new Power BI semantic model linked to the predictions.
 1. On the tools at the top of the dataset page, select **New report** to open the Power BI report authoring page.
 
-The following screenshot shows some example visualizations. The data panel shows the delta tables and columns to select from a table. After selection of appropriate category (x) axis and value (y) axis, you can choose the filters and functions. For example, you can choose a sum or average of the table column.
+The following screenshot shows some example visualizations. The data panel shows the delta tables and columns to select from a table. After you select the appropriate category (x) axis and value (y) axis, choose the filters and functions. For example, you can choose a sum or average of the table column.
 
 > [!NOTE]
 > The screenshot is an illustrated example that shows the analysis of the saved prediction results in Power BI. For a real use case of customer churn, platform users might need a more thorough ideation of the visualizations to create, based on both subject matter expertise and what the organization and business analytics team and firm have standardized as metrics.

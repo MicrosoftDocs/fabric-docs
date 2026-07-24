@@ -64,11 +64,20 @@ The **Schedule** page enables you to:
 
    Select how often the function should run and provide the scheduling details. The scheduler supports recurring executions such as every few minutes, hourly, daily, weekly, or monthly. For example, to run a function every 15 minutes, configure:
 
-1. Provide parameters to function as input. The scheduler can pass parameter values directly to the User Data Function during execution.
+1. Provide parameter for **FunctionName**. This parameter **is required** to define the function that you're calling.
 
+   | Parameter name |Type |Value|
+   |----------|-------------|-------------|
+   | FunctionName | String| name of the functions, for example `hello_fabric`.|
+
+1. Add more parameters for the function inputs. For example, for `hello_fabric(name:str)`, add a parameter `name` of type string. 
+
+   | Parameter name |Type |
+   |----------|-------------|
+   | name | String|
    > [!IMPORTANT]
    > Parameter names must exactly match the User Data Function signature. Parameter names are case-sensitive.
-
+   
 1. Save the schedule.
 1. Add more schedules for other functions in your User Data Function item.
 

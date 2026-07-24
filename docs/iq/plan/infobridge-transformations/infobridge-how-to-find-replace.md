@@ -10,6 +10,8 @@ ms.topic: how-to
 
 Use the **Find and Replace** transformation to search for values within one or more columns and replace them with new values. Use this transformation to standardize dimension members, simplify reporting categories, and clean source data before loading it into a planning sheet or report.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 The following examples demonstrate how to use **Find and Replace** on the **Market & Geography** column.
 
 ## Replace a text value

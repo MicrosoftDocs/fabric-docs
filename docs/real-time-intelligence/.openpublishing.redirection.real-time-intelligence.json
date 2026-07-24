@@ -1,6 +1,11 @@
 {
   "redirections": [    
     {
+      "source_path_from_root": "/docs/real-time-intelligence/mcp-remote-operations-agent.md",
+      "redirect_url": "/fabric/real-time-intelligence/mcp-overview",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/real-time-intelligence/mcp-eventhouse.md",
       "redirect_url": "/fabric/real-time-intelligence/mcp-remote-eventhouse",
       "redirect_document_id": false

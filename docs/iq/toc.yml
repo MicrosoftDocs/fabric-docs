@@ -31,6 +31,8 @@ items:
     items:
     - name: Generating an ontology from semantic model
       href: ontology/concepts-generate.md
+    - name: Agent integration options
+      href: ontology/concepts-agent-integration.md
   - name: How-tos
     items:
     - name: Create entity types
@@ -197,10 +199,14 @@ items:
                 href: plan/planning-forecasting/planning-how-to-extend-time.md
               - name: Edit forecast settings
                 href: plan/planning-forecasting/planning-how-to-configure-forecast-settings.md
-              - name: Optimize input values
-                href: plan/planning-how-to-optimize-input-values.md
               - name: Forecasting FAQ
                 href: plan/planning-forecasting/forecasting-faq.md
+        - name: Optimize input values
+          items: 
+              - name: Optimize fundamentals
+                href: plan/planning-optimize/optimizer-overview.md
+              - name: Target based optimization
+                href: plan/planning-optimize/planning-how-to-optimize-input-values.md
         - name: Use driver models
           items: 
               - name: Create a model
@@ -211,6 +217,8 @@ items:
                 href: plan/planning-driver-model/planning-how-to-create-templates.md
               - name: Create a driver model
                 href: plan/planning-driver-model/planning-how-to-create-driver-model.md
+        - name: Configure approval workflows
+          href: plan/planning-how-to-configure-approval-workflows.md
     - name: Troubleshoot
       items:
           - name: Troubleshoot semantic model connection
@@ -239,6 +247,14 @@ items:
                   href: plan/planning-reference-formulas/math-functions/rounding-formatting-functions.md
             - name: Text formatting functions
               href: plan/planning-reference-formulas/text-functions.md
+            - name: Date functions
+              items:
+                - name: Create, format, and convert dates
+                  href: plan/planning-reference-formulas/date-functions/create-format-convert-dates.md
+                - name: Extract date components
+                  href: plan/planning-reference-formulas/date-functions/extract-components-start-end-dates.md
+                - name: Date calculations
+                  href: plan/planning-reference-formulas/date-functions/perform-date-calculations.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
@@ -342,7 +358,9 @@ items:
           - name: IBCS column and bar charts
             href: plan/intelligence-ibcs/how-to-configure-ibcs-column-bar-charts.md
           - name: IBCS waterfall charts
-            href: plan/intelligence-ibcs/how-to-configure-ibcs-waterfall-charts.md                      
+            href: plan/intelligence-ibcs/how-to-configure-ibcs-waterfall-charts.md
+          - name: IBCS line and area charts
+            href: plan/intelligence-ibcs/how-to-configure-ibcs-line-area-charts.md                
         - name: Build financial reports
           href: plan/intelligence-how-to-build-financial-reports.md
         - name: Comment and collaborate
@@ -373,6 +391,8 @@ items:
           items:
           - name: Append queries
             href: plan/infobridge-transform-queries/how-to-append-query.md
+          - name: Join queries
+            href: plan/infobridge-transform-queries/how-to-join-query.md
         - name: Transform data
           items:
             - name: Use pivot table

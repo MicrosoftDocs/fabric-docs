@@ -10,6 +10,8 @@ ms.topic: how-to
 
 Use the PowerTable sheet to edit and update data directly in the database without writing code. Before saving, preview your changes to verify them. When you save the changes, they sync with the source in real time to keep the data up to date.
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 PowerTable provides the following editing capabilities:
 
 * Update records directly from the table or through the form interface.

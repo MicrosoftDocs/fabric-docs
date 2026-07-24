@@ -10,6 +10,8 @@ ms.topic: how-to
 
 Use the **Extract Comments** transformation to extract cell-level comments and related metadata into your query. The extracted information helps preserve business context and collaboration details for downstream reporting and analysis.
 
+[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+
 ## About extracting comments
 
 The **Extract Comments** transformation adds the comment text together with metadata such as the user who updated the comment, the date, and time the comment was added, the thread status, and the assigned user.

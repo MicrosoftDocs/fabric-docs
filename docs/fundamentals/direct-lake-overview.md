@@ -63,7 +63,7 @@ Storage mode is a property of a table in the semantic model. When a semantic mod
 
 * **Direct Lake on OneLake** can use data from one or more Fabric data sources with Delta tables. Direct Lake on OneLake doesn't fall back to DirectQuery mode via the SQL analytics endpoint of the data source. Semantic models with Direct Lake on OneLake tables can also have Import tables added from other data sources.
 
-* **Direct Lake on SQL** can use the data from a single Fabric data source with Delta tables. The SQL analytics endpoint is used for Delta table and SQL view discovery and permission checks. Direct Lake on SQL endpoints fall back to DirectQuery table storage mode when it can't load the data directly from a Delta table, such as when the data source is a SQL view or when the warehouse uses SQL-based granular access control. The semantic model property, **Direct Lake behavior**, controls the fallback behavior.
+* **Direct Lake on SQL** can use the data from a single Fabric data source with Delta tables. The SQL analytics endpoint is used for Delta table and SQL view discovery and permission checks. Direct Lake on SQL endpoints fall back to DirectQuery table storage mode when they can't load the data directly from a Delta table, such as when the data source is a SQL view or when the warehouse uses SQL-based granular access control. The semantic model property, **Direct Lake behavior**, controls the fallback behavior.
 
 ## Comparison of storage modes
 
@@ -102,9 +102,9 @@ For details on permissions, authentication, OLS/RLS, and data-access rule option
 Direct Lake semantic models require a [Fabric capacity license](../enterprise/licenses.md#capacity). Also, there are capacity guardrails and limitations that apply to your Fabric capacity subscription (SKU), as presented in the following table.
 
 > [!IMPORTANT]
-> The first column in the following table also includes Power BI Premium capacity subscriptions (P SKUs). Microsoft is consolidating purchase options and retiring the Power BI Premium per capacity SKUs. New and existing customers should consider purchasing Fabric capacity subscriptions (F SKUs) instead.
+> The first column in the following table also includes Power BI Premium capacity subscriptions (P SKUs). Power BI Premium per-capacity SKUs are being retired. New deployments should use Fabric capacity subscriptions (F SKUs).
 >
-> For more information, see [Important update coming to Power BI Premium licensing](https://powerbi.microsoft.com/blog/important-update-coming-to-power-bi-premium-licensing/) and [Power BI Premium](/power-bi/enterprise/service-premium-faq).
+> For more information, see the [Power BI Premium to Microsoft Fabric migration overview](/power-bi/support/premium-migration-overview).
 
 |Fabric SKU|Parquet files per table|Row groups per table|Rows per table (millions)|Max model size on disk/OneLake (GB)|Max memory (GB) <sup>1</sup>|
 |---|--:|--:|--:|--:|--:|

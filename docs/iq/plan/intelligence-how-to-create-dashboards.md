@@ -9,6 +9,8 @@ ms.topic: how-to
 
 Build interactive dashboards directly on your semantic models using more than 100 chart types, tables, matrices, KPI cards, and filters. The intelligence sheet offers a wide range of customization options to suit your reporting needs. In this article, you learn how to build a sample dashboard using the different components in an intelligence sheet.
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Prerequisites
 
 Before you start designing a dashboard, make sure that you create an intelligence sheet and import the data you need.
