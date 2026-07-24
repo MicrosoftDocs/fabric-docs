@@ -1,44 +1,34 @@
 ---
 title: Multivariate Anomaly Detection with Isolation Forest
 description: Use SynapseML on Apache Spark for multivariate anomaly detection with Isolation Forest model.
-ms.topic: overview
+ms.topic: how-to
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: ruxu
 reviewer: ruixinxu
-ms.date: 07/16/2025
+ms.date: 07/23/2026
 ---
-# Multivariate Anomaly Detection with Isolation Forest
-This article shows how you can use SynapseML on Apache Spark for multivariate anomaly detection. Multivariate anomaly detection allows for the detection of anomalies among many variables or timeseries, taking into account all the inter-correlations and dependencies between the different variables. In this scenario, we use SynapseML to train an Isolation Forest model for multivariate anomaly detection, and we then use to the trained model to infer multivariate anomalies within a dataset containing synthetic measurements from three IoT sensors.
+# Multivariate anomaly detection with isolation forest
+This article shows how to use SynapseML on Apache Spark for multivariate anomaly detection. Multivariate anomaly detection detects anomalies among many variables or time series, taking into account all the inter-correlations and dependencies between the different variables. In this scenario, you use SynapseML to train an isolation forest model for multivariate anomaly detection, and then use the trained model to infer multivariate anomalies within a dataset containing synthetic measurements from three IoT sensors.
 
-To learn more about the Isolation Forest model, refer to the original paper by [Liu _et al._](https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf?q=isolation-forest).
+To learn more about the isolation forest model, see the original paper by [Liu _et al._](https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf?q=isolation-forest)
 
 ## Prerequisites
 
-* Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
+1. Get a [Microsoft Fabric subscription](../enterprise/licenses.md). Or, sign up for a free [Microsoft Fabric trial](../fundamentals/fabric-trial.md).
+1. Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
+1. SynapseML is preinstalled in Fabric PySpark runtimes (Runtime 1.3 or later recommended). To use a specific version, see [Install a different version of SynapseML on Fabric](install-synapseml.md).
 
 ## Library imports
 
 
 ```python
-from IPython import get_ipython
-from IPython.terminal.interactiveshell import TerminalInteractiveShell
-import uuid
-import mlflow
-
 from pyspark.sql import functions as F
 from pyspark.ml.feature import VectorAssembler
-from pyspark.sql.types import *
+from pyspark.sql.types import DoubleType
 from pyspark.ml import Pipeline
 
-from synapse.ml.isolationforest import *
-
-from synapse.ml.explainers import *
-```
-
-
-```python
-%matplotlib inline
+from synapse.ml.isolationforest import IsolationForest
 ```
 
 
@@ -47,13 +37,6 @@ from pyspark.sql import SparkSession
 
 # Bootstrap Spark Session
 spark = SparkSession.builder.getOrCreate()
-
-from synapse.ml.core.platform import *
-
-if running_on_synapse():
-    shell = TerminalInteractiveShell.instance()
-    shell.define_macro("foo", """a,b=10,20""")
-
 ```
 
 ## Input data
@@ -76,10 +59,10 @@ trainingEndTime = (
     "2022-03-08T23:55:00Z"  # datetime: datetime for when to end the training
 )
 inferenceStartTime = (
-    "2022-03-09T09:30:00Z"  # datetime: datetime for when to start the training
+    "2022-03-09T09:30:00Z"  # datetime: datetime for when to start the inference
 )
 inferenceEndTime = (
-    "2022-03-20T23:55:00Z"  # datetime: datetime for when to end the training
+    "2022-03-20T23:55:00Z"  # datetime: datetime for when to end the inference
 )
 
 # Isolation Forest parameters
@@ -103,7 +86,7 @@ df = (
 )
 ```
 
-cast columns to appropriate data types
+Cast the columns to the appropriate data types.
 
 
 ```python
@@ -113,7 +96,7 @@ df = (
     .withColumn("sensor_1", F.col("sensor_1").cast(DoubleType()))
     .withColumn("sensor_2", F.col("sensor_2").cast(DoubleType()))
     .withColumn("sensor_3", F.col("sensor_3").cast(DoubleType()))
-    .drop("_c5")
+    .drop("_c5")  # drop the extra unlabeled column present in the source CSV
 )
 
 display(df)
@@ -162,9 +145,9 @@ isolationForest = (
 )
 ```
 
-Next, we create an ML pipeline to train the Isolation Forest model. We also demonstrate how to create an MLflow experiment and register the trained model.
+Next, create an ML pipeline to train the Isolation Forest model.
 
-MLflow model registration is strictly only required if accessing the trained model at a later time. For training the model, and performing inferencing in the same notebook, the model object model is sufficient.
+For training the model and performing inferencing in the same notebook, the model object is sufficient. To persist and reuse the model across sessions, register it with [MLflow in Microsoft Fabric](mlflow-autologging.md).
 
 
 ```python
@@ -175,9 +158,7 @@ model = pipeline.fit(df_train)
 
 ## Perform inferencing
 
-Load the trained Isolation Forest Model
-
-Perform inferencing
+Apply the trained model to the test data:
 
 
 ```python
@@ -186,9 +167,14 @@ display(df_test_pred)
 ```
 
 ## Premade Anomaly Detector
-[**Azure AI Anomaly Detector**](https://azure.microsoft.com//products/ai-services/ai-anomaly-detector)
-- Anomaly status of latest point: generates a model using preceding points and determines whether the latest point is anomalous ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/anomaly/DetectLastAnomaly.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.anomaly.html#module-synapse.ml.cognitive.anomaly.DetectLastAnomaly))
-- Find anomalies: generates a model using an entire series and finds anomalies in the series ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/anomaly/DetectAnomalies.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.anomaly.html#module-synapse.ml.cognitive.anomaly.DetectAnomalies))
+
+> [!IMPORTANT]
+> Microsoft is retiring the Azure AI Anomaly Detector service on October 1, 2026. Since September 20, 2023, you can't create new resources. For a supported alternative, see [Anomaly detection in Microsoft Fabric Real-Time Intelligence](../real-time-intelligence/anomaly-detection.md).
+
+[**Azure AI Anomaly Detector**](https://azure.microsoft.com/products/ai-services/ai-anomaly-detector)
+
+- Anomaly status of latest point: generates a model by using preceding points and determines whether the latest point is anomalous. See the [SynapseML GitHub repository](https://github.com/microsoft/SynapseML) for current API reference.
+- Find anomalies: generates a model by using an entire series and finds anomalies in the series. See the [SynapseML GitHub repository](https://github.com/microsoft/SynapseML) for current API reference.
 
 
 ## Related content
