@@ -143,6 +143,8 @@ items:
     href: copilot-faq-fabric.yml
   - name: Check status of Copilot and AI features
     href: copilot-ai-feature-state.md
+  - name: Troubleshoot Copilot unavailability after a trial expires
+    href: troubleshoot-copilot-unavailable-after-trial.md
   - name: Apply privacy, security, and responsible use
     items:
     - name: Learn privacy, security, and responsible use
