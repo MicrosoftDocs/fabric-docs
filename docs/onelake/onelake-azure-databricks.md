@@ -171,7 +171,7 @@ Instead, use MSAL to acquire an OAuth token and the Python `deltalake` library t
 - Use one writer pattern per table path where possible. Writing to the same storage paths from multiple compute engines or runtime versions can cause conflicts.
 - Use secrets management for service principal credentials.
 - Use [OneLake shortcuts](onelake-shortcuts.md) when you need virtualized access instead of physically writing data into another lakehouse location.
-- If you want to restrict public network access to OneLake, you can add your Databricks access connector's resource ID to the workspace's [Resource Instance Rules](onelake-manage-inbound-access-trusted-resources.md) so OneLake can verify its managed identity on each request.
+- To restrict public network access to OneLake, add your Databricks access connector's resource ID to the workspace's [Resource Instance Rules](onelake-manage-inbound-access-trusted-resources.md) so OneLake can verify its managed identity on each request.
 
 ## Related content
 
