@@ -57,7 +57,7 @@ Your functions can securely access data from across the Fabric platform:
 - **[Warehouses](../../data-warehouse/create-warehouse.md)** - Read and write operations for structured data
 - **[Lakehouses](../lakehouse-overview.md)** - Read and write Lakehouse files; read-only access to SQL analytics endpoints
 - **[Mirrored databases](../../mirroring/overview.md)** - Read-only access to mirrored database data
-- **[Variable library](../../cicd/variable-library/variable-library-overview.md)** - Access centralized configuration settings as variables in your functions
+- **[Variable library](../../cicd/variable-library/variable-library-overview.md)** - Access centralized configuration settings as variables in your functions.
 - **[Fabric Cosmos DB](../../database/cosmos-db/overview.md)** - Connect to Fabric Cosmos DB containers for NoSQL data operations.
 - **Business events** - Detect changes in operational data and publish business events for downstream applications.
 
