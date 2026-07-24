@@ -440,6 +440,7 @@ The following operations are available in the audit logs.
 | Load Spark App Log | :::no-loc text="LoadSparkAppLog"::: |   |
 | Manage Relationships | :::no-loc text="ManageRelationships"::: |   |
 | Map Upn | :::no-loc text="MapUpn"::: |   |
+| Migrate Gen1 Dataflow | :::no-loc text="MigrateGen1Dataflow"::: | Generated when a Power BI Gen1 dataflow is migrated in place to the Gen2.1 native dataflow format using the Upgrade Wizard. |
 | Migrated dataflow storage location | :::no-loc text="MigratedDataflowStorageLocation"::: | Not currently used  |
 | Migrated workspace to a capacity | :::no-loc text="MigrateWorkspaceIntoCapacity"::: |   |
 | Modified OneLake default tier | :::no-loc text="ModifiedDefaultTier"::: |   |
