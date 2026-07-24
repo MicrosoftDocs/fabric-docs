@@ -59,7 +59,7 @@ Your functions can securely access data from across the Fabric platform:
 - **[Mirrored databases](../../mirroring/overview.md)** - Read-only access to mirrored database data
 - **[Variable library](../../cicd/variable-library/variable-library-overview.md)** - Access centralized configuration settings as variables in your functions
 - **[Fabric Cosmos DB](../../database/cosmos-db/overview.md)** - Connect to Fabric Cosmos DB containers for NoSQL data operations
-- **Business events** - Detect changes in operational data and publish business events for downstream applications
+- **Business events** - Detect changes in operational data and publish business events for downstream applications.
 
 In addition to managed connections, User Data Functions support generic connections that you can use to connect to Fabric items or Azure resources by using the item owner's identity. Generic connections generate a Microsoft Entra ID token with the owner's identity for a specified audience type, providing a flexible way to authenticate with services like Cosmos DB or Azure Key Vault without configuring individual managed connections. For more information, see [Generic connections for Fabric items or Azure resources](./python-programming-model.md#generic-connections-for-fabric-items-or-azure-resources).
 
