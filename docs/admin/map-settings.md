@@ -5,7 +5,8 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: limingchen
 ms.topic: concept-article
-ms.date: 04/08/2026
+ms.date: 07/24/2026
+ai-usage: ai-assisted
 ms.search.form: Map tenant settings
 ---
 
@@ -25,6 +26,9 @@ This setting determines whether members of your organization, or specific securi
 
 **Default**: Enabled
 
+> [!NOTE]
+> When this setting is off, users can still open Map items in a limited experience. The map shows a blank background instead of an Azure Maps basemap, but the data layers a user adds still appear on top. To restore the full experience, turn this setting on.
+
 ## Configure global data processing
 
 The **Data sent to Azure Maps can be processed outside your capacity's geographic region, compliance boundary or national cloud instance** setting is relevant only for customers who plan to use Map items and Map visuals in notebooks powered by Azure Maps, and whose capacity's geographic region is outside the supported Azure Maps service regions.
@@ -37,6 +41,9 @@ When enabled, this setting allows data sent to Azure Maps to be routed to the ne
 :::image type="content" source="./media/tenant-settings/configure-global-data-processing.png" alt-text="A screenshot of the Azure Maps global data processing settings.":::
 
 **Default**: Disabled
+
+> [!NOTE]
+> If your capacity's region isn't a supported Azure Maps region and this setting is off, users can still open Map items in a limited experience. The map shows a blank background instead of an Azure Maps basemap, but the data layers a user adds still appear on top. To restore the full experience, turn this setting on.
 
 > [!NOTE]
 > Azure Maps does not process or transmit any customer names or personally identifiable information (PII).
