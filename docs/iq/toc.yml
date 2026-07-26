@@ -425,6 +425,10 @@ items:
     items:
     - name: Plan general FAQ
       href: plan/resources/frequently-asked-questions.md
+    - name: Plan best practices
+      items:
+      - name: Time intelligence
+        href: plan/resources/best-practices/time-intelligence.md
 - name: Graph
   href: ../graph/toc.yml
 - name: Data agent
