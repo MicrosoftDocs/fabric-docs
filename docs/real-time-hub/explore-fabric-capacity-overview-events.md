@@ -109,10 +109,10 @@ The `data` object has the following properties for Summary events:
 > | GeoIntel          | Map                        | Generating and managing map tiles and creating custom tilesets for geospatial visualization.                    |
 > | Graph             | GraphIndex                 | Background operations related to graphs.                                                                        |
 > | GraphQL           | GraphQL                    | Interactive operations for queries on graphs.                                                                   |
-> | Kusto             | Kusto                      | Background operations for uptime related to Kusto databases and eventhouse.                                     |
+> | Kusto             | Eventhouse                 | Eventhouse UpTime operations consume Fabric capacity for Eventhouses and KQL databases to power Real-Time Intelligence analytics on Fabric. [Learn more](../real-time-intelligence/real-time-intelligence-consumption.md) |
 > | lake              | OneLake                    | Background operations for lakehouse such as reads, writes with respect to different item types.             |
 > | ML                | Machine Learning           | Background operations for machine learning features such as Copilot across different item types.                |
-> | OneRiver          | OneRiver                   | One Lake operations for different item types related to event listeners and event operations.                    |
+> | OneRiver          | Azure, Fabric, and Business events | Event operations and Event listener operations consume Fabric capacity for Azure, Fabric, and Business events to power event-driven solutions on Fabric. [Learn more](fabric-events-capacity-consumption.md) |
 > | Reflex            | Activator                  | Data activator operations related to event computations and ingestion.                                          |
 > | RsRdlEngine       | PaginatedReport            | Paginated report operations fired during renders.                                                               |
 > | ScreenshotEngine  | Report Export/ Subscription| Background operations related to subscriptions and export.                                                      |
