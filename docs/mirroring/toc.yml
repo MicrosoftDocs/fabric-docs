@@ -108,6 +108,14 @@ items:
       - name: FAQ about Mirroring Azure Databricks
         displayName: Frequently asked questions about mirroring Azure Databricks
         href: azure-databricks-faq.yml
+  - name: Mirroring Azure Monitor
+    items:
+      - name: Mirror Azure Monitor items
+        href: catalog-mirroring/azure-monitor.md
+      - name: Mirror Azure Monitor tutorial
+        href: catalog-mirroring/azure-monitor-tutorial.md
+      - name: Troubleshoot Mirror Azure Monitor items
+        href: catalog-mirroring/azure-monitor-troubleshoot.md
   - name: Mirroring Dremio catalog
     items:
       - name: Mirrored Dremio catalog
