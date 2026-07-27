@@ -210,7 +210,7 @@ The access mode determines how data access is authenticated and enforced when qu
   * **Sync priority**: The security sync process periodically refreshes the state of `OLS_` roles. Manual changes to these roles are not supported and are overwritten during the next sync cycle. If there are no changes to sync, security sync does not override manual changes.
 
 > [!IMPORTANT]
-> When data from a warehouse is accessed through shortcuts in OneLake, these SQL security semantics are not translated into OneLake security policies. As a result, users accessing the data through a shortcut may see the full warehouse data, regardless of SQL security policies configured in the producer warehouse.
+> When you access data from a warehouse through shortcuts in OneLake, these SQL security semantics aren't translated into OneLake security policies. As a result, users accessing the data through a shortcut might see the full warehouse data, regardless of SQL security policies configured in the producer warehouse.
 
 ## Limitations
 
