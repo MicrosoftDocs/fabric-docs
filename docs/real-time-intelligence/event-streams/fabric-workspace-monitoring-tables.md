@@ -5,7 +5,7 @@ description: Eventstream monitoring tables track node status, data flow metrics,
 author: spelluru
 ms.author: spelluru
 ms.reviewer: spelluru
-ms.date: 04/21/2026
+ms.date: 07/27/2026
 ms.topic: article
 ---
 
@@ -22,7 +22,10 @@ ms.topic: article
 | `EventStreamErrorMetrics` | Every minute |
 
 > [!NOTE]
-> Eventstream workspace monitoring is currently in preview. 
+> Eventstream workspace monitoring is currently in preview.
+
+> [!IMPORTANT]
+> Workspace monitoring for eventstreams is temporarily disabled. The product team identified an issue that required disabling the feature. They're implementing a fix with improved controls. For more information, see the [Eventstream workspace monitoring known issue](https://support.fabric.microsoft.com/known-issues/?product=Real-Time%2520Intelligence&active=true&fixed=true&sort=published&issueId=1824). 
 
 ## Common columns (base dimensions)
 
