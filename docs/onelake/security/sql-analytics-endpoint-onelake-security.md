@@ -53,9 +53,6 @@ In user identity mode:
 
 * Write operations aren't supported at the SQL analytics endpoint. All writes must occur through the Lakehouse page in the Fabric portal and are governed by workspace roles (Admin, Member, Contributor).
 
-> [!IMPORTANT]
-> OneLake evaluates the signed-in user's effective access by expanding Microsoft Entra group memberships, including nested groups. Permissions are enforced based on effective membership in OneLake security roles.
-
 For more information on the permissions model with **User's identity mode**, see the [data access control model](./data-access-control-model.md) for OneLake security.
 
 ## Security sync between OneLake and SQL analytics endpoint
@@ -185,11 +182,7 @@ The access mode determines how data access is authenticated and enforced when qu
 
   * **Runtime validation**: Permissions are verified against the caller's identity at execution time, ensuring SQL abstractions cannot circumvent OneLake-level policies.
 
-  * **Security by design**: Security policies remain consistent whether data is accessed through SQL, Spark, or Power BI.
-
 * **Control-plane dependency and effective identity evaluation**: Users must have the required Fabric artifact permission before they can connect to the SQL analytics endpoint. Data authorization then evaluates the signed-in user and the user's effective membership in supported Microsoft Entra groups against the OneLake security policies at the source.
-
-  * **Producer and consumer assignments**: The user or group that provides Fabric Read permission at the consumer does not need to be the same object assigned to a OneLake security role at the producer.
 
 * **Permission evaluation behavior**: Permission evaluation varies by table type based on the current enforcement model.
 
@@ -205,10 +198,6 @@ The access mode determines how data access is authenticated and enforced when qu
 
   * **Schema validation**: Renaming columns without updating security policies triggers UI errors stating that the column "does not exist" until the configuration is synchronized.
 
-  * **Group-derived CLS**: Column-level security is evaluated after supported Microsoft Entra group memberships are expanded. The same CLS allow-list rules apply whether a user is assigned to the OneLake security role directly, through a group, or through a supported nested group.
-
-  * **Consistent column protection**: Restricted columns remain protected when access is inherited through group membership. This behavior helps ensure that sensitive data, such as identifiers, salary information, contact information, and other personally identifiable information (PII), isn't exposed because access was granted indirectly.
-
   > [!NOTE]
   > In the SQL analytics endpoint, OneLake security is enforced for data access, while schema metadata continues to follow SQL engine behavior. Users might see columns in Object Explorer or `sys.columns` even when Column-Level Security prevents them from reading those columns. This behavior is expected and by design.
 
@@ -220,10 +209,8 @@ The access mode determines how data access is authenticated and enforced when qu
 
   * **Sync priority**: The security sync process periodically refreshes the state of `OLS_` roles. Manual changes to these roles are not supported and are overwritten during the next sync cycle. If there are no changes to sync, security sync does not override manual changes.
 
-* **Warehouse SQL security and shortcuts**: Security policies defined using SQL constructs in a Warehouse—such as Row-Level Security (RLS), Column-Level Security (CLS), or Object-Level Security (OLS)—are enforced only within the SQL execution context of the warehouse (TDS endpoint).
-
 > [!IMPORTANT]
-> When data from a warehouse is accessed through shortcuts in OneLake, these SQL security semantics are not translated into OneLake security policies. As a result, users accessing the data through a shortcut may see the full semantic model, regardless of SQL security policies configured in the source warehouse.
+> When data from a warehouse is accessed through shortcuts in OneLake, these SQL security semantics are not translated into OneLake security policies. As a result, users accessing the data through a shortcut may see the full warehouse data, regardless of SQL security policies configured in the producer warehouse.
 
 ## Limitations
 
@@ -240,11 +227,8 @@ The access mode determines how data access is authenticated and enforced when qu
 * **Schema visibility in object metadata**: The SQL analytics endpoint always returns **all schema names** in object metadata, regardless of the user's table-level permissions. Tables for which the user has no permission are filtered out and do not appear in the listing.
 
   * As a result, users may see schemas that contain no visible tables in the object explorer or in `INFORMATION_SCHEMA`/`sys` catalog queries.
-* **Security synchronization dependency**: In user identity mode, OneLake security roles are synchronized to the SQL analytics endpoint through the security sync process. Until synchronization completes, SQL may temporarily evaluate access using the existing SQL permission state. Once synchronization finishes, the SQL endpoint reflects the OneLake security configuration.
 
-* **Shortcut boundary awareness**: The SQL analytics endpoint may initially evaluate shortcut-backed tables using standard SQL object semantics. After security synchronization occurs, OneLake security policies are applied to ensure that access enforcement aligns with artifact and workspace boundaries.
-
-* **Cross-artifact access enforcement timing**: Access to tables backed by OneLake shortcuts that reference data from other artifacts is enforced through synchronized OneLake security roles. Until synchronization occurs, SQL authorization may temporarily reflect the previous permission state.
+* **Security synchronization dependency**: In user identity mode, OneLake security roles are synchronized to the SQL analytics endpoint through the security sync process. Until synchronization completes, SQL may temporarily evaluate access using the existing SQL permission state for all tables, including shortcut tables from other items. Once synchronization finishes, the SQL endpoint reflects the OneLake security configuration.
 
 * **Ownership changes on shortcut-backed tables**: Shortcut-backed tables are represented as SQL objects in the SQL analytics endpoint and therefore support standard SQL ownership operations. Administrative commands such as `ALTER AUTHORIZATION` can change the owner of a shortcut-backed table. In certain scenarios, this may allow ownership chaining behavior that bypasses OneLake security policies and grants unintended access to the underlying data. Until additional enforcement mechanisms are introduced, administrators should avoid modifying ownership on shortcut-backed tables.
 
@@ -279,8 +263,6 @@ The access mode determines how data access is authenticated and enforced when qu
 * **Lakehouse owner requirements**:
 
   * The owner of the lakehouse must be a member of the Admin, Member, or Contributor workspace roles; otherwise, security is not applied to the SQL analytics endpoint.
-
-  * Lakehouses owned by service principals are supported by security sync.
 
 ## Related content
 
