@@ -1,5 +1,5 @@
 ---
-title: Join queries
+title: Join Queries
 description: Learn how to join queries in Infobridge to combine related data from multiple queries based on matching columns.
 ms.date: 07/16/2026
 ms.topic: how-to

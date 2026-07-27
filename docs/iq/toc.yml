@@ -83,8 +83,6 @@ items:
       href: plan/overview-prerequisites.md
     - name: Roles
       href: plan/overview-roles.md 
-    - name: Known limitations
-      href: plan/overview-limitations.md
   - name: Planning sheets
     items:
     - name: Planning sheets overview
@@ -431,6 +429,8 @@ items:
       items:
       - name: Time intelligence
         href: plan/resources/best-practices/time-intelligence.md
+    - name: Known limitations
+      href: plan/overview-limitations.md
 - name: Graph
   href: ../graph/toc.yml
 - name: Data agent
