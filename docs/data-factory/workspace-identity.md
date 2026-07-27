@@ -3,7 +3,7 @@ title: Workspace identity support in Data Factory
 description: Learn how to use workspace identity authentication to access your data sources in Data Factory.
 ms.reviewer: jianleishen
 ms.topic: concept-article
-ms.date: 05/09/2026
+ms.date: 07/27/2026
 ms.custom: configuration, sfi-image-nochange
 ai-usage: ai-assisted
 ---
@@ -42,6 +42,8 @@ The workspace identity authentication type currently supports these data sources
 - You must be a workspace admin to be able to [create and manage a workspace identity](../security/workspace-identity.md#create-and-manage-a-workspace-identity). The workspace you're creating the identity for can't be **My Workspace**.
 
 - [Grant the identity permissions](../security/workspace-identity-authenticate.md#step-2-grant-the-identity-permissions-on-the-storage-account) to access your data source.
+
+- The identity that runs the item must have an admin, member, or contributor role in the workspace. Fabric generates a workspace identity token at run time and issues it only to an identity that holds one of these roles. This requirement applies both to the user who runs a pipeline on demand and to the service principal that runs it on a schedule or through the API. If a scheduled run fails but a manual run of the same pipeline succeeds, verify the workspace role of the scheduled identity.
 
 ## Connect to your data using workspace identity
 
