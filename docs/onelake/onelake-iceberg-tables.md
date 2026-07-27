@@ -182,7 +182,7 @@ Keep in mind the following temporary limitations when you use this feature:
 
 * **Maximum number of input transactions**
 
-  Source tables must have less than 5,000 transactions/commits in order for the table format conversion to take place. Be sure to compact your transaction logs or manifests to reduce the number of transactions/commits.
+  Source tables must have fewer than 5,000 transactions or commits for the table format conversion to take place. Be sure to compact your transaction logs or manifests to reduce the number of transactions or commits.
 
 * **Conversion latency and update frequency**
 
