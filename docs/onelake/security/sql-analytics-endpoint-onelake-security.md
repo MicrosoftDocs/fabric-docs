@@ -2,7 +2,7 @@
 title: "OneLake Security for SQL analytics endpoints"
 description: Learn how OneLake security enhances data access control with centralized governance or granular SQL-based permissions.
 ms.reviewer: aamerril
-ms.date: 04/20/2026
+ms.date: 07/21/2026
 ms.topic: concept-article
 ---
 
@@ -54,9 +54,7 @@ In user identity mode:
 * Write operations aren't supported at the SQL analytics endpoint. All writes must occur through the Lakehouse page in the Fabric portal and are governed by workspace roles (Admin, Member, Contributor).
 
 > [!IMPORTANT]
-> **One-to-one identity mapping across producer and consumer (hub-and-spoke).** When OneLake security policies are carried from a producer (the source item where the role is defined) to a consumer (a destination item accessing the data through a shortcut), the identities assigned to OneLake security roles at the producer must be mapped **exactly 1:1** at the consumer. The same principal—whether a user or a group—must be granted Fabric Read permission on the consumer artifact as the one referenced in the producer's security role. Nested or effective group membership is **not** resolved across this boundary.
->
-> For example, if the OneLake security role at the producer references `user123@microsoft.com`, then `user123@microsoft.com` (that exact Object ID) must also have Fabric Read permission on the consumer lakehouse. Likewise, if the producer role references `Group A`, then `Group A` itself must be granted Fabric Read permission on the consumer—granting that permission only to a member of Group A does not satisfy the match.
+> OneLake evaluates the signed-in user's effective access by expanding Microsoft Entra group memberships, including nested groups. Permissions are enforced based on effective membership in OneLake security roles.
 
 For more information on the permissions model with **User's identity mode**, see the [data access control model](./data-access-control-model.md) for OneLake security.
 
@@ -95,7 +93,6 @@ Security sync includes a retry backoff mechanism to protect system stability and
 | **RLS/CLS policy references a deleted or renamed table** | Error: *Security policy references a table that no longer exists.* | No error surfaced; query fails silently if table is missing. | Update or remove one or more affected roles, or restore the missing table. | The update must be made in the lakehouse where the role was created. |
 | **DDM (Dynamic Data Masking) policy references a deleted or renamed column** | DDM not supported from OneLake security; must be implemented through SQL. | Error: *Invalid column name \<column name\>* | Update or remove one or more affected DDM rules, or restore the missing column. | Update the DDM policy in the SQL analytics endpoint. |
 | **System error (unexpected failure)** | Error: *An unexpected system error occurred. Try again or contact support.* | Error: *An internal error has occurred while applying table changes to SQL.* | Retry the operation; if the issue persists, contact Microsoft Support. | N/A |
-| **User doesn't have permission on the artifact** | Error: *User doesn't have permission on the artifact* | Error: *User doesn't have permission on the artifact* | Provide the user with `objectID {objectID}` permission to the artifact. | The object ID must be an exact match between the OneLake security role member and the Fabric item permissions. If a group is added to the role membership, that same group must be given the Fabric Read permission. Adding a member from that group to the item does not count as a direct match. |
 | **User principal is not supported** | Error: *User principal is not supported.* | Error: *User principal is not supported.* | Remove user `{username}` from role `DefaultReader`. | This error occurs if the user is no longer a valid Entra ID (for example, the user left the organization or was deleted). Remove them from the role to resolve the error. |
 
 ### Shortcuts behavior with security sync
@@ -108,9 +105,7 @@ As a result:
 
 * If the user lacks permission on either side, **queries fail** with an access error.
 
-* When designing applications or views that reference shortcuts, ensure that role assignments are properly configured on **both ends** of the shortcut relationship.
-
-This design preserves security integrity across lakehouse boundaries, but it introduces scenarios where access failures might occur if cross-lakehouse roles aren't aligned.
+This design preserves security integrity across lakehouse boundaries while reducing the need to duplicate identity assignments across producer and consumer items.
 
 ## Delegated mode in OneLake security
 
@@ -192,11 +187,9 @@ The access mode determines how data access is authenticated and enforced when qu
 
   * **Security by design**: Security policies remain consistent whether data is accessed through SQL, Spark, or Power BI.
 
-* **Control-plane dependency (strict identity matching)**: OneLake security requires the identity granted access at the producer to be the same identity recognized during access evaluation at the consumer data plane. The system validates the specific principal that was granted access at the source and does not expand nested group membership or infer effective access through indirect membership.
+* **Control-plane dependency and effective identity evaluation**: Users must have the required Fabric artifact permission before they can connect to the SQL analytics endpoint. Data authorization then evaluates the signed-in user and the user's effective membership in supported Microsoft Entra groups against the OneLake security policies at the source.
 
-  * **Literal principal match**: Access is evaluated against the exact Object ID granted at the producer.
-
-  * **No nested/effective resolution**: Nested group membership or indirect inheritance is not treated as sufficient for enforcement. See the callout in [User identity mode in OneLake security](#user-identity-mode-in-onelake-security) for a worked example.
+  * **Producer and consumer assignments**: The user or group that provides Fabric Read permission at the consumer does not need to be the same object assigned to a OneLake security role at the producer.
 
 * **Permission evaluation behavior**: Permission evaluation varies by table type based on the current enforcement model.
 
@@ -211,6 +204,10 @@ The access mode determines how data access is authenticated and enforced when qu
   * **Sync protection**: When a policy is invalid, metadata sync is blocked by design until the rule is corrected in the OneLake security panel.
 
   * **Schema validation**: Renaming columns without updating security policies triggers UI errors stating that the column "does not exist" until the configuration is synchronized.
+
+  * **Group-derived CLS**: Column-level security is evaluated after supported Microsoft Entra group memberships are expanded. The same CLS allow-list rules apply whether a user is assigned to the OneLake security role directly, through a group, or through a supported nested group.
+
+  * **Consistent column protection**: Restricted columns remain protected when access is inherited through group membership. This behavior helps ensure that sensitive data, such as identifiers, salary information, contact information, and other personally identifiable information (PII), isn't exposed because access was granted indirectly.
 
   > [!NOTE]
   > In the SQL analytics endpoint, OneLake security is enforced for data access, while schema metadata continues to follow SQL engine behavior. Users might see columns in Object Explorer or `sys.columns` even when Column-Level Security prevents them from reading those columns. This behavior is expected and by design.
@@ -283,7 +280,7 @@ The access mode determines how data access is authenticated and enforced when qu
 
   * The owner of the lakehouse must be a member of the Admin, Member, or Contributor workspace roles; otherwise, security is not applied to the SQL analytics endpoint.
 
-  * The owner of the lakehouse cannot be a service principal for security sync to work.
+  * Lakehouses owned by service principals are supported by security sync.
 
 ## Related content
 
