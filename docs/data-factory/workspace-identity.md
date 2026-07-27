@@ -43,7 +43,7 @@ The workspace identity authentication type currently supports these data sources
 
 - [Grant the identity permissions](../security/workspace-identity-authenticate.md#step-2-grant-the-identity-permissions-on-the-storage-account) to access your data source.
 
-- The identity that runs the item must have an admin, member, or contributor role in the workspace. Fabric checks this permission at run time and issues the workspace identity token only to an identity that holds one of these roles. This requirement applies both to the user who runs a pipeline on demand and to the service principal that runs it on a schedule or through the API. If a scheduled run fails but a manual run of the same pipeline succeeds, verify the workspace role of the scheduled identity.
+- The identity that runs a pipeline using workspace identity authentication must have an admin, member, or contributor role in the workspace. Fabric checks this permission at run time and issues the workspace identity token only to an identity that holds one of these roles. This requirement applies both to the user who runs the pipeline on demand and to the service principal that runs it on a schedule or through the API. If a scheduled run fails but a manual run of the same pipeline succeeds, verify the workspace role of the scheduled identity.
 
 ## Connect to your data using workspace identity
 
