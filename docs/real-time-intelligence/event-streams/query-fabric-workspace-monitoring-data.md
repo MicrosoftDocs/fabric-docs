@@ -21,7 +21,7 @@ You can query your Eventstream monitoring data using KQL (Kusto Query Language) 
 > Eventstream workspace monitoring is currently in preview.
 
 > [!IMPORTANT]
-> Workspace Monitoring for Eventstreams is temporarily disabled. We identified an issue that required us to disable the feature. We're implementing a fix with improved controls. The Eventstream observability feature will be re-enabled with a per-Eventstream opt-in model, giving you full visibility and control over the monitoring configuration. For more information, see the [Eventstream workspace monitoring known issue](https://support.fabric.microsoft.com/known-issues/?product=Real-Time%2520Intelligence&active=true&fixed=true&sort=published&issueId=1824). 
+> Workspace monitoring for eventstreams  is temporarily disabled. The product team identified an issue that required disabling the feature. They're implementing a fix with improved controls. For more information, see the [Eventstream workspace monitoring known issue](https://support.fabric.microsoft.com/known-issues/?product=Real-Time%2520Intelligence&active=true&fixed=true&sort=published&issueId=1824). 
 
 ## Check the status of all nodes
 
