@@ -74,7 +74,7 @@ The same service principal authenticates every stage, so the flow you run by han
 * A Fabric [capacity](../enterprise/licenses.md#capacity). Both workspaces in this tutorial are assigned to the same capacity. A [trial capacity](../fundamentals/fabric-trial.md) works.
 * A **service principal** (Microsoft Entra app registration) with a client secret. This single identity provisions the workspaces *and* runs the deployment.
 * The tenant setting **Service principals can use Fabric APIs** enabled for a security group that contains the service principal. For more information, see [Enable service principal authentication for Fabric APIs](../admin/enable-service-principal-admin-apis.md).
-* An [Azure DevOps](/azure/devops/user-guide/sign-up-invite-teammates) organization, project, and Git repository that the service principal can access.
+* An [Azure DevOps](/azure/devops/user-guide/sign-up-invite-teammates) organization, project, and Git repository that the service principal can access. The repository must already contain the branch (for example, `main`) *and* the folder that you set in `ado_directory_name` (for example, `/workspace`). The Git connection uses `PreferRemote`, which reads that folder on the branch when it connects, so both must exist beforehand. If the folder is missing, `terraform apply` fails with `GitProviderResourceNotFound`. To create it, commit an empty placeholder file (such as `.gitkeep`) to that path on the branch before you run Terraform.
 * The following tools installed locally:
   * [Terraform](https://developer.hashicorp.com/terraform/install) 1.8 or later.
   * [Python](https://www.python.org/downloads/) 3.9 or later (up to 3.13).
@@ -126,20 +126,22 @@ In this step, you define the control plane as code and apply it. Create a folder
 Create *provider.tf*. Pinning the provider version keeps every engineer on identical behavior.
 
 ```hcl
+# We strongly recommend using the required_providers block to set the Fabric Provider source and version being used
 terraform {
   required_version = ">= 1.8, < 2.0"
   required_providers {
     fabric = {
       source  = "microsoft/fabric"
-      version = "1.6.0"
+      version = "1.12.0"
     }
   }
 }
 
+# Configure the Microsoft Fabric Terraform Provider.
 # Auth is via the service principal exported as FABRIC_TENANT_ID /
 # FABRIC_CLIENT_ID / FABRIC_CLIENT_SECRET. Never hard-code secrets here.
 provider "fabric" {
-  preview = true
+  # Configuration options
 }
 ```
 
