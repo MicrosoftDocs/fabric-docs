@@ -5,7 +5,7 @@ description: Enable workspace monitoring for Eventstreams in Microsoft Fabric. L
 author: spelluru
 ms.author: spelluru
 ms.reviewer: spelluru
-ms.date: 04/21/2026
+ms.date: 07/27/2026
 ms.topic: how-to
 ---
 
@@ -14,7 +14,10 @@ ms.topic: how-to
 Eventstream monitoring uses [Fabric workspace monitoring](/fabric/fundamentals/workspace-monitoring-overview). When you enable workspace monitoring in your workspace, the process creates Eventstream tables in the monitoring database. You don't need to configure anything specific for eventstreams. 
 
 > [!NOTE]
-> Eventstream workspace monitoring is currently in preview. 
+> Eventstream workspace monitoring is currently in preview.
+
+> [!IMPORTANT]
+> Workspace Monitoring for Eventstreams is temporarily disabled. We identified an issue that required us to disable the feature. We're implementing a fix with improved controls. The Eventstream observability feature will be re-enabled with a per-Eventstream opt-in model, giving you full visibility and control over the monitoring configuration. For more information, see the [Eventstream workspace monitoring known issue](https://support.fabric.microsoft.com/known-issues/?product=Real-Time%2520Intelligence&active=true&fixed=true&sort=published&issueId=1824). 
 
 [!INCLUDE [Workspace monitoring prerequisites](includes/workspace-monitoring-prerequisites.md)]
 
