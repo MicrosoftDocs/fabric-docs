@@ -143,12 +143,20 @@ You must be a workspace admin to be able to create a workspace identity. The wor
 1. Create a variable to store the site ID for your SharePoint site. Replace the `<TENANT_NAME>` and `<SITE_NAME>` placeholders with your own values.
 
    ```powershell
-   $site = Invoke-MgGraphRequest -Method GET -Uri "https://graph.microsoft.com/v1.0/sites/<TENANT_NAME>.sharepoint.com:<SITE_NAME>:"  
+   $site = Invoke-MgGraphRequest -Method GET -Uri "https://graph.microsoft.com/v1.0/sites/<TENANT_NAME>.sharepoint.com:/<SITE_NAME>:"  
    ```
-
+   
+   <SITE_NAME> could be based on your url. For example,
+   
+   https://test.sharepoint.com/teams/OneLake, then <SITE_NAME> would be __teams/OneLake__
+   
+   https://test.sharepoint.com/sites/OneLake, then <SITE_NAME> would be __sites/OneLake__
+   
+   https://test.sharepoint.com/OneLake, then <SITE_NAME> would be __OneLake__
+   
 1. Create variables for the permissions command. Replace the `<WORKSPACE_IDENTITY_APP_ID>` placeholder with the application ID that you retrieved from Microsoft Entra.
 
-   ```powershell
+      ```powershell
    $ManagedIdentityClientId = "<WORKSPACE_IDENTITY_APP_ID>"
    $Role = "read"  # read | write | owner  
    $DisplayName = "Workspace Identity Name"  
