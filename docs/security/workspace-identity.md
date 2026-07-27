@@ -4,8 +4,7 @@ description: Learn about workspace identity in Microsoft Fabric.
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.date: 07/27/2026
-ai-usage: ai-assisted
+ms.date: 05/08/2026
 ---
 
 # Workspace identity
@@ -77,8 +76,6 @@ Workspace identity can be [created and deleted by workspace admins](#create-and-
 > Workspace identity is an automatically managed service principal created by Fabric users. Access to this identity should be carefully managed and monitored, as any individual given access to the identity is allowed to assume it.
 
 Workspace identity is supported for authentication to target resources in connections. Only users with an admin, member, or contributor role in the workspace can configure the workspace identity for authentication in connections.
-
-The same roles are required at run time. When a Fabric item uses the workspace identity to authenticate, Fabric issues a workspace identity token only to an identity that has an admin, member, or contributor role in the workspace. This requirement applies to users and to service principals. For example, if a pipeline is scheduled to run under a service principal, that service principal needs one of these roles on the workspace, even when the workspace identity itself already has permissions on the target data source.
 
 [Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or users with higher roles can view, modify, and delete the service principal and app registration associated with the workspace identity in Azure.
 
@@ -160,8 +157,6 @@ When a workspace gets renamed, the workspace identity is also renamed to match t
 * Azure Data Lake Storage Gen2 shortcuts in a workspace that has a workspace identity will be capable of trusted service access.
 
 * Workspace identity isn’t supported in B2B or cross-tenant scenarios.
-
-* The identity that runs a Fabric item using workspace identity authentication, whether a user or a service principal, must have an admin, member, or contributor role in the workspace at run time so that Fabric can issue the workspace identity token.
 
 ## Troubleshooting issues with creating a workspace identity
 
