@@ -78,7 +78,7 @@ To create the pipeline, follow the steps listed in [Module 1 - Create a pipeline
 > The user creating the shortcut with workspace identity must have an admin, member, or contributor role in the workspace. Users accessing the shortcuts only need permissions on the lakehouse.
 
 > [!IMPORTANT]
-> The identity that *runs* the pipeline must also have an admin, member, or contributor role in the workspace. Fabric checks this permission at run time and issues a workspace identity token only to an identity that holds one of these roles. A viewer role isn't sufficient. This requirement applies both to the user who runs the pipeline on demand and to the service principal that runs it on a schedule or through the API.
+> The identity that *runs* the pipeline must also have an admin, member, or contributor role in the workspace. Fabric checks this permission at run time and issues a workspace identity token only to an identity that holds one of these roles. This requirement applies both to the user who runs the pipeline on demand and to the service principal that runs it on a schedule or through the API.
 >
 > Because of this requirement, a pipeline that succeeds when you run it manually might fail when the same pipeline runs on a schedule under a different identity. If a scheduled run fails to acquire a token but a manual run succeeds, verify that the scheduled identity has one of these workspace roles.
 
@@ -119,7 +119,7 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 * You can create connections with workspace-identity-based authentication in the *Manage Gateways and Connections* experience for a cloud connection.
 
-* The identity that runs a pipeline, whether a user or a service principal, must have an admin, member, or contributor role in the workspace. Fabric checks this permission at run time. Without one of these roles, Fabric can't issue the workspace identity token and the run fails. A viewer role isn't sufficient, and granting the workspace identity permissions on the target data source isn't sufficient on its own.
+* The identity that runs a pipeline, whether a user or a service principal, must have an admin, member, or contributor role in the workspace. Fabric checks this permission at run time. Without one of these roles, Fabric can't issue the workspace identity token and the run fails. Granting the workspace identity permissions on the target data source isn't sufficient on its own.
 
 * Workspace-Identity-based authentication is currently not supported for gateway connections. 
 
