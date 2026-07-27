@@ -147,18 +147,16 @@ items:
       href: ./security/data-access-control-model.md
     - name: Create and manage roles
       href: ./security/create-manage-roles.md
+    - name: Table, column, and row-level security
+      href: ./security/table-column-row-security.md
+    - name: Row-level security syntax reference
+      href: ./security/row-level-security-syntax.md
+    - name: Read secured data
+      href: ./security/read-secured-data.md
     - name: SQL analytics endpoint security
       href: ./security/sql-analytics-endpoint-onelake-security.md
     - name: Troubleshoot SQL analytics endpoint security
       href: ./security/troubleshoot-onelake-security-for-sql-analytics-endpoints.md
-    - name: Granular data access control
-      items:
-      - name: Table and folder security
-        href: ./security/table-folder-security.md
-      - name: Column-level security
-        href: ./security/column-level-security.md
-      - name: Row-level security
-        href: ./security/row-level-security.md
   - name: Integrate with OneLake security
     items:
     - name: OneLake security integrations

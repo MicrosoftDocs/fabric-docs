@@ -114,6 +114,21 @@
             "source_path_from_root": "/docs/onelake/onelake-shortcuts-adb-quickstart.md",
             "redirect_url": "/fabric/onelake/create-adls-shortcut",
             "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/security/row-level-security.md",
+            "redirect_url": "/fabric/onelake/security/table-column-row-security#row-level-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/security/column-level-security.md",
+            "redirect_url": "/fabric/onelake/security/table-column-row-security#column-level-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/security/table-folder-security.md",
+            "redirect_url": "/fabric/onelake/security/table-column-row-security#table-and-folder-security",
+            "redirect_document_id": false
         }
     ]
 }
