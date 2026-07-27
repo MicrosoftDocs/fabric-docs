@@ -228,7 +228,7 @@ The access mode determines how data access is authenticated and enforced when qu
 
   * As a result, users may see schemas that contain no visible tables in the object explorer or in `INFORMATION_SCHEMA`/`sys` catalog queries.
 
-* **Security synchronization dependency**: In user identity mode, OneLake security roles are synchronized to the SQL analytics endpoint through the security sync process. Until synchronization completes, SQL may temporarily evaluate access using the existing SQL permission state for all tables, including shortcut tables from other items. Once synchronization finishes, the SQL endpoint reflects the OneLake security configuration.
+* **Security synchronization dependency**: In user identity mode, the security sync process synchronizes OneLake security roles to the SQL analytics endpoint. Until synchronization completes, SQL might temporarily evaluate access by using the existing SQL permission state for all tables, including shortcut tables from other items. Once synchronization finishes, the SQL endpoint reflects the OneLake security configuration.
 
 * **Ownership changes on shortcut-backed tables**: Shortcut-backed tables are represented as SQL objects in the SQL analytics endpoint and therefore support standard SQL ownership operations. Administrative commands such as `ALTER AUTHORIZATION` can change the owner of a shortcut-backed table. In certain scenarios, this may allow ownership chaining behavior that bypasses OneLake security policies and grants unintended access to the underlying data. Until additional enforcement mechanisms are introduced, administrators should avoid modifying ownership on shortcut-backed tables.
 
