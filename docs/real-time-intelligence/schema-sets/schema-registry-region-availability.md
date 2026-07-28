@@ -2,10 +2,10 @@
 title: Schema Registry region availability in Fabric Real-Time Intelligence
 description: Learn which Azure regions support the Schema Registry (preview) feature for event schema sets in Microsoft Fabric Real-Time Intelligence.
 ms.topic: overview
-ms.date: 04/21/2026
+ms.date: 07/28/2026
 ms.custom:
   - references_regions
-  - ai-usage: ai-assisted
+ai-usage: ai-assisted
 ms.search.form: Schema Registry
 #customer intent: As a data engineer, I want to know which regions support Schema Registry in Fabric Real-Time Intelligence so that I can plan where to deploy my eventstreams and schema sets.
 ---
@@ -20,20 +20,23 @@ Your tenant [home region](../../admin/find-fabric-home-region.md) determines whe
 
 The following table lists the regions where Schema Registry is available.
 
-| Americas          | Europe               | Middle East | Africa             | Asia Pacific       |
-|:------------------|:---------------------|:------------|:-------------------|:-------------------|
-| Brazil South      | France Central       | UAE North   | South Africa North | Australia East     |
-| Canada Central    | Germany West Central |             |                    | Central India      |
-| Canada East       | North Europe         |             |                    | East Asia          |
-| East US           | Norway East          |             |                    | Indonesia Central  |
-| East US 2         | Sweden Central       |             |                    | Japan East         |
-| North Central US  | Switzerland North    |             |                    | Korea Central      |
-| West US           | Switzerland West     |             |                    | Malaysia West      |
-| West US 2         | UK South             |             |                    | New Zealand North  |
-|                   | UK West              |             |                    | South India        |
-|                   |                      |             |                    | Southeast Asia     |
-|                   |                      |             |                    | Taiwan North       |
-|                   |                      |             |                    | Taiwan Northwest   |
+| Americas          | Europe               | Middle East | Africa             | Asia Pacific        |
+|:------------------|:---------------------|:------------|:-------------------|:--------------------|
+| Brazil South      | France Central       | UAE North   | South Africa North | Australia East      |
+| Canada Central    | Germany West Central |             |                    | Australia Southeast |
+| Canada East       | Italy North          |             |                    | Central India       |
+| Central US        | North Europe         |             |                    | East Asia           |
+| East US           | Norway East          |             |                    | Indonesia Central   |
+| East US 2         | Poland Central       |             |                    | Israel Central      |
+| Mexico Central    | Spain Central        |             |                    | Japan East          |
+| North Central US  | Sweden Central       |             |                    | Japan West          |
+| West US           | Switzerland North    |             |                    | Korea Central       |
+| West US 2         | Switzerland West     |             |                    | Malaysia West       |
+| West US 3         | UK South             |             |                    | New Zealand North   |
+|                   | UK West              |             |                    | South India         |
+|                   | West Europe          |             |                    | Southeast Asia      |
+|                   |                      |             |                    | Taiwan North        |
+|                   |                      |             |                    | Taiwan Northwest    |
 
 ## Related content
 
