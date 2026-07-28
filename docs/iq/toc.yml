@@ -83,8 +83,6 @@ items:
       href: plan/overview-prerequisites.md
     - name: Roles
       href: plan/overview-roles.md 
-    - name: Known limitations
-      href: plan/overview-limitations.md
   - name: Planning sheets
     items:
     - name: Planning sheets overview
@@ -395,6 +393,8 @@ items:
             href: plan/infobridge-transform-queries/how-to-merge-query.md
           - name: Join queries
             href: plan/infobridge-transform-queries/how-to-join-query.md
+          - name: SQL queries
+            href: plan/infobridge-transform-queries/how-to-sql-query.md          
         - name: Transform data
           items:
             - name: Use pivot table
@@ -431,6 +431,8 @@ items:
       items:
       - name: Time intelligence
         href: plan/resources/best-practices/time-intelligence.md
+    - name: Known limitations
+      href: plan/overview-limitations.md
 - name: Graph
   href: ../graph/toc.yml
 - name: Data agent

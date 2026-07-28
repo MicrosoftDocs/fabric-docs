@@ -1,11 +1,11 @@
 items:
-- name: Application lifecycle management documentation
+- name: Microsoft Fabric CI/CD documentation
   href: index.yml
 - name: What is CI/CD in Microsoft Fabric?
   href: cicd-overview.md
 
-- name: "Tutorial: End to end application lifecycle management"
-  href: cicd-tutorial.md
+- name: "Tutorial: End-to-end automation in Fabric"
+  href: tutorial-end-to-end-automation.md
 - name: CI/CD workflow options in Fabric
   items:
   - name: Overview
@@ -62,6 +62,8 @@ items:
   items:
   - name: Introduction to deployment pipelines
     href: deployment-pipelines/intro-to-deployment-pipelines.md
+  - name: "Tutorial: End to end application lifecycle management"
+    href: cicd-tutorial.md
   - name: New deployment pipelines interface
     href: deployment-pipelines/deployment-pipelines-new-ui.md
   - name: Get started with deployment pipelines

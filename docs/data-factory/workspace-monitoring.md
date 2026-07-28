@@ -80,7 +80,7 @@ ItemJobEventLogs
 
 ### ItemJobEventLogs schema
 
-The following table describes the schema of `ItemJobEventLogs` (item-level, L2):
+The following table describes the schema of `ItemJobEventLogs` (item-level, L1):
 
 | **Column name** | **Column type** | **Description** |
 |----|----|----|

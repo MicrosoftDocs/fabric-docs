@@ -9,9 +9,9 @@ ms.search.form: R Language
 #customer intent: As a data scientist, I want to create a machine learning model by using R so I can predict prices.
 ---
 
-# Tutorial: use R to predict avocado prices
+# Tutorial: Use R to predict avocado prices
 
-This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. It uses R to analyze and visualize avocado prices in the United States, to build a machine learning model that predicts future avocado prices.
+This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. It uses R to analyze and visualize avocado prices in the United States, and to build a machine learning model that predicts future avocado prices.
 
 This tutorial covers these steps:
 
@@ -37,12 +37,11 @@ Use libraries from the default R runtime:
 ```r
 library(tidyverse)
 library(lubridate)
-library(hms)
 ```
 
 ## Load the data
 
-Read avocado prices from a .CSV file, downloaded from the internet:
+Read avocado prices from a CSV file that you downloaded from the internet:
 
 ```r
 df <- read.csv('https://synapseaisolutionsa.z13.web.core.windows.net/data/AvocadoPrice/avocado.csv', header = TRUE)
@@ -132,7 +131,7 @@ avocado2 %>%
   select(date, region, average_price) %>% 
   ggplot(aes(x = reorder(region, -average_price, na.rm = T), y = average_price)) +
   geom_jitter(aes(colour = region, alpha = 0.5)) +
-  geom_violin(outlier.shape = NA, alpha = 0.5, size = 1) +
+  geom_violin(alpha = 0.5, linewidth = 1) +
   geom_hline(yintercept = 1.5, linetype = 2) +
   geom_hline(yintercept = 1, linetype = 2) +
   annotate("rect", xmin = "LosAngeles", xmax = "PhoenixTucson", ymin = -Inf, ymax = Inf, alpha = 0.2) +

@@ -5,7 +5,7 @@ description: Query Eventstream monitoring data using KQL in your monitoring Even
 author: spelluru
 ms.author: spelluru
 ms.reviewer: spelluru
-ms.date: 04/21/2026
+ms.date: 07/27/2026
 ms.topic: how-to
 ---
 
@@ -18,7 +18,10 @@ Eventstream monitoring uses Fabric workspace monitoring. When you enable workspa
 You can query your Eventstream monitoring data using KQL (Kusto Query Language) directly in the monitoring Eventhouse. Open the monitoring database and use the query editor to run queries against the Eventstream tables.
 
 > [!NOTE]
-> Eventstream workspace monitoring is currently in preview. 
+> Eventstream workspace monitoring is currently in preview.
+
+> [!IMPORTANT]
+> Workspace monitoring for eventstreams  is temporarily disabled. The product team identified an issue that required disabling the feature. They're implementing a fix with improved controls. For more information, see the [Eventstream workspace monitoring known issue](https://support.fabric.microsoft.com/known-issues/?product=Real-Time%2520Intelligence&active=true&fixed=true&sort=published&issueId=1824). 
 
 ## Check the status of all nodes
 

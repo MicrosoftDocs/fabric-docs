@@ -1,5 +1,5 @@
 ---  
-title: "Fabric Plan (preview) Frequently Asked Questions"
+title: "Fabric Plan (Preview) Frequently Asked Questions"
 description: "Frequently asked questions about plan (preview)."
 ms.topic: faq
 ms.date: 07/18/2026

@@ -2,7 +2,7 @@
 title: Limitations of Fabric Data Warehouse
 description: Review current limitations for warehouse and SQL analytics endpoint items in Microsoft Fabric Data Warehouse.
 ms.reviewer: joanpo, ajagadish, anphil, fresantos, pvenkat
-ms.date: 07/02/2026
+ms.date: 07/27/2026
 ms.topic: limits-and-quotas
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ai-usage: ai-assisted
@@ -42,6 +42,7 @@ For limitations in specific features of Fabric Data Warehouse and the SQL analyt
 - [SQL analytics endpoint limitations](../data-engineering/lakehouse-sql-analytics-endpoint.md#limitations)
 - [Statistics limitations](statistics.md#limitations)
 - [Tables limitations](tables.md#limitations)
+- [Temp tables](temp-tables.md#limitations)
 - [Transactions limitations](transactions.md#limitations)
 - [Visual query editor limitations](visual-query-editor.md#limitations-with-visual-query-editor)
 
