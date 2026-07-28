@@ -1,5 +1,5 @@
 ---
-title: Configure approval workflows
+title: Configure Approval Workflows
 description: Learn how to configure approval workflows in planning sheets by using scripts or the Approval Workflow interface.
 ms.date: 07/22/2026
 ms.topic: how-to

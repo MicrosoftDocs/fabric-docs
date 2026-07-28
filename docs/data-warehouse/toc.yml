@@ -79,6 +79,8 @@ items:
         href: table-constraints.md
       - name: Tables
         href: tables.md
+      - name: Temp tables
+        href: temp-tables.md
       - name: T-SQL surface area
         href: tsql-surface-area.md
       - name: How to

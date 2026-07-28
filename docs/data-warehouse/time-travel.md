@@ -18,7 +18,7 @@ Microsoft Fabric offers the capability to query historical data as it existed in
 - Time travel allows organizations to audit data changes over time, often required for compliance purposes.
 - Time travel helps to reproduce the results from machine learning models.
 - Time travel can query tables as they existed at a specific point in time across multiple warehouses in the same workspace.
-- Time travel hints can be used with session-scoped temp tables, which are unaffected by `TIMESTAMP` syntax.
+- Time travel hints can be used with session-scoped [temp tables](temp-tables.md), which are unaffected by `TIMESTAMP` syntax.
 
 ## What is time travel?
 
