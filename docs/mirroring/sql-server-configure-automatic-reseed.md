@@ -1,8 +1,8 @@
 ---
-title: "Configure automatic reseed for Fabric Mirrored Databases from SQL Server"
-description: Configure automatic reseed for Fabric mirrored databases from SQL Server.
+title: Configure Automatic Reseed for Fabric Mirrored Databases from SQL Server
+description: Configure automatic reseed for Fabric mirrored databases from SQL Server to prevent transaction log growth and write failures. 
 ms.reviewer: nanikolic, anagha-todalbagi
-ms.date: 10/15/2025
+ms.date: 07/08/2026
 ms.topic: troubleshooting
 ms.custom:
   - references_regions
@@ -11,23 +11,23 @@ ms.custom:
 
 This article covers automatic reseeding for mirroring a database from a SQL Server instance.
 
-There are certain situations where delays in mirroring to Fabric can lead to increased transaction log file usage. This is because the transaction log cannot be truncated until after committed changes have been replicated to the mirrored database. Once the transaction log size reaches its maximum defined limit, writes to the database fail. To safeguard operational databases from write failures for critical OLTP transactions, you can set up an autoreseed mechanism that allows the transaction log to be truncated and reinitializes the database mirroring to Fabric.
+In certain situations, delays in mirroring to Microsoft Fabric can lead to increased transaction log file usage. This increase occurs because the transaction log can't be truncated until after committed changes are replicated to the mirrored database. After the transaction log size reaches its maximum defined limit, writes to the database fail. To safeguard operational databases from write failures for critical OLTP transactions, you can set up an autoreseed mechanism that allows the transaction log to be truncated and reinitializes the database mirroring to Fabric.
 
-A reseed stops flow of transactions to Microsoft Fabric from the mirrored database and reinitializes the mirroring at the present state. This involves generating a new initial snapshot of the tables configured for mirroring, and replicating that to Microsoft Fabric. After the snapshot, incremental changes are replicated. 
+A reseed stops the flow of transactions to Fabric from the mirrored database and reinitializes the mirroring at the present state. This process involves generating a new initial snapshot of the tables configured for mirroring, and replicating that snapshot to Fabric. After the snapshot, incremental changes are replicated. 
 
-During reseed, the mirrored database item in Microsoft Fabric is available but will not receive incremental changes until the reseed is completed. The `reseed_state` column in `sys.sp_help_change_feed_settings` indicates the reseed state.
+During reseed, the mirrored database item in Fabric is available but doesn't receive incremental changes until the reseed is completed. The `reseed_state` column in `sys.sp_help_change_feed_settings` indicates the reseed state.
 
-The autoreseed feature is disabled by default in SQL Server 2025, to enable see [Enable autoreseed](#enable-autoreseed). The autoreseed feature is enabled and cannot be managed or disabled in Azure SQL Database and Azure SQL Managed Instance.
+The autoreseed feature is disabled by default in SQL Server 2025. To enable it, see [Enable autoreseed](#enable-autoreseed). In Azure SQL Database and Azure SQL Managed Instance, this feature is enabled, and you can't manage or disable it.
 
-In Fabric Mirroring, the source SQL database transaction log is monitored. An autoreseed will only trigger when the following three conditions are true:
+In Fabric Mirroring, the source SQL database transaction log is monitored. An autoreseed triggers only when the following three conditions are true:
 
-- The transaction log is more than `@autoreseedthreshold` percent full, for example, `70`. On SQL Server, configure this value when you enable the feature, with [sys.sp_change_feed_configure_parameters](/sql/relational-databases/system-stored-procedures/sp-change-feed-configure-parameters). 
+- The transaction log is more than `@autoreseedthreshold` percent full, for example, `70`. On SQL Server, configure this value when you enable the feature, by using [sys.sp_change_feed_configure_parameters](/sql/relational-databases/system-stored-procedures/sp-change-feed-configure-parameters). 
 - The log reuse reason is `REPLICATION`.
 - Because the `REPLICATION` log reuse wait can be raised for other features such as transactional replication or CDC, autoreseed only occurs when `sys.databases.is_data_lake_replication_enabled` = 1. This value is configured by Fabric Mirroring.
 
 ## Diagnose
 
-To identify if Fabric mirroring is preventing log truncation for a mirrored database, check the `log_reuse_wait_desc` column in the `sys.databases` system catalog view to see if the reason is `REPLICATION`. For more information on the log reuse wait types, see [Factors that delay transaction log truncation](/sql/relational-databases/logs/the-transaction-log-sql-server#FactorsThatDelayTruncation). For example:
+To identify if Fabric mirroring is preventing log truncation for a mirrored database, check the `log_reuse_wait_desc` column in the `sys.databases` system catalog view to determine whether the reason is `REPLICATION`. For more information on the log reuse wait types, see [Factors that delay transaction log truncation](/sql/relational-databases/logs/the-transaction-log-sql-server#FactorsThatDelayTruncation). For example:
 
 ```sql
 SELECT [name], log_reuse_wait_desc 
@@ -35,7 +35,7 @@ FROM sys.databases
 WHERE is_data_lake_replication_enabled = 1;
 ```
 
-If the query shows `REPLICATION` log reuse wait type, then due to Fabric mirroring the transaction log cannot empty out committed transactions and will continue to fill.
+If the query shows `REPLICATION` log reuse wait type, then due to Fabric mirroring the transaction log can't empty out committed transactions and continues to fill.
 
 Use the following T-SQL script to check total log space, and current log usage and available space:
 
@@ -88,7 +88,7 @@ SELECT @used_log_size AS [used log space in MB],
 
 ## Enable autoreseed
 
-If the log usage returned by the previous T-SQL script is close to being full (for example, greater than 70%), consider enabling the mirrored database for automatic reseeding using the `sys.sp_change_feed_configure_parameters` system stored procedure. For example, to enable the autoreseed behavior: 
+If the log usage returned by the previous T-SQL script is close to being full (for example, greater than 70%), consider enabling the mirrored database for automatic reseeding by using the `sys.sp_change_feed_configure_parameters` system stored procedure. For example, to enable the autoreseed behavior: 
 
 ```sql
 USE <Mirrored database name>
@@ -100,11 +100,11 @@ EXECUTE sys.sp_change_feed_configure_parameters
 
 For more information, see [sys.sp_change_feed_configure_parameters](/sql/relational-databases/system-stored-procedures/sp-change-feed-configure-parameters?view=sql-server-ver17&preserve-view=true).
 
-In the source database, the reseed should release the transaction log space held up by mirroring. Issue a manual `CHECKPOINT` on the source SQL Server database to force the release of log space if the holdup reason is still `REPLICATION` due to mirroring. For more information, see [CHECKPOINT (Transact-SQL)](/sql/t-sql/language-elements/checkpoint-transact-sql?view=sql-server-ver17&preserve-view=true).
+In the source database, the reseed process should release the transaction log space held up by mirroring. If the holdup reason is still `REPLICATION` due to mirroring, issue a manual `CHECKPOINT` on the source SQL Server database to force the release of log space. For more information, see [CHECKPOINT (Transact-SQL)](/sql/t-sql/language-elements/checkpoint-transact-sql?view=sql-server-ver17&preserve-view=true).
 
 ## Manual reseed
 
-As a best practice, you can test manual reseed for a specific database using the following stored procedure to understand the impact before turning on the automatic reseed functionality.
+We recommend that you test manual reseed for a specific database by using the following stored procedure so that you understand the impact before you turn on automatic reseed.
 
 ```sql
 USE <Mirrored database name>
@@ -116,15 +116,15 @@ For more information, see [sys.sp_change_feed_reseed_db_init](/sql/relational-da
 
 ## Check if a reseed has been triggered
 
-- The `reseed_state` column in the system stored procedure `sys.sp_help_change_feed_settings` on the source SQL database indicates its current reseed state. 
+- The `reseed_state` column in the system stored procedure `sys.sp_help_change_feed_settings` on the source SQL database shows the current reseed state. 
 
    - `0` = Normal.
    - `1` = The database has started the process of reinitializing to Fabric. Transitionary state.
-   - `2` = The database is being reinitialized to Fabric and waiting for replication to restart. Transitionary state. When replication is established, reseed state moves to `0`.
+      - `2` = The database is reinitializing to Fabric and waiting for replication to restart. Transitionary state. When replication is established, the reseed state changes to `0`.
     
    For more information, see [sys.sp_help_change_feed_settings](/sql/relational-databases/system-stored-procedures/sp-help-change-feed-settings?view=azuresqldb-current&preserve-view=true).
     
-- All tables enabled for mirroring in the database will have a value of `7` for the `state` column in `sys.sp_help_change_feed_table`.
+- All tables enabled for mirroring in the database have a value of `7` for the `state` column in `sys.sp_help_change_feed_table`.
 
    For more information, see [sys.sp_help_change_feed_table](/sql/relational-databases/system-stored-procedures/sp-help-change-feed-table?view=azuresqldb-current&preserve-view=true).
 
