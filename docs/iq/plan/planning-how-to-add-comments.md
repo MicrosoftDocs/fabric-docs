@@ -7,7 +7,7 @@ ai-usage: ai-assisted
 #customer intent: As a planning sheet user, I want to add comments to specific cells, rows, and columns, so that I can provide context and feedback directly within my data.
 ---
 
-# Commenting and collaboration
+# Comment and collaborate in planning sheet
 
 By using the commenting and collaboration features, you can add contextual discussions directly within the planning sheets. Use these capabilities with your team to review data, provide feedback, assign tasks, and track discussions all within the planning sheet environment.
 
