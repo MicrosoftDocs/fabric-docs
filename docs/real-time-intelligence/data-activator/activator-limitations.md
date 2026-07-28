@@ -91,7 +91,7 @@ To check if the recipient's domain is one of the verified domains, visit [Azure 
 
 For Teams group chats, you can select only recently active chats. If the chat you want doesn't appear in Activator, send a message to the chat to make it recently active.
 
-Teams channels aren't currently supported. Support for shared channels is planned for a future release. You can't send messages to [private channels](https://aka.ms/TeamsPrivateChannel).
+Teams channels aren't currently supported. You can't send messages to [private channels](https://aka.ms/TeamsPrivateChannel).
 
 ## Maximum number of events per second
 
