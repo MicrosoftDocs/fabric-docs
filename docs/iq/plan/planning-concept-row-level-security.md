@@ -1,23 +1,21 @@
 ---
 title: Row-Level Security (RLS) Behavior in Fabric Plan
-description: Learn how Row-Level Security (RLS) behaves in Fabric plan (preview). Understand data access rules, role-based visibility, and key differences from Power BI security models.  
+description: Learn how Row-Level Security (RLS) behaves in Fabric plan. Understand data access rules, role-based visibility, and key differences from Power BI security models.  
 ms.date: 04/30/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 #customer intent: As a user, I want to understand row level security behavior of planning sheets.
 ---
 
-# Row-level security (RLS) behavior in plan (preview)
+# Row-level security (RLS) behavior in plan
 
-*Row-level security (RLS)* restricts data access by filtering rows based on a user's identity. In Fabric plan (preview), RLS ensures that users can view and interact only with the data they are authorized to access.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+*Row-level security (RLS)* restricts data access by filtering rows based on a user's identity. In Fabric plan, RLS ensures that users can view and interact only with the data they are authorized to access.
 
 RLS is enforced at query time, and only the permitted rows are returned to the user. This article explains how behavior varies based on workspace roles and RLS in plan.
 
 ## How RLS works in plan
 
-RLS in Fabric plan (preview) is inherited from the underlying semantic model or data source.
+RLS in Fabric plan is inherited from the underlying semantic model or data source.
 
 RLS filters data based on user context, applies at query time for every interaction, and ensures consistent enforcement across views and calculations.
 
@@ -25,7 +23,7 @@ RLS rules are evaluated whenever a user queries data. only the allowed rows are 
 
 ## RLS behavior in plan
 
-Fabric plan (preview) connects to semantic models using embedded tokens. This authentication mechanism differs from the standard Power BI service approach and can result in different data access and security behavior, particularly when RLS or Role-Based Access Control (RBAC) is configured on the underlying semantic model.
+Fabric plan connects to semantic models using embedded tokens. This authentication mechanism differs from the standard Power BI service approach and can result in different data access and security behavior, particularly when RLS or Role-Based Access Control (RBAC) is configured on the underlying semantic model.
 
 ### RLS behavior in plan compared to Power BI
 

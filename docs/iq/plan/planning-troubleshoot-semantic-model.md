@@ -1,18 +1,16 @@
 ---
-title: Troubleshoot Semantic Model Connection Issues in Plan (Preview)
-description: Troubleshoot common semantic model connection issues in plan (preview).
+title: Troubleshoot Semantic Model Connection Issues in Plan
+description: Troubleshoot common semantic model connection issues in plan.
 ms.date: 05/14/2026
 ms.topic: troubleshooting
 ai-usage: ai-assisted
 ms.search.form: Insufficient permissions to connect to semantic model, Semantic model not found, Shared cloud connection expired
-#customer intent: As a user, I want to troubleshoot common issues that occur when connecting to a semantic model in plan (preview).
+#customer intent: As a user, I want to troubleshoot common issues that occur when connecting to a semantic model in plan.
 ---
 
-# Troubleshoot semantic model connections in plan (preview)
+# Troubleshoot semantic model connections in plan
 
-This article provides troubleshooting guidance for semantic model connection issues in plan (preview) in Microsoft Fabric. For information about known limitations, see [Known limitations in plan (preview)](overview-limitations.md).
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+This article provides troubleshooting guidance for semantic model connection issues in plan in Microsoft Fabric. For information about known limitations, see [Known limitations in plan](overview-limitations.md).
 
 ## Insufficient permissions to connect to semantic model
 

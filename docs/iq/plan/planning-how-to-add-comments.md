@@ -11,8 +11,6 @@ ai-usage: ai-assisted
 
 By using the commenting and collaboration features, you can add contextual discussions directly within the planning sheets. Use these capabilities with your team to review data, provide feedback, assign tasks, and track discussions all within the planning sheet environment.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 You commonly use data-level commentary in analytical and planning scenarios. The planning sheet provides built-in support for notes, annotations, and collaborative comments. It dynamically associates each comment with specific data points, such as cells, rows, columns, or report sections. These comments stay linked to the relevant data context even when filters or hierarchies change.
 
 ## Prerequisites

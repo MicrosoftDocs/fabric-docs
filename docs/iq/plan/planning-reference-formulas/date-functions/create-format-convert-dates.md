@@ -9,9 +9,7 @@ ms.search.form: Date functions
 
 # Date functions: Create, format, and convert dates
 
-In plan (preview), date functions help you perform date calculations, extract date values, and format dates in calculations. In this article, you learn how to use date functions to get the current date and time, format dates as needed, and convert Excel serial numbers to and from date values.
-
-[!INCLUDE [Fabric feature-preview-note](../../../../includes/feature-preview-note.md)]
+In plan, date functions help you perform date calculations, extract date values, and format dates in calculations. In this article, you learn how to use date functions to get the current date and time, format dates as needed, and convert Excel serial numbers to and from date values.
 
 ## DATE
 

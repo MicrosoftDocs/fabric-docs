@@ -1,6 +1,6 @@
 ---
-title: Infobridge in Plan (Preview)
-description: Learn about the Infobridge component of the plan (preview) item. Infobridge is a no-code data integration and transformation tool to connect multiple data sources, prepare data, and create unified reports.
+title: Infobridge in Plan
+description: Learn about the Infobridge component of the plan item. Infobridge is a no-code data integration and transformation tool to connect multiple data sources, prepare data, and create unified reports.
 ms.date: 03/30/2026
 ms.topic: overview
 ms.search.form: Getting Started with Infobridge
@@ -8,11 +8,9 @@ ai-usage: ai-assisted
 #customer intent: As a user, I want to use Infobridge to consolidate my plans, budgets, simulations, and forecasts across source systems and reports.
 ---
 
-# What is Infobridge in plan (preview)?
+# What is Infobridge in plan?
 
-The *Infobridge* component of plan (preview) is a no-code data integration, preparation, and transformation engine that lets you connect to multiple data sources and consolidate them into a single, unified report. You can also perform common transformations on data sources, such as appending, merging, pivoting, unpivoting, and grouping data.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+The *Infobridge* component of plan is a no-code data integration, preparation, and transformation engine that you use to connect to multiple data sources and consolidate them into a single, unified report. You can also perform common transformations on data sources, such as appending, merging, pivoting, unpivoting, and grouping data.
 
 ## Why use Infobridge?
 

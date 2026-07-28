@@ -19,8 +19,6 @@ PowerTable provides the following row management capabilities:
 * Copy records between PowerTable and other applications.
 * Delete one or more rows directly from the table.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Insert rows
 
 Use the **Insert Row** option to manually add new rows to a table.

@@ -12,8 +12,6 @@ A button column is an interactive [visual column](how-to-insert-visual-columns.m
 
 This article explains how to add a button column to your table.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 ## Insert the button column
 
 1. Go to **PowerTable** > **Insert Column** > **Add Visual Column** > **Add Button Column**.

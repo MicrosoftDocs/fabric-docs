@@ -10,8 +10,6 @@ ai-usage: ai-assisted
 
 *Slowly changing dimensions (SCDs)* are used in data warehouses to capture changes in dimensional attributes. Dimensions such as products and customers can change over time. To ensure accurate historical reporting, the data warehouse must capture and maintain these changes.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Type 2 SCDs
 
 A Type 2 slowly changing dimension (SCD) creates a new record when dimensional data changes and marks the existing record as inactive. This approach preserves historical data by maintaining multiple versions of the same dimension record.
