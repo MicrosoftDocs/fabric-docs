@@ -14,8 +14,6 @@ Export reports and dashboards as high-quality files while preserving layout and 
 * Preserve report formatting, including fonts, colors, spacing, and layout.
 * Select the quality and page size.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Export data 
 
 To export the data used in the chart, select and hold (or right-click) the visual, select **Export**, then select **Data**. The underlying data is saved as a CSV file.

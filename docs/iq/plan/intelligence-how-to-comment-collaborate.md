@@ -11,8 +11,6 @@ ai-usage: ai-assisted
 
 Comments are collaborative threads that facilitate conversations directly from within your report. The intelligence sheet provides a context-aware commenting solution with support for cell, row, and column-level threaded conversations. Key features include `@mentions`, email notifications, and task assignments.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Add comments
 
 1. Select a cell, row, or column. Select **Comment** > **Add New Comment**.

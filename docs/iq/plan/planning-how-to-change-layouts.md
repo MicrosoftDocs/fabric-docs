@@ -11,8 +11,6 @@ ai-usage: ai-assisted
 
 Layout options control how data is structured and displayed in the report. You can configure both table layouts and measure layouts to customize how categories and values appear.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Prerequisites
 
 Before you configure layout options, ensure that you have the following prerequisites:

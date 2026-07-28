@@ -1,23 +1,21 @@
 ---
-title: Prerequisites for Plan (Preview)
-description: This article lists the prerequisites for using plan (preview).
+title: Prerequisites for Plan
+description: This article lists the prerequisites for using plan.
 ms.topic: overview
 ms.date: 06/13/2026
 ai-usage: ai-assisted
 #customer intent: As a user, I want to know the prerequisites for using Plan.
 ---
 
-# Prerequisites for plan (preview)
+# Prerequisites for plan
 
-This article lists all the required prerequisites, tenant settings, and capacity settings that must be configured to use plan (preview).
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+This article lists all the required prerequisites, tenant settings, and capacity settings that must be configured to use plan.
 
 ## Tenant settings
 
 [Fabric administrators](../../admin/roles.md) can grant access to these settings in the [admin portal](../../admin/admin-center.md) under [Tenant settings](../../admin/tenant-settings-index.md).
 
-1. Enable **Users can create Plan (preview) items**. This setting is required to create plan (preview) items.
+1. Enable **Users can create Plan items**. This setting is required to create plan items.
 
    :::image type="content" source="media/overview-prerequisites/enable-plan.png" alt-text="Screenshot of enabling plan for organizational users." lightbox="media/overview-prerequisites/enable-plan.png":::
 
@@ -58,4 +56,4 @@ The following list contains optional database connections that you can configure
 * Create and configure a writeback destination if you want to write back the plan data. For more information, see [Create a writeback destination](planning-writeback/planning-how-to-persist-data.md#create-a-writeback-destination).
 
 > [!NOTE]
-> During plan (preview) item creation, a Fabric SQL database is automatically created in your workspace. This database stores your plan report's metadata.
+> During plan item creation, a Fabric SQL database is automatically created in your workspace. This database stores your plan report's metadata.

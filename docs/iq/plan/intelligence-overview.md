@@ -1,17 +1,15 @@
 ---
-title: Intelligence Sheets in Plan (Preview)
-description: Learn about the intelligence sheets component of the plan (preview) item for a no-code reporting experience. Build reports, visualize data, and get real-time insights across plans and budgets.
+title: Intelligence Sheets in Plan
+description: Learn about the intelligence sheets component of the plan item for a no-code reporting experience. Build reports, visualize data, and get real-time insights across plans and budgets.
 ms.date: 03/30/2026
 ms.topic: overview
 ai-usage: ai-assisted
 #customer intent: As a user, I want visualize my plans, budgets, and forecasts.
 ---
 
-# What are intelligence sheets in plan (preview)?
+# What are intelligence sheets in plan?
 
-The *intelligence sheets* component of plan (preview) provides a powerful no-code reporting experience that enables teams to collaboratively build reports, generate fully formatted exports, visualize data, and manage project plans from a single platform in Microsoft Fabric. It couples seamlessly with the planning sheet to provide real-time insights across your plans, budgets, and what-if scenarios.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+The *intelligence sheets* component of plan provides a powerful no-code reporting experience that enables teams to collaboratively build reports, generate fully formatted exports, visualize data, and manage project plans from a single platform in Microsoft Fabric. It couples seamlessly with the planning sheet to provide real-time insights across your plans, budgets, and what-if scenarios.
 
 Intelligence sheets bring single-click, flexible International Business Communication Standards (IBCS) formatting for charts, cards, and tabular reports, with pixel-perfect exports.
 
