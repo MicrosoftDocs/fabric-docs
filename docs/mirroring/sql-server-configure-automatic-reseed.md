@@ -27,7 +27,7 @@ In Fabric Mirroring, the source SQL database transaction log is monitored. An au
 
 ## Diagnose
 
-To identify if Fabric Mirroring is preventing log truncation for a mirrored database, check the `log_reuse_wait_desc` column in the `sys.databases` system catalog view to determine whether the reason is `REPLICATION`. For more information on the log reuse wait types, see [Factors that delay transaction log truncation](/sql/relational-databases/logs/the-transaction-log-sql-server#FactorsThatDelayTruncation). For example:
+To identify if Fabric mirroring is preventing log truncation for a mirrored database, check the `log_reuse_wait_desc` column in the `sys.databases` system catalog view to determine whether the reason is `REPLICATION`. For more information on the log reuse wait types, see [Factors that delay transaction log truncation](/sql/relational-databases/logs/the-transaction-log-sql-server#FactorsThatDelayTruncation). For example:
 
 ```sql
 SELECT [name], log_reuse_wait_desc 
