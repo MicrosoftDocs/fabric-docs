@@ -27,7 +27,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 ## Azure connectors
 
 
-| **Connector Type** | **Azure Data Factory Source/Sink** | **Azure Data Factory Authentication** | **Azure Data Factory Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
+| **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |--------------------|---------------------|------------------------|------------------------|-------------------------------|---------------------------|---------------------------|
 | [Azure Blob Storage](connector-azure-blob-storage-overview.md) | ✓/✓ | Anonymous | Service principal authentication type supports `azureCloudType`, `accountKind`, `servicePrincipalCredentialType`, and `servicePrincipalCert`. | ✓/✓ | Anonymous | `azureCloudType`, `accountKind`, `servicePrincipalCredentialType`, and `servicePrincipalCert` aren't supported for service principal authentication type. |
 |  |  | Account key |  |  | Account key |  |
@@ -93,7 +93,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 ## Microsoft Fabric and data warehouse connectors
 
 
-| **Connector Type** | **Azure Data Factory Source/Sink** | **Azure Data Factory Authentication** | **Azure Data Factory Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
+| **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |--------------------|---------------------|-------------------------|-------------------------|-------------------------------|----------------------------|----------------------------|
 | [Microsoft Fabric Lakehouse](connector-lakehouse-overview.md) | ✓/✓ | Service principal |Upsert for Table isn't supported| ✓/✓ | | Support Upsert for Table|
 |                    |                     | System-assigned managed identity | |                       |                            | |
@@ -108,7 +108,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 ## Database connectors
 
-| **Connector Type** | **Azure Data Factory Source/Sink** | **Azure Data Factory Authentication** | **Azure Data Factory Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
+| **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |--------------------|---------------------|-------------------------|-------------------------|-------------------------------|---------------------------|----------------------------|
 | [Amazon Redshift](connector-amazon-redshift-overview.md) | ✓/- | Basic | Support Amazon Redshift UNLOAD  | ✓/- | Amazon Redshift |Amazon Redshift UNLOAD is not supported |
 | [DB2](connector-ibm-db2-database-overview.md) | ✓/- | Basic | | ✓/- | Basic | |
@@ -161,7 +161,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 ## File connectors
 
-| **Connector Type**   | **Azure Data Factory Source/Sink** | **Azure Data Factory Authentication**        | **Azure Data Factory Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
+| **Connector Type**   | **ADF Source/Sink** | **ADF Authentication**        | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |----------------------|---------------------|-------------------------------|------------------------|-------------------------------|---------------------------|---------------------------|
 | [Amazon S3](connector-amazon-s3-overview.md)            | ✓/-                | Access key                    | Support `sessionToken`. | ✓/✓                           | Access key                | `sessionToken` is not supported. |
 |                      |                     | Temporary security credential |                        |                               |                           |                           |
@@ -180,7 +180,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 ## File format connectors
 
 
-| **Connector Type** | **Azure Data Factory Source/Sink** | **Azure Data Factory Other Settings** | **Fabric Source/Destination** | **Fabric Other Settings** |
+| **Connector Type** | **ADF Source/Sink** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Other Settings** |
 |--------------------|---------------------|-------------------------|-------------------------------|----------------------------|
 | AVRO               | ✓/✓                 |                         | ✓/✓                           |                            |
 | Binary             | ✓/✓                 |                         | ✓/✓                           |                            |
@@ -195,7 +195,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 ## NoSQL connectors
 
 
-| **Connector Type** | **Azure Data Factory Source/Sink** | **Azure Data Factory Authentication** | **Azure Data Factory Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
+| **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |--------------------|---------------------|------------------------|-------------------------|-------------------------------|---------------------------|----------------------------|
 | [Cassandra](connector-cassandra-overview.md) | ✓/- | Anonymous | | ✓/- | Anonymous | |
 | | | Basic | | | Basic | |
@@ -204,7 +204,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 ## Services and apps connectors
 
-| **Connector Type** | **Azure Data Factory Source/Sink** | **Azure Data Factory Authentication** | **Azure Data Factory Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
+| **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |--------------------|---------------------|------------------------|------------------|-------------------------------|---------------------------|---------------------|
 | [Dataverse](connector-dataverse-overview.md)          | ✓/✓                | Microsoft Entra service principal | Support `deploymentType`, `serviceUri`, `servicePrincipalCredentialType`, and `credentials`. | ✓/✓                   | Service principal       | `deploymentType`, `serviceUri`, `servicePrincipalCredentialType`, and `credentials` aren't supported.<br><br>Support Environment domain. |
 |  | | Office 365 | | | | |
@@ -246,7 +246,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 ## Generic connectors
 
-| **Connector Type** | **Azure Data Factory Source/Sink** | **Azure Data Factory Authentication** | **Azure Data Factory Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
+| **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |--------------------|---------------------|------------------------|------------------------|------------------------|--------------------------|------------------------|
 | [HTTP](connector-http-overview.md)               | ✓/-                | Anonymous             | Support `enableServerCertificateValidation`. <br><br> Support `authHeaders`. | ✓/-                   | Anonymous               | Support Disable server certificate validation. <br><br> `authHeaders` is not supported. |
 | | | Basic | | | Basic | |
