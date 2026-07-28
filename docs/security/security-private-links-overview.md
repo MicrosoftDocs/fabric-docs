@@ -229,7 +229,7 @@ There are several considerations to keep in mind while working with private endp
   
 * Private links resource REST APIs don't support tags.
   
-* Plan (preview) items in Fabric IQ (preview) aren't supported in workspaces or tenants that use private links.
+* Plan items in Fabric IQ (preview) aren't supported in workspaces or tenants that use private links.
 
 * The following URLs must be accessible from the client browser:
 
