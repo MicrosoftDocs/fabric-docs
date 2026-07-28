@@ -11,8 +11,6 @@ ai-usage: ai-assisted
 
 In many business scenarios, plans are created separately for each dimension—such as regions, product lines, departments, or time periods—resulting in duplicated effort and fragmented planning. Multi-dimensional cube planning lets you create and allocate plans across multiple dimensions with different granularities in a single step. Cubes enable plans to stay synchronized across different levels of detail.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Driver-based allocation model
 
 Each cube is configured around a [data input measure](planning-how-to-input-data.md) or [forecast](planning-forecasting/planning-how-to-build-forecasts.md) measure. Allocation within the cube is performed using an allocation driver (also referred to as a reference measure or allocation key).

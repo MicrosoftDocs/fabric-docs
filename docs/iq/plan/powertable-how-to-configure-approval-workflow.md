@@ -10,8 +10,6 @@ ms.topic: how-to
 
 PowerTable sheets can connect to your database live for real-time data updates and synchronization. While row and column-level access permissions ensure data integrity, you can go one step further to secure your data by setting up approval workflows.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 To ensure accuracy and correctness, users might need management's approval before making any changes to the data. There can be scenarios like multiple users accidentally changing the same data, entering incorrect values, and so on. Such scenarios can be streamlined by setting up an approval workflow process in PowerTable sheets.
 
 ## Approval flow sequence

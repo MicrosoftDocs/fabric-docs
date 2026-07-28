@@ -10,8 +10,6 @@ ms.topic: how-to
 
 This article explains how to view all series configurations and select the series to include in writeback. This process defines which data is written back to the destination.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 ## Select series for writeback
 
 The **Series allowed for Writeback** section of the **Writeback Settings** tab lists all series that are available for writeback. By default, all series are selected.

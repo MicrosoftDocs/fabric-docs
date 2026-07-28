@@ -10,8 +10,6 @@ ms.topic: how-to
 
 Scenarios let you create multiple planning versions within a planning sheet to evaluate different business outcomes. Use scenarios to compare budgets, forecasts, and alternative business assumptions without affecting the base data.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Prerequisites
 
 Before you create a scenario, make sure that you have the following prerequisites in place:
