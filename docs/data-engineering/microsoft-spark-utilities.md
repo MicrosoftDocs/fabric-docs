@@ -4,21 +4,21 @@ description: Use Microsoft Spark Utilities, a built-in package, to work with fil
 ms.reviewer: jingzh
 ms.topic: how-to
 ms.search.form: Microsoft Spark utilities
-ms.date: 05/02/2024
+ms.date: 07/08/2026
 ---
 
 # Microsoft Spark Utilities (MSSparkUtils) for Fabric
 
-Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easily perform common tasks. You can use MSSparkUtils to work with file systems, to get environment variables, to chain notebooks together, and to work with secrets. The MSSparkUtils package is available in PySpark (Python) Scala, SparkR notebooks, and Fabric pipelines.
+Microsoft Spark Utilities (MSSparkUtils) is a built-in package that helps you easily perform common tasks. Use MSSparkUtils to work with file systems, get environment variables, chain notebooks together, and work with secrets. The MSSparkUtils package is available in PySpark (Python), Scala, SparkR notebooks, and Fabric pipelines.
 
 > [!NOTE]
 >
-> - MsSparkUtils has been officially renamed to [**NotebookUtils**](notebook-utilities.md). The existing code will remain **backward compatible** and won't cause any breaking changes. It is **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
-> - NotebookUtils is designed to work with **Spark 3.4(Runtime v1.2) and above**. All new features and updates will be exclusively supported with notebookutils namespace going forward.
+> - MsSparkUtils is officially renamed to [**NotebookUtils**](notebook-utilities.md). The existing code will remain **backward compatible** and won't cause any breaking changes. We **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
+> - NotebookUtils is designed to work with **Spark 3.4(Runtime v1.2) and above**. All new features and updates are exclusively supported with notebookutils namespace going forward.
 
 ## File system utilities
 
-*mssparkutils.fs* provides utilities for working with various file systems, including Azure Data Lake Storage (ADLS) Gen2 and Azure Blob Storage. Make sure you configure access to [Azure Data Lake Storage Gen2](/azure/storage/blobs/data-lake-storage-introduction) and [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction) appropriately.
+*mssparkutils.fs* provides utilities for working with various file systems, including Azure Data Lake Storage Gen2 and Azure Blob Storage. Make sure you configure access to [Azure Data Lake Storage Gen2](/azure/storage/blobs/data-lake-storage-introduction) and [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction) appropriately.
 
 Run the following commands for an overview of the available methods:
 
@@ -70,7 +70,7 @@ mssparkutils.fs.ls("file:/tmp")  # based on local file system of driver node
 
 ### View file properties
 
-This method returns file properties including file name, file path, file size, and whether it's a directory and a file.
+This method returns file properties, including the file name, file path, file size, and whether it's a directory or a file.
 
 ```python
 files = mssparkutils.fs.ls('Your directory path')
@@ -80,7 +80,7 @@ for file in files:
 
 ### Create new directory
 
-This method creates the given directory if it doesn't exist, and creates any necessary parent directories.
+This method creates the specified directory if it doesn't exist, and creates any necessary parent directories.
 
 ```python
 mssparkutils.fs.mkdirs('new directory name')  
@@ -107,7 +107,7 @@ mssparkutils.fs.fastcp('source file or directory', 'destination file or director
 
 ### Preview file content
 
-This method returns up to the first 'maxBytes' bytes of the given file as a String encoded in UTF-8.
+This method returns up to the first `maxBytes` bytes of the specified file as a string encoded in UTF-8.
 
 ```python
 # Set the second parameter as an integer for the maxBytes to read
@@ -140,7 +140,7 @@ mssparkutils.fs.append("file path", "content to append", True) # Set the last pa
 ```
 
 > [!NOTE] 
-> When using the ``` mssparkutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend to add a ```sleep``` statement around 0.5s~1s between the recurring writes. This is because the ```mssparkutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
+> When you use the `mssparkutils.fs.append` API in a `for` loop to write to the same file, we recommend that you add a `sleep` statement of about 0.5 to 1 seconds between the recurring writes. The `mssparkutils.fs.append` API's internal `flush` operation is asynchronous, so a short delay helps ensure data integrity.
 
 ### Delete file or directory
 
@@ -152,7 +152,7 @@ mssparkutils.fs.rm('file path', True) # Set the last parameter as True to remove
 
 ### Mount/unmount directory
 
-Find  more information about detailed usage in [File mount and unmount](#file-mount-and-unmount).
+For more information about detailed usage, see [File mount and unmount](#file-mount-and-unmount).
 
 ## Notebook utilities
 
@@ -171,7 +171,7 @@ run(path: String, timeoutSeconds: int, arguments: Map): String -> This method ru
 ```
 
 > [!NOTE]
-> Notebook utilities aren't applicable for Apache Spark job definitions (SJD).
+> Notebook utilities don't apply to Apache Spark job definitions (SJD).
 
 ### Reference a notebook
 
@@ -209,7 +209,7 @@ You can open the snapshot link of the reference run in the cell output. The snap
 > [!IMPORTANT]
 > This feature is in [preview](../fundamentals/preview.md).
 
-The method `mssparkutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API uses a multi-threaded implementation to submit, queue, and monitor child notebooks that execute on isolated REPL instances (read-eval-print-loop) within the existing spark session. The sessions compute resources are shared by the referenced child notebooks.
+The method `mssparkutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API uses a multithreaded implementation to submit, queue, and monitor child notebooks that execute on isolated REPL instances (read-eval-print-loop) within the existing Spark session. The referenced child notebooks share the session's compute resources.
 
 With `mssparkutils.notebook.runMultiple()`, you can:
 
@@ -219,7 +219,7 @@ With `mssparkutils.notebook.runMultiple()`, you can:
 
 - Optimize the use of Spark compute resources and reduce the cost of your Fabric projects.
 
-- View the Snapshots of each notebook run record in the output, and debug/monitor your notebook tasks conveniently.
+- View the snapshots of each notebook run record in the output, and debug and monitor your notebook tasks conveniently.
 
 - Get the exit value of each executive activity and use them in downstream tasks.
 
@@ -237,7 +237,7 @@ The execution result from the root notebook is as follows:
 
 :::image type="content" source="media\microsoft-spark-utilities\reference-notebook-list.png" alt-text="Screenshot of reference a list of notebooks." lightbox="media\microsoft-spark-utilities\reference-notebook-list.png":::
 
-The following is an example of running notebooks with topological structure using `mssparkutils.notebook.runMultiple()`. Use this method to easily orchestrate notebooks through a code experience.
+The following example shows running notebooks with a topological structure by using `mssparkutils.notebook.runMultiple()`. Use this method to easily orchestrate notebooks through a code experience.
 
 ```python
 # run multiple notebooks with parameters
@@ -276,12 +276,12 @@ The execution result from the root notebook is as follows:
 :::image type="content" source="media\microsoft-spark-utilities\reference-notebook-list-with-parameters.png" alt-text="Screenshot of reference a list of notebooks with parameters." lightbox="media\microsoft-spark-utilities\reference-notebook-list-with-parameters.png":::
 
 > [!NOTE]
-> - The upper limit for notebook activities or concurrent notebooks is constrained by the number of driver cores. For example, a Medium node driver with 8 cores would be able to execute up to 8 notebooks concurrently. This is because each notebook that is submitted executes on its own REPL (read-eval-print-loop) instance, each of which consumes one driver core.
-> - The default concurrency parameter is set to **50** to support automatically scaling the max concurrency as users configure Spark pools with larger nodes and thus more driver cores. While you can set this to a higher value when using a larger driver node, increasing the amount of concurrent processes executed on a single driver node typically does not scale linearly. Increasing concurrency can lead to reduced efficiency due to driver and executor resource contention. Each running notebook runs on a dedicated REPL instance which consumes CPU and memory on the driver, and under high concurrency this can increase the risk of driver instability or out-of-memory errors, particularly for long-running workloads.
-> - You may experience that each individual jobs will take longer due to the overhead of initializing REPL instances and orchestrating many notebooks. If issues arise, consider separating notebooks into multiple ```runMultiple``` calls or reducing the concurrency by adjusting the **concurrency** field in the DAG parameter.
-> - When running short-lived notebooks (e.g., 5 seconds code execution time), the initialization overhead becomes dominant, and variability in prep time may reduce the chance of notebooks overlapping, and therefore result in lower realized concurrency. In these scenrios it may be more optimal to combine small operations into a one or multiple notebooks.
-> - While multi-threading is used for submission, queuing, and monitoring, note that the code run in each notebook is not multi-threaded on each executor. There's no resource sharing between as each notebook process is allocated a portion of the total executor resources, this can cause shorter jobs to run inefficiently and longer jobs to contend for resources.
-> - The default timeout for entire DAG is 12 hours, and the default timeout for each cell in child notebook is 90 seconds. You can change the timeout by setting the **timeoutInSeconds** and **timeoutPerCellInSeconds** fields in the DAG parameter. As you increase concurrency you may need to increase **timeoutPerCellInSeconds** to prevent possible resource contention from causing unnecessary timeouts.
+> - The upper limit for notebook activities or concurrent notebooks is constrained by the number of driver cores. For example, a Medium node driver with eight cores can execute up to eight notebooks concurrently. This limit exists because each submitted notebook executes on its own REPL (read-eval-print-loop) instance, and each instance consumes one driver core.
+> - The default concurrency parameter is set to **50** to support automatically scaling the max concurrency as users configure Spark pools with larger nodes and thus more driver cores. While you can set this parameter to a higher value when using a larger driver node, increasing the number of concurrent processes running on a single driver node typically doesn't scale linearly. Increasing concurrency can lead to reduced efficiency due to driver and executor resource contention. Each running notebook runs on a dedicated REPL instance which consumes CPU and memory on the driver. Under high concurrency, this consumption can increase the risk of driver instability or out-of-memory errors, particularly for long-running workloads.
+> - You might experience longer execution times for each individual job due to the overhead of initializing REPL instances and orchestrating many notebooks. If problems arise, consider separating notebooks into multiple `runMultiple` calls or reducing the concurrency by adjusting the **concurrency** field in the DAG parameter.
+> - When you run short-lived notebooks (for example, 5 seconds of code execution time), the initialization overhead becomes dominant. Variability in prep time might reduce the chance of notebooks overlapping, and therefore result in lower realized concurrency. In these scenarios, it might be more optimal to combine small operations into one or multiple notebooks.
+> - While multithreading is used for submission, queuing, and monitoring, note that the code that runs in each notebook isn't multithreaded on each executor. There's no resource sharing between notebooks. Each notebook process is allocated a portion of the total executor resources. This allocation can cause shorter jobs to run inefficiently and longer jobs to contend for resources.
+> - The default timeout for the entire DAG is 12 hours, and the default timeout for each cell in child notebooks is 90 seconds. You can change the timeout by setting the **timeoutInSeconds** and **timeoutPerCellInSeconds** fields in the DAG parameter. As you increase concurrency, you might need to increase **timeoutPerCellInSeconds** to prevent possible resource contention from causing unnecessary timeouts.
 
 ### Exit a notebook
 
@@ -289,9 +289,9 @@ This method exits a notebook with a value. You can run nesting function calls in
 
 - When you call an *exit()* function from a notebook interactively, the Fabric notebook throws an exception, skips running subsequent cells, and keeps the Spark session alive.
 
-- When you orchestrate a notebook in a pipeline that calls an *exit()* function, the notebook activity returns with an exit value, completes the pipeline run, and stops the Spark session. Do not enclose the *exit()* function around a try/catch as this NotebookExit Exception must propagate for the pipeline to get the return value.
+- When you orchestrate a notebook in a pipeline that calls an *exit()* function, the notebook activity returns with an exit value, completes the pipeline run, and stops the Spark session. Don't enclose the *exit()* function around a try/catch as this NotebookExit Exception must propagate for the pipeline to get the return value.
 
-- When you call an *exit()* function in a notebook that is being referenced, Fabric Spark will stop the further execution of the referenced notebook, and continue to run the next cells in the main notebook that calls the *run()* function. For example: Notebook1 has three cells and calls an *exit()* function in the second cell. Notebook2 has five cells and calls *run(notebook1)* in the third cell. When you run Notebook2, Notebook1 stops at the second cell when hitting the *exit()* function. Notebook2 continues to run its fourth cell and fifth cell.
+- When you call an *exit()* function in a notebook that is being referenced, Fabric Spark stops the further execution of the referenced notebook, and continues to run the next cells in the main notebook that calls the *run()* function. For example: Notebook1 has three cells and calls an *exit()* function in the second cell. Notebook2 has five cells and calls *run(notebook1)* in the third cell. When you run Notebook2, Notebook1 stops at the second cell when hitting the *exit()* function. Notebook2 continues to run its fourth cell and fifth cell.
 
 ```python
 mssparkutils.notebook.exit("value string")
@@ -337,21 +337,21 @@ Notebook executed successfully with exit value 20
 
 ### Stop an interactive session
 
-Instead of manually selecting stop, sometimes it's more convenient to stop an interactive session by calling an API in the code. For such cases, we provide an API *mssparkutils.session.stop()* to support stopping the interactive session via code. It's available for Scala and Python.
+Instead of manually selecting stop, sometimes it's more convenient to stop an interactive session by calling an API in the code. For such cases, use the *mssparkutils.session.stop()* API to support stopping the interactive session via code. It's available for Scala and Python.
 
 ```python
 mssparkutils.session.stop()
 ```
 
-The *mssparkutils.session.stop()* API stops the current interactive session asynchronously in the background. It stops the Spark session and release resources occupied by the session so they're available to other sessions in the same pool.
+The *mssparkutils.session.stop()* API stops the current interactive session asynchronously in the background. It stops the Spark session and releases resources occupied by the session so they're available to other sessions in the same pool.
 
 > [!NOTE]
-> We don't recommend calling language built-in APIs like *sys.exit* in Scala or *sys.exit()* in Python in your code, because such APIs kill the interpreter process, leaving the Spark session alive and the resources not released.
+> We don't recommend calling language built-in APIs like *sys.exit* in Scala or *sys.exit()* in Python in your code. These APIs kill the interpreter process, but they leave the Spark session alive and the resources aren't released.
 --->
 
 ## Credentials utilities
 
-You can use the MSSparkUtils Credentials Utilities to get access tokens and manage secrets in an Azure Key Vault.
+You can use the MSSparkUtils Credentials Utilities to get access tokens and manage secrets in Azure Key Vault.
 
 Run the following command to get an overview of the available methods:
 
@@ -368,12 +368,12 @@ getSecret(keyvault_endpoint, secret_name): returns secret for a given Key Vault 
 
 ### Get token
 
-getToken returns a Microsoft Entra token for a given audience and name (optional). The following list shows the currently available audience keys:
+`getToken` returns a Microsoft Entra token for a given audience and name (optional). The following list shows the currently available audience keys:
 
-- **Storage Audience Resource**: "storage"
-- **Power BI Resource**: "pbi"
-- **Azure Key Vault Resource**: "keyvault"
-- **Synapse RTA KQL DB Resource**: "kusto"
+- **Storage Audience Resource**: `storage`
+- **Power BI Resource**: `pbi`
+- **Azure Key Vault Resource**: `keyvault`
+- **Synapse RTA KQL DB Resource**: `kusto`
 
 Run the following command to get the token:
 
@@ -381,9 +381,9 @@ Run the following command to get the token:
 mssparkutils.credentials.getToken('audience Key')
 ```
 
-### Get secret using user credentials
+### Get secret by using user credentials
 
-getSecret returns an Azure Key Vault secret for a given Azure Key Vault endpoint and secret name using user credentials.
+`getSecret` returns an Azure Key Vault secret for a given Azure Key Vault endpoint and secret name by using user credentials.
 
 ```python
 mssparkutils.credentials.getSecret('https://<name>.vault.azure.net/', 'secret name')
@@ -391,11 +391,11 @@ mssparkutils.credentials.getSecret('https://<name>.vault.azure.net/', 'secret na
 
 ## File mount and unmount
 
-Fabric supports the following mount scenarios in the Microsoft Spark Utilities package. You can use the *mount*, *unmount*, *getMountPath()*, and *mounts()* APIs to attach remote storage (ADLS Gen2) to all working nodes (driver node and worker nodes). After the storage mount point is in place, use the local file API to access data as if it's stored in the local file system.
+Fabric supports the following mount scenarios in the Microsoft Spark Utilities package. You can use the *mount*, *unmount*, *getMountPath()*, and *mounts()* APIs to attach remote storage (Azure Data Lake Storage Gen2) to all working nodes (driver node and worker nodes). After the storage mount point is in place, use the local file API to access data as if it's stored in the local file system.
 
-### How to mount an ADLS Gen2 account
+### How to mount an Azure Data Lake Storage Gen2 account
 
-The following example illustrates how to mount Azure Data Lake Storage Gen2. Mounting Blob Storage works similarly.
+The following example shows how to mount Azure Data Lake Storage Gen2. Mounting Blob Storage works similarly.
 
 This example assumes that you have one Data Lake Storage Gen2 account named *storegen2*, and the account has one container named *mycontainer* that you want to mount to */test* into your notebook Spark session.
 
@@ -403,7 +403,7 @@ This example assumes that you have one Data Lake Storage Gen2 account named *sto
 
 To mount the container named *mycontainer*, *mssparkutils* first checks whether you have permission to access the container. Fabric supports three authentication methods for the trigger mount operation: *Microsoft Entra token* (default and recommended), *accountKey*, and *sastoken*. For more information about Microsoft Entra token authentication and the current `notebookutils` API, see [NotebookUtils file mount and unmount for Fabric](notebookutils/notebookutils-mount.md).
 
-### Mount via shared access signature token or account key
+### Mount by using a shared access signature token or account key
 
 MSSparkUtils supports explicitly passing an account key or [Shared access signature (SAS)](/azure/storage/common/storage-sas-overview) token as a parameter to mount the target.
 
@@ -447,8 +447,8 @@ mssparkutils.fs.mount(
 > ```
 
 Mount parameters:
-- fileCacheTimeout: Blobs will be cached in the local temp folder for 120 seconds by default. During this time, blobfuse will not check whether the file is up to date or not. The parameter could be set to change the default timeout time. When multiple clients modify files at the same time, in order to avoid inconsistencies between local and remote files, we recommend shortening the cache time, or even changing it to 0, and always getting the latest files from the server.
-- timeout: The mount operation timeout is 120 seconds by default. The parameter could be set to change the default timeout time. When there are too many executors or when mount times out, we recommend increasing the value.
+- `fileCacheTimeout`: Blobs cache in the local temp folder for 120 seconds by default. During this time, blobfuse doesn't check whether the file is up to date. Set this parameter to change the default timeout. When multiple clients modify files at the same time, to avoid inconsistencies between local and remote files, we recommend that you shorten the cache time, or even change it to 0, and always get the latest files from the server.
+- `timeout`: The mount operation timeout is 120 seconds by default. Set this parameter to change the default timeout. When there are too many executors or when mount times out, we recommend that you increase the value.
 
 You can use these parameters like this:
 
@@ -461,11 +461,11 @@ mssparkutils.fs.mount(
 ```
 
 > [!NOTE]
-> For security reasons, we recommended you don't store credentials in code. To further protect your credentials, we will redact your secret in notebook output. For more information, see [Secret redaction](author-execute-notebook.md#secret-redaction).
+> For security reasons, don't store credentials in code. To further protect your credentials, the secret is redacted in notebook output. For more information, see [Secret redaction](author-execute-notebook.md#secret-redaction).
 
 ### How to mount a lakehouse
 
-Sample code for mounting a lakehouse to */test*:
+Sample code for mounting a lakehouse to `/test`:
 
 ```python
 from notebookutils import mssparkutils 
@@ -476,19 +476,19 @@ mssparkutils.fs.mount(
 ```
 
 > [!NOTE]
-> Mounting a regional endpoint is not supported. Fabric only supports mounting the global endpoint, ```onelake.dfs.fabric.microsoft.com```.
+> Mounting a regional endpoint isn't supported. Fabric only supports mounting the global endpoint, `onelake.dfs.fabric.microsoft.com`.
 
-### Access files under the mount point by using the *mssparktuils fs* API
+### Access files under the mount point by using the *mssparkutils fs* API
 
-The main purpose of the mount operation is to let customers access the data stored in a remote storage account with a local file system API. You can also access the data by using the *mssparkutils fs* API with a mounted path as a parameter. This path format is a little different.
+The main purpose of the mount operation is to let you access the data stored in a remote storage account by using a local file system API. You can also access the data by using the *mssparkutils fs* API with a mounted path as a parameter. This path format is a little different.
 
-Assume that you mounted the Data Lake Storage Gen2 container *mycontainer* to */test* by using the mount API. When you access the data with a local file system API, the path format is like this:
+Assume that you mounted the Data Lake Storage Gen2 container *mycontainer* to `/test` by using the mount API. When you access the data by using a local file system API, the path format is like this:
 
 ```python
 /synfs/notebook/{sessionId}/test/{filename}
 ```
 
-When you want to access the data by using the mssparkutils fs API, we recommend using *getMountPath()* to get the accurate path:
+When you want to access the data by using the *mssparkutils fs* API, we recommend that you use *getMountPath()* to get the accurate path:
 
 ```python
 path = mssparkutils.fs.getMountPath("/test")
@@ -543,23 +543,23 @@ mssparkutils.fs.unmount("/test")
 
 ### Known limitations
 
-- The current mount is a job level configuration; we recommend you use the *mounts* API to check if a mount point exists or isn't available.
+- The current mount is a job level configuration. We recommend that you use the *mounts* API to check if a mount point exists or isn't available.
 
-- The unmount mechanism isn't automatic. When the application run finishes, to unmount the mount point and release the disk space, you need to explicitly call an unmount API in your code. Otherwise, the mount point will still exist in the node after the application run finishes.
+- The unmount mechanism isn't automatic. When the application run finishes, to unmount the mount point and release the disk space, you need to explicitly call an unmount API in your code. Otherwise, the mount point still exists in the node after the application run finishes.
 
-- Mounting an ADLS Gen1 storage account isn't supported.
+- Mounting an Azure Data Lake Storage Gen1 storage account isn't supported.
 
 
 ## Lakehouse utilities
 
-`mssparkutils.lakehouse` provides utilities specifically tailored for managing Lakehouse artifacts. These utilities empower users to create, retrieve, update, and delete Lakehouse artifacts effortlessly.
+The `mssparkutils.lakehouse` module provides utilities for managing Lakehouse artifacts. These utilities make it easy to create, retrieve, update, and delete Lakehouse artifacts.
 
 > [!NOTE]
-> Lakehouse APIs are only supported on Runtime version 1.2+.
+> Lakehouse APIs are supported only on Runtime version 1.2 or later.
 
 ### Overview of methods
 
-Below is an overview of the available methods provided by `mssparkutils.lakehouse`:
+The following methods are available in the `mssparkutils.lakehouse` module:
 
 ```python
 # Create a new Lakehouse artifact
@@ -580,7 +580,7 @@ list(workspaceId: String = ""): Array[Artifact]
 
 ### Usage examples
 
-To utilize these methods effectively, consider the following usage examples:
+To use these methods effectively, consider the following usage examples:
 
 #### Creating a Lakehouse artifact
 
@@ -588,7 +588,7 @@ To utilize these methods effectively, consider the following usage examples:
 artifact = mssparkutils.lakehouse.create("artifact_name", "Description of the artifact", "optional_workspace_id")
 ```
 
-#### Retrieving a Lakehouse Artifact
+#### Retrieving a Lakehouse artifact
 ```python
 artifact = mssparkutils.lakehouse.get("artifact_name", "optional_workspace_id")
 ```
@@ -610,28 +610,28 @@ artifacts_list = mssparkutils.lakehouse.list("optional_workspace_id")
 
 ### Additional information
 
-For more detailed information about each method and its parameters, utilize the `mssparkutils.lakehouse.help("methodName")` function.
+For more detailed information about each method and its parameters, use the `mssparkutils.lakehouse.help("methodName")` function.
 
-With MSSparkUtils' Lakehouse utilities, managing your Lakehouse artifacts becomes more efficient and integrated into your Fabric pipelines, enhancing your overall data management experience.
+By using MSSparkUtils' Lakehouse utilities, you can more efficiently manage your Lakehouse artifacts and integrate this management into your Fabric pipelines, enhancing your overall data management experience.
 
-Feel free to explore these utilities and incorporate them into your Fabric workflows for seamless Lakehouse artifact management.
+Explore these utilities and incorporate them into your Fabric workflows for seamless Lakehouse artifact management.
 
 ## Runtime utilities
 
 ### Show the session context info
 
-With ``` mssparkutils.runtime.context ``` you can get the context information of the current live session, including the notebook name, default lakehouse, workspace info, if it's a pipeline run, etc.
+By using `mssparkutils.runtime.context`, you can get the context information for the current live session, including the notebook name, default lakehouse, workspace info, if it's a pipeline run, and more.
 
 ```python
 mssparkutils.runtime.context
 ```
 
 > [!NOTE]
-> ```mssparkutils.env``` is not officially supported on Fabric, please use ```notebookutils.runtime.context``` as alternative.
+> `mssparkutils.env` isn't officially supported on Fabric. Use `notebookutils.runtime.context` as an alternative.
 
 ## Known issue 
 
-When using runtime version above 1.2 and run ``` mssparkutils.help() ```, the listed **fabricClient**, **warehouse**, and **workspace** APIs are not supported for now, will be available in the further.
+When you use a runtime version that's later than 1.2 and run `mssparkutils.help()`, the listed **fabricClient**, **warehouse**, and **workspace** APIs aren't currently supported.
 
 ## Related content
 

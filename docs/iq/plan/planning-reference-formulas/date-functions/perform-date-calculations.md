@@ -11,8 +11,6 @@ ms.search.form: Date functions
 
 In this article, you learn about the date functions in plan that you use to perform calculations such as calculating date differences, adding or subtracting intervals, and finding the net workdays for reporting and business scenarios.
 
-[!INCLUDE [Fabric feature-preview-note](../../../../includes/feature-preview-note.md)]
-
 ## ADDDAYS
 
 The *ADDDAYS* function adds or subtracts a specified number of days from a date. The input date can be in any supported date format. Use this function to calculate deadlines, due dates, and future or past dates.

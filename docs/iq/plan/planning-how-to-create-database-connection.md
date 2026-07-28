@@ -1,6 +1,6 @@
 ---
 title: Create a Database Connection for Collaboration in a Plan
-description: Learn how to create and share database connections in a plan (preview) for multiuser collaboration.
+description: Learn how to create and share database connections in a plan for multiuser collaboration.
 ms.date: 04/30/2026
 ms.topic: how-to
 ---
@@ -10,8 +10,6 @@ ms.topic: how-to
 This article explains how to create a database connection to enable multiuser collaboration on plan items.
 
 This connection is optional and allows other users to comment and collaborate on a plan that you create.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 

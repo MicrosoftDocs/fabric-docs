@@ -10,8 +10,6 @@ ms.topic: how-to
 
 [Cubes](planning-concept-cube.md) support allocating plans, budgets, forecasts, and other data input measures across multiple dimensions. Allocate values across dimensions based on the weights of a driver measure. Allocations can even be extended to dimensions and driver measures that aren't included in the current report. This approach enables complex, multi‑dimensional planning with minimal effort.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Prerequisites
 
 * The column dimension is a standard date hierarchy (for example, year > quarter > month).

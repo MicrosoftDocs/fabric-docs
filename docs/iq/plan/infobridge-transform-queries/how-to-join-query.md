@@ -10,8 +10,6 @@ ms.topic: how-to
 
 Use joins to combine data from multiple queries based on a related column. Join queries enrich a dataset by bringing related information from another query.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 Infobridge supports the following join types:
 
 - **Inner join**: Returns only records that have matching values in both queries.
