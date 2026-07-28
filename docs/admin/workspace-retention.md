@@ -35,9 +35,9 @@ By default, Fabric retains deleted collaborative workspaces for seven days. You 
 >
 > This setting doesn't affect the retention period of *My workspaces*. *My workspaces* always have a 30-day retention period.
 
-## How changing the retention period affects workspaces that are already deleted
+## How changing the retention period affects already deleted workspaces
 
-The **Define workspace retention period** setting applies to every deleted collaborative workspace in the tenant, including workspaces that were already deleted before you changed the setting. Fabric doesn't store a copy of the retention period at the time of deletion. Instead, Fabric calculates the remaining retention for each deleted workspace by using the current value of the setting:
+The **Define workspace retention period** setting applies to every deleted collaborative workspace in the tenant, including workspaces that you already deleted before you changed the setting. Fabric doesn't store a copy of the retention period at the time of deletion. Instead, Fabric calculates the remaining retention for each deleted workspace by using the current value of the setting:
 
 `Remaining retention = current retention period - days since the workspace was deleted`
 
@@ -47,7 +47,7 @@ Because Fabric recalculates the remaining retention from the current setting val
 - **When you decrease the retention period**, deleted workspaces become recoverable for a shorter time. Using the same example, if you change the setting from 30 days to 15 days, the workspace that you deleted 10 days ago has 5 days of retention left instead of 20.
 
 > [!WARNING]
-> If you decrease the retention period so that a deleted workspace has already been in its retention period for longer than the new value, that workspace becomes eligible for permanent deletion. Fabric permanently deletes it the next time it checks for expired workspaces, and there's no extra grace period. For example, if you deleted a workspace 30 days ago and you change the setting to seven days, Fabric permanently deletes that workspace and irreversibly deletes its contents.
+> If you decrease the retention period so that a deleted workspace is already in its retention period for longer than the new value, that workspace becomes eligible for permanent deletion. Fabric permanently deletes it the next time it checks for expired workspaces, and there's no extra grace period. For example, if you deleted a workspace 30 days ago and you change the setting to seven days, Fabric permanently deletes that workspace and irreversibly deletes its contents.
 >
 > Before you decrease the retention period, go to the **Workspaces** page in the admin portal and restore any deleted workspace that you still need.
 
