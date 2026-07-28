@@ -10,8 +10,6 @@ ms.topic: how-to
 
 This article explains row properties and how to configure them in a model.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 ## Hybrid row configuration
 
 The model builder looks like the following image. There are two tabs: **Closed Period** and **Open Period**.

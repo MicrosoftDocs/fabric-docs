@@ -11,8 +11,6 @@ Rolling forecasts continuously extend the forecast horizon. When actual data is 
 
 In this section, you learn how to close forecasts and extend forecast periods.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 ## Close forecasts
 
 Forecasts should be closed as actuals become available. Once a forecast is closed, it can no longer be edited.

@@ -1,6 +1,6 @@
 ---
 title: Driver Model
-description: Learn about the driver model and model builder in plan (preview).
+description: Learn about the driver model and model builder in plan.
 ms.date: 04/28/2026
 ms.topic: concept-article
 #customer intent: As a user, I want to understand what is a model, a driver model and the model builder interface in plan.
@@ -15,8 +15,6 @@ A *model* is a structured representation of business logic that's built from an 
 * Relationships define how values flow across the model
 
 This approach ensures that your planning logic is centralized, transparent, scalable, and easier to maintain.
-
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
 ### Driver model
 

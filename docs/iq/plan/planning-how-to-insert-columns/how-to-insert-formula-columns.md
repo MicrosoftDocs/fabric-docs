@@ -8,7 +8,7 @@ ms.topic: how-to
 
 # Insert formula columns in planning sheet
 
-In plan (preview), you can insert calculated columns or measures directly into your planning sheets. You can format these columns and reuse them in subsequent calculations. You create these measures and columns directly on the visual, without modifying the underlying data model.
+In plan, you can insert calculated columns or measures directly into your planning sheets. You can format these columns and reuse them in subsequent calculations. You create these measures and columns directly on the visual, without modifying the underlying data model.
 
 The Excel-like formula engine supports more than 50 functions, including logical, boolean, and mathematical functions. The formula editor provides capabilities such as syntax assistance, examples, autocomplete, and multiline editing to help you create and troubleshoot formulas efficiently.
 
@@ -16,8 +16,6 @@ The Excel-like formula engine supports more than 50 functions, including logical
 > For more information, see [Formula syntax](../planning-reference-formulas/conditional-statements.md) for a detailed list of supported functions, operators, and identifiers.
 
 In this article, you learn how to insert formula measures and columns and use the formula editor to perform the required calculations with an example.
-
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
 ## Insert a formula measure
 
