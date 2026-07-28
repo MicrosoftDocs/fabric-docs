@@ -1,15 +1,13 @@
 ---  
-title: "Fabric Plan (Preview) Frequently Asked Questions"
-description: "Frequently asked questions about plan (preview)."
+title: "Fabric Plan Frequently Asked Questions"
+description: "Frequently asked questions about plan."
 ms.topic: faq
 ms.date: 07/18/2026
 ---
 
-# Plan (preview) general FAQ
+# Plan general FAQ
 
 This FAQ addresses common questions and clarifications that arise while working with plan. It covers environment setup and interface navigation.
-
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
 For feature-specific FAQs, see the following articles:
 * [Writeback FAQ](../planning-writeback/writeback-faq.md)
