@@ -315,6 +315,10 @@ items:
           href: plan/powertable-how-to-filter-data.md
         - name: Set up access control
           href: plan/powertable-how-to-set-up-access-control.md
+        - name: Configure layouts
+          items:
+            - name: Configure hierarchy layout
+              href: plan/powertable-layouts/how-to-configure-hierarchy-layout.md
         - name: Apply conditional formatting
           href: plan/powertable-how-to-apply-conditional-formatting.md
         - name: View audit logs
