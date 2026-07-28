@@ -35,7 +35,7 @@ FROM sys.databases
 WHERE is_data_lake_replication_enabled = 1;
 ```
 
-If the query shows `REPLICATION` log reuse wait type, then due to Fabric Mirroring the transaction log can't empty out committed transactions and continues to fill.
+If the query shows `REPLICATION` log reuse wait type, then due to Fabric mirroring the transaction log can't empty out committed transactions and continues to fill.
 
 Use the following T-SQL script to check total log space, and current log usage and available space:
 
