@@ -10,8 +10,6 @@ ms.topic: how-to
 
 In this article, you learn how the approval workflow operates from both the **author** and **approver** perspectives. The **author** is the user who submits changes, while the **approver** reviews and approves those changes.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## The approval process
 
 The approval review process includes these main steps:
