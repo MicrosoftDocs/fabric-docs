@@ -89,6 +89,8 @@ items:
       href: plan/planning-overview.md
     - name: Concepts
       items:
+        - name: Fiscal year setup
+          href: plan/planning-concept-fiscal-year-setup.md
         - name: Cubes
           href: plan/planning-concept-cube.md
         - name: Row-level security (RLS)
@@ -157,7 +159,7 @@ items:
           href: plan/planning-how-to-change-layouts.md
         - name: Create a cube
           href: plan/planning-how-to-create-cube.md
-        - name: Add comments
+        - name: Comment and collaborate
           href: plan/planning-how-to-add-comments.md
         - name: Add notes
           href: plan/planning-how-to-add-notes.md
@@ -315,8 +317,14 @@ items:
           href: plan/powertable-how-to-filter-data.md
         - name: Set up access control
           href: plan/powertable-how-to-set-up-access-control.md
+        - name: Configure layouts
+          items:
+            - name: Configure hierarchy layout
+              href: plan/powertable-layouts/how-to-configure-hierarchy-layout.md
         - name: Apply conditional formatting
           href: plan/powertable-how-to-apply-conditional-formatting.md
+        - name: Comment and collaborate
+          href: plan/powertable-how-to-add-comments.md
         - name: View audit logs
           href: plan/powertable-how-to-view-audit-logs.md  
         - name: Generate forms
