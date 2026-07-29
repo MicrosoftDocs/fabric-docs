@@ -84,16 +84,7 @@ To convert one or multiple tables:
 1. Select **Save** to load the data.
 1. Return to web modeling and select **Refresh**.
 
-The tables are now in Import storage mode alongside your Direct Lake tables.
-
-The following behaviors apply when you convert a table:
-
-- **Measures are preserved.** Measures defined on the table are retained through the conversion.
-- **Calculated columns are preserved.** Calculated columns defined on the table are retained through the conversion.
-- **Table renames are preserved.** A table that you renamed keeps its new name after the conversion.
-- **Column renames and formats revert.** A renamed or reformatted column returns to its original name and format. Reapply these changes on the Import table if you need them.
-- **Relationships are preserved when both tables are converted together.** When you convert multiple tables at once and both sides of a relationship become Import, the relationship is preserved.
-- **Relationships are dropped when only one side is converted.** If a converted Import table is related to a table that remains Direct Lake, the relationship is removed. Recreate it after the conversion if needed.
+The tables are now in Import storage mode alongside your Direct Lake tables. 
   
 ## Related content
 
