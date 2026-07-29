@@ -89,6 +89,8 @@ items:
       href: plan/planning-overview.md
     - name: Concepts
       items:
+        - name: Fiscal year setup
+          href: plan/planning-concept-fiscal-year-setup.md
         - name: Cubes
           href: plan/planning-concept-cube.md
         - name: Row-level security (RLS)
