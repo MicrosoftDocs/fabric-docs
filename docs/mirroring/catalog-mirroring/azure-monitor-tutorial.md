@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Configure the Mirror Azure Monitor Feature in Fabric (Preview)"
+title: "Tutorial: Configure the Mirror Azure Monitor Solution in Fabric (Preview)"
 description: Learn how to create a mirrored Azure Monitor item in Microsoft Fabric and access Log Analytics tables through the Eventhouse endpoint or a Lakehouse shortcut.
 ms.reviewer: nirarazy, ilanawaitser
 ms.date: 07/29/2026
@@ -7,7 +7,7 @@ ms.topic: tutorial
 ai-usage: ai-assisted
 ---
 
-# Tutorial: Configure the Mirror Azure Monitor feature in Microsoft Fabric (preview)
+# Tutorial: Configure the Mirror Azure Monitor Solution in Microsoft Fabric (preview)
 
 In this tutorial, you configure a Microsoft Fabric mirrored Azure Monitor item that exposes selected Log Analytics tables to Fabric workloads without replicating data.
 

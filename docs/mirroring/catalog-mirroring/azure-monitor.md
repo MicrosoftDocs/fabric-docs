@@ -15,7 +15,7 @@ Unlike other Fabric mirrored items (such as mirrored databases for SQL or Snowfl
 
 The differentiated value is real-time reasoning across domains. Rather than sequential handoffs between siloed teams, Fabric brings IT signals and business data together so that a single event drives coordinated action for multiple audiences. One incident can drive multiple outcomes across the teams within the same workflow. Unifying business data (such as ERP and CRM) with observability data in OneLake, without copying it, turns raw telemetry into meaningful business insight.
 
-For step-by-step setup instructions, see [Tutorial: Configure a Microsoft Fabric mirrored Azure Monitor item](azure-monitor-tutorial.md).
+For step-by-step setup instructions, see [Tutorial: Configure the Mirror Azure Monitor solution](azure-monitor-tutorial.md).
 
 > [!IMPORTANT]
 > The **Mirror Azure Monitor** feature is in **public preview**. Capabilities, permissions, and billing might change before general availability.
@@ -41,7 +41,7 @@ When you create a mirrored Azure Monitor item, you also create a Fabric Eventhou
 
 These access paths read from the same Mirror Azure Monitor feature. You don't need a second copy of the data.
 
-All Microsoft Fabric consumption experiences are supported across Real-Time Intelligence and OneLake scenarios, including Real-Time Dashboards, Operations agents, Power BI reports, and Spark jobs.
+All Microsoft Fabric consumption experiences on shortcuts are supported across Real-Time Intelligence and OneLake scenarios, including Real-Time Dashboards, Operations agents, Power BI reports, and Spark jobs.
 
 :::image type="content" source="../media/azure-monitor/fabric-mirroring-azure-monitor.png" alt-text="Diagram showing a Fabric workspace mirrored Azure Monitor item linked to an Azure Monitor Log Analytics workspace. Both hold Delta Parquet tables, and the Fabric item exposes them through Eventhouse, Real-Time Intelligence, and Lakehouse access paths.":::
 
@@ -56,14 +56,14 @@ A mirrored Azure Monitor item is a Fabric item that references Log Analytics dat
 
 ## Common use cases
 
-After a mirrored Azure Monitor item exists in a workspace, the following use cases are unlocked:
+When you mirror an Azure Monitor item in a workspace, you unlock the following use cases:
 
 **Cross-domain real-time insights and actions**:
-- Signals are evaluated with full business context, not as isolated alerts—so you can see who and what is affected, and how much it's costing.
-- Signals turn into operational and business action—triggering the right response to mitigate the business impact of incidents before it grows.
+- Evaluate signals with full business context, not as isolated alerts. See who and what is affected, and how much it's costing.
+- Turn signals into operational and business action. Trigger the right response to mitigate the business impact of incidents before it grows.
 
 **Advanced Fabric analytics**
-— Use tools like Spark and Power BI for long-term analysis, machine learning, and a wide range of analytical scenarios.
+- Use tools like Spark and Power BI for long-term analysis, machine learning, and a wide range of analytical scenarios.
 
 ## Onboard with the Mirror Azure Monitor skill
 
@@ -72,6 +72,8 @@ Use your choice of AI coding agent with the [Mirror Azure Monitor skill](https:/
 | Skill for Fabric | Skill folder |
 |---|---|
 | [Mirror Azure Monitor](https://github.com/microsoft/skills-for-fabric/blob/main/skills/azmon-mirroredcatalogs-operations-cli/SKILL.md) | `azmon-mirroredcatalogs-operations-cli` |
+
+<br>
 
 ## Security and permissions
 
@@ -148,5 +150,4 @@ For pricing details, see [Microsoft Fabric pricing](https://azure.microsoft.com/
 - [What is Mirroring in Fabric?](../../mirroring/overview.md)
 - [Monitor Fabric mirrored database replication](../../mirroring/monitor.md)
 - [Skills for Fabric overview](../../fundamentals/skills-for-fabric-overview.md)
-- [Cross-domain intelligence with Azure Monitor data in Microsoft Fabric](https://aka.ms/Cross-domain-intelligence-Azure-Monitor-Fabric)
 - [Azure Monitor Logs overview](/azure/azure-monitor/logs/data-platform-logs)
