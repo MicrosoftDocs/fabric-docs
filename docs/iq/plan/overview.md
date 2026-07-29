@@ -1,7 +1,7 @@
 ---
 title: What Is Plan?
 description: Learn about the plan item, including its components, core features, and use cases.
-ms.date: 04/16/2026
+ms.date: 07/28/2026
 ms.topic: overview
 #customer intent: As a user, I want to understand what plan is, including its components, key capabilities, use cases, and why to choose it.
 ---
@@ -101,6 +101,10 @@ Intelligence sheets provide analytical insights and automated variance analysis 
 Infobridge connects and integrates data across systems, ensuring planning data stays aligned with Fabric workloads and source systems.
 
 Plan extends Microsoft Fabric beyond analytics into enterprise decision intelligence. By embedding planning directly into Fabric, organizations can unify data, analytics, and planning in a single platform, reducing manual effort, improving alignment, and enabling proactive, AI-assisted decision-making.
+
+## Supported regions
+
+Plan is available in all Microsoft Fabric supported regions. For more information, see [Fabric region availability](../../admin/region-availability.md).
 
 ## Prerequisites for plan
 

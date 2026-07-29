@@ -77,8 +77,6 @@ items:
     items:
     - name: What is plan?
       href: plan/overview.md
-    - name: Region availability
-      href: plan/overview-regions.md
     - name: Prerequisites
       href: plan/overview-prerequisites.md
     - name: Roles
