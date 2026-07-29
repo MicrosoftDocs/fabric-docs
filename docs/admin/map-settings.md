@@ -27,7 +27,7 @@ This setting determines whether members of your organization, or specific securi
 **Default**: Enabled
 
 > [!NOTE]
-> When this setting is off, users can still open Map items in a limited experience. The map shows a blank background instead of an Azure Maps basemap, but the data layers a user adds still appear on top. To restore the full experience, turn this setting on.
+> Even when this setting is turned off, users can still open Map items. In this limited experience, the map background is blank because Azure Maps basemaps aren't available, but added data layers continue to display. Turn the setting back on to restore the full Azure Maps experience.
 
 ## Configure global data processing
 
