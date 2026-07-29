@@ -1323,6 +1323,8 @@
             href: cicd-apache-airflow-jobs.md
           - name: Manage Airflow Jobs from Visual Studio Code
             href: apache-airflow-jobs-manage-vs-code.md
+          - name: Variable library integration with Apache airflow jobs
+            href: apache-airflow-jobs-variable-library-integration.md
   - name: Troubleshoot
     items: 
       - name: Keyboard shortcuts
