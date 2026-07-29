@@ -7,7 +7,7 @@ ms.topic: tutorial
 ai-usage: ai-assisted
 ---
 
-# Tutorial: Configure the Mirror Azure Monitor Solution in Microsoft Fabric (preview)
+# Tutorial: Configure the Mirror Azure Monitor solution in Microsoft Fabric (preview)
 
 In this tutorial, you configure a Microsoft Fabric mirrored Azure Monitor item that exposes selected Log Analytics tables to Fabric workloads without replicating data.
 
@@ -18,7 +18,9 @@ In this tutorial, you:
 - Select tables to mirror to Fabric.
 - Access the mirrored data through the Eventhouse endpoint (real-time analytics) and a Lakehouse shortcut (batch analytics and Power BI).
 
-For more information, see [Mirror Azure Monitor data in Microsoft Fabric (Preview)](azure-monitor.md). For onboarding with AI, see [Mirror Azure Monitor in Fabric skill](azure-monitor.md#onboard-with-the-mirror-azure-monitor-skill).
+For more information, see [Mirror Azure Monitor data in Microsoft Fabric (Preview)](azure-monitor.md). 
+<br>
+For onboarding with AI, see [Onboard with the Mirror Azure Monitor Fabric skill](azure-monitor.md#onboard-with-the-mirror-azure-monitor-skill).
 
 ## Prerequisites
 
