@@ -23,9 +23,7 @@ In this article, you learn how to create and use an AI operations agent in Real-
 * A [KQL database](create-database.md) in your eventhouse, if you're using an eventhouse.
 * A Microsoft Teams account.
 * Fabric admin permissions enabled for the operations agent, Microsoft Copilot, and Azure OpenAI.
-* Enable cross-geo processing and storage for AI as described in [data agent tenant settings](../data-science/data-agent-tenant-settings.md). This prerequisite applies only if your Fabric capacity isn't provisioned in US or EU regions.  
-
-    :::image type="content" source="media/operations-agent/admin.png" alt-text="Screenshot of the Admin portal to enable permissions.":::
+* Enable Azure OpenAI and cross-geo processing and storage for AI as described in [data agent tenant settings](../data-science/data-agent-tenant-settings.md). This prerequisite applies only if your Fabric capacity isn't provisioned in US or EU regions.
 
 > [!NOTE]
 > To try an operations agent on sample data, set up the [Real-Time Intelligence end-to-end sample](../real-time-intelligence/sample-end-to-end.md). Your operations agent can monitor the included eventhouse.

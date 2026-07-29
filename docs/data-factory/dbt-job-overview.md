@@ -47,12 +47,13 @@ In Fabric, a dbt job runtime is a managed execution environment that provides a 
 
 The following table shows the adapters supported in dbt jobs, along with the runtime and adapter versions available in the managed execution environment.
 
-| Adapter | dbt job runtime version | Adapter version | Supported dbt version | Python version |
-|---|---|---|---|---|
-| Azure SQL Database | V1.0 | 1.8.5 | dbt Core 1.9 | 3.12 |
-| Fabric Data Warehouse | V1.0 | 1.9.0 | dbt Core 1.9 | 3.12 |
-| PostgreSQL database | V1.0 | 1.9.0 | dbt Core 1.9 | 3.12 |
-| Snowflake | V1.0 | 1.9.0 | dbt Core 1.9 | 3.12 |
+| Adapter Name | Adapter Package | Adapter version | dbt job runtime version | Supported dbt core version | Python version |
+|---|---|---|---|---|---|
+| Fabric Data Warehouse | dbt-fabric | 1.10.0 | 1.0 | 1.11 | 3.12 |
+| Fabric Lakehouse | dbt-fabricspark | 1.12.2 | 1.0 | 1.11 | 3.12 |
+| Azure SQL Database | dbt-sqlserver | 1.9.1 | 1.0 | 1.11 | 3.12 |
+| PostgreSQL Database | dbt-postgres | 1.10.0 | 1.0 | 1.11 | 3.12 |
+| Snowflake | dbt-snowflake | 1.11.5 | 1.0 | 1.11 | 3.12 |
 
 > [!NOTE]
 > This matrix reflects versions available in the Fabric-managed dbt job runtime. 

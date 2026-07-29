@@ -2,7 +2,7 @@
 title: Prerequisites for Plan
 description: This article lists the prerequisites for using plan.
 ms.topic: overview
-ms.date: 06/13/2026
+ms.date: 07/28/2026
 ai-usage: ai-assisted
 #customer intent: As a user, I want to know the prerequisites for using Plan.
 ---
@@ -14,10 +14,6 @@ This article lists all the required prerequisites, tenant settings, and capacity
 ## Tenant settings
 
 [Fabric administrators](../../admin/roles.md) can grant access to these settings in the [admin portal](../../admin/admin-center.md) under [Tenant settings](../../admin/tenant-settings-index.md).
-
-1. Enable **Users can create Plan items**. This setting is required to create plan items.
-
-   :::image type="content" source="media/overview-prerequisites/enable-plan.png" alt-text="Screenshot of enabling plan for organizational users." lightbox="media/overview-prerequisites/enable-plan.png":::
 
 1. Under [Integration settings](../../admin/tenant-settings-index.md#integration-settings), enable **Allow XMLA endpoints and Analyze in Excel with on-premises semantic models**.
 
