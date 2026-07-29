@@ -10,8 +10,6 @@ ms.topic: how-to
 
 This article explains how to create a table app using PowerTable by entering the data manually from scratch. You'll enter data to create a table in a database, then write back any subsequent changes to the same database using the PowerTable sheet.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Prerequisites
 
 Before you begin, make sure that you have the following prerequisites in place:

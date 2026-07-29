@@ -15,8 +15,6 @@ Plan, forecast, and visualize scenarios on live data sources without duplicating
 * Evaluate multiple what-if scenarios
 * Make real-time, strategic adjustments to budgets and forecasts based on visual insights
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Create planning sheet
 
 1. Create a planning sheet that can contain manual data inputs, simulations, scenarios, and forecasts.

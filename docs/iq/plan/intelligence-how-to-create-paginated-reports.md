@@ -12,8 +12,6 @@ Legacy enterprise reporting often requires precise control over pagination. Page
 
 Use pagination to divide large reports into smaller pages for analysis and navigation. Control how report content appears by configuring the number of rows per page or enabling a single scrollable page. Choose the layout that best fits the report for navigation and presentation.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 The following sections describe how to use pagination options, such as number of rows per page, page breaks, choosing header and footer presets, customizing the header and footer, formatting cells, and entering annotations.
 
 ## Prerequisites

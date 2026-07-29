@@ -1,6 +1,6 @@
 ---
-title: Create a Semantic Model Connection in a Plan (Preview)
-description: Learn how to create and share a cloud connection of a semantic model in a plan (preview).
+title: Create a Semantic Model Connection in a Plan
+description: Learn how to create and share a cloud connection of a semantic model in a plan.
 ms.date: 06/17/2026
 ms.topic: how-to
 ---
@@ -8,8 +8,6 @@ ms.topic: how-to
 # Create and share a cloud connection for a semantic model
 
 This article explains how to connect to a semantic model from a plan item. This step is required to work with your semantic model data in a planning sheet.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 To connect a plan to a semantic model, a workspace admin or member must create a shareable cloud connection. Other users can use this connection to access the semantic model. The following steps describe how to create and share the connection.
 
@@ -114,5 +112,5 @@ For an optimal Continuous Integration (CI) and Continuous Deployment (CD), consi
 ## Related content
 
 * Now that you created your semantic model connection, you can create a planning sheet that uses this connection. See [Create a planning sheet](planning-how-to-get-started.md).
-* [Prerequisites for plan (preview)](overview-prerequisites.md)
-* [Troubleshoot semantic model connections in plan (preview)](planning-troubleshoot-semantic-model.md)
+* [Prerequisites for plan](overview-prerequisites.md)
+* [Troubleshoot semantic model connections in plan](planning-troubleshoot-semantic-model.md)

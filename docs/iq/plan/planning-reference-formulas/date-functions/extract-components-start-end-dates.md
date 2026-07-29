@@ -11,8 +11,6 @@ ms.search.form: Date functions
 
 In this article, you learn how to extract day, month, and year values from dates. You also learn how to find the start or end of calendar periods and generate date ranges.
 
-[!INCLUDE [Fabric feature-preview-note](../../../../includes/feature-preview-note.md)]
-
 ## DAY
 
 The *DAY* function extracts the day value from a date. Use this function to analyze and group data based on the day of the month.

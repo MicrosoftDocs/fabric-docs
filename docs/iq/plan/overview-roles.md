@@ -1,15 +1,13 @@
 ---
-title: User Roles in Plan (Preview)
-description: Learn about user roles and actions in plan (preview), including capabilities of each role and how to upgrade roles.
+title: User Roles in Plan
+description: Learn about user roles and actions in plan, including capabilities of each role and how to upgrade roles.
 ms.date: 06/23/2026
 ms.topic: overview
 ---
 
-# Roles in Fabric plan (preview)
+# Roles in Fabric plan
 
 Planning roles provide a flexible, least-privilege access model for planning items. Instead of assigning fixed permissions, plan automatically adjusts your role based on the actions you perform. With dynamic role assignment, you start with the minimum required access and gain more capabilities only when necessary.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 Plan supports three roles:
 

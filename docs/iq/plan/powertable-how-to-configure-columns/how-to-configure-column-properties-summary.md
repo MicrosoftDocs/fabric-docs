@@ -14,8 +14,6 @@ Column properties also help improve the usability, maintainability, and scalabil
 
 In this article, you learn how to access and configure column properties in a PowerTable sheet.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 ## Column properties
 
 Column properties control various aspects of a column, including:

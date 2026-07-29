@@ -18,8 +18,6 @@ By using this feature, you can:
 
 You can add a new column to a table during table creation, or after the table is created or connected.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 ## Add column during table creation
 
 Use **Add column** during the initial table configuration to create and configure extra columns alongside the imported columns.
