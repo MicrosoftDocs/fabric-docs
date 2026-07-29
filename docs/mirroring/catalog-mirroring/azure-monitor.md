@@ -149,5 +149,5 @@ For pricing details, see [Microsoft Fabric pricing](https://azure.microsoft.com/
 - [What is Mirroring in Fabric?](../../mirroring/overview.md)
 - [Monitor Fabric mirrored database replication](../../mirroring/monitor.md)
 - [Skills for Fabric overview](../../fundamentals/skills-for-fabric-overview.md)
-- [Cross-domain intelligence with Azure Monitor data in Microsoft Fabric](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Cross-domain-intelligence-with-Azure-Monitor-data-in-Microsoft/ba-p/5279352)
+- [Cross-domain intelligence with Azure Monitor data in Microsoft Fabric](https://aka.ms/Cross-domain-intelligence-Azure-Monitor-Fabric)
 - [Azure Monitor Logs overview](/azure/azure-monitor/logs/data-platform-logs)
