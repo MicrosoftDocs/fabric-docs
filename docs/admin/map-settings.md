@@ -43,7 +43,7 @@ When enabled, this setting allows data sent to Azure Maps to be routed to the ne
 **Default**: Disabled
 
 > [!NOTE]
-> If your capacity's region isn't a supported Azure Maps region and you turn this setting off, users can still open Map items in a limited experience. The map shows a blank background instead of an Azure Maps basemap, but the data layers a user adds still appear on top. To restore the full experience, turn this setting on.
+> If your capacity's geographic region isn't a supported Azure Maps region and this setting is disabled, users can still open Map items in a limited experience. The map displays a blank background instead of an Azure Maps basemap, but added data layers remain visible. Re-enable this setting to restore the full Azure Maps experience.
 
 > [!NOTE]
 > Azure Maps does not process or transmit any customer names or personally identifiable information (PII).
