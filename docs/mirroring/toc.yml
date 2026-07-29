@@ -116,6 +116,14 @@ items:
         href: catalog-mirroring/azure-monitor-tutorial.md
       - name: Troubleshoot Mirror Azure Monitor items
         href: catalog-mirroring/azure-monitor-troubleshoot.md
+  - name: Mirroring AWS Glue
+    items:
+      - name: Mirrored AWS Glue catalog
+        href: catalog-mirroring/aws-glue.md
+      - name: Mirrored AWS Glue catalog tutorial
+        href: catalog-mirroring/aws-glue-tutorial.md
+      - name: Limitations
+        href: catalog-mirroring/aws-glue-limitations.md
   - name: Mirroring Dremio catalog
     items:
       - name: Mirrored Dremio catalog
