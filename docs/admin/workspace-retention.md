@@ -44,6 +44,7 @@ The **Define workspace retention period** setting applies to every deleted colla
 Because Fabric recalculates the remaining retention from the current setting value, changing the setting takes effect immediately for workspaces that are already in a retention period:
 
 - **When you increase the retention period**, deleted workspaces stay recoverable for longer. For example, if the setting is 30 days and you deleted a workspace 10 days ago, that workspace has 20 days of retention left. If you then change the setting to 60 days, the same workspace has 50 days of retention left.
+
 - **When you decrease the retention period**, deleted workspaces become recoverable for a shorter time. Using the same example, if you change the setting from 30 days to 15 days, the workspace that you deleted 10 days ago has 5 days of retention left instead of 20.
 
 > [!WARNING]

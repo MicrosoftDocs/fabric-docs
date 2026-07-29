@@ -39,7 +39,7 @@ The retention period for personal workspaces (*My workspaces*) is fixed at 30 da
 
 The default retention period for collaborative workspaces is seven days. You can change the retention period (from 7 to 90 days) by using the **Define workspace retention period** tenant setting in the admin portal.
 
-Changing this setting also applies to collaborative workspaces that are already deleted, because Fabric calculates the remaining retention from the current setting value rather than from the value that was in effect when the workspace was deleted. Decreasing the retention period can make an already deleted workspace eligible for immediate permanent deletion. For more information, see [How changing the retention period affects workspaces that are already deleted](workspace-retention.md#how-changing-the-retention-period-affects-workspaces-that-are-already-deleted).
+Changing this setting also applies to collaborative workspaces that are already deleted. Fabric calculates the remaining retention from the current setting value rather than from the value that was in effect when the workspace was deleted. Decreasing the retention period can make an already deleted workspace eligible for immediate permanent deletion. For more information, see [How changing the retention period affects workspaces that are already deleted](workspace-retention.md#how-changing-the-retention-period-affects-already-deleted-workspaces).
 
 During the retention period, you can restore a deleted workspace or permanently delete it before the retention period expires. For step-by-step instructions, see [Set up and manage workspace retention](workspace-retention.md).
 
