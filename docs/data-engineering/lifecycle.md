@@ -10,6 +10,9 @@ ms.date: 07/24/2026
 
 The Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark. It facilitates the execution and management of data engineering and data science workflows. It synthesizes essential elements from both proprietary and open-source resources to offer a comprehensive solution. For brevity, refer to the Microsoft Fabric Runtime powered by Apache Spark simply as Fabric Runtime.
 
+> [!NOTE]
+> This article covers the lifecycle of Apache Spark runtimes. It doesn't cover Python notebook kernels, which follow a separate lifecycle. For the Python notebook kernel lifecycle, see [Python notebook runtime and kernel lifecycle in Fabric](./python-notebook-runtime-lifecycle.md).
+
 ## Release cadence
 
 Apache Spark typically releases minor versions every six to nine months. The Microsoft Fabric Spark team is committed to delivering new runtime versions quickly while ensuring the highest quality, integration, and continuous support. Each version comprises around 110 components. As the runtime expands beyond Apache Spark, the team ensures seamless integration within the Azure ecosystem.
@@ -54,6 +57,7 @@ runtime major version corresponds to the Apache Spark major version. Therefore, 
 
 ## Related content
 
+- [Python notebook runtime and kernel lifecycle in Fabric](./python-notebook-runtime-lifecycle.md)
 - [Apache Spark Runtimes in Fabric - Overview, Versioning, and Multiple Runtimes Support](./runtime.md)
 - [Runtime 2.0 (Spark 4.1, Java 21, Python 3.13, Delta Lake 4.2)](./runtime-2-0.md)
 - [Runtime 1.3 (Spark 3.5, Java 11, Python 3.11, Delta Lake 3.2)](./runtime-1-3.md)

@@ -107,6 +107,8 @@ An abnormal kernel exit causes code execution to be interrupted and variables to
 
 Some commands can lead to the kernel dying. For example, *quit()* and *exit()*.
 
+For the support lifecycle of each Python kernel version, including end-of-support dates and migration steps, see [Python notebook runtime and kernel lifecycle in Fabric](./python-notebook-runtime-lifecycle.md).
+
 ## Library management
 
 Use the *%pip* and *%conda* commands for inline installations. These commands support both public libraries and customized libraries.  

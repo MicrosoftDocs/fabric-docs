@@ -62,6 +62,9 @@ Within the Fabric Runtime for Apache Spark and Delta Lake, native writer capabil
 
 Fabric supports multiple runtimes, so you can switch between them and reduce the risk of compatibility problems or disruptions.
 
+> [!NOTE]
+> A Spark runtime includes a specific Python version as part of its component set. For example, Runtime 1.3 includes Python 3.11. This Python version is separate from the Python notebook kernel that you select for pure Python notebooks. For the Python notebook kernel lifecycle, see [Python notebook runtime and kernel lifecycle in Fabric](./python-notebook-runtime-lifecycle.md).
+
 **By default, all new workspaces use the latest GA runtime version, which is currently [Runtime 1.3](./runtime-1-3.md).**
 
 To change the runtime version at the workspace level, go to **Workspace Settings** > **Data Engineering/Science** > **Spark settings**. From the **Environment** tab, select your desired runtime version from the available options. Select **Save** to confirm your selection.
