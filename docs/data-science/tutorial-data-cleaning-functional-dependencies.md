@@ -30,6 +30,22 @@ In this tutorial, you learn how to:
 
 Use the [data_cleaning_functional_dependencies_tutorial.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/data_cleaning_functional_dependencies_tutorial.ipynb) notebook to follow this tutorial.
 
+### Note: this notebook above uses sempy.sample, which is not available in sempy anylonger.
+Alternative workaround would be removing the refence to it and the function call in the next cell with this:
+
+```python
+import os
+from urllib.request import urlretrieve
+from zipfile import ZipFile
+
+synthea_url = "https://synthetichealth.github.io/synthea-sample-data/downloads/synthea_sample_data_csv_apr2020.zip"
+if not os.path.exists("synthea/csv"):
+    zip_path, _ = urlretrieve(synthea_url)
+    with ZipFile(zip_path) as zf:
+        zf.extractall(path="synthea/")
+print("Synthea CSV files available at:", os.path.abspath("synthea/csv"))
+```
+
 [!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 ## Set up the notebook
