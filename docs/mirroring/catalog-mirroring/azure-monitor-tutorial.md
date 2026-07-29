@@ -1,13 +1,13 @@
 ---
-title: "Tutorial: Configure the Mirror Azure Monitor Feature in Fabric (Preview)"
+title: "Tutorial: Configure the Mirror Azure Monitor Solution in Fabric (Preview)"
 description: Learn how to create a mirrored Azure Monitor item in Microsoft Fabric and access Log Analytics tables through the Eventhouse endpoint or a Lakehouse shortcut.
 ms.reviewer: nirarazy, ilanawaitser
-ms.date: 06/08/2026
+ms.date: 07/29/2026
 ms.topic: tutorial
 ai-usage: ai-assisted
 ---
 
-# Tutorial: Configure the Mirror Azure Monitor feature in Microsoft Fabric (preview)
+# Tutorial: Configure the Mirror Azure Monitor solution in Microsoft Fabric (preview)
 
 In this tutorial, you configure a Microsoft Fabric mirrored Azure Monitor item that exposes selected Log Analytics tables to Fabric workloads without replicating data.
 
@@ -18,7 +18,9 @@ In this tutorial, you:
 - Select tables to mirror to Fabric.
 - Access the mirrored data through the Eventhouse endpoint (real-time analytics) and a Lakehouse shortcut (batch analytics and Power BI).
 
-For more information, see [Mirror Azure Monitor data in Microsoft Fabric (Preview)](azure-monitor.md).
+For more information, see [Mirror Azure Monitor data in Microsoft Fabric (Preview)](azure-monitor.md). 
+<br>
+For onboarding with AI, see [Onboard with the Mirror Azure Monitor Fabric skill](azure-monitor.md#onboard-with-the-mirror-azure-monitor-skill).
 
 ## Prerequisites
 
@@ -107,7 +109,7 @@ Only new data is mirrored. Data that arrived before the table was mirrored isn't
 
 ## Share the mirrored item with business users
 
-By default, the mirrored item inherits permissions from the Fabric workspace. Only users with access to the Fabric workspace see the item. To grant business users access to the mirrored data for real-time analytics, Power BI semantic models, or other scenarios described in the [Supported scenarios](azure-monitor.md#supported-scenarios) section of the overview article, use OneLake security.
+By default, the mirrored item inherits permissions from the Fabric workspace. Only users with access to the Fabric workspace see the item. To grant business users access to the mirrored data for real-time analytics, Power BI semantic models, or other scenarios described in the [Common use cases](azure-monitor.md#common-use-cases) section of the overview article, use OneLake security.
 
 During public preview, the mirrored item **Share** action has known issues. Use [OneLake security](../../onelake/security/get-started-onelake-security.md) to grant granular access to the mirrored data instead of the **Share** action.
 
@@ -219,5 +221,6 @@ To remove the connection, delete it from the **Connections** list in the Fabric 
 
 - [Mirroring Azure Monitor in Microsoft Fabric](azure-monitor.md)
 - [What is Mirroring in Fabric?](../../mirroring/overview.md)
+- [Skills for Fabric overview](../../fundamentals/skills-for-fabric-overview.md)
 - [Azure Monitor Logs overview](/azure/azure-monitor/logs/data-platform-logs)
 - [Microsoft Fabric Real-Time Intelligence overview](../../real-time-intelligence/overview.md)

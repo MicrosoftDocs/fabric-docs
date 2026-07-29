@@ -2,7 +2,7 @@
 title: "Mirror Azure Monitor Data in Microsoft Fabric (Preview)"
 description: Learn about the Mirror Azure Monitor feature in Microsoft Fabric, which connects Log Analytics tables to Fabric workloads without replicating data.
 ms.reviewer: nirarazy, ilanawaitser
-ms.date: 06/08/2026
+ms.date: 07/29/2026
 ms.topic: overview
 ms.search.form: Fabric Mirroring
 ---
@@ -15,7 +15,7 @@ Unlike other Fabric mirrored items (such as mirrored databases for SQL or Snowfl
 
 The differentiated value is real-time reasoning across domains. Rather than sequential handoffs between siloed teams, Fabric brings IT signals and business data together so that a single event drives coordinated action for multiple audiences. One incident can drive multiple outcomes across the teams within the same workflow. Unifying business data (such as ERP and CRM) with observability data in OneLake, without copying it, turns raw telemetry into meaningful business insight.
 
-For step-by-step setup instructions, see [Tutorial: Configure a Microsoft Fabric mirrored Azure Monitor item](azure-monitor-tutorial.md).
+For step-by-step setup instructions, see [Tutorial: Configure the Mirror Azure Monitor solution](azure-monitor-tutorial.md).
 
 > [!IMPORTANT]
 > The **Mirror Azure Monitor** feature is in **public preview**. Capabilities, permissions, and billing might change before general availability.
@@ -39,7 +39,9 @@ When you create a mirrored Azure Monitor item, you also create a Fabric Eventhou
 - **Eventhouse endpoint** provides a KQL database experience over the mirrored data. The endpoint is created when you create the mirrored item. Use it directly or create shortcuts to the mirrored tables.
 - **OneLake shortcut into a Lakehouse** for batch analytics. From a Lakehouse, run Spark notebooks, build Power BI semantic models, and create reports that join Azure Monitor data with other tables in Fabric.
 
-All three access paths read from the same Mirror Azure Monitor feature. You don't need a second copy of the data.
+These access paths read from the same Mirror Azure Monitor feature. You don't need a second copy of the data.
+
+All Microsoft Fabric consumption experiences on shortcuts are supported across Real-Time Intelligence and OneLake scenarios, including Real-Time Dashboards, Operations agents, Power BI reports, and Spark jobs.
 
 :::image type="content" source="../media/azure-monitor/fabric-mirroring-azure-monitor.png" alt-text="Diagram showing a Fabric workspace mirrored Azure Monitor item linked to an Azure Monitor Log Analytics workspace. Both hold Delta Parquet tables, and the Fabric item exposes them through Eventhouse, Real-Time Intelligence, and Lakehouse access paths.":::
 
@@ -52,17 +54,26 @@ A mirrored Azure Monitor item is a Fabric item that references Log Analytics dat
 - Reads in Fabric go through the shortcut to Azure Monitor storage. The data is **read-only** in Fabric. New data continues to arrive through normal Azure Monitor ingestion.
 - Tables selected at creation become visible in Fabric. Adding or removing tables later is a reconfiguration of the item, not a reload of the underlying data.
 
-## Supported scenarios
+## Common use cases
 
-After a mirrored Azure Monitor item exists in a workspace, the following scenarios are available in Fabric:
+When you mirror an Azure Monitor item in a workspace, you unlock the following use cases:
 
-| Scenario | Path |
-|----------|------|
-| Real-time KQL queries over operational data | Eventhouse endpoint |
-| Real-time dashboards and anomaly detection | Eventhouse database, with optional Real-Time Dashboard and Copilot Explore |
-| Cross-domain questions through agents | Eventhouse or Lakehouse |
-| Power BI semantic models combining telemetry and business data | Lakehouse via OneLake shortcut, then semantic model |
-| Spark data engineering over telemetry | Lakehouse via OneLake shortcut |
+**Cross-domain real-time insights and actions**:
+- Evaluate signals with full business context, not as isolated alerts. See who and what is affected, and how much it's costing.
+- Turn signals into operational and business action. Trigger the right response to mitigate the business impact of incidents before it grows.
+
+**Advanced Fabric analytics**
+- Use tools like Spark and Power BI for long-term analysis, machine learning, and a wide range of analytical scenarios.
+
+## Onboard with the Mirror Azure Monitor skill
+
+Use your choice of AI coding agent with the [Mirror Azure Monitor skill](https://github.com/microsoft/skills-for-fabric/blob/main/skills/azmon-mirroredcatalogs-operations-cli/SKILL.md) from the [Skills for Fabric](../../fundamentals/skills-for-fabric-overview.md) repository. This skill guides end-to-end onboarding of Azure Monitor data to Fabric, and turns that telemetry into impactful business insights.
+
+| Skill for Fabric | Skill folder |
+|---|---|
+| [Mirror Azure Monitor](https://github.com/microsoft/skills-for-fabric/blob/main/skills/azmon-mirroredcatalogs-operations-cli/SKILL.md) | `azmon-mirroredcatalogs-operations-cli` |
+
+<br>
 
 ## Security and permissions
 
@@ -138,4 +149,5 @@ For pricing details, see [Microsoft Fabric pricing](https://azure.microsoft.com/
 
 - [What is Mirroring in Fabric?](../../mirroring/overview.md)
 - [Monitor Fabric mirrored database replication](../../mirroring/monitor.md)
+- [Skills for Fabric overview](../../fundamentals/skills-for-fabric-overview.md)
 - [Azure Monitor Logs overview](/azure/azure-monitor/logs/data-platform-logs)

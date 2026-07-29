@@ -7,7 +7,7 @@ ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
 ms.custom:
-ms.date: 06/10/2026
+ms.date: 07/29/2026
 ms.update-cycle: 180-days
 ms.search.form:
 ms.collection: ce-skilling-ai-copilot
@@ -37,7 +37,9 @@ import synapse.ml.core
 from synapse.ml.services.openai import *
 ```
 
-The `OpenAIPrompt` transformer provides more flexibility, including support for the chat completions or responses API, usage tracking, and structured output. For finer control, use `OpenAIChatCompletions` or `OpenAIResponses` transformers directly. For more information, see the [SynapseML GitHub example notebook](https://github.com/microsoft/SynapseML/blob/master/docs/Explore%20Algorithms/OpenAI/OpenAI.ipynb).
+The `OpenAIPrompt` transformer provides more flexibility, including support for the chat completions or responses API, usage tracking, and structured output. For finer control, use `OpenAIChatCompletion` or `OpenAIResponses` transformers directly. For more information, see the [SynapseML GitHub example notebook](https://github.com/microsoft/SynapseML/blob/master/docs/Explore%20Algorithms/OpenAI/OpenAI.ipynb).
+
+Use `setPromptTemplate` to create prompts from DataFrame columns. A placeholder such as `{prompt}` inserts the value from the `prompt` column for each row.
 
 ### Use the chat completions API
 
@@ -56,7 +58,7 @@ prompt_completion = (
     OpenAIPrompt()
     .setDeploymentName("gpt-5.1")
     .setApiType("chat_completions")  # Accepts "chat_completions" or "responses"
-    .setPromptCol("prompt")
+    .setPromptTemplate("{prompt}")
     .setUsageCol("usage")  # Track token usage
     .setOutputCol("completions")
 )
@@ -77,7 +79,7 @@ prompt_responses = (
     OpenAIPrompt()
     .setDeploymentName("gpt-5.1")
     .setApiType("responses")
-    .setPromptCol("prompt")
+    .setPromptTemplate("{prompt}")
     .setUsageCol("usage")  # Track token usage
     .setStore(False)  # Fabric LLM endpoint does not support storage
     .setOutputCol("responses")
@@ -106,7 +108,7 @@ from synapse.ml.services.openai import OpenAIPrompt
 
 # Create a DataFrame with prompts requiring structured output
 df = spark.createDataFrame([
-    ("List three programming languages with their main use cases.",),
+    ("Return a JSON object that lists three programming languages and their main use cases.",),
 ]).toDF("prompt")
 
 # Configure OpenAIPrompt with JSON response format
@@ -114,7 +116,7 @@ prompt_json = (
     OpenAIPrompt()
     .setDeploymentName("gpt-5.1")
     .setApiType("chat_completions")
-    .setPromptCol("prompt")
+    .setPromptTemplate("{prompt}")
     .setUsageCol("usage")
     .setResponseFormat({"type": "json_object"})  # Request JSON output
     .setOutputCol("completions")
