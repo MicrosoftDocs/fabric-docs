@@ -41,7 +41,7 @@ When you create a mirrored Azure Monitor item, you also create a Fabric Eventhou
 
 These access paths read from the same Mirror Azure Monitor feature. You don't need a second copy of the data.
 
-All Microsoft Fabric consumption experiences are supported across Real-Time Intelligence and OneLake scenarios, including Real-time dashboards, Operations agents, Power BI reports, and Spark jobs.
+All Microsoft Fabric consumption experiences are supported across Real-Time Intelligence and OneLake scenarios, including Real-Time Dashboards, Operations agents, Power BI reports, and Spark jobs.
 
 :::image type="content" source="../media/azure-monitor/fabric-mirroring-azure-monitor.png" alt-text="Diagram showing a Fabric workspace mirrored Azure Monitor item linked to an Azure Monitor Log Analytics workspace. Both hold Delta Parquet tables, and the Fabric item exposes them through Eventhouse, Real-Time Intelligence, and Lakehouse access paths.":::
 
@@ -61,7 +61,7 @@ After a mirrored Azure Monitor item exists in a workspace, the following scenari
 | Scenario | Path |
 |----------|------|
 | Real-time KQL queries over operational data | Eventhouse endpoint |
-| Real-time dashboards and anomaly detection | Eventhouse database, with optional Real-Time Dashboard and Copilot Explore |
+| Real-Time Dashboards and anomaly detection | Eventhouse database, with optional Real-Time Dashboard and Copilot Explore |
 | Cross-domain questions through agents | Eventhouse or Lakehouse |
 | Power BI semantic models combining telemetry and business data | Lakehouse via OneLake shortcut, then semantic model |
 | Spark data engineering over telemetry | Lakehouse via OneLake shortcut |
