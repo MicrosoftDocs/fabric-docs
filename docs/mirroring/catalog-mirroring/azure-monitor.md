@@ -56,15 +56,14 @@ A mirrored Azure Monitor item is a Fabric item that references Log Analytics dat
 
 ## Common use cases
 
-After a mirrored Azure Monitor item exists in a workspace, the following scenarios are available in Fabric:
+After a mirrored Azure Monitor item exists in a workspace, the following use cases are unlocked:
 
-| Scenario | Path |
-|----------|------|
-| Real-time KQL queries over operational data | Eventhouse endpoint |
-| Real-Time Dashboards and anomaly detection | Eventhouse database, with optional Real-Time Dashboard and Copilot Explore |
-| Cross-domain questions through agents | Eventhouse or Lakehouse |
-| Power BI semantic models combining telemetry and business data | Lakehouse via OneLake shortcut, then semantic model |
-| Spark data engineering over telemetry | Lakehouse via OneLake shortcut |
+**Cross-domain real-time insights and actions**:
+- Signals are evaluated with full business context, not as isolated alerts—so you can see who and what is affected, and how much it's costing.
+- Signals turn into operational and business action—triggering the right response to mitigate the business impact of incidents before it grows.
+
+**Advanced Fabric analytics**
+— Use tools like Spark and Power BI for long-term analysis, machine learning, and a wide range of analytical scenarios.
 
 ## Onboard with the Mirror Azure Monitor skill
 
