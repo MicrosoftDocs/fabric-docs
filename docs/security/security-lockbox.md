@@ -121,7 +121,7 @@ Access to data varies according to the Microsoft Fabric experience your request 
  
 * **Data Factory** - The Data Factory engineer will have access to pipeline definitions linked to your request, if permission is granted.
 
-* **OneLake** - When a support or investigation scenario requires Microsoft engineer access to customer data stored in OneLake, access is governed through Customer Lockbox where applicable. Customer approval is required before access is granted, and approved access is time-bound.
+* **OneLake** - When a support or investigation scenario requires Microsoft engineer access to customer data stored in OneLake, Customer Lockbox governs access where applicable. Customer approval is required before access is granted, and approved access is time-bound.
 
 ## Related content
 
