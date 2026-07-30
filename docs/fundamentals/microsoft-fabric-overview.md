@@ -18,6 +18,7 @@ Microsoft Fabric is an analytics platform that supports end‑to‑end data work
 
 > [!NOTE]
 > **Share your feedback and shape the future of Fabric**
+> 
 > Whether you're new to Fabric or building with it every day, your insights can help improve the experience. Join the [Fabric User Panel](https://www.userinterviews.com/opt-in/zcn1RDvRBjFoQnSwpdPCkhey) to participate in research studies and provide feedback on future experiences directly with the product team. For more information about this panel, see how to [sign up for Fabric User Panel](feedback.md#fabric-user-panel).
 
 
