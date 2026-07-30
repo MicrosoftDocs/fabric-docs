@@ -6,7 +6,7 @@ ms.author: spelluru
 ms.reviewer: tzgitlin
 ms.topic: how-to
 ms.subservice: rti-eventhouse
-ms.date: 06/14/2026
+ms.date: 07/13/2026
 ai-usage: ai-assisted
 ---
 
@@ -111,6 +111,20 @@ Delta primitive data types map to Eventhouse scalar data types as shown in the f
 | `struct` | `dynamic` |
 | `array` | `dynamic` |
 | `map` | `dynamic` |
+
+## Automatic schema sync
+
+Table schemas for a shortcut table sync automatically, so column additions, deletions, renames, and type changes in the source table are reflected in the shortcut without requiring manual updates. This behavior is turned on by default. To disable it, run the following command in the source database:
+
+```kql
+.create-or-alter external table ExternalTable
+kind=delta
+(
+   h@'https://storageaccount.blob.core.windows.net/container1;secretKey'
+) with (AutoUpdateSchema=false)
+```
+
+For more information about schema sync behavior, see [Automatic schema sync](../onelake/onelake-shortcuts.md#automatic-schema-sync).
 
 ## Related content
 
