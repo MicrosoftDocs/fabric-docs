@@ -85,7 +85,7 @@ You can start a trial capacity several different ways. The first two methods mak
 
 ### Method 1: Start a new trial capacity from the Account manager
 
-You can sign up for a trial capacity. You manage who else can use your trial by giving coworkers permission to create workspaces in your trial capacity. Every user in the tenant has contributor permissions by default unless you explicitly manage who has access. Assigning workspaces to the trial capacity automatically adds coworkers (with roles in those workspaces) to the trial capacity. To start your Fabric trial capacity and become the Capacity administrator of that trial, follow these steps:
+You can sign up for a trial capacity. As the Capacity administrator, you manage who else can use your trial. Others can assign their workspaces to your trial capacity only after you enable **Contributor permissions**. Assigning workspaces to the trial capacity automatically adds coworkers (with roles in those workspaces) to the trial capacity. To start your Fabric trial capacity and become the Capacity administrator of that trial, follow these steps:
 
 1. To open your Account manager, select the tiny photo from the upper-right corner of the [Fabric homepage](https://app.fabric.microsoft.com/home?pbi_source=learn-get-started-fabric-trial).
 
