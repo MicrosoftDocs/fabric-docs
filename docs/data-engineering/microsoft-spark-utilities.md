@@ -209,6 +209,9 @@ You can open the snapshot link of the reference run in the cell output. The snap
 > [!IMPORTANT]
 > This feature is in [preview](../fundamentals/preview.md).
 
+> [!NOTE]
+> For the current `notebookutils` API and the latest `runMultiple` guidance, including the authoritative default concurrency behavior, see [NotebookUtils notebook run and orchestration for Fabric](notebookutils/notebookutils-notebook-run.md).
+
 The method `mssparkutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API uses a multithreaded implementation to submit, queue, and monitor child notebooks that execute on isolated REPL instances (read-eval-print-loop) within the existing Spark session. The referenced child notebooks share the session's compute resources.
 
 With `mssparkutils.notebook.runMultiple()`, you can:
@@ -266,7 +269,7 @@ DAG = {
         }
     ],
     "timeoutInSeconds": 43200, # max timeout for the entire DAG, default to 12 hours
-    "concurrency": 50 # max number of notebooks to run concurrently, defaults to 50 but ultimately constrained by the number of driver cores
+    "concurrency": 50 # max number of notebooks to run concurrently
 }
 mssparkutils.notebook.runMultiple(DAG, {"displayDAGViaGraphviz": False})
 ```
@@ -276,8 +279,7 @@ The execution result from the root notebook is as follows:
 :::image type="content" source="media\microsoft-spark-utilities\reference-notebook-list-with-parameters.png" alt-text="Screenshot of reference a list of notebooks with parameters." lightbox="media\microsoft-spark-utilities\reference-notebook-list-with-parameters.png":::
 
 > [!NOTE]
-> - The upper limit for notebook activities or concurrent notebooks is constrained by the number of driver cores. For example, a Medium node driver with eight cores can execute up to eight notebooks concurrently. This limit exists because each submitted notebook executes on its own REPL (read-eval-print-loop) instance, and each instance consumes one driver core.
-> - The default concurrency parameter is set to **50** to support automatically scaling the max concurrency as users configure Spark pools with larger nodes and thus more driver cores. While you can set this parameter to a higher value when using a larger driver node, increasing the number of concurrent processes running on a single driver node typically doesn't scale linearly. Increasing concurrency can lead to reduced efficiency due to driver and executor resource contention. Each running notebook runs on a dedicated REPL instance which consumes CPU and memory on the driver. Under high concurrency, this consumption can increase the risk of driver instability or out-of-memory errors, particularly for long-running workloads.
+> - The current `notebookutils` namespace maintains the authoritative default concurrency and the upper limit for concurrent notebooks. For the current default and limit values, see [NotebookUtils notebook run and orchestration for Fabric](notebookutils/notebookutils-notebook-run.md). Increasing concurrency doesn't scale linearly: each running notebook runs on a dedicated REPL (read-eval-print-loop) instance that consumes CPU and memory on the driver, so high concurrency can increase the risk of driver instability or out-of-memory errors, particularly for long-running workloads.
 > - You might experience longer execution times for each individual job due to the overhead of initializing REPL instances and orchestrating many notebooks. If problems arise, consider separating notebooks into multiple `runMultiple` calls or reducing the concurrency by adjusting the **concurrency** field in the DAG parameter.
 > - When you run short-lived notebooks (for example, 5 seconds of code execution time), the initialization overhead becomes dominant. Variability in prep time might reduce the chance of notebooks overlapping, and therefore result in lower realized concurrency. In these scenarios, it might be more optimal to combine small operations into one or multiple notebooks.
 > - While multithreading is used for submission, queuing, and monitoring, note that the code that runs in each notebook isn't multithreaded on each executor. There's no resource sharing between notebooks. Each notebook process is allocated a portion of the total executor resources. This allocation can cause shorter jobs to run inefficiently and longer jobs to contend for resources.
@@ -352,6 +354,9 @@ The *mssparkutils.session.stop()* API stops the current interactive session asyn
 ## Credentials utilities
 
 You can use the MSSparkUtils Credentials Utilities to get access tokens and manage secrets in Azure Key Vault.
+
+> [!NOTE]
+> For the current `notebookutils` credentials API, including the full list of token audiences and Key Vault secret retrieval, see [NotebookUtils credentials utilities for Fabric](notebookutils/notebookutils-credentials.md).
 
 Run the following command to get an overview of the available methods:
 
