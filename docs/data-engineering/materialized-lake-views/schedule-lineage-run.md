@@ -3,7 +3,7 @@ title: "Schedule a Materialized Lake View Refresh"
 description: Learn how to schedule a materialized lake view refresh
 ms.topic: how-to
 ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
-ms.date: 07/02/2026
+ms.date: 07/30/2026
 ai-usage: ai-assisted
 ---
 
@@ -63,7 +63,8 @@ Before you create a schedule, consider what drives your refresh timing:
         [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
         
         > [!NOTE]
-        > Only OneLake events and Notebook and Pipeline job events are supported as event sources.
+        > Only OneLake events, Notebook, and Pipeline job events are supported as event sources.
+        > Private Link support isn't currently included in the preview scope.
         > Event-triggered refreshes depend on the auto-created "FMLV Refresh" Notebook and Activator items. Modifying or deleting these items might cause event-triggered refreshes to stop working as expected.
 
 1. Select **Save**.
