@@ -205,6 +205,8 @@ items:
                 href: plan/planning-optimize/optimizer-overview.md
               - name: Target based optimization
                 href: plan/planning-optimize/planning-how-to-optimize-input-values.md
+              - name: Maximize or minimize a target value
+                href: plan/planning-optimize/planning-how-to-maximize-minimize-target-value.md
         - name: Use driver models
           items: 
               - name: Create a model
