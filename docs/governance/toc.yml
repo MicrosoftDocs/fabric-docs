@@ -11,6 +11,8 @@ items:
     href: ../admin/index.yml
   - name: Standards compliance
     href: standards-compliance.md
+- name: Get started
+  href: get-started-with-fabric-governance.md
 - name: OneLake catalog
   items:
   - name: OneLake catalog overview
