@@ -22,7 +22,7 @@ Microsoft Fabric is an analytics platform that supports end‑to‑end data work
 > Your honest take on what works and what doesn't will directly shape product improvements. [Sign up to participate](https://microsoft.qualtrics.com/jfe/form/SV_1MTHk3TXzSUfEXA) and help drive Fabric's future.
 >
 > 
-Whether you're new to Fabric or building with it every day, your insights can help improve the experience. Join the [Fabric User Panel](https://www.userinterviews.com/opt-in/zcn1RDvRBjFoQnSwpdPCkhey) to participate in research studies and provide feedback on future experiences directly with the product team. For more information about this panel, see how to [sign up for Fabric User Panel](feedback.md#fabric-user-panel)
+Whether you're new to Fabric or building with it every day, your insights can help improve the experience. Join the [Fabric User Panel](https://www.userinterviews.com/opt-in/zcn1RDvRBjFoQnSwpdPCkhey) to participate in research studies and provide feedback on future experiences directly with the product team. For more information about this panel, see how to [sign up for Fabric User Panel](feedback.md#fabric-user-panel).
 
 
 Fabric is delivered as a software‑as‑a‑service (SaaS) platform and uses OneLake as a centralized, logical data lake for storing and accessing data across all workloads. In tandem with OneLake, the OneLake Catalog provides a centralized experience for discovering, exploring, and governing data and analytics artifacts across the tenant. AI capabilities are built into the platform to assist with data preparation, analysis, and development tasks, reducing the need for manual service integration and enabling efficient analysis of large‑scale data.
