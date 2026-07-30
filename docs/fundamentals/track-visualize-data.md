@@ -103,7 +103,7 @@ This semantic layer enables consistent analytics, AI reasoning, and automation.
 
 ### Explore connected data with graph models
 
-[Graph models](../graph/graph-database.md) provide a connected network of ontology-defined entities and relationships. They enable multi-hop reasoning, impact analysis, and advanced algorithms such as shortest path and community detection. This integration lets AI agents and analytics tools query complex relationships efficiently. It offers real-time insights into dependencies and cascading effects that traditional relational models struggle to handle. You can interrogate graph models by using [GQL queries](../graph/gql-language-guide.md) through [Fabric APIs](../graph/gql-query-api.md).
+[Graph models](../graph/graph-database.md) provide a connected network of ontology-defined entities and relationships. They enable multihop reasoning, impact analysis, and advanced algorithms such as shortest path and community detection. This integration lets AI agents and analytics tools query complex relationships efficiently. It offers real-time insights into dependencies and cascading effects that traditional relational models struggle to handle. You can query graph models by using [GQL queries](../graph/gql-language-guide.md) through [Fabric APIs](../graph/gql-query-api.md).
 
 ## Related content
 
