@@ -37,7 +37,7 @@ Before you add any controls, browse what your organization already has in the On
 
 1. Open the **OneLake catalog** from the Fabric navigation pane.
 1. Browse the items you can access, and filter by workspace or domain to focus on a business area.
-1. Select an item to see its owner, so you know who to contact about it.
+1. Select an item for a comprehensive view of its metadata, lineage, permissions, and more.
 1. Note the endorsement badges as you browse: subject matter experts review *promoted* items, and *certified* items meet a higher organizational bar.
 
 For more information about these capabilities, see [OneLake catalog](onelake-catalog-overview.md) and [Endorsement](endorsement-overview.md).
