@@ -76,7 +76,7 @@ Create and save the forecast.
 Prepopulate future forecast periods using existing historical or current data. These initial values can then be manually adjusted by selecting and editing the cell.
 
 > [!NOTE]
-> This option is only available when [Open Period](#options-to-populate-open-forecasts) is set to **Data Input**.
+> This option is available only when [Open Period](#options-to-populate-open-forecasts) is set to **Data Input**.
 
 1. Set **Open Period** to **Data Input** and **Default Value** to **None**.
 
