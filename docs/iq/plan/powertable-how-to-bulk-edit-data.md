@@ -36,7 +36,7 @@ To edit data directly in a table:
    * Select **Discard Changes** to revert any unsaved changes.
    * Select **Preview Changes** to review the modified records and compare the old and new values before saving.
 
-The [**Preview Changes**](#preview-changes-before-saving) window displays all pending changes, including added, updated, and deleted records.
+The [Preview Changes](#preview-changes-before-saving) window displays all pending changes, including added, updated, and deleted records.
 
 :::image type="content" source="media/powertable-how-to-bulk-edit-data/preview-changes-opened.png" alt-text="Screenshot of the preview changes window." lightbox="media/powertable-how-to-bulk-edit-data/preview-changes-opened.png":::
 

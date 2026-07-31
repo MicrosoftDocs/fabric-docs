@@ -76,7 +76,7 @@ Create and save the forecast.
 Prepopulate future forecast periods using existing historical or current data. These initial values can then be manually adjusted by selecting and editing the cell.
 
 > [!NOTE]
-> This option is only available when [**Open Period**](#options-to-populate-open-forecasts) is set to **Data Input**.
+> This option is available only when [Open Period](#options-to-populate-open-forecasts) is set to **Data Input**.
 
 1. Set **Open Period** to **Data Input** and **Default Value** to **None**.
 
@@ -120,7 +120,7 @@ You can set the time period used to initialize the forecast in two ways:
 Split a forecast period into multiple ranges and initialize each range using a different method, such as average values or data from a prior period.
 
 > [!NOTE]
-> This option is only available when [**Open Period**](#options-to-populate-open-forecasts) is set to **Data Input**.
+> This option is available only when [Open Period](#options-to-populate-open-forecasts) is set to **Data Input**.
 
 1. Configure the initial forecast settings, then go to **Period Setup**.
 1. Set the **Target Period** to January–March 2026, **Copy Source** to the Revenue measure, **Apply Operation** to **Single Period**, and **Source Periods** to December 2025.
