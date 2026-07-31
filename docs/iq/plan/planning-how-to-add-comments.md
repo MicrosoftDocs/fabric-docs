@@ -16,7 +16,7 @@ You commonly use data-level commentary in analytical and planning scenarios. The
 ## Prerequisites
 
 * You have a planning sheet saved with the required dataset.
-* You have appropriate [**user permissions**](#configure-comment-access) to create, reply to, or manage comments.
+* You have appropriate [user permissions](#configure-comment-access) to create, reply to, or manage comments.
 
 ## Add data-level comments
 
@@ -134,7 +134,7 @@ To open the **Comment Settings** pane:
     The following options are available:
 
     * **Enable Commenting**: Turn commenting on or off for the planning sheet.
-    * **Comments Column**: Show or hide the dedicated **Comments** column. For more information, see [**Add a comments column**](#add-comments-column).
+    * **Comments Column**: Show or hide the dedicated **Comments** column. For more information, see [Add a comments column](#add-comments-column).
     * **Rollup Indicator**: Show or hide rollup indicators that summarize comments when you collapse hierarchical rows.
     * **Star indicator for starred comments**: Show or hide star indicators for starred comments.
     * **Indicator Size**: Specify the size, in pixels, of the comment indicator that appears in the planning sheet.
@@ -157,7 +157,7 @@ Add a dedicated **Comments** column to capture row-level discussions. When you a
 
 To add a comments column:
 
-1. Enable the **Show comments column** toggle in the [**Comment Settings**](#configure-comment-settings) panel. A **Comments** column appears in the table.
+1. Enable the **Show comments column** toggle in the [Comment Settings](#configure-comment-settings) panel. A **Comments** column appears in the table.
 1. Double-click the required row in the **Comments** column. The comment editor opens.
 1. Enter the comment, and then select the **Send** icon to post it.
 

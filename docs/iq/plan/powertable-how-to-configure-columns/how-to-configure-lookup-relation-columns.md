@@ -12,9 +12,9 @@ This article explains how to configure columns that use the **Single Select** in
 
 A single select column lets you select a value from a predefined list of options. You can configure the available options in one of the following ways:
 
-* [**Manual**](#manual): Define the dropdown options manually.
-* [**Distinct Values**](#distinct-values): Generate distinct dropdown options from existing column values.
-* [**Lookup**](#lookup): Retrieve dropdown values from another related table, typically to establish foreign key relationships.
+* [Manual](#manual): Define the dropdown options manually.
+* [Distinct Values](#distinct-values): Generate distinct dropdown options from existing column values.
+* [Lookup](#lookup): Retrieve dropdown values from another related table, typically to establish foreign key relationships.
 
 Use single select predefined options to maintain data consistency, simplify data entry, and standardize values across records.
 
