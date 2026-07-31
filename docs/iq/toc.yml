@@ -445,6 +445,8 @@ items:
         href: plan/resources/best-practices/time-intelligence.md
     - name: Known limitations
       href: plan/overview-limitations.md
+    - name: Error codes and resolutions
+      href: plan/resources/error-codes-and-resolutions.md
 - name: Graph
   href: ../graph/toc.yml
 - name: Data agent
