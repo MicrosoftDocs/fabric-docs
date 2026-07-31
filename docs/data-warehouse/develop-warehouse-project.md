@@ -2,14 +2,17 @@
 title: Develop Warehouse Projects in Visual Studio Code
 description: Learn how to develop warehouse projects for Fabric Data Warehouse in Visual Studio Code.
 ms.reviewer: pvenkat, randolphwest
-ms.date: 03/03/2026
+ms.date: 07/10/2026
 ms.topic: how-to
+ai-usage: ai-assisted
 ---
 # Develop warehouse projects in Visual Studio Code
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 Learn how to set up a database project for Fabric Data Warehouse in Visual Studio Code. You'll create a new project, define schema objects, build and validate the project, and publish it to your warehouse.
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
@@ -108,10 +111,10 @@ Your project structure looks like this:
 
    :::image type="content" source="media/develop-warehouse-project/edit-sqlproj-file.png" alt-text="Screenshot from Visual Studio Code and the context menu of a database project. The Edit sqlproj File option is highlighted." lightbox="media/develop-warehouse-project/edit-sqlproj-file.png":::
 
-1. Verify the latest version of [Microsoft.Build.Sql](https://www.nuget.org/packages/Microsoft.Build.Sql) SDK is in the file. For example, in the `.sqlproj` file, change the version for `Microsoft.Build.Sql` to `2.0.0`.
+1. Verify the file contains the latest version of the [Microsoft.Build.Sql](https://www.nuget.org/packages/Microsoft.Build.Sql) SDK. For example, change the version for `Microsoft.Build.Sql` to `2.2.0` in the `.sqlproj` file.
 
    ```xml
-      <Sdk Name="Microsoft.Build.Sql" Version="2.0.0" />
+      <Sdk Name="Microsoft.Build.Sql" Version="2.2.0" />
    ```
 
 1. Verify the latest version of [Microsoft.SqlServer.Dacpacs.FabricDw](https://www.nuget.org/packages/Microsoft.SqlServer.Dacpacs.FabricDw), and add a reference inside the `Project/ItemGroup` XML node. For example:
@@ -125,7 +128,7 @@ Your project structure looks like this:
    ```xml
     <?xml version="1.0" encoding="utf-8"?>
     <Project DefaultTargets="Build">
-      <Sdk Name="Microsoft.Build.Sql" Version="2.0.0" />
+      <Sdk Name="Microsoft.Build.Sql" Version="2.2.0" />
       <PropertyGroup>
         <Name>DatabaseProject715wh</Name>
         <ProjectGuid>{2E278BCC-F118-4DDB-9255-94697F2930B4}</ProjectGuid>
@@ -204,29 +207,9 @@ When deploying database projects to Fabric Data Warehouse, several settings cont
     - **Recommendation:** Use in dev/test environments to clean up leftover objects.
     - **Caution:** Using `DropObjectsNotInSource` in production can **delete important objects and data**. Double-check before enabling.
     
- -  `Predeploy` for the pre-deployment script
-    
-    - **What it does:** Executes custom SQL scripts **before** the schema deployment.  
-    - **Common uses:**  
-      - Archive or backup data before dropping tables
-      - Disable constraints or triggers temporarily
-      - Cleanup legacy objects  
-    - **Caution:** Ensure scripts are **idempotent** and don't introduce schema changes that conflict with deployment.
-
-> [!TIP]
-> When a deployment process is **idempotent**, it can be run multiple times without causing issues, and you can deploy to multiple databases without needing to predetermine their status.
-
- -  `Postdeploy` for the post-deployment script
-    
-    - **What it does:** Executes custom SQL scripts **after** the schema deployment.  
-    - **Common uses:**  
-      - Seed lookup or reference data
-      - Re-enable constraints or triggers
-      - Log deployment history  
-    - **Caution:** Avoid heavy operations on large tables in production; ensure scripts can safely run multiple times if needed.
 
 > [!IMPORTANT] 
-> Always review deployment scripts and settings before publishing. Test in dev or test environments first to prevent unintended data loss.
+> Always review deployment settings before publishing. Test in dev or test environments first to prevent unintended data loss.
     
 ## Verify publish
 

@@ -29,7 +29,7 @@ For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?v
 - For more information on tables, see [Tables in data warehousing in Microsoft Fabric](tables.md).
 
 > [!IMPORTANT]
-> There are limitations with adding table constraints or columns when using [Source Control with Warehouse](source-control.md#limitations-in-source-control).
+> There are limitations when adding table constraints or columns by using [Git Integration for Fabric Warehouse Development](git-integration.md#limitations-in-git-integration).
 
 ## Examples
 
