@@ -60,7 +60,7 @@ The `XMLA.json` file itself is excluded from during the Git integration workflow
 
 ## Limitations in Git integration
 
-- When two or more warehouse items reference each other, a cyclic dependency is formed. This circular reference is detected during branch-out or Git-to-workspace sync operations, causing them to fail. Avoid cyclic dependencies between items.
+- When two or more warehouse items reference each other, they form a cyclic dependency. The system detects this circular reference during branch-out or Git-to-workspace sync operations, causing these operations to fail. Avoid cyclic dependencies between items.
 - Currently, don't create a Dataflow Gen2 with an output destination to the warehouse. A new item named `DataflowsStagingWarehouse` appears in the repository and blocks committing and updating from Git.
 - Cross item dependencies, item sequencing, and synchronization gaps between the SQL analytics endpoint and warehouse impact the "branching out to a new or existing workspace" and "switching to a different branch" workflows during development and continuous integration.
 - If an object references another object in the *same* warehouse by using three-part naming (`database.schema.object`), committing or updating from Git can fail. For more information and a workaround, see [References to the warehouse's own objects by using a three-part name](troubleshoot-git-integration.md#references-to-the-warehouses-own-objects-by-using-a-three-part-name).
