@@ -383,6 +383,10 @@ items:
     items:
     - name: Infobridge overview
       href: plan/infobridge-overview.md
+    - name: Concepts
+      items:
+        - name: Connected planning
+          href: plan/infobridge-concept-connected-planning.md
     - name: How-tos
       items:
         - name: Create bridge
