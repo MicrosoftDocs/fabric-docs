@@ -91,14 +91,24 @@ items:
             href: manage-objects.md
   - name: Continuous integration & continuous deployment (CI/CD)
     items:
-      - name: Development and deployment workflows
+      - name: Development and deployment overview
         href: development-deployment.md
-      - name: Cross-warehouse dependencies
-        href: cross-warehouse-development-database-projects.md
-      - name: Developer warehouse projects
-        href: develop-warehouse-project.md
-      - name: Source control with Warehouse
-        href: source-control.md
+      - name: Use Git Integration for Fabric Warehouse Development
+        href: git-integration.md
+      - name: Deploy Fabric Warehouse using deployment pipelines
+        href: deploy-pipelines.md
+      - name: How to
+        items:
+          - name: Configure Git Integration
+            href: how-to-git-integration.md
+          - name: Develop warehouse projects in VS Code
+            href: develop-warehouse-project.md
+          - name: Manage Cross-warehouse dependencies in database projects
+            href: cross-warehouse-development-database-projects.md
+          - name: Troubleshoot Git integration
+            href: troubleshoot-git-integration.md
+          - name: Upgrade warehouse system file version
+            href: upgrade-warehouse.md
   - name: Develop
     items:
       - name: AI functions
@@ -251,7 +261,7 @@ items:
               - name: Use data clustering in Fabric Data Warehouse
                 href: tutorial-data-clustering.md
               - name: Optimize Lakehouse tables based on health checks
-                href: tutorial-conditional-lakehouse-optimization.md                
+                href: tutorial-conditional-lakehouse-optimization.md
       - name: Monitor the warehouse
         items:
           - name: Monitoring overview
@@ -347,6 +357,8 @@ items:
     items:
       - name: T-SQL Reference for Fabric
         href: /sql/t-sql/language-reference?view=fabric&preserve-view=true
+      - name: Warehouse system file version history
+        href: warehouse-system-file-version-history.md
   - name: Resources
     items:
       - name: Contribute to Fabric docs
