@@ -1,5 +1,5 @@
 ---
-title: Azure Map tenant settings 
+title: Azure Map tenant settings
 description: Toggle tenant settings to permit or restrict organization members from using Map items.
 author: msmimart
 ms.author: mimart
