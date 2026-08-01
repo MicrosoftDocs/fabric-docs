@@ -24,7 +24,7 @@ PowerTable provides the following row management capabilities:
 Use the **Insert Row** option to manually add new rows to a table.
 
 > [!NOTE]
-> Use the [**Import**](#import-bulk-data) option to insert or update rows by using data from an external file.
+> Use the [Import](#import-bulk-data) option to insert or update rows by using data from an external file.
 
 ### Insert a single row
 
@@ -94,7 +94,7 @@ To set up the insert using a form interface:
     :::image type="content" source="media/powertable-how-to-insert-import-rows/form-editor-enter-values.png" alt-text="Screenshot of entering values in the Form Editor.":::
 
    > [!NOTE]
-   > Use [**Customize Form**](./powertable-how-to-generate-forms.md#customize-form) to change the form fields and structure. The form configuration interface lets you add, edit, delete, and format form fields.
+   > Use [Customize Form](./powertable-how-to-generate-forms.md#customize-form) to change the form fields and structure. The form configuration interface lets you add, edit, delete, and format form fields.
 
     The new row is inserted into the table.
 
@@ -159,7 +159,7 @@ You can populate a PowerTable sheet by copying rows from external applications, 
 
     :::image type="content" source="media/powertable-how-to-insert-import-rows/copy-rows-spreadsheet.png" alt-text="Screenshot of copying rows from spreadsheet." lightbox="media/powertable-how-to-insert-import-rows/copy-rows-spreadsheet.png":::
 
-1. Use [**Insert Row**](#insert-rows) to insert one or more rows.
+1. Use [Insert Row](#insert-rows) to insert one or more rows.
 1. Select the newly added rows, and then select the **Paste** option or press **Ctrl+V**.
 
     :::image type="content" source="media/powertable-how-to-insert-import-rows/paste.png" alt-text="Screenshot of pasting the copied rows from spreadsheet." lightbox="media/powertable-how-to-insert-import-rows/paste.png":::

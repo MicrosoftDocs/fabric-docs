@@ -128,7 +128,7 @@ Clear the **Display** checkbox to hide a column while retaining its data in the 
 
 :::image type="content" source="../media/powertable-how-to-configure-columns/how-to-configure-column-properties-summary/display.png" alt-text="Screenshot of the Display column in the column setup window." lightbox="../media/powertable-how-to-configure-columns/how-to-configure-column-properties-summary/display.png":::
 
-To adjust column widths, drag the column header boundary or configure the width through [**Manage Columns**](../powertable-how-to-manage-columns.md).
+To adjust column widths, drag the column header boundary or configure the width through [Manage Columns](../powertable-how-to-manage-columns.md).
 
 ## Allow or restrict `NULL` values
 
@@ -150,8 +150,8 @@ To edit the properties of a specific column directly from the table, select the 
 
 Column properties are grouped and classified into two tabs:
 
-* [**General**](./how-to-configure-general-column-properties.md) - Configure the **Input Type**, **Constraints**, **Default values**, and other data-related settings.
-* [**Display**](./how-to-configure-display-column-properties.md) - Configure the **Display name** and **Description** for a column. For numeric columns, additional formatting options are available, including the **Prefix**, **Suffix**, **Thousand Separator**, and other number formatting settings.
+* [General](./how-to-configure-general-column-properties.md) - Configure the **Input Type**, **Constraints**, **Default values**, and other data-related settings.
+* [Display](./how-to-configure-display-column-properties.md) - Configure the **Display name** and **Description** for a column. For numeric columns, additional formatting options are available, including the **Prefix**, **Suffix**, **Thousand Separator**, and other number formatting settings.
 
   :::image type="content" source="../media/powertable-how-to-configure-columns/how-to-configure-column-properties-summary/general-display.png" alt-text="Screenshot of the General and Display tabs." lightbox="../media/powertable-how-to-configure-columns/how-to-configure-column-properties-summary/general-display.png":::
 
