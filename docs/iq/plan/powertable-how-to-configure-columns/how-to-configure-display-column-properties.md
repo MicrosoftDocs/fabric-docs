@@ -111,3 +111,19 @@ When you enable this option, the value automatically formats with a percentage s
 :::image type="content" source="../media/powertable-how-to-configure-columns/how-to-configure-display-column-properties/show-value-as-percentage.png" alt-text="Screenshot of the options under Show value as percentage dropdown." lightbox="../media/powertable-how-to-configure-columns/how-to-configure-display-column-properties/show-value-as-percentage.png":::
 
 This option is useful for columns that represent rates, ratios, percentages, or other proportional values.
+
+## FAQ
+
+### If I change the Display Name, does the column get renamed in the database?
+
+No. **Display Name** is a presentation label on the **Display** tab. It changes only how the column name appears in the PowerTable sheet and doesn't rename the physical column in the database.
+
+### What is the Description field on the Display tab used for?
+
+The text in the **Description** field appears when a user hovers over the column header.
+
+Use this field to provide:
+
+* Business context.
+* A definition of the column.
+* Additional information that helps users understand the column.

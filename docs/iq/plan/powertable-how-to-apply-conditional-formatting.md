@@ -102,3 +102,17 @@ To manage rules:
 1. Use the available actions for a rule to edit, duplicate, delete, enable, or disable it.
 
     :::image type="content" source="media/powertable-how-to-apply-conditional-formatting/manage-rule-side-panel.png" alt-text="Screenshot of the manage rules side panel." lightbox="media/powertable-how-to-apply-conditional-formatting/manage-rule-side-panel.png":::
+
+## FAQ
+
+### When should I use Apply to Rows instead of formatting individual cells?
+
+Use **Apply to Rows** when you want to highlight an entire record rather than a single cell. When the specified condition is met, PowerTable applies the formatting to all cells in the row, making related data easier to identify and review.
+
+If you want, you can format only a particular cell by selecting the appropriate cell when you create or edit the formatting rule.
+
+### Where are formatting rules stored after I create them? Can I disable a rule without deleting it?
+
+The **Manage Rule** dialog stores formatting rules. You can access it from **Format Rules** on the **Format** tab.
+
+Yes, you can enable or disable rules without deleting them.
