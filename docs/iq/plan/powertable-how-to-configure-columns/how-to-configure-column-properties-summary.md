@@ -58,8 +58,7 @@ To add a new column to the table, use the **Add Visual Column**, **Add Formula C
 
 :::image type="content" source="../media/powertable-how-to-configure-columns/how-to-configure-column-properties-summary/add-columns.png" alt-text="Screenshot of the options for adding new columns." lightbox="../media/powertable-how-to-configure-columns/how-to-configure-column-properties-summary/add-columns.png":::
 
-For more information about these column types, see **Add Columns Overview**.
-<!--add hyperlink to Add columns overview page-->
+For more information about these column types, see [Supported column types](../powertable-reference-supported-column-input-types.md#supported-column-types) and [Insert columns](../powertable-how-to-insert-columns/how-to-insert-visual-columns.md).
 
 ## Set column constraints
 

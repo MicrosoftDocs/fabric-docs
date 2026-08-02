@@ -224,3 +224,50 @@ To delete rows:
 > You can configure access controls to determine who can delete rows from a table. For more information, see [access control](./powertable-how-to-set-up-access-control.md#delete).
 >
 > If you configure an approval workflow, update and deletion requests go through the workflow before the records are updated or deleted. To learn more, see [Approval workflow](./powertable-how-to-configure-approval-workflow.md).
+
+## FAQ
+
+### What does Insert Using Form By Default change?
+
+**Insert Using Form By Default** changes the default behavior of the **Insert Row** button.
+
+* When you turn the option **off**, **Insert Row** adds a blank row directly to the grid.
+* When you turn the option **on**, **Insert Row** opens the **Record Details** form instead.
+
+### What does Insert Multiple Rows do?
+
+**Insert Multiple Rows** lets you insert up to **1,000** blank rows into the table.
+
+When you select this option, PowerTable prompts you to specify the number of rows to insert.
+
+### In the insert form, do I have to fill in every field? Does Apply save the record?
+
+No. Selecting **Apply** doesn't save the record. It closes the form and stages the new row as a pending change.
+
+When you add a new record:
+
+* Complete all fields marked as **Mandatory** with an asterisk (\*).
+* **Identity** columns are generated automatically.
+* You can leave optional fields blank. Optional fields aren't marked with an asterisk (\*).
+
+### Does selecting Apply in the Form Editor commit the changes?
+
+No. Selecting **Apply** creates a pending change. You can combine it with other pending changes before you preview, discard, or save them.
+
+The changes are committed only when you select **Save to Database**.
+
+### Which rows does Bulk Edit affect?
+
+**Bulk Edit** is available only when you select multiple rows by using the row selectors (the checkboxes for each row). It applies changes only to the selected rows.
+
+### What happens to existing rows during the import process?
+
+Before importing data, PowerTable classifies each row by using the primary key field.
+
+After you select the sheet and choose **Proceed**, PowerTable scans the file and categorizes the rows into the following tabs:
+
+* **Insert**
+* **Update**
+* **Error**
+
+Each tab displays the number of rows in that category. Selecting **Import** applies the actions accordingly.
