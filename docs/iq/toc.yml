@@ -277,6 +277,8 @@ items:
               href: plan/powertable-how-to-connect-existing-database.md
             - name: Enter table data manually
               href: plan/powertable-how-to-enter-table-data-manually.md
+            - name: PowerTable sheets creation FAQ
+              href: plan/resources/powertable-sheets-creation-faq.md
         - name: Update table data
           href: plan/powertable-how-to-bulk-edit-data.md
         - name: Insert and manage rows
