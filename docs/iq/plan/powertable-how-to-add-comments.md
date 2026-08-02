@@ -13,7 +13,7 @@ By using the commenting and collaboration features, you can add contextual discu
 ## Prerequisites
 
 * A PowerTable sheet with the required data table.
-* You have appropriate [**user permissions**](#configure-comment-access) to create, reply to, or manage comments.
+* You have appropriate [user permissions](#configure-comment-access) to create, reply to, or manage comments.
 
 ## Add comments
 
@@ -65,7 +65,7 @@ In addition to assigning a user by using **Assign to user**, notify more users b
 
 Mentioned users also receive Teams notifications with all the comment details and a link to the sheet so they can respond or take action.
 
-The task status is initially **Open**. You can later update it to [**Resolved**](#resolve-and-reopen-comment-threads) when you complete the task.
+The task status is initially **Open**. You can later update it to [Resolved](#resolve-and-reopen-comment-threads) when you complete the task.
 
 ## Reply to comments
 
@@ -120,7 +120,7 @@ After the comment is posted,
 
 * To remove the **Comments** column, turn off the **Show comments column** toggle in the **Comment Settings** panel.
 
-* You can view all row-level comments in the [**All Comments**](#view-all-comments) panel under **Row Comments**.
+* You can view all row-level comments in the [All Comments](#view-all-comments) panel under **Row Comments**.
 
 ## View all comments
 
@@ -148,8 +148,8 @@ To open the **Comment Settings** pane, select the **Comments** dropdown, and the
 
 The following options are available:
 
-* **Show Indicators:** Enable or disable the green comment indicator on the PowerTable sheet. When you disable this option, PowerTable hides the comment indicators and comments from the sheet. You can view them only in the [**All Comments**](#view-all-comments) panel.
-* **Show comments column**: Show or hide the dedicated **Comments** column. To learn more, see [**Add comments column**](#add-comments-column).
+* **Show Indicators:** Enable or disable the green comment indicator on the PowerTable sheet. When you disable this option, PowerTable hides the comment indicators and comments from the sheet. You can view them only in the [All Comments](#view-all-comments) panel.
+* **Show comments column**: Show or hide the dedicated **Comments** column. To learn more, see [Add comments column](#add-comments-column).
 * **Notification**: Turn Microsoft Teams notifications for comments on or off.
 * **Delete all comments**: Permanently remove all comments from the table.
 * **Reset**: Discard any unsaved changes and restore the previously saved settings.

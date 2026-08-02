@@ -720,8 +720,20 @@ items:
       href: troubleshoot-lakehouse.md
     - name: Notebook errors
       href: ../data-science/fabric-notebooks-troubleshooting-guide.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/breadcrumb/toc.json
-    - name: Spark job errors
-      href: troubleshoot-spark.md
+    - name: Spark errors
+      items:
+      - name: Overview
+        href: troubleshoot-spark.md
+      - name: Memory and performance
+        href: troubleshoot-spark-memory-performance.md
+      - name: SQL and schema errors
+        href: troubleshoot-spark-sql-schema-errors.md
+      - name: Storage, file, and authentication errors
+        href: troubleshoot-spark-storage-connectivity-errors.md
+      - name: Session, configuration, and platform errors
+        href: troubleshoot-spark-session-configuration-errors.md
+      - name: Application code, data, and library errors
+        href: troubleshoot-spark-code-runtime-errors.md
 - name: Migrate to Fabric
   items:
   - name: From Azure Synapse

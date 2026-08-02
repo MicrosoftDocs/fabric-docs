@@ -277,6 +277,8 @@ items:
               href: plan/powertable-how-to-connect-existing-database.md
             - name: Enter table data manually
               href: plan/powertable-how-to-enter-table-data-manually.md
+            - name: PowerTable sheets creation FAQ
+              href: plan/resources/powertable-sheets-creation-faq.md
         - name: Update table data
           href: plan/powertable-how-to-bulk-edit-data.md
         - name: Insert and manage rows
@@ -328,11 +330,19 @@ items:
         - name: View audit logs
           href: plan/powertable-how-to-view-audit-logs.md  
         - name: Generate forms
-          href: plan/powertable-how-to-generate-forms.md  
-        - name: Configure approval workflow
-          href: plan/powertable-how-to-configure-approval-workflow.md
-        - name: Review changes in approval workflow
-          href: plan/powertable-how-to-review-approval-workflow.md 
+          href: plan/powertable-how-to-generate-forms.md
+        - name: Approval workflow
+          items:
+            - name: Configure approval workflow
+              href: plan/powertable-how-to-configure-approval-workflow.md
+            - name: Review changes in approval workflow
+              href: plan/powertable-how-to-review-approval-workflow.md
+        - name: Automation
+          items:
+            - name: Configure automation workflows
+              href: plan/powertable-how-to-create-automation/how-to-configure-automation-workflows.md
+            - name: Create a sample automation
+              href: plan/powertable-how-to-create-automation/how-to-create-sample-automation.md 
         - name: Configure slowly changing dimensions
           href: plan/powertable-how-to-create-slowly-changing-dimension.md
         - name: Export to Excel
