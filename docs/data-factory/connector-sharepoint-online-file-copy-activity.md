@@ -1,8 +1,7 @@
 ---
 title: Configure SharePoint Online File (Preview) in a copy activity
 description: This article explains how to copy data using SharePoint Online File.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: tinglee
 ms.topic: how-to
 ms.date: 01/27/2026
 ms.custom:

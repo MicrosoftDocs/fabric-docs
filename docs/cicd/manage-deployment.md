@@ -17,7 +17,7 @@ While this article outlines several distinct options, many organizations take a 
 
 To build a CI/CD process using the options in this article, you need:
 
-* A [Microsoft Fabric subscription](../enterprise/licenses.md)
+* A [Fabric subscription](../enterprise/licenses.md)
 
 * A Fabric [workspace](../fundamentals/create-workspaces.md) (you must be a workspace admin to configure deployment)
 
@@ -80,7 +80,7 @@ Once a PR to the *dev* branch is approved and merged:
 1. When all automated and manual tests are complete, the release manager can approve and kick off the *build* and *release* pipelines to *Prod* stage. As the *Prod* stage usually has different configurations than *test/Dev* stages, it's important to also test out the changes after the deployment. Also, the deployment should trigger any more ingestion of data, based on the change, to minimize potential non availability to consumers.
 
 #### Which components can be used to implement option #2?
-* [Fabric-cicd](https://microsoft.github.io/fabric-cicd) - a Python library designed for use with Microsoft Fabric workspaces. This library supports code-first Continuous Integration / Continuous Deployment (CI/CD) automations to seamlessly integrate workspaces into a deployment framework. For a complete end-to-end example follow our [fabric-cicd and Azure DevOps tutorial](tutorial-fabric-cicd-azure-devops.md).
+* [Fabric-cicd](https://microsoft.github.io/fabric-cicd) - a Python library designed for use with Fabric workspaces. This library supports code-first Continuous Integration / Continuous Deployment (CI/CD) automations to seamlessly integrate workspaces into a deployment framework. For a complete end-to-end example follow our [fabric-cicd and Azure DevOps tutorial](tutorial-fabric-cicd-azure-devops.md).
 * [Bulk-Import-Item-Definitions-API](/rest/api/fabric/core/items/bulk-import-item-definitions(beta)) - The API supports both creating new items and updating existing ones in place, while relying on Fabric’s built‑in dependency handling to ensure items are deployed in the correct order. This enables consistent, repeatable deployments into test and production environments without manual intervention. For a sample tutorial follow our [Fabric CI/CD with Bulk Import Item Definitions API](tutorial-bulkapi-cicd.md).
 
 #### When should you consider using option #2?

@@ -118,7 +118,7 @@ Data source rules can be defined for the following data sources:
 * SQL server
 * Odata Feed
 * Oracle
-* SapHana (import mode only; not direct query mode)
+* SapHana (Import mode only; not DirectQuery mode)
 * SharePoint
 * Teradata
 

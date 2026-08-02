@@ -51,7 +51,6 @@ For more information, see:
 
 - [Get started with the remote MCP server for eventhouses](mcp-remote-eventhouse.md)
 - [Get started with the remote MCP server for Activator](mcp-remote-activator.md)
-- [Get started with the remote MCP server for operations agents](mcp-remote-operations-agent.md)
 
 ## When to use local vs. remote servers
 
@@ -109,5 +108,4 @@ The MCP server might be installed with, be used with, and share data with client
 - [Get started with the local MCP server for Real-Time Intelligence](mcp-local-server.md)
 - [Get started with the remote MCP server for eventhouses](mcp-remote-eventhouse.md)
 - [Get started with the remote MCP server for Activator](mcp-remote-activator.md)
-- [Get started with the remote MCP server for operations agents](mcp-remote-operations-agent.md)
 - [Model Context Protocol (MCP) overview](https://modelcontextprotocol.io/introduction)

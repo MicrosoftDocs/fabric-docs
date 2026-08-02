@@ -11,8 +11,6 @@ ai-usage: ai-assisted
 
 Intelligence sheets include built-in features that can present financial data in a clear format. You can organize metrics into a structured layout that supports both on-screen analysis and formatted exports.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 You can apply custom number formatting and scaling, apply single-click templates, display totals and subtotals, and insert calculations. Together, these capabilities help you create presentation-ready financial reports that support planning, analysis, and decision-making.
 
 This article provides a basic overview of how to create financial reports with intelligence sheets.

@@ -2,8 +2,8 @@
 title: Eventstream streaming connector virtual network and on-premises support overview
 description: Learn how Eventstream streaming connectors securely access streaming sources in virtual networks and on‑premises environments with a streaming virtual network data gateway.
 ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom: sfi-image-nochange, sfi-ropc-nochange
 ms.date: 01/27/2026

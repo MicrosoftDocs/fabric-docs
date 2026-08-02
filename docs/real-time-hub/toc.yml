@@ -13,6 +13,18 @@ items:
   items:
   - name: Get started with Real-Time hub
     href: get-started-real-time-hub.md
+  - name: Streaming data page
+    href: streaming-data-page.md
+  - name: Add data page
+    href: add-data-page.md
+  - name: Business events page
+    href: business-events-page.md
+  - name: Fabric events page
+    href: fabric-events-page.md
+  - name: Azure events page
+    href: azure-events-page.md
+  - name: Event schema registry page
+    href: event-schema-registry-page.md
 - name: Tutorials
   items:
   - name: Build event-driven pipelines with Azure and Fabric Events 

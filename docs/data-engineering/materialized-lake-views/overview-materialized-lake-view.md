@@ -3,7 +3,7 @@ title: Overview of Materialized Lake Views
 description: Learn about the features, availability, and limitations of materialized lake views in Microsoft Fabric.
 ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: overview
-ms.date: 07/08/2026
+ms.date: 07/20/2026
 ai-usage: ai-assisted
 # customer intent: As a data engineer, I want to understand what materialized lake views are in Microsoft Fabric so that I can use them for building a medallion architecture.
 ---
@@ -27,9 +27,6 @@ Materialized lake views aren't the right choice for every scenario. Consider alt
 - **One-time or rarely accessed queries** that don't benefit from precomputed results
 - **Non-SQL logic** such as ML inference, API calls, or complex Python processing - use Spark notebooks instead
 - **High-frequency streaming data** that requires subsecond updates - consider [Real-Time Intelligence](../../real-time-intelligence/overview.md) instead
-
-> [!NOTE]
-> This feature is currently unavailable in the South Central US region.
 
 ## Get started with materialized lake views
 

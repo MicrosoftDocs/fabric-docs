@@ -15,8 +15,6 @@ The intelligence sheet features a best-in-class Gantt chart for Fabric that help
 * Assign resources to tasks and balance workloads across teams.
 * Track key deliverables, approvals, and project milestones.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Sample data
 
 The data used to plot the Gantt chart in this article can be found in the Fabric Samples GitHub repository: [gantt-data.csv](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/iq/plan/gantt-data.csv).

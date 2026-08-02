@@ -1,16 +1,14 @@
 ---
-title: What Is Plan (Preview)?
-description: Learn about the plan (preview) item, including its components, core features, and use cases.
-ms.date: 04/16/2026
+title: What Is Plan?
+description: Learn about the plan item, including its components, core features, and use cases.
+ms.date: 07/28/2026
 ms.topic: overview
 #customer intent: As a user, I want to understand what plan is, including its components, key capabilities, use cases, and why to choose it.
 ---
 
-# What is plan (preview)?
+# What is plan?
 
-Plan (preview) is an Enterprise and Corporate Performance Management (EPM & CPM) solution built directly into Microsoft Fabric. It enables organizations to create, manage, and analyze plans such as budgets, forecasts, and scenarios within the same governed platform used for data, analytics, and AI.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+Plan is an Enterprise and Corporate Performance Management (EPM & CPM) solution built directly into Microsoft Fabric. It enables organizations to create, manage, and analyze plans such as budgets, forecasts, and scenarios within the same governed platform used for data, analytics, and AI.
 
 Plan brings together three integrated capabilities in a single unified suite:
 
@@ -22,10 +20,10 @@ By planning directly in Microsoft Fabric, plan removes the need for separate pla
 
 By combining historical data, real-time signals, and future projections in a single environment, plan creates an AI‑ready foundation for smarter decisions.
 
-To learn which regions support plan during preview, see [Region availability for plan (preview)](overview-regions.md).
+To learn which regions support plan, see [Region availability for plan](overview-regions.md).
 
 > [!NOTE]
-> The preview of plan in Fabric IQ is now accessible to organizations worldwide in Microsoft Fabric as part of the Microsoft Fabric SKU, and new meters have been created. Meters are currently available but are not currently billed. To learn about planning sheet limitations, see [Known limitations](overview-limitations.md).
+> Plan in Fabric IQ is now available worldwide as part of the Microsoft Fabric SKU. New billing meters have also been introduced and are now available for billing. To learn about planning sheet limitations, see [Known limitations](overview-limitations.md).
 
 ## Why use plan?
 
@@ -104,9 +102,13 @@ Infobridge connects and integrates data across systems, ensuring planning data s
 
 Plan extends Microsoft Fabric beyond analytics into enterprise decision intelligence. By embedding planning directly into Fabric, organizations can unify data, analytics, and planning in a single platform, reducing manual effort, improving alignment, and enabling proactive, AI-assisted decision-making.
 
-## Prerequisites for plan (preview)
+## Supported regions
 
-For more information about prerequisites for using plan (preview), see [Prerequisites for plan (preview)](overview-prerequisites.md). Prerequisites include tenant settings, capacity settings, semantic model connection owner permissions, and database connections.
+Plan is available in all Microsoft Fabric supported regions. For more information, see [Fabric region availability](../../admin/region-availability.md).
+
+## Prerequisites for plan
+
+For more information about prerequisites for using plan, see [Prerequisites for plan](overview-prerequisites.md). Prerequisites include tenant settings, capacity settings, semantic model connection owner permissions, and database connections.
 
 ## Next steps
 

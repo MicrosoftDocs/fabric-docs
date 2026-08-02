@@ -1,5 +1,5 @@
 items:
-  - name: Getting started
+  - name: Get started
     expanded: true
     items:
       - name: What is graph in Microsoft Fabric?

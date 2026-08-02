@@ -35,7 +35,7 @@ The following are current limitations for Fabric User Data Functions:
 
 - **Regional limitations for Test feature in Develop mode**: The test functionality in Develop mode is not available in the following Fabric regions: Brazil South, Israel Central, and Mexico Central. You can still test your functions by publishing them and running them, or by using the [VS Code extension](./create-user-data-functions-vs-code.md) to test them locally.
 
-- **Service principal support**: Accessing Fabric items or data sources using a Service Principal is not currently supported. For example, you cannot use Fabric User Data Functions as a managed identity or workspace identity.
+- **Service principal support**: Accessing Fabric items or data sources by using a service principal isn't currently supported through connections managed by UDF. For example, Fabric User Data Functions can't use managed identity or workspace identity to connect to UDF supported connections.
 
 ## Service limits
 The following list details the service limits for User Data Functions items. 

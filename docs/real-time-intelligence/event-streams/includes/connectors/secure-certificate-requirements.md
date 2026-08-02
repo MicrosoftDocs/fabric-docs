@@ -3,8 +3,8 @@ title: TLS mTLS certificate requirements
 description: This include file documents TLS and mTLS certificate requirements for source connectors.
 ms.topic: include
 ms.date: 04/29/2026
-author: xujiang1
-ms.author: xujiang1
+author: spelluru
+ms.author: spelluru
 ms.service: fabric
 ---
 

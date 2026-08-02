@@ -12,8 +12,6 @@ Use *Pivot Table* to reorganize dimensions and measures and configure aggregatio
 
 :::image type="content" source="../media/infobridge-transformations/infobridge-how-to-pivot-table/pivot-table-interface.png" alt-text="Screenshot of the Pivot Table interface." lightbox="../media/infobridge-transformations/infobridge-how-to-pivot-table/pivot-table-interface.png":::
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 ## Convert row dimensions and column dimensions
 
 Move dimensions between the **Rows** and **Columns** buckets to change how data is displayed.

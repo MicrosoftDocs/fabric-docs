@@ -8,9 +8,7 @@ ms.topic: how-to
 
 # Insert data input rows
 
-In plan (preview), you can insert rows in matrix reports and enter data manually.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+In plan, you can insert rows in matrix reports and enter data manually.
 
 In some scenarios, data retrieved from a source might be incomplete. For example, a financial statement report might include revenue and expense metrics but not the number of shares outstanding. Similarly, a sales report might not include data for a newly launched product category. To address such cases, you can insert data input rows in the report and enter the required data.
 

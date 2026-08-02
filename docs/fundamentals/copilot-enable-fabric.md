@@ -100,4 +100,5 @@ Copilot usage in Power BI Desktop counts against the Fabric capacity assigned to
 - [Foundry Tools in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)
 - [Copilot tenant settings](../admin/service-admin-portal-copilot.md)
 - [Copilot in Power BI](/power-bi/create-reports/copilot-introduction)
+- [Troubleshoot Copilot unavailability after a trial expires](troubleshoot-copilot-unavailable-after-trial.md)
 

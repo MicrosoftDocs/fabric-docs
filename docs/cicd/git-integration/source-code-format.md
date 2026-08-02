@@ -9,7 +9,7 @@ ms.date: 12/15/2025
 
 # Git integration source code format
 
-Items in Microsoft Fabric are stored in a folder. The folder containing the item can either be in the root directory or a subdirectory. When you connect your workspace to git, connect to the folder containing the items. Each item in the folder is represented in its own subdirectory.
+Items in Fabric are stored in a folder. The folder containing the item can either be in the root directory or a subdirectory. When you connect your workspace to git, connect to the folder containing the items. Each item in the folder is represented in its own subdirectory.
 
 ## Directory name
 
@@ -43,7 +43,7 @@ Each item directory contains the [item definition files](#item-definition-files)
 
 Each item's directory has specific, required files that define that item.
 
-The following items are currently supported in Microsoft Fabric:
+The following items are currently supported in Fabric:
 
 - [Mirrored databases](#mirrored-databases)
 - [Notebook](#notebook-files)
@@ -138,7 +138,7 @@ The `.platform` file contains the following attributes:
 - `displayName`: (string) The name of the item.
 - `description`: (optional string) Description of the item.
 
- If you rename the artifact in the workspace and the artifact folder in Git has a '.' suffix, then after committing, the `displayName` and directory name in Git will match.
+ If you rename the item in the workspace and the item folder in Git has a '.' suffix, the `displayName` and directory name in Git match after committing.
 
 The logicalId connects an item in a workspace with its corresponding item in a Git branch. Items with the same logicalIds are assumed to be the same. The logicalId preserves the link even if the name or directory change. Since a branch can be synced to multiple workspaces, it’s possible to have items in different workspaces with the same logicalId, but a single workspace can’t have two items with the same logicalId. The logicalId is created when the workspace is connected to a Git branch or a new item is synced. The logicalId is necessary for Git integration to function properly. Therefore, it’s essential not to change it in any way.
 

@@ -12,6 +12,8 @@ ms.date: 03/18/2026
 > Microsoft Fabric Runtime 1.2 reached end of support on March 31, 2026. Although it might continue to run for a limited period beyond that date, it's no longer a supported runtime and no longer receives bug fixes, security updates, or vulnerability remediations. As a result, workloads running on Runtime 1.2 are exposed to increasing operational and security risks over time.
 >
 > In addition, the phased disablement of Runtime 1.2 jobs begins shortly, and there's no guarantee that Runtime 1.2 jobs will continue to run in the future. To ensure continued support, security compliance, and platform reliability, [upgrade your Fabric workspace](/fabric/data-engineering/runtime) and environments to [Runtime 1.3 (Apache Spark 3.5 and Delta Lake 3.2)](/fabric/data-engineering/runtime-1-3) as soon as possible to avoid disruption to your business.
+>
+> **Note:** Starter Pool isn't supported or available with a deprecated runtime. When you use Runtime 1.2, it uses an on-demand pool and your session startup might take a couple of minutes.
 
 The Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of data engineering and data science experiences. This document covers the Runtime 1.2 components and versions.
 

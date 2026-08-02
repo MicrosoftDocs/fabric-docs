@@ -10,7 +10,7 @@ ms.search.form: Create lakehouse
 
 # Create a lakehouse in Microsoft Fabric
 
-A lakehouse in Microsoft Fabric lets data engineers transform data with Spark notebooks and data analysts query it with T-SQL—all against the same Delta Lake storage. When you create a lakehouse, Fabric also generates a [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) for T-SQL queries and a default [semantic model](/power-bi/connect-data/service-datasets-understand) for Power BI reporting.
+A lakehouse in Microsoft Fabric lets data engineers transform data by using Spark notebooks and data analysts query it by using T-SQL—all against the same Delta Lake storage. When you create a lakehouse, Fabric also generates a [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) for T-SQL queries.
 
 In this article, you learn how to create and delete a lakehouse.
 

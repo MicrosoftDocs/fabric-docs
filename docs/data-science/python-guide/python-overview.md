@@ -1,23 +1,24 @@
 ---
 title: Use Python for Apache Spark
-description: Learn to develop Spark applications in Synapse, using Python to analyze data through Spark batch job definitions or with interactive Fabric notebooks.
+description: Learn to develop Spark applications in Microsoft Fabric, using Python to analyze data through Spark batch job definitions or with interactive Fabric notebooks.
 ms.author: lagayhar
 ms.reviewer: ruxu
 ms.topic: overview
-ms.date: 07/22/2025
+ms.date: 07/27/2026
 ms.search.form: Python Language
-#customer intent: As a data analyst, I want to understand how Spark applications in Synapse can analyze data.
+ai-usage: ai-assisted
+#customer intent: As a data analyst, I want to understand how Spark applications in Microsoft Fabric can analyze data.
 ---
 
 # Use Python for Apache Spark
 
-Microsoft Fabric provides built-in Python support for Apache Spark. Support includes [PySpark](https://spark.apache.org/docs/latest/api/python/index.html), which allows users to interact with Spark using familiar Spark or Python interfaces.
+Microsoft Fabric provides built-in Python support for Apache Spark. Support includes [PySpark](https://spark.apache.org/docs/latest/api/python/index.html), which you can use to interact with Spark through familiar Spark or Python interfaces.
 
-You can analyze data using Python through Spark batch job definitions or with interactive Fabric notebooks. This article provides an overview of developing Spark applications in Synapse using the Python language.
+You can analyze data by using Python through Spark batch job definitions or with interactive Fabric notebooks. This article provides an overview of developing Spark applications in Microsoft Fabric by using the Python language.
 
 ## Create and run notebook sessions
 
-[!INCLUDE [product-name](../../includes/product-name.md)] notebook is a web interface for you to create files that contain live code, visualizations, and narrative text. Notebooks are a good place to validate ideas and use quick experiments to get insights from your data. Notebooks are also widely used in data preparation, data visualization, machine learning, and other big data scenarios.
+[!INCLUDE [product-name](../../includes/product-name.md)] notebook is a web interface where you create files that contain live code, visualizations, and narrative text. Notebooks are a good place to validate ideas and use quick experiments to get insights from your data. Data engineers widely use notebooks in data preparation, data visualization, machine learning, and other big data scenarios.
 
 To get started with Python in [!INCLUDE [product-name](../../includes/product-name.md)] notebooks, change the primary **Language** at the top of your notebook by setting the language option to _PySpark (Python)_.
 
@@ -38,21 +39,21 @@ To learn more about library management in Microsoft Fabric, see [Manage Apache S
 
 ## Notebook utilities
 
-Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easily perform common tasks. You can use MSSparkUtils to work with file systems, to get environment variables, to chain notebooks together, and to work with secrets. MSSparkUtils is supported for PySpark notebooks.
+NotebookUtils (formerly MSSparkUtils) is a built-in package that helps you easily perform common tasks. Use NotebookUtils to work with file systems, get environment variables, chain notebooks together, and work with secrets. PySpark notebooks support NotebookUtils.
 
 To get started, run the following commands:
 
 ```python
-from notebookutils import mssparkutils
-mssparkutils.notebook.help()
+import notebookutils
+notebookutils.notebook.help()
 
 ```
 
-For more information about the supported MSSparkUtils commands, see [Use Microsoft Spark Utilities](../../data-engineering/microsoft-spark-utilities.md).
+For more information about the supported NotebookUtils commands, see [Use NotebookUtils](../../data-engineering/microsoft-spark-utilities.md).
 
 ## Use Pandas on Spark
 
-The [Pandas API on Spark](https://spark.apache.org/docs/latest/api/python/getting_started/quickstart_ps.html) allows you to scale your Pandas workload to any size by running it distributed across multiple nodes. If you're already familiar with pandas and want to use Spark for big data, pandas API on Spark makes you immediately productive.
+The [Pandas API on Spark](https://spark.apache.org/docs/latest/api/python/getting_started/quickstart_ps.html) scales your Pandas workload to any size by running it distributed across multiple nodes. If you're already familiar with pandas and want to use Spark for big data, the pandas API on Spark makes you immediately productive.
 
 You can migrate your applications without modifying the code. You can have a single codebase that works both with pandas, for tests and smaller datasets, and with Spark, for production and distributed datasets. You can switch between the pandas API and the Pandas API on Spark easily and without overhead.
 

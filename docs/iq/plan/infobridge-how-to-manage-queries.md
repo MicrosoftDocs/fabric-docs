@@ -9,8 +9,6 @@ ms.topic: how-to
 
 Use the query context menu to perform common query tasks. From the context menu, you can rerun queries, delete queries, organize queries into groups, copy query identifiers, and access other query-specific actions.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 Hover over a query and select **More options** (...) to duplicate, group, delete, or refresh queries.
 
 :::image type="content" source="media/infobridge-how-to-manage-queries/manage-query-options.png" alt-text="Screenshot of the query context menu with the list of operations." lightbox="media/infobridge-how-to-manage-queries/manage-query-options.png":::

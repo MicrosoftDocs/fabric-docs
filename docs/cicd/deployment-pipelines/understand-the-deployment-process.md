@@ -12,7 +12,7 @@ ms.search.form: Introduction to Deployment pipelines, Manage access in Deploymen
 
 The deployment process lets you clone content from one stage in the deployment pipeline to another, typically from development to test, and from test to production.
 
-During deployment, Microsoft Fabric copies the content from the source stage to the target stage. The connections between the copied items are kept during the copy process. Fabric also applies the configured deployment rules to the updated content in the target stage. Deploying content might take a while, depending on the number of items being deployed. During this time, you can navigate to other pages in the portal, but you can't use the content in the target stage.
+During deployment, Fabric copies the content from the source stage to the target stage. The copy process keeps the connections between the copied items. Fabric also applies the configured deployment rules to the updated content in the target stage. Deploying content might take a while, depending on the number of items being deployed. During this time, you can go to other pages in the portal, but you can't use the content in the target stage.
 
 You can also deploy content programmatically, using the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines). You can learn more about this process in [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
 
@@ -43,7 +43,7 @@ When you assign content to an empty stage, a new workspace is created on a capac
 
 After the deployment is complete, refresh the semantic models so that you can use the newly copied content. The semantic model refresh is required because data isn't copied from one stage to another. To understand which item properties are copied during the deployment process, and which item properties aren't copied, review the [item properties copied during deployment](#item-properties-copied-during-deployment) section.
 
-For instructions on how to assign and unassign workspaces to deployment pipeline stages, see [Assign a workspace to a Microsoft Fabric deployment pipeline](./assign-pipeline.md).
+For instructions on how to assign and unassign workspaces to deployment pipeline stages, see [Assign a workspace to a Fabric deployment pipeline](./assign-pipeline.md).
 
 ### Create a workspace
 
@@ -372,7 +372,7 @@ To enable automatic aggregations, follow the instructions in [configure the auto
 
 ### Hybrid tables
 
-Hybrid tables are tables with [incremental refresh](/power-bi/connect-data/incremental-refresh-overview) that can have both import and direct query partitions. During a clean deployment, both the refresh policy and the hybrid table partitions are copied. When you're deploying to a pipeline stage that already has hybrid table partitions, only the refresh policy is copied. To update the partitions, refresh the table.
+Hybrid tables are tables with [incremental refresh](/power-bi/connect-data/incremental-refresh-overview) that can have both Import and DirectQuery partitions. During a clean deployment, both the refresh policy and the hybrid table partitions are copied. When you're deploying to a pipeline stage that already has hybrid table partitions, only the refresh policy is copied. To update the partitions, refresh the table.
 
 ## Update content to Power BI apps
 
@@ -416,6 +416,9 @@ Permissions are required for the pipeline, and for the workspaces that are assig
 * Deployment pipelines doesn't support [Microsoft 365 groups](/microsoft-365/admin/create-groups/compare-groups#microsoft-365-groups) as pipeline admins.
 
 To deploy from one stage to another in the pipeline, you must be a pipeline admin, and either a contributor, member, or admin of the workspaces assigned to the stages involved. For example, a pipeline admin that isn't assigned a workspace role, can view the pipeline and share it with others. However, this user can't view the content of the workspace in the pipeline, or in the service, and can't perform deployments.
+
+>[!NOTE]
+>Starting November 1, 2026, users without read-write permissions on **ALL** workspace items can't deploy to the workspace through deployment pipelines. Also, they can't assign this workspace to certain stages. This restriction applies only to workspaces that contain items protected by sensitivity labels with protection policies. For more information, see [Information Protection in Microsoft Fabric](../../governance/information-protection.md).
 
 ### Permissions table
 
@@ -500,10 +503,10 @@ This section lists most of the limitations in deployment pipelines.
 
 * If autobinding is engaged, then:
 
-  * Native query and DirectQuery together isn't supported. This includes proxy datasets.
+  * Native query and DirectQuery together aren't supported. This limitation includes proxy semantic models.
   * The datasource connection must be the first step in the mashup expression.
 
-* When a Direct Lake semantic model is deployed, it doesn't automatically bind to items in the target stage. For example, if a LakeHouse is a source for a DirectLake semantic model and they're both deployed to the next stage, the DirectLake semantic model in the target stage will still be bound to the LakeHouse in the source stage. Use datasource rules to bind it to an item in the target stage. Other types of semantic models are automatically bound to the paired item in the target stage.
+* When you deploy a Direct Lake semantic model, it doesn't automatically bind to items in the target stage. For example, if a lakehouse is a source for a Direct Lake semantic model and they're both deployed to the next stage, the Direct Lake semantic model in the target stage still binds to the lakehouse in the source stage. Use datasource rules to bind it to an item in the target stage. Other types of semantic models automatically bind to the paired item in the target stage.
 * Deployment of a semantic model that uses 'Dataflow Gen 2 (CI/CD)' item as a datasource is not supported.
 
 ### Dataflow limitations

@@ -124,9 +124,9 @@ Pairing can happen in one of two ways:
 
     | Scenario | Stage A (for example, Dev)                                       | Stage B (for example, Test)                                       | Comment                                                        |
     |----------|----------------------------------------------------------|-----------------------------------------------------------|----------------------------------------------------------------|
-    | 1        | Name: *PBI Report*<br>Type: *Report*                   | None                    | Clean deploy - pairing occurs                                                 |
-    | 2        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | [If items are paired](#see-which-items-are-paired), then pressing deploy overwrites stage B.                                                 |
-    | 3        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | If items aren't paired, the report in stage A is copied to stage B. There are then two files in stage B with the same name- one paired and one unpaired. Deployments continues to succeed between the paired items.                                                 |
+    | 1        | Name: *Power BI Report*<br>Type: *Report*                   | None                    | Clean deploy - pairing occurs                                                 |
+    | 2        | Name: *Power BI Report*<br>Type: *Report*                   | Name: *Power BI Report*<br>Type: *Report*                    | [If items are paired](#see-which-items-are-paired), then pressing deploy overwrites stage B.                                                 |
+    | 3        | Name: *Power BI Report*<br>Type: *Report*                   | Name: *Power BI Report*<br>Type: *Report*                    | If items aren't paired, the report in stage A is copied to stage B. There are then two files in stage B with the same name- one paired and one unpaired. Deployments continues to succeed between the paired items.                                                 |
 
 * **Assigning a workspace to a deployment stage**: when a workspace is assigned to a deployment stage the deployment pipeline attempts to pair items. The pairing criteria are:
 
@@ -140,12 +140,12 @@ Pairing can happen in one of two ways:
 
   | Scenario | Stage A (for example, Dev)                                       | Stage B (for example, Test)                                       | Comment                                                        |
   |----------|----------------------------------------------------------|-----------------------------------------------------------|----------------------------------------------------------------|
-  | 1        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | ✅ Pairing occurs                                                 |
-  | 2        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | ❌ Pairing doesn't occur (duplicates). <br>❌ Deployment fails.          |
-  |          |                                                          | Name: *PBI Report*<br>Type: *Report*                    | ❌ Pairing doesn't occur (duplicates). <br>❌ Deployment fails.          |
-  | 3        | Name: *PBI Report*<br>Type: *Report*<br>*Folder A* | Name: *PBI Report*<br>Type: *Report*<br>*Folder B*  | ✅ Deployment succeeds but <br>❌ this report isn't paired with dev     |
-  |          |                                                          | Name: *PBI Report*<br>Type: *Report*<br>*Folder A*  | ✅ Pairing occurs using folder as a tie breaker for duplicates |
-  |          |                                                          | Name: *PBI Report*<br>Type: *Report*<br>*No folder* | ✅ Deployment succeeds but <br>❌ this report isn't paired with dev     |
+  | 1        | Name: *Power BI Report*<br>Type: *Report*                   | Name: *Power BI Report*<br>Type: *Report*                    | ✅ Pairing occurs                                                 |
+  | 2        | Name: *Power BI Report*<br>Type: *Report*                   | Name: *Power BI Report*<br>Type: *Report*                    | ❌ Pairing doesn't occur (duplicates). <br>❌ Deployment fails.          |
+  |          |                                                          | Name: *Power BI Report*<br>Type: *Report*                    | ❌ Pairing doesn't occur (duplicates). <br>❌ Deployment fails.          |
+  | 3        | Name: *Power BI Report*<br>Type: *Report*<br>*Folder A* | Name: *Power BI Report*<br>Type: *Report*<br>*Folder B*  | ✅ Deployment succeeds but <br>❌ this report isn't paired with dev     |
+  |          |                                                          | Name: *Power BI Report*<br>Type: *Report*<br>*Folder A*  | ✅ Pairing occurs using folder as a tie breaker for duplicates |
+  |          |                                                          | Name: *Power BI Report*<br>Type: *Report*<br>*No folder* | ✅ Deployment succeeds but <br>❌ this report isn't paired with dev     |
 
 > [!NOTE]
 > Once items are paired, renaming them *doesn't* unpair the items. Thus, there can be paired items with different names.
@@ -190,13 +190,15 @@ If two or more items in the workspace to be paired have the same name, type and 
 
   * You have at least [workspace contributor](understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. For more information, see [Why am I getting the *workspace contributor permissions needed* error message when I try to assign a workspace?](../troubleshoot-cicd.md#error-message-workspace-member-permissions-needed)
 
+  * If a user lacks read-write permissions on an item in the workspace because of a sensitivity label and protection policy applied to that item, Deployment pipeline stage and other operations are blocked for that user starting November 1, 2026. This restriction can result in the user losing access to certain items. This behavior is similar to the adjacent-stage contributor permissions requirement in the previous bullet. For more information, see [Protection policies in Microsoft Fabric](../../governance/protection-policies-overview.md).
+
   * The workspace doesn't contain [Power BI samples](/power-bi/create-reports/sample-datasets).
 
   * The workspace isn't a [template app](/power-bi/connect-data/service-template-apps-create#create-the-template-workspace) workspace.
 
   * The workspace doesn't have a template app installed.
 
-* When a Direct Lake semantic model is deployed, it doesn't automatically bind to items in the target stage. For example, if a LakeHouse is a source for a DirectLake semantic model and they're both deployed to the next stage, the DirectLake semantic model in the target stage will be bound to the LakeHouse in the source stage. Use datasource rules to bind it to an item in the target stage. Other types of semantic models are automatically bound to the paired item in the target stage.
+* When you deploy a Direct Lake semantic model, it doesn't automatically bind to items in the target stage. For example, if a lakehouse is a source for a Direct Lake semantic model and they're both deployed to the next stage, the Direct Lake semantic model in the target stage binds to the lakehouse in the source stage. Use datasource rules to bind it to an item in the target stage. Other types of semantic models automatically bind to the paired item in the target stage.
 
 ## Related content
 

@@ -37,7 +37,7 @@ IBCS templates provide preconfigured layouts and formatting that align with IBCS
 
     :::image type="content" source="../media/intelligence-ibcs/how-to-apply-ibcs-formatting/ibcs-column-charts.png" alt-text="Screenshot of the types of IBCS column, bar, and stacked charts." lightbox="../media/intelligence-ibcs/how-to-apply-ibcs-formatting/ibcs-column-charts.png":::
 
-* **C05, C06, and C12:** Waterfall charts
+* **C05, C06, and C12:** [Waterfall charts](./how-to-configure-ibcs-waterfall-charts.md)
 
     :::image type="content" source="../media/intelligence-ibcs/how-to-apply-ibcs-formatting/ibcs-waterfall-charts.png" alt-text="Screenshot of horizontal and vertical IBCS waterfall charts with variances." lightbox="../media/intelligence-ibcs/how-to-apply-ibcs-formatting/ibcs-waterfall-charts.png":::
 

@@ -4,7 +4,7 @@ description: Learn how to query your streaming data in a KQL queryset Real-Time 
 ms.reviewer: tzgitlin
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
-ms.date: 05/13/2026
+ms.date: 07/05/2026
 ms.update-cycle: 180-days
 ms.subservice: rti-core
 ms.collection: ce-skilling-ai-copilot
@@ -112,7 +112,7 @@ To get the equivalent KQL for a T-SQL SELECT statement, add the keyword `explain
 
 If you're new to writing KQL, you can ask a question in natural language and Copilot generates the KQL query for you.
 
-1. Select **Queryset** from the menu bar. 
+1. Select **Queryset** from the upper navigation bar. 
 1. In the KQL queryset, select the **Copilot** icon from the menu bar.
 
     :::image type="content" source="media/tutorial/copilot-select.png" alt-text="Screenshot of how to get to the right copilot.":::

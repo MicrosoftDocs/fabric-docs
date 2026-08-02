@@ -4,8 +4,9 @@ description: Learn how to end a Microsoft Fabric or Power BI trial, cancel a sub
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: how-to
-ms.date: 03/06/2025
+ms.date: 06/23/2026
 ms.custom: licensing support
+ai-usage: ai-assisted
 LocalizationGroup: Get started
 
 #customer intent: As a user or an admin, I want to know how to close my account, cancel my subscription, or end my trial in Microsoft Fabric and Power BI.
@@ -72,12 +73,14 @@ The Capacity administrator can delete Fabric capacities using the Fabric admin p
 
 You can [purchase a Fabric capacity](buy-subscription.md) at any time. You don't have to wait for your trial to end. 
 
-### Migrate an expiring P SKU capacity
+### Migrate from a retired P SKU capacity
 
-> [!NOTE]
-> Power BI Premium is transitioning to Microsoft Fabric. Power BI Premium is now part of Fabric. At the end of your current agreement with Microsoft, work with your Microsoft account representatives to migrate your P SKU purchase to an F SKU purchase. No immediate action is required. You can continue using your existing Power BI Premium capacity until the time of your next renewal. You can use Power BI in Fabric alongside all the other Fabric workloads. Because of this change, the Power BI Premium SKUs are being retired.
+Power BI Premium per-capacity (P SKU) subscriptions are retiring. To keep your Power BI workloads running, migrate to Microsoft Fabric capacity (F SKUs).
 
-If a Premium subscription or capacity license expires, you have 90 days of full access to your capacity. During these 90 days, migrate your workspaces to your new F SKU capacity without losing access to your existing work. However, once the workspace is reassigned, all currently active jobs are canceled. Rerun those jobs after migration. Migration doesn't impact scheduled jobs. If you don't migrate your workspaces, your content reverts to a shared capacity where it continues to be accessible. However, you can't view reports that are based on semantic models that are greater than 1 GB or reports that require Premium capacities to render.
+- [Power BI Premium to Microsoft Fabric migration overview](/power-bi/support/premium-migration-overview) - Why migrate, what changes, and the end-to-end journey.
+- [Power BI Premium P SKU migration decision guide](/power-bi/support/premium-migration-decision-guide) - Retirement timeline, P-to-F SKU mapping, right-sizing, and region decisions.
+- [Migrate workspaces from Power BI Premium to Microsoft Fabric](/power-bi/support/premium-migration-how-to) - Step-by-step procedure to inventory, reassign, validate, and decommission.
+- [Power BI Premium to Microsoft Fabric migration FAQ](/power-bi/support/premium-migration-faq) - Common migration questions.
 
 ## Subscriptions
 

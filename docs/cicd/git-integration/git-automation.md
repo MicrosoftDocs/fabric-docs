@@ -10,11 +10,11 @@ ms.search.form: Git integration automation, Git integration APIs, Azure DevOps i
 
 # Automate Git integration by using APIs
 
-The Microsoft Fabric [Git integration](intro-to-git-integration.md) tool enables teams to work together using source control to build an efficient and reusable release process for their Fabric content.
+The Fabric [Git integration](intro-to-git-integration.md) tool enables teams to work together using source control to build an efficient and reusable release process for their Fabric content.
 
-With [Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis), you can automate Fabric procedures and processes to complete tasks faster and with fewer errors. This efficiency leads to cost savings and improved productivity.
+By using [Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis), you can automate Fabric procedures and processes to complete tasks faster and with fewer errors. This efficiency leads to cost savings and improved productivity.
 
-This article describes how to use the [Git integration REST APIs](/rest/api/fabric/core/git) to automate Git integration in Microsoft Fabric.
+This article describes how to use the [Git integration REST APIs](/rest/api/fabric/core/git) to automate Git integration in Fabric.
 
 
 ## Prerequisites
@@ -559,7 +559,7 @@ Copy the ID of the connection you want and use it in the [Git - Connect](/rest/a
 
 * Git integration using APIs is subject to the same [limitations](./git-integration-process.md#considerations-and-limitations) as the Git integration user interface.
 * Refreshing a semantic model using the [Enhanced refresh API](/power-bi/connect-data/asynchronous-refresh) causes a Git *diff* after each refresh.
-* Error: 'Items with conflicting logical IDs detected' - users which execute **InitializeGitConnection** API, may encounter situation where a conflict is detected between logical IDs in the workspace and the git repository, to learn more about this situation follow [Logical ID Conflicts in Microsoft Fabric](./logical-id-conflict-resolution.md). To resolve this issue user can either rename the conflicting item name or change the logical id on the remote Git to match the one in the workspace based on the information given in the error response.
+* Error: 'Items with conflicting logical IDs detected' - users who execute **InitializeGitConnection** API might encounter a situation where a conflict is detected between logical IDs in the workspace and the git repository. To learn more about this situation, see [Logical ID Conflicts in Fabric](./logical-id-conflict-resolution.md). To resolve this issue, rename the conflicting item name or change the logical ID on the remote Git to match the one in the workspace based on the information given in the error response.
 
 ## Related content
 * [Git integration - get started](git-get-started.md)

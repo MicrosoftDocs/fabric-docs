@@ -1,32 +1,33 @@
 ---
 title: Visualize tuning and AutoML trials
-description: Use visualizations in Fabric AutoML and tune
-ms.topic: overview
+description: Learn how to use the flaml.visualization module to analyze and explore your AutoML and hyperparameter tuning trial results in Microsoft Fabric.
+ms.topic: how-to
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: ruxu
 reviewer: ruixinxu
-ms.date: 07/21/2025
+ms.date: 07/23/2026
+ai-usage: ai-assisted
 ---
 
-# Training visualizations
+# Visualize tuning and AutoML trials
 
-A hyperparameter trial or AutoML trial searches for the optimal parameters for a machine learning model. Each trial consists of multiple runs, where each run evaluates a specific parameter combination. Users can monitor these runs using ML experiment items in Fabric.
+A hyperparameter trial or AutoML trial searches for the optimal parameters for a machine learning model. Each trial consists of multiple runs, where each run evaluates a specific parameter combination. You can monitor these runs by using ML experiment items in Fabric.
 
-The ```flaml.visualization``` module offers functions to plot and compare the runs in FLAML. Users can use Plotly to interact with their AutoML experiment plots. To use these functions, users need to input their optimized ```flaml.AutoML``` or ```flaml.tune.tune.ExperimentAnalysis``` object.
+The `flaml.visualization` module offers functions to plot and compare the runs in FLAML. You can use Plotly to interact with your AutoML experiment plots. To use these functions, you need to provide your optimized `flaml.AutoML` or `flaml.tune.tune.ExperimentAnalysis` object.
 
-This article teaches you how to use the ```flaml.visualization``` module to analyze and explore your AutoML trial results. You can follow the same steps for your hyperparameter trial as well.
+This article teaches you how to use the `flaml.visualization` module to analyze and explore your AutoML trial results. You can follow the same steps for your hyperparameter trial as well.
 
 ## Create an AutoML trial
 
 AutoML offers a suite of automated processes that can identify the best machine learning pipeline for your dataset, making the entire modeling process more straightforward and often more accurate. In essence, it saves you the trouble of hand-tuning different models and hyperparameters.
 
-In the code cell below, we will:
+In the following code cell:
 
    1. Load the Iris dataset.
    1. Split the data into training and test sets.
-   1. Initiate an AutoML trial to fit our training data.
-   1. Explore the results of our AutoML trial with the visualizations from ```flaml.visualization```.
+   1. Initiate an AutoML trial to fit the training data.
+   1. Explore the results of the AutoML trial with the visualizations from `flaml.visualization`.
 
 ```python
 from sklearn.datasets import load_iris
@@ -53,11 +54,11 @@ automl.fit(X_train=x_train, y_train=y_train, **automl_settings)
 
 ## Visualize the experiment results
 
-Once you run an AutoML trial, you need to visualize the outcomes to analyze how well the models performed and how they behaved. In this part of our documentation, we show you how to use the built-in utilities in the FLAML library for this purpose.
+After you run an AutoML trial, visualize the outcomes to analyze how well the models performed and how they behaved. In this part of the documentation, you learn how to use the built-in utilities in the FLAML library for this purpose.
 
 ### Import visualization module
 
-To access these visualization utilities, we run the following import command:
+To access these visualization utilities, run the following import command:
 
 ```python
 import flaml.visualization as fviz
@@ -66,7 +67,7 @@ import flaml.visualization as fviz
 
 ### Optimization history
 
-An optimization history plot typically has the number of trials/iterations on the x-axis and a performance metric (like accuracy, RMSE, etc.) on the y-axis. As the number of trials increases, you would see a line or scatter plot indicating the performance of each trial.
+An optimization history plot typically has the number of trials or iterations on the x-axis and a performance metric, such as accuracy or RMSE, on the y-axis. As the number of trials increases, you see a line or scatter plot that indicates the performance of each trial.
 
 ```python
 fig = fviz.plot_optimization_history(automl)
@@ -76,13 +77,13 @@ fig.show()
 
 ```
 
-Here is the resulting plot:
+Here's the resulting plot:
 
 :::image type="content" border="true" source="./media/model-training/optimization-history.png" lightbox="./media/model-training/optimization-history.png" alt-text="Graph of optimization history plot.":::
 
 ### Feature importance
 
-A feature importance plot is a powerful visualization tool that allows you to understand the significance of different input features in determining the predictions of a model.
+A feature importance plot is a powerful visualization tool that helps you understand the significance of different input features in determining the predictions of a model.
 
 ```python
 fig = fviz.plot_feature_importance(automl)
@@ -90,7 +91,7 @@ fig = fviz.plot_feature_importance(automl)
 fig = fviz.plot(automl, "feature_importance")
 fig.show()
 ```
-Here is the resulting plot:
+Here's the resulting plot:
 
 :::image type="content" border="true" source="./media/model-training/feature-importance.png" lightbox="./media/model-training/feature-importance.png" alt-text="Graph of feature importance plot.":::
 
@@ -111,7 +112,7 @@ fig = fviz.plot(automl, "parallel_coordinate", learner="lgbm", params=["n_estima
 fig.show()
 ```
 
-Here is the resulting plot:
+Here's the resulting plot:
 
 :::image type="content" border="true" source="./media/model-training/parallel-coordinate-plot.png" lightbox="./media/model-training/parallel-coordinate-plot.png" alt-text="Graph of parallel coordinate plot.":::
 
@@ -135,11 +136,11 @@ fig.show()
 
 ```
 
-Here is the resulting plot:
+Here's the resulting plot:
 
 :::image type="content" border="true" source="./media/model-training/contour-plot.png" lightbox="./media/model-training/contour-plot.png" alt-text="Graph of contour plot.":::
 
-### Empirical  distribution function
+### Empirical distribution function
 
 An empirical distribution function (EDF) plot, often visualized as a step function, represents the cumulative probability of data points being less than or equal to a particular value. Within an AutoML or tuning experiment, an EDF plot can be employed to visualize the distribution of model performances across different hyperparameter configurations.
 
@@ -157,7 +158,7 @@ fig = fviz.plot(automl, "edf")
 fig.show()
 ```
 
-Here is the resulting plot:
+Here's the resulting plot:
 
 :::image type="content" border="true" source="./media/model-training/empirical-distribution-function-plot.png" lightbox="./media/model-training/empirical-distribution-function-plot.png" alt-text="Graph of the empirical distribution function plot.":::
 
@@ -172,7 +173,7 @@ fig = fviz.plot(automl, "timeline")
 fig.show()
 ```
 
-Here is the resulting plot:
+Here's the resulting plot:
 
 :::image type="content" border="true" source="./media/model-training/timeline-plot.png" lightbox="./media/model-training/timeline-plot.png" alt-text="Graph of timeline plot.":::
 
@@ -193,7 +194,7 @@ fig = fviz.plot(automl, "slice", learner="sgd")
 fig.show()
 ```
 
-Here is the resulting plot:
+Here's the resulting plot:
 
 :::image type="content" border="true" source="./media/model-training/slice-plot.png" lightbox="./media/model-training/slice-plot.png" alt-text="Graph of slice plot.":::
 
@@ -214,7 +215,7 @@ fig = fviz.plot(automl, "param_importance", learner="sgd")
 fig.show()
 ```
 
-Here is the resulting plot:
+Here's the resulting plot:
 
 :::image type="content" border="true" source="./media/model-training/hyperparameter-importance-plot.png" lightbox="./media/model-training/hyperparameter-importance-plot.png" alt-text="Graph of hyperparameter importance plot.":::
 

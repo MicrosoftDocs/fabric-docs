@@ -138,14 +138,14 @@ To understand the considerations and limitations of various lifecycle management
 
 #### My workspace shows uncommitted changes on a report I didn't modify
 
-**Description of problem**: I notice uncommitted changes for a report in my workspace, even though I didn't manually modify any artifacts.
+**Description of problem**: I notice uncommitted changes for a report in my workspace, even though I didn't manually modify any items.
 
-**Cause**: This behavior can happen when a report name includes special characters such as `:`, `#`, `[`, or `]`, and the report has a dependency-by-path on a semantic model. Special characters in artifact names cause the system to autocorrect the dependency paths. These automatic adjustments are expected behavior and ensure the report stays correctly linked to its semantic model in the Git branch.
+**Cause**: This behavior can happen when a report name includes special characters such as `:`, `#`, `[`, or `]`, and the report has a dependency-by-path on a semantic model. Special characters in item names cause the system to autocorrect the dependency paths. These automatic adjustments are expected behavior and ensure the report stays correctly linked to its semantic model in the Git branch.
 
-**Solution**: Commit the changes so the Git branch stays aligned with the artifact's true state. If you want more certainty before committing, use the **Commit to new branch** option in the source control pane, and then compare the differences between:
+**Solution**: Commit the changes so the Git branch stays aligned with the item's true state. If you want more certainty before committing, use the **Commit to new branch** option in the source control pane, and then compare the differences between:
 
-* the artifact currently stored in your Git branch
-* the newly generated artifact committed to the new branch
+* the item currently stored in your Git branch
+* the newly generated item committed to the new branch
 
 Review the diff to confirm that only dependency paths were adjusted and that no unintended logic or structural changes were introduced. This workflow gives you a safe validation step before you merge the changes into your working branch.
 
@@ -210,11 +210,11 @@ For more information, see [Manually Update from Git](./git-integration/partial-u
 
 **Description of problem**: After updating from Git, when looking at the lineage view, the dependencies of some items aren't as expected. For example, the proxy model no longer points to the correct model.
 
-**Cause**: Git Integration doesn't support Direct Query and proxy models at this time.
+**Cause**: Git integration doesn't support DirectQuery and proxy models at this time.
 
 **Solution**: To fix the dependencies, do one of the following actions:
 
-* Edit the *bim* file of the ProxyDataset in the Git repository so that it points to the correct dataset, and then, in the workspace, update from Git to receive the change.
+* Edit the *bim* file of the proxy semantic model in the Git repository so that it points to the correct semantic model. Then, in the workspace, update from Git to receive the change.
 * Use the [Update Datasource API](/rest/api/power-bi/datasets/update-datasources-in-group) to update the connection details of the proxy model in the workspace.
 
 ### Resolve error issues
@@ -541,10 +541,10 @@ If one of the rule options is grayed out, it could be because of the following r
 
 
 ### Retirement of semantic model support for deployment pipelines
-To improve reliability and consistency across deployment environments, Microsoft Fabric deployment pipelines is retiring support for semantic models that haven't been upgraded to enhanced metadata (Git supports only the Enhanced Metadata format). This change supports strategic improvements in semantic model management, including XMLA read/write and Analysis Services migration, and ensures consistency across environments (see Using enhanced semantic model metadata).
+To improve reliability and consistency across pipeline stages, Fabric deployment pipelines is retiring support for semantic models that aren't upgraded to enhanced metadata (Git supports only the Enhanced Metadata format). This change supports strategic improvements in semantic model management, including XMLA read/write and Analysis Services migration, and ensures consistency across environments (see Using enhanced semantic model metadata).
 
 #### What change is Microsoft making to semantic model support in deployment pipelines?
-**Solution**: Beginning February 12, 2026, Microsoft Fabric deployment pipelines will retire support for semantic models that have not been upgraded to Enhanced Metadata. Deployment pipelines—and Git integration—require Enhanced Metadata for improved reliability, consistency, and alignment with ongoing platform investments such as XMLA read/write and Analysis Services migration.
+**Solution**: Beginning February 12, 2026, Fabric deployment pipelines retire support for semantic models that aren't upgraded to Enhanced Metadata. Deployment pipelines and Git integration require Enhanced Metadata for improved reliability, consistency, and alignment with ongoing platform investments such as XMLA read/write and Analysis Services migration.
 
 #### Why is this change happening?
 **Solution**: Enhanced Metadata provides a consistent, modernized model structure that enables:
@@ -553,17 +553,17 @@ To improve reliability and consistency across deployment environments, Microsoft
 - Compatibility with Git (which supports only Enhanced Metadata)
 - Improved XMLA read/write experiences
 - Future migration paths aligned with Analysis Services
-- Greater consistency across the unified Microsoft Fabric platform
+- Greater consistency across the unified Fabric platform
 
 
 #### Who is impacted?
-**Solution**:  Any organization using Microsoft Fabric deployment pipelines with semantic models still using legacy (non‑enhanced) metadata. This change also applies to Power BI semantic models within Fabric.
+**Solution**:  Any organization using Fabric deployment pipelines with semantic models still using legacy (non‑enhanced) metadata. This change also applies to Power BI semantic models within Fabric.
 
 #### What happens if we try to deploy models that haven’t been upgraded?
 **Solution**: 
 
 - Deployment of legacy metadata models will fail.
-- PBIX files opened in the latest Power BI Desktop are automatically upgraded.
+- .pbix files opened in the latest Power BI Desktop are automatically upgraded.
 - If a report has unapplied query changes or upgrade errors, users will see a warning and must upgrade manually.
 - Some legacy queries (especially for SQL Server, Oracle, Teradata, SAP HANA) may not convert cleanly and could generate errors like:
 - "Unable to convert an M query in table 'Dimension City' into a native source query."
