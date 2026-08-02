@@ -77,17 +77,26 @@ Use your choice of AI coding agent with the [Mirror Azure Monitor skill](https:/
 
 ## Security and permissions
 
-Access to the source workspace flows through a *connection*. A connection is the customer-facing object you create in Fabric that stores the authentication to the Log Analytics workspace. The internal integration the connection drives is the connector, which isn't something you interact with directly.
+Access to the source workspace flows through a *connection*. A connection is the object you create in Fabric that stores the authentication to the Log Analytics workspace. The internal integration the connection drives is the connector, which isn't something you interact with directly.
 
-Creating a connection requires the `Microsoft.Authorization/roleAssignments/write` action on the source Log Analytics workspace. The **Owner** role includes this action, as do **User Access Administrator** and **Role Based Access Control Administrator**. A custom role that grants only this action also works. After a connection exists, other users in the Fabric workspace reuse it to create their own mirrored items, each selecting a different subset of tables. Those users don't need an Azure role on the workspace, because the connection operates under the credentials of the identity that created it.
+<a name="create-connection-permissions"></a>
+Creating a connection requires a custom role that grants the following actions, or as given by the **Owner**, **User Access Administrator**, or **Role Based Access Control Administrator** role.
 
-The connection uses those original credentials for ongoing operations, not just initial setup. Background refresh of the access token and updates to the mirrored table list both run under the creating identity's credentials, repeating on a regular interval. The authentication mode you choose therefore matters for production: a connection created with an organizational account stops working if that user leaves the tenant or loses workspace access.
+| Type | Permission | Description |
+|:---|:---|:---|
+| Actions | `Microsoft.Authorization/roleAssignments/write` | Create role assignments on the source Log Analytics workspace |
+| Actions | `Microsoft.OperationalInsights/workspaces/query/read` |	Run queries over the data in a workspace |
+| Actions | `Microsoft.OperationalInsights/workspaces/read` | 	Read existing workspaces |
+
+After a connection exists, other users in the Fabric workspace reuse it to create their own mirrored items, each selecting a different subset of tables. Those users don't need an Azure role on the workspace, because the connection operates under the credentials of the authentication mode when it was created.
+
+The connection uses those original credentials for ongoing operations, not just initial setup. Background refresh of the access token and updates to the mirrored table list both run under the authentication mode credentials, repeating on a regular interval. The authentication mode you choose therefore matters for production. For example, a connection created with an organizational account stops working if that user leaves the tenant or loses workspace access.
 
 ### Roles and authentication modes
 
 | Task | Permission required |
 |------|---------------------|
-| Creating the connection to the source workspace | The `Microsoft.Authorization/roleAssignments/write` action on the source Log Analytics workspace as provided by the **Owner**, **User Access Administrator**, and **Role Based Access Control Administrator** built-in roles. |
+| Creating the connection to the source workspace | The [Create connection custom role](#create-connection-permissions) requirements on the source Log Analytics workspace, or as provided by the **Owner**, **User Access Administrator**, and **Role Based Access Control Administrator** built-in roles. |
 | Reusing an existing connection to create an item | Fabric workspace access only. No Azure role on the source workspace is required. |
 | Connecting the mirrored item to the source | Three authentication modes are supported, depending on tenancy and operational model |
 
