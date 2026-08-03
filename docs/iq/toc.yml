@@ -357,6 +357,8 @@ items:
     items:
     - name: Intelligence sheets overview
       href: plan/intelligence-overview.md
+    - name: Intelligence FAQ
+      href: plan/faq-intelligence.md    
     - name: How-tos
       items:
         - name: Get started with intelligence sheets
