@@ -37,7 +37,7 @@ Operations agent consumes capacity based on the following factors:
     | Azure metric name | Fabric operation name | Capacity unit rate |
     | ----------------------- | ----------------------------------------------------- | ---------------------- |
     | Operations agents compute capacity usage CU | Operations agent compute | 0.46 CU Hours per hour |
-    | Investigation agent reasoning compute capacity usage CU | Investigation agent reasoning |  |
+    | Investigation agent reasoning compute capacity usage CU | Investigation agent reasoning | 400 CU seconds per 1,000 input tokens; 40 CU seconds per 1,000 cached input tokens; 1,600 CUs per 1,000 output tokens |
     | Operations agents autonomous reasoning capacity usage CU | Operations agent autonomous reasoning | 400 CU seconds per 1,000 input tokens; 40 CU seconds per 1,000 cached input tokens; 1,600 CUs per 1,000 output tokens |
     | Copilot and AI capacity usage CU | Copilot in Fabric | 100 CUs per 1,000 input tokens; 10 CU seconds per 1,000 cached input tokens; 400 CUs per 1,000 output tokens |
     | Not applicable | OneLake storage | Billed per GB per hour under OneLake storage |
