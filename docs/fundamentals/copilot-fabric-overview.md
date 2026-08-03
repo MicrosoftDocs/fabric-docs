@@ -46,7 +46,7 @@ Enabling and effectively using Copilot in your organization requires deliberate 
 
 ## Enable Copilot
 
-Copilot is enabled by default for tenants with paid Fabric capacities (F2 or higher). As an administrator, you should still [review and configure Copilot](copilot-enable-fabric.md) for your organization by verifying tenant settings, managing capacity-level options, and controlling which users and workspaces have access. You can make Copilot available to all users or specific groups of users, depending on your organization's needs and policies.
+Copilot is enabled by default for tenants with paid Fabric capacities (F2 or higher). As an administrator, [review and configure Copilot](copilot-enable-fabric.md) for your organization by verifying tenant settings, managing capacity-level options, and controlling which users and workspaces have access. You can make Copilot available to all users or specific groups of users, depending on your organization's needs and policies.
 
 > [!NOTE]  
 > Copilot isn't yet supported for sovereign clouds due to GPU availability.
