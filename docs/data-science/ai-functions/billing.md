@@ -4,7 +4,7 @@ description: Learn how billing, capacity usage, and consumption rates work for A
 ms.reviewer: singhrana
 reviewer: ranadeepsingh
 ms.topic: concept-article
-ms.date: 06/10/2026
+ms.date: 08/03/2026
 ms.search.form: AI Functions
 ai-usage: ai-assisted
 ---
@@ -89,13 +89,10 @@ Unless you configure a different model, Python AI Functions for pandas and PySpa
 
 ### Language models
 
-| **Model** | **Deployment Name** | **Context Window (Tokens)** | **Input (Per 1,000 Tokens)** | **Cached Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** | **Retirement Date** |
-| --- | --- | --- | --- | --- | --- | --- |
-| gpt-5.1-2025-11-13 | `gpt-5.1` | 400,000<br>Max output: 128,000 | 42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds | |
-| gpt-5-mini-2025-08-07 | `gpt-5-mini` | 400,000<br>Max output: 128,000 | 8.40 CU seconds | 0.84 CU seconds | 67.23 CU seconds | |
-| gpt-4.1-mini-2025-04-14 | `gpt-4.1-mini` | 128,000<br>Max output: 32,768 | 13.45 CU seconds | 3.36 CU seconds | 53.78 CU seconds | June 30, 2026 |
-| gpt-5-2025-08-07 | `gpt-5` | 400,000<br>Max output: 128,000 | 42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds | June 11, 2026 |
-| gpt-4.1-2025-04-14 | `gpt-4.1` | 128,000<br>Max output: 32,768 | 67.23 CU seconds | 16.81 CU seconds | 268.91 CU seconds | June 11, 2026 |
+| **Model** | **Deployment Name** | **Context Window (Tokens)** | **Input (Per 1,000 Tokens)** | **Cached Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** |
+| --- | --- | --- | --- | --- | --- |
+| gpt-5.1-2025-11-13 | `gpt-5.1` | 400,000<br>Max output: 128,000 | 42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds |
+| gpt-5-mini-2025-08-07 | `gpt-5-mini` | 400,000<br>Max output: 128,000 | 8.40 CU seconds | 0.84 CU seconds | 67.23 CU seconds |
 
 ### Embedding models
 
@@ -106,8 +103,6 @@ Unless you configure a different model, Python AI Functions for pandas and PySpa
 Consumption rates are subject to change. For the full consumption rate list and rate-change policy, see [Consumption rate](../ai-services/ai-services-overview.md#consumption-rate) in Foundry Tools in Fabric.
 
 ## Model migration guidance
-
-The older GPT-4.1 model series is being retired. If you have pinned Python AI Functions pipelines to `gpt-4.1`, migrate them to `gpt-5.1`. If you pinned pipelines to `gpt-4.1-mini`, migrate them to `gpt-5-mini`.
 
 For more sophisticated transformations, you can configure `gpt-5.1` or tune `reasoning_effort` to use more compute for higher-quality results. For setup details, see [Customize AI Functions with pandas](./pandas/configuration.md) and [Customize AI Functions with PySpark](./pyspark/configuration.md).
 
