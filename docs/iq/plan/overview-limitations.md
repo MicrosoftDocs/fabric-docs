@@ -50,6 +50,10 @@ To recover, create a new PowerTable sheet by using the **Existing Table** option
 * Users with the *Contributor* role can't create or share cloud connections.
 * Users with lower-level workspace roles, such as *Contributor*, can't create plan items that require embed token generation.
 
+## CI/CD service principal support
+
+Automatic application database creation isn't supported when deploying plan items through CI/CD by using a service principal.
+
 ## Workspace renaming
 
 Don't rename a workspace that contains a plan item. Renaming the
