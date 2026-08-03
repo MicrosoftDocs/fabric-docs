@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 AI Functions use the built-in Fabric-hosted large language model (LLM) endpoint to transform and enrich your data without separate endpoint setup. This article explains the billing meter, consumption rates, and usage monitoring options for that built-in endpoint.
 
 > [!IMPORTANT]
-> This article applies to AI Functions that use the built-in Fabric LLM endpoint. You can configure a custom Azure OpenAI, Microsoft Foundry, or OpenAI-compatible endpoint for pandas and PySpark AI Functions. When you do, billing is governed by that endpoint and your configuration. For setup details, see [Customize AI Functions with pandas](./pandas/configuration.md) and [Customize AI Functions with PySpark](./pyspark/configuration.md).
+> This article applies to AI Functions that use the built-in Fabric LLM endpoint. For pandas and PySpark, you can bring your own model through a custom Azure OpenAI, Microsoft Foundry, or OpenAI-compatible endpoint. Fabric doesn't charge for model calls to your custom endpoint. Your LLM provider charges for token usage, and Fabric compute charges still apply. For setup details, see [Customize AI Functions with pandas](./pandas/configuration.md) and [Customize AI Functions with PySpark](./pyspark/configuration.md).
 
 ## Billing meter
 
@@ -22,7 +22,8 @@ AI function calls through the built-in Fabric LLM endpoint are billed to your Fa
 
 | Usage | Billing meter or operation |
 |---|---|
-| AI function model calls | Copilot and AI meter, reported as **AI Functions**. |
+| Model calls through the built-in Fabric LLM endpoint | Copilot and AI meter, reported as **AI Functions**. |
+| Model calls through a custom endpoint | No model-call charge from Fabric. Your LLM provider bills token usage. |
 | Spark compute that runs a notebook or Spark job | Spark billing meter. |
 | Dataflow Gen2 compute that runs transformations | Dataflow Gen2 usage. |
 | Warehouse or SQL analytics endpoint query compute | Data Warehouse or SQL analytics endpoint usage. |
