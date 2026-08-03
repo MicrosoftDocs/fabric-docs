@@ -18,7 +18,7 @@ This article explains basic Git concepts and the process of integrating Git with
 - The permissions you have in both the workspace and Git, as listed in the next sections, determine the actions you can take.
 
 >[!NOTE]
->Starting November 1, 2026, users without read-write permissions on workspace items can't use Git integration. This restriction can result in loss of access to certain items because of sensitivity labels and protection policies applied to those items. For more information, see [Information Protection in Microsoft Fabric](../../governance/information-protection.md).
+>Starting December 1, 2026, users without read-write permissions on workspace items can't use Git integration. This restriction can result in loss of access to certain items because of sensitivity labels and protection policies applied to those items. For more information, see [Information Protection in Microsoft Fabric](../../governance/information-protection.md).
 
 
 ### Required Git permissions for popular actions

@@ -135,6 +135,8 @@ items:
           href: plan/planning-how-to-bulk-edit.md
         - name: Set up scenarios
           href: plan/planning-how-to-set-up-scenarios.md
+        - name: Use simulation measures
+          href: plan/planning-how-to-use-simulation-measures.md
         - name: Use writeback
           items:
               - name: Set up writeback
@@ -357,6 +359,8 @@ items:
     items:
     - name: Intelligence sheets overview
       href: plan/intelligence-overview.md
+    - name: Intelligence FAQ
+      href: plan/faq-intelligence.md    
     - name: How-tos
       items:
         - name: Get started with intelligence sheets
