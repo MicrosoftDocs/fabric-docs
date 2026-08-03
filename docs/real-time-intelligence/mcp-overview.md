@@ -3,7 +3,7 @@ title: What Is MCP in Real-Time Intelligence?
 description: Learn about Model Context Protocol (MCP) in Real-Time Intelligence. MCP enables AI agents to interact with eventhouses and Activator by using natural language.
 ms.reviewer: sharmaanshul
 ms.topic: overview 
-ms.date: 06/14/2026
+ms.date: 08/03/2026
 ms.search.form: MCP, RTI, AI
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
