@@ -29,7 +29,7 @@ The following data items support OneLake security:
 
 When you create a new item, it comes with a set of default roles. Default roles ensure that privileged users can see and interact with data in the newly created item. Different items have different default roles depending on that item's use cases, but most contain a **DefaultReader** role. By using [virtualized role memberships](./create-manage-roles.md#assign-virtual-members), all users that have the necessary permissions to view data in the item (the ReadAll permission, for example) are included as members of this default role. To restrict access to those users, delete the DefaultReader role or remove the ReadAll permission from the accessing users.  
 
-Newly created items that have a corresponding [SQL analytics endpoint](../../data-engineering/lakehouse-sql-analytics-endpoint.md) start in **User's identity mode** by default. Admins and Members can change the mode at any time in the Endpoint's settings.
+Newly created items that have a corresponding [SQL analytics endpoint](../../data-engineering/lakehouse-sql-analytics-endpoint.md) start in **Delegated identity mode** by default. To secure the endpoint with OneLake security, an Admin or Member must switch it to **User's identity mode**. For the steps, see [Enable OneLake security for SQL analytics endpoint](#enable-onelake-security-for-sql-analytics-endpoint).
 
 > [!IMPORTANT]
 > When you add a user to a data access role, make sure that you remove them from the DefaultReader role. Otherwise, they maintain full access to the data.
