@@ -21,13 +21,13 @@ Here you configure the rules for the alert. Your starting point is the eventstre
 
 1. From the left navigation bar, select **Real-Time**.
 
-1. In the list of recent data streams, select the **TutorialEventstream** eventstream you created in the previous tutorial. The eventstream details page opens.
+1. In the list of recent data streams, select the **TutorialEventstream-stream** eventstream you created in the previous tutorial. The eventstream details page opens.
 
     :::image type="content" source="media/tutorial/set-alert.png" alt-text="Screenshot of eventstreams details page and set alert selected." lightbox="media/tutorial/set-alert.png":::
 
 1. Select **Set alert**.
 
-1. In the **Add rule** page, follow these steps:
+1. In the **Add rule** side pane, follow these steps:
 
     1. In the **Details** section, for **Rule name**, enter **No bikes available in bike station**.
 
@@ -39,7 +39,7 @@ Here you configure the rules for the alert. Your starting point is the eventstre
 
         1. For **When**, select **No_Bikes**.
 
-        1. For **Condition**, select **Decreases to or below**.
+        1. For **Condition**, select **Decreases to or below** under **Numeric change**.
 
         1. For **Value**, enter **0**.
 

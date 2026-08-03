@@ -20,10 +20,12 @@ Copilot consumption is the billing model that measures how Copilot requests use 
 ## Copilot consumption rate per token
 
 Requests to Copilot in Fabric consume Fabric capacity units (CUs). The following table defines how many CUs are consumed per 1,000 tokens for input prompts and output completions. These rates apply across all Copilot experiences, including [Copilot for Power BI](/power-bi/create-reports/copilot-introduction), [Copilot for Data Factory](../fundamentals/copilot-fabric-data-factory.md), and [Copilot for Data Engineering and Data Science](../data-engineering/copilot-notebooks-overview.md).
+Copilot and AI features use prompt caching to reduce consumption for input tokens that are reused across requests. When a request shares a common prefix with a recent prior request such as system instructions, schema context, or conversation history, the overlapping portion is served from cache at a reduced rate as posted. The system automatically applies prompt caching and requires no configuration.
 
 | Operation in Metrics App | Description | Operation Unit of Measure | Consumption rate |
 |---|---|---|---|
 | Copilot in Fabric | The input prompt | Per 1,000 Tokens | 100 CU seconds |
+| Copilot in Fabric | The cached input prompt | Per 1,000 Tokens | 10 CU seconds |
 | Copilot in Fabric | The output completion | Per 1,000 Tokens | 400 CU seconds |
 
 ## Monitor Copilot usage

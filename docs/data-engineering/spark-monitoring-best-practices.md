@@ -372,7 +372,7 @@ Target 128 MB to 1 GB per file depending on table size, with row groups of 1–2
 Uses Delta table heuristics to automatically estimate ideal target file size and re-evaluates at each OPTIMIZE. Can improve compaction performance by 30–60%.
 
 ```python
-spark.conf.set('spark.ms.delta.adaptiveTargetFileSize.enabled', 'true')
+spark.conf.set('spark.microsoft.delta.adaptiveTargetFileSize.enabled', 'true')
 ```
 
 > [!NOTE]
@@ -463,7 +463,7 @@ Session-level (`%%configure` or `spark.conf.set`) overrides environment-level, w
 | `spark.memory.storageFraction` | 0.5 | Fraction of memory.fraction for storage |
 | `spark.databricks.delta.optimizeWrite.enabled` | varies | Pre-write bin packing |
 | `spark.databricks.delta.autoCompact.enabled` | false | Auto compaction after writes |
-| `spark.ms.delta.adaptiveTargetFileSize.enabled` | false | Adaptive file size for OPTIMIZE |
+| `spark.microsoft.delta.adaptiveTargetFileSize.enabled` | false | Adaptive target file size for OPTIMIZE |
 
 ## Related content
 - [Fabric Spark Best Practices Overview](./spark-best-practices-overview.md)

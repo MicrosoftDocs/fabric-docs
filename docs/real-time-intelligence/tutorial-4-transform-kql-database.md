@@ -3,7 +3,7 @@ title: Real-Time Intelligence Tutorial Part 4 - Transform data in a KQL Database
 description: Learn how to use an update policy to transform data in a KQL Database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: tutorial
-ms.date: 12/23/2025
+ms.date: 07/05/2026
 ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to transform data in a KQL database in Real-Time Intelligence.
@@ -59,9 +59,11 @@ In this step, you create a target table that is used to store the data transform
 
 In this step, you create a stored function that holds the transformation logic to be used in the update policy. The function parses the *BikepointID* column and adds two new calculated columns.
 
-1. From the menu ribbon, select **Database**.
+1. In Eventhouse, go to **Databases** in the left side pane.
 
-1. Select **+ New** > **Function**.
+1. Select the **Tutorial** database card.
+
+1. In the top navigation bar, select **+ New** and then **Function**.
 
 1. Edit the function so it matches the following code, or copy and paste the following command into the query editor.
 
@@ -84,9 +86,11 @@ In this step, you create a stored function that holds the transformation logic t
 
 In this step, you apply an update policy to the target table to transform the data. The update policy uses the stored function *TransformRawData()* to parse the *BikepointID* column and adds two new calculated columns.
 
-1. From the menu ribbon, select **Database**.
+1. In Eventhouse, go to **Databases** in the left side pane.
 
-1. Select **+ New** > **Table update policy**.
+1. Select the **Tutorial** database card.
+
+1. In the top navigation bar, select **+ New** > **Table update policy**.
 
 1. Edit the policy so that it matches the following code, or copy/paste the following command into the query editor.
 

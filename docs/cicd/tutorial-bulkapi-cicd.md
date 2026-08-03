@@ -25,7 +25,7 @@ In this tutorial, you use an Azure DevOps pipeline that leverages the [Bulk impo
 
 ## Background
 
-In [Git‑based deployment using a build environment](./manage-deployment.md), deployments across Microsoft Fabric workspaces are driven from a central Git repository, where Fabric item definitions are treated as code and promoted through a structured release flow. All environments—Dev, Test, and Prod—are aligned to the same main branch, while each stage is deployed independently using dedicated build and release pipelines.
+In [Git‑based deployment using a build environment](./manage-deployment.md), deployments across Fabric workspaces come from a central Git repository. Treat Fabric item definitions as code and promote them through a structured release flow. All environments - Dev, Test, and Prod - align to the same main branch, while each stage is deployed independently by using dedicated build and release pipelines.
 
 Pipelines typically begin by exporting Fabric item definitions from a development workspace using Fabric Git Integration. These definitions can then be validated in a build environment through automated checks, pull request reviews, and policy enforcement before promotion. (Not covered in this tutorial).
 
@@ -300,7 +300,7 @@ Poll the long-running operation endpoint until the deployment completes and the 
 |---|---|
 | `itemId` | The workspace item ID (GUID) of the deployed item |
 | `itemDisplayName` | The display name of the item |
-| `itemType` | The Fabric item type (for example, Report, SemanticModel, Notebook) |
+| `itemType` | The Fabric item type (for example, `Report`, `SemanticModel`, `Notebook`) |
 | `itemLogicalId` | The logical ID from the `.platform` file |
 | `operationType` | `Create` for new items, `Update` for existing items |
 | `operationStatus` | `Succeeded` or `Failed` |

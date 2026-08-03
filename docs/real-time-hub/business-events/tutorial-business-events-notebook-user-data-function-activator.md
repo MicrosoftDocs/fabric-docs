@@ -2,7 +2,7 @@
 title: Publish and React to Business Events Using Notebook and Activator
 description: Learn how to publish business events using notebooks, and react to them using User Data Function through Activator.
 #customer intent: As a data engineer, I want to create and publish a business event in Microsoft Fabric so that I can automate event-driven workflows.
-ms.date: 02/22/2026
+ms.date: 07/10/2026
 ms.topic: tutorial
 ---
 
@@ -65,9 +65,9 @@ This tutorial guides you through the full workflow of reacting to your own busin
 
 1. Enter a name for your notebook (for example: **BusinessEventTutorialOneNotebook**), confirm the location (workspace), and then select **Create** to create the notebook.
 
-1. Make sure you select either A) Python 3.11 or B) PySpark (Python).
+1. Make sure you select either A) Python 3.12 or B) PySpark (Python).
 
-    :::image type="content" source="media/tutorial-business-events-notebook-user-data-function-activator/python-runtime-selection.png" alt-text="Screenshot of the Python 3.11 runtime selection in the notebook." lightbox="media/tutorial-business-events-notebook-user-data-function-activator/python-runtime-selection.png":::
+    :::image type="content" source="media/tutorial-business-events-notebook-user-data-function-activator/python-runtime-selection.png" alt-text="Screenshot of the Python 3.12 runtime selection in the notebook." lightbox="media/tutorial-business-events-notebook-user-data-function-activator/python-runtime-selection.png":::
 
     :::image type="content" source="media/tutorial-business-events-notebook-user-data-function-activator/pyspark-python-runtime-selection.png" alt-text="Screenshot of the PySpark Python runtime selection in the notebook." lightbox="media/tutorial-business-events-notebook-user-data-function-activator/pyspark-python-runtime-selection.png":::
 

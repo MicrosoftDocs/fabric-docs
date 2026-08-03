@@ -2,7 +2,7 @@
 title: AI Functions (Preview)
 description: This tutorial explains how to use AI functions to perform advanced text processing without leaving your warehouse in Microsoft Fabric.
 ms.reviewer: jovanpop
-ms.date: 07/06/2026
+ms.date: 07/10/2026
 ms.topic: how-to 
 ai-usage: ai-assisted
 ---
@@ -152,9 +152,10 @@ AI functions can return errors or experience slower-than-expected performance fo
 - If the input text can't be processed - for example, because it exceeds token limits, contains restricted or offensive content, or otherwise violates service policies - the function returns `NULL`. Always check whether the return value is `NULL` and handle this case appropriately in your queries, applications, or data processing pipelines.
 - Performance depends on input size, input complexity, and overall service load. Individual text values are typically processed within a few seconds, while larger batches can achieve throughput of approximately 10–30 text values per second. If you consistently experience slower-than-expected performance, there might be a service or configuration issue affecting processing throughput.
 
-If you encounter an issue:
-- Create a support ticket through Microsoft support.
-- Share feedback, ask questions, or discuss issues with the community in the [Microsoft Fabric subreddit](https://www.reddit.com/r/MicrosoftFabric/).
+If you encounter an issue with AI functions in Fabric Data Warehouse or a SQL analytics endpoint:
+
+- Create a support ticket through Microsoft support, or
+- Share feedback, ask questions, or discuss issues with the community in the [AI functions in Microsoft Fabric Data Warehouse subreddit](https://www.reddit.com/r/MsFabricDwAi/).
 
 ## Examples
 

@@ -179,7 +179,6 @@ Here are a few example prompts:
 ## Related content
 
 - [Get started with the remote MCP server for eventhouses](mcp-remote-eventhouse.md)
-- [Get started with the remote MCP server for operations agents](mcp-remote-operations-agent.md)
 - [What is Fabric Activator?](data-activator/activator-introduction.md)
 - [Add and manage MCP servers in VS Code](https://code.visualstudio.com/docs/copilot/customization/mcp-servers)
 - [Adding MCP servers for GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers)

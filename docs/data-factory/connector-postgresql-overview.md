@@ -2,7 +2,7 @@
 title: PostgreSQL database connector overview
 description: This article provides an overview of the supported capabilities of the PostgreSQL database connector.
 ms.topic: how-to
-ms.date: 02/14/2026
+ms.date: 07/21/2026
 ms.custom:
   - template-how-to
   - connectors
@@ -16,9 +16,12 @@ The PostgreSQL database connector is supported in Data Factory for [!INCLUDE [pr
 
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
-| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Basic |
+| **Dataflow Gen2** (source/destination)|None<br> On-premises<br> Virtual network |Basic |
 | **Pipeline**<br>- [Copy activity](connector-postgresql-copy-activity.md) (source/destination) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Basic |
 | **Copy job** (source/destination) <br>- Full load<br>- Incremental load|None<br> On-premises<br> Virtual network |Basic |
+
+> [!IMPORTANT]
+> To use PostgreSQL as a Dataflow Gen2 data destination through an on-premises data gateway, install the [June 2026 gateway update (version 3000.322)](/data-integration/gateway/service-gateway-monthly-updates#june-2026-update-3000322) or later.
 
 ## Related content
 

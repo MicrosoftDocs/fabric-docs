@@ -17,7 +17,7 @@ An **item reference** variable is an advanced variable type used within the Fabr
 ## How to use
 An item reference variable can be used just like other variables in a variable library.
 
-1. Sign in to Microsoft Fabric
+1. Sign in to Fabric.
 2. Navigate to your workspace and variable library
 3. At the top, select **+ New Variable**
 4. Provide a name for the variable, select **item reference** for the type, and then click the **...** to select a value
@@ -36,7 +36,7 @@ If you need to edit an item reference or need to double-check the value:
 
 
 ## How it works
-An Item Reference variable's value is essentially a static pointer to a Fabric item identified by **Workspace ID + Item ID**. The value is stored as a pair of GUIDs corresponding to the target item's workspace and the item itself. For example, a reference might be stored internally as:
+An item reference variable's value is essentially a static pointer to a Fabric item identified by **Workspace ID + Item ID**. The value is stored as a pair of GUIDs corresponding to the target item's workspace and the item itself. For example, a reference might be stored internally as:
 
  - WorkspaceID = aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb 
  - ItemID  = 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
@@ -51,9 +51,9 @@ Keep in mind the following when working with item references:
 - All values across value-sets **should** be of the same item type to ensure compatibility and prevent runtime errors. However, we don't enforce having the same item type across value sets.
 
 ## Representation in Git and APIs
-The Variable Library is managed as code. Using Git or REST APIs, Item Reference variables have a clear JSON format. All variables appear in the Variable Library’s definition file (stored in Git, usually .json), listing properties like name, type, and value.
+Manage the variable library as code. By using Git or REST APIs, you can work with item reference variables through a clear JSON format. All variables appear in the variable library’s definition file (stored in Git, usually .json), listing properties like name, type, and value.
 
-For an Item Reference (Static) variable, the value is structured data for workspace and item IDs. Example:
+For an item reference (static) variable, the value is structured data for workspace and item IDs. Example:
 
 ```json
 
@@ -102,7 +102,7 @@ print(item_id)
 
 This code does the following:
 
-- Resolves an Item Reference variable from a Fabric Variable Library
+- Resolves an item reference variable from a variable library in Fabric.
 - Retrieves the metadata object for that referenced item
 - Extracts the workspace ID and item ID
 - Prints them so they can be used programmatically.
@@ -119,11 +119,11 @@ For more information on permissions and permission validation, see [Variable lib
 Currently, you can only reference fabric items and semantic models. Other Power BI items, like Dataflow Gen1 are currently not supported.
 
 ## Additional information
-The Variable Library enables CI/CD for Fabric content across environments (Dev, Test, Prod) using Item Reference variables for stage-specific configurations. Keep in mind the following:
+The variable library enables CI/CD for Fabric content across environments (Dev, Test, Prod) by using item reference variables for stage-specific configurations. Keep the following points in mind:
 
-- Item References are tied to a specific workspace and item ID.
+- Item references are tied to a specific workspace and item ID.
 - Deploying to a new stage, these references still point to the original workspace unless manually updated.
-- Use Multiple Value-Sets for each stage and activate the correct set manually or via API scripts.
+- Use multiple value sets for each stage and activate the correct set manually or via API scripts.
 
 For more information, see [value-sets in variable libraries](value-sets.md).
 

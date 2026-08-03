@@ -10,7 +10,7 @@ ms.search.form: Variable library tutorial
 
 # Tutorial: Use variable libraries to customize and share item configurations
 
-This tutorial shows you how to use dynamic content in Microsoft Fabric pipelines. When you create a variable library item and add variables to it, you can automate values for various stages of your deployment pipeline. In this tutorial, you copy data from one lakehouse to another. Then you use the variable library to set the source and destination values for the copy activity.
+This tutorial shows you how to use dynamic content in Fabric pipelines. When you create a variable library item and add variables to it, you can automate values for various stages of your deployment pipeline. In this tutorial, you copy data from one lakehouse to another. Then you use the variable library to set the source and destination values for the copy activity.
 
 In this tutorial, you:
 

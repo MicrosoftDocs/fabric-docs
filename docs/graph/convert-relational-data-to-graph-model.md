@@ -19,7 +19,7 @@ Use this article as your conversion checklist. For detailed modeling rules, see 
 
 - A [Fabric workspace](../fundamentals/create-workspaces.md) with permission to create items.
 - A [lakehouse](../data-engineering/create-lakehouse.md) that contains source relational tables.
-- [Graph enabled for your tenant](../admin/admin-center.md) and available in your [region](overview.md#region-availability).
+- Graph available in your [region](overview.md#region-availability).
 - Familiarity with the graph model editor. If you're new to graph, start with [Tutorial: Introduction to graph](tutorial-introduction.md).
 
 ## Conversion workflow

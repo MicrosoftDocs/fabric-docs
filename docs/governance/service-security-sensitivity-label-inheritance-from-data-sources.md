@@ -4,7 +4,7 @@ description: Learn how Power BI semantic models can inherit sensitivity labels f
 author: msmimart
 ms.author: mimart
 ms.topic: concept-article
-ms.date: 03/28/2024
+ms.date: 07/13/2026
 LocalizationGroup: Data from files
 ---
 # Sensitivity label inheritance from data sources
@@ -62,5 +62,7 @@ To make sure sensitivity label inheritance from an Excel file works:
 
 ## Related content
 
+* [Sensitivity label inheritance upon update and relationship changes](service-security-sensitivity-label-inheritance-upon-update.md)
+* [Sensitivity label downstream inheritance](service-security-sensitivity-label-downstream-inheritance.md)
 * [Enable sensitivity label inheritance from data sources](/fabric/admin/service-admin-portal-information-protection#apply-sensitivity-labels-from-data-sources-to-their-data-in-power-bi)
 * [Sensitivity label overview](/power-bi/enterprise/service-security-sensitivity-label-overview)

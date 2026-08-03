@@ -8,9 +8,7 @@ ms.topic: how-to
 
 # Manage inserted rows
 
-In plan (preview), you can manage rows inserted in a visual, such as calculated rows, static rows, template rows, or data input rows, using the **Manage Rows** option.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+In plan, you can manage rows inserted in a visual, such as calculated rows, static rows, template rows, or data input rows, using the **Manage Rows** option.
 
 This article explains how to manage inserted rows using options such as search, filter, show, and hide.
 

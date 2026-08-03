@@ -6,7 +6,7 @@ ms.topic: how-to
 #customer intent: As a user, I want to understand how to insert and configure data input dropdown columns in a planning sheet.
 ---
 
-# Insert dropdown list column
+# Insert dropdown list columns in planning sheet
 
 You can create single select or multiselect dropdown columns by using a predefined list of values.
 

@@ -27,7 +27,7 @@ In this tutorial, you learn how to:
 ## Prerequisites
 
 - Get access to a workspace with Contributor or higher permissions where your eventstream is located. If using Microsoft Entra authentication, Member or higher permissions are required to grant Entra ID Contributor or higher access.
-- A sign-in in the [db_owner](/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver17) role or that has [CONTROL DATABASE](/sql/relational-databases/security/permissions-database-engine?) permission for the Azure SQL database where you intend to enable CES.
+- A sign-in in the [db_owner](/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver17&preserve-view=true) role or that has [CONTROL DATABASE](/sql/relational-databases/security/permissions-database-engine?) permission for the Azure SQL database where you intend to enable CES.
 - For Azure SQL Database configured to use [outbound firewall rules](/azure/azure-sql/database/outbound-firewall-rule-overview) or a [Network Security Perimeter](/azure/azure-sql/database/network-security-perimeter), allow access to the Eventstream’s source custom endpoint through [Firewall ports to open](/azure/event-hubs/event-hubs-faq)
 
 ## Create an eventstream

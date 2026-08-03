@@ -54,6 +54,10 @@ items:
         href: ../data-agent-microsoft-365-copilot.md
       - name: Consume a data agent as Model Context Protocol Server (preview)
         href: ../data-agent-mcp-server.md
+  - name: Observe and Monitor Fabric data agent
+    items:
+      - name: Observe with Microsoft Foundry
+        href: ../fabric-data-agent-foundry-observability.md
   - name: Source Control, CI/CD, and ALM for Fabric data agent
     href: ../data-agent-source-control.md
   - name: Service Principal for Fabric data agent

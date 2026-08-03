@@ -3,11 +3,11 @@ title: Manage inbound access to OneLake with Resource Instance Rules
 description: Learn how Resource Instance Rules let workspace admins restrict inbound access to OneLake based on approved Azure resource instances.
 ms.reviewer: eloldag, mabasile
 ms.topic: concept-article
-ms.date: 03/09/2026
+ms.date: 07/21/2026
 #customer intent: As a workspace admin, I want to restrict inbound access to OneLake based on approved Azure resources so that only trusted resource instances can reach my data.
 ---
 
-# Manage inbound access to OneLake with Resource Instance Rules (preview)
+# Manage inbound access to OneLake with Resource Instance Rules
 
 Resource Instance Rules let workspace admins restrict public network access to OneLake by allowing inbound access only from trusted Azure resource instances, such as an Azure Databricks workspace or an Azure SQL Server. Setup is simple — it requires only the Azure resource ID.
 
@@ -16,9 +16,6 @@ Existing inbound protection options like IP firewall rules and Private Links are
 Resource Instance Rules offer a simpler alternative — admins add a trusted Azure resource by its resource ID, and Fabric verifies the resource identity on each inbound request. This approach works alongside existing Fabric inbound protection features.
 
 This article explains how Resource Instance Rules work for OneLake and when to use them. To learn about other inbound protection options, see [Inbound network protection in Fabric](../security/security-inbound-overview.md).
-
-> [!NOTE]
-> Resource Instance Rules for OneLake are currently in **public preview**. Features and behavior might change before general availability.
 
 ## How Resource Instance Rules work
 
@@ -29,6 +26,8 @@ For example:
 - Workspace A allows access only from Azure Resource X.
 - A request from Azure Resource Y is denied because it isn't on the approved list.
 - A request from Azure Resource X is allowed because it matches an approved resource instance.
+
+As a more concrete example, Contoso's workspace "Analytics-Prod" restricts network access. The workspace admin adds their Azure SQL Server `contoso-sql-prod` as a trusted resource. When the SQL Server's managed identity makes a request to OneLake, Fabric verifies the identity matches the allowed resource ID and permits access. A request from an unapproved Event Grid system topic in a different subscription is denied.
 
 Allowing a resource instance through Resource Instance Rules doesn't grant that resource access to all data in the workspace. The resource must still satisfy the applicable authentication, authorization, and item-level permission requirements for the OneLake data that it tries to access.
 
@@ -43,6 +42,22 @@ Common scenarios include:
 - Combining resource-based access restrictions with workspace private links or IP firewall rules for layered protection.
 
 If you need to allow user access from office networks, VPN gateways, or partner public IP ranges, use [workspace IP firewall rules](../security/security-workspace-level-firewall-overview.md).
+
+## Common scenarios
+
+The following scenarios describe how Resource Instance Rules work with commonly used Azure resource types.
+
+### Azure SQL Server writing to OneLake via mirroring
+
+Your Azure SQL Server writes data to OneLake through database mirroring. The SQL Server's outbound IPs are dynamic and shared across Azure infrastructure, making IP firewall rules impractical. Add the SQL Server's resource ID to your workspace's resource instance rules so OneLake verifies the SQL Server's managed identity on each request - no IP tracking needed.
+
+Resource ID format: `/subscriptions/{sub}/resourceGroups/{rg}/providers/Microsoft.Sql/servers/{serverName}`
+
+### Azure Databricks reading and writing to OneLake via access connector
+
+Your Databricks workspace uses an access connector with a managed identity to read and write data in OneLake. Add the Databricks access connector's resource ID to allow the connector's managed identity through your workspace's resource instance rules.
+
+Resource ID format: `/subscriptions/{sub}/resourceGroups/{rg}/providers/Microsoft.Databricks/accessConnectors/{connectorName}`
 
 ## Configure Resource Instance Rules
 

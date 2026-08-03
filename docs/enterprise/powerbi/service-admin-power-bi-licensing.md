@@ -195,7 +195,10 @@ To share Power BI content with external users:
 - **The sharer** needs a Power BI Pro or Premium Per User (PPU) license to share content outside the organization.
 - **The external guest user** needs one of the following:
   - A Power BI Pro or PPU license (either from their own organization or assigned by your organization), OR
-  - Only a Fabric (Free) license if the content is hosted in a Premium capacity (P SKU) or Fabric capacity (F64 or greater).
+  - A Fabric (Free) license, if the content is hosted in a Microsoft Fabric capacity of F64 or larger.
+
+> [!NOTE]
+> Power BI Premium per-capacity (P SKU) subscriptions are being retired. To keep your Power BI workloads running, migrate to Microsoft Fabric capacity (F SKUs). For an end-to-end view of the migration, see [Power BI Premium to Microsoft Fabric migration overview](/power-bi/support/premium-migration-overview). For answers to common questions, see the [Power BI Premium to Microsoft Fabric migration FAQ](/power-bi/support/premium-migration-faq).
 
 For more information about guest user access, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](service-admin-entra-b2b.md).
 

@@ -2,7 +2,7 @@
 title: Limitations of Fabric Data Warehouse
 description: Review current limitations for warehouse and SQL analytics endpoint items in Microsoft Fabric Data Warehouse.
 ms.reviewer: joanpo, ajagadish, anphil, fresantos, pvenkat
-ms.date: 07/02/2026
+ms.date: 07/29/2026
 ms.topic: limits-and-quotas
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ai-usage: ai-assisted
@@ -34,14 +34,15 @@ For limitations in specific features of Fabric Data Warehouse and the SQL analyt
 - [Connectivity considerations and limitations](connectivity.md#considerations-and-limitations)
 - [Data types in Microsoft Fabric](data-types.md)
 - [Delta Lake logs limitations](query-delta-lake-logs.md#limitations)
+- [Git Integration for Fabric Warehouse Development](git-integration.md#limitations-in-source-control)
 - [Migration Assistant limitations](migration-assistant.md#limitations)
 - [Pause and resume considerations and limitations](pause-resume.md#considerations-and-limitations)
 - [Semantic models limitations](semantic-models.md#limitations)
 - [Share your data and manage permissions limitations](share-warehouse-manage-permissions.md#limitations)
-- [Source control limitations](source-control.md#limitations-in-source-control)
 - [SQL analytics endpoint limitations](../data-engineering/lakehouse-sql-analytics-endpoint.md#limitations)
 - [Statistics limitations](statistics.md#limitations)
 - [Tables limitations](tables.md#limitations)
+- [Temp tables](temp-tables.md#limitations)
 - [Transactions limitations](transactions.md#limitations)
 - [Visual query editor limitations](visual-query-editor.md#limitations-with-visual-query-editor)
 

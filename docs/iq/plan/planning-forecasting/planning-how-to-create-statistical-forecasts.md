@@ -10,8 +10,6 @@ ms.topic: how-to
 
 Statistical forecasting applies historical trends and seasonality to generate forecasts without manual input. The prediction feature enables forward‑looking analysis by deriving future values from historical patterns. It supports the configuration of confidence interval, seasonality, and growth factor, and allows top-down or bottom-up approaches to apply forecasts across hierarchies. Results can be explored visually or in tabular form.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 ## Prerequisites
 
 * A forecast measure with blank initial values.

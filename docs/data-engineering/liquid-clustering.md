@@ -18,6 +18,7 @@ Use this article to:
 - Compare liquid clustering to partitioning and Z-Order.
 - Configure clustering on your tables.
 - Understand incremental liquid clustering (Runtime 2.0+).
+- Evaluate clustering quality.
 - Tune clustering behavior with session configurations.
 
 ## What is liquid clustering?
@@ -225,6 +226,37 @@ OPTIMIZE sales FULL;
 > [!NOTE]
 > The incremental clustering strategy intentionally allows minor deviation from the theoretically optimal layout to achieve significant reductions in write amplification. Running `OPTIMIZE FULL` closes that gap by fully rebuilding Z-Cubes to the theoretical optimum, but at a higher write cost.
 
+## Evaluate clustering quality
+
+Starting with Fabric Runtime 2.0, use the Scala `clusteringQuality()` method to evaluate the physical layout of a liquid clustered Delta table. The method returns a DataFrame with one row for each clustering column.
+
+> [!IMPORTANT]
+> The `clusteringQuality()` method isn't available in Fabric Runtimes before 2.0.
+
+```scala
+import io.delta.tables.DeltaTable
+
+val deltaTable = DeltaTable.forName(spark, "dbo.clustered_table")
+val quality_df = deltaTable.clusteringQuality()
+display(quality_df)
+```
+
+The result contains the following metrics:
+
+| Metric | Description | Preferred direction |
+|---|---|---|
+| `column_name` | Clustering column evaluated by the method. | Not applicable. |
+| `status` | Evaluation status. `ok` means that metrics were calculated. `no_stats` means that the column has no usable file statistics. | `ok`. |
+| `num_files` | Total number of files in the table snapshot. | Not applicable. |
+| `num_files_with_stats` | Number of files with usable statistics for the column. Files without statistics can't be skipped through [file skipping](delta-lake-file-skipping.md#maximize-column-coverage). | Close to `num_files`. |
+| `avg_coverage_pct` | Average percentage of the column's value range covered by each file. | Lower values are better. |
+| `avg_depth` | Average number of files that a point query touches. | `1.0` is ideal. |
+| `max_depth` | Maximum number of files that a point query touches. | Lower values are better. |
+| `overlap_ratio` | Normalized overlap between file value ranges. | `0` means no overlap and is ideal. |
+| `skipping_effectiveness` | Estimated fraction of files that a point query can skip. | `1` means 100% all nonmatching files can be skipped. As the number of clustering columns selected increases, the maximum possible `skipping_effectiveness` decreases. |
+
+Compare these metrics before and after `OPTIMIZE` to evaluate whether clustering improved the layout. Interpret the results with the table's data distribution and query predicates. The metrics estimate file-skipping potential from file statistics; they don't measure the performance of a specific query.
+
 ## Configuration reference
 
 The following session configurations control liquid clustering behavior in Fabric Runtime 2.0+.
@@ -299,7 +331,7 @@ For the equivalent eligible types used in file-level statistics, see [File skipp
 
 - **Run `OPTIMIZE` regularly** after batch writes or on a schedule for streaming tables—but only in **Runtime 2.0+**, where the incremental clustering strategy makes frequent runs inexpensive. In Runtime 1.3 and earlier, every `OPTIMIZE` run rewrites all data in Z-Cubes under 100 GB, so runs should be intentional and infrequent.
 - **Use `OPTIMIZE FULL` sparingly**. Reserve it for after you change clustering columns or need a one-time quality reset.
-- **Monitor clustering quality** by checking query scan metrics (files scanned vs. total files) in Spark UI or query plans.
+- **Monitor clustering quality** with `clusteringQuality()`, and validate the result against files-scanned metrics in the Spark UI or query plans.
 - **Combine with optimize write** for streaming workloads to ensure each micro-batch produces a manageable number of files for clustering.
 
 ## Related content

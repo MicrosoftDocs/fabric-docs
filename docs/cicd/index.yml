@@ -1,15 +1,15 @@
 ### YamlMime:Landing
 
-title: Fabric application lifecycle management documentation
-summary: The lifecycle management tools in Fabric enable efficient product development, continuous updates, and fast releases.
+title: Microsoft Fabric CI/CD documentation
+summary: The CI/CD tools in Fabric enable efficient development, continuous updates, and fast releases.
 
 metadata:
-  title: Fabric application lifecycle management documentation
-  description: Learn about lifecycle management tools in Fabric for CI/CD, Git integration, and deployment pipelines.
+  title: Microsoft Fabric CI/CD documentation
+  description: Learn about CI/CD tools in Fabric for source control, Git integration, and deployment pipelines.
   ms.subservice: cicd
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
-  ms.date: 1/23/2025 #Required; mm/dd/yyyy format.
+  ms.date: 07/14/2026 #Required; mm/dd/yyyy format.
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -17,11 +17,11 @@ landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card 
-  - title: About application lifecycle management
+  - title: About CI/CD in Fabric
     linkLists:
       - linkListType: overview
         links:
-          - text: What is application lifecycle management in Fabric?
+          - text: What is CI/CD in Microsoft Fabric?
             url: ./cicd-overview.md 
           - text: What is Git integration?
             url: git-integration/intro-to-git-integration.md 
@@ -51,9 +51,9 @@ landingContent:
             url: variable-library/variable-library-overview.md
       - linkListType: reference
         links:
-          - text: Frequently asked questions about the Fabric lifecycle management tools
+          - text: Frequently asked questions about the Fabric CI/CD tools
             url: faq.yml
-          - text: Troubleshoot lifecycle management issues
+          - text: Troubleshoot CI/CD issues
             url: troubleshoot-cicd.md
 
   # Card 
@@ -77,15 +77,15 @@ landingContent:
             url: git-integration/manage-branches.md
           - text: Resolve conflicts in Git
             url: git-integration/conflict-resolution.md
-          - text: Lifecycle management best practices
+          - text: CI/CD best practices
             url:  ./best-practices-cicd.md 
       - linkListType: tutorial
         links:
-          - text: Lifecycle management tutorial
+          - text: CI/CD tutorial
             url: cicd-tutorial.md
 
   # Card
-  - title: Automate application lifecycle management workflows using APIs
+  - title: Automate CI/CD workflows using APIs
     linkLists:
       - linkListType: how-to-guide
         links:

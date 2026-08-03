@@ -3,7 +3,7 @@ title: Configure and manage starter pools in Fabric Spark
 description: Learn how to customize starter pools from your Fabric workspace settings for your analytics workloads.
 ms.reviewer: saravi
 ms.topic: how-to
-ms.date: 03/05/2026
+ms.date: 06/15/2026
 ai-usage: ai-assisted
 ---
 # Configure starter pools in Microsoft Fabric
@@ -72,6 +72,8 @@ The following table shows default and maximum starter pool node limits by SKU.
 | F512 | 512 | 1024 | Medium | 10 | 128 |
 | F1024 | 1024 | 2048 | Medium | 10 | 200 |
 | F2048 | 2048 | 4096 | Medium | 10 | 200 |
+| F4096 | 4096 | 8192 | Medium | 10 | 200 |
+| F8192 | 8192 | 16384 | Medium | 10 | 200 |
 
 ## Related content
 

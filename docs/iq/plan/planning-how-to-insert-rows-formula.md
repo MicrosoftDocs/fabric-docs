@@ -10,8 +10,6 @@ ms.topic: how-to
 
 In your planning sheet, you might occasionally need to perform calculations with row values. *Formula rows* let you calculate values based on other rows in the report. Define formulas by referencing existing rows and applying functions.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 The planning sheet has an intuitive formula editor where you enter the row formula. The Excel-like engine supports multiple functions (logical, mathematical, and more) and provides features such as autocomplete, syntax help, and multi-line editing to simplify formula creation and troubleshooting.
 
 This article explains how to insert formula rows and configure their properties.

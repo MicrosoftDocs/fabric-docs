@@ -10,8 +10,6 @@ ms.topic: how-to
 
 In **Writeback Settings**, the **Destinations** tab lets you add, view, delete, and manage writeback destinations. Use this tab to configure and manage existing destinations.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 :::image type="content" source="../media/planning-writeback/planning-how-to-configure-destination-settings/writeback-destination-settings.jpg" alt-text="Screenshot of the Writeback destination settings" lightbox="../media/planning-writeback/planning-how-to-configure-destination-settings/writeback-destination-settings.jpg":::
 
 ## Reset writeback

@@ -3,8 +3,8 @@ title: TLS mTLS settings common
 description: This include file provides common TLS and mTLS settings guidance for source connectors.
 ms.topic: include
 ms.date: 06/22/2026
-author: xujiang1
-ms.author: xujiang1
+author: spelluru
+ms.author: spelluru
 ms.service: fabric
 ---
 

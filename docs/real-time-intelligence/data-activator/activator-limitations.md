@@ -89,7 +89,9 @@ To check if the recipient's domain is one of the verified domains, visit [Azure 
 
 ## Allowed chats and channels for Teams notifications
 
-For Teams group chats, you can select only recently active chats. If the chat you want doesn't appear in Activator, send a message to the chat to make it recently active. For Teams channels, you see and can select only shared channels. You can't send messages to [private channels](https://aka.ms/TeamsPrivateChannel).
+For Teams group chats, you can select only recently active chats. If the chat you want doesn't appear in Activator, send a message to the chat to make it recently active.
+
+Teams channels aren't currently supported. You can't send messages to [private channels](https://aka.ms/TeamsPrivateChannel).
 
 ## Maximum number of events per second
 
@@ -132,6 +134,13 @@ Only this user (the metric owner) can query the metric.
 If the metric owner loses access to the metric, or if you update the Power BI ingestion to use a different user's credentials, data ingestion might stop and alerts might no longer trigger.
 
 To continue using the ingestion under a different user, the ingestion and associated rules need to be recreated in the new user context.
+
+## Maximum rules per Activator item
+
+Each Data [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item supports a maximum of 500 rules. This limit applies per [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item (artifact), regardless of the data source used to create the rules (Power BI reports, eventstreams, KQL querysets, or Real-Time Dashboards). If you reach this limit, create additional rules in a separate [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item.
+
+> [!NOTE]
+> This limit applies to Data [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules and is separate from Power BI dashboard data alerts.
 
 ## Related content
 

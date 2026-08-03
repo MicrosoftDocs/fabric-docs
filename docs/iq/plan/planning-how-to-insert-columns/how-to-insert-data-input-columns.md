@@ -6,13 +6,11 @@ ms.topic: how-to
 #customer intent: As a user, I want to understand how to insert and configure data input columns.
 ---
 
-# Insert data input columns
+# Insert data input columns in planning sheet
 
 Planning and what-if analysis often require you to enter values, projections, or other details that don't exist in the underlying dataset. Data input columns let you add and manage these values directly within a report, making it easier to perform planning, forecasting, and scenario analysis.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
-In plan (preview), you can insert data input columns and measures directly in your reports without writing Data Analysis Expressions (DAX). You can format these columns and reuse them for subsequent calculations and analysis.
+In plan, you can insert data input columns and measures directly in your reports without writing Data Analysis Expressions (DAX). You can format these columns and reuse them for subsequent calculations and analysis.
 
 In this article, you learn how to insert and configure data input columns and measures.
 

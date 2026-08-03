@@ -3,19 +3,19 @@ title: Overview of Fabric Git integration
 description: An introduction to integrating Git version control with the Fabric Application lifecycle management (ALM) tool
 ms.reviewer: NimrodShalit
 ms.topic: overview
-ms.date: 06/15/2026
+ms.date: 07/21/2026
 ms.search.form: Git integration supported items, Introduction to Git integration
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
 
 # What is Microsoft Fabric Git integration?
 
-This article explains to developers how to integrate Git version control with the Microsoft Fabric Application lifecycle management (ALM) tool.
+This article explains how developers can integrate Git version control with the Fabric Application lifecycle management (ALM) tool.
 
 > [!NOTE]
 > Some of the items for Git integration are in preview. For more information, see the list of [supported items](#supported-items).
 
-Git integration in Microsoft Fabric enables developers to integrate their development processes, tools, and best practices straight into the Fabric platform. It allows developers who are developing in Fabric to:
+Git integration in Fabric enables developers to integrate their development processes, tools, and best practices straight into the Fabric platform. It allows developers who are developing in Fabric to:
 
 * Backup and version their work
 * Revert to previous stages as needed
@@ -34,7 +34,7 @@ See the list of [supported items](#supported-items).
 
 
 ## Network security for Git integration
-Workspace-level security in Microsoft Fabric provides granular control over data access and network connectivity by allowing administrators to configure both inbound and outbound protections for individual workspaces. These controls ensure that sensitive data remains within trusted network boundaries, and they integrate with CI/CD tools like Git integration.  For more information, see [Network security for continuous integration/continuous deployment](../cicd-security.md)
+Workspace-level security in Fabric provides granular control over data access and network connectivity by allowing administrators to configure both inbound and outbound protections for individual workspaces. These controls ensure that sensitive data remains within trusted network boundaries, and they integrate with CI/CD tools like Git integration. For more information, see [Network security for continuous integration/continuous deployment](../cicd-security.md).
 
 ## Privacy information
 
@@ -68,7 +68,7 @@ The following items currently support Git integration:
 * Data Science items:
   * [Machine learning experiments](../../data-science/machine-learning-artifacts-git-deployment-pipelines.md#machine-learning-experiments-and-models-git-integration) *(preview)*
   * [Machine learning models](../../data-science/machine-learning-artifacts-git-deployment-pipelines.md#machine-learning-experiments-and-models-git-integration) *(preview)*
-  * [Data Agents](../../data-science/how-to-create-data-agent.md) *(preview)*
+  * [Data Agents](../../data-science/how-to-create-data-agent.md)
 
 * Data Factory items:
 
@@ -78,22 +78,26 @@ The following items currently support Git integration:
   * [Mirrored database](../../mirroring/mirrored-database-cicd.md#mirrored-database-git-integration)
   * [Mount ADF](../../data-factory/tutorial-bring-azure-data-factory-to-fabric.md)
   * [Mirrored snowflake](../../mirroring/snowflake.md) *(preview)*
+  * [Airflow](../../data-factory/apache-airflow-jobs-concepts.md) *(preview)*
+  * [dbt Job](../../data-factory/dbt-job-overview.md) *(preview)*
+  * [Operations Agent](../../data-factory/operations-agent-for-pipelines.md) *(preview)*
 
-* Real-time Intelligence items:
+* Real-Time Intelligence items:
 
-  * [Activator](../../real-time-intelligence/git-deployment-pipelines.md) *(preview)*
+  * [Activator](../../real-time-intelligence/git-deployment-pipelines.md)
   * [Eventhouse](../../real-time-intelligence/git-deployment-pipelines.md)
-  * [EventStream](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [Eventstream](../../real-time-intelligence/git-deployment-pipelines.md)
   * [KQL database](../../real-time-intelligence/git-deployment-pipelines.md)
-  * [KQL Queryset](../../real-time-intelligence/git-deployment-pipelines.md)
-  * [Real-time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md)
-  * [Event Schema Set](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md) *(preview)*
+  * [KQL queryset](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [Real-Time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md)
   * [Maps](../../real-time-intelligence/map/about-fabric-maps.md)
+  * [Event Schema Set](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md) *(preview)*
+  * [Digital twin builder](../../real-time-intelligence/digital-twin-builder/overview.md) *(preview)*
   * [Anomaly detection](../../real-time-intelligence/multivariate-anomaly-overview.md) *(preview)*
 
 * Data Warehouse items:
 
-  * [Warehouse](../../data-warehouse/source-control.md#git-integration) *(preview)*
+  * [Warehouse](../../data-warehouse/git-integration.md)
   * Mirrored Azure Databricks Catalog 
 
 * Power BI items:
@@ -110,13 +114,28 @@ The following items currently support Git integration:
   * [Cosmos database](../../database/cosmos-db/overview.md) *(preview)*
 
 * Graph:
-  * [Graph in Microsoft Fabric (preview)](../../graph/overview.md)
+  * [Graph Model](../../graph/overview.md)
+  * [Graph QuerySet](../../graph/overview.md)
+
+* CI/CD items:
+
+  * [Variable Library](../variable-library/variable-library-overview.md)
+
+* IQ (preview) items:
+
+  * [Ontology](../../iq/ontology/overview.md) *(preview)*
+  * [Plan](../../iq/plan/overview.md) *(preview)*
+
 * Industry solutions:
 
   * [Healthcare](/industry/healthcare/healthcare-data-solutions/application-lifecycle-management) *(preview)*
   * HealthCare Cohort *(preview)*
 
 If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren't saved or synced, but they're not deleted either. They appear in the source control panel but you can't commit or update them.
+
+## Permissions
+
+The actions you can take on a workspace depend on the permissions you have in both the workspace and the Git repo. For a more detailed discussion of permissions, see [Permissions](./git-integration-process.md#permissions).
 
 ## Related content
 

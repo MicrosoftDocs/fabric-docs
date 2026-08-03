@@ -112,5 +112,6 @@ Fabric capacity administrators can use the [Microsoft Fabric Capacity Metrics](.
 
 ## Related content
 
+- [Operations Agent for Pipelines](operations-agent-for-pipelines.md)
 - [Quickstart: Create your first pipeline to copy data](create-first-pipeline-with-sample-data.md)
 - [Quickstart: Create your first Dataflow Gen2 to get and transform data](create-first-dataflow-gen2.md)

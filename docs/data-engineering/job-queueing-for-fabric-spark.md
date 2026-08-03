@@ -4,7 +4,7 @@ description: Learn about background job queueing for notebooks, Apache Spark job
 ms.reviewer: saravi
 ms.topic: concept-article
 ms.custom: sfi-image-blocked
-ms.date: 03/05/2026
+ms.date: 06/15/2026
 ai-usage: ai-assisted
 ---
 # Job queueing in Apache Spark for Microsoft Fabric
@@ -73,6 +73,8 @@ Fabric Spark enforces queue limits by capacity SKU.
 |F512|P4|512|
 |F1024|-|1024|
 |F2048|-|2048|
+|F4096|-|4096|
+|F8192|-|8192|
 |Trial Capacity|P1|Not available|
 
 > [!NOTE]

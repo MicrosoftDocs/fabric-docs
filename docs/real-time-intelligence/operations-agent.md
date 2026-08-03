@@ -23,9 +23,7 @@ In this article, you learn how to create and use an AI operations agent in Real-
 * A [KQL database](create-database.md) in your eventhouse, if you're using an eventhouse.
 * A Microsoft Teams account.
 * Fabric admin permissions enabled for the operations agent, Microsoft Copilot, and Azure OpenAI.
-* Enable cross-geo processing and storage for AI as described in [data agent tenant settings](../data-science/data-agent-tenant-settings.md). This prerequisite applies only if your Fabric capacity isn't provisioned in US or EU regions.  
-
-    :::image type="content" source="media/operations-agent/admin.png" alt-text="Screenshot of the Admin portal to enable permissions.":::
+* Enable Azure OpenAI and cross-geo processing and storage for AI as described in [data agent tenant settings](../data-science/data-agent-tenant-settings.md). This prerequisite applies only if your Fabric capacity isn't provisioned in US or EU regions.
 
 > [!NOTE]
 > To try an operations agent on sample data, set up the [Real-Time Intelligence end-to-end sample](../real-time-intelligence/sample-end-to-end.md). Your operations agent can monitor the included eventhouse.
@@ -86,10 +84,10 @@ To adjust the agent's behavior, update the goals or instructions and save the ag
 
 ## Operations agent identities
 
-Each operations agent has its own identity in Microsoft Entra, powered by [Microsoft Entra Agent ID](https://learn.microsoft.com/entra/agent-id). When you create an agent, Fabric provisions a dedicated agent identity (a specialized service principal) for it, so the agent appears as a first-class, governable entity in the Entra admin center rather than as an anonymous user session. This gives your organization tenant-wide visibility into which agents exist, keeps agent actions distinct from human actions for auditing, and decouples the agent from the lifecycle of the account that created it. Operations agents run in *delegated* mode: it uses the creator's authorization through an On-Behalf-Of (OBO) flow, so it can access the same workspaces and items the creator can, while actions are attributed to the agent identity. You can view the Entra Agent ID in the status bar of the operations agent item.
+Each operations agent has its own identity in Microsoft Entra, powered by [Microsoft Entra Agent ID](/entra/agent-id/). When you create an agent, Fabric provisions a dedicated agent identity (a specialized service principal) for it, so the agent appears as a first-class, governable entity in the Entra admin center rather than as an anonymous user session. This identity gives your organization tenant-wide visibility into which agents exist, keeps agent actions distinct from human actions for auditing, and decouples the agent from the lifecycle of the account that created it. Operations agents run in *delegated* mode: they use the creator's authorization through an On-Behalf-Of (OBO) flow, so they can access the same workspaces and items the creator can, while actions are attributed to the agent identity. You can view the Entra Agent ID in the status bar of the operations agent item.
 
 :::image type="content" source="media/operations-agent/entra-id.png" alt-text="Screenshot of the Entra Agent ID in the agent configuration screen." lightbox="media/operations-agent/entra-id.png":::
-
+..
 > [!IMPORTANT]
 > The agent operates with the delegated identity and permissions of its creator. When a recipient approves a recommendation, the agent runs the action on behalf of the creator, using the creator's permissions.
 
@@ -121,17 +119,6 @@ The following table describes the available conditions:
 | Is | State | Met any time the property matches the value. |
 | Becomes | Transition | Met when the property changes to the value from a different value (or null). |
 
-## Monitor agent activity
-
-The agent's activity log provides a detailed record of its actions, including the conditions it evaluated, the recommendations it made, and the responses it received. This information helps you understand the agent's decision-making process and identify areas for improvement.
-
-To access the activity log, select **Activity log** in the side navigation pane. The log displays a chronological list of events, including timestamps, event types, and relevant details. Select an event to view more information about it.
-
-:::image type="content" source="media/operations-agent/activity-log.png" alt-text="Screenshot of the activity log." lightbox="media/operations-agent/activity-log.png":::
-
-In the **Operation details page** you can view the operation details and status.
-
-:::image type="content" source="media/operations-agent/activity-log-details.png" alt-text="Screenshot of the operation details page." lightbox="media/operations-agent/activity-log-details.png":::
 > [!div class="nextstepaction"]
 > [Configure operations agent actions](operations-agent-actions.md)
 
@@ -139,4 +126,5 @@ In the **Operation details page** you can view the operation details and status.
 
 * [Operations agent billing](operations-agent-billing.md)
 * [Operations agent limitations](operations-agent-limitations.md)
+* [Workspace outbound access protection for operations agent](../security/workspace-outbound-access-protection-operations-agent.md)
 * [Operations agent transparency note](operations-agent-transparency-note.md)

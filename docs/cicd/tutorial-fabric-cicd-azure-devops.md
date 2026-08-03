@@ -10,18 +10,18 @@ ms.date: 02/19/2026
 ---
 
 # 🚀 CI/CD for Microsoft Fabric Using Azure DevOps & the `fabric-cicd` Python Package
-In this tutorial, you use the fabric-cicd python library to **promote changed** items (e.g., a specific Notebook) from the **dev** workspace to the **test** workspace, and eventually to **prod**.
+In this tutorial, use the `fabric-cicd` Python library to **promote changed** items (such as a specific notebook) from the **dev** workspace to the **test** workspace, and eventually to **prod**.
 
 
 ## 1. Scenario Overview
 
-**Meet Alex** — a Dev Lead working with Microsoft Fabric.
+**Meet Alex** — a Dev Lead working with Fabric.
 
-Alex's team builds Notebooks, Data Pipelines, Semantic Models, and Reports in a **development** Fabric workspace. When features are ready, Alex needs to **promote changed** items (e.g., a specific Notebook) from the **dev** workspace to the **test** workspace, and eventually to **prod**.
+Alex's team builds notebooks, data pipelines, semantic models, and reports in a **development** Fabric workspace. When features are ready, Alex needs to **promote changed** items (such as a specific notebook) from the **dev** workspace to the **test** workspace, and eventually to **prod**.
 
 ### The Challenge
 
-Alex's Notebooks use the `%%configure` magic command to attach to a specific Lakehouse. This means the Notebook definitions contain **hardcoded GUIDs** — workspace IDs, Lakehouse IDs, and SQL endpoint IDs — that are **different in each environment**.
+Alex's notebooks use the `%%configure` magic command to attach to a specific lakehouse. This command means the notebook definitions contain **hardcoded GUIDs** — workspace IDs, lakehouse IDs, and SQL endpoint IDs — that are **different in each environment**.
 
 ### What Alex Expects
 
@@ -57,15 +57,15 @@ Before you begin, make sure you have the following in place:
 
 | # | Prerequisite | Details |
 |---|---|---|
-| 1 | **Azure DevOps Organization & Project** | A project with Repos and Pipelines enabled |
-| 2 | **Microsoft Fabric Workspaces** | Three workspaces — one each for **dev**, **test**, and **prod** |
-| 3 | **Service Principal (SPN)** | An Entra ID (Azure AD) App Registration with a client secret |
-| 4 | **SPN Permissions in Fabric** | The SPN must be added as a **Member** or **Admin** on each target Fabric workspace |
-| 5 | **Azure Key Vault** | A Key Vault with three secrets: Tenant ID, Client ID, and Client Secret |
-| 6 | **Fabric Git Integration** | The **dev** workspace must be connected to the `dev` branch of your ADO repo |
+| 1 | **Azure DevOps organization and project** | A project with repos and pipelines enabled |
+| 2 | **Workspaces in Fabric** | Three workspaces - one each for **dev**, **test**, and **prod** |
+| 3 | **Service principal (SPN)** | An Entra ID (Azure AD) app registration with a client secret |
+| 4 | **SPN permissions in Fabric** | Add the SPN as a **Member** or **Admin** on each target Fabric workspace |
+| 5 | **Azure Key Vault** | A key vault with three secrets: Tenant ID, Client ID, and Client Secret |
+| 6 | **Git integration in Fabric** | Connect the **dev** workspace to the `dev` branch of your ADO repo |
 | 7 | **Python 3.12+** | Used in the pipeline agent to run the deployment script |
 | 8 | **`fabric-cicd` Python package** | Microsoft's open-source deployment library ([PyPI](https://pypi.org/project/fabric-cicd/)) |
-| 9 | **Fabric Admin Setting for SPN** | A Fabric Admin must enable *"Service principals can use Fabric APIs"* in the Fabric Admin Portal under **Tenant Settings** |
+| 9 | **Fabric Admin setting for SPN** | A Fabric Admin must enable *"Service principals can use Fabric APIs"* in the Fabric Admin Portal under **Tenant Settings** |
 
 > 💡 **Tip:** To enable Service Principal access in Fabric, a Fabric Admin must enable *"Service principals can use Fabric APIs"* in the Fabric Admin Portal under **Tenant Settings**.
 
@@ -203,7 +203,7 @@ The branching strategy is central to this CI/CD setup. You need **three long-liv
 
 #### Key Points
 
-| Branch | Connected to Fabric Workspace? | Purpose |
+| Branch | Connected to Fabric workspace? | Purpose |
 |---|---|---|
 | `dev` | ✅ **Yes**-synced with the DEV workspace | Source of truth. Changes made in the DEV workspace are committed here. |
 | `test` | ❌ **No** | Receives promoted items via PR merge. Tracks what's deployed to TEST. |
@@ -279,9 +279,9 @@ parameters:
 
 - This defines a **runtime parameter** that controls which Fabric item types are in scope for deployment.
 - If this parameter isn't specified, all item types supported by the `fabric-cicd` package will be deployed.
-- This also serves as an option for **selective deployment**-for example, you could pass only `["Notebook"]` to deploy just Notebooks.
+- This parameter also serves as an option for **selective deployment**. For example, you could pass only `["Notebook"]` to deploy just notebooks.
 
-> ⚠️ **Selective Deployment Warning:** If you narrow `items_in_scope` for a selective deployment, you should **not** call `unpublish_all_orphan_items()` in the Python script-because it will remove items **of the types specified in `items_in_scope`** that exist in the workspace but aren't present in the release branch. For example, if you deploy only `["Notebook"]` and there are Notebooks in the workspace that aren't in the branch, they will be deleted-even though they may still be valid. It will **not** remove items of other types (like Pipelines, Reports, etc.). Only use `unpublish_all_orphan_items()` when the branch represents the complete desired state for the item types in scope.
+> ⚠️ **Selective Deployment Warning:** If you narrow `items_in_scope` for a selective deployment, don't call `unpublish_all_orphan_items()` in the Python script. This function removes items **of the types specified in `items_in_scope`** that exist in the workspace but aren't present in the release branch. For example, if you deploy only `["Notebook"]` and there are notebooks in the workspace that aren't in the branch, the function deletes them - even though they might still be valid. It **doesn't** remove items of other types (like pipelines, reports, and other types). Only use `unpublish_all_orphan_items()` when the branch represents the complete desired state for the item types in scope.
 
 ---
 
@@ -544,7 +544,7 @@ unpublish_all_orphan_items(target_workspace)
 
 > ⚠️ **IMPORTANT — Understanding `unpublish_all_orphan_items()`:** This method will **delete items of the types specified in `items_in_scope`** from the target workspace that are **not present in the release branch** (i.e., the branch used as the source for the `fabric-cicd` package). It will **not** touch items of other types. In this tutorial, the `test` branch contains **all** the items intended for the TEST workspace, so it is safe to call `unpublish_all_orphan_items()` — it will only remove items that have been intentionally deleted from the branch.
 >
-> However, if you are doing a **selective deployment** (e.g., deploying only Notebooks via a narrowed `items_in_scope`), be cautious with `unpublish_all_orphan_items()` — it would delete any Notebooks in the workspace that aren't in the branch, even if they are still valid and were simply not part of the selective release.
+> However, if you're doing a **selective deployment** (for example, deploying only notebooks via a narrowed `items_in_scope`), be cautious with `unpublish_all_orphan_items()`. It deletes any notebooks in the workspace that aren't in the branch, even if they're still valid and were simply not part of the selective release.
 
 > 💡 **Tip:** `unpublish_all_orphan_items()` supports excluding specific items from removal by passing a **regex pattern**. Any items whose names match the regex will be preserved in the workspace even if they aren't in the source branch. For more details and usage examples, see the [official API reference](https://microsoft.github.io/fabric-cicd/latest/reference/code_reference/?h=unpublish#fabric_cicd.unpublish_all_orphan_items).
 
@@ -587,7 +587,7 @@ find_replace:
  prod: " $workspace.$id" # Auto-resolves to the PROD workspace's actual ID
 ```
 
-- **`find_value`**: The GUID found in the Notebook's `%%configure` command — this is the **DEV** workspace ID.
+- **`find_value`**: The GUID found in the notebook's `%%configure` command — this is the **DEV** workspace ID.
 - **`replace_value`**: The ` $workspace.$id` is a **built-in token** in `fabric-cicd` that automatically resolves to the target workspace's ID at deployment time.
 - Since `dev` isn't listed in `replace_value`, the GUID is only replaced when deploying to `test` or `prod`.
 
@@ -600,7 +600,7 @@ find_replace:
  prod: "$items.Lakehouse.DemoLakehouse.$id" # Resolves to PROD Lakehouse ID
 ```
 
-- **`$items.Lakehouse.DemoLakehouse.$id`** is a dynamic token that looks up the Lakehouse named `DemoLakehouse` in the target workspace and returns its ID.
+- **`$items.Lakehouse.DemoLakehouse.$id`** is a dynamic token that looks up the lakehouse named `DemoLakehouse` in the target workspace and returns its ID.
 - **Pattern:** `$items.<ItemType>.<ItemName>.$id`
 
 #### Entry 3 — SQL Endpoint ID Replacement (Dynamic Notation)
@@ -613,7 +613,7 @@ find_replace:
 ```
 
 - Instead of hardcoding the SQL endpoint GUID for each environment (e.g., `204fd20c-e34c-4bef-9dce-4ecf53b0e878` for TEST or `29bda5ec-ebc7-466e-a618-ef5bbea75e13` for PROD), this entry uses **dynamic notation** — `$items.Lakehouse.DemoLakehouse.$sqlendpointid`.
-- The `fabric-cicd` package resolves this at deployment time by looking up the SQL endpoint ID of the `DemoLakehouse` Lakehouse in the **target workspace**. This eliminates the need to manually find and maintain SQL endpoint GUIDs across environments.
+- The `fabric-cicd` package resolves this at deployment time by looking up the SQL endpoint ID of the `DemoLakehouse` lakehouse in the **target workspace**. This eliminates the need to manually find and maintain SQL endpoint GUIDs across environments.
 
 ---
 
@@ -621,10 +621,10 @@ find_replace:
 
 | Token | Resolves To |
 |---|---|
-| ` $workspace.$id` | The target workspace's GUID |
-| `$items.Lakehouse.<name>.$id` | The GUID of a Lakehouse named `<name>` in the target workspace |
+| `$workspace.$id` | The target workspace's GUID |
+| `$items.Lakehouse.<name>.$id` | The GUID of a lakehouse named `<name>` in the target workspace |
 | `$items.<ItemType>.<ItemName>.$id` | Generic pattern for any item type |
-| `$items.Lakehouse.<name>.$sqlendpointid` | The SQL endpoint GUID of a Lakehouse (resolved dynamically) |
+| `$items.Lakehouse.<name>.$sqlendpointid` | The SQL analytics endpoint GUID of a lakehouse (resolved dynamically) |
 
 ---
 
@@ -646,13 +646,13 @@ This is useful when developers work in their own Fabric workspaces and need GUID
 
 ## 8. Deployment Flow: End-to-End Walkthrough
 
-Here's the complete flow when Alex wants to promote a Notebook from **dev** to **test**:
+Here's the complete flow when Alex wants to promote a notebook from **dev** to **test**:
 
 ---
 
 ### Step 1: 🔧 Developer Makes Changes in DEV
 
-Alex modifies the `IngestApiData` Notebook in the **DEV** Fabric workspace (e.g., adds a new cell). Fabric's Git Integration syncs this change to the `dev` branch automatically (or via a manual commit).
+Alex modifies the `IngestApiData` notebook in the **DEV** Fabric workspace (for example, adds a new cell). Fabric's Git Integration syncs this change to the `dev` branch automatically (or via a manual commit).
 
 ---
 
@@ -661,7 +661,7 @@ Alex modifies the `IngestApiData` Notebook in the **DEV** Fabric workspace (e.g.
 Alex creates a **Pull Request** in ADO:
 - **Source branch:** `dev`
 - **Target branch:** `test`
-- **Title:** "Promote changed Notebook items to Test"
+- **Title:** "Promote changed notebook items to Test"
 
 The PR contains all the changed items that Alex wants to deploy to the TEST environment.
 
@@ -670,7 +670,7 @@ The PR contains all the changed items that Alex wants to deploy to the TEST envi
 ### Step 3: ✅ PR Approval & Merge
 
 A reviewer (or Alex's admin) reviews the PR:
-- Inspects the changes to the Notebook definition files
+- Inspects the changes to the notebook definition files
 - Approves the PR
 - **Completes the merge** → The changes are now on the `test` branch
 
@@ -720,7 +720,7 @@ The Python script:
 
 ### Step 7: ✅ Deployment Complete
 
-The Notebook is now deployed to the **TEST** workspace with:
+The notebook is now deployed to the **TEST** workspace with:
 - ✅ The newly added cell present
 - ✅ All GUIDs in `%%configure` replaced with TEST environment values
 
@@ -736,7 +736,7 @@ In ADO → Pipelines → Runs, confirm the pipeline run shows **✅ Succeeded** 
 
 ### Check 2: Notebook Content in TEST Workspace
 
-Open the `IngestApiData` Notebook in the **TEST** Fabric workspace and verify:
+Open the `IngestApiData` notebook in the **TEST** Fabric workspace and verify:
 
 1. **New cell is present:** The newly added cell that was developed in DEV should now appear in the TEST version of the notebook.
 
@@ -745,7 +745,7 @@ Open the `IngestApiData` Notebook in the **TEST** Fabric workspace and verify:
  | GUID Type | Should Show | Should NOT Show |
  |---|---|---|
  | Workspace ID | TEST workspace ID | ~~DEV workspace ID~~ |
- | DemoLakehouse ID | TEST Lakehouse ID | ~~DEV Lakehouse ID~~ |
+ | DemoLakehouse ID | TEST lakehouse ID | ~~DEV lakehouse ID~~ |
  | SQL Endpoint ID | TEST SQL Endpoint ID (resolved dynamically) | ~~DEV SQL Endpoint ID (`91280ad0-...`)~~ |
 
 > ✅ **Success!** The `%%configure` cell now points to TEST lakehouses, and the new development work has been cleanly promoted.
@@ -762,7 +762,7 @@ Open the `IngestApiData` Notebook in the **TEST** Fabric workspace and verify:
 | Pipeline doesn't trigger on merge | Path filter mismatch | Ensure your Fabric items are inside the `fabric/` directory in the repo |
 | `ModuleNotFoundError: fabric_cicd` | Package not installed | Ensure the `pip install fabric-cicd` step is present and succeeds |
 | Approval notification not received | Environment not configured | Verify the ADO Environment name matches `target_env` exactly (case-sensitive) |
-| SQL Endpoint GUID not replaced | Dynamic notation misconfigured | Ensure `$items.Lakehouse.<name>.$sqlendpointid` syntax is correct and the Lakehouse exists in the target workspace |
+| SQL Endpoint GUID not replaced | Dynamic notation misconfigured | Ensure `$items.Lakehouse.<name>.$sqlendpointid` syntax is correct and the lakehouse exists in the target workspace |
 | `os.environ` key error | Variable group not linked to pipeline | Authorize the pipeline to access `fabric_cicd_group_non_sensitive` |
 | Feature flag errors for shortcuts | `fabric-cicd` version too old | Upgrade `fabric-cicd` to the latest version: `pip install fabric-cicd --upgrade` |
 
@@ -770,7 +770,7 @@ Open the `IngestApiData` Notebook in the **TEST** Fabric workspace and verify:
 
 ## 11. Summary
 
-This tutorial demonstrated a production-grade CI/CD workflow for Microsoft Fabric using Azure DevOps:
+This tutorial demonstrated a production-grade CI/CD workflow for Fabric using Azure DevOps:
 
 | Component | What We Set Up |
 |---|---|
@@ -785,7 +785,7 @@ This tutorial demonstrated a production-grade CI/CD workflow for Microsoft Fabri
 ### Key Takeaways
 
 1. **Only the `dev` branch is connected to a Fabric workspace** — `test` and `prod` branches serve as deployment records.
-2. **`fabric-cicd`'s parameter files** handle GUID replacement automatically using dynamic tokens like ` $workspace.$id` and `$items.Lakehouse.<name>.id`.
+1. **`fabric-cicd` parameter files** automatically replace GUIDs by using dynamic tokens such as `$workspace.$id` and `$items.Lakehouse.<name>.id`.
 3. **ADO Environments with approvals** provide governance — no deployment to higher environments without explicit approval.
 4. **Service Principal authentication** via Azure Key Vault ensures credentials are never exposed in code or logs.
 
@@ -793,6 +793,6 @@ This tutorial demonstrated a production-grade CI/CD workflow for Microsoft Fabri
 
 > 📚 **Further Reading:**
 > - [`fabric-cicd` documentation](https://pypi.org/project/fabric-cicd/)
-> - [Microsoft Fabric Git Integration](../cicd/git-integration/intro-to-git-integration.md)
+> - [Fabric Git Integration](../cicd/git-integration/intro-to-git-integration.md)
 > - [Azure DevOps Environments & Approvals](/azure/devops/pipelines/process/environments)
 > - [Azure Key Vault linked Variable Groups](/azure/devops/pipelines/library/link-variable-groups-to-key-vaults)

@@ -9,7 +9,7 @@ ms.date: 12/15/2025
 
 # Automate variable libraries by using APIs
 
-You can use the [Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis) to fully automate the management of variable libraries in application lifecycle management (ALM).
+To automate the management of variable libraries in application lifecycle management (ALM), use the [Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis).  
 
 If you're using the APIs as part of your lifecycle management, permissions for item reference are checked during Git update and pipeline deployment.
 

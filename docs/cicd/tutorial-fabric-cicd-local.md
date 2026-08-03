@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 
 # Tutorial - Local deployment
-In this tutorial, you set up a basic development environment and deploy a lakehouse and notebook to a Microsoft Fabric workspace from your local dev workstation. You can choose between two approaches:
+In this tutorial, you set up a basic development environment and deploy a lakehouse and notebook to a Fabric workspace from your local dev workstation. You can choose between two approaches:
 
 - **Python SDK** — Use the `fabric-cicd` Python library to publish items programmatically.
 - **Fabric CLI** — Use the `fab deploy` command with a YAML configuration file. No Python code required.
@@ -23,7 +23,7 @@ The Fabric CLI `fab deploy` command uses the `fabric-cicd` library under the hoo
 
 ### [Python SDK](#tab/python-sdk)
 
-- A test workspace in Microsoft Fabric
+- A test workspace in Fabric
 - Admin permissions on the Fabric workspace.
 - A GitHub account (required to access demo files)
 - **VS Code** or similar editor: [Download VS Code](https://code.visualstudio.com/download)
@@ -32,7 +32,7 @@ The Fabric CLI `fab deploy` command uses the `fabric-cicd` library under the hoo
 
 ### [Fabric CLI](#tab/fabric-cli)
 
-- A test workspace in Microsoft Fabric
+- A test workspace in Fabric
 - Admin permissions on the Fabric workspace.
 - A GitHub account (required to access demo files)
 - **Python** [Install python](https://www.python.org/downloads/)

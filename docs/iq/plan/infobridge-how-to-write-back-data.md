@@ -8,9 +8,7 @@ ms.topic: how-to
 
 # Write back transformed data from Infobridge
 
-Infobridge in plan (preview) not only transforms and integrates data from multiple sources but also enables direct writeback to a Microsoft Fabric SQL database. This process allows the transformed dataset produced in a bridge to become a governed dataset stored in the enterprise data platform.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+Infobridge in plan not only transforms and integrates data from multiple sources but also enables direct writeback to a Microsoft Fabric SQL database. This process allows the transformed dataset produced in a bridge to become a governed dataset stored in the enterprise data platform.
 
 This section explains how to write back the output of a bridge to a Fabric SQL database destination.
 

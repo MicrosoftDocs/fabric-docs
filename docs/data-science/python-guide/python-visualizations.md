@@ -4,7 +4,7 @@ description: In this article, learn how to create rich data visualizations by us
 ms.author: lagayhar
 ms.reviewer: ruxu
 ms.topic: how-to
-ms.date: 07/22/2025
+ms.date: 07/27/2026
 ms.search.form: Python Language
 #customer intent: As a data analyst, I want to learn to perform data analysis by using Azure Open Datasets and Apache Spark to create useful visualizations.
 ---
@@ -30,10 +30,10 @@ To start, download the [New York City (NYC) Taxi](https://azure.microsoft.com/se
 
 1. Create a notebook by using PySpark. For instructions, see [Create a notebook](../../data-engineering/how-to-use-notebook.md).
 
-   > [!Note]
+   > [!NOTE]
    > Because of the PySpark kernel, you don't need to create any contexts explicitly. The Spark context is automatically created for you when you run the first code cell.
 
-2. In this article, you use several different libraries to help visualize the dataset. To do this analysis, import the following libraries:
+1. In this article, you use several different libraries to help visualize the dataset. To do this analysis, import the following libraries:
 
    ```python
    import matplotlib.pyplot as plt
@@ -41,10 +41,11 @@ To start, download the [New York City (NYC) Taxi](https://azure.microsoft.com/se
    import pandas as pd
    ```
 
-3. Because the raw data is in Parquet format, you can use the Spark context to pull the file into memory as a DataFrame directly. Use the Open Datasets API to retrieve the data and create a Spark DataFrame. To infer the datatypes and schema, use the Spark DataFrame *schema on read* properties.
+1. Because the raw data is in Parquet format, you can use the Spark context to pull the file into memory as a DataFrame directly. Use the Open Datasets API to retrieve the data and create a Spark DataFrame. To infer the datatypes and schema, use the Spark DataFrame *schema on read* properties.
 
     ```python
     from azureml.opendatasets import NycTlcYellow
+    from dateutil import parser
     
     end_date = parser.parse('2018-06-06')
     start_date = parser.parse('2018-05-01')
@@ -54,7 +55,7 @@ To start, download the [New York City (NYC) Taxi](https://azure.microsoft.com/se
     df = spark.createDataFrame(nyc_tlc_pd)
     ```
 
-4. After the data is read, do some initial filtering to clean the dataset. You might remove unneeded columns and add columns that extract important information. In addition, you can filter out anomalies within the dataset.
+1. After the data is read, do some initial filtering to clean the dataset. You might remove unneeded columns and add columns that extract important information. In addition, you can filter out anomalies within the dataset.
 
    ```python
    # Filter the dataset 
@@ -80,7 +81,7 @@ As a data analyst, you have a wide range of tools available to help you extract 
 
 First, do exploratory data analysis by using Apache Spark SQL and magic commands with the [!INCLUDE [product-name](../../includes/product-name.md)] notebook. After you have the query, visualize the results by using the built-in `chart options` capability.
 
-1. In the notebook, create a new cell and copy the following code. By using this query, you can understand how the average tip amounts change over the period you select. This query also helps you identify other useful insights, including the minimum/maximum tip amount per day and the average fare amount.
+1. In the notebook, create a new cell and copy the following code. By using this query, you can understand how the average tip amounts change over the period you select. This query also helps you identify other useful insights, including the minimum and maximum tip amount per day and the average fare amount.
 
    ```sql
    %%sql
@@ -95,7 +96,7 @@ First, do exploratory data analysis by using Apache Spark SQL and magic commands
    ORDER BY day_of_month ASC
    ```
 
-2. After your query finishes running, you can visualize the results by switching to the chart view. This example creates a line chart by specifying the `day_of_month` field as the key and `avgTipAmount` as the value. After you make the selections, select **Apply** to refresh your chart.
+1. After your query finishes running, you can visualize the results by switching to the chart view. This example creates a line chart by specifying the `day_of_month` field as the key and `avgTipAmount` as the value. After you make the selections, select **Apply** to refresh your chart.
 
 ## Visualize data
 
