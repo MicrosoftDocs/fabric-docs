@@ -451,6 +451,8 @@ items:
               href: plan/infobridge-transformations/infobridge-how-to-import-export.md
   - name: Resources
     items:
+    - name: Billing and capacity usage
+      href: plan/resources/billing-fabric-plan.md
     - name: Plan general FAQ
       href: plan/resources/frequently-asked-questions.md
     - name: Plan best practices
