@@ -2,7 +2,7 @@
 title: Create Tables in the Warehouse
 description: Learn how to create tables in your warehouse in Microsoft Fabric.
 ms.reviewer: jovanpop, procha, salilkanade
-ms.date: 06/23/2026
+ms.date: 07/31/2026
 ms.topic: how-to
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
@@ -29,26 +29,30 @@ For more information on connecting to your [!INCLUDE [fabric-dw](includes/fabric
 1. Update the table name and column definitions in the `CREATE TABLE` template to match the structure you need. Your T-SQL script should look similar to the following code:
 
     ```sql
-    CREATE TABLE [dbo].[bing_covid]
+    CREATE TABLE dbo.fact_sale
     (
-        id                int,
-        updated           date,
-        confirmed         int,
-        confirmed_change  int,
-        deaths            int,
-        deaths_change     int,
-        recovered         int,
-        recovered_change  int,
-        latitude          float,
-        longitude         float,
-        iso2              varchar(2),
-        iso3              varchar(3),
-        country_region    varchar(60),
-        admin_region_1    varchar(60),
-        iso_subdivision   varchar(30),
-        admin_region_2    varchar(60),
-        load_time         datetime2(6)
-    );
+    	SaleKey bigint,
+    	CityKey int,
+    	CustomerKey int,
+    	BillToCustomerKey int,
+    	StockItemKey int,
+    	InvoiceDateKey datetime2(6),
+    	DeliveryDateKey datetime2(6),
+    	SalespersonKey int,
+    	WWIInvoiceID int,
+    	Description varchar(max),
+    	Package varchar(100),
+    	Quantity int,
+    	UnitPrice numeric(18,2),
+    	TaxRate numeric(18,3),
+    	TotalExcludingTax numeric(18,2),
+    	TaxAmount numeric(18,2),
+    	Profit numeric(18,2),
+    	TotalIncludingTax numeric(18,2),
+    	TotalDryItems int,
+    	TotalChillerItems int,
+    	LineageKey int
+    )
     ```
 
 1. Select **Run** to create the table.
@@ -62,9 +66,9 @@ To learn more about supported table creation in Warehouse in Microsoft Fabric, s
 You can also create a table directly from an external parquet file that you have access to. In this example, we'll create a new table based on a publicly available data file. In the query editor, paste and run the following T-SQL code:
 
 ```sql
-CREATE TABLE dbo.bing_covid AS
+CREATE TABLE dbo.fact_sale AS
 SELECT *
-FROM OPENROWSET(BULK 'https://<storage account>.blob.core.windows.net/public/<subfolder>/<file name>.parquet');
+FROM OPENROWSET(BULK 'https://fabrictutorialdata.dfs.core.windows.net/sampledata/WideWorldImportersDW/parquet/full/fact_sale/*.parquet');
 ```
 
 The **CTAS** (Create Table As Select) statement creates a new table and populates it with data retrieved from the specified source file, streamlining the process of both defining and loading the table in a single step. You can find more ingestion options in [Ingest data with T-SQL](ingest-data-tsql.md) page.
