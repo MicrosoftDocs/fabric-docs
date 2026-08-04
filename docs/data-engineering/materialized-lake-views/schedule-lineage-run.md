@@ -9,7 +9,7 @@ ai-usage: ai-assisted
 
 # Schedule a materialized lake view refresh
 
-As source data changes, materialized lake views (MLVs) in your Lakehouse need regular refresh to keep downstream reports and dashboards current. Scheduling lets you control how often each view, or group of views, is refreshed. Each schedule runs independently.
+As source data changes, materialized lake views (MLVs) in your lakehouse need regular refresh to keep downstream reports and dashboards current. Scheduling lets you control how often each view, or group of views, is refreshed. Each schedule runs independently.
 
 ## View schedules
 
@@ -193,5 +193,5 @@ When you enable extended lineage for a schedule or ad-hoc run, Fabric refreshes 
 
 - [View extended lineage](./view-lineage.md#view-extended-lineage)
 - [Recent runs of materialized lake views](./run-history.md)
-- [Microsoft Fabric materialized lake view tutorial](./tutorial.md)
+- [Fabric materialized lake view tutorial](./tutorial.md)
 - [Monitor Fabric materialized lake views](./monitor-materialized-lake-views.md)

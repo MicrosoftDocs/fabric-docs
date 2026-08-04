@@ -18,7 +18,7 @@ This article explains how to view lineage, understand the lineage interface, and
 
 A materialized lake views lineage shows dependency order for refresh operations. For MLVs, lineage represents the sequence of views that must run when new data is available.
 
-After you create the MLV in Microsoft Fabric, select the **Materialized lake views** tab in the ribbon, then select **Manage** to navigate to the MLV lineage.
+After you create the MLV in Fabric, select the **Materialized lake views** tab in the ribbon, then select **Manage** to navigate to the MLV lineage.
 
 ## Materialized lake views lineage
 
@@ -124,7 +124,7 @@ From the extended lineage view, you can schedule refreshes for upstream material
 
 ## Related content
 
-- [Microsoft Fabric materialized lake views overview](overview-materialized-lake-view.md)
+- [Fabric materialized lake views overview](overview-materialized-lake-view.md)
 - [Schedule a materialized lake view refresh](./schedule-lineage-run.md)
-- [Microsoft Fabric materialized lake view tutorial](tutorial.md)
+- [Fabric materialized lake view tutorial](tutorial.md)
 
