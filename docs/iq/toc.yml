@@ -225,6 +225,10 @@ items:
                 href: plan/planning-driver-model/planning-how-to-create-templates.md
               - name: Create a driver model
                 href: plan/planning-driver-model/planning-how-to-create-driver-model.md
+        - name: Use measure models
+          items:
+              - name: Create a measure model
+                href: plan/planning-how-to-create-measure-model.md
         - name: Configure approval workflows
           href: plan/planning-how-to-configure-approval-workflows.md
     - name: Troubleshoot
