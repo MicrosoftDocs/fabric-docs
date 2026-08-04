@@ -2,7 +2,7 @@
 title: Deploy Fabric Data Warehouse Using Pipelines
 description: Learn how pipelines can provide development lifecycle structure to Fabric Data Warehouse.
 ms.reviewer: pvenkat, randolphwest
-ms.date: 07/30/2026
+ms.date: 08/04/2026
 ms.topic: concept-article
 ---
 
@@ -36,7 +36,7 @@ Fabric uses **DacFx (Data-tier Application Framework)** to perform this comparis
 > For schema comparison to work, the warehouse must exist in both the source and target workspaces. If the target workspace doesn't yet contain the warehouse, create or deploy an initial baseline version first. 
 
 > [!NOTE]
-> If a column's `COLLATE` clause explicitly specifies the same collation as the warehouse's default collation, the comparison doesn't show it as a difference, because it's equivalent to not specifying a collation at all. Only columns whose collation differs from the warehouse's default collation appear in comparisons when their collation changes. For more information and an example, see [Troubleshoot Git integration for Fabric warehouse development](troubleshoot-git-integration.md#column-collation).
+> If a column's `COLLATE` clause explicitly specifies the same collation as the warehouse's default collation, the comparison doesn't show it as a difference, because it's equivalent to not specifying a collation at all. Only columns whose collation differs from the warehouse's default collation appear in comparisons when their collation changes. For more information and an example, see [Troubleshoot Git integration for Fabric Data Warehouse development](troubleshoot-git-integration.md#column-collation).
 
 Before deploying any changes, use the deployment pipeline's comparison capability to review differences between the source and target warehouse workspaces.
 
@@ -60,27 +60,33 @@ During deployment, deployment pipelines use DacFx to generate an intelligent dep
 
 Fabric deployment pipelines use DacFx deployment technology with configurations tailored specifically for Fabric Data Warehouse. These configurations ensure deployments succeed reliably while aligning with Fabric platform capabilities and operational practices.
 
+- **Blocking on possible data loss (`BlockOnPossibleDataLoss = true`)** - Fabric Data Warehouse prevents deployments that could truncate, drop, or otherwise lose user data. This setting keeps high-risk schema changes from slipping through CI/CD and makes data-loss risk a deliberate decision instead of a silent default.
+
 - **Skipping database-level option scripting (`ScriptDatabaseOptions = false`)** - Fabric manages many database-level settings at the platform level. Scripting statements such as `ALTER DATABASE ... SET` during deployment can lead to failures or unintended configuration drift. Deployment pipelines therefore avoid propagating these settings, ensuring schema deployments focus only on supported warehouse objects.
 
-- **Allowing engine enforcement for replicated objects (`DoNotAlterReplicatedObjects = false`)** - Fabric warehouses often use internal replication mechanisms, for example in linking or synchronization scenarios. Instead of blocking schema changes prematurely, deployment pipelines allow the Fabric engine to determine whether a change is permitted. This approach prevents unnecessary deployment failures while still preserving platform safeguards.
+- **Allowing engine enforcement for replicated objects (`DoNotAlterReplicatedObjects = false`)** - Warehouses often use internal replication mechanisms, for example in linking or synchronization scenarios. Instead of blocking schema changes prematurely, deployment pipelines allow the Fabric engine to determine whether a change is permitted. This approach prevents unnecessary deployment failures while still preserving platform safeguards.
 
-- **Disabling transactional DDL scripting (`IncludeTransactionalScripts = false`)** - Fabric warehouses currently don't support wrapping DDL scripts inside transactions. Deployment pipelines therefore generate non-transactional scripts to ensure deployments complete successfully.
+- **Disabling transactional DDL scripting (`IncludeTransactionalScripts = false`)** - Warehouses currently don't support wrapping DDL scripts inside transactions. Deployment pipelines therefore generate non-transactional scripts to ensure deployments complete successfully.
 
 - **Using intelligent defaults for schema evolution (`GenerateSmartDefaults = true`)** - When schema changes introduce stricter constraints, such as converting nullable columns to non-nullable or adding new columns with default constraints, deployment pipelines can automatically populate baseline values. This approach helps deployments succeed without requiring manual data preparation and reduces operational friction during schema evolution.
 
 - **Excluding security principals from deployment (`ExcludeObjectTypes = Logins, Users, Permissions`)** - Security objects are intentionally excluded from warehouse deployments. Promoting logins, users, or permissions across environments can introduce security risks or environment-specific conflicts. Instead, manage access control separately through environment governance or identity management processes.
 
+- **Not dropping objects not in source (`DropObjectsNotInSource = false`)** - Objects that exist in the target but not in the source aren't automatically dropped. Warehouses that keep production perfectly in sync with source control might find this restrictive.
+
 ## Limitations
 
-- Fabric Deployment pipelines don't support the SQL analytics endpoint item.
+- By default, the system blocks table drops. The deployment process doesn't automatically drop objects that exist in the target but not in the source. This design reduces accidental data loss and prevents unexpected removals in production. 
+- A successful deployment doesn't always mean every requested change was applied. A deployment can report success even when it skips a requested drop-table action, because table drops are blocked by default. In that case, the deployment operation completes, but the target can still drift from source control until you explicitly resolve the missing change.
+- Fabric Deployment pipelines don't support the SQL analytics endpoint item. Currently, the deployment process prioritizes safety over strict source parity by not dropping objects that exist only in the target. 
 - Cross item dependencies, item sequencing, and synchronization gaps between the SQL analytics endpoint and warehouse impact Fabric Deployment Pipelines workflows.
-- Deploy one warehouse at a time. Selecting related items for deployment isn't supported.
+- With Fabric Deployment pipelines, you can deploy only one warehouse at a time. Selecting related items for deployment isn't supported.
 
 ## Troubleshooting Git integration 
 
 For limitations specific to Git integration, see [Limitations in Git integration](git-integration.md#limitations-in-git-integration) in the Git integration article.
 
-For troubleshooting, workarounds, and fixes to common Git integration issues in Fabric warehouse development, see [Troubleshoot Git integration for Fabric warehouse development](troubleshoot-git-integration.md).
+For troubleshooting, workarounds, and fixes to common Git integration issues in Fabric Data Warehouse development, see [Troubleshoot Git integration for Fabric Data Warehouse development](troubleshoot-git-integration.md).
 
 ## Related content
 
