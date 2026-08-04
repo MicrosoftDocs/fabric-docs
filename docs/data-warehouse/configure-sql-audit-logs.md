@@ -38,6 +38,13 @@ You can configure SQL audit logs using the **Fabric portal** or via **REST API**
 
    :::image type="content" source="media/configure-sql-audit-logs/set-groups.png" alt-text="Screenshot from the Fabric portal of the recording and retention options, the Events to record section.":::
 
+1. Optionally, enter a **Predicate filter** to exclude specific events that match a condition you define, such as activity from a known service principal or automation identity. Use the syntax described in [Predicate expression syntax](sql-audit-logs.md#predicate-expression-syntax).
+
+   :::image type="content" source="media/configure-sql-audit-logs/set-predicate.png" alt-text="Screenshot from the Fabric portal of the predicate filter option.":::
+
+   > [!IMPORTANT]
+   > Predicate filtering only applies to events already selected under **Events to record**. For example, to filter `SELECT` statements, you must also enable **Batch Was Completed**.
+
 1. Specify a desired **log retention** period in **Years**, **Months**, and **Days**.
 
    :::image type="content" source="media/configure-sql-audit-logs/set-retention.png" alt-text="Screenshot from the Fabric portal of the Log retention options.":::
@@ -117,7 +124,7 @@ content-type: application/json
 Authorization: Bearer <BEARER_TOKEN>
 ```
 
-The response returns `ENABLED` or `DISABLED` and the current configuration of `auditActionsAndGroups`.
+The response returns `ENABLED` or `DISABLED` and the current configuration of `auditActionsAndGroups` and `predicateExpression`.
 
 #### Configure audit action groups with the REST API
 
@@ -132,6 +139,33 @@ SQL audit logs rely on predefined action groups that capture specific events wit
     Authorization: Bearer <BEARER_TOKEN>
     [  "DATABASE_OBJECT_PERMISSION_CHANGE_GROUP" ]
     ```
+
+1. Select **Send Request**.
+
+#### Configure a predicate expression
+
+Use the same `PATCH` request to configure a predicate expression that excludes specific events from being generated, such as activity from a known service principal or automation identity. For the full predicate syntax, see [Predicate expression syntax](sql-audit-logs.md#predicate-expression-syntax).
+
+1. In VS Code, create a new text file with the `.http` extension.
+1. Copy and paste the following request, providing your own `workspaceId`, `<warehouseId>`, and `<BEARER_TOKEN>`.
+
+    ```http
+    PATCH https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/warehouses/<warehouseId>/settings/sqlAudit
+    content-type: application/json
+    Authorization: ******
+    
+    {
+        "state": "Enabled",
+        "retentionDays": 10,
+        "predicateExpression": "NOT statement LIKE 'SELECT %'"
+    }
+    ```
+
+    - This example excludes `SELECT` statements from being audited by filtering on the `statement` field.
+    - When SQL auditing is enabled for the first time, omitting `predicateExpression` applies no predicate. On later updates, omitting it leaves the existing predicate unchanged. Specify an empty string (`""`) to remove an existing predicate.
+
+   > [!IMPORTANT]
+   > Predicate filtering only evaluates events that are already configured to be captured. To filter `SELECT` statements as shown here, you must also enable the **Batch Was Completed** (`BATCH_COMPLETED_GROUP`) action group. For more information, see [Database-level audit action groups and actions](sql-audit-logs.md#database-level-audit-action-groups-and-actions).
 
 1. Select **Send Request**.
 
