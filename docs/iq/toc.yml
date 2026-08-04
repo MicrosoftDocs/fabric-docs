@@ -225,6 +225,10 @@ items:
                 href: plan/planning-driver-model/planning-how-to-create-templates.md
               - name: Create a driver model
                 href: plan/planning-driver-model/planning-how-to-create-driver-model.md
+        - name: Use measure models
+          items:
+              - name: Create a measure model
+                href: plan/planning-how-to-create-measure-model.md
         - name: Configure approval workflows
           href: plan/planning-how-to-configure-approval-workflows.md
     - name: Troubleshoot
@@ -465,6 +469,8 @@ items:
       items:
       - name: Time intelligence
         href: plan/resources/best-practices/time-intelligence.md
+      - name: Semantic modeling
+        href: plan/resources/best-practices/semantic-modeling.md
     - name: Known limitations
       href: plan/overview-limitations.md
     - name: Error codes and resolutions
