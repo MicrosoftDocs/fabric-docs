@@ -26,8 +26,10 @@ items:
       href: onelake-shortcuts.md
     - name: Create shortcuts
       items:
-      - name: OneLake shortcut
+      - name: Same-tenant OneLake shortcut
         href: shortcuts/create-onelake-shortcut.md
+      - name: Cross-tenant OneLake shortcut
+        href: shortcuts/create-cross-tenant-onelake-shortcut.md
       - name: ADLS Gen2 shortcut
         href: create-adls-shortcut.md
       - name: Blob Storage shortcut
