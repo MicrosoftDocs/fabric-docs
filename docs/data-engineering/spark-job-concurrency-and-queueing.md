@@ -17,7 +17,7 @@ When you create a Fabric capacity, you select a size based on workload needs. Fo
 
 **One capacity unit = two Spark VCores**
 
-After capacity is provisioned, admins create workspaces in that capacity. Spark VCores are shared across Spark-based items in those workspaces, including notebooks, Spark Job Definitions, and lakehouse jobs.
+After capacity is provisioned, admins create workspaces in that capacity. Spark VCores are shared across Spark-based items in those workspaces, including notebooks, Spark job definitions, and lakehouse jobs.
 
 ## Concurrency throttling and queueing
 
@@ -29,7 +29,7 @@ When a notebook or lakehouse job (such as **Load to Table**) is submitted while 
 [TooManyRequestsForCapacity] HTTP Response code 430: This Spark job can't be run because you have hit a Spark compute or API rate limit. To run this Spark job, cancel an active Spark job through the Monitoring hub, or choose a larger capacity SKU or try again later.
 ```
 
-With queueing enabled, jobs triggered from pipelines, scheduler, and Spark Job Definitions are queued and retried automatically.
+With queueing enabled, jobs triggered from pipelines, scheduler, and Spark job definitions are queued and retried automatically.
 
 Queueing doesn't apply to interactive notebook jobs or notebook jobs submitted through the notebook public API.
 
@@ -127,5 +127,5 @@ To learn more about starter pools and configuration, see [Configure starter pool
 
 ## Related content
 
-- Get started with [Apache Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
+- Get started with [Apache Spark workspace administration settings in Fabric](workspace-admin-settings.md)
 - Learn about [Apache Spark compute for Fabric](spark-compute.md) for data engineering and data science workloads

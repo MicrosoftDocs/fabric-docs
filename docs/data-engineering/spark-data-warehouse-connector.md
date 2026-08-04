@@ -13,21 +13,21 @@ ms.date: 04/11/2025
 The Spark connector for Fabric Data Warehouse enables Spark developers and data scientists to access and work with data from [a warehouse and the SQL analytics endpoint of a lakehouse](../data-warehouse/data-warehousing.md#data-warehousing-items). The connector offers the following capabilities:
 
 * You can work with data from a warehouse or SQL analytics endpoint in the same workspace or across multiple workspaces.
-* The SQL analytics endpoint of a Lakehouse is automatically discovered based on workspace context.
+* The SQL analytics endpoint of a lakehouse is automatically discovered based on workspace context.
 * The connector has a simplified Spark API, abstracts the underlying complexity, and operates with just one line of code.
 * While you're accessing a table or a view, the connector upholds security models defined at the SQL engine level. These models include object-level security (OLS), row-level security (RLS), and column-level security (CLS).
 * The connector comes preinstalled within the Fabric runtime, which eliminates the need for separate installation.
 
 ## Authentication
 
-Microsoft Entra authentication is an integrated authentication approach. Users sign in to the Microsoft Fabric workspace, and their credentials are automatically passed to the SQL engine for authentication and authorization. The credentials are automatically mapped, and users aren't required to provide specific configuration options.
+Microsoft Entra authentication is an integrated authentication approach. Users sign in to the Fabric workspace, and their credentials are automatically passed to the SQL engine for authentication and authorization. The credentials are automatically mapped, and users aren't required to provide specific configuration options.
 
 > [!NOTE]
-> The Spark connector for Fabric Data Warehouse only supports interactive Microsoft Entra user authentication. Service principal authentication isn't supported. 
+> The Spark connector for Fabric Data Warehouse only supports interactive Microsoft Entra user authentication. Service principal authentication isn't supported.
 
 ### Permissions
 
-To connect to the SQL engine, users need at least Read permission (similar to CONNECT permission in SQL Server) on the warehouse or SQL analytics endpoint (item level). Users also need granular object-level permissions to read data from specific tables or views. To learn more, see [Security for data warehousing in Microsoft Fabric](../data-warehouse/security.md).
+To connect to the SQL engine, users need at least Read permission (similar to CONNECT permission in SQL Server) on the warehouse or SQL analytics endpoint (item level). Users also need granular object-level permissions to read data from specific tables or views. To learn more, see [Security for data warehousing in Fabric](../data-warehouse/security.md).
 
 ## Code templates and examples
 
@@ -152,7 +152,7 @@ df.write.mode("append").synapsesql("<warehouse/lakehouse name>.<schema name>.<ta
 df.write.mode("overwrite").synapsesql("<warehouse/lakehouse name>.<schema name>.<table name>")
 ```
 > [!NOTE]
-> The connector supports writing to a Fabric DW table only as the SQL analytics endpoint of a Lakehouse is read-only.
+> The connector supports writing to a Fabric DW table only as the SQL analytics endpoint of a lakehouse is read-only.
 
 ### Parallelizing Reads for Improved Performance
 This connector supports parallelized reads to improve query performance when loading large tables. Similar to [spark.read.jdbc](https://spark.apache.org/docs/latest/sql-data-sources-jdbc.html), you can enable parallelism by specifying a partition column and its value range. Spark will then split the read operation into multiple partitions that are processed concurrently.
