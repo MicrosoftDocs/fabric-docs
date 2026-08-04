@@ -128,5 +128,5 @@ Use the following checks when driver mode snapshot doesn't behave as expected.
 
 ## Related content
 
-- [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md)
+- [Delta Lake table optimization and V-order](delta-optimization-and-v-order.md)
 - [Run Delta table maintenance in Lakehouse](lakehouse-table-maintenance.md)
