@@ -95,7 +95,7 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 | Name | In | Required | Type | Description |
 | --- | --- | --- | --- | --- |
 | workspaceId | path | True | string uuid | The workspace ID. | 
-| itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or Lakehouse. | 
+| itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or lakehouse. |
 | livyId | path | True | string uuid | The Livy session ID. | 
 | appId | path | True | string | The Spark application ID, like application_1704417105000_0001. | 
 | isDownload | query | False | bool | True to download the log file as a stream. Default as false. |
