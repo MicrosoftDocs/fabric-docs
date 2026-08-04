@@ -137,7 +137,7 @@ items:
           href: plan/planning-how-to-set-up-scenarios.md
         - name: Use simulation measures
           href: plan/planning-how-to-use-simulation-measures.md
-        - name: Use writeback
+        - name: Write back data
           items:
               - name: Set up writeback
                 href: plan/planning-writeback/planning-how-to-persist-data.md
@@ -155,10 +155,16 @@ items:
                 href: plan/planning-writeback/planning-how-to-enable-writeback-reading-mode.md
               - name: Writeback FAQ
                 href: plan/planning-writeback/writeback-faq.md
+        - name: Multidimensional planning
+          items:
+              - name: Create multidimensional cubes
+                href: plan/planning-cubes/how-to-create-cube.md
+              - name: Manage cube measures
+                href: plan/planning-cubes/how-to-manage-cube-measures.md
+              - name: Cube FAQ
+                href: plan/planning-cubes/faq-cube.md        
         - name: Change layouts
           href: plan/planning-how-to-change-layouts.md
-        - name: Create a cube
-          href: plan/planning-how-to-create-cube.md
         - name: Comment and collaborate
           href: plan/planning-how-to-add-comments.md
         - name: Add notes
@@ -451,6 +457,8 @@ items:
               href: plan/infobridge-transformations/infobridge-how-to-import-export.md
   - name: Resources
     items:
+    - name: Billing and capacity usage
+      href: plan/resources/billing-fabric-plan.md
     - name: Plan general FAQ
       href: plan/resources/frequently-asked-questions.md
     - name: Plan best practices
