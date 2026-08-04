@@ -60,7 +60,7 @@ Data Factory connects to your data, moves it, transforms it, and orchestrates yo
 
 **Move data**: Data Factory provides several methods to move data from source to destination, or provide easy access to existing data, depending on your needs.
 
-- [Copy job](what-is-copy-job.md) - Preferred solution for simplified data movement with native support for multiple delivery styles, including bulk copy, incremental copy, and change data capture (CDC) replication. It also offers the flexibility to handle a wide range of scenarios from many sources to many destinations - all through an intuitive, easy-to-use experience.
+- [Copy job](what-is-copy-job.md) - Preferred solution for simplified data movement with native support for multiple delivery styles, including bulk copy, incremental copy, and change data capture (CDC) replication. It also offers the flexibility to handle a wide range of scenarios from many sources to many destinations—all through an intuitive, easy-to-use experience.
 - [Copy activity](copy-data-activity.md) - Moves data from one place to another at any scale, with extensive customization, support for a wide range of sources and destinations, and manual control of parallel copying for improved performance.
 - [Mirroring](/fabric/database/mirrored-database/overview) - Create a near real-time replica of your operational database within OneLake in Microsoft Fabric to make your analytics and reporting easier.
 
@@ -78,7 +78,7 @@ See the [data movement decision guide](decision-guide-data-movement.md) to help 
 - Pipelines can include [control flow logic](activity-overview.md#control-flow-activities), such as loops and conditionals, to handle complex workflows and orchestrate all of your data processing using a simple low-code pipeline designer UI.
 - If you prefer to express your orchestration processes in code, Fabric Data Factory integrates with [Apache Airflow to build DAGs for orchestration using Python](create-apache-airflow-jobs.md).
 
-## AI powered data integration
+## AI-powered data integration
 
 AI shows up throughout Data Factory to help you get more done with less effort. Copilot for Data Factory lets you design, edit, and manage pipelines and dataflows using natural language. You can type plain-English prompts, and Copilot turns them into working ETL steps.
 
