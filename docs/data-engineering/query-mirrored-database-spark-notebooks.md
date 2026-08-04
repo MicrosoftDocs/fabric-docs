@@ -9,7 +9,7 @@ ms.search.form: Query Mirrored Databases with Spark Notebook
 
 # Query mirrored databases in Spark notebook
 
-Connect to and query mirrored databases (Mirrored DBs) directly from your Spark notebook in Microsoft Fabric. Mirrored databases let you analyze data from external sources—such as Azure Cosmos DB, Azure SQL Database, Snowflake, and Open Mirroring—without migrating data into Fabric.
+Connect to and query mirrored databases (Mirrored DBs) directly from your Spark notebook in Fabric. Mirrored databases let you analyze data from external sources—such as Azure Cosmos DB, Azure SQL Database, Snowflake, and open mirroring—without migrating data into Fabric.
 
 With Spark notebooks, you can run read-only queries on open format tables using advanced analytics engines, all within Fabric. This enables seamless, frictionless analytics across multiple enterprise data sources, so you can gain insights without moving or duplicating your data.
 
@@ -88,15 +88,15 @@ display(df)
 - Always use fully qualified names (workspace.database.schema.table) for mirrored DB queries.
 - Mirrored DB currently supports read-only operations in Spark notebooks.
 - Lakehouse attachment isn't required for read-only queries, but ensure you use the correct naming conventions.
-- Lakehouse attachments are required for any write operations on a Lakehouse.
-- Nonschema Lakehouse attachments don't enable the mirrored DB query experience.
+- Lakehouse attachments are required for any write operations on a lakehouse.
+- Nonschema lakehouse attachments don't enable the mirrored DB query experience.
 
 ## Known limitations
 
-- Currently supported mirrored DBs are Azure SQL, Cosmos DB, Snowflake, and Open Mirroring. More sources will be added in future iterations.
+- Currently supported mirrored DBs are Azure SQL, Azure Cosmos DB, Snowflake, and open mirroring. More sources will be added in future iterations.
 - You can't query mirrored DBs with a nonschema lakehouse attached in your notebook.
 
 ## Related content
 
-- [Create custom Spark pools in Microsoft Fabric](create-custom-spark-pools.md)
+- [Create custom Spark pools in Fabric](create-custom-spark-pools.md)
 - [Workspace roles and permissions in lakehouse](workspace-roles-lakehouse.md)

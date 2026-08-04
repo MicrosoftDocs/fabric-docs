@@ -10,7 +10,7 @@ ms.date: 11/15/2023
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-When you create a workspace in Microsoft Fabric, a [starter pool](spark-compute.md#starter-pools) that is associated with that workspace is automatically created. With the simplified setup in Microsoft Fabric, there's no need to choose the node or machine sizes, as these options are handled for you behind the scenes. This configuration provides a faster (5-10 seconds) Apache Spark session start experience for users to get started and run your Apache Spark jobs in many common scenarios without having to worry about setting up the compute. For advanced scenarios with specific compute requirements, users can create a custom Apache Spark pool and size the nodes based on their performance needs.
+When you create a workspace in Fabric, a [starter pool](spark-compute.md#starter-pools) that is associated with that workspace is automatically created. With the simplified setup in Fabric, there's no need to choose the node or machine sizes, as these options are handled for you behind the scenes. This configuration provides a faster (5-10 seconds) Apache Spark session start experience for users to get started and run your Apache Spark jobs in many common scenarios without having to worry about setting up the compute. For advanced scenarios with specific compute requirements, users can create a custom Apache Spark pool and size the nodes based on their performance needs.
 
 To make changes to the Apache Spark settings in a workspace, you should have the admin role for that workspace. To learn more, see [Roles in workspaces](../fundamentals/roles-workspaces.md).
 
@@ -18,7 +18,7 @@ To manage the Spark settings for the pool associated with your workspace:
 
 1. Go to the **Workspace settings** in your workspace and choose the **Data Engineering/Science** option to expand the menu:
 
-   :::image type="content" source="media/workspace-admin-settings/data-engineering-menu-inline.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu." lightbox="media/workspace-admin-settings/data-engineering-menu.png" :::
+   :::image type="content" source="media/workspace-admin-settings/data-engineering-menu-inline.png" alt-text="Screenshot showing where to select Data Engineering in the workspace settings menu." lightbox="media/workspace-admin-settings/data-engineering-menu.png" :::
 
 2. You see the **Spark Compute** option in your left-hand menu:
 
@@ -43,7 +43,7 @@ Admins can create custom Spark pools based on their compute requirements by sele
 
 :::image type="content" source="media/workspace-admin-settings/custom-pool-creation-inline.png" alt-text="Screenshot showing custom pool creation options." lightbox="media/workspace-admin-settings/custom-pool-creation.png":::
 
-Apache Spark for Microsoft Fabric supports single node clusters, which allows users to select a minimum node configuration of 1 in which case the driver and executor run in a single node. These single node clusters offer restorable high-availability during node failures and better job reliability for workloads with smaller compute requirements. You can also enable or disable autoscaling option for your custom Spark pools. When enabled with autoscale, the pool would acquire new nodes within the max node limit specified by the user and retire them after the job execution for better performance.
+Apache Spark for Fabric supports single node clusters, which allows users to select a minimum node configuration of 1 in which case the driver and executor run in a single node. These single node clusters offer restorable high-availability during node failures and better job reliability for workloads with smaller compute requirements. You can also enable or disable autoscaling option for your custom Spark pools. When enabled with autoscale, the pool would acquire new nodes within the max node limit specified by the user and retire them after the job execution for better performance.
 
 You can also select the option to dynamically allocate executors to pool automatically optimal number of executors within the max bound specified based on the data volume for better performance.
 
@@ -81,7 +81,7 @@ Jobs settings allow admins to control the job admission logic for all the Spark 
 
 :::image type="content" source="media/workspace-admin-settings/jobs-settings.png" alt-text="Screenshot showing the jobs settings." lightbox="media/workspace-admin-settings/jobs-settings.png":::
 
-By default all workspaces are enabled with Optimistic Job Admission. Learn more about [Job admission for Spark in Microsoft Fabric](job-admission-management.md).
+By default all workspaces are enabled with Optimistic Job Admission. Learn more about [Job admission for Spark in Fabric](job-admission-management.md).
 
 You can enable the **Reserve maximum cores for active Spark jobs** to turn off Optimistic job admission based approach and reserve max cores for their Spark jobs. 
 

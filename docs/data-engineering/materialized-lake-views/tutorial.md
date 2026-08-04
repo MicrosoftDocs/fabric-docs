@@ -9,14 +9,14 @@ ms.date: 07/17/2026
 
 # Implement medallion architecture with materialized lake views
 
-This tutorial walks you through implementing a medallion architecture by using materialized lake views in a Fabric lakehouse. By the end, you create an automated data transformation flow from bronze to silver to gold layers. This tutorial isn't a reference architecture, an exhaustive feature guide, or a prescriptive best-practices recommendation.
+This tutorial shows you how to implement a medallion architecture by using materialized lake views in a lakehouse in Fabric. By the end, you create an automated data transformation flow from bronze to silver to gold layers. This tutorial isn't a reference architecture, an exhaustive feature guide, or a prescriptive best-practices recommendation.
 
 ## Prerequisites
 
 Before you begin, complete these prerequisites:
 
 1. [Sign in to your Power BI account](https://powerbi.com/), or sign up for a trial if you don't have one.
-1. [Enable Microsoft Fabric](../../admin/fabric-switch.md) in your tenant.
+1. [Enable Fabric](../../admin/fabric-switch.md) in your tenant.
 1. [Create a Fabric-enabled workspace](../../fundamentals/create-workspaces.md).
 1. [Create a Lakehouse with schemas](../lakehouse-schemas.md#create-a-lakehouse-schema) enabled, and name it **SalesLakehouse**.
 
@@ -143,5 +143,5 @@ In this section, you create the bronze layer by uploading the contents of the do
 
 ## Related content
 
-* [Microsoft Fabric materialized lake views overview](overview-materialized-lake-view.md)
+* [Fabric materialized lake views overview](overview-materialized-lake-view.md)
 * [Spark SQL reference for materialized lake views](./create-materialized-lake-view.md)

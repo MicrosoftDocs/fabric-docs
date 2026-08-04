@@ -11,13 +11,13 @@ ms.search.form: VSCodeExtension
 
 For Fabric runtime 1.1 and 1.2, two local conda environments are created by default. Activate the conda environment before running the notebook on the target runtime. To learn more, see [Choose Fabric Runtime 1.1 or 1.2](author-notebook-with-vs-code.md#run-or-debug-a-notebook-on-remote-spark-compute).
 
-For Fabric runtime 1.3 and higher, the local conda environment is not created. You can run the notebook directly on the remote Spark compute by selecting the new entry in the Jupyter kernel list. You can select this kernel to run the notebook or Spark Job Definition on the remote Spark compute.
+For Fabric runtime 1.3 and higher, the local conda environment is not created. You can run the notebook directly on the remote Spark compute by selecting the new entry in the Jupyter kernel list. You can select this kernel to run the notebook or Spark job definition on the remote Spark compute.
 
  :::image type="content" source="media\vs-code\fabric-runtime-kernel.png" alt-text="Screenshot showing fabric runtime kernel." lightbox="media\vs-code\fabric-runtime-kernel.png":::
 
 ### Considerations for choosing local conda environment or remote Spark compute
 
-When you run the notebook or Spark Job Definition, you can choose the local conda environment or remote Spark Runtime. Here are some considerations to help you choose:
+When you run the notebook or Spark job definition, you can choose the local conda environment or remote Spark Runtime. Here are some considerations to help you choose:
 
 1. There are scenarios you may want to choose the local conda environment:
     - You need to work under some disconnected setup without the access to the remote compute.

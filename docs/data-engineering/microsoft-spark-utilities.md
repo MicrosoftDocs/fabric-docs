@@ -51,7 +51,7 @@ getMountPath(mountPoint: String, scope: String = ""): String -> Gets the local p
 Use mssparkutils.fs.help("methodName") for more info about a method.
 ```
 
-MSSparkUtils works with the file system in the same way as Spark APIs. Take *mssparkuitls.fs.mkdirs()* and Fabric lakehouse usage for example:
+MSSparkUtils works with the file system in the same way as Spark APIs. Take *mssparkuitls.fs.mkdirs()* and lakehouse usage for example:
 
 | **Usage** | **Relative path from HDFS root** | **Absolute path for ABFS file system** |**Absolute path for local file system in driver node** |
 |---|---|---|---|
@@ -202,7 +202,7 @@ You can open the snapshot link of the reference run in the cell output. The snap
 > [!NOTE]
 >
 > - The cross-workspace reference notebook is supported by **runtime version 1.2 and above**.
-> - If you use the files under [Notebook Resource](how-to-use-notebook.md#notebook-resources), use `mssparkutils.nbResPath` in the referenced notebook to make sure it points to the same folder as the interactive run.
+> - If you use the files under [Notebook resources](how-to-use-notebook.md#notebook-resources), use `mssparkutils.nbResPath` in the referenced notebook to make sure it points to the same folder as the interactive run.
 
 ### Reference run multiple notebooks in parallel
 
@@ -552,7 +552,7 @@ mssparkutils.fs.unmount("/test")
 
 ## Lakehouse utilities
 
-The `mssparkutils.lakehouse` module provides utilities for managing Lakehouse artifacts. These utilities make it easy to create, retrieve, update, and delete Lakehouse artifacts.
+The `mssparkutils.lakehouse` module provides utilities for managing lakehouse items. These utilities make it easy to create, retrieve, update, and delete lakehouse items.
 
 > [!NOTE]
 > Lakehouse APIs are supported only on Runtime version 1.2 or later.
@@ -582,28 +582,28 @@ list(workspaceId: String = ""): Array[Artifact]
 
 To use these methods effectively, consider the following usage examples:
 
-#### Creating a Lakehouse artifact
+#### Creating a lakehouse item
 
 ```python
 artifact = mssparkutils.lakehouse.create("artifact_name", "Description of the artifact", "optional_workspace_id")
 ```
 
-#### Retrieving a Lakehouse artifact
+#### Retrieving a lakehouse item
 ```python
 artifact = mssparkutils.lakehouse.get("artifact_name", "optional_workspace_id")
 ```
 
-#### Updating a Lakehouse artifact
+#### Updating a lakehouse item
 ```python
 updated_artifact = mssparkutils.lakehouse.update("old_name", "new_name", "Updated description", "optional_workspace_id")
 ```
 
-#### Deleting a Lakehouse artifact
+#### Deleting a lakehouse item
 ```python
 is_deleted = mssparkutils.lakehouse.delete("artifact_name", "optional_workspace_id")
 ```
 
-#### Listing Lakehouse artifacts
+#### Listing lakehouse items
 ```python
 artifacts_list = mssparkutils.lakehouse.list("optional_workspace_id")
 ```
@@ -612,9 +612,9 @@ artifacts_list = mssparkutils.lakehouse.list("optional_workspace_id")
 
 For more detailed information about each method and its parameters, use the `mssparkutils.lakehouse.help("methodName")` function.
 
-By using MSSparkUtils' Lakehouse utilities, you can more efficiently manage your Lakehouse artifacts and integrate this management into your Fabric pipelines, enhancing your overall data management experience.
+By using MSSparkUtils' Lakehouse utilities, you can more efficiently manage your lakehouse items and integrate this management into your Fabric pipelines, enhancing your overall data management experience.
 
-Explore these utilities and incorporate them into your Fabric workflows for seamless Lakehouse artifact management.
+Explore these utilities and incorporate them into your Fabric workflows for seamless lakehouse item management.
 
 ## Runtime utilities
 

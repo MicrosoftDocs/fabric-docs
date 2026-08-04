@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 This article is Phase 2 of 4 in the Azure Synapse Spark to Microsoft Fabric migration best practices series.
 
-Use this article to migrate your Spark workloads from Azure Synapse to Microsoft Fabric. This article covers running the Migration Assistant, refactoring code patterns that can't be automatically converted, and migrating Spark pool configurations, environments, and libraries.
+Use this article to migrate your Spark workloads from Azure Synapse to Fabric. This article covers running the Migration Assistant, refactoring code patterns that can't be automatically converted, and migrating Spark pool configurations, environments, and libraries.
 
 In this article, you learn how to:
 
@@ -29,13 +29,13 @@ For step-by-step instructions on running the assistant, see [Spark Synapse to Fa
 
 The assistant migrates the following items:
 
-- Spark pools are migrated to Fabric Pools and corresponding Environment artifacts.
+- Spark pools are migrated to Fabric Pools and corresponding environment items.
 - Notebooks and their associated environments are migrated.
 - Spark job definitions are migrated with associated environments.
 - Lake databases are mapped to Fabric schemas; managed Delta tables are migrated via OneLake catalog shortcuts.
 
 > [!IMPORTANT]
-> Spark configurations, custom libraries, and custom executor settings aren't migrated by the assistant. You must configure these manually in Fabric Environments. Synapse workspaces under a VNet can't be migrated with the assistant.
+> Spark configurations, custom libraries, and custom executor settings aren't migrated by the assistant. You must configure these manually in environment items in Fabric. Synapse workspaces under a VNet can't be migrated with the assistant.
 
 ### Standard (non-Git) workspace migration
 
@@ -87,7 +87,7 @@ Before addressing individual refactoring patterns, run a codebase-wide search ac
 | `getPropertiesAsMap` | Linked Services | Remove; configure storage account directly |
 | `spark.storage.synapse` | Linked Services | Remove — not supported in Fabric |
 | `/user/trusted-service-user/` | File Paths | Replace with OneLake path or shortcut path |
-| `cosmos.oltp` | Cosmos DB | Update to use Key Vault for secrets instead of linked service |
+| `cosmos.oltp` | Azure Cosmos DB | Update to use Key Vault for secrets instead of linked service |
 | `kusto.spark.synapse` | Kusto/ADX | Replace linked service auth with `accessToken` via `getToken()` |
 
 > [!TIP]
@@ -148,14 +148,14 @@ Replace the linked service option with an `accessToken` option. Use `notebookuti
 
 ### Cosmos DB connector
 
-Update Cosmos DB connections in Synapse that use linked services or `getSecretWithLS`.
+Update Azure Cosmos DB connections in Synapse that use linked services or `getSecretWithLS`.
 
 | **Before (Synapse)** | **After (Fabric)** |
 |----|----|
 | `.option("spark.synapse.linkedService", "CosmosDbLS")` | Remove linked service reference |
 | `mssparkutils.credentials.getSecretWithLS("cosmosKeyLS", "cosmosKey")` | `notebookutils.credentials.getSecret("https://<vault>.vault.azure.net/", "cosmosKey")` |
 
-Replace the linked service reference with direct Cosmos DB endpoint configuration. Store the Cosmos DB account key in Azure Key Vault and retrieve it by using `notebookutils.credentials.getSecret(vaultUrl, secretName)` instead of `getSecretWithLS()`.
+Replace the linked service reference with direct Azure Cosmos DB endpoint configuration. Store the Azure Cosmos DB account key in Azure Key Vault and retrieve it by using `notebookutils.credentials.getSecret(vaultUrl, secretName)` instead of `getSecretWithLS()`.
 
 ### Linked service references
 
@@ -196,7 +196,7 @@ Spark job definitions (SJDs) are batch job configurations that reference a main 
 
 - **Retry policies.** Fabric SJDs support built-in retry policies, such as max retries and retry interval. This feature is useful for Spark Structured Streaming jobs that need to run indefinitely.
 
-- **Environment binding.** In Synapse, SJDs bind to a Spark pool. In Fabric, SJDs bind to an Environment, which contains pool configuration, libraries, and Spark properties. The Migration Assistant automatically maps Synapse pool references to Fabric Environments.
+- **Environment binding.** In Synapse, SJDs bind to a Spark pool. In Fabric, SJDs bind to an environment item, which contains pool configuration, libraries, and Spark properties. The Migration Assistant automatically maps Synapse pool references to environment items in Fabric.
 
 - **Scheduling.** Fabric SJDs have built-in scheduling (**Settings** > **Schedule**) without requiring a separate pipeline. In Synapse, SJD scheduling requires a pipeline with a Spark Job activity. If you have Synapse pipelines that only trigger SJDs, consider using Fabric's built-in SJD scheduling instead of migrating the pipeline.
 
@@ -232,7 +232,7 @@ After your notebooks and Spark job definitions are migrated, you need to decide 
 Fabric Starter Pools provide seconds-level Spark session startup — a significant improvement over Synapse Spark pools, which require minutes-long cold starts to start clusters. Starter Pools are ready to use from the platform and require no configuration.
 
 > [!TIP]
-> If your Synapse Spark pool has no custom configurations, no custom libraries, and no specific node size requirements beyond Medium—don't migrate the pool. Instead, let your notebooks and Spark job definitions use the Fabric workspace default Starter Pool settings. This approach gives you the fastest startup times and zero pool management overhead. Only create a Custom Pool or Environment when you have a specific need.
+> If your Synapse Spark pool has no custom configurations, no custom libraries, and no specific node size requirements beyond Medium—don't migrate the pool. Instead, let your notebooks and Spark job definitions use the Fabric workspace default Starter Pool settings. This approach gives you the fastest startup times and zero pool management overhead. Only create a Custom Pool or environment when you have a specific need.
 
 #### When to create a custom pool or environment
 
@@ -246,18 +246,18 @@ Create a Fabric custom pool and/or environment only when your workload requires:
 
 ### Configuration and library migration
 
-Migrate Spark configurations and libraries to Fabric Environments.
+Migrate Spark configurations and libraries to environment items in Fabric.
 
-For detailed steps on migrating libraries to Fabric Environments, see [Migrate Spark Libraries from Azure Synapse to Fabric](migrate-synapse-spark-libraries.md).
+For detailed steps on migrating libraries to environment items, see [Migrate Spark Libraries from Azure Synapse to Fabric](migrate-synapse-spark-libraries.md).
 
 1. **Export Spark configs.** In Synapse Studio, go to **Manage** > **Spark Pools** > select pool > **Configurations + Libraries** > download as `.yml`/`.conf`/`.json`.
 
-1. **Import to Environment.** In Fabric, create an Environment artifact. Go to **Spark Compute** > **Spark Properties** > **Upload** the exported `Sparkproperties.yml` file.
+1. **Import to Environment.** In Fabric, create an environment item. Go to **Spark Compute** > **Spark Properties** > **Upload** the exported `Sparkproperties.yml` file.
 
-1. **Migrate libraries.** For pool-level libraries, upload packages (wheels, JARs, tars) to the Environment's library section. For PyPI/Conda packages, add them to the Environment's public library configuration.
+1. **Migrate libraries.** For pool-level libraries, upload packages (wheels, JARs, tars) to the environment's library section. For PyPI/Conda packages, add them to the environment's public library configuration.
 
 > [!IMPORTANT]
-> Workspace-level library settings in Fabric are deprecated. Migrate all libraries to Environment artifacts. The migration permanently removes existing workspace-level configurations—download all settings before enabling Environments.
+> Workspace-level library settings in Fabric are deprecated. Migrate all libraries to environment items. The migration permanently removes existing workspace-level configurations—download all settings before enabling environments.
 
 ### Library compatibility: Synapse vs. Fabric
 
@@ -268,32 +268,32 @@ To identify which libraries your notebooks actually use, run these checks before
 - **Python notebooks:** Search for `import` and `from ... import` statements across all `.py` / `.ipynb` files.
 - **Java/Scala notebooks and SJDs:** Search for `import` statements and Maven coordinates; look for packages like `com.azure.cosmos.spark` or `com.microsoft.kusto.spark`.
 - **Export full dependency list:** Run `pip freeze` in a Synapse notebook, compare against the Fabric Runtime 1.3 manifest. Only libraries that appear in both your `pip freeze` output and the gap tables below need action.
-- **Pool-level and workspace-level custom libraries:** In Synapse Studio, go to **Manage** > **Apache Spark Pools** > select pool > **Packages** to see custom libraries that need to be reuploaded to a Fabric Environment.
+- **Pool-level and workspace-level custom libraries:** In Synapse Studio, go to **Manage** > **Apache Spark Pools** > select pool > **Packages** to see custom libraries that need to be reuploaded to an environment item.
 
 #### Python libraries missing from Fabric
 
 | **Category** | **Libraries** | **Action** |
 |----|----|----|
 | **CUDA / GPU (9 libs)** | libcublas, libcufft, libcufile, libcurand, libcusolver, libcusparse, libnpp, libnvfatbin, libnvjitlink, libnvjpeg | Not available—Fabric doesn't support GPU pools. Refactor GPU workloads to use CPU-based alternatives or keep on Synapse. |
-| **HTTP / API clients** | httpx, httpcore, h11, google-auth, jmespath | Install via Environment: `pip install httpx google-auth jmespath` |
-| **ML / Interpretability** | interpret, interpret-core | Install via Environment: `pip install interpret` |
-| **Data serialization** | marshmallow, jsonpickle, frozendict, fixedint | Install via Environment if needed: `pip install marshmallow jsonpickle` |
+| **HTTP / API clients** | httpx, httpcore, h11, google-auth, jmespath | Install via environment: `pip install httpx google-auth jmespath` |
+| **ML / Interpretability** | interpret, interpret-core | Install via environment: `pip install interpret` |
+| **Data serialization** | marshmallow, jsonpickle, frozendict, fixedint | Install via environment if needed: `pip install marshmallow jsonpickle` |
 | **Logging / Telemetry** | fluent-logger, humanfriendly, library-metadata-cooker, impulse-python-handler | fluent-logger: install if used. Others are Synapse-internal—likely not needed. |
 | **Jupyter internals** | jupyter-client, jupyter-core, jupyter-ui-poll, jupyterlab-widgets, ipython-pygments-lexers | Fabric manages Jupyter infrastructure internally. These libraries are usually not needed in user code. |
 | **System / C libraries** | libgcc, libstdcxx, libgrpc, libabseil, libexpat, libnsl, libzlib | Low-level system libs. Usually not imported directly. Only install if you have C extensions that depend on them. |
-| **File / concurrency** | filelock, fsspec, knack | Install via Environment if used: `pip install filelock fsspec` |
+| **File / concurrency** | filelock, fsspec, knack | Install via environment if used: `pip install filelock fsspec` |
 
 #### Java/Scala libraries missing from Fabric
 
 | **Library** | **Synapse Version** | **Action** |
 |----|----|----|
-| **azure-cosmos-analytics-spark** | 2.2.5 | Install as a custom JAR in the Fabric Environment if your Spark jobs use the Cosmos DB analytics connector. |
+| **azure-cosmos-analytics-spark** | 2.2.5 | Install as a custom JAR in the environment item if your Spark jobs use the Cosmos DB analytics connector. |
 | **junit-jupiter-params** | 5.5.2 | Test-only library. Not needed in production notebooks. |
 | **junit-platform-commons** | 1.5.2 | Test-only library. Not needed in production notebooks. |
 
 #### R libraries
 
-Only one difference: Synapse includes the `lightgbm` R package (v4.6.0) which isn't in Fabric. Install via Environment if needed. Fabric adds `FabricTelemetry` (v1.0.2) which is Fabric-internal.
+Only one difference: Synapse includes the `lightgbm` R package (v4.6.0) which isn't in Fabric. Install via environment if needed. Fabric adds `FabricTelemetry` (v1.0.2) which is Fabric-internal.
 
 #### Notable version differences
 
@@ -310,10 +310,10 @@ Only one difference: Synapse includes the `lightgbm` R package (v4.6.0) which is
 | **libgcc-ng / libstdcxx-ng** | 11.2.0 | 15.2.0 | GCC runtime. Might affect C extension compatibility. |
 
 > [!NOTE]
-> Synapse generally ships newer versions of system-level libraries (GCC, protobuf, libpq) while Fabric ships newer versions of data/ML libraries (more Python packages overall). If you need a specific version, pin it in your Fabric Environment configuration.
+> Synapse generally ships newer versions of system-level libraries (GCC, protobuf, libpq) while Fabric ships newer versions of data/ML libraries (more Python packages overall). If you need a specific version, pin it in your environment item configuration.
 
 > [!TIP]
-> Run a quick compatibility check: export your Synapse pool's library list (`pip freeze`), compare against the Fabric Runtime 1.3 manifest, and pre-install any missing libraries in your Fabric Environment before running migrated notebooks. For a line-by-line comparison of every built-in library and version between Fabric and Synapse Spark runtimes, see the [microsoft/synapse-spark-runtime GitHub repository](https://github.com/microsoft/synapse-spark-runtime).
+> Run a quick compatibility check: export your Synapse pool's library list (`pip freeze`), compare against the Fabric Runtime 1.3 manifest, and pre-install any missing libraries in your environment item before running migrated notebooks. For a line-by-line comparison of every built-in library and version between Fabric and Synapse Spark runtimes, see the [microsoft/synapse-spark-runtime GitHub repository](https://github.com/microsoft/synapse-spark-runtime).
 
 ## Related content
 

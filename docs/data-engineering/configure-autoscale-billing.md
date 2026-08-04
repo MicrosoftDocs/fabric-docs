@@ -25,7 +25,7 @@ This article explains how to enable autoscale billing for a Fabric capacity and 
 
 ## Configure autoscale billing
 
-1. Open the [Microsoft Fabric Admin portal](https://app.fabric.microsoft.com/admin-portal).
+1. Open the [Fabric Admin portal](https://app.fabric.microsoft.com/admin-portal).
 1. Under **Governance and insights**, select **Admin portal**.
 1. Select **Capacity settings**, then open the **Fabric Capacity** tab.
 1. Select the capacity you want to configure.

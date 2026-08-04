@@ -20,12 +20,12 @@ For emitter architecture and destination selection guidance, see [Fabric Apache 
 To collect diagnostic logs and metrics, you can use an existing Azure Storage account. If you don't have one, you can [create an Azure blob storage account](/azure/storage/common/storage-account-create) or [create a storage account to use with Azure Data Lake Storage Gen2](/azure/storage/blobs/create-data-lake-storage-account).
 
 
-### Step 2: Create a Fabric Environment Artifact with Apache Spark Configuration
+### Step 2: Create a Fabric Environment Item with Apache Spark Configuration
 
 #### Option 1: Configure with Azure Storage URI and Access key   
 
-1. Create a Fabric Environment Artifact in Fabric
-1. Add the following **Spark properties** with the appropriate values to the environment artifact, or select **Add from .yml** in the ribbon to download the [sample yaml file](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/azure_storage_spark_property_option_1.yml), which already containing the following properties.  
+1. Create an environment item in Fabric
+1. Add the following **Spark properties** with the appropriate values to the environment item, or select **Add from .yml** in the ribbon to download the [sample yaml file](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/azure_storage_spark_property_option_1.yml), which already containing the following properties.  
 
    ```properties
    spark.synapse.diagnostic.emitters: MyStorageBlob
@@ -53,7 +53,7 @@ To configure Azure Key Vault for storing the workspace key:
    - **Name**: Enter a name for the secret.
    - **Value**: Enter the `<storage-access-key>` for the secret.
    - Leave the other values to their defaults. Then select **Create**.
-1. Create a Fabric Environment Artifact in Fabric.
+1. Create an environment item in Fabric.
 1. Add the following **Spark properties**. Or select **Add from .yml** on the ribbon to upload the [sample yaml file](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/azure_storage_spark_property_option_2.yml) which includes following Spark properties.
 
    ```properties
@@ -71,7 +71,7 @@ To configure Azure Key Vault for storing the workspace key:
 
 1. Save and publish changes.
 
-### Step 3: Attach the environment artifact to notebooks or spark job definitions, or set it as the workspace default
+### Step 3: Attach the environment item to notebooks or spark job definitions, or set it as the workspace default
 
    > [!NOTE]
    >
@@ -87,7 +87,7 @@ To configure Azure Key Vault for storing the workspace key:
 
    **To set the environment as the workspace default**:
 
-   1. Navigate to Workspace Settings in Fabric.
+   1. Navigate to workspace settings in Fabric.
    1. Find **Spark settings** in workspace settings (**Workspace setting** > **Data Engineering/Science** > **Spark settings**).
    1. Select **Environment** tab and choose the environment with diagnostics spark properties configured, and click **Save**.
 
@@ -164,7 +164,7 @@ Here's a sample log record in JSON format:
   "fabricTenantId": "<my-fabric-tenant-id>",
   "capacityId": "<my-fabric-capacity-id>",
   "artifactType": "SynapseNotebook|SparkJobDefinition",
-  "artifactId": "<my-fabric-artifact-id>",
+  "artifactId": "<my-fabric-item-id>",
   "fabricWorkspaceId": "<my-fabric-workspace-id>",
   "fabricEnvId": "<my-fabric-environment-id>",
   "executorMin": "<executor-min>",
@@ -184,14 +184,14 @@ Here's a sample log record in JSON format:
 
  ## Fabric workspaces with Managed virtual network
 
-Create a managed private endpoint for the target Azure Blob Storage. For detailed instructions, refer to [Create and use managed private endpoints in Microsoft Fabric - Microsoft Fabric](../security/security-managed-private-endpoints-create.md).
+Create a managed private endpoint for the target Azure Blob Storage. For detailed instructions, refer to [Create and use managed private endpoints in Fabric](../security/security-managed-private-endpoints-create.md).
 
 Once the managed private endpoint is approved, users can begin emitting logs and metrics to the target Azure Blob Storage.
 
 ## Next steps
 
 - [Create Apache spark job definition](../data-engineering/create-spark-job-definition.md)
-- [Create, configure, and use an environment in Microsoft Fabric](../data-engineering/create-and-use-environment.md)
-- [Create and use managed private endpoints in Microsoft Fabric](../security/security-managed-private-endpoints-create.md)
-- [Develop, execute, and manage Microsoft Fabric notebooks](../data-engineering/author-execute-notebook.md)
+- [Create, configure, and use an environment in Fabric](../data-engineering/create-and-use-environment.md)
+- [Create and use managed private endpoints in Fabric](../security/security-managed-private-endpoints-create.md)
+- [Develop, execute, and manage Fabric notebooks](../data-engineering/author-execute-notebook.md)
 - [Monitor Spark Applications](../data-engineering/spark-monitoring-overview.md)

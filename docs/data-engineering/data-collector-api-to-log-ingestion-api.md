@@ -32,7 +32,7 @@ Migration typically includes creating DCR and DCE resources, updating Fabric env
 
 ## Log Ingestion API overview
 
-For Apache Spark diagnostics in Microsoft Fabric, Log Ingestion API provides a structured ingestion model for authentication, schema definition, routing, and table delivery in Azure Log Analytics.
+For Apache Spark diagnostics in Fabric, Log Ingestion API provides a structured ingestion model for authentication, schema definition, routing, and table delivery in Azure Log Analytics.
 
 **Key components**
 
@@ -238,7 +238,7 @@ To attach the environment to notebooks or Spark job definitions:
 
 To set the environment as the workspace default:
 
-1. Navigate to Workspace settings in Fabric.
+1. Navigate to workspace settings in Fabric.
 1. Find **Spark settings** in workspace settings (**Workspace setting** > **Data Engineering/Science** > **Spark settings**).
 1. Select **Environment** tab and choose the environment with diagnostics spark properties configured, and select **Save**.
 
@@ -365,8 +365,8 @@ The following table lists Spark configurations for sending logs and metrics to A
 ## Related content
 
 - [Create Apache Spark job definition](../data-engineering/create-spark-job-definition.md)
-- [Create, configure, and use an environment in Microsoft Fabric](../data-engineering/create-and-use-environment.md)
-- [Develop, execute, and manage Microsoft Fabric notebooks](../data-engineering/author-execute-notebook.md)
+- [Create, configure, and use an environment in Fabric](../data-engineering/create-and-use-environment.md)
+- [Develop, execute, and manage Fabric notebooks](../data-engineering/author-execute-notebook.md)
 - [Monitor Spark Applications](../data-engineering/spark-monitoring-overview.md)
 - [Collect Apache Spark diagnostics using Azure Event Hubs](azure-fabric-diagnostic-emitters-azure-event-hub.md)
 - [Collect Apache Spark diagnostics using Azure Storage Account](azure-fabric-diagnostic-emitters-azure-storage.md)

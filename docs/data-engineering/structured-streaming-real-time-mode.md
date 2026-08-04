@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 > [!IMPORTANT]
 > Real-time mode is available only on Microsoft Fabric Spark Runtime 2.0 (Spark 4.1) or later. This new streaming mode isn't available on earlier Fabric runtimes.
 
-Apache Spark 4.1 introduces the `Trigger.RealTime` API for real-time mode. Microsoft Fabric supports this ultra-low-latency Structured Streaming execution mode in Fabric Runtime 2.0. It uses long-running tasks that continuously read from streaming sources, apply supported transformations, and write to supported sinks. This model reduces scheduling delay because Spark doesn't wait for a discrete microbatch to start each unit of work.
+Apache Spark 4.1 introduces the `Trigger.RealTime` API for real-time mode. Fabric supports this ultra-low-latency Structured Streaming execution mode in Fabric Runtime 2.0. It uses long-running tasks that continuously read from streaming sources, apply supported transformations, and write to supported sinks. This model reduces scheduling delay because Spark doesn't wait for a discrete microbatch to start each unit of work.
 
 Use real-time mode when your workload needs fresh events to move through the query as quickly as possible. Use standard micro-batch mode when you prioritize throughput, broad connector support, or batch-oriented operations.
 
@@ -37,7 +37,7 @@ Tune the interval with that behavior in mind. A longer interval checkpoints and 
 
 Before you enable Real-time Mode, complete these requirements:
 
-- Use Microsoft Fabric Spark Runtime 2.0 (Spark 4.1) or later. Real-time Mode isn't available on earlier runtimes.
+- Use Fabric Spark Runtime 2.0 (Spark 4.1) or later. Real-time Mode isn't available on earlier runtimes.
 - Run the workload in a Fabric Spark experience that supports Runtime 2.0, such as a notebook or Spark job definition.
 - Use a streaming source and sink that support Real-time Mode in the selected runtime.
 - Configure a durable checkpoint location for the query.

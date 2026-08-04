@@ -136,7 +136,7 @@ To delete a relationship:
 
 ## Related content
 
-- [What is Microsoft Fabric API for GraphQL?](api-graphql-overview.md)
+- [What is Fabric API for GraphQL?](api-graphql-overview.md)
 - [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md)
 - [API for GraphQL editor](api-graphql-editor.md)
 - [GraphQL schema view](graphql-schema-view.md)

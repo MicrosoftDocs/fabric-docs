@@ -14,11 +14,11 @@ Delta table files become fragmented over time. Fragmentation increases file-oper
 
 The `OPTIMIZE` command is the primary compaction operation. It groups small files into bins targeting an ideal file size, then rewrites them to storage.
 
-For cross-workload guidance on compaction strategies across SQL Analytics Endpoint, Power BI Direct Lake, and Spark, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
+For cross-workload guidance on compaction strategies across SQL analytics endpoint, Power BI Direct Lake, and Spark, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
 
 ## Compaction methods
 
-Microsoft Fabric offers several approaches to maintain optimal file sizes in Delta tables:
+Fabric offers several approaches to maintain optimal file sizes in Delta tables:
 
 ### `OPTIMIZE` command
 
@@ -65,26 +65,26 @@ When you use the `ZORDER BY` clause, `OPTIMIZE` rewrites active files so rows wi
 OPTIMIZE dbo.table_name ZORDER BY (column1, column2)
 ```
 
-#### `OPTIMIZE` with V-Order
+#### `OPTIMIZE` with V-order
 
-The `VORDER` clause results in the files scoped for compaction having the V-Order optimization applied. For more information on V-Order, see the detailed [documentation](./delta-optimization-and-v-order.md).
+The `VORDER` clause results in the files scoped for compaction having the V-order optimization applied. For more information on V-order, see the detailed [documentation](./delta-optimization-and-v-order.md).
 
 ```sql
 OPTIMIZE dbo.table_name VORDER
 ```
 
-You can combine Z-Order and V-Order in a single command. Spark applies the operations in this order: bin compaction → Z-Order → V-Order.
+You can combine Z-Order and V-order in a single command. Spark applies the operations in this order: bin compaction → Z-Order → V-order.
 
 ```sql
 OPTIMIZE dbo.table_name ZORDER BY (column1, column2) VORDER
 ```
 
-V-Order behavior during `OPTIMIZE` depends on how you invoke the command:
+V-order behavior during `OPTIMIZE` depends on how you invoke the command:
 
 | Invocation | Behavior |
 |---|---|
-| `OPTIMIZE table VORDER` | Forces V-Order on rewritten files, regardless of session or table settings. |
-| `OPTIMIZE table` (no `VORDER` keyword) | Inherits V-Order behavior from `TBLPROPERTIES("delta.parquet.vorder.enabled")` if set, otherwise falls back to the session config `spark.sql.parquet.vorder.default`. |
+| `OPTIMIZE table VORDER` | Forces V-order on rewritten files, regardless of session or table settings. |
+| `OPTIMIZE table` (no `VORDER` keyword) | Inherits V-order behavior from `TBLPROPERTIES("delta.parquet.vorder.enabled")` if set, otherwise falls back to the session config `spark.sql.parquet.vorder.default`. |
 
 #### `OPTIMIZE` with liquid clustering
 
@@ -291,7 +291,7 @@ Use compaction together with small-file prevention features such as optimize wri
 
 ### Lakehouse table maintenance
 
-You can run maintenance operations such as `OPTIMIZE` from Lakehouse Explorer. For more information, see [Lakehouse table maintenance](./lakehouse-table-maintenance.md).
+You can run maintenance operations such as `OPTIMIZE` from Lakehouse explorer. For more information, see [Lakehouse table maintenance](./lakehouse-table-maintenance.md).
 
 ## Summary of best practices
 
@@ -324,9 +324,9 @@ These metrics help you confirm that compaction reduced file counts and produced 
 
 ## Related content
 
-- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
+- [Delta Lake in Fabric overview](../fundamentals/delta-lake-overview.md)
 - [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
-- [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md)
+- [Delta Lake table optimization and V-order](delta-optimization-and-v-order.md)
 - [Tune file size](./tune-file-size.md)
 - [Lakehouse table maintenance](./lakehouse-table-maintenance.md)
 - [Liquid clustering](liquid-clustering.md)
