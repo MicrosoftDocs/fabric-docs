@@ -307,9 +307,9 @@ In this section, you continue in the same notebook and run the next cells to cre
 
    :::image type="content" source="media\tutorial-lakehouse-data-preparation\validate-tables.png" alt-text="Screenshot of the Lakehouse explorer showing where the new tables appear." lightbox="media\tutorial-lakehouse-data-preparation\validate-tables.png":::
 
-This tutorial writes data as Delta lake files. Fabric automatically discovers and registers these tables in the metastore, so you don't need to run separate `CREATE TABLE` statements.
+This tutorial writes data as Delta Lake files. Fabric automatically discovers and registers these tables in the metastore, so you don't need to run separate `CREATE TABLE` statements.
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Create a semantic model and build a report](tutorial-lakehouse-build-report.md)
+> [Create a semantic model and create a report](tutorial-lakehouse-build-report.md)

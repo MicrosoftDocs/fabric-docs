@@ -10,16 +10,16 @@ ms.date: 10/01/2025
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-The Spark connector for SQL databases is a high-performance library that lets you read from and write to SQL Server, Azure SQL databases, and Fabric SQL databases. The connector offers the following capabilities:
+The Spark connector for SQL databases is a high-performance library that lets you read from and write to SQL Server, Azure SQL databases, and SQL databases in Fabric. The connector offers the following capabilities:
 
-* Use Spark to run large write and read operations on Azure SQL Database, Azure SQL Managed Instance, SQL Server on Azure VM, and Fabric SQL databases.
+* Use Spark to run large write and read operations on Azure SQL Database, Azure SQL Managed Instance, SQL Server on Azure VM, and SQL databases in Fabric.
 * When you use a table or a view, the connector supports security models set at the SQL engine level. These models include object-level security (OLS), row-level security (RLS), and column-level security (CLS).
 
 The connector is preinstalled in the Fabric runtime, so you don't need to install it separately.
 
 ## Authentication
 
-Microsoft Entra authentication is integrated with Microsoft Fabric. 
+Microsoft Entra authentication is integrated with Fabric.
 - When you sign in to the Fabric workspace, your credentials are automatically passed to the SQL engine for authentication and authorization.
 - Requires Microsoft Entra ID to be enabled and configured on your SQL database engine.
 - No extra configuration is needed in your Spark code if Microsoft Entra ID is set up. The credentials are automatically mapped.
@@ -33,9 +33,9 @@ To use the Spark connector, your identity—whether it's a user or an app—must
 For Azure SQL Database, Azure SQL Managed Instance, and SQL Server on Azure VM:
 - The identity running the operation typically needs `db_datawriter` and `db_datareader` permissions, and optionally `db_owner` for full control.
 
-For Fabric SQL databases:
+For a SQL database in Fabric:
 - The identity typically needs `db_datawriter` and `db_datareader` permissions, and optionally `db_owner`.
-- The identity also needs at least read permission on the Fabric SQL database at the item level.
+- The identity also needs at least read permission on the SQL database in Fabric at the item level.
 
 > [!NOTE]
 > If you use a service principal, it can run as an app (no user context) or as a user if user impersonation is enabled. The service principal must have the required database permissions for the operations you want to perform.
@@ -182,5 +182,5 @@ When the process finishes, the output of your Spark read operation appears in th
 ## Related content
 
 * [Azure SQL Database](https://azure.microsoft.com/products/azure-sql/database)
-* [Fabric SQL databases](/fabric/database/sql/overview)
+* [SQL database in Fabric](/fabric/database/sql/overview)
 * [Azure SQL Database - Authentication and authorization](/azure/azure-sql/database/logins-create-manage)

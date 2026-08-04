@@ -16,7 +16,7 @@ The [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) enables you to
 
 Every lakehouse has one SQL analytics endpoint. The number of SQL analytics endpoints in a workspace matches the number of [lakehouses](../data-engineering/lakehouse-overview.md) and [mirrored databases](../mirroring/overview.md) provisioned in that one workspace.
 
-A background process is responsible for scanning the lakehouse for changes and keeping the SQL analytics endpoint up-to-date for all the changes committed to lakehouses in a workspace. The Microsoft Fabric platform transparently manages the sync process. When a change is detected in a lakehouse, a background process updates metadata and the SQL analytics endpoint reflects the changes committed to lakehouse tables. Under normal operating conditions, the lag between a lakehouse and SQL analytics endpoint is less than one minute. The actual length of time can vary from a few seconds to minutes depending on many factors that this article discusses. The background process runs only when the SQL analytics endpoint is active and it halts after 15 minutes of inactivity.
+A background process is responsible for scanning the lakehouse for changes and keeping the SQL analytics endpoint up-to-date for all the changes committed to lakehouses in a workspace. The Fabric platform transparently manages the sync process. When a change is detected in a lakehouse, a background process updates metadata and the SQL analytics endpoint reflects the changes committed to lakehouse tables. Under normal operating conditions, the lag between a lakehouse and SQL analytics endpoint is less than one minute. The actual length of time can vary from a few seconds to minutes depending on many factors that this article discusses. The background process runs only when the SQL analytics endpoint is active and it halts after 15 minutes of inactivity.
 
 ## Guidance
 
@@ -68,23 +68,23 @@ To maintain healthy file sizes, periodically run Delta optimization operations s
 
 ## Partition size considerations
 
-The choice of partition column for a delta table in a lakehouse also affects the time it takes to sync changes to SQL analytics endpoint. The number and size of partitions of the partition column are important for performance:
+The choice of partition column for a Delta table in a lakehouse also affects the time it takes to sync changes to SQL analytics endpoint. The number and size of partitions of the partition column are important for performance:
 
 - A column with high cardinality (mostly or entirely made of unique values) results in a large number of partitions. A large number of partitions negatively impacts performance of the metadata discovery scan for changes. If the cardinality of a column is high, choose another column for partitioning.
-- The size of each partition can also affect performance. Use a column that results in a partition of at least (or close to) 1 GB. Follow best practices for [delta tables maintenance](../data-engineering/lakehouse-table-maintenance.md) and [optimization](../data-engineering/delta-optimization-and-v-order.md). For a Python script to evaluate partitions, see [Sample script for partition details](#sample-script-for-partition-details).
+- The size of each partition can also affect performance. Use a column that results in a partition of at least (or close to) 1 GB. Follow best practices for [Delta tables maintenance](../data-engineering/lakehouse-table-maintenance.md) and [optimization](../data-engineering/delta-optimization-and-v-order.md). For a Python script to evaluate partitions, see [Sample script for partition details](#sample-script-for-partition-details).
 
-A large volume of small-sized parquet files increases the time it takes to sync changes between a lakehouse and its associated SQL analytics endpoint. You might end up with large number of parquet files in a delta table for one or more reasons:
+A large volume of small-sized parquet files increases the time it takes to sync changes between a lakehouse and its associated SQL analytics endpoint. You might end up with large number of parquet files in a Delta table for one or more reasons:
 
 - If you choose a partition for a Delta table with high number of unique values, the table is partitioned by each unique value and might be over-partitioned. Choose a partition column that doesn't have a high cardinality, and results in individual partitions at least 1 GB each.
 - Batch and streaming data ingestion rates might also result in small files depending on frequency and size of changes being written to a lakehouse. For example, there might be a small volume of changes coming through to the lakehouse, resulting in small parquet files. To address this issue, implement regular [lakehouse table maintenance](../data-engineering/lakehouse-table-maintenance.md).
     
 ### Sample script for partition details
 
-Use the following notebook to print a report detailing size and details of partitions underpinning a delta table.
+Use the following notebook to print a report detailing size and details of partitions underpinning a Delta table.
 
-1. First, provide the ABFSS path for your delta table in the variable `delta_table_path`.  
+1. First, provide the ABFSS path for your Delta table in the variable `delta_table_path`.
     - You can get ABFSS path of a delta table from the Fabric portal **Explorer**. Right-click on table name, then select `COPY PATH` from the list of options.
-1. The script outputs all partitions for the delta table.
+1. The script outputs all partitions for the Delta table.
 1. The script iterates through each partition to calculate the total size and number of files.
 1. The script outputs the details of partitions, files per partitions, and size per partition in GB.
 
@@ -140,7 +140,7 @@ For more information, see [SQL analytics endpoint metadata sync](sql-analytics-e
 ## Related content
 
 - [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
-- [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md)
+- [Delta Lake table optimization and V-order](../data-engineering/delta-optimization-and-v-order.md)
 - [Table compaction](../data-engineering/table-compaction.md)
 - [Tune file size](../data-engineering/tune-file-size.md)
 - [Lakehouse SQL analytics endpoint use cases](../data-engineering/lakehouse-sql-analytics-endpoint-use-cases.md)
