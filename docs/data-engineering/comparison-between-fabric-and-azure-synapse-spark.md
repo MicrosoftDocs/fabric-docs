@@ -17,7 +17,7 @@ For a Delta Lake and Lakehouse-focused view (including default table formats and
 
 |Category | Azure Synapse Spark | Fabric Spark |
 | --- | --- | --- |
-| Spark pools | Spark pool <br>- <br>-| [Starter pool (pre-warmed)](configure-starter-pools.md) / [Custom pool](create-custom-spark-pools.md) <br>[V-Order](delta-optimization-and-v-order.md) <br>[High concurrency](configure-high-concurrency-session-notebooks.md) |
+| Spark pools | Spark pool <br>- <br>-| [Starter pool (pre-warmed)](configure-starter-pools.md) / [Custom pool](create-custom-spark-pools.md) <br>[V-order](delta-optimization-and-v-order.md) <br>[High concurrency](configure-high-concurrency-session-notebooks.md) |
 | Spark configurations | Pool level <br>Notebook or Spark job definition level| [Environment level](create-and-use-environment.md) <br>[Notebook](how-to-use-notebook.md) or [Spark job definition](spark-job-definition.md) level|
 | Spark libraries | Workspace level packages <br>Pool level packages <br>Inline packages | - <br>[Environment libraries](environment-manage-library.md) <br>[Inline libraries](library-management.md)|
 | Resources | Notebook (Python, Scala, Spark SQL, R, .NET) <br>Spark job definition (Python, Scala, .NET) <br>Synapse pipelines <br>Pipeline activities (notebook, Spark job definition)| [Notebook](how-to-use-notebook.md) (Python, Scala, Spark SQL, R) <br>[Spark job definition](spark-job-definition.md) (Python, Scala, R) <br>[Data Factory pipelines](../data-factory/create-first-pipeline-with-sample-data.md) <br> [Pipeline activities](../data-factory/activity-overview.md) (notebook, Spark job definition)|
@@ -62,7 +62,7 @@ The following table compares Azure Synapse Spark and Fabric Spark pools.
 | Node size | Small-XXXLarge | Small-XXLarge |
 | Autopause | Yes, customizable minimum 5 minutes | Yes, noncustomizable 2 minutes |
 | High concurrency | No | Yes |
-| V-Order | No | Yes |
+| V-order | No | Yes |
 | Spark autotune | No | Yes |
 | Native Execution Engine | No | Yes |
 | Concurrency limits | Fixed | Variable based on capacity |
@@ -72,7 +72,7 @@ The following table compares Azure Synapse Spark and Fabric Spark pools.
 
 - **Runtime**: Fabric doesn't support Spark 3.4 and earlier versions. Fabric Spark supports Spark 3.5 with Delta 3.1 within [Runtime 1.3](runtime-1-3.md), and Spark 4.1 with Delta 4.1 within [Runtime 2.0](runtime-2-0.md).
 
-**When to choose**: Use Fabric Spark pools for fast startup (starter pools), single-node jobs, high concurrency sessions, and V-Order optimization. Use Azure Synapse pools when you need GPU acceleration or fixed scaling up to 200 nodes.
+**When to choose**: Use Fabric Spark pools for fast startup (starter pools), single-node jobs, high concurrency sessions, and V-order optimization. Use Azure Synapse pools when you need GPU acceleration or fixed scaling up to 200 nodes.
 
 ### Understanding Spark pool models
 
@@ -80,7 +80,7 @@ Azure Synapse and Fabric use fundamentally different pool models:
 
 - **Azure Synapse**: A Spark pool is a fixed compute resource with a maximum node count. Each job (notebook or Spark job definition) provisions a cluster inside the pool. The pool defines the upper bound of nodes available across all running artifacts.
 
-- **Fabric**: A Spark pool is a configuration template, not a fixed backing compute resource. Each artifact provisions its own cluster, but sizing is constrained by Capacity vCores, not by a pool max-size property. [High concurrency sessions](high-concurrency-overview.md) allow artifacts to share the same session or cluster.
+- **Fabric**: A Spark pool is a configuration template, not a fixed backing compute resource. Each item provisions its own cluster, but sizing is constrained by Capacity vCores, not by a pool max-size property. [High concurrency sessions](high-concurrency-overview.md) allow items to share the same session or cluster.
 
 | Aspect | Azure Synapse | Fabric |
 |--|--|--|
@@ -92,7 +92,7 @@ Azure Synapse and Fabric use fundamentally different pool models:
 
 The following table compares how many concurrent jobs can run under different configurations, assuming a cluster size of 1 driver + 6 workers (7 nodes, 28 vCores per job) with Small nodes (4 vCores each).
 
-| Metric | Synapse (24-node pool) | Fabric F16 (96 Spark vCores) | Fabric F32 (192 Spark vCores) |
+| Metric | Azure Synapse (24-node pool) | Fabric F16 (96 Spark vCores) | Fabric F32 (192 Spark vCores) |
 |--|--|--|--|
 | Compute boundary | 24 nodes | 32 vCores × 3 burst = 96 vCores | 64 vCores × 3 burst = 192 vCores |
 | Max concurrent jobs | 3 (uses 21 nodes) | 3 (uses 84 vCores) | 6 (uses 168 vCores) |
@@ -163,7 +163,7 @@ Fabric Spark limits (SKU-based):
 - Concurrent jobs vary by capacity SKU: 1 to 512 max
 - Dynamic reserve-based throttling manages peak usage
 
-For more information, see [Concurrency limits and queueing in Microsoft Fabric Spark](spark-job-concurrency-and-queueing.md).
+For more information, see [Concurrency limits and queueing in Fabric Spark](spark-job-concurrency-and-queueing.md).
 
 ### Multiple Spark pools
 
@@ -190,7 +190,7 @@ Spark configurations apply at two levels:
 
 - **Inline syntax**: In Fabric, use ```spark.conf.set(<conf_name>, <conf_value>)``` for session-level configs. For batch jobs, use SparkConf.
 - **Immutable configs**: Some Spark configurations can't be modified. Error message: ```AnalysisException: Can't modify the value of a Spark config: <config_name>```
-- **V-Order**: Enabled by default in Fabric; write-time optimization for parquet files. See [V-Order](delta-optimization-and-v-order.md).
+- **V-order**: Enabled by default in Fabric; write-time optimization for parquet files. See [V-order](delta-optimization-and-v-order.md).
 - **Optimized Write**: Enabled by default in Fabric; disabled by default in Azure Synapse.
 
 > [!NOTE]

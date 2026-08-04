@@ -86,7 +86,7 @@ This debug session runs on the remote compute, requiring network traffic to sync
 
 ## Update Python Version from VS Code side
 
-For Python Notebook, you can check and update the Python version from the VS Code side. 
+For Python notebook, you can check and update the Python version from the VS Code side.
 
 :::image type="content" source="media\vs-code\select-python-version.png" alt-text="Screenshot showing how to select Python version." lightbox="media\vs-code\select-python-version.png":::
 
@@ -99,4 +99,4 @@ You can find the python version in the bottom right corner of the status bar. If
 
 ## Related content
 
-- [Create and manage Microsoft Fabric notebooks in Visual Studio Code](author-notebook-with-vs-code.md)
+- [Create and manage Fabric notebooks in Visual Studio Code](author-notebook-with-vs-code.md)

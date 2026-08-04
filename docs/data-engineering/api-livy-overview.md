@@ -11,7 +11,7 @@ ms.date: 04/10/2026
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Microsoft Fabric Livy API lets users submit and execute Spark code within Spark compute associated with a Fabric Lakehouse, eliminating the need to create any Notebook or Spark Job Definition artifacts. This integration with the Lakehouse ensures straightforward access to data stored on OneLake.
+Microsoft Fabric Livy API lets users submit and execute Spark code within Spark compute associated with a lakehouse in Fabric, eliminating the need to create any notebook or Spark job definition items. This integration with the lakehouse ensures straightforward access to data stored on OneLake.
 
 ## Features
 
@@ -37,5 +37,5 @@ The Fabric Livy API supports the following job types:
 
 - [Apache Livy REST API documentation](https://livy.incubator.apache.org/docs/latest/rest-api.html)
 - [Spark compute for Fabric](spark-compute.md)
-- [Apache Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
+- [Apache Spark workspace administration settings in Fabric](workspace-admin-settings.md)
 - [Create and run Spark jobs using the Livy API in Fabric](get-started-api-livy.md)
