@@ -465,6 +465,8 @@ items:
       items:
       - name: Time intelligence
         href: plan/resources/best-practices/time-intelligence.md
+      - name: Semantic modeling
+        href: plan/resources/best-practices/semantic-modeling.md
     - name: Known limitations
       href: plan/overview-limitations.md
     - name: Error codes and resolutions
