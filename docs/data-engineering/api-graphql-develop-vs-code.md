@@ -25,7 +25,7 @@ Use this approach when you're building React applications that need rich IDE sup
 
 Before you begin, ensure you have:
 
-- Microsoft Fabric workspace access: Be a member of the Fabric workspace with at least **Contributor** role (or higher: Admin, Member) to create and modify GraphQL API items
+- Fabric workspace access: Be a member of the Fabric workspace with at least **Contributor** role (or higher: Admin, Member) to create and modify GraphQL API items
 - Data source permissions: Read/write permissions on the data sources you plan to expose through the GraphQL API
 - [Node.js](https://nodejs.org/download/) installed on your development machine (includes npm)
 - [Visual Studio Code](https://code.visualstudio.com/download) installed on your development machine
@@ -64,7 +64,7 @@ Your GraphQL API is now ready and available in your Fabric workspace.
 
 To follow along with this tutorial, complete these steps to set up the React starter application, install the necessary dependencies, and configure Visual Studio Code with GraphQL support.
 
-1. **Clone the starter application** - Get the React starter application from the Microsoft Fabric samples repository:
+1. **Clone the starter application** - Get the React starter application from the Fabric samples repository:
 
    ```bash
    git clone https://github.com/microsoft/fabric-samples.git
@@ -320,11 +320,11 @@ Start your development server:
 npm run dev
 ```
 
-Your application launches in the browser at `http://localhost:3000`. You're prompted to sign in with your Microsoft credentials to access the GraphQL API data. After successful authentication, you'll see the customer data from your Fabric SQL database's `SalesLT.Customer` table displayed in the React application.
+Your application launches in the browser at `http://localhost:3000`. You're prompted to sign in with your Microsoft credentials to access the GraphQL API data. After successful authentication, you'll see the customer data from your SQL database in Fabric's `SalesLT.Customer` table displayed in the React application.
 
 ## Related content
 
-- [Microsoft Fabric GraphQL API overview](api-graphql-overview.md)
+- [Fabric GraphQL API overview](api-graphql-overview.md)
 - [Connect applications to Fabric API for GraphQL](connect-apps-api-graphql.md)
 - [Apollo Client documentation](https://www.apollographql.com/docs/react/)
 - [GraphQL Code Generator documentation](https://the-guild.dev/graphql/codegen)

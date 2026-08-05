@@ -9,11 +9,11 @@ ms.date: 07/17/2026
 
 # Get started with materialized lake views
 
-In this quickstart, you'll be guided to create source tables in a Microsoft Fabric Lakehouse, define materialized lake views to transform raw data through progressive stages, and set up refresh schedules. By the end, you have a fully working bronze-to-gold pipeline with dependency-aware orchestration and lineage tracking.
+In this quickstart, you create source tables in a lakehouse in Microsoft Fabric, define materialized lake views to transform raw data through progressive stages, and set up refresh schedules. By the end, you have a fully working bronze-to-gold pipeline with dependency-aware orchestration and lineage tracking.
 
 ## Prerequisites
 
-* A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
+* A [workspace](../../fundamentals/create-workspaces.md) with a Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
 * A Lakehouse with [Lakehouse schemas](../Lakehouse-schemas.md) enabled and [Fabric Runtime 1.3](../runtime-1-3.md). 
 
 ## Create your first materialized lake view
@@ -31,7 +31,7 @@ In this quickstart, you'll be guided to create source tables in a Microsoft Fabr
    A new notebook opens with a template to create a materialized lake view.
 
    > [!NOTE]
-   > If you're using a Fabric Data Warehouse table as a source for a materialized lake view, you're required to create a table shortcut in your Lakehouse.
+   > If you're using a table in a warehouse as a source for a materialized lake view, you must create a table shortcut in your lakehouse.
 
 1. Create the source tables `products` and `orders`. Enter the following SQL command into the existing notebook cell and run it:
 
@@ -154,6 +154,6 @@ To learn more about refresh behavior and how Fabric determines the optimal strat
 
 ## Related content
 
-* [What are materialized lake views in Microsoft Fabric?](./overview-materialized-lake-view.md)
+* [What are materialized lake views in Fabric?](./overview-materialized-lake-view.md)
 * [Spark SQL reference for materialized lake views](./create-materialized-lake-view.md)
 * [Optimal refresh for materialized lake views](./refresh-materialized-lake-view.md)

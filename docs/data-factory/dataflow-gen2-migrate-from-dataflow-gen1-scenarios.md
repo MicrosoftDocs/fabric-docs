@@ -129,6 +129,8 @@ in
 
 We recommend that you compile an inventory of your dataflows and dependent items. We also recommend that you consider using Power Query templates.
 
+To upgrade a Power BI Dataflow Gen1 in place, rather than rebuilding it, use the [Dataflows Upgrade Wizard](migrate-to-dataflow-gen2-using-upgrade-wizard.md), which is currently in preview. Take inventory first. The wizard upgrades the dataflow itself, but it doesn't identify the downstream items that read it, so use the inventory guidance in this section to find them before you upgrade.
+
 ### Inventory
 
 To help you plan your migration, your first step is to take inventory of your dataflows and all downstream solutions that depend on them. Identifying dependent items can help avoid downtime and disruption.
@@ -158,6 +160,7 @@ Power Query templates have been designed to be compatible with various integrati
 For more information about this article, check out the following resources:
 
 - [Migrate from Dataflow Gen1 to Dataflow Gen2](dataflow-gen2-migrate-from-dataflow-gen1.md)
+- [Upgrade Dataflow Gen1 using the Dataflows Upgrade Wizard](migrate-to-dataflow-gen2-using-upgrade-wizard.md)
 - [Fabric pricing](https://powerbi.microsoft.com/pricing/)
 - Questions? [Try asking the Fabric community](https://community.fabric.microsoft.com/)
 - Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com)

@@ -19,7 +19,7 @@ This article walks you through connecting a React application to Fabric GraphQL 
 1. [Cloning and configuring a complete React application from GitHub](#clone-and-configure-the-react-application)
 1. [Testing the authenticated connection](#test-the-application)
 
-The tutorial uses React, but authentication concepts apply to any language. For samples in C#, Python, or other languages, see the [Microsoft Fabric Samples GitHub repository](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/GraphQL).
+The tutorial uses React, but authentication concepts apply to any language. For samples in C#, Python, or other languages, see the [Fabric Samples GitHub repository](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/GraphQL).
 
 ## Who needs to connect applications
 
@@ -66,7 +66,7 @@ For React applications, you configure single-page application (SPA) settings tha
 
 1. Configure API permissions so your application can access the Fabric GraphQL API. Under the *Manage* list, select **API permissions**, then **Add permission**.
 
-1. Add the **PowerBI Service**, select **Delegated permissions**, and select **GraphQLApi.Execute.All** permissions. This permission allows your application to execute queries and mutations on behalf of the signed-in user. Confirm that admin consent isn't required.
+1. Add the **Power BI Service**, select **Delegated permissions**, and select **GraphQLApi.Execute.All** permissions. This permission allows your application to execute queries and mutations on behalf of the signed-in user. Confirm that admin consent isn't required.
 
 1. Go back to the *Manage* list, select **Authentication** > **Add a platform** > **Single-page application**.
 
@@ -78,7 +78,7 @@ For React applications, you configure single-page application (SPA) settings tha
 
 With your Microsoft Entra app registered, you need a GraphQL API in Fabric to query. This section walks you through creating a sample API using Fabric's public holidays dataset. This gives you a working API to test authentication and data retrieval without needing to configure your own data sources.
 
-The sample API exposes holiday data from a Lakehouse table, which your React application queries to display public holidays.
+The sample API exposes holiday data from a lakehouse table, which your React application queries to display public holidays.
 
 1. From the Fabric portal home page, select **Data Engineering** from the list of workloads.
 
@@ -177,7 +177,7 @@ With the application configured, run it locally to verify everything works corre
    - Your Microsoft Entra app has the correct permissions
    - The access token was successfully acquired
    - The GraphQL API authenticated the request
-   - The query executed against the Lakehouse data
+   - The query executed against the lakehouse data
 
     :::image type="content" source="media/connect-apps-api-graphql/react-app-results.png" alt-text="Screenshot of the React sample app after receiving the GraphQL request." lightbox="media/connect-apps-api-graphql/react-app-results.png":::
 
@@ -198,4 +198,4 @@ Now that you have a working application connected to your Fabric GraphQL API, ex
 * [Query multiple data sources in Fabric API for GraphQL](multiple-data-sources-graphql.md) - Combine data from different sources in a single query
 * [Fabric API for GraphQL editor](api-graphql-editor.md) - Test and develop queries interactively
 * [Create a Microsoft Entra app in Azure](/rest/api/fabric/articles/get-started/create-entra-app) - Detailed guide for production app registration
-* [Microsoft Fabric GraphQL samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/GraphQL) - Browse samples in multiple languages
+* [Fabric GraphQL samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/GraphQL) - Browse samples in multiple languages

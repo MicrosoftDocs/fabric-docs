@@ -35,9 +35,9 @@ Notebook execution can be triggered in three ways, each with a different securit
 
 ### Automate execution via APIs
 
-You can also execute notebooks on demand through the [Job Scheduler API](/rest/api/fabric/core/job-scheduler). API-triggered runs support parameterized execution, session configuration (such as compute vCores and Spark settings), environment and runtime selection, and choosing the target Fabric Lakehouse. You can monitor run status and cancel job instances through the same API. Runs return an exit value that external schedulers and Fabric pipelines can read to enable conditional orchestration and downstream signaling.
+You can also execute notebooks on demand through the [Job Scheduler API](/rest/api/fabric/core/job-scheduler). API-triggered runs support parameterized execution, session configuration (such as compute vCores and Spark settings), environment and runtime selection, and choosing the target lakehouse in Fabric. You can monitor run status and cancel job instances through the same API. Runs return an exit value that external schedulers and Fabric pipelines can read to enable conditional orchestration and downstream signaling.
 
-The Items REST API and the Job Scheduler API both support service principal authentication for secure unattended automation and CI/CD. Note that some downstream services (such as T-SQL endpoints) don't support service principals and require a user principal.
+The Items REST API and the Job Scheduler API both support service principal authentication for secure unattended automation and CI/CD. Note that some downstream services (such as SQL analytics endpoints) don't support service principals and require a user principal.
 
 These execution options provide flexibility for different scenarios, but you must understand which identity runs your notebook. The security context affects data access permissions, API call authorization, and resource availability.
 
@@ -64,7 +64,7 @@ Like other standard Fabric item creation processes, you can easily create a new 
 For step-by-step notebook creation guidance in specific workflows, see:
 
 - [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md#open-or-create-a-notebook-from-a-lakehouse) for creating a notebook from a lakehouse context in the Fabric portal.
-- [Author notebooks in Microsoft Fabric with Visual Studio Code](author-notebook-with-vs-code.md#create-a-notebook) for creating notebooks from VS Code.
+- [Author notebooks in Fabric with Visual Studio Code](author-notebook-with-vs-code.md#create-a-notebook) for creating notebooks from VS Code.
 - [Public APIs for notebooks](/rest/api/fabric/core/items) for creating and managing notebooks through the Items REST API (CRUD operations).
 - [Execute notebooks via Job Scheduler API](/rest/api/fabric/core/job-scheduler) for on-demand notebook execution with parameterization, session configuration, environment and Lakehouse selection, run monitoring, and cancellation.
 
@@ -197,7 +197,7 @@ When you open a notebook, you enter the coediting mode by default, and every not
 
 ### Use Copilot in notebooks
 
-Copilot is immediately context-aware of the workspace, attached Lakehouse schemas, tables, and files, the notebook's structure, and the current runtime state. You don't need to start a session for Copilot to begin helping you. Copilot supports multi-step, notebook-wide code generation, refactoring, summarization, and validation across entire workflows, so you can work across cells without losing context.
+Copilot is immediately context-aware of the workspace, attached lakehouse schemas, tables, and files, the notebook's structure, and the current runtime state. You don't need to start a session for Copilot to begin helping you. Copilot supports multi-step, notebook-wide code generation, refactoring, summarization, and validation across entire workflows, so you can work across cells without losing context.
 
 ### Performance insights from Copilot
 
@@ -276,10 +276,10 @@ Version history allows you to easily version your live notebook changes. It supp
 
       :::image type="content" source="media\how-to-use-notebook\create-new-version.png" alt-text="Screenshot showing how to create new version." lightbox="media\how-to-use-notebook\create-new-version.png":::
 
-   - System checkpoint: These checkpoints are created automatically every 5 minutes based on editing time interval by Notebook system, ensuring that your work is consistently saved and versioned. You can find the modification records from all the contributors in the system checkpoint timeline list.
+   - System checkpoint: These checkpoints are created automatically every 5 minutes based on editing time interval by notebook system, ensuring that your work is consistently saved and versioned. You can find the modification records from all the contributors in the system checkpoint timeline list.
    :::image type="content" source="media\how-to-use-notebook\expand-system-checkpoint.png" alt-text="Screenshot showing expand checkpoint list." lightbox="media\how-to-use-notebook\expand-system-checkpoint.png":::
 
-1. Multi-Source Checkpointing for Notebook
+1. Multi-Source Checkpointing for notebook
    
    Fabric notebooks seamlessly integrate with Git, deployment pipelines, and Visual Studio Code. Each saved version is automatically captured in the notebook’s version history. Versions may originate from direct edits within the notebook, Git synchronizations, deployment pipeline activities, or publishing via VS Code. The source of each version is clearly labeled in version history to provide full traceability.
  
@@ -314,7 +314,7 @@ When you share a notebook, you assign permissions to users. Based on those permi
 
 ### Permissions and access
 
-Permissions can be set at the workspace or notebook level in Microsoft Fabric. They determine which modes a user can access:
+Permissions can be set at the workspace or notebook level in Fabric. They determine which modes a user can access:
 
 - Permissions limit the set of available modes.
 - They don't automatically select a mode for the user.

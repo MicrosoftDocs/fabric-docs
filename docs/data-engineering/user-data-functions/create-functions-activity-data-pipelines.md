@@ -121,6 +121,6 @@ After running, you can monitor the pipeline execution and view run history from 
 ## Related content
 
 - [Learn about the User data functions programming model](./python-programming-model.md)
-- [Use parameters in pipelines for Data Factory in Fabric](../../data-factory/parameters.md)
+- [Use parameters in pipelines for Fabric Data Factory](../../data-factory/parameters.md)
 - [Understand the pipeline run concept](../../data-factory/pipeline-runs.md)
-- [How to monitor pipeline runs in Microsoft Fabric](../../data-factory/monitor-pipeline-runs.md)
+- [How to monitor pipeline runs in Fabric](../../data-factory/monitor-pipeline-runs.md)

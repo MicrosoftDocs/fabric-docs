@@ -393,4 +393,4 @@ You can inspect protocol-related metadata by using `DESCRIBE DETAIL` and by revi
 
 - [Schema evolution for Delta tables](delta-lake-schema-evolution.md)
 - [Delta Lake interoperability](../fundamentals/delta-lake-interoperability.md)
-- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
+- [Delta Lake in Fabric overview](../fundamentals/delta-lake-overview.md)

@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 
 # Apache Spark runtimes in Fabric
 
-Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of data engineering and data science experiences. It combines key components from both internal and open-source sources, providing customers with a comprehensive solution. For simplicity, refer to Microsoft Fabric Runtime powered by Apache Spark as Fabric Runtime.
+Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of data engineering and data science experiences. It combines key components from both internal and open-source sources, providing customers with a comprehensive solution. For simplicity, refer to Fabric Runtime powered by Apache Spark as Fabric Runtime.
 
 Major components of Fabric Runtime:
 
@@ -26,9 +26,9 @@ Major components of Fabric Runtime:
 
 - **Default-level packages for Java/Scala, Python, and R** - packages that support diverse programming languages and environments. These packages are automatically installed and configured, so developers can apply their preferred programming languages for data processing tasks.
 
-- The Microsoft Fabric Runtime is built upon **a robust open-source operating system**, ensuring compatibility with various hardware configurations and system requirements.
+- The Fabric Runtime is built upon **a robust open-source operating system**, ensuring compatibility with various hardware configurations and system requirements.
 
-In the following table, you find a comprehensive comparison of key components, including Apache Spark versions, supported operating systems, Java, Scala, Python, Delta Lake, and R, for Apache Spark-based runtimes within the Microsoft Fabric platform.
+In the following table, you find a comprehensive comparison of key components, including Apache Spark versions, supported operating systems, Java, Scala, Python, Delta Lake, and R, for Apache Spark-based runtimes within the Fabric platform.
 
 > [!TIP]
 > Always use the most recent, generally available (GA) runtime version for your production workload, which currently is [Runtime 1.3](./runtime-1-3.md).
@@ -47,7 +47,7 @@ Visit [Runtime 1.3](./runtime-1-3.md) or [Runtime 2.0](./runtime-2-0.md) to expl
 
 ## Fabric optimizations
 
-In Microsoft Fabric, both the Spark engine and the Delta Lake implementations incorporate platform-specific optimizations and features. These features use native integrations within the platform. You can disable all these features to achieve standard Spark and Delta Lake functionality. The Fabric Runtimes for Apache Spark encompass:
+In Fabric, both the Spark engine and the Delta Lake implementations incorporate platform-specific optimizations and features. These features use native integrations within the platform. You can disable all these features to achieve standard Spark and Delta Lake functionality. The Fabric Runtimes for Apache Spark encompass:
 
 - The complete open-source version of Apache Spark.
 - A collection of nearly 100 built-in, distinct query performance enhancements. These enhancements include features like partition caching (enabling the FileSystem partition cache to reduce metastore calls) and Cross Join to Projection of Scalar Subquery.
@@ -56,7 +56,7 @@ In Microsoft Fabric, both the Spark engine and the Delta Lake implementations in
 Within the Fabric Runtime for Apache Spark and Delta Lake, native writer capabilities serve two key purposes:
 
 - They offer differentiated performance for writing workloads, optimizing the writing process.
-- They default to V-Order optimization of Delta Parquet files. The Delta Lake V-Order optimization is crucial for delivering superior read performance across all Fabric engines. To gain a deeper understanding of how it operates and how to manage it, see [Delta Lake table optimization and V-Order](./delta-optimization-and-v-order.md).
+- They default to V-order optimization of Delta Parquet files. The Delta Lake V-order optimization is crucial for delivering superior read performance across all Fabric engines. To gain a deeper understanding of how it operates and how to manage it, see [Delta Lake table optimization and V-order](./delta-optimization-and-v-order.md).
 
 ## Multiple runtimes support
 
@@ -69,9 +69,9 @@ Fabric supports multiple runtimes, so you can switch between them and reduce the
 
 To change the runtime version at the workspace level, go to **Workspace Settings** > **Data Engineering/Science** > **Spark settings**. From the **Environment** tab, select your desired runtime version from the available options. Select **Save** to confirm your selection.
 
-:::image type="content" source="media\mrs\runtime-2.png" alt-text="Screenshot showing where to select runtime version for Workspace settings." lightbox="media\mrs\runtime-2.png":::
+:::image type="content" source="media\mrs\runtime-2.png" alt-text="Screenshot showing where to select runtime version for workspace settings." lightbox="media\mrs\runtime-2.png":::
 
-After you make this change, all system-created items within the workspace, including Lakehouses, SJDs, and Notebooks, use the newly selected workspace-level runtime version starting from the next Spark Session. If you're currently using a notebook with an existing session for a job or any lakehouse-related activity, that Spark session continues as is. However, starting from the next session or job, the selected runtime version applies.
+After you make this change, all system-created items within the workspace, including lakehouses, Spark job descriptions, and notebooks, use the newly selected workspace-level runtime version starting from the next Spark Session. If you're currently using a notebook with an existing session for a job or any lakehouse-related activity, that Spark session continues as is. However, starting from the next session or job, the selected runtime version applies.
 
 To change the runtime at the `Environment` item level, create a new **Environment** item or open an existing one. Under the **Runtime** dropdown, select your desired runtime version from the available options, select `Save`, and then `Publish` your changes. Next, you can use this `Environment` item with your `Notebook` or `Spark Job Definition`.
 
@@ -108,10 +108,10 @@ When you perform this upgrade, you receive a warning that upgrading the Delta pr
 Protocol version upgrades can potentially affect the compatibility of existing Delta Lake table readers, writers, or both. Therefore, proceed with caution and upgrade the protocol version only when necessary, such as when adopting new features in Delta Lake.
 
 > [!IMPORTANT]
-> To learn more about which protocol versions and features are compatible across all Microsoft Fabric experiences, see [Delta Lake table format interoperability](../fundamentals/delta-lake-interoperability.md).
+> To learn more about which protocol versions and features are compatible across all Fabric experiences, see [Delta Lake table format interoperability](../fundamentals/delta-lake-interoperability.md).
 
 
-:::image type="content" source="media\mrs\delta-upgrade-warning.png" alt-text="Screenshot showing the warning when upgrading the delta lake protocol." lightbox="media/mrs/delta-upgrade-warning.png":::
+:::image type="content" source="media\mrs\delta-upgrade-warning.png" alt-text="Screenshot showing the warning when upgrading the Delta Lake protocol." lightbox="media/mrs/delta-upgrade-warning.png":::
 
 Additionally, verify that all current and future production workloads and processes are compatible with Delta Lake tables using the new protocol version to ensure a seamless transition and prevent any potential disruptions.
 

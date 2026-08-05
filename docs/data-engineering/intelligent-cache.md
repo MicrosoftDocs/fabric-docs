@@ -10,7 +10,7 @@ ms.date: 05/18/2026
 
 The intelligent cache feature works seamlessly behind the scenes and caches data to help speed up the execution of Apache Spark jobs in Microsoft Fabric as it reads from your OneLake or Azure Data Lake Storage (ADLS) Gen2 storage via shortcuts. It also automatically detects changes to the underlying files and automatically refreshes the files in the cache, providing you with the most recent data. When the cache size reaches its limit, the cache automatically releases the least read data to make space for more recent data. This feature lowers the total cost of ownership by improving performance up to 60% on subsequent reads of the files that are stored in the available cache.
 
-When the Apache Spark engine in Microsoft Fabric queries a file or table from your lakehouse, it makes a call to the remote storage to read the underlying files. With every query request to read the same data, the Spark engine must make a call to remote storage each time. This redundant process adds latency to your total processing time. Spark has a caching requirement that you must manually set and release the cache to minimize the latency and improve overall performance. However, this requirement can result in stale data if the underlying data changes.
+When the Apache Spark engine in Fabric queries a file or table from your lakehouse, it makes a call to the remote storage to read the underlying files. With every query request to read the same data, the Spark engine must make a call to remote storage each time. This redundant process adds latency to your total processing time. Spark has a caching requirement that you must manually set and release the cache to minimize the latency and improve overall performance. However, this requirement can result in stale data if the underlying data changes.
 
 Intelligent cache simplifies the process by automatically caching each read within the allocated cache storage space on each Spark node where data files are cached in SSD. Each request for a file checks to see if the file exists in the local node cache and compare the tag from the remote storage to determine if the file is stale. If the file doesn't exist or if the file is stale, Spark reads the file and store it in the cache. When the cache becomes full, the file with the oldest last access time is evicted from the cache to allow for more recent files.
 
@@ -18,7 +18,7 @@ Intelligent cache is a single cache per node. If you're using a medium-sized nod
 
 ## How it works
 
-In Microsoft Fabric, intelligent caching is enabled by default for all Spark pools with a 50% cache size. The actual size of the available storage and the cache size on each node depends on the node family and node size.
+In Fabric, intelligent caching is enabled by default for all Spark pools with a 50% cache size. The actual size of the available storage and the cache size on each node depends on the node family and node size.
 
 ## When to use intelligent cache
 
@@ -83,4 +83,4 @@ spark.conf.set("spark.synapse.vegas.cacheSize", 50)
 
 ## Related content
 
-- [What is Spark compute in Microsoft Fabric?](spark-compute.md)
+- [What is Spark compute in Fabric?](spark-compute.md)

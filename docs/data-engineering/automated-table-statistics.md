@@ -288,7 +288,7 @@ It’s important to understand the current limitations of Fabric’s automated s
 ## Related content
 
 - [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
-- [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md)
+- [Delta Lake table optimization and V-order](delta-optimization-and-v-order.md)
 - [Table compaction](table-compaction.md)
 - [Lakehouse table maintenance](lakehouse-table-maintenance.md)
 - [Configure resource profiles based on your workload requirements](configure-resource-profile-configurations.md)

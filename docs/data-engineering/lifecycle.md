@@ -8,16 +8,16 @@ ms.date: 07/24/2026
 
 # Lifecycle of Apache Spark runtimes in Fabric
 
-The Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark. It facilitates the execution and management of data engineering and data science workflows. It synthesizes essential elements from both proprietary and open-source resources to offer a comprehensive solution. For brevity, refer to the Microsoft Fabric Runtime powered by Apache Spark simply as Fabric Runtime.
+The Fabric Runtime is an Azure-integrated platform based on Apache Spark. It facilitates the execution and management of data engineering and data science workflows. It synthesizes essential elements from both proprietary and open-source resources to offer a comprehensive solution. For brevity, refer to the Fabric Runtime powered by Apache Spark simply as Fabric Runtime.
 
 > [!NOTE]
 > This article covers the lifecycle of Apache Spark runtimes. It doesn't cover Python notebook kernels, which follow a separate lifecycle. For the Python notebook kernel lifecycle, see [Python notebook runtime and kernel lifecycle in Fabric](./python-notebook-runtime-lifecycle.md).
 
 ## Release cadence
 
-Apache Spark typically releases minor versions every six to nine months. The Microsoft Fabric Spark team is committed to delivering new runtime versions quickly while ensuring the highest quality, integration, and continuous support. Each version comprises around 110 components. As the runtime expands beyond Apache Spark, the team ensures seamless integration within the Azure ecosystem.
+Apache Spark typically releases minor versions every six to nine months. The Fabric Spark team is committed to delivering new runtime versions quickly while ensuring the highest quality, integration, and continuous support. Each version comprises around 110 components. As the runtime expands beyond Apache Spark, the team ensures seamless integration within the Azure ecosystem.
 
-With a commitment to excellence, the team approaches new preview runtime releases carefully. They target an experimental preview in about three months but ultimately establish timelines on a case-by-case basis. This approach involves evaluating critical components of each Spark version, including Java, Scala, Python, R, and Delta Lake. After thorough assessment, the team creates a detailed timeline outlining the runtime's availability and progression through various stages. Overall, the goal is to establish a standard lifecycle path for Microsoft Fabric runtimes for Apache Spark.
+With a commitment to excellence, the team approaches new preview runtime releases carefully. They target an experimental preview in about three months but ultimately establish timelines on a case-by-case basis. This approach involves evaluating critical components of each Spark version, including Java, Scala, Python, R, and Delta Lake. After thorough assessment, the team creates a detailed timeline outlining the runtime's availability and progression through various stages. Overall, the goal is to establish a standard lifecycle path for Fabric runtimes for Apache Spark.
 
 > [!TIP]
 > Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 1.3](./runtime-1-3.md).

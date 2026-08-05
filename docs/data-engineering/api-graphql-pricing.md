@@ -38,7 +38,7 @@ The following table defines the consumption rate for API for GraphQL operations:
 
 ## Monitor the usage
 
-The [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for API for GraphQL operations under the name "Query". Additionally, API users are able to view a summary of their billing charges for API for GraphQL usage under the invoicing item "GraphQL".
+The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for API for GraphQL operations under the name "Query". Additionally, API users are able to view a summary of their billing charges for API for GraphQL usage under the invoicing item "GraphQL".
 
 :::image type="content" source="media/api-graphql-pricing/api-graphql-capacity-app.png" alt-text="Screenshot of GraphQL in Capacity app." lightbox="media/api-graphql-pricing/api-graphql-capacity-app.png":::
 
@@ -61,5 +61,5 @@ To optimize costs, design your GraphQL queries to request only the data you need
 
 - [Fabric Operations](../enterprise/fabric-operations.md)
 - [Fabric Throttling Policy](../enterprise/throttling.md)
-- [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md)
+- [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md)
 - [Fabric API for GraphQL query editor](api-graphql-editor.md)

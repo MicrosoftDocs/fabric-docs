@@ -1,12 +1,12 @@
 ---
-title: Troubleshoot Git Integration for Fabric Warehouse Development
+title: Troubleshoot Git Integration for Fabric Data Warehouse Development
 description: Learn how to troubleshoot Fabric's built-in Git integration when developing and deploying Fabric Data Warehouse.
 ms.reviewer: pvenkat
 ms.date: 07/30/2026
 ms.topic: troubleshooting-general
 ---
 
-# Troubleshoot Git integration for Fabric warehouse development
+# Troubleshoot Git integration for warehouse development
 
 **Applies to**: [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 

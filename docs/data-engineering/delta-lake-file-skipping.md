@@ -161,7 +161,7 @@ For more on data layout optimization, see [Table compaction](table-compaction.md
 
 - [Table compaction](table-compaction.md)
 - [Automated statistics for Delta tables](automated-table-statistics.md)
-- [V-Order](delta-optimization-and-v-order.md)
+- [V-order](delta-optimization-and-v-order.md)
 - [Liquid clustering](liquid-clustering.md)
 - [Z-Order](delta-lake-z-order.md)
 - [Delta table maintenance](delta-lake-table-maintenance.md)

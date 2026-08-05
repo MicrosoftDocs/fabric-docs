@@ -18,7 +18,7 @@ GraphQL operation logs are part of Fabric's [workspace monitoring](../fundamenta
 To access and query GraphQL operation logs:
 
 1. [Enable workspace monitoring](../fundamentals/enable-workspace-monitoring.md) in your Fabric workspace
-1. Access the Eventhouse KQL database created for your workspace
+1. Access the eventhouse KQL database created for your workspace
 1. Familiarity with [Kusto Query Language (KQL)](/azure/data-explorer/kusto/query/) for querying the logs
 
 Once monitoring is enabled, GraphQL operations are automatically logged to two tables: `GraphQLMetrics` for aggregated metrics and `GraphQLLog` for detailed operation logs.
@@ -58,11 +58,11 @@ This table contains the following columns:
 |---|---|---|
 | Timestamp | datetime | The timestamp (UTC) of when the log entry was generated when the record was created by the data source. |
 | ItemId | string | Unique ID of the resource logging the data. |
-| ItemKind | string | Type of artifact logging the operation. |
-| ItemName | string | The name of the Fabric artifact logging this operation. |
-| WorkspaceId | string | Unique identifier of the Fabric workspace that contains the artifact being operated on |
-| WorkspaceName | string | Name of the Fabric workspace containing the artifact. |
-| CapacityId | string | Unique identifier of the capacity hosting the artifact being operated on. |
+| ItemKind | string | Type of item logging the operation. |
+| ItemName | string | The name of the Fabric item logging this operation. |
+| WorkspaceId | string | Unique identifier of the Fabric workspace that contains the item being operated on |
+| WorkspaceName | string | Name of the Fabric workspace containing the item. |
+| CapacityId | string | Unique identifier of the capacity hosting the item being operated on. |
 | CustomerTenantId | string | Customer Tenant ID, where the operation was performed. |
 | PlatformMonitoringTableName | string | The name of the table to records belongs to (or the certified event type of the record). Format is \<WorkloadName\> + [OperationType>]+ \<TelemetryType\> |
 | Region | string | The region of the resource emitting the event; for example, East US or France South. |
@@ -86,11 +86,11 @@ This table contains the following columns:
 | Timestamp | datetime | The timestamp (UTC) of when the log entry was generated when the record was created by the data source. |
 | OperationName | string | The name of the operation. |
 | ItemId | string | Unique ID of the resource logging the data. |
-| ItemKind | string | Type of artifact logging the operation. |
-| ItemName | string | The name of the Fabric artifact logging this operation. |
-| WorkspaceId | string | Unique identifier of the Fabric workspace that contains the artifact being operated on. |
-| WorkspaceName | string | Name of the Fabric workspace containing the artifact. |
-| CapacityId | string | Unique identifier of the capacity hosting the artifact being operated on. |
+| ItemKind | string | Type of item logging the operation. |
+| ItemName | string | The name of the Fabric item logging this operation. |
+| WorkspaceId | string | Unique identifier of the Fabric workspace that contains the item being operated on. |
+| WorkspaceName | string | Name of the Fabric workspace containing the item. |
+| CapacityId | string | Unique identifier of the capacity hosting the item being operated on. |
 | CorrelationId | string | Root Activity ID. |
 | OperationId | string | Unique identifier for the operation being logged. |
 | Identity | dynamic | User and claim details. The user associated with the operation that is being reported. |
@@ -108,7 +108,7 @@ This table contains the following columns:
 
 ## Sample queries
 
-Use these KQL queries to analyze your GraphQL operation logs. You can run these queries directly in the Eventhouse query editor within your workspace.
+Use these KQL queries to analyze your GraphQL operation logs. You can run these queries directly in the eventhouse query editor within your workspace.
 
 ### Find slow queries
 

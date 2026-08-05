@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 JDBC (Java Database Connectivity) is a widely adopted standard that enables client applications to connect to and work with data from databases and big data platforms.
 
-The Microsoft JDBC Driver for Fabric Data Engineering lets you connect, query, and manage Spark workloads in Microsoft Fabric with the reliability and simplicity of the JDBC standard. Built on Microsoft Fabric's Livy APIs, the driver provides secure and flexible Spark SQL connectivity to your Java applications and BI tools. This integration allows you to submit and execute Spark code directly without needing to create separate Notebook or Spark Job Definition artifacts. The driver is compatible with popular JDBC clients such as DbVisualizer and DBeaver, as well as BI tools that support JDBC connectivity, including Tableau.
+The Microsoft JDBC Driver for Fabric Data Engineering lets you connect, query, and manage Spark workloads in Fabric with the reliability and simplicity of the JDBC standard. Built on Fabric's Livy APIs, the driver provides secure and flexible Spark SQL connectivity to your Java applications and BI tools. This integration allows you to submit and execute Spark code directly without needing to create separate notebook or Spark job definition items. The driver is compatible with popular JDBC clients such as DbVisualizer and DBeaver, as well as BI tools that support JDBC connectivity, including Tableau.
 
 ## Key Features
 
@@ -28,19 +28,19 @@ The Microsoft JDBC Driver for Fabric Data Engineering lets you connect, query, a
 
 ## Prerequisites
 
-Before using the Microsoft JDBC Driver for Microsoft Fabric Data Engineering, ensure you have:
+Before using the Microsoft JDBC Driver for Fabric Data Engineering, ensure you have:
 
 - **Java Development Kit (JDK)**: Version 11 or higher (Java 21 recommended)
-- **Microsoft Fabric Access**: Access to a Microsoft Fabric workspace
+- **Fabric Access**: Access to a Fabric workspace
 - **Microsoft Entra ID credentials**: Appropriate credentials for authentication
 - **Workspace and Lakehouse IDs**: GUID identifiers for your Fabric workspace and lakehouse
 
 ## Download and Installation
 
-Microsoft JDBC Driver for Microsoft Fabric Data Engineering version 1.0.0 supports Java 11, 17, and 21. We're continually improving Java connectivity support and recommend that you work with the latest version of the Microsoft JDBC driver.
+Microsoft JDBC Driver for Fabric Data Engineering version 1.0.0 supports Java 11, 17, and 21. We're continually improving Java connectivity support and recommend that you work with the latest version of the Microsoft JDBC driver.
 
-* [Download Microsoft JDBC Driver for Microsoft Fabric Data Engineering (zip)](https://download.microsoft.com/download/5e763393-274e-48c5-a55a-0375340bc520/ms-sparksql-jdbc-1.0.0.zip)
-* [Download Microsoft JDBC Driver for Microsoft Fabric Data Engineering (tar)](https://download.microsoft.com/download/5e763393-274e-48c5-a55a-0375340bc520/ms-sparksql-jdbc-1.0.0.tar)
+* [Download Microsoft JDBC Driver for Fabric Data Engineering (zip)](https://download.microsoft.com/download/5e763393-274e-48c5-a55a-0375340bc520/ms-sparksql-jdbc-1.0.0.zip)
+* [Download Microsoft JDBC Driver for Fabric Data Engineering (tar)](https://download.microsoft.com/download/5e763393-274e-48c5-a55a-0375340bc520/ms-sparksql-jdbc-1.0.0.tar)
 
 1. Download either the zip or tar file from the links above.
 1. Extract the downloaded file to access the driver JAR files.
@@ -53,7 +53,7 @@ Microsoft JDBC Driver for Microsoft Fabric Data Engineering version 1.0.0 suppor
 
 ## Quick Start Example
 
-This example demonstrates how to connect to Microsoft Fabric and execute a query using the Microsoft JDBC Driver for Microsoft Fabric Data Engineering. Before running this code, ensure you have completed the prerequisites and installed the driver.
+This example demonstrates how to connect to Fabric and execute a query using the Microsoft JDBC Driver for Fabric Data Engineering. Before running this code, ensure you have completed the prerequisites and installed the driver.
 
 ```java
 import java.sql.*;
@@ -87,7 +87,7 @@ public class QuickStartExample {
 
 ### Basic Connection String
 
-The Microsoft JDBC Driver for Microsoft Fabric Data Engineering uses the following connection string format:
+The Microsoft JDBC Driver for Fabric Data Engineering uses the following connection string format:
 
 ```
 jdbc:fabricspark://<hostname>[:<port>][;<parameter1>=<value1>;<parameter2>=<value2>;...]
@@ -98,7 +98,7 @@ jdbc:fabricspark://<hostname>[:<port>][;<parameter1>=<value1>;<parameter2>=<valu
 | Component | Description | Example |
 |-----------|-------------|---------|
 | **Protocol** | JDBC URL protocol identifier | `jdbc:fabricspark://` |
-| **Hostname** | Microsoft Fabric endpoint hostname | `api.fabric.microsoft.com` |
+| **Hostname** | Fabric endpoint hostname | `api.fabric.microsoft.com` |
 | **Port** | Optional port number (default: 443) | `:443` |
 | **Parameters** | Semicolon-separated key=value pairs | `FabricWorkspaceID=<guid>` |
 
@@ -123,7 +123,7 @@ jdbc:fabricspark://api.fabric.microsoft.com;FabricWorkspaceID=<workspace-id>;Fab
 
 ## Authentication
 
-The Microsoft JDBC Driver for Microsoft Fabric Data Engineering supports multiple authentication methods through Microsoft Entra ID (formerly Azure Active Directory). Authentication is configured using the `AuthFlow` parameter in the connection string.
+The Microsoft JDBC Driver for Fabric Data Engineering supports multiple authentication methods through Microsoft Entra ID (formerly Azure Active Directory). Authentication is configured using the `AuthFlow` parameter in the connection string.
 
 ### Authentication Flows
 
@@ -256,8 +256,8 @@ These parameters must be present in every connection string:
 
 | Parameter | Type | Description | Example |
 |-----------|------|-------------|---------|
-| `FabricWorkspaceID` | UUID | Microsoft Fabric workspace identifier | `<workspace-id>` |
-| `FabricLakehouseID` | UUID | Microsoft Fabric lakehouse identifier | `<lakehouse-id>` |
+| `FabricWorkspaceID` | UUID | Fabric workspace identifier | `<workspace-id>` |
+| `FabricLakehouseID` | UUID | Fabric lakehouse identifier | `<lakehouse-id>` |
 | `AuthFlow` | Integer | Authentication flow type (1-5) | `2` |
 
 ### Optional Parameters
@@ -266,7 +266,7 @@ These parameters must be present in every connection string:
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `FabricVersion` | String | `v1` | Microsoft Fabric API version |
+| `FabricVersion` | String | `v1` | Fabric API version |
 | `LivyApiVersion` | String | `2023-12-01` | Livy API version |
 
 #### Environment Configuration
