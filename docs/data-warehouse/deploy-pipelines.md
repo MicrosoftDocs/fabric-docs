@@ -2,7 +2,7 @@
 title: Deploy Fabric Data Warehouse Using Pipelines
 description: Learn how pipelines can provide development lifecycle structure to Fabric Data Warehouse.
 ms.reviewer: pvenkat, randolphwest
-ms.date: 08/04/2026
+ms.date: 08/05/2026
 ms.topic: concept-article
 ---
 
@@ -78,9 +78,10 @@ Fabric deployment pipelines use DacFx deployment technology with configurations 
 
 - By default, the system blocks table drops. The deployment process doesn't automatically drop objects that exist in the target but not in the source. This design reduces accidental data loss and prevents unexpected removals in production. 
 - A successful deployment doesn't always mean every requested change was applied. A deployment can report success even when it skips a requested drop-table action, because table drops are blocked by default. In that case, the deployment operation completes, but the target can still drift from source control until you explicitly resolve the missing change.
-- Fabric Deployment pipelines don't support the SQL analytics endpoint item. Currently, the deployment process prioritizes safety over strict source parity by not dropping objects that exist only in the target. 
+- Currently, the deployment process prioritizes safety over strict source parity by not dropping objects that exist only in the target. 
+- Fabric Deployment pipelines don't support the SQL analytics endpoint item. 
 - Cross item dependencies, item sequencing, and synchronization gaps between the SQL analytics endpoint and warehouse impact Fabric Deployment Pipelines workflows.
-- With Fabric Deployment pipelines, you can deploy only one warehouse at a time. Selecting related items for deployment isn't supported.
+- Selecting related items in deployment pipelines for Fabric Data Warehouse isn't supported.
 
 ## Troubleshooting Git integration 
 
