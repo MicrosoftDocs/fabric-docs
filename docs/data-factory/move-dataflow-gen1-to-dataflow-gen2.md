@@ -96,3 +96,4 @@ To use the Save As feature:
 
 - [What is Dataflow Gen2?](dataflows-gen2-overview.md)
 - [Migrate to Dataflow Gen2 (CI/CD) using Save As](migrate-to-dataflow-gen2-using-save-as.md)
+- [Upgrade Dataflow Gen1 using the Dataflows Upgrade Wizard](migrate-to-dataflow-gen2-using-upgrade-wizard.md)
