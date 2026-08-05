@@ -115,6 +115,8 @@ When you migrate your dataflows, it's important to think beyond simply copying e
 
 In the [migration scenarios article](dataflow-gen2-migrate-from-dataflow-gen1-scenarios.md), several methods for upgrading, taking inventory, and using accelerators like [Power Query templates](/power-query/power-query-template) are described. These methods can help to ensure a seamless upgrade for your projects.
 
+If you want to upgrade your Dataflow Gen1 items in place, keeping each dataflow's ID, name, schedule, and connections, use the [Dataflows Upgrade Wizard](migrate-to-dataflow-gen2-using-upgrade-wizard.md), which is currently in preview.
+
 ### Roadmap
 
 The [Microsoft Fabric release plan](https://aka.ms/fabricreleaseplan) announces the latest updates and timelines as features are prepared for future release, including what's new and planned for [Data Factory in Microsoft Fabric](https://aka.ms/fabricrm).
@@ -124,6 +126,7 @@ The [Microsoft Fabric release plan](https://aka.ms/fabricreleaseplan) announces 
 For more information about this article, check out the following resources:
 
 - [Dataflow migration scenarios](dataflow-gen2-migrate-from-dataflow-gen1-scenarios.md)
+- [Upgrade Dataflow Gen1 using the Dataflows Upgrade Wizard](migrate-to-dataflow-gen2-using-upgrade-wizard.md)
 - [What is Data Factory in Microsoft Fabric?](data-factory-overview.md)
 - [Getting from Dataflow Generation 1 to Dataflow Generation 2](dataflows-gen2-overview.md)
 - Questions? [Try asking the Fabric community](https://community.fabric.microsoft.com/)
