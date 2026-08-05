@@ -5,7 +5,7 @@ ms.reviewer: makromer
 ms.topic: overview
 ms.custom: configuration, sfi-image-nochange
 ms.search.form: product-data-integration, Data_Factory_Overview, product-data-factory
-ms.date: 06/17/2026
+ms.date: 08/05/2026
 ai-usage: ai-assisted
 ---
 
@@ -98,6 +98,10 @@ Data Factory in Microsoft Fabric is the next generation of Azure Data Factory, b
 [See the comparison guide](compare-fabric-data-factory-and-azure-data-factory.md) for the key differences between these two services, so you can make the right choice for your enterprise.
 
 When you're ready to migrate, follow the [migration guide](migrate-planning-azure-data-factory.md) for your Azure Data Factory and Azure Synapse pipelines.
+
+## What is the Fabric Data Factory Pipeline SLA?
+
+The SLA for pipelines in Fabric is equivalent to the SLA for pipelines in [Azure Data Factory](https://azure.microsoft.com/products/data-factory): "Microsoft guarantees that it will successfully process requests to perform operations against Data Factory resources at least 99.9 percent of the time. It also guarantees that all activity runs will initiate within four minutes of their scheduled execution times at least 99.9 percent of the time. Read the full Data Factory service-level agreement (SLA)."
 
 ## Related content
 
