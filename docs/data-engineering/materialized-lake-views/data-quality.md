@@ -16,7 +16,7 @@ This article explains how to implement data quality checks in materialized lake 
 
 ## Implement data quality
 
-In materialized lake views (MLVs) in Microsoft Fabric, you maintain data quality by defining constraints on your views. Without explicit checks, minor data issues can increase processing time or fail the pipeline.
+In materialized lake views (MLVs) in Fabric, maintain data quality by defining constraints on your views. Without explicit checks, minor data issues can increase processing time or fail the pipeline.
 
 When a row violates a constraint, you can use one of these actions:
 

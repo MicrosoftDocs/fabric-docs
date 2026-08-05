@@ -15,7 +15,7 @@ Microsoft Fabric supports queueing for background Spark jobs when capacity reach
 
 When capacity is available, jobs start immediately. When capacity is fully used, behavior depends on job type and queue eligibility.
 
-To learn more about concurrency limits, see [Concurrency limits and queueing in Apache Spark for Microsoft Fabric](spark-job-concurrency-and-queueing.md).
+To learn more about concurrency limits, see [Concurrency limits and queueing in Apache Spark for Fabric](spark-job-concurrency-and-queueing.md).
 
 ## What gets queued
 
@@ -23,7 +23,7 @@ Queueing is supported for:
 
 - Notebook jobs triggered by pipelines.
 - Notebook jobs triggered by scheduler.
-- Spark Job Definition runs triggered by pipelines or scheduler.
+- Spark job definition runs triggered by pipelines or scheduler.
 
 Queueing isn't supported for:
 
@@ -84,6 +84,6 @@ When a capacity reaches the queue limit, new submissions are rejected with `TooM
 
 ## Related content
 
-- Learn about [Apache Spark billing and utilization in Microsoft Fabric](billing-capacity-management-for-spark.md).
+- Learn about [Apache Spark billing and utilization in Fabric](billing-capacity-management-for-spark.md).
 - Learn about [Apache Spark compute for Fabric](spark-compute.md).
-- Learn about [job admission in Apache Spark for Microsoft Fabric](job-admission-management.md).
+- Learn about [job admission in Apache Spark for Fabric](job-admission-management.md).

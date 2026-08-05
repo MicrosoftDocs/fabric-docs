@@ -7,7 +7,7 @@ ms.date: 03/19/2026
 #customer intent: As a data engineer, I want to create materialized lake views in a lakehouse so that I can optimize query performance and manage data quality.
 ---
 
-# PySpark reference for materialized lake views (Preview)
+# PySpark reference for materialized lake views (preview)
 
 This article is for data engineers who need to create materialized lake views using PySpark instead of Spark SQL. Use PySpark when your transformations require complex logic, reusable functions, external Python libraries, or custom UDFs that are difficult to express in SQL.
 
@@ -233,7 +233,7 @@ spark.sql("DROP MATERIALIZED LAKE VIEW IF EXISTS silver.customer_enriched")
 
 * Incremental refresh strategy in optimal refresh isn't supported for PySpark based materialized lake views; all refreshes either default to a full refresh or no refresh
 * You can only refresh PySpark materialized lake views through the lineage schedule.
-* Renaming is supported only through lakehouse explorer. To rename via notebook, drop and recreate the view with the new name.
+* Renaming is supported only through Lakehouse explorer. To rename via notebook, drop and recreate the view with the new name.
 * Only `%%pyspark` and `%%sql` magic commands are supported, and they must appear at the top of a notebook cell. Magic commands placed elsewhere within the same cell aren't supported.
 * The name of a materialized lake view can include special characters except for periods.
 * The `@fmlv` decorator doesn't support dynamic parameters or variables. All parameters must be hardcoded in the decorator definition. For example, the following code doesn't work because it uses a variable to pass the name parameter value:
@@ -250,6 +250,6 @@ spark.sql("DROP MATERIALIZED LAKE VIEW IF EXISTS silver.customer_enriched")
 
 ## Related content
 
-* [What are materialized lake views in Microsoft Fabric?](./overview-materialized-lake-view.md)
+* [What are materialized lake views in Fabric?](./overview-materialized-lake-view.md)
 * [Data quality in materialized lake views](./data-quality.md)
 * [Optimal refresh for materialized lake views](./refresh-materialized-lake-view.md)

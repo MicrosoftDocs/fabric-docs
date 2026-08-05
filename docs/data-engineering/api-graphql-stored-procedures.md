@@ -10,15 +10,15 @@ ms.search.form:
 
 # Use stored procedures with Fabric API for GraphQL
 
-Microsoft Fabric API for GraphQL makes it easy to query and mutate data from a Fabric SQL database and other Fabric data sources such as Data Warehouse and Lakehouse, with strongly typed schemas and a rich query language allowing developers to create an intuitive API without writing custom server code. You can use stored procedures to encapsulate and reuse complex business logic, including input validation and data transformation.
+Microsoft Fabric API for GraphQL makes it easy to query and mutate data from a SQL database in Fabric and other Fabric data sources such as warehouses and lakehouses, with strongly typed schemas and a rich query language allowing developers to create an intuitive API without writing custom server code. You can use stored procedures to encapsulate and reuse complex business logic, including input validation and data transformation.
 
 ## Who uses stored procedures with GraphQL
 
 Stored procedures in GraphQL are valuable for:
-- **Data engineers** implementing data validation, transformation, and processing workflows in Fabric SQL databases
+- **Data engineers** implementing data validation, transformation, and processing workflows in SQL databases in Fabric
 - **Backend developers** exposing complex business logic from Fabric warehouses through modern GraphQL APIs
 - **Application architects** designing secure, performant APIs that encapsulate business rules within the Fabric platform
-- **Database developers** modernizing existing Fabric SQL database stored procedures with GraphQL interfaces
+- **Database developers** modernizing existing SQL database in Fabric stored procedures with GraphQL interfaces
 
 Use stored procedures when you need server-side logic for data validation, complex calculations, or multi-step database operations.
 
@@ -26,7 +26,7 @@ This article demonstrates how to expose a stored procedure through a GraphQL mut
 
 ## Prerequisites
 
-Before you begin, you need a Fabric SQL database with sample data:
+Before you begin, you need a SQL database in Fabric with sample data:
 
 1. In your Fabric workspace, select **New Item** > **SQL database (preview)**
 1. Give your database a name
@@ -197,5 +197,5 @@ By exposing stored procedures through Fabric API for GraphQL, you combine the po
 ## Related content
 
 - [Fabric API for GraphQL Editor](api-graphql-editor.md)
-- [SQL database in Microsoft Fabric](../database/sql/overview.md)
+- [SQL database in Fabric](../database/sql/overview.md)
 

@@ -7,7 +7,7 @@ ms.date: 05/07/2026
 ms.search.form: Lakehouse Explorer
 ---
 
-# Navigate the Fabric Lakehouse explorer
+# Navigate the Lakehouse explorer
 
 The Lakehouse explorer is the central page for interacting with your lakehouse in the Fabric portal. To open it, go to your workspace and select a lakehouse item. From here you can browse tables and files, preview data, load new data, and manage lakehouse objects.
 
@@ -137,7 +137,7 @@ The Lakehouse explorer includes a built-in Spark SQL query editor that you can u
 
 ## Related content
 
-- [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md)
+- [Options to get data into the lakehouse in Fabric](load-data-lakehouse.md)
 - [What are lakehouse schemas?](lakehouse-schemas.md)
 - [Query data with the Spark SQL query explorer](lakehouse-query-explorer.md)
 - [Lakehouse overview](lakehouse-overview.md)

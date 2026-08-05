@@ -234,6 +234,6 @@ Routing small shuffles to local disk and only large shuffles to remote storage d
 ## Related content
 
 - [Native execution engine for Fabric Data Engineering](native-execution-engine-overview.md)
-- [Configure resource profiles in Microsoft Fabric](configure-resource-profiles.md)
+- [Configure resource profiles in Fabric](configure-resource-profiles.md)
 - [Autoscale Spark billing overview](autoscale-billing-for-spark-overview.md)
 - [Apache Spark Runtimes in Fabric](./runtime.md)

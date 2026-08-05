@@ -24,5 +24,5 @@ If you drag and drop the file with supported type from the environment **Resourc
 
 ## Related content
 
-- [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md)
-- [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md)
+- [Create, configure, and use an environment in Fabric](create-and-use-environment.md)
+- [Develop, execute, and manage Fabric notebooks](author-execute-notebook.md)

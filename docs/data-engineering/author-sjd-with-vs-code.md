@@ -104,5 +104,5 @@ You can edit the detail properties of Spark job definitions, such as command-lin
 
 ## Related content
 
-- [Explore Microsoft Fabric lakehouses in Visual Studio Code](explore-lakehouse-with-vs-code.md)
-- [Create and manage Microsoft Fabric notebooks in Visual Studio Code](author-notebook-with-vs-code.md)
+- [Explore Fabric lakehouses in Visual Studio Code](explore-lakehouse-with-vs-code.md)
+- [Create and manage Fabric notebooks in Visual Studio Code](author-notebook-with-vs-code.md)

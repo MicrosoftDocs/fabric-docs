@@ -33,7 +33,7 @@ The following **Job scheduler** actions are available for notebooks:
 
 |Action|Description|
 |---------|---------|
-|Run on demand Item Job|Run a notebook on demand with support for parameterization, session configuration (such as Spark/compute settings), environment and runtime selection, and target Fabric Lakehouse selection.|
+|Run on demand Item Job|Run a notebook on demand with support for parameterization, session configuration (such as Spark/compute settings), environment and runtime selection, and target lakehouse selection.|
 |Cancel Item Job Instance|Cancel a notebook job run.|
 |Get Item Job Instance|Get notebook run status and retrieve the exit value returned by the run.|
 

@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 # Apache Spark advisor for real-time advice on notebooks
 
-The Apache Spark advisor analyzes commands and code run by Apache Spark and displays real-time advice for Notebook runs. The Apache Spark advisor has built-in patterns to help users avoid common mistakes. It offers recommendations for code optimization, performs error analysis, and locates the root cause of failures.
+The Apache Spark advisor analyzes commands and code run by Apache Spark and displays real-time advice for notebook runs. The Apache Spark advisor has built-in patterns to help users avoid common mistakes. It offers recommendations for code optimization, performs error analysis, and locates the root cause of failures.
 
 ## Built-in advice
 
@@ -72,7 +72,7 @@ When the [Native Execution Engine](./native-execution-engine-overview.md) is ena
 
 ## User experience
 
-The Apache Spark advisor displays the advice, including info, warnings, and errors, at Notebook cell output in real-time.
+The Apache Spark advisor displays the advice, including info, warnings, and errors, at notebook cell output in real-time.
 
 - Info
     :::image type="content" source="media\spark-advisor-introduction\info.png" alt-text="Screenshot showing the info." lightbox="media/spark-advisor-introduction/info.png":::
@@ -85,9 +85,9 @@ The Apache Spark advisor displays the advice, including info, warnings, and erro
 
 ## Spark Advisor Setting
 
-The Spark advisor setting allows you to choose whether to show or hide specific types of Spark advice according to your needs. Additionally, you have the flexibility to enable or disable the Spark Advisor for your Notebooks within a workspace, based on your preferences.
+The Spark advisor setting allows you to choose whether to show or hide specific types of Spark advice according to your needs. Additionally, you have the flexibility to enable or disable the Spark Advisor for your notebooks within a workspace, based on your preferences.
 
-You can access the Spark Advisor settings at the Fabric Notebook level to enjoy its benefits and ensure a productive notebook authoring experience.
+You can access the Spark Advisor settings at the Fabric notebook level to enjoy its benefits and ensure a productive notebook authoring experience.
 
 :::image type="content" source="media\spark-advisor-introduction\spark-advisor-setting.png" alt-text="Screenshot showing the spark advisor setting." lightbox="media/spark-advisor-introduction/spark-advisor-setting.png":::
 

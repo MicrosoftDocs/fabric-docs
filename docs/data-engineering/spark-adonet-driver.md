@@ -1,4 +1,4 @@
-﻿---
+---
 title: Microsoft ADO.NET Driver for Microsoft Fabric Data Engineering
 description: Learn how to connect, query, and manage Spark workloads in Microsoft Fabric using the Microsoft ADO.NET Driver for Microsoft Fabric Data Engineering.
 ms.reviewer: arali
@@ -12,7 +12,7 @@ ms.date: 03/18/2026
 
 ADO.NET is a widely adopted data access technology in the .NET ecosystem that enables applications to connect to and work with data from databases and big data platforms.
 
-The Microsoft ADO.NET Driver for Fabric Data Engineering lets you connect, query, and manage Spark workloads in Microsoft Fabric with the reliability and simplicity of standard ADO.NET patterns. Built on Microsoft Fabric's Livy APIs, the driver provides secure and flexible Spark SQL connectivity to your .NET applications using familiar `DbConnection`, `DbCommand`, and `DbDataReader` abstractions.
+The Microsoft ADO.NET Driver for Fabric Data Engineering lets you connect, query, and manage Spark workloads in Fabric with the reliability and simplicity of standard ADO.NET patterns. Built on Fabric's Livy APIs, the driver provides secure and flexible Spark SQL connectivity to your .NET applications using familiar `DbConnection`, `DbCommand`, and `DbDataReader` abstractions.
 
 ## Key features
 
@@ -26,14 +26,14 @@ The Microsoft ADO.NET Driver for Fabric Data Engineering lets you connect, query
 - **Auto-Reconnect**: Automatic session recovery after connection failures
 
 > [!NOTE]
-> In open-source Apache Spark, database and schema are used synonymously. For example, running `SHOW SCHEMAS` or `SHOW DATABASES` in a Fabric Notebook returns the same result — a list of all schemas in the Lakehouse.
+> In open-source Apache Spark, database and schema are used synonymously. For example, running `SHOW SCHEMAS` or `SHOW DATABASES` in a Fabric notebook returns the same result — a list of all schemas in the lakehouse.
 
 ## Prerequisites
 
-Before using the Microsoft ADO.NET Driver for Microsoft Fabric Data Engineering, ensure you have:
+Before using the Microsoft ADO.NET Driver for Fabric Data Engineering, ensure you have:
 
 - **.NET Runtime**: .NET 8.0 or later
-- **Microsoft Fabric Access**: Access to a Microsoft Fabric workspace with Data Engineering capabilities
+- **Fabric Access**: Access to a Fabric workspace with Data Engineering capabilities
 - **Azure Entra ID Credentials**: Appropriate credentials for authentication
 - **Workspace and Lakehouse IDs**: GUID identifiers for your Fabric workspace and lakehouse
 - **Azure CLI** (optional): Required for Azure CLI authentication method
@@ -42,10 +42,10 @@ Before using the Microsoft ADO.NET Driver for Microsoft Fabric Data Engineering,
 
 ### Download NuGet package
 
-Microsoft ADO.NET Driver for Microsoft Fabric Data Engineering version 1.0.0 is in public preview which you can download from these download center links.
+Microsoft ADO.NET Driver for Fabric Data Engineering version 1.0.0 is in public preview which you can download from these download center links.
 
-* [Download Microsoft ADO.NET Driver for Microsoft Fabric Data Engineering (zip)](https://download.microsoft.com/download/22fad6c0-9764-458e-913d-678aa8e9b239/ms-sparksql-adonet-1.0.0.zip)
-* [Download Microsoft ADO.NET Driver for Microsoft Fabric Data Engineering (tar)](https://download.microsoft.com/download/22fad6c0-9764-458e-913d-678aa8e9b239/ms-sparksql-adonet-1.0.0.tar)
+* [Download Microsoft ADO.NET Driver for Fabric Data Engineering (zip)](https://download.microsoft.com/download/22fad6c0-9764-458e-913d-678aa8e9b239/ms-sparksql-adonet-1.0.0.zip)
+* [Download Microsoft ADO.NET Driver for Fabric Data Engineering (tar)](https://download.microsoft.com/download/22fad6c0-9764-458e-913d-678aa8e9b239/ms-sparksql-adonet-1.0.0.tar)
 
 ### Reference NuGet package in your project
 
@@ -113,10 +113,10 @@ Parameter1=Value1;Parameter2=Value2;...
 
 | Parameter | Description | Example |
 |-----------|-------------|---------|
-| `Server` | Microsoft Fabric API endpoint | `https://api.fabric.microsoft.com/v1` |
+| `Server` | Fabric API endpoint | `https://api.fabric.microsoft.com/v1` |
 | `SparkServerType` | Server type identifier | `Fabric` |
-| `FabricWorkspaceID` | Microsoft Fabric workspace identifier (GUID) | `<workspace-id>` |
-| `FabricLakehouseID` | Microsoft Fabric lakehouse identifier (GUID) | `<lakehouse-id>` |
+| `FabricWorkspaceID` | Fabric workspace identifier (GUID) | `<workspace-id>` |
+| `FabricLakehouseID` | Fabric lakehouse identifier (GUID) | `<lakehouse-id>` |
 | `AuthFlow` | Authentication method | `AzureCli`, `BrowserBased`, `ClientSecretCredential`, `ClientCertificateCredential`, `AuthAccessToken`, `FileToken` |
 
 ### Optional parameters
@@ -546,7 +546,7 @@ if (await reader.ReadAsync())
 
 ## Troubleshooting
 
-This section provides guidance for resolving common issues you might encounter when using the Microsoft ADO.NET Driver for Microsoft Fabric Data Engineering.
+This section provides guidance for resolving common issues you might encounter when using the Microsoft ADO.NET Driver for Fabric Data Engineering.
 
 ### Common issues
 
@@ -554,7 +554,7 @@ The following sections describe common problems and their solutions:
 
 #### Connection failures
 
-**Problem**: Can't connect to Microsoft Fabric
+**Problem**: Can't connect to Fabric
 
 **Solutions**:
 1. Verify `FabricWorkspaceID` and `FabricLakehouseID` are correct GUIDs
@@ -625,5 +625,5 @@ Log levels:
 * [Apache Spark Runtimes in Fabric](./runtime.md)
 * [Fabric Runtime 1.3](./runtime-1-3.md)
 * [What is the Livy API for Data Engineering](./api-livy-overview.md)
-* [Microsoft JDBC Driver for Microsoft Fabric Data Engineering](./spark-jdbc-driver.md)
-* [Microsoft ODBC Driver for Microsoft Fabric Data Engineering](./spark-odbc-driver.md)
+* [Microsoft JDBC Driver for Fabric Data Engineering](./spark-jdbc-driver.md)
+* [Microsoft ODBC Driver for Fabric Data Engineering](./spark-odbc-driver.md)

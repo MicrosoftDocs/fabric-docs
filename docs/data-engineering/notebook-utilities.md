@@ -10,7 +10,7 @@ ms.date: 03/31/2025
 
 # NotebookUtils (former MSSparkUtils) for Fabric
 
-Notebook Utilities (NotebookUtils) is a built-in package to help you easily perform common tasks in Fabric Notebook. You can use NotebookUtils to work with file systems, to get environment variables, to chain notebooks together, and to work with secrets. The NotebookUtils package is available in PySpark (Python) Scala, SparkR notebooks, and Fabric pipelines.
+Notebook Utilities (NotebookUtils) is a built-in package to help you easily perform common tasks in notebooks in Microsoft Fabric. You can use NotebookUtils to work with file systems, to get environment variables, to chain notebooks together, and to work with secrets. The NotebookUtils package is available in PySpark (Python) Scala, SparkR notebooks, and Fabric pipelines.
 
 > [!NOTE]
 > - MsSparkUtils is officially renamed to **NotebookUtils**. The existing code remains **backward compatible** and doesn't cause any breaking changes. It's **strongly recommended** to upgrade to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
@@ -54,5 +54,5 @@ notebookutils.credentials.help()
 ## Related content
 
 - [Microsoft Spark Utilities (MSSparkUtils) for Fabric](microsoft-spark-utilities.md)
-- [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md)
+- [Develop, execute, and manage Fabric notebooks](author-execute-notebook.md)
 - [Manage and execute notebooks in Fabric with APIs](notebook-public-api.md)

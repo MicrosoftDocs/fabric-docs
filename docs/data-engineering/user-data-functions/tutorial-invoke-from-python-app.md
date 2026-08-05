@@ -24,7 +24,7 @@ In this tutorial, you:
 
 - [Visual Studio Code](https://code.visualstudio.com/download) installed on your local machine.
 - [Python 3.11](https://www.python.org/downloads/release/python-3110/) installed on your local machine.
-- A [Microsoft Fabric account](https://www.microsoft.com/microsoft-fabric/getting-started). You can sign up for a free trial.
+- A [Fabric account](https://www.microsoft.com/microsoft-fabric/getting-started). You can sign up for a free trial.
 - A [Fabric workspace](../../fundamentals/create-workspaces.md).
 - A published user data functions item. For instructions, see [Create user data functions in Visual Studio Code](./create-user-data-functions-vs-code.md) or [Create user data functions in the portal](./create-user-data-functions-portal.md).
 
@@ -38,7 +38,7 @@ To call user data functions from an external application, you need to register a
 
 1. Under the *Manage* list, select **API permissions**, then **Add permission**.
 
-1. Add the **PowerBI Service**, select **Delegated permissions**, and select **UserDataFunction.Execute.All** or **item.Execute.All** permissions. Confirm that admin consent isn't required.
+1. Add the **Power BI Service**, select **Delegated permissions**, and select **UserDataFunction.Execute.All** or **item.Execute.All** permissions. Confirm that admin consent isn't required.
 
 1. Go back to the *Manage* setting and select **Authentication** > **Add a platform** > **Single-page application**.
 

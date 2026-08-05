@@ -21,13 +21,13 @@ Begin with the latest available Fabric Runtime to take advantage of recent enhan
 
 ##### Scenario: You have custom JARs uploaded in the environment and they're taking longer to publish. How can you reduce the environment publishing time?
 
-Store the Java Archive (JAR) files in the Lakehouse and pass the path via spark.jars. Alternatively, if the package is in a Maven repository, pass it via `spark.jars.packages`.
+Store the Java Archive (JAR) files in the lakehouse and pass the path via spark.jars. Alternatively, if the package is in a Maven repository, pass it via `spark.jars.packages`.
 
 ##### Scenario: When to run on High Concurrency Mode?
 
-- You're doing development of 5 different Spark applications in 5 Notebooks. You find waiting for session to be started in each of the Notebooks is impacting your productivity. To run multiple Notebooks having same Lakehouse and environment, run in High Concurrency mode to optimize costs and reduce the startup time of subsequent Notebooks.
+- You're doing development of 5 different Spark applications in 5 notebooks. You find waiting for session to be started in each of the notebooks is impacting your productivity. To run multiple notebooks having same lakehouse and environment, run in High Concurrency mode to optimize costs and reduce the startup time of subsequent notebooks.
 
-- You're running a pipeline with Notebooks in foreach, session start-up time of each of the Notebook executions is leading to longer execution time. To minimize cumulative session startup times for Notebooks sharing the same environment and default Lakehouse in a pipeline, enable High Concurrency mode at the workspace level and add session tags to share the same session. 
+- You're running a pipeline with notebooks in foreach, session start-up time of each of the notebook executions is leading to longer execution time. To minimize cumulative session startup times for notebooks sharing the same environment and default lakehouse in a pipeline, enable High Concurrency mode at the workspace level and add session tags to share the same session. 
 
 - When using High Concurrency sessions:
     - To share variables across Notebooks in the same session, use global temp views: `df.createOrReplaceGlobalTempView("global_view")`.
@@ -35,13 +35,13 @@ Store the Java Archive (JAR) files in the Lakehouse and pass the path via spark.
 
 ##### Scenario: How to organize Materialized Lake Views (MLVs)?
 
-- **Centralize Materialized Lake Views (MLVs):** Create all Materialized Lake Views (MLVs) for a workspace within a single Lakehouse to ensure a consolidated and clear representation in the Directed Acyclic Graph (DAG) view.
+- **Centralize Materialized Lake Views (MLVs):** Create all Materialized Lake Views (MLVs) for a workspace within a single lakehouse to ensure a consolidated and clear representation in the Directed Acyclic Graph (DAG) view.
 
-- **Handling Schema-less Tables for MLV Creation:** If your Lakehouse contains tables without a defined schema and you intend to create MLVs on those tables, follow this approach:
+- **Handling Schema-less Tables for MLV Creation:** If your lakehouse contains tables without a defined schema and you intend to create MLVs on those tables, follow this approach:
 
-  1. Create a new Lakehouse that includes a schema.
+  1. Create a new lakehouse that includes a schema.
 
-  1. Use a Notebook to define MLVs that reference the original schema-less or schema-enabled Lakehouse tables.
+  1. Use a notebook to define MLVs that reference the original schema-less or schema-enabled lakehouse tables.
 
     Here's the sample code:
     
@@ -54,7 +54,7 @@ Store the Java Archive (JAR) files in the Lakehouse and pass the path via spark.
 
 ##### Scenario: How to centralize observability for Spark workloads across workspace?
 
-To monitor all Spark applications across workspaces, configure the Fabric Apache Spark Diagnostic Emitter library within the environment. Attach this environment to the Notebooks running Spark applications. The emitter can send event logs and metrics to multiple destinations, including Azure Log Analytics, Azure Storage, and Azure Event Hubs for querying and analysis.
+To monitor all Spark applications across workspaces, configure the Fabric Apache Spark Diagnostic Emitter library within the environment. Attach this environment to the notebooks running Spark applications. The emitter can send event logs and metrics to multiple destinations, including Azure Log Analytics, Azure Storage, and Azure Event Hubs for querying and analysis.
 
 ##### Scenario: You're a developer and looking for inline AI tools in Notebook to suggest code completions.
 
@@ -78,7 +78,7 @@ You can use `notebookutils.variableLibrary.help()` to find out the detailed API 
 
     :::image type="content" source="media/spark-best-practices/variable-library.png" alt-text="Screenshot of alternate value sets creation." lightbox="media/spark-best-practices/variable-library.png":::
 
-1. Retrieve the Variable Library and Assign Lakehouse Name.
+1. Retrieve the variable library and assign lakehouse name.
 
     ```python
     # Retrieve the variable library named "MyVL"
@@ -141,7 +141,7 @@ Here are some important tips when using the variable library in your notebooks:
 
 ##### Scenario: Customize session configuration in the Notebook
 
-[%%configure](/fabric/data-engineering/author-execute-notebook#spark-session-configuration-magic-command) is a powerful magic command in Microsoft Fabric notebooks. With `%%configure`, you can programmatically define Spark session properties, including default lakehouse, attached environment, runtime settings, and compute configurations.
+[%%configure](/fabric/data-engineering/author-execute-notebook#spark-session-configuration-magic-command) is a powerful magic command in Fabric notebooks. With `%%configure`, you can programmatically define Spark session properties, including default lakehouse, attached environment, runtime settings, and compute configurations.
 
 **Interactive Development Phase**
 
@@ -226,7 +226,7 @@ Fabric Spark Advisor provides real-time visibility when a notebook cell's execut
 
 In production workspaces, don't grant developers or non-privileged users direct access. Instead, grant read-only access only to privileged users such as Site Reliability Engineers (SREs) and production support engineers to retrieve Spark logs.
 
-If any Spark Notebook or Spark Job Definition (SJD) in the production workspace requires investigation, production support engineers can download the logs from the Spark UI and share them with developers for further analysis. This approach follows the principle of least privileged access for ensuring security.:::image type="content" source="media/spark-best-practices/send-event-logs-flow.png" alt-text="Diagram of the event logs flow from support to developers." lightbox="media/spark-best-practices/send-event-logs-flow.png":::
+If any Spark notebook or Spark job definition (SJD) in the production workspace requires investigation, production support engineers can download the logs from the Spark UI and share them with developers for further analysis. This approach follows the principle of least privileged access for ensuring security.:::image type="content" source="media/spark-best-practices/send-event-logs-flow.png" alt-text="Diagram of the event logs flow from support to developers." lightbox="media/spark-best-practices/send-event-logs-flow.png":::
 
 Developers who don't have access to the workspace can set up a Spark History Server locally to view all the event logs and investigate. 
 
@@ -266,7 +266,7 @@ Spark Session configs and Delta table feature flags exist so that you can custom
 
   `spark.conf.set('spark.databricks.delta.autoCompact.enabled', True)`
 
-  - You can use predefined Spark resource profiles to optimize Spark configurations based on use cases. Refer to this documentation for more details: [Configure Resource Profile Configurations in Microsoft Fabric](/fabric/data-engineering/configure-resource-profile-configurations). Here are the Spark configurations you can set based on the use cases:
+  - You can use predefined Spark resource profiles to optimize Spark configurations based on use cases. Refer to this documentation for more details: [Configure Resource Profile Configurations in Fabric](/fabric/data-engineering/configure-resource-profile-configurations). Here are the Spark configurations you can set based on the use cases:
 
     | Profile | Use Case | Configuration Property |
     |---|---|---|

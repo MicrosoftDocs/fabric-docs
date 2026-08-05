@@ -11,13 +11,13 @@ ai-usage: ai-assisted
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Custom live pools are prehydrated Spark clusters that provide near-instant session startup for notebooks in Microsoft Fabric. This article shows how to create, configure, and manage custom live pools for optimal performance.
+Custom live pools are prehydrated Spark clusters that provide near-instant session startup for notebooks in Fabric. This article shows how to create, configure, and manage custom live pools for optimal performance.
 
 ## Prerequisites
 
 Before setting up custom live pools, ensure you have:
 
-- Access to a Microsoft Fabric workspace with a **paid Fabric SKU** (Fabric trial capacities aren't supported)  
+- Access to a Fabric workspace with a **paid Fabric SKU** (Fabric trial capacities aren't supported)
 - **Admin** role in the workspace
 - An active **Fabric capacity** assigned to your workspace
 - A published [Fabric environment](/fabric/data-engineering/create-and-use-environment) to use for library configuration. 

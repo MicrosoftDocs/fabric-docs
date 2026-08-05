@@ -77,7 +77,7 @@ The following table describes the available properties.
 | `environmentWorkspaceId` | String | The workspace ID of the environment. | All contexts |
 | `userId` | String | The user ID of the current user. | All contexts |
 | `userName` | String | The user name of the current user. | All contexts |
-| `currentKernel` | String | The name of the current notebook kernel. | Python Notebook only |
+| `currentKernel` | String | The name of the current notebook kernel. | Python notebook only |
 | `productType` | String | The product type identifier (for example, `Fabric`). | All contexts |
 
 ## Usage examples

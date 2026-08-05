@@ -30,7 +30,7 @@ For stock-keeping unit (SKU) details, core allocation, and queueing behavior, se
 
 ## Autoscale billing for Spark
 
-Autoscale billing for Spark introduces a flexible, pay-as-you-go billing model for Spark workloads in Microsoft Fabric. With this model enabled, Spark jobs use dedicated serverless resources instead of consuming compute from Fabric capacity. This serverless option optimizes cost and provides scalability without resource contention.
+Autoscale billing for Spark introduces a flexible, pay-as-you-go billing model for Spark workloads in Fabric. With this model enabled, Spark jobs use dedicated serverless resources instead of consuming compute from Fabric capacity. This serverless option optimizes cost and provides scalability without resource contention.
 
 When enabled, autoscale billing allows you to set a maximum capacity unit (CU) limit, which controls your budget and resource allocation. Billing for Spark jobs is based solely on the compute used during job execution, with no idle compute costs. The cost per Spark job remains the same (0.5 CU hour), and you're charged only for the runtime of active jobs.
 
@@ -70,7 +70,7 @@ Spark billing behavior depends on how Spark compute is configured.
 
   For example, if you submit a notebook job to a custom Spark pool, you're charged only while the session is active. Billing stops when the Spark session stops or expires. You aren't charged for cluster acquisition or Spark context initialization time.
 
-  To learn more, see [Apache Spark compute in Microsoft Fabric](spark-compute.md).
+  To learn more, see [Apache Spark compute in Fabric](spark-compute.md).
 
 > [!NOTE]
 > The default session expiration for starter and custom Spark pools is 20 minutes.
@@ -134,7 +134,7 @@ The following table summarizes billing attribution for different operations in t
 ## Related content
 
 - [Get started with Data Engineering and Data Science admin settings for your Fabric capacity](capacity-settings-overview.md)
-- [Apache Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
+- [Apache Spark workspace administration settings in Fabric](workspace-admin-settings.md)
 - [High concurrency mode in Apache Spark for Fabric](high-concurrency-overview.md)
 - [Autoscale Billing for Spark overview](autoscale-billing-for-spark-overview.md)
 - [Install the Premium metrics app](/power-bi/enterprise/service-premium-install-app)

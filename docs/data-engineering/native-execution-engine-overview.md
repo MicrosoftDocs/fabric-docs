@@ -147,7 +147,7 @@ There are several methods to determine if an operator in your Apache Spark job w
 
 ### Spark UI and Spark history server
 
-Access the Spark UI or Spark history server to locate the query you need to inspect. To access the Spark web UI, navigate to your Spark Job Definition and run it. From the **Runs** tab, select the **...** next to the **Application name** and select **Open Spark web UI**. You can also access the Spark UI from the **Monitor** tab in the workspace. Select the notebook or pipeline, from the monitoring page, there's a direct link to the **Spark UI** for active jobs.
+Access the Spark UI or Spark history server to locate the query you need to inspect. To access the Spark web UI, navigate to your Spark job definition and run it. From the **Runs** tab, select the **...** next to the **Application name** and select **Open Spark web UI**. You can also access the Spark UI from the **Monitor** tab in the workspace. Select the notebook or pipeline, from the monitoring page, there's a direct link to the **Spark UI** for active jobs.
 
 :::image type="content" source="media\native\spark-web-ui.png" alt-text="Screenshot showing how to navigate to the Spark web UI." lightbox="media\native\spark-web-ui.png":::
 
@@ -191,7 +191,7 @@ You can also select on the query description for the Apache Spark query executio
 
 ## Limitations
 
-While the Native Execution Engine (NEE) in Microsoft Fabric significantly boosts performance for Apache Spark jobs, it currently has the following limitations:
+While the Native Execution Engine (NEE) in Fabric significantly boosts performance for Apache Spark jobs, it currently has the following limitations:
 
 ### Existing limitations
 
@@ -235,7 +235,7 @@ While the Native Execution Engine (NEE) in Microsoft Fabric significantly boosts
 
 ## Related content
 
-- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
+- [Delta Lake in Fabric overview](../fundamentals/delta-lake-overview.md)
 - [Python UDFs, Scala UDFs, and complex data types in native execution engine](native-execution-engine-udf-complex-types.md)
 - [Efficient scaledown and remote shuffle manager](efficient-scaledown-remote-shuffle-manager.md)
 - [Apache Spark Runtimes in Fabric](./runtime.md)

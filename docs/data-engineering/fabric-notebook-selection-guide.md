@@ -182,7 +182,7 @@ Real-world experience building end-to-end ELT benchmarks with these engines high
 | Spark-native APIs (MLlib, Streaming) | No | Yes |
 | Production features (env vars, environments) | Limited | Full |
 | High-concurrency support | No | Yes |
-| V-Order for fast Direct Lake Semantic Models | No | Yes |
+| V-order for fast Direct Lake semantic models | No | Yes |
 | Object store cache enabling accelerate repeat reads | Engine dependent (DuckDB has built-in caching, Polars doesn't) | Yes ([Intelligent cache](intelligent-cache.md)) |
 | Scales to multi-node | No | Yes |
 
@@ -201,18 +201,18 @@ Real-world experience building end-to-end ELT benchmarks with these engines high
 - **NEE (Native Execution Engine)**: A vectorized C++ query engine built on Velox and Apache Gluten that accelerates Fabric Spark workloads. NEE is available at no extra compute cost and requires no code changes.
 - **Row tracking**: A Delta Lake feature that assigns a stable `row_id` and `row_commit_version` to each row via a `_metadata` column. All engines can read from and write to tables with row tracking enabled, but only Fabric Spark can access the `_metadata` column contents.
 - **Spark pool**: A shared compute resource for running distributed Spark workloads. The starter pool provides prewarmed nodes for near-instant session start times (~5 seconds) with autoscaling enabled by default.
-- **V-Order**: A Fabric write optimization that sorts and compresses Parquet data in a way that improves read performance for Power BI Direct Lake semantic models and other Fabric read paths.
+- **V-order**: A Fabric write optimization that sorts and compresses Parquet data in a way that improves read performance for Power BI Direct Lake semantic models and other Fabric read paths.
 - **Intelligent cache**: An intelligent disk cache in Fabric Spark that speeds up repeated reads of the same Delta table files by caching file data locally on the executor nodes.
 
 ## Related content
 
-- [How to use Microsoft Fabric notebooks](how-to-use-notebook.md)
+- [How to use Fabric notebooks](how-to-use-notebook.md)
 - [Use Python experience on Notebook](using-python-experience-on-notebook.md)
-- [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md)
+- [Develop, execute, and manage Fabric notebooks](author-execute-notebook.md)
 - [Introduction of Fabric NotebookUtils](notebook-utilities.md)
 - [Native execution engine for Fabric Data Engineering](native-execution-engine-overview.md)
 - [Configure and manage starter pools in Fabric Spark](configure-starter-pools.md)
 - [Apache Spark compute for Data Engineering and Data Science](spark-compute.md)
-- [Delta table maintenance in Microsoft Fabric](delta-lake-table-maintenance.md)
+- [Delta table maintenance in Fabric](delta-lake-table-maintenance.md)
 - [Deletion vectors for Delta tables](delta-lake-deletion-vectors.md)
 - [Concurrency control for Delta tables](delta-lake-concurrency-control.md)
