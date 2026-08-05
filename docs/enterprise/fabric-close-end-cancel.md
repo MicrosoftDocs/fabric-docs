@@ -71,7 +71,7 @@ The Capacity administrator can delete Fabric capacities using the Fabric admin p
 
 ### Buy a Fabric trial capacity
 
-You can [purchase a Fabric capacity](buy-subscription.md) at any time. You don't have to wait for your trial to end. 
+You can [purchase a Fabric capacity](buy-capacity.md) at any time. You don't have to wait for your trial to end. 
 
 ### Migrate from a retired P SKU capacity
 

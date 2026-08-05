@@ -13,7 +13,7 @@ ms.date: 07/28/2026
 
 This article lists the region availability of the Fabric [F SKUs](../enterprise/licenses.md#capacity), which are available in the [Azure public cloud regions](https://azure.microsoft.com/explore/global-infrastructure/geographies/). Some of the Fabric workloads might not be immediately available in new regions, or regions where data centers become constrained.
 
-For details about purchasing a Fabric subscription, see [Buy a Fabric subscription](../enterprise/buy-subscription.md).
+For details about buying Fabric capacity, see [Buy Fabric capacity in Azure](../enterprise/buy-capacity.md).
 
 ## Fabric workload and feature availability
 
@@ -87,5 +87,5 @@ The following table lists all Azure regions where Power BI or Fabric is availabl
 
 ## Related content
 
-* [Buy a Fabric subscription](../enterprise/buy-subscription.md)
+* [Buy Fabric capacity in Azure](../enterprise/buy-capacity.md)
 * [Find your Fabric home region](./find-fabric-home-region.md)

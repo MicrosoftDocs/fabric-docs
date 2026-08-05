@@ -26,9 +26,14 @@
             "redirect_document_id": false
         },
         {
-        "source_path_from_root": "/docs/enterprise/powerbi/desktop-privacy-levels.md",
-        "redirect_url": "/power-query/privacy-levels",
-        "redirect_document_id": false
+            "source_path_from_root": "/docs/enterprise/powerbi/desktop-privacy-levels.md",
+            "redirect_url": "/power-query/privacy-levels",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/enterprise/buy-subscription.md",
+            "redirect_url": "/fabric/enterprise/buy-capacity",
+            "redirect_document_id": true
         }
     ]
 }
