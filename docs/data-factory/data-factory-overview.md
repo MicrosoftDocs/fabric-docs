@@ -13,13 +13,13 @@ ai-usage: ai-assisted
 
 Data Factory in Microsoft Fabric helps you solve one of business's toughest challenges: turning scattered data into useful insights.
 
-Your organization's data lives in many different places: databases, files, cloud services, and legacy systems. This makes it hard to get a complete picture of your business. Data Factory connects to more than 170 data sources, including multicloud environments and hybrid setups with on-premises gateways. It helps you move and transform your data at scale, turning it into formats that work well for analytics and decision-making.
+Your organization's data lives in many different places: databases, files, cloud services, and legacy systems. This variety makes it hard to get a complete picture of your business. Data Factory connects to more than 170 data sources, including multicloud environments and hybrid setups with on-premises gateways. It helps you move and transform your data at scale, turning it into formats that work well for analytics and decision-making.
 
 :::image type="complex" source="media/data-factory-overview/data-integration-stack.png" alt-text="Diagram of the data integration stack in Microsoft Fabric.":::
    Diagram of Data Factory in Microsoft Fabric that shows a selection of connectors linked to analytics and data development tools in Fabric through data movement, orchestration, and transformation. This all sits on top of Fabric OneLake, and the entire stack is woven through with AI-powered intelligence.
 :::image-end:::
 
-Whether you're a business user building your first data analytics strategy, or a developer crafting complex workstreams, you'll find the right tools to:
+Whether you're a business user building your first data analytics strategy or a developer crafting complex workstreams, you'll find the right tools to:
 
 - Bring your data together
 - Clean it up
@@ -40,9 +40,9 @@ Here's what each phase does:
 
 ## ETL or ELT?
 
-When you work with data, how you move and transform it matters, and every organization is going to have different needs. For example: ETL (Extract, Transform, Load) and ELT (Extract, Load, Transform). Each has strengths, depending on your needs for performance, scalability, and cost.
+When you work with data, how you move and transform it matters, and every organization has different needs. For example, consider ETL (Extract, Transform, Load) and ELT (Extract, Load, Transform). Each method has strengths, depending on your needs for performance, scalability, and cost.
 
-**ETL**: Transform your data before loading it into its destination. This works well when you need to clean, standardize, or enrich data as it moves. For example, use Data Factory's Dataflow Gen2 to apply transformations at scale before loading data into a warehouse or Lakehouse.
+**ETL**: Transform your data before loading it into its destination. This method works well when you need to clean, standardize, or enrich data as it moves. For example, use Data Factory's Dataflow Gen2 to apply transformations at scale before loading data into a warehouse or Lakehouse.
 
 **ELT**: Load raw data first, then transform it where it's stored. This approach uses the power of analytics engines like Fabric's OneLake, Spark Notebooks, or SQL-based tools. ELT works well for handling large datasets with modern, cloud-scale compute.
 
@@ -80,7 +80,7 @@ See the [data movement decision guide](decision-guide-data-movement.md) to help 
 
 ## AI-powered data integration
 
-AI shows up throughout Data Factory to help you get more done with less effort. Copilot for Data Factory lets you design, edit, and manage pipelines and dataflows using natural language. You can type plain-English prompts, and Copilot turns them into working ETL steps.
+AI appears throughout Data Factory to help you get more done with less effort. Copilot for Data Factory lets you design, edit, and manage pipelines and dataflows by using natural language. You can type plain-English prompts, and Copilot turns them into working ETL steps.
 
 Copilot also summarizes your existing dataflow queries and pipelines, so you can quickly understand what they do. If you run into errors, Copilot explains what went wrong and suggests ways to fix it.
 
@@ -101,7 +101,7 @@ When you're ready to migrate, follow the [migration guide](migrate-planning-azur
 
 ## What is the Fabric Data Factory Pipeline SLA?
 
-The SLA for pipelines in Fabric is equivalent to the SLA for pipelines in [Azure Data Factory](https://azure.microsoft.com/products/data-factory): "Microsoft guarantees that it will successfully process requests to perform operations against Data Factory resources at least 99.9 percent of the time. It also guarantees that all activity runs will initiate within four minutes of their scheduled execution times at least 99.9 percent of the time. Read the full Data Factory service-level agreement (SLA)."
+The SLA for pipelines in Fabric is equivalent to the SLA for pipelines in [Azure Data Factory](https://azure.microsoft.com/products/data-factory): "Microsoft guarantees that it successfully processes requests to perform operations against Data Factory resources at least 99.9 percent of the time. It also guarantees that all activity runs initiate within four minutes of their scheduled execution times at least 99.9 percent of the time. Read the full Data Factory service-level agreement (SLA)."
 
 ## Related content
 
@@ -109,4 +109,4 @@ For more information, and to get started with [!INCLUDE [product-name](../includ
 
 - [Guided data factory lab](https://regale.cloud/Microsoft/play/4344/fabric-data-factory#/0/0) - demo of Data Factory in Fabric
 - [What can you connect to?](connector-overview.md) - all available sources and destinations for Data Factory
-- [End-to-end Data Factory tutorial](tutorial-end-to-end-introduction.md) - Follow this tutorial through the whole ETL process, from data ingestion to transformation and loading into a destination system
+- [End-to-end Data Factory tutorial](tutorial-end-to-end-introduction.md) - Follow this tutorial through the whole ETL process, from data ingestion to transformation and loading into a destination system.
