@@ -22,7 +22,7 @@ If your capacity is being [throttled](throttling.md), pausing it stops the throt
 
 To pause your capacity, you need:
 
-* An [F SKU capacity](buy-subscription.md#azure-skus)
+* An [F SKU capacity](licenses.md#capacity)
 
 * The following Azure RBAC actions on the Fabric capacity resource:
 

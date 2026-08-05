@@ -67,7 +67,7 @@ For more information, see [ending your trial](#end-a-fabric-trial). If Copilot b
 >
 > - If you need to request a trial extension, contact your Microsoft sales representative or contact the [Azure sales team](https://azure.microsoft.com/contact/?msockid=02d2195e72356be10cc60cb5738d6afb) for assistance.
 >
-> - If you’re ready to continue using Fabric, visit the [Purchase Fabric page](../enterprise/buy-subscription.md) to explore your options.
+> - If you're ready to continue using Fabric, visit the [Purchase Fabric page](../enterprise/buy-capacity.md) to explore your options.
 
 To learn more about limitations and get answers to frequently asked questions about the Fabric trial, see [the FAQ](#frequently-asked-questions).
 
@@ -186,7 +186,7 @@ You can also downgrade from 64 capacity units to 4 capacity units using these sa
 <a id="end-a-fabric-trial"></a>
 ## End a Fabric trial capacity
 
-End a Fabric capacity trail by [canceling](#cancel-the-fabric-trial), [letting it expire](#let-the-trial-expire), or [purchasing the full Fabric experience](#purchase-the-full-fabric-experience).
+End a Fabric capacity trial by [canceling](#cancel-the-fabric-trial), [letting it expire](#let-the-trial-expire), or [purchasing the full Fabric experience](#purchase-the-full-fabric-experience).
 
 For more information, see [Canceling, expiring, and closing](../enterprise/fabric-close-end-cancel.md).
 
@@ -230,7 +230,7 @@ To retain your Fabric items, before your trial ends, [purchase Fabric](https://a
 
 ### Purchase the full Fabric experience
 
-If you want to retain your data and continue to use Microsoft Fabric, you can [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. You can also migrate your workspaces to a capacity that you already own that supports Fabric items.
+If you want to retain your data and continue to use Microsoft Fabric, [purchase a capacity](../enterprise/buy-capacity.md) and migrate your workspaces to that capacity. You can also migrate your workspaces to a capacity that you already own that supports Fabric items.
 
 ## Frequently asked questions
 
@@ -274,7 +274,7 @@ To resolve this issue:
 
 - Contact your Fabric administrator to check existing trial capacities in **Admin portal > Capacity settings > Trial**. If there are inactive or unmanaged trial capacities (for example, from users who left the organization), consider canceling them to free up capacity for new trials.
 - Request access to an existing trial capacity from a Capacity administrator who can share their trial by assigning workspaces or enabling contributor permissions.
-- Consider [purchasing a Fabric capacity](../enterprise/buy-subscription.md) if trial limits prevent your organization from testing Fabric features.
+- Consider [purchasing a Fabric capacity](../enterprise/buy-capacity.md) if trial limits prevent your organization from testing Fabric features.
 
 #### How do I look up the number of days remaining in my trial?
 

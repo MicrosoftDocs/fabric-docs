@@ -33,7 +33,7 @@ Microsoft Fabric is a SaaS platform, like many other Microsoft services such as 
 
 ## Understand network security
 
-Fabric is SaaS service that runs in the Microsoft cloud. Some scenarios involve connecting to data that's outside of the Fabric platform. For example, viewing a report from your own network or connecting to data that's in another service. Interactions within Fabric use the internal Microsoft network and traffic outside of the service is protected by default. For more information and a detailed description, see [Data in transit](security-fundamentals.md#data-in-transit).
+Fabric is a SaaS service that runs in the Microsoft cloud. Some scenarios involve connecting to data that's outside of the Fabric platform. For example, viewing a report from your own network or connecting to data that's in another service. Interactions within Fabric use the internal Microsoft network and traffic outside of the service is protected by default. For more information and a detailed description, see [Data in transit](security-fundamentals.md#data-in-transit).
 
 ### Inbound network security
 
@@ -61,14 +61,14 @@ To configure Private Links in Fabric, see [Set up and use private links](../secu
 
 ### Outbound network security
 
-Fabric has a set of tools that allow you to connect to external data sources and bring that data into Fabric in a secure way. This section lists different ways to import and connect to data from a secure network into fabric.
+Fabric has a set of tools that allow you to connect to external data sources and bring that data into Fabric in a secure way. This section lists different ways to import and connect to data from a secure network into Fabric.
 
 #### Trusted workspace access
 
-With Fabric you can access firewall enabled Azure Data Lake Gen 2 accounts securely. Fabric workspaces that have a workspace identity can securely access Azure Data Lake Gen 2 accounts with public network access enabled, from selected virtual networks and IP addresses. You can limit ADLS gen 2 access to specific Fabric workspaces. For more information, see [Trusted workspace access](../security/security-trusted-workspace-access.md).
+With Fabric you can access firewall enabled Azure Data Lake Gen 2 accounts securely. Fabric workspaces that have a workspace identity can securely access Azure Data Lake Gen 2 accounts with public network access enabled, from selected virtual networks and IP addresses. You can limit Azure Data Lake Storage Gen2 access to specific Fabric workspaces. For more information, see [Trusted workspace access](../security/security-trusted-workspace-access.md).
 
 > [!NOTE]
-> You can create workspace identity in any capacity (except for My workspaces), but trusted workspace access requires an F capacity. For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md). 
+> You can create workspace identity in any capacity (except for My workspaces), but trusted workspace access requires an F capacity. For information about buying Fabric capacity, see [Buy Fabric capacity in Azure](../enterprise/buy-capacity.md). 
 
 #### Managed Private Endpoints
 
@@ -118,7 +118,7 @@ Fabric is part of a larger Microsoft ecosystem. If your organization is already 
 
 Fabric ensures that your data is secure across regions when you're working with several tenants that have multiple capacities across a number of geographies.
 
-* **Data logical separation** - The [Fabric platform](security-fundamentals.md#fabric-platform) provide logical isolation between tenants to protect your data.
+* **Data logical separation** - The [Fabric platform](security-fundamentals.md#fabric-platform) provides logical isolation between tenants to protect your data.
 
 * **Data sovereignty** - To start working with multi-geo, see [Configure Multi-Geo support for Fabric](../admin/service-admin-premium-multi-geo.md).
 

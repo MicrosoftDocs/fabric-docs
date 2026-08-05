@@ -13,8 +13,8 @@ items:
     href: fabric-site-reliability-engineering-model.md       
 - name: Get started
   items:
-  - name: Buy a Microsoft Fabric subscription
-    href: buy-subscription.md
+  - name: Buy Fabric capacity in Azure
+    href: buy-capacity.md
   - name: SKU considerations
     href: sku-considerations.md
   - name: End a trial, close an account, cancel a subscription
