@@ -163,7 +163,7 @@ While Fabric ensures that data remains accessible after a disaster, you can also
 
 ### Recovery steps
 
-1. Create a new Fabric capacity in any region after a disaster. Given the high demand during such events, select a region outside your primary geo to increase the likelihood of compute service availability. For information about creating a capacity, see [Buy a Microsoft Fabric subscription](/fabric/enterprise/buy-subscription).
+1. Create a new Fabric capacity in any region after a disaster. Given the high demand during such events, select a region outside your primary geo to increase the likelihood of compute service availability. For information about creating a capacity, see [Buy Fabric capacity in Azure](/fabric/enterprise/buy-capacity).
 
 1. Create workspaces in the newly created capacity. If necessary, use the same names as the old workspaces.
 

@@ -399,8 +399,6 @@ items:
           href: plan/intelligence-how-to-create-paginated-reports.md
         - name: Export data and visuals
           href: plan/intelligence-how-to-export-data-visuals.md
-        - name: Visualize planning data
-          href: plan/intelligence-how-to-visualize-planning-data.md
         - name: Plan projects with Gantt charts
           href: plan/intelligence-how-to-create-gantt-chart.md
   - name: Infobridge
@@ -411,6 +409,8 @@ items:
       items:
         - name: Connected planning
           href: plan/infobridge-concept-connected-planning.md
+        - name: Integrate planning, reporting, and visualization
+          href: plan/infobridge-concept-blend-measures.md
     - name: How-tos
       items:
         - name: Create bridge

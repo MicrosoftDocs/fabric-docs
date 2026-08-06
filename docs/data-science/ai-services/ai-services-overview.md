@@ -52,7 +52,7 @@ Fabric provides two options to use Foundry Tools:
 - Language detection: detects language of the input text
 - Sentiment analysis: returns a score between 0 and 1, to indicate the sentiment in the input text
 - Key phrase extraction: identifies the key talking points in the input text
-- Personally Identifiable Information(PII) entity recognition: identify, categorize, and redact sensitive information in the input text
+- Personally Identifiable Information (PII) entity recognition: identify, categorize, and redact sensitive information in the input text
 - Named entity recognition: identifies known entities and general named entities in the input text
 - Entity linking: identifies and disambiguates the identity of entities found in text
 
@@ -71,7 +71,7 @@ For the list of Azure regions where prebuilt Foundry Tools in Fabric are now ava
 
 ### Available regions for Text Analytics and Translator
 
-Prebuilt [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) and the [Translator](https://azure.microsoft.com/products/ai-services/translator/) in Fabric are now available for public preview in the Azure regions listed in this article. If you don't find your Microsoft Fabric home region in this article, you can still create a Microsoft Fabric capacity in a supported region. For more information, visit [Buy a Microsoft Fabric subscription](../../enterprise/buy-subscription.md).
+Prebuilt [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) and the [Translator](https://azure.microsoft.com/products/ai-services/translator/) in Fabric are now available for public preview in the Azure regions listed in this article. If you don't find your Microsoft Fabric home region in this article, you can still create a Microsoft Fabric capacity in a supported region. For more information, visit [Buy Fabric capacity in Azure](../../enterprise/buy-capacity.md).
 To determine your Fabric home region, visit [Find your Fabric home region](../../admin/find-fabric-home-region.md).
 
 | Asia Pacific | Europe | Americas | Middle East and Africa |
