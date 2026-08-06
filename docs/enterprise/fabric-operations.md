@@ -209,9 +209,19 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 ### Real-Time Intelligence
 
-The Real-Time Intelligence experience contains operations for [Anomaly Detector](#anomaly-detector), [Azure and Fabric events](#azure-and-fabric-events), [digital twin builder (preview)](#digital-twin-builder-preview), [Eventstream](#eventstream), and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+The Real-Time Intelligence experience contains operations for [Operations agent](#operations-agent), [Anomaly Detector](#anomaly-detector), [Azure and Fabric events](#azure-and-fabric-events), [digital twin builder (preview)](#digital-twin-builder-preview), [Eventstream](#eventstream), and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
 
-### Anomaly Detector
+#### Operations agent
+
+You can find the consumption rates for operations agent in [Operations agent capacity and billing](../real-time-intelligence/operations-agent-billing.md). Note that operations agent also consumes the Copilot in Fabric operation for interactive usage.
+
+| Operation        | Description                                          | Item     | Azure billing meter                               | Type       |
+| ---------------- | ---------------------------------------------------- | -------- | ------------------------------------------------- | ---------- |
+| Operations agent compute | Background compute for processing and monitoring data, including evaluating rules and conditions | Operations Agent | Operations agents compute capacity usage CU | Background |
+| Investigation agent reasoning | Language model reasoning that analyzes monitored data during an investigation | Operations Agent | Investigation agent reasoning compute capacity usage CU | Background |
+| Operations agent autonomous reasoning | Language model processing when a condition is met to analyze data and generate recommendations | Operations Agent | Operations agents autonomous reasoning capacity usage CU | Background |
+
+#### Anomaly Detector
 
 You can find the consumption rates for Anomaly Detector in [Anomaly Detector capacity usage and billing in Real-Time Intelligence](../real-time-intelligence/anomaly-detection-billing.md).
 
