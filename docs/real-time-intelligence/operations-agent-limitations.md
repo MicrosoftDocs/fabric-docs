@@ -61,7 +61,7 @@ Operations agents have functional, platform, and behavioral limitations that you
 
 ### Data source limitations
 
-- Only one datasource is supported at a time.
+- Only one data source is supported at a time.
 - When using an Eventhouse as a data source:
   - Only regular Eventhouse tables are supported. Shortcut tables, functions, and materialized views aren't supported.
 - When using a Fabric Ontology as the agent's data source:
