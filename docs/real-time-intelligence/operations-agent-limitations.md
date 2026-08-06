@@ -61,15 +61,18 @@ Operations agents have functional, platform, and behavioral limitations that you
 
 ### Data source limitations
 
-- Currently, operations agents only support monitoring data in regular Eventhouse tables. Shortcut tables, functions, and materialized views aren't supported.
+- Only one datasource is supported at a time.
+- When using an Eventhouse as a data source:
+  - Only regular Eventhouse tables are supported. Shortcut tables, functions, and materialized views aren't supported.
 - When using a Fabric Ontology as the agent's data source:
   - The ontology must be in the same workspace as the operations agent.
   - Ontology entities that you want the agent to monitor must have at least one static property to use as the identifier for entities. Timeseries properties should be bound to eventhouse fields.
 
-### Monitoring and rule limitations
+### Ontology monitoring rule limitations
 
-- Ontology monitoring supports basic property values only. Aggregations such as an average, minimum, or maximum value aren't supported.
-- Rules that require 'AND' conditions aren't supported (for example, braking index for a runway is over 0.8 and the surface temp is < 40).
+- When monitoring an Ontology:
+  - Only basic property values are supported. Aggregations such as an average, minimum, or maximum value aren't supported.
+  - Rules that require 'AND' conditions aren't supported (for example, braking index for a runway is over 0.8 and the surface temp is < 40).
 
 ### Language and model behavior limitations
 
