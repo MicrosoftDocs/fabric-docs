@@ -9,9 +9,7 @@ ai-usage: ai-assisted
 
 # Anonymous data access in Fabric apps
 
-Anonymous data access lets a Fabric app expose selected data operations to users who aren't signed in. You control this access at three levels: the Fabric tenant, the app configuration, and each data model. All three levels must allow anonymous access before an unauthenticated request can reach data.
-
-Anonymous access is an authorization option, not a replacement for authentication. The same app can provide public access to some entities while requiring users to sign in for other entities or operations.
+Anonymous data access lets a Fabric app expose selected data operations to users who aren't signed in. You control this access at the Fabric tenant level and in each data model. Anonymous access is an authorization option, not a replacement for authentication. The same app can provide public access to some entities while requiring users to sign in for other entities or operations.
 
 > [!IMPORTANT]
 > Anyone who can reach the app URL can use the operations assigned to the `anonymous` role. Don't expose personal, confidential, financial, or internal business data through this role.
@@ -29,10 +27,9 @@ Anonymous access isn't appropriate when an app must identify the user, enforce o
 
 ## How anonymous access works
 
-Anonymous data access uses three independent controls:
+Anonymous data access uses independent controls:
 
 1. **Tenant setting:** A Fabric tenant administrator grants anonymous data access for the organization or selected security groups.
-1. **App configuration:** The app opts in by setting `services.data.anonymousAccess` to `true` in `rayfin/rayfin.yml`.
 1. **Data-model role:** An entity uses the `anonymous` role to define the operations that unauthenticated users can perform.
 
 The tenant setting is the organization-wide boundary. The app setting allows anonymous requests to reach the app's data service. The entity role determines which data and operations those requests can access. Enabling only one or two of these controls doesn't grant anonymous access.
@@ -52,20 +49,6 @@ A Fabric tenant administrator must enable anonymous data access before app devel
 1. Select **Apply**.
 
 Changes might take a few minutes to take effect. When you limit the setting to security groups, confirm that the app developer or app owner is included in an allowed group.
-
-## Enable anonymous access in an app
-
-In the app project, add `anonymousAccess: true` under the data service in `rayfin/rayfin.yml`:
-
-```yaml
-services:
-  auth:
-    enabled: true
-  data:
-    anonymousAccess: true
-```
-
-Authentication can remain enabled. Authenticated users can still sign in and access entities protected by the `authenticated` role. This setting only allows unauthenticated requests to reach entities that explicitly define the `anonymous` role.
 
 ## Define anonymous access in a data model
 
@@ -143,24 +126,6 @@ export class BlogPost {
 ```
 
 The anonymous role permits public reads without evaluating identity claims. The authenticated role uses the signed-in user's claims to restrict changes to content that the user owns.
-
-## Build, test, and deploy the app
-
-Frontend code can use the same Rayfin data APIs for anonymous and authenticated operations. The SDK sends the request without a user session when no user is signed in. The data service then evaluates the entity's anonymous permissions.
-
-Start the app locally and test it in a private browser window to ensure that no cached user session is present:
-
-```bash
-npx rayfin dev
-```
-
-Verify that each allowed operation succeeds and that every operation not assigned to the `anonymous` role is rejected. Then deploy the configuration and data models:
-
-```bash
-npx rayfin up
-```
-
-After deployment, repeat the tests against the deployed app URL. For more deployment guidance, see [Deploy a Fabric app to Fabric](deploy-app.md).
 
 ## Security guidance
 
