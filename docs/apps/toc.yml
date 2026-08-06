@@ -35,6 +35,8 @@ items:
     href: read-write-data-graphql.md
   - name: Configure Fabric SSO
     href: fabric-authentication.md
+  - name: Anonymous data access
+    href: anonymous-data-access.md
   - name: Deploy to Fabric
     href: deploy-app.md
   - name: Deploy using GitHub Actions
