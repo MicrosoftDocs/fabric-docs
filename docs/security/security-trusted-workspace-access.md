@@ -17,7 +17,7 @@ Fabric workspaces that access a storage account with trusted workspace access ne
 To limit and protect access to firewall-enabled storage accounts from certain Fabric workspaces, you can set up resource instance rules to allow access from specific Fabric workspaces.
 
 > [!NOTE]
-> Trusted workspace access is **generally available**, but can only be used in F SKU capacities. For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md). Trusted workspace access isn't supported in Trial capacities.
+> Trusted workspace access is **generally available**, but you can only use it in F SKU capacities. For information about buying Fabric capacity, see [Buy Fabric capacity in Azure](../enterprise/buy-capacity.md). Trusted workspace access isn't supported in Trial capacities.
 
 This article shows you how to:
 

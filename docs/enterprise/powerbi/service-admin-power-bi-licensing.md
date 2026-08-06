@@ -63,13 +63,13 @@ Users can get a license in two ways: from an administrator or by using self-serv
 > If you're ready to make a purchase, use these links to find up-to-date pricing information:
 >
 > - [Power BI Pricing & product comparison](https://powerbi.microsoft.com/pricing/)
-> - [Pricing options for Fabric](/fabric/enterprise/buy-subscription)
+> - [Pricing options for Fabric](/fabric/enterprise/buy-capacity)
 
 ### Purchase options
 
 Choose the option that best fits your organization's needs:
 
-1. **Purchase a Fabric subscription** - [Purchase a Fabric subscription](/fabric/enterprise/buy-subscription) that includes Power BI. If you're ready to purchase, your options include bulk purchasing for your organization or enabling your users to upgrade their own licenses. After you purchase a Fabric subscription, [enable Fabric for your organization](/fabric/admin/fabric-switch).
+1. **Buy Fabric capacity** - [Buy Fabric capacity](/fabric/enterprise/buy-capacity) that includes Power BI. If you're ready to purchase, your options include bulk purchasing for your organization or enabling your users to upgrade their own licenses. After you buy Fabric capacity, [enable Fabric for your organization](/fabric/admin/fabric-switch).
 
 1. **Purchase Power BI licenses** - Power BI Pro is included in Microsoft 365 E5. Otherwise, you can purchase Pro or PPU licenses from the [Microsoft pricing site](https://powerbi.microsoft.com/pricing/), through Microsoft 365, or through a Microsoft partner. After your purchase, you can assign licenses to individual users or use self-service.
 
