@@ -11,8 +11,6 @@ Optimize supports multivariate scenarios by adjusting multiple data input measur
 
 Set a target value, then run Optimize to calculate the input values required to reach the target. Plan recalculates the inputs and applies the updated values to achieve the specified outcome.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 ## Prerequisites
 
 * Add at least one formula measure to the planning sheet. Optimize requires a formula measure to run. The formula measure acts as the target or output.

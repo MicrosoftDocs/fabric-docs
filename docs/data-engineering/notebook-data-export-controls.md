@@ -42,7 +42,7 @@ When export controls are disabled, the following restrictions apply:
 
 ## Related content
 
-- [How to use Microsoft Fabric notebooks](how-to-use-notebook.md)
+- [How to use Fabric notebooks](how-to-use-notebook.md)
 - [Develop and run notebooks](author-execute-notebook.md)
 - [Workspace roles and permissions in lakehouse](workspace-roles-lakehouse.md)
-- [Microsoft Fabric security overview](/fabric/security/security-overview)
+- [Fabric security overview](/fabric/security/security-overview)

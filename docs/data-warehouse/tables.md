@@ -1,9 +1,10 @@
 ---
 title: Tables in Fabric Data Warehouse
-description: Learn how to design and use tables in Microsoft Fabric Data Warehouse, including temporary tables.
+description: Learn how to design and use tables in Microsoft Fabric Data Warehouse.
 ms.reviewer: xiaoyul, randolphwest
 ms.date: 04/03/2026
-ms.topic: how-to
+ms.topic: concept-article
+ai-usage: ai-assisted
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
 # Tables in Fabric Data Warehouse
@@ -26,16 +27,19 @@ A [star schema](dimensional-modeling-overview.md#star-schema-design) organizes d
 
 A table stores data in [OneLake](../onelake/onelake-overview.md) as part of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The table and the data persist whether or not a session is open.
 
+<a id="temp-tables-in-fabric-data-warehouse"></a>
+
 ## Tables in the warehouse
 
 To show the organization of the tables, you could use `fact`, `dim`, or `int` as prefixes to the table names. The following table shows some of the schema and table names for [WideWorldImportersDW](/sql/samples/wide-world-importers-dw-database-catalog?view=fabric&preserve-view=true) sample data warehouse.
 
 | WideWorldImportersDW Source Table Name  | Table Type | Data Warehouse Table Name |
-|:-----|:-----|:------|:-----|
+|:-----|:-----|:------|
 | City | Dimension | `wwi.DimCity` |
 | Order | Fact | `wwi.FactOrder` |
 
 - Table names can't contain `/` or `\` or end with a `.`.
+- You can create session-scoped temporary (`#temp`) tables in Fabric Data Warehouse. For more information, see [Temp tables in Fabric Data Warehouse](temp-tables.md).
 
 ## Create a table
 
@@ -52,11 +56,12 @@ This example creates a table with two columns:
 CREATE TABLE MyTable (col1 int, col2 int );
 ```
 
+Fabric Data Warehouse supports [IDENTITY columns (Preview)](identity.md) in tables to automatically insert an incrementing number sequence.
+
 ### Schema names
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports the creation of custom schemas. Like in SQL Server, schemas are a good way to group together objects that are used in a similar fashion. The following code creates a [user-defined schema](/sql/t-sql/statements/create-schema-transact-sql?view=fabric&preserve-view=true) called `wwi`.
 
-- Schema names are case sensitive.
 - Schema names can't contain `/` or `\` or end with a `.`.
 
 ```sql
@@ -99,49 +104,11 @@ For [!INCLUDE [fabric-dw](includes/fabric-dw.md)], `PRIMARY KEY` and `UNIQUE` co
 - For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true).
 - For more information, see [Primary keys, foreign keys, and unique keys](table-constraints.md).
 
-<a id="temp-tables-in-fabric-data-warehouse"></a>
-
-## #temp tables
-
-Session-scoped temporary (`#temp`) tables can be created in Fabric Data Warehouse.
-
-These tables exist only within the session in which they are created and last for the duration of that session. They are not visible to other users or sessions and are automatically dropped from the system once the session ends or the #temp table is dropped. These tables are accessible to all users without requiring specific item-level permission.
-
-Two types of #temp tables can be created based on specific use cases: non-distributed and distributed.
-
-- A non-distributed #temp table (mdf-backed) is the default type. The syntax for creating and using non-distributed #temp tables in Fabric Data Warehouse is similar to user tables, but you need to prefix the temp table name with `#`.
-
-    ```sql
-     CREATE TABLE #table_name (
-       Col1 data_type1,
-       Col2 data_type2
-     );
-    ```
-
-- Distributed temp tables (Parquet-backed) can be created with the `DISTRIBUTION=ROUND_ROBIN` keyword:
-
-    ```sql
-    CREATE TABLE #table_name (
-    Col1 data_type1,
-    Col2 data_type2
-    ) WITH (DISTRIBUTION=ROUND_ROBIN);
-    ```
-
-In the previous script, `data_type1` and `data_type2` are placeholders for supported [Data types in Fabric Data Warehouse](data-types.md).
-
-Distributed #temp tables are recommended, as they align with normal user tables; they have unlimited storage, data type support, and T-SQL operations. 
-
-Other notes about temp tables in Fabric Data Warehouse:
-
-- The syntax for data manipulation and definition is identical to user tables in Fabric Data Warehouse, with prefix `#` added to the table name.
-- Temp tables are not affected by [time travel](time-travel.md) query hints and always return the latest data in the table.
-- You can alter distributed temp tables with `ALTER TABLE`, but not MDF-backed temp tables.
-
 ## Align source data with the data warehouse
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] tables are populated by loading data from another data source. To achieve a successful load, the number and data types of the columns in the source data must align with the table definition in the warehouse.
 
-If data is coming from multiple data stores, you can port the data into the warehouse and store it in an integration table. Once data is in the integration table, you can use the power of warehouse to implement transformation operations. Once the data is prepared, you can insert it into production tables.
+If data is coming from multiple data stores, you can port the data into the warehouse and store it in an integration table. Once data is in the integration table, you can use the power of the warehouse to implement transformation operations. Once the data is prepared, you can insert it into production tables.
 
 ## Limitations
 
@@ -166,14 +133,10 @@ The following list shows some of the table features that aren't currently suppor
 - Warehouse object metadata is cached by Fabric Data Warehouse to provide fast access to objects and their definitions. For very large warehouses with more than 750,000 objects (for example, tables, views, stored procedures, and functions), metadata is no longer cached by the system. Instead, schema operations query the metadata store directly. This ensures system stability and prevents cache starvation in extremely large databases. However, schema refresh operations can take longer compared to smaller warehouses where metadata caching is enabled.
 
 > [!IMPORTANT]
-> There are limitations with adding table constraints or columns when using [Source Control with Warehouse](source-control.md#limitations-in-source-control).
+> There are limitations with adding table constraints or columns when using [Git Integration for Fabric Warehouse Development](git-integration.md#limitations-in-git-integration).
 
 ## Related content
 
-- [What is Fabric Data Warehouse?](data-warehousing.md)
-- [What is Data engineering in Microsoft Fabric?](../data-engineering/data-engineering-overview.md)
-- [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
-- [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
-- [OneLake, the OneDrive for data](../onelake/onelake-overview.md)
-- [Create tables in the Warehouse in Microsoft Fabric](create-table.md)
-- [Transactions in Warehouse tables in Microsoft Fabric](transactions.md)
+- [Temp tables in Fabric Data Warehouse](temp-tables.md)
+- [Data types in Fabric Data Warehouse](data-types.md)
+- [Query using the SQL query editor](sql-query-editor.md)

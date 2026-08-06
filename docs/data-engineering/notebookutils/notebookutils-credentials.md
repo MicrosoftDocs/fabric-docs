@@ -182,13 +182,13 @@ for container in blob_client.list_containers():
 - When you call `notebookutils.credentials.getToken("pbi")`, the returned token has limited scope if the notebook runs under a service principal. The token doesn't have the full Fabric service scope. If the notebook runs under the user identity, the token still has the full Fabric service scope, but this might change with security improvements. To ensure that the token has the full Fabric service scope, use MSAL authentication instead of the `notebookutils.credentials.getToken` API. For more information, see [Authenticate with Microsoft Entra ID](/entra/msal/python/).
 
 - The following scopes are available when you call `notebookutils.credentials.getToken` with the audience key `pbi` under the service principal identity:
-  - `Lakehouse.ReadWrite.All` – Read and write access to Lakehouse items
-  - `MLExperiment.ReadWrite.All` – Read and write access to Machine Learning Experiment items
-  - `MLModel.ReadWrite.All` – Read and write access to Machine Learning Model items
-  - `Notebook.ReadWrite.All` – Read and write access to Notebook items
-  - `SparkJobDefinition.ReadWrite.All` – Read and write access to Spark Job Definition items
-  - `Workspace.ReadWrite.All` – Read and write access to Workspace items
-  - `Dataset.ReadWrite.All` – Read and write access to Dataset items
+  - `Lakehouse.ReadWrite.All` – Read and write access to lakehouse items
+  - `MLExperiment.ReadWrite.All` – Read and write access to experiment items
+  - `MLModel.ReadWrite.All` – Read and write access to ML model items
+  - `Notebook.ReadWrite.All` – Read and write access to notebook items
+  - `SparkJobDefinition.ReadWrite.All` – Read and write access to Spark job definition items
+  - `Workspace.ReadWrite.All` – Read and write access to workspaces
+  - `Dataset.ReadWrite.All` – Read and write access to semantic model items
 
 > [!TIP]
 > If you need access to additional Fabric services or broader permissions under a service principal, use [MSAL for Python](/entra/msal/python/) to authenticate directly with the full Fabric service scope instead of relying on `getToken("pbi")`.

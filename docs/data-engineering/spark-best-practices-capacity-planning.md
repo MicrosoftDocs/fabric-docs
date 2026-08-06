@@ -14,15 +14,15 @@ This article offers practical guidance for planning capacity and compute for Spa
 
 ## Guidelines for Sizing 
 
-This section offers practical guidance for sizing and configuring Spark workloads in Microsoft Fabric. It covers scenarios such as new development, migration from Synapse, and capacity tuning for production use.
+This section offers practical guidance for sizing and configuring Spark workloads in Fabric. It covers scenarios such as new development, migration from Azure Synapse, and capacity tuning for production use.
 
 ##### Scenario: You're new to Fabric and need guidance on capacity planning.
 
-**Start with Trial Capacity**: If you're new to Fabric, start with the trial capacity. It offers either F4 capacity (4 capacity units) or F64 capacity (64 capacity units) throughput for 60 days. This setup is ideal for developing and testing Spark workloads. To estimate your required capacity, go to [Plan your capacity size](/fabric/enterprise/plan-capacity) and the [Microsoft Fabric SKU Estimator (preview)](https://www.microsoft.com/microsoft-fabric/capacity-estimator).
+**Start with Trial Capacity**: If you're new to Fabric, start with the trial capacity. It offers either F4 capacity (4 capacity units) or F64 capacity (64 capacity units) throughput for 60 days. This setup is ideal for developing and testing Spark workloads. To estimate your required capacity, go to [Plan your capacity size](/fabric/enterprise/plan-capacity) and the [Fabric SKU Estimator (preview)](https://www.microsoft.com/microsoft-fabric/capacity-estimator).
 
 **Choosing Starter Pool vs. Custom Pool:** 
 
-**Starter Pools:** Typically you want to use starter pools for your Spark workloads. Microsoft Fabric pre-provisions these pools, ensuring fast session startup times. They're ideal for development environments where you don't require custom libraries, Managed Private Endpoint (MPE), or Private Link (PL). Starter pools can significantly improve developer productivity.
+**Starter Pools:** Typically you want to use starter pools for your Spark workloads. Fabric pre-provisions these pools, ensuring fast session startup times. They're ideal for development environments where you don't require custom libraries, Managed Private Endpoint (MPE), or Private Link (PL). Starter pools can significantly improve developer productivity.
 
 **Custom Pools:** Use custom pools when you enable Managed Private Endpoint (MPE) or Private Link (PL). 
 
@@ -77,15 +77,15 @@ To further optimize resource usage:
 
 ##### Scenario: You're migrating workloads from Synapse to Fabric.
 
-If you're migrating workloads from Synapse to Fabric, you might be wondering what changes, what stays the same, and whether you can reuse your existing Synapse sizing. 
+If you're migrating workloads from Azure Synapse to Fabric, you might be wondering what changes, what stays the same, and whether you can reuse your existing Synapse sizing. 
 
 **Migration and Optimization:** 
 
 - Use the [Synapse to Fabric migration utility](/fabric/data-engineering/migrate-synapse-overview) to move your workloads. 
 
-- Enable Autoscale Billing for Spark. If the environment and Lakehouse are the same, run the Notebooks or pipelines in high concurrency mode (a feature not available in Synapse) for better performance. 
+- Enable Autoscale Billing for Spark. If the environment and lakehouse are the same, run the notebooks or pipelines in high concurrency mode (a feature not available in Synapse) for better performance. 
 
-- Profile the Notebooks using the Native Execution Engine (NEE) to optimize performance for your workloads. 
+- Profile the notebooks using the Native Execution Engine (NEE) to optimize performance for your workloads. 
 
 **General Compute Configuration Guidelines:** 
 

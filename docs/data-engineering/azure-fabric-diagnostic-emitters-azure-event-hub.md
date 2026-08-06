@@ -20,12 +20,12 @@ For emitter architecture and destination selection guidance, see [Fabric Apache 
 
 To collect diagnostic logs and metrics, you can use an existing Azure Event Hubs instance. If you don't have one, you can [create an event hub](/azure/event-hubs/event-hubs-create).
 
-### Step 2: Create a Fabric Environment Artifact with Apache Spark Configuration
+### Step 2: Create a Fabric Environment Item with Apache Spark Configuration
  
 #### Option 1: Configure with Azure Event Hubs Connection String
 
-1. Create a Fabric Environment Artifact in Fabric
-1. Add the following **Spark properties** with the appropriate values to the environment artifact, or **select Add from .yml** in the ribbon to download the [sample yaml file](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/eventhub_spark_properties_option_1.yml) which already containing the following properties.  
+1. Create an environment item in Fabric
+1. Add the following **Spark properties** with the appropriate values to the environment item, or **select Add from .yml** in the ribbon to download the [sample yaml file](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/eventhub_spark_properties_option_1.yml) which already containing the following properties.  
 
    ```properties
    spark.synapse.diagnostic.emitters: MyEventHub
@@ -50,7 +50,7 @@ To configure Azure Key Vault for storing the workspace key:
    - **Name**: Enter a name for the secret.
    - **Value**: Enter the `<connection-string>` for the secret.
    - Leave the other values to their defaults. Then select **Create**.
-1. Create a Fabric Environment Artifact in Fabric.
+1. Create an environment item in Fabric.
 1. Add the following **Spark properties**. Or select **Add from .yml** on the ribbon to download the [sample yaml file](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/eventhub_spark_properties_option_2.yml), which includes following Spark properties.
 
    ```properties
@@ -66,84 +66,7 @@ To configure Azure Key Vault for storing the workspace key:
 
 1. Save and publish changes.
 
-#### Option 3: Configure Using Certificate Authentication
-
-1. Register an application
-
-   1. Sign in to the [Azure portal](https://portal.azure.com/) and go to [App registrations](/entra/identity-platform/quickstart-register-app#register-an-application).
-	
-   1. Create a new app registration for sending logs and metrics to Azure Event Hubs.
-	
-	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\create-a-new-app-registration.png" alt-text="Screenshot showing create a new app registration.":::
-
-2. Generate a certificate in Key Vault
-
-   1. Navigate to Key Vault.
-	
-   1. Expand the **Object**, and select the **Certificates**.
-	
-   1. Click on **Generate/Import**. 
-	
-	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\generate-a-new-certificate.png" alt-text="Screenshot showing generate a new certificate for app.":::
-
-3. Trust the certificate in the application 
-
-   1. Go to the App registration created in 1 -> **Manage** -> **Manifest**. 
-	
-   1. Append the certificate details to the manifest file to establish trust. This enables subject-based certificate trust for the service principal.
-	
-      ```
-	   "trustedCertificateSubjects": [ 
-	      { 
-	         "authorityId": "00000000-0000-0000-0000-000000000001", 
-	         "subjectName": "Your-Subject-of-Certificate", 
-	         "revokedCertificateIdentifiers": [] 
-	      } 
-	      ] 
-	   ```
-	
-	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\trust-the-certificate.png" alt-text="Screenshot showing trust the certificate in the application.":::
-
-4. Assign **Azure Event Hubs Data Sender** Role
-
-   1. In Azure Event Hubs, navigate to Access control (IAM).
-
-   1. Assign the Azure Event Hubs data sender role to the application (service principal).
-	
-	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\assign-azure-event-hubs-data-sender-role.png" alt-text="Screenshot showing assign Azure event hubs data sender role.":::
-
-5. Configure Azure Key Vault access permissions
-
-   1. In the Azure portal, navigate to the target Azure Key Vault.
-
-   2. Under Access control (IAM), assign the **Key Vault Certificates User role** to the application (service principal) used by the Spark diagnostic emitter.
-
-:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\assign-key-vault-certificates-user-role.png" alt-text="Screenshot showing assign key vault certificates user role.":::
-
-6. Create a Fabric Environment Artifact in Fabric, and add the following **Spark properties** with the appropriate values to the environment artifact.
-
-   - `<EMITTER_NAME>`: The name for the emitter.
-   - `<CERTIFICATE_NAME>`: The certificate name that you generated in the key vault.
-   - `<KEY_VAULT_URL>`: The Azure Key Vault uri (e.g., `https://{keyvault-name}.vault.azure.net/`).
-   - `<EVENT_HUB_HOST_NAME>`: The fully qualified domain name of the Event Hubs namespace (e.g., `<namespace>.servicebus.windows.net`).
-   - `<EVENT_HUB_NAME>`: The name of the Event Hub instance to send diagnostic data to.
-   - `<SERVICE_PRINCIPAL_TENANT_ID>`: The service principal tenant ID, you can find it in App registrations > your app name > Overview -> Directory (tenant) ID.
-   - `<SERVICE_PRINCIPAL_CLIENT_ID>`: The service principal client ID, you can find it in App registrations > your app name > Overview > Application (client) ID.
-
-   ```Parameters
-   "spark.synapse.diagnostic.emitters": "<EMITTER_NAME>",
-   "spark.synapse.diagnostic.emitter.<EMITTER_NAME>.type": "AzureEventHub",
-   "spark.synapse.diagnostic.emitter.<EMITTER_NAME>.categories": "DriverLog,ExecutorLog,EventLog,Metrics",
-   "spark.synapse.diagnostic.emitter.<EMITTER_NAME>.hostName": "<EVENT_HUB_HOST_NAME>",
-   "spark.synapse.diagnostic.emitter.<EMITTER_NAME>.entityPath": "<EVENT_HUB_NAME>",
-   "spark.synapse.diagnostic.emitter.<EMITTER_NAME>.certificate.keyVault": "<KEY_VAULT_URL>",
-   "spark.synapse.diagnostic.emitter.<EMITTER_NAME>.certificate.keyVault.certificateName": "<CERTIFICATE_NAME>",
-   "spark.synapse.diagnostic.emitter.<EMITTER_NAME>.tenantId": "<SERVICE_PRINCIPAL_TENANT_ID>",
-   "spark.synapse.diagnostic.emitter.<EMITTER_NAME>.clientId": "<SERVICE_PRINCIPAL_CLIENT_ID>",
-   "spark.fabric.pools.skipStarterPools": "true"
-   ```
-
-### Step 3: Attach the Environment Artifact to Notebooks or Spark Job Definitions, or Set It as the Workspace Default
+### Step 3: Attach the Environment Item to Notebooks or Spark Job Definitions, or Set It as the Workspace Default
 
    > [!NOTE]
    > * Only workspace admins can designate an environment as the default for a workspace.
@@ -157,7 +80,7 @@ To configure Azure Key Vault for storing the workspace key:
 
    **To set the environment as the workspace default**:
 
-   1. Navigate to Workspace Settings in Fabric.
+   1. Navigate to workspace settings in Fabric.
    1. Find **Spark settings** in workspace settings (**Workspace setting** > **Data Engineering/Science** > **Spark settings**).
    1. Select **Environment** tab and choose the environment with diagnostics spark properties configured, and select **Save**.
 
@@ -233,7 +156,7 @@ Here's a sample log record in JSON format:
   "fabricTenantId": "<my-fabric-tenant-id>",
   "capacityId": "<my-fabric-capacity-id>",
   "artifactType": "SynapseNotebook|SparkJobDefinition",
-  "artifactId": "<my-fabric-artifact-id>",
+  "artifactId": "<my-fabric-item-id>",
   "fabricWorkspaceId": "<my-fabric-workspace-id>",
   "fabricEnvId": "<my-fabric-environment-id>",
   "executorMin": "<executor-min>",
@@ -255,16 +178,16 @@ Once diagnostics are emitted to Azure Event Hubs, you can use that [event hub as
 
 ## Fabric workspaces with Managed virtual network
 
-Create a managed private endpoint for the target Azure Event Hubs. For detailed instructions, refer to [Create and use managed private endpoints in Microsoft Fabric - Microsoft Fabric](../security/security-managed-private-endpoints-create.md).
+Create a managed private endpoint for the target Azure Event Hubs. For detailed instructions, refer to [Create and use managed private endpoints in Fabric](../security/security-managed-private-endpoints-create.md).
 
 Once the managed private endpoint is approved, users can begin emitting logs and metrics to the target Azure Event Hubs.
 
 ## Next steps
 
 - [Create Apache Spark job definition](../data-engineering/create-spark-job-definition.md)
-- [Create, configure, and use an environment in Microsoft Fabric](../data-engineering/create-and-use-environment.md)
-- [Create and use managed private endpoints in Microsoft Fabric](../security/security-managed-private-endpoints-create.md)
-- [Develop, execute, and manage Microsoft Fabric notebooks](../data-engineering/author-execute-notebook.md)
+- [Create, configure, and use an environment in Fabric](../data-engineering/create-and-use-environment.md)
+- [Create and use managed private endpoints in Fabric](../security/security-managed-private-endpoints-create.md)
+- [Develop, execute, and manage Fabric notebooks](../data-engineering/author-execute-notebook.md)
 - [Monitor Spark Applications](../data-engineering/spark-monitoring-overview.md)
 
 

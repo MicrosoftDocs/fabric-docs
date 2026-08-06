@@ -87,7 +87,7 @@ Pick the solution that matches what you found in the checklist.
 ### Solution 2: Start a new trial or purchase a paid capacity
 
 1. If your tenant already has active trial capacities, assign the workspace to one of them through **Capacity settings**.
-1. If trial options aren't available, switch to a paid option such as an Azure pay-as-you-go Fabric capacity, an F SKU, or a Power BI Premium P SKU. For details, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
+1. If trial options aren't available, switch to a paid option such as an Azure pay-as-you-go Fabric capacity, an F SKU, or a Power BI Premium P SKU. For details, see [Buy Fabric capacity in Azure](../enterprise/buy-capacity.md).
 1. If applicable in your tenant, ensure the **Users can create Fabric items** setting is enabled so you can create a trial.
 
 ### Solution 3: Restore your license or request Copilot capacity assignment

@@ -17,6 +17,7 @@ This article describes common scenarios, resolutions, and workarounds for Micros
 | Azure Database for MySQL | [Limitations](./azure-database-mysql-limitations.md) | [Troubleshoot](./azure-database-mysql-troubleshoot.md) | [FAQ](./azure-database-mysql-mirroring-faq.yml) |
 | Azure Database for PostgreSQL | [Limitations](./azure-database-postgresql-limitations.md) | [Troubleshoot](./azure-database-postgresql-troubleshoot.md) | [FAQ](./azure-database-postgresql-mirroring-faq.yml) |
 | Azure Databricks | [Limitations](./azure-databricks-limitations.md) | | [FAQ](./azure-databricks-faq.yml) |
+| Azure Monitor | [Considerations](./catalog-mirroring/azure-monitor.md#considerations) | [Troubleshoot](./catalog-mirroring/azure-monitor-troubleshoot.md) | [Connections FAQ](./catalog-mirroring/azure-monitor-tutorial.md#troubleshoot-connection-failures) |
 | Azure SQL Database | [Limitations](./azure-sql-database-limitations.md) | [Troubleshoot](./azure-sql-database-troubleshoot.md) | [FAQ](./azure-sql-database-mirroring-faq.yml) |
 | Azure SQL Managed Instance | [Limitations](./azure-sql-managed-instance-limitations.md) | [Troubleshoot](./azure-sql-managed-instance-troubleshoot.md) | [FAQ](./azure-sql-managed-instance-faq.yml) |
 | Fabric SQL database | [Limitations](../database/sql/mirroring-limitations.md) | [Troubleshoot](../database/sql/mirroring-troubleshooting.md) | [FAQ](../database/sql/mirroring-faq.yml) |

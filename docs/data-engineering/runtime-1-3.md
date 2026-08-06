@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 
 Fabric runtime offers a seamless integration with Azure. It provides a sophisticated environment for both data engineering and data science projects that use Apache Spark. This article provides an overview of the essential features and components of Fabric Runtime 1.3.
 
-Microsoft Fabric Runtime 1.3 is a GA runtime version that incorporates the following components and upgrades designed to enhance your data processing capabilities:
+Fabric Runtime 1.3 is a GA runtime version that incorporates the following components and upgrades designed to enhance your data processing capabilities:
 
 - Apache Spark 3.5
 - Operating system: Mariner 2.0 (Azure Linux 2.0)

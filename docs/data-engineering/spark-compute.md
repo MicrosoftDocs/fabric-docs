@@ -16,7 +16,7 @@ Fabric Data Engineering and Data Science run on a fully managed Apache Spark com
 
 ## Starter pools
 
-Starter pools are a fast and easy way to use Spark on the Microsoft Fabric platform within seconds. You can use Spark sessions right away, instead of waiting for Spark to set up the nodes for you, which helps you do more with data and get insights quicker.
+Starter pools are a fast and easy way to use Spark on the Fabric platform within seconds. You can use Spark sessions right away, instead of waiting for Spark to set up the nodes for you, which helps you do more with data and get insights quicker.
 
 :::image type="content" source="media/spark-compute/starter-pool-configuration.png" alt-text="Image of a table showing starter pool configuration." lightbox="media/spark-compute/starter-pool-configuration.png":::
 
@@ -76,7 +76,7 @@ If you don't use your Spark pool for 2 minutes after your session expires, your 
 
 You can even create single node Spark pools, by setting the minimum number of nodes to one, so the driver and executor run in a single node that comes with restorable HA and is suited for small workloads.
 
-The size and number of nodes you can have in your custom Spark pool depends on your Microsoft Fabric capacity. Capacity is a measure of how much computing power you can use. One way to think about it is that two Apache Spark vCores (a unit of Spark compute) equals one capacity unit.
+The size and number of nodes you can have in your custom Spark pool depends on your Fabric capacity. Capacity is a measure of how much computing power you can use. One way to think about it is that two Apache Spark vCores (a unit of Spark compute) equals one capacity unit.
 
 > [!NOTE]
 > In Apache Spark, users get two Apache Spark vCores for every capacity unit they reserve as part of their SKU.
@@ -102,7 +102,7 @@ Possible custom pool configurations for F64 based on the previous example. Small
 | F64 | 64 | 384 | XX-Large | 6 |
 
 > [!NOTE]
-> To create custom pools, you need **Admin** permissions for the workspace. The Microsoft Fabric capacity admin must also grant permissions that allow workspace admins to size custom Spark pools. To learn more, see [Get started with custom Spark pools in Fabric](create-custom-spark-pools.md).
+> To create custom pools, you need **Admin** permissions for the workspace. The Fabric capacity admin must also grant permissions that allow workspace admins to size custom Spark pools. To learn more, see [Get started with custom Spark pools in Fabric](create-custom-spark-pools.md).
 
 ## Nodes
 
@@ -143,4 +143,4 @@ When you enable the dynamic allocation option for every Spark application submit
 ## Related content
 
 - [Get started with Data Engineering and Data Science admin settings for your Fabric capacity](capacity-settings-overview.md)
-- [Apache Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
+- [Apache Spark workspace administration settings in Fabric](workspace-admin-settings.md)

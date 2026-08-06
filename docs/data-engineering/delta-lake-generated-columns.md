@@ -97,7 +97,7 @@ You can control the first value with a start and the increment with a step. Both
 # [Spark SQL](#tab/sparksql)
 
 > [!IMPORTANT]
-> In Microsoft Fabric, you can create identity columns only through the `DeltaTableBuilder` API. Spark SQL `CREATE TABLE` statements don't support identity column syntax.
+> In Fabric, you can create identity columns only through the `DeltaTableBuilder` API. Spark SQL `CREATE TABLE` statements don't support identity column syntax.
 
 # [PySpark](#tab/pyspark)
 
@@ -155,4 +155,4 @@ Keep these behaviors in mind when you use identity columns:
 - [Schema evolution for Delta tables](delta-lake-schema-evolution.md)
 - [Column mapping for Delta tables](delta-lake-column-mapping.md)
 - [File skipping for Delta tables](delta-lake-file-skipping.md)
-- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
+- [Delta Lake in Fabric overview](../fundamentals/delta-lake-overview.md)

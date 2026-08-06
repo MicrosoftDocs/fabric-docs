@@ -7,18 +7,16 @@ ai-usage: ai-assisted
 #customer intent: As a planning sheet user, I want to add comments to specific cells, rows, and columns, so that I can provide context and feedback directly within my data.
 ---
 
-# Commenting and collaboration
+# Comment and collaborate in planning sheet
 
 By using the commenting and collaboration features, you can add contextual discussions directly within the planning sheets. Use these capabilities with your team to review data, provide feedback, assign tasks, and track discussions all within the planning sheet environment.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 You commonly use data-level commentary in analytical and planning scenarios. The planning sheet provides built-in support for notes, annotations, and collaborative comments. It dynamically associates each comment with specific data points, such as cells, rows, columns, or report sections. These comments stay linked to the relevant data context even when filters or hierarchies change.
 
 ## Prerequisites
 
 * You have a planning sheet saved with the required dataset.
-* You have appropriate [**user permissions**](#configure-comment-access) to create, reply to, or manage comments.
+* You have appropriate [user permissions](#configure-comment-access) to create, reply to, or manage comments.
 
 ## Add data-level comments
 
@@ -136,7 +134,7 @@ To open the **Comment Settings** pane:
     The following options are available:
 
     * **Enable Commenting**: Turn commenting on or off for the planning sheet.
-    * **Comments Column**: Show or hide the dedicated **Comments** column. For more information, see [**Add a comments column**](#add-comments-column).
+    * **Comments Column**: Show or hide the dedicated **Comments** column. For more information, see [Add a comments column](#add-comments-column).
     * **Rollup Indicator**: Show or hide rollup indicators that summarize comments when you collapse hierarchical rows.
     * **Star indicator for starred comments**: Show or hide star indicators for starred comments.
     * **Indicator Size**: Specify the size, in pixels, of the comment indicator that appears in the planning sheet.
@@ -159,7 +157,7 @@ Add a dedicated **Comments** column to capture row-level discussions. When you a
 
 To add a comments column:
 
-1. Enable the **Show comments column** toggle in the [**Comment Settings**](#configure-comment-settings) panel. A **Comments** column appears in the table.
+1. Enable the **Show comments column** toggle in the [Comment Settings](#configure-comment-settings) panel. A **Comments** column appears in the table.
 1. Double-click the required row in the **Comments** column. The comment editor opens.
 1. Enter the comment, and then select the **Send** icon to post it.
 

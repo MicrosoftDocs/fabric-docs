@@ -18,7 +18,7 @@ Shortcuts let you reference data in a lakehouse without copying it. Instead of i
 - Combine data from multiple sources into a single lakehouse view without moving it.
 - Reduce storage costs and avoid data staleness from redundant copies.
 
-For a full conceptual overview of shortcuts, including caching, security, and limitations, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
+For a full conceptual overview of shortcuts, including caching, security, and limitations, see [shortcuts in OneLake](../onelake/onelake-shortcuts.md).
 
 ## Where to place shortcuts in a lakehouse
 
@@ -68,12 +68,12 @@ To create a shortcut, open a lakehouse and go to the **Explorer** view. Select t
 
 The following example shows creating a shortcut in the **Files** section. 
 
-:::image type="content" source="media\lakehouse-shortcuts\create-lakehouse-shortcut.png" alt-text="Screenshot showing the New shortcut option in the Files section of the lakehouse explorer." lightbox="media\lakehouse-shortcuts\create-lakehouse-shortcut.png":::
+:::image type="content" source="media\lakehouse-shortcuts\create-lakehouse-shortcut.png" alt-text="Screenshot showing the New shortcut option in the Files section of the Lakehouse explorer." lightbox="media\lakehouse-shortcuts\create-lakehouse-shortcut.png":::
 
 For detailed step-by-step instructions for each source type, see [Create an internal OneLake shortcut](../onelake/create-onelake-shortcut.md) or select one of the external source links in the [Supported shortcut sources](#supported-shortcut-sources) section.
 
 > [!NOTE]
-> External Delta tables created with Spark code aren't automatically visible in the SQL analytics endpoint. Create a shortcut in the **Tables** section to make external Delta tables available for SQL queries. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
+> External Delta tables created with Spark code aren't automatically visible in the SQL analytics endpoint. Create a shortcut in the **Tables** section to make external Delta tables available for SQL queries. For more information, see [shortcuts in OneLake](../onelake/onelake-shortcuts.md).
 
 ## When to use shortcuts vs. copying data
 
@@ -85,7 +85,7 @@ For detailed step-by-step instructions for each source type, see [Create an inte
 | Compliance or security requires data to reside in a specific region | Copy — shortcuts don't move data, so the data stays in its source region |
 | You need full control over schema evolution and table maintenance | Copy — Delta table maintenance operations only work on local tables |
 
-For other ways to bring data into a lakehouse, see [Options to get data into the Lakehouse](load-data-lakehouse.md).
+For other ways to bring data into a lakehouse, see [Options to get data into the lakehouse](load-data-lakehouse.md).
 
 ## Access control
 
@@ -96,7 +96,7 @@ For full details on shortcut permissions, see [OneLake shortcut security](../one
 
 ## Related content
 
-- [OneLake shortcuts](../onelake/onelake-shortcuts.md)
+- [Shortcuts in OneLake](../onelake/onelake-shortcuts.md)
 - [Create an internal OneLake shortcut](../onelake/create-onelake-shortcut.md)
-- [Options to get data into the Lakehouse](load-data-lakehouse.md)
+- [Options to get data into the lakehouse](load-data-lakehouse.md)
 - [Eventhouse OneLake availability](../real-time-intelligence/event-house-onelake-availability.md)

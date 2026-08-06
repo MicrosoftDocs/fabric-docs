@@ -80,7 +80,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         df_valid_totalPrice_plus_year.write.mode('overwrite').format('delta').save(deltaTablePath)
     ```
 
-1. Save the Python file locally. This Python code payload contains two Spark statements that work on data in a Lakehouse and needs to be uploaded to your Lakehouse. You need the ABFS (Azure Blob File System) path of the payload to reference in your Livy API batch job in Visual Studio Code and your Lakehouse table name in the `SELECT` SQL statement.
+1. Save the Python file locally. This Python code payload contains two Spark statements that work on data in a lakehouse and needs to be uploaded to your lakehouse. You need the ABFS (Azure Blob File System) path of the payload to reference in your Livy API batch job in Visual Studio Code and your lakehouse table name in the `SELECT` SQL statement.
 
     :::image type="content" source="media\livy-api\Livy-batch-payload.png" alt-text="Screenshot showing the Python payload cell." lightbox="media\livy-api\Livy-batch-payload.png" :::
 
@@ -88,11 +88,11 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media\livy-api\livy-batch-payload-in-lakehouse-files.png" alt-text="Screenshot showing payload in Files section of the Lakehouse." lightbox="media\livy-api\livy-batch-payload-in-lakehouse-files.png" :::
 
-1. After the file is in the Files section of your Lakehouse, select the three dots (ellipsis) to the right of your payload filename and select Properties.
+1. After the file is in the Files section of your lakehouse, select the three dots (ellipsis) to the right of your payload filename and select Properties.
 
     :::image type="content" source="media\livy-api\livy-batch-ABFS-path.png" alt-text="Screenshot showing payload ABFS path in the Properties of the file in the Lakehouse." lightbox="media\livy-api\livy-batch-ABFS-path.png" :::
 
-1. Copy this ABFS path to your Notebook cell in step 1.
+1. Copy this ABFS path to your notebook cell in step 1.
 
 ## Authenticate a Livy API Spark batch session using either a Microsoft Entra user token or a Microsoft Entra SPN token
 
@@ -267,7 +267,7 @@ can access on behalf of the authenticated user. Two are required; the rest are o
 
 | Scope | Description |
 |-------|-------------|
-| `Code.AccessFabric.All` | Allows getting access tokens to Microsoft Fabric. Required for all Livy API operations. |
+| `Code.AccessFabric.All` | Allows getting access tokens to Fabric. Required for all Livy API operations. |
 | `Code.AccessStorage.All` | Allows getting access tokens to OneLake and Azure storage. Required for reading and writing data in lakehouses. |
 
 ### Optional Code.* scopes
@@ -366,11 +366,11 @@ Add these scopes only if your Spark jobs need to access the corresponding Azure 
 
     :::image type="content" source="media\livy-api\Livy-batch-job-submission.png" alt-text="Screenshot showing results in Visual Studio Code after Livy Batch Job is successfully submitted." lightbox="media\livy-api\Livy-batch-job-submission.png" :::
 
-1. To see the changes, navigate back to your Lakehouse.
+1. To see the changes, navigate back to your lakehouse.
 
 ## Integration with Fabric Environments
 
-By default, this Livy API session runs against the default starter pool for the workspace. Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs. To use your Fabric Environment, update the prior notebook cell with this one line change.
+By default, this Livy API session runs against the default starter pool for the workspace. Alternatively you can use Fabric Environments [Create, configure, and use an environment in Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs. To use your Fabric Environment, update the prior notebook cell with this one line change.
 
 ```python
 payload_data = {

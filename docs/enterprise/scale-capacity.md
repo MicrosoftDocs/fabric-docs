@@ -20,7 +20,7 @@ You are charged pay as you go hourly rates according to the capacity size you sc
 
 To scale your capacity, you need:
 
-* An [F SKU capacity](buy-subscription.md#azure-skus)
+* An [F SKU capacity](licenses.md#capacity)
 
 * To be a [capacity admin](../admin/microsoft-fabric-admin.md#capacity-admin-roles)
 

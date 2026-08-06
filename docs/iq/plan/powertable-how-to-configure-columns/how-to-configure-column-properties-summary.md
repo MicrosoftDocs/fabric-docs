@@ -14,8 +14,6 @@ Column properties also help improve the usability, maintainability, and scalabil
 
 In this article, you learn how to access and configure column properties in a PowerTable sheet.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 ## Column properties
 
 Column properties control various aspects of a column, including:
@@ -60,8 +58,7 @@ To add a new column to the table, use the **Add Visual Column**, **Add Formula C
 
 :::image type="content" source="../media/powertable-how-to-configure-columns/how-to-configure-column-properties-summary/add-columns.png" alt-text="Screenshot of the options for adding new columns." lightbox="../media/powertable-how-to-configure-columns/how-to-configure-column-properties-summary/add-columns.png":::
 
-For more information about these column types, see **Add Columns Overview**.
-<!--add hyperlink to Add columns overview page-->
+For more information about these column types, see [Supported column types](../powertable-reference-supported-column-input-types.md#supported-column-types) and [Insert columns](../powertable-how-to-insert-columns/how-to-insert-visual-columns.md).
 
 ## Set column constraints
 
@@ -130,7 +127,7 @@ Clear the **Display** checkbox to hide a column while retaining its data in the 
 
 :::image type="content" source="../media/powertable-how-to-configure-columns/how-to-configure-column-properties-summary/display.png" alt-text="Screenshot of the Display column in the column setup window." lightbox="../media/powertable-how-to-configure-columns/how-to-configure-column-properties-summary/display.png":::
 
-To adjust column widths, drag the column header boundary or configure the width through [**Manage Columns**](../powertable-how-to-manage-columns.md).
+To adjust column widths, drag the column header boundary or configure the width through [Manage Columns](../powertable-how-to-manage-columns.md).
 
 ## Allow or restrict `NULL` values
 
@@ -152,8 +149,8 @@ To edit the properties of a specific column directly from the table, select the 
 
 Column properties are grouped and classified into two tabs:
 
-* [**General**](./how-to-configure-general-column-properties.md) - Configure the **Input Type**, **Constraints**, **Default values**, and other data-related settings.
-* [**Display**](./how-to-configure-display-column-properties.md) - Configure the **Display name** and **Description** for a column. For numeric columns, additional formatting options are available, including the **Prefix**, **Suffix**, **Thousand Separator**, and other number formatting settings.
+* [General](./how-to-configure-general-column-properties.md) - Configure the **Input Type**, **Constraints**, **Default values**, and other data-related settings.
+* [Display](./how-to-configure-display-column-properties.md) - Configure the **Display name** and **Description** for a column. For numeric columns, additional formatting options are available, including the **Prefix**, **Suffix**, **Thousand Separator**, and other number formatting settings.
 
   :::image type="content" source="../media/powertable-how-to-configure-columns/how-to-configure-column-properties-summary/general-display.png" alt-text="Screenshot of the General and Display tabs." lightbox="../media/powertable-how-to-configure-columns/how-to-configure-column-properties-summary/general-display.png":::
 

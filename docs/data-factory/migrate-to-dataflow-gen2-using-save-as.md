@@ -64,6 +64,7 @@ Dataflow Gen1 capabilities that aren't applicable in Dataflow Gen2 (CI/CD) and t
 
 ## Related content
 
+* [Upgrade Dataflow Gen1 using the Dataflows Upgrade Wizard](migrate-to-dataflow-gen2-using-upgrade-wizard.md)
 * [Move queries from Dataflow Gen1 to Dataflow Gen2](move-dataflow-gen1-to-dataflow-gen2.md)
 * [Dataflow Gen2 with CI/CD and Git integration support](dataflow-gen2-cicd-and-git-integration.md)
 * [REST API](/rest/api/power-bi/dataflows/save-dataflow-gen-one-as-dataflow-gen-two)

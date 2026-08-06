@@ -60,7 +60,7 @@ For more information, see [SQL analytics endpoint metadata sync](sql-analytics-e
 
 ## Reprovisioning
 
-If the SQL analytics endpoint fails to provision when you create a lakehouse, you can retry directly from the Lakehouse home page without recreating the lakehouse.
+If the SQL analytics endpoint fails to provision when you create a lakehouse, you can retry directly from the lakehouse home page without recreating the lakehouse.
 
 :::image type="content" source="media/lakehouse-sql-analytics-endpoint/sql-analytics-endpoint-reprovisioning.png" alt-text="Screenshot showing the option to retry SQL analytics endpoint provisioning in the lakehouse." lightbox="media/lakehouse-sql-analytics-endpoint/sql-analytics-endpoint-reprovisioning.png":::
 
@@ -69,18 +69,18 @@ If the SQL analytics endpoint fails to provision when you create a lakehouse, yo
 
 ## Limitations
 
-The SQL analytics endpoint shares its engine with the Fabric Data Warehouse, and they share the same limitations.
+The SQL analytics endpoint shares its engine with the warehouse in Fabric, and they share the same limitations.
 
 The following limitations apply to SQL analytics endpoint automatic schema generation and metadata discovery.
 
-- Data should be in Delta Parquet format to be autodiscovered in the SQL analytics endpoint. [Delta Lake is an open-source storage framework](https://delta.io/) that enables building Lakehouse architecture.
+- Data should be in Delta Parquet format to be autodiscovered in the SQL analytics endpoint. [Delta Lake is an open-source storage framework](https://delta.io/) that enables building lakehouse architecture.
 
 - [Delta column mapping](https://docs.delta.io/latest/delta-column-mapping.html) by name is supported, but Delta column mapping by ID is not supported. For more information, see [Delta Lake features and Fabric experiences](../fundamentals/delta-lake-interoperability.md#delta-lake-features-and-fabric-experiences).
   - [Delta column mapping in the SQL analytics endpoint](https://blog.fabric.microsoft.com/blog/fabric-september-2024-monthly-update?ft=All#post-14247-_Toc177485830) is currently in preview.
 
 - Delta tables created outside of the `/tables` folder aren't available in the SQL analytics endpoint.
 
-   If you don't see a Lakehouse table in the SQL analytics endpoint, check the location of the table. Only the tables that reference data in the `/tables` folder are available in the SQL analytics endpoint. The tables that reference data in the `/files` folder in the lake aren't exposed in the SQL analytics endpoint. As a workaround, move your data to the `/tables` folder.
+   If you don't see a lakehouse table in the SQL analytics endpoint, check the location of the table. Only the tables that reference data in the `/tables` folder are available in the SQL analytics endpoint. The tables that reference data in the `/files` folder in the lake aren't exposed in the SQL analytics endpoint. As a workaround, move your data to the `/tables` folder.
 
 - Some columns that exist in the Spark Delta tables might not be available in the tables in the SQL analytics endpoint. For every Delta table in your [Lakehouse](../data-engineering/lakehouse-overview.md), the SQL analytics endpoint automatically generates a table with T-SQL data types. The SQL analytics endpoint engine is based on the Fabric Data Warehouse engine, and shares data types. For a full list of supported data types, see [Data types in Fabric Data Warehouse](../data-warehouse/data-types.md).
 
@@ -90,11 +90,11 @@ The following limitations apply to SQL analytics endpoint automatic schema gener
 
 - Scalar UDFs are supported when inlineable. For more information, see [CREATE FUNCTION](/sql/t-sql/statements/create-function-sql-data-warehouse?view=fabric&preserve-view=true) and [Scalar UDF inlining](/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=fabric&preserve-view=true).
 
-- The **varchar(max)** data type is only supported in SQL analytics endpoints of mirrored items and Fabric databases, and not for Lakehouses. Tables created after November 10, 2025 will automatically be mapped with **varchar(max)**. Tables created before November 10, 2025 need to be recreated to adopt a new data type, or will be automatically upgraded to **varchar(max)** during the next schema change. 
+- The **varchar(max)** data type is only supported in SQL analytics endpoints of mirrored items and Fabric databases, and not for lakehouses. Tables created after November 10, 2025 will automatically be mapped with **varchar(max)**. Tables created before November 10, 2025 need to be recreated to adopt a new data type, or will be automatically upgraded to **varchar(max)** during the next schema change.
 
-Data truncation to 8 KB still applies on the tables in SQL analytics endpoint of the Lakehouse, including shortcuts to a mirrored item.
+Data truncation to 8 KB still applies on the tables in SQL analytics endpoint of the lakehouse, including shortcuts to a mirrored item.
 
-Since all tables do not support **varchar(max)** joins on these columns may not work as expected if one of the tables still has a data truncation. For example, if you CTAS a table of a newly created mirrored item into a Lakehouse table using Spark, then join them using the column with **varchar(max)**, the query results will be different compared to the **varchar(8000)** data type. If you would like to continue to have previous behavior, you can cast the column to **varchar(8000)** in the query.    
+Since all tables do not support **varchar(max)** joins on these columns may not work as expected if one of the tables still has a data truncation. For example, if you CTAS a table of a newly created mirrored item into a lakehouse table using Spark, then join them using the column with **varchar(max)**, the query results will be different compared to the **varchar(8000)** data type. If you would like to continue to have previous behavior, you can cast the column to **varchar(8000)** in the query.
 
 You can confirm if a table has any **varchar(max)** column from the schema metadata using the following T-SQL query. A `max_length` value of `-1` represents **varchar(max)**:
 

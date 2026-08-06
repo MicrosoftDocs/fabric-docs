@@ -1,14 +1,12 @@
 ---
 title: Writeback FAQ
-description: Answers to frequently asked questions about writeback in plan (preview), including row-level security (RLS), data availability, and data storage logic.
+description: Answers to frequently asked questions about writeback in plan, including row-level security (RLS), data availability, and data storage logic.
 ms.date: 05/04/2026
 ms.topic: faq
 #customer intent: As a user, I want to understand how writeback operates, how it handles Row-Level Security (RLS), and how data is updated and stored.
 ---
 
 # Writeback FAQ
-
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
 This article provides answers to frequently asked questions about the writeback feature in plan. Review these common scenarios to understand how data updates, storage, and security operate.
 
@@ -18,11 +16,11 @@ Yes. Plan captures changes to data input columns and stores them in the backend 
 
 ## How does row-level security (RLS) work in plan?
 
-Plan (preview) respects the RLS defined in the original Power BI dataset. The planning sheet shows only the rows that you can see. RLS in Power BI applies to users with Viewer access in the workspace.
+Plan respects the RLS defined in the original Power BI dataset. The planning sheet shows only the rows that you can see. RLS in Power BI applies to users with Viewer access in the workspace.
 
 ## How does writeback work with RLS?
 
-Plan (preview) writes back only the rows visible to you. If you see a limited set of dimension categories based on RLS, plan writes back only those rows. You can write back only the data that's visible in the planning sheet.
+Plan writes back only the rows visible to you. If you see a limited set of dimension categories based on RLS, plan writes back only those rows. You can write back only the data that's visible in the planning sheet.
 
 ## How is data stored when multiple users perform writeback? When are rows overwritten or appended?
 
@@ -84,4 +82,4 @@ No—writeback is additive. Deleting a row in the planning sheet doesn't remove 
 
 ## Can I write back to a destination outside of Fabric SQL—for example, to a SharePoint list or an Excel file?
 
-No—plan (preview) writes back exclusively to Fabric SQL databases. For downstream consumption in other tools, you can query the data in the Fabric SQL database directly or expose it via a semantic model, Power BI report, or dataflow.
+No. Plan writes back exclusively to Fabric SQL databases. For downstream consumption in other tools, you can query the data in the Fabric SQL database directly or expose it via a semantic model, Power BI report, or dataflow.

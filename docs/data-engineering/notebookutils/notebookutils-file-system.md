@@ -50,16 +50,16 @@ For mount and unmount operations, see [File mount and unmount](notebookutils-mou
 > - **Runtime version**: NotebookUtils is designed to work with Spark 3.4 (Runtime v1.2) and above.
 > - **`cp()` behavior in Python notebooks**: In Python notebooks, `cp()` internally uses the same azcopy-based mechanism as `fastcp()`, so both methods behave identically.
 
-NotebookUtils works with the file system in the same way as Spark APIs. Take `notebookutils.fs.mkdirs()` and Lakehouse usage for example:
+NotebookUtils works with the file system in the same way as Spark APIs. Take `notebookutils.fs.mkdirs()` and lakehouse usage for example:
 
 | **Usage** | **Relative path from HDFS root** | **Absolute path for ABFS file system** | **Absolute path for local file system in driver node** |
 |---|---|---|---|
-| Non-default Lakehouse | Not supported |  `notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")` | `notebookutils.fs.mkdirs("file:/<new_dir>")` |
-| Default Lakehouse | Directory under 'Files' or 'Tables': `notebookutils.fs.mkdirs("Files/<new_dir>")` | `notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")` | `notebookutils.fs.mkdirs("file:/<new_dir>")` |
+| Non-default lakehouse | Not supported |  `notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")` | `notebookutils.fs.mkdirs("file:/<new_dir>")` |
+| Default lakehouse | Directory under 'Files' or 'Tables': `notebookutils.fs.mkdirs("Files/<new_dir>")` | `notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")` | `notebookutils.fs.mkdirs("file:/<new_dir>")` |
 
-- For the default Lakehouse, file paths are mounted in your notebook with a default file cache timeout of 120 seconds. This means that files are cached in the notebook's local temporary folder for 120 seconds, even if they're removed from the Lakehouse. If you want to change the timeout rule, you can unmount the default Lakehouse file paths and mount them again with a different `fileCacheTimeout` value.
+- For the default lakehouse, file paths are mounted in your notebook with a default file cache timeout of 120 seconds. This means that files are cached in the notebook's local temporary folder for 120 seconds, even if they're removed from the lakehouse. If you want to change the timeout rule, you can unmount the default lakehouse file paths and mount them again with a different `fileCacheTimeout` value.
 
-- For non-default Lakehouse configurations, you can set the appropriate `fileCacheTimeout` parameter during the mounting of the Lakehouse paths. Setting the timeout to 0 ensures that the latest file is fetched from the Lakehouse server.
+- For non-default lakehouse configurations, you can set the appropriate `fileCacheTimeout` parameter during the mounting of the lakehouse paths. Setting the timeout to 0 ensures that the latest file is fetched from the lakehouse server.
 
 ## List files
 
@@ -134,7 +134,7 @@ notebookutils.fs.cp('source file or directory', 'destination file or directory',
 > [!TIP]
 > Always check the Boolean return value to verify whether the operation succeeded. Use `notebookutils.fs.exists()` to verify the source path before you start a copy operation.
 
-The following example shows a cross-storage copy from the default Lakehouse to an ADLS Gen2 account:
+The following example shows a cross-storage copy from the default lakehouse to an ADLS Gen2 account:
 
 ```python
 notebookutils.fs.cp(

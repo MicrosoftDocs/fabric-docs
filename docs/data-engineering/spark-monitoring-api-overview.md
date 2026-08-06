@@ -20,7 +20,7 @@ Fabric provides APIs to monitor Spark applications at both the workspace and ite
 | ----- | ----------- |
 | [Spark applications in a workspace](/rest/api/fabric/spark/livy-sessions/list-livy-sessions) | Retrieve a list of Spark applications in the workspace.|
 | [Spark applications for a notebook](/rest/api/fabric/notebook/livy-sessions/list-livy-sessions) | Retrieve a list of Spark applications associated with a notebook. |
-| [Spark applications for a Spark Job Definition](/rest/api/fabric/sparkjobdefinition/livy-sessions/list-livy-sessions) | Retrieve a list of Spark applications associated with a Spark Job Definition. |
+| [Spark applications for a Spark job definition](/rest/api/fabric/sparkjobdefinition/livy-sessions/list-livy-sessions) | Retrieve a list of Spark applications associated with a Spark job definition. |
 | [Spark applications for a Lakehouse](/rest/api/fabric/lakehouse/livy-sessions/list-livy-sessions) | Retrieve a list of Spark applications associated with a Lakehouse. |
 
 **Single Spark Application APIs**
@@ -30,7 +30,7 @@ These APIs are used for deep-dive diagnostics, providing comprehensive details, 
 | APIs  | Description |
 | ----- | ----------- |
 | [Notebook Run](/rest/api/fabric/notebook/livy-sessions/get-livy-session) | Retrieve detailed information for the Spark application that executed a specific notebook run. |
-| [Spark Job Definition Submission](/rest/api/fabric/sparkjobdefinition/livy-sessions/get-livy-session) | Retrieve detailed information for Spark applications initiated via Spark Job Definitions. |
+| [Spark Job Definition Submission](/rest/api/fabric/sparkjobdefinition/livy-sessions/get-livy-session) | Retrieve detailed information for Spark applications initiated via Spark job definitions. |
 | [Lakehouse Operation](/rest/api/fabric/lakehouse/livy-sessions/get-livy-session) | Retrieve detailed information for the Spark application triggered by a Lakehouse operation. |
 | [Spark Open-source metrics APIs](../data-engineering/open-source-apis.md) | Fully aligned with the Spark History Server APIs for collecting Spark metrics. |
 | [Livy Log](../data-engineering/livy-log.md) | Retrieve Spark Livy logs for detailed session-level information. |
@@ -48,7 +48,7 @@ Use the following resources to quickly access APIs for listing Livy sessions and
 
 - Workspace - [List Sessions (Spark)](/rest/api/fabric/spark/livy-sessions/list-livy-sessions)
 - Notebook -  [List Sessions (Notebook)](/rest/api/fabric/notebook/livy-sessions/list-livy-sessions) 
-- Spark Job Definition -  [List Sessions (Spark Job Definition)](/rest/api/fabric/sparkjobdefinition/livy-sessions/list-livy-sessions) 
+- Spark job definition -  [List Sessions (Spark Job Definition)](/rest/api/fabric/sparkjobdefinition/livy-sessions/list-livy-sessions)
 - Lakehouse -  [List Sessions (Lakehouse)](/rest/api/fabric/lakehouse/livy-sessions/list-livy-sessions)
 
 2. **Single Spark Application APIs**

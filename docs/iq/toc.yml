@@ -77,20 +77,18 @@ items:
     items:
     - name: What is plan?
       href: plan/overview.md
-    - name: Region availability
-      href: plan/overview-regions.md
     - name: Prerequisites
       href: plan/overview-prerequisites.md
     - name: Roles
       href: plan/overview-roles.md 
-    - name: Known limitations
-      href: plan/overview-limitations.md
   - name: Planning sheets
     items:
     - name: Planning sheets overview
       href: plan/planning-overview.md
     - name: Concepts
       items:
+        - name: Fiscal year setup
+          href: plan/planning-concept-fiscal-year-setup.md
         - name: Cubes
           href: plan/planning-concept-cube.md
         - name: Row-level security (RLS)
@@ -137,7 +135,9 @@ items:
           href: plan/planning-how-to-bulk-edit.md
         - name: Set up scenarios
           href: plan/planning-how-to-set-up-scenarios.md
-        - name: Use writeback
+        - name: Use simulation measures
+          href: plan/planning-how-to-use-simulation-measures.md
+        - name: Write back data
           items:
               - name: Set up writeback
                 href: plan/planning-writeback/planning-how-to-persist-data.md
@@ -155,11 +155,19 @@ items:
                 href: plan/planning-writeback/planning-how-to-enable-writeback-reading-mode.md
               - name: Writeback FAQ
                 href: plan/planning-writeback/writeback-faq.md
+        - name: Multidimensional planning
+          items:
+              - name: Create multidimensional cubes
+                href: plan/planning-cubes/how-to-create-cube.md
+              - name: Create cube forecasts
+                href: plan/planning-cubes/how-to-create-forecast-cube.md
+              - name: Manage cube measures
+                href: plan/planning-cubes/how-to-manage-cube-measures.md
+              - name: Cube FAQ
+                href: plan/planning-cubes/faq-cube.md     
         - name: Change layouts
           href: plan/planning-how-to-change-layouts.md
-        - name: Create a cube
-          href: plan/planning-how-to-create-cube.md
-        - name: Add comments
+        - name: Comment and collaborate
           href: plan/planning-how-to-add-comments.md
         - name: Add notes
           href: plan/planning-how-to-add-notes.md
@@ -207,6 +215,8 @@ items:
                 href: plan/planning-optimize/optimizer-overview.md
               - name: Target based optimization
                 href: plan/planning-optimize/planning-how-to-optimize-input-values.md
+              - name: Maximize or minimize a target value
+                href: plan/planning-optimize/planning-how-to-maximize-minimize-target-value.md
         - name: Use driver models
           items: 
               - name: Create a model
@@ -217,6 +227,8 @@ items:
                 href: plan/planning-driver-model/planning-how-to-create-templates.md
               - name: Create a driver model
                 href: plan/planning-driver-model/planning-how-to-create-driver-model.md
+        - name: Create a measure model
+          href: plan/planning-how-to-create-measure-model.md
         - name: Configure approval workflows
           href: plan/planning-how-to-configure-approval-workflows.md
     - name: Troubleshoot
@@ -277,6 +289,8 @@ items:
               href: plan/powertable-how-to-connect-existing-database.md
             - name: Enter table data manually
               href: plan/powertable-how-to-enter-table-data-manually.md
+            - name: PowerTable sheets creation FAQ
+              href: plan/resources/powertable-sheets-creation-faq.md
         - name: Update table data
           href: plan/powertable-how-to-bulk-edit-data.md
         - name: Insert and manage rows
@@ -317,16 +331,30 @@ items:
           href: plan/powertable-how-to-filter-data.md
         - name: Set up access control
           href: plan/powertable-how-to-set-up-access-control.md
+        - name: Configure layouts
+          items:
+            - name: Configure hierarchy layout
+              href: plan/powertable-layouts/how-to-configure-hierarchy-layout.md
         - name: Apply conditional formatting
           href: plan/powertable-how-to-apply-conditional-formatting.md
+        - name: Comment and collaborate
+          href: plan/powertable-how-to-add-comments.md
         - name: View audit logs
           href: plan/powertable-how-to-view-audit-logs.md  
         - name: Generate forms
-          href: plan/powertable-how-to-generate-forms.md  
-        - name: Configure approval workflow
-          href: plan/powertable-how-to-configure-approval-workflow.md
-        - name: Review changes in approval workflow
-          href: plan/powertable-how-to-review-approval-workflow.md 
+          href: plan/powertable-how-to-generate-forms.md
+        - name: Approval workflow
+          items:
+            - name: Configure approval workflow
+              href: plan/powertable-how-to-configure-approval-workflow.md
+            - name: Review changes in approval workflow
+              href: plan/powertable-how-to-review-approval-workflow.md
+        - name: Automation
+          items:
+            - name: Configure automation workflows
+              href: plan/powertable-how-to-create-automation/how-to-configure-automation-workflows.md
+            - name: Create a sample automation
+              href: plan/powertable-how-to-create-automation/how-to-create-sample-automation.md 
         - name: Configure slowly changing dimensions
           href: plan/powertable-how-to-create-slowly-changing-dimension.md
         - name: Export to Excel
@@ -341,6 +369,8 @@ items:
     items:
     - name: Intelligence sheets overview
       href: plan/intelligence-overview.md
+    - name: Intelligence FAQ
+      href: plan/faq-intelligence.md    
     - name: How-tos
       items:
         - name: Get started with intelligence sheets
@@ -369,14 +399,18 @@ items:
           href: plan/intelligence-how-to-create-paginated-reports.md
         - name: Export data and visuals
           href: plan/intelligence-how-to-export-data-visuals.md
-        - name: Visualize planning data
-          href: plan/intelligence-how-to-visualize-planning-data.md
         - name: Plan projects with Gantt charts
           href: plan/intelligence-how-to-create-gantt-chart.md
   - name: Infobridge
     items:
     - name: Infobridge overview
       href: plan/infobridge-overview.md
+    - name: Concepts
+      items:
+        - name: Connected planning
+          href: plan/infobridge-concept-connected-planning.md
+        - name: Integrate planning, reporting, and visualization
+          href: plan/infobridge-concept-blend-measures.md
     - name: How-tos
       items:
         - name: Create bridge
@@ -391,8 +425,12 @@ items:
           items:
           - name: Append queries
             href: plan/infobridge-transform-queries/how-to-append-query.md
+          - name: Merge queries
+            href: plan/infobridge-transform-queries/how-to-merge-query.md
           - name: Join queries
             href: plan/infobridge-transform-queries/how-to-join-query.md
+          - name: SQL queries
+            href: plan/infobridge-transform-queries/how-to-sql-query.md          
         - name: Transform data
           items:
             - name: Use pivot table
@@ -423,8 +461,20 @@ items:
               href: plan/infobridge-transformations/infobridge-how-to-import-export.md
   - name: Resources
     items:
+    - name: Billing and capacity usage
+      href: plan/resources/billing-fabric-plan.md
     - name: Plan general FAQ
       href: plan/resources/frequently-asked-questions.md
+    - name: Plan best practices
+      items:
+      - name: Time intelligence
+        href: plan/resources/best-practices/time-intelligence.md
+      - name: Semantic modeling
+        href: plan/resources/best-practices/semantic-modeling.md
+    - name: Known limitations
+      href: plan/overview-limitations.md
+    - name: Error codes and resolutions
+      href: plan/resources/error-codes-and-resolutions.md
 - name: Graph
   href: ../graph/toc.yml
 - name: Data agent

@@ -49,6 +49,21 @@
       "source_path_from_root": "/docs/iq/plan/planning-how-to-optimize-input-values.md",
       "redirect_url": "/fabric/iq/plan/planning-optimize/planning-how-to-optimize-input-values",
       "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/iq/plan/overview-regions.md",
+      "redirect_url": "/fabric/iq/plan/overview#supported-regions",
+      "redirect_document_id": true
+    },
+     {
+      "source_path_from_root": "/docs/iq/plan/planning-how-to-create-cube.md",
+      "redirect_url": "/fabric/iq/plan/planning-cubes/how-to-create-cube",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/iq/plan/intelligence-how-to-visualize-planning-data.md",
+      "redirect_url": "/fabric/iq/plan/infobridge-concept-blend-measures",
+      "redirect_document_id": true
     }
   ]
 }

@@ -16,8 +16,6 @@ To open the **Manage Columns** panel, select **PowerTable** > **Manage Columns**
 
 The following options are available:
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Show or hide columns
 
 To show or hide columns:
@@ -62,7 +60,7 @@ Use **Column Access** to control which users can edit specific columns.
 
    :::image type="content" source="media/powertable-how-to-manage-columns/column-access-window.png" alt-text="Screenshot of the Column Access window." lightbox="media/powertable-how-to-manage-columns/column-access-window.png":::
 
-For more information about setting up column access control, see [**Column access control**](./powertable-how-to-set-up-access-control.md#column-access).
+For more information about setting up column access control, see [Column access control](./powertable-how-to-set-up-access-control.md#column-access).
 
 ## Reorder columns
 

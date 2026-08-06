@@ -8,24 +8,24 @@ ms.search.form: delta lake v-order optimization
 ai-usage: ai-assisted
 ---
 
-# Optimize Delta Lake tables with V-Order
+# Optimize Delta Lake tables with V-order
 
 The [Lakehouse](lakehouse-overview.md) and [Delta Lake](lakehouse-and-delta-tables.md) table format are central to Microsoft Fabric. Keeping Delta tables optimized is key to performance and cost efficiency for analytics workloads.
 
-This article helps you decide when to use V-Order and shows the main configuration and maintenance patterns for Delta tables.
+This article helps you decide when to use V-order and shows the main configuration and maintenance patterns for Delta tables.
 
 Use this article to:
 
-- Understand what V-Order changes and when it helps.
-- Understand how Z-Order and V-Order complement each other.
+- Understand what V-order changes and when it helps.
+- Understand how Z-Order and V-order complement each other.
 - Choose the right control level: session, table property, or write operation.
 - Apply Delta table maintenance patterns in the right Spark runtime context.
 
-For cross-workload guidance on when to apply V-Order based on consumption scenarios, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
+For cross-workload guidance on when to apply V-order based on consumption scenarios, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
 
-## What is V-Order?
+## What is V-order?
 
-V-Order is a write-time optimization for Parquet files that can improve downstream query performance across Fabric engines.
+V-order is a write-time optimization for Parquet files that can improve downstream query performance across Fabric engines.
 
 At a glance:
 
@@ -33,31 +33,31 @@ At a glance:
 - **How it helps:** Reorganizes Parquet layout (for example, row-group distribution, encoding, and compression) to improve read efficiency.
 - **Typical tradeoff:** Writes might take longer (often around 15% on average), while reads can improve significantly depending on workload.
 - **Engine compatibility:** Files remain open-source Parquet compliant, and Delta features such as Z-Order remain compatible.
-- **Scope:** V-Order is file-level. Delta operations such as compaction, vacuum, and time travel can be used with it.
+- **Scope:** V-order is file-level. Delta operations such as compaction, vacuum, and time travel can be used with it.
 
-## Control V-Order writes
+## Control V-order writes
 
-V-Order is used to optimize Parquet file layout for faster query performance, especially in read-heavy scenarios. In Microsoft Fabric, **V-Order is _disabled by default_ for all newly created workspaces** to optimize performance for write-heavy data engineering workloads.
+V-order is used to optimize Parquet file layout for faster query performance, especially in read-heavy scenarios. In Fabric, **V-order is _disabled by default_ for all newly created workspaces** to optimize performance for write-heavy data engineering workloads.
 
-V-Order behavior in Apache Spark is controlled through the following configurations:
+V-order behavior in Apache Spark is controlled through the following configurations:
 
 | Configuration | Default Value | Description |
 |---------------|----------------|-------------|
-| `spark.sql.parquet.vorder.default` | `false` | Controls session-level V-Order writing. Set to `false` by default in new Fabric workspaces. |
-| `TBLPROPERTIES("delta.parquet.vorder.enabled")` | Unset | Controls default V-Order behavior at the table level. |
-| DataFrame writer option: `parquet.vorder.enabled` | Unset | Used to control V-Order at the write operation level. |
+| `spark.sql.parquet.vorder.default` | `false` | Controls session-level V-order writing. Set to `false` by default in new Fabric workspaces. |
+| `TBLPROPERTIES("delta.parquet.vorder.enabled")` | Unset | Controls default V-order behavior at the table level. |
+| DataFrame writer option: `parquet.vorder.enabled` | Unset | Used to control V-order at the write operation level. |
 
-Use the following commands to enable or override V-Order writes as needed for your scenario.
+Use the following commands to enable or override V-order writes as needed for your scenario.
 
-V-Order is disabled by default in new Fabric workspaces (`spark.sql.parquet.vorder.default=false`) to improve write performance for ingestion and transformation pipelines.
+V-order is disabled by default in new Fabric workspaces (`spark.sql.parquet.vorder.default=false`) to improve write performance for ingestion and transformation pipelines.
 
-For read-heavy workloads such as interactive queries or dashboarding, enable V-Order by setting `spark.sql.parquet.vorder.default` to `true`. You can also switch to **`readHeavyforSpark`** or **`ReadHeavy`** resource profiles, which automatically enable V-Order for read-focused performance.
+For read-heavy workloads such as interactive queries or dashboarding, enable V-order by setting `spark.sql.parquet.vorder.default` to `true`. You can also switch to **`readHeavyforSpark`** or **`ReadHeavy`** resource profiles, which automatically enable V-order for read-focused performance.
 
-In Fabric runtime 1.3 and later, the `spark.sql.parquet.vorder.enable` setting is removed. Because V-Order can be applied automatically during Delta optimization with `OPTIMIZE`, you don't need this older setting. If you're migrating from earlier runtime versions, remove this setting from your code.
+In Fabric runtime 1.3 and later, the `spark.sql.parquet.vorder.enable` setting is removed. Because V-order can be applied automatically during Delta optimization with `OPTIMIZE`, you don't need this older setting. If you're migrating from earlier runtime versions, remove this setting from your code.
 
 - [Learn more about resource profiles](configure-resource-profile-configurations.md)
 
-### Check V-Order configuration in Apache Spark session
+### Check V-order configuration in Apache Spark session
 
 Use these commands to confirm the current session value before you change it.
 
@@ -92,7 +92,7 @@ sparkR.conf("spark.sql.parquet.vorder.default")
 
 ---
 
-### Disable V-Order writing in Apache Spark session
+### Disable V-order writing in Apache Spark session
 
 Use these commands when your workload is write-heavy and you want faster ingestion or transformation writes.
 
@@ -127,9 +127,9 @@ sparkR.conf("spark.sql.parquet.vorder.default", "false")
 
 ---
 
-### Enable V-Order writing in Apache Spark session
+### Enable V-order writing in Apache Spark session
 
-When you enable V-Order at the session level, all Parquet writes in that session use V-Order, including non-Delta Parquet tables and Delta tables even if `parquet.vorder.enabled` is explicitly set to `false`.
+When you enable V-order at the session level, all Parquet writes in that session use V-order, including non-Delta Parquet tables and Delta tables even if `parquet.vorder.enabled` is explicitly set to `false`.
 
 # [Spark SQL](#tab/sparksql)
 
@@ -162,21 +162,21 @@ sparkR.conf("spark.sql.parquet.vorder.default", "true")
 
 ---
 
-### Control V-Order using Delta table properties
+### Control V-order using Delta table properties
 
 This section uses Spark SQL only because table properties are defined through SQL DDL and `ALTER TABLE` statements.
 
 Use table properties when you want a table-level default that applies across sessions.
 
-Enable V-Order table property during table creation:
+Enable V-order table property during table creation:
 ```sql
 %%sql 
 CREATE TABLE person (id INT, name STRING, age INT) USING parquet TBLPROPERTIES("delta.parquet.vorder.enabled" = "true");
 ```
 
-When the table property is set to `true`, `INSERT`, `UPDATE`, and `MERGE` apply V-Order at write time. Session-level and write-level settings still take precedence, so writes can still use V-Order even when `TBLPROPERTIES` is set to `false`.
+When the table property is set to `true`, `INSERT`, `UPDATE`, and `MERGE` apply V-order at write time. Session-level and write-level settings still take precedence, so writes can still use V-order even when `TBLPROPERTIES` is set to `false`.
 
-Enable or disable V-Order by altering the table property:
+Enable or disable V-order by altering the table property:
 
 ```sql
 %%sql 
@@ -187,15 +187,15 @@ ALTER TABLE person SET TBLPROPERTIES("delta.parquet.vorder.enabled" = "false");
 ALTER TABLE person UNSET TBLPROPERTIES("delta.parquet.vorder.enabled");
 ```
 
-After you enable or disable V-Order using table properties, only future writes to the table are affected. Parquet files keep the ordering used when it was created. To change the current physical structure to apply or remove V-Order, read [Table compaction](table-compaction.md).
+After you enable or disable V-order using table properties, only future writes to the table are affected. Parquet files keep the ordering used when it was created. To change the current physical structure to apply or remove V-order, read [Table compaction](table-compaction.md).
 
-### Controlling V-Order directly on write operations
+### Controlling V-order directly on write operations
 
 This section uses PySpark to demonstrate the DataFrame writer API. The same pattern is available in Scala DataFrame APIs with equivalent options.
 
 Use write-level options when you need per-operation control instead of session-wide or table-wide defaults.
 
-All Apache Spark write commands inherit the session setting when not explicitly overridden. The following examples write using V-Order by inheriting the session configuration.
+All Apache Spark write commands inherit the session setting when not explicitly overridden. The following examples write using V-order by inheriting the session configuration.
 
 ```python
 df_source.write\
@@ -219,9 +219,9 @@ df_source.write\
   .saveAsTable("myschema.mytable") 
 ```
 
-V-Order only applies to files affected by the predicate.
+V-order only applies to files affected by the predicate.
 
-In a session where `spark.sql.parquet.vorder.default` is unset or set to `false`, the following commands write using V-Order:
+In a session where `spark.sql.parquet.vorder.default` is unset or set to `false`, the following commands write using V-order:
 
 ```python
 df_source.write\
@@ -244,7 +244,7 @@ DeltaTable.createOrReplace(spark)\
 
 ## Related content
 
-- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
+- [Delta Lake in Fabric overview](../fundamentals/delta-lake-overview.md)
 - [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
 - [Delta table maintenance overview](delta-lake-table-maintenance.md)
 - [Table compaction](table-compaction.md)

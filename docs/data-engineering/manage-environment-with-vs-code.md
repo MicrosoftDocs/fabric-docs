@@ -14,7 +14,7 @@ Microsoft Fabric environments is a consolidated item for all your hardware and s
 
 Once an environment is created, you can explore and inspect it in Visual Studio (VS) Code with the Fabric Data Engineering VS Code extension. A new node called **Environment** is available in VS Code. Expand the **Environments** node to see all the environments in your workspace.
 
-:::image type="content" source="media\vs-code\list-env.png" alt-text="Screenshot showing environment artifact list." lightbox="media\vs-code\list-env.png":::
+:::image type="content" source="media\vs-code\list-env.png" alt-text="Screenshot showing environment item list." lightbox="media\vs-code\list-env.png":::
 
 The environment currently set as the default workspace has the label **workspace default** next to its name. To change this default, hover over the environment and select the **Set Default Workspace Environment** button.
 
@@ -24,7 +24,7 @@ The environment currently set as the default workspace has the label **workspace
 
 Environments define the hardware and software settings for your Spark jobs and notebooks. You can inspect the details of an environment in Visual Studio Code. Hover over the environment and select the **Inspect** button. The environment details are displayed in the right panel in JSON format.
 
-:::image type="content" source="media\vs-code\inspect-env-detail.png" alt-text="Screenshot showing inspect environment artifact." lightbox="media\vs-code\inspect-env-detail.png":::
+:::image type="content" source="media\vs-code\inspect-env-detail.png" alt-text="Screenshot showing inspect environment item." lightbox="media\vs-code\inspect-env-detail.png":::
 
 ## Check the association between an environment and code
 
@@ -35,4 +35,4 @@ You can check the association between an environment and a code item such as not
 ## Related content
 
 - [Create and manage Apache Spark job definitions in Visual Studio Code](author-sjd-with-vs-code.md)
-- [Explore Microsoft Fabric lakehouses in Visual Studio Code](explore-lakehouse-with-vs-code.md)
+- [Explore Fabric lakehouses in Visual Studio Code](explore-lakehouse-with-vs-code.md)

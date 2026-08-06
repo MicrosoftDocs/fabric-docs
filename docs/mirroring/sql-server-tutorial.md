@@ -130,7 +130,7 @@ For SQL Server versions 2016-2022, an admin must be a member of the `sysadmin` s
 
 1. Membership in the db_owner database role of the source database for mirroring is required to manage CDC.
 
-    Connect to the user database your plan to mirror to Microsoft Fabric. Create a database user connected to the login and grant the minimum privileges necessary.
+    Connect to the user database you plan to mirror to Microsoft Fabric. Create a database user connected to the login and grant the minimum privileges necessary.
 
     - For a SQL Authenticated login:
 

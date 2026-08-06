@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Custom live pools are pre-warmed Spark clusters that provide near-instant session startup for notebook-based workloads in Microsoft Fabric. Instead of waiting for cluster provisioning on every run, custom live pools keep clusters warm during a configured schedule window, enabling 5-second session start times for your interactive and scheduled notebooks.
+Custom live pools are pre-warmed Spark clusters that provide near-instant session startup for notebook-based workloads in Fabric. Instead of waiting for cluster provisioning on every run, custom live pools keep clusters warm during a configured schedule window, enabling 5-second session start times for your interactive and scheduled notebooks.
 
 ## Why use custom live pools
 
@@ -27,8 +27,8 @@ Custom live pools complement the existing starter pool and custom Spark pool opt
 
 | Compute option | Startup time | Schedule-based | Custom libraries | Supported workloads |
 |--|--|--|--|--|
-| Starter pools | 5 to 10 seconds (without any libraries) | No | No | Notebooks, SJD |
-| Custom Spark pools | ~1 min | No | Via environment | Notebooks, SJD |
+| Starter pools | 5 to 10 seconds (without any libraries) | No | No | notebooks, SJD |
+| Custom Spark pools | ~1 min | No | Via environment | notebooks, SJD |
 | **Custom live pools** | **~5 seconds to 10 seconds** (after hydration is complete) | **Yes** | **Via environment** | **Notebooks only (interactive and scheduled)** |
 
 ## Key concepts
@@ -74,13 +74,13 @@ Custom live pools support the following notebook-based Spark session types:
 - **Notebook runs triggered by pipelines**
 
 > [!NOTE]
-> Spark Job Definitions (batch jobs) aren't supported in the current release of custom live pools.
+> Spark job definitions (batch jobs) aren't supported in the current release of custom live pools.
 
 ## Capacity and licensing
 
-Custom live pools require a paid Microsoft Fabric capacity SKU. Fabric Trial capacities aren't currently supported.
+Custom live pools require a paid Fabric capacity SKU. Fabric Trial capacities aren't currently supported.
 
-For information on available capacity SKUs, see [Microsoft Fabric concepts and licenses](/fabric/enterprise/licenses).
+For information on available capacity SKUs, see [Fabric concepts and licenses](/fabric/enterprise/licenses).
 
 ## Access control
 

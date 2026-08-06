@@ -207,7 +207,7 @@ When deploying APIs for GraphQL through deployment pipelines, [autobinding](..\c
  
 ## Related content
 
-- [What is Microsoft Fabric API for GraphQL?](api-graphql-overview.md)
+- [What is Fabric API for GraphQL?](api-graphql-overview.md)
 - [Create and add data to an API for GraphQL](get-started-api-graphql.md)
 - [Git integration](..\cicd\git-integration\git-get-started.md)
 - [Deployment pipelines](..\cicd\deployment-pipelines\intro-to-deployment-pipelines.md)

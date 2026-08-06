@@ -19,14 +19,12 @@ PowerTable provides the following row management capabilities:
 * Copy records between PowerTable and other applications.
 * Delete one or more rows directly from the table.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Insert rows
 
 Use the **Insert Row** option to manually add new rows to a table.
 
 > [!NOTE]
-> Use the [**Import**](#import-bulk-data) option to insert or update rows by using data from an external file.
+> Use the [Import](#import-bulk-data) option to insert or update rows by using data from an external file.
 
 ### Insert a single row
 
@@ -96,7 +94,7 @@ To set up the insert using a form interface:
     :::image type="content" source="media/powertable-how-to-insert-import-rows/form-editor-enter-values.png" alt-text="Screenshot of entering values in the Form Editor.":::
 
    > [!NOTE]
-   > Use [**Customize Form**](./powertable-how-to-generate-forms.md#customize-form) to change the form fields and structure. The form configuration interface lets you add, edit, delete, and format form fields.
+   > Use [Customize Form](./powertable-how-to-generate-forms.md#customize-form) to change the form fields and structure. The form configuration interface lets you add, edit, delete, and format form fields.
 
     The new row is inserted into the table.
 
@@ -161,7 +159,7 @@ You can populate a PowerTable sheet by copying rows from external applications, 
 
     :::image type="content" source="media/powertable-how-to-insert-import-rows/copy-rows-spreadsheet.png" alt-text="Screenshot of copying rows from spreadsheet." lightbox="media/powertable-how-to-insert-import-rows/copy-rows-spreadsheet.png":::
 
-1. Use [**Insert Row**](#insert-rows) to insert one or more rows.
+1. Use [Insert Row](#insert-rows) to insert one or more rows.
 1. Select the newly added rows, and then select the **Paste** option or press **Ctrl+V**.
 
     :::image type="content" source="media/powertable-how-to-insert-import-rows/paste.png" alt-text="Screenshot of pasting the copied rows from spreadsheet." lightbox="media/powertable-how-to-insert-import-rows/paste.png":::
@@ -226,3 +224,50 @@ To delete rows:
 > You can configure access controls to determine who can delete rows from a table. For more information, see [access control](./powertable-how-to-set-up-access-control.md#delete).
 >
 > If you configure an approval workflow, update and deletion requests go through the workflow before the records are updated or deleted. To learn more, see [Approval workflow](./powertable-how-to-configure-approval-workflow.md).
+
+## FAQ
+
+### What does Insert Using Form By Default change?
+
+**Insert Using Form By Default** changes the default behavior of the **Insert Row** button.
+
+* When you turn the option **off**, **Insert Row** adds a blank row directly to the grid.
+* When you turn the option **on**, **Insert Row** opens the **Record Details** form instead.
+
+### What does Insert Multiple Rows do?
+
+**Insert Multiple Rows** lets you insert up to **1,000** blank rows into the table.
+
+When you select this option, PowerTable prompts you to specify the number of rows to insert.
+
+### In the insert form, do I have to fill in every field? Does Apply save the record?
+
+No. Selecting **Apply** doesn't save the record. It closes the form and stages the new row as a pending change.
+
+When you add a new record:
+
+* Complete all fields marked as **Mandatory** with an asterisk (\*).
+* **Identity** columns are generated automatically.
+* You can leave optional fields blank. Optional fields aren't marked with an asterisk (\*).
+
+### Does selecting Apply in the Form Editor commit the changes?
+
+No. Selecting **Apply** creates a pending change. You can combine it with other pending changes before you preview, discard, or save them.
+
+The changes are committed only when you select **Save to Database**.
+
+### Which rows does Bulk Edit affect?
+
+**Bulk Edit** is available only when you select multiple rows by using the row selectors (the checkboxes for each row). It applies changes only to the selected rows.
+
+### What happens to existing rows during the import process?
+
+Before importing data, PowerTable classifies each row by using the primary key field.
+
+After you select the sheet and choose **Proceed**, PowerTable scans the file and categorizes the rows into the following tabs:
+
+* **Insert**
+* **Update**
+* **Error**
+
+Each tab displays the number of rows in that category. Selecting **Import** applies the actions accordingly.

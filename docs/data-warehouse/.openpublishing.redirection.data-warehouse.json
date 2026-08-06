@@ -76,6 +76,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-warehouse/source-control.md",
+        "redirect_url": "/fabric/data-warehouse/development-deployment",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-warehouse/migrate-with-migration-assistant.md",
         "redirect_url": "/fabric/data-warehouse/migration-assistant",
         "redirect_document_id": false

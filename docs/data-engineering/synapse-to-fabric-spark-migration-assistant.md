@@ -25,7 +25,7 @@ The assistant supports migration of the following items:
 - **Spark job definitions (SJDs)** are migrated with associated environments.
 - **Lake databases** are mapped to Fabric schemas, and managed Delta tables are migrated by creating OneLake catalog shortcuts.
 
-For lake database migration details, the default Synapse database maps to the `dbo` schema in Fabric, and more databases are migrated as schemas in the same Lakehouse.
+For lake database migration details, the default Synapse database maps to the `dbo` schema in Fabric, and more databases are migrated as schemas in the same lakehouse.
 
 ## How migration works
 

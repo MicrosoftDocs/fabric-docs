@@ -129,7 +129,7 @@ If your source data store and format isn't originally supported by a COPY comman
 
 #### Staged copy
 
-When your source data is not natively compatible with COPY command, enable data copying via an interim staging storage. In this case, the service automatically converts the data to meet the data format requirements of COPY command. Then it invokes COPY command to load data into Data Warehouse. Finally, it cleans up your temporary data from the storage. For more information about staged copy, see this [article](copy-data-activity.md#configure-your-other-settings-under-settings-tab). 
+When your source data is not natively compatible with COPY command, enable data copying via an interim staging storage. In this case, the service automatically converts the data to meet the data format requirements of COPY command. Then it invokes COPY command to load data into Data Warehouse. Finally, it cleans up your temporary data from the storage. For more information about staged copy, see this [article](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab). 
 
 To use staged copy, go to **Settings** tab and select **Enable staging**. You can choose **Workspace** to use auto-created staging storage within Fabric. For **External**, Azure Blob Storage and Azure Data Lake Storage Gen2 are supported as the external staging storage. You need to create an Azure Blob Storage or Azure Data Lake Storage Gen2 connection first, and then select the connection from the drop-down list to use the staging storage. These storage options support multiple authentication types. The following table summarizes the supported options:
 
@@ -145,9 +145,9 @@ To use staged copy, go to **Settings** tab and select **Enable staging**. You ca
 
 ### Mapping
 
-For the **Mapping** tab configuration, if you don't apply Data Warehouse with auto create table as your destination, select the copy activity, then select the [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab) tab.
+For the **Mapping** tab configuration, if you don't apply Data Warehouse with auto create table as your destination, select the copy activity, then select the [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab) tab.
 
-If you apply Data Warehouse with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
+If you apply Data Warehouse with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
 
 For example, the type for *ID* column in source is int, and you can change it to float type when mapping to the destination column.
 
@@ -157,7 +157,7 @@ If you choose varchar or varbinary type for the destination column, you can spec
 
 ### Settings
 
-For the **Settings** tab configuration, select the copy activity, then select the [Settings](copy-data-activity.md#configure-your-other-settings-under-settings-tab) tab.
+For the **Settings** tab configuration, select the copy activity, then select the [Settings](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab) tab.
 
 ## Table summary
 

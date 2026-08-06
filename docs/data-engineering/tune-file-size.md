@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 Appropriately sized files are important for query performance, resource utilization, and metadata management. Smaller files increase task overhead and metadata operations, while larger files can underutilize parallelism and skew I/O. Delta Lake uses file metadata for partition pruning and data skipping, so targeting the right file size ensures efficient reads, writes, and maintenance.
 
-For file-size recommendations by consumption scenario (SQL Analytics Endpoint, Power BI Direct Lake, Spark), see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md#optimal-file-layouts-by-engine).
+For file-size recommendations by consumption scenario (SQL analytics endpoint, Power BI Direct Lake, Spark), see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md#optimal-file-layouts-by-engine).
 
 The following sections describe the main features you can use to tune file size in Delta tables.
 
@@ -90,7 +90,7 @@ SET TBLPROPERTIES ('delta.targetFileSize' = '256m')
 
 ## Adaptive target file size
 
-Microsoft Fabric provides adaptive target file size to eliminate the complexity related to manually tuning the target file size of all tables in a session or individual tables via the `delta.targetFileSize` table property. Adaptive target file size uses Delta table heuristics like table size to estimate the ideal target file size and automatically updates the target as conditions change, ensuring optimal performance without manual intervention or maintenance overhead.
+Fabric provides adaptive target file size to eliminate the complexity related to manually tuning the target file size of all tables in a session or individual tables via the `delta.targetFileSize` table property. Adaptive target file size uses Delta table heuristics like table size to estimate the ideal target file size and automatically updates the target as conditions change, ensuring optimal performance without manual intervention or maintenance overhead.
 
 ### Enable adaptive target file size
 
@@ -181,8 +181,8 @@ Use these recommendations to balance write cost, read performance, and maintenan
 
 ## Related content
 
-- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
+- [Delta Lake in Fabric overview](../fundamentals/delta-lake-overview.md)
 - [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
-- [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md)
+- [Delta Lake table optimization and V-order](delta-optimization-and-v-order.md)
 - [Table compaction](./table-compaction.md)
 - [Lakehouse table maintenance](lakehouse-table-maintenance.md)

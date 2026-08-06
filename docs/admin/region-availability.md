@@ -6,14 +6,14 @@ ms.author: mimart
 ms.custom:
   - references_regions
 ms.topic: overview
-ms.date: 07/08/2026
+ms.date: 07/28/2026
 ---
 
 # Fabric region availability
 
 This article lists the region availability of the Fabric [F SKUs](../enterprise/licenses.md#capacity), which are available in the [Azure public cloud regions](https://azure.microsoft.com/explore/global-infrastructure/geographies/). Some of the Fabric workloads might not be immediately available in new regions, or regions where data centers become constrained.
 
-For details about purchasing a Fabric subscription, see [Buy a Fabric subscription](../enterprise/buy-subscription.md).
+For details about buying Fabric capacity, see [Buy Fabric capacity in Azure](../enterprise/buy-capacity.md).
 
 ## Fabric workload and feature availability
 
@@ -34,28 +34,28 @@ The following table lists all Azure regions where Power BI or Fabric is availabl
 | Americas     | Canada Central       | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Americas     | Canada East          | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Americas     | Chile Central        | ✅ | ❌ | Power BI only region |
-| Americas     | Mexico Central       | ✅ | ✅ | Not available :<br> [Fabric App (preview)](../apps/overview.md)<br> [Schema Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) |
-| Americas     | US - Central US      | ✅ | ✅ | Not available: <br> [Schema Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) |
+| Americas     | Mexico Central       | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
+| Americas     | US - Central US      | ✅ | ✅ |  |
 | Americas     | US - East US         | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md)<br> [Operations agent (preview)](../real-time-intelligence/operations-agent.md)<br> [Plan (preview)](../iq/plan/overview.md) |
-| Americas     | US - East US 2       | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md)<br> [Plan (preview)](../iq/plan/overview.md) |
+| Americas     | US - East US 2       | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Americas     | US - North Central US| ✅ | ✅ |  |
-| Americas     | US - South Central US| ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Fabric App (preview)](../apps/overview.md) <br> [Healthcare Solutions](/industry/healthcare/healthcare-data-solutions/overview) <br> [Ontology (preview)](../iq/ontology/overview.md) <br> [Operations agent](../real-time-intelligence/operations-agent.md) <br> [Plan (preview)](../iq/plan/overview.md) <br> [Schema  Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) |
+| Americas     | US - South Central US| ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Fabric App (preview)](../apps/overview.md) <br> [Healthcare Solutions](/industry/healthcare/healthcare-data-solutions/overview) <br> [Ontology (preview)](../iq/ontology/overview.md) <br> [Operations agent](../real-time-intelligence/operations-agent.md) <br> [Schema  Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) |
 | Americas     | US - West US         | ✅ | ✅ |  |
 | Americas     | US - West US 2       | ✅ | ✅ |  |
-| Americas     | US - West US 3       | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) <br> [Schema Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) |
+| Americas     | US - West US 3       | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | **Geography**| **Region** | **Power BI** | **All Fabric workloads** | **Unavailable Fabric features** |
 | Europe       | Austria East         | ✅ | ❌ | Power BI only region |
 | Europe       | Europe - North Europe| ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Fabric App (preview)](../apps/overview.md) |
-| Europe       | Europe - West Europe | ✅ | ✅ | Not available: <br> [Schema Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) |
+| Europe       | Europe - West Europe | ✅ | ✅ |  |
 | Europe       | France Central       | ✅ | ✅ |  |
 | Europe       | France South         | ✅ | ❌ | Power BI only region |
 | Europe       | Germany North        | ✅ | ❌ | Power BI only region |
 | Europe       | Germany West Central | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
-| Europe       | Italy North          | ✅ | ✅ | Not available: <br> [Schema Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) |
+| Europe       | Italy North          | ✅ | ✅ |  |
 | Europe       | Norway East          | ✅ | ✅ |  |
 | Europe       | Norway West          | ✅ | ❌ | Power BI only region |
-| Europe       | Poland Central       | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) <br> [Schema Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) |
-| Europe       | Spain Central        | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) <br> [Schema Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) |
+| Europe       | Poland Central       | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
+| Europe       | Spain Central        | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Europe       | Sweden Central       | ✅ | ✅ | Not available by default for Power BI: <br> [Business Continuity Disaster Recovery (BCDR)](/azure/reliability/reliability-fabric#cross-region-disaster-recovery-and-business-continuity).<br> Power BI is supported in the region but not in its paired region |
 | Europe       | Switzerland North    | ✅ | ✅ |  |
 | Europe       | Switzerland West     | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
@@ -69,15 +69,15 @@ The following table lists all Azure regions where Power BI or Fabric is availabl
 | Africa       | South Africa West    | ✅ | ❌ | Power BI only region |
 | Asia Pacific | Asia - East Asia     | ✅ | ✅ |  |
 | Asia Pacific | Asia - Southeast Asia| ✅ | ✅ |  |
-| Asia Pacific | Australia East       | ✅ | ✅ | Not available: <br> [Plan (preview)](../iq/plan/overview.md) |
-| Asia Pacific | Australia Southeast  | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) <br> [Schema Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) |
+| Asia Pacific | Australia East       | ✅ | ✅ |  |
+| Asia Pacific | Australia Southeast  | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Asia Pacific | India - Central India| ✅ | ✅ |  |
 | Asia Pacific | India - India West   | ✅ | ❌ | Power BI only region |
 | Asia Pacific | India - South India  | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Asia Pacific | Indonesia Central    | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
-| Asia Pacific | Israel Central       | ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Fabric App (preview)](../apps/overview.md) <br> [Schema Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) |
+| Asia Pacific | Israel Central       | ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Fabric App (preview)](../apps/overview.md) |
 | Asia Pacific | Japan East           | ✅ | ✅ |  |
-| Asia Pacific | Japan West           | ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Fabric App (preview)](../apps/overview.md) <br> [Plan (preview)](../iq/plan/overview.md) <br> [Schema Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) |
+| Asia Pacific | Japan West           | ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Fabric App (preview)](../apps/overview.md) |
 | Asia Pacific | Korea Central        | ✅ | ✅ |  |
 | Asia Pacific | Korea South          | ✅ | ❌ | Power BI only region |
 | Asia Pacific | Malaysia West        | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
@@ -87,5 +87,5 @@ The following table lists all Azure regions where Power BI or Fabric is availabl
 
 ## Related content
 
-* [Buy a Fabric subscription](../enterprise/buy-subscription.md)
+* [Buy Fabric capacity in Azure](../enterprise/buy-capacity.md)
 * [Find your Fabric home region](./find-fabric-home-region.md)

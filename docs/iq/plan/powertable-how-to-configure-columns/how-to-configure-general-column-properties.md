@@ -10,8 +10,6 @@ ms.topic: how-to
 
 Use the **General** tab to set the data type, validation rules, constraints, and default value for a column.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 ## Configure general properties
 
 To configure the general properties:
@@ -183,3 +181,28 @@ When you enable this option:
 In this example, changing the product size calculates the default value and resets the product price to it.
 
 :::image type="content" source="../media/powertable-how-to-configure-columns/how-to-configure-general-column-properties/recalculate-exisiting-value.png" alt-text="Screenshot of the column value resetting to its default value when the record is updated." lightbox="../media/powertable-how-to-configure-columns/how-to-configure-general-column-properties/recalculate-exisiting-value.png":::
+
+## FAQ
+
+### What's the difference between Input Type and Data Type in the Edit Column dialog?
+
+* **Data Type** is the underlying SQL data type for the column, such as **VARCHAR** for **Logo URL** or **INT** for **Product Key**. It appears greyed out in the **Edit Column** dialog and you can't modify it.
+
+* **Input Type** controls how PowerTable displays and captures values in the sheet.
+
+For example, changing the **Logo URL** column to the **Image** input type changes only how the data is displayed. The column continues to store the URL as a **VARCHAR** value.
+
+### What does the Image input type accept?
+
+The **Image** input type accepts:
+
+* Direct image URLs.
+* Base64-encoded image strings that begin with `data:image`.
+
+### What are the supported input types in PowerTable?
+
+For information about the supported input types in PowerTable, see [Supported input types](../powertable-reference-supported-column-input-types.md#supported-input-types).
+
+### Does setting a default value change existing rows?
+
+No. Default values apply only to new records. Existing records aren't affected.

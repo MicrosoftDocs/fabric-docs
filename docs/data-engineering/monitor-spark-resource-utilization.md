@@ -41,7 +41,7 @@ The resource utilization graph is interactive. When you hover your mouse over th
 
 ## Related content
 
-For an overview of Fabric Spark monitoring, Spark application monitoring, and Notebook contextual monitoring, you can refer to: 
+For an overview of Fabric Spark monitoring, Spark application monitoring, and notebook contextual monitoring, you can refer to:
 
 - [Apache Spark monitoring overview](spark-monitoring-overview.md)
 - [Apache Spark application detail monitoring](spark-detail-monitoring.md)

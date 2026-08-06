@@ -9,7 +9,7 @@ ms.search.form: MLV REST API
 
 # Manage and refresh materialized lake views in Fabric with APIs
 
-Microsoft Fabric REST APIs enable you to manage and refresh Materialized Lake Views (MLVs) programmatically. You can automate lineage refresh operations and integrate them with other tools and systems.
+Microsoft Fabric REST APIs enable you to manage and refresh materialized lake views (MLVs) programmatically. You can automate lineage refresh operations and integrate them with other tools and systems.
 
 ## Prerequisites
 
@@ -686,7 +686,7 @@ The following limitations apply to the materialized lake views REST APIs:
 
 ## Related content
 
-- [Microsoft Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart)
+- [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart)
 - [Job Scheduler APIs in Fabric](/rest/api/fabric/core/job-scheduler)
 - [Lakehouse jobs](/rest/api/fabric/articles/get-started/fabric-api-quickstart)
 - [MLV Execution Definition APIs](/rest/api/fabric/lakehouse/materialized-lake-views)

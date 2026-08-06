@@ -12,8 +12,8 @@ items:
   items:
   - name: Get data into OneLake
     href: quickstart-get-data.md
-  - name: Transform with Apache Spark and query data with SQL
-    href: onelake-onecopy-quickstart.md
+  - name: Use data across Fabric
+    href: quickstart-consume-data.md
   - name: Ingest data and analyze with Azure Databricks
     href: onelake-open-access-quickstart.md
 - name: Unify your data
@@ -26,8 +26,10 @@ items:
       href: onelake-shortcuts.md
     - name: Create shortcuts
       items:
-      - name: OneLake shortcut
+      - name: Same-tenant OneLake shortcut
         href: shortcuts/create-onelake-shortcut.md
+      - name: Cross-tenant OneLake shortcut
+        href: shortcuts/create-cross-tenant-onelake-shortcut.md
       - name: ADLS Gen2 shortcut
         href: create-adls-shortcut.md
       - name: Blob Storage shortcut
@@ -147,18 +149,16 @@ items:
       href: ./security/data-access-control-model.md
     - name: Create and manage roles
       href: ./security/create-manage-roles.md
+    - name: Table, column, and row-level security
+      href: ./security/table-column-row-security.md
+    - name: Row-level security syntax reference
+      href: ./security/row-level-security-syntax.md
+    - name: Read secured data
+      href: ./security/read-secured-data.md
     - name: SQL analytics endpoint security
       href: ./security/sql-analytics-endpoint-onelake-security.md
     - name: Troubleshoot SQL analytics endpoint security
       href: ./security/troubleshoot-onelake-security-for-sql-analytics-endpoints.md
-    - name: Granular data access control
-      items:
-      - name: Table and folder security
-        href: ./security/table-folder-security.md
-      - name: Column-level security
-        href: ./security/column-level-security.md
-      - name: Row-level security
-        href: ./security/row-level-security.md
   - name: Integrate with OneLake security
     items:
     - name: OneLake security integrations
@@ -201,6 +201,8 @@ items:
   items:
   - name: Explore OneLake events
     href: ../real-time-hub/explore-fabric-onelake-events.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
+  - name: Automate file processing in OneLake
+    href: ../real-time-hub/tutorial-build-event-driven-data-pipelines.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
   - name: Get OneLake events in Real-Time hub
     href: ../real-time-hub/create-streams-fabric-onelake-events.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
   - name: Set alerts on OneLake events

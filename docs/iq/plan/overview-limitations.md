@@ -1,18 +1,16 @@
 ---
-title: Known Limitations in Plan (Preview)
-description: This article lists known issues and limitations present in plan (preview).
+title: Known Limitations in Plan
+description: This article lists known issues and limitations present in plan.
 ms.topic: concept-article
 ms.date: 07/23/2026
 #customer intent: As a user, I want to know the limitations present in plan.
 ---
 
-# Known limitations in plan (preview)
+# Known limitations in plan
 
-Review the following known issues and limitations before you begin working with plan (preview).
+Review the following known issues and limitations before you begin working with plan.
 
 Supported limits might vary depending on client resources, Fabric capacity, and Power BI XMLA query limits.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## B2B user support
 
@@ -51,6 +49,10 @@ To recover, create a new PowerTable sheet by using the **Existing Table** option
 
 * Users with the *Contributor* role can't create or share cloud connections.
 * Users with lower-level workspace roles, such as *Contributor*, can't create plan items that require embed token generation.
+
+## CI/CD service principal support
+
+Automatic application database creation isn't supported when deploying plan items through CI/CD by using a service principal.
 
 ## Workspace renaming
 

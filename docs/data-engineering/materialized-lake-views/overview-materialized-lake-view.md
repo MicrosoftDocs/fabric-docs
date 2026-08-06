@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 
 # What are materialized lake views in Microsoft Fabric?
 
-In Microsoft Fabric, a materialized lake view persists and refreshes automatically. You define it in Spark SQL or PySpark. It simplifies multistage Lakehouse transformations - typically the bronze-to-silver-to-gold medallion architecture - by expressing them as declarative statements rather than custom Spark jobs. After you materialize an MLV, it acts like a standard Lakehouse table in terms of storage, access patterns, and security. You can query it through any Fabric engine with the same permissions and governance model. Fabric tracks dependencies between MLVs, orchestrates refreshes in the correct order, and enforces data quality constraints at every stage. This feature enables data engineers to build reliable, maintainable pipelines with less code and operational overhead.
+In Microsoft Fabric, a materialized lake view persists and refreshes automatically. You define it in Spark SQL or PySpark. It simplifies multistage lakehouse transformations - typically the bronze-to-silver-to-gold medallion architecture - by expressing them as declarative statements rather than custom Spark jobs. After you materialize an MLV, it acts like a standard lakehouse table in terms of storage, access patterns, and security. You can query it through any Fabric engine with the same permissions and governance model. Fabric tracks dependencies between MLVs, orchestrates refreshes in the correct order, and enforces data quality constraints at every stage. This feature enables data engineers to build reliable, maintainable pipelines with less code and operational overhead.
 
 ## When to use materialized lake views
 
@@ -30,7 +30,7 @@ Materialized lake views aren't the right choice for every scenario. Consider alt
 
 ## Get started with materialized lake views
 
-To create a materialized lake view in Microsoft Fabric, see [Get started with materialized lake views](get-started-with-materialized-lake-views.md). For a complete walkthrough that builds a medallion architecture, see [Tutorial: Build a medallion architecture with materialized lake views](tutorial.md).
+To create a materialized lake view in Fabric, see [Get started with materialized lake views](get-started-with-materialized-lake-views.md). For a complete walkthrough that builds a medallion architecture, see [Tutorial: Build a medallion architecture with materialized lake views](tutorial.md).
 
 ## How do materialized lake views work?
 

@@ -87,14 +87,14 @@ Focus on these comparison signals:
 - **Data volume changes:** If data read increased significantly, the regression is upstream — investigate data source growth or partition pruning effectiveness.
 
 > [!NOTE]
-> Cross-artifact comparison isn't yet supported. You can only compare runs within the same Notebook or Spark job definition.
+> Cross-item comparison isn't yet supported. You can only compare runs within the same notebook or Spark job definition.
 
 ### Establish baselines and catch regressions early
 
 > [!TIP]
 > Schedule a weekly review of Run Series for your critical pipelines. Set expectations for normal duration and data volume ranges. When a run falls outside the range, investigate immediately instead of waiting for the job to fail.
 
-For programmatic regression detection, use the Job Insight Library (Preview, Runtime 1.3+) to persist execution metrics to Lakehouse tables. Build a notebook that queries these tables and flags runs where duration exceeds the trailing 4-week average by more than 50%.
+For programmatic regression detection, use the Job Insight Library (Preview, Runtime 1.3+) to persist execution metrics to lakehouse tables. Build a notebook that queries these tables and flags runs where duration exceeds the trailing 4-week average by more than 50%.
 
 ## Secure production access for monitoring
 
@@ -120,7 +120,7 @@ For teams that want to automate this handoff, Fabric provides REST application p
 
 - Retrieves logs via the Spark Monitoring APIs using a service principal with read-only access.
 
-- Deposits logs into a shared Azure Storage account or Lakehouse accessible to developers.
+- Deposits logs into a shared Azure Storage account or lakehouse accessible to developers.
 
 - Sends a notification (for example, Teams webhook, email) with a link to the logs.
 
@@ -198,7 +198,7 @@ With log4j, your logs appear in the Driver Logs tab, are searchable by logger na
 
 - Use descriptive logger names (e.g., "ETL.CustomerPipeline.Transform") so you can filter logs by pipeline stage in Log Analytics.
 
-- For bad data capture, write failed rows/records to Lakehouse tables for record-level debugging. This supplements log-level analysis with data-level evidence.
+- For bad data capture, write failed rows/records to lakehouse tables for record-level debugging. This supplements log-level analysis with data-level evidence.
 
 **Antipattern:** Using generic logger names such as "main" or "app" across all notebooks. When logs from multiple notebooks arrive in Log Analytics, you can't distinguish them. Use unique, hierarchical logger names per pipeline or notebook.
 
@@ -216,7 +216,7 @@ Use this summary table to avoid the most common monitoring and operations mistak
 
 | **I need to** | **Start Here** | **Then Go Deeper With** |
 |----|----|----|
-| See what's running right now | Monitoring Hub (filter: Running) | Cell-level progress bars in Notebook |
+| See what's running right now | Monitoring Hub (filter: Running) | Cell-level progress bars in notebook |
 | Find out why a job failed | Monitoring Hub > Detail page > Logs tab | Spark UI (task-level errors); Spark Advisor (Diagnostics) |
 | Check if a job is slower than usual | Historical Runs > Monitor Run Series | Compare Runs (up to 4 side-by-side) |
 | Determine if executors are over-provisioned | Detail page > Resources tab | Executor usage graph (Running vs. Allocated lines) |
@@ -278,9 +278,9 @@ Fabric supports predefined Spark resource profiles that apply workload-optimized
 
 | **Profile** | **Use Case** | **Key Configuration Details** |
 |----|----|----|
-| `writeHeavy` | High-frequency ingestion, ETL, streaming writes | V-Order disabled, OptimizeWrite partitioned enabled, stats collection disabled |
+| `writeHeavy` | High-frequency ingestion, ETL, streaming writes | V-order disabled, OptimizeWrite partitioned enabled, stats collection disabled |
 | `readHeavyForSpark` | Frequent Spark reads, interactive queries | OptimizeWrite enabled, 128 MB bin size, partitioned writes enabled |
-| `readHeavyForPBI` | Power BI Direct Lake queries on Delta tables | V-Order enabled, OptimizeWrite enabled, 1 GB bin size |
+| `readHeavyForPBI` | Power BI Direct Lake queries on Delta tables | V-order enabled, OptimizeWrite enabled, 1 GB bin size |
 | custom | Fully user-defined | Define any Spark configs (for example, custom shuffle partitions, Kryo serializer) |
 
 Set at the environment level for workspace-wide defaults, or override at runtime:
@@ -290,7 +290,7 @@ spark.conf.set("spark.fabric.resourceProfile", "readHeavyForSpark")
 ```
 
 > [!NOTE]
-> Runtime settings take precedence over environment-level configurations. V-Order is disabled by default on new workspaces to optimize for write-heavy data engineering workloads.
+> Runtime settings take precedence over environment-level configurations. V-order is disabled by default on new workspaces to optimize for write-heavy data engineering workloads.
 
 ## Partitioning, data skew, and shuffle optimization
 
@@ -328,21 +328,21 @@ Tune `spark.sql.shuffle.partitions` (default: 200) based on your data volume and
 
 ## Delta table optimization
 
-### V-Order
+### V-order
 
-V-Order is a write-time optimization that reorganizes Parquet file layout to improve read efficiency. It's disabled by default on new workspaces.
+V-order is a write-time optimization that reorganizes Parquet file layout to improve read efficiency. It's disabled by default on new workspaces.
 
-| **Consumer** | **V-Order Impact** | **Recommendation** |
+| **Consumer** | **V-order Impact** | **Recommendation** |
 |----|----|----|
-| Power BI Direct Lake | 40–60% improvement in cold-cache queries | Enable V-Order for tables used in Direct Lake |
-| SQL Analytics Endpoint / Warehouse | ~10% read performance improvement | Enable V-Order if read-heavy |
+| Power BI Direct Lake | 40–60% improvement in cold-cache queries | Enable V-order for tables used in Direct Lake |
+| SQL analytics endpoint / Warehouse | ~10% read performance improvement | Enable V-order if read-heavy |
 | Spark | No inherent read benefit; 15–33% slower writes | Skip unless cross-engine consumption needed |
 
-V-Order can be controlled at three levels: session, table property, and write operation level. Session-level settings take highest precedence.
+V-order can be controlled at three levels: session, table property, and write operation level. Session-level settings take highest precedence.
 
 ### Z-Order
 
-Z-Order clusters related values together to improve data skipping for selective filters. Combine with V-Order in a single OPTIMIZE command:
+Z-Order clusters related values together to improve data skipping for selective filters. Combine with V-order in a single OPTIMIZE command:
 
 ```sql
 OPTIMIZE myTable WHERE date >= '2025-01-01' ZORDER BY (customer_id) VORDER;
@@ -350,7 +350,7 @@ OPTIMIZE myTable WHERE date >= '2025-01-01' ZORDER BY (customer_id) VORDER;
 
 ### OPTIMIZE and VACUUM
 
-OPTIMIZE performs bin compaction. VACUUM removes dereferenced files. Both are Spark SQL commands for notebooks, Spark job definitions, or Lakehouse Maintenance UI. Not supported in the SQL Analytics Endpoint or Warehouse editor.
+OPTIMIZE performs bin compaction. VACUUM removes dereferenced files. Both are Spark SQL commands for notebooks, Spark job definitions, or lakehouse Maintenance UI. Not supported in the SQL analytics endpoint or warehouse editor.
 
 > [!TIP]
 > Table design based on ingestion frequency and read patterns often has more effect than optimization commands alone.
@@ -425,7 +425,7 @@ Use Spark DataFrame APIs whenever possible for Catalyst optimizer benefits. When
 
 ### High concurrency mode and session lifecycle
 
-Enable High Concurrency mode when running multiple notebooks with the same Lakehouse, environment, and Spark configs to share a single session and eliminate startup overhead. Active sessions accrue CU utilization — default timeout is 20 minutes. Stop sessions when not in use.
+Enable High Concurrency mode when running multiple notebooks with the same lakehouse, environment, and Spark configs to share a single session and eliminate startup overhead. Active sessions accrue CU utilization — default timeout is 20 minutes. Stop sessions when not in use.
 
 ### Billing model
 
@@ -455,7 +455,7 @@ Session-level (`%%configure` or `spark.conf.set`) overrides environment-level, w
 |----|----|----|
 | `spark.native.enabled` | false | Enable Native Execution Engine (Velox) |
 | `spark.fabric.resourceProfile` | `writeHeavy` | Select predefined resource profile |
-| `spark.sql.parquet.vorder.default` | false (new WS) | V-Order at session level |
+| `spark.sql.parquet.vorder.default` | false (new WS) | V-order at session level |
 | `spark.sql.shuffle.partitions` | 200 | Shuffle output partitions |
 | `spark.sql.files.maxPartitionBytes` | 128 MB | Max bytes per read partition |
 | `spark.task.cpus` | 1 | CPU cores per Spark task |

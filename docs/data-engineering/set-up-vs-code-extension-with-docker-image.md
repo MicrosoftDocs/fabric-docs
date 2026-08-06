@@ -44,5 +44,5 @@ The following prerequisites should be met to use the Docker containers with the 
 
 ## Related content
 
-- [Access and manage Microsoft Fabric notebook resources in Visual Studio Code](author-notebook-resource-with-vs-code.md)
-- [Create and manage Microsoft Fabric notebooks in Visual Studio Code](author-notebook-with-vs-code.md)
+- [Access and manage Fabric notebook resources in Visual Studio Code](author-notebook-resource-with-vs-code.md)
+- [Create and manage Fabric notebooks in Visual Studio Code](author-notebook-with-vs-code.md)

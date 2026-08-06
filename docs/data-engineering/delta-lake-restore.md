@@ -214,7 +214,7 @@ Use these practices to reduce risk:
 - Run `DESCRIBE HISTORY` before you restore so you can confirm the right version or timestamp.
 - Use time-travel queries first if you only need to inspect older data and don't want to change the current table state.
 - Run `VACUUM` after a restore when you want to clean up unreferenced files from the pre-restore state.
-- Test the restore path on a cloned table first when you're working with critical production data.
+- Test the restore path on a clone table first when you're working with critical production data.
 
 ## Related content
 
