@@ -153,8 +153,6 @@ items:
                     href: workspace-outbound-access-protection-eventstream.md
                   - name: KQL queryset
                     href: workspace-outbound-access-protection-queryset.md
-                  - name: Operations agent
-                    href: workspace-outbound-access-protection-operations-agent.md
                   - name: Real-Time Dashboard
                     href: workspace-outbound-access-protection-dashboard.md
       - name: Trusted workspace access

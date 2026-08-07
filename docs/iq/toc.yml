@@ -93,8 +93,8 @@ items:
           href: plan/planning-concept-cube.md
         - name: Row-level security (RLS)
           href: plan/planning-concept-row-level-security.md
-        - name: Driver model
-          href: plan/planning-driver-model/planning-concept-driver-model.md          
+        - name: Row model
+          href: plan/planning-row-model/planning-concept-row-model.md          
     - name: How-tos
       items:
         - name: Create a semantic model connection
@@ -217,16 +217,16 @@ items:
                 href: plan/planning-optimize/planning-how-to-optimize-input-values.md
               - name: Maximize or minimize a target value
                 href: plan/planning-optimize/planning-how-to-maximize-minimize-target-value.md
-        - name: Use driver models
+        - name: Use row models
           items: 
               - name: Create a model
-                href: plan/planning-driver-model/planning-how-to-create-model-using-model-builder.md
+                href: plan/planning-row-model/planning-how-to-create-model-using-model-builder.md
               - name: Configure row properties
-                href: plan/planning-driver-model/planning-how-to-configure-model-row-properties.md
+                href: plan/planning-row-model/planning-how-to-configure-model-row-properties.md
               - name: Create templates
-                href: plan/planning-driver-model/planning-how-to-create-templates.md
+                href: plan/planning-row-model/planning-how-to-create-templates.md
               - name: Create a driver model
-                href: plan/planning-driver-model/planning-how-to-create-driver-model.md
+                href: plan/planning-row-model/planning-how-to-create-driver-model.md
         - name: Create a measure model
           href: plan/planning-how-to-create-measure-model.md
         - name: Configure approval workflows
@@ -301,8 +301,14 @@ items:
               href: plan/powertable-how-to-insert-columns/how-to-insert-columns-introduction.md
             - name: Insert visual columns introduction
               href: plan/powertable-how-to-insert-columns/how-to-insert-visual-columns.md
+            - name: Insert visual multi-select relationship column
+              href: plan/powertable-how-to-insert-columns/how-to-insert-multi-select-columns.md
             - name: Insert visual reference column
               href: plan/powertable-how-to-insert-columns/how-to-insert-reference-columns.md
+            - name: Insert visual relation column
+              href: plan/powertable-how-to-insert-columns/how-to-insert-relation-columns.md
+            - name: Insert visual rollup column
+              href: plan/powertable-how-to-insert-columns/how-to-insert-rollup-columns.md
             - name: Insert visual button column
               href: plan/powertable-how-to-insert-columns/how-to-insert-button-columns.md
             - name: Insert visual attachment column
