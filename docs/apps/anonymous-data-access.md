@@ -142,7 +142,7 @@ To remove public access from an app:
 1. Remove the `anonymous` role from each data model.
 1. Redeploy the app by running `npx rayfin up`.
 
-A tenant administrator can also disable the tenant setting to block anonymous data access for all apps within a tenant and limit to selected security groups.
+A tenant administrator can also disable the tenant setting to block anonymous data access for all apps within a tenant and limit access to selected security groups.
 
 ## Related content
 
