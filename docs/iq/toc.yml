@@ -301,8 +301,14 @@ items:
               href: plan/powertable-how-to-insert-columns/how-to-insert-columns-introduction.md
             - name: Insert visual columns introduction
               href: plan/powertable-how-to-insert-columns/how-to-insert-visual-columns.md
+            - name: Insert visual multi-select relationship column
+              href: plan/powertable-how-to-insert-columns/how-to-insert-multi-select-columns.md
             - name: Insert visual reference column
               href: plan/powertable-how-to-insert-columns/how-to-insert-reference-columns.md
+            - name: Insert visual relation column
+              href: plan/powertable-how-to-insert-columns/how-to-insert-relation-columns.md
+            - name: Insert visual rollup column
+              href: plan/powertable-how-to-insert-columns/how-to-insert-rollup-columns.md
             - name: Insert visual button column
               href: plan/powertable-how-to-insert-columns/how-to-insert-button-columns.md
             - name: Insert visual attachment column
