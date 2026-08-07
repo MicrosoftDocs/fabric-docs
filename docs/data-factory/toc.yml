@@ -1104,6 +1104,9 @@
                 href: dataflow-gen2-incremental-refresh.md
           - name: Monitor your dataflows
             href: dataflows-gen2-monitor.md
+            items:
+              - name: Understand detailed refresh logs
+                href: dataflow-gen2-detailed-refresh-logs.md
           - name: Performance and troubleshooting
             items:
               - name: Decide - Dataflow strategy

@@ -50,6 +50,19 @@ To remove sorting, select **Remove Sort** from the same menu.
 
 :::image type="content" source="media/powertable-how-to-explore-organize-data/remove-sort.png" alt-text="Screenshot of the Remove Sort option." :::
 
+You can also use the **Sort By** option at the top, to sort records in ascending or descending order.
+
+1. Select **Sort By**.
+1. Select the column to sort by.
+1. Select **ASC** or **DESC** to sort the records in ascending or descending order.
+1. Optionally, select **Add Sort** to sort by additional columns.
+1. Specify the sort order for each additional column.
+
+    :::image type="content" source="media/powertable-how-to-explore-organize-data/sort-by-column.png" alt-text="Screenshot of the Sort by Columns dialog with SubcategoryName set to ASC and ProductSKU set to DESC, with Add Sort and Save highlighted." lightbox="media/powertable-how-to-explore-organize-data/sort-by-column.png":::
+
+1. Drag the reorder handle to change the priority of the sort columns.
+1. Select **Save** to apply the sort.
+
 ## Reorder columns
 
 Reorder columns to customize the table layout.

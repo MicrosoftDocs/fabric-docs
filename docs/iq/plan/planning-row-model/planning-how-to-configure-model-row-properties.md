@@ -14,7 +14,7 @@ This article explains row properties and how to configure them in a model.
 
 The model builder looks like the following image. There are two tabs: **Closed Period** and **Open Period**.
 
-:::image type="content" source="../media/planning-driver-model/planning-how-to-configure-model-row-properties/hybrid-row.png" alt-text="Screenshot of hybrid row configuration showing open and closed periods." lightbox="../media/planning-driver-model/planning-how-to-configure-model-row-properties/hybrid-row.png":::
+:::image type="content" source="../media/planning-row-model/planning-how-to-configure-model-row-properties/hybrid-row.png" alt-text="Screenshot of hybrid row configuration showing open and closed periods." lightbox="../media/planning-row-model/planning-how-to-configure-model-row-properties/hybrid-row.png":::
 
 By default, the row configurations are the same for both closed and open periods. Toggle between the tabs to specify different row configurations for the open and the closed periods.
 
@@ -24,15 +24,15 @@ Open period row values represent the plan, forecast, or any projection measures.
 
 To configure the row properties, select the **Type**, **Configuration**, and **Aggregation** dropdown menus from the model builder view. Make sure to choose the correct period, open or closed.
 
-:::image type="content" source="../media/planning-driver-model/planning-how-to-configure-model-row-properties/row-type.png" alt-text="Screenshot of row type and configuration dropdowns." lightbox="../media/planning-driver-model/planning-how-to-configure-model-row-properties/row-type.png":::
+:::image type="content" source="../media/planning-row-model/planning-how-to-configure-model-row-properties/row-type.png" alt-text="Screenshot of row type and configuration dropdowns." lightbox="../media/planning-row-model/planning-how-to-configure-model-row-properties/row-type.png":::
 
 Or, hover over a row and select the pencil icon beside the row name to edit the complete row properties.
 
-:::image type="content" source="../media/planning-driver-model/planning-how-to-configure-model-row-properties/edit-row-properties.png" alt-text="Screenshot of edit icon beside the row name.":::
+:::image type="content" source="../media/planning-row-model/planning-how-to-configure-model-row-properties/edit-row-properties.png" alt-text="Screenshot of edit icon beside the row name.":::
 
 A side panel opens to configure the properties. It has **General** and **Display** tabs. In the **General** tab, configure all row properties. In the **Display** tab, configure node display settings for the tree view.
 
-:::image type="content" source="../media/planning-driver-model/planning-how-to-configure-model-row-properties/row-properties-panel.png" alt-text="Screenshot of row properties side panel.":::
+:::image type="content" source="../media/planning-row-model/planning-how-to-configure-model-row-properties/row-properties-panel.png" alt-text="Screenshot of row properties side panel." lightbox="../media/planning-row-model/planning-how-to-configure-model-row-properties/row-properties-panel.png":::
 
 The following sections describe the setting options.
 
@@ -62,7 +62,7 @@ Based on the row type, fill in the configuration as follows.
 
 For a **Formula** row, enter the configuration as a formula. You can type the formula manually or select from the suggestions that appear as you start typing.
 
-:::image type="content" source="../media/planning-driver-model/planning-how-to-configure-model-row-properties/formula-editor.png" alt-text="Screenshot of formula editor." lightbox="../media/planning-driver-model/planning-how-to-configure-model-row-properties/formula-editor.png":::
+:::image type="content" source="../media/planning-row-model/planning-how-to-configure-model-row-properties/formula-editor.png" alt-text="Screenshot of formula editor." lightbox="../media/planning-row-model/planning-how-to-configure-model-row-properties/formula-editor.png":::
 
 >[!NOTE]
 >To access help suggestions with examples, press <kbd>Ctrl</kbd>+<kbd>Space</kbd>. To select between row references and functions, switch between the **References** and **Functions** tabs.
@@ -71,7 +71,7 @@ For a **Formula** row, enter the configuration as a formula. You can type the fo
 
 For **Data Source** rows, the row values are retrieved from the source data based on the row you select from the dropdown menu.
 
-:::image type="content" source="../media/planning-driver-model/planning-how-to-configure-model-row-properties/data-source-row.png" alt-text="Screenshot of data source row." lightbox="../media/planning-driver-model/planning-how-to-configure-model-row-properties/data-source-row.png":::
+:::image type="content" source="../media/planning-row-model/planning-how-to-configure-model-row-properties/data-source-row.png" alt-text="Screenshot of data source row." lightbox="../media/planning-row-model/planning-how-to-configure-model-row-properties/data-source-row.png":::
 
 ### Data Input
 
@@ -82,19 +82,19 @@ For **Data Input** rows, you can either enter values manually or copy values fro
 
 The following example demonstrates both options configured.
 
-:::image type="content" source="../media/planning-driver-model/planning-how-to-configure-model-row-properties/data-input-row.png" alt-text="Screenshot of data input row." lightbox="../media/planning-driver-model/planning-how-to-configure-model-row-properties/data-input-row.png":::
+:::image type="content" source="../media/planning-row-model/planning-how-to-configure-model-row-properties/data-input-row.png" alt-text="Screenshot of data input row." lightbox="../media/planning-row-model/planning-how-to-configure-model-row-properties/data-input-row.png":::
 
 ### Aggregate
 
 This type offers various aggregation options, letting you define how child rows are aggregated. Options include *Sum*, *Subtract*, *Product*, *Divide*, *Minimum*, *Maximum*, *First*, *Last*, *Average*, and *Average (Leaf Only).*
 
-:::image type="content" source="../media/planning-driver-model/planning-how-to-configure-model-row-properties/aggregate-row.png" alt-text="Screenshot of aggregate row.":::
+:::image type="content" source="../media/planning-row-model/planning-how-to-configure-model-row-properties/aggregate-row.png" alt-text="Screenshot of aggregate row.":::
 
 ### Linked Row
 
 For a **Linked Row**, you can select another row to link. Linked rows share the same values, properties, configuration, and simulation behavior, ensuring they remain in sync. Use this type when you need to reuse the same row in multiple parts of the model, as it lets you change all instances at once. This type can be specified for open period rows.
 
-:::image type="content" source="../media/planning-driver-model/planning-how-to-configure-model-row-properties/linked-row.png" alt-text="Screenshot of linked row." lightbox="../media/planning-driver-model/planning-how-to-configure-model-row-properties/linked-row.png":::
+:::image type="content" source="../media/planning-row-model/planning-how-to-configure-model-row-properties/linked-row.png" alt-text="Screenshot of linked row." lightbox="../media/planning-row-model/planning-how-to-configure-model-row-properties/linked-row.png":::
 
 ### Driver Input
 
@@ -102,11 +102,11 @@ If you choose the **Driver Input** type for a row, define how its values are cal
 
 You can specify the aggregation and distribution methods for Driver Input rows.
 
-:::image type="content" source="../media/planning-driver-model/planning-how-to-configure-model-row-properties/driver-input.png" alt-text="Screenshot of driver input row." lightbox="../media/planning-driver-model/planning-how-to-configure-model-row-properties/driver-input.png":::
+:::image type="content" source="../media/planning-row-model/planning-how-to-configure-model-row-properties/driver-input.png" alt-text="Screenshot of driver input row." lightbox="../media/planning-row-model/planning-how-to-configure-model-row-properties/driver-input.png":::
 
 Based on the inputs entered in the planning sheet, this row is automatically calculated using the selected driver configuration. To learn more, refer to this section: [Create a driver model](planning-how-to-create-driver-model.md).
 
-:::image type="content" source="../media/planning-driver-model/planning-how-to-configure-model-row-properties/driver-input-in-planning-sheet.png" alt-text="Screenshot of driver input entered in the planning sheet." lightbox="../media/planning-driver-model/planning-how-to-configure-model-row-properties/driver-input-in-planning-sheet.png":::
+:::image type="content" source="../media/planning-row-model/planning-how-to-configure-model-row-properties/driver-input-planning-sheet.png" alt-text="Screenshot of driver input entered in the planning sheet." lightbox="../media/planning-row-model/planning-how-to-configure-model-row-properties/driver-input-planning-sheet.png":::
 
 ### Distribution
 
@@ -122,7 +122,7 @@ If you select **Copy**, choose how values are copied:
 
 Enter the total in the planning sheet. The values are distributed or copied accordingly based on the selected method.
 
-:::image type="content" source="../media/planning-driver-model/planning-how-to-configure-model-row-properties/distribution-row.png" alt-text="Screenshot of distribution type row." lightbox="../media/planning-driver-model/planning-how-to-configure-model-row-properties/distribution-row.png":::
+:::image type="content" source="../media/planning-row-model/planning-how-to-configure-model-row-properties/distribution-row.png" alt-text="Screenshot of distribution type row." lightbox="../media/planning-row-model/planning-how-to-configure-model-row-properties/distribution-row.png":::
 
 ### Formatting
 
@@ -133,7 +133,7 @@ Use the following options to control how values are displayed:
 * **Prefix:** Add a prefix to values, such as a currency symbol.
 * **Suffix:** Add a suffix to values, such as units.
 
-:::image type="content" source="../media/planning-driver-model/planning-how-to-configure-model-row-properties/formatting-trend-simulation.png" alt-text="Screenshot of formatting, trend, and simulation options.":::
+:::image type="content" source="../media/planning-row-model/planning-how-to-configure-model-row-properties/formatting-trend-simulation.png" alt-text="Screenshot of formatting, trend, and simulation options.":::
 
 ### Tree view layout 
 
@@ -155,7 +155,7 @@ This setting controls how node values are represented visually in the tree layou
 
 Specify how the total row value is aggregated from the period or column values.
 
-:::image type="content" source="../media/planning-driver-model/planning-how-to-configure-model-row-properties/column-aggregation.png" alt-text="Screenshot of column aggregation for a row.":::
+:::image type="content" source="../media/planning-row-model/planning-how-to-configure-model-row-properties/column-aggregation.png" alt-text="Screenshot of column aggregation for a row." lightbox="../media/planning-row-model/planning-how-to-configure-model-row-properties/column-aggregation.png":::
 
 The following table shows the available aggregations:
 
@@ -187,4 +187,4 @@ The following table shows the available aggregations:
 
 ## Related content
 
-[What is a driver model?](planning-concept-driver-model.md)
+[What is a driver model?](planning-concept-row-model.md)
