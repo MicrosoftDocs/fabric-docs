@@ -191,17 +191,17 @@ You can also select on the query description for the Apache Spark query executio
 
 ## Limitations
 
-While the Native Execution Engine (NEE) in Fabric significantly boosts performance for Apache Spark jobs, it currently has the following limitations. Several correctness-related items that applied to [Runtime 1.3 (Apache Spark 3.5)](./runtime-1-3.md) are resolved in [Runtime 2.0 (Apache Spark 4.1)](./runtime-2-0.md); each item notes the runtime it applies to.
+While the native execution engine (NEE) in Fabric significantly boosts performance for Apache Spark jobs, it currently has the following limitations. Several correctness-related items that applied to [Runtime 1.3 (Apache Spark 3.5)](./runtime-1-3.md) are resolved in [Runtime 2.0 (Apache Spark 4.1)](./runtime-2-0.md); each item notes the runtime it applies to.
 
 ### Existing limitations
 
-- **Incompatible Spark features** (all runtimes): Native execution engine doesn't currently support structured streaming. If unsupported features are used either directly or through imported libraries, Spark reverts to its default engine. Python UDFs, Scala UDFs, and complex data types (arrays, maps, structs) are now supported. For more information, see [Python UDFs, Scala UDFs, and complex data types in native execution engine](native-execution-engine-udf-complex-types.md).
+- **Incompatible Spark features** (all runtimes): The native execution engine doesn't currently support structured streaming. If you use unsupported features either directly or through imported libraries, Spark reverts to its default engine. The native execution engine now supports Python UDFs, Scala UDFs, and complex data types (arrays, maps, structs). For more information, see [Python UDFs, Scala UDFs, and complex data types in native execution engine](native-execution-engine-udf-complex-types.md).
 
-- **Unsupported file formats** (all runtimes): Queries against `JSON` and `XML` formats aren't accelerated by native execution engine. These default back to the regular Spark JVM engine for execution. CSV is now supported through the vectorized CSV parser.
+- **Unsupported file formats** (all runtimes): The native execution engine doesn't accelerate queries against `JSON` and `XML` formats. These formats default back to the regular Spark JVM engine for execution. The vectorized CSV parser now supports CSV.
 
-- **ANSI mode** (Runtime 1.3 only): On Runtime 1.3 (Apache Spark 3.5), native execution engine doesn't support ANSI SQL mode; if enabled, execution falls back to the vanilla Spark engine. On Runtime 2.0 (Apache Spark 4.1), ANSI SQL mode is supported: operators offload to the native engine and ANSI error semantics (for example, division by zero and invalid casts) are enforced consistently with JVM Spark.
+- **ANSI mode** (Runtime 1.3 only): On Runtime 1.3 (Apache Spark 3.5), the native execution engine doesn't support ANSI SQL mode. If you enable ANSI SQL mode, execution falls back to the vanilla Spark engine. On Runtime 2.0 (Apache Spark 4.1), ANSI SQL mode is supported: operators offload to the native engine and ANSI error semantics (for example, division by zero and invalid casts) are enforced consistently with JVM Spark.
 
-- **Date filter type mismatches** (all runtimes): To benefit from native execution engine's acceleration, ensure that both sides of a date comparison match in data type. For example, instead of comparing a `DATETIME` column with a string literal, cast it explicitly as shown:
+- **Date filter type mismatches** (all runtimes): To benefit from the native execution engine's acceleration, ensure that both sides of a date comparison match in data type. For example, instead of comparing a `DATETIME` column with a string literal, cast it explicitly as shown:
   
   ```sql
   CAST(order_date AS DATE) = '2024-05-20'
@@ -210,7 +210,7 @@ While the Native Execution Engine (NEE) in Fabric significantly boosts performan
 ### Other considerations and limitations
 
 > [!NOTE]
-> The decimal-casting, timezone, `round()`, `map()` duplicate-key, and `collect_list()`/`collect_set()` items in this section applied to [Runtime 1.3 (Apache Spark 3.5)](./runtime-1-3.md) and are resolved in [Runtime 2.0 (Apache Spark 4.1)](./runtime-2-0.md). They're retained for users still running on Runtime 1.3.
+> The decimal-casting, timezone, `round()`, `map()` duplicate-key, and `collect_list()`/`collect_set()` items in this section apply to [Runtime 1.3 (Apache Spark 3.5)](./runtime-1-3.md) and are resolved in [Runtime 2.0 (Apache Spark 4.1)](./runtime-2-0.md). They're retained for users still running on Runtime 1.3.
 
 - **Decimal to Float casting mismatch** (Runtime 1.3; resolved in Runtime 2.0): When casting from `DECIMAL` to `FLOAT`, Spark preserves precision by converting to a string and parsing it. On Runtime 1.3, NEE (via Velox) performs a direct cast from the internal `int128_t` representation, which can result in rounding discrepancies.
 
@@ -219,7 +219,7 @@ While the Native Execution Engine (NEE) in Fabric significantly boosts performan
   "spark.sql.session.timeZone": "-08:00"  // May cause failure under NEE on Runtime 1.3
   ```
 
-- **Inconsistent rounding behavior** (Runtime 1.3; resolved in Runtime 2.0): On Runtime 1.3, the `round()` function behaves differently in NEE due to reliance on `std::round`, which doesn't replicate Spark’s rounding logic. This can lead to numeric inconsistencies in rounding results.
+- **Inconsistent rounding behavior** (Runtime 1.3; resolved in Runtime 2.0): On Runtime 1.3, the `round()` function behaves differently in NEE due to reliance on `std::round`, which doesn't replicate Spark’s rounding logic. This difference can lead to numeric inconsistencies in rounding results.
 
 - **Missing duplicate key check in `map()` function** (Runtime 1.3; resolved in Runtime 2.0): When `spark.sql.mapKeyDedupPolicy` is set to _EXCEPTION_, Spark throws an error for duplicate keys. On Runtime 1.3, NEE skips this check and allows the query to succeed incorrectly. On Runtime 2.0, NEE raises `DUPLICATED_MAP_KEY` consistently with JVM Spark.  
   Example:
@@ -231,7 +231,7 @@ While the Native Execution Engine (NEE) in Fabric significantly boosts performan
 
 - **Intermediate type mismatch for `collect_list()` / `collect_set()`** (Runtime 1.3; resolved in Runtime 2.0): On Runtime 1.3, Spark uses `BINARY` as the intermediate type for these aggregations, whereas NEE uses `ARRAY`. This mismatch might lead to compatibility issues during query planning or execution.
 
-- Managed private endpoints required for storage access (all runtimes): When Native Execution Engine (NEE) is enabled, and if spark jobs are trying to access a storage account using a managed private endpoint, users must configure separate managed private endpoints for both the Blob (blob.core.windows.net) and DFS / File System (dfs.core.windows.net) endpoints, even if they point to the same storage account. A single endpoint cannot be reused for both. This is a current limitation and may require additional network configuration when enabling native execution engine in a workspace that has managed private endpoints to storage accounts.
+- **Managed private endpoints required for storage access** (all runtimes): When Native Execution Engine (NEE) is enabled, and if spark jobs are trying to access a storage account by using a managed private endpoint, you must configure separate managed private endpoints for both the Blob (blob.core.windows.net) and DFS / File System (dfs.core.windows.net) endpoints, even if they point to the same storage account. You can't reuse a single endpoint for both. This limitation might require additional network configuration when enabling native execution engine in a workspace that has managed private endpoints to storage accounts.
 
 > [!div class="nextstepaction"]
 > [Watch this Fabric espresso video on native execution engine](https://youtu.be/8GJj4QlFlsw?si=r7M5VUI7NdyoR66v)
