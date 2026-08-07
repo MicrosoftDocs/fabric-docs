@@ -39,6 +39,8 @@ items:
     href: business-events/tutorial-business-events-event-stream-user-data-function-activator.md
   - name: Learn to monitor streaming data
     href: tutorial-monitor-streaming-data.md   
+  - name: Orchestrate Fabric jobs with Job events
+    href: tutorial-orchestrate-jobs-with-job-events.md
 - name: Create data streams and events
   items:
   - name: Business Events
