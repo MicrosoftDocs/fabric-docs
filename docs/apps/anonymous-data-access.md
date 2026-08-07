@@ -133,7 +133,6 @@ The anonymous role permits public reads without evaluating identity claims. The 
 - **Limit exposed fields.** Use `include` or `exclude` options to prevent access to fields that anonymous users don't need. For more information, see [Define data permissions](data-permissions.md#field-level-permissions).
 - **Don't rely on the app UI for protection.** Permissions must be defined on the data model because callers can send requests without using your frontend.
 - **Plan for untrusted input.** Validate submitted data and design public write operations for spam, automation, and unexpected traffic.
-- **Monitor usage.** Review traffic and usage patterns for public endpoints.
 - **Test denied operations.** Confirm that operations omitted from the role are rejected for users without a session.
 
 ## Disable anonymous access
@@ -141,10 +140,9 @@ The anonymous role permits public reads without evaluating identity claims. The 
 To remove public access from an app:
 
 1. Remove the `anonymous` role from each data model.
-1. Set `services.data.anonymousAccess` to `false` in `rayfin/rayfin.yml`.
 1. Redeploy the app by running `npx rayfin up`.
 
-A tenant administrator can also disable the tenant setting to block anonymous data access for all apps in its configured scope.
+A tenant administrator can also disable the tenant setting to block anonymous data access for all apps within a tenant and limit access to selected security groups.
 
 ## Related content
 
