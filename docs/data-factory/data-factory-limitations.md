@@ -17,7 +17,7 @@ For service level outages or degradation notifications, check [Microsoft Fabric 
 
 The following list describes the current limitations of pipelines in Data Factory in Microsoft Fabric.
 
-- Most of the Azure Data Factory copy and orchestration patterns are applicable to Fabric pipelines, but [tumbling window](/azure/data-factory/how-to-create-tumbling-window-trigger) is only partially implemented using Interval Based Schedules. You can create time slices, but backfill is not yet supported.
+- Most of the Azure Data Factory copy and orchestration patterns apply to Fabric pipelines, but [tumbling window](/azure/data-factory/how-to-create-tumbling-window-trigger) is only partially implemented by using interval based schedules. You can create time slices, but backfill isn't yet supported.
 -	GetMetaData activity can't have a source from Fabric KQL databases.
 -	Script activity can't have a source from Fabric KQL databases.
 -	Background sync of authentication doesn't happen for pipelines. Recommendation is to do minor description like updates to pipelines and save them. That way, new token is obtained and cached so pipeline can run again with updated password of entra id. 
