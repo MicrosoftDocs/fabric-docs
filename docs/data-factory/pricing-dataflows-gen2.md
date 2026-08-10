@@ -2,7 +2,7 @@
 title: Pricing for Dataflow Gen2
 description: This article provides details of the pricing model of Dataflow Gen2 for Data Factory in Microsoft Fabric.
 ms.reviewer: susabat
-ms.date: 07/24/2026
+ms.date: 08/09/2026
 ms.topic: concept-article
 ms.custom:
   - dataflows
@@ -41,6 +41,9 @@ In Dataflow Gen2 (CI/CD), there's a two-tier rate applied to the query duration:
 - If it runs longer, each extra second is rated at 1.5 CU.
 
 If your Dataflow Gen2 is non-CI/CD, the rate is 16 CU applied to the entire query duration.
+
+> [!NOTE]
+> When you use [partitioned compute](dataflow-gen2-partitioned-compute.md), Dataflow Gen2 evaluates each partition as its own unit of work. Standard compute charges are based on the sum of the processing duration of every partition. Running partitions in parallel shortens the overall (wall-clock) time to complete the run, while the total CU consumption reflects the combined compute of all partitions.
 
 For high-scale scenarios-when staging is turned on-queries run on the Lakehouse or Warehouse SQL engine. Each second of compute time uses 6 CU seconds, so longer queries consume more.
 
