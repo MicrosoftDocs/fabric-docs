@@ -291,7 +291,7 @@ Before a disaster occurs: 
 
 **Important** 
 
-- Fabric App source code must be maintained outside the Fabric region to enable recovery.  
+- Maintain Fabric App source code outside the Fabric region to enable recovery.  
 
 - Application data in the database isn't recovered as part of the Fabric App deployment process and must be restored separately.  You can manually recover a Fabric App after a regional disaster by using the application source code and the Rayfin CLI. 
 
