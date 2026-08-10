@@ -45,9 +45,9 @@ Microsoft JDBC Driver for Fabric Data Engineering version 1.0.0 supports Java 11
 1. Download either the zip or tar file from the links above.
 1. Extract the downloaded file to access the driver JAR files.
 1. Select the JAR file that matches your JRE version:
-   - For Java 11: `ms-sparksql-jdbc-1.0.0.jre11.jar`
-   - For Java 17: `ms-sparksql-jdbc-1.0.0.jre17.jar`
-   - For Java 21: `ms-sparksql-jdbc-1.0.0.jre21.jar`
+   - For Java 11: `ms-sparksql-jdbc-1.0.1.jre11.jar`
+   - For Java 17: `ms-sparksql-jdbc-1.0.1.jre17.jar`
+   - For Java 21: `ms-sparksql-jdbc-1.0.1.jre21.jar`
 1. Add the selected JAR file to your application's classpath.
 1. For JDBC clients, configure the JDBC driver class: `com.microsoft.spark.livy.jdbc.LivyDriver`
 
