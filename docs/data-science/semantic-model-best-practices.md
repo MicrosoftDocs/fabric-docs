@@ -37,17 +37,19 @@ An advanced DAX generation tool is available for data agents on the preview runt
 
 
 Advantages of advanced DAX generation include:
-- **More accurate responses to complex questions:** Reasons iteratively, inspects results, resolves ambiguity, and refines its approach across multiple steps.
-- **Instance value indexing:** Searches values within semantic model columns to generate more accurate and reliable filters.
-- **Consistent answers across Microsoft experiences:** Uses shared capabilities to improve response consistency across Fabric data agent, Fabric skills, Power BI, Microsoft 365 Copilot, and Fabric IQ plugin.
+- **More accurate responses to complex questions:** It reasons iteratively, inspects results, resolves ambiguity, and refines its approach across multiple steps.
+- **Instance value indexing:** It searches values within semantic model columns to generate more accurate and reliable filters.
+- **Consistent answers across Microsoft experiences:** It uses shared capabilities to improve response consistency across Fabric data agent, Fabric skills, Power BI, Microsoft 365 Copilot, and Fabric IQ plugin.
 - **Improved latency in some scenarios:** Although the tool can perform multiple reasoning steps, its ability to more efficiently identify the relevant model objects and values can reduce response latency for some questions.
 
 ### Use advanced DAX generation
 To enable the feature, switch the data agent to the [preview runtime](./data-agent-runtime.md).
 
-Advanced DAX generation uses the semantic model metadata and Prep data for AI configurations described in this article. We strongly recommend following the best practices detailed in this article to maximize response accuracy and performance.
 
-Instance value indexing currently requires the semantic model's [Q&A setting](https://learn.microsoft.com/power-bi/natural-language/q-and-a-data-sources) to be enabled. This setting is enabled by default for Import and Direct Lake models. Since Q&A will be retired in December 2026, a replacement setting will support instance value indexing after retirement, and this article will be updated with the new configuration steps.
+Advanced DAX generation uses the semantic model metadata and Prep for AI configurations described in this article. Follow the best practices detailed in this article to maximize response accuracy and performance.
+
+Instance value indexing currently requires the semantic model's [Q&A setting](https://learn.microsoft.com/power-bi/natural-language/q-and-a-data-sources) to be enabled. This setting is enabled by default for Import and Direct Lake models. Since Q&A retires in December 2026, a replacement setting will support instance value indexing after retirement, and this article will be updated with the new configuration steps.
+
 
 ## Prep for AI: Make semantic model AI ready
 
