@@ -33,7 +33,8 @@ The data agent uses a layered architecture where user questions flow through an 
 :::image type="content" source="media/semantic-model-best-practices/query-processing-flow.png" lightbox="media/semantic-model-best-practices/query-processing-flow.png" alt-text="Query processing flow showing inputs to DAX Generation: query, report visual metadata, AI instructions, verified answers, and AI data schema.":::
 
 ## Advanced DAX generation (preview)
-An advanced DAX generation tool is available for data agents on the preview runtime. Unlike standard DAX generation, which generates a query in a single pass, advanced DAX generation can use multiple reasoning steps to inspect model metadata, interpret the question, resolve ambiguity, and generate the DAX query.
+An advanced DAX generation tool is available for data agents on the preview runtime. Unlike standard DAX generation, which generates a query in a single pass, advanced DAX generation uses multiple reasoning steps to inspect model metadata, interpret the question, resolve ambiguity, and generate the DAX query.
+
 
 Advantages of advanced DAX generation include:
 - **More accurate responses to complex questions:** Reasons iteratively, inspects results, resolves ambiguity, and refines its approach across multiple steps.
