@@ -93,6 +93,10 @@ items:
           href: plan/planning-concept-cube.md
         - name: Row-level security (RLS)
           href: plan/planning-concept-row-level-security.md
+        - name: Predict - statistical forecasting algorithms
+          href: plan/planning-concept-predict.md
+        - name: Measure Model - the semantic enrichment framework
+          href: plan/planning-concept-measure-model.md
         - name: Row model
           href: plan/planning-row-model/planning-concept-row-model.md          
     - name: How-tos
