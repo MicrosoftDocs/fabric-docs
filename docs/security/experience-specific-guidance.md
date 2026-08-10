@@ -254,7 +254,8 @@ If you don't take the Git integration approach, you can use the following manual
 
 ### App
 
-Fabric Apps, including their code, configuration, and metadata, aren't replicated to secondary regions and remain unavailable if the primary region fails. For recovery, store the app source code outside Fabric in GitHub, Azure DevOps, or another source control system. Recover app data separately using the disaster recovery guidance for each underlying Fabric data store.
+The system doesn't replicate Fabric Apps, including their code, configuration, and metadata, to secondary regions. If the primary region fails, the app remains unavailable. For recovery, store the app source code outside the system in GitHub, Azure DevOps, or another source control system. Recover app data separately by following the disaster recovery guidance for each underlying Fabric data store.
+
 
 #### Manual approach
 
