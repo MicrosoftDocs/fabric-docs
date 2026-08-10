@@ -287,7 +287,8 @@ Before a disaster occurs: 
    
 1. Reapply artifact level settings, including roles, access controls as needed.  
 
-1. Validate the application functionality, right users have the right permissions.  
+1. Validate the application functionality and ensure users have the right permissions.  
+
 
 **Important** 
 
