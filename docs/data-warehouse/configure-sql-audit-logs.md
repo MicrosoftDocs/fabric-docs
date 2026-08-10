@@ -38,9 +38,9 @@ You can configure SQL audit logs using the **Fabric portal** or via **REST API**
 
    :::image type="content" source="media/configure-sql-audit-logs/set-groups.png" alt-text="Screenshot from the Fabric portal of the recording and retention options, the Events to record section.":::
 
-1. Optionally, enter a **Predicate filter** to exclude specific events that match a condition you define, such as activity from a known service principal or automation identity. Use the syntax described in [Predicate expression syntax](sql-audit-logs.md#predicate-expression-syntax).
+1. Optionally, enter a **Predicate Expression** to exclude specific events that match a condition you define, such as activity from a known service principal or automation identity. Use the syntax described in [Predicate expression syntax](sql-audit-logs.md#predicate-expression-syntax).
 
-   :::image type="content" source="media/configure-sql-audit-logs/set-predicate.png" alt-text="Screenshot from the Fabric portal of the predicate filter option.":::
+   :::image type="content" source="media/configure-sql-audit-logs/set-predicate.png" alt-text="Screenshot from the Fabric portal of the Predicate Expression option.":::
 
    > [!IMPORTANT]
    > Predicate filtering only applies to events already selected under **Events to record**. For example, to filter `SELECT` statements, you must also enable **Batch Was Completed**.
