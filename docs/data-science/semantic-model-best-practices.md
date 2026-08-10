@@ -32,6 +32,22 @@ The data agent uses a layered architecture where user questions flow through an 
 
 :::image type="content" source="media/semantic-model-best-practices/query-processing-flow.png" lightbox="media/semantic-model-best-practices/query-processing-flow.png" alt-text="Query processing flow showing inputs to DAX Generation: query, report visual metadata, AI instructions, verified answers, and AI data schema.":::
 
+## Advanced DAX generation (preview)
+An advanced DAX generation tool is available for data agents on the preview runtime. Unlike standard DAX generation, which generates a query in a single pass, advanced DAX generation can use multiple reasoning steps to inspect model metadata, interpret the question, resolve ambiguity, and generate the DAX query.
+
+Advantages of advanced DAX generation include:
+- **More accurate responses to complex questions:** Reasons iteratively, inspects results, resolves ambiguity, and refines its approach across multiple steps.
+- **Instance value indexing:** Searches values within semantic model columns to generate more accurate and reliable filters.
+- **Consistent answers across Microsoft experiences:** Uses shared capabilities to improve response consistency across Fabric data agent, Fabric skills, Power BI, and Microsoft 365 Copilot.
+- **Improved latency in some scenarios:** Although the tool can perform multiple reasoning steps, its ability to more efficiently identify the relevant model objects and values can reduce response latency for some questions.
+
+### Use advanced DAX generation
+To enable the feature, switch the data agent to the [preview runtime](./data-agent-runtime.md).
+
+Advanced DAX generation uses the same semantic model metadata and Prep data for AI configurations described in this article. You don't need to reconfigure these settings when switching runtimes.
+
+Instance value indexing currently requires the semantic model's [Q&A setting](https://learn.microsoft.com/power-bi/natural-language/q-and-a-data-sources) to be enabled. This setting is enabled by default for Import and Direct Lake models. Since Q&A will be retired in December 2026, a replacement setting will support instance value indexing after retirement, and this article will be updated with the new configuration steps.
+
 ## Prep for AI: Make semantic model AI ready
 
 Power BI's [Prep for AI](/power-bi/create-reports/copilot-prepare-data-ai) feature provides three configuration components that directly impact how Fabric data agent interprets your semantic model. You can access these components in both Power BI Desktop and the Power BI service. Power BI Copilot also uses Prep for AI configurations, so investing time in setting these up benefits both Copilot and data agent responses.
