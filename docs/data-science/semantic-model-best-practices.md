@@ -38,7 +38,7 @@ An advanced DAX generation tool is available for data agents on the preview runt
 Advantages of advanced DAX generation include:
 - **More accurate responses to complex questions:** Reasons iteratively, inspects results, resolves ambiguity, and refines its approach across multiple steps.
 - **Instance value indexing:** Searches values within semantic model columns to generate more accurate and reliable filters.
-- **Consistent answers across Microsoft experiences:** Uses shared capabilities to improve response consistency across Fabric data agent, Fabric skills, Power BI, Microsoft 365 Copilot, and Fabric IQ.
+- **Consistent answers across Microsoft experiences:** Uses shared capabilities to improve response consistency across Fabric data agent, Fabric skills, Power BI, Microsoft 365 Copilot, and Fabric IQ plugin.
 - **Improved latency in some scenarios:** Although the tool can perform multiple reasoning steps, its ability to more efficiently identify the relevant model objects and values can reduce response latency for some questions.
 
 ### Use advanced DAX generation
