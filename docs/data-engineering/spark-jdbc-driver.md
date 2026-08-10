@@ -762,7 +762,9 @@ This path does not instantiate `LivyDataSource`, so the `LivyDataSource` built-i
 
 On the driver-class path, HikariCP also writes `connectionTimeout` to the JVM-wide `DriverManager` login-timeout setting and uses that value while waiting for pool shutdown; `LivyDriver.connect()` does not enforce the `DriverManager` login timeout. A negative `initializationFailTimeout` skips HikariCP's startup connection and validation attempt, deferring connectivity failures until the first connection request. Hikari configuration and driver-loading errors still fail during pool construction; use a positive value if the application should also verify connectivity during startup.
 
-HikariCP validates connections with `Connection.isValid()`, whose effective duration in the current driver comes from the driver's HTTP timeout and retry/backoff configuration rather than HikariCP's `validationTimeout`. Do not configure a connection test query for this JDBC 4.2 driver because it replaces the lighter `Connection.isValid()` check with a Spark statement.
+On the driver-class path, HikariCP also writes `connectionTimeout` to the JVM-wide `DriverManager` login-timeout setting and uses that value while waiting for pool shutdown. `LivyDriver.connect()` doesn't enforce the `DriverManager` login timeout. A negative `initializationFailTimeout` skips HikariCP's startup connection and validation attempt, deferring connectivity failures until the first connection request. Hikari configuration and driver-loading errors still fail during pool construction. Use a positive value if the application should also verify connectivity during startup.
+
+HikariCP validates connections with `Connection.isValid()`, whose effective duration in the current driver comes from the driver's HTTP timeout and retry/backoff configuration rather than HikariCP's `validationTimeout`. Don't configure a connection test query for this JDBC 4.2 driver because it replaces the lighter `Connection.isValid()` check with a Spark statement.
 
 
 ## Data Type Mapping
