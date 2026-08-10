@@ -5,7 +5,7 @@ ms.reviewer: jingzh
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Develop and run notebooks
-ms.date: 05/29/2025
+ms.date: 08/07/2026
 ---
 
 # Develop, execute, and manage Microsoft Fabric notebooks
@@ -265,6 +265,22 @@ There are several ways to run the code in a cell.
 - Hover on the cell you want to run and select the **Run cell** button or press **Ctrl+Enter**.
 
 - Use [Shortcut keys in command mode](#shortcut-keys-in-command-mode). Press **Shift+Enter** to run the current cell and select the next cell. Press **Alt+Enter** to run the current cell and insert a new cell.
+
+### Run selected code
+
+You can run part of a code cell instead of the whole cell. Use **Run selected code** when you want to test a few lines without rerunning the rest of the cell.
+
+To run a selection:
+
+1. In a code cell, select the lines you want to run.
+1. Select the arrow next to **Run cell**, and then select **Run selected code**. You can also press **Ctrl+Shift+Enter**.
+
+The selected lines run in the current session, and the output appears below the cell.
+
+:::image type="content" source="media\author-execute-notebook\run-selected-code.png" alt-text="Screenshot showing a code cell with two lines selected and the cell run menu open." lightbox="media\author-execute-notebook\run-selected-code.png":::
+
+> [!NOTE]
+> Lines you don't select don't run, so any variable or import they define isn't available. Include the lines your selection depends on, or run them first.
 
 ### Run all cells
 
@@ -744,6 +760,7 @@ Similar to Jupyter Notebooks, Fabric notebooks have a modal user interface. The 
 | Run the current cell and select below | Shift+Enter |
 | Run the current cell and insert below | Alt+Enter |
 | Run current cell | Ctrl+Enter |
+| Run selected code | Ctrl+Shift+Enter |
 | Select cell above | Up |
 | Select cell below | Down |
 | Select previous cell | K |

@@ -18,7 +18,7 @@ The Fabric data agent Python SDK provides programmatic access to Fabric data age
 
 > [!IMPORTANT]
 > The Fabric Data Agent SDK is transitioning from the OpenAI Assistants API to the OpenAI Responses API for querying data agents. If you query a data agent with the 
-> Fabric OpenAI client, migrate to the Fabric OpenAI Responses client before the Assistants API deprecation takes effect. Only your querying code changes—creating,
+> Fabric OpenAI client, you can begin migrating to the Fabric OpenAI Responses client starting **August 11, 2026** before the Assistants API deprecation takes effect on **August 26, 2026**. Only your querying code changes—creating,
 > configuring, and publishing data agents stay the same. For migration steps and a runnable example, see the [Responses API sample notebook](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-agent-sdk/responses-api/responses-api-notebook.ipynb).
 
 

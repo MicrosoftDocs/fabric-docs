@@ -3,7 +3,8 @@ title: Workspace administration settings in Microsoft Fabric
 description: Learn about the workspace administration settings for Data Engineering and Science experiences in Fabric.
 ms.reviewer: saravi
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 08/10/2026
+ai-usage: ai-assisted
 ---
 
 # Data Engineering workspace administration settings in Microsoft Fabric
@@ -88,6 +89,36 @@ You can enable the **Reserve maximum cores for active Spark jobs** to turn off O
 You can also set the **Spark session timeout** to customize the session expiry for all the notebook interactive sessions. 
 > [!NOTE]
 > The default session expiry is set to 20 minutes for the interactive Spark sessions.
+
+### Set maximum job lifetime
+
+Use the **Set maximum job lifetime** setting as a guardrail to stop runaway Spark jobs from consuming compute beyond a defined time limit. When you turn on this setting and specify a duration, Fabric automatically terminates any eligible Spark job that runs longer than the configured lifetime. Workspace admins can use this control to:
+
+- Stop runaway or stuck jobs before they hold capacity indefinitely and block other workloads in the workspace.
+- Enforce compute compliance and governance policies by capping how long any single job can run.
+
+:::image type="content" source="media/workspace-admin-settings/max-job-lifetime-setting.png" alt-text="Screenshot showing the Set maximum job lifetime setting in the Jobs tab of the workspace settings." lightbox="media/workspace-admin-settings/max-job-lifetime-setting.png":::
+
+To configure it, turn on **Set maximum job lifetime**, enter a value, select a time unit such as **hours**, and then select **Save** to apply the limit to the workspace.
+
+#### Which jobs are affected
+
+The maximum job lifetime applies only to *user-submitted jobs* - jobs that a user explicitly starts and that run with the user's identity. These jobs include, for example:
+
+- Interactive and scheduled notebook runs, including notebook runs orchestrated through a pipeline.
+- Spark job definition runs, whether you submit them directly, on a schedule, or through a pipeline.
+- Livy batch and interactive sessions, including high concurrency sessions.
+
+*System-managed jobs aren't affected* by this setting and continue to run to completion. These jobs are triggered and managed by Fabric on your behalf, such as:
+
+- Lakehouse table maintenance operations, such as optimize and vacuum.
+- Materialized lake view refreshes.
+- Platform operations, such as security and policy enforcement.
+
+This distinction makes sure that background maintenance and platform operations that keep your data and workspace healthy aren't interrupted, while user workloads remain subject to the guardrail.
+
+> [!NOTE]
+> When a job reaches the configured maximum lifetime, Fabric cancels it automatically. Set a limit that allows enough time for your longest-running legitimate user jobs to finish.
 
 ## High concurrency
 
