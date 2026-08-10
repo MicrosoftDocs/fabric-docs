@@ -708,7 +708,7 @@ public final class ConnectionPoolExample implements AutoCloseable {
 
 #### Using `LivyDriver` (without `LivyDataSource`)
 
-To let HikariCP create connections through `LivyDriver` directly, configure the JDBC URL instead of supplying a `LivyDataSource`. The example sets the driver class explicitly to make this path clear; it is optional when JDBC service-provider auto-discovery is available. HikariCP is the only connection pool in this configuration and calls `LivyDriver.connect()` when it needs a new physical connection:
+To let HikariCP create connections through `LivyDriver` directly, configure the JDBC URL instead of supplying a `LivyDataSource`. The following example sets the driver class explicitly to make this path clear. The driver class is optional when JDBC service-provider auto-discovery is available. HikariCP is the only connection pool in this configuration and calls `LivyDriver.connect()` when it needs a new physical connection:
 
 ```java
 import com.zaxxer.hikari.HikariConfig;
