@@ -277,7 +277,7 @@ Before a disaster occurs: 
 
 1. Retrieve the latest Fabric App source code from your source control repository or local backup. 
 
-1. From the application source directory, deploy the Fabric App into the recovery workspace using Rayfin CLI. Run `rayfin up --workspace <new workspace>` 
+1. From the application source directory, deploy the Fabric App into the recovery workspace by using Rayfin CLI. Run `rayfin up --workspace <new workspace>`. 
 
 1. Recover the app’s child items follow their respective recovery procedures.  
 
