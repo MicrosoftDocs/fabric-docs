@@ -109,9 +109,9 @@ In this case, you can configure multiple matching column pairs between the curre
 
 :::image type="content" source="../media/powertable-how-to-configure-columns/how-to-configure-lookup-relation-columns/filter-based-on-another-column.png" alt-text="Screenshot of the Filter based on another column checkbox." lightbox="../media/powertable-how-to-configure-columns/how-to-configure-lookup-relation-columns/filter-based-on-another-column.png":::
 
-## FAQs
+## FAQ
 
-### What does the Values Type set to Distinct Values do for a Single Select column?
+### What does the Values Type set to 'Distinct Values' do for a Single Select column?
 
 The **Distinct Values** option builds the dropdown list from the unique values that already exist in the column instead of using a predefined list.
 
@@ -143,13 +143,13 @@ Yes. You can configure a lookup column that references the same table.
 
 For example, an **Employee** table might contain an **Employee ID**, **Employee Name**, and **Manager ID**. You can configure the **Manager** column as a lookup that references the current **Employee** table to display the manager's name.
 
-### What does Add Hierarchy do in the lookup configuration?
+### What does **Add Hierarchy** do in the lookup configuration?
 
 The **Add Hierarchy** option displays a drill-down hierarchy in the lookup dropdown, making it easier to organize and navigate lookup values.
 
 You can configure the hierarchy by using multiple tables that are related through common columns.
 
-### What does Filter based on another column do in the lookup configuration?
+### What does **Filter based on another column** do in the lookup configuration?
 
 The **Filter based on another column** option filters the values in a lookup column based on columns that are common between the source and lookup tables.
 
