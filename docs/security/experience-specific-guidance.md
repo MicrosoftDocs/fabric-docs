@@ -281,7 +281,7 @@ Before a disaster occurs: 
 
 1. Recover the app’s child item (Fabric SQL Database) by following it's respective recovery procedures.  
    
-1. Reapply artifact level settings, including roles, access controls as needed.  
+1. Reapply artifact level settings, including roles and access controls as needed.  
 
 1. Validate the application functionality and ensure users have the right permissions.  
 
