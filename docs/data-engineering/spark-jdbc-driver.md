@@ -611,7 +611,8 @@ public void executeBatchInsert(Connection conn) throws SQLException {
 
 HikariCP creates connections from either `LivyDataSource` or the JDBC URL through `LivyDriver`. Use only one connection pool in either configuration.
 
-#### Maven Dependency
+#### Maven dependency
+
 
 ```xml
 <dependency>
