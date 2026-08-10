@@ -248,10 +248,52 @@ If you don't take the Git integration approach, you can use the following manual
 
 #### References
 
-   - [Overview of Fabric Git integration - Microsoft Fabric | Microsoft Learn](/fabric/cicd/git-integration/intro-to-git-integration)
+- [Overview of Fabric Git integration - Microsoft Fabric | Microsoft Learn](/fabric/cicd/git-integration/intro-to-git-integration)
+
+- [Source control and deployment pipelines in API for GraphQL - Microsoft Fabric | Microsoft Learn](/fabric/data-engineering/graphql-source-control-and-deployment) 
+
+### App
+
+Fabric Apps, including their code, configuration, and metadata, aren't replicated to secondary regions and remain unavailable if the primary region fails. For recovery, store the app source code outside Fabric in GitHub, Azure DevOps, or another source control system. Recover app data separately using the disaster recovery guidance for each underlying Fabric data store.
+
+#### Manual approach
+
+You can manually recover a Fabric App after a regional disaster by using the application source code and the Rayfin CLI. 
+
+**Prerequisites** 
+
+Before a disaster occurs: 
+
+- Store the Fabric App source code in GitHub, Azure DevOps, or another source control repository. 
+
+- Document the process for recovery.  
+
+**Recovery steps** 
+
+1. Create a new workspace in the target capacity and region. 
+
+1. Dependent resources should be recovered before the application is redeployed.  
+
+1. Retrieve the latest Fabric App source code from your source control repository or local backup. 
+
+1. From the application source directory, deploy the Fabric App into the recovery workspace using Rayfin CLI. Run `rayfin up --workspace <new workspace>` 
+
+1. Recover the app’s child items follow their respective recovery procedures.  
+
+   1. [Fabric SQL Database](/fabric/security/experience-specific-guidance) 
    
-   - [Source control and deployment pipelines in API for GraphQL - Microsoft Fabric | Microsoft Learn](/fabric/data-engineering/graphql-source-control-and-deployment) 
+   1. User Data Functions 
    
+1. Reapply artifact level settings, including roles, access controls as needed.  
+
+1. Validate the application functionality, right users have the right permissions.  
+
+**Important** 
+
+- Fabric App source code must be maintained outside the Fabric region to enable recovery.  
+
+- Application data in the database isn't recovered as part of the Fabric App deployment process and must be restored separately.  You can manually recover a Fabric App after a regional disaster by using the application source code and the Rayfin CLI. 
+
 ## Data Science
 
 This guide walks you through the recovery procedures for the Data Science experience. It covers ML models and experiments.
