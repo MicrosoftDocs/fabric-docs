@@ -153,7 +153,7 @@ Use the same `PATCH` request to configure a predicate expression that excludes s
     PATCH https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/warehouses/<warehouseId>/settings/sqlAudit
     content-type: application/json
     Authorization: ******
-    
+
     {
         "state": "Enabled",
         "retentionDays": 10,
