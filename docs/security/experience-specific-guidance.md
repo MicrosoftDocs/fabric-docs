@@ -273,7 +273,7 @@ Before a disaster occurs: 
 
 1. Create a new workspace in the target capacity and region. 
 
-1. Dependent resources should be recovered before the application is redeployed.  
+1. Recover dependent resources before redeploying the application.  
 
 1. Retrieve the latest Fabric App source code from your source control repository or local backup. 
 
