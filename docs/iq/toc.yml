@@ -475,6 +475,8 @@ items:
       href: plan/resources/billing-fabric-plan.md
     - name: Plan general FAQ
       href: plan/resources/frequently-asked-questions.md
+    - name: PowerTable general FAQ
+      href: plan/resources/powertable-general-faq.md
     - name: Plan best practices
       items:
       - name: Time intelligence

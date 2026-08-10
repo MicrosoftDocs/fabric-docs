@@ -245,7 +245,7 @@ When you modify a cell:
 
 Your changes aren't written to the Fabric SQL database until you select **Save to Database**. This behavior allows you to batch multiple edits into a single commit.
 
-### What does the Save Changes prompt do? What happens if I select **Don't show this again**?
+### What does the **Save Changes** prompt do? What happens if I select **Don't show this again**?
 
 The **Save Changes?** prompt asks you to confirm that you want to commit all pending changes to the database.
 
@@ -297,13 +297,13 @@ Yes. Select **Preview Changes** to review pending changes across the following t
 
 You can then select one or more rows and choose **Reset** to revert only those pending changes.
 
-### Does Find and Replace search the entire sheet?
+### Does 'Find and Replace' search the entire sheet?
 
 No. **Find and Replace** searches only the column that you select in the **Column** dropdown.
 
 If you don't select **Match entire cell contents**, PowerTable replaces the matching text wherever it appears within a cell value instead of replacing only cells whose entire value matches the search text.
 
-### Does Replace All write changes directly to the database?
+### Does 'Replace All' write changes directly to the database?
 
 No. **Replace All** creates pending changes, just like other editing operations.
 
