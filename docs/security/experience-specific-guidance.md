@@ -279,7 +279,7 @@ Before a disaster occurs: 
 
 1. From the application source directory, deploy the Fabric App into the recovery workspace by using Rayfin CLI. Run `rayfin up --workspace <new workspace>`. 
 
-1. Recover the app’s child items follow their respective recovery procedures.  
+1. Recover the app’s child items by following their respective recovery procedures.  
 
    1. [Fabric SQL Database](/fabric/security/experience-specific-guidance) 
    
