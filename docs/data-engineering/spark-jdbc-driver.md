@@ -607,6 +607,164 @@ public void executeBatchInsert(Connection conn) throws SQLException {
     }
 }
 ```
+### Connection Pooling with HikariCP
+
+HikariCP can create connections from either `LivyDataSource` or the JDBC URL through `LivyDriver`. Use only one connection pool in either configuration.
+
+#### Maven Dependency
+
+```xml
+<dependency>
+    <groupId>com.zaxxer</groupId>
+    <artifactId>HikariCP</artifactId>
+    <version>5.0.1</version>
+</dependency>
+```
+
+#### Using `LivyDataSource`
+
+`LivyDataSource` pooling is enabled by default. Disable its built-in pool before supplying it to HikariCP to avoid nesting one connection pool inside another:
+
+```java
+import com.microsoft.spark.livy.jdbc.LivyDataSource;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public final class ConnectionPoolExample implements AutoCloseable {
+    private final LivyDataSource livyDataSource;
+    private final HikariDataSource hikariDataSource;
+
+    public ConnectionPoolExample(String url) throws SQLException {
+        LivyDataSource configuredDataSource = new LivyDataSource();
+        configuredDataSource.setUrl(url);
+        configuredDataSource.setPoolingEnabled(false);
+
+        HikariConfig config = new HikariConfig();
+        config.setDataSource(configuredDataSource);
+
+        // Pool configuration
+        config.setMaximumPoolSize(2);
+        config.setMinimumIdle(0);
+        config.setConnectionTimeout(900000);     // Wait up to 15 minutes to borrow a connection
+        config.setInitializationFailTimeout(-1); // Skip startup validation; connect on demand
+        config.setIdleTimeout(600000);           // 10 minutes
+        config.setMaxLifetime(1800000);          // 30 minutes
+        
+        // Pool name for monitoring
+        config.setPoolName("FabricSparkPool");
+
+        try {
+            hikariDataSource = new HikariDataSource(config);
+            livyDataSource = configuredDataSource;
+        } catch (RuntimeException | Error exception) {
+            try {
+                configuredDataSource.close();
+            } catch (SQLException closeException) {
+                exception.addSuppressed(closeException);
+            }
+            throw exception;
+        }
+    }
+
+    public Connection getConnection() throws SQLException {
+        return hikariDataSource.getConnection();
+    }
+
+    @Override
+    public void close() throws SQLException {
+        try {
+            hikariDataSource.close();
+        } finally {
+            livyDataSource.close();
+        }
+    }
+
+    public static void main(String[] args) {
+        String url = "jdbc:fabricspark://api.fabric.microsoft.com;" +
+                     "FabricWorkspaceID=<workspace-id>;" +
+                     "FabricLakehouseID=<lakehouse-id>;" +
+                     "AuthFlow=AZURE_CLI;" +
+                     "LivySessionTimeoutSeconds=600";
+
+        try (ConnectionPoolExample pool = new ConnectionPoolExample(url);
+             Connection conn = pool.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT 'Pooled connection!' as message")) {
+
+            if (rs.next()) {
+                System.out.println(rs.getString("message"));
+            }
+        } catch (SQLException e) {
+            System.err.println("Database operation failed.");
+        }
+    }
+}
+```
+
+#### Using `LivyDriver` (without `LivyDataSource`)
+
+To let HikariCP create connections through `LivyDriver` directly, configure the JDBC URL instead of supplying a `LivyDataSource`. The example sets the driver class explicitly to make this path clear; it is optional when JDBC service-provider auto-discovery is available. HikariCP is the only connection pool in this configuration and calls `LivyDriver.connect()` when it needs a new physical connection:
+
+```java
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public final class DriverConnectionPoolExample {
+    public static HikariDataSource createPool(String url) {
+        HikariConfig config = new HikariConfig();
+        config.setDriverClassName("com.microsoft.spark.livy.jdbc.LivyDriver");
+        config.setJdbcUrl(url);
+
+        // Keep pool sizes small: each classic-mode physical connection owns a Livy session.
+        config.setMaximumPoolSize(2);
+        config.setMinimumIdle(0);
+        config.setConnectionTimeout(900000);     // Wait up to 15 minutes to borrow a connection
+        config.setInitializationFailTimeout(-1); // Skip startup validation; connect on demand
+        config.setIdleTimeout(600000);           // 10 minutes
+        config.setMaxLifetime(1800000);          // 30 minutes
+        config.setPoolName("FabricSparkDriverPool");
+
+        return new HikariDataSource(config);
+    }
+
+    public static void main(String[] args) throws SQLException {
+        String url = "jdbc:fabricspark://api.fabric.microsoft.com;" +
+                     "FabricWorkspaceID=<workspace-id>;" +
+                     "FabricLakehouseID=<lakehouse-id>;" +
+                     "AuthFlow=AZURE_CLI;" +            // Uses the DefaultAzureCredential chain
+                     "LivySessionTimeoutSeconds=600";  // Poll up to 10 minutes for session readiness
+
+        // Reuse this pool for the application lifetime; main closes it at process exit.
+        try (HikariDataSource pool = createPool(url);
+             Connection conn = pool.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT 'Pooled LivyDriver connection!' as message")) {
+
+            if (rs.next()) {
+                System.out.println(rs.getString("message"));
+            }
+        }
+    }
+}
+```
+
+This path does not instantiate `LivyDataSource`, so the `LivyDataSource` built-in pool is not involved and `ConnectionPoolEnabled=false` is not required. `connectionTimeout` controls how long a caller waits to borrow a connection but does not cancel an in-progress connection attempt. Size it with headroom beyond `LivySessionTimeoutSeconds`, which controls only session-readiness polling, for authentication, session creation, HTTP retries, and initial validation.
+
+On the driver-class path, HikariCP also writes `connectionTimeout` to the JVM-wide `DriverManager` login-timeout setting and uses that value while waiting for pool shutdown; `LivyDriver.connect()` does not enforce the `DriverManager` login timeout. A negative `initializationFailTimeout` skips HikariCP's startup connection and validation attempt, deferring connectivity failures until the first connection request. Hikari configuration and driver-loading errors still fail during pool construction; use a positive value if the application should also verify connectivity during startup.
+
+HikariCP validates connections with `Connection.isValid()`, whose effective duration in the current driver comes from the driver's HTTP timeout and retry/backoff configuration rather than HikariCP's `validationTimeout`. Do not configure a connection test query for this JDBC 4.2 driver because it replaces the lighter `Connection.isValid()` check with a Spark statement.
+
+
 ## Data Type Mapping
 
 The driver maps Spark SQL data types to JDBC SQL types and Java types:
