@@ -607,7 +607,7 @@ public void executeBatchInsert(Connection conn) throws SQLException {
     }
 }
 ```
-### Connection Pooling with HikariCP
+### Connection pooling with HikariCP
 
 HikariCP can create connections from either `LivyDataSource` or the JDBC URL through `LivyDriver`. Use only one connection pool in either configuration.
 
