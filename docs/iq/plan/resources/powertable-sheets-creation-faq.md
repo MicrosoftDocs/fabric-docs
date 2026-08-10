@@ -9,7 +9,7 @@ ms.date: 07/31/2026
 
 This article provides answers to frequently asked questions about creating PowerTable sheets in Plan. Review these common scenarios to understand connection setup, table creation, supported data sources, and configuration options.
 
-## What is the difference between Explore PowerTable and Create a New App on the welcome screen?
+## What is the difference between **Explore PowerTable** and **Create a New App** on the welcome screen?
 
 * **Explore PowerTable** loads sample data into a Fabric SQL database and you can explore prebuilt PowerTable sheets that are already configured.
 * **Create a New App** lets you choose your own data source and work with your own data instead of sample data. You can:
@@ -18,7 +18,7 @@ This article provides answers to frequently asked questions about creating Power
 
 Unlike **Explore PowerTable**, the sheet isn't preconfigured, so you set up all items from scratch.
 
-## Why does the Set up connection banner appear only once, and what does it enable?
+## Why does the **Set up connection** banner appear only once, and what does it enable?
 
 The **Set up connection** process runs only once for each Fabric Plan item, not for each PowerTable sheet.
 
@@ -29,7 +29,7 @@ When you set up the connection,
 
 If you dismiss the banner without completing the setup, the Viewer capability remains unconfigured.
 
-## What does the Authentication kind set to Organizational account mean? Can I connect as someone else?
+## What does the Authentication kind set to "Organizational account" mean? Can I connect as someone else?
 
 The **Organizational account** authentication kind authenticates the connection by using your signed-in Microsoft Entra identity instead of stored database credentials.
 
@@ -57,7 +57,7 @@ Choose **New Table** when you want to create a new table by importing data from:
 * A CSV file.
 * A semantic model.
 
-## What does the Exclude records and import table structure only checkbox do?
+## What does the 'Exclude records and import table structure only' checkbox do?
 
 This option creates the table by using the spreadsheet's columns and data types without importing any rows.
 
@@ -84,7 +84,7 @@ Currently, PowerTable supports connections only to Fabric SQL databases.
 
 To use data from other sources, consider mirroring or copying the data into a Fabric SQL database before connecting PowerTable.
 
-## What does the Enable support for Slowly Changing Dimensions (SCD) toggle do?
+## What does the 'Enable support for Slowly Changing Dimensions (SCD)' toggle do?
 
 When you enable support for SCD, you can configure a table with **SCD Type II** or **SCD Type III** tracking.
 
