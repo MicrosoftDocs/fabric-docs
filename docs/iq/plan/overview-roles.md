@@ -98,7 +98,7 @@ Administrators can control whether plan prompts users before a role upgrade occu
 
 **Session expiry:** Each session automatically expires after 30 days. After the 30-day session expires, a new session begins only when you perform a new action on a plan item. The first successful action determines the persona for the new session:
    * If you only open and view a plan item, the new session starts as a Viewer session.
-   * If you perform a Planner-level action (for example, creating a new plan item or entering edit mode on a valid item), the new session starts as a Planner session. Each new session inherits its role from your first successful activity.
+   * If you perform a Planner-level action (for example, create a new planning sheet or write back data), the new session starts as a Planner session. Each new session inherits its role from your first successful activity.
 
 ## Capabilities by role
 
