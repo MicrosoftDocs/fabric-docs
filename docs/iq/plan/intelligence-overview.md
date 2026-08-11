@@ -51,6 +51,10 @@ The following table lists the core capabilities of intelligence sheets.
 | **Real-time intelligence** | - Connect to planning sheets to visualize plans, budgets, forecasts, and simulations in real time |
 | **Gantt chart** | - Best-in-class solution for project planning and resource allocation |
 
+## Related content
+
+> [!VIDEO 630cd6a8-719e-4109-9e10-bd03dde753f3]
+
 ## Next steps
 
 To create your first intelligence sheet, see [Get started with intelligence sheets](intelligence-how-to-get-started.md).
