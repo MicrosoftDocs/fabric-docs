@@ -207,8 +207,8 @@ items:
                 href: plan/planning-forecasting/planning-how-to-build-forecasts.md
               - name: Manage rolling forecasts
                 href: plan/planning-forecasting/planning-how-to-manage-rolling-forecasts.md
-              - name: Create statistical forecasts
-                href: plan/planning-forecasting/planning-how-to-create-statistical-forecasts.md
+              - name: Generate statistical forecasts using the Predict feature
+                href: plan/planning-forecasting/planning-how-to-generate-statistical-forecasts-using-predict-feature.md
               - name: Create multidimensional forecasts
                 href: plan/planning-forecasting/planning-how-to-create-multidimensional-forecasts.md
               - name: Extend planning time range
