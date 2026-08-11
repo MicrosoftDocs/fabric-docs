@@ -87,6 +87,10 @@ items:
       href: plan/planning-overview.md
     - name: Concepts
       items:
+        - name: Top-down planning
+          href: plan/planning-concept-top-down-planning.md
+        - name: Bottom-up planning
+          href: plan/planning-concept-bottom-up-planning.md
         - name: Fiscal year setup
           href: plan/planning-concept-fiscal-year-setup.md
         - name: Cubes
