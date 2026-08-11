@@ -89,7 +89,11 @@
       "source_path_from_root": "/docs/iq/plan/planning-driver-model/planning-how-to-create-driver-model.md",
       "redirect_url": "/fabric/iq/plan/planning-row-model/planning-how-to-create-driver-model",
       "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/iq/plan/planning-forecasting/planning-how-to-create-statistical-forecasts.md",
+      "redirect_url": "/fabric/iq/plan/planning-forecasting/planning-how-to-generate-statistical-forecasts-using-predict-feature",
+      "redirect_document_id": true
     }
-
   ]
 }
