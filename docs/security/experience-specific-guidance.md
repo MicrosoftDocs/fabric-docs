@@ -607,7 +607,7 @@ The recreated database is an independent database.  Data added to the recreated 
 
 ## Platform
 
-Platform refers to the underlying shared services and architecture that apply to all workloads. This section describes recovery procedures for shared Fabric capabilities, including workspace monitoring and variable libraries.
+Platform refers to the underlying shared services and architecture that apply to all workloads. This section describes recovery procedures for shared Fabric capabilities.
 
 ### Workspace monitoring
  
