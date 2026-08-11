@@ -291,7 +291,8 @@ A connection based on a virtual network data gateway must be used, including in 
 Power Platform Dataflow Connector: When a workspace has workspace private links enabled and public access denied, for any two dataflows in that workspace (dataflow A and dataflow B), neither dataflow will be able to connect to the other dataflow using the Power Platform Dataflow Connector, because the dataflow won't appear in the navigator.
 
 > [!NOTE]
-> Copilot in Dataflow Gen2 is currently unsupported when workspace-level Private Links is enabled.
+> Copilot in Dataflow Gen2 isn't supported when workspace-level Private Links is enabled.
+
 
 #### [Fabric portal](#tab/fabric-portal-12)
 * [Dataflow Gen2 default destination](/fabric/data-factory/default-destination)
