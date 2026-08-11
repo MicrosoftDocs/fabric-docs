@@ -260,4 +260,5 @@ When you create shortcuts between multiple Fabric items within a workspace, you 
 ## Related content
 
 - [Create a OneLake shortcut](shortcuts/create-onelake-shortcut.md)
+- [Move shortcuts to a new region](shortcuts/move-shortcuts-region.md)
 - [Use OneLake shortcuts REST APIs](/rest/api/fabric/core/onelake-shortcuts)
