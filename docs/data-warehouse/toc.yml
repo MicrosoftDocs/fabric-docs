@@ -247,6 +247,12 @@ items:
           - name: Performance guidelines
             href: guidelines-warehouse-performance.md
             displayName: Warehouse performance
+          - name: Query acceleration
+            href: query-acceleration.md
+            displayName: GPU query acceleration
+          - name: Query acceleration FAQ
+            href: query-acceleration-faq.yml
+            displayName: GPU query acceleration
           - name: Result set caching
             href: result-set-caching.md
             displayName: result set caching

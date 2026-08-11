@@ -347,3 +347,4 @@ For more information on query lifecycle DMVs, see [Monitor connections, sessions
 - [Query insights](query-insights.md)
 - [Statistics in Fabric Data Warehouse](statistics.md)
 - [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md)
+- [Query acceleration in Fabric Data Warehouse](query-acceleration.md)
