@@ -2,7 +2,7 @@
 title: Query Acceleration in Fabric Data Warehouse (Preview)
 description: Fabric Data Warehouse Query acceleration is a GPU-accelerated execution capability designed to improve the performance and efficiency of analytical SQL workloads in Microsoft Fabric Data Warehouse.
 ms.reviewer: nnikolic, marakiketema
-ms.date: 07/31/2026
+ms.date: 08/11/2026
 ms.topic: concept-article
 ---
 
@@ -12,7 +12,8 @@ Fabric Data Warehouse query acceleration is a GPU-accelerated capability designe
 
 Query acceleration intelligently accelerates eligible SQL operations by offloading compute-intensive work to a specialized, GPU-accelerated execution engine. Operations such as joins, aggregations, and scans can be processed more efficiently and at greater scale, delivering faster and more predictable performance while remaining fully compatible with existing T-SQL workloads. 
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+> [!NOTE]
+> This feature is in limited preview. To request access on a first-come, first-served basis, complete the [Query Acceleration Registration Form](https://aka.ms/GPU-FabricDW).
 
 ## Why enable query acceleration?
 
