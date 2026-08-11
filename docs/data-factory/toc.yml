@@ -1107,6 +1107,8 @@
             items:
               - name: Understand detailed refresh logs
                 href: dataflow-gen2-detailed-refresh-logs.md
+              - name: Workspace monitoring
+                href: dataflow-gen2-workspace-monitoring.md
           - name: Performance and troubleshooting
             items:
               - name: Decide - Dataflow strategy
