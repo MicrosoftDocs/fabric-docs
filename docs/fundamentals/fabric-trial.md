@@ -26,11 +26,6 @@ The Microsoft Fabric trial capacity gives you **free access for 60 days** to exp
 >
 > Your honest take on what works and what doesn't will directly shape product improvements. [Sign up to participate](https://microsoft.qualtrics.com/jfe/form/SV_1MTHk3TXzSUfEXA) and help drive Fabric's future.
 
-Start your trial when you're ready to explore Fabric:
-
-> [!div class="nextstepaction"]
-> [Start your Fabric trial](https://app.fabric.microsoft.com/home?pbi_source=learn-get-started-fabric-trial)
-
 ## What's included—and what's not
 
 Your trial is configured as either an F4 [capacity](../enterprise/licenses.md#capacity) (4 capacity units) or an F64 capacity (64 capacity units) and is complemented with a Power BI Individual Trial if you don't already have a Power BI Premium Per User license. 
@@ -354,9 +349,6 @@ Trial Capacity administrators can migrate existing workspaces into a trial capac
 #### How many SQL databases can I create in a Fabric trial capacity?
 
 Currently, you can create up to three SQL databases in a Fabric trial capacity.
-
-> [!div class="nextstepaction"]
-> [Start your Fabric trial](https://app.fabric.microsoft.com/home?pbi_source=learn-get-started-fabric-trial)
 
 ## Next steps
 
