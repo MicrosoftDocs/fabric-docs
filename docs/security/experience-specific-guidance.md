@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: how-to
-ms.date: 06/15/2026
+ms.date: 08/11/2026
 ---
 
 # Experience-specific disaster recovery guidance
@@ -607,9 +607,16 @@ The recreated database is an independent database.  Data added to the recreated 
 
 ## Platform
 
-Platform refers to the underlying shared services and architecture that apply to all workloads. This section walks you through the recovery procedures for shared experiences. It covers variable libraries.
+Platform refers to the underlying shared services and architecture that apply to all workloads. This section describes recovery procedures for shared Fabric capabilities, including workspace monitoring and variable libraries.
+
+### Workspace monitoring
+ 
+Workspace monitoring collects logs about activity in the workspace where you enable it. After you recover your workspace as C2.W2, enable workspace monitoring on W2. It starts collecting monitoring data for the recovered workspace.
+
+Monitoring data from the original workspace (C1.W1) isn't carried over, because monitoring reflects the activity of the workspace it runs on.
 
 ### Variable library
+
 Microsoft Fabric Variable libraries enable developers to customize and share item configurations within a workspace, streamlining content lifecycle management. From a disaster recovery standpoint, variable library users must proactively protect against a regional disaster. This can be done through Fabric Git integration, which ensures that after a regional disaster, a user's Variable library remains available.  To recover a variable library, we recommend the following:
 
  - Use Fabric Git integration to synchronize your Variable library with your ADO repo. In case of disaster, you can use the repository to rebuild the Variable library in the new workspace you created. Use the following steps:
