@@ -349,6 +349,10 @@ items:
           items:
             - name: Configure hierarchy layout
               href: plan/powertable-layouts/how-to-configure-hierarchy-layout.md
+            - name: Configure calendar layout
+              href: plan/powertable-layouts/how-to-configure-calendar-layout.md
+            - name: Configure Kanban layout
+              href: plan/powertable-layouts/how-to-configure-kanban-layout.md
         - name: Apply conditional formatting
           href: plan/powertable-how-to-apply-conditional-formatting.md
         - name: Comment and collaborate
