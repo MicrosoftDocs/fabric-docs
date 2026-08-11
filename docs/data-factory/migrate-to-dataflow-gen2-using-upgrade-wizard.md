@@ -29,7 +29,7 @@ Before you start:
 - The Dataflow Gen1 must be in a workspace assigned to a [Fabric capacity](../enterprise/licenses.md#capacity).
 - Fabric item creation must be allowed for the relevant scope (the **Users can create Fabric items** admin setting is enabled at the tenant, capacity, or user-group level).
 - You need **Admin**, **Member**, or **Contributor** access to the workspace.
-- You must be the owner of the Dataflow Gen1. If you aren't, the wizard reports the dataflow as **Upgrade unavailable**. Ask the owner to run the upgrade, or use **Take over** to become the owner first. A tenant admin can upgrade dataflows they don't own by using the Power BI REST API, while preserving the original owner. For more information, see [Upgrade unavailable](#upgrade-unavailable).
+- You must be the owner of the Dataflow Gen1. If you aren't, the wizard reports the dataflow as **Upgrade unavailable**. Ask the owner to run the upgrade, or use **Take over** to become the owner first.
 
 > [!IMPORTANT]
 > Your Dataflow Gen1 can't be recovered after the upgrade completes. If you want to keep it, use [Save As](migrate-to-dataflow-gen2-using-save-as.md) to create a new Dataflow Gen2 (CI/CD) with the same content as the original dataflow. The upgrade is in-place: the original Dataflow Gen1 is replaced by a new Dataflow Gen2 (CI/CD) with the same ID and name, and you can't revert it.
@@ -92,8 +92,6 @@ The DirectQuery and linked-entity reasons are detection signals rather than proo
 ### Upgrade unavailable
 
 The wizard reports **Upgrade unavailable** when you aren't the owner of the dataflow. Only the owner can run the upgrade in the wizard. Ask the owner to run it, or use **Take over** to become the owner and run it yourself.
-
-Tenant admins can upgrade dataflows that they don't own by using the Power BI REST API. The API also supports bulk upgrades, and it keeps the original owner of each dataflow, so ownership doesn't change. For more information, see the [Power BI REST API reference for dataflows](/rest/api/power-bi/dataflows).
 
 ## After the upgrade
 
