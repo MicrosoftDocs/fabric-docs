@@ -404,6 +404,8 @@ items:
       href: spark-jdbc-driver.md
     - name: ODBC driver for Fabric Data Engineering
       href: spark-odbc-driver.md
+    - name: ODBC driver for Fabric Data Engineering on Linux
+      href: spark-odbc-driver-linux.md
     - name: ADO.NET driver for Fabric Data Engineering
       href: spark-adonet-driver.md
   - name: Livy API

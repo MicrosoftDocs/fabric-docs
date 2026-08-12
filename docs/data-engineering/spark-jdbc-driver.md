@@ -3,7 +3,7 @@ title: Microsoft JDBC Driver for Microsoft Fabric Data Engineering
 description: Learn how to connect, query, and manage Spark workloads in Microsoft Fabric using the Microsoft JDBC Driver for Microsoft Fabric Data Engineering.
 ms.reviewer: arali
 ms.topic: how-to
-ms.date: 12/05/2025
+ms.date: 08/12/2026
 ai-usage: ai-assisted
 ---
 
@@ -17,7 +17,7 @@ The Microsoft JDBC Driver for Fabric Data Engineering lets you connect, query, a
 
 - **JDBC 4.2 Compliant**: Full implementation of JDBC 4.2 specification
 - **Microsoft Entra ID Authentication**: Multiple authentication flows including interactive, client credentials, and certificate-based authentication
-- **Enterprise Connection Pooling**: Built-in connection pooling with health monitoring, automatic recovery, and HikariCP integration
+- **HikariCP integration**: Use HikariCP to manage and reuse JDBC connections for production applications
 - **Spark SQL Native Query Support**: Direct execution of Spark SQL statements without translation
 - **Comprehensive Data Type Support**: Support for all Spark SQL data types including complex types (ARRAY, MAP, STRUCT)
 - **Asynchronous Result Set Prefetching**: Background data loading for improved performance
@@ -45,9 +45,9 @@ Microsoft JDBC Driver for Fabric Data Engineering version 1.0.0 supports Java 11
 1. Download either the zip or tar file from the links above.
 1. Extract the downloaded file to access the driver JAR files.
 1. Select the JAR file that matches your JRE version:
-   - For Java 11: `ms-sparksql-jdbc-1.0.0.jre11.jar`
-   - For Java 17: `ms-sparksql-jdbc-1.0.0.jre17.jar`
-   - For Java 21: `ms-sparksql-jdbc-1.0.0.jre21.jar`
+   - For Java 11: `ms-sparksql-jdbc-1.0.1.jre11.jar`
+   - For Java 17: `ms-sparksql-jdbc-1.0.1.jre17.jar`
+   - For Java 21: `ms-sparksql-jdbc-1.0.1.jre21.jar`
 1. Add the selected JAR file to your application's classpath.
 1. For JDBC clients, configure the JDBC driver class: `com.microsoft.spark.livy.jdbc.LivyDriver`
 
@@ -320,9 +320,9 @@ spark.nee.enabled=true
 jdbc:fabricspark://api.fabric.microsoft.com;FabricWorkspaceID=<guid>;FabricLakehouseID=<guid>;DriverMemory=4g;ExecutorMemory=8g;NumExecutors=2;spark.sql.adaptive.enabled=true;spark.nee.enabled=true;AuthFlow=2
 ```
 
-### HTTP Connection Pool Configuration
+### HTTP client connection settings
 
-Configure HTTP connection pooling for optimal network performance:
+Configure the driver's HTTP transport connections for optimal network performance. These settings don't configure or manage JDBC connection pooling:
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -607,6 +607,85 @@ public void executeBatchInsert(Connection conn) throws SQLException {
     }
 }
 ```
+
+### Connection pooling with HikariCP
+
+Configure HikariCP with the JDBC URL so that it creates connections through `LivyDriver`. Create one HikariCP instance and reuse it for the application lifetime.
+
+#### Maven dependency
+
+```xml
+<dependency>
+    <groupId>com.zaxxer</groupId>
+    <artifactId>HikariCP</artifactId>
+    <version>5.0.1</version>
+</dependency>
+```
+
+#### Configure HikariCP with the JDBC URL
+
+Configure the JDBC URL and driver class so that HikariCP creates physical connections through `LivyDriver`. Setting the driver class explicitly is optional when JDBC service-provider auto-discovery is available:
+
+```java
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public final class DriverConnectionPoolExample {
+    public static HikariDataSource createPool(String url) {
+        HikariConfig config = new HikariConfig();
+        config.setDriverClassName("com.microsoft.spark.livy.jdbc.LivyDriver");
+        config.setJdbcUrl(url);
+
+        // Keep pool sizes small: each classic-mode physical connection owns a Livy session.
+        config.setMaximumPoolSize(2);
+        config.setMinimumIdle(0);
+        config.setConnectionTimeout(900000);     // Wait up to 15 minutes to borrow a connection
+        config.setInitializationFailTimeout(-1); // Skip startup validation; connect on demand
+        config.setIdleTimeout(600000);           // 10 minutes
+        config.setMaxLifetime(1800000);          // 30 minutes
+        config.setPoolName("FabricSparkDriverPool");
+
+        return new HikariDataSource(config);
+    }
+
+    public static void main(String[] args) throws SQLException {
+        String url = "jdbc:fabricspark://api.fabric.microsoft.com;" +
+                     "FabricWorkspaceID=<workspace-id>;" +
+                     "FabricLakehouseID=<lakehouse-id>;" +
+                     "AuthFlow=AZURE_CLI;" +            // Uses the DefaultAzureCredential chain
+                     "LivySessionTimeoutSeconds=600";  // Poll up to 10 minutes for session readiness
+
+        // Reuse this pool for the application lifetime; main closes it at process exit.
+        try (HikariDataSource pool = createPool(url);
+             Connection conn = pool.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT 'Pooled LivyDriver connection!' as message")) {
+
+            if (rs.next()) {
+                System.out.println(rs.getString("message"));
+            }
+        }
+    }
+}
+```
+
+Use the following guidance when you configure the pool:
+
+| Setting or behavior | Guidance |
+|---------------------|----------|
+| `connectionTimeout` | Controls how long a caller waits to borrow a connection, but doesn't cancel a connection attempt already in progress. Set it higher than `LivySessionTimeoutSeconds` to allow time for authentication, session creation, HTTP retries, and initial validation. |
+| Connection validation | HikariCP uses `Connection.isValid()`. Its effective duration is controlled by the driver's HTTP timeout and retry/backoff settings, not HikariCP's `validationTimeout`. Don't configure a connection test query because it replaces the lighter validation check with a Spark statement. |
+
+For the complete list of HikariCP configuration options, see:
+
+- [HikariConfig API reference](https://javadoc.io/static/com.zaxxer/HikariCP/3.2.0/com/zaxxer/hikari/HikariConfig.html)
+- [HikariCP configuration options](https://github.com/brettwooldridge/HikariCP#gear-configuration-knobs-baby)
+
 ## Data Type Mapping
 
 The driver maps Spark SQL data types to JDBC SQL types and Java types:
@@ -637,4 +716,3 @@ The driver maps Spark SQL data types to JDBC SQL types and Java types:
 * [Apache Spark Runtimes in Fabric](./runtime.md)
 * [Fabric Runtime 1.3](./runtime-1-3.md)
 * [What is the Livy API for Data Engineering](./api-livy-overview.md)
-
