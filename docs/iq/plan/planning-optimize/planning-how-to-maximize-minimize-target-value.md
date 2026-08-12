@@ -1,5 +1,5 @@
 ---
-title: Maximize or Minimize a Target Value
+title: Maximize or Minimize a Target Value in Fabric Plan
 description: Learn how to maximize or minimize a target value by using Optimize in Fabric Plan.
 ms.topic: how-to
 ms.date: 07/29/2026
@@ -7,97 +7,55 @@ ms.date: 07/29/2026
 
 # Maximize or minimize a target value
 
-Direction-based optimization adjusts one or more data input measures to maximize or minimize a selected objective while satisfying the specified constraints.
+Direction-based optimization adjusts one or more data input measures to maximize or minimize the selected objective measure while satisfying the defined constraints.
 
-## Run Optimize on calculated fields
+## Prerequisites
 
-1. Select the target cell in the calculated measure.
+Before you begin, review the [Prerequisites section for Optimize](./optimizer-overview.md#prerequisites) to understand the initial setup requirements.
 
-1. On the **Planning** ribbon, select **Optimize**.
+## Maximize a calculated field
 
-   In this example, you select the target cell from the *Profit per unit* measure.
+To demonstrate direction-based optimization, maximize the calculated field *Profit forecast* by optimizing independent variables - *Revenue Forecast*, *Purchase Forecast*, *Advertising Forecast*, and *Transport Forecast*.
 
-   :::image type="content" source="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/run-optimize-calculated-field.png" alt-text="Screenshot of selecting the Profit per unit cell and the Optimize command on the Planning ribbon." lightbox="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/run-optimize-calculated-field.png":::
+> [!NOTE]
+> You can optimize values at any hierarchy level. In this example, optimize at the total level. When Optimize runs on a parent cell, it recalculates the required change and distributes the updated value to the underlying editable child cells.
 
-1. In **Objective**, choose the optimization direction.
+1. Select the target cell in the calculated measure. In the **Planning** ribbon, select **Optimize**. In this example, select the target cell from the *Profit Forecast* measure.
 
-   - Select **Maximize** to achieve the highest possible value, such as revenue, profit, or return on investment.
-   - Select **Minimize** to achieve the lowest possible value, such as cost, expenses, or inventory holding costs.
+    :::image type="content" source="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/calculated-measure-optimize-formula.png" alt-text="Screenshot of a calculated measure and formula used as the dependent measure to optimize." lightbox="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/calculated-measure-optimize-formula.png":::
 
-   In this example, you set **Objective** to **Maximize** to maximize *Profit per unit*.
+1. To achieve direction-based optimization,
 
-   :::image type="content" source="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-objective-maximize.png" alt-text="Screenshot of the Objective setting configured to Maximize in the Optimize dialog." lightbox="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-objective-maximize.png":::
+    * Set **Objective** to **Maximize** to achieve the highest possible value. For example, maximize revenue, profit, or return on investment.
+    * Set **Objective** to **Minimize** to achieve the lowest possible value. For example, minimize cost, expenses, or inventory holding costs.
+      In this example, set the **Objective** to **Maximize** to arrive at the maximum *Profit Forecast*.
 
-1. Under **Variables to Update**, select the editable measures that Optimize can adjust.
+    :::image type="content" source="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/target-maximize-minimize-objective.png" alt-text="Screenshot of setting the optimize objective to maximize." lightbox="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/target-maximize-minimize-objective.png":::
 
-   In this example, you select *Units Sold (Projection)* and *COGS (Projection)* so Optimize can maximize *Profit per unit*.
+1. Select the data input or forecast measures (independent variables) to optimize from **Variables to Update**. In this case, Optimize adjusts the *Revenue Forecast*, *Purchase Forecast*, *Advertising Forecast*, and *Transport Forecast* to maximize the *Profit Forecast*. Select **Next**.
 
-   Select **Next**.
+    :::image type="content" source="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/select-independent-variables-optimize.png" alt-text="Screenshot of selecting the independent measures to optimize." lightbox="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/select-independent-variables-optimize.png":::
 
-   :::image type="content" source="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-select-variables.png" alt-text="Screenshot of selecting Units Sold and COGS projection measures under Variables to Update." lightbox="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-select-variables.png":::
+1. Select **Add Constraint** to define the minimum and maximum limits for the data input measure. For more information, see [Configure optimization thresholds](./optimizer-overview.md#configure-optimization-thresholds).
 
-1. Configure optimization constraints.
+    > [!TIP]
+    > Adding constraints is optional. Directly select **Run** to skip defining constraints; however, as a best practice, explicitly specify constraints for all the independent measures used in Optimize.
 
-   Select **Add Constraint**, specify the allowed adjustment range for each data input measure, and then select **Apply**.
+1. Choose the measure to apply the constraint from **Apply to Variable**. Select **Range** for the **Set Type** option. Enter the minimum and maximum optimization thresholds.
 
-   In this example, you configure constraints for *COGS (Projection)* and *Units Sold (Projection)*.
+    :::image type="content" source="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/add-range-constraint-independent-measure.png" alt-text="Screenshot of adding a range constraint to independent measures. " lightbox="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/add-range-constraint-independent-measure.png":::
 
-   > [!NOTE]
-   > This step is optional. Skip it if you don't need to restrict the optimization range.
+1. Select **Apply**. Select **Add** to specify additional constraints. Select **Run** after you define all the constraints.
 
-   For more information, see [Configure optimization thresholds](optimizer-overview.md#configure-optimization-thresholds).
+    :::image type="content" source="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/add-multiple-optimize-constraints.png" alt-text="Screenshot of adding multiple constraints for each independent measure in Optimize." lightbox="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/add-multiple-optimize-constraints.png":::
 
-   :::image type="content" source="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-add-constraints.png" alt-text="Screenshot of configuring minimum and maximum constraint values for optimization variables." lightbox="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-add-constraints.png":::
+1. Review the adjusted values and select **Apply** to update the values of the independent measures. For more information about Optimize parameters, see [Adjust parameters to achieve targets](./optimizer-overview.md#adjust-parameters-to-achieve-targets).
 
-1. Review the optimization results.
+    :::image type="content" source="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-maximized-profit-forecast-values.png" alt-text="Screenshot of maximized target value and optimized independent values." lightbox="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-maximized-profit-forecast-values.png":::
 
-   Verify the updated values and select **Apply** to write the optimized values back to the planning sheet.
+1. Optimize increases the *Profit Forecast* to 50.46m from 43.92m after adjusting independent measures within the specified constraints. Since you applied Optimize on a total value, the update cascades to all the related child dimensions.
 
-   :::image type="content" source="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-output-results.png" alt-text="Screenshot of the optimization results showing updated variable values before applying changes." lightbox="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-output-results.png":::
+    > [!NOTE]
+    > Optimize doesn't change the values of locked cells. The target value is maximized or minimized by adjusting the values of editable cells.
 
-1. After the optimization completes, the *Profit per unit* value increases from 6.6 to 10.2 while remaining within the specified constraints. In this example, Optimize adjusts *Units Sold (Projection)* to 2k and *COGS (Projection)* to 24.8k.
-
-   :::image type="content" source="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-calculated-field-results.png" alt-text="Screenshot showing the updated Profit per unit value after Optimize applies the calculated changes." lightbox="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-calculated-field-results.png":::
-
-## Run Optimize on parent cells
-
-You can also optimize parent (aggregate) cells. When Optimize runs on a parent cell, it recalculates the required adjustment and distributes the updated value proportionally across the editable child cells.
-
-1. Select the target cell in the calculated measure.
-
-1. On the **Planning** ribbon, select **Optimize**.
-
-   In this example, you select the target cell from the *Profit per unit* measure.
-
-   :::image type="content" source="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/run-optimize-parent-cell.png" alt-text="Screenshot of selecting a parent Profit per unit cell before running Optimize." lightbox="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/run-optimize-parent-cell.png":::
-
-1. Set **Objective** to **Minimize**.
-
-   Under **Variables to Update**, select *Revenue (Projection)*.
-
-   Select **Next**.
-
-   :::image type="content" source="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-parent-objective-minimize.png" alt-text="Screenshot of selecting Revenue Projection while minimizing the optimization objective." lightbox="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-parent-objective-minimize.png":::
-
-1. Configure a constraint for *Revenue (Projection)*.
-
-   Specify the minimum and maximum values that Optimize can use, and then select **Apply**.
-
-   :::image type="content" source="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-parent-constraint-range.png" alt-text="Screenshot of configuring a range constraint for the Revenue Projection measure." lightbox="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-parent-constraint-range.png":::
-
-1. Review the optimization results and select **Apply**.
-
-   In this example, Optimize updates *Revenue (Projection)* to meet the optimization objective.
-
-   :::image type="content" source="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-parent-output-results.png" alt-text="Screenshot showing optimization results before applying updated Revenue Projection values." lightbox="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-parent-output-results.png":::
-
-1. Optimize reduces *Revenue (Projection)* at the parent level and distributes the updated value proportionally across the editable child rows to achieve the target *Profit per unit*.
-
-   > [!NOTE]
-   > Optimization doesn't modify locked child cells.
-
-   :::image type="content" source="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-parent-cell-results.png" alt-text="Screenshot showing optimized parent values distributed proportionally across editable child rows." lightbox="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimize-parent-cell-results.png":::
-
-## Related content
-
-[Optimize forecast values to meet a target](planning-how-to-optimize-input-values.md#using-optimize-on-forecast-measures)
+    :::image type="content" source="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimized-values-applied-measures-updated.png" alt-text="Screenshot of applying the optimized values and updating the measures in the planning sheet." lightbox="../media/planning-optimize/planning-how-to-maximize-minimize-target-value/optimized-values-applied-measures-updated.png":::
