@@ -55,6 +55,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Share item | - | - | - |
 | **Fabric IQ** | Graph model  | - | - | Preview |
 |  | Graph queryset | - | - | Preview |
+|  | Operations agent | - | - | Preview |
 | **Industry Solutions** | Healthcare data solutions | - | ✓ | - |
 |  | Sustainability Solution | - | ✓ | - |
 |  | Retail Solution | - | ✓ | - |
@@ -96,8 +97,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Anomaly detector  | - | - | - |
 |  | Digital Twin Builder | - | - | - | 
 |  | Event Schema Set  | - | - | - |
-|  | Map | - | - | - |
-|  | Operations Agent | - | - | Preview |
+|  | Map | - | - | Preview |
 
 ## Related links
 
