@@ -433,6 +433,8 @@ items:
                     href: /stream-analytics-query/concat-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: CONCAT_WS
                     href: /stream-analytics-query/concat-ws-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: JSON_PARSE
+                    href: /stream-analytics-query/json-parse-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: LEFT
                     href: /stream-analytics-query/left-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: LEN

@@ -1,8 +1,8 @@
 ---
 title: How to Observe Fabric Data Warehouse Utilization Trends
 description: Learn how to use the Fabric Capacity Metrics app to observe Microsoft Fabric Data Warehouse utilization trends.
-ms.reviewer: sosivara
-ms.date: 04/06/2025
+ms.reviewer: brmyers
+ms.date: 08/02/2026
 ms.topic: how-to
 ms.search.form: Warehouse billing and utilization
 ms.custom: sfi-image-nochange
@@ -18,7 +18,7 @@ The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provid
 
 ## Prerequisites
 
-- Have a [Microsoft Fabric licenses](../enterprise/licenses.md), which grants Capacity Units (CUs) shared across all Fabric workloads.
+- Have a [Microsoft Fabric license](../enterprise/licenses.md), which grants Capacity Units (CUs) shared across all Fabric workloads.
 - Add the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) from AppSource.
 
 ## Observe overall trend across all items in Fabric capacity
@@ -48,23 +48,36 @@ The following animated image walks through several steps you can use to drill th
     - Cumulative % (Red): Represents the total overall debt at timepoints. This needs to be burned down eventually.
 1. In the **Utilization**, **Throttling**, or **Overages** tabs, select a specific timepoint to enable the **Explore** button for further drill through analysis. 
 1. Select **Explore**. The new page provides tables to explore details of both interactive and background operations. The page shows some background operations that are not occurring at that time, due to the 24-hour smoothing logic. In the previous animated image, operations are displayed between October 15 12:57 PM to October 16 12:57 PM, because of the background operations still being smoothed at the selected timepoint.
-1. In the **Background operations** table, you can also identify users, operations, start/stop times, durations that consumed the most CUs.
-   - The table of operations also provides a list of operations that are **InProgress**, so you can understand long running queries and its current CU consumption.
-   - Identification of an operation that consumed many resources: sort the table by **Total CU(s)** descending to find the most expensive queries, then use **Operation Id** to uniquely identify an operation. This is the distributed statement ID, which can be used in other monitoring tools like dynamic management views (DMVs) and Query Insights for end-to-end traceability, such as in `dist_statement_id` in [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql?view=fabric&preserve-view=true), and `distributed_statement_id` in [query insights.exec_requests_history](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true). Examples:
+1. In the **Background operations** table, you can identify billing intervals with the highest CU consumption from user-initiated and system-initiated workloads.
+    - The operations table displays completed billing intervals and their associated compute consumption.
+    - To identify intervals with high CU consumption:
+    1. Filter **Item kind** to **Warehouse**.
+    1. Sort **Total CU (s)** in descending order.
+    1. Record the **Start** and **End** times for the interval you want to investigate.
 
-      The following sample T-SQL query uses the **Operation Id** inside a query on the `sys.dm_exec_requests` dynamic management view.
+    Use the start and end times to correlate the billing interval with query activity in Query Insights and dynamic management views (DMVs).
 
-      ```sql 
-      SELECT * FROM sys.dm_exec_requests 
-      WHERE dist_statement_id = '00AA00AA-BB11-CC22-DD33-44EE44EE44EE';
-      ```
+    > [!NOTE]
+    > The **Operation Id** shown in the Capacity Metrics app no longer maps to the distributed statement ID for warehouse queries. To determine which queries contributed to compute consumption during a billing interval, query the *queryinsights.exec_requests_history* view using the interval's start and end timestamps.
 
-      The following T-SQL query uses the **Operation Id** in a user initiated query on the `queryinsights.exec_requests_history` view. 
+    The following T-SQL example returns requests that were active during a specified billing interval:
 
       ```sql
-      SELECT * FROM queryinsights.exec_requests_history 
-      WHERE distributed_statement_id = '00AA00AA-BB11-CC22-DD33-44EE44EE44EE`;
+      DECLARE @Start_Time DATETIME2(0) = '2026-08-04 8:00:00'
+              ,@End_Time DATETIME2(0) = '2026-08-04 9:00:00'
+
+      SELECT [database_name],
+             sql_pool_name,
+             distributed_statement_id,
+             login_name,
+             allocated_cpu_time_ms / 1000.0 AS vcore_seconds
+      FROM queryinsights.exec_requests_history
+      WHERE start_time < @End_Time
+      AND end_time > @Start_Time;
       ```
+
+    This query returns requests that overlapped with the specified billing interval. Use the results to identify workloads that contributed to the reported CU consumption.
+
 1. The **Burndown table** graph represents the different Fabric workloads that are running on this capacity and the % compute consumed by them at the selected timepoint. 
     - The table entry for **DMS** is your Warehouse workload. In the previous sample animated image, DMS has added 26% to the overall carryforward debt.
     - The **Cumulative %** column provides a percentage of how much the capacity has overconsumed. This value should be below 100% to avoid throttling. For example, in the previous sample animated image, 2433.84% indicates that DMS used 24 times more capacity than what the current SKU (F2) allows.
