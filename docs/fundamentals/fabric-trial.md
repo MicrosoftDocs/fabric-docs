@@ -3,11 +3,11 @@ title: Fabric trial capacity
 description: Understand how the Fabric trial capacity works. This includes starting a trial, ending a trial, and sharing a trial.
 author: SnehaGunda
 ms.author: sngun
-ms.reviewer: alpowers, mibruhje
+ms.reviewer: alpowers, mibruhje, oaladekomo
 ms.topic: concept-article
 ms.custom: fabric-cat
 ms.collection: ce-skilling-ai-copilot
-ms.date: 08/06/2026
+ms.date: 08/12/2026
 ms.update-cycle: 180-days
 ai-usage: ai-assisted
 ---
@@ -249,15 +249,15 @@ Here are some things to consider and answers to frequently asked questions about
 
 #### Can I use a Fabric trial capacity for production workloads?
 
-No. A Fabric trial capacity is intended for evaluation and testing only. Because trial capacities are time-bound, don't rely on them for ongoing production use, business-critical workloads, or long-term operational processes. For ongoing production scenarios, use a paid Fabric capacity. For more information, see [Purchase the full Fabric experience](#purchase-the-full-fabric-experience).
+A Fabric trial capacity is intended for evaluation and testing only. Because trial capacities are time-bound, don't rely on them for ongoing production use, business-critical workloads, or long-term operational processes. For ongoing reliability and support for production scenarios, use a paid Fabric capacity. For more information, see [Purchase the full Fabric experience](#purchase-the-full-fabric-experience).
 
 #### Is every user eligible to start a Fabric trial?
 
-No. Trial eligibility depends on factors such as your tenant settings, license state, and the number of trial capacities available in your tenant. Microsoft determines trial availability by region and tenant, and availability can change over time. For troubleshooting guidance, see [Why can't I start a trial?](#why-cant-i-start-a-trial)
+Trial eligibility depends on factors such as your tenant settings, license state, and the number of trial capacities available in your tenant. Microsoft determines trial availability by region and tenant, and availability can change over time. For troubleshooting guidance, see [Why can't I start a trial](#why-cant-i-start-a-trial)? If you’re still unable to start a trial, you may [contact Microsoft Support](/training/support/).
 
 #### Can I start another Fabric trial after my current trial ends?
 
-Not necessarily. Eligibility for another trial isn't guaranteed, and Microsoft might restrict repeated or successive trial usage. To continue using Fabric after your trial ends, [purchase a paid Fabric capacity](#purchase-the-full-fabric-experience) or ask your Fabric administrator whether an existing capacity is available for your workspace.
+Eligibility for another trial isn't guaranteed, and Microsoft might restrict repeated or successive trial usage. To continue using Fabric after your trial ends, you can [purchase a paid Fabric capacity](#purchase-the-full-fabric-experience) or ask your Fabric administrator whether an existing capacity is available for your workspace.
 
 #### What if I don't already have an assigned Power BI PPU?
 
