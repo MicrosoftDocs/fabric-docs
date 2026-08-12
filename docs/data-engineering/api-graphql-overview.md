@@ -85,6 +85,9 @@ Currently the following supported data sources are exposed through the Fabric AP
   - Open mirrored databases
 - Azure SQL database
 
+> [!NOTE]
+> Every object (table or view) you expose through the API for GraphQL must have a primary key. A keyless object, such as an aggregate view without a key, can't be exposed and fails schema generation. When you bind to a SQL database in Fabric, the object's schema must first be available on the database's SQL analytics endpoint.
+
 ## Features
 
 Fabric API for GraphQL provides comprehensive capabilities that streamline data access for applications. From automatic code generation to performance monitoring, these features enable you to build robust data APIs with minimal configuration.
