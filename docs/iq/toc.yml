@@ -77,172 +77,162 @@ items:
     items:
     - name: What is plan?
       href: plan/overview.md
-    - name: Prerequisites
-      href: plan/overview-prerequisites.md
-    - name: Roles
-      href: plan/overview-roles.md 
-  - name: Planning sheets
-    items:
     - name: Planning sheets overview
       href: plan/planning-overview.md
+    - name: PowerTable sheets overview
+      href: plan/powertable-overview.md
+    - name: Intelligence sheets overview
+      href: plan/intelligence-overview.md
+    - name: Infobridge overview
+      href: plan/infobridge-overview.md
+  - name: Get started
+    items:
+    - name: Prerequisites
+      href: plan/overview-prerequisites.md
+    - name: Create a semantic model connection
+      href: plan/planning-how-to-create-semantic-model-connection.md
+    - name: Create a database connection for collaboration
+      href: plan/planning-how-to-create-database-connection.md
+    - name: Create a planning sheet
+      href: plan/planning-how-to-get-started.md
+    - name: Get started with intelligence sheets
+      href: plan/intelligence-how-to-get-started.md
+    - name: Get started with reporting
+      href: plan/intelligence-how-to-get-started-reporting.md
+  - name: Planning sheets
+    items:
     - name: Concepts
       items:
-        - name: Top-down planning
-          href: plan/planning-concept-top-down-planning.md
-        - name: Bottom-up planning
-          href: plan/planning-concept-bottom-up-planning.md
-        - name: Fiscal year setup
-          href: plan/planning-concept-fiscal-year-setup.md
-        - name: Cubes
-          href: plan/planning-concept-cube.md
-        - name: Row-level security (RLS)
-          href: plan/planning-concept-row-level-security.md
-        - name: Predict - statistical forecasting algorithms
-          href: plan/planning-concept-predict.md
-        - name: Measure Model - the semantic enrichment framework
+        - name: Measure and row-based planning - Measure model
           href: plan/planning-concept-measure-model.md
-        - name: Row model
-          href: plan/planning-row-model/planning-concept-row-model.md          
+        - name: Measure and row-based planning - Row model
+          href: plan/planning-row-model/planning-concept-row-model.md
+        - name: Measure and row-based planning - Cubes
+          href: plan/planning-concept-cube.md
+        - name: Forecasting - Statistical forecasting algorithms using Predict
+          href: plan/planning-concept-predict.md
+        - name: General - Top-down planning
+          href: plan/planning-concept-top-down-planning.md
+        - name: General - Bottom-up planning
+          href: plan/planning-concept-bottom-up-planning.md
+        - name: General - Fiscal year setup
+          href: plan/planning-concept-fiscal-year-setup.md
+        - name: General - Row-level security (RLS)
+          href: plan/planning-concept-row-level-security.md          
     - name: How-tos
       items:
-        - name: Create a semantic model connection
-          href: plan/planning-how-to-create-semantic-model-connection.md
-        - name: Create a planning sheet
-          href: plan/planning-how-to-get-started.md
-        - name: Create a database connection for collaboration
-          href: plan/planning-how-to-create-database-connection.md
-        - name: Input data
-          href: plan/planning-how-to-input-data.md
-        - name: Insert rows
+        - name: Measure and row-based planning
           items:
-              - name: Insert data input rows
-                href: plan/planning-how-to-insert-rows-data-input.md
-              - name: Insert template rows
-                href: plan/planning-how-to-insert-rows-template.md
-              - name: Insert formula rows
-                href: plan/planning-how-to-insert-rows-formula.md
-              - name: Insert forecast rows
-                href: plan/planning-how-to-insert-rows-forecast.md
-              - name: Insert blank rows
-                href: plan/planning-how-to-insert-rows-blank.md
-              - name: Manage inserted rows
-                href: plan/planning-how-to-manage-inserted-rows.md
-        - name: Insert columns
-          items:
-              - name: Insert data input column
+              - name: Insert column - Fundamentals
                 href: plan/planning-how-to-insert-columns/how-to-insert-data-input-columns.md
-              - name: Insert number column
+              - name: Insert column - Number
                 href: plan/planning-how-to-insert-columns/how-to-insert-number-columns.md
-              - name: Insert list column
+              - name: Insert column - Dropdown
                 href: plan/planning-how-to-insert-columns/how-to-insert-dropdown-columns.md
-              - name: Insert person column
+              - name: Insert column - Person
                 href: plan/planning-how-to-insert-columns/how-to-insert-person-columns.md
-              - name: Insert formula column
+              - name: Insert column - Formula
                 href: plan/planning-how-to-insert-columns/how-to-insert-formula-columns.md
-        - name: Bulk edit data
-          href: plan/planning-how-to-bulk-edit.md
-        - name: Set up scenarios
-          href: plan/planning-how-to-set-up-scenarios.md
-        - name: Use simulation measures
-          href: plan/planning-how-to-use-simulation-measures.md
-        - name: Write back data
-          items:
-              - name: Set up writeback
-                href: plan/planning-writeback/planning-how-to-persist-data.md
-              - name: Configure general settings
-                href: plan/planning-writeback/planning-how-to-configure-general-settings.md
-              - name: Configure data settings
-                href: plan/planning-writeback/planning-how-to-configure-data-settings.md
-              - name: Configure destination settings
-                href: plan/planning-writeback/planning-how-to-configure-destination-settings.md
-              - name: Configure advanced settings
-                href: plan/planning-writeback/planning-how-to-configure-advanced-settings.md
-              - name: View logs
-                href: plan/planning-writeback/planning-how-to-view-logs.md
-              - name: Enable writeback in reading mode
-                href: plan/planning-writeback/planning-how-to-enable-writeback-reading-mode.md
-              - name: Writeback FAQ
-                href: plan/planning-writeback/writeback-faq.md
-        - name: Multidimensional planning
-          items:
-              - name: Create multidimensional cubes
+              - name: Insert column - Simulation
+                href: plan/planning-how-to-use-simulation-measures.md
+              - name: Measure modeling using model builder
+                href: plan/planning-how-to-create-measure-model.md
+              - name: Cube - Multidimensional allocation
                 href: plan/planning-cubes/how-to-create-cube.md
-              - name: Create cube forecasts
+              - name: Cube - Multidimensional Forecast allocation
                 href: plan/planning-cubes/how-to-create-forecast-cube.md
-              - name: Manage cube measures
+              - name: Cube - Manage cube measures
                 href: plan/planning-cubes/how-to-manage-cube-measures.md
-              - name: Cube FAQ
-                href: plan/planning-cubes/faq-cube.md     
-        - name: Change layouts
-          href: plan/planning-how-to-change-layouts.md
-        - name: Comment and collaborate
-          href: plan/planning-how-to-add-comments.md
-        - name: Add notes
-          href: plan/planning-how-to-add-notes.md
-        - name: Add bookmarks
-          href: plan/planning-how-to-add-bookmark.md
-        - name: Export data
-          href: plan/planning-how-to-export-data.md
-        - name: Pivot data
-          href: plan/planning-how-to-pivot-data.md
-        - name: Conditional formatting
-          items:
-              - name: Conditional formatting overview
-                href: plan/planning-conditional-formatting/concept-conditional-formatting.md
-              - name: Create rules
-                href: plan/planning-conditional-formatting/how-to-create-rules.md
-              - name: Format by rules
-                href: plan/planning-conditional-formatting/how-to-format-if.md
-              - name: Format by color scales
-                href: plan/planning-conditional-formatting/how-to-format-color-scales.md
-              - name: Format by classification
-                href: plan/planning-conditional-formatting/how-to-format-classification.md
-              - name: Apply quick formatting
-                href: plan/planning-conditional-formatting/how-to-apply-quick-formatting.md
-              - name: Manage rules
-                href: plan/planning-conditional-formatting/how-to-manage-rules.md
-        - name: Use forecasting
+              - name: Insert row - Fundamentals
+                href: plan/planning-how-to-insert-rows-data-input.md
+              - name: Insert row - Template
+                href: plan/planning-how-to-insert-rows-template.md
+              - name: Insert row - Formula
+                href: plan/planning-how-to-insert-rows-formula.md
+              - name: Insert row - Forecast
+                href: plan/planning-how-to-insert-rows-forecast.md
+              - name: Insert row - Blank
+                href: plan/planning-how-to-insert-rows-blank.md
+              - name: Insert rows - Manage inserted rows
+                href: plan/planning-how-to-manage-inserted-rows.md
+              - name: Row model - Create model using model builder
+                href: plan/planning-row-model/planning-how-to-create-model-using-model-builder.md
+              - name: Row model - Configure row properties
+                href: plan/planning-row-model/planning-how-to-configure-model-row-properties.md
+              - name: Row model - Create templates
+                href: plan/planning-row-model/planning-how-to-create-templates.md
+              - name: Row model - Create driver model using model builder
+                href: plan/planning-row-model/planning-how-to-create-driver-model.md
+        - name: Forecasting
           items: 
-              - name: Configure forecasts
+              - name: Create forecasts
                 href: plan/planning-forecasting/planning-how-to-build-forecasts.md
+              - name: Edit forecast settings
+                href: plan/planning-forecasting/planning-how-to-configure-forecast-settings.md
               - name: Manage rolling forecasts
                 href: plan/planning-forecasting/planning-how-to-manage-rolling-forecasts.md
               - name: Create statistical forecasts
                 href: plan/planning-forecasting/planning-how-to-create-statistical-forecasts.md
-              - name: Create multidimensional forecasts
-                href: plan/planning-forecasting/planning-how-to-create-multidimensional-forecasts.md
               - name: Extend planning time range
                 href: plan/planning-forecasting/planning-how-to-extend-time.md
-              - name: Edit forecast settings
-                href: plan/planning-forecasting/planning-how-to-configure-forecast-settings.md
-              - name: Forecasting FAQ
-                href: plan/planning-forecasting/forecasting-faq.md
-        - name: Optimize input values
-          items: 
-              - name: Optimize fundamentals
+        - name: Planning tools
+          items:
+              - name: Set up scenarios
+                href: plan/planning-how-to-set-up-scenarios.md
+              - name: Optimize inputs - Fundamentals
                 href: plan/planning-optimize/optimizer-overview.md
-              - name: Target based optimization
+              - name: Optimize inputs - Target based optimization
                 href: plan/planning-optimize/planning-how-to-optimize-input-values.md
-              - name: Maximize or minimize a target value
+              - name: Optimize inputs - Direction based optimization
                 href: plan/planning-optimize/planning-how-to-maximize-minimize-target-value.md
-        - name: Use row models
-          items: 
-              - name: Create a model
-                href: plan/planning-row-model/planning-how-to-create-model-using-model-builder.md
-              - name: Configure row properties
-                href: plan/planning-row-model/planning-how-to-configure-model-row-properties.md
-              - name: Create templates
-                href: plan/planning-row-model/planning-how-to-create-templates.md
-              - name: Create a driver model
-                href: plan/planning-row-model/planning-how-to-create-driver-model.md
-        - name: Create a measure model
-          href: plan/planning-how-to-create-measure-model.md
-        - name: Configure approval workflows
-          href: plan/planning-how-to-configure-approval-workflows.md
-    - name: Troubleshoot
-      items:
-          - name: Troubleshoot semantic model connection
-            href: plan/planning-troubleshoot-semantic-model.md
+              - name: Bulk edit
+                href: plan/planning-how-to-bulk-edit.md
+              - name: Pivot data
+                href: plan/planning-how-to-pivot-data.md
+              - name: Configure approval workflows
+                href: plan/planning-how-to-configure-approval-workflows.md
+        - name: Collaboration and export
+          items:
+              - name: Comment and collaborate
+                href: plan/planning-how-to-add-comments.md
+              - name: Export data
+                href: plan/planning-how-to-export-data.md
+              - name: Writeback - Setup Writeback
+                href: plan/planning-writeback/planning-how-to-persist-data.md
+              - name: Writeback - Configure general settings
+                href: plan/planning-writeback/planning-how-to-configure-general-settings.md
+              - name: Writeback - Configure data settings
+                href: plan/planning-writeback/planning-how-to-configure-data-settings.md
+              - name: Writeback - Configure destination settings
+                href: plan/planning-writeback/planning-how-to-configure-destination-settings.md
+              - name: Writeback - Configure advanced settings
+                href: plan/planning-writeback/planning-how-to-configure-advanced-settings.md
+              - name: Writeback - View writeback logs
+                href: plan/planning-writeback/planning-how-to-view-logs.md
+              - name: Writeback - Enable writeback in reading mode
+                href: plan/planning-writeback/planning-how-to-enable-writeback-reading-mode.md
+              - name: Writeback FAQ
+                href: plan/planning-writeback/writeback-faq.md     
+        - name: Format and display
+          items:
+              - name: Change layouts
+                href: plan/planning-how-to-change-layouts.md
+              - name: Add notes
+                href: plan/planning-how-to-add-notes.md
+              - name: Conditional formatting - Fundamentals
+                href: plan/planning-conditional-formatting/concept-conditional-formatting.md
+              - name: Conditional formatting - Quick formatting
+                href: plan/planning-conditional-formatting/how-to-apply-quick-formatting.md
+              - name: Conditional formatting - Create rules
+                href: plan/planning-conditional-formatting/how-to-create-rules.md
+              - name: Conditional formatting - Format by rules
+                href: plan/planning-conditional-formatting/how-to-format-if.md
+              - name: Conditional formatting - Color scales
+                href: plan/planning-conditional-formatting/how-to-format-color-scales.md
+              - name: Conditional formatting - Classification
+                href: plan/planning-conditional-formatting/how-to-format-classification.md
+              - name: Conditional formatting - Manage rules
+                href: plan/planning-conditional-formatting/how-to-manage-rules.md
     - name: Reference
       items:
         - name: Formulas and functions
@@ -277,8 +267,6 @@ items:
                   href: plan/planning-reference-formulas/date-functions/perform-date-calculations.md
   - name: PowerTable sheets
     items:
-    - name: PowerTable sheets overview
-      href: plan/powertable-overview.md
     - name: Concepts
       items:
         - name: Slowly changing dimensions
@@ -349,6 +337,10 @@ items:
           items:
             - name: Configure hierarchy layout
               href: plan/powertable-layouts/how-to-configure-hierarchy-layout.md
+            - name: Configure calendar layout
+              href: plan/powertable-layouts/how-to-configure-calendar-layout.md
+            - name: Configure Kanban layout
+              href: plan/powertable-layouts/how-to-configure-kanban-layout.md
         - name: Apply conditional formatting
           href: plan/powertable-how-to-apply-conditional-formatting.md
         - name: Comment and collaborate
@@ -380,17 +372,9 @@ items:
         - name: Supported column and input types
           href: plan/powertable-reference-supported-column-input-types.md
   - name: Intelligence sheets
-    items:
-    - name: Intelligence sheets overview
-      href: plan/intelligence-overview.md
-    - name: Intelligence FAQ
-      href: plan/faq-intelligence.md    
+    items:    
     - name: How-tos
       items:
-        - name: Get started with intelligence sheets
-          href: plan/intelligence-how-to-get-started.md
-        - name: Get started with reporting
-          href: plan/intelligence-how-to-get-started-reporting.md
         - name: Create dashboards
           href: plan/intelligence-how-to-create-dashboards.md
         - name: Apply and customize themes
@@ -417,8 +401,6 @@ items:
           href: plan/intelligence-how-to-create-gantt-chart.md
   - name: Infobridge
     items:
-    - name: Infobridge overview
-      href: plan/infobridge-overview.md
     - name: Concepts
       items:
         - name: Connected planning
@@ -475,22 +457,38 @@ items:
               href: plan/infobridge-transformations/infobridge-how-to-import-export.md
   - name: Resources
     items:
+    - name: Roles
+      href: plan/overview-roles.md
     - name: Billing and capacity usage
       href: plan/resources/billing-fabric-plan.md
-    - name: Plan general FAQ
-      href: plan/resources/frequently-asked-questions.md
-    - name: PowerTable general FAQ
-      href: plan/resources/powertable-general-faq.md
+    - name: Add bookmarks
+      href: plan/planning-how-to-add-bookmark.md
+    - name: FAQ
+      items:
+      - name: Plan general FAQ
+        href: plan/resources/frequently-asked-questions.md
+      - name: PowerTable general FAQ
+        href: plan/resources/powertable-general-faq.md
+      - name: Intelligence FAQ
+        href: plan/faq-intelligence.md
+      - name: Cube FAQ
+        href: plan/planning-cubes/faq-cube.md
+      - name: Forecasting FAQ
+        href: plan/planning-forecasting/forecasting-faq.md
     - name: Plan best practices
       items:
       - name: Time intelligence
         href: plan/resources/best-practices/time-intelligence.md
       - name: Semantic modeling
         href: plan/resources/best-practices/semantic-modeling.md
+    - name: Troubleshoot
+      items:
+          - name: Troubleshoot semantic model connection
+            href: plan/planning-troubleshoot-semantic-model.md
+          - name: Error codes and resolutions
+            href: plan/resources/error-codes-and-resolutions.md
     - name: Known limitations
       href: plan/overview-limitations.md
-    - name: Error codes and resolutions
-      href: plan/resources/error-codes-and-resolutions.md
 - name: Graph
   href: ../graph/toc.yml
 - name: Data agent

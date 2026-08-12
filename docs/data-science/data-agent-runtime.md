@@ -52,6 +52,8 @@ The following updates are included in the preview runtime today. This list chang
 | Better example query following | [Advanced NL2SQL](data-agent-sql-sources.md#advanced-nl2sql-preview) | NL2SQL adheres more closely to the patterns shown in your example query library, instead of adding extra logic or constraints that weren't in the examples. |
 | Filter value substitution | [Advanced NL2SQL](data-agent-sql-sources.md#advanced-nl2sql-preview) | NL2SQL reasons through implied filter values and substitutes the correct ones, including when multiple categorical or boolean filters are implied rather than explicitly stated. |
 | Ambiguity handling | [Advanced NL2SQL](data-agent-sql-sources.md#advanced-nl2sql-preview) | NL2SQL detects ambiguous questions and asks a clarifying question before generating SQL, instead of committing to an assumption that may produce the wrong answer. |
+| More accurate complex question handling | [Advanced DAX generation](semantic-model-best-practices.md#advanced-dax-generation-preview) | DAX generation reasons across multiple steps, inspects results, resolves ambiguity, and refines its approach to answer complex questions more accurately. |
+| More reliable filter generation | [Advanced DAX generation](semantic-model-best-practices.md#advanced-dax-generation-preview) | DAX generation searches values within semantic model columns to identify the correct filter values and generate more reliable queries. |
 
 You can also switch a data agent to the preview runtime programmatically by using the Fabric data agent Python SDK:
 
