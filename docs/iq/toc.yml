@@ -77,8 +77,14 @@ items:
     items:
     - name: What is plan?
       href: plan/overview.md
-    - name: Roles
-      href: plan/overview-roles.md
+    - name: Planning sheets overview
+      href: plan/planning-overview.md
+    - name: PowerTable sheets overview
+      href: plan/powertable-overview.md
+    - name: Intelligence sheets overview
+      href: plan/intelligence-overview.md
+    - name: Infobridge overview
+      href: plan/infobridge-overview.md
   - name: Get started
     items:
     - name: Prerequisites
@@ -89,12 +95,12 @@ items:
       href: plan/planning-how-to-create-database-connection.md
     - name: Create a planning sheet
       href: plan/planning-how-to-get-started.md
-    - name: Add bookmarks
-      href: plan/planning-how-to-add-bookmark.md
+    - name: Get started with intelligence sheets
+      href: plan/intelligence-how-to-get-started.md
+    - name: Get started with reporting
+      href: plan/intelligence-how-to-get-started-reporting.md
   - name: Planning sheets
     items:
-    - name: Planning sheets overview
-      href: plan/planning-overview.md
     - name: Concepts
       items:
         - name: Measure and row-based planning - Measure model
@@ -137,8 +143,6 @@ items:
                 href: plan/planning-cubes/how-to-create-forecast-cube.md
               - name: Cube - Manage cube measures
                 href: plan/planning-cubes/how-to-manage-cube-measures.md
-              - name: Cube FAQ
-                href: plan/planning-cubes/faq-cube.md
               - name: Insert row - Fundamentals
                 href: plan/planning-how-to-insert-rows-data-input.md
               - name: Insert row - Template
@@ -171,8 +175,6 @@ items:
                 href: plan/planning-forecasting/planning-how-to-create-statistical-forecasts.md
               - name: Extend planning time range
                 href: plan/planning-forecasting/planning-how-to-extend-time.md
-              - name: Forecasting FAQ
-                href: plan/planning-forecasting/forecasting-faq.md
         - name: Planning tools
           items:
               - name: Set up scenarios
@@ -265,8 +267,6 @@ items:
                   href: plan/planning-reference-formulas/date-functions/perform-date-calculations.md
   - name: PowerTable sheets
     items:
-    - name: PowerTable sheets overview
-      href: plan/powertable-overview.md
     - name: Concepts
       items:
         - name: Slowly changing dimensions
@@ -372,17 +372,9 @@ items:
         - name: Supported column and input types
           href: plan/powertable-reference-supported-column-input-types.md
   - name: Intelligence sheets
-    items:
-    - name: Intelligence sheets overview
-      href: plan/intelligence-overview.md
-    - name: Intelligence FAQ
-      href: plan/faq-intelligence.md    
+    items:    
     - name: How-tos
       items:
-        - name: Get started with intelligence sheets
-          href: plan/intelligence-how-to-get-started.md
-        - name: Get started with reporting
-          href: plan/intelligence-how-to-get-started-reporting.md
         - name: Create dashboards
           href: plan/intelligence-how-to-create-dashboards.md
         - name: Apply and customize themes
@@ -409,8 +401,6 @@ items:
           href: plan/intelligence-how-to-create-gantt-chart.md
   - name: Infobridge
     items:
-    - name: Infobridge overview
-      href: plan/infobridge-overview.md
     - name: Concepts
       items:
         - name: Connected planning
@@ -467,14 +457,24 @@ items:
               href: plan/infobridge-transformations/infobridge-how-to-import-export.md
   - name: Resources
     items:
+    - name: Roles
+      href: plan/overview-roles.md
     - name: Billing and capacity usage
       href: plan/resources/billing-fabric-plan.md
+    - name: Add bookmarks
+      href: plan/planning-how-to-add-bookmark.md
     - name: FAQ
       items:
       - name: Plan general FAQ
         href: plan/resources/frequently-asked-questions.md
       - name: PowerTable general FAQ
         href: plan/resources/powertable-general-faq.md
+      - name: Intelligence FAQ
+        href: plan/faq-intelligence.md
+      - name: Cube FAQ
+        href: plan/planning-cubes/faq-cube.md
+      - name: Forecasting FAQ
+        href: plan/planning-forecasting/forecasting-faq.md
     - name: Plan best practices
       items:
       - name: Time intelligence
