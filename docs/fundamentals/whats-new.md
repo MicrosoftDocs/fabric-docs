@@ -3,7 +3,7 @@ title: "What's New?"
 description: Learn about the new features and documentation improvements for Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 08/04/2026
+ms.date: 08/12/2026
 ms.update-cycle: 30-days
 ms.topic: whats-new
 ms.collection:
@@ -437,6 +437,7 @@ This section summarizes recent improvements and features for [Fabric Data Wareho
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|August 2026|**SQL audit logs predicate filtering**|You can [use T-SQL predicate expressions to filter which events are captured in your SQL audit logs](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/SQL-Audit-Logs-More-Signal-Less-Noise-with-Predicate-Filtering/ba-p/5357211) of Fabric Data Warehouse and SQL analytics endpoint. For more information, see [SQL audit logs in Fabric Data Warehouse](../data-warehouse/sql-audit-logs.md).|
 |August 2026|**Fabric Data Warehouse GPU query acceleration (Preview)**|[GPU-accelerated Fabric Data Warehouse (Early Access Preview)](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/A-new-analytics-frontier-GPU-accelerated-Fabric-Data-Warehouse/ba-p/5191598) uses NVIDIA accelerated computing to run eligible T-SQL queries on GPUs with no query rewrites, delivering up to 7x faster performance at high concurrency across all SQL analytics endpoints and warehouses in a workspace once you enable it from workspace settings. For more information, see [Query acceleration in Fabric Data Warehouse (preview)](../data-warehouse/query-acceleration.md).|
 |July 2026|**Usage-based resource estimations (Generally Available)**|[Usage-based resource estimations](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-July-2026-Feature-Summary/ba-p/5325823#toc-hId--1837831120) help the Fabric Data Warehouse query optimizer use prior execution cardinalities to correct under- and over-estimates for more efficient resource requests and concurrency.|
 |July 2026|**Warehouse source control (Preview)**|By using [Source control with Warehouse (preview)](../data-warehouse/development-deployment.md), you can manage development and deployment of versioned warehouse objects. Use the [SQL Database Projects extension](/sql/tools/visual-studio-code-extensions/sql-database-projects/sql-database-projects-extension) available inside Visual Studio Code. For more information on warehouse source control, see [CI/CD with Warehouses in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/ci-cd-with-warehouses-in-microsoft-fabric/).|
