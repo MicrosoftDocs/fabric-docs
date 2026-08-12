@@ -272,15 +272,15 @@ items:
         items:
           - name: Monitoring overview
             href: monitoring-overview.md
+          - name: Billing and utilization
+            href: usage-reporting.md
+            displayName: Billing, usage reporting
           - name: Monitor
             href: monitor.md
           - name: Query insights
             href: query-insights.md
           - name: How to
             items:
-              - name: Monitor using Capacity Metrics app
-                href: usage-reporting.md
-                displayName: Billing, usage reporting
               - name: Monitor using DMVs
                 href: monitor-using-dmv.md
               - name: Observe utilization trends
