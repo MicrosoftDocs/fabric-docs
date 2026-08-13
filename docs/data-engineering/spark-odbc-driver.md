@@ -723,6 +723,7 @@ To enable ODBC tracing:
 
 ## Related content
 
+* [Microsoft ODBC Driver for Microsoft Fabric Data Engineering on Linux](./spark-odbc-driver-linux.md)
 * [Apache Spark Runtimes in Fabric](./runtime.md)
 * [Fabric Runtime 1.3](./runtime-1-3.md)
 * [What is the Livy API for Data Engineering](./api-livy-overview.md)

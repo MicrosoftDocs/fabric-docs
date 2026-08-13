@@ -57,6 +57,8 @@ items:
     items:
       - name: Eventstream Overview
         href: event-streams/overview.md
+      - name: Eventstream for Azure Event Hubs and Stream Analytics users
+        href: event-streams/migrate-from-azure-event-hubs-stream-analytics.md
       - name: Eventstreams capacity consumption
         href: event-streams/monitor-capacity-consumption.md
       - name: Supported data formats
