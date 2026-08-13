@@ -313,6 +313,8 @@ items:
                   href: plan/planning-reference-formulas/date-functions/extract-components-start-end-dates.md
                 - name: Date calculations
                   href: plan/planning-reference-formulas/date-functions/perform-date-calculations.md
+            - name: Identifiers
+              href: plan/planning-reference-formulas/identifiers.md
   - name: PowerTable sheets
     items:
     - name: Concepts
