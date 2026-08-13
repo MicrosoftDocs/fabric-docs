@@ -470,7 +470,7 @@ Use the following steps to restore Business Events, Fabric Events, and Azure Eve
 
 **For Business Events:**
 
-1. Recreate the business event used by publishers and consumers by following the article [Create Business Events in Fabric Real-Time Hub](../real-time-hub/business-events/create-business-events.md). During the creation of the business event, you create the Event Schema Set resource. The Eventhouse resource is optional depending on the scenario.
+1. Recreate the business event used by publishers and consumers by following the article [Create Business Events in Fabric Real-Time Hub](../real-time-hub/business-events/create-business-events.md). During the creation of the business event, you create the Event Schema Set resource. The Eventhouse resource is optional depending on the scenario. If you backed up your event schema set with Git integration, restore it first by following the [Event schema set section](#event-schema-set), then point the business event at the restored schema set.
 
 1. Recreate any publisher items that generate business events, such as Spark notebooks or User Data Functions, in the new workspace by following the publisher articles: [Use User Data Function as a Business Events Publisher](../real-time-hub/business-events/business-events-user-data-function.md), [Use Activator as a Business Events Publisher](../real-time-hub/business-events/business-events-activator.md), [Use Notebook as a Business Events Publisher](../real-time-hub/business-events/business-events-notebook.md), and [Use Eventstream as a Business Events Publisher](../real-time-hub/business-events/business-events-event-stream-publisher.md).
 
@@ -492,6 +492,35 @@ Use the following steps to restore Business Events, Fabric Events, and Azure Eve
 
 > [!NOTE]
 > Event history for Business Events depends on Eventhouse recovery. Business Events, Fabric Events, and Azure Events are push-based and ephemeral, so no historical event data is recoverable for those types. Only events produced after recovery is complete are available in the new region.
+
+### Event schema set
+
+An event schema set is the Fabric item that holds the event type and schema definitions used by Business Events. Unlike the event subscriptions described in the previous section, which are push-based and ephemeral, an event schema set is a durable authored definition. It's the shape that publishers write against and consumers read against, so recovering it first makes recovering the events that depend on it simpler.
+
+Event schema sets from the primary region remain unavailable to customers, and they aren't replicated to the secondary region. However, because an event schema set is an authored definition, you can back it up ahead of time and restore it rather than reauthoring it by hand.
+
+#### Recommended: back up with Fabric Git integration
+
+To recover an event schema set after a regional disaster, set up [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md) before a disaster occurs, and [synchronize](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) the workspace containing your event schema sets with your Git repository.
+
+1. Configure Fabric Git integration for the workspace that contains your event schema set, and synchronize it with your Git repository.
+
+1. Keep the event schema set committed and synced regularly, particularly after adding event types or publishing new schema versions.
+
+1. During recovery, create a new workspace in the target region (C2.W2), connect it to the same repository, and sync to restore the event schema set. Because the new workspace is empty, Git sync brings the contents from the repository into the workspace.
+
+1. Recreate the publishers and consumers that use the schema set by following the steps in the [Business Events section](#business-events-fabric-events-and-azure-events).
+
+1. Validate that publishers can publish against the restored event types and that consumers receive events as expected.
+
+The synchronized definition includes the event types in the schema set, the schemas, and the schema versions. It doesn't include publisher registrations, consumer subscriptions, or event history. Recreate those separately by following the Business Events steps.
+
+#### Alternative: recreate manually
+
+If you didn't configure Git integration before the disaster, recreate the event schema set in the recovery region by following [Create Business Events in Fabric Real-Time Hub](../real-time-hub/business-events/create-business-events.md). Creating a business event creates the event schema set resource, after which you can add the event types and schemas that the original schema set contained.
+
+> [!NOTE]
+> Event schema sets are often shared across several publishers and consumers. Recover the schema set before recreating the items that depend on it, so those items have event types to bind to.
 
 ### Map
 
