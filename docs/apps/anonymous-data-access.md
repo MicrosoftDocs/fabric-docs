@@ -58,8 +58,8 @@ Use the `@role` decorator on an entity and specify `anonymous` as the role name.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `roleName` | `string` | The role name, such as `'authenticated'` or a custom application role |
-| `actions` | `string \| string[]` | Single action or array: `'create'`, `'read'`, `'update'`, `'delete'`, or `'*'` for all |
+| `roleName` | `string` | The role name, such as `authenticated` or a custom application role |
+| `actions` | `string \| string[]` | Single action or array: `create`, `read`, `update`, `delete`, or `*` for all |
 | `options` | `object` | Optional object with `check`, `include`, and `exclude` properties |
 
 The following example allows unauthenticated users to read public announcements:
