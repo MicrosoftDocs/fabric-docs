@@ -38,6 +38,7 @@ You can use workspace-level private links to connect to the following item types
 * Mirrored database
 * Eventstream
 * Eventhouse
+* Data Agent
 
 ### Notes about unsupported item types
 

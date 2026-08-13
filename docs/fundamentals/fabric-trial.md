@@ -3,11 +3,11 @@ title: Fabric trial capacity
 description: Understand how the Fabric trial capacity works. This includes starting a trial, ending a trial, and sharing a trial.
 author: SnehaGunda
 ms.author: sngun
-ms.reviewer: alpowers, mibruhje
+ms.reviewer: alpowers, mibruhje, oaladekomo
 ms.topic: concept-article
 ms.custom: fabric-cat
 ms.collection: ce-skilling-ai-copilot
-ms.date: 01/30/2026
+ms.date: 08/12/2026
 ms.update-cycle: 180-days
 ai-usage: ai-assisted
 ---
@@ -16,7 +16,10 @@ ai-usage: ai-assisted
 
 The Microsoft Fabric trial capacity gives you **free access for 60 days** to explore almost everything Fabric has to offer—across data engineering, data science, real-time analytics, business intelligence, and more. Whether you're new to Fabric or coming from the product to learn more, this trial is your gateway to understanding how Fabric brings all your data and analytics tools together in one place.
 
-> **Quick start**: [Set up your Fabric trial capacity](#start-the-fabric-capacity-trial) | [Start using your Fabric trial capacity](#start-using-your-trial)
+> [!div class="nextstepaction"]
+> [Start a Fabric trial for free](https://app.fabric.microsoft.com/?pbi_source=learn-get-started-fabric-trial)
+
+> **Quick start**: [Learn how to set up your Fabric trial capacity](#start-the-fabric-capacity-trial) | [Learn how to start using your Fabric trial capacity](#start-using-your-trial)
 
 > [!NOTE]
 > **Share your feedback as a new Fabric user**
@@ -85,7 +88,12 @@ You can start a trial capacity several different ways. The first two methods mak
 
 ### Method 1: Start a new trial capacity from the Account manager
 
-You can sign up for a trial capacity. You manage who else can use your trial by giving coworkers permission to create workspaces in your trial capacity. Every user in the tenant has contributor permissions by default unless you explicitly manage who has access. Assigning workspaces to the trial capacity automatically adds coworkers (with roles in those workspaces) to the trial capacity. To start your Fabric trial capacity and become the Capacity administrator of that trial, follow these steps:
+You can sign up for a trial capacity. You manage who else can use your trial by giving coworkers permission to create workspaces in your trial capacity. Every user in the tenant has contributor permissions by default unless you explicitly manage who has access. Assigning workspaces to the trial capacity automatically adds coworkers (with roles in those workspaces) to the trial capacity. To start your Fabric trial capacity, select this button:
+
+> [!div class="nextstepaction"]
+> [Start a Fabric trial for free](https://app.fabric.microsoft.com/?pbi_source=learn-get-started-fabric-trial)
+
+To become the Capacity administrator of that trial, follow these steps:
 
 1. To open your Account manager, select the tiny photo from the upper-right corner of the [Fabric homepage](https://app.fabric.microsoft.com/home?pbi_source=learn-get-started-fabric-trial).
 
@@ -134,8 +142,11 @@ For more information, see [Sharing trial capacities](#share-trial-capacities).
 To start using your Fabric capacity trial, create a new workspace. Assign that workspace to your trial capacity [using the *Trial* workspace type](workspaces.md#workspace-type), and then all the items in that workspace are saved and executed in that trial capacity. Invite colleagues to those workspaces so they can share the trial experience with you. If you, as the Capacity administrator, enable **Contributor permissions**, then others can also assign their workspaces to your trial capacity. For more information about sharing, see [Share trial capacities](#share-trial-capacities).
 
 - **Existing Power BI users**: If you're an existing Power BI user, jump to [Start the Fabric trial](#start-the-fabric-capacity-trial). 
-- **New Power BI users**: The Fabric trial requires a per-user license. Navigate to [https://app.fabric.microsoft.com](https://app.fabric.microsoft.com/?pbi_source=learn-get-started-fabric-trial) to sign up for a Fabric (Free) license. Once you have the free license, you can [begin participating in the Fabric capacity trial](#start-the-fabric-capacity-trial).  
-  - You might already have a license and not realize it. For example, some versions of Microsoft 365 include a Power BI Pro license. Open Fabric [https://app.fabric.microsoft.com](https://app.fabric.microsoft.com) and select your Account manager to see if you already have a license, and which license it is. Read on to see how to open your Account manager.
+- **New Power BI users**: The Fabric trial requires a per-user license. Open [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-get-started-fabric-trial) to sign up for a Fabric (Free) license. Once you have the free license, you can [begin participating in the Fabric capacity trial](#start-the-fabric-capacity-trial).  
+  - You might already have a license and not realize it. For example, some versions of Microsoft 365 include a Power BI Pro license. Open [Fabric](https://app.fabric.microsoft.com?pbi_source=learn-get-started-fabric-trial) and select your Account manager to see if you already have a license, and which license it is. Read on to see how to open your Account manager.
+
+> [!div class="nextstepaction"]
+> [Start a Fabric trial for free](https://app.fabric.microsoft.com/?pbi_source=learn-get-started-fabric-trial)
 
 ## Get the status of your trial
 
@@ -236,6 +247,18 @@ If you want to retain your data and continue to use Microsoft Fabric, [purchase 
 
 Here are some things to consider and answers to frequently asked questions about the Fabric trial.
 
+#### Can I use a Fabric trial capacity for production workloads?
+
+A Fabric trial capacity is intended for evaluation and testing only. Because trial capacities are time-bound, don't rely on them for ongoing production use, business-critical workloads, or long-term operational processes. For ongoing reliability and support for production scenarios, use a paid Fabric capacity. For more information, see [Purchase the full Fabric experience](#purchase-the-full-fabric-experience).
+
+#### Is every user eligible to start a Fabric trial?
+
+Trial eligibility depends on factors such as your tenant settings, license state, and the number of trial capacities available in your tenant. Microsoft determines trial availability by region and tenant, and availability can change over time. For troubleshooting guidance, see [Why can't I start a trial](#why-cant-i-start-a-trial)? If you’re still unable to start a trial, you may [contact Microsoft Support](/training/support/).
+
+#### Can I start another Fabric trial after my current trial ends?
+
+Eligibility for another trial isn't guaranteed, and Microsoft might restrict repeated or successive trial usage. To continue using Fabric after your trial ends, you can [purchase a paid Fabric capacity](#purchase-the-full-fabric-experience) or ask your Fabric administrator whether an existing capacity is available for your workspace.
+
 #### What if I don't already have an assigned Power BI PPU?
 
 If you don't already have an assigned Power BI [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq) license, you receive a Power BI [Individual Trial](/power-bi/fundamentals/service-self-service-signup-purchase-for-power-bi?tabs=trial#start-a-trial) when initiating a Fabric trial capacity. This individual trial enables you to perform the actions and use the features that a PPU license enables. Your Account manager still displays the nontrial licenses assigned to you. But in order to make full use of Fabric, your Fabric trial capacity comes with a complementary Power BI Individual trial.
@@ -326,6 +349,11 @@ Trial Capacity administrators can migrate existing workspaces into a trial capac
 #### How many SQL databases can I create in a Fabric trial capacity?
 
 Currently, you can create up to three SQL databases in a Fabric trial capacity.
+
+## Next steps
+
+> [!div class="nextstepaction"]
+> [Start a Fabric trial for free](https://app.fabric.microsoft.com/?pbi_source=learn-get-started-fabric-trial)
 
 ## Related content
 
