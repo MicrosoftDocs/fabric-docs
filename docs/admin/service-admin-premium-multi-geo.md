@@ -4,7 +4,8 @@ description: Learn how you can deploy content to data centers in regions other t
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.date: 01/29/2026
+ms.date: 08/13/2026
+ai-usage: ai-assisted
 LocalizationGroup: Premium
 ---
 
@@ -68,7 +69,8 @@ For information about selecting a region for your trial capacity, refer to step 
 
 Follow the steps below to move workspaces from one capacity to another in the same region. During migration, certain operations might fail, such as publishing new semantic models or scheduled data refresh.
 
-When you're performing a migration, don't delete or pause either the source or destination workspace capacities. Deleting or pausing a capacity during migration, can result in missing items. If you deleted or paused your capacity before the migration is finished and you have missing items in the migrated workspace, try migrating the workspace again.
+> [!IMPORTANT]
+> Before you start a migration, both the source and destination capacities must be active. Migration isn't supported if either capacity is paused or deleted when the migration starts. Don't pause or delete either capacity before or during a migration. If a capacity is paused or deleted at any point before the migration finishes, the migrated workspace can have missing items or fail to migrate completely. If this happens, resume the capacities as needed and run the migration again.
 
 1. Open the [workspace settings](../fundamentals/workspaces.md#workspace-settings).
 
