@@ -4,7 +4,7 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: msmimart
 ms.author: mimart
 ms.topic: overview
-ms.date: 05/11/2025
+ms.date: 08/13/2026
 ---
 
 # Security in Microsoft Fabric
@@ -68,7 +68,7 @@ Fabric has a set of tools that allow you to connect to external data sources and
 With Fabric you can access firewall enabled Azure Data Lake Gen 2 accounts securely. Fabric workspaces that have a workspace identity can securely access Azure Data Lake Gen 2 accounts with public network access enabled, from selected virtual networks and IP addresses. You can limit Azure Data Lake Storage Gen2 access to specific Fabric workspaces. For more information, see [Trusted workspace access](../security/security-trusted-workspace-access.md).
 
 > [!NOTE]
-> You can create workspace identity in any capacity (except for My workspaces), but trusted workspace access requires an F capacity. For information about buying Fabric capacity, see [Buy Fabric capacity in Azure](../enterprise/buy-capacity.md). 
+> You can create a workspace identity in any workspace except **My workspace**, regardless of capacity SKU. Trusted workspace access requires a paid Fabric F SKU capacity. For information about buying Fabric capacity, see [Buy Fabric capacity in Azure](../enterprise/buy-capacity.md).
 
 #### Managed Private Endpoints
 
