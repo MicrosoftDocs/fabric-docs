@@ -54,6 +54,14 @@ Changes might take a few minutes to take effect. When you limit the setting to s
 
 Use the `@role` decorator on an entity and specify `anonymous` as the role name. The second argument defines the allowed data operations: `create`, `read`, `update`, or `delete`.
 
+### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `roleName` | `string` | The role name, such as `authenticated` or a custom application role |
+| `actions` | `string \| string[]` | Single action or array: `create`, `read`, `update`, `delete`, or `*` for all |
+| `options` | `object` | Optional object with `check`, `include`, and `exclude` properties |
+
 The following example allows unauthenticated users to read public announcements:
 
 ```typescript

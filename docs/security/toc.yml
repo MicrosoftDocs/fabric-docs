@@ -125,8 +125,6 @@ items:
                 items: 
                   - name: Models and Experiments
                     href: workspace-outbound-access-protection-data-science.md
-                  - name: Data Agent (preview)
-                    href: workspace-outbound-access-protection-data-agent.md
               - name: Data Warehouse
                 href: workspace-outbound-access-protection-data-warehouse.md
               - name: Fabric IQ
@@ -135,6 +133,8 @@ items:
                     href: workspace-outbound-access-protection-graph.md
                   - name: Operations agent
                     href: workspace-outbound-access-protection-operations-agent.md
+                  - name: Data Agent (preview)
+                    href: workspace-outbound-access-protection-data-agent.md
               - name: Mirrored databases
                 href: workspace-outbound-access-protection-mirrored-databases.md
               - name: OneLake (preview)
