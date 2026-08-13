@@ -137,7 +137,7 @@ items:
                 href: plan/planning-how-to-insert-columns/how-to-insert-formula-columns.md
               - name: Insert column - Simulation
                 href: plan/planning-how-to-use-simulation-measures.md
-              - name: Measure modeling using model builder
+              - name: Create a measure model
                 href: plan/planning-how-to-create-measure-model.md
               - name: Cube - Multidimensional allocation
                 href: plan/planning-cubes/how-to-create-cube.md
@@ -157,14 +157,12 @@ items:
                 href: plan/planning-how-to-insert-rows-blank.md
               - name: Insert rows - Manage inserted rows
                 href: plan/planning-how-to-manage-inserted-rows.md
-              - name: Row model - Create model using model builder
-                href: plan/planning-row-model/planning-how-to-create-model-using-model-builder.md
+              - name: Create a row model
+                href: plan/planning-row-model/how-to-create-row-model.md
               - name: Row model - Configure row properties
                 href: plan/planning-row-model/planning-how-to-configure-model-row-properties.md
               - name: Row model - Create templates
                 href: plan/planning-row-model/planning-how-to-create-templates.md
-              - name: Row model - Create driver model using model builder
-                href: plan/planning-row-model/planning-how-to-create-driver-model.md
         - name: Forecasting
           items: 
               - name: Create forecasts

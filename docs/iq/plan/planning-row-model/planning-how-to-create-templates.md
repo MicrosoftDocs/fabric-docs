@@ -116,4 +116,4 @@ Select the template that you want to modify from the list of available templates
 
 ## Related content
 
-[Create a model using model builder](planning-how-to-create-model-using-model-builder.md)
+[Create a row model](how-to-create-row-model.md)
