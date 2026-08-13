@@ -111,6 +111,8 @@ items:
           href: plan/planning-concept-cube.md
         - name: Forecasting - Statistical forecasting algorithms using Predict
           href: plan/planning-concept-predict.md
+        - name: Forecasting - Reforecasting
+          href: plan/planning-concept-reforecasting.md
         - name: General - Top-down planning
           href: plan/planning-concept-top-down-planning.md
         - name: General - Bottom-up planning
