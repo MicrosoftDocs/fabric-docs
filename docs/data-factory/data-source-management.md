@@ -222,7 +222,7 @@ After you add a cloud data source, you give users and security groups access to 
 > You need to add users to each data source separately - each one has its own access list.
 
 > [!NOTE]
-> A user will only see connections to which they have access in **Connections** tab of **Manage connections and gateways**. Connections that the user is not part of will not be listed in this page, even when the user is a Tenant Administrator and the **Tenant administration** toggle is enabled.
+> A user sees only connections they have access to in the **Connections** tab of **Manage connections and gateways**. Connections that the user isn't part of don't appear in this page, even when the user is a tenant administrator and the **Tenant administration** toggle is enabled.
 
 ## Remove users from a data source
 
