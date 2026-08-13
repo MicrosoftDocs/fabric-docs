@@ -66,12 +66,20 @@ The diagram depicts the following processes and features.
 
 It's not always desirable to have data representing the latest state of any Delta table when a transcoding operation takes place. Consider that framing can help you provide consistent query results in environments where data in Delta tables is transient. Data can be transient for several reasons, such as when long-running extract, transform, and load (ETL) processes occur.
 
-You can refresh a Direct Lake semantic model manually, automatically, or programmatically. For more information, see [Refresh Direct Lake semantic models](direct-lake-manage.md#refresh-direct-lake-semantic-models).
-
+You can refresh a Direct Lake semantic model manually, automatically, or programmatically.
 
 ## Automatic updates
 
-The semantic model includes a setting that automatically updates Direct Lake tables. It's enabled by default. This setting ensures that data changes in OneLake automatically appear in the Direct Lake semantic model. Disable automatic updates when you want to control data changes by framing, which the previous section explains. For more information, see [Manage Direct Lake semantic models](direct-lake-manage.md#automatic-updates).
+Direct Lake semantic models have a model-level setting named **Keep your Direct Lake data up to date** that performs automatic updates of Direct Lake tables. It's enabled by default. It ensures that data changes in OneLake are automatically reflected in the Direct Lake semantic model. You can find the setting in the Fabric portal, in the **Refresh** section of the semantic model settings.
+
+When the setting is enabled, the semantic model performs a [framing](#framing) operation whenever data modifications in the underlying Delta tables are detected. The framing operation is scoped to only the tables where data modifications are detected.
+
+We recommend that you leave the setting on, especially when you have a small or medium-sized semantic model. It's especially useful when you have low-latency reporting requirements and Delta tables are modified regularly.
+
+In some situations, you might want to disable automatic updates. For example, you might need to allow completion of data preparation jobs or an extract, transform, and load (ETL) process before exposing any new data to consumers of the semantic model. When disabled, you can trigger a refresh manually in the Fabric portal, on a [refresh schedule](/power-bi/connect-data/refresh-data#configure-scheduled-refresh), or programmatically by using the [Power BI REST API](/power-bi/connect-data/asynchronous-refresh) or the [Tabular Object Model (TOM)](/analysis-services/tom/tom-pbi-datasets#refreshing-models-with-tom).
+
+> [!IMPORTANT]
+> Power BI suspends automatic updates when a *non-recoverable error* is encountered during a refresh. A non-recoverable error can occur, for example, when a refresh fails after several attempts. If your automatic updates stop, verify that the semantic model can be refreshed successfully. Power BI automatically resumes automatic updates after a subsequent on-demand refresh completes without errors.
 
 > [!TIP]
 > You can set up [automatic page refresh](/power-bi/create-reports/desktop-automatic-page-refresh) in your Power BI reports. This feature automatically refreshes a specific report page, provided that the report connects to a Direct Lake semantic model (or other types of semantic model).
