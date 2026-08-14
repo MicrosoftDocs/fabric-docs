@@ -75,7 +75,7 @@ After you publish, the pool is active and Fabric begins hydrating clusters ahead
 
 ### Understand the schedule window
 
-The schedule defines the window when Fabric keeps clusters hydrated and can rehydrate clusters that were deactivated. It doesn't keep the live pool warm outside the configured window.
+The schedule defines the window when Fabric keeps clusters hydrated and can rehydrate clusters that it deactivated. It doesn't keep the live pool warm outside the configured window.
 
 For example, consider a recurring schedule that runs every day from 8:00 AM through 5:00 PM:
 
