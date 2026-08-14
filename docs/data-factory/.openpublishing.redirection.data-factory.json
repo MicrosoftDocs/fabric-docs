@@ -1,5 +1,10 @@
 {
     "redirections": [
+      {
+        "source_path_from_root": "/docs/data-factory/decision-guide-data-transformation.md",
+        "redirect_url": "/fabric/data-factory/dataflow-gen2-cost-performance-benchmarks",
+        "redirect_document_id": true
+      },
       { "source_path_from_root": "/docs/data-factory/providing-user-documentation.md",
         "redirect_url": "https://aka.ms/DataFactoryConnectorCertification",
         "redirect_document_id": false

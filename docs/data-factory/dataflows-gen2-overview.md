@@ -2,7 +2,7 @@
 title: Differences between Dataflow Gen1 and Dataflow Gen2
 description: Compare differences between Dataflow Gen1 and Gen2 in Data Factory for Microsoft Fabric.
 ms.topic: overview
-ms.date: 11/19/2025
+ms.date: 8/13/2026
 ms.reviewer: jeluitwi
 ms.search.form: DataflowGen2 Overview
 ms.custom: dataflows
@@ -157,3 +157,4 @@ Ready to learn more? Check out these helpful resources:
 - [Monitor your dataflows](dataflows-gen2-monitor.md) - Track refresh history and performance
 - [Save drafts as you work](dataflows-gen2-save-draft.md) - Learn about the autosave feature
 - [Migrate from Gen1 to Gen2](move-dataflow-gen1-to-dataflow-gen2.md) - Step-by-step migration guide
+- [Dataflow Gen2 cost and performance benchmarks](dataflow-gen2-cost-performance-benchmarks.md) - Compare CU cost and execution time across capabilities.
