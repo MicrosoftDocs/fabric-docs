@@ -152,7 +152,7 @@ When a workspace gets renamed, the workspace identity is also renamed to match t
 
 * Using workspace identity as a credential in cloud connections is supported in any capacity.
 
-* Trusted workspace access to firewall-enabled Storage accounts requires the workspace to be assigned to a paid Fabric F SKU capacity.
+* Trusted workspace access to firewall-enabled Storage accounts requires the workspace to be assigned to a purchased Microsoft Fabric capacity (F SKU).
 
 * If you migrate a workspace with a workspace identity to a non-Fabric capacity, to a non-F SKU Fabric capacity, or to a trial capacity, the identity isn't disabled or deleted, but Fabric items that rely on trusted workspace access stop working.
 
