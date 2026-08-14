@@ -70,7 +70,7 @@ For information about selecting a region for your trial capacity, refer to step 
 Follow the steps below to move workspaces from one capacity to another in the same region. During migration, certain operations might fail, such as publishing new semantic models or scheduled data refresh.
 
 > [!IMPORTANT]
-> Before you start a migration, both the source and destination capacities must be active. Migration isn't supported if either capacity is paused or deleted when the migration starts. Don't pause or delete either capacity before or during a migration. If a capacity is paused or deleted at any point before the migration finishes, the migrated workspace can have missing items or fail to migrate completely. If this happens, resume the capacities as needed and run the migration again.
+> Before you start a migration, both the source and destination capacities must be active. Migration isn't supported if either capacity is paused or deleted when the migration starts. Don't pause or delete either capacity before or during a migration. If a capacity is paused or deleted at any point before the migration finishes, the migrated workspace can have missing items or fail to migrate completely. If this condition occurs, resume the capacities as needed and run the migration again.
 
 1. Open the [workspace settings](../fundamentals/workspaces.md#workspace-settings).
 
