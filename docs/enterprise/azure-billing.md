@@ -11,10 +11,6 @@ ai-usage: ai-assisted
 
 # Understand your Azure bill for a Fabric capacity
 
-> [!IMPORTANT]
-> Some Fabric capacity meters are currently in preview.
-> See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
-
 A Microsoft Fabric capacity is an Azure resource, so your Azure bill in the Microsoft Cost Management experience in the Azure portal shows its usage charges. Your bill splits these charges across many separate meters, which makes it hard to tell how each meter maps to the Fabric usage in your organization.
 
 This article explains the meters that make up your Fabric capacity charges and shows how to reconcile your Azure bill with the usage that the Microsoft Fabric Capacity Metrics app reports.
@@ -92,7 +88,7 @@ To identify a specific line on your bill, find its meter group in the following 
 | `user data functions` | Developer and API | User data functions execution. |
 | `VNet Data Gateway` | Data Factory | Connections through the virtual network data gateway. |
 
-The total usage from all consumption meters adds up to the cost of the provisioned Fabric capacity. Your bill might also show meters with temporary names such as `Fabric Meter 24`, which represent features that aren't yet publicly named. These temporary names change as features receive permanent names through their development lifecycle.
+The total usage from all consumption meters adds up to the cost of the provisioned Fabric capacity.
 
 ### Get the current list of meters
 
