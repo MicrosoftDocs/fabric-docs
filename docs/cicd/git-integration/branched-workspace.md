@@ -3,7 +3,7 @@ title: Development process using Branch-Out experience
 description: Learn how to developer can leverage Fabric branch-out experience into their development process
 ms.reviewer: PrigalYaron
 ms.topic: concept-article
-ms.date: 03/21/2026
+ms.date: 08/14/2026
 ---
 
 # Development process using branched workspace
@@ -72,6 +72,12 @@ As a Fabric developer, the branch-out flow would be as follows:
 Once the review and merge are complete, a new commit is created to the *main* branch. This commit prompts the user to update the content in the Dev team's workspace with the merged changes.
 
 For more information, see [branching out limitations](#branching-out-limitations).
+
+> [!NOTE]
+> If you've set up an automation flow that performs the same actions as branch-out, use the
+> preview [Create Workspace Relation API](/rest/api/fabric/core/git/create-workspace-relation)
+> to create the branched workspace relationship. Call this API after the flow prepares the
+> branch workspace, creates the Git branch, and configures the workspace's Git connection.
 
 ### How to add additional items to a workspace with selective branching
 When a Fabric developer needs to add items that were not selected during the branch‑out operation, the steps below describe how to add additional items to the workspace:

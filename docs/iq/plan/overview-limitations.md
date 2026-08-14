@@ -2,7 +2,7 @@
 title: Known Limitations in Plan
 description: This article lists known issues and limitations present in plan.
 ms.topic: concept-article
-ms.date: 07/23/2026
+ms.date: 08/14/2026
 #customer intent: As a user, I want to know the limitations present in plan.
 ---
 
@@ -26,6 +26,7 @@ Workspaces or tenants that use [private links](../../security/security-private-l
 * Semantic models in Direct Lake mode require [additional configuration](planning-how-to-create-semantic-model-connection.md#connect-to-a-direct-lake-semantic-model).
 * Semantic model connections only support OAuth-based and service principal-based authentication.
 * Semantic models published in *My workspace* aren't supported.
+* If the semantic model contains unsupported Unicode characters, inserting a Data input column in a planning sheet might fail.
 
 ## Semantic model renaming
 
@@ -38,6 +39,8 @@ Power BI Pro and Power BI Premium Per User (PPU) aren't supported for plan scena
 ## Database-level row-level security (RLS) support
 
 PowerTable doesn't support user-specific database-level row-level security (RLS) when connecting to Fabric SQL tables through a database connection. As a result, users might see rows that differ from the expected RLS-filtered results. This limitation exists because PowerTable executes all database queries by using the identity associated with the database connection that the user configures during sheet creation, rather than the identity of the signed-in PowerTable user.
+
+Blend (From Sheets) doesn't support RLS. All data available in the source sheet is visible regardless of the viewer's RLS permissions.
 
 ## PowerTable DMTS connection recovery
 
