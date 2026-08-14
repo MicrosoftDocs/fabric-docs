@@ -111,7 +111,7 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 * Using workspace identity as a credential in cloud connections is supported in any capacity.
 
-* Trusted workspace access to firewall-enabled Storage accounts requires the workspace to be assigned to a paid Fabric F SKU capacity.
+* Trusted workspace access to firewall-enabled Storage accounts requires the workspace to be assigned to a purchased Microsoft Fabric capacity (F SKU).
 
 * You can create connections with workspace-identity-based authentication in the *Manage Gateways and Connections* experience for a cloud connection.
 
