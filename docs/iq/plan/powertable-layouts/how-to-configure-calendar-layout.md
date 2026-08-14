@@ -56,8 +56,9 @@ Use the **Month** drop-down list to switch between the **Month**, **Week**, and 
 
 :::image type="content" source="../media/powertable-layouts/how-to-configure-calendar-layout/switch-views.png" alt-text="Screenshot of PowerTable calendar week view with the view drop-down list open showing Month, Week, and Day options." lightbox="../media/powertable-layouts/how-to-configure-calendar-layout/switch-views.png":::
 
-> [!TIP]
-> You can instantly access the **Day** view by selecting the date on the **Month** or the **Week** views.
+> [!NOTE]
+> * Only with the **DateTime** datatype in **Start/End Date** columns are the **Week** and **Day** views accessible.
+> * You can instantly access the **Day** view by selecting the date on the **Month** or the **Week** views.
 
 ## Customize the view
 
@@ -90,7 +91,7 @@ The calendar layout provides options to customize the display for each calendar 
 >
 > * You can select and drag one or more dates to create task start and end dates.
 > * You can import records in bulk by using the [**Import**](../powertable-how-to-insert-rows-import-data.md#import-bulk-data) option under the **PowerTable** tab.
-> * Select **Backlog Task** to view pending tasks that aren't fully configured and have incomplete details.
+> * Use **Backlog Task** to create tasks without specifying the start and end dates. You can view them later under **Backlog Task** and configure them.
 
 ## Edit a task
 
@@ -105,7 +106,7 @@ Alternatively, right-click on the task and select **Manage Record** to open the 
 
 ## Duplicate or delete a task
 
-Select the task, and then select the **Expand** arrow. In the three-dot menu, select **Duplicate** or **Delete** to duplicate or delete the selected task.
+Select the task, and then select the **Expand** arrow. Select the ellipsis icon to open the menu, and then select **Duplicate** or **Delete** to duplicate or delete the selected task.
 
 The setting in the [**Manage Access**](../powertable-how-to-set-up-access-control.md#delete) menu controls the user's delete access.
 
