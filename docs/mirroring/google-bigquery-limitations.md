@@ -2,7 +2,7 @@
 title: "Limitations in Microsoft Fabric mirrored databases from Google BigQuery"
 description: Learn about the limitations in mirrored databases from Google BigQuery in Microsoft Fabric.
 ms.reviewer: misaacs
-ms.date: 09/09/2025
+ms.date: 08/14/2026
 ms.topic: concept-article
 ---
 

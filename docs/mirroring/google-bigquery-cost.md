@@ -2,7 +2,7 @@
 title: "The Cost of Mirroring for Google BigQuery"
 description: Learn more about how the cost of Mirroring for Google BigQuery works. 
 ms.reviewer: misaacs
-ms.date: 09/09/2025
+ms.date: 08/14/2026
 ms.topic: how-to
 ---
 
