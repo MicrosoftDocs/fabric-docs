@@ -9,6 +9,8 @@ ai-usage: ai-assisted
 
 # What are intelligence sheets in plan?
 
+> [!VIDEO 630cd6a8-719e-4109-9e10-bd03dde753f3]
+
 The *intelligence sheets* component of plan provides a powerful no-code reporting experience that enables teams to collaboratively build reports, generate fully formatted exports, visualize data, and manage project plans from a single platform in Microsoft Fabric. It couples seamlessly with the planning sheet to provide real-time insights across your plans, budgets, and what-if scenarios.
 
 Intelligence sheets bring single-click, flexible International Business Communication Standards (IBCS) formatting for charts, cards, and tabular reports, with pixel-perfect exports.
