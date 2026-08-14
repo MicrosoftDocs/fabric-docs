@@ -10,6 +10,9 @@ no-loc: [Copilot]
 
 # Mirroring Google BigQuery in Microsoft Fabric
 
+> [!IMPORTANT]
+> Mirroring for Google BigQuery is now generally available. Production workloads are fully supported.
+
 [Mirroring in Fabric](overview.md) offers a simple way to avoid complex ETL (Extract, Transform, Load) processes and seamlessly integrate your existing Google BigQuery warehouse data with the rest of your data in Fabric. You can continuously replicate your Google BigQuery data directly into Fabric's OneLake. Once in Fabric, you can take advantage of powerful capabilities for business intelligence, AI, data engineering, data science, and data sharing.
 
 For a tutorial on configuring your Google BigQuery database for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Google BigQuery](google-bigquery-tutorial.md).
