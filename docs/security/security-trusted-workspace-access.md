@@ -17,7 +17,7 @@ Fabric workspaces that access a storage account with trusted workspace access ne
 To limit and protect access to firewall-enabled storage accounts from certain Fabric workspaces, you can set up resource instance rules to allow access from specific Fabric workspaces.
 
 > [!NOTE]
-> Trusted workspace access is **generally available**, but you can only use it in paid Fabric F SKU capacities. For information about buying Fabric capacity, see [Buy Fabric capacity in Azure](../enterprise/buy-capacity.md). Trusted workspace access isn't supported in Trial capacities.
+> Trusted workspace access is **generally available**, but you can only use it in purchased Microsoft Fabric capacities (F SKUs). For information about buying Fabric capacity, see [Buy Fabric capacity in Azure](../enterprise/buy-capacity.md). Trusted workspace access isn't supported in Trial capacities.
 
 This article shows you how to:
 
@@ -37,7 +37,7 @@ This article shows you how to:
 
 ### Prerequisites
 
-* A Fabric workspace associated with a paid Fabric F SKU capacity.
+* A Fabric workspace associated with a purchased Microsoft Fabric capacity (F SKU).
 * Create a workspace identity associated with the Fabric workspace. See [Workspace identity](./workspace-identity.md). Ensure that the workspace identity has Contributor access to the workspace by going to **Manage Access** (next to **Workspace settings**) and adding the workspace identity to the list as contributor.
 * The principal used for authentication in the shortcut should have Azure RBAC roles on the storage account. The principal must have a Storage Blob Data Contributor, Storage Blob Data owner, or Storage Blob Data Reader role at the storage account scope, or a Storage Blob Delegator role at the storage account scope together with access at the folder level within the container. Access at the folder level can be provided through an RBAC role at the container level or through specific folder-level access.
 * Configure a [resource instance rule](#configure-trusted-workspace-access-in-adls-gen2) for the storage account.
@@ -178,7 +178,7 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 
 #### Prerequisites
 
- * A Fabric workspace associated with a paid Fabric F SKU capacity. See [Workspace identity](./workspace-identity.md).
+ * A Fabric workspace associated with a purchased Microsoft Fabric capacity (F SKU). See [Workspace identity](./workspace-identity.md).
 * Create a workspace identity associated with the Fabric workspace.
 * The principal used for authentication in the pipeline should have Azure RBAC roles on the storage account. The principal must have a Storage Blob Data Contributor, Storage Blob Data owner, or Storage Blob Data Reader role at the storage account scope.
 * Configure a [resource instance rule](#configure-trusted-workspace-access-in-adls-gen2) for the storage account.
@@ -223,7 +223,7 @@ Semantic models in import mode support trusted workspace access to storage accou
 
 #### Prerequisites
 
-* A Fabric workspace associated with a paid Fabric F SKU capacity. See [Workspace identity](./workspace-identity.md).
+* A Fabric workspace associated with a purchased Microsoft Fabric capacity (F SKU). See [Workspace identity](./workspace-identity.md).
 * Create a workspace identity associated with the Fabric workspace.
 * A connection to the ADLS Gen2 storage account. The principal used for authentication in the connection bound to the semantic model should have Azure RBAC roles on the storage account. The principal must have a Storage Blob Data Contributor, Storage Blob Data owner, or Storage Blob Data Reader role at the storage account scope.
 * Configure a [resource instance rule](#configure-trusted-workspace-access-in-adls-gen2) for the storage account.
@@ -241,7 +241,7 @@ With trusted workspace access configured, AzCopy copy jobs can access data store
 
 #### Prerequisites
 
-* A Fabric workspace associated with a paid Fabric F SKU capacity. See [Workspace identity](./workspace-identity.md).
+* A Fabric workspace associated with a purchased Microsoft Fabric capacity (F SKU). See [Workspace identity](./workspace-identity.md).
 * Install AzCopy and sign in with the principal used for authentication. See [Get started with AzCopy](/azure/storage/common/storage-use-azcopy-v10).
 * Create a workspace identity associated with the Fabric workspace.
 * The principal used for authentication in the shortcut should have Azure RBAC roles on the storage account. The principal must have a Storage Blob Data Contributor, Storage Blob Data owner, or Storage Blob Data Reader role at the storage account scope, or a Storage Blob Delegator role at the storage account scope together with access at the folder level within the container. Access at the folder level can be provided through an RBAC role at the container level or through specific folder-level access.
@@ -267,7 +267,7 @@ azcopy copy "https://<source-account-name>.blob.core.windows.net/<source-contain
 ## Restrictions and Considerations
 
 #### Supported Scenarios and Limitations
-- Trusted workspace access supports workspaces in paid Fabric F SKU capacities.
+- Trusted workspace access supports workspaces in purchased Microsoft Fabric capacities (F SKUs).
 - You can only use trusted workspace access in OneLake shortcuts, pipelines, semantic models, the T-SQL COPY statement, and AzCopy. To securely access storage accounts from Fabric Spark, see [Managed private endpoints for Fabric](./security-managed-private-endpoints-overview.md).
 - Pipelines can't write to OneLake table shortcuts on storage accounts with trusted workspace access. This is a temporary limitation.
 - If you reuse connections that support trusted workspace access in Fabric items other than shortcuts, pipelines, and semantic models, or in other workspaces, they might not work.
