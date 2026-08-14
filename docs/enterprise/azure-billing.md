@@ -11,6 +11,10 @@ ai-usage: ai-assisted
 
 # Understand your Azure bill for a Fabric capacity
 
+> [!IMPORTANT]
+> Some Fabric capacity meters are currently in preview.
+> See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+
 A Microsoft Fabric capacity is an Azure resource, so your Azure bill in the Microsoft Cost Management experience in the Azure portal shows its usage charges. Your bill splits these charges across many separate meters, which makes it hard to tell how each meter maps to the Fabric usage in your organization.
 
 This article explains the meters that make up your Fabric capacity charges and shows how to reconcile your Azure bill with the usage that the Microsoft Fabric Capacity Metrics app reports.
@@ -19,11 +23,11 @@ This article explains the meters that make up your Fabric capacity charges and s
 
 In [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview), your cost analysis and invoice show multiple meters related to your Fabric capacity resource. Most consumption meters follow a common naming pattern: a workload or feature name followed by a usage suffix. Each meter represents the compute (CU) that a workload consumes.
 
-The exact set of meters changes as Fabric adds features, and some meters are in preview. The following list is representative; to retrieve the current, complete list, see [Get the current list of meters](#get-the-current-list-of-meters).
+The exact set of meters changes as Fabric adds features. Some meters represent features that are still in preview, and some meters have temporary names such as `Fabric Meter 24` and represent features that aren't yet publicly named. The following list is representative; to retrieve the current, complete list, see [Get the current list of meters](#get-the-current-list-of-meters).
 
 Most consumption meter names end with the suffix `Capacity Usage CU`, which indicates the compute charged against your provisioned Fabric capacity. The OneLake transaction meters add further suffixes for the storage tier (`Hot`, `Cool`, or `Cold`), the access path (`via API`), and business continuity and disaster recovery (`BCDR`).
 
-To identify a specific line on your bill, find its meter group in the following alphabetical list, then review the workload that generated it and what it covers. Meter groups are shown by their base name, without the `Capacity Usage CU` suffix or the OneLake tier and access-path variants. The list is representative of the meter groups available when this article was last updated. For the authoritative current list, see [Get the current list of meters](#get-the-current-list-of-meters).
+To identify a specific line on your bill, find its meter group in the following alphabetical list, then review the workload that generates it and what it covers. The list shows meter groups by their base name, without the `Capacity Usage CU` suffix or the OneLake tier and access-path variants. The list is representative of the meter groups available when this article was last updated. For the authoritative current list, see [Get the current list of meters](#get-the-current-list-of-meters).
 
 | Meter group | Workload | Description |
 | ----------- | -------- | ---------------------- |
@@ -88,7 +92,7 @@ To identify a specific line on your bill, find its meter group in the following 
 | `user data functions` | Developer and API | User data functions execution. |
 | `VNet Data Gateway` | Data Factory | Connections through the virtual network data gateway. |
 
-The total usage from all consumption meters adds up to the cost of the provisioned Fabric capacity. Your bill might also show meters with generic names such as `Fabric Meter 24`, which represent features that aren't yet publicly named.
+The total usage from all consumption meters adds up to the cost of the provisioned Fabric capacity. Your bill might also show meters with temporary names such as `Fabric Meter 24`, which represent features that aren't yet publicly named. These temporary names change as features receive permanent names through their development lifecycle.
 
 ### Get the current list of meters
 
@@ -96,7 +100,7 @@ The [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/micro
 
 ### Storage meters
 
-Fabric also charges for data stored in OneLake and in the databases hosted on your capacity. These meters are measured in GB per month rather than in capacity units, so they appear separately from the consumption meters.
+Fabric also charges for data stored in OneLake and in the databases hosted on your capacity. Fabric measures these meters in GB per month rather than in capacity units, so they appear separately from the consumption meters.
 
 | Meter name | Description |
 | ---------- | ----------- |
