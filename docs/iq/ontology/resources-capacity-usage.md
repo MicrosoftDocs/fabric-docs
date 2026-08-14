@@ -50,7 +50,7 @@ For example, say you run ontology exploration and workload queries continuously 
 
 Ontology AI Operations are classified as **background jobs** to handle a higher volume of requests during peak hours. 
 
-Fabric optimizes performance by allowing operations to access more CU (Capacity Unit) resources than are allocated to their capacity. Fabric [smooths](../../enterprise/throttling.md#smoothing), or averages, the CU usage of a *background job* over a 24-hour period. Then, per the Fabric throttling policy, the first phase of throttling begins when a capacity has consumed all its CU resources that are allocated for the next 10 minutes.
+Fabric optimizes performance by allowing operations to access more CU (Capacity Unit) resources than are allocated to their capacity. Fabric [smooths](../../enterprise/throttling.md#smoothing-spread-cu-usage-across-future-timepoints), or averages, the CU usage of a *background job* over a 24-hour period. Then, per the Fabric throttling policy, the first phase of throttling begins when a capacity has consumed all its CU resources that are allocated for the next 10 minutes.
 
 For example, assume each ontology request has 2,000 input tokens and 500 output tokens. The price for one ontology request is calculated as follows: [[2,000 (number of input tokens) × 400 (Fabric consumption rate of inputs for this operation)] + [500 (number of output tokens) × 1600 (Fabric consumption rate of outputs for this operation)]] / 1,000 (unit of measurement for this operation) = 1,600.00 CU seconds, or 26.67 CU minutes.
 
@@ -78,7 +78,7 @@ Consider the following factors that could potentially affect cost:
 * **Ontology logic and operations:** Charges for running queries and associated compute. Operations like indexing, refresh rates, and idle time can affect CU usage.
 * **AI reasoning and query:** Charges for advanced reasoning and natural language queries powered by AI, based on the number of tokens used.
 * **Associated Fabric items:** Charges from associated Fabric items that are being used through ontology, like [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) and [Fabric Activator](../../real-time-intelligence/data-activator/activator-capacity-usage.md).
-* **Graph refresh:** The [Graph in Microsoft Fabric](../../graph/overview.md) child item of your ontology (preview) item can be set to refresh automatically on a set schedule, and these refreshes contributes to capacity usage. If capacity usage is too high, you can edit or disable the Graph item schedule in your workspace. For more information, see [Refresh the graph model](how-to-view-entity-type-details.md#refresh-the-graph-model). 
+* **Graph refresh:** The [Graph in Microsoft Fabric](../../graph/overview.md) child item of your ontology (preview) item can be set to refresh automatically on a set schedule, and these refreshes contribute to capacity usage. If capacity usage is too high, you can edit or disable the Graph item schedule in your workspace. For more information, see [Refresh the graph model](how-to-view-entity-type-details.md#refresh-the-graph-model). 
 
 ### Subject to changes in Microsoft Fabric workload consumption rate
 
