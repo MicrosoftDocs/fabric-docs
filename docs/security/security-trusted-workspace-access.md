@@ -267,7 +267,7 @@ azcopy copy "https://<source-account-name>.blob.core.windows.net/<source-contain
 ## Restrictions and Considerations
 
 #### Supported Scenarios and Limitations
-- Trusted workspace access is supported for workspaces in paid Fabric F SKU capacities.
+- Trusted workspace access supports workspaces in paid Fabric F SKU capacities.
 - You can only use trusted workspace access in OneLake shortcuts, pipelines, semantic models, the T-SQL COPY statement, and AzCopy. To securely access storage accounts from Fabric Spark, see [Managed private endpoints for Fabric](./security-managed-private-endpoints-overview.md).
 - Pipelines can't write to OneLake table shortcuts on storage accounts with trusted workspace access. This is a temporary limitation.
 - If you reuse connections that support trusted workspace access in Fabric items other than shortcuts, pipelines, and semantic models, or in other workspaces, they might not work.
@@ -281,7 +281,7 @@ azcopy copy "https://<source-account-name>.blob.core.windows.net/<source-contain
 - Connections to firewall-enabled Storage accounts have the status *Offline* in Manage connections and gateways.
 
 #### Migration and Preexisting Shortcuts
-- If a workspace with a workspace identity is migrated to a non-Fabric capacity, to a non-F SKU Fabric capacity, or to a trial capacity, trusted workspace access will stop working after an hour.
+- If you migrate a workspace with a workspace identity to a non-Fabric capacity, to a non-F SKU Fabric capacity, or to a trial capacity, trusted workspace access stops working after an hour.
 - Preexisting shortcuts created before October 10, 2023 don't support trusted workspace access.
 - Preexisting shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
 
