@@ -59,7 +59,7 @@ The following table summarizes the benchmark results across all scenarios. Each 
 |----------|--------------|--------------------|---------------------|---------------------------|-------------|
 | [Scenario 1: Copy data](#scenario-1-copy-data) | Bulk-load five consolidated Parquet files from ADLS Gen2 into a lakehouse with no transformations. | Fast Copy | 00:09:08 | 11× faster | 14,593 |
 | [Scenario 2: Heavy data shaping](#scenario-2-heavy-data-shaping) | Apply non-foldable transformations (filters, derivations, cleansing) to a single large Parquet file loaded into a lakehouse. | Modern Evaluator | 00:46:49 | 1.6× faster | 10,392 |
-| [Scenario 3: Optimized copy to Lakehouse](#scenario-3-optimized-copy-to-lakehouse) | Transform a 113-million-row NYC taxi table from a Fabric lakehouse and write the result to a lakehouse table on an accelerated copy path. This benchmark uses Optimized copy to Lakehouse and V-Order. | Optimized copy to Lakehouse | 00:03:34 | ~9× faster | 2,391 |
+| [Scenario 3: Optimized copy to Lakehouse](#scenario-3-optimized-copy-to-lakehouse) | Transform a 113-million-row NYC taxi table from a Fabric lakehouse and write the result to a lakehouse table on an accelerated copy path. This benchmark uses Optimized copy to Lakehouse and V-Order. | Optimized copy to Lakehouse | 00:03:34 | 15× faster | 2,391 |
 | [Scenario 4: Combine files](#scenario-4-combine-files) | Combine and transform 56 partitioned Parquet files in parallel and load into a warehouse. | Partitioned Compute | 00:04:48 | 21× faster | Not measured |
 
 :::image type="content" source="media/decision-guide-data-transformation/scenario-comparison-chart.png" alt-text="Comparison chart showing the execution time and relative speedup for the four benchmark scenarios in the summary table." lightbox="media/decision-guide-data-transformation/scenario-comparison-chart.png":::
@@ -227,9 +227,9 @@ The benchmark dataflow uses a single query with **Enable staging** turned on and
 
 | Configuration | Execution time (hh:mm:ss) | Comparison against Gen1 |
 |---|---|---|
-| **Dataflow Gen1 baseline** | 00:31:20 | — |
-| **Dataflow Gen2 with staging + V-Order** (no Optimized copy to Lakehouse) | 00:14:45 | ~2× faster |
-| **Dataflow Gen2 with staging + Optimized copy to Lakehouse + V-Order** | 00:03:34 | ~9× faster |
+| **Dataflow Gen1 baseline** | 00:53:20 | — |
+| **Dataflow Gen2 with staging + V-Order** (no Optimized copy to Lakehouse) | 00:14:45 | 3.6× faster |
+| **Dataflow Gen2 with staging + Optimized copy to Lakehouse + V-Order** | 00:03:34 | 15× faster |
 
 When you enable staging, Optimized copy to Lakehouse, and V-Order - the most optimal Dataflow Gen2 configuration for this scenario - Scenario 3's refresh of the 113-million-row NYC taxi table into a lakehouse table completes in 00:03:34 and consumes 2,391 CU seconds. The following table breaks down that total by operation:
 
@@ -242,7 +242,7 @@ The work is billed entirely on Standard Compute (12 CU per second up to 10 minut
 
 ### Key takeaways
 
-- **Optimized copy to Lakehouse** accelerates writing the transformed result to the lakehouse destination, cutting the refresh from 00:14:45 (without it) to 00:03:34 - about 4× faster than the same dataflow without it, and roughly 9× faster than the Dataflow Gen1 baseline (00:31:20).
+- **Optimized copy to Lakehouse** accelerates writing the transformed result to the lakehouse destination, cutting the refresh from 00:14:45 (without it) to 00:03:34 - about 4× faster than the same dataflow without it, and roughly 15× faster than the Dataflow Gen1 baseline (00:53:20).
 - It requires **Enable staging** on the query and a lakehouse destination, and it doesn't change your transformation logic.
 - This scenario explicitly uses **V-Order** on the destination output.
 - Use Optimized copy to Lakehouse whenever you write staged data to a lakehouse destination and the write time dominates the refresh.
