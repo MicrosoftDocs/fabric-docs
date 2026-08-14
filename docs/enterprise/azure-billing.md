@@ -19,7 +19,7 @@ This article explains the meters that make up your Fabric capacity charges and s
 
 In [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview), your cost analysis and invoice show multiple meters related to your Fabric capacity resource. Most consumption meters follow a common naming pattern: a workload or feature name followed by a usage suffix. Each meter represents the compute (CU) that a workload consumes.
 
-The exact set of meters changes as Fabric adds features. Some meters represent features that are still in preview, and some meters have temporary names such as `Fabric Meter 24` and represent features that aren't yet publicly named. The following list is representative; to retrieve the current, complete list, see [Get the current list of meters](#get-the-current-list-of-meters).
+The exact set of meters changes as Fabric adds features. The following list is representative; to retrieve the current, complete list, see [Get the current list of meters](#get-the-current-list-of-meters).
 
 Most consumption meter names end with the suffix `Capacity Usage CU`, which indicates the compute charged against your provisioned Fabric capacity. The OneLake transaction meters add further suffixes for the storage tier (`Hot`, `Cool`, or `Cold`), the access path (`via API`), and business continuity and disaster recovery (`BCDR`).
 
