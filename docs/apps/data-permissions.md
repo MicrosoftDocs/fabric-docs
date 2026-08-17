@@ -19,11 +19,12 @@ Fabric Apps uses the `@role` decorator to attach authorization rules directly to
 
 ## Built-in roles
 
-Fabric Apps recognizes the built-in `authenticated` role. You can also define custom roles in your policies when needed.
+Fabric Apps recognizes the built-in `authenticated` and `anonymous` roles. You can also define custom roles in your policies when needed.
 
 | Role            | Description                  | Use case                           |
 |-----------------|------------------------------|-------------------------------------|
 | `authenticated` | Requires a valid user session with Fabric authentication | User-specific data, protected resources |
+| `anonymous` | Allows access without a valid user session. For more information, see [Anonymous data access in Fabric apps](anonymous-data-access.md). | Public data and unauthenticated experiences |
 
 ## The `@role` decorator
 

@@ -105,7 +105,7 @@ To manage rules:
 
 ## FAQ
 
-### When should I use Apply to Rows instead of formatting individual cells?
+### When should I use 'Apply to Rows' instead of formatting individual cells?
 
 Use **Apply to Rows** when you want to highlight an entire record rather than a single cell. When the specified condition is met, PowerTable applies the formatting to all cells in the row, making related data easier to identify and review.
 

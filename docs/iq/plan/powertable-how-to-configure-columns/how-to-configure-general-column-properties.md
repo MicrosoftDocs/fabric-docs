@@ -184,7 +184,7 @@ In this example, changing the product size calculates the default value and rese
 
 ## FAQ
 
-### What's the difference between Input Type and Data Type in the Edit Column dialog?
+### What's the difference between Input Type and Data Type in the **Edit Column** dialog?
 
 * **Data Type** is the underlying SQL data type for the column, such as **VARCHAR** for **Logo URL** or **INT** for **Product Key**. It appears greyed out in the **Edit Column** dialog and you can't modify it.
 

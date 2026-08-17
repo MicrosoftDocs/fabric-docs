@@ -44,8 +44,8 @@ Before using the Microsoft ADO.NET Driver for Fabric Data Engineering, ensure yo
 
 Microsoft ADO.NET Driver for Fabric Data Engineering version 1.0.0 is in public preview which you can download from these download center links.
 
-* [Download Microsoft ADO.NET Driver for Fabric Data Engineering (zip)](https://download.microsoft.com/download/22fad6c0-9764-458e-913d-678aa8e9b239/ms-sparksql-adonet-1.0.0.zip)
-* [Download Microsoft ADO.NET Driver for Fabric Data Engineering (tar)](https://download.microsoft.com/download/22fad6c0-9764-458e-913d-678aa8e9b239/ms-sparksql-adonet-1.0.0.tar)
+* [Download Microsoft ADO.NET Driver for Fabric Data Engineering (zip)](https://download.microsoft.com/download/c1c9c8d0-0cb4-46b4-8803-e780e4a6770f/ms-sparksql-adonet-1.0.0.zip)
+* [Download Microsoft ADO.NET Driver for Fabric Data Engineering (tar)](https://download.microsoft.com/download/c1c9c8d0-0cb4-46b4-8803-e780e4a6770f/ms-sparksql-adonet-1.0.0.tar)
 
 ### Reference NuGet package in your project
 

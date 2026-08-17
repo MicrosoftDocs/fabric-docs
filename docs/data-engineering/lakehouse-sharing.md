@@ -33,6 +33,7 @@ You can also grant additional permissions:
 | **Read all with SQL analytics endpoint** | Read data from the SQL analytics endpoint through T-SQL without SQL policy. |
 | **Read all with Apache Spark** | Read lakehouse data through Apache Spark and OneLake APIs. |
 | **SubscribeOneLakeEvents** | Subscribe to OneLake events generated for the lakehouse. |
+| **Execute Apache Spark** | Use Lakehouse Livy endpoint to execute Spark jobs. |
 
 > [!IMPORTANT]
 > **Read all with Apache Spark** is an additional permission and doesn't replace **Read**. When you share an item, **Read** is always included. For users who need Spark and OneLake API access, grant **Read all with Apache Spark** in addition to the base share access. For details, see [Share items in Fabric](../fundamentals/share-items.md#item-permission-model).

@@ -1107,10 +1107,12 @@
             items:
               - name: Understand detailed refresh logs
                 href: dataflow-gen2-detailed-refresh-logs.md
+              - name: Workspace monitoring
+                href: dataflow-gen2-workspace-monitoring.md
           - name: Performance and troubleshooting
             items:
-              - name: Decide - Dataflow strategy
-                href: decision-guide-data-transformation.md
+              - name: Dataflow Gen2 cost and performance benchmarks
+                href: dataflow-gen2-cost-performance-benchmarks.md
               - name: Dataflow Gen2 performance and scalability
                 href: dataflow-gen2-performance-best-practices.md  
               - name: Dataflows that use gateways

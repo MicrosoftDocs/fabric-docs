@@ -227,20 +227,20 @@ To delete rows:
 
 ## FAQ
 
-### What does Insert Using Form By Default change?
+### What does **Insert Using Form By Default** change?
 
 **Insert Using Form By Default** changes the default behavior of the **Insert Row** button.
 
 * When you turn the option **off**, **Insert Row** adds a blank row directly to the grid.
 * When you turn the option **on**, **Insert Row** opens the **Record Details** form instead.
 
-### What does Insert Multiple Rows do?
+### What does **Insert Multiple Rows** do?
 
 **Insert Multiple Rows** lets you insert up to **1,000** blank rows into the table.
 
 When you select this option, PowerTable prompts you to specify the number of rows to insert.
 
-### In the insert form, do I have to fill in every field? Does Apply save the record?
+### In the insert form, do I have to fill in every field? Does selecting **Apply** save the record?
 
 No. Selecting **Apply** doesn't save the record. It closes the form and stages the new row as a pending change.
 
@@ -250,13 +250,13 @@ When you add a new record:
 * **Identity** columns are generated automatically.
 * You can leave optional fields blank. Optional fields aren't marked with an asterisk (\*).
 
-### Does selecting Apply in the Form Editor commit the changes?
+### Does selecting **Apply** in the Form Editor commit the changes?
 
 No. Selecting **Apply** creates a pending change. You can combine it with other pending changes before you preview, discard, or save them.
 
 The changes are committed only when you select **Save to Database**.
 
-### Which rows does Bulk Edit affect?
+### Which rows does 'Bulk Edit' affect?
 
 **Bulk Edit** is available only when you select multiple rows by using the row selectors (the checkboxes for each row). It applies changes only to the selected rows.
 

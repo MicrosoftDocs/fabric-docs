@@ -11,7 +11,7 @@ ms.date: 04/20/2026
 
 Microsoft Fabric lets you pause and resume your capacity. When your capacity isn't operational, you can pause it to enable cost savings for your organization. Later, when you want to resume work on your capacity, you can reactivate it.
 
-When you pause your capacity, the remaining [cumulative overages and smoothed operations](../enterprise/throttling.md#balance-between-performance-and-reliability) on your capacity are summed, and added to your Azure bill. You can [monitor a paused capacity](monitor-paused-capacity.md) using the [Microsoft Fabric Capacity Metrics app](metrics-app.md).
+When you pause your capacity, the remaining [cumulative overages and smoothed operations](../enterprise/throttling.md#how-fabric-balances-performance-and-reliability) on your capacity are summed, and added to your Azure bill. You can [monitor a paused capacity](monitor-paused-capacity.md) by using the [Microsoft Fabric Capacity Metrics app](metrics-app.md).
 
 If your capacity is being [throttled](throttling.md), pausing it stops the throttling and returns your capacity to a healthy state immediately. This behavior enables you to pause your capacity as a self-service mechanism that ends throttling.
 
