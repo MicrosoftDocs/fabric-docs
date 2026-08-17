@@ -113,6 +113,8 @@ items:
           href: plan/planning-concept-predict.md
         - name: Forecasting - Reforecasting
           href: plan/planning-concept-reforecasting.md
+        - name: Forecasting - Closing forecast
+          href: plan/planning-concept-closing-forecast-period.md
         - name: General - Top-down planning
           href: plan/planning-concept-top-down-planning.md
         - name: General - Bottom-up planning
@@ -185,6 +187,8 @@ items:
                 href: plan/planning-optimize/planning-how-to-optimize-input-values.md
               - name: Optimize inputs - Direction based optimization
                 href: plan/planning-optimize/planning-how-to-maximize-minimize-target-value.md
+              - name: Optimize inputs - Rule-based and derived measure optimization
+                href: plan/planning-optimize/planning-how-to-optimize-derived-measures.md
               - name: Bulk edit
                 href: plan/planning-how-to-bulk-edit.md
               - name: Pivot data
