@@ -113,6 +113,8 @@ items:
           href: plan/planning-concept-predict.md
         - name: Forecasting - Reforecasting
           href: plan/planning-concept-reforecasting.md
+        - name: Forecasting - Closing forecast
+          href: plan/planning-concept-closing-forecast-period.md
         - name: General - Top-down planning
           href: plan/planning-concept-top-down-planning.md
         - name: General - Bottom-up planning
