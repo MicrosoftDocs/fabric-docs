@@ -36,7 +36,7 @@ Capacity overage prevents throttling by automatically paying off excess capacity
 
 - Capacity overage pays off excess usage at the point when throttling would otherwise occur.
 
-Capacity overage intervenes at the point of throttling. When your capacity's smoothed usage exceeds the built-in thresholds, instead of applying delays or rejections, capacity overage automatically "pays off" the excess usage by charging your Azure subscription. This approach keeps your capacity in a non-throttled state. Running jobs continue without interruption, and the capacity keeps operating without user‑visible throttling.
+Capacity overage intervenes at the point of throttling. When your capacity's smoothed usage exceeds the built-in thresholds, instead of applying delays or rejections, capacity overage automatically reconciles the excess usage by charging your Azure subscription. This approach keeps your capacity in a non-throttled state. Running jobs continue without interruption, and the capacity keeps operating without user‑visible throttling.
 
 To balance cost and performance, capacity admins define a rolling 24‑hour overage limit. Fabric compares this limit against your processed overages from the past 24 hours and evaluates it at 5‑minute intervals. For example, if Fabric runs a check at 09:00, it compares the limit to your processed overages from 09:00 yesterday to 09:00 today. At 09:05, the window shifts forward by five minutes, evaluating usage from 09:05 yesterday to 09:05 today.
 
