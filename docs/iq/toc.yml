@@ -187,6 +187,8 @@ items:
                 href: plan/planning-optimize/planning-how-to-optimize-input-values.md
               - name: Optimize inputs - Direction based optimization
                 href: plan/planning-optimize/planning-how-to-maximize-minimize-target-value.md
+              - name: Optimize inputs - Rule-based and derived measure optimization
+                href: plan/planning-optimize/planning-how-to-optimize-derived-measures.md
               - name: Bulk edit
                 href: plan/planning-how-to-bulk-edit.md
               - name: Pivot data
