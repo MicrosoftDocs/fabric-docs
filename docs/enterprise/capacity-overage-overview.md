@@ -123,7 +123,7 @@ Consider the following points when you use capacity overage:
 ### When should I use capacity overage?
 Use it when uptime is critical and you occasionally hit capacity limits. It's ideal for rare unexpected spikes or small regular spikes where you don't need to scale up. If you're throttled regularly outside of these scenarios, scale up instead.
 
-### Does it improve performance?
+### Does capacity overage improve performance?
 No. It prevents throttling but doesn't add memory or speed. Jobs run as usual but without delays or rejections.
 
 ### What happens if I enable it during throttling?
