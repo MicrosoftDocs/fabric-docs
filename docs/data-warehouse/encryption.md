@@ -4,6 +4,7 @@ description: Learn more about securing your warehouse with customer-managed keys
 ms.reviewer: fresantos
 ms.date: 10/15/2025
 ms.topic: concept-article
+ms.search.form: Warehouse Encryption
 ---
 
 # Data Encryption in Fabric Data Warehouse

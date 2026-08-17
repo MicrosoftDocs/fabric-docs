@@ -12,6 +12,7 @@ ms.update-cycle: 180-days
 ms.custom:
   - copilot-learning-hub
 ms.devlang: copilot-prompt
+ms.search.form: Warehouse Copilot
 ---
 
 # What is Copilot in the Data Warehouse workload (Preview)?

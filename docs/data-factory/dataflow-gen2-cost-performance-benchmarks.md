@@ -55,12 +55,12 @@ Most scenarios in this guide use the [**New York City Taxi & Limousine Commissio
 
 The following table summarizes the benchmark results across all scenarios. Each scenario also includes a Dataflow Gen1 baseline for comparison.
 
-| Scenario | What it does | Capability enabled | Gen2 execution time | Speedup vs. Gen1 baseline | CU consumed |
-|----------|--------------|--------------------|---------------------|---------------------------|-------------|
-| [Scenario 1: Copy data](#scenario-1-copy-data) | Bulk-load five consolidated Parquet files from ADLS Gen2 into a lakehouse with no transformations. | Fast Copy | 00:09:08 | 11× faster | 14,593 |
-| [Scenario 2: Heavy data shaping](#scenario-2-heavy-data-shaping) | Apply non-foldable transformations (filters, derivations, cleansing) to a single large Parquet file loaded into a lakehouse. | Modern Evaluator | 00:46:49 | 1.6× faster | 10,392 |
-| [Scenario 3: Optimized copy to Lakehouse](#scenario-3-optimized-copy-to-lakehouse) | Transform a 113-million-row NYC taxi table from a Fabric lakehouse and write the result to a lakehouse table on an accelerated copy path. This benchmark uses Optimized copy to Lakehouse and V-Order. | Optimized copy to Lakehouse | 00:03:34 | 15× faster | 2,391 |
-| [Scenario 4: Combine files](#scenario-4-combine-files) | Combine and transform 56 partitioned Parquet files in parallel and load into a warehouse. | Partitioned Compute | 00:04:48 | 21× faster | Not measured |
+| Scenario | What it does | Capability enabled | Gen2 execution time | Speedup vs. Gen1 baseline |
+|----------|--------------|--------------------|---------------------|---------------------------|
+| [Scenario 1: Copy data](#scenario-1-copy-data) | Bulk-load five consolidated Parquet files from ADLS Gen2 into a lakehouse with no transformations. | Fast Copy | 00:09:08 | 11× faster |
+| [Scenario 2: Heavy data shaping](#scenario-2-heavy-data-shaping) | Apply non-foldable transformations (filters, derivations, cleansing) to a single large Parquet file loaded into a lakehouse. | Modern Evaluator | 00:46:49 | 1.6× faster |
+| [Scenario 3: Optimized copy to Lakehouse](#scenario-3-optimized-copy-to-lakehouse) | Transform a 113-million-row NYC taxi table from a Fabric lakehouse and write the result to a lakehouse table on an accelerated copy path. This benchmark uses Optimized copy to Lakehouse and V-Order. | Optimized copy to Lakehouse | 00:03:34 | 15× faster |
+| [Scenario 4: Combine files](#scenario-4-combine-files) | Combine and transform 56 partitioned Parquet files in parallel and load into a warehouse. | Partitioned Compute | 00:04:48 | 21× faster |
 
 :::image type="content" source="media/decision-guide-data-transformation/scenario-comparison-chart.png" alt-text="Comparison chart showing the execution time and relative speedup for the four benchmark scenarios in the summary table." lightbox="media/decision-guide-data-transformation/scenario-comparison-chart.png":::
 
