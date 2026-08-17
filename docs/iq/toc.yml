@@ -241,6 +241,8 @@ items:
               href: plan/infobridge-how-to-manage-queries.md     
             - name: Share measures
               href: plan/infobridge-how-to-share-measures.md
+            - name: Consolidate data between sheets
+              href: plan/infobridge-how-to-consolidate-data-between-sheets.md
             - name: Write back data
               href: plan/infobridge-how-to-write-back-data.md
             - name: Transform queries
@@ -323,6 +325,8 @@ items:
           href: plan/powertable-concept-slowly-changing-dimensions.md
         - name: Automation
           href: plan/powertable-concept-automation.md
+        - name: Gantt layout
+          href: plan/powertable-concept-gantt.md
     - name: How-tos
       items:
         - name: Create a table app
@@ -395,6 +399,10 @@ items:
           items:
             - name: Hierarchy
               href: plan/powertable-layouts/how-to-configure-hierarchy-layout.md
+            - name: Crosstab
+              href: plan/powertable-layouts/how-to-configure-crosstab-layout.md
+            - name: Resource
+              href: plan/powertable-layouts/how-to-configure-resource-overview.md
             - name: Calendar
               href: plan/powertable-layouts/how-to-configure-calendar-layout.md
             - name: Kanban
