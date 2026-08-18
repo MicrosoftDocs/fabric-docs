@@ -36,6 +36,7 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 | Connect workspace to a Git repository |  &#x2705; | | | |
 | View and read content of pipelines, notebooks, Spark job definitions, ML models and experiments, and eventstreams. | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
 | View and read content of KQL databases, KQL query-sets, digital twin builder items, and real-time dashboards. | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
+| View and read content of event schema sets.<sup>5</sup> | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
 | Connect to SQL analytics endpoint of Lakehouse or the Warehouse | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
 | Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> with T-SQL through TDS endpoint (ReadData). | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
 | Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> through OneLake APIs and Spark (ReadAll). | &#x2705; | &#x2705; | &#x2705; |  |
@@ -43,6 +44,7 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 | Subscribe to OneLake events. | &#x2705; | &#x2705; | &#x2705; |  |
 | Write or delete pipelines, notebooks, Spark job definitions, ML models, and experiments, and eventstreams. | &#x2705; | &#x2705; | &#x2705; |  |
 | Write or delete Eventhouses<sup>3</sup>, KQL Querysets, Real-Time Dashboards, digital twin builder data, and schema and data of KQL Databases, Lakehouses, data warehouses, and shortcuts. | &#x2705; | &#x2705; | &#x2705; |  |
+| Create, write, or delete event schema sets, and the schemas and event types they contain.<sup>5</sup> | &#x2705; | &#x2705; | &#x2705; |  |
 | Execute or cancel execution of notebooks, Spark job definitions, ML models, and experiments. | &#x2705; | &#x2705; | &#x2705; |  |
 | Execute or cancel execution of pipelines. | &#x2705; | &#x2705; | &#x2705; |  |
 | View execution output of pipelines, notebooks, ML models and experiments. | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
@@ -56,6 +58,8 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 <sup>3</sup> Other permissions are needed to perform certain operations on data in an Eventhouse. Learn more about the [hybrid role-based access control model](/kusto/access-control/role-based-access-control?view=microsoft-fabric&preserve-view=true).
 
 <sup>4</sup> Keep in mind that you also need permissions on the gateway. Those permissions are managed elsewhere, independent of workspace roles and permissions.
+
+<sup>5</sup> Publishing and consuming business event data is governed separately by data access roles, not by workspace roles. Learn more about [managing data access for business events](../real-time-hub/business-events/manage-business-events-data-access.md).
 
 > [!NOTE]
 > The Create/Modify and Write/Delete permissions for notebooks apply equally when using the Items REST API. Admin, Member, and Contributor can perform notebook CRUD operations via the API, while Viewer cannot. For Job Scheduler API execution, Admin, Member, and Contributor can start and cancel runs; all roles including Viewer can monitor run status and view execution output, including run metadata such as status and exit values returned by notebook runs.
