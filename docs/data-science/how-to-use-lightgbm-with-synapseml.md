@@ -23,7 +23,7 @@ MART) framework. You can use LightGBM by using LightGBMClassifier, LightGBMRegre
 * Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
 * Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
-* Fabric Runtime 1.3 or later. Runtime 1.3 is the current generally available (GA) version. For more information, see [Apache Spark Runtimes in Fabric](../data-engineering/runtime.md).
+* Fabric Runtime 1.3 or later. Runtime 2.0 is the current generally available (GA) version. For more information, see [Apache Spark Runtimes in Fabric](../data-engineering/runtime.md).
 
 ## Use `LightGBMClassifier` to train a classification model
 

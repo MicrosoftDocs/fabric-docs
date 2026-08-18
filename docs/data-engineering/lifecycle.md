@@ -20,13 +20,13 @@ Apache Spark typically releases minor versions every six to nine months. The Fab
 With a commitment to excellence, the team approaches new preview runtime releases carefully. They target an experimental preview in about three months but ultimately establish timelines on a case-by-case basis. This approach involves evaluating critical components of each Spark version, including Java, Scala, Python, R, and Delta Lake. After thorough assessment, the team creates a detailed timeline outlining the runtime's availability and progression through various stages. Overall, the goal is to establish a standard lifecycle path for Fabric runtimes for Apache Spark.
 
 > [!TIP]
-> Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 1.3](./runtime-1-3.md).
+> Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 2.0](./runtime-2-0.md).
 
 The following table lists the runtime name and release dates for supported Azure Synapse runtime releases.
 
 | Runtime name                                              | Release stage | End of Support date |
 |-----------------------------------------------------------|---------------|---------------------|
-| [Runtime 2.0 based on Apache Spark 4.1](./runtime-2-0.md) | Public Preview | Not Applicable      |
+| [Runtime 2.0 based on Apache Spark 4.1](./runtime-2-0.md) | GA            | August 31, 2028      |
 | [Runtime 1.3 based on Apache Spark 3.5](./runtime-1-3.md) | GA            | September 30, 2026**  |
 
 ** Runtime 1.3 enters Long Term Support (LTS) on October 1, 2026, for a period of six months, extending support through March 2027.

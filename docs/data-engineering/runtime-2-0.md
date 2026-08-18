@@ -4,7 +4,8 @@ description: Learn about Apache Spark-based Runtime 2.0 in Fabric, including its
 ms.reviewer: arali
 ms.topic: overview
 ms.custom:
-ms.date: 05/26/2026
+ms.date: 08/17/2026
+ai-usage: ai-assisted
 ---
 
 # Fabric Runtime 2.0 (GA)
@@ -29,7 +30,7 @@ Fabric Runtime 2.0 incorporates the following components and upgrades designed t
 >
 > **Required actions**
 >
-> Re-publish your environment (including the libraries). To do this, remove all libraries, publish the environment, re-add all the libraries, and publish once more. This process recreates the environment by using the updated Python runtime and resolves the issue.
+> Re-publish your Environment (including the libraries). To do this, remove all libraries, publish the Environment, re-add all the libraries, and publish once more. This process recreates the environment by using the updated Python runtime and resolves the issue.
 
 > [!TIP]
 > Fabric Runtime 2.0 includes support for [the Native Execution Engine](./native-execution-engine-overview.md), which can significantly enhance performance without more costs. You can enable the native execution engine at the environment level so that all jobs and notebooks automatically inherit the enhanced performance capabilities.
@@ -52,16 +53,16 @@ To set Runtime 2.0 as the default for your entire workspace:
 1. Runtime 2.0 is set as the default runtime for your workspace.
 
 
-### Enable Runtime 2.0 in an environment item
+### Enable Runtime 2.0 in an Environment item
 
 To use Runtime 2.0 with specific notebooks or Spark job definitions:
 
 1. Create a new **Environment** item or open an existing one. 
 1. Under the **Runtime** dropdown, select **2.0 (Spark 4.1, Delta 4.2)**, **Save**, and **Publish** your changes. 
 
-    :::image type="content" source="media\mrs\runtime-2-environment.png" alt-text="Screenshot showing where to select runtime version for environment item." lightbox="media\mrs\runtime-2-environment.png":::
+    :::image type="content" source="media\mrs\runtime-2-environment.png" alt-text="Screenshot showing where to select runtime version for Environment item." lightbox="media\mrs\runtime-2-environment.png":::
     
-1. Next, you can use this **Environment** item with your **Notebook** or **Spark job definition**.
+1. Next, use this **Environment** item with your **Notebook** or **Spark Job Definition**.
 
 You can now start working with the newest improvements and functionalities introduced in Fabric Runtime 2.0 (Spark 4.1 and Delta Lake 4.2).
 
@@ -117,7 +118,7 @@ Runtime 2.0 supports data layout and optimization features for Delta tables:
 - **Parallel Delta snapshot loading**: The native execution engine loads Delta table snapshots in parallel, reducing query startup time for large tables.
 
 > [!IMPORTANT]
-> Delta Lake 4.2 specific features are experimental and only work on Spark experiences, such as Notebooks and Spark job definitions. If you need to use the same Delta Lake tables across multiple Fabric workloads, don't enable those features. To learn more about which protocol versions and features are compatible across all Fabric experiences, see [Delta Lake table format interoperability](../fundamentals/delta-lake-interoperability.md).
+> Delta Lake 4.2 specific features are experimental and only work on Spark experiences, such as Notebooks and Spark Job Definitions. If you need to use the same Delta Lake tables across multiple Microsoft Fabric workloads, don't enable those features. To learn more about which protocol versions and features are compatible across all Microsoft Fabric experiences, see [Delta Lake table format interoperability](../fundamentals/delta-lake-interoperability.md).
 
 ## Compute management in Runtime 2.0
 
