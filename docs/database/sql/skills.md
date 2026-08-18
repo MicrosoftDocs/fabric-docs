@@ -2,12 +2,14 @@
 title: Skills for SQL database in Fabric
 description: Learn how to install and use Skills for SQL database in Fabric.
 ms.reviewer: sukkaur
-ms.date: 08/06/2026
+ms.date: 08/17/2026
 ms.topic: how-to
 ---
 # Skills for SQL database in Fabric
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
+
+[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
 [Skills for Fabric](../../fundamentals/skills-for-fabric-overview.md) are reusable instructions that help an AI coding assistant understand Fabric workloads, APIs, query patterns, and operational best practices. The SQL database skills provide task-specific guidance for working with SQL database in Fabric from an agentic command-line or coding environment.
 

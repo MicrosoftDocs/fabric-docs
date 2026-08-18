@@ -405,12 +405,16 @@ items:
               href: plan/powertable-layouts/how-to-configure-hierarchy-layout.md
             - name: Crosstab
               href: plan/powertable-layouts/how-to-configure-crosstab-layout.md
+            - name: Gantt
+              href: plan/powertable-layouts/how-to-configure-gantt-layout.md
             - name: Resource
               items:
                 - name: Configure resource layout
                   href: plan/powertable-layouts/how-to-configure-resource-overview.md
                 - name: Add and manage tasks
-                  href: plan/powertable-layouts/how-to-manage-tasks-resource.md  
+                  href: plan/powertable-layouts/how-to-manage-tasks-resource.md
+                - name: Customize resource layout
+                  href: plan/powertable-layouts/how-to-customize-resource-layout.md  
             - name: Calendar
               href: plan/powertable-layouts/how-to-configure-calendar-layout.md
             - name: Kanban
