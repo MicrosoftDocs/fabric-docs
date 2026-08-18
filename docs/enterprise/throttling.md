@@ -192,3 +192,4 @@ When you review capacity usage in the capacity metrics app, some operations are 
 
 - [Install the Microsoft Fabric Capacity Metrics app](metrics-app-install.md) to monitor Fabric capacities.
 - [How to resize your capacity](scale-capacity.md).
+- [Explore Fabric capacity overview events in Fabric Real-Time hub](../real-time-hub/explore-fabric-capacity-overview-events.md)

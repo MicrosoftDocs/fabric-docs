@@ -178,3 +178,4 @@ Workspace-level surge protection lets you enable banner notifications that appea
 - [Understanding the Microsoft Fabric Capacity Metrics app compute page](metrics-app-compute-page.md)
 - [Understand the metrics app timepoint page](metrics-app-timepoint-page.md)
 - [Fabric operations](fabric-operations.md)
+- [Explore Fabric capacity overview events in Fabric Real-Time hub](../real-time-hub/explore-fabric-capacity-overview-events.md)

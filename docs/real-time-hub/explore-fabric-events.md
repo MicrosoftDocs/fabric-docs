@@ -3,7 +3,8 @@ title: Explore Fabric events in Fabric Real-Time hub
 description: This article shows how to explore Fabric events in Fabric Real-Time hub. It provides details on the Fabric events page in the Real-Time hub user interface.
 ms.reviewer: majia
 ms.topic: how-to
-ms.date: 12/11/2025
+ms.date: 08/18/2026
+ai-usage: ai-assisted
 ---
 
 # Explore Fabric events in Fabric Real-Time hub
@@ -20,24 +21,26 @@ Fabric events have the following columns:
 
 | Column | Description |
 | ------ | ----------- |
-| Name | Name of event type group. Currently, only **Fabric workspace item events** are supported.|
+| Name | Name of the event type group. Fabric supports multiple event groups, including capacity overview events, workspace item events, OneLake events, job events, and anomaly detection events. |
 | Description | Description of event type group. |
 
 :::image type="content" source="./media/explore-fabric-events/columns.png" alt-text="Screenshot that shows the selection of columns on the Fabric events page." lightbox="./media/explore-fabric-events/columns.png":::
 
 ## Actions
 
-Here are the actions available on each event type group. When you move the mouse over an event group, you see three buttons to create an eventstream, create an alert, and an ellipsis (...). When you select ellipsis (...), you see the same actions: **Create eventstream** and **Set alert**.
+Each event type group offers the following actions. When you point to an event group, you see three buttons to create an eventstream, create an alert, and an ellipsis (...). When you select the ellipsis (...), you see the same actions: **Create eventstream** and **Set alert**.
 
 | Action | Description |
 | ------ | ----------- |
-| Create eventstream | This action creates an eventstream on the selected event type group with all Event types selected. For more information, see [Get Fabric workspace item events](create-streams-fabric-workspace-item-events.md). |
-| Set alert | This action sets an alert on the selected event type group. For more information, see [Set alerts on Fabric workspace item events](set-alerts-fabric-workspace-item-events.md). |
+| Create eventstream | Creates an eventstream on the selected event group with all event types selected. |
+| Set alert | Sets an alert on the selected event group. |
 
 :::image type="content" source="./media/explore-fabric-events/actions.png" alt-text="Screenshot that shows the actions on the Fabric events page." lightbox="./media/explore-fabric-events/actions.png":::
 
 ## Related content
+- [Explore Fabric capacity overview events](explore-fabric-capacity-overview-events.md)
 - [Explore Fabric workspace item events](explore-fabric-workspace-item-events.md)
 - [Explore Fabric OneLake events](explore-fabric-onelake-events.md)
 - [Explore Fabric Job events](explore-fabric-job-events.md)
+- [Explore anomaly detection events](explore-anomaly-detection.md)
 
