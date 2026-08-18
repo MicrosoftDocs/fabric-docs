@@ -258,7 +258,7 @@ After a regional disaster:
 1. Redeploy the function.
 1. Reconfigure authentication and authorization.
 1. Recreate Business Event publishers or consumers, if used.
-1. Complete End to End validation testing for your scenarios and integrations.
+1. Complete end-to-end validation testing for your scenarios and integrations.
 
 ### GraphQL
 
