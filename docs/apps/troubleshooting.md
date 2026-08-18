@@ -172,7 +172,7 @@ npm install
 npx rayfin --version
 ```
 
-### CLI global vs local version mismatch 
+### CLI global vs local version mismatch
 
 **Symptom:** CLI commands fail with unexpected errors across projects.
 
@@ -248,8 +248,8 @@ Adding a column is supported. Removing or altering an existing column can break 
    npx rayfin up db apply --force
    ```
 
-> [!CAUTION]
-> Using `--force` can cause permanent data loss. Review the proposed operations and confirm that you accept the data-loss risk before proceeding.
+   > [!CAUTION]
+   > Using `--force` can cause permanent data loss. Review the proposed operations and confirm that you accept the data-loss risk before proceeding.
 
 ### Connection refused
 
