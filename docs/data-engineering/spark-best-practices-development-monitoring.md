@@ -17,7 +17,7 @@ Learn how to establish a repeatable path from exploratory development to product
 
 ##### Scenario: You need to know which runtime to use for development.
 
-Begin with the latest available Fabric Runtime to take advantage of recent enhancements and performance optimizations. Currently, Fabric Runtime 1.3 is the most up-to-date version, featuring Spark 3.5, Java 11, and Python 3.11. This version introduces key improvements such as the Native Execution Engine, which significantly boosts performance by executing Spark code on the Velox C++ engine instead of the traditional Java Virtual Machine (JVM).
+Begin with the latest available Fabric Runtime to take advantage of recent enhancements and performance optimizations. Currently, Fabric Runtime 2.0 is the most up-to-date version, featuring Spark 4.1, Java 21, and Python 3.13. This version supports the Native Execution Engine, which significantly boosts performance by executing Spark code on the Velox C++ engine instead of the traditional Java Virtual Machine (JVM).
 
 ##### Scenario: You have custom JARs uploaded in the environment and they're taking longer to publish. How can you reduce the environment publishing time?
 

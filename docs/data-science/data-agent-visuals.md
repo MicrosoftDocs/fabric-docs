@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 
 # Get visual responses from a Fabric data agent (preview)
 
-The Fabric data agent can return interactive visual responses, such as charts and graphs, in addition to text and table-based answers. Visual responses help you quickly identify trends, patterns, and outliers in your data without leaving the conversational interface.
+The Fabric data agent can return interactive visual responses, such as charts and graphs, in addition to text and table-based answers. Visual responses help you quickly identify trends, patterns, and outliers in your data without leaving the conversational interface. These visuals are generated using Fabric Visuals, the same visualization foundation used in Fabric apps and increasingly across the Fabric platform. As a result, the charts you receive in a data agent conversation are built on the same technology that powers visuals across other Fabric experiences, helping deliver a more consistent and familiar experience.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 

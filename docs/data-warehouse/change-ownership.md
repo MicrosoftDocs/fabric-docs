@@ -4,6 +4,7 @@ description: Learn how to change the ownership of a warehouse item in Microsoft 
 ms.reviewer: dhsundar, fresantos
 ms.date: 05/21/2025
 ms.topic: how-to
+ms.search.form: Warehouse Change ownership
 ---
 
 # Change ownership of a warehouse

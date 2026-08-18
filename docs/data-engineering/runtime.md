@@ -31,11 +31,11 @@ Major components of Fabric Runtime:
 In the following table, you find a comprehensive comparison of key components, including Apache Spark versions, supported operating systems, Java, Scala, Python, Delta Lake, and R, for Apache Spark-based runtimes within the Fabric platform.
 
 > [!TIP]
-> Always use the most recent, generally available (GA) runtime version for your production workload, which currently is [Runtime 1.3](./runtime-1-3.md).
+> Always use the most recent, generally available (GA) runtime version for your production workload, which currently is [Runtime 2.0](./runtime-2-0.md).
 
 | Component | [Runtime 1.3](./runtime-1-3.md) | [Runtime 2.0](./runtime-2-0.md) |
 |--|--|--|
-| **Release Stage** | GA | Public Preview |
+| **Release Stage** | GA | GA |
 | **Apache Spark version** | 3.5.5 | 4.1 |
 | **Operating System** | Mariner 2.0 | Mariner 3.0 |
 | **Java version** | 11 | 21 |
@@ -65,7 +65,7 @@ Fabric supports multiple runtimes, so you can switch between them and reduce the
 > [!NOTE]
 > A Spark runtime includes a specific Python version as part of its component set. For example, Runtime 1.3 includes Python 3.11. This Python version is separate from the Python notebook kernel that you select for pure Python notebooks. For the Python notebook kernel lifecycle, see [Python notebook runtime and kernel lifecycle in Fabric](./python-notebook-runtime-lifecycle.md).
 
-**By default, all new workspaces use the latest GA runtime version, which is currently [Runtime 1.3](./runtime-1-3.md).**
+**By default, all new workspaces currently use [Runtime 1.3](./runtime-1-3.md).**
 
 To change the runtime version at the workspace level, go to **Workspace Settings** > **Data Engineering/Science** > **Spark settings**. From the **Environment** tab, select your desired runtime version from the available options. Select **Save** to confirm your selection.
 

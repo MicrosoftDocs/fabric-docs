@@ -159,7 +159,7 @@ To enable the native execution engine, see [Native execution engine for Fabric D
 
 ## Prerequisites
 
-- [Runtime 1.3 (Apache Spark 3.5)](./runtime-1-3.md) or [Runtime 2.0 (Apache Spark 4.0)](./runtime-2-0.md).
+- [Runtime 1.3 (Apache Spark 3.5)](./runtime-1-3.md) or [Runtime 2.0 (Apache Spark 4.1)](./runtime-2-0.md).
 - Native execution engine enabled at the environment, notebook, or Spark job definition level.
 
 ## Limitations
