@@ -28,7 +28,7 @@ The major components of Runtime 1.2 include:
 - R: 4.2.2
 
 > [!TIP]
-> Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 1.3](./runtime-1-3.md).
+> Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 2.0](./runtime-2-0.md).
 
 :::image type="content" source="media\workspace-admin-settings\runtime-version-1-2.png" alt-text="Screenshot showing where to select runtime version." lightbox="media/workspace-admin-settings/runtime-version-1-2.png":::
 
