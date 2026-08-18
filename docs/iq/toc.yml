@@ -405,6 +405,8 @@ items:
               href: plan/powertable-layouts/how-to-configure-hierarchy-layout.md
             - name: Crosstab
               href: plan/powertable-layouts/how-to-configure-crosstab-layout.md
+            - name: Gantt
+              href: plan/powertable-layouts/how-to-configure-gantt-layout.md
             - name: Resource
               items:
                 - name: Configure resource layout

@@ -58,7 +58,7 @@ The Gantt layout supports the following capabilities:
 - **Task hierarchy:** Use parent-child relationships to organize tasks and subtasks.
 - **Task duration:** Use start and end date fields to determine the duration and position of each task on the timeline.
 - **Progress tracking:** Configure a progress field to display task completion on the Gantt bar.
-- **Milestones:** Configure tasks with only the start date or the end date or same start and end dates or with the milestone field to represent milestones that indicate important events or deadlines.
+- **Milestones:** Configure tasks with only the the end date without the start date to represent milestones that indicate important events or deadlines.
 - **Dependencies:** Configure task relationships and display them as connector lines between tasks.
 - **Resource assignment:** Configure resource or assignee fields to identify who is responsible for each task.
 - **Estimated effort:** Select the column that contains the estimated effort in hours. Use this information to track the expected work for each task.

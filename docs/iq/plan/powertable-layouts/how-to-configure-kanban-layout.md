@@ -1,12 +1,12 @@
 ---
-title: Configure Kanban layout
+title: Configure and Use Kanban layout in PowerTable
 description: Configure a Kanban layout to visualize tasks by workflow stage. Follow this guide to create the board, add tasks, group records, and move cards between stacks.
 #customer intent: As a project manager using PowerTable, I want to filter, sort, and group tasks on the Kanban board, so that I can find bottlenecks and prioritize pending work.
 ms.date: 08/11/2026
 ms.topic: how-to
 ---
 
-# Configure Kanban layout
+# Configure and use Kanban layout
 
 Kanban layout displays records as cards organized into columns or stacks based on a selected field. It provides a visual way to track work, monitor progress, and move records through different stages of a workflow.
 
