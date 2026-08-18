@@ -50,7 +50,7 @@ Microsoft Fabric provides several methods to track when capacity overage activat
 |--------|---------------|
 | **Capacity Metrics app** | Logs processed overages, shows CU-hours billed, and capacity state (Active vs. Throttling). |
 | **Azure Cost Management** | Tracks billed overages through a separate meter (Capacity overage capacity usage); shows financial impact over time. |
-| **Capacity Events in Real-Time Hub** | Real-time alerting of capacity overage events by using the summary table. |
+| [**Capacity Events in Real-Time Hub**](../real-time-hub/explore-fabric-capacity-overview-events.md) | Real-time alerting of capacity overage events by using the summary table. |
 
 ### Key behavior concepts
 
