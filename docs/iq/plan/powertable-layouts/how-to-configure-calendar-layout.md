@@ -1,12 +1,12 @@
 ---
-title: Configure calendar layout
+title: Configure and Use Calendar Layout in PowerTable
 description: Calendar layout in PowerTable displays your records by date so you can track deadlines, events, and schedules. Learn how to configure, customize, and manage it.
 #customer intent: As a PowerTable business user, I want to map start and end date columns to a calendar view, so that I can see tasks and appointments by day, week, or month.
 ms.date: 08/11/2026
 ms.topic: how-to
 ---
 
-# Configure calendar layout
+# Configure and use calendar layout
 
 Calendar layout displays records on a calendar based on the values in a date or date-time column. It provides a chronological view of your data, making it easier to organize, review, and update records by day, week, or month.
 
