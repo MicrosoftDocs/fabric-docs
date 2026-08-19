@@ -3,7 +3,7 @@ title: OneLake table, column, and row-level security
 description: Learn how table and folder, column-level, and row-level security in OneLake control access to your data and how each is enforced.
 ms.reviewer: aamerril
 ms.topic: concept-article
-ms.date: 07/27/2026
+ms.date: 08/19/2026
 ai-usage: ai-assisted
 #customer intent: As a data owner, I want to understand how table, column, and row-level security work in OneLake so that I can choose the right controls for my data.
 ---
@@ -52,6 +52,8 @@ For tables filtered with RLS, the following behaviors apply:
 * Access to a table might be blocked if the RLS statement contains syntax errors that prevent it from being evaluated.
 
 For the syntax used to write RLS rules, see [Row-level security syntax reference](./row-level-security-syntax.md).
+
+RLS roles don't support dynamic and multi-table queries.
 
 ## Combine row-level and column-level security
 
