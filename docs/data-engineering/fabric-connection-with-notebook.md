@@ -1,10 +1,10 @@
 ---
-title: Fabric Connection in notebooks
+title: Fabric Connection in Notebooks
 description: Learn about how you can use a Fabric Connection to access external data sources directly in notebooks.
 ms.reviewer: qixwang
+ms.date: 07/27/2026
 ms.topic: overview
-ms.date: 9/19/2025
-ms.search.form: Fabric Connection 
+ms.search.form: Fabric Connection
 ai-usage: ai-assisted
 ---
 
@@ -36,6 +36,13 @@ There's a tenant-level setting that allows the tenant admin to control whether t
 
 There are two ways to create a Fabric Connection for notebooks.
 
+Notebooks use the **Connections** pane instead of the get data modules available in other Fabric experiences. Use its nodes to find connections:
+
+- **Current Notebook**: View connections that are bound to the open notebook.
+- **Global permissions**: View workspace connections that you can bind to the notebook.
+
+Select **Add connection** to create and bind a connection from within the notebook.
+
 ### Create a Fabric Connection within a notebook
 
 Inside a notebook, you can create a Fabric Connection by selecting **Add connection** in the **Connections** pane.
@@ -64,14 +71,14 @@ For the connection under the **Global Permissions** node, you need to explicitly
 
 After you bind the connection to the current notebook, it appears in the **Current Notebook** node in the **Connections** pane.
 
-
 ### Connection status
 
-Over time, the status of a Fabric Connection may change due to various reasons, such as credential expiration or permission changes. You can check the connection status by selecting the **"Check status"** button from the context menu. 
+Over time, the status of a Fabric Connection might change due to various reasons, such as credential expiration or permission changes. You can check the connection status by selecting the **Check status** button from the context menu.
 
 :::image type="content" source="media\fabric-connection-notebook\connection-check-status.png" alt-text="Screenshot of check status option. "lightbox="media\fabric-connection-notebook\connection-check-status.png":::
 
 If there are any issues with the connection, an offline icon is displayed next to the connection name. The following are common scenarios that might cause a connection to go offline:
+
 - **Credential Expiration**: If the credential used for the connection is expired, then the connection goes offline. You need to update the credentials to bring the connection back online.
 - **Permission Changes**: If permissions for the data source change and the connection no longer has access, then the connection goes offline. You need to restore the necessary permissions to bring the connection back online. For example, if you're using Workspace Identity Authentication or SPN, ensure that the Fabric workspace identity or SPN has the required permissions to access the data source.
 - **Network Issues**: If there are network issues preventing access to the data source, the connection goes offline. You need to resolve the network issues to bring the connection back online.
@@ -83,13 +90,12 @@ For the offline connection under the **"Current Notebook"** node, the **"Check s
 
 For the offline connection under the **"Global Permissions"** node, the **"Check status"** option is available in the context menu. You can't connect an offline connection to the current notebook. The **"Delete"** option is only available if the current user has the owner permission for the connection.
 
-
 > [!IMPORTANT]
 > If Workspace Identity Authentication is used to create the connection, the **Check status** option can't validate whether the connection is online or offline because test connection doesn't support workspace identity authentication.
 
 ## How to use Fabric Connection in notebook code
 
-Once the Fabric Connection is created and bound to the current notebook, you can generate code snippets to access the data source directly from the notebook. 
+After you create the Fabric Connection and bind it to the current notebook, you can generate code snippets to access the data source directly from the notebook.
 
 1. Find the connection in the **"Current Notebook"** node.
 1. Select the ellipsis (...) and then select **"Add as code cell"** from the context menu.
@@ -138,15 +144,16 @@ If you share the notebook with other users, they also need the right permissions
 If workspace identity authentication or SPN is used for the connection, make sure that the Fabric workspace identity or SPN has the necessary permissions to access the data source.
 
 For Azure Key Vault connections, the following permission requirements apply if SPN or workspace identity authentication is used:
+
 - The SPN or Fabric workspace identity must have Admin/Contributor role on the Key Vault to access the secrets.
 - The SPN or Fabric workspace identity must have Azure Resource Owner/Contributor role on the Key Vault.
 - Update access policies in the Key Vault to grant secret access to the SPN or Fabric workspace identity.
 - Enable **"Vault access policy"** in the Key Vault's access policies and grant **"Get"** and **"List"** permissions for secrets to the SPN or Fabric workspace identity.
 
-
 ## Connect or disconnect Fabric Connection from notebook
 
 To connect or disconnect a Fabric Connection from the current notebook:
+
 1. Select the connection in the **"Current Notebook"** node.
 1. Select the ellipsis (...) and then select **"Disconnect"** or **"Connect"** from the context menu.
 

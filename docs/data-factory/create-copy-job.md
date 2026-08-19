@@ -1,19 +1,21 @@
 ---
-title: How to create a Copy job in Data Factory
+title: How to Create a Copy Job in Data Factory
 description: This article guides you through how to create a copy job, execute it, and view the results.
 ms.reviewer: yexu
+ms.date: 07/27/2026
 ms.topic: how-to
-ms.date: 06/19/2025
+ms.custom:
+  - copy-job, sfi-image-nochange
 ms.search.form: copy-job-tutorials
-ms.custom: copy-job, sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # Learn how to create a Copy job in Data Factory for Microsoft Fabric
 
 The Copy job in Data Factory makes it easy to move data from your source to your destination without creating a pipeline. You can set up data transfers using built-in patterns for both batch and incremental copy, and copy once or on a schedule. Follow the steps in this article to start copying your data either from a [database](#create-a-copy-job-to-ingest-data-from-a-database) or from [storage](#create-a-copy-job-to-ingest-files-from-storage).
 
->[!TIP]
-> [See a list of all supported connectors for Copy job here.](what-is-copy-job.md#supported-connectors)
+> [!TIP]
+> [See a list of all supported connectors for Copy job](what-is-copy-job.md#supported-connectors).
 
 ## Create a Copy job to ingest data from a database
 
@@ -24,11 +26,11 @@ Follow these steps to set up a Copy job that moves data from a database:
 
    :::image type="content" source="media/copy-job/create-new-copy-job.png" alt-text="Screenshot showing where to navigate to the Data Factory home page and create a new Copy job.":::
 
-1. Choose the database to copy data from. In this example, we're using **Azure SQL DB**.
+1. Choose the database to copy data from. In this example, we're using **Azure SQL Database**, but there are several options to [choose your data source](#choose-data-source-for-copy-job) at the top of the choose data source window.
 
    :::image type="content" source="media/copy-job/choose-data-source.png" lightbox="media/copy-job/choose-data-source.png" alt-text="Screenshot showing where to choose a data source for the Copy job.":::
 
-1. For Azure SQL DB enter your **server path** and **credentials**. You can copy data securely within a virtual network environment using on-premises or virtual network gateway. For other databases, the connection details will vary.
+1. For Azure SQL Database, enter your **server path** and **credentials**. You can copy data securely within a virtual network environment using on-premises or virtual network gateway. For other databases, the connection details vary.
 
    :::image type="content" source="media/copy-job/enter-credentials-data-source.png" lightbox="media/copy-job/enter-credentials-data-source.png" alt-text="Screenshot showing where to enter credentials.":::
 
@@ -36,7 +38,7 @@ Follow these steps to set up a Copy job that moves data from a database:
 
    :::image type="content" source="media/copy-job/select-tables-columns.png" lightbox="media/copy-job/select-tables-columns.png" alt-text="Screenshot showing where to select tables and columns for the Copy job.":::
 
-1. Select your destination store. In this example, we're using another **Azure SQL DB**.
+1. Select your destination store. In this example, we're using another **Azure SQL Database**.
 
    :::image type="content" source="media/copy-job/select-destination-store.png" lightbox="media/copy-job/select-destination-store.png" alt-text="Screenshot showing where to select the destination store for the Copy job.":::
 
@@ -52,7 +54,7 @@ Follow these steps to set up a Copy job that moves data from a database:
 
    :::image type="content" source="media/copy-job/specify-column-mappings.png" lightbox ="media/copy-job/specify-column-mappings.png" alt-text="Screenshot showing where to specify column mappings.":::
 
-1. Choose a copy mode: Full data copy or Incremental copy. In this example, we use **Incremental copy**. Choose an Incremental column for each table, to track which rows have changed. You can use the preview button to find the right column. 
+1. Choose a copy mode: Full data copy or Incremental copy. In this example, we use **Incremental copy**. Choose an Incremental column for each table, to track which rows have changed. You can use the preview button to find the right column.
 
    > [!NOTE]
    > When you choose incremental copy mode, Copy job initially performs a full load and performs incremental copies in the next runs.
@@ -92,8 +94,8 @@ Follow these steps to set up a Copy job that moves data from file storage:
 
 1. Select the **folders** or **files** to copy. You can use the search box to find specific files or folders.
 
-    >[!TIP]
-    >**Schema agnostic (binary copy)** copies files to another data store without parsing the schema. This can significantly improve copy performance.
+   > [!TIP]
+   > **Schema agnostic (binary copy)** copies files to another data store without parsing the schema. This approach can significantly improve copy performance.
 
 1. Select your destination store. In this example, we chose **Lakehouse**.
 
@@ -111,7 +113,7 @@ Follow these steps to set up a Copy job that moves data from file storage:
 
    :::image type="content" source="media/copy-job/review-save1.png" lightbox="media/copy-job/review-save1.png" alt-text="Screenshot showing where to review and save the newly created Copy job for storage.":::
 
-1. Your Copy job will start immediately, and you can track the job's status from the inline monitoring panel that has information including row counts and copy duration for each table. Learn more in [How to monitor a Copy job](monitor-copy-job.md)
+1. Your Copy job starts immediately, and you can track the job's status from the inline monitoring panel that has information including row counts and copy duration for each file. Learn more in [How to monitor a Copy job](monitor-copy-job.md).
 
    :::image type="content" source="media/copy-job/monitor-run-history1.png" lightbox="media/copy-job/monitor-run-history1.png" alt-text="Screenshot showing the Copy job panel where you can monitor run history for moving data between storage.":::
 
@@ -121,13 +123,41 @@ Follow these steps to set up a Copy job that moves data from file storage:
 
     :::image type="content" source="media/copy-job/edit-copy-job1.png" lightbox="media/copy-job/edit-copy-job1.png" alt-text="Screenshot showing how to edit Copy job for storage store.":::
 
+## Choose data source for Copy job
+
+To get data for a Copy job, the experience offers several source and destination selection options. Depending on what you're looking for, select the option from the top of the get data experience:
+
+- **Home**:
+
+   [!INCLUDE [Home module](~/../powerquery-repo/powerquery-docs/includes/get-data-home-module.md)]
+
+- **New**:
+
+   [!INCLUDE [New data source module](~/../powerquery-repo/powerquery-docs/includes/get-data-new-source-module.md)]
+
+- **OneLake catalog**:
+
+   [!INCLUDE [OneLake catalog module](~/../powerquery-repo/powerquery-docs/includes/get-data-onelake-catalog-module.md)]
+
+- **Azure**:
+
+   [!INCLUDE [Azure data sources module](~/../powerquery-repo/powerquery-docs/includes/get-data-azure-sources-module.md)]
+
+- **Sample data**:
+
+   [!INCLUDE [Sample data module](includes/get-data-sample-data-module.md)]
+
+- **New Fabric item**:
+
+   [!INCLUDE [New Fabric item module](~/../powerquery-repo/powerquery-docs/includes/get-data-new-fabric-item-module.md)]
+
 ## Known limitations
 
-- Currently, incremental copy mode only works with some sources. For details, see [supported connectors for Copy job.](what-is-copy-job.md#supported-connectors)
+- Currently, incremental copy mode only works with some sources. For details, see [supported connectors for Copy job](what-is-copy-job.md#supported-connectors).
 - Row deletion can't be captured from a source store.
 - When copying files to storage locations, empty files will be created at the destination if no data is loaded from the source.
 
 ## Related content
 
-- [What is the Copy job in Data Factory](what-is-copy-job.md)
-- [How to monitor a Copy job](monitor-copy-job.md)
+- [What is Copy job in Data Factory for Microsoft Fabric?](what-is-copy-job.md)
+- [Monitor a Copy job in Data Factory for Microsoft Fabric](monitor-copy-job.md)
