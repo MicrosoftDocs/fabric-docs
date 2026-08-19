@@ -172,7 +172,7 @@ npm install
 npx rayfin --version
 ```
 
-### CLI global vs local version mismatch
+### CLI global and local version mismatch
 
 **Symptom:** CLI commands fail with unexpected errors across projects.
 
