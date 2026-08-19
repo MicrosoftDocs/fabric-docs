@@ -59,9 +59,11 @@ It contains the following sample CSV files. The data contains static entity deta
 
 Follow these steps to prepare the sample tutorial data in a lakehouse.
 
-1. Start in your Fabric workspace. Use the **+ New item** button to create a new **Lakehouse** item called *OntologyDataLH*.
+1. Start in your Fabric workspace. Use the **+ New item** button to create a new **Lakehouse** item.
 
     :::image type="content" source="media/tutorial-0-introduction/lakehouse-new.png" alt-text="Screenshot of creating a new lakehouse item." lightbox="media/tutorial-0-introduction/lakehouse-new.png":::
+
+1. For the lakehouse **Name**, enter *OntologyDataLH*. For **Location**, select your workspace. Check the box for **Lakehouse schemas** and select **Create**.
 
 1. The new lakehouse opens when it's ready. From the lakehouse ribbon, select **Get data > Upload files**.
 
