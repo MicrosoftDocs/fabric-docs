@@ -321,6 +321,18 @@ items:
                   href: plan/planning-reference-formulas/date-functions/extract-components-start-end-dates.md
                 - name: Date calculations
                   href: plan/planning-reference-formulas/date-functions/perform-date-calculations.md
+            - name: Statistical functions
+              items:
+                - name: Measures of central tendency
+                  href: plan/planning-reference-formulas/statistical-functions/calculate-measures-central-tendency.md
+                - name: Normal and inverse normal distribution
+                  href: plan/planning-reference-formulas/statistical-functions/calculate-normal-distribution.md
+                - name: Percentiles and percentile ranks
+                  href: plan/planning-reference-formulas/statistical-functions/calculate-percentiles-percent-ranks.md
+                - name: Ranks and quartiles
+                  href: plan/planning-reference-formulas/statistical-functions/calculate-ranking-quartiles.md
+                - name: Variance and standard deviation
+                  href: plan/planning-reference-formulas/statistical-functions/calculate-variance-standard-deviation.md
             - name: Identifiers
               href: plan/planning-reference-formulas/identifiers.md
   - name: PowerTable sheets
