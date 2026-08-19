@@ -4,7 +4,7 @@ description: Learn how to apply conditional formatting to Real-Time Dashboard vi
 ms.reviewer: gabil
 ms.topic: how-to
 ms.subservice: rti-dashboard
-ms.date: 11/19/2024
+ms.date: 08/19/2026
 ---
 
 # Apply conditional formatting in Real-Time Dashboard visuals
@@ -17,7 +17,7 @@ For each visual, you have the flexibility to define one or more conditional form
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * Editor permissions on a [Real-Time Dashboard](dashboard-real-time-create.md)
-* A table, stat, or multi stat dashboard visual
+* A KPI, multi stat, stat, or table dashboard visual
 
 ## Add a conditional formatting rule
 
@@ -96,6 +96,12 @@ To color your results by value:
 1. Select **Save**. In the following example, the cells of a table are colored from green to red based on the `Count` column.
 
     :::image type="content" source="media/dashboard-conditional-formatting/color-by-value-example.png" alt-text="Screenshot of example table of color by value." lightbox="media/dashboard-conditional-formatting/color-by-value-example.png":::
+
+## Conditional formatting a KPI visual
+
+In the **Visual setup** pane, you can apply conditional formatting to a KPI visual by selecting the **Conditional formatting** toggle. This option lets you define a rule that changes the color of the KPI within the predefined ranges.
+
+:::image type="content" source="media/dashboard-conditional-formatting/kpi-conditional-formatting.png" alt-text="Screenshot of KPI visual conditional formatting." lightbox="media/dashboard-conditional-formatting/kpi-conditional-formatting.png":::
 
 ## Related content
 
