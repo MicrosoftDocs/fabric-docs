@@ -3,7 +3,7 @@ title: Create a Real-Time Dashboard
 description: Learn how to create and customize Real-Time Dashboards to visualize data effectively using KQL queries and Copilot for seamless insights.
 ms.reviewer: mibar
 ms.topic: how-to
-ms.date: 07/09/2026
+ms.date: 08/19/2026
 author: spelluru
 ms.author: spelluru
 ms.subservice: rti-dashboard
@@ -246,6 +246,34 @@ You can add tiles to your dashboard directly from queries written in a KQL query
 1. To give the tile a name, open the tile options and select **Rename**.
 
     :::image type="content" source="media/real-time-dashboard/rename-new-tile.png" alt-text="Screenshot of the Rename tile option in the tile menu." lightbox="media/real-time-dashboard/rename-new-tile.png":::
+
+## Add a Fabric Maps tile (preview)
+
+[!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
+
+Embed an existing [Fabric Maps](map/about-fabric-maps.md) item as a tile in your dashboard. Unlike the built-in [Map visual](dashboard-visuals-customize.md), which renders directly from a KQL query defined in the tile, a Fabric Maps tile embeds a pre-authored, multi-layer map item as-is. This approach lets you reuse the same map across dashboards without redefining its data sources, queries, or styling.
+
+The embedded map is a self-contained visual: its data sources, queries, layers, and styling stay authored and maintained in the original map item, and any changes you make there appear automatically in the tile. In the dashboard, although you can't edit the map's settings, you can adjust the tile's layout position and size.
+
+The map tile renders in map view mode, so viewers can pan, zoom, hover, select features, switch the basemap style, toggle layer visibility, and modify unlocked filters at runtime. Locked filters, set by the map's author, are always applied and can't be removed. Any changes a viewer makes are temporary and reset the next time the map is opened.
+
+1. In your dashboard, switch to [**Editing mode**](#edit-mode). Your dashboard must already have a [data source](#add-data-source) configured before you can add a tile.
+
+1. Select **New visual** from the top menu bar, and then select **Fabric Maps**.
+
+    :::image type="content" source="media/real-time-dashboard/fabric-map.png" alt-text="Screenshot of the New visual menu with Fabric Maps highlighted." lightbox="media/real-time-dashboard/fabric-map.png":::
+
+1. In the catalog picker, either:
+
+   * Select an existing map to embed it as-is, in its published state.
+   * Select **Create a new map** to open the map creation flow in a new browser tab. After you save the new map, return to your dashboard and select the new map from the catalog.
+
+1. Adjust the tile's layout position and size as needed.
+
+1. In the dashboard toolbar, select the **Save** icon to save the dashboard with the new tile.
+
+> [!NOTE]
+> If the referenced map item is deleted, or if the dashboard is duplicated to a workspace where the map item doesn't exist, the tile shows an error state.
 
 ## Add page
 
