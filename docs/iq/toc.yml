@@ -122,7 +122,9 @@ items:
         - name: Connected planning
           href: plan/infobridge-concept-connected-planning.md
         - name: Connected planning - Integrate visualization
-          href: plan/infobridge-concept-blend-measures.md          
+          href: plan/infobridge-concept-blend-measures.md
+        - name: Approval workflow
+          href: plan/planning-concept-approval-workflow.md          
     - name: How-tos
       items:
         - name: Measure and row-based planning
