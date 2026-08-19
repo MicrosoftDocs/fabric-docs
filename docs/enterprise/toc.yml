@@ -148,9 +148,11 @@ items:
     href: powerbi/onelake-integration-overview.md
   - name: Power BI licensing for organizations
     href: powerbi/service-admin-power-bi-licensing.md 
-  - name: Power BI sovereign clouds
+  - name: Sovereign clouds
     expanded: false
     items:
+    - name: Microsoft Fabric for GCC High
+      href: us-government-community-cloud-high.md
     - name: Power BI for US government
       href: powerbi/service-government-us-overview.md
     - name: Enroll a US government organization

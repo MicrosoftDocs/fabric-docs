@@ -1,7 +1,7 @@
 ---
 title: How to configure dbt jobs in Microsoft Fabric
 description: This article outlines the options for configuring a dbt job, including adapter settings and advanced execution parameters.
-ms.reviewer: akurnala
+ms.reviewer: akurnala, meghasony
 ms.topic: how-to
 ms.date: 06/11/2025
 ms.search.form: dbt-job-tutorials
@@ -77,10 +77,11 @@ Each adapter supports different authentication methods based on the target platf
 
 | Adapter | Supported authentication types | Adapter version|
 |---|---|---|
-| Azure SQL Database | Basic, Service Principal (SPN) | 1.8.5 | 
-| Fabric Data Warehouse | Microsoft Entra (OAuth) | 1.9.0 |
-| PostgreSQL database | Basic authentication | 1.9.0 |
-| Snowflake | Snowflake authentication |  1.9.0 |
+| Azure SQL Database | Basic, Service Principal (SPN) | 1.9.1 | 
+| Fabric Data Warehouse | Microsoft Entra (OAuth) | 1.10.0 |
+| Fabric Lakehouse | Microsoft Entra (OAuth) | 1.12.2 |
+| PostgreSQL database | Basic authentication | 1.10.0 |
+| Snowflake | Snowflake authentication |  1.11.5 |
 
 For adapter versions and runtime details, see [Supported adapters and runtime](dbt-job-overview.md#supported-adapters-and-runtime).
 
