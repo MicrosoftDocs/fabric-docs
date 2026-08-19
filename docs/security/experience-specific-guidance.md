@@ -5,7 +5,8 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: how-to
-ms.date: 08/11/2026
+ms.date: 08/17/2026
+ai-usage: ai-assisted
 ---
 
 # Experience-specific disaster recovery guidance
@@ -43,7 +44,7 @@ The following sections provide step-by-step guides for each Fabric experience to
  
 ## Data Engineering
 
-This guide walks you through the recovery procedures for the Data Engineering experience. It covers lakehouses, notebooks, and Spark job definitions.
+This guide walks you through the recovery procedures for the Data Engineering experience. It covers lakehouses, notebooks, Spark job definitions, user data functions, and GraphQL APIs.
 
 ### Lakehouse
 
@@ -194,11 +195,76 @@ Now you can run or schedule your newly recovered SJD.
 
 For details about Azure Storage Explorer, see [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md).
 
+### User data functions
+
+To recover your user data functions in a healthy region, use one of the following approaches.
+
+#### Approach 1: With Git integration (recommended)
+
+The preferred recovery mechanism is [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md). By synchronizing user data function projects with an Azure DevOps or GitHub repository, you can quickly reconstruct them in a new workspace after failover.
+
+##### Prepare before a disaster
+
+1. Configure Fabric Git integration for the workspace that hosts the user data function.
+1. Connect the workspace to an Azure DevOps or GitHub repository.
+1. Commit all user data function to the repository and synchronize changes regularly.
+1. Store environment-specific settings separately in variable libraries if required.
+
+##### Recovery steps
+
+After a regional disaster:
+
+1. Create a new Fabric capacity in a healthy region, such as C2.
+1. Create a new workspace, such as W2, in the new capacity.
+1. Connect the workspace to the same Azure DevOps or GitHub repository.
+1. Open **Source control** and synchronize the repository contents to the workspace.
+1. Recreate or recover all dependent Fabric resources, such as lakehouses, SQL databases in Fabric, warehouses, and Business Events.
+1. Redeploy the user data functions.
+1. Validate function execution and dependency connectivity.
+1. Update downstream applications, data pipelines or other integrated to refernece the recovered functions.
+1. Complete End to End validation of all your scenarios.
+
+##### Important considerations
+
+- Git integration recovers only source code and project assets.
+- Historical execution logs aren't recovered.
+- Downstream systems might require endpoint rebinding.
+
+For more information, see [User data functions source control and deployment](../data-engineering/user-data-functions/git-and-deployment-pipelines.md).
+
+#### Approach 2: Manual recovery
+
+If Git integration wasn't configured before the disaster, you can manually reconstruct user data functions from source code backups.
+
+##### Prepare before a disaster
+
+Regularly complete the following tasks, and store the artifacts in an external source control repository or backup location:
+
+- Export function source code to a GitHub repository.
+- Document and preserve dependency information. 
+- Document environment settings.
+
+##### Recovery steps
+
+After a regional disaster:
+
+1. Create a new Fabric capacity in a healthy region, such as C2.
+1. Create a new workspace, such as W2.
+1. Recover all resources required by the function, including lakehouses, SQL databases in Fabric, warehouses, eventhouses, and external services.
+1. Create a new user data function project.
+1. Import or recreate the function source code.
+1. Reapply runtime configuration settings.
+1. Reinstall all function dependencies.
+1. Redeploy the function.
+1. Reconfigure authentication and authorization.
+1. Recreate Business Event publishers or consumers, if used.
+1. Complete end-to-end validation testing for your scenarios and integrations.
+
 ### GraphQL
 
 GraphQL items from the primary region aren't available after a regional disaster, and GraphQL definitions and configurations aren't replicated to the secondary region. To recover GraphQL in a new region, use one of the following approaches.
 
-#### Approach 1: User-managed redundancy with Git integration (in public preview)
+#### Approach 1: User-managed redundancy with Git integration 
 
 The best way to make this process easy and quick is to use Fabric Git integration, and then synchronize your GraphQL with your ADO repo. After the service fails over to another region, you can use the repo to rebuild the GraphQL in the new workspace you created.
 
@@ -679,7 +745,7 @@ The recreated database is an independent database.  Data added to the recreated 
 Platform refers to the underlying shared services and architecture that apply to all workloads. This section describes recovery procedures for shared Fabric capabilities.
 
 ### Workspace monitoring
- 
+
 Workspace monitoring collects logs about activity in the workspace where you enable it. After you recover your workspace as C2.W2, enable workspace monitoring on W2. It starts collecting monitoring data for the recovered workspace.
 
 Monitoring data from the original workspace (C1.W1) isn't carried over, because monitoring reflects the activity of the workspace it runs on.
