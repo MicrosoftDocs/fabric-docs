@@ -1,13 +1,13 @@
 ---
-title: "Tutorial: Configure the Mirror Azure Monitor Feature in Fabric (Preview)"
+title: "Tutorial: Configure the Mirror Azure Monitor Solution in Fabric (Preview)"
 description: Learn how to create a mirrored Azure Monitor item in Microsoft Fabric and access Log Analytics tables through the Eventhouse endpoint or a Lakehouse shortcut.
 ms.reviewer: nirarazy, ilanawaitser
-ms.date: 06/08/2026
+ms.date: 07/29/2026
 ms.topic: tutorial
 ai-usage: ai-assisted
 ---
 
-# Tutorial: Configure the Mirror Azure Monitor feature in Microsoft Fabric (preview)
+# Tutorial: Configure the Mirror Azure Monitor solution in Microsoft Fabric (preview)
 
 In this tutorial, you configure a Microsoft Fabric mirrored Azure Monitor item that exposes selected Log Analytics tables to Fabric workloads without replicating data.
 
@@ -18,12 +18,14 @@ In this tutorial, you:
 - Select tables to mirror to Fabric.
 - Access the mirrored data through the Eventhouse endpoint (real-time analytics) and a Lakehouse shortcut (batch analytics and Power BI).
 
-For more information, see [Mirror Azure Monitor data in Microsoft Fabric (Preview)](azure-monitor.md).
+For more information, see [Mirror Azure Monitor data in Microsoft Fabric (Preview)](azure-monitor.md). 
+<br>
+For onboarding with AI, see [Onboard with the Mirror Azure Monitor Fabric skill](azure-monitor.md#onboard-with-the-mirror-azure-monitor-skill).
 
 ## Prerequisites
 
 - An existing **Log Analytics workspace** with the tables to expose to Fabric.
-- The `Microsoft.Authorization/roleAssignments/write` action on the Log Analytics workspace, needed to create the connection. The **Owner**, **User Access Administrator**, and **Role Based Access Control Administrator** [privileged roles](/azure/role-based-access-control/built-in-roles/privileged) include this action permission.
+- Connection creation role - A custom role on the Log Analytics workspace with permissions as detailed in [Create connection custom role](azure-monitor.md#create-connection-permissions) or as provided by the **Owner**, **User Access Administrator**, or **Role Based Access Control Administrator** [privileged roles](/azure/role-based-access-control/built-in-roles/privileged).
 - An existing **Fabric capacity**. If none exists, [start a Fabric trial](../../fundamentals/fabric-trial.md).
 - A Fabric **workspace** (not *My workspace*) to hold the mirrored item.
 - The **Mirrored Azure Monitor** catalog item enabled for your tenant. A tenant admin enables it in the Fabric **Admin portal** under **Tenant settings** > **Mirrored catalog item**. Complete this step if the **Mirrored Azure Monitor** card doesn't appear in **+ New item**.
@@ -42,7 +44,7 @@ This section shows how to create the item from the Fabric portal. The steps here
 
 ## Connect to the Log Analytics workspace
 
-Authentication depends on whether the Fabric tenant matches the Log Analytics tenant. Creating a new connection requires the `Microsoft.Authorization/roleAssignments/write` action on the Log Analytics workspace, which the **Owner**, **User Access Administrator**, and **Role Based Access Control Administrator** roles include. After a connection exists, other users in the Fabric workspace can reuse the connection to create their own mirrored items without needing that action, because the connection operates under the credentials of the user who created it. To reuse an existing connection, select it instead of creating a new one in the following steps.
+Authentication depends on whether the Fabric tenant matches the Log Analytics tenant. Creating a new connection requires a [connection creation custom role](azure-monitor.md#create-connection-permissions) on the Log Analytics workspace, or by using the **Owner**, **User Access Administrator**, or **Role Based Access Control Administrator** role. After a connection exists, other users in the Fabric workspace can reuse the connection to create their own mirrored items without needing that action, because the connection operates under the credentials of the user who created it. To reuse an existing connection, select it instead of creating a new one in the following steps.
 
 ### Same-tenant connection (OAuth)
 
@@ -55,14 +57,14 @@ Authentication depends on whether the Fabric tenant matches the Log Analytics te
     | **Connection name** | A friendly name for the connection. The portal suggests a default. |
     | **Authentication kind** | **OAuth 2.0**. The signed-in user authenticates against the Log Analytics tenant. |
 
-1. Select **Sign in** when prompted, and then complete the OAuth flow with an account that holds the `Microsoft.Authorization/roleAssignments/write` action on the workspace.
+1. Select **Sign in** when prompted, then complete the OAuth flow with an account that holds the connection creation role on the workspace.
 
 ### Same-tenant production connection (workspace identity)
 
 For same-tenant production scenarios, use the Fabric workspace identity instead of an organizational account. This approach avoids the risk of shortcuts breaking when a user account changes.
 
 1. Under **New connection**, select **Azure Monitor** and choose **Workspace identity** as the authentication kind.
-1. Grant the workspace identity the Owner role (or the minimum Log Analytics role required for the mirrored item) on the Log Analytics workspace.
+1. Grant the workspace identity the create connection role (or built-in role required for the mirrored item) on the Log Analytics workspace.
 1. Provide the Log Analytics workspace ID.
 1. Select **Connect**.
 
@@ -77,7 +79,7 @@ Use this option when the Fabric tenant differs from the Log Analytics tenant.
     | :-- | :-- |
     | **Tenant ID** | The Microsoft Entra tenant ID of the **Log Analytics tenant** (not the Fabric tenant). |
     | **Log Analytics workspace ID** | The workspace ID of the Log Analytics workspace to mirror. |
-    | **Application (client) ID** | The client ID of the service principal that has access to the workspace. |
+    | **Application (client) ID** | The client ID of the service principal that has the connection creation access to the workspace. |
     | **Client secret** | The client secret for the service principal. Store this value in Azure Key Vault rather than entering it inline whenever possible. |
 
 1. Select **Connect**.
@@ -107,7 +109,7 @@ Only new data is mirrored. Data that arrived before the table was mirrored isn't
 
 ## Share the mirrored item with business users
 
-By default, the mirrored item inherits permissions from the Fabric workspace. Only users with access to the Fabric workspace see the item. To grant business users access to the mirrored data for real-time analytics, Power BI semantic models, or other scenarios described in the [Supported scenarios](azure-monitor.md#supported-scenarios) section of the overview article, use OneLake security.
+By default, the mirrored item inherits permissions from the Fabric workspace. Only users with access to the Fabric workspace see the item. To grant business users access to the mirrored data for real-time analytics, Power BI semantic models, or other scenarios described in the [Common use cases](azure-monitor.md#common-use-cases) section of the overview article, use OneLake security.
 
 During public preview, the mirrored item **Share** action has known issues. Use [OneLake security](../../onelake/security/get-started-onelake-security.md) to grant granular access to the mirrored data instead of the **Share** action.
 
@@ -219,5 +221,6 @@ To remove the connection, delete it from the **Connections** list in the Fabric 
 
 - [Mirroring Azure Monitor in Microsoft Fabric](azure-monitor.md)
 - [What is Mirroring in Fabric?](../../mirroring/overview.md)
+- [Skills for Fabric overview](../../fundamentals/skills-for-fabric-overview.md)
 - [Azure Monitor Logs overview](/azure/azure-monitor/logs/data-platform-logs)
 - [Microsoft Fabric Real-Time Intelligence overview](../../real-time-intelligence/overview.md)

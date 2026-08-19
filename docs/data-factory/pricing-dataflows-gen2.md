@@ -2,17 +2,18 @@
 title: Pricing for Dataflow Gen2
 description: This article provides details of the pricing model of Dataflow Gen2 for Data Factory in Microsoft Fabric.
 ms.reviewer: susabat
-ms.date: 07/24/2026
+ms.date: 08/13/2026
 ms.topic: concept-article
 ms.custom:
   - dataflows
+ai-usage: ai-assisted
 ---
 
 # Dataflow Gen2 pricing for Data Factory in Microsoft Fabric
 
 Dataflow Gen2 helps you shape and transform data with ease. It offers a low-code interface and over 300 built-in data and AI transformations, all powered by the familiar Power Query experience you'll find in Excel, Power BI, Power Platform, and Dynamics 365. Dataflow Gen2 also supports Spark-backed transformation execution through mapping data flow (MDF) transforms for native and migrated workloads.
 
-This pricing applies to all Fabric capacity SKUs (F2 and above). Pricing doesn't apply to Fabric trial capacities.
+This pricing applies to all Fabric capacity SKUs (F2 and above). Pricing doesn't apply to Fabric trial capacities. For real-world CU consumption benchmarks across common scenarios, see [Dataflow Gen2 cost and performance benchmarks](dataflow-gen2-cost-performance-benchmarks.md).
 
 When you publish a dataflow, it creates a definition that runs during refresh. The Dataflow Gen2 engine uses that definition to plan and manage how queries run-across data sources, gateways, and compute engines. It builds tables in staging storage or sends them to your chosen destination, so you get reliable results without the heavy lifting.
 
@@ -26,7 +27,7 @@ When you refresh or publish a Dataflow Gen2 item, Fabric Capacity Units are cons
 
 - Standard Compute: You're charged for it based on the query evaluation time across all your Dataflow queries that run through the Mashup engine.
 - High Scale Dataflow Compute: You're charged when staging is enabled, based on Lakehouse (Staging storage) and Warehouse (Storage Compute) SQL engine consumption duration.
-- Fast Copy: You're charged when fast copy connectors are enabled and can be used in the Dataflow, based on copy job duration.
+- Fast Copy: You're charged when fast copy connectors are enabled and can be used in the Dataflow, based on copy job duration. Fast Copy runs in parallel across multiple cores, so this duration is the total time spent across all the cores the copy job uses, not the wall-clock time of the refresh.
 - Spark Compute: You're charged based on Spark execution duration and Spark core usage when MDF transforms are executed during pipeline runs. MDF transform workloads in Dataflow Gen2 are currently executed through the Fabric Pipeline Dataflow activity.
 
 ## Dataflow Gen2 pricing model
@@ -42,9 +43,12 @@ In Dataflow Gen2 (CI/CD), there's a two-tier rate applied to the query duration:
 
 If your Dataflow Gen2 is non-CI/CD, the rate is 16 CU applied to the entire query duration.
 
+> [!NOTE]
+> When you use [partitioned compute](dataflow-gen2-partitioned-compute.md), Dataflow Gen2 evaluates each partition as its own unit of work. Standard compute charges are based on the sum of the processing duration of every partition. Running partitions in parallel shortens the overall (wall-clock) time to complete the run, while the total CU consumption reflects the combined compute of all partitions.
+
 For high-scale scenarios-when staging is turned on-queries run on the Lakehouse or Warehouse SQL engine. Each second of compute time uses 6 CU seconds, so longer queries consume more.
 
-If you turn on fast copy, there's a separate rate for data movement: 1.5 CU, based on how long the activity runs.
+If you turn on fast copy, there's a separate rate for data movement: 1.5 CU, based on how long the activity runs. Fast copy automatically balances each scenario to decide how many cores to use, and the billed duration is the total time spent across all of those cores rather than the wall-clock time you see in the refresh history. Spreading the work across more cores shortens the elapsed time, while the billed duration accounts for every core the copy job uses.
 
 At the end of each run, Dataflow Gen2 adds up the CU usage from each engine and bills it based on the Fabric capacity pricing in your region.
 
@@ -55,7 +59,8 @@ At the end of each run, Dataflow Gen2 adds up the CU usage from each engine and 
 | Standard Compute (Dataflow Gen2 (CI/CD)) | Based on each mashup engine query execution duration in seconds. Standard Compute has two tier pricing depending on the query duration. | - For every second up to 10 minutes, 12 CU<br />- For every second beyond 10 minutes, 1.5 CU | Per Dataflow Gen2 item |
 | Standard Compute (non CI/CD) | Based on each mashup engine query execution duration in seconds. | 16 CU | Per Dataflow Gen2 item |
 | High Scale Dataflows Compute | Based on Lakehouse/Warehouse SQL engine execution (with staging enabled) duration in seconds. | 6 CU | Per workspace |
-| Data movement | Based on Fast Copy run duration in seconds and the used intelligent optimization throughput resources. | 1.5 CU | Per Dataflow Gen2 item |
+| Data movement | Based on Fast Copy run duration, measured as the aggregate core time in seconds summed across all the cores the copy job uses. Dataflow automatically balances how many cores each fast copy scenario uses. | 1.5 CU | Per Dataflow Gen2 item |
+| Mapping Data Flow Transforms Compute (Preview) | Based on MDF transform execution duration in seconds using Spark-backed compute within Dataflow Gen2. | 1.5 CU per Spark core-hour<br /><br />Example: An 8-core Spark cluster consumes 12 CU for each hour of execution (8 × 1.5 CU). | Per Dataflow Gen2 item |
 
 ## Virtual network data gateway pricing with Dataflow Gen2
 
@@ -137,3 +142,4 @@ FastCopyComputeCapacityConsumptionInCUSeconds = QueryDurationInSeconds x 1.5
 
 - [Pricing example scenarios](pricing-overview.md#pricing-examples)
 - [Pricing pipelines](pricing-pipelines.md)
+- [Dataflow Gen2 cost and performance benchmarks](dataflow-gen2-cost-performance-benchmarks.md)

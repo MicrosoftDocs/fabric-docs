@@ -69,7 +69,7 @@ spark.sql("DROP TABLE IF EXISTS schema_name.table_name")
 
 When you drop a managed Delta table in Fabric:
 
-1. The metastore removes the table entry, so the table no longer appears in the lakehouse explorer or SQL analytics endpoint.
+1. The metastore removes the table entry, so the table no longer appears in the Lakehouse explorer or SQL analytics endpoint.
 1. The Delta log directory and all Parquet data files are deleted from OneLake.
 
 For external tables, only step 1 occurs. The data files remain in OneLake and can be re-registered later with `CREATE TABLE ... USING DELTA LOCATION`.

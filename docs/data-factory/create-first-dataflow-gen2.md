@@ -89,7 +89,7 @@ You transform the data in the Power Query editor. You can find a detailed overvi
 
    :::image type="content" source="media/create-first-dataflow-gen2/combine-customers-orders.png" alt-text="Screenshot of the dataflow editor, with the vertical ellipsis of the Customers table and Merge queries as new emphasized." lightbox="media/create-first-dataflow-gen2/combine-customers-orders.png":::
 
-1. Configure the [Merge operation](/power-query/merge-queries-overview) by selecting **CustomerID** as the matching column in both tables. Then select **Ok**.
+1. Configure the [Merge operation](/power-query/merge-queries-overview) by selecting **CustomerID** as the matching column in both tables. Then select **OK**.
 
    :::image type="complex" source="media/create-first-dataflow-gen2/merge-customers.png" alt-text="Screenshot of the Merge window.":::
    Screenshot of the Merge window, with the Left table for merge set to the Customers table and the Right table for merge set to the Orders table. The CustomerID column is selected for both the Customers and Orders tables. Also, the Join Kind is set to Left outer. All other selections are set to their default value.
@@ -178,7 +178,7 @@ The dataflow in this sample shows you how to load and transform data in Dataflow
 > - Create a Dataflow Gen2.
 > - Transform data.
 > - Configure destination settings for transformed data.
-> - Run and schedule your pipeline.
+> - Run and schedule your dataflow.
 
 Advance to the next article to learn how to create your first pipeline.
 

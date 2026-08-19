@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 Autotune automatically adjusts Apache Spark configurations to reduce workload execution time and improve performance. It helps you avoid manual tuning, which typically requires repeated trial and error. Autotune uses historical execution data from your workloads to iteratively discover and apply effective settings for each workload.
 
 > [!NOTE]
-> Autotune query tuning in Microsoft Fabric is currently in preview. It's available in all production regions, but it's disabled by default. Enable it in an environment Spark configuration, or for a single session in notebook or Spark Job Definition code.
+> Autotune query tuning in Fabric is currently in preview. It's available in all production regions, but it's disabled by default. Enable it in an environment Spark configuration, or for a single session in notebook or Spark job definition code.
 
 ## Configuration defaults and requirements
 
@@ -21,7 +21,7 @@ Autotune automatically adjusts Apache Spark configurations to reduce workload ex
 - **No required setup when off**: If you don't enable autotune, Spark uses its standard configuration behavior.
 - **Required setup to use autotune**: Set `spark.ms.autotune.enabled=true` either:
 	- At the environment level so all notebooks and jobs that use that environment inherit the setting. See [Enable autotune](#enable-autotune).
-	- In one notebook or Spark Job Definition session only. See [Enable autotune for a single session](#enable-autotune-for-a-single-session).
+	- In one notebook or Spark job definition session only. See [Enable autotune for a single session](#enable-autotune-for-a-single-session).
 
 ## Query tuning
 
@@ -37,7 +37,7 @@ Autotune query tuning examines each query and builds a separate machine learning
 - Long-running queries (more than 15 seconds)
 - Apache Spark SQL API queries (not RDD API)
 
-You can use autotune with notebooks, Spark Job Definitions, and pipelines. Benefit varies by query complexity and data shape. In testing, the largest gains appear in exploratory data analysis patterns such as reads, joins, aggregations, and sorts.
+You can use autotune with notebooks, Spark job definitions, and pipelines. Benefit varies by query complexity and data shape. In testing, the largest gains appear in exploratory data analysis patterns such as reads, joins, aggregations, and sorts.
 
 :::image type="content" source="media/autotune/execution-over-time.png" alt-text="Screenshot of execution time with autotune enabled." lightbox="media/autotune/execution-over-time.png":::
 
@@ -64,7 +64,7 @@ Autotune includes built-in regression detection. For example, if a query process
 > [!NOTE]
 > Autotune is compatible with [Runtime 1.2](./runtime-1-2.md). You can't enable it on runtime versions later than 1.2. It doesn't run when [high concurrency mode](./high-concurrency-overview.md) or [private endpoint](./../security/security-managed-private-endpoints-overview.md) is enabled. Autotune works with autoscaling in any autoscaling configuration.
 
-You can also enable autotune for a single session by setting the Spark property in your notebook or Spark Job Definition.
+You can also enable autotune for a single session by setting the Spark property in your notebook or Spark job definition.
 
 ### Enable autotune for a single session
 
@@ -101,7 +101,7 @@ sparkR.conf("spark.ms.autotune.enabled", "true")
 
 ### Disable autotune for a single session
 
-To disable autotune in a notebook or Spark Job Definition, run one of the following commands as the first cell or first line of code.
+To disable autotune in a notebook or Spark job definition, run one of the following commands as the first cell or first line of code.
 
 # [Spark SQL](#tab/sparksql)
 
@@ -193,5 +193,5 @@ User data is exclusively used to enhance your workload's performance, with robus
 
 ### Related content
 
-- [Concurrency limits and queueing in Apache Spark for Microsoft Fabric](spark-job-concurrency-and-queueing.md)
-- [Apache Spark compute in Microsoft Fabric](spark-compute.md)
+- [Concurrency limits and queueing in Apache Spark for Fabric](spark-job-concurrency-and-queueing.md)
+- [Apache Spark compute in Fabric](spark-compute.md)

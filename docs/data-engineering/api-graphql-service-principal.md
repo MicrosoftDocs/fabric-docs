@@ -33,7 +33,7 @@ Service principal authentication is designed for:
 
 Before setting up service principal authentication, ensure you have:
 
-- A Microsoft Fabric workspace with admin permissions
+- A Fabric workspace with admin permissions
 - An existing API for GraphQL in your workspace. See [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md).
 - Permissions to create app registrations in Microsoft Entra ID
 - Tenant admin access to enable service principal settings in Fabric (or ask your admin to enable this)
@@ -77,7 +77,7 @@ Your service principal needs two levels of access:
 1. Select **Run Queries and Mutations** (grants Execute permission)
 1. Select **Grant**
 
-Additionally, ensure the service principal has appropriate read/write permissions to the underlying data source (Lakehouse, Data Warehouse, or SQL database).
+Additionally, ensure the service principal has appropriate read/write permissions to the underlying data source (lakehouse, warehouse, or SQL database).
 
 ### Option B: Workspace role (simpler for development/testing)
 

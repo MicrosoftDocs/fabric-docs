@@ -9,7 +9,7 @@ ms.search.form: Lakehouse Overview
 
 # What is a lakehouse in Microsoft Fabric?
 
-A lakehouse in Microsoft Fabric combines the scalability of a data lake with the querying capabilities of a data warehouse. You store structured and unstructured data in a single location, manage it with Delta Lake, and analyze it with both Apache Spark and SQL — all without moving data between systems. With [OneLake shortcuts](../onelake/onelake-shortcuts.md) and [cross-tenant data sharing](../governance/external-data-sharing-overview.md), you can also access governed data from external sources and other organizations without duplication.
+A lakehouse in Fabric combines the scalability of a data lake with the querying capabilities of a warehouse. You store structured and unstructured data in a single location, manage it with Delta Lake, and analyze it with both Apache Spark and SQL — all without moving data between systems. With [shortcuts in OneLake](../onelake/onelake-shortcuts.md) and [cross-tenant data sharing](../governance/external-data-sharing-overview.md), you can also access governed data from external sources and other organizations without duplication.
 
 A lakehouse gives you:
 
@@ -18,27 +18,27 @@ A lakehouse gives you:
 - **Spark and SQL access** so data engineers use notebooks while analysts use T-SQL
 - **Built-in integration** with Power BI, pipelines, dataflows, and other Fabric items
 
-## Lakehouse vs. data warehouse
+## Lakehouse vs. warehouse
 
-The main differences between a lakehouse and a [data warehouse](../data-warehouse/data-warehousing.md) in Microsoft Fabric come down to your preferred development tools, data types, and workload patterns. Both share the same SQL engine and store data in Delta format on OneLake, but they're designed for different scenarios:
+The main differences between a lakehouse and a [warehouse](../data-warehouse/data-warehousing.md) in Fabric come down to your preferred development tools, data types, and workload patterns. Both share the same SQL engine and store data in Delta format on OneLake, but they're designed for different scenarios:
 
-| | Lakehouse | Data warehouse |
+| | Lakehouse | Warehouse |
 |-|-|-|
 | **Primary development tool** | Apache Spark (Python, Scala, SQL, R) | T-SQL |
 | **Data types** | Structured and unstructured | Structured |
 | **Multi-table transactions** | No | Yes |
-| **Data ingestion** | Notebooks, pipelines, dataflows, [OneLake shortcuts](../onelake/onelake-shortcuts.md) (live access without copy) | T-SQL (`COPY INTO`, `INSERT`, `CTAS`), pipelines |
+| **Data ingestion** | notebooks, pipelines, dataflows, [shortcuts in OneLake](../onelake/onelake-shortcuts.md) (live access without copy) | T-SQL (`COPY INTO`, `INSERT`, `CTAS`), pipelines |
 | **Best for** | Data engineering, data science, medallion architectures | BI reporting, dimensional modeling, SQL-first teams |
 
-You can use both in the same workspace — for example, land and transform data in a lakehouse with Spark, then expose curated datasets to a warehouse for SQL-based reporting. For detailed guidance, see [Choose between Warehouse and Lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md).
+You can use both in the same workspace — for example, land and transform data in a lakehouse with Spark, then expose curated datasets to a warehouse for SQL-based reporting. For detailed guidance, see [Choose between warehouse and lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md).
 
 ## Work with lakehouse data
 
 You can load, transform, and query data in a lakehouse through several Fabric tools:
 
-- **OneLake shortcuts** — Access data from external sources (including other tenants through [cross-tenant data sharing](../governance/external-data-sharing-overview.md)) without copying it into the lakehouse. Shortcuts provide live, read-only references to operational and analytical data across OneLake. See [OneLake shortcuts](../onelake/onelake-shortcuts.md).
+- **Shortcuts in OneLake** — Access data from external sources (including other tenants through [cross-tenant data sharing](../governance/external-data-sharing-overview.md)) without copying it into the lakehouse. Shortcuts provide live, read-only references to operational and analytical data across OneLake. See [shortcuts in OneLake](../onelake/onelake-shortcuts.md).
 
-- **Lakehouse object explorer** — Browse tables and files, load data, and manage metadata directly in the browser. You can switch between table view and file view and add multiple lakehouses to the explorer. See [Navigate the Fabric Lakehouse explorer](navigate-lakehouse-explorer.md).
+- **Lakehouse explorer** — Browse tables and files, load data, and manage metadata directly in the browser. You can switch between table view and file view and add multiple lakehouses to the explorer. See [Navigate the Lakehouse explorer](navigate-lakehouse-explorer.md).
 
   :::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Screencast of the Lakehouse explorer showing table view, file view, and adding lakehouses." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
 
@@ -52,7 +52,7 @@ You can load, transform, and query data in a lakehouse through several Fabric to
 
 - **Dataflows Gen 2** — Ingest and prepare data with a low-code, visual interface. See [Create your first dataflow](../data-factory/create-first-dataflow-gen2.md).
 
-For a full comparison of ingestion options, see [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md).
+For a full comparison of ingestion options, see [Options to get data into the lakehouse](load-data-lakehouse.md).
 
 ### Analyze your lakehouse data with the engine of your choice
 
@@ -66,7 +66,7 @@ The lakehouse ribbon includes an **Analyze data with** dropdown that lets you op
 
 :::image type="content" source="media\lakehouse-overview\lakehouse-analyze-data.png" alt-text="Screenshot showing the Analyze data with dropdown in the lakehouse ribbon." lightbox="media\lakehouse-overview\lakehouse-analyze-data.png":::
 
-For details on each option and where to find the dropdown, see [Navigate the Fabric Lakehouse explorer](navigate-lakehouse-explorer.md#analyze-your-lakehouse-data-with-the-engine-of-your-choice).
+For details on each option and where to find the dropdown, see [Navigate the Lakehouse explorer](navigate-lakehouse-explorer.md#analyze-your-lakehouse-data-with-the-engine-of-your-choice).
 
 ## Lakehouse SQL analytics endpoint
 
@@ -76,14 +76,14 @@ When you create a lakehouse, Fabric automatically generates a [SQL analytics end
 - **Connect Power BI directly** — Create a [Power BI semantic model](../data-warehouse/semantic-models.md) to build reports on your lakehouse data.
 - **Share read-only access** — Analysts and report builders can query the data without affecting Spark workloads. 
 
-The SQL analytics endpoint is read-only and doesn't support the full T-SQL surface of a [data warehouse](../data-warehouse/data-warehousing.md). Use it for exploration, reporting, and ad-hoc queries.
+The SQL analytics endpoint is read-only and doesn't support the full T-SQL surface of a [warehouse](../data-warehouse/data-warehousing.md). Use it for exploration, reporting, and ad-hoc queries.
 
 > [!NOTE]
-> Since September 5, 2025, default semantic models are no longer created automatically when you create a lakehouse. Existing default semantic models were decoupled from their parent items by November 30, 2025 and became independent semantic models. For more information, see [Power BI semantic models in Microsoft Fabric](../data-warehouse/semantic-models.md).
+> Since September 5, 2025, default semantic models are no longer created automatically when you create a lakehouse. Existing default semantic models were decoupled from their parent items by November 30, 2025 and became independent semantic models. For more information, see [Power BI semantic models in Fabric](../data-warehouse/semantic-models.md).
 
 
 > [!NOTE]
-> Only Delta tables appear in the SQL analytics endpoint. This includes Delta tables reached through [OneLake shortcuts](../onelake/onelake-shortcuts.md), which are visible and queryable alongside locally stored tables. Parquet, CSV, and other formats can't be queried through this endpoint. If you don't see your table, [convert it to Delta format](load-to-tables.md).
+> Only Delta tables appear in the SQL analytics endpoint. This includes Delta tables reached through [shortcuts in OneLake](../onelake/onelake-shortcuts.md), which are visible and queryable alongside locally stored tables. Parquet, CSV, and other formats can't be queried through this endpoint. If you don't see your table, [convert it to Delta format](load-to-tables.md).
 
 ## Automatic table discovery and registration
 
@@ -119,10 +119,10 @@ The lakehouse supports assistive technologies and accessible interaction pattern
 
 ## Related content
 
-- [Create a lakehouse in Microsoft Fabric](create-lakehouse.md)
-- [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md)
-- [Lakehouse SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md)
+- [Create a lakehouse in Fabric](create-lakehouse.md)
+- [Options to get data into the lakehouse](load-data-lakehouse.md)
+- [lakehouse SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md)
 - [Query data with the Spark SQL query explorer](lakehouse-query-explorer.md)
 - [Explore data with a lakehouse notebook](lakehouse-notebook-explore.md)
-- [Choose between Warehouse and Lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md)
+- [Choose between warehouse and lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md)
 - [Recover deleted files in OneLake](../onelake/soft-delete.md)

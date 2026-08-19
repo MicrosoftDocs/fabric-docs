@@ -15,7 +15,7 @@ You access the report directly in Fabric. If needed, you can later open the unde
 
 ## Create and access the report
 
-To create the materialized lake views data quality report for your lakehouse in Microsoft Fabric:
+To create the materialized lake views data quality report for your lakehouse in Fabric:
 
 1. In your workspace, open the lakehouse.
 

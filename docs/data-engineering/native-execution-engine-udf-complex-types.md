@@ -146,7 +146,7 @@ Complex data type acceleration is especially important for:
 
 - **Z-ORDER optimization**: Nested columns participate in optimized data layout.
 - **Liquid clustering**: Complex type columns benefit from clustering without flattening.
-- **Semi-structured analytics**: JSON payloads and event streams remain nested for natural querying.
+- **Semi-structured analytics**: JSON payloads and eventstreams remain nested for natural querying.
 - **Event-driven architectures**: Telemetry and IoT data retain their hierarchical structure.
 
 Instead of flattening data or restructuring pipelines for performance, work naturally with complex schemas while maintaining high execution efficiency.
@@ -159,7 +159,7 @@ To enable the native execution engine, see [Native execution engine for Fabric D
 
 ## Prerequisites
 
-- [Runtime 1.3 (Apache Spark 3.5)](./runtime-1-3.md) or [Runtime 2.0 (Apache Spark 4.0)](./runtime-2-0.md).
+- [Runtime 1.3 (Apache Spark 3.5)](./runtime-1-3.md) or [Runtime 2.0 (Apache Spark 4.1)](./runtime-2-0.md).
 - Native execution engine enabled at the environment, notebook, or Spark job definition level.
 
 ## Limitations

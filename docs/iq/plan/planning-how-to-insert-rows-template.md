@@ -10,8 +10,6 @@ ms.topic: how-to
 
 Plan enables efficient hierarchy handling with template rows, letting you insert custom rows across all levels of a hierarchy at once instead of adding them individually.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 This article explains how to insert template rows and use them across hierarchy levels.
 
 ## Create a template row

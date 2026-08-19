@@ -1,6 +1,6 @@
 ---
 title: Pivot Data in Planning Sheets
-description: Learn how to use the Pivot feature in Fabric plan (preview) planning sheets for flexible data analysis and customized views.
+description: Learn how to use the Pivot feature in planning sheets for flexible data analysis and customized views.
 ms.date: 05/04/2026
 ms.topic: how-to
 #customer intent: As a user, I want to understand and use use the Pivot feature in Fabric Plan planning sheets effectively.
@@ -9,8 +9,6 @@ ms.topic: how-to
 # Pivot data in planning sheets
 
 *Pivot data* lets you reorganize row dimensions to create alternate views of your data without changing the underlying dataset.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 Each pivot view represents a unique arrangement of dimensions, enabling flexible analysis and planning across different perspectives.
 

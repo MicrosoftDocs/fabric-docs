@@ -10,7 +10,7 @@ ms.date: 02/21/2026
 # Customer Intent: As a data engineer, I want to use lakehouses to transform data and build reports using Power BI and Fabric.
 ---
 
-# Lakehouse tutorial: Create a lakehouse, ingest sample data, and build a report
+# Lakehouse tutorial: Create a lakehouse, ingest sample data, and create a report
 
 In this tutorial, you build a lakehouse, ingest sample data into the Delta table, apply transformation where required, and then create reports.
 
@@ -20,13 +20,13 @@ In this tutorial, you build a lakehouse, ingest sample data into the Delta table
 Here's a checklist of the steps you complete in this tutorial:
 
 > [!div class="checklist"]
-> * [Create a lakehouse in Microsoft Fabric](#create-a-lakehouse)
+> * [Create a lakehouse in Fabric](#create-a-lakehouse)
 > * [Download and ingest sample customer data](#ingest-sample-data)
 > * [Transform and load data into the lakehouse](#transform-and-load-data-into-the-lakehouse)
 > * [Add tables to the semantic model](#add-tables-to-the-semantic-model)
-> * [Build a report](#build-a-report)
+> * [Create a report](#create-a-report)
 
-If you don't have Microsoft Fabric, sign up for a free [trial capacity](../fundamentals/fabric-trial.md).
+If you don't have Fabric, sign up for a free [trial capacity](../fundamentals/fabric-trial.md).
 
 ## Prerequisites
 
@@ -40,7 +40,7 @@ You need OneDrive for this tutorial because the data ingestion process relies on
 The ingestion step doesn't work if you don't have OneDrive configured, because Fabric can't access the uploaded file. If you already have the data available in your lakehouse or another supported location, OneDrive isn't required.
 
 > [!NOTE]
-> If you already have data in your lakehouse, you can use that data instead of the sample CSV file. To check if data is already associated with your lakehouse, use the Lakehouse Explorer or the SQL analytics endpoint to browse tables, files, and folders. For more information about how to check, see [Lakehouse overview](lakehouse-overview.md) and [Lakehouse SQL analytics endpoint use cases](lakehouse-sql-analytics-endpoint-use-cases.md).
+> If you already have data in your lakehouse, you can use that data instead of the sample CSV file. To check if data is already associated with your lakehouse, use the Lakehouse explorer or the SQL analytics endpoint to browse tables, files, and folders. For more information about how to check, see [Lakehouse overview](lakehouse-overview.md) and [Lakehouse SQL analytics endpoint use cases](lakehouse-sql-analytics-endpoint-use-cases.md).
 
 ## Create a lakehouse
 
@@ -109,9 +109,9 @@ In this section, you transform the data based on your business requirements and 
 
 1. After the dataflow run completes successfully, select your lakehouse in the top menu bar to open it.
 
-1. In the lakehouse explorer, find the **dbo** schema under **Tables**, select the **...** (ellipsis) menu next to it, and then select **Refresh**. This runs the dataflow and loads the data from the source file into the lakehouse table.
+1. In the Lakehouse explorer, find the **dbo** schema under **Tables**, select the **...** (ellipsis) menu next to it, and then select **Refresh**. This runs the dataflow and loads the data from the source file into the lakehouse table.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\dataflow-refresh-now.png" alt-text="Screenshot of the lakehouse explorer, showing where to select the Refresh option." lightbox="media\tutorial-build-lakehouse\dataflow-refresh-now.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\dataflow-refresh-now.png" alt-text="Screenshot of the Lakehouse explorer, showing where to select the Refresh option." lightbox="media\tutorial-build-lakehouse\dataflow-refresh-now.png":::
 
 1. Once the refresh is complete, expand the **dbo** schema to view the **dimension_customer** Delta table. Select the table to preview its data. 
 
@@ -161,9 +161,9 @@ In this section, you add the tables to the semantic model so that you can use th
    > [!TIP]
    > To learn more about Direct Lake and its benefits, see [Direct Lake overview](../fundamentals/direct-lake-overview.md).
 
-## Build a report
+## Create a report
 
-In this section, you build a report from the semantic model you created.
+In this section, you create a report from the semantic model you created.
 
 1. In your workspace, find the semantic model you created, select the **...** (ellipsis) menu, and then select **Auto-create report**.
 

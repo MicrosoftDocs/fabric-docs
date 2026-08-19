@@ -294,6 +294,7 @@ The following operations are available in the audit logs.
 | Evaluate Diagnostics Query | :::no-loc text="EvaluateDiagnosticsQuery"::: |   |
 | Evaluate chat response based on the data gateway diagnostics data | :::no-loc text="EvaluateDiagnosticsChat"::: | Evaluate chat response based on the data gateway diagnostics data  |
 | Evaluate data sources against   DMTS data policies | :::no-loc text="EvaluateDataSourcesAgainstTenantDlpPolicies"::: | Evaluate data sources against DMTS data policies |
+| Executed a tenant relocation | :::no-loc text="TenantRelocationExecuted"::: | Executed tenant relocation. |
 | Explore Dataset | :::no-loc text="ExploreDataset"::: |   |
 | Export Package For Solution | :::no-loc text="ExportPackageForSolution"::: |   |
 | Export Power BI activity events | :::no-loc text="ExportActivityEvents"::: |   |
@@ -412,6 +413,7 @@ The following operations are available in the audit logs.
 | Goals Delete Role | :::no-loc text="GoalsDeleteRole"::: |   |
 | Goals Get Role | :::no-loc text="GoalsGetRole"::: |   |
 | Goals Update Role | :::no-loc text="GoalsUpdateRole"::: |   |
+| Granted consent to tenant relocation | :::no-loc text="TenantRelocationConsentGranted"::: | Tenant relocation consent granted. |
 | Hard-deleted a folder by cleanup scheduler (Preview) | :::no-loc text="HardDeletedSubfolderByCleanupScheduler"::: | Generated when the cleanup scheduler hard-deletes a soft-deleted folder after the retention period expires. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
 | Import Package For Solution | :::no-loc text="ImportPackageForSolution"::: |   |
 | Import file to Power BI ended | :::no-loc text="ImportArtifactEnd"::: | Generated when importing Power BI Desktop files (.pbix). `ImportSource` indicates `PowerBI` or `OneDriveSharePoint`. `ImportType` tells you if the file is new (`Publish`) or is being updated (`Republish`).  |
@@ -590,6 +592,7 @@ The following operations are available in the audit logs.
 | Retrieved upstream dataflows from Power BI dataflow | :::no-loc text="GetDataflowUpstreamDataflowsAsAdmin"::: |   |
 | Retry lakehouse SQL analytics endpoint creation for a Lakehouse | :::no-loc text="RetryLakehouseSqlEndpointCreation"::: | Retry SQL endpoint creation for a Lakehouse  |
 | Revoke an external data share | :::no-loc text="RevokeExternalDataShare"::: | Revoke an external data share |
+| Revoked consent to tenant relocation | :::no-loc text="TenantRelocationConsentRevoked"::: | Tenant relocation consent revoked. |
 | Rotate Tenant Key | :::no-loc text="RotateTenantKey"::: |   |
 | Rotated Power BI gateway tenant key | :::no-loc text="RotateTenantKeyEncryptionKey"::: |   |
 | Run Artifact | :::no-loc text="RunArtifact"::: |   |

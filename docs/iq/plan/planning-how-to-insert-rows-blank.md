@@ -8,9 +8,7 @@ ms.topic: how-to
 
 # Insert blank rows
 
-In reports and financial statements, you might need to add blank rows to improve readability and formatting. In plan (preview), you can insert blank rows in table or matrix reports to create visual spacing for better readability and presentation.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+In reports and financial statements, you might need to add blank rows to improve readability and formatting. In plan, you can insert blank rows in table or matrix reports to create visual spacing for better readability and presentation.
 
 This article explains how to insert and remove blank rows.
 

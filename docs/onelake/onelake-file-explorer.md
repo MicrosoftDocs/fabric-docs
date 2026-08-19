@@ -5,7 +5,7 @@ ms.reviewer: harmeetgill # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
-ms.date: 04/28/2026
+ms.date: 08/17/2026
 ai-usage: ai-assisted
 #customer intent: As a OneLake user, I want to learn how to install and use the OneLake file explorer client app for Windows so that I can seamlessly access and sync my OneLake data with Windows File Explorer.
 ---
@@ -156,7 +156,7 @@ To uninstall the app, search for OneLake in Windows. Select **Uninstall** in the
 
 ### Tenant setting enables access to OneLake file explorer
 
-Tenant admins can restrict access to OneLake file explorer for their organization in the [Fabric admin portal](../admin/admin-center.md). When the setting is disabled, no one in your organization can start the OneLake file explorer app. If the application is already running and the tenant admin disables the setting, the application exits. Placeholders and any downloaded content remain on local machines, but users can't sync data to or from OneLake.
+Tenant admins can restrict access to OneLake file explorer for their organization in the [Fabric admin portal](../admin/admin-center.md) by using the **Users can sync data in OneLake with the OneLake File Explorer app** tenant setting. When the setting is disabled, no one in your organization can start the OneLake file explorer app. If the application is already running and the tenant admin disables the setting, the application exits. Placeholders and any downloaded content remain on local machines, but users can't sync data to or from OneLake. If disabled previously, you also need to enable the **Users can access data stored in OneLake with apps external to Fabric** tenant setting.
 
 ## OneLake file explorer icons
 

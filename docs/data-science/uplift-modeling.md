@@ -35,15 +35,15 @@ The sample **Uplift modeling** notebook accompanies this tutorial.
 
 ### Import the notebook from GitHub
 
-The [AIsample - Uplift Modeling.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Uplift%20Modelling.ipynb) notebook accompanies this tutorial.
+The [AIsample - Uplift Modelling.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Uplift%20Modelling.ipynb) notebook accompanies this tutorial.
 
-To open the accompanying notebook for this tutorial, follow the instructions in [Prepare your system for data science tutorials](), to import the notebook to your workspace.
+To open the accompanying notebook for this tutorial, follow the instructions in [Prepare your system for data science tutorials](./tutorial-data-science-prepare-system.md), to import the notebook to your workspace.
 
 You can [create a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) if you'd rather copy and paste the code from this page.
 
 Be sure to [attach a lakehouse to the notebook](./tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before you start running code.
 
-<!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Uplift%20Modeling.ipynb -->
+<!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Uplift%20Modelling.ipynb -->
 
 ## Step 1: Load the data
 
@@ -56,7 +56,7 @@ The Criteo AI Lab created the dataset. That dataset has 13M rows. Each row repre
 - **f0 - f11**: feature values (dense, floating values)
 - **treatment**: whether or not a user was randomly target for treatment (for example, advertising) (1 = treatment, 0 = control)
 - **conversion**: whether a conversion occurred (for example, made a purchase) for a user (binary, label)
-- **visit**: whether a conversion occurred (for example, made a purchase) for a user (binary, label)
+- **visit**: whether the user visited the online store (binary, label)
 
 ### Citation
 
@@ -92,7 +92,7 @@ EXPERIMENT_NAME = "aisample-upliftmodelling"  # MLflow experiment name
 
 ### Import libraries
 
-Before processing, you must import required Spark and SynapseML libraries. You must also import a data visualization library - for example, Seaborn, a Python data visualization library. A data visualization library provides a high-level interface to build visual resources on DataFrames and arrays. Learn more about [**Spark**](https://spark.apache.org/), [**SynapseML**](https://aka.ms/AboutSynapseML), and [**Seaborn**](https://seaborn.pydata.org/).
+Before processing, import the required Spark and SynapseML libraries. You must also import a data visualization library, such as Seaborn, a Python data visualization library. A data visualization library provides a high-level interface to build visual resources on DataFrames and arrays. Learn more about [**Spark**](https://spark.apache.org/), [**SynapseML**](https://aka.ms/AboutSynapseML), and [**Seaborn**](https://seaborn.pydata.org/).
 
 ```python
 import os
@@ -124,7 +124,7 @@ import mlflow
 This code downloads a publicly available version of the dataset, and then stores that data resource in a Fabric lakehouse.
 
 > [!IMPORTANT]
-> **Make sure you [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before you run it. Failure to do so will result in an error.**
+> **Make sure you [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before you run it. If you don't, an error occurs.**
 
 ```python
 if not IS_CUSTOM_DATA:
@@ -159,7 +159,7 @@ ts = time.time()
 
 ### Set up the MLflow experiment tracking
 
-To extend the MLflow logging capabilities, autologging automatically captures the values of input parameters and output metrics of a machine learning model during its training. This information is then logged to the workspace, where the MLflow APIs or the corresponding experiment in the workspace can access and visualize it. Visit this resource for more information about autologging.
+To extend the MLflow logging capabilities, autologging automatically captures the values of input parameters and output metrics of a machine learning model during its training. You can log this information to the workspace, where the MLflow APIs or the corresponding experiment in the workspace can access and visualize it. For more information, see [Apache Spark MLflow autologging in Microsoft Fabric](./mlflow-autologging.md).
 
 ```python
 # Set up the MLflow experiment
@@ -174,7 +174,7 @@ mlflow.autolog(disable=True)  # Disable MLflow autologging
 
 ### Read data from the lakehouse
 
-Read raw data from the lakehouse **Files** section and add more columns for different date parts. The same information is used to create a partitioned delta table.
+Read raw data from the lakehouse **Files** section and add more columns for different date parts. Use the same information to create a partitioned delta table.
 
 ```python
 raw_df = spark.read.csv(f"{DATA_FOLDER}/raw/{DATA_FILE}", header=True, inferSchema=True).cache()
@@ -198,7 +198,7 @@ raw_df.select(
 ).show()
 ```
 
-The analysis indicates that **4.9%** of users from the treatment group - users that received the treatment, or advertising - visited the online store. Only **3.8%** of users from the control group - users that never received the treatment, or were never offered or exposed to advertising - did the same. Additionally, **0.31%** of all users from the treatment group converted, or made a purchase - while only **0.19%** of users from the control group did so. As a result, the conversion rate of visitors that made a purchase, who were also members of treatment group, is **6.36%**, compared to only **5.07%**** for users of the control group. Based on these results, the treatment can potentially improve the visit rate by about 1%, and the conversion rate of visitors by about **1.3%**. The treatment leads to a significant improvement.
+The analysis indicates that **4.9%** of users from the treatment group - users that received the treatment, or advertising - visited the online store. Only **3.8%** of users from the control group - users that never received the treatment, or were never offered or exposed to advertising - did the same. Additionally, **0.31%** of all users from the treatment group converted, or made a purchase - while only **0.19%** of users from the control group did so. As a result, the conversion rate of visitors that made a purchase, who were also members of treatment group, is **6.36%**, compared to only **5.07%** for users of the control group. Based on these results, the treatment can potentially improve the visit rate by about 1%, and the conversion rate of visitors by about **1.3%**. The treatment leads to a significant improvement.
 
 ## Step 3: Define the model for training
 
@@ -296,7 +296,7 @@ display(test_pred_df.limit(20))
 
 ### Perform model evaluation
 
-Since actual uplift can't be observed for each individual, you need to measure the uplift over a group of individuals. You use an Uplift Curve that plots the real, cumulative uplift across the population.
+Because you can't observe actual uplift for each individual, measure the uplift over a group of individuals. Use an Uplift Curve that plots the real, cumulative uplift across the population.
 
 :::image type="content" source="./media/uplift-modeling/criteo-uplift-curve.png"  alt-text="Screenshot of a chart that shows a normalized uplift model curve versus random treatment." lightbox="./media/uplift-modeling/criteo-uplift-curve.png":::
 
@@ -349,7 +349,7 @@ test_ranked_df = test_ranked_df.withColumn("group_uplift", F.col("treatment_cums
 display(test_ranked_df.limit(20))
 ```
 
-Now, plot the uplift curve for the test dataset prediction. You must convert the PySpark DataFrame to a Pandas DataFrame before plotting.
+Now, plot the uplift curve for the test dataset prediction. Convert the PySpark DataFrame to a Pandas DataFrame before plotting.
 
 ```python
 def uplift_plot(uplift_df):
@@ -387,94 +387,7 @@ mlflow.log_figure(fig, "UpliftCurve.png")
 
 :::image type="content" source="./media/uplift-modeling/criteo-uplift-curve.png"  alt-text="Screenshot of a chart that shows a normalized uplift model curve versus random treatment." lightbox="./media/uplift-modeling/criteo-uplift-curve.png":::
 
-The x-axis represents the ratio of the population selected for the treatment. A value of 0 suggests no treatment group - no one is exposed to, or offered, the treatment. A value of 1 suggests a full treatment group - everyone is exposed to, or offered, the treatment. The y-axis shows the uplift measure. The aim is to find the size of the treatment group, or the percentage of the population that would be offered or exposed to the treatment (for example, advertising). This approach optimizes the target selection, to optimize the outcome.
-
-First, rank the test DataFrame order by the predicted uplift. The predicted uplift is the difference between the predicted treatment outcome and the predicted control outcome.
-
-```python
-# Compute the percentage rank of the predicted uplift values in descending order, and display the top twenty rows
-test_ranked_df = test_pred_df.withColumn("percent_rank", F.percent_rank().over(Window.orderBy(F.desc("pred_uplift"))))
-
-display(test_ranked_df.limit(20))
-```
-
-Next, calculate the cumulative percentage of visits in both the treatment and control groups.
-
-```python
-# Calculate the number of control and treatment samples
-C = test_ranked_df.where(f"{TREATMENT_COLUMN} == 0").count()
-T = test_ranked_df.where(f"{TREATMENT_COLUMN} != 0").count()
-
-# Add columns to the DataFrame to calculate the control and treatment cumulative sum
-test_ranked_df = (
-    test_ranked_df.withColumn(
-        "control_label",
-        F.when(F.col(TREATMENT_COLUMN) == 0, F.col(LABEL_COLUMN)).otherwise(0),
-    )
-    .withColumn(
-        "treatment_label",
-        F.when(F.col(TREATMENT_COLUMN) != 0, F.col(LABEL_COLUMN)).otherwise(0),
-    )
-    .withColumn(
-        "control_cumsum",
-        F.sum("control_label").over(Window.orderBy("percent_rank")) / C,
-    )
-    .withColumn(
-        "treatment_cumsum",
-        F.sum("treatment_label").over(Window.orderBy("percent_rank")) / T,
-    )
-)
-
-# Display the first 20 rows of the dataframe
-display(test_ranked_df.limit(20))
-```
-
-Finally, at each percentage, calculate the uplift of the group as the difference between the cumulative percentage of visits between the treatment and control groups.
-
-```python
-test_ranked_df = test_ranked_df.withColumn("group_uplift", F.col("treatment_cumsum") - F.col("control_cumsum")).cache()
-display(test_ranked_df.limit(20))
-```
-
-Now, plot the uplift curve for the test dataset prediction. You must convert the PySpark DataFrame to a Pandas DataFrame before plotting.
-
-```python
-def uplift_plot(uplift_df):
-    """
-    Plot the uplift curve
-    """
-    gain_x = uplift_df.percent_rank
-    gain_y = uplift_df.group_uplift
-    # Plot the data
-    fig = plt.figure(figsize=(10, 6))
-    mpl.rcParams["font.size"] = 8
-
-    ax = plt.plot(gain_x, gain_y, color="#2077B4", label="Normalized Uplift Model")
-
-    plt.plot(
-        [0, gain_x.max()],
-        [0, gain_y.max()],
-        "--",
-        color="tab:orange",
-        label="Random Treatment",
-    )
-    plt.legend()
-    plt.xlabel("Proportion Targeted")
-    plt.ylabel("Uplift")
-    plt.grid()
-
-    return fig, ax
-
-
-test_ranked_pd_df = test_ranked_df.select(["pred_uplift", "percent_rank", "group_uplift"]).toPandas()
-fig, ax = uplift_plot(test_ranked_pd_df)
-
-mlflow.log_figure(fig, "UpliftCurve.png")
-```
-
-:::image type="content" source="./media/uplift-modeling/criteo-uplift-curve.png"  alt-text="Screenshot of a chart that shows a normalized uplift model curve versus random treatment." lightbox="./media/uplift-modeling/criteo-uplift-curve.png":::
-
-The analysis and the uplift curve both show that the top 20% population, as ranked by the prediction, would have a large gain if they received the treatment. This means that the top 20% of the population represents the persuadables group. Therefore, you can then set the cutoff score for the desired size of treatment group at 20%, to identify the target selection customers for the greatest impact.
+The analysis and the uplift curve both show that the top 20% population, as ranked by the prediction, would have a large gain if they received the treatment. This finding means that the top 20% of the population represents the persuadables group. Set the cutoff score for the desired size of treatment group at 20%, to identify the target selection customers for the greatest impact.
 
 ```python
 cutoff_percentage = 0.2
@@ -488,9 +401,9 @@ mlflow.log_metrics(
 )
 ```
 
-## Step 4: Register the final ML Model
+## Step 4: Register the final ML model
 
-You use MLflow to track and log all experiments for both treatment and control groups. This tracking and logging include the corresponding parameters, metrics, and the models. This information is logged under the experiment name, in the workspace, for later use.
+Use MLflow to track and log all experiments for both treatment and control groups. This tracking and logging process includes the corresponding parameters, metrics, and the models. Log this information under the experiment name in the workspace for later use.
 
 ```python
 # Register the model
@@ -512,7 +425,7 @@ To view your experiments:
 
 ## Step 5: Save the prediction results
 
-Microsoft Fabric offers PREDICT - a scalable function that supports batch scoring in any compute engine. It enables customers to operationalize machine learning models. Users can create batch predictions straight from a notebook or the item page for a specific model. Visit this resource to learn more about PREDICT, and to learn how to use PREDICT in Microsoft Fabric.
+Microsoft Fabric offers PREDICT, a scalable function that supports batch scoring in any compute engine. It enables customers to operationalize machine learning models. Users can create batch predictions straight from a notebook or the item page for a specific model. To learn more about PREDICT and how to use it in Microsoft Fabric, see [Machine learning model scoring with PREDICT](./model-scoring-predict.md).
 
 ```python
 # Load the model back

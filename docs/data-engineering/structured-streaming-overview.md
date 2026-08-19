@@ -50,9 +50,9 @@ Structured Streaming supports several source types in Fabric Spark workloads. Ch
 | Delta table | Reads the initial table snapshot and later append commits as an incremental stream. Use [change data feed](delta-lake-change-data-feed.md#read-change-data-with-structured-streaming) to process row-level updates and deletes. | Incremental lakehouse processing. |
 | Apache Kafka | Reads messages from Kafka topics through the Spark Kafka connector. | Event-driven applications and streaming integration. |
 | Azure Event Hubs | Reads events through the Spark Kafka connector and the Event Hubs Kafka-compatible endpoint. | Managed event ingestion in Azure. |
-| Fabric Eventstream | Reads events through the Kafka-compatible endpoint exposed by an eventstream. | Fabric event ingestion, transformation, and routing. |
+| Fabric eventstream | Reads events through the Kafka-compatible endpoint exposed by an eventstream. | Fabric event ingestion, transformation, and routing. |
 
-For lakehouse ingestion scenarios, Azure Event Hubs and Fabric Eventstream are common sources. For query development, the `rate` source provides a simple stream without external dependencies.
+For lakehouse ingestion scenarios, Azure Event Hubs and Fabric eventstream are common sources. For query development, the `rate` source provides a simple stream without external dependencies.
 
 Add files to a streaming source directory atomically so Spark doesn't discover a partially written file. Don't write the output of a query into a path that its file source also reads.
 

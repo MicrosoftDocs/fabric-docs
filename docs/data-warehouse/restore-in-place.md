@@ -2,7 +2,7 @@
 title: Restore In-Place of a Warehouse from a Restore Point
 description: Learn about how to perform a restore in-place of a warehouse in Microsoft Fabric.
 ms.reviewer: ajagadish, sosivara
-ms.date: 04/30/2026
+ms.date: 08/04/2026
 ms.topic: concept-article
 ms.search.form: Warehouse Restore # This article's title should not change. If so, contact engineering.
 ---
@@ -115,6 +115,10 @@ If you encounter Error 5064 after requesting a restore, resubmit the restore aga
 
 - You can't restore a recovery point to create a new warehouse with a different name, either within or across the [!INCLUDE [product-name](../includes/product-name.md)] workspaces.
 - You can't retain restore points beyond the configured retention period. For more information, see [Configurable data retention](data-retention.md).
+
+## Dropped item retention
+
+You can [restore a Fabric warehouse item after accidental deletion](../admin/item-recovery.md). [Configure the dropped item retention period in the **Item Recovery** tenant setting](../admin/item-recovery.md#set-up-the-retention-period-for-deleted-items).
 
 ## Next step
 

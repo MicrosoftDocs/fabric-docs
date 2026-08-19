@@ -4,7 +4,7 @@ description: OneLake shortcuts provide a way to connect to existing data without
 ms.reviewer: eloldag, oronkaiser-MSFT-nonEMU
 ms.search.form: Shortcuts
 ms.topic: concept-article
-ms.date: 06/28/2026
+ms.date: 07/13/2026
 #customer intent: As a data engineer, I want to learn how to use OneLake shortcuts so that I can unify data sources and have OneLake manage the permissions.
 ---
 
@@ -79,9 +79,14 @@ To select specific subitems:
 
 #### Automatic schema sync
 
-When you create a database shortcut, table schemas sync automatically. This sync includes all table types, both new and existing tables. Consumers of a table-level share can only query and view subitems explicitly included in the share. Names of nonshared subitems aren't visible to consumers.
+There are two types of automatic schema sync for eventhouse database shortcuts:
 
-To disable automatic schema sync, run the following command in the source database:
+- **Auto schema sync for the database shortcut**: Adds or removes tables, shortcut tables, materialized views, and functions. This sync happens only when you create a database shortcut and select **Include all subitems**. If you select only a subset of the subitems, this sync doesn't apply.
+- **Auto schema sync for a shortcut table**: Adds, deletes, or renames columns, and changes column types. This sync happens for all shortcut tables by default, unless you turn it off with the KQL command in the following example.
+
+Consumers of a table-level share can only query and view subitems explicitly included in the share. Names of nonshared subitems aren't visible to consumers.
+
+To disable automatic schema sync for a shortcut table, run the following command in the source database:
 
 ```kql
 .create-or-alter external table ExternalTable
@@ -255,4 +260,5 @@ When you create shortcuts between multiple Fabric items within a workspace, you 
 ## Related content
 
 - [Create a OneLake shortcut](shortcuts/create-onelake-shortcut.md)
+- [Move shortcuts to a new region](shortcuts/move-shortcuts-region.md)
 - [Use OneLake shortcuts REST APIs](/rest/api/fabric/core/onelake-shortcuts)

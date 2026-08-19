@@ -3,7 +3,7 @@ title: Data Factory limitations overview
 description: Identifies limitations that affect Data Factory in Microsoft Fabric features.
 ms.reviewer: susabat
 ms.topic: troubleshooting
-ms.date: 4/29/2026
+ms.date: 7/30/2026
 ms.custom: configuration
 ---
 
@@ -17,13 +17,9 @@ For service level outages or degradation notifications, check [Microsoft Fabric 
 
 The following list describes the current limitations of pipelines in Data Factory in Microsoft Fabric.
 
-- Most of the Azure Data Factory copy and orchestration patterns are applicable to Fabric pipelines, but [tumbling window](/azure/data-factory/how-to-create-tumbling-window-trigger) isn't yet available.
--	Connectors don't support OAuth and  Azure key vault (AKV).
--	Managed System Identity (MSI) is only available for Azure Blob Storage. Support for other sources is coming soon. 
+- Most of the Azure Data Factory copy and orchestration patterns apply to Fabric pipelines, but [tumbling window](/azure/data-factory/how-to-create-tumbling-window-trigger) is only partially implemented by using interval based schedules. You can create time slices, but backfill isn't yet supported.
 -	GetMetaData activity can't have a source from Fabric KQL databases.
 -	Script activity can't have a source from Fabric KQL databases.
--	Validation activity, Mapping Data Flow activity, and the SSIS integration runtime aren't available. 
--	Web activity doesn't support service principal based authentication.
 -	Background sync of authentication doesn't happen for pipelines. Recommendation is to do minor description like updates to pipelines and save them. That way, new token is obtained and cached so pipeline can run again with updated password of entra id. 
 
 ## Pipeline resource limits
@@ -82,8 +78,6 @@ The following list describes the limitations for Dataflow Gen2 in Data Factory i
 - Consuming data from a dataflow gen2 with the dataflow connector requires Admin, Member or Contributor permissions. Viewer permission isn't sufficient and isn't supported for consuming data from the dataflow.
 - When you don't access staging items with your dataflow for more than 90 days, you need to re-authendicate to ensure the dataflow is able to access the staging items. You can do this by creating a new dataflow gen2 within the same workspace. 
 - Staging lakehouses are visible in **My Workspace**. In shared workspaces, staging lakehouses created by Dataflow Gen2 are hidden from the workspace item list. In **My Workspace**, however, these staging lakehouses are visible due to a platform-side difference in how hidden items are filtered. Don't modify, rename, or delete these staging lakehouses, they're managed by Dataflow Gen2 and used internally for query staging and destination writes. 
-- When downstream items such as semantic models or other dataflows consume data from a Dataflow Gen2 using the Dataflows connector, the data is retrieved through an internal API. This API can experience intermittent timeouts, which may result in refresh failures for the consuming items. The error message shown in these cases can be misleading, for example: "The key didn't match any rows in the table." This error doesn't indicate a problem with your data; it means the backend service was temporarily unable to return the dataflow results. To mitigate this issue, configure a [data destination](dataflow-gen2-data-destinations-and-managed-settings.md) (such as Lakehouse or Warehouse) for each source dataflow, and update downstream items to read from that destination using the Lakehouse or Warehouse connector instead of the Dataflows connector. This approach bypasses the internal API entirely and typically improves overall refresh reliability and performance.
-
 * **Supported gateway required**: Dataflow Gen2 requires a currently supported data gateway. At minimum, the last six released gateway versions are supported.
 
 * **Delta Lake case sensitivity limitation**: Delta Lake doesn’t support case‑sensitive column names. Columns like `MyColumn` and `mycolumn` result in duplicate column errors, even though they’re allowed in Mashup.

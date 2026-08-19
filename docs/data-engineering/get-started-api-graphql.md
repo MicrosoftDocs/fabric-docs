@@ -20,7 +20,7 @@ Creating GraphQL APIs in Fabric is designed for:
 - **Integration developers** creating data access layers for custom applications and automated workflows
 - **Development teams** who prefer GraphQL's flexible, type-safe approach over direct database connections
 
-Use this guide when you need to create a new GraphQL API that exposes your Fabric lakehouse, warehouse, or database data to applications.
+Use this guide when you need to create a new GraphQL API that exposes your lakehouse, warehouse, or database data in Fabric to applications.
 
 ## Prerequisites
 

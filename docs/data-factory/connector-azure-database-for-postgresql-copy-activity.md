@@ -116,11 +116,11 @@ Allowed value is an integer that represents the number of rows. The default valu
 
 ### Mapping
 
-For **Mapping** tab configuration, see [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab). 
+For **Mapping** tab configuration, see [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab). 
 
 ### Settings
 
-For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab).
 
 ## Parallel copy from Azure Database for PostgreSQL
 

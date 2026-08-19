@@ -18,8 +18,6 @@ By using this feature, you can:
 
 You can add a new column to a table during table creation, or after the table is created or connected.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 ## Add column during table creation
 
 Use **Add column** during the initial table configuration to create and configure extra columns alongside the imported columns.
@@ -36,6 +34,6 @@ Alternatively, select **Setup** > **Columns** and use the **Add Visual Column**,
 
 :::image type="content" source="../media/powertable-how-to-insert-columns/add-columns-summary/add-columns-options.png" alt-text="Screenshot of Columns setup page with Add Visual, Formula, and Database Columns dropdowns." lightbox="../media/powertable-how-to-insert-columns/add-columns-summary/add-columns-options.png":::
 
-* **Visual columns** exist only within the PowerTable sheet. PowerTable doesn't add these columns to the source database. This column type includes multiselect relationship columns, reference columns, relation columns, roll up, button, and attachment columns. For more information, see [Insert visual columns in PowerTable](how-to-insert-visual-columns.md).
+* **Visual columns** exist only within the PowerTable sheet. PowerTable doesn't add these columns to the source database. This column type includes multi-select relationship columns, reference columns, relation columns, roll up, button, and attachment columns. For more information, see [Insert visual columns in PowerTable](how-to-insert-visual-columns.md).
 * **Database columns** exist in the underlying database and become part of the table schema. For more information, see [Insert database columns in PowerTable](how-to-insert-database-column.md).
 * **Formula columns** can be either visual or database columns. Use formula columns to calculate values based on formulas and display the results in the table. For more information, see [Insert formula columns in PowerTable](how-to-insert-formula-columns.md).

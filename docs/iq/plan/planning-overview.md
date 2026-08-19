@@ -1,17 +1,15 @@
 ---
-title: Planning Sheets in Plan (Preview)
-description: Learn about the planning sheets component of the plan (preview) item for budgeting and forecasting.
+title: Planning Sheets in Plan
+description: Learn about the planning sheets component of the plan item for budgeting and forecasting.
 ms.date: 03/27/2026
 ms.topic: overview
 ms.search.form: Fabric Planning Sheets Overview
 #customer intent: As a user, I want to understand and use planning sheets effectively.
 ---
 
-# What are planning sheets in plan (preview)?
+# What are planning sheets in plan?
 
-The *planning sheets* component of plan (preview) enables organizations to implement structured, collaborative, and data-driven planning processes within their enterprise data environment.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+The *planning sheets* component of plan enables organizations to implement structured, collaborative, and data-driven planning processes within their enterprise data environment.
 
 A planning sheet is a structured workspace in plan that allows users to enter, update, and analyze planning data across defined business dimensions such as time, department, account, or product. Planning sheets provide a controlled environment for budgeting, forecasting, and scenario analysis while ensuring that planning data follows organizational rules and governance policies.
 

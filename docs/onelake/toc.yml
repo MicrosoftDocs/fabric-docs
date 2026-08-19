@@ -26,8 +26,10 @@ items:
       href: onelake-shortcuts.md
     - name: Create shortcuts
       items:
-      - name: OneLake shortcut
+      - name: Same-tenant OneLake shortcut
         href: shortcuts/create-onelake-shortcut.md
+      - name: Cross-tenant OneLake shortcut
+        href: shortcuts/create-cross-tenant-onelake-shortcut.md
       - name: ADLS Gen2 shortcut
         href: create-adls-shortcut.md
       - name: Blob Storage shortcut
@@ -60,6 +62,8 @@ items:
         href: access-onelake-shortcuts.md
       - name: Assign variables to shortcuts
         href: assign-variables-to-shortcuts.md
+      - name: Move shortcuts to a new region
+        href: shortcuts/move-shortcuts-region.md
       - name: Use shortcuts REST API
         href: /rest/api/fabric/core/onelake-shortcuts?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
     - name: Shortcut transformations
@@ -199,6 +203,8 @@ items:
   items:
   - name: Explore OneLake events
     href: ../real-time-hub/explore-fabric-onelake-events.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
+  - name: Automate file processing in OneLake
+    href: ../real-time-hub/tutorial-build-event-driven-data-pipelines.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
   - name: Get OneLake events in Real-Time hub
     href: ../real-time-hub/create-streams-fabric-onelake-events.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
   - name: Set alerts on OneLake events

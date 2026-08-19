@@ -133,7 +133,7 @@ The following list shows some of the table features that aren't currently suppor
 - Warehouse object metadata is cached by Fabric Data Warehouse to provide fast access to objects and their definitions. For very large warehouses with more than 750,000 objects (for example, tables, views, stored procedures, and functions), metadata is no longer cached by the system. Instead, schema operations query the metadata store directly. This ensures system stability and prevents cache starvation in extremely large databases. However, schema refresh operations can take longer compared to smaller warehouses where metadata caching is enabled.
 
 > [!IMPORTANT]
-> There are limitations with adding table constraints or columns when using [Source Control with Warehouse](source-control.md#limitations-in-source-control).
+> There are limitations with adding table constraints or columns when using [Git Integration for Fabric Warehouse Development](git-integration.md#limitations-in-git-integration).
 
 ## Related content
 

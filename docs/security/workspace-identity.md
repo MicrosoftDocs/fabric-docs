@@ -4,7 +4,7 @@ description: Learn about workspace identity in Microsoft Fabric.
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.date: 05/08/2026
+ms.date: 08/13/2026
 ---
 
 # Workspace identity
@@ -146,11 +146,15 @@ When a workspace gets renamed, the workspace identity is also renamed to match t
 
 ## Considerations and limitations
 
-* A workspace identity can be created in any workspace except a My Workspace.
+* You can create a workspace identity in any workspace except **My workspace**.
 
-* Trusted workspace access to firewall-enabled Storage accounts is supported in any F capacity.
+* You can create and use a workspace identity regardless of the capacity SKU assigned to the workspace.
 
-* If a workspace with a workspace identity is migrated to a non-Fabric capacity or to a non-F SKU Fabric capacity, the identity won't be disabled or deleted, but Fabric items relying on trusted workspace access will stop working.
+* Using workspace identity as a credential in cloud connections is supported in any capacity.
+
+* Trusted workspace access to firewall-enabled Storage accounts requires the workspace to be assigned to a purchased Microsoft Fabric capacity (F SKU).
+
+* If you migrate a workspace with a workspace identity to a non-Fabric capacity, to a non-F SKU Fabric capacity, or to a trial capacity, the identity isn't disabled or deleted, but Fabric items that rely on trusted workspace access stop working.
 
 * A default of 10,000 workspace identities can be created in a tenant. You can also specify your own maximum in the tenant settings, which becomes the upper limit for Fabric identity creation across your tenant. For more information, see [Define maximum number of Fabric identities in a tenant](../admin/service-admin-portal-developer.md#define-maximum-number-of-fabric-identities-in-a-tenant).
 

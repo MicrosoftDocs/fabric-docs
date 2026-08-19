@@ -19,8 +19,6 @@ By using the audit log, you can:
 
 In this article, you learn how to view, search, filter, and export audit logs.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## View audit logs and track changes
 
 To view audit logs:

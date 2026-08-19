@@ -23,13 +23,13 @@ For more information on connecting to your [!INCLUDE [fabric-dw](includes/fabric
 
 ## Ingest data from a Parquet file using the SQL query editor
 
-You can copy data from a parquet file into `dbo.bing_covid` using the `COPY INTO` T-SQL command.
+You can copy data from a Parquet file into `dbo.fact_sale` by using the `COPY INTO` T-SQL command.
 
 In the query editor, paste and run the following T‑SQL code:
 
 ```sql
-COPY INTO dbo.bing_covid
-FROM 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet'
+COPY INTO dbo.fact_sale
+FROM 'https://fabrictutorialdata.dfs.core.windows.net/sampledata/WideWorldImportersDW/parquet/full/fact_sale'
 WITH ( FILE_TYPE = 'PARQUET' );
 ```
 
@@ -37,16 +37,16 @@ Once executed, this statement will load the contents of the Parquet file into th
 
 ## Ingest data from a CSV file using the SQL query editor
 
-You can copy data from a CSV file into the empty table `dbo.bing_covid` using the `COPY INTO` T-SQL command.
+You can copy data from a CSV file into the `dbo.fact_sale` table by using the `COPY INTO` T-SQL command.
 
 In the query editor, paste and run the following T‑SQL code:
 
 ```sql
-COPY INTO dbo.bing_covid
-FROM 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.csv'
+COPY INTO dbo.fact_sale
+FROM 'https://fabrictutorialdata.dfs.core.windows.net/sampledata/WideWorldImportersDW/csv/sample/fact_sale/'
 WITH ( FILE_TYPE = 'CSV', FIRSTROW=2);
 ```
-    
+
 Once executed, this statement will load the contents of the CSV file into the table.
 
 Since the CSV file in this example includes a header row, we need to skip it by specifying the `FIRSTROW = 2` option.

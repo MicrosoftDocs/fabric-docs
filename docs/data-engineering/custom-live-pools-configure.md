@@ -3,7 +3,7 @@ title: Configure custom live pools in Microsoft Fabric
 description: Learn how to create, configure, and manage custom live pools in Microsoft Fabric for fast notebook session startup.
 ms.reviewer: saravi
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 08/14/2026
 ai-usage: ai-assisted
 ---
 
@@ -11,13 +11,13 @@ ai-usage: ai-assisted
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Custom live pools are prehydrated Spark clusters that provide near-instant session startup for notebooks in Microsoft Fabric. This article shows how to create, configure, and manage custom live pools for optimal performance.
+Custom live pools are prehydrated Spark clusters that provide near-instant session startup for notebooks in Fabric. This article shows how to create, configure, and manage custom live pools for optimal performance.
 
 ## Prerequisites
 
 Before setting up custom live pools, ensure you have:
 
-- Access to a Microsoft Fabric workspace with a **paid Fabric SKU** (Fabric trial capacities aren't supported)  
+- Access to a Fabric workspace with a **paid Fabric SKU** (Fabric trial capacities aren't supported)
 - **Admin** role in the workspace
 - An active **Fabric capacity** assigned to your workspace
 - A published [Fabric environment](/fabric/data-engineering/create-and-use-environment) to use for library configuration. 
@@ -72,6 +72,20 @@ After you publish, the pool is active and Fabric begins hydrating clusters ahead
 > Publishing can take several minutes.
 > 
 > Any changes to the environment require re-publishing the environment and refreshing hydrated clusters.
+
+### Understand the schedule window
+
+The schedule defines the window when Fabric keeps clusters hydrated and can rehydrate clusters that it deactivated. It doesn't keep the live pool warm outside the configured window.
+
+For example, consider a recurring schedule that runs every day from 8:00 AM through 5:00 PM:
+
+- At 8:00 AM, the daily schedule window begins and Fabric starts or continues hydration.
+- During the schedule window, an idle cluster can be deactivated after the configured idle timeout. Fabric can rehydrate a replacement according to the configured reactivation interval.
+- At 5:00 PM, the schedule window ends. Fabric doesn't continue rehydrating clusters between 5:00 PM and 8:00 AM the next day.
+- A notebook submitted outside the schedule window uses standard Spark provisioning and doesn't receive the live pool warm-start benefit.
+- The same daily behavior repeats until the configured schedule end date.
+
+The schedule start time doesn't guarantee that a cluster is already available at that exact time. Hydration takes time, especially after an environment update or when Fabric must provision a new cluster. If a scheduled notebook must start at 8:00 AM, start the live pool schedule 60-90 minutes earlier. Before the notebook run, use the **Monitoring hub** to confirm that **Available clusters** is greater than zero. An incoming notebook receives a warm session only when a compatible hydrated cluster is available.
 
 ## Monitor pool status
 
@@ -131,7 +145,8 @@ When configuring your pool, consider the following settings and recommendations:
 ### Schedule best practices
 
 - **Align with workload patterns**: Schedule active times when your team runs interactive or scheduled notebooks.
-- **Buffer time**: Add 60-90 minutes before expected usage windows to ensure complete hydration.
+- **Buffer time**: Start the schedule 60-90 minutes before the first expected notebook run to allow hydration to complete.
+- **Verify availability**: Before a latency-sensitive scheduled run, confirm that the live pool has at least one available cluster in the **Monitoring hub**.
 - **Consider time zones**: If your team spans multiple time zones, extend the schedule to cover required time ranges.
 
 ## Troubleshooting
