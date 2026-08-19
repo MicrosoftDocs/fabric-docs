@@ -53,7 +53,8 @@ For tables filtered with RLS, the following behaviors apply:
 
 For the syntax used to write RLS rules, see [Row-level security syntax reference](./row-level-security-syntax.md).
 
-RLS roles don't support dynamic and multi-table queries.
+RLS roles don't support dynamic and multitable queries.
+
 
 ## Combine row-level and column-level security
 
