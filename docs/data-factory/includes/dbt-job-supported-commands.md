@@ -14,4 +14,4 @@ ms.date: 11/20/2025
 | `dbt test` | Runs schema and data tests defined in schema.yml. |
 | `dbt compile` | Generates compiled SQL without running transformations. |
 | `dbt snapshot` | Captures and tracks slowly changing dimensions over time. |
-| `dbt docs generate` | Generates dbt documentation artifacts for the project, including index.html, manifest.json, and catalog.json. These artifacts are stored in the run output under the target folder. |
+| `dbt docs generate` | Generates dbt documentation artifacts for the project, including `index.html`, `manifest.json`, and `catalog.json`. These artifacts are stored in the run output under the `target` folder. |
