@@ -224,7 +224,7 @@ services:
 
 **Cause:** The schema in the remote database and the schema defined in the app code are out of sync. The app code is the source of truth for a Fabric app.
 
-**Don't modify** the remote database schema through the Fabric portal, SQL Server Management Studio (SSMS), the SQL Server extension for Visual Studio Code, or other SQL tools.The following changes to columns in a data entity aren't supported:
+**Don't modify** the remote database schema through the Fabric portal, SQL Server Management Studio (SSMS), the SQL Server extension for Visual Studio Code, or other SQL tools. The following changes to columns in a data entity aren't supported:
 
 - Renaming a column.
 - Changing a column's data type.
