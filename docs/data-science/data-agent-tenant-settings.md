@@ -66,8 +66,6 @@ For a Fabric data agent to function properly, enable the [**Copilot and Azure Op
 
 :::image type="content" source="media/data-agent-tenant-settings/fabric-copilot-storage-tenant-setting.png" alt-text="Screenshot of Fabric Copilot Storage setting in the admin portal." lightbox="media/data-agent-tenant-settings/fabric-copilot-storage-tenant-setting.png":::
 
-- **Conversation history stored outside your capacity's geographic region, compliance boundary, or national cloud instance**
-
   - This setting is only applicable for customers who want to use Copilot in Notebooks and Fabric data agents powered by Azure OpenAI whose capacity's geographic region is outside of the EU data boundary and the US.
   - In order to use fully conversational agentic AI experiences, the agent needs to store conversation history across user sessions. This ensures that the AI agent keeps context about what a user asked in previous sessions. Conversation history is stored for as long as the user allows, up to 28 days if not manually removed.
   - Users can delete their conversation history at any time by clearing the chat.
