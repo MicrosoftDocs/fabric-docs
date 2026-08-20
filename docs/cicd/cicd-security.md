@@ -11,7 +11,7 @@ ms.date: 12/15/2025
 Fabric is a software as a service (SaaS) platform that lets users get, create, share, and visualize data. As a SaaS service, Fabric offers a complete security package for the entire platform. For more information, see [Network Security](../security/security-overview.md).
 
 >[!IMPORTANT]
->Deployment pipelines are currently not supported with workspace inbound and outbound access protection.
+>Deployment pipelines are currently not supported for workspace with inbound access protection.
 
 
 ## Workspace level security
@@ -108,7 +108,6 @@ The following is information you need to keep in mind when using OAP and Git int
 
 - Not all items support inbound and outbound access protection. Syncing unsupported items into the workspace from git integration will fail. For a list of supported items, see [Private link supported items](../security/security-workspace-level-private-links-support.md#supported-item-types-for-workspace-level-private-link) and [Outbound access protection supported items.](../security/workspace-outbound-access-protection-overview.md#supported-item-types)
 - Deployment pipelines are currently not supported with workspace inbound access protection.
-- If the workspace is part of Deployment Pipelines, workspace admins can't enable outbound access protection because Deployment Pipelines are unsupported. Similarly, if outbound access protection is enabled, the workspace can't be added to Deployment Pipelines.
 
 For more information, see [OAP and workspace considerations](../security/workspace-outbound-access-protection-overview.md#considerations-and-limitations)
 
