@@ -27,6 +27,8 @@ You must have access to an **existing non-trial Fabric capacity** where you're a
 1. Find **Capacity Overview Events** in the list.
 1. Move the mouse over **Capacity Overview Events**, and select the **Set alert** button.
 
+    :::image type="content" source="media/set-alerts-fabric-capacity-overview-events/set-alert-menu.png" alt-text="Screenshot that shows the Fabric events page with Set alert pages for Capacity overview events." lightbox="media/set-alerts-fabric-capacity-overview-events/set-alert-menu.png":::
+
 ## Configure the alert details
 
 On the **Add rule** page, in the **Details** section, enter a name for the rule in the **Rule name** field. For example, `Capacity Throttling Alert`.
