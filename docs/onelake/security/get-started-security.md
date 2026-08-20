@@ -5,7 +5,7 @@ ms.reviewer: aamerril # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article
-ms.date: 07/29/2026
+ms.date: 09/01/2026
 ai-usage: ai-assisted
 #customer intent: As a OneLake user, I want to understand the core concepts and capabilities of data security in OneLake so that I can use them to protect my data stored and accessed in OneLake.
 ---
@@ -121,7 +121,9 @@ OneLake uses Microsoft Entra ID for authentication. Use it to give permissions t
 
 ## Track OneLake activity with audit logs
 
-To view your OneLake audit logs, follow the instructions in [Track user activities in Fabric](../../admin/track-user-activities.md). OneLake operation names correspond to [ADLS APIs](/rest/api/storageservices/data-lake-storage-gen2) such as CreateFile or DeleteFile. OneLake audit logs don't include read requests or requests made to OneLake via Fabric workloads.
+To audit access to data in OneLake, enable [OneLake diagnostics](../onelake-diagnostics-overview.md). OneLake diagnostics records data access through OneLake APIs. For Fabric workload access, it records that access was granted to the workload. Events are stored in a lakehouse that you select.
+
+For OneLake control-plane activities, such as changes to security roles, shortcuts, sharing, lifecycle policies, and storage tiers, use the Fabric audit log. For instructions, see [Track user activities in Fabric](../../admin/track-user-activities.md).
 
 ## Encrypt data and secure networking in OneLake
 
