@@ -18,7 +18,11 @@ Fabric capacity overview events provide summary-level information related to you
 
 1. In **Real-Time hub**, select **Fabric events**.
 1. Select **Fabric capacity overview events** from the list.
+
+    :::image type="content" source="./media/explore-fabric-capacity-overview-events/select-capacity-overview-events.png" alt-text="Screenshot that shows the selection of Fabric capacity overview events." lightbox="./media/explore-fabric-capacity-overview-events/select-capacity-overview-events.png":::
 1. You should see the detailed view for Fabric capacity overview events.
+
+    :::image type="content" source="./media/explore-fabric-capacity-overview-events/capacity-overview-detail-page.png" alt-text="Screenshot that shows the detailed view for Fabric capacity overview events." lightbox="./media/explore-fabric-capacity-overview-events/capacity-overview-detail-page.png":::
 
 ## Actions
 
