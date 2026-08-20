@@ -58,6 +58,8 @@ You can create streams for Fabric capacity overview events in Real-Time hub usin
 1. In Real-Time hub, select **Fabric events** on the left navigation menu.
 1. Move the mouse over **Capacity overview events**, and select the **+** (plus) link, or select **... (ellipsis)** and then select **Create Eventstream**.
 
+    :::image type="content" source="./media/create-streams-fabric-capacity-overview-events/create-menu.png" alt-text="Screenshot that shows the Fabric events page with Capacity overview events selected." lightbox="./media/create-streams-fabric-capacity-overview-events/create-menu.png":::
+
     Now, use instructions from the [Configure and create an eventstream](#configure-and-create-an-eventstream) section, but skip the first step of using the **Add source** page.
 
 ## Configure and create an eventstream

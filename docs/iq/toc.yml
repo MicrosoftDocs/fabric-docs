@@ -115,16 +115,18 @@ items:
           href: plan/planning-concept-reforecasting.md
         - name: Forecasting - Closing forecast
           href: plan/planning-concept-closing-forecast-period.md
-        - name: General - Top-down planning
-          href: plan/planning-concept-top-down-planning.md
-        - name: General - Bottom-up planning
-          href: plan/planning-concept-bottom-up-planning.md
+        - name: Planning tools - Approval workflows
+          href: plan/planning-concept-approval-workflow.md
+        - name: Collaboration and export - Writeback
+          href: plan/planning-concept-writeback.md
         - name: Connected planning
           href: plan/infobridge-concept-connected-planning.md
         - name: Connected planning - Integrate visualization
           href: plan/infobridge-concept-blend-measures.md
-        - name: Approval workflow
-          href: plan/planning-concept-approval-workflow.md          
+        - name: General - Top-down planning
+          href: plan/planning-concept-top-down-planning.md
+        - name: General - Bottom-up planning
+          href: plan/planning-concept-bottom-up-planning.md          
     - name: How-tos
       items:
         - name: Measure and row-based planning
