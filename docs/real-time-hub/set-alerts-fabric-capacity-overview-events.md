@@ -35,7 +35,7 @@ Do steps from one of the following sections, which opens a side panel where you 
     - Select the **Alert** button.
     - Select **ellipsis (...)**, and select **Set alert**.
 
-    :::image type="content" source="media/set-alerts-fabric-capacity-overview-events/set-alert-menu.png" alt-text="Screenshot that shows the Fabric events page with Set alert pages for Capacity overview events." lightbox="media/set-alerts-fabric-capacity-overview-events/set-alert-menu.png":::
+        :::image type="content" source="media/set-alerts-fabric-capacity-overview-events/set-alert-menu.png" alt-text="Screenshot that shows the Fabric events page with Set alert pages for Capacity overview events." lightbox="media/set-alerts-fabric-capacity-overview-events/set-alert-menu.png":::
 
 ### Use the event detail page
 
