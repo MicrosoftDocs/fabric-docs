@@ -449,7 +449,7 @@ The following operations are available in the audit logs.
 | Migrated dataflow storage location | :::no-loc text="MigratedDataflowStorageLocation"::: | Not currently used  |
 | Migrated workspace to a capacity | :::no-loc text="MigrateWorkspaceIntoCapacity"::: |   |
 | Modified OneLake default tier | :::no-loc text="ModifiedDefaultTier"::: |   |
-| Modified OneLake Malware Scanning Settings | :::no-loc text="OneLakeMalwareScanAuditEvent"::: |   |
+| Modified OneLake Malware Scanning Settings | :::no-loc text="ModifiedOneLakeMalwareScanningSettings"::: |   |
 | Modify Workspace Capacity | :::no-loc text="ModifyWorkspaceCapacity"::: | Modify Workspace Capacity is a capacity activity, which is generated on assigning a Power BI workspace to a capacity using an API call or the UI.  |
 | Move Goals | :::no-loc text="MoveGoals"::: | Moves goals within a scorecard |
 | Move Scorecard | :::no-loc text="MoveScorecard"::: |   |
