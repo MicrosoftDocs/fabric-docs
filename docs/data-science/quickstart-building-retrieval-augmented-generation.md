@@ -22,7 +22,7 @@ This quickstart shows how to use Fabric to build RAG applications. The main step
 1. Set up Azure AI Search.
 1. Load and prepare data from the [CMU QA dataset](https://www.cs.cmu.edu/~ark/QA-data/).
 1. Chunk the data by using Spark pools for efficient processing.
-1. Create embeddings by using Fabric's built-in [Azure OpenAI services through Synapse ML](ai-services/how-to-use-openai-synapse-ml.md).
+1. Create embeddings by using Fabric's built-in [Azure OpenAI services through SynapseML](ai-services/how-to-use-openai-synapse-ml.md).
 1. Create a vector index by using [Azure AI Search](https://aka.ms/what-is-azure-search).
 1. Generate answers from the retrieved context by using Fabric's built-in [Azure OpenAI through Python SDK](ai-services/how-to-use-openai-python-sdk.md).
 

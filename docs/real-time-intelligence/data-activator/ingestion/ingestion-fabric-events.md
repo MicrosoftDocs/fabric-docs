@@ -22,7 +22,7 @@ When you create a connection, you choose from the following Fabric event sources
 | Event source | Description |
 |---|---|
 | Anomaly detection events (preview) | Events produced by anomaly detection models that indicate detected anomalies. |
-| Capacity overview events (preview) | Events produced for capacity state changes and summary-level capacity usage. |
+| Capacity overview events | Events produced for capacity state changes and summary-level capacity usage. |
 | Job events | Events produced by status changes on Fabric monitor activities, such as a job created, succeeded, or failed. |
 | OneLake events | Events produced by actions on files or folders in OneLake, such as a file created, deleted, or renamed. |
 | Workspace item events | Events produced by actions on items in a workspace, such as an item created, deleted, or renamed. |
