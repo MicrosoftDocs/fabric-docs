@@ -1,6 +1,11 @@
 {
   "redirections": [    
     {
+      "source_path_from_root": "/docs/real-time-intelligence/event-streams/fabric-workspace-monitoring-tables.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/fabric-workspace-monitoring#monitoring-tables",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/real-time-intelligence/mcp-remote-operations-agent.md",
       "redirect_url": "/fabric/real-time-intelligence/mcp-overview",
       "redirect_document_id": false

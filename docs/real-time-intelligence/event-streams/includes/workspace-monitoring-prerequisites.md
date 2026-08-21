@@ -15,5 +15,4 @@ ms.subservice: rti-eventstream
 - A Power BI Premium or a Fabric capacity.
 - The **Workspace admins can turn on monitoring for their workspaces** tenant setting is enabled. To enable the setting, you need to be a Fabric administrator. If you're not a Fabric administrator, ask the Fabric administrator in your organization to enable the setting.
 - You have the **admin** role in the workspace.
-- At least one eventstream in the workspace. The eventstream must be published for monitoring data to appear.
 
