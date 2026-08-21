@@ -138,16 +138,25 @@ Create a custom table in your Log Analytics workspace with the Log Ingestion API
 
 ### Step 5. Prepare service principal for authentication
 
-1. Register an app in **Microsoft Entra ID**.
+ 1. Register an app in **Microsoft Entra ID**.
 
    :::image type="content" source="media\data-collector-api-to-log-ingestion-api\tenant-client.png" alt-text="Screenshot showing tenantId and clientId." lightbox="media\data-collector-api-to-log-ingestion-api\tenant-client.png":::
 
-1. Record the **TenantId**, **ClientId**, and **ClientSecret** (if you use client secret authentication). You use these values in the Spark configuration in Step 6.
-1. Grant the app the [**Monitoring Metrics Publisher**](/azure/role-based-access-control/built-in-roles/monitor#monitoring-metrics-publisher) role on each table's DCR resource. For role assignment steps, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
+ 2. Record the **TenantId**, **ClientId**, and **ClientSecret** (if you use client secret authentication). You use these values in the Spark configuration in Step 6. If you use certificate-based authentication: 
+
+- Create or import a certificate in Azure Key Vault. The certificate must contain an exportable private key. 
+- Download only the public certificate in CER or PEM format, and upload it to the app registration under Certificates & secrets > Certificates. 
+- Record the Azure Key Vault URI and certificate name. You use these values in the Spark configuration in Step 6. 
+- Grant the signed-in Fabric user who runs the notebook the Key Vault Certificate User role on the Azure Key Vault. 
+
+>[!IMPORTANT]
+>Certificate retrieval and Log Ingestion use different identities. The signed-in Fabric user retrieves the certificate and its private key from Azure Key Vault. The service principal uses the certificate to authenticate and send data through the DCR. Granting Key Vault access only to the service principal isn't sufficient. 
+
+ 3. Grant the app the [**Monitoring Metrics Publisher**](/azure/role-based-access-control/built-in-roles/monitor#monitoring-metrics-publisher) role on each table's DCR resource. For role assignment steps, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
 
    :::image type="content" source="media\data-collector-api-to-log-ingestion-api\monitoring-metrics-publisher-role.png" alt-text="Screenshot showing the Monitoring Metrics Publisher role assignment." lightbox="media\data-collector-api-to-log-ingestion-api\monitoring-metrics-publisher-role.png":::
 
-1. Retrieve the **stream name** and **DCR ID**. You can retrieve the **DCR ID** and **stream name** for each table you created from the **Data Collection Rule (DCR)** resource **JSON** view in the Azure portal. 
+ 4. Retrieve the **stream name** and **DCR ID**. You can retrieve the **DCR ID** and **stream name** for each table you created from the **Data Collection Rule (DCR)** resource **JSON** view in the Azure portal. 
 
    The stream name format is always: `Custom-<Log Analytics table name>`.
    For example, if your table name is `AppLogs_CL`, the stream name will be: `Custom-AppLogs_CL`.
@@ -155,6 +164,8 @@ Create a custom table in your Log Analytics workspace with the Log Ingestion API
    In the next step, you will configure the corresponding `logStream`, `eventStream`, `metricStream`, or `metaStream` values and logDcr , eventDcr, metricDcr, metaDcr values in the Spark configuration using these stream names. 
 
    :::image type="content" source="media\data-collector-api-to-log-ingestion-api\stream-name.png" alt-text="Screenshot showing the retrieve the stream name and DCR ID." lightbox="media\data-collector-api-to-log-ingestion-api\stream-name.png":::
+
+
 
 ### Step 6. Configure Spark properties
 
@@ -198,7 +209,9 @@ Use this option for quick setup with service principal credentials and a client 
 
 Use this option when your organization requires certificate-based authentication.
 
-Before you start, ensure that your service principal is created with a certificate. For more information, see [Create a service principal containing a certificate using Azure CLI](/cli/azure/azure-cli-sp-tutorial-3).
+Before you start, ensure that the certificate is stored in Azure Key Vault with an exportable private key and that its public certificate is registered on the Microsoft Entra app. For more information, see Create a service principal containing a certificate using [Azure CLI](https://learn.microsoft.com/cli/azure/azure-cli-sp-tutorial-3?view=azure-cli-latest). 
+
+The signed-in Fabric user who starts the notebook Spark session must have the Key Vault Certificate User role on the Azure Key Vault. The certificate name in the Spark properties must exactly match the certificate name in Key Vault. 
 
 1. Create an environment in Fabric.
 1. Add the following **Spark properties** with the appropriate values to the environment, or select **Add from .yml** in the ribbon to import a `.yml` configuration file.
@@ -347,16 +360,16 @@ The following table lists Spark configurations for sending logs and metrics to A
 | `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.type` | Built-in destination type. To enable Azure Log Analytics via Log Ingestion API, set this value to `AzureLogIngestion`. |
 | `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.categories` | The comma-separated selected log categories. Available values include `DriverLog`, `ExecutorLog`, `EventLog`, `Metrics`. If not set, the default value is all categories. |
 | `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.dceUri` | The Data Collection Endpoint (DCE) URI used for ingestion when routing data via Data Collection Rules (DCRs). |
-| `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.logDcr` | The Data Collection Rule (DCR) resource ID used to route Spark logs to the destination. |
+| `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.logDcr` | The immutable ID (`properties.immutableId`) of the Data Collection Rule (DCR) used to route Spark logs to the destination. |
 | `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.logStream` | The stream name defined in the Data Collection Rule (DCR) for Spark logs. |
-| `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.eventDcr` | The Data Collection Rule (DCR) resource ID used to route Spark event logs. |
+| `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.eventDcr` | T The immutable ID (`properties.immutableId`) of the Data Collection Rule (DCR) used to route Spark event logs. |
 | `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.eventStream` | The stream name defined in the Data Collection Rule (DCR) for Spark event logs. |
-| `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.metricDcr` | The Data Collection Rule (DCR) resource ID used to route Spark metrics. |
+| `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.metricDcr` |  The immutable ID (`properties.immutableId`) of the Data Collection Rule (DCR) used to route Spark metrics. |
 | `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.metricStream` | The stream name defined in the Data Collection Rule (DCR) for Spark metrics. |
-| `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.metaDcr` | The Data Collection Rule (DCR) resource ID used to route Spark metadata. |
+| `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.metaDcr` |  The immutable ID (`properties.immutableId`) of the Data Collection Rule (DCR) used to route Spark metadata. |
 | `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.metaStream` | The stream name defined in the Data Collection Rule (DCR) for Spark metadata. |
-| `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.certificate.keyVault.certificateName` |  The name of the certificate stored in Azure Key Vault, used for authentication. |
-| `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.certificate.keyVault` | The Azure Key Vault URI that stores the authentication certificate. |
+| `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.certificate.keyVault.certificateName` | The name of the certificate stored in Azure Key Vault. The certificate must contain an accessible private key, and its public certificate must be registered on the Microsoft Entra app.  |
+| `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.certificate.keyVault` | The Azure Key Vault URI that stores the authentication certificate. The signed-in Fabric user who starts the Spark session must have permission to retrieve the certificate and its private key, such as the Key Vault Certificate User role.  |
 | `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.tenantId` | The Microsoft Entra tenant ID used for authentication. |
 | `spark.synapse.diagnostic.emitter.<EMITTER_NAME>.clientId` | The client (application) ID registered in Microsoft Entra ID. |
 | `spark.fabric.pools.skipStarterPools` | This Spark property is used to force an on-demand Spark session. Set the value to `true` when using the default pool to trigger the libraries to emit logs and metrics. |
