@@ -121,7 +121,7 @@ Here's an example log table JSON schema sample for Spark driver and executor log
 Create a custom table in your Log Analytics workspace with the Log Ingestion API option, and upload the JSON schema sample to the associated DCR. This step is required to set up the destination for Spark diagnostics and ensure that the ingested data conforms to the expected schema. The region of the Log Analytics workspace, DCE, and DCR must be the same for successful ingestion.
 
 1. In the [**Azure portal**](https://portal.azure.com/#home), open your Log Analytics workspace (for example, *loganalyticsworkspacedemo*).
-1. Select **Tables** > **Create** > **New custom log (Direct Ingest)**.
+1. Select **Settings** > **Tables** > **Create** > **New custom log (Direct Ingest)**.
 
     :::image type="content" source="media\data-collector-api-to-log-ingestion-api\create-custom-table-direct-ingest.png" alt-text="Screenshot showing create custom table direct ingest." lightbox="media\data-collector-api-to-log-ingestion-api\create-custom-table-direct-ingest.png":::
 
