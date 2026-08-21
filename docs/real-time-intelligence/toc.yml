@@ -871,6 +871,10 @@ items:
             href: ../real-time-hub/set-alerts-fabric-job-events.md?context=/fabric/context/context-rti&pivots=fabric
           - name: Set alerts on Azure Blob Storage events
             href: ../real-time-hub/set-alerts-azure-blob-storage-events.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Set alerts on Fabric capacity overview events
+            href: ../real-time-hub/set-alerts-fabric-capacity-overview-events.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Set alerts on anomaly detection events
+            href: ../real-time-hub/set-alerts-anomaly-detection.md?context=/fabric/context/context-rti&pivots=fabric
           - name: Create alerts on Power BI reports
             href: data-activator/activator-get-data-power-bi.md
           - name: Create alerts on ontology
