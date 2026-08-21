@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 This article describes columns on the **Fabric events** page and actions available for each event. 
 
-:::image type="content" source="./media/explore-fabric-events/fabric-events.png" alt-text="Screenshot that shows the Real-Time hub Fabric events page." lightbox="./media/explore-fabric-events/fabric-events.png":::
+:::image type="content" source="./media/explore-fabric-events/fabric-events-page.png" alt-text="Screenshot that shows the Real-Time hub Fabric events page." lightbox="./media/explore-fabric-events/fabric-events-page.png":::
 
 [!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
 

@@ -13,7 +13,7 @@ ms.topic: how-to
 
 Eventstream monitoring uses Fabric workspace monitoring. When you enable workspace monitoring in your workspace, the process creates Eventstream tables in the monitoring database. You don't need to configure anything specific for event streams. For concepts related to workspace monitoring, see [Eventstream workspace monitoring overview](fabric-workspace-monitoring.md).
 
-**Eventstream monitoring tables** are a set of three tables created in your workspace monitoring database that capture different aspects of your eventstream's behavior. All tables share common columns (base dimensions) and include table-specific columns for the data they track. For more information about the tables and the data they contain, see [Eventstream monitoring tables overview](fabric-workspace-monitoring-tables.md).
+**Eventstream monitoring tables** are a set of three tables created in your workspace monitoring database that capture different aspects of your eventstream's behavior. All tables share common columns (base dimensions) and include table-specific columns for the data they track. For more information about the tables and the data they contain, see [Eventstream monitoring tables](fabric-workspace-monitoring.md#monitoring-tables).
 
 You can query your Eventstream monitoring data using KQL (Kusto Query Language) directly in the monitoring Eventhouse. Open the monitoring database and use the query editor to run queries against the Eventstream tables.
 
@@ -64,4 +64,3 @@ EventStreamErrorMetrics
 
 - [Eventstream workspace monitoring overview](fabric-workspace-monitoring.md)
 - [Enable workspace monitoring](enable-fabric-workspace-monitoring.md)
-- [Eventstream monitoring tables](fabric-workspace-monitoring-tables.md)
