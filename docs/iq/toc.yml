@@ -121,12 +121,14 @@ items:
           href: plan/planning-concept-writeback.md
         - name: Connected planning
           href: plan/infobridge-concept-connected-planning.md
-        - name: Connected planning - Integrate visualization
+        - name: Connected planning - Blend measures
           href: plan/infobridge-concept-blend-measures.md
         - name: General - Top-down planning
           href: plan/planning-concept-top-down-planning.md
         - name: General - Bottom-up planning
-          href: plan/planning-concept-bottom-up-planning.md          
+          href: plan/planning-concept-bottom-up-planning.md
+        - name: Scenario planning
+          href: plan/planning-concept-scenario-planning.md
     - name: How-tos
       items:
         - name: Measure and row-based planning
