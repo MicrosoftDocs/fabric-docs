@@ -32,8 +32,8 @@ This tutorial covers these steps:
 
 To follow along in a notebook, you have these options:
 
-- Open and run the built-in notebook in the Synapse Data Science experience
-- Upload your notebook from GitHub to the Synapse Data Science experience
+- Open and run the built-in notebook in the Data Science workload
+- Upload your notebook from GitHub to the Data Science workload
 
 ### Open the built-in notebook
 
