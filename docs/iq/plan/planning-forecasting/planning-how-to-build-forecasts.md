@@ -1,168 +1,177 @@
 ---
 title: Create Forecasts Using Predictions and Historical Data
 description: Learn how to create and manage forecasts in a planning sheet. Create forecast models, manage forecast periods, and streamline planning and forecasting workflows.
-ms.date: 04/26/2026
+ms.date: 08/21/2026
 ms.topic: how-to
+ai-usage: ai-assisted
 ---
 
-# Forecast data to predict future trends
+# Create a P&L forecast
 
-Forecasting capabilities in the planning sheet enable organizations to move beyond static annual plans and adopt agile planning methods, such as rolling forecasts and periodic reforecasting. Use forecasting to project revenue, expenses, and other metrics for upcoming periods based on historical data.
+Use the Forecast feature to extend the time horizon of a planning sheet by creating a visual measure for future periods. For example, if a planning sheet contains data for 2024 and 2025, create a forecast measure to project values for 2026. You can visualize future-period projections alongside historical or existing planning data without modifying the underlying planning data.
 
-Create dynamic forecasts directly on semantic models and update them as new actuals become available. Forecasts can be generated using multiple approaches, such as copying historical values, applying averages, or manually adjusting projections.
+In this article, you learn to:
 
-## Prerequisite
+* Create a forecast using historical actuals as a baseline
+* Create a zero-based forecast
+* Top-down and bottom-up forecast allocation
+* Lock forecast values
+* Create statistical forecasts using Predict
+* Generate deviation between budgets and forecasts
 
-* The column dimension is a standard date hierarchy (for example, year > quarter > month).
+## Prerequisites
 
-## Define initial forecast settings
+* Create a planning sheet and assign row and column dimensions.
+* The column dimension should be a standard date hierarchy such as Year > Quarter > Month.
 
-The first step in configuring a forecast is to set the time frame for which the forecast is generated. Then configure how to populate static values in the forecast measure for past or closed periods. For instance, if you have actuals for 2025 and are generating a forecast for 2026, a static forecast measure is created for 2025.
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/prerequisite-date-hierarchy-columns.jpg" alt-text="Screenshot of a standard date hierarchy assigned to the column dimension data well in a planning sheet." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/prerequisite-date-hierarchy-columns.jpg":::
 
->[!NOTE]
->The forecast measure for previous periods can't be edited. Static values for closed forecasts can be sourced from a measure in your planning sheet by setting **Closed Period** to **Measure**. Set **Closed Period** to **Formula** to define a formula to populate closed periods.
+## Create a forecast from historical actuals
 
-1. Go to **Model** > **Forecast** to create a forecast.
-1. Set the start and end date of the forecast period.
-1. Choose how to fill closed forecasts. Set **Closed Period** to **Formula** and enter the formula. When creating a formula, you can reference other measures in the planning sheet.
+Configure forecasts using historical actuals as the starting point for future periods. This approach carries forward historical trends and values to provide a baseline for forecasting, which you can adjust in response to expected business changes.
 
-    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/closed-period-formula.png" alt-text="Screenshot of configuring closed forecasts." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/closed-period-formula.png":::
+1. In the **Model** ribbon, select **Forecast**.
+1. The default measure name is set to *Forecast.* Set a custom name if required, and then select the future period to forecast. Plan automatically populates the forecast period based on the existing data. Select **Next** to configure closed periods.
 
-    Closed forecasts are populated using the specified formula.
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/forecast-measure-name-period-selection.jpg" alt-text="Screenshot of entering the forecast measure name and selecting the forecast period." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/forecast-measure-name-period-selection.jpg":::
 
-    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/closed-forecast.png" alt-text="Screenshot of closed forecasts." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/closed-forecast.png":::
+1. Closed periods represent past periods for which actual data is available. Forecast values for closed periods are locked and can't be edited. Use an existing measure or formula to populate closed forecast periods.
 
-## Options to populate open forecasts
+    To use existing measure values for closed forecasts, select **Link to Measure** and choose the measure from **Source Measure**. In this example, you populate closed periods with values from the *Actuals* measure. Select **Next** to configure open periods.
 
-Generate open forecasts by setting **Open Period** to one of these methods:
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/closed-forecast-actuals-link-measure.jpg" alt-text="Screenshot of the closed period link to measure configuration that uses actuals." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/closed-forecast-actuals-link-measure.jpg":::
 
-* **Measure**: If measure values exist for an open period, use those values to populate the forecast. This setting is read-only.
-* **Formula**: If measure values exist for an open period, use a formula based on those values to populate the forecast. This setting is read-only.
-* **Data Input**: Allow users to enter forecasts. This setting allows users to override prepopulated forecasts.
+1. Select **Data Input** to manually enter forecasts. Retain the default **None** option for **Default Value.**
 
-:::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/forecast-open-period-options.png" alt-text="Screenshot of options to populate open forecasts.":::
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/open-period-data-input-option.jpg" alt-text="Screenshot of data input option to enter open period forecasts manually." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/open-period-data-input-option.jpg":::
 
-When open forecast measures are configured with the **Data Input** method, you can initialize the forecast using historical or current data from the source. If the source data contains blank values, configure a default value using one of the options shown.
+1. To prepopulate open forecasts from historical data, expand the **Pre-fill Open Periods** section. To initialize forecast values from a specific historical period:
 
-:::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/open-forecast-default-value.png" alt-text="Screenshot of default value for forecasts when open period is set to data input.":::
+    * Configure **Copy from** with the measure that contains the source values.
+    * Set **Operation** to **Period Range**.
+    * Define the periods to copy by specifying the **Source Range** as the historical period and the **Target Range** as the future period. Plan copies the values from the source range to the corresponding periods in the target range to initialize the forecast.
 
-> [!TIP]
-> When a measure or formula is selected as the default value, ensure that data is available for the forecast period.
+    In this example, you initialize the 2026 *Budget* with the 2025 *Actuals*.
 
-## Populate open forecasts from the data source
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/open-period-prefill-period-range.png" alt-text="Screenshot of prefill option for data input open periods with the period range option to copy values from 2025 to the 2026 forecast." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/open-period-prefill-period-range.png":::
 
-If forecast values are already available for future periods in the data source, you can populate open periods using the native forecast measure or a formula that references it.
+    After saving the configuration, plan creates the *Budget* measure as a time extension for 2026. Notice that *Actuals* aren't available for the forecast period.
 
-To initialize the open forecast from a measure in the planning sheet, set **Open Period** to **Measure**, then select the measure from **Linked Measure**.
+    * The *Budget* measure is locked for 2023, 2024, and 2025 and populated with *Actuals* according to the configuration in Step 3.
+    * The 2026 *Budget* remains available for forecasting.
 
-:::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/open-forecast-measure-formula.png" alt-text="Screenshot of configuring an open forecast from a measure.":::
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/closed-period-locked-open-period-initialized-actuals.png" alt-text="Screenshot of the closed forecast that is locked and editable open forecast initialized with prior year actuals." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/closed-period-locked-open-period-initialized-actuals.png":::
 
-To set forecast values based on a formula, set **Open Period** to **Formula** and enter the formula.
+1. To analyze specific periods in a forecast, select **Period** from the **Model** ribbon. Select the **Calendar** icon to define the required time range. To focus only on actual and forecast values, clear **Show Closed Periods** to hide locked historical values from the view.
 
-Consider a business case where the revenue projections are available for the forecast period 2026.
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/period-settings-hide-closed-periods.png" alt-text="Screenshot of options to display a specific forecasting period and hide closed periods." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/period-settings-hide-closed-periods.png":::
 
-:::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/revenue-projections.png" alt-text="Screenshot of revenue projections." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/revenue-projections.png":::
+    In Step 3, you selected **Period Range** to initialize the open forecast periods. Based on this configuration, plan creates the 2026 *Budget* by copying the corresponding *Actuals* values from 2025. This provides an initial forecast for 2026 using the values from the selected historical period.
 
-To create a forecast based on a formula, set **Open Period** to **Formula** and enter the formula.
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/period-range-forecast-prefill-historical-data.png" alt-text="Screenshot of initializing a forecast using the period range option and copying historical values from the corresponding past period." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/period-range-forecast-prefill-historical-data.png":::
 
-:::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/forecast-formula.png" alt-text="Screenshot of forecasting using a formula." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/forecast-formula.png":::
+## Create a zero-based forecast
 
-Create and save the forecast.
+Use zero-based forecasts to enter new forecast values based on current assumptions, targets, or business expectations.
 
-:::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/formula-based-forecast-created.png" alt-text="Forecast created using a formula." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/formula-based-forecast-created.png":::
+1. To create another forecast measure, expand the **Measures** pane and select **Add new measure.**
 
-## Initialize a forecast using historical or current data
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/add-new-forecast-measure.png" alt-text="Screenshot of option to add a new forecast measure from the forecasting window." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/add-new-forecast-measure.png":::
 
-Prepopulate future forecast periods using existing historical or current data. These initial values can then be manually adjusted by selecting and editing the cell.
+1. Follow the same steps as in the previous section to configure the forecast timeframe and closed periods.
 
-> [!NOTE]
-> This option is available only when [Open Period](#options-to-populate-open-forecasts) is set to **Data Input**.
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/new-forecast-measure-closed-period-initial-settings.png" alt-text="Screenshot of creating a new forecast measure and entering the measure name and forecast period." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/new-forecast-measure-closed-period-initial-settings.png":::
 
-1. Set **Open Period** to **Data Input** and **Default Value** to **None**.
+1. In the **Open Period** configuration, ensure that you select **Data Input.** Leave the other options unchanged. Select **Save**.
 
-    >[!TIP]
-    >If the measure used to initialize the forecast contains null values, you can replace them with a default value. The default value can be a static value, another measure, or a formula.
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/zero-based-forecast-open-period.png" alt-text="Screenshot of selecting the data input option to create zero based forecasts." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/zero-based-forecast-open-period.png":::
 
-1. Select **Create**.
+    The screenshot shows the *Budget* sourced from *Actuals* alongside the zero-based *Forecast*. The budget values are initialized using the corresponding actuals, while the forecast starts with zero values for the open forecast periods.
 
-    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/open-forecast-default-value.png" alt-text="Screenshot of default values for forecasts." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/open-forecast-default-value.png":::
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/budget-historical-data-zero-based-forecast.png" alt-text="Screenshot of a budget forecast created from historical data and a zero based forecast." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/budget-historical-data-zero-based-forecast.png":::
 
-1. In **Period Setup**, From **Copy Source**, select the measure to use to prepopulate the forecast.
-1. **Apply Operation** is set to **Period Range**, and **Source Periods** are automatically populated. The Revenue measure from January–December 2025 is used to initialize the forecast for January–December 2026.
+## Allocate forecasts across hierarchical data
 
-    >[!NOTE]
-    >The period range duration should match the target period duration. For example, if the target period is six months, then you must select a period range spanning six months.
+Top-down and bottom-up allocation provide complementary approaches to distributing forecast values across business dimensions.
 
-    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/period-range-forecast.png" alt-text="Screenshot of period range for forecasts." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/period-range-forecast.png":::
+Top-down allocation starts with a high-level forecast and distributes it to lower-level entities, while bottom-up allocation builds the forecast from detailed inputs and aggregates them to higher levels.
 
-    The forecast is initialized using revenue from the corresponding month in the previous year.
+1. Before allocation, in the **Planning** ribbon, change the scaling to **None**.
 
-    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/open-forecast-period-range.png" alt-text="Screenshot of open forecast with period range." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/open-forecast-period-range.png":::
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/number-scaling-select-none.png" alt-text="Screenshot of changing the number scaling to None to show the full number." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/number-scaling-select-none.png":::
 
-You can set the time period used to initialize the forecast in two ways:
+1. For top-down allocation, double-click the grand total cell for *Budget* and enter the new value.
 
-* To initialize forecasts with the average measure value over a specified period range, set **Apply Operation** to **Average of Period Range** and select the timeframe from **Source Periods**.
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/top-down-allocation-enter-value-grand-total-level.png" alt-text="Screenshot of entering a value for the grand total budget for top down allocation." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/top-down-allocation-enter-value-grand-total-level.png":::
 
-    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/average-period-range-config.png" alt-text="Screenshot of configuring an open forecast with average of period range." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/average-period-range-config.png":::
+1. The value you enter is automatically allocated to child nodes.
 
-    The average revenue from Q4 2025 is used to initialize each month in the 2026 forecast.
+      :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/entered-value-allocated-child-nodes-self-weight.png" alt-text="Screenshot of the grand total budget value allocated from parent to child nodes based on self weight." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/entered-value-allocated-child-nodes-self-weight.png":::
 
-    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/average-period-range-forecast.png" alt-text="Screenshot of an open forecast with period range." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/average-period-range-forecast.png" :::
+1. You can enable subtotals before bottom-up allocations. In the **Planning** tab, set **Column Subtotal** to **Left**. This action shows the *2026 Total* column.
 
-* Similarly, to initialize forecasts with measure values from a single period, set **Apply Operation** to **Single Period** and select the period.
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/enable-column-subtotal-left-position.png" alt-text="Screenshot of enabling the column subtotal and displaying it on the left side." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/enable-column-subtotal-left-position.png":::
 
-    The revenue from December 2025 is used to initialize each month in the 2026 forecast.
+1. Select a leaf node or subtotal node and enter the required value.
 
-    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/single-period-forecast.png" alt-text="Screenshot of an open forecast with a single period range." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/single-period-forecast.png":::
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/enter-value-leaf-node-subtotal-node.png" alt-text="Screenshot of entering a forecast value for a subtotal chart of accounts row." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/enter-value-leaf-node-subtotal-node.png":::
 
-## Initialize forecast ranges using different methods
+1. The value you enter aggregates to the grand total *Budget*.
 
-Split a forecast period into multiple ranges and initialize each range using a different method, such as average values or data from a prior period.
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/value-entered-aggregated-grand-total.png" alt-text="Screenshot of bottom-up allocation with the entered value aggregated to the grand total Budget row." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/value-entered-aggregated-grand-total.png":::
 
-> [!NOTE]
-> This option is available only when [Open Period](#options-to-populate-open-forecasts) is set to **Data Input**.
+## Lock forecasts
 
-1. Configure the initial forecast settings, then go to **Period Setup**.
-1. Set the **Target Period** to January–March 2026, **Copy Source** to the Revenue measure, **Apply Operation** to **Single Period**, and **Source Periods** to December 2025.
+Lock values entered in a planning sheet to prevent further edits and preserve approved planning data.
 
-    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/split-forecast-single-period-config.png" alt-text="Screenshot of configuration for splitting a forecast with a single period.":::
+1. In the **Model** ribbon, go to **Rules** > **Locking Rule**.
+1. To lock edits to the *Budget* measure, set **Apply to Measures** to **Selected Measures**, and then select *Budget* from **Choose Measures**. Select **Apply to Children** to prevent editing child nodes.
 
-1. Select **Add Range**.
-1. Set the **Target Period** to April–June 2026, **Copy Source** to the Revenue measure, **Apply Operation** to **Average of Period Range**, and **Source Periods** to January–December 2025.
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/locking-rule-selected-measure-selected-row-dimension.png" alt-text="Screenshot of locking rule configuration for a particular measure and specific row." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/locking-rule-selected-measure-selected-row-dimension.png":::
 
-    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/split-forecast-average-period-config.png" alt-text="Screenshot of configuration for splitting a forecast with average period.":::
+1. Select **Create**. This rule locks the *Budget* measure.
 
-1. Select **Add Range**.
-1. Set the **Target Period** to July–August 2026, **Copy Source** to the Revenue measure, **Apply Operation** to **Period Range**, and **Source Periods** to November–December 2025.
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/budget-measure-editing-locked.png" alt-text="Screenshot of the locking rule applied to the Budget measure, showing locked cells in the planning grid." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/budget-measure-editing-locked.png":::
 
-    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/split-forecast-period-range-config.png" alt-text="Screenshot of configuration for splitting a forecast with period range.":::
+## Create statistical forecasts based on seasonality and trends
 
-The 2026 forecast is split into multiple ranges based on the period setup configurations:
+Statistical forecasting uses historical data and statistical models to identify patterns and trends, and generates forecasts without manual input. For more information about Predict, see [Generating statistical forecasts](./planning-how-to-generate-statistical-forecasts-using-predict-feature.md).
 
-* The forecast for January–March 2026 is initialized from the December 2025 revenue.
+1. Before using **Predict**, in the **Model** ribbon, go to **Period** to display historical data from 2023 and 2024. Hide closed forecasts to focus on historical data and the periods available for forecasting.
+1. Predict works on any hierarchy level. In this example, select the grand total *Forecast,* then select **Predict** on the **Model** ribbon. Plan displays the selected row and measure.
 
-    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/split-forecast-single-period.png" alt-text="Screenshot of splitting a forecast with single period." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/split-forecast-single-period.png":::
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/predict-pane-selected-measure-forecast-row.png" alt-text="Screenshot of the Predict side pane showing the selected measure and forecast row." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/predict-pane-selected-measure-forecast-row.png":::
 
-* The forecast for April–June (Q2) 2026 is created from the average revenue from 2025.
+1. Set **Evaluation** to **Bottom Up**. This option generates the predicted future value based on the trend of individual leaf nodes; in this example, the chart of accounts,
+1. The **Trend Decomposition** forecasting algorithm is selected by default. For more information about algorithms, see [Statistical forecasting algorithms](../planning-concept-predict.md). Select **Year** for **Set Seasonality** and select **Run Forecast**.
 
-    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/split-forecast-average-period.png" alt-text="Screenshot of splitting a forecast with average period." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/split-forecast-average-period.png":::
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/predict-evaluation-seasonality-option.png" alt-text="Screenshot of the evaluation options and seasonality option in predict." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/predict-evaluation-seasonality-option.png":::
 
-* The forecast for July–August 2026 is based on the revenue from November–December 2025.
+1. Preview the predicted forecast values in a graph to visualize the expected trends and patterns across future periods.
 
-    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/split-forecast-period-range.png" alt-text="Screenshot of splitting a forecast with period range." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/split-forecast-period-range.png":::
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/predict-graph-forecasted-values.png" alt-text="Screenshot of graph showing the trend of predicted values with the confidence range." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/predict-graph-forecasted-values.png":::
 
-* The forecast values for September through December 2026 are blank because no initial value is configured in the Period Setup.
+1. Scroll down to view the actual predicted values and the confidence interval and range for each value.
 
-## Update open forecasts
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/predict-table-view-actual-forecasted-values.png" alt-text="Screenshot of table showing the actual predicted values and the confidence interval." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/predict-table-view-actual-forecasted-values.png":::
 
-After a forecast is created, its initial values can be modified at any time. If the open forecast is into multiple periods, you can update the values for a specific period without affecting the configured values for the other periods.
+1. Select **Save Forecast**. Review the forecast measure and period, and then select **Save** to apply the predicted values in the planning sheet.
 
-1. Select **Reforecast** > **Reforecast Column**.
-1. Define the period range to update the open forecast.
-1. Select the measure and method to populate the forecast.
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/statistical-forecast-values-applied-planning-sheet.png" alt-text="Screenshot of the planning sheet with statistical forecast predicted values applied for the selected forecast period." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/statistical-forecast-values-applied-planning-sheet.png":::
 
-    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/reforecast-configuration.png" alt-text="Screenshot of reforecasting configuration" lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/reforecast-configuration.png":::
+## Generate deviation between budget and forecast
 
-    The new configuration is applied to the July forecast.
+Deviation shows how actual or forecasted results differ from the original budget or target. It helps you identify where performance is above or below expectations and highlights areas that might require corrective action.
 
-    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/reforecasting.png" alt-text="Screenshot of reforecasted data." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/reforecasting.png":::
+1. In the **Planning** ribbon, select **Forecast**.  Set the **Measure Name** to *Deviation*. Keep the default forecast period for Jan - Dec 2026.
+1. In the **Closed Period** configuration, select **Formula** and enter the formula to calculate the deviation between *Budget* and *Forecast*.
+
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/closed-period-formula-based-deviation.png" alt-text="Screenshot of closed period configuration to populate values based on a deviation formula." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/closed-period-formula-based-deviation.png":::
+
+1. Use the same configuration for open periods. Select **Save**.
+
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/open-period-formula-based-deviation.png" alt-text="Screenshot of open period configuration to populate values using a deviation formula." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/open-period-formula-based-deviation.png":::
+
+    This action creates the deviation measure.
+
+    :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/create-deviation-budget-forecast.png" alt-text="Screenshot of the deviation measure created between the budget and forecast measures.":::
