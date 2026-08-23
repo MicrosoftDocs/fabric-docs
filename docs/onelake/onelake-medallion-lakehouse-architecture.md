@@ -12,9 +12,11 @@ ai-usage: ai-assisted
 #customer intent: As a data engineer, I want to understand medallion lakehouse architecture and learn how to implement a lakehouse so that I can optimally structure and store my organization's data.
 ---
 
-# Understand medallion lakehouse architecture for Fabric with OneLake
+# Understand medallion architecture for Fabric with OneLake
 
 The medallion lakehouse architecture, commonly known as _medallion architecture_, is a design pattern that's used to organize data in a lakehouse. It's the recommended design approach for Fabric. Since OneLake is the data lake for Fabric, medallion architecture is implemented by creating lakehouses in OneLake.
+
+Use this article after you choose medallion architecture to plan its implementation, including layer design, deployment models, storage formats, materialized lake views, and Delta table optimization. To compare medallion architecture with other OneLake patterns and understand how the patterns work together, see [OneLake patterns and foundational capabilities](architecture-patterns.md).
 
 Medallion architecture comprises three distinct layers. The three medallion layers are: bronze (raw data), silver (enriched data), and gold (curated data). Each layer indicates the quality of data stored in the lakehouse, with higher levels representing higher quality.
 

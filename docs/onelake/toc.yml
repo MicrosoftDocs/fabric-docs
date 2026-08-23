@@ -6,8 +6,6 @@ items:
   items:
   - name: What is OneLake?
     href: onelake-overview.md
-  - name: Medallion lakehouse architecture
-    href: onelake-medallion-lakehouse-architecture.md
 - name: Get started
   items:
   - name: Get data into OneLake
@@ -16,6 +14,12 @@ items:
     href: quickstart-consume-data.md
   - name: Ingest data and analyze with Azure Databricks
     href: onelake-open-access-quickstart.md
+- name: Design your OneLake
+  items:
+  - name: Architecture patterns
+    href: architecture-patterns.md
+  - name: Medallion architecture
+    href: onelake-medallion-lakehouse-architecture.md
 - name: Unify your data
   items:
   - name: Choose shortcuts or mirroring
