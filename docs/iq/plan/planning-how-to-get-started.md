@@ -54,6 +54,9 @@ In this section, you add the semantic model connection that you created earlier 
 
     :::image type="content" source="media/planning-how-to-get-started/semantic-model-connection.png" alt-text="Screenshot of connecting to a semantic model." lightbox="media/planning-how-to-get-started/semantic-model-connection.png":::
 
+> [!NOTE]
+> Only connections with the **Power BI Semantic Model** connection type that the current user has access to appear in this dropdown.
+
 1. Select the semantic model, and then select **Add**.
 
     :::image type="content" source="media/planning-how-to-get-started/new-plan-4.png" alt-text="Screenshot of choosing a semantic model." lightbox="media/planning-how-to-get-started/new-plan-4.png":::
