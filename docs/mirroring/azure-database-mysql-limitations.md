@@ -21,11 +21,11 @@ For troubleshooting, see:
 
 The following limitations apply at the MySQL server level when configuring mirroring in Microsoft Fabric.
 
-- Mirroring in Fabric supports MySQL versions 8.0 (8.0.x, starting from 8.0.21).
+- Mirroring in Fabric supports MySQL version 8.0 only (8.0.x, starting from 8.0.21). MySQL 8.4 isn't supported.
 
 - The Burstable Compute Tier isn't supported.
 
-- Custom ports or High Availability (HA) aren't supported.
+- Custom ports or High Availability (HA) configurations aren't supported.
 
 - You can't configure mirroring in Fabric on a Read Replica server.
 
@@ -53,7 +53,7 @@ Mirroring requires extra configuration for network-isolated servers.
 
 - Virtual Network enabled Azure MySQL servers aren't supported for Fabric Mirroring.
 
-- If your server isn't publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for MySQL flexible server when allowed by the firewall rule.
+- For network-isolated servers, Fabric Mirroring supports Private Link/private endpoint connectivity only. Virtual network data gateway and VNET data gateway aren't supported at this time.
 
 ## Table level
 
