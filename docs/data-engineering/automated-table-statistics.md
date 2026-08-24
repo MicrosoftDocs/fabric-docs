@@ -264,7 +264,7 @@ It’s important to understand the current limitations of Fabric’s automated s
 - Statistics are collected only at write time.
 - Updates from other engines aren't aggregated automatically.
 - Only the first 32 columns are included (including nested columns).
-- Deletes and updates can make statistics stale. With deletion vectors, regular `OPTIMIZE` or `REORG TABLE ... APPLY (PURGE)` maintenance rewrites affected files and refreshes their statistics. Disable statistics injection between maintenance cycles on tables with frequent updates or deletes.
+- Deletes and updates can make statistics stale. For tables that use deletion vectors, regular `OPTIMIZE` or `REORG TABLE ... APPLY (PURGE)` maintenance rewrites affected files and refreshes their statistics. Disable statistics injection between maintenance cycles on tables with frequent updates or deletes.
 - Recompute requires a rewrite or statistics API operation.
 - Statistics injection doesn't apply to nested columns.
 - In some workloads, stale or incomplete stats can lead to regressions.
@@ -278,4 +278,3 @@ It’s important to understand the current limitations of Fabric’s automated s
 - [Table compaction](table-compaction.md)
 - [Lakehouse table maintenance](lakehouse-table-maintenance.md)
 - [Configure resource profiles based on your workload requirements](configure-resource-profile-configurations.md)
-
