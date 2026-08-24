@@ -25,7 +25,7 @@ The following limitations apply at the MySQL server level when configuring mirro
 
 - The Burstable Compute Tier isn't supported.
 
-- Custom ports or High Availability (HA) configurations aren't supported.
+- The service doesn't support custom ports or High Availability (HA) configurations.
 
 - You can't configure mirroring in Fabric on a Read Replica server.
 
