@@ -53,7 +53,7 @@ Mirroring requires extra configuration for network-isolated servers.
 
 - Virtual Network enabled Azure MySQL servers aren't supported for Fabric Mirroring.
 
-- For network-isolated servers, Fabric Mirroring supports Private Link/private endpoint connectivity only. Virtual network data gateway and VNET data gateway aren't supported at this time.
+- For network-isolated servers, Fabric Mirroring supports only Private Link and private endpoint connectivity. You can't use virtual network data gateway or VNET data gateway.
 
 ## Table level
 
