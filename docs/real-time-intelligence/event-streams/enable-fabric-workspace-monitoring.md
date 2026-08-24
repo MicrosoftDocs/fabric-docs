@@ -1,23 +1,25 @@
 ---
-title: Enable Workspace Monitoring for Eventstreams
+title: Enable Workspace Monitoring for Eventstreams (preview)
 description: Enable workspace monitoring for Eventstreams in Microsoft Fabric. Learn how to set up an Eventhouse and access Eventstream monitoring tables in your workspace.
 #customer intent: As a Fabric workspace admin, I want to enable workspace monitoring for my Eventstreams so that I can track their performance and health.
 author: spelluru
 ms.author: spelluru
 ms.reviewer: spelluru
-ms.date: 07/27/2026
+ms.date: 08/24/2026
 ms.topic: how-to
+ai-usage: ai-assisted
 ---
 
 # Enable workspace monitoring for eventstreams (preview)
 
-Eventstream monitoring uses [Fabric workspace monitoring](/fabric/fundamentals/workspace-monitoring-overview). To enable workspace monitoring for eventstreams, complete the following steps:
+Eventstream workspace monitoring (preview) uses [Fabric workspace monitoring](/fabric/fundamentals/workspace-monitoring-overview). To enable workspace monitoring for eventstreams, complete the following steps:
 
 1. Enable workspace monitoring at the workspace level and create an Eventhouse in your workspace. The Eventhouse is a monitoring database that contains tables for monitoring data from all supported items in the workspace, including eventstreams.
 2. Enable workspace monitoring at the eventstream level.
 
 This article provides instructions for enabling workspace monitoring for eventstreams. For more information about workspace monitoring, see [Eventstream workspace monitoring overview](fabric-workspace-monitoring.md).
 
+[!INCLUDE [Eventstream workspace monitoring preview notice](includes/eventstream-workspace-monitoring-preview.md)]
 
 [!INCLUDE [Workspace monitoring prerequisites](includes/workspace-monitoring-prerequisites.md)]
 
@@ -49,7 +51,7 @@ To enable workspace monitoring for an eventstream, follow these steps:
 1. Select **Monitoring**.
 1. Toggle the **Log Eventstream activity** option to **On**.
 
-    :::image type="content" source="media/enable-fabric-workspace-monitoring/event-stream-monitoring-settings.png" alt-text="Screenshot that shows the Eventstream settings page with Monitoring section highlighted and Enable workspace monitoring option toggled on." lightbox="media/enable-fabric-workspace-monitoring/event-stream-monitoring-settings.png":::
+    :::image type="content" source="media/enable-fabric-workspace-monitoring/event-stream-monitoring-settings.png" alt-text="Screenshot of Eventstream settings with Monitoring selected and Log Eventstream activity turned on." lightbox="media/enable-fabric-workspace-monitoring/event-stream-monitoring-settings.png":::
 
 ## Open the monitoring database
 
@@ -69,3 +71,4 @@ Locate and explore the monitoring eventhouse to verify the Eventstream tables ar
 
 - [Eventstream workspace monitoring overview](fabric-workspace-monitoring.md)
 - [Query Eventstream monitoring data with KQL](query-fabric-workspace-monitoring-data.md)
+- [Eventstream workspace monitoring known limitations](fabric-workspace-monitoring-known-limitations.md)
