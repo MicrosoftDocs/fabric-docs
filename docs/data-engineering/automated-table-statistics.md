@@ -4,7 +4,7 @@ title: Configure and manage Automated Table Statistics in Fabric Spark
 description: Learn how to configure Automated Table Statistics in Fabric Spark to optimize performance for analytics workloads.
 ms.reviewer: saravi
 ms.topic: how-to
-ms.date: 03/01/2026
+ms.date: 08/24/2026
 ai-usage: ai-assisted
 ---
 
@@ -60,39 +60,34 @@ These settings can be applied through Spark SQL, PySpark, or Scala Spark.
 
 # [Spark SQL](#tab/sparksql)
 
-Run the following Spark SQL statements to control collection and optimizer injection:
+Run the following Spark SQL statements to enable collection and optimizer injection:
 
 ```sql
 SET spark.microsoft.delta.stats.collect.extended=true;
-SET spark.microsoft.delta.stats.collect.extended=false;
 SET spark.microsoft.delta.stats.injection.enabled=true;
-SET spark.microsoft.delta.stats.injection.enabled=false;
 ```
 
 # [PySpark](#tab/pyspark)
 
-Run the following commands in PySpark to control collection and optimizer injection:
+Run the following commands in PySpark to enable collection and optimizer injection:
 
 ```python
 spark.conf.set("spark.microsoft.delta.stats.collect.extended", "true")
-spark.conf.set("spark.microsoft.delta.stats.collect.extended", "false")
 spark.conf.set("spark.microsoft.delta.stats.injection.enabled", "true")
-spark.conf.set("spark.microsoft.delta.stats.injection.enabled", "false")
 ```
 
 # [Scala Spark](#tab/scalaspark)
 
-To control collection and optimizer injection, run the following commands in Scala Spark:
+To enable collection and optimizer injection, run the following commands in Scala Spark:
 
 ```scala
 spark.conf.set("spark.microsoft.delta.stats.collect.extended", "true")
-spark.conf.set("spark.microsoft.delta.stats.collect.extended", "false")
 spark.conf.set("spark.microsoft.delta.stats.injection.enabled", "true")
-spark.conf.set("spark.microsoft.delta.stats.injection.enabled", "false")
 ```
 
 ---
 
+To disable either setting, use the same command with the value set to `false`.
 
 > [!NOTE]
 > Delta log statistics collection (`spark.databricks.delta.stats.collect`) must also be enabled (default: true).
@@ -104,6 +99,8 @@ spark.conf.set("spark.microsoft.delta.stats.injection.enabled", "false")
 > - Table scope: set the `delta.stats.extended.inject` table property to `false`.
 >
 > You can keep statistics collection enabled. For tables that use deletion vectors, only disable injection into the optimizer.
+>
+> A regular table maintenance strategy reduces this risk. `OPTIMIZE` automatically purges files where more than 5% of rows are referenced by deletion vectors, and `REORG TABLE ... APPLY (PURGE)` can force a rewrite below that threshold. Because extended statistics are collected at write time, the rewrite refreshes statistics for the affected files. For tables with frequent updates or deletes, keep injection disabled between maintenance cycles.
 
 ### Table properties (override session config)
 
@@ -119,15 +116,7 @@ SET TBLPROPERTIES(
 )
 ```
 
-Disable on a table:
-
-```sql
-ALTER TABLE tableName
-SET TBLPROPERTIES(
-    'delta.stats.extended.collect' = 'false',
-    'delta.stats.extended.inject' = 'false'
-)
-```
+To disable either table property, set its value to `false`.
 
 ### Table-creation default behavior
 
@@ -161,7 +150,7 @@ spark.conf.set("spark.microsoft.delta.stats.collect.extended.property.setAtTable
 
 ## Check statistics
 
-You can inspect the collected table and column statistics using Spark’s APIs — useful for debugging or validation.
+You can inspect the statistics available to an optimized query plan by using Spark APIs. These APIs return generic plan statistics from any available source, including Spark catalog statistics. A result doesn't confirm that Fabric extended statistics were collected for the table.
 
 Check row count and table size (Scala example):
 
@@ -191,20 +180,24 @@ spark.read.table("targetTable").write.partitionBy("partCol").mode("overwrite").s
 
 Recommended approach (Fabric Spark >= 3.2.0.19):
 
-```scala
+```python
+from pyspark.sql.delta import StatisticsStore
+
 StatisticsStore.recomputeStatisticsWithCompaction(spark, "testTable1")
 ```
 
-If the schema changes (e.g., you add/drop columns), you need to remove old statistics before recomputing:
+If the schema changes (for example, you add or drop columns), remove old statistics before recomputing:
 
-```scala
+```python
+from pyspark.sql.delta import StatisticsStore
+
 StatisticsStore.removeStatisticsData(spark, "testTable1")
 StatisticsStore.recomputeStatisticsWithCompaction(spark, "testTable1")
 ```
 
 ## Use ANALYZE TABLE
 
-Use `ANALYZE TABLE` when you want to manually refresh statistics across all columns.
+Use `ANALYZE TABLE` to compute Spark catalog statistics across all columns. This command doesn't recompute the extended statistics stored by Automated Table Statistics. To recompute those statistics, use `StatisticsStore.recomputeStatisticsWithCompaction`.
 
 Run the command:
 
@@ -238,11 +231,10 @@ Enable catalog statistics injection:
 
 # [Spark SQL](#tab/sparksql)
 
-Use these Spark SQL statements to enable or disable catalog statistics injection:
+Use this Spark SQL statement to enable catalog statistics injection:
 
 ```sql
 SET spark.microsoft.delta.stats.injection.catalog.enabled=true;
-SET spark.microsoft.delta.stats.injection.catalog.enabled=false;
 ```
 
 # [PySpark](#tab/pyspark)
@@ -253,22 +245,17 @@ Use this PySpark setting to enable catalog statistics injection:
 spark.conf.set("spark.microsoft.delta.stats.injection.catalog.enabled", "true")
 ```
 
-Disable catalog statistics injection:
-
-```python
-spark.conf.unset("spark.microsoft.delta.stats.injection.catalog.enabled")
-```
-
 # [Scala Spark](#tab/scalaspark)
 
-Use these Scala Spark settings to enable or disable catalog statistics injection:
+Use this Scala Spark setting to enable catalog statistics injection:
 
 ```scala
 spark.conf.set("spark.microsoft.delta.stats.injection.catalog.enabled", "true")
-spark.conf.unset("spark.microsoft.delta.stats.injection.catalog.enabled")
 ```
 
 ---
+
+To disable catalog statistics injection, use the same setting with the value set to `false`.
 
 ## Limitations
 
@@ -277,8 +264,7 @@ It’s important to understand the current limitations of Fabric’s automated s
 - Statistics are collected only at write time.
 - Updates from other engines aren't aggregated automatically.
 - Only the first 32 columns are included (including nested columns).
-- Deletes and updates can make statistics stale.
-- When deletion vectors are enabled, extended statistics can become inaccurate on tables with frequent updates or deletes, which might cause broadcast-join planning regressions. Disable statistics injection on these tables to avoid query failures.
+- Deletes and updates can make statistics stale. For tables that use deletion vectors, regular `OPTIMIZE` or `REORG TABLE ... APPLY (PURGE)` maintenance rewrites affected files and refreshes their statistics. Disable statistics injection between maintenance cycles on tables with frequent updates or deletes.
 - Recompute requires a rewrite or statistics API operation.
 - Statistics injection doesn't apply to nested columns.
 - In some workloads, stale or incomplete stats can lead to regressions.
@@ -292,5 +278,3 @@ It’s important to understand the current limitations of Fabric’s automated s
 - [Table compaction](table-compaction.md)
 - [Lakehouse table maintenance](lakehouse-table-maintenance.md)
 - [Configure resource profiles based on your workload requirements](configure-resource-profile-configurations.md)
-
-

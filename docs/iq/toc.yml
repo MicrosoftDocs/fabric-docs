@@ -5,6 +5,8 @@ items:
   items:
   - name: What is Fabric IQ?
     href: overview.md
+- name: Get started
+  href: get-started-with-fabric-iq.md
 - name: Ontology
   items:
   - name: Overview
