@@ -77,7 +77,7 @@ items:
   items:
   - name: Overview
     items:
-    - name: What is plan?
+    - name: What is Plan?
       href: plan/overview.md
     - name: Planning sheets overview
       href: plan/planning-overview.md

@@ -1,6 +1,6 @@
 ---
 title: Writeback FAQ
-description: Answers to frequently asked questions about writeback in plan, including row-level security (RLS), data availability, and data storage logic.
+description: Answers to frequently asked questions about writeback in Plan, including row-level security (RLS), data availability, and data storage logic.
 ms.date: 05/04/2026
 ms.topic: faq
 #customer intent: As a user, I want to understand how writeback operates, how it handles Row-Level Security (RLS), and how data is updated and stored.
@@ -8,23 +8,23 @@ ms.topic: faq
 
 # Writeback FAQ
 
-This article provides answers to frequently asked questions about the writeback feature in plan. Review these common scenarios to understand how data updates, storage, and security operate.
+This article provides answers to frequently asked questions about the writeback feature in Plan. Review these common scenarios to understand how data updates, storage, and security operate.
 
 ## If a user updates a data input column in reading mode and closes the report, is the latest data available when reopening?
 
 Yes. Plan captures changes to data input columns and stores them in the backend database. This process works in both reading and edit modes. When the report reopens, plan retrieves the latest values and loads the report with updated data.
 
-## How does row-level security (RLS) work in plan?
+## How does row-level security (RLS) work in Plan?
 
 Plan respects the RLS defined in the original Power BI dataset. The planning sheet shows only the rows that you can see. RLS in Power BI applies to users with Viewer access in the workspace.
 
 ## How does writeback work with RLS?
 
-Plan writes back only the rows visible to you. If you see a limited set of dimension categories based on RLS, plan writes back only those rows. You can write back only the data that's visible in the planning sheet.
+Plan writes back only the rows visible to you. If you see a limited set of dimension categories based on RLS, Plan writes back only those rows. You can write back only the data that's visible in the planning sheet.
 
 ## How is data stored when multiple users perform writeback? When are rows overwritten or appended?
 
-Plan processes writeback operations sequentially. During writeback, plan compares incoming rows with existing rows in the destination. If all dimension columns and values match, plan overwrites the existing row. However, if you prefer that plan doesn't overwrite rows during writeback commits, select **Writeback only changes/Delta writeback** as the writeback type. Under this mode, plan retains previous values.
+Plan processes writeback operations sequentially. During writeback, Plan compares incoming rows with existing rows in the destination. If all dimension columns and values match, Plan overwrites the existing row. However, if you prefer that Plan doesn't overwrite rows during writeback commits, select **Writeback only changes/Delta writeback** as the writeback type. Under this mode, Plan retains previous values.
 
 :::image type="content" source="../media/planning-writeback/planning-writeback-faq/writeback-faq.png" alt-text="Diagram showing the writeback process diagram. When all dimensions match, data is overwritten. If a dimension differs (such as US versus UK), a new row is appended.":::
 
@@ -50,15 +50,15 @@ Yes—you can configure multiple Fabric SQL DB destinations for a single plannin
 
 ## Can I write back multiple sheets to the same SQL table?
 
-Yes—you can write back multiple sheets from the same plan app to the same SQL database. You need to configure the SQL DB destination in every sheet that you want to write back.
+Yes—you can write back multiple sheets from the same Plan app to the same SQL database. You need to configure the SQL DB destination in every sheet that you want to write back.
 
 ## Can I control which columns get written back?
 
 Yes—in the **Data** tab of writeback settings, you can choose which columns to include or exclude. This control is useful if you have workflow columns (Submitted, Approval Status, Comments) that you want to write back alongside the plan data, or if you want to exclude certain columns from the destination table.
 
-## What does Decimal Precision control, and does it affect the values in the plan app?
+## What does Decimal Precision control, and does it affect the values in the Plan app?
 
-It controls how many decimal places the SQL table stores. It doesn't affect the values displayed or used within the plan app—it only impacts the precision of the written data in the database.
+It controls how many decimal places the SQL table stores. It doesn't affect the values displayed or used within the Plan app—it only impacts the precision of the written data in the database.
 
 ## What happens if I run writeback twice—does it create duplicate rows?
 

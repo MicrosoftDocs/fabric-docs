@@ -7,7 +7,7 @@ description: Intelligence Sheets in Plan apps let you visualize semantic model d
 
 # Intelligence FAQ
 
-This FAQ addresses common questions and clarifications that arise while working with intelligence sheets in plan.
+This FAQ addresses common questions and clarifications that arise while working with intelligence sheets in Plan.
 
 ## What is the difference between an **Intelligence Sheet** and a **Planning Sheet**?
 

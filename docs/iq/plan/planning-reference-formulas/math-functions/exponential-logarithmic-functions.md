@@ -1,6 +1,6 @@
 ---
 title: Exponential and Logarithmic Functions
-description: Learn about exponential and logarithmic functions in plan and how to use them to perform exponential, logarithmic, and root calculations.
+description: Learn about exponential and logarithmic functions in Plan and how to use them to perform exponential, logarithmic, and root calculations.
 ms.date: 06/04/2026
 ms.topic: reference
 ms.search.form: Exponential and logarithmic functions
@@ -11,7 +11,7 @@ ms.search.form: Exponential and logarithmic functions
 
 Exponential and logarithmic functions let you perform exponential growth, logarithmic, and root calculations in reports. These functions are commonly used to calculate powers, logarithms, and square roots for mathematical and analytical operations.
 
-In plan, exponential and logarithmic functions help you create calculations for scenarios such as growth analysis, scientific calculations, trend modeling, and advanced business computations.
+In Plan, exponential and logarithmic functions help you create calculations for scenarios such as growth analysis, scientific calculations, trend modeling, and advanced business computations.
 
 ## EXP
 
