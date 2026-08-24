@@ -96,7 +96,7 @@ spark.synapse.diagnostic.emitter.MyEventHub.clientId: "<SERVICE_PRINCIPAL_CLIENT
 spark.fabric.pools.skipStarterPools: "true" 
    ```
 
-For certificate-based authentication, hostName is the fully qualified domain name of the Event Hubs namespace, without the sb:// prefix. entityPath is the name of the target Event Hub instance. The certificate name must exactly match the certificate name in Azure Key Vault.
+For certificate-based authentication, hostName is the fully qualified domain name of the Event Hubs namespace, without the `sb://` prefix. entityPath is the name of the target Event Hub instance. The certificate name must exactly match the certificate name in Azure Key Vault.
 
 ### Step 3: Attach the Environment Item to Notebooks or Spark Job Definitions, or Set It as the Workspace Default
 
@@ -160,7 +160,7 @@ For certificate-based authentication, hostName is the fully qualified domain nam
 | `spark.synapse.diagnostic.emitter.<destination>.secret` | Optional. The Azure Event Hubs connection string. Required if not using certificate-based authentication and `.secret.keyVault` is not specified. This field should match the pattern `Endpoint=sb://<FQDN>/;SharedAccessKeyName=<KeyName>;SharedAccessKey=<KeyValue>;EntityPath=<PathName>`. |
 | `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault` | Required if using connection string authentication and `.secret` is not specified. The Azure Key Vault uri where the secret (connection string) is stored. |
 | `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault.secretName` | Required if `.secret.keyVault` is specified. The Azure Key Vault secret name where the secret (connection string) is stored. |
-| `spark.synapse.diagnostic.emitter.<destination>.hostName` | Required for certificate-based authentication. The fully qualified domain name of the Event Hubs namespace, without the sb:// prefix. For example, &lt;namespace&gt;.servicebus.windows.net. |
+| `spark.synapse.diagnostic.emitter.<destination>.hostName` | Required for certificate-based authentication. The fully qualified domain name of the Event Hubs namespace, without the `sb://` prefix. For example, &lt;namespace&gt;.servicebus.windows.net. |
 | `spark.synapse.diagnostic.emitter.<destination>.entityPath` | Required for certificate-based authentication. The name of the Event Hubs instance that receives the diagnostic data. |
 | `spark.synapse.diagnostic.emitter.<destination>.tenantId` | Required if using certificate-based authentication. The Azure Active Directory tenant ID of the Service Principal. |
 | `spark.synapse.diagnostic.emitter.<destination>.clientId` | Required if using certificate-based authentication. The application (client) ID of the Service Principal. |
