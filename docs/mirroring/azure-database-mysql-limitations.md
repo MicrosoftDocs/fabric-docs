@@ -21,7 +21,7 @@ For troubleshooting, see:
 
 The following limitations apply at the MySQL server level when configuring mirroring in Microsoft Fabric.
 
-- Mirroring in Fabric supports MySQL version 8.0 only (8.0.x, starting from 8.0.21). MySQL 8.4 isn't supported.
+- Mirroring in Fabric supports only MySQL version 8.0 (8.0.x, starting from 8.0.21). It doesn't support MySQL 8.4.
 
 - The Burstable Compute Tier isn't supported.
 
