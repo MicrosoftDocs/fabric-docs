@@ -1,14 +1,14 @@
 ---
 title: Fiscal Year Setup for Planning and Reporting
 description: Fiscal calendars in Plan organize planning around your financial year. Discover how to configure the fiscal start month, Prior or Same convention, and forecast periods.
-#customer intent: As a plan user, I want to set up a fiscal calendar in Plan so that I can plan, forecast, and report on my organization's financial year instead of the calendar year.
+#customer intent: As a Plan user, I want to set up a fiscal calendar in Plan so that I can plan, forecast, and report on my organization's financial year instead of the calendar year.
 ms.date: 07/27/2026
 ms.topic: concept-article
 ---
 
 # Fiscal year setup in planning and reporting
 
-This article explains the difference between a calendar year and a fiscal year. It also describes how to set up a fiscal calendar in plan for planning, reporting, and forecasting by using fiscal years (FY).
+This article explains the difference between a calendar year and a fiscal year. It also describes how to set up a fiscal calendar in Plan for planning, reporting, and forecasting by using fiscal years (FY).
 
 ## What is a fiscal year?
 
@@ -67,9 +67,9 @@ Use fiscal calendars across the following time-intelligence features:
 * Open and closed periods
 * Time-based planning
 
-## Set up fiscal date calendar in plan
+## Set up fiscal date calendar in Plan
 
-When you set up fiscal date calendars in plan, you can organize planning and reporting around your financial year instead of the calendar year.
+When you set up fiscal date calendars in Plan, you can organize planning and reporting around your financial year instead of the calendar year.
 
 To do this, create a fiscal date table in your semantic model and map the calendar and fiscal years accordingly.&#x20;
 
@@ -159,7 +159,7 @@ Configure these settings before creating forecast measures or extending time per
 
 ### Fiscal year start month
 
-This option identifies the first month of the organization's fiscal year. It determines fiscal quarter boundaries and how plan extends future fiscal periods. Select the month that exactly matches the fiscal date table.
+This option identifies the first month of the organization's fiscal year. It determines fiscal quarter boundaries and how Plan extends future fiscal periods. Select the month that exactly matches the fiscal date table.
 
 | Business calendar | Select  |
 | ----------------- | ------- |
@@ -175,7 +175,7 @@ For example, when *April* is selected:
 * Q3 is October–December.
 * Q4 is January–March.
 
-If the selected month doesn't match the semantic model, plan can interpret quarters and forecast periods incorrectly.
+If the selected month doesn't match the semantic model, Plan can interpret quarters and forecast periods incorrectly.
 
 ### Fiscal year convention
 

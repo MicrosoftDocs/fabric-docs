@@ -9,7 +9,6 @@ ms.topic: how-to
 
 Use Optimize to find the input values you need to reach a target KPI, like revenue, margin, or cash. It also makes what-if analysis easier by recalculating the required input changes. Optimize supports multivariate goal seek by adjusting multiple data input measures simultaneously to meet a target value for a selected result measure.
 
-
 The most common use cases for Optimize in planning include:
 
 * **Revenue planning:** Determine the sales volume, average selling price, or product mix required to achieve a target revenue.

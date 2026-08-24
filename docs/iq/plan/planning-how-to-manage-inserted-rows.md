@@ -8,7 +8,7 @@ ms.topic: how-to
 
 # Manage inserted rows
 
-In plan, you can manage inserted rows, including calculated, static, template, and data input rows. Icons identify each row type, so you can distinguish calculated, aggregated, data input, and template rows. This article explains how to use **Manage Rows** to search, filter, show, and hide inserted rows.
+In Plan, you can manage inserted rows, including calculated, static, template, and data input rows. Icons identify each row type, so you can distinguish calculated, aggregated, data input, and template rows. This article explains how to use **Manage Rows** to search, filter, show, and hide inserted rows.
 
 To manage an inserted row:
 

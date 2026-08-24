@@ -1,15 +1,15 @@
 ---
 title: PowerTable Sheets in Plan
-description: Learn about the PowerTable sheets component of the plan item, including its core features and business use cases.
+description: Learn about the PowerTable sheets component of the Plan item, including its core features and business use cases.
 ms.date: 03/27/2026
 ms.topic: overview
 #customer intent: As a user, I want to know what is PowerTable and its key capabilities.
 
 ---
 
-# What are PowerTable sheets in plan?
+# What are PowerTable sheets in Plan?
 
-The *PowerTable sheets* component of plan is a no-code reference and master data management and productivity app platform in Microsoft Fabric. It enables users to build collaborative table apps directly from database tables and semantic models without writing code.
+The *PowerTable sheets* component of Plan is a no-code reference and master data management and productivity app platform in Microsoft Fabric. It enables users to build collaborative table apps directly from database tables and semantic models without writing code.
 
 PowerTable sheets provide an Excel-like editing experience combined with enterprise data governance. With this, users can quickly create, update and manage structured data while maintaining live synchronization with the underlying database.
 

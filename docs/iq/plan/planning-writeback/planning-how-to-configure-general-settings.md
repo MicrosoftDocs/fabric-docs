@@ -53,7 +53,7 @@ The options are:
 
 ## Date Key configuration
 
-Select **Add Date Key** to add a date key column to the writeback table. For high-level planning scenarios such as revenue by year or month, plan appends a representative date to the date dimension. The system uses the first day of the year, month or quarter. For example, when the column dimensions are year–month, plan writes *01-01-2025* for January 2025.
+Select **Add Date Key** to add a date key column to the writeback table. For high-level planning scenarios such as revenue by year or month, Plan appends a representative date to the date dimension. The system uses the first day of the year, month or quarter. For example, when the column dimensions are year–month, Plan writes *01-01-2025* for January 2025.
 
 > [!NOTE]
 > **Add Date Key** only works when a date hierarchy is used in column dimensions.
