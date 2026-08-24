@@ -66,19 +66,20 @@ To configure Azure Key Vault for storing the workspace key:
 
 1. Save and publish changes.
 
-### Option 3: Configure with service principal certificate authentication 
+### Option 3: Configure with service principal certificate authentication
 
-Use this option to authenticate to Azure Event Hubs with a Microsoft Entra service principal and a certificate stored in Azure Key Vault. 
+Use this option to authenticate to Azure Event Hubs with a Microsoft Entra service principal and a certificate stored in Azure Key Vault. For more information, see [Create a service principal containing a certificate using Azure CLI](/cli/azure/azure-cli-sp-tutorial-3?view=azure-cli-latest&preserve-view=true).
 
-Before configuring the Spark properties: 
+Before configuring the Spark properties:
 
-- Create or import a certificate in Azure Key Vault. The certificate must contain an exportable private key. 
-- Download only the public certificate in CER or PEM format, and upload it to the Microsoft Entra app registration under Certificates & secrets > Certificates. 
+- Create or import a certificate in Azure Key Vault. The certificate must contain an exportable private key.
+- Download only the public certificate in CER or PEM format, and upload it to the Microsoft Entra app registration under **Certificates & secrets** > **Certificates**.
+- Record the Azure Key Vault URI and certificate name. You use these values in the Spark properties.
 - Assign the Azure Event Hubs Data Sender role to the service principal on the target Event Hubs namespace or Event Hub instance.
-- Assign the Key Vault Certificate User role on the Azure Key Vault to the signed-in Fabric user who starts the Spark session. 
+- Assign the Key Vault Certificate User role on the Azure Key Vault to the signed-in Fabric user who starts the Spark session.
 
->[!IMPORTANT]
->Certificate retrieval and Event Hubs access use different identities. The signed-in Fabric user retrieves the certificate and its private key from Azure Key Vault. The service principal uses the certificate to authenticate and send diagnostic data to Event Hubs. Granting Key Vault access only to the service principal isn't sufficient. 
+> [!IMPORTANT]
+> Certificate retrieval and Event Hubs access use different identities. The signed-in Fabric user retrieves the certificate and its private key from Azure Key Vault. The service principal uses the certificate to authenticate and send diagnostic data to Event Hubs. Granting Key Vault access only to the service principal isn't sufficient.
 
 Add the following Spark properties to the Fabric environment:
 
@@ -95,7 +96,7 @@ spark.synapse.diagnostic.emitter.MyEventHub.clientId: "<SERVICE_PRINCIPAL_CLIENT
 spark.fabric.pools.skipStarterPools: "true" 
    ```
 
-For certificate-based authentication, hostName is the fully qualified domain name of the Event Hubs namespace, without the sb:// prefix. entityPath is the name of the target Event Hub instance. The certificate name must exactly match the certificate name in Azure Key Vault. 
+For certificate-based authentication, hostName is the fully qualified domain name of the Event Hubs namespace, without the sb:// prefix. entityPath is the name of the target Event Hub instance. The certificate name must exactly match the certificate name in Azure Key Vault.
 
 ### Step 3: Attach the Environment Item to Notebooks or Spark Job Definitions, or Set It as the Workspace Default
 
@@ -160,11 +161,11 @@ For certificate-based authentication, hostName is the fully qualified domain nam
 | `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault` | Required if using connection string authentication and `.secret` is not specified. The Azure Key Vault uri where the secret (connection string) is stored. |
 | `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault.secretName` | Required if `.secret.keyVault` is specified. The Azure Key Vault secret name where the secret (connection string) is stored. |
 | `spark.synapse.diagnostic.emitter.<destination>.hostName` | Required for certificate-based authentication. The fully qualified domain name of the Event Hubs namespace, without the sb:// prefix. For example, &lt;namespace&gt;.servicebus.windows.net. |
-| `spark.synapse.diagnostic.emitter.<destination>.entityPath` | Required for certificate-based authentication. The name of the Event Hub instance that receives the diagnostic data.  |
+| `spark.synapse.diagnostic.emitter.<destination>.entityPath` | Required for certificate-based authentication. The name of the Event Hubs instance that receives the diagnostic data. |
 | `spark.synapse.diagnostic.emitter.<destination>.tenantId` | Required if using certificate-based authentication. The Azure Active Directory tenant ID of the Service Principal. |
 | `spark.synapse.diagnostic.emitter.<destination>.clientId` | Required if using certificate-based authentication. The application (client) ID of the Service Principal. |
-| `spark.synapse.diagnostic.emitter.<destination>.certificate.keyVault` |Required for certificate-based authentication. The Azure Key Vault URL that stores the certificate. The signed-in Fabric user who starts the Spark session must have permission to retrieve the certificate and its private key, such as the Key Vault Certificate User role. |
-| `spark.synapse.diagnostic.emitter.<destination>.certificate.keyVault.certificateName` |Required for certificate-based authentication. The name of the certificate stored in Azure Key Vault. The certificate must contain an accessible private key, and its public certificate must be registered on the Microsoft Entra app.  |
+| `spark.synapse.diagnostic.emitter.<destination>.certificate.keyVault` | Required for certificate-based authentication. The Azure Key Vault URL that stores the certificate. The signed-in Fabric user who starts the Spark session must have permission to retrieve the certificate and its private key, such as the Key Vault Certificate User role. |
+| `spark.synapse.diagnostic.emitter.<destination>.certificate.keyVault.certificateName` | Required for certificate-based authentication. The name of the certificate stored in Azure Key Vault. The certificate must contain an accessible private key, and its public certificate must be registered on the Microsoft Entra app. |
 | `spark.synapse.diagnostic.emitter.<destination>.filter.eventName.match` | Optional. The comma-separated spark event names, you can specify which events to collect. For example: `SparkListenerApplicationStart,SparkListenerApplicationEnd` |
 | `spark.synapse.diagnostic.emitter.<destination>.filter.loggerName.match` | Optional. The comma-separated Log4j logger names, you can specify which logs to collect. For example: `org.apache.spark.SparkContext,org.example.Logger` |
 | `spark.synapse.diagnostic.emitter.<destination>.filter.metricName.match` | Optional. The comma-separated spark metric name suffixes, you can specify which metrics to collect. For example: `jvm.heap.used` |
