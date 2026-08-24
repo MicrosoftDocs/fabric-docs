@@ -18,7 +18,10 @@ Before you begin, ensure you have:
 - A Unit Price planning sheet with a `Forecast UnitPrice` measure.
 - A Sales Plan planning sheet with a `Forecast Quantity` measure.
 - A COGS Plan planning sheet with a `Forecast UnitCost` measure.
-- Common dimensions that allow the measures to be evaluated at the required planning grain, such as Account, ProductCategory, ProductID, ProductName, and Date.
+- Common dimensions that allow the measures to be evaluated at the required planning level, such as Account, ProductCategory, ProductID, ProductName, and Date.
+
+> [!NOTE]
+> You can blend measures from one planning sheet with measures from another planning sheet when both sheets have the same dimensions. The common dimensions allow the measures to be evaluated at the same planning level.
 
 ## Create the source measures
 
