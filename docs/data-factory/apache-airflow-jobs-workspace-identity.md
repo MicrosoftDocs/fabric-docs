@@ -24,7 +24,7 @@ When workspace identity is enabled, Airflow Jobs authenticate automatically usin
 
 > [Note]
 > If you were previously using SPN authentication, you will need to update your DAG to use your Fabric connection with workspace identity.
-> To use workspace identity in Airflow Jobs, ensure that you enable [Service Principals can call Public APIs](https://learn.microsoft.com/en-us/fabric/admin/service-admin-portal-developer#service-principals-can-call-fabric-public-apis) at the tenant level.
+> To use workspace identity in Airflow Jobs, ensure that you enable [Service Principals can call Public APIs](https://learn.microsoft.com/fabric/admin/service-admin-portal-developer#service-principals-can-call-fabric-public-apis) at the tenant level.
 
 ## Prerequisites
 
