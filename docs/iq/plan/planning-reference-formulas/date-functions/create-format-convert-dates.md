@@ -7,7 +7,7 @@ ms.search.form: Date functions
 #customer intent: As a user, I want to know about the date functions in Plan and use them to create and convert date values.
 ---
 
-# Date functions: Create, format, and convert dates
+# Create, format, and convert dates
 
 In Plan, date functions help you perform date calculations, extract date values, and format dates in calculations. In this article, you learn how to use date functions to get the current date and time, format dates as needed, and convert Excel serial numbers to and from date values.
 
