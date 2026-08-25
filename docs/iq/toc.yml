@@ -169,6 +169,10 @@ items:
                 href: plan/planning-how-to-manage-inserted-rows.md
               - name: Create a row model
                 href: plan/planning-row-model/how-to-create-row-model.md
+              - name: Create forecasts in row model
+                href: plan/planning-row-model/how-to-create-row-model-forecasts.md
+              - name: Perform scenario analysis in row model
+                href: plan/planning-row-model/how-to-create-row-model-scenarios.md
               - name: Row model - Configure row properties
                 href: plan/planning-row-model/planning-how-to-configure-model-row-properties.md
               - name: Row model - Create templates
