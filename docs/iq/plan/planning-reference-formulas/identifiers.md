@@ -8,7 +8,7 @@ ms.topic: how-to
 
 # Identifiers
 
-Identifiers in plan are predefined references that you use to access specific rows, columns, hierarchy levels, periods, and other contextual information in formulas. They simplify calculations by dynamically referring to report elements instead of hardcoding values. Use the following identifiers to build formulas that respond to the current report context.
+Identifiers in Plan are predefined references that you use to access specific rows, columns, hierarchy levels, periods, and other contextual information in formulas. They simplify calculations by dynamically referring to report elements instead of hardcoding values. Use the following identifiers to build formulas that respond to the current report context.
 
 ## CLOSEDPERIOD
 

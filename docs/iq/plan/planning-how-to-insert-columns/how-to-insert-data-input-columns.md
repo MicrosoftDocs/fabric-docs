@@ -10,7 +10,7 @@ ms.topic: how-to
 
 Planning and what-if analysis often require you to enter values, projections, or other details that don't exist in the underlying dataset. Data input columns let you add and manage these values directly within a report, making it easier to perform planning, forecasting, and scenario analysis.
 
-In plan, you can insert data input columns and measures directly in your reports without writing Data Analysis Expressions (DAX). You can format these columns and reuse them for subsequent calculations and analysis.
+In Plan, you can insert data input columns and measures directly in your reports without writing Data Analysis Expressions (DAX). You can format these columns and reuse them for subsequent calculations and analysis.
 
 In this article, you learn how to insert and configure data input columns and measures.
 
@@ -82,11 +82,11 @@ Configure the following properties while creating a data input column:
     > [!NOTE]
     > The **Input type** setting can't be changed after the column or measure is created.
 
-* **Aggregation**: Define how plan calculates totals and subtotals for rows and columns. By default, plan aggregates values using **Sum**, but you can choose other methods such as average, minimum, or maximum.
+* **Aggregation**: Define how Plan calculates totals and subtotals for rows and columns. By default, Plan aggregates values using **Sum**, but you can choose other methods such as average, minimum, or maximum.
 
     :::image type="content" source="../media/planning-how-to-insert-columns/how-to-insert-data-input-columns/aggregation.png" alt-text="Screenshot of options available in aggregation.":::
 
-* **Distribute parent value to children**: When you enable this option, plan automatically distributes values entered at the parent level to child rows. This option is useful for budgeting and allocation scenarios.
+* **Distribute parent value to children**: When you enable this option, Plan automatically distributes values entered at the parent level to child rows. This option is useful for budgeting and allocation scenarios.
 
     > [!NOTE]
     > The **Distribute parent value to children** feature is only supported for **Sum** and **Weighted Average** aggregation types.
@@ -106,7 +106,7 @@ Configure the following properties while creating a data input column:
 
 ## Access control
 
-With plan, you can control read and write access for data input columns.
+With Plan, you can control read and write access for data input columns.
 
 To configure access:
 
