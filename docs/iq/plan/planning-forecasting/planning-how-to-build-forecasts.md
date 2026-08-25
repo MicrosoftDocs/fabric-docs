@@ -55,7 +55,7 @@ Configure forecasts using historical actuals as the starting point for future pe
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/open-period-prefill-period-range.png" alt-text="Screenshot of prefill option for data input open periods with the period range option to copy values from 2025 to the 2026 forecast." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/open-period-prefill-period-range.png":::
 
-    After saving the configuration, plan creates the *Budget* measure as a time extension for 2026. Notice that *Actuals* aren't available for the forecast period.
+    After saving the configuration, Plan creates the *Budget* measure as a time extension for 2026. Notice that *Actuals* aren't available for the forecast period.
 
     * The *Budget* measure is locked for 2023, 2024, and 2025 and populated with *Actuals* according to the configuration in Step 3.
     * The 2026 *Budget* remains available for forecasting.
@@ -66,7 +66,7 @@ Configure forecasts using historical actuals as the starting point for future pe
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/period-settings-hide-closed-periods.png" alt-text="Screenshot of options to display a specific forecasting period and hide closed periods." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/period-settings-hide-closed-periods.png":::
 
-    In Step 3, you selected **Period Range** to initialize the open forecast periods. Based on this configuration, plan creates the 2026 *Budget* by copying the corresponding *Actuals* values from 2025. This provides an initial forecast for 2026 using the values from the selected historical period.
+    In Step 3, you selected **Period Range** to initialize the open forecast periods. Based on this configuration, Plan creates the 2026 *Budget* by copying the corresponding *Actuals* values from 2025. This provides an initial forecast for 2026 using the values from the selected historical period.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/period-range-forecast-prefill-historical-data.png" alt-text="Screenshot of initializing a forecast using the period range option and copying historical values from the corresponding past period." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/period-range-forecast-prefill-historical-data.png":::
 

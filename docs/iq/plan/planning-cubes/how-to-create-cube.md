@@ -71,7 +71,7 @@ After you configure a cube measure, you can use it in other planning sheets with
 * You enter data for the cube measure.
 * You import the cube measure into the product-level plan.
 
-The values you enter in the region-level planning sheet allocate to the product dimensions based on the weights of the reference measure. When you import the cube into the product-level planning sheet, plan automatically populates the entered values.
+The values you enter in the region-level planning sheet allocate to the product dimensions based on the weights of the reference measure. When you import the cube into the product-level planning sheet, Plan automatically populates the entered values.
 
 > [!IMPORTANT]
 > When importing a cube measure, the column dimensions in the second sheet must match those of the original sheet.

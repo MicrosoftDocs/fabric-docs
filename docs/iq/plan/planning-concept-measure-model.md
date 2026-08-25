@@ -1,6 +1,6 @@
 ---
 title: Measure Model for Planning
-description: Learn about the concept of measure model as plan's semantic enrichment framework that creates measure hierarchy.
+description: Learn about the concept of measure model as Plan's semantic enrichment framework that creates measure hierarchy.
 #customer intent: As a finance business user, I want to understand how to create a measure hierarchy to perform calculations without help from IT.
 ms.date: 08/07/2026
 ms.topic: concept-article

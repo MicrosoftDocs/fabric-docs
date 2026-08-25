@@ -19,7 +19,7 @@ You configure dimension breakdowns for cubes while creating a data input or fore
 
 Use the main cube measure menu to synchronize, monitor, and manage all cube measures in a planning sheet. In the **Data** pane, hover over the **Cube** section and select the **More options (…)** menu.
 
-:::image type="content" source="../media/planning-cubes/how-to-manage-cube-measures/cube-measures-more-options-menu.png" alt-text="Screenshot of options to manage all cubes in a plan item and perform actions such as sync, view logs, expand, and collapse cubes." lightbox="../media/planning-cubes/how-to-manage-cube-measures/cube-measures-more-options-menu.png":::
+:::image type="content" source="../media/planning-cubes/how-to-manage-cube-measures/cube-measures-more-options-menu.png" alt-text="Screenshot of options to manage all cubes in a Plan item and perform actions such as sync, view logs, expand, and collapse cubes." lightbox="../media/planning-cubes/how-to-manage-cube-measures/cube-measures-more-options-menu.png":::
 
 | Option    | Description |
 |--------   |-------------|

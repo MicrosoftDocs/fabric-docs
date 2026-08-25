@@ -8,7 +8,7 @@ ms.topic: how-to
 
 # Insert number columns in planning sheet
 
-With plan, you can enter and format numeric data in multiple ways. You can either create an empty column and enter numbers, or copy values from another series.
+With Plan, you can enter and format numeric data in multiple ways. You can either create an empty column and enter numbers, or copy values from another series.
 
 In this article, you learn how to create and manage numeric data input columns.
 
