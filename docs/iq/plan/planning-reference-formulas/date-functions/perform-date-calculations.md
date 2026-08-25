@@ -7,7 +7,7 @@ ms.search.form: Date functions
 #customer intent: As a financial analyst, I want to add or subtract days from a date so that I can calculate deadlines and due dates for my reports.
 ---
 
-# Date functions: Perform date calculations
+# Perform date calculations
 
 In this article, you learn about the date functions in Plan that you use to perform calculations such as calculating date differences, adding or subtracting intervals, and finding the net workdays for reporting and business scenarios.
 
