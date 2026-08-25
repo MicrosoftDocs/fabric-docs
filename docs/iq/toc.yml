@@ -251,6 +251,8 @@ items:
               href: plan/infobridge-how-to-create-bridge.md
             - name: Manage query operations
               href: plan/infobridge-how-to-manage-queries.md
+            - name: Manage sources
+              href: plan/infobridge-how-to-manage-sources.md
             - name: Use dimension level
               href: plan/infobridge-how-to-use-dimension-level.md
             - name: Share measures
