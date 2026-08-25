@@ -251,6 +251,8 @@ items:
               href: plan/infobridge-how-to-create-bridge.md
             - name: Manage query operations
               href: plan/infobridge-how-to-manage-queries.md
+            - name: Manage sources
+              href: plan/infobridge-how-to-manage-sources.md
             - name: Use dimension level
               href: plan/infobridge-how-to-use-dimension-level.md
             - name: Share measures
@@ -331,6 +333,18 @@ items:
                   href: plan/planning-reference-formulas/date-functions/extract-components-start-end-dates.md
                 - name: Date calculations
                   href: plan/planning-reference-formulas/date-functions/perform-date-calculations.md
+            - name: Time intelligence functions
+              items:
+                - name: Calculate relative time periods
+                  href: plan/planning-reference-formulas/time-intelligence-functions/relative-time-periods.md
+                - name: Calculate specific time periods
+                  href: plan/planning-reference-formulas/time-intelligence-functions/specific-time-periods.md
+                - name: Period-to-date calculations
+                  href: plan/planning-reference-formulas/time-intelligence-functions/period-to-date-calculations.md
+                - name: Time-based aggregations
+                  href: plan/planning-reference-formulas/time-intelligence-functions/time-based-aggregations.md
+                - name: Time shifting and lookup
+                  href: plan/planning-reference-formulas/time-intelligence-functions/time-shifting-lookup.md
             - name: Statistical functions
               items:
                 - name: Measures of central tendency
