@@ -1,13 +1,13 @@
 ---
 title: Fabric Plan Billing and Pricing Model
-description: Fabric plan billing uses an active-session, capacity-based pricing model that aligns costs with actual usage. Learn how role-based and session billing work.
+description: Fabric Plan billing uses an active-session, capacity-based pricing model that aligns costs with actual usage. Learn how role-based and session billing work.
 ms.date: 07/23/2026
 ms.topic: concept-article
 ---
 
-# Billing in Fabric plan
+# Billing in Fabric Plan
 
-Fabric plan uses an active-session, capacity-based pricing model that aligns licensing costs with actual product usage. You pay for a session only when a user actively engages with a planning item, so your organization can avoid fixed per-user license commitments and optimize capacity utilization. A session stays active for 30 days once started.
+Fabric Plan uses an active-session, capacity-based pricing model that aligns licensing costs with actual product usage. You pay for a session only when a user actively engages with a planning item, so your organization can avoid fixed per-user license commitments and optimize capacity utilization. A session stays active for 30 days once started.
 
 [!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
@@ -21,22 +21,22 @@ Key benefits include:
 
 ## User roles
 
-Fabric plan defines three user roles with different capabilities and capacity consumption.
+Fabric Plan defines three user roles with different capabilities and capacity consumption.
 
 * **Planner**: Builds and manages planning models, configures business rules, creates and administers planning items.
 * **Stakeholder**: Enters and approves data, collaborates with business users, creates scenarios, builds reports and dashboards, performs analysis, and manages reference data applications.
 * **Viewer**: Accesses planning items, dashboards, and reports in read-only mode with support for filtering, sorting, and bookmarks.
 
-For more information, see [Roles in Fabric plan (preview)](../overview-roles.md).
+For more information, see [Roles in Fabric Plan (preview)](../overview-roles.md).
 
 ## Role-based billing
 
-Fabric plan uses role-based billing. Capacity consumption depends on your role, and Fabric plan bills it per active 30-day session. Billing aligns with business roles at different CU-per-hour rates. Fabric plan also bills automation jobs separately. Additional Microsoft Fabric workloads consume capacity independently.
+Fabric Plan uses role-based billing. Capacity consumption depends on your role, and Fabric Plan bills it per active 30-day session. Billing aligns with business roles at different CU-per-hour rates. Fabric Plan also bills automation jobs separately. Additional Microsoft Fabric workloads consume capacity independently.
 
 Use the [Fabric Plan Capacity Estimator](https://community.fabricplan.com/capacity-pricing/) to estimate capacity requirements for your deployment.
 
 > [!NOTE]
-> Microsoft Fabric services outside Fabric plan, such as Fabric SQL, OneLake, Power BI XMLA operations, and other native Fabric workloads consume capacity separately.
+> Microsoft Fabric services outside Fabric Plan, such as Fabric SQL, OneLake, Power BI XMLA operations, and other native Fabric workloads consume capacity separately.
 >
 > Reserve additional capacity to support these workloads. Consider an estimated **30% capacity buffer**, although actual usage varies by deployment.
 
@@ -71,7 +71,7 @@ For more information, see [PowerTable automation](../powertable-concept-automati
 
 ### What triggers a billing session?
 
-A session starts when you open or engage with an existing plan item (in edit mode or reading view), or create a new plan item, assign data, and save it.
+A session starts when you open or engage with an existing Plan item (in edit mode or reading view), or create a new Plan item, assign data, and save it.
 
 ### How long does a session last?
 
@@ -111,7 +111,7 @@ Active sessions continue to run and are billed through to the end of the 30 days
 
 ### What if the capacity runs out of credits before the session ends?
 
-Sessions continue to be recorded even if the capacity is exhausted through other workloads. No credits are reserved exclusively for Fabric plan—billing continues periodically.
+Sessions continue to be recorded even if the capacity is exhausted through other workloads. No credits are reserved exclusively for Fabric Plan—billing continues periodically.
 
 ### What if too many users are assigned to a small-capacity SKU?
 

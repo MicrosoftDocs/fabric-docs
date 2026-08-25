@@ -1,6 +1,6 @@
 ---
 title: Logical Functions
-description: Learn about logical functions in plan and how to use them to evaluate conditions and return results based on logical expressions. 
+description: Learn about logical functions in Plan and how to use them to evaluate conditions and return results based on logical expressions. 
 ms.date: 05/08/2026
 ms.topic: reference
 ms.search.form: Logical functions

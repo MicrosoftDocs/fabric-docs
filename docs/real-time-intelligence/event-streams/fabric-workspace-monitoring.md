@@ -1,18 +1,18 @@
 ---
-title: Eventstream Workspace Monitoring Overview
+title: Eventstream Workspace Monitoring Overview (preview)
 description: Eventstream workspace monitoring lets you track health, performance, and errors in Fabric eventstreams. Learn how to query metrics and troubleshoot issues with KQL.
 #customer intent: As a Fabric workspace admin, I want to understand what Eventstream workspace monitoring is so that I can decide whether to enable it for my workspace
 author: spelluru
 ms.author: spelluru
 ms.reviewer: spelluru
-ms.date: 07/27/2026
+ms.date: 08/24/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 ---
 
-# Eventstream workspace monitoring overview
+# Eventstream workspace monitoring overview (preview)
 
-**Eventstream workspace monitoring** is a feature that you use to track the health and performance of eventstreams by using Fabric workspace monitoring. When you enable workspace monitoring, Fabric automatically creates an eventhouse in your workspace that collects metrics, node status, and error data from your eventstreams. You can query this data by using KQL (Kusto Query Language) to troubleshoot issues, analyze trends, and build custom dashboards.
+Use **Eventstream workspace monitoring (preview)** to track the health and performance of eventstreams by using Fabric workspace monitoring. When you enable workspace monitoring, Fabric automatically creates an eventhouse in your workspace that collects metrics, node status, and error data from your eventstreams. You can query this data by using KQL (Kusto Query Language) to troubleshoot issues, analyze trends, and build custom dashboards.
 
 [!INCLUDE [Workspace monitoring prerequisites](includes/workspace-monitoring-prerequisites.md)]
 
@@ -136,3 +136,4 @@ This table tracks error counts by type. Use it to identify what kinds of errors 
 
 - [Enable workspace monitoring](enable-fabric-workspace-monitoring.md)
 - [Query Eventstream monitoring data with KQL](query-fabric-workspace-monitoring-data.md)
+- [Eventstream workspace monitoring known limitations](fabric-workspace-monitoring-known-limitations.md)

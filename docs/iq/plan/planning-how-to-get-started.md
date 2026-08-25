@@ -8,24 +8,24 @@ ms.search.form: Getting Started with Planning Sheets
 
 # Create a planning sheet
 
-This article describes how to get started with your first planning sheet in plan.
+This article describes how to get started with your first planning sheet in Plan.
 
 ## Prerequisites
 
 Before you set up planning sheets, make sure you have the following prerequisites:
 
-* The overall [prerequisites for plan](overview-prerequisites.md), including the required tenant and capacity settings.
+* The overall [prerequisites for Plan](overview-prerequisites.md), including the required tenant and capacity settings.
 
 * Data in a [Power BI semantic model](../../data-warehouse/semantic-models.md), and a [connection to your semantic model](planning-how-to-create-semantic-model-connection.md).
 
 > [!NOTE]
 > Plan in Fabric IQ is now available to organizations worldwide as part of the Microsoft Fabric SKU. New billing meters have also been introduced and are now available for billing.
 
-## Create plan item
+## Create Plan item
 
 1. From your Fabric workspace, select **New item** > **Plan**.
 
-    :::image type="content" source="media/planning-how-to-get-started/new-plan-1.png" alt-text="Screenshot of creating a new plan item." lightbox="media/planning-how-to-get-started/new-plan-1.png":::
+    :::image type="content" source="media/planning-how-to-get-started/new-plan-1.png" alt-text="Screenshot of creating a new Plan item." lightbox="media/planning-how-to-get-started/new-plan-1.png":::
 
 1. On **New Plan**, enter a name for your plan, and then select **Create**.
 
@@ -36,7 +36,7 @@ Before you set up planning sheets, make sure you have the following prerequisite
 
 ## Create your planning sheet
 
-1. In your new plan item, you see options to get your data from the semantic model or from Excel, and to create a planning sheet from it. Alternatively, start with a planning sheet and then connect it to data.
+1. In your new Plan item, you see options to get your data from the semantic model or from Excel, and to create a planning sheet from it. Alternatively, start with a planning sheet and then connect it to data.
 
      :::image type="content" source="media/planning-how-to-get-started/create-sheet.png" alt-text="Screenshot showing the options to create a new planning sheet." lightbox="media/planning-how-to-get-started/create-sheet.png":::
   
@@ -67,4 +67,4 @@ In this section, you add the semantic model connection that you created earlier 
 
 ## Optional: Connect to a database for collaboration
 
-If you want to collaborate with others on this planning sheet, create a database connection for your plan item to store comments and other collaboration details. For more information, see [Create a database connection for collaboration](planning-how-to-create-database-connection.md).
+If you want to collaborate with others on this planning sheet, create a database connection for your Plan item to store comments and other collaboration details. For more information, see [Create a database connection for collaboration](planning-how-to-create-database-connection.md).

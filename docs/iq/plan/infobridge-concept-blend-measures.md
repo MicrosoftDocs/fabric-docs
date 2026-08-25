@@ -60,7 +60,7 @@ Blend data from multiple sources by combining dimensions and measures from exter
 
 1. As you run simulations on the planning sheet, the charts on the intelligence sheet update in real time to reflect the changes. In this example, you increase the IT budget to 8.5m; the variances and bars in the breakdown waterfall automatically update in response to this change.
 
-    :::image type="content" source="media/infobridge-concept-blend-measures/update-value-embedded-planning-chart-visualize.png" alt-text="Screenshot of updating a value in the planning sheet and the bars in the breakdown waterfall getting updated in real-time." lightbox="media/infobridge-concept-blend-measures/update-value-embedded-planning-chart-visualize.png":::    
+    :::image type="content" source="media/infobridge-concept-blend-measures/update-value-embedded-planning-chart-visualize.png" alt-text="Screenshot of updating a value in the planning sheet and the bars in the breakdown waterfall getting updated in real-time." lightbox="media/infobridge-concept-blend-measures/update-value-embedded-planning-chart-visualize.png":::
 
     Reduce the *Infrastructure* budget from 7M to 2M and observe how the pie chart proportions change.
 
@@ -72,7 +72,7 @@ Frequently asked questions about embedding planning sheets and visualizing budge
 
 ### Why is the Planning visualization option grayed out until a Planning Sheet exists in the workspace?
 
-The planning visual embeds an existing planning sheet onto the intelligence canvas, so the plan app needs at least one planning sheet.
+The planning visual embeds an existing planning sheet onto the intelligence canvas, so the Plan app needs at least one planning sheet.
 
 ### What happens if there's more than one Planning Sheet in the workspace when embedding?
 
