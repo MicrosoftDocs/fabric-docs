@@ -367,6 +367,8 @@ items:
                   href: plan/planning-reference-formulas/statistical-functions/calculate-variance-standard-deviation.md
             - name: Identifiers
               href: plan/planning-reference-formulas/identifiers.md
+            - name: Lookup functions
+              href: plan/planning-reference-formulas/lookup-functions.md
   - name: PowerTable sheets
     items:
     - name: Concepts
