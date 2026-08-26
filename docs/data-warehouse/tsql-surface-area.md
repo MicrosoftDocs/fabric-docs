@@ -2,7 +2,7 @@
 title: T-SQL Surface Area in Fabric Data Warehouse
 description: T-SQL surface area of the SQL analytics endpoint and warehouse in Microsoft Fabric.
 ms.reviewer: jovanpop, twinklecyril, prlangad
-ms.date: 06/23/2026
+ms.date: 08/26/2026
 ms.topic: concept-article
 ms.search.form: T-SQL Surface area # This article's title should not change. If so, contact engineering.
 ---
@@ -22,6 +22,7 @@ For SQL database in Fabric, see [Limitations in SQL database (preview)](../datab
 Fabric Data Warehouse supports T-SQL tables, views, stored procedures, functions, permissions, and security roles. 
 
 - For more information about `CREATE` and `DROP` `TABLE` support in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Tables](tables.md).
+    - [Identity columns](identity.md) are supported in Fabric Data Warehouse.
 - For more information about supported data types in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Data types](data-types.md).
 - You can also create T-SQL views, functions, and procedures on top of the tables that reference your Delta Lake data in the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
    - Creating, altering, and dropping tables, and insert, update, and delete operations are only supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], not in the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
