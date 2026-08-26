@@ -111,6 +111,8 @@ items:
           href: plan/planning-row-model/planning-concept-row-model.md
         - name: Measure and row-based planning - Cubes
           href: plan/planning-concept-cube.md
+        - name: Planning tools - Allocation rules and data input controls
+          href: plan/planning-concept-allocation-rules-controls.md
         - name: Forecasting - Statistical forecasting algorithms using Predict
           href: plan/planning-concept-predict.md
         - name: Forecasting - Reforecasting
