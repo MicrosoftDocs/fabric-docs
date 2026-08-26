@@ -139,7 +139,7 @@ Fabric Dataflow Gen2 isn't currently available in GCC, so you can't upgrade a Da
 
 ### Workspace Viewers can't consume tables from an upgraded dataflow
 
-Users with the Viewer workspace role can see an upgraded Dataflow Gen2, but they can't consume its tables through the Power Platform Dataflows connector. Assign users who need to consume the upgraded dataflow the Contributor, Member, or Admin workspace role. For more information, see [Power Query Dataflow connector - Power Query | Microsoft Learn](https://learn.microsoft.com/power-query/connectors/dataflows#limitations-and-considerations).
+Users with the Viewer workspace role can see an upgraded Dataflow Gen2, but they can't consume its tables through the Power Platform Dataflows connector. Assign users who need to consume the upgraded dataflow the Contributor, Member, or Admin workspace role. For more information, see [Power Query Dataflow connector - Power Query | Microsoft Learn](/power-query/connectors/dataflows#limitations-and-considerations).
 
 > [!IMPORTANT]
 > Dataflow Gen2 uses a different compute and billing model than Dataflow Gen1. Capacity Unit (CU) consumption can vary for many reasons, including the use of new features in Dataflow Gen2, such as [lakehouse](../data-engineering/lakehouse-overview.md) staging and [warehouse](../data-warehouse/data-warehousing.md) compute. Validate refresh duration and CU consumption. For more information, see [Dataflow Gen2 pricing](pricing-dataflows-gen2.md).
