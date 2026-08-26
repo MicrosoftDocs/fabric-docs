@@ -519,6 +519,8 @@ items:
           href: plan/intelligence-how-to-create-paginated-reports.md
         - name: Export data and visuals
           href: plan/intelligence-how-to-export-data-visuals.md
+        - name: Use Super Filter
+          href: plan/intelligence-how-to-start-with-super-filters.md
         - name: Plan projects with Gantt charts
           href: plan/intelligence-how-to-create-gantt-chart.md
   - name: Resources
