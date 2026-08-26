@@ -211,8 +211,10 @@ items:
       href: business-events/consume-business-events-from-activator.md
   - name: Subscribe permission for Azure and Fabric events
     href: fabric-events-subscribe-permission.md
-  - name: Private links for Azure and Fabric Events (preview)
+  - name: Tenant private links for Azure and Fabric events (preview)
     href: private-links-real-time-events.md
+  - name: Workspace private links for Azure and Fabric events (preview)
+    href: workspace-private-links-real-time-events.md
   - name: Outbound access protection for Azure and Fabric Events (preview)
     href: ../security/workspace-outbound-access-protection-real-time-events.md
   - name: Paused event configurations
