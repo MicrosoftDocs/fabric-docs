@@ -1155,6 +1155,8 @@
         items:
         - name: What is dbt job?
           href: dbt-job-overview.md
+        - name: Common dbt job patterns in Microsoft Fabric
+          href: common-dbt-job-patterns.md
         - name: Step-by-step dbt job tutorial
           href: dbt-job-sample-tutorial.md
         - name: Create a dbt job
