@@ -113,10 +113,6 @@ The upgrade replaces the original Dataflow Gen1 with a new Dataflow Gen2 (CI/CD)
 
 The data stored in a Dataflow Gen1 is a cache of the data from your source; the source system remains the system of record. Dataflow Gen2 uses a different storage architecture, so this cached data isn't available after the upgrade. If you can't reload the historic data from the source, back up the dataflow data before you upgrade (for example, to a lakehouse), and then configure a data destination on the upgraded dataflow to persist future refreshes.
 
-### Workspace Viewers can't consume tables from an upgraded dataflow
-
-Users with the Viewer workspace role can see an upgraded Dataflow Gen2, but they can't consume its tables through the Power Platform Dataflows connector. Until this limitation is resolved, assign users who need to consume the upgraded dataflow the Contributor, Member, or Admin workspace role.
-
 ### The legacy Power BI Dataflows connector can't read an upgraded dataflow
 
 The legacy **Power BI Dataflows** connector can't connect to a Dataflow Gen2 (CI/CD) item, so any item that consumes this dataflow through that connector fails the next time it refreshes. An item that holds imported data keeps showing that data until then, so it can look unaffected right after the upgrade. Update those items to use the modern **Power Platform Dataflows** connector. For steps, see [Update consumers to the modern Power Platform Dataflows connector](#update-consumers-to-the-modern-power-platform-dataflows-connector).
@@ -140,6 +136,10 @@ Dataflow Gen2 uses the Fabric REST API, which doesn't have full parity with the 
 ### Government Community Cloud (GCC) environments aren't supported
 
 Fabric Dataflow Gen2 isn't currently available in GCC, so you can't upgrade a Dataflow Gen1 in a GCC environment.
+
+### Workspace Viewers can't consume tables from an upgraded dataflow
+
+Users with the Viewer workspace role can see an upgraded Dataflow Gen2, but they can't consume its tables through the Power Platform Dataflows connector. Assign users who need to consume the upgraded dataflow the Contributor, Member, or Admin workspace role. For more information, see [Power Query Dataflow connector - Power Query | Microsoft Learn](https://learn.microsoft.com/power-query/connectors/dataflows#limitations-and-considerations).
 
 > [!IMPORTANT]
 > Dataflow Gen2 uses a different compute and billing model than Dataflow Gen1. Capacity Unit (CU) consumption can vary for many reasons, including the use of new features in Dataflow Gen2, such as [lakehouse](../data-engineering/lakehouse-overview.md) staging and [warehouse](../data-warehouse/data-warehousing.md) compute. Validate refresh duration and CU consumption. For more information, see [Dataflow Gen2 pricing](pricing-dataflows-gen2.md).
