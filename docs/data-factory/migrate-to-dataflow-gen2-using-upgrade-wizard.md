@@ -3,7 +3,7 @@ title: Upgrade Dataflow Gen1 to Dataflow Gen2 (CI/CD) using the Upgrade Wizard
 description: This article describes how to use the Dataflows Upgrade Wizard to upgrade Power BI Dataflows Gen1 items to Dataflow Gen2 (CI/CD) in Data Factory for Microsoft Fabric.
 ms.reviewer: eranbenayun
 ms.topic: how-to
-ms.date: 08/04/2026
+ms.date: 08/26/2026
 ai-usage: ai-assisted
 ms.custom:
   - template-how-to
@@ -112,6 +112,10 @@ The upgrade replaces the original Dataflow Gen1 with a new Dataflow Gen2 (CI/CD)
 ### Historic data isn't carried over
 
 The data stored in a Dataflow Gen1 is a cache of the data from your source; the source system remains the system of record. Dataflow Gen2 uses a different storage architecture, so this cached data isn't available after the upgrade. If you can't reload the historic data from the source, back up the dataflow data before you upgrade (for example, to a lakehouse), and then configure a data destination on the upgraded dataflow to persist future refreshes.
+
+### Workspace Viewers can't consume tables from an upgraded dataflow
+
+Users with the Viewer workspace role can see an upgraded Dataflow Gen2, but they can't consume its tables through the Power Platform Dataflows connector. Until this limitation is resolved, assign users who need to consume the upgraded dataflow the Contributor, Member, or Admin workspace role.
 
 ### The legacy Power BI Dataflows connector can't read an upgraded dataflow
 
