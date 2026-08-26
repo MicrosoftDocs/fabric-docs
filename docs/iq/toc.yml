@@ -111,6 +111,8 @@ items:
           href: plan/planning-row-model/planning-concept-row-model.md
         - name: Measure and row-based planning - Cubes
           href: plan/planning-concept-cube.md
+        - name: Planning tools - Allocation rules and data input controls
+          href: plan/planning-concept-allocation-rules-controls.md
         - name: Forecasting - Statistical forecasting algorithms using Predict
           href: plan/planning-concept-predict.md
         - name: Forecasting - Reforecasting
@@ -129,7 +131,7 @@ items:
           href: plan/planning-concept-top-down-planning.md
         - name: General - Bottom-up planning
           href: plan/planning-concept-bottom-up-planning.md
-        - name: Scenario planning
+        - name: Planning tools - Scenario Planning
           href: plan/planning-concept-scenario-planning.md
     - name: How-tos
       items:
@@ -276,7 +278,9 @@ items:
               - name: Join queries
                 href: plan/infobridge-transform-queries/how-to-join-query.md
               - name: SQL queries
-                href: plan/infobridge-transform-queries/how-to-sql-query.md          
+                href: plan/infobridge-transform-queries/how-to-sql-query.md     
+              - name: Duplicate a query
+                href: plan/infobridge-transform-queries/how-to-duplicate-query.md
             - name: Transform data
               items:
                 - name: Use pivot table
@@ -479,6 +483,8 @@ items:
           href: plan/powertable-how-to-create-slowly-changing-dimension.md
         - name: Export to Excel
           href: plan/powertable-how-to-export-to-excel.md
+        - name: Export to PDF
+          href: plan/powertable-how-to-export-to-pdf.md
         - name: Configure display and formatting settings
           href: plan/powertable-how-to-configure-display-formatting-settings.md
     - name: Reference
