@@ -1186,65 +1186,69 @@
       - name: Pipeline canvas
         href: pipeline-canvas-experience.md
       - name: Activities in pipelines
-        href: activity-overview.md 
+        items:
+          - name: Activity overview
+            href: activity-overview.md
+          - name: Set retry for activities
+            href: activity-retries.md
+          - name: Control flow activities
+            items: 
+              - name: Append Variable activity
+                href: append-variable-activity.md
+              - name: Approval activity
+                href: approval-activity.md
+              - name: Azure Batch activity
+                href: azure-batch-activity.md
+              - name: Azure Databricks activity
+                href: azure-databricks-activity.md
+              - name: Azure Machine Learning activity
+                href: azure-machine-learning-activity.md
+              - name: Fail activity
+                href: fail-activity.md
+              - name: Filter activity
+                href: filter-activity.md
+              - name: For-each activity
+                href: foreach-activity.md
+              - name: Functions activity
+                href: functions-activity.md
+              - name: Get Metadata activity
+                href: get-metadata-activity.md
+              - name: If Condition activity
+                href: if-condition-activity.md
+              - name: Invoke Pipeline activity
+                href: invoke-pipeline-activity.md
+              - name: KQL activity
+                href: kql-activity.md
+              - name: Lakehouse maintenance activity
+                href: lakehouse-maintenance-activity.md
+              - name: Lookup activity
+                href: lookup-activity.md
+              - name: Office 365 Outlook activity
+                href: outlook-activity.md
+              - name: Refresh Materialized Lake View activity
+                href: refresh-materialized-lake-view-activity.md
+              - name: Refresh SQL Endpoint activity
+                href: refresh-sql-endpoint-activity.md
+              - name: Semantic model refresh activity
+                href: semantic-model-refresh-activity.md
+              - name: Set Variable activity
+                href: set-variable-activity.md
+              - name: Switch activity
+                href: switch-activity.md
+              - name: Teams activity
+                href: teams-activity.md
+              - name: Until activity
+                href: until-activity.md
+              - name: Wait activity
+                href: wait-activity.md
+              - name: Web activity
+                href: web-activity.md
+              - name: WebHook activity
+                href: webhook-activity.md
       - name: Business workflow management
         href: business-workflow-management.md
       - name: CI/CD for pipelines
         href: cicd-pipelines.md
-      - name: Control flow activities
-        items: 
-          - name: Append Variable activity
-            href: append-variable-activity.md
-          - name: Approval activity
-            href: approval-activity.md
-          - name: Azure Batch activity
-            href: azure-batch-activity.md
-          - name: Azure Databricks activity
-            href: azure-databricks-activity.md
-          - name: Azure Machine Learning activity
-            href: azure-machine-learning-activity.md
-          - name: Fail activity
-            href: fail-activity.md
-          - name: Filter activity
-            href: filter-activity.md
-          - name: For-each activity
-            href: foreach-activity.md
-          - name: Functions activity
-            href: functions-activity.md
-          - name: Get Metadata activity
-            href: get-metadata-activity.md
-          - name: If Condition activity
-            href: if-condition-activity.md
-          - name: Invoke Pipeline activity
-            href: invoke-pipeline-activity.md
-          - name: KQL activity
-            href: kql-activity.md
-          - name: Lakehouse maintenance activity
-            href: lakehouse-maintenance-activity.md
-          - name: Lookup activity
-            href: lookup-activity.md
-          - name: Office 365 Outlook activity
-            href: outlook-activity.md
-          - name: Refresh Materialized Lake View activity
-            href: refresh-materialized-lake-view-activity.md
-          - name: Refresh SQL Endpoint activity
-            href: refresh-sql-endpoint-activity.md
-          - name: Semantic model refresh activity
-            href: semantic-model-refresh-activity.md
-          - name: Set Variable activity
-            href: set-variable-activity.md
-          - name: Switch activity
-            href: switch-activity.md
-          - name: Teams activity
-            href: teams-activity.md
-          - name: Until activity
-            href: until-activity.md
-          - name: Wait activity
-            href: wait-activity.md
-          - name: Web activity
-            href: web-activity.md
-          - name: WebHook activity
-            href: webhook-activity.md
       - name: Run, schedule, or trigger pipelines
         href: pipeline-runs.md
       - name: CI/CD for pipelines
