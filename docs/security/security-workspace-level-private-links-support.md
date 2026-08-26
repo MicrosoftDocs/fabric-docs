@@ -336,7 +336,7 @@ Azure events (such as Azure Blob Storage events) are also affected. When you con
 
 Event consumption within the same workspace is always allowed, regardless of private link settings. If workspace-level private link settings change after a consumer is already configured, the system detects the change and pauses the configuration. While paused, events are retained for up to 7 days. For details on paused configurations, see [Paused event configurations in Real-Time hub](/fabric/real-time-hub/fabric-events-paused-state).
 
-For more information, see [Private links for Azure and Fabric Events](/fabric/real-time-hub/private-links-real-time-events).
+For more information, see [Workspace private links for Azure and Fabric events](/fabric/real-time-hub/workspace-private-links-real-time-events).
 
 ### Data agent
 Data agents can connect to lakehouse, warehouse, and SQL data sources within a workspace that has workspace-level private links enabled (public access disabled). Cross-workspace access is supported when network connectivity is explicitly established (for example, using a managed private endpoint) and subject to region and token constraints.
