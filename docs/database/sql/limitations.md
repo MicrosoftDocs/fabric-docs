@@ -2,7 +2,7 @@
 title: "Limitations for SQL database"
 description: A detailed list of limitations for SQL database in Microsoft Fabric.
 ms.reviewer: nzagorac, antho, sukkaur, drskwier, nanikolic
-ms.date: 05/15/2026
+ms.date: 08/24/2026
 ms.topic: concept-article
 ms.update-cycle: 180-days
 ms.search.form: Databases Limitations for SQL, Databases Limitations
@@ -149,8 +149,8 @@ The Azure platform provides a number of PaaS capabilities that are added as an a
 | **Automatic backups** | Yes | Yes |
 | **Automatic tuning (indexes)**| Yes, see [Automatic tuning](/azure/azure-sql/database/automatic-tuning-overview?view=azuresql-db&preserve-view=true) | Yes   |
 | **Availability zones** | [Yes](/azure/availability-zones/az-overview) | [Yes, automatically configured](/azure/reliability/reliability-fabric#availability-zone-support) |
-| [Azure Database Migration Service (DMS)](/azure/dms/dms-overview) | Yes | No |
-| [Data Migration Service (DMA)](/sql/dma/dma-overview) | Yes | No |
+| [Azure Database Migration Service (DMS)](/azure/dms/dms-overview) | Yes | No, use the [Fabric Migration Assistant for SQL database](migration-assistant.md) |
+| [Data Migration Service (DMA)](/sql/dma/dma-overview) | Yes | No, use the [Fabric Migration Assistant for SQL database](migration-assistant.md) |
 | **Elastic jobs** | Yes, see [Elastic jobs](/azure/azure-sql/database/elastic-jobs-overview?view=azuresql-db&preserve-view=true) | No |
 | **Failover groups**| Yes, see [failover groups](/azure/azure-sql/database/failover-group-sql-db?view=azuresql-db&preserve-view=true) | No |
 | **Geo-restore**| Yes, see [Geo-restore](/azure/azure-sql/database/recovery-using-backups?view=azuresql-db&preserve-view=true#geo-restore) | No |
