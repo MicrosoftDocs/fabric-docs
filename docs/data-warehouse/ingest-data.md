@@ -2,7 +2,7 @@
 title: Ingest Data into the Warehouse
 description: Learn about the features and methods to ingest data into your warehouse in Microsoft Fabric.
 ms.reviewer: procha, fresantos, jovanpop
-ms.date: 08/26/2026
+ms.date: 08/27/2026
 ms.topic: concept-article
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
 ---
@@ -20,7 +20,7 @@ Choose a data ingestion option based on the following criteria:
     - To get started, see [Ingest data using the COPY statement](ingest-data-copy.md).
     - The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] also supports the traditional `BULK INSERT` statement for compatibility. In Fabric Data Warehouse, this statement maps to `COPY INTO` behavior with classic loading options.
     - The `COPY` statement in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports data sources from Azure storage accounts and OneLake lakehouse folders.
-    - Specify Workspace Identity in the `CREDENTIAL` clause to impersonate the workspace identity when accessing the source. The statement continues to run in the current user's SQL security context.
+    - Specify `Workspace Identity` in the `CREDENTIAL` clause to impersonate the Fabric workspace identity when accessing the source. For example, `CREDENTIAL = (IDENTITY = 'Workspace Identity')`. The statement continues to run in the current user's SQL security context. 
 - Use **BCP API (Preview)** for direct client-side ingestion when data is in your application tier and you can't stage files first.
    - To get started, see [Ingest data using BCP API (Preview)](ingest-data-bulk-copy.md).
    - BCP API supports bcp.exe scripts and application APIs such as C# `SqlBulkCopy` and Java `SQLServerBulkCopy`.
@@ -72,7 +72,7 @@ For direct client-side ingestion scenarios, [BCP API (Preview)](ingest-data-bulk
 
 Use [Workspace Identity](../security/workspace-identity.md) with `COPY INTO` to separate access to the source data from permission to write to the target warehouse table. Workspace Identity is supported for Azure Blob Storage, ADLS Gen2, and OneLake sources. The statement runs in the current user's SQL security context. The `WITH (CREDENTIAL = (IDENTITY = 'Workspace Identity'))` clause allows `COPY INTO` to impersonate the workspace identity only when it accesses the source. All SQL permissions and audit attribution remain associated with the executing user.
 
-The workspace-role requirement applies only when the user specifies Workspace Identity. Without Workspace Identity, a user who receives access to the warehouse through item sharing can run `COPY INTO` with at least Read item permission and the required SQL permissions.
+Without Workspace Identity, a user who receives access to the warehouse through item sharing can run `COPY INTO` with at least Read item permission and the required SQL permissions.
 
 Complete the following setup before you run `COPY INTO` with Workspace Identity:
 
@@ -80,7 +80,7 @@ Complete the following setup before you run `COPY INTO` with Workspace Identity:
 1. Grant the workspace identity access to the source:
    - For Azure Blob Storage and ADLS Gen2, find the workspace identity by the workspace name, and assign the **Storage Blob Data Reader** role on the storage account or container. For ADLS Gen2 directory-level access, grant the required ACL permissions. Assign permissions to the workspace identity as you would to a Microsoft Entra user.
    - For OneLake, find the workspace identity by the workspace name, add it to the workspace that contains the source data, and assign at least the Contributor workspace role.
-1. Assign the executing user at least the Viewer role on the workspace that contains the target warehouse. Item permissions alone don't authorize a user to impersonate the workspace identity.
+1. Assign the executing user at least the Viewer role on the workspace that contains the target warehouse. Item permissions alone don't authorize a user to impersonate the workspace identity. The workspace-role requirement applies only when the user specifies Workspace Identity.
 1. Grant the executing user `INSERT` permission on the target table. When Workspace Identity is the credential, `ADMINISTER DATABASE BULK OPERATIONS` permission isn't required.
 
 The following example loads a CSV file from OneLake by impersonating Workspace Identity for source access:
