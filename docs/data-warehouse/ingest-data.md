@@ -2,7 +2,7 @@
 title: Ingest Data into the Warehouse
 description: Learn about the features and methods to ingest data into your warehouse in Microsoft Fabric.
 ms.reviewer: procha, fresantos, jovanpop
-ms.date: 07/02/2026
+ms.date: 08/26/2026
 ms.topic: concept-article
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
 ---
@@ -20,6 +20,7 @@ Choose a data ingestion option based on the following criteria:
     - To get started, see [Ingest data using the COPY statement](ingest-data-copy.md).
     - The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] also supports the traditional `BULK INSERT` statement for compatibility. In Fabric Data Warehouse, this statement maps to `COPY INTO` behavior with classic loading options.
     - The `COPY` statement in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports data sources from Azure storage accounts and OneLake lakehouse folders.
+    - Specify Workspace Identity in the `CREDENTIAL` clause to impersonate the workspace identity when accessing the source. The statement continues to run in the current user's SQL security context.
 - Use **BCP API (Preview)** for direct client-side ingestion when data is in your application tier and you can't stage files first.
    - To get started, see [Ingest data using BCP API (Preview)](ingest-data-bulk-copy.md).
    - BCP API supports bcp.exe scripts and application APIs such as C# `SqlBulkCopy` and Java `SQLServerBulkCopy`.
@@ -61,15 +62,45 @@ WHERE s.Region = 'West region';
 > [!NOTE]
 > Reading data by using `OPENROWSET` can be slower than querying data from a table. If you plan to access the same external data repeatedly, consider ingesting it into a dedicated table to improve performance and query efficiency.
 
-The [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true) statement currently supports the CSV, JSONL, and PARQUET file formats. For data sources, currently Azure Data Lake Storage (ADLS) Gen2 and Azure Blob Storage are supported.
+The [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true) statement supports the CSV, JSONL, and PARQUET file formats. Supported data sources include Azure Data Lake Storage (ADLS) Gen2, Azure Blob Storage, and OneLake.
 
 For direct client-side ingestion scenarios, [BCP API (Preview)](ingest-data-bulk-copy.md) supports tools and APIs such as bcp.exe, C# `SqlBulkCopy`, and Java `SQLServerBulkCopy` over SQL connections without staging files first.
 
 **Pipelines** and **dataflows** support a wide variety of data sources and data formats. For more information, see [Pipelines](ingest-data-pipelines.md) and [Dataflows](../data-factory/dataflows-gen2-overview.md).
 
+## Use Workspace Identity with COPY INTO
+
+Use [Workspace Identity](../security/workspace-identity.md) with `COPY INTO` to separate access to the source data from permission to write to the target warehouse table. Workspace Identity is supported for Azure Blob Storage, ADLS Gen2, and OneLake sources. The statement runs in the current user's SQL security context. The `WITH (CREDENTIAL = (IDENTITY = 'Workspace Identity'))` clause allows `COPY INTO` to impersonate the workspace identity only when it accesses the source. All SQL permissions and audit attribution remain associated with the executing user.
+
+The workspace-role requirement applies only when the user specifies Workspace Identity. Without Workspace Identity, a user who receives access to the warehouse through item sharing can run `COPY INTO` with at least Read item permission and the required SQL permissions.
+
+Complete the following setup before you run `COPY INTO` with Workspace Identity:
+
+1. Configure a workspace identity for the workspace that contains the target warehouse.
+1. Grant the workspace identity access to the source:
+   - For Azure Blob Storage and ADLS Gen2, find the workspace identity by the workspace name, and assign the **Storage Blob Data Reader** role on the storage account or container. For ADLS Gen2 directory-level access, grant the required ACL permissions. Assign permissions to the workspace identity as you would to a Microsoft Entra user.
+   - For OneLake, find the workspace identity by the workspace name, add it to the workspace that contains the source data, and assign at least the Contributor workspace role.
+1. Assign the executing user at least the Viewer role on the workspace that contains the target warehouse. Item permissions alone don't authorize a user to impersonate the workspace identity.
+1. Grant the executing user `INSERT` permission on the target table. When Workspace Identity is the credential, `ADMINISTER DATABASE BULK OPERATIONS` permission isn't required.
+
+The following example loads a CSV file from OneLake by impersonating Workspace Identity for source access:
+
+```sql
+COPY INTO dbo.SalesOrders
+FROM 'https://onelake.dfs.fabric.microsoft.com/<workspace-id>/<item-id>/Files/orders/*.csv'
+WITH (
+    FILE_TYPE = 'CSV',
+    FIRSTROW = 2,
+    CREDENTIAL = (IDENTITY = 'Workspace Identity')
+);
+```
+
+> [!IMPORTANT]
+> Sensitivity label policies vary by organization. `COPY INTO` can fail when the destination has a sensitivity label with restrictions that prevent the operation. If a sensitivity label causes the failure, remove the label from the destination before retrying the command.
+
 ## Best practices
 
-The `COPY` command in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] provides a simple, flexible, and fast interface for high-throughput data ingestion for SQL workloads. In the current version, it supports loading data from external storage accounts only.
+The `COPY` command in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] provides a simple, flexible, and fast interface for high-throughput data ingestion for SQL workloads from Azure Storage and OneLake.
 
 You can also use T-SQL language to create a new table and then insert into it, and then update and delete rows of data. You can insert data from any database within the [!INCLUDE [product-name](../includes/product-name.md)] workspace by using cross-database queries. If you want to ingest data from a Lakehouse to a warehouse, you can do this with a cross database query. For example:
 
@@ -104,9 +135,9 @@ Consider splitting large Parquet files, especially when the number of files is s
 
 There are no limitations on the number or size of files. However, for best performance, use files that are at least 4 MB.
 
-### What authentication method does the COPY command use if I don't specify a credential?
+### Which credential does the COPY command use if I don't specify one?
 
-By default, `COPY INTO` uses the executing user's Microsoft Entra ID.
+By default, `COPY INTO` uses the executing user's Microsoft Entra identity for source access.
 
 ## Related content
 
