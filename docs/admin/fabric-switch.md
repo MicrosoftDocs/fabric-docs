@@ -4,36 +4,29 @@ description: Learn how to enable Microsoft Fabric for your organization.
 author: msmimart
 ms.author: mimart
 ms.topic: overview
-ms.date: 10/17/2025
+ms.date: 08/27/2026
+ai-usage: ai-assisted
 ---
 
 # Enable Microsoft Fabric for your organization
 
-The [Fabric](../fundamentals/microsoft-fabric-overview.md) admin switch lets organizations that use Power BI enable Fabric.
+When you enable [Microsoft Fabric](../fundamentals/microsoft-fabric-overview.md) for your organization, users can create Fabric items such as lakehouses, notebooks, and warehouses. Two things make this possible: a tenant configuration that allows users to create Fabric items, and capacity that supports Fabric workloads. A Fabric administrator controls the tenant configuration through the **Users can create Fabric items** setting.
+
+You also need capacity that supports Fabric workloads. Fabric workloads can run on an Azure F SKU capacity, an existing Power BI Premium P SKU capacity, or a Fabric trial capacity. Per-user licenses such as Power BI Pro and PPU don't provide Fabric capacity. If your organization needs an Azure F SKU capacity, see [buy Fabric capacity in Azure](../enterprise/buy-capacity.md).
+
+This article explains how to configure the tenant so users can create Fabric items.
 
 >[!NOTE]
->* Power BI is part of Fabric. The Power BI portal mentioned in this article is now the Fabric portal. 
->* Fabric availability is restricted in some regions. For more information, see [Fabric region availability](./region-availability.md).
-
-You can enable Fabric for:
-
-* **Your tenant** - Use this option to enable Fabric for everyone in the tenant.
-
-* **A specific capacity** - Use this option if you want to enable Fabric for users in a specific capacity.
-
-In both cases, you can use security groups to provide Fabric access to a specified list of users.
+> * Power BI is part of Fabric. The Power BI portal mentioned in this article is now the Fabric portal.
+> * Fabric availability is restricted in some regions. For more information, see [Fabric region availability](./region-availability.md).
 
 ## Prerequisites
 
-To enable Fabric, you need to have the *Fabric administrator* role.
+To enable Fabric, you need to have the *Fabric administrator* Microsoft Entra role.
 
-## Enable for your tenant
+## Enable Fabric for your tenant
 
-When you enable Fabric using the tenant setting, users can create Fabric items in that [tenant](../enterprise/licenses.md#tenant), unless capacity admins turned it off for a specific capacity. Depending on the configuration you select, Fabric becomes available for everyone in the tenant, or to a selected group of users.
-
-> [!Note]
-> * You, or other admins, can override the Fabric setting at the [capacity level](#enable-for-a-capacity).
-> * The [Fabric trial capacity](/fabric/fundamentals/fabric-trial) gives you free access for 60 days to explore most features across data engineering, data science, real-time analytics, business intelligence, and more.
+When you enable Fabric using the tenant setting, users can create Fabric items in that [tenant](../enterprise/licenses.md#tenant), unless capacity admins turn it off for a specific capacity.
 
 In your tenant, you can enable Fabric for:
 
@@ -54,7 +47,7 @@ Follow these steps to enable Fabric for your tenant.
 >[!NOTE]
 >The *Delegate settings to other admins* option, isn't available because it's automatically delegated to capacity admins.
 
-### Enable for a capacity
+## Enable Fabric for a capacity
 
 Consider the Fabric setting at the tenant level a recommendation for the entire organization. Capacity admins can override this setting, depending on their needs. For example, Fabric can be enabled for all the users in your organization. However, for security reasons your organization decided to disable Fabric for a specific capacity. In such cases, Fabric can be disabled for that capacity.
 
@@ -76,7 +69,7 @@ Follow these steps to enable Fabric for a specific capacity.
 
 To disable Fabric, you can turn off the *Microsoft Fabric* admin switch. After disabling Fabric, users will have view permissions for Fabric items. If you disable Fabric for a specific capacity while Fabric is available in your organization, your selection will only affect that capacity.
 
-## Considerations
+## Considerations for Fabric items
 
 In some cases, users that don't have Fabric enabled will be able to view Fabric items and icons.
 
@@ -88,4 +81,4 @@ Users that don't have Fabric enabled, can:
 
 ## Related content
 
-* [Admin overview](microsoft-fabric-admin.md)
+* [Admin overview](admin-overview.md)

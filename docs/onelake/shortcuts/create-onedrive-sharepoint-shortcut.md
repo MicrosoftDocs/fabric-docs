@@ -6,7 +6,8 @@ ms.reviewer: shinarayanan # Product team ms alias(es)
 # ms.author: Do not use - assigned by folder in docfx file
 ms.search.form: Shortcuts
 ms.topic: how-to
-ms.date: 02/10/2026
+ms.date: 08/27/2026
+ai-usage: ai-assisted
 #customer intent: As a data engineer, I want to learn how to create a OneDrive or SharePoint shortcut inside a Microsoft Fabric lakehouse so that I can efficiently manage and access my data.
 ---
 
@@ -78,46 +79,56 @@ OneDrive and SharePoint shortcuts support the following methods for authenticati
 
 * [Workspace identity](../../security/workspace-identity.md)
 
-  To use workspace identity authentication for OneDrive or SharePoint shortcuts, you need to grant your workspace identity access to the OneDrive or SharePoint site. Use the steps in the following section to configure this access.
+   To use workspace identity authentication for OneDrive or SharePoint shortcuts, grant your workspace identity access to the OneDrive or SharePoint site. Use the steps in [Configure SharePoint access](#configure-sharepoint-access).
 
-* [Service Principal](/entra/identity-platform/app-objects-and-service-principals)
+* [Service principal](/entra/identity-platform/app-objects-and-service-principals)
 
-  To use service principal authentication, [register an application in Microsoft Entra ID](/entra/identity-platform/quickstart-register-app) and create a client secret. Then, grant the service principal access to your SharePoint site using Microsoft Graph. The service principal needs at least **read** permission on the SharePoint site. For more information about granting site permissions, see [Grant an app-only access token to a SharePoint site](/sharepoint/dev/solution-guidance/security-apponly-azuread#granting-access-using-sharepoint-online).
+   To use service principal authentication, grant the service principal access to the SharePoint site, and use a certificate credential for the Fabric connection. The service principal needs at least **read** permission on the SharePoint site. Use the steps in [Configure SharePoint access](#configure-sharepoint-access) and [Create a certificate-based service principal connection](#create-a-certificate-based-service-principal-connection).
 
-### Configure workspace identity authentication
+   Service principal authentication with key/secret pairs is *no longer supported*. For more information, see [Granting access via Entra ID application permissions](/sharepoint/dev/solution-guidance/security-apponly-azuread).
+
+### Configure SharePoint access
 
 The steps in this section require PowerShell. You can [Install PowerShell](/powershell/scripting/install/install-powershell) or run the PowerShell commands in [Azure Cloud Shell](/azure/cloud-shell/get-started/classic?tabs=powershell).
 
-You must be a workspace admin to be able to create a workspace identity. The workspace you're creating the identity for can't be a **My Workspace**.
+Complete these steps for either a workspace identity or service principal. For a workspace identity, you must be a workspace admin, and the workspace can't be **My Workspace**.
 
-1. Follow the steps to [Create a workspace identity](../../security/workspace-identity.md#create-and-manage-a-workspace-identity).
+1. Identify the application that you want to grant access to:
 
-1. In the [Azure portal](https://portal.azure.com), go to **Microsoft Entra ID** and search your tenant for the workspace identity. The name should be the same as your workspace.
+    * For a workspace identity, follow the steps to [create a workspace identity](../../security/workspace-identity.md#create-and-manage-a-workspace-identity).
 
-1. Copy the application ID for the workspace identity to use later.
+    * For a service principal, [register an application in Microsoft Entra ID](/entra/identity-platform/quickstart-register-app).
 
-1. Still in the Azure portal, go to **App registrations** > **All applications**, then search for and select your workspace name.
+1. In the [Azure portal](https://portal.azure.com), go to **Microsoft Entra ID** > **App registrations** > **All applications**, and then search for and select the application. For a workspace identity, the application name is the same as the workspace name.
 
-1. In your workspace application, go to **Manage** > **API permissions** and add the following API permission:
+1. Copy the application ID to use later.
 
-   * API: **SharePoint**
-   * Type of permissions: **Application permissions**
-   * Permission: **Sites > Sites.Selected**
+1. In the application, go to **Manage** > **API permissions**.
 
-1. Select **Add permissions**. Grant consent if required.
+1. Select **Add a permission**.
+
+1. Select **SharePoint**.
+
+1. On the **Request API permissions** page, select **Application permissions**, and then select **Sites** > **Sites.Selected**.
+
+   :::image type="content" source="media/create-onedrive-sharepoint-shortcut/sharepoint-application-permissions.png" alt-text="Screenshot of the Azure portal that shows selecting the Sites.Selected API permissions for SharePoint.":::
+
+1. Select **Add permissions** to confirm.
+
+1. Select **Grant admin consent for [tenant]**, and then select **Yes**. Confirm that the status for **Sites.Selected** is **Granted for [tenant]**.
 
 1. Open a PowerShell command window or start a cloud shell session in the Azure portal.
 
 1. Check if the **Microsoft.Graph** PowerShell module is installed in your environment.
 
    ```powershell
-   Get-InstalledModule Microsoft.Graph
+   Get-InstalledModule Microsoft.Graph
    ```
 
    If not, install it.
 
    ```powershell
-   Install-Module Microsoft.Graph -Scope AllUsers -Force
+   Install-Module Microsoft.Graph -Scope AllUsers -Force
    ```
 
    Or update to the latest version.
@@ -129,13 +140,13 @@ You must be a workspace admin to be able to create a workspace identity. The wor
 1. Connect to Microsoft Graph with the required permissions for this task.
 
    ```powershell
-   Connect-MgGraph -Scopes "Sites.FullControl.All","AppRoleAssignment.ReadWrite.All","Directory.Read.All"
+   Connect-MgGraph -Scopes "Sites.FullControl.All","AppRoleAssignment.ReadWrite.All","Directory.Read.All"
    ```
 
 1. Verify the granted scopes.
 
    ```powershell
-   Get-MgContext | Select-Object -ExpandProperty Scopes
+   Get-MgContext | Select-Object -ExpandProperty Scopes
    ```
 
    In the output, you should see `Sites.FullControl.All` (recommended) or `Sites.ReadWrite.All`.
@@ -143,23 +154,31 @@ You must be a workspace admin to be able to create a workspace identity. The wor
 1. Create a variable to store the site ID for your SharePoint site. Replace the `<TENANT_NAME>` and `<SITE_NAME>` placeholders with your own values.
 
    ```powershell
-   $site = Invoke-MgGraphRequest -Method GET -Uri "https://graph.microsoft.com/v1.0/sites/<TENANT_NAME>.sharepoint.com:/<SITE_NAME>:"  
+   $site = Invoke-MgGraphRequest -Method GET -Uri "https://graph.microsoft.com/v1.0/sites/<TENANT_NAME>.sharepoint.com:/<SITE_NAME>:"
    ```
-   
-   <SITE_NAME> could be based on your url. For example,
-   
-   https://test.sharepoint.com/teams/OneLake, then <SITE_NAME> would be __teams/OneLake__
-   
-   https://test.sharepoint.com/sites/OneLake, then <SITE_NAME> would be __sites/OneLake__
-   
-   https://test.sharepoint.com/OneLake, then <SITE_NAME> would be __OneLake__
-   
-1. Create variables for the permissions command. Replace the `<WORKSPACE_IDENTITY_APP_ID>` placeholder with the application ID that you retrieved from Microsoft Entra.
 
-      ```powershell
-   $ManagedIdentityClientId = "<WORKSPACE_IDENTITY_APP_ID>"
-   $Role = "read"  # read | write | owner  
-   $DisplayName = "Workspace Identity Name"  
+   The value of `<SITE_NAME>` depends on the site URL. For example:
+
+   * For `https://test.sharepoint.com/teams/OneLake`, use `teams/OneLake`.
+
+   * For `https://test.sharepoint.com/sites/OneLake`, use `sites/OneLake`.
+
+   * For `https://test.sharepoint.com/OneLake`, use `OneLake`.
+
+1. Verify that Microsoft Graph returns the intended site.
+
+   ```powershell
+   $site.webUrl
+   ```
+
+   Confirm that the value matches your SharePoint site URL. If it shows the root site or a different site, correct `<SITE_NAME>` before you continue.
+
+1. Create variables for the permissions command. Replace `<APPLICATION_ID>` and `<APPLICATION_NAME>` with the values for your workspace identity or service principal.
+
+   ```powershell
+   $PrincipalClientId = "<APPLICATION_ID>"
+   $Role = "read" # read | write | owner
+   $DisplayName = "<APPLICATION_NAME>"
    ```
 
 1. Create the body for the permissions command.
@@ -170,7 +189,7 @@ You must be a workspace admin to be able to create a workspace identity. The wor
      grantedToIdentities = @( 
        @{ 
          application = @{ 
-           id = $ManagedIdentityClientId 
+                id = $PrincipalClientId
            displayName = $DisplayName 
          } 
        } 
@@ -181,17 +200,40 @@ You must be a workspace admin to be able to create a workspace identity. The wor
 1. Grant the permissions.
 
    ```powershell
-   $siteId = $site.Id  
-   $grant = Invoke-MgGraphRequest -Method POST -Uri "https://graph.microsoft.com/v1.0/sites/$siteId/permissions" -Body $body -ContentType "application/json" -ErrorAction Stop  
+   $siteId = $site.Id
+   $grant = Invoke-MgGraphRequest -Method POST -Uri "https://graph.microsoft.com/v1.0/sites/$siteId/permissions" -Body $body -ContentType "application/json" -ErrorAction Stop
    ```
 
 1. Confirm that the permission object was created successfully.
 
    ```powershell
-   Write-Host ("Granted: id={0} roles={1}" -f $grant.id, ($grant.roles -join ",")) -ForegroundColor Green 
+   Write-Host ("Granted: id={0} roles={1}" -f $grant.id, ($grant.roles -join ",")) -ForegroundColor Green
    ```
 
-Now, when you create a shortcut you can select **Workspace identity** as the **Authentication kind**.
+1. Retrieve the site permissions to verify that the application ID appears with the expected role.
+
+   ```powershell
+   (Invoke-MgGraphRequest -Method GET -Uri "https://graph.microsoft.com/v1.0/sites/$siteId/permissions").value | ConvertTo-Json -Depth 6
+   ```
+
+The workspace identity or service principal now has access to the SharePoint site.
+
+### Create a certificate-based service principal connection
+
+Service principal connections for OneDrive and SharePoint shortcuts use a certificate credential and an Azure Key Vault reference.
+
+> [!IMPORTANT]
+> You can create a certificate-based connection in **Manage Connections and Gateways**. The option to create this connection in the **New shortcut** flow is rolling out and might not be available in every region.
+
+1. If you need to create the service principal and certificate, follow the Azure CLI guidance to [create a service principal and store its certificate in Azure Key Vault](/cli/azure/azure-cli-sp-tutorial-3#work-with-azure-key-vault). If the service principal already exists, store its certificate in Azure Key Vault.
+
+1. [Configure an Azure Key Vault reference](../../data-factory/azure-key-vault-reference-configure.md) in Fabric.
+
+1. In Fabric, select the settings gear icon, and then select **Manage Connections and Gateways**.
+
+1. Create a connection that uses **Service principal** authentication and the Azure Key Vault reference for the certificate credential.
+
+1. When you create the shortcut, select **Existing connection**, and then select the certificate-based connection. If your region supports certificate credentials in the **New shortcut** flow, you can create the connection there instead.
 
 ## Sensitivity label alignment for SharePoint shortcuts
 
@@ -217,11 +259,11 @@ The tenant must enable sensitivity labeling for Fabric content. An admin must tu
 
   * Spark workload concurrency: Avoid running many parallel Spark jobs using the same delegated (user-based) authentication, as this can quickly trigger SharePoint throttling limits.
   
-  * Folder scope: Create shortcuts at the most specific folder level that contains the actual data to be processed (for example, `site/folder1/subfolder2`) rather than at the site or document library root. 
+  * Folder scope: Create shortcuts at the most specific folder level that contains the actual data to be processed (for example, `site/folder1/subfolder2`) rather than at the site or document library root.
 
   * Use **Workspace Identity (WI)** authentication instead of **Organizational Account** authentication to reduce throttling.
 
-* You can use Service Principal based authentication to connect to SharePoint or OneDrive across different tenants.
+* You can use service principal authentication to connect to SharePoint or OneDrive across different tenants.
 
 ## Limitations
 
@@ -229,7 +271,7 @@ The following limitations apply to SharePoint shortcuts:
 
 * OneLake doesn't support shortcuts to personal **or OnPremise** SharePoint sites. Shortcuts can only connect to enterprise SharePoint sites **and OneDrive for Business.**
 
-* Based on Azure ACS [retirement](/sharepoint/dev/solution-guidance/security-apponly-azureacs), Service Principal authentication will not work for SharePoint tenants created after Nov 1st, 2024.
+* Create certificate-based service principal connections in **Manage Connections and Gateways**. Creating these connections in the **New shortcut** flow is rolling out and might not be available in every region.
 
 * SharePoint and OneDrive Shortcuts are supported only at folder level and not at file level.
 
