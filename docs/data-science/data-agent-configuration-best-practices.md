@@ -5,7 +5,7 @@ ms.author: scottpolly
 author: s-polly
 ms.reviewer: midesa
 ms.topic: how-to
-ms.date: 08/15/2025
+ms.date: 08/27/2026
 ---
 
 # Best practices for configuring your data agent
@@ -252,6 +252,6 @@ For each user question, the data agent performs a **vector similarity search** t
 ## Next steps
 
 * [Data agent concept](concept-data-agent.md)
-* [Data agent scenario](data-agent-scenario.md)
+* [Data agent end-to-end tutorial](data-agent-end-to-end-tutorial.md)
 * [Overview of data agent configurations](data-agent-configurations.md)
 * [Adapt an iterative process to developing data agents](../data-science/develop-iterative-process-data-agent.md)
