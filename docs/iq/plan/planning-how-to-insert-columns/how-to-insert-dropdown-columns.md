@@ -1,23 +1,23 @@
 ---
 title: Insert Dropdown List Columns in a Planning Sheet
 description: Learn how to insert and configure data input dropdown columns in a planning sheet.
-ms.date: 06/29/2026
+ms.date: 08/27/2026
 ms.topic: how-to
 #customer intent: As a user, I want to understand how to insert and configure data input dropdown columns in a planning sheet.
 ---
 
 # Insert dropdown list columns in planning sheet
 
-You can create single select or multiselect dropdown columns by using a predefined list of values.
+You can create single select or multiselect dropdown list columns in a planning sheet by using a predefined list of values.
 
 * **Single Select** - Select one value for a row from a list of options.
 * **Multi-select** - Select multiple values for a row from a list of options.
 
 For the single select type, you can define the list of options manually or select one from the available presets. For the multiselect type, you can configure the list of options.
 
-## Create a dropdown column
+## Create a dropdown list column
 
-To insert a dropdown column:
+To insert a list column:
 
 1. Go to **Planning** > **Insert Column** > **List**.
 1. Select **Single Select** or **Multi-select**.
@@ -49,7 +49,7 @@ You configured the list of values. The following section explains how to configu
 
 ## Configure dropdown column properties
 
-You can configure other properties such as **Insert as**, **Allow Input**, **Default Value**, and **Description**. For more information, see [configure data input column properties](./how-to-insert-data-input-columns.md#configure-data-input-column-properties).
+You can configure other properties such as **Insert as**, **Input type**, **On Change Formula**, **Allow entry on Totals/Subtotals**, **Allow Input**, and **Description**. For more information, see [configure data input column properties](./how-to-insert-data-input-columns.md#configure-data-input-column-properties).
 
 In addition, you can configure these specific properties for dropdown columns:
 
@@ -67,9 +67,10 @@ In addition, you can configure these specific properties for dropdown columns:
 
     :::image type="content" source="../media/planning-how-to-insert-columns/how-to-insert-dropdown-columns/allow-user-add-new-option.jpg" alt-text="Screenshot of allowing user to add new option." lightbox="../media/planning-how-to-insert-columns/how-to-insert-dropdown-columns/allow-user-add-new-option.jpg":::
 
-* **Allow entry on Total/Subtotals**: This option is enabled by default. Disable it to restrict input in total and subtotal rows.
+* **Prevent Null**: Prevents users from leaving the value empty. To enable this option, configure a **Default value** to ensure that a value is entered when the column is created or updated.
 
-    :::image type="content" source="../media/planning-how-to-insert-columns/how-to-insert-dropdown-columns/entry-total-subtotal-rows.png" alt-text="Screenshot of disabling entry in total & subtotal rows." lightbox="../media/planning-how-to-insert-columns/how-to-insert-dropdown-columns/entry-total-subtotal-rows.png":::
+   > [!NOTE]
+   > The **Prevent Null** option is available only for the **Single Select** input type and isn't available for **Multi Select**.
 
 * **Default Value**: You can define a default selection to avoid empty cells in the column. The default value can be one of the following types:
 
@@ -83,14 +84,14 @@ In addition, you can configure these specific properties for dropdown columns:
 
   * **Measure** - Select a measure to populate the default values.
 
-    > [!TIP]
-    > When you use **Dimension** or **Measure** as the **Default Value**, enable **Allow user to add new option**. This setting allows you to create a new option if no existing dimension or measure values match.
+   > [!TIP]
+   > When you use **Dimension** or **Measure** as the **Default Value**, enable **Allow user to add new option**. This setting allows you to create a new option if no existing dimension or measure values match.
 
 After configuring the column and list of values, select **Create**. A dropdown column is added to the planning sheet with the configured properties.
 
 ## Modify column properties and list of values
 
-You can modify an existing dropdown column by using the same steps as other data input columns. For more information, see [modify column properties](./how-to-insert-number-columns.md#modify-column-properties).
+You can modify an existing dropdown column by using the same steps as other data input columns. For more information, see [modify column properties](how-to-insert-data-input-columns.md#modify-column-properties).
 
 1. Go to **Insert Column** > **Manage measures** and select the **Edit** (pencil) icon.
 1. A side panel opens where you can update the required properties and also modify the list of values.
