@@ -50,15 +50,12 @@ If you don't use auto compaction, to identify tables that need maintenance, use 
 
 ## Partition size considerations
 
-The choice of partition column for a Delta table in a lakehouse also affects the time it takes to sync changes to SQL analytics endpoint. The number and size of partitions of the partition column are important for performance:
+Partition layout affects how long the SQL analytics endpoint takes to discover and sync changes. A large number of partitions or small Parquet files increases metadata scanning overhead. Follow these practices:
 
-- A column with high cardinality (mostly or entirely made of unique values) results in a large number of partitions. A large number of partitions negatively impacts performance of the metadata discovery scan for changes. If the cardinality of a column is high, choose another column for partitioning.
-- The size of each partition can also affect performance. Use a column that results in a partition of at least (or close to) 1 GB. Follow best practices for [Delta tables maintenance](../data-engineering/lakehouse-table-maintenance.md) and [partitioning](../data-engineering/delta-lake-partitioning.md). For a Python script to evaluate partitions, see [Sample script for partition details](#sample-script-for-partition-details).
+- Avoid high-cardinality partition columns, which can create a partition for each unique value. Choose a column that produces partitions close to or greater than 1 GB. For more information, see [Delta Lake table partitioning](../data-engineering/delta-lake-partitioning.md).
+- Batch and streaming ingestion can create small files when changes are frequent or small. Use regular [lakehouse table maintenance](../data-engineering/lakehouse-table-maintenance.md) to compact these files.
 
-A large volume of small-sized parquet files increases the time it takes to sync changes between a lakehouse and its associated SQL analytics endpoint. You might end up with large number of parquet files in a Delta table for one or more reasons:
-
-- If you choose a partition for a Delta table with high number of unique values, the table is partitioned by each unique value and might be over-partitioned. Choose a partition column that doesn't have a high cardinality, and results in individual partitions at least 1 GB each.
-- Batch and streaming data ingestion rates might also result in small files depending on frequency and size of changes being written to a lakehouse. For example, there might be a small volume of changes coming through to the lakehouse, resulting in small parquet files. To address this issue, implement regular [lakehouse table maintenance](../data-engineering/lakehouse-table-maintenance.md).
+To evaluate the size and file count of each partition, use the [sample script for partition details](#sample-script-for-partition-details).
     
 ### Sample script for partition details
 
