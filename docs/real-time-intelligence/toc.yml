@@ -793,6 +793,8 @@ items:
         href: dashboard-real-time-create.md
       - name: Real-Time Dashboard permissions
         href: dashboard-permissions.md
+      - name: Dashboard data source access
+        href: dashboard-data-source-access.md
       - name: Explore data in Real-Time Dashboard Using Copilot
         href: dashboard-explore-data.md
       - name: Customize Real-Time Dashboard visuals
