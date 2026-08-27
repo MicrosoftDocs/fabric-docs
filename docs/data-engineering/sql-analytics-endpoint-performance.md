@@ -34,7 +34,7 @@ For tables written by Spark, use the default settings in Fabric Spark runtime 2.
 
 If you're using Fabric Spark runtime 1.3, enable [adaptive target file size](tune-file-size.md#adaptive-target-file-size) and [file level compaction targets](table-compaction.md#file-level-compaction-targets), which are available as opt-in features.
 
-You don't need V-Order for improved SQL analytics endpoint performance as Spark writes parquet files that are Snappy compressed to reduce both read and write I/O.
+V-Order primarily benefits Power BI Direct Lake and, while it can improve compression for some workloads, generally isn't required or recommended by default for optimal SQL analytics endpoint performance.
 
 Default write settings don't replace table maintenance. Use the following practices to preserve a healthy layout as tables change:
 
