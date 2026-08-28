@@ -6,7 +6,7 @@ author: s-polly
 ms.reviewer: shradha
 reviewer: shradha
 ms.topic: how-to
-ms.date: 2/6/2026
+ms.date: 08/21/2026
 ms.search.form: Data Agent
 ai-usage: ai-assisted
 ---
@@ -107,6 +107,7 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 | Agent Instructions | ✅ Yes | Guide the agent on when and how to route questions to this source. |
 | Data Source Instructions | ✅ Yes | Provide table descriptions, join logic, key column details, and business terminology to NL2SQL. |
 | Data Source Description | ✅ Yes | Description that helps the agent determine whether this data source is relevant to the user's question. |
+| [Schema Object Descriptions (Preview)](data-agent-schema-object-descriptions.md) | ✅ Yes | Provide business context for tables, columns, and other schema elements to improve SQL query generation. Available only on the [preview runtime](data-agent-runtime.md#preview-runtime). |
 | Example Queries | ✅ Yes | Supply natural-language/SQL pairs so the agent can learn complex query patterns. Top examples are automatically retrieved via vector similarity. |
 
 # [Eventhouse](#tab/kql)

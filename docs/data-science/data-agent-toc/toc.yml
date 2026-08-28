@@ -24,7 +24,9 @@ items:
         href: ../data-agent-configurations.md
       - name: Example queries
         href: ../data-agent-example-queries.md
-      - name: Best practices for configuring data agents
+      - name: Schema object descriptions (Preview)
+        href: ../data-agent-schema-object-descriptions.md
+      - name: Best practices for improving query generation
         href: ../data-agent-configuration-best-practices.md
       - name: How to configure a data agent
         href: ../develop-iterative-process-data-agent.md
