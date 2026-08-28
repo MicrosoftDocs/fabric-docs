@@ -3,7 +3,7 @@ title: Configure custom live pools in Microsoft Fabric
 description: Learn how to create, configure, and manage custom live pools in Microsoft Fabric for fast notebook session startup.
 ms.reviewer: saravi
 ms.topic: how-to
-ms.date: 08/14/2026
+ms.date: 08/24/2026
 ai-usage: ai-assisted
 ---
 
@@ -17,17 +17,42 @@ Custom live pools are prehydrated Spark clusters that provide near-instant sessi
 
 Before setting up custom live pools, ensure you have:
 
-- Access to a Fabric workspace with a **paid Fabric SKU** (Fabric trial capacities aren't supported)
-- **Admin** role in the workspace
-- An active **Fabric capacity** assigned to your workspace
-- A published [Fabric environment](/fabric/data-engineering/create-and-use-environment) to use for library configuration. 
+- Access to a Fabric workspace with a **paid Fabric SKU** (Fabric trial capacities aren't supported).
+- **Admin** or **Member** role in the workspace.
+- An active **Fabric capacity** assigned to your workspace.
+- A published [Fabric environment](create-and-use-environment.md) to use for library configuration.
+- An existing custom Spark pool. Only workspace admins can create custom Spark pools.
+
+If you have the **Member** role, a workspace admin must turn on the existing **Customize compute configuration for items** workspace setting.
 
 > [!IMPORTANT]
 > Starter pools aren't supported for custom live pools. If your workspace uses a starter pool, you must create a custom Spark pool before configuring a custom live pool.
 
-## Create a custom pool for the live pool
+## Use the existing compute customization setting
 
-First, create a custom Spark pool. You enable live pool compute on this pool in a later step.
+Custom live pools use the existing **Customize compute configuration for items** workspace setting. They don't have a separate delegation setting. Before a workspace Member can create or update a custom live pool configuration, a workspace admin must turn on the existing setting:
+
+1. Go to your Fabric workspace.
+1. Select **Workspace settings** from the workspace home ribbon.
+1. Expand **Data Engineering/Science** and select **Spark settings**.
+1. Select the **Pool** tab.
+1. Turn on **Customize compute configuration for items**.
+
+   :::image type="content" source="media/workspace-admin-settings/customize-compute-items.png" alt-text="Screenshot showing the switch to customize compute configuration for items." lightbox="media/workspace-admin-settings/customize-compute-items.png":::
+
+1. Select **Save**.
+
+When this setting is on, Members can use a Fabric environment to select an existing custom Spark pool, adjust session-level driver cores, driver memory, executor cores, and executor memory, and create or update the live pool configuration. Members can then save and publish the environment.
+
+This setting doesn't let Members create or manage custom Spark pools in workspace settings. A workspace admin must create the underlying custom Spark pool.
+
+When **Customize compute configuration for items** is off, environments use the workspace default pool and its compute configuration. Members can't create or update a custom live pool configuration until a workspace admin turns on the setting.
+
+For more information about this workspace control, see [Data Engineering workspace administration settings](workspace-admin-settings.md#pool).
+
+## Create a custom pool for the live pool (Admin only)
+
+This task requires the **Admin** workspace role. If a custom Spark pool already exists, workspace Members can skip this task and configure live pool compute on the existing pool.
 
 1. Navigate to your Fabric workspace.
 1. Select **Workspace settings** from the workspace home ribbon.
@@ -41,7 +66,7 @@ First, create a custom Spark pool. You enable live pool compute on this pool in 
 
 ## Configure a live pool
 
-After you create a custom Spark pool, enable live pool compute through the [environment](/fabric/data-engineering/create-and-use-environment) settings.
+Workspace Admins and Members can create or update a live pool configuration through the [environment](/fabric/data-engineering/create-and-use-environment) settings. For Members, a workspace admin must first enable **Customize compute configuration for items**. Members must select an existing custom Spark pool created by a workspace admin.
 
 1. In your Fabric workspace, open the environment that you want to attach to a custom live pool.
 1. In the left pane, select **Compute**.
@@ -175,6 +200,14 @@ If notebook sessions fail to start even with an active pool:
 
 - Check that the session is using the correct environment.
 - Verify the pool is in "Available" status and fully hydrated.
+
+### Live pool settings aren't available
+
+If you can't create or update the live pool configuration:
+
+- Verify that you have the **Admin** or **Member** workspace role.
+- If you have the **Member** role, ask a workspace admin to enable **Customize compute configuration for items**.
+- Verify that a workspace admin created a custom Spark pool that you can select in the environment.
 
 ## Related content
 
