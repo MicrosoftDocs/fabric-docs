@@ -13,9 +13,6 @@ ai-usage: ai-assisted
 
 Activities are the building blocks that help you create end-to-end data workflows in [!INCLUDE [product-name](../includes/product-name.md)]. Think of them as the tasks that move and transform your data to meet your business needs. You might use a copy activity to move data from SQL Server to Azure Blob Storage. Then you could add a Dataflow activity or Notebook activity to process and transform that data before loading it into Azure Synapse Analytics for reporting.
 
-> [!TIP]
-> Learn how to visually author and navigate your pipelines on the canvas. To learn more, see [Pipeline canvas](pipeline-canvas-experience.md#updated-canvas-experience).
-
 Activities are grouped together in pipelines to accomplish specific goals. For example, you might create a pipeline that:
 
 - Pulls in log data from different sources

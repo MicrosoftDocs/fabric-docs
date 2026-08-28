@@ -12,9 +12,6 @@ ai-usage: ai-assisted
 
 A pipeline run occurs when a pipeline is started and the activities are executed.
 
-> [!TIP]
-> Learn how to visually author and navigate your pipelines on the canvas. To learn more, see [Pipeline canvas](pipeline-canvas-experience.md#updated-canvas-experience).
-
 You can start a pipeline run in three ways:
 
 - [**On-demand runs**](#on-demand-pipeline-run): Select **Run** in the pipeline editor to trigger an immediate run. You'll need to save any changes before the pipeline starts.
