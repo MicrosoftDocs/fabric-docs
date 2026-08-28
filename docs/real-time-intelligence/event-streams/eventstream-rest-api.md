@@ -15,7 +15,7 @@ In Fabric, an **item** represents a set of capabilities within a specific experi
 
 This article offers a comprehensive guide on using the Microsoft Fabric REST APIs to create and manage Eventstream items within your Fabric workspace. You find detailed specifications for each Eventstream API operation, along with instructions for setting up and configuring your API calls.
 
-For a complete overview of Microsoft Fabric REST APIs, visit: [Using the Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis)
+For a complete overview of Microsoft Fabric REST APIs, visit: [Using the Microsoft Fabric REST APIs](/rest/api/fabric/articles/get-started/using-fabric-apis)
 
 ## Supported Eventstream APIs
 
@@ -429,7 +429,7 @@ Example of stream in API body:
 
 ## Related content
 
-* [Using the Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis)
+* [Using the Microsoft Fabric REST APIs](/rest/api/fabric/articles/get-started/using-fabric-apis)
 * [Eventstream item definition](/rest/api/fabric/articles/item-management/definitions/eventstream-definition)
 
 
