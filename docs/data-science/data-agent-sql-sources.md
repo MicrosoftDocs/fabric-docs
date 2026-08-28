@@ -5,12 +5,12 @@ ms.author: midesa
 author: midesa
 ms.reviewer: jonburchel
 ms.topic: concept-article
-ms.date: 06/03/2026
+ms.date: 08/21/2026
 ---
 
 # SQL sources in Fabric data agent
 
-Fabric data agent lets users ask plain-language questions over SQL data in OneLake — Lakehouse, Data Warehouse, Fabric SQL Database, and Mirrored Databases — and get back governed, read-only answers. Behind the scenes, the agent uses a built-in natural-language-to-SQL tool to translate each question into a T-SQL query, validate it against the schema you selected, and execute it through the source's SQL analytics endpoint.
+Fabric data agent lets you ask plain-language questions over SQL data in OneLake — Lakehouse, Data Warehouse, Fabric SQL Database, and Mirrored Databases — and get back governed, read-only answers. Behind the scenes, the agent uses a built-in natural-language-to-SQL (NL2SQL) tool to translate each question into a T-SQL query, validate it against the schema you selected, and execute it through the source's SQL analytics endpoint.
 
 This article describes the two query-generation tools the agent can use for SQL sources:
 
@@ -31,17 +31,18 @@ NL2SQL is optimized for stable, predictable behavior and is the recommended choi
 
 ## Advanced NL2SQL (preview)
 
-Advanced NL2SQL is a new version of the NL2SQL tool, available on the preview runtime. It's the same tool — natural-language-to SQL over your SQL sources — with one key difference: instead of generating the query in a single pass, it can plan and execute several reasoning steps before returning a query. For example, it can inspect the schema, pick relevant examples, resolve ambiguous filter values, or ask a clarifying question before committing to a query.
+Advanced NL2SQL is a new version of the NL2SQL tool, available on the preview runtime. It's the same tool — natural-language-to-SQL over your SQL sources — with one key difference: instead of generating the query in a single pass, it plans and executes several reasoning steps before returning a query. For example, it can inspect the schema, pick relevant examples, resolve ambiguous filter values, or ask a clarifying question before committing to a query.
 
 :::image type="content" source="media/data-agent-runtime/data-agent-advanced-sql.gif" alt-text="Animated illustration of Advanced NL2SQL planning and executing several reasoning steps in a Fabric data agent before returning a T-SQL query." lightbox="media/data-agent-runtime/data-agent-advanced-sql.gif":::
 
-This multi-step reasoning produces better results in scenarios where NL2SQL has historically struggled:
+Advanced NL2SQL provides quality improvements and configuration experiences that aren't available in NL2SQL:
 
 - **Following example queries more consistently.** NL2SQL doesn't always follow your example queries closely, and sometimes adds logic or constraints that weren't in the examples. Advanced NL2SQL adheres more closely to the patterns demonstrated in your example query library.
 - **Substituting filter values correctly.** When a question implies multiple categorical or boolean filters rather than stating them explicitly, NL2SQL may miss or misapply some of them. Advanced NL2SQL reasons through the implied filters and substitutes the right values into the query.
 - **Handling ambiguous questions.** When a question is ambiguous, NL2SQL tends to commit to an assumption and generate a query anyway. Advanced NL2SQL can detect the ambiguity and ask the user a clarifying question before generating SQL, reducing incorrect answers caused by misread intent.
+- **Understands schema details.** Object names alone might not explain what schema elements mean, and data source instructions might not have enough space to describe every object. By using [schema object descriptions](data-agent-schema-object-descriptions.md), creators can provide context for individual tables, columns, and other schema elements so Advanced NL2SQL can interpret the schema and generate more accurate queries.
 
-Advanced NL2SQL uses the same data source configuration as NL2SQL — schema selection, data source instructions, and example queries — so you don't need to reconfigure your sources to try it.
+Advanced NL2SQL uses the schema selection, data source instructions, and example queries that you already configured for NL2SQL. It can also use configurations available only in Advanced NL2SQL, such as schema object descriptions.
 
 ### Use Advanced NL2SQL
 
