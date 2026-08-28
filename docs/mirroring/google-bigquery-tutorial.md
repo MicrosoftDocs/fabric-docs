@@ -1,12 +1,12 @@
 ---
-title: "Set up Mirroring for Google BigQuery (Preview)"
+title: "Set up Mirroring for Google BigQuery"
 description: Learn how to configure a mirrored database from Google BigQuery in Microsoft Fabric.
 ms.reviewer: misaacs
-ms.date: 09/09/2025
+ms.date: 08/18/2026
 ms.topic: tutorial
 ---
  
-# Tutorial: Set up mirroring for Google BigQuery (Preview)
+# Tutorial: Set up mirroring for Google BigQuery
 
 In this tutorial, you'll configure a Fabric mirrored database from Google BigQuery.
 

@@ -3,7 +3,7 @@ title: Upgrade Dataflow Gen1 to Dataflow Gen2 (CI/CD) using the Upgrade Wizard
 description: This article describes how to use the Dataflows Upgrade Wizard to upgrade Power BI Dataflows Gen1 items to Dataflow Gen2 (CI/CD) in Data Factory for Microsoft Fabric.
 ms.reviewer: eranbenayun
 ms.topic: how-to
-ms.date: 08/04/2026
+ms.date: 08/26/2026
 ai-usage: ai-assisted
 ms.custom:
   - template-how-to
@@ -136,6 +136,10 @@ Dataflow Gen2 uses the Fabric REST API, which doesn't have full parity with the 
 ### Government Community Cloud (GCC) environments aren't supported
 
 Fabric Dataflow Gen2 isn't currently available in GCC, so you can't upgrade a Dataflow Gen1 in a GCC environment.
+
+### Workspace Viewers can't consume tables from an upgraded dataflow
+
+Users with the Viewer workspace role can see an upgraded Dataflow Gen2, but they can't consume its tables through the Power Platform Dataflows connector. Assign users who need to consume the upgraded dataflow the Contributor, Member, or Admin workspace role. For more information, see [Power Query Dataflow connector - Power Query | Microsoft Learn](/power-query/connectors/dataflows#limitations-and-considerations).
 
 > [!IMPORTANT]
 > Dataflow Gen2 uses a different compute and billing model than Dataflow Gen1. Capacity Unit (CU) consumption can vary for many reasons, including the use of new features in Dataflow Gen2, such as [lakehouse](../data-engineering/lakehouse-overview.md) staging and [warehouse](../data-warehouse/data-warehousing.md) compute. Validate refresh duration and CU consumption. For more information, see [Dataflow Gen2 pricing](pricing-dataflows-gen2.md).

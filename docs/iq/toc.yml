@@ -111,6 +111,8 @@ items:
           href: plan/planning-row-model/planning-concept-row-model.md
         - name: Measure and row-based planning - Cubes
           href: plan/planning-concept-cube.md
+        - name: Planning tools - Allocation rules and data input controls
+          href: plan/planning-concept-allocation-rules-controls.md
         - name: Forecasting - Statistical forecasting algorithms using Predict
           href: plan/planning-concept-predict.md
         - name: Forecasting - Reforecasting
@@ -129,7 +131,7 @@ items:
           href: plan/planning-concept-top-down-planning.md
         - name: General - Bottom-up planning
           href: plan/planning-concept-bottom-up-planning.md
-        - name: Scenario planning
+        - name: Planning tools - Scenario Planning
           href: plan/planning-concept-scenario-planning.md
     - name: How-tos
       items:
@@ -139,14 +141,20 @@ items:
                 href: plan/planning-how-to-insert-columns/how-to-insert-data-input-columns.md
               - name: Insert column - Number
                 href: plan/planning-how-to-insert-columns/how-to-insert-number-columns.md
-              - name: Insert column - Dropdown
-                href: plan/planning-how-to-insert-columns/how-to-insert-dropdown-columns.md
+              - name: Insert column - Text
+                href: plan/planning-how-to-insert-columns/how-to-insert-text-columns.md
+              - name: Insert column - Checkbox
+                href: plan/planning-how-to-insert-columns/how-to-insert-checkbox-columns.md  
               - name: Insert column - Person
                 href: plan/planning-how-to-insert-columns/how-to-insert-person-columns.md
-              - name: Insert column - Formula
-                href: plan/planning-how-to-insert-columns/how-to-insert-formula-columns.md
+              - name: Insert column - List
+                href: plan/planning-how-to-insert-columns/how-to-insert-dropdown-columns.md
+              - name: Insert column - Date
+                href: plan/planning-how-to-insert-columns/how-to-insert-date-columns.md
               - name: Insert column - Simulation
                 href: plan/planning-how-to-use-simulation-measures.md
+              - name: Insert column - Formula
+                href: plan/planning-how-to-insert-columns/how-to-insert-formula-columns.md
               - name: Create a measure model
                 href: plan/planning-how-to-create-measure-model.md
               - name: Cube - Multidimensional allocation
@@ -169,6 +177,10 @@ items:
                 href: plan/planning-how-to-manage-inserted-rows.md
               - name: Create a row model
                 href: plan/planning-row-model/how-to-create-row-model.md
+              - name: Create forecasts in row model
+                href: plan/planning-row-model/how-to-create-row-model-forecasts.md
+              - name: Perform scenario analysis in row model
+                href: plan/planning-row-model/how-to-create-row-model-scenarios.md
               - name: Row model - Configure row properties
                 href: plan/planning-row-model/planning-how-to-configure-model-row-properties.md
               - name: Row model - Create templates
@@ -251,6 +263,8 @@ items:
               href: plan/infobridge-how-to-create-bridge.md
             - name: Manage query operations
               href: plan/infobridge-how-to-manage-queries.md
+            - name: Manage sources
+              href: plan/infobridge-how-to-manage-sources.md
             - name: Use dimension level
               href: plan/infobridge-how-to-use-dimension-level.md
             - name: Share measures
@@ -270,7 +284,9 @@ items:
               - name: Join queries
                 href: plan/infobridge-transform-queries/how-to-join-query.md
               - name: SQL queries
-                href: plan/infobridge-transform-queries/how-to-sql-query.md          
+                href: plan/infobridge-transform-queries/how-to-sql-query.md     
+              - name: Duplicate a query
+                href: plan/infobridge-transform-queries/how-to-duplicate-query.md
             - name: Transform data
               items:
                 - name: Use pivot table
@@ -331,6 +347,18 @@ items:
                   href: plan/planning-reference-formulas/date-functions/extract-components-start-end-dates.md
                 - name: Date calculations
                   href: plan/planning-reference-formulas/date-functions/perform-date-calculations.md
+            - name: Time intelligence functions
+              items:
+                - name: Calculate relative time periods
+                  href: plan/planning-reference-formulas/time-intelligence-functions/relative-time-periods.md
+                - name: Calculate specific time periods
+                  href: plan/planning-reference-formulas/time-intelligence-functions/specific-time-periods.md
+                - name: Period-to-date calculations
+                  href: plan/planning-reference-formulas/time-intelligence-functions/period-to-date-calculations.md
+                - name: Time-based aggregations
+                  href: plan/planning-reference-formulas/time-intelligence-functions/time-based-aggregations.md
+                - name: Time shifting and lookup
+                  href: plan/planning-reference-formulas/time-intelligence-functions/time-shifting-lookup.md
             - name: Statistical functions
               items:
                 - name: Measures of central tendency
@@ -345,6 +373,8 @@ items:
                   href: plan/planning-reference-formulas/statistical-functions/calculate-variance-standard-deviation.md
             - name: Identifiers
               href: plan/planning-reference-formulas/identifiers.md
+            - name: Lookup functions
+              href: plan/planning-reference-formulas/lookup-functions.md
   - name: PowerTable sheets
     items:
     - name: Concepts
@@ -461,6 +491,8 @@ items:
           href: plan/powertable-how-to-create-slowly-changing-dimension.md
         - name: Export to Excel
           href: plan/powertable-how-to-export-to-excel.md
+        - name: Export to PDF
+          href: plan/powertable-how-to-export-to-pdf.md
         - name: Configure display and formatting settings
           href: plan/powertable-how-to-configure-display-formatting-settings.md
     - name: Reference
@@ -493,6 +525,8 @@ items:
           href: plan/intelligence-how-to-create-paginated-reports.md
         - name: Export data and visuals
           href: plan/intelligence-how-to-export-data-visuals.md
+        - name: Use Super Filter
+          href: plan/intelligence-how-to-start-with-super-filters.md
         - name: Plan projects with Gantt charts
           href: plan/intelligence-how-to-create-gantt-chart.md
   - name: Resources
