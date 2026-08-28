@@ -101,7 +101,7 @@ Events ingested into Activator originate from:
 - Fabric events. For example, Fabric workspace item events are discrete Fabric events that occur when changes are made to your Fabric Workspace. These changes include creating, updating, or deleting a Fabric item.
 - Azure events. For example, Azure Blob Storage events are triggered when a client creates, replaces, or deletes a blob.
 - Business Events. You can set alerts directly on business events to automate actions when specific business conditions occur.
-- Fabric Ontology business entities (preview). Rules can be defined on ontology business entities to initiate alerts and automated actions, enabling operational decision-making based on modeled data.
+- Ontology in Fabric business entities (preview). Rules can be defined on ontology business entities to initiate alerts and automated actions, enabling operational decision-making based on modeled data.
 - Power BI report. In this case, events are periodic observations based on the refresh schedule of a Power BI semantic model (formerly known as a dataset). These observations might occur daily or weekly, forming a slow-moving eventstream. Activator also integrates with the Power BI service to notify users when a new row appears in a table visual in a published report, enabling rules to monitor visual-level changes and trigger notifications or downstream actions.
 - Fabric Real-Time dashboard.
 
