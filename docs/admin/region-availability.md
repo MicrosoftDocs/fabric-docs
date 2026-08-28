@@ -36,7 +36,7 @@ The following table lists all Azure regions where Power BI or Fabric is availabl
 | Americas     | Chile Central        | ✅ | ❌ | Power BI only region |
 | Americas     | Mexico Central       | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Americas     | US - Central US      | ✅ | ✅ |  |
-| Americas     | US - East US         | ✅ | ✅ |Not available: <br> [Fabric App (preview)](../apps/overview.md) <br> [Operations agent (preview)](../real-time-intelligence/operations-agent.md)<br> [Plan (preview)](../iq/plan/overview.md) |
+| Americas     | US - East US         | ✅ | ✅ |Not available:  <br> [Operations agent (preview)](../real-time-intelligence/operations-agent.md)<br> [Plan (preview)](../iq/plan/overview.md) |
 | Americas     | US - East US 2       | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Americas     | US - North Central US| ✅ | ✅ |  |
 | Americas     | US - South Central US| ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Fabric App (preview)](../apps/overview.md) <br> [Healthcare Solutions](/industry/healthcare/healthcare-data-solutions/overview) <br> [Ontology (preview)](../iq/ontology/overview.md) <br> [Operations agent](../real-time-intelligence/operations-agent.md) <br> [Schema  Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) |
