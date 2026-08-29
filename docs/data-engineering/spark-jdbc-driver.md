@@ -683,7 +683,7 @@ Use the following guidance when you configure the pool:
 
 For the complete list of HikariCP configuration options, see:
 
-- [HikariConfig API reference](https://javadoc.io/static/com.zaxxer/HikariCP/3.2.0/com/zaxxer/hikari/HikariConfig.html)
+- [HikariConfig API reference](https://javadoc.io/versions/com.zaxxer/HikariCP)
 - [HikariCP configuration options](https://github.com/brettwooldridge/HikariCP#gear-configuration-knobs-baby)
 
 ## Data Type Mapping
