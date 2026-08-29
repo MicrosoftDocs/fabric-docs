@@ -4,7 +4,7 @@ description: Learn about eligibility, licensing, sign-in, API endpoints, and wor
 author: SnehaGunda
 ms.author: sngun
 ms.topic: concept-article
-ms.date: 07/31/2026
+ms.date: 08/29/2026
 ms.custom: gcc
 ai-usage: ai-assisted
 
@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 
 # Microsoft Fabric for US Government GCC High customers
 
-Microsoft Fabric in the US Government Community Cloud High (GCC High) environment provides Fabric capabilities for organizations that must meet US government compliance and security requirements. This article describes eligibility and licensing resources, the GCC High sign-in experience, service API endpoints, and the Fabric workloads and capabilities included at public preview and general availability (GA).
+Microsoft Fabric in the US Government Community Cloud High (GCC High) environment provides Fabric capabilities for organizations that must meet US government compliance and security requirements. This article describes eligibility and licensing resources, the GCC High sign-in experience, service API endpoints, the Fabric workloads and capabilities included at public preview and general availability (GA), and the current limitations during public preview.
 
 ## Eligibility, licensing, and subscriptions
 
@@ -68,6 +68,20 @@ The following table identifies the Fabric workloads and cross-cutting capabiliti
 | Variable libraries | Included | Included |
 
 Feature availability can differ from the commercial Fabric service because of government cloud requirements and service dependencies. This table doesn't provide release dates or commitments for capabilities outside the listed scope.
+
+## Current limitations in public preview
+
+The following capabilities aren't supported in Microsoft Fabric for GCC High during public preview.
+
+### Networking and security
+
+- **Private Link** isn't supported.
+- **Customer-managed keys (CMK)** aren't supported.
+- **Outbound access protection** isn't supported.
+- **OneLake security**: Spark support for OneLake security isn't available.
+
+> [!NOTE]
+> These limitations apply only to the public preview release in GCC High. Microsoft is working to enable these capabilities for general availability (GA).
 
 ## Related content
 
