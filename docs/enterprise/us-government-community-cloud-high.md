@@ -62,7 +62,7 @@ The following table lists the Fabric capabilities available in Microsoft Fabric 
 | Power BI | Power BI report, dashboard, scorecard, semantic model, streaming dataflow, streaming dataset, and paginated report | Available | Available |
 | Real-Time Intelligence | KQL queryset, Activator, eventhouse and KQL database, eventstream, and Real-Time dashboard | Available | Available |
 
-Fabric items not listed in this table aren't available in GCC High during public preview. This includes Fabric IQ items (graph model, graph queryset, operations agent, and ontology) and all mirroring sources except Mirrored Azure SQL Database.
+Fabric items not listed in this table aren't available in GCC High during public preview. This limitation includes Fabric IQ items (graph model, graph queryset, operations agent, and ontology) and all mirroring sources except Mirrored Azure SQL Database.
 
 Feature availability can differ from the commercial Fabric service because of government cloud requirements and service dependencies.
 
