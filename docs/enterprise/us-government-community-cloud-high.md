@@ -46,28 +46,25 @@ For API operations and request formats, see the [Power BI REST API reference](/r
 
 ## Feature availability
 
-The following table identifies the Fabric workloads and cross-cutting capabilities included in the GCC High release scope. It lists Public Preview and GA scope without release dates. An entry of **Not included** means the capability isn't part of that release stage.
+The following table lists the Fabric capabilities available in Microsoft Fabric for GCC High by release stage. **Available** means the capability is part of that stage's scope. The **GA** column is blank where the general availability (GA) scope is still being confirmed.
 
-| Workload or capability | Public Preview | GA |
-| --- | --- | --- |
-| Power BI | Included | Included |
-| OneLake | Included | Included |
-| Data Warehouse: warehouse and SQL analytics endpoint | Included | Included |
-| Data Engineering: notebooks | Included | Included |
-| Data Engineering: Spark Core | Included | Included |
-| Data Engineering: lakehouse | Included | Included |
-| Eventstream, including Real-Time Intelligence | Included | Included |
-| Eventhouse | Included | Included |
-| Data Factory: data pipelines, Dataflow Gen2, Copy job, and Apache Airflow jobs | Included | Included |
-| Mirroring for SQL database in Fabric | Included | Included |
-| API for GraphQL | Included | Included |
-| Data Science: machine learning, experiments, and models | Included | Included |
-| Fabric-native semantic models with Direct Lake and SQL analytics endpoints | Included | Included |
-| Real-Time hub | Included | Included |
-| Activator | Included | Included |
-| Variable libraries | Included | Included |
+| Workload | Capabilities in public preview | Public preview | GA |
+| --- | --- | --- | --- |
+| Data Engineering | Lakehouse, lakehouse SQL analytics endpoint, notebook, Spark job definition, environment, lakehouse with schema, and Spark connector for SQL Data Warehouse | Available | Available |
+| Data Factory | Pipeline, Dataflow Gen2, Copy job, default semantic model, virtual network data gateway, and on-premises data gateway (pipeline, Copy job, and Dataflow Gen2) | Available | Available |
+| Data Science | Machine learning model and experiment | Available | Available |
+| Data Warehouse | Warehouse and SQL analytics endpoint | Available | Available |
+| Developer experience | API for GraphQL, deployment pipelines, Git integration, and variable library | Available | Available |
+| Governance and security | Sensitivity label and share item | Available | |
+| Mirroring | Mirrored Azure SQL Database | Available | Available |
+| Fabric databases | SQL database in Fabric | Available | |
+| OneLake | Shortcut | Available | Available |
+| Power BI | Power BI report, dashboard, scorecard, semantic model, streaming dataflow, streaming dataset, and paginated report | Available | Available |
+| Real-Time Intelligence | KQL queryset, Activator, eventhouse and KQL database, eventstream, and Real-Time dashboard | Available | Available |
 
-Feature availability can differ from the commercial Fabric service because of government cloud requirements and service dependencies. This table doesn't provide release dates or commitments for capabilities outside the listed scope.
+Fabric items not listed in this table aren't available in GCC High during public preview. This includes Fabric IQ items (graph model, graph queryset, operations agent, and ontology) and all mirroring sources except Mirrored Azure SQL Database.
+
+Feature availability can differ from the commercial Fabric service because of government cloud requirements and service dependencies.
 
 ## Current limitations in public preview
 
@@ -79,9 +76,6 @@ The following capabilities aren't supported in Microsoft Fabric for GCC High dur
 - **Customer-managed keys (CMK)** aren't supported.
 - **Outbound access protection** isn't supported.
 - **OneLake security**: Spark support for OneLake security isn't available.
-
-> [!NOTE]
-> These limitations apply only to the public preview release in GCC High. Microsoft is working to enable these capabilities for general availability (GA).
 
 ## Related content
 
