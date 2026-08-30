@@ -12,7 +12,7 @@ ms.search.form: Git integration automation, Git integration APIs, Azure DevOps i
 
 The Fabric [Git integration](intro-to-git-integration.md) tool enables teams to work together using source control to build an efficient and reusable release process for their Fabric content.
 
-By using [Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis), you can automate Fabric procedures and processes to complete tasks faster and with fewer errors. This efficiency leads to cost savings and improved productivity.
+By using [Fabric REST APIs](/rest/api/fabric/articles/get-started/using-fabric-apis), you can automate Fabric procedures and processes to complete tasks faster and with fewer errors. This efficiency leads to cost savings and improved productivity.
 
 This article describes how to use the [Git integration REST APIs](/rest/api/fabric/core/git) to automate Git integration in Fabric.
 
@@ -563,5 +563,5 @@ Copy the ID of the connection you want and use it in the [Git - Connect](/rest/a
 
 ## Related content
 * [Git integration - get started](git-get-started.md)
-* [Fabric APIs](/rest/api/fabric/articles/using-fabric-apis)
+* [Fabric APIs](/rest/api/fabric/articles/get-started/using-fabric-apis)
 * [Git best practices](../best-practices-cicd.md)
