@@ -1,6 +1,6 @@
 ---
-title: Column and Row Identifiers in Plan
-description: Identifiers in Plan let you reference rows, columns, hierarchy levels, and periods dynamically in formulas. Explore syntax and examples for each identifier.
+title: Column and Row Identifiers in Planning
+description: Identifiers in planning let you reference rows, columns, hierarchy levels, and periods dynamically in formulas. Explore syntax and examples for each identifier.
 #customer intent: As a business user, I want to reference row, columns, hierarchy levels, and periods dynamically in a formula, so that I can build rolling calculations that shift automatically across months.
 ms.date: 08/13/2026
 ms.topic: how-to
@@ -8,7 +8,7 @@ ms.topic: how-to
 
 # Identifiers
 
-Identifiers in Plan are predefined references that you use to access specific rows, columns, hierarchy levels, periods, and other contextual information in formulas. They simplify calculations by dynamically referring to report elements instead of hardcoding values. Use the following identifiers to build formulas that respond to the current report context.
+Identifiers in planning are predefined references that you use to access specific rows, columns, hierarchy levels, periods, and other contextual information in formulas. They simplify calculations by dynamically referring to report elements instead of hardcoding values. Use the following identifiers to build formulas that respond to the current report context.
 
 ## CLOSEDPERIOD
 

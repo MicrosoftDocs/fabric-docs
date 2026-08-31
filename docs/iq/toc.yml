@@ -73,11 +73,11 @@ items:
       href: /rest/api/fabric/ontology/items
     - name: CI/CD in Fabric
       href: ../cicd/cicd-overview.md
-- name: Plan
+- name: Planning
   items:
   - name: Overview
     items:
-    - name: What is Plan?
+    - name: What is planning in Fabric?
       href: plan/overview.md
     - name: Planning sheets overview
       href: plan/planning-overview.md

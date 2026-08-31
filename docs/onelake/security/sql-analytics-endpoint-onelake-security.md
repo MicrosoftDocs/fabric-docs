@@ -2,40 +2,65 @@
 title: "OneLake Security for SQL analytics endpoints"
 description: Learn how OneLake security enhances data access control with centralized governance or granular SQL-based permissions.
 ms.reviewer: aamerril
-ms.date: 07/21/2026
+ms.date: 07/22/2026
 ms.topic: concept-article
+ai-usage: ai-assisted
 ---
 
 # OneLake security for SQL analytics endpoints
 
-With OneLake security, Fabric is expanding how organizations can manage and enforce data access across workloads. This security framework gives administrators greater flexibility to configure permissions. Administrators can choose between **centralized governance through OneLake** or **granular SQL-based control** within the SQL analytics endpoint.
+By using OneLake security, administrators can choose between **centralized governance through OneLake** or **granular SQL-based control** within the SQL analytics endpoint.
 
 ## Access modes in SQL analytics endpoint
 
 When using the **SQL analytics endpoint**, the selected access mode determines how data security is enforced. Fabric supports two distinct access models, each offering different benefits depending on your operational and compliance needs:
 
-* **User identity mode**: Enforces security using OneLake roles and policies. In this mode, the SQL analytics endpoint passes the signed-in user's identity to OneLake, and **read access is governed entirely by the security rules defined within OneLake**. SQL-level permissions on nondata objects (views, stored procedures, functions) are supported, ensuring consistent governance across tools like Power BI, notebooks, and lakehouse.
+* **User identity mode**: Enforces security by using OneLake roles and policies. In this mode, the SQL analytics endpoint passes the signed-in user's identity to OneLake, and *read access is governed entirely by the security rules defined within OneLake*. This mode supports SQL-level permissions on nondata objects, such as views, stored procedures, and functions, ensuring consistent governance across tools like Power BI, notebooks, and lakehouse.
 
-* **Delegated identity mode**: Provides full control through SQL. In this mode, the SQL analytics endpoint connects to OneLake using the identity of the **workspace or item** owner, and **security is governed exclusively by SQL permissions** defined inside the database. This model supports traditional security approaches including GRANT, REVOKE, custom roles, Row-Level Security, and Dynamic Data Masking.
+* **Delegated identity mode**: Provides full control through SQL. In this mode, the SQL analytics endpoint connects to OneLake by using the identity of the workspace or item owner, and *security is governed exclusively by SQL permissions* defined inside the database. This model supports traditional security approaches, including GRANT, REVOKE, custom roles, row-level security, and Dynamic Data Masking.
 
-Each mode supports different governance models. Understanding their implications is essential for choosing the right approach in your Fabric environment.
+Each mode supports different governance models. Understand their implications so you can choose the right approach for your Fabric environment.
 
 > [!IMPORTANT]
-> **Artifact access required to use the SQL analytics endpoint.** To connect to and query data through a SQL analytics endpoint, users must have Read permission on the artifact associated with the endpoint. If a user does not have control-plane access to the artifact (for example, workspace role access or explicit item permission), the connection to the SQL analytics endpoint is rejected, regardless of any SQL permissions that may exist for that user.
+> **Item access required to use the SQL analytics endpoint.** To connect to and query data through a SQL analytics endpoint, users must have Read permission on the item associated with the endpoint. If a user doesn't have control-plane access to the item (for example, workspace role access or explicit item permission), the connection to the SQL analytics endpoint is rejected, regardless of any SQL permissions that might exist for that user.
 
-## Comparison between access modes
+## Compare access modes
 
 The following table compares how and where you set security in user identity mode versus delegated identity mode, broken down by object type and data access policies:
 
 | **Security target** | **User identity mode** | **Delegated identity mode** |
 |----|----|----|
-| **Tables** | Access is controlled by OneLake security roles. SQL `GRANT`/`REVOKE` isn't allowed. | Full control using SQL `GRANT`/`REVOKE`. |
+| **Tables** | OneLake security roles control access. SQL `GRANT`/`REVOKE` isn't allowed. | Full control using SQL `GRANT`/`REVOKE`. |
 | **Views** | Use SQL `GRANT`/`REVOKE` to assign permissions. | Use SQL `GRANT`/`REVOKE` to assign permissions. |
 | **Stored procedures** | Use SQL `GRANT EXECUTE` to assign permissions. | Use SQL `GRANT EXECUTE` to assign permissions. |
 | **Functions** | Use SQL `GRANT EXECUTE` to assign permissions. | Use SQL `GRANT EXECUTE` to assign permissions. |
-| **Row-Level Security (RLS)** | Defined in OneLake UI as part of OneLake security roles. | Defined using SQL `CREATE SECURITY POLICY`. |
-| **Column-Level Security (CLS)** | Defined in OneLake UI as part of OneLake security roles. | Defined using SQL `GRANT SELECT` with column list. |
+| **Row-level security (RLS)** | Defined as part of OneLake security roles. | Defined using SQL `CREATE SECURITY POLICY`. |
+| **Column-level security (CLS)** | Defined as part of OneLake security roles. | Defined using SQL `GRANT SELECT` with column list. |
 | **Dynamic Data Masking (DDM)** | Not supported in OneLake security. | Defined using SQL `ALTER TABLE` with `MASKED` option. |
+
+## Change the OneLake access mode
+
+The access mode determines how data access is authenticated and enforced when querying OneLake through the SQL analytics endpoint. Newly created SQL analytics endpoints start in delegated identity access mode by default. Before you can use OneLake security with an endpoint, an Admin or Member must switch it to **User's identity access mode**.
+
+> [!NOTE]
+> To use OneLake security, you only need to switch to **User's identity access mode** once per SQL analytics endpoint. Endpoints that you don't switch to User's identity access mode continue to use a delegated identity to evaluate permissions.
+
+1. Go to the SQL analytics endpoint.
+
+1. In the SQL analytics endpoint experience, select the **Security** tab.
+
+1. Select **View data access mode** > **Data access mode settings**.
+
+   :::image type="content" source="./media/sql-analytics-endpoint-onelake-security/data-access-mode-settings.png" alt-text="Screenshot that shows navigating to the data access mode settings for a SQL analytics endpoint.":::
+
+1. Select **User's identity access mode** to use the signed-in user's identity and enforce OneLake security roles, or select **Delegated identity access mode** to use the item owner's identity and enforce only SQL permissions. Then select **Apply**.
+
+   :::image type="content" source="./media/sql-analytics-endpoint-onelake-security/use-onelake-security.png" alt-text="Screenshot that shows selecting OneLake security (user's identity access mode) as the data access mode.":::
+
+1. Select **Continue** to confirm your choice.
+
+> [!IMPORTANT]
+> Changing the security mode makes SQL analytics endpoints temporarily unavailable across the entire workspace. This action cancels all running and queued queries at all SQL analytics endpoints in that workspace. Change modes only if needed, and preferably during non-business hours to avoid downtime.
 
 ## User identity mode in OneLake security
 
@@ -47,13 +72,18 @@ In user identity mode:
 
 * Table access is governed entirely by OneLake security. SQL `GRANT`/`REVOKE` statements on tables are ignored.
 
-* RLS (Row-Level Security), CLS (Column-Level Security), and Object-Level Security are all defined in the OneLake experience.
+* The OneLake experience defines RLS (row-level security), CLS (column-level security), and object-level security.
 
 * SQL permissions are allowed for nondata objects like views, stored procedures, and functions, enabling flexibility for defining custom logic or user-facing entry points to data.
 
 * Write operations aren't supported at the SQL analytics endpoint. All writes must occur through the Lakehouse page in the Fabric portal and are governed by workspace roles (Admin, Member, Contributor).
 
-For more information on the permissions model with **User's identity mode**, see the [data access control model](./data-access-control-model.md) for OneLake security.
+> [!IMPORTANT]
+> **One-to-one identity mapping across producer and consumer (hub-and-spoke).** When OneLake security policies are carried from a producer (the source item where the role is defined) to a consumer (a destination item accessing the data through a shortcut), the identities assigned to OneLake security roles at the producer must be mapped **exactly 1:1** at the consumer. The same principal - whether a user or a group - must be granted Fabric Read permission on the consumer artifact as the one referenced in the producer's security role. Nested or effective group membership is **not** resolved across this boundary.
+>
+> For example, if the OneLake security role at the producer references `user123@microsoft.com`, then `user123@microsoft.com` (that exact Object ID) must also have Fabric Read permission on the consumer lakehouse. Likewise, if the producer role references `Group A`, then `Group A` itself must be granted Fabric Read permission on the consumer - granting that permission only to a member of Group A doesn't satisfy the match.
+
+For more information on the permissions model with **User's identity mode**, see [How OneLake security controls data access](./data-access-control-model.md).
 
 ## Security sync between OneLake and SQL analytics endpoint
 
@@ -106,7 +136,7 @@ This design preserves security integrity across lakehouse boundaries while reduc
 
 ## Delegated mode in OneLake security
 
-In **delegated identity mode**, the SQL analytics endpoint preserves **backward compatibility** with the traditional SQL security model. Security is defined and enforced at the **SQL engine layer**, and **OneLake security roles and access policies are not carried over** to table-level access. All filtering and access control—including access to schemas and tables, Row-Level Security (RLS), Column-Level Security (CLS), and Dynamic Data Masking (DDM)—must be defined using SQL constructs (`GRANT`/`REVOKE`, security policies, and so on).
+In **delegated identity mode**, the SQL analytics endpoint preserves **backward compatibility** with the traditional SQL security model. You define and enforce security at the **SQL engine layer**, and **OneLake security roles and access policies don't carry over** to table-level access. You must define all filtering and access control - including access to schemas and tables, row-level security (RLS), column-level security (CLS), and Dynamic Data Masking (DDM) - by using SQL constructs (`GRANT`/`REVOKE`, security policies, and so on).
 
 Because OneLake security roles for the end user are not directly enforced, any security rules defined in OneLake (for example, rules enforced by Spark or other engines that read through OneLake) will **not** apply when the same data is queried through the SQL analytics endpoint. Choose this mode when the workload depends on SQL-native security semantics or when existing T-SQL tooling requires full compatibility.
 
@@ -124,7 +154,7 @@ This mode supports existing T-SQL tooling and practices used by DBAs or applicat
 
 ### Shortcuts behavior in delegated mode
 
-Because delegated mode connects to OneLake using the **item owner's identity**, shortcuts only work when the owner has **unrestricted access to the entire source table**. If the source table has any OneLake-level security rule applied—such as Row-Level Security (RLS), Column-Level Security (CLS)—the SQL analytics endpoint **blocks access to that shortcut**.
+Because delegated mode connects to OneLake by using the **item owner's identity**, shortcuts only work when the owner has **unrestricted access to the entire source table**. If the source table has any OneLake-level security rule applied - such as row-level security (RLS) or column-level security (CLS) - the SQL analytics endpoint **blocks access to that shortcut**.
 
 As a result:
 
@@ -133,23 +163,6 @@ As a result:
 * Shortcuts pointing to source tables with RLS or CLS in OneLake security on the producer are **not accessible** through the SQL analytics endpoint in delegated mode, even if the end user has SQL permissions on the shortcut object.
 
 * To consume shortcuts whose source has OneLake security policies, use **user identity mode** at the consumer endpoint so that the end user's identity is evaluated against the source's OneLake security rules.
-
-## How to change the OneLake access mode
-
-The access mode determines how data access is authenticated and enforced when querying OneLake through the SQL analytics endpoint. You can switch between user identity mode and delegated identity mode using the following steps:
-
-1. Navigate to your Fabric workspace and open your lakehouse. From the top-right corner, switch from lakehouse to **SQL analytics endpoint**.
-
-1. From the top navigation, go to the **Security** tab and select one of the following OneLake access modes:
-
-   * **User identity** – Uses the signed-in user's identity. Enforces OneLake roles.
-
-   * **Delegated identity** – Uses the item owner's identity. Enforces only SQL permissions.
-
-1. A pop-up launches to confirm your selection. Select **Yes** to confirm the change.
-
-> [!IMPORTANT]
-> Changing the security mode temporarily makes SQL analytics endpoints unavailable across the entire workspace. This action cancels all running and queued queries at all SQL analytics endpoints in that workspace. Change modes only if needed, and preferably during non-business hours to avoid downtime.
 
 ## Considerations when switching between modes
 
@@ -190,7 +203,7 @@ The access mode determines how data access is authenticated and enforced when qu
 
   * **General rule**: When enforcement cannot clearly validate access, the system applies the most restrictive outcome.
 
-* **Column-Level Security (CLS) design**: CLS maintains a strict allow list of columns.
+* **Column-level security (CLS) design**: CLS maintains a strict allow list of columns.
 
   * Renaming or removing an allowed column invalidates the security rule. While the rule persists in the system, it remains inactive—denying all access to the resource—until the original column naming is restored.
 
@@ -199,7 +212,7 @@ The access mode determines how data access is authenticated and enforced when qu
   * **Schema validation**: Renaming columns without updating security policies triggers UI errors stating that the column "does not exist" until the configuration is synchronized.
 
   > [!NOTE]
-  > In the SQL analytics endpoint, OneLake security is enforced for data access, while schema metadata continues to follow SQL engine behavior. Users might see columns in Object Explorer or `sys.columns` even when Column-Level Security prevents them from reading those columns. This behavior is expected and by design.
+  > In the SQL analytics endpoint, OneLake security is enforced for data access, while schema metadata continues to follow SQL engine behavior. Users might see columns in Object Explorer or `sys.columns` even when column-level security prevents them from reading those columns. This behavior is expected and by design.
 
 * **Role propagation and synchronization (SLA)**:
 
@@ -208,6 +221,8 @@ The access mode determines how data access is authenticated and enforced when qu
   * **Automatic prefixing**: OneLake security roles are propagated to the SQL analytics endpoint with the `OLS_` prefix.
 
   * **Sync priority**: The security sync process periodically refreshes the state of `OLS_` roles. Manual changes to these roles are not supported and are overwritten during the next sync cycle. If there are no changes to sync, security sync does not override manual changes.
+
+* **Warehouse SQL security and shortcuts**: Security policies defined using SQL constructs in a Warehouse - such as row-level security (RLS), column-level security (CLS), or object-level security (OLS) - are enforced only within the SQL execution context of the warehouse (TDS endpoint).
 
 > [!IMPORTANT]
 > When you access data from a warehouse through shortcuts in OneLake, these SQL security semantics aren't translated into OneLake security policies. As a result, users accessing the data through a shortcut might see the full warehouse data, regardless of SQL security policies configured in the producer warehouse.
@@ -222,7 +237,7 @@ The access mode determines how data access is authenticated and enforced when qu
 
     * **Security sync failure cases**: If security sync fails to apply security correctly for certain tables or roles, users in Admin, Member, or Contributor roles who are members of those affected roles may also experience restricted access.
 
-    * **RLS in user identity mode**: When Row-Level Security (RLS) is configured in user identity mode, the defined security rules are enforced for all users, including those in Admin, Member, and Contributor roles.
+    * **RLS in user identity mode**: When row-level security (RLS) is configured in user identity mode, the defined security rules are enforced for all users, including those in Admin, Member, and Contributor roles.
 
 * **Schema visibility in object metadata**: The SQL analytics endpoint always returns **all schema names** in object metadata, regardless of the user's table-level permissions. Tables for which the user has no permission are filtered out and do not appear in the listing.
 
@@ -242,7 +257,7 @@ The access mode determines how data access is authenticated and enforced when qu
 
 * **Active query cancellation**: To maintain data integrity and security, active queries may be automatically canceled if a shortcut configuration changes during execution.
 
-* **Row-Level Security (RLS) constraints**:
+* **Row-level security (RLS) constraints**:
 
   * Only single-expression tables are supported. Dynamic RLS and Multi-Table RLS aren't available.
 
@@ -267,4 +282,4 @@ The access mode determines how data access is authenticated and enforced when qu
 ## Related content
 
 * [Best practices to secure data in OneLake](./best-practices-secure-data-in-onelake.md)
-* [OneLake security access control model](./data-access-control-model.md)
+* [How OneLake security controls data access](./data-access-control-model.md)

@@ -7,7 +7,7 @@ ms.date: 07/31/2026
 
 # PowerTable sheets creation FAQ
 
-This article provides answers to frequently asked questions about creating PowerTable sheets in Plan. Review these common scenarios to understand connection setup, table creation, supported data sources, and configuration options.
+This article provides answers to frequently asked questions about creating PowerTable sheets in planning. Review these common scenarios to understand connection setup, table creation, supported data sources, and configuration options.
 
 ## What is the difference between **Explore PowerTable** and **Create a New App** on the welcome screen?
 
@@ -20,12 +20,12 @@ Unlike **Explore PowerTable**, the sheet isn't preconfigured, so you set up all 
 
 ## Why does the **Set up connection** banner appear only once, and what does it enable?
 
-The **Set up connection** process runs only once for each Fabric Plan item, not for each PowerTable sheet.
+The **Set up connection** process runs only once for each plan item, not for each PowerTable sheet.
 
 When you set up the connection,
 
 * Plan item connects to the app or the system database.
-* Users with the **Viewer** workspace role can use and work with the Plan item.
+* Users with the **Viewer** workspace role can use and work with the plan item.
 
 If you dismiss the banner without completing the setup, the Viewer capability remains unconfigured.
 

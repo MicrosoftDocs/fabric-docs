@@ -88,4 +88,4 @@ To edit or delete an existing shortcut, see [Edit or delete a OneLake shortcut](
 * [Edit or delete a shortcut](edit-delete-shortcut.md)
 * [OneLake shortcut security](../onelake-shortcut-security.md)
 * [Manage connections for shortcuts](../manage-shortcut-connections.md)
-* [Use shortcut REST APIs](../onelake-shortcuts-rest-api.md)
+* [Use shortcut REST APIs](/rest/api/fabric/core/onelake-shortcuts)

@@ -1,5 +1,5 @@
 ---
-title: Consolidate data between sheets
+title: Consolidate Data between Sheets
 description: Learn how to combine rows from multiple planning sheets into a single planning sheet by using an appended query in Infobridge.
 ms.topic: how-to
 ms.date: 08/14/2026

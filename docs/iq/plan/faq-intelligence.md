@@ -1,25 +1,25 @@
 ---
 ms.topic: faq
 ms.date: 08/01/2026
-title: Intelligence Sheets FAQ for Fabric Plan
-description: Intelligence Sheets in Plan apps let you visualize semantic model data with charts, matrices, and KPI cards. Explore answers to the most frequently asked setup questions.
+title: Intelligence sheets FAQ for Planning in Fabric
+description: Intelligence sheets in plan items let you visualize semantic model data with charts, matrices, and KPI cards. Explore answers to the most frequently asked setup questions.
 ---
 
-# Intelligence FAQ
+# Intelligence sheets FAQ
 
-This FAQ addresses common questions and clarifications that arise while working with intelligence sheets in Plan.
+This FAQ addresses common questions and clarifications that arise while working with intelligence sheets in planning.
 
-## What is the difference between an **Intelligence Sheet** and a **Planning Sheet**?
+## What is the difference between an intelligence sheet and a planning sheet?
 
-* An **Intelligence Sheet** is a reporting layer that sits on top of a semantic model. It's designed for data visualization by using charts, matrices, KPI cards, Gantt charts, and filters. It doesn't support data entry or writeback.
-* A **Planning Sheet** is where you store and edit planning data. Use it to enter inputs, create forecasts, and write data back.
-* The **Intelligence Sheet** reads data from the semantic model connected to the Plan app but doesn't write data back to it.
+* An **intelligence sheet** is a reporting layer that sits on top of a semantic model. It's designed for data visualization by using charts, matrices, KPI cards, Gantt charts, and filters. It doesn't support data entry or writeback.
+* A **planning sheet** is where you store and edit planning data. Use it to enter inputs, create forecasts, and write data back.
+* The **intelligence sheet** reads data from the semantic model connected to the plan item but doesn't write data back to it.
 
-## Do I need to create a new Plan app for every **Intelligence Sheet**?
+## Do I need to create a new plan item for every intelligence sheet?
 
-No. You can create multiple **Intelligence Sheets** within the same Plan app, provided they use the same semantic model.
+No. You can create multiple intelligence sheets within the same plan item, provided they use the same semantic model.
 
-If you want to use a different semantic model, create a new Plan app that connects to that semantic model.
+If you want to use a different semantic model, create a new plan item that connects to that semantic model.
 
 ## Does importing a PBIX file publish both a report and a semantic model?
 
@@ -28,15 +28,15 @@ Yes. Importing a PBIX file creates the following items in the Fabric workspace:
 * A report.
 * A semantic model.
 
-When you create an **Intelligence Sheet**, you use the semantic model. If you don't need the report, you can delete it.
+When you create an intelligence sheet, you use the semantic model. If you don't need the report, you can delete it.
 
-## Can I reuse an existing semantic model connection for an **Intelligence Sheet**?
+## Can I reuse an existing semantic model connection for an intelligence sheet?
 
-Yes. You can reuse an existing semantic model connection when connecting a semantic model to a Plan app. You don't need to create a new connection unless you want to use different connection settings.
+Yes. You can reuse an existing semantic model connection when connecting a semantic model to a plan item. You don't need to create a new connection unless you want to use different connection settings.
 
-## What is the difference between **Semantic Model** and **Excel / CSV** on the **Get Data** page?
+## What is the difference between Semantic Model and Excel / CSV** on the Get Data page?
 
-* **Semantic Model** creates a live connection to a published Power BI semantic model. The Intelligence Sheet reflects updates as the semantic model is refreshed.
+* **Semantic Model** creates a live connection to a published Power BI semantic model. The intelligence sheet reflects updates as the semantic model is refreshed.
 * **Excel / CSV** imports data from a file. The imported data is static and doesn't update automatically when the source file changes.
 
 ## What should I do if the semantic model doesn't appear in the connection dialog?
@@ -44,19 +44,19 @@ Yes. You can reuse an existing semantic model connection when connecting a seman
 1. First, use the search option in the connection dialog to locate the semantic model.
 1. If the semantic model still doesn't appear, verify that you have access to the workspace that contains the semantic model. If necessary, contact your administrator to confirm that the required workspace permissions are assigned.
 
-## How do I connect a semantic model to an **Intelligence Sheet**?
+## How do I connect a semantic model to an intelligence sheet?
 
 From the **Data** pane, select **Add Semantic Model**, choose the required semantic model, and then select **Connect**.
 
-## Can I use an existing semantic model in an **Intelligence Sheet**?
+## Can I use an existing semantic model in an intelligence sheet?
 
-Yes. Intelligence Sheets connect directly to an existing semantic model to retrieve measures and dimensions for reporting.
+Yes. Intelligence sheets connect directly to an existing semantic model to retrieve measures and dimensions for reporting.
 
-## How do I create an **Intelligence Sheet**?
+## How do I create an intelligence sheet?
 
 On the **Home** tab, select **New Intelligence Sheet**.
 
-## How do I add a **Matrix** visual?
+## How do I add a Matrix visual?
 
 From the **Visualization** pane, select **Matrix** and add it to the canvas.
 
@@ -68,11 +68,11 @@ Add the required measures, such as **Actuals** and **Plan**, to the **Values** s
 
 Add the **Account Hierarchy** dimension to **Rows** and the **Time** dimension to **Columns**.
 
-## How do I apply the **Financial** template?
+## How do I apply the Financial template?
 
 On the **Matrix** tab, select **Templates**, and then choose **Financial**.
 
-## What formatting does the **Financial** template apply?
+## What formatting does the Financial template apply?
 
 The **Financial** template automatically applies the following formatting:
 
@@ -82,11 +82,11 @@ The **Financial** template automatically applies the following formatting:
 
 ## Are bookmarks supported, similar to Power BI?
 
-Yes. Intelligence Sheets support bookmarks that you can use to save and switch between different report states, including filters, selections, and visual configurations.
+Yes. Intelligence sheets support bookmarks that you can use to save and switch between different report states, including filters, selections, and visual configurations.
 
 ## Can I apply filters at the visual, page, and report levels?
 
-Yes. Intelligence Sheets support filters at the following levels:
+Yes. Intelligence sheets support filters at the following levels:
 
 * **Visual**
 * **Page**
@@ -96,7 +96,7 @@ This feature gives you control over the data displayed throughout the report.
 
 ## Are styling options such as borders and shadows available?
 
-Yes. Intelligence Sheets provide a wide range of styling options, including:
+Yes. Intelligence sheets provide a wide range of styling options, including:
 
 * Borders
 * Shadows
@@ -121,22 +121,20 @@ Yes. You can add text boxes anywhere on the canvas and customize them by using:
 
 ## Can I apply themes, similar to Power BI?
 
-Yes. Intelligence Sheets support themes to maintain a consistent look and feel across reports. Use themes to control:
-
+Yes. Intelligence sheets support themes to maintain a consistent look and feel across reports. Use themes to control:
 
 * Colors
 * Fonts
 * Visual styling
 * Formatting
 
-## Can I add or view comments for all visuals in an Intelligence Sheet?
+## Can I add or view comments for all visuals in an intelligence sheet?
 
-Yes. You can add and view comments across all supported visuals in an Intelligence Sheet. Users also receive email notifications for new comments, enabling collaborative review and discussion.
+Yes. You can add and view comments across all supported visuals in an intelligence sheet. Users also receive email notifications for new comments, enabling collaborative review and discussion.
 
 ## Is **Edit Interactions** supported, similar to Power BI?
 
-Yes. Intelligence Sheets support **Edit Interactions**, which you use to control how visuals interact with one another. You can configure interactions to:
-
+Yes. Intelligence sheets support **Edit Interactions**, which you use to control how visuals interact with one another. You can configure interactions to:
 
 * Filter
 * Highlight
@@ -144,19 +142,19 @@ Yes. Intelligence Sheets support **Edit Interactions**, which you use to control
 
 ## Can I share reports with other users?
 
-Yes. You can share Intelligence Sheets through Power BI or Microsoft Fabric workspaces. Report access respects the configured user permissions and security settings.
+Yes. You can share intelligence sheets through Power BI or Microsoft Fabric workspaces. Report access respects the configured user permissions and security settings.
 
 ## Can I align and arrange visuals on the canvas?
 
-Yes. Intelligence Sheets provide alignment, positioning, and sizing options to help you create pixel-perfect dashboard layouts.
+Yes. Intelligence sheets provide alignment, positioning, and sizing options to help you create pixel-perfect dashboard layouts.
 
-## Can I embed Planning and PowerTable visuals within an Intelligence Sheet?
+## Can I embed Planning and PowerTable visuals within an intelligence sheet?
 
-Yes. You can embed Planning and PowerTable visuals within an Intelligence Sheet, so you can combine multiple visual types on a single interactive canvas for reporting and analysis.
+Yes. You can embed Planning and PowerTable visuals within an intelligence sheet, so you can combine multiple visual types on a single interactive canvas for reporting and analysis.
 
-## Can I use measures from a Planning Sheet in an Intelligence Sheet?
+## Can I use measures from a planning sheet in an intelligence sheet?
 
-Yes. You can use measures, calculated measures, and planning data from a Planning Sheet directly in an Intelligence Sheet.
+Yes. You can use measures, calculated measures, and planning data from a planning sheet directly in an intelligence sheet.
 
 This feature allows you to combine planning, reporting, and analytics in a single interactive report.
 

@@ -5,7 +5,7 @@ metadata:
   ms.reviewer: misaacs
   ms.subservice: data-warehouse
   ms.topic: faq
-  ms.date: 09/09/2025
+  ms.date: 08/18/2026
 title: "Frequently asked questions for mirroring Google BigQuery in Microsoft Fabric"
 summary: |
   This article answers frequently asked questions about mirroring BigQuery in Microsoft Fabric. 

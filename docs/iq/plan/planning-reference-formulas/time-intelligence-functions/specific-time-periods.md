@@ -1,15 +1,15 @@
 ---
 title: 'Time Intelligence Functions: Specific Time Periods'
-description: Learn how to use specific time period functions in Plan to retrieve data for selected months, quarters, and years. Analyze and aggregate data for individual time periods or custom date ranges using MONTHPERIOD, QTRPERIOD, and YEARPERIOD.
+description: Learn how to use specific time period functions in planning to retrieve data for selected months, quarters, and years. Analyze and aggregate data for individual time periods or custom date ranges using MONTHPERIOD, QTRPERIOD, and YEARPERIOD.
 ms.date: 08/19/2026
 ms.topic: reference
 ms.search.form: Time Intelligence functions
-customer intent: Learn how to use Time Intelligence functions in Plan to retrieve and analyze data for specific months, quarters, and years. Use MONTHPERIOD, QTRPERIOD, and YEARPERIOD to define custom time ranges for reporting, filtering, and aggregation.
+customer intent: Learn how to use Time Intelligence functions in planning to retrieve and analyze data for specific months, quarters, and years. Use MONTHPERIOD, QTRPERIOD, and YEARPERIOD to define custom time ranges for reporting, filtering, and aggregation.
 ---
 
 # Calculate specific time periods
 
-Plan supports specific time period functions that retrieve data for individual months, quarters, or years. These functions help you select data for a single time period or a range of time periods for analysis and reporting.
+Planning supports specific time period functions that retrieve data for individual months, quarters, or years. These functions help you select data for a single time period or a range of time periods for analysis and reporting.
 
 ## MONTHPERIOD
 

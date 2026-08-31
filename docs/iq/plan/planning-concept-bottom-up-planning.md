@@ -1,5 +1,5 @@
 ---
-title: Bottom-up Planning for Business Hierarchies in Fabric Plan
+title: Bottom-Up Planning for Business Hierarchies in Planning
 description: Bottom-up planning captures values at detailed hierarchy levels and rolls them up automatically. Learn how to build accurate, data-driven plans today.
 ms.date: 08/10/2026
 ms.topic: concept-article
