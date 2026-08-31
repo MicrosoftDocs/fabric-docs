@@ -4,7 +4,7 @@ description: This article provides a list of all the operations available in Fab
 author: msmimart
 ms.author: mimart
 ms.topic: reference
-ms.date: 06/02/2026
+ms.date: 08/10/2026
 ---
 # Operation list
 
@@ -89,6 +89,7 @@ The following operations are available in the audit logs.
 | Copilot Interaction (Request Copilot features in Fabric) | :::no-loc text="CopilotInteraction"::: | Request Copilot features in Fabric |
 | Copy Scorecard | :::no-loc text="CopyScorecard"::: |   |
 | Copy blob | :::no-loc text="CopyBlob"::: | OneLake operation. Copies a source blob to a destination blob in this storage account or in another storage account. |
+| Create a Microsoft Fabric free trial | :::no-loc text="CreatedFabricTrial"::: | A new Microsoft Fabric free trial capacity was started. |
 | Create an SQL query from a Warehouse | :::no-loc text="CreateSqlQueryFromWarehouse"::: |   |
 | Create Artifact | :::no-loc text="CreateArtifact"::: |   |
 | Create Branch In Git | :::no-loc text="CreateBranchInGit"::: | Create Branch In Git is a git provider activity, which is generated when users create branch in Git.  |
