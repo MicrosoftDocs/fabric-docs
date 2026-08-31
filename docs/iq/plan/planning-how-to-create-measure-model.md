@@ -1,5 +1,5 @@
 ---
-title: Measure-Based Modeling in Fabric Plan
+title: Measure-Based Modeling in Planning
 description: Measure-based modeling organizes semantic model measures into a business hierarchy. Learn how to build measure models, run simulations, and compare scenarios.
 ms.date: 08/04/2026
 ms.topic: how-to

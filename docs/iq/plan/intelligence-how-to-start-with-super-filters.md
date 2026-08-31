@@ -1,13 +1,13 @@
 ---
 title: Use Super Filter
-description: Learn how to use Super Filter in Fabric Plan Intelligence Sheet to create interactive, cross-filtered dashboards with multiple filter types in a single visual.
+description: Learn how to use Super Filter in planning intelligence sheets to create interactive, cross-filtered dashboards with multiple filter types in a single visual.
 ms.topic: how-to
 ms.date: 08/26/2026
 ---
 
 # Use Super Filter
 
-Super Filter is an all-in-one filtering visual in Fabric Plan Intelligence Sheet that helps report developers and report builders create interactive, cross-filtered dashboards without adding multiple slicer visuals.
+Super Filter is an all-in-one filtering visual in planning intelligence sheets that helps report developers and report builders create interactive, cross-filtered dashboards without adding multiple slicer visuals.
 
 Super Filter combines eight filter types in a single visual:
 
@@ -30,9 +30,9 @@ The following video provides a short introduction to getting started with Super 
 
 ## Add Super Filter
 
-To add Super Filter to an Intelligence Sheet:
+To add Super Filter to an intelligence sheet:
 
-1. Add the **Super Filter** visual to the Intelligence Sheet canvas.
+1. Add the **Super Filter** visual to the intelligence sheet canvas.
 2. Assign a field to the visual.
 3. Review the filter type suggested by Super Filter.
 4. If needed, open the **Format** pane and select a different filter type.

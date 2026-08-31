@@ -654,13 +654,13 @@ During recovery, once the new region and capacity in Fabric are set up, you can 
 > [!NOTE]
 > If the original Ontology item has a lakehouse configured, refer to the [Lakehouse section](#lakehouse) to recover the lakehouse first. After those dependencies are taken care of, connect the newly recovered lakehouse to the newly recovered Ontology item.
 
-### Plan
+### Planning
 
-This article describes the recovery procedures for the Plan experience in IQ. It outlines the steps required to restore key components, including Planning, PowerTable, Intelligence, InfoBridge, and related data assets.
+This article describes the recovery procedures for the planning experience in IQ. It outlines the steps required to restore key components, including planning sheets, PowerTable sheets, intelligence sheets, InfoBridge, and related data assets.
 
-#### Git integration to restore Plan items
+#### Git integration to restore plan items
 
-The preferred approach is to synchronize all Plan items with an Azure DevOps (ADO) or GitHub repository by using [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md). After a failover, use the repository to restore the items in the new workspace.
+The preferred approach is to synchronize all plan items with an Azure DevOps (ADO) or GitHub repository by using [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md). After a failover, use the repository to restore the items in the new workspace.
 
 Predisaster (proactive steps):
 
@@ -668,11 +668,11 @@ Predisaster (proactive steps):
 
 1. Select **Connect and sync** with your ADO or GitHub repository.
 
-1. Select the Plan items to upload to the repository and select **Commit**.
+1. Select the plan items to upload to the repository and select **Commit**.
 
-    :::image type="content" source="media/experience-specific-guidance/upload-plan-git.png" alt-text="Screenshot of uploading Plan items from the Fabric workspace to a Git repository.":::
+    :::image type="content" source="media/experience-specific-guidance/upload-plan-git.png" alt-text="Screenshot of uploading plan items from the Fabric workspace to a Git repository.":::
 
-1. Confirm that the **Git status** of Plan items is *Synced*.
+1. Confirm that the **Git status** of plan items is *Synced*.
 
 1. Establish a commit discipline - commit after every significant change to a plan definition so the repository always reflects the latest state.
 
@@ -682,7 +682,7 @@ Recovery steps:
 
 1. In workspace W2, go to **Workspace Settings** and reconnect to the same ADO/GitHub repository.
 
-1. Select **Source Control**. Select the relevant repository branch and select **Update All**. All Plan items are downloaded to W2.
+1. Select **Source Control**. Select the relevant repository branch and select **Update All**. All plan items are downloaded to W2.
 
 > [!IMPORTANT]
 > Only the planning sheet structure and settings are recovered by using Git integration.
@@ -696,11 +696,11 @@ The following components are restored after recovery:
 * **InfoBridge:** InfoBridge sources, InfoBridge queries, transformation steps, writeback destinations, writeback settings, linked query mappings, query groups, visual properties (blend). These items can't be recovered: file-based sources (CSV, Excel), cross-workload sheets that use file-based sources.
 * **Intelligence:** All charts and matrices.
 
-#### Fabric SQL restore for Plan
+#### Fabric SQL restore for planning
 
 Data entered in planning sheets, tables used in PowerTable, and writeback data are stored in SQL databases and must be considered as part of your disaster recovery strategy. To recover SQL databases, see the [SQL database](#sql-database) section.
 
-* **Restore plan metadata**: Each Plan item is associated with a \_\_fabric\_plan\_sys database that stores metadata for planning features, including comments, scenarios, data inputs, and writeback configuration. The \_\_fabric\_plan\_sys database isn't restored automatically and must be explicitly recovered.
+* **Restore plan metadata**: Each plan item is associated with a \_\_fabric\_plan\_sys database that stores metadata for planning features, including comments, scenarios, data inputs, and writeback configuration. The \_\_fabric\_plan\_sys database isn't restored automatically and must be explicitly recovered.
 
 * **Restore writeback databases**: If your plan uses SQL writeback destinations, you must also recover the associated databases manually. Configured SQL writeback destinations aren't restored automatically.
 

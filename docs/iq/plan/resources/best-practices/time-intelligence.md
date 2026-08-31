@@ -7,9 +7,9 @@ ms.topic: best-practice
 
 # Best practices and supported date formats for automatic time intelligence
 
-Time intelligence automatically recognizes the date fields you assign to a visual and interprets them as a date hierarchy (for example, Year → Quarter → Month → Day). After plan detects a date/time hierarchy, it maps each member to the corresponding calendar period. Use the hierarchy for time intelligence calculations such as year-to-date (YTD), prior period, next N periods, and period-over-period comparisons.
+Time intelligence automatically recognizes the date fields you assign to a visual and interprets them as a date hierarchy (for example, Year → Quarter → Month → Day). After planning detects a date/time hierarchy, it maps each member to the corresponding calendar period. Use the hierarchy for time intelligence calculations such as year-to-date (YTD), prior period, next N periods, and period-over-period comparisons.
 
-This article helps report developers understand the time hierarchies that plan detects:
+This article helps report developers understand the time hierarchies that planning detects:
 
 * Supported hierarchy levels
 * Accepted text and numeric label formats
@@ -19,7 +19,7 @@ This article helps report developers understand the time hierarchies that plan d
 
 Time intelligence automatically detects the hierarchy without additional configuration when the labels follow one of the supported formats described in this article.
 
-## How plan detects a time hierarchy
+## How planning detects a time hierarchy
 
 Time intelligence identifies the date hierarchy by using the following order of precedence:
 

@@ -1,5 +1,5 @@
 ---
-title: Top-down Planning for Business Hierarchies in Fabric Plan
+title: Top-Down Planning for Business Hierarchies in Planning
 description: Top-down planning helps you cascade budgets, targets, and forecasts across every level of your organization. Discover how top-down allocation logic works.
 ms.date: 08/10/2026
 ms.topic: concept-article

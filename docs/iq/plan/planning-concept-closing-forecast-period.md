@@ -1,5 +1,5 @@
 ---
-title: Closing forecast period
+title: Closing Forecast Period
 description: "Learn how to close a completed forecast period, prevent further updates, and extend the forecast horizon for continued planning."
 ms.date: 08/17/2026
 ms.topic: concept-article
