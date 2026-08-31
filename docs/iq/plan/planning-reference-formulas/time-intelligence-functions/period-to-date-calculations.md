@@ -1,15 +1,15 @@
 ---
 title: 'Time Intelligence Functions: Period-to-Date Calculations'
-description: Learn how to use period-to-date functions in Plan to calculate month-to-date, quarter-to-date, and year-to-date values, analyze trends, and create cumulative aggregations over time.
+description: Learn how to use period-to-date functions in planning to calculate month-to-date, quarter-to-date, and year-to-date values, analyze trends, and create cumulative aggregations over time.
 ms.date: 08/19/2026
 ms.topic: reference
 ms.search.form: Time Intelligence functions
-customer intent: Learn how to use Time Intelligence functions in Plan to perform period-to-date calculations, retrieve MTD, QTD, and YTD data, and calculate cumulative values using TOTALMTD, TOTALQTD, and TOTALYTD.
+customer intent: Learn how to use Time Intelligence functions in planning to perform period-to-date calculations, retrieve MTD, QTD, and YTD data, and calculate cumulative values using TOTALMTD, TOTALQTD, and TOTALYTD.
 ---
 
 # Period-to-date calculations
 
-Plan supports period-to-date functions that retrieve data from the beginning of the current month, quarter, or year up to the current period. These functions help you calculate cumulative values and analyze performance over a defined time period.
+Planning supports period-to-date functions that retrieve data from the beginning of the current month, quarter, or year up to the current period. These functions help you calculate cumulative values and analyze performance over a defined time period.
 
 ## MTD
 

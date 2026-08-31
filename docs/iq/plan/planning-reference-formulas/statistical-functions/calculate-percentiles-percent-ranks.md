@@ -1,15 +1,15 @@
 ---
 title: 'Statistical Functions: Calculate Percentiles and Percent Ranks'
-description: Learn about statistical functions in Plan and use them to calculate percentiles and percentage ranks to determine the relative position and distribution of values in numerical data.
+description: Learn about statistical functions in planning and use them to calculate percentiles and percentage ranks to determine the relative position and distribution of values in numerical data.
 ms.date: 08/19/2026
 ms.topic: reference
 ms.search.form: Statistical functions
-#customer intent: As a user, I want to know about statistical functions in Plan and use them to calculate percentiles and percentage ranks to analyze the relative position and distribution of values in numerical data.
+#customer intent: As a user, I want to know about statistical functions in planning and use them to calculate percentiles and percentage ranks to analyze the relative position and distribution of values in numerical data.
 ---
 
 # Calculate percentiles and percent ranks
 
-Plan provides functions to calculate percentiles and percentage ranks in a dataset. Use the functions in this section to determine the relative position of values and analyze their distribution within a set of numerical data.
+Planning provides functions to calculate percentiles and percentage ranks in a dataset. Use the functions in this section to determine the relative position of values and analyze their distribution within a set of numerical data.
 
 ## PERCENTILEINC
 
