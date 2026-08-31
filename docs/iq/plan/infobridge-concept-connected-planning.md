@@ -1,5 +1,5 @@
 ---
-title: Connected Planning with Infobridge in Fabric Plan
+title: Connected Planning with Infobridge in Planning in Fabric
 description: Connected planning consolidates data across multiple planning sheets to create enterprise-wide reports and dashboards. 
 ms.date: 07/23/2026
 ms.topic: concept-article

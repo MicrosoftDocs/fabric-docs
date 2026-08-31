@@ -74,6 +74,8 @@ landingContent:
         links:
           - text: Enable Copilot in Fabric
             url: copilot-enable-fabric.md
+          - text: OpenAI as a subprocessor
+            url: copilot-openai-subprocessor.md
 
   # Card 
   - title: Workspaces

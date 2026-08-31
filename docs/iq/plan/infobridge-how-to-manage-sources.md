@@ -1,5 +1,5 @@
 ---
-title: Manage sources
+title: Manage Sources
 description: Learn how to manage Infobridge sources, view source details, refresh sources, and review refresh history.
 ms.topic: how-to
 ms.date: 08/24/2026

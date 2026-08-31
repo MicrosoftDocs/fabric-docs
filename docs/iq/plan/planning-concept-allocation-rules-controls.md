@@ -1,6 +1,6 @@
 ---
-title: Allocation Rules and Data Input Controls in Plan
-description: Allocation rules in Plan apply business logic to planning data with distribution, min/max, and locking controls. Learn how each rule type works and when to use it.
+title: Allocation Rules and Data Input Controls in Planning
+description: Allocation rules in planning apply business logic to planning data with distribution, min/max, and locking controls. Learn how each rule type works and when to use it.
 ms.topic: concept-article
 ms.date: 08/26/2026
 ---
@@ -11,7 +11,7 @@ Rules help organizations apply consistent planning policies across planning shee
 
 Apply rules to control how values are distributed, define acceptable value ranges, and prevent users from changing values that should remain unchanged.
 
-Plan supports three types of rules:
+Planning supports three types of rules:
 
 - **Distribution rules** control how values are allocated across members.
 - **Min/max rules** define the acceptable range for planning values.
@@ -37,13 +37,13 @@ For example, an organization can use a distribution rule to allocate a total bud
 
 ## Distribution rules
 
-A distribution rule controls how Plan allocates a value from an aggregated level to its child members.
+A distribution rule controls how planning allocates a value from an aggregated level to its child members.
 
-When a planner changes a value at a parent or total level, the distribution rule determines how Plan allocates that value across the underlying members. This feature lets planners work with aggregated values without manually entering values at each detailed level.
+When a planner changes a value at a parent or total level, the distribution rule determines how planning allocates that value across the underlying members. This feature lets planners work with aggregated values without manually entering values at each detailed level.
 
 ### Distribution methods
 
-Distribution rules can use different methods to determine how Plan allocates a value.
+Distribution rules can use different methods to determine how planning allocates a value.
 
 **Equal distribution** allocates the value evenly across the applicable members. Use this method when each member should receive the same share of the value.
 
@@ -66,9 +66,9 @@ You can also target distribution rules to specific planning areas so that the ru
 
 A min/max rule defines the lowest and highest values that users can enter for a planning value.
 
-The **minimum** defines the lowest permitted value, while the **maximum** defines the highest permitted value. These limits help keep planning and forecast values within predefined business boundaries. Plan validates updates against applicable rules across the hierarchy.
+The **minimum** defines the lowest permitted value, while the **maximum** defines the highest permitted value. These limits help keep planning and forecast values within predefined business boundaries. Planning validates updates against applicable rules across the hierarchy.
 
-When you update a lower-level value, Plan also validates the resulting higher-level value against its min/max rule. Similarly, when you update a higher-level value, Plan validates the allocated values at lower levels against their applicable rules. If any rule is violated, Plan prevents the update.
+When you update a lower-level value, planning also validates the resulting higher-level value against its min/max rule. Similarly, when you update a higher-level value, planning validates the allocated values at lower levels against their applicable rules. If any rule is violated, planning prevents the update.
 
 For example, an organization might define a minimum headcount of 10 and a maximum headcount of 50 for a department. The rule prevents planners from entering a value outside that range.
 
