@@ -5,7 +5,7 @@ ms.author: scottpolly
 author: s-polly
 ms.reviewer: midesa
 ms.topic: how-to
-ms.date: 08/21/2026
+ms.date: 08/27/2026
 ---
 
 # Best practices for improving data agent query generation

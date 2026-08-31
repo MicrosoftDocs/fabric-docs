@@ -41,11 +41,11 @@ landingContent:
             url: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 
 # Card 
-  - title: Fabric data agent (preview)
+  - title: Fabric data agent 
     linkLists:
       - linkListType: overview
         links:
-          - text: What is a Fabric data agent (preview)?
+          - text: What is a Fabric data agent?
             url: concept-data-agent.md
       - linkListType: get-started
         links:

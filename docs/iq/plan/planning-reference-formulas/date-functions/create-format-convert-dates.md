@@ -1,15 +1,15 @@
 ---
 title: 'Date Functions: Create, Format, and Convert Dates'
-description: Learn about date functions in Plan and how to create date values, get the current date, format and convert dates between Excel serial numbers and date values.
+description: Learn about date functions in planning and how to create date values, get the current date, format and convert dates between Excel serial numbers and date values.
 ms.date: 07/16/2026
 ms.topic: reference
 ms.search.form: Date functions
-#customer intent: As a user, I want to know about the date functions in Plan and use them to create and convert date values.
+#customer intent: As a user, I want to know about the date functions in planning and use them to create and convert date values.
 ---
 
 # Create, format, and convert dates
 
-In Plan, date functions help you perform date calculations, extract date values, and format dates in calculations. In this article, you learn how to use date functions to get the current date and time, format dates as needed, and convert Excel serial numbers to and from date values.
+In planning, date functions help you perform date calculations, extract date values, and format dates in calculations. In this article, you learn how to use date functions to get the current date and time, format dates as needed, and convert Excel serial numbers to and from date values.
 
 ## DATE
 

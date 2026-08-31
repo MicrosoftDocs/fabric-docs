@@ -1,15 +1,15 @@
 ---
 title: 'Time Intelligence Functions: Relative Time Periods'
-description: Learn how to use relative time period functions in Plan to retrieve data for preceding and future days, months, quarters, and years, and analyze historical and projected trends using dynamic date ranges.
+description: Learn how to use relative time period functions in planning to retrieve data for preceding and future days, months, quarters, and years, and analyze historical and projected trends using dynamic date ranges.
 ms.date: 08/19/2026
 ms.topic: reference
 ms.search.form: Time Intelligence functions
-customer intent: Learn how to use Time Intelligence functions in Plan to retrieve data for relative time periods, analyze historical and future trends, and aggregate data using LASTNDAY, LASTNMONTH, LASTNQTR, LASTNYEAR, NEXTNDAY, NEXTNMONTH, NEXTNQTR, and NEXTNYEAR.
+customer intent: Learn how to use Time Intelligence functions in planning to retrieve data for relative time periods, analyze historical and future trends, and aggregate data using LASTNDAY, LASTNMONTH, LASTNQTR, LASTNYEAR, NEXTNDAY, NEXTNMONTH, NEXTNQTR, and NEXTNYEAR.
 ---
 
 # Calculate relative time periods
 
-Use the functions in this section to retrieve data relative to the current day, month, quarter, or year. Plan supports relative time period functions that help you analyze historical and future data by selecting a specified number of preceding or following time periods.
+Use the functions in this section to retrieve data relative to the current day, month, quarter, or year. Planning supports relative time period functions that help you analyze historical and future data by selecting a specified number of preceding or following time periods.
 
 ## LASTNDAY
 

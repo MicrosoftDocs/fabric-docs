@@ -11,13 +11,13 @@ ai-usage: ai-assisted
 
 # Overview of Microsoft Fabric eventstreams
 
-You can use the eventstreams feature in Microsoft Fabric Real-Time Intelligence to bring real-time events into Fabric, transform them, and then send them to various destinations without writing any code. You create an eventstream, add event data sources to the stream, optionally add transformations to transform the event data, and then send the data to supported destinations.
+Use the eventstreams feature in Microsoft Fabric Real-Time Intelligence to bring real-time events into Fabric, transform them, and then send them to various destinations without writing any code. You create an eventstream, add event data sources to the stream, optionally add transformations to transform the event data, and then send the data to supported destinations.
 
 Also, with Apache Kafka endpoints available for eventstreams, you can send or consume real-time events by using the Kafka protocol.
 
 ## Bring events into Fabric
 
-Eventstreams provide you with source connectors to fetch event data from the various sources. More sources are available when you enable **Enhanced capabilities** at the time of creating an eventstream.
+Eventstreams provide you with source connectors to fetch event data from various sources. More sources are available when you enable **Enhanced capabilities** at the time of creating an eventstream.
 
 [!INCLUDE [supported-sources-enhanced](./includes/supported-sources-enhanced.md)]
 
@@ -75,7 +75,7 @@ DeltaFlow (Preview) is available with the following CDC source connectors:
 To use DeltaFlow, choose **Analytics-ready events & auto-updated schema** during the schema handling step when setting up a CDC connector as an Eventstream source. To learn how DeltaFlow transforms raw CDC events into analytics-ready output, see [DeltaFlow output transformation](./delta-flow-output-transformation.md).
 
 > [!NOTE]
-> We recommend that you use the Fabric eventstreams feature with at least four [capacity](../../enterprise/licenses.md#capacity) units: F4.
+> Use the Fabric eventstreams feature with at least four [capacity](../../enterprise/licenses.md#capacity) units: F4.
 
 ## Apache Kafka on Fabric eventstreams
 
@@ -105,5 +105,6 @@ Fabric eventstreams have the following general limitations. Before you work with
 ## Related content
 
 - [Create an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)
+- [Enrich events with reference data](./enrich-events-with-reference-data.md)
 
 

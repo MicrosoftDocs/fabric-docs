@@ -1,10 +1,10 @@
 ---
-title: 'Statistical Functions: Calculate normal distribution values'
-description: Learn about normal distribution functions in Plan and use them to calculate normal and standard normal distribution values, probabilities, and inverse values.
+title: 'Statistical Functions: Calculate Normal Distribution Values'
+description: Learn about normal distribution functions in planning and use them to calculate normal and standard normal distribution values, probabilities, and inverse values.
 ms.date: 08/19/2026
 ms.topic: reference
 ms.search.form: Normal distribution functions
-#customer intent: As a user, I want to know about normal distribution functions in Plan and use them to calculate distribution values, probabilities, and inverse values for numerical data.
+#customer intent: As a user, I want to know about normal distribution functions in planning and use them to calculate distribution values, probabilities, and inverse values for numerical data.
 ---
 
 # Calculate normal distribution values
