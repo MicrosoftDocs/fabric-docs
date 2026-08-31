@@ -791,33 +791,65 @@ items:
     items:
       - name: Real-Time Dashboard overview
         href: real-time-dashboards-overview.md
-      - name: Create a Real-Time Dashboard
-        href: dashboard-real-time-create.md
+      - name: Supported visuals
+        href: dashboard-supported-visuals.md
       - name: Real-Time Dashboard permissions
         href: dashboard-permissions.md
       - name: Dashboard data source access
         href: dashboard-data-source-access.md
-      - name: Explore data in Real-Time Dashboard Using Copilot
-        href: dashboard-explore-data.md
-      - name: Customize Real-Time Dashboard visuals
-        href: dashboard-visuals-customize.md
-      - name: Apply conditional formatting in Real-Time Dashboards
-        href: dashboard-conditional-formatting.md
-      - name: Use parameters in Real-Time Dashboards
-        href: dashboard-parameters.md
-      - name: Real-Time Dashboard-specific visuals
-        href: dashboard-visuals.md
-      - name: Time series analysis in Real-Time Dashboard
-        href: dashboard-time-series.md
-      - name: Troubleshoot Real-Time Dashboard visual errors
-        href: troubleshoot-dashboard-tile-error.md
-      - name: Create alerts from a Real-Time Dashboard
-        href: ./data-activator/activator-get-data-real-time-dashboard.md
-        displayName: trigger, activator, reflex
-      - name: Live refresh in Real-Time Dashboards
-        href: dashboard-live-refresh.md
-      - name: Embed Real-Time Dashboards in other applications
-        href: ../embed/quickstart-embed-fabric-item.md
+      - name: Get started
+        items:
+        - name: Create a Real-Time Dashboard
+          href: dashboard-real-time-create.md
+        - name: Generate a dashboard with Copilot
+          href: copilot-generate-dashboard.md
+      - name: Create and manage visuals
+        items:
+        - name: Customize dashboard visuals
+          href: dashboard-visuals-customize.md
+        - name: Real-Time Dashboard-specific visuals
+          href: dashboard-visuals.md
+        - name: Time series visual
+          href: dashboard-time-series.md
+        - name: Troubleshoot visual errors
+          href: troubleshoot-dashboard-tile-error.md
+      - name: Customize dashboard
+        items:
+        - name: Dashboard visual gallery
+          href: dashboard-visual-gallery.md
+        - name: Customize dashboard visuals
+          href: dashboard-visuals-customize.md
+        - name: Conditional formatting
+          href: dashboard-conditional-formatting.md
+        - name: Dashboard parameters
+          href: dashboard-parameters.md 
+        - name: Time series visual
+          href: dashboard-time-series.md
+        - name: Markdown visual
+          href: dashboard-markdown-visual.md
+      - name: Explore data
+        items:
+        - name: Explore data with Copilot
+          href: dashboard-explore-data.md
+      - name: Monitor and automate
+        items:
+        - name: Set alerts for Real-Time dashboard
+          href: ./data-activator/activator-get-data-real-time-dashboard.md
+          displayName: trigger, activator, reflex
+        - name: Live refresh in Real-Time dashboards
+          href: dashboard-live-refresh.md
+      - name: Share and embed
+        items:
+        - name: Dashboard permissions
+          href: dashboard-permissions.md
+        - name: Configure data source access
+          href: dashboard-data-source-access.md
+        - name: Embed Real-Time Dashboards in other applications
+          href: ../embed/quickstart-embed-fabric-item.md
+      - name: Deploy and manage
+        items:
+        - name: Git integration for Real-Time Dashboards
+          href: ../cicd/git-integration/git-get-started.md
       - name: Visualize data in Power BI
         items:
           - name: Visualize data in a Power BI report
