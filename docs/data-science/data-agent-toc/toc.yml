@@ -54,6 +54,8 @@ items:
         href: ../consume-data-agent-python.md
       - name: Consume a data agent from Microsoft 365 Copilot (preview)
         href: ../data-agent-microsoft-365-copilot.md
+      - name: Enable co-publishers for a Fabric data agent in Microsoft 365 Copilot (preview) 
+        href: ../data-agent-enable-co-publishers.md
       - name: Consume a data agent as Model Context Protocol Server (preview)
         href: ../data-agent-mcp-server.md
   - name: Observe and Monitor Fabric data agent

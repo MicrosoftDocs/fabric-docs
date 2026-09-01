@@ -58,9 +58,9 @@ For example, suppose you create an Eventstream item for Azure Blob Storage event
 
 ## Configuration changes after consumer creation
 
-If workspace-level private link settings change after you configure a consumer, the system detects the change and pauses the configuration. To restore event delivery, delete and recreate the consumer configuration.
+If workspace-level private link settings change after you configure a consumer, the system detects the change and pauses the configuration. After you resolve the underlying condition, the configuration resumes automatically, but it might take a couple of hours.
 
-For example, suppose you configure an Activator rule in Workspace A to consume Job events from a pipeline in Workspace B while public access is allowed on Workspace B. If a workspace admin later enables workspace-level private links on Workspace B and blocks public access, the system detects the network policy change and pauses the configuration. To restore delivery, allow public access on the source workspace or establish a private link from the consumer's network to the source workspace, then delete and recreate the consumer configuration.
+For example, suppose you configure an Activator rule in Workspace A to consume Job events from a pipeline in Workspace B while public access is allowed on Workspace B. If a workspace admin later enables workspace-level private links on Workspace B and blocks public access, the system detects the network policy change and pauses the configuration. To restore delivery, allow public access on the source workspace or establish a private link from the consumer's network to the source workspace. The configuration resumes automatically after the system detects the change.
 
 For details on how to discover and troubleshoot paused configurations, see [Paused event configurations in Real-Time hub](fabric-events-paused-state.md).
 
