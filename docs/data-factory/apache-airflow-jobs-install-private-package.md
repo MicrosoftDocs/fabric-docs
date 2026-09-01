@@ -4,7 +4,7 @@ description: This tutorial shows how to install private package as a requirement
 ms.reviewer: noelleli, makromer
 ms.topic: how-to
 ms.custom: airflows
-ms.date: 08/31/2026
+ms.date: 09/01/2026
 ---
 
 # Install a Private Package as a requirement in Apache Airflow job
