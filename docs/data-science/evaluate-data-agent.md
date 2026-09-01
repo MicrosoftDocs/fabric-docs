@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 # Evaluate your data agent (preview)
 
-Evaluation with the Fabric SDK allows you to programmatically test how well your data agent responds to natural language questions. Using a simple Python interface, you can define ground truth examples, run evaluations, and analyze results—all within your notebook environment. This helps you validate accuracy, debug errors, and confidently improve your agent before deploying it to production.
+By using the Fabric SDK for evaluation, you can programmatically test how well your data agent responds to natural language questions. By using a simple Python interface, you can define ground truth examples, run evaluations, and analyze results—all within your notebook environment. This process helps you validate accuracy, debug errors, and confidently improve your agent before deploying it to production.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
@@ -19,7 +19,7 @@ Evaluation with the Fabric SDK allows you to programmatically test how well your
 
 ## Install the data agent SDK
 
-To get started with evaluating your Fabric data agent programmatically, you need to install [the Fabric data agent Python SDK](./fabric-data-agent-sdk.md). This SDK provides the tools and methods required to interact with your data agent, run evaluations, and log results. Install the latest version by running the following command in your notebook:
+To get started with evaluating your Fabric data agent programmatically, install [the Fabric data agent Python SDK](./fabric-data-agent-sdk.md). This SDK provides the tools and methods required to interact with your data agent, run evaluations, and log results. Install the latest version by running the following command in your notebook:
 
 ```python
 %pip install -U fabric-data-agent-sdk
@@ -29,9 +29,9 @@ This step ensures you have the most up-to-date features and fixes available in t
 
 ## Load your ground truth dataset
 
-To evaluate your Fabric data agent, you need a set of sample questions along with the expected answers. These questions are used to verify how accurately the agent responds to real-world queries.
+To evaluate your Fabric data agent, you need a set of sample questions along with the expected answers. Use these questions to verify how accurately the agent responds to real-world queries.
 
-You can define these questions directly in your code using a pandas DataFrame:
+Define these questions directly in your code by using a pandas DataFrame:
 
 ```python
 import pandas as pd
@@ -50,7 +50,7 @@ df = pd.DataFrame(
 
 ```
 
-Alternatively, if you have an existing evaluation dataset, you can load it from a CSV file with the columns `question` and `expected_answer`:
+Alternatively, if you have an existing evaluation dataset, load it from a CSV file with the columns `question` and `expected_answer`:
 
 ```python
 # Load questions and expected answers from a CSV file
@@ -63,7 +63,7 @@ This dataset serves as the input for running automated evaluations against your 
 
 ## Evaluate and assess your data agent
 
-The next step is to run the evaluation using the `evaluate_data_agent` function. This function compares the agent's responses against your expected results and stores the evaluation metrics.
+The next step is to run the evaluation by using the `evaluate_data_agent` function. This function compares the agent's responses against your expected results and stores the evaluation metrics.
 
 > [!NOTE]
 > This step requires a data agent that's already published to the stage you evaluate (`production` or `sandbox`). If you don't have one yet, see [Create a Fabric data agent](./how-to-create-data-agent.md).
@@ -100,7 +100,7 @@ except Exception as e:
     print(f"Evaluation failed: {e}")
 ```
 
-After the run completes, you see output similar to the following text:
+After the run finishes, you see output similar to the following text:
 
 ```output
 Unique ID for the current evaluation run: <evaluation-id>
@@ -108,7 +108,7 @@ Unique ID for the current evaluation run: <evaluation-id>
 
 ### Get evaluation summary
 
-After running the evaluation, you can retrieve a high-level summary of the results using the `get_evaluation_summary` function. This function provides insights into how well your data agent performed overall — including metrics like how many responses matched the expected answers.
+After running the evaluation, you can retrieve a high-level summary of the results by using the `get_evaluation_summary` function. This function provides insights into how well your data agent performed overall, including metrics like how many responses matched the expected answers.
 
 ```python
 from fabric.dataagent.evaluation import get_evaluation_summary
@@ -154,9 +154,9 @@ eval_details = get_evaluation_details(
 
 ## Customize your prompt for evaluation
 
-By default, the Fabric SDK uses a built-in prompt to evaluate whether the data agent's actual answer matches the expected answer. However, you can supply your own prompt for more nuanced or domain-specific evaluations using the `critic_prompt` parameter.
+By default, the Fabric SDK uses a built-in prompt to evaluate whether the data agent's actual answer matches the expected answer. However, you can supply your own prompt for more nuanced or domain-specific evaluations by using the `critic_prompt` parameter.
 
-Your custom prompt should include the placeholders `{query}`, `{expected_answer}`, and `{actual_answer}`. These placeholders are dynamically substituted for each question during evaluation.
+Your custom prompt should include the placeholders `{query}`, `{expected_answer}`, and `{actual_answer}`. The evaluation process dynamically substitutes these placeholders for each question.
 
 ```python
 from fabric.dataagent.evaluation import evaluate_data_agent
@@ -187,7 +187,7 @@ evaluation_id = evaluate_data_agent(df, data_agent_name, critic_prompt=critic_pr
 This feature is especially useful when:
   
 - You want to apply more lenient or stricter criteria for what counts as a match.
-- Your expected and actual answers may vary in format but still be semantically equivalent.
+- Your expected and actual answers might vary in format but still be semantically equivalent.
 - You need to capture domain-specific nuances in how answers should be judged.
 
 ## Diagnostics button
