@@ -104,6 +104,11 @@
       "source_path_from_root": "/docs/iq/plan/planning-row-model/planning-how-to-create-model-using-model-builder.md",
       "redirect_url": "/fabric/iq/plan/planning-row-model/how-to-create-row-model",
       "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/iq/plan/planning-row-model/planning-how-to-create-templates.md",
+      "redirect_url": "/fabric/iq/plan/planning-row-model/how-to-create-templates",
+      "redirect_document_id": true
     }
   ]
 }

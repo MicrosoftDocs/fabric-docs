@@ -19,7 +19,7 @@
         "docs/cicd/.openpublishing.redirection.cicd.json",
         "docs/data-engineering/.openpublishing.redirection.data-engineering.json",
         "docs/data-factory/.openpublishing.redirection.data-factory.json",
-        "docs/data-science/.openpublishing.redirection.data-science.json",        
+        "docs/data-science/.openpublishing.redirection.data-science.json",
         "docs/data-warehouse/.openpublishing.redirection.data-warehouse.json",
         "docs/database/.openpublishing.redirection.database.json",
         "docs/database/sql/.openpublishing.redirection.sql-database.json",
@@ -109,4 +109,3 @@
   "skip_source_output_uploading": false,
   "need_generate_pdf_url_template": true
 }
-
