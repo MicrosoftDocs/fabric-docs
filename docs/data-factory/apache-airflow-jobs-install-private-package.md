@@ -75,7 +75,7 @@ If you don't use a connected Git repository, you can upload a wheel file directl
 
 1. Upload your `.whl` file to the `plugins/libs` folder in your Apache Airflow job's file storage.
 
-1. Add the wheel file as a requirement using the relative path format `/opt/airflow/plugins/libs/<your-wheel-file>.whl`.
+1. Add the wheel file as a requirement by using the relative path format `/opt/airflow/plugins/libs/<your-wheel-file>.whl`.
 
    For example:
 
