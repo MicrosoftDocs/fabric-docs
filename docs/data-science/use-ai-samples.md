@@ -2,9 +2,14 @@
 title: Use the end-to-end AI samples
 description: Understand the capabilities of the Fabric Data Science workload and examples of how machine learning models can address your common business problems.
 ms.author: lagayhar
+<<<<<<< Updated upstream
 ms.reviewer: ruxu 
+=======
+ms.reviewer: ruxu
+>>>>>>> Stashed changes
 ms.topic: how-to
-ms.date: 12/23/2025
+ms.date: 08/31/2026
+ai-usage: ai-assisted
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ---

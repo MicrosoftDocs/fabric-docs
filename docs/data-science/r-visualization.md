@@ -4,13 +4,14 @@ description: How to create R visualizations.
 ms.author: lagayhar
 ms.reviewer: ruxu
 ms.topic: how-to
-ms.date: 06/30/2025
+ms.date: 08/31/2026
+ai-usage: ai-assisted
 ms.search.form: R Language
 ---
 
 # Visualize data in R
 
-The R ecosystem offers multiple graphing libraries that come packed with many different features. By default, every Apache Spark Pool in [!INCLUDE [product-name](../includes/product-name.md)] contains a set of curated and popular open-source libraries. Add or manage extra libraries or versions by using the [!INCLUDE [product-name](../includes/product-name.md)] [library management capabilities](r-library-management.md).
+The R ecosystem offers multiple graphing libraries with different features. By default, each Spark instance in [!INCLUDE [product-name](../includes/product-name.md)] includes a set of curated, popular open-source libraries. Add or manage libraries and versions by using the [!INCLUDE [product-name](../includes/product-name.md)] [library management capabilities](r-library-management.md).
 
 
 
