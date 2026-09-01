@@ -48,7 +48,7 @@ To enable the feature, switch the data agent to the [preview runtime](./data-age
 
 Advanced DAX generation uses the semantic model metadata and Prep for AI configurations described in this article. Follow the best practices detailed in this article to maximize response accuracy and performance.
 
-Instance value indexing currently requires the semantic model's [Q&A setting](https://learn.microsoft.com/power-bi/natural-language/q-and-a-data-sources) to be enabled. This setting is enabled by default for Import and Direct Lake models. Since Q&A retires in December 2026, a replacement setting will support instance value indexing after retirement, and this article will be updated with the new configuration steps.
+Instance value indexing currently requires the semantic model's [Q&A setting](/power-bi/natural-language/q-and-a-data-sources) to be enabled. This setting is enabled by default for Import and Direct Lake models. Since Q&A retires in December 2026, a replacement setting will support instance value indexing after retirement, and this article will be updated with the new configuration steps.
 
 
 ## Prep for AI: Make semantic model AI ready
