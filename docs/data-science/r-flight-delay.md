@@ -4,7 +4,7 @@ description: This tutorial shows how to predict flight delay by using tidymodels
 ms.author: lagayhar
 ms.reviewer: ruxu
 ms.topic: tutorial
-ms.date: 08/31/2026
+ms.date: 06/30/2026
 ai-usage: ai-assisted
 ms.search.form: R Language
 #customer intent: As a data scientist, I want to build a machine learning model by using R so I can predict delays.
