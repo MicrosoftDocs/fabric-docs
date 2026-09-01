@@ -4,7 +4,7 @@ description: In this fifth part of the tutorial series, learn how to get set up 
 ms.author: lagayhar
 ms.reviewer: ruxu
 ms.topic: tutorial
-ms.date: 06/30/2026
+ms.date: 08/31/2026
 #CustomerIntent: As a data scientist, I want to create a Power BI report to visualize the predictions data.
 ---
 
@@ -67,7 +67,7 @@ Add some measures to the semantic model:
 
     1. To determine the average predicted churn rate, replace `Measure =` in the formula bar with the following code snippet:
 
-        ```python
+        ```DAX
         Churn Rate = AVERAGE(customer_churn_test_predictions[predictions])
         ```
 
@@ -92,7 +92,7 @@ Add some measures to the semantic model:
     
     1. Each prediction represents one customer. To determine the total number of customers, replace `Measure =` in the formula bar with:
 
-        ```python
+        ```DAX
         Customers = COUNT(customer_churn_test_predictions[predictions])
         ```
 
@@ -104,7 +104,7 @@ Add some measures to the semantic model:
     
     1. To determine the churn rate for Germany, replace `Measure =` in the formula bar with:
 
-        ```python
+        ```DAX
         Germany Churn = CALCULATE(AVERAGE(customer_churn_test_predictions[predictions]),FILTER(customer_churn_test_predictions, customer_churn_test_predictions[Geography_Germany] = TRUE()))
         ```
 
@@ -116,13 +116,13 @@ Add some measures to the semantic model:
 
     * Spain's churn rate:
 
-        ```python
+        ```DAX
         Spain Churn = CALCULATE(AVERAGE(customer_churn_test_predictions[predictions]),FILTER(customer_churn_test_predictions, customer_churn_test_predictions[Geography_Spain] = TRUE()))
         ```
 
     * France's churn rate:
 
-        ```python
+        ```DAX
         France Churn = CALCULATE(AVERAGE(customer_churn_test_predictions[predictions]),FILTER(customer_churn_test_predictions, customer_churn_test_predictions[Geography_France] = TRUE()))
         ```
 
