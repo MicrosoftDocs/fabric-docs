@@ -4,7 +4,8 @@ description: How to use SparkR, a light-weight frontend to use Apache Spark from
 ms.author: lagayhar
 ms.reviewer: ruxu
 ms.topic: how-to
-ms.date: 06/30/2026
+ms.date: 08/31/2026
+ai-usage: ai-assisted
 ms.search.form: R Language
 ---
 
@@ -51,7 +52,7 @@ You can store data on the local filesystem of cluster nodes. To read and write a
 To read and write to a Lakehouse, first add it to your session. On the left side of the notebook, select **Add** to add an existing Lakehouse or create a Lakehouse.
 
 > [!NOTE] 
-> To access Lakehouse files by using Spark packages, such as `read.df` or `write.df`, use the *ADFS path* or *relative path for Spark*. In the Lakehouse explorer, right-click on the files or folder you want to access and copy its *ADFS path* or *relative path for Spark* from the contextual menu.
+> To access Lakehouse files by using Spark packages, such as `read.df` or `write.df`, use the *ABFS path* or *relative path for Spark*. In the Lakehouse explorer, right-click the file or folder you want to access, and copy its *ABFS path* or *relative path for Spark* from the shortcut menu.
 
 ```R
 # write data in CSV using relative path for Spark
@@ -66,18 +67,18 @@ display(faithfulDF_csv)
 ```
 
 ```R
-# write data in parquet using ADFS path
+# write data in parquet using an ABFS path
 temp_parquet_spark<-"abfss://xxx/xxx/data/faithful.parquet"
 write.df(df, temp_parquet_spark ,source="parquet", mode = "overwrite", header = "true")
 
-# read data in parquet uxing ADFS path
+# read data in parquet using an ABFS path
 faithfulDF_pq <- read.df(temp_parquet_spark, source= "parquet", header = "true", inferSchema = "true")
 
 # displays the content of the DataFrame
 display(faithfulDF_pq)
 ```
 
-[!INCLUDE [product-name](../includes/product-name.md)] has `tidyverse` preinstalled. You can access Lakehouse files in your familiar R packages, such as reading and writing Lakehouse files by using `readr::read_csv()` and `readr::write_csv()`.  
+[!INCLUDE [product-name](../includes/product-name.md)] has `tidyverse` preinstalled. You can access Lakehouse files in your familiar R packages, such as reading and writing Lakehouse files by using `readr::read_csv()` and `readr::write_csv()`.
 
 > [!NOTE] 
 > To access Lakehouse files by using R packages, you need to use the *File API path*. In the Lakehouse explorer, right-click on the file or folder that you want to access and copy its *File API path* from the contextual menu.

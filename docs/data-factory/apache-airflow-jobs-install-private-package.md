@@ -1,10 +1,10 @@
 ---
 title: Install a Private Package as a requirement in Apache Airflow Job
 description: This tutorial shows how to install private package as a requirement in Apache Airflow Job.
-ms.reviewer: xupxhou, makromer
+ms.reviewer: noelleli, makromer
 ms.topic: how-to
 ms.custom: airflows
-ms.date: 06/30/2026
+ms.date: 09/01/2026
 ---
 
 # Install a Private Package as a requirement in Apache Airflow job
@@ -75,12 +75,12 @@ If you don't use a connected Git repository, you can upload a wheel file directl
 
 1. Upload your `.whl` file to the `plugins/libs` folder in your Apache Airflow job's file storage.
 
-1. Add the wheel file as a requirement using the relative path format `plugins/libs/<your-wheel-file>.whl`.
+1. Add the wheel file as a requirement by using the relative path format `/opt/airflow/plugins/libs/<your-wheel-file>.whl`.
 
    For example:
 
    ```
-   plugins/libs/apache_airflow_providers_microsoft_fabric-0.1.0-py3-none-any.whl
+   opt/airflow/plugins/libs/apache_airflow_providers_microsoft_fabric-0.1.0-py3-none-any.whl
    ```
 
 1. Restart your Apache Airflow job for the requirement to take effect.

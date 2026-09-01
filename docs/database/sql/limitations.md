@@ -137,7 +137,7 @@ The following table lists the major features of SQL Server and provides informat
 | Time zone choice | No | No |
 | [Trace flags](/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql) | No | No |
 | [Transactional replication](/azure/azure-sql/database/migrate-to-database-from-sql-server) | Yes, subscriber only |  Yes, subscriber only |
-| [Transparent data encryption (TDE)](/azure/azure-sql/database/transparent-data-encryption-tde-overview) | Yes | No. Fabric SQL database uses storage encryption with service-managed keys to protect all customer data at rest. Currently, customer-managed keys are not supported. |
+| [Transparent data encryption (TDE)](/azure/azure-sql/database/transparent-data-encryption-tde-overview) | Yes | Yes |
 
 ## Platform capabilities
 

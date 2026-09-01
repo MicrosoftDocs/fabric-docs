@@ -4,13 +4,14 @@ description: How to use sparklyr, an R interface to Apache Spark.
 ms.author: lagayhar
 ms.reviewer: ruxu
 ms.topic: how-to
-ms.date: 04/16/2025
+ms.date: 08/31/2026
+ai-usage: ai-assisted
 ms.search.form: R Language
 ---
 
 # Use sparklyr
 
-The R language [sparklyr](https://spark.rstudio.com/) resource serves as an interface to Apache Spark. The sparklr resource provides a mechanism to interact with Spark with familiar R interfaces. Use sparklyr through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)] notebooks.
+The R language [sparklyr](https://spark.posit.co/) package provides an interface to Apache Spark. It lets you interact with Spark through familiar R interfaces. Use sparklyr through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)] notebooks.
 
 `sparklyr` is used with other [tidyverse](https://www.tidyverse.org/) packages - for example, [dplyr](https://cran.rstudio.com/web/packages/dplyr/vignettes/dplyr.html). [!INCLUDE [product-name](../includes/product-name.md)] distributes the latest stable version of both sparklyr and tidyverse with every runtime release. You can import these resources and start using the API.
 
@@ -82,7 +83,7 @@ cargroup <- group_by(mtcars_tbl, cyl) %>%
 cargroup
 ```
 
-The [Manipulating Data with `dplyr`](https://spark.rstudio.com/guides/dplyr.html) resource offers more information about use of dplyr with Spark. `sparklyr` and `dplyr` translate the R commands into Spark SQL. Use `show_query()` to show the resulting query:
+The [Manipulating Data with `dplyr`](https://spark.posit.co/guides/dplyr.html) resource offers more information about use of dplyr with Spark. `sparklyr` and `dplyr` translate the R commands into Spark SQL. Use `show_query()` to show the resulting query:
 
 ```r
 # show the dplyr commands that are to run against the Spark connection
@@ -91,7 +92,7 @@ dplyr::show_query(cargroup)
 
 ### Use SQL
 
-You can also execute SQL queries directly against tables within a Spark cluster. The `spark_connection() `object implements a [DBI](https://dbi.r-dbi.org/) interface for Spark, so you can use `dbGetQuery()` to execute SQL and return the result as an R data frame:
+You can also execute SQL queries directly against tables within a Spark cluster. The `spark_connection()` object implements a [DBI](https://dbi.r-dbi.org/) interface for Spark, so you can use `dbGetQuery()` to execute SQL and return the result as an R data frame:
 
 ```r
 library(DBI)
@@ -111,11 +112,11 @@ mtcars_tbl %>%
   head(5)
 ```
 
-The [Reference -FT](https://spark.rstudio.com/packages/sparklyr/latest/reference/#spark-feature-transformers) resource offers a full list of the Spark Feature Transformers available through `sparklyr`.
+The [sparklyr reference](https://spark.posit.co/packages/sparklyr/latest/reference/) lists the Spark feature transformers available through `sparklyr`.
 
 ## Share data between `sparklyr` and `SparkR`
 
-When you [connect `sparklyr` to synapse spark cluster with `method = "synapse"`](#connect-sparklyr-to-synapse-spark-cluster), both `sparklyr` and `SparkR` become available in the same session and can easily share data between themselves. You can create a spark table in `sparklyr`, and read it from `SparkR`:
+When you [connect `sparklyr` to a Fabric Spark session with `method = "synapse"`](#connect-sparklyr-to-synapse-spark-cluster), both `sparklyr` and `SparkR` become available in the same session and can easily share data between themselves. You can create a Spark table in `sparklyr`, and read it from `SparkR`:
 
 ```r
 # load the sparklyr package
@@ -125,12 +126,12 @@ library(sparklyr)
 mtcars_sparklyr <- copy_to(sc, df = mtcars, name = "mtcars_tbl", overwrite = TRUE, repartition = 3L)
 
 # Read table from `SparkR`
-mtcars_sparklr <- SparkR::sql("select cyl, count(*) as n
+mtcars_sparkr <- SparkR::sql("select cyl, count(*) as n
 from mtcars_tbl
 GROUP BY cyl
 ORDER BY n DESC")
 
-head(mtcars_sparklr)
+head(mtcars_sparkr)
 ```
 
 ## Machine learning
@@ -151,7 +152,7 @@ partitions <- mtcars_tbl %>%
 
 ### Train the model
 
-Train the Logistic Regression model.
+Train the linear regression model.
 
 ```r
 fit <- partitions$training %>%
@@ -160,7 +161,7 @@ fit <- partitions$training %>%
 fit
 ```
 
-Use `summary() ` to learn more about the quality of our model, and the statistical significance of each of our predictors:
+Use `summary()` to learn more about the quality of the model and the statistical significance of each predictor:
 
 ```r
 summary(fit)
@@ -176,7 +177,7 @@ pred <- ml_predict(fit, partitions$test)
 head(pred)
 ```
 
-Visit [Reference - ML](https://spark.rstudio.com/packages/sparklyr/latest/reference/#spark-machine-learning) for a list of Spark ML models available through sparklyr.
+Visit the [sparklyr reference](https://spark.posit.co/packages/sparklyr/latest/reference/) for a list of Spark ML models available through sparklyr.
 
 ## Disconnect from Spark cluster
 
