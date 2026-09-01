@@ -1,9 +1,9 @@
 ---
 title: Event schema set operation logs
 description: View the set of event schema set operation logs that you can query in your Fabric workspace monitoring database.
-author: spelluru
-ms.author: spelluru
-ms.reviewer: majia
+author: svelmurugan
+ms.author: svelmurugan
+ms.reviewer: frbettat
 ms.topic: reference
 ms.date: 07/23/2026
 ---
