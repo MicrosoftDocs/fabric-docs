@@ -3,13 +3,14 @@ title: Explore Fabric capacity overview events in Fabric Real-Time hub
 description: This article shows how to explore Fabric capacity overview events in Fabric Real-Time hub.
 ms.reviewer: geguirgu
 ms.topic: how-to
-ms.date: 11/17/2025
+ms.date: 08/18/2026
+ms.search.form: Explore Fabric capacity overview events
 ms.custom: references_regions
 ---
 
 # Explore Fabric capacity overview events in Fabric Real-Time hub
 
-Fabric Capacity Overview Events provide summary level information related to your capacity. These events can be used to create alerts related to your capacity health via Data Activator or can be stored in an Eventhouse for granular or historical analysis.
+Fabric capacity overview events provide summary-level information related to your capacity. Use these events to create alerts about your capacity health through Activator, or store them in an eventhouse for granular or historical analysis.
 
 [!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
 
@@ -17,7 +18,11 @@ Fabric Capacity Overview Events provide summary level information related to you
 
 1. In **Real-Time hub**, select **Fabric events**.
 1. Select **Fabric capacity overview events** from the list.
+
+    :::image type="content" source="./media/explore-fabric-capacity-overview-events/select-capacity-overview-events.png" alt-text="Screenshot that shows the selection of Fabric capacity overview events." lightbox="./media/explore-fabric-capacity-overview-events/select-capacity-overview-events.png":::
 1. You should see the detailed view for Fabric capacity overview events.
+
+    :::image type="content" source="./media/explore-fabric-capacity-overview-events/capacity-overview-detail-page.png" alt-text="Screenshot that shows the detailed view for Fabric capacity overview events." lightbox="./media/explore-fabric-capacity-overview-events/capacity-overview-detail-page.png":::
 
 ## Actions
 
@@ -28,23 +33,23 @@ At the top of the detail page, you see the following two actions.
 
 ## See what's using this category
 
-This section shows the artifacts using Fabric capacity overview events. Here are the columns and their descriptions shown in the list.
+This section shows the items using Fabric capacity overview events. Here are the columns and their descriptions shown in the list.
 
 | Column | Description |
 | ------ | ------------ |
-| Name | Name of the artifact that's using Fabric capacity overview events. |
-| Type | Artifact type – Activator or Eventstream |
-| Workspace | Workspace where the artifact lives. |
+| Name | Name of the item that's using Fabric capacity overview events. |
+| Type | Item type – Activator or Eventstream |
+| Workspace | Workspace where the item lives. |
 | Source | Name of the capacity that is the source of the events. |
 
 ## Event types
 
-Here are the supported Capacity overview events:
+Fabric supports the following capacity overview events:
 
 | Event type name | Description |
 | --------------- | ----------- |
-| Microsoft.Fabric.Capacity.Summary | Emitted every 30 seconds to summarize the capacity usage across all operations during that interval.  |
-| Microsoft.Fabric.Capacity.State | Emitted when a capacity’s state changes. For example, when a capacity is paused or resumed. |
+| Microsoft.Fabric.Capacity.Summary | Fabric emits this event every 30 seconds to summarize capacity usage across workloads during the interval. |
+| Microsoft.Fabric.Capacity.State | Fabric emits this event when a capacity’s state changes, including throttling-related conditions such as when a capacity becomes overloaded, or when a capacity is paused or resumed. Use this event to set alerts on throttling. |
 
 ### Schemas
 
@@ -62,14 +67,14 @@ An event has the following top-level data:
 
 The `data` object has the following properties for Summary events:
 
-#### Summary Events Schema
+#### Summary events schema
 
 > [!NOTE]
 > The summary table contains aggregated CU data at the capacity level in a granularity of 30-second windows. CU data is smoothed, rather than raw- this approach reflects the way the system analyzes CU consumption for the purposes of throttling. Active capacities emit exactly one line item every 30 seconds, unless all line items for that window (CU, Interactive Delay Throttling percentage etc) are 0. Also, if a capacity is paused, it doesn't emit summary data.
 
 | Property | Type | Description | Example |
 | -------- | ---- | ----------- | ------- |
-| `capacityId` | string | The ID of the capacity on which the operation ran. A capacity always retains the same capacity ID, even if it's paused, restarted, scaled up, or scaled down. You can find the identifiers (IDs) of the capacities you have access to in the Power BI Service settings pane under **Governance and administration** -> **Admin portal**- **Capacity settings**. When you select a capacity, the ID appears in the browser URL. You can also check the "workspace settings" > "Workspace type" to see which capacity is assigned to a workspace. | `00000000-0000-0000-0000-000000000000`  |
+| `capacityId` | string | The ID of the capacity on which the operation ran. A capacity always retains the same capacity ID, even if it's paused, restarted, scaled up, or scaled down. You can find the identifiers (IDs) of the capacities you have access to in the Power BI service settings pane under **Governance and administration** -> **Admin portal**- **Capacity settings**. When you select a capacity, the ID appears in the browser URL. You can also check the "workspace settings" > "Workspace type" to see which capacity is assigned to a workspace. | `00000000-0000-0000-0000-000000000000`  |
 | `capacityName` | string | The name of the capacity. Capacity name can be changed without impacting the capacity ID. | `foocapacity` |
 | `capacitySku` | string | The Stock Keeping Unit (SKU) size of the capacity on which the operation ran at that time. SKUs can be scaled up or down at any time by admins, so the SKU may change for the same capacity ID. | `FT1` |
 | `windowStartTime` | UTC string | Indicates the start time window from which the smoothing took place. The windows are split into 30-second buckets and represent the capacity unit (CU) smoothing windows. Each capacity emits one event per window while active. When a capacity is paused, no events are emitted. | `2025-09-22 05:23:00.0000000` |
@@ -87,7 +92,7 @@ The `data` object has the following properties for Summary events:
 | `utilizationBackgroundPreview` | double | Shows the amount of CU (in milliseconds) consumed for background operations that aren't charged (usually, but not always, because operations are uncharged preview features). | `140.0416667` |
 | `utilizationInteractivePreview` | double | Shows the amount of CU (in milliseconds) consumed for interactive operations that aren't charged (usually, but not always, because these operations are uncharged preview features). | `123.4` |
 | `capacityUnitUtilizationBreakdown` | object | Breaks down CU consumption by workload, billable and non billable items and background and interactive. |  |
-| `tenantId` | string | The tenant where the operation took place. The tenant ID always remains the same for your organization (although some organizations may have more than one tenant). Currently Real-Time Hub returns data for your current tenant. | `00000000-0000-0000-0000-000000000000` |
+| `tenantId` | string | The tenant where the operation took place. The tenant ID always remains the same for your organization (although some organizations might have more than one tenant). Currently Real-Time hub returns data for your current tenant. | `00000000-0000-0000-0000-000000000000` |
 | `capacityRegion` | string | The region in which the data center the capacity is hosted on resides. Capacities can't be moved to different regions after they're created. | `west us` |
 | `processedOverageCapacityUnitsMs` | double | Related to certain billing aspects. Value is 0. |  |
 | `overageBillingLimitCapacityUnitsMs` | double | Related to certain billing aspects. Value is 0. |  |
@@ -109,10 +114,10 @@ The `data` object has the following properties for Summary events:
 > | GeoIntel          | Map                        | Generating and managing map tiles and creating custom tilesets for geospatial visualization.                    |
 > | Graph             | GraphIndex                 | Background operations related to graphs.                                                                        |
 > | GraphQL           | GraphQL                    | Interactive operations for queries on graphs.                                                                   |
-> | Kusto             | Kusto                      | Background operations for uptime related to Kusto databases and eventhouse.                                     |
+> | Kusto             | Eventhouse                 | Eventhouse UpTime operations consume Fabric capacity for eventhouses and KQL databases to power Real-Time Intelligence analytics on Fabric. [Learn more](../real-time-intelligence/real-time-intelligence-consumption.md) |
 > | lake              | OneLake                    | Background operations for lakehouse such as reads, writes with respect to different item types.             |
 > | ML                | Machine Learning           | Background operations for machine learning features such as Copilot across different item types.                |
-> | OneRiver          | OneRiver                   | One Lake operations for different item types related to event listeners and event operations.                    |
+> | OneRiver          | Azure, Fabric, and Business events | Event operations and Event listener operations consume Fabric capacity for Azure, Fabric, and Business events to power event-driven solutions on Fabric. [Learn more](fabric-events-capacity-consumption.md) |
 > | Reflex            | Activator                  | Data activator operations related to event computations and ingestion.                                          |
 > | RsRdlEngine       | PaginatedReport            | Paginated report operations fired during renders.                                                               |
 > | ScreenshotEngine  | Report Export/ Subscription| Background operations related to subscriptions and export.                                                      |
@@ -121,7 +126,7 @@ The `data` object has the following properties for Summary events:
 
 The `data` object has the following properties for State events:
 
-#### State Events Schema
+#### State events schema
 
 > [!NOTE]
 > The state table summarizes key changes relating to the capacity’s state. This summary includes the capacity being created, becoming overloaded (throttling) or being paused. Other changes to the capacity like scaling up/ scaling down or renaming the capacity aren't considered as state changes (you can find this information in the summary table).
@@ -140,17 +145,17 @@ The `data` object has the following properties for State events:
 | `stateChangeReason` | string | This shows why the capacity moved to the current state. | `InteractiveDelay` |
 | `activationId` | string | When a capacity is paused and restarted, it keeps the same capacity ID but gets a new activationId. The restart creates this new ID, which helps track pauses and restarts.  | `00000000-0000-0000-0000-000000000000` |
 
-### Considerations and Patterns
+### Considerations and patterns
 
 - When a capacity is paused, all smoothed usage is pushed into the next available window. As a result, large spikes in capacity utilization can appear for the window in which the pause occurs.
 
 - Utilization percentage can't be calculated for P SKUs when autoscale is enabled because autoscale adds extra capacity units that aren't included in the states table.
 
-- This system is a real-time system and doesn't backfill historical data. Even if you're using Real-Time Hub for alerting, start pushing data to Eventhouse or OneLake early, to ensure you have enough data for analysis such as graphing.
+- This system is a real-time system and doesn't backfill historical data. Even if you're using Real-Time hub for alerting, start pushing data to an eventhouse or OneLake early, to ensure you have enough data for analysis such as graphing.
 
 - Guidance on scenarios you might encounter:
 
-    In order to ensure low latency and high performance, Capacity Events in Real-Time Hub are based on a best effort delivery mode. For the Summary table this behavior can mean that, while rare, events can either fail to be sent, or duplicates might be received.
+    To ensure low latency and high performance, Real-Time hub delivers capacity events based on a best-effort delivery mode. For the Summary table, this behavior can mean that, while rare, events can either fail to send, or duplicates might be received.
 
     As follows are some patterns that can be employed for each of the scenarios mentioned.
 
@@ -186,4 +191,8 @@ The `data` object has the following properties for State events:
     ```
 
 ## Subscribe permission
-For more information, see [subscribe permission for Fabric events](fabric-events-subscribe-permission.md)
+For more information, see [subscribe permission for Fabric events](fabric-events-subscribe-permission.md).
+
+## Related content
+
+- [Azure, Fabric, and Business events capacity consumption](fabric-events-capacity-consumption.md)

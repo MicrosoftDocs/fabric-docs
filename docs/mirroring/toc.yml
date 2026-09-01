@@ -108,6 +108,22 @@ items:
       - name: FAQ about Mirroring Azure Databricks
         displayName: Frequently asked questions about mirroring Azure Databricks
         href: azure-databricks-faq.yml
+  - name: Mirroring Azure Monitor
+    items:
+      - name: Mirror Azure Monitor items
+        href: catalog-mirroring/azure-monitor.md
+      - name: Mirror Azure Monitor tutorial
+        href: catalog-mirroring/azure-monitor-tutorial.md
+      - name: Troubleshoot Mirror Azure Monitor items
+        href: catalog-mirroring/azure-monitor-troubleshoot.md
+  - name: Mirroring AWS Glue
+    items:
+      - name: Mirrored AWS Glue catalog
+        href: catalog-mirroring/aws-glue.md
+      - name: Mirrored AWS Glue catalog tutorial
+        href: catalog-mirroring/aws-glue-tutorial.md
+      - name: Limitations
+        href: catalog-mirroring/aws-glue-limitations.md
   - name: Mirroring Dremio catalog
     items:
       - name: Mirrored Dremio catalog
@@ -116,6 +132,14 @@ items:
         href: catalog-mirroring/dremio-tutorial.md
       - name: Limitations
         href: catalog-mirroring/dremio-limitations.md
+  - name: Mirroring Google Lakehouse runtime catalog
+    items:
+      - name: Mirrored Google Lakehouse runtime catalog
+        href: catalog-mirroring/google-lakehouse-runtime.md
+      - name: Mirrored Google Lakehouse runtime catalog tutorial
+        href: catalog-mirroring/google-lakehouse-runtime-tutorial.md
+      - name: Limitations
+        href: catalog-mirroring/google-lakehouse-runtime-limitations.md
   - name: Mirroring Google BigQuery
     items: 
       - name: Mirrored databases from Google BigQuery

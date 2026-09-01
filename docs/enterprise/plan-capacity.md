@@ -57,3 +57,4 @@ Capacities are [priced hourly or monthly](https://azure.microsoft.com/pricing/de
 ## Related content
 
 * [Understand the metrics app compute page](metrics-app-compute-page.md)
+* [Explore Fabric capacity overview events in Fabric Real-Time hub](../real-time-hub/explore-fabric-capacity-overview-events.md)

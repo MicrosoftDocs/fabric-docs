@@ -1,5 +1,5 @@
 ---
-title: Join queries
+title: Join Queries
 description: Learn how to join queries in Infobridge to combine related data from multiple queries based on matching columns.
 ms.date: 07/16/2026
 ms.topic: how-to
@@ -9,8 +9,6 @@ ms.topic: how-to
 # Join queries in Infobridge
 
 Use joins to combine data from multiple queries based on a related column. Join queries enrich a dataset by bringing related information from another query.
-
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
 Infobridge supports the following join types:
 

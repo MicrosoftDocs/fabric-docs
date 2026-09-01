@@ -5,7 +5,8 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: how-to
-ms.date: 06/15/2026
+ms.date: 08/17/2026
+ai-usage: ai-assisted
 ---
 
 # Experience-specific disaster recovery guidance
@@ -43,7 +44,7 @@ The following sections provide step-by-step guides for each Fabric experience to
  
 ## Data Engineering
 
-This guide walks you through the recovery procedures for the Data Engineering experience. It covers lakehouses, notebooks, and Spark job definitions.
+This guide walks you through the recovery procedures for the Data Engineering experience. It covers lakehouses, notebooks, Spark job definitions, user data functions, and GraphQL APIs.
 
 ### Lakehouse
 
@@ -194,11 +195,76 @@ Now you can run or schedule your newly recovered SJD.
 
 For details about Azure Storage Explorer, see [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md).
 
+### User data functions
+
+To recover your user data functions in a healthy region, use one of the following approaches.
+
+#### Approach 1: With Git integration (recommended)
+
+The preferred recovery mechanism is [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md). By synchronizing user data function projects with an Azure DevOps or GitHub repository, you can quickly reconstruct them in a new workspace after failover.
+
+##### Prepare before a disaster
+
+1. Configure Fabric Git integration for the workspace that hosts the user data function.
+1. Connect the workspace to an Azure DevOps or GitHub repository.
+1. Commit all user data function to the repository and synchronize changes regularly.
+1. Store environment-specific settings separately in variable libraries if required.
+
+##### Recovery steps
+
+After a regional disaster:
+
+1. Create a new Fabric capacity in a healthy region, such as C2.
+1. Create a new workspace, such as W2, in the new capacity.
+1. Connect the workspace to the same Azure DevOps or GitHub repository.
+1. Open **Source control** and synchronize the repository contents to the workspace.
+1. Recreate or recover all dependent Fabric resources, such as lakehouses, SQL databases in Fabric, warehouses, and Business Events.
+1. Redeploy the user data functions.
+1. Validate function execution and dependency connectivity.
+1. Update downstream applications, data pipelines or other integrated to refernece the recovered functions.
+1. Complete End to End validation of all your scenarios.
+
+##### Important considerations
+
+- Git integration recovers only source code and project assets.
+- Historical execution logs aren't recovered.
+- Downstream systems might require endpoint rebinding.
+
+For more information, see [User data functions source control and deployment](../data-engineering/user-data-functions/git-and-deployment-pipelines.md).
+
+#### Approach 2: Manual recovery
+
+If Git integration wasn't configured before the disaster, you can manually reconstruct user data functions from source code backups.
+
+##### Prepare before a disaster
+
+Regularly complete the following tasks, and store the artifacts in an external source control repository or backup location:
+
+- Export function source code to a GitHub repository.
+- Document and preserve dependency information. 
+- Document environment settings.
+
+##### Recovery steps
+
+After a regional disaster:
+
+1. Create a new Fabric capacity in a healthy region, such as C2.
+1. Create a new workspace, such as W2.
+1. Recover all resources required by the function, including lakehouses, SQL databases in Fabric, warehouses, eventhouses, and external services.
+1. Create a new user data function project.
+1. Import or recreate the function source code.
+1. Reapply runtime configuration settings.
+1. Reinstall all function dependencies.
+1. Redeploy the function.
+1. Reconfigure authentication and authorization.
+1. Recreate Business Event publishers or consumers, if used.
+1. Complete end-to-end validation testing for your scenarios and integrations.
+
 ### GraphQL
 
 GraphQL items from the primary region aren't available after a regional disaster, and GraphQL definitions and configurations aren't replicated to the secondary region. To recover GraphQL in a new region, use one of the following approaches.
 
-#### Approach 1: User-managed redundancy with Git integration (in public preview)
+#### Approach 1: User-managed redundancy with Git integration 
 
 The best way to make this process easy and quick is to use Fabric Git integration, and then synchronize your GraphQL with your ADO repo. After the service fails over to another region, you can use the repo to rebuild the GraphQL in the new workspace you created.
 
@@ -248,10 +314,50 @@ If you don't take the Git integration approach, you can use the following manual
 
 #### References
 
-   - [Overview of Fabric Git integration - Microsoft Fabric | Microsoft Learn](/fabric/cicd/git-integration/intro-to-git-integration)
+- [Overview of Fabric Git integration - Microsoft Fabric | Microsoft Learn](/fabric/cicd/git-integration/intro-to-git-integration)
+
+- [Source control and deployment pipelines in API for GraphQL - Microsoft Fabric | Microsoft Learn](/fabric/data-engineering/graphql-source-control-and-deployment) 
+
+### App
+
+The system doesn't replicate Fabric Apps, including their code, configuration, and metadata, to secondary regions. If the primary region fails, the app remains unavailable. For recovery, store the app source code outside the system in GitHub, Azure DevOps, or another source control system. Recover app data separately by following the disaster recovery guidance for each underlying Fabric data store.
+
+
+#### Manual approach
+
+You can manually recover a Fabric App after a regional disaster by using the application source code and the Rayfin CLI. 
+
+**Prerequisites** 
+
+Before a disaster occurs: 
+
+- Store the Fabric App source code in GitHub, Azure DevOps, or another source control repository. 
+
+- Document the process for recovery.  
+
+**Recovery steps** 
+
+1. Create a new workspace in the target capacity and region. 
+
+1. Recover dependent resources before redeploying the application.  
+
+1. Retrieve the latest Fabric App source code from your source control repository or local backup. 
+
+1. From the application source directory, deploy the Fabric App into the recovery workspace by using Rayfin CLI. Run `rayfin up --workspace <new workspace>`. 
+
+1. Recover the app’s child item (Fabric SQL Database) by following its respective recovery procedures.  
    
-   - [Source control and deployment pipelines in API for GraphQL - Microsoft Fabric | Microsoft Learn](/fabric/data-engineering/graphql-source-control-and-deployment) 
-   
+1. Reapply artifact level settings, including roles and access controls as needed.  
+
+1. Validate the application functionality and ensure users have the right permissions.  
+
+
+**Important** 
+
+- Maintain Fabric App source code outside the Fabric region to enable recovery.  
+
+- Application data in the database isn't recovered as part of the Fabric App deployment process and must be restored separately.  You can manually recover a Fabric App after a regional disaster by using the application source code and the Rayfin CLI. 
+
 ## Data Science
 
 This guide walks you through the recovery procedures for the Data Science experience. It covers ML models and experiments.
@@ -470,7 +576,7 @@ Use the following steps to restore Business Events, Fabric Events, and Azure Eve
 
 **For Business Events:**
 
-1. Recreate the business event used by publishers and consumers by following the article [Create Business Events in Fabric Real-Time Hub](../real-time-hub/business-events/create-business-events.md). During the creation of the business event, you create the Event Schema Set resource. The Eventhouse resource is optional depending on the scenario.
+1. Recreate the business event used by publishers and consumers by following the article [Create Business Events in Fabric Real-Time Hub](../real-time-hub/business-events/create-business-events.md). During the creation of the business event, you create the Event Schema Set resource. The Eventhouse resource is optional depending on the scenario. If you backed up your event schema set with Git integration, restore it first by following the [Event schema set section](#event-schema-set), then point the business event at the restored schema set.
 
 1. Recreate any publisher items that generate business events, such as Spark notebooks or User Data Functions, in the new workspace by following the publisher articles: [Use User Data Function as a Business Events Publisher](../real-time-hub/business-events/business-events-user-data-function.md), [Use Activator as a Business Events Publisher](../real-time-hub/business-events/business-events-activator.md), [Use Notebook as a Business Events Publisher](../real-time-hub/business-events/business-events-notebook.md), and [Use Eventstream as a Business Events Publisher](../real-time-hub/business-events/business-events-event-stream-publisher.md).
 
@@ -492,6 +598,35 @@ Use the following steps to restore Business Events, Fabric Events, and Azure Eve
 
 > [!NOTE]
 > Event history for Business Events depends on Eventhouse recovery. Business Events, Fabric Events, and Azure Events are push-based and ephemeral, so no historical event data is recoverable for those types. Only events produced after recovery is complete are available in the new region.
+
+### Event schema set
+
+An event schema set is the Fabric item that holds event type and schema definitions in Real-Time Intelligence. Other capabilities build on it: publishers write events that conform to its schemas, and consumers read against the same definitions.
+
+Event schema sets from the primary region remain unavailable to customers, and they aren't replicated to the secondary region. However, because an event schema set is a durable authored definition rather than an ephemeral subscription, you can back it up ahead of time and restore it rather than reauthoring it by hand.
+
+#### Recommended: back up with Fabric Git integration
+
+To recover an event schema set after a regional disaster, set up [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md) before a disaster occurs, and [synchronize](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) the workspace containing your event schema sets with your Git repository.
+
+1. Configure Fabric Git integration for the workspace that contains your event schema set, and synchronize it with your Git repository.
+
+1. Keep the event schema set committed and synced regularly, particularly after adding event types or publishing new schema versions.
+
+1. During recovery, create a new workspace in the target region (C2.W2), connect it to the same repository, and sync to restore the event schema set. Because the new workspace is empty, Git sync brings the contents from the repository into the workspace.
+
+1. Recreate any publishers and consumers that use the schema set, following the guidance for those item types.
+
+1. Validate that publishers can publish against the restored event types and that consumers receive events as expected.
+
+The synchronized definition includes the event types in the schema set, the schemas, and the schema versions. It doesn't include publisher registrations, consumer subscriptions, or event history. Recover those separately, following the guidance for the item types that use the schema set.
+
+#### Alternative: recreate manually
+
+If you didn't configure Git integration before the disaster, recreate the event schema set in the recovery region by following [Create and manage event schema sets](../real-time-intelligence/schema-sets/create-manage-event-schema-sets.md), then add the event types and schemas that the original schema set contained by following [Create and manage event schemas in schema sets](../real-time-intelligence/schema-sets/create-manage-event-schemas.md).
+
+> [!NOTE]
+> Event schema sets are often shared across several publishers and consumers. Recover the schema set before recreating the items that depend on it, so those items have event types to bind to.
 
 ### Map
 
@@ -519,9 +654,9 @@ During recovery, once the new region and capacity in Fabric are set up, you can 
 > [!NOTE]
 > If the original Ontology item has a lakehouse configured, refer to the [Lakehouse section](#lakehouse) to recover the lakehouse first. After those dependencies are taken care of, connect the newly recovered lakehouse to the newly recovered Ontology item.
 
-### Plan
+### Planning
 
-This article describes the recovery procedures for the Plan experience in IQ. It outlines the steps required to restore key components, including Planning, PowerTable, Intelligence, InfoBridge, and related data assets.
+This article describes the recovery procedures for the planning experience in IQ. It outlines the steps required to restore key components, including planning sheets, PowerTable sheets, intelligence sheets, InfoBridge, and related data assets.
 
 #### Git integration to restore plan items
 
@@ -561,7 +696,7 @@ The following components are restored after recovery:
 * **InfoBridge:** InfoBridge sources, InfoBridge queries, transformation steps, writeback destinations, writeback settings, linked query mappings, query groups, visual properties (blend). These items can't be recovered: file-based sources (CSV, Excel), cross-workload sheets that use file-based sources.
 * **Intelligence:** All charts and matrices.
 
-#### Fabric SQL restore for plan
+#### Fabric SQL restore for planning
 
 Data entered in planning sheets, tables used in PowerTable, and writeback data are stored in SQL databases and must be considered as part of your disaster recovery strategy. To recover SQL databases, see the [SQL database](#sql-database) section.
 
@@ -607,9 +742,16 @@ The recreated database is an independent database.  Data added to the recreated 
 
 ## Platform
 
-Platform refers to the underlying shared services and architecture that apply to all workloads. This section walks you through the recovery procedures for shared experiences. It covers variable libraries.
+Platform refers to the underlying shared services and architecture that apply to all workloads. This section describes recovery procedures for shared Fabric capabilities.
+
+### Workspace monitoring
+
+Workspace monitoring collects logs about activity in the workspace where you enable it. After you recover your workspace as C2.W2, enable workspace monitoring on W2. It starts collecting monitoring data for the recovered workspace.
+
+Monitoring data from the original workspace (C1.W1) isn't carried over, because monitoring reflects the activity of the workspace it runs on.
 
 ### Variable library
+
 Microsoft Fabric Variable libraries enable developers to customize and share item configurations within a workspace, streamlining content lifecycle management. From a disaster recovery standpoint, variable library users must proactively protect against a regional disaster. This can be done through Fabric Git integration, which ensures that after a regional disaster, a user's Variable library remains available.  To recover a variable library, we recommend the following:
 
  - Use Fabric Git integration to synchronize your Variable library with your ADO repo. In case of disaster, you can use the repository to rebuild the Variable library in the new workspace you created. Use the following steps:

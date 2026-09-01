@@ -79,4 +79,4 @@ Keep these rules concise. Long lists of rules can crowd out other instructions, 
 
 - [Add a data source to a Fabric data agent](data-agent-add-datasources.md)
 - [Configure your data agent](data-agent-configurations.md)
-- [Best practices for configuring data agents](data-agent-configuration-best-practices.md)
+- [Best practices for improving data agent query generation](data-agent-configuration-best-practices.md)

@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 
 # Microsoft Fabric extensions for Visual Studio Code
 
-Microsoft Fabric has two extensions for Visual Studio (VS) Code that help you manage your Fabric artifacts in VS Code and develop user data functions:
+Fabric has two extensions for Visual Studio (VS) Code that help you manage your Fabric items in VS Code and develop user data functions:
 
 - [Microsoft Fabric](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric)
 - [Fabric User data functions](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric-functions)
@@ -31,7 +31,7 @@ The supported features are:
 - Support for version control for your items.
 - Open Fabric SQL Databases in [MSSQL extension](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql).
 - Explore and edit item definitions in VS Code for Fabric items.
-- Fabric MCP support: install the Fabric MCP server alongside the Microsoft Fabric extension and GitHub Copilot Chat in VS Code to enable Fabric MCP tools and a tailored chat experience for working with Fabric artifacts directly from the chat interface.
+- Fabric MCP support: install the Fabric MCP server alongside the Microsoft Fabric extension and GitHub Copilot Chat in VS Code to enable Fabric MCP tools and a tailored chat experience for working with Fabric items directly from the chat interface.
 - Browse workspace folders and view their contents. 
 
 ### Sign in
@@ -45,16 +45,16 @@ View all your workspaces in Fabric explorer. You can filter the workspaces you w
 
 ### Switch tenants
 
-You can enable Microsoft Fabric for your tenant  such that everyone in the tenant has access to Microsoft Fabric. You may have access to more than one tenant; you can switch between tenants using the tenant switcher.
+You can enable Fabric for your tenant  such that everyone in the tenant has access to Fabric. You may have access to more than one tenant; you can switch between tenants using the tenant switcher.
 
-1. Sign in to Microsoft Fabric.
+1. Sign in to Fabric.
 1. Select **Switch tenant** and  then choose the tenant you want to navigate to.
 
    :::image type="content" source="media\vs-code\switch-tenant.png" alt-text="Screenshot of selecting switch tenant to change the default tenant." lightbox="media\vs-code\switch-tenant.png":::
 
 ### Create a Fabric item in VS Code
 
-With the Microsoft Fabric Extension, you can now create, delete, and rename any Fabric item directly within VS Code, streamlining your workflow without ever leaving VS Code. You can also view the newly created items in [Fabric portal](https://app.fabric.microsoft.com).
+With the Microsoft Fabric extension, you can now create, delete, and rename any Fabric item directly within VS Code, streamlining your workflow without ever leaving VS Code. You can also view the newly created items in [Fabric portal](https://app.fabric.microsoft.com).
 
 1. Select the workspace of your choice.
 1. Select **+** to create an item in the workspace.   
@@ -75,7 +75,7 @@ When you install the Fabric MCP server alongside the Microsoft Fabric extension 
 - Accessing Fabric documentation
 - Performing create, update, delete, and list operations on tenant items
 
-For example, you can use Fabric tools in VS Code Chat to perform basic OneLake file operations, create a Fabric Lakehouse, upload CSV files to OneLake, and create and run Fabric notebooks—all without leaving VS Code.
+For example, you can use Fabric tools in VS Code Chat to perform basic OneLake file operations, create a lakehouse in Fabric, upload CSV files to OneLake, and create and run Fabric notebooks—all without leaving VS Code.
 
 ## Fabric User data functions
 
@@ -92,7 +92,7 @@ In order to use all the features of this extension, you need to have the followi
 
 ### What is User data functions?
 
-[Microsoft Fabric User data functions](./user-data-functions/create-user-data-functions-portal.md) is a serverless solution that enables you to quickly and easily write custom logic for your data solutions in Microsoft Fabric. User data functions are invoked as HTTP requests to a service-provided endpoint and they operate on your Fabric-native data sources.
+[Fabric User data functions](./user-data-functions/create-user-data-functions-portal.md) is a serverless solution that enables you to quickly and easily write custom logic for your data solutions in Fabric. User data functions are invoked as HTTP requests to a service-provided endpoint and they operate on your Fabric-native data sources.
 
 ### Features
 

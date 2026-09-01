@@ -19,8 +19,8 @@ The following table summarizes which lakehouse items and subitems are tracked in
 | Item / subitem | Git | Deployment pipelines | Release status | Notes |
 |---|---|---|---|---|
 | Lakehouse metadata (display name, description, logical GUID) | ✅ Tracked | ✅ Tracked | GA | Cross-workspace identifier for source control |
-| OneLake shortcuts metadata | ✅ Tracked | ✅ Tracked | GA | Stored in `shortcuts.metadata.json` |
-| External shortcuts: ADLS Gen2, S3, Dataverse, Google Cloud Storage, SharePoint, Azure Blob Storage, OneDrive | ✅ Tracked | ✅ Synced across stages | GA | Definition only. Same targets across all stages unless remapped with Variable Library |
+| Shortcuts in OneLake metadata | ✅ Tracked | ✅ Tracked | GA | Stored in `shortcuts.metadata.json` |
+| External shortcuts: ADLS Gen2, S3, Dataverse, Google Cloud Storage, SharePoint, Azure Blob Storage, OneDrive | ✅ Tracked | ✅ Synced across stages | GA | Definition only. Same targets across all stages unless remapped with variable library |
 | Internal OneLake shortcuts | ✅ Tracked | ✅ Automatically remapped across stages | GA | Definition only. Requires valid targets in workspace |
 | OneLake security data access roles (DAR) metadata | ✅ Tracked | ✅ Tracked | Preview | Stored in `data-access-roles.json` |
 | Tables (Delta and non-Delta) | ❌ Not tracked | ❌ Not overwritten | Not supported | Data always preserved during operations |
@@ -60,14 +60,14 @@ When you connect a workspace to git, the lakehouse metadata is serialized to a J
 - SQL analytics endpoint metadata
 - OneLake shortcuts metadata (see [OneLake shortcuts](#onelake-shortcuts))
 
-Several workspace objects can reference a lakehouse, including [dataflows](../data-factory/create-first-dataflow-gen2.md), [pipelines](../data-factory/create-first-pipeline-with-sample-data.md), [Spark Job Definitions](spark-job-definition.md), [notebooks](how-to-use-notebook.md), and semantic models. These references are maintained across git operations. Renaming a lakehouse in git also renames the corresponding SQL analytics endpoint.
+Several workspace objects can reference a lakehouse, including [dataflows](../data-factory/create-first-dataflow-gen2.md), [pipelines](../data-factory/create-first-pipeline-with-sample-data.md), [Spark job definitions](spark-job-definition.md), [notebooks](how-to-use-notebook.md), and semantic models. These references are maintained across git operations. Renaming a lakehouse in git also renames the corresponding SQL analytics endpoint.
 
 > [!IMPORTANT]
 > Tables (Delta and non-Delta) and folders in the Files section aren't tracked or versioned in git. Data in these items is always preserved during git operations.
 
 ## Deployment pipelines
 
-The lakehouse is supported in Microsoft Fabric [deployment pipelines](../cicd/best-practices-cicd.md), which enable environment segmentation across development, test, and production workspaces.
+The lakehouse is supported in Fabric [deployment pipelines](../cicd/best-practices-cicd.md), which enable environment segmentation across development, test, and production workspaces.
 
 Deployment pipeline capabilities:
 
@@ -93,7 +93,7 @@ Shortcut definitions are synced across deployment pipeline stages:
 
 - Shortcuts with external targets (ADLS Gen2, S3, and others) keep the same targets across all stages after deployment.
 - Shortcuts with internal targets (OneLake shortcuts) in the same workspace are automatically remapped across stages. The target tables, folders, and files aren't created automatically — you must create them in the target workspace after deployment.
-- If a shortcut needs to point to different locations in different stages (for example, an Amazon S3 folder in development and an ADLS Gen2 folder in production), use variables in the shortcut definition. For more information, see [What is a Variable library? (preview)](../cicd/variable-library/variable-library-overview.md). Alternatively, update the shortcut definition manually after deployment, either in the Fabric portal or by using OneLake APIs.
+- If a shortcut needs to point to different locations in different stages (for example, an Amazon S3 folder in development and an ADLS Gen2 folder in production), use variables in the shortcut definition. For more information, see [What is a variable library? (preview)](../cicd/variable-library/variable-library-overview.md). Alternatively, update the shortcut definition manually after deployment, either in the Fabric portal or by using OneLake APIs.
 
 > [!IMPORTANT]
 > A deployment overrides the state of shortcuts in the target workspace. All shortcuts in the lakehouse in the target workspace are updated or deleted based on the source lakehouse, and new shortcuts are created. Always select **Review changes** to understand the changes before deploying.
@@ -122,7 +122,7 @@ When the source workspace has Data Access Roles tracking and opt-in enabled, the
 
 ## Related content
 
-* [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md)
+* [What is lifecycle management in Fabric?](../cicd/cicd-overview.md)
 * [Tutorial: Lifecycle management in Fabric](../cicd/cicd-tutorial.md)
 * [Introduction to Git integration](../cicd/git-integration/intro-to-git-integration.md)
 * [Introduction to deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md)

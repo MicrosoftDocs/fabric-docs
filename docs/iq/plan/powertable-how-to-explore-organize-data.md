@@ -12,8 +12,6 @@ PowerTable provides several options to help you search, organize, analyze, and c
 
 This article explains how to organize and analyze data in PowerTable. You learn how to search and sort records, reorder, show or hide, and pin columns, view column insights and column profiles, and clean up data.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Search records
 
 Use the **Search** box to quickly locate records by entering text, numbers, or phrases.
@@ -51,6 +49,19 @@ The following example shows the *ProductSKU* column sorted in ascending order.
 To remove sorting, select **Remove Sort** from the same menu.
 
 :::image type="content" source="media/powertable-how-to-explore-organize-data/remove-sort.png" alt-text="Screenshot of the Remove Sort option." :::
+
+You can also use the **Sort By** option at the top, to sort records in ascending or descending order.
+
+1. Select **Sort By**.
+1. Select the column to sort by.
+1. Select **ASC** or **DESC** to sort the records in ascending or descending order.
+1. Optionally, select **Add Sort** to sort by additional columns.
+1. Specify the sort order for each additional column.
+
+    :::image type="content" source="media/powertable-how-to-explore-organize-data/sort-by-column.png" alt-text="Screenshot of the Sort by Columns dialog with SubcategoryName set to ASC and ProductSKU set to DESC, with Add Sort and Save highlighted." lightbox="media/powertable-how-to-explore-organize-data/sort-by-column.png":::
+
+1. Drag the reorder handle to change the priority of the sort columns.
+1. Select **Save** to apply the sort.
 
 ## Reorder columns
 

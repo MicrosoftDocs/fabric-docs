@@ -5,7 +5,8 @@ author: msmimart
 ms.author: mimart
 ms.subervice: security
 ms.topic: how-to
-ms.date: 02/20/2026
+ms.date: 08/13/2026
+ai-usage: ai-assisted
 
 #customer intent: As a data engineer, I want to authenticate using workspace identity so that my Fabric items can connect with data sources securely.
 
@@ -76,6 +77,11 @@ To create the pipeline, follow the steps listed in [Module 1 - Create a pipeline
 > [!NOTE]
 > The user creating the shortcut with workspace identity must have an admin, member, or contributor role in the workspace. Users accessing the shortcuts only need permissions on the lakehouse.
 
+> [!IMPORTANT]
+> The identity that *runs* the pipeline must also have an admin, member, or contributor role in the workspace. Fabric checks this permission at run time and issues a workspace identity token only to an identity that holds one of these roles. This requirement applies both to the user who runs the pipeline on demand and to the service principal that runs it on a schedule or through the API.
+>
+> Because of this requirement, a pipeline that succeeds when you run it manually might fail when the same pipeline runs on a schedule under a different identity. If a scheduled run fails to acquire a token but a manual run succeeds, verify that the scheduled identity has one of these workspace roles.
+
 #### Reports and semantic models
 
 You can use a semantic model (import mode) with workspace identity authentication and create models and reports.
@@ -105,13 +111,17 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 ## Considerations and limitations
 
-* You can create workspace identity in any capacity, except for My workspaces.
-  
+* You can create a workspace identity in any workspace except **My workspace**, regardless of the capacity SKU assigned to the workspace.
+
 * Workspace identity can be used for authentication in any capacity that supports OneLake shortcuts, pipelines, semantic models, or Dataflows Gen2.
 
-* Trusted workspace access to firewall-enabled Storage accounts is supported in any F capacity.
+* Using workspace identity as a credential in cloud connections is supported in any capacity.
+
+* Trusted workspace access to firewall-enabled Storage accounts requires the workspace to be assigned to a purchased Microsoft Fabric capacity (F SKU).
 
 * You can create connections with workspace-identity-based authentication in the *Manage Gateways and Connections* experience for a cloud connection.
+
+* The identity that runs a pipeline, whether a user or a service principal, must have an admin, member, or contributor role in the workspace. Fabric checks this permission at run time. Without one of these roles, Fabric can't issue the workspace identity token and the run fails. Granting the workspace identity permissions on the target data source isn't sufficient on its own.
 
 * Workspace-Identity-based authentication is currently not supported for gateway connections. 
 

@@ -12,8 +12,10 @@ ms.date: 03/18/2026
 > Microsoft Fabric Runtime 1.2 reached end of support on March 31, 2026. Although it might continue to run for a limited period beyond that date, it's no longer a supported runtime and no longer receives bug fixes, security updates, or vulnerability remediations. As a result, workloads running on Runtime 1.2 are exposed to increasing operational and security risks over time.
 >
 > In addition, the phased disablement of Runtime 1.2 jobs begins shortly, and there's no guarantee that Runtime 1.2 jobs will continue to run in the future. To ensure continued support, security compliance, and platform reliability, [upgrade your Fabric workspace](/fabric/data-engineering/runtime) and environments to [Runtime 1.3 (Apache Spark 3.5 and Delta Lake 3.2)](/fabric/data-engineering/runtime-1-3) as soon as possible to avoid disruption to your business.
+>
+> **Note:** Starter Pool isn't supported or available with a deprecated runtime. When you use Runtime 1.2, it uses an on-demand pool and your session startup might take a couple of minutes.
 
-The Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of data engineering and data science experiences. This document covers the Runtime 1.2 components and versions.
+The Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of data engineering and data science experiences. This document covers the Runtime 1.2 components and versions.
 
 The major components of Runtime 1.2 include:
 
@@ -26,14 +28,14 @@ The major components of Runtime 1.2 include:
 - R: 4.2.2
 
 > [!TIP]
-> Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 1.3](./runtime-1-3.md).
+> Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 2.0](./runtime-2-0.md).
 
 :::image type="content" source="media\workspace-admin-settings\runtime-version-1-2.png" alt-text="Screenshot showing where to select runtime version." lightbox="media/workspace-admin-settings/runtime-version-1-2.png":::
 
-Microsoft Fabric Runtime 1.2 comes with a collection of default level packages, including a full Anaconda installation and commonly used libraries for Java/Scala, Python, and R. These libraries are automatically included when using notebooks or jobs in the Microsoft Fabric platform. Refer to the documentation for a complete list of libraries. Microsoft Fabric periodically rolls out maintenance updates for Runtime 1.2, providing bug fixes, performance enhancements, and security patches. *Staying up to date ensures optimal performance and reliability for your data processing tasks.*
+Fabric Runtime 1.2 comes with a collection of default level packages, including a full Anaconda installation and commonly used libraries for Java/Scala, Python, and R. These libraries are automatically included when using notebooks or jobs in the Fabric platform. Refer to the documentation for a complete list of libraries. Fabric periodically rolls out maintenance updates for Runtime 1.2, providing bug fixes, performance enhancements, and security patches. *Staying up to date ensures optimal performance and reliability for your data processing tasks.*
 
 ## New features and improvements of Spark Release 3.4.1
-Apache Spark 3.4.0 is the fifth release in the 3.x line. This release, driven by the open-source community, resolved over 2,600 Jira tickets. It introduces a Python client for Spark Connect, enhances Structured Streaming with async progress tracking and Python stateful processing. It expands Pandas API coverage with NumPy input support, simplifies migration from traditional data warehouses through ANSI compliance and new built-in functions. It also improves development productivity and debuggability with memory profiling. Additionally, Runtime 1.2 is based on Apache Spark 3.4.1, a maintenance release focused on stability fixes.
+Apache Spark 3.4.0 is the fifth release in the 3.x line. This release, driven by the open-source community, resolved over 2,600 Jira tickets. It introduces a Python client for Spark Connect, enhances Structured Streaming with async progress tracking and Python stateful processing. It expands Pandas API coverage with NumPy input support, simplifies migration from traditional warehouses through ANSI compliance and new built-in functions. It also improves development productivity and debuggability with memory profiling. Additionally, Runtime 1.2 is based on Apache Spark 3.4.1, a maintenance release focused on stability fixes.
 
 ### Key highlights
 

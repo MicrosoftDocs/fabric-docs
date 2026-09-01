@@ -12,8 +12,6 @@ Formula columns are calculated columns that you create from your data to derive 
 
 Common use cases for formula columns include calculating profit margins, tracking performance metrics, creating planning and forecasting calculations, generating status indicators, and building custom KPIs from existing data.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 ## Insert the formula column
 
 1. To insert formula columns, select **PowerTable** > **Insert Column** > **Formula Column**.
@@ -47,6 +45,20 @@ Common use cases for formula columns include calculating profit margins, trackin
 The formula column is added to the table.
 
 :::image type="content" source="../media/powertable-how-to-insert-columns/how-to-insert-formula-columns/formula-column-added.png" alt-text="Screenshot of PowerTable with new Profit formula column added with currency in US dollars." lightbox="../media/powertable-how-to-insert-columns/how-to-insert-formula-columns/formula-column-added.png":::
+
+## FAQ
+
+### Why can't I paste the formula?
+
+Pasting a formula isn't supported. PowerTable resolves column references as you type, and pasted text doesn't preserve those references.
+
+Type the formula manually, and use **Ctrl+Space** to insert each column reference instead of typing the bracketed column name as plain text.
+
+### Does the formula column get written to the database?
+
+The formula column is written to the database only if you select **Create a database column** in the **Add Formula Column** dialog.
+
+If you don't create a database column, the formula column still persists in the PowerTable sheet. When you reopen the sheet, the formula column remains available, and its values are recalculated based on any changes to the underlying data.
 
 ## Related content
 

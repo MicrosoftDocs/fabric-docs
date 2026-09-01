@@ -1,28 +1,28 @@
 ---
-title: Autoscale Billing for Spark in Microsoft Fabric
-description: Learn about the Autoscale Billing model for Apache Spark in Microsoft Fabric and how it enables flexible, pay-as-you-go compute for Spark workloads.
+title: On-demand billing for Apache Spark in Microsoft Fabric
+description: Learn about the On-demand Billing model for Apache Spark in Microsoft Fabric and how it enables flexible, pay-as-you-go compute for Spark workloads.
 ms.reviewer: saravi
 ms.topic: concept-article
 ms.date: 03/05/2026
 ai-usage: ai-assisted
 ---
 
-# Autoscale Billing for Spark in Microsoft Fabric
+# On-demand billing for Spark in Microsoft Fabric
 
-Autoscale Billing for Spark is a pay-as-you-go billing model for Apache Spark workloads in Microsoft Fabric. When enabled, Spark jobs no longer consume compute from your Fabric capacity. Instead, jobs use dedicated serverless resources that are billed independently.
+On-demand billing for Spark is a pay-as-you-go billing model for Apache Spark workloads in Microsoft Fabric. When you enable it, Spark jobs no longer consume compute from your Fabric capacity. Instead, jobs use dedicated serverless resources that you bill independently.
 
 This model complements the standard capacity model so you can choose the best option per workload.
 
-## Choose between autoscale billing and capacity model
+## Choose between on-demand billing and capacity model
 
-| Feature | Capacity model | Autoscale Billing for Spark |
+| Feature | Capacity model | On-demand billing for Spark |
 |---|---|---|
 | **Billing** | Fixed cost per capacity tier | Pay-as-you-go for Spark jobs |
 | **Scaling** | Capacity shared across workloads | Spark scales independently |
 | **Resource contention** | Possible between workloads | Dedicated compute limits for Spark |
 | **Best use case** | Predictable workloads | Dynamic or bursty Spark jobs |
 
-You can combine both models to balance cost and performance. For example, run stable recurring workloads on capacity and move bursty or ad hoc Spark workloads to autoscale billing.
+You can combine both models to balance cost and performance. For example, run stable recurring workloads on capacity and move bursty or ad hoc Spark workloads to on-demand billing.
 
 ## Key benefits
 
@@ -30,25 +30,25 @@ You can combine both models to balance cost and performance. For example, run st
 - **Independent scaling**: Spark workloads run without affecting other capacity-based operations.
 - **Enterprise-ready**: Integrates with Azure Quota Management for scaling flexibility.
 
-## How autoscale billing works
+## How on-demand billing works
 
-When autoscale billing is enabled:
+When you enable on-demand billing:
 
 - Spark jobs are offloaded from Fabric capacity and don't consume CU from that capacity.
 - You set a maximum CU limit for Spark workloads (a quota-like limit).
 - Billing remains based on Spark usage rate (`0.5 CU hour`) and applies only to active job compute.
 - When the CU limit is reached, interactive jobs are throttled and batch jobs are queued.
-- Spark usage and cost are shown separately in the **Fabric Capacity Metrics app** and **Azure Cost Analysis**.
+- Spark usage and cost are shown separately in the **Microsoft Fabric Capacity Metrics app** and **Azure Cost Analysis**.
 
 > [!IMPORTANT]
-> Autoscale billing is **opt-in per capacity** and **does not burst from or fall back to** Fabric capacity. It is a separate serverless pay-as-you-go model.
+> On-demand billing is **opt-in per capacity** and **does not burst from or fall back to** Fabric capacity. It's a separate serverless pay-as-you-go model.
 
 ## Job concurrency and queuing behavior
 
-When autoscale billing is enabled, Spark concurrency is governed by the **maximum Capacity Unit (CU) limit** configured by the Fabric capacity admin. Unlike standard capacity, autoscale billing doesn't use bursting or smoothing.
+When you enable on-demand billing, the **maximum Capacity Unit (CU) limit** that the Fabric capacity admin configures governs Spark concurrency. Unlike standard capacity, on-demand billing doesn't use bursting or smoothing.
 
 - **Interactive Spark jobs** (for example Lakehouse operations, table preview, Load to Table, or interactive notebook queries) are **throttled** when available CUs are fully used.
-- **Background Spark jobs** (triggered by pipelines, scheduler, API executions, Spark Job Definitions, or table maintenance) are **queued**.
+- **Background Spark jobs** (triggered by pipelines, scheduler, API executions, Spark job definitions, or table maintenance) are **queued**.
 
 The queue size is tied to the CU limit.
 
@@ -74,4 +74,4 @@ After approval, the updated CU limit is applied to your Fabric capacity.
 
 ## Related content
 
-- [Configure Autoscale Billing for Spark](configure-autoscale-billing.md)
+- [Configure On-demand Billing for Spark](configure-autoscale-billing.md)

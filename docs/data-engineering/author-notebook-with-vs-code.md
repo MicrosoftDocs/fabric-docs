@@ -38,7 +38,7 @@ The notebook tree node lists all of the notebook items in the current workspace.
 
 1. In VS Code Explorer, hover over the notebook toolbar. The **Create Notebook** option appears.
 
-   :::image type="content" source="media\vs-code\create-notebook.png" alt-text="Screenshot of the Notebook list in VS Code, showing where to select the create notebook option." lightbox="media\vs-code\create-notebook.png":::
+   :::image type="content" source="media\vs-code\create-notebook.png" alt-text="Screenshot of the notebook list in VS Code, showing where to select the create notebook option." lightbox="media\vs-code\create-notebook.png":::
 
 1. Select **Create Notebook** and enter a name and description. A new notebook is created in the remote workspace and appears in your notebook list in the default state.
 
@@ -125,4 +125,4 @@ Following are the languages supported:
 ## Related content
 
 - [Create and manage Apache Spark job definitions in Visual Studio Code](author-sjd-with-vs-code.md)
-- [Explore Microsoft Fabric lakehouses in Visual Studio Code](explore-lakehouse-with-vs-code.md)
+- [Explore Fabric lakehouses in Visual Studio Code](explore-lakehouse-with-vs-code.md)

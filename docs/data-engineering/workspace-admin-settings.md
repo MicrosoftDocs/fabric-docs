@@ -3,14 +3,15 @@ title: Workspace administration settings in Microsoft Fabric
 description: Learn about the workspace administration settings for Data Engineering and Science experiences in Fabric.
 ms.reviewer: saravi
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 08/10/2026
+ai-usage: ai-assisted
 ---
 
 # Data Engineering workspace administration settings in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-When you create a workspace in Microsoft Fabric, a [starter pool](spark-compute.md#starter-pools) that is associated with that workspace is automatically created. With the simplified setup in Microsoft Fabric, there's no need to choose the node or machine sizes, as these options are handled for you behind the scenes. This configuration provides a faster (5-10 seconds) Apache Spark session start experience for users to get started and run your Apache Spark jobs in many common scenarios without having to worry about setting up the compute. For advanced scenarios with specific compute requirements, users can create a custom Apache Spark pool and size the nodes based on their performance needs.
+When you create a workspace in Fabric, a [starter pool](spark-compute.md#starter-pools) that is associated with that workspace is automatically created. With the simplified setup in Fabric, there's no need to choose the node or machine sizes, as these options are handled for you behind the scenes. This configuration provides a faster (5-10 seconds) Apache Spark session start experience for users to get started and run your Apache Spark jobs in many common scenarios without having to worry about setting up the compute. For advanced scenarios with specific compute requirements, users can create a custom Apache Spark pool and size the nodes based on their performance needs.
 
 To make changes to the Apache Spark settings in a workspace, you should have the admin role for that workspace. To learn more, see [Roles in workspaces](../fundamentals/roles-workspaces.md).
 
@@ -18,7 +19,7 @@ To manage the Spark settings for the pool associated with your workspace:
 
 1. Go to the **Workspace settings** in your workspace and choose the **Data Engineering/Science** option to expand the menu:
 
-   :::image type="content" source="media/workspace-admin-settings/data-engineering-menu-inline.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu." lightbox="media/workspace-admin-settings/data-engineering-menu.png" :::
+   :::image type="content" source="media/workspace-admin-settings/data-engineering-menu-inline.png" alt-text="Screenshot showing where to select Data Engineering in the workspace settings menu." lightbox="media/workspace-admin-settings/data-engineering-menu.png" :::
 
 2. You see the **Spark Compute** option in your left-hand menu:
 
@@ -43,7 +44,7 @@ Admins can create custom Spark pools based on their compute requirements by sele
 
 :::image type="content" source="media/workspace-admin-settings/custom-pool-creation-inline.png" alt-text="Screenshot showing custom pool creation options." lightbox="media/workspace-admin-settings/custom-pool-creation.png":::
 
-Apache Spark for Microsoft Fabric supports single node clusters, which allows users to select a minimum node configuration of 1 in which case the driver and executor run in a single node. These single node clusters offer restorable high-availability during node failures and better job reliability for workloads with smaller compute requirements. You can also enable or disable autoscaling option for your custom Spark pools. When enabled with autoscale, the pool would acquire new nodes within the max node limit specified by the user and retire them after the job execution for better performance.
+Apache Spark for Fabric supports single node clusters, which allows users to select a minimum node configuration of 1 in which case the driver and executor run in a single node. These single node clusters offer restorable high-availability during node failures and better job reliability for workloads with smaller compute requirements. You can also enable or disable autoscaling option for your custom Spark pools. When enabled with autoscale, the pool would acquire new nodes within the max node limit specified by the user and retire them after the job execution for better performance.
 
 You can also select the option to dynamically allocate executors to pool automatically optimal number of executors within the max bound specified based on the data volume for better performance.
 
@@ -81,13 +82,43 @@ Jobs settings allow admins to control the job admission logic for all the Spark 
 
 :::image type="content" source="media/workspace-admin-settings/jobs-settings.png" alt-text="Screenshot showing the jobs settings." lightbox="media/workspace-admin-settings/jobs-settings.png":::
 
-By default all workspaces are enabled with Optimistic Job Admission. Learn more about [Job admission for Spark in Microsoft Fabric](job-admission-management.md).
+By default all workspaces are enabled with Optimistic Job Admission. Learn more about [Job admission for Spark in Fabric](job-admission-management.md).
 
 You can enable the **Reserve maximum cores for active Spark jobs** to turn off Optimistic job admission based approach and reserve max cores for their Spark jobs. 
 
 You can also set the **Spark session timeout** to customize the session expiry for all the notebook interactive sessions. 
 > [!NOTE]
 > The default session expiry is set to 20 minutes for the interactive Spark sessions.
+
+### Set maximum job lifetime
+
+Use the **Set maximum job lifetime** setting as a guardrail to stop runaway Spark jobs from consuming compute beyond a defined time limit. When you turn on this setting and specify a duration, Fabric automatically terminates any eligible Spark job that runs longer than the configured lifetime. Workspace admins can use this control to:
+
+- Stop runaway or stuck jobs before they hold capacity indefinitely and block other workloads in the workspace.
+- Enforce compute compliance and governance policies by capping how long any single job can run.
+
+:::image type="content" source="media/workspace-admin-settings/max-job-lifetime-setting.png" alt-text="Screenshot showing the Set maximum job lifetime setting in the Jobs tab of the workspace settings." lightbox="media/workspace-admin-settings/max-job-lifetime-setting.png":::
+
+To configure it, turn on **Set maximum job lifetime**, enter a value, select a time unit such as **hours**, and then select **Save** to apply the limit to the workspace.
+
+#### Which jobs are affected
+
+The maximum job lifetime applies only to *user-submitted jobs* - jobs that a user explicitly starts and that run with the user's identity. These jobs include, for example:
+
+- Interactive and scheduled notebook runs, including notebook runs orchestrated through a pipeline.
+- Spark job definition runs, whether you submit them directly, on a schedule, or through a pipeline.
+- Livy batch and interactive sessions, including high concurrency sessions.
+
+*System-managed jobs aren't affected* by this setting and continue to run to completion. These jobs are triggered and managed by Fabric on your behalf, such as:
+
+- Lakehouse table maintenance operations, such as optimize and vacuum.
+- Materialized lake view refreshes.
+- Platform operations, such as security and policy enforcement.
+
+This distinction makes sure that background maintenance and platform operations that keep your data and workspace healthy aren't interrupted, while user workloads remain subject to the guardrail.
+
+> [!NOTE]
+> When a job reaches the configured maximum lifetime, Fabric cancels it automatically. Set a limit that allows enough time for your longest-running legitimate user jobs to finish.
 
 ## High concurrency
 

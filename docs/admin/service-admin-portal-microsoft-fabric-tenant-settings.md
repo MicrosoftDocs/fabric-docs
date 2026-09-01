@@ -77,12 +77,6 @@ When this setting is enabled, all Power BI users see the **Set alert** button in
 
 For more information, see [Create Activator alerts from Power BI](../real-time-intelligence/data-activator/activator-get-data-power-bi.md).
 
-## Users can create Plan (preview) items
-
-Users can create a Plan in Fabric and use no-code integrated planning with Power BI semantic models, Fabric SQL, and OneLake.
-
-For more information, see [Planning in Fabric](https://aka.ms/planningdocs).
-
 ## Related content
 
 * [About tenant settings](tenant-settings-index.md)

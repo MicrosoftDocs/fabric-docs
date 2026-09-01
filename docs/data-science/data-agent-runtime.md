@@ -1,11 +1,11 @@
 ---
 title: Fabric data agent runtime
-description: Learn the difference between the standard and preview Fabric data agent runtimes, and how to use preview features on the standard runtime.
+description: Learn the difference between the standard and preview Fabric data agent runtimes.
 ms.author: midesa
 author: midesa
 ms.reviewer: jonburchel
 ms.topic: concept-article
-ms.date: 06/02/2026
+ms.date: 08/21/2026
 ---
 
 # Fabric data agent runtime
@@ -19,7 +19,7 @@ Fabric offers two runtimes:
 - **Standard runtime** — the generally available (GA) runtime, optimized for stable, predictable behavior.
 - **Preview runtime** — a runtime with the latest improvements and modifications to core components (for example, the built-in query-generation tools or the agent's routing logic), before those changes graduate to GA.
 
-The runtime you choose determines how and when changes to the agent's core components reach your agent. It doesn't determine which data sources or preview features you can add. 
+The runtime you choose determines how and when changes to the agent's core components reach your agent. It doesn't determine which data sources you can add. Some preview configurations, such as schema object descriptions, are available only on the preview runtime.
 
 > [!IMPORTANT]
 > Model upgrades to the underlying large language model (LLM) are applied consistently across both the standard and preview runtimes. Runtime selection doesn't control which model the data agent uses.
@@ -49,9 +49,12 @@ The following updates are included in the preview runtime today. This list chang
 
 | Improvement | Feature | Description |
 |---|---|---|
+| Schema context for SQL data sources | [Schema object descriptions (Preview)](data-agent-schema-object-descriptions.md) | Add business context for tables, columns, and other schema elements to help the data agent interpret large or ambiguous SQL schemas and generate more accurate queries. |
 | Better example query following | [Advanced NL2SQL](data-agent-sql-sources.md#advanced-nl2sql-preview) | NL2SQL adheres more closely to the patterns shown in your example query library, instead of adding extra logic or constraints that weren't in the examples. |
 | Filter value substitution | [Advanced NL2SQL](data-agent-sql-sources.md#advanced-nl2sql-preview) | NL2SQL reasons through implied filter values and substitutes the correct ones, including when multiple categorical or boolean filters are implied rather than explicitly stated. |
 | Ambiguity handling | [Advanced NL2SQL](data-agent-sql-sources.md#advanced-nl2sql-preview) | NL2SQL detects ambiguous questions and asks a clarifying question before generating SQL, instead of committing to an assumption that may produce the wrong answer. |
+| More accurate complex question handling | [Advanced DAX generation](semantic-model-best-practices.md#advanced-dax-generation-preview) | DAX generation reasons across multiple steps, inspects results, resolves ambiguity, and refines its approach to answer complex questions more accurately. |
+| More reliable filter generation | [Advanced DAX generation](semantic-model-best-practices.md#advanced-dax-generation-preview) | DAX generation searches values within semantic model columns to identify the correct filter values and generate more reliable queries. |
 
 You can also switch a data agent to the preview runtime programmatically by using the Fabric data agent Python SDK:
 

@@ -3,7 +3,7 @@ title: Custom live pools for Fabric Data Engineering overview
 description: Learn about custom live pools in Microsoft Fabric, which provide fast, predictable Spark session startup for enterprise analytics workloads.
 ms.reviewer: saravi
 ms.topic: concept-article
-ms.date: 03/18/2026
+ms.date: 08/24/2026
 ai-usage: ai-assisted
 ---
 
@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Custom live pools are pre-warmed Spark clusters that provide near-instant session startup for notebook-based workloads in Microsoft Fabric. Instead of waiting for cluster provisioning on every run, custom live pools keep clusters warm during a configured schedule window, enabling 5-second session start times for your interactive and scheduled notebooks.
+Custom live pools are pre-warmed Spark clusters that provide near-instant session startup for notebook-based workloads in Fabric. Instead of waiting for cluster provisioning on every run, custom live pools keep clusters warm during a configured schedule window, enabling 5-second session start times for your interactive and scheduled notebooks.
 
 ## Why use custom live pools
 
@@ -27,8 +27,8 @@ Custom live pools complement the existing starter pool and custom Spark pool opt
 
 | Compute option | Startup time | Schedule-based | Custom libraries | Supported workloads |
 |--|--|--|--|--|
-| Starter pools | 5 to 10 seconds (without any libraries) | No | No | Notebooks, SJD |
-| Custom Spark pools | ~1 min | No | Via environment | Notebooks, SJD |
+| Starter pools | 5 to 10 seconds (without any libraries) | No | No | notebooks, SJD |
+| Custom Spark pools | ~1 min | No | Via environment | notebooks, SJD |
 | **Custom live pools** | **~5 seconds to 10 seconds** (after hydration is complete) | **Yes** | **Via environment** | **Notebooks only (interactive and scheduled)** |
 
 ## Key concepts
@@ -74,13 +74,13 @@ Custom live pools support the following notebook-based Spark session types:
 - **Notebook runs triggered by pipelines**
 
 > [!NOTE]
-> Spark Job Definitions (batch jobs) aren't supported in the current release of custom live pools.
+> Spark job definitions (batch jobs) aren't supported in the current release of custom live pools.
 
 ## Capacity and licensing
 
-Custom live pools require a paid Microsoft Fabric capacity SKU. Fabric Trial capacities aren't currently supported.
+Custom live pools require a paid Fabric capacity SKU. Fabric Trial capacities aren't currently supported.
 
-For information on available capacity SKUs, see [Microsoft Fabric concepts and licenses](/fabric/enterprise/licenses).
+For information on available capacity SKUs, see [Fabric concepts and licenses](/fabric/enterprise/licenses).
 
 ## Access control
 
@@ -88,10 +88,15 @@ Workspace role assignments control access to custom live pool configuration and 
 
 | Role | Permissions |
 |--|--|
-| Viewer or Member | Read-only access to pool status and configuration |
-| Admin | Full configuration, save, and publish permissions |
+| Viewer or Contributor | Read-only access to custom live pool status and configuration |
+| Member | Create, update, save, and publish custom live pool configurations for existing custom Spark pools when a workspace admin enables **Customize compute configuration for items** |
+| Admin | Create and manage custom Spark pools, enable item-level compute customization, and create, update, save, and publish custom live pool configurations |
 
-B2B guest users must be assigned an explicit workspace role to interact with custom live pools.
+Custom live pools use the existing **Customize compute configuration for items** workspace setting. They don't have a separate delegation setting. When a workspace admin turns on the existing setting, Members can manage environment-level compute and custom live pool configurations. The setting doesn't allow Members to create custom Spark pools or change workspace-level Spark settings.
+
+For configuration steps, see [Use the existing compute customization setting](custom-live-pools-configure.md#use-the-existing-compute-customization-setting).
+
+You must assign an explicit workspace role to B2B guest users for them to interact with custom live pools. Assign the **Member** or **Admin** role if they need to create or update a live pool configuration.
 
 ## Limitations
 

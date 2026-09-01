@@ -1,5 +1,5 @@
 ---
-title: Use the Round transformation in Infobridge
+title: Use the Round Transformation in Infobridge
 description: Learn how to use the Round transformation in Infobridge to round numeric measures with the Round, Round Up, and Round Down transformations.
 ms.date: 07/03/2026
 ms.topic: how-to
@@ -17,8 +17,6 @@ The **Round** transformation provides three rounding methods:
 - **Round Down** rounds values by using the **Round Down** method.
 
 You can find the **Round** transformation on the **Transform** tab.
-
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
 ## Round numeric measures
 

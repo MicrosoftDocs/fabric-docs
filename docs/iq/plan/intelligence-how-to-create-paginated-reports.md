@@ -1,5 +1,5 @@
 ---
-title: Create Paginated Reports in Fabric Plan Intelligence Sheets
+title: Create Paginated Reports in Planning in Fabric Intelligence Sheets
 description: Learn how to work with intelligence sheet pagination options for reports. Customize headers, footers, layout, and formatting to create structured, readable, and consistent reports.
 ms.date: 07/21/2026
 ms.topic: how-to
@@ -11,8 +11,6 @@ ms.topic: how-to
 Legacy enterprise reporting often requires precise control over pagination. Page breaks and page controls ensure content stays organized logically, headers and footers appear consistently, and reports retain their intended layout across print and export formats. Paginated reports are ideal for generating invoices, financial statements, operational reports, and other documents that require consistent formatting across pages and export formats.
 
 Use pagination to divide large reports into smaller pages for analysis and navigation. Control how report content appears by configuring the number of rows per page or enabling a single scrollable page. Choose the layout that best fits the report for navigation and presentation.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 The following sections describe how to use pagination options, such as number of rows per page, page breaks, choosing header and footer presets, customizing the header and footer, formatting cells, and entering annotations.
 

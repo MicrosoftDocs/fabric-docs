@@ -9,7 +9,7 @@ ms.date: 06/12/2026
 
 # Spark SQL reference for materialized lake views
 
-This article provides the Spark SQL syntax for creating, listing, renaming, and deleting materialized lake views in Microsoft Fabric. 
+This article provides the Spark SQL syntax for creating, listing, renaming, and deleting materialized lake views in Fabric.
 
 > [!TIP]
 > To create your first materialized lake view, see [Get started with materialized lake views](./get-started-with-materialized-lake-views.md).
@@ -176,6 +176,6 @@ The following limitations apply to the Spark SQL statements for materialized lak
 
 ## Related content
 
-* [What are materialized lake views in Microsoft Fabric?](./overview-materialized-lake-view.md)
+* [What are materialized lake views in Fabric?](./overview-materialized-lake-view.md)
 * [Data quality in materialized lake views](./data-quality.md)
 * [Optimal refresh for materialized lake views](./refresh-materialized-lake-view.md)

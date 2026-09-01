@@ -24,7 +24,7 @@ In this article, you learn how to:
 
 ## Assess your Synapse Spark footprint
 
-Azure Synapse Analytics encompasses multiple workload types. This guide focuses on migrating Spark pools, notebooks, Spark job definitions, lake databases, and Hive Metastore metadata to Microsoft Fabric. For dedicated SQL pool, pipeline, Data Explorer, and security migration guidance, refer to the companion guides.
+Azure Synapse Analytics encompasses multiple workload types. This guide focuses on migrating Spark pools, notebooks, Spark job definitions, lake databases, and Hive Metastore metadata to Fabric. For dedicated SQL pool, pipeline, Data Explorer, and security migration guidance, refer to the companion guides.
 
 | **Synapse Workload** | **Fabric Destination** | **Migration Tool/Path** |
 |----|----|----|
@@ -65,7 +65,7 @@ Use lift-and-shift when:
 
 ### Phased modernization
 
-Migrate workloads incrementally by priority, re-architecting as you go. Start with the highest-value or lowest-risk workloads first. As you migrate each batch, consolidate Spark pools into fewer Environments, adopt Lakehouse best practices (Delta-first, V-Order for BI consumers), enable NEE, and redesign for Direct Lake.
+Migrate workloads incrementally by priority, re-architecting as you go. Start with the highest-value or lowest-risk workloads first. As you migrate each batch, consolidate Spark pools into fewer Environments, adopt lakehouse best practices (Delta-first, V-order for BI consumers), enable NEE, and redesign for Direct Lake.
 
 Use phased modernization when:
 
@@ -105,7 +105,7 @@ To reduce re-migration overhead, establish a change freeze on the Synapse side o
 Synapse-to-Fabric migration is a copy operation — it doesn't modify or delete your source Synapse workspace. Your original Spark pools, notebooks, and data remain intact throughout the process. This makes rollback straightforward:
 
 - If migration results are unsatisfactory, continue using your existing Synapse workspace. No changes need to be reverted.
-- Delete the migrated Fabric artifacts (notebooks, environments, Spark job definitions) and retry after addressing issues.
+- Delete the migrated Fabric items (notebooks, environments, Spark job definitions) and retry after addressing issues.
 - OneLake shortcuts point to your existing ADLS Gen2 storage — removing shortcuts doesn't affect the underlying data.
 - Don't decommission your Synapse workspace until all migrated workloads are validated in Fabric and downstream consumers are rerouted.
 
@@ -120,7 +120,7 @@ For the full comparison, see [Compare Fabric and Azure Synapse Spark: Key Differ
 
 ### Compute and architecture
 
-| **Capability** | **Azure Synapse** | **Microsoft Fabric** |
+| **Capability** | **Azure Synapse** | **Fabric** |
 |----|----|----|
 | **Deployment model** | PaaS (configure and manage resources) | SaaS (capacity-based, no infrastructure management) |
 | **Compute model** | Spark pools (node-based); requires minimum 3 nodes | Capacity Units (CU) shared across all workloads; Spark pools as config templates; single-node execution supported; Autoscale Billing for Spark (pay-per-use, similar to Synapse model) |
@@ -140,7 +140,7 @@ For the full comparison, see [Compare Fabric and Azure Synapse Spark: Key Differ
 | **GPU support** | GPU-accelerated pools available | Not supported |
 | **High concurrency** | Not supported | Supported: multiple notebooks share one Spark session |
 | **Library management** | Pool-level and workspace-level libraries; manual upload of wheels, JARs, tar.gz | Environment-based library management: public feeds (PyPI/Conda) + custom uploads (wheels, JARs). To replicate Synapse workspace-level libraries, create an Environment with the required libraries and set it as the workspace default. All notebooks and SJDs in the workspace inherit it automatically. |
-| **V-Order** | Not available | Write-time Parquet optimization; 40–60% improvement for Power BI Direct Lake and ~10% for SQL analytics endpoint; no Spark read benefit; 15–33% write overhead |
+| **V-order** | Not available | Write-time Parquet optimization; 40–60% improvement for Power BI Direct Lake and ~10% for SQL analytics endpoint; no Spark read benefit; 15–33% write overhead |
 | **Optimize Write** | Disabled by default | Enabled by default |
 | **Default table format** | Parquet (Delta optional) | Delta Lake (default and required for Lakehouse tables) |
 | **Hive Metastore** | Built-in HMS; external HMS via Azure SQL DB or MySQL (deprecated after Spark 3.4) | Fabric Lakehouse catalog; HMS migration via export/import scripts |

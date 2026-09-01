@@ -1,6 +1,6 @@
 ---
-title: Create a Semantic Model Connection in a Plan (Preview)
-description: Learn how to create and share a cloud connection of a semantic model in a plan (preview).
+title: Create a Semantic Model Connection in a Plan
+description: Learn how to create and share a cloud connection of a semantic model in a plan.
 ms.date: 06/17/2026
 ms.topic: how-to
 ---
@@ -8,8 +8,6 @@ ms.topic: how-to
 # Create and share a cloud connection for a semantic model
 
 This article explains how to connect to a semantic model from a plan item. This step is required to work with your semantic model data in a planning sheet.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 To connect a plan to a semantic model, a workspace admin or member must create a shareable cloud connection. Other users can use this connection to access the semantic model. The following steps describe how to create and share the connection.
 
@@ -72,7 +70,8 @@ Planning supports the following connection types.
 
 ## Connect to a Direct Lake semantic model
 
-If you want to connect to a Direct Lake semantic model, follow these steps. An *Admin* or *Member* user can perform these steps.
+If you use a **Direct Lake semantic model**, follow these additional steps to make the Direct Lake semantic model compatible with planning.
+An *Admin* or *Member* user can perform these steps.
 
 1. Next to the name of the semantic model in your Fabric workspace, select **...** > **Settings** > **Gateway and cloud connections**.
 
@@ -101,6 +100,9 @@ If you want to connect to a Direct Lake semantic model, follow these steps. An *
 
     :::image type="content" source="media/planning-how-to-create-semantic-model-connection/apply-direct-lake.png" alt-text="Screenshot of applying the created connection.":::
 
+> [!NOTE]
+> In the following step, when you [create plan](./planning-how-to-get-started.md), you need a **Power BI Semantic Model** connection to connect the plan to a semantic model. Use the connection you created in this section: [Create a semantic model connection](#create-a-semantic-model-connection).
+
 ## Recommended configuration for Continuous Integration and Continuous Deployment (CI/CD)
 
 For an optimal Continuous Integration (CI) and Continuous Deployment (CD), consider the following recommendations:
@@ -114,5 +116,5 @@ For an optimal Continuous Integration (CI) and Continuous Deployment (CD), consi
 ## Related content
 
 * Now that you created your semantic model connection, you can create a planning sheet that uses this connection. See [Create a planning sheet](planning-how-to-get-started.md).
-* [Prerequisites for plan (preview)](overview-prerequisites.md)
-* [Troubleshoot semantic model connections in plan (preview)](planning-troubleshoot-semantic-model.md)
+* [Prerequisites for planning in Fabric](overview-prerequisites.md)
+* [Troubleshoot semantic model connections in planning](planning-troubleshoot-semantic-model.md)

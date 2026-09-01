@@ -10,8 +10,6 @@ ms.topic: how-to
 
 Use the PowerTable sheet to edit and update data directly in the database without writing code. Before saving, preview your changes to verify them. When you save the changes, they sync with the source in real time to keep the data up to date.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 PowerTable provides the following editing capabilities:
 
 * Update records directly from the table or through the form interface.
@@ -38,7 +36,7 @@ To edit data directly in a table:
    * Select **Discard Changes** to revert any unsaved changes.
    * Select **Preview Changes** to review the modified records and compare the old and new values before saving.
 
-The [**Preview Changes**](#preview-changes-before-saving) window displays all pending changes, including added, updated, and deleted records.
+The [Preview Changes](#preview-changes-before-saving) window displays all pending changes, including added, updated, and deleted records.
 
 :::image type="content" source="media/powertable-how-to-bulk-edit-data/preview-changes-opened.png" alt-text="Screenshot of the preview changes window." lightbox="media/powertable-how-to-bulk-edit-data/preview-changes-opened.png":::
 
@@ -233,3 +231,107 @@ To export the change history for the selected rows:
 1. After the link appears, right-click it and save it to your local system.
 
    :::image type="content" source="media/powertable-how-to-bulk-edit-data/file-generated.png" alt-text="Screenshot of the generated file link to save." lightbox="media/powertable-how-to-bulk-edit-data/file-generated.png":::
+
+## FAQ
+
+### Why don't my edits reach the database as soon as I make them?
+
+PowerTable stores your edits as pending changes until you commit them.
+
+When you modify a cell:
+
+* **Save to Database**, **Preview Changes**, and **Discard Changes** become available.
+* **Preview Changes** displays the current number of pending changes.
+
+Your changes aren't written to the Fabric SQL database until you select **Save to Database**. This behavior allows you to batch multiple edits into a single commit.
+
+### What does the **Save Changes** prompt do? What happens if I select **Don't show this again**?
+
+The **Save Changes?** prompt asks you to confirm that you want to commit all pending changes to the database.
+
+If you select **Don't show this again**, PowerTable suppresses the confirmation dialog for future saves. Selecting **Save to Database** then commits the changes without prompting for confirmation.
+
+After a successful commit:
+
+* A **Data saved successfully** notification appears.
+* The page refreshes.
+* **Save to Database**, **Preview Changes**, and **Discard Changes** are disabled until you make additional changes.
+
+### How do I clear a cell instead of replacing its value?
+
+Right-click the cell and select **Clear Contents**.
+
+### Why does the Form Editor behave differently when I select multiple rows?
+
+When you edit a single row, the **Form Editor** displays the existing values so that you can view and update the record.
+
+When you edit multiple rows, the **Form Editor** updates only the fields that you modify. It leaves all other fields in each selected row unchanged. Multiple-row mode doesn't display existing values or allow you to clear a field.
+
+### What does the Offset Value action do? How is it different from setting a value?
+
+The **Offset Value** action changes each row's existing value instead of replacing it with the same value.
+
+You can use it to:
+
+* Increase a value.
+* Decrease a value.
+* Multiply a value.
+* Divide a value.
+
+Because the action modifies each row's current value, the resulting value can differ from one row to another.
+
+### Can I run more than one Bulk Edit action at the same time?
+
+Yes. After you configure an action, select **Add Action** to add another one.
+
+PowerTable applies all configured actions together when you select **Apply**.
+
+### Can I undo part of a batch before committing it?
+
+Yes. Select **Preview Changes** to review pending changes across the following tabs:
+
+* **All**
+* **Added**
+* **Updated**
+* **Deleted**
+
+You can then select one or more rows and choose **Reset** to revert only those pending changes.
+
+### Does 'Find and Replace' search the entire sheet?
+
+No. **Find and Replace** searches only the column that you select in the **Column** dropdown.
+
+If you don't select **Match entire cell contents**, PowerTable replaces the matching text wherever it appears within a cell value instead of replacing only cells whose entire value matches the search text.
+
+### Does 'Replace All' write changes directly to the database?
+
+No. **Replace All** creates pending changes, just like other editing operations.
+
+After you close the **Find and Replace** dialog, select **Save to Database** to commit the changes.
+
+### There are five editing methods. How do I know which one to use?
+
+Choose the editing method based on the type of change that you want to make.
+
+For example:
+
+* Use the **Row Editor** to copy and paste values across rows or fill down values.
+* Use the **Form Editor** to view and edit the existing values of a single record.
+* Use **Bulk Edit** to increase, decrease, multiply, or divide values across multiple selected rows.
+* Use **Find and Replace** to replace values across multiple rows within a selected column.
+
+All five editing methods support **Preview Changes** and **Discard Changes**.
+
+### What is the difference between the Data and Access audit tabs?
+
+The **Data** tab records data changes, including insert, update, and delete operations. It also displays details such as:
+
+* Row ID.
+* Action.
+* Transaction ID.
+* Source type.
+* Modified column.
+* Previous value.
+* New value.
+
+The **Access** tab records changes to row-level and column-level access security settings.

@@ -1,6 +1,6 @@
 ---
 title: Aggregation and Statistical Functions
-description: Learn about aggregation and statistical functions in plan (preview) and how to use them to aggregate values and perform statistical calculations.
+description: Learn about aggregation and statistical functions in planning and how to use them to aggregate values and perform statistical calculations.
 ms.date: 06/03/2026
 ms.topic: reference
 ms.search.form: Aggregation and statistical functions
@@ -11,9 +11,7 @@ ms.search.form: Aggregation and statistical functions
 
 Aggregation and statistical functions let you summarize, evaluate, and analyze numerical data in reports. These functions are commonly used to calculate averages, counts, minimum and maximum values, rankings, and sorted results.
 
-[!INCLUDE [Fabric feature-preview-note](../../../../includes/feature-preview-note.md)]
-
-In plan (preview), aggregation and statistical functions help you create calculations for scenarios such as performance analysis, trend evaluation, ranking comparisons, and statistical reporting.
+In planning, aggregation and statistical functions help you create calculations for scenarios such as performance analysis, trend evaluation, ranking comparisons, and statistical reporting.
 
 ## AVERAGE
 

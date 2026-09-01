@@ -118,7 +118,7 @@ Microsoft Fabric is built as a software as a service (SaaS) platform on Azure's 
 
 #### Azure billing
 
-[Microsoft Fabric capacities](../enterprise/licenses.md#capacity) represent the provisioned compute tiers for Fabric and are managed as Azure resources within your subscription. When you enable Fabric, an [Azure Fabric capacity resource is created](../enterprise/buy-subscription.md), representing the Fabric tenant's analytics capacity. In the Azure portal, you can [pause and resume your capacity](../enterprise/pause-resume.md) and [scale it up and down](../enterprise/scale-capacity.md) as needed. Billing for Fabric is handled through your Azure subscription's billing system. All Fabric usage charges (for compute and storage) accrue under your subscription and appear in Microsoft Cost Management alongside other Azure services.
+[Microsoft Fabric capacities](../enterprise/licenses.md#capacity) represent the provisioned compute tiers for Fabric and are managed as Azure resources within your subscription. When you enable Fabric, you create an [Azure Fabric capacity resource](../enterprise/buy-capacity.md) that represents the Fabric tenant's analytics capacity. In the Azure portal, you can [pause and resume your capacity](../enterprise/pause-resume.md) and [scale it up and down](../enterprise/scale-capacity.md) as needed. Your Azure subscription's billing system handles billing for Fabric. All Fabric usage charges for compute and storage accrue under your subscription and appear in Microsoft Cost Management alongside other Azure services.
 
 #### Networking
 

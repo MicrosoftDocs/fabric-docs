@@ -8,9 +8,7 @@ ms.topic: how-to
 
 # View writeback logs
 
-Plan provides writeback logging as soon as you start a writeback operation. You can review logs from **Logs** under the **Writeback** tab.
-
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+Planning provides writeback logging as soon as you start a writeback operation. You can review logs from **Logs** under the **Writeback** tab.
 
 :::image type="content" source="../media/planning-writeback/planning-how-to-view-logs/writeback-logs-menu.png" alt-text="Screenshot of the logs button highlighted within the Writeback ribbon tab.":::
 

@@ -1,26 +1,24 @@
 ---  
-title: "Fabric Plan (preview) Frequently Asked Questions"
-description: "Frequently asked questions about plan (preview)."
+title: "Planning Frequently Asked Questions"
+description: "Frequently asked questions about planning in Fabric."
 ms.topic: faq
 ms.date: 07/18/2026
 ---
 
-# Plan (preview) general FAQ
+# Planning in Fabric general FAQ
 
-This FAQ addresses common questions and clarifications that arise while working with plan. It covers environment setup and interface navigation.
-
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+This FAQ addresses common questions and clarifications that arise while working with planning. It covers environment setup and interface navigation.
 
 For feature-specific FAQs, see the following articles:
 * [Writeback FAQ](../planning-writeback/writeback-faq.md)
 
-## What permissions do I need to create a plan app?
+## What permissions do I need to create a plan item?
 
 You need Contributor or higher access to the Fabric workspace and at least Build access to the semantic model you want to connect.
 
-## Can I connect one plan app to multiple semantic models or change the semantic model after I create the plan app?
+## Can I connect one plan item to multiple semantic models or change the semantic model after I create the plan item?
 
-No—each plan app connects to one semantic model, and you can't change it after you connect it. If you need to plan against different data sources, you must create separate plan apps.
+No—each plan item connects to one semantic model, and you can't change it after you connect it. If you need to plan against different data sources, you must create separate plan items.
 
 ## What happens if my semantic model isn't visible in the connection dialog?
 
@@ -32,7 +30,7 @@ No, contributors can't create a semantic model connection directly. If you only 
 
 ## What is the Fabric SQL database used for?
 
-The Fabric SQL database is where Fabric Planning stores all plan data—inputs, forecasts, scenarios, and writeback entries. It's separate from the semantic model so that you can write plan data back without affecting the underlying actuals or reporting layer.
+The Fabric SQL database is where planning in Fabric stores all plan data—inputs, forecasts, scenarios, and writeback entries. It's separate from the semantic model so that you can write plan data back without affecting the underlying actuals or reporting layer.
 
 ## What's the difference between the semantic model connection and the SQL database connection?
 
@@ -42,13 +40,13 @@ The semantic model connection pulls your actuals and reporting data in for plann
 
 Yes. In the connection dropdown, select an existing connection instead of choosing **Create a new connection**, as long as it meets the [prerequisites](../overview-prerequisites.md).
 
-## Do I need to create the plan app before or after the SQL database?
+## Do I need to create the plan item before or after the SQL database?
 
 This flow creates the SQL database first, but the two items are independent—creating one doesn't depend on the other. However, the SQL database should exist before you attempt writeback, because you can only write planning data back to a Fabric SQL database, not any other data source.
 
 ## What is the difference between semantic model data and From Sheets data in the Data pane?
 
-Semantic model data is read-only actuals and reference data pulled directly from your Power BI semantic model—historical revenue, dates, and product hierarchies. From Sheets data is data created within Fabric Planning (forecasts, targets, sales plans) and available for use in other sheets.
+Semantic model data is read-only actuals and reference data pulled directly from your Power BI semantic model—historical revenue, dates, and product hierarchies. From Sheets data is data created within planning in Fabric (forecasts, targets, sales plans) and available for use in other sheets.
 
 ## Can I add dimensions from different tables to the same planning sheet?
 
@@ -60,7 +58,7 @@ No—field assignments are a display configuration only. Adding, removing, or re
 
 ## What is the difference between a visual-level filter and a global filter?
 
-A visual-level filter applies only to the current planning sheet and doesn't affect other sheets in the plan app. A global filter applies across all sheets.
+A visual-level filter applies only to the current planning sheet and doesn't affect other sheets in the plan item. A global filter applies across all sheets.
 
 ## How do I navigate a sheet with a large number of rows?
 

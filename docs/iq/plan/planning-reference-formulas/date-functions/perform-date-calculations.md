@@ -1,17 +1,15 @@
 ---
 title: 'Date Functions: Perform Date Calculations'
-description: Learn about date functions in plan that help you calculate date differences, add or subtract intervals, and format dates. Explore ADDDAYS, DATEDIFF, NETWORKDAYS, and more for reporting.
+description: Learn about date functions in planning that help you calculate date differences, add or subtract intervals, and format dates. Explore ADDDAYS, DATEDIFF, NETWORKDAYS, and more for reporting.
 ms.date: 07/18/2026
 ms.topic: reference
 ms.search.form: Date functions
 #customer intent: As a financial analyst, I want to add or subtract days from a date so that I can calculate deadlines and due dates for my reports.
 ---
 
-# Date functions: Perform date calculations
+# Perform date calculations
 
-In this article, you learn about the date functions in plan that you use to perform calculations such as calculating date differences, adding or subtracting intervals, and finding the net workdays for reporting and business scenarios.
-
-[!INCLUDE [Fabric feature-preview-note](../../../../includes/feature-preview-note.md)]
+In this article, you learn about the date functions in planning that you use to perform calculations such as calculating date differences, adding or subtracting intervals, and finding the net workdays for reporting and business scenarios.
 
 ## ADDDAYS
 

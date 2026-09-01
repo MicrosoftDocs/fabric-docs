@@ -1,6 +1,11 @@
 {
     "redirections": [
         {
+            "source_path_from_root": "/docs/onelake/onelake-onecopy-quickstart.md",
+            "redirect_url": "/fabric/onelake/quickstart-consume-data",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/onelake/onelake-shortcuts-rest-api.md",
             "redirect_url": "/rest/api/fabric/core/onelake-shortcuts",
             "redirect_document_id": false
@@ -22,22 +27,22 @@
         },
         {
             "source_path_from_root": "/docs/onelake/security/how-to-common-data-architectures.md",
-            "redirect_url": "/fabric/onelake/security/get-started-onelake-security",
+            "redirect_url": "/fabric/onelake/security/get-started-security",
             "redirect_document_id": false
         },
         {
             "source_path_from_root": "/docs/onelake/security/how-to-secure-data-onelake-for-data-science.md",
-            "redirect_url": "/fabric/onelake/security/get-started-onelake-security",
+            "redirect_url": "/fabric/onelake/security/get-started-security",
             "redirect_document_id": false
         },
         {
             "source_path_from_root": "/docs/onelake/security/how-to-secure-data-onelake-for-data-warehousing.md",
-            "redirect_url": "/fabric/onelake/security/get-started-onelake-security",
+            "redirect_url": "/fabric/onelake/security/get-started-security",
             "redirect_document_id": false
         },
         {
             "source_path_from_root": "/docs/onelake/security/get-started-data-access-roles.md",
-            "redirect_url": "/fabric/onelake/security/get-started-onelake-security",
+            "redirect_url": "/fabric/onelake/security/get-started-security",
             "redirect_document_id": false
         },
         {
@@ -108,6 +113,26 @@
         {
             "source_path_from_root": "/docs/onelake/onelake-shortcuts-adb-quickstart.md",
             "redirect_url": "/fabric/onelake/create-adls-shortcut",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/security/get-started-onelake-security.md",
+            "redirect_url": "/fabric/onelake/security/data-access-control-model",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/security/row-level-security.md",
+            "redirect_url": "/fabric/onelake/security/table-column-row-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/security/column-level-security.md",
+            "redirect_url": "/fabric/onelake/security/table-column-row-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/security/table-folder-security.md",
+            "redirect_url": "/fabric/onelake/security/table-column-row-security",
             "redirect_document_id": false
         }
     ]

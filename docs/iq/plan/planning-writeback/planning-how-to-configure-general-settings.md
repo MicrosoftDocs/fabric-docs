@@ -10,8 +10,6 @@ ms.topic: how-to
 
 In **Writeback Settings**, the **General** tab lets you configure writeback behavior for a planning sheet. These settings control how data is structured, filtered, and written to the destination.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 ## Writeback Type
 
 Use **Writeback Type** to define the table structure.
@@ -55,7 +53,7 @@ The options are:
 
 ## Date Key configuration
 
-Select **Add Date Key** to add a date key column to the writeback table. For high-level planning scenarios such as revenue by year or month, plan appends a representative date to the date dimension. The system uses the first day of the year, month or quarter. For example, when the column dimensions are year–month, plan writes *01-01-2025* for January 2025.
+Select **Add Date Key** to add a date key column to the writeback table. For high-level planning scenarios such as revenue by year or month, planning appends a representative date to the date dimension. The system uses the first day of the year, month or quarter. For example, when the column dimensions are year–month, planning writes *01-01-2025* for January 2025.
 
 > [!NOTE]
 > **Add Date Key** only works when a date hierarchy is used in column dimensions.

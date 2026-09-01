@@ -1,16 +1,14 @@
 ---
 title: Insert Number Columns in a Planning Sheet
 description: Learn how to insert and configure data input number columns in a planning sheet.
-ms.date: 06/16/2026
+ms.date: 08/26/2026
 ms.topic: how-to
 #customer intent: As a user, I want to understand how to insert and configure data input number columns in a planning sheet.
 ---
 
 # Insert number columns in planning sheet
 
-With plan (preview), you can enter and format numeric data in multiple ways. You can either create an empty column and enter numbers, or copy values from another series.
-
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+With planning, you can enter and format numeric data in multiple ways. You can either create an empty column and enter numbers, or copy values from another series.
 
 In this article, you learn how to create and manage numeric data input columns.
 
@@ -31,11 +29,33 @@ To create a number column:
 
 :::image type="content" source="../media/planning-how-to-insert-columns/how-to-insert-number-columns/insert-new-empty-series.png" alt-text="Screenshot of the configuration for inserting a new empty series." :::
 
-Enter a title and configure the required properties to create the column. For more information, see [Configure data input column properties](./how-to-insert-data-input-columns.md#configure-data-input-column-properties).
+Enter a title and configure the required properties to create the column. For more information, see [Configure number column properties](#configure-number-column-properties).
 
 After you configure the properties, select **Create**. The column is inserted into the report.
 
 :::image type="content" source="../media/planning-how-to-insert-columns/how-to-insert-number-columns/created-blank-columns.png" alt-text="Screenshot of inserted empty series." lightbox="../media/planning-how-to-insert-columns/how-to-insert-number-columns/created-blank-columns.png":::
+
+## Configure number column properties
+
+[Configure data input column properties](how-to-insert-data-input-columns.md#configure-data-input-column-properties) covers the fundamental properties of a data input column, such as **Insert as**, **Input type**, **Default value**, **Change formula**, **Allow input**, and **Description**.
+
+The Number input type offers these additional configuration options:
+
+* **Aggregation**: Defines how totals and subtotals are calculated. You can configure aggregation types separately for rows and columns. By default, values are aggregated using Sum, but you can choose other aggregation methods such as Average, Minimum, or Maximum.
+
+    :::image type="content" source="../media/planning-how-to-insert-columns/how-to-insert-number-columns/aggregation.png" alt-text="Screenshot of options available in aggregation.":::
+
+* **Distribute parent value to children**: When enabled, values entered at the parent level are automatically distributed to child rows. This option is useful for budgeting and allocation scenarios.
+
+   > [!NOTE]
+   > The **Distribute parent value to children** feature  is supported only for **Sum**, **Average (Leaf)**, **Minimum**, **Maximum**, **First**, and **Last** aggregation types.
+
+* **Minimum and maximum values**: Define the allowed input range for leaf-level cells. You can specify the limits using a static value or a measure. If a user enters a value outside the configured range, an error message is displayed.
+
+    :::image type="content" source="../media/planning-how-to-insert-columns/how-to-insert-number-columns/min-and-max-values.png" alt-text="Screenshot of options such as distribute parent value to children, and minimum, maximum and default values.":::
+
+> [!NOTE]
+> You can modify existing **Number** input type measures or columns. For more information, see [Modify column properties](how-to-insert-data-input-columns.md#modify-column-properties).
 
 ## Enter values
 
@@ -75,7 +95,7 @@ The column is created with prepopulated values.
 
 :::image type="content" source="../media/planning-how-to-insert-columns/how-to-insert-number-columns/column-created-prepopulated-values.png" alt-text="Screenshot of a column created with prepopulated values." lightbox="../media/planning-how-to-insert-columns/how-to-insert-number-columns/column-created-prepopulated-values.png":::
 
-### Insert column through column gripper
+## Insert column through column gripper
 
 Use the column gripper to copy an existing column and create a new data input column with the same values.
 
@@ -87,24 +107,3 @@ Use the column gripper to copy an existing column and create a new data input co
 1. A side panel opens where you can update the title and configure properties if necessary. Select **Create**.
 
 The new column is created with copied values.
-
-## Modify column properties
-
-To modify the properties of an existing data input column:
-
-1. Go to **Planning** > **Insert Column** > **Manage Measures**.
-1. Select the required option:
-   * **Edit** (pencil icon) to modify the column properties.
-   * **Delete** to remove the column.
-   * **Show/Hide** to control column visibility.
-
-    :::image type="content" source="../media/planning-how-to-insert-columns/how-to-insert-number-columns/manage-measures-options.png" alt-text="Screenshot of manage measures options." lightbox="../media/planning-how-to-insert-columns/how-to-insert-number-columns/manage-measures-options.png":::
-
-Alternatively, you can use the column gripper:
-
-1. Hover over the column or measure header to display the column gripper.
-1. Select the column gripper and select the required action, such as **Edit Measure**, **Delete Measure**, or **Hide Column**.
-
-    :::image type="content" source="../media/planning-how-to-insert-columns/how-to-insert-number-columns/column-gripper-modify-options.png" alt-text="Screenshot of modifying options in column gripper." :::
-
-1. If you select the **Edit** option, a side panel opens where you can update the required properties. After you make the changes, select **Update**.

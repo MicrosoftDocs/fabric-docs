@@ -12,11 +12,10 @@ Export PowerTable sheets to Excel so you can work with, share, and analyze your 
 
 This article explains common use cases for exporting PowerTable data to Excel and the steps to do it.
 
-Exported Excel sheets preserve the data, sheet structure, and lookup labels, making it easy to perform offline analysis, share information, and create custom reports.
+Exported Excel sheets include the PowerTable sheet data, inserted rows, and lookup labels. They preserve the data, sheet structure, and lookup labels, making it easy to perform offline analysis, share information, and create custom reports.
 
-All layouts support export to Excel.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+> [!NOTE]
+> Visual and formula columns that you add in the PowerTable sheet aren't included in the exported file. Also, export doesn't include the added comments and the comments column.
 
 ## Common use cases
 
@@ -25,8 +24,7 @@ All layouts support export to Excel.
 * Perform advanced data analysis by using Excel features such as PivotTables and advanced charts.
 
 > [!NOTE]
->
-> The export includes the table data, inserted rows, and lookup labels. The exported file doesn't include visual columns, formula columns, added comments, or the Comments column.
+> Export to Excel is supported across all layouts except the crosstab layout. 
 
 ## Export to Excel
 

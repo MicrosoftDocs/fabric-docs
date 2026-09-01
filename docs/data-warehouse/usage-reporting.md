@@ -1,58 +1,50 @@
 ---
-title: Data Warehouse Billing and Utilization Reporting
-description: Learn more about utilization reporting for the data warehouse, including capacity and compute usage reporting.
-ms.reviewer: sosivara
-ms.date: 04/06/2025
+title: Warehouse Consumption and Utilization in Microsoft Fabric
+description: Learn how vNode allocation, compute usage, and capacity metrics determine consumption and utilization for Fabric Data Warehouse.
+ms.reviewer: brmyers, sosivara
+ms.date: 08/11/2026
 ms.topic: concept-article
 ms.search.form: Warehouse billing and utilization
 ms.custom: sfi-image-nochange
 ---
 
-# Billing and utilization reporting in Fabric Data Warehouse
+# Warehouse consumption and utilization in Microsoft Fabric
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-The article explains compute usage reporting of the Fabric Data Warehouse, which includes read and write activity against the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and read activity on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
+Fabric Data Warehouse uses a consumption-based model that measures the compute resources allocated to warehouse workloads over time.
 
-When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, visit [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md).
+This article explains how warehouse consumption is measured and how billing is calculated. For more information on monitoring utilization, see [How to: Observe Fabric Data Warehouse utilization trends](how-to-observe-utilization.md).
 
-For more information about monitoring current and historical query activity, see [Monitor in Fabric Data warehouse overview](monitoring-overview.md).
+## How warehouse consumption is measured
 
-## Capacity
+In the capacity-based SaaS model, Fabric Data Warehouse consumption is measured based on the compute resources allocated to support workload activity.
 
-In Fabric, based on the Capacity SKU purchased, you're entitled to a set of Capacity Units (CUs) that are shared across all Fabric workloads. For more information on licenses supported, see [Microsoft Fabric concepts and licenses](../enterprise/licenses.md).
+Fabric allocates compute resources to the workload during read and write activity against a warehouse, and read activity against the [!INCLUDE [fabric-se](includes/fabric-se.md)] of a lakehouse.
 
-Capacity is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different resources consume CUs at different times.
+Fabric Data Warehouse measures consumption using vNodes (virtual nodes). A vNode is a collection of four vCores and serves as the unit of resource allocation and consumption measurement. For information about the CU consumption rate associated with warehouse compute resources, see [Fabric Operations](../enterprise/fabric-operations.md). As workload demand changes, Fabric dynamically allocates and releases vNodes.
 
-<a id="capacity-in-fabric-synapse-data-warehouse"></a>
+Compute resources are allocated using a one-minute baseline allocation window. Consumption is then measured and reported per second based on the number of allocated vNodes. As workload demand increases or decreases, vNode allocations adjust accordingly.
 
-## Capacity in Fabric Data Warehouse
+<a id="billing-rules"></a>
 
-In the capacity-based SaaS model, Fabric Data Warehouse aims to make the most of the purchased capacity and provide visibility into usage.
+## Understand the billing model
 
-CUs consumed by Fabric Data Warehouse include read and write activity against the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and read activity on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
+Conceptually, you can understand warehouse consumption as: **Consumption = Active vNodes × Active Time**.
 
-In simple terms, 1 Fabric capacity unit = 0.5 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] vCores. For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 32 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] vCores.
+This simplified model helps explain consumption behavior. Actual reporting reflects the compute resources allocated over time across warehouse operations.
 
-## Compute usage reporting
-
-The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provides visibility into capacity usage for all Fabric workloads in one place. Administrators can use the app to monitor capacity, the performance of workloads, and their usage compared to purchased capacity.  
-
-Initially, you must be a capacity admin to install the Microsoft Fabric Capacity Metrics app. Once installed, anyone in the organization can have permissions granted or shared to view the app. For more information, see [Install the Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md#install-the-app).
-
-Once you have installed the app, select the **Warehouse** from the **Select item kind:** dropdown list. The **Multi metric ribbon chart** chart and the **Items (14 days)** data table now show only **Warehouse** activity.
-
-:::image type="content" source="media/usage-reporting/fabric-capacity-metrics-app.gif" alt-text="An animated gif of the Fabric Capacity Metrics compute page in the Microsoft Fabric Capacity Metrics app." lightbox="media/usage-reporting/fabric-capacity-metrics-app.gif":::
+Warehouse automatically scales compute resources in response to workload demand. The Fabric capacity SKU determines the [burstable vNode resources available to warehouse workloads](burstable-capacity.md).
 
 ### Warehouse operation categories
 
-You can analyze universal compute capacity usage by workload category, across the tenant. Usage is tracked by total Capacity Unit Seconds (CUs). The table displayed shows aggregated usage across the last 14 days.
+You can analyze universal compute capacity usage by workload category, across the tenant. Fabric tracks usage by total Capacity Unit Seconds (CUs). The table displayed shows aggregated usage across the last 14 days.
 
-Both the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] rollup under **Warehouse** in the Metrics app, as they both use SQL compute. The operation categories seen in this view are:
+Both the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] roll up under **Warehouse** in [the Metrics app](../enterprise/metrics-app.md#install-the-app), as they both use SQL compute. The operation categories you see in this view are:
 
-- **Warehouse Query**: Compute charge for all user-generated and system-generated T-SQL statements within a [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
-- **[!INCLUDE [fabric-se](includes/fabric-se.md)] Query**: Compute charge for all user generated and system generated T-SQL statements within a [!INCLUDE [fabric-se](includes/fabric-se.md)].
-- **OneLake Compute**: Compute charge for all reads and writes for data stored in OneLake.
+- **Warehouse Query**: Compute charge for all user-generated and system-generated T-SQL statements within a warehouse.
+- **SQL Endpoint Query**: Compute charge for all user-generated and system-generated T-SQL statements within a [!INCLUDE [fabric-se](includes/fabric-se.md)].
+- **Warehouse Snapshot Query**: Compute charge for all user generated and system generated T-SQL statements on a warehouse snapshot.
 
 For example:
 
@@ -60,65 +52,105 @@ For example:
 
 ### Timepoint explore graph
 
-This graph in the Microsoft Fabric Capacity Metrics app shows utilization of resources compared to capacity purchased. 100% of utilization represents the full throughput of a capacity SKU and is shared by all Fabric workloads. This is represented by the yellow dotted line. Selecting a specific timepoint in the graph enables the **Explore** button, which opens a detailed drill through page.
+This graph in the Microsoft Fabric Capacity Metrics app shows utilization of resources compared to capacity purchased. 100% of utilization represents the full throughput of a capacity SKU and is shared by all Fabric workloads. This value is represented by the yellow dotted line. Selecting a specific timepoint in the graph enables the **Explore - TimePoint Detail** button, which opens a detailed drill-through page.
 
 :::image type="content" source="media/usage-reporting/throttling-explore.png" alt-text="Screenshot of the explore button in the Microsoft Fabric Capacity Metrics app." lightbox="media/usage-reporting/throttling-explore.png":::
 
-In general, similar to Power BI, [operations are classified either as interactive or background](../enterprise/fabric-operations.md#interactive-and-background-operations), and denoted by color. Most operations in **Warehouse** category are reported as *background* to take advantage of 24-hour smoothing of activity to allow for the most flexible usage patterns. Classifying data warehousing as background reduces the frequency of peaks of CU utilization from triggering [throttling](compute-capacity-smoothing-throttling.md).
+In general, similar to Power BI, [operations are classified either as interactive or background](../enterprise/fabric-operations.md#interactive-and-background-operations), and denoted by color. Most operations in the **Warehouse** category are reported as *background* to take advantage of 24-hour smoothing of activity to allow for the most flexible usage patterns. Classifying data warehousing as background reduces the frequency of peaks of CU utilization from triggering [throttling](compute-capacity-smoothing-throttling.md).
 
-### Timepoint drill through graph
+### Timepoint drill-through graph
 
-:::image type="content" source="media/usage-reporting/drill-through.png" alt-text="Screenshot of the Timepoint drill through graph in the Microsoft Fabric Capacity Metrics app." lightbox="media/usage-reporting/drill-through.png":::
+The timepoint drill-through table in the Microsoft Fabric Capacity Metrics app provides a detailed view of utilization at specific timepoints. It shows the amount of capacity that the given SKU provides for each 30-second period, along with a breakdown of interactive and background operations. The interactive operations table lists the operations that run at that timepoint.
 
-This table in the Microsoft Fabric Capacity Metrics app provides a detailed view of utilization at specific timepoints. The amount of capacity provided by the given SKU per 30-second period is shown along with the breakdown of interactive and background operations. The interactive operations table represents the list of operations that were executed at that timepoint.
-
-The **Background operations** table might appear to display operations that were executed much before the selected timepoint. This is due to background operations undergoing 24-hour [smoothing](compute-capacity-smoothing-throttling.md). For example, the table displays all operations that were executed and still being smoothed at a selected timepoint.
+The **Background operations** table might appear to display operations that ran much earlier than the selected timepoint. This discrepancy occurs because background operations in a shared capacity (F SKU) undergo 24-hour [smoothing](compute-capacity-smoothing-throttling.md). For example, the table displays all operations that ran and are still smoothing at the selected timepoint.
 
 Top use cases for this view include:
 
-- Identification of a user who scheduled or ran an operation: values can be either "User@domain.com", "System", or "Power BI Service".
-    - Examples of user generated statements include running T-SQL queries or activity in the Fabric portal, such as the SQL Query editor or Visual Query editor.
-    - Examples of "System" generated statements include metadata synchronous activities and other system background tasks that are run to enable faster query execution.
-- Identification of an operation status: values can be either "Success", "InProgress", "Cancelled", "Failure", "Invalid", or "Rejected".
-    - The "Cancelled" status are queries cancelled before completing.
-    - The "Rejected" status can occur because of resource limitations.
-- Identification of an operation that consumed many resources: sort the table by **Total CU(s)** descending to find the most expensive queries, then use **Operation Id** to uniquely identify an operation. This is the distributed statement ID, which can be used in other monitoring tools like dynamic management views (DMVs) and Query Insights for end-to-end traceability, such as in `dist_statement_id` in [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql?view=fabric&preserve-view=true), and `distributed_statement_id` in [query insights.exec_requests_history](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true). Examples:
+- **Determine whether consumption is driven by user-initiated or system-initiated workloads.**
+    - Examples of user-initiated workloads include running T-SQL queries or interacting with the Fabric portal, such as using the SQL Query Editor or Visual Query Editor.
+    - Examples of system-initiated workloads include data compaction and other background tasks that run automatically to optimize performance and improve query execution.
+- **Identify the time periods that consumed the most resources.**
+    - Sort the table by Total CU(s) in descending order to identify the most expensive time periods. Capture the corresponding Start and End timestamps.
+    - To identify queries that ran during the selected interval, use T-SQL queries on Query Insights views, specifically [query insights.exec_requests_history](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true). For example, to identify queries that were running during a specific interval:
 
-   The following sample T-SQL query uses an **Operation Id** inside a query on the `sys.dm_exec_requests` dynamic management view.
-   
-   ```sql 
-   SELECT * FROM sys.dm_exec_requests 
-   WHERE dist_statement_id = '00AA00AA-BB11-CC22-DD33-44EE44EE44EE';
-   ```
+    ```sql
+    DECLARE @Start_Time DATETIME2(0) = '2026-08-10 8:00:00'
+            ,@End_Time DATETIME2(0) = '2026-08-10 9:00:00'
 
-   The following T-SQL query uses an **Operation Id** in a query on the `queryinsights.exec_requests_history` view. 
+    SELECT
+            [database_name],
+            sql_pool_name,
+            distributed_statement_id,
+            login_name,
+            allocated_cpu_time_ms / 1000.0 AS vcore_seconds
+    FROM queryinsights.exec_requests_history
+    WHERE start_time < @End_Time
+    AND end_time > @Start_Time;
+    ```
 
-   ```sql
-   SELECT * FROM queryinsights.exec_requests_history 
-   WHERE distributed_statement_id = '00AA00AA-BB11-CC22-DD33-44EE44EE44EE`;
-   ```
-   
-### Billing example
+## Monitor warehouse consumption
 
-Consider the following query:
+You can analyze warehouse consumption by using both the [Fabric Capacity Metrics app](../enterprise/metrics-app.md) and [Query Insights](query-insights.md). These tools answer different but complementary questions.
 
-```sql
-SELECT * FROM Nyctaxi;
-```
+### Fabric Capacity Metrics app
 
-For demonstration purposes, assume the billing metric accumulates 100 CU seconds.
+Use Capacity Metrics to understand:
 
-The cost of this query is *CU seconds times the price per CU*. Assume in this example that the price per CU is $0.18/hour. There are 3600 seconds in an hour. So, the cost of this query would be (100 x 0.18)/3600 = $0.005.
+- Warehouse consumption trends.
+- Periods of high utilization.
+- Consumption across workspaces and items.
+- Consumption relative to other Fabric workloads on the same capacity.
+- Time windows that might require investigation.
 
-The numbers used in this example are for demonstration purposes only and not actual billing metrics.
+Capacity Metrics is the primary tool for determining **when** consumption occurred and **how much** consumption was reported during a given period.
 
-## Considerations
+### Query Insights
+
+Use Query Insights to understand:
+
+- Which queries were active during periods of consumption.
+- Which usage patterns were associated with activity.
+- Query execution characteristics that might explain increased utilization.
+- Potential workload optimization opportunities.
+
+Query Insights helps explain **what was running** while Capacity Metrics helps identify **when consumption occurred**. Together, they provide a more complete picture of warehouse utilization.
+
+### Considerations
 
 Consider the following usage reporting nuances:
 
 - Cross database reporting: When a T-SQL query joins across multiple warehouses (or across a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and a [!INCLUDE [fabric-se](includes/fabric-se.md)]), usage is reported against the originating resource.
 - Queries on system catalog views and dynamic management views are billable queries.
-- **Duration(s)** field reported in Fabric Capacity Metrics App is for informational purposes only. It reflects the statement execution duration. Duration might not include the complete end-to-end duration for rendering results back to the web application like the [SQL Query Editor](sql-query-editor.md) or client applications like [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) and [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
+
+## Investigate unexpected consumption
+
+To investigate a period of unexpected warehouse consumption:
+
+1. Identify the time window in [Capacity Metrics](../enterprise/metrics-app.md).
+2. Review warehouse utilization during that period.
+3. Use T-SQL queries on [Query Insights](query-insights.md) and [warehouse dynamic management views (DMVs)](monitor-using-dmv.md) to evaluate the associated activity.
+4. Determine whether utilization was related to user workloads, concurrency, or system-generated operations.
+5. Identify opportunities to optimize workload patterns or query performance. 
+    - Consider features like [warehouse workload management](workload-management.md) and [data clustering](data-clustering.md). 
+    - Review [Performance guidelines in Fabric Data Warehouse](guidelines-warehouse-performance.md).
+
+## Frequently asked questions
+
+### What is a vNode?
+
+A virtual node (vNode) is the unit of warehouse compute used for resource allocation and consumption measurement.
+
+### Does background activity consume capacity?
+
+Yes. Consumption can include both user-generated activity and system-generated operations such as maintenance and optimization tasks.
+
+### How does concurrency affect consumption?
+
+As concurrent workload demand increases, Fabric might allocate extra vNodes. Increased allocation can result in higher consumption.
+
+### Where can I monitor warehouse consumption?
+
+Use the [Fabric Capacity Metrics app](../enterprise/metrics-app.md) to understand consumption and utilization trends. Use [Query Insights](query-insights.md) and [T-SQL queries on DMVs](monitor-using-dmv.md) to analyze the activity associated with those periods.
 
 ## Next step
 
@@ -128,11 +160,5 @@ Consider the following usage reporting nuances:
 ## Related content
 
 - [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md)
-- [Workload management](workload-management.md)
 - [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)
-- [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
-- [Smoothing and throttling in Fabric Data Warehousing](compute-capacity-smoothing-throttling.md)
 - [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md)
-- [Understand the metrics app compute page](../enterprise/metrics-app-compute-page.md)
-- [Pause and resume in Fabric data warehousing](pause-resume.md)
-- [Monitor Fabric Data warehouse](monitoring-overview.md)

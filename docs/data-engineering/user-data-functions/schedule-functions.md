@@ -1,27 +1,27 @@
 ---
-title: Schedule a User Data Function
-description: Learn how to configure a scheduled trigger for a User Data Function in Microsoft Fabric using the built-in Job Scheduler.
+title: Schedule a user data function
+description: Learn how to configure a scheduled trigger for a user data function in Microsoft Fabric using the built-in job scheduler.
 ms.reviewer: mksuni
 ms.date: 07/07/2026
 ms.topic: how-to
 ---
 
-# Schedule a User Data Function
+# Schedule a user data function
 
-Microsoft Fabric Job Scheduler enables you to run User Data Functions (UDFs) on a recurring schedule without requiring a pipeline, notebook, or external orchestration service. You can configure schedules directly on a User Data Function, specify recurrence patterns, pass function parameters, and monitor executions from the Fabric monitoring experience.
+The job scheduler in Microsoft Fabric enables you to run user data functions (UDFs) on a recurring schedule without requiring a pipeline, notebook, or external orchestration service. You can configure schedules directly on a user data function, specify recurrence patterns, pass function parameters, and monitor executions from the Fabric monitoring experience.
 
 ## Prerequisites
 
 Before creating a schedule, ensure that:
 
-- You have a published User Data Function.
+- You have a published user data function.
 - You have Contributor or higher permissions on the workspace.
 - The function is tested successfully by using manual invocation.
 - You configure any required connections, secrets, or dependencies.
 
 ## Use cases
 
-Schedule User Data Functions to automate recurring business and operational tasks. Common scenarios include:
+Schedule user data functions to automate recurring business and operational tasks. Common scenarios include:
 
 - **Data quality validation** – Run checks on datasets before reporting or downstream processing.
 - **Customer feedback processing** – Analyze new feedback, generate sentiment scores, and store results.
@@ -33,7 +33,7 @@ Schedule User Data Functions to automate recurring business and operational task
 ## Open the scheduler
 
 1. Open your Fabric workspace.
-1. Open the User Data Function item.
+1. Open the user data function item.
 1. Select **Settings**.
 1. Select **Schedule**.
 
@@ -54,7 +54,7 @@ The **Schedule** page enables you to:
 
    | Setting | Description |
    |----------|-------------|
-   | Controller | Variable used to control execution from Variable library |
+   | Controller | Variable used to control execution from variable library |
    | Repeat | Defines the recurrence pattern |
    | Interval | Frequency interval |
    | Start date and time | When the schedule begins |
@@ -64,13 +64,22 @@ The **Schedule** page enables you to:
 
    Select how often the function should run and provide the scheduling details. The scheduler supports recurring executions such as every few minutes, hourly, daily, weekly, or monthly. For example, to run a function every 15 minutes, configure:
 
-1. Provide parameters to function as input. The scheduler can pass parameter values directly to the User Data Function during execution.
+1. Provide parameter for **FunctionName**. This parameter **is required** to define the function that you're calling.
 
+   | Parameter name |Type |Value|
+   |----------|-------------|-------------|
+   | FunctionName | String| name of the functions, for example `hello_fabric`.|
+
+1. Add more parameters for the function inputs. For example, for `hello_fabric(name:str)`, add a parameter `name` of type string. 
+
+   | Parameter name |Type |
+   |----------|-------------|
+   | name | String|
    > [!IMPORTANT]
-   > Parameter names must exactly match the User Data Function signature. Parameter names are case-sensitive.
-
+   > Parameter names must exactly match the user data function signature. Parameter names are case-sensitive.
+   
 1. Save the schedule.
-1. Add more schedules for other functions in your User Data Function item.
+1. Add more schedules for other functions in your user data function item.
 
 ## Run a scheduled function manually
 
@@ -78,7 +87,7 @@ To test a scheduled function immediately, select **Run**. Fabric submits an exec
 
 ## Monitor scheduled executions
 
-You can monitor User Data Function executions from the Fabric monitoring experience.
+You can monitor user data function executions from the Fabric monitoring experience.
 
 1. Open **Monitor Hub**.
 1. Select **Activities**.
@@ -98,6 +107,6 @@ Fabric sends email notifications whenever a scheduled execution fails.
 
 ## Next steps
 
-- Learn about User Data Functions.
-- Learn about Job Scheduler in Microsoft Fabric.
+- Learn about user data functions.
+- Learn about the job scheduler in Fabric.
 - Monitor and troubleshoot Fabric workloads using the Monitor hub.

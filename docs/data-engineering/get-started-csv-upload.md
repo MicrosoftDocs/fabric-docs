@@ -10,7 +10,7 @@ ms.search.form: csv load to delta to pbi report
 
 # CSV file upload to Delta tables for Power BI reporting
 
-This quickstart shows a simple end-to-end flow in Fabric: upload a local CSV file, load it as a Delta table in a lakehouse, and build a report from it.
+This quickstart shows a simple end-to-end flow in Fabric: upload a local CSV file, load it as a Delta table in a lakehouse, and create a report from it.
 
 By the end, you can:
 
@@ -43,7 +43,7 @@ Now place your source CSV file in the lakehouse files area so it can be loaded i
 
 1. Create the `TaxiData` folder under the `Files` section of your lakehouse.
 
-   :::image type="content" source="media\get-started-csv-upload\new-subfolder.png" alt-text="Screenshot showing how to create a new folder in the Files section of Lakehouse Explorer." lightbox="media\get-started-csv-upload\new-subfolder.png":::
+   :::image type="content" source="media\get-started-csv-upload\new-subfolder.png" alt-text="Screenshot showing how to create a new folder in the Files section of Lakehouse explorer." lightbox="media\get-started-csv-upload\new-subfolder.png":::
 
 1. Select the ellipsis (**...**) next to the `TaxiData` folder, and then select **Upload** > **Upload files**.
 
@@ -52,7 +52,7 @@ Now place your source CSV file in the lakehouse files area so it can be loaded i
 1. Once uploaded, select the folder to see its content.
 1. If the file name includes unsupported special characters, rename the file before loading. For current naming requirements, see [Load to Delta Lake tables](load-to-tables.md). In this example, rename the file to `taxi_zone_lookup.csv`.
 
-   :::image type="content" source="media\get-started-csv-upload\rename-file.png" alt-text="Screenshot showing how to rename a file in the Files section of Lakehouse Explorer." lightbox="media\get-started-csv-upload\rename-file.png":::
+   :::image type="content" source="media\get-started-csv-upload\rename-file.png" alt-text="Screenshot showing how to rename a file in the Files section of Lakehouse explorer." lightbox="media\get-started-csv-upload\rename-file.png":::
 
 ## Load the file to a Delta table
 
@@ -61,16 +61,16 @@ In this stage, you convert the uploaded CSV file into a Delta table that can be 
 1. Right-click or use the ellipsis on the CSV file to open the contextual menu. Select **Load to tables**, and then choose **New table**.
 1. In the load to tables dialog, review the suggested table name. Real-time validation applies while you type.
 1. Select **Load** to execute the load.
-1. The table now shows up in the lakehouse explorer, expand the table to see the columns and its types. Select the table to see a preview.
+1. The table now shows up in the Lakehouse explorer, expand the table to see the columns and its types. Select the table to see a preview.
 
 > [!NOTE]
 > If the table already exists, different **load mode** options appear. **Overwrite** drops and recreates the table. **Append** inserts all CSV content as new data. For more details, see [Load to Delta Lake tables](load-to-tables.md).
 
 ## Generate a semantic model and create a Power BI report
 
-With the Delta table ready, create a semantic model and then build a report from that model.
+With the Delta table ready, create a semantic model and then create a report from that model.
 
-1. On the Lakehouse ribbon, create a new semantic model.
+1. On the lakehouse ribbon, create a new semantic model.
 1. Select the table to add to the semantic model, and then confirm your selection.
 1. In semantic model editing, you can define relationships between tables and apply data type normalization and DAX transformations as needed.
 1. Select **New report** on the ribbon.
@@ -79,4 +79,4 @@ With the Delta table ready, create a semantic model and then build a report from
 ## Related content
 
 - [Load to Delta Lake tables](load-to-tables.md)
-- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
+- [Delta Lake in Fabric overview](../fundamentals/delta-lake-overview.md)

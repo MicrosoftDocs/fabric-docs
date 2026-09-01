@@ -325,7 +325,7 @@ For the equivalent eligible types used in file-level statistics, see [File skipp
 | **Optimize write** | Compatible. Produces consolidated files on write that are then clustered during `OPTIMIZE`. |
 | **Auto compaction** | **Do not use with liquid clustering in Runtime 1.3 or earlier.** In those runtimes, every auto compaction trigger rewrites all data in Z-Cubes smaller than 100 GB, causing severe write amplification. In Runtime 2.0+, auto compaction is compatible: incremental clustering ensures only new or unhealthy files are rewritten. Auto compaction handles small-file consolidation; `OPTIMIZE` handles clustering layout. |
 | **Deletion vectors** | Files exceeding the deleted-rows threshold are selected for clustering, independent of their clustering status. |
-| **V-Order** | Compatible. V-Order and liquid clustering operate on different axes (file-internal layout vs. cross-file value ranges). Both can be applied together. |
+| **V-order** | Compatible. V-order and liquid clustering operate on different axes (file-internal layout vs. cross-file value ranges). Both can be applied together. |
 
 ## Best practices
 
@@ -342,5 +342,5 @@ For the equivalent eligible types used in file-level statistics, see [File skipp
 - [Partitioning](delta-lake-partitioning.md)
 - [File skipping](delta-lake-file-skipping.md)
 - [Concurrency control](delta-lake-concurrency-control.md)
-- [V-Order](delta-optimization-and-v-order.md)
+- [V-order](delta-optimization-and-v-order.md)
 - [Apache Spark Runtimes in Fabric](runtime.md)

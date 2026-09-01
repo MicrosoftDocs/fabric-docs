@@ -85,4 +85,4 @@ After publishing is complete, you successfully configured your environment.
 
 ## Related content
 
-- [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md)
+- [Create, configure, and use an environment in Fabric](create-and-use-environment.md)

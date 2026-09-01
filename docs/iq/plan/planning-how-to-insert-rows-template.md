@@ -8,9 +8,7 @@ ms.topic: how-to
 
 # Insert template rows
 
-Plan enables efficient hierarchy handling with template rows, letting you insert custom rows across all levels of a hierarchy at once instead of adding them individually.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+Planning enables efficient hierarchy handling with template rows, letting you insert custom rows across all levels of a hierarchy at once instead of adding them individually.
 
 This article explains how to insert template rows and use them across hierarchy levels.
 
@@ -70,7 +68,7 @@ Template conditions can be configured to control which parent categories and lev
 
 ## Dynamic referencing in template rows
 
-Plan provides a dynamic referencing feature that lets you reference a sibling’s child row while inserting calculated template rows. This lets values be automatically populated based on the corresponding parent category.
+Planning provides a dynamic referencing feature that lets you reference a sibling’s child row while inserting calculated template rows. This lets values be automatically populated based on the corresponding parent category.
 
 ### Create a dynamic reference in template rows
 

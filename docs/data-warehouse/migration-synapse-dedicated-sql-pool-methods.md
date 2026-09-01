@@ -2,7 +2,7 @@
 title: Migration Methods for ​​Azure Synapse Dedicated SQL Pools to Fabric Migration​
 description: This article details the methods of migration of data warehousing in Azure Synapse dedicated SQL pools to Microsoft Fabric.
 ms.reviewer: arturv, johoang
-ms.date: 02/04/2026
+ms.date: 07/30/2026
 ms.topic: concept-article
 ms.custom:
   - fabric-cat
@@ -12,7 +12,7 @@ ms.custom:
 
 **Applies to**: [!INCLUDE [fabric-dw](../data-warehouse/includes/applies-to-version/fabric-dw.md)]
 
-This article details the methods of migration of data warehousing in Azure Synapse Analytics dedicated SQL pools to Microsoft Fabric Warehouse.  
+This article describes methods for migrating data warehousing in Azure Synapse Analytics dedicated SQL pools to Microsoft Fabric Data Warehouse.  
 
 > [!TIP]
 > For more information on strategy and planning your migration, see [Migration​ planning: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-warehouse.md).
@@ -33,16 +33,16 @@ This table summarizes information for data schema (DDL), database code (DML), an
 
 ## Choose a workload for the initial migration
 
-When you're deciding where to start on the Synapse dedicated SQL pool to Fabric Warehouse migration project, choose a workload area where you're able to:
+When deciding where to start on the Synapse dedicated SQL pool to Fabric Data Warehouse migration project, choose a workload area where you can:
 
-- Prove the viability of migrating to Fabric Warehouse by quickly delivering the benefits of the new environment. Start small and simple, prepare for multiple small migrations.
+- Prove the viability of migrating to Fabric Data Warehouse by quickly delivering the benefits of the new environment. Start small and simple, and prepare for multiple small migrations.
 - Allow your in-house technical staff time to gain relevant experience with the processes and tools that they use when they migrate to other areas.
 - Create a template for further migrations that's specific to the source Synapse environment, and the tools and processes in place to help. 
 
 > [!TIP]
 > Create an inventory of objects that need to be migrated, and document the migration process from start to end, so that it can be repeated for other dedicated SQL pools or workloads.
 
-The volume of migrated data in an initial migration should be large enough to demonstrate the capabilities and benefits of the Fabric Warehouse environment, but not too large to quickly demonstrate value. A size in the 1-10 terabyte range is typical.
+The volume of migrated data in an initial migration should be large enough to demonstrate the capabilities and benefits of the Fabric Data Warehouse environment, but not too large to quickly demonstrate value. A size in the 1-10 terabyte range is typical.
 
 ## Migration with Fabric Data Factory
 
@@ -50,23 +50,23 @@ In this section, we discuss the options using Data Factory for the low-code/no-c
 
 Fabric Data Factory can perform the following tasks:
 
-- Convert the schema (DDL) to Fabric Warehouse syntax.
-- Create the schema (DDL) on Fabric Warehouse.
-- Migrate the data to Fabric Warehouse.
+- Convert the schema (DDL) to Fabric Data Warehouse syntax.
+- Create the schema (DDL) on Fabric Data Warehouse.
+- Migrate the data to Fabric Data Warehouse.
 
 ### Option 1. Schema/Data migration - Copy Wizard and ForEach Copy Activity
 
-This method uses Data Factory Copy assistant to connect to the source dedicated SQL pool, convert the dedicated SQL pool DDL syntax to Fabric, and copy data to Fabric Warehouse. You can select one or more target tables (for TPC-DS dataset there are 22 tables). It generates the ForEach to loop through the list of tables selected in the UI and spawn 22 parallel Copy Activity threads.
+This method uses Data Factory Copy assistant to connect to the source dedicated SQL pool, convert the dedicated SQL pool DDL syntax to Fabric, and copy data to Fabric Data Warehouse. You can select one or more target tables (for TPC-DS dataset there are 22 tables). It generates the ForEach to loop through the list of tables selected in the UI and spawn 22 parallel Copy Activity threads.
 
 - 22 SELECT queries (one for each table selected) were generated and executed in the dedicated SQL pool.
 - Make sure you have the appropriate DWU and resource class to allow the queries generated to be executed. For this case, you need a minimum of DWU1000 with `staticrc10` to allow a maximum of 32 queries to handle 22 queries submitted.
-- Data Factory direct copying data from the dedicated SQL pool to Fabric Warehouse requires staging. The ingestion process consisted of two phases. 
+- Data Factory direct copying data from the dedicated SQL pool to Fabric Data Warehouse requires staging. The ingestion process consists of two phases. 
     - The first phase consists of extracting the data from the dedicated SQL pool into ADLS and is referred as staging.  
-    - The second phase consists of ingesting the data from staging into Fabric Warehouse. Most of the data ingestion timing is in the staging phase. In summary, staging has a huge impact on ingestion performance.  
+    - The second phase ingests the data from staging into Fabric Data Warehouse. Most of the data ingestion timing is in the staging phase. In summary, staging has a huge impact on ingestion performance.  
 
 #### Recommended use
 
-Using the Copy Wizard to generate a ForEach provides simple UI to convert DDL and ingest the selected tables from the dedicated SQL pool to Fabric Warehouse in one step. 
+Using the Copy Wizard to generate a ForEach provides a simple UI to convert DDL and ingest the selected tables from the dedicated SQL pool to Fabric Data Warehouse in one step. 
 
 However, it isn't optimal with the overall throughput. The requirement to use staging, the need to parallelize read and write for the "Source to Stage" step are the major factors for the performance latency. It's recommended to use this option for dimension tables only.
 
@@ -96,7 +96,7 @@ While using partition can increase the throughput with the staging phase, there 
 
 For fact tables, we recommended using Data Factory with partitioning option to increase throughput. 
 
-However, the increased parallelized reads require dedicated SQL pool to scale to higher DWU to allow the extract queries to be executed. Leveraging partitioning, the rate is improved ten times over a no partition option. You could increase the DWU to get additional throughput via compute resources, but the dedicated SQL pool has a maximum 128 active queries allow.
+However, the increased parallelized reads require dedicated SQL pool to scale to higher DWU to allow the extract queries to execute. By leveraging partitioning, the rate improves ten times over a no partition option. You can increase the DWU to get additional throughput through compute resources, but the dedicated SQL pool has a maximum 128 active queries allowed.
 
 For more information on Synapse DWU to Fabric mapping, see [Blog: Mapping ​​Azure Synapse dedicated SQL pools to Fabric Data Warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/).
 
@@ -105,7 +105,7 @@ For more information on Synapse DWU to Fabric mapping, see [Blog: Mapping ​​
 The two previous options are great data migration options for *smaller* databases. But if you require higher throughput, we recommend an alternative option:
 
 1. Extract the data from the dedicated SQL pool to ADLS, therefore mitigating the stage performance overhead.
-1. Use either Data Factory or the COPY command to ingest the data into Fabric Warehouse.
+1. Use either Data Factory or the COPY command to ingest the data into your warehouse.
 
 #### Recommended use
 
@@ -115,7 +115,7 @@ The following code sample covers schema (DDL) migration with Data Factory.
 
 #### Code example: Schema (DDL) migration with Data Factory
 
-You can use Fabric Pipelines to easily migrate over your DDL (schemas) for table objects from any source Azure SQL Database or dedicated SQL pool. This pipeline migrates over the schema (DDL) for the source dedicated SQL pool tables to Fabric Warehouse.
+You can use Fabric Pipelines to easily migrate your DDL (schemas) for table objects from any source Azure SQL Database or dedicated SQL pool. This pipeline migrates the schema (DDL) for the source dedicated SQL pool tables to Fabric Data Warehouse.
 
 :::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-schema-migration.png" alt-text="Screenshot from Fabric Data Factory showing a Lookup object leading to a For Each Object. Inside the For Each Object, there are Activities to Migrate DDL.":::
 
@@ -136,9 +136,9 @@ In the **Settings** tab:
 - Set **Data store type** to **External**.
 - **Connection** is your Azure Synapse dedicated SQL pool. **Connection type** is **Azure Synapse Analytics**.
 - **Use query** is set to **Query**.
-- The *Query* field needs to be built using a dynamic expression, allowing the parameter SchemaName to be used in a query that returns a list of target source tables. Select **Query** then select **Add dynamic content**.
+- The *Query* field needs to be built using a dynamic expression, allowing the parameter `SchemaName` to be used in a query that returns a list of target source tables. Select **Query** then select **Add dynamic content**.
 
-    This expression within the LookUp Activity generates a SQL statement to query the system views to retrieve a list of schemas and tables. References the SchemaName parameter to allow for filtering on SQL schemas. The Output of this is an Array of SQL schema and tables that will be used as input into the ForEach Activity.
+    This expression within the LookUp Activity generates a SQL statement to query the system views to retrieve a list of schemas and tables. It references the `SchemaName` parameter to allow for filtering on SQL schemas. The Output of this is an Array of SQL schema and tables that will be used as input into the ForEach Activity.
 
     Use the following code to return a list of all user tables with their schema name.
 
@@ -168,7 +168,7 @@ For the ForEach Loop, configure the following options in the **Settings** tab:
  
 ##### Pipeline design: Copy Activity inside the ForEach Loop
 
-Inside the ForEach Activity, add a Copy Activity. This method uses the Dynamic Expression Language within pipelines to build a `SELECT TOP 0 * FROM <TABLE>` to migrate only the schema without data into a Fabric Warehouse.
+Inside the ForEach Activity, add a Copy Activity. This method uses the Dynamic Expression Language within pipelines to build a `SELECT TOP 0 * FROM <TABLE>` to migrate only the schema without data into a warehouse.
 
 In the **Source** tab:
 
@@ -182,9 +182,9 @@ In the **Source** tab:
 In the **Destination** tab:
 
 - Set **Data store type** to **Workspace**.
-- The **Workspace data store type** is **Data Warehouse** and the **Data Warehouse** is set to the Fabric Warehouse.
-- The destination **Table**'s schema and table name are defined using dynamic content. 
-    - Schema refers to the current iteration's field, SchemaName with the snippet: `@item().SchemaName`
+- The **Workspace data store type** is **Data Warehouse** and the **Data Warehouse** is set to the warehouse.
+- The destination **Table**'s schema and table name are defined using dynamic content.
+    - Schema refers to the current iteration's field, `SchemaName` with the snippet: `@item().SchemaName`
     - Table is referencing TableName with the snippet: `@item().TableName`
 
 :::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-foreach-copy-activity-destination.png" alt-text="Screenshot from Data Factory showing the Destination tab of the Copy Activity inside each ForEach Loop." lightbox="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-foreach-copy-activity-destination.png":::
@@ -203,8 +203,8 @@ You can get the [code samples at microsoft/fabric-migration on GitHub.com](https
 
 What Migration Stored Procedures can do:
 
-- Convert the schema (DDL) to Fabric Warehouse syntax.
-- Create the schema (DDL) on Fabric Warehouse.
+- Convert the schema (DDL) to Fabric Data Warehouse syntax.
+- Create the schema (DDL) on Fabric Data Warehouse.
 - Extract data from Synapse dedicated SQL pool to ADLS.
 - Flag nonsupported Fabric syntax for T-SQL codes (stored procedures, functions, views).
 
@@ -218,7 +218,7 @@ This is a great option for those who:
 
 You can execute the specific stored procedure for the schema (DDL) conversion, data extract, or T-SQL code assessment.
 
-For the data migration, you need to use either COPY INTO or Data Factory to ingest the data into Fabric Warehouse.
+For the data migration, you need to use either `COPY INTO` or Fabric Data Factory to ingest the data into your warehouse.
 
 ## Migrate using SQL database projects
 
@@ -226,7 +226,7 @@ Microsoft Fabric Data Warehouse is supported in the [SQL Database Projects exten
 
 This extension is available inside Visual Studio Code. This feature enables capabilities for source control, database testing, and schema validation.  
 
-For more information on source control for warehouses in Microsoft Fabric, including Git integration and deployment pipelines, see [Source Control with Warehouse](source-control.md).
+For more information on source control, see [Development and deployment overview](development-deployment.md).
 
 #### Recommended use
 
@@ -234,12 +234,12 @@ This is a great option for those who prefer to use SQL Database Project for thei
 
 A SQL Database Project can:
 
-- Convert the schema (DDL) to Fabric Warehouse syntax.
-- Create the schema (DDL) on Fabric Warehouse.
+- Convert the schema (DDL) to Fabric Data Warehouse syntax.
+- Create the schema (DDL) on Fabric Data Warehouse.
 - Extract data from Synapse dedicated SQL pool to ADLS.
 - Flag nonsupported syntax for T-SQL codes (stored procedures, functions, views).
 
-For the data migration, you'll then use either COPY INTO or Data Factory to ingest the data into Fabric Warehouse. 
+For the data migration, you'll then use either `COPY INTO` or Data Factory to ingest the data into your warehouse. 
 
 The Microsoft Fabric CAT team has provided a set of PowerShell scripts to handle the extraction, creation, and deployment of schema (DDL) and database code (DML) via a SQL Database Project. For a walkthrough of using the SQL Database project with our helpful PowerShell scripts, see [microsoft/fabric-migration on GitHub.com](https://github.com/microsoft/fabric-migration/tree/main/data-warehouse#deploy_and_create_migration_scripts_from_sourceps1---deploy-as-sql-package). 
 
@@ -252,7 +252,7 @@ The T-SQL CREATE EXTERNAL TABLE AS SELECT (CETAS) command provides the most cost
 What CETAS can do:
 
 - Extract data into ADLS.
-    - This option requires users to create the schema (DDL) on Fabric Warehouse before ingesting the data. Consider the options in this article to migrate schema (DDL).
+    - This option requires users to create the schema (DDL) in your warehouse before ingesting the data. Consider the options in this article to migrate schema (DDL).
 
 The advantages of this option are:
 
@@ -275,8 +275,8 @@ In this section, we discuss dbt option for those customers who are already using
 
 What dbt can do:
 
-- Convert the schema (DDL) to Fabric Warehouse syntax.
-- Create the schema (DDL) on Fabric Warehouse.
+- Convert the schema (DDL) to Fabric Data Warehouse syntax.
+- Create the schema (DDL) on Fabric Data Warehouse.
 - Convert database code (DML) to Fabric syntax.
 
 The dbt framework generates DDL and DML (SQL scripts) on the fly with each execution. With model files expressed in SELECT statements, the DDL/DML can be translated instantly to any target platform by changing the profile (connection string) and the adapter type.
@@ -285,17 +285,19 @@ The dbt framework generates DDL and DML (SQL scripts) on the fly with each execu
 
 The dbt framework is code-first approach. The data must be migrated by using options listed in this document, such as [CETAS](#migration-of-data-with-cetas) or [COPY/Data Factory](#option-1-schemadata-migration---copy-wizard-and-foreach-copy-activity).
 
-The dbt adapter for Microsoft Fabric Data Warehouse allows the existing dbt projects that were targeting different platforms such as Synapse dedicated SQL pools, Snowflake, Databricks, Google Big Query, or Amazon Redshift to be migrated to a Fabric Warehouse with a simple configuration change.
+The dbt adapter for Microsoft Fabric Data Warehouse allows the existing dbt projects that were targeting different platforms such as Synapse dedicated SQL pools, Snowflake, Databricks, Google Big Query, or Amazon Redshift to be migrated to a warehouse with a simple configuration change.
 
-To get started with a dbt project targeting Fabric Warehouse, see [Tutorial: Set up dbt for Fabric Data Warehouse](tutorial-setup-dbt.md). This document also lists an option to move between different warehouses/platforms.
+To get started with a dbt project targeting Fabric Data Warehouse, see [Tutorial: Set up dbt for Fabric Data Warehouse](tutorial-setup-dbt.md). This document also lists an option to move between different warehouses/platforms.
 
-## Data Ingestion into Fabric Warehouse
+<a id="data-ingestion-into-fabric-warehouse">
 
-For ingestion into Fabric Warehouse, use COPY INTO or Fabric Data Factory, depending on your preference. Both methods are the recommended and best performing options, as they have equivalent performance throughput, given the prerequisite that the files are already extracted to Azure Data Lake Storage (ADLS) Gen2.
+## Data ingestion into Fabric Data Warehouse
+
+For ingestion into Fabric Data Warehouse, use `COPY INTO` or Fabric Data Factory, depending on your preference. Both methods are the recommended and best performing options, as they have equivalent performance throughput, given the prerequisite that the files are already extracted to Azure Data Lake Storage (ADLS) Gen2.
 
 Several factors to note so that you can design your process for maximum performance:
 
-- With Fabric, there isn't any resource contention when loading multiple tables from ADLS to Fabric Warehouse concurrently. As a result, there's no performance degradation when loading parallel threads. The maximum ingestion throughput will only be limited by the compute power of your Fabric capacity.
+- With Fabric, there isn't any resource contention when loading multiple tables from ADLS to Fabric Data Warehouse concurrently. As a result, there's no performance degradation when loading parallel threads. The maximum ingestion throughput will only be limited by the compute power of your Fabric capacity.
 - Fabric workload management provides separation of resources allocated for load and query. There's no resource contention while queries and data loading executed at the same time.
 
 ## Related content

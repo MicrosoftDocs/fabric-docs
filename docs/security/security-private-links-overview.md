@@ -166,7 +166,7 @@ Azure events (such as Azure Blob Storage events) are affected by both tenant-lev
 
 Additionally, when you configure a consumer to receive Azure events, an eventstream item is created in a Fabric workspace to represent the Azure source. Workspace-level private links affect Azure event consumption in the same way as Fabric events: if the workspace containing this eventstream item blocks public network access, consumers in other workspaces are blocked unless a private link is established.
 
-For more information, see [Private links for Azure and Fabric Events](/fabric/real-time-hub/private-links-real-time-events).
+For more information, see [Tenant private links for Azure and Fabric events](/fabric/real-time-hub/private-links-real-time-events).
   
 <!--### Other Fabric items
 
@@ -229,7 +229,7 @@ There are several considerations to keep in mind while working with private endp
   
 * Private links resource REST APIs don't support tags.
   
-* Plan (preview) items in Fabric IQ (preview) aren't supported in workspaces or tenants that use private links.
+* Plan items in Fabric IQ (preview) aren't supported in workspaces or tenants that use private links.
 
 * The following URLs must be accessible from the client browser:
 

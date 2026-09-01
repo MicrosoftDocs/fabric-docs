@@ -8,7 +8,7 @@ reviewer: ranadeepsingh
 ms.topic: overview
 ms.custom:
   - references_regions
-ms.date: 06/10/2026
+ms.date: 08/03/2026
 ms.update-cycle: 180-days
 ms.search.form: 
 no-loc: [Copilot]
@@ -42,7 +42,7 @@ Fabric provides two options to use Foundry Tools:
 
 [REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-python-sdk.md), [SynapseML](how-to-use-openai-synapse-ml.md), [AI Functions](how-to-use-openai-ai-functions.md)
 
-- Language models: `gpt-5.1` and `gpt-5-mini` are hosted. The gpt-4.1 model series is listed in the consumption table for retirement and migration planning. [See table for details](#consumption-rate-for-openai-language-models)
+- Language models: `gpt-5.1` and `gpt-5-mini` are hosted. [See table for details](#consumption-rate-for-openai-language-models)
 - Text embedding model: `text-embedding-ada-002` is hosted. [See table for details](#consumption-rate-for-openai-embedding-models)
 
 ### [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/)
@@ -52,7 +52,7 @@ Fabric provides two options to use Foundry Tools:
 - Language detection: detects language of the input text
 - Sentiment analysis: returns a score between 0 and 1, to indicate the sentiment in the input text
 - Key phrase extraction: identifies the key talking points in the input text
-- Personally Identifiable Information(PII) entity recognition: identify, categorize, and redact sensitive information in the input text
+- Personally Identifiable Information (PII) entity recognition: identify, categorize, and redact sensitive information in the input text
 - Named entity recognition: identifies known entities and general named entities in the input text
 - Entity linking: identifies and disambiguates the identity of entities found in text
 
@@ -71,7 +71,7 @@ For the list of Azure regions where prebuilt Foundry Tools in Fabric are now ava
 
 ### Available regions for Text Analytics and Translator
 
-Prebuilt [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) and the [Translator](https://azure.microsoft.com/products/ai-services/translator/) in Fabric are now available for public preview in the Azure regions listed in this article. If you don't find your Microsoft Fabric home region in this article, you can still create a Microsoft Fabric capacity in a supported region. For more information, visit [Buy a Microsoft Fabric subscription](../../enterprise/buy-subscription.md).
+Prebuilt [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) and the [Translator](https://azure.microsoft.com/products/ai-services/translator/) in Fabric are now available for public preview in the Azure regions listed in this article. If you don't find your Microsoft Fabric home region in this article, you can still create a Microsoft Fabric capacity in a supported region. For more information, visit [Buy Fabric capacity in Azure](../../enterprise/buy-capacity.md).
 To determine your Fabric home region, visit [Find your Fabric home region](../../admin/find-fabric-home-region.md).
 
 | Asia Pacific | Europe | Americas | Middle East and Africa |
@@ -91,13 +91,10 @@ To determine your Fabric home region, visit [Find your Fabric home region](../..
 
 ### Consumption rate for OpenAI language models
 
-| **Model** | **Deployment Name** | **Context Window (Tokens)** | **Input (Per 1,000 Tokens)** | **Cached Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** | **Retirement Date** |
-| --- | --- | --- | --- | --- | --- | --- |
-| gpt-5.1-2025-11-13 | `gpt-5.1` | 400,000<br>Max output: 128,000 | 42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds | |
-| gpt-5-mini-2025-08-07 | `gpt-5-mini` | 400,000<br>Max output: 128,000 | 8.40 CU seconds | 0.84 CU seconds | 67.23 CU seconds | |
-| gpt-4.1-mini-2025-04-14 | `gpt-4.1-mini` | 128,000<br>Max output: 32,768 | 13.45 CU seconds | 3.36 CU seconds | 53.78 CU seconds | June 30, 2026 |
-| gpt-5-2025-08-07 | `gpt-5` | 400,000<br>Max output: 128,000 | 42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds | June 11, 2026 |
-| gpt-4.1-2025-04-14 | `gpt-4.1` | 128,000<br>Max output: 32,768 | 67.23 CU seconds | 16.81 CU seconds | 268.91 CU seconds | June 11, 2026 |
+| **Model** | **Deployment Name** | **Context Window (Tokens)** | **Input (Per 1,000 Tokens)** | **Cached Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** |
+| --- | --- | --- | --- | --- | --- |
+| gpt-5.1-2025-11-13 | `gpt-5.1` | 400,000<br>Max output: 128,000 | 42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds |
+| gpt-5-mini-2025-08-07 | `gpt-5-mini` | 400,000<br>Max output: 128,000 | 8.40 CU seconds | 0.84 CU seconds | 67.23 CU seconds |
 
 ### Consumption rate for OpenAI embedding models
 
@@ -131,8 +128,6 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 ## Monitor usage
 
 Prebuilt AI services in Fabric are billed against the Copilot and AI billing meter on your Fabric capacity. For current consumption rates, see [Consumption rate](#consumption-rate) earlier in this article.
-
-For Python AI Functions workloads in pandas and PySpark, the default model is `gpt-5-mini` with low reasoning. If you pinned pipelines to `gpt-4.1`, migrate them to `gpt-5.1`. If you pinned pipelines to `gpt-4.1-mini`, migrate them to `gpt-5-mini`.
 
 You can monitor AI services usage using the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md). To view AI-related usage:
 

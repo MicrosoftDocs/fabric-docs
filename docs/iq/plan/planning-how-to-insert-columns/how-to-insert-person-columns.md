@@ -1,16 +1,14 @@
 ---
 title: Insert Person Columns in a Planning Sheet
 description: Learn how to insert and configure data input person-type columns in a planning sheet.
-ms.date: 06/29/2026
+ms.date: 08/26/2026
 ms.topic: how-to
 #customer intent: As a user, I want to understand how to insert and configure data input person-type columns in a planning sheet.
 ---
 
 # Insert person columns in planning sheet
 
-In plan (preview), use the **Person** input column to assign users to specific rows in the planning sheet.
-
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+In planning, use the **Person** input column to assign users to specific rows in the planning sheet.
 
 ## Create a person input column
 
@@ -18,13 +16,16 @@ In plan (preview), use the **Person** input column to assign users to specific r
 
     :::image type="content" source="../media/planning-how-to-insert-columns/how-to-insert-person-columns/insert-column-person.png" alt-text="Screenshot of inserting a person column." :::
 
-1. A side panel opens, as shown in the following screenshot. Enter a title and configure the required properties. For more information, see [configure data input column properties](./how-to-insert-data-input-columns.md#configure-data-input-column-properties) and [configure dropdown properties](./how-to-insert-dropdown-columns.md#configure-dropdown-column-properties).
+1. A side panel opens, as shown in the following screenshot. Enter a title and configure the required properties. For more information, see [configure data input column properties](./how-to-insert-data-input-columns.md#configure-data-input-column-properties).
 
     :::image type="content" source="../media/planning-how-to-insert-columns/how-to-insert-person-columns/side-panel.png" alt-text="Screenshot of side panel with configuration options." :::
 
 1. Select **Create**. The Person column is added to the report.
 
     :::image type="content" source="../media/planning-how-to-insert-columns/how-to-insert-person-columns/created-person-column.png" alt-text="Screenshot of inserted person column." lightbox="../media/planning-how-to-insert-columns/how-to-insert-person-columns/created-person-column.png":::
+
+> [!NOTE]
+> You can modify existing **Person** input type measures or columns. For more information, see [Modify column properties](how-to-insert-data-input-columns.md#modify-column-properties).
 
 ## Add users to the column
 

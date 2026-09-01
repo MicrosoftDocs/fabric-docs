@@ -13,17 +13,17 @@ ai-usage: ai-assisted
 > [!NOTE]
 > Fabric Notebook custom agent in Visual Studio Code is currently in preview.
 
-The Fabric Notebook custom agent is a specialized agent that you can select in the **GitHub Copilot Chat** experience in Visual Studio Code. It helps you author Microsoft Fabric notebooks with suggestions and code generation that are aware of Fabric notebook context.
+The Fabric Notebook custom agent is a specialized agent that you can select in the **GitHub Copilot Chat** experience in Visual Studio Code. It helps you author Fabric notebooks with suggestions and code generation that are aware of Fabric notebook context.
 
 Compared to a general-purpose coding agent, the Fabric Notebook custom agent understands Fabric notebook patterns. For example, it recognizes the built-in `spark` variable that represents your current Spark session, so it can suggest code that uses the existing session instead of creating a new one.
 
-It also helps with common Fabric data access patterns, such as using relative paths for the default Lakehouse and full ABFSS paths for nondefault Lakehouses.
+It also helps with common Fabric data access patterns, such as using relative paths for the default lakehouse and full ABFSS paths for nondefault lakehouses.
 
 ## When to use this agent
 
 Use the Fabric Notebook custom agent when you need AI assistance for notebook authoring tasks, such as generating Spark code, refining notebook logic, and troubleshooting notebook code with Fabric-specific context.
 
-Use more Fabric Data Engineering VS Code extension features when you need workspace and artifact operations, such as browsing Fabric items, opening notebooks, and managing resources. To learn what the extension is and what it supports, see [What is the Fabric Data Engineering VS Code extension?](setup-vs-code-extension.md).
+Use more Fabric Data Engineering VS Code extension features when you need workspace and item operations, such as browsing Fabric items, opening notebooks, and managing resources. To learn what the extension is and what it supports, see [What is the Fabric Data Engineering VS Code extension?](setup-vs-code-extension.md).
 
 ## Prerequisites
 
@@ -74,5 +74,5 @@ The sample prompts and saved prompts are optional helpers in the **FABRIC DATA E
 ## Related content
 
 - [What is the Fabric Data Engineering VS Code extension?](setup-vs-code-extension.md)
-- [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md)
-- [Create and manage Microsoft Fabric notebooks in Visual Studio Code](author-notebook-with-vs-code.md)
+- [Develop, execute, and manage Fabric notebooks](author-execute-notebook.md)
+- [Create and manage Fabric notebooks in Visual Studio Code](author-notebook-with-vs-code.md)
