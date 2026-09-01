@@ -6,6 +6,7 @@ ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: overview
 ms.date: 06/16/2026
+ai-usage: ai-assisted
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -334,7 +335,7 @@ This applies to all Fabric event types. For example, if you create an Activator 
 
 Azure events (such as Azure Blob Storage events) are also affected. When you configure a consumer to receive Azure events, an eventstream item is created in a Fabric workspace to represent the Azure source. If the workspace that contains this eventstream item blocks public network access, consumers in other workspaces can't consume those events unless a private link is established. Additionally, Azure events are affected by tenant-level private link configuration. When the **Block Public Internet Access** tenant setting is enabled, Azure event sources outside the tenant are blocked from delivering events into Fabric entirely, regardless of workspace-level settings.
 
-Event consumption within the same workspace is always allowed, regardless of private link settings. If workspace-level private link settings change after a consumer is already configured, the system detects the change and pauses the configuration. While paused, events are retained for up to 7 days. For details on paused configurations, see [Paused event configurations in Real-Time hub](/fabric/real-time-hub/fabric-events-paused-state).
+Event consumption within the same workspace is always allowed, regardless of private link settings. If workspace-level private link settings change after a consumer is already configured, the system detects the change and pauses the configuration. While paused, events are retained for up to 24 hours. For details on paused configurations, see [Paused event configurations in Real-Time hub](/fabric/real-time-hub/fabric-events-paused-state).
 
 For more information, see [Workspace private links for Azure and Fabric events](/fabric/real-time-hub/workspace-private-links-real-time-events).
 

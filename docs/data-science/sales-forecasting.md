@@ -4,7 +4,8 @@ description: This tutorial shows the data science workflow for building a model 
 ms.author: lagayhar
 ms.reviewer: ruxu
 ms.topic: tutorial
-ms.date: 06/30/2026
+ms.date: 08/31/2026
+ai-usage: ai-assisted
 #customer intent: As a data scientist, I want to build a forecasting model so I can predict the sales of products.
 ---
 
@@ -412,7 +413,7 @@ The following code snippet integrates the actual values with the forecasted valu
 # Data preparation for Power BI visualization
 Future = pd.DataFrame(predictions_future.predicted_mean).reset_index()
 Future.columns = ['Date','Forecasted_Sales']
-Future['Actual_Sales'] = np.NAN
+Future['Actual_Sales'] = np.nan
 Actual = pd.DataFrame(predictions.predicted_mean).reset_index()
 Actual.columns = ['Date','Forecasted_Sales']
 y_truth = y['2023-02-01':]
@@ -428,8 +429,8 @@ final_data[final_data['Actual_Sales'].isnull()]
 input_df = y.reset_index()
 input_df.rename(columns = {'Order Date':'Date','Sales':'Actual_Sales'}, inplace=True)
 input_df['Category'] = 'Furniture'
-input_df['MAPE'] = np.NAN
-input_df['Forecasted_Sales'] = np.NAN
+input_df['MAPE'] = np.nan
+input_df['Forecasted_Sales'] = np.nan
 ```
 
 ```python
@@ -458,6 +459,6 @@ Based on this observation, you can have confidence in the forecasting capabiliti
 
 - [How to use Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md)
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
-- [Train machine learning models](model-training/model-training-overview.md)
+- [Train machine learning models](model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
 

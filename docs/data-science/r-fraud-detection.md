@@ -4,7 +4,8 @@ description: This tutorial shows a data science workflow in R, with an end-to-en
 ms.author: lagayhar
 ms.reviewer: ruxu
 ms.topic: tutorial
-ms.date: 06/30/2026
+ms.date: 08/31/2026
+ai-usage: ai-assisted
 ms.search.form: R Language
 #customer intent: As a data scientist, I want to build a machine learning model in R so I can detect future fraudulent transactions.
 ---
@@ -56,7 +57,7 @@ For machine learning model development or ad-hoc data analysis, you might need t
 * Use inline installation resources - for example `install.packages` and `devtools::install_version` - to install in your current notebook only.
 * As an alternative, you can create a Fabric environment, and install libraries from public sources or upload custom libraries to it. Then, your workspace admin can attach the environment as the default for the workspace. All the libraries in the environment then become available for use in any notebooks and Spark job definitions in the workspace. For more information about environments, visit [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment).
 
-In this tutorial, use `install.version()` to install the imbalanced-learn library:
+In this tutorial, use `devtools::install_version()` to install the `bnlearn` and `imbalance` libraries:
 
 ```r
 # Install dependencies
@@ -125,7 +126,7 @@ if (!IS_CUSTOM_DATA) {
 }
 ```
 
-### Read raw date data from the lakehouse
+### Read raw data from the lakehouse
 
 This code reads raw data from the **Files** section of the lakehouse:
 
@@ -514,6 +515,6 @@ The earlier figures clearly show that the model trained on the balanced dataset 
 ## Related content
 
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
-- [Train machine learning models](model-training/model-training-overview.md)
+- [Train machine learning models](model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
 
