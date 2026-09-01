@@ -116,7 +116,7 @@ The [sparklyr reference](https://spark.posit.co/packages/sparklyr/latest/referen
 
 ## Share data between `sparklyr` and `SparkR`
 
-When you [connect `sparklyr` to a Fabric Spark session with `method = "synapse"`](#connect-sparklyr-to-a-fabric-spark-session), both `sparklyr` and `SparkR` become available in the same session and can easily share data between themselves. You can create a Spark table in `sparklyr`, and read it from `SparkR`:
+When you [connect `sparklyr` to a Fabric Spark session with `method = "synapse"`](#connect-sparklyr-to-synapse-spark-cluster), both `sparklyr` and `SparkR` become available in the same session and can easily share data between themselves. You can create a Spark table in `sparklyr`, and read it from `SparkR`:
 
 ```r
 # load the sparklyr package
