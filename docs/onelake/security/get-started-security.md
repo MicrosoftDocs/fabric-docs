@@ -150,7 +150,7 @@ You can allow or restrict access to OneLake data from applications that are outs
 When you turn on this setting, users can access data from all sources. For example, turn this setting on if you have custom applications that use ADLS APIs or OneLake file explorer. When you turn off this setting, users can still access data from internal apps like Spark, Data Engineering, and Data Warehouse, but can't access data from applications running outside of Fabric environments.
 
 > [!NOTE]
-> This setting must be enabled when using shortcuts and OneLake security.
+> This setting must be enabled to use shortcuts with OneLake security .
 
 ## Related content
 
