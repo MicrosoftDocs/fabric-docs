@@ -4,12 +4,8 @@ description: This tutorial shows a data science workflow in R, with an end-to-en
 ms.author: lagayhar
 ms.reviewer: ruxu
 ms.topic: tutorial
-<<<<<<< Updated upstream
-ms.date: 06/30/2026
-=======
 ms.date: 08/31/2026
 ai-usage: ai-assisted
->>>>>>> Stashed changes
 ms.search.form: R Language
 #customer intent: As a data scientist, I want to build a machine learning model in R so I can detect future fraudulent transactions.
 ---

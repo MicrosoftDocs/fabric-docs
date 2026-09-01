@@ -5,11 +5,7 @@ ms.author: lagayhar
 ms.reviewer: ruxu
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
-<<<<<<< Updated upstream
-ms.date: 06/30/2026
-=======
 ms.date: 08/31/2026
->>>>>>> Stashed changes
 #customer intent: As a data scientist, I want to build a text classification model so I can predict a category based on a single attribute.
 ---
 

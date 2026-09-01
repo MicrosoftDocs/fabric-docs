@@ -4,12 +4,8 @@ description: This tutorial shows the data science workflow for building a model 
 ms.author: lagayhar
 ms.reviewer: ruxu
 ms.topic: tutorial
-<<<<<<< Updated upstream
-ms.date: 06/30/2026
-=======
 ms.date: 08/31/2026
 ai-usage: ai-assisted
->>>>>>> Stashed changes
 #customer intent: As a data scientist, I want to build a forecasting model so I can predict the sales of products.
 ---
 

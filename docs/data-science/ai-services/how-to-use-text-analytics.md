@@ -4,12 +4,8 @@ description: How to use prebuilt text analytics in Fabric with REST API
 ms.author: lagayhar
 ms.reviewer: ruxu
 ms.topic: how-to
-<<<<<<< Updated upstream
-ms.date: 06/30/2026
-=======
 ms.date: 08/31/2026
 ai-usage: ai-assisted
->>>>>>> Stashed changes
 ms.update-cycle: 180-days
 ms.search.form: 
 ms.collection: ce-skilling-ai-copilot
@@ -79,11 +75,7 @@ import requests
 fabric_env_config = get_fabric_env_config().fabric_env_config
 auth_header = TokenUtils().get_openai_auth_header()
 
-<<<<<<< Updated upstream
-# Make a RESful request to Foundry tool
-=======
 # Make a RESTful request to a Foundry tool
->>>>>>> Stashed changes
 prebuilt_AI_base_host = fabric_env_config.ml_workload_endpoint + "cognitive/textanalytics/"
 print("Workload endpoint for Foundry tool: \n" + prebuilt_AI_base_host)
 

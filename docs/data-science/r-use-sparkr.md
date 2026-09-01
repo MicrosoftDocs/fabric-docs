@@ -4,12 +4,8 @@ description: How to use SparkR, a light-weight frontend to use Apache Spark from
 ms.author: lagayhar
 ms.reviewer: ruxu
 ms.topic: how-to
-<<<<<<< Updated upstream
-ms.date: 06/30/2026
-=======
 ms.date: 08/31/2026
 ai-usage: ai-assisted
->>>>>>> Stashed changes
 ms.search.form: R Language
 ---
 
@@ -56,11 +52,7 @@ You can store data on the local filesystem of cluster nodes. To read and write a
 To read and write to a Lakehouse, first add it to your session. On the left side of the notebook, select **Add** to add an existing Lakehouse or create a Lakehouse.
 
 > [!NOTE] 
-<<<<<<< Updated upstream
-> To access Lakehouse files by using Spark packages, such as `read.df` or `write.df`, use the *ADFS path* or *relative path for Spark*. In the Lakehouse explorer, right-click on the files or folder you want to access and copy its *ADFS path* or *relative path for Spark* from the contextual menu.
-=======
 > To access Lakehouse files by using Spark packages, such as `read.df` or `write.df`, use the *ABFS path* or *relative path for Spark*. In the Lakehouse explorer, right-click the file or folder you want to access, and copy its *ABFS path* or *relative path for Spark* from the shortcut menu.
->>>>>>> Stashed changes
 
 ```R
 # write data in CSV using relative path for Spark
@@ -86,11 +78,7 @@ faithfulDF_pq <- read.df(temp_parquet_spark, source= "parquet", header = "true",
 display(faithfulDF_pq)
 ```
 
-<<<<<<< Updated upstream
-[!INCLUDE [product-name](../includes/product-name.md)] has `tidyverse` preinstalled. You can access Lakehouse files in your familiar R packages, such as reading and writing Lakehouse files by using `readr::read_csv()` and `readr::write_csv()`.  
-=======
 [!INCLUDE [product-name](../includes/product-name.md)] has `tidyverse` preinstalled. You can access Lakehouse files in your familiar R packages, such as reading and writing Lakehouse files by using `readr::read_csv()` and `readr::write_csv()`.
->>>>>>> Stashed changes
 
 > [!NOTE] 
 > To access Lakehouse files by using R packages, you need to use the *File API path*. In the Lakehouse explorer, right-click on the file or folder that you want to access and copy its *File API path* from the contextual menu.
