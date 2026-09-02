@@ -112,7 +112,7 @@ The Office 365 Outlook activity supports the following authentication methods:
 - Workspace Identity (WI)
 - Service Principal (SPN)
 
-Workspace Identity and Service Principal support enable organizations to run email notifications using non-user identities, helping reduce dependency on individual user accounts and supporting production-grade automation scenarios.
+By using Workspace Identity and Service Principal support, your organization can run email notifications by using non-user identities. This approach helps reduce dependency on individual user accounts and supports production-grade automation scenarios.
 
 When using Workspace Identity or Service Principal authentication, customers are responsible for configuring the appropriate Microsoft Entra ID and Microsoft Graph permissions required to send email on behalf of the desired mailbox. Additional Exchange Online mailbox restrictions and governance policies may also be required depending on organizational requirements.
 
