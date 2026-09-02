@@ -17,7 +17,7 @@ Also, with Apache Kafka endpoints available for eventstreams, you can send or co
 
 ## Bring events into Fabric
 
-Eventstreams provide you with source connectors to fetch event data from various sources. More sources are available when you enable **Enhanced capabilities** at the time of creating an eventstream.
+Eventstreams provide you with source connectors to fetch event data from various sources.
 
 [!INCLUDE [supported-sources-enhanced](./includes/supported-sources-enhanced.md)]
 
@@ -31,7 +31,7 @@ The event processor editor is a drag-and-drop experience. It's an intuitive way 
 
 In addition to the no-code transformations, eventstreams support a [SQL operator (preview)](process-events-using-sql-code-editor.md) for code-first stream processing. Use the SQL operator to define custom transformation logic by using SQL expressions, including windowing, joins, and aggregations. You can choose between no-code transformations and SQL-based authoring within an eventstream to build complex streaming logic.
 
-If you enabled **Enhanced capabilities** while creating an eventstream, the transformation operations are supported for all destinations. The derived stream acts as an intermediate bridge for some destinations, like a custom endpoint or Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]). If you didn't enable **Enhanced capabilities**, the transformation operations are available only for the lakehouse and eventhouse (event processing before ingestion) destinations.
+While creating an eventstream, the transformation operations are supported for all destinations. The derived stream acts as an intermediate bridge for some destinations, like a custom endpoint or Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]).
 
 ## Route events to destinations
 
@@ -41,7 +41,7 @@ The Fabric eventstreams feature supports sending data to the following supported
 
 You can attach multiple destinations in an eventstream to simultaneously receive data from your eventstreams without the eventstreams interfering with each other.
 
-:::image type="content" source="./media/overview/multiple-destinations-enhanced.png" alt-text="Screenshot that shows an overview of an eventstream item with enhanced capabilities." lightbox="./media/overview/multiple-destinations-enhanced.png" :::
+:::image type="content" source="./media/overview/multiple-destinations-enhanced.png" alt-text="Screenshot that shows an overview of an eventstream item with multiple destinations." lightbox="./media/overview/multiple-destinations-enhanced.png" :::
 
 
 ## Schema management

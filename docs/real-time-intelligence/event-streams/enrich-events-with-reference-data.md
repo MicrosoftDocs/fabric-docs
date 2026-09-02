@@ -53,7 +53,7 @@ Optionally, set up the reference data to refresh on a schedule so that changes t
 ## Prerequisites
 
 - Access to a workspace in the Microsoft Fabric capacity license mode or the trial license mode with Contributor or higher permissions.
-- An eventstream with enhanced capabilities that has at least one source and one destination.
+- An eventstream that has at least one source and one destination.
 - A lakehouse or warehouse table that holds the reference data you want to join.
 
 ## Add reference data source to an event stream
