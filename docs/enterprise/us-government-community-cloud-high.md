@@ -61,7 +61,7 @@ The following table lists the Fabric capabilities available in Microsoft Fabric 
 | Mirroring | Mirrored Azure SQL Database |
 | Fabric databases | SQL database in Fabric |
 | OneLake | Shortcut (partial support) |
-| Power BI | Power BI report, dashboard, scorecard, semantic model, streaming dataflow, streaming dataset, and paginated report |
+| Power BI | Power BI report, dashboard, scorecard, semantic model, and paginated report |
 | Real-Time Intelligence | KQL queryset, Activator (partial support), eventhouse and KQL database, eventstream, and Real-Time dashboard |
 
 Fabric items not listed in this table aren't available in GCC High during public preview. These unavailable items include Fabric IQ items (graph model, graph queryset, operations agent, and ontology) and all mirroring sources except Mirrored Azure SQL Database.
