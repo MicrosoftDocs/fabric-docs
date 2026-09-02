@@ -76,7 +76,7 @@ Apache Airflow connection is used to store the credentials required to authent
 
     :::image type="content" source="media/apache-airflow-jobs/add-apache-airflow-connection-pop-up.png" lightbox="media/apache-airflow-jobs/add-apache-airflow-connection-pop-up.png" alt-text="Screenshot to add Apache Airflow connection through the pop-up.":::
 
-1. Select **Create** once you have completed the connection. You can also create and manage the Microsoft Fabric connection directly in  the Airflow UI. Will need to do that to periodically refresh your SPN secret. The instructions below will not work if you're using GIT sync – in that case, you'll need to edit your DAG manually.  
+1. Select **Create** once you have completed the connection. You can also create and manage the Microsoft Fabric connection directly in  the Airflow UI. You will need to do that to periodically refresh your SPN secret. The instructions below will not work if you're using GIT sync. In that case, you'll need to edit your DAG manually.  
 
 ### Apache Airflow UI
 
