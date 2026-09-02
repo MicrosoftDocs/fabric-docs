@@ -1,5 +1,5 @@
 items:
-  - name: Data Warehousing documentation
+  - name: Data Warehouse documentation
     href: index.yml
   - name: Overview
     href: data-warehousing.md
@@ -167,7 +167,7 @@ items:
     items:
       - name: Collaborate, share, and manage security
         items:
-          - name: Data warehousing security
+          - name: Data Warehouse security
             href: security.md
           - name: Entra ID authentication
             href: entra-id-authentication.md

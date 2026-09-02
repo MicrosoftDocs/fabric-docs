@@ -72,7 +72,7 @@ Permissions can also be set within a specific compute engine in Fabric, specific
 
 You can find more information in these articles:
 
-* [Row-level security in Fabric data warehousing](../data-warehouse/row-level-security.md)
+* [Row-level security in Fabric Data Warehouse](../data-warehouse/row-level-security.md)
 
 * [Row-level security (RLS) with Power BI](service-admin-row-level-security.md)
 

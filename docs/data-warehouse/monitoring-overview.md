@@ -28,7 +28,7 @@ Users are provided a one-stop view of their running and completed queries in an 
 
 ## Query insights
 
-Query Insights provides historical query data for completed, failed, canceled queries along with aggregated insights to help you tune your query performance. For more information, see [Query insights in Fabric data warehousing](query-insights.md).
+Query Insights provides historical query data for completed, failed, canceled queries along with aggregated insights to help you tune your query performance. For more information, see [Query insights in Fabric Data Warehouse](query-insights.md).
 
 ## Dynamic management views (DMVs)
 
@@ -38,6 +38,6 @@ Users can get insights about their live connections, sessions, and requests by q
 
 - [Billing and utilization reporting in Fabric Data Warehouse](usage-reporting.md)
 - [Monitor your running and completed T-SQL queries using Data Warehouse Monitor](monitor.md)
-- [Query insights in Fabric data warehousing](query-insights.md)
+- [Query insights in Fabric Data Warehouse](query-insights.md)
 - [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md)
 

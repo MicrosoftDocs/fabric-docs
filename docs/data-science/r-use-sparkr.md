@@ -2,7 +2,7 @@
 title: Use SparkR
 description: How to use SparkR, a light-weight frontend to use Apache Spark from R.
 ms.author: lagayhar
-ms.reviewer: ruxu
+ms.reviewer: scottpolly
 ms.topic: how-to
 ms.date: 08/31/2026
 ai-usage: ai-assisted

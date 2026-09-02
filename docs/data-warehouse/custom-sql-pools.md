@@ -1,6 +1,6 @@
 ---
 title: Custom SQL Pools
-description: Learn more about how custom SQL pools relate to workload management in Fabric data warehousing.
+description: Learn more about how custom SQL pools relate to workload management in Fabric Data Warehouse.
 ms.reviewer: brmyers, sosivara
 ms.date: 03/11/2026
 ms.topic: concept-article

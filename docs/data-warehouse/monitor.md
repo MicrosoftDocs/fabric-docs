@@ -136,7 +136,7 @@ To get the most value from these views:
 - Move to **Long running queries** to identify query patterns with high median duration.
 - Review **Frequently run queries** to find high-volume query shapes that are good candidates for tuning.
 
-The same information regarding completed, failed, and canceled queries from Query history along with aggregated insights can also be found in [Query insights in Fabric data warehousing](query-insights.md).
+The same information regarding completed, failed, and canceled queries from Query history along with aggregated insights can also be found in [Query insights in Fabric Data Warehouse](query-insights.md).
 
 ## Limitations
 
@@ -147,5 +147,5 @@ The same information regarding completed, failed, and canceled queries from Quer
 ## Related content
 
 - [Billing and utilization reporting in Fabric Data Warehouse](usage-reporting.md)
-- [Query insights in Fabric data warehousing](query-insights.md)
+- [Query insights in Fabric Data Warehouse](query-insights.md)
 - [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md)
