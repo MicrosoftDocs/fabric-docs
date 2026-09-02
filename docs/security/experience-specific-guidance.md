@@ -238,7 +238,7 @@ If Git integration wasn't configured before the disaster, you can manually recon
 
 ##### Prepare before a disaster
 
-Regularly complete the following tasks, and store the artifacts in an external source control repository or backup location:
+Regularly complete the following tasks, and store the items in an external source control repository or backup location:
 
 - Export function source code to a GitHub repository.
 - Document and preserve dependency information. 
@@ -272,11 +272,11 @@ The best way to make this process easy and quick is to use Fabric Git integratio
 
 1. Recover all dependent data sources, such as Lakehouse, Warehouse, or SQL databases, by following their respective recovery steps.
 
-1. Update the GraphQL definition to point to the newly recovered resources by modifying environment-specific references such as source workspace IDs, source artifact IDs, and connection details. This step ensures correct binding at deployment time.
+1. Update the GraphQL definition to point to the newly recovered resources by modifying environment-specific references such as source workspace IDs, source item IDs, and connection details. This step ensures correct binding at deployment time.
 
-1. Redeploy GraphQL artifacts from the Git repository into the new workspace. This step recreates the API structure and configuration by using the updated definitions.
+1. Redeploy GraphQL items from the Git repository into the new workspace. This step recreates the API structure and configuration by using the updated definitions.
 
-1. Reapply artifact settings, including roles, access controls, and authentication configuration.
+1. Reapply item settings, including roles, access controls, and authentication configuration.
 
 1. Reapply endpoint references by updating any applications or integrations to use the newly created GraphQL endpoint.
 
@@ -294,7 +294,7 @@ If you don't take the Git integration approach, you can use the following manual
 
 1. Recreate the GraphQL API manually in the new workspace, including schema definitions, data source connections, and relationships.
 
-1. Reapply artifact settings, including roles, access controls, and authentication configuration.
+1. Reapply item settings, including roles, access controls, and authentication configuration.
 
 1. Reapply endpoint references by updating any applications or integrations to use the newly created GraphQL endpoint.
 
@@ -310,7 +310,7 @@ If you don't take the Git integration approach, you can use the following manual
 
 1. Automatic rebinding of data sources isn't guaranteed in disaster recovery scenarios, especially when using saved credentials or cross-workspace connections.
 
-1. Other artifact settings such as monitoring, authorization, RBAC, introspection, and more don't carry over after failover. You must re-establish these settings in the new region.
+1. Other item settings such as monitoring, authorization, RBAC, introspection, and more don't carry over after failover. You must re-establish these settings in the new region.
 
 #### References
 
@@ -345,9 +345,9 @@ Before a disaster occurs: 
 
 1. From the application source directory, deploy the Fabric App into the recovery workspace by using Rayfin CLI. Run `rayfin up --workspace <new workspace>`. 
 
-1. Recover the app’s child item (Fabric SQL Database) by following its respective recovery procedures.  
+1. Recover the app's child item (SQL database in Fabric) by following its respective recovery procedures.  
    
-1. Reapply artifact level settings, including roles and access controls as needed.  
+1. Reapply item level settings, including roles and access controls as needed.  
 
 1. Validate the application functionality and ensure users have the right permissions.  
 
@@ -380,7 +380,7 @@ Warehouses from the original region remain unavailable to customers. To recover 
 
 1. Create a new interim lakehouse in workspace C2.W2 for the data you'll copy over from the original warehouse.
 
-1. Populate the warehouse's Delta tables by leveraging the warehouse Explorer and the T-SQL capabilities (see [Tables in data warehousing in Microsoft Fabric](../data-warehouse/tables.md)).
+1. Populate the warehouse's Delta tables by leveraging the warehouse Explorer and the T-SQL capabilities (see [Tables in Fabric Data Warehouse](../data-warehouse/tables.md)).
 
 > [!NOTE]
 > It's recommended that you keep your Warehouse code (schema, table, view, stored procedure, function definitions, and security codes) versioned and saved in a safe location (such as Git) according to your development practices.
@@ -704,7 +704,7 @@ Data entered in planning sheets, tables used in PowerTable, and writeback data a
 
 * **Restore writeback databases**: If your plan uses SQL writeback destinations, you must also recover the associated databases manually. Configured SQL writeback destinations aren't restored automatically.
 
-* **Restore tables used in PowerTable**: Any tables created by using PowerTable are stored in a Fabric SQL database. You must also recover these tables during DR.
+* **Restore tables used in PowerTable**: Any tables created by using PowerTable are stored in a SQL database in Fabric. You must also recover these tables during DR.
 
 ### Operations agents
 
@@ -720,9 +720,11 @@ When recovering, set up your new region and capacity in Fabric, then use the syn
 
 Once configurations are restored, confirm that any referenced Eventhouse (KQL) databases or region-specific data sources are accessible in the new region. Update endpoint references in agent configurations as needed. Finally, restart your agents and have users initiate new chat sessions. Previous conversations can't be resumed.
 
-## Transactional database
+<a id="transactional-database"></a>
 
-This guide describes the recovery procedures for the transactional database experience. 
+## Databases
+
+This guide describes the recovery procedures for the databases experience. 
 
 ### SQL database
 
