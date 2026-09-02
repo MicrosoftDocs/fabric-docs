@@ -46,6 +46,13 @@ Use the GCC High endpoint that corresponds to the API you're calling.
 
 For API operations and request formats, see the [Power BI REST API reference](/rest/api/power-bi/) and [Fabric REST API documentation](/rest/api/fabric/).
 
+## Region availability
+
+During public preview, Microsoft Fabric for GCC High is available only in the following regions:
+
+- US Gov Virginia
+- US Gov Texas
+
 ## Feature availability
 
 The following table lists the Fabric capabilities available in Microsoft Fabric for GCC High during public preview.
