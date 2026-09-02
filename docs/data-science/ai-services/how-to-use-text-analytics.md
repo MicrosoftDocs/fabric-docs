@@ -114,9 +114,6 @@ from pyspark.sql.functions import col
 
 ## Sentiment analysis
 
-> [!IMPORTANT]
-> Sentiment analysis and opinion mining retire from Azure Language on March 31, 2029. For migration guidance, see [What is sentiment analysis and opinion mining in Azure Language service?](/azure/ai-services/language-service/sentiment-opinion-mining/overview).
-
 # [Rest API](#tab/rest)
 
 The Sentiment Analysis feature provides a way to detect the sentiment labels (such as "negative," "neutral," and "positive") and confidence scores at the sentence and document level. This feature also returns confidence scores between 0 and 1 for each document and sentences within it for positive, neutral, and negative sentiment. For the list of enabled languages, see the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support).
@@ -390,9 +387,6 @@ display(result.select("text", "detectedLanguage"))
 
 ## Key Phrase Extractor
 
-> [!IMPORTANT]
-> Key phrase extraction retires from Azure Language on March 31, 2029. For migration guidance, see [What is key phrase extraction in Azure Language in Foundry Tools?](/azure/ai-services/language-service/key-phrase-extraction/overview).
-
 # [Rest API](#tab/rest)
 
 The Key Phrase Extraction evaluates unstructured text and returns a list of key phrases. This capability is useful if you need to quickly
@@ -572,9 +566,6 @@ display(result.select("text", "entityNames"))
 
 
 ## Entity linking
-
-> [!IMPORTANT]
-> Entity linking retires from Azure Language on September 1, 2028. For migration guidance, see [What is entity linking in Azure Language in Foundry Tools?](/azure/ai-services/language-service/entity-linking/overview).
 
 # [Rest API](#tab/rest)
 

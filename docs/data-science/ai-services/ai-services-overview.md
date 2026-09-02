@@ -95,18 +95,16 @@ To determine your Fabric home region, visit [Find your Fabric home region](../..
 
 ### Consumption rate for OpenAI language models
 
-| **Model** | **Deployment Name** | **Context Window (Tokens)** | **Input (Per 1,000 Tokens)** | **Cached Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** | **Retirement date** |
-| --- | --- | --- | --- | --- | --- | --- |
-| gpt-5.1-2025-11-13 | `gpt-5.1` | 400,000<br>Max output: 128,000 | 42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds | May 15, 2027 |
-| gpt-5-mini-2025-08-07 | `gpt-5-mini` | 400,000<br>Max output: 128,000 | 8.40 CU seconds | 0.84 CU seconds | 67.23 CU seconds | February 9, 2027 |
+| **Model** | **Deployment Name** | **Context Window (Tokens)** | **Input (Per 1,000 Tokens)** | **Cached Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** |
+| --- | --- | --- | --- | --- | --- |
+| gpt-5.1-2025-11-13 | `gpt-5.1` | 400,000<br>Max output: 128,000 | 42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds |
+| gpt-5-mini-2025-08-07 | `gpt-5-mini` | 400,000<br>Max output: 128,000 | 8.40 CU seconds | 0.84 CU seconds | 67.23 CU seconds |
 
 ### Consumption rate for OpenAI embedding models
 
-| **Models** | **Deployment Name** | **Context (Tokens)** | **Input (Per 1,000 Tokens)** | **Retirement date** |
-| --- | --- | --- | --- | --- |
-| Ada (versions 1 and 2) | `text-embedding-ada-002` | 8192 | 3.36 CU seconds | February 9, 2028 |
-
-For current lifecycle dates and replacement guidance, see the [Microsoft Foundry model retirement schedule](/azure/foundry/openai/concepts/model-retirement-schedule).
+| **Models** | **Deployment Name** | **Context (Tokens)** | **Input (Per 1,000 Tokens)** |
+| --- | --- | --- | --- |
+| Ada | `text-embedding-ada-002` | 8192 | 3.36 CU seconds |
 
 ### Consumption rate for Text Analytics
 
