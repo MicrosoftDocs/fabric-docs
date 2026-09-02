@@ -5,7 +5,9 @@ ms.author: scottpolly
 author: s-polly
 ms.topic: how-to
 ms.date: 09/01/2026
+ms.date: 09/01/2026
 ms.reviewer: midesa
+ai-usage: ai-assisted
 ai-usage: ai-assisted
 ---
 
@@ -196,7 +198,7 @@ The **Diagnostics** button lets you download a full snapshot of your data agent'
 
 Use this feature when you work with Microsoft Support or troubleshoot unexpected behavior. By reviewing the downloaded file, you can see exactly how the data agent processed your request, which configurations were applied, and where potential issues occurred. This level of transparency makes it easier to debug and optimize your data agent's performance.
 
-:::image type="content" source="media/how-to-create-data-agent/data-agent-diagnostics.png" alt-text="Screenshot of diagnostics button in the data agent" lightbox="media/how-to-create-data-agent/data-agent-diagnostics.png":::
+:::image type="content" source="media/how-to-create-data-agent/data-agent-diagnostics.png" alt-text="Screenshot of diagnostics button in the data agent." lightbox="media/how-to-create-data-agent/data-agent-diagnostics.png":::
 
 ## Troubleshooting
 

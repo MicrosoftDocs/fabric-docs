@@ -5,7 +5,7 @@ ms.reviewer: aamerril # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article
-ms.date: 07/29/2026
+ms.date: 09/01/2026
 ai-usage: ai-assisted
 #customer intent: As a OneLake user, I want to understand the core concepts and capabilities of data security in OneLake so that I can use them to protect my data stored and accessed in OneLake.
 ---
@@ -121,7 +121,9 @@ OneLake uses Microsoft Entra ID for authentication. Use it to give permissions t
 
 ## Track OneLake activity with audit logs
 
-To view your OneLake audit logs, follow the instructions in [Track user activities in Fabric](../../admin/track-user-activities.md). OneLake operation names correspond to [ADLS APIs](/rest/api/storageservices/data-lake-storage-gen2) such as CreateFile or DeleteFile. OneLake audit logs don't include read requests or requests made to OneLake via Fabric workloads.
+To audit access to data in OneLake, enable [OneLake diagnostics](../onelake-diagnostics-overview.md). OneLake diagnostics records data access through OneLake APIs. For Fabric workload access, it records that access was granted to the workload. Events are stored in a lakehouse that you select.
+
+For OneLake control-plane activities, such as changes to security roles, shortcuts, sharing, lifecycle policies, and storage tiers, use the Fabric audit log. For instructions, see [Track user activities in Fabric](../../admin/track-user-activities.md).
 
 ## Encrypt data and secure networking in OneLake
 
@@ -145,9 +147,12 @@ To configure private links in Fabric, see [Set up and use private links](../../s
 
 ## Allow apps running outside of Fabric to access data
 
-You can allow or restrict access to OneLake data from applications that are outside of the Fabric environment. Admins can find this setting in the [OneLake section of the admin portal tenant settings](../../admin/tenant-settings-index.md#onelake-settings).
+You can allow or restrict access to OneLake data from applications that are outside of the Fabric environment by using the **Users can access data stored in OneLake with apps external to Fabric** tenant setting. Admins can find this setting in the [OneLake section of the admin portal tenant settings](../../admin/tenant-settings-index.md#onelake-settings).
 
 When you turn on this setting, users can access data from all sources. For example, turn this setting on if you have custom applications that use ADLS APIs or OneLake file explorer. When you turn off this setting, users can still access data from internal apps like Spark, Data Engineering, and Data Warehouse, but can't access data from applications running outside of Fabric environments.
+
+> [!NOTE]
+> This setting must be enabled to use shortcuts with OneLake security .
 
 ## Related content
 
