@@ -82,7 +82,7 @@ Operations agents have functional, platform, and behavioral limitations that you
 ### Runtime limitations
 
 - The agent runs queries every five minutes when active.
-- A timestamp is required in the data it is querying. The operations agent records the latest time in the records that are retrieved, and in subsequent queries looks for data after that point. This allows for older data to arrive, outside of the last 5 minutes, but requires data to be timestamped. 
+- The agent requires a timestamp in the data it's querying. The operations agent records the latest time in the records it retrieves, and in subsequent queries looks for data after that point. This process allows for older data to arrive outside of the last five minutes, but it requires data to be timestamped. 
 - Operations expire if no action is taken within three days. After expiration, actions can no longer be approved.
 
 ### Permissions and access limitations
