@@ -3,7 +3,7 @@ title: Run a Fabric item using Apache Airflow DAG.
 description: Learn to run Microsoft Fabric items using Apache Airflow DAGs.
 ms.reviewer: noelleli
 ms.topic: tutorial
-ms.date: 04/22/2026
+ms.date: 09/02/2026
 ms.custom: Airflows, sfi-image-nochange
 ---
 
