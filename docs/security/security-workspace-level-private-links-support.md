@@ -39,6 +39,7 @@ You can use workspace-level private links to connect to the following item types
 * Mirrored database
 * Eventstream
 * Eventhouse
+* Activator
 * Data Agent
 
 ### Notes about unsupported item types
@@ -374,6 +375,10 @@ Current limitations:
    - Eventstream pull: Eventstream workloads don't currently support full polling functionality.
    - Fabric doesn't currently support Azure Event Hubs integration.
    - Queued ingestion via OneLake isn't currently available.
+- For Activator:
+  - With tenant-level private links enabled, Activator supports ingesting events from KQL/Eventhouse, Power BI, and Real-Time Hub Fabric Events.
+  - With workspace-level private links enabled, Activator supports ingesting events from KQL/Eventhouse and Real-Time Hub Fabric Events.
+  - Activator doesn't support ingestion from Eventstream with private links enabled.
 - The **OneLake Catalog - Govern** tab isn't available when Private Link is activated.
 - Workspace monitoring isn't currently supported when a workspace-level private link is enabled for a workspace.
 - Power BI semantic models aren't supported in workspaces with workspace-level private links enabled.

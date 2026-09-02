@@ -3,8 +3,8 @@ title: Use AI in Data Wrangler
 description: Learn how to use AI Functions and other AI-powered features in Data Wrangler to further accelerate data preparation
 author: s-polly
 ms.author: scottpolly
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.topic: how-to
 ms.date: 09/04/2025
 ---
