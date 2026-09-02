@@ -120,7 +120,7 @@ For more information about setting up WI or SPN, see [Workspace identity support
 
 ## Known limitations
 
-- Sensitivity labels are not supported in the Outlook activity. Emails sent through the activity cannot have Microsoft Purview sensitivity labels applied.
+- The Outlook activity doesn't support sensitivity labels. You can't apply Microsoft Purview sensitivity labels to emails sent through the activity.
 
 ## Related content
 
