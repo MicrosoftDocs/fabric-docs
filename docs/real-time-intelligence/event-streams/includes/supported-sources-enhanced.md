@@ -1,6 +1,6 @@
 ---
-title: Sources Supported by Fabric Eventstreams (Enhanced)
-description: This file has the list of sources supported by Fabric eventstreams with enhanced capabilities.
+title: Sources Supported by Fabric Eventstreams
+description: This file has the list of sources supported by Fabric eventstreams.
 ms.reviewer: xujiang1
 ms.topic: include
 ms.date: 05/25/2026

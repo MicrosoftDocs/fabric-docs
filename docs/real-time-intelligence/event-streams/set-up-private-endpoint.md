@@ -22,7 +22,7 @@ The following diagram shows a sample architecture for connecting Eventstream to 
 
 The General Availability (GA) release includes several improvements over the public preview:
 
-1. **Production-ready and improved error messages**: Managed Private Endpoint is now fully supported, offering a more stable and reliable experience. The GA release includes clearer error messages and enhanced diagnostics to make troubleshooting easier.
+1. **Production-ready and improved error messages**: Managed Private Endpoint is now fully supported, offering a more stable and reliable experience. The GA release includes clearer error messages and improved diagnostics to make troubleshooting easier.
 1. **Expanded Region Availability**: You can now create managed private endpoints in the following regions:
 
     | Americas                     | Europe                     | Middle East | Africa             | Asia Pacific                    |
