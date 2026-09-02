@@ -4,7 +4,7 @@ description: Use Fabric connections with workspace identity in Apache Airflow Jo
 ms.reviewer: noelleli
 ms.topic: how-to
 ms.custom: airflows, build-2026
-ms.date: 08/24/2026
+ms.date: 09/02/2026
 ---
 
 # Use workspace identity to authenticate Apache Airflow Jobs to Fabric services
