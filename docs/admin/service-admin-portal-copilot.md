@@ -26,15 +26,14 @@ For information about how to get to the Fabric tenant settings, see [About tenan
 **Settings enabled by default**
 
 * [Users can use Copilot and other features powered by Azure OpenAI](#copilot-with-openai)
-* [Users can use Copilot, AI Agents and other AI experiences powered by OpenAI as a Microsoft Subprocessor](#copilot-with-openai-subprocessor)
 * [Capacities can be designated as Copilot in Fabric capacities](#fabric-copilot-capacities)
 
 **Settings disabled by default**
 
-* [Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance](#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
+* [Users can use Copilot, AI Agents and other AI experiences powered by OpenAI as a Microsoft Subprocessor](#copilot-with-openai-subprocessor)
 * [Data sent to OpenAI as a Microsoft Subprocessor can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance](#data-sent-to-openai-as-a-microsoft-subprocessor-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
+* [Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance](#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
 * [Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance](#data-sent-to-azure-openai-can-be-stored-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
-* [Conversation history stored outside your capacity's geographic region, compliance boundary, or national cloud instance](#conversation-history)
 * [Users can access a standalone, cross-item Copilot in Power BI experience (preview)](#stand-alone-experience)
 * [Only show approved items in the standalone Copilot in Power BI experience (preview)](#limit-to-approved)
 
@@ -96,9 +95,6 @@ This setting is only applicable for customers who want to use Copilot in noteboo
 For more information, see [Available regions](../fundamentals/copilot-fabric-overview.md#available-regions).
 
 **Default:** Disabled
-
-<a id="conversation-history"></a>
-## Conversation history stored outside your capacity's geographic region, compliance boundary, or national cloud instance
 
 This setting is only applicable for customers who want to use [Copilot in notebooks](../data-engineering/copilot-notebooks-overview.md) and Fabric [data agents](../data-science/concept-data-agent.md) powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US.
 
