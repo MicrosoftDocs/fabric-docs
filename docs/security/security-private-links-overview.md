@@ -133,11 +133,11 @@ Unsupported scenarios:
 
 ### Activator
 
-Activator supports ingesting events from KQL/Eventhouse, Power BI, and Real-Time Hub Fabric Events for tenant level Private Links. For workspace level, Activator supports ingesting events from KQL/Eventhouse and Real-Time Hub Fabric Events.
+Activator supports ingesting events from KQL/Eventhouse, Power BI, and Real-Time Hub Fabric Events for tenant-level private links. For workspace level, Activator supports ingesting events from KQL/Eventhouse and Real-Time Hub Fabric Events.
 
 Limitations:
 
-* Currently, Activator doesn't support ingestion from Eventstream with Private Links enabled.
+* Currently, Activator doesn't support ingestion from Eventstream with private links enabled.
 
 ### Eventhouse
 
