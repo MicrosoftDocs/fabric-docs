@@ -63,7 +63,7 @@ Operations agents have functional, platform, and behavioral limitations that you
 
 - Only one data source is supported at a time.
 - When you use an Eventhouse as a data source:
-  - Only Eventhouse tables or shortcut tables are supported. Functions, and materialized views aren't supported.
+  - Only Eventhouse tables or shortcut tables are supported. Functions and materialized views aren't supported.
 - When using a Fabric Ontology as the agent's data source:
   - The ontology must be in the same workspace as the operations agent.
   - Ontology entities that you want the agent to monitor must have at least one static property to use as the identifier for entities. Timeseries properties should be bound to eventhouse fields.
