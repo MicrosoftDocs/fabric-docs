@@ -116,7 +116,7 @@ By using Workspace Identity and Service Principal support, your organization can
 
 When using Workspace Identity or Service Principal authentication, customers are responsible for configuring the appropriate Microsoft Entra ID and Microsoft Graph permissions required to send email on behalf of the desired mailbox. Additional Exchange Online mailbox restrictions and governance policies may also be required depending on organizational requirements.
 
-For more information on setting up WI or SPN, check out [Workspace identity support in Data Factory](workspace-identity.md) or [Service principal support in Data Factory](service-principals.md).
+For more information about setting up WI or SPN, see [Workspace identity support in Data Factory](workspace-identity.md) or [Service principal support in Data Factory](service-principals.md).
 
 ## Known limitations
 
