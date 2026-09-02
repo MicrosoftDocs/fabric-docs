@@ -2,7 +2,7 @@
 title: Use Azure Translator in Foundry Tools with REST API
 description: How to use prebuilt Azure AI translator in Fabric with REST API
 ms.author: lagayhar
-ms.reviewer: ruxu
+ms.reviewer: scottpolly
 ms.topic: how-to
 ms.date: 02/28/2026
 ms.update-cycle: 180-days

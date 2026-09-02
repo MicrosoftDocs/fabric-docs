@@ -2,7 +2,7 @@
 title: Visualize data in R
 description: How to create R visualizations.
 ms.author: lagayhar
-ms.reviewer: ruxu
+ms.reviewer: scottpolly
 ms.topic: how-to
 ms.date: 08/31/2026
 ai-usage: ai-assisted
