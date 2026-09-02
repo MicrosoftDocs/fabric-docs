@@ -3,7 +3,7 @@ title: "What's New?"
 description: Learn about the new features and documentation improvements for Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 08/31/2026
+ms.date: 09/01/2026
 ms.update-cycle: 30-days
 ms.topic: whats-new
 ms.collection:
@@ -38,6 +38,7 @@ The following table lists the features of Microsoft Fabric that are currently in
 | **Feature** | **Learn more** |
 |:-- |:-- |
 |**Activator as business events publisher (Preview)**|Activator provides a no-code way to publish business events in Microsoft Fabric. When Activator detects that a condition is met in your data, it can emit a structured business event into Real-Time hub, making that signal discoverable, routable, and consumable by your entire organization. For more information, see [What is Fabric Activator?](../real-time-intelligence/data-activator/activator-introduction.md) and [Business events overview (Preview)](../real-time-hub/business-events/business-events-overview.md).|
+|**Advanced DAX generation for semantic models (Preview)**|[Advanced DAX generation for Fabric data agents (Preview)](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Advanced-DAX-generation-for-semantic-models-in-Fabric-data/ba-p/5363136) lets a data agent plan its approach, inspect semantic model values and intermediate results, refine its reasoning, and execute a final DAX query before answering. For more information, see [Fabric data agent runtime](../data-science/data-agent-runtime.md) and [Semantic model best practices for data agent](../data-science/semantic-model-best-practices.md).|
 |**Advanced edit for data destination queries in Dataflow Gen2 (Preview)**|You can now use [advanced edit for data destination queries in Dataflow Gen2](../data-factory/dataflow-gen2-advanced-edit-data-destinations.md) to modify destination-side query logic directly in authoring.|
 |**AI-assisted Synapse to Fabric migration skills (Preview)**|[AI-assisted Synapse to Fabric migration skills (Preview)](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/AI-assisted-Synapse-Spark-and-pipeline-migration-to-Microsoft/ba-p/5234478) move Synapse Spark pools, lake databases, notebooks, Spark job definitions, and Data Factory pipelines to Microsoft Fabric from the command line by using REST APIs, with lift-and-shift and migrate-and-modernize paths and a read-only assessment step. For more information, see [Skills for Microsoft Fabric](skills-for-fabric-overview.md).|
 |**AI functions in Fabric Data Warehouse (preview)**| Fabric Data Warehouse now brings AI directly into T-SQL, enabling you to categorize and classify text, analyze sentiment, extract structured information, translate text across languages, and even correct grammar - all using built-in AI functions. To get started, see [Use AI functions in Fabric Data Warehouse (preview)](../data-warehouse/ai-functions.md).|
@@ -286,6 +287,12 @@ This section includes guidance and documentation updates on development process,
 
 For older updates, review the [Microsoft Fabric What's New archive](whats-new-archive.md#continuous-integrationcontinuous-delivery-cicd-in-microsoft-fabric).
 
+#### Continuous Integration/Continuous Delivery (CI/CD) in Microsoft Fabric samples and guidance
+
+|**Month** | **Feature** | **Learn more** |
+|:-- |:-- | :-- |
+|September 2026|**Microsoft Fabric CI/CD resources**|[CI/CD guidance and tutorials for Microsoft Fabric](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/New-CI-CD-resources-for-Microsoft-Fabric-from-concepts-to-end-to/ba-p/5358502) connect platform concepts, planning guidance, end-to-end automation tutorials, dependency binding, and generic Git deployment into a guided path. For more information, see [Introduction to CI/CD in Microsoft Fabric](../cicd/cicd-overview.md) and [Fabric CI/CD concepts and best practices](understand-best-practices-fabric-cicd.md).|
+
 ## Data Factory in Microsoft Fabric
 
 This section summarizes recent new features and capabilities of [Data Factory in Microsoft Fabric](../data-factory/data-factory-overview.md). Follow issues and feedback through the [Data Factory Community Forum](https://community.fabric.microsoft.com/category/datafactory).
@@ -363,6 +370,7 @@ This section summarizes recent improvements and features for [Data Science in Mi
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|September 2026|**Advanced DAX generation for semantic models (Preview)**|[Advanced DAX generation for Fabric data agents (Preview)](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Advanced-DAX-generation-for-semantic-models-in-Fabric-data/ba-p/5363136) lets a data agent plan its approach, inspect semantic model values and intermediate results, refine its reasoning, and execute a final DAX query before answering. For more information, see [Fabric data agent runtime](../data-science/data-agent-runtime.md) and [Semantic model best practices for data agent](../data-science/semantic-model-best-practices.md).|
 |August 2026|**Enhanced Fabric data agent visualizations (Preview)**|[Enhanced data agent visualizations with Fabric visuals (Preview)](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Enhanced-data-agent-visualizations-with-Fabric-visuals-Preview/ba-p/5359686) let data agents return interactive Fabric charts and graphs alongside text and tables. For more information, see [Get visual responses from a Fabric data agent (preview)](../data-science/data-agent-visuals.md) and [Best practices for configuring your data agent](../data-science/data-agent-configuration-best-practices.md).|
 |August 2026|**Data source routing in Fabric data agents (Generally Available)**|[Data source routing in Fabric data agents](https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/data-source-routing-in-microsoft-fabric-data-agents-generally-available/5358696) selects the most relevant lakehouse, warehouse, semantic model, or KQL database for each question by using schema metadata, source descriptions, example queries, and routing rules. For more information, see [Configure a Fabric data agent](../data-science/data-agent-configurations.md) and [Provide example queries](../data-science/data-agent-example-queries.md).|
 |July 2026|**Fabric data agents in Foundry**|[Fabric data agents in Microsoft Foundry](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-data-agents-in-Microsoft-Foundry-Easier-to-connect-easier/ba-p/5318989) now connect through MCP, appear in OneLake Catalog discovery, support multiple data agents per Foundry agent, and expose logs and traces through Foundry Observability. For more information, see [Observability for Fabric data agents in Microsoft Foundry](../data-science/fabric-data-agent-foundry-observability.md).|
@@ -436,6 +444,7 @@ For older updates, review the [Microsoft Fabric What's New archive](whats-new-ar
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|September 2026|**Use AI functions with Power BI**|With [Fabric Data Warehouse AI functions and Power BI](https://www.linkedin.com/pulse/fabric-data-warehouse-ai-functions-power-bi-enrich-once-jovan-popovic-i2kyf/) you can enrich warehouse data with AI functions and analyze the results across Power BI reports. For more information, see [Use AI functions in Fabric Data Warehouse (preview)](../data-warehouse/ai-functions.md).|
 |August 2026|**Build bronze, silver, and gold warehouse layers**|[Building bronze, silver, and gold layers](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Building-the-Bronze-Silver-Gold-layers/ba-p/5360201) explains how to structure warehouse ingestion, transformation, and serving layers for progressively refined data. For more information, see [Ingest data with a copy activity](../data-warehouse/ingest-data-copy.md) and [Ingest data with Transact-SQL](../data-warehouse/ingest-data-tsql.md).|
 |August 2026|**Balance performance and cost with custom SQL pools**|[Using custom SQL pools to balance performance and cost](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Using-Custom-SQL-Pools-to-balance-performance-and-cost-in-Fabric/ba-p/5359735) explains how workload routing and pool allocation affect performance, concurrency, and capacity consumption. For more information, see [Configure custom SQL pools](../data-warehouse/configure-custom-sql-pools-portal.md).|
 |August 2026|**GPU-powered query acceleration guidance**|[Ten things to know about GPU-powered query acceleration](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/10-Things-to-know-about-GPU-powered-Query-Acceleration-in-Fabric/ba-p/5359441) explains eligibility, workspace enablement, workload behavior, and performance considerations for the Preview feature. For more information, see [Query acceleration in Fabric Data Warehouse (preview)](../data-warehouse/query-acceleration.md).|
