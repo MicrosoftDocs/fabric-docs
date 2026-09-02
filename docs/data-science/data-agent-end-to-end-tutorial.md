@@ -229,103 +229,59 @@ If you haven't published the Fabric data agent before, you can publish it follow
 %pip install pandas tqdm  # Skip if already available in the Fabric runtime
 ```
 > [!IMPORTANT]
-> The code below uses the OpenAI Assistants API (`beta.assistants`, `beta.threads`, `beta.threads.runs`), which [OpenAI has deprecated with a shutdown date of August 26, 2026](https://platform.openai.com/docs/assistants/migration). The current code continues to work until **August 26, 2026** but plan for migrating to [MCP endpoint](data-agent-mcp-server.md) before this date.
+> Since OpenAI retired the Assistants API, applications should use the MCP endpoint for agent interactions. Unlike the Assistants API, the MCP endpoint doesn't provide built-in conversation management, so callers must orchestrate multi-turn interactions by maintaining conversation state and supplying relevant context across requests.
+
+### Query the data agent from Python
+
+The following example connects to the MCP endpoint, discovers the tool, sends a question, and prints the answer. It reuses the `credential` from the [Authenticate to Fabric](fabric-data-agent-sdk.md#authenticate-to-fabric) step and uses the [MCP Python SDK](https://pypi.org/project/mcp/). Install the SDK first:
 
 ```python
-import typing as t
-import time
-import uuid
-
-# OpenAI SDK internals
-from openai import OpenAI
-from openai._models import FinalRequestOptions
-from openai._types import Omit
-from openai._utils import is_given
-
-# SynapseML helper for env config
-from synapse.ml.mlflow import get_mlflow_env_config
-
-# Removed unused imports: requests, json, pprint, APIStatusError, SynapseTokenProvider
- 
-base_url = "https://<generic published base URL value>"
-question = "What data sources do you have access to?"
-
-configs = get_mlflow_env_config()
-
-# Create OpenAI Client
-class FabricOpenAI(OpenAI):
-    def __init__(
-        self,
-        api_version: str ="2024-05-01-preview",
-        **kwargs: t.Any,
-    ) -> None:
-        self.api_version = api_version
-        default_query = kwargs.pop("default_query", {})
-        default_query["api-version"] = self.api_version
-        super().__init__(
-            api_key="",
-            base_url=base_url,
-            default_query=default_query,
-            **kwargs,
-        )
-    
-    def _prepare_options(self, options: FinalRequestOptions) -> None:
-        headers: dict[str, str | Omit] = (
-            {**options.headers} if is_given(options.headers) else {}
-        )
-        options.headers = headers
-        headers["Authorization"] = f"Bearer {configs.driver_aad_token}"
-        if "Accept" not in headers:
-            headers["Accept"] = "application/json"
-        if "ActivityId" not in headers:
-            correlation_id = str(uuid.uuid4())
-            headers["ActivityId"] = correlation_id
-
-        return super()._prepare_options(options)
-
-# Pretty printing helper
-def pretty_print(messages):
-    print("---Conversation---")
-    for m in messages:
-        print(f"{m.role}: {m.content[0].text.value}")
-    print()
-
-fabric_client = FabricOpenAI()
-# Create assistant
-assistant = fabric_client.beta.assistants.create(model="not used")
-# Create thread
-thread = fabric_client.beta.threads.create()
-# Create message on thread
-message = fabric_client.beta.threads.messages.create(thread_id=thread.id, role="user", content=question)
-# Create run
-run = fabric_client.beta.threads.runs.create(thread_id=thread.id, assistant_id=assistant.id)
-
-# Wait for run to complete (avoid indefinite loop)
-terminal_states = {"completed", "failed", "cancelled", "requires_action"}
-poll_interval = 2
-timeout_seconds = 300  # Adjust based on expected workload
-start_time = time.time()
-
-while run.status not in terminal_states:
-    if time.time() - start_time > timeout_seconds:
-        raise TimeoutError(f"Run polling exceeded {timeout_seconds} seconds (last status={run.status})")
-    run = fabric_client.beta.threads.runs.retrieve(
-        thread_id=thread.id,
-        run_id=run.id,
-    )
-    print(run.status)
-    time.sleep(poll_interval)
-
-if run.status != "completed":
-    print(f"Run finished with status: {run.status}")
-
-# Print messages
-response = fabric_client.beta.threads.messages.list(thread_id=thread.id, order="asc")
-pretty_print(response)
-
-# Delete thread
-fabric_client.beta.threads.delete(thread_id=thread.id)
+%pip install mcp
 ```
+
+```python
+import asyncio
+
+from mcp import ClientSession
+from mcp.client.streamable_http import streamablehttp_client
+
+workspace_id = "<your-workspace-id>"
+data_agent_id = "<your-data-agent-id>"
+question = "<your question>"
+
+mcp_url = (
+    f"https://api.fabric.microsoft.com/v1/mcp/workspaces/{workspace_id}"
+    f"/dataagents/{data_agent_id}/agent"
+)
+
+
+def get_auth_headers():
+    token = credential.get_token("https://api.fabric.microsoft.com/.default")
+    return {"Authorization": f"Bearer {token.token}"}
+
+
+async def query_data_agent(question):
+    headers = get_auth_headers()
+
+    async with streamablehttp_client(mcp_url, headers=headers) as (read, write, _):
+        async with ClientSession(read, write) as session:
+            await session.initialize()
+
+            # The data agent exposes a single tool. Discover it, then call it.
+            tools = await session.list_tools()
+            tool = tools.tools[0]
+            question_arg = next(iter(tool.inputSchema["properties"]))
+
+            result = await session.call_tool(tool.name, {question_arg: question})
+
+            answers = [block.text for block in result.content if block.type == "text"]
+            return "\n".join(answers)
+
+
+answer = asyncio.run(query_data_agent(question))
+print(answer)
+```
+
 
 ## Related content
 
