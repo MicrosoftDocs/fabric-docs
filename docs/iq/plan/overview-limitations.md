@@ -26,6 +26,7 @@ Workspaces or tenants that use [private links](../../security/security-private-l
 * Semantic models in Direct Lake mode require [additional configuration](planning-how-to-create-semantic-model-connection.md#connect-to-a-direct-lake-semantic-model).
 * Semantic model connections only support OAuth-based and service principal-based authentication.
 * Semantic models published in *My workspace* aren't supported.
+* Composite models aren't supported.
 * If the semantic model contains unsupported Unicode characters, inserting a Data input column in a planning sheet might fail.
 
 ## Semantic model renaming
