@@ -48,7 +48,7 @@ For API operations and request formats, see the [Power BI REST API reference](/r
 
 ## Region availability
 
-During public preview, Microsoft Fabric for GCC High is available only in the following regions:
+Microsoft Fabric for GCC High is available only in the following regions:
 
 - US Gov Virginia
 - US Gov Texas
@@ -60,7 +60,7 @@ The following table lists the Fabric capabilities available in Microsoft Fabric 
 | Workload | Capabilities in public preview |
 | --- | --- |
 | Data Engineering | Lakehouse, lakehouse SQL analytics endpoint, notebook, Spark job definition, environment, lakehouse with schema, and Spark connector for SQL Data Warehouse |
-| Data Factory | Pipeline, Dataflow Gen2, Copy job, default semantic model, virtual network data gateway, and on-premises data gateway (pipeline, Copy job, and Dataflow Gen2) |
+| Data Factory | Pipeline, Dataflow Gen2, Copy job, default semantic model, virtual network data gateway, and on-premises data gateway |
 | Data Science | Machine learning model and experiment |
 | Data Warehouse | Warehouse and SQL analytics endpoint |
 | Developer experience | API for GraphQL, deployment pipelines, Git integration, and variable library |
