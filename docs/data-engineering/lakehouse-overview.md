@@ -96,7 +96,7 @@ A lakehouse organizes data into two top-level folders: **Tables** for managed De
 This managed file-to-table experience means you don't need to write `CREATE TABLE` statements manually for data you land in the managed area.
 
 > [!NOTE]
-> For lakehouses without schema, the maximum metadata size is 10 GB. Publishing or updating any model that exceeds 10 GB will fail. To address this, use schema-enabled lakehouses or reduce the model size by removing tables and columns. You can also split large models across multiple lakehouses to stay within this limit.
+> For lakehouses without schema, the maximum metadata size is 10 GB. Publishing or updating any model that exceeds 10 GB fails. To address this condition, use schema-enabled lakehouses or reduce the model size by removing tables and columns. You can also split large models across multiple lakehouses to stay within this limit.
 
 ## Multitasking with lakehouse
 
