@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: yuturchi
 ms.custom: admin-portal
 ms.topic: how-to
-ms.date: 05/08/2026
+ms.date: 07/28/2026
 ---
 
 # Manage workspaces
@@ -53,7 +53,7 @@ Fabric provides retention and recovery capabilities at both the workspace and it
 - Administrators can restore deleted workspaces or permanently delete them before the retention period expires
 
 **Item retention:**
-- Individually deleted items have a configurable retention period (default 7 days, adjustable from 7 to 90 days)
+- Item recovery is turned on by default, and individually deleted items have a configurable retention period (default 3 days, adjustable from 3 to 90 days)
 - Administrators and workspace admins can restore deleted items using REST APIs
 - Administrators can permanently delete items before the retention period expires
 

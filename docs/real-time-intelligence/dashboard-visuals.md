@@ -18,6 +18,6 @@ For general information on Real-Time Dashboards, see [Visualize data with Real-T
 
 ## Related content
 
-* [Supported visuals in Real-Time Dashboards](real-time-dashboards-overview.md#supported-visuals)
+* [Real-Time Dashboard supported visuals](dashboard-supported-visuals.md)
 * [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md)
 * [Troubleshoot Real-Time Dashboard visual errors](troubleshoot-dashboard-tile-error.md)

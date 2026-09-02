@@ -65,7 +65,7 @@ The following table summarizes the supported workloads and item types that can b
 | Real-Time Intelligence | Data connection rules | <ul><li>Activator</li><li>Eventstream</li><li>Eventhouse</li><li>Fabric Maps</li></ul> | Workspace outbound access protection for Real-Time Intelligence: [Activator](workspace-outbound-access-protection-activator.md), [Eventstream](workspace-outbound-access-protection-eventstream.md), [Eventhouse](workspace-outbound-access-protection-eventhouse.md), and [Fabric Maps](workspace-outbound-access-protection-fabric-maps.md) |
 | Mirrored databases | Data connection rules | <ul><li>Mirrored databases</li></ul> | [Workspace outbound access protection for mirrored databases](workspace-outbound-access-protection-mirrored-databases.md) |
 | OneLake | Managed private endpoints | <ul><li>OneLake shortcuts</li></ul> | [Workspace outbound access protection for OneLake](workspace-outbound-access-protection-onelake.md) |
-| Real-Time Events (preview) | Data connection rules | <ul><li>Azure and Fabric events</li></ul> | [Workspace outbound access protection for Real-Time Events](workspace-outbound-access-protection-real-time-events.md) |
+| Real-Time Events (preview) | Data connection rules | <ul><li>Azure, Fabric, and Business events</li></ul> | [Workspace outbound access protection for Real-Time Events](workspace-outbound-access-protection-real-time-events.md) |
 | Power BI | Data connection rules | <ul><li>Semantic models</li></ul> | [Workspace outbound access protection for semantic models](workspace-outbound-access-protection-semantic-models.md) |
 
 ## Considerations and limitations

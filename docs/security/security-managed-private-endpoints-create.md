@@ -125,6 +125,9 @@ This guide provides code samples to help you get started in your own notebooks t
 
 ### Connect to the data source from notebooks
 
+> [!NOTE]
+> When you connect to Azure Storage, create and approve a managed private endpoint for each storage endpoint that your notebook uses. For example, create a managed private endpoint for the `blob` subresource to access a Blob Storage endpoint (`<storage-account-name>.blob.core.windows.net`). Create a managed private endpoint for the `dfs` subresource to access an Azure Data Lake Storage endpoint (`<storage-account-name>.dfs.core.windows.net`). If your notebook uses both endpoints, create and approve a managed private endpoint for each subresource.
+
 1. Sign into the [Microsoft Fabric portal](https://app.fabric.microsoft.com).
 
 1. Use the experience switcher on the left-hand side of your home page to switch the **Develop** experience.

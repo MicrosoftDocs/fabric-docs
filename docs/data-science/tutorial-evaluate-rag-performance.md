@@ -1,35 +1,39 @@
 ---
-title: "Tutorial: Assessing RAG System Performance"
-description: Learn how to evaluate RAG performance using Azure OpenAI and Azure AI Search with this step-by-step tutorial. Includes metrics, visualization, and benchmarking.
+title: "Tutorial: evaluate RAG performance in Fabric"
+description: Learn how to evaluate a retrieval-augmented generation system in Microsoft Fabric by benchmarking retrieval and answer quality.
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: alsavelv
-ms.date: 08/27/2025
+ms.date: 08/31/2026
 ms.topic: tutorial
+ms.service: fabric
 ai.usage: ai-assisted
 ---
-# Evaluation of RAG performance basics
+# Evaluate RAG performance in Fabric
 
-This tutorial shows how to use Fabric to evaluate RAG application performance. The evaluation focuses on two main RAG components: the retriever (Azure AI Search) and the response generator (an LLM that uses the user's query, retrieved context, and a prompt to generate a reply). Here are the main steps:
+This tutorial shows how to evaluate a retrieval-augmented generation (RAG) system in Microsoft Fabric. The example measures two things: whether the retriever finds the correct source document in Azure AI Search and whether the generated answer stays grounded in the retrieved context. By the end of the tutorial, you have a repeatable benchmark workflow to compare prompt and retrieval settings, track regressions, and evaluate response quality before production use.
+
+This tutorial focuses on:
 
 1. Set up Azure OpenAI and Azure AI Search services
-1. Load data from CMU's QA dataset of Wikipedia articles to build a benchmark
-1. Run a smoke test with one query to confirm the RAG system works end to end
-1. Define deterministic and AI-assisted metrics for evaluation
-1. Check-in 1: Evaluate retriever performance using top-N accuracy
-1. Check-in 2: Evaluate response generator performance using groundedness, relevance, and similarity metrics
-1. Visualize and store evaluation results in OneLake for future reference and ongoing evaluation
+1. Load benchmark data from the CMU QA dataset to create a small evaluation set
+1. Run a smoke test with one query to confirm the RAG flow works end to end
+1. Define deterministic and AI-assisted metrics
+1. Check-in 1: evaluate retriever performance using top-N accuracy
+1. Check-in 2: evaluate response generation using groundedness, relevance, and similarity metrics
+1. Save and compare evaluation results in OneLake
 
 ## Prerequisites
 
-Before you start this tutorial, complete the [Building Retrieval Augmented Generation in Fabric step-by-step guide](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/genai-guidance/00-quickstart/quickstart-genai-guidance-byok.ipynb).
+Before you begin, make sure you have these resources and permissions:
 
-You need these services to run the notebook:
+- A [Microsoft Fabric](https://aka.ms/fabric/getting-started) workspace and lakehouse
+- An [Azure AI Foundry](https://aka.ms/what-is-ai-foundry) project with an Azure OpenAI resource and deployed chat and embedding models
+- An [Azure AI Search](https://aka.ms/azure-ai-search) service with a vector index that contains the embedded content created in the earlier tutorial
+- Endpoint values, API keys, and deployment names for both services
+- Permission to read the lakehouse, access the Azure OpenAI resource, and query the Azure AI Search service
 
-- [Microsoft Fabric](https://aka.ms/fabric/getting-started)
-- [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to this notebook (it contains the data you added in the previous tutorial).
-- [Azure AI Studio for OpenAI](https://aka.ms/what-is-ai-studio)
-- [Azure AI Search](https://aka.ms/azure-ai-search) (it contains the data you indexed in the previous tutorial).
-
-In the previous tutorial, you uploaded data to your lakehouse and built a document index used by the RAG system. Use the index in this exercise to learn core techniques to evaluate RAG performance and identify potential problems. If you didn't create an index or removed it, follow the [quickstart guide](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/genai-guidance/00-quickstart/quickstart-genai-guidance-byok.ipynb) to complete the prerequisite.
+If you don't already have these resources, complete the [RAG quickstart](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/genai-guidance/00-quickstart/quickstart-genai-guidance-byok.ipynb) first. That quickstart creates the lakehouse and vector index used in this benchmark.
 
 :::image type="content" source="media/tutorial-evaluate-rag-performance/user-conversation-rag-diagram.png" alt-text="Diagram that shows the flow of a user conversation through the RAG system." lightbox="media/tutorial-evaluate-rag-performance/user-conversation-rag-diagram.png":::
 
@@ -38,23 +42,24 @@ In the previous tutorial, you uploaded data to your lakehouse and built a docume
 Define endpoints and required keys. Import required libraries and functions. Instantiate clients for Azure OpenAI and Azure AI Search. Define a function wrapper with a prompt to query the RAG system.
 
 ```python
-# Enter your Azure OpenAI service values
-aoai_endpoint = "https://<your-resource-name>.openai.azure.com" # TODO: Provide the Azure OpenAI resource endpoint (replace <your-resource-name>)
-aoai_key = "" # TODO: Fill in your API key from Azure OpenAI 
-aoai_deployment_name_embeddings = "text-embedding-ada-002"
-aoai_model_name_query = "gpt-4-32k"  
-aoai_model_name_metrics = "gpt-4-32k"
-aoai_api_version = "2024-02-01"
+# Enter your Azure OpenAI service values.
+# Use the deployment names you created in Azure OpenAI, not the base model name.
+aoai_endpoint = "https://<your-resource-name>.openai.azure.com"  
+aoai_key = "<your-azure-openai-key>"  
+aoai_deployment_name_embeddings = "<your-embedding-deployment-name>"
+aoai_deployment_name_query = "<your-chat-deployment-name>"
+aoai_deployment_name_metrics = "<your-chat-deployment-name>"
+aoai_api_version = "2025-04-01-preview"
 
-# Setup key accesses to Azure AI Search
-aisearch_index_name = "" # TODO: Create a new index name: must only contain lowercase, numbers, and dashes
-aisearch_api_key = "" # TODO: Fill in your API key from Azure AI Search
-aisearch_endpoint = "https://.search.windows.net" # TODO: Provide the url endpoint for your created Azure AI Search 
+# Set up Azure AI Search.
+aisearch_index_name = "<your-index-name>"  
+aisearch_api_key = "<your-search-key>"  
+aisearch_endpoint = "https://<your-resource-name>.search.windows.net"  
 ```
 
 ```python
 import warnings
-warnings.filterwarnings("ignore", category=DeprecationWarning) 
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 import os, requests, json
 
@@ -89,12 +94,13 @@ from azure.search.documents.indexes.models import (
     VectorSearchAlgorithmMetric,
 )
 
-import openai 
+import openai
 from openai import AzureOpenAI
+from synapse.ml.fabric.credentials import get_openai_httpx_sync_client
 import uuid
 import matplotlib.pyplot as plt
 from synapse.ml.featurize.text import PageSplitter
-import ipywidgets as widgets  
+import ipywidgets as widgets
 from IPython.display import display as w_display
 ```
 
@@ -102,33 +108,37 @@ from IPython.display import display as w_display
 `StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 6, Finished, Available, Finished)`
 
 ```python
-# Configure access to OpenAI endpoint
-openai.api_type = "azure"
-openai.api_key = aoai_key
-openai.api_base = aoai_endpoint
-openai.api_version = aoai_api_version
-
-# Create client for accessing embedding endpoint
+# Configure access to the Azure OpenAI endpoint.
+# In Fabric, use the built-in HTTP client helper so authentication is handled correctly.
 embed_client = AzureOpenAI(
     api_version=aoai_api_version,
     azure_endpoint=aoai_endpoint,
     api_key=aoai_key,
+    http_client=get_openai_httpx_sync_client(),
 )
 
-# Create client for accessing chat endpoint
 chat_client = AzureOpenAI(
     azure_endpoint=aoai_endpoint,
     api_key=aoai_key,
     api_version=aoai_api_version,
+    http_client=get_openai_httpx_sync_client(),
 )
 
-# Configure access to Azure AI Search
+# Configure access to Azure AI Search.
 search_client = SearchClient(
     aisearch_endpoint,
     aisearch_index_name,
     credential=AzureKeyCredential(aisearch_api_key)
 )
 ```
+
+After the setup is complete, confirm the following before continuing:
+
+- The Azure OpenAI clients are created without errors.
+- The Azure AI Search index name matches the index you created.
+- A sample query returns nonempty context from `get_context_source`.
+
+If any check fails, revisit the endpoint values, API keys, and deployment names before moving to the benchmark.
 
 **Cell output:**
 `StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 7, Finished, Available, Finished)`
@@ -149,13 +159,10 @@ def get_context_source(question, topN=3):
         1. A string with the concatenated retrieved context.  
         2. A list of retrieved source paths.  
     """
-    embed_client = openai.AzureOpenAI(
-        api_version=aoai_api_version,
-        azure_endpoint=aoai_endpoint,
-        api_key=aoai_key,
-    )
-
-    query_embedding = embed_client.embeddings.create(input=question, model=aoai_deployment_name_embeddings).data[0].embedding
+    query_embedding = embed_client.embeddings.create(
+        input=question,
+        model=aoai_deployment_name_embeddings,
+    ).data[0].embedding
 
     vector_query = VectorizedQuery(vector=query_embedding, k_nearest_neighbors=topN, fields="Embedding")
 
@@ -198,14 +205,8 @@ def get_answer(question, context):
         },
     )
 
-    chat_client = openai.AzureOpenAI(
-        azure_endpoint=aoai_endpoint,
-        api_key=aoai_key,
-        api_version=aoai_api_version,
-    )
-
     chat_completion = chat_client.chat.completions.create(
-        model=aoai_model_name_query,
+        model=aoai_deployment_name_query,
         messages=messages,
     )
 
@@ -327,7 +328,7 @@ get_retrieval_score("S08/data/set1/a9", retrieved_sources)
 `Retrieved sources:  ['S08/data/set1/a9', 'S08/data/set1/a9', 'S08/data/set1/a5']`
 `1`
 
-This section defines AI-assisted metrics. The prompt template includes a few examples of input (CONTEXT and ANSWER) and suggested output - also known as a few-shot model. It's the same prompt that's used in Azure AI Studio. Learn more in [Built-in evaluation metrics](/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=warning#ai-assisted-relevance). This demo uses the `groundedness` and `relevance` metrics - these are usually the most useful and reliable for evaluating GPT models. Other metrics can be useful but provide less intuition - for example, answers don't have to be similar to be correct, so `similarity` scores can be misleading. The scale for all metrics is 1 to 5. Higher is better. Groundedness takes only two inputs (context and generated answer), while the other two metrics also use ground truth for evaluation. 
+This section defines AI-assisted metrics. The prompt template includes a few examples of input (CONTEXT and ANSWER) and suggested output, also known as a few-shot model. This pattern is a common LLM-as-judge approach for evaluating answer quality. This demo uses `groundedness` and `relevance`, which are widely used for checking whether a response is supported by the retrieved context and addresses the question appropriately. Other metrics can be useful, but they might provide less intuitive signals. For example, answers don't have to be similar to be correct, so `similarity` scores can be misleading. The scale for all metrics is 1 to 5. Higher is better. Groundedness takes only two inputs (context and generated answer), while the other two metrics also use ground truth for evaluation.
 
 ```python
 def get_groundedness_metric(context, answer):
@@ -360,10 +361,11 @@ def get_groundedness_metric(context, answer):
     Actual Task Output:
     """
 
-    metric_client = openai.AzureOpenAI(
+    metric_client = AzureOpenAI(
         api_version=aoai_api_version,
         azure_endpoint=aoai_endpoint,
         api_key=aoai_key,
+        http_client=get_openai_httpx_sync_client(),
     )
 
     messages = [
@@ -378,7 +380,7 @@ def get_groundedness_metric(context, answer):
     ]
 
     metric_completion = metric_client.chat.completions.create(
-        model=aoai_model_name_metrics,
+        model=aoai_deployment_name_metrics,
         messages=messages,
         temperature=0,
     )
@@ -435,12 +437,12 @@ def get_relevance_metric(context, question, answer):
     stars:
     """
 
-    metric_client = openai.AzureOpenAI(
+    metric_client = AzureOpenAI(
         api_version=aoai_api_version,
         azure_endpoint=aoai_endpoint,
         api_key=aoai_key,
+        http_client=get_openai_httpx_sync_client(),
     )
-
 
     messages = [
         {
@@ -454,7 +456,7 @@ def get_relevance_metric(context, question, answer):
     ]
 
     metric_completion = metric_client.chat.completions.create(
-        model=aoai_model_name_metrics,
+        model=aoai_deployment_name_metrics,
         messages=messages,
         temperature=0,
     )
@@ -513,10 +515,11 @@ def get_similarity_metric(question, ground_truth, answer):
     stars:
     """
     
-    metric_client = openai.AzureOpenAI(
+    metric_client = AzureOpenAI(
         api_version=aoai_api_version,
         azure_endpoint=aoai_endpoint,
         api_key=aoai_key,
+        http_client=get_openai_httpx_sync_client(),
     )
 
     messages = [
@@ -531,7 +534,7 @@ def get_similarity_metric(question, ground_truth, answer):
     ]
 
     metric_completion = metric_client.chat.completions.create(
-        model=aoai_model_name_metrics,
+        model=aoai_deployment_name_metrics,
         messages=messages,
         temperature=0,
     )
@@ -710,7 +713,19 @@ updated_df.write.format("parquet").mode("append").saveAsTable(table_name)
 **Cell output:**
 `StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 28, Finished, Available, Finished)`
 
-Return to the experiment results anytime to review them, compare with new experiments, and choose the configuration that works best for production. 
+Return to the experiment results anytime to review them, compare with new experiments, and choose the configuration that works best for production.
+
+## Troubleshooting
+
+If the notebook fails, check the following items:
+
+- Invalid Azure OpenAI credentials or endpoint: confirm the resource name, API key, and deployment names.
+- Empty or missing Azure AI Search results: verify the index name, vector index schema, and that data is loaded.
+- Wrong model names: ensure the embedding and chat deployments exist and match the values in the code.
+- Low metric scores or unexpected metric values: confirm the retrieved context contains the expected source and that the benchmark question aligns with the indexed documents.
+- Duplicate retrieval results: confirm the chunks were created correctly and that the index contains the expected chunk metadata.
+
+If a step fails, stop and validate the preceding cell before moving to the next section.
 
 ## Summary
 

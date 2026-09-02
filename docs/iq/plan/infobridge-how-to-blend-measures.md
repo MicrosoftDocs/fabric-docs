@@ -1,5 +1,5 @@
 ---
-title: Blend measures using Infobridge
+title: Blend Measures Using Infobridge
 description: Combine measures from planning sheets and Infobridge queries to create calculations across connected planning data.
 ms.topic: how-to
 ms.date: 08/21/2026

@@ -8,7 +8,7 @@ ms.topic: how-to
 
 # Insert checkbox columns in planning sheet
 
-In addition to number, text, person, date, and list input columns, Plan supports including a checkbox column in your planning sheet to capture binary inputs.
+In addition to number, text, person, date, and list input columns, planning supports including a checkbox column in your planning sheet to capture binary inputs.
 
 Use checkbox columns or measures to capture binary inputs such as selection, approval, or status. After inserting a checkbox column, you can select or clear it for each row in the planning sheet as needed.
 
@@ -42,4 +42,4 @@ After inserting a checkbox column in a sheet, you can [modify] (how-to-insert-da
 
 Instead of using a text column for binary options, use a checkbox to neatly capture yes or no choices.
 
-Use checkbox columns for filtering and selection scenarios. For example, you can filter data based on **Checked** or **Unchecked** values. The Writeback feature within plan can use these filters to write back only the selected (checked or unchecked) records based on the configured criteria.
+Use checkbox columns for filtering and selection scenarios. For example, you can filter data based on **Checked** or **Unchecked** values. The Writeback feature within planning can use these filters to write back only the selected (checked or unchecked) records based on the configured criteria.

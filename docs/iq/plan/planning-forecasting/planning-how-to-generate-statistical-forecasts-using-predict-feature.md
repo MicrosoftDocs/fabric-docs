@@ -1,6 +1,6 @@
 ---
-title: Generate Statistical Forecasts using the Predict Feature
-description: Learn how to generate statistical forecasts by using the Predict feature in Fabric Plan.
+title: Generate Statistical Forecasts Using the Predict Feature
+description: Learn how to generate statistical forecasts by using the Predict feature in planning in Fabric.
 ms.date: 08/10/2026
 ms.topic: how-to
 ---
