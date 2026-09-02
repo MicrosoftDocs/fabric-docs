@@ -87,6 +87,10 @@ items:
       href: plan/intelligence-overview.md
     - name: Infobridge overview
       href: plan/infobridge-overview.md
+  - name: Planning tutorial
+    items:
+    - name: Introduction and environment setup
+      href: plan/planning-tutorial/planning/tutorial-0-introduction.md
   - name: Get started
     items:
     - name: Prerequisites
