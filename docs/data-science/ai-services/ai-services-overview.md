@@ -8,12 +8,12 @@ reviewer: ranadeepsingh
 ms.topic: overview
 ms.custom:
   - references_regions
-ms.date: 08/03/2026
+ms.date: 09/02/2026
 ms.update-cycle: 180-days
 ms.search.form: 
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
-ai.usage: ai-assisted
+ai-usage: ai-assisted
 ---
 
 # Foundry Tools in Fabric (preview)
@@ -56,12 +56,16 @@ Fabric provides two options to use Foundry Tools:
 - Named entity recognition: identifies known entities and general named entities in the input text
 - Entity linking: identifies and disambiguates the identity of entities found in text
 
+The REST examples use API version `2024-11-01`, the latest GA Text runtime API. Text PII detection can use model version `2026-05-01`, which is generally available. For currently published versions, see the [Azure AI Language REST API reference](/rest/api/language/).
+
 ### [Translator](https://azure.microsoft.com/products/ai-services/translator/)
 
 [REST API](how-to-use-text-translator.md), [SynapseML](how-to-use-text-translator.md)
 
 - Translate: Translates text
 - Transliterate: Converts text in one language, in one script, to another script.
+
+The Fabric REST examples use Translator Text API v3.0 for translation and API version `2026-06-06` for transliteration and supported-language retrieval. SynapseML continues to use v3.0. API version `2026-06-06` has a breaking request and response schema, and its translation operation isn't currently available through the prebuilt Fabric endpoint. For migration details, see [Migrate to Translator Text API 2026-06-06](/azure/ai-services/translator/text-translation/how-to/migrate-to-2026-06-06).
 
 ## Available regions
 
@@ -91,16 +95,18 @@ To determine your Fabric home region, visit [Find your Fabric home region](../..
 
 ### Consumption rate for OpenAI language models
 
-| **Model** | **Deployment Name** | **Context Window (Tokens)** | **Input (Per 1,000 Tokens)** | **Cached Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** |
-| --- | --- | --- | --- | --- | --- |
-| gpt-5.1-2025-11-13 | `gpt-5.1` | 400,000<br>Max output: 128,000 | 42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds |
-| gpt-5-mini-2025-08-07 | `gpt-5-mini` | 400,000<br>Max output: 128,000 | 8.40 CU seconds | 0.84 CU seconds | 67.23 CU seconds |
+| **Model** | **Deployment Name** | **Context Window (Tokens)** | **Input (Per 1,000 Tokens)** | **Cached Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** | **Retirement date** |
+| --- | --- | --- | --- | --- | --- | --- |
+| gpt-5.1-2025-11-13 | `gpt-5.1` | 400,000<br>Max output: 128,000 | 42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds | May 15, 2027 |
+| gpt-5-mini-2025-08-07 | `gpt-5-mini` | 400,000<br>Max output: 128,000 | 8.40 CU seconds | 0.84 CU seconds | 67.23 CU seconds | February 9, 2027 |
 
 ### Consumption rate for OpenAI embedding models
 
-| **Models** | **Deployment Name** | **Context (Tokens)** | **Input (Per 1,000 Tokens)** |
-| --- | --- | --- | --- |
-| Ada | `text-embedding-ada-002` | 8192 | 3.36 CU seconds |
+| **Models** | **Deployment Name** | **Context (Tokens)** | **Input (Per 1,000 Tokens)** | **Retirement date** |
+| --- | --- | --- | --- | --- |
+| Ada (versions 1 and 2) | `text-embedding-ada-002` | 8192 | 3.36 CU seconds | February 9, 2028 |
+
+For current lifecycle dates and replacement guidance, see the [Microsoft Foundry model retirement schedule](/azure/foundry/openai/concepts/model-retirement-schedule).
 
 ### Consumption rate for Text Analytics
 

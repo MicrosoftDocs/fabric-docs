@@ -4,7 +4,7 @@ description: How to use prebuilt text analytics in Fabric with REST API
 ms.author: lagayhar
 ms.reviewer: scottpolly
 ms.topic: how-to
-ms.date: 08/31/2026
+ms.date: 09/02/2026
 ai-usage: ai-assisted
 ms.update-cycle: 180-days
 ms.search.form: 
@@ -79,7 +79,7 @@ auth_header = TokenUtils().get_openai_auth_header()
 prebuilt_AI_base_host = fabric_env_config.ml_workload_endpoint + "cognitive/textanalytics/"
 print("Workload endpoint for Foundry tool: \n" + prebuilt_AI_base_host)
 
-service_url = prebuilt_AI_base_host + "language/:analyze-text?api-version=2022-05-01"
+service_url = prebuilt_AI_base_host + "language/:analyze-text?api-version=2024-11-01"
 print("Service URL: \n" + service_url)
 
 auth_headers = {
@@ -113,6 +113,9 @@ from pyspark.sql.functions import col
 
 
 ## Sentiment analysis
+
+> [!IMPORTANT]
+> Sentiment analysis and opinion mining retire from Azure Language on March 31, 2029. For migration guidance, see [What is sentiment analysis and opinion mining in Azure Language service?](/azure/ai-services/language-service/sentiment-opinion-mining/overview).
 
 # [Rest API](#tab/rest)
 
@@ -387,6 +390,9 @@ display(result.select("text", "detectedLanguage"))
 
 ## Key Phrase Extractor
 
+> [!IMPORTANT]
+> Key phrase extraction retires from Azure Language on March 31, 2029. For migration guidance, see [What is key phrase extraction in Azure Language in Foundry Tools?](/azure/ai-services/language-service/key-phrase-extraction/overview).
+
 # [Rest API](#tab/rest)
 
 The Key Phrase Extraction evaluates unstructured text and returns a list of key phrases. This capability is useful if you need to quickly
@@ -566,6 +572,9 @@ display(result.select("text", "entityNames"))
 
 
 ## Entity linking
+
+> [!IMPORTANT]
+> Entity linking retires from Azure Language on September 1, 2028. For migration guidance, see [What is entity linking in Azure Language in Foundry Tools?](/azure/ai-services/language-service/entity-linking/overview).
 
 # [Rest API](#tab/rest)
 
