@@ -1,90 +1,57 @@
 ---
 title: Use Optimize to Meet Target Key Performance Indicators in Planning
 description: Optimize recalculates data input measures to meet a target value for a result measure. Use it for budgets and forecasts to speed up scenario planning.
-ms.date: 04/27/2026
+ms.date: 08/12/2026
 ms.topic: how-to
 ---
 
 # Optimize input values to meet a target
 
-Optimize supports multivariate scenarios by adjusting multiple data input measures to meet a target value for a selected result measure. Use Optimize to determine the driver inputs required to reach a target KPI (key performance indicator), such as revenue, margin, or cash, and to streamline what-if analysis by recalculating the required input changes.
-
-Set a target value, then run Optimize to calculate the input values required to reach the target. Plan recalculates the inputs and applies the updated values to achieve the specified outcome.
+Use target-based optimization to determine the input values required to achieve a specific business objective, such as a revenue target. Optimize recalculates one or more selected input measures and updates them with the values needed to achieve the specified result.
 
 ## Prerequisites
 
-* Add at least one formula measure to the planning sheet. Optimize requires a formula measure to run. The formula measure acts as the target or output.
-* Ensure the formula uses a data input or forecast measure. Optimize adjusts the data input values to meet the target. The data input measure acts as the input or driver that Optimize changes to reach the target.
-* Set **Row aggregation** and **Column aggregation** to **Formula** for the formula measure.
+Before you begin, review the [Prerequisites section for Optimize](./optimizer-overview.md#prerequisites) to understand the initial setup requirements.
 
-    :::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/row-column-aggregation.png" alt-text="Screenshot of row and column aggregation for calculated fields." lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/row-column-aggregation.png":::
+## Achieve a target value on a calculated field
 
-## Run Optimize on calculated fields
+To demonstrate target-based optimization, set a target for the calculated field *Profit forecast* by optimizing independent variables - *Revenue Forecast*, *Purchase Forecast*, *Advertising Forecast*, and *Transport Forecast*.
 
-1. Select the target cell in the formula measure field, and then select **Optimize**. In this example, the formula measure used is Profit per unit.
-1. Choose an optimization goal: **Maximize**, **Minimize**, or **Target**. Optimize adjusts the data input measure values to meet the selected goal. To achieve a specific target, set **Objective** to **Target** and enter the target value.
-1. Set **Variables to Update** to the data input measure you want to adjust to meet the target. In this case, you adjust COGS to meet the target Profit per unit.
+> [!NOTE]
+> You can optimize values at any hierarchy level. In this example, optimize at the total level. When Optimize runs on a parent cell, it recalculates the required change and distributes the updated value to the underlying editable child cells.
 
-    :::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/target-value-input-field.jpg" alt-text="Screenshot of entering the target value and selecting the data input field to optimize." lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/target-value-input-field.jpg":::
+1. Select the target cell in the calculated measure. In the **Planning** ribbon, select **Optimize**. In this example, select the target cell from the *Profit Forecast* measure.
 
-1. Select **Add Constraint** and define the minimum and maximum limits for the data input measure. For example, you can only adjust the cost of goods based on achievable reductions. Select **Apply**, and then select **Run**.
+    :::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/calculated-measure-optimize-formula.png" alt-text="Screenshot of a calculated measure and formula used as the dependent measure to optimize." lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/calculated-measure-optimize-formula.png":::
 
-    :::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/constraints-range.jpg" alt-text="Screenshot of entering the minimum and maximum allowed values for the data input field." lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/constraints-range.jpg":::
+1. To achieve a specific target, set **Objective** to **Target** and enter the target value. In this example, set the target value to 45m.
 
-    >[!TIP]
-    >This step is optional. Select **Run** to skip defining constraints.
+    :::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/target-maximize-minimize-objective.png" alt-text="Screenshot of setting the optimize objective to maximize." lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/target-maximize-minimize-objective.png":::
 
-1. Validate the adjusted value and select **Apply** to update the data input measure (in this case, COGS).
+1. Select the data input or forecast measures (independent variables) to optimize from **Variables to Update**. In this case, Optimize adjusts the *Revenue Forecast*, *Purchase Forecast*, *Advertising Forecast*, and *Transport Forecast* to achieve the target *Profit Forecast*. Select **Next**.
 
-    :::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/apply-optimized-value.jpg" alt-text="Screenshot of optimized input value to apply." lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/apply-optimized-value.jpg":::
+    :::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/select-independent-variables-optimize.png" alt-text="Screenshot of selecting the independent measures to optimize." lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/select-independent-variables-optimize.png":::
 
-    The Profit per unit increases to the target value of 17.32 by changing the COGS to 1.0163 million.
+1. Select **Add Constraint** to define the minimum and maximum limits for the data input measure. For more information, see [Configure optimization thresholds](https://docs.fabricplan.com/documentation/readme/planning-sheets/how-tos/optimize-overview#configure-optimization-thresholds).
 
-    :::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/optimized-value-planning-sheet.jpg" alt-text="Screenshot of optimized value applied in planning sheet." lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/optimized-value-planning-sheet.jpg":::
+    > [!TIP]
+    > Adding constraints is optional. Directly select **Run** to skip defining constraints; however, as a best practice, explicitly specify constraints for all the independent measures used in Optimize.
 
-## Adjust parameters to achieve targets
+1. Choose the measure to apply the constraint from **Apply to Variable**. Select **Range** for the **Set Type** option. Enter the minimum and maximum optimization thresholds.
 
-If **Optimize** doesn't reach the target value, adjust **Strategy**, **Tolerance**, and **Number of iterations**, and then run **Optimize** again.
+    :::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/add-range-constraint-independent-measure.png" alt-text="Screenshot of adding a range constraint to independent measures. " lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/add-range-constraint-independent-measure.png":::
 
-:::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/optimize-parameters.jpg" alt-text="Screenshot of parameters used to calibrate Optimize." lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/optimize-parameters.jpg":::
+1. Select **Apply**. Select **Add** to specify additional constraints. Select **Run** after you define all the constraints.
 
-* **Strategy** controls the size of the adjustments made to the input value while trying to achieve the target. Lower values use smaller steps and can take longer to converge. Higher values use larger steps and can converge faster, but can overshoot.
-* **Tolerance** defines the allowed error between the achieved value and the target value and determines how precise the Optimize result is. For example, the target Profit per Unit = 0.50. If the tolerance = 0.01, Optimize stops when the achieved value is between 0.49 and 0.51.
-* **Number of iterations** sets the maximum number of times to repeat the optimization loop. In each iteration, Optimize performs these operations:
-    1. Tries an input value.
-    1. Calculates the result.
-    1. Compares the result to the target value.
-    1. Adjusts the input value based on the comparison.
+    :::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/add-multiple-optimize-constraints.png" alt-text="Screenshot of adding multiple constraints for each independent measure in Optimize." lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/add-multiple-optimize-constraints.png":::
 
-    :::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/successful-optimize.png" alt-text="Screenshot of Optimize successful after adjusting parameters." lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/successful-optimize.png":::
+1. Review the adjusted values, then select **Apply** to update the independent measures with the optimized values. For more information about Optimize parameters, see [Adjust parameters to achieve targets](./optimizer-overview.md#adjust-parameters-to-achieve-targets)
 
-## Run Optimize on parent cells
+    :::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/optimize-target-profit-forecast-value-achieved.png" alt-text="Screenshot of maximized target value and optimized independent values." lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/optimize-target-profit-forecast-value-achieved.png":::
 
-To meet a target at an aggregated level, apply **Optimize** on parent (total) cells. When Optimize runs on a parent cell, it recalculates the required change and distributes the update to the underlying editable child cells.
+1. Optimize increases the *Profit Forecast* to 45m from 43.92m after adjusting independent measures within the specified constraints. Since you applied Optimize to a total value, the update cascades to all the related child dimensions.
 
-:::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/optimize-parent-cells.png" alt-text="Screenshot of selecting a parent cell to optimize." lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/optimize-parent-cells.png":::
+    > [!NOTE]
+    > Optimize doesn't change the values of locked cells. The target value is maximized or minimized by adjusting the values of editable cells.
 
-In this example, Optimize reduces COGS at the parent level and distributes the reduction proportionally across the child rows to achieve the target profit.
-
-:::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/optimize-distribution.png" alt-text="Screenshot of optimized value distributed to child levels." lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/optimize-distribution.png":::
-
-## Using Optimize on forecast measures
-
-Optimize helps align forecast measures to business targets by calculating the required adjustments to achieve the target.
-
-* Optimize updates forecast values only for open periods. Closed periods are locked by default.
-* To run Optimize on forecasts, configure the open period forecast as a data input measure so the values are editable.
-
-:::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/optimize-forecasts.png" alt-text="Screenshot of Optimize for forecasts." lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/optimize-forecasts.png":::
-
-In this example, Implied Price is calculated by using the formula shown:
-
-:::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/forecast-formula.png" alt-text="Screenshot of formula that uses forecasts." lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/forecast-formula.png":::
-
-The steps to run Optimize on forecast measures are the same as those for data input measures described earlier.
-
-:::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/forecast-parameters.png" alt-text="Screenshot of Optimize parameters for forecasts." lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/forecast-parameters.png":::
-
-To reach the target implied price of 86.42, Optimize updates the revenue forecast at the parent level and distributes the change proportionally across the child rows.
-
-:::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/forecast-optimized.png" alt-text="Screenshot of optimized forecast value distributed to child levels." lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/forecast-optimized.png":::
+    :::image type="content" source="../media/planning-optimize/planning-how-to-optimize-input-values/optimized-values-applied-measures-updated.png" alt-text="Screenshot of applying the optimized values and updating the measures in the planning sheet." lightbox="../media/planning-optimize/planning-how-to-optimize-input-values/optimized-values-applied-measures-updated.png":::

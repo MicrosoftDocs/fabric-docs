@@ -70,7 +70,8 @@ Planning supports the following connection types.
 
 ## Connect to a Direct Lake semantic model
 
-If you want to connect to a Direct Lake semantic model, follow these steps. An *Admin* or *Member* user can perform these steps.
+If you use a **Direct Lake semantic model**, follow these additional steps to make the Direct Lake semantic model compatible with planning.
+An *Admin* or *Member* user can perform these steps.
 
 1. Next to the name of the semantic model in your Fabric workspace, select **...** > **Settings** > **Gateway and cloud connections**.
 
@@ -99,6 +100,9 @@ If you want to connect to a Direct Lake semantic model, follow these steps. An *
 
     :::image type="content" source="media/planning-how-to-create-semantic-model-connection/apply-direct-lake.png" alt-text="Screenshot of applying the created connection.":::
 
+> [!NOTE]
+> In the following step, when you [create plan](./planning-how-to-get-started.md), you need a **Power BI Semantic Model** connection to connect the plan to a semantic model. Use the connection you created in this section: [Create a semantic model connection](#create-a-semantic-model-connection).
+
 ## Recommended configuration for Continuous Integration and Continuous Deployment (CI/CD)
 
 For an optimal Continuous Integration (CI) and Continuous Deployment (CD), consider the following recommendations:
@@ -112,5 +116,5 @@ For an optimal Continuous Integration (CI) and Continuous Deployment (CD), consi
 ## Related content
 
 * Now that you created your semantic model connection, you can create a planning sheet that uses this connection. See [Create a planning sheet](planning-how-to-get-started.md).
-* [Prerequisites for plan](overview-prerequisites.md)
-* [Troubleshoot semantic model connections in plan](planning-troubleshoot-semantic-model.md)
+* [Prerequisites for planning in Fabric](overview-prerequisites.md)
+* [Troubleshoot semantic model connections in planning](planning-troubleshoot-semantic-model.md)

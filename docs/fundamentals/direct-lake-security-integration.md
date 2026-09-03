@@ -49,18 +49,18 @@ Direct Lake models use Microsoft Entra ID authentication. In the data connection
 
 ## Permission requirements
 
-The permission requirements differ between Direct Lake on SQL endpoints and Direct Lake on OneLake. This is because Direct Lake on SQL endpoints relies on the SQL Analytics Endpoint of the target data source, whereas Direct Lake on OneLake uses the OneLake APIs for permission checks.
+The permission requirements differ between Direct Lake on SQL endpoints and Direct Lake on OneLake. This difference exists because Direct Lake on SQL endpoints relies on the SQL Analytics Endpoint of the target data source, whereas Direct Lake on OneLake uses the OneLake APIs for permission checks.
 
 ### Direct Lake on SQL endpoints
 
-Direct Lake on SQL endpoints performs permission checks via the SQL analytics endpoint to determine whether the effective identity attempting to access the data has the necessary data access permissions. Notably, the effective identity doesn't need permission to read Delta tables directly in OneLake. It's enough to have *read* access to the Fabric artifact, such as a lakehouse, and SELECT permission on a table through its SQL analytics endpoint. That's because Fabric grants the necessary permissions to the semantic model to read the Delta tables and associated Parquet files (to [**load column data**](direct-lake-how-it-works.md#column-loading-transcoding) into memory). The semantic model has permission to periodically read the SQL analytics endpoint to check what data the querying user (or fixed identity) can access.
+Direct Lake on SQL endpoints checks permissions through the SQL analytics endpoint to see if the effective identity trying to access the data has the right permissions. The effective identity doesn't need permission to read Delta tables directly in OneLake. It only needs *read* access to the Fabric item, like a lakehouse, and SELECT permission on a table through its SQL analytics endpoint. Fabric grants the semantic model the permissions it needs to read the Delta tables and related Parquet files to [**load column data**](direct-lake-how-it-works.md#column-loading-transcoding) into memory. The semantic model can read the SQL analytics endpoint regularly to check what data the querying user (or fixed identity) can access.
 
 ### Direct Lake on OneLake
 
-Direct Lake on OneLake doesn't use a SQL analytics endpoint for permission checks. It uses OneLake Security. When OneLake Security is enabled, Direct Lake on OneLake uses the current user (or fixed identity) to resolve OneLake Security roles and enforce OLS and RLS on the target Fabric artifact. If OneLake Security isn't enabled, Direct Lake on OneLake requires the effective identity to have Read and ReadAll permissions on the target Fabric artifact to access its Delta tables in OneLake. For more information about Read and ReadAll permissions, see the [Item permissions section in the OneLake security overview article.](../onelake/security/get-started-security.md#item-permissions)
+Direct Lake on OneLake doesn't use a SQL analytics endpoint to check permissions. It uses OneLake security. When OneLake security is on, Direct Lake on OneLake uses the current user (or fixed identity) to figure out OneLake security roles and enforce OLS and RLS on the target Fabric item. If OneLake security isn't on, Direct Lake on OneLake needs the effective identity to have Read and ReadAll permissions on the target Fabric item to access its Delta tables in OneLake. For more information about Read and ReadAll permissions, see [Share items and set item-level permissions](../onelake/security/get-started-security.md#share-items-and-set-item-level-permissions).
 
 > [!NOTE]
-> Contributors (or higher) have Read and ReadAll permissions in OneLake. Viewers and users who aren't members of a workspace role must be granted Read and ReadAll permissions or added to a OneLake security group. For more information about managing OneLake security groups, see [OneLake data access control model](../onelake/security/data-access-control-model.md).
+> Contributors (or higher) have Read and ReadAll permissions in OneLake. Viewers and users who aren't members of a workspace role must get Read and ReadAll permissions or be added to a OneLake security group. For more information about managing OneLake security groups, see [OneLake data access control model](../onelake/security/data-access-control-model.md).
 
 ### Direct Lake users
 
@@ -68,10 +68,10 @@ The following scenarios list minimum permission requirements.
 
 | Scenario | Direct Lake on SQL endpoints | Direct Lake on OneLake | Comments |
 |---|---|---|---|
-|**Users can view reports** |- Grant *Read* permission for the reports and *Read* permission for the semantic model. <br>- If Direct Lake uses SSO, grant users at least *Read* permission for the target Fabric artifact and SELECT permissions for the tables. |- Grant *Read* permission for the reports and *Read* permission for the semantic model. <br>- If Direct Lake uses SSO, grant users at least *Read* permission for the target Fabric artifact and add them to a OneLake security role or grant them *ReadAll* permission. |Reports don't need to belong to the same workspace as the semantic model. For more information, see [Strategy for read-only consumers](/power-bi/guidance/powerbi-implementation-planning-security-report-consumer-planning). |
-|**Users can create reports** |- Grant *Build* permission for the semantic model. <br>- If Direct Lake uses SSO, grant users at least *Read* permission for the target Fabric artifact and SELECT permissions for the tables. |- Grant *Build* permission for the semantic model. <br>- If Direct Lake uses SSO, grant users at least *Read* permission for the target Fabric artifact and add them to a OneLake security role or grant them *ReadAll* permission. | Users can only build reports on the tables and columns they have access to. This may be a subset the full set of tables and columns in the model. For more information, see [Strategy for content creators](/power-bi/guidance/powerbi-implementation-planning-security-content-creator-planning). |
-|**Users can query the semantic model but are denied querying the lakehouse or SQL analytics endpoint** |- Bind the Direct Lake model to a cloud connection with a fixed identity and leave SSO disabled. <br>- Grant the fixed identity at least *Read* permission for the target Fabric artifact and SELECT permissions for the tables. <br>- Don't grant users any permission for the target Fabric artifact. |- Bind the Direct Lake model to a cloud connection with a fixed identity and leave SSO disabled. <br>- Grant the fixed identity at least *Read* permission for the target Fabric artifact and add it to a OneLake security role or grant it *ReadAll* permission. <br>- Don't grant users any permission for the target Fabric artifact. |Only suitable when the cloud connection uses a fixed identity. |
-|**Users can query the semantic model and the SQL analytics endpoint but are denied querying the lakehouse** |- Grant *Read* and *ReadData* permissions for the target Fabric artifact. |Not applicable. |**Important**: Queries sent to the SQL analytics endpoint will bypass data access permissions enforced by the semantic model. |
+|**Users can view reports** |- Grant *Read* permission for the reports and *Read* permission for the semantic model. <br>- If Direct Lake uses SSO, grant users at least *Read* permission for the target Fabric item and SELECT permissions for the tables. |- Grant *Read* permission for the reports and *Read* permission for the semantic model. <br>- If Direct Lake uses SSO, grant users at least *Read* permission for the target Fabric item and add them to a OneLake security role or grant them *ReadAll* permission. |Reports don't need to belong to the same workspace as the semantic model. For more information, see [Strategy for read-only consumers](/power-bi/guidance/powerbi-implementation-planning-security-report-consumer-planning). |
+|**Users can create reports** |- Grant *Build* permission for the semantic model. <br>- If Direct Lake uses SSO, grant users at least *Read* permission for the target Fabric item and SELECT permissions for the tables. |- Grant *Build* permission for the semantic model. <br>- If Direct Lake uses SSO, grant users at least *Read* permission for the target Fabric item and add them to a OneLake security role or grant them *ReadAll* permission. | Users can only build reports on the tables and columns they have access to. This condition might be a subset of the full set of tables and columns in the model. For more information, see [Strategy for content creators](/power-bi/guidance/powerbi-implementation-planning-security-content-creator-planning). |
+|**Users can query the semantic model but are denied querying the lakehouse or SQL analytics endpoint** |- Bind the Direct Lake model to a cloud connection with a fixed identity and leave SSO disabled. <br>- Grant the fixed identity at least *Read* permission for the target Fabric item and SELECT permissions for the tables. <br>- Don't grant users any permission for the target Fabric item. |- Bind the Direct Lake model to a cloud connection with a fixed identity and leave SSO disabled. <br>- Grant the fixed identity at least *Read* permission for the target Fabric item and add it to a OneLake security role or grant it *ReadAll* permission. <br>- Don't grant users any permission for the target Fabric item. |Only suitable when the cloud connection uses a fixed identity. |
+|**Users can query the semantic model and the SQL analytics endpoint but are denied querying the lakehouse** |- Grant *Read* and *ReadData* permissions for the target Fabric item. |Not applicable. |**Important**: Queries sent to the SQL analytics endpoint bypass data access permissions that the semantic model enforces. |
 |**Manage the semantic model, including refresh settings** |- Requires semantic model ownership. |- Requires semantic model ownership. |For more information, see [Semantic model ownership](/power-bi/guidance/powerbi-implementation-planning-security-content-creator-planning). |
 
 > [!IMPORTANT]
@@ -81,15 +81,15 @@ For more information, see [Semantic model permissions](/power-bi/connect-data/se
 
 ### Direct Lake owners
 
-In addition to the effective identity (current user or fixed identity), Direct Lake also requires the semantic model owner to have *read* access to the source tables so that Direct Lake can frame the semantic model as part of data refresh. No matter who refreshes a Direct Lake model, Direct Lake checks the owner's permission to ensure the model is allowed to access the data. The owner's data access permission requirements are the same as for users querying the model.
+In addition to the effective identity (current user or fixed identity), Direct Lake requires the semantic model owner to have *read* access to the source tables so that Direct Lake can frame the semantic model as part of data refresh. No matter who refreshes a Direct Lake model, Direct Lake checks the owner's permission to ensure the model is allowed to access the data. The owner's data access permission requirements are the same as for users querying the model.
 
 If the semantic model owner doesn't have the required data access permissions, Direct Lake raises the following error during framing: `We cannot refresh this semantic model because one or multiple source tables either do not exist or access was denied. Please contact a data source admin to verify that the tables exist and ensure that the owner of this semantic model does have read access to these tables. Some restricted tables including fully restricted and partially restricted (indicating column constraints): '\<list of tables\>'.`
 
 ## Shortcuts to source tables
 
-Shortcuts are OneLake objects that you add to a Fabric lakehouse or other Fabric artifact to point to internal or external storage locations. In a Direct Lake model, Delta tables added through shortcuts appear as native in the connected Fabric artifact because shortcuts are transparent when you access data through the OneLake API.
+Shortcuts are OneLake objects that you add to a Fabric lakehouse or other Fabric item to point to internal or external storage locations. In a Direct Lake model, Delta tables added through shortcuts appear as native in the connected Fabric item because shortcuts are transparent when you access data through the OneLake API.
 
-When you access shortcuts through Direct Lake over SQL endpoints, Direct Lake first validates that the effective identity (current user or fixed identity) can access the table in the semantic model's data source. For internal shortcuts, after that check passes, Direct Lake uses the data source owner's identity to read the Delta table through the shortcut at the table's Fabric artifact. The data source owner must have access permission in the target OneLake location. For external shortcuts, the data source owner also needs Use permission on the cloud connection to the external system that hosts the Delta table. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
+When you access shortcuts through Direct Lake over SQL endpoints, Direct Lake first validates that the effective identity (current user or fixed identity) can access the table in the semantic model's data source. For internal shortcuts, after that check passes, Direct Lake uses the data source owner's identity to read the Delta table through the shortcut at the table's Fabric item. The data source owner must have access permission in the target OneLake location. For external shortcuts, the data source owner also needs Use permission on the cloud connection to the external system that hosts the Delta table. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
 :::image type="content" source="media/direct-lake-security-integration/direct-lake-diagram.png" lightbox="media/direct-lake-security-integration/direct-lake-diagram.png" alt-text="Screenshot of diagram showing Direct Lake validating effective identity then using data source owner identity to access internal or external shortcut target.":::
 
@@ -97,40 +97,40 @@ Direct Lake over OneLake has different permission requirements because the SQL A
 
 ## Object-level security (OLS) and row-level security (RLS)
 
-Both OneLake Security and Direct Lake models support OLS and RLS. OLS enables artifact owners and admins to secure specific tables or columns. RLS can be used to restrict data access at the row level based on filters. You can define OLS and RLS in OneLake Security, in a Direct Lake model, or in both locations.
+Both OneLake security and Direct Lake models support OLS and RLS. OLS enables item owners and admins to secure specific tables or columns. RLS can be used to restrict data access at the row level based on filters. You can define OLS and RLS in OneLake security, in a Direct Lake model, or in both locations.
 
 > [!IMPORTANT]
 > Direct Lake doesn't support SQL analytics endpoint OLS/RLS in memory. Direct Lake over SQL endpoints handles these restrictions differently depending on the type. If a query touches a table or column that's restricted by SQL analytics endpoint OLS or column-level security (CLS), the query returns an error. If a query references a table that enforces RLS or a view at the SQL analytics endpoint, the query falls back to DirectQuery mode. If DirectQuery fallback is disabled, queries that depend on RLS or views over SQL endpoints fail. Direct Lake over OneLake avoids these limitations. For details, see [How queries are evaluated in Direct Lake on SQL](#how-queries-are-evaluated-in-direct-lake-on-sql).
 
-### Direct Lake on OneLake OLS/RLS with OneLake Security OLS/RLS
+### Direct Lake on OneLake OLS/RLS with OneLake security OLS/RLS
 
-Direct Lake on OneLake evaluates access to OLS/RLS secured objects by resolving the effective identity's OneLake Security roles and applying the defined OLS/RLS rules. The OneLake Security roles are handled the same as Direct Lake roles. If the effective identity belongs to multiple roles in OneLake Security and Direct Lake, Direct Lake first unions the OneLake Security roles, then intersects the result with the Direct Lake roles.
+Direct Lake on OneLake evaluates access to OLS/RLS secured objects by resolving the effective identity's OneLake security roles and applying the defined OLS/RLS rules. The OneLake security roles are handled the same as Direct Lake roles. If the effective identity belongs to multiple roles in OneLake security and Direct Lake, Direct Lake first unions the OneLake security roles, then intersects the result with the Direct Lake roles.
 
-This table lists common troubleshooting situations caused by conflicting OneLake Security and Direct Lake rules.
+This table lists common troubleshooting situations caused by conflicting OneLake security and Direct Lake rules.
 
 | Scenario | Comments |
 |---|---|
 | No rows returned due to RLS filtering | If the effective identity lacks row-level access permissions, queries can return empty results. This behavior is expected when RLS filters exclude all rows for the current user. |
-| Can't find table<br/>Column can't be found<br/>Failed to resolve name<br/>Not a valid table, variable, or function name | These errors usually occur when object permissions are missing after applying OneLake Security roles. |
+| Can't find table<br/>Column can't be found<br/>Failed to resolve name<br/>Not a valid table, variable, or function name | These errors usually occur when object permissions are missing after applying OneLake security roles. |
 
 ### OLS/RLS scope differences
 
-Enforcing OLS and RLS in OneLake Security applies the rules across all compute engines and ensures unified access control for users. This means that, regardless of the compute engine—lakehouse, warehouse, semantic model, or other artifact—OneLake Security rules control the user's data access. In contrast, OLS/RLS defined within a Direct Lake semantic model only apply within the scope of that model. Other compute engines don't apply these Direct Lake security rules, which can produce different results when users access the data through other paths.
+Enforcing OLS and RLS in OneLake security applies the rules across all compute engines and ensures unified access control for users. This means that, regardless of the compute engine—lakehouse, warehouse, semantic model, or other item—OneLake security rules control the user's data access. In contrast, OLS/RLS defined within a Direct Lake semantic model only apply within the scope of that model. Other compute engines don't apply these Direct Lake security rules, which can produce different results when users access the data through other paths.
 
 > [!IMPORTANT]
-> When you use both OneLake Security OLS/RLS and Direct Lake OLS/RLS, users who have OneLake access can still retrieve and work with the data—even if Direct Lake model rules further restrict data—because model-level rules don't extend beyond the model. Use OneLake Security for comprehensive access control across all compute engines.
+> When you use both OneLake security OLS/RLS and Direct Lake OLS/RLS, users who have OneLake access can still retrieve and work with the data—even if Direct Lake model rules further restrict data—because model-level rules don't extend beyond the model. Use OneLake security for comprehensive access control across all compute engines.
 
 ### OneLake OLS and semantic model metadata
 
 Semantic model metadata includes definitions of tables, columns, relationships, and other schema elements. Users with *build* or higher permissions can view the model metadata via XML for Analysis (XMLA) and REST APIs. For more information, see [Semantic model permissions](/power-bi/connect-data/service-datasets-permissions).
 
-To protect sensitive table and column names in OneLake with OneLake OLS, remember that OneLake Security applies only to members of the workspace Viewer role. OneLake OLS doesn't prevent members of the Contributor (or higher) workspace role from discovering secured tables or columns because they already have Write permission to all workspace artifacts. Members of the Viewer role with *build* or higher permissions on a Direct Lake model can discover sensitive schema information through the semantic model metadata. These higher privileged viewers still don't have data access, but they can see that the secured tables and columns exist.
+To protect sensitive table and column names in OneLake with OneLake OLS, remember that OneLake security applies only to members of the workspace Viewer role. OneLake OLS doesn't prevent members of the Contributor (or higher) workspace role from discovering secured tables or columns because they already have Write permission to all workspace items. Members of the Viewer role with *build* or higher permissions on a Direct Lake model can discover sensitive schema information through the semantic model metadata. These higher privileged viewers still don't have data access, but they can see that the secured tables and columns exist.
 
-A Direct Lake model might exist in the same workspace as the source artifact or in a separate workspace. Grant a viewer in the same workspace *build* (or higher) access to a Direct Lake model through item permissions. In a separate workspace, a user might be a Contributor (or higher) or have *build* (or higher) item permissions to access the model metadata.
+A Direct Lake model might exist in the same workspace as the source item or in a separate workspace. Grant a viewer in the same workspace *build* (or higher) access to a Direct Lake model through item permissions. In a separate workspace, a user might be a Contributor (or higher) or have *build* (or higher) item permissions to access the model metadata.
 
 ### OneLake OLS and Git integration
 
-Git integration enables developers to integrate their application lifecycle management (ALM) processes into the Fabric platform. The Git repository preserves the workspace structure, including all supported artifacts. Developers have full visibility to the metadata of all their items in the Git repository. Direct Lake model metadata lets them see that secured tables or columns exist even if they don't have access to the target data source in another workspace. For more information, see [What is Microsoft Fabric Git integration?](../cicd/git-integration/intro-to-git-integration.md)
+Git integration enables developers to integrate their application lifecycle management (ALM) processes into the Fabric platform. The Git repository preserves the workspace structure, including all supported items. Developers have full visibility to the metadata of all their items in the Git repository. Direct Lake model metadata lets them see that secured tables or columns exist even if they don't have access to the target data source in another workspace. For more information, see [What is Microsoft Fabric Git integration?](../cicd/git-integration/intro-to-git-integration.md)
 
 ## How queries are evaluated in Direct Lake on SQL
 
@@ -149,7 +149,7 @@ The following steps approximate how Direct Lake on SQL queries are evaluated (an
 1. Otherwise, the query is satisfied from the in-memory cache. Column data is [loaded into memory](direct-lake-how-it-works.md#column-loading-transcoding) when required.
 
 > [!IMPORTANT]
-> Direct Lake on OneLake does not support fallback to DirectQuery mode. If any table in the SQL analytics endpoint enforces RLS or the query [exceeds the guardrails of the capacity](../fundamentals/direct-lake-overview.md#fabric-capacity-requirements), an error result is returned (report visuals fail to render).
+> Direct Lake on OneLake doesn't support fallback to DirectQuery mode. If any table in the SQL analytics endpoint enforces RLS or the query [exceeds the guardrails of the capacity](../fundamentals/direct-lake-overview.md#fabric-capacity-requirements), an error result is returned (report visuals fail to render).
 
 ## Data-access rule options
 
@@ -161,16 +161,16 @@ You can set up data-access rules in:
 
 ### Rules in the semantic model
 
-If you must enforce data-access rules, you should do so in OneLake security so that the rules apply across all compute engines and ensure unified access control for users. Use semantic model RLS or OLS when report consumers aren't granted permission to query the lakehouse or warehouse and the cloud connection uses a fixed identity instead of SSO. SSO implies that end users can access the data source directly and might therefore bypass security rules in the semantic model.
+If you must enforce data-access rules, do so in OneLake security so that the rules apply across all compute engines and ensure unified access control for users. Use semantic model RLS or OLS when report consumers aren't granted permission to query the lakehouse or warehouse and the cloud connection uses a fixed identity instead of SSO. SSO implies that end users can access the data source directly and might therefore bypass security rules in the semantic model.
 
 > [!IMPORTANT]
 > Semantic model item permissions can be [set explicitly](/power-bi/connect-data/service-datasets-manage-access-permissions) via [Power BI apps](/power-bi/consumer/end-user-apps), or [acquired implicitly](/power-bi/connect-data/service-datasets-permissions#permissions-acquired-implicitly-via-workspace-role) via workspace roles.
 >
-> Notably, semantic model data-access rules are not enforced for users who have _Write_ permission on the semantic model. Conversely, data-access rules do apply to users who are assigned to the _Viewer_ workspace role. However, users assigned to the _Admin_, _Member_, or _Contributor_ workspace role implicitly have _Write_ permission on the semantic model and so data-access rules are not enforced. For more information, see [Roles in workspaces](/power-bi/collaborate-share/service-roles-new-workspaces).
+> Notably, semantic model data-access rules aren't enforced for users who have _Write_ permission on the semantic model. Conversely, data-access rules do apply to users who are assigned to the _Viewer_ workspace role. However, users assigned to the _Admin_, _Member_, or _Contributor_ workspace role implicitly have _Write_ permission on the semantic model and so data-access rules aren't enforced. For more information, see [Roles in workspaces](/power-bi/collaborate-share/service-roles-new-workspaces).
 
 ### Rules at multiple layers
 
-Data-access rules can be enforced at all layers. However, this approach involves extra complexity and management overhead. In this case, it's recommended that the cloud connection uses a fixed identity instead of SSO.
+You can enforce data-access rules at all layers. However, this approach involves extra complexity and management overhead. In this case, use a fixed identity for the cloud connection instead of SSO.
 
 ### Compare data-access rule options
 
@@ -178,9 +178,9 @@ The following table compares data-access setup options for Direct Lake on SQL en
 
 | Apply data-access rules to | Direct Lake on SQL | Direct Lake on OneLake | Comment |
 | --- | --- | --- | --- |
-| Semantic model only | Supported | Supported | Use this option when users aren't granted item permissions to query the lakehouse or warehouse. Set up the cloud connection to use a fixed identity. High query performance can be achieved from the in-memory cache. |
+| Semantic model only | Supported | Supported | Use this option when users aren't granted item permissions to query the lakehouse or warehouse. Set up the cloud connection to use a fixed identity. Achieve high query performance from the in-memory cache. |
 | SQL analytics endpoint only | Supported (falls back to DirectQuery) | Not applicable | Depends on the Fabric data item (like Lakehouse or Warehouse) using [delegated identity mode](../onelake/security/sql-analytics-endpoint-onelake-security.md#access-modes-in-sql-analytics-endpoint). Use this option when users need to access data from either the warehouse or the semantic model, and with consistent data-access rules. Ensure SSO is enabled for the cloud connection. Query performance might be slow due to DirectQuery fallback. |
-| OneLake security only | Not applicable | Supported | Use this option for unified access control across all Fabric compute engines. OneLake security enforces OLS and RLS consistently for all users accessing the data through any path. High query performance can be achieved from the in-memory cache. |
+| OneLake security only | Not applicable | Supported | Use this option for unified access control across all Fabric compute engines. OneLake security enforces OLS and RLS consistently for all users accessing the data through any path. Achieve high query performance from the in-memory cache. |
 | Multiple layers (semantic model and SQL endpoint) | Supported | Not applicable | This option involves extra management overhead. Set up the cloud connection to use a fixed identity. |
 | Multiple layers (semantic model and OneLake security) | Not applicable | Supported | OneLake security rules are applied first, then semantic model rules. Consider consolidating rules at one layer to reduce complexity. |
 
@@ -191,13 +191,13 @@ Consider these Direct Lake security limitations.
 > [!NOTE]
 > The capabilities and features of Direct Lake semantic models and OneLake security evolve rapidly. Check back periodically for updates.
 
-- Assign workspace viewers OneLake security roles that grant *read* access to the source Fabric artifacts. If a source artifact has shortcuts to another Fabric artifact, the user also needs *read* access to each shortcut's target Fabric artifact.
-- Use a fixed identity to isolate users from a source Fabric artifact. Bind the Direct Lake model to a cloud connection. Keep SSO disabled on the cloud connection to use the fixed identity for refreshes and queries.
-- Direct Lake semantic models that rely on Fabric OneLake security on the source artifact don't support backup operations.
-- Bidirectional relationships aren't supported in a Direct Lake model if the source Fabric artifact relies on OneLake security RLS.
+- Assign workspace viewers OneLake security roles that grant *read* access to the source Fabric items. If a source item has shortcuts to another Fabric item, the user also needs *read* access to each shortcut's target Fabric item.
+- Use a fixed identity to isolate users from a source Fabric item. Bind the Direct Lake model to a cloud connection. Keep SSO disabled on the cloud connection to use the fixed identity for refreshes and queries.
+- Direct Lake semantic models that rely on Fabric OneLake security on the source item don't support backup operations.
+- Bidirectional relationships aren't supported in a Direct Lake model if the source Fabric item relies on OneLake security RLS.
 - OneLake security doesn't support dynamic definitions or complex role configurations, such as combining multiple OLS and RLS roles across related tables.
 - Consolidate OneLake security RLS and OLS permissions into one role per user instead of assigning multiple roles.
-- If the OneLake security configuration changes, such as due to shortcut changes in the target artifact, refresh Direct Lake on OneLake models that access that artifact. You must refresh the models manually or by using refresh APIs.
+- If the OneLake security configuration changes, such as due to shortcut changes in the target item, refresh Direct Lake on OneLake models that access that item. You must refresh the models manually or by using refresh APIs.
 - If a Lakehouse has OneLake security:
   - The SQL analytics endpoint is, by default, fixed identity to the owner of the Lakehouse, so the SQL analytics endpoint OneLake security is the same as the owner (no limitations). Direct Lake on SQL stays using Direct Lake, unless extra SQL granular access roles are added.
   - The SQL analytics endpoint can be changed to SSO. When this happens, OneLake security roles are added as SQL granular access control rules and the user is blocked from editing them directly on the SQL analytics endpoint. At this point, Direct Lake on SQL falls back to DirectQuery 100% of the time.

@@ -8,7 +8,7 @@ ms.topic: how-to
 
 # Set up writeback to persist data
 
-Plan supports exporting planning data to Fabric SQL databases. Write back budgets, forecasts, adjustments, and scenarios to keep planning data synchronized with enterprise systems. Unlike conventional BI and planning tools that require predefined database schemas and IT-managed writeback infrastructure, plan supports dynamic database configuration and runtime table creation.
+Planning supports exporting planning data to Fabric SQL databases. Write back budgets, forecasts, adjustments, and scenarios to keep planning data synchronized with enterprise systems. Unlike conventional BI and planning tools that require predefined database schemas and IT-managed writeback infrastructure, planning supports dynamic database configuration and runtime table creation.
 
 ## Writeback use cases
 

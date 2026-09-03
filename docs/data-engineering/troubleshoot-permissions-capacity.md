@@ -1,6 +1,6 @@
 ---
 title: Troubleshoot Permission and Capacity Errors in Data Engineering
-description: Troubleshoot common permission and capacity issues in Data Engineering in Microsoft Fabric.
+description: Troubleshoot common permission and capacity issues in Fabric Data Engineering.
 ms.reviewer: vallariolson
 ms.date: 02/09/2026
 ms.topic: troubleshooting
@@ -23,7 +23,7 @@ Use this reference table to quickly identify common permission and capacity erro
 
 ## Permission and Authorization Errors
 
-This section helps you diagnose and resolve authentication and authorization issues when accessing Data Engineering artifacts in Microsoft Fabric.
+This section helps you diagnose and resolve authentication and authorization problems when accessing Fabric Data Engineering items.
 
 ### Error: Authentication Failed
 
@@ -36,18 +36,18 @@ This kind of error indicates that your account lacks the necessary permissions t
 
 #### Scenario
 
-This issue typically occurs when you are attempting to access or query data in a Lakehouse or run a Spark notebook without the required permissions.
+This issue typically occurs when you attempt to access or query data in a lakehouse or run a Spark notebook without the required permissions.
 
 #### Common Causes
 
 The following are the most common permission-related issues:
-- Opening a Lakehouse in Fabric and attempting to query tables using SQL or Spark without sufficient workspace role (need Contributor or higher for most operations)
-- Running a notebook or Spark job definition that reads from or writes to a Lakehouse without artifact-level permissions (Read, ReadData, or ReadAll)
+- Opening a lakehouse in Fabric and attempting to query tables by using SQL or Spark without sufficient workspace role (need Contributor or higher for most operations)
+- Running a notebook or Spark job definition that reads from or writes to a lakehouse without item-level permissions (Read, ReadData, or ReadAll)
 - Missing Azure Storage "Storage Blob Data Contributor" or "Storage Blob Data Reader" role assignment for Delta tables using ADLS or OneLake
 - Access token expired, invalid, or missing required scopes during authentication
 
 #### What Happened
-Your user account or service principal lacks the necessary permissions to access data engineering artifacts (Lakehouses, Notebooks, Spark job definitions, Pipelines), underlying storage, shortcuts, or perform specific operations. Access can be denied at multiple levels: workspace permissions, artifact permissions, storage-level permissions, or authentication failures with the catalog service.
+Your user account or service principal lacks the necessary permissions to access Data Engineering items (lakehouses, notebooks, Spark job definitions, Pipelines), underlying storage, shortcuts, or perform specific operations. Access can be denied at multiple levels: workspace permissions, item permissions, storage-level permissions, or authentication failures with the catalog service.
 
 #### How to Fix the Error
 
@@ -57,9 +57,9 @@ Follow one or more of these solutions to resolve the error.
 
 Ensure you have the appropriate workspace role and data access permissions:
 
-1. Navigate to Workspace Settings > Manage access
-2. Add your user with **Contributor**, **Member**, or **Admin** role (Viewer role has limited access)
-3. Navigate to the artifact (Lakehouse, Notebook, Pipeline) > Manage permissions
+1. Go to **Workspace settings** > **Manage access**.
+1. Add your user with **Contributor**, **Member**, or **Admin** role (**Viewer** role has limited access).
+1. Go to the item (lakehouse, notebook, pipeline) > **Manage permissions**.
 4. For SQL querying: Grant "Read all data using SQL" (**ReadData** permission)
 5. For Spark access: Grant "Read all data using Apache Spark" (**ReadAll** permission)
 6. For Power BI connections: Grant at least "Read" permission for metadata access
@@ -96,7 +96,7 @@ For authentication errors and external storage access:
    - Fabric APIs: `https://api.fabric.microsoft.com/`
 2. Check token expiration and refresh tokens before long-running operations
 3. For shortcuts to external storage (ADLS Gen2, S3):
-   - Navigate to Lakehouse > Open shortcut configuration
+   - Navigate to lakehouse > Open shortcut configuration
    - Update credentials (Service Principal, Account Key, or SAS Token)
    - Test the connection and ensure network access is allowed
 4. Clear cached credentials and re-authenticate if tokens appear stale
@@ -115,7 +115,7 @@ See [OneLake shortcuts](../onelake/onelake-shortcuts.md) and [troubleshoot lakeh
 
 ## Capacity and Rate Limiting Errors
 
-This section addresses issues related to capacity limits, throttling, and rate limiting in Microsoft Fabric.
+This section addresses issues related to capacity limits, throttling, and rate limiting in Fabric.
 
 ### Error: Capacity Exceeded - Spark Job Can't Be Run
 
@@ -139,7 +139,7 @@ The following situations commonly trigger capacity exceeded errors:
 - Insufficient capacity SKU for your Spark workload demands
 
 #### What Happened
-Your Microsoft Fabric capacity has exceeded its allocated Compute Units (CUs) for Spark workloads, causing the service to throttle or reject Spark job execution. This affects Spark jobs, notebooks, Spark job definitions, and data pipelines using Spark activities.
+Your Fabric capacity exceeded its allocated compute units (CUs) for Spark workloads, causing the service to throttle or reject Spark job execution. This limitation affects Spark jobs, notebooks, Spark job definitions, and data pipelines that use Spark activities.
 
 #### How to Fix the Error
 
@@ -161,7 +161,7 @@ See [configure Autoscale Billing for Spark](configure-autoscale-billing.md) and 
 
 **Fix 2: Review Running and Queued Spark Jobs with Job Concurrency & Queue Monitoring**
 
-Use Job Concurrency & Queue Monitoring in Workspace settings for real-time visibility into Spark job state and capacity pressure.
+Use Job Concurrency & Queue Monitoring in workspace settings for real-time visibility into Spark job state and capacity pressure.
 
 1. Go to **Workspace settings**.
 1. Select **Data Engineering/Science** > **Spark settings**.
@@ -175,7 +175,7 @@ See [Job Concurrency and Queue Monitoring](job-concurrency-queue-monitoring.md#g
 
 **Fix 3: Monitor and Identify High-Consumption Spark Workloads**
 
-Use the [Fabric Capacity Metrics app](../enterprise/capacity-planning-troubleshoot-consumption.md) to identify which workspaces, users, or jobs are consuming the most Compute Units:
+Use the [Microsoft Fabric Capacity Metrics app](../enterprise/capacity-planning-troubleshoot-consumption.md) to identify which workspaces, users, or jobs consume the most Compute Units:
 1. Navigate to Admin Portal and access the Capacity Metrics app
 2. Review real-time utilization, throttling events, and overages
 3. Check the Compute page, Timepoint page, and Throttling tab to identify resource issues
@@ -185,7 +185,7 @@ Understanding [how Fabric capacity throttling works](../enterprise/throttling.md
 
 **Fix 4: Reduce Concurrent Spark Operations and Optimize Workloads**
 
-For Spark operations (Notebooks, Spark job definitions):
+For Spark operations (notebooks, Spark job definitions):
 - Stagger job execution times to avoid peak loads
 - Stop long-running or stalled notebooks and Spark sessions
 - Manage [Spark job concurrency limits](spark-job-concurrency-and-queueing.md)
@@ -214,12 +214,12 @@ This issue typically occurs when you are making frequent API calls to Fabric ser
 #### Common Causes
 
 The following situations lead to API rate limiting:
-- Running a script that repeatedly calls Lakehouse metadata APIs (such as ListTables or GetTable) in a loop without throttling
-- Executing multiple concurrent processes that access the same Lakehouse artifacts simultaneously
+- Running a script that repeatedly calls lakehouse metadata APIs (such as `ListTables` or `GetTable`) in a loop without throttling
+- Executing multiple concurrent processes that access the same lakehouse items simultaneously
 - Making too many API calls in a short time period without implementing retry logic with backoff strategies
 
 #### What Happened
-Your application or workload has exceeded the allowed number of API requests to Microsoft Fabric services (such as Lakehouse APIs) within a specific time window. The service is throttling requests to protect system stability.
+Your application or workload exceeded the allowed number of API requests to Fabric services (such as lakehouse APIs) within a specific time window. The service throttles requests to protect system stability.
 
 #### How to Fix the Error
 
@@ -257,7 +257,7 @@ Optimize your code to minimize API calls:
 - Avoid repeated API calls in tight loops or parallel operations
 - Cache API responses when data doesn't change frequently
 - Batch operations where possible instead of individual requests
-- Reduce the number of concurrent operations accessing the same Lakehouse
+- Reduce the number of concurrent operations accessing the same lakehouse
 - Spread API requests over time rather than making many requests simultaneously
 
 **Fix 3: Review Application Design and Access Patterns**
@@ -265,7 +265,7 @@ Optimize your code to minimize API calls:
 For persistent rate limiting issues:
 - Profile your application to identify API call hotspots
 - Consider alternative approaches (e.g., querying data through Spark instead of repeated API calls)
-- Distribute workload across multiple Lakehouses if appropriate
+- Distribute workload across multiple lakehouses if appropriate
 - If legitimate high-volume API access is required, contact Microsoft Support to discuss your scenario
 
 ### Error: Capacity Not Active at Refresh
@@ -283,7 +283,7 @@ This issue typically occurs when you are attempting to perform data engineering 
 #### Common Causes
 
 The following situations cause capacity activation errors:
-- Triggering a scheduled Lakehouse refresh when the workspace's capacity assignment has been removed or the capacity is overloaded or throttled
+- Triggering a scheduled lakehouse refresh when the workspace's capacity assignment is removed or the capacity is overloaded or throttled
 - Attempting to run a notebook or pipeline after the workspace has been moved from a Fabric capacity to a trial or free tier
 - Capacity has been paused or suspended by an administrator
 
@@ -299,13 +299,13 @@ Use one or more of the following fixes to verify and restore your workspace’s 
 
 1. In the Fabric Admin Portal, verify your capacity is active and running
 2. Check that the workspace is assigned to this capacity
-3. Navigate to Workspace Settings > License Info to confirm "Fabric Capacity" backing
+3. Navigate to **Workspace settings** > **License Info** to confirm "Fabric Capacity" backing
 4. Ensure the workspace hasn't been accidentally unassigned from the capacity
 5. Verify the capacity hasn't been paused or suspended
 
 **Fix 2: Verify Tenant Settings**
 
-1. In the Power BI Admin Portal under Tenant Settings > Microsoft Fabric, ensure "Users can create Fabric items" is enabled
+1. In the Power BI Admin Portal under **Tenant Settings** > **Microsoft Fabric**, ensure "Users can create Fabric items" is enabled
 2. Confirm no organizational policies are blocking Fabric operations
 3. If the problem persists for only one workspace while others work fine, consider creating a new workspace and move content
 

@@ -6,9 +6,9 @@ description: Use Apache Spark MLlib to create a predictive analytics model with 
 ms.author: scottpolly
 ms.custom: dev-focus
 ms.date: 05/13/2026
-ms.reviewer: ruxu
+ms.reviewer: scottpolly
 ms.topic: tutorial
-reviewer: ruixinxu
+reviewer: s-polly
 ai-usage: ai-assisted
 ---
 

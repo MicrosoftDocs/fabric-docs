@@ -1,17 +1,17 @@
 ---
-title: Planning Sheets in Plan
-description: Learn about the planning sheets component of the plan item for budgeting and forecasting.
+title: Planning Sheets in Planning
+description: Learn about the planning sheets component of planning in Fabric for budgeting and forecasting.
 ms.date: 03/27/2026
 ms.topic: overview
 ms.search.form: Fabric Planning Sheets Overview
 #customer intent: As a user, I want to understand and use planning sheets effectively.
 ---
 
-# What are planning sheets in plan?
+# What are planning sheets within planning in Fabric?
 
-The *planning sheets* component of plan enables organizations to implement structured, collaborative, and data-driven planning processes within their enterprise data environment.
+The *planning sheets* component of planning in Fabric enables organizations to implement structured, collaborative, and data-driven planning processes within their enterprise data environment.
 
-A planning sheet is a structured workspace in plan that allows users to enter, update, and analyze planning data across defined business dimensions such as time, department, account, or product. Planning sheets provide a controlled environment for budgeting, forecasting, and scenario analysis while ensuring that planning data follows organizational rules and governance policies.
+A planning sheet is a structured workspace in planning that allows users to enter, update, and analyze planning data across defined business dimensions such as time, department, account, or product. Planning sheets provide a controlled environment for budgeting, forecasting, and scenario analysis while ensuring that planning data follows organizational rules and governance policies.
 
 The platform is designed for business users and features a no-code, self-service architecture.
 
@@ -30,7 +30,7 @@ Planning sheets also provide **measurable operational outcomes**, including:
 * Shortened budget and planning cycles
 * Increased reliability of forecasts
 * Reduced effort required for data reconciliation
-* Improved auditability and compliance of planning processes.
+* Improved auditability and compliance of Planning processes.
 
 ### Where to use planning sheets
 
@@ -44,7 +44,7 @@ Plans are used in several areas of the platform:
 
 ## Key capabilities
 
-The following table lists the core capabilities of planning sheets.
+The following table lists the core capabilities of Planning sheets.
 
 | Capability | Description | Key features |
 | --- | --- | --- |
@@ -56,7 +56,7 @@ The following table lists the core capabilities of planning sheets.
 | **Writeback and data storage** | Allows planning inputs to be written back to external systems for persistence and integration. | - Multiple destination support <br>- Writeback logs and monitoring <br>- Secure data persistence <br>- Integration with enterprise data platforms |
 | **Approval workflows** | Provides governance for planning cycles through structured approval processes. | - Define approval flows <br>- Assign approvers <br>- Review and approve planning changes <br>- Request adjustments |
 | **Model editor** | Defines and manages the structure of a planning model by configuring dimensions, measures, hierarchies, and calculations | - Map model components to data sources <br>- Validate model configuration before deployment <br>- Maintain centralized governance of the planning model <br>- Define hierarchies for roll-ups and drill-down analysis |
-| **Cube** | Organizes and stores planning data in a multidimensional data structure. | - Analyze data across multiple dimensions <br>- Aggregate data across hierarchy levels <br>- Process large volumes of planning data efficiently |      
+| **Cube** | Organizes and stores planning data in a multidimensional data structure. | - Analyze data across multiple dimensions <br>- Aggregate data across hierarchy levels <br>- Process large volumes of Planning data efficiently |      
 
 ## Next steps
 

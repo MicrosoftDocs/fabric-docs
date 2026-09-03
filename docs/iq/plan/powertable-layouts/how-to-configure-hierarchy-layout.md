@@ -1,12 +1,12 @@
 ---
-title: Configure Hierarchy Layout in PowerTable
+title: Configure and Use Hierarchy Layout in PowerTable
 description: Hierarchy layout organizes records into parent-child relationships for easier navigation of multilevel data. Learn how to configure and manage it in PowerTable.
 #customer intent: As a PowerTable user, I want to switch from the default table layout to a hierarchy layout, so that I can view my hierarchical data in a structured format.
 ms.date: 07/22/2026
 ms.topic: how-to
 ---
 
-# Configure hierarchy layout
+# Configure and use hierarchy layout
 
 The **Hierarchy** layout organizes records into parent-child relationships, making it easier to navigate and analyze multilevel data. It provides an alternative to the default **Table** layout. This layout is useful for datasets such as organizational structures, product categories, customer orders, and similar hierarchical data.
 

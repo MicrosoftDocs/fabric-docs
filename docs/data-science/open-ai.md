@@ -6,8 +6,8 @@ ms.custom: dev-focus
 ai-usage: ai-assisted
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.date: 06/30/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
@@ -22,18 +22,18 @@ You can use the Azure OpenAI service to solve many natural language tasks by pro
 The key prerequisites for this quickstart include a working Azure OpenAI resource and an Apache Spark cluster with SynapseML installed. 
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
-* Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
+* Go to the Data Science workload in [!INCLUDE [product-name](../includes/product-name.md)].
 * Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
 * An Azure OpenAI resource - [create a resource](/azure/ai-foundry/openai/how-to/create-resource?pivots=web-portal#create-a-resource)
 
 
 ## Import this guide as a notebook
 
-The next step is to add this code into your Spark cluster. You can either create a notebook in your Spark platform and copy the code into this notebook to run the demo. Or download the notebook and import it into Synapse Analytics.
+The next step is to add this code into your Spark cluster. You can either create a notebook in your Spark platform and copy the code into this notebook to run the demo. 
 
-1. [Download this demo as a notebook](https://github.com/microsoft/SynapseML/blob/master/docs/Explore%20Algorithms/OpenAI/OpenAI.ipynb) (select **Raw**, then save the file)
-1. Import the notebook [into the Synapse Workspace](/en-us/azure/synapse-analytics/spark/apache-spark-development-using-notebooks#create-a-notebook) or if using Fabric [import into the Fabric Workspace](/en-us/fabric/data-engineering/how-to-use-notebook)
-1. Install SynapseML on your cluster. See the installation instructions for Synapse at the bottom of [the SynapseML website](https://microsoft.github.io/SynapseML/). If you're using Fabric, check [Installation Guide](/en-us/fabric/data-science/install-synapseml). This step requires pasting an extra cell at the top of the notebook you imported. 
+1. [Download this demo as a notebook](https://github.com/microsoft/SynapseML/blob/master/docs/Explore%20Algorithms/OpenAI/OpenAI.ipynb) (select **Raw**, then save the file).
+1. [Import into the Fabric workspace](../data-engineering/how-to-use-notebook.md).
+1. Use the [installation guide to install SynapseML on your cluster](install-synapseml.md). This step requires pasting an extra cell at the top of the notebook you imported. 
 1. Connect your notebook to a cluster and follow along, editing and running the cells.
 
 ## Fill in service information
@@ -67,9 +67,9 @@ assert key is not None and service_name is not None
 
 ## Create a dataset of prompts
 
-Next, create a dataframe consisting of a series of rows, with one prompt per row. 
+Next, create a DataFrame consisting of a series of rows, with one prompt per row. 
 
-You can also load data directly from ADLS or other databases. For more information on loading and preparing Spark dataframes, see the [Apache Spark data loading guide](https://spark.apache.org/docs/latest/sql-data-sources.html).
+You can also load data directly from ADLS or other databases. For more information on loading and preparing Spark DataFrames, see the [Apache Spark data loading guide](https://spark.apache.org/docs/latest/sql-data-sources.html).
 
 
 ```python
@@ -84,7 +84,7 @@ df = spark.createDataFrame(
 
 ## Create the OpenAIPrompt Apache Spark client
 
-To apply the Azure OpenAI service to your dataframe, create an `OpenAIPrompt` object, which acts as a distributed client. Set the service parameters with either a single value or a dataframe column by using the appropriate setters on the `OpenAIPrompt` object. In this example, set `maxTokens` to 200. A token is about four characters, and this limit applies to the sum of the prompt and the result. Set the `promptCol` parameter with the name of the prompt column in the dataframe.
+To apply the Azure OpenAI service to your DataFrame, create an `OpenAIPrompt` object, which acts as a distributed client. Set the service parameters with either a single value or a DataFrame column by using the appropriate setters on the `OpenAIPrompt` object. In this example, set `maxTokens` to 200. A token is about four characters, and this limit applies to the sum of the prompt and the result. Set the `promptCol` parameter with the name of the prompt column in the DataFrame.
 
 
 ```python
@@ -102,9 +102,9 @@ completion = (
 )
 ```
 
-## Transform the dataframe by using the OpenAIPrompt client
+## Transform the DataFrame by using the OpenAIPrompt client
 
-After creating the dataframe and the prompt client, transform your input dataset and add a column named `completions` with all of the information the service adds. Select just the text for simplicity.
+After creating the DataFrame and the prompt client, transform your input dataset and add a column named `completions` with all of the information the service adds. Select just the text for simplicity.
 
 
 ```python
@@ -206,7 +206,7 @@ display(
 ### Improve throughput with request batching 
 
 The example makes several requests to the service, one for each prompt. To complete multiple prompts in a single request, use batch mode. First, in the `OpenAIPrompt` object, instead of setting the Prompt column to "Prompt", specify "batchPrompt" for the BatchPrompt column.
-To do so, create a dataframe with a list of prompts per row.
+Create a DataFrame with a list of prompts per row.
 
 
 ```python
@@ -255,7 +255,7 @@ from synapse.ml.core.spark import FluentAPI
 completed_autobatch_df = (
     df.coalesce(
         1
-    )  # Force a single partition so that our little 4-row dataframe makes a batch of size 4, you can remove this step for large datasets
+    )  # Force a single partition so that our little 4-row DataFrame makes a batch of size 4, you can remove this step for large datasets
     .mlTransform(FixedMiniBatchTransformer(batchSize=4))
     .withColumnRenamed("prompt", "batchPrompt")
     .mlTransform(batch_completion)

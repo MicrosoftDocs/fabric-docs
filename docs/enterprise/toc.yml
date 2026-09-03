@@ -13,8 +13,8 @@ items:
     href: fabric-site-reliability-engineering-model.md       
 - name: Get started
   items:
-  - name: Buy a Microsoft Fabric subscription
-    href: buy-subscription.md
+  - name: Buy Fabric capacity in Azure
+    href: buy-capacity.md
   - name: SKU considerations
     href: sku-considerations.md
   - name: End a trial, close an account, cancel a subscription
@@ -39,8 +39,22 @@ items:
     href: fabric-operations.md   
   - name: Optimize your capacity
     href: optimize-capacity.md
-  - name: Get capacity overview events in Real-Time Hub
-    href: /fabric/real-time-hub/create-streams-fabric-capacity-overview-events?context=/fabric/context/context-enterprise
+  - name: Capacity events
+    items:
+    - name: Explore capacity overview events
+      href: /fabric/real-time-hub/explore-fabric-capacity-overview-events?context=/fabric/context/context-enterprise
+    - name: Explore Fabric capacity operation events
+      href: /fabric/real-time-hub/explore-fabric-capacity-operation-events?context=/fabric/context/context-enterprise
+    - name: Create streams for capacity overview events
+      href: /fabric/real-time-hub/create-streams-fabric-capacity-overview-events?context=/fabric/context/context-enterprise
+    - name: Create streams for Fabric capacity operation events
+      href: /fabric/real-time-hub/create-streams-fabric-capacity-operation-events?context=/fabric/context/context-enterprise
+    - name: Set alerts on capacity overview events
+      href: /fabric/real-time-hub/set-alerts-fabric-capacity-overview-events?context=/fabric/context/context-enterprise
+    - name: Set alerts on Fabric capacity operation events
+      href: /fabric/real-time-hub/set-alerts-fabric-capacity-operation-events?context=/fabric/context/context-enterprise
+    - name: Monitor capacity health tutorial
+      href: /fabric/real-time-hub/tutorial-monitor-capacity-threshold?context=/fabric/context/context-enterprise
   - name: Capacity overage
     items:
     - name: Capacity overage overview
@@ -140,9 +154,11 @@ items:
     href: powerbi/onelake-integration-overview.md
   - name: Power BI licensing for organizations
     href: powerbi/service-admin-power-bi-licensing.md 
-  - name: Power BI sovereign clouds
+  - name: Sovereign clouds
     expanded: false
     items:
+    - name: Microsoft Fabric for GCC High
+      href: us-government-community-cloud-high.md
     - name: Power BI for US government
       href: powerbi/service-government-us-overview.md
     - name: Enroll a US government organization

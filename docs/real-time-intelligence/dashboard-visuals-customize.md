@@ -5,7 +5,8 @@ ms.reviewer: gabil, mbar
 ms.topic: how-to
 ms.subservice: rti-dashboard
 ms.custom:
-ms.date: 07/08/2026
+ms.date: 08/23/2026
+ai-usage: ai-assisted
 ---
 
 # Customize Real-Time Dashboard visuals
@@ -38,13 +39,13 @@ The following table describes the available customization properties, categorize
 | Section | Property | Description | Visual types |
 |--|--|--|--|
 | **Colors** | **Color palette** | Determines the set of colors to use for the heatmap. | Heatmap |
-| **Conditional formatting** | **Hide** or **Show** | A toggle option to turn off or turn on conditional formatting. For more information, see [Apply conditional formatting](dashboard-conditional-formatting.md). | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Table, Time chart |
+| **Conditional formatting** | **Hide** or **Show** | A toggle option to turn off or turn on conditional formatting. For more information, see [Apply conditional formatting](dashboard-conditional-formatting.md). | Anomaly chart, Area chart, Bar chart, Column chart, KPI, Multi Stat, Scatter chart, Table, Time chart |
 | **Data** | **Y columns** | The columns that provide data for the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, Line chart, Scatter chart, Time chart |
 |  | **X column** | The column that provides data for the horizontal axis. | Anomaly chart, Area chart, Bar chart, Column chart, Line chart, Scatter chart, Time chart |
 |  | **Series columns** | The columns used to categorize data into different series. | Anomaly chart, Area chart, Bar chart, Column chart, Line chart, Scatter chart, Time chart |
 |  | **Category column** | The column that determines the data categories. | Funnel chart, Heatmap, Pie chart |
 |  | **Label column** | Assigns labels to each slot using the designated column. | Multi Stat |
-|  | **Value column** | The column that provides data for the visualization. | Funnel chart, Multi stat |
+|  | **Value column** | The column that provides data for the visualization. | Funnel chart, KPI, Multi stat |
 |  | **Value** | The numeric column that serves as the primary variable for the heatmap. | Heatmap |
 |  | **Numeric column** | The column that provides the numeric value for the data category. | Pie chart |
 |  | **Define location by** | Determines the method used to define the location: **Infer**, **Latitude and longitude**, or **Geo point**. | Map |
@@ -64,9 +65,9 @@ The following table describes the available customization properties, categorize
 |  | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
 |  | **X axis scale** | Adjusts the scale of the horizontal axis to **linear** or **logarithmic**. | Anomaly chart, Area chart, Bar chart, Multi Stat, Scatter chart, Table, Time chart |
 | **Y Axis** | **Label** | Sets a custom label for the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
-|  | **Maximum value** | Defines the maximum value on the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
-|  | **Minimum value** | Defines the minimum value on the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
-|  | **Reference lines** | Marks a value on the chart as a reference line for visual guidance. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
+|  | **Maximum value** | Defines the maximum value on the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, KPI. Multi Stat, Scatter chart, Time chart |
+|  | **Minimum value** | Defines the minimum value on the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, KPI, Multi Stat, Scatter chart, Time chart |
+|  | **Reference lines** | Marks a value on the chart as a reference line for visual guidance. | Anomaly chart, Area chart, Bar chart, Column chart, KPI, Multi Stat, Scatter chart, Time chart |
 
 ## Data series colors
 
@@ -98,91 +99,73 @@ To configure data series colors:
 
 When you assign colors intentionally, viewers can interpret visuals at a glance without needing to read legends or labels. Consider using colors that align with your organization's standards or that naturally convey the meaning of each series, such as red for critical states or green for healthy metrics.
 
-## Time series visual (Preview)
+## KPI visualization
 
-Use the Time series visual to display time-based data across multiple measures and categories. It plots numeric values over time, making it easier to identify trends, patterns, and anomalies.
+A KPI tile displays a single query-based numeric value as a visual indicator. It helps you quickly assess the health or status of a metric. Use KPI tiles for monitoring scenarios where you need to answer questions like: *"Is this value healthy or problematic?" "Is it above or below a baseline target?"*
 
-### Create a Time series visual
+### Display modes
 
-> [!IMPORTANT]
-> Ensure your data includes a timestamp column and at least one numeric value column to visualize trends over time.
+KPI tiles support four display modes:
 
-To create and configure a Time series visual in your Real-Time Dashboard:
+| Mode | Description | Best for |
+|------|-------------|----------|
+| **Gauge** | A 180° arc with a needle pointing to the current value | Classic monitoring dashboards |
+| **Bar** | A horizontal bar filled to reflect the current value | Compact horizontal layouts |
+| **Donut** | A full 360° progress ring | Square tile layouts |
+| **Number** | A large formatted number with threshold color | Dense dashboards |
 
-1. In the top menu, select **Viewing** and toggle to **Editing** mode.
+### Add a KPI tile
 
-1. Select the **Edit** icon on the visual you want to customize.
+1. In your dashboard, switch to **Editing** mode.
+1. In the top menu bar, select **Add visual** and then select **KPI**.
 
-1. In the **Visual formatting** pane, open **Visual type** and select **Time series**.
+    :::image type="content" source="media/real-time-dashboard/add-kpi-visual.png" alt-text="Screenshot of the Add visual menu with KPI selected." lightbox="media/real-time-dashboard/add-kpi-visual.png":::
 
-    :::image type="content" source="media/customize-dashboard-visuals/visual-type-list.png" alt-text="Screenshot of the Visualization pane showing the Time series option." lightbox="media/customize-dashboard-visuals/visual-type-list.png":::
+1. Configure the KPI settings:
+    - **Visual type**: Choose between **Bar**, **Donut**, **Gauge**, and **Number**.
+    - **Data**: Select the numeric field from your query to display.
+    - **Value format**: Choose **Auto**, decimals, thousands separator, or compact notation (for example, 1.2K).
+    - [**Conditional formatting**](#kpi-threshold-states): Set thresholds to define the healthy, warning, and critical ranges for your KPI. You can also choose whether higher or lower values are considered worse.
+    - **Reference line**: Optionally, add a baseline reference line to indicate a target or expected value.
 
-1. In the **Data** section, configure the following properties:
+    :::image type="content" source="media/real-time-dashboard/customize-kpi-visual.png" alt-text="Screenshot of the KPI settings pane with options for visual type, data, value format, conditional formatting, and reference line." lightbox="media/real-time-dashboard/customize-kpi-visual.png":::
 
-    * **Time column (X-axis)**: Select the timestamp column that represents time intervals on the horizontal axis.
+1. Select **Done** to add the tile to the dashboard.
+1. Select the **Save** button to save the dashboard.
 
-    * **Measured data (Y-axis)**: Select one or more numeric fields to plot over time on the vertical axis.
+> [!TIP]
+> Use Copilot to create and configure KPI tiles from natural language. For example, try prompts like *"Show CPU usage as a gauge with thresholds at 70 and 90"* or *"Create a KPI for error rate with a baseline of 5%."*
 
-    * **Entities and Measures** (optional): Select categorical fields to group your data into multiple series.
+### KPI threshold states
 
-    :::image type="content" source="media/customize-dashboard-visuals/configuration.png" alt-text="Screenshot of the time series configuration pane." lightbox="media/customize-dashboard-visuals/configuration.png":::
+KPI tiles display one of three threshold states based on the current value and your threshold configuration:
 
-1. Use the **Entities and Measures** panel to control which data appears:
-    * Search for a specific series by name.
-    * Expand or collapse groups in the entity hierarchy.
-    * Select or clear checkboxes to show or hide series.
-    * Reorder series to control display and legend order.
+| State | Default color | Description |
+|-------|---------------|-------------|
+| Good | 🟢 Green | Value is in the healthy range. |
+| Warning | 🟡 Yellow | Value is approaching a critical level. |
+| Critical | 🔴 Red | Value is in the problematic range. |
 
-    This selection doesn't modify the underlying query.
+You can configure the threshold direction. Set **Higher is worse** for metrics like error rate or latency, or **Lower is worse** for metrics like throughput or availability. To ensure accessibility, threshold states also use pattern fills (stripes or dots) in addition to color, so they're distinguishable for color-blind users.
 
-1. Adjust the time range using the timeline controls:
-   * Drag the time slider to zoom in or out on specific intervals.
-   * Enter start and end times to define a precise range.
+### KPI change detection
 
-   When multiple measures are displayed, all charts remain synchronized to the selected time range.
+KPI tiles use event-driven updates rather than polling. When the data source receives new data, the KPI value updates automatically with a smooth 300 ms transition animation. If new data isn't received within 60 seconds (configurable in tile settings), a **Data stale** overlay displays with the timestamp of the last update.
 
-    :::image type="content" source="media/customize-dashboard-visuals/timeline.png" alt-text="Screenshot of the timeline controls in a Time series chart." lightbox="media/customize-dashboard-visuals/timeline.png":::
+### Responsive sizing
 
-1. Customize your chart further by configuring properties such as:
-    * **Y-axis scaling:**
-        * Global (shared scale across charts)
-        * Separate (independent scales per chart)
-        * Adaptive (reduces the impact of outliers)
+KPI tiles adapt their layout based on tile size:
 
-    * **Colors:** Assign colors from a palette or per series.
-
-    * **Axis scale:** Switch between linear and logarithmic scale for different data distributions.
-
-    * **Zoom behavior:** Enable pan and zoom for interactive exploration.
-
-1. Select **Done** to save your settings and return to the dashboard.
-
-## Embed images
-
-You can embed images in your dashboard tiles by using Markdown text.
-
-For more information on GitHub Flavored Markdown, see [GitHub Flavored Markdown Spec](https://github.github.com/gfm/).
-
-1. Open a [Real-Time Dashboard](dashboard-real-time-create.md#create-a-new-dashboard).
-1. In the top menu, select **Add markdown** to open a markdown tile.
-
-    :::image type="content" source="media/customize-dashboard-visuals/add-tile.png" alt-text="Screenshot of the Home menu in a Real-Time Dashboard. The option titled Add markdown is highlighted." lightbox="media/customize-dashboard-visuals/add-tile.png":::
-
-1. In the query pane, paste the URL of an image located in an image hosting service by using the following syntax:
-
-    ```md
-    ![](URL)
-    ```
-
-    The image renders in the tile's preview.
-
-    :::image type="content" source="media/customize-dashboard-visuals/embed-image.png" alt-text="Screenshot of dashboard query pane showing image syntax in markdown text." lightbox="media/customize-dashboard-visuals/embed-image.png":::
-
-1. In the top menu, select **Done** to save the tile.
-
-For more information on image syntax in GitHub Flavored Markdown, see [Images](https://github.github.com/gfm/#images).
+| Tile size | Rendered elements |
+|-----------|-------------------|
+| Small (2×2 to 3×3) | Value and threshold color only. |
+| Medium (4×4 to 6×6) | Value, label, unit, threshold color, and baseline marker. |
+| Large (7×7 and above) | Full rendering with threshold bands, tick marks, and scale labels. |
 
 ## Related content
 
+* [Real-Time Dashboard visual customization properties gallery](dashboard-visual-gallery.md)
+* [Add a Markdown visual to a Real-Time Dashboard](dashboard-markdown-visual.md)
+* [Time series analysis in Real-Time Dashboard](dashboard-time-series.md)
 * [Apply conditional formatting to Real-Time Dashboard visuals](dashboard-conditional-formatting.md)
 * [Troubleshoot Real-Time Dashboard visual errors](troubleshoot-dashboard-tile-error.md)

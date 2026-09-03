@@ -3,13 +3,13 @@ title: "Schedule a Materialized Lake View Refresh"
 description: Learn how to schedule a materialized lake view refresh
 ms.topic: how-to
 ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
-ms.date: 07/02/2026
+ms.date: 07/30/2026
 ai-usage: ai-assisted
 ---
 
 # Schedule a materialized lake view refresh
 
-As source data changes, materialized lake views (MLVs) in your Lakehouse need regular refresh to keep downstream reports and dashboards current. Scheduling lets you control how often each view, or group of views, is refreshed. Each schedule runs independently.
+As source data changes, materialized lake views (MLVs) in your lakehouse need regular refresh to keep downstream reports and dashboards current. Scheduling lets you control how often each view, or group of views, is refreshed. Each schedule runs independently.
 
 ## View schedules
 
@@ -63,7 +63,8 @@ Before you create a schedule, consider what drives your refresh timing:
         [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
         
         > [!NOTE]
-        > Only OneLake events and Notebook and Pipeline job events are supported as event sources.
+        > Only OneLake events, Notebook, and Pipeline job events are supported as event sources.
+        > Private Link support isn't currently included in the preview scope.
         > Event-triggered refreshes depend on the auto-created "FMLV Refresh" Notebook and Activator items. Modifying or deleting these items might cause event-triggered refreshes to stop working as expected.
 
 1. Select **Save**.
@@ -192,5 +193,5 @@ When you enable extended lineage for a schedule or ad-hoc run, Fabric refreshes 
 
 - [View extended lineage](./view-lineage.md#view-extended-lineage)
 - [Recent runs of materialized lake views](./run-history.md)
-- [Microsoft Fabric materialized lake view tutorial](./tutorial.md)
+- [Fabric materialized lake view tutorial](./tutorial.md)
 - [Monitor Fabric materialized lake views](./monitor-materialized-lake-views.md)

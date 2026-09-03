@@ -8,7 +8,7 @@ ms.topic: how-to
 
 # Insert formula columns in planning sheet
 
-In plan, you can insert calculated columns or measures directly into your planning sheets. You can format these columns and reuse them in subsequent calculations. You create these measures and columns directly on the visual, without modifying the underlying data model.
+In planning, you can insert calculated columns or measures directly into your planning sheets. You can format these columns and reuse them in subsequent calculations. You create these measures and columns directly on the visual, without modifying the underlying data model.
 
 The Excel-like formula engine supports more than 50 functions, including logical, boolean, and mathematical functions. The formula editor provides capabilities such as syntax assistance, examples, autocomplete, and multiline editing to help you create and troubleshoot formulas efficiently.
 
@@ -64,7 +64,7 @@ After creating the measure, you can format it (for example, as a percentage or c
 
 Configure the properties for formula measures in the same way as other data input measures. For more information, see [configure data input column properties](./how-to-insert-data-input-columns.md#configure-data-input-column-properties).
 
-To edit the properties or to hide or delete a formula column, use the [Manage measures](./how-to-insert-number-columns.md#modify-column-properties) menu.
+To edit the properties or to hide or delete a formula column, use the [Manage measures](how-to-insert-data-input-columns.md#modify-column-properties) menu.
 
 > [!NOTE]
 > If the report doesn't contain a column hierarchy, **Insert as Measure** behaves the same as inserting a visual column, even when **Visual Measure** is selected.
@@ -90,6 +90,3 @@ By default, **Row aggregation type** is set to *Formula* and **Column aggregatio
 You can change the aggregation type in the configuration panel or from the **Manage aggregation** interface.
 
 :::image type="content" source="../media/planning-how-to-insert-columns/how-to-insert-formula-columns/aggregation.png" alt-text="Screenshot of row and column aggregation." :::
-
-> [!NOTE]
-> If you select **Weighted average** as the row aggregation, the column aggregation is also set to weighted average and you can't change it.

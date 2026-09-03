@@ -19,5 +19,5 @@ To run a Spark job definition, you must have at least one lakehouse associated w
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Create an Apache Spark job definition in Microsoft Fabric.](create-spark-job-definition.md)
+> [Create an Apache Spark job definition in Fabric.](create-spark-job-definition.md)
 

@@ -105,4 +105,4 @@ Not all Delta readers and writers support column mapping, and support varies by 
 - [Schema evolution for Delta tables](delta-lake-schema-evolution.md)
 - [Generated columns for Delta tables](delta-lake-generated-columns.md)
 - [Delta Lake interoperability](../fundamentals/delta-lake-interoperability.md)
-- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
+- [Delta Lake in Fabric overview](../fundamentals/delta-lake-overview.md)

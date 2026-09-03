@@ -2,7 +2,7 @@
 title: Limitations of Fabric Data Warehouse
 description: Review current limitations for warehouse and SQL analytics endpoint items in Microsoft Fabric Data Warehouse.
 ms.reviewer: joanpo, ajagadish, anphil, fresantos, pvenkat
-ms.date: 07/27/2026
+ms.date: 07/29/2026
 ms.topic: limits-and-quotas
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ai-usage: ai-assisted
@@ -15,7 +15,7 @@ This article lists current limitations for warehouse and SQL analytics endpoint 
 
 ## Limitations
 
-This article lists current general product limitations for data warehousing in Microsoft Fabric. Feature level limitations are called out in the corresponding feature article. For more information on the future of Microsoft Fabric, see [Fabric Roadmap](https://blog.fabric.microsoft.com/blog/announcing-the-fabric-roadmap?ft=All).
+This article lists current general product limitations for Fabric Data Warehouse. Feature level limitations are called out in the corresponding feature article. For more information on the future of Microsoft Fabric, see [Fabric Roadmap](https://blog.fabric.microsoft.com/blog/announcing-the-fabric-roadmap?ft=All).
 
 ### T-SQL syntax support
 
@@ -34,11 +34,11 @@ For limitations in specific features of Fabric Data Warehouse and the SQL analyt
 - [Connectivity considerations and limitations](connectivity.md#considerations-and-limitations)
 - [Data types in Microsoft Fabric](data-types.md)
 - [Delta Lake logs limitations](query-delta-lake-logs.md#limitations)
+- [Git Integration for Fabric Warehouse Development](git-integration.md#limitations-in-source-control)
 - [Migration Assistant limitations](migration-assistant.md#limitations)
 - [Pause and resume considerations and limitations](pause-resume.md#considerations-and-limitations)
 - [Semantic models limitations](semantic-models.md#limitations)
 - [Share your data and manage permissions limitations](share-warehouse-manage-permissions.md#limitations)
-- [Source control limitations](source-control.md#limitations-in-source-control)
 - [SQL analytics endpoint limitations](../data-engineering/lakehouse-sql-analytics-endpoint.md#limitations)
 - [Statistics limitations](statistics.md#limitations)
 - [Tables limitations](tables.md#limitations)

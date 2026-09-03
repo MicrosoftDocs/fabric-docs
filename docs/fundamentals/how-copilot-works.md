@@ -165,7 +165,7 @@ After receiving user input, Copilot performs preprocessing, which involves the f
 
 - **Prompt augmentation:** Depending on the scenario, Copilot rewrites (or *augments*) the prompt based on the input and grounding data. The augmented prompt should be better and more context-aware than your original input prompt.
 
-- **Caching:** In certain scenarios, Copilot caches your prompt and the grounding data for 48 hours. Caching the prompt ensures that repeated prompts return the same results while cached, that they return these results faster, and that you aren’t consuming Fabric capacity just for repeating a prompt in the same context. Caching occurs in two different places:
+- **Caching:** In certain scenarios, Copilot caches your prompt and the grounding data for 48 hours. Caching the prompt ensures that repeated prompts return the same results while cached, that they return these results faster, and that you aren't consuming Fabric capacity just for repeating a prompt in the same context. Caching occurs in two different places:
   - The browser cache of the user.
   - The first back-end cache in the home region of the tenant, where it's stored for auditing purposes. No data is cached in the Azure OpenAI Service or the location of the GPUs. For more information about caching in Fabric, see the [Microsoft Fabric security whitepaper](../security/white-paper-landing-page.md).
 
@@ -346,7 +346,7 @@ For an overview specifically for each Fabric workload, see the following article
 
 - [Responsible use in Data Factory](copilot-data-factory-privacy-security.md)
 - [Responsible use in Data Science and Data Engineering](copilot-data-science-privacy-security.md)
-- [Responsible use in Data Warehousing](copilot-data-warehouse-privacy-security.md)
+- [Responsible use in Data Warehouse](copilot-data-warehouse-privacy-security.md)
 - [Responsible use in Power BI](copilot-power-bi-privacy-security.md)
 - [Responsible use in Real-Time Intelligence](copilot-real-time-intelligence-privacy-security.md)
 
@@ -354,7 +354,7 @@ For an overview specifically for each Fabric workload, see the following article
 
 Unlike other Microsoft Copilots, Copilot in Fabric doesn't require additional per-user or per-capacity licenses. Rather, Copilot in Fabric consumes from your available Fabric capacity units (CUs). The consumption rate of Copilot is determined by the number of tokens in your inputs and outputs when you use it across the various experiences in Fabric.
 
-If you have a Fabric capacity, you're using either a [pay-as-you-go or reserved instance](../enterprise/buy-subscription.md#sku-types). In both cases, Copilot consumption works the same. In a pay-as-you-go scenario, you're billed per second that your capacity is active until you pause your capacity. Billing rates have no relationship to the usage of your Fabric CUs; you pay the same amount if your capacity is fully utilized or unused. As such, Copilot doesn't have a direct cost or impact on your Azure billing. Rather, Copilot consumes from the available CUs, which other Fabric workloads and items also use, and if you use too much, users experience reduced performance and [throttling](../enterprise/throttling.md). It's also possible to enter a state of CU debt called *carryforward*. For more information about throttling and carryforward, see [Throttle triggers and throttle stages](../enterprise/throttling.md#throttle-triggers-and-throttle-stages).
+If you have a Fabric capacity, you're using either a [pay-as-you-go or reserved instance](../enterprise/licenses.md#capacity). In both cases, Copilot consumption works the same way. In a pay-as-you-go scenario, you pay per second that your capacity is active until you pause your capacity. Billing rates have no relationship to the usage of your Fabric CUs. You pay the same amount if your capacity is fully utilized or unused. As such, Copilot doesn't have a direct cost or impact on your Azure billing. Instead, Copilot consumes from the available CUs, which other Fabric workloads and items also use. If you use too much, users experience reduced performance and [throttling](../enterprise/throttling.md). It's also possible to enter a state of CU debt called *carryforward*. For more information about throttling and carryforward, see [Throttle triggers and throttle stages](../enterprise/throttling.md#throttle-triggers-and-throttle-stages).
 
 The following sections explain more about how you should understand and manage Copilot consumption in Fabric.
 

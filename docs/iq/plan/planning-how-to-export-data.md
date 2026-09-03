@@ -1,9 +1,9 @@
 ---
 title: Export Data from Planning Sheets
-description: Learn how to export planning sheets to Excel or PDF in Fabric plan. Explore Excel export modes, PDF settings, headers, formatting, and advanced configuration options.
+description: Learn how to export planning sheets to Excel or PDF in planning in Fabric. Explore Excel export modes, PDF settings, headers, formatting, and advanced configuration options.
 ms.date: 05/04/2026
 ms.topic: how-to
-#customer intent: As a user, I want to understand how to export planning sheets to Excel or PDF in Fabric plan.
+#customer intent: As a user, I want to understand how to export planning sheets to Excel or PDF in planning.
 ---
 
 # Export data from planning sheets to Excel and PDF

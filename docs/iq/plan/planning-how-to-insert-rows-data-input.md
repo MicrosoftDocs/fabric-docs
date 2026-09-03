@@ -1,16 +1,14 @@
 ---
 title: Insert Data Input Rows in a Planning Sheet
 description: Learn how to insert and configure data input rows in a planning sheet. 
-ms.date: 05/05/2026
+ms.date: 08/20/2026
 ms.topic: how-to
 #customer intent: As a user, I want to understand how to insert and configure data input rows.
 ---
 
 # Insert data input rows
 
-In plan, you can insert rows in matrix reports and enter data manually.
-
-In some scenarios, data retrieved from a source might be incomplete. For example, a financial statement report might include revenue and expense metrics but not the number of shares outstanding. Similarly, a sales report might not include data for a newly launched product category. To address such cases, you can insert data input rows in the report and enter the required data.
+Insert rows in planning sheets to add data that's missing from the source, and enter values manually. This method is useful when source data is incomplete or doesn't include newly introduced business entities or metrics. For example, a financial statement might include revenue and expense metrics but not shares outstanding, or a sales report might not yet contain data for a newly launched product category. By adding data input rows, you can capture missing values directly in the planning sheet and incorporate them into the planning process.
 
 This article explains how to insert data input rows and enter values directly in the report.
 
@@ -120,68 +118,3 @@ To insert a hierarchy of rows:
 
 :::image type="content" source="media/planning-how-to-insert-rows-data-input/insert-row-hierarchy.png" alt-text="Screenshot of inserting row hierarchy." lightbox="media/planning-how-to-insert-rows-data-input/insert-row-hierarchy.png":::
 
-Overwriting is only allowed when the row type is set to **Text** in **Insert Row >** **Manage Rows > Row Settings >** **Insert Row Configuration**. For more information, see [Insert Row Configuration](planning-how-to-manage-inserted-rows.md#insert-row-configuration).
-
-:::image type="content" source="media/planning-how-to-insert-rows-data-input/insert-row-configuration.png" alt-text="Screenshot of insert row configuration window." :::
-
-## Allow blank values in categories
-
-While inserting row hierarchies manually, enable the **Allow Blank Values** toggle if you expect blank row categories in the leaf nodes.
-
-1. Navigate to **Planning** > **Manage Rows** > **Row Settings** > **Insert Row Configuration**.
-1. Enable **Allow Blank Values**.
-
-    :::image type="content" source="media/planning-how-to-insert-rows-data-input/allow-blank-values.png" alt-text="Screenshot of showing allow blank values toggle.":::
-
-By default, this toggle is disabled. The blank categories are highlighted in a red error box, and you can't create rows with blank row categories.
-
-By enabling this option, you can insert row hierarchies that contain blank leaf categories.
-
-> [!NOTE]
->You can't create a blank parent node if the child nodes contain values.
-
-## Disable row insertion
-
-You can restrict row creation for a particular level to prevent users from creating new categories. To restrict row creation:
-
-1. Go to **Insert Row** > **Manage Rows** > **Row Settings** > **Insert Row Configuration** > **Manage**.
-1. Set **Type** to **Disable Insert Row**.
-
-This action prevents row insertion at the selected level and all levels above it, while child levels still allow insertion.
-
-:::image type="content" source="media/planning-how-to-insert-rows-data-input/disable-row-insertion.jpg" alt-text="Screenshot of disabling row insertion." lightbox="media/planning-how-to-insert-rows-data-input/disable-row-insertion.jpg":::
-
-## Upload rows from Excel or CSV
-
-You can also upload row categories from an Excel/CSV sheet, and map the respective columns in the configuration.
-
-1. Go to **Insert Row** > **Manage Rows** > **Row Settings** > **Insert Row Configuration** > **Manage** and select **Options list from CSV**.
-
-    :::image type="content" source="media/planning-how-to-insert-rows-data-input/steps-manage-insert-row-configuration.jpg" alt-text="Screenshot of navigation for managing insert row configuration." :::
-
-    :::image type="content" source="media/planning-how-to-insert-rows-data-input/select-options-list-from-csv.png" alt-text="Screenshot of selecting options list from csv." :::
-
-1. Select **Upload** and choose a CSV file from your system.
-1. Preview the data and select **Add**.
-
-    :::image type="content" source="media/planning-how-to-insert-rows-data-input/preview-data-options-list-from-csv.png" alt-text="Screenshot of preview data in options list from csv." :::
-
-1. Go to **Option Configuration** tab.
-1. Map the column using **Filter options** by selecting **Add New**, then select **Save**.
-
-    :::image type="content" source="media/planning-how-to-insert-rows-data-input/map-columns-options-list-from-csv.jpg" alt-text="Screenshot of mapping columns." lightbox="media/planning-how-to-insert-rows-data-input/map-columns-options-list-from-csv.jpg":::
-
-1. The uploaded values appear in the **Insert Row** window. Use [standard insert steps](#insert-rows) to add them to the report.
-
-## Insert distinct values as rows
-
-Select **Distinct Values** in the Insert Row configuration to work with unique values from a selected dimension.
-
-:::image type="content" source="media/planning-how-to-insert-rows-data-input/insert-distinct-values-rows.png" alt-text="Screenshot of selecting distinct values option." :::
-
-When this option is selected, you can:
-
-* View only existing distinct (unique) values in the dropdown for the configured dimension in the **Insert Row(s)** window.
-* Select and insert values directly as rows or row hierarchy from the dropdown, avoiding manual entry.
-
-This approach helps streamline data entry by ensuring consistency and inserting rows within the existing row hierarchy by directly selecting the dimension value.

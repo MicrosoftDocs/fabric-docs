@@ -72,7 +72,7 @@ Permissions can also be set within a specific compute engine in Fabric, specific
 
 You can find more information in these articles:
 
-* [Row-level security in Fabric data warehousing](../data-warehouse/row-level-security.md)
+* [Row-level security in Fabric Data Warehouse](../data-warehouse/row-level-security.md)
 
 * [Row-level security (RLS) with Power BI](service-admin-row-level-security.md)
 
@@ -80,9 +80,7 @@ You can find more information in these articles:
 
 ## OneLake security
 
-OneLake has its own permissions for governing access to tables and folders in OneLake through [OneLake security.](../onelake/security/get-started-onelake-security.md) OneLake security allows users to create custom roles within a lakehouse and to grant read permissions only to the specified tables and folders when accessing OneLake. For each OneLake role, users can assign users, security groups or grant an automatic assignment based on the workspace role.
-
-Learn more about [OneLake Data Access Control Model](../onelake/security/data-access-control-model.md) and view the how-to guides.
+OneLake has its own permissions for governing access to tables and folders in OneLake through [OneLake security](../onelake/security/data-access-control-model.md). OneLake security allows users to create custom roles within a lakehouse and to grant read permissions only to the specified tables and folders when accessing OneLake. For each OneLake role, users can assign users, security groups, or grant an automatic assignment based on the workspace role.
 
 ### Cross-tenant data sharing and OneLake shortcuts
 

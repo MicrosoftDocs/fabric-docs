@@ -114,12 +114,22 @@ One Fabric capacity unit = 0.383 SQL database vCores.
 
 ### Data Warehouse
 
-One Fabric Data Warehouse core (unit of compute for Data Warehouse) is equivalent to two Fabric Capacity Units (CUs).
+One Fabric Data Warehouse core (unit of compute for Data Warehouse) is equivalent to 0.538 Fabric Capacity Units (CUs).
 
 | Operation          | Description                                                                                        | Item      | Azure billing meter | Type       |
 | ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |
-| Warehouse Query    | Compute charge for all user generated and system generated T-SQL statements within a Warehouse     | Warehouse | Data Warehouse Capacity Usage CU      | Background |
-| SQL Endpoint Query | Compute charge for all user generated and system generated T-SQL statements within the SQL analytics endpoint of a Lakehouse  | Warehouse | Data Warehouse Capacity Usage CU     | Background |
+| Warehouse Query    | Compute charge for all user generated and system generated T-SQL statements within a Warehouse.     | Warehouse | Data Warehouse Capacity Usage CU      | Background |
+| SQL Endpoint Query | Compute charge for all user generated and system generated T-SQL statements within the SQL analytics endpoint of a Lakehouse.  | Warehouse | Data Warehouse Capacity Usage CU     | Background |
+| Warehouse Snapshot Query | Compute charge for all user generated and system generated T-SQL statements on a warehouse snapshot.  | Warehouse | Data Warehouse Capacity Usage CU     | Background |
+
+One Fabric Data Warehouse core with Query acceleration enabled (unit of compute for Data Warehouse (Accelerated)) is equivalent to 3.446 Fabric Capacity Units (CUs).
+
+| Operation          | Description                                                                                        | Item      | Azure billing meter | Type       |
+| ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |
+| Warehouse Query (Accelerated) | Compute charge for all user generated and system generated T-SQL statements within the SQL analytics endpoint on a warehouse of a Query acceleration enabled workspace.  | Warehouse | Data Warehouse (Accelerated) Capacity Usage CU     | Background |
+| SQL Endpoint Query (Accelerated) | Compute charge for all user generated and system generated T-SQL statements within the SQL analytics endpoint on a lakehouse of a Query acceleration enabled workspace.  | Warehouse | SQL Endpoint Query (Accelerated) Capacity Usage CU     | Background |
+| Warehouse Snapshot Query (Accelerated) | Compute charge for all user generated and system generated T-SQL statements within the SQL analytics endpoint on a Warehouse Snapshot of a Query accerlation enabled workspace.  | Warehouse | Warehouse Snapshot Query (Accelerated) Capacity Usage CU     | Background |
+
 
 ### Fabric API for GraphQL
 
@@ -136,8 +146,8 @@ GraphQL operations are made up of requests performed on API for GraphQL items by
 | Operation          | Description                                                                                        | Item      | Azure billing meter | Type       |
 | ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |
 | User Data Functions Execution    | Compute charge for the execution of the function inside of the User Data Functions item. This operation results from running a function after a request from the Fabric portal, another Fabric item, or an external application.  | User Data Functions | User Data Function Execution (CU/s)  | Interactive |
-| User Data Functions Portal Test    | Compute charge for the test execution of a function inside of the User Data Functions item. This operation results from testing a function in “Develop mode” during a test session. The test session has a minimum duration of 15 minutes.  | User Data Functions | User Data Function Execution (CU/s)  | Interactive |
-| User Data Functions Static Storage | Static storage of internal function metadata in a service-managed OneLake account. This is calculated with the compressed size of the User Data Functions item metadata. This is the cost of creating User Data Functions items even if they’re not used.  | OneLake Storage | OneLake Storage | Background |
+| User Data Functions Portal Test    | Compute charge for the test execution of a function inside of the User Data Functions item. This operation results from testing a function in "Develop mode" during a test session. The test session has a minimum duration of 15 minutes.  | User Data Functions | User Data Function Execution (CU/s)  | Interactive |
+| User Data Functions Static Storage | Static storage of internal function metadata in a service-managed OneLake account. This is calculated with the compressed size of the User Data Functions item metadata. This is the cost of creating User Data Functions items even if they're not used.  | OneLake Storage | OneLake Storage | Background |
 | User Data Functions Static Storage Read | Read operation of internal function metadata stored in a service-managed OneLake account. This operation is executed every time a function is executed after a period of inactivity. | OneLake Read Operations | OneLake Read Operations | Background |
 | User Data Functions Static Storage Write | Writes and updates of internal function metadata stored in a system-managed OneLake account. This operation is executed every time the User Data Functions item is published. | OneLake Write Operations | OneLake Write Operations | Background |
 | User Data Functions Static Storage Iterative Read | Read operations for internal function metadata stored in a service-managed OneLake account. This operation is executed every time the User Data Functions are listed. | OneLake Iterative Read Operations | OneLake Iterative Read Operations | Background |
@@ -153,7 +163,7 @@ GraphQL operations are made up of requests performed on API for GraphQL items by
 
 ### OneLake
 
-One Lake compute operations represent the transactions performed on One Lake items. The consumption rate for each operation varies depending on its type. For more details, refer to [One Lake consumption](../onelake/onelake-consumption.md).
+OneLake compute operations represent the transactions performed on OneLake items. The consumption rate for each operation varies depending on its type. For more details, refer to [OneLake consumption](../onelake/onelake-consumption.md).
 
 | Operation                                  | Description                                | Item       | Azure Billing Meter                             | Type       |
 | ------------------------------------------ | ------------------------------------------ | ---------- | ----------------------------------------------- | ---------- |
@@ -209,9 +219,19 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 ### Real-Time Intelligence
 
-The Real-Time Intelligence experience contains operations for [Anomaly Detector](#anomaly-detector), [Azure and Fabric events](#azure-and-fabric-events), [digital twin builder (preview)](#digital-twin-builder-preview), [Eventstream](#eventstream), and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+The Real-Time Intelligence experience contains operations for [Operations agent](#operations-agent), [Anomaly Detector](#anomaly-detector), [Azure and Fabric events](#azure-and-fabric-events), [digital twin builder (preview)](#digital-twin-builder-preview), [Eventstream](#eventstream), and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
 
-### Anomaly Detector
+#### Operations agent
+
+You can find the consumption rates for operations agent in [Operations agent capacity and billing](../real-time-intelligence/operations-agent-billing.md). Note that operations agent also consumes the Copilot in Fabric operation for interactive usage.
+
+| Operation        | Description                                          | Item     | Azure billing meter                               | Type       |
+| ---------------- | ---------------------------------------------------- | -------- | ------------------------------------------------- | ---------- |
+| Operations agent compute | Background compute for processing and monitoring data, including evaluating rules and conditions | Operations Agent | Operations agents compute capacity usage CU | Background |
+| Investigation agent reasoning | Language model reasoning that analyzes monitored data during an investigation | Operations Agent | Investigation agent reasoning compute capacity usage CU | Background |
+| Operations agent autonomous reasoning | Language model processing when a condition is met to analyze data and generate recommendations | Operations Agent | Operations agents autonomous reasoning capacity usage CU | Background |
+
+#### Anomaly Detector
 
 You can find the consumption rates for Anomaly Detector in [Anomaly Detector capacity usage and billing in Real-Time Intelligence](../real-time-intelligence/anomaly-detection-billing.md).
 

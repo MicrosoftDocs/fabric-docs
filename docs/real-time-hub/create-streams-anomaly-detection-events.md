@@ -7,7 +7,7 @@ ms.date: 03/31/2026
 ms.custom: references_regions
 ---
 
-# Get Fabric anomaly detection events in Real-Time hub
+# Get Fabric anomaly detection events in Real-Time hub (preview)
 
 This article describes how to get Fabric anomaly detection events as an eventstream in Fabric Real-Time hub.
 

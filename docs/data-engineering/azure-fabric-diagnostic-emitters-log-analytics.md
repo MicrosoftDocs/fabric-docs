@@ -30,13 +30,13 @@ Consult one of the following resources to create this workspace:
 - [Create and configure a workspace in Azure Monitor by using PowerShell.](/azure/azure-monitor/logs/quick-create-workspace#create-a-workspace)
 
 
-### Step 2: Create a Fabric environment artifact with Apache Spark configuration
-To configure Spark, create a Fabric Environment Artifact and choose one of the following options:
+### Step 2: Create a Fabric environment item with Apache Spark configuration
+To configure Spark, create an environment item and choose one of the following options:
 
 #### Option 1: Configure with Log Analytics Workspace ID and Key
 
-1. Create a Fabric Environment Artifact in Fabric
-1. Add the following **Spark properties** with the appropriate values to the environment artifact, or select **Add from .yml** in the ribbon to download the [sample yaml file](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/log_analytics_spark_properties_option_1.yml), which already containing the required properties.  
+1. Create an environment item in Fabric
+1. Add the following **Spark properties** with the appropriate values to the environment item, or select **Add from .yml** in the ribbon to download the [sample yaml file](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/log_analytics_spark_properties_option_1.yml), which already containing the required properties.  
 
    - `<EMITTER_NAME>`: The name for emmiter.
    - `<LOG_ANALYTICS_WORKSPACE_ID>`: Log Analytics workspace ID.
@@ -76,8 +76,8 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
    - **Name**: Enter a name for the secret. For the default, enter `SparkLogAnalyticsSecret`.
    - **Value**: Enter the `<LOG_ANALYTICS_WORKSPACE_KEY>` for the secret.
    - Leave the other values to their defaults. Then select **Create**.
-1. Create a Fabric Environment Artifact in Fabric
-1. Add the following **Spark properties** with the corresponding values to the environment artifact, or Select **Add from .yml** on the ribbon in the Environment artifact to download the [sample yaml file](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/log_analytics_spark_properties_option_2.yml) which includes following Spark properties.
+1. Create an environment item in Fabric
+1. Add the following **Spark properties** with the corresponding values to the environment item, or Select **Add from .yml** on the ribbon in the environment item to download the [sample yaml file](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/log_analytics_spark_properties_option_2.yml) which includes following Spark properties.
 
    - `<EMITTER_NAME>`: The name for emmiter.
    - `<LOG_ANALYTICS_WORKSPACE_ID>`: The Log Analytics workspace ID.
@@ -111,7 +111,7 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
 
  1. Save and publish changes.
 
-### Step 3: Attach the environment artifact to notebooks or spark job definitions, or set it as the workspace default
+### Step 3: Attach the environment item to notebooks or spark job definitions, or set it as the workspace default
 
    > [!NOTE]
    >
@@ -126,7 +126,7 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
 
 **To set the environment as the workspace default:**
 
-1. Navigate to Workspace settings in Fabric.
+1. Navigate to workspace settings in Fabric.
 1. Find **Spark settings** in workspace settings (**Workspace setting** > **Data Engineering/Science** > **Spark settings**).
 1. Select **Environment** tab and choose the environment with diagnostics spark properties configured, and select **Save**.
 
@@ -178,7 +178,7 @@ To query Apache Spark events:
 
 ```kusto
 SparkListenerEvent_CL
-| where fabricWorkspaceId_g == "{FabricWorkspaceId}" and artifactId_g == "{ArtifactId}" and fabricLivyId_g == "{LivyId}"
+| where fabricWorkspaceId_g == "{FabricWorkspaceId}" and artifactId_g == "{ItemId}" and fabricLivyId_g == "{LivyId}"
 | order by TimeGenerated desc
 | limit 100 
 ```
@@ -187,7 +187,7 @@ To query Spark application driver and executor logs:
 
 ```kusto
 SparkLoggingEvent_CL
-| where fabricWorkspaceId_g == "{FabricWorkspaceId}" and artifactId_g == "{ArtifactId}" and fabricLivyId_g == "{LivyId}"
+| where fabricWorkspaceId_g == "{FabricWorkspaceId}" and artifactId_g == "{ItemId}" and fabricLivyId_g == "{LivyId}"
 | order by TimeGenerated desc
 | limit 100 
 ```
@@ -196,7 +196,7 @@ To query Apache Spark metrics:
 
 ```kusto
 SparkMetrics_CL
-| where fabricWorkspaceId_g == "{FabricWorkspaceId}" and artifactId_g == "{ArtifactId}" and fabricLivyId_g == "{LivyId}"
+| where fabricWorkspaceId_g == "{FabricWorkspaceId}" and artifactId_g == "{ItemId}" and fabricLivyId_g == "{LivyId}"
 | where name_s endswith "jvm.total.used"
 | summarize max(value_d) by bin(TimeGenerated, 30s), executorId_s
 | order by TimeGenerated asc
@@ -291,7 +291,7 @@ Using `spark.synapse.logAnalytics.*` prefix to configure the Log Analytics infor
 ## Next steps
 
 - [Create Apache Spark job definition](../data-engineering/create-spark-job-definition.md)
-- [Create, configure, and use an environment in Microsoft Fabric](../data-engineering/create-and-use-environment.md)
-- [Create and use managed private endpoints in Microsoft Fabric](../security/security-managed-private-endpoints-create.md)
-- [Develop, execute, and manage Microsoft Fabric notebooks](../data-engineering/author-execute-notebook.md)
+- [Create, configure, and use an environment in Fabric](../data-engineering/create-and-use-environment.md)
+- [Create and use managed private endpoints in Fabric](../security/security-managed-private-endpoints-create.md)
+- [Develop, execute, and manage Fabric notebooks](../data-engineering/author-execute-notebook.md)
 - [Monitor Spark Applications](../data-engineering/spark-monitoring-overview.md)

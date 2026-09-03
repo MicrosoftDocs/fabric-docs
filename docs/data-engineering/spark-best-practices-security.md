@@ -16,13 +16,13 @@ Establish a controlled execution environment, govern data egress, and enforce le
 
 ##### Scenario: You're a data engineer working with sensitive data in Fabric Spark. Your security team has a requirement to run all the codes in a network isolated environment for enhanced security.
 
-- Enable Managed Virtual Network (VNets). To enable managed VNets, see [public documentation](/fabric/security/security-managed-vnets-fabric-overview).  Microsoft Fabric creates and manages [managed virtual networks](/fabric/security/security-managed-vnets-fabric-overview) (VNets) for each Fabric workspace. They provide network isolation for Fabric Spark workloads, meaning that Microsoft Fabric deploys the compute clusters in a dedicated network per workspace, removing them from the shared virtual network.
+- Enable Managed Virtual Network (VNets). To enable managed VNets, see [public documentation](/fabric/security/security-managed-vnets-fabric-overview).  Fabric creates and manages [managed virtual networks](/fabric/security/security-managed-vnets-fabric-overview) (VNets) for each Fabric workspace. They provide network isolation for Fabric Spark workloads, meaning that Fabric deploys the compute clusters in a dedicated network per workspace, removing them from the shared virtual network.
 
-- In production, use managed VNets for the secure execution of Spark Notebooks. 
+- In production, use managed VNets for the secure execution of Spark notebooks.
 
 - When you create a Managed Private Endpoint (MPE), it gets created at the workspace level by default.  
 
-- When you enable Private Link (PL) at the tenant level, the system enables managed VNets for all workspaces in the tenant. After you enable the PL setting, the system creates a managed virtual network for the workspace when you run the first Spark job (Notebook or Spark Job Definitions). The system also creates the virtual network when you perform a Lakehouse operation, such as Load to Table or a table maintenance operation (Optimize or Vacuum).
+- When you enable Private Link (PL) at the tenant level, the system enables managed VNets for all workspaces in the tenant. After you enable the PL setting, the system creates a managed virtual network for the workspace when you run the first Spark job (notebook or Spark job definitions). The system also creates the virtual network when you perform a lakehouse operation, such as Load to Table or a table maintenance operation (Optimize or Vacuum).
 
 > [!NOTE]
 > When you enable managed VNets, starter pools become unavailable because they run in a shared network.
@@ -37,7 +37,7 @@ Enable Workspace Outbound Access Protection (WS OAP). This ensures that outbound
 
 ##### Scenario: Should you enable WS OAP in development environments?
 
-Consider not turning on WS OAP in development or lower workspaces because it impacts the development process. Once the Notebook or Spark Job Definitions (SJDs) are tested with public libraries, test the same Notebook with custom libraries. After proper code reviews, deploy to higher environments and then turn on WS OAP. If you want to protect even the development environment, you can enable WS OAP, but it might hinder the development process. Starter pools aren't available when you enable WS OAP.
+Consider not turning on WS OAP in development or lower workspaces because it impacts the development process. Once the notebook or Spark job definitions (SJDs) are tested with public libraries, test the same notebook with custom libraries. After proper code reviews, deploy to higher environments and then turn on WS OAP. If you want to protect even the development environment, you can enable WS OAP, but it might hinder the development process. Starter pools aren't available when you enable WS OAP.
 
 ## Accessing Azure Key Vault (AKV) from Notebook
 

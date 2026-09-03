@@ -6,7 +6,7 @@ ms.author: daknappe
 ms.reviewer: yuturchi, arthii
 ms.custom: admin-portal
 ms.topic: how-to
-ms.date: 03/06/2026
+ms.date: 07/28/2026
 ai-usage: ai-assisted
 ---
 
@@ -26,10 +26,13 @@ For an overview of how retention works for workspaces and items, see [Retention 
 
 ## Set up the retention period for deleted items
 
-By default, when you turn on item recovery in tenant settings, Fabric retains deleted items for seven days. You can change the retention period (from 7 to 90 days) by using the **Item Recovery** tenant setting.
+> [!NOTE]
+> Item recovery is now enabled by default, with a retention period of three days. The default applies to tenants that never explicitly configured the **Item Recovery** setting and to newly created tenants. Fabric preserves settings that an admin explicitly configured: if you already turned on item recovery, your current retention value stays the same, and if you explicitly turned it off, it stays off.
+
+You can change the retention period (from 3 to 90 days) or turn item recovery off by using the **Item Recovery** tenant setting.
 
 1. In the admin portal, go to **Tenant settings** > **Item Recovery**.
-1. Turn on the setting and enter the number of days for the retention period (7 to 90 days).
+1. Make sure the setting is turned on, and then enter the number of days for the retention period (3 to 90 days).
 1. Select **Apply**.
 
 > [!NOTE]

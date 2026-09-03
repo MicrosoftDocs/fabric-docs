@@ -43,7 +43,7 @@ Cold starts typically occur when:
 
 These operations can increase query duration. Cold starts can be partial. Some compute nodes, data, or statistics might already be available or cached in memory, while the query waits for others to become available. 
 
-In-memory and disk caching in Fabric Data Warehouse is fully transparent and automatically enabled. Caching intelligently minimizes the need for remote storage reads by leveraging local caches. Fabric Data Warehouse employs refined access patterns to enhance data reads from storage and elevate query execution speed. For more information, see [Caching in Fabric data warehousing](caching.md).
+In-memory and disk caching in Fabric Data Warehouse is fully transparent and automatically enabled. Caching intelligently minimizes the need for remote storage reads by leveraging local caches. Fabric Data Warehouse employs refined access patterns to enhance data reads from storage and elevate query execution speed. For more information, see [Caching in Fabric Data Warehouse](caching.md).
 
 You can detect cold start effects caused by fetching data from remote storage into memory by querying the [queryinsights.exec_requests_history](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true) view. Check the `data_scanned_remote_storage_mb` column: 
 
@@ -326,7 +326,7 @@ Zero-copy clones are ideal for scenarios such as development, testing, and backu
   - [queryinsights.long_running_queries](/sql/relational-databases/system-views/queryinsights-long-running-queries-transact-sql?view=fabric&preserve-view=true)
   - [queryinsights.frequently_run_queries](/sql/relational-databases/system-views/queryinsights-frequently-run-queries-transact-sql?view=fabric&preserve-view=true)
 
-For more information on the `queryinsights` views, see [Query insights in Fabric data warehousing](query-insights.md).
+For more information on the `queryinsights` views, see [Query insights in Fabric Data Warehouse](query-insights.md).
 
 - Query lifecycle DMVs 
   - [sys.dm_exec_connections](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql?view=fabric&preserve-view=true)
@@ -347,3 +347,4 @@ For more information on query lifecycle DMVs, see [Monitor connections, sessions
 - [Query insights](query-insights.md)
 - [Statistics in Fabric Data Warehouse](statistics.md)
 - [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md)
+- [Query acceleration in Fabric Data Warehouse](query-acceleration.md)

@@ -1,5 +1,5 @@
 ---
-title: Understand Microsoft Fabric Licenses
+title: Understand Microsoft Fabric licenses and capacity
 description: Explore Microsoft Fabric licenses, tenants, capacities, and SKUs to plan deployment and collaboration. Learn key scenarios and choose the right option.
 author: dknappettmsft
 ms.author: daknappe
@@ -8,7 +8,7 @@ ms.date: 06/15/2026
 ai-usage: ai-assisted
 ---
 
-# Understand Microsoft Fabric licenses
+# Understand Microsoft Fabric licenses and capacity
 
 Microsoft Fabric licenses and capacities determine how users create, share, and view items across your organization. To collaborate, you need an [F or P capacity](#capacity) and at least one [per-user license](#per-user-licenses). This article explains tenants, capacities, workspaces, license modes, and scenarios so you can plan a scalable deployment.
 
@@ -63,11 +63,18 @@ Your capacity lets you:
     > [!NOTE]
     > To create Power BI items in workspaces that aren't *My workspace*, you need a *Pro* license.
 
-- Save your items to a workspace and share them with a user that has an appropriate license
+- Save your items to a workspace and share them with a user who has an appropriate license
 
 Capacities use stock-keeping units (SKUs). Each SKU provides Fabric resources for your organization. Your organization can have as many capacities as needed.
 
-The table lists the Microsoft Fabric SKUs. Capacity units (CUs) measure the compute power for each SKU. For customers familiar with Power BI, the table also lists Power BI Premium per capacity *P* SKUs and virtual cores (v-cores). Power BI Premium *P* SKUs support Microsoft Fabric. *A* and *EM* SKUs only support Power BI items. This table is provided as a reference for comparing compute capacity and should not be interpreted as functional or licensing equivalence.
+Fabric operates on two types of SKUs:
+
+- **Azure** (F capacities): You purchase F capacities through Azure, and Azure bills you per second with no commitment, with the option of a yearly capacity reservation to save costs. F SKUs are the recommended capacities for Fabric. You can use an Azure capacity for as long as you want without commitment. Pricing is regional, and Azure bills per second with a one-minute minimum.
+- **Microsoft 365** (Power BI Premium P capacities): P capacities are available only to customers who have them on an active Enterprise Agreement, with monthly or yearly billing and a monthly commitment.
+
+Microsoft 365 (P) SKUs are Power BI SKUs that also support Fabric when you enable Fabric on top of a Power BI subscription. Power BI EM SKUs don't support Fabric.
+
+The following table lists the Microsoft Fabric SKUs. Capacity units (CUs) measure the compute power for each SKU. For customers familiar with Power BI, the table also lists Power BI Premium per capacity *P* SKUs and virtual cores (v-cores). Power BI Premium *P* SKUs support Microsoft Fabric. *A* and *EM* SKUs only support Power BI items. Use this table as a reference for comparing compute capacity, not as a statement of functional or licensing equivalence.
 
 [!INCLUDE [powerbi-premium-notification](~/../powerbi-repo/powerbi-docs/guidance/includes/powerbi-premium-notification.md)]
 
@@ -88,6 +95,8 @@ The table lists the Microsoft Fabric SKUs. Capacity units (CUs) measure the comp
 | F4096 | 4096 | - | 512 |
 | F8192 | 8192 | - | 1024 |
 
+You can also buy Fabric capacity through a Cloud Solution Provider (CSP). For details, see [Buy Fabric capacity in Azure](buy-capacity.md#buy-through-a-cloud-solution-provider-csp).
+
 <a id="embedded-scenarios"></a>
 
 #### Power BI embedding scenarios
@@ -101,9 +110,9 @@ In "Embed for your organization" and embedding in Microsoft 365 apps (SharePoint
 
 ### Workspace
 
-[Workspaces](../fundamentals/workspaces.md) reside within capacities and are used as containers for Microsoft Fabric items. Each Microsoft Fabric user has a personal workspace known as *My Workspace*. Create more workspaces to enable collaboration.  
+[Workspaces](../fundamentals/workspaces.md) reside within capacities and act as containers for Microsoft Fabric items. Each Microsoft Fabric user has a personal workspace known as *My workspace*. Create more workspaces to enable collaboration.  
 
-Each Microsoft Entra tenant with Fabric has a shared capacity that hosts all *My Workspaces* and workspaces using the Power BI Pro or Power BI Premium Per-User(PPU) workspace types. By default, workspaces are created in your tenant's shared capacity. When your tenant has other capacities, assign any workspace—including *My Workspaces*—to any capacity in the tenant.
+Each Microsoft Entra tenant with Fabric has a shared capacity that hosts all *My workspaces* and workspaces that use the Power BI Pro or Power BI Premium Per-User (PPU) workspace types. By default, you create workspaces in your tenant's shared capacity. When your tenant has other capacities, you can assign any workspace - including *My workspaces* - to any capacity in the tenant.
 
 > [!NOTE]
 > If you're using a [Power BI Premium](/power-bi/enterprise/service-premium-what-is) capacity, Microsoft Fabric items aren't enabled. To enable support for Microsoft Fabric items on your Power BI capacity, [enable Microsoft Fabric](../admin/fabric-switch.md).
@@ -182,8 +191,8 @@ The following table lists the main differences between the capabilities of per-u
 | Create non-Power BI Fabric items in Fabric / Trial capacity workspaces | &#x2705; | &#x2705; |&#x2705; |
 | Create non-Power BI Fabric items in Power BI Premium capacity workspaces | &#x2705; | &#x2705; |&#x2705; |
 | Share non-Power BI Fabric items | &#x2705; | &#x2705; |&#x2705; |
-| View Power BI items in Pro workspaces or Fabric Capacity workspaces (where the Fabric Capacity SKU is less than a F64) | &#x274C; | &#x2705; |&#x2705; |
-| Users signing in with an Entra user account and a workspace viewer role on a Power BI Premium Per Capacity or a Fabric Capacity with an F64 or higher SKU, can view the content of that workspace | &#x2705; | &#x2705; |&#x2705; |
+| View Power BI items in Pro workspaces or Fabric capacity workspaces (where the Fabric capacity SKU is less than a F64) | &#x274C; | &#x2705; |&#x2705; |
+| Users signing in with an Entra user account and a workspace viewer role on a Power BI Premium per capacity or a Fabric capacity with an F64 or higher SKU, can view the content of that workspace | &#x2705; | &#x2705; |&#x2705; |
 
 ## Licensing scenario summary
 
@@ -204,4 +213,4 @@ Next, review purchase options to select the capacity and user licensing mix that
 
 ## Related content
 
-- [Buy a Microsoft Fabric subscription](buy-subscription.md)
+- [Buy Fabric capacity in Azure](buy-capacity.md)

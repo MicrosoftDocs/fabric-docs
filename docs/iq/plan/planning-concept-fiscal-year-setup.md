@@ -1,14 +1,14 @@
 ---
 title: Fiscal Year Setup for Planning and Reporting
-description: Fiscal calendars in Plan organize planning around your financial year. Discover how to configure the fiscal start month, Prior or Same convention, and forecast periods.
-#customer intent: As a plan user, I want to set up a fiscal calendar in Plan so that I can plan, forecast, and report on my organization's financial year instead of the calendar year.
+description: Fiscal calendars in planning organize planning around your financial year. Discover how to configure the fiscal start month, Prior or Same convention, and forecast periods.
+#customer intent: As a planning user, I want to set up a fiscal calendar in planning so that I can plan, forecast, and report on my organization's financial year instead of the calendar year.
 ms.date: 07/27/2026
 ms.topic: concept-article
 ---
 
 # Fiscal year setup in planning and reporting
 
-This article explains the difference between a calendar year and a fiscal year. It also describes how to set up a fiscal calendar in plan for planning, reporting, and forecasting by using fiscal years (FY).
+This article explains the difference between a calendar year and a fiscal year. It also describes how to set up a fiscal calendar in planning for planning, reporting, and forecasting by using fiscal years (FY).
 
 ## What is a fiscal year?
 
@@ -55,10 +55,10 @@ For an August-start fiscal calendar:
 | Q3 | February, March, April |
 | Q4 | May, June, July |
 
-In Plan, you can set any month as the fiscal year start month.
+In planning, you can set any month as the fiscal year start month.
 
 > [!IMPORTANT]
-> Plan doesn't create or manage the fiscal calendar. You must set up a fiscal calendar table that includes fiscal period fields such as Year, Quarter, and Month in your semantic model. Then, configure the planning sheet or matrix to use those fields.
+> Planning doesn't create or manage the fiscal calendar. You must set up a fiscal calendar table that includes fiscal period fields such as Year, Quarter, and Month in your semantic model. Then, configure the planning sheet or matrix to use those fields.
 
 Use fiscal calendars across the following time-intelligence features:
 
@@ -67,9 +67,9 @@ Use fiscal calendars across the following time-intelligence features:
 * Open and closed periods
 * Time-based planning
 
-## Set up fiscal date calendar in plan
+## Set up fiscal date calendar in planning
 
-When you set up fiscal date calendars in plan, you can organize planning and reporting around your financial year instead of the calendar year.
+When you set up fiscal date calendars in planning, you can organize planning and reporting around your financial year instead of the calendar year.
 
 To do this, create a fiscal date table in your semantic model and map the calendar and fiscal years accordingly.&#x20;
 
@@ -91,7 +91,7 @@ The fiscal date table should:
 :::image type="content" source="media/planning-concept-fiscal-year-setup/map-fiscal-year.png" alt-text="Screenshot of a matrix visual mapping fiscal years 2022-2028 to earliest calendar dates, with 2025 expanded into quarters and months." lightbox="media/planning-concept-fiscal-year-setup/map-fiscal-year.png":::
 
 > [!NOTE]
-> Plan uses the fiscal fields that you provide in the semantic model. It doesn't automatically generate, modify, repair, or relabel fiscal periods.
+> Planning uses the fiscal fields that you provide in the semantic model. It doesn't automatically generate, modify, repair, or relabel fiscal periods.
 
 ## Add a numeric sort column for sorting requirements
 
@@ -159,7 +159,7 @@ Configure these settings before creating forecast measures or extending time per
 
 ### Fiscal year start month
 
-This option identifies the first month of the organization's fiscal year. It determines fiscal quarter boundaries and how plan extends future fiscal periods. Select the month that exactly matches the fiscal date table.
+This option identifies the first month of the organization's fiscal year. It determines fiscal quarter boundaries and how planning extends future fiscal periods. Select the month that exactly matches the fiscal date table.
 
 | Business calendar | Select  |
 | ----------------- | ------- |
@@ -175,7 +175,7 @@ For example, when *April* is selected:
 * Q3 is October–December.
 * Q4 is January–March.
 
-If the selected month doesn't match the semantic model, plan can interpret quarters and forecast periods incorrectly.
+If the selected month doesn't match the semantic model, planning can interpret quarters and forecast periods incorrectly.
 
 ### Fiscal year convention
 
@@ -237,7 +237,7 @@ For a fiscal year starting in April:
 > [!TIP]
 > Identify the first month of a known fiscal year in your source data. If **Fiscal Year 2025** starts in **April 2024**, select **Prior**. If **Fiscal Year 2025** starts in **April 2025**, select **Same**.
 
-## Plan maps the fiscal dates
+## Planning maps the fiscal dates
 
 After these configurations, the fiscal date table connects each actual calendar date to its fiscal reporting period.
 
@@ -413,7 +413,7 @@ Use the levels required by the visual's granularity. Fiscal Year is essential fo
 
 ### Why does January belong to Q4 in an April-start calendar?
 
-Plan counts fiscal quarters from the selected start month. With April as month 1, January is fiscal month 10 and therefore belongs to Q4.
+Planning counts fiscal quarters from the selected start month. With April as month 1, January is fiscal month 10 and therefore belongs to Q4.
 
 ## Configuration checklist
 
@@ -430,7 +430,7 @@ Plan counts fiscal quarters from the selected start month. With April as month 1
 
 ## Summary
 
-Plan supports fiscal forecasting and time-based planning when the semantic model provides a correctly configured fiscal date table and the visual uses the appropriate fiscal settings.
+Planning supports fiscal forecasting and time-based planning when the semantic model provides a correctly configured fiscal date table and the visual uses the appropriate fiscal settings.
 
 Configure the **Fiscal Year Start Month** and **Fiscal Year Convention** to match your organization's fiscal calendar, and verify the mapping before creating forecast measures. The most important distinction is the meaning of Prior and Same.
 

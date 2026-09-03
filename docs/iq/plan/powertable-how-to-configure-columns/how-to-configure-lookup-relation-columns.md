@@ -12,9 +12,9 @@ This article explains how to configure columns that use the **Single Select** in
 
 A single select column lets you select a value from a predefined list of options. You can configure the available options in one of the following ways:
 
-* [**Manual**](#manual): Define the dropdown options manually.
-* [**Distinct Values**](#distinct-values): Generate distinct dropdown options from existing column values.
-* [**Lookup**](#lookup): Retrieve dropdown values from another related table, typically to establish foreign key relationships.
+* [Manual](#manual): Define the dropdown options manually.
+* [Distinct Values](#distinct-values): Generate distinct dropdown options from existing column values.
+* [Lookup](#lookup): Retrieve dropdown values from another related table, typically to establish foreign key relationships.
 
 Use single select predefined options to maintain data consistency, simplify data entry, and standardize values across records.
 
@@ -108,3 +108,49 @@ Use the **Filter based on another column** option to further filter the lookup v
 In this case, you can configure multiple matching column pairs between the current table and the lookup table. When you apply a filter, the dropdown list displays only lookup values that satisfy all configured matching conditions.
 
 :::image type="content" source="../media/powertable-how-to-configure-columns/how-to-configure-lookup-relation-columns/filter-based-on-another-column.png" alt-text="Screenshot of the Filter based on another column checkbox." lightbox="../media/powertable-how-to-configure-columns/how-to-configure-lookup-relation-columns/filter-based-on-another-column.png":::
+
+## FAQ
+
+### What does the Values Type set to 'Distinct Values' do for a Single Select column?
+
+The **Distinct Values** option builds the dropdown list from the unique values that already exist in the column instead of using a predefined list.
+
+PowerTable reads all unique values in the column and displays them as the available options in the **Single Select** dropdown.
+
+### If Distinct Values builds the list from existing data, how can users add a new value?
+
+Use the **Allow Adding New Options** checkbox in the **Constraints** section of the **Edit Column** dialog.
+
+When this option is enabled, users can search for a value in the dropdown. If the value doesn't already exist, PowerTable displays an option to add it to the list.
+
+### Does a lookup column display only the values that are present in the current table?
+
+No. A lookup column displays the complete set of distinct values from the lookup table, not just the values that are present in the current table or the column where the lookup is configured.
+
+### How do I add a new value to a lookup column?
+
+To add a new value to a lookup column, first insert the value into the table that contains the lookup values. The new value then becomes available in the lookup column.
+
+### In a lookup column, what is stored in the row—the key or the display value?
+
+A lookup column stores the **key** for the displayed value.
+
+When you configure a lookup column, PowerTable treats the values in the column as business keys and displays the corresponding values from the same table or a different table.
+
+### Can I configure a lookup column by using the same table?
+
+Yes. You can configure a lookup column that references the same table.
+
+For example, an **Employee** table might contain an **Employee ID**, **Employee Name**, and **Manager ID**. You can configure the **Manager** column as a lookup that references the current **Employee** table to display the manager's name.
+
+### What does **Add Hierarchy** do in the lookup configuration?
+
+The **Add Hierarchy** option displays a drill-down hierarchy in the lookup dropdown, making it easier to organize and navigate lookup values.
+
+You can configure the hierarchy by using multiple tables that are related through common columns.
+
+### What does **Filter based on another column** do in the lookup configuration?
+
+The **Filter based on another column** option filters the values in a lookup column based on columns that are common between the source and lookup tables.
+
+This option displays a filtered list of values in the lookup dropdown based on the corresponding value of another column in the same row.

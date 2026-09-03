@@ -5,7 +5,7 @@ ms.reviewer: jingzh
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Develop and run notebooks
-ms.date: 05/29/2025
+ms.date: 08/07/2026
 ---
 
 # Develop, execute, and manage Microsoft Fabric notebooks
@@ -208,7 +208,7 @@ Full‑size mode lets you fully focus on writing and editing code within a singl
 
 ## Copilot inline code completion (preview)
 
-Copilot inline code completion is an AI-powered feature that helps you to write Python code faster and more efficiently in Fabric Notebooks. This feature provides intelligent, context-aware code suggestions as you type code. It reduces repetitive tasks, minimizes syntax errors, and accelerates development by integrating seamlessly into your notebook workflow.
+Copilot inline code completion is an AI-powered feature that helps you to write Python code faster and more efficiently in Fabric notebooks. This feature provides intelligent, context-aware code suggestions as you type code. It reduces repetitive tasks, minimizes syntax errors, and accelerates development by integrating seamlessly into your notebook workflow.
 
 ### Key benefits
 
@@ -232,15 +232,15 @@ As you type, suggestions appear in light gray text, press tab to accept or modif
 
 ### Current limitations
 
-* Copilot Inline Code Completion currently supports Python language and uses context from previous cells and Lakehouse schemas.
-* Suggestions consider data from Lakehouse schemas.
+* Copilot Inline Code Completion currently supports Python language and uses context from previous cells and lakehouse schemas.
+* Suggestions consider data from lakehouse schemas.
 * Only a subset of schema elements is used when there are many tables or columns.
 * Dynamically created tables (via Spark) aren't recognized in real time.
-* Inline completions are primarily scoped to context from prior cells and Lakehouse schemas. The notebook-wide Copilot actions and diagnostics described in the following sections can use broader notebook context (structure and runtime state) without requiring a Spark session to start.
+* Inline completions are primarily scoped to context from prior cells and lakehouse schemas. The notebook-wide Copilot actions and diagnostics described in the following sections can use broader notebook context (structure and runtime state) without requiring a Spark session to start.
 
 ## Copilot notebook-wide actions
 
-Copilot supports multi-step, notebook-wide capabilities that go beyond individual cells. You can use Copilot to generate code across cells, refactor logic into reusable functions, summarize entire workflows, and validate notebook output. Copilot understands the workspace context, attached Lakehouse schemas, tables, and files, notebook structure, and runtime state, and is immediately context-aware without requiring a Spark session to start.
+Copilot supports multi-step, notebook-wide capabilities that go beyond individual cells. You can use Copilot to generate code across cells, refactor logic into reusable functions, summarize entire workflows, and validate notebook output. Copilot understands the workspace context, attached lakehouse schemas, tables, and files, notebook structure, and runtime state, and is immediately context-aware without requiring a Spark session to start.
 
 For details on the chat pane and slash commands, see [Use the Copilot chat pane](./copilot-notebooks-chat-pane.md).
 
@@ -265,6 +265,22 @@ There are several ways to run the code in a cell.
 - Hover on the cell you want to run and select the **Run cell** button or press **Ctrl+Enter**.
 
 - Use [Shortcut keys in command mode](#shortcut-keys-in-command-mode). Press **Shift+Enter** to run the current cell and select the next cell. Press **Alt+Enter** to run the current cell and insert a new cell.
+
+### Run selected code
+
+You can run part of a code cell instead of the whole cell. Use **Run selected code** when you want to test a few lines without rerunning the rest of the cell.
+
+To run a selection:
+
+1. In a code cell, select the lines you want to run.
+1. Select the arrow next to **Run cell**, and then select **Run selected code**. You can also press **Ctrl+Shift+Enter**.
+
+The selected lines run in the current session, and the output appears below the cell.
+
+:::image type="content" source="media\author-execute-notebook\run-selected-code.png" alt-text="Screenshot showing a code cell with two lines selected and the cell run menu open." lightbox="media\author-execute-notebook\run-selected-code.png":::
+
+> [!NOTE]
+> Lines you don't select don't run, so any variable or import they define isn't available. Include the lines your selection depends on, or run them first.
 
 ### Run all cells
 
@@ -367,7 +383,7 @@ Take your pick in how long you want an uninterrupted session, and hit apply. The
 
 You can also set timeout as described in:
 
-- [Data Engineering workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
+- [Data Engineering workspace administration settings in Fabric](workspace-admin-settings.md)
 - [Spark session configuration magic command](author-execute-notebook.md#spark-session-configuration-magic-command)
 
 **Stay signed in:** During sign in, if you see the **Stay signed in** dialog, select **Yes** to deactivate the idle session timeout for your current session.
@@ -418,7 +434,7 @@ You can use familiar Ipython magic commands in Fabric notebooks. Review the foll
 Available line magic commands:
 [%lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%history](#view-the-history-of-input-commands), [%run](#reference-run), [%load](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load), %alias, %alias_magic, %autoawait, %autocall, %automagic, %bookmark, %cd, %colors, %dhist, %dirs, %doctest_mode, %killbgscripts, %load_ext, %logoff, %logon, %logstart, %logstate, %logstop, %magic, %matplotlib, %page, %pastebin, %pdef, %pfile, %pinfo, %pinfo2, %popd, %pprint, %precision, %prun, %psearch, %psource, %pushd, %pwd, %pycat, %quickref, %rehashx, %reload_ext, %reset, %reset_selective, %sx, %system, %tb, %unalias, %unload_ext, %who, %who_ls, %whos, %xdel, %xmode.
 
-Fabric notebook also supports the improved library management commands **%pip** and **%conda**. For more information about usage, see [Manage Apache Spark libraries in Microsoft Fabric](library-management.md).
+Fabric notebook also supports the improved library management commands **%pip** and **%conda**. For more information about usage, see [Manage Apache Spark libraries in Fabric](library-management.md).
 
 Available cell magic commands:
 [%%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%%capture](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-capture), [%%writefile](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-writefile), [%%sql](#use-multiple-languages), [%%pyspark](#use-multiple-languages), [%%spark](#use-multiple-languages), [%%csharp](#use-multiple-languages), [%%configure](#spark-session-configuration-magic-command), [%%html](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-html), [%%bash](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-bash), [%%markdown](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-markdown), [%%perl](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-perl), [%%script](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-script), [%%sh](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-sh).
@@ -621,7 +637,7 @@ You can also use `%%configure` magic command to dynamically inject configuration
 ```
 
 In this example:
-- `myVL` is the name of your Variable Library.
+- `myVL` is the name of your variable library.
 - `LHname`, `LHid`, and `WorkspaceId` are variable keys defined in the library.
 - All variables should be defined as String type in the variable library, even for GUID values.
 - The `workspaceId` is required when the lakehouse is in a different workspace than the current notebook.
@@ -744,6 +760,7 @@ Similar to Jupyter Notebooks, Fabric notebooks have a modal user interface. The 
 | Run the current cell and select below | Shift+Enter |
 | Run the current cell and insert below | Alt+Enter |
 | Run current cell | Ctrl+Enter |
+| Run selected code | Ctrl+Shift+Enter |
 | Select cell above | Up |
 | Select cell below | Down |
 | Select previous cell | K |

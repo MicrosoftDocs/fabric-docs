@@ -57,6 +57,8 @@ items:
     items:
       - name: Eventstream Overview
         href: event-streams/overview.md
+      - name: Eventstream for Azure Event Hubs and Stream Analytics users
+        href: event-streams/migrate-from-azure-event-hubs-stream-analytics.md
       - name: Eventstreams capacity consumption
         href: event-streams/monitor-capacity-consumption.md
       - name: Supported data formats
@@ -119,6 +121,8 @@ items:
             href: event-streams/add-source-custom-app.md
           - name: Fabric capacity overview events
             href: event-streams/add-source-fabric-capacity-overview-events.md
+          - name: Fabric capacity operation events
+            href: event-streams/add-source-fabric-capacity-operation-events.md
           - name: Fabric job events
             href: event-streams/add-source-fabric-job.md
           - name: Fabric OneLake events
@@ -173,6 +177,8 @@ items:
             href: event-streams/process-events-with-multiple-schemas.md
           - name: Process events using SQL code editor
             href: event-streams/process-events-using-sql-code-editor.md
+          - name: Enrich events with reference data
+            href: event-streams/enrich-events-with-reference-data.md
           - name: Extract event metadata with eventstream
             href: event-streams/extract-event-metadata-with-eventstream.md
       - name: Preview data
@@ -195,8 +201,6 @@ items:
                 href: event-streams/fabric-workspace-monitoring.md
               - name: Enable workspace monitoring for eventstreams
                 href: event-streams/enable-fabric-workspace-monitoring.md
-              - name: Eventstream monitoring tables
-                href: event-streams/fabric-workspace-monitoring-tables.md
               - name: Query eventstream monitoring data
                 href: event-streams/query-fabric-workspace-monitoring-data.md
               - name: Known limitations
@@ -433,6 +437,8 @@ items:
                     href: /stream-analytics-query/concat-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: CONCAT_WS
                     href: /stream-analytics-query/concat-ws-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: JSON_PARSE
+                    href: /stream-analytics-query/json-parse-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: LEFT
                     href: /stream-analytics-query/left-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: LEN
@@ -787,31 +793,65 @@ items:
     items:
       - name: Real-Time Dashboard overview
         href: real-time-dashboards-overview.md
-      - name: Create a Real-Time Dashboard
-        href: dashboard-real-time-create.md
+      - name: Supported visuals
+        href: dashboard-supported-visuals.md
       - name: Real-Time Dashboard permissions
         href: dashboard-permissions.md
-      - name: Explore data in Real-Time Dashboard Using Copilot
-        href: dashboard-explore-data.md
-      - name: Customize Real-Time Dashboard visuals
-        href: dashboard-visuals-customize.md
-      - name: Apply conditional formatting in Real-Time Dashboards
-        href: dashboard-conditional-formatting.md
-      - name: Use parameters in Real-Time Dashboards
-        href: dashboard-parameters.md
-      - name: Real-Time Dashboard-specific visuals
-        href: dashboard-visuals.md
-      - name: Time series analysis in Real-Time Dashboard
-        href: dashboard-time-series.md
-      - name: Troubleshoot Real-Time Dashboard visual errors
-        href: troubleshoot-dashboard-tile-error.md
-      - name: Create alerts from a Real-Time Dashboard
-        href: ./data-activator/activator-get-data-real-time-dashboard.md
-        displayName: trigger, activator, reflex
-      - name: Live refresh in Real-Time Dashboards
-        href: dashboard-live-refresh.md
-      - name: Embed Real-Time Dashboards in other applications
-        href: ../embed/quickstart-embed-fabric-item.md
+      - name: Dashboard data source access
+        href: dashboard-data-source-access.md
+      - name: Get started
+        items:
+        - name: Create a Real-Time Dashboard
+          href: dashboard-real-time-create.md
+        - name: Generate a dashboard with Copilot
+          href: copilot-generate-dashboard.md
+      - name: Create and manage visuals
+        items:
+        - name: Customize dashboard visuals
+          href: dashboard-visuals-customize.md
+        - name: Real-Time Dashboard-specific visuals
+          href: dashboard-visuals.md
+        - name: Time series visual
+          href: dashboard-time-series.md
+        - name: Troubleshoot visual errors
+          href: troubleshoot-dashboard-tile-error.md
+      - name: Customize dashboard
+        items:
+        - name: Dashboard visual gallery
+          href: dashboard-visual-gallery.md
+        - name: Customize dashboard visuals
+          href: dashboard-visuals-customize.md
+        - name: Conditional formatting
+          href: dashboard-conditional-formatting.md
+        - name: Dashboard parameters
+          href: dashboard-parameters.md 
+        - name: Time series visual
+          href: dashboard-time-series.md
+        - name: Markdown visual
+          href: dashboard-markdown-visual.md
+      - name: Explore data
+        items:
+        - name: Explore data with Copilot
+          href: dashboard-explore-data.md
+      - name: Monitor and automate
+        items:
+        - name: Set alerts for Real-Time dashboard
+          href: ./data-activator/activator-get-data-real-time-dashboard.md
+          displayName: trigger, activator, reflex
+        - name: Live refresh in Real-Time dashboards
+          href: dashboard-live-refresh.md
+      - name: Share and embed
+        items:
+        - name: Dashboard permissions
+          href: dashboard-permissions.md
+        - name: Configure data source access
+          href: dashboard-data-source-access.md
+        - name: Embed Real-Time Dashboards in other applications
+          href: ../embed/quickstart-embed-fabric-item.md
+      - name: Deploy and manage
+        items:
+        - name: Git integration for Real-Time Dashboards
+          href: ../cicd/git-integration/git-get-started.md
       - name: Visualize data in Power BI
         items:
           - name: Visualize data in a Power BI report
@@ -867,6 +907,12 @@ items:
             href: ../real-time-hub/set-alerts-fabric-job-events.md?context=/fabric/context/context-rti&pivots=fabric
           - name: Set alerts on Azure Blob Storage events
             href: ../real-time-hub/set-alerts-azure-blob-storage-events.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Set alerts on Fabric capacity overview events
+            href: ../real-time-hub/set-alerts-fabric-capacity-overview-events.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Set alerts on Fabric capacity operation events
+            href: ../real-time-hub/set-alerts-fabric-capacity-operation-events.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Set alerts on anomaly detection events
+            href: ../real-time-hub/set-alerts-anomaly-detection.md?context=/fabric/context/context-rti&pivots=fabric
           - name: Create alerts on Power BI reports
             href: data-activator/activator-get-data-power-bi.md
           - name: Create alerts on ontology
@@ -1074,6 +1120,8 @@ items:
                 href: map/share-map-direct.md
               - name: Share maps with org apps
                 href: map/share-map-org-apps.md
+              - name: Save a map to a Real-Time Dashboard
+                href: map/save-map-to-real-time-dashboard.md
           - name: Manage Map permissions
             href: map/manage-map-permissions.md
           - name: Create and Configure a Fabric Map with REST APIs

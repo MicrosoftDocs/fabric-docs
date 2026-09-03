@@ -2,7 +2,7 @@
 title: T-SQL Surface Area in Fabric Data Warehouse
 description: T-SQL surface area of the SQL analytics endpoint and warehouse in Microsoft Fabric.
 ms.reviewer: jovanpop, twinklecyril, prlangad
-ms.date: 06/23/2026
+ms.date: 08/26/2026
 ms.topic: concept-article
 ms.search.form: T-SQL Surface area # This article's title should not change. If so, contact engineering.
 ---
@@ -22,10 +22,11 @@ For SQL database in Fabric, see [Limitations in SQL database (preview)](../datab
 Fabric Data Warehouse supports T-SQL tables, views, stored procedures, functions, permissions, and security roles. 
 
 - For more information about `CREATE` and `DROP` `TABLE` support in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Tables](tables.md).
+    - [Identity columns](identity.md) are supported in Fabric Data Warehouse.
 - For more information about supported data types in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Data types](data-types.md).
 - You can also create T-SQL views, functions, and procedures on top of the tables that reference your Delta Lake data in the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
    - Creating, altering, and dropping tables, and insert, update, and delete operations are only supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], not in the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
-- Fabric Warehouse and SQL analytics endpoint both support *standard*, *sequential*, and *nested* common table expressions (CTEs). While CTEs are generally available in Microsoft Fabric, nested CTEs are currently a preview feature. For more information, see [Nested Common Table Expression (CTE) in Fabric data warehousing (Transact-SQL)](/sql/t-sql/queries/nested-common-table-expression?view=fabric&preserve-view=true).
+- Fabric Warehouse and SQL analytics endpoint both support *standard*, *sequential*, and *nested* common table expressions (CTEs). While CTEs are generally available in Microsoft Fabric, nested CTEs are currently a preview feature. For more information, see [Nested Common Table Expression (CTE) in Fabric Data Warehouse (Transact-SQL)](/sql/t-sql/queries/nested-common-table-expression?view=fabric&preserve-view=true).
 - [TRUNCATE TABLE](/sql/t-sql/statements/truncate-table-transact-sql?view=fabric&preserve-view=true) is supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 - To change the name of the column in a user table in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], use the `sp_rename` stored procedure. 
 - A subset of query and join hints are supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. For more information, see [Hints (Transact-SQL)](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true).
@@ -33,7 +34,7 @@ Fabric Data Warehouse supports T-SQL tables, views, stored procedures, functions
 - Currently, only the following subset of `ALTER TABLE` operations in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] are supported:
    - You can `ADD` nullable columns of supported column data types.
    - `DROP COLUMN` is supported.
-   - `ADD` or `DROP` `PRIMARY KEY`, `UNIQUE`, and `FOREIGN KEY` column constraints are supported, but only if the `NOT ENFORCED` option is specified. All other `ALTER TABLE` operations are blocked. There are limitations with adding table constraints or columns when using [Source Control with Warehouse](source-control.md#limitations-in-source-control).
+   - `ADD` or `DROP` `PRIMARY KEY`, `UNIQUE`, and `FOREIGN_KEY` column constraints are supported, but only if the `NOT ENFORCED` option is specified. All other `ALTER TABLE` operations are blocked. There are limitations with adding table constraints or columns when using [Git Integration for source control](git-integration.md#limitations-in-git-integration).
    - `ALTER TABLE` on distributed temporary tables is supported.
    - `ALTER TABLE ... ALTER COLUMN` is in preview. For more information, see [ALTER COLUMN in Fabric Data Warehouse](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true#syntax-for-warehouse-in-fabric).
    - You can execute supported `ALTER TABLE` statements inside an explicit user-defined transaction in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
@@ -63,7 +64,7 @@ Currently, the following commands aren't supported. Don't try to use these comma
 
 ## Related content
 
-- [Query insights in Fabric data warehousing](query-insights.md)
+- [Query insights in Fabric Data Warehouse](query-insights.md)
 - [What is Fabric Data Warehouse?](data-warehousing.md)
 - [Data types in Microsoft Fabric](data-types.md)
 - [Limitations of Microsoft Fabric Data Warehouse](limitations.md)

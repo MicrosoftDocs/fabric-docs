@@ -1,13 +1,13 @@
 ---
-title: Data retention in Fabric Data Warehouse
+title: Data Retention in Fabric Data Warehouse
 description: Learn about data retention in Fabric Data Warehouse, including how retention works, how to configure it, scenarios, best practices, and impact on dependent features.
 ms.reviewer: ajagadish
-ms.date: 04/27/2026
+ms.date: 08/04/2026
 ms.topic: concept-article
 ms.search.form: Warehouse Data Retention
 ---
 
-# Data retention in Fabric Data Warehouse (Preview)
+# Data retention in Fabric Data Warehouse (preview)
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
@@ -151,9 +151,11 @@ To estimate the storage impact of a retention period change, consider:
 - The retention setting applies only to warehouses. The SQL analytics endpoint of the Lakehouse isn't supported.
 - Query Insights and SQL audit logs aren't subject to this data retention policy and are managed separately.
 
-## Dropped item retention (preview)
+## Dropped item retention
 
-[Dropped item retention](../admin/item-recovery.md) preserves warehouses and their associated tables, schemas, snapshots, permissions, and saved queries for a configurable period after they're dropped or deleted. This ensures that accidental deletions don't result in permanent data loss or business-impacting outages. Dropped retention guarantees a minimum retention period of 7 calendar days, and has a separate tenant-level retention configuration. You can [configure the dropped item retention period in the **Item Recovery** tenant setting](../admin/item-recovery.md#set-up-the-retention-period-for-deleted-items).
+[Dropped item retention](../admin/item-recovery.md) preserves warehouses and their associated tables, schemas, snapshots, permissions, and saved queries for a configurable period after they're dropped or deleted. This feature ensures that accidental deletions don't result in permanent data loss or business-impacting outages.
+
+Dropped item retention is turned on by default, guarantees a minimum retention period of three calendar days, and has a separate tenant-level retention configuration. You can [configure the dropped item retention period in the **Item Recovery** tenant setting](../admin/item-recovery.md#set-up-the-retention-period-for-deleted-items).
 
 ## Next step
 

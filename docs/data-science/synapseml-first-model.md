@@ -5,10 +5,10 @@ description: Get a quick introduction to building a machine learning model with 
 ms.author: scottpolly
 ms.collection: ce-skilling-ai-copilot
 ms.date: 05/13/2026
-ms.reviewer: ruxu
+ms.reviewer: scottpolly
 ms.topic: how-to
 ms.update-cycle: 180-days
-reviewer: ruixinxu
+reviewer: s-polly
 title: Build a model with SynapseML
 ---
 

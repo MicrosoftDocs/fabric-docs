@@ -8,37 +8,37 @@ ms.search.form: lakehouse table maintenance delta lake tables
 ai-usage: ai-assisted
 ---
 
-# Run Delta table maintenance in Lakehouse
+# Run Delta table maintenance in lakehouse
 
 Run table maintenance on Delta tables to keep them healthy over time by compacting small files, applying read optimizations, and removing obsolete files that are no longer referenced. 
 
-You can run maintenance either as an ad hoc operation in the Fabric portal (Lakehouse table **Maintenance** action) or as a scheduled and orchestrated process by using notebooks, pipelines, or REST API. Fabric Data Factory pipelines include a dedicated [Lakehouse Maintenance activity (Preview)](../data-factory/lakehouse-maintenance-activity.md) that can run OPTIMIZE (with optional V-Order) and VACUUM on Lakehouse Delta tables as part of scheduled pipeline workflows. This article focuses on the ad hoc portal workflow.
+You can run maintenance either as an ad hoc operation in the Fabric portal (lakehouse table **Maintenance** action) or as a scheduled and orchestrated process by using notebooks, pipelines, or REST API. Fabric Data Factory pipelines include a dedicated [Lakehouse Maintenance activity (Preview)](../data-factory/lakehouse-maintenance-activity.md) that can run OPTIMIZE (with optional V-order) and VACUUM on lakehouse Delta tables as part of scheduled pipeline workflows. This article focuses on the ad hoc portal workflow.
 
-For cross-workload maintenance guidance, including recommendations for SQL analytics endpoint, Power BI Direct Lake, and Data Warehouse consumers, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md). For code-first maintenance patterns, see [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md) and [Manage the Lakehouse with Microsoft Fabric REST API](lakehouse-api.md).
+For cross-workload maintenance guidance, including recommendations for SQL analytics endpoint, Power BI Direct Lake, and Data Warehouse consumers, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md). For code-first maintenance patterns, see [Delta Lake table optimization and V-order](delta-optimization-and-v-order.md) and [Manage the lakehouse with Fabric REST API](lakehouse-api.md).
 
-## Run table maintenance from Lakehouse
+## Run table maintenance from lakehouse
 
-Table maintenance in Lakehouse applies only to Delta tables. Legacy Hive tables that use formats such as Parquet, ORC, AVRO, or CSV aren't supported.
+Table maintenance in lakehouse applies only to Delta tables. Legacy Hive tables that use formats such as Parquet, ORC, AVRO, or CSV aren't supported.
 
 In the **Run maintenance commands** dialog, choose options based on your goal.
 
 As a general practice, run maintenance after major ingestion or update activity, or when you observe many small files and slower read performance.
 
 > [!NOTE]
-> **Orchestrate with pipelines**: For recurring maintenance jobs, use the [Lakehouse Maintenance activity (Preview)](../data-factory/lakehouse-maintenance-activity.md) in Fabric Data Factory pipelines. It exposes the same options (OPTIMIZE with optional V-Order, VACUUM) and integrates with other pipeline steps through dependencies, triggers, and parameters—so you can chain maintenance with data loads and follow up with a [Refresh SQL Endpoint activity](../data-factory/refresh-sql-endpoint-activity.md) in the same pipeline.
+> **Orchestrate with pipelines**: For recurring maintenance jobs, use the [Lakehouse Maintenance activity (Preview)](../data-factory/lakehouse-maintenance-activity.md) in Fabric Data Factory pipelines. It exposes the same options (OPTIMIZE with optional V-order, VACUUM) and integrates with other pipeline steps through dependencies, triggers, and parameters—so you can chain maintenance with data loads and follow up with a [Refresh SQL Endpoint activity](../data-factory/refresh-sql-endpoint-activity.md) in the same pipeline.
 
-1. From your Microsoft Fabric account, navigate to the desired Lakehouse.
-1. In Lakehouse Explorer, under **Tables**, right-click the target table (or use the ellipsis).
+1. From your Fabric account, navigate to the desired lakehouse.
+1. In Lakehouse explorer, under **Tables**, right-click the target table (or use the ellipsis).
 1. Select the **Maintenance** menu entry.
 
    :::image type="content" source="media/table-maintenance/table-maintenance.png" alt-text="Screenshot showing the Run maintenance commands dialog." lightbox="media/table-maintenance/table-maintenance.png":::
 
 1. In the **Run maintenance commands** dialog, choose the maintenance options:
    - Select the **On** option to compact small Parquet files into larger files for more efficient reads.
-    - If **On** is selected, you can also select the **Apply V-Order** checkbox. When you select this option, Fabric applies V-Order (optimized sorting, encoding, and compression) as part of optimize.
+    - If **On** is selected, you can also select the **Apply V-order** checkbox. When you select this option, Fabric applies V-order (optimized sorting, encoding, and compression) as part of optimize.
 
        > [!NOTE]
-       > V-Order has about a 15% impact on average write times. It can also provide up to 50% more compression.
+       > V-order has about a 15% impact on average write times. It can also provide up to 50% more compression.
 
    - Select the **On** option to run the Delta Lake `VACUUM` command and remove unreferenced files older than your retention threshold. For retention behavior and safety details, see [Vacuum retention settings](#vacuum-retention-settings).
    - Select the **On** option to merge transactions into parquet files and remove the additional deletion vectors files, cleaning up space and optimizing table reads.
@@ -61,8 +61,8 @@ If you must use a retention interval under seven days, set `spark.databricks.del
 
 ## Related content
 
-- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
+- [Delta Lake in Fabric overview](../fundamentals/delta-lake-overview.md)
 - [Lakehouse Maintenance activity (Preview)](../data-factory/lakehouse-maintenance-activity.md)
 - [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
-- [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md)
-- [Manage the Lakehouse with Microsoft Fabric REST API](lakehouse-api.md)
+- [Delta Lake table optimization and V-order](delta-optimization-and-v-order.md)
+- [Manage the lakehouse with Fabric REST API](lakehouse-api.md)

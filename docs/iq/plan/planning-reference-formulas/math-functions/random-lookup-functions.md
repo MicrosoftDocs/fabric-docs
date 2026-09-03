@@ -1,6 +1,6 @@
 ---
 title: Random and Lookup Functions
-description: Learn about random and lookup functions in plan and how to use them to generate random numbers and retrieve positional values.
+description: Learn about random and lookup functions in planning and how to use them to generate random numbers and retrieve positional values.
 ms.date: 06/04/2026
 ms.topic: reference
 ms.search.form: Random and lookup functions
@@ -11,7 +11,7 @@ ms.search.form: Random and lookup functions
 
 Random functions let you generate random numbers and lookup functions retrieve positional values in reports. These functions are commonly used to create sample data, generate randomized results, and identify the position of values within a list.
 
-In plan, these functions help you create calculations in simulations, testing, dynamic analysis, and positional data evaluation.
+In planning, these functions help you create calculations in simulations, testing, dynamic analysis, and positional data evaluation.
 
 ## INDEXOF
 

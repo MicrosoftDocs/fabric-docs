@@ -77,7 +77,7 @@ When using the Microsoft Fabric Capacity Metrics app, consider the following con
 
 - Update the parameters and refresh the semantic model whenever your available capacities change. For example, if you obtain JIT tenant admin access, update the *RegionName* parameter in the semantic model settings (as described in the installation guidance) and then refresh the model after access is granted.
 
-- The Microsoft Fabric Capacity Metrics app doesn't support alerts or notifications. For real-time alerts, see [What is Real-Time hub?](../real-time-hub/real-time-hub-overview.md)
+- The Microsoft Fabric Capacity Metrics app doesn't support alerts or notifications. To set up alerts on your capacity health, use [Fabric capacity overview events](../real-time-hub/explore-fabric-capacity-overview-events.md). To monitor or set alerts on individual operations, use [Fabric capacity operation events](../real-time-hub/explore-fabric-capacity-operation-events.md).
 
 - Data for new capacities isn't visible in the Metrics app until the next scheduled refresh. Data for new items and workspaces isn't visible until the next scheduled refresh after their first operation consuming CUs within the past 14 days. To view the data before the next scheduled refresh, initiate a manual refresh of the semantic model.
 
@@ -106,3 +106,5 @@ When using the Microsoft Fabric Capacity Metrics app, consider the following con
 ## Related content
 
 - [Install the Microsoft Fabric Capacity Metrics app](metrics-app-install.md)
+- [Explore Fabric capacity overview events](../real-time-hub/explore-fabric-capacity-overview-events.md)
+- [Explore Fabric capacity operation events](../real-time-hub/explore-fabric-capacity-operation-events.md)

@@ -131,13 +131,13 @@ Unsupported scenarios:
 * Eventhouse as a destination (with direct ingestion mode) is not supported.
 * Activator as a destination is not supported.
 
-### Data Activator
+### Activator
 
-Data Activator supports ingesting events from KQL/Eventhouse, Power BI, and Real-Time Hub Fabric Events for tenant level Private Links. For workspace level, Data Activator supports ingesting events from KQL/Eventhouse and Real-Time Hub Fabric Events.
+Activator supports ingesting events from KQL/Eventhouse, Power BI, and Real-Time Hub Fabric Events for tenant-level private links. For workspace level, Activator supports ingesting events from KQL/Eventhouse and Real-Time Hub Fabric Events.
 
 Limitations:
 
-* Currently, Data Activator doesn't support ingestion from Eventstream with Private Links enabled.
+* Currently, Activator doesn't support ingestion from Eventstream with private links enabled.
 
 ### Eventhouse
 
@@ -166,7 +166,7 @@ Azure events (such as Azure Blob Storage events) are affected by both tenant-lev
 
 Additionally, when you configure a consumer to receive Azure events, an eventstream item is created in a Fabric workspace to represent the Azure source. Workspace-level private links affect Azure event consumption in the same way as Fabric events: if the workspace containing this eventstream item blocks public network access, consumers in other workspaces are blocked unless a private link is established.
 
-For more information, see [Private links for Azure and Fabric Events](/fabric/real-time-hub/private-links-real-time-events).
+For more information, see [Tenant private links for Azure and Fabric events](/fabric/real-time-hub/private-links-real-time-events).
   
 <!--### Other Fabric items
 

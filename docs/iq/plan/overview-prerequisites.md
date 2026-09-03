@@ -1,15 +1,15 @@
 ---
-title: Prerequisites for Plan
-description: This article lists the prerequisites for using plan.
+title: Prerequisites for Planning
+description: This article lists the prerequisites for using planning in Fabric.
 ms.topic: overview
 ms.date: 07/28/2026
 ai-usage: ai-assisted
-#customer intent: As a user, I want to know the prerequisites for using Plan.
+#customer intent: As a user, I want to know the prerequisites for using planning.
 ---
 
-# Prerequisites for plan
+# Prerequisites for planning in Fabric
 
-This article lists all the required prerequisites, tenant settings, and capacity settings that must be configured to use plan.
+This article lists all the required prerequisites, tenant settings, and capacity settings that must be configured to use planning in Fabric.
 
 ## Tenant settings
 
@@ -29,12 +29,12 @@ This article lists all the required prerequisites, tenant settings, and capacity
 
 ## Capacity settings
 
-* Semantic models used in plan must be hosted on supported capacities, such as
+* Semantic models used in planning must be hosted on supported capacities, such as
 
    * **Power BI Premium capacities (P1, P2, and higher)**
    * **Microsoft Fabric capacities (F SKUs)**
 
-* Plan scenarios that rely on XMLA endpoints and embed tokens require supported **Microsoft Fabric capacities (F SKUs)** or **Power BI Premium capacities (P1–P5)**. Power BI Pro and Power BI Premium Per User (PPU) aren't supported for these scenarios. Some lower-capacity SKUs can also have XMLA and memory limitations that prevent supported usage.
+* Planning scenarios that rely on XMLA endpoints and embed tokens require supported **Microsoft Fabric capacities (F SKUs)** or **Power BI Premium capacities (P1–P5)**. Power BI Pro and Power BI Premium Per User (PPU) aren't supported for these scenarios. Some lower-capacity SKUs can also have XMLA and memory limitations that prevent supported usage.
 
 * In the Power BI Admin portal, under **Capacity settings**, ensure that the **XMLA Endpoint** setting is configured as **Read Only** or **Read Write**.
 

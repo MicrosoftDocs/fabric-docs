@@ -6,6 +6,7 @@ ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: overview
 ms.date: 06/16/2026
+ai-usage: ai-assisted
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -38,6 +39,8 @@ You can use workspace-level private links to connect to the following item types
 * Mirrored database
 * Eventstream
 * Eventhouse
+* Activator
+* Data Agent
 
 ### Notes about unsupported item types
 
@@ -290,6 +293,10 @@ A connection based on a virtual network data gateway must be used, including in 
 
 Power Platform Dataflow Connector: When a workspace has workspace private links enabled and public access denied, for any two dataflows in that workspace (dataflow A and dataflow B), neither dataflow will be able to connect to the other dataflow using the Power Platform Dataflow Connector, because the dataflow won't appear in the navigator.
 
+> [!NOTE]
+> Copilot in Dataflow Gen2 isn't supported when workspace-level Private Links is enabled.
+
+
 #### [Fabric portal](#tab/fabric-portal-12)
 * [Dataflow Gen2 default destination](/fabric/data-factory/default-destination)
 #### [REST API](#tab/rest-apis-12)
@@ -329,9 +336,9 @@ This applies to all Fabric event types. For example, if you create an Activator 
 
 Azure events (such as Azure Blob Storage events) are also affected. When you configure a consumer to receive Azure events, an eventstream item is created in a Fabric workspace to represent the Azure source. If the workspace that contains this eventstream item blocks public network access, consumers in other workspaces can't consume those events unless a private link is established. Additionally, Azure events are affected by tenant-level private link configuration. When the **Block Public Internet Access** tenant setting is enabled, Azure event sources outside the tenant are blocked from delivering events into Fabric entirely, regardless of workspace-level settings.
 
-Event consumption within the same workspace is always allowed, regardless of private link settings. If workspace-level private link settings change after a consumer is already configured, the system detects the change and pauses the configuration. While paused, events are retained for up to 7 days. For details on paused configurations, see [Paused event configurations in Real-Time hub](/fabric/real-time-hub/fabric-events-paused-state).
+Event consumption within the same workspace is always allowed, regardless of private link settings. If workspace-level private link settings change after a consumer is already configured, the system detects the change and pauses the configuration. While paused, events are retained for up to 24 hours. For details on paused configurations, see [Paused event configurations in Real-Time hub](/fabric/real-time-hub/fabric-events-paused-state).
 
-For more information, see [Private links for Azure and Fabric Events](/fabric/real-time-hub/private-links-real-time-events).
+For more information, see [Workspace private links for Azure and Fabric events](/fabric/real-time-hub/workspace-private-links-real-time-events).
 
 ### Data agent
 Data agents can connect to lakehouse, warehouse, and SQL data sources within a workspace that has workspace-level private links enabled (public access disabled). Cross-workspace access is supported when network connectivity is explicitly established (for example, using a managed private endpoint) and subject to region and token constraints.
@@ -368,6 +375,10 @@ Current limitations:
    - Eventstream pull: Eventstream workloads don't currently support full polling functionality.
    - Fabric doesn't currently support Azure Event Hubs integration.
    - Queued ingestion via OneLake isn't currently available.
+- For Activator:
+  - With tenant-level private links enabled, Activator supports ingesting events from KQL/Eventhouse, Power BI, and Real-Time Hub Fabric Events.
+  - With workspace-level private links enabled, Activator supports ingesting events from KQL/Eventhouse and Real-Time Hub Fabric Events.
+  - Activator doesn't support ingestion from Eventstream with private links enabled.
 - The **OneLake Catalog - Govern** tab isn't available when Private Link is activated.
 - Workspace monitoring isn't currently supported when a workspace-level private link is enabled for a workspace.
 - Power BI semantic models aren't supported in workspaces with workspace-level private links enabled.

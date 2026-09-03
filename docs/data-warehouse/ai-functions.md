@@ -2,7 +2,7 @@
 title: AI Functions (Preview)
 description: This tutorial explains how to use AI functions to perform advanced text processing without leaving your warehouse in Microsoft Fabric.
 ms.reviewer: jovanpop
-ms.date: 07/10/2026
+ms.date: 08/17/2026
 ms.topic: how-to 
 ai-usage: ai-assisted
 ---
@@ -36,7 +36,7 @@ Typical processing speed of AI functions is 20-100 rows per second. If you exper
 
 ## Prerequisites
 
-- To use AI Functions with the built-in AI endpoint in Fabric, your administrator needs to enable [the tenant switch for Copilot and other features that are powered by Azure OpenAI](../../docs/admin/service-admin-portal-copilot.md).
+- To use AI functions with the built-in AI endpoint in Fabric, your administrator needs to enable [the tenant switch for Copilot and other features that are powered by Azure OpenAI](../../docs/admin/service-admin-portal-copilot.md).
 - Depending on your location, you might need to enable a tenant setting for cross-geo processing. Learn more about [available regions for Azure OpenAI Service](../../docs/fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
 - You need a paid Fabric capacity (F2 or higher, or any P edition).
 - You can use AI functions only in [supported regions](../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service). 
@@ -143,6 +143,37 @@ SELECT AI_FIX_GRAMMAR('Th room are clean and staff were nice') AS fixed_text;
 **Expected result:** 'The rooms are clean, and the staff were nice.'
 
 For more information, see [AI_FIX_GRAMMAR (Transact-SQL)](/sql/t-sql/functions/ai-fix-grammar-transact-sql?view=fabric&preserve-view=true).
+
+## Handling errors
+
+AI functions return `NULL` when an error occurs while processing text. Errors can be caused by [Responsible AI](https://www.microsoft.com/ai/tools-practices) safety checks detecting disallowed content, input exceeding token limits, transient service issues, or other processing failures.
+
+By default, AI functions use a best-effort execution model and return `NULL` for failed requests. This behavior is designed to prevent errors affecting individual rows from failing an entire query. When processing thousands of rows through an external large language model (LLM), a failure on a single value should not prevent successful results from being returned for the remaining rows. This behavior also ensures that successfully processed requests aren't lost and don't need to be repeated.
+
+Inspect rows that returned `NULL`, determine the reason for the failure, and retry only those specific values.
+
+You can override the default behavior by specifying an `ON ERROR` clause in each function call:
+
+- `NULL ON ERROR` (default) returns `NULL` when the function can't process a value.
+- `ERROR ON ERROR` causes the entire query to fail if an error occurs in any function call.
+- `DEFAULT <value> ON ERROR` returns the specified default value instead of `NULL` when an error occurs.
+
+The following example demonstrates the available error-handling options:
+
+```sql
+SELECT
+    *,
+    AI_FIX_GRAMMAR(review_text NULL ON ERROR) AS fixed_text,
+    AI_EXTRACT(review_text, 'sentiment', 'problem' ERROR ON ERROR) AS info*
+    AI_CLASSIFY(review_text, 'service', 'dirt', 'food' DEFAULT 'Other' ON ERROR) AS classification
+FROM hotel_reviews;
+```
+
+In this example:
+
+- `AI_FIX_GRAMMAR` returns `NULL` for values that it can't process. Because returning `NULL` is the default error-handling behavior, the `NULL ON ERROR` clause is optional.
+- `AI_EXTRACT` fails the entire query if any cell encounters an error.
+- `AI_CLASSIFY` returns `Other` for cells that it can't classify.
 
 ## Remarks
 

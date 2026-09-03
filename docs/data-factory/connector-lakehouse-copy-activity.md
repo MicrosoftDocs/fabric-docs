@@ -213,9 +213,9 @@ The following properties are **required**:
 
 ### Mapping
 
-For the **Mapping** tab configuration, if you don't apply Lakehouse table as your destination data store, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab). 
+For the **Mapping** tab configuration, if you don't apply Lakehouse table as your destination data store, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab). 
 
-If you apply Lakehouse table as your destination data store, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
+If you apply Lakehouse table as your destination data store, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
 
 For example, the type for *PersonID* column in source is int, and you can change it to string type when mapping to destination column.
 
@@ -228,7 +228,7 @@ If you choose Binary as your file format, mapping isn't supported.
 
 ### Settings
 
-For the **Settings** tab configuration, go to [Settings](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+For the **Settings** tab configuration, go to [Settings](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab).
 
 ## Data type mapping for Lakehouse tables
 

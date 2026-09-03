@@ -49,8 +49,6 @@
                 items:
                   - name: Dataflow Gen2 with virtual network gateway
                     href: pricing-example-dataflow-virtual-network-gateway.md
-      - name: Secure Data Factory in Microsoft Fabric
-        href: secure-data-factory-in-microsoft-fabric.md
   - name: Get started
     items:
       - name: Bring Azure Data Factory to Fabric
@@ -135,6 +133,8 @@
         href: move-dataflow-gen1-to-dataflow-gen2.md
       - name: Migrate to Dataflow Gen2 using Save As
         href: migrate-to-dataflow-gen2-using-save-as.md
+      - name: Upgrade Dataflow Gen1 using the Upgrade Wizard
+        href: migrate-to-dataflow-gen2-using-upgrade-wizard.md
   - name: Connect to your data
     items:
       - name: Manage data sources
@@ -1067,6 +1067,8 @@
                 href: default-destination.md
               - name: Data destinations validation rules
                 href: dataflow-gen2-data-destinations-validation-rules.md
+              - name: Dynamic expression editor for data destinations
+                href: dataflow-gen2-dynamic-expression-editor-data-destinations.md
               - name: Advanced edit for data destination queries
                 href: dataflow-gen2-advanced-edit-data-destinations.md
               - name: Excel advanced data destination
@@ -1102,10 +1104,15 @@
                 href: dataflow-gen2-incremental-refresh.md
           - name: Monitor your dataflows
             href: dataflows-gen2-monitor.md
+            items:
+              - name: Understand detailed refresh logs
+                href: dataflow-gen2-detailed-refresh-logs.md
+              - name: Workspace monitoring
+                href: dataflow-gen2-workspace-monitoring.md
           - name: Performance and troubleshooting
             items:
-              - name: Decide - Dataflow strategy
-                href: decision-guide-data-transformation.md
+              - name: Dataflow Gen2 cost and performance benchmarks
+                href: dataflow-gen2-cost-performance-benchmarks.md
               - name: Dataflow Gen2 performance and scalability
                 href: dataflow-gen2-performance-best-practices.md  
               - name: Dataflows that use gateways
@@ -1146,6 +1153,8 @@
         items:
         - name: What is dbt job?
           href: dbt-job-overview.md
+        - name: Common dbt job patterns in Microsoft Fabric
+          href: common-dbt-job-patterns.md
         - name: Step-by-step dbt job tutorial
           href: dbt-job-sample-tutorial.md
         - name: Create a dbt job
@@ -1175,65 +1184,69 @@
       - name: Pipeline canvas
         href: pipeline-canvas-experience.md
       - name: Activities in pipelines
-        href: activity-overview.md 
+        items:
+          - name: Activity overview
+            href: activity-overview.md
+          - name: Set retry for activities
+            href: activity-retries.md
+          - name: Control flow activities
+            items: 
+              - name: Append Variable activity
+                href: append-variable-activity.md
+              - name: Approval activity
+                href: approval-activity.md
+              - name: Azure Batch activity
+                href: azure-batch-activity.md
+              - name: Azure Databricks activity
+                href: azure-databricks-activity.md
+              - name: Azure Machine Learning activity
+                href: azure-machine-learning-activity.md
+              - name: Fail activity
+                href: fail-activity.md
+              - name: Filter activity
+                href: filter-activity.md
+              - name: For-each activity
+                href: foreach-activity.md
+              - name: Functions activity
+                href: functions-activity.md
+              - name: Get Metadata activity
+                href: get-metadata-activity.md
+              - name: If Condition activity
+                href: if-condition-activity.md
+              - name: Invoke Pipeline activity
+                href: invoke-pipeline-activity.md
+              - name: KQL activity
+                href: kql-activity.md
+              - name: Lakehouse maintenance activity
+                href: lakehouse-maintenance-activity.md
+              - name: Lookup activity
+                href: lookup-activity.md
+              - name: Office 365 Outlook activity
+                href: outlook-activity.md
+              - name: Refresh Materialized Lake View activity
+                href: refresh-materialized-lake-view-activity.md
+              - name: Refresh SQL Endpoint activity
+                href: refresh-sql-endpoint-activity.md
+              - name: Semantic model refresh activity
+                href: semantic-model-refresh-activity.md
+              - name: Set Variable activity
+                href: set-variable-activity.md
+              - name: Switch activity
+                href: switch-activity.md
+              - name: Teams activity
+                href: teams-activity.md
+              - name: Until activity
+                href: until-activity.md
+              - name: Wait activity
+                href: wait-activity.md
+              - name: Web activity
+                href: web-activity.md
+              - name: WebHook activity
+                href: webhook-activity.md
       - name: Business workflow management
         href: business-workflow-management.md
       - name: CI/CD for pipelines
         href: cicd-pipelines.md
-      - name: Control flow activities
-        items: 
-          - name: Append Variable activity
-            href: append-variable-activity.md
-          - name: Approval activity
-            href: approval-activity.md
-          - name: Azure Batch activity
-            href: azure-batch-activity.md
-          - name: Azure Databricks activity
-            href: azure-databricks-activity.md
-          - name: Azure Machine Learning activity
-            href: azure-machine-learning-activity.md
-          - name: Fail activity
-            href: fail-activity.md
-          - name: Filter activity
-            href: filter-activity.md
-          - name: For-each activity
-            href: foreach-activity.md
-          - name: Functions activity
-            href: functions-activity.md
-          - name: Get Metadata activity
-            href: get-metadata-activity.md
-          - name: If Condition activity
-            href: if-condition-activity.md
-          - name: Invoke Pipeline activity
-            href: invoke-pipeline-activity.md
-          - name: KQL activity
-            href: kql-activity.md
-          - name: Lakehouse maintenance activity
-            href: lakehouse-maintenance-activity.md
-          - name: Lookup activity
-            href: lookup-activity.md
-          - name: Office 365 Outlook activity
-            href: outlook-activity.md
-          - name: Refresh Materialized Lake View activity
-            href: refresh-materialized-lake-view-activity.md
-          - name: Refresh SQL Endpoint activity
-            href: refresh-sql-endpoint-activity.md
-          - name: Semantic model refresh activity
-            href: semantic-model-refresh-activity.md
-          - name: Set Variable activity
-            href: set-variable-activity.md
-          - name: Switch activity
-            href: switch-activity.md
-          - name: Teams activity
-            href: teams-activity.md
-          - name: Until activity
-            href: until-activity.md
-          - name: Wait activity
-            href: wait-activity.md
-          - name: Web activity
-            href: web-activity.md
-          - name: WebHook activity
-            href: webhook-activity.md
       - name: Run, schedule, or trigger pipelines
         href: pipeline-runs.md
       - name: CI/CD for pipelines
@@ -1269,6 +1282,8 @@
             href: image-to-pipeline-with-ai.md
           - name: Manage pipelines from Visual Studio Code
             href: pipelines-manage-vs-code.md
+          - name: Build event-driven pipelines with OneLake and Azure Blob Storage events
+            href: ../real-time-hub/tutorial-build-event-driven-data-pipelines.md?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
       - name: Variable library integration
         href: variable-library-integration-with-data-pipelines.md
   - name: Orchestrate workflows with Apache Airflow
@@ -1325,6 +1340,14 @@
             href: apache-airflow-jobs-manage-vs-code.md
           - name: Variable library integration with Apache airflow jobs
             href: apache-airflow-jobs-variable-library-integration.md
+  - name: Security
+    items:
+      - name: Secure Data Factory in Microsoft Fabric
+        href: secure-data-factory-in-microsoft-fabric.md
+      - name: Manage security roles
+        href: /data-integration/gateway/manage-security-roles?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
+      - name: Manage virtual network security roles
+        href: /data-integration/vnet/manage-vnet-security-roles?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
   - name: Troubleshoot
     items: 
       - name: Keyboard shortcuts

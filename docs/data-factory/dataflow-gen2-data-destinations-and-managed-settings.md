@@ -3,7 +3,7 @@ title: Dataflow Gen2 data destinations and managed settings
 description: Describes how to use Dataflow Gen2 to save your data in specific destinations, along with instructions on how to use managed settings.
 ms.reviewer: jeluitwi
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 08/25/2026
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
@@ -17,7 +17,7 @@ The following list contains the supported data destinations:
 [!INCLUDE [dataflow-gen2-data-destinations](includes/dataflow-gen2-data-destinations.md)]
 
 > [!NOTE]
->To load your data to the Fabric Warehouse, you can use the Azure Synapse Analytics (SQL DW) connector by getting the SQL connection string. More information: [Connectivity to data warehousing in Microsoft Fabric](../data-warehouse/connectivity.md)
+> To load your data to Fabric Data Warehouse, you can use the Azure Synapse Analytics (SQL DW) connector by getting the SQL connection string. For more information, see [Connectivity to Fabric Data Warehouse](../data-warehouse/connectivity.md).
 
 ## Entry points
 
@@ -171,13 +171,9 @@ Schema options on publish only apply when the update method is **replace**. When
 
 ## Parameterization
 
-[Parameters](/power-query/power-query-query-parameters) are a core feature within Dataflow Gen2. Once a parameter gets created or you use the **Always allow** setting, an input widget becomes available to define the table or file name for your destination.
+[Parameters](/power-query/power-query-query-parameters) are a core feature within Dataflow Gen2. Use the dynamic expression editor to combine text with dynamic date and time values, parameters, and workspace variables in supported data destination fields. The editor is enabled by default. In a supported field, press `/` to insert a value. For more information, see [Use the dynamic expression editor for Dataflow Gen2 data destinations](dataflow-gen2-dynamic-expression-editor-data-destinations.md).
 
-![Screenshot of the data destination experience where the table name is using a parameter called "TableName" and the input widget is shown.](media/dataflow-gen2-data-destinations-and-managed-settings/parameter-table-name.png)
-
-> [!NOTE]
-> Parameters in the data destination can also be applied directly through the M script created for the queries related to it. You can manually alter the script of your data destination queries to apply the parameters to meet your requirements.
-> However, the user interface currently only supports parameterization for the table or file name field.
+To parameterize destination settings that the dynamic expression editor doesn't support, use the M script created for the destination query. For more information, see [Advanced edit for data destination queries](dataflow-gen2-advanced-edit-data-destinations.md).
 
 ## Mashup script for data destination queries
 

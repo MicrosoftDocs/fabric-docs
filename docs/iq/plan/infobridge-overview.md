@@ -1,6 +1,6 @@
 ---
-title: Infobridge in Plan
-description: Learn about the Infobridge component of the plan item. Infobridge is a no-code data integration and transformation tool to connect multiple data sources, prepare data, and create unified reports.
+title: Infobridge in Planning
+description: Learn about the Infobridge component of planning in Fabric. Infobridge is a no-code data integration and transformation tool to connect multiple data sources, prepare data, and create unified reports.
 ms.date: 03/30/2026
 ms.topic: overview
 ms.search.form: Getting Started with Infobridge
@@ -8,9 +8,9 @@ ai-usage: ai-assisted
 #customer intent: As a user, I want to use Infobridge to consolidate my plans, budgets, simulations, and forecasts across source systems and reports.
 ---
 
-# What is Infobridge in plan?
+# What is Infobridge in planning?
 
-The *Infobridge* component of plan is a no-code data integration, preparation, and transformation engine that you use to connect to multiple data sources and consolidate them into a single, unified report. You can also perform common transformations on data sources, such as appending, merging, pivoting, unpivoting, and grouping data.
+The *Infobridge* component of planning is a no-code data integration, preparation, and transformation engine that you use to connect to multiple data sources and consolidate them into a single, unified report. You can also perform common transformations on data sources, such as appending, merging, pivoting, unpivoting, and grouping data.
 
 ## Why use Infobridge?
 
@@ -48,7 +48,7 @@ The following table lists the core capabilities of Infobridge.
 | **Advanced data transformation** | Join, merge, append, group, and pivot rows and columns. |
 | **Data cleansing functions** | Standardize, clean, and organize datasets with built-in functions, such as rounding, text manipulation, find-and-replace, and sorting. |
 
-## Infobridge integration with plan
+## Infobridge integration with planning
 
 Infobridge integrates data from planning sheets, PowerTable sheets, and other data sources, and then writes the consolidated data back to a single destination table.
 

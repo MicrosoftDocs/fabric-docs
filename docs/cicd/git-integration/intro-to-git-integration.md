@@ -97,7 +97,7 @@ The following items currently support Git integration:
 
 * Data Warehouse items:
 
-  * [Warehouse](../../data-warehouse/source-control.md#git-integration) *(preview)*
+  * [Warehouse](../../data-warehouse/git-integration.md)
   * Mirrored Azure Databricks Catalog 
 
 * Power BI items:

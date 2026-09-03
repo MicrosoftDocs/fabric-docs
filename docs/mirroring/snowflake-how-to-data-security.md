@@ -1,18 +1,18 @@
 ---
-title: "Data Security in Microsoft Fabric Mirrored Databases From Snowflake"
-description: Learn about data security in mirrored databases from Snowflake in Microsoft Fabric.
+title: Data Security in Microsoft Fabric Mirrored Databases from Snowflake
+description: Learn how to establish data security in your mirrored Snowflake database in Microsoft Fabric. Includes secuity considerations and supported authentication methods.
 ms.reviewer: sbahadur, maprycem
-ms.date: 11/19/2024
+ms.date: 07/08/2026
 ms.topic: how-to
 ---
 
-# How to: Secure data Microsoft Fabric mirrored databases from Snowflake
+# Secure data in Microsoft Fabric mirrored databases from Snowflake
 
-This guide helps you establish data security in your mirrored Snowflake in Microsoft Fabric.
+This guide helps you establish data security in your mirrored Snowflake database in Microsoft Fabric.
 
 ## Security considerations
 
-To enable Fabric mirroring, you will need user permissions for your Snowflake database that contains the following permissions:
+To enable Fabric mirroring, you need user permissions for your Snowflake database that include the following:
 
   - `CREATE STREAM`
   - `SELECT table`
@@ -23,7 +23,7 @@ For more information, see Snowflake documentation on [Access Control Privileges 
 
 > [!IMPORTANT]
 > Any granular security established in the source Snowflake database must be re-configured in the mirrored database in Microsoft Fabric.
-> For more information, see [SQL granular permissions in Microsoft Fabric](../data-warehouse/sql-granular-permissions.md).
+> For more information, see [SQL granular permissions in Fabric Data Warehouse](../data-warehouse/sql-granular-permissions.md).
 
 ## Supported authentication methods
 
@@ -50,4 +50,4 @@ You can also mask sensitive data from non-admins using dynamic data masking:
 ## Related content
 
 - [What is Mirroring in Fabric?](../mirroring/overview.md)
-- [SQL granular permissions in Microsoft Fabric](../data-warehouse/sql-granular-permissions.md)
+- [SQL granular permissions in Fabric Data Warehouse](../data-warehouse/sql-granular-permissions.md)

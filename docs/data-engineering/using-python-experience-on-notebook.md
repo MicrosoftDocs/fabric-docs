@@ -8,10 +8,10 @@ ms.date: 07/24/2026
 ai-usage: ai-assisted
 ---
 
-# Use Python experience on Notebook
+# Use Python experience in notebooks
 
 
-The Python notebook is a new experience built on top of Fabric notebook. It's a versatile and interactive tool designed for data analysis, visualization, and machine learning. It provides a seamless developing experience for writing and executing Python code. This capability makes it an essential tool for data scientists, analysts, and BI developers, especially for exploration tasks that don't require big data and distributed computing.
+The Python notebook is a new experience built on top of notebooks in Fabric. It's a versatile and interactive tool designed for data analysis, visualization, and machine learning. It provides a seamless developing experience for writing and executing Python code. This capability makes it an essential tool for data scientists, analysts, and BI developers, especially for exploration tasks that don't require big data and distributed computing.
 
 By using a Python notebook, you get:
 
@@ -19,7 +19,7 @@ By using a Python notebook, you get:
 
 - **Cost effective**: The new Python notebook offers cost-saving benefits by running on a single node cluster with 2vCores/16GB memory by default. This setup ensures efficient resource utilization for data exploration projects with smaller data size.
 
-- **Lakehouse and Resources are natively available**: The Fabric Lakehouse together with Notebook built-in Resources full functionality are available in Python notebook. This feature enables users to easily bring the data to python notebook, just try drag and drop to get the code snippet.  
+- **Lakehouse and resources are natively available**: The Fabric lakehouse together with notebook built-in resources full functionality are available in Python notebook. This feature enables users to easily bring the data to python notebook, just try drag and drop to get the code snippet.
 
 - **Mix programming with T-SQL**: Python notebook offers an easy way to interact with Data Warehouse and SQL analytics endpoints in explorer. By using notebookutils data connector, you can easily execute the T-SQL scripts under the context of Python.  
 
@@ -35,13 +35,13 @@ By using a Python notebook, you get:
 
 - **Full stack Data Science Capabilities**: The advanced low-code toolkit Data Wrangler, the machine learning framework MLFlow, and powerful Copilot are all available on Python notebook.
 
-## How to access Python Notebook
+## How to access a Python notebook
 
-After opening a Fabric Notebook, you can switch to *Python* in the language dropdown menu at the **Home** tab and convert the entire notebook set-up to Python. 
+After opening a notebook in Fabric, you can switch to *Python* in the language dropdown menu at the **Home** tab and convert the entire notebook set-up to Python.
 
    :::image type="content" source="media\use-python-experience-on-notebook\switch-from-notebook-language-menu.png" alt-text="Screenshot showing switch to Python from notebook language menu." lightbox="media\use-python-experience-on-notebook\switch-from-notebook-language-menu.png":::
 
-Most of the common features are supported at the notebook level. To learn more, see [How to use Microsoft Fabric notebooks](./how-to-use-notebook.md) and [Develop, execute, and manage Microsoft Fabric notebooks](./author-execute-notebook.md). This article lists some key capabilities specific for Python scenarios.
+Most of the common features are supported at the notebook level. To learn more, see [How to use Fabric notebooks](./how-to-use-notebook.md) and [Develop, execute, and manage Fabric notebooks](./author-execute-notebook.md). This article lists some key capabilities specific for Python scenarios.
 
 ## Run Python notebooks
 
@@ -64,27 +64,27 @@ You can monitor the Python notebook job run details on the ribbon tab **Run** ->
 
 ## Data interaction
 
-You can interact with Lakehouse, Warehouses, SQL analytics endpoints, and built-in resources folders on Python notebook.
+You can interact with lakehouse, warehouses, SQL analytics endpoints, and built-in resources folders on Python notebooks.
 
  > [!NOTE]
- > The Python Notebook runtime comes preinstalled with [delta‑rs](https://delta-io.github.io/delta-rs/) and [duckdb](https://duckdb.org/) libraries to support both reading and writing Delta Lake data. However, some Delta Lake features might not be fully supported. For more details and the latest updates, see the [delta‑rs](https://github.com/delta-io/delta-rs) and [DuckDB](https://duckdb.org/) documentation.
+ > The Python notebook runtime comes preinstalled with [delta‑rs](https://delta-io.github.io/delta-rs/) and [duckdb](https://duckdb.org/) libraries to support both reading and writing Delta Lake data. However, some Delta Lake features might not be fully supported. For more details and the latest updates, see the [delta‑rs](https://github.com/delta-io/delta-rs) and [DuckDB](https://duckdb.org/) documentation.
 
 ### Lakehouse interaction
 
-You can set a Lakehouse as the default, or you can also add multiple Lakehouses to explore and use them in notebooks.
+You can set a lakehouse as the default, or you can also add multiple lakehouses to explore and use them in notebooks.
 
-If you're not familiar with reading data objects like *delta table*, try dragging and dropping the file and delta table to the notebook canvas, or use the *Load data* option in the object's dropdown menu. The notebook automatically inserts a code snippet into a code cell and generates code for reading the target data object.
+If you're not familiar with reading data objects like *Delta table*, try dragging and dropping the file and Delta table to the notebook canvas, or use the *Load data* option in the object's dropdown menu. The notebook automatically inserts a code snippet into a code cell and generates code for reading the target data object.
 
  > [!NOTE]
  > If you encounter OOM when loading a large volume of data, try using DuckDB, Polars, or PyArrow dataframe instead of pandas.
 
-You can find the write Lakehouse operation in **Browse code snippet** -> **Write data to delta table**.
+You can find the write lakehouse operation in **Browse code snippet** -> **Write data to Delta table**.
 
    :::image type="content" source="media\use-python-experience-on-notebook\write-data-to-delta-table.png" alt-text="Screenshot showing write lakehouse operation." lightbox="media\use-python-experience-on-notebook\write-data-to-delta-table.png":::
 
 ### Warehouse interaction and mix programming with T-SQL
 
-You can add warehouses or SQL analytics endpoints from the Warehouse explorer of Notebook. Similarly, you can drag and drop the tables into the notebook canvas, or use the shortcut operations in the table dropdown menu. The notebook automatically generates a code snippet for you. You can use the [`notebookutils.data` utilities](#data-utilities) to establish a connection with Warehouses and query the data using T-SQL statements in the context of Python.
+You can add warehouses or SQL analytics endpoints from the Warehouse explorer of notebook. Similarly, you can drag and drop the tables into the notebook canvas, or use the shortcut operations in the table dropdown menu. The notebook automatically generates a code snippet for you. You can use the [`notebookutils.data` utilities](#data-utilities) to establish a connection with Warehouses and query the data using T-SQL statements in the context of Python.
 
    :::image type="content" source="media\use-python-experience-on-notebook\warehouse-shortcuts.png" alt-text="Screenshot showing warehouse table shortcuts." lightbox="media\use-python-experience-on-notebook\warehouse-shortcuts.png":::
 
@@ -93,7 +93,7 @@ You can add warehouses or SQL analytics endpoints from the Warehouse explorer of
 
 ### Notebook resources folder
 
-The [Notebook resources](how-to-use-notebook.md#notebook-resources) built-in resources folder is natively available on Python Notebook. You can easily interact with the files in the built-in resources folder by using Python code as if you're working with your local file system. Currently, the Environment resource folder isn't supported.
+The [Notebook resources](how-to-use-notebook.md#notebook-resources) built-in resources folder is natively available on Python notebooks. You can easily interact with the files in the built-in resources folder by using Python code as if you're working with your local file system. Currently, the Environment resource folder isn't supported.
 
 ## Kernel operations
 
@@ -122,14 +122,14 @@ To better understand and use similar commands, refer to the following table.
 
 | **Command/Syntax** | **Main purpose** | **How it works in Jupyter Notebook** | **Typical use case** | **Notes**|
 |---|---|---|---|---|
-| ```%pip install package``` | Install Python packages | Runs pip in the notebook's Python kernel | Recommended way to install packages | In Python Notebook, same as ```!pip```; doesn't **automatically** restart kernel |
-| ```!pip install package``` | Install Python packages via shell | Runs pip as a shell command | Alternative way to install packages | In Python Notebook, same as ```%pip```; doesn't **automatically** restart kernel |
+| ```%pip install package``` | Install Python packages | Runs pip in the notebook's Python kernel | Recommended way to install packages | In Python notebooks, same as ```!pip```; doesn't **automatically** restart kernel |
+| ```!pip install package``` | Install Python packages via shell | Runs pip as a shell command | Alternative way to install packages | In Python notebooks, same as ```%pip```; doesn't **automatically** restart kernel |
 | ```import sys; sys.exit(0)``` | Restart the notebook kernel | Immediately restarts the kernel | Programmatically restart the kernel | Clears all variables and states; **not recommended** to use directly |
 | ```notebookutils.session.restartPython()``` | Restart the notebook kernel | Calls ```sys.exit(0)``` internally | Recommended way to restart the kernel | Official API, safer and more compatible than using ```sys.exit(0)``` directly |
 
 
 > [!NOTE]
-> - In Python Notebook, ```%pip``` and ```!pip``` have the **same behavior**: both install packages into the current kernel's environment, and neither automatically restarts the kernel after installation.
+> - In Python notebooks, ```%pip``` and ```!pip``` have the **same behavior**: both install packages into the current kernel's environment, and neither automatically restarts the kernel after installation.
 > - If you need to restart the kernel (for example, after installing certain packages), use ```notebookutils.session.restartPython()``` instead of ```import sys; sys.exit(0)```.
 >   - ```notebookutils.session.restartPython()``` is an official API that wraps ```sys.exit(0)``` , and it's safer and more compatible in notebook environments.
 > - Don't use ```sys.exit(0)``` directly unless necessary.
@@ -148,7 +148,7 @@ To start using it, set your notebook language to **Python** and start a session.
 
 ## Session configuration magic command
 
-Similar to personalizing a [Spark session configuration](author-execute-notebook.md#spark-session-configuration-magic-command) in a notebook, you can also use **%%configure** in a Python notebook. Python notebook supports customizing compute node size, mount points, and default lakehouse of the notebook session. You can use these settings in both interactive notebooks and pipeline notebook activities. Use the %%configure command at the beginning of your notebook, otherwise you must restart the notebook session to make the settings take effect.
+Similar to personalizing a [Spark session configuration](author-execute-notebook.md#spark-session-configuration-magic-command) in a notebook, you can also use **%%configure** in a Python notebook. Python notebooks support customizing compute node size, mount points, and default lakehouse of the notebook session. You can use these settings in both interactive notebooks and pipeline notebook activities. Use the `%%configure` command at the beginning of your notebook, otherwise you must restart the notebook session to make the settings take effect.
 
 Here are the supported properties in Python notebook **%%configure**:
 
@@ -184,7 +184,7 @@ You can view the compute resources update on the notebook status bar, and monito
 
 ## NotebookUtils
 
-Notebook Utilities (NotebookUtils) is a built-in package that helps you easily perform common tasks in Fabric Notebook. It's preinstalled on the Python runtime. Use NotebookUtils to work with file systems, get environment variables, chain notebooks together, access external storage, and work with secrets.
+Notebook Utilities (NotebookUtils) is a built-in package that helps you easily perform common tasks in Fabric notebook. It's preinstalled on the Python runtime. Use NotebookUtils to work with file systems, get environment variables, chain notebooks together, access external storage, and work with secrets.
 
 Use `notebookutils.help()` to list available APIs and get help with methods. For more information, see the [NotebookUtils documentation](notebook-utilities.md).
 
@@ -269,7 +269,7 @@ df = conn.query("SELECT * FROM sys.schemas;")
 ```
 
 > [!NOTE]
-> The Data utilities in NotebookUtils are only available on Python notebook for now.
+> The Data utilities in NotebookUtils are only available on Python notebooks for now.
 
 ## Browse code snippets
 
@@ -279,30 +279,30 @@ You can find useful Python code snippets on the **Edit** tab by selecting **Brow
 
 ## Semantic link
 
-Semantic link is a feature that you can use to connect [semantic models](/power-bi/connect-data/service-datasets-understand) and Synapse Data Science in Microsoft Fabric. Python notebook natively supports this feature. BI engineers and Power BI developers can use Semantic link to connect and manage semantic models easily. To learn more, see the [public document](../data-science/semantic-link-overview.md).
+Use the semantic link feature to connect [semantic models](/power-bi/connect-data/service-datasets-understand) and Fabric Data Science. Python notebook natively supports this feature. BI engineers and Power BI developers can use semantic link to connect and manage semantic models easily. To learn more, see [What is semantic link](../data-science/semantic-link-overview.md).
 
 ## Visualization
 
 In addition to drawing charts with libraries, the [built-in visualization](notebook-visualization.md) function allows you to turn DataFrames into rich format data visualizations. Use the *display()* function on dataframes to produce the rich dataframe table view and chart view.
 
-   :::image type="content" source="media\use-python-experience-on-notebook\display-in-python.png" alt-text="Screenshot showing visualization experience in Python notebook." lightbox="media\use-python-experience-on-notebook\display-in-python.png":::
+:::image type="content" source="media\use-python-experience-on-notebook\display-in-python.png" alt-text="Screenshot showing visualization experience in Python notebooks." lightbox="media\use-python-experience-on-notebook\display-in-python.png":::
 
 > [!NOTE]
 > The Python notebook persists the chart configurations. After rerunning the code cell, if the target dataframe schema doesn't change, the saved charts remain.
 
 ## Code IntelliSense
 
-Python notebook also uses Pylance as the language server. For more information, see [enhance Python Development with Pylance](./author-execute-notebook.md#ide-style-intellisense).
+Python notebooks also use Pylance as the language server. For more information, see [Enhance Python development with Pylance](./author-execute-notebook.md#ide-style-intellisense).
 
 ## Data science capabilities
 
-To learn more about data science and AI experiences in Microsoft Fabric, see [Data Science documentations in Microsoft Fabric](/fabric/data-science/). This article lists a few key data science features that Python notebooks natively support.
+To learn more about data science and AI experiences in Fabric, see [Fabric Data Science documentation](/fabric/data-science/). This article lists a few key data science features that Python notebooks natively support.
 
 - **Data Wrangler**: Data Wrangler is a notebook-based tool that provides an immersive interface for exploratory data analysis. This feature combines a grid-like data display with dynamic summary statistics, built-in visualizations, and a library of common data cleaning operations. It provides data cleaning, data transformation, and integration, which accelerates data preparation by using Data Wrangler.
 
 - **MLflow**: A machine learning experiment is the primary unit of organization and control for all related machine learning runs. A run corresponds to a single execution of model code.
 
-- **Fabric Auto Logging**: Synapse Data Science in Microsoft Fabric includes autologging, which significantly reduces the amount of code required to automatically log the parameters, metrics, and items of a machine learning model during training.  
+- **Fabric Auto Logging**: Fabric Data Science includes autologging, which significantly reduces the amount of code required to automatically log the parameters, metrics, and items of a machine learning model during training.  
 
    Autologging extends MLflow Tracking capabilities. Autologging can capture various metrics, including accuracy, loss, F1 score, and custom metrics you define. By using autologging, developers and data scientists can easily track and compare the performance of different models and experiments without manual tracking.
 
@@ -316,16 +316,16 @@ To learn more about data science and AI experiences in Microsoft Fabric, see [Da
 
 - The live pool experience isn't guaranteed for every Python notebook run. The session start time can take up to three minutes if the notebook run doesn't hit the live pool. As Python notebook usage grows, intelligent pooling methods gradually increase the live pool allocation to meet the demand.
 
-- Environment integration isn't available on Python notebook.
+- Environment integration isn't available on Python notebooks.
 
 - Set session timeout isn't available.
 
 - Copilot has improved context-awareness and assistance for Python notebooks, but it might occasionally suggest Spark code that isn't directly executable in a Python notebook. The Fix with Copilot experience applies to failed Python cells; Spark job diagnostics are out of scope for pure Python runs.
 
-- Currently, Copilot on Python notebook isn't fully supported in several regions. The deployment process is still ongoing. Stay tuned as support rolls out in more regions.
+- Currently, Copilot on Python notebooks isn't fully supported in several regions. The deployment process is still ongoing. Stay tuned as support rolls out in more regions.
 
 ## Related content
 
-- [How to use Microsoft Fabric notebooks](how-to-use-notebook.md)
-- [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md)
+- [How to use Fabric notebooks](how-to-use-notebook.md)
+- [Develop, execute, and manage Fabric notebooks](author-execute-notebook.md)
 - [Introduction of Fabric NotebookUtils](notebook-utilities.md)

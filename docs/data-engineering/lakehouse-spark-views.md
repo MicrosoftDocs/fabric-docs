@@ -14,7 +14,7 @@ Spark views in Microsoft Fabric let you abstract complex data modeling logic and
 
 If you're familiar with [materialized lake views](../data-engineering/materialized-lake-views/overview-materialized-lake-view.md), which persist results as Delta files (commonly used in medallion architectures), Spark views offer a lightweight alternative when you don't need to store the data.
 
-This article describes how to create and manage Spark views in **schema-enabled lakehouses**, where views are stored in OneLake and visible in Lakehouse Explorer. If you're working with non-schema-enabled lakehouses, see [Spark views with non-schema-enabled lakehouses](#spark-views-with-non-schema-enabled-lakehouses).
+This article describes how to create and manage Spark views in **schema-enabled lakehouses**, where views are stored in OneLake and visible in Lakehouse explorer. If you're working with non-schema-enabled lakehouses, see [Spark views with non-schema-enabled lakehouses](#spark-views-with-non-schema-enabled-lakehouses).
 
 ## How are Spark views stored?
 
@@ -36,7 +36,7 @@ SELECT * FROM my_table WHERE status = 'active'
 
 For example, you might create a view named `ny_sales` to filter sales data for a specific region.
 
-The view appears in Lakehouse Explorer under your schema after refresh.
+The view appears in Lakehouse explorer under your schema after refresh.
 
 :::image type="content" source="media\lakehouse-spark-views\spark-view.png" alt-text="Screenshot showing Spark view in a lakehouse." lightbox="media/lakehouse-spark-views/spark-view.png":::
 
@@ -62,9 +62,9 @@ SELECT * FROM my_table WHERE status = 'active'
 
 For more information about four-part naming, see [Cross-workspace Spark SQL queries](lakehouse-schemas.md#cross-workspace-spark-sql-queries).
 
-## Manage views in Lakehouse Explorer
+## Manage views in Lakehouse explorer
 
-Once created, your Spark view appears in Lakehouse Explorer alongside your tables. From the view's context menu, you can:
+Once created, your Spark view appears in Lakehouse explorer alongside your tables. From the view's context menu, you can:
 
 - **Rename** the view
 - **Delete** the view
@@ -74,7 +74,7 @@ Once created, your Spark view appears in Lakehouse Explorer alongside your table
 
 ## Spark views with non-schema-enabled lakehouses
 
-When your **notebook's default lakehouse** is non-schema-enabled, Spark views are created in the metastore. Those Spark views are not visible in Lakehouse Explorer. Only views stored in OneLake appear in Lakehouse Explorer.
+When your **notebook's default lakehouse** is non-schema-enabled, Spark views are created in the metastore. Those Spark views are not visible in Lakehouse explorer. Only views stored in OneLake appear in Lakehouse explorer.
 
 To create a Spark view stored in OneLake for a non-schema-enabled lakehouse, use a notebook session with a schema-enabled lakehouse as your default and reference the non-schema-enabled lakehouse in your query:
 
@@ -88,5 +88,5 @@ WHERE table.status = 'active'
 
 - [What is a lakehouse?](lakehouse-overview.md)
 - [Lakehouse schemas](lakehouse-schemas.md)
-- [Navigate the Fabric Lakehouse explorer](navigate-lakehouse-explorer.md)
+- [Navigate the Lakehouse explorer](navigate-lakehouse-explorer.md)
 - [Create and use notebooks](how-to-use-notebook.md)

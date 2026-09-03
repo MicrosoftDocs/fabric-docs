@@ -3,7 +3,7 @@ title: Operations Agent Best Practices and Limitations
 description: Learn about the best practices and limitations of using operations agents in Real-Time Intelligence.
 ms.reviewer: willthom, v-hzargari
 ms.topic: how-to
-ms.date: 06/04/2026
+ms.date: 09/02/2026
 ms.search.form: Operations Agent Limitations, Best Practices
 ai-usage: ai-assisted
 ms.custom: references_regions
@@ -61,15 +61,18 @@ Operations agents have functional, platform, and behavioral limitations that you
 
 ### Data source limitations
 
-- Currently, operations agents only support monitoring data in regular Eventhouse tables. Shortcut tables, functions, and materialized views aren't supported.
+- Only one data source is supported at a time.
+- When you use an Eventhouse as a data source:
+  - Only Eventhouse tables or shortcut tables are supported. Functions and materialized views aren't supported.
 - When using a Fabric Ontology as the agent's data source:
   - The ontology must be in the same workspace as the operations agent.
   - Ontology entities that you want the agent to monitor must have at least one static property to use as the identifier for entities. Timeseries properties should be bound to eventhouse fields.
 
-### Monitoring and rule limitations
+### Ontology monitoring rule limitations
 
-- Ontology monitoring supports basic property values only. Aggregations such as an average, minimum, or maximum value aren't supported.
-- Rules that require 'AND' conditions aren't supported (for example, braking index for a runway is over 0.8 and the surface temp is < 40).
+- When monitoring an Ontology:
+  - Only basic property values are supported. Aggregations such as an average, minimum, or maximum value aren't supported.
+  - Rules that require 'AND' conditions aren't supported (for example, braking index for a runway is over 0.8 and the surface temp is < 40).
 
 ### Language and model behavior limitations
 
@@ -79,6 +82,7 @@ Operations agents have functional, platform, and behavioral limitations that you
 ### Runtime limitations
 
 - The agent runs queries every five minutes when active.
+- The agent requires a timestamp in the data it's querying. The operations agent records the latest time in the records it retrieves, and in subsequent queries looks for data after that point. This process allows for older data to arrive outside of the last five minutes, but it requires data to be timestamped. 
 - Operations expire if no action is taken within three days. After expiration, actions can no longer be approved.
 
 ### Permissions and access limitations
@@ -93,6 +97,6 @@ Operations agents have functional, platform, and behavioral limitations that you
 
 ### Regional and workspace limitations
 
-- Operations agent is available in Azure public cloud Microsoft Fabric regions, excluding South Central US and East US.
+- Operations agent is available in Azure public cloud Microsoft Fabric regions, excluding East US.
 - Operations agent isn't currently available in sovereign clouds, including GCC-High and Bleu.
 - Operations agent isn't currently supported in workspaces encrypted with [Customer-managed keys for Fabric workspaces](../security/workspace-customer-managed-keys.md).

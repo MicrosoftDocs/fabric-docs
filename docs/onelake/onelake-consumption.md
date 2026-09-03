@@ -47,6 +47,11 @@ The following table defines CU consumption for OneLake data operations. As of Ma
 
 *For files > 4 MB in size, OneLake counts a transaction for every 4 MB block of data read or written. For files < 4 MB, a full transaction is counted. For example, if you do 10,000 read operations via Redirect and each file read is 16 MB in size, your capacity consumption is 40,000 transactions or 416 CU seconds.
 
+### Workload-driven consumption
+Some Fabric workloads access OneLake as part of their internal processing and system operations. These requests consume Fabric Capacity Units (CUs) in the same way as user-initiated operations.
+> [!NOTE]
+> Some OneLake operations performed as part of Spark workload execution have not been fully reflected in reported capacity consumption. Beginning October 1, 2026, Fabric will correct this reporting so that these operations are included in OneLake CU consumption. OneLake consumption rates are not changing. However, customers with Spark workloads that generate a high volume of these operations may see increased CU consumption. Whether this results in additional cost will depend on the utilization and configuration of the customer’s Fabric capacity.
+
 ## Shortcuts
 
 When you access data via shortcuts in OneLake, the transaction usage counts against the capacity tied to the workspace where the shortcut is created. The capacity where the data is ultimately stored (that the shortcut points to) is billed for the data stored.
@@ -97,7 +102,7 @@ OneLake security consumes capacity for row level security (RLS) transactions bas
 
 | **Operation** | **Description** | **Operation Unit of Measure** | **Capacity Units** |
 | --- | --- | --- | --- |
-| **OneLake security RLS** | OneLake security RLS | Million rows in the table | 0.1 CU seconds |
+| **OneLake security RLS** | OneLake security RLS | Million rows in the table | 1 CU seconds |
 
 ## OneLake diagnostics
 

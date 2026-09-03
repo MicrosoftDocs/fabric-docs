@@ -26,7 +26,7 @@ In this article, you learn how to:
 
 - Synapse linked services are replaced by Fabric Connections. Create Connections via **Workspace Settings** > **Manage connections and gateways**. For notebook code, replace linked service references with Key Vault-based authentication or direct endpoint configuration.
 
-- OneLake RBAC provides fine-grained data access control at the folder and table level within the Lakehouse.
+- OneLake RBAC provides fine-grained data access control at the folder and table level within the lakehouse.
 
 ## Network security
 
@@ -69,9 +69,9 @@ For lake metadata and data-access migration guidance, see [Phase 3: Hive Metasto
 
 - **3.1** Create OneLake shortcuts to existing ADLS Gen2 paths (zero-copy, preferred approach). Use the Fabric Connections set up in Phase 2 for data gateway-based access.
 - **3.2** For non-Delta files (CSV, JSON, Parquet), create shortcuts in the Files section. If data copy is required, use AzCopy or Data Factory Copy Activity.
-- **3.3** Migrate Hive Metastore objects. Choose one approach: Option A: Run HMS export/import notebooks for all metadata. Option B: Use Migration Assistant for Delta lake DB tables + HMS export/import for non-Delta only.
-- **3.4** Validate Delta table auto-registration in Lakehouse Explorer.
-- **3.5** Verify all imported tables and shortcuts are visible in Lakehouse Explorer and accessible from notebooks.
+- **3.3** Migrate Hive Metastore objects. Choose one approach: Option A: Run HMS export/import notebooks for all metadata. Option B: Use Migration Assistant for Delta Lake DB tables + HMS export/import for non-Delta only.
+- **3.4** Validate Delta table auto-registration in Lakehouse explorer.
+- **3.5** Verify all imported tables and shortcuts are visible in Lakehouse explorer and accessible from notebooks.
 
 ### Phase 4: Migrate Spark workloads
 

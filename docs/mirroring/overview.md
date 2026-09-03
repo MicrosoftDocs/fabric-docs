@@ -2,13 +2,16 @@
 title: Mirroring
 description: Learn about mirrored databases in Microsoft Fabric.
 ms.reviewer: sbahadur, maprycem, tinglee
-ms.date: 07/17/2026
+ms.date: 08/28/2026
 ms.topic: overview
 ms.search.form: Fabric Mirroring
 no-loc: Copilot
 ---
 
 # What is Mirroring in Fabric?
+
+> [!IMPORTANT]
+> Mirroring for Google BigQuery is now generally available. Production workloads are fully supported. For details, see [Mirroring Google BigQuery in Microsoft Fabric](google-bigquery.md).
 
 Mirroring in Fabric is a low-cost and low-latency solution that brings data from various systems together into a single analytics platform. You can continuously replicate your existing data estate directly into Fabric's OneLake from various Azure databases and external data sources.
 

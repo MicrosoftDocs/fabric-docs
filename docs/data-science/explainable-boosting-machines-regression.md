@@ -3,8 +3,8 @@ title: Train regression models using explainable boosting machines
 description: Learn how to train regression models using explainable boosting machines
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.topic: how-to
 ms.date: 05/13/2026
 ---
@@ -116,10 +116,10 @@ print(f"Feature vector created with {feature_length} elements")
 
 ## Train the model
 
-The following code snippet uses the Synapse ML library to start the EBM regression model creation process. It first initializes the EBM regression estimator, specifying that a regression task needs it. It then sets the label column name to ensure the model knows which column to predict. Finally, it fits the model to the preprocessed dataset:
+The following code snippet uses the SynapseML library to start the EBM regression model creation process. It first initializes the EBM regression estimator, specifying that a regression task needs it. It then sets the label column name to ensure the model knows which column to predict. Finally, it fits the model to the preprocessed dataset:
 
 ```python
-# Import the EBMRegression estimator from Synapse ML.
+# Import the EBMRegression estimator from SynapseML.
 from synapse.ml.ebm import EbmRegression
 
 # Create an instance of the EBMRegression estimator.
