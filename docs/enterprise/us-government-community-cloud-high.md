@@ -59,16 +59,16 @@ The following table lists the Fabric capabilities available in Microsoft Fabric 
 
 | Workload | Capabilities in public preview |
 | --- | --- |
-| Data Engineering | Lakehouse, lakehouse SQL analytics endpoint, notebook, Spark job definition, environment, lakehouse with schema, and Spark connector for SQL Data Warehouse |
-| Data Factory | Pipeline, Dataflow Gen2, Copy job, default semantic model, virtual network data gateway, and on-premises data gateway |
+| Data Engineering | Lakehouse, lakehouse SQL analytics endpoint, notebook, Spark job definition, environment, lakehouse with schema, API for GraphQL, User Data Functions, and Spark connector for SQL Data Warehouse |
+| Data Factory | Pipeline, Dataflow Gen2, Copy job, virtual network data gateway, and on-premises data gateway |
 | Data Science | Machine learning model and experiment |
 | Data Warehouse | Warehouse and SQL analytics endpoint |
-| Developer experience | API for GraphQL, deployment pipelines, Git integration, and variable library |
+| Developer experience | Deployment pipelines and variable library |
 | Governance and security | Sensitivity label and share item |
 | Mirroring | Mirrored Azure SQL Database |
 | Fabric databases | SQL database in Fabric |
 | OneLake | Shortcut (partial support) |
-| Power BI | Power BI report, dashboard, scorecard, semantic model, and paginated report |
+| Power BI | Power BI report, dashboard, scorecard, semantic model, direct Lake on SQL, direct Lake on OneLake, and paginated report |
 | Real-Time Intelligence | KQL queryset, Activator (partial support), eventhouse and KQL database, eventstream, and Real-Time dashboard |
 
 Fabric items not listed in this table aren't available in GCC High during public preview. These unavailable items include Fabric IQ items (graph model, graph queryset, operations agent, and ontology) and all mirroring sources except Mirrored Azure SQL Database.
