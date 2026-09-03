@@ -97,7 +97,7 @@ OneLake security consumes capacity for row level security (RLS) transactions bas
 
 | **Operation** | **Description** | **Operation Unit of Measure** | **Capacity Units** |
 | --- | --- | --- | --- |
-| **OneLake security RLS** | OneLake security RLS | Million rows in the table | 0.1 CU seconds |
+| **OneLake security RLS** | OneLake security RLS | Million rows in the table | 1 CU seconds |
 
 ## OneLake diagnostics
 
