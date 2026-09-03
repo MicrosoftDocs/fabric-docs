@@ -25,18 +25,14 @@ LocalizationGroup: Admin
 
 To create a semantic model with **Direct Lake on OneLake tables**, take the following steps.
 
-1. Select **Create** from the left navigation bar, then select **OneLake catalog** and choose a
-	[supported Fabric data source](direct-lake-overview.md#supported-fabric-data-sources).
-	Alternatively, open a supported source item and select **New semantic model**.
+1. Select **Create** from the left navigation bar, then select **OneLake catalog** and choose a [supported Fabric data source](direct-lake-overview.md#supported-fabric-data-sources). Alternatively, open a supported source item and select **New semantic model**.
 1. Give your semantic model a name, pick a Fabric workspace for it, and select the tables to include. Then press **OK**.
 
 The semantic model is created and now you're live editing the modeling in the browser.
 
 To create a semantic model with **Direct Lake on SQL tables**, take the following steps.
 
-1. Open the SQL analytics endpoint of a
-	[supported Fabric data source](direct-lake-overview.md#supported-fabric-data-sources), go to
-	**Reporting**, and then select **New semantic model**.
+1. Open the SQL analytics endpoint of a [supported Fabric data source](direct-lake-overview.md#supported-fabric-data-sources), go to **Reporting**, and then select **New semantic model**.
 1. Give your semantic model a name, pick a Fabric workspace for it, and select the tables to include. Then press **OK**.
 
 The semantic model is created and now you're live editing the modeling in the browser.
