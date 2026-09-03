@@ -1,8 +1,8 @@
 ---
 title: What is semantic link?
 description: Get an overview of semantic link, which lets you connect semantic models to Fabric Data Science.
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.topic: overview
 ms.date: 03/03/2026
 ms.search.form: semantic link

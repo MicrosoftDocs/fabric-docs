@@ -63,7 +63,7 @@ To perform processing operations on your data streams by using a no-code editor,
 
 You can use the event processing editor (the canvas in **Edit** mode) to transform data into various destinations. Enter **Edit** mode to design stream processing operations for your data streams.
 
-:::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-enhanced.png" alt-text="Screenshot that shows the event processing editor for an eventstream with enhanced capabilities." lightbox="./media/process-events-using-event-processor-editor/event-processor-editor-enhanced.png":::
+:::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-enhanced.png" alt-text="Screenshot that shows the event processing editor for an eventstream." lightbox="./media/process-events-using-event-processor-editor/event-processor-editor-enhanced.png":::
 
 **Edit** mode includes a canvas and lower pane where you can:
 
@@ -75,7 +75,7 @@ You can use the event processing editor (the canvas in **Edit** mode) to transfo
 
 The event processing editor consists of three sections numbered in the following image.
 
-:::image type="content" source="./media/process-events-using-event-processor-editor/layout-enhanced.png" alt-text="Screenshot that shows the layout of the event processing editor for an eventstream with enhanced capabilities." lightbox="./media/process-events-using-event-processor-editor/layout-enhanced.png":::
+:::image type="content" source="./media/process-events-using-event-processor-editor/layout-enhanced.png" alt-text="Screenshot that shows the layout of the event processing editor for an eventstream." lightbox="./media/process-events-using-event-processor-editor/layout-enhanced.png":::
 
 1. On the pane that contains the ribbon menu and canvas, you design your data transformation logic by selecting an operator from the **Transform events** menu and connecting the stream and the destination nodes through the newly created operator node. You can drag connecting lines or select and delete connections.
 

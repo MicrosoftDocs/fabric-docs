@@ -5,8 +5,8 @@ ms.topic: overview
 ms.custom: 
 ms.author: lagayhar
 author: lgayhardt
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.date: 01/16/2026
 ai-usage: ai-assisted
 ms.update-cycle: 180-days

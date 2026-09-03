@@ -26,7 +26,7 @@ Fabric Data Warehouse supports T-SQL tables, views, stored procedures, functions
 - For more information about supported data types in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Data types](data-types.md).
 - You can also create T-SQL views, functions, and procedures on top of the tables that reference your Delta Lake data in the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
    - Creating, altering, and dropping tables, and insert, update, and delete operations are only supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], not in the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
-- Fabric Warehouse and SQL analytics endpoint both support *standard*, *sequential*, and *nested* common table expressions (CTEs). While CTEs are generally available in Microsoft Fabric, nested CTEs are currently a preview feature. For more information, see [Nested Common Table Expression (CTE) in Fabric data warehousing (Transact-SQL)](/sql/t-sql/queries/nested-common-table-expression?view=fabric&preserve-view=true).
+- Fabric Warehouse and SQL analytics endpoint both support *standard*, *sequential*, and *nested* common table expressions (CTEs). While CTEs are generally available in Microsoft Fabric, nested CTEs are currently a preview feature. For more information, see [Nested Common Table Expression (CTE) in Fabric Data Warehouse (Transact-SQL)](/sql/t-sql/queries/nested-common-table-expression?view=fabric&preserve-view=true).
 - [TRUNCATE TABLE](/sql/t-sql/statements/truncate-table-transact-sql?view=fabric&preserve-view=true) is supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 - To change the name of the column in a user table in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], use the `sp_rename` stored procedure. 
 - A subset of query and join hints are supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. For more information, see [Hints (Transact-SQL)](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true).
@@ -64,7 +64,7 @@ Currently, the following commands aren't supported. Don't try to use these comma
 
 ## Related content
 
-- [Query insights in Fabric data warehousing](query-insights.md)
+- [Query insights in Fabric Data Warehouse](query-insights.md)
 - [What is Fabric Data Warehouse?](data-warehousing.md)
 - [Data types in Microsoft Fabric](data-types.md)
 - [Limitations of Microsoft Fabric Data Warehouse](limitations.md)
