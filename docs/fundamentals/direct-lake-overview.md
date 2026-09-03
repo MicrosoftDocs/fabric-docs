@@ -67,12 +67,39 @@ Storage mode is a property of a table in the semantic model. When a semantic mod
 
 ## Comparison of storage modes
 
+Use the following comparisons to understand the data sources and capabilities supported by each
+storage mode.
+
+### Supported Fabric data sources
+
+The following table shows high-level data source support for each Direct Lake option.
+
+| Fabric data source | Direct Lake on OneLake | Direct Lake on SQL |
+| -- | -- | -- |
+| Lakehouse | Supported | Supported |
+| Warehouse | Supported | Supported |
+| SQL database in Fabric | Supported | Supported |
+| Mirrored database | Supported | Supported |
+| Mirrored Azure Databricks catalog | Supported | Supported |
+| Snowflake database | Not supported | Supported |
+| Cosmos DB in Fabric | Supported | Not supported |
+| KQL database <sup>1</sup> | Supported | Not supported |
+| Warehouse snapshot | Not supported | Not supported |
+| API for GraphQL | Not supported | Not supported |
+
+<sup>1</sup> For a KQL database, turn on [OneLake availability](../real-time-intelligence/event-house-onelake-availability.md) to make its data available in Delta Lake format.
+
+Warehouse snapshots and APIs for GraphQL don't expose Delta tables in OneLake as source tables for Direct Lake.
+
+### Compare storage mode capabilities
+
 The following table compares Direct Lake storage mode to Import and DirectQuery storage modes.
 
 | Capability | Direct Lake on OneLake | Direct Lake on SQL endpoints | Import | DirectQuery |
 | -- | -- | -- | -- | -- |
 | Licensing | Fabric capacity subscription (SKUs) only | Fabric capacity subscription (SKUs) only | Any Fabric or Power BI license (including Microsoft Fabric Free licenses) | Any Fabric or Power BI license (including Microsoft Fabric Free licenses) |
-| Data source | Tables of any Fabric data source backed by Delta tables | Only lakehouse or warehouse tables (or views) | Any connector | Any connector that supports DirectQuery mode |
+| Data source | Supported Fabric data sources with Delta tables, as listed in [Supported Fabric data sources](#supported-fabric-data-sources) | A single supported Fabric data source with a SQL analytics endpoint, as listed in [Supported Fabric data sources](#supported-fabric-data-sources) | Any connector | Any connector that supports DirectQuery mode |
+| Connect to SQL analytics endpoint views | No | Yes – but will automatically fall back to DirectQuery mode | Yes | Yes |
 | Connect to SQL analytics endpoint views | No | Yes – but will automatically fall back to DirectQuery mode | Yes | Yes |
 | Composite models | Yes - can combine with Import storage mode tables in Power BI web modeling and DirectQuery tables with XMLA tools. | No <sup>1</sup> | Yes – can combine with DirectQuery, Dual, and Direct Lake storage mode tables | Yes – can combine with import, Dual, and Direct Lake storage mode tables |
 | Single sign-on (SSO) | Yes | Yes | Not applicable | Yes |
