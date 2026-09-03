@@ -381,6 +381,8 @@ items:
               href: plan/planning-reference-formulas/identifiers.md
             - name: Lookup functions
               href: plan/planning-reference-formulas/lookup-functions.md
+            - name: Other operators
+              href: plan/planning-reference-formulas/planning-reference-other-operators.md
   - name: PowerTable sheets
     items:
     - name: Concepts
