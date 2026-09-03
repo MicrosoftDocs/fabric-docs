@@ -22,7 +22,7 @@ Microsoft Fabric is an analytics platform that supports end‑to‑end data work
 > Whether you're new to Fabric or building with it every day, your insights can help improve the experience. Join the [Fabric User Panel](https://www.userinterviews.com/opt-in/zcn1RDvRBjFoQnSwpdPCkhey) to participate in research studies and provide feedback on future experiences directly with the product team. For more information about this panel, see how to [sign up for Fabric User Panel](feedback.md#fabric-user-panel).
 
 
-Fabric is delivered as a software‑as‑a‑service (SaaS) platform and uses OneLake as a centralized, logical data lake for storing and accessing data across all workloads. In tandem with OneLake, the OneLake Catalog provides a centralized experience for discovering, exploring, and governing data and analytics artifacts across the tenant. AI capabilities are built into the platform to assist with data preparation, analysis, and development tasks, reducing the need for manual service integration and enabling efficient analysis of large‑scale data.
+Fabric is delivered as a software‑as‑a‑service (SaaS) platform and uses OneLake as a centralized, logical data lake for storing and accessing data across all workloads. In tandem with OneLake, the OneLake Catalog provides a centralized experience for discovering, exploring, and governing data and analytics items across the tenant. AI capabilities are built into the platform to assist with data preparation, analysis, and development tasks, reducing the need for manual service integration and enabling efficient analysis of large‑scale data.
 
 > [!NOTE]
 > * The [Fabric Analyst in a Day (FAIAD)](https://aka.ms/LearnFAIAD) workshop is free, hands-on training for analysts working with Power BI and Fabric. Get hands-on experience analyzing data and building reports using Fabric. The workshop covers key concepts like working with lakehouses, creating reports, and analyzing data in the Fabric environment.
@@ -50,7 +50,7 @@ The following diagram illustrates how Microsoft Fabric is built on a software‑
 
 :::image type="content" source="media\microsoft-fabric-overview\fabric-architecture.png" alt-text="Diagram of the software as a service foundation beneath the different experiences of Fabric." lightbox="media\microsoft-fabric-overview\fabric-architecture.png":::
 
-At the top of the diagram are the core Fabric workloads, such as Data Factory, Analytics, Databases, Real‑Time Intelligence, IQ, and Power BI. Each workload provides specialized capabilities tailored to different analytics tasks, but all workloads operate within the same Fabric environment and can share data and artifacts without duplication.
+At the top of the diagram are the core Fabric workloads, such as Data Factory, Analytics, Databases, Real‑Time Intelligence, IQ, and Power BI. Each workload provides specialized capabilities tailored to different analytics tasks, but all workloads operate within the same Fabric environment and can share data and items without duplication.
 
 Beneath these workloads is the Fabric platform layer, which provides shared services used consistently across the experiences:
 
@@ -81,9 +81,9 @@ Microsoft Fabric offers the following workloads, each customized for a specific 
 
 * **Fabric Data Science** - Fabric Data Science enables you to build, deploy, and operationalize machine learning models from Fabric. It integrates with Azure Machine Learning to provide built-in experiment tracking and model registry. Data scientists can enrich organizational data with predictions and business analysts can integrate those predictions into their BI reports, allowing a shift from descriptive to predictive insights. For more information, see [What is Data science in Microsoft Fabric?](../data-science/data-science-overview.md)
 
-* **Fabric Data Warehouse** - Fabric Data Warehouse provides industry leading SQL performance and scale. It separates compute from storage, enabling independent scaling of both components. Additionally, it natively stores data in the open Delta Lake format. For more information, see [What is data warehousing in Microsoft Fabric?](../data-warehouse/data-warehousing.md)
+* **Fabric Data Warehouse** - Fabric Data Warehouse provides industry leading SQL performance and scale. It separates compute from storage, enabling independent scaling of both components. Additionally, it natively stores data in the open Delta Lake format. For more information, see [What is Fabric Data Warehouse?](../data-warehouse/data-warehousing.md)
 
-* **Fabric IQ (preview)** - Fabric IQ (preview) is a new workload for unifying business semantics across data, models, and systems. It includes the items of ontology, plan, Fabric Graph, data agent, operations agent, and semantic models. Fabric IQ powers consistent decisions, reusable metrics, and context-aware automation across the Fabric platform. For more information, see [What is Fabric IQ (preview)?](../iq/overview.md)
+* **Fabric IQ (preview)** - Fabric IQ (preview) is a new workload for unifying business semantics across data, models, and systems. It includes the items of ontology, planning, Fabric Graph, data agent, operations agent, and semantic models. Fabric IQ powers consistent decisions, reusable metrics, and context-aware automation across the Fabric platform. For more information, see [What is Fabric IQ (preview)?](../iq/overview.md)
 
 Fabric helps organizations and individuals analyze their data and create reports, dashboards, and machine learning models. It implements a data mesh architecture. For more information, see [What is a data mesh?](/azure/cloud-adoption-framework/scenarios/cloud-scale-analytics/architectures/what-is-data-mesh)
 
@@ -103,7 +103,7 @@ OneLake also supports cross-tenant data sharing, which lets you share live, gove
 
 ### OneLake and lakehouse data hierarchy
 
-OneLake’s hierarchical design simplifies organization-wide management. Fabric includes OneLake by default, so no upfront provisioning is needed. Each tenant gets one unified OneLake with single file-system namespace that spans users, regions, and clouds. OneLake organizes data into containers for easy handling. The tenant maps to the root of OneLake and is at the top level of the hierarchy. You can create multiple workspaces (which are like folders) within a tenant.
+OneLake's hierarchical design simplifies organization-wide management. Fabric includes OneLake by default, so no upfront provisioning is needed. Each tenant gets one unified OneLake with single file-system namespace that spans users, regions, and clouds. OneLake organizes data into containers for easy handling. The tenant maps to the root of OneLake and is at the top level of the hierarchy. You can create multiple workspaces (which are like folders) within a tenant.
 
 The following image shows how Fabric stores data in OneLake. You can have several workspaces per tenant and multiple lakehouses within each workspace. A lakehouse is a collection of files, folders, and tables that acts as a database over a data lake. To learn more, see [What is a lakehouse?](../data-engineering/lakehouse-overview.md).
 

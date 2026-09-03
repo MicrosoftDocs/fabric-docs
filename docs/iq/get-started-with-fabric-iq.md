@@ -24,7 +24,7 @@ Find the job that matches your scenario, and then follow the entry article for t
 | --- | --- | --- |
 | Define a shared business vocabulary—entities, relationships, and rules—and ground AI agents in it | Ontology (preview) | [What is ontology?](ontology/overview.md) |
 | Build curated analytics with trusted measures, hierarchies, and key performance indicators (KPIs) | Power BI semantic model | [Power BI semantic models in Fabric](../data-warehouse/semantic-models.md) |
-| Plan, forecast, and report collaboratively in one no-code experience | Plan (preview) | [What is Plan?](plan/overview.md) |
+| Plan, forecast, and report collaboratively in one no-code experience | Planning | [What is planning in Fabric?](plan/overview.md) |
 | Query connected data with nodes, edges, and traversals for impact and dependency analysis | Graph | [Graph in Microsoft Fabric overview](../graph/overview.md) |
 | Give users natural-language Q&A over a specific data domain | Data agent | [Fabric data agent concepts](../data-science/concept-data-agent.md) |
 | Monitor live data, detect anomalies, and take governed action | Operations agent | [Create and configure operations agents](../real-time-intelligence/operations-agent.md) |
@@ -45,7 +45,7 @@ Some Fabric IQ capabilities require a Fabric administrator to enable tenant sett
 
 - [What is Fabric IQ?](overview.md)
 - [What is ontology?](ontology/overview.md)
-- [What is Plan?](plan/overview.md)
+- [What is planning in Fabric?](plan/overview.md)
 - [Graph in Microsoft Fabric overview](../graph/overview.md)
 - [Fabric data agent concepts](../data-science/concept-data-agent.md)
 - [Create and configure operations agents](../real-time-intelligence/operations-agent.md)

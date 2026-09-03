@@ -104,14 +104,23 @@ To support reuse and consistency, you can adopt a pipeline-based composition pat
 
    Passing parameters at runtime enables reuse while preserving customization.
 
-### Limitations
+### Authentication support
 
-In some cases, deployments that rely on **service principal authentication** (for example, Azure DevOps–based CI/CD workflows) may not execute this pattern successfully. 
+The Office 365 Outlook activity supports the following authentication methods:
+
+- User Authentication (OAuth)
+- Workspace Identity (WI)
+- Service Principal (SPN)
+
+By using Workspace Identity and Service Principal support, your organization can run email notifications by using non-user identities. This approach helps reduce dependency on individual user accounts and supports production-grade automation scenarios.
+
+When you use Workspace Identity or Service Principal authentication, you need to configure the appropriate Microsoft Entra ID and Microsoft Graph permissions to send email on behalf of the desired mailbox. Depending on your organizational requirements, you might also need to set up additional Exchange Online mailbox restrictions and governance policies.
+
+For more information about setting up WI or SPN, see [Workspace identity support in Data Factory](workspace-identity.md) or [Service principal support in Data Factory](service-principals.md).
 
 ## Known limitations
 
-- The Outlook activity will be inactive when using CI/CD.
-- The Outlook activity does not support WI or SPN.
+- The Outlook activity doesn't support sensitivity labels. You can't apply Microsoft Purview sensitivity labels to emails sent through the activity.
 
 ## Related content
 

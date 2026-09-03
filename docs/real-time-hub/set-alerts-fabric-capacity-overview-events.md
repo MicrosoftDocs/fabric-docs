@@ -39,7 +39,7 @@ Do steps from one of the following sections, which opens a side panel where you 
 
 ### Use the event detail page
 
-1. Select **Capacity overview events** from the list see the detail page.
+1. Select **Capacity overview events** from the list to see the detail page.
 1. On the detail page, select **Set alert** button at the top of page.
 
     :::image type="content" source="media/set-alerts-fabric-capacity-overview-events/set-alert-detail-page.png" alt-text="Screenshot that shows the Set alert button on the detail page." lightbox="media/set-alerts-fabric-capacity-overview-events/set-alert-detail-page.png":::

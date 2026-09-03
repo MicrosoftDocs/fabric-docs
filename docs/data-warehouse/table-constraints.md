@@ -26,7 +26,7 @@ Learn about table constraints in [!INCLUDE [fabricse](includes/fabric-se.md)] an
 For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true).
 
 - [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] don't support default constraints at this time. 
-- For more information on tables, see [Tables in data warehousing in Microsoft Fabric](tables.md).
+- For more information on tables, see [Tables in Fabric Data Warehouse](tables.md).
 
 > [!IMPORTANT]
 > There are limitations when adding table constraints or columns by using [Git Integration for Fabric Warehouse Development](git-integration.md#limitations-in-git-integration).

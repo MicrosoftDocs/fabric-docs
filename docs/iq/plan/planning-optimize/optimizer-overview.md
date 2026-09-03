@@ -1,5 +1,5 @@
 ---
-title: Optimize Input Values for Target KPIs in Fabric Plan
+title: Optimize Input Values for Target KPIs in Planning
 description: Use Optimize to adjust multiple data input measures at once and hit target values for revenue, margin, or cash flow. Discover setup steps and constraints here.
 ms.date: 08/10/2026
 ms.topic: how-to
@@ -114,4 +114,4 @@ If Optimize doesn't reach the target value, adjust **Strategy**, **Tolerance**, 
 
 ## Related content
 
-[Optimizer solver in Fabric planning](https://lumel.com/webinars/microsoft-fabric-optimizer-solver-financial-planning/)
+[Optimizer solver in planning](https://lumel.com/webinars/microsoft-fabric-optimizer-solver-financial-planning/)

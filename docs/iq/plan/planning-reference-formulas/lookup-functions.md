@@ -1,6 +1,6 @@
 ---
 title: Lookup Functions
-description: Learn about lookup functions in Plan and how to use them to lookup and retrieve specific values from measures.
+description: Learn about lookup functions in planning and how to use them to lookup and retrieve specific values from measures.
 ms.date: 08/26/2026
 ms.topic: reference
 #customer intent: As a user, I want to understand lookup functions and how to use them in formulas to lookup and fetch values from measures.

@@ -3,9 +3,9 @@ author: s-polly
 description: Use the conditional k-nearest-neighbors algorithm in a Microsoft Fabric notebook to find visually similar artwork across cultures and mediums.
 ms.author: scottpolly
 ms.date: 05/13/2026
-ms.reviewer: ruxu
+ms.reviewer: scottpolly
 ms.topic: how-to
-reviewer: ruixinxu
+reviewer: s-polly
 title: Conditional k-NN (K-Nearest-Neighbors) Art Exploration Across Cultures
 ai-usage: ai-assisted
 ---

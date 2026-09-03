@@ -2,7 +2,7 @@
 title: R library management
 description: How to manage R libraries.
 ms.author: lagayhar
-ms.reviewer: ruxu
+ms.reviewer: scottpolly
 ms.topic: how-to
 ms.date: 02/28/2026
 ms.search.form: R Language

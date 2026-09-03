@@ -17,7 +17,7 @@ The following list contains the supported data destinations:
 [!INCLUDE [dataflow-gen2-data-destinations](includes/dataflow-gen2-data-destinations.md)]
 
 > [!NOTE]
->To load your data to the Fabric Warehouse, you can use the Azure Synapse Analytics (SQL DW) connector by getting the SQL connection string. More information: [Connectivity to data warehousing in Microsoft Fabric](../data-warehouse/connectivity.md)
+> To load your data to Fabric Data Warehouse, you can use the Azure Synapse Analytics (SQL DW) connector by getting the SQL connection string. For more information, see [Connectivity to Fabric Data Warehouse](../data-warehouse/connectivity.md).
 
 ## Entry points
 

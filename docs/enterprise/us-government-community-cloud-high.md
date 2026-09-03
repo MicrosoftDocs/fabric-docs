@@ -59,11 +59,11 @@ The following table lists the Fabric capabilities available in Microsoft Fabric 
 
 | Workload | Capabilities in public preview |
 | --- | --- |
-| Data Engineering | Lakehouse, lakehouse SQL analytics endpoint, notebook, Spark job definition, environment, lakehouse with schema, and Spark connector for SQL Data Warehouse |
+| Data Engineering | Lakehouse, lakehouse SQL analytics endpoint, notebook, Spark job definition, environment, lakehouse with schema, API for GraphQL, User Data Functions, and Spark connector for SQL Data Warehouse |
 | Data Factory | Pipeline, Dataflow Gen2, Copy job, virtual network data gateway, and on-premises data gateway |
 | Data Science | Machine learning model and experiment |
 | Data Warehouse | Warehouse and SQL analytics endpoint |
-| Developer experience | API for GraphQL, deployment pipelines, User Data Functions, and variable library |
+| Developer experience | Deployment pipelines and variable library |
 | Governance and security | Sensitivity label and share item |
 | Mirroring | Mirrored Azure SQL Database |
 | Fabric databases | SQL database in Fabric |

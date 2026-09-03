@@ -62,7 +62,7 @@ landingContent:
         - text: Samples
           url: https://aka.ms/fabric-extensibility-toolkit-samples       
         - text: REST APIs
-          url: https://go.microsoft.com/fwlink/?linkid=2271986
+          url: /rest/api/fabric/articles/
         - text: Client-side APIs
           url: https://go.microsoft.com/fwlink/?linkid=2271989
          

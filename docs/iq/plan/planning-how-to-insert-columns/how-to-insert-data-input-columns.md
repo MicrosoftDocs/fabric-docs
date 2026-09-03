@@ -10,13 +10,13 @@ ms.topic: how-to
 
 Planning and what-if analysis often require you to enter values, projections, or other details that don't exist in the underlying dataset. Data input columns let you add and manage these values directly within a report, making it easier to perform planning, forecasting, and scenario analysis.
 
-In Plan, you can insert data input columns and measures directly in your reports without writing Data Analysis Expressions (DAX). You can format these columns and reuse them for subsequent calculations and analysis.
+In planning, you can insert data input columns and measures directly in your reports without writing Data Analysis Expressions (DAX). You can format these columns and reuse them for subsequent calculations and analysis.
 
 In this article, you learn how to insert and configure data input columns and measures.
 
 ## Data input types
 
-Plan supports various data input column types to accommodate different planning and reporting scenarios. Depending on the information you want to capture, you can create columns for numeric values, formulas, text, users, and predefined option selections.
+Planning supports various data input column types to accommodate different planning and reporting scenarios. Depending on the information you want to capture, you can create columns for numeric values, formulas, text, users, and predefined option selections.
 
 The following table describes the available data input column types.
 
@@ -92,7 +92,7 @@ Configure the following properties while creating a data input column:
 
       :::image type="content" source="../media/planning-how-to-insert-columns/how-to-insert-data-input-columns/edit-mode.png" alt-text="Screenshot of allowing inputs only in edit mode." lightbox="../media/planning-how-to-insert-columns/how-to-insert-data-input-columns/edit-mode.png":::
 
-  * **Based on formula**: Users can enter input only when a condition is met. Plan evaluates the condition using a user-defined formula.
+  * **Based on formula**: Users can enter input only when a condition is met. Planning evaluates the condition using a user-defined formula.
 
       :::image type="content" source="../media/planning-how-to-insert-columns/how-to-insert-data-input-columns/based-on-formula.png" alt-text="Screenshot of allowing inputs based on a formula." lightbox="../media/planning-how-to-insert-columns/how-to-insert-data-input-columns/based-on-formula.png":::
 
@@ -123,7 +123,7 @@ To modify the properties of an existing data input column:
 
 ## Access control
 
-With Plan, you can control read and write access for data input columns.
+With planning, you can control read and write access for data input columns.
 
 To configure access:
 

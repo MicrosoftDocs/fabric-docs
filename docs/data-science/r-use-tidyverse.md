@@ -2,9 +2,10 @@
 title: Use Tidyverse
 description: How to use Tidyverse, a collection of R packages designed for data science.
 ms.author: lagayhar
-ms.reviewer: ruxu
+ms.reviewer: scottpolly
 ms.topic: how-to
-ms.date: 06/30/2025
+ms.date: 08/31/2026
+ai-usage: ai-assisted
 ms.search.form: R Language
 ---
 
@@ -74,12 +75,12 @@ head(stocks_readr)
 
 `tidyr` is an R package that provides tools for working with messy data. The main functions in `tidyr` are designed to help you reshape data into a tidy format. Tidy data has a specific structure where each variable is a column and each observation is a row, which makes it easier to work with data in R and other tools.
 
-For example, the `gather()` function in `tidyr` can be used to convert wide data into long data. Here's an example:
+For example, the `pivot_longer()` function in `tidyr` converts wide data into long data:
 
 ```R
 # convert the stock data into longer data
 library(tidyr)
-stocksL <- gather(data = stocks, key = stock, value = price, X, Y, Z)
+stocksL <- pivot_longer(stocks, cols = X:Z, names_to = "stock", values_to = "price")
 stocksL
 ```
 

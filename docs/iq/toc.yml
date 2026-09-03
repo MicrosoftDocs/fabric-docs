@@ -73,11 +73,11 @@ items:
       href: /rest/api/fabric/ontology/items
     - name: CI/CD in Fabric
       href: ../cicd/cicd-overview.md
-- name: Plan
+- name: Planning
   items:
   - name: Overview
     items:
-    - name: What is Plan?
+    - name: What is planning in Fabric?
       href: plan/overview.md
     - name: Planning sheets overview
       href: plan/planning-overview.md
@@ -87,6 +87,12 @@ items:
       href: plan/intelligence-overview.md
     - name: Infobridge overview
       href: plan/infobridge-overview.md
+  - name: Planning tutorial
+    items:
+    - name: Introduction and environment setup
+      href: plan/planning-tutorial/planning/tutorial-0-introduction.md
+    - name: Build Top-Down and Bottom-Up revenue plans
+      href: plan/planning-tutorial/planning/tutorial-1-allocation-collaboration.md
   - name: Get started
     items:
     - name: Prerequisites
@@ -155,7 +161,7 @@ items:
                 href: plan/planning-how-to-use-simulation-measures.md
               - name: Insert column - Formula
                 href: plan/planning-how-to-insert-columns/how-to-insert-formula-columns.md
-              - name: Create a measure model
+              - name: Measure model - Create a measure model
                 href: plan/planning-how-to-create-measure-model.md
               - name: Cube - Multidimensional allocation
                 href: plan/planning-cubes/how-to-create-cube.md
@@ -175,16 +181,16 @@ items:
                 href: plan/planning-how-to-insert-rows-blank.md
               - name: Insert rows - Manage inserted rows
                 href: plan/planning-how-to-manage-inserted-rows.md
-              - name: Create a row model
+              - name: Row model - Create a row model
                 href: plan/planning-row-model/how-to-create-row-model.md
-              - name: Create forecasts in row model
+              - name: Row model - Create forecasts
                 href: plan/planning-row-model/how-to-create-row-model-forecasts.md
-              - name: Perform scenario analysis in row model
+              - name: Row model - Perform scenario analysis
                 href: plan/planning-row-model/how-to-create-row-model-scenarios.md
-              - name: Row model - Configure row properties
-                href: plan/planning-row-model/planning-how-to-configure-model-row-properties.md
               - name: Row model - Create templates
-                href: plan/planning-row-model/planning-how-to-create-templates.md
+                href: plan/planning-row-model/how-to-create-templates.md
+              - name: Row model - Configure row properties
+                href: plan/planning-row-model/planning-how-to-configure-model-row-properties.md         
         - name: Forecasting
           items: 
               - name: Create forecasts
@@ -375,6 +381,8 @@ items:
               href: plan/planning-reference-formulas/identifiers.md
             - name: Lookup functions
               href: plan/planning-reference-formulas/lookup-functions.md
+            - name: Other operators
+              href: plan/planning-reference-formulas/planning-reference-other-operators.md
   - name: PowerTable sheets
     items:
     - name: Concepts

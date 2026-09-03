@@ -3,10 +3,10 @@ title: Read and write data with Pandas
 description: Learn how to read and write lakehouse data in a notebook using Pandas, a popular Python library for data exploration and processing.
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.topic: how-to
-ms.date: 08/06/2025
+ms.date: 08/31/2026
 ms.search.form: Read and Write Pandas
 ai-usage: ai-assisted
 ---
@@ -21,26 +21,35 @@ ai-usage: ai-assisted
 
 - Complete the steps in [Prepare your system for data science tutorials](tutorial-data-science-prepare-system.md) to create a new notebook and attach a Lakehouse to it. For this article, follow the steps to create a new notebook rather than importing an existing one.
 
+Use this workflow to choose the right pattern:
+
+- For single files in the Lakehouse, read or write them with Pandas using a path under `Files`.
+- For table-like data in a Lakehouse, use Spark and Delta tables, then convert to Pandas only when the result fits in your notebook memory.
+- If the data is large, keep it in Spark for filtering, aggregation, and transformation before converting it to a Pandas DataFrame.
+
 ## Load Lakehouse data into a notebook
 
 > [!NOTE]
 > You need some data in your Lakehouse to follow the steps in this section. If you don't have any data, follow the steps in [Download dataset and upload to lakehouse](tutorial-data-science-ingest-data.md#download-dataset-and-upload-to-lakehouse) to add the **churn.csv** file to your Lakehouse.
 
-Once you attach a Lakehouse to your [!INCLUDE [product-name](../includes/product-name.md)] notebook, you can explore stored data without leaving the page and read it into your notebook with just a few steps. Selecting any Lakehouse file displays options to "Load data" into a Spark or Pandas DataFrame. You can also copy the file's full ABFS path or a friendly relative path.
+Once you attach a Lakehouse to your [!INCLUDE [product-name](../includes/product-name.md)] notebook, you can explore stored data without leaving the page and copy the file path you need for notebook code. In the Lakehouse explorer, you can either use the generated notebook snippet to load a file into a Spark or Pandas DataFrame or copy the file's full ABFS path. For the default Lakehouse attached to the notebook, a typical Files path looks like `/lakehouse/default/Files/...`. For other Lakehouses, use the ABFS path from the Lakehouse explorer.
 
 :::image type="content" source="media/read-write-pandas/load-data-pandas-dataframe.png" alt-text="Screenshot that shows the options to load data into a Pandas DataFrame." lightbox="media/read-write-pandas/load-data-pandas-dataframe.png":::
 
-Selecting one of the "Load data" prompts generates a code cell that loads the file into a DataFrame in your notebook.
+Selecting a file in the Lakehouse explorer can generate code that loads the file into a DataFrame in your notebook.
 
 :::image type="content" source="media/read-write-pandas/code-cell-load-data-pandas-dataframe.png" alt-text="Screenshot that shows a code cell added to the notebook." lightbox="media/read-write-pandas/code-cell-load-data-pandas-dataframe.png":::
 
 ### Converting a Spark DataFrame into a Pandas DataFrame
 
+> [!IMPORTANT]
+> `toPandas()` loads the full Spark DataFrame into the notebook driver memory. Only use it for small to medium result sets. If your dataset is large, filter, aggregate, or sample it in Spark before converting to Pandas.
+
 For reference, this command shows how to convert a Spark DataFrame into a Pandas DataFrame:
 
 ```Python
 # Replace "spark_df" with the name of your own Spark DataFrame
-pandas_df = spark_df.toPandas() 
+pandas_df = spark_df.toPandas()
 ```
 
 ## Reading and writing various file formats
@@ -51,7 +60,7 @@ pandas_df = spark_df.toPandas()
 These code samples demonstrate Pandas operations to read and write various file formats. These samples aren't intended to be run sequentially as in a tutorial, but rather to be copied and pasted into your own notebook as needed.
 
 > [!NOTE]
-> You must replace the file paths in these code samples. Pandas supports both relative paths, as shown here, and full ABFS paths. You can retrieve and copy paths of either type from the interface using the previous steps.
+> You must replace the file paths in these code samples with the full path for the file in your Lakehouse. For the default Lakehouse attached to the notebook, use a path such as `/lakehouse/default/Files/...`. For other Lakehouses, use the ABFS path from the Lakehouse explorer.
 
 ### Read data from a CSV file
 
@@ -59,94 +68,90 @@ These code samples demonstrate Pandas operations to read and write various file 
 import pandas as pd
 
 # Read a CSV file from your Lakehouse into a Pandas DataFrame
-# Replace LAKEHOUSE_PATH and FILENAME with your own values
-df = pd.read_csv("/LAKEHOUSE_PATH/Files/FILENAME.csv")
+# For the default Lakehouse attached to the notebook, use the following path pattern:
+df = pd.read_csv("/lakehouse/default/Files/FILENAME.csv")
+
+# Verify that the file loaded successfully before continuing
+print(df.head())
+print(df.shape)
 display(df)
 ```
 
 ### Write data as a CSV file
 
 ```Python
-import pandas as pd 
+import pandas as pd
 
 # Write a Pandas DataFrame into a CSV file in your Lakehouse
-# Replace LAKEHOUSE_PATH and FILENAME with your own values
-df.to_csv("/LAKEHOUSE_PATH/Files/FILENAME.csv") 
+# Replace FILENAME with your own value
+df.to_csv("/lakehouse/default/Files/FILENAME.csv", index=False)
 ```
 
 ### Read data from a Parquet file
 
 ```Python
-import pandas as pd 
- 
+import pandas as pd
+
 # Read a Parquet file from your Lakehouse into a Pandas DataFrame
-# Replace LAKEHOUSE_PATH and FILENAME with your own values
-df = pd.read_parquet("/LAKEHOUSE_PATH/Files/FILENAME.parquet") 
+df = pd.read_parquet("/lakehouse/default/Files/FILENAME.parquet")
 display(df)
 ```
 
 ### Write data as a Parquet file
 
 ```Python
-import pandas as pd 
- 
+import pandas as pd
+
 # Write a Pandas DataFrame into a Parquet file in your Lakehouse
-# Replace LAKEHOUSE_PATH and FILENAME with your own values
-df.to_parquet("/LAKEHOUSE_PATH/Files/FILENAME.parquet") 
+df.to_parquet("/lakehouse/default/Files/FILENAME.parquet")
 ```
 
 ### Read data from an Excel file
 
 ```Python
-import pandas as pd 
- 
+import pandas as pd
+
 # Read an Excel file from your Lakehouse into a Pandas DataFrame
-# Replace LAKEHOUSE_PATH and FILENAME with your own values
-# If the file is in a subfolder, add the correct file path after Files/
-# For the default lakehouse attached to the notebook, use: df = pd.read_excel("/lakehouse/default/Files/FILENAME.xlsx") 
-df = pd.read_excel("/LAKEHOUSE_PATH/Files/FILENAME.xlsx") 
-display(df) 
+# If the file is in a subfolder, add the appropriate folder after Files/
+df = pd.read_excel("/lakehouse/default/Files/FILENAME.xlsx")
+display(df)
 ```
 
 ### Write data as an Excel file
 
 ```Python
-import pandas as pd 
+import pandas as pd
 
 # Write a Pandas DataFrame into an Excel file in your Lakehouse
-# Replace LAKEHOUSE_PATH and FILENAME with your own values
-df.to_excel("/LAKEHOUSE_PATH/Files/FILENAME.xlsx") 
+df.to_excel("/lakehouse/default/Files/FILENAME.xlsx", index=False)
 ```
 
 ### Read data from a JSON file
 
 ```Python
-import pandas as pd 
- 
+import pandas as pd
+
 # Read a JSON file from your Lakehouse into a Pandas DataFrame
-# Replace LAKEHOUSE_PATH and FILENAME with your own values
-df = pd.read_json("/LAKEHOUSE_PATH/Files/FILENAME.json") 
-display(df) 
+df = pd.read_json("/lakehouse/default/Files/FILENAME.json")
+display(df)
 ```
 
 ### Write data as a JSON file
 
 ```Python
-import pandas as pd 
- 
+import pandas as pd
+
 # Write a Pandas DataFrame into a JSON file in your Lakehouse
-# Replace LAKEHOUSE_PATH and FILENAME with your own values
-df.to_json("/LAKEHOUSE_PATH/Files/FILENAME.json") 
+df.to_json("/lakehouse/default/Files/FILENAME.json")
 ```
 
 ## Working with Delta tables
 
-Delta tables are the default table format in Microsoft Fabric and are stored in the **Tables** section of your Lakehouse. Unlike files, Delta tables require a two-step process to work with pandas: first read the table into a Spark DataFrame, then convert it to a pandas DataFrame.
-
+Delta tables are the default table format in Microsoft Fabric and are stored in the **Tables** section of your Lakehouse. Files and tables are different storage locations in Fabric, and they use different access patterns. To work with Delta tables in Pandas, first read the table into a Spark DataFrame, then convert the filtered result to a pandas DataFrame only when it fits in driver memory.
 
 ### Create a test Delta table
 
- To follow the steps in this section, you need a Delta table in your Lakehouse. Follow the steps in [Download dataset and upload to lakehouse](tutorial-data-science-ingest-data.md#download-dataset-and-upload-to-lakehouse) to add the **churn.csv** file to your Lakehouse, then create a test table from the **churn.csv** file by running this code in your notebook:
+To follow the steps in this section, you need a Delta table in your Lakehouse. Follow the steps in [Download dataset and upload to lakehouse](tutorial-data-science-ingest-data.md#download-dataset-and-upload-to-lakehouse) to add the **churn.csv** file to your Lakehouse, then create a test table from the **churn.csv** file by running this code in your notebook:
 
 ```python
 import pandas as pd
@@ -157,14 +162,14 @@ spark_df = spark.createDataFrame(df)
 spark_df.write.format("delta").mode("overwrite").saveAsTable("churn_table")
 ```
 
- This creates a Delta table named **churn_table** that you can use for testing the examples below.
+This step creates a Delta table named **churn_table** that you can use for testing the following examples.
 
 ### Read data from a Delta table
 
 ```Python
 # Read a Delta table from your Lakehouse into a pandas DataFrame
 # This example uses the churn_table created above
-spark_df = spark.read.format("delta").load("Tables/churn_table")
+spark_df = spark.read.table("churn_table")
 pandas_df = spark_df.toPandas()
 display(pandas_df)
 ```
