@@ -1120,6 +1120,8 @@ items:
                 href: map/share-map-direct.md
               - name: Share maps with org apps
                 href: map/share-map-org-apps.md
+              - name: Save a map to a Real-Time Dashboard
+                href: map/save-map-to-real-time-dashboard.md
           - name: Manage Map permissions
             href: map/manage-map-permissions.md
           - name: Create and Configure a Fabric Map with REST APIs
