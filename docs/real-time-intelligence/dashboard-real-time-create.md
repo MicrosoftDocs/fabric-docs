@@ -3,7 +3,7 @@ title: Create a Real-Time Dashboard
 description: Learn how to create and customize Real-Time Dashboards to visualize data effectively using KQL queries and Copilot for seamless insights.
 ms.reviewer: mibar
 ms.topic: how-to
-ms.date: 08/19/2026
+ms.date: 09/28/2026
 author: spelluru
 ms.author: spelluru
 ms.subservice: rti-dashboard
@@ -251,13 +251,13 @@ You can add tiles to your dashboard directly from queries written in a KQL query
 
 [!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
 
-Embed an existing [Fabric Maps](map/about-fabric-maps.md) item as a tile in your dashboard. Unlike the built-in [Map visual](dashboard-visuals-customize.md), which renders directly from a KQL query defined in the tile, a Fabric Maps tile embeds a pre-authored, multi-layer map item as-is. This approach lets you reuse the same map across dashboards without redefining its data sources, queries, or styling.
+Embed an existing [Fabric Maps](map/about-fabric-maps.md) item as a tile in your dashboard. Unlike the built-in [map visual](dashboard-visuals-customize.md), which renders directly from a KQL query defined in the tile, a Fabric Maps tile embeds a pre-authored, multi-layer map item as-is. This approach lets you reuse the same map across dashboards without redefining its data sources, queries, or styling.
 
-The embedded map is a self-contained visual: its data sources, queries, layers, and styling stay authored and maintained in the original map item, and any changes you make there appear automatically in the tile. In the dashboard, although you can't edit the map's settings, you can adjust the tile's layout position and size.
+The embedded map is a self-contained visual: its data sources, queries, layers, and styling stay authored and maintained in the original map item. Reload the dashboard page to display saved map configuration changes. In the dashboard, you can't edit the map's queries, data sources, layers, filters, or styling.
 
-The map tile renders in map view mode, so viewers can pan, zoom, hover, select features, switch the basemap style, toggle layer visibility, and modify unlocked filters at runtime. Locked filters, set by the map's author, are always applied and can't be removed. Any changes a viewer makes are temporary and reset the next time the map is opened.
+The Fabric Maps tile renders in view-only mode. Viewers can pan, zoom, hover, and view basic tooltips. Real-Time Dashboard parameters don't filter or otherwise modify the Fabric Maps tile.
 
-1. In your dashboard, switch to [**Editing mode**](#edit-mode). Your dashboard must already have a [data source](#add-data-source) configured before you can add a tile.
+1. In your dashboard, switch to [**Editing mode**](#edit-mode).
 
 1. Select **New visual** from the top menu bar, and then select **Fabric Maps**.
 
@@ -268,12 +268,17 @@ The map tile renders in map view mode, so viewers can pan, zoom, hover, select f
    * Select an existing map to embed it as-is, in its published state.
    * Select **Create a new map** to open the map creation flow in a new browser tab. After you save the new map, return to your dashboard and select the new map from the catalog.
 
-1. Adjust the tile's layout position and size as needed.
+1. Adjust the tile's layout position and size as needed. The tile supports the standard dashboard resize and maximize capabilities.
 
 1. In the dashboard toolbar, select the **Save** icon to save the dashboard with the new tile.
 
 > [!NOTE]
-> If the referenced map item is deleted, or if the dashboard is duplicated to a workspace where the map item doesn't exist, the tile shows an error state.
+> Dashboard viewers must have access to the dashboard, the source map item, and all underlying data sources required by the map. The viewer's identity and permissions are used for authorization. If the map is deleted or inaccessible, the tile shows an error state. The tile continues to track a map that is renamed or moved because the dashboard references it by item ID.
+
+You can also save an open Fabric map directly to a new or existing Real-Time Dashboard. For more information, see [Save a Fabric map to a Real-Time Dashboard](map/save-map-to-real-time-dashboard.md).
+
+<!-- Confirm which standard RTD tile actions beyond resize and maximize are supported, including rename, duplicate, Share visual, and export. -->
+<!-- Follow up: document dashboard copy, export/import, deployment pipeline, and Git behavior when the referenced map isn't available in the destination. -->
 
 ## Add page
 
