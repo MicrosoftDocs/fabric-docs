@@ -91,6 +91,8 @@ items:
     items:
     - name: Introduction and environment setup
       href: plan/planning-tutorial/planning/tutorial-0-introduction.md
+    - name: Build Top-Down and Bottom-Up revenue plans
+      href: plan/planning-tutorial/planning/tutorial-1-allocation-collaboration.md
   - name: Get started
     items:
     - name: Prerequisites
@@ -379,6 +381,8 @@ items:
               href: plan/planning-reference-formulas/identifiers.md
             - name: Lookup functions
               href: plan/planning-reference-formulas/lookup-functions.md
+            - name: Other operators
+              href: plan/planning-reference-formulas/planning-reference-other-operators.md
   - name: PowerTable sheets
     items:
     - name: Concepts
