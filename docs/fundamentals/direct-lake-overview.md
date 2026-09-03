@@ -67,8 +67,7 @@ Storage mode is a property of a table in the semantic model. When a semantic mod
 
 ## Comparison of storage modes
 
-Use the following comparisons to understand the data sources and capabilities supported by each
-storage mode.
+Use the following comparisons to understand the data sources and capabilities supported by each storage mode.
 
 ### Supported Fabric data sources
 
