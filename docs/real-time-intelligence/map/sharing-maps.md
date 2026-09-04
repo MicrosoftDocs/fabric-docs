@@ -3,13 +3,13 @@ title: Sharing Microsoft Fabric Maps
 description: Learn about sharing maps in Microsoft Fabric.
 ms.reviewer: smunk, limingchen
 ms.topic: concept-article
-ms.date: 09/28/2026
+ms.date: 12/05/2025
 ms.search.form: Share map 
 ---
 
 # Sharing Microsoft Fabric Maps
 
-You can share Microsoft Fabric Maps directly with individuals or groups, package them into Fabric org apps for broader governed distribution, or add them to a Real-Time Dashboard to provide spatial context alongside real-time metrics. This article helps you select the method that best fits your audience, collaboration needs, and reuse scenario.
+Microsoft Fabric Maps can be shared either directly with individuals or groups, or by packaging them into Fabric org apps for broader, governed distribution. Direct sharing provides flexible access and editing capabilities, while org apps offer a curated, read-only experience with streamlined permission management. This article provides the information you need to select the sharing method that best fits your audience, collaboration needs, and governance requirements.
 
 ## Direct sharing
 
@@ -59,7 +59,7 @@ For information on how to share maps using *direct access*, see [Direct access](
 ## Org apps sharing
 
 - **How it works**:
-    An org app can include maps as part of a packaged set of resources (maps, reports, notebooks, real-time dashboards, and other items) published to your organization. Users across the organization can discover and access org apps through the Apps experience in Fabric.
+    Maps are shared as part of an org app, which is a packaged set of resources (maps, reports, notebooks, real-time dashboards etc.) published to your organization. org apps are discoverable and accessible to users across the organization through the Apps experience in Fabric.
 - **Access control**:
     Org apps permissions govern access to the app and its included map items. However, data sources maintain their own permission settings, so users must have the necessary access to those sources for the map to load completely.
 - **User experience**:
@@ -69,46 +69,32 @@ For information on how to share maps using *direct access*, see [Direct access](
 
 For more information on how to share maps using org apps, see [How to share a map using org apps](./share-map-org-apps.md).
 
-## Add a map to a real-time dashboard
+## Comparison: Direct sharing vs. org apps sharing
 
-Add a Fabric map to a new or existing real-time dashboard when you want to display the authored map alongside real-time metrics. The resulting Fabric Maps tile references the source map item and renders its existing data sources, queries, layers, and styling. Reload the dashboard page to display saved map configuration changes.
-
-The Fabric Maps tile is view-only. Dashboard viewers can zoom, pan, hover, use basic tooltips, and interact with map-layer filters as they can in Fabric Maps view mode. They can add, modify, or remove unlocked filters, but they can't remove locked filters. Filter changes made in the dashboard are temporary and aren't saved to the source map item. Queries, data sources, layers, and styling remain authored in the source map and can't be edited from the dashboard. Real-Time Dashboard parameters don't filter or otherwise modify the Fabric Maps tile.
-
-After saving the map, use the destination Real-Time Dashboard to choose the tile's page, rename it, and adjust its size. Saving a map that is already present in the dashboard creates another Fabric Maps tile.
-
-Adding a map to a dashboard doesn't grant access to the dashboard, map item, or the map's underlying data sources. A viewer must have access to all three, and the viewer's identity and permissions are used for authorization.
-
-For instructions, see [Save a Fabric map to a real-time dashboard](save-map-to-real-time-dashboard.md).
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
-## Compare map sharing and reuse methods
-
-| Feature | Direct sharing | Org apps sharing | Real-Time Dashboard |
-| --- | --- | --- | --- |
-| **Best for** | Giving individuals or small groups direct access to a map | Distributing a curated collection of Fabric content to a broad audience | Combining a reusable map with real-time metrics |
-| **Permissions** | Grants map access; users still need access to underlying data | App and item permissions apply; users still need access to underlying data | Doesn't grant access; viewers need dashboard, map, and underlying data-source access |
-| **Experience** | Editable when permitted | Read-only and curated | View-only map tile in a dashboard |
-| **Source updates** | Users open the current map item | App users see updates after the app content is updated | Reload the dashboard page to display saved map configuration changes |
-| **Governance** | Access managed per user, group, or link | Audience managed through the org app | Dashboard access and map access are managed separately |
+| Feature        | Direct sharing                                      | Org apps sharing                                   |
+|----------------|-----------------------------------------------------|----------------------------------------------------|
+| **Audience**   | Individuals or small groups                         | Broad teams, org-wide, stakeholders                |
+| **Permissions**| Permissions apply to the app and maps, but users still need data-source access. | Permissions apply to the app and maps, but users still need data-source access. |
+| **Experience** | Editable (if allowed)                               | Read-only, curated, noneditable                   |
+| **Resharing**  | Manual                                              | Controlled by app owner                            |
+| **Governance** | Limited                                             | Centralized, scalable, secure                      |
+| **Revocation** | Manual                                              | Automatic on app deletion/access removal           |
 
 ### Key points
 
 - **Direct sharing** is best for targeted collaboration, allowing recipients to view or edit the map as permitted. Permissions for the map and related resources must be managed manually.
 - **Org apps sharing** is ideal for distributing maps to larger audiences in a secure, read-only format. Org apps simplify permission management, support centralized governance, and automatically revoke access when the app is deleted or access is removed.
-- **Real-Time Dashboard** is best for reusing an authored map alongside operational metrics. Saving a map to a dashboard doesn't share either item or change their permissions.
 
 > [!TIP]
 > Use direct sharing for flexible, small-team collaboration. Choose org apps for scalable, secure distribution and a consistent, noneditable user experience.
 
 ## Next steps
 
-> [!div class="nextstepaction"]
-> [Save a Fabric map to a Real-Time Dashboard](save-map-to-real-time-dashboard.md)
+To learn more, please see:
 
 > [!div class="nextstepaction"]
 > [Share a map through direct access](share-map-direct.md)
 
 > [!div class="nextstepaction"]
-> [Share a map using org apps](share-map-org-apps.md).
+> [How to share a map using org apps](share-map-org-apps.md)
+
