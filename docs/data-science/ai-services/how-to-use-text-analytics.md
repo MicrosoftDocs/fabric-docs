@@ -1,10 +1,10 @@
 ---
 title: Use prebuilt Text Analytics with REST API
 description: How to use prebuilt text analytics in Fabric with REST API
-ms.author: lagayhar
+ms.author: singhrana
 ms.reviewer: scottpolly
 ms.topic: how-to
-ms.date: 08/31/2026
+ms.date: 09/02/2026
 ai-usage: ai-assisted
 ms.update-cycle: 180-days
 ms.search.form: 
@@ -79,7 +79,7 @@ auth_header = TokenUtils().get_openai_auth_header()
 prebuilt_AI_base_host = fabric_env_config.ml_workload_endpoint + "cognitive/textanalytics/"
 print("Workload endpoint for Foundry tool: \n" + prebuilt_AI_base_host)
 
-service_url = prebuilt_AI_base_host + "language/:analyze-text?api-version=2022-05-01"
+service_url = prebuilt_AI_base_host + "language/:analyze-text?api-version=2024-11-01"
 print("Service URL: \n" + service_url)
 
 auth_headers = {
@@ -291,6 +291,7 @@ df = spark.createDataFrame([
 ], ["text"])
 
 model = (AnalyzeText()
+        .setApiVersion("2024-11-01")
         .setTextCol("text")
         .setKind("SentimentAnalysis")
         .setOutputCol("response"))
@@ -372,6 +373,7 @@ df = spark.createDataFrame([
 ], ["text"])
 
 model = (AnalyzeText()
+        .setApiVersion("2024-11-01")
         .setTextCol("text")
         .setKind("LanguageDetection")
         .setOutputCol("response"))
@@ -381,6 +383,95 @@ result = model.transform(df)\
         .withColumn("detectedLanguage", col("documents.detectedLanguage.name"))
 
 display(result.select("text", "detectedLanguage"))
+```
+
+---
+
+## PII detection
+
+# [REST API](#tab/rest)
+
+PII detection identifies, categorizes, and redacts sensitive information in text. This example uses API and model version `2026-05-01`, the latest generally available versions for text PII detection.
+
+``` python
+pii_service_url = prebuilt_AI_base_host + "language/:analyze-text?api-version=2026-05-01"
+
+payload = {
+    "kind": "PiiEntityRecognition",
+    "parameters": {
+        "modelVersion": "2026-05-01"
+    },
+    "analysisInput": {
+        "documents": [
+            {
+                "id": "1",
+                "language": "en",
+                "text": "Contact Ada at ada@example.com or 425-555-0100."
+            }
+        ]
+    }
+}
+
+response = requests.post(pii_service_url, json=payload, headers=auth_headers)
+
+# Output all information of the request process
+print_response(response)
+```
+
+### Output
+
+```json
+{
+  "kind": "PiiEntityRecognitionResults",
+  "results": {
+    "documents": [
+      {
+        "redactedText": "Contact *** at *************** or ************.",
+        "id": "1",
+        "entities": [
+          {
+            "text": "Ada",
+            "category": "Person",
+            "confidenceScore": 0.95
+          },
+          {
+            "text": "ada@example.com",
+            "category": "Email",
+            "confidenceScore": 0.8
+          },
+          {
+            "text": "425-555-0100",
+            "category": "PhoneNumber",
+            "confidenceScore": 1.0
+          }
+        ],
+        "warnings": []
+      }
+    ],
+    "errors": [],
+    "modelVersion": "2026-05-01"
+  }
+}
+```
+
+# [SynapseML](#tab/synapseml)
+
+``` Python
+df = spark.createDataFrame([
+    ("Contact Ada at ada@example.com or 425-555-0100.",)
+], ["text"])
+
+model = (AnalyzeText()
+        .setApiVersion("2026-05-01")
+        .setTextCol("text")
+        .setKind("PiiEntityRecognition")
+        .setOutputCol("response"))
+
+result = model.transform(df)\
+        .withColumn("documents", col("response.documents"))\
+        .withColumn("redactedText", col("documents.redactedText"))
+
+display(result.select("text", "redactedText"))
 ```
 
 ---
@@ -450,6 +541,7 @@ df = spark.createDataFrame([
 ], ["language", "text"])
 
 model = (AnalyzeText()
+        .setApiVersion("2024-11-01")
         .setTextCol("text")
         .setKind("KeyPhraseExtraction")
         .setOutputCol("response"))
@@ -551,6 +643,7 @@ df = spark.createDataFrame([
 ], ["language", "text"])
 
 model = (AnalyzeText()
+        .setApiVersion("2024-11-01")
         .setTextCol("text")
         .setKind("EntityRecognition")
         .setOutputCol("response"))
@@ -584,6 +677,7 @@ df = spark.createDataFrame([
 ], ["language", "text"])
 
 model = (AnalyzeText()
+        .setApiVersion("2024-11-01")
         .setTextCol("text")
         .setKind("EntityLinking")
         .setOutputCol("response"))
