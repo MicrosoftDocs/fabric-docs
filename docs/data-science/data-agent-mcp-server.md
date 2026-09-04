@@ -1,5 +1,5 @@
 ---
-title: Data agent as Model Context Protocol server (preview)
+title: Data agent as Model Context Protocol server
 description: Learn how to consume a Fabric data agent through its Model Context Protocol endpoint.
 ms.author: amjafari
 author: amhjf
@@ -8,12 +8,12 @@ reviewer: s-polly
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: how-to
-ms.date: 06/30/2026
+ms.date: 09/03/2026
 ms.collection: ce-skilling-ai-copilot
 #customer intent: As an Analyst, I want to consume a Fabric data agent as MCP server.
 ---
 
-# Data agent as Model Context Protocol server (preview)
+# Data agent as Model Context Protocol server
 
 The Model Context Protocol (MCP) is an emerging standard in the AI landscape that allows AI systems to connect with tools and data outside of themselves. It defines how an AI model can discover what's available and interact with it in a consistent way. Instead of building one-off integrations, MCP offers a standard way to plug things in that works across different apps and services. This approach makes it much easier for AI systems to go beyond their built-in knowledge while keeping things consistent. It also helps teams move faster, since they don't have to reinvent the same connections every time.
 
@@ -24,9 +24,6 @@ An MCP client is the app or experience the user interacts with. It's where you a
 An MCP server exposes tools, data, or services so clients can use them. It tells the client what's available and how to use it. For example, a Fabric data agent can act as an MCP server by exposing enterprise data and queries that an AI system can use.
 
 Together, the client and server make it easy to connect AI systems with real data and actions, without building custom integrations every time.
-
-> [!IMPORTANT]
-> This feature is in [preview](../fundamentals/preview.md).
 
 > [!IMPORTANT]
 > When you consume a Fabric data agent as an MCP server, responses returned by the data agent might be sent outside of Fabric's compliance boundary or geographic region, and processed or stored according to the terms and data handling policies of the MCP client that you use.
@@ -40,16 +37,16 @@ Together, the client and server make it easy to connect AI systems with real dat
 
 ## How it works
 
-A published Fabric data agent exposes a single MCP tool. That tool represents the data agent itself, so an MCP client sends a question to the tool and gets back an answer that's grounded in the data the data agent has access to in Fabric OneLake.
+Once you publish a Fabric data agent, it becomes an MCP server that exposes a single MCP tool. That tool represents the data agent itself, so an MCP client sends a question to the tool and gets back an answer that's grounded in the data the data agent has access to in Fabric OneLake.
 
-Because the client decides when to call the tool, the data agent description matters. When you publish a data agent, its description becomes the tool description that the MCP server advertises. Clients and orchestrators read that description to decide when and how to call the data agent, so write a clear and specific description that explains what the agent knows and the kinds of questions it can answer.
+Because the client decides when to call the tool, the data agent description matters. When you publish a data agent, its description becomes the tool description that the MCP server advertises. Clients and orchestrators read that description to decide when and how to call the data agent, so write a clear, detailed, and specific description that explains what the agent knows and the kinds of questions it can answer.
 
-You can consume the data agent MCP server from any MCP client, not just one tool or editor. As long as your client speaks MCP over streamable HTTP and can attach a valid Fabric bearer token to its requests, it can connect. The sections that follow show two clients: a Python script and Visual Studio Code. The same endpoint and the same token work for any other MCP client you build or adopt.
+You can consume the data agent MCP server from any MCP client, not just a specific tool or editor. As long as your client supports MCP over streamable HTTP and can authenticate with Fabric and attach a valid Fabric bearer token to its requests, it can connect to the server. The sections that follow show two clients: a Python script and Visual Studio Code. The same endpoint and authentication approach can be used with any other MCP client you build or adopt.
 
 Anything that talks to the MCP server has to speak MCP, so by definition it acts as an MCP client. The term "MCP client" doesn't mean a specific product or SDK. It means any code that follows the protocol. The endpoint isn't a plain REST API that you can send an arbitrary request to. A connection follows the MCP message flow: an `initialize` handshake, a `tools/list` call to discover the tool, and a `tools/call` request to ask a question. An SDK such as the [MCP Python SDK](https://pypi.org/project/mcp/) handles that flow for you, but you can also implement it yourself over plain HTTP as long as your requests follow the protocol. A generic HTTP client that skips the handshake and message format won't work.
 
 > [!NOTE]
-> The data agent MCP server doesn't support dynamic client registration. Your client can't register itself and obtain credentials automatically through the protocol. Instead, you acquire a Fabric token through your own authentication flow and attach it to each request, as shown in the examples in this article.
+> The data agent MCP server does not support dynamic client registration or client identity metadata. This means MCP clients that rely on these capabilities to automatically register and authenticate with an MCP server cannot connect. Instead, your client must use its own authentication flow to obtain a Fabric token and attach it to each request, as shown in the examples in this article.
 
 ## Get the MCP server details
 
@@ -82,6 +79,18 @@ A manually built URL works only after you publish the data agent. If the agent i
 Every request to the MCP endpoint must be authenticated against Fabric. Your client attaches a bearer token in the `Authorization` header, and the token must have permission to access the target workspace and data agent. The token can represent either a user identity or a service principal.
 
 How you obtain the token depends on your client. Visual Studio Code prompts you to sign in interactively. In a Python script, you acquire the token through a library such as [`azure-identity`](https://pypi.org/project/azure-identity/) and add it to the request headers yourself. Whatever the client, request the token for the `https://api.fabric.microsoft.com/.default` scope.
+
+## Long-running requests and MCP tasks
+
+Some questions take longer to answer than others. A question that scans a large table or runs several queries can take longer than a client or a network intermediary holds a connection open. For these cases, the data agent MCP server supports tasks.
+
+A task lets the server answer without holding the connection open. When the data agent starts work on a question, it returns an identifier for that work instead of the answer. Your client uses the identifier to ask for the result when it's ready. If the connection drops or the client restarts, the client keeps the identifier and picks up where it left off.
+
+Tasks follow the `io.modelcontextprotocol/tasks` extension in the MCP specification. Your client asks for the result with `tasks/get` and keeps asking until the task reports that the work finished. To stop work that's no longer needed, your client sends `tasks/cancel`. Cancellation isn't instant, so a task can report that it's still working for a short time after you cancel it, and work that was nearly done can still finish.
+
+Clients that support the tasks extension get a task. For every other client, nothing changes. The data agent answers on the same connection, as shown elsewhere in this article.
+
+For the message format and the full task lifecycle, see the [MCP tasks extension](https://modelcontextprotocol.io/extensions/tasks/overview).
 
 ## Connect from Python
 
@@ -200,7 +209,7 @@ After you add the server, enable agent mode so Visual Studio Code can route your
 
     [![Screenshot showing the data agent in Visual Studio Code in agent mode.](media/data-agent-mcp-server/data-agent-vs-code-agent-mode.png)](media/data-agent-mcp-server/data-agent-vs-code-agent-mode.png#lightbox)
 
-When agent mode is active, select an orchestrator to handle your questions. The orchestrator manages the flow between your questions in the editor and the data agent MCP server. Available orchestrators in preview include GPT-5, GPT-4.1, Claude Sonnet 4.5, Gemini 2.5 Pro, and others.
+When agent mode is active, select an orchestrator to handle your questions. The orchestrator manages the flow between your questions in the editor and the data agent MCP server. Available orchestrators include GPT-5, GPT-4.1, Claude Sonnet 4.5, Gemini 2.5 Pro, and others.
 
 ### Ask questions
 
