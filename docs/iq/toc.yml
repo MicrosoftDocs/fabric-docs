@@ -93,6 +93,8 @@ items:
       href: plan/planning-tutorial/planning/tutorial-0-introduction.md
     - name: Build Top-Down and Bottom-Up revenue plans
       href: plan/planning-tutorial/planning/tutorial-1-allocation-collaboration.md
+    - name: Optimize input values
+      href: plan/planning-tutorial/planning/tutorial-3-optimizer.md
   - name: Get started
     items:
     - name: Prerequisites
