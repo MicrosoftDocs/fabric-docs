@@ -387,6 +387,95 @@ display(result.select("text", "detectedLanguage"))
 
 ---
 
+## PII detection
+
+# [Rest API](#tab/rest)
+
+PII detection identifies, categorizes, and redacts sensitive information in text. This example uses API and model version `2026-05-01`, the latest generally available versions for text PII detection.
+
+``` python
+pii_service_url = prebuilt_AI_base_host + "language/:analyze-text?api-version=2026-05-01"
+
+payload = {
+    "kind": "PiiEntityRecognition",
+    "parameters": {
+        "modelVersion": "2026-05-01"
+    },
+    "analysisInput": {
+        "documents": [
+            {
+                "id": "1",
+                "language": "en",
+                "text": "Contact Ada at ada@example.com or 425-555-0100."
+            }
+        ]
+    }
+}
+
+response = requests.post(pii_service_url, json=payload, headers=auth_headers)
+
+# Output all information of the request process
+print_response(response)
+```
+
+### Output
+
+```json
+{
+  "kind": "PiiEntityRecognitionResults",
+  "results": {
+    "documents": [
+      {
+        "redactedText": "Contact *** at *************** or ************.",
+        "id": "1",
+        "entities": [
+          {
+            "text": "Ada",
+            "category": "Person",
+            "confidenceScore": 0.95
+          },
+          {
+            "text": "ada@example.com",
+            "category": "Email",
+            "confidenceScore": 0.8
+          },
+          {
+            "text": "425-555-0100",
+            "category": "PhoneNumber",
+            "confidenceScore": 1.0
+          }
+        ],
+        "warnings": []
+      }
+    ],
+    "errors": [],
+    "modelVersion": "2026-05-01"
+  }
+}
+```
+
+# [SynapseML](#tab/synapseml)
+
+``` Python
+df = spark.createDataFrame([
+    ("Contact Ada at ada@example.com or 425-555-0100.",)
+], ["text"])
+
+model = (AnalyzeText()
+        .setApiVersion("2026-05-01")
+        .setTextCol("text")
+        .setKind("PiiEntityRecognition")
+        .setOutputCol("response"))
+
+result = model.transform(df)\
+        .withColumn("documents", col("response.documents"))\
+        .withColumn("redactedText", col("documents.redactedText"))
+
+display(result.select("text", "redactedText"))
+```
+
+---
+
 ## Key Phrase Extractor
 
 # [Rest API](#tab/rest)

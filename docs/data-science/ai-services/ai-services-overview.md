@@ -56,7 +56,7 @@ Fabric provides two options to use Foundry Tools:
 - Named entity recognition: identifies known entities and general named entities in the input text
 - Entity linking: identifies and disambiguates the identity of entities found in text
 
-The REST examples use API version `2024-11-01`, the latest GA Text runtime API. Text PII detection can use model version `2026-05-01`, which is generally available. For currently published versions, see the [Azure AI Language REST API reference](/rest/api/language/).
+The REST examples use API version `2024-11-01` for most Language capabilities. Text PII detection uses API and model version `2026-05-01`, the latest generally available versions for that capability. For currently published versions, see the [Azure AI Language model lifecycle](/azure/ai-services/language-service/concepts/model-lifecycle).
 
 ### [Translator](https://azure.microsoft.com/products/ai-services/translator/)
 
