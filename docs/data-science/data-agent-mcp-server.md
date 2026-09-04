@@ -37,16 +37,16 @@ Together, the client and server make it easy to connect AI systems with real dat
 
 ## How it works
 
-Once you publish a Fabric data agent, it becomes an MCP server that exposes a single MCP tool. That tool represents the data agent itself, so an MCP client sends a question to the tool and gets back an answer that's grounded in the data the data agent has access to in Fabric OneLake.
+When you publish a Fabric data agent, it becomes an MCP server that exposes a single MCP tool. That tool represents the data agent itself, so an MCP client sends a question to the tool and gets back an answer that's grounded in the data the data agent has access to in Fabric OneLake.
 
 Because the client decides when to call the tool, the data agent description matters. When you publish a data agent, its description becomes the tool description that the MCP server advertises. Clients and orchestrators read that description to decide when and how to call the data agent, so write a clear, detailed, and specific description that explains what the agent knows and the kinds of questions it can answer.
 
-You can consume the data agent MCP server from any MCP client, not just a specific tool or editor. As long as your client supports MCP over streamable HTTP and can authenticate with Fabric and attach a valid Fabric bearer token to its requests, it can connect to the server. The sections that follow show two clients: a Python script and Visual Studio Code. The same endpoint and authentication approach can be used with any other MCP client you build or adopt.
+You can consume the data agent MCP server from any MCP client, not just a specific tool or editor. As long as your client supports MCP over streamable HTTP and can authenticate with Fabric and attach a valid Fabric bearer token to its requests, it can connect to the server. The sections that follow show two clients: a Python script and Visual Studio Code. You can use the same endpoint and authentication approach with any other MCP client you build or adopt.
 
 Anything that talks to the MCP server has to speak MCP, so by definition it acts as an MCP client. The term "MCP client" doesn't mean a specific product or SDK. It means any code that follows the protocol. The endpoint isn't a plain REST API that you can send an arbitrary request to. A connection follows the MCP message flow: an `initialize` handshake, a `tools/list` call to discover the tool, and a `tools/call` request to ask a question. An SDK such as the [MCP Python SDK](https://pypi.org/project/mcp/) handles that flow for you, but you can also implement it yourself over plain HTTP as long as your requests follow the protocol. A generic HTTP client that skips the handshake and message format won't work.
 
 > [!NOTE]
-> The data agent MCP server does not support dynamic client registration or client identity metadata. This means MCP clients that rely on these capabilities to automatically register and authenticate with an MCP server cannot connect. Instead, your client must use its own authentication flow to obtain a Fabric token and attach it to each request, as shown in the examples in this article.
+> The data agent MCP server doesn't support dynamic client registration or client identity metadata. This limitation means MCP clients that rely on these capabilities to automatically register and authenticate with an MCP server can't connect. Instead, your client must use its own authentication flow to obtain a Fabric token and attach it to each request, as shown in the examples in this article.
 
 ## Get the MCP server details
 
