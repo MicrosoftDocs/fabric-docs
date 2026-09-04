@@ -105,3 +105,25 @@ In this section, you add comments and a status column to the sales plan. These c
 
     :::image type="content" source="../../media/planning-tutorial/planning/tutorial-1-allocation-collaboration/set-process-status-progress.png" alt-text="Screenshot of setting the process status to In Progress for the Americas row. " lightbox="../../media/planning-tutorial/planning/tutorial-1-allocation-collaboration/set-process-status-progress.png":::
 
+## Set up an approval workflow
+
+In this section, you configure a two-level approval workflow and verify it by submitting a change for review.
+
+1. In the **Model** ribbon, select **Approval**.
+1. In the approval workflow configuration, select the edit icon next to Level 1. Rename to *Regional Manager.* Select the first-level approver.
+1. Select the edit icon next to Level 2. Rename to *Finance Director* and select the second-level approver. Select **Next**.
+
+    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-1-allocation-collaboration/approval-workflow-configuration-select-approvers.png" alt-text="Screenshot of assigning the first-level and second-level approver." lightbox="../../media/planning-tutorial/planning/tutorial-1-allocation-collaboration/approval-workflow-configuration-select-approvers.png":::
+
+1. In approval workflow settings, enable **Reset on Rejection** and **Teams Notifications**. Select **Submit**.
+
+    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-1-allocation-collaboration/approval-workflow-reject-teams-settings.png" alt-text="Screenshot of reset and teams notification options. " lightbox="../../media/planning-tutorial/planning/tutorial-1-allocation-collaboration/approval-workflow-reject-teams-settings.png":::
+
+1. The *Regional Manager* and *Finance Director* columns appear in the sheet.
+
+    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-1-allocation-collaboration/approval-columns-added-manager-director.png" alt-text="Screenshot of the manager and director approval status columns added to the planning sheet." lightbox="../../media/planning-tutorial/planning/tutorial-1-allocation-collaboration/approval-columns-added-manager-director.png":::
+
+1. Expand *Asia Pacific* and double-click the Beverages cell in the *2026 Sales Plan* grand total column, then append 10% by entering "+10%" in the formula bar. Press **Enter**.
+1. In the *Regional Manager* column for the *Asia Pacific* → *Beverages* row, select **Submitted** from the dropdown. The *Finance Director* column automatically updates to **Pending**, confirming the submission has been routed for approval.
+
+    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-1-allocation-collaboration/select-submitted-status.png" alt-text="Screenshot of setting the status to submitted for the manager column. The status for the director column automatically changes to pending." lightbox="../../media/planning-tutorial/planning/tutorial-1-allocation-collaboration/select-submitted-status.png":::
