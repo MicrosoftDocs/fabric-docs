@@ -95,6 +95,8 @@ items:
       href: plan/planning-tutorial/planning/tutorial-1-allocation-collaboration.md
     - name: Optimize input values
       href: plan/planning-tutorial/planning/tutorial-3-optimizer.md
+    - name: Get started with PowerTable
+      href: plan/planning-tutorial/powertable/tutorial-7-get-started-with-powertable.md
   - name: Get started
     items:
     - name: Prerequisites
