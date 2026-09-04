@@ -1,8 +1,8 @@
 ---
 title: Use Foundry Tools in Fabric
 description: Overview of using Foundry Tools in Fabric.
-ms.author: lagayhar
-author: lgayhardt
+ms.author: singhrana
+author: ranadeepsingh
 ms.reviewer: singhrana
 reviewer: ranadeepsingh
 ms.topic: overview
