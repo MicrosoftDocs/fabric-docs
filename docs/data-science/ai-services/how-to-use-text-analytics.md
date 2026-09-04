@@ -291,6 +291,7 @@ df = spark.createDataFrame([
 ], ["text"])
 
 model = (AnalyzeText()
+        .setApiVersion("2024-11-01")
         .setTextCol("text")
         .setKind("SentimentAnalysis")
         .setOutputCol("response"))
@@ -372,6 +373,7 @@ df = spark.createDataFrame([
 ], ["text"])
 
 model = (AnalyzeText()
+        .setApiVersion("2024-11-01")
         .setTextCol("text")
         .setKind("LanguageDetection")
         .setOutputCol("response"))
@@ -450,6 +452,7 @@ df = spark.createDataFrame([
 ], ["language", "text"])
 
 model = (AnalyzeText()
+        .setApiVersion("2024-11-01")
         .setTextCol("text")
         .setKind("KeyPhraseExtraction")
         .setOutputCol("response"))
@@ -551,6 +554,7 @@ df = spark.createDataFrame([
 ], ["language", "text"])
 
 model = (AnalyzeText()
+        .setApiVersion("2024-11-01")
         .setTextCol("text")
         .setKind("EntityRecognition")
         .setOutputCol("response"))
@@ -584,6 +588,7 @@ df = spark.createDataFrame([
 ], ["language", "text"])
 
 model = (AnalyzeText()
+        .setApiVersion("2024-11-01")
         .setTextCol("text")
         .setKind("EntityLinking")
         .setOutputCol("response"))
