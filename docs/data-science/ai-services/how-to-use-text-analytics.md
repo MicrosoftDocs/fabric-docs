@@ -389,7 +389,7 @@ display(result.select("text", "detectedLanguage"))
 
 ## PII detection
 
-# [Rest API](#tab/rest)
+# [REST API](#tab/rest)
 
 PII detection identifies, categorizes, and redacts sensitive information in text. This example uses API and model version `2026-05-01`, the latest generally available versions for text PII detection.
 
