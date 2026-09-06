@@ -56,7 +56,7 @@ Under **Advanced**, you can specify the following fields:
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
 > [!NOTE]
-> Complex data types (such as **Enum**) aren't supported.
+> Complex data types, such as **Enum**, aren't supported.
 
 
 ### Mapping
