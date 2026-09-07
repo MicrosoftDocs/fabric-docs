@@ -36,7 +36,7 @@ AI Functions are available in multiple Fabric experiences:
 - **Notebooks**: Use the pandas and PySpark APIs to enrich DataFrames in data science and data engineering workflows.
 - **Warehouse and SQL analytics endpoint**: Use [AI Functions in a warehouse or SQL analytics endpoint](../../data-warehouse/ai-functions.md) to call SQL-flavored functions such as `ai_summarize`, `ai_classify`, and `ai_generate_response` directly in T-SQL queries.
 - **Dataflow Gen2**: Use [Fabric AI Prompt in Dataflow Gen2](../../data-factory/dataflow-gen2-ai-functions.md) to add AI-generated columns in Power Query.
-- **T-SQL code** - Invoke AI functions using T-SQL scripts/notebooks, procedures, functions, or external applications that are executing T-SQL code in Fabric Data Warehouse, SQL Endpoints for Lakehouse or Mirrored Databases. This method allows analysts and developers to embed AI capabilities directly into SQL-based data pipelines and queries, making it accessible without switching to a notebook environment.
+- **T-SQL code** - Invoke AI functions by using T-SQL scripts or notebooks, procedures, functions, or external applications that are executing T-SQL code in Fabric Data Warehouse, SQL Endpoints for Lakehouse, or Mirrored Databases. This method allows analysts and developers to embed AI capabilities directly into SQL-based data pipelines and queries, making it accessible without switching to a notebook environment.
 
 ## Use multimodal AI Functions
 
@@ -116,7 +116,7 @@ AI Functions support pandas in Python and PySpark runtimes, and PySpark in the P
 
 # [T-SQL](#tab/tsql)
 
-Initialization isn't required.
+You don't need to initialize.
 
 ---
 
@@ -142,7 +142,7 @@ import synapse.ml.spark.aifunc as aifunc
 
 # [T-SQL](#tab/tsql)
 
-Initialization isn't required.
+You don't need to initialize.
 
 ---
 
