@@ -94,7 +94,9 @@ items:
     - name: Build Top-Down and Bottom-Up revenue plans
       href: plan/planning-tutorial/planning/tutorial-1-allocation-collaboration.md
     - name: Optimize input values
-      href: plan/planning-tutorial/planning/tutorial-3-optimizer.md
+      href: plan/planning-tutorial/planning/tutorial-2-optimizer.md
+    - name: Forecasting and writeback
+      href: plan/planning-tutorial/planning/tutorial-3-forecasting-writeback.md
     - name: Get started with PowerTable
       href: plan/planning-tutorial/powertable/tutorial-7-get-started-with-powertable.md
   - name: Get started
