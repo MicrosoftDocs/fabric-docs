@@ -32,7 +32,7 @@ In this section, you create a Gross Profit sheet that pulls in the sales plan fr
 
 1. Double-click the **Sum of 2026 Sales Plan** label in the **Values** field and rename it to 2026 Sales Plan.
 
-    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-3-optimizer/map-sales-plan-dimensions-data-wells.png" alt-text="Screenshot of mapping dimensions and measures from the semantic model and the intro planning sheet to the rows, columns, and values data wells." lightbox="../../media/planning-tutorial/planning/tutorial-3-optimizer/map-sales-plan-dimensions-data-wells.png":::
+    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-2-optimizer/map-sales-plan-dimensions-data-wells.png" alt-text="Screenshot of mapping dimensions and measures from the semantic model and the intro planning sheet to the rows, columns, and values data wells." lightbox="../../media/planning-tutorial/planning/tutorial-2-optimizer/map-sales-plan-dimensions-data-wells.png":::
 
 
 ## Create editable input columns
@@ -46,7 +46,7 @@ In this section, you create editable copies of the Sales Plan and COGS columns.
 1. In the **Planning** ribbon, select **Number** > **Copy from another series** > **2025 COGS**. Enter *COGS* as the title and select **Create**.
 1. In the **Planning** ribbon, select **Show Columns** and hide the original *2026 Sales Plan* and *2025 COGS* columns. The editable Sales Plan and COGS input columns remain visible.
 
-    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-3-optimizer/hide-cogs-sales-plan-original-measures.png" alt-text="Screenshot of creating data input measures from COGS and Sales Plan and using the Show Columns option to hide the original measures." lightbox="../../media/planning-tutorial/planning/tutorial-3-optimizer/hide-cogs-sales-plan-original-measures.png":::
+    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-2-optimizer/hide-cogs-sales-plan-original-measures.png" alt-text="Screenshot of creating data input measures from COGS and Sales Plan and using the Show Columns option to hide the original measures." lightbox="../../media/planning-tutorial/planning/tutorial-2-optimizer/hide-cogs-sales-plan-original-measures.png":::
 
 
 ## Calculate gross profit
@@ -64,7 +64,7 @@ In this section, you add a formula column that calculates Gross Profit from the 
 
 1. *Gross Profit* appears in the grid, calculated from the two input columns. Collapse the row hierarchy to the category level. In the **Planning** ribbon, select **Totals** and enable **Column Grand Total** on the left.
 
-    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-3-optimizer/create-gross-profit-formula-enable-totals.png" alt-text="Screenshot of creating the gross profit calculated measure." lightbox="../../media/planning-tutorial/planning/tutorial-3-optimizer/create-gross-profit-formula-enable-totals.png":::
+    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-2-optimizer/create-gross-profit-formula-enable-totals.png" alt-text="Screenshot of creating the gross profit calculated measure." lightbox="../../media/planning-tutorial/planning/tutorial-2-optimizer/create-gross-profit-formula-enable-totals.png":::
 
 ## Run and apply the optimizer
 
@@ -79,16 +79,16 @@ In this section, you run the optimizer to find the combination of *Sales Plan* a
     | Target value        | 12.5m            |
     | Variables to update | Sales Plan, COGS |
 
-    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-3-optimizer/optimizer-set-objective-select-variables.png" alt-text="Screenshot of setting the objective to target and selecting the COGS and Sales Plan measures as optimizer variables." lightbox="../../media/planning-tutorial/planning/tutorial-3-optimizer/optimizer-set-objective-select-variables.png":::
+    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-2-optimizer/optimizer-set-objective-select-variables.png" alt-text="Screenshot of setting the objective to target and selecting the COGS and Sales Plan measures as optimizer variables." lightbox="../../media/planning-tutorial/planning/tutorial-2-optimizer/optimizer-set-objective-select-variables.png":::
 
 1. On the **Add Constraints** page, select **Run** without adding constraints.
 1. On the **Output** screen, confirm **Target Value** shows 12.5M and **Achieved** shows 12.5M with a green check mark. Under **Variables**, observe that the optimizer calculated the optimal combination of *Sales Plan* and *COGS* to reach the gross profit target.
 
-    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-3-optimizer/optimized-variables-target-value-achieved.png" alt-text="Screenshot of the output screen with the achieved target value and optimized data inputs." lightbox="../../media/planning-tutorial/planning/tutorial-3-optimizer/optimized-variables-target-value-achieved.png":::
+    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-2-optimizer/optimized-variables-target-value-achieved.png" alt-text="Screenshot of the output screen with the achieved target value and optimized data inputs." lightbox="../../media/planning-tutorial/planning/tutorial-2-optimizer/optimized-variables-target-value-achieved.png":::
 
 1. Select **Apply**. The optimized values are written to the sheet.
 
-    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-3-optimizer/planning-sheet-updated-optimized-values.png" alt-text="Screenshot of applying the optimized values to the planning sheet." lightbox="../../media/planning-tutorial/planning/tutorial-3-optimizer/planning-sheet-updated-optimized-values.png":::
+    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-2-optimizer/planning-sheet-updated-optimized-values.png" alt-text="Screenshot of applying the optimized values to the planning sheet." lightbox="../../media/planning-tutorial/planning/tutorial-2-optimizer/planning-sheet-updated-optimized-values.png":::
 
 1. In the **Planning** ribbon, select **Show Columns** and enable *2026 Sales Plan* and *2025 COGS*. The original and optimized columns appear side by side:
 
@@ -97,4 +97,4 @@ In this section, you run the optimizer to find the combination of *Sales Plan* a
 
    Together, these two adjustments deliver the $12.5M gross profit target.
 
-    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-3-optimizer/compare-original-baseline-optimized-values.png" alt-text="Screenshot of comparing the optimized values with the baseline values for Sales Plan and COGS." lightbox="../../media/planning-tutorial/planning/tutorial-3-optimizer/compare-original-baseline-optimized-values.png":::
+    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-2-optimizer/compare-original-baseline-optimized-values.png" alt-text="Screenshot of comparing the optimized values with the baseline values for Sales Plan and COGS." lightbox="../../media/planning-tutorial/planning/tutorial-2-optimizer/compare-original-baseline-optimized-values.png":::
