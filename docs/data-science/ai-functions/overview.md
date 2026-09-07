@@ -86,7 +86,8 @@ AI Functions support pandas in Python and PySpark runtimes, and PySpark in the P
 
 # [pandas](#tab/pandas)
 
-## [pandas (Fabric Runtime 2.0)](#tab-pandas-runtime-2-0)
+<a id="tab-pandas-runtime-2-0"></a>
+## pandas (Fabric Runtime 2.0)
 
 [Fabric Runtime 2.0](../../data-engineering/runtime-2-0.md), which is based on Python 3.13 and PySpark 4.1, doesn't natively include the `nest_asyncio` package. To use pandas AI Functions in this runtime, install `nest_asyncio` as a temporary compatibility patch. In future updates, this requirement will be removed because pandas AI Functions can use the newer `nest_asyncio2` package, which is preinstalled in Fabric Runtime 2.0.
 
@@ -98,14 +99,16 @@ AI Functions support pandas in Python and PySpark runtimes, and PySpark in the P
 %pip install -q openai 2>/dev/null
 ```
 
-## [pandas (other PySpark runtimes)](#tab-pandas-pyspark)
+<a id="tab-pandas-pyspark"></a>
+## pandas (other PySpark runtimes)
 
 ```python
 # Optional: install openai version 1.99.5 or later for SDK-native client behavior.
 %pip install -q openai 2>/dev/null
 ```
 
-## [pandas (Python runtime)](#tab-pandas-python)
+<a id="tab-pandas-python"></a>
+## pandas (Python runtime)
 
 ```python
 # Install latest versions of AI Functions library whl
