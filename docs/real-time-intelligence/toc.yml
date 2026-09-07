@@ -811,6 +811,8 @@ items:
           href: dashboard-visuals-customize.md
         - name: Real-Time Dashboard-specific visuals
           href: dashboard-visuals.md
+        - name: Visuals requiring cloud connection
+          href: dashboard-cloud-connection-visuals.md
         - name: Time series visual
           href: dashboard-time-series.md
         - name: Troubleshoot visual errors
