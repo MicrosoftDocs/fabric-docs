@@ -36,6 +36,7 @@ AI Functions are available in multiple Fabric experiences:
 - **Notebooks**: Use the pandas and PySpark APIs to enrich DataFrames in data science and data engineering workflows.
 - **Warehouse and SQL analytics endpoint**: Use [AI Functions in a warehouse or SQL analytics endpoint](../../data-warehouse/ai-functions.md) to call SQL-flavored functions such as `ai_summarize`, `ai_classify`, and `ai_generate_response` directly in T-SQL queries.
 - **Dataflow Gen2**: Use [Fabric AI Prompt in Dataflow Gen2](../../data-factory/dataflow-gen2-ai-functions.md) to add AI-generated columns in Power Query.
+- **T-SQL code** - Invoke AI functions using T-SQL scripts/notebooks, procedures, functions, or external applications that are executing T-SQL code in Fabric Data Warehouse, SQL Endpoints for Lakehouse or Mirrored Databases. This method allows analysts and developers to embed AI capabilities directly into SQL-based data pipelines and queries, making it accessible without switching to a notebook environment.
 
 ## Use multimodal AI Functions
 
@@ -76,6 +77,7 @@ AI Functions support pandas in Python and PySpark runtimes, and PySpark in the P
 | pandas ([Fabric Runtime 2.0](../../data-engineering/runtime-2-0.md) with PySpark 4.1 and Python 3.13) | Temporarily install `nest_asyncio`. Install `openai` version 1.99.5 or later only if you need SDK-native client behavior or Pydantic response-format examples. |
 | pandas (other PySpark runtimes) | No installation is required for most usage. Install `openai` version 1.99.5 or later only if you need SDK-native client behavior or Pydantic response-format examples. |
 | PySpark (PySpark runtime) | No installation is required. |
+| T-SQL (Data Warehouse and SQL Analytics endpoint runtime) | No installation is required. |
 
 > [!NOTE]
 > - Installing `nest_asyncio` is a temporary compatibility patch for pandas AI Functions in Fabric Runtime 2.0. This requirement will be removed in a future update.
@@ -112,6 +114,10 @@ AI Functions support pandas in Python and PySpark runtimes, and PySpark in the P
 %pip install -q openai synapseml_internal-latest-py3-none-any.whl synapseml_core-latest-py3-none-any.whl
 ```
 
+# [T-SQL](#tab/tsql)
+
+Initialization isn't required.
+
 ---
 
 ### Import required libraries
@@ -133,6 +139,10 @@ import synapse.ml.spark.aifunc as aifunc
 
 # SparkSession with accessor `spark` in PySpark environments is pre-setup and available for use
 ```
+
+# [T-SQL](#tab/tsql)
+
+Initialization isn't required.
 
 ---
 
@@ -194,6 +204,26 @@ sentiment = df.ai.analyze_sentiment(input_col="reviews", output_col="sentiment")
 display(sentiment)
 ```
 
+# [T-SQL](#tab/tsql)
+
+```sql
+-- This code uses AI. Always review output for mistakes. 
+
+WITH df AS (
+    SELECT *
+    FROM ( VALUES
+        ('The cleaning spray permanently stained my beautiful kitchen counter. Never again!'),
+        ('I used this sunscreen on my vacation to Florida, and I didn''t get burned at all. Would recommend.'),
+        ('I''m torn about this speaker system. The sound was high quality, though it didn''t connect to my roommate''s phone.'),
+        ('The umbrella is OK, I guess.')
+    ) AS df(reviews)
+)
+SELECT 
+    reviews,
+    ai_analyze_sentiment(reviews) AS sentiment
+FROM df;
+```
+
 ---
 
 :::image type="content" source="../media/ai-functions/analyze-sentiment-example-output.png" alt-text="Screenshot of a data frame with 'reviews' and 'sentiment' columns. The 'sentiment' column includes 'negative', 'positive', 'mixed', and 'neutral'." lightbox="../media/ai-functions/analyze-sentiment-example-output.png":::
@@ -234,6 +264,25 @@ categories = df.ai.classify(labels=["kitchen", "bedroom", "garage", "other"], in
 display(categories)
 ```
 
+# [T-SQL](#tab/tsql)
+
+```sql
+-- This code uses AI. Always review output for mistakes. 
+
+WITH df AS (
+    SELECT *
+    FROM ( VALUES
+        ('This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night''s sleep.'),
+        ('Tired of friends judging your baking? With these handy-dandy measuring cups, you''ll create culinary delights.'),
+        ('Enjoy this *BRAND NEW CAR!* A compact SUV perfect for the professional commuter!')
+    ) AS df(descriptions)
+)
+SELECT 
+    descriptions,
+    ai_classify(descriptions, 'kitchen', 'bedroom', 'garage', 'other') AS categories
+FROM df
+```
+
 ---
 
 :::image type="content" source="../media/ai-functions/classify-example-output.png" alt-text="Screenshot of a data frame with 'descriptions' and 'category' columns. The 'category' column lists each description’s category name." lightbox="../media/ai-functions/classify-example-output.png":::
@@ -272,6 +321,10 @@ df = spark.createDataFrame([
 embed = df.ai.embed(input_col="descriptions", output_col="embed")
 display(embed)
 ```
+
+# [T-SQL](#tab/tsql)
+
+`AI_EMBED()` isn't available in T-SQL.
 
 ---
 
@@ -315,6 +368,24 @@ df_entities = df.ai.extract(labels=["name", "profession", "city"], input_col="de
 display(df_entities)
 ```
 
+# [T-SQL](#tab/tsql)
+
+```sql
+-- This code uses AI. Always review output for mistakes. 
+
+WITH df AS (
+    SELECT *
+    FROM ( VALUES
+        ('MJ Lee lives in Tuscon, AZ, and works as a software engineer for Microsoft.'),
+        ('Kris Turner, a nurse at NYU Langone, is a resident of Jersey City, New Jersey.')
+    ) AS df(descriptions)
+)
+SELECT 
+    descriptions,
+    ai_extract(descriptions, 'name', 'profession', 'city') AS properties
+FROM df;
+```
+
 ---
 
 :::image type="content" source="../media/ai-functions/extract-example-output.png" alt-text="Screenshot showing a new data frame with the columns 'name', 'profession',  and 'city', containing the data extracted from the original data frame." lightbox="../media/ai-functions/extract-example-output.png":::
@@ -353,6 +424,25 @@ df = spark.createDataFrame([
 
 corrections = df.ai.fix_grammar(input_col="text", output_col="corrections")
 display(corrections)
+```
+
+# [T-SQL](#tab/tsql)
+
+```sql
+-- This code uses AI. Always review output for mistakes.
+
+WITH df AS (
+    SELECT *
+    FROM ( VALUES
+        ('There are an error here.'),
+        ('She and me go weigh back. We used to hang out every weeks.'),
+        ('The big picture are right, but you''re details is all wrong.')
+    ) AS df(text)
+)
+SELECT 
+    text,
+    ai_fix_grammar(text) AS corrections
+FROM df;
 ```
 
 ---
@@ -399,6 +489,23 @@ responses = df.ai.generate_response(prompt="Write a short, punchy email subject 
 display(responses)
 ```
 
+# [T-SQL](#tab/tsql)
+
+```sql
+WITH df AS (
+    SELECT *
+    FROM (VALUES
+        ('Scarves'),
+        ('Snow pants'),
+        ('Ski goggles')
+    ) AS df(product)
+)
+SELECT 
+    product,
+    ai_generate_response('Write a short, punchy email subject line for a winter sale for product ', product) as response
+FROM df;
+```
+
 ---
 
 :::image type="content" source="../media/ai-functions/generate-response-simple-example-output.png" alt-text="Screenshot showing a data frame with columns 'product' and 'response'. The 'response' column contains a punchy subject line for the product." lightbox="../media/ai-functions/generate-response-simple-example-output.png":::
@@ -438,6 +545,10 @@ df = spark.createDataFrame([
 similarity = df.ai.similarity(input_col="names", other_col="industries", output_col="similarity")
 display(similarity)
 ```
+
+# [T-SQL](#tab/tsql)
+
+`AI_SIMILARITY()` isn't available in T-SQL.
 
 ---
 
@@ -501,6 +612,28 @@ summaries = df.ai.summarize(input_col="description", output_col="summary")
 display(summaries)
 ```
 
+# [T-SQL](#tab/tsql)
+
+```sql
+-- This code uses AI. Always review output for mistakes. 
+
+WITH df AS (
+    SELECT *
+    FROM ( VALUES
+        ('Microsoft Teams', '2017', 
+        'The ultimate messaging app for your organization—a workspace for real-time collaboration and communication, meetings, file and app sharing, and even the occasional emoji! All in one place, all in the open, all accessible to everyone.'),        
+        ('Microsoft Fabric', '2023', 
+        'An enterprise-ready, end-to-end analytics platform that unifies data movement, data processing, ingestion, transformation, and report building into a seamless, user-friendly SaaS experience. Transform raw data into actionable insights.')
+    ) AS df(product, release_year, description)
+)
+SELECT 
+    product,
+    release_year,
+    description,
+    ai_summarize(description) AS summary
+FROM df;
+```
+
 ---
 
 :::image type="content" source="../media/ai-functions/summarize-single-example-output.png" alt-text="Screenshot showing a data frame. The 'summaries' column has a summary of the 'description' column only, in the corresponding row." lightbox="../media/ai-functions/summarize-single-example-output.png":::
@@ -539,6 +672,26 @@ df = spark.createDataFrame([
 
 translations = df.ai.translate(to_lang="spanish", input_col="text", output_col="translations")
 display(translations)
+```
+
+# [T-SQL](#tab/tsql)
+
+```sql
+-- This code uses AI. Always review output for mistakes. 
+-- Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
+
+WITH df AS (
+    SELECT *
+    FROM ( VALUES
+       ('Hello! How are you doing today?'),
+        ('Tell me what you''d like to know, and I''ll do my best to help.'),
+        ('The only thing we have to fear is fear itself.')
+    ) AS df([text])
+)
+SELECT 
+    [text],
+    ai_translate([text], 'es') AS translations
+FROM df;
 ```
 
 ---
