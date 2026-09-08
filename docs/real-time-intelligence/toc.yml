@@ -795,6 +795,8 @@ items:
         href: real-time-dashboards-overview.md
       - name: Supported visuals
         href: dashboard-supported-visuals.md
+      - name: Supported data sources
+        href: dashboard-supported-data-sources.md
       - name: Real-Time Dashboard permissions
         href: dashboard-permissions.md
       - name: Dashboard data source access
