@@ -30,6 +30,8 @@ items:
       href: git-integration/manage-branches.md
     - name: Development process using Branched workspace
       href: git-integration/branched-workspace.md
+    - name: Configure branch workspace admin profile
+      href: git-integration/branch-workspace-admin-profile.md
     - name: Development process using client tool
       href: git-integration/client-tool.md     
   - name: Handle errors and conflicts
@@ -56,7 +58,7 @@ items:
       href: git-integration/git-integration-with-service-principal.md
   - name: GitHub data residency support
     href: github-data-residency-support.md
-  - name: Compare code changes
+  - name: Compare and commit changes
     href: git-integration/granular-compare.md
 - name: Continuous Deployment with deployment pipelines
   items:
