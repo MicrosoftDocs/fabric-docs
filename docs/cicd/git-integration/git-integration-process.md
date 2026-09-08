@@ -110,7 +110,7 @@ If you don't select which content to sync, you can't continue to work.
 :::image type="content" source="./media/git-integration-process/sync-direction-continue.png" alt-text="Screenshot notification that you can't continue working until workspace is synced.":::
 
 - Only a workspace admin can connect a workspace to a Git repo, but once connected, anyone with permissions can work in the workspace. If you're not an admin, ask your admin for help with connecting. 
-- Branch switching can also be performed by Contributors when the workspace-level **Allow users with at least Contributor role to change Git branch** setting is enabled (the setting requires an active Git connection and the Member/Contributor must have write access to all items in the workspace).
+- After the workspace is connected to Git, you can also change the connected branch from the workspace settings dialog. Workspace admins can always switch the connected branch. Members and Contributors can switch it only when a workspace admin enables the workspace-level **Allow users with at least Contributor role to change Git branch** setting. This setting requires an active Git connection, and the Member or Contributor must have write access to all items in the workspace.
 
 :::image type="content" source="./media/git-integration-process/change-branch-2.png" alt-text="Screenshot of Allow users with at least Contributor role to change Git branch.":::
 
@@ -143,6 +143,8 @@ If you can't make changes to the connected branch directly, due to branch policy
 If you try connecting to a workspace that's already [connected to Git](./manage-branches.md), you might get the following message:
 
 :::image type="content" source="./media/git-integration-process/sign-into-git.png" alt-text="Screenshot of error message telling you to sign in to a Git account.":::
+
+This message appears because the Git connection is per user. Each user who works in the workspace configures their own connection. With Azure DevOps, the system tries to configure this connection for you automatically. With GitHub, configure your own connection rather than share the same personal access token (PAT).
 
 Go to the **Accounts** tab on the right side of the Source control panel, choose an account, and connect to it.
 
@@ -217,6 +219,11 @@ The Refresh button :::image type="icon" source="./media/git-integration-process/
 
 - Unlike *commit* and *undo*, the *Update* command always updates the entire branch and syncs to the most recent commit. You can't select specific items to update.
 - If changes were made in the workspace and in the Git branch *on the same item*, updates are disabled until the [conflict is resolved](./conflict-resolution.md).
+
+> [!NOTE]
+> You can also commit changes to Git from the compare experience. For supported items, the
+> preview file-level commit capability lets you commit specific files within an item. For more
+> information, see [Compare and commit changes](./granular-compare.md).
 
 Read more about how to [commit](./git-get-started.md#commit-changes-to-git) and [update](./git-get-started.md#update-workspace-from-git).
 Read more about the update process and how to [resolve conflicts](./conflict-resolution.md).
