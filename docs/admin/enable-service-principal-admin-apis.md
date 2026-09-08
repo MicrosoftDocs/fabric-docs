@@ -126,7 +126,7 @@ To find out if a specific Fabric admin API supports service principal authentica
 
 ## Related content
 
-* [Fabric REST API reference](/rest/api/fabric/articles/using-fabric-apis)
+* [Fabric REST API reference](/rest/api/fabric/articles/get-started/using-fabric-apis)
 * [DSPM for AI considerations](/purview/dspm-for-ai-considerations#prerequisites-for-fabric-data-risk-assessments)
 * [Metadata scanning overview](../governance/metadata-scanning-overview.md)
 * [Set up metadata scanning](./metadata-scanning-setup.md)
