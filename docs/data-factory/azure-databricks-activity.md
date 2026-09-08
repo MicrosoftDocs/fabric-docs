@@ -3,7 +3,7 @@ title: Azure Databricks activity
 description: Learn how to add an Azure Databricks activity to a pipeline and use it to connect to an Azure Databricks job and successfully run it.
 ms.reviewer: abnarain, noelleli
 ms.topic: how-to
-ms.date: 09/03/2025
+ms.date: 09/08/2026
 ms.custom: pipelines
 ---
 
@@ -27,8 +27,6 @@ To get started, you must complete the following prerequisites:
 ## Configuring an Azure Databricks activity
 
 To use an Azure Databricks activity in a pipeline, complete the following steps:
-
-### Configuring connection
 
 1. Create a new pipeline in your workspace.
 1. Select **Add pipeline activity** and search for Azure Databricks.
@@ -66,18 +64,38 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
     :::image type="content" source="media/azure-databricks-activity/databricks-activity-policy-uc-support.png" alt-text="Screenshot showing the policy ID and Unity Catalog support under Cluster settings tab of the Azure Databricks activity.":::
 
-
 ### Configuring settings
 
-Selecting the **Settings** tab, you can choose between 4 options which **Azure Databricks type** you would like to orchestrate.
+Select the **Settings** tab to configure your connection and choose the Azure Databricks type you want to orchestrate.
 
 :::image type="content" source="media/azure-databricks-activity/databricks-activity-settings.png" alt-text="Screenshot showing the Settings tab of the Azure Databricks activity.":::
+
+#### Configuring connections
+
+To configure a connection, select the dropdown next to **Connection** under the **Settings** tab. 
+
+:::image type="content" source="media/azure-databricks-activity/databricks-activity-connection-selection.png" alt-text="Screenshot showing the Connection dropdown in the Settings tab of the Azure Databricks activity.":::
+
+Select an existing connection or create a new one by selecting **Browse all** to open the Connection configuration pop-up. Select **Azure Databricks workspace** under **New sources**.
+
+:::image type="content" source="media/azure-databricks-activity/databricks-activity-connection-setup.png" alt-text="Screenshot showing the Connection set-up process through the Get data pop-up.":::
+
+Under the Connection settings, set your **URL**, **Connection name**, **Data gateway**, **Authentication kind**, and **Privacy level**. 
+
+:::image type="content" source="media/azure-databricks-activity/databricks-activity-connection-settings.png" alt-text="Screenshot showing the Connection settings to fill out in order to set up a connection.":::
+
+For **Authentication kind**, select from: 
+- Personal Access Token (PAT)
+- Organizational account
+- Service principal
+  
+:::image type="content" source="media/azure-databricks-activity/databricks-activity-notebook.png" alt-text="Screenshot showing the Authentication kind dropdown selection in the connection configuration process.":::
 
 #### Orchestrating the Notebook type in Azure Databricks activity:
 
 Under the **Settings** tab, you can choose the **Notebook** radio button to run a Notebook. You need to specify the notebook path to be executed on Azure Databricks, optional base parameters to be passed to the notebook, and any extra libraries to be installed on the cluster to execute the job.
 
-:::image type="content" source="media/azure-databricks-activity/databricks-activity-notebook.png" alt-text="Screenshot showing the Notebooks type of the Azure Databricks activity.":::
+:::image type="content" source="media/azure-databricks-activity/databricks-activity-connection-authentication.png" alt-text="Screenshot showing the Notebooks type of the Azure Databricks activity.":::
 
 #### Orchestrating the Jar type in Azure Databricks activity:
 
@@ -113,7 +131,7 @@ Sometimes, you may need to return values from a notebook to the service for cont
 
 1. In your notebook, for example, you may call [dbutils.notebook.exit("returnValue")](/azure/databricks/notebooks/notebook-workflows#notebook-workflows-exit) and the corresponding "returnValue" will be returned to the service.
 
-1. You can consume the output in the service by using expression such as `@{activity('databricks activity name').output.runOutput}`.
+1. You can consume the output in the service by using an expression such as `@{activity('databricks activity name').output.runOutput}`.
 
 ## Save and run or schedule the pipeline
 
