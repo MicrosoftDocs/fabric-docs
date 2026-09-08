@@ -4,7 +4,7 @@ description: This article provides a list of all the operations available in Fab
 author: msmimart
 ms.author: mimart
 ms.topic: reference
-ms.date: 08/20/2026
+ms.date: 09/08/2026
 ---
 # Operation list
 
@@ -40,6 +40,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Analyze In Excel Report | :::no-loc text="AnalyzeInExcelReport"::: |   |
 | Analyzed Power BI report | :::no-loc text="AnalyzeInExcel"::: | Generated when a user selects Analyze in Excel on a report or semantic model in the service and successfully generates an Excel workbook  |
 | Analyzed Power BI semantic model | :::no-loc text="AnalyzedByExternalApplication"::: | Generated when users interact with the service  |
+| Applied a PostgreSQL database schema | :::no-loc text="ApplyPostgreSQLDatabaseSchema"::: | Generated when a user applies (plans and executes) a PostgreSQL database schema through the custom PG schema service (pgschema-based ALM flow). The audit log records caller identity, operation result, and the affected PostgreSQL database artifact. |
 | Applied a change to model in Power BI | :::no-loc text="ApplyChangeToPowerBIModel"::: | A user makes a change to an existing model. This occurs whenever any edit is made to the model (ex: write a DAX measure, manage relationships, etc.)  |
 | Applied sensitivity label to Power BI item | :::no-loc text="SensitivityLabelApplied"::: |   |
 | Apply CMK encryption to your workspace | :::no-loc text="ApplyWorkspaceEncryption"::: | Triggered when CMK encryption is applied to a workspace |
@@ -52,6 +53,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Binded Power BI semantic model to gateway | :::no-loc text="BindToGateway"::: |   |
 | Binded monikers to Power BI datasources | :::no-loc text="BindMonikersToDatasources"::: |   |
 | Branch Out in Git | :::no-loc text="BranchOutInGit"::: | Branch out in Git is a workspace activity which is generated when a new workspace is created, which is connected to a newly forked git   branch based on the git branch that is connected to the origin workspace. |
+| Browsed PostgreSQL database objects | :::no-loc text="PgSQLDbObjectExplorer"::: | Generated when a user browses PostgreSQL database schema objects through Object Explorer. The audit log records caller identity, operation result, and the affected PostgreSQL database artifact. |
 | Cancel Datamart Batch | :::no-loc text="CancelDatamartBatch"::: |   |
 | Cancel Dataset Refresh | :::no-loc text="CancelDatasetRefresh"::: |   |
 | Cancel Publish Environment | :::no-loc text="CancelPublishEnvironment"::: | Cancel publish environment |
@@ -294,6 +296,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Exported Power BI item to another file format | :::no-loc text="ExportArtifact"::: |   |
 | Exported Power BI report to another file format or exported report visual data | :::no-loc text="ExportReport"::: |   |
 | Exported Power BI tile data | :::no-loc text="ExportTile"::: |   |
+| Exported a PostgreSQL database schema | :::no-loc text="ExportPostgreSQLDatabaseSchema"::: | Generated when a user dumps a PostgreSQL database schema through the custom PG schema service (pgschema-based ALM flow). The audit log records caller identity, operation result, and the affected PostgreSQL database artifact. |
 | Extract Template App Package | :::no-loc text="ExtractTemplateAppPackage"::: | Extract Template App Package is an app activity, which is generated when users extract an existing template app into another Power BI template app workspace  |
 | Fetch a shortcut's metadata | :::no-loc text="GetShortcut"::: | OneLake operation. Part of Shortcut Controller |
 | Finish Publish Environment | :::no-loc text="FinishPublishEnvironment"::: | Finish publish environment |
@@ -403,6 +406,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Import file to Power BI started | :::no-loc text="ImportArtifactStart"::: | Generated when importing Power BI Desktop files (.pbix). When `ImportSource` is `PowerBI`, the file import originated from a Power BI client or API. When `ImportSource` is `OneDriveSharePoint`, the file import originated from OneDrive or a SharePoint document library.  |
 | Imported file to Power BI | :::no-loc text="Import"::: |   |
 | Imported OneLake lifecycle policy | :::no-loc text="ImportedLifecyclePolicy"::: |   |
+| Imported PostgreSQL sample data | :::no-loc text="ImportSampleDataToPostgreSQLDatabase"::: | Generated when a user imports supported sample data into a Fabric Native PostgreSQL database. The audit log records caller identity, operation result, and the affected PostgreSQL database artifact. |
 | Initiate Cloud O Auth Login | :::no-loc text="InitiateCloudOAuthLogin"::: |   |
 | Initiated Power BI gateway cluster authentication process | :::no-loc text="InitiateGatewayClusterOAuthLogin"::: |   |
 | Insert Domain | :::no-loc text="InsertDataDomainAsAdmin"::: | Insert Domain  |
@@ -509,6 +513,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Resume Suspended Sql Analytics Endpoint Lakehouse | :::no-loc text="ResumeSuspendedSqlAnalyticsEndpointLakehouse"::: | Resumed a suspended lakehouse SQL analytics endpoint. Previously named *Resumed a suspended default warehouse* (Operation name: :::no-loc text="*ResumeSuspendedDefaultWarehouse*":::)  |
 | Resume Suspended Warehouse | :::no-loc text="ResumeSuspendedWarehouse"::: |   |
 | Resume suspended mounted warehouse | :::no-loc text="ResumeSuspendedMountedWarehouse"::: | Generated when a suspended mounted warehouse is resumed  |
+| Retrieved PostgreSQL SQL audit policy | :::no-loc text="GetSqlAuditPolicyOnDatabase"::: | Generated when a user retrieves the SQL audit policy settings for a PostgreSQL database artifact. The audit log records caller identity, operation result, and the affected PostgreSQL database artifact. |
 | Retrieved Power BI app users | :::no-loc text="GetAppUsersAsAdmin"::: |   |
 | Retrieved Power BI apps for user | :::no-loc text="GetUserAppsAsAdmin"::: | Not currently used  |
 | Retrieved Power BI apps | :::no-loc text="GetAppsAsAdmin"::: |   |
@@ -585,6 +590,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Set Model Refresh Schedule Of   Dateset | :::no-loc text="SetModelRefreshScheduleOfDateset"::: |  |
 | Set Model Refresh Schedule Of Dataset | :::no-loc text="SetModelRefreshScheduleOfDataset"::: |   |
 | Set Notebook Default Lakehouse | :::no-loc text="SetNotebookDefaultLakehouse"::: | Set default lakehouse for notebook.  |
+| Set PostgreSQL SQL audit policy | :::no-loc text="SetSqlAuditPolicyOnDatabase"::: | Generated when a user updates SQL audit policy settings for a PostgreSQL database artifact. The audit log records caller identity, operation result, and the affected PostgreSQL database artifact. |
 | Set Sjd Retry Policy | :::no-loc text="SetSjdRetryPolicy"::: |   |
 | Set dataflow storage location for a workspace | :::no-loc text="SetDataflowStorageLocationForWorkspace"::: |   |
 | Set scheduled refresh on Power BI dataflow | :::no-loc text="SetScheduledRefreshOnDataflow"::: |   |
