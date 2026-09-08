@@ -512,7 +512,8 @@ Load more records into the sheet from an Excel workbook.
 
 You completed the following work in this exercise.
 
-* You created a Fabric SQL database for data management.
-* You created a Fabric Plan item with a PowerTable sheet for each of the assets, employees, and locations tables.
-* You configured the *Assets* sheet with formatted columns and lookups.
-* You ran update and insert operations by using several different approaches.
+> [!div class="checklist"]
+> * You created a Fabric SQL database for data management.
+> * You created a Fabric Plan item with a PowerTable sheet for each of the assets, employees, and locations tables.
+> * You configured the *Assets* sheet with formatted columns and lookups.
+> * You ran update and insert operations by using several different approaches.
