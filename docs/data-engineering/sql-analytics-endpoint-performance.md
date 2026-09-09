@@ -117,7 +117,7 @@ You can copy the complete script from the following code block:
 
 For every Delta table in your [Lakehouse](../data-engineering/lakehouse-overview.md), the SQL analytics endpoint automatically generates a table in the appropriate schema. The SQL analytics endpoint engine is based on the Fabric Data Warehouse engine.
 
-For more information, see [SQL analytics endpoint metadata sync](sql-analytics-endpoint-metadata-sync.md). You can also programmatically force a refresh of the automatic metadata scanning by using the [Refresh SQL endpoint metadata REST API](/rest/api/fabric/sqlendpoint/items/refresh-sql-endpoint-metadata). 
+For more information, see [SQL analytics endpoint metadata sync](sql-analytics-endpoint-metadata-sync.md). You can also programmatically force a refresh of the automatic metadata scanning by using the [Refresh SQL analytics endpoint metadata REST API](/rest/api/fabric/sqlendpoint/items/refresh-sql-endpoint-metadata). 
 
 ## Related content
 

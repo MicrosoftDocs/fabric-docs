@@ -35,9 +35,9 @@ What to do when the Explore mode view appears empty after mapping data to entity
 
     :::image type="content" source="media/resources-troubleshooting/operations-completed.png" alt-text="Screenshot of completed operations in the Manage operations tab.":::
 
-* If mapping operations were successful, there might be a delay in the SQL endpoint provisioning. Look for the SQL endpoint associated with your digital twin builder (preview) data lakehouse. The lakehouse and the SQL endpoint are located at the root of your workspace, and named after your digital twin builder instance followed by *dtdm*.
+* If mapping operations were successful, there might be a delay in the SQL analytics endpoint provisioning. Look for the SQL analytics endpoint associated with your digital twin builder (preview) data lakehouse. The lakehouse and the SQL analytics endpoint are located at the root of your workspace, and named after your digital twin builder instance followed by *dtdm*.
 
-    :::image type="content" source="media/resources-troubleshooting/sql-endpoint.png" alt-text="Screenshot of selecting the SQL endpoint from the Fabric workspace.":::
+    :::image type="content" source="media/resources-troubleshooting/sql-endpoint.png" alt-text="Screenshot of selecting the SQL analytics endpoint from the Fabric workspace.":::
 
 * If there's no SQL analytics endpoint associated with your lakehouse, the lakehouse might have failed to provision correctly. Open the lakehouse and follow the error message prompts to recreate the SQL analytics endpoint. For more information, see [SQL analytics endpoint reprovisioning](../../data-engineering/lakehouse-sql-analytics-endpoint.md#reprovisioning).
 

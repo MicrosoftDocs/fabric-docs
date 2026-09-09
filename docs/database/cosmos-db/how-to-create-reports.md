@@ -58,9 +58,9 @@ Before building reports, ensure that mirroring has completed successfully at lea
 
 Once mirroring has completed successfully, configure your semantic model:
 
-1. In the menu bar, select the **Cosmos DB** list and then select **SQL Endpoint** to switch to the SQL analytics endpoint.
+1. In the menu bar, select the **Cosmos DB** list and then select **SQL analytics Endpoint** to switch to the SQL analytics endpoint.
 
-    :::image type="content" source="media/how-to-create-reports/endpoint-selection.png" lightbox="media/how-to-create-reports/endpoint-selection.png" alt-text="Screenshot of the endpoint selection option in the menu bar for a database in Cosmos DB in Fabric.":::
+    :::image type="content" source="media/how-to-create-reports/endpoint-selection.png" lightbox="media/how-to-create-reports/endpoint-selection.png" alt-text="Screenshot of the SQL analytics endpoint selection option in the menu bar for a database in Cosmos DB in Fabric.":::
 
 1. Select the **Reporting** tab.
 
