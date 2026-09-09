@@ -828,7 +828,13 @@ items:
         - name: Conditional formatting
           href: dashboard-conditional-formatting.md
         - name: Dashboard parameters
-          href: dashboard-parameters.md 
+          items:
+          - name: Create and manage Real-Time Dashboard parameters
+            href: dashboard-parameters-manage.md
+          - name: Use parameters in Real-Time Dashboard queries
+            href: dashboard-parameters.md
+          - name: Configure interactions in Real-Time Dashboards
+            href: dashboard-interactions.md
         - name: Time series visual
           href: dashboard-time-series.md
         - name: Markdown visual

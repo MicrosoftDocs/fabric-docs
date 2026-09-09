@@ -24,7 +24,7 @@ You can also embed a Real-Time Dashboard in your own web application by using Fa
 
 * **Interactive exploration:** Dashboards support analysis directly within visuals, so you can:
     * Slice and dice by time or other custom dimensions to focus on key metrics.
-    * Apply [filters](dashboard-parameters.md#interact-with-your-data-by-using-cross-filter) or [drill down](dashboard-parameters.md#use-drillthroughs-as-dashboard-parameters) on chart elements to refine other visuals or dive deeper into the data.
+    * Apply [cross-filters](dashboard-interactions.md#use-cross-filters) or [drill through](dashboard-interactions.md#use-drillthroughs) on chart elements to refine other visuals or dive deeper into the data.
 
     These capabilities let you explore and refine insights without leaving the dashboard experience.
 

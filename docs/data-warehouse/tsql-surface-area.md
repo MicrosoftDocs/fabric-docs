@@ -34,7 +34,9 @@ Fabric Data Warehouse supports T-SQL tables, views, stored procedures, functions
 - Currently, only the following subset of `ALTER TABLE` operations in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] are supported:
    - You can `ADD` nullable columns of supported column data types.
    - `DROP COLUMN` is supported.
-   - `ADD` or `DROP` `PRIMARY KEY`, `UNIQUE`, and `FOREIGN_KEY` column constraints are supported, but only if the `NOT ENFORCED` option is specified. All other `ALTER TABLE` operations are blocked. There are limitations with adding table constraints or columns when using [Git Integration for source control](git-integration.md#limitations-in-git-integration).
+   - For more information on primary keys, unique constraints, and foreign keys, see [Primary keys, foreign keys, and unique keys in Warehouse in Microsoft Fabric](table-constraints.md).
+      - `ADD` `PRIMARY KEY`, `UNIQUE`, and `FOREIGN_KEY` column constraints are supported, but only if the `NOT ENFORCED` option is specified. All other `ALTER TABLE` operations are blocked. There are limitations with adding table constraints or columns when using [Git Integration for source control](git-integration.md#limitations-in-git-integration).
+       - `DROP` `PRIMARY KEY`, `UNIQUE`, and `FOREIGN_KEY` column constraints are supported.
    - `ALTER TABLE` on distributed temporary tables is supported.
    - `ALTER TABLE ... ALTER COLUMN` is in preview. For more information, see [ALTER COLUMN in Fabric Data Warehouse](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true#syntax-for-warehouse-in-fabric).
    - You can execute supported `ALTER TABLE` statements inside an explicit user-defined transaction in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
