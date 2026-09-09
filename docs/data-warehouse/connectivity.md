@@ -79,7 +79,7 @@ For environments that use Azure Firewall:
 
 - SQL-aware FQDN filtering is supported through MSSQL application rules.
 - FQDN filtering can be used together with port 1433 restrictions to limit outbound SQL connectivity.
-- Ensure all [!INCLUDE [fabric-dw](includes/fabric-dw.md)] endpoints documented in this article are included in the firewall allowlist.
+- Ensure all [!INCLUDE [fabric-dw](includes/fabric-dw.md)] endpoints documented in this article are included in the firewall allow list.
 
 For implementation details, see [Configure Azure Firewall application rules with SQL FQDNs](/azure/firewall/sql-fqdn-filtering).
 
