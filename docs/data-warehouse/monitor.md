@@ -1,6 +1,6 @@
 ---
-title: Monitor T-SQL Queries with Data Warehouse Monitor
-description: Learn about monitoring running and completed queries in your Fabric warehouse using Data Warehouse Monitor.
+title: Monitor T-SQL Queries in Fabric Data Warehouse
+description: Learn about monitoring running and completed queries in your Fabric warehouse using Monitor.
 ms.reviewer: mariyaali, twcyril
 ms.date: 05/08/2026
 ms.topic: how-to
@@ -13,17 +13,17 @@ ms.custom: sfi-image-nochange
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
-Use Data Warehouse Monitor to view running and historical T-SQL queries, long-running queries, and frequently run queries without running T-SQL code. Integrated into the Fabric portal, you can use Data Warehouse Monitor to confirm that queries complete successfully, analyze execution patterns, and investigate slower query runs in detail.
+Use the Monitor to view your warehouse's running and historical T-SQL queries, long-running queries, and frequently run queries without running T-SQL code. Integrated into the Fabric portal, you can use Monitor to confirm that queries complete successfully, analyze execution patterns, and investigate slower query runs in detail.
 
-Data Warehouse Monitor was previously named "Query Activity".
+Monitor was previously named "Query Activity".
 
 ## Prerequisites
 
-- You must be an admin in your workspace to access Data Warehouse Monitor. Members, Contributors, and Viewers don't have permission to access this view.
+- You must be an admin in your workspace to access the Monitor. Members, Contributors, and Viewers don't have permission to access this view.
 
 ## Get started
 
-You can launch the Data Warehouse Monitor experience in two ways.
+You can launch the Monitor experience in two ways.
 
 - Select **More Options (...)** next to the warehouse you want to monitor within the workspace view, and select **Monitor**.
 
