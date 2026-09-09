@@ -56,6 +56,37 @@ Materialized lake views support two authoring approaches:
   > [!NOTE]
   > PySpark-authored views currently perform full refresh only.
 
+## Ingest files with materialized lake views
+
+You can now use a materialized lake view to ingest raw files directly from OneLake into a managed Delta table - no intermediate `COPY`, pipeline, or notebook load step required. This makes a file-backed materialized lake view a natural **bronze** layer for a medallion architecture: point it at a physical OneLake folder or OneLake folder shortcut, and downstream silver and gold materialized lake views can build on it with the same lineage, scheduling, and data quality that table-based views already use.
+
+To create a file-ingesting materialized lake view, use the `USING OneLake_Files` clause instead of an `AS SELECT` query, and describe the source with `OPTIONS`:
+
+```sql
+CREATE MATERIALIZED LAKE VIEW bronze.raw_orders
+USING OneLake_Files
+OPTIONS (
+    'format' = 'csv',
+    'path'   = 'abfss://<workspace>@<host>/<lakehouse>/Files/orders/',
+    'header' = 'true'
+)
+TBLPROPERTIES (
+    'schema_mode'  = 'DYNAMIC',
+    'refresh_mode' = 'APPEND_ONLY'
+);
+```
+
+Key characteristics:
+
+- **Formats**: CSV and Parquet.
+- **Folder shortcuts**: a OneLake folder shortcut can be the source. Creation includes files available through nested folders; managed refresh discovers additions at the shortcut root but not additions under nested shortcut folders.
+- **Schema handling**: `DYNAMIC` adds newly discovered columns and supplies `NULL` when a file omits an established column; `FIXED` pins the schema at creation and rejects drift.
+- **File lineage**: each row carries a `__filepath__` column that records the source file it came from.
+- **Medallion-ready**: reference the file-backed view from downstream materialized lake views (silver, gold) so a change at the source flows through the whole pipeline.
+- **Run monitoring**: each managed run reports the files processed and rows added, so you can verify that new source files were materialized.
+
+For the full file-ingestion syntax and options, see [Spark SQL reference for materialized lake views](create-materialized-lake-view.md). To trace files through the pipeline, see [Manage Fabric materialized lake views lineage](view-lineage.md).
+
 ## Key capabilities
 
 Materialized lake views include built-in features that handle the operational complexity you'd otherwise manage yourself in notebooks and pipelines.
