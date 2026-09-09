@@ -143,7 +143,7 @@ Horizontal tabs let you switch between multiple open items. Use the following sh
 
 ### More open items
 
-The previous limit of 10 open items has been increased. You can keep more resources active at once. This is especially useful for complex workflows that require multiple pipelines, notebooks, or reports.
+The previous limit of 10 open items has been increased to 20. You can now keep up to 20 resources active at once. This is especially useful for complex workflows that require multiple pipelines, notebooks, or reports.
 
 ## Maximize editing space with focus mode
 
