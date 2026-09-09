@@ -91,6 +91,20 @@ items:
     items:
     - name: Introduction and environment setup
       href: plan/planning-tutorial/planning/tutorial-0-introduction.md
+    - name: Build Top-Down and Bottom-Up revenue plans
+      href: plan/planning-tutorial/planning/tutorial-1-allocation-collaboration.md
+    - name: Optimize input values
+      href: plan/planning-tutorial/planning/tutorial-2-optimizer.md
+    - name: Forecasting and writeback
+      href: plan/planning-tutorial/planning/tutorial-3-forecasting-writeback.md
+    - name: Build a P&L measure model
+      href: plan/planning-tutorial/planning/tutorial-4-measure-model.md
+    - name: Build a P&L row model
+      href: plan/planning-tutorial/planning/tutorial-5-row-model.md
+    - name: Get started with PowerTable
+      href: plan/planning-tutorial/powertable/tutorial-7-get-started-with-powertable.md
+    - name: Set up approvals, access controls, and automations
+      href: plan/planning-tutorial/powertable/tutorial-8-set-up-approvals-access-controls-automations.md
   - name: Get started
     items:
     - name: Prerequisites
@@ -379,6 +393,8 @@ items:
               href: plan/planning-reference-formulas/identifiers.md
             - name: Lookup functions
               href: plan/planning-reference-formulas/lookup-functions.md
+            - name: Other operators
+              href: plan/planning-reference-formulas/planning-reference-other-operators.md
   - name: PowerTable sheets
     items:
     - name: Concepts

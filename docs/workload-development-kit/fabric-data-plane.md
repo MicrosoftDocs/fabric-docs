@@ -65,7 +65,7 @@ Another useful endpoint is the [Get Warehouse API](/rest/api/fabric/warehouse/it
     }
 ```
 
-Here, the "ConnectionInfo" property is the Fully Qualified Domain Name (FQDN) of the Warehouse SQL Server. With this FQDN, you can establish an SQL connection. For more information, see [Connectivity to Data Warehousing in Microsoft Fabric](../data-warehouse/connectivity.md).
+Here, the "ConnectionInfo" property is the Fully Qualified Domain Name (FQDN) of the Warehouse SQL Server. With this FQDN, you can establish an SQL connection. For more information, see [Connectivity to Data Warehouse in Microsoft Fabric](../data-warehouse/connectivity.md).
 For implementation examples, see the [Microsoft Fabric Workload Development Kit](./index.yml).
 
 ### Reading data

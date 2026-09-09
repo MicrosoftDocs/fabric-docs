@@ -198,5 +198,5 @@ FROM sys.fn_get_audit_file_v2
 ## Related content
 
 - [Security in Microsoft Fabric](../security/security-overview.md)
-- [Security for data warehousing in Microsoft Fabric](security.md)
+- [Security in Fabric Data Warehouse](security.md)
 - [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md)

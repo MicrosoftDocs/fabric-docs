@@ -94,4 +94,4 @@ Each visual type includes its own configuration options and best practices.
 - Learn about [supported visual types](dashboard-supported-visuals.md).
 - [Customize dashboard visuals](dashboard-visuals-customize.md).
 - Apply [Conditional formatting in Real-Time Dashboard visuals](dashboard-conditional-formatting.md).
-- Use [Parameters in Real-Time Dashboards](dashboard-parameters.md).
+- Use [parameters in Real-Time Dashboard queries](dashboard-parameters.md).

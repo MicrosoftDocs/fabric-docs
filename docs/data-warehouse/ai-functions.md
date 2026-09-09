@@ -15,22 +15,22 @@ ai-usage: ai-assisted
 
 Fabric Data Warehouse and SQL analytics endpoint provide built-in AI functions that you can use to analyze, classify, summarize, and transform text directly within SQL queries. By using these functions, you can perform advanced text processing without leaving your data environment. In this tutorial, learn how to use AI functions to transform text.
 
-| Function               | Purpose           | Syntax Example                               |
-| ---------------------- | ----------------- | -------------------------------------------- |
-| [`AI_ANALYZE_SENTIMENT`](/sql/t-sql/functions/ai-analyze-sentiment-transact-sql?view=fabric&preserve-view=true) | Detect sentiment of input text | `AI_ANALYZE_SENTIMENT(<text>)`               |
-| [`AI_CLASSIFY`](/sql/t-sql/functions/ai-classify-transact-sql?view=fabric&preserve-view=true)          | Classify text based on provided labels | `AI_CLASSIFY(<text>, <class1>, <class2>, ...)` |
-| [`AI_EXTRACT`](/sql/t-sql/functions/ai-extract-transact-sql?view=fabric&preserve-view=true)           | Extract entities as JSON properties  | `AI_EXTRACT(<text>, <class1>, <class2>, ...)`  |
-| [`AI_SUMMARIZE`](/sql/t-sql/functions/ai-summarize-transact-sql?view=fabric&preserve-view=true)         | Summarize text    | `AI_SUMMARIZE(<text>)`                       |
-| [`AI_GENERATE_RESPONSE`](/sql/t-sql/functions/ai-generate-response-transact-sql?view=fabric&preserve-view=true) | Generate response based on prompt | `AI_GENERATE_RESPONSE(<prompt>, <data>)`     |
-| [`AI_TRANSLATE`](/sql/t-sql/functions/ai-translate-transact-sql?view=fabric&preserve-view=true)         | Translate input text to the specified target language    | `AI_TRANSLATE(<text>, <lang_code>)`               |
-| [`AI_FIX_GRAMMAR`](/sql/t-sql/functions/ai-fix-grammar-transact-sql?view=fabric&preserve-view=true)       | Fix grammar in the text       | `AI_FIX_GRAMMAR(<text>)`                     |
+| Function               | Purpose             | Syntax Example                               |
+| ---------------------- | ------------------- | -------------------------------------------- |
+| [`AI_ANALYZE_SENTIMENT`](#analyze-sentiment) | Detect sentiment of input text | `AI_ANALYZE_SENTIMENT(<text>)`               |
+| [`AI_CLASSIFY`](#classify-text)              | Classify text based on provided labels | `AI_CLASSIFY(<text>, <class1>, <class2>, ...)` |
+| [`AI_EXTRACT`](#extract-entities-from-text)  | Extract entities as JSON properties  | `AI_EXTRACT(<text>, <class1>, <class2>, ...)`  |
+| [`AI_SUMMARIZE`](#summarize-text)            | Summarize text    | `AI_SUMMARIZE(<text>)`                       |
+| [`AI_GENERATE_RESPONSE`](#generate-response) | Generate response based on prompt | `AI_GENERATE_RESPONSE(<prompt>[, <data>])`     |
+| [`AI_TRANSLATE`](#translate-text)            | Translate input text to the specified target language    | `AI_TRANSLATE(<text>, <lang_code>)`               |
+| [`AI_FIX_GRAMMAR`](#fix-grammar)             | Fix grammar in the text       | `AI_FIX_GRAMMAR(<text>)`                     |
 
 These functions call external AI APIs to process text, which can affect query performance. To optimize efficiency, avoid applying repetitive text transformations within `SELECT` queries on the same dataset. Instead, precompute and materialize the results of AI functions as separate columns or in staging tables.
 
 > [!WARNING]
 > The functions return `NULL` if the AI model can't process the text. Common reasons include:
 > - Responsible AI rules block inappropriate content in the input text.
-> - Input text exceeds token limits. The current model supports up to 15 KB of text.
+> - Input text exceeds token limits. The current model supports up to 99 KB of text.
 
 Typical processing speed of AI functions is 20-100 rows per second. If you experience slower performance, report the problematic query as an issue.
 

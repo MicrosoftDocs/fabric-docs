@@ -4,7 +4,7 @@ description: Use Fabric connections with workspace identity in Apache Airflow Jo
 ms.reviewer: noelleli
 ms.topic: how-to
 ms.custom: airflows, build-2026
-ms.date: 08/24/2026
+ms.date: 09/02/2026
 ---
 
 # Use workspace identity to authenticate Apache Airflow Jobs to Fabric services
@@ -22,7 +22,7 @@ You will be able to run Fabric items including:
 
 When workspace identity is enabled, Airflow Jobs authenticate automatically using the workspace identity. 
 
-> [Note]
+> [!NOTE]
 > If you were previously using SPN authentication, you will need to update your DAG to use your Fabric connection with workspace identity.
 > To use workspace identity in Airflow Jobs, ensure that you enable [Service Principals can call Public APIs](/fabric/admin/service-admin-portal-developer#service-principals-can-call-fabric-public-apis) at the tenant level.
 

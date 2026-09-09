@@ -57,7 +57,7 @@ For more information on connecting to your [!INCLUDE [fabric-dw](includes/fabric
 
 1. Select **Run** to create the table.
 
-To learn more about supported table creation in Warehouse in Microsoft Fabric, see [Tables in data warehousing in Microsoft Fabric](tables.md) and [Data types in Microsoft Fabric](data-types.md).
+To learn more about supported table creation in Warehouse in Microsoft Fabric, see [Tables in Fabric Data Warehouse](tables.md) and [Data types in Microsoft Fabric](data-types.md).
 
 <a id="create-a-new-table-in-the-sql-query-editor-from-a-file"></a>
 

@@ -1,11 +1,11 @@
 ---
-title: Column-Level Security in Fabric Data Warehousing
-description: Learn about column-level security in tables in Fabric data warehousing.
+title: Column-Level Security in Fabric Data Warehouse
+description: Learn about column-level security in tables in Fabric Data Warehouse.
 ms.reviewer: dhsundar
 ms.date: 08/21/2024
 ms.topic: concept-article
 ---
-# Column-level security in Fabric data warehousing
+# Column-level security in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -62,11 +62,11 @@ The SELECT permission was denied on the column 'CreditCard' of the object 'Custo
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Implement column-level security in Fabric Data Warehousing](tutorial-column-level-security.md)
+> [Implement column-level security in Fabric Data Warehouse](tutorial-column-level-security.md)
 
 ## Related content
 
-- [Security for data warehousing in Microsoft Fabric](security.md)
+- [Security in Fabric Data Warehouse](security.md)
 - [Share your data and manage permissions](share-warehouse-manage-permissions.md)
-- [Row-level security in Fabric data warehousing](row-level-security.md)
-- [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md)
+- [Row-level security in Fabric Data Warehouse](row-level-security.md)
+- [Dynamic data masking in Fabric Data Warehouse](dynamic-data-masking.md)

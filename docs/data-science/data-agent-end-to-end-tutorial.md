@@ -182,23 +182,7 @@ The **Publish data agent** box opens, as shown in this screenshot:
 
 :::image type="content" source="./media/data-agent-scenario/publish-data-agent.png" alt-text="Screenshot showing the publish data agent feature." lightbox="./media/data-agent-scenario/publish-data-agent.png":::
 
-In this box, select **Publish** to publish the Fabric data agent. The published URL for the Fabric data agent appears, as shown in this screenshot:
-
-:::image type="content" source="./media/data-agent-scenario/fabric-notebook-data-agent-published-url-value.png" alt-text="Screenshot showing the published URL." lightbox="./media/data-agent-scenario/fabric-notebook-data-agent-published-url-value.png":::
-
-## Use the Fabric data agent in Copilot in Power BI
-
-You can use the Copilot in Power BI to interact with the Fabric data agent after you publish it. With Copilot in Power BI, you can directly consume the data agent and other items (for example, reports, or semantic models) without needing to switch between them.
-
-Select the **Copilot** button on the left navigation pane, to open the Copilot in Power BI. Next, select **Add items for better results** in the text box at the bottom, to add the data agent. Select **Data agents** in the window that opens. You can only see the data agents that you have permission to access. Choose the data agent you want and select **Confirm**. This example shows how to work with a single data agent, but you can add more items - for example, other data agents, reports, or semantic models. The following screenshot illustrates the steps with a single data agent:
-
-:::image type="content" source="./media/data-agent-scenario/copilot-in-powerbi-add-agent.png" alt-text="Screenshot showing the Copilot button and button to add items such as Data Agents." lightbox="./media/data-agent-scenario/copilot-in-powerbi-add-agent.png":::
-
-When a data agent includes a Power BI semantic model, users need only Read permission on that semantic model to interact with it via Copilot; workspace access isn't required. Write permission is still needed for semantic model changes and Prep for AI.
-
-Now that you added the data agent to the Copilot in Power BI, you can ask any questions related to your Fabric data agent, as shown in the following screenshot:
-
-:::image type="content" source="./media/data-agent-scenario/copilot-in-powerbi-chat.png" alt-text="Screenshot showing the Copilot answering a question." lightbox="./media/data-agent-scenario/copilot-in-powerbi-chat.png":::
+In this box, select **Publish** to publish the Fabric data agent. Once published, data agent can be consumed as a model context protocol (MCP) server.
 
 ## Use the Fabric data agent programmatically
 

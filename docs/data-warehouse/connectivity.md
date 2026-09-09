@@ -97,7 +97,7 @@ The following screenshot shows the error as it appears in SSMS when an invalid w
 
 ## Related content
 
-- [Security for data warehousing in Microsoft Fabric](security.md)
+- [Security in Fabric Data Warehouse](security.md)
 - [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md)
 - [Add Fabric URLs to your allow list](../security/fabric-allow-list-urls.md)
 - [Azure IP ranges and service tags for public clouds](https://www.microsoft.com/download/details.aspx?id=56519)

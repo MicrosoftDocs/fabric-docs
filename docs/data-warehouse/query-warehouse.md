@@ -131,7 +131,7 @@ You can query external data from the warehouse as well, including:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Create reports on data warehousing in Microsoft Fabric](create-reports.md)
+> [Create reports on Fabric Data Warehouse](create-reports.md)
 
 ## Related content
 

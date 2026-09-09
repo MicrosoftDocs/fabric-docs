@@ -27,7 +27,7 @@ Microsoft Entra authentication is an integrated authentication approach. Users s
 
 ### Permissions
 
-To connect to the SQL engine, users need at least Read permission (similar to CONNECT permission in SQL Server) on the warehouse or SQL analytics endpoint (item level). Users also need granular object-level permissions to read data from specific tables or views. To learn more, see [Security for data warehousing in Fabric](../data-warehouse/security.md).
+To connect to the SQL engine, users need at least Read permission (similar to CONNECT permission in SQL Server) on the warehouse or SQL analytics endpoint (item level). Users also need granular object-level permissions to read data from specific tables or views. To learn more, see [Security in Fabric Data Warehouse](../data-warehouse/security.md).
 
 ## Code templates and examples
 
@@ -196,5 +196,5 @@ Currently, the connector:
 * [Private link support for the Spark connector](spark-data-warehouse-connector-private-link.md)
 * [Apache Spark runtimes in Fabric](runtime.md)
 * [Apache Spark monitoring overview](spark-monitoring-overview.md)
-* [Security for data warehousing in Fabric](../data-warehouse/security.md)
+* [Security in Fabric Data Warehouse](../data-warehouse/security.md)
 * [SQL granular permissions in Fabric](../data-warehouse/sql-granular-permissions.md)

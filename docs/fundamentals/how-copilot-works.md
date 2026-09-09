@@ -165,7 +165,7 @@ After receiving user input, Copilot performs preprocessing, which involves the f
 
 - **Prompt augmentation:** Depending on the scenario, Copilot rewrites (or *augments*) the prompt based on the input and grounding data. The augmented prompt should be better and more context-aware than your original input prompt.
 
-- **Caching:** In certain scenarios, Copilot caches your prompt and the grounding data for 48 hours. Caching the prompt ensures that repeated prompts return the same results while cached, that they return these results faster, and that you aren’t consuming Fabric capacity just for repeating a prompt in the same context. Caching occurs in two different places:
+- **Caching:** In certain scenarios, Copilot caches your prompt and the grounding data for 48 hours. Caching the prompt ensures that repeated prompts return the same results while cached, that they return these results faster, and that you aren't consuming Fabric capacity just for repeating a prompt in the same context. Caching occurs in two different places:
   - The browser cache of the user.
   - The first back-end cache in the home region of the tenant, where it's stored for auditing purposes. No data is cached in the Azure OpenAI Service or the location of the GPUs. For more information about caching in Fabric, see the [Microsoft Fabric security whitepaper](../security/white-paper-landing-page.md).
 
@@ -346,7 +346,7 @@ For an overview specifically for each Fabric workload, see the following article
 
 - [Responsible use in Data Factory](copilot-data-factory-privacy-security.md)
 - [Responsible use in Data Science and Data Engineering](copilot-data-science-privacy-security.md)
-- [Responsible use in Data Warehousing](copilot-data-warehouse-privacy-security.md)
+- [Responsible use in Data Warehouse](copilot-data-warehouse-privacy-security.md)
 - [Responsible use in Power BI](copilot-power-bi-privacy-security.md)
 - [Responsible use in Real-Time Intelligence](copilot-real-time-intelligence-privacy-security.md)
 

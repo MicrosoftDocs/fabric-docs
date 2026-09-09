@@ -2,7 +2,7 @@
 title: 'Tutorial: Create, evaluate, and score a text classification model'
 description: This tutorial demonstrates training and evaluating a text classification model by using a sample dataset of metadata for digitized books.
 ms.author: lagayhar
-ms.reviewer: ruxu
+ms.reviewer: scottpolly
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 ms.date: 08/31/2026

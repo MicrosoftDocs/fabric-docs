@@ -49,8 +49,6 @@
                 items:
                   - name: Dataflow Gen2 with virtual network gateway
                     href: pricing-example-dataflow-virtual-network-gateway.md
-      - name: Secure Data Factory in Microsoft Fabric
-        href: secure-data-factory-in-microsoft-fabric.md
   - name: Get started
     items:
       - name: Bring Azure Data Factory to Fabric
@@ -1342,6 +1340,14 @@
             href: apache-airflow-jobs-manage-vs-code.md
           - name: Variable library integration with Apache airflow jobs
             href: apache-airflow-jobs-variable-library-integration.md
+  - name: Security
+    items:
+      - name: Secure Data Factory in Microsoft Fabric
+        href: secure-data-factory-in-microsoft-fabric.md
+      - name: Manage security roles
+        href: /data-integration/gateway/manage-security-roles?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
+      - name: Manage virtual network security roles
+        href: /data-integration/vnet/manage-vnet-security-roles?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
   - name: Troubleshoot
     items: 
       - name: Keyboard shortcuts

@@ -795,6 +795,8 @@ items:
         href: real-time-dashboards-overview.md
       - name: Supported visuals
         href: dashboard-supported-visuals.md
+      - name: Supported data sources
+        href: dashboard-supported-data-sources.md
       - name: Real-Time Dashboard permissions
         href: dashboard-permissions.md
       - name: Dashboard data source access
@@ -811,6 +813,8 @@ items:
           href: dashboard-visuals-customize.md
         - name: Real-Time Dashboard-specific visuals
           href: dashboard-visuals.md
+        - name: Visuals requiring cloud connection
+          href: dashboard-cloud-connection-visuals.md
         - name: Time series visual
           href: dashboard-time-series.md
         - name: Troubleshoot visual errors
@@ -824,7 +828,13 @@ items:
         - name: Conditional formatting
           href: dashboard-conditional-formatting.md
         - name: Dashboard parameters
-          href: dashboard-parameters.md 
+          items:
+          - name: Create and manage Real-Time Dashboard parameters
+            href: dashboard-parameters-manage.md
+          - name: Use parameters in Real-Time Dashboard queries
+            href: dashboard-parameters.md
+          - name: Configure interactions in Real-Time Dashboards
+            href: dashboard-interactions.md
         - name: Time series visual
           href: dashboard-time-series.md
         - name: Markdown visual
