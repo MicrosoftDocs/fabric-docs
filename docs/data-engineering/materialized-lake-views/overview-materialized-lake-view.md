@@ -56,11 +56,11 @@ Materialized lake views support two authoring approaches:
   > [!NOTE]
   > PySpark-authored views currently perform full refresh only.
 
-## Ingest files with materialized lake views
+## Ingest OneLake files directly into a materialized lake view
 
-You can now use a materialized lake view to ingest raw files directly from OneLake into a managed Delta table - no intermediate `COPY`, pipeline, or notebook load step required. This makes a file-backed materialized lake view a natural **bronze** layer for a medallion architecture: point it at a physical OneLake folder or OneLake folder shortcut, and downstream silver and gold materialized lake views can build on it with the same lineage, scheduling, and data quality that table-based views already use.
+A materialized lake view can ingest raw files directly from OneLake into a managed Delta table, without an intermediate `COPY`, pipeline, or notebook load step. This capability makes a file-backed materialized lake view a natural **bronze** layer for a medallion architecture. Point the file-backed materialized lake view at a physical OneLake folder or a OneLake folder shortcut, and downstream silver and gold materialized lake views can build on it with the same lineage, scheduling, and data quality that table-based materialized lake views already use.
 
-To create a file-ingesting materialized lake view, use the `USING OneLake_Files` clause instead of an `AS SELECT` query, and describe the source with `OPTIONS`:
+To create a file-backed materialized lake view, use the `USING OneLake_Files` clause instead of an `AS SELECT` query, and describe the source with `OPTIONS`:
 
 ```sql
 CREATE MATERIALIZED LAKE VIEW bronze.raw_orders
@@ -76,14 +76,14 @@ TBLPROPERTIES (
 );
 ```
 
-Key characteristics:
+A file-backed materialized lake view has the following characteristics:
 
-- **Formats**: CSV and Parquet.
-- **Folder shortcuts**: a OneLake folder shortcut can be the source. Creation includes files available through nested folders; managed refresh discovers additions at the shortcut root but not additions under nested shortcut folders.
-- **Schema handling**: `DYNAMIC` adds newly discovered columns and supplies `NULL` when a file omits an established column; `FIXED` pins the schema at creation and rejects drift.
-- **File lineage**: each row carries a `__filepath__` column that records the source file it came from.
-- **Medallion-ready**: reference the file-backed view from downstream materialized lake views (silver, gold) so a change at the source flows through the whole pipeline.
-- **Run monitoring**: each managed run reports the files processed and rows added, so you can verify that new source files were materialized.
+- **Supported file formats**: The file-backed materialized lake view supports CSV and Parquet files.
+- **Folder shortcuts as a source**: A OneLake folder shortcut can be the source. Creation includes files available through nested folders. Managed refresh discovers additions at the shortcut root but not additions under nested shortcut folders.
+- **Schema handling**: `DYNAMIC` adds newly discovered columns and supplies `NULL` when a file omits an established column. `FIXED` pins the schema at creation time and rejects schema drift.
+- **File lineage**: Each row carries a `__filepath__` column that records the source file it came from.
+- **Medallion-ready**: Reference the file-backed materialized lake view from downstream silver and gold materialized lake views so that a change at the source flows through the whole pipeline.
+- **Run monitoring**: Each managed run reports the number of files processed and rows added, so you can verify that Fabric materialized the new source files.
 
 For the full file-ingestion syntax and options, see [Spark SQL reference for materialized lake views](create-materialized-lake-view.md). To trace files through the pipeline, see [Manage Fabric materialized lake views lineage](view-lineage.md).
 

@@ -171,7 +171,7 @@ TBLPROPERTIES (
 );
 ```
 
-You can then build downstream silver and gold materialized lake views that select from `bronze.raw_orders`; Fabric records the dependency and refreshes them in order. To trace files through the pipeline, see [Manage Fabric materialized lake views lineage](./view-lineage.md#lineage-for-file-ingestion).
+You can then build downstream silver and gold materialized lake views that select from `bronze.raw_orders`; Fabric records the dependency and refreshes them in order. To trace files through the pipeline, see [Manage Fabric materialized lake views lineage](./view-lineage.md#view-lineage-for-file-ingestion).
 
 > [!NOTE]
 > When you use `FIXED` schema and the source folder contains multiple files with **different** schemas at the time of the initial `CREATE`, the view fails because it can't reconcile a single fixed schema. Point `FIXED` views at files that share one schema, or use `DYNAMIC`. This is a known restriction, similar to fixed-schema behavior in shortcut transformations.
