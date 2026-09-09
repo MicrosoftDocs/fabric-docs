@@ -78,7 +78,7 @@ Control activity | Description
 [Lakehouse maintenance activity](lakehouse-maintenance-activity.md) | Perform routine table maintenance on a Lakehouse from a Microsoft Fabric pipeline.
 [Lookup Activity](lookup-activity.md) | Lookup Activity can be used to read or look up a record/ table name/ value from any external source. This output can further be referenced by succeeding activities.
 [Refresh Materialized Lake View activity](refresh-materialized-lake-view-activity.md) | Refreshes a materialized lake view in a Lakehouse to reflect the latest data.
-[Refresh SQL Endpoint activity](refresh-sql-endpoint-activity.md) | Refreshes a Lakehouse SQL endpoint to reflect the latest data.
+[Refresh SQL analytics endpoint activity](refresh-sql-endpoint-activity.md) | Refreshes a Lakehouse SQL analytics endpoint to reflect the latest data.
 [Set Variable](set-variable-activity.md) | Set the value of an existing variable.
 [Switch activity](switch-activity.md) | Implements a switch expression that allows multiple subsequent activities for each potential result of the expression.
 [Teams activity](teams-activity.md) | Posts a message in a Teams channel or group chat.

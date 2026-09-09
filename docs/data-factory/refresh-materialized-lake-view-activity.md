@@ -78,6 +78,6 @@ Include the activity in a broader pipeline that ingests, transforms, and publish
 
 - [Activity overview](activity-overview.md)
 - [Lakehouse Maintenance activity](lakehouse-maintenance-activity.md)
-- [Refresh SQL Endpoint activity](refresh-sql-endpoint-activity.md)
+- [Refresh SQL analytics endpoint activity](refresh-sql-endpoint-activity.md)
 - [Materialized lake views overview](/fabric/data-engineering/materialized-lake-views/overview-materialized-lake-view)
 - [Refresh materialized lake views in a Lakehouse](/fabric/data-engineering/materialized-lake-views/refresh-materialized-lake-view)

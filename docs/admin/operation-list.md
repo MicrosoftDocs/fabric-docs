@@ -571,7 +571,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Retrieved status of Power BI gateway cluster datasource | :::no-loc text="GetGatewayClusterDatasourceStatus"::: |   |
 | Retrieved status of Power BI gateway cluster | :::no-loc text="GetGatewayClusterStatus"::: |   |
 | Retrieved upstream dataflows from Power BI dataflow | :::no-loc text="GetDataflowUpstreamDataflowsAsAdmin"::: |   |
-| Retry lakehouse SQL analytics endpoint creation for a Lakehouse | :::no-loc text="RetryLakehouseSqlEndpointCreation"::: | Retry SQL endpoint creation for a Lakehouse  |
+| Retry lakehouse SQL analytics endpoint creation for a Lakehouse | :::no-loc text="RetryLakehouseSqlEndpointCreation"::: | Retry SQL analytics endpoint creation for a Lakehouse  |
 | Revoke an external data share | :::no-loc text="RevokeExternalDataShare"::: | Revoke an external data share |
 | Revoked consent to tenant relocation | :::no-loc text="TenantRelocationConsentRevoked"::: | Tenant relocation consent revoked. |
 | Rotate Tenant Key | :::no-loc text="RotateTenantKey"::: |   |
@@ -771,7 +771,7 @@ When capacity ID and capacity name aren't available in the audit logs, you can v
 > [!IMPORTANT]
 > **Starting July 7, 2025**, As part of our ongoing efforts to simplify audit logging and ensure consistency across Fabric, we're **standardizing redundant item operations** into a single set of unified operations. This migration aligns warehouse, warehouse, and SQL Analytics Endpoint lakehouse actions under common names used across the Fabric platform.
 
-### What’s Changing?
+### What's Changing?
 
 | Friendly Name | Old Operation Name | New Operation Name |
 |---------------|--------------------|---------------------|

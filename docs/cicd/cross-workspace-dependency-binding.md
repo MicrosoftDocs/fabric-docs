@@ -68,7 +68,7 @@ The **Auto-bind in Git** column indicates:
 | Pipeline | Yes | |
 | Notebook | Yes | |
 | Dataflow Gen2 | Yes | |
-| SQL Database | Yes | |
+| SQL database | Yes | |
 | Spark Job Definition | No | The SparkJobDefinition activity references the Spark Job Definition by object ID, not logical ID, so it stays pointed at the source item after deployment. You need to parameterize this value for cross-workspace deployment. |
 | Lakehouse | Yes | |
 | Semantic Model | No | PBISemanticModelRefresh activity references the semantic model by item ID, not logical ID. You need to parameterize this value for cross-workspace deployment. |
@@ -107,7 +107,7 @@ By default, Dataflow Gen2 creates absolute references to Fabric items: the query
 |---|---|---|
 | Lakehouse | No | |
 | Warehouse | No | |
-| SQL Database | No | |
+| SQL database | No | |
 
 ### Spark Job Definitions
 
@@ -122,15 +122,15 @@ By default, Dataflow Gen2 creates absolute references to Fabric items: the query
 |---|---|---|
 | Lakehouse | Yes | |
 | Warehouse | No | The warehouse `artifactId` resolves through the logical ID and rebinds, but the `linkedService` also stores the source workspace's SQL `endPoint`, which isn't rewritten. Parameterize the `endPoint` for cross-workspace deployment. |
-| SQL Database | Yes | |
+| SQL database | Yes | |
 
 ### GraphQL APIs
 
 | Dependency | Auto-bind in Git | Notes |
 |---|---|---|
-| SQL Endpoint | Yes | |
+| SQL analytics endpoint | Yes | |
 | Warehouse | Yes | |
-| SQL Database | Yes | |
+| SQL database | Yes | |
 
 For all GraphQL API data sources, you might need to reconfigure the connection and credentials after deployment.
 
@@ -155,7 +155,7 @@ For all GraphQL API data sources, you might need to reconfigure the connection a
 | Dependency | Auto-bind in Git | Notes |
 |---|---|---|
 | Warehouse (cross-reference) | No | References to other warehouses use object IDs. |
-| SQL Endpoint | No | SQL Endpoint references use workspace-specific identifiers. |
+| SQL analytics endpoint | No | SQL analytics endpoint references use workspace-specific identifiers. |
 
 ### Variable Libraries
 
@@ -168,7 +168,7 @@ For all GraphQL API data sources, you might need to reconfigure the connection a
 The following items have no cross-workspace dependency binding concerns:
 
 - Environment
-- SQL Database
+- SQL database
 - Eventhouse (container item; KQL databases reference it)
 - Mirrored Database (external source configuration only)
 

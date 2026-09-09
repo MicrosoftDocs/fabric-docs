@@ -12,7 +12,7 @@ ms.date: 06/22/2026
 
 # Integrate OneLake with Azure Machine Learning
 
-OneLake is Fabric’s open lake storage layer with Azure Storage-compatible access. It exposes Fabric data through `onelake.dfs.fabric.microsoft.com` for ADLS Gen2/DFS access and `onelake.blob.fabric.microsoft.com` for Blob API access. This article describes how Azure Machine Learning can use these surfaces through AML datastores, batch endpoint inputs and outputs, and direct `abfss://` access from notebooks or scripts.
+OneLake is Fabric's open lake storage layer with Azure Storage-compatible access. It exposes Fabric data through `onelake.dfs.fabric.microsoft.com` for ADLS Gen2/DFS access and `onelake.blob.fabric.microsoft.com` for Blob API access. This article describes how Azure Machine Learning can use these surfaces through AML datastores, batch endpoint inputs and outputs, and direct `abfss://` access from notebooks or scripts.
 
 
 Azure Machine Learning provides three primary integration points with OneLake:
@@ -108,7 +108,7 @@ outputs:
 
 Azure Machine Learning enables you to [use Fabric to access model deployment batch endpoints](/azure/machine-learning/how-to-use-batch-fabric) for long-running, asynchronous inferencing with machine learning models and pipelines.
 
-In this pattern, the architectural goal is to keep a *single physical copy* of both the input feature data and the output predictions accessible to both platforms - Fabric and Azure Machine Learning. A file in ADLS carries two valid addresses - an `azureml://datastores/...` URI that Azure Machine Learning batch endpoints accept as input/output, and a lakehouse path (enabled through ADLS shortcut) that Fabric notebooks, pipelines, and SQL endpoints can query. This pattern involves no copy, no scheduled sync, no second source of truth. The lakehouse view and the Azure Machine Learning view are projections of the same storage account.
+In this pattern, the architectural goal is to keep a *single physical copy* of both the input feature data and the output predictions accessible to both platforms - Fabric and Azure Machine Learning. A file in ADLS carries two valid addresses - an `azureml://datastores/...` URI that Azure Machine Learning batch endpoints accept as input/output, and a lakehouse path (enabled through ADLS shortcut) that Fabric notebooks, pipelines, and SQL analytics endpoints can query. This pattern involves no copy, no scheduled sync, no second source of truth. The lakehouse view and the Azure Machine Learning view are projections of the same storage account.
 
 Batch endpoints sit between two OneLake-visible folders:
 
