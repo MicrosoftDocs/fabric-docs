@@ -100,7 +100,7 @@ ON p.productID = o.productID
 
 ## Ingest files with `USING OneLake_Files`
 
-In addition to defining a materialized lake view from tables with `AS select_statement`, you can define one that ingests raw files (CSV or Parquet) directly from OneLake. A *file-ingesting* view uses a `USING OneLake_Files` clause that points at a physical OneLake folder or a OneLake folder shortcut instead of an `AS SELECT` query, which makes it a natural **bronze** layer for a medallion architecture.
+In addition to defining a materialized lake view from tables with `AS select_statement`, you can define one that ingests raw files (CSV or Parquet) directly from OneLake. A *file-ingesting* view uses a `USING OneLake_Files` clause that points to a physical OneLake folder or a OneLake folder shortcut instead of an `AS SELECT` query. This design makes it a natural **bronze** layer for a medallion architecture.
 
 The following table shows which syntax applies to each authoring style:
 
@@ -132,7 +132,7 @@ OPTIONS (
 ```
 
 > [!NOTE]
-> A file-ingesting materialized lake view has **no `AS SELECT` clause** - the source is the folder named in `OPTIONS`. To transform the ingested data, create a downstream table-based materialized lake view that selects from this view.
+> A file-ingesting materialized lake view has **no `AS SELECT` clause** — the source is the folder named in `OPTIONS`. To transform the ingested data, create a downstream table-based materialized lake view that selects from this view.
 
 ### OPTIONS reference
 
@@ -141,7 +141,7 @@ OPTIONS (
 | `format` | CSV, Parquet | Source file format. Supported values are `csv` and `parquet`. |
 | `path` | CSV, Parquet | Physical OneLake folder or OneLake folder shortcut (`abfss://…`) that contains the source files. Files available in nested subfolders are ingested recursively when the view is created. |
 | `header` | CSV | Whether the first row of each file contains column names. Defaults to `false`. |
-| `delimiter` | CSV | Field delimiter character (for example, `,` or `|`). Defaults to a comma. |
+| `delimiter` | CSV | Field delimiter character (for example, `,` or `\|`). Defaults to a comma. |
 
 > [!NOTE]
 > For CSV, only `header` and `delimiter` are currently supported. Additional parsing options (such as `nullValue`, `quote`, and `escape`) aren't yet available.
@@ -180,7 +180,7 @@ You can then build downstream silver and gold materialized lake views that selec
 > Source paths containing a raw space or `%20` aren't currently accepted. You can use a OneLake folder shortcut as the source: creation ingests files available at the shortcut root and in nested folders. Managed refresh discovers new files added at the shortcut root, but doesn't recursively discover new files added under nested shortcut folders.
 
 > [!TIP]
-> To reprocess the entire source folder on demand, run `REFRESH MATERIALIZED LAKE VIEW <name> FULL;`. As with table-based views, don't orchestrate ongoing refresh from a notebook - use [Lineage](./view-lineage.md) and [Scheduled refresh](./schedule-lineage-run.md) to pick up new files automatically.
+> To reprocess the entire source folder on demand, run `REFRESH MATERIALIZED LAKE VIEW <name> FULL;`. As with table-based views, don't orchestrate ongoing refresh from a notebook — use [Lineage](./view-lineage.md) and [Scheduled refresh](./schedule-lineage-run.md) to pick up new files automatically.
 
 ## Get a list of materialized lake views
 
