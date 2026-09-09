@@ -141,7 +141,7 @@ OPTIONS (
 | `format` | CSV, Parquet | Source file format. Supported values are `csv` and `parquet`. |
 | `path` | CSV, Parquet | Physical OneLake folder or OneLake folder shortcut (`abfss://…`) that contains the source files. Files available in nested subfolders are ingested recursively when the view is created. |
 | `header` | CSV | Whether the first row of each file contains column names. Defaults to `false`. |
-| `delimiter` | CSV | Field delimiter character (for example, `,` or `\|`). Defaults to a comma. |
+| `delimiter` | CSV | Field delimiter character (for example, `,` or `|`). Defaults to a comma. |
 
 > [!NOTE]
 > For CSV, only `header` and `delimiter` are currently supported. Additional parsing options (such as `nullValue`, `quote`, and `escape`) aren't yet available.
