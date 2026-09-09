@@ -30,9 +30,9 @@ Start by accessing the SQL analytics endpoint for the Cosmos DB in Fabric databa
     > [!IMPORTANT]
     > For this guide, the existing Cosmos DB database has the [sample data set](sample-data.md) already loaded. The remaining query examples in this guide assume that you're using the same data set for this database.
 
-1. In the menu bar, select the **Cosmos DB** list and then select **SQL Endpoint**.
+1. In the menu bar, select the **Cosmos DB** list and then select **SQL analytics Endpoint**.
 
-    :::image type="content" source="media/how-to-access-data-lakehouse/endpoint-selection.png" lightbox="media/how-to-access-data-lakehouse/endpoint-selection.png" alt-text="Screenshot of the endpoint selection option in the menu bar for a database in Cosmos DB in Fabric.":::
+    :::image type="content" source="media/how-to-access-data-lakehouse/endpoint-selection.png" lightbox="media/how-to-access-data-lakehouse/endpoint-selection.png" alt-text="Screenshot of the SQL analytics endpoint selection option in the menu bar for a database in Cosmos DB in Fabric.":::
 
 1. Once you're able to successfully navigate to the SQL analytics endpoint, this navigation step confirms that mirroring ran successfully at least once.
 

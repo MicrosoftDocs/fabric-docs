@@ -50,7 +50,7 @@ For more information, see [Get data into Microsoft Fabric](get-data.md).
 
 Once ingested, all data lands in OneLake in open Delta Parquet format. OneLake provides a single data lake for your entire organization with no separate provisioning needed. Because OneLake maintains a single copy of the data, you can share governed datasets across tenants by using OneLake data sharing without duplicating storage. Fabric offers several storage items optimized for different workloads:
 
-- **Lakehouse** for flexible big data storage that combines files and managed Delta tables with an automatic SQL endpoint.
+- **Lakehouse** for flexible big data storage that combines files and managed Delta tables with an automatic SQL analytics endpoint.
 - **Warehouse** for structured, relational analytics with full T-SQL support, stored procedures, and ACID transactions.
 - **Eventhouse** for real-time analytics on streaming and telemetry data by using Kusto Query Language (KQL).
 - **SQL Database** for transactional workloads and operational analytics.

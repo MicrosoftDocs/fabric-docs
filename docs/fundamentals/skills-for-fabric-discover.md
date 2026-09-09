@@ -25,7 +25,7 @@ Skills for Fabric are organized by workload. The repository currently includes s
 | Workload area | What the skills help you do |
 |---------------|-----------------------------|
 | Data engineering | Author Spark notebooks, manage Spark sessions, diagnose job failures, and build end-to-end Medallion architectures. |
-| Data warehouse | Run authoring T-SQL, query Lakehouse SQL endpoints, and analyze warehouse performance. |
+| Data warehouse | Run authoring T-SQL, query Lakehouse SQL analytics endpoints, and analyze warehouse performance. |
 | Real-time intelligence | Author and query Eventhouses with KQL, build Eventstream topologies, and manage Activator alerts. |
 | Data Factory | Build, refresh, and inspect Dataflows Gen2, and upgrade Gen1 dataflows to Gen2.1. |
 | Power BI | Plan, design, and manage Power BI semantic models and report definitions; query semantic models with DAX; and ask natural-language questions through FabricIQ. Report and semantic model authoring skills ship in the separate `powerbi-authoring` plug-in. For an example, see the [Power BI Report Authoring skill](/power-bi/developer/agentic/power-bi-report-authoring-skill-overview). |
