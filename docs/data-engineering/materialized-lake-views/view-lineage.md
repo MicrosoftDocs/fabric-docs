@@ -155,7 +155,7 @@ To inspect a file-backed pipeline and confirm that the refresh detected source c
 Use the source folder details pane for the current folder inventory and the run details pane for the files acted on by a specific refresh. The two counts answer different questions and don't necessarily match for an incremental run.
 
 > [!TIP]
-> Each ingested row also carries a `__filepath__` column that records its source file. Use `GROUP BY __filepath__` to inspect the files represented in the current materialized result. This reflects current row lineage, while **Files processed** reflects the work that one refresh run performs.
+> Each ingested row also carries a `__filepath__` column that records its source file. Use `GROUP BY __filepath__` to inspect the files represented in the current materialized result. This view reflects current row lineage, while **Files processed** reflects the work that one refresh run performs.
 
 ## Related content
 
