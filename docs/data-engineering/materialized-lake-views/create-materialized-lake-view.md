@@ -139,7 +139,7 @@ OPTIONS (
 | Option | Applies to | Description |
 |---|---|---|
 | `format` | CSV, Parquet | Source file format. Supported values are `csv` and `parquet`. |
-| `path` | CSV, Parquet | Physical OneLake folder or OneLake folder shortcut (`abfss://…`) that contains the source files. Files available in nested subfolders are ingested recursively when the view is created. |
+| `path` | CSV, Parquet | Physical OneLake folder or OneLake folder shortcut (`abfss://…`) that contains the source files. The service recursively ingests files in nested subfolders when you create the view. |
 | `header` | CSV | Whether the first row of each file contains column names. Defaults to `false`. |
 | `delimiter` | CSV | Field delimiter character (for example, `,` or `|`). Defaults to a comma. |
 
