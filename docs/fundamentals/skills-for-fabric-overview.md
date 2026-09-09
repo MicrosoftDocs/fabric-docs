@@ -43,7 +43,7 @@ Skills for Fabric apply this pattern to Microsoft Fabric. Each skill packages th
 1. **User intent.** You write a natural-language prompt that describes what you want to accomplish.
 1. **AI tool.** Your AI coding tool receives the prompt and matches it against the installed skills.
 1. **Skills layer.** The matching `SKILL.md` provides workload-specific instructions, including REST API endpoints, query syntax, and authentication patterns.
-1. **Fabric APIs.** The AI tool calls Fabric REST APIs, SQL endpoints, KQL, or other Fabric surfaces with the right parameters.
+1. **Fabric APIs.** The AI tool calls Fabric REST APIs, SQL analytics endpoints, KQL, or other Fabric surfaces with the right parameters.
 1. **Deployed.** Fabric resources are created or modified end-to-end, with the workload's best practices applied automatically.
 
 Skills differ from [Model Context Protocol (MCP)](../real-time-intelligence/mcp-overview.md) servers. Skills teach the AI assistant *what to do*. MCP servers *do it*. Skills provide the expertise and MCP servers provide the data connection. They both work best together. The following table summarizes the key differences:

@@ -17,10 +17,10 @@ Eventhouses are tailored to time-based, streaming events with structured, semist
 
 ## Analyze data with integration
 
-Eventhouse uses the same **Analyze data with** menu as other Fabric items, so you can start analysis from a unified entry point across workloads. From an Eventhouse or KQL database, you can use **SQL endpoint** and **Notebook** options directly where available.
+Eventhouse uses the same **Analyze data with** menu as other Fabric items, so you can start analysis from a unified entry point across workloads. From an Eventhouse or KQL database, you can use **SQL analytics endpoint** and **Notebook** options directly where available.
 
 > [!NOTE]
-> The **Analyze data with** > **SQL endpoint** option appears for Eventhouse and KQL databases only when OneLake availability and schema synchronization are enabled on the database. This setup provides near-real-time access to KQL data through the SQL endpoint.
+> The **Analyze data with** > **SQL analytics endpoint** option appears for Eventhouse and KQL databases only when OneLake availability and schema synchronization are enabled on the database. This setup provides near-real-time access to KQL data through the SQL analytics endpoint.
 
 ## When do I create an eventhouse?
 
