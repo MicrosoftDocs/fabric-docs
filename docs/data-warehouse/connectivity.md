@@ -2,7 +2,7 @@
 title: Warehouse Connectivity
 description: Learn about connecting to Fabric Data Warehouse, including authentication and best practices.
 ms.reviewer: fresantos, salilkanade, pvenkat
-ms.date: 05/13/2026
+ms.date: 09/09/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
