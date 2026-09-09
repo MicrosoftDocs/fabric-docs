@@ -2,7 +2,7 @@
 title: Primary, Foreign, and Unique Keys
 description: Learn more about table constraints support using Warehouse in Microsoft Fabric.
 ms.reviewer: xiaoyul
-ms.date: 08/01/2024
+ms.date: 09/08/2026
 ms.topic: how-to
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
@@ -13,15 +13,15 @@ ms.search.form: Warehouse design and development # This article's title should n
 Learn about table constraints in [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabricdw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], including the primary key, foreign keys, and unique keys.
 
 > [!IMPORTANT]  
-> To add or remove primary key, foreign key, or unique constraints, use ALTER TABLE. These cannot be created inline within a CREATE TABLE statement.
+> To add or remove primary key, foreign key, or unique constraints, use `ALTER TABLE`. You can't create these constraints inline within a `CREATE TABLE` statement.
 
 ## Table constraints
 
-[!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabricdw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] support these table constraints: 
+[!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabricdw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] support adding these table constraints to existing tables: 
 
-- PRIMARY KEY is only supported when NONCLUSTERED and NOT ENFORCED are both used.
-- FOREIGN KEY is only supported when NOT ENFORCED is used.
-- UNIQUE constraint is only supported when NONCLUSTERED and NOT ENFORCED are both used.
+- `PRIMARY KEY` is only supported when you use `NONCLUSTERED` and `NOT ENFORCED`.
+- `FOREIGN KEY` is only supported when you use `NOT ENFORCED`.
+- `UNIQUE` constraint is only supported when you use `NONCLUSTERED` and `NOT ENFORCED`.
 
 For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true).
 
@@ -63,10 +63,10 @@ ALTER TABLE ForeignKeyTable ADD CONSTRAINT FK_ForeignKeyTablec1 FOREIGN KEY (c1)
 
 ## Related content
 
-- [Design tables in Warehouse in [!INCLUDE [product-name](../includes/product-name.md)]](tables.md)
-- [Data types in Microsoft Fabric](data-types.md)
-- [What is data warehousing in [!INCLUDE [product-name](../includes/product-name.md)]?](data-warehousing.md)
-- [What is data engineering in [!INCLUDE [product-name](../includes/product-name.md)]?](../data-engineering/data-engineering-overview.md)
+- [Tables in Fabric Data Warehouse](tables.md)
+- [Data types in Fabric Data Warehouse](data-types.md)
+- [What is Fabric Data Warehouse?](data-warehousing.md)
+- [What is Microsoft Fabric Data Engineering?](../data-engineering/data-engineering-overview.md)
 - [[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]](data-warehousing.md#fabric-data-warehouse)
-- [Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](create-warehouse.md)
-- [Query a warehouse](query-warehouse.md)
+- [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
+- [Query the warehouse or SQL analytics endpoint](query-warehouse.md)

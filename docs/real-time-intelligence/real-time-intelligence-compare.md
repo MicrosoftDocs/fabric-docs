@@ -20,7 +20,7 @@ Real-Time Intelligence in Microsoft Fabric provides a unified SaaS experience fo
 The main difference is the implementation model. Azure PaaS gives pro developers maximum control for custom architectures and deep Azure integration. Real-Time Intelligence gives business users, citizen developers, data analysts, and pro developers an integrated workflow for building real-time solutions faster, with fewer manually stitched services.
 Learn more about Real-Time Intelligence in [What is Real-Time Intelligence in Fabric?](overview.md)
 
-:::image type="content" source="media/real-time-intelligence-compare/compare-azure-paas-real-time-intelligence-architecture.png" alt-text="Diagram that shows Azure PaaS solutions compared to Real-Time Intelligence architectures for telemetry analytics." lightbox="media/real-time-intelligence-compare/compare-azure-paas-real-time-intelligence-architecture.png":::
+:::image type="content" source="media/real-time-intelligence-compare/fabric-architecture.svg" alt-text="Diagram that shows Azure PaaS solutions compared to Real-Time Intelligence architectures for telemetry analytics." lightbox="media/real-time-intelligence-compare/fabric-architecture.png":::
 
 ## Microsoft Fabric capabilities for real-time analytics
 
