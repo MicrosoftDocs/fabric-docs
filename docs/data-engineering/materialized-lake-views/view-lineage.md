@@ -128,21 +128,21 @@ When a materialized lake view ingests files with `USING OneLake_Files`, its sour
 
 The lineage graph starts from the source folder that the view ingests. The folder node connects to the bronze file-ingesting materialized lake view, which in turn feeds downstream silver and gold views, following the same dependency ordering that Fabric applies to table-based views.
 
-:::image type="content" source="./media/file-data-ingestion/medallion-dag-landing.png" alt-text="Screenshot of a materialized lake views lineage graph showing a source folder feeding a bronze file-ingesting view, then silver and gold views." border="true" lightbox="./media/file-data-ingestion/medallion-dag-landing.png":::
+:::image type="content" source="./media/view-lineage/medallion-dag-landing.png" alt-text="Screenshot of a materialized lake views lineage graph showing a source folder feeding a bronze file-ingesting view, then silver and gold views." border="true" lightbox="./media/view-lineage/medallion-dag-landing.png":::
 
 To inspect a file-backed pipeline and confirm that the refresh detected source changes, follow these steps:
 
 1. Select the source folder node to open its details pane. The pane shows the OneLake path and the files discovered in the folder.
 
-   :::image type="content" source="./media/file-data-ingestion/source-folder-details-pane.png" alt-text="Screenshot of the source folder details pane showing the OneLake path and files in the folder." border="true" lightbox="./media/file-data-ingestion/source-folder-details-pane.png":::
+   :::image type="content" source="./media/view-lineage/source-folder-details-pane.png" alt-text="Screenshot of the source folder details pane showing the OneLake path and files in the folder." border="true" lightbox="./media/view-lineage/source-folder-details-pane.png":::
 
 1. Select the file-ingesting materialized lake view node to view its details, including the source format, schema mode, and refresh mode.
 
-   :::image type="content" source="./media/file-data-ingestion/mlv-file-details-pane.png" alt-text="Screenshot of the file-ingesting materialized lake view details pane showing format, schema mode, and refresh mode." border="true" lightbox="./media/file-data-ingestion/mlv-file-details-pane.png":::
+   :::image type="content" source="./media/view-lineage/view-file-details-pane.png" alt-text="Screenshot of the file-ingesting materialized lake view details pane showing format, schema mode, and refresh mode." border="true" lightbox="./media/view-lineage/view-file-details-pane.png":::
 
 1. Open the **Recent runs** tab, drill into a managed run, and select the file-ingesting view to see its files-processed and rows-added metrics.
 
-   :::image type="content" source="./media/file-data-ingestion/files-processed.png" alt-text="Screenshot of a run's details showing the number of files processed and rows added for a file-ingesting materialized lake view." border="true" lightbox="./media/file-data-ingestion/files-processed.png":::
+   :::image type="content" source="./media/view-lineage/files-processed.png" alt-text="Screenshot of a run's details showing the number of files processed and rows added for a file-ingesting materialized lake view." border="true" lightbox="./media/view-lineage/files-processed.png":::
 
 ### Interpret file processing metrics
 
