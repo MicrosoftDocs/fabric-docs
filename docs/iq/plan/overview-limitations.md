@@ -69,7 +69,7 @@ Insight supports up to 5 million rows. Insight isn't supported when the total nu
 
 ### Find and Replace row limit
 
-Find and Replace supports a maximum of 5 million rows. Find and Replace isn't supported when the total number of rows exceeds 5 million.
+Find and Replace supports up to 5 million rows. Find and Replace isn't supported when the total number of rows exceeds 5 million.
 
 ### Snapshot limitations
 
