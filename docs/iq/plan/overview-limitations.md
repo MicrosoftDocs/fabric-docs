@@ -53,7 +53,7 @@ To recover, create a new PowerTable sheet by using the **Existing Table** option
 
 ### Excel export limitations
 
-Excel export (Raw mode) supports a maximum of 20 million cells or 1 million rows, while Excel export (Label mode) supports a maximum of 5 million cells.
+Excel export (Raw mode) supports up to 20 million cells or 1 million rows, while Excel export (Label mode) supports up to 5 million cells.
 
 ### Sort row limit
 
@@ -85,7 +85,7 @@ A repeating group processes only the first 1,000 items. Additional items beyond 
 
 ### Cascading automation trigger depth limit
 
-Cascading automation triggers support a maximum depth of 2 levels, including the initial trigger. Automation chains can't extend beyond two trigger levels, and further cascading triggers aren't executed.
+Cascading automation triggers support up to 2 levels, including the initial trigger. Automation chains can't extend beyond two trigger levels, and further cascading triggers aren't executed.
 
 ### Multiple record operations in automation
 
@@ -95,9 +95,9 @@ Multiple record operations aren't supported in subsequent automation actions. Su
 
 Create Record, Update Record, Delete Record, and Form Submission database triggers support writeback of up to 10 records per trigger type. If a user writes back more than 10 records, automation jobs aren't triggered for any of the records. The system doesn't partially execute the automation for the first 10 records.
 
-### Scroll bar row limit
+### Scrollbar row limit
 
-Scroll bar supports up to 5 million rows. Scroll bar isn't supported when the total number of rows exceeds 5 million. Users can navigate the table only through pagination.
+Scrollbar supports up to 5 million rows. Scrollbar isn't supported when the total number of rows exceeds 5 million. Users can navigate the table only through pagination.
 
 ### Gantt and Resource Layout row limit
 
@@ -119,9 +119,7 @@ workspace breaks the plan item, and the item no longer opens.
 
 ## Bulk data input limit
 
-Bulk data input supports a maximum of 1 million rows. Uploading more
-than 1 million rows from an Excel or CSV file isn't supported and might
-cause the upload to fail.
+Bulk data input supports up to 1 million rows. Uploading more than 1 million rows from an Excel or CSV file isn't supported and might cause the upload to fail.
 
 ## Maximum number of sheets per item
 
