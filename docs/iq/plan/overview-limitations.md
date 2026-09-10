@@ -97,7 +97,7 @@ Create Record, Update Record, Delete Record, and Form Submission database trigge
 
 ### Scrollbar row limit
 
-Scrollbar supports a maximum of 5 million rows. Scrollbar isn't supported when the total number of rows exceeds 5 million. Users can navigate the table only through pagination.
+Scroll bar supports up to 5 million rows. Scroll bar isn't supported when the total number of rows exceeds 5 million. Users can navigate the table only through pagination.
 
 ### Gantt and Resource Layout row limit
 
