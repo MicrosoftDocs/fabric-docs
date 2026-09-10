@@ -5,7 +5,8 @@ ms.author: midesa
 author: midesa
 ms.reviewer: jonburchel
 ms.topic: concept-article
-ms.date: 08/21/2026
+ms.date: 08/31/2026
+ai-usage: ai-assisted
 ---
 
 # SQL sources in Fabric data agent
@@ -17,7 +18,7 @@ This article describes the two query-generation tools the agent can use for SQL 
 - **NL2SQL** — the generally available (GA) tool, used by data agents on the [standard runtime](data-agent-runtime.md#standard-runtime).
 - **Advanced NL2SQL** — a preview tool with multi-step reasoning, used by data agents on the [preview runtime](data-agent-runtime.md#preview-runtime).
 
-Both tools draw on the same configuration you provide for each SQL source — schema selection, data source instructions, and example queries. For details on configuring those inputs, see [Add and configure data sources in Fabric data agent](data-agent-add-datasources.md).
+Both tools draw on the schema selection, data source instructions, and example queries that you provide for each SQL source. Advanced NL2SQL can also use preview-only configurations, including schema object descriptions and topics. For details on configuring these inputs, see [Add and configure data sources in Fabric data agent](data-agent-add-datasources.md).
 
 ## NL2SQL
 
@@ -41,8 +42,9 @@ Advanced NL2SQL provides quality improvements and configuration experiences that
 - **Substituting filter values correctly.** When a question implies multiple categorical or boolean filters rather than stating them explicitly, NL2SQL may miss or misapply some of them. Advanced NL2SQL reasons through the implied filters and substitutes the right values into the query.
 - **Handling ambiguous questions.** When a question is ambiguous, NL2SQL tends to commit to an assumption and generate a query anyway. Advanced NL2SQL can detect the ambiguity and ask the user a clarifying question before generating SQL, reducing incorrect answers caused by misread intent.
 - **Understands schema details.** Object names alone might not explain what schema elements mean, and data source instructions might not have enough space to describe every object. By using [schema object descriptions](data-agent-schema-object-descriptions.md), creators can provide context for individual tables, columns, and other schema elements so Advanced NL2SQL can interpret the schema and generate more accurate queries.
+- **Retrieves topic-based instructions.** You don't need to send large instruction sets with every question. By using [topics](data-agent-topics.md), creators can organize up to 1 million characters of guidance by subject. The data agent finds the relevant sections and provides them to Advanced NL2SQL.
 
-Advanced NL2SQL uses the schema selection, data source instructions, and example queries that you already configured for NL2SQL. It can also use configurations available only in Advanced NL2SQL, such as schema object descriptions.
+Advanced NL2SQL uses the schema selection, data source instructions, and example queries that you already configured for NL2SQL. It can also use configurations available only in Advanced NL2SQL, such as schema object descriptions and topics.
 
 ### Use Advanced NL2SQL
 
