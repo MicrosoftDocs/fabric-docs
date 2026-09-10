@@ -5,7 +5,7 @@ ms.topic: tutorial
 ms.date: 09/08/2026
 ---
 
-# Introduction to intelligence sheets
+# Fabric planning tutorial part 9: Introduction to intelligence sheets
 
 In this tutorial, you get a live SaaS Enterprise semantic model to build an interactive enterprise dashboard in a planning in Fabric environment.
 
